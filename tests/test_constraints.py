@@ -7,7 +7,7 @@ import pytest
 from pathlib import Path
 import re
 
-from src.generator.constraints import check_vocabulary_constraint, ConstraintResult
+from src.generator.constraints import check_vocabulary_constraint, check_character_constraint, ConstraintResult
 from src.config import MAX_ABOVE_LEVEL_RATIO
 
 
@@ -136,12 +136,16 @@ class TestGradedReaderCompliance:
 class TestOutputGradedReaderCompliance:
     """Validate that all output/ graded readers pass the 95/5 vocabulary rule.
 
-    Covers: 三国演义, 聊斋志异, 唐诗, 西游记 at HSK levels 1-6.
+    Covers all books in output/ at HSK levels 1-6.
     Each book has a glossary.txt defining proper nouns and essential story terms
     that are explicitly taught in the reader and excluded from the vocabulary count.
     """
 
-    EXPECTED_BOOKS = ["sanguoyanyi", "liaozhai", "tangshi", "xiyouji"]
+    EXPECTED_BOOKS = [
+        "sanguoyanyi", "liaozhai", "tangshi", "xiyouji",
+        "hongloumeng", "shuihuzhuan", "sunzibingfa",
+        "chengyugushi", "minjiangushi",
+    ]
 
     @pytest.fixture(scope="class")
     def output_files(self):
@@ -309,3 +313,193 @@ class TestOutputGradedReaderCompliance:
                     f"{book}: HSK 1 ({levels[1]} tokens) should be shorter "
                     f"than HSK 6 ({levels[6]} tokens)"
                 )
+
+
+class TestCharacterConstraintChecker:
+    """Unit tests for the character-level 95/5 constraint."""
+
+    def test_pure_hsk1_chars_pass(self):
+        text = "我是学生"
+        result = check_character_constraint(text, 1)
+        assert result.passes is True
+        assert result.above_level_ratio == 0.0
+
+    def test_above_level_chars_fail(self):
+        # Build a text where most characters are above HSK 1
+        text = "经济发展需要科学技术的支持和改变"
+        result = check_character_constraint(text, 1)
+        assert result.above_level_tokens > 0
+
+    def test_higher_level_has_better_coverage(self):
+        text = "经济发展需要科学技术"
+        r1 = check_character_constraint(text, 1)
+        r4 = check_character_constraint(text, 4)
+        assert r1.above_level_ratio >= r4.above_level_ratio
+
+    def test_empty_text_passes(self):
+        result = check_character_constraint("", 1)
+        assert result.passes is True
+        assert result.total_tokens == 0
+
+    def test_punctuation_excluded(self):
+        text_plain = "我是学生"
+        text_punct = "我是学生。！？"
+        r1 = check_character_constraint(text_plain, 1)
+        r2 = check_character_constraint(text_punct, 1)
+        assert r1.total_tokens == r2.total_tokens
+
+    def test_allowed_chars_excluded(self):
+        text = "妖怪来了"
+        r_without = check_character_constraint(text, 1)
+        r_with = check_character_constraint(text, 1, allowed_chars={"妖", "怪"})
+        assert r_with.above_level_tokens <= r_without.above_level_tokens
+
+    def test_max_ratio_configurable(self):
+        text = "我是学生经济"
+        r_strict = check_character_constraint(text, 1, max_ratio=0.0)
+        r_loose = check_character_constraint(text, 1, max_ratio=1.0)
+        assert r_loose.passes is True
+        if r_strict.above_level_tokens > 0:
+            assert r_strict.passes is False
+
+
+class TestCharacterComplianceReaders:
+    """Validate that standalone readers pass the character-level 95/5 rule."""
+
+    @pytest.fixture(scope="class")
+    def reader_files(self):
+        readers_dir = Path(__file__).parent.parent / "readers"
+        return sorted(readers_dir.glob("hsk*_*.md"))
+
+    def _extract_chinese(self, filepath: Path) -> str:
+        text = filepath.read_text("utf-8")
+        lines = text.split("\n")
+        return "\n".join(
+            l for l in lines
+            if not l.startswith("#") and not l.startswith("**") and l.strip() != "---"
+        )
+
+    def _extract_level(self, filepath: Path) -> int:
+        match = re.match(r"hsk(\d+)", filepath.name)
+        assert match
+        return int(match.group(1))
+
+    def test_all_readers_pass_character_constraint(self, reader_files):
+        """Every standalone reader must have >=95% known characters."""
+        failures = []
+        for f in reader_files:
+            chinese = self._extract_chinese(f)
+            level = self._extract_level(f)
+            result = check_character_constraint(chinese, level)
+            if not result.passes:
+                failures.append(
+                    f"{f.name}: {result.above_level_ratio*100:.1f}% above-level "
+                    f"(max {MAX_ABOVE_LEVEL_RATIO*100:.0f}%), "
+                    f"chars: {''.join(result.above_level_words[:10])}"
+                )
+        assert not failures, (
+            "Readers failing character-level 95/5 rule:\n" + "\n".join(failures)
+        )
+
+
+class TestCharacterComplianceOutput:
+    """Validate that all output/ graded readers pass the character-level 95/5 rule.
+
+    This complements TestOutputGradedReaderCompliance (which validates word tokens)
+    by checking that individual characters are also >=95% known at each level.
+    """
+
+    EXPECTED_BOOKS = [
+        "sanguoyanyi", "liaozhai", "tangshi", "xiyouji",
+        "hongloumeng", "shuihuzhuan", "sunzibingfa",
+        "chengyugushi", "minjiangushi",
+    ]
+
+    @pytest.fixture(scope="class")
+    def output_files(self):
+        output_dir = Path(__file__).parent.parent / "output"
+        return sorted(output_dir.glob("*/hsk*_*.md"))
+
+    @staticmethod
+    def _load_allowed_chars(book_dir: Path, level: int) -> set[str]:
+        """Load allowed characters from glossary + taught vocab."""
+        chars = set()
+        # Glossary characters
+        glossary_path = book_dir / "glossary.txt"
+        if glossary_path.exists():
+            for line in glossary_path.read_text("utf-8").splitlines():
+                line = line.strip()
+                if line and not line.startswith("#"):
+                    for ch in line:
+                        if '\u4e00' <= ch <= '\u9fff':
+                            chars.add(ch)
+        # Taught vocabulary characters for this level
+        vocab_path = book_dir / "taught_vocab.txt"
+        if vocab_path.exists():
+            in_level = False
+            for line in vocab_path.read_text("utf-8").splitlines():
+                line = line.strip()
+                if line.startswith("## HSK"):
+                    file_level = int(line.split()[-1])
+                    in_level = (file_level == level)
+                    continue
+                if in_level and line and not line.startswith("#"):
+                    word = line.split("\t")[0]
+                    for ch in word:
+                        if '\u4e00' <= ch <= '\u9fff':
+                            chars.add(ch)
+        return chars
+
+    def _extract_chinese(self, filepath: Path) -> str:
+        text = filepath.read_text("utf-8")
+        lines = text.split("\n")
+        filtered = []
+        in_original_poem = False
+        for line in lines:
+            stripped = line.strip()
+            if stripped.startswith("#") or stripped.startswith("**") or stripped == "---":
+                if "原文" in stripped:
+                    in_original_poem = True
+                elif stripped.startswith("**") and "原文" not in stripped:
+                    in_original_poem = False
+                continue
+            if in_original_poem:
+                if len(stripped) <= 30 and ("，" in stripped or "。" in stripped or stripped == ""):
+                    continue
+                else:
+                    in_original_poem = False
+            if stripped:
+                filtered.append(line)
+        return "\n".join(filtered)
+
+    def _extract_level(self, filepath: Path) -> int:
+        match = re.match(r"hsk(\d+)", filepath.name)
+        assert match
+        return int(match.group(1))
+
+    def _extract_book(self, filepath: Path) -> str:
+        return filepath.parent.name
+
+    @pytest.mark.parametrize("book", EXPECTED_BOOKS)
+    def test_book_passes_character_constraint(self, book, output_files):
+        """Each book's readers must have >=95% known characters at every level."""
+        output_dir = Path(__file__).parent.parent / "output"
+        book_files = [f for f in output_files if self._extract_book(f) == book]
+        failures = []
+        for f in book_files:
+            chinese = self._extract_chinese(f)
+            level = self._extract_level(f)
+            allowed = self._load_allowed_chars(output_dir / book, level)
+            result = check_character_constraint(
+                chinese, level, allowed_chars=allowed
+            )
+            if not result.passes:
+                failures.append(
+                    f"  {f.name}: {result.above_level_ratio*100:.1f}% above-level "
+                    f"(max {MAX_ABOVE_LEVEL_RATIO*100:.0f}%), "
+                    f"chars: {''.join(result.above_level_words[:20])}"
+                )
+        assert not failures, (
+            f"{book} readers failing character-level 95/5 rule:\n"
+            + "\n".join(failures)
+        )
