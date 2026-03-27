@@ -21,14 +21,19 @@ def check_vocabulary_constraint(
     max_ratio: float = MAX_ABOVE_LEVEL_RATIO,
     vocab_lookup: VocabLookup | None = None,
     segmenter: ChineseSegmenter | None = None,
+    allowed_words: set[str] | None = None,
 ) -> ConstraintResult:
     """Check whether a text satisfies the vocabulary constraint for a given HSK level.
 
     The constraint passes if at most `max_ratio` (default 5%) of word tokens
     are above the target level or unknown.
+
+    `allowed_words` is an optional set of words (e.g. glossary / proper nouns)
+    that are treated as in-level regardless of their actual HSK level.
     """
     vocab = vocab_lookup or VocabLookup()
     seg = segmenter or ChineseSegmenter()
+    allowed = allowed_words or set()
 
     words = seg.segment(text)
     total = len(words)
@@ -37,6 +42,10 @@ def check_vocabulary_constraint(
     seen_above: set[str] = set()
 
     for word in words:
+        if word in allowed:
+            in_level += 1
+            continue
+
         level = vocab.get_word_level(word)
         if level is None and len(word) == 1:
             level = vocab.get_char_level(word)

@@ -110,4 +110,10 @@ class ChineseSegmenter:
 
     @staticmethod
     def _is_punctuation(token: str) -> bool:
-        return all(c in ALL_PUNCTUATION or c.isdigit() or c.isascii() for c in token)
+        return all(c in ALL_PUNCTUATION or c.isdigit() or c.isascii()
+                   or ChineseSegmenter._is_non_cjk_letter(c) for c in token)
+
+    @staticmethod
+    def _is_non_cjk_letter(c: str) -> bool:
+        """Check if character is a non-CJK letter (e.g. accented Latin from pinyin)."""
+        return c.isalpha() and not ('\u4e00' <= c <= '\u9fff')

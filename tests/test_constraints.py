@@ -131,3 +131,181 @@ class TestGradedReaderCompliance:
                 f"{f.name} has only {result.total_tokens} tokens "
                 f"(minimum {expected_min} for HSK {level})"
             )
+
+
+class TestOutputGradedReaderCompliance:
+    """Validate that all output/ graded readers pass the 95/5 vocabulary rule.
+
+    Covers: 三国演义, 聊斋志异, 唐诗, 西游记 at HSK levels 1-6.
+    Each book has a glossary.txt defining proper nouns and essential story terms
+    that are explicitly taught in the reader and excluded from the vocabulary count.
+    """
+
+    EXPECTED_BOOKS = ["sanguoyanyi", "liaozhai", "tangshi", "xiyouji"]
+
+    @pytest.fixture(scope="class")
+    def output_files(self):
+        output_dir = Path(__file__).parent.parent / "output"
+        files = sorted(output_dir.glob("*/hsk*_*.md"))
+        return files
+
+    @staticmethod
+    def _load_glossary(book_dir: Path) -> set[str]:
+        """Load glossary words from a book's glossary.txt file."""
+        glossary_path = book_dir / "glossary.txt"
+        words = set()
+        if glossary_path.exists():
+            for line in glossary_path.read_text("utf-8").splitlines():
+                line = line.strip()
+                if line and not line.startswith("#"):
+                    words.add(line)
+        # Also add all single characters from multi-char glossary words
+        # so segmentation splits are also covered
+        char_additions = set()
+        for w in words:
+            if len(w) > 1:
+                for ch in w:
+                    if '\u4e00' <= ch <= '\u9fff':
+                        char_additions.add(ch)
+        words.update(char_additions)
+        return words
+
+    @staticmethod
+    def _load_taught_vocab(book_dir: Path, level: int) -> set[str]:
+        """Load per-level taught vocabulary from taught_vocab.txt.
+
+        Each graded reader level explicitly teaches certain above-level words.
+        These are listed in the reader's vocabulary section and should not
+        count as violations.
+        """
+        vocab_path = book_dir / "taught_vocab.txt"
+        words = set()
+        if not vocab_path.exists():
+            return words
+        in_level = False
+        for line in vocab_path.read_text("utf-8").splitlines():
+            line = line.strip()
+            if line.startswith("## HSK"):
+                file_level = int(line.split()[-1])
+                in_level = (file_level == level)
+                continue
+            if in_level and line and not line.startswith("#"):
+                word = line.split("\t")[0]
+                words.add(word)
+        return words
+
+    def _extract_chinese(self, filepath: Path) -> str:
+        """Extract Chinese narrative content, stripping metadata and original poems."""
+        text = filepath.read_text("utf-8")
+        lines = text.split("\n")
+        filtered = []
+        in_original_poem = False
+        for line in lines:
+            stripped = line.strip()
+            # Skip markdown headers, bold lines, horizontal rules
+            if stripped.startswith("#") or stripped.startswith("**") or stripped == "---":
+                # Detect start of original poem section
+                if "原文" in stripped:
+                    in_original_poem = True
+                elif stripped.startswith("**") and "原文" not in stripped:
+                    in_original_poem = False
+                continue
+            # Skip original classical poem lines (short, comma-separated verse)
+            if in_original_poem:
+                # Classical poem lines are typically short with Chinese punctuation
+                if len(stripped) <= 30 and ("，" in stripped or "。" in stripped or stripped == ""):
+                    continue
+                else:
+                    in_original_poem = False
+            if stripped:
+                filtered.append(line)
+        return "\n".join(filtered)
+
+    def _extract_level(self, filepath: Path) -> int:
+        match = re.match(r"hsk(\d+)", filepath.name)
+        assert match, f"Cannot extract level from {filepath.name}"
+        return int(match.group(1))
+
+    def _extract_book(self, filepath: Path) -> str:
+        return filepath.parent.name
+
+    def test_output_files_exist(self, output_files):
+        """All 4 books should have readers for HSK levels 1-6 (24 files)."""
+        book_levels = {}
+        for f in output_files:
+            book = self._extract_book(f)
+            level = self._extract_level(f)
+            book_levels.setdefault(book, set()).add(level)
+        for book in self.EXPECTED_BOOKS:
+            assert book in book_levels, f"Missing output for {book}"
+            for lvl in [1, 2, 3, 4, 5, 6]:
+                assert lvl in book_levels[book], (
+                    f"Missing HSK {lvl} for {book}"
+                )
+
+    @pytest.mark.parametrize("book", EXPECTED_BOOKS)
+    def test_book_passes_constraint(self, book, output_files):
+        """Each book's readers must pass the 95/5 vocabulary rule at every level.
+
+        Following standard graded reader practice, two categories of words
+        are excluded from above-level counts:
+        - Glossary words: proper nouns and essential story terms (book-wide)
+        - Taught vocabulary: words explicitly taught at each level
+        """
+        output_dir = Path(__file__).parent.parent / "output"
+        glossary = self._load_glossary(output_dir / book)
+        book_files = [f for f in output_files if self._extract_book(f) == book]
+        failures = []
+        for f in book_files:
+            chinese = self._extract_chinese(f)
+            level = self._extract_level(f)
+            taught = self._load_taught_vocab(output_dir / book, level)
+            allowed = glossary | taught
+            result = check_vocabulary_constraint(
+                chinese, level, allowed_words=allowed
+            )
+            if not result.passes:
+                failures.append(
+                    f"  {f.name}: {result.above_level_ratio*100:.1f}% above-level "
+                    f"(max {MAX_ABOVE_LEVEL_RATIO*100:.0f}%), "
+                    f"top words: {result.above_level_words[:10]}"
+                )
+        assert not failures, (
+            f"{book} readers failing 95/5 rule:\n" + "\n".join(failures)
+        )
+
+    def test_output_readers_have_minimum_length(self, output_files):
+        """Output readers should have substantial content."""
+        min_tokens = {1: 200, 2: 300, 3: 500, 4: 1000, 5: 1500, 6: 2000}
+        failures = []
+        for f in output_files:
+            chinese = self._extract_chinese(f)
+            level = self._extract_level(f)
+            result = check_vocabulary_constraint(chinese, level)
+            expected_min = min_tokens.get(level, 200)
+            if result.total_tokens < expected_min:
+                failures.append(
+                    f"  {f.parent.name}/{f.name}: {result.total_tokens} tokens "
+                    f"(minimum {expected_min} for HSK {level})"
+                )
+        assert not failures, (
+            "Readers below minimum length:\n" + "\n".join(failures)
+        )
+
+    def test_higher_levels_are_longer(self, output_files):
+        """For each book, higher HSK levels should generally have more content."""
+        books = {}
+        for f in output_files:
+            book = self._extract_book(f)
+            level = self._extract_level(f)
+            chinese = self._extract_chinese(f)
+            result = check_vocabulary_constraint(chinese, level)
+            books.setdefault(book, {})[level] = result.total_tokens
+
+        for book, levels in books.items():
+            # HSK 1 should be shorter than HSK 6
+            if 1 in levels and 6 in levels:
+                assert levels[1] < levels[6], (
+                    f"{book}: HSK 1 ({levels[1]} tokens) should be shorter "
+                    f"than HSK 6 ({levels[6]} tokens)"
+                )
