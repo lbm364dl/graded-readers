@@ -1,0 +1,83 @@
+{
+  "standard": "《国际中文教育中文水平等级标准》(GF0025-2021)",
+  "version": "HSK 3.0",
+  "levels": [
+    {
+      "level": 1,
+      "band": "elementary",
+      "new_words": 500,
+      "cumulative_words": 500,
+      "new_characters": 300,
+      "cumulative_characters": 300,
+      "target_sentence_length": {"min": 3, "max": 8},
+      "target_text_length": {"short": 50, "medium": 100, "long": 200},
+      "description": "Basic greetings, numbers, dates, simple daily topics"
+    },
+    {
+      "level": 2,
+      "band": "elementary",
+      "new_words": 772,
+      "cumulative_words": 1272,
+      "new_characters": 300,
+      "cumulative_characters": 600,
+      "target_sentence_length": {"min": 5, "max": 12},
+      "target_text_length": {"short": 80, "medium": 200, "long": 400},
+      "description": "Daily routines, shopping, transport, weather"
+    },
+    {
+      "level": 3,
+      "band": "elementary",
+      "new_words": 973,
+      "cumulative_words": 2245,
+      "new_characters": 300,
+      "cumulative_characters": 900,
+      "target_sentence_length": {"min": 6, "max": 15},
+      "target_text_length": {"short": 150, "medium": 400, "long": 800},
+      "description": "Social interactions, travel, hobbies, simple narratives"
+    },
+    {
+      "level": 4,
+      "band": "intermediate",
+      "new_words": 1000,
+      "cumulative_words": 3245,
+      "new_characters": 300,
+      "cumulative_characters": 1200,
+      "target_sentence_length": {"min": 8, "max": 20},
+      "target_text_length": {"short": 300, "medium": 600, "long": 1200},
+      "description": "Work, education, culture, opinions and discussions"
+    },
+    {
+      "level": 5,
+      "band": "intermediate",
+      "new_words": 1071,
+      "cumulative_words": 4316,
+      "new_characters": 300,
+      "cumulative_characters": 1500,
+      "target_sentence_length": {"min": 10, "max": 25},
+      "target_text_length": {"short": 400, "medium": 800, "long": 1500},
+      "description": "Society, media, abstract topics, longer narratives"
+    },
+    {
+      "level": 6,
+      "band": "intermediate",
+      "new_words": 1140,
+      "cumulative_words": 5456,
+      "new_characters": 300,
+      "cumulative_characters": 1800,
+      "target_sentence_length": {"min": 10, "max": 30},
+      "target_text_length": {"short": 500, "medium": 1000, "long": 2000},
+      "description": "Complex social topics, literature, formal language"
+    },
+    {
+      "level": 7,
+      "band": "advanced",
+      "new_words": 5636,
+      "cumulative_words": 11092,
+      "new_characters": 1200,
+      "cumulative_characters": 3000,
+      "target_sentence_length": {"min": 10, "max": 40},
+      "target_text_length": {"short": 800, "medium": 1500, "long": 3000},
+      "description": "Academic, literary, professional topics, near-native complexity"
+    }
+  ]
+}
