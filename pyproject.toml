@@ -1,0 +1,18 @@
+[project]
+name = "hsk-graded-readers"
+version = "0.1.0"
+description = "Generate and validate Chinese graded readers by HSK 3.0 level"
+requires-python = ">=3.10"
+dependencies = [
+    "jieba>=0.42.1",
+    "pypinyin>=0.53.0",
+    "ebooklib>=0.18",
+    "pdfplumber>=0.11.0",
+]
+
+[project.scripts]
+hsk-reader = "src.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
