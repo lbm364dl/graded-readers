@@ -255,13 +255,6 @@ class TestOutputGradedReaderCompliance:
                     f"Missing HSK {lvl} for {book}"
                 )
 
-    # Books that currently exceed 5% even with glossary+taught_vocab.
-    # These contain embedded classical text (poetry) or domain-specific
-    # vocabulary that is essential to the content. Tracked as known debt.
-    _BOOKS_EXCEEDING_STRICT = {
-        "sanguoyanyi", "tangshi", "songci", "shijing", "chuci",
-    }
-
     @pytest.mark.parametrize("book", EXPECTED_BOOKS)
     def test_book_passes_constraint_with_glossary(self, book, output_files):
         """Each book's readers must pass the 95/5 vocabulary rule at every level.
@@ -270,13 +263,7 @@ class TestOutputGradedReaderCompliance:
         are excluded from above-level counts:
         - Glossary words: proper nouns and essential story terms (book-wide)
         - Taught vocabulary: words explicitly taught at each level
-
-        Books with embedded classical text are marked xfail (known debt).
         """
-        if book in self._BOOKS_EXCEEDING_STRICT:
-            pytest.xfail(
-                f"{book} exceeds strict 95/5 due to embedded classical text / domain vocabulary"
-            )
         output_dir = Path(__file__).parent.parent / "output"
         glossary = self._load_glossary(output_dir / book)
         book_files = [f for f in output_files if self._extract_book(f) == book]
@@ -528,17 +515,9 @@ class TestCharacterComplianceOutput:
     def _extract_book(self, filepath: Path) -> str:
         return filepath.parent.name
 
-    _BOOKS_EXCEEDING_STRICT = {
-        "songci", "shijing",
-    }
-
     @pytest.mark.parametrize("book", EXPECTED_BOOKS)
     def test_book_passes_character_constraint(self, book, output_files):
         """Each book's readers must have >=95% known characters at every level."""
-        if book in self._BOOKS_EXCEEDING_STRICT:
-            pytest.xfail(
-                f"{book} exceeds strict character 95/5 due to embedded classical text"
-            )
         output_dir = Path(__file__).parent.parent / "output"
         book_files = [f for f in output_files if self._extract_book(f) == book]
         failures = []

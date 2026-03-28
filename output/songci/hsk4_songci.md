@@ -2,11 +2,15 @@
 
 **HSK Level 4**
 
+**原词：**
+
 ---
 
 ## 1. 水调歌头 — 苏轼
 
 **Prelude to Water Melody — When Will the Moon Be Clear and Bright?**
+
+**原词：**
 
 明月几时有？把酒问青天。
 不知天上宫阙，今夕是何年。
@@ -61,6 +65,8 @@
 
 **Like a Dream — I Often Remember the Sunset by the Stream**
 
+**原词：**
+
 常记溪亭日暮，沉醉不知归路。
 兴尽晚回舟，误入藕花深处。
 争渡，争渡，惊起一滩鸥鹭。
@@ -104,6 +110,8 @@
 ## 3. 青玉案 — 辛弃疾
 
 **Green Jade Cup — The Lantern Festival**
+
+**原词：**
 
 东风夜放花千树，更吹落、星如雨。
 宝马雕车香满路。凤箫声动，玉壶光转，一夜鱼龙舞。
@@ -150,6 +158,8 @@
 
 **Remembering Ancient Splendor — Red Cliff Reflections**
 
+**原词：**
+
 大江东去，浪淘尽、千古风流人物。
 故垒西边，人道是、三国周瑜赤壁。
 乱石穿空，惊涛拍岸，卷起千堆雪。
@@ -192,6 +202,8 @@
 ## 5. 虞美人 — 李煜
 
 **Lady Yu — When Will the Spring Flowers and Autumn Moon End?**
+
+**原词：**
 
 春花秋月何时了？往事知多少。
 小楼昨夜又东风，故国不堪回首月明中。
@@ -237,6 +249,8 @@
 ## 6. 雨霖铃 — 柳永
 
 **Bells Ringing in the Rain — Parting at the Long Pavilion**
+
+**原词：**
 
 寒蝉凄切，对长亭晚，骤雨初歇。
 都门帐饮无绪，留恋处、兰舟催发。
@@ -285,6 +299,8 @@
 
 **The River All Red — A Warrior's Song**
 
+**原词：**
+
 怒发冲冠，凭栏处、潇潇雨歇。
 抬望眼，仰天长啸，壮怀激烈。
 三十功名尘与土，八千里路云和月。
@@ -315,6 +331,8 @@
 
 **Phoenix Hairpin — The Garden Reunion**
 
+**原词：**
+
 红酥手，黄縢酒，满城春色宫墙柳。
 东风恶，欢情薄。一怀愁绪，几年离索。
 错、错、错。
@@ -344,6 +362,8 @@
 ## 9. 声声慢 — 李清照
 
 **Slow, Slow Tune — Searching and Seeking**
+
+**原词：**
 
 寻寻觅觅，冷冷清清，凄凄惨惨戚戚。
 乍暖还寒时候，最难将息。
@@ -381,8 +401,9 @@
 
 **Silk-Washing Stream — Time Cannot Be Held**
 
-一曲新词酒一杯，去年天气旧亭台。
-夕阳西下几时回？
+**原词：**
+
+一曲新词酒一杯，去年天气旧亭台。夕阳西下几时回？
 
 无可奈何花落去，似曾相识燕归来。
 小园香径独徘徊。
@@ -408,6 +429,8 @@
 ## 11. 鹊桥仙 — 秦观
 
 **The Fairy of the Magpie Bridge — The Night of Sevens**
+
+**原词：**
 
 纤云弄巧，飞星传恨，银汉迢迢暗度。
 金风玉露一相逢，便胜却、人间无数。
@@ -447,6 +470,8 @@
 ## 12. 渔家傲 — 范仲淹
 
 **The Fisherman's Pride — Autumn at the Frontier**
+
+**原词：**
 
 塞下秋来风景异，衡阳雁去无留意。
 四面边声连角起。千嶂里，长烟落日孤城闭。
