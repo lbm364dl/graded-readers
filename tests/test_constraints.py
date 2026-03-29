@@ -150,6 +150,7 @@ class TestOutputGradedReaderCompliance:
         "hongloumeng", "shuihuzhuan", "sunzibingfa",
         "chengyugushi", "minjiangushi",
         "songci", "shijing", "chuci",
+        "lunyu", "shishuoxinyu", "guwenguanzhi",
     ]
 
     @pytest.fixture(scope="class")
@@ -448,6 +449,7 @@ class TestCharacterComplianceOutput:
         "hongloumeng", "shuihuzhuan", "sunzibingfa",
         "chengyugushi", "minjiangushi",
         "songci", "shijing", "chuci",
+        "lunyu", "shishuoxinyu", "guwenguanzhi",
     ]
 
     @pytest.fixture(scope="class")
