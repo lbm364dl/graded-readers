@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'data.dart';
 import 'theme.dart';
 import 'screens/home_screen.dart';
+import 'services/dictionary_service.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await DictionaryService.instance.initialize();
   runApp(const HskGradedApp());
 }
 

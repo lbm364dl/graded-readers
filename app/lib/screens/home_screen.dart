@@ -3,6 +3,7 @@ import '../data.dart';
 import '../models.dart';
 import '../theme.dart';
 import 'book_screen.dart';
+import 'vocabulary_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   final ContentRepository repo;
@@ -22,20 +23,20 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: const Text('HSK 分级阅读'),
       ),
-      body: FutureBuilder<List<Book>>(
-        future: widget.repo.loadBooks(),
-        builder: (context, snapshot) {
-          if (!snapshot.hasData) {
-            return const Center(child: CircularProgressIndicator());
-          }
-          final books = snapshot.data!;
-          if (_selectedTab == 0) {
-            return _buildLibrary(books);
-          } else {
-            return _buildByLevel(books);
-          }
-        },
-      ),
+      body: _selectedTab == 2
+          ? const VocabularyScreen()
+          : FutureBuilder<List<Book>>(
+              future: widget.repo.loadBooks(),
+              builder: (context, snapshot) {
+                if (!snapshot.hasData) {
+                  return const Center(child: CircularProgressIndicator());
+                }
+                final books = snapshot.data!;
+                return _selectedTab == 0
+                    ? _buildLibrary(books)
+                    : _buildByLevel(books);
+              },
+            ),
       bottomNavigationBar: NavigationBar(
         selectedIndex: _selectedTab,
         onDestinationSelected: (i) => setState(() => _selectedTab = i),
@@ -49,6 +50,11 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: Icon(Icons.bar_chart_outlined),
             selectedIcon: Icon(Icons.bar_chart),
             label: '按级别',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.bookmark_border_outlined),
+            selectedIcon: Icon(Icons.bookmark),
+            label: '词汇',
           ),
         ],
       ),
