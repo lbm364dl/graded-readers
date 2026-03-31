@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models.dart';
 import '../theme.dart';
+import '../services/dictionary_service.dart';
+import '../services/segmenter.dart';
+import '../services/vocabulary_service.dart';
 
 class ReaderScreen extends StatefulWidget {
   final Reader reader;
@@ -30,10 +34,13 @@ class _ReaderScreenState extends State<ReaderScreen> {
     _currentChapter = widget.initialChapter;
     _pageController = PageController(initialPage: _currentChapter);
     _loadPreferences();
+    // Pre-warm vocabulary cache so isSaved() works synchronously in sheets
+    VocabularyService.instance.loadWords();
   }
 
   Future<void> _loadPreferences() async {
     final prefs = await SharedPreferences.getInstance();
+    if (!mounted) return;
     setState(() {
       _fontSize = prefs.getDouble('reader_font_size') ?? 20.0;
     });
@@ -48,6 +55,18 @@ class _ReaderScreenState extends State<ReaderScreen> {
   void dispose() {
     _pageController.dispose();
     super.dispose();
+  }
+
+  void _showWordDefinition(String word) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      useSafeArea: true,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (_) => _WordDefinitionSheet(word: word),
+    );
   }
 
   @override
@@ -94,6 +113,7 @@ class _ReaderScreenState extends State<ReaderScreen> {
             fontSize: _fontSize,
             isDark: isDark,
             level: widget.reader.level,
+            onWordTap: _showWordDefinition,
           );
         },
       ),
@@ -105,9 +125,7 @@ class _ReaderScreenState extends State<ReaderScreen> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       decoration: BoxDecoration(
-        border: Border(
-          top: BorderSide(color: Colors.grey[300]!),
-        ),
+        border: Border(top: BorderSide(color: Colors.grey[300]!)),
       ),
       child: SafeArea(
         child: Row(
@@ -115,18 +133,17 @@ class _ReaderScreenState extends State<ReaderScreen> {
           children: [
             TextButton.icon(
               onPressed: _currentChapter > 0
-                  ? () {
-                      _pageController.previousPage(
+                  ? () => _pageController.previousPage(
                         duration: const Duration(milliseconds: 300),
                         curve: Curves.easeInOut,
-                      );
-                    }
+                      )
                   : null,
               icon: const Icon(Icons.arrow_back_ios, size: 16),
               label: const Text('上一章'),
             ),
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
               decoration: BoxDecoration(
                 color: AppTheme.levelColor(widget.reader.level),
                 borderRadius: BorderRadius.circular(12),
@@ -143,12 +160,10 @@ class _ReaderScreenState extends State<ReaderScreen> {
             TextButton.icon(
               onPressed:
                   _currentChapter < widget.reader.chapters.length - 1
-                      ? () {
-                          _pageController.nextPage(
+                      ? () => _pageController.nextPage(
                             duration: const Duration(milliseconds: 300),
                             curve: Curves.easeInOut,
-                          );
-                        }
+                          )
                       : null,
               icon: const Icon(Icons.arrow_forward_ios, size: 16),
               label: const Text('下一章'),
@@ -160,17 +175,21 @@ class _ReaderScreenState extends State<ReaderScreen> {
   }
 }
 
+// ---------------------------------------------------------------------------
+
 class _ChapterView extends StatelessWidget {
   final Chapter chapter;
   final double fontSize;
   final bool isDark;
   final int level;
+  final void Function(String) onWordTap;
 
   const _ChapterView({
     required this.chapter,
     required this.fontSize,
     required this.isDark,
     required this.level,
+    required this.onWordTap,
   });
 
   @override
@@ -180,7 +199,6 @@ class _ChapterView extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Chapter title
           Text(
             chapter.title,
             style: TextStyle(
@@ -190,11 +208,11 @@ class _ChapterView extends StatelessWidget {
             ),
           ),
           const Divider(height: 24),
-          // Chapter content - render with basic markdown support
-          _RichContent(
+          _InteractiveContent(
             text: chapter.content,
             fontSize: fontSize,
             isDark: isDark,
+            onWordTap: onWordTap,
           ),
           const SizedBox(height: 60),
         ],
@@ -203,56 +221,430 @@ class _ChapterView extends StatelessWidget {
   }
 }
 
-class _RichContent extends StatelessWidget {
+// ---------------------------------------------------------------------------
+
+class _InteractiveContent extends StatefulWidget {
   final String text;
   final double fontSize;
   final bool isDark;
+  final void Function(String) onWordTap;
 
-  const _RichContent({
+  const _InteractiveContent({
     required this.text,
     required this.fontSize,
     required this.isDark,
+    required this.onWordTap,
   });
 
   @override
+  State<_InteractiveContent> createState() => _InteractiveContentState();
+}
+
+class _InteractiveContentState extends State<_InteractiveContent> {
+  // paragraph text → pre-segmented tokens
+  late Map<String, List<String>> _segments;
+
+  @override
+  void initState() {
+    super.initState();
+    _segments = _buildSegments();
+  }
+
+  @override
+  void didUpdateWidget(_InteractiveContent old) {
+    super.didUpdateWidget(old);
+    if (old.text != widget.text) {
+      _segments = _buildSegments();
+    }
+  }
+
+  Map<String, List<String>> _buildSegments() {
+    final dict = DictionaryService.instance;
+    final result = <String, List<String>>{};
+    for (final para in widget.text.split('\n\n')) {
+      final trimmed = para.trim();
+      if (trimmed.isEmpty) continue;
+      result[trimmed] = segmentText(trimmed, dict);
+    }
+    return result;
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final paragraphs = text.split('\n\n');
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: paragraphs.map((para) {
-        final trimmed = para.trim();
-        if (trimmed.isEmpty) return const SizedBox.shrink();
+      children: _segments.entries
+          .map((e) => _buildParagraph(e.key, e.value))
+          .toList(),
+    );
+  }
 
-        // Bold text (simple ** support)
-        if (trimmed.startsWith('**') && trimmed.contains('**')) {
-          return Padding(
-            padding: const EdgeInsets.only(bottom: 12),
-            child: Text(
-              trimmed.replaceAll('**', ''),
+  Widget _buildParagraph(String para, List<String> tokens) {
+    // Section heading (** ... **)
+    if (para.startsWith('**') && para.contains('**')) {
+      return Padding(
+        padding: const EdgeInsets.only(bottom: 12),
+        child: Text(
+          para.replaceAll('**', ''),
+          style: TextStyle(
+            fontSize: widget.fontSize - 2,
+            fontWeight: FontWeight.bold,
+            color: widget.isDark ? Colors.grey[300] : Colors.grey[700],
+            height: 1.6,
+          ),
+        ),
+      );
+    }
+
+    final baseStyle = TextStyle(
+      fontSize: widget.fontSize,
+      height: 1.8,
+      letterSpacing: 0.5,
+      color: widget.isDark ? Colors.grey[200] : AppTheme.textPrimary,
+    );
+
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16),
+      child: Wrap(
+        spacing: 0,
+        runSpacing: 0,
+        children: tokens.map((token) => _buildToken(token, baseStyle)).toList(),
+      ),
+    );
+  }
+
+  Widget _buildToken(String token, TextStyle style) {
+    final isChineseWord = token.isNotEmpty &&
+        _isChinese(token.codeUnitAt(0)) &&
+        DictionaryService.instance.isReady;
+
+    if (!isChineseWord) {
+      return Text(token, style: style);
+    }
+
+    return _TappableWord(
+      word: token,
+      style: style,
+      onTap: () => widget.onWordTap(token),
+    );
+  }
+
+  bool _isChinese(int code) =>
+      (code >= 0x4E00 && code <= 0x9FFF) ||
+      (code >= 0x3400 && code <= 0x4DBF) ||
+      (code >= 0xF900 && code <= 0xFAFF);
+}
+
+// ---------------------------------------------------------------------------
+
+class _TappableWord extends StatefulWidget {
+  final String word;
+  final TextStyle style;
+  final VoidCallback onTap;
+
+  const _TappableWord({
+    required this.word,
+    required this.style,
+    required this.onTap,
+  });
+
+  @override
+  State<_TappableWord> createState() => _TappableWordState();
+}
+
+class _TappableWordState extends State<_TappableWord> {
+  bool _pressed = false;
+
+  void _copyToClipboard() {
+    Clipboard.setData(ClipboardData(text: widget.word));
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('已复制 "${widget.word}"'),
+        duration: const Duration(seconds: 1),
+        behavior: SnackBarBehavior.floating,
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTapDown: (_) => setState(() => _pressed = true),
+      onTapUp: (_) {
+        setState(() => _pressed = false);
+        widget.onTap();
+      },
+      onTapCancel: () => setState(() => _pressed = false),
+      onLongPress: _copyToClipboard,
+      child: Container(
+        decoration: _pressed
+            ? BoxDecoration(
+                color: AppTheme.primary.withValues(alpha: 0.15),
+                borderRadius: BorderRadius.circular(3),
+              )
+            : null,
+        child: Text(widget.word, style: widget.style),
+      ),
+    );
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Word definition bottom sheet
+// ---------------------------------------------------------------------------
+
+class _WordDefinitionSheet extends StatefulWidget {
+  final String word;
+
+  const _WordDefinitionSheet({required this.word});
+
+  @override
+  State<_WordDefinitionSheet> createState() => _WordDefinitionSheetState();
+}
+
+class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
+  bool _saved = false;
+  bool _loading = false;
+  DictEntry? _entry;
+
+  @override
+  void initState() {
+    super.initState();
+    _entry = DictionaryService.instance.lookup(widget.word);
+    _saved = VocabularyService.instance.isSaved(widget.word);
+  }
+
+  List<Widget> _buildCharBreakdown(String word, bool isDark) {
+    final dict = DictionaryService.instance;
+    final widgets = <Widget>[];
+    for (int i = 0; i < word.length; i++) {
+      final ch = word[i];
+      final charEntry = dict.lookup(ch);
+      widgets.add(Padding(
+        padding: const EdgeInsets.only(bottom: 8),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              ch,
               style: TextStyle(
-                fontSize: fontSize - 2,
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
-                color: isDark ? Colors.grey[300] : Colors.grey[700],
-                height: 1.6,
+                color: AppTheme.primary,
               ),
             ),
-          );
-        }
+            const SizedBox(width: 10),
+            Expanded(
+              child: charEntry == null
+                  ? Text('—',
+                      style: TextStyle(color: Colors.grey[400], fontSize: 14))
+                  : Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        if (charEntry.pinyin.isNotEmpty)
+                          Text(charEntry.pinyin,
+                              style: TextStyle(
+                                  fontSize: 13,
+                                  color: AppTheme.primary,
+                                  fontStyle: FontStyle.italic)),
+                        if (charEntry.definitions.isNotEmpty)
+                          Text(
+                            charEntry.definitions.first,
+                            style: TextStyle(
+                              fontSize: 13,
+                              color: isDark
+                                  ? Colors.grey[300]
+                                  : Colors.grey[700],
+                            ),
+                          ),
+                      ],
+                    ),
+            ),
+          ],
+        ),
+      ));
+    }
+    return widgets;
+  }
 
-        // Regular paragraph
-        return Padding(
-          padding: const EdgeInsets.only(bottom: 16),
-          child: Text(
-            trimmed,
-            style: TextStyle(
-              fontSize: fontSize,
-              height: 1.8,
-              letterSpacing: 0.5,
-              color: isDark ? Colors.grey[200] : AppTheme.textPrimary,
+  Future<void> _toggleSave() async {
+    if (_loading) return;
+    setState(() => _loading = true);
+    final vocab = VocabularyService.instance;
+    if (_saved) {
+      await vocab.removeWord(widget.word);
+    } else {
+      await vocab.saveWord(SavedWord(
+        word: widget.word,
+        pinyin: _entry?.pinyin ?? '',
+        definitions: _entry?.definitions ?? [],
+        savedAt: DateTime.now(),
+      ));
+    }
+    if (!mounted) return;
+    setState(() {
+      _saved = !_saved;
+      _loading = false;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final entry = _entry;
+
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(24, 12, 24, 32),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Drag handle
+          Center(
+            child: Container(
+              width: 40,
+              height: 4,
+              decoration: BoxDecoration(
+                color: Colors.grey[400],
+                borderRadius: BorderRadius.circular(2),
+              ),
             ),
           ),
-        );
-      }).toList(),
+          const SizedBox(height: 20),
+
+          // Word + action buttons row
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      widget.word,
+                      style: const TextStyle(
+                        fontSize: 36,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    if (entry != null && entry.pinyin.isNotEmpty) ...[
+                      const SizedBox(height: 4),
+                      Text(
+                        entry.pinyin,
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: AppTheme.primary,
+                          fontStyle: FontStyle.italic,
+                        ),
+                      ),
+                    ],
+                    if (entry?.hskLevel != null) ...[
+                      const SizedBox(height: 8),
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 8, vertical: 3),
+                        decoration: BoxDecoration(
+                          color: AppTheme.levelColor(entry!.hskLevel!),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Text(
+                          'HSK ${entry.hskLevel}',
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ],
+                ),
+              ),
+              // Copy button
+              IconButton(
+                onPressed: () {
+                  Clipboard.setData(ClipboardData(text: widget.word));
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('已复制 "${widget.word}"'),
+                      duration: const Duration(seconds: 1),
+                      behavior: SnackBarBehavior.floating,
+                    ),
+                  );
+                },
+                icon: const Icon(Icons.copy, size: 20),
+                tooltip: '复制',
+              ),
+              // Save button
+              IconButton(
+                onPressed: _toggleSave,
+                icon: _loading
+                    ? const SizedBox(
+                        width: 20,
+                        height: 20,
+                        child: CircularProgressIndicator(strokeWidth: 2),
+                      )
+                    : Icon(
+                        _saved ? Icons.bookmark : Icons.bookmark_border,
+                        color: _saved ? AppTheme.primary : null,
+                        size: 28,
+                      ),
+                tooltip: _saved ? '从词汇表移除' : '保存到词汇表',
+              ),
+            ],
+          ),
+
+          // Definitions
+          if (entry != null && entry.hasDefinitions) ...[
+            const SizedBox(height: 16),
+            Divider(color: isDark ? Colors.grey[700] : Colors.grey[300]),
+            const SizedBox(height: 8),
+            ...entry.definitions.asMap().entries.map((e) => Padding(
+                  padding: const EdgeInsets.only(bottom: 6),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        '${e.key + 1}. ',
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: isDark ? Colors.grey[400] : Colors.grey[600],
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Expanded(
+                        child: Text(
+                          e.value,
+                          style: const TextStyle(fontSize: 15, height: 1.5),
+                        ),
+                      ),
+                    ],
+                  ),
+                )),
+          ] else ...[
+            const SizedBox(height: 16),
+            // If multi-char word not found, show individual character lookups
+            if (entry == null && widget.word.length > 1) ...[
+              Divider(color: isDark ? Colors.grey[700] : Colors.grey[300]),
+              const SizedBox(height: 8),
+              Text(
+                '未收录此词，各字释义：',
+                style: TextStyle(fontSize: 13, color: Colors.grey[500]),
+              ),
+              const SizedBox(height: 8),
+              ..._buildCharBreakdown(widget.word, isDark),
+            ] else
+              Text(
+                entry == null ? '未找到词典条目' : '暂无释义',
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Colors.grey[500],
+                  fontStyle: FontStyle.italic,
+                ),
+              ),
+          ],
+        ],
+      ),
     );
   }
 }
