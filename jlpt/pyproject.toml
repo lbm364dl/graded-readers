@@ -1,0 +1,16 @@
+[project]
+name = "jlpt-graded-readers"
+version = "0.1.0"
+description = "Generate and validate Japanese graded readers by JLPT level"
+requires-python = ">=3.10"
+dependencies = [
+    "sudachipy>=0.6.7",
+    "sudachidict-small>=20230927",
+]
+
+[project.scripts]
+jlpt-reader = "src.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

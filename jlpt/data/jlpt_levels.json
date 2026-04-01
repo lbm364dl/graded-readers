@@ -1,0 +1,57 @@
+{
+  "standard": "日本語能力試験 (JLPT)",
+  "version": "JLPT Revised Standards (2010–present)",
+  "note": "Internal levels: 1=N5 (easiest) … 5=N1 (hardest), mirroring HSK convention so that level <= target_level gives cumulative vocabulary.",
+  "levels": [
+    {
+      "level": 1,
+      "label": "N5",
+      "band": "beginner",
+      "approximate_new_words": 800,
+      "approximate_kanji": 100,
+      "target_sentence_length": {"min": 3, "max": 8},
+      "target_text_length": {"short": 50, "medium": 100, "long": 200},
+      "description": "Basic greetings, numbers, time, family, simple daily topics. Very short sentences, present/past tense only."
+    },
+    {
+      "level": 2,
+      "label": "N4",
+      "band": "elementary",
+      "approximate_new_words": 700,
+      "approximate_kanji": 200,
+      "target_sentence_length": {"min": 5, "max": 12},
+      "target_text_length": {"short": 80, "medium": 200, "long": 400},
+      "description": "Daily routines, shopping, travel, simple narratives. Te-form connections, plain-form quotation."
+    },
+    {
+      "level": 3,
+      "label": "N3",
+      "band": "intermediate",
+      "approximate_new_words": 2250,
+      "approximate_kanji": 370,
+      "target_sentence_length": {"min": 6, "max": 15},
+      "target_text_length": {"short": 150, "medium": 400, "long": 800},
+      "description": "Social topics, opinions, short narratives. Conditional, relative clauses, ながら, plain-form embedding."
+    },
+    {
+      "level": 4,
+      "label": "N2",
+      "band": "upper-intermediate",
+      "approximate_new_words": 2250,
+      "approximate_kanji": 640,
+      "target_sentence_length": {"min": 8, "max": 20},
+      "target_text_length": {"short": 300, "medium": 600, "long": 1200},
+      "description": "News, business, complex narratives. Passive, causative, literary vocabulary."
+    },
+    {
+      "level": 5,
+      "label": "N1",
+      "band": "advanced",
+      "approximate_new_words": 4000,
+      "approximate_kanji": 1110,
+      "target_sentence_length": {"min": 10, "max": 30},
+      "target_text_length": {"short": 400, "medium": 800, "long": 2000},
+      "description": "Literary texts, classical elements, academic writing. Complex grammar, archaic vocabulary."
+    }
+  ]
+}
