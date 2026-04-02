@@ -603,95 +603,81 @@ class _ContinueReadingCardState extends State<_ContinueReadingCard>
       padding: const EdgeInsets.only(bottom: 16),
       child: Card(
         color: AppTheme.primary.withValues(alpha: 0.06),
-        child: InkWell(
-          borderRadius: BorderRadius.circular(12),
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (_) => ReaderScreen(
-                  reader: r,
-                  initialChapter: p.chapter,
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                '${p.bookTitle} · ${p.levelLabel}',
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+              const SizedBox(height: 8),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(4),
+                child: LinearProgressIndicator(
+                  value: p.progress,
+                  backgroundColor:
+                      AppTheme.primary.withValues(alpha: 0.12),
+                  color: AppTheme.primary,
+                  minHeight: 5,
                 ),
               ),
-            ).then((_) => _load());
-          },
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Row(
-              children: [
-                Icon(Icons.play_circle_fill,
-                    color: AppTheme.primary, size: 36),
-                const SizedBox(width: 14),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        'Continue Reading',
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w600,
-                          color: AppTheme.primary,
-                        ),
+              const SizedBox(height: 4),
+              Text(
+                'Chapter ${p.chapter + 1} of ${p.totalChapters}',
+                style: TextStyle(fontSize: 12, color: Colors.grey[600]),
+              ),
+              const SizedBox(height: 12),
+              Row(
+                children: [
+                  Expanded(
+                    child: FilledButton.icon(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => ReaderScreen(
+                              reader: r,
+                              initialChapter: p.chapter,
+                            ),
+                          ),
+                        ).then((_) => _load());
+                      },
+                      icon: const Icon(Icons.play_arrow_rounded, size: 20),
+                      label: const Text('Continue Reading'),
+                      style: FilledButton.styleFrom(
+                        backgroundColor: AppTheme.primary,
+                        padding: const EdgeInsets.symmetric(vertical: 12),
                       ),
-                      const SizedBox(height: 2),
-                      Text(
-                        '${p.bookTitle} · ${p.levelLabel}',
-                        style: const TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      const SizedBox(height: 4),
-                      // Progress bar
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(4),
-                        child: LinearProgressIndicator(
-                          value: p.progress,
-                          backgroundColor:
-                              AppTheme.primary.withValues(alpha: 0.12),
-                          color: AppTheme.primary,
-                          minHeight: 4,
-                        ),
-                      ),
-                      const SizedBox(height: 2),
-                      Text(
-                        'Chapter ${p.chapter + 1} of ${p.totalChapters}',
-                        style: TextStyle(
-                          fontSize: 11,
-                          color: Colors.grey[600],
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
-                ),
-                const SizedBox(width: 8),
-                Column(
-                  children: [
-                    Icon(Icons.chevron_right, color: Colors.grey[400]),
-                    if (_book != null && widget.onBrowse != null)
-                      const SizedBox(height: 4),
-                    if (_book != null && widget.onBrowse != null)
-                      GestureDetector(
-                        onTap: () {
+                  if (_book != null && widget.onBrowse != null) ...[
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: OutlinedButton.icon(
+                        onPressed: () {
                           widget.onBrowse!(_book!, widget.language);
                         },
-                        child: Text(
-                          'Browse',
-                          style: TextStyle(
-                            fontSize: 11,
-                            color: AppTheme.primary,
-                            fontWeight: FontWeight.w600,
-                          ),
+                        icon: const Icon(Icons.list_rounded, size: 20),
+                        label: const Text('All Levels'),
+                        style: OutlinedButton.styleFrom(
+                          foregroundColor: AppTheme.primary,
+                          side: const BorderSide(color: AppTheme.primary),
+                          padding:
+                              const EdgeInsets.symmetric(vertical: 12),
                         ),
                       ),
+                    ),
                   ],
-                ),
-              ],
-            ),
+                ],
+              ),
+            ],
           ),
         ),
       ),
