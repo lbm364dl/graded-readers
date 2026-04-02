@@ -3,7 +3,9 @@ import '../data.dart';
 import '../main.dart';
 import '../models.dart';
 import '../theme.dart';
+import '../services/progress_service.dart';
 import 'book_screen.dart';
+import 'reader_screen.dart';
 import 'vocabulary_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -79,6 +81,10 @@ class _HomeScreenState extends State<HomeScreen> {
     return ListView(
       padding: const EdgeInsets.all(16),
       children: [
+        _ContinueReadingCard(
+          repo: widget.repo,
+          language: language,
+        ),
         ...mainBooks.map((book) => _BookCard(
               book: book,
               language: language,
@@ -494,5 +500,166 @@ class BookOverviewScreen extends StatelessWidget {
       return '${(count / 1000).toStringAsFixed(1)}k';
     }
     return '$count';
+  }
+}
+
+// ---------------------------------------------------------------------------
+
+class _ContinueReadingCard extends StatefulWidget {
+  final ContentRepository repo;
+  final Language language;
+
+  const _ContinueReadingCard({
+    required this.repo,
+    required this.language,
+  });
+
+  @override
+  State<_ContinueReadingCard> createState() => _ContinueReadingCardState();
+}
+
+class _ContinueReadingCardState extends State<_ContinueReadingCard>
+    with WidgetsBindingObserver {
+  ReadingProgress? _progress;
+  Reader? _reader;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+    _load();
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed) _load();
+  }
+
+  @override
+  void didUpdateWidget(_ContinueReadingCard old) {
+    super.didUpdateWidget(old);
+    _load();
+  }
+
+  Future<void> _load() async {
+    final progress = await ProgressService.instance.getLastRead();
+    if (!mounted) return;
+    if (progress == null) {
+      setState(() {
+        _progress = null;
+        _reader = null;
+      });
+      return;
+    }
+
+    // Find the matching reader
+    final readers = await widget.repo.loadReaders(widget.language);
+    final reader = readers.cast<Reader?>().firstWhere(
+          (r) => r!.id == progress.readerId,
+          orElse: () => null,
+        );
+
+    if (!mounted) return;
+    setState(() {
+      // Only show if the reader belongs to the current language
+      if (reader != null) {
+        _progress = progress;
+        _reader = reader;
+      } else {
+        _progress = null;
+        _reader = null;
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (_progress == null || _reader == null) return const SizedBox.shrink();
+    final p = _progress!;
+    final r = _reader!;
+
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16),
+      child: Card(
+        color: AppTheme.primary.withValues(alpha: 0.06),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(12),
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => ReaderScreen(
+                  reader: r,
+                  initialChapter: p.chapter,
+                ),
+              ),
+            ).then((_) => _load());
+          },
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Row(
+              children: [
+                Icon(Icons.play_circle_fill,
+                    color: AppTheme.primary, size: 36),
+                const SizedBox(width: 14),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Continue Reading',
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w600,
+                          color: AppTheme.primary,
+                        ),
+                      ),
+                      const SizedBox(height: 2),
+                      Text(
+                        '${p.bookTitle} · ${p.levelLabel}',
+                        style: const TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      const SizedBox(height: 4),
+                      // Progress bar
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(4),
+                        child: LinearProgressIndicator(
+                          value: p.progress,
+                          backgroundColor:
+                              AppTheme.primary.withValues(alpha: 0.12),
+                          color: AppTheme.primary,
+                          minHeight: 4,
+                        ),
+                      ),
+                      const SizedBox(height: 2),
+                      Text(
+                        'Chapter ${p.chapter + 1} of ${p.totalChapters}',
+                        style: TextStyle(
+                          fontSize: 11,
+                          color: Colors.grey[600],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(width: 8),
+                Icon(Icons.chevron_right, color: Colors.grey[400]),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

@@ -6,6 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../models.dart';
 import '../theme.dart';
 import '../services/dictionary_service.dart';
+import '../services/progress_service.dart';
 import '../services/segmenter.dart';
 import '../services/vocabulary_service.dart';
 
@@ -58,6 +59,7 @@ class _ReaderScreenState extends State<ReaderScreen> {
     _pageController = PageController(initialPage: _currentChapter);
     _loadPreferences();
     VocabularyService.instance.loadWords();
+    _saveProgress();
   }
 
   Future<void> _loadPreferences() async {
@@ -71,6 +73,18 @@ class _ReaderScreenState extends State<ReaderScreen> {
   Future<void> _saveFontSize() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setDouble('reader_font_size', _fontSize);
+  }
+
+  void _saveProgress() {
+    ProgressService.instance.saveProgress(ReadingProgress(
+      readerId: widget.reader.id,
+      bookTitle: widget.reader.bookTitle,
+      bookTitleEn: widget.reader.bookTitleEn,
+      levelLabel: widget.reader.levelLabel,
+      chapter: _currentChapter,
+      totalChapters: widget.reader.chapters.length,
+      lastRead: DateTime.now(),
+    ));
   }
 
   @override
@@ -136,6 +150,7 @@ class _ReaderScreenState extends State<ReaderScreen> {
         itemCount: widget.reader.chapters.length,
         onPageChanged: (index) {
           setState(() => _currentChapter = index);
+          _saveProgress();
         },
         itemBuilder: (context, index) {
           final ch = widget.reader.chapters[index];
