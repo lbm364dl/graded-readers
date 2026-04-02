@@ -117,74 +117,83 @@ class _ReaderScreenState extends State<ReaderScreen> {
   int _initialPage = 0;
   double _lastAvailableHeight = 0;
 
-  // Chapter segmentation cache (doesn't depend on page height)
-  late List<_ChapterSegmented> _segmentedChapters;
+  // Lazy chapter segmentation cache
+  final Map<int, _ChapterSegmented> _segmentCache = {};
 
   @override
   void initState() {
     super.initState();
-    _segmentChapters();
     _loadPreferences();
     VocabularyService.instance.loadWords();
   }
 
-  void _segmentChapters() {
+  _ChapterSegmented _getSegmented(int chapterIndex) {
+    if (_segmentCache.containsKey(chapterIndex)) {
+      return _segmentCache[chapterIndex]!;
+    }
+
     final dict = DictionaryService.instance;
-    _segmentedChapters = [];
+    final ch = widget.reader.chapters[chapterIndex];
+    final paragraphs = <_ParagraphData>[];
+    final allCjk = <String>[];
 
-    for (int ci = 0; ci < widget.reader.chapters.length; ci++) {
-      final ch = widget.reader.chapters[ci];
-      final paragraphs = <_ParagraphData>[];
-      final allCjk = <String>[];
+    for (final para in ch.content.split('\n\n')) {
+      final trimmed = para.trim();
+      if (trimmed.isEmpty) continue;
 
-      for (final para in ch.content.split('\n\n')) {
-        final trimmed = para.trim();
-        if (trimmed.isEmpty) continue;
+      final isHeading = trimmed.startsWith('**') && trimmed.contains('**');
+      final tokens = segmentText(trimmed, dict);
 
-        final isHeading = trimmed.startsWith('**') && trimmed.contains('**');
-        final tokens = segmentText(trimmed, dict);
-
-        final tokenEntries = <_TokenEntry>[];
-        int charOffset = 0;
-        for (final t in tokens) {
-          final isCjk = t.isNotEmpty && _isCJK(t.codeUnitAt(0));
-          tokenEntries.add(_TokenEntry(
-            text: t,
-            isCjk: isCjk,
-            globalIndex: isCjk ? allCjk.length : -1,
-            startOffset: charOffset,
-            endOffset: charOffset + t.length,
-          ));
-          charOffset += t.length;
-          if (isCjk) allCjk.add(t);
-        }
-
-        paragraphs.add(_ParagraphData(
-          raw: trimmed,
-          plainText: tokens.join(),
-          isHeading: isHeading,
-          tokens: tokenEntries,
+      final tokenEntries = <_TokenEntry>[];
+      int charOffset = 0;
+      for (final t in tokens) {
+        final isCjk = t.isNotEmpty && _isCJK(t.codeUnitAt(0));
+        tokenEntries.add(_TokenEntry(
+          text: t,
+          isCjk: isCjk,
+          globalIndex: isCjk ? allCjk.length : -1,
+          startOffset: charOffset,
+          endOffset: charOffset + t.length,
         ));
+        charOffset += t.length;
+        if (isCjk) allCjk.add(t);
       }
 
-      _segmentedChapters.add(_ChapterSegmented(
-        index: ci,
-        title: ch.title,
-        paragraphs: paragraphs,
-        allCjkWords: allCjk,
+      paragraphs.add(_ParagraphData(
+        raw: trimmed,
+        plainText: tokens.join(),
+        isHeading: isHeading,
+        tokens: tokenEntries,
       ));
     }
+
+    final result = _ChapterSegmented(
+      index: chapterIndex,
+      title: ch.title,
+      paragraphs: paragraphs,
+      allCjkWords: allCjk,
+    );
+    _segmentCache[chapterIndex] = result;
+    return result;
   }
 
-  void _paginate(double availableHeight) {
-    if (availableHeight <= 0) return;
+  bool _isPaginating = false;
+
+  Future<void> _paginate(double availableHeight) async {
+    if (availableHeight <= 0 || _isPaginating) return;
+    _isPaginating = true;
     _lastAvailableHeight = availableHeight;
 
     final pages = <_PageData>[];
+    final totalChapters = widget.reader.chapters.length;
 
-    for (final chapter in _segmentedChapters) {
-      // Estimate how many paragraphs fit per page.
-      // Title takes ~50px on first page of chapter.
+    for (int ci = 0; ci < totalChapters; ci++) {
+      final chapter = _getSegmented(ci);
+      // Yield to let UI breathe between chapters
+      if (ci > 0 && ci % 2 == 0) {
+        await Future.delayed(Duration.zero);
+        if (!mounted) { _isPaginating = false; return; }
+      }
       final titleHeight = 50.0;
       final paraSpacing = 16.0;
       var remaining = availableHeight - titleHeight;
@@ -246,6 +255,7 @@ class _ReaderScreenState extends State<ReaderScreen> {
       if (startPage < 0) startPage = 0;
     }
 
+    if (!mounted) { _isPaginating = false; return; }
     setState(() {
       _pages = pages;
       _currentPageIndex = startPage;
@@ -253,6 +263,7 @@ class _ReaderScreenState extends State<ReaderScreen> {
       _pageController = PageController(initialPage: startPage);
     });
 
+    _isPaginating = false;
     _saveProgress();
   }
 
