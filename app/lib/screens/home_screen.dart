@@ -215,7 +215,6 @@ class _BookCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final levels = book.levels.keys.toList()..sort();
     return Card(
       margin: const EdgeInsets.only(bottom: 12),
       child: InkWell(
@@ -226,17 +225,17 @@ class _BookCard extends StatelessWidget {
           child: Row(
             children: [
               Container(
-                width: 60,
-                height: 80,
+                width: 56,
+                height: 72,
                 decoration: BoxDecoration(
-                  color: AppTheme.primary.withValues(alpha: 0.1),
+                  color: AppTheme.primary.withValues(alpha: 0.08),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Center(
                   child: Text(
                     book.title.characters.first,
                     style: TextStyle(
-                      fontSize: 32,
+                      fontSize: 28,
                       color: AppTheme.primary,
                       fontWeight: FontWeight.bold,
                     ),
@@ -251,47 +250,22 @@ class _BookCard extends StatelessWidget {
                     Text(
                       book.title,
                       style: const TextStyle(
-                        fontSize: 20,
+                        fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const SizedBox(height: 2),
+                    const SizedBox(height: 4),
                     Text(
                       book.titleEn,
                       style: TextStyle(
-                        fontSize: 14,
+                        fontSize: 13,
                         color: Colors.grey[600],
                       ),
-                    ),
-                    const SizedBox(height: 8),
-                    Wrap(
-                      spacing: 4,
-                      children: levels.map((l) {
-                        final reader = book.levels[l]!;
-                        return Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 8,
-                            vertical: 2,
-                          ),
-                          decoration: BoxDecoration(
-                            color: AppTheme.levelColor(l, language),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Text(
-                            reader.levelLabel,
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 11,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        );
-                      }).toList(),
                     ),
                   ],
                 ),
               ),
-              const Icon(Icons.chevron_right),
+              Icon(Icons.chevron_right, color: Colors.grey[400]),
             ],
           ),
         ),
