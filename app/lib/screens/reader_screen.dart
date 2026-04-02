@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -35,7 +36,6 @@ class _ReaderScreenState extends State<ReaderScreen> {
     _currentChapter = widget.initialChapter;
     _pageController = PageController(initialPage: _currentChapter);
     _loadPreferences();
-    // Pre-warm vocabulary cache so isSaved() works synchronously in sheets
     VocabularyService.instance.loadWords();
   }
 
@@ -65,6 +65,7 @@ class _ReaderScreenState extends State<ReaderScreen> {
       context: context,
       isScrollControlled: true,
       useSafeArea: true,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
@@ -79,16 +80,18 @@ class _ReaderScreenState extends State<ReaderScreen> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final levelColor =
+        AppTheme.levelColor(widget.reader.level, widget.reader.language);
 
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          '${_currentChapter + 1}/${widget.reader.chapters.length}',
-          style: const TextStyle(fontSize: 16),
+          '${_currentChapter + 1} / ${widget.reader.chapters.length}',
+          style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
         ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.text_decrease),
+            icon: const Icon(Icons.text_decrease, size: 20),
             onPressed: _fontSize > _minFontSize
                 ? () {
                     setState(() => _fontSize -= 2);
@@ -97,7 +100,7 @@ class _ReaderScreenState extends State<ReaderScreen> {
                 : null,
           ),
           IconButton(
-            icon: const Icon(Icons.text_increase),
+            icon: const Icon(Icons.text_increase, size: 20),
             onPressed: _fontSize < _maxFontSize
                 ? () {
                     setState(() => _fontSize += 2);
@@ -119,65 +122,65 @@ class _ReaderScreenState extends State<ReaderScreen> {
             chapter: ch,
             fontSize: _fontSize,
             isDark: isDark,
-            level: widget.reader.level,
             onWordTap: _showWordDefinition,
             highlightedWord: _highlightedWord,
           );
         },
       ),
-      bottomNavigationBar: _buildBottomBar(),
-    );
-  }
-
-  Widget _buildBottomBar() {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      decoration: BoxDecoration(
-        border: Border(top: BorderSide(color: Colors.grey[300]!)),
-      ),
-      child: SafeArea(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            TextButton.icon(
-              onPressed: _currentChapter > 0
-                  ? () => _pageController.previousPage(
-                        duration: const Duration(milliseconds: 300),
-                        curve: Curves.easeInOut,
-                      )
-                  : null,
-              icon: const Icon(Icons.arrow_back_ios, size: 16),
-              label: const Text('Previous'),
+      bottomNavigationBar: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+        decoration: BoxDecoration(
+          color: isDark ? Colors.grey[900] : Colors.white,
+          border: Border(
+            top: BorderSide(
+              color: isDark ? Colors.grey[800]! : Colors.grey[200]!,
             ),
-            Container(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-              decoration: BoxDecoration(
-                color: AppTheme.levelColor(
-                    widget.reader.level, widget.reader.language),
-                borderRadius: BorderRadius.circular(12),
+          ),
+        ),
+        child: SafeArea(
+          child: Row(
+            children: [
+              TextButton.icon(
+                onPressed: _currentChapter > 0
+                    ? () => _pageController.previousPage(
+                          duration: const Duration(milliseconds: 300),
+                          curve: Curves.easeInOut,
+                        )
+                    : null,
+                icon: const Icon(Icons.chevron_left, size: 20),
+                label: const Text('Prev'),
               ),
-              child: Text(
-                widget.reader.levelLabel,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold,
+              const Spacer(),
+              Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+                decoration: BoxDecoration(
+                  color: levelColor.withValues(alpha: 0.15),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Text(
+                  widget.reader.levelLabel,
+                  style: TextStyle(
+                    color: levelColor,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
-            ),
-            TextButton.icon(
-              onPressed:
-                  _currentChapter < widget.reader.chapters.length - 1
-                      ? () => _pageController.nextPage(
-                            duration: const Duration(milliseconds: 300),
-                            curve: Curves.easeInOut,
-                          )
-                      : null,
-              icon: const Icon(Icons.arrow_forward_ios, size: 16),
-              label: const Text('Next'),
-            ),
-          ],
+              const Spacer(),
+              TextButton.icon(
+                onPressed:
+                    _currentChapter < widget.reader.chapters.length - 1
+                        ? () => _pageController.nextPage(
+                              duration: const Duration(milliseconds: 300),
+                              curve: Curves.easeInOut,
+                            )
+                        : null,
+                label: const Icon(Icons.chevron_right, size: 20),
+                icon: const Text('Next'),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -185,12 +188,13 @@ class _ReaderScreenState extends State<ReaderScreen> {
 }
 
 // ---------------------------------------------------------------------------
+// Chapter view
+// ---------------------------------------------------------------------------
 
 class _ChapterView extends StatelessWidget {
   final Chapter chapter;
   final double fontSize;
   final bool isDark;
-  final int level;
   final void Function(String, List<String>, int) onWordTap;
   final ValueNotifier<String?> highlightedWord;
 
@@ -198,7 +202,6 @@ class _ChapterView extends StatelessWidget {
     required this.chapter,
     required this.fontSize,
     required this.isDark,
-    required this.level,
     required this.onWordTap,
     required this.highlightedWord,
   });
@@ -206,11 +209,11 @@ class _ChapterView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
+          SelectableText(
             chapter.title,
             style: TextStyle(
               fontSize: fontSize + 4,
@@ -218,7 +221,11 @@ class _ChapterView extends StatelessWidget {
               height: 1.4,
             ),
           ),
-          const Divider(height: 24),
+          const SizedBox(height: 8),
+          Divider(
+            color: isDark ? Colors.grey[700] : Colors.grey[300],
+            height: 24,
+          ),
           _InteractiveContent(
             text: chapter.content,
             fontSize: fontSize,
@@ -226,7 +233,7 @@ class _ChapterView extends StatelessWidget {
             onWordTap: onWordTap,
             highlightedWord: highlightedWord,
           ),
-          const SizedBox(height: 60),
+          const SizedBox(height: 80),
         ],
       ),
     );
@@ -234,6 +241,23 @@ class _ChapterView extends StatelessWidget {
 }
 
 // ---------------------------------------------------------------------------
+// Interactive selectable text with tappable CJK words
+// ---------------------------------------------------------------------------
+
+bool _isCJK(int code) =>
+    (code >= 0x4E00 && code <= 0x9FFF) ||
+    (code >= 0x3400 && code <= 0x4DBF) ||
+    (code >= 0xF900 && code <= 0xFAFF) ||
+    (code >= 0x3040 && code <= 0x309F) ||
+    (code >= 0x30A0 && code <= 0x30FF);
+
+class _TokenEntry {
+  final String text;
+  final bool isCjk;
+  final int globalIndex;
+  _TokenEntry(
+      {required this.text, required this.isCjk, required this.globalIndex});
+}
 
 class _InteractiveContent extends StatefulWidget {
   final String text;
@@ -255,10 +279,9 @@ class _InteractiveContent extends StatefulWidget {
 }
 
 class _InteractiveContentState extends State<_InteractiveContent> {
-  // paragraph text → pre-segmented tokens
-  late List<_Paragraph> _paragraphs;
-  // flat list of ALL CJK words in reading order (with duplicates)
+  late List<_ParagraphData> _paragraphs;
   late List<String> _allCjkWords;
+  final List<TapGestureRecognizer> _recognizers = [];
 
   @override
   void initState() {
@@ -270,8 +293,22 @@ class _InteractiveContentState extends State<_InteractiveContent> {
   void didUpdateWidget(_InteractiveContent old) {
     super.didUpdateWidget(old);
     if (old.text != widget.text) {
+      _disposeRecognizers();
       _rebuild();
     }
+  }
+
+  @override
+  void dispose() {
+    _disposeRecognizers();
+    super.dispose();
+  }
+
+  void _disposeRecognizers() {
+    for (final r in _recognizers) {
+      r.dispose();
+    }
+    _recognizers.clear();
   }
 
   void _rebuild() {
@@ -286,7 +323,6 @@ class _InteractiveContentState extends State<_InteractiveContent> {
       final isHeading = trimmed.startsWith('**') && trimmed.contains('**');
       final tokens = segmentText(trimmed, dict);
 
-      // Assign a global CJK index to each CJK token
       final tokenEntries = <_TokenEntry>[];
       for (final t in tokens) {
         final isCjk = t.isNotEmpty && _isCJK(t.codeUnitAt(0));
@@ -298,7 +334,7 @@ class _InteractiveContentState extends State<_InteractiveContent> {
         if (isCjk) _allCjkWords.add(t);
       }
 
-      _paragraphs.add(_Paragraph(
+      _paragraphs.add(_ParagraphData(
         raw: trimmed,
         isHeading: isHeading,
         tokens: tokenEntries,
@@ -308,17 +344,24 @@ class _InteractiveContentState extends State<_InteractiveContent> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: _paragraphs.map(_buildParagraph).toList(),
+    return ValueListenableBuilder<String?>(
+      valueListenable: widget.highlightedWord,
+      builder: (context, highlighted, _) {
+        _disposeRecognizers();
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children:
+              _paragraphs.map((p) => _buildParagraph(p, highlighted)).toList(),
+        );
+      },
     );
   }
 
-  Widget _buildParagraph(_Paragraph para) {
+  Widget _buildParagraph(_ParagraphData para, String? highlighted) {
     if (para.isHeading) {
       return Padding(
         padding: const EdgeInsets.only(bottom: 12),
-        child: Text(
+        child: SelectableText(
           para.raw.replaceAll('**', ''),
           style: TextStyle(
             fontSize: widget.fontSize - 2,
@@ -333,124 +376,52 @@ class _InteractiveContentState extends State<_InteractiveContent> {
     final baseStyle = TextStyle(
       fontSize: widget.fontSize,
       height: 1.8,
-      letterSpacing: 0.5,
+      letterSpacing: 0.3,
       color: widget.isDark ? Colors.grey[200] : AppTheme.textPrimary,
     );
 
     return Padding(
       padding: const EdgeInsets.only(bottom: 16),
-      child: Text.rich(
+      child: SelectableText.rich(
         TextSpan(
           children: para.tokens
-              .map((t) => _buildTokenSpan(t, baseStyle))
+              .map((t) => _buildTokenSpan(t, baseStyle, highlighted))
               .toList(),
         ),
       ),
     );
   }
 
-  InlineSpan _buildTokenSpan(_TokenEntry token, TextStyle style) {
+  TextSpan _buildTokenSpan(
+      _TokenEntry token, TextStyle style, String? highlighted) {
     if (!token.isCjk || !DictionaryService.instance.isReady) {
       return TextSpan(text: token.text, style: style);
     }
 
-    return WidgetSpan(
-      alignment: PlaceholderAlignment.baseline,
-      baseline: TextBaseline.ideographic,
-      child: _TappableWord(
-        word: token.text,
-        style: style,
-        onTap: () =>
-            widget.onWordTap(token.text, _allCjkWords, token.globalIndex),
-        highlightedWord: widget.highlightedWord,
+    final isHighlighted = highlighted == token.text;
+    final recognizer = TapGestureRecognizer()
+      ..onTap = () =>
+          widget.onWordTap(token.text, _allCjkWords, token.globalIndex);
+    _recognizers.add(recognizer);
+
+    return TextSpan(
+      text: token.text,
+      style: style.copyWith(
+        backgroundColor: isHighlighted
+            ? AppTheme.primary.withValues(alpha: 0.2)
+            : null,
       ),
+      recognizer: recognizer,
     );
   }
-
-  bool _isCJK(int code) =>
-      (code >= 0x4E00 && code <= 0x9FFF) ||
-      (code >= 0x3400 && code <= 0x4DBF) ||
-      (code >= 0xF900 && code <= 0xFAFF) ||
-      (code >= 0x3040 && code <= 0x309F) || // Hiragana
-      (code >= 0x30A0 && code <= 0x30FF);   // Katakana
 }
 
-class _Paragraph {
+class _ParagraphData {
   final String raw;
   final bool isHeading;
   final List<_TokenEntry> tokens;
-  _Paragraph({required this.raw, required this.isHeading, required this.tokens});
-}
-
-class _TokenEntry {
-  final String text;
-  final bool isCjk;
-  final int globalIndex; // index in the flat allCjkWords list, -1 if not CJK
-  _TokenEntry({required this.text, required this.isCjk, required this.globalIndex});
-}
-
-// ---------------------------------------------------------------------------
-
-class _TappableWord extends StatefulWidget {
-  final String word;
-  final TextStyle style;
-  final VoidCallback onTap;
-  final ValueNotifier<String?> highlightedWord;
-
-  const _TappableWord({
-    required this.word,
-    required this.style,
-    required this.onTap,
-    required this.highlightedWord,
-  });
-
-  @override
-  State<_TappableWord> createState() => _TappableWordState();
-}
-
-class _TappableWordState extends State<_TappableWord> {
-  bool _pressed = false;
-
-  void _copyToClipboard() {
-    Clipboard.setData(ClipboardData(text: widget.word));
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text('Copied "${widget.word}"'),
-        duration: const Duration(seconds: 1),
-        behavior: SnackBarBehavior.floating,
-      ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return ValueListenableBuilder<String?>(
-      valueListenable: widget.highlightedWord,
-      builder: (context, highlighted, _) {
-        final isHighlighted = highlighted == widget.word;
-        return GestureDetector(
-          onTapDown: (_) => setState(() => _pressed = true),
-          onTapUp: (_) {
-            setState(() => _pressed = false);
-            widget.onTap();
-          },
-          onTapCancel: () => setState(() => _pressed = false),
-          onLongPress: _copyToClipboard,
-          child: Container(
-            decoration: (_pressed || isHighlighted)
-                ? BoxDecoration(
-                    color: isHighlighted
-                        ? AppTheme.primary.withValues(alpha: 0.25)
-                        : AppTheme.primary.withValues(alpha: 0.15),
-                    borderRadius: BorderRadius.circular(3),
-                  )
-                : null,
-            child: Text(widget.word, style: widget.style),
-          ),
-        );
-      },
-    );
-  }
+  _ParagraphData(
+      {required this.raw, required this.isHeading, required this.tokens});
 }
 
 // ---------------------------------------------------------------------------
@@ -510,14 +481,14 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
       final ch = word[i];
       final charEntry = dict.lookup(ch);
       widgets.add(Padding(
-        padding: const EdgeInsets.only(bottom: 8),
+        padding: const EdgeInsets.only(bottom: 6),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               ch,
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 18,
                 fontWeight: FontWeight.bold,
                 color: AppTheme.primary,
               ),
@@ -583,7 +554,7 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
     final entry = _entry;
 
     return Padding(
-      padding: const EdgeInsets.fromLTRB(24, 12, 24, 32),
+      padding: const EdgeInsets.fromLTRB(24, 12, 24, 24),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -591,7 +562,7 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
           // Drag handle
           Center(
             child: Container(
-              width: 40,
+              width: 36,
               height: 4,
               decoration: BoxDecoration(
                 color: Colors.grey[400],
@@ -599,11 +570,11 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
               ),
             ),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 16),
 
-          // Word + action buttons row
+          // Word + action buttons
           Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Expanded(
                 child: Column(
@@ -612,8 +583,9 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
                     Text(
                       _word,
                       style: const TextStyle(
-                        fontSize: 36,
+                        fontSize: 32,
                         fontWeight: FontWeight.bold,
+                        height: 1.2,
                       ),
                     ),
                     if (entry != null && entry.pinyin.isNotEmpty) ...[
@@ -621,49 +593,52 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
                       Text(
                         entry.pinyin,
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 17,
                           color: AppTheme.primary,
                           fontStyle: FontStyle.italic,
                         ),
                       ),
                     ],
-                    if (entry?.hskLevel != null) ...[
-                      const SizedBox(height: 8),
-                      Builder(builder: (context) {
-                        final lang =
-                            DictionaryService.instance.activeLanguage;
-                        final lvl = entry!.hskLevel!;
-                        String label;
-                        if (lang == Language.japanese) {
-                          const jlpt = {
-                            1: 'N5', 2: 'N4', 3: 'N3', 4: 'N2', 5: 'N1'
-                          };
-                          label = 'JLPT ${jlpt[lvl] ?? lvl}';
-                        } else {
-                          label = 'HSK $lvl';
-                        }
-                        return Container(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 8, vertical: 3),
-                          decoration: BoxDecoration(
-                            color: AppTheme.levelColor(lvl, lang),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Text(
-                            label,
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        );
-                      }),
-                    ],
                   ],
                 ),
               ),
-              // Copy button
+              if (entry?.hskLevel != null)
+                Padding(
+                  padding: const EdgeInsets.only(right: 8),
+                  child: Builder(builder: (context) {
+                    final lang = DictionaryService.instance.activeLanguage;
+                    final lvl = entry!.hskLevel!;
+                    String label;
+                    if (lang == Language.japanese) {
+                      const jlpt = {
+                        1: 'N5',
+                        2: 'N4',
+                        3: 'N3',
+                        4: 'N2',
+                        5: 'N1'
+                      };
+                      label = 'JLPT ${jlpt[lvl] ?? lvl}';
+                    } else {
+                      label = 'HSK $lvl';
+                    }
+                    return Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 8, vertical: 3),
+                      decoration: BoxDecoration(
+                        color: AppTheme.levelColor(lvl, lang),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Text(
+                        label,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 11,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    );
+                  }),
+                ),
               IconButton(
                 onPressed: () {
                   Clipboard.setData(ClipboardData(text: _word));
@@ -675,10 +650,10 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
                     ),
                   );
                 },
-                icon: const Icon(Icons.copy, size: 20),
+                icon: const Icon(Icons.copy_rounded, size: 20),
                 tooltip: 'Copy',
+                visualDensity: VisualDensity.compact,
               ),
-              // Save button
               IconButton(
                 onPressed: _toggleSave,
                 icon: _loading
@@ -688,59 +663,73 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
                         child: CircularProgressIndicator(strokeWidth: 2),
                       )
                     : Icon(
-                        _saved ? Icons.bookmark : Icons.bookmark_border,
+                        _saved
+                            ? Icons.bookmark_rounded
+                            : Icons.bookmark_outline_rounded,
                         color: _saved ? AppTheme.primary : null,
-                        size: 28,
+                        size: 24,
                       ),
-                tooltip: _saved ? 'Remove from vocabulary' : 'Save to vocabulary',
+                tooltip:
+                    _saved ? 'Remove from vocabulary' : 'Save to vocabulary',
+                visualDensity: VisualDensity.compact,
               ),
             ],
           ),
 
           // Definitions
           if (entry != null && entry.hasDefinitions) ...[
-            const SizedBox(height: 16),
-            Divider(color: isDark ? Colors.grey[700] : Colors.grey[300]),
+            const SizedBox(height: 12),
+            Divider(color: isDark ? Colors.grey[700] : Colors.grey[200]),
             const SizedBox(height: 8),
             ...entry.definitions.asMap().entries.map((e) => Padding(
-                  padding: const EdgeInsets.only(bottom: 6),
+                  padding: const EdgeInsets.only(bottom: 4),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        '${e.key + 1}. ',
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: isDark ? Colors.grey[400] : Colors.grey[600],
-                          fontWeight: FontWeight.bold,
+                      SizedBox(
+                        width: 24,
+                        child: Text(
+                          '${e.key + 1}.',
+                          style: TextStyle(
+                            fontSize: 14,
+                            color:
+                                isDark ? Colors.grey[500] : Colors.grey[500],
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ),
                       Expanded(
                         child: Text(
                           e.value,
-                          style: const TextStyle(fontSize: 15, height: 1.5),
+                          style: TextStyle(
+                            fontSize: 14,
+                            height: 1.4,
+                            color:
+                                isDark ? Colors.grey[300] : Colors.grey[800],
+                          ),
                         ),
                       ),
                     ],
                   ),
                 )),
           ] else ...[
-            const SizedBox(height: 16),
-            // If multi-char word not found, show individual character lookups
+            const SizedBox(height: 12),
             if (entry == null && _word.length > 1) ...[
-              Divider(color: isDark ? Colors.grey[700] : Colors.grey[300]),
+              Divider(color: isDark ? Colors.grey[700] : Colors.grey[200]),
               const SizedBox(height: 8),
               Text(
                 'Word not in dictionary. Character breakdown:',
-                style: TextStyle(fontSize: 13, color: Colors.grey[500]),
+                style: TextStyle(fontSize: 12, color: Colors.grey[500]),
               ),
               const SizedBox(height: 8),
               ..._buildCharBreakdown(_word, isDark),
             ] else
               Text(
-                entry == null ? 'No dictionary entry found' : 'No definitions available',
+                entry == null
+                    ? 'No dictionary entry found'
+                    : 'No definitions available',
                 style: TextStyle(
-                  fontSize: 14,
+                  fontSize: 13,
                   color: Colors.grey[500],
                   fontStyle: FontStyle.italic,
                 ),
@@ -749,33 +738,43 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
 
           // Prev / Next word navigation
           if (widget.allWords.length > 1) ...[
-            const SizedBox(height: 16),
-            Divider(color: isDark ? Colors.grey[700] : Colors.grey[300]),
             const SizedBox(height: 8),
+            Divider(color: isDark ? Colors.grey[700] : Colors.grey[200]),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                TextButton.icon(
-                  onPressed: _hasPrev ? () => _goTo(_currentIndex - 1) : null,
-                  icon: const Icon(Icons.arrow_back_ios, size: 14),
-                  label: Text(
-                    _hasPrev ? widget.allWords[_currentIndex - 1] : '',
-                    style: const TextStyle(fontSize: 16),
-                    overflow: TextOverflow.ellipsis,
-                  ),
+                IconButton(
+                  onPressed:
+                      _hasPrev ? () => _goTo(_currentIndex - 1) : null,
+                  icon: const Icon(Icons.chevron_left, size: 24),
+                  visualDensity: VisualDensity.compact,
                 ),
+                if (_hasPrev)
+                  Text(
+                    widget.allWords[_currentIndex - 1],
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: isDark ? Colors.grey[400] : Colors.grey[600],
+                    ),
+                  ),
+                const Spacer(),
                 Text(
-                  '${_currentIndex + 1}/${widget.allWords.length}',
-                  style: TextStyle(fontSize: 12, color: Colors.grey[500]),
+                  '${_currentIndex + 1} / ${widget.allWords.length}',
+                  style: TextStyle(fontSize: 11, color: Colors.grey[500]),
                 ),
-                TextButton.icon(
-                  onPressed: _hasNext ? () => _goTo(_currentIndex + 1) : null,
-                  icon: Text(
-                    _hasNext ? widget.allWords[_currentIndex + 1] : '',
-                    style: const TextStyle(fontSize: 16),
-                    overflow: TextOverflow.ellipsis,
+                const Spacer(),
+                if (_hasNext)
+                  Text(
+                    widget.allWords[_currentIndex + 1],
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: isDark ? Colors.grey[400] : Colors.grey[600],
+                    ),
                   ),
-                  label: const Icon(Icons.arrow_forward_ios, size: 14),
+                IconButton(
+                  onPressed:
+                      _hasNext ? () => _goTo(_currentIndex + 1) : null,
+                  icon: const Icon(Icons.chevron_right, size: 24),
+                  visualDensity: VisualDensity.compact,
                 ),
               ],
             ),
