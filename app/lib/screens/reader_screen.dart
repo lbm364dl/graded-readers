@@ -27,6 +27,7 @@ class _ReaderScreenState extends State<ReaderScreen> {
   double _fontSize = 20.0;
   final double _minFontSize = 14.0;
   final double _maxFontSize = 32.0;
+  final ValueNotifier<String?> _highlightedWord = ValueNotifier(null);
 
   @override
   void initState() {
@@ -54,11 +55,13 @@ class _ReaderScreenState extends State<ReaderScreen> {
   @override
   void dispose() {
     _pageController.dispose();
+    _highlightedWord.dispose();
     super.dispose();
   }
 
   void _showWordDefinition(String word, List<String> allWords) {
     final index = allWords.indexOf(word);
+    _highlightedWord.value = word;
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -69,8 +72,9 @@ class _ReaderScreenState extends State<ReaderScreen> {
       builder: (_) => _WordDefinitionSheet(
         allWords: allWords,
         initialIndex: index < 0 ? 0 : index,
+        highlightedWord: _highlightedWord,
       ),
-    );
+    ).whenComplete(() => _highlightedWord.value = null);
   }
 
   @override
@@ -118,6 +122,7 @@ class _ReaderScreenState extends State<ReaderScreen> {
             isDark: isDark,
             level: widget.reader.level,
             onWordTap: _showWordDefinition,
+            highlightedWord: _highlightedWord,
           );
         },
       ),
@@ -188,6 +193,7 @@ class _ChapterView extends StatelessWidget {
   final bool isDark;
   final int level;
   final void Function(String, List<String>) onWordTap;
+  final ValueNotifier<String?> highlightedWord;
 
   const _ChapterView({
     required this.chapter,
@@ -195,6 +201,7 @@ class _ChapterView extends StatelessWidget {
     required this.isDark,
     required this.level,
     required this.onWordTap,
+    required this.highlightedWord,
   });
 
   @override
@@ -218,6 +225,7 @@ class _ChapterView extends StatelessWidget {
             fontSize: fontSize,
             isDark: isDark,
             onWordTap: onWordTap,
+            highlightedWord: highlightedWord,
           ),
           const SizedBox(height: 60),
         ],
@@ -233,12 +241,14 @@ class _InteractiveContent extends StatefulWidget {
   final double fontSize;
   final bool isDark;
   final void Function(String, List<String>) onWordTap;
+  final ValueNotifier<String?> highlightedWord;
 
   const _InteractiveContent({
     required this.text,
     required this.fontSize,
     required this.isDark,
     required this.onWordTap,
+    required this.highlightedWord,
   });
 
   @override
@@ -348,6 +358,7 @@ class _InteractiveContentState extends State<_InteractiveContent> {
       word: token,
       style: style,
       onTap: () => widget.onWordTap(token, _allCjkWords),
+      highlightedWord: widget.highlightedWord,
     );
   }
 
@@ -365,11 +376,13 @@ class _TappableWord extends StatefulWidget {
   final String word;
   final TextStyle style;
   final VoidCallback onTap;
+  final ValueNotifier<String?> highlightedWord;
 
   const _TappableWord({
     required this.word,
     required this.style,
     required this.onTap,
+    required this.highlightedWord,
   });
 
   @override
@@ -392,23 +405,31 @@ class _TappableWordState extends State<_TappableWord> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTapDown: (_) => setState(() => _pressed = true),
-      onTapUp: (_) {
-        setState(() => _pressed = false);
-        widget.onTap();
+    return ValueListenableBuilder<String?>(
+      valueListenable: widget.highlightedWord,
+      builder: (context, highlighted, _) {
+        final isHighlighted = highlighted == widget.word;
+        return GestureDetector(
+          onTapDown: (_) => setState(() => _pressed = true),
+          onTapUp: (_) {
+            setState(() => _pressed = false);
+            widget.onTap();
+          },
+          onTapCancel: () => setState(() => _pressed = false),
+          onLongPress: _copyToClipboard,
+          child: Container(
+            decoration: (_pressed || isHighlighted)
+                ? BoxDecoration(
+                    color: isHighlighted
+                        ? AppTheme.primary.withValues(alpha: 0.25)
+                        : AppTheme.primary.withValues(alpha: 0.15),
+                    borderRadius: BorderRadius.circular(3),
+                  )
+                : null,
+            child: Text(widget.word, style: widget.style),
+          ),
+        );
       },
-      onTapCancel: () => setState(() => _pressed = false),
-      onLongPress: _copyToClipboard,
-      child: Container(
-        decoration: _pressed
-            ? BoxDecoration(
-                color: AppTheme.primary.withValues(alpha: 0.15),
-                borderRadius: BorderRadius.circular(3),
-              )
-            : null,
-        child: Text(widget.word, style: widget.style),
-      ),
     );
   }
 }
@@ -420,10 +441,12 @@ class _TappableWordState extends State<_TappableWord> {
 class _WordDefinitionSheet extends StatefulWidget {
   final List<String> allWords;
   final int initialIndex;
+  final ValueNotifier<String?> highlightedWord;
 
   const _WordDefinitionSheet({
     required this.allWords,
     required this.initialIndex,
+    required this.highlightedWord,
   });
 
   @override
@@ -458,6 +481,7 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
       _loading = false;
       _loadWord();
     });
+    widget.highlightedWord.value = _word;
   }
 
   List<Widget> _buildCharBreakdown(String word, bool isDark) {
