@@ -55,13 +55,18 @@ class _GradedReadersAppState extends State<GradedReadersApp> {
   Widget build(BuildContext context) {
     return LanguageScope(
       notifier: _languageNotifier,
-      child: MaterialApp(
-        title: 'Graded Readers',
-        debugShowCheckedModeBanner: false,
-        theme: AppTheme.lightTheme,
-        darkTheme: AppTheme.darkTheme,
-        themeMode: ThemeMode.system,
-        home: HomeScreen(repo: _repo),
+      child: ValueListenableBuilder<Language>(
+        valueListenable: _languageNotifier,
+        builder: (context, language, _) {
+          return MaterialApp(
+            title: 'Graded Readers',
+            debugShowCheckedModeBanner: false,
+            theme: AppTheme.lightThemeFor(language),
+            darkTheme: AppTheme.darkThemeFor(language),
+            themeMode: ThemeMode.system,
+            home: HomeScreen(repo: _repo),
+          );
+        },
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'models.dart';
 
 class AppTheme {
@@ -31,21 +32,32 @@ class AppTheme {
     return colors[level] ?? const Color(0xFF9E9E9E);
   }
 
-  static ThemeData get lightTheme {
+  static TextTheme _cjkTextTheme(Language language, Brightness brightness) {
+    final base = brightness == Brightness.dark
+        ? ThemeData.dark().textTheme
+        : ThemeData.light().textTheme;
+    return language == Language.japanese
+        ? GoogleFonts.notoSansJpTextTheme(base)
+        : GoogleFonts.notoSansScTextTheme(base);
+  }
+
+  static ThemeData lightThemeFor(Language language) {
+    final textTheme = _cjkTextTheme(language, Brightness.light);
     return ThemeData(
       useMaterial3: true,
+      textTheme: textTheme,
       colorScheme: ColorScheme.fromSeed(
         seedColor: primary,
         brightness: Brightness.light,
         surface: background,
       ),
-      appBarTheme: const AppBarTheme(
+      appBarTheme: AppBarTheme(
         centerTitle: true,
         elevation: 0,
         scrolledUnderElevation: 1,
         backgroundColor: primary,
         foregroundColor: Colors.white,
-        titleTextStyle: TextStyle(
+        titleTextStyle: textTheme.titleMedium?.copyWith(
           fontSize: 17,
           fontWeight: FontWeight.w600,
           color: Colors.white,
@@ -82,18 +94,20 @@ class AppTheme {
     );
   }
 
-  static ThemeData get darkTheme {
+  static ThemeData darkThemeFor(Language language) {
+    final textTheme = _cjkTextTheme(language, Brightness.dark);
     return ThemeData(
       useMaterial3: true,
+      textTheme: textTheme,
       colorScheme: ColorScheme.fromSeed(
         seedColor: primary,
         brightness: Brightness.dark,
       ),
-      appBarTheme: const AppBarTheme(
+      appBarTheme: AppBarTheme(
         centerTitle: true,
         elevation: 0,
         scrolledUnderElevation: 1,
-        titleTextStyle: TextStyle(
+        titleTextStyle: textTheme.titleMedium?.copyWith(
           fontSize: 17,
           fontWeight: FontWeight.w600,
           color: Colors.white,
