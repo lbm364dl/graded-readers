@@ -19,6 +19,9 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedTab = 0;
+  int _refreshKey = 0;
+
+  void _refresh() => setState(() => _refreshKey++);
 
   @override
   Widget build(BuildContext context) {
@@ -82,6 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
       padding: const EdgeInsets.all(16),
       children: [
         _ContinueReadingCard(
+          key: ValueKey(_refreshKey),
           repo: widget.repo,
           language: language,
           onBrowse: (book, lang) => _openBook(context, book, lang),
@@ -133,7 +137,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         MaterialPageRoute(
                           builder: (_) => BookScreen(reader: reader),
                         ),
-                      );
+                      ).then((_) => _refresh());
                     },
                   )),
           const SizedBox(height: 16),
@@ -152,7 +156,7 @@ class _HomeScreenState extends State<HomeScreen> {
           language: language,
         ),
       ),
-    );
+    ).then((_) => _refresh());
   }
 }
 
@@ -409,7 +413,7 @@ class _LevelBookTile extends StatelessWidget {
 
 // ---------------------------------------------------------------------------
 
-class BookOverviewScreen extends StatelessWidget {
+class BookOverviewScreen extends StatefulWidget {
   final Book book;
   final ContentRepository repo;
   final Language language;
@@ -422,18 +426,42 @@ class BookOverviewScreen extends StatelessWidget {
   });
 
   @override
+  State<BookOverviewScreen> createState() => _BookOverviewScreenState();
+}
+
+class _BookOverviewScreenState extends State<BookOverviewScreen> {
+  // readerId → saved chapter
+  Map<String, int> _progressMap = {};
+
+  @override
+  void initState() {
+    super.initState();
+    _loadProgress();
+  }
+
+  Future<void> _loadProgress() async {
+    final map = <String, int>{};
+    for (final reader in widget.book.levels.values) {
+      final p = await ProgressService.instance.getProgress(reader.id);
+      if (p != null) map[reader.id] = p.chapter;
+    }
+    if (!mounted) return;
+    setState(() => _progressMap = map);
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final levels = book.levels.keys.toList()..sort();
+    final levels = widget.book.levels.keys.toList()..sort();
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(book.title),
+        title: Text(widget.book.title),
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
           Text(
-            book.titleEn,
+            widget.book.titleEn,
             style: TextStyle(
               fontSize: 16,
               color: Colors.grey[600],
@@ -449,9 +477,13 @@ class BookOverviewScreen extends StatelessWidget {
           ),
           const SizedBox(height: 12),
           ...levels.map((level) {
-            final reader = book.levels[level]!;
+            final reader = widget.book.levels[level]!;
             final totalChars = reader.chapters
                 .fold<int>(0, (sum, ch) => sum + ch.content.length);
+            final savedCh = _progressMap[reader.id];
+            final hasProgress =
+                savedCh != null && savedCh < reader.chapters.length;
+
             return Card(
               margin: const EdgeInsets.only(bottom: 8),
               child: ListTile(
@@ -459,7 +491,7 @@ class BookOverviewScreen extends StatelessWidget {
                   width: 50,
                   height: 50,
                   decoration: BoxDecoration(
-                    color: AppTheme.levelColor(level, language),
+                    color: AppTheme.levelColor(level, widget.language),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Center(
@@ -476,8 +508,34 @@ class BookOverviewScreen extends StatelessWidget {
                   ),
                 ),
                 title: Text('${reader.levelLabel} version'),
-                subtitle: Text(
-                  '${reader.chapters.length} chapters · ${_formatCharCount(totalChars)} chars',
+                subtitle: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '${reader.chapters.length} chapters · ${_formatCharCount(totalChars)} chars',
+                    ),
+                    if (hasProgress) ...[
+                      const SizedBox(height: 6),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(3),
+                        child: LinearProgressIndicator(
+                          value: (savedCh + 1) / reader.chapters.length,
+                          backgroundColor: AppTheme.levelColor(
+                                  level, widget.language)
+                              .withValues(alpha: 0.15),
+                          color: AppTheme.levelColor(
+                              level, widget.language),
+                          minHeight: 3,
+                        ),
+                      ),
+                      const SizedBox(height: 2),
+                      Text(
+                        'Ch. ${savedCh + 1} of ${reader.chapters.length}',
+                        style: TextStyle(
+                            fontSize: 11, color: Colors.grey[500]),
+                      ),
+                    ],
+                  ],
                 ),
                 trailing: const Icon(Icons.chevron_right),
                 onTap: () {
@@ -486,7 +544,7 @@ class BookOverviewScreen extends StatelessWidget {
                     MaterialPageRoute(
                       builder: (_) => BookScreen(reader: reader),
                     ),
-                  );
+                  ).then((_) => _loadProgress());
                 },
               ),
             );
@@ -512,6 +570,7 @@ class _ContinueReadingCard extends StatefulWidget {
   final void Function(Book book, Language language)? onBrowse;
 
   const _ContinueReadingCard({
+    super.key,
     required this.repo,
     required this.language,
     this.onBrowse,
