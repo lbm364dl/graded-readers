@@ -402,6 +402,7 @@ class _InteractiveContentState extends State<_InteractiveContent> {
       height: 1.8,
       letterSpacing: 0.3,
       color: widget.isDark ? Colors.grey[200] : AppTheme.textPrimary,
+      leadingDistribution: TextLeadingDistribution.even,
     );
 
     // Build selection highlight ranges
@@ -481,6 +482,11 @@ class _TappableParagraph extends StatelessWidget {
             // Selectable text layer (handles long-press selection)
             SelectableText.rich(
               textSpan,
+              strutStyle: StrutStyle(
+                fontSize: style.fontSize,
+                height: style.height,
+                forceStrutHeight: true,
+              ),
               onTap: () {
                 // onTap doesn't give us position; handled by the
                 // GestureDetector overlay instead. But we need onTap
