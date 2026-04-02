@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models.dart';
 import '../theme.dart';
@@ -8,18 +9,25 @@ import '../services/dictionary_service.dart';
 import '../services/segmenter.dart';
 import '../services/vocabulary_service.dart';
 
-// CJK font stack that works across platforms
-const _cjkFontFamilies = [
-  'Noto Sans SC', // Chinese
-  'Noto Sans JP', // Japanese
-  'Noto Sans CJK SC',
-  'Noto Sans CJK JP',
-  'PingFang SC', // iOS/macOS Chinese
-  'Hiragino Sans', // macOS Japanese
-  'Microsoft YaHei', // Windows Chinese
-  'Yu Gothic', // Windows Japanese
-  'sans-serif',
-];
+TextStyle _cjkTextStyle({
+  required double fontSize,
+  required Language language,
+  Color? color,
+  FontWeight? fontWeight,
+  double? height,
+  Color? backgroundColor,
+}) {
+  final base = language == Language.japanese
+      ? GoogleFonts.notoSansJp
+      : GoogleFonts.notoSansSc;
+  return base(
+    fontSize: fontSize,
+    color: color,
+    fontWeight: fontWeight,
+    height: height,
+    backgroundColor: backgroundColor,
+  );
+}
 
 class ReaderScreen extends StatefulWidget {
   final Reader reader;
@@ -135,6 +143,7 @@ class _ReaderScreenState extends State<ReaderScreen> {
             chapter: ch,
             fontSize: _fontSize,
             isDark: isDark,
+            language: widget.reader.language,
             onWordTap: _showWordDefinition,
             highlightedIndex: _highlightedIndex,
           );
@@ -208,6 +217,7 @@ class _ChapterView extends StatelessWidget {
   final Chapter chapter;
   final double fontSize;
   final bool isDark;
+  final Language language;
   final void Function(List<String>, int) onWordTap;
   final ValueNotifier<int> highlightedIndex;
 
@@ -215,6 +225,7 @@ class _ChapterView extends StatelessWidget {
     required this.chapter,
     required this.fontSize,
     required this.isDark,
+    required this.language,
     required this.onWordTap,
     required this.highlightedIndex,
   });
@@ -228,10 +239,10 @@ class _ChapterView extends StatelessWidget {
         children: [
           SelectableText(
             chapter.title,
-            style: TextStyle(
+            style: _cjkTextStyle(
               fontSize: fontSize + 4,
+              language: language,
               fontWeight: FontWeight.bold,
-              fontFamilyFallback: _cjkFontFamilies,
               height: 1.4,
             ),
           ),
@@ -244,6 +255,7 @@ class _ChapterView extends StatelessWidget {
             text: chapter.content,
             fontSize: fontSize,
             isDark: isDark,
+            language: language,
             onWordTap: onWordTap,
             highlightedIndex: highlightedIndex,
           ),
@@ -297,6 +309,7 @@ class _InteractiveContent extends StatefulWidget {
   final String text;
   final double fontSize;
   final bool isDark;
+  final Language language;
   final void Function(List<String>, int) onWordTap;
   final ValueNotifier<int> highlightedIndex;
 
@@ -304,6 +317,7 @@ class _InteractiveContent extends StatefulWidget {
     required this.text,
     required this.fontSize,
     required this.isDark,
+    required this.language,
     required this.onWordTap,
     required this.highlightedIndex,
   });
@@ -403,10 +417,10 @@ class _InteractiveContentState extends State<_InteractiveContent> {
         padding: const EdgeInsets.only(bottom: 12),
         child: SelectableText(
           para.raw.replaceAll('**', ''),
-          style: TextStyle(
+          style: _cjkTextStyle(
             fontSize: widget.fontSize - 2,
+            language: widget.language,
             fontWeight: FontWeight.bold,
-            fontFamilyFallback: _cjkFontFamilies,
             color: widget.isDark ? Colors.grey[300] : Colors.grey[700],
             height: 1.6,
           ),
@@ -414,10 +428,10 @@ class _InteractiveContentState extends State<_InteractiveContent> {
       );
     }
 
-    final baseStyle = TextStyle(
+    final baseStyle = _cjkTextStyle(
       fontSize: widget.fontSize,
+      language: widget.language,
       height: 1.8,
-      fontFamilyFallback: _cjkFontFamilies,
       color: widget.isDark ? Colors.grey[200] : AppTheme.textPrimary,
     );
 
@@ -519,10 +533,11 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
           children: [
             Text(
               ch,
-              style: TextStyle(
+              style: _cjkTextStyle(
                 fontSize: 18,
+                language:
+                    DictionaryService.instance.activeLanguage,
                 fontWeight: FontWeight.bold,
-                fontFamilyFallback: _cjkFontFamilies,
                 color: AppTheme.primary,
               ),
             ),
@@ -615,10 +630,11 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
                   children: [
                     Text(
                       _word,
-                      style: TextStyle(
+                      style: _cjkTextStyle(
                         fontSize: 32,
+                        language:
+                            DictionaryService.instance.activeLanguage,
                         fontWeight: FontWeight.bold,
-                        fontFamilyFallback: _cjkFontFamilies,
                         height: 1.2,
                       ),
                     ),
@@ -787,7 +803,6 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
                       widget.allWords[_currentIndex - 1],
                       style: TextStyle(
                         fontSize: 14,
-                        fontFamilyFallback: _cjkFontFamilies,
                         color: isDark ? Colors.grey[400] : Colors.grey[600],
                       ),
                       overflow: TextOverflow.ellipsis,
@@ -805,7 +820,6 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
                       widget.allWords[_currentIndex + 1],
                       style: TextStyle(
                         fontSize: 14,
-                        fontFamilyFallback: _cjkFontFamilies,
                         color: isDark ? Colors.grey[400] : Colors.grey[600],
                       ),
                       overflow: TextOverflow.ellipsis,
