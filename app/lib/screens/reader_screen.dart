@@ -339,27 +339,31 @@ class _InteractiveContentState extends State<_InteractiveContent> {
 
     return Padding(
       padding: const EdgeInsets.only(bottom: 16),
-      child: Wrap(
-        spacing: 0,
-        runSpacing: 0,
-        children: para.tokens
-            .map((t) => _buildToken(t, baseStyle))
-            .toList(),
+      child: Text.rich(
+        TextSpan(
+          children: para.tokens
+              .map((t) => _buildTokenSpan(t, baseStyle))
+              .toList(),
+        ),
       ),
     );
   }
 
-  Widget _buildToken(_TokenEntry token, TextStyle style) {
+  InlineSpan _buildTokenSpan(_TokenEntry token, TextStyle style) {
     if (!token.isCjk || !DictionaryService.instance.isReady) {
-      return Text(token.text, style: style);
+      return TextSpan(text: token.text, style: style);
     }
 
-    return _TappableWord(
-      word: token.text,
-      style: style,
-      onTap: () =>
-          widget.onWordTap(token.text, _allCjkWords, token.globalIndex),
-      highlightedWord: widget.highlightedWord,
+    return WidgetSpan(
+      alignment: PlaceholderAlignment.baseline,
+      baseline: TextBaseline.ideographic,
+      child: _TappableWord(
+        word: token.text,
+        style: style,
+        onTap: () =>
+            widget.onWordTap(token.text, _allCjkWords, token.globalIndex),
+        highlightedWord: widget.highlightedWord,
+      ),
     );
   }
 
