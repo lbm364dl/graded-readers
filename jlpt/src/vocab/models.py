@@ -21,7 +21,13 @@ class JlptLevel:
 
     @property
     def word_set(self) -> set[str]:
-        return {w.word for w in self.words}
+        """All lookup keys: kanji form + reading (hiragana/katakana)."""
+        result = set()
+        for w in self.words:
+            result.add(w.word)
+            if w.reading and w.reading != w.word:
+                result.add(w.reading)
+        return result
 
     @property
     def reading_map(self) -> dict[str, str]:

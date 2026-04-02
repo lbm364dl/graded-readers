@@ -36,7 +36,18 @@ def check_vocabulary_constraint(
     seg = segmenter or JapaneseSegmenter()
     allowed = allowed_words or set()
 
-    words = seg.segment(text)
+    # SudachiPy has a ~49KB input limit; chunk long texts
+    _MAX_CHUNK = 40000  # bytes, with safety margin
+    words: list[str] = []
+    encoded = text.encode("utf-8")
+    if len(encoded) <= _MAX_CHUNK:
+        words = seg.segment(text)
+    else:
+        # Split on paragraph boundaries
+        for chunk in text.split("\n\n"):
+            chunk = chunk.strip()
+            if chunk:
+                words.extend(seg.segment(chunk))
     total = len(words)
     in_level = 0
     above_words: list[str] = []
