@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:kuromoji/kuromoji.dart' as kuromoji;
 import 'package:kuromoji/src/tokenizer.dart' as kuromoji_tok;
 import '../models.dart' show Language;
@@ -31,18 +32,28 @@ class JapaneseTokenizer {
   static final JapaneseTokenizer instance = JapaneseTokenizer._();
 
   kuromoji_tok.Tokenizer? _tokenizer;
-  bool _initializing = false;
+  Completer<void>? _initCompleter;
   bool get isReady => _tokenizer != null;
 
+  /// Initialize kuromoji dictionary. Safe to call multiple times.
+  /// Returns a Future that completes when ready. Does NOT block the UI.
   Future<void> initialize() async {
-    if (_tokenizer != null || _initializing) return;
-    _initializing = true;
+    if (_tokenizer != null) return;
+    if (_initCompleter != null) return _initCompleter!.future;
+
+    _initCompleter = Completer<void>();
     try {
       _tokenizer = await kuromoji.TokenizerBuilder().build();
     } catch (_) {
       // If kuromoji fails to load, we fall back to the simple segmenter
     }
-    _initializing = false;
+    _initCompleter!.complete();
+  }
+
+  /// Wait for initialization if in progress, or return immediately.
+  Future<void> ensureReady() async {
+    if (_tokenizer != null) return;
+    if (_initCompleter != null) await _initCompleter!.future;
   }
 
   /// Tokenize Japanese text. Returns list of (surfaceForm, basicForm) pairs

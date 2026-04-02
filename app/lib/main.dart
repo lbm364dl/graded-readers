@@ -8,10 +8,9 @@ import 'services/segmenter.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Future.wait([
-    DictionaryService.instance.initialize(),
-    JapaneseTokenizer.instance.initialize(),
-  ]);
+  await DictionaryService.instance.initialize();
+  // Initialize kuromoji in background — don't block app startup
+  JapaneseTokenizer.instance.initialize();
   runApp(const GradedReadersApp());
 }
 
