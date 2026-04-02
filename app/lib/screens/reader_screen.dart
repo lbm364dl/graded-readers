@@ -116,6 +116,7 @@ class _ReaderScreenState extends State<ReaderScreen> {
   int _currentPageIndex = 0;
   int _initialPage = 0;
   double _lastAvailableHeight = 0;
+  double _lastAvailableWidth = 0;
 
   // Lazy chapter segmentation cache
   final Map<int, _ChapterSegmented> _segmentCache = {};
@@ -194,18 +195,22 @@ class _ReaderScreenState extends State<ReaderScreen> {
         await Future.delayed(Duration.zero);
         if (!mounted) { _isPaginating = false; return; }
       }
-      final titleHeight = 50.0;
+      final titleHeight = 70.0; // title + divider + spacing
+      final pageMargin = 40.0; // top/bottom padding
       final paraSpacing = 16.0;
-      var remaining = availableHeight - titleHeight;
+      var remaining = availableHeight - pageMargin;
       var currentPageParas = <_ParagraphData>[];
       var isFirst = true;
 
       for (final para in chapter.paragraphs) {
-        // Estimate paragraph height: chars per line depends on font size
-        // Rough: each line ~ (availableWidth / fontSize) chars,
-        // line height ~ fontSize * 1.8
+        if (isFirst && currentPageParas.isEmpty) {
+          remaining -= titleHeight;
+        }
+        // Estimate: CJK chars are ~fontSize wide, lines ~fontSize*1.8 tall
         final lineHeight = _fontSize * 1.8;
-        final charsPerLine = (300 / _fontSize).floor().clamp(8, 40);
+        // Available text width = screen - 48px padding
+        final textWidth = (_lastAvailableWidth > 0 ? _lastAvailableWidth : 300) - 48;
+        final charsPerLine = (textWidth / _fontSize).floor().clamp(6, 50);
         final lines =
             (para.plainText.length / charsPerLine).ceil().clamp(1, 1000);
         final paraHeight = lines * lineHeight + paraSpacing;
@@ -413,7 +418,9 @@ class _ReaderScreenState extends State<ReaderScreen> {
       body: LayoutBuilder(
         builder: (context, constraints) {
           final height = constraints.maxHeight;
+          final width = constraints.maxWidth;
           if (_pages == null || height != _lastAvailableHeight) {
+            _lastAvailableWidth = width;
             WidgetsBinding.instance.addPostFrameCallback((_) {
               _paginate(height);
             });
@@ -578,7 +585,8 @@ class _PageViewState extends State<_PageView> {
       valueListenable: widget.highlightedIndex,
       builder: (context, highlightIdx, _) {
         _disposeRecognizers();
-        return Padding(
+        return ClipRect(
+          child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -603,6 +611,7 @@ class _PageViewState extends State<_PageView> {
                   .map((p) => _buildParagraph(p, highlightIdx)),
             ],
           ),
+        ),
         );
       },
     );
