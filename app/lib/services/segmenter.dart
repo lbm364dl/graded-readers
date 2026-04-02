@@ -91,7 +91,7 @@ _DeinflectResult? _tryDeinflect(String text, int start, DictionaryService dict) 
     // Skip spans that contain non-CJK in the middle
     if (span.codeUnits.any((c) => !_isCJK(c))) continue;
 
-    final candidates = _deinflectWord(span);
+    final candidates = deinflectWord(span);
     for (final dictForm in candidates) {
       if (dictForm.isNotEmpty && dict.hasWord(dictForm)) {
         return _DeinflectResult(dictForm, len);
@@ -103,7 +103,7 @@ _DeinflectResult? _tryDeinflect(String text, int start, DictionaryService dict) 
 
 /// Generate possible dictionary forms for an inflected Japanese word.
 /// Returns a list of candidates (most specific first).
-List<String> _deinflectWord(String word) {
+List<String> deinflectWord(String word) {
   final results = <String>[];
 
   // --- Verb masu-form endings ---

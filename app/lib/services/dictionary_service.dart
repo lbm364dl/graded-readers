@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
 import '../models.dart';
+import 'segmenter.dart' show deinflectWord;
 
 class DictEntry {
   final String word;
@@ -71,13 +72,36 @@ class DictionaryService {
 
   DictEntry? lookup(String word) {
     final raw = _dicts[_activeLanguage]?[word];
-    if (raw == null) return null;
-    return DictEntry(
-      word: word,
-      pinyin: (raw['p'] as String?) ?? '',
-      definitions: List<String>.from((raw['d'] as List?) ?? []),
-      hskLevel: raw['l'] as int?,
-    );
+    if (raw != null) {
+      return DictEntry(
+        word: word,
+        pinyin: (raw['p'] as String?) ?? '',
+        definitions: List<String>.from((raw['d'] as List?) ?? []),
+        hskLevel: raw['l'] as int?,
+      );
+    }
+    // Try deinflection for Japanese
+    if (_activeLanguage == Language.japanese) {
+      return _lookupDeinflected(word);
+    }
+    return null;
+  }
+
+  DictEntry? _lookupDeinflected(String word) {
+    // Import deinflection candidates from segmenter
+    final candidates = deinflectWord(word);
+    for (final dictForm in candidates) {
+      final raw = _dicts[_activeLanguage]?[dictForm];
+      if (raw != null) {
+        return DictEntry(
+          word: dictForm,
+          pinyin: (raw['p'] as String?) ?? '',
+          definitions: List<String>.from((raw['d'] as List?) ?? []),
+          hskLevel: raw['l'] as int?,
+        );
+      }
+    }
+    return null;
   }
 
   bool hasWord(String word) =>
