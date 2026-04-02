@@ -1,0 +1,75 @@
+# 太平記 — Taught vocabulary per JLPT level
+# Format: word [tab] actual_level [tab] frequency_in_text
+
+## N5
+戦い	N4	frequent
+武士	N1	frequent
+兵	N3	frequent
+城	N3	frequent
+軍	N3	common
+味方	N3	common
+作戦	N3	common
+褒美	N2	rare
+反乱	N2	rare
+滅びる	N2	common
+忠義	N1	common
+朝廷	N1	common
+幕府	N1	frequent
+
+## N4
+執権	N1	common
+要塞	N1	rare
+陣営	N2	rare
+恩賞	N1	common
+裏切り	N2	common
+滅亡	N2	common
+落書き	N2	rare
+拠点	N2	common
+鎮める	N2	rare
+凱旋	N1	rare
+将軍	N2	common
+
+## N3
+討幕	N1	common
+挙兵	N1	common
+知略	N1	rare
+籠城	N1	common
+恩賞	N1	common
+蜂起	N1	rare
+乖離	N1	rare
+切通し	N1	rare
+鎮圧	N1	common
+行宮	N1	rare
+崩御	N1	rare
+嫡子	N1	rare
+諫言	N1	rare
+軍記物語	N1	rare
+
+## N2
+得宗	N1	rare
+両統迭立	N1	rare
+朱子学	N1	rare
+悪党	N1	common
+六波羅探題	N1	common
+簒奪	N1	rare
+荘園	N1	common
+雑訴決断所	N1	rare
+中先代の乱	N1	rare
+三種の神器	N1	common
+観応の擾乱	N1	rare
+神皇正統記	N1	rare
+嚆矢	N1	rare
+大義名分	N1	common
+
+## N1
+践祚	above_N1	rare
+叡慮	above_N1	rare
+綸旨	above_N1	common
+御教書	above_N1	common
+係り結び	above_N1	common
+滾木	above_N1	rare
+魂魄	above_N1	rare
+北闕	above_N1	rare
+執心	above_N1	rare
+已然形	above_N1	common
+連体形	above_N1	common
