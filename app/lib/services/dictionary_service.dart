@@ -20,6 +20,7 @@ class DictEntry {
 
 class DictionaryService {
   DictionaryService._();
+  DictionaryService.forTest(); // for subclass mocking in tests
   static final DictionaryService instance = DictionaryService._();
 
   static const _assetPaths = {
