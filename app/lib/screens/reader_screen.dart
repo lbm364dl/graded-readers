@@ -57,7 +57,8 @@ class _ReaderScreenState extends State<ReaderScreen> {
     super.dispose();
   }
 
-  void _showWordDefinition(String word) {
+  void _showWordDefinition(String word, List<String> allWords) {
+    final index = allWords.indexOf(word);
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -65,7 +66,10 @@ class _ReaderScreenState extends State<ReaderScreen> {
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
-      builder: (_) => _WordDefinitionSheet(word: word),
+      builder: (_) => _WordDefinitionSheet(
+        allWords: allWords,
+        initialIndex: index < 0 ? 0 : index,
+      ),
     );
   }
 
@@ -183,7 +187,7 @@ class _ChapterView extends StatelessWidget {
   final double fontSize;
   final bool isDark;
   final int level;
-  final void Function(String) onWordTap;
+  final void Function(String, List<String>) onWordTap;
 
   const _ChapterView({
     required this.chapter,
@@ -228,7 +232,7 @@ class _InteractiveContent extends StatefulWidget {
   final String text;
   final double fontSize;
   final bool isDark;
-  final void Function(String) onWordTap;
+  final void Function(String, List<String>) onWordTap;
 
   const _InteractiveContent({
     required this.text,
@@ -244,19 +248,36 @@ class _InteractiveContent extends StatefulWidget {
 class _InteractiveContentState extends State<_InteractiveContent> {
   // paragraph text → pre-segmented tokens
   late Map<String, List<String>> _segments;
+  // flat list of unique CJK words in reading order
+  late List<String> _allCjkWords;
 
   @override
   void initState() {
     super.initState();
-    _segments = _buildSegments();
+    _rebuild();
   }
 
   @override
   void didUpdateWidget(_InteractiveContent old) {
     super.didUpdateWidget(old);
     if (old.text != widget.text) {
-      _segments = _buildSegments();
+      _rebuild();
     }
+  }
+
+  void _rebuild() {
+    _segments = _buildSegments();
+    // Build ordered unique CJK word list
+    final seen = <String>{};
+    final words = <String>[];
+    for (final tokens in _segments.values) {
+      for (final t in tokens) {
+        if (t.isNotEmpty && _isCJK(t.codeUnitAt(0)) && seen.add(t)) {
+          words.add(t);
+        }
+      }
+    }
+    _allCjkWords = words;
   }
 
   Map<String, List<String>> _buildSegments() {
@@ -326,7 +347,7 @@ class _InteractiveContentState extends State<_InteractiveContent> {
     return _TappableWord(
       word: token,
       style: style,
-      onTap: () => widget.onWordTap(token),
+      onTap: () => widget.onWordTap(token, _allCjkWords),
     );
   }
 
@@ -397,24 +418,46 @@ class _TappableWordState extends State<_TappableWord> {
 // ---------------------------------------------------------------------------
 
 class _WordDefinitionSheet extends StatefulWidget {
-  final String word;
+  final List<String> allWords;
+  final int initialIndex;
 
-  const _WordDefinitionSheet({required this.word});
+  const _WordDefinitionSheet({
+    required this.allWords,
+    required this.initialIndex,
+  });
 
   @override
   State<_WordDefinitionSheet> createState() => _WordDefinitionSheetState();
 }
 
 class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
+  late int _currentIndex;
   bool _saved = false;
   bool _loading = false;
   DictEntry? _entry;
 
+  String get _word => widget.allWords[_currentIndex];
+  bool get _hasPrev => _currentIndex > 0;
+  bool get _hasNext => _currentIndex < widget.allWords.length - 1;
+
   @override
   void initState() {
     super.initState();
-    _entry = DictionaryService.instance.lookup(widget.word);
-    _saved = VocabularyService.instance.isSaved(widget.word);
+    _currentIndex = widget.initialIndex;
+    _loadWord();
+  }
+
+  void _loadWord() {
+    _entry = DictionaryService.instance.lookup(_word);
+    _saved = VocabularyService.instance.isSaved(_word);
+  }
+
+  void _goTo(int index) {
+    setState(() {
+      _currentIndex = index;
+      _loading = false;
+      _loadWord();
+    });
   }
 
   List<Widget> _buildCharBreakdown(String word, bool isDark) {
@@ -475,10 +518,10 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
     setState(() => _loading = true);
     final vocab = VocabularyService.instance;
     if (_saved) {
-      await vocab.removeWord(widget.word);
+      await vocab.removeWord(_word);
     } else {
       await vocab.saveWord(SavedWord(
-        word: widget.word,
+        word: _word,
         pinyin: _entry?.pinyin ?? '',
         definitions: _entry?.definitions ?? [],
         savedAt: DateTime.now(),
@@ -524,7 +567,7 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      widget.word,
+                      _word,
                       style: const TextStyle(
                         fontSize: 36,
                         fontWeight: FontWeight.bold,
@@ -580,10 +623,10 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
               // Copy button
               IconButton(
                 onPressed: () {
-                  Clipboard.setData(ClipboardData(text: widget.word));
+                  Clipboard.setData(ClipboardData(text: _word));
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: Text('Copied "${widget.word}"'),
+                      content: Text('Copied "$_word"'),
                       duration: const Duration(seconds: 1),
                       behavior: SnackBarBehavior.floating,
                     ),
@@ -641,7 +684,7 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
           ] else ...[
             const SizedBox(height: 16),
             // If multi-char word not found, show individual character lookups
-            if (entry == null && widget.word.length > 1) ...[
+            if (entry == null && _word.length > 1) ...[
               Divider(color: isDark ? Colors.grey[700] : Colors.grey[300]),
               const SizedBox(height: 8),
               Text(
@@ -649,7 +692,7 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
                 style: TextStyle(fontSize: 13, color: Colors.grey[500]),
               ),
               const SizedBox(height: 8),
-              ..._buildCharBreakdown(widget.word, isDark),
+              ..._buildCharBreakdown(_word, isDark),
             ] else
               Text(
                 entry == null ? 'No dictionary entry found' : 'No definitions available',
@@ -659,6 +702,40 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
                   fontStyle: FontStyle.italic,
                 ),
               ),
+          ],
+
+          // Prev / Next word navigation
+          if (widget.allWords.length > 1) ...[
+            const SizedBox(height: 16),
+            Divider(color: isDark ? Colors.grey[700] : Colors.grey[300]),
+            const SizedBox(height: 8),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton.icon(
+                  onPressed: _hasPrev ? () => _goTo(_currentIndex - 1) : null,
+                  icon: const Icon(Icons.arrow_back_ios, size: 14),
+                  label: Text(
+                    _hasPrev ? widget.allWords[_currentIndex - 1] : '',
+                    style: const TextStyle(fontSize: 16),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+                Text(
+                  '${_currentIndex + 1}/${widget.allWords.length}',
+                  style: TextStyle(fontSize: 12, color: Colors.grey[500]),
+                ),
+                TextButton.icon(
+                  onPressed: _hasNext ? () => _goTo(_currentIndex + 1) : null,
+                  icon: Text(
+                    _hasNext ? widget.allWords[_currentIndex + 1] : '',
+                    style: const TextStyle(fontSize: 16),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  label: const Icon(Icons.arrow_forward_ios, size: 14),
+                ),
+              ],
+            ),
           ],
         ],
       ),
