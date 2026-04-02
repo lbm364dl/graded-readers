@@ -1,6 +1,11 @@
 import 'dart:async';
+import 'dart:isolate';
+import 'dart:typed_data';
 import 'package:kuromoji/kuromoji.dart' as kuromoji;
 import 'package:kuromoji/src/tokenizer.dart' as kuromoji_tok;
+import 'package:kuromoji/src/dict/data/char.dart';
+import 'package:kuromoji/src/dict/dynamic_dictionaries.dart';
+import 'package:kuromoji/src/dictionary_loader.dart';
 import '../models.dart' show Language;
 import 'dictionary_service.dart';
 
@@ -35,15 +40,19 @@ class JapaneseTokenizer {
   Completer<void>? _initCompleter;
   bool get isReady => _tokenizer != null;
 
-  /// Initialize kuromoji dictionary. Safe to call multiple times.
-  /// Returns a Future that completes when ready. Does NOT block the UI.
+  /// Initialize kuromoji dictionary in a background isolate.
+  /// The heavy GZip decompression runs off the main thread.
   Future<void> initialize() async {
     if (_tokenizer != null) return;
     if (_initCompleter != null) return _initCompleter!.future;
 
     _initCompleter = Completer<void>();
     try {
-      _tokenizer = await kuromoji.TokenizerBuilder().build();
+      // Heavy decompression in background isolate
+      final data = await Isolate.run(() => DictionaryLoader().load());
+      // Light construction on main isolate
+      final dictionaries = DynamicDictionaries(data, charData);
+      _tokenizer = kuromoji_tok.Tokenizer(dictionaries);
     } catch (_) {
       // If kuromoji fails to load, we fall back to the simple segmenter
     }

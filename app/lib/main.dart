@@ -9,7 +9,7 @@ import 'services/segmenter.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await DictionaryService.instance.initialize();
-  // Initialize kuromoji in background — don't block app startup
+  // Kuromoji loads in background isolate — doesn't block UI
   JapaneseTokenizer.instance.initialize();
   runApp(const GradedReadersApp());
 }
