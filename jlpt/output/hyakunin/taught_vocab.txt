@@ -1,21 +1,16 @@
 # 百人一首 — Taught vocabulary per JLPT level
+# Format: word [tab] actual_level [tab] frequency_in_text
 
 ## N5
-秋	N5
-春	N4
-山	N5
-川	N5
-花	N5
+つゆ	N2	rare
 
 ## N4
-霞	N2
-露	N2
-紅葉	N3
-嘆く	N1
-袖	N2
+つゆ	N2	rare
+しも	N3	rare
+枕詞	glossary	common
+掛詞	glossary	common
 
 ## N3
-幽玄	N1
-風情	N1
-趣	N1
-余韻	N1
+枕詞	glossary	common
+掛詞	glossary	common
+縁語	glossary	rare

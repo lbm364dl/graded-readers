@@ -1,49 +1,17 @@
 # 徒然草 — Taught vocabulary per JLPT level
+# Format: word [tab] actual_level [tab] frequency_in_text
 
 ## N5
-法師	N2
-命	N3
-露	N2
-満開	N3
-練習	N3
-失敗	N3
+法師	glossary	frequent
+つゆ	N2	rare
 
 ## N4
-随筆	N1
-出家	N2
-無常	N1
-趣	N2
-執着	N1
-風流	N2
-教訓	N2
-逸話	N1
+法師	glossary	frequent
+きょうくん	N2	common
+しゅうちゃく	N1	common
+むじょう	glossary	common
 
 ## N3
-鎌倉時代	N1
-隠遁	N1
-美意識	N1
-侘び	N1
-逆説	N1
-認知	N1
-所有欲	N1
-凝縮	N1
-敷衍	N1
-
-## N2
-俗名	N1
-蔵人	N1
-伝本	N1
-係り結び	N1
-已然形	N1
-反実仮想	N1
-無限背進	N1
-確証バイアス	N1
-観照	N1
-
-## N1
-卜部氏	beyond
-正徹本	beyond
-六位蔵人	beyond
-五蘊盛苦	beyond
-閼伽棚	beyond
-掛け樋	beyond
+法師	glossary	frequent
+むじょう	glossary	common
+侘び	glossary	rare

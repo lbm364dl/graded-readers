@@ -2,39 +2,28 @@
 # Words explicitly introduced that exceed the target level.
 
 ## N5 (internal level 1)
-先生	4x	N4
-怒る	5x	N4
-悲しい	3x	N4
-結婚	2x	N4
-飛ぶ	3x	N4
-怖い	2x	N4
-証拠	2x	N3
+先生	5x	N4 (but common enough for N5 context)
+温泉	1x	glossary
+送別会	1x	glossary
 
 ## N4 (internal level 2)
-無鉄砲	6x	N1
-陰謀	4x	N1
-卑怯	3x	N1
-遺産	2x	N2
-婚約者	3x	N2
-転勤	4x	N2
-弁解	2x	N2
+無鉄砲	3x	glossary/story
+辞表	1x	glossary
+婚約者	1x	N2
+転勤	1x	N2
+卑怯	1x	N1
+餞別	1x	N1
 
 ## N3 (internal level 3)
-煽動	3x	N1
-信用	5x	N2
-策略	4x	N1
-理不尽	3x	N1
-愚直	2x	N1
-追従	2x	N1
-厚かましい	3x	N1
+無鉄砲	2x	glossary/story
+辞表	1x	glossary
+餞別	1x	N1
+卑怯	1x	N1
+策略	1x	N1
+模範	1x	N1
 
 ## N2 (internal level 4)
-無闘砲	6x	N1
-襯衣	3x	N1
-腰巾着	4x	N1
-濫用	2x	N1
-失墜	2x	N1
-抒情的	2x	N1
+— see n4_botchan.md
 
 ## N1 (internal level 5)
 — (no above-level words at N1)
