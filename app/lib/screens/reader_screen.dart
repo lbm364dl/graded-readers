@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -28,7 +27,8 @@ class _ReaderScreenState extends State<ReaderScreen> {
   double _fontSize = 20.0;
   final double _minFontSize = 14.0;
   final double _maxFontSize = 32.0;
-  final ValueNotifier<String?> _highlightedWord = ValueNotifier(null);
+  // Stores the global index of the highlighted word, or -1
+  final ValueNotifier<int> _highlightedIndex = ValueNotifier(-1);
 
   @override
   void initState() {
@@ -55,12 +55,12 @@ class _ReaderScreenState extends State<ReaderScreen> {
   @override
   void dispose() {
     _pageController.dispose();
-    _highlightedWord.dispose();
+    _highlightedIndex.dispose();
     super.dispose();
   }
 
-  void _showWordDefinition(String word, List<String> allWords, int index) {
-    _highlightedWord.value = word;
+  void _showWordDefinition(List<String> allWords, int index) {
+    _highlightedIndex.value = index;
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -72,9 +72,9 @@ class _ReaderScreenState extends State<ReaderScreen> {
       builder: (_) => _WordDefinitionSheet(
         allWords: allWords,
         initialIndex: index,
-        highlightedWord: _highlightedWord,
+        highlightedIndex: _highlightedIndex,
       ),
-    ).whenComplete(() => _highlightedWord.value = null);
+    ).whenComplete(() => _highlightedIndex.value = -1);
   }
 
   @override
@@ -123,7 +123,7 @@ class _ReaderScreenState extends State<ReaderScreen> {
             fontSize: _fontSize,
             isDark: isDark,
             onWordTap: _showWordDefinition,
-            highlightedWord: _highlightedWord,
+            highlightedIndex: _highlightedIndex,
           );
         },
       ),
@@ -195,15 +195,15 @@ class _ChapterView extends StatelessWidget {
   final Chapter chapter;
   final double fontSize;
   final bool isDark;
-  final void Function(String, List<String>, int) onWordTap;
-  final ValueNotifier<String?> highlightedWord;
+  final void Function(List<String>, int) onWordTap;
+  final ValueNotifier<int> highlightedIndex;
 
   const _ChapterView({
     required this.chapter,
     required this.fontSize,
     required this.isDark,
     required this.onWordTap,
-    required this.highlightedWord,
+    required this.highlightedIndex,
   });
 
   @override
@@ -231,7 +231,7 @@ class _ChapterView extends StatelessWidget {
             fontSize: fontSize,
             isDark: isDark,
             onWordTap: onWordTap,
-            highlightedWord: highlightedWord,
+            highlightedIndex: highlightedIndex,
           ),
           const SizedBox(height: 80),
         ],
@@ -255,23 +255,54 @@ class _TokenEntry {
   final String text;
   final bool isCjk;
   final int globalIndex;
-  _TokenEntry(
-      {required this.text, required this.isCjk, required this.globalIndex});
+  // Character offsets within the paragraph string
+  final int startOffset;
+  final int endOffset;
+  _TokenEntry({
+    required this.text,
+    required this.isCjk,
+    required this.globalIndex,
+    required this.startOffset,
+    required this.endOffset,
+  });
+}
+
+class _ParagraphData {
+  final String raw;
+  final String plainText; // the full paragraph as a single string
+  final bool isHeading;
+  final List<_TokenEntry> tokens;
+  _ParagraphData({
+    required this.raw,
+    required this.plainText,
+    required this.isHeading,
+    required this.tokens,
+  });
+
+  /// Find the CJK token at a given character offset
+  _TokenEntry? tokenAtOffset(int offset) {
+    for (final t in tokens) {
+      if (t.isCjk && offset >= t.startOffset && offset < t.endOffset) {
+        return t;
+      }
+    }
+    return null;
+  }
 }
 
 class _InteractiveContent extends StatefulWidget {
   final String text;
   final double fontSize;
   final bool isDark;
-  final void Function(String, List<String>, int) onWordTap;
-  final ValueNotifier<String?> highlightedWord;
+  final void Function(List<String>, int) onWordTap;
+  final ValueNotifier<int> highlightedIndex;
 
   const _InteractiveContent({
     required this.text,
     required this.fontSize,
     required this.isDark,
     required this.onWordTap,
-    required this.highlightedWord,
+    required this.highlightedIndex,
   });
 
   @override
@@ -281,7 +312,6 @@ class _InteractiveContent extends StatefulWidget {
 class _InteractiveContentState extends State<_InteractiveContent> {
   late List<_ParagraphData> _paragraphs;
   late List<String> _allCjkWords;
-  final List<TapGestureRecognizer> _recognizers = [];
 
   @override
   void initState() {
@@ -293,22 +323,8 @@ class _InteractiveContentState extends State<_InteractiveContent> {
   void didUpdateWidget(_InteractiveContent old) {
     super.didUpdateWidget(old);
     if (old.text != widget.text) {
-      _disposeRecognizers();
       _rebuild();
     }
-  }
-
-  @override
-  void dispose() {
-    _disposeRecognizers();
-    super.dispose();
-  }
-
-  void _disposeRecognizers() {
-    for (final r in _recognizers) {
-      r.dispose();
-    }
-    _recognizers.clear();
   }
 
   void _rebuild() {
@@ -324,18 +340,26 @@ class _InteractiveContentState extends State<_InteractiveContent> {
       final tokens = segmentText(trimmed, dict);
 
       final tokenEntries = <_TokenEntry>[];
+      int charOffset = 0;
       for (final t in tokens) {
         final isCjk = t.isNotEmpty && _isCJK(t.codeUnitAt(0));
         tokenEntries.add(_TokenEntry(
           text: t,
           isCjk: isCjk,
           globalIndex: isCjk ? _allCjkWords.length : -1,
+          startOffset: charOffset,
+          endOffset: charOffset + t.length,
         ));
+        charOffset += t.length;
         if (isCjk) _allCjkWords.add(t);
       }
 
+      // Reconstruct the plain text from tokens (same as original)
+      final plainText = tokens.join();
+
       _paragraphs.add(_ParagraphData(
         raw: trimmed,
+        plainText: plainText,
         isHeading: isHeading,
         tokens: tokenEntries,
       ));
@@ -344,20 +368,20 @@ class _InteractiveContentState extends State<_InteractiveContent> {
 
   @override
   Widget build(BuildContext context) {
-    return ValueListenableBuilder<String?>(
-      valueListenable: widget.highlightedWord,
-      builder: (context, highlighted, _) {
-        _disposeRecognizers();
+    return ValueListenableBuilder<int>(
+      valueListenable: widget.highlightedIndex,
+      builder: (context, highlightIdx, _) {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children:
-              _paragraphs.map((p) => _buildParagraph(p, highlighted)).toList(),
+          children: _paragraphs
+              .map((p) => _buildParagraph(p, highlightIdx))
+              .toList(),
         );
       },
     );
   }
 
-  Widget _buildParagraph(_ParagraphData para, String? highlighted) {
+  Widget _buildParagraph(_ParagraphData para, int highlightIdx) {
     if (para.isHeading) {
       return Padding(
         padding: const EdgeInsets.only(bottom: 12),
@@ -373,55 +397,157 @@ class _InteractiveContentState extends State<_InteractiveContent> {
       );
     }
 
-    final baseStyle = TextStyle(
+    final style = TextStyle(
       fontSize: widget.fontSize,
       height: 1.8,
       letterSpacing: 0.3,
       color: widget.isDark ? Colors.grey[200] : AppTheme.textPrimary,
     );
 
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 16),
-      child: SelectableText.rich(
-        TextSpan(
-          children: para.tokens
-              .map((t) => _buildTokenSpan(t, baseStyle, highlighted))
-              .toList(),
-        ),
-      ),
-    );
-  }
-
-  TextSpan _buildTokenSpan(
-      _TokenEntry token, TextStyle style, String? highlighted) {
-    if (!token.isCjk || !DictionaryService.instance.isReady) {
-      return TextSpan(text: token.text, style: style);
+    // Build selection highlight ranges
+    TextSelection? highlight;
+    if (highlightIdx >= 0) {
+      for (final t in para.tokens) {
+        if (t.globalIndex == highlightIdx) {
+          highlight = TextSelection(
+            baseOffset: t.startOffset,
+            extentOffset: t.endOffset,
+          );
+          break;
+        }
+      }
     }
 
-    final isHighlighted = highlighted == token.text;
-    final recognizer = TapGestureRecognizer()
-      ..onTap = () =>
-          widget.onWordTap(token.text, _allCjkWords, token.globalIndex);
-    _recognizers.add(recognizer);
-
-    return TextSpan(
-      text: token.text,
-      style: style.copyWith(
-        backgroundColor: isHighlighted
-            ? AppTheme.primary.withValues(alpha: 0.2)
-            : null,
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16),
+      child: _TappableParagraph(
+        text: para.plainText,
+        style: style,
+        highlight: highlight,
+        highlightColor: AppTheme.primary.withValues(alpha: 0.18),
+        onTapAtOffset: (offset) {
+          final token = para.tokenAtOffset(offset);
+          if (token != null) {
+            widget.onWordTap(_allCjkWords, token.globalIndex);
+          }
+        },
       ),
-      recognizer: recognizer,
     );
   }
 }
 
-class _ParagraphData {
-  final String raw;
-  final bool isHeading;
-  final List<_TokenEntry> tokens;
-  _ParagraphData(
-      {required this.raw, required this.isHeading, required this.tokens});
+// ---------------------------------------------------------------------------
+// A paragraph that renders as plain text (proper baseline alignment)
+// but supports tapping individual characters with offset detection.
+// ---------------------------------------------------------------------------
+
+class _TappableParagraph extends StatelessWidget {
+  final String text;
+  final TextStyle style;
+  final TextSelection? highlight;
+  final Color highlightColor;
+  final void Function(int charOffset) onTapAtOffset;
+
+  const _TappableParagraph({
+    required this.text,
+    required this.style,
+    required this.highlight,
+    required this.highlightColor,
+    required this.onTapAtOffset,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        // We use a Stack: the bottom layer is a SelectableText for
+        // long-press selection/copy. The top layer is a transparent
+        // GestureDetector for single-tap word lookup.
+        // We paint the highlight via a CustomPaint underneath.
+        final textSpan = TextSpan(text: text, style: style);
+
+        return Stack(
+          children: [
+            // Highlight paint layer
+            if (highlight != null)
+              CustomPaint(
+                painter: _HighlightPainter(
+                  textSpan: textSpan,
+                  selection: highlight!,
+                  color: highlightColor,
+                  maxWidth: constraints.maxWidth,
+                ),
+              ),
+            // Selectable text layer (handles long-press selection)
+            SelectableText.rich(
+              textSpan,
+              onTap: () {
+                // onTap doesn't give us position; handled by the
+                // GestureDetector overlay instead. But we need onTap
+                // so SelectableText doesn't swallow taps.
+              },
+            ),
+            // Transparent tap detector overlay for word lookup
+            Positioned.fill(
+              child: GestureDetector(
+                behavior: HitTestBehavior.translucent,
+                onTapUp: (details) {
+                  final tp = TextPainter(
+                    text: textSpan,
+                    textDirection: TextDirection.ltr,
+                    maxLines: null,
+                  )..layout(maxWidth: constraints.maxWidth);
+
+                  final offset =
+                      tp.getPositionForOffset(details.localPosition).offset;
+                  tp.dispose();
+                  onTapAtOffset(offset);
+                },
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+}
+
+class _HighlightPainter extends CustomPainter {
+  final TextSpan textSpan;
+  final TextSelection selection;
+  final Color color;
+  final double maxWidth;
+
+  _HighlightPainter({
+    required this.textSpan,
+    required this.selection,
+    required this.color,
+    required this.maxWidth,
+  });
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final tp = TextPainter(
+      text: textSpan,
+      textDirection: TextDirection.ltr,
+      maxLines: null,
+    )..layout(maxWidth: maxWidth);
+
+    final boxes = tp.getBoxesForSelection(selection);
+    final paint = Paint()..color = color;
+
+    for (final box in boxes) {
+      canvas.drawRRect(
+        RRect.fromRectAndRadius(box.toRect(), const Radius.circular(3)),
+        paint,
+      );
+    }
+    tp.dispose();
+  }
+
+  @override
+  bool shouldRepaint(_HighlightPainter old) =>
+      old.selection != selection || old.color != color;
 }
 
 // ---------------------------------------------------------------------------
@@ -431,12 +557,12 @@ class _ParagraphData {
 class _WordDefinitionSheet extends StatefulWidget {
   final List<String> allWords;
   final int initialIndex;
-  final ValueNotifier<String?> highlightedWord;
+  final ValueNotifier<int> highlightedIndex;
 
   const _WordDefinitionSheet({
     required this.allWords,
     required this.initialIndex,
-    required this.highlightedWord,
+    required this.highlightedIndex,
   });
 
   @override
@@ -471,7 +597,7 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
       _loading = false;
       _loadWord();
     });
-    widget.highlightedWord.value = _word;
+    widget.highlightedIndex.value = _currentIndex;
   }
 
   List<Widget> _buildCharBreakdown(String word, bool isDark) {
@@ -692,8 +818,7 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
                           '${e.key + 1}.',
                           style: TextStyle(
                             fontSize: 14,
-                            color:
-                                isDark ? Colors.grey[500] : Colors.grey[500],
+                            color: Colors.grey[500],
                             fontWeight: FontWeight.w600,
                           ),
                         ),
@@ -749,11 +874,14 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
                   visualDensity: VisualDensity.compact,
                 ),
                 if (_hasPrev)
-                  Text(
-                    widget.allWords[_currentIndex - 1],
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: isDark ? Colors.grey[400] : Colors.grey[600],
+                  Flexible(
+                    child: Text(
+                      widget.allWords[_currentIndex - 1],
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: isDark ? Colors.grey[400] : Colors.grey[600],
+                      ),
+                      overflow: TextOverflow.ellipsis,
                     ),
                   ),
                 const Spacer(),
@@ -763,11 +891,15 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
                 ),
                 const Spacer(),
                 if (_hasNext)
-                  Text(
-                    widget.allWords[_currentIndex + 1],
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: isDark ? Colors.grey[400] : Colors.grey[600],
+                  Flexible(
+                    child: Text(
+                      widget.allWords[_currentIndex + 1],
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: isDark ? Colors.grey[400] : Colors.grey[600],
+                      ),
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.right,
                     ),
                   ),
                 IconButton(
