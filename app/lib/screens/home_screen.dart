@@ -84,6 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
         _ContinueReadingCard(
           repo: widget.repo,
           language: language,
+          onBrowse: (book, lang) => _openBook(context, book, lang),
         ),
         ...mainBooks.map((book) => _BookCard(
               book: book,
@@ -508,10 +509,12 @@ class BookOverviewScreen extends StatelessWidget {
 class _ContinueReadingCard extends StatefulWidget {
   final ContentRepository repo;
   final Language language;
+  final void Function(Book book, Language language)? onBrowse;
 
   const _ContinueReadingCard({
     required this.repo,
     required this.language,
+    this.onBrowse,
   });
 
   @override
@@ -522,6 +525,7 @@ class _ContinueReadingCardState extends State<_ContinueReadingCard>
     with WidgetsBindingObserver {
   ReadingProgress? _progress;
   Reader? _reader;
+  Book? _book;
 
   @override
   void initState() {
@@ -554,26 +558,37 @@ class _ContinueReadingCardState extends State<_ContinueReadingCard>
       setState(() {
         _progress = null;
         _reader = null;
+        _book = null;
       });
       return;
     }
 
-    // Find the matching reader
+    // Find the matching reader and book
     final readers = await widget.repo.loadReaders(widget.language);
     final reader = readers.cast<Reader?>().firstWhere(
           (r) => r!.id == progress.readerId,
           orElse: () => null,
         );
 
+    Book? book;
+    if (reader != null) {
+      final books = await widget.repo.loadBooks(widget.language);
+      book = books.cast<Book?>().firstWhere(
+            (b) => b!.key == reader.book,
+            orElse: () => null,
+          );
+    }
+
     if (!mounted) return;
     setState(() {
-      // Only show if the reader belongs to the current language
       if (reader != null) {
         _progress = progress;
         _reader = reader;
+        _book = book;
       } else {
         _progress = null;
         _reader = null;
+        _book = null;
       }
     });
   }
@@ -654,7 +669,27 @@ class _ContinueReadingCardState extends State<_ContinueReadingCard>
                   ),
                 ),
                 const SizedBox(width: 8),
-                Icon(Icons.chevron_right, color: Colors.grey[400]),
+                Column(
+                  children: [
+                    Icon(Icons.chevron_right, color: Colors.grey[400]),
+                    if (_book != null && widget.onBrowse != null)
+                      const SizedBox(height: 4),
+                    if (_book != null && widget.onBrowse != null)
+                      GestureDetector(
+                        onTap: () {
+                          widget.onBrowse!(_book!, widget.language);
+                        },
+                        child: Text(
+                          'Browse',
+                          style: TextStyle(
+                            fontSize: 11,
+                            color: AppTheme.primary,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                  ],
+                ),
               ],
             ),
           ),
