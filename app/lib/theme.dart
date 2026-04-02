@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'models.dart';
 
 class AppTheme {
   static const Color primary = Color(0xFFB71C1C);
@@ -17,8 +18,19 @@ class AppTheme {
     6: Color(0xFFF44336),
   };
 
-  static Color levelColor(int level) =>
-      hskColors[level] ?? const Color(0xFF9E9E9E);
+  static const jlptColors = <int, Color>{
+    1: Color(0xFF4CAF50), // N5
+    2: Color(0xFF29B6F6), // N4
+    3: Color(0xFFFFC107), // N3
+    4: Color(0xFFFF9800), // N2
+    5: Color(0xFFF44336), // N1
+  };
+
+  static Color levelColor(int level, [Language language = Language.chinese]) {
+    final colors =
+        language == Language.japanese ? jlptColors : hskColors;
+    return colors[level] ?? const Color(0xFF9E9E9E);
+  }
 
   static ThemeData get lightTheme {
     return ThemeData(

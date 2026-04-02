@@ -5,10 +5,18 @@ bool _isChinese(int code) =>
     (code >= 0x3400 && code <= 0x4DBF) ||
     (code >= 0xF900 && code <= 0xFAFF);
 
-/// Segments Chinese text into words using max forward matching.
+bool _isHiragana(int code) => code >= 0x3040 && code <= 0x309F;
+bool _isKatakana(int code) => code >= 0x30A0 && code <= 0x30FF;
+
+bool _isJapanese(int code) =>
+    _isChinese(code) || _isHiragana(code) || _isKatakana(code);
+
+bool _isCJK(int code) => _isChinese(code) || _isJapanese(code);
+
+/// Segments CJK text into words using max forward matching.
 ///
-/// Each returned token is either a (possibly multi-char) Chinese word or a
-/// run of non-Chinese characters (punctuation, whitespace, Latin, etc.).
+/// Each returned token is either a (possibly multi-char) CJK word or a
+/// run of non-CJK characters (punctuation, whitespace, Latin, etc.).
 List<String> segmentText(String text, DictionaryService dict) {
   if (!dict.isReady || text.isEmpty) return [text];
 
@@ -18,10 +26,10 @@ List<String> segmentText(String text, DictionaryService dict) {
   while (i < text.length) {
     final code = text.codeUnitAt(i);
 
-    if (!_isChinese(code)) {
-      // Accumulate non-Chinese run as a single token
+    if (!_isCJK(code)) {
+      // Accumulate non-CJK run as a single token
       int j = i + 1;
-      while (j < text.length && !_isChinese(text.codeUnitAt(j))) {
+      while (j < text.length && !_isCJK(text.codeUnitAt(j))) {
         j++;
       }
       result.add(text.substring(i, j));
@@ -29,7 +37,7 @@ List<String> segmentText(String text, DictionaryService dict) {
       continue;
     }
 
-    // Chinese character: attempt max forward matching
+    // CJK character: attempt max forward matching
     final maxLen = dict.maxWordLength.clamp(1, text.length - i);
     bool found = false;
 

@@ -3,7 +3,7 @@ import 'package:hsk_graded/main.dart';
 
 void main() {
   testWidgets('App launches without errors', (WidgetTester tester) async {
-    await tester.pumpWidget(const HskGradedApp());
-    expect(find.text('HSK 分级阅读'), findsOneWidget);
+    await tester.pumpWidget(const GradedReadersApp());
+    expect(find.text('Graded Readers'), findsOneWidget);
   });
 }

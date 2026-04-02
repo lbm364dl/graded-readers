@@ -1,9 +1,10 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
+import '../models.dart';
 
 class DictEntry {
   final String word;
-  final String pinyin;
+  final String pinyin; // pinyin for Chinese, reading for Japanese
   final List<String> definitions;
   final int? hskLevel;
 
@@ -21,25 +22,54 @@ class DictionaryService {
   DictionaryService._();
   static final DictionaryService instance = DictionaryService._();
 
-  Map<String, dynamic>? _dict;
-  Set<String>? _wordSet;
-  int _maxWordLength = 1;
+  static const _assetPaths = {
+    Language.chinese: 'assets/dictionary.json',
+    Language.japanese: 'assets/dictionary_ja.json',
+  };
+
+  final Map<Language, Map<String, dynamic>> _dicts = {};
+  final Map<Language, Set<String>> _wordSets = {};
+  final Map<Language, int> _maxWordLengths = {};
+
+  Language _activeLanguage = Language.chinese;
+
+  Language get activeLanguage => _activeLanguage;
 
   Future<void> initialize() async {
-    if (_dict != null) return;
-    final jsonStr = await rootBundle.loadString('assets/dictionary.json');
-    _dict = json.decode(jsonStr) as Map<String, dynamic>;
-    _wordSet = _dict!.keys.toSet();
-    _maxWordLength =
-        _wordSet!.fold(0, (m, w) => w.length > m ? w.length : m);
+    await _loadDict(Language.chinese);
   }
 
-  bool get isReady => _dict != null;
-  Set<String> get wordSet => _wordSet ?? const {};
-  int get maxWordLength => _maxWordLength;
+  Future<void> switchLanguage(Language language) async {
+    if (!_dicts.containsKey(language)) {
+      await _loadDict(language);
+    }
+    _activeLanguage = language;
+  }
+
+  Future<void> _loadDict(Language language) async {
+    if (_dicts.containsKey(language)) return;
+    final path = _assetPaths[language]!;
+    try {
+      final jsonStr = await rootBundle.loadString(path);
+      final dict = json.decode(jsonStr) as Map<String, dynamic>;
+      _dicts[language] = dict;
+      _wordSets[language] = dict.keys.toSet();
+      _maxWordLengths[language] =
+          dict.keys.fold(0, (m, w) => w.length > m ? w.length : m);
+    } catch (_) {
+      // Asset not found — use empty dict
+      _dicts[language] = {};
+      _wordSets[language] = {};
+      _maxWordLengths[language] = 1;
+    }
+  }
+
+  bool get isReady => _dicts.containsKey(_activeLanguage);
+  Set<String> get wordSet => _wordSets[_activeLanguage] ?? const {};
+  int get maxWordLength => _maxWordLengths[_activeLanguage] ?? 1;
 
   DictEntry? lookup(String word) {
-    final raw = _dict?[word];
+    final raw = _dicts[_activeLanguage]?[word];
     if (raw == null) return null;
     return DictEntry(
       word: word,
@@ -49,5 +79,6 @@ class DictionaryService {
     );
   }
 
-  bool hasWord(String word) => _wordSet?.contains(word) ?? false;
+  bool hasWord(String word) =>
+      _wordSets[_activeLanguage]?.contains(word) ?? false;
 }
