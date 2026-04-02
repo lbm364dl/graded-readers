@@ -791,46 +791,80 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
             Divider(color: isDark ? Colors.grey[700] : Colors.grey[200]),
             Row(
               children: [
-                IconButton(
-                  onPressed:
-                      _hasPrev ? () => _goTo(_currentIndex - 1) : null,
-                  icon: const Icon(Icons.chevron_left, size: 24),
-                  visualDensity: VisualDensity.compact,
-                ),
-                if (_hasPrev)
-                  Flexible(
-                    child: Text(
-                      widget.allWords[_currentIndex - 1],
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: isDark ? Colors.grey[400] : Colors.grey[600],
-                      ),
-                      overflow: TextOverflow.ellipsis,
+                // Left: prev button (whole area tappable)
+                Expanded(
+                  child: GestureDetector(
+                    onTap: _hasPrev
+                        ? () => _goTo(_currentIndex - 1)
+                        : null,
+                    behavior: HitTestBehavior.opaque,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Icon(Icons.chevron_left,
+                            size: 22,
+                            color: _hasPrev
+                                ? null
+                                : Colors.grey[400]),
+                        if (_hasPrev)
+                          Flexible(
+                            child: Text(
+                              widget.allWords[_currentIndex - 1],
+                              style: TextStyle(
+                                fontSize: 15,
+                                color: isDark
+                                    ? Colors.grey[300]
+                                    : Colors.grey[700],
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                      ],
                     ),
                   ),
-                const Spacer(),
-                Text(
-                  '${_currentIndex + 1} / ${widget.allWords.length}',
-                  style: TextStyle(fontSize: 11, color: Colors.grey[500]),
                 ),
-                const Spacer(),
-                if (_hasNext)
-                  Flexible(
-                    child: Text(
-                      widget.allWords[_currentIndex + 1],
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: isDark ? Colors.grey[400] : Colors.grey[600],
-                      ),
-                      overflow: TextOverflow.ellipsis,
-                      textAlign: TextAlign.right,
+                // Center: counter
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 12),
+                  child: Text(
+                    '${_currentIndex + 1} / ${widget.allWords.length}',
+                    style: TextStyle(
+                        fontSize: 11, color: Colors.grey[500]),
+                  ),
+                ),
+                // Right: next button (whole area tappable)
+                Expanded(
+                  child: GestureDetector(
+                    onTap: _hasNext
+                        ? () => _goTo(_currentIndex + 1)
+                        : null,
+                    behavior: HitTestBehavior.opaque,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        if (_hasNext)
+                          Flexible(
+                            child: Text(
+                              widget.allWords[_currentIndex + 1],
+                              style: TextStyle(
+                                fontSize: 15,
+                                color: isDark
+                                    ? Colors.grey[300]
+                                    : Colors.grey[700],
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                              textAlign: TextAlign.right,
+                            ),
+                          ),
+                        Icon(Icons.chevron_right,
+                            size: 22,
+                            color: _hasNext
+                                ? null
+                                : Colors.grey[400]),
+                      ],
                     ),
                   ),
-                IconButton(
-                  onPressed:
-                      _hasNext ? () => _goTo(_currentIndex + 1) : null,
-                  icon: const Icon(Icons.chevron_right, size: 24),
-                  visualDensity: VisualDensity.compact,
                 ),
               ],
             ),
