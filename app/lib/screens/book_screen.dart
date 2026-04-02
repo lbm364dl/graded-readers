@@ -34,7 +34,7 @@ class BookScreen extends StatelessWidget {
                 width: 40,
                 height: 40,
                 decoration: BoxDecoration(
-                  color: AppTheme.levelColor(reader.level)
+                  color: AppTheme.levelColor(reader.level, reader.language)
                       .withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(8),
                 ),
@@ -42,7 +42,8 @@ class BookScreen extends StatelessWidget {
                   child: Text(
                     '${index + 1}',
                     style: TextStyle(
-                      color: AppTheme.levelColor(reader.level),
+                      color:
+                          AppTheme.levelColor(reader.level, reader.language),
                       fontWeight: FontWeight.bold,
                     ),
                   ),

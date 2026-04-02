@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../data.dart';
+import '../main.dart';
 import '../models.dart';
 import '../theme.dart';
 import 'book_screen.dart';
@@ -19,22 +20,31 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final langNotifier = LanguageScope.of(context);
+    final language = langNotifier.value;
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('HSK 分级阅读'),
+        title: const Text('Graded Readers'),
+        actions: [
+          _LanguageToggle(
+            language: language,
+            onChanged: (lang) => langNotifier.switchTo(lang),
+          ),
+        ],
       ),
       body: _selectedTab == 2
           ? const VocabularyScreen()
           : FutureBuilder<List<Book>>(
-              future: widget.repo.loadBooks(),
+              future: widget.repo.loadBooks(language),
               builder: (context, snapshot) {
                 if (!snapshot.hasData) {
                   return const Center(child: CircularProgressIndicator());
                 }
                 final books = snapshot.data!;
                 return _selectedTab == 0
-                    ? _buildLibrary(books)
-                    : _buildByLevel(books);
+                    ? _buildLibrary(books, language)
+                    : _buildByLevel(books, language);
               },
             ),
       bottomNavigationBar: NavigationBar(
@@ -44,25 +54,24 @@ class _HomeScreenState extends State<HomeScreen> {
           NavigationDestination(
             icon: Icon(Icons.library_books_outlined),
             selectedIcon: Icon(Icons.library_books),
-            label: '书库',
+            label: 'Library',
           ),
           NavigationDestination(
             icon: Icon(Icons.bar_chart_outlined),
             selectedIcon: Icon(Icons.bar_chart),
-            label: '按级别',
+            label: 'By Level',
           ),
           NavigationDestination(
             icon: Icon(Icons.bookmark_border_outlined),
             selectedIcon: Icon(Icons.bookmark),
-            label: '词汇',
+            label: 'Vocabulary',
           ),
         ],
       ),
     );
   }
 
-  Widget _buildLibrary(List<Book> books) {
-    // Separate main books from standalone readers
+  Widget _buildLibrary(List<Book> books, Language language) {
     final mainBooks = books.where((b) => b.key != 'readers').toList();
     final standaloneReaders =
         books.where((b) => b.key == 'readers').toList();
@@ -72,13 +81,14 @@ class _HomeScreenState extends State<HomeScreen> {
       children: [
         ...mainBooks.map((book) => _BookCard(
               book: book,
-              onTap: () => _openBook(context, book),
+              language: language,
+              onTap: () => _openBook(context, book, language),
             )),
         if (standaloneReaders.isNotEmpty) ...[
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 12),
             child: Text(
-              '独立读物',
+              'Short Readers',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -87,24 +97,28 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           ...standaloneReaders.map((book) => _BookCard(
                 book: book,
-                onTap: () => _openBook(context, book),
+                language: language,
+                onTap: () => _openBook(context, book, language),
               )),
         ],
       ],
     );
   }
 
-  Widget _buildByLevel(List<Book> books) {
+  Widget _buildByLevel(List<Book> books, Language language) {
+    final maxLevel = language == Language.chinese ? 6 : 5;
+
     return ListView(
       padding: const EdgeInsets.all(16),
       children: [
-        for (int level = 1; level <= 6; level++) ...[
-          _LevelHeader(level: level),
+        for (int level = 1; level <= maxLevel; level++) ...[
+          _LevelHeader(level: level, language: language),
           ...books
               .where((b) => b.levels.containsKey(level))
               .map((book) => _LevelBookTile(
                     book: book,
                     level: level,
+                    language: language,
                     onTap: () {
                       final reader = book.levels[level]!;
                       Navigator.push(
@@ -121,24 +135,79 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  void _openBook(BuildContext context, Book book) {
+  void _openBook(BuildContext context, Book book, Language language) {
     Navigator.push(
       context,
       MaterialPageRoute(
         builder: (_) => BookOverviewScreen(
           book: book,
           repo: widget.repo,
+          language: language,
         ),
       ),
     );
   }
 }
 
+// ---------------------------------------------------------------------------
+
+class _LanguageToggle extends StatelessWidget {
+  final Language language;
+  final ValueChanged<Language> onChanged;
+
+  const _LanguageToggle({required this.language, required this.onChanged});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(right: 8),
+      child: SegmentedButton<Language>(
+        segments: const [
+          ButtonSegment(
+            value: Language.chinese,
+            label: Text('中文', style: TextStyle(fontSize: 13)),
+          ),
+          ButtonSegment(
+            value: Language.japanese,
+            label: Text('日本語', style: TextStyle(fontSize: 13)),
+          ),
+        ],
+        selected: {language},
+        onSelectionChanged: (s) => onChanged(s.first),
+        style: ButtonStyle(
+          backgroundColor: WidgetStateProperty.resolveWith((states) {
+            if (states.contains(WidgetState.selected)) {
+              return Colors.white.withValues(alpha: 0.25);
+            }
+            return Colors.transparent;
+          }),
+          foregroundColor: WidgetStateProperty.all(Colors.white),
+          side: WidgetStateProperty.all(
+            const BorderSide(color: Colors.white54),
+          ),
+          visualDensity: VisualDensity.compact,
+          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          padding: WidgetStateProperty.all(
+            const EdgeInsets.symmetric(horizontal: 12),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// ---------------------------------------------------------------------------
+
 class _BookCard extends StatelessWidget {
   final Book book;
+  final Language language;
   final VoidCallback onTap;
 
-  const _BookCard({required this.book, required this.onTap});
+  const _BookCard({
+    required this.book,
+    required this.language,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -194,17 +263,18 @@ class _BookCard extends StatelessWidget {
                     Wrap(
                       spacing: 4,
                       children: levels.map((l) {
+                        final reader = book.levels[l]!;
                         return Container(
                           padding: const EdgeInsets.symmetric(
                             horizontal: 8,
                             vertical: 2,
                           ),
                           decoration: BoxDecoration(
-                            color: AppTheme.levelColor(l),
+                            color: AppTheme.levelColor(l, language),
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Text(
-                            'HSK$l',
+                            reader.levelLabel,
                             style: const TextStyle(
                               color: Colors.white,
                               fontSize: 11,
@@ -226,17 +296,22 @@ class _BookCard extends StatelessWidget {
   }
 }
 
+// ---------------------------------------------------------------------------
+
 class _LevelHeader extends StatelessWidget {
   final int level;
+  final Language language;
 
-  const _LevelHeader({required this.level});
+  const _LevelHeader({required this.level, required this.language});
 
   @override
   Widget build(BuildContext context) {
+    final color = AppTheme.levelColor(level, language);
+
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       decoration: BoxDecoration(
-        color: AppTheme.levelColor(level).withValues(alpha: 0.15),
+        color: color.withValues(alpha: 0.15),
         borderRadius: BorderRadius.circular(8),
       ),
       child: Row(
@@ -244,11 +319,11 @@ class _LevelHeader extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
             decoration: BoxDecoration(
-              color: AppTheme.levelColor(level),
+              color: color,
               borderRadius: BorderRadius.circular(12),
             ),
             child: Text(
-              'HSK $level',
+              _levelTag(level),
               style: const TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
@@ -268,34 +343,62 @@ class _LevelHeader extends StatelessWidget {
     );
   }
 
+  String _levelTag(int level) {
+    if (language == Language.japanese) {
+      const labels = {1: 'N5', 2: 'N4', 3: 'N3', 4: 'N2', 5: 'N1'};
+      return 'JLPT ${labels[level] ?? level}';
+    }
+    return 'HSK $level';
+  }
+
   String _levelDescription(int level) {
+    if (language == Language.japanese) {
+      switch (level) {
+        case 1:
+          return 'Beginner (~800 words)';
+        case 2:
+          return 'Elementary (~1,500 words)';
+        case 3:
+          return 'Intermediate (~3,750 words)';
+        case 4:
+          return 'Upper Intermediate (~6,000 words)';
+        case 5:
+          return 'Advanced (~10,000 words)';
+        default:
+          return '';
+      }
+    }
     switch (level) {
       case 1:
-        return '入门 (~500词)';
+        return 'Beginner (~500 words)';
       case 2:
-        return '基础 (~1200词)';
+        return 'Elementary (~1,200 words)';
       case 3:
-        return '进阶 (~2200词)';
+        return 'Intermediate (~2,200 words)';
       case 4:
-        return '中级 (~3200词)';
+        return 'Upper Intermediate (~3,200 words)';
       case 5:
-        return '高级 (~4200词)';
+        return 'Advanced (~4,200 words)';
       case 6:
-        return '精通 (~5400词)';
+        return 'Proficient (~5,400 words)';
       default:
         return '';
     }
   }
 }
 
+// ---------------------------------------------------------------------------
+
 class _LevelBookTile extends StatelessWidget {
   final Book book;
   final int level;
+  final Language language;
   final VoidCallback onTap;
 
   const _LevelBookTile({
     required this.book,
     required this.level,
+    required this.language,
     required this.onTap,
   });
 
@@ -304,28 +407,33 @@ class _LevelBookTile extends StatelessWidget {
     final reader = book.levels[level]!;
     return ListTile(
       leading: CircleAvatar(
-        backgroundColor: AppTheme.levelColor(level).withValues(alpha: 0.2),
+        backgroundColor:
+            AppTheme.levelColor(level, language).withValues(alpha: 0.2),
         child: Text(
           book.title.characters.first,
-          style: TextStyle(color: AppTheme.levelColor(level)),
+          style: TextStyle(color: AppTheme.levelColor(level, language)),
         ),
       ),
       title: Text(book.title),
-      subtitle: Text('${reader.chapters.length} 章节'),
+      subtitle: Text('${reader.chapters.length} chapters'),
       trailing: const Icon(Icons.chevron_right, size: 20),
       onTap: onTap,
     );
   }
 }
 
+// ---------------------------------------------------------------------------
+
 class BookOverviewScreen extends StatelessWidget {
   final Book book;
   final ContentRepository repo;
+  final Language language;
 
   const BookOverviewScreen({
     super.key,
     required this.book,
     required this.repo,
+    required this.language,
   });
 
   @override
@@ -348,7 +456,7 @@ class BookOverviewScreen extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           const Text(
-            '选择难度级别：',
+            'Select difficulty level:',
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w500,
@@ -366,25 +474,25 @@ class BookOverviewScreen extends StatelessWidget {
                   width: 50,
                   height: 50,
                   decoration: BoxDecoration(
-                    color: AppTheme.levelColor(level),
+                    color: AppTheme.levelColor(level, language),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Center(
                     child: Text(
-                      'HSK\n$level',
+                      reader.levelLabel.replaceFirst(' ', '\n'),
                       textAlign: TextAlign.center,
                       style: const TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
-                        fontSize: 13,
+                        fontSize: 12,
                         height: 1.2,
                       ),
                     ),
                   ),
                 ),
-                title: Text('HSK $level 版本'),
+                title: Text('${reader.levelLabel} version'),
                 subtitle: Text(
-                  '${reader.chapters.length} 章节 · ${_formatCharCount(totalChars)}字',
+                  '${reader.chapters.length} chapters · ${_formatCharCount(totalChars)} chars',
                 ),
                 trailing: const Icon(Icons.chevron_right),
                 onTap: () {
@@ -404,10 +512,8 @@ class BookOverviewScreen extends StatelessWidget {
   }
 
   String _formatCharCount(int count) {
-    if (count >= 10000) {
-      return '${(count / 10000).toStringAsFixed(1)}万';
-    } else if (count >= 1000) {
-      return '${(count / 1000).toStringAsFixed(1)}千';
+    if (count >= 1000) {
+      return '${(count / 1000).toStringAsFixed(1)}k';
     }
     return '$count';
   }

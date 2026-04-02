@@ -139,13 +139,14 @@ class _ReaderScreenState extends State<ReaderScreen> {
                       )
                   : null,
               icon: const Icon(Icons.arrow_back_ios, size: 16),
-              label: const Text('上一章'),
+              label: const Text('Previous'),
             ),
             Container(
               padding:
                   const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
               decoration: BoxDecoration(
-                color: AppTheme.levelColor(widget.reader.level),
+                color: AppTheme.levelColor(
+                    widget.reader.level, widget.reader.language),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Text(
@@ -166,7 +167,7 @@ class _ReaderScreenState extends State<ReaderScreen> {
                           )
                       : null,
               icon: const Icon(Icons.arrow_forward_ios, size: 16),
-              label: const Text('下一章'),
+              label: const Text('Next'),
             ),
           ],
         ),
@@ -314,11 +315,11 @@ class _InteractiveContentState extends State<_InteractiveContent> {
   }
 
   Widget _buildToken(String token, TextStyle style) {
-    final isChineseWord = token.isNotEmpty &&
-        _isChinese(token.codeUnitAt(0)) &&
+    final isCjkWord = token.isNotEmpty &&
+        _isCJK(token.codeUnitAt(0)) &&
         DictionaryService.instance.isReady;
 
-    if (!isChineseWord) {
+    if (!isCjkWord) {
       return Text(token, style: style);
     }
 
@@ -329,10 +330,12 @@ class _InteractiveContentState extends State<_InteractiveContent> {
     );
   }
 
-  bool _isChinese(int code) =>
+  bool _isCJK(int code) =>
       (code >= 0x4E00 && code <= 0x9FFF) ||
       (code >= 0x3400 && code <= 0x4DBF) ||
-      (code >= 0xF900 && code <= 0xFAFF);
+      (code >= 0xF900 && code <= 0xFAFF) ||
+      (code >= 0x3040 && code <= 0x309F) || // Hiragana
+      (code >= 0x30A0 && code <= 0x30FF);   // Katakana
 }
 
 // ---------------------------------------------------------------------------
@@ -359,7 +362,7 @@ class _TappableWordState extends State<_TappableWord> {
     Clipboard.setData(ClipboardData(text: widget.word));
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text('已复制 "${widget.word}"'),
+        content: Text('Copied "${widget.word}"'),
         duration: const Duration(seconds: 1),
         behavior: SnackBarBehavior.floating,
       ),
@@ -540,22 +543,36 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
                     ],
                     if (entry?.hskLevel != null) ...[
                       const SizedBox(height: 8),
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 8, vertical: 3),
-                        decoration: BoxDecoration(
-                          color: AppTheme.levelColor(entry!.hskLevel!),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Text(
-                          'HSK ${entry.hskLevel}',
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
+                      Builder(builder: (context) {
+                        final lang =
+                            DictionaryService.instance.activeLanguage;
+                        final lvl = entry!.hskLevel!;
+                        String label;
+                        if (lang == Language.japanese) {
+                          const jlpt = {
+                            1: 'N5', 2: 'N4', 3: 'N3', 4: 'N2', 5: 'N1'
+                          };
+                          label = 'JLPT ${jlpt[lvl] ?? lvl}';
+                        } else {
+                          label = 'HSK $lvl';
+                        }
+                        return Container(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 8, vertical: 3),
+                          decoration: BoxDecoration(
+                            color: AppTheme.levelColor(lvl, lang),
+                            borderRadius: BorderRadius.circular(10),
                           ),
-                        ),
-                      ),
+                          child: Text(
+                            label,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        );
+                      }),
                     ],
                   ],
                 ),
@@ -566,14 +583,14 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
                   Clipboard.setData(ClipboardData(text: widget.word));
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: Text('已复制 "${widget.word}"'),
+                      content: Text('Copied "${widget.word}"'),
                       duration: const Duration(seconds: 1),
                       behavior: SnackBarBehavior.floating,
                     ),
                   );
                 },
                 icon: const Icon(Icons.copy, size: 20),
-                tooltip: '复制',
+                tooltip: 'Copy',
               ),
               // Save button
               IconButton(
@@ -589,7 +606,7 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
                         color: _saved ? AppTheme.primary : null,
                         size: 28,
                       ),
-                tooltip: _saved ? '从词汇表移除' : '保存到词汇表',
+                tooltip: _saved ? 'Remove from vocabulary' : 'Save to vocabulary',
               ),
             ],
           ),
@@ -628,14 +645,14 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
               Divider(color: isDark ? Colors.grey[700] : Colors.grey[300]),
               const SizedBox(height: 8),
               Text(
-                '未收录此词，各字释义：',
+                'Word not in dictionary. Character breakdown:',
                 style: TextStyle(fontSize: 13, color: Colors.grey[500]),
               ),
               const SizedBox(height: 8),
               ..._buildCharBreakdown(widget.word, isDark),
             ] else
               Text(
-                entry == null ? '未找到词典条目' : '暂无释义',
+                entry == null ? 'No dictionary entry found' : 'No definitions available',
                 style: TextStyle(
                   fontSize: 14,
                   color: Colors.grey[500],

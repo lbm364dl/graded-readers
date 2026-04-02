@@ -45,12 +45,12 @@ class _VocabularyScreenState extends State<VocabularyScreen> {
             Icon(Icons.bookmark_border, size: 64, color: Colors.grey[400]),
             const SizedBox(height: 16),
             Text(
-              '还没有保存的词汇',
+              'No saved vocabulary yet',
               style: TextStyle(fontSize: 16, color: Colors.grey[500]),
             ),
             const SizedBox(height: 8),
             Text(
-              '阅读时点击生词，然后点击书签保存',
+              'Tap words while reading, then tap the bookmark to save',
               style: TextStyle(fontSize: 13, color: Colors.grey[400]),
             ),
           ],
@@ -66,7 +66,7 @@ class _VocabularyScreenState extends State<VocabularyScreen> {
           child: Row(
             children: [
               Text(
-                '${words.length} 个生词',
+                '${words.length} words',
                 style: TextStyle(
                   fontSize: 14,
                   color: Colors.grey[600],
@@ -84,7 +84,7 @@ class _VocabularyScreenState extends State<VocabularyScreen> {
                           ),
                         ).then((_) => _load()),
                 icon: const Icon(Icons.school, size: 18),
-                label: const Text('复习'),
+                label: const Text('Review'),
               ),
             ],
           ),
@@ -202,7 +202,6 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
   @override
   void initState() {
     super.initState();
-    // Start with unlearned words; append learned ones at end
     _deck = [
       ...widget.words.where((w) => !w.isLearned),
       ...widget.words.where((w) => w.isLearned),
@@ -219,7 +218,6 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
       _knownCount++;
       await VocabularyService.instance.markLearned(word.word, learned: true);
     } else {
-      // Move to end of deck for another pass
       _deck.add(word);
       await VocabularyService.instance.markLearned(word.word, learned: false);
     }
@@ -235,7 +233,7 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
     return Scaffold(
       appBar: AppBar(
         title: _done
-            ? const Text('复习完成')
+            ? const Text('Review Complete')
             : Text('${_index + 1} / ${_deck.length}'),
       ),
       body: _done ? _buildSummary() : _buildCard(),
@@ -250,15 +248,12 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
       padding: const EdgeInsets.all(24),
       child: Column(
         children: [
-          // Progress bar
           LinearProgressIndicator(
             value: _index / _deck.length,
             backgroundColor:
                 isDark ? Colors.grey[800] : Colors.grey[200],
           ),
           const Spacer(),
-
-          // Word
           Text(
             word.word,
             style: const TextStyle(
@@ -267,8 +262,6 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
             ),
           ),
           const SizedBox(height: 24),
-
-          // Revealed content
           AnimatedOpacity(
             opacity: _revealed ? 1.0 : 0.0,
             duration: const Duration(milliseconds: 200),
@@ -300,10 +293,7 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
               ],
             ),
           ),
-
           const Spacer(),
-
-          // Buttons
           if (!_revealed)
             SizedBox(
               width: double.infinity,
@@ -312,7 +302,8 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
                 style: FilledButton.styleFrom(
                   padding: const EdgeInsets.symmetric(vertical: 16),
                 ),
-                child: const Text('显示答案', style: TextStyle(fontSize: 16)),
+                child:
+                    const Text('Show Answer', style: TextStyle(fontSize: 16)),
               ),
             )
           else
@@ -326,7 +317,8 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
                       side: BorderSide(color: Colors.red[300]!),
                       foregroundColor: Colors.red[400],
                     ),
-                    child: const Text('还不会', style: TextStyle(fontSize: 15)),
+                    child: const Text("Don't Know",
+                        style: TextStyle(fontSize: 15)),
                   ),
                 ),
                 const SizedBox(width: 16),
@@ -338,7 +330,7 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
                       backgroundColor: Colors.green[600],
                     ),
                     child:
-                        const Text('认识了', style: TextStyle(fontSize: 15)),
+                        const Text('Know It', style: TextStyle(fontSize: 15)),
                   ),
                 ),
               ],
@@ -371,13 +363,13 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
             ),
             const SizedBox(height: 8),
             Text(
-              '认识了 $pct% 的生词',
+              'You knew $pct% of the words',
               style: TextStyle(fontSize: 16, color: Colors.grey[600]),
             ),
             const SizedBox(height: 40),
             FilledButton(
               onPressed: () => Navigator.pop(context),
-              child: const Text('完成'),
+              child: const Text('Done'),
             ),
           ],
         ),
