@@ -4,13 +4,10 @@ import 'models.dart';
 import 'theme.dart';
 import 'screens/home_screen.dart';
 import 'services/dictionary_service.dart';
-import 'services/segmenter.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await DictionaryService.instance.initialize();
-  // Kuromoji loads in background isolate — doesn't block UI
-  JapaneseTokenizer.instance.initialize();
   runApp(const GradedReadersApp());
 }
 

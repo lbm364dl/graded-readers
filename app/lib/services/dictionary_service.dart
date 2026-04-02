@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import '../models.dart';
-import 'segmenter.dart' show deinflectWord, getDictionaryForm, JapaneseTokenizer;
+import 'segmenter.dart' show deinflectWord;
 
 // Top-level function for compute() — JSON parsing in background isolate
 Map<String, dynamic> _parseJson(String jsonStr) =>
@@ -51,10 +51,6 @@ class DictionaryService {
       await _loadDict(language);
     }
     _activeLanguage = language;
-    // Pre-initialize kuromoji when switching to Japanese
-    if (language == Language.japanese) {
-      JapaneseTokenizer.instance.initialize();
-    }
   }
 
   Future<void> _loadDict(Language language) async {
@@ -99,21 +95,6 @@ class DictionaryService {
   }
 
   DictEntry? _lookupDeinflected(String word) {
-    // First try kuromoji's basic_form
-    final basicForm = getDictionaryForm(word);
-    if (basicForm != null) {
-      final raw = _dicts[_activeLanguage]?[basicForm];
-      if (raw != null) {
-        return DictEntry(
-          word: basicForm,
-          pinyin: (raw['p'] as String?) ?? '',
-          definitions: List<String>.from((raw['d'] as List?) ?? []),
-          hskLevel: raw['l'] as int?,
-        );
-      }
-    }
-
-    // Fallback to rule-based deinflection
     final candidates = deinflectWord(word);
     for (final dictForm in candidates) {
       final raw = _dicts[_activeLanguage]?[dictForm];

@@ -33,7 +33,6 @@ dependencies:
   cupertino_icons: ^1.0.8
   shared_preferences: ^2.2.0
   google_fonts: ^8.0.2
-  kuromoji: ^1.0.5
 
 dev_dependencies:
   flutter_test:
