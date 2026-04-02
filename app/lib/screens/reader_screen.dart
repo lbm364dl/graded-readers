@@ -30,259 +30,8 @@ TextStyle _cjkTextStyle({
   );
 }
 
-class ReaderScreen extends StatefulWidget {
-  final Reader reader;
-  final int initialChapter;
-
-  const ReaderScreen({
-    super.key,
-    required this.reader,
-    required this.initialChapter,
-  });
-
-  @override
-  State<ReaderScreen> createState() => _ReaderScreenState();
-}
-
-class _ReaderScreenState extends State<ReaderScreen> {
-  late int _currentChapter;
-  late PageController _pageController;
-  double _fontSize = 20.0;
-  final double _minFontSize = 14.0;
-  final double _maxFontSize = 32.0;
-  final ValueNotifier<int> _highlightedIndex = ValueNotifier(-1);
-
-  @override
-  void initState() {
-    super.initState();
-    _currentChapter = widget.initialChapter;
-    _pageController = PageController(initialPage: _currentChapter);
-    _loadPreferences();
-    VocabularyService.instance.loadWords();
-    _saveProgress();
-  }
-
-  Future<void> _loadPreferences() async {
-    final prefs = await SharedPreferences.getInstance();
-    if (!mounted) return;
-    setState(() {
-      _fontSize = prefs.getDouble('reader_font_size') ?? 20.0;
-    });
-  }
-
-  Future<void> _saveFontSize() async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setDouble('reader_font_size', _fontSize);
-  }
-
-  void _saveProgress() {
-    ProgressService.instance.saveProgress(ReadingProgress(
-      readerId: widget.reader.id,
-      bookTitle: widget.reader.bookTitle,
-      bookTitleEn: widget.reader.bookTitleEn,
-      levelLabel: widget.reader.levelLabel,
-      chapter: _currentChapter,
-      totalChapters: widget.reader.chapters.length,
-      lastRead: DateTime.now(),
-    ));
-  }
-
-  @override
-  void dispose() {
-    _pageController.dispose();
-    _highlightedIndex.dispose();
-    super.dispose();
-  }
-
-  void _showWordDefinition(List<String> allWords, int index) {
-    _highlightedIndex.value = index;
-    showModalBottomSheet(
-      context: context,
-      isScrollControlled: true,
-      useSafeArea: true,
-      backgroundColor: Theme.of(context).colorScheme.surface,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-      ),
-      builder: (_) => _WordDefinitionSheet(
-        allWords: allWords,
-        initialIndex: index,
-        highlightedIndex: _highlightedIndex,
-      ),
-    ).whenComplete(() => _highlightedIndex.value = -1);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final levelColor =
-        AppTheme.levelColor(widget.reader.level, widget.reader.language);
-
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          '${_currentChapter + 1} / ${widget.reader.chapters.length}',
-          style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
-        ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.text_decrease, size: 20),
-            onPressed: _fontSize > _minFontSize
-                ? () {
-                    setState(() => _fontSize -= 2);
-                    _saveFontSize();
-                  }
-                : null,
-          ),
-          IconButton(
-            icon: const Icon(Icons.text_increase, size: 20),
-            onPressed: _fontSize < _maxFontSize
-                ? () {
-                    setState(() => _fontSize += 2);
-                    _saveFontSize();
-                  }
-                : null,
-          ),
-        ],
-      ),
-      body: PageView.builder(
-        controller: _pageController,
-        itemCount: widget.reader.chapters.length,
-        onPageChanged: (index) {
-          setState(() => _currentChapter = index);
-          _saveProgress();
-        },
-        itemBuilder: (context, index) {
-          final ch = widget.reader.chapters[index];
-          return _ChapterView(
-            chapter: ch,
-            fontSize: _fontSize,
-            isDark: isDark,
-            language: widget.reader.language,
-            onWordTap: _showWordDefinition,
-            highlightedIndex: _highlightedIndex,
-          );
-        },
-      ),
-      bottomNavigationBar: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
-        decoration: BoxDecoration(
-          color: isDark ? Colors.grey[900] : Colors.white,
-          border: Border(
-            top: BorderSide(
-              color: isDark ? Colors.grey[800]! : Colors.grey[200]!,
-            ),
-          ),
-        ),
-        child: SafeArea(
-          child: Row(
-            children: [
-              TextButton.icon(
-                onPressed: _currentChapter > 0
-                    ? () => _pageController.previousPage(
-                          duration: const Duration(milliseconds: 300),
-                          curve: Curves.easeInOut,
-                        )
-                    : null,
-                icon: const Icon(Icons.chevron_left, size: 20),
-                label: const Text('Prev'),
-              ),
-              const Spacer(),
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
-                decoration: BoxDecoration(
-                  color: levelColor.withValues(alpha: 0.15),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Text(
-                  widget.reader.levelLabel,
-                  style: TextStyle(
-                    color: levelColor,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ),
-              const Spacer(),
-              TextButton.icon(
-                onPressed:
-                    _currentChapter < widget.reader.chapters.length - 1
-                        ? () => _pageController.nextPage(
-                              duration: const Duration(milliseconds: 300),
-                              curve: Curves.easeInOut,
-                            )
-                        : null,
-                label: const Icon(Icons.chevron_right, size: 20),
-                icon: const Text('Next'),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
 // ---------------------------------------------------------------------------
-// Chapter view
-// ---------------------------------------------------------------------------
-
-class _ChapterView extends StatelessWidget {
-  final Chapter chapter;
-  final double fontSize;
-  final bool isDark;
-  final Language language;
-  final void Function(List<String>, int) onWordTap;
-  final ValueNotifier<int> highlightedIndex;
-
-  const _ChapterView({
-    required this.chapter,
-    required this.fontSize,
-    required this.isDark,
-    required this.language,
-    required this.onWordTap,
-    required this.highlightedIndex,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SelectableText(
-            chapter.title,
-            style: _cjkTextStyle(
-              fontSize: fontSize + 4,
-              language: language,
-              fontWeight: FontWeight.bold,
-              height: 1.4,
-            ),
-          ),
-          const SizedBox(height: 8),
-          Divider(
-            color: isDark ? Colors.grey[700] : Colors.grey[300],
-            height: 24,
-          ),
-          _InteractiveContent(
-            text: chapter.content,
-            fontSize: fontSize,
-            isDark: isDark,
-            language: language,
-            onWordTap: onWordTap,
-            highlightedIndex: highlightedIndex,
-          ),
-          const SizedBox(height: 80),
-        ],
-      ),
-    );
-  }
-}
-
-// ---------------------------------------------------------------------------
-// Interactive selectable text with tappable CJK words
+// Data structures for segmentation & pagination
 // ---------------------------------------------------------------------------
 
 bool _isCJK(int code) =>
@@ -320,16 +69,471 @@ class _ParagraphData {
   });
 }
 
-class _InteractiveContent extends StatefulWidget {
-  final String text;
+/// A page is a slice of paragraphs from a chapter.
+class _PageData {
+  final int chapterIndex;
+  final String chapterTitle;
+  final List<_ParagraphData> paragraphs;
+  final List<String> allCjkWords; // shared across the chapter
+  final bool isFirstPageOfChapter;
+
+  _PageData({
+    required this.chapterIndex,
+    required this.chapterTitle,
+    required this.paragraphs,
+    required this.allCjkWords,
+    required this.isFirstPageOfChapter,
+  });
+}
+
+// ---------------------------------------------------------------------------
+// Reader screen
+// ---------------------------------------------------------------------------
+
+class ReaderScreen extends StatefulWidget {
+  final Reader reader;
+  final int initialChapter;
+
+  const ReaderScreen({
+    super.key,
+    required this.reader,
+    required this.initialChapter,
+  });
+
+  @override
+  State<ReaderScreen> createState() => _ReaderScreenState();
+}
+
+class _ReaderScreenState extends State<ReaderScreen> {
+  double _fontSize = 20.0;
+  final double _minFontSize = 14.0;
+  final double _maxFontSize = 32.0;
+  final ValueNotifier<int> _highlightedIndex = ValueNotifier(-1);
+
+  // Pagination state
+  List<_PageData>? _pages;
+  PageController? _pageController;
+  int _currentPageIndex = 0;
+  int _initialPage = 0;
+  double _lastAvailableHeight = 0;
+
+  // Chapter segmentation cache (doesn't depend on page height)
+  late List<_ChapterSegmented> _segmentedChapters;
+
+  @override
+  void initState() {
+    super.initState();
+    _segmentChapters();
+    _loadPreferences();
+    VocabularyService.instance.loadWords();
+  }
+
+  void _segmentChapters() {
+    final dict = DictionaryService.instance;
+    _segmentedChapters = [];
+
+    for (int ci = 0; ci < widget.reader.chapters.length; ci++) {
+      final ch = widget.reader.chapters[ci];
+      final paragraphs = <_ParagraphData>[];
+      final allCjk = <String>[];
+
+      for (final para in ch.content.split('\n\n')) {
+        final trimmed = para.trim();
+        if (trimmed.isEmpty) continue;
+
+        final isHeading = trimmed.startsWith('**') && trimmed.contains('**');
+        final tokens = segmentText(trimmed, dict);
+
+        final tokenEntries = <_TokenEntry>[];
+        int charOffset = 0;
+        for (final t in tokens) {
+          final isCjk = t.isNotEmpty && _isCJK(t.codeUnitAt(0));
+          tokenEntries.add(_TokenEntry(
+            text: t,
+            isCjk: isCjk,
+            globalIndex: isCjk ? allCjk.length : -1,
+            startOffset: charOffset,
+            endOffset: charOffset + t.length,
+          ));
+          charOffset += t.length;
+          if (isCjk) allCjk.add(t);
+        }
+
+        paragraphs.add(_ParagraphData(
+          raw: trimmed,
+          plainText: tokens.join(),
+          isHeading: isHeading,
+          tokens: tokenEntries,
+        ));
+      }
+
+      _segmentedChapters.add(_ChapterSegmented(
+        index: ci,
+        title: ch.title,
+        paragraphs: paragraphs,
+        allCjkWords: allCjk,
+      ));
+    }
+  }
+
+  void _paginate(double availableHeight) {
+    if (availableHeight <= 0) return;
+    _lastAvailableHeight = availableHeight;
+
+    final pages = <_PageData>[];
+
+    for (final chapter in _segmentedChapters) {
+      // Estimate how many paragraphs fit per page.
+      // Title takes ~50px on first page of chapter.
+      final titleHeight = 50.0;
+      final paraSpacing = 16.0;
+      var remaining = availableHeight - titleHeight;
+      var currentPageParas = <_ParagraphData>[];
+      var isFirst = true;
+
+      for (final para in chapter.paragraphs) {
+        // Estimate paragraph height: chars per line depends on font size
+        // Rough: each line ~ (availableWidth / fontSize) chars,
+        // line height ~ fontSize * 1.8
+        final lineHeight = _fontSize * 1.8;
+        final charsPerLine = (300 / _fontSize).floor().clamp(8, 40);
+        final lines =
+            (para.plainText.length / charsPerLine).ceil().clamp(1, 1000);
+        final paraHeight = lines * lineHeight + paraSpacing;
+
+        if (remaining - paraHeight < 0 && currentPageParas.isNotEmpty) {
+          // Flush current page
+          pages.add(_PageData(
+            chapterIndex: chapter.index,
+            chapterTitle: chapter.title,
+            paragraphs: List.of(currentPageParas),
+            allCjkWords: chapter.allCjkWords,
+            isFirstPageOfChapter: isFirst,
+          ));
+          isFirst = false;
+          currentPageParas = [para];
+          remaining = availableHeight - paraHeight;
+        } else {
+          currentPageParas.add(para);
+          remaining -= paraHeight;
+        }
+      }
+
+      // Flush remaining
+      if (currentPageParas.isNotEmpty) {
+        pages.add(_PageData(
+          chapterIndex: chapter.index,
+          chapterTitle: chapter.title,
+          paragraphs: currentPageParas,
+          allCjkWords: chapter.allCjkWords,
+          isFirstPageOfChapter: isFirst,
+        ));
+      }
+    }
+
+    // Find the page to start on
+    int startPage = 0;
+    if (_pages == null) {
+      // First pagination — restore from saved progress
+      startPage = _initialPage;
+      // Clamp
+      if (startPage >= pages.length) startPage = pages.length - 1;
+      if (startPage < 0) startPage = 0;
+    } else {
+      // Re-pagination (font size change) — try to stay on same chapter
+      final curChapter = _pages![_currentPageIndex].chapterIndex;
+      startPage = pages.indexWhere((p) => p.chapterIndex == curChapter);
+      if (startPage < 0) startPage = 0;
+    }
+
+    setState(() {
+      _pages = pages;
+      _currentPageIndex = startPage;
+      _pageController?.dispose();
+      _pageController = PageController(initialPage: startPage);
+    });
+
+    _saveProgress();
+  }
+
+  Future<void> _loadPreferences() async {
+    final prefs = await SharedPreferences.getInstance();
+    final savedProgress =
+        await ProgressService.instance.getProgress(widget.reader.id);
+
+    if (!mounted) return;
+    setState(() {
+      _fontSize = prefs.getDouble('reader_font_size') ?? 20.0;
+    });
+
+    // Compute initial page from saved chapter + page
+    if (savedProgress != null) {
+      _initialPage = _computeGlobalPage(
+          savedProgress.chapter, savedProgress.page);
+    } else {
+      _initialPage = _computeGlobalPage(widget.initialChapter, 0);
+    }
+
+    // Re-paginate if we already had a height
+    if (_lastAvailableHeight > 0) {
+      _paginate(_lastAvailableHeight);
+    }
+  }
+
+  int _computeGlobalPage(int chapter, int pageInChapter) {
+    // This needs _pages to be built. If not yet, store and apply later.
+    // For now, estimate: count pages of chapters before this one.
+    // We'll correct when _paginate runs.
+    if (_pages != null) {
+      int target = 0;
+      for (int i = 0; i < _pages!.length; i++) {
+        if (_pages![i].chapterIndex == chapter) {
+          target = i + pageInChapter;
+          break;
+        }
+      }
+      return target.clamp(0, _pages!.length - 1);
+    }
+    // Rough estimate before pagination: assume 3 pages per chapter
+    return chapter * 3 + pageInChapter;
+  }
+
+  Future<void> _saveFontSize() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setDouble('reader_font_size', _fontSize);
+  }
+
+  void _saveProgress() {
+    if (_pages == null || _pages!.isEmpty) return;
+    final page = _pages![_currentPageIndex];
+
+    // Count page within chapter
+    int pageInChapter = 0;
+    for (int i = _currentPageIndex - 1; i >= 0; i--) {
+      if (_pages![i].chapterIndex == page.chapterIndex) {
+        pageInChapter++;
+      } else {
+        break;
+      }
+    }
+
+    // Count total pages in this chapter
+    int totalPagesInChapter =
+        _pages!.where((p) => p.chapterIndex == page.chapterIndex).length;
+
+    ProgressService.instance.saveProgress(ReadingProgress(
+      readerId: widget.reader.id,
+      bookTitle: widget.reader.bookTitle,
+      bookTitleEn: widget.reader.bookTitleEn,
+      levelLabel: widget.reader.levelLabel,
+      chapter: page.chapterIndex,
+      totalChapters: widget.reader.chapters.length,
+      page: pageInChapter,
+      totalPages: totalPagesInChapter,
+      lastRead: DateTime.now(),
+    ));
+  }
+
+  @override
+  void dispose() {
+    _pageController?.dispose();
+    _highlightedIndex.dispose();
+    super.dispose();
+  }
+
+  void _showWordDefinition(List<String> allWords, int index) {
+    _highlightedIndex.value = index;
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      useSafeArea: true,
+      backgroundColor: Theme.of(context).colorScheme.surface,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (_) => _WordDefinitionSheet(
+        allWords: allWords,
+        initialIndex: index,
+        highlightedIndex: _highlightedIndex,
+      ),
+    ).whenComplete(() => _highlightedIndex.value = -1);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final levelColor =
+        AppTheme.levelColor(widget.reader.level, widget.reader.language);
+
+    return Scaffold(
+      appBar: AppBar(
+        title: _pages != null
+            ? Text(
+                _pages![_currentPageIndex].chapterTitle,
+                style:
+                    const TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              )
+            : null,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.text_decrease, size: 20),
+            onPressed: _fontSize > _minFontSize
+                ? () {
+                    setState(() => _fontSize -= 2);
+                    _saveFontSize();
+                    _paginate(_lastAvailableHeight);
+                  }
+                : null,
+          ),
+          IconButton(
+            icon: const Icon(Icons.text_increase, size: 20),
+            onPressed: _fontSize < _maxFontSize
+                ? () {
+                    setState(() => _fontSize += 2);
+                    _saveFontSize();
+                    _paginate(_lastAvailableHeight);
+                  }
+                : null,
+          ),
+        ],
+      ),
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          final height = constraints.maxHeight;
+          if (_pages == null || height != _lastAvailableHeight) {
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              _paginate(height);
+            });
+          }
+
+          if (_pages == null || _pageController == null) {
+            return const Center(child: CircularProgressIndicator());
+          }
+
+          return PageView.builder(
+            controller: _pageController!,
+            itemCount: _pages!.length,
+            onPageChanged: (index) {
+              setState(() => _currentPageIndex = index);
+              _saveProgress();
+            },
+            itemBuilder: (context, index) {
+              return _PageView(
+                page: _pages![index],
+                fontSize: _fontSize,
+                isDark: isDark,
+                language: widget.reader.language,
+                onWordTap: _showWordDefinition,
+                highlightedIndex: _highlightedIndex,
+              );
+            },
+          );
+        },
+      ),
+      bottomNavigationBar: _pages != null
+          ? Container(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+              decoration: BoxDecoration(
+                color: isDark ? Colors.grey[900] : Colors.white,
+                border: Border(
+                  top: BorderSide(
+                    color:
+                        isDark ? Colors.grey[800]! : Colors.grey[200]!,
+                  ),
+                ),
+              ),
+              child: SafeArea(
+                child: Row(
+                  children: [
+                    IconButton(
+                      onPressed: _currentPageIndex > 0
+                          ? () => _pageController!.previousPage(
+                                duration:
+                                    const Duration(milliseconds: 250),
+                                curve: Curves.easeInOut,
+                              )
+                          : null,
+                      icon: const Icon(Icons.chevron_left),
+                    ),
+                    const Spacer(),
+                    Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 2),
+                          decoration: BoxDecoration(
+                            color: levelColor.withValues(alpha: 0.15),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Text(
+                            'Ch. ${_pages![_currentPageIndex].chapterIndex + 1}/${widget.reader.chapters.length}',
+                            style: TextStyle(
+                              color: levelColor,
+                              fontSize: 11,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 2),
+                        Text(
+                          '${_currentPageIndex + 1} / ${_pages!.length}',
+                          style: TextStyle(
+                              fontSize: 10, color: Colors.grey[500]),
+                        ),
+                      ],
+                    ),
+                    const Spacer(),
+                    IconButton(
+                      onPressed:
+                          _currentPageIndex < (_pages!.length - 1)
+                              ? () => _pageController!.nextPage(
+                                    duration: const Duration(
+                                        milliseconds: 250),
+                                    curve: Curves.easeInOut,
+                                  )
+                              : null,
+                      icon: const Icon(Icons.chevron_right),
+                    ),
+                  ],
+                ),
+              ),
+            )
+          : null,
+    );
+  }
+}
+
+class _ChapterSegmented {
+  final int index;
+  final String title;
+  final List<_ParagraphData> paragraphs;
+  final List<String> allCjkWords;
+  _ChapterSegmented({
+    required this.index,
+    required this.title,
+    required this.paragraphs,
+    required this.allCjkWords,
+  });
+}
+
+// ---------------------------------------------------------------------------
+// Page view (a slice of paragraphs from a chapter)
+// ---------------------------------------------------------------------------
+
+class _PageView extends StatefulWidget {
+  final _PageData page;
   final double fontSize;
   final bool isDark;
   final Language language;
   final void Function(List<String>, int) onWordTap;
   final ValueNotifier<int> highlightedIndex;
 
-  const _InteractiveContent({
-    required this.text,
+  const _PageView({
+    required this.page,
     required this.fontSize,
     required this.isDark,
     required this.language,
@@ -338,28 +542,11 @@ class _InteractiveContent extends StatefulWidget {
   });
 
   @override
-  State<_InteractiveContent> createState() => _InteractiveContentState();
+  State<_PageView> createState() => _PageViewState();
 }
 
-class _InteractiveContentState extends State<_InteractiveContent> {
-  late List<_ParagraphData> _paragraphs;
-  late List<String> _allCjkWords;
+class _PageViewState extends State<_PageView> {
   final List<GestureRecognizer> _recognizers = [];
-
-  @override
-  void initState() {
-    super.initState();
-    _rebuild();
-  }
-
-  @override
-  void didUpdateWidget(_InteractiveContent old) {
-    super.didUpdateWidget(old);
-    if (old.text != widget.text) {
-      _disposeRecognizers();
-      _rebuild();
-    }
-  }
 
   @override
   void dispose() {
@@ -374,53 +561,37 @@ class _InteractiveContentState extends State<_InteractiveContent> {
     _recognizers.clear();
   }
 
-  void _rebuild() {
-    final dict = DictionaryService.instance;
-    _paragraphs = [];
-    _allCjkWords = [];
-
-    for (final para in widget.text.split('\n\n')) {
-      final trimmed = para.trim();
-      if (trimmed.isEmpty) continue;
-
-      final isHeading = trimmed.startsWith('**') && trimmed.contains('**');
-      final tokens = segmentText(trimmed, dict);
-
-      final tokenEntries = <_TokenEntry>[];
-      int charOffset = 0;
-      for (final t in tokens) {
-        final isCjk = t.isNotEmpty && _isCJK(t.codeUnitAt(0));
-        tokenEntries.add(_TokenEntry(
-          text: t,
-          isCjk: isCjk,
-          globalIndex: isCjk ? _allCjkWords.length : -1,
-          startOffset: charOffset,
-          endOffset: charOffset + t.length,
-        ));
-        charOffset += t.length;
-        if (isCjk) _allCjkWords.add(t);
-      }
-
-      _paragraphs.add(_ParagraphData(
-        raw: trimmed,
-        plainText: tokens.join(),
-        isHeading: isHeading,
-        tokens: tokenEntries,
-      ));
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder<int>(
       valueListenable: widget.highlightedIndex,
       builder: (context, highlightIdx, _) {
         _disposeRecognizers();
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: _paragraphs
-              .map((p) => _buildParagraph(p, highlightIdx))
-              .toList(),
+        return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              if (widget.page.isFirstPageOfChapter) ...[
+                SelectableText(
+                  widget.page.chapterTitle,
+                  style: _cjkTextStyle(
+                    fontSize: widget.fontSize + 4,
+                    language: widget.language,
+                    fontWeight: FontWeight.bold,
+                    height: 1.4,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Divider(
+                  color: widget.isDark ? Colors.grey[700] : Colors.grey[300],
+                ),
+                const SizedBox(height: 8),
+              ],
+              ...widget.page.paragraphs
+                  .map((p) => _buildParagraph(p, highlightIdx)),
+            ],
+          ),
         );
       },
     );
@@ -450,16 +621,13 @@ class _InteractiveContentState extends State<_InteractiveContent> {
       color: widget.isDark ? Colors.grey[200] : AppTheme.textPrimary,
     );
 
-    // Build spans: every token gets the same base style.
-    // CJK tokens additionally get a TapGestureRecognizer and
-    // optional highlight background.
     final spans = <TextSpan>[];
     for (final token in para.tokens) {
       if (token.isCjk && DictionaryService.instance.isReady) {
         final isHighlighted = token.globalIndex == highlightIdx;
         final recognizer = TapGestureRecognizer()
-          ..onTap =
-              () => widget.onWordTap(_allCjkWords, token.globalIndex);
+          ..onTap = () => widget.onWordTap(
+              widget.page.allCjkWords, token.globalIndex);
         _recognizers.add(recognizer);
 
         spans.add(TextSpan(
@@ -560,47 +728,47 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
           onTap: () => _openNestedLookup(ch),
           behavior: HitTestBehavior.opaque,
           child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              ch,
-              style: _cjkTextStyle(
-                fontSize: 18,
-                language:
-                    DictionaryService.instance.activeLanguage,
-                fontWeight: FontWeight.bold,
-                color: AppTheme.primary,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                ch,
+                style: _cjkTextStyle(
+                  fontSize: 18,
+                  language: DictionaryService.instance.activeLanguage,
+                  fontWeight: FontWeight.bold,
+                  color: AppTheme.primary,
+                ),
               ),
-            ),
-            const SizedBox(width: 10),
-            Expanded(
-              child: charEntry == null
-                  ? Text('—',
-                      style: TextStyle(color: Colors.grey[400], fontSize: 14))
-                  : Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        if (charEntry.pinyin.isNotEmpty)
-                          Text(charEntry.pinyin,
+              const SizedBox(width: 10),
+              Expanded(
+                child: charEntry == null
+                    ? Text('—',
+                        style:
+                            TextStyle(color: Colors.grey[400], fontSize: 14))
+                    : Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          if (charEntry.pinyin.isNotEmpty)
+                            Text(charEntry.pinyin,
+                                style: TextStyle(
+                                    fontSize: 13,
+                                    color: AppTheme.primary,
+                                    fontStyle: FontStyle.italic)),
+                          if (charEntry.definitions.isNotEmpty)
+                            Text(
+                              charEntry.definitions.first,
                               style: TextStyle(
-                                  fontSize: 13,
-                                  color: AppTheme.primary,
-                                  fontStyle: FontStyle.italic)),
-                        if (charEntry.definitions.isNotEmpty)
-                          Text(
-                            charEntry.definitions.first,
-                            style: TextStyle(
-                              fontSize: 13,
-                              color: isDark
-                                  ? Colors.grey[300]
-                                  : Colors.grey[700],
+                                fontSize: 13,
+                                color: isDark
+                                    ? Colors.grey[300]
+                                    : Colors.grey[700],
+                              ),
                             ),
-                          ),
-                      ],
-                    ),
-            ),
-          ],
-        ),
+                        ],
+                      ),
+              ),
+            ],
+          ),
         ),
       ));
     }
@@ -639,7 +807,6 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Drag handle
           Center(
             child: Container(
               width: 36,
@@ -652,7 +819,6 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
           ),
           const SizedBox(height: 16),
 
-          // Word + action buttons
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -776,7 +942,6 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
             ],
           ),
 
-          // Definitions
           if (entry != null && entry.hasDefinitions) ...[
             const SizedBox(height: 12),
             Divider(color: isDark ? Colors.grey[700] : Colors.grey[200]),
@@ -841,7 +1006,6 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
             Divider(color: isDark ? Colors.grey[700] : Colors.grey[200]),
             Row(
               children: [
-                // Left: prev button (whole area tappable)
                 Expanded(
                   child: GestureDetector(
                     onTap: _hasPrev
@@ -853,9 +1017,7 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
                       children: [
                         Icon(Icons.chevron_left,
                             size: 22,
-                            color: _hasPrev
-                                ? null
-                                : Colors.grey[400]),
+                            color: _hasPrev ? null : Colors.grey[400]),
                         if (_hasPrev)
                           Flexible(
                             child: Text(
@@ -873,17 +1035,13 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
                     ),
                   ),
                 ),
-                // Center: counter
                 Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 12),
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
                   child: Text(
                     '${_currentIndex + 1} / ${widget.allWords.length}',
-                    style: TextStyle(
-                        fontSize: 11, color: Colors.grey[500]),
+                    style: TextStyle(fontSize: 11, color: Colors.grey[500]),
                   ),
                 ),
-                // Right: next button (whole area tappable)
                 Expanded(
                   child: GestureDetector(
                     onTap: _hasNext
@@ -909,9 +1067,7 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
                           ),
                         Icon(Icons.chevron_right,
                             size: 22,
-                            color: _hasNext
-                                ? null
-                                : Colors.grey[400]),
+                            color: _hasNext ? null : Colors.grey[400]),
                       ],
                     ),
                   ),
@@ -959,7 +1115,6 @@ class _SingleWordSheet extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Drag handle
           Center(
             child: Container(
               width: 36,
@@ -972,7 +1127,6 @@ class _SingleWordSheet extends StatelessWidget {
           ),
           const SizedBox(height: 16),
 
-          // Word + pinyin + level
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -1057,7 +1211,6 @@ class _SingleWordSheet extends StatelessWidget {
             ],
           ),
 
-          // Definitions
           if (entry != null && entry.hasDefinitions) ...[
             const SizedBox(height: 12),
             Divider(color: isDark ? Colors.grey[700] : Colors.grey[200]),

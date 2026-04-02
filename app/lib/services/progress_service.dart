@@ -8,6 +8,8 @@ class ReadingProgress {
   final String levelLabel;
   final int chapter;
   final int totalChapters;
+  final int page;
+  final int totalPages;
   final DateTime lastRead;
 
   ReadingProgress({
@@ -17,10 +19,13 @@ class ReadingProgress {
     required this.levelLabel,
     required this.chapter,
     required this.totalChapters,
+    this.page = 0,
+    this.totalPages = 1,
     required this.lastRead,
   });
 
-  double get progress => totalChapters > 0 ? (chapter + 1) / totalChapters : 0;
+  double get progress =>
+      totalChapters > 0 ? (chapter + 1) / totalChapters : 0;
 
   Map<String, dynamic> toJson() => {
         'readerId': readerId,
@@ -29,6 +34,8 @@ class ReadingProgress {
         'levelLabel': levelLabel,
         'chapter': chapter,
         'totalChapters': totalChapters,
+        'page': page,
+        'totalPages': totalPages,
         'lastRead': lastRead.toIso8601String(),
       };
 
@@ -40,6 +47,8 @@ class ReadingProgress {
         levelLabel: json['levelLabel'] as String,
         chapter: json['chapter'] as int,
         totalChapters: json['totalChapters'] as int,
+        page: (json['page'] as int?) ?? 0,
+        totalPages: (json['totalPages'] as int?) ?? 1,
         lastRead: DateTime.parse(json['lastRead'] as String),
       );
 }
@@ -71,6 +80,11 @@ class ProgressService {
   Future<int> getChapter(String readerId) async {
     final progress = await getProgress(readerId);
     return progress?.chapter ?? 0;
+  }
+
+  Future<int> getPage(String readerId) async {
+    final progress = await getProgress(readerId);
+    return progress?.page ?? 0;
   }
 
   Future<ReadingProgress?> getLastRead() async {
