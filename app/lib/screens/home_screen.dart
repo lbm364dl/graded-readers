@@ -161,34 +161,38 @@ class _LanguageToggle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(right: 8),
-      child: SegmentedButton<Language>(
-        segments: const [
-          ButtonSegment(
-            value: Language.chinese,
-            label: Text('中文', style: TextStyle(fontSize: 13)),
-          ),
-          ButtonSegment(
-            value: Language.japanese,
-            label: Text('日本語', style: TextStyle(fontSize: 13)),
-          ),
-        ],
-        selected: {language},
-        onSelectionChanged: (s) => onChanged(s.first),
-        style: ButtonStyle(
-          backgroundColor: WidgetStateProperty.resolveWith((states) {
-            if (states.contains(WidgetState.selected)) {
-              return Colors.white.withValues(alpha: 0.25);
-            }
-            return Colors.transparent;
-          }),
-          foregroundColor: WidgetStateProperty.all(Colors.white),
-          side: WidgetStateProperty.all(
-            const BorderSide(color: Colors.white54),
-          ),
-          visualDensity: VisualDensity.compact,
-          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-          padding: WidgetStateProperty.all(
-            const EdgeInsets.symmetric(horizontal: 12),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white.withValues(alpha: 0.15),
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            _langChip('中文', Language.chinese),
+            _langChip('日本語', Language.japanese),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _langChip(String label, Language value) {
+    final selected = language == value;
+    return GestureDetector(
+      onTap: () => onChanged(value),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+        decoration: BoxDecoration(
+          color: selected ? Colors.white : Colors.transparent,
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: Text(
+          label,
+          style: TextStyle(
+            fontSize: 13,
+            fontWeight: FontWeight.w600,
+            color: selected ? AppTheme.primary : Colors.white70,
           ),
         ),
       ),
