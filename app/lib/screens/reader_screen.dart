@@ -59,8 +59,7 @@ class _ReaderScreenState extends State<ReaderScreen> {
     super.dispose();
   }
 
-  void _showWordDefinition(String word, List<String> allWords) {
-    final index = allWords.indexOf(word);
+  void _showWordDefinition(String word, List<String> allWords, int index) {
     _highlightedWord.value = word;
     showModalBottomSheet(
       context: context,
@@ -71,7 +70,7 @@ class _ReaderScreenState extends State<ReaderScreen> {
       ),
       builder: (_) => _WordDefinitionSheet(
         allWords: allWords,
-        initialIndex: index < 0 ? 0 : index,
+        initialIndex: index,
         highlightedWord: _highlightedWord,
       ),
     ).whenComplete(() => _highlightedWord.value = null);
@@ -192,7 +191,7 @@ class _ChapterView extends StatelessWidget {
   final double fontSize;
   final bool isDark;
   final int level;
-  final void Function(String, List<String>) onWordTap;
+  final void Function(String, List<String>, int) onWordTap;
   final ValueNotifier<String?> highlightedWord;
 
   const _ChapterView({
@@ -240,7 +239,7 @@ class _InteractiveContent extends StatefulWidget {
   final String text;
   final double fontSize;
   final bool isDark;
-  final void Function(String, List<String>) onWordTap;
+  final void Function(String, List<String>, int) onWordTap;
   final ValueNotifier<String?> highlightedWord;
 
   const _InteractiveContent({
@@ -257,8 +256,8 @@ class _InteractiveContent extends StatefulWidget {
 
 class _InteractiveContentState extends State<_InteractiveContent> {
   // paragraph text → pre-segmented tokens
-  late Map<String, List<String>> _segments;
-  // flat list of unique CJK words in reading order
+  late List<_Paragraph> _paragraphs;
+  // flat list of ALL CJK words in reading order (with duplicates)
   late List<String> _allCjkWords;
 
   @override
@@ -276,48 +275,51 @@ class _InteractiveContentState extends State<_InteractiveContent> {
   }
 
   void _rebuild() {
-    _segments = _buildSegments();
-    // Build ordered unique CJK word list
-    final seen = <String>{};
-    final words = <String>[];
-    for (final tokens in _segments.values) {
-      for (final t in tokens) {
-        if (t.isNotEmpty && _isCJK(t.codeUnitAt(0)) && seen.add(t)) {
-          words.add(t);
-        }
-      }
-    }
-    _allCjkWords = words;
-  }
-
-  Map<String, List<String>> _buildSegments() {
     final dict = DictionaryService.instance;
-    final result = <String, List<String>>{};
+    _paragraphs = [];
+    _allCjkWords = [];
+
     for (final para in widget.text.split('\n\n')) {
       final trimmed = para.trim();
       if (trimmed.isEmpty) continue;
-      result[trimmed] = segmentText(trimmed, dict);
+
+      final isHeading = trimmed.startsWith('**') && trimmed.contains('**');
+      final tokens = segmentText(trimmed, dict);
+
+      // Assign a global CJK index to each CJK token
+      final tokenEntries = <_TokenEntry>[];
+      for (final t in tokens) {
+        final isCjk = t.isNotEmpty && _isCJK(t.codeUnitAt(0));
+        tokenEntries.add(_TokenEntry(
+          text: t,
+          isCjk: isCjk,
+          globalIndex: isCjk ? _allCjkWords.length : -1,
+        ));
+        if (isCjk) _allCjkWords.add(t);
+      }
+
+      _paragraphs.add(_Paragraph(
+        raw: trimmed,
+        isHeading: isHeading,
+        tokens: tokenEntries,
+      ));
     }
-    return result;
   }
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: _segments.entries
-          .map((e) => _buildParagraph(e.key, e.value))
-          .toList(),
+      children: _paragraphs.map(_buildParagraph).toList(),
     );
   }
 
-  Widget _buildParagraph(String para, List<String> tokens) {
-    // Section heading (** ... **)
-    if (para.startsWith('**') && para.contains('**')) {
+  Widget _buildParagraph(_Paragraph para) {
+    if (para.isHeading) {
       return Padding(
         padding: const EdgeInsets.only(bottom: 12),
         child: Text(
-          para.replaceAll('**', ''),
+          para.raw.replaceAll('**', ''),
           style: TextStyle(
             fontSize: widget.fontSize - 2,
             fontWeight: FontWeight.bold,
@@ -340,24 +342,23 @@ class _InteractiveContentState extends State<_InteractiveContent> {
       child: Wrap(
         spacing: 0,
         runSpacing: 0,
-        children: tokens.map((token) => _buildToken(token, baseStyle)).toList(),
+        children: para.tokens
+            .map((t) => _buildToken(t, baseStyle))
+            .toList(),
       ),
     );
   }
 
-  Widget _buildToken(String token, TextStyle style) {
-    final isCjkWord = token.isNotEmpty &&
-        _isCJK(token.codeUnitAt(0)) &&
-        DictionaryService.instance.isReady;
-
-    if (!isCjkWord) {
-      return Text(token, style: style);
+  Widget _buildToken(_TokenEntry token, TextStyle style) {
+    if (!token.isCjk || !DictionaryService.instance.isReady) {
+      return Text(token.text, style: style);
     }
 
     return _TappableWord(
-      word: token,
+      word: token.text,
       style: style,
-      onTap: () => widget.onWordTap(token, _allCjkWords),
+      onTap: () =>
+          widget.onWordTap(token.text, _allCjkWords, token.globalIndex),
       highlightedWord: widget.highlightedWord,
     );
   }
@@ -368,6 +369,20 @@ class _InteractiveContentState extends State<_InteractiveContent> {
       (code >= 0xF900 && code <= 0xFAFF) ||
       (code >= 0x3040 && code <= 0x309F) || // Hiragana
       (code >= 0x30A0 && code <= 0x30FF);   // Katakana
+}
+
+class _Paragraph {
+  final String raw;
+  final bool isHeading;
+  final List<_TokenEntry> tokens;
+  _Paragraph({required this.raw, required this.isHeading, required this.tokens});
+}
+
+class _TokenEntry {
+  final String text;
+  final bool isCjk;
+  final int globalIndex; // index in the flat allCjkWords list, -1 if not CJK
+  _TokenEntry({required this.text, required this.isCjk, required this.globalIndex});
 }
 
 // ---------------------------------------------------------------------------
