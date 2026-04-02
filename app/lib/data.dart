@@ -1,6 +1,11 @@
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'models.dart';
+
+// Top-level for compute()
+List<dynamic> _parseJsonList(String jsonStr) =>
+    json.decode(jsonStr) as List<dynamic>;
 
 class ContentRepository {
   final Map<Language, List<Reader>> _readers = {};
@@ -16,7 +21,8 @@ class ContentRepository {
 
     final path = _assetPaths[language]!;
     final jsonStr = await rootBundle.loadString(path);
-    final List<dynamic> jsonList = json.decode(jsonStr);
+    // Parse JSON in background isolate
+    final jsonList = await compute(_parseJsonList, jsonStr);
     _readers[language] =
         jsonList.map((j) => Reader.fromJson(j, language)).toList();
     return _readers[language]!;
