@@ -520,6 +520,19 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
     widget.highlightedIndex.value = _currentIndex;
   }
 
+  void _openNestedLookup(String word) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      useSafeArea: true,
+      backgroundColor: Theme.of(context).colorScheme.surface,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (_) => _SingleWordSheet(word: word),
+    );
+  }
+
   List<Widget> _buildCharBreakdown(String word, bool isDark) {
     final dict = DictionaryService.instance;
     final widgets = <Widget>[];
@@ -528,7 +541,10 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
       final charEntry = dict.lookup(ch);
       widgets.add(Padding(
         padding: const EdgeInsets.only(bottom: 6),
-        child: Row(
+        child: GestureDetector(
+          onTap: () => _openNestedLookup(ch),
+          behavior: HitTestBehavior.opaque,
+          child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
@@ -569,6 +585,7 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
                     ),
             ),
           ],
+        ),
         ),
       ));
     }
@@ -628,16 +645,34 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      _word,
-                      style: _cjkTextStyle(
-                        fontSize: 32,
-                        language:
-                            DictionaryService.instance.activeLanguage,
-                        fontWeight: FontWeight.bold,
-                        height: 1.2,
-                      ),
-                    ),
+                    _word.length > 1
+                        ? Wrap(
+                            children: _word.characters.map((ch) {
+                              return GestureDetector(
+                                onTap: () => _openNestedLookup(ch),
+                                child: Text(
+                                  ch,
+                                  style: _cjkTextStyle(
+                                    fontSize: 32,
+                                    language: DictionaryService
+                                        .instance.activeLanguage,
+                                    fontWeight: FontWeight.bold,
+                                    height: 1.2,
+                                  ),
+                                ),
+                              );
+                            }).toList(),
+                          )
+                        : Text(
+                            _word,
+                            style: _cjkTextStyle(
+                              fontSize: 32,
+                              language:
+                                  DictionaryService.instance.activeLanguage,
+                              fontWeight: FontWeight.bold,
+                              height: 1.2,
+                            ),
+                          ),
                     if (entry != null && entry.pinyin.isNotEmpty) ...[
                       const SizedBox(height: 4),
                       Text(
@@ -867,6 +902,198 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
                   ),
                 ),
               ],
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Simple single-word lookup sheet (for recursive lookups)
+// ---------------------------------------------------------------------------
+
+class _SingleWordSheet extends StatelessWidget {
+  final String word;
+
+  const _SingleWordSheet({required this.word});
+
+  void _openNestedLookup(BuildContext context, String w) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      useSafeArea: true,
+      backgroundColor: Theme.of(context).colorScheme.surface,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (_) => _SingleWordSheet(word: w),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final entry = DictionaryService.instance.lookup(word);
+    final lang = DictionaryService.instance.activeLanguage;
+
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(24, 12, 24, 24),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Drag handle
+          Center(
+            child: Container(
+              width: 36,
+              height: 4,
+              decoration: BoxDecoration(
+                color: Colors.grey[400],
+                borderRadius: BorderRadius.circular(2),
+              ),
+            ),
+          ),
+          const SizedBox(height: 16),
+
+          // Word + pinyin + level
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    word.length > 1
+                        ? Wrap(
+                            children: word.characters.map((ch) {
+                              return GestureDetector(
+                                onTap: () => _openNestedLookup(context, ch),
+                                child: Text(
+                                  ch,
+                                  style: _cjkTextStyle(
+                                    fontSize: 32,
+                                    language: lang,
+                                    fontWeight: FontWeight.bold,
+                                    height: 1.2,
+                                  ),
+                                ),
+                              );
+                            }).toList(),
+                          )
+                        : Text(
+                            word,
+                            style: _cjkTextStyle(
+                              fontSize: 32,
+                              language: lang,
+                              fontWeight: FontWeight.bold,
+                              height: 1.2,
+                            ),
+                          ),
+                    if (entry != null && entry.pinyin.isNotEmpty) ...[
+                      const SizedBox(height: 4),
+                      Text(
+                        entry.pinyin,
+                        style: TextStyle(
+                          fontSize: 17,
+                          color: AppTheme.primary,
+                          fontStyle: FontStyle.italic,
+                        ),
+                      ),
+                    ],
+                  ],
+                ),
+              ),
+              if (entry?.hskLevel != null)
+                Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                  decoration: BoxDecoration(
+                    color: AppTheme.levelColor(entry!.hskLevel!, lang),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Text(
+                    lang == Language.japanese
+                        ? 'JLPT ${const {1: 'N5', 2: 'N4', 3: 'N3', 4: 'N2', 5: 'N1'}[entry.hskLevel] ?? entry.hskLevel}'
+                        : 'HSK ${entry.hskLevel}',
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 11,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              IconButton(
+                onPressed: () {
+                  Clipboard.setData(ClipboardData(text: word));
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Copied "$word"'),
+                      duration: const Duration(seconds: 1),
+                      behavior: SnackBarBehavior.floating,
+                    ),
+                  );
+                },
+                icon: const Icon(Icons.copy_rounded, size: 20),
+                tooltip: 'Copy',
+                visualDensity: VisualDensity.compact,
+              ),
+            ],
+          ),
+
+          // Definitions
+          if (entry != null && entry.hasDefinitions) ...[
+            const SizedBox(height: 12),
+            Divider(color: isDark ? Colors.grey[700] : Colors.grey[200]),
+            const SizedBox(height: 8),
+            ...entry.definitions.asMap().entries.map((e) => Padding(
+                  padding: const EdgeInsets.only(bottom: 4),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        width: 24,
+                        child: Text(
+                          '${e.key + 1}.',
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.grey[500],
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: Text(
+                          e.value,
+                          style: TextStyle(
+                            fontSize: 14,
+                            height: 1.4,
+                            color:
+                                isDark ? Colors.grey[300] : Colors.grey[800],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                )),
+          ] else if (word.length > 1) ...[
+            const SizedBox(height: 12),
+            Divider(color: isDark ? Colors.grey[700] : Colors.grey[200]),
+            const SizedBox(height: 8),
+            Text(
+              'Word not in dictionary. Tap characters above for breakdown.',
+              style: TextStyle(fontSize: 12, color: Colors.grey[500]),
+            ),
+          ] else ...[
+            const SizedBox(height: 12),
+            Text(
+              'No dictionary entry found',
+              style: TextStyle(
+                fontSize: 13,
+                color: Colors.grey[500],
+                fontStyle: FontStyle.italic,
+              ),
             ),
           ],
         ],
