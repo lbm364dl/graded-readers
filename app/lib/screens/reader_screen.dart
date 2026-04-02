@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -6,6 +7,19 @@ import '../theme.dart';
 import '../services/dictionary_service.dart';
 import '../services/segmenter.dart';
 import '../services/vocabulary_service.dart';
+
+// CJK font stack that works across platforms
+const _cjkFontFamilies = [
+  'Noto Sans SC', // Chinese
+  'Noto Sans JP', // Japanese
+  'Noto Sans CJK SC',
+  'Noto Sans CJK JP',
+  'PingFang SC', // iOS/macOS Chinese
+  'Hiragino Sans', // macOS Japanese
+  'Microsoft YaHei', // Windows Chinese
+  'Yu Gothic', // Windows Japanese
+  'sans-serif',
+];
 
 class ReaderScreen extends StatefulWidget {
   final Reader reader;
@@ -27,7 +41,6 @@ class _ReaderScreenState extends State<ReaderScreen> {
   double _fontSize = 20.0;
   final double _minFontSize = 14.0;
   final double _maxFontSize = 32.0;
-  // Stores the global index of the highlighted word, or -1
   final ValueNotifier<int> _highlightedIndex = ValueNotifier(-1);
 
   @override
@@ -218,6 +231,7 @@ class _ChapterView extends StatelessWidget {
             style: TextStyle(
               fontSize: fontSize + 4,
               fontWeight: FontWeight.bold,
+              fontFamilyFallback: _cjkFontFamilies,
               height: 1.4,
             ),
           ),
@@ -255,7 +269,6 @@ class _TokenEntry {
   final String text;
   final bool isCjk;
   final int globalIndex;
-  // Character offsets within the paragraph string
   final int startOffset;
   final int endOffset;
   _TokenEntry({
@@ -269,7 +282,7 @@ class _TokenEntry {
 
 class _ParagraphData {
   final String raw;
-  final String plainText; // the full paragraph as a single string
+  final String plainText;
   final bool isHeading;
   final List<_TokenEntry> tokens;
   _ParagraphData({
@@ -278,16 +291,6 @@ class _ParagraphData {
     required this.isHeading,
     required this.tokens,
   });
-
-  /// Find the CJK token at a given character offset
-  _TokenEntry? tokenAtOffset(int offset) {
-    for (final t in tokens) {
-      if (t.isCjk && offset >= t.startOffset && offset < t.endOffset) {
-        return t;
-      }
-    }
-    return null;
-  }
 }
 
 class _InteractiveContent extends StatefulWidget {
@@ -312,6 +315,7 @@ class _InteractiveContent extends StatefulWidget {
 class _InteractiveContentState extends State<_InteractiveContent> {
   late List<_ParagraphData> _paragraphs;
   late List<String> _allCjkWords;
+  final List<GestureRecognizer> _recognizers = [];
 
   @override
   void initState() {
@@ -323,8 +327,22 @@ class _InteractiveContentState extends State<_InteractiveContent> {
   void didUpdateWidget(_InteractiveContent old) {
     super.didUpdateWidget(old);
     if (old.text != widget.text) {
+      _disposeRecognizers();
       _rebuild();
     }
+  }
+
+  @override
+  void dispose() {
+    _disposeRecognizers();
+    super.dispose();
+  }
+
+  void _disposeRecognizers() {
+    for (final r in _recognizers) {
+      r.dispose();
+    }
+    _recognizers.clear();
   }
 
   void _rebuild() {
@@ -354,12 +372,9 @@ class _InteractiveContentState extends State<_InteractiveContent> {
         if (isCjk) _allCjkWords.add(t);
       }
 
-      // Reconstruct the plain text from tokens (same as original)
-      final plainText = tokens.join();
-
       _paragraphs.add(_ParagraphData(
         raw: trimmed,
-        plainText: plainText,
+        plainText: tokens.join(),
         isHeading: isHeading,
         tokens: tokenEntries,
       ));
@@ -371,6 +386,7 @@ class _InteractiveContentState extends State<_InteractiveContent> {
     return ValueListenableBuilder<int>(
       valueListenable: widget.highlightedIndex,
       builder: (context, highlightIdx, _) {
+        _disposeRecognizers();
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: _paragraphs
@@ -390,6 +406,7 @@ class _InteractiveContentState extends State<_InteractiveContent> {
           style: TextStyle(
             fontSize: widget.fontSize - 2,
             fontWeight: FontWeight.bold,
+            fontFamilyFallback: _cjkFontFamilies,
             color: widget.isDark ? Colors.grey[300] : Colors.grey[700],
             height: 1.6,
           ),
@@ -397,163 +414,46 @@ class _InteractiveContentState extends State<_InteractiveContent> {
       );
     }
 
-    final style = TextStyle(
+    final baseStyle = TextStyle(
       fontSize: widget.fontSize,
       height: 1.8,
-      letterSpacing: 0.3,
+      fontFamilyFallback: _cjkFontFamilies,
       color: widget.isDark ? Colors.grey[200] : AppTheme.textPrimary,
-      leadingDistribution: TextLeadingDistribution.even,
     );
 
-    // Build selection highlight ranges
-    TextSelection? highlight;
-    if (highlightIdx >= 0) {
-      for (final t in para.tokens) {
-        if (t.globalIndex == highlightIdx) {
-          highlight = TextSelection(
-            baseOffset: t.startOffset,
-            extentOffset: t.endOffset,
-          );
-          break;
-        }
+    // Build spans: every token gets the same base style.
+    // CJK tokens additionally get a TapGestureRecognizer and
+    // optional highlight background.
+    final spans = <TextSpan>[];
+    for (final token in para.tokens) {
+      if (token.isCjk && DictionaryService.instance.isReady) {
+        final isHighlighted = token.globalIndex == highlightIdx;
+        final recognizer = TapGestureRecognizer()
+          ..onTap =
+              () => widget.onWordTap(_allCjkWords, token.globalIndex);
+        _recognizers.add(recognizer);
+
+        spans.add(TextSpan(
+          text: token.text,
+          style: baseStyle.copyWith(
+            backgroundColor: isHighlighted
+                ? AppTheme.primary.withValues(alpha: 0.2)
+                : null,
+          ),
+          recognizer: recognizer,
+        ));
+      } else {
+        spans.add(TextSpan(text: token.text, style: baseStyle));
       }
     }
 
     return Padding(
       padding: const EdgeInsets.only(bottom: 16),
-      child: _TappableParagraph(
-        text: para.plainText,
-        style: style,
-        highlight: highlight,
-        highlightColor: AppTheme.primary.withValues(alpha: 0.18),
-        onTapAtOffset: (offset) {
-          final token = para.tokenAtOffset(offset);
-          if (token != null) {
-            widget.onWordTap(_allCjkWords, token.globalIndex);
-          }
-        },
+      child: SelectableText.rich(
+        TextSpan(children: spans),
       ),
     );
   }
-}
-
-// ---------------------------------------------------------------------------
-// A paragraph that renders as plain text (proper baseline alignment)
-// but supports tapping individual characters with offset detection.
-// ---------------------------------------------------------------------------
-
-class _TappableParagraph extends StatelessWidget {
-  final String text;
-  final TextStyle style;
-  final TextSelection? highlight;
-  final Color highlightColor;
-  final void Function(int charOffset) onTapAtOffset;
-
-  const _TappableParagraph({
-    required this.text,
-    required this.style,
-    required this.highlight,
-    required this.highlightColor,
-    required this.onTapAtOffset,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        // We use a Stack: the bottom layer is a SelectableText for
-        // long-press selection/copy. The top layer is a transparent
-        // GestureDetector for single-tap word lookup.
-        // We paint the highlight via a CustomPaint underneath.
-        final textSpan = TextSpan(text: text, style: style);
-
-        return Stack(
-          children: [
-            // Highlight paint layer
-            if (highlight != null)
-              CustomPaint(
-                painter: _HighlightPainter(
-                  textSpan: textSpan,
-                  selection: highlight!,
-                  color: highlightColor,
-                  maxWidth: constraints.maxWidth,
-                ),
-              ),
-            // Selectable text layer (handles long-press selection)
-            SelectableText.rich(
-              textSpan,
-              strutStyle: StrutStyle(
-                fontSize: style.fontSize,
-                height: style.height,
-                forceStrutHeight: true,
-              ),
-              onTap: () {
-                // onTap doesn't give us position; handled by the
-                // GestureDetector overlay instead. But we need onTap
-                // so SelectableText doesn't swallow taps.
-              },
-            ),
-            // Transparent tap detector overlay for word lookup
-            Positioned.fill(
-              child: GestureDetector(
-                behavior: HitTestBehavior.translucent,
-                onTapUp: (details) {
-                  final tp = TextPainter(
-                    text: textSpan,
-                    textDirection: TextDirection.ltr,
-                    maxLines: null,
-                  )..layout(maxWidth: constraints.maxWidth);
-
-                  final offset =
-                      tp.getPositionForOffset(details.localPosition).offset;
-                  tp.dispose();
-                  onTapAtOffset(offset);
-                },
-              ),
-            ),
-          ],
-        );
-      },
-    );
-  }
-}
-
-class _HighlightPainter extends CustomPainter {
-  final TextSpan textSpan;
-  final TextSelection selection;
-  final Color color;
-  final double maxWidth;
-
-  _HighlightPainter({
-    required this.textSpan,
-    required this.selection,
-    required this.color,
-    required this.maxWidth,
-  });
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final tp = TextPainter(
-      text: textSpan,
-      textDirection: TextDirection.ltr,
-      maxLines: null,
-    )..layout(maxWidth: maxWidth);
-
-    final boxes = tp.getBoxesForSelection(selection);
-    final paint = Paint()..color = color;
-
-    for (final box in boxes) {
-      canvas.drawRRect(
-        RRect.fromRectAndRadius(box.toRect(), const Radius.circular(3)),
-        paint,
-      );
-    }
-    tp.dispose();
-  }
-
-  @override
-  bool shouldRepaint(_HighlightPainter old) =>
-      old.selection != selection || old.color != color;
 }
 
 // ---------------------------------------------------------------------------
@@ -622,6 +522,7 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
+                fontFamilyFallback: _cjkFontFamilies,
                 color: AppTheme.primary,
               ),
             ),
@@ -714,9 +615,10 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
                   children: [
                     Text(
                       _word,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 32,
                         fontWeight: FontWeight.bold,
+                        fontFamilyFallback: _cjkFontFamilies,
                         height: 1.2,
                       ),
                     ),
@@ -885,6 +787,7 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
                       widget.allWords[_currentIndex - 1],
                       style: TextStyle(
                         fontSize: 14,
+                        fontFamilyFallback: _cjkFontFamilies,
                         color: isDark ? Colors.grey[400] : Colors.grey[600],
                       ),
                       overflow: TextOverflow.ellipsis,
@@ -902,6 +805,7 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
                       widget.allWords[_currentIndex + 1],
                       style: TextStyle(
                         fontSize: 14,
+                        fontFamilyFallback: _cjkFontFamilies,
                         color: isDark ? Colors.grey[400] : Colors.grey[600],
                       ),
                       overflow: TextOverflow.ellipsis,
