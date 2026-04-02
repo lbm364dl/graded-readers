@@ -79,9 +79,6 @@ class _BookScreenState extends State<BookScreen> {
               itemCount: reader.chapters.length,
               itemBuilder: (context, index) {
                 final chapter = reader.chapters[index];
-                final preview = chapter.content.length > 80
-                    ? '${chapter.content.substring(0, 80)}...'
-                    : chapter.content;
                 final isRead = index < _savedChapter;
                 final isCurrent = index == _savedChapter;
 
@@ -90,7 +87,7 @@ class _BookScreenState extends State<BookScreen> {
                   child: ListTile(
                     contentPadding: const EdgeInsets.symmetric(
                       horizontal: 16,
-                      vertical: 8,
+                      vertical: 4,
                     ),
                     leading: Container(
                       width: 40,
@@ -118,18 +115,6 @@ class _BookScreenState extends State<BookScreen> {
                       style: TextStyle(
                         fontWeight:
                             isCurrent ? FontWeight.bold : FontWeight.w600,
-                      ),
-                    ),
-                    subtitle: Padding(
-                      padding: const EdgeInsets.only(top: 4),
-                      child: Text(
-                        preview,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          color: Colors.grey[600],
-                          fontSize: 13,
-                        ),
                       ),
                     ),
                     trailing: Icon(Icons.chevron_right,
