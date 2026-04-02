@@ -637,7 +637,8 @@ class _ContinueReadingCardState extends State<_ContinueReadingCard>
               Row(
                 children: [
                   Expanded(
-                    child: FilledButton.icon(
+                    flex: 3,
+                    child: FilledButton(
                       onPressed: () {
                         Navigator.push(
                           context,
@@ -649,29 +650,33 @@ class _ContinueReadingCardState extends State<_ContinueReadingCard>
                           ),
                         ).then((_) => _load());
                       },
-                      icon: const Icon(Icons.play_arrow_rounded, size: 20),
-                      label: const Text('Continue Reading'),
                       style: FilledButton.styleFrom(
                         backgroundColor: AppTheme.primary,
-                        padding: const EdgeInsets.symmetric(vertical: 12),
+                        padding: const EdgeInsets.symmetric(vertical: 14),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
                       ),
+                      child: const Text('Resume'),
                     ),
                   ),
                   if (_book != null && widget.onBrowse != null) ...[
                     const SizedBox(width: 10),
                     Expanded(
-                      child: OutlinedButton.icon(
+                      flex: 2,
+                      child: OutlinedButton(
                         onPressed: () {
                           widget.onBrowse!(_book!, widget.language);
                         },
-                        icon: const Icon(Icons.list_rounded, size: 20),
-                        label: const Text('All Levels'),
                         style: OutlinedButton.styleFrom(
                           foregroundColor: AppTheme.primary,
                           side: const BorderSide(color: AppTheme.primary),
-                          padding:
-                              const EdgeInsets.symmetric(vertical: 12),
+                          padding: const EdgeInsets.symmetric(vertical: 14),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
                         ),
+                        child: const Text('Levels'),
                       ),
                     ),
                   ],
