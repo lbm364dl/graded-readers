@@ -48,13 +48,19 @@ def main():
                 if not definitions:
                     continue
 
+                entry = {
+                    "p": reading,
+                    "l": level,
+                    "d": definitions,
+                }
+
                 # Keep the lowest level (first occurrence)
                 if word not in dictionary:
-                    dictionary[word] = {
-                        "p": reading,
-                        "l": level,
-                        "d": definitions,
-                    }
+                    dictionary[word] = entry
+
+                # Also add reading as alternate key (e.g. きれい for 綺麗)
+                if reading and reading != word and reading not in dictionary:
+                    dictionary[reading] = entry
 
     # Sort by key for consistent output
     sorted_dict = dict(sorted(dictionary.items()))
