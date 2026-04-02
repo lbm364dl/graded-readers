@@ -4,10 +4,14 @@ import 'models.dart';
 import 'theme.dart';
 import 'screens/home_screen.dart';
 import 'services/dictionary_service.dart';
+import 'services/segmenter.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await DictionaryService.instance.initialize();
+  await Future.wait([
+    DictionaryService.instance.initialize(),
+    JapaneseTokenizer.instance.initialize(),
+  ]);
   runApp(const GradedReadersApp());
 }
 

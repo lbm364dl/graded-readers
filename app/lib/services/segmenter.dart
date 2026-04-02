@@ -1,3 +1,6 @@
+import 'package:kuromoji/kuromoji.dart' as kuromoji;
+import 'package:kuromoji/src/tokenizer.dart' as kuromoji_tok;
+import '../models.dart' show Language;
 import 'dictionary_service.dart';
 
 bool _isChinese(int code) =>
@@ -11,11 +14,140 @@ bool _isKatakana(int code) => code >= 0x30A0 && code <= 0x30FF;
 bool _isCJK(int code) =>
     _isChinese(code) || _isHiragana(code) || _isKatakana(code);
 
-/// Segments CJK text into words using max forward matching
-/// with Japanese deinflection support.
+/// POS tags to skip (grammatical glue, not content words)
+const _skipPos = {
+  '助詞', // particles: は、が、を、に
+  '助動詞', // auxiliaries: です、ます、た
+  '記号', // symbols
+  '接続詞', // conjunctions
+};
+
+// ---------------------------------------------------------------------------
+// Kuromoji-based Japanese tokenizer (singleton)
+// ---------------------------------------------------------------------------
+
+class JapaneseTokenizer {
+  JapaneseTokenizer._();
+  static final JapaneseTokenizer instance = JapaneseTokenizer._();
+
+  kuromoji_tok.Tokenizer? _tokenizer;
+  bool _initializing = false;
+  bool get isReady => _tokenizer != null;
+
+  Future<void> initialize() async {
+    if (_tokenizer != null || _initializing) return;
+    _initializing = true;
+    try {
+      _tokenizer = await kuromoji.TokenizerBuilder().build();
+    } catch (_) {
+      // If kuromoji fails to load, we fall back to the simple segmenter
+    }
+    _initializing = false;
+  }
+
+  /// Tokenize Japanese text. Returns list of (surfaceForm, basicForm) pairs
+  /// for content words, and (surface, surface) for non-content tokens.
+  List<_JpToken> tokenize(String text) {
+    if (_tokenizer == null || text.isEmpty) return [_JpToken(text, text)];
+
+    final results = <_JpToken>[];
+    try {
+      final tokens = _tokenizer!.tokenize(text);
+      int lastEnd = 0;
+
+      for (final t in tokens) {
+        final surface = t['surface_form'] as String? ?? '';
+        final basic = t['basic_form'] as String? ?? surface;
+        final pos = t['pos'] as String? ?? '';
+        final position = t['word_position'] as int? ?? 0;
+
+        // Fill any gap (punctuation between tokens that kuromoji splits on)
+        if (position > lastEnd) {
+          results.add(_JpToken(
+            text.substring(lastEnd, position),
+            text.substring(lastEnd, position),
+          ));
+        }
+
+        if (surface.isNotEmpty) {
+          results.add(_JpToken(surface, basic, pos: pos));
+        }
+        lastEnd = position + surface.length;
+      }
+
+      // Trailing text
+      if (lastEnd < text.length) {
+        results.add(_JpToken(
+          text.substring(lastEnd),
+          text.substring(lastEnd),
+        ));
+      }
+    } catch (_) {
+      return [_JpToken(text, text)];
+    }
+
+    return results;
+  }
+}
+
+class _JpToken {
+  final String surface;
+  final String basicForm;
+  final String pos;
+  _JpToken(this.surface, this.basicForm, {this.pos = ''});
+
+  bool get isContentWord =>
+      surface.isNotEmpty &&
+      !_skipPos.contains(pos) &&
+      surface.trim().isNotEmpty;
+}
+
+// ---------------------------------------------------------------------------
+// Public API
+// ---------------------------------------------------------------------------
+
+/// Segments text into tokens. For Japanese, uses kuromoji morphological
+/// analysis. For Chinese, uses max-forward dictionary matching.
 List<String> segmentText(String text, DictionaryService dict) {
   if (!dict.isReady || text.isEmpty) return [text];
 
+  // Use kuromoji for Japanese if available
+  if (dict.activeLanguage == Language.japanese &&
+      JapaneseTokenizer.instance.isReady) {
+    return _segmentJapanese(text);
+  }
+
+  // Chinese: max-forward matching
+  return _segmentChinese(text, dict);
+}
+
+/// Returns the dictionary (basic) form for a surface token.
+/// Used by the reader to map tapped inflected words to dict entries.
+String? getDictionaryForm(String surface) {
+  final tokenizer = JapaneseTokenizer.instance;
+  if (!tokenizer.isReady) return null;
+
+  final tokens = tokenizer.tokenize(surface);
+  if (tokens.length == 1 && tokens[0].basicForm != tokens[0].surface) {
+    return tokens[0].basicForm;
+  }
+  return null;
+}
+
+// ---------------------------------------------------------------------------
+// Japanese segmentation via kuromoji
+// ---------------------------------------------------------------------------
+
+List<String> _segmentJapanese(String text) {
+  final tokens = JapaneseTokenizer.instance.tokenize(text);
+  return tokens.map((t) => t.surface).toList();
+}
+
+// ---------------------------------------------------------------------------
+// Chinese segmentation via max-forward matching
+// ---------------------------------------------------------------------------
+
+List<String> _segmentChinese(String text, DictionaryService dict) {
   final result = <String>[];
   int i = 0;
 
@@ -32,7 +164,6 @@ List<String> segmentText(String text, DictionaryService dict) {
       continue;
     }
 
-    // Try max forward matching (exact dictionary match first)
     final maxLen = dict.maxWordLength.clamp(1, text.length - i);
     bool found = false;
 
@@ -46,83 +177,36 @@ List<String> segmentText(String text, DictionaryService dict) {
       }
     }
 
-    if (found) continue;
-
-    // Try Japanese deinflection: look ahead for an inflected word
-    final deinflected = _tryDeinflect(text, i, dict);
-    if (deinflected != null) {
-      result.add(text.substring(i, i + deinflected.consumedLength));
-      i += deinflected.consumedLength;
-      continue;
+    if (!found) {
+      result.add(text.substring(i, i + 1));
+      i++;
     }
-
-    // Single character fallback
-    result.add(text.substring(i, i + 1));
-    i++;
   }
 
   return result;
 }
 
 // ---------------------------------------------------------------------------
-// Japanese deinflection
+// Deinflection (kept as fallback for dictionary lookup when kuromoji
+// isn't available, and for the word definition sheet)
 // ---------------------------------------------------------------------------
 
-class _DeinflectResult {
-  final String dictionaryForm;
-  final int consumedLength;
-  _DeinflectResult(this.dictionaryForm, this.consumedLength);
-}
-
-/// Try to find an inflected Japanese word starting at position [start].
-/// Returns the dictionary form and how many characters were consumed,
-/// or null if no match.
-_DeinflectResult? _tryDeinflect(String text, int start, DictionaryService dict) {
-  final remaining = text.length - start;
-  if (remaining < 2) return null;
-  final maxTry = remaining.clamp(2, 12);
-
-  for (int len = maxTry; len >= 2; len--) {
-    final end = start + len;
-    if (end > text.length) continue;
-    // Only try spans that end at a non-CJK boundary or end of text
-    // to avoid consuming partial words
-    final span = text.substring(start, end);
-    // Skip spans that contain non-CJK in the middle
-    if (span.codeUnits.any((c) => !_isCJK(c))) continue;
-
-    final candidates = deinflectWord(span);
-    for (final dictForm in candidates) {
-      if (dictForm.isNotEmpty && dict.hasWord(dictForm)) {
-        return _DeinflectResult(dictForm, len);
-      }
-    }
-  }
-  return null;
-}
-
 /// Generate possible dictionary forms for an inflected Japanese word.
-/// Returns a list of candidates (most specific first).
 List<String> deinflectWord(String word) {
   final results = <String>[];
 
-  // --- Verb masu-form endings ---
-  // ichidan: 食べます → 食べる
+  // Verb masu-form: ichidan
   if (word.endsWith('ます')) {
-    final stem = word.substring(0, word.length - 2);
-    results.add('${stem}る'); // ichidan
+    results.add('${word.substring(0, word.length - 2)}る');
   }
   if (word.endsWith('ました')) {
-    final stem = word.substring(0, word.length - 3);
-    results.add('${stem}る');
+    results.add('${word.substring(0, word.length - 3)}る');
   }
   if (word.endsWith('ません')) {
-    final stem = word.substring(0, word.length - 3);
-    results.add('${stem}る');
+    results.add('${word.substring(0, word.length - 3)}る');
   }
 
-  // godan masu-form: 行きます→行く, 飲みます→飲む, etc.
-  // The masu-stem maps: き→く, ぎ→ぐ, し→す, ち→つ, に→ぬ, び→ぶ, み→む, り→る, い→う
+  // Godan masu-form
   const masuToDict = {
     'き': 'く', 'ぎ': 'ぐ', 'し': 'す', 'ち': 'つ', 'に': 'ぬ',
     'び': 'ぶ', 'み': 'む', 'り': 'る', 'い': 'う',
@@ -130,96 +214,77 @@ List<String> deinflectWord(String word) {
 
   for (final suffix in ['ます', 'ました', 'ません']) {
     if (word.endsWith(suffix) && word.length > suffix.length) {
-      final beforeSuffix = word.substring(0, word.length - suffix.length);
-      if (beforeSuffix.isNotEmpty) {
-        final lastChar = beforeSuffix[beforeSuffix.length - 1];
-        final dictEnd = masuToDict[lastChar];
+      final before = word.substring(0, word.length - suffix.length);
+      if (before.isNotEmpty) {
+        final last = before[before.length - 1];
+        final dictEnd = masuToDict[last];
         if (dictEnd != null) {
-          final stem = beforeSuffix.substring(0, beforeSuffix.length - 1);
-          results.add('$stem$dictEnd');
+          results.add('${before.substring(0, before.length - 1)}$dictEnd');
         }
       }
     }
   }
 
-  // --- Te-form / past tense ---
-  // ichidan: 食べて→食べる, 食べた→食べる
-  for (final suffix in ['て', 'た', 'ている', 'ていた', 'てい']) {
+  // Te-form / past: ichidan
+  for (final suffix in ['て', 'た', 'ている', 'ていた']) {
     if (word.endsWith(suffix) && word.length > suffix.length) {
-      final stem = word.substring(0, word.length - suffix.length);
-      results.add('${stem}る'); // ichidan guess
+      results.add('${word.substring(0, word.length - suffix.length)}る');
     }
   }
 
-  // godan te-form patterns:
-  // 行って→行く (く→って), 書いて→書く (く→いて)
-  // 飲んで→飲む (む→んで), 読んで→読む
-  // 話して→話す (す→して)
-  // 持って→持つ (つ→って)
-  // 遊んで→遊ぶ (ぶ→んで)
-  // 走って→走る (る→って) — but this conflicts with ichidan
-  // 買って→買う (う→って)
-  final _teFormRules = <String, List<String>>{
-    'って': ['く', 'つ', 'う', 'る'], // 行って→行く, 持って→持つ, 買って→買う
-    'いて': ['く'],           // 書いて→書く
-    'いだ': ['ぐ'],           // 泳いだ→泳ぐ
-    'いで': ['ぐ'],           // 泳いで→泳ぐ
-    'んで': ['む', 'ぶ', 'ぬ'], // 飲んで→飲む, 遊んで→遊ぶ
-    'んだ': ['む', 'ぶ', 'ぬ'], // 飲んだ→飲む, 遊んだ→遊ぶ
-    'して': ['す'],           // 話して→話す
-    'した': ['す'],           // 話した→話す
-    'った': ['く', 'つ', 'う', 'る'], // 行った→行く
+  // Te-form / past: godan
+  final teRules = <String, List<String>>{
+    'って': ['く', 'つ', 'う', 'る'],
+    'った': ['く', 'つ', 'う', 'る'],
+    'いて': ['く'],
+    'いた': ['く'],
+    'いで': ['ぐ'],
+    'いだ': ['ぐ'],
+    'んで': ['む', 'ぶ', 'ぬ'],
+    'んだ': ['む', 'ぶ', 'ぬ'],
+    'して': ['す'],
+    'した': ['す'],
   };
-
-  for (final entry in _teFormRules.entries) {
-    final suffix = entry.key;
-    if (word.endsWith(suffix) && word.length > suffix.length) {
-      final stem = word.substring(0, word.length - suffix.length);
-      for (final dictEnd in entry.value) {
-        results.add('$stem$dictEnd');
+  for (final entry in teRules.entries) {
+    if (word.endsWith(entry.key) && word.length > entry.key.length) {
+      final stem = word.substring(0, word.length - entry.key.length);
+      for (final end in entry.value) {
+        results.add('$stem$end');
       }
     }
   }
 
-  // --- Negative form ---
-  // ichidan: 食べない→食べる
-  // godan: 行かない→行く
+  // Negative
   if (word.endsWith('ない') && word.length > 2) {
-    final beforeNai = word.substring(0, word.length - 2);
-    results.add('${beforeNai}る'); // ichidan: 食べない→食べる
-
-    // godan: Xあない→Xう, Xかない→Xく, etc.
-    if (beforeNai.isNotEmpty) {
-      final lastChar = beforeNai[beforeNai.length - 1];
+    final before = word.substring(0, word.length - 2);
+    results.add('${before}る');
+    if (before.isNotEmpty) {
       const negToDict = {
         'か': 'く', 'が': 'ぐ', 'さ': 'す', 'た': 'つ', 'な': 'ぬ',
         'ば': 'ぶ', 'ま': 'む', 'ら': 'る', 'わ': 'う',
       };
-      final dictEnd = negToDict[lastChar];
+      final last = before[before.length - 1];
+      final dictEnd = negToDict[last];
       if (dictEnd != null) {
-        final stem = beforeNai.substring(0, beforeNai.length - 1);
-        results.add('$stem$dictEnd');
+        results.add('${before.substring(0, before.length - 1)}$dictEnd');
       }
     }
   }
 
-  // --- Tai-form (want to) ---
+  // Tai-form
   if (word.endsWith('たい') && word.length > 2) {
     final stem = word.substring(0, word.length - 2);
-    results.add('${stem}る'); // ichidan
-    // godan
+    results.add('${stem}る');
     if (stem.isNotEmpty) {
-      final lastChar = stem[stem.length - 1];
-      final dictEnd = masuToDict[lastChar];
+      final last = stem[stem.length - 1];
+      final dictEnd = masuToDict[last];
       if (dictEnd != null) {
-        final baseStem = stem.substring(0, stem.length - 1);
-        results.add('$baseStem$dictEnd');
+        results.add('${stem.substring(0, stem.length - 1)}$dictEnd');
       }
     }
   }
 
-  // --- i-adjective inflections ---
-  // 大きくない→大きい, 大きかった→大きい, 大きくて→大きい, 大きく→大きい
+  // i-adjective
   if (word.endsWith('くない') && word.length > 3) {
     results.add('${word.substring(0, word.length - 3)}い');
   }
@@ -231,39 +296,6 @@ List<String> deinflectWord(String word) {
   }
   if (word.endsWith('く') && word.length > 1) {
     results.add('${word.substring(0, word.length - 1)}い');
-  }
-
-  // --- Passive / causative ---
-  // 食べられる→食べる, 行かれる→行く
-  if (word.endsWith('られる') && word.length > 3) {
-    final stem = word.substring(0, word.length - 3);
-    results.add('${stem}る');
-  }
-  if (word.endsWith('れる') && word.length > 2) {
-    final stem = word.substring(0, word.length - 2);
-    // godan passive: 行かれる stem=行か → 行く
-    if (stem.isNotEmpty) {
-      final lastChar = stem[stem.length - 1];
-      const negToDict = {
-        'か': 'く', 'が': 'ぐ', 'さ': 'す', 'た': 'つ', 'な': 'ぬ',
-        'ば': 'ぶ', 'ま': 'む', 'ら': 'る', 'わ': 'う',
-      };
-      final dictEnd = negToDict[lastChar];
-      if (dictEnd != null) {
-        final baseStem = stem.substring(0, stem.length - 1);
-        results.add('$baseStem$dictEnd');
-      }
-    }
-  }
-
-  // --- Potential form ---
-  // 食べられる (same as passive for ichidan)
-  // 行ける→行く (godan: replace え with corresponding dict ending)
-  if (word.endsWith('える') && word.length > 2) {
-    final stem = word.substring(0, word.length - 2);
-    // Could be godan potential: 行ける stem=行k, but we need the あ→え mapping
-    // Actually the stem before える gives us: 行ける → 行 + ける
-    results.add('${stem}く'); // 行ける→行く? No, need to think about this differently
   }
 
   return results;

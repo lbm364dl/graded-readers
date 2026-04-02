@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
 import '../models.dart';
-import 'segmenter.dart' show deinflectWord;
+import 'segmenter.dart' show deinflectWord, getDictionaryForm;
 
 class DictEntry {
   final String word;
@@ -88,7 +88,21 @@ class DictionaryService {
   }
 
   DictEntry? _lookupDeinflected(String word) {
-    // Import deinflection candidates from segmenter
+    // First try kuromoji's basic_form
+    final basicForm = getDictionaryForm(word);
+    if (basicForm != null) {
+      final raw = _dicts[_activeLanguage]?[basicForm];
+      if (raw != null) {
+        return DictEntry(
+          word: basicForm,
+          pinyin: (raw['p'] as String?) ?? '',
+          definitions: List<String>.from((raw['d'] as List?) ?? []),
+          hskLevel: raw['l'] as int?,
+        );
+      }
+    }
+
+    // Fallback to rule-based deinflection
     final candidates = deinflectWord(word);
     for (final dictForm in candidates) {
       final raw = _dicts[_activeLanguage]?[dictForm];
