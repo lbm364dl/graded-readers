@@ -1996,7 +1996,9 @@ class _SingleWordSheet extends StatelessWidget {
           if (etym.japaneseKun != null) parts.add(etym.japaneseKun!);
           if (etym.japaneseOn != null) parts.add(etym.japaneseOn!);
           reading = parts.join(' · ');
-        } else {
+        }
+        // Fallback to mandarin if no reading found for active language
+        if (reading.isEmpty) {
           reading = etym.mandarinReading ?? '';
         }
         final defs = etym.definitions;
