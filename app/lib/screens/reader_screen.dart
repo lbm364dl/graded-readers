@@ -348,7 +348,7 @@ List<Widget> _buildEtymologyWidgets(
         desc.add('phonetic (sound)');
         // Show on'yomi for the phonetic component
         if (compEtym?.japaneseOn != null) {
-          desc.add(compEtym!.japaneseOn!.toLowerCase());
+          desc.add(compEtym!.japaneseOn!);
         } else if (compEtym?.mandarinReading != null) {
           desc.add(compEtym!.mandarinReading!);
         }
@@ -1341,7 +1341,8 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
 
     return Padding(
       padding: const EdgeInsets.fromLTRB(24, 12, 24, 24),
-      child: Column(
+      child: SingleChildScrollView(
+        child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -1577,6 +1578,7 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
           ],
         ],
       ),
+      ),
     );
   }
 }
@@ -1810,7 +1812,8 @@ class _SingleWordSheet extends StatelessWidget {
 
     return Padding(
       padding: const EdgeInsets.fromLTRB(24, 12, 24, 24),
-      child: Column(
+      child: SingleChildScrollView(
+        child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -1932,6 +1935,7 @@ class _SingleWordSheet extends StatelessWidget {
             ..._etymSection(context, word, isDark),
           ],
         ],
+      ),
       ),
     );
   }
