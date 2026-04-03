@@ -332,66 +332,61 @@ List<Widget> _buildEtymologyWidgets(
     ));
   }
 
-  // Tappable components (semantic + phonetic)
+  // Components (semantic + phonetic)
   if (etym.components.isNotEmpty) {
     final dict = DictionaryService.instance;
-    widgets.add(Padding(
-      padding: const EdgeInsets.only(top: 6),
-      child: Wrap(
-        spacing: 8,
-        runSpacing: 4,
-        children: etym.components.map((comp) {
-          final compEntry = dict.lookup(comp);
-          final isSemantic = comp == etym.semanticComponent;
-          final role = isSemantic ? 'meaning' : 'sound';
-          final def = compEntry != null && compEntry.definitions.isNotEmpty
-              ? compEntry.definitions.first
-              : null;
-          return GestureDetector(
-            onTap: onComponentTap != null ? () => onComponentTap(comp) : null,
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-              decoration: BoxDecoration(
-                color: isDark ? Colors.grey[800] : Colors.grey[100],
-                borderRadius: BorderRadius.circular(6),
-                border: Border.all(
+    final etymSvc = EtymologyService.instance;
+    for (final comp in etym.components) {
+      final compEntry = dict.lookup(comp);
+      final compEtym = etymSvc.lookup(comp);
+      final isSemantic = comp == etym.semanticComponent;
+
+      final desc = <String>[];
+      if (isSemantic) {
+        desc.add('semantic (meaning)');
+      } else {
+        desc.add('phonetic (sound)');
+        // Show on'yomi for the phonetic component
+        if (compEtym?.japaneseOn != null) {
+          desc.add(compEtym!.japaneseOn!.toLowerCase());
+        } else if (compEtym?.mandarinReading != null) {
+          desc.add(compEtym!.mandarinReading!);
+        }
+      }
+      if (compEntry != null && compEntry.definitions.isNotEmpty) {
+        desc.add(compEntry.definitions.first);
+      } else if (compEtym?.definitions != null) {
+        desc.add(compEtym!.definitions!);
+      }
+
+      widgets.add(Padding(
+        padding: const EdgeInsets.only(top: 4),
+        child: GestureDetector(
+          onTap: onComponentTap != null ? () => onComponentTap(comp) : null,
+          child: Text.rich(
+            TextSpan(children: [
+              TextSpan(
+                text: comp,
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
                   color: isSemantic
-                      ? AppTheme.primary.withValues(alpha: 0.3)
-                      : Colors.blue.withValues(alpha: 0.3),
+                      ? AppTheme.primary
+                      : Colors.blue[400],
                 ),
               ),
-              child: Text.rich(
-                TextSpan(children: [
-                  TextSpan(
-                    text: '$comp ',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                      color: isDark ? Colors.grey[200] : Colors.grey[800],
-                    ),
-                  ),
-                  TextSpan(
-                    text: role,
-                    style: TextStyle(
-                      fontSize: 11,
-                      color: isSemantic ? AppTheme.primary : Colors.blue,
-                    ),
-                  ),
-                  if (def != null)
-                    TextSpan(
-                      text: ' — $def',
-                      style: TextStyle(
-                        fontSize: 11,
-                        color: isDark ? Colors.grey[400] : Colors.grey[600],
-                      ),
-                    ),
-                ]),
+              TextSpan(
+                text: '  ${desc.join(" · ")}',
+                style: TextStyle(
+                  fontSize: 12,
+                  color: isDark ? Colors.grey[400] : Colors.grey[600],
+                ),
               ),
-            ),
-          );
-        }).toList(),
-      ),
-    ));
+            ]),
+          ),
+        ),
+      ));
+    }
   }
 
   // Phonetic family (characters sharing the same phonetic component)
