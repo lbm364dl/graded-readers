@@ -42,8 +42,9 @@ class DictionaryService {
 
   Language get activeLanguage => _activeLanguage;
 
-  Future<void> initialize() async {
-    await _loadDict(Language.chinese);
+  Future<void> initialize({Language language = Language.chinese}) async {
+    await _loadDict(language);
+    _activeLanguage = language;
   }
 
   Future<void> switchLanguage(Language language) async {
