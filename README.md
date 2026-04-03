@@ -60,14 +60,31 @@ Each book is retold at multiple difficulty levels using progressively richer voc
 
 A Flutter app for Android and iOS with an interactive reading experience.
 
-- **Dual language** — toggle between Chinese and Japanese
-- **Dictionary lookup** — tap any word for instant definitions with pinyin/furigana
+### Reading
+
+- **Dual language** — toggle between Chinese and Japanese, preference remembered
 - **Word segmentation** — CJK text automatically split into tappable words
-- **Japanese deinflection** — conjugated verbs map back to dictionary form with educational breakdown showing intermediate conjugation steps
-- **Furigana** — kana readings displayed above kanji in definition sheets
+- **Japanese deinflection** — conjugated verbs (masu, te-form, volitional, conditional, てしまう, irregular する/来る, etc.) map back to dictionary form
+- **Conjugation breakdown** — shows intermediate forms between inflected and dictionary form for educational purposes
 - **Progress tracking** — remembers chapter and scroll position per reader
 - **Vocabulary saving** — bookmark words while reading, review with flashcards
-- **Offline** — all content and dictionaries bundled in the app
+- **Offline** — all content, dictionaries, and etymology data bundled in the app
+
+### Dictionary
+
+- **Instant lookup** — tap any segmented word for definitions
+- **Furigana** — kana readings displayed above kanji (on'yomi in katakana, kun'yomi in hiragana)
+- **Recursive lookup** — tap any kanji in definition sheets for nested lookups
+- **Multi-kanji compounds** — words like 一生懸命 split into tappable sub-words (一生 + 懸命) when both exist in the dictionary
+
+### Character Etymology
+
+Powered by data from [hanzi-etymology-dict](https://github.com/lbm364dl/hanzi-etymology-dict) (27,500+ characters):
+
+- **Decomposition** — formation type (pictographic, ideographic, phono-semantic, indicative), IDS decomposition, tappable semantic/phonetic components with language-aware readings
+- **Historical forms** — SVG glyphs from oracle bone, bronze inscription, and seal script (1,565 characters from Dong Chinese and Wikimedia), viewable in a fullscreen gallery
+- **Character series** — phonetic series, semantic series, phonetic siblings, and semantic siblings (up to 30 each, all tappable)
+- **Etymology notes** — from multiple sources: Dong Chinese, Make Me a Hanzi, Wiktionary, Shuowen Jiezi
 
 ### Build
 
@@ -80,13 +97,18 @@ flutter build apk         # Android APK
 
 Or download a prebuilt APK from [Releases](https://github.com/lbm364dl/hsk-graded-readers/releases).
 
+## Known Limitations
+
+- **CJK Extension B+ characters** — Characters from CJK Unified Ideographs Extension B and beyond (codepoints above U+9FFF/U+4DBF) may not render on most mobile devices. The app filters these from series lists to avoid showing empty boxes, but they may still appear in etymology notes from external sources. The character count shown (e.g. "3 of 22") reflects this: 3 renderable characters out of 22 total in the source data.
+- **Japanese deinflection** — Rule-based, not morphological analysis. Covers all common conjugation patterns but may miss rare or archaic forms. Some kana-only words may produce false deinflection matches.
+
 ## Project Structure
 
 ```
 ├── app/                    Flutter mobile app
 │   ├── lib/                Dart source
-│   ├── assets/             Bundled content + dictionaries (JSON)
-│   └── test/               Dart tests (265 tests)
+│   ├── assets/             Bundled content + dictionaries + etymology (JSON)
+│   └── test/               Dart tests (270+ tests)
 ├── books/                  Chinese source texts (Project Gutenberg)
 ├── data/words/             HSK 3.0 vocabulary CSVs (levels 1–7+)
 ├── jlpt/                   Japanese content pipeline
@@ -101,6 +123,17 @@ Or download a prebuilt APK from [Releases](https://github.com/lbm364dl/hsk-grade
 │   └── vocab/              HSK/JLPT vocabulary loader
 └── tests/                  Python test suite
 ```
+
+## App Assets
+
+| File | Size | Contents |
+|------|------|----------|
+| content.json | 3.9 MB | Chinese graded readers (90 readers, 1,113 chapters) |
+| content_ja.json | 2.0 MB | Japanese graded readers (97 readers, 800 chapters) |
+| dictionary.json | 2.6 MB | Chinese dictionary (pinyin, HSK level, definitions) |
+| dictionary_ja.json | 1.4 MB | Japanese dictionary (readings, JLPT level, definitions) |
+| etymology.json | 12.9 MB | Character etymology (27,500+ entries with decomposition, series, notes) |
+| glyphs.json | 11.5 MB | Historical character SVGs (1,565 characters, oracle/bronze/seal) |
 
 ## Proficiency Levels
 
@@ -127,7 +160,7 @@ Or download a prebuilt APK from [Releases](https://github.com/lbm364dl/hsk-grade
 
 ## Source Texts
 
-Chinese source texts are public domain from [Project Gutenberg](https://www.gutenberg.org/). Japanese texts are adapted from public domain works by Akutagawa, Natsume Soseki, Dazai Osamu, Miyazawa Kenji, and classical Japanese literature.
+Chinese source texts are public domain from [Project Gutenberg](https://www.gutenberg.org/). Japanese texts are adapted from public domain works by Akutagawa, Natsume Soseki, Dazai Osamu, Miyazawa Kenji, and classical Japanese literature. Etymology data from [hanzi-etymology-dict](https://github.com/lbm364dl/hanzi-etymology-dict).
 
 ## License
 
