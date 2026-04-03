@@ -306,31 +306,25 @@ bool _isTappableWord(String text) =>
         (c >= 0xF900 && c <= 0xFAFF));
 
 /// Build etymology section for a character (if available).
-List<Widget> _buildEtymologyWidgets(String character, bool isDark) {
+List<Widget> _buildEtymologyWidgets(
+  String character,
+  bool isDark, {
+  void Function(String)? onComponentTap,
+}) {
   final etym = EtymologyService.instance.lookup(character);
   if (etym == null) return [];
 
   final widgets = <Widget>[];
 
-  // Formation type + decomposition
-  final parts = <String>[];
-  if (etym.formationLabel != null) parts.add(etym.formationLabel!);
-  if (etym.ids != null) parts.add(etym.ids!);
-  if (etym.semanticComponent != null || etym.phoneticComponent != null) {
-    final components = <String>[];
-    if (etym.semanticComponent != null) {
-      components.add('${etym.semanticComponent} semantic');
-    }
-    if (etym.phoneticComponent != null) {
-      components.add('${etym.phoneticComponent} phonetic');
-    }
-    parts.add(components.join(', '));
-  }
-  if (etym.strokes != null) parts.add('${etym.strokes} strokes');
+  // Formation type + strokes
+  final meta = <String>[];
+  if (etym.formationLabel != null) meta.add(etym.formationLabel!);
+  if (etym.ids != null) meta.add(etym.ids!);
+  if (etym.strokes != null) meta.add('${etym.strokes} strokes');
 
-  if (parts.isNotEmpty) {
+  if (meta.isNotEmpty) {
     widgets.add(Text(
-      parts.join(' · '),
+      meta.join(' · '),
       style: TextStyle(
         fontSize: 12,
         color: isDark ? Colors.grey[400] : Colors.grey[600],
@@ -338,18 +332,69 @@ List<Widget> _buildEtymologyWidgets(String character, bool isDark) {
     ));
   }
 
-  // Etymology note
-  if (etym.etymology != null) {
+  // Tappable components
+  if (etym.components.isNotEmpty) {
+    final dict = DictionaryService.instance;
     widgets.add(Padding(
-      padding: const EdgeInsets.only(top: 4),
-      child: Text(
-        etym.etymology!,
-        style: TextStyle(
-          fontSize: 13,
-          height: 1.4,
-          color: isDark ? Colors.grey[300] : Colors.grey[700],
-          fontStyle: FontStyle.italic,
-        ),
+      padding: const EdgeInsets.only(top: 6),
+      child: Wrap(
+        spacing: 8,
+        runSpacing: 4,
+        children: etym.components.map((comp) {
+          final compEntry = dict.lookup(comp);
+          final role = comp == etym.semanticComponent ? 'meaning' : 'sound';
+          final label = compEntry != null && compEntry.definitions.isNotEmpty
+              ? '$comp $role — ${compEntry.definitions.first}'
+              : '$comp $role';
+          return GestureDetector(
+            onTap: onComponentTap != null ? () => onComponentTap(comp) : null,
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+              decoration: BoxDecoration(
+                color: isDark
+                    ? Colors.grey[800]
+                    : Colors.grey[100],
+                borderRadius: BorderRadius.circular(6),
+              ),
+              child: Text(
+                label,
+                style: TextStyle(
+                  fontSize: 12,
+                  color: isDark ? Colors.grey[300] : Colors.grey[700],
+                ),
+              ),
+            ),
+          );
+        }).toList(),
+      ),
+    ));
+  }
+
+  // Etymology notes from multiple sources
+  for (final note in etym.notes) {
+    widgets.add(Padding(
+      padding: const EdgeInsets.only(top: 6),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (note.source.isNotEmpty)
+            Text(
+              note.source,
+              style: TextStyle(
+                fontSize: 11,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[500],
+              ),
+            ),
+          Text(
+            note.text,
+            style: TextStyle(
+              fontSize: 13,
+              height: 1.4,
+              color: isDark ? Colors.grey[300] : Colors.grey[700],
+            ),
+          ),
+        ],
       ),
     ));
   }
@@ -999,9 +1044,9 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
                                     : Colors.grey[700],
                               ),
                             ),
-                          if (etym?.etymology != null)
+                          if (etym != null && etym.notes.isNotEmpty)
                             Text(
-                              etym!.etymology!,
+                              etym.notes.first.text,
                               style: TextStyle(
                                 fontSize: 12,
                                 color: Colors.grey[500],
@@ -1519,6 +1564,27 @@ class _SingleWordSheet extends StatelessWidget {
     );
   }
 
+  List<Widget> _etymSection(BuildContext context, String ch, bool isDark) {
+    final etymWidgets = _buildEtymologyWidgets(ch, isDark,
+        onComponentTap: (c) => _openNestedLookup(context, c));
+    if (etymWidgets.isEmpty) return [];
+    return [
+      const SizedBox(height: 12),
+      Divider(color: isDark ? Colors.grey[700] : Colors.grey[200]),
+      const SizedBox(height: 8),
+      Text(
+        'Etymology',
+        style: TextStyle(
+          fontSize: 12,
+          fontWeight: FontWeight.w600,
+          color: Colors.grey[500],
+        ),
+      ),
+      const SizedBox(height: 4),
+      ...etymWidgets,
+    ];
+  }
+
   Widget _buildSingleWordDisplay(
       BuildContext context, DictEntry? entry, Language lang) {
     final reading = entry?.pinyin ?? '';
@@ -1729,7 +1795,9 @@ class _SingleWordSheet extends StatelessWidget {
           ] else ...[
             // No dictionary entry — etymology may still be available
             const SizedBox(height: 12),
-            if (_buildEtymologyWidgets(word, isDark).isEmpty)
+            if (_buildEtymologyWidgets(word, isDark,
+                    onComponentTap: (ch) => _openNestedLookup(context, ch))
+                .isEmpty)
               Text(
                 'No dictionary entry found',
                 style: TextStyle(
@@ -1741,21 +1809,8 @@ class _SingleWordSheet extends StatelessWidget {
           ],
 
           // Etymology section (for single characters)
-          if (word.length == 1 &&
-              _buildEtymologyWidgets(word, isDark).isNotEmpty) ...[
-            const SizedBox(height: 12),
-            Divider(color: isDark ? Colors.grey[700] : Colors.grey[200]),
-            const SizedBox(height: 8),
-            Text(
-              'Etymology',
-              style: TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w600,
-                color: Colors.grey[500],
-              ),
-            ),
-            const SizedBox(height: 4),
-            ..._buildEtymologyWidgets(word, isDark),
+          if (word.length == 1) ...[
+            ..._etymSection(context, word, isDark),
           ],
         ],
       ),

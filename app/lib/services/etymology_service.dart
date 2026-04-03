@@ -1,14 +1,20 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
 
+class EtymologyNote {
+  final String source;
+  final String text;
+  const EtymologyNote({required this.source, required this.text});
+}
+
 class EtymologyEntry {
   final String character;
-  final String? formationType; // pictographic, ideographic, phono-semantic, indicative, phonetic-loan
+  final String? formationType;
   final String? semanticComponent;
   final String? phoneticComponent;
-  final String? ids; // ideographic description sequence (decomposition)
-  final String? etymology; // concise explanation
+  final String? ids;
   final int? strokes;
+  final List<EtymologyNote> notes;
 
   const EtymologyEntry({
     required this.character,
@@ -16,11 +22,10 @@ class EtymologyEntry {
     this.semanticComponent,
     this.phoneticComponent,
     this.ids,
-    this.etymology,
     this.strokes,
+    this.notes = const [],
   });
 
-  /// Human-readable formation label
   String? get formationLabel {
     switch (formationType) {
       case 'pictographic':
@@ -36,6 +41,20 @@ class EtymologyEntry {
       default:
         return null;
     }
+  }
+
+  /// Components that can be tapped into (semantic + phonetic, deduplicated)
+  List<String> get components {
+    final result = <String>[];
+    if (semanticComponent != null && semanticComponent!.length == 1) {
+      result.add(semanticComponent!);
+    }
+    if (phoneticComponent != null &&
+        phoneticComponent!.length == 1 &&
+        phoneticComponent != semanticComponent) {
+      result.add(phoneticComponent!);
+    }
+    return result;
   }
 }
 
@@ -55,14 +74,21 @@ class EtymologyService {
     for (final e in data.entries) {
       final ch = e.key;
       final v = e.value as Map<String, dynamic>;
+      final notesList = (v['en'] as List?)
+              ?.map((n) => EtymologyNote(
+                    source: (n['src'] as String?) ?? '',
+                    text: (n['t'] as String?) ?? '',
+                  ))
+              .toList() ??
+          [];
       _entries![ch] = EtymologyEntry(
         character: ch,
         formationType: v['ft'] as String?,
         semanticComponent: v['s'] as String?,
         phoneticComponent: v['ph'] as String?,
         ids: v['ids'] as String?,
-        etymology: v['e'] as String?,
         strokes: v['st'] as int?,
+        notes: notesList,
       );
     }
   }
