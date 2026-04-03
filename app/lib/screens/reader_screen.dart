@@ -314,6 +314,19 @@ bool _isTappableWord(String text) =>
         (c >= 0xF900 && c <= 0xFAFF));
 
 /// Build etymology section for a character (if available).
+Widget _sectionLabel(String text) => Padding(
+      padding: const EdgeInsets.only(top: 10, bottom: 4),
+      child: Text(
+        text,
+        style: TextStyle(
+          fontSize: 11,
+          fontWeight: FontWeight.w700,
+          color: Colors.grey[500],
+          letterSpacing: 0.5,
+        ),
+      ),
+    );
+
 List<Widget> _buildEtymologyWidgets(
   BuildContext context,
   String character,
@@ -326,172 +339,166 @@ List<Widget> _buildEtymologyWidgets(
 
   final widgets = <Widget>[];
 
-  // Historical glyphs row
+  // --- Decomposition ---
+  if (etym != null) {
+    final hasDecomp = etym.formationLabel != null ||
+        etym.ids != null ||
+        etym.components.isNotEmpty;
+    if (hasDecomp) {
+      widgets.add(_sectionLabel('Decomposition'));
+
+      // Formation type + IDS + strokes
+      final meta = <String>[];
+      if (etym.formationLabel != null) meta.add(etym.formationLabel!);
+      if (etym.ids != null) meta.add(etym.ids!);
+      if (etym.strokes != null) meta.add('${etym.strokes} strokes');
+      if (meta.isNotEmpty) {
+        widgets.add(Text(
+          meta.join(' · '),
+          style: TextStyle(
+            fontSize: 12,
+            color: isDark ? Colors.grey[400] : Colors.grey[600],
+          ),
+        ));
+      }
+
+      // Components (semantic + phonetic)
+      final dict = DictionaryService.instance;
+      final etymSvc = EtymologyService.instance;
+      for (final comp in etym.components) {
+        final compEntry = dict.lookup(comp);
+        final compEtym = etymSvc.lookup(comp);
+        final isSemantic = comp == etym.semanticComponent;
+
+        final desc = <String>[];
+        if (isSemantic) {
+          desc.add('semantic');
+          if (compEntry != null && compEntry.definitions.isNotEmpty) {
+            desc.add(compEntry.definitions.first);
+          } else if (compEtym?.definitions != null) {
+            desc.add(compEtym!.definitions!);
+          }
+        } else {
+          desc.add('phonetic');
+          if (compEtym?.japaneseOn != null) {
+            desc.add(compEtym!.japaneseOn!);
+          } else if (compEtym?.mandarinReading != null) {
+            desc.add(compEtym!.mandarinReading!);
+          }
+        }
+
+        widgets.add(Padding(
+          padding: const EdgeInsets.only(top: 3),
+          child: GestureDetector(
+            onTap:
+                onComponentTap != null ? () => onComponentTap(comp) : null,
+            child: Text.rich(
+              TextSpan(children: [
+                TextSpan(
+                  text: comp,
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: isSemantic ? AppTheme.primary : Colors.blue[400],
+                  ),
+                ),
+                TextSpan(
+                  text: '  ${desc.join(" · ")}',
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: isDark ? Colors.grey[400] : Colors.grey[600],
+                  ),
+                ),
+              ]),
+            ),
+          ),
+        ));
+      }
+    }
+  }
+
+  // --- Historical Forms ---
   if (glyphs != null) {
     final eras = glyphs.sortedEras;
-    widgets.add(Padding(
-      padding: const EdgeInsets.only(bottom: 8),
-      child: Wrap(
-        spacing: 8,
-        runSpacing: 8,
-        children: eras.map((era) {
-          final svg = glyphs.eras[era]!;
-          return GestureDetector(
-            onTap: () => _showGlyphFullscreen(
-                context, character, glyphs, era),
-            child: Container(
-              width: 48,
-              height: 48,
-              padding: const EdgeInsets.all(4),
-              decoration: BoxDecoration(
-                color: isDark ? Colors.grey[800] : Colors.grey[100],
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: SvgPicture.string(
-                svg,
-                colorFilter: ColorFilter.mode(
-                  isDark ? Colors.grey[300]! : Colors.grey[800]!,
-                  BlendMode.srcIn,
-                ),
+    widgets.add(_sectionLabel('Historical Forms'));
+    widgets.add(Wrap(
+      spacing: 8,
+      runSpacing: 8,
+      children: eras.map((era) {
+        final svg = glyphs.eras[era]!;
+        return GestureDetector(
+          onTap: () =>
+              _showGlyphFullscreen(context, character, glyphs, era),
+          child: Container(
+            width: 48,
+            height: 48,
+            padding: const EdgeInsets.all(4),
+            decoration: BoxDecoration(
+              color: isDark ? Colors.grey[800] : Colors.grey[100],
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: SvgPicture.string(
+              svg,
+              colorFilter: ColorFilter.mode(
+                isDark ? Colors.grey[300]! : Colors.grey[800]!,
+                BlendMode.srcIn,
               ),
             ),
-          );
-        }).toList(),
-      ),
+          ),
+        );
+      }).toList(),
     ));
   }
 
   if (etym == null) return widgets;
 
-  // Formation type + decomposition + strokes
-  final meta = <String>[];
-  if (etym.formationLabel != null) meta.add(etym.formationLabel!);
-  if (etym.ids != null) meta.add(etym.ids!);
-  if (etym.strokes != null) meta.add('${etym.strokes} strokes');
-
-  if (meta.isNotEmpty) {
-    widgets.add(Text(
-      meta.join(' · '),
-      style: TextStyle(
-        fontSize: 12,
-        color: isDark ? Colors.grey[400] : Colors.grey[600],
-      ),
+  // --- Phonetic Series ---
+  if (etym.phoneticFamily.isNotEmpty) {
+    widgets.add(_sectionLabel('Phonetic Series'));
+    widgets.add(Wrap(
+      spacing: 2,
+      runSpacing: 2,
+      children: etym.phoneticFamily.map((ch) => GestureDetector(
+            onTap:
+                onComponentTap != null ? () => onComponentTap(ch) : null,
+            child: Text(
+              ch,
+              style: TextStyle(fontSize: 14, color: Colors.blue[300]),
+            ),
+          )).toList(),
     ));
   }
 
-  // Components (semantic + phonetic)
-  if (etym.components.isNotEmpty) {
-    final dict = DictionaryService.instance;
-    final etymSvc = EtymologyService.instance;
-    for (final comp in etym.components) {
-      final compEntry = dict.lookup(comp);
-      final compEtym = etymSvc.lookup(comp);
-      final isSemantic = comp == etym.semanticComponent;
-
-      final desc = <String>[];
-      if (isSemantic) {
-        desc.add('semantic (meaning)');
-        // Show definition for semantic component
-        if (compEntry != null && compEntry.definitions.isNotEmpty) {
-          desc.add(compEntry.definitions.first);
-        } else if (compEtym?.definitions != null) {
-          desc.add(compEtym!.definitions!);
-        }
-      } else {
-        desc.add('phonetic (sound)');
-        // Show on'yomi reading for phonetic component
-        if (compEtym?.japaneseOn != null) {
-          desc.add(compEtym!.japaneseOn!);
-        } else if (compEtym?.mandarinReading != null) {
-          desc.add(compEtym!.mandarinReading!);
-        }
-      }
-
+  // --- Etymology ---
+  if (etym.notes.isNotEmpty) {
+    widgets.add(_sectionLabel('Etymology'));
+    for (final note in etym.notes) {
       widgets.add(Padding(
-        padding: const EdgeInsets.only(top: 4),
-        child: GestureDetector(
-          onTap: onComponentTap != null ? () => onComponentTap(comp) : null,
-          child: Text.rich(
-            TextSpan(children: [
-              TextSpan(
-                text: comp,
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: isSemantic
-                      ? AppTheme.primary
-                      : Colors.blue[400],
+        padding: const EdgeInsets.only(top: 6),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            if (note.source.isNotEmpty)
+              Padding(
+                padding: const EdgeInsets.only(bottom: 2),
+                child: Text(
+                  note.source,
+                  style: TextStyle(
+                    fontSize: 11,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.grey[500],
+                  ),
                 ),
               ),
-              TextSpan(
-                text: '  ${desc.join(" · ")}',
-                style: TextStyle(
-                  fontSize: 12,
-                  color: isDark ? Colors.grey[400] : Colors.grey[600],
-                ),
-              ),
-            ]),
-          ),
+            _buildTappableText(
+              note.text,
+              isDark: isDark,
+              onCharTap: onComponentTap,
+            ),
+          ],
         ),
       ));
     }
-  }
-
-  // Phonetic family (characters sharing the same phonetic component)
-  if (etym.phoneticFamily.isNotEmpty) {
-    widgets.add(Padding(
-      padding: const EdgeInsets.only(top: 6),
-      child: Wrap(
-        crossAxisAlignment: WrapCrossAlignment.center,
-        spacing: 2,
-        runSpacing: 2,
-        children: [
-          Text(
-            'Phonetic series: ',
-            style: TextStyle(fontSize: 11, color: Colors.grey[500]),
-          ),
-          ...etym.phoneticFamily.map((ch) => GestureDetector(
-                onTap: onComponentTap != null ? () => onComponentTap(ch) : null,
-                child: Text(
-                  ch,
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.blue[300],
-                  ),
-                ),
-              )),
-        ],
-      ),
-    ));
-  }
-
-  // Etymology notes from multiple sources
-  for (final note in etym.notes) {
-    widgets.add(Padding(
-      padding: const EdgeInsets.only(top: 8),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          if (note.source.isNotEmpty)
-            Padding(
-              padding: const EdgeInsets.only(bottom: 2),
-              child: Text(
-                note.source,
-                style: TextStyle(
-                  fontSize: 11,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.grey[500],
-                ),
-              ),
-            ),
-          _buildTappableText(
-            note.text,
-            isDark: isDark,
-            onCharTap: onComponentTap,
-          ),
-        ],
-      ),
-    ));
   }
 
   return widgets;
@@ -598,9 +605,8 @@ void _showGlyphFullscreen(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       IconButton(
-                        onPressed: current > 0
-                            ? () => setState(() => current--)
-                            : null,
+                        onPressed: () => setState(() =>
+                            current = (current - 1) % eras.length),
                         icon: const Icon(Icons.chevron_left),
                         visualDensity: VisualDensity.compact,
                       ),
@@ -619,9 +625,8 @@ void _showGlyphFullscreen(
                         ),
                       ),
                       IconButton(
-                        onPressed: current < eras.length - 1
-                            ? () => setState(() => current++)
-                            : null,
+                        onPressed: () => setState(() =>
+                            current = (current + 1) % eras.length),
                         icon: const Icon(Icons.chevron_right),
                         visualDensity: VisualDensity.compact,
                       ),
@@ -1365,18 +1370,8 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
         onComponentTap: _openNestedLookup);
     if (etymWidgets.isEmpty) return [];
     return [
-      const SizedBox(height: 12),
-      Divider(color: isDark ? Colors.grey[700] : Colors.grey[200]),
       const SizedBox(height: 8),
-      Text(
-        'Etymology',
-        style: TextStyle(
-          fontSize: 12,
-          fontWeight: FontWeight.w600,
-          color: Colors.grey[500],
-        ),
-      ),
-      const SizedBox(height: 4),
+      Divider(color: isDark ? Colors.grey[700] : Colors.grey[200]),
       ...etymWidgets,
     ];
   }
@@ -1837,18 +1832,8 @@ class _SingleWordSheet extends StatelessWidget {
         onComponentTap: (c) => _openNestedLookup(context, c));
     if (etymWidgets.isEmpty) return [];
     return [
-      const SizedBox(height: 12),
-      Divider(color: isDark ? Colors.grey[700] : Colors.grey[200]),
       const SizedBox(height: 8),
-      Text(
-        'Etymology',
-        style: TextStyle(
-          fontSize: 12,
-          fontWeight: FontWeight.w600,
-          color: Colors.grey[500],
-        ),
-      ),
-      const SizedBox(height: 4),
+      Divider(color: isDark ? Colors.grey[700] : Colors.grey[200]),
       ...etymWidgets,
     ];
   }
