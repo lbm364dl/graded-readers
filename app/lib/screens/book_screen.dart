@@ -31,11 +31,13 @@ class _BookScreenState extends State<BookScreen> {
   void _openReader(int chapter) {
     Navigator.push(
       context,
-      MaterialPageRoute(
-        builder: (_) => ReaderScreen(
+      PageRouteBuilder(
+        pageBuilder: (_, __, ___) => ReaderScreen(
           reader: widget.reader,
           initialChapter: chapter,
         ),
+        transitionDuration: Duration.zero,
+        reverseTransitionDuration: Duration.zero,
       ),
     ).then((_) => _loadProgress());
   }
