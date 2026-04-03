@@ -568,7 +568,7 @@ void _showGlyphFullscreen(
         builder: (context, setState) {
           final era = eras[current];
           final svg = glyphs.eras[era]!;
-          final label = GlyphEntry.eraLabels[era] ?? era;
+          final label = GlyphEntry.labelFor(era);
 
           return Dialog(
             backgroundColor: isDark ? Colors.grey[900] : Colors.white,
