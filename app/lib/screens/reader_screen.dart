@@ -32,9 +32,11 @@ TextStyle _cjkTextStyle({
     backgroundColor: backgroundColor,
   ).copyWith(
     fontFamilyFallback: [
-      // Google Fonts with broader CJK coverage as fallback
       GoogleFonts.notoSerifJp().fontFamily!,
       GoogleFonts.notoSerifSc().fontFamily!,
+      // System fonts for CJK Extension B+ characters
+      'sans-serif',
+      'serif',
     ],
   );
 }
