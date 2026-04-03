@@ -452,18 +452,27 @@ List<Widget> _buildEtymologyWidgets(
 
   if (etym == null) return widgets;
 
-  // --- Phonetic Series ---
-  if (etym.phoneticFamily.isNotEmpty) {
-    widgets.add(_sectionLabel('Phonetic Series'));
+  // --- Series sections ---
+  for (final (chars, total, label) in [
+    (etym.phoneticSeries, etym.phoneticSeriesTotal, 'Phonetic Series'),
+    (etym.semanticSeries, etym.semanticSeriesTotal, 'Semantic Series'),
+    (etym.phoneticSiblings, etym.phoneticSiblingsTotal, 'Phonetic Siblings'),
+    (etym.semanticSiblings, etym.semanticSiblingsTotal, 'Semantic Siblings'),
+  ]) {
+    if (chars.isEmpty) continue;
+    final countNote = total != null && total > chars.length
+        ? ' (${chars.length} of $total)'
+        : '';
+    widgets.add(_sectionLabel('$label$countNote'));
     widgets.add(Wrap(
-      spacing: 2,
+      spacing: 3,
       runSpacing: 2,
-      children: etym.phoneticFamily.map((ch) => GestureDetector(
+      children: chars.map((ch) => GestureDetector(
             onTap:
                 onComponentTap != null ? () => onComponentTap(ch) : null,
             child: Text(
               ch,
-              style: TextStyle(fontSize: 14, color: Colors.blue[300]),
+              style: TextStyle(fontSize: 15, color: Colors.blue[300]),
             ),
           )).toList(),
     ));

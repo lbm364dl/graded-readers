@@ -15,11 +15,19 @@ class EtymologyEntry {
   final String? ids;
   final int? strokes;
   final List<EtymologyNote> notes;
-  final List<String> phoneticFamily;
   final String? mandarinReading;
   final String? japaneseOn;  // in katakana
   final String? japaneseKun; // in hiragana
   final String? definitions;
+  // Series
+  final List<String> phoneticSeries;
+  final int? phoneticSeriesTotal;
+  final List<String> semanticSeries;
+  final int? semanticSeriesTotal;
+  final List<String> phoneticSiblings;
+  final int? phoneticSiblingsTotal;
+  final List<String> semanticSiblings;
+  final int? semanticSiblingsTotal;
 
   const EtymologyEntry({
     required this.character,
@@ -29,11 +37,18 @@ class EtymologyEntry {
     this.ids,
     this.strokes,
     this.notes = const [],
-    this.phoneticFamily = const [],
     this.mandarinReading,
     this.japaneseOn,
     this.japaneseKun,
     this.definitions,
+    this.phoneticSeries = const [],
+    this.phoneticSeriesTotal,
+    this.semanticSeries = const [],
+    this.semanticSeriesTotal,
+    this.phoneticSiblings = const [],
+    this.phoneticSiblingsTotal,
+    this.semanticSiblings = const [],
+    this.semanticSiblingsTotal,
   });
 
   String? get formationLabel {
@@ -202,7 +217,6 @@ class EtymologyService {
                   ))
               .toList() ??
           [];
-      final pf = (v['pf'] as List?)?.cast<String>() ?? [];
       final r = v['r'] as Map<String, dynamic>?;
       final onRaw = r?['on'] as String?;
       final kunRaw = r?['kun'] as String?;
@@ -214,11 +228,18 @@ class EtymologyService {
         ids: v['ids'] as String?,
         strokes: v['st'] as int?,
         notes: notesList,
-        phoneticFamily: pf,
         mandarinReading: r?['zh'] as String?,
         japaneseOn: onRaw != null ? romajiToKatakana(onRaw) : null,
         japaneseKun: kunRaw != null ? romajiToHiragana(kunRaw) : null,
         definitions: v['d'] as String?,
+        phoneticSeries: (v['ps'] as List?)?.cast<String>() ?? [],
+        phoneticSeriesTotal: v['pst'] as int?,
+        semanticSeries: (v['ss'] as List?)?.cast<String>() ?? [],
+        semanticSeriesTotal: v['sst'] as int?,
+        phoneticSiblings: (v['psib'] as List?)?.cast<String>() ?? [],
+        phoneticSiblingsTotal: v['psibt'] as int?,
+        semanticSiblings: (v['ssib'] as List?)?.cast<String>() ?? [],
+        semanticSiblingsTotal: v['ssibt'] as int?,
       );
     }
   }
