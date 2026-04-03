@@ -18,18 +18,19 @@ void main() async {
   final savedLang = prefs.getString(_languageKey);
   final initialLang = savedLang == 'japanese' ? Language.japanese : Language.chinese;
 
-  await Future.wait([
-    DictionaryService.instance.initialize(language: initialLang),
-    EtymologyService.instance.initialize(),
-    GlyphService.instance.initialize(),
-    GoogleFonts.pendingFonts([
-      GoogleFonts.notoSansJp(),
-      GoogleFonts.notoSansSc(),
-      GoogleFonts.notoSerifJp(),
-      GoogleFonts.notoSerifSc(),
-    ]),
-  ]);
+  // Only await the essential dictionary — everything else loads in background
+  await DictionaryService.instance.initialize(language: initialLang);
   runApp(GradedReadersApp(initialLanguage: initialLang));
+
+  // Load heavy assets in background after first frame
+  EtymologyService.instance.initialize();
+  GlyphService.instance.initialize();
+  GoogleFonts.pendingFonts([
+    GoogleFonts.notoSansJp(),
+    GoogleFonts.notoSansSc(),
+    GoogleFonts.notoSerifJp(),
+    GoogleFonts.notoSerifSc(),
+  ]);
 }
 
 class LanguageNotifier extends ValueNotifier<Language> {
