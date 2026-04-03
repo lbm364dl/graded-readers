@@ -6,6 +6,7 @@ import 'models.dart';
 import 'theme.dart';
 import 'screens/home_screen.dart';
 import 'services/dictionary_service.dart';
+import 'services/etymology_service.dart';
 
 const _languageKey = 'selected_language';
 
@@ -18,6 +19,7 @@ void main() async {
 
   await Future.wait([
     DictionaryService.instance.initialize(language: initialLang),
+    EtymologyService.instance.initialize(),
     GoogleFonts.pendingFonts([
       GoogleFonts.notoSansJp(),
       GoogleFonts.notoSansSc(),

@@ -6,6 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../models.dart';
 import '../theme.dart';
 import '../services/dictionary_service.dart';
+import '../services/etymology_service.dart';
 import '../services/progress_service.dart';
 import '../services/segmenter.dart';
 import '../services/vocabulary_service.dart';
@@ -303,6 +304,58 @@ bool _isTappableWord(String text) =>
         (c >= 0x4E00 && c <= 0x9FFF) ||
         (c >= 0x3400 && c <= 0x4DBF) ||
         (c >= 0xF900 && c <= 0xFAFF));
+
+/// Build etymology section for a character (if available).
+List<Widget> _buildEtymologyWidgets(String character, bool isDark) {
+  final etym = EtymologyService.instance.lookup(character);
+  if (etym == null) return [];
+
+  final widgets = <Widget>[];
+
+  // Formation type + decomposition
+  final parts = <String>[];
+  if (etym.formationLabel != null) parts.add(etym.formationLabel!);
+  if (etym.ids != null) parts.add(etym.ids!);
+  if (etym.semanticComponent != null || etym.phoneticComponent != null) {
+    final components = <String>[];
+    if (etym.semanticComponent != null) {
+      components.add('${etym.semanticComponent} semantic');
+    }
+    if (etym.phoneticComponent != null) {
+      components.add('${etym.phoneticComponent} phonetic');
+    }
+    parts.add(components.join(', '));
+  }
+  if (etym.strokes != null) parts.add('${etym.strokes} strokes');
+
+  if (parts.isNotEmpty) {
+    widgets.add(Text(
+      parts.join(' · '),
+      style: TextStyle(
+        fontSize: 12,
+        color: isDark ? Colors.grey[400] : Colors.grey[600],
+      ),
+    ));
+  }
+
+  // Etymology note
+  if (etym.etymology != null) {
+    widgets.add(Padding(
+      padding: const EdgeInsets.only(top: 4),
+      child: Text(
+        etym.etymology!,
+        style: TextStyle(
+          fontSize: 13,
+          height: 1.4,
+          color: isDark ? Colors.grey[300] : Colors.grey[700],
+          fontStyle: FontStyle.italic,
+        ),
+      ),
+    ));
+  }
+
+  return widgets;
+}
 
 class _TokenEntry {
   final String text;
@@ -903,6 +956,7 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
     for (int i = 0; i < word.length; i++) {
       final ch = word[i];
       final charEntry = dict.lookup(ch);
+      final etym = EtymologyService.instance.lookup(ch);
       widgets.add(Padding(
         padding: const EdgeInsets.only(bottom: 6),
         child: GestureDetector(
@@ -922,20 +976,20 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
               ),
               const SizedBox(width: 10),
               Expanded(
-                child: charEntry == null
+                child: (charEntry == null && etym == null)
                     ? Text('—',
                         style:
                             TextStyle(color: Colors.grey[400], fontSize: 14))
                     : Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          if (charEntry.pinyin.isNotEmpty)
+                          if (charEntry != null && charEntry.pinyin.isNotEmpty)
                             Text(charEntry.pinyin,
                                 style: TextStyle(
                                     fontSize: 13,
                                     color: AppTheme.primary,
                                     fontStyle: FontStyle.italic)),
-                          if (charEntry.definitions.isNotEmpty)
+                          if (charEntry != null && charEntry.definitions.isNotEmpty)
                             Text(
                               charEntry.definitions.first,
                               style: TextStyle(
@@ -943,6 +997,15 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
                                 color: isDark
                                     ? Colors.grey[300]
                                     : Colors.grey[700],
+                              ),
+                            ),
+                          if (etym?.etymology != null)
+                            Text(
+                              etym!.etymology!,
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.grey[500],
+                                fontStyle: FontStyle.italic,
                               ),
                             ),
                         ],
@@ -1664,15 +1727,35 @@ class _SingleWordSheet extends StatelessWidget {
               style: TextStyle(fontSize: 12, color: Colors.grey[500]),
             ),
           ] else ...[
+            // No dictionary entry — etymology may still be available
             const SizedBox(height: 12),
+            if (_buildEtymologyWidgets(word, isDark).isEmpty)
+              Text(
+                'No dictionary entry found',
+                style: TextStyle(
+                  fontSize: 13,
+                  color: Colors.grey[500],
+                  fontStyle: FontStyle.italic,
+                ),
+              ),
+          ],
+
+          // Etymology section (for single characters)
+          if (word.length == 1 &&
+              _buildEtymologyWidgets(word, isDark).isNotEmpty) ...[
+            const SizedBox(height: 12),
+            Divider(color: isDark ? Colors.grey[700] : Colors.grey[200]),
+            const SizedBox(height: 8),
             Text(
-              'No dictionary entry found',
+              'Etymology',
               style: TextStyle(
-                fontSize: 13,
+                fontSize: 12,
+                fontWeight: FontWeight.w600,
                 color: Colors.grey[500],
-                fontStyle: FontStyle.italic,
               ),
             ),
+            const SizedBox(height: 4),
+            ..._buildEtymologyWidgets(word, isDark),
           ],
         ],
       ),
