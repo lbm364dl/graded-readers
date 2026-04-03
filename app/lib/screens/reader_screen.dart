@@ -1224,6 +1224,27 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
     );
   }
 
+  List<Widget> _buildEtymSection(String ch, bool isDark) {
+    final etymWidgets = _buildEtymologyWidgets(ch, isDark,
+        onComponentTap: _openNestedLookup);
+    if (etymWidgets.isEmpty) return [];
+    return [
+      const SizedBox(height: 12),
+      Divider(color: isDark ? Colors.grey[700] : Colors.grey[200]),
+      const SizedBox(height: 8),
+      Text(
+        'Etymology',
+        style: TextStyle(
+          fontSize: 12,
+          fontWeight: FontWeight.w600,
+          color: Colors.grey[500],
+        ),
+      ),
+      const SizedBox(height: 4),
+      ...etymWidgets,
+    ];
+  }
+
   Widget _buildWordWithReading(DictEntry? entry) {
     final lang = DictionaryService.instance.activeLanguage;
     final reading = entry?.pinyin ?? '';
@@ -1506,6 +1527,11 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
                   fontStyle: FontStyle.italic,
                 ),
               ),
+          ],
+
+          // Etymology section (for single characters)
+          if (_word.length == 1) ...[
+            ..._buildEtymSection(_word, isDark),
           ],
 
           // Prev / Next word navigation
