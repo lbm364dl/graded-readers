@@ -1,21 +1,46 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'data.dart';
 import 'models.dart';
 import 'theme.dart';
 import 'screens/home_screen.dart';
 import 'services/dictionary_service.dart';
 
+const _languageKey = 'selected_language';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await DictionaryService.instance.initialize();
-  runApp(const GradedReadersApp());
+
+  final prefs = await SharedPreferences.getInstance();
+  final savedLang = prefs.getString(_languageKey);
+  final initialLang = savedLang == 'japanese' ? Language.japanese : Language.chinese;
+
+  await Future.wait([
+    DictionaryService.instance.initialize(language: initialLang),
+    GoogleFonts.pendingFonts([
+      GoogleFonts.notoSansJp(),
+      GoogleFonts.notoSansSc(),
+    ]),
+  ]);
+  runApp(GradedReadersApp(initialLanguage: initialLang));
 }
 
 class LanguageNotifier extends ValueNotifier<Language> {
-  LanguageNotifier() : super(Language.chinese);
+  LanguageNotifier(super.language);
+
+  bool _switching = false;
+  bool get isSwitching => _switching;
 
   Future<void> switchTo(Language language) async {
+    _switching = true;
+    notifyListeners();
     await DictionaryService.instance.switchLanguage(language);
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(
+        _languageKey, language == Language.japanese ? 'japanese' : 'chinese');
+    await Future.delayed(const Duration(milliseconds: 50));
+    _switching = false;
     value = language;
   }
 }
@@ -35,15 +60,25 @@ class LanguageScope extends InheritedNotifier<LanguageNotifier> {
 }
 
 class GradedReadersApp extends StatefulWidget {
-  const GradedReadersApp({super.key});
+  final Language initialLanguage;
+  const GradedReadersApp({super.key, required this.initialLanguage});
 
   @override
   State<GradedReadersApp> createState() => _GradedReadersAppState();
 }
 
 class _GradedReadersAppState extends State<GradedReadersApp> {
-  final _languageNotifier = LanguageNotifier();
+  late final _languageNotifier = LanguageNotifier(widget.initialLanguage);
   final _repo = ContentRepository();
+
+  // Pre-built themes to avoid regeneration on switch
+  static final _themes = {
+    for (final lang in Language.values)
+      lang: (
+        light: AppTheme.lightThemeFor(lang),
+        dark: AppTheme.darkThemeFor(lang),
+      ),
+  };
 
   @override
   void dispose() {
@@ -58,13 +93,18 @@ class _GradedReadersAppState extends State<GradedReadersApp> {
       child: ValueListenableBuilder<Language>(
         valueListenable: _languageNotifier,
         builder: (context, language, _) {
+          final t = _themes[language]!;
           return MaterialApp(
+            key: ValueKey(language),
             title: 'Graded Readers',
             debugShowCheckedModeBanner: false,
-            theme: AppTheme.lightThemeFor(language),
-            darkTheme: AppTheme.darkThemeFor(language),
+            theme: t.light,
+            darkTheme: t.dark,
             themeMode: ThemeMode.system,
-            home: HomeScreen(repo: _repo),
+            home: _languageNotifier.isSwitching
+                ? const Scaffold(
+                    body: Center(child: CircularProgressIndicator()))
+                : HomeScreen(repo: _repo),
           );
         },
       ),
