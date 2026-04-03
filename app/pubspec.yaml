@@ -33,6 +33,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   shared_preferences: ^2.2.0
   google_fonts: ^8.0.2
+  flutter_svg: ^2.0.17
 
 dev_dependencies:
   flutter_test:
@@ -62,6 +63,7 @@ flutter:
     - assets/dictionary.json
     - assets/dictionary_ja.json
     - assets/etymology.json
+    - assets/glyphs.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

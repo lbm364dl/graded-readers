@@ -1,12 +1,14 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models.dart';
 import '../theme.dart';
 import '../services/dictionary_service.dart';
 import '../services/etymology_service.dart';
+import '../services/glyph_service.dart';
 import '../services/progress_service.dart';
 import '../services/segmenter.dart';
 import '../services/vocabulary_service.dart';
@@ -313,14 +315,68 @@ bool _isTappableWord(String text) =>
 
 /// Build etymology section for a character (if available).
 List<Widget> _buildEtymologyWidgets(
+  BuildContext context,
   String character,
   bool isDark, {
   void Function(String)? onComponentTap,
 }) {
   final etym = EtymologyService.instance.lookup(character);
-  if (etym == null) return [];
+  final glyphs = GlyphService.instance.lookup(character);
+  if (etym == null && glyphs == null) return [];
 
   final widgets = <Widget>[];
+
+  // Historical glyphs row
+  if (glyphs != null) {
+    final eras = glyphs.sortedEras;
+    widgets.add(Padding(
+      padding: const EdgeInsets.only(bottom: 8),
+      child: SizedBox(
+        height: 56,
+        child: ListView.separated(
+          scrollDirection: Axis.horizontal,
+          itemCount: eras.length,
+          separatorBuilder: (_, __) => const SizedBox(width: 8),
+          itemBuilder: (_, i) {
+            final era = eras[i];
+            final svg = glyphs.eras[era]!;
+            final label = GlyphEntry.eraLabels[era] ?? era;
+            return GestureDetector(
+              onTap: () => _showGlyphFullscreen(
+                  context, character, glyphs, era),
+              child: Column(
+                children: [
+                  Container(
+                    width: 40,
+                    height: 40,
+                    padding: const EdgeInsets.all(2),
+                    decoration: BoxDecoration(
+                      color: isDark ? Colors.grey[800] : Colors.grey[100],
+                      borderRadius: BorderRadius.circular(6),
+                    ),
+                    child: SvgPicture.string(
+                      svg,
+                      colorFilter: ColorFilter.mode(
+                        isDark ? Colors.grey[300]! : Colors.grey[800]!,
+                        BlendMode.srcIn,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 2),
+                  Text(
+                    label,
+                    style: TextStyle(fontSize: 9, color: Colors.grey[500]),
+                  ),
+                ],
+              ),
+            );
+          },
+        ),
+      ),
+    ));
+  }
+
+  if (etym == null) return widgets;
 
   // Formation type + decomposition + strokes
   final meta = <String>[];
@@ -504,6 +560,116 @@ Widget _buildTappableText(
   }
 
   return Text.rich(TextSpan(children: spans));
+}
+
+void _showGlyphFullscreen(
+    BuildContext context, String character, GlyphEntry glyphs, String initialEra) {
+  final eras = glyphs.sortedEras;
+  final isDark = Theme.of(context).brightness == Brightness.dark;
+
+  showDialog(
+    context: context,
+    builder: (context) {
+      return _GlyphFullscreenDialog(
+        character: character,
+        glyphs: glyphs,
+        initialEra: initialEra,
+        isDark: isDark,
+      );
+    },
+  );
+}
+
+class _GlyphFullscreenDialog extends StatefulWidget {
+  final String character;
+  final GlyphEntry glyphs;
+  final String initialEra;
+  final bool isDark;
+
+  const _GlyphFullscreenDialog({
+    required this.character,
+    required this.glyphs,
+    required this.initialEra,
+    required this.isDark,
+  });
+
+  @override
+  State<_GlyphFullscreenDialog> createState() => _GlyphFullscreenDialogState();
+}
+
+class _GlyphFullscreenDialogState extends State<_GlyphFullscreenDialog> {
+  late String _currentEra;
+
+  @override
+  void initState() {
+    super.initState();
+    _currentEra = widget.initialEra;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final eras = widget.glyphs.sortedEras;
+    final svg = widget.glyphs.eras[_currentEra]!;
+    final label = GlyphEntry.eraLabels[_currentEra] ?? _currentEra;
+
+    return Dialog(
+      backgroundColor: widget.isDark ? Colors.grey[900] : Colors.white,
+      child: Padding(
+        padding: const EdgeInsets.all(24),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  '${widget.character} — $label',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: widget.isDark ? Colors.grey[200] : Colors.grey[800],
+                  ),
+                ),
+                IconButton(
+                  onPressed: () => Navigator.pop(context),
+                  icon: const Icon(Icons.close),
+                  visualDensity: VisualDensity.compact,
+                ),
+              ],
+            ),
+            const SizedBox(height: 16),
+            SizedBox(
+              width: 200,
+              height: 200,
+              child: SvgPicture.string(
+                svg,
+                colorFilter: ColorFilter.mode(
+                  widget.isDark ? Colors.grey[300]! : Colors.grey[800]!,
+                  BlendMode.srcIn,
+                ),
+              ),
+            ),
+            if (eras.length > 1) ...[
+              const SizedBox(height: 16),
+              Wrap(
+                spacing: 8,
+                children: eras.map((era) {
+                  final isSelected = era == _currentEra;
+                  final eraLabel = GlyphEntry.eraLabels[era] ?? era;
+                  return ChoiceChip(
+                    label: Text(eraLabel, style: const TextStyle(fontSize: 12)),
+                    selected: isSelected,
+                    onSelected: (_) => setState(() => _currentEra = era),
+                    visualDensity: VisualDensity.compact,
+                  );
+                }).toList(),
+              ),
+            ],
+          ],
+        ),
+      ),
+    );
+  }
 }
 
 class _TokenEntry {
@@ -1224,8 +1390,8 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
     );
   }
 
-  List<Widget> _buildEtymSection(String ch, bool isDark) {
-    final etymWidgets = _buildEtymologyWidgets(ch, isDark,
+  List<Widget> _buildEtymSection(BuildContext ctx, String ch, bool isDark) {
+    final etymWidgets = _buildEtymologyWidgets(ctx, ch, isDark,
         onComponentTap: _openNestedLookup);
     if (etymWidgets.isEmpty) return [];
     return [
@@ -1531,7 +1697,7 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
 
           // Etymology section (for single characters)
           if (_word.length == 1) ...[
-            ..._buildEtymSection(_word, isDark),
+            ..._buildEtymSection(context, _word, isDark),
           ],
 
           // Prev / Next word navigation
@@ -1697,7 +1863,7 @@ class _SingleWordSheet extends StatelessWidget {
   }
 
   List<Widget> _etymSection(BuildContext context, String ch, bool isDark) {
-    final etymWidgets = _buildEtymologyWidgets(ch, isDark,
+    final etymWidgets = _buildEtymologyWidgets(context, ch, isDark,
         onComponentTap: (c) => _openNestedLookup(context, c));
     if (etymWidgets.isEmpty) return [];
     return [
@@ -1984,7 +2150,7 @@ class _SingleWordSheet extends StatelessWidget {
           ] else ...[
             // No dictionary entry — etymology may still be available
             const SizedBox(height: 12),
-            if (_buildEtymologyWidgets(word, isDark,
+            if (_buildEtymologyWidgets(context, word, isDark,
                     onComponentTap: (ch) => _openNestedLookup(context, ch))
                 .isEmpty)
               Text(
