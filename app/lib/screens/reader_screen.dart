@@ -331,47 +331,32 @@ List<Widget> _buildEtymologyWidgets(
     final eras = glyphs.sortedEras;
     widgets.add(Padding(
       padding: const EdgeInsets.only(bottom: 8),
-      child: SizedBox(
-        height: 56,
-        child: ListView.separated(
-          scrollDirection: Axis.horizontal,
-          itemCount: eras.length,
-          separatorBuilder: (_, __) => const SizedBox(width: 8),
-          itemBuilder: (_, i) {
-            final era = eras[i];
-            final svg = glyphs.eras[era]!;
-            final label = GlyphEntry.eraLabels[era] ?? era;
-            return GestureDetector(
-              onTap: () => _showGlyphFullscreen(
-                  context, character, glyphs, era),
-              child: Column(
-                children: [
-                  Container(
-                    width: 40,
-                    height: 40,
-                    padding: const EdgeInsets.all(2),
-                    decoration: BoxDecoration(
-                      color: isDark ? Colors.grey[800] : Colors.grey[100],
-                      borderRadius: BorderRadius.circular(6),
-                    ),
-                    child: SvgPicture.string(
-                      svg,
-                      colorFilter: ColorFilter.mode(
-                        isDark ? Colors.grey[300]! : Colors.grey[800]!,
-                        BlendMode.srcIn,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 2),
-                  Text(
-                    label,
-                    style: TextStyle(fontSize: 9, color: Colors.grey[500]),
-                  ),
-                ],
+      child: Wrap(
+        spacing: 8,
+        runSpacing: 8,
+        children: eras.map((era) {
+          final svg = glyphs.eras[era]!;
+          return GestureDetector(
+            onTap: () => _showGlyphFullscreen(
+                context, character, glyphs, era),
+            child: Container(
+              width: 48,
+              height: 48,
+              padding: const EdgeInsets.all(4),
+              decoration: BoxDecoration(
+                color: isDark ? Colors.grey[800] : Colors.grey[100],
+                borderRadius: BorderRadius.circular(8),
               ),
-            );
-          },
-        ),
+              child: SvgPicture.string(
+                svg,
+                colorFilter: ColorFilter.mode(
+                  isDark ? Colors.grey[300]! : Colors.grey[800]!,
+                  BlendMode.srcIn,
+                ),
+              ),
+            ),
+          );
+        }).toList(),
       ),
     ));
   }
@@ -564,112 +549,97 @@ Widget _buildTappableText(
 
 void _showGlyphFullscreen(
     BuildContext context, String character, GlyphEntry glyphs, String initialEra) {
-  final eras = glyphs.sortedEras;
   final isDark = Theme.of(context).brightness == Brightness.dark;
+  final eras = glyphs.sortedEras;
+  final initialIndex = eras.indexOf(initialEra).clamp(0, eras.length - 1);
 
   showDialog(
     context: context,
     builder: (context) {
-      return _GlyphFullscreenDialog(
-        character: character,
-        glyphs: glyphs,
-        initialEra: initialEra,
-        isDark: isDark,
+      int current = initialIndex;
+      return StatefulBuilder(
+        builder: (context, setState) {
+          final era = eras[current];
+          final svg = glyphs.eras[era]!;
+          final label = GlyphEntry.eraLabels[era] ?? era;
+
+          return Dialog(
+            backgroundColor: isDark ? Colors.grey[900] : Colors.white,
+            insetPadding: const EdgeInsets.all(32),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(16, 16, 16, 20),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  // Close button
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: GestureDetector(
+                      onTap: () => Navigator.pop(context),
+                      child: Icon(Icons.close,
+                          size: 20, color: Colors.grey[500]),
+                    ),
+                  ),
+                  // SVG
+                  SizedBox(
+                    width: 220,
+                    height: 220,
+                    child: SvgPicture.string(
+                      svg,
+                      colorFilter: ColorFilter.mode(
+                        isDark ? Colors.grey[300]! : Colors.grey[800]!,
+                        BlendMode.srcIn,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  // Navigation: < label >
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      IconButton(
+                        onPressed: current > 0
+                            ? () => setState(() => current--)
+                            : null,
+                        icon: const Icon(Icons.chevron_left),
+                        visualDensity: VisualDensity.compact,
+                      ),
+                      SizedBox(
+                        width: 120,
+                        child: Text(
+                          '$character · $label',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                            color: isDark
+                                ? Colors.grey[300]
+                                : Colors.grey[700],
+                          ),
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: current < eras.length - 1
+                            ? () => setState(() => current++)
+                            : null,
+                        icon: const Icon(Icons.chevron_right),
+                        visualDensity: VisualDensity.compact,
+                      ),
+                    ],
+                  ),
+                  // Counter
+                  Text(
+                    '${current + 1} / ${eras.length}',
+                    style: TextStyle(fontSize: 11, color: Colors.grey[500]),
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
       );
     },
   );
-}
-
-class _GlyphFullscreenDialog extends StatefulWidget {
-  final String character;
-  final GlyphEntry glyphs;
-  final String initialEra;
-  final bool isDark;
-
-  const _GlyphFullscreenDialog({
-    required this.character,
-    required this.glyphs,
-    required this.initialEra,
-    required this.isDark,
-  });
-
-  @override
-  State<_GlyphFullscreenDialog> createState() => _GlyphFullscreenDialogState();
-}
-
-class _GlyphFullscreenDialogState extends State<_GlyphFullscreenDialog> {
-  late String _currentEra;
-
-  @override
-  void initState() {
-    super.initState();
-    _currentEra = widget.initialEra;
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final eras = widget.glyphs.sortedEras;
-    final svg = widget.glyphs.eras[_currentEra]!;
-    final label = GlyphEntry.eraLabels[_currentEra] ?? _currentEra;
-
-    return Dialog(
-      backgroundColor: widget.isDark ? Colors.grey[900] : Colors.white,
-      child: Padding(
-        padding: const EdgeInsets.all(24),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  '${widget.character} — $label',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: widget.isDark ? Colors.grey[200] : Colors.grey[800],
-                  ),
-                ),
-                IconButton(
-                  onPressed: () => Navigator.pop(context),
-                  icon: const Icon(Icons.close),
-                  visualDensity: VisualDensity.compact,
-                ),
-              ],
-            ),
-            const SizedBox(height: 16),
-            SizedBox(
-              width: 200,
-              height: 200,
-              child: SvgPicture.string(
-                svg,
-                colorFilter: ColorFilter.mode(
-                  widget.isDark ? Colors.grey[300]! : Colors.grey[800]!,
-                  BlendMode.srcIn,
-                ),
-              ),
-            ),
-            if (eras.length > 1) ...[
-              const SizedBox(height: 16),
-              Wrap(
-                spacing: 8,
-                children: eras.map((era) {
-                  final isSelected = era == _currentEra;
-                  final eraLabel = GlyphEntry.eraLabels[era] ?? era;
-                  return ChoiceChip(
-                    label: Text(eraLabel, style: const TextStyle(fontSize: 12)),
-                    selected: isSelected,
-                    onSelected: (_) => setState(() => _currentEra = era),
-                    visualDensity: VisualDensity.compact,
-                  );
-                }).toList(),
-              ),
-            ],
-          ],
-        ),
-      ),
-    );
-  }
 }
 
 class _TokenEntry {
