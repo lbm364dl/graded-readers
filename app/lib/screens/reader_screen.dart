@@ -31,6 +31,260 @@ TextStyle _cjkTextStyle({
 }
 
 // ---------------------------------------------------------------------------
+// Furigana helper
+// ---------------------------------------------------------------------------
+
+/// Count consecutive kanji in a word.
+int _kanjiCount(String word) =>
+    word.codeUnits.where(_isKanji).length;
+
+/// For multi-kanji compounds (e.g. 一生懸命), segment into sub-words
+/// using the dictionary. Returns null if not a multi-kanji compound
+/// or if segmentation just gives single characters.
+List<String>? _segmentCompound(String word) {
+  if (_kanjiCount(word) < 2) return null;
+
+  final dict = DictionaryService.instance;
+  if (!dict.isReady) return null;
+
+  // Max-forward matching but skip the full word itself
+  final tokens = <String>[];
+  int i = 0;
+  while (i < word.length) {
+    final maxLen = (word.length - i).clamp(1, dict.maxWordLength);
+    bool found = false;
+    for (int len = maxLen; len > 1; len--) {
+      // Skip if this would match the entire original word
+      if (i == 0 && len == word.length) continue;
+      final candidate = word.substring(i, i + len);
+      if (dict.hasWord(candidate)) {
+        tokens.add(candidate);
+        i += len;
+        found = true;
+        break;
+      }
+    }
+    if (!found) {
+      tokens.add(word.substring(i, i + 1));
+      i++;
+    }
+  }
+
+  // Only useful if we got multi-char sub-words
+  if (tokens.length <= 1) return null;
+  if (tokens.every((t) => t.length <= 1)) return null;
+  return tokens;
+}
+
+bool _isKanji(int code) =>
+    (code >= 0x4E00 && code <= 0x9FFF) ||
+    (code >= 0x3400 && code <= 0x4DBF) ||
+    (code >= 0xF900 && code <= 0xFAFF);
+
+/// Builds a furigana (ruby) widget: kana reading displayed above kanji.
+/// Falls back to plain text if there's no reading or no kanji.
+Widget _buildFurigana({
+  required String word,
+  required String reading,
+  required Language language,
+  required double fontSize,
+  void Function(String)? onCharTap,
+}) {
+  // No reading or word is all kana → just show the word
+  final hasKanji = word.codeUnits.any(_isKanji);
+  if (reading.isEmpty || !hasKanji) {
+    return _buildPlainWord(
+      word: word,
+      language: language,
+      fontSize: fontSize,
+      onCharTap: onCharTap,
+    );
+  }
+
+  // Split word into kanji/kana segments paired with reading portions.
+  // E.g. 食べる + たべる → [(食,た), (べる,べる)]
+  final segments = _alignFurigana(word, reading);
+
+  final rubyFontSize = fontSize * 0.38;
+
+  return Wrap(
+    crossAxisAlignment: WrapCrossAlignment.end,
+    children: segments.map((seg) {
+      final isKanjiSeg = seg.word.codeUnits.any(_isKanji);
+
+      final wordStyle = _cjkTextStyle(
+        fontSize: fontSize,
+        language: language,
+        fontWeight: FontWeight.bold,
+        height: 1.2,
+      );
+
+      // Kanji segment: show reading above, tappable characters below
+      if (isKanjiSeg) {
+        final readingWidget = Text(
+          seg.reading,
+          style: _cjkTextStyle(
+            fontSize: rubyFontSize,
+            language: language,
+            color: Colors.grey[500],
+            height: 1.1,
+          ),
+          textAlign: TextAlign.center,
+        );
+
+        if (onCharTap != null) {
+          return Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              readingWidget,
+              const SizedBox(height: 1),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: seg.word.characters.map((ch) {
+                  return GestureDetector(
+                    onTap: () => onCharTap(ch),
+                    child: Text(ch, style: wordStyle),
+                  );
+                }).toList(),
+              ),
+            ],
+          );
+        }
+
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            readingWidget,
+            const SizedBox(height: 1),
+            Text(seg.word, style: wordStyle),
+          ],
+        );
+      }
+
+      // Kana segment: no ruby, not tappable, align baseline with kanji segments
+      return Padding(
+        padding: EdgeInsets.only(top: rubyFontSize + 1),
+        child: Text(seg.word, style: wordStyle),
+      );
+    }).toList(),
+  );
+}
+
+Widget _buildPlainWord({
+  required String word,
+  required Language language,
+  required double fontSize,
+  void Function(String)? onCharTap,
+}) {
+  if (onCharTap != null && word.length > 1) {
+    final style = _cjkTextStyle(
+      fontSize: fontSize,
+      language: language,
+      fontWeight: FontWeight.bold,
+      height: 1.2,
+    );
+    return Wrap(
+      children: word.characters.map((ch) {
+        final isKanji = ch.codeUnits.any(_isKanji);
+        if (isKanji) {
+          return GestureDetector(
+            onTap: () => onCharTap(ch),
+            child: Text(ch, style: style),
+          );
+        }
+        return Text(ch, style: style);
+      }).toList(),
+    );
+  }
+  return Text(
+    word,
+    style: _cjkTextStyle(
+      fontSize: fontSize,
+      language: language,
+      fontWeight: FontWeight.bold,
+      height: 1.2,
+    ),
+  );
+}
+
+class _FuriganaPair {
+  final String word;
+  final String reading;
+  _FuriganaPair(this.word, this.reading);
+}
+
+
+
+/// Aligns kanji in [word] with kana in [reading] by matching shared kana.
+/// Falls back to showing the full reading over the full word if alignment fails.
+List<_FuriganaPair> _alignFurigana(String word, String reading) {
+  // Simple case: no kanji at all
+  if (!word.codeUnits.any(_isKanji)) {
+    return [_FuriganaPair(word, word)];
+  }
+
+  // Split word into alternating kanji/kana runs
+  final segments = <({String text, bool isKanji})>[];
+  int i = 0;
+  while (i < word.length) {
+    final kanji = _isKanji(word.codeUnitAt(i));
+    int j = i + 1;
+    while (j < word.length && _isKanji(word.codeUnitAt(j)) == kanji) {
+      j++;
+    }
+    segments.add((text: word.substring(i, j), isKanji: kanji));
+    i = j;
+  }
+
+  // Try to align: match kana segments in reading to find kanji readings
+  final pairs = <_FuriganaPair>[];
+  int ri = 0;
+  for (int si = 0; si < segments.length; si++) {
+    final seg = segments[si];
+    if (!seg.isKanji) {
+      // Kana segment — advance reading pointer past it
+      pairs.add(_FuriganaPair(seg.text, seg.text));
+      ri += seg.text.length;
+    } else {
+      // Kanji segment — find where it ends in the reading by looking
+      // for the next kana segment as an anchor
+      String? nextKana;
+      for (int ni = si + 1; ni < segments.length; ni++) {
+        if (!segments[ni].isKanji) {
+          nextKana = segments[ni].text;
+          break;
+        }
+      }
+      if (nextKana != null && ri < reading.length) {
+        final anchor = reading.indexOf(nextKana, ri);
+        if (anchor > ri) {
+          pairs.add(_FuriganaPair(seg.text, reading.substring(ri, anchor)));
+          ri = anchor;
+          continue;
+        }
+      }
+      // Last segment or no anchor — consume remaining reading
+      final remaining = ri < reading.length ? reading.substring(ri) : '';
+      // Strip any trailing kana that belongs to later segments
+      int trailingKanaLen = 0;
+      for (int ni = si + 1; ni < segments.length; ni++) {
+        if (!segments[ni].isKanji) trailingKanaLen += segments[ni].text.length;
+      }
+      final end = remaining.length - trailingKanaLen;
+      if (end > 0) {
+        pairs.add(_FuriganaPair(seg.text, remaining.substring(0, end)));
+        ri += end;
+      } else {
+        // Fallback: can't align, just show full reading over full word
+        return [_FuriganaPair(word, reading)];
+      }
+    }
+  }
+
+  return pairs;
+}
+
+// ---------------------------------------------------------------------------
 // Data structures for segmentation & pagination
 // ---------------------------------------------------------------------------
 
@@ -40,6 +294,15 @@ bool _isCJK(int code) =>
     (code >= 0xF900 && code <= 0xFAFF) ||
     (code >= 0x3040 && code <= 0x309F) ||
     (code >= 0x30A0 && code <= 0x30FF);
+
+/// A CJK token is "tappable" (a real word, not a particle) if it contains
+/// kanji or is a multi-character kana word.
+bool _isTappableWord(String text) =>
+    text.length > 1 ||
+    text.codeUnits.any((c) =>
+        (c >= 0x4E00 && c <= 0x9FFF) ||
+        (c >= 0x3400 && c <= 0x4DBF) ||
+        (c >= 0xF900 && c <= 0xFAFF));
 
 class _TokenEntry {
   final String text;
@@ -69,23 +332,6 @@ class _ParagraphData {
   });
 }
 
-/// A page is a slice of paragraphs from a chapter.
-class _PageData {
-  final int chapterIndex;
-  final String chapterTitle;
-  final List<_ParagraphData> paragraphs;
-  final List<String> allCjkWords; // shared across the chapter
-  final bool isFirstPageOfChapter;
-
-  _PageData({
-    required this.chapterIndex,
-    required this.chapterTitle,
-    required this.paragraphs,
-    required this.allCjkWords,
-    required this.isFirstPageOfChapter,
-  });
-}
-
 // ---------------------------------------------------------------------------
 // Reader screen
 // ---------------------------------------------------------------------------
@@ -110,13 +356,13 @@ class _ReaderScreenState extends State<ReaderScreen> {
   final double _maxFontSize = 32.0;
   final ValueNotifier<int> _highlightedIndex = ValueNotifier(-1);
 
-  // Pagination state
-  List<_PageData>? _pages;
-  PageController? _pageController;
-  int _currentPageIndex = 0;
-  int _initialPage = 0;
-  double _lastAvailableHeight = 0;
-  double _lastAvailableWidth = 0;
+  // Chapter navigation
+  late PageController _chapterController;
+  int _currentChapter = 0;
+  bool _ready = false;
+
+  // Scroll position per chapter (fraction 0.0-1.0)
+  final Map<int, double> _scrollFractions = {};
 
   // Lazy chapter segmentation cache
   final Map<int, _ChapterSegmented> _segmentCache = {};
@@ -128,40 +374,50 @@ class _ReaderScreenState extends State<ReaderScreen> {
     VocabularyService.instance.loadWords();
   }
 
-  _ChapterSegmented _getSegmented(int chapterIndex) {
+  Future<_ChapterSegmented> _getSegmentedAsync(int chapterIndex) async {
     if (_segmentCache.containsKey(chapterIndex)) {
       return _segmentCache[chapterIndex]!;
     }
 
     final dict = DictionaryService.instance;
     final ch = widget.reader.chapters[chapterIndex];
+
+    final paragraphTexts = <String>[];
+    for (final para in ch.content.split('\n\n')) {
+      final trimmed = para.trim();
+      if (trimmed.isNotEmpty) paragraphTexts.add(trimmed);
+    }
+
+    // Segment on main thread, yielding between paragraphs for UI responsiveness
     final paragraphs = <_ParagraphData>[];
     final allCjk = <String>[];
 
-    for (final para in ch.content.split('\n\n')) {
-      final trimmed = para.trim();
-      if (trimmed.isEmpty) continue;
+    for (int pi = 0; pi < paragraphTexts.length; pi++) {
+      // Yield every few paragraphs to let the spinner animate
+      if (pi % 3 == 0) await Future.delayed(Duration.zero);
 
-      final isHeading = trimmed.startsWith('**') && trimmed.contains('**');
-      final tokens = segmentText(trimmed, dict);
+      final raw = paragraphTexts[pi];
+      final tokens = segmentText(raw, dict);
+      final isHeading = raw.startsWith('**') && raw.contains('**');
 
       final tokenEntries = <_TokenEntry>[];
       int charOffset = 0;
       for (final t in tokens) {
         final isCjk = t.isNotEmpty && _isCJK(t.codeUnitAt(0));
+        final tappable = isCjk && _isTappableWord(t);
         tokenEntries.add(_TokenEntry(
           text: t,
           isCjk: isCjk,
-          globalIndex: isCjk ? allCjk.length : -1,
+          globalIndex: tappable ? allCjk.length : -1,
           startOffset: charOffset,
           endOffset: charOffset + t.length,
         ));
         charOffset += t.length;
-        if (isCjk) allCjk.add(t);
+        if (tappable) allCjk.add(t);
       }
 
       paragraphs.add(_ParagraphData(
-        raw: trimmed,
+        raw: raw,
         plainText: tokens.join(),
         isHeading: isHeading,
         tokens: tokenEntries,
@@ -178,140 +434,42 @@ class _ReaderScreenState extends State<ReaderScreen> {
     return result;
   }
 
-  bool _isPaginating = false;
-
-  Future<void> _paginate(double availableHeight) async {
-    if (availableHeight <= 0 || _isPaginating) return;
-    _isPaginating = true;
-    _lastAvailableHeight = availableHeight;
-
-    final pages = <_PageData>[];
-    final totalChapters = widget.reader.chapters.length;
-
-    for (int ci = 0; ci < totalChapters; ci++) {
-      final chapter = _getSegmented(ci);
-      // Yield to let UI breathe between chapters
-      if (ci > 0 && ci % 2 == 0) {
-        await Future.delayed(Duration.zero);
-        if (!mounted) { _isPaginating = false; return; }
-      }
-      final titleHeight = 70.0; // title + divider + spacing
-      final pageMargin = 40.0; // top/bottom padding
-      final paraSpacing = 16.0;
-      var remaining = availableHeight - pageMargin;
-      var currentPageParas = <_ParagraphData>[];
-      var isFirst = true;
-
-      for (final para in chapter.paragraphs) {
-        if (isFirst && currentPageParas.isEmpty) {
-          remaining -= titleHeight;
-        }
-        // Estimate: CJK chars are ~fontSize wide, lines ~fontSize*1.8 tall
-        final lineHeight = _fontSize * 1.8;
-        // Available text width = screen - 48px padding
-        final textWidth = (_lastAvailableWidth > 0 ? _lastAvailableWidth : 300) - 48;
-        final charsPerLine = (textWidth / _fontSize).floor().clamp(6, 50);
-        final lines =
-            (para.plainText.length / charsPerLine).ceil().clamp(1, 1000);
-        final paraHeight = lines * lineHeight + paraSpacing;
-
-        if (remaining - paraHeight < 0 && currentPageParas.isNotEmpty) {
-          // Flush current page
-          pages.add(_PageData(
-            chapterIndex: chapter.index,
-            chapterTitle: chapter.title,
-            paragraphs: List.of(currentPageParas),
-            allCjkWords: chapter.allCjkWords,
-            isFirstPageOfChapter: isFirst,
-          ));
-          isFirst = false;
-          currentPageParas = [para];
-          remaining = availableHeight - paraHeight;
-        } else {
-          currentPageParas.add(para);
-          remaining -= paraHeight;
-        }
-      }
-
-      // Flush remaining
-      if (currentPageParas.isNotEmpty) {
-        pages.add(_PageData(
-          chapterIndex: chapter.index,
-          chapterTitle: chapter.title,
-          paragraphs: currentPageParas,
-          allCjkWords: chapter.allCjkWords,
-          isFirstPageOfChapter: isFirst,
-        ));
-      }
-    }
-
-    // Find the page to start on
-    int startPage = 0;
-    if (_pages == null) {
-      // First pagination — restore from saved progress
-      startPage = _initialPage;
-      // Clamp
-      if (startPage >= pages.length) startPage = pages.length - 1;
-      if (startPage < 0) startPage = 0;
-    } else {
-      // Re-pagination (font size change) — try to stay on same chapter
-      final curChapter = _pages![_currentPageIndex].chapterIndex;
-      startPage = pages.indexWhere((p) => p.chapterIndex == curChapter);
-      if (startPage < 0) startPage = 0;
-    }
-
-    if (!mounted) { _isPaginating = false; return; }
-    setState(() {
-      _pages = pages;
-      _currentPageIndex = startPage;
-      _pageController?.dispose();
-      _pageController = PageController(initialPage: startPage);
-    });
-
-    _isPaginating = false;
-    _saveProgress();
-  }
-
   Future<void> _loadPreferences() async {
     final prefs = await SharedPreferences.getInstance();
     final savedProgress =
         await ProgressService.instance.getProgress(widget.reader.id);
 
     if (!mounted) return;
+
+    final chapter = (savedProgress?.chapter ?? widget.initialChapter)
+        .clamp(0, widget.reader.chapters.length - 1);
+    final scrollFraction = savedProgress?.scrollFraction ?? 0.0;
+
+    _fontSize = prefs.getDouble('reader_font_size') ?? 20.0;
+    _currentChapter = chapter;
+    _scrollFractions[_currentChapter] = scrollFraction;
+
+    // Segment initial chapter in isolate
+    await _getSegmentedAsync(_currentChapter);
+
+    if (!mounted) return;
     setState(() {
-      _fontSize = prefs.getDouble('reader_font_size') ?? 20.0;
+      _chapterController = PageController(initialPage: _currentChapter);
+      _ready = true;
     });
 
-    // Compute initial page from saved chapter + page
-    if (savedProgress != null) {
-      _initialPage = _computeGlobalPage(
-          savedProgress.chapter, savedProgress.page);
-    } else {
-      _initialPage = _computeGlobalPage(widget.initialChapter, 0);
-    }
-
-    // Re-paginate if we already had a height
-    if (_lastAvailableHeight > 0) {
-      _paginate(_lastAvailableHeight);
-    }
+    // Pre-segment adjacent chapters in background
+    _preSegmentNearby(_currentChapter);
   }
 
-  int _computeGlobalPage(int chapter, int pageInChapter) {
-    // This needs _pages to be built. If not yet, store and apply later.
-    // For now, estimate: count pages of chapters before this one.
-    // We'll correct when _paginate runs.
-    if (_pages != null) {
-      int target = 0;
-      for (int i = 0; i < _pages!.length; i++) {
-        if (_pages![i].chapterIndex == chapter) {
-          target = i + pageInChapter;
-          break;
-        }
+  Future<void> _preSegmentNearby(int chapter) async {
+    final total = widget.reader.chapters.length;
+    for (final ci in [chapter - 1, chapter + 1]) {
+      if (ci >= 0 && ci < total && !_segmentCache.containsKey(ci)) {
+        if (!mounted) return;
+        await _getSegmentedAsync(ci);
       }
-      return target.clamp(0, _pages!.length - 1);
     }
-    // Rough estimate before pagination: assume 3 pages per chapter
-    return chapter * 3 + pageInChapter;
   }
 
   Future<void> _saveFontSize() async {
@@ -320,39 +478,27 @@ class _ReaderScreenState extends State<ReaderScreen> {
   }
 
   void _saveProgress() {
-    if (_pages == null || _pages!.isEmpty) return;
-    final page = _pages![_currentPageIndex];
-
-    // Count page within chapter
-    int pageInChapter = 0;
-    for (int i = _currentPageIndex - 1; i >= 0; i--) {
-      if (_pages![i].chapterIndex == page.chapterIndex) {
-        pageInChapter++;
-      } else {
-        break;
-      }
-    }
-
-    // Count total pages in this chapter
-    int totalPagesInChapter =
-        _pages!.where((p) => p.chapterIndex == page.chapterIndex).length;
-
+    final fraction = _scrollFractions[_currentChapter] ?? 0.0;
     ProgressService.instance.saveProgress(ReadingProgress(
       readerId: widget.reader.id,
       bookTitle: widget.reader.bookTitle,
       bookTitleEn: widget.reader.bookTitleEn,
       levelLabel: widget.reader.levelLabel,
-      chapter: page.chapterIndex,
+      chapter: _currentChapter,
       totalChapters: widget.reader.chapters.length,
-      page: pageInChapter,
-      totalPages: totalPagesInChapter,
+      scrollFraction: fraction,
       lastRead: DateTime.now(),
     ));
   }
 
+  void _onScrollFractionChanged(int chapter, double fraction) {
+    _scrollFractions[chapter] = fraction;
+    _saveProgress();
+  }
+
   @override
   void dispose() {
-    _pageController?.dispose();
+    _chapterController.dispose();
     _highlightedIndex.dispose();
     super.dispose();
   }
@@ -380,12 +526,13 @@ class _ReaderScreenState extends State<ReaderScreen> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final levelColor =
         AppTheme.levelColor(widget.reader.level, widget.reader.language);
+    final totalChapters = widget.reader.chapters.length;
 
     return Scaffold(
       appBar: AppBar(
-        title: _pages != null
+        title: _ready
             ? Text(
-                _pages![_currentPageIndex].chapterTitle,
+                widget.reader.chapters[_currentChapter].title,
                 style:
                     const TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
                 maxLines: 1,
@@ -399,7 +546,6 @@ class _ReaderScreenState extends State<ReaderScreen> {
                 ? () {
                     setState(() => _fontSize -= 2);
                     _saveFontSize();
-                    _paginate(_lastAvailableHeight);
                   }
                 : null,
           ),
@@ -409,48 +555,43 @@ class _ReaderScreenState extends State<ReaderScreen> {
                 ? () {
                     setState(() => _fontSize += 2);
                     _saveFontSize();
-                    _paginate(_lastAvailableHeight);
                   }
                 : null,
           ),
         ],
       ),
-      body: LayoutBuilder(
-        builder: (context, constraints) {
-          final height = constraints.maxHeight;
-          final width = constraints.maxWidth;
-          if (_pages == null || height != _lastAvailableHeight) {
-            _lastAvailableWidth = width;
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              _paginate(height);
-            });
-          }
-
-          if (_pages == null || _pageController == null) {
-            return const Center(child: CircularProgressIndicator());
-          }
-
-          return PageView.builder(
-            controller: _pageController!,
-            itemCount: _pages!.length,
-            onPageChanged: (index) {
-              setState(() => _currentPageIndex = index);
-              _saveProgress();
-            },
-            itemBuilder: (context, index) {
-              return _PageView(
-                page: _pages![index],
-                fontSize: _fontSize,
-                isDark: isDark,
-                language: widget.reader.language,
-                onWordTap: _showWordDefinition,
-                highlightedIndex: _highlightedIndex,
-              );
-            },
-          );
-        },
-      ),
-      bottomNavigationBar: _pages != null
+      body: !_ready
+          ? const Center(child: CircularProgressIndicator())
+          : PageView.builder(
+              controller: _chapterController,
+              itemCount: totalChapters,
+              onPageChanged: (index) {
+                setState(() => _currentChapter = index);
+                _saveProgress();
+                _preSegmentNearby(index);
+              },
+              itemBuilder: (context, index) {
+                final chapter = _segmentCache[index];
+                if (chapter == null) {
+                  _getSegmentedAsync(index).then((_) {
+                    if (mounted) setState(() {});
+                  });
+                  return const Center(child: CircularProgressIndicator());
+                }
+                return _ChapterView(
+                  chapter: chapter,
+                  fontSize: _fontSize,
+                  isDark: isDark,
+                  language: widget.reader.language,
+                  onWordTap: _showWordDefinition,
+                  highlightedIndex: _highlightedIndex,
+                  initialScrollFraction: _scrollFractions[index] ?? 0.0,
+                  onScrollFractionChanged: (f) =>
+                      _onScrollFractionChanged(index, f),
+                );
+              },
+            ),
+      bottomNavigationBar: _ready
           ? Container(
               padding:
                   const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
@@ -467,8 +608,8 @@ class _ReaderScreenState extends State<ReaderScreen> {
                 child: Row(
                   children: [
                     IconButton(
-                      onPressed: _currentPageIndex > 0
-                          ? () => _pageController!.previousPage(
+                      onPressed: _currentChapter > 0
+                          ? () => _chapterController.previousPage(
                                 duration:
                                     const Duration(milliseconds: 250),
                                 curve: Curves.easeInOut,
@@ -477,43 +618,31 @@ class _ReaderScreenState extends State<ReaderScreen> {
                       icon: const Icon(Icons.chevron_left),
                     ),
                     const Spacer(),
-                    Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 10, vertical: 2),
-                          decoration: BoxDecoration(
-                            color: levelColor.withValues(alpha: 0.15),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Text(
-                            'Ch. ${_pages![_currentPageIndex].chapterIndex + 1}/${widget.reader.chapters.length}',
-                            style: TextStyle(
-                              color: levelColor,
-                              fontSize: 11,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 2),
+                      decoration: BoxDecoration(
+                        color: levelColor.withValues(alpha: 0.15),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Text(
+                        'Ch. ${_currentChapter + 1}/$totalChapters',
+                        style: TextStyle(
+                          color: levelColor,
+                          fontSize: 11,
+                          fontWeight: FontWeight.w600,
                         ),
-                        const SizedBox(height: 2),
-                        Text(
-                          '${_currentPageIndex + 1} / ${_pages!.length}',
-                          style: TextStyle(
-                              fontSize: 10, color: Colors.grey[500]),
-                        ),
-                      ],
+                      ),
                     ),
                     const Spacer(),
                     IconButton(
-                      onPressed:
-                          _currentPageIndex < (_pages!.length - 1)
-                              ? () => _pageController!.nextPage(
-                                    duration: const Duration(
-                                        milliseconds: 250),
-                                    curve: Curves.easeInOut,
-                                  )
-                              : null,
+                      onPressed: _currentChapter < (totalChapters - 1)
+                          ? () => _chapterController.nextPage(
+                                duration: const Duration(
+                                    milliseconds: 250),
+                                curve: Curves.easeInOut,
+                              )
+                          : null,
                       icon: const Icon(Icons.chevron_right),
                     ),
                   ],
@@ -539,37 +668,73 @@ class _ChapterSegmented {
 }
 
 // ---------------------------------------------------------------------------
-// Page view (a slice of paragraphs from a chapter)
+// Chapter view (scrollable content for a single chapter)
 // ---------------------------------------------------------------------------
 
-class _PageView extends StatefulWidget {
-  final _PageData page;
+class _ChapterView extends StatefulWidget {
+  final _ChapterSegmented chapter;
   final double fontSize;
   final bool isDark;
   final Language language;
   final void Function(List<String>, int) onWordTap;
   final ValueNotifier<int> highlightedIndex;
+  final double initialScrollFraction;
+  final ValueChanged<double> onScrollFractionChanged;
 
-  const _PageView({
-    required this.page,
+  const _ChapterView({
+    required this.chapter,
     required this.fontSize,
     required this.isDark,
     required this.language,
     required this.onWordTap,
     required this.highlightedIndex,
+    required this.initialScrollFraction,
+    required this.onScrollFractionChanged,
   });
 
   @override
-  State<_PageView> createState() => _PageViewState();
+  State<_ChapterView> createState() => _ChapterViewState();
 }
 
-class _PageViewState extends State<_PageView> {
+class _ChapterViewState extends State<_ChapterView> {
   final List<GestureRecognizer> _recognizers = [];
+  late ScrollController _scrollController;
+  bool _restoredScroll = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController();
+    _scrollController.addListener(_onScroll);
+  }
 
   @override
   void dispose() {
+    _scrollController.removeListener(_onScroll);
+    _scrollController.dispose();
     _disposeRecognizers();
     super.dispose();
+  }
+
+  void _onScroll() {
+    final max = _scrollController.position.maxScrollExtent;
+    if (max > 0) {
+      widget.onScrollFractionChanged(
+          (_scrollController.offset / max).clamp(0.0, 1.0));
+    }
+  }
+
+  void _restoreScroll() {
+    if (_restoredScroll) return;
+    _restoredScroll = true;
+    if (widget.initialScrollFraction > 0 &&
+        _scrollController.hasClients &&
+        _scrollController.position.maxScrollExtent > 0) {
+      _scrollController.jumpTo(
+        widget.initialScrollFraction *
+            _scrollController.position.maxScrollExtent,
+      );
+    }
   }
 
   void _disposeRecognizers() {
@@ -585,33 +750,28 @@ class _PageViewState extends State<_PageView> {
       valueListenable: widget.highlightedIndex,
       builder: (context, highlightIdx, _) {
         _disposeRecognizers();
-        return ClipRect(
-          child: Padding(
+        WidgetsBinding.instance.addPostFrameCallback((_) => _restoreScroll());
+        return ListView(
+          controller: _scrollController,
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              if (widget.page.isFirstPageOfChapter) ...[
-                SelectableText(
-                  widget.page.chapterTitle,
-                  style: _cjkTextStyle(
-                    fontSize: widget.fontSize + 4,
-                    language: widget.language,
-                    fontWeight: FontWeight.bold,
-                    height: 1.4,
-                  ),
-                ),
-                const SizedBox(height: 8),
-                Divider(
-                  color: widget.isDark ? Colors.grey[700] : Colors.grey[300],
-                ),
-                const SizedBox(height: 8),
-              ],
-              ...widget.page.paragraphs
-                  .map((p) => _buildParagraph(p, highlightIdx)),
-            ],
-          ),
-        ),
+          children: [
+            SelectableText(
+              widget.chapter.title,
+              style: _cjkTextStyle(
+                fontSize: widget.fontSize + 4,
+                language: widget.language,
+                fontWeight: FontWeight.bold,
+                height: 1.4,
+              ),
+            ),
+            const SizedBox(height: 8),
+            Divider(
+              color: widget.isDark ? Colors.grey[700] : Colors.grey[300],
+            ),
+            const SizedBox(height: 8),
+            ...widget.chapter.paragraphs
+                .map((p) => _buildParagraph(p, highlightIdx)),
+          ],
         );
       },
     );
@@ -643,11 +803,12 @@ class _PageViewState extends State<_PageView> {
 
     final spans = <TextSpan>[];
     for (final token in para.tokens) {
-      if (token.isCjk && DictionaryService.instance.isReady) {
+      // Tappable: contains kanji or is a multi-char kana word (not a lone particle)
+      if (token.globalIndex >= 0 && DictionaryService.instance.isReady) {
         final isHighlighted = token.globalIndex == highlightIdx;
         final recognizer = TapGestureRecognizer()
           ..onTap = () => widget.onWordTap(
-              widget.page.allCjkWords, token.globalIndex);
+              widget.chapter.allCjkWords, token.globalIndex);
         _recognizers.add(recognizer);
 
         spans.add(TextSpan(
@@ -795,6 +956,158 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
     return widgets;
   }
 
+  Widget _buildSubwordFurigana({
+    required List<String> subwords,
+    required Language language,
+    required double fontSize,
+  }) {
+    final dict = DictionaryService.instance;
+    return Wrap(
+      children: subwords.map((sw) {
+        final swEntry = dict.lookup(sw);
+        final reading = swEntry?.pinyin ?? '';
+        return GestureDetector(
+          onTap: () => _openNestedLookup(sw),
+          child: reading.isNotEmpty
+              ? _buildFurigana(
+                  word: sw,
+                  reading: reading,
+                  language: language,
+                  fontSize: fontSize,
+                )
+              : Text(
+                  sw,
+                  style: _cjkTextStyle(
+                    fontSize: fontSize,
+                    language: language,
+                    fontWeight: FontWeight.bold,
+                    height: 1.2,
+                  ),
+                ),
+        );
+      }).toList(),
+    );
+  }
+
+  Widget _buildSubwordRow({
+    required List<String> subwords,
+    required Language language,
+    required double fontSize,
+  }) {
+    return Wrap(
+      children: subwords.map((sw) {
+        return GestureDetector(
+          onTap: () => _openNestedLookup(sw),
+          child: Text(
+            sw,
+            style: _cjkTextStyle(
+              fontSize: fontSize,
+              language: language,
+              fontWeight: FontWeight.bold,
+              height: 1.2,
+            ),
+          ),
+        );
+      }).toList(),
+    );
+  }
+
+  Widget _buildWordWithReading(DictEntry? entry) {
+    final lang = DictionaryService.instance.activeLanguage;
+    final reading = entry?.pinyin ?? '';
+    final dictForm = entry?.word ?? _word;
+    final isInflected = dictForm != _word;
+
+    // For multi-kanji compounds, tap opens sub-words; otherwise single chars
+    final subwords = _segmentCompound(dictForm);
+    final charTap = dictForm.length > 1 ? _openNestedLookup : null;
+
+    // Build deinflection chain for educational display
+    final chain = isInflected && lang == Language.japanese
+        ? deinflectionChain(_word, dictForm)
+        : <String>[];
+
+    // For Japanese: show dictionary form with furigana, chain below
+    if (lang == Language.japanese && reading.isNotEmpty) {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (subwords != null)
+            _buildSubwordFurigana(
+              subwords: subwords,
+              language: lang,
+              fontSize: 32,
+            )
+          else
+            _buildFurigana(
+              word: dictForm,
+              reading: reading,
+              language: lang,
+              fontSize: 32,
+              onCharTap: charTap,
+            ),
+          if (chain.isNotEmpty) ...[
+            const SizedBox(height: 6),
+            ...chain.map((form) => Padding(
+                  padding: const EdgeInsets.only(top: 1),
+                  child: Text(
+                    form,
+                    style: _cjkTextStyle(
+                      fontSize: 14,
+                      language: lang,
+                      color: Colors.grey[500],
+                    ),
+                  ),
+                )),
+          ],
+        ],
+      );
+    }
+
+    // For Chinese or no reading: show word + pinyin below
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        if (subwords != null)
+          _buildSubwordRow(subwords: subwords, language: lang, fontSize: 32)
+        else
+          _buildPlainWord(
+            word: dictForm,
+            language: lang,
+            fontSize: 32,
+            onCharTap: charTap,
+        ),
+        if (reading.isNotEmpty) ...[
+          const SizedBox(height: 4),
+          Text(
+            reading,
+            style: TextStyle(
+              fontSize: 17,
+              color: AppTheme.primary,
+              fontStyle: FontStyle.italic,
+            ),
+          ),
+        ],
+        if (chain.isNotEmpty) ...[
+          const SizedBox(height: 6),
+          ...chain.map((form) => Padding(
+                padding: const EdgeInsets.only(top: 1),
+                child: Text(
+                  form,
+                  style: TextStyle(fontSize: 14, color: Colors.grey[500]),
+                ),
+              )),
+        ] else if (isInflected) ...[
+          const SizedBox(height: 4),
+          Text(
+            _word,
+            style: TextStyle(fontSize: 15, color: Colors.grey[500]),
+          ),
+        ],
+      ],
+    );
+  }
+
   Future<void> _toggleSave() async {
     if (_loading) return;
     setState(() => _loading = true);
@@ -846,45 +1159,7 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    _word.length > 1
-                        ? Wrap(
-                            children: _word.characters.map((ch) {
-                              return GestureDetector(
-                                onTap: () => _openNestedLookup(ch),
-                                child: Text(
-                                  ch,
-                                  style: _cjkTextStyle(
-                                    fontSize: 32,
-                                    language: DictionaryService
-                                        .instance.activeLanguage,
-                                    fontWeight: FontWeight.bold,
-                                    height: 1.2,
-                                  ),
-                                ),
-                              );
-                            }).toList(),
-                          )
-                        : Text(
-                            _word,
-                            style: _cjkTextStyle(
-                              fontSize: 32,
-                              language:
-                                  DictionaryService.instance.activeLanguage,
-                              fontWeight: FontWeight.bold,
-                              height: 1.2,
-                            ),
-                          ),
-                    if (entry != null && entry.pinyin.isNotEmpty) ...[
-                      const SizedBox(height: 4),
-                      Text(
-                        entry.pinyin,
-                        style: TextStyle(
-                          fontSize: 17,
-                          color: AppTheme.primary,
-                          fontStyle: FontStyle.italic,
-                        ),
-                      ),
-                    ],
+                    _buildWordWithReading(entry),
                   ],
                 ),
               ),
@@ -1123,6 +1398,162 @@ class _SingleWordSheet extends StatelessWidget {
     );
   }
 
+  Widget _buildSubwordFurigana({
+    required BuildContext context,
+    required List<String> subwords,
+    required Language language,
+    required double fontSize,
+  }) {
+    final dict = DictionaryService.instance;
+    return Wrap(
+      children: subwords.map((sw) {
+        final swEntry = dict.lookup(sw);
+        final reading = swEntry?.pinyin ?? '';
+        return GestureDetector(
+          onTap: () => _openNestedLookup(context, sw),
+          child: reading.isNotEmpty
+              ? _buildFurigana(
+                  word: sw,
+                  reading: reading,
+                  language: language,
+                  fontSize: fontSize,
+                )
+              : Text(
+                  sw,
+                  style: _cjkTextStyle(
+                    fontSize: fontSize,
+                    language: language,
+                    fontWeight: FontWeight.bold,
+                    height: 1.2,
+                  ),
+                ),
+        );
+      }).toList(),
+    );
+  }
+
+  Widget _buildSubwordRow({
+    required BuildContext context,
+    required List<String> subwords,
+    required Language language,
+    required double fontSize,
+  }) {
+    return Wrap(
+      children: subwords.map((sw) {
+        return GestureDetector(
+          onTap: () => _openNestedLookup(context, sw),
+          child: Text(
+            sw,
+            style: _cjkTextStyle(
+              fontSize: fontSize,
+              language: language,
+              fontWeight: FontWeight.bold,
+              height: 1.2,
+            ),
+          ),
+        );
+      }).toList(),
+    );
+  }
+
+  Widget _buildSingleWordDisplay(
+      BuildContext context, DictEntry? entry, Language lang) {
+    final reading = entry?.pinyin ?? '';
+    final dictForm = entry?.word ?? word;
+    final isInflected = dictForm != word;
+    final subwords = _segmentCompound(dictForm);
+    final charTap = dictForm.length > 1
+        ? (String ch) => _openNestedLookup(context, ch)
+        : null;
+    final chain = isInflected && lang == Language.japanese
+        ? deinflectionChain(word, dictForm)
+        : <String>[];
+
+    if (lang == Language.japanese && reading.isNotEmpty) {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (subwords != null)
+            _buildSubwordFurigana(
+              context: context,
+              subwords: subwords,
+              language: lang,
+              fontSize: 32,
+            )
+          else
+            _buildFurigana(
+              word: dictForm,
+              reading: reading,
+              language: lang,
+              fontSize: 32,
+              onCharTap: charTap,
+            ),
+          if (chain.isNotEmpty) ...[
+            const SizedBox(height: 6),
+            ...chain.map((form) => Padding(
+                  padding: const EdgeInsets.only(top: 1),
+                  child: Text(
+                    form,
+                    style: _cjkTextStyle(
+                      fontSize: 14,
+                      language: lang,
+                      color: Colors.grey[500],
+                    ),
+                  ),
+                )),
+          ],
+        ],
+      );
+    }
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        if (subwords != null)
+          _buildSubwordRow(
+            context: context,
+            subwords: subwords,
+            language: lang,
+            fontSize: 32,
+          )
+        else
+          _buildPlainWord(
+            word: dictForm,
+            language: lang,
+            fontSize: 32,
+            onCharTap: charTap,
+          ),
+        if (reading.isNotEmpty) ...[
+          const SizedBox(height: 4),
+          Text(
+            reading,
+            style: TextStyle(
+              fontSize: 17,
+              color: AppTheme.primary,
+              fontStyle: FontStyle.italic,
+            ),
+          ),
+        ],
+        if (chain.isNotEmpty) ...[
+          const SizedBox(height: 6),
+          ...chain.map((form) => Padding(
+                padding: const EdgeInsets.only(top: 1),
+                child: Text(
+                  form,
+                  style: TextStyle(fontSize: 14, color: Colors.grey[500]),
+                ),
+              )),
+        ] else if (isInflected) ...[
+          const SizedBox(height: 4),
+          Text(
+            word,
+            style: TextStyle(fontSize: 15, color: Colors.grey[500]),
+          ),
+        ],
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -1151,48 +1582,7 @@ class _SingleWordSheet extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    word.length > 1
-                        ? Wrap(
-                            children: word.characters.map((ch) {
-                              return GestureDetector(
-                                onTap: () => _openNestedLookup(context, ch),
-                                child: Text(
-                                  ch,
-                                  style: _cjkTextStyle(
-                                    fontSize: 32,
-                                    language: lang,
-                                    fontWeight: FontWeight.bold,
-                                    height: 1.2,
-                                  ),
-                                ),
-                              );
-                            }).toList(),
-                          )
-                        : Text(
-                            word,
-                            style: _cjkTextStyle(
-                              fontSize: 32,
-                              language: lang,
-                              fontWeight: FontWeight.bold,
-                              height: 1.2,
-                            ),
-                          ),
-                    if (entry != null && entry.pinyin.isNotEmpty) ...[
-                      const SizedBox(height: 4),
-                      Text(
-                        entry.pinyin,
-                        style: TextStyle(
-                          fontSize: 17,
-                          color: AppTheme.primary,
-                          fontStyle: FontStyle.italic,
-                        ),
-                      ),
-                    ],
-                  ],
-                ),
+                child: _buildSingleWordDisplay(context, entry, lang),
               ),
               if (entry?.hskLevel != null)
                 Container(
