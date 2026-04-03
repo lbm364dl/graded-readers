@@ -585,6 +585,7 @@ class _ContinueReadingCardState extends State<_ContinueReadingCard>
   ReadingProgress? _progress;
   Reader? _reader;
   Book? _book;
+  bool _loaded = false;
 
   @override
   void initState() {
@@ -640,6 +641,7 @@ class _ContinueReadingCardState extends State<_ContinueReadingCard>
 
     if (!mounted) return;
     setState(() {
+      _loaded = true;
       if (reader != null) {
         _progress = progress;
         _reader = reader;
@@ -654,6 +656,13 @@ class _ContinueReadingCardState extends State<_ContinueReadingCard>
 
   @override
   Widget build(BuildContext context) {
+    if (!_loaded) {
+      // Reserve space while loading to prevent layout shift
+      return const Padding(
+        padding: EdgeInsets.only(bottom: 16),
+        child: SizedBox(height: 140),
+      );
+    }
     if (_progress == null || _reader == null) return const SizedBox.shrink();
     final p = _progress!;
     final r = _reader!;
@@ -701,11 +710,13 @@ class _ContinueReadingCardState extends State<_ContinueReadingCard>
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(
-                            builder: (_) => ReaderScreen(
+                          PageRouteBuilder(
+                            pageBuilder: (_, __, ___) => ReaderScreen(
                               reader: r,
                               initialChapter: p.chapter,
                             ),
+                            transitionDuration: Duration.zero,
+                            reverseTransitionDuration: Duration.zero,
                           ),
                         ).then((_) => _load());
                       },
