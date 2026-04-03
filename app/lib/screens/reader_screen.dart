@@ -316,7 +316,7 @@ List<Widget> _buildEtymologyWidgets(
 
   final widgets = <Widget>[];
 
-  // Formation type + strokes
+  // Formation type + decomposition + strokes
   final meta = <String>[];
   if (etym.formationLabel != null) meta.add(etym.formationLabel!);
   if (etym.ids != null) meta.add(etym.ids!);
@@ -332,7 +332,7 @@ List<Widget> _buildEtymologyWidgets(
     ));
   }
 
-  // Tappable components
+  // Tappable components (semantic + phonetic)
   if (etym.components.isNotEmpty) {
     final dict = DictionaryService.instance;
     widgets.add(Padding(
@@ -342,26 +342,50 @@ List<Widget> _buildEtymologyWidgets(
         runSpacing: 4,
         children: etym.components.map((comp) {
           final compEntry = dict.lookup(comp);
-          final role = comp == etym.semanticComponent ? 'meaning' : 'sound';
-          final label = compEntry != null && compEntry.definitions.isNotEmpty
-              ? '$comp $role — ${compEntry.definitions.first}'
-              : '$comp $role';
+          final isSemantic = comp == etym.semanticComponent;
+          final role = isSemantic ? 'meaning' : 'sound';
+          final def = compEntry != null && compEntry.definitions.isNotEmpty
+              ? compEntry.definitions.first
+              : null;
           return GestureDetector(
             onTap: onComponentTap != null ? () => onComponentTap(comp) : null,
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
               decoration: BoxDecoration(
-                color: isDark
-                    ? Colors.grey[800]
-                    : Colors.grey[100],
+                color: isDark ? Colors.grey[800] : Colors.grey[100],
                 borderRadius: BorderRadius.circular(6),
-              ),
-              child: Text(
-                label,
-                style: TextStyle(
-                  fontSize: 12,
-                  color: isDark ? Colors.grey[300] : Colors.grey[700],
+                border: Border.all(
+                  color: isSemantic
+                      ? AppTheme.primary.withValues(alpha: 0.3)
+                      : Colors.blue.withValues(alpha: 0.3),
                 ),
+              ),
+              child: Text.rich(
+                TextSpan(children: [
+                  TextSpan(
+                    text: '$comp ',
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: isDark ? Colors.grey[200] : Colors.grey[800],
+                    ),
+                  ),
+                  TextSpan(
+                    text: role,
+                    style: TextStyle(
+                      fontSize: 11,
+                      color: isSemantic ? AppTheme.primary : Colors.blue,
+                    ),
+                  ),
+                  if (def != null)
+                    TextSpan(
+                      text: ' — $def',
+                      style: TextStyle(
+                        fontSize: 11,
+                        color: isDark ? Colors.grey[400] : Colors.grey[600],
+                      ),
+                    ),
+                ]),
               ),
             ),
           );
@@ -370,29 +394,57 @@ List<Widget> _buildEtymologyWidgets(
     ));
   }
 
+  // Phonetic family (characters sharing the same phonetic component)
+  if (etym.phoneticFamily.isNotEmpty) {
+    widgets.add(Padding(
+      padding: const EdgeInsets.only(top: 6),
+      child: Wrap(
+        crossAxisAlignment: WrapCrossAlignment.center,
+        spacing: 2,
+        runSpacing: 2,
+        children: [
+          Text(
+            'Phonetic series: ',
+            style: TextStyle(fontSize: 11, color: Colors.grey[500]),
+          ),
+          ...etym.phoneticFamily.map((ch) => GestureDetector(
+                onTap: onComponentTap != null ? () => onComponentTap(ch) : null,
+                child: Text(
+                  ch,
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.blue[300],
+                  ),
+                ),
+              )),
+        ],
+      ),
+    ));
+  }
+
   // Etymology notes from multiple sources
   for (final note in etym.notes) {
     widgets.add(Padding(
-      padding: const EdgeInsets.only(top: 6),
+      padding: const EdgeInsets.only(top: 8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           if (note.source.isNotEmpty)
-            Text(
-              note.source,
-              style: TextStyle(
-                fontSize: 11,
-                fontWeight: FontWeight.w600,
-                color: Colors.grey[500],
+            Padding(
+              padding: const EdgeInsets.only(bottom: 2),
+              child: Text(
+                note.source,
+                style: TextStyle(
+                  fontSize: 11,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.grey[500],
+                ),
               ),
             ),
-          Text(
+          _buildTappableText(
             note.text,
-            style: TextStyle(
-              fontSize: 13,
-              height: 1.4,
-              color: isDark ? Colors.grey[300] : Colors.grey[700],
-            ),
+            isDark: isDark,
+            onCharTap: onComponentTap,
           ),
         ],
       ),
@@ -400,6 +452,56 @@ List<Widget> _buildEtymologyWidgets(
   }
 
   return widgets;
+}
+
+/// Build text with tappable kanji characters.
+Widget _buildTappableText(
+  String text, {
+  required bool isDark,
+  void Function(String)? onCharTap,
+}) {
+  if (onCharTap == null) {
+    return Text(
+      text,
+      style: TextStyle(
+        fontSize: 13,
+        height: 1.4,
+        color: isDark ? Colors.grey[300] : Colors.grey[700],
+      ),
+    );
+  }
+
+  final baseStyle = TextStyle(
+    fontSize: 13,
+    height: 1.4,
+    color: isDark ? Colors.grey[300] : Colors.grey[700],
+  );
+
+  // Split text into runs of kanji vs non-kanji
+  final spans = <InlineSpan>[];
+  int i = 0;
+  while (i < text.length) {
+    if (_isKanji(text.codeUnitAt(i))) {
+      final ch = text[i];
+      spans.add(WidgetSpan(
+        alignment: PlaceholderAlignment.middle,
+        child: GestureDetector(
+          onTap: () => onCharTap(ch),
+          child: Text(ch, style: baseStyle.copyWith(color: Colors.blue[300])),
+        ),
+      ));
+      i++;
+    } else {
+      int j = i + 1;
+      while (j < text.length && !_isKanji(text.codeUnitAt(j))) {
+        j++;
+      }
+      spans.add(TextSpan(text: text.substring(i, j), style: baseStyle));
+      i = j;
+    }
+  }
+
+  return Text.rich(TextSpan(children: spans));
 }
 
 class _TokenEntry {
@@ -1686,8 +1788,30 @@ class _SingleWordSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final entry = DictionaryService.instance.lookup(word);
+    var entry = DictionaryService.instance.lookup(word);
     final lang = DictionaryService.instance.activeLanguage;
+
+    // Fallback: if no dictionary entry, build one from etymology data
+    if (entry == null && word.length == 1) {
+      final etym = EtymologyService.instance.lookup(word);
+      if (etym != null) {
+        String reading = '';
+        if (lang == Language.japanese) {
+          final parts = <String>[];
+          if (etym.japaneseKun != null) parts.add(etym.japaneseKun!);
+          if (etym.japaneseOn != null) parts.add(etym.japaneseOn!);
+          reading = parts.join(' · ');
+        } else {
+          reading = etym.mandarinReading ?? '';
+        }
+        final defs = etym.definitions;
+        entry = DictEntry(
+          word: word,
+          pinyin: reading,
+          definitions: defs != null ? [defs] : [],
+        );
+      }
+    }
 
     return Padding(
       padding: const EdgeInsets.fromLTRB(24, 12, 24, 24),

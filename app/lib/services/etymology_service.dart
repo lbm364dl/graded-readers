@@ -15,6 +15,11 @@ class EtymologyEntry {
   final String? ids;
   final int? strokes;
   final List<EtymologyNote> notes;
+  final List<String> phoneticFamily;
+  final String? mandarinReading;
+  final String? japaneseOn;
+  final String? japaneseKun;
+  final String? definitions;
 
   const EtymologyEntry({
     required this.character,
@@ -24,6 +29,11 @@ class EtymologyEntry {
     this.ids,
     this.strokes,
     this.notes = const [],
+    this.phoneticFamily = const [],
+    this.mandarinReading,
+    this.japaneseOn,
+    this.japaneseKun,
+    this.definitions,
   });
 
   String? get formationLabel {
@@ -81,6 +91,8 @@ class EtymologyService {
                   ))
               .toList() ??
           [];
+      final pf = (v['pf'] as List?)?.cast<String>() ?? [];
+      final r = v['r'] as Map<String, dynamic>?;
       _entries![ch] = EtymologyEntry(
         character: ch,
         formationType: v['ft'] as String?,
@@ -89,6 +101,11 @@ class EtymologyService {
         ids: v['ids'] as String?,
         strokes: v['st'] as int?,
         notes: notesList,
+        phoneticFamily: pf,
+        mandarinReading: r?['zh'] as String?,
+        japaneseOn: r?['on'] as String?,
+        japaneseKun: r?['kun'] as String?,
+        definitions: v['d'] as String?,
       );
     }
   }
