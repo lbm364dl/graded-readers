@@ -23,6 +23,8 @@ void main() async {
     GoogleFonts.pendingFonts([
       GoogleFonts.notoSansJp(),
       GoogleFonts.notoSansSc(),
+      GoogleFonts.notoSerifJp(),
+      GoogleFonts.notoSerifSc(),
     ]),
   ]);
   runApp(GradedReadersApp(initialLanguage: initialLang));

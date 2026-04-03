@@ -28,6 +28,12 @@ TextStyle _cjkTextStyle({
     fontWeight: fontWeight,
     height: height,
     backgroundColor: backgroundColor,
+  ).copyWith(
+    fontFamilyFallback: [
+      // Google Fonts with broader CJK coverage as fallback
+      GoogleFonts.notoSerifJp().fontFamily!,
+      GoogleFonts.notoSerifSc().fontFamily!,
+    ],
   );
 }
 
@@ -1698,9 +1704,9 @@ class _SingleWordSheet extends StatelessWidget {
         ? deinflectionChain(word, dictForm)
         : <String>[];
 
-    // For single characters, show both kun and on readings from etymology
+    // For single characters without a dict reading, show kun/on from etymology
     List<Widget> extraReadings = [];
-    if (word.length == 1 && lang == Language.japanese) {
+    if (word.length == 1 && lang == Language.japanese && reading.isEmpty) {
       final etym = EtymologyService.instance.lookup(word);
       if (etym != null) {
         final parts = <TextSpan>[];
