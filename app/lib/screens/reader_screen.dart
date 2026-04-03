@@ -344,19 +344,20 @@ List<Widget> _buildEtymologyWidgets(
       final desc = <String>[];
       if (isSemantic) {
         desc.add('semantic (meaning)');
+        // Show definition for semantic component
+        if (compEntry != null && compEntry.definitions.isNotEmpty) {
+          desc.add(compEntry.definitions.first);
+        } else if (compEtym?.definitions != null) {
+          desc.add(compEtym!.definitions!);
+        }
       } else {
         desc.add('phonetic (sound)');
-        // Show on'yomi for the phonetic component
+        // Show on'yomi reading for phonetic component
         if (compEtym?.japaneseOn != null) {
           desc.add(compEtym!.japaneseOn!);
         } else if (compEtym?.mandarinReading != null) {
           desc.add(compEtym!.mandarinReading!);
         }
-      }
-      if (compEntry != null && compEntry.definitions.isNotEmpty) {
-        desc.add(compEntry.definitions.first);
-      } else if (compEtym?.definitions != null) {
-        desc.add(compEtym!.definitions!);
       }
 
       widgets.add(Padding(
@@ -1697,6 +1698,39 @@ class _SingleWordSheet extends StatelessWidget {
         ? deinflectionChain(word, dictForm)
         : <String>[];
 
+    // For single characters, show both kun and on readings from etymology
+    List<Widget> extraReadings = [];
+    if (word.length == 1 && lang == Language.japanese) {
+      final etym = EtymologyService.instance.lookup(word);
+      if (etym != null) {
+        final parts = <TextSpan>[];
+        if (etym.japaneseKun != null) {
+          parts.add(TextSpan(
+            text: etym.japaneseKun!,
+            style: TextStyle(fontSize: 14, color: Colors.grey[500]),
+          ));
+        }
+        if (etym.japaneseOn != null) {
+          if (parts.isNotEmpty) {
+            parts.add(TextSpan(
+              text: '  ',
+              style: TextStyle(fontSize: 14, color: Colors.grey[500]),
+            ));
+          }
+          parts.add(TextSpan(
+            text: etym.japaneseOn!,
+            style: TextStyle(fontSize: 14, color: Colors.grey[500]),
+          ));
+        }
+        if (parts.isNotEmpty) {
+          extraReadings = [
+            const SizedBox(height: 2),
+            Text.rich(TextSpan(children: parts)),
+          ];
+        }
+      }
+    }
+
     if (lang == Language.japanese && reading.isNotEmpty) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -1716,6 +1750,7 @@ class _SingleWordSheet extends StatelessWidget {
               fontSize: 32,
               onCharTap: charTap,
             ),
+          ...extraReadings,
           if (chain.isNotEmpty) ...[
             const SizedBox(height: 6),
             ...chain.map((form) => Padding(
