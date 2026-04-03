@@ -5,11 +5,12 @@ class GlyphEntry {
   final Map<String, String> eras; // era name → SVG string
   const GlyphEntry(this.eras);
 
-  static const eraOrder = ['oracle', 'bronze', 'seal'];
+  static const eraOrder = ['oracle', 'bronze', 'seal', 'seal_wikimedia'];
   static const eraLabels = {
     'oracle': 'Oracle Bone',
     'bronze': 'Bronze',
     'seal': 'Seal Script',
+    'seal_wikimedia': 'Seal (Wikimedia)',
   };
 
   List<String> get sortedEras {
