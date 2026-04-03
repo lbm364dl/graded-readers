@@ -370,9 +370,11 @@ List<Widget> _buildEtymologyWidgets(
         final compEtym = etymSvc.lookup(comp);
         final isSemantic = comp == etym.semanticComponent;
 
+        final lang = DictionaryService.instance.activeLanguage;
         final desc = <String>[];
         if (isSemantic) {
           desc.add('semantic');
+          // Show definition from active language dict first
           if (compEntry != null && compEntry.definitions.isNotEmpty) {
             desc.add(compEntry.definitions.first);
           } else if (compEtym?.definitions != null) {
@@ -380,10 +382,15 @@ List<Widget> _buildEtymologyWidgets(
           }
         } else {
           desc.add('phonetic');
-          if (compEtym?.japaneseOn != null) {
-            desc.add(compEtym!.japaneseOn!);
-          } else if (compEtym?.mandarinReading != null) {
-            desc.add(compEtym!.mandarinReading!);
+          // Show reading in active language
+          if (lang == Language.japanese) {
+            if (compEtym?.japaneseOn != null) {
+              desc.add(compEtym!.japaneseOn!);
+            }
+          } else {
+            if (compEtym?.mandarinReading != null) {
+              desc.add(compEtym!.mandarinReading!);
+            }
           }
         }
 
@@ -1860,29 +1867,23 @@ class _SingleWordSheet extends StatelessWidget {
         ? deinflectionChain(word, dictForm)
         : <String>[];
 
-    // For single characters without a dict reading, show kun/on from etymology
+    // For single characters without a dict reading, show readings from etymology
     List<Widget> extraReadings = [];
-    if (word.length == 1 && lang == Language.japanese && reading.isEmpty) {
+    if (word.length == 1 && reading.isEmpty) {
       final etym = EtymologyService.instance.lookup(word);
       if (etym != null) {
         final parts = <TextSpan>[];
-        if (etym.japaneseKun != null) {
-          parts.add(TextSpan(
-            text: etym.japaneseKun!,
-            style: TextStyle(fontSize: 14, color: Colors.grey[500]),
-          ));
-        }
-        if (etym.japaneseOn != null) {
-          if (parts.isNotEmpty) {
-            parts.add(TextSpan(
-              text: '  ',
-              style: TextStyle(fontSize: 14, color: Colors.grey[500]),
-            ));
+        final style = TextStyle(fontSize: 14, color: Colors.grey[500]);
+        if (lang == Language.japanese) {
+          if (etym.japaneseKun != null) parts.add(TextSpan(text: etym.japaneseKun!, style: style));
+          if (etym.japaneseOn != null) {
+            if (parts.isNotEmpty) parts.add(TextSpan(text: '  ', style: style));
+            parts.add(TextSpan(text: etym.japaneseOn!, style: style));
           }
-          parts.add(TextSpan(
-            text: etym.japaneseOn!,
-            style: TextStyle(fontSize: 14, color: Colors.grey[500]),
-          ));
+        } else {
+          if (etym.mandarinReading != null) {
+            parts.add(TextSpan(text: etym.mandarinReading!, style: style));
+          }
         }
         if (parts.isNotEmpty) {
           extraReadings = [
