@@ -4,7 +4,6 @@
 Produces a summary table and detailed reports.
 """
 
-import argparse
 import re
 from pathlib import Path
 
@@ -40,29 +39,30 @@ def load_glossary_chars(glossary_path: Path) -> set[str]:
     return chars
 
 
-def validate_all(include_output: bool = False):
+def validate_all():
     project_root = Path(__file__).resolve().parent.parent
     pipeline_dir = Path(__file__).resolve().parent
 
     readers = []
-    # HSK readers
-    hsk_readers = sorted((project_root / "readers").glob("hsk*.md"))
-    # JLPT readers
-    jlpt_readers = sorted((project_root / "jlpt" / "readers").glob("n*.md"))
-    readers = [(p, None) for p in hsk_readers + jlpt_readers]
+    # HSK output directory readers (with glossary support)
+    hsk_output = project_root / "output" / "chinese"
+    if hsk_output.exists():
+        for book_dir in sorted(hsk_output.iterdir()):
+            if not book_dir.is_dir():
+                continue
+            glossary_path = book_dir / "glossary.txt"
+            for md in sorted(book_dir.glob("hsk*_*.md")):
+                readers.append((md, glossary_path if glossary_path.exists() else None))
 
-    # Output directory readers (with glossary support)
-    if include_output:
-        output_dir = project_root / "output"
-        if output_dir.exists():
-            for book_dir in sorted(output_dir.iterdir()):
-                if not book_dir.is_dir():
-                    continue
-                glossary_path = book_dir / "glossary.txt"
-                for md in sorted(book_dir.glob("hsk*_*.md")):
-                    readers.append((md, glossary_path if glossary_path.exists() else None))
-                for md in sorted(book_dir.glob("n*_*.md")):
-                    readers.append((md, glossary_path if glossary_path.exists() else None))
+    # JLPT output directory readers (with glossary support)
+    jlpt_output = project_root / "output" / "japanese"
+    if jlpt_output.exists():
+        for book_dir in sorted(jlpt_output.iterdir()):
+            if not book_dir.is_dir():
+                continue
+            glossary_path = book_dir / "glossary.txt"
+            for md in sorted(book_dir.glob("n*_*.md")):
+                readers.append((md, glossary_path if glossary_path.exists() else None))
 
     results = []
     for reader_path, glossary_path in readers:
@@ -72,9 +72,9 @@ def validate_all(include_output: bool = False):
         level_key, language = info
 
         if language == "chinese":
-            charset_path = pipeline_dir / "charsets" / "hsk" / f"{level_key}_chars.txt"
+            charset_path = pipeline_dir / "charsets" / "chinese" / f"{level_key}_chars.txt"
         else:
-            charset_path = pipeline_dir / "charsets" / "jlpt" / f"{level_key}_chars.txt"
+            charset_path = pipeline_dir / "charsets" / "japanese" / f"{level_key}_chars.txt"
 
         if not charset_path.exists():
             continue
@@ -89,11 +89,7 @@ def validate_all(include_output: bool = False):
         text = strip_markdown_headers(text)
 
         result = validate_characters(text, allowed_chars)
-        # Show path relative to project root for output/ files
-        if include_output and "output" in str(reader_path):
-            result["file"] = str(reader_path.relative_to(project_root))
-        else:
-            result["file"] = reader_path.name
+        result["file"] = str(reader_path.relative_to(project_root))
         result["level"] = level_key
         result["language"] = language
         results.append(result)
@@ -115,8 +111,4 @@ def validate_all(include_output: bool = False):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--output", action="store_true",
-                        help="Also validate files in the output/ directory (with glossary support)")
-    args = parser.parse_args()
-    validate_all(include_output=args.output)
+    validate_all()

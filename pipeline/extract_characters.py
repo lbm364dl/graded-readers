@@ -185,8 +185,8 @@ def main():
     project_root = Path(__file__).resolve().parent.parent
 
     if args.language in ("chinese", "both"):
-        hsk_data = project_root / "data"
-        hsk_out = project_root / "pipeline" / "charsets" / "hsk"
+        hsk_data = project_root / "data" / "chinese"
+        hsk_out = project_root / "pipeline" / "charsets" / "chinese"
         charsets = build_hsk_charsets(hsk_data)
         summary = save_charsets(charsets, hsk_out)
         print("HSK character sets (official chars + word-derived chars):")
@@ -195,8 +195,8 @@ def main():
             print(f"  {k}: {v['new_count']} new, {v['cumulative_count']} cumulative{extra}")
 
     if args.language in ("japanese", "both"):
-        jlpt_data = project_root / "jlpt" / "data"
-        jlpt_out = project_root / "pipeline" / "charsets" / "jlpt"
+        jlpt_data = project_root / "data" / "japanese"
+        jlpt_out = project_root / "pipeline" / "charsets" / "japanese"
         charsets = build_jlpt_charsets(jlpt_data)
         summary = save_charsets(charsets, jlpt_out)
         print("JLPT character sets (kanji from words):")

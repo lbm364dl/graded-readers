@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parent.parent
-WORDS_DIR = BASE / "jlpt" / "data" / "words"
+WORDS_DIR = BASE / "data" / "japanese" / "words"
 ASSETS_DIR = BASE / "app" / "assets"
 
 # N5 CSV -> internal level 1 (easiest), N1 CSV -> internal level 5 (hardest)

@@ -7,8 +7,8 @@ import re
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parent.parent
-OUTPUT_DIR = BASE / "jlpt" / "output"
-READERS_DIR = BASE / "jlpt" / "output" / "readers"
+OUTPUT_DIR = BASE / "output" / "japanese"
+READERS_DIR = BASE / "output" / "japanese" / "readers"
 ASSETS_DIR = BASE / "app" / "assets"
 
 # N5 filename -> internal level 1 (easiest), N1 -> internal level 5 (hardest)

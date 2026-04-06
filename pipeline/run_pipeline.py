@@ -41,16 +41,16 @@ def ensure_charsets(language: str) -> Path:
     project_root = pipeline_dir.parent
 
     if language == "chinese":
-        out_dir = pipeline_dir / "charsets" / "hsk"
+        out_dir = pipeline_dir / "charsets" / "chinese"
         if not (out_dir / "charset_summary.json").exists():
             print("Building HSK character sets...")
-            charsets = build_hsk_charsets(project_root / "data")
+            charsets = build_hsk_charsets(project_root / "data" / "chinese")
             save_charsets(charsets, out_dir)
     else:
-        out_dir = pipeline_dir / "charsets" / "jlpt"
+        out_dir = pipeline_dir / "charsets" / "japanese"
         if not (out_dir / "charset_summary.json").exists():
             print("Building JLPT character sets...")
-            charsets = build_jlpt_charsets(project_root / "jlpt" / "data")
+            charsets = build_jlpt_charsets(project_root / "data" / "japanese")
             save_charsets(charsets, out_dir)
 
     return out_dir

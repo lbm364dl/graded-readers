@@ -6,8 +6,7 @@ import re
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parent.parent
-OUTPUT_DIR = BASE / "output"
-READERS_DIR = BASE / "readers"
+OUTPUT_DIR = BASE / "output" / "chinese"
 ASSETS_DIR = BASE / "app" / "assets"
 
 HSK_TO_INTERNAL = {"hsk1": 1, "hsk2": 2, "hsk3": 3, "hsk4": 4, "hsk5": 5, "hsk6": 6}
@@ -92,57 +91,6 @@ def parse_book_file(filepath: Path, book_key: str, metadata: dict | None):
     }
 
 
-def parse_reader_file(filepath: Path):
-    """Parse a standalone reader markdown file (from readers/ directory)."""
-    text = filepath.read_text(encoding="utf-8")
-    lines = text.split("\n")
-
-    # Extract title from first # line
-    title_zh = filepath.stem
-    title_en = filepath.stem
-    for line in lines:
-        m = re.match(r"^#\s+(.+?)(?:\s*\((.+?)\))?\s*$", line)
-        if m:
-            title_zh = m.group(1).strip()
-            title_en = m.group(2).strip() if m.group(2) else title_zh
-            break
-
-    # Extract level from filename
-    fname = filepath.stem
-    level_key = fname.split("_")[0]
-    internal_level = HSK_TO_INTERNAL.get(level_key, 1)
-    parts = fname.split("_")
-    reader_id = f"readers_{parts[0]}_{parts[1]}"
-
-    # Content: everything after the header block
-    content_lines = []
-    past_header = False
-    for line in lines:
-        stripped = line.strip()
-        if not past_header:
-            if stripped == "---":
-                past_header = True
-            continue
-        if stripped == "---":
-            continue
-        content_lines.append(line)
-
-    content = "\n".join(content_lines).strip()
-    content = re.sub(r"\n{3,}", "\n\n", content)
-    content = re.sub(r"\*\*HSK Level \d+\*\*\s*", "", content).strip()
-
-    if not content:
-        return None
-
-    return {
-        "id": reader_id,
-        "book": "readers",
-        "bookTitle": "短篇阅读",
-        "bookTitleEn": "Short Readers",
-        "level": internal_level,
-        "chapters": [{"title": title_zh, "content": content}],
-    }
-
 
 def main():
     entries = []
@@ -161,12 +109,6 @@ def main():
             entry = parse_book_file(md_file, book_key, metadata)
             if entry["chapters"]:
                 entries.append(entry)
-
-    # 2. Process standalone readers from readers/
-    for md_file in sorted(READERS_DIR.glob("hsk[1-6]_*.md")):
-        entry = parse_reader_file(md_file)
-        if entry and entry["chapters"]:
-            entries.append(entry)
 
     # Sort by level then by id
     entries.sort(key=lambda e: (e["level"], e["id"]))

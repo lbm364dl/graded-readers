@@ -18,7 +18,7 @@ import zipfile
 from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).parent
-DATA_DIR = SCRIPT_DIR.parent / "data" / "words"
+DATA_DIR = SCRIPT_DIR.parent / "data" / "chinese" / "words"
 OUTPUT_PATH = SCRIPT_DIR.parent / "app" / "assets" / "dictionary.json"
 CEDICT_URL = (
     "https://www.mdbg.net/chinese/export/cedict/cedict_1_0_ts_utf-8_mdbg.zip"

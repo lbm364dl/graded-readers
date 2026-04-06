@@ -325,14 +325,14 @@ def main():
     base = Path(__file__).resolve().parent.parent
 
     # Process Chinese (HSK) books
-    output_dir = base / "output"
+    output_dir = base / "output" / "chinese"
     for book_dir in sorted(output_dir.iterdir()):
         if not book_dir.is_dir() or book_dir.name.startswith("_"):
             continue
         process_book(book_dir)
 
     # Process Japanese (JLPT) books
-    jlpt_output = base / "jlpt" / "output"
+    jlpt_output = base / "output" / "japanese"
     if jlpt_output.exists():
         for book_dir in sorted(jlpt_output.iterdir()):
             if not book_dir.is_dir():

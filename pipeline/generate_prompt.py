@@ -22,9 +22,9 @@ def load_level_metadata(language: str) -> dict:
     """Load level metadata (sentence length, text length targets, etc.)."""
     project_root = Path(__file__).resolve().parent.parent
     if language == "chinese":
-        meta_path = project_root / "data" / "hsk_levels.json"
+        meta_path = project_root / "data" / "chinese" / "hsk_levels.json"
     else:
-        meta_path = project_root / "jlpt" / "data" / "jlpt_levels.json"
+        meta_path = project_root / "data" / "japanese" / "jlpt_levels.json"
 
     with open(meta_path, encoding="utf-8") as f:
         return json.load(f)
@@ -214,9 +214,9 @@ def main():
     # Load charset
     pipeline_dir = Path(__file__).resolve().parent
     if args.language == "chinese":
-        charset_path = pipeline_dir / "charsets" / "hsk" / f"{level_key}_chars.txt"
+        charset_path = pipeline_dir / "charsets" / "chinese" / f"{level_key}_chars.txt"
     else:
-        charset_path = pipeline_dir / "charsets" / "jlpt" / f"{level_key}_chars.txt"
+        charset_path = pipeline_dir / "charsets" / "japanese" / f"{level_key}_chars.txt"
 
     if not charset_path.exists():
         print(f"Error: charset not found at {charset_path}")

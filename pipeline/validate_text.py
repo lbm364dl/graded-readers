@@ -134,9 +134,9 @@ def main():
     elif args.level:
         pipeline_dir = Path(__file__).resolve().parent
         if args.level.startswith("hsk"):
-            charset_path = pipeline_dir / "charsets" / "hsk" / f"{args.level}_chars.txt"
+            charset_path = pipeline_dir / "charsets" / "chinese" / f"{args.level}_chars.txt"
         elif args.level.startswith("n"):
-            charset_path = pipeline_dir / "charsets" / "jlpt" / f"{args.level}_chars.txt"
+            charset_path = pipeline_dir / "charsets" / "japanese" / f"{args.level}_chars.txt"
         else:
             print(f"Error: cannot auto-detect charset for level '{args.level}'", file=sys.stderr)
             sys.exit(1)
