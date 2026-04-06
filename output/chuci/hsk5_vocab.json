@@ -1,0 +1,391 @@
+{
+  "book": "chuci",
+  "level": "hsk5",
+  "sections": [
+    {
+      "title": "生词表 (Key Vocabulary)",
+      "words": [
+        {
+          "word": "编纂",
+          "pinyin": "biānzuǎn",
+          "意思": "to compile and edit"
+        },
+        {
+          "word": "蕴含",
+          "pinyin": "yùnhán",
+          "意思": "to contain, to embody"
+        },
+        {
+          "word": "意蕴",
+          "pinyin": "yìyùn",
+          "意思": "meaning, significance"
+        },
+        {
+          "word": "深邃",
+          "pinyin": "shēnsuì",
+          "意思": "profound, deep"
+        },
+        {
+          "word": "哲理",
+          "pinyin": "zhélǐ",
+          "意思": "philosophical principle"
+        },
+        {
+          "word": "世俗",
+          "pinyin": "shìsú",
+          "意思": "worldly, secular"
+        },
+        {
+          "word": "隐喻",
+          "pinyin": "yǐnyù",
+          "意思": "metaphor"
+        },
+        {
+          "word": "瑰丽",
+          "pinyin": "guīlì",
+          "意思": "magnificent, gorgeous"
+        },
+        {
+          "word": "辉煌",
+          "pinyin": "huīhuáng",
+          "意思": "brilliant, splendid"
+        },
+        {
+          "word": "矢志",
+          "pinyin": "shǐzhì",
+          "意思": "to vow, to be determined"
+        },
+        {
+          "word": "超凡",
+          "pinyin": "chāofán",
+          "意思": "extraordinary"
+        },
+        {
+          "word": "典范",
+          "pinyin": "diǎnfàn",
+          "意思": "model, exemplar"
+        },
+        {
+          "word": "诠释",
+          "pinyin": "quánshì",
+          "意思": "to interpret"
+        },
+        {
+          "word": "契合",
+          "pinyin": "qìhé",
+          "意思": "to match, to fit"
+        },
+        {
+          "word": "熏陶",
+          "pinyin": "xūntáo",
+          "意思": "to nurture, to influence"
+        },
+        {
+          "word": "壮烈",
+          "pinyin": "zhuàngliè",
+          "意思": "heroic, tragic"
+        },
+        {
+          "word": "奠定",
+          "pinyin": "diàndìng",
+          "意思": "to lay (a foundation)"
+        },
+        {
+          "word": "绚丽",
+          "pinyin": "xuànlì",
+          "意思": "gorgeous, dazzling"
+        },
+        {
+          "word": "意象",
+          "pinyin": "yìxiàng",
+          "意思": "imagery, image"
+        },
+        {
+          "word": "缠绵",
+          "pinyin": "chánmián",
+          "意思": "lingering, tender"
+        },
+        {
+          "word": "凄美",
+          "pinyin": "qīměi",
+          "意思": "hauntingly beautiful"
+        },
+        {
+          "word": "抒情",
+          "pinyin": "shūqíng",
+          "意思": "lyrical; to express emotion"
+        },
+        {
+          "word": "内涵",
+          "pinyin": "nèihán",
+          "意思": "inner meaning, connotation"
+        },
+        {
+          "word": "素材",
+          "pinyin": "sùcái",
+          "意思": "material (for art)"
+        },
+        {
+          "word": "审美",
+          "pinyin": "shěnměi",
+          "意思": "aesthetic appreciation"
+        },
+        {
+          "word": "变迁",
+          "pinyin": "biànqiān",
+          "意思": "change, transition"
+        },
+        {
+          "word": "气质",
+          "pinyin": "qìzhì",
+          "意思": "temperament, quality"
+        },
+        {
+          "word": "弥漫",
+          "pinyin": "mímàn",
+          "意思": "to permeate, to fill"
+        },
+        {
+          "word": "浓郁",
+          "pinyin": "nóngyù",
+          "意思": "rich, intense"
+        },
+        {
+          "word": "寄托",
+          "pinyin": "jìtuō",
+          "意思": "to place (hopes/feelings) on"
+        }
+      ]
+    },
+    {
+      "title": "生词",
+      "words": [
+        {
+          "word": "皇考",
+          "pinyin": "huángkǎo",
+          "意思": "deceased father (honorific)"
+        },
+        {
+          "word": "摄提",
+          "pinyin": "shètí",
+          "意思": "name of a year in ancient calendar"
+        },
+        {
+          "word": "孟陬",
+          "pinyin": "mèngzōu",
+          "意思": "first month of the year"
+        },
+        {
+          "word": "庚寅",
+          "pinyin": "gēngyín",
+          "意思": "a day in the sexagenary cycle"
+        },
+        {
+          "word": "揆",
+          "pinyin": "kuí",
+          "意思": "to assess, to examine"
+        },
+        {
+          "word": "初度",
+          "pinyin": "chūdù",
+          "意思": "the time of one's birth"
+        },
+        {
+          "word": "肇",
+          "pinyin": "zhào",
+          "意思": "to begin"
+        },
+        {
+          "word": "锡",
+          "pinyin": "xī",
+          "意思": "to bestow (same as 赐)"
+        },
+        {
+          "word": "修能",
+          "pinyin": "xiūnéng",
+          "意思": "cultivated talent"
+        },
+        {
+          "word": "扈",
+          "pinyin": "hù",
+          "意思": "to wear as a garment"
+        },
+        {
+          "word": "辟芷",
+          "pinyin": "pìzhǐ",
+          "意思": "angelica (a fragrant plant)"
+        },
+        {
+          "word": "纫",
+          "pinyin": "rèn",
+          "意思": "to thread, to string"
+        },
+        {
+          "word": "汩",
+          "pinyin": "gǔ",
+          "意思": "swiftly flowing"
+        },
+        {
+          "word": "搴",
+          "pinyin": "qiān",
+          "意思": "to pluck, to pick"
+        },
+        {
+          "word": "揽",
+          "pinyin": "lǎn",
+          "意思": "to gather"
+        },
+        {
+          "word": "宿莽",
+          "pinyin": "sùmǎng",
+          "意思": "a perennial grass"
+        }
+      ]
+    },
+    {
+      "title": "生词",
+      "words": [
+        {
+          "word": "淹",
+          "pinyin": "yān",
+          "意思": "to linger, to stay"
+        },
+        {
+          "word": "代序",
+          "pinyin": "dàixù",
+          "意思": "to alternate in order"
+        },
+        {
+          "word": "迟暮",
+          "pinyin": "chímù",
+          "意思": "late in life"
+        },
+        {
+          "word": "骐骥",
+          "pinyin": "qíjì",
+          "意思": "fine steed"
+        },
+        {
+          "word": "驰骋",
+          "pinyin": "chíchěng",
+          "意思": "to gallop"
+        },
+        {
+          "word": "好修",
+          "pinyin": "hǎoxiū",
+          "意思": "to love cultivation"
+        },
+        {
+          "word": "姱",
+          "pinyin": "kuā",
+          "意思": "beautiful"
+        },
+        {
+          "word": "鞿羁",
+          "pinyin": "jījī",
+          "意思": "to restrain oneself"
+        },
+        {
+          "word": "谇",
+          "pinyin": "suì",
+          "意思": "to remonstrate"
+        },
+        {
+          "word": "替",
+          "pinyin": "tì",
+          "意思": "to dismiss"
+        },
+        {
+          "word": "蕙纕",
+          "pinyin": "huìxiāng",
+          "意思": "sash of fragrant plants"
+        },
+        {
+          "word": "揽茝",
+          "pinyin": "lǎnchǎi",
+          "意思": "to gather angelica"
+        },
+        {
+          "word": "蛾眉",
+          "pinyin": "éméi",
+          "意思": "beautiful eyebrows"
+        },
+        {
+          "word": "谣诼",
+          "pinyin": "yáozhuó",
+          "意思": "slander, rumor"
+        },
+        {
+          "word": "偭",
+          "pinyin": "miǎn",
+          "意思": "to turn away from"
+        },
+        {
+          "word": "规矩",
+          "pinyin": "guījǔ",
+          "意思": "rules, principles"
+        }
+      ]
+    },
+    {
+      "title": "生词",
+      "words": [
+        {
+          "word": "发轫",
+          "pinyin": "fārèn",
+          "意思": "to set out, to begin a journey"
+        },
+        {
+          "word": "县圃",
+          "pinyin": "xuánpǔ",
+          "意思": "Hanging Garden (mythical paradise)"
+        },
+        {
+          "word": "灵琐",
+          "pinyin": "língsuǒ",
+          "意思": "a celestial palace"
+        },
+        {
+          "word": "羲和",
+          "pinyin": "Xīhé",
+          "意思": "sun charioteer (mythical)"
+        },
+        {
+          "word": "弭节",
+          "pinyin": "mǐjié",
+          "意思": "to slow down the chariot"
+        },
+        {
+          "word": "崦嵫",
+          "pinyin": "yānzī",
+          "意思": "the mountain where the sun sets"
+        },
+        {
+          "word": "缤纷",
+          "pinyin": "bīnfēn",
+          "意思": "colorful, abundant"
+        },
+        {
+          "word": "弥章",
+          "pinyin": "mízhāng",
+          "意思": "to become more apparent"
+        },
+        {
+          "word": "陟",
+          "pinyin": "zhì",
+          "意思": "to ascend"
+        },
+        {
+          "word": "临睨",
+          "pinyin": "línnì",
+          "意思": "to look down upon"
+        },
+        {
+          "word": "蜷局",
+          "pinyin": "quánjú",
+          "意思": "curled up, unable to move"
+        }
+      ]
+    }
+  ]
+}

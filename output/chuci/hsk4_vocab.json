@@ -1,0 +1,621 @@
+{
+  "book": "chuci",
+  "level": "hsk4",
+  "sections": [
+    {
+      "title": "生词表 (Key Vocabulary)",
+      "words": [
+        {
+          "word": "楚辞",
+          "pinyin": "Chǔ Cí",
+          "意思": "Songs of Chu, anthology of southern poetry"
+        },
+        {
+          "word": "战国",
+          "pinyin": "Zhànguó",
+          "意思": "Warring States period (475-221 BCE)"
+        },
+        {
+          "word": "政治",
+          "pinyin": "zhèngzhì",
+          "意思": "politics, political"
+        },
+        {
+          "word": "诸侯",
+          "pinyin": "zhūhóu",
+          "意思": "feudal lords"
+        },
+        {
+          "word": "制度",
+          "pinyin": "zhìdù",
+          "意思": "system, institution"
+        },
+        {
+          "word": "思想",
+          "pinyin": "sīxiǎng",
+          "意思": "thought, ideology"
+        },
+        {
+          "word": "理想",
+          "pinyin": "lǐxiǎng",
+          "意思": "ideal"
+        },
+        {
+          "word": "象征",
+          "pinyin": "xiàngzhēng",
+          "意思": "to symbolize; symbol"
+        },
+        {
+          "word": "描写",
+          "pinyin": "miáoxiě",
+          "意思": "to describe, to depict"
+        },
+        {
+          "word": "丰富",
+          "pinyin": "fēngfù",
+          "意思": "rich, abundant"
+        },
+        {
+          "word": "影响",
+          "pinyin": "yǐngxiǎng",
+          "意思": "influence; to influence"
+        },
+        {
+          "word": "作品",
+          "pinyin": "zuòpǐn",
+          "意思": "literary work"
+        },
+        {
+          "word": "表达",
+          "pinyin": "biǎodá",
+          "意思": "to express"
+        },
+        {
+          "word": "社会",
+          "pinyin": "shèhuì",
+          "意思": "society"
+        },
+        {
+          "word": "方式",
+          "pinyin": "fāngshì",
+          "意思": "way, method"
+        },
+        {
+          "word": "时代",
+          "pinyin": "shídài",
+          "意思": "era, epoch"
+        },
+        {
+          "word": "英雄",
+          "pinyin": "yīngxióng",
+          "意思": "hero"
+        },
+        {
+          "word": "纪念",
+          "pinyin": "jìniàn",
+          "意思": "to commemorate"
+        },
+        {
+          "word": "包括",
+          "pinyin": "bāokuò",
+          "意思": "to include"
+        },
+        {
+          "word": "整个",
+          "pinyin": "zhěnggè",
+          "意思": "entire, whole"
+        },
+        {
+          "word": "抒发",
+          "pinyin": "shūfā",
+          "意思": "to express (feelings)"
+        },
+        {
+          "word": "境界",
+          "pinyin": "jìngjiè",
+          "意思": "realm, level"
+        },
+        {
+          "word": "层次",
+          "pinyin": "céngcì",
+          "意思": "level, layer"
+        },
+        {
+          "word": "融合",
+          "pinyin": "rónghé",
+          "意思": "to blend, to fuse"
+        },
+        {
+          "word": "贡献",
+          "pinyin": "gòngxiàn",
+          "意思": "contribution"
+        },
+        {
+          "word": "逐渐",
+          "pinyin": "zhújiàn",
+          "意思": "gradually"
+        },
+        {
+          "word": "充满",
+          "pinyin": "chōngmǎn",
+          "意思": "to be full of"
+        },
+        {
+          "word": "氛围",
+          "pinyin": "fēnwéi",
+          "意思": "atmosphere"
+        },
+        {
+          "word": "展现",
+          "pinyin": "zhǎnxiàn",
+          "意思": "to show, to display"
+        },
+        {
+          "word": "仪式",
+          "pinyin": "yíshì",
+          "意思": "ceremony, ritual"
+        },
+        {
+          "word": "深刻",
+          "pinyin": "shēnkè",
+          "意思": "profound"
+        },
+        {
+          "word": "独特",
+          "pinyin": "dútè",
+          "意思": "unique"
+        },
+        {
+          "word": "流传",
+          "pinyin": "liúchuán",
+          "意思": "to be passed down"
+        },
+        {
+          "word": "地位",
+          "pinyin": "dìwèi",
+          "意思": "status, position"
+        },
+        {
+          "word": "反映",
+          "pinyin": "fǎnyìng",
+          "意思": "to reflect"
+        },
+        {
+          "word": "表现",
+          "pinyin": "biǎoxiàn",
+          "意思": "to express, to show"
+        },
+        {
+          "word": "善良",
+          "pinyin": "shànliáng",
+          "意思": "kind, good-hearted"
+        }
+      ]
+    },
+    {
+      "title": "生词",
+      "words": [
+        {
+          "word": "苗裔",
+          "pinyin": "miáoyì",
+          "意思": "descendants"
+        },
+        {
+          "word": "降",
+          "pinyin": "jiàng",
+          "意思": "to be born; to descend"
+        },
+        {
+          "word": "嘉名",
+          "pinyin": "jiāmíng",
+          "意思": "a fine/auspicious name"
+        },
+        {
+          "word": "内美",
+          "pinyin": "nèiměi",
+          "意思": "inner virtue/beauty"
+        },
+        {
+          "word": "修能",
+          "pinyin": "xiūnéng",
+          "意思": "cultivated talent"
+        },
+        {
+          "word": "佩",
+          "pinyin": "pèi",
+          "意思": "pendant; to wear at the waist"
+        }
+      ]
+    },
+    {
+      "title": "生词",
+      "words": [
+        {
+          "word": "淹",
+          "pinyin": "yān",
+          "意思": "to linger, to delay"
+        },
+        {
+          "word": "代序",
+          "pinyin": "dàixù",
+          "意思": "to alternate in order"
+        },
+        {
+          "word": "零落",
+          "pinyin": "línglùo",
+          "意思": "to wither and fall"
+        },
+        {
+          "word": "迟暮",
+          "pinyin": "chímù",
+          "意思": "late in life, aging"
+        },
+        {
+          "word": "坠露",
+          "pinyin": "zhuìlù",
+          "意思": "falling dew"
+        },
+        {
+          "word": "落英",
+          "pinyin": "luòyīng",
+          "意思": "fallen petals"
+        },
+        {
+          "word": "太息",
+          "pinyin": "tàixī",
+          "意思": "to sigh deeply"
+        },
+        {
+          "word": "掩涕",
+          "pinyin": "yǎntì",
+          "意思": "to cover one's tears"
+        },
+        {
+          "word": "求索",
+          "pinyin": "qiúsuǒ",
+          "意思": "to search, to seek"
+        }
+      ]
+    },
+    {
+      "title": "生词",
+      "words": [
+        {
+          "word": "反顾",
+          "pinyin": "fǎngù",
+          "意思": "to look back"
+        },
+        {
+          "word": "四荒",
+          "pinyin": "sìhuāng",
+          "意思": "the four wildernesses (distant lands)"
+        },
+        {
+          "word": "缤纷",
+          "pinyin": "bīnfēn",
+          "意思": "colorful, profuse"
+        },
+        {
+          "word": "芳菲",
+          "pinyin": "fāngfēi",
+          "意思": "fragrant, sweet-smelling"
+        },
+        {
+          "word": "旧乡",
+          "pinyin": "jiùxiāng",
+          "意思": "old homeland"
+        },
+        {
+          "word": "美政",
+          "pinyin": "měizhèng",
+          "意思": "good governance"
+        }
+      ]
+    },
+    {
+      "title": "生词",
+      "words": [
+        {
+          "word": "夷犹",
+          "pinyin": "yíyóu",
+          "意思": "to hesitate"
+        },
+        {
+          "word": "中洲",
+          "pinyin": "zhōngzhōu",
+          "意思": "islet in the river"
+        },
+        {
+          "word": "宜修",
+          "pinyin": "yíxiū",
+          "意思": "beautifully adorned"
+        },
+        {
+          "word": "桂舟",
+          "pinyin": "guìzhōu",
+          "意思": "cassia-wood boat"
+        },
+        {
+          "word": "帝子",
+          "pinyin": "dìzǐ",
+          "意思": "princess, daughter of a divine ruler"
+        },
+        {
+          "word": "北渚",
+          "pinyin": "běizhǔ",
+          "意思": "northern islet"
+        },
+        {
+          "word": "眇眇",
+          "pinyin": "miǎomiǎo",
+          "意思": "gazing far into the distance"
+        },
+        {
+          "word": "袅袅",
+          "pinyin": "niǎoniǎo",
+          "意思": "gently swaying"
+        },
+        {
+          "word": "木叶",
+          "pinyin": "mùyè",
+          "意思": "tree leaves"
+        }
+      ]
+    },
+    {
+      "title": "生词",
+      "words": [
+        {
+          "word": "山之阿",
+          "pinyin": "shān zhī ē",
+          "意思": "curve/bend of the mountain"
+        },
+        {
+          "word": "薜荔",
+          "pinyin": "bìlì",
+          "意思": "a climbing plant"
+        },
+        {
+          "word": "女萝",
+          "pinyin": "nǚluó",
+          "意思": "creeping vine"
+        },
+        {
+          "word": "含睇",
+          "pinyin": "hándì",
+          "意思": "to gaze with a soft look"
+        },
+        {
+          "word": "窈窕",
+          "pinyin": "yǎotiǎo",
+          "意思": "graceful and beautiful"
+        },
+        {
+          "word": "填填",
+          "pinyin": "tiántián",
+          "意思": "rumbling (thunder sound)"
+        },
+        {
+          "word": "冥冥",
+          "pinyin": "míngmíng",
+          "意思": "dark, murky"
+        },
+        {
+          "word": "猨",
+          "pinyin": "yuán",
+          "意思": "ape, monkey"
+        },
+        {
+          "word": "啾啾",
+          "pinyin": "jiūjiū",
+          "意思": "chirping, calling"
+        },
+        {
+          "word": "飒飒",
+          "pinyin": "sàsà",
+          "意思": "rustling sound of wind"
+        },
+        {
+          "word": "萧萧",
+          "pinyin": "xiāoxiāo",
+          "意思": "rustling, desolate"
+        }
+      ]
+    },
+    {
+      "title": "生词",
+      "words": [
+        {
+          "word": "殇",
+          "pinyin": "shāng",
+          "意思": "to die young (especially in battle)"
+        },
+        {
+          "word": "吴戈",
+          "pinyin": "wúgē",
+          "意思": "Wu-made halberd (a famous weapon)"
+        },
+        {
+          "word": "犀甲",
+          "pinyin": "xījiǎ",
+          "意思": "rhinoceros-hide armor"
+        },
+        {
+          "word": "错毂",
+          "pinyin": "cuògǔ",
+          "意思": "wheels interlocking (chariots colliding)"
+        },
+        {
+          "word": "短兵接",
+          "pinyin": "duǎnbīngjiē",
+          "意思": "close combat"
+        },
+        {
+          "word": "旌",
+          "pinyin": "jīng",
+          "意思": "battle banner"
+        },
+        {
+          "word": "矢",
+          "pinyin": "shǐ",
+          "意思": "arrow"
+        },
+        {
+          "word": "鬼雄",
+          "pinyin": "guǐxióng",
+          "意思": "heroic spirit among the dead"
+        }
+      ]
+    },
+    {
+      "title": "生词",
+      "words": [
+        {
+          "word": "遂古",
+          "pinyin": "suìgǔ",
+          "意思": "the remote past"
+        },
+        {
+          "word": "传道",
+          "pinyin": "chuándào",
+          "意思": "to pass down the account"
+        },
+        {
+          "word": "上下",
+          "pinyin": "shàngxià",
+          "意思": "heaven and earth"
+        },
+        {
+          "word": "未形",
+          "pinyin": "wèixíng",
+          "意思": "not yet formed"
+        },
+        {
+          "word": "考",
+          "pinyin": "kǎo",
+          "意思": "to investigate"
+        },
+        {
+          "word": "冥昭",
+          "pinyin": "míngzhāo",
+          "意思": "darkness and light"
+        },
+        {
+          "word": "瞢暗",
+          "pinyin": "méng'àn",
+          "意思": "murky and dark"
+        },
+        {
+          "word": "极",
+          "pinyin": "jí",
+          "意思": "to fathom, to reach the limit"
+        },
+        {
+          "word": "冯翼",
+          "pinyin": "píngyì",
+          "意思": "vast and formless"
+        }
+      ]
+    },
+    {
+      "title": "生词",
+      "words": [
+        {
+          "word": "憔悴",
+          "pinyin": "qiáocuì",
+          "意思": "thin and haggard"
+        },
+        {
+          "word": "枯槁",
+          "pinyin": "kūgǎo",
+          "意思": "withered, emaciated"
+        },
+        {
+          "word": "三闾大夫",
+          "pinyin": "Sānlǘ Dàfū",
+          "意思": "Minister of the Three Clans (Qu Yuan's title)"
+        },
+        {
+          "word": "举世",
+          "pinyin": "jǔshì",
+          "意思": "the whole world"
+        },
+        {
+          "word": "浊",
+          "pinyin": "zhuó",
+          "意思": "turbid, corrupt"
+        },
+        {
+          "word": "醉",
+          "pinyin": "zuì",
+          "意思": "drunk; confused"
+        },
+        {
+          "word": "凝滞",
+          "pinyin": "nígzhì",
+          "意思": "rigid, fixated"
+        },
+        {
+          "word": "推移",
+          "pinyin": "tuīyí",
+          "意思": "to change along with"
+        },
+        {
+          "word": "淈",
+          "pinyin": "gǔ",
+          "意思": "to stir up"
+        },
+        {
+          "word": "糟",
+          "pinyin": "zāo",
+          "意思": "dregs (of wine)"
+        },
+        {
+          "word": "醨",
+          "pinyin": "lí",
+          "意思": "thin/weak wine"
+        },
+        {
+          "word": "察察",
+          "pinyin": "cháchá",
+          "意思": "clean, spotless"
+        },
+        {
+          "word": "汶汶",
+          "pinyin": "ménmén",
+          "意思": "murky, dirty"
+        },
+        {
+          "word": "皓皓",
+          "pinyin": "hàohào",
+          "意思": "bright white, pure"
+        },
+        {
+          "word": "莞尔",
+          "pinyin": "wǎn'ěr",
+          "意思": "to smile gently"
+        },
+        {
+          "word": "鼓枻",
+          "pinyin": "gǔyì",
+          "意思": "to strike the oar"
+        },
+        {
+          "word": "沧浪",
+          "pinyin": "cānglàng",
+          "意思": "blue-green waves"
+        },
+        {
+          "word": "濯",
+          "pinyin": "zhuó",
+          "意思": "to wash"
+        },
+        {
+          "word": "缨",
+          "pinyin": "yīng",
+          "意思": "hat strings"
+        }
+      ]
+    }
+  ]
+}

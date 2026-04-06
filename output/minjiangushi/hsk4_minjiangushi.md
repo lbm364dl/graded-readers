@@ -4,41 +4,6 @@
 
 ---
 
-## 生词表 (Vocabulary)
-
-| 词 | 意思 | HSK |
-|---|------|-----|
-| 仙女 | fairy maiden | 5 |
-| 织 | to weave | 5 |
-| 蛇 | snake | 5 |
-| 蝴蝶 | butterfly | 5 |
-| 弓箭 | bow and arrow | 5 |
-| 坟 | grave, tomb | 5 |
-| 神仙 | immortal, deity | 5 |
-| 伞 | umbrella | 5 |
-| 洪水 | flood | 5 |
-| 泥土 | earth, mud, clay | 5 |
-| 嫁 | to marry (of a woman) | 5 |
-| 雷 | thunder | 5 |
-| 银河 | Milky Way | proper |
-| 长城 | Great Wall | proper |
-| 牛郎 | Cowherd | name |
-| 织女 | Weaver Girl | name |
-| 嫦娥 | Chang'e | name |
-| 后羿 | Hou Yi | name |
-| 白素贞 | Bai Suzhen | name |
-| 许仙 | Xu Xian | name |
-| 法海 | Fa Hai | name |
-| 梁山伯 | Liang Shanbo | name |
-| 祝英台 | Zhu Yingtai | name |
-| 孟姜女 | Meng Jiangnu | name |
-| 女娲 | Nüwa | name |
-| 愚公 | Yu Gong | name |
-| 精卫 | Jingwei | name |
-| 大禹 | Da Yu | name |
-
----
-
 ## 1. 牛郎织女 · The Cowherd and the Weaver Girl
 
 从前，有一个叫牛郎的年轻人。他从小就失去了父母，跟着哥哥嫂子生活。哥哥嫂子对他非常刻薄——家里最脏最累的活全是牛郎干的，可是他吃的是最差的饭，穿的是最旧的衣服。

@@ -4,34 +4,6 @@
 
 ---
 
-## 生词表 (Vocabulary)
-
-| 词 | 意思 | HSK |
-|---|------|-----|
-| 仙女 | fairy maiden | 4+ |
-| 织 | to weave | 4+ |
-| 牛郎 | cowherd | name |
-| 织女 | weaver girl | name |
-| 嫦娥 | Chang'e | name |
-| 后羿 | Hou Yi | name |
-| 白素贞 | Bai Suzhen | name |
-| 许仙 | Xu Xian | name |
-| 法海 | Fa Hai | name |
-| 梁山伯 | Liang Shanbo | name |
-| 祝英台 | Zhu Yingtai | name |
-| 孟姜女 | Meng Jiangnu | name |
-| 银河 | Milky Way | 4+ |
-| 弓箭 | bow and arrow | 4+ |
-| 蛇 | snake | 4+ |
-| 蝴蝶 | butterfly | 4+ |
-| 长城 | Great Wall | place |
-| 坟 | grave | 4+ |
-| 神仙 | immortal, god | 4+ |
-| 药 | medicine | 2 |
-| 伞 | umbrella | 4+ |
-
----
-
 ## 1. 牛郎织女 · The Cowherd and the Weaver Girl
 
 很久很久以前，有一个年轻人叫牛郎。他很小的时候就没有了父母。他跟着哥哥嫂子一起生活，可是哥哥嫂子对他非常不好。他们让牛郎每天干最多的活，吃最少的饭。
