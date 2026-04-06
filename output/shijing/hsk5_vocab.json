@@ -1,0 +1,596 @@
+{
+  "book": "shijing",
+  "level": "hsk5",
+  "sections": [
+    {
+      "title": "生词表",
+      "words": [
+        {
+          "word": "民间",
+          "pinyin": "mínjiān",
+          "意思": "folk, among the people"
+        },
+        {
+          "word": "描写",
+          "pinyin": "miáoxiě",
+          "意思": "to describe"
+        },
+        {
+          "word": "比",
+          "pinyin": "bǐ",
+          "意思": "metaphor, comparison"
+        },
+        {
+          "word": "兴",
+          "pinyin": "xìng",
+          "意思": "evocation, association"
+        },
+        {
+          "word": "意思",
+          "pinyin": "yìsi",
+          "意思": "meaning, imagery"
+        },
+        {
+          "word": "表达",
+          "pinyin": "biǎodá",
+          "意思": "to express feelings"
+        },
+        {
+          "word": "感动",
+          "pinyin": "gǎndòng",
+          "意思": "to be moved"
+        },
+        {
+          "word": "想念",
+          "pinyin": "xiǎngniàn",
+          "意思": "to miss someone"
+        },
+        {
+          "word": "简单",
+          "pinyin": "jiǎndān",
+          "意思": "simple and unadorned"
+        },
+        {
+          "word": "反复",
+          "pinyin": "fǎnfù",
+          "意思": "repetition; repeatedly"
+        },
+        {
+          "word": "经典",
+          "pinyin": "jīngdiǎn",
+          "意思": "classic, model"
+        },
+        {
+          "word": "深",
+          "pinyin": "shēn",
+          "意思": "profound, deep"
+        }
+      ]
+    },
+    {
+      "title": "生词",
+      "words": [
+        {
+          "word": "关关",
+          "pinyin": "guān guān",
+          "意思": "the cry of ospreys"
+        },
+        {
+          "word": "水草",
+          "pinyin": "shuǐ cǎo",
+          "意思": "water plant"
+        },
+        {
+          "word": "不能睡",
+          "pinyin": "bù néng shuì",
+          "意思": "awake and unable to sleep"
+        },
+        {
+          "word": "翻来翻去",
+          "pinyin": "fān lái fān qù",
+          "意思": "to toss and turn"
+        },
+        {
+          "word": "音乐",
+          "pinyin": "yīn yuè",
+          "意思": "music"
+        },
+        {
+          "word": "高兴",
+          "pinyin": "gāo xìng",
+          "意思": "happy, glad"
+        }
+      ]
+    },
+    {
+      "title": "生词",
+      "words": [
+        {
+          "word": "苍苍",
+          "pinyin": "cāng cāng",
+          "意思": "lush and grey-green"
+        },
+        {
+          "word": "白",
+          "pinyin": "bái",
+          "意思": "white"
+        },
+        {
+          "word": "从下面走",
+          "pinyin": "cóng xiàmian zǒu",
+          "意思": "to go upstream"
+        },
+        {
+          "word": "从上面走",
+          "pinyin": "cóng shàngmian zǒu",
+          "意思": "to go downstream"
+        },
+        {
+          "word": "那边",
+          "pinyin": "nà biān",
+          "意思": "the other side"
+        },
+        {
+          "word": "中间",
+          "pinyin": "zhōng jiān",
+          "意思": "middle"
+        }
+      ]
+    },
+    {
+      "title": "生词",
+      "words": [
+        {
+          "word": "夭夭",
+          "pinyin": "yāo yāo",
+          "意思": "young and beautiful"
+        },
+        {
+          "word": "灼灼",
+          "pinyin": "zhuó zhuó",
+          "意思": "brilliant, bright"
+        },
+        {
+          "word": "花",
+          "pinyin": "huā",
+          "意思": "flower"
+        },
+        {
+          "word": "果",
+          "pinyin": "guǒ",
+          "意思": "fruit"
+        },
+        {
+          "word": "叶",
+          "pinyin": "yè",
+          "意思": "leaf"
+        },
+        {
+          "word": "归",
+          "pinyin": "guī",
+          "意思": "to marry (of a woman)"
+        }
+      ]
+    },
+    {
+      "title": "生词",
+      "words": [
+        {
+          "word": "薇",
+          "pinyin": "wēi",
+          "意思": "fern, edible wild plant"
+        },
+        {
+          "word": "外面的人",
+          "pinyin": "wài mian de rén",
+          "意思": "northern invaders"
+        },
+        {
+          "word": "树叶",
+          "pinyin": "shù yè",
+          "意思": "tree leaf"
+        },
+        {
+          "word": "大雪",
+          "pinyin": "dà xuě",
+          "意思": "heavy snow"
+        },
+        {
+          "word": "悲伤",
+          "pinyin": "bēi shāng",
+          "意思": "sorrow, grief"
+        },
+        {
+          "word": "慢",
+          "pinyin": "màn",
+          "意思": "slow, sluggish"
+        }
+      ]
+    },
+    {
+      "title": "生词",
+      "words": [
+        {
+          "word": "硕",
+          "pinyin": "shuò",
+          "意思": "big, large"
+        },
+        {
+          "word": "黍",
+          "pinyin": "shǔ",
+          "意思": "millet"
+        },
+        {
+          "word": "快乐",
+          "pinyin": "kuài lè",
+          "意思": "happy land"
+        },
+        {
+          "word": "辛苦",
+          "pinyin": "xīn kǔ",
+          "意思": "hard work"
+        },
+        {
+          "word": "哭",
+          "pinyin": "kū",
+          "意思": "to cry"
+        },
+        {
+          "word": "走",
+          "pinyin": "zǒu",
+          "意思": "to leave"
+        }
+      ]
+    },
+    {
+      "title": "生词",
+      "words": [
+        {
+          "word": "投",
+          "pinyin": "tóu",
+          "意思": "to throw, to give"
+        },
+        {
+          "word": "报",
+          "pinyin": "bào",
+          "意思": "to repay"
+        },
+        {
+          "word": "琼琚",
+          "pinyin": "qióng jū",
+          "意思": "precious jade"
+        },
+        {
+          "word": "琼瑶",
+          "pinyin": "qióng yáo",
+          "意思": "fine jade"
+        },
+        {
+          "word": "琼玖",
+          "pinyin": "qióng jiǔ",
+          "意思": "black jade"
+        },
+        {
+          "word": "一直",
+          "pinyin": "yì zhí",
+          "意思": "forever"
+        }
+      ]
+    },
+    {
+      "title": "生词",
+      "words": [
+        {
+          "word": "镗",
+          "pinyin": "tāng",
+          "意思": "sound of drums"
+        },
+        {
+          "word": "独自",
+          "pinyin": "dú zì",
+          "意思": "alone"
+        },
+        {
+          "word": "执",
+          "pinyin": "zhí",
+          "意思": "to hold, to grasp"
+        },
+        {
+          "word": "到老",
+          "pinyin": "dào lǎo",
+          "意思": "to grow old together"
+        },
+        {
+          "word": "太远",
+          "pinyin": "tài yuǎn",
+          "意思": "too far apart"
+        },
+        {
+          "word": "做到",
+          "pinyin": "zuò dào",
+          "意思": "to fulfill"
+        }
+      ]
+    },
+    {
+      "title": "生词",
+      "words": [
+        {
+          "word": "好看",
+          "pinyin": "hǎo kàn",
+          "意思": "beautiful"
+        },
+        {
+          "word": "俟",
+          "pinyin": "sì",
+          "意思": "to wait for"
+        },
+        {
+          "word": "城隅",
+          "pinyin": "chéng yú",
+          "意思": "corner of the city wall"
+        },
+        {
+          "word": "彤管",
+          "pinyin": "tóng guǎn",
+          "意思": "red tube, red flute"
+        },
+        {
+          "word": "荑",
+          "pinyin": "tí",
+          "意思": "a tender grass shoot"
+        },
+        {
+          "word": "着急",
+          "pinyin": "zháo jí",
+          "意思": "anxious"
+        }
+      ]
+    },
+    {
+      "title": "生词",
+      "words": [
+        {
+          "word": "黍",
+          "pinyin": "shǔ",
+          "意思": "millet"
+        },
+        {
+          "word": "离离",
+          "pinyin": "lí lí",
+          "意思": "in rows, growing thickly"
+        },
+        {
+          "word": "慢",
+          "pinyin": "màn",
+          "意思": "slowly"
+        },
+        {
+          "word": "不安",
+          "pinyin": "bù ān",
+          "意思": "anxious"
+        },
+        {
+          "word": "难过",
+          "pinyin": "nán guò",
+          "意思": "sad"
+        },
+        {
+          "word": "天",
+          "pinyin": "tiān",
+          "意思": "sky, heaven"
+        }
+      ]
+    },
+    {
+      "title": "生词",
+      "words": [
+        {
+          "word": "氓",
+          "pinyin": "méng",
+          "意思": "a common man"
+        },
+        {
+          "word": "老实",
+          "pinyin": "lǎo shi",
+          "意思": "honest-looking"
+        },
+        {
+          "word": "墙",
+          "pinyin": "qiáng",
+          "意思": "wall"
+        },
+        {
+          "word": "苦",
+          "pinyin": "kǔ",
+          "意思": "bitter, hard"
+        },
+        {
+          "word": "笑",
+          "pinyin": "xiào",
+          "意思": "to laugh at"
+        },
+        {
+          "word": "到老",
+          "pinyin": "dào lǎo",
+          "意思": "to grow old together"
+        }
+      ]
+    },
+    {
+      "title": "生词",
+      "words": [
+        {
+          "word": "伐",
+          "pinyin": "fá",
+          "意思": "to cut, to chop"
+        },
+        {
+          "word": "檀",
+          "pinyin": "tán",
+          "意思": "sandalwood tree"
+        },
+        {
+          "word": "种",
+          "pinyin": "zhòng",
+          "意思": "to farm"
+        },
+        {
+          "word": "白吃",
+          "pinyin": "bái chī",
+          "意思": "to eat without working"
+        },
+        {
+          "word": "打",
+          "pinyin": "dǎ",
+          "意思": "to hunt"
+        },
+        {
+          "word": "反话",
+          "pinyin": "fǎn huà",
+          "意思": "sarcasm, saying the opposite"
+        }
+      ]
+    },
+    {
+      "title": "生词",
+      "words": [
+        {
+          "word": "星",
+          "pinyin": "xīng",
+          "意思": "star (Antares)"
+        },
+        {
+          "word": "冬天",
+          "pinyin": "dōng tiān",
+          "意思": "winter"
+        },
+        {
+          "word": "衣服",
+          "pinyin": "yī fu",
+          "意思": "clothes"
+        },
+        {
+          "word": "种地",
+          "pinyin": "zhòng dì",
+          "意思": "to farm"
+        },
+        {
+          "word": "叶子",
+          "pinyin": "yè zi",
+          "意思": "leaf"
+        },
+        {
+          "word": "鸟",
+          "pinyin": "niǎo",
+          "意思": "bird"
+        }
+      ]
+    },
+    {
+      "title": "生词",
+      "words": [
+        {
+          "word": "卷耳",
+          "pinyin": "juǎn ěr",
+          "意思": "cocklebur (a plant)"
+        },
+        {
+          "word": "浅",
+          "pinyin": "qiǎn",
+          "意思": "shallow"
+        },
+        {
+          "word": "想念",
+          "pinyin": "xiǎng niàn",
+          "意思": "to miss someone"
+        },
+        {
+          "word": "高山",
+          "pinyin": "gāo shān",
+          "意思": "high mountain"
+        },
+        {
+          "word": "累",
+          "pinyin": "lèi",
+          "意思": "tired"
+        },
+        {
+          "word": "出一口气",
+          "pinyin": "tàn qì",
+          "意思": "to sigh"
+        }
+      ]
+    },
+    {
+      "title": "生词",
+      "words": [
+        {
+          "word": "衿",
+          "pinyin": "jīn",
+          "意思": "collar"
+        },
+        {
+          "word": "青",
+          "pinyin": "qīng",
+          "意思": "blue-green"
+        },
+        {
+          "word": "消息",
+          "pinyin": "xiāo xi",
+          "意思": "message"
+        },
+        {
+          "word": "来回",
+          "pinyin": "lái huí",
+          "意思": "back and forth"
+        },
+        {
+          "word": "城门",
+          "pinyin": "chéng mén",
+          "意思": "city gate"
+        },
+        {
+          "word": "一天",
+          "pinyin": "yì tiān",
+          "意思": "one day"
+        }
+      ]
+    },
+    {
+      "title": "生词",
+      "words": [
+        {
+          "word": "衣服",
+          "pinyin": "yī fu",
+          "意思": "clothes"
+        },
+        {
+          "word": "武器",
+          "pinyin": "wǔ qì",
+          "意思": "weapon"
+        },
+        {
+          "word": "敌人",
+          "pinyin": "dí rén",
+          "意思": "enemy"
+        },
+        {
+          "word": "一起",
+          "pinyin": "yì qǐ",
+          "意思": "together"
+        },
+        {
+          "word": "行动",
+          "pinyin": "xíng dòng",
+          "意思": "to act"
+        },
+        {
+          "word": "出发",
+          "pinyin": "chū fā",
+          "意思": "to depart"
+        }
+      ]
+    }
+  ]
+}
