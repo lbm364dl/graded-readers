@@ -1,0 +1,51 @@
+{
+  "hsk1": {
+    "new_count": 300,
+    "cumulative_count": 300,
+    "from_official": 300,
+    "from_words_only": 0,
+    "from_official_only": 0
+  },
+  "hsk2": {
+    "new_count": 300,
+    "cumulative_count": 600,
+    "from_official": 300,
+    "from_words_only": 0,
+    "from_official_only": 0
+  },
+  "hsk3": {
+    "new_count": 300,
+    "cumulative_count": 900,
+    "from_official": 300,
+    "from_words_only": 0,
+    "from_official_only": 0
+  },
+  "hsk4": {
+    "new_count": 300,
+    "cumulative_count": 1200,
+    "from_official": 300,
+    "from_words_only": 0,
+    "from_official_only": 0
+  },
+  "hsk5": {
+    "new_count": 300,
+    "cumulative_count": 1500,
+    "from_official": 300,
+    "from_words_only": 0,
+    "from_official_only": 0
+  },
+  "hsk6": {
+    "new_count": 300,
+    "cumulative_count": 1800,
+    "from_official": 300,
+    "from_words_only": 0,
+    "from_official_only": 0
+  },
+  "hsk7to9": {
+    "new_count": 1200,
+    "cumulative_count": 3000,
+    "from_official": 1200,
+    "from_words_only": 0,
+    "from_official_only": 29
+  }
+}
