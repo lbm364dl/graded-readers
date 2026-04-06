@@ -4,32 +4,6 @@
 
 ---
 
-## 生词表 (Key Vocabulary)
-
-| 词语 | 拼音 | 意思 |
-|------|------|------|
-| 石头 | shítou | stone, rock |
-| 神仙 | shénxiān | immortal, deity |
-| 人间 | rénjiān | the human world |
-| 府 | fǔ | mansion, residence |
-| 丫鬟 | yāhuan | maidservant |
-| 姑娘 | gūniang | young lady, girl |
-| 命运 | mìngyùn | fate, destiny |
-| 结婚 | jiéhūn | to marry |
-| 花园 | huāyuán | garden |
-| 伤心 | shāngxīn | heartbroken, sad |
-| 脖子 | bózi | neck |
-| 梦 | mèng | dream |
-| 嫁 | jià | to marry (of a woman) |
-| 竹子 | zhúzi | bamboo |
-| 丈夫 | zhàngfu | husband |
-| 妻子 | qīzi | wife |
-| 和尚 | héshang | Buddhist monk |
-| 烧 | shāo | to burn |
-| 宫 | gōng | palace |
-
----
-
 ## 第一章 · 石头的故事
 
 很久很久以前，天上有一块很大的石头。

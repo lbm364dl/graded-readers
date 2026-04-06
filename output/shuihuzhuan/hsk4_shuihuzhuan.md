@@ -4,27 +4,6 @@
 
 ---
 
-## 生词表 (Key Vocabulary)
-
-| 词语 | 拼音 | 意思 |
-|------|------|------|
-| 好汉 | hǎohàn | hero, brave man |
-| 朝廷 | cháotíng | imperial court |
-| 贪官 | tānguān | corrupt official |
-| 官府 | guānfǔ | government office |
-| 江湖 | jiānghú | the martial world |
-| 义气 | yìqì | loyalty, brotherhood |
-| 忠义 | zhōngyì | loyalty and righteousness |
-| 头领 | tóulǐng | leader, chief |
-| 聚义 | jùyì | gather in righteousness |
-| 和尚 | héshang | Buddhist monk |
-| 寨 | zhài | stronghold, camp |
-| 英雄 | yīngxióng | hero |
-| 拳 | quán | fist |
-| 杀 | shā | to kill |
-
----
-
 ## 第一章：高俅发迹
 
 在北宋末年，东京城里有一个年轻人叫高俅。高俅从小不好好学习，也不好好工作。他什么正经事都不会做，每天就知道玩。

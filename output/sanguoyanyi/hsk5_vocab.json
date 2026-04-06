@@ -1,0 +1,223 @@
+{
+  "book": "sanguoyanyi",
+  "level": "hsk5",
+  "sections": [
+    {
+      "title": "生词表 (Vocabulary Notes)",
+      "words": [
+        {
+          "word": "韬光养晦",
+          "pinyin": "tāo guāng yǎng huì",
+          "释义": "to hide one's abilities and bide one's time"
+        },
+        {
+          "word": "摧枯拉朽",
+          "pinyin": "cuī kū lā xiǔ",
+          "释义": "to crush something rotten; effortless destruction"
+        },
+        {
+          "word": "想好办法",
+          "pinyin": "yùn chóu wéi wò",
+          "释义": "to plan strategies from a command tent"
+        },
+        {
+          "word": "屡战屡败",
+          "pinyin": "lǚ zhàn lǚ bài",
+          "释义": "to lose battle after battle"
+        },
+        {
+          "word": "如释重负",
+          "pinyin": "rú shì zhòng fù",
+          "释义": "as if relieved of a heavy burden"
+        },
+        {
+          "word": "赴汤蹈火",
+          "pinyin": "fù tāng dǎo huǒ",
+          "释义": "to go through fire and water"
+        },
+        {
+          "word": "促膝长谈",
+          "pinyin": "cù xī cháng tán",
+          "释义": "to have a long heart-to-heart talk"
+        },
+        {
+          "word": "茅塞顿开",
+          "pinyin": "máo sè dùn kāi",
+          "释义": "to suddenly see the light; enlightenment"
+        },
+        {
+          "word": "用心到最后",
+          "pinyin": "jū gōng jìn cuì",
+          "释义": "to devote oneself completely"
+        },
+        {
+          "word": "相见恨晚",
+          "pinyin": "xiāng jiàn hèn wǎn",
+          "释义": "to regret not having met sooner"
+        },
+        {
+          "word": "如鱼得水",
+          "pinyin": "rú yú dé shuǐ",
+          "释义": "like a fish in water; a perfect match"
+        },
+        {
+          "word": "对有才的人好",
+          "pinyin": "lǐ xián xià shì",
+          "释义": "to treat the worthy with respect"
+        },
+        {
+          "word": "乌合之众",
+          "pinyin": "wū hé zhī zhòng",
+          "释义": "a disorganized mob"
+        },
+        {
+          "word": "挟天子以令诸侯",
+          "pinyin": "xié tiān zǐ yǐ lìng zhū hóu",
+          "释义": "to control the emperor to command the lords"
+        },
+        {
+          "word": "久旱逢甘雨",
+          "pinyin": "jiǔ hàn féng gān yǔ",
+          "释义": "sweet rain after a long drought"
+        }
+      ]
+    },
+    {
+      "title": "生词表（本部分重点词汇）",
+      "words": [
+        {
+          "word": "隐患",
+          "pinyin": "yǐnhuàn",
+          "hsk等级": "5",
+          "释义": "hidden danger"
+        },
+        {
+          "word": "归顺",
+          "pinyin": "guīshùn",
+          "hsk等级": "5",
+          "释义": "to submit, to surrender"
+        },
+        {
+          "word": "倔强",
+          "pinyin": "juéjiàng",
+          "hsk等级": "5",
+          "释义": "stubborn"
+        },
+        {
+          "word": "低头",
+          "pinyin": "qūfú",
+          "hsk等级": "5",
+          "释义": "to yield, to submit"
+        },
+        {
+          "word": "偷偷放的兵",
+          "pinyin": "fúbīng",
+          "hsk等级": "5",
+          "释义": "ambush troops"
+        },
+        {
+          "word": "骂",
+          "pinyin": "wǔrǔ",
+          "hsk等级": "5",
+          "释义": "humiliation, insult"
+        },
+        {
+          "word": "临终",
+          "pinyin": "línzhōng",
+          "hsk等级": "5",
+          "释义": "on one's deathbed"
+        },
+        {
+          "word": "恳切",
+          "pinyin": "kěnqiè",
+          "hsk等级": "5",
+          "释义": "sincere, earnest"
+        },
+        {
+          "word": "唏嘘",
+          "pinyin": "xīxū",
+          "hsk等级": "5",
+          "释义": "to sigh with feeling"
+        },
+        {
+          "word": "哽咽",
+          "pinyin": "gěngyè",
+          "hsk等级": "5",
+          "释义": "to choke with sobs"
+        },
+        {
+          "word": "粮草",
+          "pinyin": "liángcǎo",
+          "hsk等级": "5",
+          "释义": "army provisions"
+        },
+        {
+          "word": "瞠目结舌",
+          "pinyin": "chēngmùjiéshé",
+          "hsk等级": "5+",
+          "释义": "dumbstruck"
+        },
+        {
+          "word": "功亏一篑",
+          "pinyin": "gōngkuīyīkuì",
+          "hsk等级": "5+",
+          "释义": "to fail at the last step"
+        },
+        {
+          "word": "用心到最后",
+          "pinyin": "jūgōngjìncuì",
+          "hsk等级": "5+",
+          "释义": "to devote oneself fully"
+        },
+        {
+          "word": "禳星",
+          "pinyin": "ránxīng",
+          "hsk等级": "文言",
+          "释义": "star-extending ritual"
+        },
+        {
+          "word": "枭雄",
+          "pinyin": "xiāoxióng",
+          "hsk等级": "5+",
+          "释义": "formidable hero"
+        },
+        {
+          "word": "篡位",
+          "pinyin": "cuànwèi",
+          "hsk等级": "5+",
+          "释义": "to usurp the throne"
+        },
+        {
+          "word": "傀儡",
+          "pinyin": "kuǐlěi",
+          "hsk等级": "5",
+          "释义": "puppet"
+        },
+        {
+          "word": "禅让",
+          "pinyin": "shànràng",
+          "hsk等级": "5+",
+          "释义": "to abdicate in favor of"
+        },
+        {
+          "word": "颠沛流离",
+          "pinyin": "diānpèiliúlí",
+          "hsk等级": "5+",
+          "释义": "homeless and wandering"
+        },
+        {
+          "word": "桀骜不驯",
+          "pinyin": "jiè'àobùxún",
+          "hsk等级": "5+",
+          "释义": "unruly and untamable"
+        },
+        {
+          "word": "荡气回肠",
+          "pinyin": "dàngqìhuícháng",
+          "hsk等级": "5+",
+          "释义": "soul-stirring"
+        }
+      ]
+    }
+  ]
+}

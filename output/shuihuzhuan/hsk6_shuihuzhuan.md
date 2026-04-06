@@ -4,25 +4,6 @@
 
 ---
 
-## 生词表 (Key Vocabulary)
-
-| 词语 | 拼音 | 意思 |
-|------|------|------|
-| 好汉 | hǎohàn | hero, brave man |
-| 朝廷 | cháotíng | imperial court |
-| 贪官 | tānguān | corrupt official |
-| 官府 | guānfǔ | government office |
-| 江湖 | jiānghú | the martial world |
-| 义气 | yìqì | loyalty, brotherhood |
-| 忠义 | zhōngyì | loyalty and righteousness |
-| 聚义 | jùyì | gather in righteousness |
-| 好汉 | hǎohàn | brave man, hero |
-| 招安 | zhāo'ān | government amnesty |
-| 替天行道 | tì tiān xíng dào | act on behalf of Heaven |
-| 杀 | shā | to kill |
-
----
-
 ## 第一章：乱世
 
 北宋末年，天下已经乱了很久了。

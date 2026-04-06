@@ -4,31 +4,6 @@
 
 ---
 
-## 生词表 (Key Vocabulary)
-
-| 词语 | 拼音 | 意思 |
-|------|------|------|
-| 好汉 | hǎohàn | hero, brave man |
-| 官府 | guānfǔ | government office |
-| 朝廷 | cháotíng | imperial court |
-| 贪官 | tānguān | corrupt official |
-| 老虎 | lǎohǔ | tiger |
-| 兄弟 | xiōngdì | brothers |
-| 义气 | yìqì | loyalty, brotherhood |
-| 头领 | tóulǐng | leader, chief |
-| 英雄 | yīngxióng | hero |
-| 江湖 | jiānghú | the martial world |
-| 和尚 | héshang | Buddhist monk |
-| 刀 | dāo | knife, blade |
-| 寨 | zhài | stronghold, camp |
-| 聚义 | jùyì | gather in righteousness |
-| 忠义 | zhōngyì | loyalty and righteousness |
-| 杀 | shā | to kill |
-| 箭 | jiàn | arrow |
-| 拳 | quán | fist |
-
----
-
 ## 第一章：坏官当道
 
 宋朝的时候，中国有一个很大的问题。

@@ -4,33 +4,6 @@
 
 ---
 
-## 生词表 (Key Vocabulary)
-
-| 词语 | 拼音 | 意思 |
-|------|------|------|
-| 石头 | shítou | stone, rock |
-| 猴子 | hóuzi | monkey |
-| 瀑布 | pùbù | waterfall |
-| 山洞 | shāndòng | cave |
-| 师父 | shīfu | master, teacher |
-| 本领 | běnlǐng | skill, ability |
-| 变化 | biànhuà | transformation, change |
-| 武器 | wǔqì | weapon |
-| 金箍棒 | jīn gū bàng | golden-banded staff |
-| 天宫 | tiān gōng | heavenly palace |
-| 仙桃 | xiān táo | immortal peach |
-| 和尚 | héshang | monk |
-| 经书 | jīngshū | scriptures |
-| 妖怪 | yāoguài | demon, monster |
-| 紧箍咒 | jǐn gū zhòu | tightening headband spell |
-| 火眼金睛 | huǒ yǎn jīn jīng | golden fiery eyes |
-| 取经 | qǔ jīng | obtain scriptures |
-| 佛祖 | Fózǔ | Buddha |
-| 观音 | Guānyīn | Guanyin (Bodhisattva) |
-| 徒弟 | túdì | disciple, student |
-
----
-
 ## 第一章：石猴出世
 
 很久很久以前，在一个美丽的地方，有一座很高很高的山。这座山叫花果山。
