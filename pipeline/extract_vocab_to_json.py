@@ -107,7 +107,7 @@ def extract_and_strip(md_path: Path) -> tuple[str, list[dict]]:
         r"主要概念|主要人物|Key Concepts|Main Characters|"
         r"字词注释|逐字注释|词汇扩展|文言语法要点|"
         r"Vocabulary List|"
-        r"語注|ことば|古語総まとめ|古語文法まとめ|主要語注|"
+        r"語注|古語注|ことば|古語総まとめ|古語文法まとめ|主要語注|"
         r"重要な和歌|参考文献)",
         re.IGNORECASE
     )
