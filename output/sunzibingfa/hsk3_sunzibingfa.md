@@ -4,28 +4,6 @@
 
 ---
 
-## 生词表 (Key Vocabulary)
-
-| 词语 | 拼音 | 意思 |
-|------|------|------|
-| 兵法 | bīngfǎ | art of war, military strategy |
-| 将军 | jiāngjūn | general (military) |
-| 士兵 | shìbīng | soldier |
-| 敌人 | dírén | enemy |
-| 战争 | zhànzhēng | war |
-| 攻击 | gōngjī | to attack |
-| 防守 | fángshǒu | to defend |
-| 地形 | dìxíng | terrain |
-| 间谍 | jiàndié | spy |
-| 计谋 | jìmóu | strategy, scheme |
-| 虚实 | xūshí | weakness and strength |
-| 粮草 | liángcǎo | provisions, supplies |
-| 火攻 | huǒgōng | fire attack |
-| 侦察 | zhēnchá | reconnaissance |
-| 伏兵 | fúbīng | ambush troops |
-
----
-
 ## 第一章 · 孙武其人
 
 两千五百年前，中国正处在一个战争不断的时代。那个时候，中国不是一个统一的国家，而是有很多小国，比如齐国、楚国、燕国、赵国、魏国、韩国、秦国等等。这些国家经常打仗，互相攻击。

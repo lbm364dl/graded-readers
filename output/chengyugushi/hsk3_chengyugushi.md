@@ -4,31 +4,6 @@
 
 ---
 
-## 生词表 (Key Vocabulary)
-
-| 词语 | 拼音 | 意思 |
-|------|------|------|
-| 成语 | chéngyǔ | idiom, set phrase |
-| 农夫 | nóngfū | farmer |
-| 兔子 | tùzi | rabbit |
-| 树桩 | shùzhuāng | tree stump |
-| 苗 | miáo | seedling |
-| 蛇 | shé | snake |
-| 井 | jǐng | well (water well) |
-| 青蛙 | qīngwā | frog |
-| 老虎 | lǎohǔ | tiger |
-| 狐狸 | húli | fox |
-| 大象 | dàxiàng | elephant |
-| 盲人 | mángrén | blind person |
-| 将军 | jiāngjūn | general (military) |
-| 士兵 | shìbīng | soldier |
-| 愚公 | Yúgōng | Foolish Old Man (name) |
-| 智叟 | Zhìsǒu | Wise Old Man (name) |
-| 矛 | máo | spear |
-| 盾 | dùn | shield |
-
----
-
 ## 守株待兔 · Waiting by a Stump for a Rabbit
 
 从前，有一个农夫。他每天在田里干活儿，种东西。他的生活很简单。

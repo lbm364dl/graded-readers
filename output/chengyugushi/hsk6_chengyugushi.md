@@ -4,53 +4,6 @@
 
 ---
 
-## 生词表 (Key Vocabulary)
-
-| 词语 | 拼音 | 意思 |
-|------|------|------|
-| 成语 | chéngyǔ | idiom, set phrase |
-| 典故 | diǎngù | classical allusion |
-| 农夫 | nóngfū | farmer |
-| 蛇 | shé | snake |
-| 青蛙 | qīngwā | frog |
-| 老虎 | lǎohǔ | tiger |
-| 狐狸 | húli | fox |
-| 将军 | jiāngjūn | general (military) |
-| 士兵 | shìbīng | soldier |
-| 矛 | máo | spear |
-| 盾 | dùn | shield |
-| 大象 | dàxiàng | elephant |
-| 盲人 | mángrén | blind person |
-| 树桩 | shùzhuāng | tree stump |
-| 兔子 | tùzi | rabbit |
-| 龟 | guī | turtle, tortoise |
-| 鹿 | lù | deer |
-| 愚公 | Yúgōng | Foolish Old Man (name) |
-| 韩信 | Hán Xìn | Han Xin (military genius) |
-| 项羽 | Xiàng Yǔ | Xiang Yu (warlord) |
-| 勾践 | Gōu Jiàn | Goujian (king of Yue) |
-| 苏秦 | Sū Qín | Su Qin (strategist) |
-| 孙敬 | Sūn Jìng | Sun Jing (scholar) |
-| 赵括 | Zhào Kuò | Zhao Kuo (inexperienced general) |
-| 赵王 | Zhào Wáng | King of Zhao |
-| 蔺相如 | Lìn Xiàngrú | Lin Xiangru (statesman) |
-| 廉颇 | Lián Pō | Lian Po (general) |
-| 伯乐 | Bólè | Bole (horse judge) |
-| 楚王 | Chǔ Wáng | King of Chu |
-| 晏子 | Yànzǐ | Yanzi (diplomat) |
-| 吕蒙 | Lǚ Méng | Lu Meng (general) |
-| 孙权 | Sūn Quán | Sun Quan (ruler) |
-| 曹操 | Cáo Cāo | Cao Cao (warlord) |
-| 诸葛亮 | Zhūgě Liàng | Zhuge Liang (strategist) |
-| 刘备 | Liú Bèi | Liu Bei (ruler) |
-| 乐广 | Yuè Guǎng | Yue Guang (official) |
-| 叶公 | Yè Gōng | Lord Ye |
-| 秦王 | Qín Wáng | King of Qin |
-| 齐王 | Qí Wáng | King of Qi |
-| 吴王 | Wú Wáng | King of Wu |
-
----
-
 ## 守株待兔 · Waiting by a Stump for a Rabbit
 
 春秋时期，宋国有一个农夫，以种地为生。他的田位于一片树林的边上，田边有一个突出地面的老树桩。
