@@ -1,8 +1,3 @@
-# 诗经 (The Book of Songs)
-
-**HSK Level 3**
-
----
 
 ## 关于诗经
 

@@ -1,8 +1,3 @@
-# 成语故事 (Chinese Idiom Stories)
-
-**HSK Level 2**
-
----
 
 ## 拔苗助长
 

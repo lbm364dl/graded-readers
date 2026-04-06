@@ -1,8 +1,3 @@
-# 古文观止 (Treasury of Classical Chinese Prose)
-
-**HSK Level 4**
-
----
 
 ## 1. 《古文观止》简介
 

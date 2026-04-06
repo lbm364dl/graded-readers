@@ -1,8 +1,3 @@
-# 宋词 (Song Dynasty Ci Poetry)
-
-**HSK Level 3**
-
----
 
 ## 1. 水调歌头 — 苏轼
 

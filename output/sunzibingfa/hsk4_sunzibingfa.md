@@ -1,8 +1,3 @@
-# 孙子兵法 (The Art of War)
-
-**HSK Level 4**
-
----
 
 ## 第一章 · 始计
 

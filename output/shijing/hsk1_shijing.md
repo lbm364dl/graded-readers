@@ -1,7 +1,3 @@
-# 诗经 (The Book of Songs)
-
-**HSK Level 1**
-
 **这本书很老。这里有八个小歌。**
 
 ---

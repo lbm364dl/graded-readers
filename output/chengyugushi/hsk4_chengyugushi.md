@@ -1,8 +1,3 @@
-# 成语故事 · 十五个历史故事 (Chinese Idiom Stories)
-
-**HSK Level 4**
-
----
 
 ## 守株待兔 · Waiting by a Stump for a Rabbit
 

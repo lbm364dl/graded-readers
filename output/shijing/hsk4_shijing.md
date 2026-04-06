@@ -1,8 +1,3 @@
-# 诗经 (Appreciation of The Book of Songs)
-
-**HSK Level 4**
-
----
 
 ## 1. 关雎（国风 · 周南）
 

@@ -1,8 +1,3 @@
-# 红楼梦 (Dream of the Red Chamber)
-
-**HSK Level 3**
-
----
 
 ## 第一章 · 石头的故事
 

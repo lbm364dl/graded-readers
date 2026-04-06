@@ -1,8 +1,3 @@
-# 三国演义 (Romance of the Three Kingdoms)
-
-**HSK Level 6**
-
----
 
 ## 第一章：天下将乱
 

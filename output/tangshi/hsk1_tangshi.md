@@ -1,7 +1,3 @@
-# 中国古诗 (Chinese Poems)
-
-**HSK Level 1**
-
 这本书有十个中国的歌。
 
 ---

@@ -1,8 +1,3 @@
-# 世说新语 (A New Account of Tales of the World)
-
-**HSK Level 4**
-
----
 
 ## 1. 《世说新语》简介
 

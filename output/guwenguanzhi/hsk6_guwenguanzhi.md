@@ -1,8 +1,3 @@
-# 古文观止 (Treasury of Classical Chinese Prose)
-
-**HSK Level 6**
-
----
 
 ## 一、古文的美学原则
 

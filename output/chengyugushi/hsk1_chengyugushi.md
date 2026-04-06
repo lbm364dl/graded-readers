@@ -1,8 +1,3 @@
-# 成语故事 · 五个小故事 (Chinese Idiom Stories)
-
-**HSK Level 1**
-
----
 
 ## 守株待兔 · Wait by a Tree for a Rabbit
 

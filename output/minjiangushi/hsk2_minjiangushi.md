@@ -1,8 +1,3 @@
-# 中国民间故事 (Chinese Folk Tales)
-
-**HSK Level 2**
-
----
 
 ## 1. 牛郎织女
 

@@ -1,8 +1,3 @@
-# 论语 (The Analects)
-
-**HSK Level 3**
-
----
 
 ## 1. 学而不思则罔 (Learning Without Thinking)
 

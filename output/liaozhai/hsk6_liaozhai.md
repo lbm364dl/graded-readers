@@ -1,8 +1,3 @@
-# 聊斋志异 (Strange Tales from a Chinese Studio)
-
-**HSK Level 6**
-
----
 
 ## 一、画皮
 

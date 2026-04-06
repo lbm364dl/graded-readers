@@ -1,8 +1,3 @@
-# 水浒传 (Water Margin)
-
-**HSK Level 3**
-
----
 
 ## 第一章：坏官当道
 

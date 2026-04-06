@@ -1,8 +1,3 @@
-# 世说新语 (A New Account of Tales of the World)
-
-**HSK Level 5**
-
----
 
 ## 1. 魏晋风度的文化背景
 

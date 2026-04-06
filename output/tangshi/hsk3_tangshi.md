@@ -1,8 +1,3 @@
-# 中国古诗 (Chinese Classical Poems)
-
-**HSK Level 3**
-
----
 
 ## 1. 静夜思 — 李白
 

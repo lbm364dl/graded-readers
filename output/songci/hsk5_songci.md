@@ -1,7 +1,3 @@
-# 宋词赏析 (Appreciation of Song Ci Poetry)
-
-**HSK Level 5**
-
 **原词：**
 
 ---

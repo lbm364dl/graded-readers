@@ -1,7 +1,3 @@
-# 诗经 (The Book of Songs)
-
-**HSK Level 2**
-
 这里有八个诗。看看这些诗说了什么。
 
 ---

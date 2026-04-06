@@ -1,8 +1,3 @@
-# 三国演义 (Romance of the Three Kingdoms)
-
-**HSK Level 3**
-
----
 
 ## 第一章：桃园三结义
 

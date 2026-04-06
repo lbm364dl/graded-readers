@@ -1,7 +1,3 @@
-# 宋词赏析 (Appreciation of Song Dynasty Ci Poetry)
-
-**HSK Level 4**
-
 **原词：**
 
 ---

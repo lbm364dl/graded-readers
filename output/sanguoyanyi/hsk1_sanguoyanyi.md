@@ -1,8 +1,3 @@
-# 三国的故事 (The Story of Three Kingdoms)
-
-**HSK Level 1**
-
----
 
 ## 第一章 · 三个好朋友
 

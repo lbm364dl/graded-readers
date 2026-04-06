@@ -1,8 +1,3 @@
-# 诗经 (Appreciation of The Book of Songs)
-
-**HSK Level 6**
-
----
 
 ## 前言
 

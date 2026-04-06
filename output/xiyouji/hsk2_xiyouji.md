@@ -1,8 +1,3 @@
-# 西游记 (Journey to the West)
-
-**HSK Level 2**
-
----
 
 ## 第一 猴子
 

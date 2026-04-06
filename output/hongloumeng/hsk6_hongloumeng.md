@@ -1,8 +1,3 @@
-# 红楼梦 (Dream of the Red Chamber)
-
-**HSK Level 6**
-
----
 
 ## 第一章 · 石头记的由来
 

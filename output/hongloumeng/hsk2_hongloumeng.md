@@ -1,8 +1,3 @@
-# 红楼梦 (Dream of the Red Chamber)
-
-**HSK Level 2**
-
----
 
 ## 第一 · 一块玉
 

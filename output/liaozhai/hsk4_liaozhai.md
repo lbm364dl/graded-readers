@@ -1,8 +1,3 @@
-# 聊斋志异 (Strange Tales from a Chinese Studio)
-
-**HSK Level 4**
-
----
 
 ## 1. 画皮 (The Painted Skin)
 

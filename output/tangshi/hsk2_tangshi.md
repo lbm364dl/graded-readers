@@ -1,7 +1,3 @@
-# 中国古诗 (Chinese Classical Poems)
-
-**HSK Level 2**
-
 有：原文、生词、意思。
 
 ---

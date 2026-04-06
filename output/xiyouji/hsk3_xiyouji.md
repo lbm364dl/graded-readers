@@ -1,8 +1,3 @@
-# 西游记 (Journey to the West)
-
-**HSK Level 3**
-
----
 
 ## 第一章：石猴出世
 

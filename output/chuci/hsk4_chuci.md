@@ -1,8 +1,3 @@
-# 楚辞理解和学习 (Appreciation of Songs of Chu)
-
-**HSK Level 4**
-
----
 
 ## 1. 楚国与楚文化
 

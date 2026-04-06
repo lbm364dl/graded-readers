@@ -1,8 +1,3 @@
-# 三国演义 (Romance of the Three Kingdoms)
-
-**HSK Level 2**
-
----
 
 ## 第一 三个好兄弟
 

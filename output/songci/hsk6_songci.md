@@ -1,7 +1,3 @@
-# 宋词赏析 (Appreciation of Song Ci Poetry)
-
-**HSK Level 6**
-
 > 词者，诗之余也。然其言长短不齐，高下相间，变化无穷，实为一代之文学。
 
 ---

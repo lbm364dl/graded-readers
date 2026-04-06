@@ -1,8 +1,3 @@
-# 西游记 (Journey to the West)
-
-**HSK Level 6**
-
----
 
 ## 第一回：混沌初开，石猴出世
 

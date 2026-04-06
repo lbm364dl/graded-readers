@@ -1,8 +1,3 @@
-# 古文观止 (Treasury of Classical Chinese Prose)
-
-**HSK Level 1**
-
----
 
 ## 1. 桃花源 (The Peach Blossom Spring)
 

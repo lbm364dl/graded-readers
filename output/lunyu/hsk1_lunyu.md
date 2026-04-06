@@ -1,8 +1,3 @@
-# 论语 (The Analects)
-
-**HSK Level 1**
-
----
 
 ## 1. 学习 (Learning)
 

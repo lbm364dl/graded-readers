@@ -1,8 +1,3 @@
-# 中国古诗赏析 (Appreciation of Chinese Classical Poetry)
-
-**HSK Level 5**
-
----
 
 ## 目录 (Table of Contents)
 

@@ -1,7 +1,3 @@
-# 宋词 (Song Dynasty Ci Poetry)
-
-**HSK Level 1**
-
 这本书有十个歌。
 
 ---

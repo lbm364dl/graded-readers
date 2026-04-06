@@ -1,8 +1,3 @@
-# 论语 (The Analects)
-
-**HSK Level 4**
-
----
 
 ## 1. 孔子的教育理想 (Confucius's Educational Ideals)
 

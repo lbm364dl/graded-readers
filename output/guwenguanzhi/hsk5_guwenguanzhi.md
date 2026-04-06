@@ -1,8 +1,3 @@
-# 古文观止 (Treasury of Classical Chinese Prose)
-
-**HSK Level 5**
-
----
 
 ## 1. 古文的传统与意义
 

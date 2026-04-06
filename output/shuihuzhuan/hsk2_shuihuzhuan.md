@@ -1,8 +1,3 @@
-# 水浒传 (Water Margin)
-
-**HSK Level 2**
-
----
 
 ## 第一 · 不好的人和好人
 

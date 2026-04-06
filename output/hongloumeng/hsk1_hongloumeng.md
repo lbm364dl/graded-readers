@@ -1,8 +1,3 @@
-# 红楼梦 · 大家的家 (Dream of the Red Chamber)
-
-**HSK Level 1**
-
----
 
 ## 第一章 · 一个男孩子
 

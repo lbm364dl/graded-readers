@@ -1,8 +1,3 @@
-# 孙子兵法 (The Art of War)
-
-**HSK Level 3**
-
----
 
 ## 第一章 · 孙武其人
 

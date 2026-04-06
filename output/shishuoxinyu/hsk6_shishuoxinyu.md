@@ -1,8 +1,3 @@
-# 世说新语 (A New Account of Tales of the World)
-
-**HSK Level 6**
-
----
 
 ## 一、刘义庆的编撰意图
 

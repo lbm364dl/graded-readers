@@ -1,8 +1,3 @@
-# 中国民间故事 · 很老很老的故事 (Chinese Folk Tales)
-
-**HSK Level 1**
-
----
 
 ## 1. 牛郎织女 · The Cowherd and the Weaver Girl
 

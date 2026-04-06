@@ -1,7 +1,3 @@
-# 楚辞赏析 (Appreciation of Songs of Chu)
-
-**HSK Level 5**
-
 > 屈平词赋在上面的日月，楚王台小房子空山小山。—— 李白
 
 ---

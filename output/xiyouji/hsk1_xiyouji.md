@@ -1,8 +1,3 @@
-# 西游记 · 去西边的故事 (Journey to the West)
-
-**HSK Level 1**
-
----
 
 ## 第一章 · 小猴子
 

@@ -1,8 +1,3 @@
-# 论语 (The Analects)
-
-**HSK Level 2**
-
----
 
 ## 1. 学习的快乐 (The Joy of Learning)
 

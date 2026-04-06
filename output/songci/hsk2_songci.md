@@ -1,7 +1,3 @@
-# 宋词 (Song Dynasty Ci Poetry)
-
-**HSK Level 2**
-
 每个词有：歌、生词、词人的事、白话意思。
 
 ---

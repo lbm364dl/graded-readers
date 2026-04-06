@@ -1,8 +1,3 @@
-# 世说新语 (A New Account of Tales of the World)
-
-**HSK Level 1**
-
----
 
 ## 1. 管宁和华歆 (Guan Ning and Hua Xin)
 
