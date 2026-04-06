@@ -1,8 +1,3 @@
-# 竹取物語 (The Tale of the Bamboo Cutter)
-
-**JLPT Level N3**
-
----
 
 ## 1. 竹取の翁と光る竹
 
@@ -297,22 +292,3 @@
 物語の最後で「富士」という名前の由来が語られています。「富士（ふじ）」と「不死（ふし）」の音が似ていることから、こういった言い伝えが生まれました。
 
 ---
-
-## ことば (Vocabulary)
-
-| 日本語 | よみかた | 意味 |
-|--------|----------|------|
-| 竹林 | ちくりん | bamboo grove |
-| 節 | ふし | joint (of bamboo) |
-| 翁 | おきな | old man |
-| 屋敷 | やしき | manor, estate |
-| 豊か | ゆたか | prosperous, rich |
-| 求婚する | きゅうこんする | to propose marriage |
-| 課題 | かだい | task, challenge |
-| 偽物 | にせもの | fake, imitation |
-| 報酬 | ほうしゅう | reward, payment |
-| 豪語する | ごうごする | to boast |
-| 天人 | てんにん | celestial being |
-| 天の羽衣 | あまのはごろも | celestial feather robe |
-| 不死の薬 | ふしのくすり | elixir of immortality |
-| 駿河 | するが | Suruga (old province, Shizuoka) |

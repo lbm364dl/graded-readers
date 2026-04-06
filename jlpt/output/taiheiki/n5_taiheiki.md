@@ -1,8 +1,3 @@
-# 太平記 (Chronicle of Great Peace)
-
-**JLPT Level N5**
-
----
 
 ## 1. 後醍醐天皇 (Emperor Go-Daigo)
 
@@ -191,20 +186,5 @@
 「たいへい」は「へいわ」のいみです。でも、このじだいはへいわではありませんでした。
 
 くすのきまさしげはいまも日本でとてもゆうめいです。
-
----
-
-## ことば (Vocabulary)
-
-| 日本語 | よみかた | いみ |
-|--------|--------|------|
-| 天皇 | てんのう | emperor |
-| ばくふ | ばくふ | military government |
-| ぶし | ぶし | samurai |
-| しろ | しろ | castle |
-| ぐん | ぐん | army |
-| ちょうてい | ちょうてい | imperial court |
-| きぞく | きぞく | nobles |
-| ごほうび | ごほうび | reward |
 
 ---

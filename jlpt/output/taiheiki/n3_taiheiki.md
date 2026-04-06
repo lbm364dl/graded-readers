@@ -1,8 +1,3 @@
-# 太平記 (Chronicle of Great Peace)
-
-**JLPT Level N3**
-
----
 
 ## 1. 後醍醐天皇の決意——天皇が自ら治める夢 (Emperor Go-Daigo's Resolve: The Dream of Imperial Rule)
 
@@ -203,18 +198,5 @@
 太平記は戦いの物語です。しかし、同時にまさしげのちゅうぎと裏切り、正義と力の物語でもあります。楠木正成のちゅうぎ、足利尊氏の野心、後醍醐天皇の望み。それぞれの人物が自分の信じるもののために戦いました。
 
 太平記は全部で四十巻の大きい本です。日本の古い文学の中で一番大きい物語の一つです。
-
----
-
-## ことば (Vocabulary)
-
-| 日本語 | 読み方 | 意味 |
-|--------|--------|------|
-| ばくふ | ばくふ | shogunate, military government |
-| しょうぐん | しょうぐん | shogun, military commander |
-| ちょうてい | ちょうてい | imperial court |
-| ぶし | ぶし | samurai, warrior |
-| ちゅうぎ | ちゅうぎ | loyalty, devotion |
-| 裏切り | うらぎり | betrayal |
 
 ---

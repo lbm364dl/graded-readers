@@ -1,8 +1,3 @@
-# 竹取物語 (The Tale of the Bamboo Cutter)
-
-**JLPT Level N1**
-
----
 
 ## 1. 竹取の翁と光る竹 — 原文と解説
 

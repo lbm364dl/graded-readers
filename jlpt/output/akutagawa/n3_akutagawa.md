@@ -1,8 +1,3 @@
-# 芥川龍之介短編集 (Akutagawa Short Stories)
-
-**JLPT Level N3**
-
----
 
 ## 1. 蜘蛛の糸（くものいと）
 

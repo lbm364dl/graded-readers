@@ -1,8 +1,3 @@
-# 源氏物語 (The Tale of Genji)
-
-**JLPT Level N5**
-
----
 
 ## 1. 桐壺 — きれいな子ども (Kiritsubo: A Beautiful Child)
 

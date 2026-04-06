@@ -1,8 +1,3 @@
-# 平家物語 (The Tale of the Heike)
-
-**JLPT Level N3**
-
----
 
 ## 1. 諸行無常——物語の始まり
 
@@ -293,22 +288,5 @@
 これらの場面はどれも、美しいものと悲しいことが一緒に存在しています。それが「もののあはれ」です。
 
 日本では桜の花が特別に愛されています。なぜなら桜は美しく咲くけれどすぐに散るからです。平家物語の全体が、まるで桜のような物語なのかもしれません。
-
----
-
-## ことば・文化メモ (Vocabulary and Cultural Notes)
-
-| 日本語 | 読み方 | 意味 |
-|--------|--------|------|
-| 令旨 | りょうじ | imperial decree (by a prince) |
-| 入水 | じゅすい | to drown oneself |
-| 出家 | しゅっけ | to enter the priesthood |
-| 武家政権 | ぶけせいけん | warrior government |
-| 鎌倉幕府 | かまくらばくふ | Kamakura Shogunate |
-| 諸行無常 | しょぎょうむじょう | impermanence of all things |
-| 盛者必衰 | じょうしゃひっすい | the mighty must fall |
-| もののあはれ | もののあはれ | pathos of things |
-| 逆落とし | さかおとし | charging down a slope |
-| 辞世の句 | じせいのく | death poem / last words |
 
 ---

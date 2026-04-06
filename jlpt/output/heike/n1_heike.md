@@ -1,8 +1,3 @@
-# 平家物語 (The Tale of the Heike)
-
-**JLPT Level N1**
-
----
 
 ## 1. 祇園精舎——無常の宣言 (Gion Shōja: A Declaration of Impermanence)
 
@@ -560,54 +555,5 @@
 「ただ春の夜の夢のごとし」——この言葉は物語の冒頭に置かれているが、物語を読み終えた者には、この言葉が壇の浦の海の底で完結するものとして感じられる。短く美しかった一族の命は、春の夜の夢のように終わった。しかしその夢の美しさは、夢が終わった後も語り継がれ続けている。
 
 それが平家物語という作品の持つ、逆説的な不滅性である。
-
----
-
-## 古語文法まとめ (Classical Grammar Summary)
-
-| 語形 | 文法 | 現代語相当 |
-|------|------|-----------|
-| けり | 過去・詠嘆の助動詞 | 〜た / 〜であったことよ |
-| なり | 断定・伝聞の助動詞 | 〜だ / 〜とのことだ |
-| たり | 完了・存続の助動詞 | 〜てある / 〜ている |
-| ぬ | 完了の助動詞 | 〜てしまった |
-| む | 推量・意志の助動詞 | 〜だろう / 〜しよう |
-| べし | 当然・推量・意志 | 〜はずだ / 〜すべきだ |
-| ず | 打消しの助動詞 | 〜ない |
-| まじ | 打消推量・禁止 | 〜まい / 〜てはならない |
-| ぞ〜ける | 係り結び（詠嘆） | 〜であったことよ（強調） |
-| こそ〜けれ | 係り結び（強調） | 〜なのだが（强調・逆接） |
-| いと | 副詞 | とても・非常に |
-| いかに | 副詞・感動詞 | どのように / ああ |
-| あはれ | 感動詞・形容動詞語幹 | 哀れだ・ああ |
-| おはす | 尊敬動詞 | いらっしゃる |
-| 候ふ | 丁寧の補助動詞 | です・ます（武家語） |
-
----
-
-## 主要語注 (Key Vocabulary Notes)
-
-| 語句 | 読み | 意味・解説 |
-|------|------|-----------|
-| 諸行無常 | しょぎょうむじょう | Impermanence of all conditioned phenomena |
-| 盛者必衰 | じょうしゃひっすい | The prosperous must inevitably decline |
-| もののあはれ | もののあはれ | Pathos of things; bittersweet aesthetic sensitivity |
-| 無常観 | むじょうかん | Worldview centered on impermanence |
-| 武士道 | ぶしどう | Way of the warrior |
-| 琵琶法師 | びわほうし | Blind biwa-playing Buddhist monks who recited the Heike |
-| 平曲 | へいきょく | Musical recitation of the Heike |
-| 当道 | とうどう | Guild organization of blind musicians |
-| 覚一本 | かくいちぼん | Standard 12-volume redaction of the Heike (ca. 1371) |
-| 灌頂の巻 | かんじょうのまき | Final chapter of Kenreimon'in's narrative |
-| 六道 | ろくどう | Six realms of Buddhist transmigration |
-| 浄土 | じょうど | Pure Land; Buddhist paradise |
-| 末法 | まっぽう | Age of Decline of the Buddhist Dharma |
-| 公達 | きんだち | Young aristocratic-born warrior of refined culture |
-| 三種の神器 | さんしゅのじんぎ | The three imperial regalia (mirror, sword, jewel) |
-| 入水 | じゅすい | Ritual self-drowning |
-| 自害 | じがい | Warrior's self-killing |
-| 善知識 | ぜんちしき | Teacher/condition that leads one toward enlightenment |
-| 一方流 | いちかたりゅう | School of biwa performance founded by Kakuichi |
-| 辞世の句 | じせいのく | Death poem; final words of a warrior or poet |
 
 ---

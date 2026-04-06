@@ -1,8 +1,3 @@
-# 坊っちゃん (Botchan)
-
-**JLPT Level N5**
-
----
 
 ## 1. わるいこども (A Naughty Child)
 

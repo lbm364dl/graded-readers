@@ -1,0 +1,191 @@
+{
+  "book": "heike",
+  "level": "n1",
+  "sections": [
+    {
+      "title": "古語文法まとめ (Classical Grammar Summary)",
+      "words": [
+        {
+          "語形": "けり",
+          "文法": "過去・詠嘆の助動詞",
+          "現代語相当": "〜た / 〜であったことよ"
+        },
+        {
+          "語形": "なり",
+          "文法": "断定・伝聞の助動詞",
+          "現代語相当": "〜だ / 〜とのことだ"
+        },
+        {
+          "語形": "たり",
+          "文法": "完了・存続の助動詞",
+          "現代語相当": "〜てある / 〜ている"
+        },
+        {
+          "語形": "ぬ",
+          "文法": "完了の助動詞",
+          "現代語相当": "〜てしまった"
+        },
+        {
+          "語形": "む",
+          "文法": "推量・意志の助動詞",
+          "現代語相当": "〜だろう / 〜しよう"
+        },
+        {
+          "語形": "べし",
+          "文法": "当然・推量・意志",
+          "現代語相当": "〜はずだ / 〜すべきだ"
+        },
+        {
+          "語形": "ず",
+          "文法": "打消しの助動詞",
+          "現代語相当": "〜ない"
+        },
+        {
+          "語形": "まじ",
+          "文法": "打消推量・禁止",
+          "現代語相当": "〜まい / 〜てはならない"
+        },
+        {
+          "語形": "ぞ〜ける",
+          "文法": "係り結び（詠嘆）",
+          "現代語相当": "〜であったことよ（強調）"
+        },
+        {
+          "語形": "こそ〜けれ",
+          "文法": "係り結び（強調）",
+          "現代語相当": "〜なのだが（强調・逆接）"
+        },
+        {
+          "語形": "いと",
+          "文法": "副詞",
+          "現代語相当": "とても・非常に"
+        },
+        {
+          "語形": "いかに",
+          "文法": "副詞・感動詞",
+          "現代語相当": "どのように / ああ"
+        },
+        {
+          "語形": "あはれ",
+          "文法": "感動詞・形容動詞語幹",
+          "現代語相当": "哀れだ・ああ"
+        },
+        {
+          "語形": "おはす",
+          "文法": "尊敬動詞",
+          "現代語相当": "いらっしゃる"
+        },
+        {
+          "語形": "候ふ",
+          "文法": "丁寧の補助動詞",
+          "現代語相当": "です・ます（武家語）"
+        }
+      ]
+    },
+    {
+      "title": "主要語注 (Key Vocabulary Notes)",
+      "words": [
+        {
+          "語句": "諸行無常",
+          "読み": "しょぎょうむじょう",
+          "意味・解説": "Impermanence of all conditioned phenomena"
+        },
+        {
+          "語句": "盛者必衰",
+          "読み": "じょうしゃひっすい",
+          "意味・解説": "The prosperous must inevitably decline"
+        },
+        {
+          "語句": "もののあはれ",
+          "読み": "もののあはれ",
+          "意味・解説": "Pathos of things; bittersweet aesthetic sensitivity"
+        },
+        {
+          "語句": "無常観",
+          "読み": "むじょうかん",
+          "意味・解説": "Worldview centered on impermanence"
+        },
+        {
+          "語句": "武士道",
+          "読み": "ぶしどう",
+          "意味・解説": "Way of the warrior"
+        },
+        {
+          "語句": "琵琶法師",
+          "読み": "びわほうし",
+          "意味・解説": "Blind biwa-playing Buddhist monks who recited the Heike"
+        },
+        {
+          "語句": "平曲",
+          "読み": "へいきょく",
+          "意味・解説": "Musical recitation of the Heike"
+        },
+        {
+          "語句": "当道",
+          "読み": "とうどう",
+          "意味・解説": "Guild organization of blind musicians"
+        },
+        {
+          "語句": "覚一本",
+          "読み": "かくいちぼん",
+          "意味・解説": "Standard 12-volume redaction of the Heike (ca. 1371)"
+        },
+        {
+          "語句": "灌頂の巻",
+          "読み": "かんじょうのまき",
+          "意味・解説": "Final chapter of Kenreimon'in's narrative"
+        },
+        {
+          "語句": "六道",
+          "読み": "ろくどう",
+          "意味・解説": "Six realms of Buddhist transmigration"
+        },
+        {
+          "語句": "浄土",
+          "読み": "じょうど",
+          "意味・解説": "Pure Land; Buddhist paradise"
+        },
+        {
+          "語句": "末法",
+          "読み": "まっぽう",
+          "意味・解説": "Age of Decline of the Buddhist Dharma"
+        },
+        {
+          "語句": "公達",
+          "読み": "きんだち",
+          "意味・解説": "Young aristocratic-born warrior of refined culture"
+        },
+        {
+          "語句": "三種の神器",
+          "読み": "さんしゅのじんぎ",
+          "意味・解説": "The three imperial regalia (mirror, sword, jewel)"
+        },
+        {
+          "語句": "入水",
+          "読み": "じゅすい",
+          "意味・解説": "Ritual self-drowning"
+        },
+        {
+          "語句": "自害",
+          "読み": "じがい",
+          "意味・解説": "Warrior's self-killing"
+        },
+        {
+          "語句": "善知識",
+          "読み": "ぜんちしき",
+          "意味・解説": "Teacher/condition that leads one toward enlightenment"
+        },
+        {
+          "語句": "一方流",
+          "読み": "いちかたりゅう",
+          "意味・解説": "School of biwa performance founded by Kakuichi"
+        },
+        {
+          "語句": "辞世の句",
+          "読み": "じせいのく",
+          "意味・解説": "Death poem; final words of a warrior or poet"
+        }
+      ]
+    }
+  ]
+}

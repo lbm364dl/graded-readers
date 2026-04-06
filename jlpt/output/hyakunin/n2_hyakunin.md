@@ -1,8 +1,3 @@
-# 百人一首 (One Hundred Poets, One Poem Each)
-
-**JLPT Level N2**
-
----
 
 ## はじめに——「もののあはれ」の詩学
 

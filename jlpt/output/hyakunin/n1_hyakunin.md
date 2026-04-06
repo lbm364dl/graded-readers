@@ -1,8 +1,3 @@
-# 百人一首 (One Hundred Poets, One Poem Each)
-
-**JLPT Level N1**
-
----
 
 ## 序——定家の美学と「有心体」
 

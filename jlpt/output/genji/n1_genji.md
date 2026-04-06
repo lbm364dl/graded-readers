@@ -1,8 +1,3 @@
-# 源氏物語 (The Tale of Genji)
-
-**JLPT Level N1**
-
----
 
 ## 1. 桐壺 — 帝の執愛と物語の始発 (Kiritsubo: The Emperor's Obsessive Love and the Genesis of the Tale)
 

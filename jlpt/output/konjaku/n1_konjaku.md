@@ -1,8 +1,3 @@
-# 今昔物語集 (Tales of Times Now Past)
-
-**JLPT Level N1**
-
----
 
 ## 今昔物語集——その成立・構造・文学的地位
 

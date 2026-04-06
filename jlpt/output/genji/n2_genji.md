@@ -1,8 +1,3 @@
-# 源氏物語 (The Tale of Genji)
-
-**JLPT Level N2**
-
----
 
 ## 1. 桐壺 — 寵愛と破滅の種 (Kiritsubo: The Seeds of Favor and Ruin)
 

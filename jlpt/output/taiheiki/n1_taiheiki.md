@@ -1,8 +1,3 @@
-# 太平記 (Chronicle of Great Peace)
-
-**JLPT Level N1**
-
----
 
 ## 1. 後醍醐天皇の決意——笠置山と「帝王の学」 (Emperor Go-Daigo's Resolve: Kasagiyama and the "Learning of Emperors")
 
@@ -530,27 +525,5 @@
 文体においても両者は異なる。平家物語は琵琶法師の語りを前提とした韻律的な散文であり、音楽性に富んでいる。太平記の散文はより説明的で論理的であり、歴史的な解説や思想的な議論を多く含む。太平記は漢語の使用が多く、中国の故事を頻繁に引用する。これは作者の儒教的教養の反映であり、太平記を「知識人の文学」として特徴づけている。
 
 両作品に共通するのは、敗者への深い共感である。平家物語は平家一族の滅亡を哀惜をもって描き、太平記は楠木正成の戦死を最大の感動の場面として描く。日本の軍記物語の伝統は、勝者よりも敗者に物語の核心を見出す傾向があり、これは日本文学における「敗者の美学」の重要な源泉である。
-
----
-
-## ことば (Vocabulary)
-
-| 日本語 | 読み方 | 意味 |
-|--------|--------|------|
-| 践祚 | せんそ | imperial succession |
-| 叡慮 | えいりょ | imperial judgment |
-| 悪党 | あくとう | armed bands outside the manor system |
-| 綸旨 | りんじ | imperial decree |
-| 御教書 | みぎょうしょ | warrior government's official document |
-| 六波羅探題 | ろくはらたんだい | Kamakura shogunate's Kyoto office |
-| 係り結び | かかりむすび | bound-focus construction in classical Japanese |
-| 行宮 | あんぐう | temporary imperial palace |
-| 魂魄 | こんぱく | spirit of the deceased |
-| 神皇正統記 | じんのうしょうとうき | Chronicle of the Direct Descent of Gods and Sovereigns |
-| 七生報国 | しちしょうほうこく | serving one's country through seven lives |
-| 下克上 | げこくじょう | the low overcoming the high |
-| 嚆矢 | こうし | pioneer, first example |
-| 大義名分 | たいぎめいぶん | righteous cause, moral justification |
-| 軍記物語 | ぐんきものがたり | war chronicle / military tale |
 
 ---

@@ -1,8 +1,3 @@
-# 宮沢賢治詩集 (Miyazawa Kenji Poetry)
-
-**JLPT Level N3**
-
----
 
 ## はじめに
 

@@ -1,8 +1,3 @@
-# 吾輩は猫である (I Am a Cat)
-
-**JLPT Level N3**
-
----
 
 ## 1. 名前のない猫 (A Cat With No Name)
 

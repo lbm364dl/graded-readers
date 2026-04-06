@@ -1,8 +1,3 @@
-# 日本昔ばなし (Japanese Folk Tales)
-
-**JLPT Level N3**
-
----
 
 ## 1. 桃太郎
 

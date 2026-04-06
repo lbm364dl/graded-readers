@@ -1,8 +1,3 @@
-# 宮沢賢治詩集 (Miyazawa Kenji Poetry)
-
-**JLPT Level N1**
-
----
 
 ## 序論——宮沢賢治の詩的宇宙
 

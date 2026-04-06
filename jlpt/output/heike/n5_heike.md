@@ -1,8 +1,3 @@
-# 平家物語 (The Tale of the Heike)
-
-**JLPT Level N5**
-
----
 
 ## 1. すべてのものは かわる
 
@@ -175,18 +170,3 @@
 平家物語は、つよい ひとも いつか よわくなる、と いう おはなしです。きれいな はなも ちります。それが 「むじょう」です。
 
 ---
-
-## ことば (Vocabulary)
-
-| 日本語 | よみかた | 意味 |
-|--------|----------|------|
-| 武士 | ぶし | warrior, samurai |
-| 平家 | へいけ | the Taira clan |
-| 源氏 | げんじ | the Minamoto clan |
-| 合戦 | かっせん | battle |
-| むじょう | むじょう | impermanence |
-| 天皇 | てんのう | Emperor |
-| おうぎ | おうぎ | folding fan |
-| いかり | いかり | anchor |
-| 壇ノ浦 | だんのうら | Dan-no-ura (place) |
-| かまくらばくふ | かまくらばくふ | Kamakura Shogunate |

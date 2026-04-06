@@ -106,7 +106,9 @@ def extract_and_strip(md_path: Path) -> tuple[str, list[dict]]:
         r"Key Vocabulary|Detailed Vocabulary|Vocabulary|"
         r"主要概念|主要人物|Key Concepts|Main Characters|"
         r"字词注释|逐字注释|词汇扩展|文言语法要点|"
-        r"Vocabulary List)",
+        r"Vocabulary List|"
+        r"語注|ことば|古語総まとめ|古語文法まとめ|主要語注|"
+        r"重要な和歌|参考文献)",
         re.IGNORECASE
     )
 
@@ -219,12 +221,13 @@ def detect_book_metadata(book_dir: Path) -> dict:
     name = book_dir.name
 
     titles = {
+        # Chinese (HSK)
         "chengyugushi": ("成语故事", "Chinese Idiom Stories", "stories"),
         "chuci": ("楚辞", "Songs of Chu", "poetry"),
         "guwenguanzhi": ("古文观止", "Selections of Classical Chinese Prose", "classical_prose"),
         "hongloumeng": ("红楼梦", "Dream of the Red Chamber", "novel"),
         "liaozhai": ("聊斋志异", "Strange Tales from a Chinese Studio", "stories"),
-        "lunyu": ("论语", "The Analerta", "philosophy"),
+        "lunyu": ("论语", "The Analects", "philosophy"),
         "minjiangushi": ("民间故事", "Chinese Folk Tales", "stories"),
         "sanguoyanyi": ("三国演义", "Romance of the Three Kingdoms", "novel"),
         "shijing": ("诗经", "Book of Songs", "poetry"),
@@ -234,13 +237,29 @@ def detect_book_metadata(book_dir: Path) -> dict:
         "sunzibingfa": ("孙子兵法", "The Art of War", "philosophy"),
         "tangshi": ("唐诗", "Tang Dynasty Poetry", "poetry"),
         "xiyouji": ("西游记", "Journey to the West", "novel"),
+        # Japanese (JLPT)
+        "akutagawa": ("芥川龍之介短編集", "Akutagawa Short Stories", "stories"),
+        "botchan": ("坊っちゃん", "Botchan", "novel"),
+        "genji": ("源氏物語", "The Tale of Genji", "novel"),
+        "heike": ("平家物語", "The Tale of the Heike", "novel"),
+        "hyakunin": ("百人一首", "One Hundred Poets", "poetry"),
+        "kaidan": ("怪談", "Ghost Stories", "stories"),
+        "konjaku": ("今昔物語集", "Tales of Times Now Past", "stories"),
+        "kotowaza": ("日本のことわざ", "Japanese Proverbs", "stories"),
+        "merosu": ("走れメロス", "Run, Melos!", "novel"),
+        "miyazawa": ("宮沢賢治作品集", "Miyazawa Kenji Stories", "stories"),
+        "mukashibanashi": ("日本昔話", "Japanese Folk Tales", "stories"),
+        "taiheiki": ("太平記", "Chronicle of Great Peace", "novel"),
+        "taketori": ("竹取物語", "The Tale of the Bamboo Cutter", "novel"),
+        "tsurezure": ("徒然草", "Essays in Idleness", "philosophy"),
+        "wagahai": ("吾輩は猫である", "I Am a Cat", "novel"),
     }
 
     zh, en, book_type = titles.get(name, (name, name, "unknown"))
 
     levels = sorted(
         f.stem.split("_")[0]
-        for f in book_dir.glob("hsk*_*.md")
+        for f in list(book_dir.glob("hsk*_*.md")) + list(book_dir.glob("n*_*.md"))
     )
 
     return {
@@ -275,7 +294,8 @@ def process_book(book_dir: Path):
         print(f"  Created: glossary.json ({sum(len(v) for v in categories.values())} entries)")
 
     # 3. Process each level's .md file
-    for md_path in sorted(book_dir.glob("hsk*_*.md")):
+    md_files = sorted(list(book_dir.glob("hsk*_*.md")) + list(book_dir.glob("n*_*.md")))
+    for md_path in md_files:
         level = md_path.stem.split("_")[0]
 
         cleaned_text, extracted = extract_and_strip(md_path)
@@ -302,12 +322,22 @@ def process_book(book_dir: Path):
 
 
 def main():
-    output_dir = Path(__file__).resolve().parent.parent / "output"
+    base = Path(__file__).resolve().parent.parent
 
+    # Process Chinese (HSK) books
+    output_dir = base / "output"
     for book_dir in sorted(output_dir.iterdir()):
-        if not book_dir.is_dir():
+        if not book_dir.is_dir() or book_dir.name.startswith("_"):
             continue
         process_book(book_dir)
+
+    # Process Japanese (JLPT) books
+    jlpt_output = base / "jlpt" / "output"
+    if jlpt_output.exists():
+        for book_dir in sorted(jlpt_output.iterdir()):
+            if not book_dir.is_dir():
+                continue
+            process_book(book_dir)
 
     print(f"\n{'='*60}")
     print("Done! All books processed.")

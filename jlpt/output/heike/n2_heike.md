@@ -1,8 +1,3 @@
-# 平家物語 (The Tale of the Heike)
-
-**JLPT Level N2**
-
----
 
 ## 1. 祇園精舎——無常の宣言 (Gion Shōja: A Declaration of Impermanence)
 
@@ -283,27 +278,5 @@
 この武士の死に方の美学は、仏教の無常観と深く結びついている。この世は仮の宿であり、死は救いである——という発想がそこにある。死を恐れないこと、しかも美しく死ぬこと——それが平家物語の英雄たちに求められた理想であった。
 
 この美学は後世の日本文化に大きな影響を与え、武士道として体系化され、文学・演劇・映画など様々なジャンルに受け継がれた。
-
----
-
-## 語注・文化メモ (Glossary and Cultural Notes)
-
-| 語句 | 読み方 | 意味・解説 |
-|------|--------|-----------|
-| 諸行無常 | しょぎょうむじょう | All things are impermanent (Buddhist concept) |
-| 盛者必衰 | じょうしゃひっすい | The prosperous must decline |
-| 沙羅双樹 | さらそうじゅ | Sal tree (Buddhist sacred tree; flowers white then brown) |
-| 六波羅 | ろくはら | Kiyomori's base in Kyoto (now Rokuhara Mitsuji area) |
-| 太政大臣 | だいじょうだいじん | Grand Minister (highest court rank) |
-| 令旨 | りょうじ | Imperial decree issued by a prince |
-| 覚一本 | かくいちぼん | Standard 12-volume version of the Heike |
-| 灌頂の巻 | かんじょうのまき | Final chapter of the Heike |
-| 平曲 | へいきょく | Musical recitation of the Heike by biwa priests |
-| もののあはれ | もののあはれ | Pathos, poignant beauty of transience |
-| 鵯越 | ひよどりごえ | Place name; site of Yoshitsune's cliff charge |
-| 坂東武者 | ばんどうむしゃ | Eastern (Kantō) warriors |
-| 六道 | ろくどう | Six realms of Buddhist transmigration |
-| 公達 | きんだち | Young nobleman of aristocratic bearing |
-| 三種の神器 | さんしゅのじんぎ | Mirror, Sword, Jewel — the imperial regalia |
 
 ---

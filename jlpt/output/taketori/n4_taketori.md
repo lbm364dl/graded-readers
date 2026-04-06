@@ -1,8 +1,3 @@
-# 竹取物語 (The Tale of the Bamboo Cutter)
-
-**JLPT Level N4**
-
----
 
 ## 1. 竹取の翁と光る竹
 
@@ -259,22 +254,3 @@
 長い 年月が 過ぎた 今も、富士山は 日本で 一番 高い 山です。そして 竹取物語は 日本で 一番 古い 物語の 一つとして、今も 多くの 人に 読まれています。
 
 ---
-
-## ことば (Vocabulary)
-
-| 日本語 | よみかた | 意味 |
-|--------|----------|------|
-| 竹林 | ちくりん | bamboo grove |
-| 竹取 | たけとり | bamboo cutting |
-| 節 | ふし | joint (of bamboo) |
-| 翁 | おきな | old man (literary) |
-| 蓬莱の玉の枝 | ほうらいのたまのえだ | jewelled branch of Hourai |
-| 火鼠の皮衣 | ひねずみのかわごろも | robe of the fire-rat |
-| 帝 | みかど | the Emperor |
-| 天人 | てんにん | celestial being |
-| 天の羽衣 | あまのはごろも | celestial feather robe |
-| 不死の薬 | ふしのくすり | elixir of immortality |
-| 月の都 | つきのみやこ | capital of the moon |
-| 富士山 | ふじさん | Mt. Fuji |
-| 兵士 | へいし | soldier |
-| 偽物 | にせもの | fake, imitation |

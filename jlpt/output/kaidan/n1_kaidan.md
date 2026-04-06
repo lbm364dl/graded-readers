@@ -1,8 +1,3 @@
-# 怪談 (Ghost Stories)
-
-**JLPT Level N1**
-
----
 
 ## 怪談——その文学的系譜と文化的位相
 

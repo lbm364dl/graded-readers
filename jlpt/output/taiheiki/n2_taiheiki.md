@@ -1,8 +1,3 @@
-# 太平記 (Chronicle of Great Peace)
-
-**JLPT Level N2**
-
----
 
 ## 1. 後醍醐天皇の決意——執念の帝王 (Emperor Go-Daigo's Resolve: An Emperor of Unyielding Will)
 
@@ -277,27 +272,5 @@
 太平記が描く世界は、単純な善悪の物語ではない。後醍醐天皇にも限界があり、足利尊氏にも理があり、楠木正成にも悲劇がある。勝者は安泰を得られず、敗者は後世に名を残す。この複雑な人間模様こそが、太平記を七百年近く読み継がれる作品にしている理由であり、今後も読み継がれるであろう理由である。
 
 太平記の最終巻に「太平」は訪れない。しかし物語の題名が示す「太平」への希求は、乱世を生きた人々の切なる願いそのものであった。戦いの記録を「太平記」と名付けた無名の作者の意図は、おそらく、戦争の悲惨さを記すことによって、二度と同じ過ちが繰り返されないことを祈ることにあったのだろう。
-
----
-
-## ことば (Vocabulary)
-
-| 日本語 | 読み方 | 意味 |
-|--------|--------|------|
-| 得宗 | とくそう | head of the Hōjō clan's main line |
-| 両統迭立 | りょうとうてつりつ | alternation of two imperial lines |
-| 朱子学 | しゅしがく | Neo-Confucianism (Zhu Xi school) |
-| 悪党 | あくとう | armed local bands (medieval term) |
-| 六波羅探題 | ろくはらたんだい | Kyoto office of the Kamakura shogunate |
-| 得宗専制 | とくそうせんせい | autocratic rule by the Hōjō head |
-| 恩賞 | おんしょう | rewards for war merit |
-| 雑訴決断所 | ざっそけつだんしょ | court for lawsuits under Kenmu |
-| 中先代の乱 | なかせんだいのらん | Nakasendai Rebellion |
-| 七生報国 | しちしょうほうこく | serving one's country through seven lives |
-| 三種の神器 | さんしゅのじんぎ | three imperial regalia |
-| 観応の擾乱 | かんのうのじょうらん | Kannō Disturbance |
-| 神皇正統記 | じんのうしょうとうき | Chronicle of the Direct Descent of Gods and Sovereigns |
-| 軍記物語 | ぐんきものがたり | war chronicle / military tale |
-| 敗者の美学 | はいしゃのびがく | the aesthetics of the defeated |
 
 ---

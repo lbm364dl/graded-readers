@@ -1,8 +1,3 @@
-# 日本昔ばなし (Japanese Folk Tales)
-
-**JLPT Level N2**
-
----
 
 ## 1. 桃太郎 — 英雄譚の原型
 

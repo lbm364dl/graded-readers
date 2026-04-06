@@ -1,8 +1,3 @@
-# 坊っちゃん (Botchan)
-
-**JLPT Level N3**
-
----
 
 ## 1. 無鉄砲な少年 (A Reckless Boy)
 

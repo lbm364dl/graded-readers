@@ -1,8 +1,3 @@
-# 源氏物語 (The Tale of Genji)
-
-**JLPT Level N3**
-
----
 
 ## 1. 桐壺 — 帝の悲恋 (Kiritsubo: The Emperor's Tragic Love)
 

@@ -1,8 +1,3 @@
-# 徒然草 (Essays in Idleness)
-
-**JLPT Level N2**
-
----
 
 ## 徒然草の位置づけ
 

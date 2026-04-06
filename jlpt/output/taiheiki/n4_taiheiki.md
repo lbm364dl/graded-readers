@@ -1,8 +1,3 @@
-# 太平記 (Chronicle of Great Peace)
-
-**JLPT Level N4**
-
----
 
 ## 1. 後醍醐天皇の決意 (Emperor Go-Daigo's Resolve)
 
@@ -213,20 +208,5 @@
 太平記はたたかいのものがたりです。しかし、同じときにまさしげのちゅうぎ、たかうじのやしん、後醍醐天皇のりそうのものがたりでもあります。
 
 太平記はぜんぶで四十かんの大きい本です。日本でとてもゆうめいなものがたりの一つです。
-
----
-
-## ことば (Vocabulary)
-
-| 日本語 | よみかた | いみ |
-|--------|--------|------|
-| ばくふ | ばくふ | shogunate, military government |
-| ぶし | ぶし | samurai, warrior |
-| しょうぐん | しょうぐん | shogun, military commander |
-| ちょうてい | ちょうてい | imperial court |
-| きぞく | きぞく | court nobles |
-| ちゅうぎ | ちゅうぎ | loyalty |
-| ごほうび | ごほうび | reward |
-| うらぎり | うらぎり | betrayal |
 
 ---

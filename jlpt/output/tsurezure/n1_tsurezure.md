@@ -1,8 +1,3 @@
-# 徒然草 (Essays in Idleness)
-
-**JLPT Level N1**
-
----
 
 ## 徒然草——成立・作者・文学史的位置
 

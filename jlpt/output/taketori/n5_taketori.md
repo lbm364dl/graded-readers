@@ -1,8 +1,3 @@
-# 竹取物語 (The Tale of the Bamboo Cutter)
-
-**JLPT Level N5**
-
----
 
 ## 1. おじいさんと 光る竹
 
@@ -255,21 +250,3 @@
 いまも 富士山は にほんで いちばん たかい やまです。そして 竹取物語は にほんで いちばん ふるい おはなしの ひとつとして、いまも おおくの ひとに よまれています。
 
 ---
-
-## ことば (Vocabulary)
-
-| 日本語 | よみかた | 意味 |
-|--------|----------|------|
-| 竹林 | ちくりん | bamboo grove |
-| 竹取 | たけとり | bamboo cutting |
-| 月の都 | つきのみやこ | capital of the moon |
-| 天人 | てんにん | celestial being |
-| 天の羽衣 | あまのはごろも | celestial feather robe |
-| 不死の薬 | ふしのくすり | elixir of immortality |
-| 富士山 | ふじさん | Mt. Fuji |
-| りゅう | りゅう | dragon |
-| ほとけさま | ほとけさま | Buddha |
-| にせもの | にせもの | fake, imitation |
-| へいし | へいし | soldier |
-| おうさま | おうさま | king, emperor |
-| けむり | けむり | smoke |
