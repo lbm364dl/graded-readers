@@ -315,6 +315,27 @@ bool _isTappableWord(String text) =>
         (c >= 0x3400 && c <= 0x4DBF) ||
         (c >= 0xF900 && c <= 0xFAFF));
 
+/// Parse a markdown table block into rows of cells.
+List<List<String>> _parseMarkdownTable(String block) {
+  final rows = <List<String>>[];
+  for (final line in block.split('\n')) {
+    final trimmed = line.trim();
+    if (trimmed.isEmpty) continue;
+    // Skip separator rows (|---|---|)
+    if (RegExp(r'^\|[\s\-:]+\|$').hasMatch(trimmed.replaceAll('|', '|').replaceAll(RegExp(r'[^|\-:\s]'), ''))) {
+      // More reliable: check if all cells are just dashes/colons/spaces
+      final cells = trimmed.split('|').where((c) => c.trim().isNotEmpty).toList();
+      if (cells.every((c) => RegExp(r'^[\s\-:]+$').hasMatch(c))) continue;
+    }
+    final cells = trimmed.split('|')
+        .map((c) => c.trim())
+        .where((c) => c.isNotEmpty)
+        .toList();
+    if (cells.isNotEmpty) rows.add(cells);
+  }
+  return rows;
+}
+
 /// Build etymology section for a character (if available).
 Widget _sectionLabel(String text) => Padding(
       padding: const EdgeInsets.only(top: 10, bottom: 4),
@@ -680,16 +701,24 @@ class _TokenEntry {
   });
 }
 
+enum _BlockType { paragraph, heading, subheading, divider, table, blockquote }
+
 class _ParagraphData {
   final String raw;
   final String plainText;
   final bool isHeading;
+  final _BlockType blockType;
+  final int headingLevel; // 1 for ##, 2 for ###
   final List<_TokenEntry> tokens;
+  final List<List<String>>? tableRows; // for table blocks
   _ParagraphData({
     required this.raw,
     required this.plainText,
     required this.isHeading,
+    this.blockType = _BlockType.paragraph,
+    this.headingLevel = 0,
     required this.tokens,
+    this.tableRows,
   });
 }
 
@@ -743,6 +772,7 @@ class _ReaderScreenState extends State<ReaderScreen> {
     final dict = DictionaryService.instance;
     final ch = widget.reader.chapters[chapterIndex];
 
+    // Split content into blocks, handling markdown patterns
     final paragraphTexts = <String>[];
     for (final para in ch.content.split('\n\n')) {
       final trimmed = para.trim();
@@ -758,8 +788,44 @@ class _ReaderScreenState extends State<ReaderScreen> {
       if (pi % 3 == 0) await Future.delayed(Duration.zero);
 
       final raw = paragraphTexts[pi];
-      final tokens = segmentText(raw, dict);
-      final isHeading = raw.startsWith('**') && raw.contains('**');
+
+      // Detect block type from markdown syntax
+      _BlockType blockType = _BlockType.paragraph;
+      int headingLevel = 0;
+      String textToSegment = raw;
+      List<List<String>>? tableRows;
+
+      if (raw == '---' || raw == '***' || raw == '___') {
+        blockType = _BlockType.divider;
+        textToSegment = '';
+      } else if (raw.startsWith('### ')) {
+        blockType = _BlockType.subheading;
+        headingLevel = 2;
+        textToSegment = raw.substring(4);
+      } else if (raw.startsWith('## ')) {
+        blockType = _BlockType.heading;
+        headingLevel = 1;
+        textToSegment = raw.substring(3);
+      } else if (raw.startsWith('> ')) {
+        blockType = _BlockType.blockquote;
+        textToSegment = raw.replaceAll(RegExp(r'^> ?', multiLine: true), '');
+      } else if (raw.startsWith('|') && raw.contains('|')) {
+        blockType = _BlockType.table;
+        tableRows = _parseMarkdownTable(raw);
+        textToSegment = tableRows
+            .map((row) => row.join(' '))
+            .join(' ');
+      } else if (raw.startsWith('**') && raw.endsWith('**') && !raw.substring(2, raw.length - 2).contains('**')) {
+        blockType = _BlockType.heading;
+        headingLevel = 1;
+        textToSegment = raw.substring(2, raw.length - 2);
+      }
+
+      // Strip inline bold markers for segmentation
+      final cleanText = textToSegment.replaceAll('**', '');
+
+      final tokens = cleanText.isEmpty ? <String>[] : segmentText(cleanText, dict);
+      final isHeading = blockType == _BlockType.heading || blockType == _BlockType.subheading;
 
       final tokenEntries = <_TokenEntry>[];
       int charOffset = 0;
@@ -781,7 +847,10 @@ class _ReaderScreenState extends State<ReaderScreen> {
         raw: raw,
         plainText: tokens.join(),
         isHeading: isHeading,
+        blockType: blockType,
+        headingLevel: headingLevel,
         tokens: tokenEntries,
+        tableRows: tableRows,
       ));
     }
 
@@ -1139,13 +1208,35 @@ class _ChapterViewState extends State<_ChapterView> {
   }
 
   Widget _buildParagraph(_ParagraphData para, int highlightIdx) {
-    if (para.isHeading) {
+    // --- Divider ---
+    if (para.blockType == _BlockType.divider) {
       return Padding(
-        padding: const EdgeInsets.only(bottom: 12),
-        child: SelectableText(
-          para.raw.replaceAll('**', ''),
-          style: _cjkTextStyle(
-            fontSize: widget.fontSize - 2,
+        padding: const EdgeInsets.symmetric(vertical: 12),
+        child: Divider(
+          color: widget.isDark ? Colors.grey[700] : Colors.grey[300],
+        ),
+      );
+    }
+
+    // --- Table ---
+    if (para.blockType == _BlockType.table && para.tableRows != null) {
+      return _buildTable(para.tableRows!);
+    }
+
+    // --- Heading / Subheading ---
+    if (para.isHeading) {
+      final fontSize = para.headingLevel <= 1
+          ? widget.fontSize
+          : widget.fontSize - 2;
+      return Padding(
+        padding: EdgeInsets.only(
+          top: para.headingLevel <= 1 ? 16 : 8,
+          bottom: 8,
+        ),
+        child: _buildTappableRichText(
+          para, highlightIdx,
+          styleOverride: _cjkTextStyle(
+            fontSize: fontSize,
             language: widget.language,
             fontWeight: FontWeight.bold,
             color: widget.isDark ? Colors.grey[300] : Colors.grey[700],
@@ -1155,16 +1246,97 @@ class _ChapterViewState extends State<_ChapterView> {
       );
     }
 
-    final baseStyle = _cjkTextStyle(
+    // --- Blockquote ---
+    if (para.blockType == _BlockType.blockquote) {
+      return Padding(
+        padding: const EdgeInsets.only(bottom: 16),
+        child: Container(
+          decoration: BoxDecoration(
+            border: Border(
+              left: BorderSide(
+                color: widget.isDark ? Colors.grey[600]! : Colors.grey[400]!,
+                width: 3,
+              ),
+            ),
+          ),
+          padding: const EdgeInsets.only(left: 12),
+          child: _buildTappableRichText(
+            para, highlightIdx,
+            styleOverride: _cjkTextStyle(
+              fontSize: widget.fontSize,
+              language: widget.language,
+              height: 1.8,
+              color: widget.isDark ? Colors.grey[400] : Colors.grey[600],
+            ),
+          ),
+        ),
+      );
+    }
+
+    // --- Regular paragraph ---
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16),
+      child: _buildTappableRichText(para, highlightIdx),
+    );
+  }
+
+  /// Build rich text with tappable CJK words, handling inline **bold** markers.
+  Widget _buildTappableRichText(
+    _ParagraphData para,
+    int highlightIdx, {
+    TextStyle? styleOverride,
+  }) {
+    final baseStyle = styleOverride ?? _cjkTextStyle(
       fontSize: widget.fontSize,
       language: widget.language,
       height: 1.8,
       color: widget.isDark ? Colors.grey[200] : AppTheme.textPrimary,
     );
 
+    // Check if the raw text has inline bold markers (not a standalone bold heading)
+    final hasBold = para.raw.contains('**') && para.blockType == _BlockType.paragraph;
+
     final spans = <TextSpan>[];
+    // Track bold state by checking raw text positions
+    // For simplicity, apply bold to the entire token-level span list
+    // based on whether the raw text contains ** markers
+    bool inBold = false;
+    int rawPos = 0;
+
     for (final token in para.tokens) {
-      // Tappable: contains kanji or is a multi-char kana word (not a lone particle)
+      // Advance rawPos through the original text to track ** markers
+      if (hasBold) {
+        // Find this token's text in raw starting from rawPos
+        final searchText = para.raw;
+        while (rawPos < searchText.length) {
+          if (searchText.startsWith('**', rawPos)) {
+            inBold = !inBold;
+            rawPos += 2;
+          } else {
+            break;
+          }
+        }
+        // Skip past this token in the raw text
+        final tokenIdx = searchText.indexOf(token.text, rawPos);
+        if (tokenIdx >= 0) {
+          // Check for ** between rawPos and tokenIdx
+          var scanPos = rawPos;
+          while (scanPos < tokenIdx) {
+            if (searchText.startsWith('**', scanPos)) {
+              inBold = !inBold;
+              scanPos += 2;
+            } else {
+              scanPos++;
+            }
+          }
+          rawPos = tokenIdx + token.text.length;
+        }
+      }
+
+      final tokenStyle = inBold
+          ? baseStyle.copyWith(fontWeight: FontWeight.bold)
+          : baseStyle;
+
       if (token.globalIndex >= 0 && DictionaryService.instance.isReady) {
         final isHighlighted = token.globalIndex == highlightIdx;
         final recognizer = TapGestureRecognizer()
@@ -1174,7 +1346,7 @@ class _ChapterViewState extends State<_ChapterView> {
 
         spans.add(TextSpan(
           text: token.text,
-          style: baseStyle.copyWith(
+          style: tokenStyle.copyWith(
             backgroundColor: isHighlighted
                 ? AppTheme.primary.withValues(alpha: 0.2)
                 : null,
@@ -1182,14 +1354,60 @@ class _ChapterViewState extends State<_ChapterView> {
           recognizer: recognizer,
         ));
       } else {
-        spans.add(TextSpan(text: token.text, style: baseStyle));
+        spans.add(TextSpan(text: token.text, style: tokenStyle));
       }
     }
 
+    return SelectableText.rich(
+      TextSpan(children: spans),
+    );
+  }
+
+  /// Build a table widget from parsed rows.
+  Widget _buildTable(List<List<String>> rows) {
+    if (rows.isEmpty) return const SizedBox.shrink();
+
+    final headerStyle = _cjkTextStyle(
+      fontSize: widget.fontSize - 2,
+      language: widget.language,
+      fontWeight: FontWeight.bold,
+      color: widget.isDark ? Colors.grey[300] : Colors.grey[700],
+      height: 1.5,
+    );
+    final cellStyle = _cjkTextStyle(
+      fontSize: widget.fontSize - 2,
+      language: widget.language,
+      height: 1.5,
+      color: widget.isDark ? Colors.grey[200] : AppTheme.textPrimary,
+    );
+    final borderColor = widget.isDark ? Colors.grey[700]! : Colors.grey[300]!;
+
     return Padding(
       padding: const EdgeInsets.only(bottom: 16),
-      child: SelectableText.rich(
-        TextSpan(children: spans),
+      child: Table(
+        border: TableBorder.all(color: borderColor, width: 0.5),
+        defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+        children: rows.asMap().entries.map((entry) {
+          final isHeader = entry.key == 0;
+          return TableRow(
+            decoration: isHeader
+                ? BoxDecoration(
+                    color: widget.isDark
+                        ? Colors.grey[800]
+                        : Colors.grey[100],
+                  )
+                : null,
+            children: entry.value.map((cell) {
+              return Padding(
+                padding: const EdgeInsets.all(8),
+                child: Text(
+                  cell,
+                  style: isHeader ? headerStyle : cellStyle,
+                ),
+              );
+            }).toList(),
+          );
+        }).toList(),
       ),
     );
   }
