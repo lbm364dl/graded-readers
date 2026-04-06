@@ -135,18 +135,30 @@ def extract_content(lines: list[str]) -> str:
     return text
 
 
-def parse_book_file(filepath: Path, book_key: str):
+def load_metadata(book_dir: Path) -> dict | None:
+    """Load metadata.json if it exists."""
+    meta_path = book_dir / "metadata.json"
+    if meta_path.exists():
+        return json.loads(meta_path.read_text("utf-8"))
+    return None
+
+
+def parse_book_file(filepath: Path, book_key: str, metadata: dict | None):
     """Parse a single graded reader markdown file."""
     text = filepath.read_text(encoding="utf-8")
-    lines = text.split("\n")
-
-    # Extract title from first line
-    ja_title, en_title = parse_title_line(lines[0])
 
     # Extract level from filename (n1_book.md -> n1)
     fname = filepath.stem  # e.g., "n5_taketori"
     level_key = fname.split("_")[0]  # "n5"
     internal_level = JLPT_TO_INTERNAL.get(level_key, 1)
+
+    # Get titles from metadata, fallback to parsing first line
+    if metadata:
+        ja_title = metadata.get("title_zh", book_key)
+        en_title = metadata.get("title_en", book_key)
+    else:
+        lines = text.split("\n")
+        ja_title, en_title = parse_title_line(lines[0])
 
     # Parse chapters
     chapters = parse_chapters(text)
@@ -217,8 +229,9 @@ def main():
         if not book_dir.is_dir():
             continue
         book_key = book_dir.name
+        metadata = load_metadata(book_dir)
         for md_file in sorted(book_dir.glob("n[1-5]_*.md")):
-            entry = parse_book_file(md_file, book_key)
+            entry = parse_book_file(md_file, book_key, metadata)
             if entry["chapters"]:
                 entries.append(entry)
 
