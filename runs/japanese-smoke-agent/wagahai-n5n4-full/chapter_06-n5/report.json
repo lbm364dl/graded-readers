@@ -1,0 +1,30 @@
+{
+  "status": "complete",
+  "scenes": 4,
+  "japanese_chars": 1493,
+  "chapter_cjk": 1493,
+  "scene_verdicts": {
+    "scene_01": "pass",
+    "scene_02": "pass",
+    "scene_03": "pass",
+    "scene_04": "pass"
+  },
+  "chapter_review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "chapter_review_verdict": "pass",
+  "scene_attempts": {
+    "scene_01": 1,
+    "scene_02": 1,
+    "scene_03": 3,
+    "scene_04": 1
+  },
+  "unresolved_scenes": []
+}

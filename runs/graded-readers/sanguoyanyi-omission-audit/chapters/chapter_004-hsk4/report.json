@@ -1,0 +1,78 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_004-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 660,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "直接称少帝为“刘辩”，原文此处未明确写出姓名。",
+      "classification": "material",
+      "reason": "原文始终称其为“少帝”，未明确写出“刘辩”这一姓名；这是未经本场景支持的具体身份名称添加。",
+      "required_fix": "删除“刘辩”，改为仅称“少帝”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "直接称少帝为“刘辩”，原文此处未明确写出姓名。",
+      "classification": "material",
+      "reason": "原文始终称其为“少帝”，未明确写出“刘辩”这一姓名；这是未经本场景支持的具体身份名称添加。",
+      "required_fix": "删除“刘辩”，改为仅称“少帝”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": []
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 648,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [
+          "将原文仅称为“陈留王协”的人物扩写为“刘协”，原文未在本章明确给出其姓氏。"
+        ],
+        "distortions": [
+          "“逼少帝和何太后交出玺绶”将原文中仅少帝被解去璽綬、何太后被命去服候敕的不同处置合并并改写为二人共同交出玺绶。"
+        ],
+        "language_problems": [],
+        "verdict": "revise",
+        "omissions": []
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 660,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_058-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1418,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将马腾的遇害者具体写成“马休等人”；原文只明确说马腾与其弟、马岱的二弟遇害，并未点名马休。",
+      "classification": "material",
+      "reason": "“马休”是原文未点名的具体遇害者，属于真实的 unsupported fact。",
+      "required_fix": "将“马休等人”改为原文明确的马腾、侍郎黄奎及马超的二弟等遇害者，不点名马休。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将马腾的遇害者具体写成“马休等人”；原文只明确说马腾与其弟、马岱的二弟遇害，并未点名马休。",
+      "classification": "material",
+      "reason": "“马休”是原文未点名的具体遇害者，属于真实的 unsupported fact。",
+      "required_fix": "将“马休等人”改为原文明确的马腾、侍郎黄奎及马超的二弟等遇害者，不点名马休。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1285,
+      "review": {
+        "source_fidelity": 7.8,
+        "naturalness": 8.6,
+        "readability": 8.8,
+        "material_omissions": [
+          "删去了张昭建议派鲁肃求救的关键理由：鲁肃曾受刘备恩惠，且刘备是东吴女婿，因此刘备有义务相助。",
+          "删去了刘备与马腾共同接受密诏、发誓诛曹的关系背景，削弱了刘备联络马超的动机和说服力。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "“孙权又已被孤立”不符合原文；孙权当时正与刘备结为唇齿，并准备向刘备求救。",
+          "“马腾、侍郎黄奎和马超的二弟等人因谋害曹操事泄”将马超二弟也归入谋害曹操者；原文只明确马腾与黄奎谋反，二弟只是同时遇害。",
+          "“二人有共同的血仇”混淆了刘备与马腾共同受密诏的政治关系和马超个人的杀父之仇。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 1351,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "将原文“鲁肃有恩于玄德”（鲁肃曾施恩于刘备）改成“鲁肃曾受刘备恩惠”，颠倒了恩惠关系。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 1381,
+      "review": {
+        "source_fidelity": 8.2,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "将曹操对曹洪、徐晃的军令改成“逾期失关也要治罪”。原文是十日内失关斩首，十日后失关则不追究二人责任，责任期限被颠倒。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 4,
+      "candidate_cjk": 1382,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [
+          "潼关失守后，龐德追过潼关并遇到曹仁军队，救出曹洪等人；删去后曹洪后来返回曹操营中并拦截马超的衔接略显突兀。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 5,
+      "candidate_cjk": 1420,
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [
+          "韩遂、庞德出击受困后，马超曾率军接应、击败曹军并救出大半西凉军，这一关键战局转折被省略。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "“曹操与马超交战时”将原文中曹操观战、由禁等将领迎战马超，表述成曹操本人直接与马超交战。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 6,
+      "candidate_cjk": 1418,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

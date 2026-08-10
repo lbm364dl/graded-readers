@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_112-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 288,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "“王真被带回后遭蜀军乱枪杀”不准确：傅佥擒住王真后带回本阵，李鹏来救，傅佥将王真掷于地并击杀李鹏，王真随后被蜀军乱枪刺死，并非被带回后才遭杀。",
+      "classification": "material",
+      "reason": "The accepted scene changes the chronology by placing Wang Zhen's death immediately after his return, before Li Peng's rescue attempt and death; this materially distorts the sequence of events.",
+      "required_fix": "改为：傅佥擒住王真后带回本阵；李鹏来救，傅佥将王真掷于地并击杀李鹏，王真随后被蜀军乱枪刺死。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "“王真被带回后遭蜀军乱枪杀”不准确：傅佥擒住王真后带回本阵，李鹏来救，傅佥将王真掷于地并击杀李鹏，王真随后被蜀军乱枪刺死，并非被带回后才遭杀。",
+      "classification": "material",
+      "reason": "The accepted scene changes the chronology by placing Wang Zhen's death immediately after his return, before Li Peng's rescue attempt and death; this materially distorts the sequence of events.",
+      "required_fix": "改为：傅佥擒住王真后带回本阵；李鹏来救，傅佥将王真掷于地并击杀李鹏，王真随后被蜀军乱枪刺死。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8,
+    "readability": 8,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 288,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 8,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

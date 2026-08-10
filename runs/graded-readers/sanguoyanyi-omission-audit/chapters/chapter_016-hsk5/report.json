@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_016-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 875,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了张绣与刘表结盟，以及意图夺取天子的表述细节。",
+      "classification": "material",
+      "reason": "原文明确交代张绣结连刘表，并以犯阙夺驾为行动意图；结盟关系和政治目的构成张绣威胁曹操、引发出兵的关键背景。",
+      "required_fix": "补充张绣与刘表结盟，以及其意图犯阙夺取天子的内容。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了张绣与刘表结盟，以及意图夺取天子的表述细节。",
+      "classification": "material",
+      "reason": "原文明确交代张绣结连刘表，并以犯阙夺驾为行动意图；结盟关系和政治目的构成张绣威胁曹操、引发出兵的关键背景。",
+      "required_fix": "补充张绣与刘表结盟，以及其意图犯阙夺取天子的内容。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 875,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

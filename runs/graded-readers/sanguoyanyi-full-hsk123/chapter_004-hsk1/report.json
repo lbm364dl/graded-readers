@@ -1,0 +1,29 @@
+{
+  "status": "complete",
+  "scenes": 1,
+  "chapter_cjk": 185,
+  "scene_verdicts": {
+    "scene_01": "pass"
+  },
+  "scene_attempts": {
+    "scene_01": 4
+  },
+  "unresolved_scenes": [],
+  "omission_audit_promotion": {
+    "promoted_at": "2026-08-07T09:56:47.708141+00:00",
+    "candidate": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/chapters/chapter_004-hsk1/candidate.txt",
+    "candidate_sha256": "f79501b7fa7122f8ed2e7814e3dce0655cb3357f20fb61e9e9713876e65ac082",
+    "original_backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_004-hsk1/chapter.before-omission-repair.txt",
+    "original_sha256": "67f0317c794814865f4709c79b6f5f8f682193df0efc8bea3138d6373ec46657",
+    "annotations_invalidated": [],
+    "annotation_rerun_required": true
+  },
+  "continuity_promotion": {
+    "promoted_at": "2026-08-07T11:49:55.604084+00:00",
+    "candidate_sha256": "10363b972f94608d87adaea5f725f2749297bbd7038f3d848e0be623af133e77",
+    "original_backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_004-hsk1/chapter.pre-continuity.txt",
+    "original_sha256": "f79501b7fa7122f8ed2e7814e3dce0655cb3357f20fb61e9e9713876e65ac082",
+    "annotations_invalidated": [],
+    "annotation_rerun_required": true
+  }
+}

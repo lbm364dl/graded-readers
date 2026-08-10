@@ -1,0 +1,120 @@
+{
+  "book_run_id": "wagahai-full-n2n1-isolated",
+  "status": "running",
+  "updated_at": "2026-08-07T10:18:30.203722+00:00",
+  "global_agent_concurrency": 1,
+  "chapter_concurrency": 1,
+  "runs": [
+    {
+      "source": "/home/usuario/hsk-graded-readers/books/japanese/wagahai_wa_neko_de_aru/chapter_01.txt",
+      "level": "n2",
+      "status": "pending"
+    },
+    {
+      "source": "/home/usuario/hsk-graded-readers/books/japanese/wagahai_wa_neko_de_aru/chapter_01.txt",
+      "level": "n1",
+      "status": "pending"
+    },
+    {
+      "source": "/home/usuario/hsk-graded-readers/books/japanese/wagahai_wa_neko_de_aru/chapter_02.txt",
+      "level": "n2",
+      "status": "pending"
+    },
+    {
+      "source": "/home/usuario/hsk-graded-readers/books/japanese/wagahai_wa_neko_de_aru/chapter_02.txt",
+      "level": "n1",
+      "status": "pending"
+    },
+    {
+      "source": "/home/usuario/hsk-graded-readers/books/japanese/wagahai_wa_neko_de_aru/chapter_03.txt",
+      "level": "n2",
+      "status": "pending"
+    },
+    {
+      "source": "/home/usuario/hsk-graded-readers/books/japanese/wagahai_wa_neko_de_aru/chapter_03.txt",
+      "level": "n1",
+      "status": "pending"
+    },
+    {
+      "source": "/home/usuario/hsk-graded-readers/books/japanese/wagahai_wa_neko_de_aru/chapter_04.txt",
+      "level": "n2",
+      "status": "pending"
+    },
+    {
+      "source": "/home/usuario/hsk-graded-readers/books/japanese/wagahai_wa_neko_de_aru/chapter_04.txt",
+      "level": "n1",
+      "status": "pending"
+    },
+    {
+      "source": "/home/usuario/hsk-graded-readers/books/japanese/wagahai_wa_neko_de_aru/chapter_05.txt",
+      "level": "n2",
+      "status": "pending"
+    },
+    {
+      "source": "/home/usuario/hsk-graded-readers/books/japanese/wagahai_wa_neko_de_aru/chapter_05.txt",
+      "level": "n1",
+      "status": "pending"
+    },
+    {
+      "source": "/home/usuario/hsk-graded-readers/books/japanese/wagahai_wa_neko_de_aru/chapter_06.txt",
+      "level": "n2",
+      "status": "pending"
+    },
+    {
+      "source": "/home/usuario/hsk-graded-readers/books/japanese/wagahai_wa_neko_de_aru/chapter_06.txt",
+      "level": "n1",
+      "status": "pending"
+    },
+    {
+      "source": "/home/usuario/hsk-graded-readers/books/japanese/wagahai_wa_neko_de_aru/chapter_07.txt",
+      "level": "n2",
+      "status": "pending"
+    },
+    {
+      "source": "/home/usuario/hsk-graded-readers/books/japanese/wagahai_wa_neko_de_aru/chapter_07.txt",
+      "level": "n1",
+      "status": "pending"
+    },
+    {
+      "source": "/home/usuario/hsk-graded-readers/books/japanese/wagahai_wa_neko_de_aru/chapter_08.txt",
+      "level": "n2",
+      "status": "pending"
+    },
+    {
+      "source": "/home/usuario/hsk-graded-readers/books/japanese/wagahai_wa_neko_de_aru/chapter_08.txt",
+      "level": "n1",
+      "status": "pending"
+    },
+    {
+      "source": "/home/usuario/hsk-graded-readers/books/japanese/wagahai_wa_neko_de_aru/chapter_09.txt",
+      "level": "n2",
+      "status": "pending"
+    },
+    {
+      "source": "/home/usuario/hsk-graded-readers/books/japanese/wagahai_wa_neko_de_aru/chapter_09.txt",
+      "level": "n1",
+      "status": "pending"
+    },
+    {
+      "source": "/home/usuario/hsk-graded-readers/books/japanese/wagahai_wa_neko_de_aru/chapter_10.txt",
+      "level": "n2",
+      "status": "pending"
+    },
+    {
+      "source": "/home/usuario/hsk-graded-readers/books/japanese/wagahai_wa_neko_de_aru/chapter_10.txt",
+      "level": "n1",
+      "status": "pending"
+    },
+    {
+      "source": "/home/usuario/hsk-graded-readers/books/japanese/wagahai_wa_neko_de_aru/chapter_11.txt",
+      "level": "n2",
+      "status": "pending"
+    },
+    {
+      "source": "/home/usuario/hsk-graded-readers/books/japanese/wagahai_wa_neko_de_aru/chapter_11.txt",
+      "level": "n1",
+      "status": "pending"
+    }
+  ],
+  "length_violations": []
+}

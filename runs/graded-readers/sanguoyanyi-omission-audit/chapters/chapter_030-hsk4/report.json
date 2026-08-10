@@ -1,0 +1,68 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_030-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 637,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了曹操与袁绍阵前互斥及初次交战的部分对话。",
+      "classification": "material",
+      "reason": "阵前互斥展现曹操与袁绍对彼此身份和出兵正当性的核心指控，具有重要人物塑造作用；初次交战也构成官渡战局转折的开端。",
+      "required_fix": "补入曹操与袁绍阵前互斥的关键对话，并交代张辽、许褚分别与张郃、高览交战及曹军因弩箭齐发而败退官渡。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“张郃、高览攻营失败，被郭图进谗，杀使者投降曹操”容易理解为张郃、高览共同杀死使者；原文明确是高览杀使者，张郃随后同意投降。",
+      "classification": "material",
+      "reason": "The wording assigns the messenger's killing to both Zhang He and Gao Lan, whereas the original explicitly has Gao Lan kill the messenger and Zhang He subsequently agree to defect.",
+      "required_fix": "改为“张郃、高览攻营失败，被郭图进谗；高览杀死使者，张郃随后同意投降曹操。”"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了曹操与袁绍阵前互斥及初次交战的部分对话。",
+      "classification": "material",
+      "reason": "阵前互斥展现曹操与袁绍对彼此身份和出兵正当性的核心指控，具有重要人物塑造作用；初次交战也构成官渡战局转折的开端。",
+      "required_fix": "补入曹操与袁绍阵前互斥的关键对话，并交代张辽、许褚分别与张郃、高览交战及曹军因弩箭齐发而败退官渡。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“张郃、高览攻营失败，被郭图进谗，杀使者投降曹操”容易理解为张郃、高览共同杀死使者；原文明确是高览杀使者，张郃随后同意投降。",
+      "classification": "material",
+      "reason": "The wording assigns the messenger's killing to both Zhang He and Gao Lan, whereas the original explicitly has Gao Lan kill the messenger and Zhang He subsequently agree to defect.",
+      "required_fix": "改为“张郃、高览攻营失败，被郭图进谗；高览杀死使者，张郃随后同意投降曹操。”"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9.2,
+    "naturalness": 9.0,
+    "readability": 9.2,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 637,
+      "review": {
+        "source_fidelity": 9.2,
+        "naturalness": 9.0,
+        "readability": 9.2,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

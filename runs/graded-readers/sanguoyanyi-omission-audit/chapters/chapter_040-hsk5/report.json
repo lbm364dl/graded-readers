@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_040-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 1278,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "称刘琮把军政交给蔡氏宗族，原文仅说蔡氏宗族分领荆州兵权。",
+      "classification": "material",
+      "reason": "“把军政交给”扩大了原文仅由蔡氏宗族分领荆州兵权的表述，并掩盖了另命鄧义、刘先守荆州的安排，改变了权责范围。",
+      "required_fix": "改为“蔡氏宗族分领荆州兵权，命鄧义、刘先守荆州”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "称刘琮把军政交给蔡氏宗族，原文仅说蔡氏宗族分领荆州兵权。",
+      "classification": "material",
+      "reason": "“把军政交给”扩大了原文仅由蔡氏宗族分领荆州兵权的表述，并掩盖了另命鄧义、刘先守荆州的安排，改变了权责范围。",
+      "required_fix": "改为“蔡氏宗族分领荆州兵权，命鄧义、刘先守荆州”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9.5,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1278,
+      "review": {
+        "source_fidelity": 9.5,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

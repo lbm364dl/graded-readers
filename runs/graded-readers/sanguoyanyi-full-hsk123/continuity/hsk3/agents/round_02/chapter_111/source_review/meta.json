@@ -1,0 +1,21 @@
+{
+  "job": "round_02/chapter_111/source_review",
+  "model": "gpt-5.6-luna",
+  "effort": "medium",
+  "fingerprint": "249a6ebf2d315bc795991326374d368ed34e54857abc9dc5efb69efe29654731",
+  "started_at": "2026-08-07T12:31:28.696113+00:00",
+  "ended_at": "2026-08-07T12:32:24.933230+00:00",
+  "return_code": 0,
+  "attempt_count": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-08-07T12:31:28.696118+00:00",
+      "ended_at": "2026-08-07T12:32:24.933067+00:00",
+      "return_code": 0,
+      "throttled": false,
+      "events": "events.attempt-01.jsonl",
+      "stderr": "stderr.attempt-01.log"
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_100-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 194,
+  "required_range": [
+    98,
+    238
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了曹真与司马懿的赌约及司马懿识破蜀军取祁山的判断过程",
+      "classification": "material",
+      "reason": "赌约体现两人的关系与性格，司马懿的判断则构成魏军分守两谷、设伏的直接动机，影响后续战局。",
+      "required_fix": "补入赌约内容及司马懿据蜀军不追判断其将取祁山、遂分兵设伏的过程。"
+    },
+    {
+      "omission_note": "省略了司马懿误判增灶后最终得知真相、感叹不如孔明的结尾",
+      "classification": "material",
+      "reason": "得知真相及感叹不如孔明是退军计策的揭示和司马懿重要的性格、能力评价，也构成原场景的收束。",
+      "required_fix": "补入司马懿后来得知蜀军只增灶未增兵，并感叹孔明谋略胜过自己的结尾。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“司马懿出战，被八卦阵困败”略有因果偏差：八卦阵主要困住并俘获戴凌、张虎、乐琳等魏将，司马懿随后在三路夹攻下败退，并非亲自被阵困住",
+      "classification": "material",
+      "reason": "原文中被八卦阵困住并俘获的是戴凌、张虎、乐琳等魏将；司马懿本人是在关兴、姜维等三路夹攻后败退，改写将受困者和败退原因归于司马懿，造成了人物与因果关系的实质性偏差。",
+      "required_fix": "改为：司马懿派戴凌、张虎、乐琳率军攻八卦阵，三将及所部被困俘获；随后关兴、姜维等蜀军三路夹攻，司马懿败退。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了曹真与司马懿的赌约及司马懿识破蜀军取祁山的判断过程",
+      "classification": "material",
+      "reason": "赌约体现两人的关系与性格，司马懿的判断则构成魏军分守两谷、设伏的直接动机，影响后续战局。",
+      "required_fix": "补入赌约内容及司马懿据蜀军不追判断其将取祁山、遂分兵设伏的过程。"
+    },
+    {
+      "omission_note": "省略了司马懿误判增灶后最终得知真相、感叹不如孔明的结尾",
+      "classification": "material",
+      "reason": "得知真相及感叹不如孔明是退军计策的揭示和司马懿重要的性格、能力评价，也构成原场景的收束。",
+      "required_fix": "补入司马懿后来得知蜀军只增灶未增兵，并感叹孔明谋略胜过自己的结尾。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“司马懿出战，被八卦阵困败”略有因果偏差：八卦阵主要困住并俘获戴凌、张虎、乐琳等魏将，司马懿随后在三路夹攻下败退，并非亲自被阵困住",
+      "classification": "material",
+      "reason": "原文中被八卦阵困住并俘获的是戴凌、张虎、乐琳等魏将；司马懿本人是在关兴、姜维等三路夹攻后败退，改写将受困者和败退原因归于司马懿，造成了人物与因果关系的实质性偏差。",
+      "required_fix": "改为：司马懿派戴凌、张虎、乐琳率军攻八卦阵，三将及所部被困俘获；随后关兴、姜维等蜀军三路夹攻，司马懿败退。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 173,
+      "review": {
+        "source_fidelity": 6.5,
+        "naturalness": 7,
+        "readability": 7.5,
+        "material_omissions": [
+          "省略了司马懿救援败退的曹真并建议魏军移屯渭滨的过程，削弱了战后局势及曹真后来仍在军中的因果衔接。",
+          "省略了曹真死后魏主下诏命司马懿出战的情节，导致后续司马懿与孔明交锋的动机不明。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "时间顺序发生实质性错误：文本先称曹真“病死”，随后又写孔明遣降卒送信“激怒曹真”；原文是曹真败退患病，孔明斩陈式后遣降卒送信，曹真读信后才因愤恨死于军中。",
+          "“曹真败退病死”与后文送信激怒曹真相互矛盾，也模糊了司马懿救援曹真这一关键情节。"
+        ],
+        "language_problems": [
+          "“蜀来送玉带御马”主语和条件关系不清，原意是蜀军来袭时曹真输给司马懿玉带和御马。",
+          "“司马懿料蜀不追欲夺山”过度压缩，语意连接不够自然。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 177,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 7.5,
+        "readability": 8.5,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [
+          "“司马懿知孔明不追，是要夺山”语意连接仍不自然，未充分修复原有的过度压缩问题。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 176,
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 7.5,
+        "readability": 9,
+        "material_omissions": [
+          "未交代陈式受魏延怂恿、轻视孔明而违令，也未交代孔明明知魏延有反相却因其勇暂留后用。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [
+          "“司马懿料定孔明不追，必来夺山”语意连接不自然，混淆了“不追”和“夺山”的先后及因果；应改为“司马懿料定孔明不会追赶，而会趁机夺取祁山”。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 4,
+      "candidate_cjk": 182,
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [
+          "遗漏司马懿赌约中“面涂红粉、身穿女衣来营中伏罪”的具体羞辱性承诺，削弱了其自信和赌约情节的刻画。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "“懿认错”将司马懿承诺穿女衣、涂红粉伏罪改写成一般性的认错，未准确保留原意。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 5,
+      "candidate_cjk": 180,
+      "review": {
+        "source_fidelity": 7,
+        "naturalness": 7,
+        "readability": 8,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "“懿料定其不追夺山”与原文相反；司马懿料定蜀兵会从两谷而来并夺取祁山，而非不会追夺。"
+        ],
+        "language_problems": [
+          "“懿料定其不追夺山”表达生硬且语义不清。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 6,
+      "candidate_cjk": 194,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_095-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 538,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了司马懿命张郃从箕谷截击、自己进攻斜谷和西城的后续部署。",
+      "classification": "material",
+      "reason": "這些部署交代了魏軍分進及後續追擊、進攻西城的因果與行軍脈絡，影響事件發展和 chronology。",
+      "required_fix": "补写司马懿令张郃截击箕谷退军、自己率军进攻斜谷和西城的部署。"
+    },
+    {
+      "omission_note": "省略了结尾魏廷出现献计之人、引出下回的悬念。",
+      "classification": "material",
+      "reason": "结尾献计者的出现构成原场景的收束和下回悬念；省略后削弱了结尾的叙事衔接，并遗漏后续情节的引入。",
+      "required_fix": "补写魏廷有人出班献计，并以未知献计者身份、下回分解的悬念收尾。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了司马懿命张郃从箕谷截击、自己进攻斜谷和西城的后续部署。",
+      "classification": "material",
+      "reason": "這些部署交代了魏軍分進及後續追擊、進攻西城的因果與行軍脈絡，影響事件發展和 chronology。",
+      "required_fix": "补写司马懿令张郃截击箕谷退军、自己率军进攻斜谷和西城的部署。"
+    },
+    {
+      "omission_note": "省略了结尾魏廷出现献计之人、引出下回的悬念。",
+      "classification": "material",
+      "reason": "结尾献计者的出现构成原场景的收束和下回悬念；省略后削弱了结尾的叙事衔接，并遗漏后续情节的引入。",
+      "required_fix": "补写魏廷有人出班献计，并以未知献计者身份、下回分解的悬念收尾。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 482,
+      "review": {
+        "source_fidelity": 8.1,
+        "naturalness": 8.4,
+        "readability": 8.8,
+        "material_omissions": [
+          "未交代郭淮最初奉曹真分派取街亭、得知司马懿和张郃已立功后才转袭列柳城的动机与次序。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "将姜维概括为负责取郿城；原文是孔明亲率主力取郿城，姜维仅任先锋。",
+          "将关兴、张苞、马岱、姜维一并概括为断后作疑兵，混淆了关兴、张苞的疑兵任务与马岱、姜维随后迎击曹真的断后任务。",
+          "将郭淮概括为奉曹真之命直接袭击列柳城，改变了其先取街亭、后因司马懿已立功而转袭列柳城的行动顺序。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 538,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

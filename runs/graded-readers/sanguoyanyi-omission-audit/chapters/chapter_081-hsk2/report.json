@@ -1,0 +1,94 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_081-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 324,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了张飞随诏前往成都、与先主会合的过程，以及先主最终决定亲征的具体争执。",
+      "classification": "material",
+      "reason": "这段会合与争执直接交代先主为何由犹豫转为亲征，也补足关键行动的时间顺序和动机。",
+      "required_fix": "补入张飞奉诏赴成都、劝先主报仇，以及先主最终决定与张飞共同亲征东吴的过程。"
+    },
+    {
+      "omission_note": "省略了张飞鞭打士兵致死、先主劝其宽容等细节。",
+      "classification": "material",
+      "reason": "鞭打致死体现张飞的重要暴烈性格，先主的劝诫又构成其后仍施暴并招致杀身之祸的直接铺垫。",
+      "required_fix": "补入张飞鞭打士兵致死，以及先主出征前劝他戒酒后暴怒、宽容部下的情节。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“二人先比箭术和武艺”略有失真：二人比试箭术后将要交锋，实际被先主及时制止，并未真正比试武艺。",
+      "classification": "material",
+      "reason": "这把原文中被先主制止、未实际展开的武艺交锋表述成已经比试，改变了事件经过。",
+      "required_fix": "改为“二人比试箭术后正要交锋，被先主及时制止”，并说明二人随后结为兄弟。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“孙权接受了他的请求”容易被理解为孙权已经接受停战建议；原文只是接受诸葛瑾出使的请求，尚未开始交涉。",
+      "classification": "material",
+      "reason": "该表述改变了孙权当下的决定，把同意诸葛瑾出使误写成已经接受停战建议，造成情节和因果状态错误。",
+      "required_fix": "改为“孙权同意诸葛瑾出使劝先主罢兵”，并保留两国尚未开始交涉、结果未明。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了张飞随诏前往成都、与先主会合的过程，以及先主最终决定亲征的具体争执。",
+      "classification": "material",
+      "reason": "这段会合与争执直接交代先主为何由犹豫转为亲征，也补足关键行动的时间顺序和动机。",
+      "required_fix": "补入张飞奉诏赴成都、劝先主报仇，以及先主最终决定与张飞共同亲征东吴的过程。"
+    },
+    {
+      "omission_note": "省略了张飞鞭打士兵致死、先主劝其宽容等细节。",
+      "classification": "material",
+      "reason": "鞭打致死体现张飞的重要暴烈性格，先主的劝诫又构成其后仍施暴并招致杀身之祸的直接铺垫。",
+      "required_fix": "补入张飞鞭打士兵致死，以及先主出征前劝他戒酒后暴怒、宽容部下的情节。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“二人先比箭术和武艺”略有失真：二人比试箭术后将要交锋，实际被先主及时制止，并未真正比试武艺。",
+      "classification": "material",
+      "reason": "这把原文中被先主制止、未实际展开的武艺交锋表述成已经比试，改变了事件经过。",
+      "required_fix": "改为“二人比试箭术后正要交锋，被先主及时制止”，并说明二人随后结为兄弟。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“孙权接受了他的请求”容易被理解为孙权已经接受停战建议；原文只是接受诸葛瑾出使的请求，尚未开始交涉。",
+      "classification": "material",
+      "reason": "该表述改变了孙权当下的决定，把同意诸葛瑾出使误写成已经接受停战建议，造成情节和因果状态错误。",
+      "required_fix": "改为“孙权同意诸葛瑾出使劝先主罢兵”，并保留两国尚未开始交涉、结果未明。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 8,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 324,
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

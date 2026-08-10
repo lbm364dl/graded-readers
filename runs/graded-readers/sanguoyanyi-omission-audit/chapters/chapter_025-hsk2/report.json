@@ -1,0 +1,58 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_025-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 300,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "“关羽把礼物给二夫人”表述容易让人误解为连赤兔马也送给了二夫人；原文只是将美女、金帛等物送入内宅，赤兔马由关羽自己使用。",
+      "classification": "material",
+      "reason": "该表述可能改变赤兔马的归属这一具体事实；原文中赤兔马由关羽自己使用，并成为其日后寻找刘备的重要条件。",
+      "required_fix": "改为“曹操送美女、金帛和赤兔马；关羽把美女、金帛等物送入内宅给二夫人，赤兔马由自己使用”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "“关羽把礼物给二夫人”表述容易让人误解为连赤兔马也送给了二夫人；原文只是将美女、金帛等物送入内宅，赤兔马由关羽自己使用。",
+      "classification": "material",
+      "reason": "该表述可能改变赤兔马的归属这一具体事实；原文中赤兔马由关羽自己使用，并成为其日后寻找刘备的重要条件。",
+      "required_fix": "改为“曹操送美女、金帛和赤兔马；关羽把美女、金帛等物送入内宅给二夫人，赤兔马由自己使用”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": []
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 300,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_051-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 817,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“性命也已危殆”略超出原文；原文只说金疮迸裂，尚未交代最终生死。",
+      "classification": "material",
+      "reason": "原文明确保留周瑜最终生死的未知状态，改写却断言其性命危殆，改变了结尾的状态表达。",
+      "required_fix": "将“性命也已危殆”改为“性命如何尚未可知”，或只保留“金疮迸裂”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“性命也已危殆”略超出原文；原文只说金疮迸裂，尚未交代最终生死。",
+      "classification": "material",
+      "reason": "原文明确保留周瑜最终生死的未知状态，改写却断言其性命危殆，改变了结尾的状态表达。",
+      "required_fix": "将“性命也已危殆”改为“性命如何尚未可知”，或只保留“金疮迸裂”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 817,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

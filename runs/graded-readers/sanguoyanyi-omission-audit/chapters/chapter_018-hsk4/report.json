@@ -1,0 +1,66 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_018-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 653,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了李通的身份来历及曹操解释安众取胜原因。",
+      "classification": "material",
+      "reason": "曹操对安众取胜原因的解释提供了关键战术因果，也体现其谋略；李通的身份来历则说明其出现和任职背景。",
+      "required_fix": "补回李通的官职、籍贯及前来接应的来历，并补述曹操解释因敌军退无归路、故以缓兵诱敌并暗中设伏而取胜。"
+    },
+    {
+      "omission_note": "省略了刘表拒绝第二次追击、张绣独自追击的过程。",
+      "classification": "material",
+      "reason": "该过程决定了第二次追击的实际参与者，并体现刘表与张绣的不同判断；省略后还弱化了张绣受贾诩建议行动的动机和人物关系。",
+      "required_fix": "补回刘表不肯同行、张绣于是独自率军追击的情节，并明确第一次追击是在刘表劝说下进行。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了李通的身份来历及曹操解释安众取胜原因。",
+      "classification": "material",
+      "reason": "曹操对安众取胜原因的解释提供了关键战术因果，也体现其谋略；李通的身份来历则说明其出现和任职背景。",
+      "required_fix": "补回李通的官职、籍贯及前来接应的来历，并补述曹操解释因敌军退无归路、故以缓兵诱敌并暗中设伏而取胜。"
+    },
+    {
+      "omission_note": "省略了刘表拒绝第二次追击、张绣独自追击的过程。",
+      "classification": "material",
+      "reason": "该过程决定了第二次追击的实际参与者，并体现刘表与张绣的不同判断；省略后还弱化了张绣受贾诩建议行动的动机和人物关系。",
+      "required_fix": "补回刘表不肯同行、张绣于是独自率军追击的情节，并明确第一次追击是在刘表劝说下进行。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8.5,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 653,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8.5,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_034-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 693,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了曹操褒奖郭嘉遗孤、屯田等次要情节；未明确刘备率军返回新野时的具体过程；略去赵云带三百军随行并全程保护刘备的细节。",
+      "classification": "material",
+      "reason": "虽前两项主要是次要压缩，但略去赵云率三百军随行并保护刘备，削弱了宴会设局、调开赵云及后续赵云率军赶来的因果和防卫安排，影响事件的连贯理解。",
+      "required_fix": "补充赵云率三百军随刘备赴襄阳、披甲带剑随行保护，以及蔡瑁将这三百军遣回馆舍、借设宴调开赵云后准备下手的细节；可简述郭嘉遗孤受封养育、屯田和返回新野过程。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了曹操褒奖郭嘉遗孤、屯田等次要情节；未明确刘备率军返回新野时的具体过程；略去赵云带三百军随行并全程保护刘备的细节。",
+      "classification": "material",
+      "reason": "虽前两项主要是次要压缩，但略去赵云率三百军随行并保护刘备，削弱了宴会设局、调开赵云及后续赵云率军赶来的因果和防卫安排，影响事件的连贯理解。",
+      "required_fix": "补充赵云率三百军随刘备赴襄阳、披甲带剑随行保护，以及蔡瑁将这三百军遣回馆舍、借设宴调开赵云后准备下手的细节；可简述郭嘉遗孤受封养育、屯田和返回新野过程。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 793,
+      "review": {
+        "source_fidelity": 8.2,
+        "naturalness": 7.4,
+        "readability": 8.0,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "原文中刘备仅谢别伊籍，并未向刘表辞别；改写为“谢别刘表”改变了事件细节。"
+        ],
+        "language_problems": [
+          "“刘备解出的卢”搭配不自然且语法有误，应改为“刘备解开的卢马”或“刘备解下的卢马”。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 797,
+      "review": {
+        "source_fidelity": 8.8,
+        "naturalness": 7.5,
+        "readability": 8.6,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [
+          "“刘备急忙解开系着的卢马”搭配仍不自然；应改为“刘备急忙解下的卢马”或改为“刘备急忙解开拴着的卢马”。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 693,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

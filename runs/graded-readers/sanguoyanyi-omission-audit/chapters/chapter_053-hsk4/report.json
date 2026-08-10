@@ -1,0 +1,74 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_053-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 627,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了魏延投韩玄、受冷落的背景，以及刘磐此前与黄忠共守长沙的交代，但不影响主线理解。",
+      "classification": "material",
+      "reason": "魏延受冷落及投奔韩玄的经历补充了其反抗韩玄、献城投降的动机和人物背景；刘磐共守长沙的交代则是次要信息，但该 omission note 包含重要人物动机与刻画。",
+      "required_fix": "补入魏延投韩玄、受韩玄冷落的背景，并交代刘磐曾与黄忠共守长沙。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了魏延投韩玄、受冷落的背景，以及刘磐此前与黄忠共守长沙的交代，但不影响主线理解。",
+      "classification": "material",
+      "reason": "魏延受冷落及投奔韩玄的经历补充了其反抗韩玄、献城投降的动机和人物背景；刘磐共守长沙的交代则是次要信息，但该 omission note 包含重要人物动机与刻画。",
+      "required_fix": "补入魏延投韩玄、受韩玄冷落的背景，并交代刘磐曾与黄忠共守长沙。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 644,
+      "review": {
+        "source_fidelity": 7.8,
+        "naturalness": 8.5,
+        "readability": 9.0,
+        "material_omissions": [],
+        "unsupported_additions": [
+          "“关羽念其年老放他换马”将关羽放过黄忠的动机归因于年老；原文明确呈现的是关羽饶其性命及黄忠感念其义气。"
+        ],
+        "distortions": [
+          "“韩玄性急嗜杀，与黄忠、刘表侄刘磐共守”把三人写成同时共同守长沙，改变了原文“黄忠与刘磐共守长沙，后来黄忠事韩玄”的时间和关系。",
+          "“诸葛亮观星预言皇族将亡”将原文“必应折一皇族”（一名皇族成员死亡）扩大为皇族整体将亡，语义过强。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 627,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

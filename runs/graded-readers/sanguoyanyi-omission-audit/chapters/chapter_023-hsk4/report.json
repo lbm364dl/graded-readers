@@ -1,0 +1,94 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_023-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 604,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "omission_note": "删去了刘表与袁绍使者往来、韩嵩出使许都及刘表震怒等支线。",
+      "classification": "material",
+      "reason": "这部分交代了刘表在曹操与袁绍之间的态度、韩嵩归属变化及刘表与韩嵩关系的冲突，涉及政治关系、动机和事件因果。",
+      "required_fix": "补回袁绍使者与刘表的往来、韩嵩出使许都并获任官、回荆州劝降后刘表震怒及最终赦免等关键情节。"
+    },
+    {
+      "omission_note": "大幅压缩了董承梦中起兵、吉平受誓、曹操多次审讯及王子服等人的具体反应。",
+      "classification": "material",
+      "reason": "董承的梦境促成吉平确认其心事并加入密谋，咬指立誓推动下毒计划；曹操多次审讯及众人的反应则构成揭露谋反、施刑和吉平最终自尽的关键因果与时间顺序。",
+      "required_fix": "补回董承梦中起兵、吉平据梦确认心意并咬指立誓、曹操分阶段审讯及拷打、王子服等人的恐惧和应对，以及吉平获释后撞阶而死的完整过程。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "称祢衡“故意不行礼”，原文只写曹操不让他入座。",
+      "classification": "material",
+      "reason": "“故意不行礼”增加了原文没有的主动失礼行为，改变了祢衡初见曹操时的具体行动。",
+      "required_fix": "改为曹操不命祢衡入座，删除祢衡故意不行礼的表述。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“曹操随后斩下他的九指”容易造成吉平死后才被斩指的误解；原文是在吉平死前施刑，且是命人截去九指。",
+      "classification": "material",
+      "reason": "接受场景明确将截去九指置于吉平撞阶自杀之后，改变了原文的关键刑罚顺序。",
+      "required_fix": "改为曹操在吉平死前命人截去他的九指，随后解缚，吉平拜阙撞阶而死。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "删去了刘表与袁绍使者往来、韩嵩出使许都及刘表震怒等支线。",
+      "classification": "material",
+      "reason": "这部分交代了刘表在曹操与袁绍之间的态度、韩嵩归属变化及刘表与韩嵩关系的冲突，涉及政治关系、动机和事件因果。",
+      "required_fix": "补回袁绍使者与刘表的往来、韩嵩出使许都并获任官、回荆州劝降后刘表震怒及最终赦免等关键情节。"
+    },
+    {
+      "omission_note": "大幅压缩了董承梦中起兵、吉平受誓、曹操多次审讯及王子服等人的具体反应。",
+      "classification": "material",
+      "reason": "董承的梦境促成吉平确认其心事并加入密谋，咬指立誓推动下毒计划；曹操多次审讯及众人的反应则构成揭露谋反、施刑和吉平最终自尽的关键因果与时间顺序。",
+      "required_fix": "补回董承梦中起兵、吉平据梦确认心意并咬指立誓、曹操分阶段审讯及拷打、王子服等人的恐惧和应对，以及吉平获释后撞阶而死的完整过程。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "称祢衡“故意不行礼”，原文只写曹操不让他入座。",
+      "classification": "material",
+      "reason": "“故意不行礼”增加了原文没有的主动失礼行为，改变了祢衡初见曹操时的具体行动。",
+      "required_fix": "改为曹操不命祢衡入座，删除祢衡故意不行礼的表述。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“曹操随后斩下他的九指”容易造成吉平死后才被斩指的误解；原文是在吉平死前施刑，且是命人截去九指。",
+      "classification": "material",
+      "reason": "接受场景明确将截去九指置于吉平撞阶自杀之后，改变了原文的关键刑罚顺序。",
+      "required_fix": "改为曹操在吉平死前命人截去他的九指，随后解缚，吉平拜阙撞阶而死。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 8.5,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 604,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

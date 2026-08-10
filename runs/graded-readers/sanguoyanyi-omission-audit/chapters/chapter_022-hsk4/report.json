@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_022-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 740,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了袁绍先派孙乾回报郑玄并通知刘备接应的细节。",
+      "classification": "material",
+      "reason": "这省略了袁绍决定出兵后与郑玄、刘备进行正式联络和安排接应的事件，涉及出兵协同的 chronology 与后续行动衔接。",
+      "required_fix": "补充袁绍先命孙乾回报郑玄，并通知刘备准备接应的情节。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了袁绍先派孙乾回报郑玄并通知刘备接应的细节。",
+      "classification": "material",
+      "reason": "这省略了袁绍决定出兵后与郑玄、刘备进行正式联络和安排接应的事件，涉及出兵协同的 chronology 与后续行动衔接。",
+      "required_fix": "补充袁绍先命孙乾回报郑玄，并通知刘备准备接应的情节。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 740,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

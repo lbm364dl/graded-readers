@@ -1,0 +1,88 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_062-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 468,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了紫虚上人预言中关于四将命数的追问及刘瑰、张任对预言的不同态度。",
+      "classification": "material",
+      "reason": "四将命数的追问及刘瑰、张任一信一疑的反应构成重要伏笔和人物刻画，删去后削弱预言对后续人物命运及性格的铺垫。",
+      "required_fix": "补入紫虚上人拒绝详答四将命数，以及刘瑰相信、张任不以为然的不同反应。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“杨怀、高沛持刀送行……反被刘封、关平擒杀”容易造成二人被刘封、关平直接杀死的误解；原文是二人被擒后由龐統下令斩杀。",
+      "classification": "material",
+      "reason": "这会把实际下令斩杀二人的行为者从龐統错误地变成刘封、关平，造成关键行动者和事件结果归属错误。",
+      "required_fix": "改为“杨怀、高沛持刀送行，被刘封、关平擒住，后由龐統下令斩杀”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了紫虚上人预言中关于四将命数的追问及刘瑰、张任对预言的不同态度。",
+      "classification": "material",
+      "reason": "四将命数的追问及刘瑰、张任一信一疑的反应构成重要伏笔和人物刻画，删去后削弱预言对后续人物命运及性格的铺垫。",
+      "required_fix": "补入紫虚上人拒绝详答四将命数，以及刘瑰相信、张任不以为然的不同反应。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“杨怀、高沛持刀送行……反被刘封、关平擒杀”容易造成二人被刘封、关平直接杀死的误解；原文是二人被擒后由龐統下令斩杀。",
+      "classification": "material",
+      "reason": "这会把实际下令斩杀二人的行为者从龐統错误地变成刘封、关平，造成关键行动者和事件结果归属错误。",
+      "required_fix": "改为“杨怀、高沛持刀送行，被刘封、关平擒住，后由龐統下令斩杀”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 431,
+      "review": {
+        "source_fidelity": 8.2,
+        "naturalness": 8.0,
+        "readability": 8.5,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "“黄忠救他并击败邓贤”弱化并改变了原文中邓贤被黄忠军杀死的结果；邓贤后来确实因战败身亡。",
+          "“刘璋增援刘循”误述了人物关系和行动：原文是刘循主动请命守雒城，吴懿辅佐，吴兰、雷同为副将。"
+        ],
+        "language_problems": [
+          "“听庞统计策”表达不自然，应改为“听从庞统计策”或“采纳庞统计策”。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 468,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

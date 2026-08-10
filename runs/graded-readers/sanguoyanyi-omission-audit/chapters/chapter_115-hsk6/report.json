@@ -1,0 +1,84 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_115-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1208,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了刘琰获罪时有司依据‘卒非撻妻之人，面非受刑之地’的判罪理由。",
+      "classification": "material",
+      "reason": "该判罪理由解释了刘琰为何被依法判处弃市并影响后续命妇不得入朝，属于重要的因果信息。",
+      "required_fix": "补充有司依据‘卒非撻妻之人，面非受刑之地’判定刘琰合当弃市的理由。"
+    },
+    {
+      "omission_note": "省略了钟会以伐吴为名造船、借此防止东吴援蜀的完整因果。",
+      "classification": "material",
+      "reason": "接受场景提到伪称伐吴和建船，却省略了借此防止东吴援助蜀国的战略动机，削弱了钟会计策的因果与目的。",
+      "required_fix": "补充钟会以伐吴为名造船，是为了制造声势使东吴不敢援蜀，从而掩护伐蜀计划。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了刘琰获罪时有司依据‘卒非撻妻之人，面非受刑之地’的判罪理由。",
+      "classification": "material",
+      "reason": "该判罪理由解释了刘琰为何被依法判处弃市并影响后续命妇不得入朝，属于重要的因果信息。",
+      "required_fix": "补充有司依据‘卒非撻妻之人，面非受刑之地’判定刘琰合当弃市的理由。"
+    },
+    {
+      "omission_note": "省略了钟会以伐吴为名造船、借此防止东吴援蜀的完整因果。",
+      "classification": "material",
+      "reason": "接受场景提到伪称伐吴和建船，却省略了借此防止东吴援助蜀国的战略动机，削弱了钟会计策的因果与目的。",
+      "required_fix": "补充钟会以伐吴为名造船，是为了制造声势使东吴不敢援蜀，从而掩护伐蜀计划。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 8.5,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1206,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [
+          "“船只造成”搭配不当，宜改为“船只造好”或“船只建成”。",
+          "“使东吴不敢妄动、援助蜀国”语意连接生硬，宜改为“使东吴不敢轻举妄动、出兵援蜀”。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 1208,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

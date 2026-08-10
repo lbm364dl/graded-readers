@@ -1,0 +1,87 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_081-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 163,
+  "required_range": [
+    98,
+    182
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了张飞赴成都劝刘备出兵的过程，以及刘备劝张飞收敛暴虐的嘱咐。",
+      "classification": "material",
+      "reason": "张飞赴成都劝战是推动刘备亲征的重要事件，刘备劝其收敛暴虐也构成对张飞性格及后续遇害的关键铺垫；省略后削弱了因果和人物刻画。",
+      "required_fix": "补入张飞赴成都哭诉劝刘备伐吴、请求担任先锋的过程，以及刘备临行前劝他戒酒后暴怒、不得鞭挞部下的嘱咐。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“采纳诸葛瑾的建议”容易暗示孙权已接受联合伐魏，原文只是派诸葛瑾劝刘备罢兵并提出共同讨伐曹丕。",
+      "classification": "material",
+      "reason": "原文只明确孙权采纳派遣诸葛瑾出使的做法，并未表明已接受联合伐魏；该表述会改变孙权的政治决定和事件结果。",
+      "required_fix": "改为“孙权采纳诸葛瑾出使劝刘备罢兵、并提出共同讨伐曹丕的建议”，或明确这是诸葛瑾将向刘备提出的主张，而非孙权已接受联合伐魏。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了张飞赴成都劝刘备出兵的过程，以及刘备劝张飞收敛暴虐的嘱咐。",
+      "classification": "material",
+      "reason": "张飞赴成都劝战是推动刘备亲征的重要事件，刘备劝其收敛暴虐也构成对张飞性格及后续遇害的关键铺垫；省略后削弱了因果和人物刻画。",
+      "required_fix": "补入张飞赴成都哭诉劝刘备伐吴、请求担任先锋的过程，以及刘备临行前劝他戒酒后暴怒、不得鞭挞部下的嘱咐。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“采纳诸葛瑾的建议”容易暗示孙权已接受联合伐魏，原文只是派诸葛瑾劝刘备罢兵并提出共同讨伐曹丕。",
+      "classification": "material",
+      "reason": "原文只明确孙权采纳派遣诸葛瑾出使的做法，并未表明已接受联合伐魏；该表述会改变孙权的政治决定和事件结果。",
+      "required_fix": "改为“孙权采纳诸葛瑾出使劝刘备罢兵、并提出共同讨伐曹丕的建议”，或明确这是诸葛瑾将向刘备提出的主张，而非孙权已接受联合伐魏。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 158,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 8,
+        "readability": 8,
+        "material_omissions": [
+          "未提范疆、张达因白旗白甲未及时备妥而被张飞各鞭五十并威胁逾期处死，削弱了二人决定刺杀张飞的直接因果。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [
+          "“由他提出两国合力伐魏”指代略有歧义，容易让人误解为孙权已接受联合伐魏。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 163,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

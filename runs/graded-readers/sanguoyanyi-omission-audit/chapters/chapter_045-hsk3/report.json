@@ -1,0 +1,66 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_045-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 436,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了张飞担心刘备安危、率船接应的情节。",
+      "classification": "material",
+      "reason": "这是原文中实际发生的接应事件，也体现张飞的动机与行动；省略后虽不改变刘备平安离开的结果，但遗漏了重要情节和人物表现。",
+      "required_fix": "补入张飞因担心刘备有失、率船前来接应，并与刘备、关羽一同返回的情节。"
+    },
+    {
+      "omission_note": "省略了孔明约定十一月二十甲子日后、赵云到南岸等候等具体安排。",
+      "classification": "material",
+      "reason": "这些内容确定了行动的具体时间、执行者和地点，属于后续计划所需的关键安排；仅保留东南风起的概括会损失重要的时间线和情节信息。",
+      "required_fix": "补入孔明约定以十一月二十甲子日后为期，并让赵云驾小舟到南岸等候的具体安排。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了张飞担心刘备安危、率船接应的情节。",
+      "classification": "material",
+      "reason": "这是原文中实际发生的接应事件，也体现张飞的动机与行动；省略后虽不改变刘备平安离开的结果，但遗漏了重要情节和人物表现。",
+      "required_fix": "补入张飞因担心刘备有失、率船前来接应，并与刘备、关羽一同返回的情节。"
+    },
+    {
+      "omission_note": "省略了孔明约定十一月二十甲子日后、赵云到南岸等候等具体安排。",
+      "classification": "material",
+      "reason": "这些内容确定了行动的具体时间、执行者和地点，属于后续计划所需的关键安排；仅保留东南风起的概括会损失重要的时间线和情节信息。",
+      "required_fix": "补入孔明约定以十一月二十甲子日后为期，并让赵云驾小舟到南岸等候的具体安排。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 436,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

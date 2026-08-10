@@ -1,0 +1,47 @@
+{
+  "status": "running",
+  "rounds": [
+    {
+      "round": 1,
+      "implicated": [
+        27,
+        46,
+        61,
+        95
+      ],
+      "source_pass": {
+        "27": true,
+        "46": true,
+        "61": true,
+        "95": true
+      },
+      "promoted": [
+        27,
+        46
+      ],
+      "promotion_records": {
+        "27": {
+          "promoted_at": "2026-08-07T11:44:17.861878+00:00",
+          "candidate_sha256": "04418bd5babf2e00bf242da257b2fd46b2fa358ed01e9971c1f3512d35a5b95c",
+          "original_backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_027-hsk6/chapter.pre-continuity.txt",
+          "original_sha256": "2557b4953234782d3c9b3a7167e9da2d7b11514a10b24c3abf710de43bcc0abc",
+          "annotations_invalidated": [],
+          "annotation_rerun_required": true
+        },
+        "46": {
+          "promoted_at": "2026-08-07T11:44:17.862517+00:00",
+          "candidate_sha256": "7a04bc7422587e50cf993cd05a3e3ffc577768c90d2a54f9688dd0d8216f26c5",
+          "original_backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_046-hsk6/chapter.pre-continuity.txt",
+          "original_sha256": "2e4ed80efa85f5906bf2616b5db32f59765fb499dc1b54aa388f7a6de859946b",
+          "annotations_invalidated": [],
+          "annotation_rerun_required": true
+        }
+      },
+      "remaining_in_affected_pairs": [
+        61,
+        96
+      ]
+    }
+  ],
+  "updated_at": "2026-08-07T12:13:24.967080+00:00"
+}

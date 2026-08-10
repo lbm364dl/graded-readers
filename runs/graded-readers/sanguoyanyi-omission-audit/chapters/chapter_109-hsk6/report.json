@@ -1,0 +1,99 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_109-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1171,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了姜维与夏侯霸具体部署诱敌、诈败的细节",
+      "classification": "material",
+      "reason": "这些细节说明了如何伪造运粮路线、诱使徐质追击并完成伏击，是徐质被擒杀这一结果的具体因果机制；接受场景将其概括为断粮，造成了策略理解上的偏差。",
+      "required_fix": "补充姜维与夏侯霸关于诈败、伪造运粮路线诱敌及具体伏兵部署的关键内容。"
+    },
+    {
+      "omission_note": "省略了司马师盘问三人、夏侯玄当面斥骂等部分关键对话",
+      "classification": "material",
+      "reason": "盘问过程解释了司马师如何识破密谋，夏侯玄当面斥骂则体现其反抗动机和重要性格，并推动三人被处死。",
+      "required_fix": "补回司马师盘问三人的关键过程，以及夏侯玄指斥司马师威逼君主、图谋篡逆的核心对话。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "将姜维的诱敌安排表述为“趁机断魏军粮道”，原文实际是伪造运粮路线诱使徐质追击并设伏",
+      "classification": "material",
+      "reason": "这改变了姜维战术安排的目的与因果关系；原文是伪造运粮路线诱敌追击并设伏，并非趁机截断魏军粮道。",
+      "required_fix": "改为姜维伪造运粮路线、诈败诱使徐质追击，再由廖化和张翼设伏歼敌。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了姜维与夏侯霸具体部署诱敌、诈败的细节",
+      "classification": "material",
+      "reason": "这些细节说明了如何伪造运粮路线、诱使徐质追击并完成伏击，是徐质被擒杀这一结果的具体因果机制；接受场景将其概括为断粮，造成了策略理解上的偏差。",
+      "required_fix": "补充姜维与夏侯霸关于诈败、伪造运粮路线诱敌及具体伏兵部署的关键内容。"
+    },
+    {
+      "omission_note": "省略了司马师盘问三人、夏侯玄当面斥骂等部分关键对话",
+      "classification": "material",
+      "reason": "盘问过程解释了司马师如何识破密谋，夏侯玄当面斥骂则体现其反抗动机和重要性格，并推动三人被处死。",
+      "required_fix": "补回司马师盘问三人的关键过程，以及夏侯玄指斥司马师威逼君主、图谋篡逆的核心对话。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "将姜维的诱敌安排表述为“趁机断魏军粮道”，原文实际是伪造运粮路线诱使徐质追击并设伏",
+      "classification": "material",
+      "reason": "这改变了姜维战术安排的目的与因果关系；原文是伪造运粮路线诱敌追击并设伏，并非趁机截断魏军粮道。",
+      "required_fix": "改为姜维伪造运粮路线、诈败诱使徐质追击，再由廖化和张翼设伏歼敌。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1391,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 8.5,
+        "readability": 8.8,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "“陈泰假装因郭淮猜忌而投降”改变了原文“郭淮妄自尊大且常有杀陈泰之心”的投降动机。",
+          "原文写姜维只剩空的箭壶，修复稿误写为“只剩一张空弓”。",
+          "原文中郭淮中箭后被救回魏寨，因失血过多而死；修复稿写成姜维反射后“郭淮落马而死”，改变了死亡时点和过程。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 1171,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

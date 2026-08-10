@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_078-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1215,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略曹操临终日期、祭文诗歌以及曹丕迎灵时的部分仪节。",
+      "classification": "material",
+      "reason": "祭文和迎灵仪节属于可压缩的仪式与文学描写，但“建安二十五年春正月”明确标示曹操死亡的时间，属于章节 chronology 信息；整体 omission note 因此包含不可完全压缩的内容。",
+      "required_fix": "补回曹操死于建安二十五年春正月的时间信息；祭文诗歌及迎灵仪节可继续概括。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略曹操临终日期、祭文诗歌以及曹丕迎灵时的部分仪节。",
+      "classification": "material",
+      "reason": "祭文和迎灵仪节属于可压缩的仪式与文学描写，但“建安二十五年春正月”明确标示曹操死亡的时间，属于章节 chronology 信息；整体 omission note 因此包含不可完全压缩的内容。",
+      "required_fix": "补回曹操死于建安二十五年春正月的时间信息；祭文诗歌及迎灵仪节可继续概括。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1215,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

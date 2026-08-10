@@ -1,0 +1,68 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_090-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 157,
+  "required_range": [
+    98,
+    182
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略三江城攻取及朵思大王战死等过渡情节。",
+      "classification": "material",
+      "reason": "三江城攻取和朵思大王战死是孔明推进南征、逼迫孟获迎战并引出祝融夫人出场的重要事件，省略会造成关键战果与后续动机、时间衔接缺失。",
+      "required_fix": "补述孔明以积土登城攻取三江城、朵思大王战死，以及孟获得知败讯后面临蜀军进逼的过渡。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“孟获又投奔兀突骨，率三万藤甲军来战”主语略有歧义，容易理解为孟获率军；原文是兀突骨率三万藤甲军出战。",
+      "classification": "material",
+      "reason": "该表述可能将率领三万藤甲军出战的兀突骨误解为孟获，造成关键行动主体错误。",
+      "required_fix": "改为“孟获又投奔兀突骨，兀突骨率三万藤甲军来战”，明确由兀突骨率军出战。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略三江城攻取及朵思大王战死等过渡情节。",
+      "classification": "material",
+      "reason": "三江城攻取和朵思大王战死是孔明推进南征、逼迫孟获迎战并引出祝融夫人出场的重要事件，省略会造成关键战果与后续动机、时间衔接缺失。",
+      "required_fix": "补述孔明以积土登城攻取三江城、朵思大王战死，以及孟获得知败讯后面临蜀军进逼的过渡。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“孟获又投奔兀突骨，率三万藤甲军来战”主语略有歧义，容易理解为孟获率军；原文是兀突骨率三万藤甲军出战。",
+      "classification": "material",
+      "reason": "该表述可能将率领三万藤甲军出战的兀突骨误解为孟获，造成关键行动主体错误。",
+      "required_fix": "改为“孟获又投奔兀突骨，兀突骨率三万藤甲军来战”，明确由兀突骨率军出战。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 157,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

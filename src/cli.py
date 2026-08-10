@@ -9,9 +9,16 @@ from src.config import READERS_DIR, LEVEL_LABELS, LEVELS
 
 
 def _read_text(filepath: str) -> str:
-    """Read a text file, stripping markdown headers if it's a .md file."""
+    """Read prose from TXT, Markdown, or an annotated-reader JSON object."""
     path = Path(filepath)
     text = path.read_text(encoding="utf-8")
+    if path.suffix == ".json":
+        import json
+
+        payload = json.loads(text)
+        if not isinstance(payload, dict) or not isinstance(payload.get("text"), str):
+            raise ValueError("Reader JSON must be an object with a string 'text' field")
+        return payload["text"]
     if path.suffix == ".md":
         lines = text.split("\n")
         text = "\n".join(
@@ -83,14 +90,22 @@ def cmd_coverage(args):
     classifier = LevelClassifier()
 
     print(f"Coverage analysis for: {args.input}\n")
-    print(f"{'Level':<10} {'Coverage':>10} {'Above-lvl':>10} {'Status':>8}")
-    print("-" * 42)
+    print(
+        f"{'Level':<10} {'Coverage':>10} {'Lower':>10} "
+        f"{'Band':>8} {'Ceiling':>9} {'Fit':>6}"
+    )
+    print("-" * 59)
 
     for level in LEVELS:
         stats = coverage_statistics(text, level, classifier)
-        status = "PASS" if stats.passes else "FAIL"
+        ceiling = "PASS" if stats.passes else "FAIL"
+        fit = "YES" if stats.fits_target_band else "NO"
         label = LEVEL_LABELS[level]
-        print(f"{label:<10} {stats.coverage_percent:>9.1f}% {stats.above_level_percent:>9.1f}% {status:>8}")
+        print(
+            f"{label:<10} {stats.coverage_percent:>9.1f}% "
+            f"{stats.lower_level_coverage_percent:>9.1f}% "
+            f"{stats.target_band_percent:>7.1f}% {ceiling:>9} {fit:>6}"
+        )
 
 
 def cmd_vocab(args):

@@ -1,0 +1,99 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_100-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 1094,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了孔明具体分五路撤军及每日灶数递增的细节，但不影响主线理解。",
+      "classification": "material",
+      "reason": "这些是增灶疑兵计的具体执行方式，补充了撤军部署和灶数递增的时间过程；虽未改变结局，但属于关键战术细节，不仅是氛围或非必要描写。",
+      "required_fix": "补充孔明分五路撤军及每日递增灶数的具体安排。"
+    },
+    {
+      "omission_note": "省略了部分战前调兵、密计和司马懿探查灶数的过程。",
+      "classification": "material",
+      "reason": "战前调兵和密计构成袭营及夹击的因果铺垫；司马懿探查灶数则直接说明他为何判断有伏兵并放弃追击，省略后削弱了关键事件的连贯性。",
+      "required_fix": "补充主要战前调兵、密计安排，以及司马懿逐营探查并发现灶数递增的过程。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将袭营明确表述为“夜里”，原文未明确说明具体时段。",
+      "classification": "material",
+      "reason": "这是对袭营具体时段的无依据事实补充，原文只叙述多路蜀军同时袭营，未限定为夜间。",
+      "required_fix": "删除“夜里”，改为“随后”或直接叙述蜀军多路同时袭营。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了孔明具体分五路撤军及每日灶数递增的细节，但不影响主线理解。",
+      "classification": "material",
+      "reason": "这些是增灶疑兵计的具体执行方式，补充了撤军部署和灶数递增的时间过程；虽未改变结局，但属于关键战术细节，不仅是氛围或非必要描写。",
+      "required_fix": "补充孔明分五路撤军及每日递增灶数的具体安排。"
+    },
+    {
+      "omission_note": "省略了部分战前调兵、密计和司马懿探查灶数的过程。",
+      "classification": "material",
+      "reason": "战前调兵和密计构成袭营及夹击的因果铺垫；司马懿探查灶数则直接说明他为何判断有伏兵并放弃追击，省略后削弱了关键事件的连贯性。",
+      "required_fix": "补充主要战前调兵、密计安排，以及司马懿逐营探查并发现灶数递增的过程。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将袭营明确表述为“夜里”，原文未明确说明具体时段。",
+      "classification": "material",
+      "reason": "这是对袭营具体时段的无依据事实补充，原文只叙述多路蜀军同时袭营，未限定为夜间。",
+      "required_fix": "删除“夜里”，改为“随后”或直接叙述蜀军多路同时袭营。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9.5,
+    "naturalness": 9.0,
+    "readability": 9.0,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1012,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [
+          "省略了司马懿派人警告曹真已有蜀军中伏，以及曹真不信并将来使打发回去的关键情节，削弱了曹真因轻敌导致败退的因果和人物刻画。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "原文写司马懿次日仍到先前查看过的同一营寨核查灶数，修复文改为“另一营”，改变了探查过程。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 1094,
+      "review": {
+        "source_fidelity": 9.5,
+        "naturalness": 9.0,
+        "readability": 9.0,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

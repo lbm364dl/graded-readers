@@ -1,0 +1,87 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_023-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1157,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "将秦庆童告发的五人简化为四人，省略了马腾在密谋名单中的提及。",
+      "classification": "material",
+      "reason": "马腾是原场景明确列出的谋划者，其身份及参与信息关系到密谋名单的完整性，属于重要事实而非可压缩的枝节。",
+      "required_fix": "补回秦庆童告发的完整名单：王子服、吴子兰、种辑、吴硕、马腾五人。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将祢衡至死所骂对象概括为“曹操等贼”，原文只明确说他至死骂不绝口。",
+      "classification": "material",
+      "reason": "原文没有明确说明祢衡至死辱骂的对象，改为具体指向曹操等人增加了未经原文支持的事实。",
+      "required_fix": "改为“祢衡至死仍痛骂不止”或“祢衡至死骂不绝口”，不要明确添加曹操等为辱骂对象。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "将秦庆童告发的五人简化为四人，省略了马腾在密谋名单中的提及。",
+      "classification": "material",
+      "reason": "马腾是原场景明确列出的谋划者，其身份及参与信息关系到密谋名单的完整性，属于重要事实而非可压缩的枝节。",
+      "required_fix": "补回秦庆童告发的完整名单：王子服、吴子兰、种辑、吴硕、马腾五人。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将祢衡至死所骂对象概括为“曹操等贼”，原文只明确说他至死骂不绝口。",
+      "classification": "material",
+      "reason": "原文没有明确说明祢衡至死辱骂的对象，改为具体指向曹操等人增加了未经原文支持的事实。",
+      "required_fix": "改为“祢衡至死仍痛骂不止”或“祢衡至死骂不绝口”，不要明确添加曹操等为辱骂对象。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9.2,
+    "naturalness": 8.8,
+    "readability": 9.2,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1128,
+      "review": {
+        "source_fidelity": 8.4,
+        "naturalness": 8.7,
+        "readability": 9.1,
+        "material_omissions": [],
+        "unsupported_additions": [
+          "秦庆童原文只说见过董承拿出一段白绢，并不知道所写内容；改写为他见过衣带诏，增加了原文未明确支持的认知。"
+        ],
+        "distortions": [
+          "将刘表转送祢衡给黄祖的动机概括为不愿得罪曹操，弱化并偏移了原文中刘表识破曹操借刀杀人的用意。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 1157,
+      "review": {
+        "source_fidelity": 9.2,
+        "naturalness": 8.8,
+        "readability": 9.2,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

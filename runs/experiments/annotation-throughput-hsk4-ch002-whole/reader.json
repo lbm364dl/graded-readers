@@ -1,0 +1,3053 @@
+{
+  "title": "chapter",
+  "level": "HSK4",
+  "text": "董卓任河东太守，傲慢怠慢刘备。张飞要杀他，刘备、关羽劝住，说朝廷命官不可私杀；三人不愿分开，便投奔朱隽，合兵讨张宝。张宝率八九万人驻山后，高升出战，被张飞刺死；张宝施法，风雷黑气和假人马从天而降，刘备军败退。朱隽让关羽、张飞伏在高冈，备好猪羊狗血和污物。次日张宝追赶刘备，伏军泼下污物，妖法失效，四军夹击；张宝逃入阳城，刘备射中其左臂。皇甫嵩在曲阳连胜七阵，斩张梁，张角已死并被戮尸枭首；卢植复官，曹操因功赴任。严政刺杀张宝投降，朱隽平定数郡。赵弘、韩忠、孙仲占据宛城，韩忠求降被拒。刘备建议撤去东南两面、只攻西北，韩忠弃城逃走，被追杀射死。赵弘夺回宛城，孙坚率乡勇和淮泗精兵一千五百多人来援。朱隽令孙坚攻南门，刘备攻北门，自己攻西门，留下东门。孙坚登城，夺赵弘长槊，将他刺落马下；刘备射死孙仲，南阳十数郡平定。朱隽封车骑将军、河南尹，孙坚另任司马，刘备仍未得官。张钧揭露十常侍卖官害民，反被逐出。刘备任安喜县尉，爱民守职。督邮巡察，县吏猜他索贿；他又逼县吏诬陷刘备。张飞得知百姓哭诉，鞭打督邮；刘备制止，只还印绶弃官，三人逃往代州。十常侍掌权，罢免皇甫嵩、朱隽，自己封将列侯，并隐瞒长沙、渔阳叛乱。刘陶进谏，陈耽又指责封谞等勾结黄巾，两人被下狱杀害。孙坚平定长沙，封乌程侯；刘虞平定渔阳，刘备获赦，任下密丞、高堂尉，后守平原县令。灵帝病重，何后毒死王美人，董太后想立皇子协。蹇硕谋害何进，潘隐示警；何进与袁绍等扶立皇子辩为帝。袁绍主张尽诛宦官，何进听何太后劝说，只杀蹇硕。董、何两太后争权，何进逼董太后迁往河间，又暗中毒死她，董重自刎。袁绍再劝，何进受何太后、何苗阻挠，仍发檄召各镇兵马入京。陈琳警告此举会引狼入室，曹操却说诛杀宦官易如反掌，京城大乱将至。\n",
+  "segments": [
+    {
+      "text": "董卓",
+      "type": "name",
+      "pinyin": "Dǒng Zhuó",
+      "meaning_en": "Dong Zhuo"
+    },
+    {
+      "text": "任河",
+      "type": "word",
+      "pinyin": "rèn hé",
+      "meaning_en": "serve as governor of Hedong"
+    },
+    {
+      "text": "东太",
+      "type": "word",
+      "pinyin": "dōng tài",
+      "meaning_en": "eastern grand"
+    },
+    {
+      "text": "守",
+      "type": "word",
+      "pinyin": "shǒu",
+      "meaning_en": "prefect"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "傲慢",
+      "type": "word",
+      "pinyin": "àomàn",
+      "meaning_en": "arrogant"
+    },
+    {
+      "text": "怠慢",
+      "type": "word",
+      "pinyin": "dàimàn",
+      "meaning_en": "slight"
+    },
+    {
+      "text": "刘备",
+      "type": "name",
+      "pinyin": "Liú Bèi",
+      "meaning_en": "Liu Bei"
+    },
+    {
+      "text": "。",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "张飞",
+      "type": "name",
+      "pinyin": "Zhāng Fēi",
+      "meaning_en": "Zhang Fei"
+    },
+    {
+      "text": "要",
+      "type": "word",
+      "pinyin": "yào",
+      "meaning_en": "want to"
+    },
+    {
+      "text": "杀",
+      "type": "word",
+      "pinyin": "shā",
+      "meaning_en": "kill"
+    },
+    {
+      "text": "他",
+      "type": "word",
+      "pinyin": "tā",
+      "meaning_en": "him"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "刘备",
+      "type": "name",
+      "pinyin": "Liú Bèi",
+      "meaning_en": "Liu Bei"
+    },
+    {
+      "text": "、",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "关",
+      "type": "name",
+      "pinyin": "Guān",
+      "meaning_en": "Guan"
+    },
+    {
+      "text": "羽",
+      "type": "name",
+      "pinyin": "Yǔ",
+      "meaning_en": "Yu"
+    },
+    {
+      "text": "劝住",
+      "type": "word",
+      "pinyin": "quàn zhù",
+      "meaning_en": "persuade to stop"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "说",
+      "type": "word",
+      "pinyin": "shuō",
+      "meaning_en": "say"
+    },
+    {
+      "text": "朝廷",
+      "type": "word",
+      "pinyin": "cháo tíng",
+      "meaning_en": "imperial court"
+    },
+    {
+      "text": "命官",
+      "type": "word",
+      "pinyin": "mìng guān",
+      "meaning_en": "appointed official"
+    },
+    {
+      "text": "不",
+      "type": "particle",
+      "pinyin": "bù",
+      "meaning_en": "not"
+    },
+    {
+      "text": "可",
+      "type": "particle",
+      "pinyin": "kě",
+      "meaning_en": "may"
+    },
+    {
+      "text": "私",
+      "type": "word",
+      "pinyin": "sī",
+      "meaning_en": "privately"
+    },
+    {
+      "text": "杀",
+      "type": "word",
+      "pinyin": "shā",
+      "meaning_en": "kill"
+    },
+    {
+      "text": "；",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "三",
+      "type": "word",
+      "pinyin": "sān",
+      "meaning_en": "three"
+    },
+    {
+      "text": "人",
+      "type": "word",
+      "pinyin": "rén",
+      "meaning_en": "people"
+    },
+    {
+      "text": "不",
+      "type": "particle",
+      "pinyin": "bù",
+      "meaning_en": "not"
+    },
+    {
+      "text": "愿",
+      "type": "word",
+      "pinyin": "yuàn",
+      "meaning_en": "be willing"
+    },
+    {
+      "text": "分开",
+      "type": "word",
+      "pinyin": "fēnkāi",
+      "meaning_en": "separate"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "便",
+      "type": "word",
+      "pinyin": "biàn",
+      "meaning_en": "then"
+    },
+    {
+      "text": "投奔",
+      "type": "word",
+      "pinyin": "tóubèn",
+      "meaning_en": "seek shelter with"
+    },
+    {
+      "text": "朱隽",
+      "type": "name",
+      "pinyin": "Zhū Juàn",
+      "meaning_en": "Zhu Jun"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "合",
+      "type": "word",
+      "pinyin": "hé",
+      "meaning_en": "combine"
+    },
+    {
+      "text": "兵",
+      "type": "word",
+      "pinyin": "bīng",
+      "meaning_en": "troops"
+    },
+    {
+      "text": "讨",
+      "type": "word",
+      "pinyin": "tǎo",
+      "meaning_en": "attack"
+    },
+    {
+      "text": "张宝",
+      "type": "name",
+      "pinyin": "Zhāng Bǎo",
+      "meaning_en": "Zhang Bao"
+    },
+    {
+      "text": "。",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "张宝",
+      "type": "name",
+      "pinyin": "Zhāng Bǎo",
+      "meaning_en": "Zhang Bao"
+    },
+    {
+      "text": "率",
+      "type": "word",
+      "pinyin": "lǜ",
+      "meaning_en": "lead"
+    },
+    {
+      "text": "八九",
+      "type": "word",
+      "pinyin": "bā jiǔ",
+      "meaning_en": "eight or nine"
+    },
+    {
+      "text": "万",
+      "type": "word",
+      "pinyin": "wàn",
+      "meaning_en": "ten thousand"
+    },
+    {
+      "text": "人",
+      "type": "word",
+      "pinyin": "rén",
+      "meaning_en": "people"
+    },
+    {
+      "text": "驻",
+      "type": "word",
+      "pinyin": "zhù",
+      "meaning_en": "station"
+    },
+    {
+      "text": "山",
+      "type": "word",
+      "pinyin": "shān",
+      "meaning_en": "mountain"
+    },
+    {
+      "text": "后",
+      "type": "word",
+      "pinyin": "hòu",
+      "meaning_en": "behind"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "高升",
+      "type": "name",
+      "pinyin": "Gāo Shēng",
+      "meaning_en": "Gao Sheng"
+    },
+    {
+      "text": "出",
+      "type": "word",
+      "pinyin": "chū",
+      "meaning_en": "go out"
+    },
+    {
+      "text": "战",
+      "type": "word",
+      "pinyin": "zhàn",
+      "meaning_en": "fight"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "被",
+      "type": "particle",
+      "pinyin": "bèi",
+      "meaning_en": "was; passive marker"
+    },
+    {
+      "text": "张飞",
+      "type": "name",
+      "pinyin": "Zhāng Fēi",
+      "meaning_en": "Zhang Fei"
+    },
+    {
+      "text": "刺死",
+      "type": "word",
+      "pinyin": "cì sǐ",
+      "meaning_en": "stab to death"
+    },
+    {
+      "text": "；",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "张宝",
+      "type": "name",
+      "pinyin": "Zhāng Bǎo",
+      "meaning_en": "Zhang Bao"
+    },
+    {
+      "text": "施法",
+      "type": "word",
+      "pinyin": "shī fǎ",
+      "meaning_en": "perform sorcery"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "风雷",
+      "type": "word",
+      "pinyin": "fēng léi",
+      "meaning_en": "wind and thunder"
+    },
+    {
+      "text": "黑气",
+      "type": "word",
+      "pinyin": "hēi qì",
+      "meaning_en": "black vapors"
+    },
+    {
+      "text": "和",
+      "type": "word",
+      "pinyin": "hé",
+      "meaning_en": "and"
+    },
+    {
+      "text": "假",
+      "type": "word",
+      "pinyin": "jiǎ",
+      "meaning_en": "fake"
+    },
+    {
+      "text": "人",
+      "type": "word",
+      "pinyin": "rén",
+      "meaning_en": "people"
+    },
+    {
+      "text": "马",
+      "type": "word",
+      "pinyin": "mǎ",
+      "meaning_en": "horses"
+    },
+    {
+      "text": "从",
+      "type": "word",
+      "pinyin": "cóng",
+      "meaning_en": "from"
+    },
+    {
+      "text": "天",
+      "type": "word",
+      "pinyin": "tiān",
+      "meaning_en": "sky"
+    },
+    {
+      "text": "而",
+      "type": "word",
+      "pinyin": "ér",
+      "meaning_en": "and"
+    },
+    {
+      "text": "降",
+      "type": "word",
+      "pinyin": "jiàng",
+      "meaning_en": "descend"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "刘备军",
+      "type": "word",
+      "pinyin": "Liú Bèi jūn",
+      "meaning_en": "Liu Bei's army"
+    },
+    {
+      "text": "败退",
+      "type": "word",
+      "pinyin": "bài tuì",
+      "meaning_en": "retreat in defeat"
+    },
+    {
+      "text": "。",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "朱隽",
+      "type": "name",
+      "pinyin": "Zhū Juàn",
+      "meaning_en": "Zhu Jun"
+    },
+    {
+      "text": "让",
+      "type": "word",
+      "pinyin": "ràng",
+      "meaning_en": "have; tell"
+    },
+    {
+      "text": "关",
+      "type": "name",
+      "pinyin": "Guān",
+      "meaning_en": "Guan"
+    },
+    {
+      "text": "羽",
+      "type": "name",
+      "pinyin": "Yǔ",
+      "meaning_en": "Yu"
+    },
+    {
+      "text": "、",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "张飞",
+      "type": "name",
+      "pinyin": "Zhāng Fēi",
+      "meaning_en": "Zhang Fei"
+    },
+    {
+      "text": "伏",
+      "type": "word",
+      "pinyin": "fú",
+      "meaning_en": "lie in ambush"
+    },
+    {
+      "text": "在",
+      "type": "word",
+      "pinyin": "zài",
+      "meaning_en": "at"
+    },
+    {
+      "text": "高冈",
+      "type": "word",
+      "pinyin": "gāo gāng",
+      "meaning_en": "high ridge"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "备",
+      "type": "word",
+      "pinyin": "bèi",
+      "meaning_en": "prepare"
+    },
+    {
+      "text": "好",
+      "type": "word",
+      "pinyin": "hǎo",
+      "meaning_en": "ready"
+    },
+    {
+      "text": "猪",
+      "type": "word",
+      "pinyin": "zhū",
+      "meaning_en": "pig"
+    },
+    {
+      "text": "羊",
+      "type": "word",
+      "pinyin": "yáng",
+      "meaning_en": "sheep"
+    },
+    {
+      "text": "狗",
+      "type": "word",
+      "pinyin": "gǒu",
+      "meaning_en": "dog"
+    },
+    {
+      "text": "血",
+      "type": "word",
+      "pinyin": "xiě",
+      "meaning_en": "blood"
+    },
+    {
+      "text": "和",
+      "type": "word",
+      "pinyin": "hé",
+      "meaning_en": "and"
+    },
+    {
+      "text": "污物",
+      "type": "word",
+      "pinyin": "wū wù",
+      "meaning_en": "filth"
+    },
+    {
+      "text": "。",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "次日",
+      "type": "word",
+      "pinyin": "cìrì",
+      "meaning_en": "next day"
+    },
+    {
+      "text": "张宝",
+      "type": "name",
+      "pinyin": "Zhāng Bǎo",
+      "meaning_en": "Zhang Bao"
+    },
+    {
+      "text": "追赶",
+      "type": "word",
+      "pinyin": "zhuīgǎn",
+      "meaning_en": "pursue"
+    },
+    {
+      "text": "刘备",
+      "type": "name",
+      "pinyin": "Liú Bèi",
+      "meaning_en": "Liu Bei"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "伏",
+      "type": "word",
+      "pinyin": "fú",
+      "meaning_en": "ambush"
+    },
+    {
+      "text": "军",
+      "type": "word",
+      "pinyin": "jūn",
+      "meaning_en": "army"
+    },
+    {
+      "text": "泼",
+      "type": "word",
+      "pinyin": "pō",
+      "meaning_en": "splash"
+    },
+    {
+      "text": "下",
+      "type": "word",
+      "pinyin": "xià",
+      "meaning_en": "down"
+    },
+    {
+      "text": "污物",
+      "type": "word",
+      "pinyin": "wū wù",
+      "meaning_en": "filth"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "妖法",
+      "type": "word",
+      "pinyin": "yāo fǎ",
+      "meaning_en": "demonic magic"
+    },
+    {
+      "text": "失效",
+      "type": "word",
+      "pinyin": "shīxiào",
+      "meaning_en": "lose effectiveness"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "四",
+      "type": "word",
+      "pinyin": "sì",
+      "meaning_en": "four"
+    },
+    {
+      "text": "军",
+      "type": "word",
+      "pinyin": "jūn",
+      "meaning_en": "armies"
+    },
+    {
+      "text": "夹击",
+      "type": "word",
+      "pinyin": "jiā jī",
+      "meaning_en": "attack from both sides"
+    },
+    {
+      "text": "；",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "张宝",
+      "type": "name",
+      "pinyin": "Zhāng Bǎo",
+      "meaning_en": "Zhang Bao"
+    },
+    {
+      "text": "逃入",
+      "type": "word",
+      "pinyin": "táo rù",
+      "meaning_en": "flee into"
+    },
+    {
+      "text": "阳城",
+      "type": "name",
+      "pinyin": "Yángchéng",
+      "meaning_en": "Yangcheng"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "刘备",
+      "type": "name",
+      "pinyin": "Liú Bèi",
+      "meaning_en": "Liu Bei"
+    },
+    {
+      "text": "射",
+      "type": "word",
+      "pinyin": "shè",
+      "meaning_en": "shoot"
+    },
+    {
+      "text": "中",
+      "type": "word",
+      "pinyin": "zhòng",
+      "meaning_en": "hit"
+    },
+    {
+      "text": "其",
+      "type": "word",
+      "pinyin": "qí",
+      "meaning_en": "his"
+    },
+    {
+      "text": "左",
+      "type": "word",
+      "pinyin": "zuǒ",
+      "meaning_en": "left"
+    },
+    {
+      "text": "臂",
+      "type": "word",
+      "pinyin": "bì",
+      "meaning_en": "arm"
+    },
+    {
+      "text": "。",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "皇甫嵩",
+      "type": "name",
+      "pinyin": "Huángfǔ Sōng",
+      "meaning_en": "Huangfu Song"
+    },
+    {
+      "text": "在",
+      "type": "word",
+      "pinyin": "zài",
+      "meaning_en": "at"
+    },
+    {
+      "text": "曲阳",
+      "type": "name",
+      "pinyin": "Qūyáng",
+      "meaning_en": "Quyang"
+    },
+    {
+      "text": "连胜",
+      "type": "word",
+      "pinyin": "lián shèng",
+      "meaning_en": "win consecutively"
+    },
+    {
+      "text": "七",
+      "type": "word",
+      "pinyin": "qī",
+      "meaning_en": "seven"
+    },
+    {
+      "text": "阵",
+      "type": "word",
+      "pinyin": "zhèn",
+      "meaning_en": "battles"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "斩",
+      "type": "word",
+      "pinyin": "zhǎn",
+      "meaning_en": "behead"
+    },
+    {
+      "text": "张梁",
+      "type": "name",
+      "pinyin": "Zhāng Liáng",
+      "meaning_en": "Zhang Liang"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "张角",
+      "type": "name",
+      "pinyin": "Zhāng Jué",
+      "meaning_en": "Zhang Jue"
+    },
+    {
+      "text": "已",
+      "type": "particle",
+      "pinyin": "yǐ",
+      "meaning_en": "already"
+    },
+    {
+      "text": "死",
+      "type": "word",
+      "pinyin": "sǐ",
+      "meaning_en": "die"
+    },
+    {
+      "text": "并",
+      "type": "word",
+      "pinyin": "bìng",
+      "meaning_en": "and"
+    },
+    {
+      "text": "被戮",
+      "type": "word",
+      "pinyin": "bèi lù",
+      "meaning_en": "be mutilated after death"
+    },
+    {
+      "text": "尸",
+      "type": "word",
+      "pinyin": "shī",
+      "meaning_en": "corpse"
+    },
+    {
+      "text": "枭首",
+      "type": "word",
+      "pinyin": "xiāo shǒu",
+      "meaning_en": "display the severed head"
+    },
+    {
+      "text": "；",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "卢植",
+      "type": "name",
+      "pinyin": "Lú Zhí",
+      "meaning_en": "Lu Zhi"
+    },
+    {
+      "text": "复",
+      "type": "word",
+      "pinyin": "fù",
+      "meaning_en": "restore"
+    },
+    {
+      "text": "官",
+      "type": "word",
+      "pinyin": "guān",
+      "meaning_en": "office"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "曹操",
+      "type": "name",
+      "pinyin": "Cáo Cāo",
+      "meaning_en": "Cao Cao"
+    },
+    {
+      "text": "因",
+      "type": "word",
+      "pinyin": "yīn",
+      "meaning_en": "because of"
+    },
+    {
+      "text": "功",
+      "type": "word",
+      "pinyin": "gōng",
+      "meaning_en": "merit"
+    },
+    {
+      "text": "赴",
+      "type": "word",
+      "pinyin": "fù",
+      "meaning_en": "go to"
+    },
+    {
+      "text": "任",
+      "type": "word",
+      "pinyin": "rèn",
+      "meaning_en": "take office"
+    },
+    {
+      "text": "。",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "严政",
+      "type": "name",
+      "pinyin": "Yán Zhèng",
+      "meaning_en": "Yan Zheng"
+    },
+    {
+      "text": "刺杀",
+      "type": "word",
+      "pinyin": "cì shā",
+      "meaning_en": "assassinate"
+    },
+    {
+      "text": "张宝",
+      "type": "name",
+      "pinyin": "Zhāng Bǎo",
+      "meaning_en": "Zhang Bao"
+    },
+    {
+      "text": "投降",
+      "type": "word",
+      "pinyin": "tóuxiáng",
+      "meaning_en": "surrender"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "朱隽",
+      "type": "name",
+      "pinyin": "Zhū Juàn",
+      "meaning_en": "Zhu Jun"
+    },
+    {
+      "text": "平定",
+      "type": "word",
+      "pinyin": "píngdìng",
+      "meaning_en": "pacify"
+    },
+    {
+      "text": "数郡",
+      "type": "word",
+      "pinyin": "shù jùn",
+      "meaning_en": "several commanderies"
+    },
+    {
+      "text": "。",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "赵弘",
+      "type": "name",
+      "pinyin": "Zhào Hóng",
+      "meaning_en": "Zhao Hong"
+    },
+    {
+      "text": "、",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "韩忠",
+      "type": "name",
+      "pinyin": "Hán Zhōng",
+      "meaning_en": "Han Zhong"
+    },
+    {
+      "text": "、",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "孙仲",
+      "type": "name",
+      "pinyin": "Sūn Zhòng",
+      "meaning_en": "Sun Zhong"
+    },
+    {
+      "text": "占据",
+      "type": "word",
+      "pinyin": "zhànjù",
+      "meaning_en": "occupy"
+    },
+    {
+      "text": "宛城",
+      "type": "name",
+      "pinyin": "Wǎnchéng",
+      "meaning_en": "Wancheng"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "韩忠",
+      "type": "name",
+      "pinyin": "Hán Zhōng",
+      "meaning_en": "Han Zhong"
+    },
+    {
+      "text": "求降",
+      "type": "word",
+      "pinyin": "qiú xiáng",
+      "meaning_en": "request surrender"
+    },
+    {
+      "text": "被",
+      "type": "particle",
+      "pinyin": "bèi",
+      "meaning_en": "be; passive marker"
+    },
+    {
+      "text": "拒",
+      "type": "word",
+      "pinyin": "jù",
+      "meaning_en": "refuse"
+    },
+    {
+      "text": "。",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "刘备",
+      "type": "name",
+      "pinyin": "Liú Bèi",
+      "meaning_en": "Liu Bei"
+    },
+    {
+      "text": "建议",
+      "type": "word",
+      "pinyin": "jiànyì",
+      "meaning_en": "suggest"
+    },
+    {
+      "text": "撤去",
+      "type": "word",
+      "pinyin": "chè qù",
+      "meaning_en": "withdraw"
+    },
+    {
+      "text": "东南",
+      "type": "word",
+      "pinyin": "dōngnán",
+      "meaning_en": "southeast"
+    },
+    {
+      "text": "两",
+      "type": "word",
+      "pinyin": "liǎng",
+      "meaning_en": "two"
+    },
+    {
+      "text": "面",
+      "type": "word",
+      "pinyin": "miàn",
+      "meaning_en": "sides"
+    },
+    {
+      "text": "、",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "只",
+      "type": "particle",
+      "pinyin": "zhǐ",
+      "meaning_en": "only"
+    },
+    {
+      "text": "攻",
+      "type": "word",
+      "pinyin": "gōng",
+      "meaning_en": "attack"
+    },
+    {
+      "text": "西北",
+      "type": "word",
+      "pinyin": "xīběi",
+      "meaning_en": "northwest"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "韩忠",
+      "type": "name",
+      "pinyin": "Hán Zhōng",
+      "meaning_en": "Han Zhong"
+    },
+    {
+      "text": "弃",
+      "type": "word",
+      "pinyin": "qì",
+      "meaning_en": "abandon"
+    },
+    {
+      "text": "城",
+      "type": "word",
+      "pinyin": "chéng",
+      "meaning_en": "city"
+    },
+    {
+      "text": "逃走",
+      "type": "word",
+      "pinyin": "táozǒu",
+      "meaning_en": "flee"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "被",
+      "type": "particle",
+      "pinyin": "bèi",
+      "meaning_en": "be; passive marker"
+    },
+    {
+      "text": "追杀",
+      "type": "word",
+      "pinyin": "zhuī shā",
+      "meaning_en": "chase and kill"
+    },
+    {
+      "text": "射",
+      "type": "word",
+      "pinyin": "shè",
+      "meaning_en": "shoot"
+    },
+    {
+      "text": "死",
+      "type": "word",
+      "pinyin": "sǐ",
+      "meaning_en": "to death"
+    },
+    {
+      "text": "。",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "赵弘",
+      "type": "name",
+      "pinyin": "Zhào Hóng",
+      "meaning_en": "Zhao Hong"
+    },
+    {
+      "text": "夺",
+      "type": "word",
+      "pinyin": "duó",
+      "meaning_en": "seize"
+    },
+    {
+      "text": "回",
+      "type": "word",
+      "pinyin": "huí",
+      "meaning_en": "back"
+    },
+    {
+      "text": "宛城",
+      "type": "name",
+      "pinyin": "Wǎnchéng",
+      "meaning_en": "Wancheng"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "孙坚",
+      "type": "name",
+      "pinyin": "Sūn Jiān",
+      "meaning_en": "Sun Jian"
+    },
+    {
+      "text": "率",
+      "type": "word",
+      "pinyin": "lǜ",
+      "meaning_en": "lead"
+    },
+    {
+      "text": "乡勇",
+      "type": "word",
+      "pinyin": "xiāng yǒng",
+      "meaning_en": "local militia"
+    },
+    {
+      "text": "和",
+      "type": "word",
+      "pinyin": "hé",
+      "meaning_en": "and"
+    },
+    {
+      "text": "淮",
+      "type": "name",
+      "pinyin": "Huái",
+      "meaning_en": "Huai River"
+    },
+    {
+      "text": "泗",
+      "type": "name",
+      "pinyin": "Sì",
+      "meaning_en": "Si River"
+    },
+    {
+      "text": "精兵",
+      "type": "word",
+      "pinyin": "jīng bīng",
+      "meaning_en": "elite troops"
+    },
+    {
+      "text": "一千五百",
+      "type": "word",
+      "pinyin": "yī qiān wǔ bǎi",
+      "meaning_en": "one thousand five hundred"
+    },
+    {
+      "text": "多",
+      "type": "word",
+      "pinyin": "duō",
+      "meaning_en": "more than"
+    },
+    {
+      "text": "人",
+      "type": "word",
+      "pinyin": "rén",
+      "meaning_en": "people"
+    },
+    {
+      "text": "来援",
+      "type": "word",
+      "pinyin": "lái yuán",
+      "meaning_en": "come to reinforce"
+    },
+    {
+      "text": "。",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "朱隽",
+      "type": "name",
+      "pinyin": "Zhū Juàn",
+      "meaning_en": "Zhu Jun"
+    },
+    {
+      "text": "令",
+      "type": "word",
+      "pinyin": "lìng",
+      "meaning_en": "order"
+    },
+    {
+      "text": "孙坚",
+      "type": "name",
+      "pinyin": "Sūn Jiān",
+      "meaning_en": "Sun Jian"
+    },
+    {
+      "text": "攻",
+      "type": "word",
+      "pinyin": "gōng",
+      "meaning_en": "attack"
+    },
+    {
+      "text": "南门",
+      "type": "word",
+      "pinyin": "nán mén",
+      "meaning_en": "south gate"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "刘备",
+      "type": "name",
+      "pinyin": "Liú Bèi",
+      "meaning_en": "Liu Bei"
+    },
+    {
+      "text": "攻",
+      "type": "word",
+      "pinyin": "gōng",
+      "meaning_en": "attack"
+    },
+    {
+      "text": "北门",
+      "type": "word",
+      "pinyin": "běi mén",
+      "meaning_en": "north gate"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "自己",
+      "type": "word",
+      "pinyin": "zìjǐ",
+      "meaning_en": "himself"
+    },
+    {
+      "text": "攻",
+      "type": "word",
+      "pinyin": "gōng",
+      "meaning_en": "attack"
+    },
+    {
+      "text": "西门",
+      "type": "word",
+      "pinyin": "xī mén",
+      "meaning_en": "west gate"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "留下",
+      "type": "word",
+      "pinyin": "liúxia",
+      "meaning_en": "leave behind"
+    },
+    {
+      "text": "东门",
+      "type": "word",
+      "pinyin": "dōng mén",
+      "meaning_en": "east gate"
+    },
+    {
+      "text": "。",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "孙坚",
+      "type": "name",
+      "pinyin": "Sūn Jiān",
+      "meaning_en": "Sun Jian"
+    },
+    {
+      "text": "登",
+      "type": "word",
+      "pinyin": "dēng",
+      "meaning_en": "scale"
+    },
+    {
+      "text": "城",
+      "type": "word",
+      "pinyin": "chéng",
+      "meaning_en": "city wall"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "夺",
+      "type": "word",
+      "pinyin": "duó",
+      "meaning_en": "seize"
+    },
+    {
+      "text": "赵弘长槊",
+      "type": "word",
+      "pinyin": "Zhào Hóng cháng shuò",
+      "meaning_en": "Zhao Hong's long spear"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "将",
+      "type": "word",
+      "pinyin": "jiāng",
+      "meaning_en": "then"
+    },
+    {
+      "text": "他",
+      "type": "word",
+      "pinyin": "tā",
+      "meaning_en": "him"
+    },
+    {
+      "text": "刺落",
+      "type": "word",
+      "pinyin": "cì luò",
+      "meaning_en": "stab down"
+    },
+    {
+      "text": "马",
+      "type": "word",
+      "pinyin": "mǎ",
+      "meaning_en": "horse"
+    },
+    {
+      "text": "下",
+      "type": "word",
+      "pinyin": "xià",
+      "meaning_en": "down"
+    },
+    {
+      "text": "；",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "刘备",
+      "type": "name",
+      "pinyin": "Liú Bèi",
+      "meaning_en": "Liu Bei"
+    },
+    {
+      "text": "射",
+      "type": "word",
+      "pinyin": "shè",
+      "meaning_en": "shoot"
+    },
+    {
+      "text": "死",
+      "type": "word",
+      "pinyin": "sǐ",
+      "meaning_en": "to death"
+    },
+    {
+      "text": "孙仲",
+      "type": "name",
+      "pinyin": "Sūn Zhòng",
+      "meaning_en": "Sun Zhong"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "南阳",
+      "type": "name",
+      "pinyin": "Nányáng",
+      "meaning_en": "Nanyang"
+    },
+    {
+      "text": "十",
+      "type": "word",
+      "pinyin": "shí",
+      "meaning_en": "ten"
+    },
+    {
+      "text": "数",
+      "type": "word",
+      "pinyin": "shù",
+      "meaning_en": "several"
+    },
+    {
+      "text": "郡",
+      "type": "word",
+      "pinyin": "jùn",
+      "meaning_en": "commanderies"
+    },
+    {
+      "text": "平定",
+      "type": "word",
+      "pinyin": "píngdìng",
+      "meaning_en": "pacified"
+    },
+    {
+      "text": "。",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "朱隽",
+      "type": "name",
+      "pinyin": "Zhū Juàn",
+      "meaning_en": "Zhu Jun"
+    },
+    {
+      "text": "封",
+      "type": "word",
+      "pinyin": "fēng",
+      "meaning_en": "confer"
+    },
+    {
+      "text": "车",
+      "type": "word",
+      "pinyin": "chē",
+      "meaning_en": "chariot"
+    },
+    {
+      "text": "骑",
+      "type": "word",
+      "pinyin": "qí",
+      "meaning_en": "cavalry"
+    },
+    {
+      "text": "将军",
+      "type": "word",
+      "pinyin": "jiāngjūn",
+      "meaning_en": "general"
+    },
+    {
+      "text": "、",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "河南",
+      "type": "name",
+      "pinyin": "Hénán",
+      "meaning_en": "Henan"
+    },
+    {
+      "text": "尹",
+      "type": "word",
+      "pinyin": "Yǐn",
+      "meaning_en": "governor"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "孙坚",
+      "type": "name",
+      "pinyin": "Sūn Jiān",
+      "meaning_en": "Sun Jian"
+    },
+    {
+      "text": "另",
+      "type": "word",
+      "pinyin": "lìng",
+      "meaning_en": "separately"
+    },
+    {
+      "text": "任",
+      "type": "word",
+      "pinyin": "rèn",
+      "meaning_en": "appoint"
+    },
+    {
+      "text": "司马",
+      "type": "word",
+      "pinyin": "Sī mǎ",
+      "meaning_en": "military administrator"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "刘备",
+      "type": "name",
+      "pinyin": "Liú Bèi",
+      "meaning_en": "Liu Bei"
+    },
+    {
+      "text": "仍",
+      "type": "word",
+      "pinyin": "réng",
+      "meaning_en": "still"
+    },
+    {
+      "text": "未",
+      "type": "particle",
+      "pinyin": "wèi",
+      "meaning_en": "not yet"
+    },
+    {
+      "text": "得官",
+      "type": "word",
+      "pinyin": "dé guān",
+      "meaning_en": "obtain office"
+    },
+    {
+      "text": "。",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "张钧",
+      "type": "name",
+      "pinyin": "Zhāng Jūn",
+      "meaning_en": "Zhang Jun"
+    },
+    {
+      "text": "揭露",
+      "type": "word",
+      "pinyin": "jiēlù",
+      "meaning_en": "expose"
+    },
+    {
+      "text": "十",
+      "type": "word",
+      "pinyin": "shí",
+      "meaning_en": "ten"
+    },
+    {
+      "text": "常",
+      "type": "word",
+      "pinyin": "cháng",
+      "meaning_en": "permanent"
+    },
+    {
+      "text": "侍卖官",
+      "type": "word",
+      "pinyin": "shì mài guān",
+      "meaning_en": "eunuchs selling offices"
+    },
+    {
+      "text": "害",
+      "type": "word",
+      "pinyin": "hài",
+      "meaning_en": "harm"
+    },
+    {
+      "text": "民",
+      "type": "word",
+      "pinyin": "mín",
+      "meaning_en": "the people"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "反",
+      "type": "word",
+      "pinyin": "fǎn",
+      "meaning_en": "instead"
+    },
+    {
+      "text": "被",
+      "type": "particle",
+      "pinyin": "bèi",
+      "meaning_en": "be; passive marker"
+    },
+    {
+      "text": "逐出",
+      "type": "word",
+      "pinyin": "zhú chū",
+      "meaning_en": "expel"
+    },
+    {
+      "text": "。",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "刘备",
+      "type": "name",
+      "pinyin": "Liú Bèi",
+      "meaning_en": "Liu Bei"
+    },
+    {
+      "text": "任",
+      "type": "word",
+      "pinyin": "rèn",
+      "meaning_en": "be appointed"
+    },
+    {
+      "text": "安喜县",
+      "type": "name",
+      "pinyin": "Ānxǐ Xiàn",
+      "meaning_en": "Anxi County"
+    },
+    {
+      "text": "尉",
+      "type": "word",
+      "pinyin": "wèi",
+      "meaning_en": "military officer"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "爱",
+      "type": "word",
+      "pinyin": "ài",
+      "meaning_en": "love"
+    },
+    {
+      "text": "民",
+      "type": "word",
+      "pinyin": "mín",
+      "meaning_en": "the people"
+    },
+    {
+      "text": "守",
+      "type": "word",
+      "pinyin": "shǒu",
+      "meaning_en": "uphold"
+    },
+    {
+      "text": "职",
+      "type": "word",
+      "pinyin": "zhí",
+      "meaning_en": "duties"
+    },
+    {
+      "text": "。",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "督",
+      "type": "word",
+      "pinyin": "dū",
+      "meaning_en": "supervise"
+    },
+    {
+      "text": "邮",
+      "type": "word",
+      "pinyin": "yóu",
+      "meaning_en": "postal inspector"
+    },
+    {
+      "text": "巡察",
+      "type": "word",
+      "pinyin": "xún chá",
+      "meaning_en": "inspect"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "县吏",
+      "type": "word",
+      "pinyin": "xiàn lì",
+      "meaning_en": "county clerks"
+    },
+    {
+      "text": "猜",
+      "type": "word",
+      "pinyin": "cāi",
+      "meaning_en": "guess"
+    },
+    {
+      "text": "他",
+      "type": "word",
+      "pinyin": "tā",
+      "meaning_en": "he"
+    },
+    {
+      "text": "索贿",
+      "type": "word",
+      "pinyin": "suǒ huì",
+      "meaning_en": "demand bribes"
+    },
+    {
+      "text": "；",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "他",
+      "type": "word",
+      "pinyin": "tā",
+      "meaning_en": "he"
+    },
+    {
+      "text": "又",
+      "type": "word",
+      "pinyin": "yòu",
+      "meaning_en": "also"
+    },
+    {
+      "text": "逼",
+      "type": "word",
+      "pinyin": "bī",
+      "meaning_en": "compel"
+    },
+    {
+      "text": "县吏",
+      "type": "word",
+      "pinyin": "xiàn lì",
+      "meaning_en": "county clerks"
+    },
+    {
+      "text": "诬陷",
+      "type": "word",
+      "pinyin": "wū xiàn",
+      "meaning_en": "frame"
+    },
+    {
+      "text": "刘备",
+      "type": "name",
+      "pinyin": "Liú Bèi",
+      "meaning_en": "Liu Bei"
+    },
+    {
+      "text": "。",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "张飞",
+      "type": "name",
+      "pinyin": "Zhāng Fēi",
+      "meaning_en": "Zhang Fei"
+    },
+    {
+      "text": "得知",
+      "type": "word",
+      "pinyin": "dézhī",
+      "meaning_en": "learn of"
+    },
+    {
+      "text": "百",
+      "type": "word",
+      "pinyin": "bǎi",
+      "meaning_en": "hundred"
+    },
+    {
+      "text": "姓",
+      "type": "word",
+      "pinyin": "xìng",
+      "meaning_en": "common people"
+    },
+    {
+      "text": "哭诉",
+      "type": "word",
+      "pinyin": "kū sù",
+      "meaning_en": "complain tearfully"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "鞭打",
+      "type": "word",
+      "pinyin": "biān dǎ",
+      "meaning_en": "whip"
+    },
+    {
+      "text": "督",
+      "type": "word",
+      "pinyin": "dū",
+      "meaning_en": "supervise"
+    },
+    {
+      "text": "邮",
+      "type": "word",
+      "pinyin": "yóu",
+      "meaning_en": "postal inspector"
+    },
+    {
+      "text": "；",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "刘备",
+      "type": "name",
+      "pinyin": "Liú Bèi",
+      "meaning_en": "Liu Bei"
+    },
+    {
+      "text": "制止",
+      "type": "word",
+      "pinyin": "zhìzhǐ",
+      "meaning_en": "stop"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "只",
+      "type": "particle",
+      "pinyin": "zhǐ",
+      "meaning_en": "only"
+    },
+    {
+      "text": "还",
+      "type": "word",
+      "pinyin": "huán",
+      "meaning_en": "return"
+    },
+    {
+      "text": "印",
+      "type": "word",
+      "pinyin": "yìn",
+      "meaning_en": "seal"
+    },
+    {
+      "text": "绶",
+      "type": "word",
+      "pinyin": "shòu",
+      "meaning_en": "seal cord"
+    },
+    {
+      "text": "弃",
+      "type": "word",
+      "pinyin": "qì",
+      "meaning_en": "abandon"
+    },
+    {
+      "text": "官",
+      "type": "word",
+      "pinyin": "guān",
+      "meaning_en": "office"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "三",
+      "type": "word",
+      "pinyin": "sān",
+      "meaning_en": "three"
+    },
+    {
+      "text": "人",
+      "type": "word",
+      "pinyin": "rén",
+      "meaning_en": "people"
+    },
+    {
+      "text": "逃往",
+      "type": "word",
+      "pinyin": "táo wǎng",
+      "meaning_en": "flee to"
+    },
+    {
+      "text": "代州",
+      "type": "name",
+      "pinyin": "Dàizhōu",
+      "meaning_en": "Daizhou"
+    },
+    {
+      "text": "。",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "十常侍",
+      "type": "name",
+      "pinyin": "Shí Chángshì",
+      "meaning_en": "Ten Permanent Functionaries"
+    },
+    {
+      "text": "掌",
+      "type": "word",
+      "pinyin": "zhǎng",
+      "meaning_en": "hold"
+    },
+    {
+      "text": "权",
+      "type": "word",
+      "pinyin": "quán",
+      "meaning_en": "power"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "罢免",
+      "type": "word",
+      "pinyin": "bàmiǎn",
+      "meaning_en": "dismiss"
+    },
+    {
+      "text": "皇甫嵩",
+      "type": "name",
+      "pinyin": "Huángfǔ Sōng",
+      "meaning_en": "Huangfu Song"
+    },
+    {
+      "text": "、",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "朱隽",
+      "type": "name",
+      "pinyin": "Zhū Juàn",
+      "meaning_en": "Zhu Jun"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "自己",
+      "type": "word",
+      "pinyin": "zìjǐ",
+      "meaning_en": "themselves"
+    },
+    {
+      "text": "封将列侯",
+      "type": "word",
+      "pinyin": "fēng jiāng liè hóu",
+      "meaning_en": "appoint generals and ennoble marquises"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "并",
+      "type": "word",
+      "pinyin": "bìng",
+      "meaning_en": "and"
+    },
+    {
+      "text": "隐瞒",
+      "type": "word",
+      "pinyin": "yǐnmán",
+      "meaning_en": "conceal"
+    },
+    {
+      "text": "长沙",
+      "type": "name",
+      "pinyin": "Chángshā",
+      "meaning_en": "Changsha"
+    },
+    {
+      "text": "、",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "渔阳",
+      "type": "name",
+      "pinyin": "Yúyáng",
+      "meaning_en": "Yuyang"
+    },
+    {
+      "text": "叛乱",
+      "type": "word",
+      "pinyin": "pàn luàn",
+      "meaning_en": "rebellion"
+    },
+    {
+      "text": "。",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "刘陶",
+      "type": "name",
+      "pinyin": "Liú Táo",
+      "meaning_en": "Liu Tao"
+    },
+    {
+      "text": "进谏",
+      "type": "word",
+      "pinyin": "jìn jiàn",
+      "meaning_en": "remonstrate"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "陈耽",
+      "type": "name",
+      "pinyin": "Chén Dān",
+      "meaning_en": "Chen Dan"
+    },
+    {
+      "text": "又",
+      "type": "word",
+      "pinyin": "yòu",
+      "meaning_en": "also"
+    },
+    {
+      "text": "指责",
+      "type": "word",
+      "pinyin": "zhǐzé",
+      "meaning_en": "accuse"
+    },
+    {
+      "text": "封谞",
+      "type": "name",
+      "pinyin": "Fēng Xū",
+      "meaning_en": "Feng Xu"
+    },
+    {
+      "text": "等",
+      "type": "word",
+      "pinyin": "děng",
+      "meaning_en": "and others"
+    },
+    {
+      "text": "勾结",
+      "type": "word",
+      "pinyin": "gōujié",
+      "meaning_en": "collude"
+    },
+    {
+      "text": "黄巾",
+      "type": "name",
+      "pinyin": "Huángjīn",
+      "meaning_en": "Yellow Turbans"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "两",
+      "type": "word",
+      "pinyin": "liǎng",
+      "meaning_en": "both"
+    },
+    {
+      "text": "人",
+      "type": "word",
+      "pinyin": "rén",
+      "meaning_en": "people"
+    },
+    {
+      "text": "被",
+      "type": "particle",
+      "pinyin": "bèi",
+      "meaning_en": "be; passive marker"
+    },
+    {
+      "text": "下狱",
+      "type": "word",
+      "pinyin": "xià yù",
+      "meaning_en": "imprison"
+    },
+    {
+      "text": "杀害",
+      "type": "word",
+      "pinyin": "shāhài",
+      "meaning_en": "murder"
+    },
+    {
+      "text": "。",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "孙坚",
+      "type": "name",
+      "pinyin": "Sūn Jiān",
+      "meaning_en": "Sun Jian"
+    },
+    {
+      "text": "平定",
+      "type": "word",
+      "pinyin": "píngdìng",
+      "meaning_en": "pacify"
+    },
+    {
+      "text": "长沙",
+      "type": "name",
+      "pinyin": "Chángshā",
+      "meaning_en": "Changsha"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "封",
+      "type": "word",
+      "pinyin": "fēng",
+      "meaning_en": "confer"
+    },
+    {
+      "text": "乌程侯",
+      "type": "word",
+      "pinyin": "Wūchéng hóu",
+      "meaning_en": "Marquis of Wucheng"
+    },
+    {
+      "text": "；",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "刘虞",
+      "type": "name",
+      "pinyin": "Liú Yú",
+      "meaning_en": "Liu Yu"
+    },
+    {
+      "text": "平定",
+      "type": "word",
+      "pinyin": "píngdìng",
+      "meaning_en": "pacify"
+    },
+    {
+      "text": "渔阳",
+      "type": "name",
+      "pinyin": "Yúyáng",
+      "meaning_en": "Yuyang"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "刘备",
+      "type": "name",
+      "pinyin": "Liú Bèi",
+      "meaning_en": "Liu Bei"
+    },
+    {
+      "text": "获赦",
+      "type": "word",
+      "pinyin": "huò shè",
+      "meaning_en": "receive a pardon"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "任下",
+      "type": "word",
+      "pinyin": "rèn xià",
+      "meaning_en": "appointed to Xia"
+    },
+    {
+      "text": "密丞",
+      "type": "word",
+      "pinyin": "mì chéng",
+      "meaning_en": "Mi secretary"
+    },
+    {
+      "text": "、",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "高堂尉",
+      "type": "word",
+      "pinyin": "gāo táng wèi",
+      "meaning_en": "Gaotang commandant"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "后",
+      "type": "word",
+      "pinyin": "hòu",
+      "meaning_en": "later"
+    },
+    {
+      "text": "守",
+      "type": "word",
+      "pinyin": "shǒu",
+      "meaning_en": "serve as magistrate"
+    },
+    {
+      "text": "平原",
+      "type": "name",
+      "pinyin": "Píngyuán",
+      "meaning_en": "Pingyuan"
+    },
+    {
+      "text": "县令",
+      "type": "word",
+      "pinyin": "xiàn lìng",
+      "meaning_en": "county magistrate"
+    },
+    {
+      "text": "。",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "灵帝",
+      "type": "name",
+      "pinyin": "Líng Dì",
+      "meaning_en": "Emperor Ling"
+    },
+    {
+      "text": "病重",
+      "type": "word",
+      "pinyin": "bìng zhòng",
+      "meaning_en": "seriously ill"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "何后",
+      "type": "name",
+      "pinyin": "Hé Hòu",
+      "meaning_en": "Empress He"
+    },
+    {
+      "text": "毒死王",
+      "type": "word",
+      "pinyin": "dú sǐ Wáng",
+      "meaning_en": "poison Wang"
+    },
+    {
+      "text": "美人",
+      "type": "word",
+      "pinyin": "měirén",
+      "meaning_en": "consort"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "董太后",
+      "type": "name",
+      "pinyin": "Dǒng Tài Hòu",
+      "meaning_en": "Empress Dowager Dong"
+    },
+    {
+      "text": "想立",
+      "type": "word",
+      "pinyin": "xiǎng lì",
+      "meaning_en": "want to install"
+    },
+    {
+      "text": "皇子",
+      "type": "word",
+      "pinyin": "huáng zǐ",
+      "meaning_en": "prince"
+    },
+    {
+      "text": "协",
+      "type": "name",
+      "pinyin": "Xié",
+      "meaning_en": "Xie"
+    },
+    {
+      "text": "。",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "蹇",
+      "type": "name",
+      "pinyin": "Jiǎn",
+      "meaning_en": "Jian"
+    },
+    {
+      "text": "硕",
+      "type": "name",
+      "pinyin": "Shuò",
+      "meaning_en": "Shuo"
+    },
+    {
+      "text": "谋害",
+      "type": "word",
+      "pinyin": "móuhài",
+      "meaning_en": "plot to murder"
+    },
+    {
+      "text": "何",
+      "type": "name",
+      "pinyin": "Hé",
+      "meaning_en": "He"
+    },
+    {
+      "text": "进",
+      "type": "name",
+      "pinyin": "Jìn",
+      "meaning_en": "Jin"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "潘隐",
+      "type": "name",
+      "pinyin": "Pān Yǐn",
+      "meaning_en": "Pan Yin"
+    },
+    {
+      "text": "示",
+      "type": "word",
+      "pinyin": "shì",
+      "meaning_en": "give"
+    },
+    {
+      "text": "警",
+      "type": "word",
+      "pinyin": "jǐng",
+      "meaning_en": "warning"
+    },
+    {
+      "text": "；",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "何进",
+      "type": "name",
+      "pinyin": "Hé Jìn",
+      "meaning_en": "He Jin"
+    },
+    {
+      "text": "与",
+      "type": "word",
+      "pinyin": "yǔ",
+      "meaning_en": "with"
+    },
+    {
+      "text": "袁绍",
+      "type": "name",
+      "pinyin": "Yuán Shào",
+      "meaning_en": "Yuan Shao"
+    },
+    {
+      "text": "等",
+      "type": "word",
+      "pinyin": "děng",
+      "meaning_en": "and others"
+    },
+    {
+      "text": "扶立",
+      "type": "word",
+      "pinyin": "fú lì",
+      "meaning_en": "install"
+    },
+    {
+      "text": "皇子",
+      "type": "word",
+      "pinyin": "huáng zǐ",
+      "meaning_en": "prince"
+    },
+    {
+      "text": "辩为",
+      "type": "word",
+      "pinyin": "biàn wèi",
+      "meaning_en": "Bian as"
+    },
+    {
+      "text": "帝",
+      "type": "word",
+      "pinyin": "dì",
+      "meaning_en": "emperor"
+    },
+    {
+      "text": "。",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "袁绍",
+      "type": "name",
+      "pinyin": "Yuán Shào",
+      "meaning_en": "Yuan Shao"
+    },
+    {
+      "text": "主张",
+      "type": "word",
+      "pinyin": "zhǔzhāng",
+      "meaning_en": "advocate"
+    },
+    {
+      "text": "尽诛",
+      "type": "word",
+      "pinyin": "jǐn zhū",
+      "meaning_en": "exterminate all"
+    },
+    {
+      "text": "宦官",
+      "type": "word",
+      "pinyin": "huàn guān",
+      "meaning_en": "court eunuchs"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "何",
+      "type": "name",
+      "pinyin": "Hé",
+      "meaning_en": "He"
+    },
+    {
+      "text": "进听",
+      "type": "word",
+      "pinyin": "jìn tīng",
+      "meaning_en": "He Jin listened to"
+    },
+    {
+      "text": "何太后",
+      "type": "name",
+      "pinyin": "Hé Tài Hòu",
+      "meaning_en": "Empress He"
+    },
+    {
+      "text": "劝说",
+      "type": "word",
+      "pinyin": "quànshuō",
+      "meaning_en": "persuasion"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "只",
+      "type": "particle",
+      "pinyin": "zhǐ",
+      "meaning_en": "only"
+    },
+    {
+      "text": "杀",
+      "type": "word",
+      "pinyin": "shā",
+      "meaning_en": "kill"
+    },
+    {
+      "text": "蹇",
+      "type": "name",
+      "pinyin": "Jiǎn",
+      "meaning_en": "Jian"
+    },
+    {
+      "text": "硕",
+      "type": "name",
+      "pinyin": "Shuò",
+      "meaning_en": "Shuo"
+    },
+    {
+      "text": "。",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "董",
+      "type": "name",
+      "pinyin": "Dǒng",
+      "meaning_en": "Dong"
+    },
+    {
+      "text": "、",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "何两太",
+      "type": "word",
+      "pinyin": "hé liǎng tài",
+      "meaning_en": "He and the two empress dowagers"
+    },
+    {
+      "text": "后",
+      "type": "word",
+      "pinyin": "hòu",
+      "meaning_en": "empress dowager"
+    },
+    {
+      "text": "争",
+      "type": "word",
+      "pinyin": "zhēng",
+      "meaning_en": "vie for"
+    },
+    {
+      "text": "权",
+      "type": "word",
+      "pinyin": "quán",
+      "meaning_en": "power"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "何",
+      "type": "name",
+      "pinyin": "Hé",
+      "meaning_en": "He"
+    },
+    {
+      "text": "进逼",
+      "type": "word",
+      "pinyin": "jìn bī",
+      "meaning_en": "He Jin compelled"
+    },
+    {
+      "text": "董太后",
+      "type": "name",
+      "pinyin": "Dǒng Tài Hòu",
+      "meaning_en": "Empress Dowager Dong"
+    },
+    {
+      "text": "迁往",
+      "type": "word",
+      "pinyin": "qiān wǎng",
+      "meaning_en": "move to"
+    },
+    {
+      "text": "河间",
+      "type": "name",
+      "pinyin": "Héjiān",
+      "meaning_en": "Hejian"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "又",
+      "type": "word",
+      "pinyin": "yòu",
+      "meaning_en": "then also"
+    },
+    {
+      "text": "暗中",
+      "type": "word",
+      "pinyin": "ànzhōng",
+      "meaning_en": "secretly"
+    },
+    {
+      "text": "毒",
+      "type": "word",
+      "pinyin": "dú",
+      "meaning_en": "poison"
+    },
+    {
+      "text": "死",
+      "type": "word",
+      "pinyin": "sǐ",
+      "meaning_en": "to death"
+    },
+    {
+      "text": "她",
+      "type": "word",
+      "pinyin": "tā",
+      "meaning_en": "her"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "董重",
+      "type": "name",
+      "pinyin": "Dǒng Zhòng",
+      "meaning_en": "Dong Zhong"
+    },
+    {
+      "text": "自刎",
+      "type": "word",
+      "pinyin": "zì wěn",
+      "meaning_en": "cut his own throat"
+    },
+    {
+      "text": "。",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "袁绍",
+      "type": "name",
+      "pinyin": "Yuán Shào",
+      "meaning_en": "Yuan Shao"
+    },
+    {
+      "text": "再",
+      "type": "word",
+      "pinyin": "zài",
+      "meaning_en": "again"
+    },
+    {
+      "text": "劝",
+      "type": "word",
+      "pinyin": "quàn",
+      "meaning_en": "urge"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "何",
+      "type": "name",
+      "pinyin": "Hé",
+      "meaning_en": "He"
+    },
+    {
+      "text": "进受",
+      "type": "word",
+      "pinyin": "jìn shòu",
+      "meaning_en": "He Jin was subject to"
+    },
+    {
+      "text": "何太后",
+      "type": "name",
+      "pinyin": "Hé Tài Hòu",
+      "meaning_en": "Empress He"
+    },
+    {
+      "text": "、",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "何苗",
+      "type": "name",
+      "pinyin": "Hé Miáo",
+      "meaning_en": "He Miao"
+    },
+    {
+      "text": "阻挠",
+      "type": "word",
+      "pinyin": "zǔnáo",
+      "meaning_en": "obstruction"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "仍",
+      "type": "word",
+      "pinyin": "réng",
+      "meaning_en": "nevertheless"
+    },
+    {
+      "text": "发",
+      "type": "word",
+      "pinyin": "fā",
+      "meaning_en": "send out"
+    },
+    {
+      "text": "檄召各镇",
+      "type": "word",
+      "pinyin": "xí zhào gè zhèn",
+      "meaning_en": "issue a summons to all regional commanders"
+    },
+    {
+      "text": "兵马",
+      "type": "word",
+      "pinyin": "bīng mǎ",
+      "meaning_en": "military forces"
+    },
+    {
+      "text": "入",
+      "type": "word",
+      "pinyin": "rù",
+      "meaning_en": "enter"
+    },
+    {
+      "text": "京",
+      "type": "word",
+      "pinyin": "jīng",
+      "meaning_en": "the capital"
+    },
+    {
+      "text": "。",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "陈琳",
+      "type": "name",
+      "pinyin": "Chén Lín",
+      "meaning_en": "Chen Lin"
+    },
+    {
+      "text": "警告",
+      "type": "word",
+      "pinyin": "jǐnggào",
+      "meaning_en": "warn"
+    },
+    {
+      "text": "此举",
+      "type": "word",
+      "pinyin": "cǐ jǔ",
+      "meaning_en": "this move"
+    },
+    {
+      "text": "会",
+      "type": "particle",
+      "pinyin": "huì",
+      "meaning_en": "will"
+    },
+    {
+      "text": "引",
+      "type": "word",
+      "pinyin": "yǐn",
+      "meaning_en": "draw"
+    },
+    {
+      "text": "狼",
+      "type": "word",
+      "pinyin": "láng",
+      "meaning_en": "wolf"
+    },
+    {
+      "text": "入",
+      "type": "word",
+      "pinyin": "rù",
+      "meaning_en": "into"
+    },
+    {
+      "text": "室",
+      "type": "word",
+      "pinyin": "shì",
+      "meaning_en": "the room"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "曹操",
+      "type": "name",
+      "pinyin": "Cáo Cāo",
+      "meaning_en": "Cao Cao"
+    },
+    {
+      "text": "却",
+      "type": "word",
+      "pinyin": "què",
+      "meaning_en": "yet"
+    },
+    {
+      "text": "说",
+      "type": "word",
+      "pinyin": "shuō",
+      "meaning_en": "say"
+    },
+    {
+      "text": "诛杀",
+      "type": "word",
+      "pinyin": "zhū shā",
+      "meaning_en": "kill"
+    },
+    {
+      "text": "宦官",
+      "type": "word",
+      "pinyin": "huàn guān",
+      "meaning_en": "court eunuchs"
+    },
+    {
+      "text": "易如反",
+      "type": "word",
+      "pinyin": "yì rú fǎn",
+      "meaning_en": "as easy as turning over one's hand"
+    },
+    {
+      "text": "掌",
+      "type": "word",
+      "pinyin": "zhǎng",
+      "meaning_en": "palm"
+    },
+    {
+      "text": "，",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "京城",
+      "type": "word",
+      "pinyin": "jīng chéng",
+      "meaning_en": "capital city"
+    },
+    {
+      "text": "大",
+      "type": "word",
+      "pinyin": "dà",
+      "meaning_en": "greatly"
+    },
+    {
+      "text": "乱",
+      "type": "word",
+      "pinyin": "luàn",
+      "meaning_en": "be thrown into chaos"
+    },
+    {
+      "text": "将",
+      "type": "particle",
+      "pinyin": "jiāng",
+      "meaning_en": "will"
+    },
+    {
+      "text": "至",
+      "type": "word",
+      "pinyin": "zhì",
+      "meaning_en": "arrive"
+    },
+    {
+      "text": "。",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    },
+    {
+      "text": "\n",
+      "type": "punctuation",
+      "pinyin": "",
+      "meaning_en": ""
+    }
+  ],
+  "grammar_overlays": [],
+  "annotation_audit": {
+    "mode": "fixed_boundaries_one_call",
+    "chapter_sha256": "9e9270ca2694ae472780fe42bf8a36ee80297bda7d2d9b5fec11ba22e82d675e",
+    "chunks": 1,
+    "model_calls": 1,
+    "deterministically_validated": true,
+    "all_reviewed": false,
+    "review_note": "Experimental one-call output; no independent semantic review."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "status": "complete",
+  "started_at": "2026-08-06T23:30:39.156042+00:00",
+  "completed_at": "2026-08-06T23:35:55.515317+00:00",
+  "chunks": 5,
+  "model_calls": 5,
+  "segments": 625,
+  "max_segment_characters": 4,
+  "reconstructs": true,
+  "reader": "/home/usuario/hsk-graded-readers/runs/experiments/chinese-fixed-boundary-hsk4-ch001/reader.json"
+}

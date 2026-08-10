@@ -1,0 +1,68 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_016-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 667,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了曹操欲重用贾诩而贾诩拒绝的情节，以及张绣正式投降、设宴款待曹操等过渡细节。",
+      "classification": "material",
+      "reason": "贾诩拒绝曹操是其不愿抛弃张绣的重要动机和人物刻画，也解释了张绣随后正式投降；设宴款待虽属过渡，但该 omission note 包含这一实质性内容。",
+      "required_fix": "补回贾诩拒绝曹操、因不愿弃张绣而引张绣来降，以及张绣设宴款待曹操的情节。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "称张绣和胡车儿共同设法灌醉典韦，原文是张绣采纳胡车儿的建议后实施。",
+      "classification": "material",
+      "reason": "将胡车儿单独献计、张绣采纳实施改成二人共同设法，错误改变了行动者和因果关系。",
+      "required_fix": "改为张绣采纳胡车儿的建议，由贾诩请典韦饮酒并将其灌醉。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了曹操欲重用贾诩而贾诩拒绝的情节，以及张绣正式投降、设宴款待曹操等过渡细节。",
+      "classification": "material",
+      "reason": "贾诩拒绝曹操是其不愿抛弃张绣的重要动机和人物刻画，也解释了张绣随后正式投降；设宴款待虽属过渡，但该 omission note 包含这一实质性内容。",
+      "required_fix": "补回贾诩拒绝曹操、因不愿弃张绣而引张绣来降，以及张绣设宴款待曹操的情节。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "称张绣和胡车儿共同设法灌醉典韦，原文是张绣采纳胡车儿的建议后实施。",
+      "classification": "material",
+      "reason": "将胡车儿单独献计、张绣采纳实施改成二人共同设法，错误改变了行动者和因果关系。",
+      "required_fix": "改为张绣采纳胡车儿的建议，由贾诩请典韦饮酒并将其灌醉。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 667,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "run_id": "chapter_05-n4",
+  "status": "complete",
+  "source": "/home/usuario/hsk-graded-readers/books/japanese/wagahai_wa_neko_de_aru/chapter_05.txt",
+  "source_sha256": "88552f8966ac1bf053f0e1028aed48a75da0515ff9863c93bce85627b193d533",
+  "level": "n4",
+  "model": "gpt-5.6-luna",
+  "adapt_effort": "xhigh",
+  "review_effort": "medium",
+  "repair_effort": "xhigh",
+  "final_effort": "max",
+  "max_repairs": 3,
+  "fresh_rewrite": true,
+  "annotation_review_effort": "medium",
+  "annotation_repair_effort": "medium",
+  "annotation_final_effort": "xhigh",
+  "max_annotation_repairs": 2,
+  "annotation_mode": "generative",
+  "target_chars": 2500,
+  "updated_at": "2026-08-07T02:25:17.621451+00:00",
+  "language": "japanese",
+  "length_unit": "Japanese letters (kanji, hiragana, katakana)"
+}

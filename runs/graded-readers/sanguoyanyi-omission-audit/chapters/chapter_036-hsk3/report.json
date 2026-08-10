@@ -1,0 +1,106 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_036-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 481,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "omission_note": "略去刘备袭取樊城的预谋和八门金锁阵的具体门位解释。",
+      "classification": "material",
+      "reason": "省略了袭取樊城的谋划及具体破阵依据，使关羽夺城的安排和刘备破阵的因果链条不完整。",
+      "required_fix": "补出徐庶关于樊城空虚、趁机袭取的谋划，并交代八门及生门、景门等门位的进出吉凶。"
+    },
+    {
+      "omission_note": "略去曹仁败退后得知徐庶身份，以及徐庶身世、改名原因和曹操识破其身份的过程。",
+      "classification": "material",
+      "reason": "这些内容解释了曹操如何确认徐庶身份及为何能从徐母入手，也补足了徐庶以单福为名的身份背景。",
+      "required_fix": "补充曹仁打听得知军师为徐庶、程昱揭示徐庶身世与改名经过，以及曹操据此设计诱母召子的过程。"
+    },
+    {
+      "omission_note": "略去徐母劝徐庶不要投降曹操的伪信内容，以及刘备送行时坚持不挽留徐庶的具体缘由。",
+      "classification": "material",
+      "reason": "伪信中的母亲受囚、兄弟亡故和召子救母等内容构成徐庶离去的具体动机；刘备拒绝强留则体现其不以杀母留子、也不阻断母子亲情的关键原则。",
+      "required_fix": "补出伪信制造的具体危局和召回要求，并明确刘备认为强留徐庶会导致曹操杀母、属于不仁不义。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“说诸葛亮自比管仲、乐毅，自己的才华远胜他们”指代不够清楚，容易误解为徐庶自称才华胜过管、乐；原文是徐庶评价诸葛亮才胜管仲、乐毅。",
+      "classification": "material",
+      "reason": "The ambiguous pronoun can change who is claiming superiority over Guan Zhong and Yue Yi, materially altering the attribution and meaning.",
+      "required_fix": "改为“并认为诸葛亮的才华还在管仲、乐毅之上”。"
+    },
+    {
+      "field": "language_problems",
+      "finding_note": "“自己的才华远胜他们”存在指代歧义，建议改为“并认为诸葛亮的才华还在管仲、乐毅之上”。",
+      "classification": "material",
+      "reason": "The pronoun ambiguity can make readers attribute the claim to Xu Shu instead of Zhuge Liang, materially changing the meaning.",
+      "required_fix": "将“自己的才华远胜他们”改为“并认为诸葛亮的才华还在管仲、乐毅之上”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "略去刘备袭取樊城的预谋和八门金锁阵的具体门位解释。",
+      "classification": "material",
+      "reason": "省略了袭取樊城的谋划及具体破阵依据，使关羽夺城的安排和刘备破阵的因果链条不完整。",
+      "required_fix": "补出徐庶关于樊城空虚、趁机袭取的谋划，并交代八门及生门、景门等门位的进出吉凶。"
+    },
+    {
+      "omission_note": "略去曹仁败退后得知徐庶身份，以及徐庶身世、改名原因和曹操识破其身份的过程。",
+      "classification": "material",
+      "reason": "这些内容解释了曹操如何确认徐庶身份及为何能从徐母入手，也补足了徐庶以单福为名的身份背景。",
+      "required_fix": "补充曹仁打听得知军师为徐庶、程昱揭示徐庶身世与改名经过，以及曹操据此设计诱母召子的过程。"
+    },
+    {
+      "omission_note": "略去徐母劝徐庶不要投降曹操的伪信内容，以及刘备送行时坚持不挽留徐庶的具体缘由。",
+      "classification": "material",
+      "reason": "伪信中的母亲受囚、兄弟亡故和召子救母等内容构成徐庶离去的具体动机；刘备拒绝强留则体现其不以杀母留子、也不阻断母子亲情的关键原则。",
+      "required_fix": "补出伪信制造的具体危局和召回要求，并明确刘备认为强留徐庶会导致曹操杀母、属于不仁不义。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“说诸葛亮自比管仲、乐毅，自己的才华远胜他们”指代不够清楚，容易误解为徐庶自称才华胜过管、乐；原文是徐庶评价诸葛亮才胜管仲、乐毅。",
+      "classification": "material",
+      "reason": "The ambiguous pronoun can change who is claiming superiority over Guan Zhong and Yue Yi, materially altering the attribution and meaning.",
+      "required_fix": "改为“并认为诸葛亮的才华还在管仲、乐毅之上”。"
+    },
+    {
+      "field": "language_problems",
+      "finding_note": "“自己的才华远胜他们”存在指代歧义，建议改为“并认为诸葛亮的才华还在管仲、乐毅之上”。",
+      "classification": "material",
+      "reason": "The pronoun ambiguity can make readers attribute the claim to Xu Shu instead of Zhuge Liang, materially changing the meaning.",
+      "required_fix": "将“自己的才华远胜他们”改为“并认为诸葛亮的才华还在管仲、乐毅之上”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 481,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

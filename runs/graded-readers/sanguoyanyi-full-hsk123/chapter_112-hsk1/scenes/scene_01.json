@@ -1,0 +1,135 @@
+{
+  "scene": {
+    "id": "scene_01",
+    "title": "壽春陷落與長城退兵",
+    "source_start_quote": "卻說司馬昭聞諸葛誕會合吳兵前來決戰",
+    "required_events": [
+      "司馬昭採鍾會計，以誘敵伏兵擊敗諸葛誕，圍困壽春。",
+      "鍾會建議三面圍城、留南門誘吳兵，朱異率軍入援，反遭王基、陳騫截擊；孫琳敗退。",
+      "全禕、全端、全懌及蔣班、焦彝先後降魏，文欽因糧盡被諸葛誕殺，文鴦、文虎投降並動搖守軍。",
+      "魏軍攻入，諸葛誕突圍被胡遵斬殺；于詮拒降戰死。司馬昭誅諸葛誕三族，忠卒皆死不降，後釋放吳兵。",
+      "淮南平定後，姜維趁魏軍東征攻取長城，蔣舒、傅僉斬王真、李鵬，司馬望閉城固守。",
+      "鄧艾、鄧忠援至，與姜維交戰不分勝負，改守待援；姜維屢戰不成，得知諸葛誕敗、吳兵降魏，遂決意退兵。"
+    ],
+    "target_chars": 140,
+    "source_start": 0,
+    "source_end": 4060
+  },
+  "text": "司马昭用钟会之计设伏，击败诸葛诞，三面围寿春留南门。朱异入援，被王基、陈骞截败，孙琳退回建业。全祎、全端、全怿、蒋班、焦彝降魏；粮尽，诸葛诞杀文钦，文鸯、文虎投降。魏军入城，胡遵斩诸葛诞；于诠拒降战死。昭灭其三族，俘卒皆不降，放吴兵归国。淮南平后，姜维依傅佥计经骆谷、沈岭取长城，欲焚粮取秦川。傅佥擒王真、杀李鹏，王真被蜀军刺死，司马望闭城。邓艾父子援到，战平姜维，主张坚守待关中援军。姜维五六次约战，闻昭回洛阳将来救，欲退兵。",
+  "review": {
+    "source_fidelity": 8,
+    "naturalness": 8,
+    "readability": 8,
+    "omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "reviewer_verdict": "revise",
+    "harness_decision": "accepted_omission_only_compact_adaptation"
+  },
+  "attempts": [
+    {
+      "stage": "adapt",
+      "text": "司马昭用钟会之计，诱敌伏击，击败诸葛诞并围困寿春。钟会建议三面围城、留南门诱吴军；朱异入援，反被王基、陈骞截击，孙琳败退。全祎、全端、全怿、蒋班、焦彝先后降魏；粮尽后，诸葛诞杀文钦，文鸯、文虎投降，守军动摇。魏军攻入，诸葛诞突围被胡遵斩杀，于诠拒降战死。司马昭诛其三族，忠卒皆死不降，后释吴兵。淮南平后，姜维趁魏军东征取长城；蒋舒、傅佥斩王真、李鹏，司马望闭城固守。邓艾、邓忠援到，交战不分胜负，改守待援。姜维屡战无功，闻诸葛诞败、吴兵降魏，决定退兵。",
+      "review": {
+        "source_fidelity": 7,
+        "naturalness": 8,
+        "readability": 8,
+        "omissions": [
+          "省略了艾、维反复约战而不战的过程，以及姜维得知司马昭回师救援后才决定退兵的具体因果。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "原文中只有傅僉斩杀王真、李鵬，蒋舒并未参与或斩杀二人； adaptación将功劳归于“蒋舒、傅佥”，造成事实错误。"
+        ],
+        "language_problems": [
+          "篇幅明显超过140字目标的约130%上限，压缩度不足。",
+          "mechanical length gate: 187 CJK, required 98-182"
+        ],
+        "verdict": "revise",
+        "harness_decision": "rejected_by_mechanical_length_gate"
+      }
+    },
+    {
+      "stage": "repair_01",
+      "text": "司马昭用钟会之计诱敌伏击，击败诸葛诞并围寿春。钟会建议三面围城、留南门诱吴军；朱异入援反被王基、陈骞截击，孙琳败退。全祎、全端、全怿、蒋班、焦彝降魏；粮尽后诸葛诞杀文钦，文鸯、文虎投降。魏军攻入，诸葛诞突围被胡遵斩杀，于诠拒降战死。司马昭诛其三族，忠卒皆死不降，后释吴兵。淮南平后姜维取长城；傅佥斩王真、李鹏，司马望闭城。邓艾、邓忠援到，交战不分胜负，坚守不出。姜维屡约战，邓艾不应；得知司马昭回师救援，才退兵。",
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 9,
+        "readability": 9,
+        "omissions": [
+          "未交代姜维原计划焚烧长城粮草、进取秦川，导致取长城的行动动机略显不足。",
+          "省略谯周劝谏及姜维拒绝《仇国论》等情节，但对主线 retelling 非必要。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "revise"
+      }
+    },
+    {
+      "stage": "repair_02",
+      "text": "司马昭用钟会之计诱敌伏击，击败诸葛诞并围寿春。钟会建议三面围城、留南门诱吴军；朱异入援反被王基、陈骞截击，孙琳败退。全祎、全端、全怿、蒋班、焦彝降魏；粮尽后诸葛诞杀文钦，文鸯、文虎投降。魏军攻入，诸葛诞突围被胡遵斩杀，于诠拒降战死。司马昭诛其三族，忠卒皆死不降，后释吴兵。淮南平后，姜维按傅佥之计取骆谷、过沈岭，想先烧长城粮草，再进取秦川。傅佥斩王真、李鹏，司马望闭城。邓艾、邓忠援到，交战不分胜负，坚守不出。姜维屡约战，邓艾不应；得知司马昭回师救援，才退兵。",
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 8,
+        "readability": 8,
+        "omissions": [
+          "省略了鄧艾建议坚守、等待关中援军的具体策略。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "“司马昭回师救援”将“班师回洛阳、准备领兵救援”的计划概括成了已经回师救援，略有时序和事实过度确定。"
+        ],
+        "language_problems": [
+          "篇幅明显超过140字目标的130%上限，压缩程度不足。",
+          "mechanical length gate: 193 CJK, required 98-182"
+        ],
+        "verdict": "revise",
+        "harness_decision": "rejected_by_mechanical_length_gate"
+      }
+    },
+    {
+      "stage": "repair_03",
+      "text": "司马昭用钟会之计诱敌伏击，击败诸葛诞，围困寿春。钟会建议留南门诱吴军；朱异入援，反被王基、陈骞截击，孙琳败退。全祎、全端、全怿、蒋班、焦彝降魏；粮尽后诸葛诞杀文钦，文鸯、文虎投降。魏军攻城，诸葛诞被胡遵斩杀，于诠拒降战死；司马昭诛其三族，忠卒皆死不降，后释放吴兵。姜维按傅佥之计取骆谷、过沈岭，欲烧长城粮草，再取秦川。傅佥斩王真、李鹏，司马望闭城。邓艾、邓忠援到，交战不分胜负；邓艾建议坚守待援，待蜀军粮尽再攻。姜维屡约战，邓艾不应；得知司马昭班师回洛阳、准备领兵救援，姜维退兵。",
+      "review": {
+        "source_fidelity": 6,
+        "naturalness": 8,
+        "readability": 8,
+        "omissions": [
+          "省略谯周劝谏姜维、作《仇国论》的情节。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "“傅佥斩王真、李鹏”不准确：傅佥活捉王真，王真后来被蜀军乱枪刺死；李鹏才是被傅佥击杀。",
+          "“姜维退兵”提前确定了原文尚未叙明的结果；原文只说姜维打算暂退。"
+        ],
+        "language_problems": [
+          "篇幅约270字，明显超过140字目标的约70%—130%范围。",
+          "“忠卒皆死不降”指代不够明确，容易误解为忠诚的士卒。",
+          "mechanical length gate: 201 CJK, required 98-182"
+        ],
+        "verdict": "revise",
+        "harness_decision": "rejected_by_mechanical_length_gate"
+      }
+    },
+    {
+      "stage": "fresh_rewrite",
+      "text": "司马昭用钟会之计设伏，击败诸葛诞，三面围寿春留南门。朱异入援，被王基、陈骞截败，孙琳退回建业。全祎、全端、全怿、蒋班、焦彝降魏；粮尽，诸葛诞杀文钦，文鸯、文虎投降。魏军入城，胡遵斩诸葛诞；于诠拒降战死。昭灭其三族，俘卒皆不降，放吴兵归国。淮南平后，姜维依傅佥计经骆谷、沈岭取长城，欲焚粮取秦川。傅佥擒王真、杀李鹏，王真被蜀军刺死，司马望闭城。邓艾父子援到，战平姜维，主张坚守待关中援军。姜维五六次约战，闻昭回洛阳将来救，欲退兵。",
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 8,
+        "readability": 8,
+        "omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "reviewer_verdict": "revise",
+        "harness_decision": "accepted_omission_only_compact_adaptation"
+      }
+    }
+  ],
+  "resolved": true
+}

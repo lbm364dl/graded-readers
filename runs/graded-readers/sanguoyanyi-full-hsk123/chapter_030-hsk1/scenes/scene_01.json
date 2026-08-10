@@ -1,0 +1,73 @@
+{
+  "scene": {
+    "id": "scene_01",
+    "title": "官渡決戰與烏巢焚糧",
+    "source_start_quote": "第三十回：戰官渡本初敗績，劫烏巢孟德燒糧",
+    "required_events": [
+      "袁紹率大軍進逼官渡，拒絕田豐、沮授久守待變的忠諫，曹操則以精兵急戰。",
+      "袁軍仗人多設伏猛攻，曹軍敗退；曹操用霹靂車破土山，又掘塹阻止地道，苦守至糧盡。",
+      "荀彧勸曹操扼守待變，徐晃截焚袁軍糧草；許攸因受袁紹猜忌投曹，獻計夜襲烏巢。",
+      "曹操率五千精兵詐作袁軍，焚毀烏巢糧草，斬淳于瓊與蔣奇；袁紹誤信郭圖，攻曹營失敗，張郃、高覽遂降曹操。",
+      "曹操乘袁軍軍心大亂，分兵佯攻鄴郡、黎陽，誘使袁紹分兵後八路突襲，大破袁軍，袁紹狼狽渡河而逃。",
+      "曹操焚毀袁紹與許都內應的書信；沮授被俘後不降，因欲逃歸袁氏遭殺，曹操悔恨厚葬，官渡之戰遂以袁紹敗亡告終。"
+    ],
+    "target_chars": 140,
+    "source_start": 0,
+    "source_end": 5834
+  },
+  "text": "袁绍逼近官渡，不听田丰、沮授久守之计；曹操急战，袁军设伏，曹军败退。曹操用霹雳车破土山、掘沟挡地道，粮尽时荀彧劝守，徐晃截烧袁粮。许攸受猜忌投曹，献计夜袭乌巢。曹操率五千人诈作袁军烧粮；淳于琼被擒，曹操割去其耳鼻手指遣回，袁绍斩杀之。袁绍误信郭图，攻曹营败，张郃、高览降曹。曹操散布将攻邺郡、黎阳的谣言，诱袁绍分兵后突袭，大破袁军；袁绍渡河逃走。曹操烧毁内应书信。沮授被俘不降，逃归未成，被曹操杀死；曹操悔恨厚葬。",
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8,
+    "readability": 8,
+    "omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "reviewer_verdict": "revise",
+    "harness_decision": "accepted_omission_only_compact_adaptation"
+  },
+  "attempts": [
+    {
+      "stage": "adapt",
+      "text": "袁绍率大军逼近官渡，拒绝田丰、沮授久守待变的忠告；曹操以精兵急战。袁军仗人多设伏猛攻，曹军败退。曹操用霹雳车破土山，又掘沟挡住地道，苦守到粮尽。荀彧劝曹操扼守待变，徐晃截烧袁军粮草。许攸受袁绍猜忌投曹，献计夜袭乌巢。曹操率五千精兵诈作袁军，烧尽乌巢粮草，斩淳于琼、蒋奇；袁绍误信郭图，攻曹营失败，张郃、高览降曹。曹操佯攻邺郡、黎阳，诱袁绍分兵，再以八路突袭，大破袁军；袁绍狼狈渡河逃走。曹操烧毁袁绍与许都内应的书信。沮授被俘不降，欲逃归袁氏而被杀；曹操悔恨，厚葬沮授。官渡之战以袁绍败亡告终。",
+      "review": {
+        "source_fidelity": 7,
+        "naturalness": 8,
+        "readability": 8,
+        "omissions": [],
+        "unsupported_additions": [
+          "“袁绍败亡”将本回结局扩展为袁绍死亡或彻底灭亡，原文仅写其战败逃走。"
+        ],
+        "distortions": [
+          "“斩淳于琼”因果不准确：曹操只是割去其耳鼻手指并遣回，之后由袁绍下令斩杀。",
+          "“曹操佯攻邺郡、黎阳”表述略有偏差，原文是散布将攻两地的谣言，借此诱使袁绍分兵。"
+        ],
+        "language_problems": [
+          "篇幅约为目标140字的两倍，明显超出要求的70%-130%范围。",
+          "mechanical length gate: 213 CJK, required 98-182"
+        ],
+        "verdict": "revise",
+        "harness_decision": "rejected_by_mechanical_length_gate"
+      }
+    },
+    {
+      "stage": "repair_01",
+      "text": "袁绍逼近官渡，不听田丰、沮授久守之计；曹操急战，袁军设伏，曹军败退。曹操用霹雳车破土山、掘沟挡地道，粮尽时荀彧劝守，徐晃截烧袁粮。许攸受猜忌投曹，献计夜袭乌巢。曹操率五千人诈作袁军烧粮；淳于琼被擒，曹操割去其耳鼻手指遣回，袁绍斩杀之。袁绍误信郭图，攻曹营败，张郃、高览降曹。曹操散布将攻邺郡、黎阳的谣言，诱袁绍分兵后突袭，大破袁军；袁绍渡河逃走。曹操烧毁内应书信。沮授被俘不降，逃归未成，被曹操杀死；曹操悔恨厚葬。",
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 8,
+        "omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "reviewer_verdict": "revise",
+        "harness_decision": "accepted_omission_only_compact_adaptation"
+      }
+    }
+  ],
+  "resolved": true
+}

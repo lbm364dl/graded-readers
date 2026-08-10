@@ -1,0 +1,136 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_071-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 860,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "“黄忠受夏侯渊闭守不出的刺激”将原文中孔明激黄忠出战的意图改成了黄忠主动受刺激，因果关系略有偏差。",
+      "classification": "material",
+      "reason": "原文明确是孔明认为需要用言语激将黄忠，并安排法正相助；改写将因果主体和动机改成黄忠主动受到刺激，属于真实的因果关系偏移。",
+      "required_fix": "改为“孔明看出需要激黄忠出战，便命法正随他出战”或明确表述为孔明激将黄忠。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "“黄忠受夏侯渊闭守不出的刺激”将原文中孔明激黄忠出战的意图改成了黄忠主动受刺激，因果关系略有偏差。",
+      "classification": "material",
+      "reason": "原文明确是孔明认为需要用言语激将黄忠，并安排法正相助；改写将因果主体和动机改成黄忠主动受到刺激，属于真实的因果关系偏移。",
+      "required_fix": "改为“孔明看出需要激黄忠出战，便命法正随他出战”或明确表述为孔明激将黄忠。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": []
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 840,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 8.5,
+        "readability": 8.5,
+        "material_omissions": [
+          "省略了孔明说明曹军因粮草不足而暂不进兵、烧毁粮草可挫败曹军锐气的战略动机。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "“黄忠乘胜攻取定军山”将原文中黄忠前往争夺但未明确夺取、随后由刘封和孟达夺下定军山的结果改成了黄忠已经攻取，造成夺取者和事件顺序的事实偏差。"
+        ],
+        "language_problems": [],
+        "verdict": "revise",
+        "omissions": []
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 868,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 8.5,
+        "readability": 8.5,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "原文是黄忠率军夜袭夺取定军山西侧的对山，修复稿写成“法正……夜袭夺取”，错误改变了夺山者。",
+          "原文由在山顶的法正举白旗、红旗发号，修复稿的表述容易理解为黄忠举白旗示弱，改变了战术执行者。"
+        ],
+        "language_problems": [
+          "“另派严颜前往巴西阆中守隘，替张飞、魏延前来攻取汉中”语序和指代略显含混。"
+        ],
+        "verdict": "revise",
+        "omissions": []
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 834,
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 8.5,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "“随后刘封、孟达夺下定军山”颠倒了原文时序：原文中二人在赵云截击张郃之前已经夺取定军山。"
+        ],
+        "language_problems": [],
+        "verdict": "revise",
+        "omissions": []
+      },
+      "passed": false
+    },
+    {
+      "round": 4,
+      "candidate_cjk": 834,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 8.8,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "将黄忠写成“攻取定军山”，原文只是进攻定军山，最终由刘封、孟达夺取。",
+          "“刘封、孟达已先夺下定军山”造成时序和行动关系失真；他们是在黄忠进攻、张郃败退并被赵云截击后才被说明已夺山。"
+        ],
+        "language_problems": [],
+        "verdict": "revise",
+        "omissions": []
+      },
+      "passed": false
+    },
+    {
+      "round": 5,
+      "candidate_cjk": 860,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "passed": true
+    }
+  ]
+}

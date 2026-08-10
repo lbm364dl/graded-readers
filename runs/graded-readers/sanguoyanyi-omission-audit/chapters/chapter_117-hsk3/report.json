@@ -1,0 +1,102 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_117-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 467,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了钟会轻视阴平奇袭计策的具体理由。",
+      "classification": "material",
+      "reason": "这部分说明钟会为何否定阴平方案，并体现其对地形、补给和蜀军设防的判断，构成关键动机与人物刻画。",
+      "required_fix": "补充钟会认为阴平山险、蜀军可断魏军退路，导致魏军困饿而死，因此坚持正道攻剑阁。"
+    },
+    {
+      "omission_note": "省略了涪城守军投降及成都方面连续告急的具体过程。",
+      "classification": "material",
+      "reason": "涪城守军投降是邓艾迅速推进的重要事件；连续告急、黄皓否认及群臣反应则直接构成成都决定召诸葛瞻出兵的因果链。",
+      "required_fix": "补充涪城官吏军民投降、军情传入成都、黄皓否认以及急报不断导致群臣请诸葛瞻出兵的过程。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了钟会轻视阴平奇袭计策的具体理由。",
+      "classification": "material",
+      "reason": "这部分说明钟会为何否定阴平方案，并体现其对地形、补给和蜀军设防的判断，构成关键动机与人物刻画。",
+      "required_fix": "补充钟会认为阴平山险、蜀军可断魏军退路，导致魏军困饿而死，因此坚持正道攻剑阁。"
+    },
+    {
+      "omission_note": "省略了涪城守军投降及成都方面连续告急的具体过程。",
+      "classification": "material",
+      "reason": "涪城守军投降是邓艾迅速推进的重要事件；连续告急、黄皓否认及群臣反应则直接构成成都决定召诸葛瞻出兵的因果链。",
+      "required_fix": "补充涪城官吏军民投降、军情传入成都、黄皓否认以及急报不断导致群臣请诸葛瞻出兵的过程。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 456,
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [
+          "将邓艾撤兵描述为“佯退”，原文只写撤兵退，并未明确说明是假退或诱敌。"
+        ],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 456,
+      "review": {
+        "source_fidelity": 8.2,
+        "naturalness": 8.7,
+        "readability": 9.0,
+        "material_omissions": [
+          "未明确交代诸葛瞻是诸葛亮（武侯）之子，削弱了其作为武侯后继者以及诸葛尚作为武侯孙辈的家族关系和忠义动机。"
+        ],
+        "unsupported_additions": [
+          "“后主受其蒙蔽而疑信不定”加入了原文未明确写出的心理状态；原文只写黄皓称急报为假消息。"
+        ],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 467,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

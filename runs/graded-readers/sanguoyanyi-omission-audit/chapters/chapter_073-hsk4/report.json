@@ -1,0 +1,66 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_073-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 709,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了曹操正式退兵、军队溃败的细节。",
+      "classification": "material",
+      "reason": "這些內容交代了曹操撤退的具體戰況、軍心崩潰及馬超追擊，屬於重要事件過程；接受場景僅保留結果，弱化了退兵與潰敗的因果和程度。",
+      "required_fix": "補回曹操退兵時遭多路襲擊、魏延射箭、軍心潰散，以及馬超伏兵追擊、曹軍奔逃至京兆等關鍵細節。"
+    },
+    {
+      "omission_note": "省略了孙权先送回满宠、再派诸葛瑾的外交过程。",
+      "classification": "material",
+      "reason": "原文明確安排滿寵先返許都、孫權再派諸葛瑾求親，這是外交行動的時間順序；接受場景將諸葛瑾寫成先行使者，造成了 chronology 和外交部署的簡化失真。",
+      "required_fix": "補回孫權先禮送滿寵回許都，再遣諸葛瑾赴荊州求親的先後次序。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了曹操正式退兵、军队溃败的细节。",
+      "classification": "material",
+      "reason": "這些內容交代了曹操撤退的具體戰況、軍心崩潰及馬超追擊，屬於重要事件過程；接受場景僅保留結果，弱化了退兵與潰敗的因果和程度。",
+      "required_fix": "補回曹操退兵時遭多路襲擊、魏延射箭、軍心潰散，以及馬超伏兵追擊、曹軍奔逃至京兆等關鍵細節。"
+    },
+    {
+      "omission_note": "省略了孙权先送回满宠、再派诸葛瑾的外交过程。",
+      "classification": "material",
+      "reason": "原文明確安排滿寵先返許都、孫權再派諸葛瑾求親，這是外交行動的時間順序；接受場景將諸葛瑾寫成先行使者，造成了 chronology 和外交部署的簡化失真。",
+      "required_fix": "補回孫權先禮送滿寵回許都，再遣諸葛瑾赴荊州求親的先後次序。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 8.5,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 709,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_094-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 593,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "omission_note": "未提蜀军追至渭水并夺取魏寨，以及曹真上表求援等收束细节。",
+      "classification": "material",
+      "reason": "这些内容补充了蜀军大胜后的具体战果，并交代曹真向魏廷求援、曹叡获报的直接因果衔接，属于重要事件结果和后续情节所需信息。",
+      "required_fix": "补充蜀军追至渭水、夺取魏寨，以及曹真因败军而上表求援的情节。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "未提蜀军追至渭水并夺取魏寨，以及曹真上表求援等收束细节。",
+      "classification": "material",
+      "reason": "这些内容补充了蜀军大胜后的具体战果，并交代曹真向魏廷求援、曹叡获报的直接因果衔接，属于重要事件结果和后续情节所需信息。",
+      "required_fix": "补充蜀军追至渭水、夺取魏寨，以及曹真因败军而上表求援的情节。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 593,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

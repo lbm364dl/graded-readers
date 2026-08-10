@@ -1,0 +1,58 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_069-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 245,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“失败的伏笔已经留下”是对张郃结局的推断，原文此处尚未交代胜负。",
+      "classification": "material",
+      "reason": "原文只写张郃请战并待下文分解，未暗示其必然失败；该表述提前推断了未交代的战果。",
+      "required_fix": "删去“失败的伏笔已经留下”，改为“张郃带兵攻打巴西，胜负待下文分解”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“失败的伏笔已经留下”是对张郃结局的推断，原文此处尚未交代胜负。",
+      "classification": "material",
+      "reason": "原文只写张郃请战并待下文分解，未暗示其必然失败；该表述提前推断了未交代的战果。",
+      "required_fix": "删去“失败的伏笔已经留下”，改为“张郃带兵攻打巴西，胜负待下文分解”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": []
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 245,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "passed": true
+    }
+  ]
+}

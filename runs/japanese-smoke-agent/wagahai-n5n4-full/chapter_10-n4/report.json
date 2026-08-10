@@ -1,0 +1,34 @@
+{
+  "status": "complete",
+  "scenes": 5,
+  "japanese_chars": 2942,
+  "chapter_cjk": 2942,
+  "scene_verdicts": {
+    "scene_01": "pass",
+    "scene_02": "pass",
+    "scene_03": "pass",
+    "scene_04": "pass",
+    "scene_05": "pass"
+  },
+  "chapter_review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "omissions": [],
+    "unsupported_additions": [],
+    "distortions": [
+      "雪江が主人を天探女と蒟蒻閻魔の両方に直接たとえたように整理され、原文の発言者分担がやや圧縮されている。"
+    ],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "chapter_review_verdict": "pass",
+  "scene_attempts": {
+    "scene_01": 2,
+    "scene_02": 1,
+    "scene_03": 1,
+    "scene_04": 1,
+    "scene_05": 2
+  },
+  "unresolved_scenes": []
+}

@@ -39,6 +39,21 @@ class TestCoverageStatistics:
         words = [w for w, _ in stats.above_level_words]
         assert len(words) > 0
 
+    def test_target_band_profile_distinguishes_lower_level_text(self):
+        lower = coverage_statistics("我是学生", 3)
+        assert lower.passes is True
+        assert lower.lower_level_coverage_percent == 100.0
+        assert lower.target_band_tokens == 0
+        assert lower.target_band_percent == 0.0
+        assert lower.fits_target_band is False
+
+        banded = coverage_statistics("我学习经济", 3)
+        assert banded.passes is True
+        assert banded.lower_level_coverage_percent == pytest.approx(66.67, abs=0.01)
+        assert banded.target_band_tokens == 1
+        assert banded.target_band_percent == pytest.approx(33.33, abs=0.01)
+        assert banded.fits_target_band is True
+
 
 class TestReport:
     def test_report_generation(self):
@@ -46,3 +61,6 @@ class TestReport:
         report = print_coverage_report(stats)
         assert "Coverage Report" in report
         assert "HSK 1" in report
+        assert "Lower-level cover" in report
+        assert "Target-band tokens" in report
+        assert "Fits target band" in report

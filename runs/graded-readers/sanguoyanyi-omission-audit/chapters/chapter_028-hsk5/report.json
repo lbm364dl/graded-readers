@@ -1,0 +1,68 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_028-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 925,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "略去关定长子关宁及关平拜刘备为伯父等次要细节。",
+      "classification": "material",
+      "reason": "关平拜刘备为伯父明确补充了关平与刘备的亲属关系；该关系属于人物关系信息，不能仅视为装饰性细节。",
+      "required_fix": "补充关定长子关宁学文的介绍，并说明关平拜关羽为父、呼刘备为伯父。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“郭常之子带裴元绍等人拦路劫马”略显主次颠倒，原文是郭常之子向裴元绍报信，由裴元绍率众劫马。",
+      "classification": "material",
+      "reason": "将率众劫马的主要行为者由裴元绍偏移为郭常之子，改变了关键行动者及其因果关系。",
+      "required_fix": "改为“郭常之子向裴元绍报信，由裴元绍率众拦路劫马”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "略去关定长子关宁及关平拜刘备为伯父等次要细节。",
+      "classification": "material",
+      "reason": "关平拜刘备为伯父明确补充了关平与刘备的亲属关系；该关系属于人物关系信息，不能仅视为装饰性细节。",
+      "required_fix": "补充关定长子关宁学文的介绍，并说明关平拜关羽为父、呼刘备为伯父。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“郭常之子带裴元绍等人拦路劫马”略显主次颠倒，原文是郭常之子向裴元绍报信，由裴元绍率众劫马。",
+      "classification": "material",
+      "reason": "将率众劫马的主要行为者由裴元绍偏移为郭常之子，改变了关键行动者及其因果关系。",
+      "required_fix": "改为“郭常之子向裴元绍报信，由裴元绍率众拦路劫马”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 925,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_104-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 312,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了李福第二次来询问继任者的情节及孔明在此时才指定蒋琬、费祎。",
+      "classification": "material",
+      "reason": "This omits the explicit succession sequence and the timing of Kongming's final appointments, which affects chronology and important information for later leadership continuity.",
+      "required_fix": "Add Li Fu's second visit, his question about successors, Kongming's appointment of Jiang Wan followed by Fei Yi, and Kongming's death before answering the next succession question."
+    },
+    {
+      "omission_note": "省略了魏延与马岱起兵南行以及最终拦路军身份未明的悬念细节。",
+      "classification": "material",
+      "reason": "Wei Yan and Ma Dai's southward uprising is a consequential event in the power struggle, while the unidentified blocking army establishes the next chapter's central unresolved danger.",
+      "required_fix": "Include Wei Yan and Ma Dai raising troops and marching south, then retain the cliffhanger that an unidentified force blocks the Shu army at the plank-road entrance."
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了李福第二次来询问继任者的情节及孔明在此时才指定蒋琬、费祎。",
+      "classification": "material",
+      "reason": "This omits the explicit succession sequence and the timing of Kongming's final appointments, which affects chronology and important information for later leadership continuity.",
+      "required_fix": "Add Li Fu's second visit, his question about successors, Kongming's appointment of Jiang Wan followed by Fei Yi, and Kongming's death before answering the next succession question."
+    },
+    {
+      "omission_note": "省略了魏延与马岱起兵南行以及最终拦路军身份未明的悬念细节。",
+      "classification": "material",
+      "reason": "Wei Yan and Ma Dai's southward uprising is a consequential event in the power struggle, while the unidentified blocking army establishes the next chapter's central unresolved danger.",
+      "required_fix": "Include Wei Yan and Ma Dai raising troops and marching south, then retain the cliffhanger that an unidentified force blocks the Shu army at the plank-road entrance."
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 312,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

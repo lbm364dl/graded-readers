@@ -1,0 +1,58 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_027-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 152,
+  "required_range": [
+    98,
+    182
+  ],
+  "material_findings": [
+    {
+      "field": "language_problems",
+      "finding_note": "“胡班因父亲书信相救”略有歧义，容易理解为胡班被书信救助，改为“胡班读父亲书信后出手相救”更清楚。",
+      "classification": "material",
+      "reason": "该表述可能将原文中胡班读信后主动救助关羽，误解为胡班被父亲书信救助，造成施事者和因果方向的实质性歧义。",
+      "required_fix": "改为“胡班读父亲书信后出手相救”更清楚。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "language_problems",
+      "finding_note": "“胡班因父亲书信相救”略有歧义，容易理解为胡班被书信救助，改为“胡班读父亲书信后出手相救”更清楚。",
+      "classification": "material",
+      "reason": "该表述可能将原文中胡班读信后主动救助关羽，误解为胡班被父亲书信救助，造成施事者和因果方向的实质性歧义。",
+      "required_fix": "改为“胡班读父亲书信后出手相救”更清楚。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": []
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 152,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "passed": true
+    }
+  ]
+}

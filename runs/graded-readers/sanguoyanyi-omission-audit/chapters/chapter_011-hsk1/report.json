@@ -1,0 +1,158 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_011-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 176,
+  "required_range": [
+    98,
+    182
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略陈登、田楷援军抵达和与曹军对峙。",
+      "classification": "material",
+      "reason": "田楷援军抵达并与孔融形成对峙态势，直接解释曹操分兵、暂不攻城的战局变化，属于重要事件和战术因果。",
+      "required_fix": "补入陈登带回田楷援军、孔融与田楷依山下寨，以及曹操因两路援军到来而分兵对峙的情节。"
+    },
+    {
+      "omission_note": "省略刘备写信劝曹操退兵，以及曹操因吕布袭兖州而退兵的因果细节。",
+      "classification": "material",
+      "reason": "书信劝退、曹操的反应及郭嘉建议构成刘备与曹操之间的外交互动；吕布袭取兖州则是曹操退兵的直接原因，省略会削弱退兵的完整因果链。",
+      "required_fix": "补入刘备致书劝曹操先顾国难、曹操 initially 拒绝后因吕布袭破兖州而采纳郭嘉建议退兵的过程。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略陈登、田楷援军抵达和与曹军对峙。",
+      "classification": "material",
+      "reason": "田楷援军抵达并与孔融形成对峙态势，直接解释曹操分兵、暂不攻城的战局变化，属于重要事件和战术因果。",
+      "required_fix": "补入陈登带回田楷援军、孔融与田楷依山下寨，以及曹操因两路援军到来而分兵对峙的情节。"
+    },
+    {
+      "omission_note": "省略刘备写信劝曹操退兵，以及曹操因吕布袭兖州而退兵的因果细节。",
+      "classification": "material",
+      "reason": "书信劝退、曹操的反应及郭嘉建议构成刘备与曹操之间的外交互动；吕布袭取兖州则是曹操退兵的直接原因，省略会削弱退兵的完整因果链。",
+      "required_fix": "补入刘备致书劝曹操先顾国难、曹操 initially 拒绝后因吕布袭破兖州而采纳郭嘉建议退兵的过程。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 8.5,
+    "naturalness": 8.0,
+    "readability": 8.5,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": []
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 176,
+      "review": {
+        "source_fidelity": 5,
+        "naturalness": 7,
+        "readability": 7,
+        "material_omissions": [
+          "省略孔融劝刘备共同救援徐州、刘备承诺借兵后必至的动机与承诺，导致刘备前往徐州的因果链不完整。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "将赵云写成参与关北海之战；原文中赵云是在刘备离开北海后才借兵随行救援徐州。",
+          "将太史慈持孔融书突围的目的写成请刘备救徐州；原文中太史慈首先是请刘备救援北海，之后糜竺才说明徐州求救。",
+          "“操听郭嘉退兵”略混淆因果：曹操退兵的直接原因是吕布袭破兖州，郭嘉只是建议借机退军卖刘备人情。"
+        ],
+        "language_problems": [
+          "“献计请孔融、陈登求田楷援徐州”结构略有歧义，容易理解为请孔融和陈登共同求田楷。"
+        ],
+        "verdict": "revise",
+        "omissions": []
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 178,
+      "review": {
+        "source_fidelity": 7,
+        "naturalness": 8,
+        "readability": 7,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "“夜袭西寨被围”按语法将夜袭者理解为吕布，但原文是曹操夜袭西寨，随后被吕布军包围。",
+          "“陈登带田楷到”说成陈登亲自带来田楷，原文只是陈登回报田楷已领兵来救。"
+        ],
+        "language_problems": [
+          "“夜袭西寨被围”主语承接错误且造成关键情节歧义。"
+        ],
+        "verdict": "revise",
+        "omissions": []
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 158,
+      "review": {
+        "source_fidelity": 7,
+        "naturalness": 7,
+        "readability": 7,
+        "material_omissions": [
+          "未交代张闿杀曹嵩导致曹操进攻徐州、陶谦求援的起因，削弱了主要冲突的因果关系。",
+          "未交代孔融接受求援后先拟致书曹操、遭管亥围城，以及孔融劝刘备救徐州的过程和动机。",
+          "遗漏吕布在濮阳先击败曹操的关键战斗；这也是曹操随后夜袭西寨的重要动因。",
+          "遗漏曹操夺下西寨后遭高顺、吕布及多路将领接连围攻的过程，典韦救主的因果桥梁不完整。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "“答应借兵必到”把刘备“借得军或借不得军都必亲至”的承诺，缩成了借到兵后必到，改变了原意。",
+          "“刘备关张斩管亥”将斩杀管亥的功劳归给刘备、关羽、张飞；原文是关羽单独斩杀管亥，太史慈和张飞随后冲阵。"
+        ],
+        "language_problems": [
+          "“答应借兵必到”表达生硬且有歧义，无法清楚传达刘备无论借兵与否都会前往的承诺。",
+          "“刘备关张斩管亥”并列关系和施事者不清，容易误解为三人共同斩杀管亥。"
+        ],
+        "verdict": "revise",
+        "omissions": []
+      },
+      "passed": false
+    },
+    {
+      "round": 4,
+      "candidate_cjk": 182,
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 7,
+        "readability": 7,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [
+          "“备张飞败于禁入城”缺少标点且结构歧义，容易理解为刘备、张飞被于禁击败后入城；应明确为“刘备和张飞击败于禁，进入徐州城”。"
+        ],
+        "verdict": "revise",
+        "omissions": []
+      },
+      "passed": false
+    },
+    {
+      "round": 5,
+      "candidate_cjk": 176,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 8.0,
+        "readability": 8.5,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "passed": true
+    }
+  ]
+}

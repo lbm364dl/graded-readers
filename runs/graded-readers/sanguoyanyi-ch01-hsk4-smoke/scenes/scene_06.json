@@ -1,0 +1,83 @@
+{
+  "scene": {
+    "id": "scene_06",
+    "title": "黃巾教團成勢",
+    "source_start_quote": "中平元年正月內，疫氣流行",
+    "required_events": [
+      "疫病流行時，張角以符水治病，自稱大賢良師，迅速收納五百多名弟子。",
+      "弟子四處傳教，信眾越聚越多，張角建立三十六方，分設渠帥並以將軍相稱。",
+      "他散布蒼天已死、黃天當立及甲子年天下大吉的口號，命信徒用白土在家門寫下甲子，八州百姓家家供奉其名。"
+    ],
+    "target_chars": 410,
+    "source_start": 821,
+    "source_end": 1000
+  },
+  "text": "中平元年正月，疫氣在各地流行。張角便向人施用符水，替病人治病，並自稱「大賢良師」。很快，他收下五百多名弟子。這些弟子都會書符、念咒，帶著這套方法雲游四方。後來，跟隨他的人越來越多。張角見徒眾已經形成規模，便建立三十六方，分別設置首領，稱為「渠帥」，並一律以將軍相稱。三十六方之中，大方有一萬多人，小方也有六七千人。接著，張角向眾人散布謠言：「蒼天已死，黃天當立！」他又說：「歲在甲子，天下大吉！」於是，他讓人取白土，在自家大門上寫下「甲子」二字。青、幽、徐、冀、荊、揚、兗、豫八州的百姓，家家都奉「大賢良師張角」之名。",
+  "review": {
+    "source_fidelity": 8.5,
+    "naturalness": 8.5,
+    "readability": 8.5,
+    "omissions": [],
+    "unsupported_additions": [
+      "“帶著這套方法雲游四方” adds that the disciples carried the healing method, which is not stated in the original."
+    ],
+    "distortions": [
+      "“並一律以將軍相稱” slightly blurs the original structure: Zhang Jiao appointed 渠帥, who were called 將軍.",
+      "“家家都奉『大賢良師張角』之名” shifts from households serving or venerating Zhang Jiao's name to a somewhat awkward formulation centered on his name."
+    ],
+    "language_problems": [
+      "“家家都奉……之名” is less idiomatic than “家家都侍奉大賢良師張角” or “家家都供奉大賢良師張角的名號”。"
+    ],
+    "verdict": "pass"
+  },
+  "attempts": [
+    {
+      "stage": "adapt",
+      "text": "中平元年正月，疫氣在各地流行。張角便向人施用符水，替病人治病，並自稱「大賢良師」。很快，他收下五百多名弟子。這些弟子都會書寫符咒、念誦咒語，帶著這套方法雲游四方，到各地傳教。跟隨他的人因此越來越多，信眾一天比一天壯大。張角見徒眾已經形成規模，便建立三十六方，分別設置首領，稱為「渠帥」，並一律以將軍相稱。三十六方之中，大方有一萬多人，小方也有六七千人。接著，張角向眾人散布口號：「蒼天已死，黃天當立！」他又說：「歲在甲子，天下大吉！」於是，他命令信徒取白土，在自家大門上寫下「甲子」二字。青、幽、徐、冀、荊、揚、兗、豫八州的百姓，家家都開始供奉「大賢良師張角」的名字。",
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 8,
+        "readability": 9,
+        "omissions": [
+          "「訛言」所含的謠傳、虛妄語氣被弱化為中性的「散布口號」。"
+        ],
+        "unsupported_additions": [
+          "「到各地傳教」原文未明說傳教。",
+          "「信眾一天比一天壯大」增加了「一天比一天」的具體頻率。",
+          "「命令信徒」將泛指的「令人」限定為信徒。"
+        ],
+        "distortions": [
+          "將「書符念咒」改為「書寫符咒、念誦咒語」，把「符」與「咒」部分混同，雖不影響大意但不夠精確。",
+          "「開始供奉」比原文「侍奉」增加了開始發生的時間含義。"
+        ],
+        "language_problems": [
+          "「書寫符咒」搭配略顯生硬，且容易混淆符與咒的不同。",
+          "「供奉……的名字」可理解，但「供奉張角」或「奉張角之名」更自然。"
+        ],
+        "verdict": "revise"
+      }
+    },
+    {
+      "stage": "repair_01",
+      "text": "中平元年正月，疫氣在各地流行。張角便向人施用符水，替病人治病，並自稱「大賢良師」。很快，他收下五百多名弟子。這些弟子都會書符、念咒，帶著這套方法雲游四方。後來，跟隨他的人越來越多。張角見徒眾已經形成規模，便建立三十六方，分別設置首領，稱為「渠帥」，並一律以將軍相稱。三十六方之中，大方有一萬多人，小方也有六七千人。接著，張角向眾人散布謠言：「蒼天已死，黃天當立！」他又說：「歲在甲子，天下大吉！」於是，他讓人取白土，在自家大門上寫下「甲子」二字。青、幽、徐、冀、荊、揚、兗、豫八州的百姓，家家都奉「大賢良師張角」之名。",
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 8.5,
+        "readability": 8.5,
+        "omissions": [],
+        "unsupported_additions": [
+          "“帶著這套方法雲游四方” adds that the disciples carried the healing method, which is not stated in the original."
+        ],
+        "distortions": [
+          "“並一律以將軍相稱” slightly blurs the original structure: Zhang Jiao appointed 渠帥, who were called 將軍.",
+          "“家家都奉『大賢良師張角』之名” shifts from households serving or venerating Zhang Jiao's name to a somewhat awkward formulation centered on his name."
+        ],
+        "language_problems": [
+          "“家家都奉……之名” is less idiomatic than “家家都侍奉大賢良師張角” or “家家都供奉大賢良師張角的名號”。"
+        ],
+        "verdict": "pass"
+      }
+    }
+  ],
+  "resolved": true
+}

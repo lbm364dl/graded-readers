@@ -1,0 +1,19 @@
+{
+  "book_run_id": "sanguoyanyi-full-hsk456",
+  "status": "complete",
+  "updated_at": "2026-08-07T04:35:29.222100+00:00",
+  "global_agent_concurrency": 3,
+  "chapter_concurrency": 3,
+  "runs": [
+    {
+      "source": "/home/usuario/hsk-graded-readers/books/chinese/sanguoyanyi/chapter_009.txt",
+      "level": "hsk5",
+      "run_id": "sanguoyanyi-full-hsk456/chapter_009-hsk5",
+      "status": "complete",
+      "chapter_cjk": 921,
+      "target_chars": 1050,
+      "attempts": 2
+    }
+  ],
+  "length_violations": []
+}

@@ -1,0 +1,21 @@
+{
+  "job": "annotations/chapter_delta/batch_0001/initial",
+  "model": "gpt-5.6-luna",
+  "effort": "medium",
+  "fingerprint": "f98e52f768f83b3898b6e3b677b5b69b2b1650524a994d404f06ccb13866953a",
+  "started_at": "2026-08-07T04:01:01.670467+00:00",
+  "ended_at": "2026-08-07T04:01:09.025648+00:00",
+  "return_code": 0,
+  "attempt_count": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-08-07T04:01:01.670482+00:00",
+      "ended_at": "2026-08-07T04:01:09.025473+00:00",
+      "return_code": 0,
+      "throttled": false,
+      "events": "events.attempt-01.jsonl",
+      "stderr": "stderr.attempt-01.log"
+    }
+  ]
+}

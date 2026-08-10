@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_048-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 320,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了臧霸随徐庶同行、曹操命其星夜赶往散关等细节。",
+      "classification": "material",
+      "reason": "省略了曹操指定臧霸同行及连夜出发这一具体行动，改变了徐庶脱身事件中的参与者身份和行动安排。",
+      "required_fix": "补充曹操命臧霸为先锋、与徐庶率三千兵星夜前往散关。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了臧霸随徐庶同行、曹操命其星夜赶往散关等细节。",
+      "classification": "material",
+      "reason": "省略了曹操指定臧霸同行及连夜出发这一具体行动，改变了徐庶脱身事件中的参与者身份和行动安排。",
+      "required_fix": "补充曹操命臧霸为先锋、与徐庶率三千兵星夜前往散关。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": []
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 320,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "passed": true
+    }
+  ]
+}

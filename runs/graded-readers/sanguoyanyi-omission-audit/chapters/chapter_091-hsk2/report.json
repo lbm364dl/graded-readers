@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_091-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 304,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "“和赵云、邓芝出兵汉中伐魏”容易误解为孔明与赵云、邓芝共同出兵；原文是孔明率军向汉中进发，另派赵云、邓芝率五千兵为前锋。",
+      "classification": "material",
+      "reason": "将孔明与赵云、邓芝表述为共同出兵，模糊并可能改变原文中孔明主军与赵云、邓芝率五千兵担任前锋的具体出兵主体和编制。",
+      "required_fix": "改为“孔明率军向汉中进发，另派赵云、邓芝率五千兵为前锋出兵伐魏”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "“和赵云、邓芝出兵汉中伐魏”容易误解为孔明与赵云、邓芝共同出兵；原文是孔明率军向汉中进发，另派赵云、邓芝率五千兵为前锋。",
+      "classification": "material",
+      "reason": "将孔明与赵云、邓芝表述为共同出兵，模糊并可能改变原文中孔明主军与赵云、邓芝率五千兵担任前锋的具体出兵主体和编制。",
+      "required_fix": "改为“孔明率军向汉中进发，另派赵云、邓芝率五千兵为前锋出兵伐魏”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 304,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

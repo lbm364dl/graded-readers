@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_092-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 162,
+  "required_range": [
+    98,
+    182
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "“孔明识破裴绪假求援”表述有误：裴绪本就是孔明派人假扮的，孔明并非事后识破，而是主动设局诱骗崔谅。",
+      "classification": "material",
+      "reason": "原文明确写孔明派心腹假扮裴绪设局诱骗崔谅；该表述将孔明主动设计改成事后识破，改变了关键因果和主导者。",
+      "required_fix": "改为“孔明派心腹假扮裴绪求援，设局诱骗崔谅出城”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "“孔明识破裴绪假求援”表述有误：裴绪本就是孔明派人假扮的，孔明并非事后识破，而是主动设局诱骗崔谅。",
+      "classification": "material",
+      "reason": "原文明确写孔明派心腹假扮裴绪设局诱骗崔谅；该表述将孔明主动设计改成事后识破，改变了关键因果和主导者。",
+      "required_fix": "改为“孔明派心腹假扮裴绪求援，设局诱骗崔谅出城”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 162,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

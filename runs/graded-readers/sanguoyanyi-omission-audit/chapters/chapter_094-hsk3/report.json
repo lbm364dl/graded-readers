@@ -1,0 +1,77 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_094-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 464,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“随后孔明故意退军”将蜀军撤回并诱使魏军追击明确说成了孔明预先设计的行动，原文未明言。",
+      "classification": "material",
+      "reason": "原文只写孔明引军连夜返回祁山大寨，未说明这是预先设计的诱敌行动；“故意”补入了改变因果意图的事实。",
+      "required_fix": "将“随后孔明故意退军”改为“随后孔明引军连夜返回祁山大寨”或“蜀军撤回祁山”，删除其预先设计诱使魏军追击的意图。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“随后孔明故意退军”将蜀军撤回并诱使魏军追击明确说成了孔明预先设计的行动，原文未明言。",
+      "classification": "material",
+      "reason": "原文只写孔明引军连夜返回祁山大寨，未说明这是预先设计的诱敌行动；“故意”补入了改变因果意图的事实。",
+      "required_fix": "将“随后孔明故意退军”改为“随后孔明引军连夜返回祁山大寨”或“蜀军撤回祁山”，删除其预先设计诱使魏军追击的意图。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 502,
+      "review": {
+        "source_fidelity": 7,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [
+          "司马懿途中与徐晃会合，并任命徐晃为先锋，解释了徐晃率军先到新城的原因。",
+          "李辅、邓贤在城内出首并开城迎接司马懿；这是新城陷落的重要内应情节。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "“申耽、申仪反叛献城”改变了二人的立场。原文中二人是假意参与孟达叛乱，实际作为魏军内应，并非反叛魏国。",
+          "“违命星夜赶往新城”带有司马懿违抗命令的含义。原文强调他为避免延误而不等待奏报和圣旨，属于紧急擅自行动，后来还因此获得便宜行事的权力。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 464,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

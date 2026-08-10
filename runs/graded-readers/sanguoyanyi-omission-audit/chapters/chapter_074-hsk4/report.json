@@ -1,0 +1,98 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_074-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 598,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "omission_note": "略去庞德连续十余日搦战、于禁刻意将其置于不利位置等过程细节。",
+      "classification": "material",
+      "reason": "虽然接受场景概括了连续挑战和七军驻扎低洼山谷，但没有充分呈现于禁为阻止庞德立功而有意限制其行动的动机与部署，这涉及人物动机及后续战局因果。",
+      "required_fix": "补充庞德搦战十余日无人应战，以及于禁借曹操戒旨推诿，并将庞德置于谷后、截断大路以阻止其进兵的情节。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“襄江决堤”原文只写连日暴雨、江水暴涨并形成洪水，未明确写襄江决堤。",
+      "classification": "material",
+      "reason": "“襄江决堤”增加了原文未明确支持的具体洪水成因。",
+      "required_fix": "改为“暴雨之后，襄江水势暴涨，洪水淹没七军”。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将于禁拒绝出兵同时明确归因于嫉妒庞德，原文主要写他以曹操戒旨为由推诿，嫉妒在此前鸣金收兵时明确出现。",
+      "classification": "material",
+      "reason": "这改变了于禁拒绝出兵的明确动机，造成因果归因偏差。",
+      "required_fix": "改为“于禁以曹操的戒令为由，不肯出兵”；不要将嫉妒庞德作为此处的明确原因。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“七军全部覆没”表述过于绝对，原文虽称七军多死于水中，但会水者后来投降，并非全军皆死。",
+      "classification": "material",
+      "reason": "“全部覆没”错误概括了七军结局，遗漏了会水者投降这一相反结果。",
+      "required_fix": "改为“七军死伤惨重、四处逃散，许多人溺亡，会水者投降，七军最终覆败”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "略去庞德连续十余日搦战、于禁刻意将其置于不利位置等过程细节。",
+      "classification": "material",
+      "reason": "虽然接受场景概括了连续挑战和七军驻扎低洼山谷，但没有充分呈现于禁为阻止庞德立功而有意限制其行动的动机与部署，这涉及人物动机及后续战局因果。",
+      "required_fix": "补充庞德搦战十余日无人应战，以及于禁借曹操戒旨推诿，并将庞德置于谷后、截断大路以阻止其进兵的情节。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“襄江决堤”原文只写连日暴雨、江水暴涨并形成洪水，未明确写襄江决堤。",
+      "classification": "material",
+      "reason": "“襄江决堤”增加了原文未明确支持的具体洪水成因。",
+      "required_fix": "改为“暴雨之后，襄江水势暴涨，洪水淹没七军”。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将于禁拒绝出兵同时明确归因于嫉妒庞德，原文主要写他以曹操戒旨为由推诿，嫉妒在此前鸣金收兵时明确出现。",
+      "classification": "material",
+      "reason": "这改变了于禁拒绝出兵的明确动机，造成因果归因偏差。",
+      "required_fix": "改为“于禁以曹操的戒令为由，不肯出兵”；不要将嫉妒庞德作为此处的明确原因。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“七军全部覆没”表述过于绝对，原文虽称七军多死于水中，但会水者后来投降，并非全军皆死。",
+      "classification": "material",
+      "reason": "“全部覆没”错误概括了七军结局，遗漏了会水者投降这一相反结果。",
+      "required_fix": "改为“七军死伤惨重、四处逃散，许多人溺亡，会水者投降，七军最终覆败”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8,
+    "readability": 8,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": []
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 598,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 8,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "passed": true
+    }
+  ]
+}

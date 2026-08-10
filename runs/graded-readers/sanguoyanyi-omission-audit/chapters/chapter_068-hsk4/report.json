@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_068-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 687,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了孙权与曹操相持后撤军的具体条件和部分魏王礼制细节，但不影响主线复述。",
+      "classification": "material",
+      "reason": "虽保留了议和、岁贡、撤军及受封魏王等主线，但未明确孙权先撤军、曹操随后班师的议和条件；魏王礼制细节则属可压缩内容。",
+      "required_fix": "补明孙权先撤人马、曹操随后班师的具体议和条件；可酌情补充曹操受魏王爵位时采用天子车服等礼制细节。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了孙权与曹操相持后撤军的具体条件和部分魏王礼制细节，但不影响主线复述。",
+      "classification": "material",
+      "reason": "虽保留了议和、岁贡、撤军及受封魏王等主线，但未明确孙权先撤军、曹操随后班师的议和条件；魏王礼制细节则属可压缩内容。",
+      "required_fix": "补明孙权先撤人马、曹操随后班师的具体议和条件；可酌情补充曹操受魏王爵位时采用天子车服等礼制细节。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": []
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 687,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "passed": true
+    }
+  ]
+}

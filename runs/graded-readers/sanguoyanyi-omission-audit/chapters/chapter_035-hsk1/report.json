@@ -1,0 +1,73 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_035-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 158,
+  "required_range": [
+    98,
+    182
+  ],
+  "material_findings": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将水镜夜间来客直接称为“徐庶”；原文只称其字“元直”，未明确姓名。",
+      "classification": "material",
+      "reason": "这是原文未明确提供的具体姓名，造成对夜间来客身份的未经支持的确定性补充。",
+      "required_fix": "将其称为“元直”，或保留为水镜的夜间来客，不直接确定为“徐庶”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将水镜夜间来客直接称为“徐庶”；原文只称其字“元直”，未明确姓名。",
+      "classification": "material",
+      "reason": "这是原文未明确提供的具体姓名，造成对夜间来客身份的未经支持的确定性补充。",
+      "required_fix": "将其称为“元直”，或保留为水镜的夜间来客，不直接确定为“徐庶”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 160,
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [
+          "省略刘表得知蔡瑁谋害玄德后责罚并释放蔡瑁、派刘琦到新野请罪的事件，以及刘琦向玄德诉说蔡氏谋害并求教；这些内容涉及人物关系、刘琦动机和玄德仁德的刻画。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 158,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

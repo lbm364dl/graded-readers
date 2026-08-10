@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_056-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1312,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "结尾将周瑜说成“败亡”，暗示其已经死亡；原文只写他坠马昏倒，并明确留下性命如何待下回分解。",
+      "classification": "material",
+      "reason": "“败亡”改变了周瑜的结局，暗示其已经死亡；原文仅写其箭伤复裂、坠马，且留下生死待后文交代。",
+      "required_fix": "将结尾改为周瑜箭伤复裂、坠马昏倒或再次败退，并保留其性命如何待下回分解，不要写成“败亡”或暗示已经死亡。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "结尾将周瑜说成“败亡”，暗示其已经死亡；原文只写他坠马昏倒，并明确留下性命如何待下回分解。",
+      "classification": "material",
+      "reason": "“败亡”改变了周瑜的结局，暗示其已经死亡；原文仅写其箭伤复裂、坠马，且留下生死待后文交代。",
+      "required_fix": "将结尾改为周瑜箭伤复裂、坠马昏倒或再次败退，并保留其性命如何待下回分解，不要写成“败亡”或暗示已经死亡。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1312,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

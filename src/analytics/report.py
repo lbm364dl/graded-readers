@@ -14,6 +14,9 @@ def print_coverage_report(stats: CoverageStats) -> str:
         f"Coverage:           {stats.coverage_percent:.1f}%",
         f"Above-level:        {stats.above_level_percent:.1f}%",
         f"Passes 95/5 rule:   {'YES' if stats.passes else 'NO'}",
+        f"Lower-level cover:  {stats.lower_level_coverage_percent:.1f}%",
+        f"Target-band tokens: {stats.target_band_tokens} ({stats.target_band_percent:.1f}%)",
+        f"Fits target band:   {'YES' if stats.fits_target_band else 'NO'}",
         "",
         "Level distribution:",
     ]

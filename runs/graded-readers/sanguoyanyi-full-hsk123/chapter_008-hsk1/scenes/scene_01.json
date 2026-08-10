@@ -1,0 +1,69 @@
+{
+  "scene": {
+    "id": "scene_01",
+    "title": "連環計成，鳳儀亭激鬥",
+    "source_start_quote": "卻說蒯良曰",
+    "required_events": [
+      "劉表以孫堅屍換回黃祖，孫策葬父後招賢納士。",
+      "董卓因孫堅死而驕橫專權，築郿塢囤糧藏女，並殘酷虐殺降卒、斬張溫震懾百官。",
+      "王允憂國，貂蟬表示願效死；王允設連環計，先許貂蟬給呂布，再獻董卓，欲使父子反目。",
+      "王允宴請呂布，以貂蟬許婚；又宴董卓，獻貂蟬入相府，欺瞞呂布。",
+      "董卓迷戀貂蟬，因猜忌斥逐呂布，後經李儒勸解賜金安撫；呂布仍思念貂蟬。",
+      "呂布趁董卓入朝私會貂蟬於鳳儀亭，貂蟬以受辱、自盡相激，令呂布羞愧動情。",
+      "董卓尋至後園撞見二人，怒奪畫戟追殺呂布，呂布逃脫，董卓追出園門撞倒在地。"
+    ],
+    "target_chars": 140,
+    "source_start": 0,
+    "source_end": 4259
+  },
+  "text": "刘表用孙坚尸体换回黄祖，孙策葬父后招贤纳士。董卓听说孙坚死、孙策才十七岁，便专横：在长安外筑郿坞，役民二十五万，囤粮二十年、藏美女八百；又虐杀降卒，斩张温震慑百官。王允忧国，貂蝉愿效死。王允设连环计，先把貂蝉许给吕布，再献给董卓，挑拨父子反目。董卓迷恋貂蝉，猜忌吕布；李儒劝解，董卓赐金安抚。吕布思念貂蝉，趁董卓入朝到凤仪亭私会。貂蝉哭诉受辱并假意投池，使吕布羞愧动情。董卓赶到，夺戟追赶；吕布逃走，董卓出园时撞倒来人。",
+  "review": {
+    "source_fidelity": 8.5,
+    "naturalness": 8.5,
+    "readability": 8.5,
+    "omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "reviewer_verdict": "revise",
+    "harness_decision": "accepted_omission_only_compact_adaptation"
+  },
+  "attempts": [
+    {
+      "stage": "adapt",
+      "text": "刘表用孙坚尸体换回黄祖；孙策葬父后招贤纳士。董卓闻孙坚死，知孙策十七岁，便骄横专权：在长安二百五十里外筑郿坞，役二十五万民夫，囤二十年粮、藏八百美女；虐杀数百降卒，斩张温震慑百官。王允忧国，貂蝉愿效死；他设连环计，先宴吕布许婚，后宴董卓献她入相府，欺瞒吕布，欲使父子反目。董卓迷恋貂蝉，猜忌逐吕布；李儒劝解后，董卓赐金安抚，吕布仍思念她。董卓入朝时，吕布到凤仪亭私会貂蝉；她以受辱、自尽相激，使他羞愧动情。董卓寻至后园撞见二人，怒夺画戟追杀；吕布逃脱，董卓追出园门，撞上来人倒地。",
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 8.5,
+        "readability": 8.5,
+        "omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [
+          "篇幅明显超出目标：约230字，超过目标140字的130%上限182字。",
+          "mechanical length gate: 207 CJK, required 98-182"
+        ],
+        "verdict": "revise",
+        "harness_decision": "rejected_by_mechanical_length_gate"
+      }
+    },
+    {
+      "stage": "repair_01",
+      "text": "刘表用孙坚尸体换回黄祖，孙策葬父后招贤纳士。董卓听说孙坚死、孙策才十七岁，便专横：在长安外筑郿坞，役民二十五万，囤粮二十年、藏美女八百；又虐杀降卒，斩张温震慑百官。王允忧国，貂蝉愿效死。王允设连环计，先把貂蝉许给吕布，再献给董卓，挑拨父子反目。董卓迷恋貂蝉，猜忌吕布；李儒劝解，董卓赐金安抚。吕布思念貂蝉，趁董卓入朝到凤仪亭私会。貂蝉哭诉受辱并假意投池，使吕布羞愧动情。董卓赶到，夺戟追赶；吕布逃走，董卓出园时撞倒来人。",
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 8.5,
+        "readability": 8.5,
+        "omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "reviewer_verdict": "revise",
+        "harness_decision": "accepted_omission_only_compact_adaptation"
+      }
+    }
+  ],
+  "resolved": true
+}

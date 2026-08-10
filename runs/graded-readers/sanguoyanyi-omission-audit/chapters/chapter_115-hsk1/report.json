@@ -1,0 +1,117 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_115-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 179,
+  "required_range": [
+    98,
+    182
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了姜维两次败退后的具体战术转折及祁山围攻过程。",
+      "classification": "material",
+      "reason": "这部分不是单纯的氛围或装饰性细节，而是交代张翼取祁山、邓艾断其退路、姜维救援并最终围攻祁山的战术因果。虽保留了大致结果，但删去后削弱了战局转折和后续围攻的连贯性。",
+      "required_fix": "补入张翼据姜维建议攻取祁山、邓艾救援并截断张翼退路、姜维赶到与张翼夹攻邓艾，以及邓艾退入祁山、姜维四面围攻的简要过程。"
+    },
+    {
+      "omission_note": "省略了司马昭提出三路袭汉中的具体部署。",
+      "classification": "material",
+      "reason": "三路进军的部署是魏军伐蜀战略、兵力配置和后续汉中战事的关键因果信息，涉及鄧艾牵制姜维、钟会进取骆谷及三路袭击汉中的具体计划，不能视为非必要压缩。",
+      "required_fix": "补入司马昭的具体部署：鄧艾率关外陇右兵十余万牵制沓中的姜维，钟会率关中精兵二三十万直抵骆谷，并以三路袭击汉中。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“邓艾、司马望设空城伏兵”容易使人误解为二人在洮阳共同设伏，原文是分守洮阳与侯河、分路设伏。",
+      "classification": "material",
+      "reason": "该表述混淆了两人的设伏地点和战术分工，改变了原文的具体军事部署。",
+      "required_fix": "改为司马望在洮阳设空城，邓艾在侯河伏兵，二人分路设伏救援。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了姜维两次败退后的具体战术转折及祁山围攻过程。",
+      "classification": "material",
+      "reason": "这部分不是单纯的氛围或装饰性细节，而是交代张翼取祁山、邓艾断其退路、姜维救援并最终围攻祁山的战术因果。虽保留了大致结果，但删去后削弱了战局转折和后续围攻的连贯性。",
+      "required_fix": "补入张翼据姜维建议攻取祁山、邓艾救援并截断张翼退路、姜维赶到与张翼夹攻邓艾，以及邓艾退入祁山、姜维四面围攻的简要过程。"
+    },
+    {
+      "omission_note": "省略了司马昭提出三路袭汉中的具体部署。",
+      "classification": "material",
+      "reason": "三路进军的部署是魏军伐蜀战略、兵力配置和后续汉中战事的关键因果信息，涉及鄧艾牵制姜维、钟会进取骆谷及三路袭击汉中的具体计划，不能视为非必要压缩。",
+      "required_fix": "补入司马昭的具体部署：鄧艾率关外陇右兵十余万牵制沓中的姜维，钟会率关中精兵二三十万直抵骆谷，并以三路袭击汉中。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“邓艾、司马望设空城伏兵”容易使人误解为二人在洮阳共同设伏，原文是分守洮阳与侯河、分路设伏。",
+      "classification": "material",
+      "reason": "该表述混淆了两人的设伏地点和战术分工，改变了原文的具体军事部署。",
+      "required_fix": "改为司马望在洮阳设空城，邓艾在侯河伏兵，二人分路设伏救援。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": []
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 193,
+      "review": {
+        "source_fidelity": 7.8,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [
+          "未交代阎宇附和黄皓、建议由阎宇取代姜维，从而促成后主连降诏召回姜维这一关键政治因果。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 179,
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "“斩邓敦”被置于钟会部署三路袭汉中之后，原文中斩邓敦在该部署说明之前，存在轻微时间顺序倒置。"
+        ],
+        "language_problems": [],
+        "verdict": "revise",
+        "omissions": []
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 179,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "passed": true
+    }
+  ]
+}

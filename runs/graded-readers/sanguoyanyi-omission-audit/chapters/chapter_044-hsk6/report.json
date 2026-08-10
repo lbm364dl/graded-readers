@@ -1,0 +1,66 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_044-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1403,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了周瑜具体调配各路将领、水陆军队及军法号令的过程。",
+      "classification": "material",
+      "reason": "这段内容交代周瑜如何部署各部将领、水陆军队并以军法约束全军，体现其统军能力，构成后续出战准备的重要事件与信息。",
+      "required_fix": "补回周瑜任命各路将领、安排水陆军队、规定集合期限及七禁令五十四斩等军法号令的过程。"
+    },
+    {
+      "omission_note": "省略了程普起初不服、后来因周瑜治军有方而主动谢罪的情节。",
+      "classification": "material",
+      "reason": "该情节表现程普对周瑜由轻视到认可的态度转变，突出周瑜的治军才能，并影响主要将领之间的关系。",
+      "required_fix": "补回程普因年长且不服周瑜而托病不出，听闻周瑜调兵有法后惊服，亲赴行营谢罪及周瑜谦逊回应的情节。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了周瑜具体调配各路将领、水陆军队及军法号令的过程。",
+      "classification": "material",
+      "reason": "这段内容交代周瑜如何部署各部将领、水陆军队并以军法约束全军，体现其统军能力，构成后续出战准备的重要事件与信息。",
+      "required_fix": "补回周瑜任命各路将领、安排水陆军队、规定集合期限及七禁令五十四斩等军法号令的过程。"
+    },
+    {
+      "omission_note": "省略了程普起初不服、后来因周瑜治军有方而主动谢罪的情节。",
+      "classification": "material",
+      "reason": "该情节表现程普对周瑜由轻视到认可的态度转变，突出周瑜的治军才能，并影响主要将领之间的关系。",
+      "required_fix": "补回程普因年长且不服周瑜而托病不出，听闻周瑜调兵有法后惊服，亲赴行营谢罪及周瑜谦逊回应的情节。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1403,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

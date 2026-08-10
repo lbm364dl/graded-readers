@@ -1,0 +1,66 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_113-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 882,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了孙休拒绝孙綝后，孙綝在张布府中饮酒并明确流露反意的情节。",
+      "classification": "material",
+      "reason": "这段直接表现孙綝因受拒而产生反意，是孙休恐惧并接受丁奉诛杀计划的重要动机依据；仅概括为怨恨，削弱了这一因果链。",
+      "required_fix": "补写孙綝在张布府饮酒时因孙休拒绝上寿而明确威胁反抗的情节。"
+    },
+    {
+      "omission_note": "省略了姜维战后安抚王含、蒋斌、填埋尸体并主动约战的细节。",
+      "classification": "material",
+      "reason": "安抚二将体现姜维的统帅性格，主动下战书直接连接后续斗阵；填埋尸体虽属战后处理，但三者合并后并非仅是装饰性细节。",
+      "required_fix": "补充姜维赦免并安抚王含、蒋斌、处理地道尸体，以及主动向邓艾下战书约战。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了孙休拒绝孙綝后，孙綝在张布府中饮酒并明确流露反意的情节。",
+      "classification": "material",
+      "reason": "这段直接表现孙綝因受拒而产生反意，是孙休恐惧并接受丁奉诛杀计划的重要动机依据；仅概括为怨恨，削弱了这一因果链。",
+      "required_fix": "补写孙綝在张布府饮酒时因孙休拒绝上寿而明确威胁反抗的情节。"
+    },
+    {
+      "omission_note": "省略了姜维战后安抚王含、蒋斌、填埋尸体并主动约战的细节。",
+      "classification": "material",
+      "reason": "安抚二将体现姜维的统帅性格，主动下战书直接连接后续斗阵；填埋尸体虽属战后处理，但三者合并后并非仅是装饰性细节。",
+      "required_fix": "补充姜维赦免并安抚王含、蒋斌、处理地道尸体，以及主动向邓艾下战书约战。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 882,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

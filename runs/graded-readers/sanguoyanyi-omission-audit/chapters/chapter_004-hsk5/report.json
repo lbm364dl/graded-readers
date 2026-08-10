@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_004-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 783,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了董卓在阳城焚烧人头并将妇女财物分给军士的细节。",
+      "classification": "material",
+      "reason": "这是阳城暴行的重要具体行动，进一步体现董卓的残暴和对军队的纵容；原文虽保留了屠杀、掠夺和悬挂人头，但遗漏了这两项具体行为。",
+      "required_fix": "补充董卓在城门下焚烧人头，并将掠来的妇女和财物分给军士的情节。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了董卓在阳城焚烧人头并将妇女财物分给军士的细节。",
+      "classification": "material",
+      "reason": "这是阳城暴行的重要具体行动，进一步体现董卓的残暴和对军队的纵容；原文虽保留了屠杀、掠夺和悬挂人头，但遗漏了这两项具体行为。",
+      "required_fix": "补充董卓在城门下焚烧人头，并将掠来的妇女和财物分给军士的情节。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": []
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 783,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "passed": true
+    }
+  ]
+}

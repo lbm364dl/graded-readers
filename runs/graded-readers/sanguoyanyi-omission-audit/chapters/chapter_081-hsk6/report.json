@@ -1,0 +1,70 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_081-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1125,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "“任张苞为先锋”不准确：原文刘备只是答应让张苞与吴班率本部军作先锋，随后正式任吴班为先锋，张苞、关兴护驾。",
+      "classification": "material",
+      "reason": "改写把张苞的临时出先锋安排表述为正式任命，改变了张苞与吴班的职责分配。",
+      "required_fix": "改为刘备答应张苞与吴班率本部军作先锋，随后正式任命吴班为先锋，张苞、关兴负责护驾。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“刘备改命吴班为先锋”容易造成此前张苞已正式任先锋后被改任；原文是正式下诏任吴班为先锋，与此前赐张苞先锋印的安排有先后调整，改写略显突兀。",
+      "classification": "material",
+      "reason": "“改命”结合前文“任张苞为先锋”会造成正式任命先后和军职变更的错误理解。",
+      "required_fix": "改为刘备随后正式下诏任吴班为先锋，并令张苞、关兴护驾；不要表述为将吴班从张苞手中改任。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "“任张苞为先锋”不准确：原文刘备只是答应让张苞与吴班率本部军作先锋，随后正式任吴班为先锋，张苞、关兴护驾。",
+      "classification": "material",
+      "reason": "改写把张苞的临时出先锋安排表述为正式任命，改变了张苞与吴班的职责分配。",
+      "required_fix": "改为刘备答应张苞与吴班率本部军作先锋，随后正式任命吴班为先锋，张苞、关兴负责护驾。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“刘备改命吴班为先锋”容易造成此前张苞已正式任先锋后被改任；原文是正式下诏任吴班为先锋，与此前赐张苞先锋印的安排有先后调整，改写略显突兀。",
+      "classification": "material",
+      "reason": "“改命”结合前文“任张苞为先锋”会造成正式任命先后和军职变更的错误理解。",
+      "required_fix": "改为刘备随后正式下诏任吴班为先锋，并令张苞、关兴护驾；不要表述为将吴班从张苞手中改任。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1125,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

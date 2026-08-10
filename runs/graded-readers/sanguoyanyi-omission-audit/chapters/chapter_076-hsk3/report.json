@@ -1,0 +1,85 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_076-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 484,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "omission_note": "略去曹操让人将吴书射入樊城、借此迫使关公退兵的具体谋略。",
+      "classification": "material",
+      "reason": "这段谋略解释了关公为何因荆州危急而退兵，并构成徐晃乘势进攻的关键因果。",
+      "required_fix": "补入曹操命人将吴书射入樊城、使关公得知东吴将袭荆州并被迫退兵的谋略。"
+    },
+    {
+      "omission_note": "略去关公与徐晃对话及两人交战等细节。",
+      "classification": "material",
+      "reason": "对话体现二人的旧日关系及徐晃公私分明的动机，交战则具体呈现关公右臂乏力、鸣金退兵及战局转折，涉及重要人物关系和 characterization。",
+      "required_fix": "补入关公与徐晃叙旧及质问的对话、徐晃宣布重赏取首、二人交战八十余合，以及关平鸣金令关公退回的过程。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "略去曹操让人将吴书射入樊城、借此迫使关公退兵的具体谋略。",
+      "classification": "material",
+      "reason": "这段谋略解释了关公为何因荆州危急而退兵，并构成徐晃乘势进攻的关键因果。",
+      "required_fix": "补入曹操命人将吴书射入樊城、使关公得知东吴将袭荆州并被迫退兵的谋略。"
+    },
+    {
+      "omission_note": "略去关公与徐晃对话及两人交战等细节。",
+      "classification": "material",
+      "reason": "对话体现二人的旧日关系及徐晃公私分明的动机，交战则具体呈现关公右臂乏力、鸣金退兵及战局转折，涉及重要人物关系和 characterization。",
+      "required_fix": "补入关公与徐晃叙旧及质问的对话、徐晃宣布重赏取首、二人交战八十余合，以及关平鸣金令关公退回的过程。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 473,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "将杀使者归于糜芳、傅士仁二人，原文是傅士仁独自拔剑斩杀来使，糜芳并未参与。",
+          "将关公获悉荆州失陷、家眷被擒概括为“渡江途中”，原文是在渡过襄江后、奔往襄阳途中才得知。",
+          "称刘封、孟达二人都有“旧日怨恨”而拒援，原文主要是孟达以敌强兵少劝阻，旧事是关公反对刘封的身世及继承资格。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 484,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

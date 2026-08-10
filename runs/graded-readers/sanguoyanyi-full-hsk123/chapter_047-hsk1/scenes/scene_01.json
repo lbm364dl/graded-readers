@@ -1,0 +1,90 @@
+{
+  "scene": {
+    "id": "scene_01",
+    "title": "苦肉詐降，連環鎖舟",
+    "source_start_quote": "卻說闞澤字德潤，會稽山陰人也。",
+    "required_events": [
+      "黃蓋受苦肉計之刑，請闞澤攜詐降書夜投曹操。",
+      "闞澤以辯才識破曹操疑心，說服曹操相信黃蓋投降，並被遣回江東聯絡。",
+      "闞澤與甘寧設局套出蔡中、蔡和是曹操奸細，反向取得內應情報。",
+      "曹操仍疑黃蓋、甘寧投降真假，蔣幹再訪周瑜；周瑜借機使其遇見龐統。",
+      "龐統隨蔣幹投曹，獻連環計，勸曹操將戰船鐵索相連，以便日後火攻。",
+      "龐統離營時被神秘道士喝破苦肉計、詐降書與連環計，留下懸念。"
+    ],
+    "target_chars": 140,
+    "source_start": 0,
+    "source_end": 4078
+  },
+  "text": "黄盖施苦肉计受刑，请阚泽带诈降书夜投曹操。曹操识破诈降计，下令处斩阚泽；阚泽凭辩才说服曹操相信黄盖真降，并被派回江东联络。阚泽和甘宁设局，套出蔡中、蔡和是曹操奸细。曹操仍疑黄盖、甘宁，派蒋干再访周瑜。周瑜安排庞统献连环计，蒋干在庵中遇见庞统，邀他投曹。庞统借北兵不习水战、易生病，献计用铁索连船；离营前索取榜文保护家属。临别，一名道袍竹冠之人喝破三计，留下悬念。",
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "reviewer_verdict": "revise",
+    "harness_decision": "accepted_omission_only_compact_adaptation"
+  },
+  "attempts": [
+    {
+      "stage": "adapt",
+      "text": "黄盖受苦肉计之刑，请阚泽带诈降书，夜里投曹操。曹操疑心要杀他，阚泽凭辩才说服曹操相信黄盖真降，还被派回江东联络。阚泽和甘宁设局，套出蔡中、蔡和是曹操奸细，得到内应消息。曹操仍疑黄盖、甘宁，派蒋干再访周瑜；周瑜借机使他遇见庞统。庞统随蒋干投曹，献连环计，劝曹操用铁索把战船连在一起，好日后火攻。庞统离营时，道士喝破苦肉计、诈降书和连环计，留下悬念。",
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 8,
+        "readability": 9,
+        "omissions": [
+          "省略了庞统献连环计的直接理由：解决北兵水土不服和晕船，使曹操采纳建议更自然。",
+          "省略了庞统离营前索取榜文、保护家属等次要情节。"
+        ],
+        "unsupported_additions": [
+          "称岸上来人是“道士”，原文只说他穿道袍、戴竹冠，身份尚未揭明。"
+        ],
+        "distortions": [
+          "“周瑜借机使他遇见庞统”改变了因果：周瑜确实安排庞统献计，但蒋干是在庵中偶然发现并邀请庞统投曹。",
+          "“献连环计，劝曹操……好日后火攻”略显因果简化；庞统表面上以治水军疾病为由提出连船，火攻意图并未明说。"
+        ],
+        "language_problems": [
+          "“黄盖受苦肉计之刑”略显生硬，可改为“黄盖施苦肉计受刑”。"
+        ],
+        "verdict": "revise"
+      }
+    },
+    {
+      "stage": "repair_01",
+      "text": "黄盖施苦肉计受刑，请阚泽带诈降书，夜里投曹操。曹操疑心要杀他，阚泽凭辩才说服曹操相信黄盖真降，还被派回江东联络。阚泽和甘宁设局，套出蔡中、蔡和是曹操奸细，得到内应消息。曹操仍疑黄盖和甘宁，派蒋干再访周瑜。周瑜暗中安排庞统献计，蒋干却在庵中偶然遇见庞统，邀他投曹。庞统以北兵不习水战、易生疾病为由，献计用铁索连船。庞统离营前索取榜文保护家属，一名穿道袍、戴竹冠的人喝破苦肉计、诈降书和连环计，留下悬念。",
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 8,
+        "readability": 9,
+        "omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "“曹操疑心要杀他”弱化了原文中曹操已识破诈降计并下令处斩阚泽的情节。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      }
+    },
+    {
+      "stage": "repair_02",
+      "text": "黄盖施苦肉计受刑，请阚泽带诈降书夜投曹操。曹操识破诈降计，下令处斩阚泽；阚泽凭辩才说服曹操相信黄盖真降，并被派回江东联络。阚泽和甘宁设局，套出蔡中、蔡和是曹操奸细。曹操仍疑黄盖、甘宁，派蒋干再访周瑜。周瑜安排庞统献连环计，蒋干在庵中遇见庞统，邀他投曹。庞统借北兵不习水战、易生病，献计用铁索连船；离营前索取榜文保护家属。临别，一名道袍竹冠之人喝破三计，留下悬念。",
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "reviewer_verdict": "revise",
+        "harness_decision": "accepted_omission_only_compact_adaptation"
+      }
+    }
+  ],
+  "resolved": true
+}

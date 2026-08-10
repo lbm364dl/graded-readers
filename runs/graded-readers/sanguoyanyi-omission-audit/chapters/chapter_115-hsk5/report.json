@@ -1,0 +1,68 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_115-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 1173,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了姜维屯田前具体说明魏军远道运粮、疲乏后可乘虚追击的战略论证。",
+      "classification": "material",
+      "reason": "这段论证说明姜维选择屯田的战略动机及其预期取胜机制，不只是装饰性说明；缺失会削弱后续战略的因果连贯性。",
+      "required_fix": "补充魏军需千里运粮、翻越山岭必然疲乏退兵，姜维可据此乘虚追击的具体战略论证。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "原文中洮阳城的伏击主要由司马望负责，邓艾埋伏在侯河；改写为“遭邓艾、司马望伏击”，容易混淆两处部署，但不改变主要结果。",
+      "classification": "material",
+      "reason": "改写将邓艾错误置于洮阳伏击，并合并了洮阳与侯河两处不同部署，改变了具体战术位置和参与者，影响对战局的理解。",
+      "required_fix": "应改为司马望在洮阳城内设伏，邓艾率军埋伏于侯河；邓艾夜袭蜀营时，司马望再从洮阳出击。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了姜维屯田前具体说明魏军远道运粮、疲乏后可乘虚追击的战略论证。",
+      "classification": "material",
+      "reason": "这段论证说明姜维选择屯田的战略动机及其预期取胜机制，不只是装饰性说明；缺失会削弱后续战略的因果连贯性。",
+      "required_fix": "补充魏军需千里运粮、翻越山岭必然疲乏退兵，姜维可据此乘虚追击的具体战略论证。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "原文中洮阳城的伏击主要由司马望负责，邓艾埋伏在侯河；改写为“遭邓艾、司马望伏击”，容易混淆两处部署，但不改变主要结果。",
+      "classification": "material",
+      "reason": "改写将邓艾错误置于洮阳伏击，并合并了洮阳与侯河两处不同部署，改变了具体战术位置和参与者，影响对战局的理解。",
+      "required_fix": "应改为司马望在洮阳城内设伏，邓艾率军埋伏于侯河；邓艾夜袭蜀营时，司马望再从洮阳出击。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1173,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_009-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1328,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "“王允主动登楼投降”表述不够准确：原文是王允为保全国家主动下楼赴死，并未投降；但后文已体现他拒绝向李傕、郭汜屈服。",
+      "classification": "material",
+      "reason": "“主动登楼投降”改变了王允下楼赴死且不投降的关键行动与立场，虽然后文部分补回了拒绝屈服。",
+      "required_fix": "改为“王允为保全国家主动下楼赴死”，并明确他拒绝向李傕、郭汜投降或屈服。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“百姓用火烧他的肚脐”略有主体偏差，原文是军士在董卓脐中置火，百姓随后践踏尸体。",
+      "classification": "material",
+      "reason": "将放火者从军士改成百姓，属于具体行为主体错误。",
+      "required_fix": "改为“军士在董卓尸体的脐中置火，百姓随后践踏尸体”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "“王允主动登楼投降”表述不够准确：原文是王允为保全国家主动下楼赴死，并未投降；但后文已体现他拒绝向李傕、郭汜屈服。",
+      "classification": "material",
+      "reason": "“主动登楼投降”改变了王允下楼赴死且不投降的关键行动与立场，虽然后文部分补回了拒绝屈服。",
+      "required_fix": "改为“王允为保全国家主动下楼赴死”，并明确他拒绝向李傕、郭汜投降或屈服。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“百姓用火烧他的肚脐”略有主体偏差，原文是军士在董卓脐中置火，百姓随后践踏尸体。",
+      "classification": "material",
+      "reason": "将放火者从军士改成百姓，属于具体行为主体错误。",
+      "required_fix": "改为“军士在董卓尸体的脐中置火，百姓随后践踏尸体”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1290,
+      "review": {
+        "source_fidelity": 6,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [
+          "吕布到郿坞后先取貂蝉，修复本未交代这一重要关系事件。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "“董卓的家奴把李儒捆来”误将原文的李儒家奴改成董卓家奴。",
+          "结尾将李傕、郭汜“杀天子谋大事”改成“挟持天子”，改变了他们对献帝的直接杀害意图。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 1326,
+      "review": {
+        "source_fidelity": 7.8,
+        "naturalness": 9.2,
+        "readability": 9.3,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "原文说李肃早已割下董卓首级，修复本改为吕布刺死董卓后李肃才随即割首，改变了行动顺序。",
+          "原文中王允说天下人耻笑的是王允和吕布，修复本删去王允自身受辱，只保留吕布，缩窄了劝说内容。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 1328,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

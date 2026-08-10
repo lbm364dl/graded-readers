@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_039-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 166,
+  "required_range": [
+    98,
+    182
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "“孔明募三千民兵”将招募民兵的行为归于孔明；原文是刘备招募，孔明负责训练。",
+      "classification": "material",
+      "reason": "The accepted scene assigns the recruitment of three thousand militia to Kongming, but the original explicitly states that Liu Bei recruited them and Kongming trained them, changing the actor of a concrete event.",
+      "required_fix": "改为“刘备募得三千民兵，孔明朝夕教演阵法”或明确刘备负责招募、孔明负责训练。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "“孔明募三千民兵”将招募民兵的行为归于孔明；原文是刘备招募，孔明负责训练。",
+      "classification": "material",
+      "reason": "The accepted scene assigns the recruitment of three thousand militia to Kongming, but the original explicitly states that Liu Bei recruited them and Kongming trained them, changing the actor of a concrete event.",
+      "required_fix": "改为“刘备募得三千民兵，孔明朝夕教演阵法”或明确刘备负责招募、孔明负责训练。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 166,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

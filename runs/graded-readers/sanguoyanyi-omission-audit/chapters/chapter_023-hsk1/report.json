@@ -1,0 +1,80 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_023-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 160,
+  "required_range": [
+    98,
+    182
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略刘表与韩嵩的往来及相关劝降情节",
+      "classification": "material",
+      "reason": "这段交代刘表在曹操与袁绍之间的取舍、韩嵩出使及劝降失败，补充了刘表未降的动机和政治关系，影响后续情节的连贯理解。",
+      "required_fix": "补写刘表派韩嵩出使许都、曹操任用韩嵩、韩嵩劝刘表遣子入侍及刘表拒绝并赦免韩嵩的过程。"
+    },
+    {
+      "omission_note": "省略董承等人密谋起事失败、吉平咬指立誓等细节",
+      "classification": "material",
+      "reason": "这些内容构成董承集团谋诛曹操、吉平主动承担刺杀并最终下毒的因果链；吉平咬指立誓还强化了其动机，并为后续告密和审讯提供关键背景。",
+      "required_fix": "补写董承等人策划夜袭曹操但未能实施的情节，以及吉平咬指立誓、承诺以毒药刺杀曹操的过程。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“遂改攻刘备”因果不准：原文是因隆冬暂缓出兵，先招降张绣、刘表",
+      "classification": "material",
+      "reason": "该表述改变了孔融劝阻后曹操行动的因果顺序，误说成改为攻刘备，而原文是暂缓攻刘备并先招降张绣、刘表。",
+      "required_fix": "改为“曹操因隆冬严寒暂缓攻刘备，先依计招降张绣、刘表，来春再图徐州”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略刘表与韩嵩的往来及相关劝降情节",
+      "classification": "material",
+      "reason": "这段交代刘表在曹操与袁绍之间的取舍、韩嵩出使及劝降失败，补充了刘表未降的动机和政治关系，影响后续情节的连贯理解。",
+      "required_fix": "补写刘表派韩嵩出使许都、曹操任用韩嵩、韩嵩劝刘表遣子入侍及刘表拒绝并赦免韩嵩的过程。"
+    },
+    {
+      "omission_note": "省略董承等人密谋起事失败、吉平咬指立誓等细节",
+      "classification": "material",
+      "reason": "这些内容构成董承集团谋诛曹操、吉平主动承担刺杀并最终下毒的因果链；吉平咬指立誓还强化了其动机，并为后续告密和审讯提供关键背景。",
+      "required_fix": "补写董承等人策划夜袭曹操但未能实施的情节，以及吉平咬指立誓、承诺以毒药刺杀曹操的过程。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“遂改攻刘备”因果不准：原文是因隆冬暂缓出兵，先招降张绣、刘表",
+      "classification": "material",
+      "reason": "该表述改变了孔融劝阻后曹操行动的因果顺序，误说成改为攻刘备，而原文是暂缓攻刘备并先招降张绣、刘表。",
+      "required_fix": "改为“曹操因隆冬严寒暂缓攻刘备，先依计招降张绣、刘表，来春再图徐州”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 8.5,
+    "naturalness": 8,
+    "readability": 8,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 160,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 8,
+        "readability": 8,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

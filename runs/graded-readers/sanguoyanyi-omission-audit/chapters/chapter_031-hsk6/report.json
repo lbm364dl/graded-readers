@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_031-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1484,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "删去了刘备初战后连续十日搦战、曹军闭营不出的细节。",
+      "classification": "material",
+      "reason": "这段内容明确了十日的战事间隔和曹军闭营不出的战术行为，并直接导致刘备愈加疑虑；删去后压缩了重要 chronology 与刘备后续决策的动机。",
+      "required_fix": "补回刘备先后派赵云、张飞连续十日搦战而曹军始终闭营不出的经过，并交代刘备因此更加疑惑。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "删去了刘备初战后连续十日搦战、曹军闭营不出的细节。",
+      "classification": "material",
+      "reason": "这段内容明确了十日的战事间隔和曹军闭营不出的战术行为，并直接导致刘备愈加疑虑；删去后压缩了重要 chronology 与刘备后续决策的动机。",
+      "required_fix": "补回刘备先后派赵云、张飞连续十日搦战而曹军始终闭营不出的经过，并交代刘备因此更加疑惑。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1484,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "status": "complete",
+  "expected": 720,
+  "complete": 715,
+  "missing": [],
+  "unexpected": [],
+  "incomplete": [
+    {
+      "chapter": 9,
+      "level": "hsk5",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_009-hsk5",
+      "missing_artifacts": [
+        "chapter.txt"
+      ]
+    },
+    {
+      "chapter": 28,
+      "level": "hsk2",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_028-hsk2",
+      "missing_artifacts": [
+        "chapter.txt"
+      ]
+    },
+    {
+      "chapter": 31,
+      "level": "hsk2",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_031-hsk2",
+      "missing_artifacts": [
+        "chapter.txt"
+      ]
+    },
+    {
+      "chapter": 62,
+      "level": "hsk4",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_062-hsk4",
+      "missing_artifacts": [
+        "chapter.txt"
+      ]
+    },
+    {
+      "chapter": 86,
+      "level": "hsk2",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_086-hsk2",
+      "missing_artifacts": [
+        "chapter.txt"
+      ]
+    }
+  ],
+  "recovery": [
+    {
+      "level": "hsk2",
+      "chapters": [
+        28,
+        31,
+        86
+      ],
+      "return_code": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "pipeline.agent_harness",
+        "book",
+        "--source",
+        "/home/usuario/hsk-graded-readers/books/chinese/sanguoyanyi/chapter_028.txt",
+        "--source",
+        "/home/usuario/hsk-graded-readers/books/chinese/sanguoyanyi/chapter_031.txt",
+        "--source",
+        "/home/usuario/hsk-graded-readers/books/chinese/sanguoyanyi/chapter_086.txt",
+        "--levels",
+        "hsk2",
+        "--book-run-id",
+        "sanguoyanyi-full-hsk123",
+        "--runs-dir",
+        "/home/usuario/hsk-graded-readers/runs/graded-readers",
+        "--concurrency",
+        "3",
+        "--chapter-concurrency",
+        "3",
+        "--chapter-retries",
+        "2",
+        "--length-repair-rounds",
+        "1",
+        "--max-repairs",
+        "3",
+        "--final-effort",
+        "xhigh",
+        "--skip-annotations"
+      ]
+    },
+    {
+      "level": "hsk4",
+      "chapters": [
+        62
+      ],
+      "return_code": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "pipeline.agent_harness",
+        "book",
+        "--source",
+        "/home/usuario/hsk-graded-readers/books/chinese/sanguoyanyi/chapter_062.txt",
+        "--levels",
+        "hsk4",
+        "--book-run-id",
+        "sanguoyanyi-full-hsk456",
+        "--runs-dir",
+        "/home/usuario/hsk-graded-readers/runs/graded-readers",
+        "--concurrency",
+        "3",
+        "--chapter-concurrency",
+        "3",
+        "--chapter-retries",
+        "2",
+        "--length-repair-rounds",
+        "1",
+        "--max-repairs",
+        "3",
+        "--final-effort",
+        "xhigh",
+        "--skip-annotations"
+      ]
+    },
+    {
+      "level": "hsk5",
+      "chapters": [
+        9
+      ],
+      "return_code": 0,
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "pipeline.agent_harness",
+        "book",
+        "--source",
+        "/home/usuario/hsk-graded-readers/books/chinese/sanguoyanyi/chapter_009.txt",
+        "--levels",
+        "hsk5",
+        "--book-run-id",
+        "sanguoyanyi-full-hsk456",
+        "--runs-dir",
+        "/home/usuario/hsk-graded-readers/runs/graded-readers",
+        "--concurrency",
+        "3",
+        "--chapter-concurrency",
+        "3",
+        "--chapter-retries",
+        "2",
+        "--length-repair-rounds",
+        "1",
+        "--max-repairs",
+        "3",
+        "--final-effort",
+        "xhigh",
+        "--skip-annotations"
+      ]
+    }
+  ],
+  "after_recovery": {
+    "status": "complete",
+    "expected": 720,
+    "complete": 720,
+    "missing": [],
+    "unexpected": [],
+    "incomplete": []
+  }
+}
+{
+  "status": "complete",
+  "expected": 720,
+  "complete": 720,
+  "missing": [],
+  "unexpected": [],
+  "incomplete": []
+}
+{
+  "status": "complete",
+  "expected": 720,
+  "complete": 720,
+  "missing": [],
+  "unexpected": [],
+  "incomplete": []
+}
+{
+  "status": "complete",
+  "expected": 720,
+  "complete": 720,
+  "missing": [],
+  "unexpected": [],
+  "incomplete": []
+}

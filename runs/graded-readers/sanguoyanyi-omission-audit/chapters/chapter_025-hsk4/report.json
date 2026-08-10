@@ -1,0 +1,85 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_025-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 624,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略曹操起初对第三约的迟疑及张辽劝服他的过程。",
+      "classification": "material",
+      "reason": "这段说明曹操为何接受第三约及张辽如何促成，涉及关键决策动机，并支撑后续关羽获准离去的因果。",
+      "required_fix": "补回曹操拒绝第三约、张辽以豫让之论劝服曹操，以及曹操最终答应的过程。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“关羽确认家眷平安，便带二夫人和数十骑投降”容易造成关羽带着二夫人一起去曹营投降的误解。原文是关羽先入城向二夫人说明三约，随后带数十骑单独去见曹操；二夫人后来才由关羽护送前往许昌。",
+      "classification": "material",
+      "reason": "该表述改变了关羽投降时的行动主体和时间顺序，可能误解为关羽带二夫人一同前往曹营。",
+      "required_fix": "改为：关羽入城确认家眷平安并向二夫人说明三约，随后带数十骑单独去见曹操投降；二夫人后来才由关羽护送前往许昌。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略曹操起初对第三约的迟疑及张辽劝服他的过程。",
+      "classification": "material",
+      "reason": "这段说明曹操为何接受第三约及张辽如何促成，涉及关键决策动机，并支撑后续关羽获准离去的因果。",
+      "required_fix": "补回曹操拒绝第三约、张辽以豫让之论劝服曹操，以及曹操最终答应的过程。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“关羽确认家眷平安，便带二夫人和数十骑投降”容易造成关羽带着二夫人一起去曹营投降的误解。原文是关羽先入城向二夫人说明三约，随后带数十骑单独去见曹操；二夫人后来才由关羽护送前往许昌。",
+      "classification": "material",
+      "reason": "该表述改变了关羽投降时的行动主体和时间顺序，可能误解为关羽带二夫人一同前往曹营。",
+      "required_fix": "改为：关羽入城确认家眷平安并向二夫人说明三约，随后带数十骑单独去见曹操投降；二夫人后来才由关羽护送前往许昌。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 759,
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "“若再背兄”中的“再”无原文依据，且将关羽原本“若背兄便不算人”的自责改成了仿佛曾经背叛过兄长、未来再次背叛的条件判断，造成轻微语义偏移。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 624,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

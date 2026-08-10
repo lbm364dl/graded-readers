@@ -1,0 +1,38 @@
+{
+  "status": "complete",
+  "scenes": 7,
+  "japanese_chars": 3246,
+  "chapter_cjk": 3246,
+  "scene_verdicts": {
+    "scene_01": "pass",
+    "scene_02": "pass",
+    "scene_03": "pass",
+    "scene_04": "pass",
+    "scene_05": "pass",
+    "scene_06": "pass",
+    "scene_07": "pass"
+  },
+  "chapter_review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "omissions": [
+      "Scene 06 does not explicitly mention that some displayed women’s photographs carried dowries, though the matchmaking/photo episode remains recognizable."
+    ],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "chapter_review_verdict": "pass",
+  "scene_attempts": {
+    "scene_01": 2,
+    "scene_02": 1,
+    "scene_03": 1,
+    "scene_04": 1,
+    "scene_05": 2,
+    "scene_06": 3,
+    "scene_07": 3
+  },
+  "unresolved_scenes": []
+}

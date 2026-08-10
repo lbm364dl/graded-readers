@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_110-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1309,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将司马师所见的李丰、张缉、夏侯玄称为“鬼影”，原文只写他看见三人立于榻前。",
+      "classification": "material",
+      "reason": "“鬼影”将原文仅写司马师看见三人立于榻前，具体化为超自然鬼影，添加了原文未明确支持的事实与解释。",
+      "required_fix": "将“鬼影”改为“看见李丰、张缉、夏侯玄三人立于榻前”或保持原文的非超自然表述。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将司马师所见的李丰、张缉、夏侯玄称为“鬼影”，原文只写他看见三人立于榻前。",
+      "classification": "material",
+      "reason": "“鬼影”将原文仅写司马师看见三人立于榻前，具体化为超自然鬼影，添加了原文未明确支持的事实与解释。",
+      "required_fix": "将“鬼影”改为“看见李丰、张缉、夏侯玄三人立于榻前”或保持原文的非超自然表述。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1309,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

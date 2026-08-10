@@ -1,0 +1,20 @@
+{
+  "run_id": "annotation-context-visible-350-400-hsk4-ch001-constrained-delta",
+  "kind": "annotation-only",
+  "status": "failed",
+  "source": "/home/usuario/hsk-graded-readers/books/chinese/sanguoyanyi/chapter_001.txt",
+  "source_sha256": "4a656098a4a733bb35fcb808be01e815bf27aeac637cbec1810eb14860e909f8",
+  "chapter_input": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_001-hsk4/chapter.txt",
+  "chapter_sha256": "210e7e1f69579d65b1888c3161e24e0b292f8aae20456349654d3d88d8837fb7",
+  "level": "hsk4",
+  "model": "gpt-5.6-luna",
+  "annotation_mode": "constrained-delta",
+  "annotation_chunk_policy": "sentence-safe-v2-400-cap",
+  "annotation_chunk_target": 350,
+  "annotation_chunk_maximum": 400,
+  "annotation_review_effort": "medium",
+  "annotation_repair_effort": "medium",
+  "annotation_final_effort": "high",
+  "max_annotation_repairs": 2,
+  "updated_at": "2026-08-07T02:46:07.196856+00:00"
+}

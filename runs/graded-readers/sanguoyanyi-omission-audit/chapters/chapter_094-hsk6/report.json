@@ -1,0 +1,117 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_094-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1255,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "略去曹叡亲自前往长安、华歆主张御驾亲征等朝廷调度细节。",
+      "classification": "material",
+      "reason": "曹叡亲赴长安及华歆提出御驾亲征是魏廷应对战局的重要调度，影响后续司马懿赴长安会合的 chronology 与因果。",
+      "required_fix": "补入华歆主张御驾亲征、曹叡决定亲赴长安并命司马懿前往会合的情节。"
+    },
+    {
+      "omission_note": "略去马岱留守营寨并让关兴、张苞向孔明报告的具体过程。",
+      "classification": "material",
+      "reason": "马岱留守、关兴和张苞奉命向孔明报告解释了两人如何从败战现场转入孔明的下一步部署，也体现了关键的军务决策。",
+      "required_fix": "补入马岱留守寨柵并命关兴、张苞连夜向孔明报告、请其设法破敌的过程。"
+    },
+    {
+      "omission_note": "略去曹真折损两员先锋后上表请求援兵的细节。",
+      "classification": "material",
+      "reason": "曹真上表求援是魏廷获知战况并重新起用司马懿的重要行政与因果环节，省略后会削弱朝廷决策的动机和 chronology。",
+      "required_fix": "补入曹真损失曹遵、朱赞后悲伤，上表朝廷请求援兵的情节。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "说申耽、申仪“让司马懿的使者谎称”司马懿仍在赴长安途中，原文主要表现为二人佯装答应孟达并故意拖延，未明确说他们指使使者撒谎。",
+      "classification": "material",
+      "reason": "错误归因了欺骗行为的实施者，改变了申耽、申仪与司马懿使者在孟达受骗过程中的角色关系。",
+      "required_fix": "应改为申耽、申仪表面答应孟达、暗中拖延；梁畿只是奉司马懿之命传达征调令，并称司马懿已离宛城前往长安，不能写成受二人指使撒谎。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "略去曹叡亲自前往长安、华歆主张御驾亲征等朝廷调度细节。",
+      "classification": "material",
+      "reason": "曹叡亲赴长安及华歆提出御驾亲征是魏廷应对战局的重要调度，影响后续司马懿赴长安会合的 chronology 与因果。",
+      "required_fix": "补入华歆主张御驾亲征、曹叡决定亲赴长安并命司马懿前往会合的情节。"
+    },
+    {
+      "omission_note": "略去马岱留守营寨并让关兴、张苞向孔明报告的具体过程。",
+      "classification": "material",
+      "reason": "马岱留守、关兴和张苞奉命向孔明报告解释了两人如何从败战现场转入孔明的下一步部署，也体现了关键的军务决策。",
+      "required_fix": "补入马岱留守寨柵并命关兴、张苞连夜向孔明报告、请其设法破敌的过程。"
+    },
+    {
+      "omission_note": "略去曹真折损两员先锋后上表请求援兵的细节。",
+      "classification": "material",
+      "reason": "曹真上表求援是魏廷获知战况并重新起用司马懿的重要行政与因果环节，省略后会削弱朝廷决策的动机和 chronology。",
+      "required_fix": "补入曹真损失曹遵、朱赞后悲伤，上表朝廷请求援兵的情节。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "说申耽、申仪“让司马懿的使者谎称”司马懿仍在赴长安途中，原文主要表现为二人佯装答应孟达并故意拖延，未明确说他们指使使者撒谎。",
+      "classification": "material",
+      "reason": "错误归因了欺骗行为的实施者，改变了申耽、申仪与司马懿使者在孟达受骗过程中的角色关系。",
+      "required_fix": "应改为申耽、申仪表面答应孟达、暗中拖延；梁畿只是奉司马懿之命传达征调令，并称司马懿已离宛城前往长安，不能写成受二人指使撒谎。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1120,
+      "review": {
+        "source_fidelity": 8.1,
+        "naturalness": 7.6,
+        "readability": 8.4,
+        "material_omissions": [
+          "李丰转述中省略了孟达因曹丕死后失宠、受朝臣嫉妒而不安，并自称本为蜀将、势逼于魏的反魏动机，削弱了人物动机与背景。",
+          "孟达计划中省略了孔明同时攻取长安、两京大定的双线战略目标，削弱了起兵计划的战略因果。"
+        ],
+        "unsupported_additions": [
+          "称坑堑为“蜀军预掘”，原文只叙羌兵陷入坑堑，未明确说明由蜀军预先挖掘。"
+        ],
+        "distortions": [
+          "“劝他不要听魏国利用”既误改原文“勿听反贼之言”的劝告对象，也造成语义不通；应改为“不要再受魏国利用”或“勿听反贼之言”。"
+        ],
+        "language_problems": [
+          "“设鼓琴之声”搭配不自然，宜改为“让寨内传出琴声”或“传出鼓琴之声”。",
+          "“不要听魏国利用”语法和搭配均不自然。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 1255,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_076-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 157,
+  "required_range": [
+    98,
+    182
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了糜芳、傅士仁因畏惧关羽追究而降吴的具体原因。",
+      "classification": "material",
+      "reason": "这省略了两人投降这一关键事件的具体动机，改变了对其行为的理解。",
+      "required_fix": "补充两人因害怕关羽胜回后追究、惩罚而决定投降东吴的原因。"
+    },
+    {
+      "omission_note": "省略了关羽中计、荆州沿江烽火未举及决定取荆州的过程。",
+      "classification": "material",
+      "reason": "这些内容交代了吕蒙袭取荆州成功的原因，并构成关羽得知败讯后决定取荆州的因果与行动转折。",
+      "required_fix": "补充吕蒙使水手伪装客商、伏兵擒守台士卒导致烽火未举，以及关羽得知中计后决定率军取荆州的过程。"
+    },
+    {
+      "omission_note": "省略了曹操赞赏徐晃、封赏驻军等后续情节。",
+      "classification": "material",
+      "reason": "这段情节交代了徐晃取胜后的重要结果、曹操对其功绩的评价，以及魏军后续驻防安排，属于实质性后续事件而非单纯修饰。",
+      "required_fix": "补充曹操巡视四冢寨并赞赏徐晃、封徐晃为平南将军并令其与夏侯尚守襄阳等后续情节。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了糜芳、傅士仁因畏惧关羽追究而降吴的具体原因。",
+      "classification": "material",
+      "reason": "这省略了两人投降这一关键事件的具体动机，改变了对其行为的理解。",
+      "required_fix": "补充两人因害怕关羽胜回后追究、惩罚而决定投降东吴的原因。"
+    },
+    {
+      "omission_note": "省略了关羽中计、荆州沿江烽火未举及决定取荆州的过程。",
+      "classification": "material",
+      "reason": "这些内容交代了吕蒙袭取荆州成功的原因，并构成关羽得知败讯后决定取荆州的因果与行动转折。",
+      "required_fix": "补充吕蒙使水手伪装客商、伏兵擒守台士卒导致烽火未举，以及关羽得知中计后决定率军取荆州的过程。"
+    },
+    {
+      "omission_note": "省略了曹操赞赏徐晃、封赏驻军等后续情节。",
+      "classification": "material",
+      "reason": "这段情节交代了徐晃取胜后的重要结果、曹操对其功绩的评价，以及魏军后续驻防安排，属于实质性后续事件而非单纯修饰。",
+      "required_fix": "补充曹操巡视四冢寨并赞赏徐晃、封徐晃为平南将军并令其与夏侯尚守襄阳等后续情节。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 181,
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 7,
+        "readability": 8,
+        "material_omissions": [
+          "省略了关平、廖化在重围中救出关羽并建议退守麦城的关键过渡，导致“吴军三路围之”到“退守麦城”的因果略显跳跃。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "“借吴书令关羽退兵”表述不准确：曹操并非借吴书直接命令关羽，而是依董昭之计将吴书射入樊城，使关羽得知荆州将遭袭并主动退兵。"
+        ],
+        "language_problems": [
+          "“关羽闻荆州、家眷失，怒悔”语法过于省略且搭配不自然，宜改为“关羽得知荆州失守、家眷被俘，又怒又悔”。",
+          "“借吴书令关羽退兵”容易误解为吴书直接命令关羽退兵，表达不够自然准确。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 157,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_112-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 778,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了魏军筑土城防淮、因无雨而无法借水破城的围城细节。",
+      "classification": "material",
+      "reason": "这不仅是气氛描写，还交代了诸葛诞守城期间借淮水破坏土城的具体计划及其因无雨失败的原因，属于围城策略和事件因果。",
+      "required_fix": "补充魏军筑土城防淮、诸葛诞等待淮水泛滥冲毁土城，以及自秋至冬无雨导致计划失败的情节。"
+    },
+    {
+      "omission_note": "省略了邓艾写信建议司马望坚守并向司马昭求援的具体情节。",
+      "classification": "material",
+      "reason": "书信明确交代邓艾建议坚守、等待关中援军并向司马昭求援，是魏军拖延和后续援军赶到的动机与因果链。",
+      "required_fix": "补充邓艾写信劝司马望坚守、等待关中援军，并派人向司马昭求援的情节。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了魏军筑土城防淮、因无雨而无法借水破城的围城细节。",
+      "classification": "material",
+      "reason": "这不仅是气氛描写，还交代了诸葛诞守城期间借淮水破坏土城的具体计划及其因无雨失败的原因，属于围城策略和事件因果。",
+      "required_fix": "补充魏军筑土城防淮、诸葛诞等待淮水泛滥冲毁土城，以及自秋至冬无雨导致计划失败的情节。"
+    },
+    {
+      "omission_note": "省略了邓艾写信建议司马望坚守并向司马昭求援的具体情节。",
+      "classification": "material",
+      "reason": "书信明确交代邓艾建议坚守、等待关中援军并向司马昭求援，是魏军拖延和后续援军赶到的动机与因果链。",
+      "required_fix": "补充邓艾写信劝司马望坚守、等待关中援军，并派人向司马昭求援的情节。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 778,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

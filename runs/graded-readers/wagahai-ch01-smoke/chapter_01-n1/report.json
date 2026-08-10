@@ -1,0 +1,21 @@
+{
+  "status": "blocked",
+  "scenes": 4,
+  "japanese_chars": 5398,
+  "chapter_cjk": 5398,
+  "scene_verdicts": {
+    "scene_01": "pass",
+    "scene_02": "pass",
+    "scene_03": "pass",
+    "scene_04": "revise"
+  },
+  "scene_attempts": {
+    "scene_01": 1,
+    "scene_02": 1,
+    "scene_03": 1,
+    "scene_04": 3
+  },
+  "unresolved_scenes": [
+    "scene_04"
+  ]
+}

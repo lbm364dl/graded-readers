@@ -1,0 +1,102 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_079-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1391,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略曹丕命孟达先取刘封首级、以此验证投降真伪，以及刘封率五万兵来攻襄阳这一动因，使孟达受封和后续交战的因果略显跳跃。",
+      "classification": "material",
+      "reason": "遗漏了曹丕验证孟达投降、刘封率军来攻的关键动因，导致孟达受封及后续交战的因果链条不完整。",
+      "required_fix": "补充曹丕命孟达取刘封首级以证投降，以及刘封率五万兵进攻襄阳的情节。"
+    },
+    {
+      "omission_note": "省略刘封被调任绵竹守将的明确过程。",
+      "classification": "material",
+      "reason": "遗漏了刘封被调往绵竹驻守这一重要地点和时间衔接，削弱了其后来奉命进攻孟达的行动依据。",
+      "required_fix": "补充诸葛亮建议分调二人后，刘备升调刘封为绵竹守将，刘封奉命赴任的过程。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略曹丕命孟达先取刘封首级、以此验证投降真伪，以及刘封率五万兵来攻襄阳这一动因，使孟达受封和后续交战的因果略显跳跃。",
+      "classification": "material",
+      "reason": "遗漏了曹丕验证孟达投降、刘封率军来攻的关键动因，导致孟达受封及后续交战的因果链条不完整。",
+      "required_fix": "补充曹丕命孟达取刘封首级以证投降，以及刘封率五万兵进攻襄阳的情节。"
+    },
+    {
+      "omission_note": "省略刘封被调任绵竹守将的明确过程。",
+      "classification": "material",
+      "reason": "遗漏了刘封被调往绵竹驻守这一重要地点和时间衔接，削弱了其后来奉命进攻孟达的行动依据。",
+      "required_fix": "补充诸葛亮建议分调二人后，刘备升调刘封为绵竹守将，刘封奉命赴任的过程。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1337,
+      "review": {
+        "source_fidelity": 8.1,
+        "naturalness": 8.6,
+        "readability": 8.7,
+        "material_omissions": [
+          "省略彭羕与孟达交厚、彭羕写信遣心腹报孟达且使者被马超巡逻军擒获的情节，导致马超为何主动试探彭羕并掌握其谋划的因果链条断裂。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "开头称曹彰“带兵进城”，原文是曹彰率兵来到城外，贾逵出城迎接；曹彰斥退军士后才独自入城。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 1389,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [
+          "结尾新增“魏代汉的局势，至此已经形成”，原文仅写群臣请求汉献帝禅位，并留下其如何回答的悬念。"
+        ],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 1391,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

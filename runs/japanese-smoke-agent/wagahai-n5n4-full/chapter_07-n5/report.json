@@ -1,0 +1,35 @@
+{
+  "status": "complete",
+  "scenes": 4,
+  "japanese_chars": 1684,
+  "chapter_cjk": 1684,
+  "scene_verdicts": {
+    "scene_01": "pass",
+    "scene_02": "pass",
+    "scene_03": "pass",
+    "scene_04": "pass"
+  },
+  "chapter_review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "omissions": [
+      "老番頭という役割が『愛想のよい老人』に一般化されている。",
+      "原文の一部の細かな風刺・比喩・会話は自然な圧縮により省略されている。"
+    ],
+    "unsupported_additions": [],
+    "distortions": [
+      "『盗み食い』は原文の『頂戴した』よりやや強い表現だが、猫が食物を取る出来事自体は保持されている。"
+    ],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "chapter_review_verdict": "pass",
+  "scene_attempts": {
+    "scene_01": 3,
+    "scene_02": 3,
+    "scene_03": 3,
+    "scene_04": 1
+  },
+  "unresolved_scenes": []
+}

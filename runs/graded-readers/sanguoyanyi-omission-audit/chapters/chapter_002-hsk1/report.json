@@ -1,0 +1,68 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_002-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 181,
+  "required_range": [
+    98,
+    182
+  ],
+  "material_findings": [
+    {
+      "omission_note": "略去朱隽围攻阳城、严政献降等过渡细节；略去刘备被授下密丞、高堂尉后才任平原县令的具体过程；略去何进等扶立刘辩时袁绍的关键作用。",
+      "classification": "material",
+      "reason": "整体包含材料性遗漏：刘备获授下密丞、高堂尉并升任平原县令的具体官职 chronology，以及袁绍在扶立刘辩中的关键作用，影响后续身份与政治发展；朱隽围攻阳城、严政献降虽多为过渡，但不改变整体判断。",
+      "required_fix": "补入刘备先任下密丞、后任高堂尉，最终经公孙瓒荐为别部司马、守平原县令的过程，并说明袁绍率军入宫、收捕蹇硕并推动扶立刘辩；可简略交代朱隽围攻阳城及严政刺杀张宝献降。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“刘备破张宝妖法”将关羽、张飞军队泼洒秽物破法的行动概括为刘备个人所为，略有归因偏差。",
+      "classification": "material",
+      "reason": "将破法这一关键行动归给刘备个人，改变了原文中由关羽、张飞伏军执行的具体行动主体。",
+      "required_fix": "改为“关羽、张飞伏军泼洒秽物破张宝妖法”，或明确说明刘备与关羽、张飞共同破法。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "略去朱隽围攻阳城、严政献降等过渡细节；略去刘备被授下密丞、高堂尉后才任平原县令的具体过程；略去何进等扶立刘辩时袁绍的关键作用。",
+      "classification": "material",
+      "reason": "整体包含材料性遗漏：刘备获授下密丞、高堂尉并升任平原县令的具体官职 chronology，以及袁绍在扶立刘辩中的关键作用，影响后续身份与政治发展；朱隽围攻阳城、严政献降虽多为过渡，但不改变整体判断。",
+      "required_fix": "补入刘备先任下密丞、后任高堂尉，最终经公孙瓒荐为别部司马、守平原县令的过程，并说明袁绍率军入宫、收捕蹇硕并推动扶立刘辩；可简略交代朱隽围攻阳城及严政刺杀张宝献降。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“刘备破张宝妖法”将关羽、张飞军队泼洒秽物破法的行动概括为刘备个人所为，略有归因偏差。",
+      "classification": "material",
+      "reason": "将破法这一关键行动归给刘备个人，改变了原文中由关羽、张飞伏军执行的具体行动主体。",
+      "required_fix": "改为“关羽、张飞伏军泼洒秽物破张宝妖法”，或明确说明刘备与关羽、张飞共同破法。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 181,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

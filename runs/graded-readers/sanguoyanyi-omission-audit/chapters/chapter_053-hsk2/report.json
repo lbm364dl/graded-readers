@@ -1,0 +1,68 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_053-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 297,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "omission_note": "未交代鲁肃劝孙权成就帝业及太史慈临终遗言等细节。",
+      "classification": "material",
+      "reason": "鲁肃的劝言虽属人物和政治抱负细节，但太史慈临终遗言体现其重要的未竟志向与人物性格，删去会削弱其死亡段落的关键刻画。",
+      "required_fix": "补入鲁肃劝孙权建立帝业的对话，并交代太史慈临终表达建功立业而志未遂的遗言。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“龚志在城上倒戈开城投降”中的“开城”原文未明确写出。",
+      "classification": "material",
+      "reason": "原文只写龚志在城上宣布投降，随后出城纳降，并未明确写出开城这一动作。",
+      "required_fix": "删去“开城”，改为“龚志在城上倒戈投降”或“龚志出城纳降”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "未交代鲁肃劝孙权成就帝业及太史慈临终遗言等细节。",
+      "classification": "material",
+      "reason": "鲁肃的劝言虽属人物和政治抱负细节，但太史慈临终遗言体现其重要的未竟志向与人物性格，删去会削弱其死亡段落的关键刻画。",
+      "required_fix": "补入鲁肃劝孙权建立帝业的对话，并交代太史慈临终表达建功立业而志未遂的遗言。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“龚志在城上倒戈开城投降”中的“开城”原文未明确写出。",
+      "classification": "material",
+      "reason": "原文只写龚志在城上宣布投降，随后出城纳降，并未明确写出开城这一动作。",
+      "required_fix": "删去“开城”，改为“龚志在城上倒戈投降”或“龚志出城纳降”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 297,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

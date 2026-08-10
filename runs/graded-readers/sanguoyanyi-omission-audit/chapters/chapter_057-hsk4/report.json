@@ -1,0 +1,82 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_057-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 678,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了马腾身世、马超留守西凉、马岱后续逃亡等部分背景。",
+      "classification": "material",
+      "reason": "接受场景确实省略了马腾身世和马超留守西凉，其中马超是否随军关系到后续人物身份与谁被杀；但马岱乔装商人逃脱其实已经保留。",
+      "required_fix": "补充马超留守西凉，并明确马岱乔装商人逃脱；马腾身世仍可作为非核心背景压缩。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将周瑜之死表述为“病逝”，原文只写其突然昏绝后死亡，未说明因病。",
+      "classification": "material",
+      "reason": "“病逝”新增了原文没有的死因，改变了对周瑜死亡方式的事实表述。",
+      "required_fix": "改为“周瑜突然昏绝后死亡”或“周瑜三十六岁死于巴丘”，不要称为“病逝”。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“杀死马腾父子”容易让人误以为马超也被杀，原文实际被杀的是马腾、马休、马铁，马超留在西凉。",
+      "classification": "material",
+      "reason": "“马腾父子”可能造成马超被杀的身份误读，而马超实际留守西凉并未遇害。",
+      "required_fix": "改为“曹操设伏，杀死马腾、马休、马铁，马超留在西凉；马岱扮作商人逃脱”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了马腾身世、马超留守西凉、马岱后续逃亡等部分背景。",
+      "classification": "material",
+      "reason": "接受场景确实省略了马腾身世和马超留守西凉，其中马超是否随军关系到后续人物身份与谁被杀；但马岱乔装商人逃脱其实已经保留。",
+      "required_fix": "补充马超留守西凉，并明确马岱乔装商人逃脱；马腾身世仍可作为非核心背景压缩。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将周瑜之死表述为“病逝”，原文只写其突然昏绝后死亡，未说明因病。",
+      "classification": "material",
+      "reason": "“病逝”新增了原文没有的死因，改变了对周瑜死亡方式的事实表述。",
+      "required_fix": "改为“周瑜突然昏绝后死亡”或“周瑜三十六岁死于巴丘”，不要称为“病逝”。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“杀死马腾父子”容易让人误以为马超也被杀，原文实际被杀的是马腾、马休、马铁，马超留在西凉。",
+      "classification": "material",
+      "reason": "“马腾父子”可能造成马超被杀的身份误读，而马超实际留守西凉并未遇害。",
+      "required_fix": "改为“曹操设伏，杀死马腾、马休、马铁，马超留在西凉；马岱扮作商人逃脱”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 678,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

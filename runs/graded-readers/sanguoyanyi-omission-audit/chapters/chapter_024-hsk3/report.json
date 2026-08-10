@@ -1,0 +1,66 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_024-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 547,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "omission_note": "删去了董承等人的忠义诗，以及董贵妃、刘备突围和关羽相关的部分细节。",
+      "classification": "material",
+      "reason": "忠义诗本身属于可压缩的装饰性内容，但董贵妃被处死、刘备突围过程和关羽保护刘备家眷并成为后续劝降对象的相关内容涉及关键事件、人物关系和后续情节。",
+      "required_fix": "补回董贵妃被勒死的关键情节、刘备突围的结果与去向，以及关羽保护刘备家眷、曹操谋划劝降关羽的关键信息；忠义诗可不必恢复。"
+    },
+    {
+      "omission_note": "省略了张飞、刘备分别遭遇曹军各部围击的具体过程，以及刘备妻子陷落等信息。",
+      "classification": "material",
+      "reason": "曹军设伏及张飞、刘备突围的具体过程可适度压缩，但刘备妻子俱陷是刘备投奔袁绍的重要动机，也直接关联后续关羽守城和曹操劝降关羽的情节。",
+      "required_fix": "补充刘备、张飞中八面埋伏并分别突围的基本过程，以及刘备妻子陷落、关羽因此守护家眷的关键信息。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "删去了董承等人的忠义诗，以及董贵妃、刘备突围和关羽相关的部分细节。",
+      "classification": "material",
+      "reason": "忠义诗本身属于可压缩的装饰性内容，但董贵妃被处死、刘备突围过程和关羽保护刘备家眷并成为后续劝降对象的相关内容涉及关键事件、人物关系和后续情节。",
+      "required_fix": "补回董贵妃被勒死的关键情节、刘备突围的结果与去向，以及关羽保护刘备家眷、曹操谋划劝降关羽的关键信息；忠义诗可不必恢复。"
+    },
+    {
+      "omission_note": "省略了张飞、刘备分别遭遇曹军各部围击的具体过程，以及刘备妻子陷落等信息。",
+      "classification": "material",
+      "reason": "曹军设伏及张飞、刘备突围的具体过程可适度压缩，但刘备妻子俱陷是刘备投奔袁绍的重要动机，也直接关联后续关羽守城和曹操劝降关羽的情节。",
+      "required_fix": "补充刘备、张飞中八面埋伏并分别突围的基本过程，以及刘备妻子陷落、关羽因此守护家眷的关键信息。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 8.7,
+    "naturalness": 8.5,
+    "readability": 8.8,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 547,
+      "review": {
+        "source_fidelity": 8.7,
+        "naturalness": 8.5,
+        "readability": 8.8,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

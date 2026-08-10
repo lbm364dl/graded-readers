@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_050-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1230,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "略去部分行军细节，如张飞追赶、曹操下令斩杀哭军等具体过程，但核心事件仍在。",
+      "classification": "material",
+      "reason": "张飞持续追赶强化了曹操败逃的过程，而曹操下令斩杀哭军体现其在惨败行军中的重要冷酷性格；这些并非纯粹装饰性描写。",
+      "required_fix": "补回张飞从后追赶及曹操因军士哭号而下令再哭者立斩的具体情节。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "略去部分行军细节，如张飞追赶、曹操下令斩杀哭军等具体过程，但核心事件仍在。",
+      "classification": "material",
+      "reason": "张飞持续追赶强化了曹操败逃的过程，而曹操下令斩杀哭军体现其在惨败行军中的重要冷酷性格；这些并非纯粹装饰性描写。",
+      "required_fix": "补回张飞从后追赶及曹操因军士哭号而下令再哭者立斩的具体情节。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": []
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1230,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "passed": true
+    }
+  ]
+}

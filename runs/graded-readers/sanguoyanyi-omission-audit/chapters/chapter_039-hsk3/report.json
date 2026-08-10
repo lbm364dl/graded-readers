@@ -1,0 +1,109 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_039-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 555,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了孙权广造战船、分兵守江岸等战备安排。",
+      "classification": "material",
+      "reason": "这些战备安排交代了东吴为后续攻战所作的军事部署，属于重要背景信息，并非单纯氛围或重复描写。",
+      "required_fix": "补充孙权广造战船、分兵守卫江岸的战备安排。"
+    },
+    {
+      "omission_note": "省略了刘备留关羽守新野、令张飞随行等出发部署。",
+      "classification": "material",
+      "reason": "这是玄德赴荆州时的具体兵力安排，交代了关羽、张飞的行动去向和刘备出行的部署，影响事件的 chronology 与人物关系。",
+      "required_fix": "补充刘备留关羽守新野、命张飞率五百人随行赴荆州的部署。"
+    },
+    {
+      "omission_note": "省略了曹操任用司马懿等官制细节，以及战斗中部分追击和收军过程。",
+      "classification": "material",
+      "reason": "该项包含司马懿的任用与身份介绍，属于重要人物信息；战斗中的追击和收军过程虽可压缩，但与人物出场及战果交代合并后，整体不能视为纯非必要细节。",
+      "required_fix": "补充曹操任用司马懿等人的官制信息，并适度交代战斗中的关键追击、撤退和收军过程。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“于禁见道路狭窄、芦苇丛生，劝防火，但已来不及”略有因果偏差：原文中夏侯惇听取劝告后曾下令停止前进，随后火势从后方及两侧燃起。",
+      "classification": "material",
+      "reason": "“但已来不及”改变了原文中夏侯惇采纳劝告并下令停止前进、随后火从后方及两侧燃起的因果与时间顺序。",
+      "required_fix": "改为：于禁见道路狭窄、芦苇丛生，劝夏侯惇防备火攻；夏侯惇听取后下令停止前进，但随后火势从后方及两侧燃起。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了孙权广造战船、分兵守江岸等战备安排。",
+      "classification": "material",
+      "reason": "这些战备安排交代了东吴为后续攻战所作的军事部署，属于重要背景信息，并非单纯氛围或重复描写。",
+      "required_fix": "补充孙权广造战船、分兵守卫江岸的战备安排。"
+    },
+    {
+      "omission_note": "省略了刘备留关羽守新野、令张飞随行等出发部署。",
+      "classification": "material",
+      "reason": "这是玄德赴荆州时的具体兵力安排，交代了关羽、张飞的行动去向和刘备出行的部署，影响事件的 chronology 与人物关系。",
+      "required_fix": "补充刘备留关羽守新野、命张飞率五百人随行赴荆州的部署。"
+    },
+    {
+      "omission_note": "省略了曹操任用司马懿等官制细节，以及战斗中部分追击和收军过程。",
+      "classification": "material",
+      "reason": "该项包含司马懿的任用与身份介绍，属于重要人物信息；战斗中的追击和收军过程虽可压缩，但与人物出场及战果交代合并后，整体不能视为纯非必要细节。",
+      "required_fix": "补充曹操任用司马懿等人的官制信息，并适度交代战斗中的关键追击、撤退和收军过程。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“于禁见道路狭窄、芦苇丛生，劝防火，但已来不及”略有因果偏差：原文中夏侯惇听取劝告后曾下令停止前进，随后火势从后方及两侧燃起。",
+      "classification": "material",
+      "reason": "“但已来不及”改变了原文中夏侯惇采纳劝告并下令停止前进、随后火从后方及两侧燃起的因果与时间顺序。",
+      "required_fix": "改为：于禁见道路狭窄、芦苇丛生，劝夏侯惇防备火攻；夏侯惇听取后下令停止前进，但随后火势从后方及两侧燃起。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 8.8,
+    "naturalness": 8.7,
+    "readability": 9.1,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 540,
+      "review": {
+        "source_fidelity": 8.4,
+        "naturalness": 8.5,
+        "readability": 8.7,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "“孔明募三千民兵”将招募民兵的行为归于孔明；原文是玄德招募新野百姓，孔明负责朝夕教练阵法。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 555,
+      "review": {
+        "source_fidelity": 8.8,
+        "naturalness": 8.7,
+        "readability": 9.1,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

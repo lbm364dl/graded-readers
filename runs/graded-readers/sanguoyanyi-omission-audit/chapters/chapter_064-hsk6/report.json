@@ -1,0 +1,78 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_064-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1054,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "称张任“故意留下南北通道”，原文只是因地形未围南北门，未明确说明是故意安排。",
+      "classification": "material",
+      "reason": "这是原文未支持的张任战术意图，改变了对南北通道形成原因的理解。",
+      "required_fix": "改为说明刘备因南门是山路、北门有涪水而未围两门，不称张任故意留下通道。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "称张任“故意留下南北通道”，原文只是因地形未围南北门，未明确说明是故意安排。",
+      "classification": "material",
+      "reason": "这是原文未支持的张任战术意图，改变了对南北通道形成原因的理解。",
+      "required_fix": "改为说明刘备因南门是山路、北门有涪水而未围两门，不称张任故意留下通道。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1133,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [
+          "未交代刘璋与张鲁是世仇，削弱了阎圃反对出兵的动机与说服力。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "“阎圃警告刘璋或许只是权宜许地”将阎圃劝谏的对象误写为刘璋；原文是阎圃劝张鲁，并指出刘璋可能诈许割地。",
+          "“杨阜借故归葬妻子”暗示归葬妻子只是借口；原文明确写其妻已死，杨阜以此请假归葬，随后借机联络姜叙。"
+        ],
+        "language_problems": [
+          "“率一支军容杂乱的队伍出桥挑衅”搭配不自然且语义含混，宜改为“率军过金雁桥列阵挑衅”。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 1054,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

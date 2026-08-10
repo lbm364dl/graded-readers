@@ -1,0 +1,102 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_023-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 335,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了袁绍使者被贾诩当面拒绝并撕毁书信的细节。",
+      "classification": "material",
+      "reason": "这不仅是气氛或重复描写，还体现贾诩鲜明的政治判断与态度，并具体交代了张绣拒绝袁绍、转投曹操的关键过程。",
+      "required_fix": "补充贾诩当面拒绝袁绍使者、撕毁书信并斥退来使的情节。"
+    },
+    {
+      "omission_note": "省略了祢衡出使荆州前曹操借刘表之手除掉他的意图。",
+      "classification": "material",
+      "reason": "该内容揭示曹操派祢衡出使的真实动机，影响人物关系与后续祢衡被转送黄祖、最终遇害的因果链。",
+      "required_fix": "补充曹操因忌恨祢衡，故意借刘表之手杀害他的意图。"
+    },
+    {
+      "omission_note": "省略了董承等人因刘备、马腾离去而计划落空的背景。",
+      "classification": "material",
+      "reason": "这是董承患病及吉平看出其心事、随后参与谋划的重要原因，缺失后相关行动的动机和背景不完整。",
+      "required_fix": "补充刘备、马腾离去导致董承等人的谋划落空、董承因此忧愤成疾的背景。"
+    },
+    {
+      "omission_note": "省略了曹操审问并处置王子服等人的若干具体过程。",
+      "classification": "material",
+      "reason": "这些过程交代了秦庆童作证、曹操逐步逼问并拘捕王子服等人的证据链和处置 chronology，对阴谋败露及后续搜捕董承有因果作用。",
+      "required_fix": "补充曹操以秦庆童对证、盘问衣带诏、拘禁王子服等四人，并赴董承府继续追问的过程。"
+    },
+    {
+      "omission_note": "省略了吉平被割舌、遗体被肢解示众等结局细节。",
+      "classification": "material",
+      "reason": "这些是吉平受刑至死后的重要结局，强化其惨烈死状和曹操的残酷处置，也构成后续家族搜捕前的关键情节。",
+      "required_fix": "补充曹操下令割舌的过程，以及吉平死后被分割肢体示众的情节。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了袁绍使者被贾诩当面拒绝并撕毁书信的细节。",
+      "classification": "material",
+      "reason": "这不仅是气氛或重复描写，还体现贾诩鲜明的政治判断与态度，并具体交代了张绣拒绝袁绍、转投曹操的关键过程。",
+      "required_fix": "补充贾诩当面拒绝袁绍使者、撕毁书信并斥退来使的情节。"
+    },
+    {
+      "omission_note": "省略了祢衡出使荆州前曹操借刘表之手除掉他的意图。",
+      "classification": "material",
+      "reason": "该内容揭示曹操派祢衡出使的真实动机，影响人物关系与后续祢衡被转送黄祖、最终遇害的因果链。",
+      "required_fix": "补充曹操因忌恨祢衡，故意借刘表之手杀害他的意图。"
+    },
+    {
+      "omission_note": "省略了董承等人因刘备、马腾离去而计划落空的背景。",
+      "classification": "material",
+      "reason": "这是董承患病及吉平看出其心事、随后参与谋划的重要原因，缺失后相关行动的动机和背景不完整。",
+      "required_fix": "补充刘备、马腾离去导致董承等人的谋划落空、董承因此忧愤成疾的背景。"
+    },
+    {
+      "omission_note": "省略了曹操审问并处置王子服等人的若干具体过程。",
+      "classification": "material",
+      "reason": "这些过程交代了秦庆童作证、曹操逐步逼问并拘捕王子服等人的证据链和处置 chronology，对阴谋败露及后续搜捕董承有因果作用。",
+      "required_fix": "补充曹操以秦庆童对证、盘问衣带诏、拘禁王子服等四人，并赴董承府继续追问的过程。"
+    },
+    {
+      "omission_note": "省略了吉平被割舌、遗体被肢解示众等结局细节。",
+      "classification": "material",
+      "reason": "这些是吉平受刑至死后的重要结局，强化其惨烈死状和曹操的残酷处置，也构成后续家族搜捕前的关键情节。",
+      "required_fix": "补充曹操下令割舌的过程，以及吉平死后被分割肢体示众的情节。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 335,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

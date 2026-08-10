@@ -1,0 +1,68 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_038-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 511,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了孙权攻打黄祖前的部分背景，以及甘宁、苏飞的详细经历。",
+      "classification": "material",
+      "reason": "甘宁受黄祖轻视、苏飞相助出走等经历解释了甘宁投奔东吴的动机及其与苏飞的关系，省略后削弱了相关因果和人物关系。",
+      "required_fix": "补充甘宁与苏飞的经历，尤其是甘宁受黄祖冷落、苏飞劝其远图并帮助其投吴的经过，以及与攻打黄祖相关的背景。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“孔明故意高卧，试探刘备的诚意”是推测性解释，原文未明确说明。",
+      "classification": "material",
+      "reason": "原文只写孔明午睡未醒、翻身又睡，未说明其故意高卧或试探刘备诚意；该句新增了孔明的明确动机。",
+      "required_fix": "删除“故意高卧，试探刘备的诚意”，改为孔明在草堂午睡，刘备在阶下恭候，孔明醒后出迎。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了孙权攻打黄祖前的部分背景，以及甘宁、苏飞的详细经历。",
+      "classification": "material",
+      "reason": "甘宁受黄祖轻视、苏飞相助出走等经历解释了甘宁投奔东吴的动机及其与苏飞的关系，省略后削弱了相关因果和人物关系。",
+      "required_fix": "补充甘宁与苏飞的经历，尤其是甘宁受黄祖冷落、苏飞劝其远图并帮助其投吴的经过，以及与攻打黄祖相关的背景。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“孔明故意高卧，试探刘备的诚意”是推测性解释，原文未明确说明。",
+      "classification": "material",
+      "reason": "原文只写孔明午睡未醒、翻身又睡，未说明其故意高卧或试探刘备诚意；该句新增了孔明的明确动机。",
+      "required_fix": "删除“故意高卧，试探刘备的诚意”，改为孔明在草堂午睡，刘备在阶下恭候，孔明醒后出迎。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 511,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

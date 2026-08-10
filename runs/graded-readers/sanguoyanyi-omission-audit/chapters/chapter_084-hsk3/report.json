@@ -1,0 +1,71 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_084-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 448,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "omission_note": "略去吴班连续搦战、陆逊故意等待蜀军移营等铺垫",
+      "classification": "material",
+      "reason": "其中陆逊故意等待蜀军移营体现其作战意图和判断，是后续利用蜀军疲惫、发动火攻的关键动机；不仅是铺垫。",
+      "required_fix": "补回吴班连续搦战的过程，并明确陆逊有意等待刘备移营、借此使蜀军疲惫后再破敌。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "略去吴班连续搦战、陆逊故意等待蜀军移营等铺垫",
+      "classification": "material",
+      "reason": "其中陆逊故意等待蜀军移营体现其作战意图和判断，是后续利用蜀军疲惫、发动火攻的关键动机；不仅是铺垫。",
+      "required_fix": "补回吴班连续搦战的过程，并明确陆逊有意等待刘备移营、借此使蜀军疲惫后再破敌。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 519,
+      "review": {
+        "source_fidelity": 8.2,
+        "naturalness": 8.5,
+        "readability": 9.0,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "“三日后蜀军退去”将原文中退去的吴班军误写成蜀军，改变了事件主体。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 448,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

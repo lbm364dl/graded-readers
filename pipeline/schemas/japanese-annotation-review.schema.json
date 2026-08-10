@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["verdict", "issues"],
+  "properties": {
+    "verdict": {"type": "string", "enum": ["pass", "revise"]},
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["segment_text", "problem", "explanation", "suggested_fix"],
+        "properties": {
+          "segment_text": {"type": "string"},
+          "problem": {"type": "string", "enum": ["reconstruction", "over_grouped", "under_grouped", "wrong_type", "lemma", "reading", "meaning", "grammar"]},
+          "explanation": {"type": "string"},
+          "suggested_fix": {"type": "string"}
+        }
+      }
+    }
+  }
+}

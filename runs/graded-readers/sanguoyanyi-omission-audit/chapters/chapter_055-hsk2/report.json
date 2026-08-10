@@ -1,0 +1,75 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_055-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 263,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "“周瑜又命徐盛、丁奉带兵截路”略显为刘备出城后才下令，原文中周瑜此前已预先设伏。",
+      "classification": "material",
+      "reason": "该表述改变了周瑜设伏的时间顺序，使读者误以为截路命令是在刘备出城后才下达，造成明确的因果和 chronological distortion。",
+      "required_fix": "改为“周瑜此前已命徐盛、丁奉率三千兵马在要道预先设伏截路”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "“周瑜又命徐盛、丁奉带兵截路”略显为刘备出城后才下令，原文中周瑜此前已预先设伏。",
+      "classification": "material",
+      "reason": "该表述改变了周瑜设伏的时间顺序，使读者误以为截路命令是在刘备出城后才下达，造成明确的因果和 chronological distortion。",
+      "required_fix": "改为“周瑜此前已命徐盛、丁奉率三千兵马在要道预先设伏截路”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 256,
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [
+          "“损兵折将”暗示有将领伤亡或被折损，原文只明确写吴兵大败及周瑜昏倒，未写将领损失。"
+        ],
+        "distortions": [
+          "“夫妻刚出城，孙权便派兵追捕”把原文中孙权因醉酒直到次日才得知并下令追捕的时间延迟改成了立即追捕。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 263,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

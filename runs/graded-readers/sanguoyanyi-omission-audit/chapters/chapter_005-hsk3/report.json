@@ -1,0 +1,94 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_005-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 464,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "omission_note": "略去联盟军分兵进攻虎牢关及曹操负责救应的部署。",
+      "classification": "material",
+      "reason": "这是虎牢关战役的关键军事部署，说明各路诸侯如何分兵迎战吕布以及曹操的支援职责，影响后续战斗的组织与连贯性。",
+      "required_fix": "补充袁绍分派八路诸侯进攻虎牢关、曹操率军往来救应的部署。"
+    },
+    {
+      "omission_note": "略去袁绍命袁术督办粮草等部分细节。",
+      "classification": "material",
+      "reason": "袁绍任命袁术督办粮草是孙坚军队缺粮、军中混乱这一重要因果链的前置内容，也涉及袁术拒绝供粮的动机和责任。",
+      "required_fix": "补充袁绍命袁术总督粮草、供应各营且不得短缺的安排。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“孙坚击败胡轸”将程普刺杀胡轸的功劳归给了孙坚。",
+      "classification": "material",
+      "reason": "将击杀胡轸的实际人物程普错误改成孙坚，造成了明确的行动者和功劳归属错误。",
+      "required_fix": "改为“程普刺杀胡轸”或“孙坚部将程普击败并刺杀胡轸”。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“董卓杀死太傅袁隗”不准确；原文是董卓命李傕、郭汜率兵灭门诛杀袁隗。",
+      "classification": "material",
+      "reason": "把董卓下令并由李傕、郭汜执行的灭门诛杀，改成董卓亲自杀死袁隗，改变了具体行动者和事件过程。",
+      "required_fix": "改为“董卓命李傕、郭汜率兵包围袁隗家，灭门诛杀袁隗”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "略去联盟军分兵进攻虎牢关及曹操负责救应的部署。",
+      "classification": "material",
+      "reason": "这是虎牢关战役的关键军事部署，说明各路诸侯如何分兵迎战吕布以及曹操的支援职责，影响后续战斗的组织与连贯性。",
+      "required_fix": "补充袁绍分派八路诸侯进攻虎牢关、曹操率军往来救应的部署。"
+    },
+    {
+      "omission_note": "略去袁绍命袁术督办粮草等部分细节。",
+      "classification": "material",
+      "reason": "袁绍任命袁术督办粮草是孙坚军队缺粮、军中混乱这一重要因果链的前置内容，也涉及袁术拒绝供粮的动机和责任。",
+      "required_fix": "补充袁绍命袁术总督粮草、供应各营且不得短缺的安排。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“孙坚击败胡轸”将程普刺杀胡轸的功劳归给了孙坚。",
+      "classification": "material",
+      "reason": "将击杀胡轸的实际人物程普错误改成孙坚，造成了明确的行动者和功劳归属错误。",
+      "required_fix": "改为“程普刺杀胡轸”或“孙坚部将程普击败并刺杀胡轸”。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“董卓杀死太傅袁隗”不准确；原文是董卓命李傕、郭汜率兵灭门诛杀袁隗。",
+      "classification": "material",
+      "reason": "把董卓下令并由李傕、郭汜执行的灭门诛杀，改成董卓亲自杀死袁隗，改变了具体行动者和事件过程。",
+      "required_fix": "改为“董卓命李傕、郭汜率兵包围袁隗家，灭门诛杀袁隗”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 464,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

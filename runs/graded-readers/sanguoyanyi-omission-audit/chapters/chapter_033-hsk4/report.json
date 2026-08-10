@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_033-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 685,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将开头地点明确写成“邺城”，原文此处只明确为冀州城。",
+      "classification": "material",
+      "reason": "这是将原文未明确的地点具体化为“邺城”的事实性新增，改变了场景地点。",
+      "required_fix": "将开头地点改为“冀州城”，不要明确写成“邺城”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将开头地点明确写成“邺城”，原文此处只明确为冀州城。",
+      "classification": "material",
+      "reason": "这是将原文未明确的地点具体化为“邺城”的事实性新增，改变了场景地点。",
+      "required_fix": "将开头地点改为“冀州城”，不要明确写成“邺城”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 685,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

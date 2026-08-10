@@ -1,0 +1,99 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_039-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1463,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了刘表为襄阳之事向玄德致歉，以及玄德为曹操可能南下而提出的战略顾虑。",
+      "classification": "material",
+      "reason": "刘表致歉影响他与玄德的关系呈现，玄德对曹操南下的顾虑也体现其战略判断并补充了双方商议的动机。",
+      "required_fix": "补入刘表就襄阳之事向玄德致歉、玄德为曹操可能南下而担忧并提出暂不南征的对话。"
+    },
+    {
+      "omission_note": "省略了刘琦请求镇守江夏时，玄德与刘表具体商议曹操水军威胁的过程。",
+      "classification": "material",
+      "reason": "这段对话说明刘表同意刘琦镇守江夏的防务背景，并交代曹操训练水军、可能南征的威胁，属于重要的战略动机和后续铺垫。",
+      "required_fix": "补入刘表提及曹操修建玄武池训练水军、可能南征，以及玄德表示已知并请其宽心的商议。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“孙权率军攻破夏口”将原文孙权攻打夏口、黄祖据守江夏的表述略混同，容易造成地名和战事关系误解。",
+      "classification": "material",
+      "reason": "混淆夏口与江夏的战事关系，可能使读者误解黄祖据守及败逃的地点。",
+      "required_fix": "改为“孙权率军攻打夏口，黄祖兵败，知道江夏守不住，便弃江夏逃往荆州”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了刘表为襄阳之事向玄德致歉，以及玄德为曹操可能南下而提出的战略顾虑。",
+      "classification": "material",
+      "reason": "刘表致歉影响他与玄德的关系呈现，玄德对曹操南下的顾虑也体现其战略判断并补充了双方商议的动机。",
+      "required_fix": "补入刘表就襄阳之事向玄德致歉、玄德为曹操可能南下而担忧并提出暂不南征的对话。"
+    },
+    {
+      "omission_note": "省略了刘琦请求镇守江夏时，玄德与刘表具体商议曹操水军威胁的过程。",
+      "classification": "material",
+      "reason": "这段对话说明刘表同意刘琦镇守江夏的防务背景，并交代曹操训练水军、可能南征的威胁，属于重要的战略动机和后续铺垫。",
+      "required_fix": "补入刘表提及曹操修建玄武池训练水军、可能南征，以及玄德表示已知并请其宽心的商议。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“孙权率军攻破夏口”将原文孙权攻打夏口、黄祖据守江夏的表述略混同，容易造成地名和战事关系误解。",
+      "classification": "material",
+      "reason": "混淆夏口与江夏的战事关系，可能使读者误解黄祖据守及败逃的地点。",
+      "required_fix": "改为“孙权率军攻打夏口，黄祖兵败，知道江夏守不住，便弃江夏逃往荆州”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1463,
+      "review": {
+        "source_fidelity": 8.4,
+        "naturalness": 8.8,
+        "readability": 9.0,
+        "material_omissions": [],
+        "unsupported_additions": [
+          "将刘琦的继母明确称为“蔡夫人”；原文在本章只称“继母”，未点明其姓名。"
+        ],
+        "distortions": [
+          "“孙权念他有恩”表述指代不清，容易误解为孙权因苏飞有恩而赦免；原文明确是苏飞曾施恩于甘宁，甘宁据此求情，孙权才答应赦免。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 1463,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

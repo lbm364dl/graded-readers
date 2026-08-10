@@ -1,0 +1,21 @@
+{
+  "status": "complete",
+  "scenes": 1,
+  "chapter_cjk": 1022,
+  "scene_verdicts": {
+    "scene_01": "pass"
+  },
+  "scene_attempts": {
+    "scene_01": 1
+  },
+  "unresolved_scenes": [],
+  "omission_audit_promotion": {
+    "promoted_at": "2026-08-07T09:56:47.892278+00:00",
+    "candidate": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/chapters/chapter_043-hsk5/candidate.txt",
+    "candidate_sha256": "c783a5fc673bf7a7c8a8e91310a3d1d22ea24f6f026e66519aeea1a89d19967c",
+    "original_backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_043-hsk5/chapter.before-omission-repair.txt",
+    "original_sha256": "74a9310ce639d7bd6df0e68397744dcb56d6fcc0e33b80e4e12f576059c51977",
+    "annotations_invalidated": [],
+    "annotation_rerun_required": true
+  }
+}

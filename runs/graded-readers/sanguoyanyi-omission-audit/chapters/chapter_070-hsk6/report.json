@@ -1,0 +1,71 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_070-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1067,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了部分行军路线、百姓身份说明及曹军粮仓与定军山之间的具体关系，但不影响主线理解。",
+      "classification": "material",
+      "reason": "行军路线直接说明张飞如何奇袭瓦口关，粮仓与定军山的关系则解释天荡山的战略价值及后续进取定军山的动机，均属功能性信息。",
+      "required_fix": "补回百姓所述的具体绕行路线及官道受阻背景，并说明天荡山、米仓山与定军山之间的粮草和防务关系。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了部分行军路线、百姓身份说明及曹军粮仓与定军山之间的具体关系，但不影响主线理解。",
+      "classification": "material",
+      "reason": "行军路线直接说明张飞如何奇袭瓦口关，粮仓与定军山的关系则解释天荡山的战略价值及后续进取定军山的动机，均属功能性信息。",
+      "required_fix": "补回百姓所述的具体绕行路线及官道受阻背景，并说明天荡山、米仓山与定军山之间的粮草和防务关系。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1031,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [
+          "省略了韩浩是韩玄之弟，以及黄忠、魏延曾害其兄、因此韩浩主动寻仇的动机，削弱了该人物的关系背景和出战动机。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 1067,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

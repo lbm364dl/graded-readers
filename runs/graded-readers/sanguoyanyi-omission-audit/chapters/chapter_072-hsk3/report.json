@@ -1,0 +1,68 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_072-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 542,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了曹彰的身世、战功及曹操与杨修相关的背景细节。",
+      "classification": "material",
+      "reason": "省略曹彰是曹操之子的身份关系及其战功，削弱了曹操见其到来后大喜、重新迎战的动机，也删去了重要人物刻画。",
+      "required_fix": "补回曹彰为曹操次子、武勇及代北平乱的战功，并补充其到来与曹操重新迎战之间的关系。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "将刘封与徐晃交战概括为“三合后”，原文的“三合”是曹彰击败刘封时的细节，属于次要事实错置。",
+      "classification": "material",
+      "reason": "“三合”被错误归于刘封与徐晃的交战，实际属于曹彰击败刘封的情节，造成具体战斗细节和事件归属错误。",
+      "required_fix": "删除“刘封出战徐晃，三合后敌不住而退”中的“三合后”，改为刘封与徐晃交战后不敌退走；将“三合”保留在曹彰击败刘封的情节中。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了曹彰的身世、战功及曹操与杨修相关的背景细节。",
+      "classification": "material",
+      "reason": "省略曹彰是曹操之子的身份关系及其战功，削弱了曹操见其到来后大喜、重新迎战的动机，也删去了重要人物刻画。",
+      "required_fix": "补回曹彰为曹操次子、武勇及代北平乱的战功，并补充其到来与曹操重新迎战之间的关系。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "将刘封与徐晃交战概括为“三合后”，原文的“三合”是曹彰击败刘封时的细节，属于次要事实错置。",
+      "classification": "material",
+      "reason": "“三合”被错误归于刘封与徐晃的交战，实际属于曹彰击败刘封的情节，造成具体战斗细节和事件归属错误。",
+      "required_fix": "删除“刘封出战徐晃，三合后敌不住而退”中的“三合后”，改为刘封与徐晃交战后不敌退走；将“三合”保留在曹彰击败刘封的情节中。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 542,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

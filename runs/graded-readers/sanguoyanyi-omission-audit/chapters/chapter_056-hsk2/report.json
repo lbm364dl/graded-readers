@@ -1,0 +1,122 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_056-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 345,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了铜雀台的具体构造和曹操自辩身世、功业与忠心的长篇言辞。",
+      "classification": "material",
+      "reason": "铜雀台构造本身可压缩，但曹操关于身世、功业、权力与忠心的长篇自辩体现重要政治立场和人物性格，不能整体视为装饰性内容。",
+      "required_fix": "补回曹操自辩身世、功业与忠心的核心内容；铜雀台构造可适度简写。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了铜雀台的具体构造和曹操自辩身世、功业与忠心的长篇言辞。",
+      "classification": "material",
+      "reason": "铜雀台构造本身可压缩，但曹操关于身世、功业、权力与忠心的长篇自辩体现重要政治立场和人物性格，不能整体视为装饰性内容。",
+      "required_fix": "补回曹操自辩身世、功业与忠心的核心内容；铜雀台构造可适度简写。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 326,
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [
+          "未明确交代孙权已将妹妹嫁给刘备这一联姻，削弱了孙刘关系及鲁肃索荆州时“亲情”理由的背景。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "将原文“众将救醒后开船逃去”压缩为“昏倒逃走”，造成昏倒后直接逃走的时序和动作错误。"
+        ],
+        "language_problems": [
+          "“昏倒逃走”搭配生硬且语义含混。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 345,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [
+          "未明确交代周瑜因见刘备和孙夫人在山顶而怒气冲激，导致旧伤裂开并昏倒。",
+          "未交代周瑜计划借东吴军队经过荆州、索取钱粮，诱使刘备出城劳军后加以袭杀。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "“孙权因已把妹妹嫁给刘备，想出兵取荆州”将孙权出兵的动机错误归因于联姻；原文是孙权因周瑜败阵而愤怒，欲出兵取荆州。",
+          "“中央是铜雀”将原文的“铜雀台”误写成“铜雀”，混淆了建筑名称。"
+        ],
+        "language_problems": [
+          "“中央是铜雀”表述不自然且容易造成语义误解。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 334,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 7.5,
+        "readability": 8.5,
+        "material_omissions": [
+          "未交代刘备拒绝攻取西川、因为刘璋同为汉室宗亲而不愿背义的理由，削弱了其后拒绝周瑜借道的动机和人物刻画。"
+        ],
+        "unsupported_additions": [
+          "将华歆出使许都写成张昭、顾雍派遣，原文是孙权采纳顾雍建议后派华歆。"
+        ],
+        "distortions": [
+          "“张昭、顾雍……派华歆到许都”错误改变了派遣华歆的人物和行动关系。"
+        ],
+        "language_problems": [
+          "“怒气冲动”搭配不自然，宜改为“怒气冲天”或“怒气冲激”。",
+          "“中了孔明埋伏的关羽、黄忠、魏延三路兵马”结构略生硬，宜改为“中了孔明设下的三路兵马的埋伏”。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 4,
+      "candidate_cjk": 345,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_099-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 761,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了王平、张翼分兵迎战张郃和司马懿，以及姜维、廖化袭营迫使司马懿撤退的具体过程，但保留了战果和因果主线。",
+      "classification": "material",
+      "reason": "省略了关键战术执行和交战过程，削弱了魏军败退的具体事件链及相关将领的行动表现。",
+      "required_fix": "补回王平、张翼分兵迎战两路魏军，以及姜维、廖化依锦囊袭击魏寨、迫使司马懿撤兵的过程。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“让全军在汉中休整”略有失真：原文中孔明率军出汉中，并令各处隘口备粮，准备以逸待劳。",
+      "classification": "material",
+      "reason": "这改变了孔明及蜀军的部署地点和行动：原文是率军出汉中并在各处隘口备粮，而不是全军留在汉中休整。",
+      "required_fix": "改为“孔明率大军出汉中，并令各处隘口备足干柴、草料和细粮，让军队准备以逸待劳”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了王平、张翼分兵迎战张郃和司马懿，以及姜维、廖化袭营迫使司马懿撤退的具体过程，但保留了战果和因果主线。",
+      "classification": "material",
+      "reason": "省略了关键战术执行和交战过程，削弱了魏军败退的具体事件链及相关将领的行动表现。",
+      "required_fix": "补回王平、张翼分兵迎战两路魏军，以及姜维、廖化依锦囊袭击魏寨、迫使司马懿撤兵的过程。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“让全军在汉中休整”略有失真：原文中孔明率军出汉中，并令各处隘口备粮，准备以逸待劳。",
+      "classification": "material",
+      "reason": "这改变了孔明及蜀军的部署地点和行动：原文是率军出汉中并在各处隘口备粮，而不是全军留在汉中休整。",
+      "required_fix": "改为“孔明率大军出汉中，并令各处隘口备足干柴、草料和细粮，让军队准备以逸待劳”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 761,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

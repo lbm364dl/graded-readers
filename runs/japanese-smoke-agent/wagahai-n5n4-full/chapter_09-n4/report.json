@@ -1,0 +1,44 @@
+{
+  "status": "blocked",
+  "scenes": 5,
+  "japanese_chars": 2710,
+  "chapter_cjk": 2710,
+  "scene_verdicts": {
+    "scene_01": "pass",
+    "scene_02": "pass",
+    "scene_03": "revise",
+    "scene_04": "pass",
+    "scene_05": "revise"
+  },
+  "chapter_review": null,
+  "chapter_review_initial": null,
+  "chapter_repair_attempts": [],
+  "chapter_review_verdict": "not_run",
+  "materiality_audit": {
+    "reviewed": false,
+    "unresolved_material_findings": [
+      {
+        "category": "language_problems",
+        "finding": "「赤十字総会で上京し」はやや不自然で、「赤十字総会に出るため上京し」の方が自然。",
+        "classification": "material"
+      },
+      {
+        "category": "language_problems",
+        "finding": "「狂人二人を子分に持つ」はやや不自然で、「狂人二人を子分にしている」などの方が自然。",
+        "classification": "material"
+      }
+    ],
+    "policy": "literary/story vocabulary is diagnostic, not a hard failure"
+  },
+  "scene_attempts": {
+    "scene_01": 4,
+    "scene_02": 5,
+    "scene_03": 5,
+    "scene_04": 5,
+    "scene_05": 5
+  },
+  "unresolved_scenes": [
+    "scene_03",
+    "scene_05"
+  ]
+}

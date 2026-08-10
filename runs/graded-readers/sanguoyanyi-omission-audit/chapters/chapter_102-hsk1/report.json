@@ -1,0 +1,133 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_102-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 177,
+  "required_range": [
+    98,
+    182
+  ],
+  "material_findings": [
+    {
+      "omission_note": "未提孙权三路出兵的具体部署和规模。",
+      "classification": "material",
+      "reason": "这省略了吴军三路进攻的兵力规模、统帅与目标，削弱了对孙权援蜀军事行动范围和后续战略形势的理解。",
+      "required_fix": "补充孙权亲征率军三十万取居巢、新城，陆逊与诸葛瑾取襄阳，孙韶与张承取淮阳，三路同时进军的部署。"
+    },
+    {
+      "omission_note": "未说明郑文斩的是秦朗之弟秦明，且司马懿派秦朗率军劫营。",
+      "classification": "material",
+      "reason": "这涉及人物身份和关键事件因果；原文先由秦明冒充秦朗出战并被斩，后由司马懿派真正的秦朗率军劫营，省略后会造成身份混淆。",
+      "required_fix": "说明郑文斩的是冒充秦朗出战的秦明，并补充司马懿随后派真正的秦朗率一万兵劫营。"
+    },
+    {
+      "omission_note": "省略孔明以遁甲制造阴云等细节。",
+      "classification": "material",
+      "reason": "阴云由孔明以遁甲制造，造成夜袭时的突然昏暗并促使司马懿误以为天助其成功；这构成劫营情节的重要战术原因，不只是气氛描写。",
+      "required_fix": "补充孔明以遁甲制造阴云遮蔽战场，收兵后又驱散浮云的情节。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“郑文一合斩来将”较含混，容易让人误以为他斩的是秦朗本人；原文实际是秦明冒充秦朗出战。",
+      "classification": "material",
+      "reason": "原文明确是秦朗之弟秦明冒充秦朗出战并被郑文斩杀；概括为“斩来将”会造成关键人物身份误解。",
+      "required_fix": "改为“郑文一合斩杀冒充秦朗出战的秦朗之弟秦明”，并说明秦朗后来率军劫营。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "未提孙权三路出兵的具体部署和规模。",
+      "classification": "material",
+      "reason": "这省略了吴军三路进攻的兵力规模、统帅与目标，削弱了对孙权援蜀军事行动范围和后续战略形势的理解。",
+      "required_fix": "补充孙权亲征率军三十万取居巢、新城，陆逊与诸葛瑾取襄阳，孙韶与张承取淮阳，三路同时进军的部署。"
+    },
+    {
+      "omission_note": "未说明郑文斩的是秦朗之弟秦明，且司马懿派秦朗率军劫营。",
+      "classification": "material",
+      "reason": "这涉及人物身份和关键事件因果；原文先由秦明冒充秦朗出战并被斩，后由司马懿派真正的秦朗率军劫营，省略后会造成身份混淆。",
+      "required_fix": "说明郑文斩的是冒充秦朗出战的秦明，并补充司马懿随后派真正的秦朗率一万兵劫营。"
+    },
+    {
+      "omission_note": "省略孔明以遁甲制造阴云等细节。",
+      "classification": "material",
+      "reason": "阴云由孔明以遁甲制造，造成夜袭时的突然昏暗并促使司马懿误以为天助其成功；这构成劫营情节的重要战术原因，不只是气氛描写。",
+      "required_fix": "补充孔明以遁甲制造阴云遮蔽战场，收兵后又驱散浮云的情节。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“郑文一合斩来将”较含混，容易让人误以为他斩的是秦朗本人；原文实际是秦明冒充秦朗出战。",
+      "classification": "material",
+      "reason": "原文明确是秦朗之弟秦明冒充秦朗出战并被郑文斩杀；概括为“斩来将”会造成关键人物身份误解。",
+      "required_fix": "改为“郑文一合斩杀冒充秦朗出战的秦朗之弟秦明”，并说明秦朗后来率军劫营。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 175,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 7,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [
+          "“闻关兴亡率34万五路出祁山”缺少停顿且语义易混淆，可能被误读为“关兴率军”；应改为“闻关兴亡，率三十四万兵分五路出祁山”。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 170,
+      "review": {
+        "source_fidelity": 7,
+        "naturalness": 7,
+        "readability": 8,
+        "material_omissions": [
+          "未提孙权指出魏延心术不正、孔明承认知情并准备处置，这涉及魏延的刻画及后续伏笔。",
+          "省略孔明逼郑文写信诱司马懿劫营，导致司马懿派秦朗出兵的关键因果。",
+          "省略司马懿先抢得木牛流马、拆解仿造的过程，削弱魏军仿造木牛流马的因果。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "“孙权率三十万取居巢新城”将三路合计三十万误写成孙权一军三十万。",
+          "“孔明以遁甲造阴云诱敌”把阴云说成诱敌的主要手段；原文中诱司马懿劫营的关键是郑文书信，阴云主要用于遮蔽行动。"
+        ],
+        "language_problems": [
+          "“魏败后驱云”主语不明，容易误解为魏军驱云；原文应明确是孔明在撤军后驱散阴云。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 177,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

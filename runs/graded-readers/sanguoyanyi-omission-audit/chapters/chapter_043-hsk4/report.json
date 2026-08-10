@@ -1,0 +1,77 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_043-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 745,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将鲁肃所说的投降目的具体表述为保全妻子和财产，原文主要说保全官位和个人利益。",
+      "classification": "material",
+      "reason": "“妻子和财产”是原文未提及的具体利益对象，属于真实的无依据新增。",
+      "required_fix": "改为“众人投降，是为了保全自己的官位和个人利益”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将鲁肃所说的投降目的具体表述为保全妻子和财产，原文主要说保全官位和个人利益。",
+      "classification": "material",
+      "reason": "“妻子和财产”是原文未提及的具体利益对象，属于真实的无依据新增。",
+      "required_fix": "改为“众人投降，是为了保全自己的官位和个人利益”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 698,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 7.5,
+        "readability": 8.0,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "将原文“曹操得荆州，长江之险已与东吴共之”表述为“已经占据长江”，改变了战略形势的含义。",
+          "将原文的“荆吴之势强，而鼎足之形成”改为“荆州、江东和刘备便可形成鼎足之势”，把鼎足关系错误地表述为荆州、江东和刘备三方。"
+        ],
+        "language_problems": [
+          "“已经占据长江”搭配不自然且语义不准确。",
+          "“荆州、江东和刘备便可形成鼎足之势”结构和语义不自然。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 745,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

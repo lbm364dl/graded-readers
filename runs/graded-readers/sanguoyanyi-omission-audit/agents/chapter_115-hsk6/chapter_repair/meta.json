@@ -1,0 +1,21 @@
+{
+  "job": "chapter_115-hsk6/chapter_repair",
+  "model": "gpt-5.6-luna",
+  "effort": "xhigh",
+  "fingerprint": "0c61a5c7e05ef5798425b13d285b5ce91100febc1c424a7af321ed18220ef8b3",
+  "started_at": "2026-08-07T05:26:30.343067+00:00",
+  "ended_at": "2026-08-07T06:17:30.200725+00:00",
+  "return_code": 0,
+  "attempt_count": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-08-07T05:26:30.343076+00:00",
+      "ended_at": "2026-08-07T06:17:30.200296+00:00",
+      "return_code": 0,
+      "throttled": false,
+      "events": "events.attempt-01.jsonl",
+      "stderr": "stderr.attempt-01.log"
+    }
+  ]
+}

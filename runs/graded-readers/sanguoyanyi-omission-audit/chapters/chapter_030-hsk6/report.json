@@ -1,0 +1,134 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_030-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1376,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "略去了曹操与许攸反复试探军粮数量的关键对话及许攸据信判断曹军粮已尽的过程。",
+      "classification": "material",
+      "reason": "这段对话展现曹操的机诈性格，并说明许攸如何确认曹军粮尽、为何确信奇袭乌巢能够奏效，关系到后续计策的动机与可信度。",
+      "required_fix": "补回曹操与许攸逐步试探军粮数量、曹操最终承认仅余一月粮，以及许攸出示曹操与荀彧书信并据此判断军粮已尽的完整过程。"
+    },
+    {
+      "omission_note": "略去了部分兵力数字、部署细节和沮授被俘后曹操劝降等情节。",
+      "classification": "material",
+      "reason": "兵力与部署细节虽部分可以压缩，但沮授被俘后曹操称许其才并劝其归降，体现二人的关系、曹操对沮授的评价，也为沮授仍忠于袁氏及后续逃亡、被杀增添动机与人物刻画。",
+      "required_fix": "补回影响战局理解的关键兵力和部署信息，并恢复沮授被俘后曹操劝降及沮授拒降的对话。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“伪装成袁将蒋奇”容易理解为曹操本人冒充蒋奇；原文是全军打着袁军旗号，途中诈称蒋奇的部队。",
+      "classification": "material",
+      "reason": "将冒充蒋奇的主体从曹军整体误置为曹操本人，造成关键身份与行动主体错误。",
+      "required_fix": "改为“曹操率军打着袁军旗号，途中诈称是蒋奇率领的护粮部队”。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "结尾“袁绍因多谋而少断”与原文“兵强却为寡谋亡”的评价不完全相符。",
+      "classification": "material",
+      "reason": "将袁绍败亡的核心评价从“寡谋”改成“多谋而少断”，改变了原文对其失败原因的关键判断。",
+      "required_fix": "改为“袁绍因兵强却缺乏谋略，终于败亡”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "略去了曹操与许攸反复试探军粮数量的关键对话及许攸据信判断曹军粮已尽的过程。",
+      "classification": "material",
+      "reason": "这段对话展现曹操的机诈性格，并说明许攸如何确认曹军粮尽、为何确信奇袭乌巢能够奏效，关系到后续计策的动机与可信度。",
+      "required_fix": "补回曹操与许攸逐步试探军粮数量、曹操最终承认仅余一月粮，以及许攸出示曹操与荀彧书信并据此判断军粮已尽的完整过程。"
+    },
+    {
+      "omission_note": "略去了部分兵力数字、部署细节和沮授被俘后曹操劝降等情节。",
+      "classification": "material",
+      "reason": "兵力与部署细节虽部分可以压缩，但沮授被俘后曹操称许其才并劝其归降，体现二人的关系、曹操对沮授的评价，也为沮授仍忠于袁氏及后续逃亡、被杀增添动机与人物刻画。",
+      "required_fix": "补回影响战局理解的关键兵力和部署信息，并恢复沮授被俘后曹操劝降及沮授拒降的对话。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“伪装成袁将蒋奇”容易理解为曹操本人冒充蒋奇；原文是全军打着袁军旗号，途中诈称蒋奇的部队。",
+      "classification": "material",
+      "reason": "将冒充蒋奇的主体从曹军整体误置为曹操本人，造成关键身份与行动主体错误。",
+      "required_fix": "改为“曹操率军打着袁军旗号，途中诈称是蒋奇率领的护粮部队”。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "结尾“袁绍因多谋而少断”与原文“兵强却为寡谋亡”的评价不完全相符。",
+      "classification": "material",
+      "reason": "将袁绍败亡的核心评价从“寡谋”改成“多谋而少断”，改变了原文对其失败原因的关键判断。",
+      "required_fix": "改为“袁绍因兵强却缺乏谋略，终于败亡”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1314,
+      "review": {
+        "source_fidelity": 8.2,
+        "naturalness": 8.1,
+        "readability": 8.7,
+        "material_omissions": [],
+        "unsupported_additions": [
+          "将审配对许攸贪赃及亲属下狱的指控称为“诬告”，原文未判定这些指控为虚假。"
+        ],
+        "distortions": [
+          "“二将杀掉使者”将原文中仅高览斩杀使者的行为错误归于张郃、高览二人。",
+          "将袁绍斩杀沮授监者、另换人监押概括为“加重囚禁”，略改写了惩罚方式。"
+        ],
+        "language_problems": [
+          "“击毁土山上的弓弩手”搭配不自然，应改为“击杀土山上的弓弩手”。",
+          "“并厚待劝降”语法生硬，应改为“厚待并劝其投降”或类似表达。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 1349,
+      "review": {
+        "source_fidelity": 8.8,
+        "naturalness": 9.2,
+        "readability": 9.3,
+        "material_omissions": [
+          "删去了许攸与曹操少时为友这一明确关系，削弱了许攸投奔曹操及曹操亲自赤足迎接他的动机和情感依据。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 1376,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

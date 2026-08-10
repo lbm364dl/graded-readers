@@ -1,0 +1,104 @@
+{
+  "scene": {
+    "id": "scene_01",
+    "title": "魏代漢、蜀續統",
+    "source_start_quote": "卻說華歆等一班文武，入見獻帝。",
+    "required_events": [
+      "華歆等以天象、讖語及漢室氣數已盡逼獻帝禪位，曹洪曹休持劍索璽，忠臣祖弼被殺，獻帝被迫下詔。",
+      "曹丕在司馬懿、賈詡安排下三辭三受，築受禪臺正式受璽稱帝，改元黃初、國號大魏，封獻帝為山陽公。",
+      "受禪後怪風示異，曹丕病而遷都洛陽；成都聞漢帝遇害，劉備悲痛，孔明以漢室宗裔與民望勸其稱帝。",
+      "孔明設計使劉備允請，成都築壇祭天，劉備受璽即帝位，改元章武，封吳氏為后、劉禪為太子，諸葛亮為丞相。",
+      "劉備欲為關羽起兵伐吳，趙雲當廷直諫，故事留待下回。"
+    ],
+    "target_chars": 140,
+    "source_start": 0,
+    "source_end": 4437
+  },
+  "text": "华歆等借天象、谶语逼献帝禅位；曹洪、曹休持剑索玺，杀忠臣祖弼，逼帝下诏。曹丕听司马懿、贾诩之计，两次推辞，最终登受禅台受玺称帝，改元黄初，国号大魏，封献帝为山阳公。怪风灭烛，曹丕受惊病倒，迁往洛阳建宫。成都听到汉帝被害的传言，刘备悲痛；孔明劝他称帝并设局使他答应。刘备筑坛受玺即位，改元章武，封吴氏为后、刘禅为太子、诸葛亮为丞相。刘备欲伐吴为关羽报仇，赵云直谏，留待下回。",
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8,
+    "readability": 9,
+    "omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "reviewer_verdict": "revise",
+    "harness_decision": "accepted_omission_only_compact_adaptation"
+  },
+  "attempts": [
+    {
+      "stage": "adapt",
+      "text": "华歆等借天象、谶语说汉室气数已尽，逼献帝禅位；曹洪、曹休持剑索玺，杀忠臣祖弼，逼帝下诏。曹丕听司马懿、贾诩之计，三辞三受，登受禅台受玺称帝，改元黄初，国号大魏，封献帝为山阳公。怪风示异，曹丕病，迁都洛阳。成都闻汉帝遇害，刘备悲痛；孔明以汉室宗裔和民望劝他称帝，并设局使他应允。成都筑坛祭天，刘备受玺即帝位，改元章武，封吴氏为后、刘禅为太子、诸葛亮为丞相。刘备欲为关羽伐吴，赵云当廷直谏，留待下回。",
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 8,
+        "readability": 8,
+        "omissions": [
+          "省略了献帝被迫禅位的多次推辞、受禅诏书等细节，但不影响主线。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "“迁都洛阳”表述略强，原文只说曹丕从许昌前往洛阳并大建宫室。",
+          "“三辞三受”概括不够准确，原文主要写曹丕两次上表谦辞，最终举行受禅礼。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      }
+    },
+    {
+      "stage": "repair_01",
+      "text": "华歆等借天象、谶语说汉室气数已尽，逼献帝禅位；曹洪、曹休持剑索玺，杀忠臣祖弼，逼帝下诏。曹丕听司马懿、贾诩之计，两次上表推辞，最终登受禅台受玺称帝，改元黄初，国号大魏，封献帝为山阳公。怪风示异，曹丕病，前往洛阳并大建宫室。成都闻汉帝遇害，刘备悲痛；孔明以汉室宗裔和民望劝他称帝，并设局使他应允。成都筑坛祭天，刘备受玺即帝位，改元章武，封吴氏为后、刘禅为太子、诸葛亮为丞相。刘备欲为关羽伐吴，赵云当廷直谏，留待下回。",
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 8,
+        "readability": 8,
+        "omissions": [],
+        "unsupported_additions": [
+          "“怪风示异”带有解释性判断，原文只描述怪风灭烛及曹丕受惊患病。"
+        ],
+        "distortions": [
+          "“成都闻汉帝遇害”将原文明确称为传言的消息写成了事实。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      }
+    },
+    {
+      "stage": "repair_02",
+      "text": "华歆等借天象、谶语说汉室气数已尽，逼献帝禅位；曹洪、曹休持剑索玺，杀忠臣祖弼，逼帝下诏。曹丕听司马懿、贾诩之计，两次上表推辞，最终登受禅台受玺称帝，改元黄初，国号大魏，封献帝为山阳公。忽有怪风灭烛，曹丕受惊病倒，前往洛阳并大建宫室。成都听到汉帝被害的传言，刘备悲痛；孔明以汉室宗裔和民望劝他称帝，并设局使他应允。成都筑坛祭天，刘备受玺即帝位，改元章武，封吴氏为后、刘禅为太子、诸葛亮为丞相。刘备欲为关羽伐吴，赵云当廷直谏，留待下回。",
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 8,
+        "omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [
+          "篇幅明显超出140字目标的约70%-130%范围，压缩性不足。",
+          "mechanical length gate: 186 CJK, required 98-182"
+        ],
+        "verdict": "revise",
+        "harness_decision": "rejected_by_mechanical_length_gate"
+      }
+    },
+    {
+      "stage": "repair_03",
+      "text": "华歆等借天象、谶语逼献帝禅位；曹洪、曹休持剑索玺，杀忠臣祖弼，逼帝下诏。曹丕听司马懿、贾诩之计，两次推辞，最终登受禅台受玺称帝，改元黄初，国号大魏，封献帝为山阳公。怪风灭烛，曹丕受惊病倒，迁往洛阳建宫。成都听到汉帝被害的传言，刘备悲痛；孔明劝他称帝并设局使他答应。刘备筑坛受玺即位，改元章武，封吴氏为后、刘禅为太子、诸葛亮为丞相。刘备欲伐吴为关羽报仇，赵云直谏，留待下回。",
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 9,
+        "omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "reviewer_verdict": "revise",
+        "harness_decision": "accepted_omission_only_compact_adaptation"
+      }
+    }
+  ],
+  "resolved": true
+}

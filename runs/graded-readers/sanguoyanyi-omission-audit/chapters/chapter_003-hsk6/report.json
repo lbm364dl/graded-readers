@@ -1,0 +1,92 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_003-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1166,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "董卓派牛辅留守陕地及李傕、郭汜等将领随行的细节",
+      "classification": "material",
+      "reason": "原文明确区分牛辅留守与董卓率部分将领进军；接受场景将二十万军队概括为全部直赴洛阳，造成军事部署和兵力事实的失真。",
+      "required_fix": "补明董卓令牛辅留守陕地，自己率李傕、郭汜、张济、樊稠等将领及所部进军洛阳。"
+    },
+    {
+      "omission_note": "何太后返宫后发现传国玉玺失踪",
+      "classification": "material",
+      "reason": "传国玉玺失踪是宫变后的关键事实，也为后续围绕玉玺的情节提供连续性；省略不只是场景细节。",
+      "required_fix": "补写还宫后清点宫中时发现传国玉玺已经失踪。"
+    },
+    {
+      "omission_note": "鲍信最终率部投奔泰山",
+      "classification": "material",
+      "reason": "原文写明鲍信在警告未被采纳后率本部军兵投奔泰山；省略后缺少他的去向和这一阶段的行动结果，并可能削弱后续再次出现时的连续性。",
+      "required_fix": "补写鲍信见无人采纳劝告后，率本部军兵投奔泰山。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "将董卓描述为率领二十万西凉大军直接进发，原文是统领二十万西州军，但另派牛辅留守，自己率部分将领进军",
+      "classification": "material",
+      "reason": "该表述错误地把二十万全军都说成由董卓直接率领进军，并遗漏牛辅留守及董卓率部分将领出兵的部署，造成兵力和行动安排的事实失真。",
+      "required_fix": "应改为：董卓统领二十万西州军，另派牛辅留守陕地，自己率李傕、郭汜、张济、樊稠等将领及部分兵马向洛阳进发。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "董卓派牛辅留守陕地及李傕、郭汜等将领随行的细节",
+      "classification": "material",
+      "reason": "原文明确区分牛辅留守与董卓率部分将领进军；接受场景将二十万军队概括为全部直赴洛阳，造成军事部署和兵力事实的失真。",
+      "required_fix": "补明董卓令牛辅留守陕地，自己率李傕、郭汜、张济、樊稠等将领及所部进军洛阳。"
+    },
+    {
+      "omission_note": "何太后返宫后发现传国玉玺失踪",
+      "classification": "material",
+      "reason": "传国玉玺失踪是宫变后的关键事实，也为后续围绕玉玺的情节提供连续性；省略不只是场景细节。",
+      "required_fix": "补写还宫后清点宫中时发现传国玉玺已经失踪。"
+    },
+    {
+      "omission_note": "鲍信最终率部投奔泰山",
+      "classification": "material",
+      "reason": "原文写明鲍信在警告未被采纳后率本部军兵投奔泰山；省略后缺少他的去向和这一阶段的行动结果，并可能削弱后续再次出现时的连续性。",
+      "required_fix": "补写鲍信见无人采纳劝告后，率本部军兵投奔泰山。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "将董卓描述为率领二十万西凉大军直接进发，原文是统领二十万西州军，但另派牛辅留守，自己率部分将领进军",
+      "classification": "material",
+      "reason": "该表述错误地把二十万全军都说成由董卓直接率领进军，并遗漏牛辅留守及董卓率部分将领出兵的部署，造成兵力和行动安排的事实失真。",
+      "required_fix": "应改为：董卓统领二十万西州军，另派牛辅留守陕地，自己率李傕、郭汜、张济、樊稠等将领及部分兵马向洛阳进发。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1166,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

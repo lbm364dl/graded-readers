@@ -1,0 +1,30 @@
+{
+  "book_run_id": "wagahai-ch01-smoke-n4n2",
+  "status": "complete",
+  "updated_at": "2026-08-06T17:11:28.466044+00:00",
+  "global_agent_concurrency": 2,
+  "chapter_concurrency": 2,
+  "runs": [
+    {
+      "source": "/home/usuario/hsk-graded-readers/books/japanese/wagahai_wa_neko_de_aru/chapter_01.txt",
+      "level": "n4",
+      "run_id": "wagahai-ch01-smoke-n4n2/chapter_01-n4",
+      "status": "complete",
+      "chapter_cjk": 2273,
+      "japanese_chars": 2273,
+      "target_chars": 2000,
+      "attempts": 1
+    },
+    {
+      "source": "/home/usuario/hsk-graded-readers/books/japanese/wagahai_wa_neko_de_aru/chapter_01.txt",
+      "level": "n2",
+      "run_id": "wagahai-ch01-smoke-n4n2/chapter_01-n2",
+      "status": "complete",
+      "chapter_cjk": 4728,
+      "japanese_chars": 4728,
+      "target_chars": 4800,
+      "attempts": 1
+    }
+  ],
+  "length_violations": []
+}

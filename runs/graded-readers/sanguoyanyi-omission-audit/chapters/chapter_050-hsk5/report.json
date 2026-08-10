@@ -1,0 +1,90 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_050-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 976,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了曹操在华容道向关羽引述五关斩将及《春秋》典故的劝说过程。",
+      "classification": "material",
+      "reason": "这段劝说直接构成曹操利用旧恩和信义打动关羽、促成关羽放行的动机与因果链，虽可压缩，不能完全省略。",
+      "required_fix": "补充曹操提及五关斩将、报恩及《春秋》中相关典故，以说明其劝说关羽放行的过程。"
+    },
+    {
+      "omission_note": "省略了曹操途中军队大量伤亡、最终仅余二十七骑的部分细节。",
+      "classification": "material",
+      "reason": "军队沿华容道伤亡惨重并最终只剩二十七骑，是曹操败逃规模和后续抵达南郡情境的重要结果；接受场景虽概括了伤亡，仍压缩了关键过程。",
+      "required_fix": "补充军队填路、行军中大量死亡及曹操回望仅剩三百余骑，最终到南郡只余二十七骑的递进过程。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了曹操在华容道向关羽引述五关斩将及《春秋》典故的劝说过程。",
+      "classification": "material",
+      "reason": "这段劝说直接构成曹操利用旧恩和信义打动关羽、促成关羽放行的动机与因果链，虽可压缩，不能完全省略。",
+      "required_fix": "补充曹操提及五关斩将、报恩及《春秋》中相关典故，以说明其劝说关羽放行的过程。"
+    },
+    {
+      "omission_note": "省略了曹操途中军队大量伤亡、最终仅余二十七骑的部分细节。",
+      "classification": "material",
+      "reason": "军队沿华容道伤亡惨重并最终只剩二十七骑，是曹操败逃规模和后续抵达南郡情境的重要结果；接受场景虽概括了伤亡，仍压缩了关键过程。",
+      "required_fix": "补充军队填路、行军中大量死亡及曹操回望仅剩三百余骑，最终到南郡只余二十七骑的递进过程。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 8.7,
+    "naturalness": 8.8,
+    "readability": 9.1,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 900,
+      "review": {
+        "source_fidelity": 7.9,
+        "naturalness": 8.2,
+        "readability": 8.6,
+        "material_omissions": [],
+        "unsupported_additions": [
+          "将原文未明确写出的战术细节具体化为“火船与军队一起冲杀”。"
+        ],
+        "distortions": [
+          "原文是赵云抢夺旗帜使曹操得脱，改写成“曹操丢下旗帜”，颠倒了行为主体。",
+          "“甘宁又率军拦路”压缩并打乱了凌统、徐晃、马延张顗与甘宁之间的出场顺序。",
+          "原文由曹仁另行派遣曹洪守彝陵、南郡，改写成曹操直接下令，改变了指令关系。",
+          "劝说对话中原由关羽说明斩颜良、诛文丑等已报恩，改写成曹操直接说出，造成轻微的说话人归属失真。"
+        ],
+        "language_problems": [
+          "“韩当冒烟冲火赶到”搭配略生硬，可改为“韩当冒着烟火赶到”。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 976,
+      "review": {
+        "source_fidelity": 8.7,
+        "naturalness": 8.8,
+        "readability": 9.1,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

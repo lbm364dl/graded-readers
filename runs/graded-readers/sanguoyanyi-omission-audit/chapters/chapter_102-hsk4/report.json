@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_102-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 808,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了曹睿要求司马懿坚守、不可追击等关键战略背景。",
+      "classification": "material",
+      "reason": "曹睿的诏令解释了司马懿坚守渭滨、避免追击并等待蜀军粮尽的核心战略动机，影响后续魏军部署与战术。",
+      "required_fix": "补充曹睿命司马懿坚壁固守、不得交锋或追击，待蜀军粮尽再攻的战略要求。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了曹睿要求司马懿坚守、不可追击等关键战略背景。",
+      "classification": "material",
+      "reason": "曹睿的诏令解释了司马懿坚守渭滨、避免追击并等待蜀军粮尽的核心战略动机，影响后续魏军部署与战术。",
+      "required_fix": "补充曹睿命司马懿坚壁固守、不得交锋或追击，待蜀军粮尽再攻的战略要求。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 808,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "job": "chapter_118-hsk5/scene_01/classify",
+  "model": "gpt-5.6-luna",
+  "effort": "high",
+  "fingerprint": "7907d5c7bb3ea2caf50935ef1a1651028da06a7ecbcecad8e6fabfec47b85a7b",
+  "started_at": "2026-08-07T04:43:14.823411+00:00",
+  "ended_at": "2026-08-07T05:09:50.471395+00:00",
+  "return_code": 0,
+  "attempt_count": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-08-07T04:43:14.823417+00:00",
+      "ended_at": "2026-08-07T05:09:50.471243+00:00",
+      "return_code": 0,
+      "throttled": false,
+      "events": "events.attempt-01.jsonl",
+      "stderr": "stderr.attempt-01.log"
+    }
+  ]
+}

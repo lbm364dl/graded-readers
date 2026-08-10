@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["assessments"],
+  "properties": {
+    "assessments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["field", "finding_note", "classification", "reason", "required_fix"],
+        "properties": {
+          "field": {"type": "string", "enum": ["unsupported_additions", "distortions", "language_problems"]},
+          "finding_note": {"type": "string", "minLength": 1},
+          "classification": {"type": "string", "enum": ["material", "minor_or_negated"]},
+          "reason": {"type": "string", "minLength": 1},
+          "required_fix": {"type": "string"}
+        }
+      }
+    }
+  }
+}

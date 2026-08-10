@@ -1,0 +1,82 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_110-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 739,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "“文鸯趁夜突袭，单骑冲入营中”容易造成文鸯一开始便单骑突袭的误解；原文是率军突入，败退后才单人独马冲出并多次击退追兵。",
+      "classification": "material",
+      "reason": "该表述改变了夜袭初始行动的规模和参与者，并造成关键时间顺序误解。",
+      "required_fix": "改为“文鸯率军趁夜突入魏营；败退后才单人独马冲出重围，并多次击退追兵”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "“文鸯趁夜突袭，单骑冲入营中”容易造成文鸯一开始便单骑突袭的误解；原文是率军突入，败退后才单人独马冲出并多次击退追兵。",
+      "classification": "material",
+      "reason": "该表述改变了夜袭初始行动的规模和参与者，并造成关键时间顺序误解。",
+      "required_fix": "改为“文鸯率军趁夜突入魏营；败退后才单人独马冲出重围，并多次击退追兵”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 610,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 7.5,
+        "readability": 8,
+        "material_omissions": [
+          "曹髦先命司马昭暂留许昌防吴，司马昭犹豫后在钟会劝说下返回洛阳；省略这一段削弱了司马昭违诏掌权的政治因果。"
+        ],
+        "unsupported_additions": [
+          "“设宴灌醉”增加了宋白有意灌醉毋丘俭的行为；原文只说毋丘俭在宴席上大醉。",
+          "“许多人死伤或被水淹”加入了原文未明确提到的受伤情节。"
+        ],
+        "distortions": [
+          "“尹大目曾想劝文钦投降”误述了其动机。原文中尹大目因与文钦交厚且知司马师将亡，是去劝文钦暂且忍耐、意图挽留他，并非真正劝其投降。"
+        ],
+        "language_problems": [
+          "“司马师眼疾刚割”搭配不自然，应说“眼瘤刚割除”或“刚割去眼瘤”。",
+          "“文钦带五千兵，与十八岁的儿子文鸯救援”成分搭配不顺，应补“一同”或改写。",
+          "“随后眼疾突然发作而死”表达生硬且过于含糊，原文是眼睛从伤口迸出后死亡。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 739,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

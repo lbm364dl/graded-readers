@@ -1,0 +1,74 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_070-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 803,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了张郃在瓦口关设伏、诱杀雷同后，张飞与魏延具体商议并实施将计就计的部分细节，但主线事件仍完整。",
+      "classification": "material",
+      "reason": "这些细节交代了张飞识破伏兵、制定反制方案及利用柴草车和火攻困敌的具体因果，虽主线结果保留，仍涉及战术动机与取胜机制。",
+      "required_fix": "补充张飞与魏延商议将计就计的内容，并明确张飞诱敌、魏延从后截击、柴草车堵路及放火封困敌军的执行过程。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了张郃在瓦口关设伏、诱杀雷同后，张飞与魏延具体商议并实施将计就计的部分细节，但主线事件仍完整。",
+      "classification": "material",
+      "reason": "这些细节交代了张飞识破伏兵、制定反制方案及利用柴草车和火攻困敌的具体因果，虽主线结果保留，仍涉及战术动机与取胜机制。",
+      "required_fix": "补充张飞与魏延商议将计就计的内容，并明确张飞诱敌、魏延从后截击、柴草车堵路及放火封困敌军的执行过程。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": []
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 791,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "开篇将雷同说成“从后出击”，颠倒了原文中雷同从前方杀出、张飞从后掩杀的夹击方位。"
+        ],
+        "language_problems": [],
+        "verdict": "revise",
+        "omissions": []
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 803,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "passed": true
+    }
+  ]
+}

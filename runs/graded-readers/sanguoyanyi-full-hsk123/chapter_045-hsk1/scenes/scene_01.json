@@ -1,0 +1,67 @@
+{
+  "scene": {
+    "id": "scene_01",
+    "title": "周瑜設局與反間計",
+    "source_start_quote": "卻說周瑜聞諸葛瑾之言，轉恨孔明，存心欲謀殺之。",
+    "required_events": [
+      "周瑜因諸葛瑾之言欲借曹操之手殺孔明，孔明識破並以言反激周瑜，勸先破曹；魯肅勸周瑜暫緩加害。",
+      "劉備屯樊口，糜竺探營；周瑜誘劉備赴宴欲殺之，關羽相隨使其不敢下手，孔明救劉備並約定東南風起時行動。",
+      "三江口水戰中甘寧、蔣欽、韓當擊敗曹軍，曹操遂築水寨；周瑜窺寨後決意除蔡瑁、張允。",
+      "曹操派蔣幹勸降周瑜，周瑜設群英會、佯醉共眠，使蔣幹偷得偽信；蔣幹告密，曹操中計斬蔡瑁張允，事後周瑜得報大喜，命魯肅試探孔明是否識破。"
+    ],
+    "target_chars": 140,
+    "source_start": 0,
+    "source_end": 5594
+  },
+  "text": "周瑜听诸葛瑾之言，想借曹操杀孔明；孔明识破并反激周瑜，劝先破曹，鲁肃劝暂缓。刘备屯樊口，糜竺探营；周瑜诱刘备赴宴，关羽相随使他不敢下手，孔明识破设伏，知关羽可护刘备，约定十一月二十甲子日后由赵云接应，东南风起时返回。三江口水战，甘宁、蒋钦、韩当击败曹军，曹操遂筑水寨；周瑜窥寨，决意除蔡瑁、张允。曹操派蒋干劝降，周瑜设群英会，佯醉共眠，令蒋干偷得伪信；蒋干告密，曹操中计斩蔡瑁、张允。周瑜得报大喜，命鲁肃试探孔明。",
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8,
+    "readability": 8,
+    "omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "reviewer_verdict": "revise",
+    "harness_decision": "accepted_omission_only_compact_adaptation"
+  },
+  "attempts": [
+    {
+      "stage": "adapt",
+      "text": "周瑜听诸葛瑾之言，想借曹操杀孔明；孔明识破并反激周瑜，劝先破曹，鲁肃劝暂缓。刘备屯樊口，糜竺探营；周瑜诱刘备赴宴欲杀，关羽相随使他不敢下手，孔明救刘备，并约东南风起时行动。三江口水战，甘宁、蒋钦、韩当击败曹军，曹操遂筑水寨；周瑜窥寨，决意除蔡瑁、张允。曹操派蒋干劝降，周瑜设群英会，佯醉共眠，令蒋干偷得伪信；蒋干告密，曹操中计斩蔡瑁、张允。周瑜得报大喜，命鲁肃试探孔明。",
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 8,
+        "readability": 9,
+        "omissions": [
+          "省略张飞接应刘备、曹操斩使及周瑜首战后窥寨等次要过渡细节。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "“孔明救刘备”不准确：孔明只是发现周瑜设伏并判断刘备因关羽在场而无危，实际护住刘备的是关羽。",
+          "“约东南风起时行动”略显含混，原文是约定十一月二十甲子日后由赵云接应，东南风起时孔明返还。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      }
+    },
+    {
+      "stage": "repair_01",
+      "text": "周瑜听诸葛瑾之言，想借曹操杀孔明；孔明识破并反激周瑜，劝先破曹，鲁肃劝暂缓。刘备屯樊口，糜竺探营；周瑜诱刘备赴宴，关羽相随使他不敢下手，孔明识破设伏，知关羽可护刘备，约定十一月二十甲子日后由赵云接应，东南风起时返回。三江口水战，甘宁、蒋钦、韩当击败曹军，曹操遂筑水寨；周瑜窥寨，决意除蔡瑁、张允。曹操派蒋干劝降，周瑜设群英会，佯醉共眠，令蒋干偷得伪信；蒋干告密，曹操中计斩蔡瑁、张允。周瑜得报大喜，命鲁肃试探孔明。",
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 8,
+        "omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "reviewer_verdict": "revise",
+        "harness_decision": "accepted_omission_only_compact_adaptation"
+      }
+    }
+  ],
+  "resolved": true
+}

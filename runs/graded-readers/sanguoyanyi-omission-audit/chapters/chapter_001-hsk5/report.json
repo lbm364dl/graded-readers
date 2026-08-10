@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_001-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 887,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "称三人因“没有兵器和马匹”而发愁；原文明确提到的是缺少马匹，随后才置办兵器。",
+      "classification": "material",
+      "reason": "Accepted scene adds that the three men were troubled by lacking weapons, but the original says they only lamented having no horses; weapons were then prepared after receiving materials.",
+      "required_fix": "改为“三人招募了三百多名勇士，却苦于没有马匹”；随后写张世平、苏双赠送镔铁等物，他们才打造兵器。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "称三人因“没有兵器和马匹”而发愁；原文明确提到的是缺少马匹，随后才置办兵器。",
+      "classification": "material",
+      "reason": "Accepted scene adds that the three men were troubled by lacking weapons, but the original says they only lamented having no horses; weapons were then prepared after receiving materials.",
+      "required_fix": "改为“三人招募了三百多名勇士，却苦于没有马匹”；随后写张世平、苏双赠送镔铁等物，他们才打造兵器。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 887,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

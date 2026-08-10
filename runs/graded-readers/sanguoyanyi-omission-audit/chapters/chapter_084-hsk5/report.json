@@ -1,0 +1,119 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_084-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 907,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了吴班撤营、刘备水军分兵及黄权统领江北军等细节。",
+      "classification": "material",
+      "reason": "Accepted scene保留了吴班撤营，但确实省略了刘备水军分兵及黄权统领江北军。后者交代了蜀军两岸部署和防备魏军的关键战略安排，属于影响后续战局理解的重要信息。",
+      "required_fix": "补充刘备将水军分为江南、江北两路，并由黄权督领江北军、负责防备魏军；同时保留吴班撤营这一过渡。"
+    },
+    {
+      "omission_note": "省略了陆逊最初拒绝追击并判断蜀军疲惫的部分论证。",
+      "classification": "material",
+      "reason": "虽然Accepted scene保留了陆逊判断蜀军久战疲惫的结论，也概括了其诱敌判断，但省略了他拒绝诸将出击、等待蜀军移营撤营以及据此论证蜀军由精锐转为疲惫的关键推理。这体现陆逊的战略动机和重要谋略判断。",
+      "required_fix": "补充陆逊最初拒绝出击、识破吴班诱敌并等待其撤营的经过，以及他说明蜀军久守、兵疲意阻、此时正可破敌的论证。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "孔明说鱼腹浦伏有十万兵，原意是刘备失利后可投白帝城避难，并非这些兵直接保护白帝城。",
+      "classification": "material",
+      "reason": "这是对伏兵用途及孔明建议的因果关系的实质性改写。原文是刘备失利后投白帝城避难，未说伏兵直接保护白帝城。",
+      "required_fix": "改为：孔明说若刘备战败，应投白帝城避难；他已在鱼腹浦埋伏十万兵。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "结尾说陆逊‘立刻转身迎击魏军’，原文是此前已部署兵力抵抗魏军，并率军回撤，未明确写成当即转身迎战。",
+      "classification": "material",
+      "reason": "这改变了结尾的行动顺序和事件：原文中陆逊率军班师回撤，且此前已部署兵力拒敌，并非收到消息后亲自立即转身迎击。",
+      "required_fix": "改为：陆逊率军回撤，并说明早已部署兵力抵抗曹仁、曹休、曹真三路魏军。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了吴班撤营、刘备水军分兵及黄权统领江北军等细节。",
+      "classification": "material",
+      "reason": "Accepted scene保留了吴班撤营，但确实省略了刘备水军分兵及黄权统领江北军。后者交代了蜀军两岸部署和防备魏军的关键战略安排，属于影响后续战局理解的重要信息。",
+      "required_fix": "补充刘备将水军分为江南、江北两路，并由黄权督领江北军、负责防备魏军；同时保留吴班撤营这一过渡。"
+    },
+    {
+      "omission_note": "省略了陆逊最初拒绝追击并判断蜀军疲惫的部分论证。",
+      "classification": "material",
+      "reason": "虽然Accepted scene保留了陆逊判断蜀军久战疲惫的结论，也概括了其诱敌判断，但省略了他拒绝诸将出击、等待蜀军移营撤营以及据此论证蜀军由精锐转为疲惫的关键推理。这体现陆逊的战略动机和重要谋略判断。",
+      "required_fix": "补充陆逊最初拒绝出击、识破吴班诱敌并等待其撤营的经过，以及他说明蜀军久守、兵疲意阻、此时正可破敌的论证。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "孔明说鱼腹浦伏有十万兵，原意是刘备失利后可投白帝城避难，并非这些兵直接保护白帝城。",
+      "classification": "material",
+      "reason": "这是对伏兵用途及孔明建议的因果关系的实质性改写。原文是刘备失利后投白帝城避难，未说伏兵直接保护白帝城。",
+      "required_fix": "改为：孔明说若刘备战败，应投白帝城避难；他已在鱼腹浦埋伏十万兵。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "结尾说陆逊‘立刻转身迎击魏军’，原文是此前已部署兵力抵抗魏军，并率军回撤，未明确写成当即转身迎战。",
+      "classification": "material",
+      "reason": "这改变了结尾的行动顺序和事件：原文中陆逊率军班师回撤，且此前已部署兵力拒敌，并非收到消息后亲自立即转身迎击。",
+      "required_fix": "改为：陆逊率军回撤，并说明早已部署兵力抵抗曹仁、曹休、曹真三路魏军。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 887,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 8.4,
+        "readability": 8.8,
+        "material_omissions": [
+          "省略了孔明说明陆逊因忌惮魏军而不敢追击、成都可保无虞的判断，削弱了相关战略因果及与后文陆逊退兵的呼应。"
+        ],
+        "unsupported_additions": [
+          "“刘备已经来不及改变营防”是原文未说明的时间判断。",
+          "将孙夫人投江概括为“殉情”，原文只叙其因误传刘备战死而投江。"
+        ],
+        "distortions": [
+          "将原文“不到万余人且大半为老弱”改为“一万多名老弱士兵”，改变了人数范围并把“大半”扩大为全部。",
+          "“蜀军各营接连燃烧”容易表示四十余营全部被烧；原文明确只烧二十屯。"
+        ],
+        "language_problems": [
+          "“退兵两天，果然收到”表达略生硬，宜改为“退兵不到两天，果然收到”。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 907,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

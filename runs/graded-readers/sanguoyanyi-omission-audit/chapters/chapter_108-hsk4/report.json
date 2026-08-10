@@ -1,0 +1,92 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_108-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 776,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "omission_note": "略去孙登为太子的经历及孙和因金公主进谗被废的细节。",
+      "classification": "material",
+      "reason": "省略了孙和被废的直接原因及其与金公主的关系背景，削弱了相关事件的因果链。",
+      "required_fix": "补充孙登曾为太子，以及孙和因与金公主不睦、遭其进谗而被废，最终忧恨而死。"
+    },
+    {
+      "omission_note": "略去魏廷中傅嘏反对伐吴、司马师与司马昭争论的过程。",
+      "classification": "material",
+      "reason": "省略了伐吴决策的战略争论和司马师、司马昭各自的动机，使出兵原因被过度简化。",
+      "required_fix": "补充傅嘏以长江天险反对伐吴，以及司马师、司马昭说明趁孙权新亡和孙亮年幼出兵的讨论。"
+    },
+    {
+      "omission_note": "略去张特守城百日降敌规则的具体背景。",
+      "classification": "material",
+      "reason": "该规则及家族免罪条件解释了张特为何能以百日投降之说骗取缓攻，也构成其缓兵计的关键动机和因果。",
+      "required_fix": "补充魏国守城百日且无援后出降、家族可免罪的规定，以及张特以守城九十余日为由请求宽限并呈上册籍。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“粮将尽”在原文中并未明确发生，原文主要说明吴军远来、人多粮少且军士多病。",
+      "classification": "material",
+      "reason": "原文仅以“人多粮少，粮尽自走矣”作为魏方对吴军状况的推断，并未记载吴军实际粮将尽；改写将其作为事实加入，构成未经支持的事实和潜在撤军原因。",
+      "required_fix": "删除“粮将尽”，改为原文支持的“吴军远来、人多粮少且军士多病，众军逃亡”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "略去孙登为太子的经历及孙和因金公主进谗被废的细节。",
+      "classification": "material",
+      "reason": "省略了孙和被废的直接原因及其与金公主的关系背景，削弱了相关事件的因果链。",
+      "required_fix": "补充孙登曾为太子，以及孙和因与金公主不睦、遭其进谗而被废，最终忧恨而死。"
+    },
+    {
+      "omission_note": "略去魏廷中傅嘏反对伐吴、司马师与司马昭争论的过程。",
+      "classification": "material",
+      "reason": "省略了伐吴决策的战略争论和司马师、司马昭各自的动机，使出兵原因被过度简化。",
+      "required_fix": "补充傅嘏以长江天险反对伐吴，以及司马师、司马昭说明趁孙权新亡和孙亮年幼出兵的讨论。"
+    },
+    {
+      "omission_note": "略去张特守城百日降敌规则的具体背景。",
+      "classification": "material",
+      "reason": "该规则及家族免罪条件解释了张特为何能以百日投降之说骗取缓攻，也构成其缓兵计的关键动机和因果。",
+      "required_fix": "补充魏国守城百日且无援后出降、家族可免罪的规定，以及张特以守城九十余日为由请求宽限并呈上册籍。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“粮将尽”在原文中并未明确发生，原文主要说明吴军远来、人多粮少且军士多病。",
+      "classification": "material",
+      "reason": "原文仅以“人多粮少，粮尽自走矣”作为魏方对吴军状况的推断，并未记载吴军实际粮将尽；改写将其作为事实加入，构成未经支持的事实和潜在撤军原因。",
+      "required_fix": "删除“粮将尽”，改为原文支持的“吴军远来、人多粮少且军士多病，众军逃亡”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 776,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

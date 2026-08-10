@@ -1,0 +1,15 @@
+{
+  "status": "complete",
+  "scenes": 2,
+  "japanese_chars": 2273,
+  "chapter_cjk": 2273,
+  "scene_verdicts": {
+    "scene_01": "pass",
+    "scene_02": "pass"
+  },
+  "scene_attempts": {
+    "scene_01": 1,
+    "scene_02": 1
+  },
+  "unresolved_scenes": []
+}

@@ -1,0 +1,68 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_042-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 500,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略刘备选择夏口、江夏分兵驻守的具体战略理由。",
+      "classification": "material",
+      "reason": "原文说明夏口城险且粮足、适合久守，并解释分驻夏口与江夏可形成犄角、合归江夏反而势孤；省略后削弱了刘备、孔明作出分兵安排的战略因果。",
+      "required_fix": "补充夏口适合久守、江夏整顿水军并与夏口形成犄角，以及合归江夏会导致势孤的具体理由。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将夏侯杰明确写成“吓死”，原文只写他惊得肝胆碎裂、坠马。",
+      "classification": "material",
+      "reason": "“吓死”明确改变了夏侯杰的结局；原文只写他惊骇坠马，未明确写死。",
+      "required_fix": "改为“夏侯杰惊得肝胆碎裂，坠下马来”，不要明确写成“吓死”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略刘备选择夏口、江夏分兵驻守的具体战略理由。",
+      "classification": "material",
+      "reason": "原文说明夏口城险且粮足、适合久守，并解释分驻夏口与江夏可形成犄角、合归江夏反而势孤；省略后削弱了刘备、孔明作出分兵安排的战略因果。",
+      "required_fix": "补充夏口适合久守、江夏整顿水军并与夏口形成犄角，以及合归江夏会导致势孤的具体理由。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将夏侯杰明确写成“吓死”，原文只写他惊得肝胆碎裂、坠马。",
+      "classification": "material",
+      "reason": "“吓死”明确改变了夏侯杰的结局；原文只写他惊骇坠马，未明确写死。",
+      "required_fix": "改为“夏侯杰惊得肝胆碎裂，坠下马来”，不要明确写成“吓死”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 500,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

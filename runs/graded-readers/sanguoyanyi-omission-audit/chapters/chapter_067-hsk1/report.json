@@ -1,0 +1,82 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_067-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 153,
+  "required_range": [
+    98,
+    182
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略张卫被许褚斩杀等次要战斗细节。",
+      "classification": "material",
+      "reason": "张卫是张鲁之弟且为重要人物；其被许褚斩杀是汉中战事中的明确事件，影响张鲁出奔前的战局与人物关系，不能仅视为非必要战斗描写。",
+      "required_fix": "补述张卫领兵迎战许褚并被许褚斩于马下。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“张鲁失恩”表意不清，原文是张鲁因杨松诬陷而对庞德失去信任。",
+      "classification": "material",
+      "reason": "“张鲁失恩”未表达张鲁因杨松诬陷而不再信任庞德，改变并混淆了原文中的人物关系和因果。",
+      "required_fix": "将“张鲁失恩”改为“张鲁因此不再信任庞德”。"
+    },
+    {
+      "field": "language_problems",
+      "finding_note": "“张鲁失恩”搭配生硬，建议改为“张鲁因此不再信任庞德”。",
+      "classification": "material",
+      "reason": "该搭配不仅生硬，而且使读者难以准确理解张鲁与庞德之间的信任变化。",
+      "required_fix": "将“张鲁失恩”改为“张鲁因此不再信任庞德”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略张卫被许褚斩杀等次要战斗细节。",
+      "classification": "material",
+      "reason": "张卫是张鲁之弟且为重要人物；其被许褚斩杀是汉中战事中的明确事件，影响张鲁出奔前的战局与人物关系，不能仅视为非必要战斗描写。",
+      "required_fix": "补述张卫领兵迎战许褚并被许褚斩于马下。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“张鲁失恩”表意不清，原文是张鲁因杨松诬陷而对庞德失去信任。",
+      "classification": "material",
+      "reason": "“张鲁失恩”未表达张鲁因杨松诬陷而不再信任庞德，改变并混淆了原文中的人物关系和因果。",
+      "required_fix": "将“张鲁失恩”改为“张鲁因此不再信任庞德”。"
+    },
+    {
+      "field": "language_problems",
+      "finding_note": "“张鲁失恩”搭配生硬，建议改为“张鲁因此不再信任庞德”。",
+      "classification": "material",
+      "reason": "该搭配不仅生硬，而且使读者难以准确理解张鲁与庞德之间的信任变化。",
+      "required_fix": "将“张鲁失恩”改为“张鲁因此不再信任庞德”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 153,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

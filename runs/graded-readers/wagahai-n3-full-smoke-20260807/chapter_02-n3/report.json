@@ -1,0 +1,38 @@
+{
+  "status": "blocked",
+  "scenes": 6,
+  "japanese_chars": 4672,
+  "chapter_cjk": 4672,
+  "scene_verdicts": {
+    "scene_01": "pass",
+    "scene_02": "pass",
+    "scene_03": "pass",
+    "scene_04": "pass",
+    "scene_05": "pass",
+    "scene_06": "pass"
+  },
+  "chapter_review": {
+    "source_fidelity": 8.5,
+    "naturalness": 9,
+    "readability": 9,
+    "omissions": [
+      "主人の摂津大掾外出時の症状が、妻を喜ばせるための仮病・心理的反応であるという含意が弱まり、実際の急病として描かれている。"
+    ],
+    "unsupported_additions": [],
+    "distortions": [
+      "主人の悪寒と眩暈を「実際に」襲った症状として断定しており、原文の意図的・心理的な仮病性を損なっている。"
+    ],
+    "language_problems": [],
+    "verdict": "revise"
+  },
+  "chapter_review_verdict": "revise",
+  "scene_attempts": {
+    "scene_01": 2,
+    "scene_02": 2,
+    "scene_03": 1,
+    "scene_04": 2,
+    "scene_05": 2,
+    "scene_06": 1
+  },
+  "unresolved_scenes": []
+}
