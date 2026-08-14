@@ -1,0 +1,21 @@
+[
+  {
+    "attempt": 1,
+    "started_at": "2026-08-12T08:57:38.468007+00:00",
+    "ended_at": "2026-08-12T08:57:43.017074+00:00",
+    "return_code": 1,
+    "throttled": true,
+    "events": "events.attempt-01.jsonl",
+    "stderr": "stderr.attempt-01.log",
+    "retry_delay_seconds": 2.0
+  },
+  {
+    "attempt": 2,
+    "started_at": "2026-08-12T08:57:45.020090+00:00",
+    "ended_at": "2026-08-12T09:00:07.563713+00:00",
+    "return_code": 0,
+    "throttled": false,
+    "events": "events.attempt-02.jsonl",
+    "stderr": "stderr.attempt-02.log"
+  }
+]

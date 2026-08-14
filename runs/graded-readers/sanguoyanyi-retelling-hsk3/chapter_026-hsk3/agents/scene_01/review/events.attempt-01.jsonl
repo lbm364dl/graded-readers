@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff3ba-0cf1-76b3-aa61-4c4ee1987e39"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.93,\"naturalness\":0.98,\"readability\":0.98,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"“自己的家人也被吴军控制”容易让人理解为家眷遭到拘禁或虐待；原文强调吕蒙善待并保障荆州将士家属。\",\"“徐晃用火攻破了偃城”略显因果简化，原文是徐晃设伏并利用城中火起击败关平。\",\"“曹操仍用王侯的礼仪厚葬关羽”基本准确，但原文还明确刻沉香木身躯配葬，后追赠荆王。\"],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":26689,"cached_input_tokens":8960,"cache_write_input_tokens":0,"output_tokens":701,"reasoning_output_tokens":516}}

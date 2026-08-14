@@ -47,25 +47,31 @@ if ! python3 -m pipeline.sanguoyanyi_finalizer preflight \
 fi
 
 omission_ok=0
-for attempt in 1 2 3; do
-  extra=()
-  # Attempt two extends cached targeted healing through rounds six/seven.
-  # Reserve a global refresh for the last attempt, where it can recover a
-  # semantically invalid cached response rather than needlessly regenerating
-  # hundreds of already valid classifications on every retry.
-  (( attempt > 2 )) && extra=(--refresh)
-  note "omission audit attempt $attempt"
-  if python3 -m pipeline.audit_compact_omissions \
-      --run-dir "$low_run" --run-dir "$high_run" \
-      --output-dir "$audit_run" --concurrency 9 \
-      --classify-effort high --repair-effort xhigh --review-effort high \
-      --max-repair-rounds 7 \
-      --promote-passed "${extra[@]}" \
-      >>"$log_dir/omission.log" 2>&1; then
-    omission_ok=1
-    break
-  fi
-done
+if python3 -c 'import json,sys; sys.exit(json.load(open(sys.argv[1])).get("status") != "complete")' \
+    "$audit_run/report.json" 2>/dev/null; then
+  note "reusing completed initial omission audit checkpoint"
+  omission_ok=1
+else
+  for attempt in 1 2 3; do
+    extra=()
+    # Attempt two extends cached targeted healing through rounds six/seven.
+    # Reserve a global refresh for the last attempt, where it can recover a
+    # semantically invalid cached response rather than needlessly regenerating
+    # hundreds of already valid classifications on every retry.
+    (( attempt > 2 )) && extra=(--refresh)
+    note "omission audit attempt $attempt"
+    if python3 -m pipeline.audit_compact_omissions \
+        --run-dir "$low_run" --run-dir "$high_run" \
+        --output-dir "$audit_run" --concurrency 9 \
+        --classify-effort high --repair-effort xhigh --review-effort high \
+        --max-repair-rounds 7 \
+        --promote-passed "${extra[@]}" \
+        >>"$log_dir/omission.log" 2>&1; then
+      omission_ok=1
+      break
+    fi
+  done
+fi
 if (( ! omission_ok )); then
   note "omission audit remained blocked after three attempts"
   exit 2

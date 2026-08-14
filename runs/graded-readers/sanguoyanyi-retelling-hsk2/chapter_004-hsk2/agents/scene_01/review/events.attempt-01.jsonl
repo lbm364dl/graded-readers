@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff4fc-ab64-7243-b188-992aa2ab7d3a"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.86,\"naturalness\":0.95,\"readability\":0.94,\"omissions\":[],\"unsupported_additions\":[\"“皇帝和皇后也只能坐破车”中的“破车”并非原文明确内容。\"],\"distortions\":[\"“两军抢走皇帝、皇后和大臣”表述不准确：李傕劫持皇帝、皇后，郭汜后来劫持公卿，并非两军同时共同抢走三者。\",\"“杨奉和董承召集韩暹、李乐等人帮忙，但还是打败了”略显含混，实际是援军先后作战失利，杨奉、董承继续护送皇帝撤退。\"],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":40422,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":707,"reasoning_output_tokens":516}}

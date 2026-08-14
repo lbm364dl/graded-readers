@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff51a-ec2a-7e62-98b8-572a628c76ce"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.96,\"naturalness\":0.94,\"readability\":0.95,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[],\"language_problems\":[\"“军人带马谡出营”略显生硬，改为“卫士押马谡出营”更自然。\"],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":39097,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":506,"reasoning_output_tokens":416}}

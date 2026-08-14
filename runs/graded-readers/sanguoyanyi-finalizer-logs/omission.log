@@ -36355,3 +36355,168 @@ ValueError: classification must reproduce omission notes once and in order: /hom
     }
   ]
 }
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/catalin/graded-readers/pipeline/audit_compact_omissions.py", line 684, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/catalin/graded-readers/pipeline/audit_compact_omissions.py", line 678, in main
+    report = asyncio.run(OmissionAuditor(args).run([Path(item) for item in args.run_dir]))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/catalin/graded-readers/pipeline/audit_compact_omissions.py", line 621, in run
+    risky = discover_risky_scenes(run_dirs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/catalin/graded-readers/pipeline/audit_compact_omissions.py", line 202, in discover_risky_scenes
+    source_text = Path(str(manifest["source"])).read_text(encoding="utf-8")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1029, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/usuario/hsk-graded-readers/books/chinese/sanguoyanyi/chapter_001.txt'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/catalin/graded-readers/pipeline/audit_compact_omissions.py", line 684, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/catalin/graded-readers/pipeline/audit_compact_omissions.py", line 678, in main
+    report = asyncio.run(OmissionAuditor(args).run([Path(item) for item in args.run_dir]))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/catalin/graded-readers/pipeline/audit_compact_omissions.py", line 621, in run
+    risky = discover_risky_scenes(run_dirs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/catalin/graded-readers/pipeline/audit_compact_omissions.py", line 202, in discover_risky_scenes
+    source_text = Path(str(manifest["source"])).read_text(encoding="utf-8")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1029, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/usuario/hsk-graded-readers/books/chinese/sanguoyanyi/chapter_001.txt'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/catalin/graded-readers/pipeline/audit_compact_omissions.py", line 684, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/catalin/graded-readers/pipeline/audit_compact_omissions.py", line 678, in main
+    report = asyncio.run(OmissionAuditor(args).run([Path(item) for item in args.run_dir]))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/catalin/graded-readers/pipeline/audit_compact_omissions.py", line 621, in run
+    risky = discover_risky_scenes(run_dirs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/catalin/graded-readers/pipeline/audit_compact_omissions.py", line 202, in discover_risky_scenes
+    source_text = Path(str(manifest["source"])).read_text(encoding="utf-8")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1029, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/usuario/hsk-graded-readers/books/chinese/sanguoyanyi/chapter_001.txt'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/catalin/graded-readers/pipeline/audit_compact_omissions.py", line 698, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/catalin/graded-readers/pipeline/audit_compact_omissions.py", line 692, in main
+    report = asyncio.run(OmissionAuditor(args).run([Path(item) for item in args.run_dir]))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/catalin/graded-readers/pipeline/audit_compact_omissions.py", line 635, in run
+    risky = discover_risky_scenes(run_dirs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/catalin/graded-readers/pipeline/audit_compact_omissions.py", line 213, in discover_risky_scenes
+    raise ValueError(
+ValueError: accepted chapter changed after omission promotion: /home/catalin/graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_003-hsk3
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/catalin/graded-readers/pipeline/audit_compact_omissions.py", line 698, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/catalin/graded-readers/pipeline/audit_compact_omissions.py", line 692, in main
+    report = asyncio.run(OmissionAuditor(args).run([Path(item) for item in args.run_dir]))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/catalin/graded-readers/pipeline/audit_compact_omissions.py", line 635, in run
+    risky = discover_risky_scenes(run_dirs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/catalin/graded-readers/pipeline/audit_compact_omissions.py", line 213, in discover_risky_scenes
+    raise ValueError(
+ValueError: accepted chapter changed after omission promotion: /home/catalin/graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_003-hsk3
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/catalin/graded-readers/pipeline/audit_compact_omissions.py", line 698, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/catalin/graded-readers/pipeline/audit_compact_omissions.py", line 692, in main
+    report = asyncio.run(OmissionAuditor(args).run([Path(item) for item in args.run_dir]))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/catalin/graded-readers/pipeline/audit_compact_omissions.py", line 635, in run
+    risky = discover_risky_scenes(run_dirs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/catalin/graded-readers/pipeline/audit_compact_omissions.py", line 213, in discover_risky_scenes
+    raise ValueError(
+ValueError: accepted chapter changed after omission promotion: /home/catalin/graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_003-hsk3

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff510-f850-7702-82c2-42e3e880ea58"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.93,\"naturalness\":0.92,\"readability\":0.93,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[],\"language_problems\":[\"“孙干”应为“孙乾”，人物姓名用字错误。\"],\"verdict\":\"revise\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":30598,"cached_input_tokens":8960,"cache_write_input_tokens":0,"output_tokens":1111,"reasoning_output_tokens":1034}}

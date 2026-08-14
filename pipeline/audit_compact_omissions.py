@@ -22,9 +22,10 @@ from typing import Any
 import unicodedata
 
 from pipeline.agent_harness import (
-    CodexRunner, ROOT, SCHEMAS, cjk_count, discard_incorrect_length_findings,
+    CodexRunner, ROOT, SCHEMAS, cjk_count, digest, discard_incorrect_length_findings,
     simplified, utc_now,
 )
+from pipeline.adaptation_policy import policy_for
 
 
 CHAPTER_BACKUP = "chapter.before-omission-repair.txt"
@@ -52,6 +53,20 @@ def _object(path: Path) -> dict[str, Any]:
 
 def _sha256(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
+
+
+def resolve_manifest_source(manifest: dict[str, Any]) -> Path:
+    """Resolve a source recorded by a run, including after checkout relocation."""
+    recorded = Path(str(manifest["source"]))
+    if recorded.is_file():
+        return recorded
+    relocated = ROOT / "books" / "chinese" / "sanguoyanyi" / recorded.name
+    if not relocated.is_file():
+        raise FileNotFoundError(recorded)
+    expected = manifest.get("source_sha256")
+    if expected and digest(relocated.read_text(encoding="utf-8")) != expected:
+        raise ValueError(f"relocated source hash mismatch: {relocated}")
+    return relocated
 
 
 def _atomic_bytes(path: Path, data: bytes) -> None:
@@ -180,6 +195,8 @@ def discover_risky_scenes(run_dirs: list[Path]) -> list[RiskyScene]:
     found: list[RiskyScene] = []
     for run_dir in expand_run_dirs(run_dirs):
         manifest = _object(run_dir / "manifest.json")
+        if not policy_for(str(manifest.get("level", ""))).audit_source_omissions:
+            continue
         report_path = run_dir / "report.json"
         chapter_path = run_dir / "chapter.txt"
         if (
@@ -199,7 +216,7 @@ def discover_risky_scenes(run_dirs: list[Path]) -> list[RiskyScene]:
             raise ValueError(
                 f"accepted chapter changed after omission promotion: {run_dir}"
             )
-        source_text = Path(str(manifest["source"])).read_text(encoding="utf-8")
+        source_text = resolve_manifest_source(manifest).read_text(encoding="utf-8")
         scene_paths, _scene_evidence = authoritative_scene_paths(run_dir)
         for scene_path in scene_paths:
             scene = _object(scene_path)
@@ -448,7 +465,7 @@ REVIEW FINDINGS:\n{notes}"""
         self, run_dir: Path, risks: list[tuple[RiskyScene, dict[str, Any]]]
     ) -> dict[str, Any]:
         manifest = _object(run_dir / "manifest.json")
-        source = Path(str(manifest["source"])).read_text(encoding="utf-8")
+        source = resolve_manifest_source(manifest).read_text(encoding="utf-8")
         accepted = assemble_chapter(run_dir)
         material = [
             assessment

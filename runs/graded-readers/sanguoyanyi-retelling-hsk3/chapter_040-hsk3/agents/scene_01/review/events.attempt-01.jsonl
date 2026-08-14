@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff43d-4f02-7e01-bbf4-0b6c60942973"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.93,\"naturalness\":0.97,\"readability\":0.98,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"“黄皓……竟然免于一死”容易理解为黄皓最终逃过死刑；原文只是因行贿暂时免罪，后来被司马昭处死。\"],\"language_problems\":[],\"verdict\":\"revise\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":28966,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":621,"reasoning_output_tokens":516}}

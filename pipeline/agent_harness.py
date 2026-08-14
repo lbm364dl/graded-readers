@@ -20,6 +20,9 @@ from typing import Any
 from jsonschema import Draft202012Validator
 from opencc import OpenCC
 
+from pipeline.adaptation_policy import policy_for
+from pipeline.validate_text import load_charset, validate_characters
+
 
 ROOT = Path(__file__).resolve().parent.parent
 SCHEMAS = Path(__file__).resolve().parent / "schemas"
@@ -555,6 +558,25 @@ class ChapterHarness:
         return max(1, min(6, round(self.target_chars / 1500)))
 
     @property
+    def readability_charset(self) -> set[str]:
+        return load_charset(
+            ROOT / "pipeline" / "charsets" / "chinese"
+            / f"{self.args.level}_chars.txt"
+        )
+
+    @property
+    def glossary_chars(self) -> set[str]:
+        glossary = ROOT / "output" / "chinese" / "sanguoyanyi" / "glossary.txt"
+        if not glossary.is_file():
+            return set()
+        return {
+            char for line in glossary.read_text(encoding="utf-8").splitlines()
+            if line.strip() and not line.lstrip().startswith("#")
+            for char in line.strip()
+            if "\u3400" <= char <= "\u9fff"
+        }
+
+    @property
     def annotation_chunk_target(self) -> int:
         return getattr(
             self.args, "annotation_chunk", DEFAULT_CHINESE_ANNOTATION_CHUNK_TARGET
@@ -624,12 +646,15 @@ class ChapterHarness:
         )
 
     async def outline(self) -> dict[str, Any]:
+        policy = policy_for(self.args.level)
         prompt = f"""Return only JSON matching the supplied schema.
 Read the complete original Chinese chapter and divide it into exactly
 {self.scene_count} consecutive adaptation scene(s).
 Every source_start_quote must be an exact, unique substring
 of ORIGINAL. Scenes must cover the source in order. Capture every important
-event and causal link that is essential to a coherent compressed retelling.
+event and causal link selected for a coherent level-appropriate retelling.
+Editorial scope: {policy.scope}
+Fidelity rule: {policy.fidelity}
 Target lengths should sum to approximately
 {self.target_chars} Chinese characters.
 
@@ -695,17 +720,28 @@ ORIGINAL:\n{self.source}"""
         return outline
 
     async def adapt_scene(self, scene: dict[str, Any]) -> dict[str, Any]:
+        policy = policy_for(self.args.level)
+        charset_hint = ""
+        if self.args.level in {"hsk1", "hsk2", "hsk3"}:
+            charset_hint = (
+                " Prefer these cumulative level characters wherever natural: "
+                + "".join(sorted(self.readability_charset))
+            )
         original = self.source[scene["source_start"] : scene["source_end"]]
         events = "\n".join(f"- {event}" for event in scene["required_events"])
         prompt = f"""Return only JSON matching the supplied schema, with the
 adapted scene in `text`. Adapt the verbatim ORIGINAL into natural, engaging
 modern Chinese for an annotated {self.args.level.upper()} literary reader.
 Write only simplified Chinese, even though ORIGINAL uses traditional Chinese.
-Preserve the required essential events, causal links, motivations, names,
-numbers, and order. Intentional compression is expected at this level.
+Treat REQUIRED EVENTS as candidate story material, not a demand for exhaustive
+coverage. {policy.scope} {policy.fidelity}
 Target about {scene['target_chars']} Chinese characters. Core grammar should be
-comfortable at {self.args.level.upper()}, but natural historical and story
-vocabulary is allowed because every word will be annotated. Do not invent facts.
+comfortable at {self.args.level.upper()}. {policy.language}
+Annotations are not permission to write above the target level. Do not invent
+facts or outcomes.
+The deterministic readability budget allows at most
+{policy.max_above_level_ratio:.0%} above-level characters after exempting the
+book glossary.{charset_hint}
 
 REQUIRED EVENTS:\n{events}\n\nORIGINAL:\n{original}"""
         result = await self.runner.call(
@@ -719,17 +755,22 @@ REQUIRED EVENTS:\n{events}\n\nORIGINAL:\n{original}"""
         self, scene: dict[str, Any], adaptation: str, suffix: str = "review"
     ) -> dict[str, Any]:
         original = self.source[scene["source_start"] : scene["source_end"]]
+        policy = policy_for(self.args.level)
         prompt = f"""Return only JSON matching the supplied schema. Compare
 ADAPTATION directly against VERBATIM ORIGINAL and the requested compact target.
 The target for this scene is {scene['target_chars']} Chinese characters; keep
 the result within roughly 70%-130% of that target.
-Natural condensation and paraphrase are expected. Identify omissions of
-essential events needed for a coherent retelling, unsupported
+Editorial scope: {policy.scope}
+Fidelity rule: {policy.fidelity}
+Natural condensation, merging, and level-appropriate omission are expected.
+Do not list an omitted source event merely because it is absent. Identify only
+missing information that makes this adaptation internally incoherent, unsupported
 additions, factual/causal distortions, awkward Chinese, and readability issues.
 The adaptation must use simplified Chinese consistently; any traditional-only
 characters or mixed simplified/traditional prose requires verdict=revise.
-Set verdict=pass only when source_fidelity, naturalness, and readability are all
-at least 8 and there are no material distortions.
+Interpret source_fidelity as truthfulness of what the adaptation actually says,
+not percentage of source events retained. Set verdict=pass when the broad story
+remains true, the selected retelling is coherent, and language is level-appropriate.
 
 ORIGINAL:\n{original}\n\nADAPTATION:\n{adaptation}"""
         result = await self.runner.call(
@@ -750,6 +791,20 @@ ORIGINAL:\n{original}\n\nADAPTATION:\n{adaptation}"""
                 f"mechanical length gate: {length} CJK, required {low}-{high}"
             )
             result["harness_decision"] = "rejected_by_mechanical_length_gate"
+        readability = validate_characters(
+            adaptation, self.readability_charset, self.glossary_chars,
+            policy.max_above_level_ratio,
+        )
+        if not readability["passes"]:
+            result = dict(result)
+            result["verdict"] = "revise"
+            chars = "".join(readability["above_level_list"][:60])
+            result.setdefault("language_problems", []).append(
+                "mechanical readability gate: "
+                f"{readability['above_level_percent']}% above-level, maximum "
+                f"{policy.max_above_level_ratio * 100:.0f}%; replace where natural: {chars}"
+            )
+            result["harness_decision"] = "rejected_by_mechanical_readability_gate"
         return result
 
     async def repair_scene(
@@ -761,12 +816,18 @@ ORIGINAL:\n{original}\n\nADAPTATION:\n{adaptation}"""
     ) -> dict[str, Any]:
         original = self.source[scene["source_start"] : scene["source_end"]]
         findings = json.dumps(review, ensure_ascii=False, indent=2)
+        policy = policy_for(self.args.level)
+        charset_hint = "".join(sorted(self.readability_charset))
         prompt = f"""Return only JSON matching the supplied schema, with the
 revised scene in `text`. Repair ADAPTATION using the source-grounded REVIEW.
-Change only what the findings require. Preserve good prose, length, event order,
-and {self.args.level.upper()}-readable core language. Remove unsupported additions, restore material
-omissions, correct distortions, fix listed language problems, and use only
-simplified Chinese. Keep the revised scene within roughly 70%-130% of the
+Preserve good prose and the selected broad story, but rewrite whole sentences
+when necessary to satisfy the readability finding. Do not restore intentionally
+omitted source events. Remove unsupported additions, correct distortions, fix
+listed language problems, and use only simplified Chinese. The deterministic
+gate permits at most {policy.max_above_level_ratio:.0%} above-level characters
+after glossary exemptions. Prefer this cumulative character set wherever
+natural: {charset_hint}
+Keep the revised scene within roughly 70%-130% of the
 original target of {scene['target_chars']} Chinese characters.
 
 ORIGINAL:\n{original}\n\nADAPTATION:\n{adaptation}\n\nREVIEW:\n{findings}"""
@@ -785,6 +846,8 @@ ORIGINAL:\n{original}\n\nADAPTATION:\n{adaptation}\n\nREVIEW:\n{findings}"""
     ) -> dict[str, Any]:
         """Fresh final rewrite after local repair attempts fail."""
         original = self.source[scene["source_start"] : scene["source_end"]]
+        policy = policy_for(self.args.level)
+        charset_hint = "".join(sorted(self.readability_charset))
         history = json.dumps(
             [
                 {"text": item["text"], "review": item["review"]}
@@ -797,10 +860,13 @@ ORIGINAL:\n{original}\n\nADAPTATION:\n{adaptation}\n\nREVIEW:\n{findings}"""
 fresh scene in `text`. Earlier adaptation and repair attempts all failed strict
 source review. Start again from VERBATIM ORIGINAL. Use the failure history only
 as a list of traps to avoid; do not patch or imitate its prose. Preserve all
-facts, causal links, motivations, names, numbers, and event order. Write natural
-modern Chinese for an annotated {self.args.level.upper()} literary reader.
-Use only simplified Chinese. Natural story vocabulary is allowed. Do not invent
-facts. Target about {scene['target_chars']} Chinese characters and stay within
+the broad outcome, major identities, and selected causal thread; do not try to
+restore every source fact, name, number, or event. Write natural modern Chinese
+for an {self.args.level.upper()} reader. Use only simplified Chinese. The
+deterministic gate permits at most {policy.max_above_level_ratio:.0%} above-level
+characters after glossary exemptions. Prefer this cumulative character set:
+{charset_hint}
+Do not invent facts. Target about {scene['target_chars']} Chinese characters and stay within
 roughly 70%-130% of that compact target.
 
 ORIGINAL:\n{original}\n\nFAILED ATTEMPTS AND REVIEWS:\n{history}"""

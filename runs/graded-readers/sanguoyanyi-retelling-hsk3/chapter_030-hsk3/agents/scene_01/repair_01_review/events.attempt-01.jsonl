@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff3d1-2052-7ee1-b22c-f7543d3bfecf"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.94,\"naturalness\":0.93,\"readability\":0.91,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[],\"language_problems\":[\"篇幅明显可能超过750字目标的130%上限，压缩幅度不足。\",\"“大河南边”“西边的大河”等称呼较模糊，建议保留“泸水”“西洱河”等关键地名。\",\"“想在蜀军里面帮忙”略口语且不够准确，可改为“作为内应”。\"],\"verdict\":\"revise\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":31294,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":1457,"reasoning_output_tokens":1315}}

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff4e9-93bc-71e0-a51e-b8da1d997cb0"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"text\":\"周瑜请军师造箭，说：“军中缺箭，请你十天内造十万支箭。”又要军师写下军令书：十天做不到，就按军法办。军师说：“十天太慢，三天就能交上。”周瑜大喜，心想这回军师一定不能成功。\\n\\n军师去见鲁肃，说：“请你借我二十条船。一船三十名军士，两边放草，外面用蓝布遮住。不要告诉周瑜。”鲁肃不明白，还是去准备。\\n\\n第三天夜里，江面白气很重。军师领二十条船来到曹操水寨前，命军士打鼓大叫。曹军看不到江面，曹操不敢出兵，命弓箭手放箭。箭像雨一样飞来，落在两边的草上。天亮后，白气散了，草上全是箭。军师命人快走，曹军想赶上也来不及。\\n\\n二十条船带回十万多支箭。周瑜见到这些箭，半天没有说话，最后说：“军师真有办法，我不如你。”\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":35236,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":6367,"reasoning_output_tokens":6074}}

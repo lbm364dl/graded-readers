@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff2fc-98b5-72c0-b5b9-003c72eba1c9"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"text\":\"乱军中，赵云和刘备的家人失散了。他很难过，觉得自己对不起刘备。赵云说：“我一定要找到甘夫人、糜夫人和阿斗！”他先找到糜竺，救下了他。后来，他在百姓中找到甘夫人，把她送到长板桥。张飞在那里守桥。赵云马上又回去，继续找糜夫人和阿斗。路上，他杀了曹军将军夏侯恩，拿到一把宝剑，剑上写着“青釭”。敌人越来越多，赵云还是不走。他终于找到受伤的糜夫人。她抱着阿斗，坐在井边。她把孩子交给赵云，说：“请你带他去见父亲，不要让我拖累你。”追兵快到了，糜夫人跳进井里。赵云很伤心，就推倒土墙，盖住井。然后他抱起阿斗，上马冲出去。一路上，他打退很多敌人，终于冲出重围，回到刘备身边。\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":39377,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":1184,"reasoning_output_tokens":920}}

@@ -20,6 +20,7 @@ import tempfile
 from typing import Any
 
 from pipeline.agent_harness import CodexRunner, ROOT, SCHEMAS, cjk_count, utc_now
+from pipeline.adaptation_policy import policy_for
 
 
 CHAPTER_BACKUP = "chapter.pre-continuity.txt"
@@ -149,27 +150,32 @@ class ContinuityHarness:
 
     async def audit_pair(self, left: int, texts: list[str], stage: str) -> dict[str, Any]:
         a, b = self.chapters[left], self.chapters[left + 1]
-        prompt = f"""Return only JSON matching the schema. Independently audit the
-handoff between two adjacent chapters of an abridged {self.args.level.upper()}
-reader. Compare both adaptations directly with BOTH VERBATIM SOURCE CHAPTERS.
-Compression and omitted minor episodes are expected. Report only material
-cross-chapter problems: contradictions, accidental repetition, broken identity
-or timeline, lost causal/motivational handoff, or a transition so abrupt that
-the second chapter is confusing. Do not demand details merely because the
-original contains them. chapter_offset=0 identifies the first adapted chapter;
-chapter_offset=1 identifies the second. verdict=pass iff no material issue exists.
-
+        policy = policy_for(self.args.level)
+        source_context = ""
+        if policy.audit_source_omissions:
+            source_context = f"""
 SOURCE CHAPTER {a.number}:
 {a.source}
+
+SOURCE CHAPTER {b.number}:
+{b.source}
+"""
+        prompt = f"""Return only JSON matching the schema. Independently audit the
+handoff between two adjacent chapters of an abridged {self.args.level.upper()}
+reader. {policy.continuity} {policy.fidelity}
+Compression, merging, and intentional omission are expected. Report only material
+cross-chapter problems: contradictions, accidental repetition, broken identity
+or timeline, lost causal/motivational handoff, or a transition so abrupt that
+the second chapter is confusing. Never demand an event merely because it exists
+in the original. chapter_offset=0 identifies the first adapted chapter;
+chapter_offset=1 identifies the second. verdict=pass iff no material issue exists.
 
 ACCEPTED CHAPTER {a.number}:
 {texts[left]}
 
-SOURCE CHAPTER {b.number}:
-{b.source}
-
 ACCEPTED CHAPTER {b.number}:
-{texts[left + 1]}"""
+{texts[left + 1]}
+{source_context}"""
         return await self.runner.call(
             f"{stage}/pair_{a.number:03d}_{b.number:03d}", prompt,
             SCHEMAS / "continuity-review.schema.json", self.args.review_effort,
@@ -215,12 +221,16 @@ FINDINGS:
 
     async def source_review(self, index: int, candidate: str, round_no: int) -> dict[str, Any]:
         chapter = self.chapters[index]
+        policy = policy_for(self.args.level)
         prompt = f"""Return only JSON matching the schema. Compare CANDIDATE
 directly against VERBATIM ORIGINAL. It is a compact modern-Chinese adaptation,
-so omission of minor details is expected. Identify material invented facts,
-distortions, broken causal links, missing essential events, awkward Chinese, or
+Editorial scope: {policy.scope}
+Fidelity rule: {policy.fidelity}
+Intentional level-appropriate omissions are expected. Identify invented facts,
+distortions, broken causal links within the selected retelling, awkward Chinese, or
 traditional-only characters. Set verdict=pass only when source_fidelity,
 naturalness, and readability are all at least 8 and there is no material issue.
+Score fidelity by whether retained claims are true, not by source coverage.
 
 ORIGINAL:
 {chapter.source}

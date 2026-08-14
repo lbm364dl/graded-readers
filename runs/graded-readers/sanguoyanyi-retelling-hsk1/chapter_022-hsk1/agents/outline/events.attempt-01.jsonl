@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff336-9b0e-7d42-8317-a8d5d5cffe13"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"chapter_title\":\"诈病诱曹爽\",\"scenes\":[{\"id\":\"scene_10\",\"title\":\"司马懿诈病，曹爽中计\",\"source_start_quote\":\"適魏主除李勝為荊州刺史，即令李勝往辭仲達，就探消息，勝逕到太傳府下，早有門吏報入。\",\"required_events\":[\"曹爽派李胜探查司马懿的病情，司马懿识破来意。\",\"司马懿故意装作耳聋、衰弱垂死，使李胜相信他已无力干预政事。\",\"李胜回报曹爽后，曹爽放松戒心，带魏主出城祭陵。\",\"司马懿等曹爽离开，立即召集旧部，准备夺取京城和曹爽的兵权。\"],\"target_chars\":300}]}"}}
+{"type":"turn.completed","usage":{"input_tokens":37284,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":655,"reasoning_output_tokens":441}}

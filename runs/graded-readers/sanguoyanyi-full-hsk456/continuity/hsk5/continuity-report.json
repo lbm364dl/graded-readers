@@ -1,52 +1,211 @@
 {
-  "status": "running",
+  "status": "blocked",
+  "level": "hsk5",
+  "chapters": 120,
+  "pairs": 119,
+  "initial_failed_pairs": [
+    2,
+    100
+  ],
+  "remaining_chapters": [
+    41,
+    112
+  ],
   "rounds": [
     {
       "round": 1,
       "implicated": [
-        32,
-        39,
-        56,
-        75,
-        95,
-        101
+        3,
+        100
       ],
       "source_pass": {
-        "32": false,
-        "39": true,
-        "56": true,
-        "75": false,
-        "95": true,
-        "101": true
+        "3": true,
+        "100": true
       },
       "promoted": [
-        39,
-        56
+        3
       ],
       "promotion_records": {
-        "39": {
-          "promoted_at": "2026-08-07T11:45:52.174916+00:00",
-          "candidate_sha256": "0ff41431e1c68809953a9600d8e1313f53f610036c72aa1a2d36668be5ab364a",
-          "original_backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_039-hsk5/chapter.pre-continuity.txt",
-          "original_sha256": "6eb879781e8ffac3856021961b6d74bc6194fe54dc3d1d46054f124d8730402a",
-          "annotations_invalidated": [],
-          "annotation_rerun_required": true
-        },
-        "56": {
-          "promoted_at": "2026-08-07T11:45:52.175907+00:00",
-          "candidate_sha256": "7118381e4bbd1edc817218c7a98969e4ea02fcf8e2e1896eaddb68829c966301",
-          "original_backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_056-hsk5/chapter.pre-continuity.txt",
-          "original_sha256": "e89a04cbf6374af47ba84911f01707285dcfb7bc9c764ede7f7d7aed060c0325",
+        "3": {
+          "promoted_at": "2026-08-11T21:02:17.473397+00:00",
+          "candidate_sha256": "b9f01c9e9c68e1f2f0acb0160e8a032c112a52929b1024980f689ba710069609",
+          "original_backup": "/home/catalin/graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_003-hsk5/chapter.pre-continuity.txt",
+          "original_sha256": "33806477ebf7b11f3c3a09c8640192b70dadff051346c9fe8558ed6a02838613",
           "annotations_invalidated": [],
           "annotation_rerun_required": true
         }
       },
       "remaining_in_affected_pairs": [
-        75,
-        95,
-        100
+        101
       ]
+    },
+    {
+      "round": 2,
+      "implicated": [
+        71,
+        100,
+        120
+      ],
+      "source_pass": {
+        "71": true,
+        "100": true,
+        "120": true
+      },
+      "promoted": [
+        71,
+        100,
+        120
+      ],
+      "promotion_records": {
+        "71": {
+          "promoted_at": "2026-08-11T21:32:07.912910+00:00",
+          "candidate_sha256": "36b457ccb4787a9b304c70d2c1158f9ae7a3eb8ca307df1a897721ac1820907f",
+          "original_backup": "/home/catalin/graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_071-hsk5/chapter.pre-continuity.txt",
+          "original_sha256": "24a19fe5cc9d1514dfc886ac478201c8f2cb831b806a5ae532f48278962f7118",
+          "annotations_invalidated": [],
+          "annotation_rerun_required": true
+        },
+        "100": {
+          "promoted_at": "2026-08-11T21:32:07.913874+00:00",
+          "candidate_sha256": "1450245173450f6e8aa3503e4e794851d3677f9470d1b2df531031bd5c097ad9",
+          "original_backup": "/home/catalin/graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_100-hsk5/chapter.pre-continuity.txt",
+          "original_sha256": "c26ca0ef18013a36e4d1c21487c1ed8c2fddfc71ec2998b1055152f85e48c43b",
+          "annotations_invalidated": [],
+          "annotation_rerun_required": true
+        },
+        "120": {
+          "promoted_at": "2026-08-11T21:32:07.914887+00:00",
+          "candidate_sha256": "5804c611b90e57541ad1ef29acf80c16ceb27b8491ec9bfc401b73ce1feb6c89",
+          "original_backup": "/home/catalin/graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_120-hsk5/chapter.pre-continuity.txt",
+          "original_sha256": "6a1ff7b475162868fa9f34a0b7fc4e193b6d913b61db01c05fd87c04226929b2",
+          "annotations_invalidated": [],
+          "annotation_rerun_required": true
+        }
+      },
+      "remaining_in_affected_pairs": []
     }
   ],
-  "updated_at": "2026-08-07T12:14:08.560180+00:00"
+  "chapter_cjk": [
+    887,
+    960,
+    999,
+    783,
+    852,
+    1090,
+    1081,
+    821,
+    933,
+    835,
+    870,
+    888,
+    834,
+    901,
+    1061,
+    875,
+    971,
+    1047,
+    846,
+    975,
+    838,
+    946,
+    985,
+    911,
+    914,
+    909,
+    811,
+    925,
+    816,
+    859,
+    894,
+    915,
+    1191,
+    791,
+    1220,
+    1030,
+    870,
+    1205,
+    970,
+    1278,
+    822,
+    959,
+    1022,
+    1003,
+    893,
+    948,
+    827,
+    1009,
+    756,
+    976,
+    817,
+    915,
+    847,
+    838,
+    980,
+    843,
+    927,
+    907,
+    1069,
+    931,
+    880,
+    917,
+    776,
+    999,
+    888,
+    853,
+    945,
+    863,
+    1025,
+    803,
+    859,
+    961,
+    859,
+    957,
+    804,
+    985,
+    922,
+    767,
+    989,
+    995,
+    931,
+    877,
+    844,
+    907,
+    949,
+    998,
+    1042,
+    1005,
+    1139,
+    851,
+    1081,
+    937,
+    1142,
+    1004,
+    868,
+    772,
+    896,
+    772,
+    896,
+    1097,
+    784,
+    942,
+    1044,
+    1123,
+    895,
+    848,
+    1116,
+    1084,
+    752,
+    843,
+    1090,
+    778,
+    882,
+    838,
+    1173,
+    860,
+    988,
+    1021,
+    906,
+    926
+  ],
+  "updated_at": "2026-08-11T21:58:56.707024+00:00"
 }

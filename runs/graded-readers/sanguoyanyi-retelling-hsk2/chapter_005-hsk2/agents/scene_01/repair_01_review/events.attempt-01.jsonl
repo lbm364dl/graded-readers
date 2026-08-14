@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff506-8694-77c2-9049-2d506c0aa804"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.93,\"naturalness\":0.95,\"readability\":0.84,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"将侯成、宋宪、魏续概括为共同“开门献城”，混淆了三人的具体行动。\"],\"language_problems\":[\"篇幅明显超过500字目标的约130%上限，压缩不足。\"],\"verdict\":\"revise\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":33079,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":930,"reasoning_output_tokens":821}}

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff528-7372-7c23-9b24-8ad6f087d847"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"text\":\"诸葛亮带蜀军来到陇上，想割麦子给军中用。可是，他发现司马懿已带兵守在前面，便知对方早有准备。军中粮食不多，诸葛亮想出一计。他先做了三辆一样的四轮车，车上都坐着假诸葛亮；姜维、马岱、魏延各带一队兵，护着一辆车，每队另有人敲鼓。诸葛亮也坐上一辆车，带着少数兵在前引敌。车边的人穿黑衣，披头发，手拿剑。魏军赶来时，车向蜀营慢慢走去；魏军追了很久，总在车后，怎么也追不上。随后，左边、右边和后面又响起鼓声，三辆车一齐出现。司马懿见车上都有“诸葛亮”，以为他用了神法，急忙带兵退进上邽城，三天不敢出城。诸葛亮马上让三万士兵拿刀割麦，把陇上的麦子运到卤城。蜀军有了粮食，又能继续打仗了。\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":42048,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":2177,"reasoning_output_tokens":1886}}

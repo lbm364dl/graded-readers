@@ -1,0 +1,487 @@
+{
+  "level": "hsk3",
+  "source_chapters": 120,
+  "story_chapters": 40,
+  "bundles": [
+    {
+      "number": 1,
+      "file": "chapter_001.txt",
+      "source_start": 1,
+      "source_end": 3,
+      "source_files": [
+        "chapter_001.txt",
+        "chapter_002.txt",
+        "chapter_003.txt"
+      ],
+      "sha256": "d3b7df1ffde54ec2949676e9eb91c3025ea605a24b4ab486c1bbf0cea3c327b6"
+    },
+    {
+      "number": 2,
+      "file": "chapter_002.txt",
+      "source_start": 4,
+      "source_end": 6,
+      "source_files": [
+        "chapter_004.txt",
+        "chapter_005.txt",
+        "chapter_006.txt"
+      ],
+      "sha256": "254b6bec5c092dd9835bb673811a0e1ef3d8c9139167092297a60b1ae1193c19"
+    },
+    {
+      "number": 3,
+      "file": "chapter_003.txt",
+      "source_start": 7,
+      "source_end": 9,
+      "source_files": [
+        "chapter_007.txt",
+        "chapter_008.txt",
+        "chapter_009.txt"
+      ],
+      "sha256": "28b2ccd3abc879a7b20ddc4c0bc8bb8bbbcd90166d8aa08b5a5a0a02c76914e0"
+    },
+    {
+      "number": 4,
+      "file": "chapter_004.txt",
+      "source_start": 10,
+      "source_end": 12,
+      "source_files": [
+        "chapter_010.txt",
+        "chapter_011.txt",
+        "chapter_012.txt"
+      ],
+      "sha256": "6711b9792577f4ec9e03a5d3b19004d5520d9a70ab4f84b2dba6e53d631e8cfc"
+    },
+    {
+      "number": 5,
+      "file": "chapter_005.txt",
+      "source_start": 13,
+      "source_end": 15,
+      "source_files": [
+        "chapter_013.txt",
+        "chapter_014.txt",
+        "chapter_015.txt"
+      ],
+      "sha256": "d2b8a1a6e917a6ca68dc755809b7f6f421c840477fe7727d9d530c80d8186bf1"
+    },
+    {
+      "number": 6,
+      "file": "chapter_006.txt",
+      "source_start": 16,
+      "source_end": 18,
+      "source_files": [
+        "chapter_016.txt",
+        "chapter_017.txt",
+        "chapter_018.txt"
+      ],
+      "sha256": "b9fcbbf601e34fc84f5bb577da66a692b3d3a980b13f8bc2dae9adc7741d2f2b"
+    },
+    {
+      "number": 7,
+      "file": "chapter_007.txt",
+      "source_start": 19,
+      "source_end": 21,
+      "source_files": [
+        "chapter_019.txt",
+        "chapter_020.txt",
+        "chapter_021.txt"
+      ],
+      "sha256": "2f659a33ea7301d56f46fa97ef4d39e608147bcca145eb0480e4d7a89dbb01b8"
+    },
+    {
+      "number": 8,
+      "file": "chapter_008.txt",
+      "source_start": 22,
+      "source_end": 24,
+      "source_files": [
+        "chapter_022.txt",
+        "chapter_023.txt",
+        "chapter_024.txt"
+      ],
+      "sha256": "bf4b0deb7f3b0205fba25c053abfa3ae9f4ad6e5780980a4c22bff0fea79b3b1"
+    },
+    {
+      "number": 9,
+      "file": "chapter_009.txt",
+      "source_start": 25,
+      "source_end": 27,
+      "source_files": [
+        "chapter_025.txt",
+        "chapter_026.txt",
+        "chapter_027.txt"
+      ],
+      "sha256": "4c79c42269909fb27109cbf9c488056cb08c4642ae89942546de999b3987dc2c"
+    },
+    {
+      "number": 10,
+      "file": "chapter_010.txt",
+      "source_start": 28,
+      "source_end": 30,
+      "source_files": [
+        "chapter_028.txt",
+        "chapter_029.txt",
+        "chapter_030.txt"
+      ],
+      "sha256": "4e5fdefefa49fe60449e60796ea3cec62345dec1318fc121da02e6039ffe85b6"
+    },
+    {
+      "number": 11,
+      "file": "chapter_011.txt",
+      "source_start": 31,
+      "source_end": 33,
+      "source_files": [
+        "chapter_031.txt",
+        "chapter_032.txt",
+        "chapter_033.txt"
+      ],
+      "sha256": "dded238ed6ba620a7a8df00509bf2c4c7c60effebd65f8d2ebc398d99c5cd7e8"
+    },
+    {
+      "number": 12,
+      "file": "chapter_012.txt",
+      "source_start": 34,
+      "source_end": 36,
+      "source_files": [
+        "chapter_034.txt",
+        "chapter_035.txt",
+        "chapter_036.txt"
+      ],
+      "sha256": "7488c62ba9eaa128128e3b4673dfc00b60738ce83636a114ed006728a4c51d41"
+    },
+    {
+      "number": 13,
+      "file": "chapter_013.txt",
+      "source_start": 37,
+      "source_end": 39,
+      "source_files": [
+        "chapter_037.txt",
+        "chapter_038.txt",
+        "chapter_039.txt"
+      ],
+      "sha256": "e1cf7d9bd8529b7c8b1138114687d50b3156e1c0cb3b6f577f8ace65e724a303"
+    },
+    {
+      "number": 14,
+      "file": "chapter_014.txt",
+      "source_start": 40,
+      "source_end": 42,
+      "source_files": [
+        "chapter_040.txt",
+        "chapter_041.txt",
+        "chapter_042.txt"
+      ],
+      "sha256": "310f9fa0061d279faaeb9cce627fdd9fd69dc5139bb132be3c958c9b753e623b"
+    },
+    {
+      "number": 15,
+      "file": "chapter_015.txt",
+      "source_start": 43,
+      "source_end": 45,
+      "source_files": [
+        "chapter_043.txt",
+        "chapter_044.txt",
+        "chapter_045.txt"
+      ],
+      "sha256": "642496e67f5d2d097dd5fab37c10348a36fdd41e5b82f30b461b414dae2d31ae"
+    },
+    {
+      "number": 16,
+      "file": "chapter_016.txt",
+      "source_start": 46,
+      "source_end": 48,
+      "source_files": [
+        "chapter_046.txt",
+        "chapter_047.txt",
+        "chapter_048.txt"
+      ],
+      "sha256": "a1cd058cfacedbd3cba8bf5a073c8d07b75ab0edfcaae3a1e7e555b12cb778cc"
+    },
+    {
+      "number": 17,
+      "file": "chapter_017.txt",
+      "source_start": 49,
+      "source_end": 51,
+      "source_files": [
+        "chapter_049.txt",
+        "chapter_050.txt",
+        "chapter_051.txt"
+      ],
+      "sha256": "f30368544156b8e5b7f70edcd4f773a49e7c52992c2ca65dfe6c086aa51a1334"
+    },
+    {
+      "number": 18,
+      "file": "chapter_018.txt",
+      "source_start": 52,
+      "source_end": 54,
+      "source_files": [
+        "chapter_052.txt",
+        "chapter_053.txt",
+        "chapter_054.txt"
+      ],
+      "sha256": "c53c5a0f0674fd8edc3313204a9b803b01a3e38810a219cfb4c1b9537dd3efa4"
+    },
+    {
+      "number": 19,
+      "file": "chapter_019.txt",
+      "source_start": 55,
+      "source_end": 57,
+      "source_files": [
+        "chapter_055.txt",
+        "chapter_056.txt",
+        "chapter_057.txt"
+      ],
+      "sha256": "34b0d4f0387f46c2e0aeec7992be851b2ea412c9bfd73d7322009d74e04b208a"
+    },
+    {
+      "number": 20,
+      "file": "chapter_020.txt",
+      "source_start": 58,
+      "source_end": 60,
+      "source_files": [
+        "chapter_058.txt",
+        "chapter_059.txt",
+        "chapter_060.txt"
+      ],
+      "sha256": "86427660258d025068ddc0befe1ff333bdc5f9ff2f435a6ef0442f276b0dd778"
+    },
+    {
+      "number": 21,
+      "file": "chapter_021.txt",
+      "source_start": 61,
+      "source_end": 63,
+      "source_files": [
+        "chapter_061.txt",
+        "chapter_062.txt",
+        "chapter_063.txt"
+      ],
+      "sha256": "c3b4097fab4636d90e5d61a1f498e605e136a9f0030b9e9a1308fb353deae775"
+    },
+    {
+      "number": 22,
+      "file": "chapter_022.txt",
+      "source_start": 64,
+      "source_end": 66,
+      "source_files": [
+        "chapter_064.txt",
+        "chapter_065.txt",
+        "chapter_066.txt"
+      ],
+      "sha256": "81154e781195335e8f330c9e683518ee11c33d309b027c9b321d0ea2ee48bcfa"
+    },
+    {
+      "number": 23,
+      "file": "chapter_023.txt",
+      "source_start": 67,
+      "source_end": 69,
+      "source_files": [
+        "chapter_067.txt",
+        "chapter_068.txt",
+        "chapter_069.txt"
+      ],
+      "sha256": "b5f9c735efb1d541a832bf7d536647e50efb49365f3b864d6e2767ef0d45ea2c"
+    },
+    {
+      "number": 24,
+      "file": "chapter_024.txt",
+      "source_start": 70,
+      "source_end": 72,
+      "source_files": [
+        "chapter_070.txt",
+        "chapter_071.txt",
+        "chapter_072.txt"
+      ],
+      "sha256": "a392e749f335e9de80c4eaad873f2cdd8d8461b20df5dfa7c9749d4d553c943b"
+    },
+    {
+      "number": 25,
+      "file": "chapter_025.txt",
+      "source_start": 73,
+      "source_end": 75,
+      "source_files": [
+        "chapter_073.txt",
+        "chapter_074.txt",
+        "chapter_075.txt"
+      ],
+      "sha256": "201c708df555361575bed846b9bae00daf456e2918324af8a56f346e9733f08d"
+    },
+    {
+      "number": 26,
+      "file": "chapter_026.txt",
+      "source_start": 76,
+      "source_end": 78,
+      "source_files": [
+        "chapter_076.txt",
+        "chapter_077.txt",
+        "chapter_078.txt"
+      ],
+      "sha256": "a58f3a0190c5f9bacdf4b61ab05dc552291d1add81be666bdd9ff40ae6ddbc79"
+    },
+    {
+      "number": 27,
+      "file": "chapter_027.txt",
+      "source_start": 79,
+      "source_end": 81,
+      "source_files": [
+        "chapter_079.txt",
+        "chapter_080.txt",
+        "chapter_081.txt"
+      ],
+      "sha256": "431d82a8e6453532366bba1cd2c599639c2aac71c50a5c9403b7a5abecbd9dd0"
+    },
+    {
+      "number": 28,
+      "file": "chapter_028.txt",
+      "source_start": 82,
+      "source_end": 84,
+      "source_files": [
+        "chapter_082.txt",
+        "chapter_083.txt",
+        "chapter_084.txt"
+      ],
+      "sha256": "146d5d07bdd2a12f872fb57bc238606e49d15878c0be6356ca3dab03c1e1cd52"
+    },
+    {
+      "number": 29,
+      "file": "chapter_029.txt",
+      "source_start": 85,
+      "source_end": 87,
+      "source_files": [
+        "chapter_085.txt",
+        "chapter_086.txt",
+        "chapter_087.txt"
+      ],
+      "sha256": "ec4a23f05fcac691500a7bf7fce692588a4e649ca33b2b86fff0b877f852c44f"
+    },
+    {
+      "number": 30,
+      "file": "chapter_030.txt",
+      "source_start": 88,
+      "source_end": 90,
+      "source_files": [
+        "chapter_088.txt",
+        "chapter_089.txt",
+        "chapter_090.txt"
+      ],
+      "sha256": "b1cb10719836086c279b0858390915effec6279b39934150cdf6b82b9a56f134"
+    },
+    {
+      "number": 31,
+      "file": "chapter_031.txt",
+      "source_start": 91,
+      "source_end": 93,
+      "source_files": [
+        "chapter_091.txt",
+        "chapter_092.txt",
+        "chapter_093.txt"
+      ],
+      "sha256": "c8642c8842c3d92a98c2c415593dcf3caec6e3b1f0f70e9b26abbc59c025044a"
+    },
+    {
+      "number": 32,
+      "file": "chapter_032.txt",
+      "source_start": 94,
+      "source_end": 96,
+      "source_files": [
+        "chapter_094.txt",
+        "chapter_095.txt",
+        "chapter_096.txt"
+      ],
+      "sha256": "59b72d833259a10395a451ff133e582dd49838110e98a02615a2f45e661ff2f1"
+    },
+    {
+      "number": 33,
+      "file": "chapter_033.txt",
+      "source_start": 97,
+      "source_end": 99,
+      "source_files": [
+        "chapter_097.txt",
+        "chapter_098.txt",
+        "chapter_099.txt"
+      ],
+      "sha256": "838bc46c9f862e5f62ed7a70899f429ddf7f49c38dcd4e602161a56410763b0c"
+    },
+    {
+      "number": 34,
+      "file": "chapter_034.txt",
+      "source_start": 100,
+      "source_end": 102,
+      "source_files": [
+        "chapter_100.txt",
+        "chapter_101.txt",
+        "chapter_102.txt"
+      ],
+      "sha256": "c454b90c17da7ac4f517793dbdd62c24d350bfbf1ed24de04c7f0b0fd8e71b05"
+    },
+    {
+      "number": 35,
+      "file": "chapter_035.txt",
+      "source_start": 103,
+      "source_end": 105,
+      "source_files": [
+        "chapter_103.txt",
+        "chapter_104.txt",
+        "chapter_105.txt"
+      ],
+      "sha256": "25b5708e103092ff0c0da86f7664152e8d417e0b90af790499c4af35b67188e2"
+    },
+    {
+      "number": 36,
+      "file": "chapter_036.txt",
+      "source_start": 106,
+      "source_end": 108,
+      "source_files": [
+        "chapter_106.txt",
+        "chapter_107.txt",
+        "chapter_108.txt"
+      ],
+      "sha256": "14f21cf32739391ea8c90211e15e8efba365418804816ccd819ccee7bf3da529"
+    },
+    {
+      "number": 37,
+      "file": "chapter_037.txt",
+      "source_start": 109,
+      "source_end": 111,
+      "source_files": [
+        "chapter_109.txt",
+        "chapter_110.txt",
+        "chapter_111.txt"
+      ],
+      "sha256": "9bd306c8fe1fbea5e61b00d586de86f50ff5c71a6bb751a7f292591d55c4f193"
+    },
+    {
+      "number": 38,
+      "file": "chapter_038.txt",
+      "source_start": 112,
+      "source_end": 114,
+      "source_files": [
+        "chapter_112.txt",
+        "chapter_113.txt",
+        "chapter_114.txt"
+      ],
+      "sha256": "a2da378062a9823df6f334df531e27522d9d44d8cedb58747f7dcab51133b2e2"
+    },
+    {
+      "number": 39,
+      "file": "chapter_039.txt",
+      "source_start": 115,
+      "source_end": 117,
+      "source_files": [
+        "chapter_115.txt",
+        "chapter_116.txt",
+        "chapter_117.txt"
+      ],
+      "sha256": "d3147506d2c14fbdabdb8bf9b54eed802b5a3fa3ed1070f22609ebc99812ff5b"
+    },
+    {
+      "number": 40,
+      "file": "chapter_040.txt",
+      "source_start": 118,
+      "source_end": 120,
+      "source_files": [
+        "chapter_118.txt",
+        "chapter_119.txt",
+        "chapter_120.txt"
+      ],
+      "sha256": "9bfeeb6fe390c3a14d8db011b6ed0687db277b34e3224a2c8c94aa80470f8271"
+    }
+  ]
+}

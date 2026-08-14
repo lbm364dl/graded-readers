@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff337-777d-7aa3-88d1-81681b6e26ce"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.91,\"naturalness\":0.95,\"readability\":0.95,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"将原文中由荀彧分析、曹操认可的袁绍军内部问题，简化为曹操看完檄文后马上看出，归因略有偏移。\"],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":27693,"cached_input_tokens":8960,"cache_write_input_tokens":0,"output_tokens":620,"reasoning_output_tokens":516}}

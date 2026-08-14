@@ -1,0 +1,14 @@
+{
+  "status": "blocked",
+  "scenes": 1,
+  "chapter_cjk": 676,
+  "scene_verdicts": {
+    "scene_01": "revise"
+  },
+  "scene_attempts": {
+    "scene_01": 4
+  },
+  "unresolved_scenes": [
+    "scene_01"
+  ]
+}

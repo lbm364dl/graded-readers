@@ -1,47 +1,226 @@
 {
-  "status": "running",
+  "status": "blocked",
+  "level": "hsk6",
+  "chapters": 120,
+  "pairs": 119,
+  "initial_failed_pairs": [
+    60,
+    72,
+    84,
+    114
+  ],
+  "remaining_chapters": [
+    34,
+    71
+  ],
   "rounds": [
     {
       "round": 1,
       "implicated": [
-        27,
-        46,
-        61,
-        95
+        60,
+        73,
+        85,
+        115
       ],
       "source_pass": {
-        "27": true,
-        "46": true,
-        "61": true,
-        "95": true
+        "60": true,
+        "73": false,
+        "85": true,
+        "115": true
       },
       "promoted": [
-        27,
-        46
+        60,
+        85,
+        115
       ],
       "promotion_records": {
-        "27": {
-          "promoted_at": "2026-08-07T11:44:17.861878+00:00",
-          "candidate_sha256": "04418bd5babf2e00bf242da257b2fd46b2fa358ed01e9971c1f3512d35a5b95c",
-          "original_backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_027-hsk6/chapter.pre-continuity.txt",
-          "original_sha256": "2557b4953234782d3c9b3a7167e9da2d7b11514a10b24c3abf710de43bcc0abc",
+        "60": {
+          "promoted_at": "2026-08-11T21:12:02.268098+00:00",
+          "candidate_sha256": "613e942f59f148e8d87e539acc2bbc4c1b12d0a4ad7dd2f451a99949719a1eef",
+          "original_backup": "/home/catalin/graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_060-hsk6/chapter.pre-continuity.txt",
+          "original_sha256": "3ff91e24a7649a9c9e072ac5e106da07d3d4f539fd955f5965e11cce8fe7b2e5",
           "annotations_invalidated": [],
           "annotation_rerun_required": true
         },
-        "46": {
-          "promoted_at": "2026-08-07T11:44:17.862517+00:00",
-          "candidate_sha256": "7a04bc7422587e50cf993cd05a3e3ffc577768c90d2a54f9688dd0d8216f26c5",
-          "original_backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_046-hsk6/chapter.pre-continuity.txt",
-          "original_sha256": "2e4ed80efa85f5906bf2616b5db32f59765fb499dc1b54aa388f7a6de859946b",
+        "85": {
+          "promoted_at": "2026-08-11T21:12:02.269255+00:00",
+          "candidate_sha256": "2ea816650a97cf17c5c9473f74b4995d1ee3602193c05d3c2fcb6d57f57164ce",
+          "original_backup": "/home/catalin/graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_085-hsk6/chapter.pre-continuity.txt",
+          "original_sha256": "b41f97c322dd29af319684683f1b5c137d2c8b62c54fcf3a1494745bb0b28fd4",
+          "annotations_invalidated": [],
+          "annotation_rerun_required": true
+        },
+        "115": {
+          "promoted_at": "2026-08-11T21:12:02.270230+00:00",
+          "candidate_sha256": "c029f8996055609f522262076a26887f958f8692fc663377a841b9f44cac82f0",
+          "original_backup": "/home/catalin/graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_115-hsk6/chapter.pre-continuity.txt",
+          "original_sha256": "8c2a7c198a0ceb9f92ed033d14a07c3be9895bbac38903e8a33897cd89c45373",
           "annotations_invalidated": [],
           "annotation_rerun_required": true
         }
       },
-      "remaining_in_affected_pairs": [
-        61,
-        96
-      ]
+      "remaining_in_affected_pairs": []
+    },
+    {
+      "round": 2,
+      "implicated": [
+        16,
+        78,
+        100,
+        101
+      ],
+      "source_pass": {
+        "16": true,
+        "78": false,
+        "100": false,
+        "101": true
+      },
+      "promoted": [
+        16,
+        101
+      ],
+      "promotion_records": {
+        "16": {
+          "promoted_at": "2026-08-11T21:44:37.700973+00:00",
+          "candidate_sha256": "f43600300826a8d03e8f5be50841abefb4deb50e443fe9646b42c7b4b42db0e4",
+          "original_backup": "/home/catalin/graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_016-hsk6/chapter.pre-continuity.txt",
+          "original_sha256": "87d080496c95724ebcbfe9d5abce96605d01ce98704ebfa0ce909bfda903a647",
+          "annotations_invalidated": [],
+          "annotation_rerun_required": true
+        },
+        "101": {
+          "promoted_at": "2026-08-11T21:44:37.701637+00:00",
+          "candidate_sha256": "cdbc3ef80bb6534faf293d5e57c1ae8a9eccc4ea89644008d700795218844228",
+          "original_backup": "/home/catalin/graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_101-hsk6/chapter.pre-continuity.txt",
+          "original_sha256": "d7e8da127ea2f93bd79dbd1f5fee570113e408fe932ba76c05c6906893e9dcdc",
+          "annotations_invalidated": [],
+          "annotation_rerun_required": true
+        }
+      },
+      "remaining_in_affected_pairs": []
     }
   ],
-  "updated_at": "2026-08-07T12:13:24.967080+00:00"
+  "chapter_cjk": [
+    1359,
+    1356,
+    1166,
+    1188,
+    1305,
+    1118,
+    1515,
+    1575,
+    1328,
+    1285,
+    1339,
+    1270,
+    1372,
+    1127,
+    1100,
+    1305,
+    1352,
+    1390,
+    1201,
+    1269,
+    1328,
+    1451,
+    1157,
+    1147,
+    1171,
+    1264,
+    1193,
+    1068,
+    1258,
+    1376,
+    1484,
+    1382,
+    1448,
+    1265,
+    1361,
+    1172,
+    1143,
+    1409,
+    1463,
+    1281,
+    1300,
+    1577,
+    1023,
+    1403,
+    1079,
+    1175,
+    1227,
+    1298,
+    1046,
+    1230,
+    1256,
+    1035,
+    1277,
+    1484,
+    1373,
+    1312,
+    1476,
+    1418,
+    1287,
+    1273,
+    1141,
+    1111,
+    1255,
+    1054,
+    1119,
+    1297,
+    1239,
+    1142,
+    1216,
+    1067,
+    1097,
+    1366,
+    1017,
+    1305,
+    1259,
+    1323,
+    1271,
+    1215,
+    1391,
+    1199,
+    1125,
+    1282,
+    1037,
+    1172,
+    1148,
+    1505,
+    1274,
+    1113,
+    1171,
+    1147,
+    1301,
+    1101,
+    1054,
+    1255,
+    1438,
+    1110,
+    1233,
+    1148,
+    1389,
+    1040,
+    1037,
+    1356,
+    1336,
+    1425,
+    1322,
+    1262,
+    1341,
+    1330,
+    1171,
+    1309,
+    1207,
+    1196,
+    1276,
+    1184,
+    1201,
+    1411,
+    1184,
+    1205,
+    1296,
+    1128
+  ],
+  "updated_at": "2026-08-11T22:08:38.976111+00:00"
 }

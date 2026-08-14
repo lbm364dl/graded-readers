@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff3b0-8060-7623-9cb1-45eeaed7fbae"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.94,\"naturalness\":0.91,\"readability\":0.92,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"将孔明的诱敌反击概括为刘备“先装败”，原文主要表现为刘封败退后蜀军反击，计划性表述略有加强。\",\"“赵云夜里只击鼓放炮”混淆了孔明放号炮、赵云率军击鼓的分工，但不影响主要情节。\"],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":28458,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":1532,"reasoning_output_tokens":1392}}

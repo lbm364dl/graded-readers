@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff31d-a52f-73e0-b6f4-78bd8d4823e4"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.96,\"naturalness\":0.97,\"readability\":0.97,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"“三军暂时分开”略显不准确，原文是袁、刘、吕三方军队随后各自撤离。\"],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":28571,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":848,"reasoning_output_tokens":756}}

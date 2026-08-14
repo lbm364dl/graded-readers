@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff36f-c889-7d42-a7de-c5e6df89a7a9"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.94,\"naturalness\":0.96,\"readability\":0.96,\"omissions\":[],\"unsupported_additions\":[\"将船上的草束概括为“草人”，原文并未设置草人形象。\"],\"distortions\":[],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":25652,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":834,"reasoning_output_tokens":752}}

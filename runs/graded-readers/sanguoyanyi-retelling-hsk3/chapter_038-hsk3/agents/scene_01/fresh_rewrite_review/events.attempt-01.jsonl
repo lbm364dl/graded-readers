@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff567-4c1c-7243-9c2a-cd5bed2f68c6"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.92,\"naturalness\":0.9,\"readability\":0.9,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"将姜维在得知司马昭班师救援后决定撤军，压缩成见到邓艾援兵便立即后退，因果略有简化。\"],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":25959,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":1616,"reasoning_output_tokens":1516}}

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff3a1-e681-7ed2-a28a-a21fc9672487"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.92,\"naturalness\":0.9,\"readability\":0.9,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"将李恢说成由刘备派去劝降马超；原文是李恢主动请命，诸葛亮派他前往。\"],\"language_problems\":[\"“马匹被杀倒”表达生硬，应改为“战马纷纷倒地”或“马匹尽被杀倒”。\",\"篇幅明显超过750字目标的约70%—130%范围，压缩不足。\"],\"verdict\":\"revise\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":30454,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":1180,"reasoning_output_tokens":1034}}

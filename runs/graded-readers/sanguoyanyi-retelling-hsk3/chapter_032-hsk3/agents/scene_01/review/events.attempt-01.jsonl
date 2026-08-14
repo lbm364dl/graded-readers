@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff3d4-2ce9-7bc2-9281-8be8931c0e4e"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.96,\"naturalness\":0.94,\"readability\":0.95,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[],\"language_problems\":[\"篇幅略可能超过750字目标的130%上限\",\"“准备反对魏国”不如“准备起兵反魏”自然\",\"“保住了粮草和士兵”搭配略显生硬\"],\"verdict\":\"revise\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":29898,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":1143,"reasoning_output_tokens":1034}}

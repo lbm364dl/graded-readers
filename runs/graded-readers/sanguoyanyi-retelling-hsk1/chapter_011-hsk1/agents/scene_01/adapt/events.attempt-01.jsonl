@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff300-effa-7840-bfd9-c9f682f5f2e7"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"text\":\"刘备在东吴住了很久。赵云打开第二个锦囊，假装很急地说：“曹操的大军快到荆州了，主公必须马上回去！”刘备见了孙夫人，哭着说：“我想家，也不能丢下荆州。可是我若回去，又舍不得你。”孙夫人听后很难过，决定跟他一起走。\\n\\n过年那天，孙权喝醉了。刘备和孙夫人借口去江边祭祖，带着赵云和士兵悄悄出城。孙权醒来后，马上派人追他们。周瑜也早在前面的路上放了兵。\\n\\n赵云打开第三个锦囊。刘备对孙夫人说：“这场婚事本来就是一个办法，他们想把我留在这里，再用我换走荆州。现在前后都有兵，只有你能救我们。”孙夫人听了大怒，走到追兵面前说：“刘备是我的丈夫，谁也不许拦！”追兵只好让路。\\n\\n孔明早已在江边准备好船，接他们回荆州。周瑜追来，却遇到关羽、黄忠、魏延的伏兵，吴军大败，只好回去。\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":36927,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":1351,"reasoning_output_tokens":1034}}

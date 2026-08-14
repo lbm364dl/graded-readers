@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff500-ff2d-7931-b9ca-08071c472ece"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.88,\"naturalness\":0.84,\"readability\":0.8,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"将皇帝的密诏称为“假命令”，与原文设定不符；它是王允等利用皇帝名义发出的诏令，并非伪造。\"],\"language_problems\":[\"篇幅略超出500字目标的约130%上限。\",\"“王允走来，故意说董卓抢走了他的爱人，他不能一直受董卓欺负”指代略含混，且“爱人”不如“女儿”准确。\"],\"verdict\":\"revise\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":33966,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":1072,"reasoning_output_tokens":906}}

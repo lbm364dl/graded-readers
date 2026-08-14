@@ -1,1 +1,1 @@
-{"verdict":"pass","issues":[]}
+{"verdict":"revise","issues":[{"chapter_offset":0,"category":"identity","explanation":"Chapter 30 says 张郃、高览投降曹操, but Chapter 31 then uses 高览 as a Yuan Shao general who attacks Liu Bei and is killed by Zhao Yun. This is a direct cross-chapter identity contradiction.","suggested_fix":"Either omit 高览's defection in Chapter 30, or revise Chapter 31 so the attacker is another Yuan general; to preserve the source, omit 高览's defection."}]}

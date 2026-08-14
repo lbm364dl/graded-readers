@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff52e-82a7-7360-8974-126fe6d811ef"}
+{"type":"turn.started"}
+{"type":"error","message":"Selected model is at capacity. Please try a different model."}
+{"type":"turn.failed","error":{"message":"Selected model is at capacity. Please try a different model."}}

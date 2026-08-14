@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff525-c769-7a40-b0f6-d694578a6944"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.94,\"naturalness\":0.95,\"readability\":0.95,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"“关羽一边下棋，一边忍住剧痛”略有偏差：原文强调关羽刮骨时谈笑弈棋、毫无痛苦之色。\"],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":27145,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":1135,"reasoning_output_tokens":1034}}

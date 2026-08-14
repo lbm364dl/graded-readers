@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff54b-0388-71f1-a58d-c345346e372f"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.96,\"naturalness\":0.97,\"readability\":0.97,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"“照看贾范、伦直的后人”弱化了原文“荣其子孙”的褒奖含义，但不影响主线。\"],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":28506,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":889,"reasoning_output_tokens":794}}

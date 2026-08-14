@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff2fa-484e-7181-9914-88ef4e920fb1"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"text\":\"刘备到襄阳参加酒席。蔡瑁早已想害他，还在城里安排了人。大家喝酒时，伊籍拿着酒杯走到刘备身边，小声说：“东门、南门、北门都有蔡瑁的人，只有西门没有。你快从那里走！”刘备一听，马上放下酒杯，跑到后面牵出自己的马。那匹马叫的卢。他顾不上带别人，骑马冲出西门。蔡瑁马上带人追来。刘备跑了很远，前面却出现一条大溪，名叫檀溪。水很深，路也断了。回头一看，追他的人已经很近。刘备没有别的路，只好让马跳进水里。马的前脚一下陷进水中，刘备大叫：“的卢，快走！”的卢用力从水里跳起，一下跳到西边。刘备过了溪，终于逃过了追杀。\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":37829,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":995,"reasoning_output_tokens":750}}

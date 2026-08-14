@@ -9,7 +9,7 @@ from pipeline.audit_compact_omissions import (
     discover_risky_scenes, expand_run_dirs,
     enforce_deterministic_material_findings,
     parser, promote_passed_candidate, validate_classification,
-    validate_finding_classification,
+    validate_finding_classification, resolve_manifest_source,
 )
 from pipeline.agent_harness import digest
 
@@ -62,6 +62,18 @@ def test_discovers_every_passed_nonempty_omission(tmp_path):
     empty_root.mkdir()
     safe = make_run(empty_root, decision=False, omissions=["省略"])
     assert [item.scene_id for item in discover_risky_scenes([safe])] == ["scene_01"]
+
+
+def test_resolves_relocated_manifest_source(monkeypatch, tmp_path):
+    source = tmp_path / "books" / "chinese" / "sanguoyanyi" / "chapter_001.txt"
+    source.parent.mkdir(parents=True)
+    source.write_text("刘备", encoding="utf-8")
+    monkeypatch.setattr("pipeline.audit_compact_omissions.ROOT", tmp_path)
+    manifest = {
+        "source": "/old/checkout/books/chinese/sanguoyanyi/chapter_001.txt",
+        "source_sha256": digest("刘备"),
+    }
+    assert resolve_manifest_source(manifest) == source
 
 
 def test_does_not_discover_rejected_or_empty_omission_reviews(tmp_path):
