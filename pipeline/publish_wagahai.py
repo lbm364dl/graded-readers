@@ -23,7 +23,17 @@ from pipeline.build_aozora_epub import (
     AozoraConversionError,
     verify_manifest as verify_source_manifest,
 )
-from pipeline.japanese_agent_harness import japanese_char_count, japanese_segment_issue
+from pipeline.japanese_agent_harness import (
+    is_numeric_comma_construction,
+    japanese_char_count,
+    japanese_form_step_issues,
+    japanese_learner_segmentation_issues,
+    japanese_overlay_policy_issue,
+    japanese_required_overlay_issues,
+    japanese_segment_issue,
+)
+from pipeline.japanese_dictionary_links import dictionary_link_issue
+from pipeline.japanese_readability import level_diagnostics
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -118,29 +128,96 @@ def _review_verdicts(report: dict[str, Any], run_dir: Path) -> dict[str, Any]:
 
 
 _KANA_READING = re.compile(r"^[\u3040-\u30ffー・\s]+$")
-_SEGMENT_TYPES = {"word", "auxiliary", "particle", "name", "idiom", "punctuation"}
+_SEGMENT_TYPES = {
+    "word",
+    "grammar",
+    "auxiliary",
+    "particle",
+    "name",
+    "idiom",
+    "punctuation",
+}
 
 
-def _canonical_segments(raw: list[dict[str, Any]], path: Path) -> list[dict[str, str]]:
+def _canonical_segments(raw: list[dict[str, Any]], path: Path) -> list[dict[str, Any]]:
     """Validate the final Japanese harness segment schema exactly."""
-    result: list[dict[str, str]] = []
+    result: list[dict[str, Any]] = []
     for index, segment in enumerate(raw):
         value = dict(segment)
-        expected = {"surface", "type", "lemma", "kana", "meaning_en"}
-        if set(value) != expected or any(not isinstance(value[key], str) for key in expected):
+        has_authored_form_steps = "form_steps" in value
+        has_authored_dictionary_link = (
+            "dictionary_key" in value
+            and "dictionary_definition_en" in value
+        )
+        expected = {
+            "surface", "type", "lemma", "surface_kana", "lemma_kana",
+            "part_of_speech", "conjugation_form", "meaning_en",
+            "story_role", "story_importance_en",
+        }
+        optional = {
+            "grammar_candidate_key", "dictionary_key",
+            "dictionary_definition_en", "form_steps",
+        }
+        if not set(value).issubset(expected | optional) or not expected.issubset(value):
+            raise PublicationError(f"annotation segment {index} violates schema: {path}")
+        value.setdefault("grammar_candidate_key", "")
+        value.setdefault("dictionary_key", "")
+        value.setdefault("dictionary_definition_en", "")
+        value.setdefault("form_steps", [])
+        string_fields = (expected | optional) - {"form_steps"}
+        if any(not isinstance(value[key], str) for key in string_fields):
             raise PublicationError(f"annotation segment {index} violates schema: {path}")
         if not value["surface"] or value["type"] not in _SEGMENT_TYPES:
             raise PublicationError(f"annotation segment {index} violates schema: {path}")
         if value["type"] == "punctuation":
-            if any(value[key] for key in ("lemma", "kana", "meaning_en")):
+            if any(value[key] for key in string_fields - {"surface", "type", "story_role"}):
                 raise PublicationError(f"punctuation annotation must have empty fields: {path}")
+            if value["form_steps"] != []:
+                raise PublicationError(f"punctuation annotation has form steps: {path}")
+            if value["story_role"] != "none":
+                raise PublicationError(f"punctuation annotation has a story role: {path}")
         else:
-            if not all(value[key].strip() for key in ("lemma", "kana", "meaning_en")):
+            required = (
+                "lemma", "surface_kana", "lemma_kana", "part_of_speech",
+                "conjugation_form", "meaning_en",
+            )
+            if not all(value[key].strip() for key in required):
                 raise PublicationError(f"annotation fields must be nonempty: {path}")
-            if not _KANA_READING.fullmatch(value["kana"]):
-                raise PublicationError(f"annotation reading is not kana-only: {path}")
+            if not _KANA_READING.fullmatch(value["surface_kana"]):
+                raise PublicationError(f"annotation surface reading is not kana-only: {path}")
+            if not _KANA_READING.fullmatch(value["lemma_kana"]):
+                raise PublicationError(f"annotation lemma reading is not kana-only: {path}")
+            if value["grammar_candidate_key"] and not re.fullmatch(
+                r"[a-z][a-z0-9_.-]*", value["grammar_candidate_key"]
+            ):
+                raise PublicationError(f"annotation grammar key is invalid: {path}")
+            if value["story_role"] not in {"none", "name", "story_term"}:
+                raise PublicationError(f"annotation story role is invalid: {path}")
+            if value["story_role"] == "story_term" and not value["story_importance_en"].strip():
+                raise PublicationError(f"story term lacks importance: {path}")
+            if value["story_role"] == "story_term" and value["type"] not in {"word", "idiom"}:
+                raise PublicationError(f"functional segment cannot be story vocabulary: {path}")
             if any(mark in value["surface"] for mark in "。！？、\n"):
                 raise PublicationError(f"semantic annotation contains punctuation: {path}")
+            link_issue = dictionary_link_issue(
+                lemma=value["lemma"], lemma_kana=value["lemma_kana"],
+                key=value["dictionary_key"],
+                definition=value["dictionary_definition_en"],
+                functional=value["type"] in {"grammar", "auxiliary", "particle"},
+                require_available=(
+                    has_authored_dictionary_link
+                    and value["type"] in {"word", "idiom"}
+                ),
+            )
+            if link_issue:
+                raise PublicationError(
+                    f"annotation segment {index} dictionary link: {link_issue}: {path}"
+                )
+            form_issues = japanese_form_step_issues(value) if has_authored_form_steps else []
+            if form_issues:
+                raise PublicationError(
+                    f"annotation segment {index} form chain: {form_issues}: {path}"
+                )
             if value["type"] in {"word", "auxiliary", "particle"} and len(value["surface"]) > 12:
                 raise PublicationError(f"ordinary annotation is clause-sized: {path}")
             issue = japanese_segment_issue(value["surface"], value["type"])
@@ -191,48 +268,17 @@ def _materiality_evidence(report: dict[str, Any], run_dir: Path) -> dict[str, An
             "policy": "literary/story vocabulary is diagnostic, not a hard failure"}
 
 
-def _level_diagnostics(segments: list[dict[str, str]], level: str) -> dict[str, Any]:
-    """Informational vocabulary diagnostics, excluding names and story terms."""
-    level_number = {"n5": 1, "n4": 2, "n3": 3, "n2": 4, "n1": 5}[level]
-    allowed: set[str] = {"吾輩", "猫", "主人", "迷亭", "寒月", "苦沙弥"}
-    vocabulary: dict[str, int] = {}
-    data = ROOT / "data" / "japanese" / "words"
-    for index, label in enumerate(("n5", "n4", "n3", "n2", "n1"), 1):
-        path = data / f"{label}_words.csv"
-        if not path.is_file():
-            raise PublicationError(f"JLPT vocabulary data missing: {path}")
-        import csv
-        with path.open(encoding="utf-8", newline="") as handle:
-            for row in csv.DictReader(handle):
-                vocabulary.setdefault(row["word"], index)
-    considered = []
-    above = []
-    for segment in segments:
-        if segment["type"] in {"punctuation", "particle", "auxiliary", "name"}:
-            continue
-        lemma = segment["lemma"]
-        if lemma in allowed:
-            continue
-        considered.append(lemma)
-        if vocabulary.get(lemma, 99) > level_number:
-            above.append(lemma)
-    return {
-        "policy": "diagnostic_only",
-        "tokens_considered": len(considered),
-        "above_level_tokens": len(above),
-        "above_level_ratio": round(len(above) / len(considered), 4) if considered else 0,
-        "sample": list(dict.fromkeys(above))[:30],
-        "excluded": "particles, auxiliaries, names, and story allowlist",
-    }
-
-
 def _grammar_overlays(raw: Any, text: str, segment_count: int, path: Path) -> list[dict[str, Any]]:
     if not isinstance(raw, list) or any(not isinstance(item, dict) for item in raw):
         raise PublicationError(f"grammar_overlays must be an array of objects: {path}")
     result: list[dict[str, Any]] = []
     for index, item in enumerate(raw):
         overlay = dict(item)
-        expected = {"start", "end", "surface", "grammar", "meaning_en"}
+        expected = {
+            "start", "end", "surface", "grammar_candidate_key", "pattern",
+            "meaning_en", "head_lemma", "head_lemma_kana", "form_label",
+            "explanation_en", "components",
+        }
         if set(overlay) != expected:
             raise PublicationError(f"grammar overlay {index} violates schema: {path}")
         start, end = overlay["start"], overlay["end"]
@@ -240,9 +286,105 @@ def _grammar_overlays(raw: Any, text: str, segment_count: int, path: Path) -> li
             raise PublicationError(f"grammar overlay {index} character span is invalid: {path}")
         if overlay["surface"] != text[start:end]:
             raise PublicationError(f"grammar overlay {index} surface/span mismatch: {path}")
+        required_strings = (
+            "surface", "grammar_candidate_key", "pattern", "meaning_en",
+            "head_lemma", "head_lemma_kana", "form_label", "explanation_en",
+        )
         if not all(isinstance(overlay[key], str) and overlay[key].strip()
-                   for key in ("surface", "grammar", "meaning_en")):
+                   for key in required_strings):
             raise PublicationError(f"grammar overlay {index} has empty explanation: {path}")
+        if not re.fullmatch(r"[a-z][a-z0-9_.-]*", overlay["grammar_candidate_key"]):
+            raise PublicationError(f"grammar overlay {index} has invalid candidate key: {path}")
+        if not _KANA_READING.fullmatch(overlay["head_lemma_kana"]):
+            raise PublicationError(f"grammar overlay {index} has invalid head reading: {path}")
+        components = overlay["components"]
+        if not isinstance(components, list) or not components:
+            raise PublicationError(f"grammar overlay {index} lacks components: {path}")
+        cursor = 0
+        numeric_comma = is_numeric_comma_construction(overlay["surface"])
+        for component_index, component in enumerate(components):
+            required_component = {
+                "start", "end", "surface", "lemma", "lemma_kana", "function_en",
+            }
+            optional_component = {
+                "lookup_kind", "dictionary_key", "dictionary_definition_en",
+            }
+            if (
+                not isinstance(component, dict)
+                or not required_component.issubset(component)
+                or not set(component).issubset(required_component | optional_component)
+            ):
+                raise PublicationError(
+                    f"grammar overlay {index} component {component_index} violates schema: {path}"
+                )
+            has_authored_dictionary_link = (
+                "dictionary_key" in component
+                and "dictionary_definition_en" in component
+            )
+            component.setdefault("lookup_kind", "none")
+            component.setdefault("dictionary_key", "")
+            component.setdefault("dictionary_definition_en", "")
+            component_start, component_end = component["start"], component["end"]
+            if (
+                not isinstance(component_start, int)
+                or not isinstance(component_end, int)
+                or (
+                    component_start != cursor
+                    and not (
+                        numeric_comma
+                        and component_start > cursor
+                        and set(overlay["surface"][cursor:component_start]) == {"、"}
+                    )
+                )
+                or not component_start < component_end <= len(overlay["surface"])
+                or overlay["surface"][component_start:component_end] != component["surface"]
+                or any(not isinstance(component[field], str) or not component[field].strip()
+                       for field in ("surface", "lemma", "lemma_kana", "function_en"))
+                or (
+                    not _KANA_READING.fullmatch(component["lemma_kana"])
+                    and not (
+                        numeric_comma
+                        and component["surface"] == "、"
+                        and component["lemma"] == "、"
+                        and component["lemma_kana"] == "、"
+                    )
+                )
+            ):
+                raise PublicationError(
+                    f"grammar overlay {index} component {component_index} is invalid: {path}"
+                )
+            if component["lookup_kind"] not in {"lexical", "grammar", "none"}:
+                raise PublicationError(
+                    f"grammar overlay {index} component {component_index} has invalid lookup kind: {path}"
+                )
+            if not isinstance(component["dictionary_key"], str) or not isinstance(
+                component["dictionary_definition_en"], str
+            ):
+                raise PublicationError(
+                    f"grammar overlay {index} component {component_index} has invalid dictionary metadata: {path}"
+                )
+            link_issue = dictionary_link_issue(
+                lemma=component["lemma"], lemma_kana=component["lemma_kana"],
+                key=component["dictionary_key"],
+                definition=component["dictionary_definition_en"],
+                functional=component["lookup_kind"] != "lexical",
+                require_available=(
+                    has_authored_dictionary_link
+                    and component["lookup_kind"] == "lexical"
+                ),
+            )
+            if link_issue:
+                raise PublicationError(
+                    f"grammar overlay {index} component {component_index} dictionary link: "
+                    f"{link_issue}: {path}"
+                )
+            cursor = component_end
+        if cursor != len(overlay["surface"]) and not (
+            numeric_comma
+            and overlay["surface"][cursor:]
+            and set(overlay["surface"][cursor:]) == {"、"}
+        ):
+            raise PublicationError(f"grammar overlay {index} components do not reconstruct: {path}")
         result.append(overlay)
     return result
 
@@ -367,7 +509,44 @@ def _audit_chapter(
                 overlay["end"] -= heading_prefix
                 overlays[overlay_index] = overlay
     overlays = _grammar_overlays(overlays, text, len(segments), reader_path)
+    if segments:
+        segmentation_issues = japanese_learner_segmentation_issues(segments)
+        if segmentation_issues:
+            raise PublicationError(
+                "learner-facing Japanese segmentation failed: "
+                f"{reader_path}: {segmentation_issues[:4]}"
+            )
+        overlay_issues = [
+            {
+                "surface": str(overlay.get("surface", "")),
+                "message": issue,
+            }
+            for overlay in overlays
+            if (issue := japanese_overlay_policy_issue(overlay))
+        ]
+        if overlay_issues:
+            raise PublicationError(
+                "learner-facing Japanese grammar overlay failed: "
+                f"{reader_path}: {overlay_issues[:4]}"
+            )
+        required_overlay_issues = japanese_required_overlay_issues(
+            segments, overlays,
+        )
+        if required_overlay_issues:
+            raise PublicationError(
+                "required learner-facing Japanese grammar overlay is missing: "
+                f"{reader_path}: {required_overlay_issues[:4]}"
+            )
     count = _character_count(text)
+    diagnostics = (
+        level_diagnostics(segments, level, overlays) if segments else None
+    )
+    if diagnostics is not None and not diagnostics["passes"]:
+        raise PublicationError(
+            f"{level.upper()} vocabulary coverage exceeds the publish limit: "
+            f"{diagnostics['above_level_ratio']:.1%} > "
+            f"{diagnostics['maximum_above_level_ratio']:.1%}: {run_dir}"
+        )
     return {
         "number": number,
         "title": title,
@@ -376,7 +555,7 @@ def _audit_chapter(
         "grammar_overlays": overlays,
         "annotation_audit": annotation_audit,
         "materiality_audit": materiality_audit,
-        "level_diagnostics": _level_diagnostics(segments, level) if segments else None,
+        "level_diagnostics": diagnostics,
         "characters": count,
         "source": {
             "file": source["file"],

@@ -21,6 +21,7 @@ from typing import Any
 
 from pipeline.agent_harness import CodexRunner, ROOT, SCHEMAS, cjk_count, utc_now
 from pipeline.adaptation_policy import policy_for
+from pipeline.chinese_readability import hsk1_prompt_guidance, validate_beginner_chinese
 
 
 CHAPTER_BACKUP = "chapter.pre-continuity.txt"
@@ -53,6 +54,14 @@ def promote_continuity_candidate(run_dir: Path, candidate: str) -> dict[str, Any
     if not isinstance(report, dict):
         raise ValueError(f"expected report object: {report_path}")
     manifest_before = manifest_path.read_bytes()
+    manifest = json.loads(manifest_before)
+    level = str(manifest.get("level") or run_dir.name.rsplit("-", 1)[-1])
+    readability = validate_beginner_chinese(candidate, level)
+    if not readability["passes"]:
+        raise ValueError(
+            f"refusing to promote {level} continuity candidate "
+            "which fails the word/sentence readability gate"
+        )
 
     chapter_backup = run_dir / CHAPTER_BACKUP
     report_backup = run_dir / REPORT_BACKUP
@@ -191,12 +200,16 @@ ACCEPTED CHAPTER {b.number}:
         chapter = self.chapters[index]
         before = texts[index - 1] if index else "(none: this is the first chapter)"
         after = texts[index + 1] if index + 1 < len(texts) else "(none: this is the last chapter)"
+        beginner_guidance = (
+            hsk1_prompt_guidance() if self.args.level == "hsk1" else ""
+        )
         prompt = f"""Return only JSON matching the adaptation schema, with the
 complete revised chapter in `text`. Repair only the concrete continuity findings.
 Ground every fact in VERBATIM SOURCE. Preserve the accepted chapter's good prose,
 {self.args.level.upper()} readability, approximate length, and all unaffected
 events. Neighbor text is context, never authority for changing source facts.
 Use simplified Chinese. Do not add headings or commentary.
+{beginner_guidance}
 
 VERBATIM SOURCE CHAPTER {chapter.number}:
 {chapter.source}
@@ -222,6 +235,9 @@ FINDINGS:
     async def source_review(self, index: int, candidate: str, round_no: int) -> dict[str, Any]:
         chapter = self.chapters[index]
         policy = policy_for(self.args.level)
+        beginner_guidance = (
+            hsk1_prompt_guidance() if self.args.level == "hsk1" else ""
+        )
         prompt = f"""Return only JSON matching the schema. Compare CANDIDATE
 directly against VERBATIM ORIGINAL. It is a compact modern-Chinese adaptation,
 Editorial scope: {policy.scope}
@@ -231,17 +247,29 @@ distortions, broken causal links within the selected retelling, awkward Chinese,
 traditional-only characters. Set verdict=pass only when source_fidelity,
 naturalness, and readability are all at least 8 and there is no material issue.
 Score fidelity by whether retained claims are true, not by source coverage.
+{beginner_guidance}
 
 ORIGINAL:
 {chapter.source}
 
 CANDIDATE:
 {candidate}"""
-        return await self.runner.call(
+        result = await self.runner.call(
             f"round_{round_no:02d}/chapter_{chapter.number:03d}/source_review", prompt,
             SCHEMAS / "source-review.schema.json", self.args.review_effort,
             refresh=self.args.refresh,
         )
+        readability = validate_beginner_chinese(candidate, self.args.level)
+        if not readability["passes"]:
+            result = dict(result)
+            result["verdict"] = "revise"
+            result.setdefault("language_problems", []).append(
+                "mechanical HSK1 word/sentence readability gate failed"
+            )
+            result["harness_decision"] = (
+                "rejected_by_mechanical_hsk1_word_sentence_gate"
+            )
+        return result
 
     def write_report(self, payload: dict[str, Any]) -> None:
         payload = {**payload, "updated_at": utc_now()}
@@ -320,8 +348,8 @@ def parser() -> argparse.ArgumentParser:
     p.add_argument("--book-run-dir", required=True)
     p.add_argument("--level", required=True)
     p.add_argument("--model", default="gpt-5.6-luna")
-    p.add_argument("--review-effort", default="medium")
-    p.add_argument("--repair-effort", default="xhigh")
+    p.add_argument("--review-effort", default="low")
+    p.add_argument("--repair-effort", default="low")
     p.add_argument("--concurrency", type=int, default=16)
     p.add_argument("--max-repair-rounds", type=int, default=2)
     p.add_argument("--timeout", type=int, default=900)

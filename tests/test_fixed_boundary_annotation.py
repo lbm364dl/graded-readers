@@ -28,7 +28,9 @@ def test_validate_strips_indices_and_accepts_exact_overlay():
             {"index": 2, "text": "了", "type": "particle", "pinyin": "le", "meaning_en": "completed action"},
             {"index": 3, "text": "。", "type": "punctuation", "pinyin": "", "meaning_en": ""},
         ],
-        "grammar_overlays": [{"start": 2, "end": 4, "text": "来了", "pattern": "V + 了", "meaning_en": "completed action"}],
+        "grammar_overlays": [{"start": 2, "end": 4, "text": "来了",
+                              "grammar_candidate_key": "test.completed_action",
+                              "pattern": "V + 了", "meaning_en": "completed action"}],
     }
     result = validate_result(chunk, surfaces, value)
     assert "index" not in result["segments"][0]
@@ -52,6 +54,33 @@ def test_refinement_splits_compositional_phrases_but_preserves_compounds():
         assert surface not in segments
     assert "相逢" in segments
     assert "笑谈" in segments
+
+
+def test_refinement_preserves_agent_reviewed_names_and_short_story_terms():
+    text = "关羽在桃园祭告天地。"
+    segments = refined_fixed_segments(
+        text,
+        protected_names={"关羽"},
+        protected_compounds={"桃园", "祭告天地"},
+    )
+    assert "关羽" in segments
+    assert "桃园" in segments
+    assert "祭告天地" in segments
+    assert "".join(segments) == text
+
+
+def test_refinement_restores_protected_word_starting_inside_token():
+    segments = refined_fixed_segments("外面有乱事。", protected_compounds={"乱事"})
+    assert "有乱" not in segments
+    assert "乱事" in segments
+    assert "".join(segments) == "外面有乱事。"
+
+
+def test_refinement_splits_contextual_false_compound_maqi():
+    segments = refined_fixed_segments("他们没有马骑。")
+    assert "马骑" not in segments
+    assert "马" in segments and "骑" in segments
+    assert "".join(segments) == "他们没有马骑。"
 
 
 def test_correction_patches_apply_adjacent_split_and_merge_losslessly():
@@ -241,14 +270,16 @@ def test_review_offsets_authorize_exact_merge_and_split_spans():
 
 
 def test_review_scope_preserves_overlays_without_grammar_issue():
-    old = {"start": 0, "end": 2, "text": "如果", "pattern": "如果…就…",
+    old = {"start": 0, "end": 2, "text": "如果",
+           "grammar_candidate_key": "test.if_then", "pattern": "如果…就…",
            "meaning_en": "if...then..."}
     annotation = {"segments": [_word("如果"), _word("来")],
                   "grammar_overlays": [old]}
     scoped, evidence = review_scoped_correction(
         "如果来", annotation,
         {"patches": [], "grammar_overlays": [{
-            "start": 2, "end": 3, "text": "来", "pattern": "bad",
+            "start": 2, "end": 3, "text": "来",
+            "grammar_candidate_key": "test.bad", "pattern": "bad",
             "meaning_en": "unrelated",
         }]},
         {"issues": [{"segment_text": "来", "problem": "meaning"}]},
@@ -258,14 +289,17 @@ def test_review_scope_preserves_overlays_without_grammar_issue():
 
 
 def test_review_scope_changes_only_overlay_overlapping_grammar_issue():
-    target = {"start": 0, "end": 2, "text": "如果", "pattern": "如果…就…",
+    target = {"start": 0, "end": 2, "text": "如果",
+              "grammar_candidate_key": "test.if_then", "pattern": "如果…就…",
               "meaning_en": "old target"}
-    unrelated = {"start": 3, "end": 5, "text": "才来", "pattern": "才",
+    unrelated = {"start": 3, "end": 5, "text": "才来",
+                 "grammar_candidate_key": "test.cai", "pattern": "才",
                  "meaning_en": "only then"}
     annotation = {"segments": [_word("如果"), _word("他"), _word("才来")],
                   "grammar_overlays": [target, unrelated]}
     replacement = {**target, "meaning_en": "if...then..."}
-    injected = {"start": 2, "end": 3, "text": "他", "pattern": "bad",
+    injected = {"start": 2, "end": 3, "text": "他",
+                "grammar_candidate_key": "test.bad", "pattern": "bad",
                 "meaning_en": "unrelated"}
     scoped, evidence = review_scoped_correction(
         "如果他才来", annotation,
@@ -298,7 +332,8 @@ def test_compact_correction_prompt_retains_complete_token_and_evidence_contract(
         {"text": "来了", "type": "word", "pinyin": "lái le", "meaning_en": "arrived"},
         {"text": "。", "type": "punctuation", "pinyin": "", "meaning_en": ""},
     ], "grammar_overlays": [{
-        "start": 2, "end": 4, "text": "来了", "pattern": "V + 了",
+        "start": 2, "end": 4, "text": "来了",
+        "grammar_candidate_key": "test.completed_action", "pattern": "V + 了",
         "meaning_en": "completed action",
     }]}
     findings = {"verdict": "revise", "issues": [{

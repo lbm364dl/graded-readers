@@ -1,8 +1,10 @@
+import 'dart:async';
+import 'dart:convert';
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models.dart';
 import '../theme.dart';
@@ -12,6 +14,8 @@ import '../services/glyph_service.dart';
 import '../services/progress_service.dart';
 import '../services/segmenter.dart';
 import '../services/vocabulary_service.dart';
+import '../widgets/content_width.dart';
+import '../widgets/copy_text_button.dart';
 
 TextStyle _cjkTextStyle({
   required double fontSize,
@@ -21,10 +25,12 @@ TextStyle _cjkTextStyle({
   double? height,
   Color? backgroundColor,
 }) {
-  final base = language == Language.japanese
-      ? GoogleFonts.notoSansJp
-      : GoogleFonts.notoSansSc;
-  return base(
+  final primaryFamily =
+      language == Language.japanese ? 'NotoSansJP' : 'NotoSansSC';
+  final fallbackFamily =
+      language == Language.japanese ? 'NotoSansSC' : 'NotoSansJP';
+  return TextStyle(
+    fontFamily: primaryFamily,
     fontSize: fontSize,
     color: color,
     fontWeight: fontWeight,
@@ -32,22 +38,22 @@ TextStyle _cjkTextStyle({
     backgroundColor: backgroundColor,
   ).copyWith(
     fontFamilyFallback: [
-      GoogleFonts.notoSerifJp().fontFamily!,
-      GoogleFonts.notoSerifSc().fontFamily!,
+      fallbackFamily,
       // System fonts for CJK Extension B+ characters
       'sans-serif',
-      'serif',
     ],
   );
 }
+
+String _displayDictionaryReading(String reading, Language language) =>
+    language == Language.chinese ? reading.toLowerCase() : reading;
 
 // ---------------------------------------------------------------------------
 // Furigana helper
 // ---------------------------------------------------------------------------
 
 /// Count consecutive kanji in a word.
-int _kanjiCount(String word) =>
-    word.codeUnits.where(_isKanji).length;
+int _kanjiCount(String word) => word.codeUnits.where(_isKanji).length;
 
 /// For multi-kanji compounds (e.g. 一生懸命), segment into sub-words
 /// using the dictionary. Returns null if not a multi-kanji compound
@@ -91,6 +97,18 @@ bool _isKanji(int code) =>
     (code >= 0x4E00 && code <= 0x9FFF) ||
     (code >= 0x3400 && code <= 0x4DBF) ||
     (code >= 0xF900 && code <= 0xFAFF);
+
+/// Formats a Japanese dictionary form without echoing kana as its own reading.
+/// A separate reading only adds information when the form contains kanji.
+String formatJapaneseLemmaReading(String lemma, String reading) {
+  final cleanLemma = lemma.trim();
+  final cleanReading = reading.trim();
+  final hasKanji = cleanLemma.codeUnits.any(_isKanji);
+  if (cleanReading.isEmpty || cleanReading == cleanLemma || !hasKanji) {
+    return cleanLemma;
+  }
+  return '$cleanLemma（$cleanReading）';
+}
 
 /// Builds a furigana (ruby) widget: kana reading displayed above kanji.
 /// Falls back to plain text if there's no reading or no kanji.
@@ -224,8 +242,6 @@ class _FuriganaPair {
   _FuriganaPair(this.word, this.reading);
 }
 
-
-
 /// Aligns kanji in [word] with kana in [reading] by matching shared kana.
 /// Falls back to showing the full reading over the full word if alignment fails.
 List<_FuriganaPair> _alignFurigana(String word, String reading) {
@@ -322,12 +338,15 @@ List<List<String>> _parseMarkdownTable(String block) {
     final trimmed = line.trim();
     if (trimmed.isEmpty) continue;
     // Skip separator rows (|---|---|)
-    if (RegExp(r'^\|[\s\-:]+\|$').hasMatch(trimmed.replaceAll('|', '|').replaceAll(RegExp(r'[^|\-:\s]'), ''))) {
+    if (RegExp(r'^\|[\s\-:]+\|$').hasMatch(
+        trimmed.replaceAll('|', '|').replaceAll(RegExp(r'[^|\-:\s]'), ''))) {
       // More reliable: check if all cells are just dashes/colons/spaces
-      final cells = trimmed.split('|').where((c) => c.trim().isNotEmpty).toList();
+      final cells =
+          trimmed.split('|').where((c) => c.trim().isNotEmpty).toList();
       if (cells.every((c) => RegExp(r'^[\s\-:]+$').hasMatch(c))) continue;
     }
-    final cells = trimmed.split('|')
+    final cells = trimmed
+        .split('|')
         .map((c) => c.trim())
         .where((c) => c.isNotEmpty)
         .toList();
@@ -420,8 +439,7 @@ List<Widget> _buildEtymologyWidgets(
         widgets.add(Padding(
           padding: const EdgeInsets.only(top: 3),
           child: GestureDetector(
-            onTap:
-                onComponentTap != null ? () => onComponentTap(comp) : null,
+            onTap: onComponentTap != null ? () => onComponentTap(comp) : null,
             child: Text.rich(
               TextSpan(children: [
                 TextSpan(
@@ -457,8 +475,7 @@ List<Widget> _buildEtymologyWidgets(
       children: eras.map((era) {
         final svg = glyphs.eras[era]!;
         return GestureDetector(
-          onTap: () =>
-              _showGlyphFullscreen(context, character, glyphs, era),
+          onTap: () => _showGlyphFullscreen(context, character, glyphs, era),
           child: Container(
             width: 48,
             height: 48,
@@ -497,14 +514,15 @@ List<Widget> _buildEtymologyWidgets(
     widgets.add(Wrap(
       spacing: 3,
       runSpacing: 2,
-      children: chars.map((ch) => GestureDetector(
-            onTap:
-                onComponentTap != null ? () => onComponentTap(ch) : null,
-            child: Text(
-              ch,
-              style: TextStyle(fontSize: 15, color: Colors.blue[300]),
-            ),
-          )).toList(),
+      children: chars
+          .map((ch) => GestureDetector(
+                onTap: onComponentTap != null ? () => onComponentTap(ch) : null,
+                child: Text(
+                  ch,
+                  style: TextStyle(fontSize: 15, color: Colors.blue[300]),
+                ),
+              ))
+          .toList(),
     ));
   }
 
@@ -593,8 +611,8 @@ Widget _buildTappableText(
   return Text.rich(TextSpan(children: spans));
 }
 
-void _showGlyphFullscreen(
-    BuildContext context, String character, GlyphEntry glyphs, String initialEra) {
+void _showGlyphFullscreen(BuildContext context, String character,
+    GlyphEntry glyphs, String initialEra) {
   final isDark = Theme.of(context).brightness == Brightness.dark;
   final eras = glyphs.sortedEras;
   final initialIndex = eras.indexOf(initialEra).clamp(0, eras.length - 1);
@@ -622,8 +640,8 @@ void _showGlyphFullscreen(
                     alignment: Alignment.topRight,
                     child: GestureDetector(
                       onTap: () => Navigator.pop(context),
-                      child: Icon(Icons.close,
-                          size: 20, color: Colors.grey[500]),
+                      child:
+                          Icon(Icons.close, size: 20, color: Colors.grey[500]),
                     ),
                   ),
                   // SVG
@@ -644,8 +662,8 @@ void _showGlyphFullscreen(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       IconButton(
-                        onPressed: () => setState(() =>
-                            current = (current - 1) % eras.length),
+                        onPressed: () => setState(
+                            () => current = (current - 1) % eras.length),
                         icon: const Icon(Icons.chevron_left),
                         visualDensity: VisualDensity.compact,
                       ),
@@ -657,15 +675,13 @@ void _showGlyphFullscreen(
                           style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w600,
-                            color: isDark
-                                ? Colors.grey[300]
-                                : Colors.grey[700],
+                            color: isDark ? Colors.grey[300] : Colors.grey[700],
                           ),
                         ),
                       ),
                       IconButton(
-                        onPressed: () => setState(() =>
-                            current = (current + 1) % eras.length),
+                        onPressed: () => setState(
+                            () => current = (current + 1) % eras.length),
                         icon: const Icon(Icons.chevron_right),
                         visualDensity: VisualDensity.compact,
                       ),
@@ -698,6 +714,20 @@ class _TokenEntry {
     required this.globalIndex,
     required this.startOffset,
     required this.endOffset,
+  });
+}
+
+class _TappedWord {
+  final String surface;
+  final AgentSegment? agent;
+  final List<AgentGrammarOverlay> grammar;
+  final List<_TappedWord> nestedAgentTargets;
+
+  const _TappedWord({
+    required this.surface,
+    this.agent,
+    this.grammar = const [],
+    this.nestedAgentTargets = const [],
   });
 }
 
@@ -745,6 +775,7 @@ class _ReaderScreenState extends State<ReaderScreen> {
   final double _minFontSize = 14.0;
   final double _maxFontSize = 32.0;
   final ValueNotifier<int> _highlightedIndex = ValueNotifier(-1);
+  Timer? _progressSaveTimer;
 
   // Chapter navigation
   late PageController _chapterController;
@@ -772,6 +803,156 @@ class _ReaderScreenState extends State<ReaderScreen> {
     final dict = DictionaryService.instance;
     final ch = widget.reader.chapters[chapterIndex];
 
+    if (ch.annotationAsset.isNotEmpty) {
+      final encoded = await rootBundle.loadString(ch.annotationAsset);
+      final decoded = json.decode(encoded);
+      if (decoded is! Map<String, dynamic>) {
+        throw StateError('Agent annotation is not a JSON object');
+      }
+      final annotation = AgentChapterAnnotation.fromJson(decoded);
+      if (annotation.text != ch.content ||
+          annotation.segments.map((item) => item.text).join() != ch.content) {
+        throw StateError(
+            'Agent annotation does not reconstruct ${widget.reader.id} chapter ${chapterIndex + 1}');
+      }
+
+      final words = <_TappedWord>[];
+      final paragraphs = <_ParagraphData>[];
+      final paragraphTokens = <_TokenEntry>[];
+      final paragraphText = StringBuffer();
+      var offset = 0;
+
+      void finishParagraph() {
+        if (paragraphTokens.isEmpty) return;
+        final text = paragraphText.toString();
+        paragraphs.add(_ParagraphData(
+          raw: text,
+          plainText: text,
+          isHeading: false,
+          tokens: List.of(paragraphTokens),
+        ));
+        paragraphTokens.clear();
+        paragraphText.clear();
+      }
+
+      final japaneseUnits = widget.reader.language == Language.japanese
+          ? buildJapaneseDisplayUnits(annotation)
+          : const <JapaneseDisplayUnit>[];
+      final japaneseUnitsByStart = {
+        for (final unit in japaneseUnits) unit.firstSegment: unit,
+      };
+      var segmentIndex = 0;
+      while (segmentIndex < annotation.segments.length) {
+        final unit = japaneseUnitsByStart[segmentIndex];
+        final segment = unit?.segment ?? annotation.segments[segmentIndex];
+        final start = offset;
+        final end = start + segment.text.length;
+        if (segment.type == 'punctuation' &&
+            segment.text.contains('\n') &&
+            segment.text.trim().isEmpty) {
+          finishParagraph();
+          offset = end;
+          segmentIndex++;
+          continue;
+        }
+        final tappable = segment.type != 'punctuation';
+        final grammar = unit != null
+            ? [unit.grammar]
+            : japaneseGrammarForSegment(
+                segment: segment,
+                start: start,
+                end: end,
+                overlays: annotation.grammarOverlays,
+              );
+        paragraphTokens.add(_TokenEntry(
+          text: segment.text,
+          isCjk: segment.text.isNotEmpty && _isCJK(segment.text.codeUnitAt(0)),
+          globalIndex: tappable ? words.length : -1,
+          startOffset: start,
+          endOffset: end,
+        ));
+        if (tappable) {
+          final nestedAgentTargets = <_TappedWord>[];
+          if (unit != null) {
+            var nestedStart = start;
+            for (var i = unit.firstSegment; i <= unit.lastSegment; i++) {
+              final original = annotation.segments[i];
+              final nestedEnd = nestedStart + original.text.length;
+              if (original.type != 'punctuation') {
+                nestedAgentTargets.add(_TappedWord(
+                  surface: original.text,
+                  agent: original,
+                  grammar: japaneseGrammarForSegment(
+                    segment: original,
+                    start: nestedStart,
+                    end: nestedEnd,
+                    overlays: annotation.grammarOverlays,
+                  ),
+                ));
+              }
+              nestedStart = nestedEnd;
+            }
+          }
+          words.add(_TappedWord(
+            surface: segment.text,
+            agent: segment,
+            grammar: grammar,
+            nestedAgentTargets: nestedAgentTargets,
+          ));
+        }
+        paragraphText.write(segment.text);
+        offset = end;
+        segmentIndex = unit == null ? segmentIndex + 1 : unit.lastSegment + 1;
+      }
+      finishParagraph();
+      final result = _ChapterSegmented(
+        index: chapterIndex,
+        title: ch.title,
+        paragraphs: paragraphs,
+        allWords: words,
+      );
+      _segmentCache[chapterIndex] = result;
+      return result;
+    }
+
+    // Canonical graded content never falls back to a legacy tokenizer. Until
+    // its reviewed agent sidecar exists, render plain non-interactive prose so
+    // a tap cannot surface stale segmentation or explanations.
+    if (widget.reader.language == Language.chinese ||
+        widget.reader.language == Language.japanese) {
+      var paragraphOffset = 0;
+      final paragraphs = ch.content
+          .split(RegExp(r'\n\s*\n'))
+          .where((text) => text.trim().isNotEmpty)
+          .map((text) {
+        final start = ch.content.indexOf(text, paragraphOffset);
+        final end = start + text.length;
+        paragraphOffset = end;
+        return _ParagraphData(
+          raw: text,
+          plainText: text,
+          isHeading: false,
+          tokens: [
+            _TokenEntry(
+              text: text,
+              isCjk: true,
+              globalIndex: -1,
+              startOffset: start,
+              endOffset: end,
+            ),
+          ],
+        );
+      }).toList();
+      final result = _ChapterSegmented(
+        index: chapterIndex,
+        title: ch.title,
+        paragraphs: paragraphs,
+        allWords: const [],
+      );
+      _segmentCache[chapterIndex] = result;
+      return result;
+    }
+
     // Split content into blocks, handling markdown patterns
     final paragraphTexts = <String>[];
     for (final para in ch.content.split('\n\n')) {
@@ -781,7 +962,7 @@ class _ReaderScreenState extends State<ReaderScreen> {
 
     // Segment on main thread, yielding between paragraphs for UI responsiveness
     final paragraphs = <_ParagraphData>[];
-    final allCjk = <String>[];
+    final allCjk = <_TappedWord>[];
 
     for (int pi = 0; pi < paragraphTexts.length; pi++) {
       // Yield every few paragraphs to let the spinner animate
@@ -812,10 +993,10 @@ class _ReaderScreenState extends State<ReaderScreen> {
       } else if (raw.startsWith('|') && raw.contains('|')) {
         blockType = _BlockType.table;
         tableRows = _parseMarkdownTable(raw);
-        textToSegment = tableRows
-            .map((row) => row.join(' '))
-            .join(' ');
-      } else if (raw.startsWith('**') && raw.endsWith('**') && !raw.substring(2, raw.length - 2).contains('**')) {
+        textToSegment = tableRows.map((row) => row.join(' ')).join(' ');
+      } else if (raw.startsWith('**') &&
+          raw.endsWith('**') &&
+          !raw.substring(2, raw.length - 2).contains('**')) {
         blockType = _BlockType.heading;
         headingLevel = 1;
         textToSegment = raw.substring(2, raw.length - 2);
@@ -824,8 +1005,10 @@ class _ReaderScreenState extends State<ReaderScreen> {
       // Strip inline bold markers for segmentation
       final cleanText = textToSegment.replaceAll('**', '');
 
-      final tokens = cleanText.isEmpty ? <String>[] : segmentText(cleanText, dict);
-      final isHeading = blockType == _BlockType.heading || blockType == _BlockType.subheading;
+      final tokens =
+          cleanText.isEmpty ? <String>[] : segmentText(cleanText, dict);
+      final isHeading =
+          blockType == _BlockType.heading || blockType == _BlockType.subheading;
 
       final tokenEntries = <_TokenEntry>[];
       int charOffset = 0;
@@ -840,7 +1023,7 @@ class _ReaderScreenState extends State<ReaderScreen> {
           endOffset: charOffset + t.length,
         ));
         charOffset += t.length;
-        if (tappable) allCjk.add(t);
+        if (tappable) allCjk.add(_TappedWord(surface: t));
       }
 
       paragraphs.add(_ParagraphData(
@@ -858,7 +1041,7 @@ class _ReaderScreenState extends State<ReaderScreen> {
       index: chapterIndex,
       title: ch.title,
       paragraphs: paragraphs,
-      allCjkWords: allCjk,
+      allWords: allCjk,
     );
     _segmentCache[chapterIndex] = result;
     return result;
@@ -923,32 +1106,52 @@ class _ReaderScreenState extends State<ReaderScreen> {
 
   void _onScrollFractionChanged(int chapter, double fraction) {
     _scrollFractions[chapter] = fraction;
-    _saveProgress();
+    _progressSaveTimer?.cancel();
+    _progressSaveTimer = Timer(
+      const Duration(milliseconds: 400),
+      _saveProgress,
+    );
   }
 
   @override
   void dispose() {
-    _chapterController.dispose();
+    _progressSaveTimer?.cancel();
+    if (_ready) {
+      _saveProgress();
+      _chapterController.dispose();
+    }
     _highlightedIndex.dispose();
     super.dispose();
   }
 
-  void _showWordDefinition(List<String> allWords, int index) {
+  void _showWordDefinition(List<_TappedWord> allWords, int index) {
     _highlightedIndex.value = index;
-    showModalBottomSheet(
+    unawaited(showModalBottomSheet(
       context: context,
       isScrollControlled: true,
       useSafeArea: true,
+      showDragHandle: true,
       backgroundColor: Theme.of(context).colorScheme.surface,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
-      builder: (_) => _WordDefinitionSheet(
-        allWords: allWords,
-        initialIndex: index,
-        highlightedIndex: _highlightedIndex,
-      ),
-    ).whenComplete(() => _highlightedIndex.value = -1);
+      builder: (_) {
+        if (allWords[index].agent != null) {
+          return _AgentDefinitionSheet(
+            allWords: allWords,
+            initialIndex: index,
+            highlightedIndex: _highlightedIndex,
+            language: widget.reader.language,
+            levelLabel: widget.reader.levelLabel,
+          );
+        }
+        return _WordDefinitionSheet(
+          allWords: allWords.map((item) => item.surface).toList(),
+          initialIndex: index,
+          highlightedIndex: _highlightedIndex,
+        );
+      },
+    ));
   }
 
   @override
@@ -970,8 +1173,15 @@ class _ReaderScreenState extends State<ReaderScreen> {
               )
             : null,
         actions: [
+          if (_ready)
+            CopyTextButton(
+              text: widget.reader.chapters[_currentChapter].content,
+              confirmation: 'Chapter text copied',
+              tooltip: 'Copy chapter text',
+            ),
           IconButton(
             icon: const Icon(Icons.text_decrease, size: 20),
+            tooltip: 'Decrease text size',
             onPressed: _fontSize > _minFontSize
                 ? () {
                     setState(() => _fontSize -= 2);
@@ -981,6 +1191,7 @@ class _ReaderScreenState extends State<ReaderScreen> {
           ),
           IconButton(
             icon: const Icon(Icons.text_increase, size: 20),
+            tooltip: 'Increase text size',
             onPressed: _fontSize < _maxFontSize
                 ? () {
                     setState(() => _fontSize += 2);
@@ -996,6 +1207,9 @@ class _ReaderScreenState extends State<ReaderScreen> {
               controller: _chapterController,
               itemCount: totalChapters,
               onPageChanged: (index) {
+                _highlightedIndex.value = -1;
+                _progressSaveTimer?.cancel();
+                _saveProgress();
                 setState(() => _currentChapter = index);
                 _saveProgress();
                 _preSegmentNearby(index);
@@ -1013,6 +1227,8 @@ class _ReaderScreenState extends State<ReaderScreen> {
                   fontSize: _fontSize,
                   isDark: isDark,
                   language: widget.reader.language,
+                  readerLevel: widget.reader.level,
+                  levelLabel: widget.reader.levelLabel,
                   onWordTap: _showWordDefinition,
                   highlightedIndex: _highlightedIndex,
                   initialScrollFraction: _scrollFractions[index] ?? 0.0,
@@ -1023,14 +1239,12 @@ class _ReaderScreenState extends State<ReaderScreen> {
             ),
       bottomNavigationBar: _ready
           ? Container(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
               decoration: BoxDecoration(
                 color: isDark ? Colors.grey[900] : Colors.white,
                 border: Border(
                   top: BorderSide(
-                    color:
-                        isDark ? Colors.grey[800]! : Colors.grey[200]!,
+                    color: isDark ? Colors.grey[800]! : Colors.grey[200]!,
                   ),
                 ),
               ),
@@ -1040,8 +1254,7 @@ class _ReaderScreenState extends State<ReaderScreen> {
                     IconButton(
                       onPressed: _currentChapter > 0
                           ? () => _chapterController.previousPage(
-                                duration:
-                                    const Duration(milliseconds: 250),
+                                duration: const Duration(milliseconds: 250),
                                 curve: Curves.easeInOut,
                               )
                           : null,
@@ -1068,8 +1281,7 @@ class _ReaderScreenState extends State<ReaderScreen> {
                     IconButton(
                       onPressed: _currentChapter < (totalChapters - 1)
                           ? () => _chapterController.nextPage(
-                                duration: const Duration(
-                                    milliseconds: 250),
+                                duration: const Duration(milliseconds: 250),
                                 curve: Curves.easeInOut,
                               )
                           : null,
@@ -1088,13 +1300,19 @@ class _ChapterSegmented {
   final int index;
   final String title;
   final List<_ParagraphData> paragraphs;
-  final List<String> allCjkWords;
+  final List<_TappedWord> allWords;
   _ChapterSegmented({
     required this.index,
     required this.title,
     required this.paragraphs,
-    required this.allCjkWords,
+    required this.allWords,
   });
+
+  bool get hasLookupOnly =>
+      allWords.any((item) => item.agent?.isLookupOnly == true);
+
+  bool get hasStoryTerms =>
+      allWords.any((item) => item.agent?.isStoryTerm == true);
 }
 
 // ---------------------------------------------------------------------------
@@ -1106,7 +1324,9 @@ class _ChapterView extends StatefulWidget {
   final double fontSize;
   final bool isDark;
   final Language language;
-  final void Function(List<String>, int) onWordTap;
+  final int readerLevel;
+  final String levelLabel;
+  final void Function(List<_TappedWord>, int) onWordTap;
   final ValueNotifier<int> highlightedIndex;
   final double initialScrollFraction;
   final ValueChanged<double> onScrollFractionChanged;
@@ -1116,6 +1336,8 @@ class _ChapterView extends StatefulWidget {
     required this.fontSize,
     required this.isDark,
     required this.language,
+    required this.readerLevel,
+    required this.levelLabel,
     required this.onWordTap,
     required this.highlightedIndex,
     required this.initialScrollFraction,
@@ -1127,7 +1349,7 @@ class _ChapterView extends StatefulWidget {
 }
 
 class _ChapterViewState extends State<_ChapterView> {
-  final List<GestureRecognizer> _recognizers = [];
+  final Map<int, TapGestureRecognizer> _recognizers = {};
   late ScrollController _scrollController;
   bool _restoredScroll = false;
 
@@ -1168,10 +1390,26 @@ class _ChapterViewState extends State<_ChapterView> {
   }
 
   void _disposeRecognizers() {
-    for (final r in _recognizers) {
+    for (final r in _recognizers.values) {
       r.dispose();
     }
     _recognizers.clear();
+  }
+
+  TapGestureRecognizer _recognizerFor(int index) {
+    return _recognizers.putIfAbsent(
+      index,
+      () => TapGestureRecognizer()
+        ..onTap = () => widget.onWordTap(widget.chapter.allWords, index),
+    );
+  }
+
+  @override
+  void didUpdateWidget(covariant _ChapterView oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.chapter.index != widget.chapter.index) {
+      _disposeRecognizers();
+    }
   }
 
   @override
@@ -1179,29 +1417,108 @@ class _ChapterViewState extends State<_ChapterView> {
     return ValueListenableBuilder<int>(
       valueListenable: widget.highlightedIndex,
       builder: (context, highlightIdx, _) {
-        _disposeRecognizers();
         WidgetsBinding.instance.addPostFrameCallback((_) => _restoreScroll());
-        return ListView(
-          controller: _scrollController,
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-          children: [
-            SelectableText(
-              widget.chapter.title,
-              style: _cjkTextStyle(
-                fontSize: widget.fontSize + 4,
-                language: widget.language,
-                fontWeight: FontWeight.bold,
-                height: 1.4,
+        return SelectionArea(
+          child: ListView(
+            controller: _scrollController,
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+            children: [
+              ContentWidth(
+                maxWidth: 760,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text(
+                      widget.chapter.title,
+                      style: _cjkTextStyle(
+                        fontSize: widget.fontSize + 4,
+                        language: widget.language,
+                        fontWeight: FontWeight.bold,
+                        height: 1.4,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    Divider(
+                      color:
+                          widget.isDark ? Colors.grey[700] : Colors.grey[300],
+                    ),
+                    const SizedBox(height: 8),
+                    if (widget.language == Language.chinese &&
+                        widget.chapter.hasLookupOnly) ...[
+                      Container(
+                        margin: const EdgeInsets.only(bottom: 14),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 12, vertical: 10),
+                        decoration: BoxDecoration(
+                          color: AppTheme.levelColor(widget.readerLevel)
+                              .withValues(alpha: widget.isDark ? 0.12 : 0.07),
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(
+                            color: AppTheme.levelColor(widget.readerLevel)
+                                .withValues(alpha: 0.2),
+                          ),
+                        ),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              '词',
+                              style: _cjkTextStyle(
+                                fontSize: 15,
+                                language: Language.chinese,
+                                fontWeight: FontWeight.w600,
+                              ).copyWith(
+                                decoration: TextDecoration.underline,
+                                decorationStyle: TextDecorationStyle.dotted,
+                                decorationColor: Colors.grey[500],
+                                decorationThickness: 1.5,
+                              ),
+                            ),
+                            const SizedBox(width: 10),
+                            Expanded(
+                              child: Text(
+                                'Dotted underline: optional lookup for ${widget.levelLabel}.'
+                                '${widget.chapter.hasStoryTerms ? ' Warm highlight: important story vocabulary.' : ''}',
+                                style:
+                                    const TextStyle(fontSize: 12, height: 1.4),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                    if (widget.chapter.allWords.isEmpty) ...[
+                      Container(
+                        margin: const EdgeInsets.only(bottom: 14),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 12, vertical: 10),
+                        decoration: BoxDecoration(
+                          color: AppTheme.primary.withValues(alpha: 0.08),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: const Row(
+                          children: [
+                            Icon(Icons.hourglass_top_rounded,
+                                size: 17, color: AppTheme.primary),
+                            SizedBox(width: 8),
+                            Expanded(
+                              child: Text(
+                                'Reviewed agent annotations are not available for this chapter. '
+                                'Legacy segmentation and explanations are disabled.',
+                                style: TextStyle(fontSize: 12, height: 1.35),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                    ...widget.chapter.paragraphs
+                        .map((p) => _buildParagraph(p, highlightIdx)),
+                  ],
+                ),
               ),
-            ),
-            const SizedBox(height: 8),
-            Divider(
-              color: widget.isDark ? Colors.grey[700] : Colors.grey[300],
-            ),
-            const SizedBox(height: 8),
-            ...widget.chapter.paragraphs
-                .map((p) => _buildParagraph(p, highlightIdx)),
-          ],
+            ],
+          ),
         );
       },
     );
@@ -1225,16 +1542,16 @@ class _ChapterViewState extends State<_ChapterView> {
 
     // --- Heading / Subheading ---
     if (para.isHeading) {
-      final fontSize = para.headingLevel <= 1
-          ? widget.fontSize
-          : widget.fontSize - 2;
+      final fontSize =
+          para.headingLevel <= 1 ? widget.fontSize : widget.fontSize - 2;
       return Padding(
         padding: EdgeInsets.only(
           top: para.headingLevel <= 1 ? 16 : 8,
           bottom: 8,
         ),
         child: _buildTappableRichText(
-          para, highlightIdx,
+          para,
+          highlightIdx,
           styleOverride: _cjkTextStyle(
             fontSize: fontSize,
             language: widget.language,
@@ -1261,7 +1578,8 @@ class _ChapterViewState extends State<_ChapterView> {
           ),
           padding: const EdgeInsets.only(left: 12),
           child: _buildTappableRichText(
-            para, highlightIdx,
+            para,
+            highlightIdx,
             styleOverride: _cjkTextStyle(
               fontSize: widget.fontSize,
               language: widget.language,
@@ -1286,15 +1604,25 @@ class _ChapterViewState extends State<_ChapterView> {
     int highlightIdx, {
     TextStyle? styleOverride,
   }) {
-    final baseStyle = styleOverride ?? _cjkTextStyle(
-      fontSize: widget.fontSize,
-      language: widget.language,
-      height: 1.8,
-      color: widget.isDark ? Colors.grey[200] : AppTheme.textPrimary,
+    final unshapedBaseStyle = styleOverride ??
+        _cjkTextStyle(
+          fontSize: widget.fontSize,
+          language: widget.language,
+          height: 1.8,
+          color: widget.isDark ? Colors.grey[200] : AppTheme.textPrimary,
+        );
+    // CJK fonts give commas, stops, and quotation marks a full em by default.
+    // In flowing reader prose that leaves a conspicuous empty half-cell around
+    // punctuation, especially because annotation boundaries create many text
+    // runs. Noto Sans CJK's proportional alternates keep punctuation attached
+    // to the sentence while preserving full-width Han glyphs.
+    final baseStyle = unshapedBaseStyle.copyWith(
+      fontFeatures: const [FontFeature('palt')],
     );
 
     // Check if the raw text has inline bold markers (not a standalone bold heading)
-    final hasBold = para.raw.contains('**') && para.blockType == _BlockType.paragraph;
+    final hasBold =
+        para.raw.contains('**') && para.blockType == _BlockType.paragraph;
 
     final spans = <TextSpan>[];
     // Track bold state by checking raw text positions
@@ -1333,23 +1661,38 @@ class _ChapterViewState extends State<_ChapterView> {
         }
       }
 
-      final tokenStyle = inBold
-          ? baseStyle.copyWith(fontWeight: FontWeight.bold)
-          : baseStyle;
+      final tokenStyle =
+          inBold ? baseStyle.copyWith(fontWeight: FontWeight.bold) : baseStyle;
 
-      if (token.globalIndex >= 0 && DictionaryService.instance.isReady) {
+      final tappedWord = token.globalIndex >= 0
+          ? widget.chapter.allWords[token.globalIndex]
+          : null;
+      if (tappedWord != null &&
+          (tappedWord.agent != null || DictionaryService.instance.isReady)) {
         final isHighlighted = token.globalIndex == highlightIdx;
-        final recognizer = TapGestureRecognizer()
-          ..onTap = () => widget.onWordTap(
-              widget.chapter.allCjkWords, token.globalIndex);
-        _recognizers.add(recognizer);
+        final isLookupOnly = tappedWord.agent?.isLookupOnly == true;
+        final isStoryTerm = tappedWord.agent?.isStoryTerm == true;
+        final recognizer = _recognizerFor(token.globalIndex);
 
         spans.add(TextSpan(
           text: token.text,
           style: tokenStyle.copyWith(
             backgroundColor: isHighlighted
-                ? AppTheme.primary.withValues(alpha: 0.2)
-                : null,
+                ? AppTheme.primary.withValues(alpha: 0.28)
+                : isStoryTerm
+                    ? const Color(0xFFFFB300).withValues(
+                        alpha: widget.isDark ? 0.18 : 0.12,
+                      )
+                    : null,
+            decoration:
+                isLookupOnly ? TextDecoration.underline : tokenStyle.decoration,
+            decorationStyle: isLookupOnly
+                ? TextDecorationStyle.dotted
+                : tokenStyle.decorationStyle,
+            decorationColor: isLookupOnly
+                ? (widget.isDark ? Colors.grey[500] : Colors.grey[600])
+                : tokenStyle.decorationColor,
+            decorationThickness: isLookupOnly ? 1.4 : null,
           ),
           recognizer: recognizer,
         ));
@@ -1358,7 +1701,7 @@ class _ChapterViewState extends State<_ChapterView> {
       }
     }
 
-    return SelectableText.rich(
+    return Text.rich(
       TextSpan(children: spans),
     );
   }
@@ -1392,9 +1735,7 @@ class _ChapterViewState extends State<_ChapterView> {
           return TableRow(
             decoration: isHeader
                 ? BoxDecoration(
-                    color: widget.isDark
-                        ? Colors.grey[800]
-                        : Colors.grey[100],
+                    color: widget.isDark ? Colors.grey[800] : Colors.grey[100],
                   )
                 : null,
             children: entry.value.map((cell) {
@@ -1416,6 +1757,749 @@ class _ChapterViewState extends State<_ChapterView> {
 // ---------------------------------------------------------------------------
 // Word definition bottom sheet
 // ---------------------------------------------------------------------------
+
+class _CurriculumBadge {
+  final int level;
+  final String label;
+
+  const _CurriculumBadge(this.level, this.label);
+}
+
+Widget _definitionSheetViewport(
+  BuildContext context, {
+  required Widget child,
+}) {
+  return ConstrainedBox(
+    key: const ValueKey('definition-sheet-viewport'),
+    constraints: BoxConstraints(
+      // The Material bottom sheet's fixed drag handle occupies about 32 px
+      // above this viewport. Keep the complete sheet close to half a screen.
+      maxHeight: MediaQuery.sizeOf(context).height * 0.5 - 32,
+    ),
+    child: child,
+  );
+}
+
+_CurriculumBadge? _curriculumBadge(
+  DictEntry? entry,
+  Language language,
+  String surface,
+) {
+  if (entry == null) return null;
+  if (language == Language.chinese) {
+    final isSingleCharacter = surface.runes.length == 1;
+    final level = isSingleCharacter
+        ? entry.characterHskLevel ?? entry.hskLevel
+        : entry.hskLevel;
+    if (level == null) return null;
+    return _CurriculumBadge(
+      level,
+      isSingleCharacter ? 'Character HSK $level' : 'HSK $level',
+    );
+  }
+
+  final level = entry.hskLevel;
+  if (level == null) return null;
+  const jlpt = {1: 'N5', 2: 'N4', 3: 'N3', 4: 'N2', 5: 'N1'};
+  return _CurriculumBadge(level, 'JLPT ${jlpt[level] ?? level}');
+}
+
+class _AgentDefinitionSheet extends StatefulWidget {
+  final List<_TappedWord> allWords;
+  final int initialIndex;
+  final ValueNotifier<int> highlightedIndex;
+  final Language language;
+  final String levelLabel;
+
+  const _AgentDefinitionSheet({
+    required this.allWords,
+    required this.initialIndex,
+    required this.highlightedIndex,
+    required this.language,
+    required this.levelLabel,
+  });
+
+  @override
+  State<_AgentDefinitionSheet> createState() => _AgentDefinitionSheetState();
+}
+
+class _AgentDefinitionSheetState extends State<_AgentDefinitionSheet> {
+  late int _currentIndex;
+  bool _saved = false;
+  bool _loading = false;
+
+  _TappedWord get _word => widget.allWords[_currentIndex];
+  AgentSegment get _agent => _word.agent!;
+
+  void _openNestedLookup(
+    String word, {
+    bool exactCanonical = false,
+    String preferredDefinition = '',
+  }) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      useSafeArea: true,
+      showDragHandle: true,
+      backgroundColor: Theme.of(context).colorScheme.surface,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (_) => _SingleWordSheet(
+        word: word,
+        exactCanonical: exactCanonical,
+        preferredDefinition: preferredDefinition,
+      ),
+    );
+  }
+
+  _TappedWord? _nestedAgentTargetFor(AgentGrammarComponent component) {
+    for (final target in _word.nestedAgentTargets) {
+      if (target.surface == component.text && target.agent != null) {
+        return target;
+      }
+    }
+    return null;
+  }
+
+  void _openNestedAgentTarget(_TappedWord target) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      useSafeArea: true,
+      showDragHandle: true,
+      backgroundColor: Theme.of(context).colorScheme.surface,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (_) => _AgentDefinitionSheet(
+        allWords: [target],
+        initialIndex: 0,
+        highlightedIndex: widget.highlightedIndex,
+        language: widget.language,
+        levelLabel: widget.levelLabel,
+      ),
+    );
+  }
+
+  Widget _buildSubsegmentRow(AgentSubsegment part, bool isDark) {
+    final entry = DictionaryService.instance.lookup(part.text);
+    final etymology = part.text.length == 1
+        ? EtymologyService.instance.lookup(part.text)
+        : null;
+    final reading = _displayDictionaryReading(
+      entry?.pinyin ?? etymology?.mandarinReading ?? '',
+      Language.chinese,
+    );
+    final definition =
+        part.meaningEn.isNotEmpty ? part.meaningEn : 'Open dictionary entry';
+
+    return Semantics(
+      button: true,
+      label: 'Open dictionary entry for ${part.text}',
+      child: InkWell(
+        key: ValueKey('agent-subsegment-${_word.surface}-${part.start}'),
+        onTap: () => _openNestedLookup(part.text),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 11),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                width: 60,
+                child: Text(
+                  part.text,
+                  style: _cjkTextStyle(
+                    fontSize: 20,
+                    language: Language.chinese,
+                    fontWeight: FontWeight.w600,
+                    color: AppTheme.primary,
+                  ),
+                ),
+              ),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    if (reading.isNotEmpty)
+                      Text(
+                        reading,
+                        style: const TextStyle(
+                          fontSize: 13,
+                          color: AppTheme.primary,
+                          fontStyle: FontStyle.italic,
+                        ),
+                      ),
+                    Text(
+                      definition,
+                      maxLines: 3,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontSize: 13,
+                        height: 1.35,
+                        color: isDark ? Colors.grey[300] : Colors.grey[700],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(width: 6),
+              const Icon(Icons.chevron_right, size: 20),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  String get _readingCue {
+    final targetLabel = widget.levelLabel;
+    switch (_agent.lookupReason) {
+      case 'proper_name':
+        return 'Story name · optional for $targetLabel';
+      case 'story_term':
+        return 'Story vocabulary · optional for $targetLabel';
+      default:
+        return 'Extra vocabulary · optional for $targetLabel';
+    }
+  }
+
+  Widget _buildJapaneseFormSummary(Color? muted) {
+    final lemmaChanged = _agent.lemma.isNotEmpty &&
+        (_agent.lemma != _word.surface || _agent.lemmaReading != _agent.pinyin);
+    final hasForm = _agent.conjugationForm.isNotEmpty &&
+        _agent.conjugationForm != 'non-inflecting';
+    final hasDictionaryLink = _agent.dictionaryKey.isNotEmpty;
+    if (!lemmaChanged &&
+        !hasForm &&
+        !hasDictionaryLink &&
+        _agent.formSteps.isEmpty &&
+        _agent.partOfSpeech.isEmpty) {
+      return const SizedBox.shrink();
+    }
+    final details = <String>[];
+    if (_agent.partOfSpeech.isNotEmpty) details.add(_agent.partOfSpeech);
+    if (hasForm && _agent.formSteps.isEmpty) {
+      details.add(_agent.conjugationForm);
+    }
+    return Padding(
+      padding: const EdgeInsets.only(top: 9),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (lemmaChanged || hasDictionaryLink)
+            InkWell(
+              onTap: hasDictionaryLink
+                  ? () => _openNestedLookup(
+                        _agent.dictionaryKey,
+                        exactCanonical: true,
+                        preferredDefinition: _agent.dictionaryDefinitionEn,
+                      )
+                  : null,
+              borderRadius: BorderRadius.circular(6),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 3),
+                child: Row(
+                  children: [
+                    Text(
+                      hasDictionaryLink
+                          ? 'Dictionary entry  '
+                          : 'Dictionary form  ',
+                      style: TextStyle(fontSize: 12, color: Colors.grey[500]),
+                    ),
+                    Expanded(
+                      child: Text(
+                        formatJapaneseLemmaReading(
+                          _agent.lemma,
+                          _agent.lemmaReading,
+                        ),
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w600,
+                          color: hasDictionaryLink ? AppTheme.primary : muted,
+                        ),
+                      ),
+                    ),
+                    if (hasDictionaryLink)
+                      const Icon(Icons.chevron_right, size: 18),
+                  ],
+                ),
+              ),
+            ),
+          if (_agent.formSteps.isNotEmpty) ...[
+            const SizedBox(height: 6),
+            ..._agent.formSteps.map(
+              (step) => Padding(
+                padding: const EdgeInsets.only(bottom: 5),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      width: 20,
+                      child: Text(
+                        '→',
+                        style: TextStyle(fontSize: 14, color: Colors.grey[500]),
+                      ),
+                    ),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            formatJapaneseLemmaReading(step.form, step.reading),
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600,
+                              color: muted,
+                            ),
+                          ),
+                          Text(
+                            '${step.label} · ${step.meaningEn}',
+                            style: TextStyle(
+                              fontSize: 12.5,
+                              height: 1.3,
+                              color: Colors.grey[500],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+          if (details.isNotEmpty)
+            Padding(
+              padding: EdgeInsets.only(
+                top: lemmaChanged ||
+                        hasDictionaryLink ||
+                        _agent.formSteps.isNotEmpty
+                    ? 3
+                    : 0,
+              ),
+              child: Text(
+                details.join(' · '),
+                style: TextStyle(fontSize: 12.5, color: Colors.grey[500]),
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildJapaneseGrammar(
+    AgentGrammarOverlay item,
+    Color? muted,
+    bool isDark,
+  ) {
+    final visibleComponents = item.components.where((component) {
+      return !RegExp(r'^[\s、。！？「」『』（）［］【】]+$').hasMatch(component.text);
+    }).toList(growable: false);
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 12),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            item.text,
+            style: _cjkTextStyle(
+              fontSize: 20,
+              language: Language.japanese,
+              fontWeight: FontWeight.w600,
+              color: AppTheme.primary,
+            ),
+          ),
+          const SizedBox(height: 2),
+          Text(
+            item.formLabel.isNotEmpty ? item.formLabel : item.pattern,
+            style: TextStyle(
+              fontSize: 13,
+              fontWeight: FontWeight.w600,
+              color: muted,
+            ),
+          ),
+          if (item.headLemma.isNotEmpty)
+            Text(
+              'From ${formatJapaneseLemmaReading(
+                item.headLemma,
+                item.headLemmaReading,
+              )}',
+              style: TextStyle(fontSize: 12.5, color: Colors.grey[500]),
+            ),
+          const SizedBox(height: 5),
+          Text(
+            item.meaningEn,
+            style: TextStyle(fontSize: 14, height: 1.4, color: muted),
+          ),
+          if (item.explanationEn.isNotEmpty &&
+              item.explanationEn != item.meaningEn) ...[
+            const SizedBox(height: 3),
+            Text(
+              item.explanationEn,
+              style: TextStyle(fontSize: 13, height: 1.4, color: muted),
+            ),
+          ],
+          if (visibleComponents.isNotEmpty) ...[
+            const SizedBox(height: 7),
+            Container(
+              decoration: BoxDecoration(
+                color: isDark
+                    ? Colors.white10
+                    : Colors.black.withValues(alpha: 0.035),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Column(
+                children: visibleComponents.asMap().entries.map((entry) {
+                  final component = entry.value;
+                  final hasDictionaryLink = component.dictionaryKey.isNotEmpty;
+                  final nestedAgentTarget = _nestedAgentTargetFor(component);
+                  final canOpen =
+                      nestedAgentTarget != null || hasDictionaryLink;
+                  return InkWell(
+                    onTap: canOpen
+                        ? () {
+                            if (nestedAgentTarget != null) {
+                              _openNestedAgentTarget(nestedAgentTarget);
+                              return;
+                            }
+                            _openNestedLookup(
+                              component.dictionaryKey,
+                              exactCanonical: true,
+                              preferredDefinition:
+                                  component.dictionaryDefinitionEn,
+                            );
+                          }
+                        : null,
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 8),
+                      decoration: entry.key == 0
+                          ? null
+                          : BoxDecoration(
+                              border: Border(
+                                top: BorderSide(
+                                  color:
+                                      isDark ? Colors.white12 : Colors.black12,
+                                ),
+                              ),
+                            ),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            width: 64,
+                            child: Text(
+                              component.text,
+                              style: _cjkTextStyle(
+                                fontSize: 16,
+                                language: Language.japanese,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: 8),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  formatJapaneseLemmaReading(
+                                    component.lemma,
+                                    component.lemmaReading,
+                                  ),
+                                  style: TextStyle(
+                                    fontSize: 12.5,
+                                    color: canOpen
+                                        ? AppTheme.primary
+                                        : Colors.grey[500],
+                                  ),
+                                ),
+                                Text(
+                                  component.functionEn,
+                                  style: TextStyle(
+                                    fontSize: 12.5,
+                                    height: 1.35,
+                                    color: muted,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          if (canOpen) ...[
+                            const SizedBox(width: 4),
+                            const Icon(Icons.chevron_right, size: 18),
+                          ],
+                        ],
+                      ),
+                    ),
+                  );
+                }).toList(),
+              ),
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _currentIndex = widget.initialIndex;
+    _saved = VocabularyService.instance.isSaved(_word.surface);
+  }
+
+  void _goTo(int index) {
+    setState(() {
+      _currentIndex = index;
+      _saved = VocabularyService.instance.isSaved(_word.surface);
+    });
+    widget.highlightedIndex.value = index;
+  }
+
+  Future<void> _toggleSave() async {
+    if (_loading) return;
+    setState(() => _loading = true);
+    if (_saved) {
+      await VocabularyService.instance.removeWord(_word.surface);
+    } else {
+      await VocabularyService.instance.saveWord(SavedWord(
+        word: _word.surface,
+        pinyin: _agent.pinyin,
+        definitions: [_agent.meaningEn],
+        savedAt: DateTime.now(),
+      ));
+    }
+    if (!mounted) return;
+    setState(() {
+      _saved = !_saved;
+      _loading = false;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final muted = isDark ? Colors.grey[300] : Colors.grey[700];
+    return _definitionSheetViewport(context,
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(24, 0, 24, 20),
+          child: SelectionArea(
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    key: const ValueKey('definition-sheet-scrolling-header'),
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Semantics(
+                              label:
+                                  '${_word.surface}. Tap a character for its entry.',
+                              child: _buildPlainWord(
+                                word: _word.surface,
+                                language: widget.language,
+                                fontSize: 32,
+                                onCharTap: _openNestedLookup,
+                              ),
+                            ),
+                            if (_agent.pinyin.isNotEmpty)
+                              Text(
+                                _agent.pinyin,
+                                style: const TextStyle(
+                                  fontSize: 17,
+                                  color: AppTheme.primary,
+                                  fontStyle: FontStyle.italic,
+                                ),
+                              ),
+                          ],
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: _toggleSave,
+                        icon: _loading
+                            ? const SizedBox(
+                                width: 20,
+                                height: 20,
+                                child:
+                                    CircularProgressIndicator(strokeWidth: 2),
+                              )
+                            : Icon(
+                                _saved
+                                    ? Icons.bookmark_rounded
+                                    : Icons.bookmark_outline_rounded,
+                                color: _saved ? AppTheme.primary : null,
+                              ),
+                        tooltip: _saved
+                            ? 'Remove from vocabulary'
+                            : 'Save to vocabulary',
+                        visualDensity: VisualDensity.compact,
+                      ),
+                      CopyTextButton(
+                        text: _word.surface,
+                        confirmation: 'Word copied',
+                        tooltip: 'Copy word',
+                        visualDensity: VisualDensity.compact,
+                      ),
+                    ],
+                  ),
+                  if (_agent.isLookupOnly) ...[
+                    const SizedBox(height: 2),
+                    Text.rich(
+                      key: const ValueKey('definition-sheet-reading-cue'),
+                      TextSpan(
+                        style: TextStyle(
+                            fontSize: 12.5,
+                            height: 1.3,
+                            color: Colors.grey[500]),
+                        children: [
+                          WidgetSpan(
+                            alignment: PlaceholderAlignment.middle,
+                            child: Padding(
+                              padding: const EdgeInsets.only(right: 5),
+                              child: Icon(Icons.visibility_outlined,
+                                  size: 14, color: Colors.grey[500]),
+                            ),
+                          ),
+                          TextSpan(text: _readingCue),
+                        ],
+                      ),
+                    ),
+                  ],
+                  const SizedBox(height: 12),
+                  Divider(
+                    height: 1,
+                    color: isDark ? Colors.grey[800] : Colors.grey[200],
+                  ),
+                  const SizedBox(height: 12),
+                  Text(
+                    _agent.meaningEn,
+                    style: TextStyle(fontSize: 15, height: 1.45, color: muted),
+                  ),
+                  if (widget.language == Language.japanese)
+                    _buildJapaneseFormSummary(muted),
+                  if (_agent.storyTermMeaningEn.isNotEmpty &&
+                      _agent.storyTermMeaningEn != _agent.meaningEn) ...[
+                    const SizedBox(height: 8),
+                    Text(
+                      _agent.storyTermMeaningEn,
+                      style: TextStyle(fontSize: 14, height: 1.4, color: muted),
+                    ),
+                  ],
+                  if (_agent.storyTermImportanceEn.isNotEmpty) ...[
+                    const SizedBox(height: 3),
+                    Text(
+                      _agent.storyTermImportanceEn,
+                      style: TextStyle(fontSize: 12, height: 1.4, color: muted),
+                    ),
+                  ],
+                  if (widget.language == Language.chinese &&
+                      _agent.hasSubsegments) ...[
+                    const SizedBox(height: 14),
+                    Text(
+                      'How it is built',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.grey[500],
+                        letterSpacing: 0.3,
+                      ),
+                    ),
+                    const SizedBox(height: 5),
+                    Text(
+                      _agent.compositionEn,
+                      style: TextStyle(fontSize: 14, height: 1.4, color: muted),
+                    ),
+                    const SizedBox(height: 7),
+                    Column(
+                      children:
+                          _agent.subsegments.asMap().entries.expand((entry) {
+                        final widgets = <Widget>[
+                          _buildSubsegmentRow(entry.value, isDark),
+                        ];
+                        if (entry.key < _agent.subsegments.length - 1) {
+                          widgets.add(Divider(
+                            height: 1,
+                            color: isDark ? Colors.grey[800] : Colors.grey[200],
+                          ));
+                        }
+                        return widgets;
+                      }).toList(),
+                    ),
+                  ],
+                  if (_word.grammar.isNotEmpty) ...[
+                    const SizedBox(height: 12),
+                    Text(
+                      'Grammar',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.grey[500],
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    if (widget.language == Language.japanese)
+                      ..._word.grammar.map(
+                        (item) => _buildJapaneseGrammar(item, muted, isDark),
+                      )
+                    else
+                      ..._word.grammar.map((item) => Padding(
+                            padding: const EdgeInsets.only(bottom: 6),
+                            child: Text(
+                              '${item.pattern} — ${item.meaningEn}',
+                              style: TextStyle(
+                                  fontSize: 14, height: 1.4, color: muted),
+                            ),
+                          )),
+                  ],
+                  if (widget.allWords.length > 1) ...[
+                    const SizedBox(height: 12),
+                    Divider(
+                        color: isDark ? Colors.grey[700] : Colors.grey[200]),
+                    Row(
+                      children: [
+                        IconButton(
+                          onPressed: _currentIndex > 0
+                              ? () => _goTo(_currentIndex - 1)
+                              : null,
+                          icon: const Icon(Icons.chevron_left),
+                          tooltip: _currentIndex > 0
+                              ? widget.allWords[_currentIndex - 1].surface
+                              : null,
+                        ),
+                        Expanded(
+                          child: Text(
+                            '${_currentIndex + 1} / ${widget.allWords.length}',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(color: Colors.grey[500]),
+                          ),
+                        ),
+                        IconButton(
+                          onPressed: _currentIndex < widget.allWords.length - 1
+                              ? () => _goTo(_currentIndex + 1)
+                              : null,
+                          icon: const Icon(Icons.chevron_right),
+                          tooltip: _currentIndex < widget.allWords.length - 1
+                              ? widget.allWords[_currentIndex + 1].surface
+                              : null,
+                        ),
+                      ],
+                    ),
+                  ],
+                ],
+              ),
+            ),
+          ),
+        ));
+  }
+}
 
 class _WordDefinitionSheet extends StatefulWidget {
   final List<String> allWords;
@@ -1468,6 +2552,7 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
       context: context,
       isScrollControlled: true,
       useSafeArea: true,
+      showDragHandle: true,
       backgroundColor: Theme.of(context).colorScheme.surface,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
@@ -1504,18 +2589,22 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
               Expanded(
                 child: (charEntry == null && etym == null)
                     ? Text('—',
-                        style:
-                            TextStyle(color: Colors.grey[400], fontSize: 14))
+                        style: TextStyle(color: Colors.grey[400], fontSize: 14))
                     : Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           if (charEntry != null && charEntry.pinyin.isNotEmpty)
-                            Text(charEntry.pinyin,
+                            Text(
+                                _displayDictionaryReading(
+                                  charEntry.pinyin,
+                                  DictionaryService.instance.activeLanguage,
+                                ),
                                 style: TextStyle(
                                     fontSize: 13,
                                     color: AppTheme.primary,
                                     fontStyle: FontStyle.italic)),
-                          if (charEntry != null && charEntry.definitions.isNotEmpty)
+                          if (charEntry != null &&
+                              charEntry.definitions.isNotEmpty)
                             Text(
                               charEntry.definitions.first,
                               style: TextStyle(
@@ -1554,7 +2643,10 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
     return Wrap(
       children: subwords.map((sw) {
         final swEntry = dict.lookup(sw);
-        final reading = swEntry?.pinyin ?? '';
+        final reading = _displayDictionaryReading(
+          swEntry?.pinyin ?? '',
+          language,
+        );
         return GestureDetector(
           onTap: () => _openNestedLookup(sw),
           child: reading.isNotEmpty
@@ -1614,7 +2706,7 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
 
   Widget _buildWordWithReading(DictEntry? entry) {
     final lang = DictionaryService.instance.activeLanguage;
-    final reading = entry?.pinyin ?? '';
+    final reading = _displayDictionaryReading(entry?.pinyin ?? '', lang);
     final dictForm = entry?.word ?? _word;
     final isInflected = dictForm != _word;
 
@@ -1676,7 +2768,7 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
             language: lang,
             fontSize: 32,
             onCharTap: charTap,
-        ),
+          ),
         if (reading.isNotEmpty) ...[
           const SizedBox(height: 4),
           Text(
@@ -1734,252 +2826,234 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final entry = _entry;
 
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(24, 12, 24, 24),
-      child: SingleChildScrollView(
-        child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Center(
-            child: Container(
-              width: 36,
-              height: 4,
-              decoration: BoxDecoration(
-                color: Colors.grey[400],
-                borderRadius: BorderRadius.circular(2),
-              ),
-            ),
-          ),
-          const SizedBox(height: 16),
-
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    _buildWordWithReading(entry),
-                  ],
-                ),
-              ),
-              if (entry?.hskLevel != null)
-                Padding(
-                  padding: const EdgeInsets.only(right: 8),
-                  child: Builder(builder: (context) {
-                    final lang = DictionaryService.instance.activeLanguage;
-                    final lvl = entry!.hskLevel!;
-                    String label;
-                    if (lang == Language.japanese) {
-                      const jlpt = {
-                        1: 'N5',
-                        2: 'N4',
-                        3: 'N3',
-                        4: 'N2',
-                        5: 'N1'
-                      };
-                      label = 'JLPT ${jlpt[lvl] ?? lvl}';
-                    } else {
-                      label = 'HSK $lvl';
-                    }
-                    return Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 8, vertical: 3),
-                      decoration: BoxDecoration(
-                        color: AppTheme.levelColor(lvl, lang),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Text(
-                        label,
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 11,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    );
-                  }),
-                ),
-              IconButton(
-                onPressed: () {
-                  Clipboard.setData(ClipboardData(text: _word));
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text('Copied "$_word"'),
-                      duration: const Duration(seconds: 1),
-                      behavior: SnackBarBehavior.floating,
-                    ),
-                  );
-                },
-                icon: const Icon(Icons.copy_rounded, size: 20),
-                tooltip: 'Copy',
-                visualDensity: VisualDensity.compact,
-              ),
-              IconButton(
-                onPressed: _toggleSave,
-                icon: _loading
-                    ? const SizedBox(
-                        width: 20,
-                        height: 20,
-                        child: CircularProgressIndicator(strokeWidth: 2),
-                      )
-                    : Icon(
-                        _saved
-                            ? Icons.bookmark_rounded
-                            : Icons.bookmark_outline_rounded,
-                        color: _saved ? AppTheme.primary : null,
-                        size: 24,
-                      ),
-                tooltip:
-                    _saved ? 'Remove from vocabulary' : 'Save to vocabulary',
-                visualDensity: VisualDensity.compact,
-              ),
-            ],
-          ),
-
-          if (entry != null && entry.hasDefinitions) ...[
-            const SizedBox(height: 12),
-            Divider(color: isDark ? Colors.grey[700] : Colors.grey[200]),
-            const SizedBox(height: 8),
-            ...entry.definitions.asMap().entries.map((e) => Padding(
-                  padding: const EdgeInsets.only(bottom: 4),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+    return _definitionSheetViewport(context,
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(24, 0, 24, 24),
+          child: SelectionArea(
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      SizedBox(
-                        width: 24,
-                        child: Text(
-                          '${e.key + 1}.',
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: Colors.grey[500],
-                            fontWeight: FontWeight.w600,
-                          ),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            _buildWordWithReading(entry),
+                          ],
                         ),
                       ),
-                      Expanded(
-                        child: Text(
-                          e.value,
-                          style: TextStyle(
-                            fontSize: 14,
-                            height: 1.4,
-                            color:
-                                isDark ? Colors.grey[300] : Colors.grey[800],
-                          ),
+                      if (_curriculumBadge(
+                            entry,
+                            DictionaryService.instance.activeLanguage,
+                            _word,
+                          ) !=
+                          null)
+                        Padding(
+                          padding: const EdgeInsets.only(right: 8),
+                          child: Builder(builder: (context) {
+                            final lang =
+                                DictionaryService.instance.activeLanguage;
+                            final badge = _curriculumBadge(entry, lang, _word)!;
+                            return Container(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 8, vertical: 3),
+                              decoration: BoxDecoration(
+                                color: AppTheme.levelColor(badge.level, lang),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Text(
+                                badge.label,
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 11,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            );
+                          }),
                         ),
+                      CopyTextButton(
+                        text: _word,
+                        confirmation: 'Word copied',
+                        tooltip: 'Copy word',
+                        visualDensity: VisualDensity.compact,
+                      ),
+                      IconButton(
+                        onPressed: _toggleSave,
+                        icon: _loading
+                            ? const SizedBox(
+                                width: 20,
+                                height: 20,
+                                child:
+                                    CircularProgressIndicator(strokeWidth: 2),
+                              )
+                            : Icon(
+                                _saved
+                                    ? Icons.bookmark_rounded
+                                    : Icons.bookmark_outline_rounded,
+                                color: _saved ? AppTheme.primary : null,
+                                size: 24,
+                              ),
+                        tooltip: _saved
+                            ? 'Remove from vocabulary'
+                            : 'Save to vocabulary',
+                        visualDensity: VisualDensity.compact,
                       ),
                     ],
                   ),
-                )),
-          ] else ...[
-            const SizedBox(height: 12),
-            if (entry == null && _word.length > 1) ...[
-              Divider(color: isDark ? Colors.grey[700] : Colors.grey[200]),
-              const SizedBox(height: 8),
-              Text(
-                'Word not in dictionary. Character breakdown:',
-                style: TextStyle(fontSize: 12, color: Colors.grey[500]),
-              ),
-              const SizedBox(height: 8),
-              ..._buildCharBreakdown(_word, isDark),
-            ] else
-              Text(
-                entry == null
-                    ? 'No dictionary entry found'
-                    : 'No definitions available',
-                style: TextStyle(
-                  fontSize: 13,
-                  color: Colors.grey[500],
-                  fontStyle: FontStyle.italic,
-                ),
-              ),
-          ],
 
-          // Etymology section (for single characters)
-          if (_word.length == 1) ...[
-            ..._buildEtymSection(context, _word, isDark),
-          ],
-
-          // Prev / Next word navigation
-          if (widget.allWords.length > 1) ...[
-            const SizedBox(height: 8),
-            Divider(color: isDark ? Colors.grey[700] : Colors.grey[200]),
-            Row(
-              children: [
-                Expanded(
-                  child: GestureDetector(
-                    onTap: _hasPrev
-                        ? () => _goTo(_currentIndex - 1)
-                        : null,
-                    behavior: HitTestBehavior.opaque,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Icon(Icons.chevron_left,
-                            size: 22,
-                            color: _hasPrev ? null : Colors.grey[400]),
-                        if (_hasPrev)
-                          Flexible(
-                            child: Text(
-                              widget.allWords[_currentIndex - 1],
-                              style: TextStyle(
-                                fontSize: 15,
-                                color: isDark
-                                    ? Colors.grey[300]
-                                    : Colors.grey[700],
+                  if (entry != null && entry.hasDefinitions) ...[
+                    const SizedBox(height: 12),
+                    Divider(
+                        color: isDark ? Colors.grey[700] : Colors.grey[200]),
+                    const SizedBox(height: 8),
+                    ...entry.definitions.asMap().entries.map((e) => Padding(
+                          padding: const EdgeInsets.only(bottom: 4),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                width: 24,
+                                child: Text(
+                                  '${e.key + 1}.',
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    color: Colors.grey[500],
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
                               ),
-                              overflow: TextOverflow.ellipsis,
+                              Expanded(
+                                child: Text(
+                                  e.value,
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    height: 1.4,
+                                    color: isDark
+                                        ? Colors.grey[300]
+                                        : Colors.grey[800],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        )),
+                  ] else ...[
+                    const SizedBox(height: 12),
+                    if (entry == null && _word.length > 1) ...[
+                      Divider(
+                          color: isDark ? Colors.grey[700] : Colors.grey[200]),
+                      const SizedBox(height: 8),
+                      Text(
+                        'Word not in dictionary. Character breakdown:',
+                        style: TextStyle(fontSize: 12, color: Colors.grey[500]),
+                      ),
+                      const SizedBox(height: 8),
+                      ..._buildCharBreakdown(_word, isDark),
+                    ] else
+                      Text(
+                        entry == null
+                            ? 'No dictionary entry found'
+                            : 'No definitions available',
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: Colors.grey[500],
+                          fontStyle: FontStyle.italic,
+                        ),
+                      ),
+                  ],
+
+                  // Etymology section (for single characters)
+                  if (_word.length == 1) ...[
+                    ..._buildEtymSection(context, _word, isDark),
+                  ],
+
+                  // Prev / Next word navigation
+                  if (widget.allWords.length > 1) ...[
+                    const SizedBox(height: 8),
+                    Divider(
+                        color: isDark ? Colors.grey[700] : Colors.grey[200]),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: GestureDetector(
+                            onTap: _hasPrev
+                                ? () => _goTo(_currentIndex - 1)
+                                : null,
+                            behavior: HitTestBehavior.opaque,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Icon(Icons.chevron_left,
+                                    size: 22,
+                                    color: _hasPrev ? null : Colors.grey[400]),
+                                if (_hasPrev)
+                                  Flexible(
+                                    child: Text(
+                                      widget.allWords[_currentIndex - 1],
+                                      style: TextStyle(
+                                        fontSize: 15,
+                                        color: isDark
+                                            ? Colors.grey[300]
+                                            : Colors.grey[700],
+                                      ),
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ),
+                              ],
                             ),
                           ),
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 12),
-                  child: Text(
-                    '${_currentIndex + 1} / ${widget.allWords.length}',
-                    style: TextStyle(fontSize: 11, color: Colors.grey[500]),
-                  ),
-                ),
-                Expanded(
-                  child: GestureDetector(
-                    onTap: _hasNext
-                        ? () => _goTo(_currentIndex + 1)
-                        : null,
-                    behavior: HitTestBehavior.opaque,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        if (_hasNext)
-                          Flexible(
-                            child: Text(
-                              widget.allWords[_currentIndex + 1],
-                              style: TextStyle(
-                                fontSize: 15,
-                                color: isDark
-                                    ? Colors.grey[300]
-                                    : Colors.grey[700],
-                              ),
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.right,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 12),
+                          child: Text(
+                            '${_currentIndex + 1} / ${widget.allWords.length}',
+                            style: TextStyle(
+                                fontSize: 11, color: Colors.grey[500]),
+                          ),
+                        ),
+                        Expanded(
+                          child: GestureDetector(
+                            onTap: _hasNext
+                                ? () => _goTo(_currentIndex + 1)
+                                : null,
+                            behavior: HitTestBehavior.opaque,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                if (_hasNext)
+                                  Flexible(
+                                    child: Text(
+                                      widget.allWords[_currentIndex + 1],
+                                      style: TextStyle(
+                                        fontSize: 15,
+                                        color: isDark
+                                            ? Colors.grey[300]
+                                            : Colors.grey[700],
+                                      ),
+                                      overflow: TextOverflow.ellipsis,
+                                      textAlign: TextAlign.right,
+                                    ),
+                                  ),
+                                Icon(Icons.chevron_right,
+                                    size: 22,
+                                    color: _hasNext ? null : Colors.grey[400]),
+                              ],
                             ),
                           ),
-                        Icon(Icons.chevron_right,
-                            size: 22,
-                            color: _hasNext ? null : Colors.grey[400]),
+                        ),
                       ],
                     ),
-                  ),
-                ),
-              ],
+                  ],
+                ],
+              ),
             ),
-          ],
-        ],
-      ),
-      ),
-    );
+          ),
+        ));
   }
 }
 
@@ -1987,16 +3061,49 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
 // Simple single-word lookup sheet (for recursive lookups)
 // ---------------------------------------------------------------------------
 
-class _SingleWordSheet extends StatelessWidget {
+class _SingleWordSheet extends StatefulWidget {
   final String word;
+  final bool exactCanonical;
+  final String preferredDefinition;
 
-  const _SingleWordSheet({required this.word});
+  const _SingleWordSheet({
+    required this.word,
+    this.exactCanonical = false,
+    this.preferredDefinition = '',
+  });
+
+  @override
+  State<_SingleWordSheet> createState() => _SingleWordSheetState();
+}
+
+class _SingleWordSheetState extends State<_SingleWordSheet> {
+  late final Future<void>? _assetLoad;
+
+  String get word => widget.word;
+
+  @override
+  void initState() {
+    super.initState();
+    if (word.length != 1) {
+      _assetLoad = null;
+      return;
+    }
+    final etymologyLoad = EtymologyService.instance.initialize();
+    _assetLoad = etymologyLoad;
+    unawaited(
+        etymologyLoad.then((_) => GlyphService.instance.initialize()).then(
+      (_) {
+        if (mounted) setState(() {});
+      },
+    ));
+  }
 
   void _openNestedLookup(BuildContext context, String w) {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
       useSafeArea: true,
+      showDragHandle: true,
       backgroundColor: Theme.of(context).colorScheme.surface,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
@@ -2015,7 +3122,10 @@ class _SingleWordSheet extends StatelessWidget {
     return Wrap(
       children: subwords.map((sw) {
         final swEntry = dict.lookup(sw);
-        final reading = swEntry?.pinyin ?? '';
+        final reading = _displayDictionaryReading(
+          swEntry?.pinyin ?? '',
+          language,
+        );
         return GestureDetector(
           onTap: () => _openNestedLookup(context, sw),
           child: reading.isNotEmpty
@@ -2076,7 +3186,7 @@ class _SingleWordSheet extends StatelessWidget {
 
   Widget _buildSingleWordDisplay(
       BuildContext context, DictEntry? entry, Language lang) {
-    final reading = entry?.pinyin ?? '';
+    final reading = _displayDictionaryReading(entry?.pinyin ?? '', lang);
     final dictForm = entry?.word ?? word;
     final isInflected = dictForm != word;
     final subwords = _segmentCompound(dictForm);
@@ -2095,14 +3205,22 @@ class _SingleWordSheet extends StatelessWidget {
         final parts = <TextSpan>[];
         final style = TextStyle(fontSize: 14, color: Colors.grey[500]);
         if (lang == Language.japanese) {
-          if (etym.japaneseKun != null) parts.add(TextSpan(text: etym.japaneseKun!, style: style));
+          if (etym.japaneseKun != null) {
+            parts.add(TextSpan(text: etym.japaneseKun!, style: style));
+          }
           if (etym.japaneseOn != null) {
             if (parts.isNotEmpty) parts.add(TextSpan(text: '  ', style: style));
             parts.add(TextSpan(text: etym.japaneseOn!, style: style));
           }
         } else {
           if (etym.mandarinReading != null) {
-            parts.add(TextSpan(text: etym.mandarinReading!, style: style));
+            parts.add(TextSpan(
+              text: _displayDictionaryReading(
+                etym.mandarinReading!,
+                Language.chinese,
+              ),
+              style: style,
+            ));
           }
         }
         if (parts.isNotEmpty) {
@@ -2200,10 +3318,11 @@ class _SingleWordSheet extends StatelessWidget {
     );
   }
 
-  @override
-  Widget build(BuildContext context) {
+  Widget _buildContent(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    var entry = DictionaryService.instance.lookup(word);
+    var entry = widget.exactCanonical
+        ? DictionaryService.instance.lookupExactCanonical(word)
+        : DictionaryService.instance.lookup(word);
     final lang = DictionaryService.instance.activeLanguage;
 
     // Fallback: if no dictionary entry, build one from etymology data
@@ -2230,133 +3349,152 @@ class _SingleWordSheet extends StatelessWidget {
       }
     }
 
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(24, 12, 24, 24),
-      child: SingleChildScrollView(
-        child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Center(
-            child: Container(
-              width: 36,
-              height: 4,
-              decoration: BoxDecoration(
-                color: Colors.grey[400],
-                borderRadius: BorderRadius.circular(2),
-              ),
-            ),
-          ),
-          const SizedBox(height: 16),
-
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Expanded(
-                child: _buildSingleWordDisplay(context, entry, lang),
-              ),
-              if (entry?.hskLevel != null)
-                Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-                  decoration: BoxDecoration(
-                    color: AppTheme.levelColor(entry!.hskLevel!, lang),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Text(
-                    lang == Language.japanese
-                        ? 'JLPT ${const {1: 'N5', 2: 'N4', 3: 'N3', 4: 'N2', 5: 'N1'}[entry.hskLevel] ?? entry.hskLevel}'
-                        : 'HSK ${entry.hskLevel}',
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 11,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              IconButton(
-                onPressed: () {
-                  Clipboard.setData(ClipboardData(text: word));
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text('Copied "$word"'),
-                      duration: const Duration(seconds: 1),
-                      behavior: SnackBarBehavior.floating,
-                    ),
-                  );
-                },
-                icon: const Icon(Icons.copy_rounded, size: 20),
-                tooltip: 'Copy',
-                visualDensity: VisualDensity.compact,
-              ),
-            ],
-          ),
-
-          if (entry != null && entry.hasDefinitions) ...[
-            const SizedBox(height: 12),
-            Divider(color: isDark ? Colors.grey[700] : Colors.grey[200]),
-            const SizedBox(height: 8),
-            ...entry.definitions.asMap().entries.map((e) => Padding(
-                  padding: const EdgeInsets.only(bottom: 4),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+    return _definitionSheetViewport(context,
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(24, 0, 24, 24),
+          child: SelectionArea(
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      SizedBox(
-                        width: 24,
-                        child: Text(
-                          '${e.key + 1}.',
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: Colors.grey[500],
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                      ),
                       Expanded(
-                        child: Text(
-                          e.value,
-                          style: TextStyle(
-                            fontSize: 14,
-                            height: 1.4,
-                            color:
-                                isDark ? Colors.grey[300] : Colors.grey[800],
+                        child: _buildSingleWordDisplay(context, entry, lang),
+                      ),
+                      if (_curriculumBadge(entry, lang, word) case final badge?)
+                        Container(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 8, vertical: 3),
+                          decoration: BoxDecoration(
+                            color: AppTheme.levelColor(badge.level, lang),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Text(
+                            badge.label,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 11,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
+                      CopyTextButton(
+                        text: word,
+                        confirmation: 'Word copied',
+                        tooltip: 'Copy word',
+                        visualDensity: VisualDensity.compact,
                       ),
                     ],
                   ),
-                )),
-          ] else if (word.length > 1) ...[
-            const SizedBox(height: 12),
-            Divider(color: isDark ? Colors.grey[700] : Colors.grey[200]),
-            const SizedBox(height: 8),
-            Text(
-              'Word not in dictionary. Tap characters above for breakdown.',
-              style: TextStyle(fontSize: 12, color: Colors.grey[500]),
-            ),
-          ] else ...[
-            // No dictionary entry — etymology may still be available
-            const SizedBox(height: 12),
-            if (_buildEtymologyWidgets(context, word, isDark,
-                    onComponentTap: (ch) => _openNestedLookup(context, ch))
-                .isEmpty)
-              Text(
-                'No dictionary entry found',
-                style: TextStyle(
-                  fontSize: 13,
-                  color: Colors.grey[500],
-                  fontStyle: FontStyle.italic,
-                ),
-              ),
-          ],
 
-          // Etymology section (for single characters)
-          if (word.length == 1) ...[
-            ..._etymSection(context, word, isDark),
-          ],
-        ],
-      ),
-      ),
+                  if (entry != null && entry.hasDefinitions) ...[
+                    const SizedBox(height: 12),
+                    Divider(
+                        color: isDark ? Colors.grey[700] : Colors.grey[200]),
+                    const SizedBox(height: 8),
+                    ...([
+                      if (widget.preferredDefinition.isNotEmpty)
+                        widget.preferredDefinition,
+                      ...entry.definitions.where(
+                        (definition) =>
+                            definition != widget.preferredDefinition,
+                      ),
+                    ]).asMap().entries.map((e) => Padding(
+                          padding: const EdgeInsets.only(bottom: 4),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                width: 24,
+                                child: Text(
+                                  '${e.key + 1}.',
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    color: Colors.grey[500],
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                child: Text(
+                                  e.value,
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    height: 1.4,
+                                    color: isDark
+                                        ? Colors.grey[300]
+                                        : Colors.grey[800],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        )),
+                  ] else if (word.length > 1) ...[
+                    const SizedBox(height: 12),
+                    Divider(
+                        color: isDark ? Colors.grey[700] : Colors.grey[200]),
+                    const SizedBox(height: 8),
+                    Text(
+                      'Word not in dictionary. Tap characters above for breakdown.',
+                      style: TextStyle(fontSize: 12, color: Colors.grey[500]),
+                    ),
+                  ] else ...[
+                    // No dictionary entry — etymology may still be available
+                    const SizedBox(height: 12),
+                    if (_buildEtymologyWidgets(context, word, isDark,
+                        onComponentTap: (ch) =>
+                            _openNestedLookup(context, ch)).isEmpty)
+                      Text(
+                        'No dictionary entry found',
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: Colors.grey[500],
+                          fontStyle: FontStyle.italic,
+                        ),
+                      ),
+                  ],
+
+                  // Etymology section (for single characters)
+                  if (word.length == 1) ...[
+                    ..._etymSection(context, word, isDark),
+                  ],
+                ],
+              ),
+            ),
+          ),
+        ));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final assetLoad = _assetLoad;
+    if (assetLoad == null || EtymologyService.instance.isReady) {
+      return _buildContent(context);
+    }
+    return FutureBuilder<void>(
+      future: assetLoad,
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.done) {
+          if (snapshot.hasError) {
+            return Padding(
+              padding: const EdgeInsets.all(32),
+              child: Text(
+                'Character history could not be loaded.',
+                style: TextStyle(color: Colors.grey[600]),
+              ),
+            );
+          }
+          return _buildContent(context);
+        }
+        return const SizedBox(
+          height: 180,
+          child: Center(child: CircularProgressIndicator()),
+        );
+      },
     );
   }
 }

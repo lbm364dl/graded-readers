@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'models.dart';
 
 class AppTheme {
@@ -32,19 +31,28 @@ class AppTheme {
     return colors[level] ?? const Color(0xFF9E9E9E);
   }
 
-  static TextTheme _cjkTextTheme(Language language, Brightness brightness) {
+  static TextTheme _textTheme(Language language, Brightness brightness) {
     final base = brightness == Brightness.dark
         ? ThemeData.dark().textTheme
         : ThemeData.light().textTheme;
-    return language == Language.japanese
-        ? GoogleFonts.notoSansJpTextTheme(base)
-        : GoogleFonts.notoSansScTextTheme(base);
+    return base.apply(
+      fontFamily: 'NotoSans',
+      fontFamilyFallback: [
+        language == Language.japanese ? 'NotoSansJP' : 'NotoSansSC',
+        language == Language.japanese ? 'NotoSansSC' : 'NotoSansJP',
+      ],
+    );
   }
 
   static ThemeData lightThemeFor(Language language) {
-    final textTheme = _cjkTextTheme(language, Brightness.light);
+    final textTheme = _textTheme(language, Brightness.light);
     return ThemeData(
       useMaterial3: true,
+      fontFamily: 'NotoSans',
+      fontFamilyFallback: [
+        language == Language.japanese ? 'NotoSansJP' : 'NotoSansSC',
+        language == Language.japanese ? 'NotoSansSC' : 'NotoSansJP',
+      ],
       textTheme: textTheme,
       colorScheme: ColorScheme.fromSeed(
         seedColor: primary,
@@ -95,9 +103,14 @@ class AppTheme {
   }
 
   static ThemeData darkThemeFor(Language language) {
-    final textTheme = _cjkTextTheme(language, Brightness.dark);
+    final textTheme = _textTheme(language, Brightness.dark);
     return ThemeData(
       useMaterial3: true,
+      fontFamily: 'NotoSans',
+      fontFamilyFallback: [
+        language == Language.japanese ? 'NotoSansJP' : 'NotoSansSC',
+        language == Language.japanese ? 'NotoSansSC' : 'NotoSansJP',
+      ],
       textTheme: textTheme,
       colorScheme: ColorScheme.fromSeed(
         seedColor: primary,

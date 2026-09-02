@@ -8,7 +8,7 @@ import pipeline.publish_wagahai as publisher_module
 
 from pipeline.japanese_agent_harness import japanese_char_count
 from pipeline.publish_wagahai import (
-    PublicationError, _character_count, audit_runs, publish,
+    PublicationError, _character_count, _grammar_overlays, audit_runs, publish,
 )
 
 
@@ -20,6 +20,22 @@ def test_publisher_uses_harness_character_metric_at_boundaries():
     # The canonical harness range deliberately treats the Katakana middle dot
     # as a Japanese-script character while excluding Japanese full stop.
     assert _character_count("・。ABC") == 1
+
+
+def test_publisher_accepts_skipped_numeric_range_comma(tmp_path):
+    overlay = {
+        "start": 0, "end": 4, "surface": "四、五回",
+        "grammar_candidate_key": "quantity.approximate_range",
+        "pattern": "四、五回", "meaning_en": "four or five times",
+        "head_lemma": "五回", "head_lemma_kana": "ごかい",
+        "form_label": "approximate count",
+        "explanation_en": "The comma joins neighboring numeric possibilities.",
+        "components": [
+            {"start": 0, "end": 1, "surface": "四", "lemma": "四", "lemma_kana": "よん", "function_en": "lower number"},
+            {"start": 2, "end": 4, "surface": "五回", "lemma": "五回", "lemma_kana": "ごかい", "function_en": "upper number and counter"},
+        ],
+    }
+    assert _grammar_overlays([overlay], "四、五回", 3, tmp_path / "reader.json") == [overlay]
 
 
 def _json(path: Path, value: dict) -> None:
@@ -61,18 +77,23 @@ def _fixture(tmp_path: Path, lengths=(2, 3), annotated=True):
                 segments = []
                 for _ in range(count):
                     segments.extend([
-                        {"surface": "猫", "kana": "ねこ", "lemma": "猫",
-                         "type": "word", "meaning_en": "cat"},
-                        {"surface": "です", "kana": "です", "lemma": "です",
-                         "type": "auxiliary", "meaning_en": "is"},
+                        {"surface": "猫", "surface_kana": "ねこ", "lemma": "猫",
+                         "lemma_kana": "ねこ", "type": "word",
+                         "part_of_speech": "noun", "conjugation_form": "non-inflecting",
+                         "meaning_en": "cat", "story_role": "none", "story_importance_en": ""},
+                        {"surface": "です", "surface_kana": "です", "lemma": "です",
+                         "lemma_kana": "です", "type": "auxiliary",
+                         "part_of_speech": "copular auxiliary", "conjugation_form": "dictionary",
+                         "meaning_en": "is", "story_role": "none", "story_importance_en": ""},
                     ])
-                segments.append({"surface": "。\n", "kana": "", "lemma": "",
-                                 "type": "punctuation", "meaning_en": ""})
+                segments.append({"surface": "。\n", "surface_kana": "", "lemma": "",
+                                 "lemma_kana": "", "type": "punctuation",
+                                 "part_of_speech": "", "conjugation_form": "",
+                                 "meaning_en": "", "story_role": "none", "story_importance_en": ""})
                 _json(run / "reader.json", {
                     "title": f"猫の話{number}", "text": text,
                     "segments": segments,
-                    "grammar_overlays": [{"start": 1, "end": 3, "surface": "です",
-                                          "grammar": "Nです", "meaning_en": "copula"}],
+                    "grammar_overlays": [],
                     "annotation_audit": {"all_reviewed": True},
                 })
     return sources, runs
@@ -148,7 +169,7 @@ def test_rejects_noncanonical_text_reading_segment_fields(tmp_path):
     reader = json.loads(reader_path.read_text())
     segment = reader["segments"][0]
     segment["text"] = segment.pop("surface")
-    segment["reading"] = segment.pop("kana")
+    segment["reading"] = segment.pop("surface_kana")
     _json(reader_path, reader)
     with pytest.raises(PublicationError, match="violates schema"):
         audit_runs([runs], sources, ["n5", "n4"], expected_chapters=2)
@@ -161,6 +182,45 @@ def test_rejects_unreviewed_or_nonreconstructing_annotations(tmp_path):
     value["segments"][0]["surface"] = "別の文"
     _json(path, value)
     with pytest.raises(PublicationError, match="annotations do not reconstruct"):
+        audit_runs([runs], sources, ["n5", "n4"], expected_chapters=2)
+
+
+def test_rejects_tokenizer_sized_inflection_even_when_it_reconstructs(tmp_path):
+    sources, runs = _fixture(tmp_path)
+    run = runs / "chapter_01-n5"
+    reader_path = run / "reader.json"
+    reader = json.loads(reader_path.read_text())
+    reader["segments"][:2] = [
+        {
+            "surface": "あり", "surface_kana": "あり", "lemma": "ある",
+            "lemma_kana": "ある", "type": "word", "part_of_speech": "verb",
+            "conjugation_form": "continuative stem", "meaning_en": "exist",
+            "story_role": "none", "story_importance_en": "",
+        },
+        {
+            "surface": "まし", "surface_kana": "まし", "lemma": "ます",
+            "lemma_kana": "ます", "type": "auxiliary",
+            "part_of_speech": "polite auxiliary",
+            "conjugation_form": "continuative stem", "meaning_en": "polite",
+            "story_role": "none", "story_importance_en": "",
+        },
+        {
+            "surface": "た", "surface_kana": "た", "lemma": "た",
+            "lemma_kana": "た", "type": "auxiliary",
+            "part_of_speech": "past auxiliary",
+            "conjugation_form": "past", "meaning_en": "past",
+            "story_role": "none", "story_importance_en": "",
+        },
+    ]
+    reader["text"] = "".join(item["surface"] for item in reader["segments"])
+    _json(reader_path, reader)
+    (run / "chapter.txt").write_text(reader["text"], encoding="utf-8")
+    report_path = run / "report.json"
+    report = json.loads(report_path.read_text())
+    report["japanese_characters"] = japanese_char_count(reader["text"])
+    _json(report_path, report)
+
+    with pytest.raises(PublicationError, match="learner-facing Japanese segmentation"):
         audit_runs([runs], sources, ["n5", "n4"], expected_chapters=2)
 
 
@@ -189,7 +249,7 @@ def test_accepts_agent_harness_text_fingerprint(tmp_path):
 @pytest.mark.parametrize(
     ("mutation", "message"),
     [
-        (lambda segment: segment.update(kana="neko"), "kana-only"),
+        (lambda segment: segment.update(surface_kana="neko"), "kana-only"),
         (lambda segment: segment.update(surface="猫" * 19), "clause-sized"),
         (lambda segment: segment.update(meaning_en=""), "must be nonempty"),
     ],
@@ -219,6 +279,18 @@ def test_rejects_invalid_grammar_overlay_span(tmp_path):
     sources, runs = _fixture(tmp_path)
     path = runs / "chapter_01-n5" / "reader.json"
     value = json.loads(path.read_text())
+    value["grammar_overlays"] = [{
+        "start": 1, "end": 3, "surface": "です",
+        "grammar_candidate_key": "copula.polite",
+        "pattern": "Nです", "meaning_en": "is",
+        "head_lemma": "です", "head_lemma_kana": "です",
+        "form_label": "polite copula",
+        "explanation_en": "Politely identifies the subject.",
+        "components": [{
+            "start": 0, "end": 2, "surface": "です", "lemma": "です",
+            "lemma_kana": "です", "function_en": "polite copula",
+        }],
+    }]
     value["grammar_overlays"][0]["end"] = len(value["text"]) + 1
     _json(path, value)
     with pytest.raises(PublicationError, match="character span is invalid"):
@@ -233,12 +305,16 @@ def test_strips_independently_segmented_duplicate_heading(tmp_path):
     prefix = "# 猫の話1\n\n"
     reader["text"] = prefix + reader["text"]
     reader["segments"] = [
-        {"surface": "# ", "type": "punctuation", "lemma": "", "kana": "",
-         "meaning_en": ""},
-        {"surface": "猫の話", "type": "name", "lemma": "猫の話", "kana": "ねこのはなし",
-         "meaning_en": "the cat's story"},
-        {"surface": "1\n\n", "type": "punctuation", "lemma": "", "kana": "",
-         "meaning_en": ""},
+        {"surface": "# ", "type": "punctuation", "lemma": "", "surface_kana": "",
+         "lemma_kana": "", "part_of_speech": "", "conjugation_form": "",
+         "meaning_en": "", "story_role": "none", "story_importance_en": ""},
+        {"surface": "猫の話", "type": "name", "lemma": "猫の話", "surface_kana": "ねこのはなし",
+         "lemma_kana": "ねこのはなし", "part_of_speech": "proper noun",
+         "conjugation_form": "non-inflecting", "meaning_en": "the cat's story",
+         "story_role": "name", "story_importance_en": ""},
+        {"surface": "1\n\n", "type": "punctuation", "lemma": "", "surface_kana": "",
+         "lemma_kana": "", "part_of_speech": "", "conjugation_form": "",
+         "meaning_en": "", "story_role": "none", "story_importance_en": ""},
     ] + reader["segments"]
     reader["grammar_overlays"] = []
     _json(reader_path, reader)

@@ -4,6 +4,7 @@ import '../main.dart';
 import '../models.dart';
 import '../theme.dart';
 import '../services/progress_service.dart';
+import '../widgets/content_width.dart';
 import 'book_screen.dart';
 import 'reader_screen.dart';
 import 'vocabulary_screen.dart';
@@ -78,71 +79,74 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _buildLibrary(List<Book> books, Language language) {
     final mainBooks = books.where((b) => b.key != 'readers').toList();
-    final standaloneReaders =
-        books.where((b) => b.key == 'readers').toList();
+    final standaloneReaders = books.where((b) => b.key == 'readers').toList();
 
-    return ListView(
-      padding: const EdgeInsets.all(16),
-      children: [
-        _ContinueReadingCard(
-          key: ValueKey(_refreshKey),
-          repo: widget.repo,
-          language: language,
-          onBrowse: (book, lang) => _openBook(context, book, lang),
-        ),
-        ...mainBooks.map((book) => _BookCard(
-              book: book,
-              language: language,
-              onTap: () => _openBook(context, book, language),
-            )),
-        if (standaloneReaders.isNotEmpty) ...[
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 12),
-            child: Text(
-              'Short Readers',
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+    return ContentWidth(
+      child: ListView(
+        padding: const EdgeInsets.all(16),
+        children: [
+          _ContinueReadingCard(
+            key: ValueKey(_refreshKey),
+            repo: widget.repo,
+            language: language,
+            onBrowse: (book, lang) => _openBook(context, book, lang),
           ),
-          ...standaloneReaders.map((book) => _BookCard(
+          ...mainBooks.map((book) => _BookCard(
                 book: book,
                 language: language,
                 onTap: () => _openBook(context, book, language),
               )),
+          if (standaloneReaders.isNotEmpty) ...[
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 12),
+              child: Text(
+                'Short Readers',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            ...standaloneReaders.map((book) => _BookCard(
+                  book: book,
+                  language: language,
+                  onTap: () => _openBook(context, book, language),
+                )),
+          ],
         ],
-      ],
+      ),
     );
   }
 
   Widget _buildByLevel(List<Book> books, Language language) {
     final maxLevel = language == Language.chinese ? 6 : 5;
 
-    return ListView(
-      padding: const EdgeInsets.all(16),
-      children: [
-        for (int level = 1; level <= maxLevel; level++) ...[
-          _LevelHeader(level: level, language: language),
-          ...books
-              .where((b) => b.levels.containsKey(level))
-              .map((book) => _LevelBookTile(
-                    book: book,
-                    level: level,
-                    language: language,
-                    onTap: () {
-                      final reader = book.levels[level]!;
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => BookScreen(reader: reader),
-                        ),
-                      ).then((_) => _refresh());
-                    },
-                  )),
-          const SizedBox(height: 16),
+    return ContentWidth(
+      child: ListView(
+        padding: const EdgeInsets.all(16),
+        children: [
+          for (int level = 1; level <= maxLevel; level++) ...[
+            _LevelHeader(level: level, language: language),
+            ...books
+                .where((b) => b.levels.containsKey(level))
+                .map((book) => _LevelBookTile(
+                      book: book,
+                      level: level,
+                      language: language,
+                      onTap: () {
+                        final reader = book.levels[level]!;
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => BookScreen(reader: reader),
+                          ),
+                        ).then((_) => _refresh());
+                      },
+                    )),
+            const SizedBox(height: 16),
+          ],
         ],
-      ],
+      ),
     );
   }
 
@@ -478,8 +482,12 @@ class _BookOverviewScreenState extends State<BookOverviewScreen> {
           const SizedBox(height: 12),
           ...levels.map((level) {
             final reader = widget.book.levels[level]!;
-            final totalChars = reader.chapters
-                .fold<int>(0, (sum, ch) => sum + ch.content.length);
+            final totalChars = reader.chapters.fold<int>(0, (sum, ch) {
+              final count = widget.language == Language.chinese
+                  ? RegExp(r'[\u3400-\u9fff]').allMatches(ch.content).length
+                  : ch.content.length;
+              return sum + count;
+            });
             final savedCh = _progressMap[reader.id];
             final hasProgress =
                 savedCh != null && savedCh < reader.chapters.length;
@@ -520,19 +528,17 @@ class _BookOverviewScreenState extends State<BookOverviewScreen> {
                         borderRadius: BorderRadius.circular(3),
                         child: LinearProgressIndicator(
                           value: (savedCh + 1) / reader.chapters.length,
-                          backgroundColor: AppTheme.levelColor(
-                                  level, widget.language)
-                              .withValues(alpha: 0.15),
-                          color: AppTheme.levelColor(
-                              level, widget.language),
+                          backgroundColor:
+                              AppTheme.levelColor(level, widget.language)
+                                  .withValues(alpha: 0.15),
+                          color: AppTheme.levelColor(level, widget.language),
                           minHeight: 3,
                         ),
                       ),
                       const SizedBox(height: 2),
                       Text(
                         'Ch. ${savedCh + 1} of ${reader.chapters.length}',
-                        style: TextStyle(
-                            fontSize: 11, color: Colors.grey[500]),
+                        style: TextStyle(fontSize: 11, color: Colors.grey[500]),
                       ),
                     ],
                   ],
@@ -690,8 +696,7 @@ class _ContinueReadingCardState extends State<_ContinueReadingCard>
                 borderRadius: BorderRadius.circular(4),
                 child: LinearProgressIndicator(
                   value: p.progress,
-                  backgroundColor:
-                      AppTheme.primary.withValues(alpha: 0.12),
+                  backgroundColor: AppTheme.primary.withValues(alpha: 0.12),
                   color: AppTheme.primary,
                   minHeight: 5,
                 ),

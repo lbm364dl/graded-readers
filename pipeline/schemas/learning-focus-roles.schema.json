@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["story_terms", "name_corrections"],
+  "properties": {
+    "story_terms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "start_segment",
+          "end_segment",
+          "text",
+          "meaning_en",
+          "importance_en"
+        ],
+        "properties": {
+          "start_segment": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Zero-based index of the first included segment."
+          },
+          "end_segment": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Exclusive segment index; the segment at this index is not included."
+          },
+          "text": {"type": "string", "minLength": 1},
+          "meaning_en": {"type": "string", "minLength": 1},
+          "importance_en": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "name_corrections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["segment_index", "correct_type", "reason_en"],
+        "properties": {
+          "segment_index": {"type": "integer", "minimum": 0},
+          "correct_type": {
+            "type": "string",
+            "enum": ["word", "particle", "name", "idiom"]
+          },
+          "reason_en": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}

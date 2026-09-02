@@ -21,8 +21,8 @@ for spec in hsk1:300 hsk2:500 hsk3:750; do
     --target-chars "$target" \
     --concurrency 2 --chapter-concurrency 2 --chapter-retries 2 \
     --length-repair-rounds 0 --max-repairs 2 \
-    --adapt-effort high --review-effort medium \
-    --repair-effort xhigh --final-effort xhigh \
+    --adapt-effort low --review-effort low \
+    --repair-effort low --final-effort low \
     --skip-annotations \
     >>"runs/graded-readers/sanguoyanyi-retelling-logs/$level.log" 2>&1 &
   pids+=("$!")

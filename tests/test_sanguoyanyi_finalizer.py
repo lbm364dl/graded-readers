@@ -12,6 +12,13 @@ def _json(path: Path, value: dict) -> None:
     path.write_text(json.dumps(value, ensure_ascii=False), encoding="utf-8")
 
 
+def _prose(count: int) -> str:
+    return "。".join(
+        "人" * min(20, count - offset)
+        for offset in range(0, count, 20)
+    ) + "。\n"
+
+
 def _matrix(tmp_path: Path, counts=None):
     low, high = tmp_path / "low", tmp_path / "high"
     sources = tmp_path / "sources"
@@ -23,7 +30,7 @@ def _matrix(tmp_path: Path, counts=None):
         for level in LEVELS:
             run = roots[level] / f"chapter_{chapter:03d}-{level}"
             run.mkdir()
-            text = "人" * counts[level] + "。\n"
+            text = _prose(counts[level])
             (run / "chapter.txt").write_text(text, encoding="utf-8")
             _json(run / "manifest.json", {"status": "complete", "level": level})
             _json(run / "report.json", {
@@ -194,7 +201,7 @@ def test_healing_target_minimum_accepted_length_clears_lower_level(tmp_path):
         run = high / f"{source.stem}-hsk4"
         # Exercise the exact lower edge allowed by ChapterHarness.
         length = int(target * 0.7)
-        (run / "chapter.txt").write_text("人" * length + "。\n", encoding="utf-8")
+        (run / "chapter.txt").write_text(_prose(length), encoding="utf-8")
         report = _json_read(run / "report.json")
         report["chapter_cjk"] = length
         _json(run / "report.json", report)

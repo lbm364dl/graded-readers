@@ -24,11 +24,12 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["start", "end", "text", "pattern", "meaning_en"],
+        "required": ["start", "end", "text", "grammar_candidate_key", "pattern", "meaning_en"],
         "properties": {
           "start": {"type": "integer", "minimum": 0},
           "end": {"type": "integer", "minimum": 1},
           "text": {"type": "string", "minLength": 1},
+          "grammar_candidate_key": {"type": "string", "pattern": "^[a-z][a-z0-9_.-]*$"},
           "pattern": {"type": "string", "minLength": 1},
           "meaning_en": {"type": "string", "minLength": 1}
         }

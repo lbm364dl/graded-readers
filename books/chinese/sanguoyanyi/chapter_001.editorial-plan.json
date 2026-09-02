@@ -1,0 +1,366 @@
+{
+  "schema_version": 1,
+  "chapter_number": 1,
+  "chapter_title": "桃园结义",
+  "source_sha256": "6de006fdaa91dc2a6611f68d030c8bcd043abc6317ca9a27c54bdb82dab633ef",
+  "canonical_scenes": [
+    {
+      "id": "c01",
+      "title": "汉朝衰乱",
+      "source_start_quote": "第一回：宴桃園豪傑三結義",
+      "required_events": [
+        "汉朝末年朝政混乱，灾害与不祥之事不断发生",
+        "宦官掌权并迫害直言的官员，天下人心不安"
+      ]
+    },
+    {
+      "id": "c02",
+      "title": "黄巾起事",
+      "source_start_quote": "時鉅鹿郡有兄弟三人",
+      "required_events": [
+        "张角借治病聚集百姓，与张宝、张梁发动黄巾起事",
+        "朝廷命各地招兵抵抗黄巾军"
+      ]
+    },
+    {
+      "id": "c03",
+      "title": "刘备见榜",
+      "source_start_quote": "且說張角一軍，前犯幽州界分",
+      "required_events": [
+        "幽州兵少，刘焉听从邹靖的建议发布招军榜",
+        "刘备家贫而有志，见到榜文后因无力报国而叹气"
+      ]
+    },
+    {
+      "id": "c04",
+      "title": "三人相识",
+      "source_start_quote": "玄德回視其人",
+      "required_events": [
+        "张飞愿意出钱招募乡勇，与刘备一起做大事",
+        "关羽前来投军，刘备、关羽、张飞因共同志向相识"
+      ]
+    },
+    {
+      "id": "c05",
+      "title": "桃园结义",
+      "source_start_quote": "飛曰：「吾莊後有一桃園",
+      "required_events": [
+        "三人在桃园祭告天地，结为兄弟并发誓同心救民",
+        "商人赠送马匹、金银和铁，三人打造兵器并聚集乡勇"
+      ]
+    },
+    {
+      "id": "c06",
+      "title": "英雄初战",
+      "source_start_quote": "不數日，人報黃巾賊將程遠志",
+      "required_events": [
+        "程远志率军来犯，张飞杀邓茂，关羽斩程远志",
+        "三人取得第一次胜利"
+      ]
+    },
+    {
+      "id": "c07",
+      "title": "解青州之围",
+      "source_start_quote": "眾賊見程遠志被斬",
+      "required_events": [
+        "刘备三人前往救援青州",
+        "刘备用伏兵之计击败黄巾军，解开青州之围"
+      ]
+    },
+    {
+      "id": "c08",
+      "title": "转战各地",
+      "source_start_quote": "龔景犒軍畢",
+      "required_events": [
+        "刘备前往帮助老师卢植，随后受命去颍川探听军情",
+        "皇甫嵩、朱雋用火攻破敌，曹操首次出现并追击黄巾军"
+      ]
+    },
+    {
+      "id": "c09",
+      "title": "卢植被捕与董卓无礼",
+      "source_start_quote": "玄德領命，遂引兵復回",
+      "required_events": [
+        "卢植因拒绝行贿而被诬陷押回京城，刘备阻止张飞劫人",
+        "三人救下董卓，董卓却因刘备没有官职而轻视他们",
+        "张飞愤怒地要杀董卓，故事留下悬念"
+      ]
+    }
+  ],
+  "level_plans": {
+    "hsk1": {
+      "coverage_note": "只保留三人相识、结义、得到装备并出发这一条中心故事线。",
+      "adaptation_scenes": [
+        {
+          "title": "桃园结义",
+          "source_start_quote": "第一回：宴桃園豪傑三結義",
+          "canonical_scene_ids": ["c04", "c05"],
+          "required_events": [
+            "刘备看到招兵告示，想救人却没有足够的钱和人，因此叹气"
+          ],
+          "target_weight": 1,
+          "min_paragraphs": 6,
+          "max_paragraphs": 10,
+          "max_paragraph_cjk": 75,
+          "strict_event_scope": true
+        }
+      ]
+    },
+    "hsk2": {
+      "coverage_note": "用简单因果说明黄巾之乱、三人结义、初战获胜以及受到董卓轻视的结尾。",
+      "adaptation_scenes": [
+        {
+          "title": "黄巾起事与招军",
+          "source_start_quote": "第一回：宴桃園豪傑三結義",
+          "canonical_scene_ids": ["c02", "c03"],
+          "required_events": [],
+          "target_weight": 0.23,
+          "min_paragraphs": 3,
+          "max_paragraphs": 5,
+          "max_paragraph_cjk": 90,
+          "strict_event_scope": true
+        },
+        {
+          "title": "桃园结义",
+          "source_start_quote": "玄德回視其人",
+          "canonical_scene_ids": ["c04", "c05"],
+          "required_events": [],
+          "target_weight": 0.31,
+          "min_paragraphs": 3,
+          "max_paragraphs": 5,
+          "max_paragraph_cjk": 90,
+          "strict_event_scope": true
+        },
+        {
+          "title": "初战与董卓",
+          "source_start_quote": "不數日，人報黃巾賊將程遠志",
+          "canonical_scene_ids": ["c06", "c07", "c09"],
+          "required_events": [],
+          "target_weight": 0.46,
+          "min_paragraphs": 4,
+          "max_paragraphs": 7,
+          "max_paragraph_cjk": 90,
+          "strict_event_scope": true
+        }
+      ]
+    },
+    "hsk3": {
+      "coverage_note": "覆盖原章全部主要发展，同时压缩年代、官职、家世和次要战斗细节。",
+      "adaptation_scenes": [
+        {
+          "title": "天下大乱",
+          "source_start_quote": "第一回：宴桃園豪傑三結義",
+          "canonical_scene_ids": ["c01", "c02"],
+          "required_events": [],
+          "target_weight": 0.16,
+          "min_paragraphs": 3,
+          "max_paragraphs": 5,
+          "max_paragraph_cjk": 150,
+          "strict_event_scope": true
+        },
+        {
+          "title": "桃园结义",
+          "source_start_quote": "且說張角一軍，前犯幽州界分",
+          "canonical_scene_ids": ["c03", "c04", "c05"],
+          "required_events": [],
+          "target_weight": 0.25,
+          "min_paragraphs": 4,
+          "max_paragraphs": 7,
+          "max_paragraph_cjk": 150,
+          "strict_event_scope": true
+        },
+        {
+          "title": "英雄初立功",
+          "source_start_quote": "不數日，人報黃巾賊將程遠志",
+          "canonical_scene_ids": ["c06", "c07", "c08", "c09"],
+          "required_events": [],
+          "target_weight": 0.59,
+          "min_paragraphs": 5,
+          "max_paragraphs": 9,
+          "max_paragraph_cjk": 150,
+          "strict_event_scope": true
+        }
+      ]
+    },
+    "hsk4": {
+      "coverage_note": "保留主要事件、人物动机和因果关系，压缩诗词、家世细节与次要战斗描写。",
+      "adaptation_scenes": [
+        {
+          "title": "汉末乱世与黄巾起事",
+          "source_start_quote": "第一回：宴桃園豪傑三結義",
+          "canonical_scene_ids": ["c01", "c02"],
+          "required_events": [],
+          "target_weight": 0.259,
+          "min_paragraphs": 4,
+          "max_paragraphs": 7,
+          "max_paragraph_cjk": 200,
+          "strict_event_scope": false
+        },
+        {
+          "title": "刘关张相识并结义",
+          "source_start_quote": "且說張角一軍，前犯幽州界分",
+          "canonical_scene_ids": ["c03", "c04", "c05"],
+          "required_events": [],
+          "target_weight": 0.289,
+          "min_paragraphs": 5,
+          "max_paragraphs": 8,
+          "max_paragraph_cjk": 200,
+          "strict_event_scope": false
+        },
+        {
+          "title": "首战黄巾与解青州之围",
+          "source_start_quote": "不數日，人報黃巾賊將程遠志",
+          "canonical_scene_ids": ["c06", "c07"],
+          "required_events": [],
+          "target_weight": 0.133,
+          "min_paragraphs": 3,
+          "max_paragraphs": 5,
+          "max_paragraph_cjk": 180,
+          "strict_event_scope": false
+        },
+        {
+          "title": "转战颍川",
+          "source_start_quote": "龔景犒軍畢",
+          "canonical_scene_ids": ["c08"],
+          "required_events": [],
+          "target_weight": 0.210,
+          "min_paragraphs": 4,
+          "max_paragraphs": 6,
+          "max_paragraph_cjk": 180,
+          "strict_event_scope": false
+        },
+        {
+          "title": "卢植被捕与董卓轻慢",
+          "source_start_quote": "玄德領命，遂引兵復回",
+          "canonical_scene_ids": ["c09"],
+          "required_events": [],
+          "target_weight": 0.109,
+          "min_paragraphs": 2,
+          "max_paragraphs": 4,
+          "max_paragraph_cjk": 170,
+          "strict_event_scope": false
+        }
+      ]
+    },
+    "hsk5": {
+      "coverage_note": "保留大部分重要事件、动机、人物关系和次要人物，以现代汉语重述并适度压缩。",
+      "adaptation_scenes": [
+        {
+          "title": "汉末乱世与黄巾起事",
+          "source_start_quote": "第一回：宴桃園豪傑三結義",
+          "canonical_scene_ids": ["c01", "c02"],
+          "required_events": [],
+          "target_weight": 0.259,
+          "min_paragraphs": 4,
+          "max_paragraphs": 7,
+          "max_paragraph_cjk": 200,
+          "strict_event_scope": false
+        },
+        {
+          "title": "刘关张相识并结义",
+          "source_start_quote": "且說張角一軍，前犯幽州界分",
+          "canonical_scene_ids": ["c03", "c04", "c05"],
+          "required_events": [],
+          "target_weight": 0.289,
+          "min_paragraphs": 5,
+          "max_paragraphs": 8,
+          "max_paragraph_cjk": 200,
+          "strict_event_scope": false
+        },
+        {
+          "title": "首战黄巾与解青州之围",
+          "source_start_quote": "不數日，人報黃巾賊將程遠志",
+          "canonical_scene_ids": ["c06", "c07"],
+          "required_events": [],
+          "target_weight": 0.133,
+          "min_paragraphs": 3,
+          "max_paragraphs": 5,
+          "max_paragraph_cjk": 180,
+          "strict_event_scope": false
+        },
+        {
+          "title": "转战颍川",
+          "source_start_quote": "龔景犒軍畢",
+          "canonical_scene_ids": ["c08"],
+          "required_events": [],
+          "target_weight": 0.210,
+          "min_paragraphs": 4,
+          "max_paragraphs": 6,
+          "max_paragraph_cjk": 180,
+          "strict_event_scope": false
+        },
+        {
+          "title": "卢植被捕与董卓轻慢",
+          "source_start_quote": "玄德領命，遂引兵復回",
+          "canonical_scene_ids": ["c09"],
+          "required_events": [],
+          "target_weight": 0.109,
+          "min_paragraphs": 2,
+          "max_paragraphs": 4,
+          "max_paragraph_cjk": 170,
+          "strict_event_scope": false
+        }
+      ]
+    },
+    "hsk6": {
+      "coverage_note": "作详细而自然的现代汉语重述，保留原章事件、动机、身份与时间顺序，只删减重复和装饰性内容。",
+      "adaptation_scenes": [
+        {
+          "title": "汉末乱世与黄巾起事",
+          "source_start_quote": "第一回：宴桃園豪傑三結義",
+          "canonical_scene_ids": ["c01", "c02"],
+          "required_events": [],
+          "target_weight": 0.259,
+          "min_paragraphs": 4,
+          "max_paragraphs": 7,
+          "max_paragraph_cjk": 200,
+          "strict_event_scope": false
+        },
+        {
+          "title": "刘关张相识并结义",
+          "source_start_quote": "且說張角一軍，前犯幽州界分",
+          "canonical_scene_ids": ["c03", "c04", "c05"],
+          "required_events": [],
+          "target_weight": 0.289,
+          "min_paragraphs": 5,
+          "max_paragraphs": 8,
+          "max_paragraph_cjk": 200,
+          "strict_event_scope": false
+        },
+        {
+          "title": "首战黄巾与解青州之围",
+          "source_start_quote": "不數日，人報黃巾賊將程遠志",
+          "canonical_scene_ids": ["c06", "c07"],
+          "required_events": [],
+          "target_weight": 0.133,
+          "min_paragraphs": 3,
+          "max_paragraphs": 5,
+          "max_paragraph_cjk": 180,
+          "strict_event_scope": false
+        },
+        {
+          "title": "转战颍川",
+          "source_start_quote": "龔景犒軍畢",
+          "canonical_scene_ids": ["c08"],
+          "required_events": [],
+          "target_weight": 0.210,
+          "min_paragraphs": 4,
+          "max_paragraphs": 6,
+          "max_paragraph_cjk": 180,
+          "strict_event_scope": false
+        },
+        {
+          "title": "卢植被捕与董卓轻慢",
+          "source_start_quote": "玄德領命，遂引兵復回",
+          "canonical_scene_ids": ["c09"],
+          "required_events": [],
+          "target_weight": 0.109,
+          "min_paragraphs": 2,
+          "max_paragraphs": 4,
+          "max_paragraph_cjk": 170,
+          "strict_event_scope": false
+        }
+      ]
+    }
+  }
+}

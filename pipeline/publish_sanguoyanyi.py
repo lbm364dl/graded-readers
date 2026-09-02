@@ -201,7 +201,9 @@ def _audit_chapter(
             raise PublicationError(f"invalid annotation segments: {reader_path}")
         grammar_overlays = reader.get("grammar_overlays")
         expected_segment = {"text", "type", "pinyin", "meaning_en"}
-        expected_overlay = {"start", "end", "text", "pattern", "meaning_en"}
+        expected_overlay = {
+            "start", "end", "text", "grammar_candidate_key", "pattern", "meaning_en"
+        }
         segment_types = {"word", "particle", "name", "idiom", "punctuation"}
         if any(set(item) != expected_segment or item.get("type") not in segment_types
                for item in raw_segments):

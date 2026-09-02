@@ -1,5 +1,6 @@
-import 'dart:convert';
-import 'package:flutter/services.dart';
+import 'dart:collection';
+
+import 'lexicon_store.dart';
 
 class GlyphEntry {
   final Map<String, String> eras; // era name → SVG string
@@ -7,8 +8,13 @@ class GlyphEntry {
 
   // Known eras in display order; any unknown eras are appended at the end
   static const _eraOrder = [
-    'oracle', 'bronze', 'seal',
-    'seal_shuowen', 'seal_acc', 'seal_wikimedia', 'seal_ancient',
+    'oracle',
+    'bronze',
+    'seal',
+    'seal_shuowen',
+    'seal_acc',
+    'seal_wikimedia',
+    'seal_ancient',
   ];
 
   /// Human-readable label for an era key (handles numbered variants like seal_acc_2)
@@ -53,21 +59,43 @@ class GlyphService {
   GlyphService._();
   static final GlyphService instance = GlyphService._();
 
-  Map<String, GlyphEntry>? _entries;
+  final LinkedHashMap<String, GlyphEntry?> _cache = LinkedHashMap();
+  Future<void>? _initializing;
 
-  bool get isReady => _entries != null;
+  bool get isReady => lexiconStore.isReady;
 
   Future<void> initialize() async {
-    if (_entries != null) return;
-    final raw = await rootBundle.loadString('assets/glyphs.json');
-    final data = json.decode(raw) as Map<String, dynamic>;
-    _entries = {};
-    for (final e in data.entries) {
-      final eras = (e.value as Map<String, dynamic>)
-          .map((k, v) => MapEntry(k, v as String));
-      _entries![e.key] = GlyphEntry(eras);
+    if (isReady) return;
+    final activeLoad = _initializing;
+    if (activeLoad != null) return activeLoad;
+    final load = _load();
+    _initializing = load;
+    try {
+      await load;
+    } finally {
+      if (!isReady) _initializing = null;
     }
   }
 
-  GlyphEntry? lookup(String character) => _entries?[character];
+  Future<void> _load() async {
+    await lexiconStore.initialize();
+  }
+
+  GlyphEntry? lookup(String character) {
+    if (!isReady) return null;
+    if (_cache.containsKey(character)) {
+      final cached = _cache.remove(character);
+      _cache[character] = cached;
+      return cached;
+    }
+    final value = lexiconStore.glyphEntry(character);
+    final entry = value == null
+        ? null
+        : GlyphEntry(
+            value.map((era, svg) => MapEntry(era, svg as String)),
+          );
+    _cache[character] = entry;
+    if (_cache.length > 32) _cache.remove(_cache.keys.first);
+    return entry;
+  }
 }

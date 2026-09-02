@@ -11,3 +11,9 @@ output/*.html
 .venv/
 venv/
 runs/
+
+# Local UI inspection captures, not product assets.
+.playwright-mcp/
+/graded-readers-home.png
+/hsk1-reader-immersion.png
+/sanguoyanyi-hsk1-huang-etymology.png

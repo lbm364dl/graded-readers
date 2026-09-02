@@ -9,6 +9,7 @@ import re
 from typing import Any
 
 import jieba
+import jieba.posseg as pseg
 from opencc import OpenCC
 
 from pipeline.fixed_boundary_annotation import refined_fixed_segments
@@ -29,6 +30,10 @@ _TITLE_SUFFIXES = (
     "太后", "美人", "常侍", "刺史", "校尉", "丞相", "国舅", "皇帝",
     "帝", "王", "侯", "公", "尹", "丞",
 )
+_DIRECTIONAL_COMPLEMENTS = frozenset({
+    "上来", "上去", "下来", "下去", "进来", "进去", "出来", "出去",
+    "回来", "回去", "过来", "过去", "起来",
+})
 
 
 def _surfaces_with_offsets(text: str, surfaces: Iterable[str]) -> list[dict[str, Any]]:
@@ -112,17 +117,49 @@ def _disagreement_regions(
     return result
 
 
+def learner_construction_spans(
+    text: str, refined_surfaces: Iterable[str]
+) -> list[dict[str, Any]]:
+    """Return non-authoritative adjacent verb + directional-complement spans."""
+    rows = _surfaces_with_offsets(text, refined_surfaces)
+    result: list[dict[str, Any]] = []
+    for index, complement in enumerate(rows):
+        if index == 0 or complement["text"] not in _DIRECTIONAL_COMPLEMENTS:
+            continue
+        verb = rows[index - 1]
+        if (
+            not verb["text"]
+            or any(not re.fullmatch(_HAN, char) for char in verb["text"])
+        ):
+            continue
+        flag = next(iter(pseg.cut(verb["text"]))).flag
+        if not flag.startswith(("v", "a")):
+            continue
+        result.append({
+            "start": verb["start"],
+            "end": complement["end"],
+            "text": text[verb["start"]:complement["end"]],
+            "kind": "verb_directional_complement_candidate",
+            "parts": [verb["text"], complement["text"]],
+        })
+    return result
+
+
 def boundary_proposals(text: str, metadata: Any = None) -> dict[str, Any]:
     """Build evidence for correction without selecting any final boundaries."""
     # A private Tokenizer is unaffected by ChineseSegmenter's global HSK edits.
     plain = _proposal(text, jieba.Tokenizer().lcut(text))
-    refined = _proposal(text, refined_fixed_segments(text))
+    refined_surfaces = refined_fixed_segments(text)
+    refined = _proposal(text, refined_surfaces)
     return {
         "contract": "non_authoritative_boundary_proposals_v1",
         "text": text,
         "text_length": len(text),
         "proposals": {"plain_jieba": plain, "refined": refined},
         "gazetteer_spans": generic_gazetteer_spans(text, metadata),
+        "learner_construction_spans": learner_construction_spans(
+            text, refined_surfaces
+        ),
         "disagreement_regions": _disagreement_regions(
             text, plain["boundaries"], refined["boundaries"]
         ),
@@ -137,6 +174,9 @@ Neither tokenizer is authoritative. Gazetteer spans are candidates, not facts. Y
 choose boundaries only after checking the exact text and local context. Preserve every
 character exactly and return explicit offsets; never rewrite the text. Concentrate review
 on disagreement_regions, names, titles, idioms, particles, and compositional phrases.
+Treat learner_construction_spans as non-authoritative prompts to check whether a compact
+verb plus directional complement should be tappable together and explained through its
+parts; never extend such a span into its object or clause.
 
 BOUNDARY PROPOSALS:
 """ + json.dumps(proposals, ensure_ascii=False, indent=2)

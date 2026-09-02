@@ -24,6 +24,7 @@ import tempfile
 from typing import Any, Callable
 
 from pipeline.agent_harness import cjk_count
+from pipeline.chinese_readability import validate_beginner_chinese
 from pipeline.extract_epub_chapters import ExtractionError, verify_manifest as verify_source_manifest
 
 
@@ -106,6 +107,11 @@ def preflight(
                     acceptance_errors.append("accepted chapter is empty")
                 if generation_report.get("chapter_cjk") != actual_cjk:
                     acceptance_errors.append("report chapter_cjk does not match chapter.txt")
+                readability = validate_beginner_chinese(chapter, key[1])
+                if not readability["passes"]:
+                    acceptance_errors.append(
+                        "accepted chapter fails the HSK1 word/sentence readability gate"
+                    )
                 verdicts = generation_report.get("scene_verdicts")
                 if (not isinstance(verdicts, dict) or not verdicts
                         or any(value != "pass" for value in verdicts.values())):
@@ -219,7 +225,7 @@ def recover_incomplete(
             "--runs-dir", str(root.parent), "--concurrency", "3",
             "--chapter-concurrency", "3", "--chapter-retries", "2",
             "--length-repair-rounds", "1", "--max-repairs", "3",
-            "--final-effort", "xhigh", "--skip-annotations",
+            "--final-effort", "low", "--skip-annotations",
         ]
         code = runner(command)
         records.append({"level": level, "chapters": chapters,
@@ -344,7 +350,7 @@ def heal_lengths(
                 "--source", str((source_dir / f"chapter_{number:03d}.txt").resolve()),
                 "--level", level, "--run-id", f"{level_roots[level].name}/{run_dir.name}",
                 "--runs-dir", str(level_roots[level].parent), "--target-chars", str(target),
-                "--concurrency", "3", "--max-repairs", "3", "--final-effort", "xhigh",
+                "--concurrency", "3", "--max-repairs", "3", "--final-effort", "low",
                 "--skip-annotations", "--refresh",
             ]
             code = runner(command)

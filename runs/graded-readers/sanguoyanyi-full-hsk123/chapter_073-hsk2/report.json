@@ -1,7 +1,7 @@
 {
   "status": "complete",
   "scenes": 1,
-  "chapter_cjk": 318,
+  "chapter_cjk": 304,
   "scene_verdicts": {
     "scene_01": "pass"
   },
@@ -15,6 +15,14 @@
     "candidate_sha256": "122cc24ea3ca0743805843aa985665607817e2265fd0ebf798c7827f210120d7",
     "original_backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_073-hsk2/chapter.before-omission-repair.txt",
     "original_sha256": "4219670c160109eaaa2d89b6f88bd3f610bc567d6d53051594a8532448b3073c",
+    "annotations_invalidated": [],
+    "annotation_rerun_required": true
+  },
+  "continuity_promotion": {
+    "promoted_at": "2026-08-26T20:42:45.212482+00:00",
+    "candidate_sha256": "8ab1d4ffd8c048468e38ddcbe2db2f708239d39ccee161adb276d7710e1a9f2f",
+    "original_backup": "/home/catalin/graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_073-hsk2/chapter.pre-continuity.txt",
+    "original_sha256": "122cc24ea3ca0743805843aa985665607817e2265fd0ebf798c7827f210120d7",
     "annotations_invalidated": [],
     "annotation_rerun_required": true
   }

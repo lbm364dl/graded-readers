@@ -93,7 +93,7 @@ The default stages are:
 3. Review every adaptation against its verbatim source scene with Luna medium.
 4. Repair scenes that fail source review and independently review each repair.
    Repeat with configurable attempts; if scoped repair still fails, perform a
-   fresh max-effort rewrite from the original and audit it again.
+   fresh low-effort rewrite from the original with a new cache key and audit it again.
 5. Assemble accepted scenes in source order.
 6. Split the chapter into small annotation chunks and annotate with Luna low.
 7. Require exact character-for-character reconstruction before writing
@@ -129,9 +129,9 @@ audit records `mode=constrained-delta`, the real review status, and exactly one
 chapter metadata call. This mode is disabled by default and must not be enabled
 for live book orchestration until its boundary-quality smoke gate passes.
 
-Final annotation self-heal defaults to `high`. Scoped small-chunk repairs have
-been more reliable and materially faster at that effort than `xhigh`; callers
-may still explicitly select `xhigh` or `max` for comparative smoke runs.
+All agent stages default to Luna `low`, including final annotation self-heal.
+Quality improvements come from fresh, targeted reruns with concrete review
+findings while deterministic gates continue to fail closed.
 
 The harness is unattended by design. It publishes and annotates only when every
 scene passes its source-grounded audit. Remaining failures after the automatic
@@ -194,9 +194,23 @@ strictly longer from HSK1 through HSK6. It writes:
 
 Use `--audit-only` to check readiness without writing. During an early
 adaptation-only pass, `--audit-only --allow-missing-annotations` checks prose
-and provenance while intentionally deferring the annotation gate. App content
-can be rebuilt independently with `scripts/generate_hsk_content_json.py`; the
+and provenance while intentionally deferring the annotation gate. Final
+publication output remains separate from the app catalog. Snapshot accepted
+Sanguoyanyi drafts and reviewed annotations with
+`scripts/sync_sanguoyanyi_content.py`, then rebuild both app language assets
+with `scripts/generate_app_content_json.py`. The app lazy-loads those exact
+agent segments and explanations; missing sidecars are non-interactive rather
+than dictionary-tokenized. Legacy
+`output/` and `readers/` trees are never scanned for app-visible content. The
 dictionary can be rebuilt with `scripts/build_dictionary.py`.
+
+HSK1 has an additional enforced learner-readability gate. Natural word tokens
+must be at least 85% HSK1 after explicit story-term exemptions,
+synopsis-style long sentences and clauses are rejected, and any explicit
+naturalness or readability finding forces another Luna-low repair. The clean
+sync and post-generation promotion paths rerun the same gate, so a later repair
+cannot restore a rejected legacy HSK1 draft. For a partial v2 preview, override
+only that level with `--run-root hsk1=PATH --level-chapters hsk1=1`.
 
 ### Annotation-only Chinese batch
 
@@ -227,8 +241,20 @@ The exact adjacent `segments` stream contains only dictionary words, particles,
 names, genuine lexicalized idioms, and punctuation; it reconstructs the chapter
 character for character. `grammar_overlays` use exact character offsets to
 explain multi-segment constructions without turning ordinary clauses into fake
-idioms or sentence-sized vocabulary entries. Both layers are independently
-reviewed and mechanically validated before publication.
+idioms or sentence-sized vocabulary entries. Each overlay carries a provisional
+`grammar_candidate_key` for later clustering, not a canonical lesson identifier;
+future unification must consider its span, pattern, explanation, and context rather
+than relying on exact key equality. Publication derives `grammar_candidate_keys`
+on every overlapping segment so consumers can directly discover which segments
+have grammar help. Both layers are independently reviewed and mechanically
+validated before publication.
+
+HSK focus normally follows exact word-list membership. The deliberate exception
+is a complete segment that has both an independently reviewed subsegment
+decomposition and a grammar overlay on that exact span. Such a productive
+construction is classified from its lexical parts, with its hardest required
+part controlling reading focus; absence of the combined surface from the HSK
+list is not itself evidence that the construction is above level.
 
 ### Audited 吾輩は猫である publication
 
@@ -275,7 +301,7 @@ each chapter completes, records isolated failures, and refuses a `complete`
 status unless every chapter passes and each source's CJK length increases
 strictly across the requested levels. A violation automatically re-runs only
 the deficient upper-level chapter with a raised target (bounded by
-`--length-repair-rounds`). Default targets are 140, 300, 500, 750,
+`--length-repair-rounds`). Default targets are 220, 300, 500, 750,
 1050, and 1450 CJK characters for HSK1 through HSK6; override one-off runs with
 `--target-chars`. Scene review, scoped repair, fresh-rewrite escalation, and
 exact annotation reconstruction remain mandatory inside every chapter. Use
@@ -343,7 +369,7 @@ dictionary words, auxiliaries, particles, names, genuine idioms, and
 punctuation. Each segment has a dictionary-form lemma, kana reading, and concise
 contextual English meaning. Independent review checks exact reconstruction,
 segmentation, lemmas, readings, and meanings; rejected chunks self-repair and
-then escalate to a fresh higher-effort attempt.
+then make a fresh low-effort attempt with a distinct cache key.
 
 Run all 11 cleaned chapters of `吾輩は猫である` at every JLPT level:
 

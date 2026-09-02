@@ -11,6 +11,7 @@ from pipeline.annotate_chinese import (
     discover_complete_chapters, parser, reusable_reader,
     split_chinese_annotation_chunks,
 )
+from pipeline.agent_harness import CHINESE_ANNOTATION_POLICY_VERSION
 
 
 def write_json(path: Path, value: dict) -> None:
@@ -58,6 +59,16 @@ def test_annotation_batch_parser_defaults_to_production_chapter_policy():
     assert parsed.annotation_review_policy == "chapter"
 
 
+def test_harness_derives_private_level_from_each_run_manifest(tmp_path):
+    run = accepted_run(tmp_path)
+    shared = args()
+
+    harness = ChineseAnnotationHarness(run, shared, asyncio.Semaphore(1))
+
+    assert harness.args.level == "hsk4"
+    assert not hasattr(shared, "level")
+
+
 @pytest.mark.asyncio
 async def test_annotation_only_uses_constrained_delta_chapter_policy_and_audits_calls(
     tmp_path, monkeypatch
@@ -94,6 +105,8 @@ async def test_annotation_only_uses_constrained_delta_chapter_policy_and_audits_
     assert report["semantic_review_calls"] == 2
     assert audit == {
         "mode": "constrained-delta", "review_policy": "chapter",
+        "policy_version": CHINESE_ANNOTATION_POLICY_VERSION,
+        "focus_vocabulary_sha256": harness.focus_vocabulary_sha256,
         "chapter_sha256": hashlib.sha256(text.encode()).hexdigest(),
         "chunks": 1, "attempts_per_chunk": [2], "all_reviewed": True,
         "metadata_model_calls": 2, "semantic_review_calls": 2,
@@ -302,6 +315,36 @@ def test_reuse_fails_closed_for_every_stale_or_malformed_case(tmp_path, mutation
     else:
         write_json(path, reader)
     assert reusable_reader(path, text, "HSK4") is None
+
+
+def test_reuse_rejects_stale_annotation_policy(tmp_path):
+    text = "当前正文。\n"
+    run = accepted_run(tmp_path, text)
+    path = run / "reader.json"
+    write_json(path, {
+        "level": "HSK4", "text": text,
+        "segments": [
+            {
+                "text": "当前正文", "type": "word",
+                "pinyin": "dāng qián zhèng wén", "meaning_en": "current text",
+            },
+            {
+                "text": "。\n", "type": "punctuation",
+                "pinyin": "", "meaning_en": "",
+            },
+        ],
+        "grammar_overlays": [],
+        "annotation_audit": {
+            "all_reviewed": True,
+            "policy_version": "stale-policy",
+        },
+    })
+    assert reusable_reader(
+        path,
+        text,
+        "HSK4",
+        expected_policy_version=CHINESE_ANNOTATION_POLICY_VERSION,
+    ) is None
 
 
 @pytest.mark.asyncio

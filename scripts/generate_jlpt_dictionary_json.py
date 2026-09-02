@@ -28,6 +28,18 @@ def split_definitions(english: str) -> list[str]:
 def main():
     dictionary: dict[str, dict] = {}
 
+    def merge_canonical(existing: dict, entry: dict) -> dict:
+        """Preserve every supplied sense for one exact written headword."""
+        if existing.get("w") != entry["w"] or existing.get("a") is True:
+            return entry
+        merged = dict(existing)
+        merged["l"] = min(int(existing["l"]), int(entry["l"]))
+        merged["d"] = list(dict.fromkeys([*existing["d"], *entry["d"]]))
+        merged["pos"] = list(dict.fromkeys([
+            *existing.get("pos", []), *entry.get("pos", []),
+        ]))
+        return merged
+
     # Process from easiest (N5=level 1) to hardest (N1=level 5)
     # so that the LOWEST level is kept for duplicates
     for csv_name in ["n5_words.csv", "n4_words.csv", "n3_words.csv", "n2_words.csv", "n1_words.csv"]:
@@ -40,6 +52,7 @@ def main():
                 word = row["word"].strip()
                 reading = row["reading"].strip()
                 english = row["english"].strip()
+                part_of_speech = row.get("pos", "").strip()
 
                 if not word:
                     continue
@@ -49,18 +62,26 @@ def main():
                     continue
 
                 entry = {
+                    "w": word,
                     "p": reading,
                     "l": level,
                     "d": definitions,
+                    "pos": [part_of_speech] if part_of_speech else [],
                 }
 
-                # Keep the lowest level (first occurrence)
-                if word not in dictionary:
+                # A real written headword always wins over a reading alias at
+                # the same key. Merge duplicate rows instead of silently
+                # discarding later senses.
+                if word in dictionary:
+                    dictionary[word] = merge_canonical(dictionary[word], entry)
+                else:
                     dictionary[word] = entry
 
-                # Also add reading as alternate key (e.g. きれい for 綺麗)
+                # Reading aliases remain useful for ad-hoc lookup, but carry
+                # their canonical headword and never replace an exact written
+                # entry. Agent-authored links may target canonical entries only.
                 if reading and reading != word and reading not in dictionary:
-                    dictionary[reading] = entry
+                    dictionary[reading] = {**entry, "a": True}
 
     # Sort by key for consistent output
     sorted_dict = dict(sorted(dictionary.items()))

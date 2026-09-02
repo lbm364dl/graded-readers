@@ -12,7 +12,7 @@
         "required": ["segment_text", "problem", "explanation", "suggested_fix"],
         "properties": {
           "segment_text": {"type": "string"},
-          "problem": {"type": "string", "enum": ["reconstruction", "over_grouped", "under_grouped", "wrong_type", "lemma", "reading", "meaning", "grammar"]},
+          "problem": {"type": "string", "enum": ["reconstruction", "over_grouped", "under_grouped", "wrong_type", "lemma", "surface_reading", "lemma_reading", "part_of_speech", "conjugation", "meaning", "story_role", "grammar", "grammar_components"]},
           "explanation": {"type": "string"},
           "suggested_fix": {"type": "string"}
         }

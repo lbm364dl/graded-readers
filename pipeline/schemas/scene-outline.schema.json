@@ -16,7 +16,7 @@
           "title": {"type": "string"},
           "source_start_quote": {"type": "string", "minLength": 4},
           "required_events": {"type": "array", "minItems": 1, "items": {"type": "string"}},
-          "target_chars": {"type": "integer", "minimum": 60, "maximum": 900}
+          "target_chars": {"type": "integer", "minimum": 60, "maximum": 2500}
         }
       }
     }

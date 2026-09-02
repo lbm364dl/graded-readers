@@ -96,11 +96,6 @@ class _DeinflectResult {
   _DeinflectResult(this.dictionaryForm, this.consumedLength);
 }
 
-_DeinflectResult? _tryDeinflect(
-    String text, int start, DictionaryService dict) {
-  return _tryDeinflectRaw(text, start, dict.hasWord, dict.maxWordLength);
-}
-
 _DeinflectResult? _tryDeinflectRaw(
     String text, int start, bool Function(String) hasWord, int maxWordLength) {
   final remaining = text.length - start;
@@ -141,24 +136,47 @@ List<String> deinflectWord(String word) {
 
   // --- Irregular verbs: 来る (kuru) and する ---
   const kuruForms = <String, String>{
-    'きます': '来る', 'きました': '来る', 'きません': '来る',
-    'きませんでした': '来る', 'きましょう': '来る',
-    'きて': '来る', 'きた': '来る', 'きている': '来る', 'きていた': '来る',
-    'きています': '来る', 'きていました': '来る',
-    'こない': '来る', 'こなかった': '来る',
-    'くれば': '来る', 'きたら': '来る',
-    'こよう': '来る', 'こられる': '来る', 'こさせる': '来る',
+    'きます': '来る',
+    'きました': '来る',
+    'きません': '来る',
+    'きませんでした': '来る',
+    'きましょう': '来る',
+    'きて': '来る',
+    'きた': '来る',
+    'きている': '来る',
+    'きていた': '来る',
+    'きています': '来る',
+    'きていました': '来る',
+    'こない': '来る',
+    'こなかった': '来る',
+    'くれば': '来る',
+    'きたら': '来る',
+    'こよう': '来る',
+    'こられる': '来る',
+    'こさせる': '来る',
     'こい': '来る',
   };
   const suruForms = <String, String>{
-    'します': 'する', 'しました': 'する', 'しません': 'する',
-    'しませんでした': 'する', 'しましょう': 'する',
-    'して': 'する', 'した': 'する', 'している': 'する', 'していた': 'する',
-    'しています': 'する', 'していました': 'する',
-    'しない': 'する', 'しなかった': 'する',
-    'すれば': 'する', 'したら': 'する',
-    'しよう': 'する', 'させる': 'する', 'される': 'する',
-    'しろ': 'する', 'せよ': 'する',
+    'します': 'する',
+    'しました': 'する',
+    'しません': 'する',
+    'しませんでした': 'する',
+    'しましょう': 'する',
+    'して': 'する',
+    'した': 'する',
+    'している': 'する',
+    'していた': 'する',
+    'しています': 'する',
+    'していました': 'する',
+    'しない': 'する',
+    'しなかった': 'する',
+    'すれば': 'する',
+    'したら': 'する',
+    'しよう': 'する',
+    'させる': 'する',
+    'される': 'する',
+    'しろ': 'する',
+    'せよ': 'する',
   };
   // Check exact irregular matches
   if (kuruForms.containsKey(word)) results.add(kuruForms[word]!);
@@ -172,17 +190,31 @@ List<String> deinflectWord(String word) {
 
   // --- Godan masu-stem mapping ---
   const masuToDict = {
-    'き': 'く', 'ぎ': 'ぐ', 'し': 'す', 'ち': 'つ', 'に': 'ぬ',
-    'び': 'ぶ', 'み': 'む', 'り': 'る', 'い': 'う',
+    'き': 'く',
+    'ぎ': 'ぐ',
+    'し': 'す',
+    'ち': 'つ',
+    'に': 'ぬ',
+    'び': 'ぶ',
+    'み': 'む',
+    'り': 'る',
+    'い': 'う',
   };
   const negToDict = {
-    'か': 'く', 'が': 'ぐ', 'さ': 'す', 'た': 'つ', 'な': 'ぬ',
-    'ば': 'ぶ', 'ま': 'む', 'ら': 'る', 'わ': 'う',
+    'か': 'く',
+    'が': 'ぐ',
+    'さ': 'す',
+    'た': 'つ',
+    'な': 'ぬ',
+    'ば': 'ぶ',
+    'ま': 'む',
+    'ら': 'る',
+    'わ': 'う',
   };
 
   // Helper: given a masu-stem, add both ichidan and godan dictionary forms
   void addFromMasuStem(String stem) {
-    results.add('${stem}る'); // ichidan
+    results.add('$stemる'); // ichidan
     if (stem.isNotEmpty) {
       final last = stem[stem.length - 1];
       final dictEnd = masuToDict[last];
@@ -194,7 +226,7 @@ List<String> deinflectWord(String word) {
 
   // Helper: given a negative-stem, add both ichidan and godan dictionary forms
   void addFromNegStem(String stem) {
-    results.add('${stem}る'); // ichidan
+    results.add('$stemる'); // ichidan
     if (stem.isNotEmpty) {
       final last = stem[stem.length - 1];
       final dictEnd = negToDict[last];
@@ -262,8 +294,15 @@ List<String> deinflectWord(String word) {
   }
   // Godan: stem + おう (行こう → 行く, 読もう → 読む, etc.)
   const volToDict = {
-    'こ': 'く', 'ご': 'ぐ', 'そ': 'す', 'と': 'つ', 'の': 'ぬ',
-    'ぼ': 'ぶ', 'も': 'む', 'ろ': 'る', 'お': 'う',
+    'こ': 'く',
+    'ご': 'ぐ',
+    'そ': 'す',
+    'と': 'つ',
+    'の': 'ぬ',
+    'ぼ': 'ぶ',
+    'も': 'む',
+    'ろ': 'る',
+    'お': 'う',
   };
   if (word.endsWith('う') && word.length > 1) {
     // Check the char before う
@@ -281,8 +320,15 @@ List<String> deinflectWord(String word) {
   }
   // Godan: 行けば → 行く (e-dan + ば)
   const ebaToDict = {
-    'け': 'く', 'げ': 'ぐ', 'せ': 'す', 'て': 'つ', 'ね': 'ぬ',
-    'べ': 'ぶ', 'め': 'む', 'れ': 'る', 'え': 'う',
+    'け': 'く',
+    'げ': 'ぐ',
+    'せ': 'す',
+    'て': 'つ',
+    'ね': 'ぬ',
+    'べ': 'ぶ',
+    'め': 'む',
+    'れ': 'る',
+    'え': 'う',
   };
   if (word.endsWith('ば') && word.length > 2) {
     final beforeBa = word[word.length - 2];
@@ -333,7 +379,7 @@ List<String> deinflectWord(String word) {
     if (word.endsWith(suffix) && word.length > suffix.length) {
       final before = word.substring(0, word.length - suffix.length);
       // Ichidan: stem + る (食べてしまう → 食べ → 食べる)
-      results.add('${before}る');
+      results.add('$beforeる');
     }
   }
   // Godan te-form + しまう: って/んで/いて/して + しまう variants
@@ -362,7 +408,11 @@ List<String> deinflectWord(String word) {
   }
   // Godan contracted じゃう: んでしまう → んじゃう
   const jaForms = [
-    'じゃいました', 'じゃいます', 'じゃった', 'じゃって', 'じゃう',
+    'じゃいました',
+    'じゃいます',
+    'じゃった',
+    'じゃって',
+    'じゃう',
   ];
   for (final jaSuffix in jaForms) {
     final full = 'ん$jaSuffix';
@@ -383,7 +433,8 @@ List<String> deinflectWord(String word) {
   if (grammarForms.containsKey(word)) results.add(grammarForms[word]!);
   for (final entry in grammarForms.entries) {
     if (word.endsWith(entry.key) && word.length > entry.key.length) {
-      results.add('${word.substring(0, word.length - entry.key.length)}${entry.value}');
+      results.add(
+          '${word.substring(0, word.length - entry.key.length)}${entry.value}');
     }
   }
 
@@ -472,7 +523,7 @@ List<String> deinflectWord(String word) {
   }
   // Ichidan: 食べ → 食べる (stem + る)
   if (word.length > 1) {
-    results.add('${word}る');
+    results.add('$wordる');
   }
 
   return results;
@@ -487,62 +538,8 @@ List<String> deinflectWord(String word) {
 List<String> deinflectionChain(String inflected, String dictForm) {
   if (inflected == dictForm) return [];
 
-  // Try to find intermediate forms by peeling polite/tense suffixes
-  // to reveal the plain form, then show the plain form if different.
-
-  // Suffixes sorted longest-first to avoid shorter matches shadowing longer ones
-  const _formalToPlain = <(String, String)>[
-    // Godan te+しまう formal (longest)
-    ('ってしまいました', 'ってしまった'),
-    ('ってしまいます', 'ってしまう'),
-    ('んでしまいました', 'んでしまった'),
-    ('んでしまいます', 'んでしまう'),
-    ('いてしまいました', 'いてしまった'),
-    ('いてしまいます', 'いてしまう'),
-    ('いでしまいました', 'いでしまった'),
-    ('いでしまいます', 'いでしまう'),
-    ('してしまいました', 'してしまった'),
-    ('してしまいます', 'してしまう'),
-    // てしまう formal
-    ('てしまいました', 'てしまった'),
-    ('てしまいます', 'てしまう'),
-    // Contracted forms
-    ('ちゃいました', 'ちゃった'),
-    ('ちゃいます', 'ちゃう'),
-    ('じゃいました', 'じゃった'),
-    ('じゃいます', 'じゃう'),
-    // Masu forms (shortest — must come last)
-    ('ませんでした', 'なかった'),
-    ('ましょう', 'よう'),
-    ('ました', 'た'),
-    ('ません', 'ない'),
-    ('ます', 'う'), // placeholder, works for godan
-  ];
-
-  // てしまう/ちゃう plain → te-form (strip しまう layer), longest first
-  const _shimauToTe = <(String, String)>[
-    ('ってしまった', 'って'),
-    ('ってしまう', 'って'),
-    ('んでしまった', 'んで'),
-    ('んでしまう', 'んで'),
-    ('いてしまった', 'いて'),
-    ('いてしまう', 'いて'),
-    ('いでしまった', 'いで'),
-    ('いでしまう', 'いで'),
-    ('してしまった', 'して'),
-    ('してしまう', 'して'),
-    ('てしまった', 'て'),
-    ('てしまう', 'て'),
-    ('てしまって', 'て'),
-    ('んじゃった', 'んで'),
-    ('んじゃう', 'んで'),
-    ('ちゃった', 'て'),
-    ('ちゃう', 'て'),
-    ('ちゃって', 'て'),
-  ];
-
   // All しまう forms → base てしまう / ちゃう
-  const _shimauToBase = <(String, String)>[
+  const shimauToBase = <(String, String)>[
     // Godan te + しまう (longest first)
     ('ってしまいました', 'ってしまう'), ('ってしまいます', 'ってしまう'),
     ('ってしまった', 'ってしまう'), ('ってしまって', 'ってしまう'),
@@ -567,7 +564,7 @@ List<String> deinflectionChain(String inflected, String dictForm) {
   ];
 
   // Masu suffixes and what tense they represent
-  const _masuSuffixes = <(String, String)>[
+  const masuSuffixes = <(String, String)>[
     ('ませんでした', 'neg-past'),
     ('ましょう', 'volitional'),
     ('ました', 'past'),
@@ -576,25 +573,31 @@ List<String> deinflectionChain(String inflected, String dictForm) {
   ];
 
   // Godan masu-stem → dict form mapping (same as in deinflectWord)
-  const _masuToDict = {
-    'き': 'く', 'ぎ': 'ぐ', 'し': 'す', 'ち': 'つ', 'に': 'ぬ',
-    'び': 'ぶ', 'み': 'む', 'り': 'る', 'い': 'う',
+  const masuToDict = {
+    'き': 'く',
+    'ぎ': 'ぐ',
+    'し': 'す',
+    'ち': 'つ',
+    'に': 'ぬ',
+    'び': 'ぶ',
+    'み': 'む',
+    'り': 'る',
+    'い': 'う',
   };
 
   // Given a masu-stem and tense, build the correct plain form
-  String? _buildPlainForm(String masuStem, String tense) {
+  String? buildPlainForm(String masuStem, String tense) {
     // Try godan first: check if last char of stem is in masu mapping
     final lastChar = masuStem.isNotEmpty ? masuStem[masuStem.length - 1] : '';
-    final godanEnd = _masuToDict[lastChar];
+    final godanEnd = masuToDict[lastChar];
     final godanBase = godanEnd != null
         ? '${masuStem.substring(0, masuStem.length - 1)}$godanEnd'
         : null;
-    final ichidanBase = '${masuStem}る';
+    final ichidanBase = '$masuStemる';
 
     // Use dictForm to decide ichidan vs godan
-    final base = (godanBase != null && godanBase == dictForm)
-        ? godanBase
-        : ichidanBase;
+    final base =
+        (godanBase != null && godanBase == dictForm) ? godanBase : ichidanBase;
     final isGodan = godanBase != null && godanBase == dictForm;
 
     switch (tense) {
@@ -604,51 +607,83 @@ List<String> deinflectionChain(String inflected, String dictForm) {
         if (isGodan && godanEnd != null) {
           // Godan past tense depends on verb ending
           // Special case: 行く → 行った (not 行いた)
-          if (base.endsWith('行く')) return '${base.substring(0, base.length - 1)}った';
+          if (base.endsWith('行く')) {
+            return '${base.substring(0, base.length - 1)}った';
+          }
           final stem = base.substring(0, base.length - 1);
           switch (godanEnd) {
-            case 'く': return '${stem}いた';
-            case 'ぐ': return '${stem}いだ';
-            case 'す': return '${stem}した';
-            case 'つ': case 'う': case 'る': return '${stem}った';
-            case 'む': case 'ぶ': case 'ぬ': return '${stem}んだ';
+            case 'く':
+              return '$stemいた';
+            case 'ぐ':
+              return '$stemいだ';
+            case 'す':
+              return '$stemした';
+            case 'つ':
+            case 'う':
+            case 'る':
+              return '$stemった';
+            case 'む':
+            case 'ぶ':
+            case 'ぬ':
+              return '$stemんだ';
           }
         }
-        return '${masuStem}た'; // ichidan: stem + た
+        return '$masuStemた'; // ichidan: stem + た
       case 'negative':
         if (isGodan) {
           // Godan negative: a-dan + ない
-          const _dictToNeg = {
-            'く': 'か', 'ぐ': 'が', 'す': 'さ', 'つ': 'た', 'ぬ': 'な',
-            'ぶ': 'ば', 'む': 'ま', 'る': 'ら', 'う': 'わ',
+          const dictToNeg = {
+            'く': 'か',
+            'ぐ': 'が',
+            'す': 'さ',
+            'つ': 'た',
+            'ぬ': 'な',
+            'ぶ': 'ば',
+            'む': 'ま',
+            'る': 'ら',
+            'う': 'わ',
           };
           final stem = base.substring(0, base.length - 1);
-          final neg = _dictToNeg[godanEnd];
-          if (neg != null) return '${stem}${neg}ない';
+          final neg = dictToNeg[godanEnd];
+          if (neg != null) return '$stem$negない';
         }
-        return '${masuStem}ない'; // ichidan
+        return '$masuStemない'; // ichidan
       case 'neg-past':
         if (isGodan) {
-          const _dictToNeg = {
-            'く': 'か', 'ぐ': 'が', 'す': 'さ', 'つ': 'た', 'ぬ': 'な',
-            'ぶ': 'ば', 'む': 'ま', 'る': 'ら', 'う': 'わ',
+          const dictToNeg = {
+            'く': 'か',
+            'ぐ': 'が',
+            'す': 'さ',
+            'つ': 'た',
+            'ぬ': 'な',
+            'ぶ': 'ば',
+            'む': 'ま',
+            'る': 'ら',
+            'う': 'わ',
           };
           final stem = base.substring(0, base.length - 1);
-          final neg = _dictToNeg[godanEnd];
-          if (neg != null) return '${stem}${neg}なかった';
+          final neg = dictToNeg[godanEnd];
+          if (neg != null) return '$stem$negなかった';
         }
-        return '${masuStem}なかった';
+        return '$masuStemなかった';
       case 'volitional':
         if (isGodan) {
-          const _dictToVol = {
-            'く': 'こ', 'ぐ': 'ご', 'す': 'そ', 'つ': 'と', 'ぬ': 'の',
-            'ぶ': 'ぼ', 'む': 'も', 'る': 'ろ', 'う': 'お',
+          const dictToVol = {
+            'く': 'こ',
+            'ぐ': 'ご',
+            'す': 'そ',
+            'つ': 'と',
+            'ぬ': 'の',
+            'ぶ': 'ぼ',
+            'む': 'も',
+            'る': 'ろ',
+            'う': 'お',
           };
           final stem = base.substring(0, base.length - 1);
-          final vol = _dictToVol[godanEnd];
-          if (vol != null) return '${stem}${vol}う';
+          final vol = dictToVol[godanEnd];
+          if (vol != null) return '$stem$volう';
         }
-        return '${masuStem}よう';
+        return '$masuStemよう';
       default:
         return null;
     }
@@ -658,7 +693,7 @@ List<String> deinflectionChain(String inflected, String dictForm) {
 
   // Step 1: try しまう layer → base しまう form
   String? shimauBase;
-  for (final (suffix, replacement) in _shimauToBase) {
+  for (final (suffix, replacement) in shimauToBase) {
     if (inflected.endsWith(suffix) && inflected.length > suffix.length) {
       final stem = inflected.substring(0, inflected.length - suffix.length);
       shimauBase = '$stem$replacement';
@@ -669,10 +704,11 @@ List<String> deinflectionChain(String inflected, String dictForm) {
   // Step 2: try masu formal → correct plain form
   String? plainForm;
   if (shimauBase == null) {
-    for (final (suffix, tense) in _masuSuffixes) {
+    for (final (suffix, tense) in masuSuffixes) {
       if (inflected.endsWith(suffix) && inflected.length > suffix.length) {
-        final masuStem = inflected.substring(0, inflected.length - suffix.length);
-        plainForm = _buildPlainForm(masuStem, tense);
+        final masuStem =
+            inflected.substring(0, inflected.length - suffix.length);
+        plainForm = buildPlainForm(masuStem, tense);
         break;
       }
     }

@@ -56,10 +56,10 @@ def test_baseline_is_exact_and_marks_required_unknowns():
     assert all(segments[index]["meaning_en"] == "[LUNA REQUIRED]" for index in required)
 
 
-def test_context_targets_include_single_han_and_inferred_names_not_punctuation(monkeypatch):
+def test_context_targets_include_every_lexical_segment_not_punctuation(monkeypatch):
     monkeypatch.setattr(
         "pipeline.delta_boundary_annotation.refined_fixed_segments",
-        lambda _text: ["东", "普通", "刘备", "。"],
+        lambda _text, **_kwargs: ["东", "普通", "刘备", "。"],
     )
     monkeypatch.setattr(
         "pipeline.delta_boundary_annotation.dictionary_hints",
@@ -73,8 +73,19 @@ def test_context_targets_include_single_han_and_inferred_names_not_punctuation(m
     segments, required = deterministic_baseline("东普通刘备。")
     targets = contextual_delta_targets(segments, required)
     assert required == set()
-    assert targets == {0, 2}
+    assert targets == {0, 1, 2}
     assert segments[3]["type"] == "punctuation"
+
+
+def test_baseline_uses_reviewed_name_before_contextual_agent_pass():
+    segments, _required = deterministic_baseline(
+        "关羽来到桃园。",
+        protected_names={"关羽"},
+        protected_compounds={"桃园"},
+    )
+    by_text = {item["text"]: item for item in segments}
+    assert by_text["关羽"]["type"] == "name"
+    assert "桃园" in by_text
 
 
 def test_delta_requires_every_unknown_and_preserves_text():
@@ -111,10 +122,24 @@ def test_delta_accepts_sparse_known_context_override_and_rejects_non_target():
     with pytest.raises(ValueError, match="non-target"):
         apply_delta("东普通。", baseline, set(), {
             "overrides": [{
-                "index": 1, "type": "word", "pinyin": "pǔ tōng", "meaning_en": "common",
+                "index": 2, "type": "word", "pinyin": "", "meaning_en": "period",
             }],
             "grammar_overlays": [],
         })
+
+
+def test_delta_normalizes_obviously_nonparticle_surface_to_word():
+    baseline = [
+        {"text": "很", "type": "word", "pinyin": "hěn", "meaning_en": "very"},
+    ]
+    result = apply_delta("很", baseline, set(), {
+        "overrides": [{
+            "index": 0, "type": "particle", "pinyin": "hěn",
+            "meaning_en": "very",
+        }],
+        "grammar_overlays": [],
+    })
+    assert result["segments"][0]["type"] == "word"
 
 
 def test_seed_boundary_patch_is_lossless_scoped_and_precedes_overrides(monkeypatch):
@@ -216,6 +241,35 @@ def test_optional_boundary_normalization_discards_invalid_and_overlap(monkeypatc
     assert all(len(item["sha256"]) == 64 for item in evidence["discarded"])
 
 
+@pytest.mark.parametrize("text,parts", [
+    ("五十匹", ["五十", "匹"]),
+    ("很大", ["很", "大"]),
+    ("十分高兴", ["十分", "高兴"]),
+    ("往北方", ["往", "北方"]),
+])
+def test_optional_boundary_normalization_discards_transparent_grouping(
+    monkeypatch, text, parts,
+):
+    baseline = [
+        {"text": part, "type": "word", "pinyin": "x", "meaning_en": "x"}
+        for part in parts
+    ]
+    monkeypatch.setattr(
+        "pipeline.delta_boundary_annotation.compact_boundary_targets",
+        lambda _text, _baseline: [{"start": 0, "end": len(text)}],
+    )
+    patch = {"start": 0, "end": len(text), "segments": [{
+        "text": text, "type": "word", "pinyin": "x", "meaning_en": "x",
+    }]}
+
+    value, evidence = normalize_optional_boundary_patches(
+        text, baseline, {"boundary_patches": [patch]},
+    )
+
+    assert value["boundary_patches"] == []
+    assert evidence["discarded_count"] == 1
+
+
 def test_real_chapter_boundary_targets_expose_known_failures():
     from pathlib import Path
     path = Path("runs/experiments/chinese-fixed-boundary-hsk4-ch001/chapter.txt")
@@ -301,6 +355,7 @@ def test_optional_overlay_normalization_is_exact_deduplicated_and_audited():
     text = "刘备因为下雨而回家。"
     valid = {
         "start": 2, "end": 8, "text": "因为下雨而回",
+        "grammar_candidate_key": "test.because_therefore",
         "pattern": "因为……而……", "meaning_en": "because ... therefore ...",
     }
     mismatch = {**valid, "text": "错误表面"}
@@ -321,6 +376,7 @@ def test_optional_overlay_normalization_retains_valid_unique_overlay():
     text = "因为下雨，所以回家。"
     overlay = {
         "start": 0, "end": 10, "text": text[:10],
+        "grammar_candidate_key": "test.because_therefore",
         "pattern": "因为……所以……", "meaning_en": "because ... therefore ...",
     }
     normalized, evidence = normalize_optional_overlays(text, {

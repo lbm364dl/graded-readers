@@ -9,13 +9,40 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["surface", "type", "lemma", "kana", "meaning_en"],
+        "required": [
+          "surface", "type", "lemma", "surface_kana", "lemma_kana",
+          "part_of_speech", "conjugation_form", "meaning_en", "grammar_candidate_key",
+          "dictionary_key", "dictionary_definition_en", "form_steps",
+          "story_role", "story_importance_en"
+        ],
         "properties": {
           "surface": {"type": "string", "minLength": 1},
-          "type": {"type": "string", "enum": ["word", "auxiliary", "particle", "name", "idiom", "punctuation"]},
+          "type": {"type": "string", "enum": ["word", "grammar", "auxiliary", "particle", "name", "idiom", "punctuation"]},
           "lemma": {"type": "string"},
-          "kana": {"type": "string"},
-          "meaning_en": {"type": "string"}
+          "surface_kana": {"type": "string"},
+          "lemma_kana": {"type": "string"},
+          "part_of_speech": {"type": "string"},
+          "conjugation_form": {"type": "string"},
+          "meaning_en": {"type": "string"},
+          "grammar_candidate_key": {"type": "string", "pattern": "^$|^[a-z][a-z0-9_.-]*$"},
+          "dictionary_key": {"type": "string"},
+          "dictionary_definition_en": {"type": "string"},
+          "form_steps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["form", "reading", "label", "meaning_en"],
+              "properties": {
+                "form": {"type": "string", "minLength": 1},
+                "reading": {"type": "string", "minLength": 1},
+                "label": {"type": "string", "minLength": 1},
+                "meaning_en": {"type": "string", "minLength": 1}
+              }
+            }
+          },
+          "story_role": {"type": "string", "enum": ["none", "name", "story_term"]},
+          "story_importance_en": {"type": "string"}
         }
       }
     },
@@ -24,13 +51,45 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["start", "end", "surface", "grammar", "meaning_en"],
+        "required": [
+          "start", "end", "surface", "grammar_candidate_key", "pattern",
+          "meaning_en", "head_lemma", "head_lemma_kana", "form_label",
+          "explanation_en", "components"
+        ],
         "properties": {
           "start": {"type": "integer", "minimum": 0},
           "end": {"type": "integer", "minimum": 1},
           "surface": {"type": "string", "minLength": 1},
-          "grammar": {"type": "string", "minLength": 1},
-          "meaning_en": {"type": "string", "minLength": 1}
+          "grammar_candidate_key": {"type": "string", "pattern": "^[a-z][a-z0-9_.-]*$"},
+          "pattern": {"type": "string", "minLength": 1},
+          "meaning_en": {"type": "string", "minLength": 1},
+          "head_lemma": {"type": "string", "minLength": 1},
+          "head_lemma_kana": {"type": "string", "minLength": 1},
+          "form_label": {"type": "string", "minLength": 1},
+          "explanation_en": {"type": "string", "minLength": 1},
+          "components": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "start", "end", "surface", "lemma", "lemma_kana", "function_en",
+                "lookup_kind", "dictionary_key", "dictionary_definition_en"
+              ],
+              "properties": {
+                "start": {"type": "integer", "minimum": 0},
+                "end": {"type": "integer", "minimum": 1},
+                "surface": {"type": "string", "minLength": 1},
+                "lemma": {"type": "string", "minLength": 1},
+                "lemma_kana": {"type": "string", "minLength": 1},
+                "function_en": {"type": "string", "minLength": 1},
+                "lookup_kind": {"type": "string", "enum": ["lexical", "grammar", "none"]},
+                "dictionary_key": {"type": "string"},
+                "dictionary_definition_en": {"type": "string"}
+              }
+            }
+          }
         }
       }
     }

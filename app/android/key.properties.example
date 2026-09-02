@@ -1,0 +1,6 @@
+# Copy this file to key.properties and replace every placeholder.
+# key.properties and *.jks/*.keystore files are ignored by git.
+storePassword=REPLACE_WITH_UPLOAD_KEYSTORE_PASSWORD
+keyPassword=REPLACE_WITH_UPLOAD_KEY_PASSWORD
+keyAlias=upload
+storeFile=REPLACE_WITH_ABSOLUTE_PATH_TO_UPLOAD_KEYSTORE

@@ -64,7 +64,7 @@ if (( split_count > 0 )); then
     --book-run-id wagahai-n5n4-full --levels n5 n4 \
     --runs-dir runs/japanese-smoke-agent \
     --concurrency 3 --chapter-concurrency 3 --chapter-retries 2 \
-    --length-repair-rounds 0 --max-repairs 3 --final-effort xhigh \
+    --length-repair-rounds 0 --max-repairs 3 --final-effort low \
     --max-annotation-repairs 2 \
     >>"$japanese_log" 2>&1 &
   annotation_pids+=("$!")
@@ -72,7 +72,7 @@ if (( split_count > 0 )); then
     --source-dir books/japanese/wagahai_wa_neko_de_aru \
     --book-run-id wagahai-n3-full-smoke-20260807 --levels n3 \
     --concurrency 3 --chapter-concurrency 3 --chapter-retries 2 \
-    --length-repair-rounds 0 --max-repairs 3 --final-effort xhigh \
+    --length-repair-rounds 0 --max-repairs 3 --final-effort low \
     --max-annotation-repairs 2 \
     >>"$japanese_log" 2>&1 &
   annotation_pids+=("$!")
@@ -80,7 +80,7 @@ if (( split_count > 0 )); then
     --source-dir books/japanese/wagahai_wa_neko_de_aru \
     --book-run-id wagahai-full-n2n1-isolated --levels n2 n1 \
     --concurrency 3 --chapter-concurrency 3 --chapter-retries 2 \
-    --length-repair-rounds 0 --max-repairs 3 --final-effort xhigh \
+    --length-repair-rounds 0 --max-repairs 3 --final-effort low \
     --max-annotation-repairs 2 \
     >>"$japanese_log" 2>&1 &
   annotation_pids+=("$!")
@@ -104,7 +104,7 @@ else
     --book-run-id wagahai-full --levels n5 n4 n3 n2 n1 \
     --concurrency 5 --chapter-concurrency 5 \
     --chapter-retries 2 --length-repair-rounds 2 --max-repairs 3 \
-    --final-effort xhigh --max-annotation-repairs 2 \
+    --final-effort low --max-annotation-repairs 2 \
     >>"$japanese_log" 2>&1; then
     echo "$(date --iso-8601=seconds) Japanese generation failed" >>"$japanese_log"
     exit 2

@@ -66,6 +66,7 @@ def _fixture(tmp_path: Path, lengths=(2, 3), annotated=True):
                     "title": f"故事{number}", "text": text, "segments": segments,
                     "grammar_overlays": [{
                         "start": 2 * count, "end": 2 * count + 2, "text": "来了",
+                        "grammar_candidate_key": "test.completed_action",
                         "pattern": "V了", "meaning_en": "completed action or new state",
                     }],
                     "annotation_audit": {"all_reviewed": True, "chunks": 1},

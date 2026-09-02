@@ -8,5 +8,13 @@
   "scene_attempts": {
     "scene_01": 1
   },
-  "unresolved_scenes": []
+  "unresolved_scenes": [],
+  "continuity_promotion": {
+    "promoted_at": "2026-08-26T20:46:25.583631+00:00",
+    "candidate_sha256": "09143cfdba30ee62e45d0b00e3da5543e6c61bb0a9ebc7c9467ac1cc82eb4557",
+    "original_backup": "/home/catalin/graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_046-hsk3/chapter.pre-continuity.txt",
+    "original_sha256": "dc3c22b1bf327efb1ca389990c15acb5deaee3201570f3f19d848ce51588e3ca",
+    "annotations_invalidated": [],
+    "annotation_rerun_required": true
+  }
 }

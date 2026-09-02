@@ -63,7 +63,7 @@ else
     if python3 -m pipeline.audit_compact_omissions \
         --run-dir "$low_run" --run-dir "$high_run" \
         --output-dir "$audit_run" --concurrency 9 \
-        --classify-effort high --repair-effort xhigh --review-effort high \
+        --classify-effort low --repair-effort low --review-effort low \
         --max-repair-rounds 7 \
         --promote-passed "${extra[@]}" \
         >>"$log_dir/omission.log" 2>&1; then
@@ -94,7 +94,7 @@ run_continuity() {
     note "continuity $level attempt $attempt"
     if python3 -m pipeline.book_continuity \
         "${sources[@]}" --book-run-dir "$run_dir" --level "$level" \
-        --concurrency "$cap" --review-effort medium --repair-effort xhigh \
+        --concurrency "$cap" --review-effort low --repair-effort low \
         --max-repair-rounds "$repair_rounds" "${extra[@]}" \
         >>"$log_dir/continuity-$level.log" 2>&1; then
       return 0
@@ -139,7 +139,7 @@ for attempt in 1 2 3; do
   if python3 -m pipeline.audit_compact_omissions \
       --run-dir "$low_run" --run-dir "$high_run" \
       --output-dir "$audit_run" --concurrency 9 \
-      --classify-effort high --repair-effort xhigh --review-effort high \
+      --classify-effort low --repair-effort low --review-effort low \
       --max-repair-rounds 7 \
       --promote-passed --refresh \
       >>"$log_dir/post-length-omission.log" 2>&1; then

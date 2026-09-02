@@ -26,6 +26,7 @@ from pipeline.agent_harness import (
     simplified, utc_now,
 )
 from pipeline.adaptation_policy import policy_for
+from pipeline.chinese_readability import validate_beginner_chinese
 
 
 CHAPTER_BACKUP = "chapter.before-omission-repair.txt"
@@ -90,8 +91,21 @@ def promote_passed_candidate(run_dir: Path, candidate_path: Path) -> dict[str, A
     candidate = candidate_path.read_bytes()
     if not candidate.strip():
         raise ValueError(f"refusing to promote empty candidate: {candidate_path}")
-    # Validate mutable metadata before making any filesystem change.
+    # Validate mutable metadata and learner readability before making any
+    # filesystem change.  A semantic repair must not bypass generation gates.
     report = _object(report_path)
+    manifest = _object(run_dir / "manifest.json")
+    readability = validate_beginner_chinese(
+        candidate.decode("utf-8"), str(manifest.get("level", ""))
+    )
+    if not readability["passes"]:
+        raise ValueError(
+            f"refusing to promote {manifest.get('level')} candidate which fails "
+            "the word/sentence readability gate: "
+            f"{readability['above_level_word_percent']}% above-level words, "
+            f"long sentences {readability['long_sentences']}, "
+            f"long clauses {readability['long_clauses']}"
+        )
 
     chapter_backup = run_dir / CHAPTER_BACKUP
     report_backup = run_dir / REPORT_BACKUP
@@ -673,9 +687,9 @@ def parser() -> argparse.ArgumentParser:
     result.add_argument("--run-dir", action="append", required=True)
     result.add_argument("--output-dir", required=True)
     result.add_argument("--model", default="gpt-5.6-luna")
-    result.add_argument("--classify-effort", default="high")
-    result.add_argument("--repair-effort", default="xhigh")
-    result.add_argument("--review-effort", default="high")
+    result.add_argument("--classify-effort", default="low")
+    result.add_argument("--repair-effort", default="low")
+    result.add_argument("--review-effort", default="low")
     result.add_argument("--concurrency", type=int, default=8)
     result.add_argument("--timeout", type=int, default=900)
     result.add_argument(

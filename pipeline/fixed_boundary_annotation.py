@@ -31,6 +31,10 @@ LITERARY_COMPOUNDS = {
     # Common lexical verbs/temporal words that the HSK-driven Jieba mutation
     # otherwise breaks into characters.
     "火攻", "斩杀", "改姓", "少时",
+    # Common learner-facing compounds that HSK-weighted Jieba can split or
+    # attach to a neighboring word in literary narrative.
+    "一天", "第二天", "心里", "一直", "本事", "祭礼", "兄弟",
+    "百姓", "刀剑", "东西", "乱事",
 }
 CHAPTER_NAMES = {"封谞", "张让", "十常侍", "刘胜", "灵帝", "靖王", "长江"}
 CLASSICAL_PREDICATES = {"亡", "贫"}
@@ -56,7 +60,12 @@ def fixed_segments(text: str) -> list[str]:
     return result
 
 
-def refined_fixed_segments(text: str) -> list[str]:
+def refined_fixed_segments(
+    text: str,
+    *,
+    protected_names: set[str] | frozenset[str] | None = None,
+    protected_compounds: set[str] | frozenset[str] | None = None,
+) -> list[str]:
     """Experimental conservative refinement of POS/Jieba surfaces.
 
     This intentionally covers common compositional shapes and a very small
@@ -68,7 +77,34 @@ def refined_fixed_segments(text: str) -> list[str]:
     # cause Jieba to split. Longest candidates win at each position.
     joined: list[str] = []
     index = 0
-    protected = sorted(LITERARY_COMPOUNDS | CHAPTER_NAMES, key=len, reverse=True)
+    names = CHAPTER_NAMES | {
+        word for word in (protected_names or ()) if 1 < len(word) <= 6
+    }
+    compounds = LITERARY_COMPOUNDS | {
+        word for word in (protected_compounds or ()) if 1 < len(word) <= 4
+    }
+    protected = sorted(compounds | names, key=len, reverse=True)
+    # Establish exact protected-span boundaries before joining. A tokenizer
+    # can return ``有乱`` + ``事`` even though the reviewed word is ``乱事``;
+    # splitting at the raw-text start lets the ordinary joining loop restore
+    # ``有`` + ``乱事`` losslessly.
+    protected_boundaries = {
+        boundary
+        for word in protected
+        for match in re.finditer(re.escape(word), text)
+        for boundary in (match.start(), match.end())
+    }
+    split_base: list[str] = []
+    cursor = 0
+    for token in base:
+        end = cursor + len(token)
+        cuts = [cursor, *sorted(
+            boundary for boundary in protected_boundaries
+            if cursor < boundary < end
+        ), end]
+        split_base.extend(text[left:right] for left, right in zip(cuts, cuts[1:]))
+        cursor = end
+    base = split_base
     while index < len(base):
         match = None
         consumed = 0
@@ -93,15 +129,18 @@ def refined_fixed_segments(text: str) -> list[str]:
     result: list[str] = []
     hsk = ChineseSegmenter._hsk_words
     for token in joined:
-        if (len(token) < 2 or token in hsk or token in LITERARY_COMPOUNDS
-                or token in CHAPTER_NAMES or all(_punctuation_char(c) for c in token)):
+        if (len(token) < 2 or token in hsk or token in compounds
+                or token in names or all(_punctuation_char(c) for c in token)):
             result.append(token)
             continue
         embedded = next((word for word in protected if token.endswith(word) and token != word), None)
         if embedded:
             result.extend((token[:-len(embedded)], embedded))
             continue
-        name_prefix = next((word for word in CHAPTER_NAMES if token.startswith(word) and token != word), None)
+        name_prefix = next(
+            (word for word in names if token.startswith(word) and token != word),
+            None,
+        )
         if name_prefix:
             result.extend((name_prefix, token[len(name_prefix):]))
             continue
@@ -126,7 +165,7 @@ def refined_fixed_segments(text: str) -> list[str]:
             or (len(token) == 2 and token[-1] in CLASSICAL_PREDICATES)
             or (len(token) == 2 and token[0] in {"必", "共", "孝", "当"})
             or (len(token) == 2 and token[0] in {"推"})
-            or token == "鸡化雄"
+            or token in {"鸡化雄", "马骑"}
         )
         if split_all:
             result.extend(token)
@@ -195,8 +234,15 @@ meaning for lexical items. Punctuation/whitespace must have type punctuation and
 pinyin/meaning. Use particle only for grammatical particles, name for proper names, and
 idiom only when the entire fixed surface is a real lexicalized idiom; otherwise word.
 
-Add only genuinely useful grammar overlays (constructions, not ordinary sentence
-translations). Overlay start/end are Python character offsets within CHUNK, end
+Add genuinely useful grammar overlays (constructions, not ordinary sentence
+translations). Directional and resultative complements that materially shape a
+predicate are high priority, even when fixed boundaries keep the verb and complement
+as separate tokens. Explain the main verb, the complement's contribution, and their
+combined contextual meaning; never give the complement the whole predicate's gloss.
+Give every overlay a concise lowercase grammar_candidate_key. It is a provisional
+clustering hint for a later unification pass, not a canonical grammar lesson ID, so
+choose a descriptive slug without assuming other agents will use the same wording.
+Overlay start/end are Python character offsets within CHUNK, end
 exclusive; text must equal CHUNK[start:end]. Keep explanations concise. Self-check the
 fixed list, punctuation fields, meanings, and every offset before returning JSON.
 
@@ -303,9 +349,15 @@ They are NEVER character offsets. For example, to replace table tokens 12 and 13
 return start_index=12,end_index=14 even if their text begins at character 19.
 Replacement text concatenated must exactly equal the replaced source text. Patches
 must be sorted and non-overlapping. Split compositional phrases into dictionary
-words and particles; merge genuine compounds, idioms, and complete names. Meanings
+words and particles; merge genuine compounds, idioms, complete names, and compact
+learner-facing verb-complement predicates. Meanings
 explain only the tapped segment in context. Return the complete corrected set of
-genuine localized grammar overlays; omit clause summaries and lexical paraphrases.
+genuine localized grammar overlays; treat meaning-changing directional/resultative
+complements as high-value grammar rather than optional detail. Omit clause summaries
+and lexical paraphrases. Every overlay needs a concise lowercase
+grammar_candidate_key. It is only a provisional clustering hint, not a canonical
+lesson ID; preserve existing keys unless an explicit grammar finding requires
+replacing the overlay.
 Patch only exact surfaces named by INDEPENDENT REVIEW FINDINGS. Do not improve
 unmentioned tokens. Change grammar overlays only for explicit grammar findings;
 otherwise return the existing overlays unchanged.
@@ -441,7 +493,17 @@ def review_scoped_correction(
     # and deterministic rather than accepting arbitrary neighboring edits.
     lexical_allowed = set(lexical_ranges)
     for issue in findings.get("issues", []) if isinstance(findings, dict) else []:
-        if not isinstance(issue, dict) or issue.get("problem") != "under_grouped":
+        if not isinstance(issue, dict):
+            continue
+        suggestion = str(issue.get("suggested_fix", "")).lower()
+        requests_boundary_change = (
+            issue.get("problem") == "under_grouped"
+            or any(marker in suggestion for marker in (
+                "segment as", "resegment", "split", "merge",
+                "分成", "分为", "拆分", "合并",
+            ))
+        )
+        if not requests_boundary_change:
             continue
         issue_ranges, _, _ = _review_scopes(
             chunk, base, {"issues": [issue]}, grammar=False,
@@ -451,6 +513,17 @@ def review_scoped_correction(
                 lexical_allowed.add((start - 1, end))
             if end < len(base):
                 lexical_allowed.add((start, end + 1))
+            if requests_boundary_change:
+                # A malformed baseline can split the requested expression
+                # across three tiny tokens (for example 退 / 入长 / 社 while
+                # the repair is 退入 / 长社). Permit no more than two adjacent
+                # tokens, and only for an explicit boundary-change request.
+                if start > 1:
+                    lexical_allowed.add((start - 2, end))
+                if start > 0 and end < len(base):
+                    lexical_allowed.add((start - 1, end + 1))
+                if end + 1 < len(base):
+                    lexical_allowed.add((start, end + 2))
     grammar_ranges, grammar_chars, grammar_evidence = _review_scopes(
         chunk, base, findings, grammar=True
     )
@@ -607,7 +680,7 @@ def parser() -> argparse.ArgumentParser:
     value.add_argument("--output-dir", required=True)
     value.add_argument("--level", default="hsk4")
     value.add_argument("--model", default="gpt-5.6-luna")
-    value.add_argument("--effort", default="medium")
+    value.add_argument("--effort", default="low")
     value.add_argument("--chunk-size", type=int, default=200)
     value.add_argument("--chunk-maximum", type=int)
     value.add_argument("--refined-boundaries", action="store_true")

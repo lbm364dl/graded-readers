@@ -29,7 +29,15 @@ void main() {
   // -- Shared dictionaries for tests --
 
   final zhDict = _MockDict({
-    '三国', '演義', '日本', '日本語', '学校', '学生', '友達', '毎日', '人',
+    '三国',
+    '演義',
+    '日本',
+    '日本語',
+    '学校',
+    '学生',
+    '友達',
+    '毎日',
+    '人',
   });
 
   // Japanese dictionary with common words for segmentation tests
@@ -58,7 +66,7 @@ void main() {
     '犬', '猫', '花', '水', '朝', '夜', '今日', '明日',
     '東京', '子供', '時間', '手紙', '先生', '部屋',
     // Auxiliary verbs (used in compound verbs)
-    '始める', '続ける', '終わる', '出す', '過ぎる', '合う',
+    '始める', '続ける', '出す', '過ぎる', '合う',
     '直す', '込む', '上がる', '下がる',
   }, Language.japanese);
 
@@ -641,8 +649,13 @@ void main() {
     // (ます, ました, ません, etc. should be part of a verb, not standalone)
     void expectNoOrphanSuffixes(List<String> tokens) {
       const orphans = [
-        'ます', 'ました', 'ません', 'ませんでした', 'ましょう',
-        'ている', 'ていた',
+        'ます',
+        'ました',
+        'ません',
+        'ませんでした',
+        'ましょう',
+        'ている',
+        'ていた',
       ];
       for (final orphan in orphans) {
         expect(tokens.contains(orphan), isFalse,
@@ -653,179 +666,150 @@ void main() {
 
     test('ichidan masu: 毎日本を食べます', () {
       final tokens = segmentText('毎日本を食べます。', jpDict);
-      expect(hasToken(tokens, '食べます'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '食べます'), isTrue, reason: 'tokens: $tokens');
       expectNoOrphanSuffixes(tokens);
     });
 
     test('godan mashita: 本を読みました', () {
       final tokens = segmentText('本を読みました。', jpDict);
-      expect(hasToken(tokens, '読みました'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '読みました'), isTrue, reason: 'tokens: $tokens');
       expectNoOrphanSuffixes(tokens);
     });
 
     test('ichidan mashita: 疲れました', () {
       final tokens = segmentText('疲れました。', jpDict);
-      expect(hasToken(tokens, '疲れました'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '疲れました'), isTrue, reason: 'tokens: $tokens');
       expectNoOrphanSuffixes(tokens);
     });
 
     test('godan te-form: 本を読んで', () {
       final tokens = segmentText('本を読んで', jpDict);
-      expect(hasToken(tokens, '読んで'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '読んで'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('godan past: 山に登った', () {
       final tokens = segmentText('山に登った。', jpDict);
-      expect(hasToken(tokens, '登った'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '登った'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('volitional: 山に登ろう', () {
       final tokens = segmentText('山に登ろう。', jpDict);
-      expect(hasToken(tokens, '登ろう'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '登ろう'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('volitional godan ku: 行こう', () {
       final tokens = segmentText('学校に行こう。', jpDict);
-      expect(hasToken(tokens, '行こう'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '行こう'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('negative: 食べない', () {
       final tokens = segmentText('食べない。', jpDict);
-      expect(hasToken(tokens, '食べない'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '食べない'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('negative godan: 行かない', () {
       final tokens = segmentText('学校に行かない。', jpDict);
-      expect(hasToken(tokens, '行かない'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '行かない'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('negative past: 食べなかった', () {
       final tokens = segmentText('食べなかった。', jpDict);
-      expect(hasToken(tokens, '食べなかった'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '食べなかった'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('copula でした', () {
       final tokens = segmentText('元気でした。', jpDict);
-      expect(hasToken(tokens, '元気でした'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '元気でした'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('copula だろう', () {
       final tokens = segmentText('元気だろう。', jpDict);
-      expect(hasToken(tokens, '元気だろう'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '元気だろう'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('tai-form: 食べたい', () {
       final tokens = segmentText('食べたい。', jpDict);
-      expect(hasToken(tokens, '食べたい'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '食べたい'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('tai-form godan: 行きたい', () {
       final tokens = segmentText('行きたい。', jpDict);
-      expect(hasToken(tokens, '行きたい'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '行きたい'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('progressive: 食べている', () {
       final tokens = segmentText('食べている。', jpDict);
-      expect(hasToken(tokens, '食べている'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '食べている'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('progressive past: 食べていた', () {
       final tokens = segmentText('食べていた。', jpDict);
-      expect(hasToken(tokens, '食べていた'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '食べていた'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('conditional ba: 食べれば', () {
       final tokens = segmentText('食べれば。', jpDict);
-      expect(hasToken(tokens, '食べれば'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '食べれば'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('conditional ba godan: 行けば', () {
       final tokens = segmentText('行けば。', jpDict);
-      expect(hasToken(tokens, '行けば'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '行けば'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('conditional tara: 食べたら', () {
       final tokens = segmentText('食べたら。', jpDict);
-      expect(hasToken(tokens, '食べたら'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '食べたら'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('conditional tara godan: 行ったら', () {
       final tokens = segmentText('行ったら。', jpDict);
-      expect(hasToken(tokens, '行ったら'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '行ったら'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('nagara: 歩きながら', () {
       final tokens = segmentText('歩きながら。', jpDict);
-      expect(hasToken(tokens, '歩きながら'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '歩きながら'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('passive: 食べられる', () {
       final tokens = segmentText('食べられる。', jpDict);
-      expect(hasToken(tokens, '食べられる'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '食べられる'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('causative: 食べさせる', () {
       final tokens = segmentText('食べさせる。', jpDict);
-      expect(hasToken(tokens, '食べさせる'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '食べさせる'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('i-adj past: 楽しかった', () {
       final tokens = segmentText('楽しかった。', jpDict);
-      expect(hasToken(tokens, '楽しかった'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '楽しかった'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('i-adj negative: 大きくない', () {
       final tokens = segmentText('大きくない。', jpDict);
-      expect(hasToken(tokens, '大きくない'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '大きくない'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('masen deshita: 食べませんでした', () {
       final tokens = segmentText('食べませんでした。', jpDict);
-      expect(hasToken(tokens, '食べませんでした'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '食べませんでした'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('mashō: 食べましょう', () {
       final tokens = segmentText('食べましょう。', jpDict);
-      expect(hasToken(tokens, '食べましょう'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '食べましょう'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('tai past: 食べたかった', () {
       final tokens = segmentText('食べたかった。', jpDict);
-      expect(hasToken(tokens, '食べたかった'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '食べたかった'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('tai negative: 行きたくない', () {
       final tokens = segmentText('行きたくない。', jpDict);
-      expect(hasToken(tokens, '行きたくない'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '行きたくない'), isTrue, reason: 'tokens: $tokens');
     });
 
     // -- Multi-verb sentences --
@@ -835,16 +819,14 @@ void main() {
       expect(hasToken(tokens, '朝'), isTrue, reason: 'tokens: $tokens');
       expect(hasToken(tokens, '起きて'), isTrue, reason: 'tokens: $tokens');
       expect(hasToken(tokens, '学校'), isTrue, reason: 'tokens: $tokens');
-      expect(hasToken(tokens, '行きました'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '行きました'), isTrue, reason: 'tokens: $tokens');
       expectNoOrphanSuffixes(tokens);
     });
 
     test('sentence: 本を読みながら音楽を聞いていた', () {
       final tokens = segmentText('本を読みながら音楽を聞いていた。', jpDict);
       expect(hasToken(tokens, '本'), isTrue, reason: 'tokens: $tokens');
-      expect(hasToken(tokens, '読みながら'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '読みながら'), isTrue, reason: 'tokens: $tokens');
       expect(hasToken(tokens, '音楽'), isTrue, reason: 'tokens: $tokens');
       expectNoOrphanSuffixes(tokens);
     });
@@ -853,16 +835,14 @@ void main() {
       final tokens = segmentText('友達と映画を見ました。', jpDict);
       expect(hasToken(tokens, '友達'), isTrue, reason: 'tokens: $tokens');
       expect(hasToken(tokens, '映画'), isTrue, reason: 'tokens: $tokens');
-      expect(hasToken(tokens, '見ました'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '見ました'), isTrue, reason: 'tokens: $tokens');
       expectNoOrphanSuffixes(tokens);
     });
 
     test('sentence: 天気が良かったから山に登ろう', () {
       final tokens = segmentText('天気が良かったから山に登ろう。', jpDict);
       expect(hasToken(tokens, '天気'), isTrue, reason: 'tokens: $tokens');
-      expect(hasToken(tokens, '良かった'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '良かった'), isTrue, reason: 'tokens: $tokens');
       expect(hasToken(tokens, '山'), isTrue, reason: 'tokens: $tokens');
       expect(hasToken(tokens, '登ろう'), isTrue, reason: 'tokens: $tokens');
     });
@@ -870,8 +850,7 @@ void main() {
     test('sentence: 水を飲みたかった', () {
       final tokens = segmentText('水を飲みたかった。', jpDict);
       expect(hasToken(tokens, '水'), isTrue, reason: 'tokens: $tokens');
-      expect(hasToken(tokens, '飲みたかった'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '飲みたかった'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('sentence: 犬が走っている', () {
@@ -890,24 +869,20 @@ void main() {
     test('sentence: 手紙を書かなかった', () {
       final tokens = segmentText('手紙を書かなかった。', jpDict);
       expect(hasToken(tokens, '手紙'), isTrue, reason: 'tokens: $tokens');
-      expect(hasToken(tokens, '書かなかった'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '書かなかった'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('sentence: 先生に教えられる', () {
       final tokens = segmentText('先生に教えられる。', jpDict);
       expect(hasToken(tokens, '先生'), isTrue, reason: 'tokens: $tokens');
-      expect(hasToken(tokens, '教えられる'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '教えられる'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('sentence: 花が美しくて嬉しかった', () {
       final tokens = segmentText('花が美しくて嬉しかった。', jpDict);
       expect(hasToken(tokens, '花'), isTrue, reason: 'tokens: $tokens');
-      expect(hasToken(tokens, '美しくて'), isTrue,
-          reason: 'tokens: $tokens');
-      expect(hasToken(tokens, '嬉しかった'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '美しくて'), isTrue, reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '嬉しかった'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('sentence: 電車に乗って東京に行った', () {
@@ -929,17 +904,14 @@ void main() {
     test('sentence: 部屋が静かでした', () {
       final tokens = segmentText('部屋が静かでした。', jpDict);
       expect(hasToken(tokens, '部屋'), isTrue, reason: 'tokens: $tokens');
-      expect(hasToken(tokens, '静かでした'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '静かでした'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('sentence: 仕事が終わったら帰りましょう', () {
       final tokens = segmentText('仕事が終わったら帰りましょう。', jpDict);
       expect(hasToken(tokens, '仕事'), isTrue, reason: 'tokens: $tokens');
-      expect(hasToken(tokens, '終わったら'), isTrue,
-          reason: 'tokens: $tokens');
-      expect(hasToken(tokens, '帰りましょう'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '終わったら'), isTrue, reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '帰りましょう'), isTrue, reason: 'tokens: $tokens');
       expectNoOrphanSuffixes(tokens);
     });
 
@@ -948,15 +920,13 @@ void main() {
       expect(hasToken(tokens, '今日'), isTrue, reason: 'tokens: $tokens');
       expect(hasToken(tokens, '暑くて'), isTrue, reason: 'tokens: $tokens');
       expect(hasToken(tokens, '水'), isTrue, reason: 'tokens: $tokens');
-      expect(hasToken(tokens, '飲みたい'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '飲みたい'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('sentence: 猫が魚を食べさせる', () {
       final tokens = segmentText('猫が魚を食べさせる。', jpDict);
       expect(hasToken(tokens, '猫'), isTrue, reason: 'tokens: $tokens');
-      expect(hasToken(tokens, '食べさせる'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '食べさせる'), isTrue, reason: 'tokens: $tokens');
     });
 
     // -- Exact dictionary words should still work --
@@ -982,19 +952,15 @@ void main() {
 
     test('punctuation splits correctly', () {
       final tokens = segmentText('食べました。飲みました。', jpDict);
-      expect(hasToken(tokens, '食べました'), isTrue,
-          reason: 'tokens: $tokens');
-      expect(hasToken(tokens, '飲みました'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '食べました'), isTrue, reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '飲みました'), isTrue, reason: 'tokens: $tokens');
       expect(hasToken(tokens, '。'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('mixed punctuation', () {
       final tokens = segmentText('行きたい！でも、行かない。', jpDict);
-      expect(hasToken(tokens, '行きたい'), isTrue,
-          reason: 'tokens: $tokens');
-      expect(hasToken(tokens, '行かない'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '行きたい'), isTrue, reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '行かない'), isTrue, reason: 'tokens: $tokens');
     });
 
     // -- All godan verb classes in one sentence --
@@ -1005,24 +971,15 @@ void main() {
         '書きます泳ぎます話します持ちます死にます遊びます読みます帰ります買います',
         jpDict,
       );
-      expect(hasToken(tokens, '書きます'), isTrue,
-          reason: 'ku: $tokens');
-      expect(hasToken(tokens, '泳ぎます'), isTrue,
-          reason: 'gu: $tokens');
-      expect(hasToken(tokens, '話します'), isTrue,
-          reason: 'su: $tokens');
-      expect(hasToken(tokens, '持ちます'), isTrue,
-          reason: 'tsu: $tokens');
-      expect(hasToken(tokens, '死にます'), isTrue,
-          reason: 'nu: $tokens');
-      expect(hasToken(tokens, '遊びます'), isTrue,
-          reason: 'bu: $tokens');
-      expect(hasToken(tokens, '読みます'), isTrue,
-          reason: 'mu: $tokens');
-      expect(hasToken(tokens, '帰ります'), isTrue,
-          reason: 'ru: $tokens');
-      expect(hasToken(tokens, '買います'), isTrue,
-          reason: 'u: $tokens');
+      expect(hasToken(tokens, '書きます'), isTrue, reason: 'ku: $tokens');
+      expect(hasToken(tokens, '泳ぎます'), isTrue, reason: 'gu: $tokens');
+      expect(hasToken(tokens, '話します'), isTrue, reason: 'su: $tokens');
+      expect(hasToken(tokens, '持ちます'), isTrue, reason: 'tsu: $tokens');
+      expect(hasToken(tokens, '死にます'), isTrue, reason: 'nu: $tokens');
+      expect(hasToken(tokens, '遊びます'), isTrue, reason: 'bu: $tokens');
+      expect(hasToken(tokens, '読みます'), isTrue, reason: 'mu: $tokens');
+      expect(hasToken(tokens, '帰ります'), isTrue, reason: 'ru: $tokens');
+      expect(hasToken(tokens, '買います'), isTrue, reason: 'u: $tokens');
       expectNoOrphanSuffixes(tokens);
     });
 
@@ -1126,66 +1083,56 @@ void main() {
 
     test('食べ始めました → matches 食べ始める as compound', () {
       final tokens = segmentText('食べ始めました。', jpDictWithCompounds);
-      expect(hasToken(tokens, '食べ始めました'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '食べ始めました'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('読み始めます → matches 読み始める as compound', () {
       final tokens = segmentText('読み始めます。', jpDictWithCompounds);
-      expect(hasToken(tokens, '読み始めます'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '読み始めます'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('走り出した → matches 走り出す as compound', () {
       final tokens = segmentText('走り出した。', jpDictWithCompounds);
-      expect(hasToken(tokens, '走り出した'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '走り出した'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('飲み過ぎた → matches 飲み過ぎる as compound', () {
       final tokens = segmentText('飲み過ぎた。', jpDictWithCompounds);
-      expect(hasToken(tokens, '飲み過ぎた'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '飲み過ぎた'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('話し合いました → matches 話し合う as compound', () {
       final tokens = segmentText('話し合いました。', jpDictWithCompounds);
-      expect(hasToken(tokens, '話し合いました'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '話し合いました'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('書き直した → matches 書き直す as compound', () {
       final tokens = segmentText('書き直した。', jpDictWithCompounds);
-      expect(hasToken(tokens, '書き直した'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '書き直した'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('泳ぎ始めた → matches 泳ぎ始める as compound', () {
       final tokens = segmentText('泳ぎ始めた。', jpDictWithCompounds);
-      expect(hasToken(tokens, '泳ぎ始めた'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '泳ぎ始めた'), isTrue, reason: 'tokens: $tokens');
     });
 
     // Compound in a sentence
     test('sentence: 本を読み始めました', () {
       final tokens = segmentText('本を読み始めました。', jpDictWithCompounds);
       expect(hasToken(tokens, '本'), isTrue, reason: 'tokens: $tokens');
-      expect(hasToken(tokens, '読み始めました'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '読み始めました'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('sentence: 水を飲み過ぎた', () {
       final tokens = segmentText('水を飲み過ぎた。', jpDictWithCompounds);
       expect(hasToken(tokens, '水'), isTrue, reason: 'tokens: $tokens');
-      expect(hasToken(tokens, '飲み過ぎた'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '飲み過ぎた'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('sentence: 友達と話し合いました', () {
       final tokens = segmentText('友達と話し合いました。', jpDictWithCompounds);
       expect(hasToken(tokens, '友達'), isTrue, reason: 'tokens: $tokens');
-      expect(hasToken(tokens, '話し合いました'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '話し合いました'), isTrue, reason: 'tokens: $tokens');
     });
   });
 
@@ -1213,8 +1160,7 @@ void main() {
       final tokens = segmentText('歩き始めた。', jpDict);
       expect(hasToken(tokens, '歩き'), isTrue,
           reason: 'masu-stem of 歩く: $tokens');
-      expect(hasToken(tokens, '始めた'), isTrue,
-          reason: 'inflected 始める: $tokens');
+      expect(hasToken(tokens, '始めた'), isTrue, reason: 'inflected 始める: $tokens');
     });
 
     test('走り続けている → 走り + 続けている', () {
@@ -1229,32 +1175,27 @@ void main() {
       final tokens = segmentText('読み続けた。', jpDict);
       expect(hasToken(tokens, '読み'), isTrue,
           reason: 'masu-stem of 読む: $tokens');
-      expect(hasToken(tokens, '続けた'), isTrue,
-          reason: 'inflected 続ける: $tokens');
+      expect(hasToken(tokens, '続けた'), isTrue, reason: 'inflected 続ける: $tokens');
     });
 
     test('書き直します → 書き + 直します', () {
       final tokens = segmentText('書き直します。', jpDict);
       expect(hasToken(tokens, '書き'), isTrue,
           reason: 'masu-stem of 書く: $tokens');
-      expect(hasToken(tokens, '直します'), isTrue,
-          reason: 'inflected 直す: $tokens');
+      expect(hasToken(tokens, '直します'), isTrue, reason: 'inflected 直す: $tokens');
     });
 
     test('食べ過ぎた → 食べ + 過ぎた', () {
       final tokens = segmentText('食べ過ぎた。', jpDict);
-      expect(hasToken(tokens, '食べ'), isTrue,
-          reason: 'ichidan stem: $tokens');
-      expect(hasToken(tokens, '過ぎた'), isTrue,
-          reason: 'inflected 過ぎる: $tokens');
+      expect(hasToken(tokens, '食べ'), isTrue, reason: 'ichidan stem: $tokens');
+      expect(hasToken(tokens, '過ぎた'), isTrue, reason: 'inflected 過ぎる: $tokens');
     });
 
     test('泳ぎ始めた → 泳ぎ + 始めた', () {
       final tokens = segmentText('泳ぎ始めた。', jpDict);
       expect(hasToken(tokens, '泳ぎ'), isTrue,
           reason: 'masu-stem of 泳ぐ: $tokens');
-      expect(hasToken(tokens, '始めた'), isTrue,
-          reason: 'inflected 始める: $tokens');
+      expect(hasToken(tokens, '始めた'), isTrue, reason: 'inflected 始める: $tokens');
     });
 
     test('飲み過ぎました → 飲み + 過ぎました', () {
@@ -1270,8 +1211,7 @@ void main() {
       final tokens = segmentText('山に登り始めました。', jpDict);
       expect(hasToken(tokens, '山'), isTrue, reason: 'tokens: $tokens');
       expect(hasToken(tokens, '登り'), isTrue, reason: 'tokens: $tokens');
-      expect(hasToken(tokens, '始めました'), isTrue,
-          reason: 'tokens: $tokens');
+      expect(hasToken(tokens, '始めました'), isTrue, reason: 'tokens: $tokens');
     });
 
     test('sentence: 毎日歩き続けている', () {
@@ -1304,10 +1244,8 @@ void main() {
 
     test('食べ始めた: no compound in dict → split', () {
       final tokens = segmentText('食べ始めた。', jpDict);
-      expect(hasToken(tokens, '食べ'), isTrue,
-          reason: 'should split: $tokens');
-      expect(hasToken(tokens, '始めた'), isTrue,
-          reason: 'should split: $tokens');
+      expect(hasToken(tokens, '食べ'), isTrue, reason: 'should split: $tokens');
+      expect(hasToken(tokens, '始めた'), isTrue, reason: 'should split: $tokens');
     });
 
     test('走り出した: compound dict has it → single token', () {
@@ -1321,8 +1259,7 @@ void main() {
       // Note: 出す is not in jpDict, but 出る is. So this will split
       // as 走り + 出した where 出した deinflects to 出る
       final tokens = segmentText('走り出した。', jpDict);
-      expect(hasToken(tokens, '走り'), isTrue,
-          reason: 'should split: $tokens');
+      expect(hasToken(tokens, '走り'), isTrue, reason: 'should split: $tokens');
     });
   });
 
@@ -1336,8 +1273,7 @@ void main() {
 
     test('登ってきていました splits as 登って + きていました or きて etc.', () {
       final tokens = segmentText('登ってきていました。', jpDict);
-      expect(hasToken(tokens, '登って'), isTrue,
-          reason: 'te-form of 登る: $tokens');
+      expect(hasToken(tokens, '登って'), isTrue, reason: 'te-form of 登る: $tokens');
       // きていました should match 来る via irregular rules
       expect(hasToken(tokens, 'きていました'), isTrue,
           reason: 'irregular 来る form: $tokens');
@@ -1346,8 +1282,7 @@ void main() {
     test('きました → 来る', () {
       final tokens = segmentText('友達がきました。', jpDict);
       expect(hasToken(tokens, '友達'), isTrue, reason: 'tokens: $tokens');
-      expect(hasToken(tokens, 'きました'), isTrue,
-          reason: 'irregular 来る: $tokens');
+      expect(hasToken(tokens, 'きました'), isTrue, reason: 'irregular 来る: $tokens');
     });
 
     test('しています → する', () {

@@ -14,13 +14,20 @@ from pipeline.agent_harness import (
     BookHarness,
     CodexRunner,
     apply_compact_review_policy,
+    accept_distributed_scene_lengths,
+    best_scene_attempt,
     discard_incorrect_length_findings,
     digest,
     gather_all_or_raise,
     length_violations,
+    load_promotion_candidate,
+    materialize_recovery_beats,
+    normalize_review_score_scale,
     parser,
     publish_chapter_candidate,
+    reusable_passed_scene,
     run_status_for_verdicts,
+    scene_repair_strategy,
     split_annotation_chunks,
     split_chinese_annotation_chunks,
     status,
@@ -101,6 +108,86 @@ def test_book_parser_accepts_source_directory():
     assert args.source_dir == "chapters"
 
 
+def test_promote_parser_defaults_to_luna_low_review():
+    args = parser().parse_args([
+        "promote", "--run-dir", "run", "--candidate", "candidate.txt",
+    ])
+    assert args.model == "gpt-5.6-luna"
+    assert args.review_effort == "low"
+
+
+def test_promote_parser_can_reuse_unchanged_passed_scenes():
+    args = parser().parse_args([
+        "promote", "--run-dir", "run", "--candidate", "candidate.txt",
+        "--reuse-passed-scenes",
+    ])
+    assert args.reuse_passed_scenes is True
+
+
+def test_promote_parser_can_enable_source_beat_recovery():
+    args = parser().parse_args([
+        "promote", "--run-dir", "run", "--candidate", "candidate.txt",
+        "--recover-with-source-beats",
+    ])
+    assert args.recover_with_source_beats is True
+    assert args.max_source_beat_repairs == 1
+
+
+def test_recovery_beats_partition_parent_span_and_allocate_target():
+    source = "甲乙丙丁戊己庚辛"
+    scene = {"source_start": 0, "source_end": 8, "target_chars": 101}
+    beats = materialize_recovery_beats(source, scene, [
+        {
+            "id": "first", "source_start_quote": "甲乙",
+            "target_weight": 1, "paragraphs": 1,
+        },
+        {
+            "id": "second", "source_start_quote": "戊己",
+            "target_weight": 1, "paragraphs": 2,
+        },
+    ])
+
+    assert [(item["source_start"], item["source_end"]) for item in beats] == [
+        (0, 4), (4, 8),
+    ]
+    assert [item["target_chars"] for item in beats] == [50, 51]
+    assert sum(item["target_chars"] for item in beats) == 101
+
+
+def test_reusable_passed_scene_requires_unchanged_reviewed_pass():
+    prior = {
+        "text": "刘备见到榜文。",
+        "resolved": True,
+        "review": {"verdict": "pass"},
+    }
+
+    assert reusable_passed_scene(prior, "刘备见到榜文。")
+    assert not reusable_passed_scene(prior, "刘备看到榜文。")
+    assert not reusable_passed_scene({**prior, "resolved": False}, prior["text"])
+    assert not reusable_passed_scene(
+        {**prior, "review": {"verdict": "revise"}}, prior["text"]
+    )
+
+
+def test_promotion_candidate_can_select_attempt_by_stable_index(tmp_path):
+    candidate = tmp_path / "scene.json"
+    candidate.write_text(json.dumps({
+        "text": "最后版本",
+        "attempts": [
+            {"stage": "repair_01", "text": "第一次修复"},
+            {"stage": "repair_01", "text": "第二次修复"},
+        ],
+    }), encoding="utf-8")
+
+    path, text, selector = load_promotion_candidate(
+        f"{candidate}@attempt:0"
+    )
+
+    assert path == candidate
+    assert text == "第一次修复"
+    assert selector == "attempt:0:repair_01"
+
+
 def test_mechanical_length_policy_discards_only_length_claims():
     review = {
         "distortions": ["篇幅超过目标两倍", "把冀州写成翼州"],
@@ -109,6 +196,177 @@ def test_mechanical_length_policy_discards_only_length_claims():
     cleaned = discard_incorrect_length_findings(review)
     assert cleaned["distortions"] == ["把冀州写成翼州"]
     assert cleaned["language_problems"] == ["指代含混"]
+
+
+def test_scene_repair_strategy_preserves_accurate_short_candidate():
+    strategy = scene_repair_strategy(
+        "刘备见到榜文，心里很着急。",
+        {
+            "omissions": [], "unsupported_additions": [], "distortions": [],
+            "language_problems": [
+                "mechanical length gate: 14 CJK, required 20-30"
+            ],
+        },
+        20,
+        30,
+    )
+
+    assert "length-only expansion" in strategy
+    assert "Preserve every existing sentence and claim" in strategy
+    assert "9 is the strict minimum" in strategy
+
+
+def test_scene_repair_strategy_localizes_factual_correction():
+    strategy = scene_repair_strategy(
+        "曹操追击敌军，恢复了当地治安。",
+        {
+            "omissions": [],
+            "unsupported_additions": ["恢复治安没有原文依据"],
+            "distortions": [], "language_problems": [],
+        },
+        15,
+        30,
+    )
+
+    assert "surgical factual repair" in strategy
+    assert "Change or remove" in strategy
+    assert "smallest sentence span" in strategy
+
+
+def test_best_scene_attempt_prefers_accurate_near_length_candidate():
+    attempts = [
+        {
+            "text": "甲" * 90,
+            "review": {
+                "source_fidelity": 9, "naturalness": 9, "readability": 9,
+                "omissions": [], "unsupported_additions": [],
+                "distortions": [],
+                "language_problems": [
+                    "mechanical length gate: 90 CJK, required 100-120"
+                ],
+            },
+        },
+        {
+            "text": "甲" * 105,
+            "review": {
+                "source_fidelity": 7, "naturalness": 8, "readability": 8,
+                "omissions": [], "unsupported_additions": ["虚构因果"],
+                "distortions": [],
+                "language_problems": ["review scores must each be at least 8/10"],
+            },
+        },
+        {
+            "text": "甲" * 99,
+            "review": {
+                "source_fidelity": 8.5, "naturalness": 9, "readability": 9,
+                "omissions": [], "unsupported_additions": [],
+                "distortions": [],
+                "language_problems": [
+                    "mechanical length gate: 99 CJK, required 100-120"
+                ],
+            },
+        },
+    ]
+
+    assert best_scene_attempt(attempts, 100, 120) is attempts[2]
+
+
+def test_distributed_length_acceptance_requires_clean_review_and_chapter_budget():
+    results = [{
+        "scene": {"id": "scene_01"},
+        "resolved": False,
+        "review": {
+            "verdict": "revise",
+            "source_fidelity": 9, "naturalness": 9, "readability": 9,
+            "omissions": [], "unsupported_additions": [], "distortions": [],
+            "language_problems": [
+                "mechanical length gate: 90 CJK, required 100-120"
+            ],
+        },
+    }]
+
+    accepted = accept_distributed_scene_lengths(
+        results, "甲" * 100, "hsk4", 100
+    )
+
+    assert accepted == ["scene_01"]
+    assert results[0]["resolved"] is True
+    assert results[0]["review"]["verdict"] == "pass"
+
+
+def test_distributed_length_acceptance_never_hides_factual_finding():
+    results = [{
+        "scene": {"id": "scene_01"},
+        "resolved": False,
+        "review": {
+            "verdict": "revise",
+            "source_fidelity": 9, "naturalness": 9, "readability": 9,
+            "omissions": [], "unsupported_additions": ["虚构结果"],
+            "distortions": [],
+            "language_problems": [
+                "mechanical length gate: 90 CJK, required 100-120"
+            ],
+        },
+    }]
+
+    assert accept_distributed_scene_lengths(
+        results, "甲" * 100, "hsk4", 100
+    ) == []
+    assert results[0]["review"]["verdict"] == "revise"
+
+
+def test_normalizes_proportional_source_review_scores_to_schema_scale():
+    review = {
+        "source_fidelity": 0.97, "naturalness": 0.9, "readability": 1.0,
+        "verdict": "pass",
+    }
+
+    normalized = normalize_review_score_scale(review)
+
+    assert normalized["source_fidelity"] == 9.7
+    assert normalized["naturalness"] == 9.0
+    assert normalized["readability"] == 10.0
+    assert normalized["harness_score_normalization"] == "proportion_to_zero_ten"
+
+
+def test_focus_vocabulary_guidance_forbids_unplanned_name_forms():
+    harness = object.__new__(ChapterHarness)
+    harness.focus_vocabulary = {
+        "names": [{"surface": "刘玄德", "reason_en": "courtesy name"}],
+        "story_terms": [],
+    }
+
+    guidance = harness.focus_vocabulary_guidance
+
+    assert "complete exception inventory" in guidance
+    assert "other proper name, courtesy name, title" in guidance
+    assert "partial name, alternate name form" in guidance
+    assert "paraphrased term receives no exemption" in guidance
+
+
+def test_focus_vocabulary_semantic_guidance_keeps_reviewed_meaning():
+    harness = object.__new__(ChapterHarness)
+    harness.focus_vocabulary = {
+        "names": [{"surface": "张飞"}],
+        "story_terms": [{
+            "surface": "丈八点钢矛",
+            "meaning_en": "Zhang Fei's eighteen-span steel spear",
+        }],
+    }
+
+    guidance = json.loads(harness.focus_vocabulary_semantic_guidance)
+
+    assert guidance["names"] == [{"surface": "张飞"}]
+    assert guidance["story_terms"][0]["meaning_en"].startswith("Zhang Fei")
+
+
+def test_prose_shape_guidance_uses_progressive_exact_limits():
+    harness = object.__new__(ChapterHarness)
+    harness.args = Namespace(level="hsk3")
+
+    assert "sentence at or below 42" in harness.prose_shape_guidance
+    assert "clause at or below 22" in harness.prose_shape_guidance
+    assert "Use a full stop" in harness.prose_shape_guidance
 
 
 class FakeAnnotationRunner:
@@ -130,6 +388,16 @@ class FakeOutlineRunner:
 
     async def call(self, *args, **kwargs):
         return self.outline_result
+
+
+class FakeSourceReviewRunner:
+    def __init__(self, review):
+        self.review = review
+        self.calls = []
+
+    async def call(self, job, prompt, schema, effort, **kwargs):
+        self.calls.append((job, prompt, schema.name, effort))
+        return dict(self.review)
 
 
 def annotation_harness(runner, max_repairs=2):
@@ -202,6 +470,79 @@ def test_run_needs_review_when_any_scene_still_fails():
     assert run_status_for_verdicts({}) == "blocked"
 
 
+@pytest.mark.asyncio
+async def test_hsk1_source_review_cannot_override_word_sentence_gate():
+    text = (
+        "东汉末年宦官专权，灾祸不断，盗贼蜂起。"
+        "张角得天书，用符水治病，聚众起事。"
+    )
+    harness = object.__new__(ChapterHarness)
+    harness.args = Namespace(
+        level="hsk1", review_effort="low", refresh=False,
+    )
+    harness.source = text
+    harness.runner = FakeSourceReviewRunner({
+        "source_fidelity": 9, "naturalness": 9, "readability": 9,
+        "omissions": [], "unsupported_additions": [], "distortions": [],
+        "language_problems": [], "verdict": "pass",
+    })
+    scene = {
+        "id": "scene_01", "source_start": 0, "source_end": len(text),
+        "target_chars": 30,
+    }
+
+    result = await harness.review_scene(scene, text)
+
+    assert result["verdict"] == "revise"
+    assert result["harness_decision"] == (
+        "rejected_by_mechanical_level_word_sentence_gate"
+    )
+    assert "naturally segmented word tokens" in result["language_problems"][-1]
+
+
+def test_prior_review_traps_keep_semantic_findings_not_mechanical_noise():
+    traps = ChapterHarness.prior_review_traps([{
+        "review": {
+            "omissions": [],
+            "unsupported_additions": [],
+            "distortions": ["誓言的意思不准确。"],
+            "language_problems": [
+                "这句话不自然。",
+                "mechanical HSK3 word/sentence gate: too long",
+                "review scores must each be at least 8/10",
+            ],
+        }
+    }])
+
+    assert traps == ["誓言的意思不准确。", "这句话不自然。"]
+
+
+@pytest.mark.asyncio
+async def test_hsk1_pass_with_explicit_language_problem_is_forced_to_revise():
+    text = "很多人没有饭吃。刘备想帮大家。他认识了关羽。" * 6
+    harness = object.__new__(ChapterHarness)
+    harness.args = Namespace(
+        level="hsk1", review_effort="low", refresh=False,
+    )
+    harness.source = text
+    harness.runner = FakeSourceReviewRunner({
+        "source_fidelity": 9, "naturalness": 8, "readability": 9,
+        "omissions": [], "unsupported_additions": [], "distortions": [],
+        "language_problems": ["有一句话不自然"], "verdict": "pass",
+    })
+    scene = {
+        "id": "scene_01", "source_start": 0, "source_end": len(text),
+        "target_chars": 120,
+    }
+
+    result = await harness.review_scene(scene, text)
+
+    assert result["verdict"] == "revise"
+    assert result["harness_decision"] == (
+        "rejected_review_with_explicit_findings"
+    )
+
+
 def test_blocked_rerun_removes_stale_accepted_chapter_and_reader(tmp_path):
     (tmp_path / "chapter.txt").write_text("旧的已接受版本", encoding="utf-8")
     (tmp_path / "reader.json").write_text("{}", encoding="utf-8")
@@ -268,7 +609,8 @@ async def test_annotation_review_repairs_over_grouped_ordinary_phrase():
         {"text": "喝酒", "type": "word", "pinyin": "hē jiǔ", "meaning_en": "drink alcohol"},
         {"text": "时", "type": "particle", "pinyin": "shí", "meaning_en": "when; while"},
     ], "grammar_overlays": [{
-        "start": 4, "end": 5, "text": "时", "pattern": "V时",
+        "start": 4, "end": 5, "text": "时",
+        "grammar_candidate_key": "test.when", "pattern": "V时",
         "meaning_en": "when; while an action happens",
     }]}
     revise = {"verdict": "revise", "issues": [{
@@ -295,7 +637,8 @@ async def test_annotation_review_defers_exactness_and_offsets_to_deterministic_c
             "meaning_en": "walked in",
         }],
         "grammar_overlays": [{
-            "start": 0, "end": 3, "text": "走进了", "pattern": "V了",
+            "start": 0, "end": 3, "text": "走进了",
+            "grammar_candidate_key": "test.completed_action", "pattern": "V了",
             "meaning_en": "marks a completed action",
         }],
     }
@@ -362,7 +705,8 @@ def test_annotation_contract_rejects_clause_sized_word_and_bad_grammar_span():
             {"text": "了", "type": "particle", "pinyin": "le", "meaning_en": "completed-action marker"},
         ],
         "grammar_overlays": [{
-            "start": 0, "end": 3, "text": "走进了", "pattern": "V了",
+            "start": 0, "end": 3, "text": "走进了",
+            "grammar_candidate_key": "test.completed_action", "pattern": "V了",
             "meaning_en": "marks a completed action",
         }],
     }
@@ -378,7 +722,8 @@ def test_annotation_candidate_canonicalizes_only_unambiguous_offsets_and_whitesp
     raw = {
         "segments": [{"text": "走进了", "type": "word", "pinyin": "zǒu jìn le", "meaning_en": "walked in"}],
         "grammar_overlays": [{
-            "start": 99, "end": 105, "text": "走进了", "pattern": "V了",
+            "start": 99, "end": 105, "text": "走进了",
+            "grammar_candidate_key": "test.completed_action", "pattern": "V了",
             "meaning_en": "completed action",
         }],
     }
@@ -393,7 +738,8 @@ def test_annotation_candidate_canonicalizes_only_unambiguous_offsets_and_whitesp
 
 def test_annotation_candidate_uses_uniquely_nearest_repeated_occurrence():
     raw = {"segments": [], "grammar_overlays": [{
-        "start": 7, "end": 8, "text": "时", "pattern": "V时",
+        "start": 7, "end": 8, "text": "时",
+        "grammar_candidate_key": "test.when", "pattern": "V时",
         "meaning_en": "when",
     }]}
     fixed = ChapterHarness.canonicalize_annotation_candidate("来时走，走时来", raw)
@@ -402,7 +748,8 @@ def test_annotation_candidate_uses_uniquely_nearest_repeated_occurrence():
 
 def test_annotation_candidate_does_not_guess_tied_repeated_occurrence():
     raw = {"segments": [], "grammar_overlays": [{
-        "start": 3, "end": 4, "text": "时", "pattern": "V时",
+        "start": 3, "end": 4, "text": "时",
+        "grammar_candidate_key": "test.when", "pattern": "V时",
         "meaning_en": "when",
     }]}
     fixed = ChapterHarness.canonicalize_annotation_candidate("来时走，走时来", raw)
@@ -459,7 +806,8 @@ async def test_constrained_annotation_reviews_and_self_heals_with_lossless_patch
             "meaning_en": "drink alcohol",
         }]},
     ], "grammar_overlays": [{
-        "start": 4, "end": 5, "text": "时", "pattern": "V时",
+        "start": 4, "end": 5, "text": "时",
+        "grammar_candidate_key": "test.when", "pattern": "V时",
         "meaning_en": "when an action happens",
     }]}
     revise = {"verdict": "revise", "issues": [{
@@ -552,6 +900,49 @@ async def test_constrained_correction_salvages_lossless_sibling_patches():
     assert corrected["correction_evidence"]["discarded_patches"]
 
 
+@pytest.mark.asyncio
+async def test_constrained_correction_allows_reviewed_story_term_scope():
+    annotation = {
+        "segments": [
+            {"text": "丈", "type": "word", "pinyin": "zhàng", "meaning_en": "unit"},
+            {"text": "八点", "type": "word", "pinyin": "bā diǎn", "meaning_en": "eight o'clock"},
+            {"text": "钢矛", "type": "word", "pinyin": "gāng máo", "meaning_en": "steel spear"},
+        ],
+        "grammar_overlays": [],
+    }
+
+    class Runner:
+        async def call(self, *args, **kwargs):
+            return {
+                "patches": [{"start_index": 0, "end_index": 3, "segments": [
+                    {"text": "丈八", "type": "word", "pinyin": "zhàng bā", "meaning_en": "eighteen chi"},
+                    {"text": "点钢", "type": "word", "pinyin": "diǎn gāng", "meaning_en": "refined steel"},
+                    {"text": "矛", "type": "word", "pinyin": "máo", "meaning_en": "spear"},
+                ]}],
+                "grammar_overlays": [],
+            }
+
+    harness = object.__new__(ChapterHarness)
+    harness.runner = Runner()
+    harness.args = Namespace(annotation_repair_effort="low", refresh=False)
+    harness.focus_vocabulary = {
+        "names": [],
+        "story_terms": [{"surface": "丈八点钢矛"}],
+    }
+    corrected = await harness.constrained_annotation_correction(
+        0, "丈八点钢矛", annotation, {"verdict": "revise", "issues": [{
+            "start": 1, "end": 3, "segment_text": "八点", "problem": "meaning",
+            "explanation": "The weapon name is mis-segmented.",
+            "suggested_fix": "Split 丈八点钢矛 as 丈八, 点钢, 矛.",
+        }]}, 1,
+    )
+
+    assert [item["text"] for item in corrected["segments"]] == ["丈八", "点钢", "矛"]
+    assert corrected["correction_evidence"]["planned_story_scope_patches"] == [
+        {"range": [0, 3], "surface": "丈八点钢矛"}
+    ]
+
+
 def test_annotation_mode_is_opt_in_and_part_of_cli_contract():
     default = parser().parse_args(["run", "--source", "chapter.txt"])
     constrained = parser().parse_args([
@@ -573,7 +964,7 @@ def test_annotation_mode_is_opt_in_and_part_of_cli_contract():
 ])
 def test_all_chinese_entry_points_share_adaptive_chunk_cli(command, required):
     defaults = parser().parse_args([command, *required])
-    assert defaults.annotation_final_effort == "high"
+    assert defaults.annotation_final_effort == "low"
     assert defaults.annotation_chunk == DEFAULT_CHINESE_ANNOTATION_CHUNK_TARGET
     assert DEFAULT_CHINESE_ANNOTATION_CHUNK_TARGET == 350
     assert DEFAULT_CHINESE_ANNOTATION_CHUNK_MAXIMUM == 400
@@ -817,6 +1208,7 @@ async def test_constrained_delta_missing_completion_rejects_bad_merge(fault):
                 elif fault == "overlays":
                     overlays = [{
                         "start": 0, "end": 2, "text": "玄德",
+                        "grammar_candidate_key": "test.forbidden",
                         "pattern": "name", "meaning_en": "forbidden here",
                     }]
                 return {"overrides": rows, "grammar_overlays": overlays}
@@ -1042,6 +1434,156 @@ async def test_issue_scoped_under_grouping_allows_one_adjacent_token_and_retries
 
 
 @pytest.mark.asyncio
+async def test_issue_scoped_correction_isolates_finding_after_collateral_missing_retry():
+    chapter = "符水治病。"
+    annotation = {"segments": [
+        {"text": "符", "type": "word", "pinyin": "fú", "meaning_en": "talisman"},
+        {"text": "水", "type": "word", "pinyin": "shuǐ", "meaning_en": "water"},
+        {"text": "治病", "type": "word", "pinyin": "zhì bìng", "meaning_en": "treat illness"},
+        {"text": "。", "type": "punctuation", "pinyin": "", "meaning_en": ""},
+    ], "grammar_overlays": []}
+    review = {"verdict": "revise", "issues": [{
+        "start": 0, "end": 2, "segment_text": "符水", "problem": "under_grouped",
+        "suggested_fix": "Annotate 符水 as one word.",
+    }]}
+
+    class Runner:
+        def __init__(self): self.calls = 0
+        async def call(self, job, prompt, schema, effort, **kwargs):
+            self.calls += 1
+            if job.endswith("_missing_0000"):
+                return {"patches": [{
+                    "start_index": 0, "end_index": 2, "segments": [{
+                        "text": "符水", "type": "word", "pinyin": "fú shuǐ",
+                        "meaning_en": "talisman water",
+                    }],
+                }], "grammar_overlays": []}
+            if job.endswith("_missing"):
+                return {"patches": [{
+                    "start_index": 2, "end_index": 3, "segments": [{
+                        "text": "治病", "type": "word", "pinyin": "zhì bìng",
+                        "meaning_en": "to treat illness",
+                    }],
+                }], "grammar_overlays": []}
+            return {"patches": [], "grammar_overlays": []}
+
+    runner = Runner()
+    result, evidence = await constrained_delta_harness(
+        runner
+    ).issue_scoped_chapter_correction(
+        chapter, annotation, review, stage="test", effort="low",
+    )
+
+    assert [item["text"] for item in result["segments"]] == ["符水", "治病", "。"]
+    assert evidence["calls"] == 3 and evidence["exact_coverage"] is True
+
+
+@pytest.mark.asyncio
+async def test_issue_scoped_correction_retries_schema_valid_missing_coverage():
+    chapter = "符水。"
+    annotation = {"segments": [
+        {"text": "符", "type": "word", "pinyin": "fú", "meaning_en": "talisman"},
+        {"text": "水", "type": "word", "pinyin": "shuǐ", "meaning_en": "water"},
+        {"text": "。", "type": "punctuation", "pinyin": "", "meaning_en": ""},
+    ], "grammar_overlays": []}
+    review = {"verdict": "revise", "issues": [{
+        "start": 0, "end": 2, "segment_text": "符水", "problem": "under_grouped",
+        "suggested_fix": "Annotate 符水 as one word.",
+    }]}
+
+    class Runner:
+        async def call(self, job, prompt, schema, effort, **kwargs):
+            if "coverage_retry_01" not in job:
+                return {"patches": [], "grammar_overlays": []}
+            return {"patches": [{
+                "start_index": 0, "end_index": 2, "segments": [{
+                    "text": "符水", "type": "word", "pinyin": "fú shuǐ",
+                    "meaning_en": "talisman water",
+                }],
+            }], "grammar_overlays": []}
+
+    result, evidence = await constrained_delta_harness(
+        Runner(), max_repairs=1
+    ).issue_scoped_chapter_correction(
+        chapter, annotation, review, stage="test", effort="low",
+    )
+
+    assert [item["text"] for item in result["segments"]] == ["符水", "。"]
+    assert evidence["calls"] == 4
+    assert evidence["exact_coverage"] is True
+
+
+@pytest.mark.asyncio
+async def test_meaning_finding_can_authorize_explicit_resegmentation():
+    chapter = "梁上飞下来。"
+    annotation = {"segments": [
+        {"text": "梁", "type": "word", "pinyin": "liáng", "meaning_en": "beam"},
+        {"text": "上飞", "type": "word", "pinyin": "shàng fēi", "meaning_en": "fly up"},
+        {"text": "下来", "type": "word", "pinyin": "xiàlái", "meaning_en": "come down"},
+        {"text": "。", "type": "punctuation", "pinyin": "", "meaning_en": ""},
+    ], "grammar_overlays": []}
+    review = {"verdict": "revise", "issues": [{
+        "start": 1, "end": 3, "segment_text": "上飞", "problem": "meaning",
+        "suggested_fix": "Segment as 梁 + 上 + 飞下来.",
+    }]}
+
+    class Runner:
+        async def call(self, job, prompt, schema, effort, **kwargs):
+            return {"patches": [{
+                "start_index": 1, "end_index": 3, "segments": [
+                    {"text": "上", "type": "particle", "pinyin": "shàng", "meaning_en": "on"},
+                    {"text": "飞下来", "type": "word", "pinyin": "fēi xiàlái", "meaning_en": "fly down"},
+                ],
+            }], "grammar_overlays": []}
+
+    result, evidence = await constrained_delta_harness(
+        Runner()
+    ).issue_scoped_chapter_correction(
+        chapter, annotation, review, stage="test", effort="low",
+    )
+
+    assert [item["text"] for item in result["segments"]] == [
+        "梁", "上", "飞下来", "。",
+    ]
+    assert evidence["exact_coverage"] is True
+
+
+@pytest.mark.asyncio
+async def test_explicit_resegmentation_can_span_three_tiny_tokens():
+    chapter = "退入长社。"
+    annotation = {"segments": [
+        {"text": "退", "type": "word", "pinyin": "tuì", "meaning_en": "retreat"},
+        {"text": "入长", "type": "word", "pinyin": "rù cháng", "meaning_en": "enter long"},
+        {"text": "社", "type": "word", "pinyin": "shè", "meaning_en": "society"},
+        {"text": "。", "type": "punctuation", "pinyin": "", "meaning_en": ""},
+    ], "grammar_overlays": []}
+    review = {"verdict": "revise", "issues": [{
+        "start": 2, "end": 4, "segment_text": "长社", "problem": "under_grouped",
+        "suggested_fix": "Keep 长社 together as the place name after 退入.",
+    }]}
+
+    class Runner:
+        async def call(self, job, prompt, schema, effort, **kwargs):
+            return {"patches": [{
+                "start_index": 0, "end_index": 3, "segments": [
+                    {"text": "退入", "type": "word", "pinyin": "tuìrù", "meaning_en": "retreat into"},
+                    {"text": "长社", "type": "name", "pinyin": "Chángshè", "meaning_en": "Changshe"},
+                ],
+            }], "grammar_overlays": []}
+
+    result, evidence = await constrained_delta_harness(
+        Runner()
+    ).issue_scoped_chapter_correction(
+        chapter, annotation, review, stage="test", effort="low",
+    )
+
+    assert [item["text"] for item in result["segments"]] == [
+        "退入", "长社", "。",
+    ]
+    assert evidence["exact_coverage"] is True
+
+
+@pytest.mark.asyncio
 async def test_issue_scoped_narrows_context_inclusive_review_to_suggested_word():
     chapter = "宦官干政。"
     annotation = {"segments": [
@@ -1067,6 +1609,33 @@ async def test_issue_scoped_narrows_context_inclusive_review_to_suggested_word()
     )
     assert [item["text"] for item in result["segments"]] == ["宦官", "干政", "。"]
     assert evidence["valid_finding_spans"] == 1
+
+
+@pytest.mark.asyncio
+async def test_issue_scoped_correction_discards_reviewer_explicit_no_op():
+    chapter = "刘备来了。"
+    annotation = {"segments": [
+        {"text": "刘备", "type": "name", "pinyin": "Liú Bèi", "meaning_en": "Liu Bei"},
+        {"text": "来了", "type": "word", "pinyin": "lái le", "meaning_en": "arrived"},
+        {"text": "。", "type": "punctuation", "pinyin": "", "meaning_en": ""},
+    ], "grammar_overlays": []}
+    review = {"verdict": "revise", "issues": [{
+        "start": 0, "end": 2, "segment_text": "刘备", "problem": "meaning",
+        "explanation": "The current annotation itself is fine.",
+        "suggested_fix": "No change needed.",
+    }]}
+
+    result, evidence = await constrained_delta_harness(
+        None
+    ).issue_scoped_chapter_correction(
+        chapter, annotation, review, stage="test", effort="low",
+    )
+
+    assert result == annotation
+    assert evidence["calls"] == 0
+    assert evidence["discarded_findings"] == [{
+        "kind": "issue", "reason": "reviewer_explicit_no_op",
+    }]
 
 
 @pytest.mark.asyncio
@@ -1259,6 +1828,10 @@ async def _run_mocked_annotated_chapter(tmp_path, final_review, mode="constraine
         }
 
     harness.outline = fake_outline
+    async def fake_focus_vocabulary(_outline):
+        harness.focus_vocabulary = {"names": [], "story_terms": []}
+        return harness.focus_vocabulary
+    harness.plan_focus_vocabulary = fake_focus_vocabulary
     harness.process_scene = fake_scene
     harness.annotate_chunk = fake_annotation
     async def fake_delta(chapter, chunks):

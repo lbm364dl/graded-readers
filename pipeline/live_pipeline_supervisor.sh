@@ -47,7 +47,7 @@ python3 -m pipeline.japanese_agent_harness book \
   --book-run-id wagahai-n5n4-full \
   --runs-dir runs/japanese-smoke-agent \
   --concurrency 1 --chapter-concurrency 1 --chapter-retries 2 \
-  --length-repair-rounds 2 --max-repairs 3 --final-effort max \
+  --length-repair-rounds 2 --max-repairs 3 --final-effort low \
   --timeout 1200 --skip-annotations \
   >> runs/japanese-smoke-agent/wagahai-n5n4-full/orchestrator.log 2>&1 &
 n5n4=$!

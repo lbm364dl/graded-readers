@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["terms"],
+  "properties": {
+    "terms": {
+      "type": "array",
+      "maxItems": 26,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["surface", "lemma", "lemma_kana", "meaning_en", "importance_en"],
+        "properties": {
+          "surface": {"type": "string", "minLength": 1},
+          "lemma": {"type": "string", "minLength": 1},
+          "lemma_kana": {"type": "string", "minLength": 1},
+          "meaning_en": {"type": "string", "minLength": 1},
+          "importance_en": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}

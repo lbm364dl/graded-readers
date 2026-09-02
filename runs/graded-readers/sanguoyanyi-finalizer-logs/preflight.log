@@ -221,3 +221,27 @@ ModuleNotFoundError: No module named 'opencc'
   "unexpected": [],
   "incomplete": []
 }
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/catalin/graded-readers/pipeline/sanguoyanyi_finalizer.py", line 26, in <module>
+    from pipeline.agent_harness import cjk_count
+  File "/home/catalin/graded-readers/pipeline/agent_harness.py", line 21, in <module>
+    from opencc import OpenCC
+ModuleNotFoundError: No module named 'opencc'
+{
+  "status": "complete",
+  "expected": 720,
+  "complete": 720,
+  "missing": [],
+  "unexpected": [],
+  "incomplete": []
+}
+{
+  "status": "complete",
+  "expected": 720,
+  "complete": 720,
+  "missing": [],
+  "unexpected": [],
+  "incomplete": []
+}

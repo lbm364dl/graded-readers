@@ -17,5 +17,13 @@
     "original_sha256": "a57ac1d59864ad95c46543f585163ab1cd8950c98bc95855b8dd38bf50b51712",
     "annotations_invalidated": [],
     "annotation_rerun_required": true
+  },
+  "continuity_promotion": {
+    "promoted_at": "2026-08-26T20:42:45.216327+00:00",
+    "candidate_sha256": "67853df76d49fec16f5ad369a9211d300f34470a992ba71cefa97142073b54f4",
+    "original_backup": "/home/catalin/graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_112-hsk2/chapter.pre-continuity.txt",
+    "original_sha256": "dabbfe19c1ff89451acd6a64fcde261db8c481577842d565280be7c598f30e21",
+    "annotations_invalidated": [],
+    "annotation_rerun_required": true
   }
 }

@@ -1,5 +1,6 @@
 from pipeline.chinese_boundary_proposals import (
     boundary_proposals, constrained_correction_prompt, generic_gazetteer_spans,
+    learner_construction_spans,
 )
 from pipeline.fixed_boundary_annotation import boundary_correction_prompt
 
@@ -34,3 +35,20 @@ def test_correction_prompt_keeps_proposals_non_authoritative():
     assert "non_authoritative_boundary_proposals_v1" in boundary_correction_prompt(
         "张飞来了。", {"title": "张飞"}
     )
+
+
+def test_directional_complement_is_exposed_as_non_authoritative_candidate():
+    text = "地震和海水泛上来，百姓生活很难。"
+    surfaces = [
+        "地震", "和", "海水", "泛", "上来", "，", "百姓", "生活", "很", "难", "。",
+    ]
+    spans = learner_construction_spans(text, surfaces)
+
+    assert spans == [{
+        "start": 5,
+        "end": 8,
+        "text": "泛上来",
+        "kind": "verb_directional_complement_candidate",
+        "parts": ["泛", "上来"],
+    }]
+    assert boundary_proposals(text)["learner_construction_spans"] == spans

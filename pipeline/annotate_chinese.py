@@ -14,7 +14,7 @@ import tempfile
 from typing import Any
 
 from pipeline.agent_harness import (
-    ChapterHarness, CodexRunner,
+    CHINESE_ANNOTATION_POLICY_VERSION, ChapterHarness, CodexRunner,
     DEFAULT_CHINESE_ANNOTATION_CHUNK_MAXIMUM as DEFAULT_ANNOTATION_CHUNK_MAXIMUM,
     DEFAULT_CHINESE_ANNOTATION_CHUNK_TARGET as DEFAULT_ANNOTATION_CHUNK_TARGET,
     split_chinese_annotation_chunks,
@@ -75,6 +75,8 @@ def discover_complete_chapters(roots: list[Path]) -> list[Path]:
 def reusable_reader(
     path: Path, chapter: str, expected_level: str,
     expected_mode: str | None = None, expected_review_policy: str | None = None,
+    expected_policy_version: str | None = None,
+    expected_focus_vocabulary_sha256: str | None = None,
 ) -> dict[str, Any] | None:
     """Return a reader only when every deterministic reuse gate passes."""
     if not path.is_file():
@@ -100,6 +102,13 @@ def reusable_reader(
     if (expected_review_policy is not None
             and audit.get("review_policy") != expected_review_policy):
         return None
+    if (expected_policy_version is not None
+            and audit.get("policy_version") != expected_policy_version):
+        return None
+    if (expected_focus_vocabulary_sha256 is not None
+            and audit.get("focus_vocabulary_sha256")
+            != expected_focus_vocabulary_sha256):
+        return None
     return reader
 
 
@@ -112,10 +121,24 @@ class ChineseAnnotationHarness(ChapterHarness):
         # Deliberately do not call ChapterHarness.__init__: it owns adaptation
         # source and run creation. Annotation-only mode owns an existing,
         # already accepted chapter directory.
-        self.args = args
         self.run_dir = run_dir.resolve()
+        manifest = load_object(self.run_dir / "manifest.json")
+        # Every chapter gets a private namespace: a combined six-level batch
+        # must not race by mutating one shared ``args.level`` value.
+        self.args = argparse.Namespace(**vars(args))
+        self.args.level = str(manifest.get("level", "")).lower()
+        if self.args.level not in {f"hsk{number}" for number in range(1, 7)}:
+            raise ValueError(f"invalid annotation level in {self.run_dir / 'manifest.json'}")
+        focus_path = self.run_dir / "focus-vocabulary-plan.json"
+        self.focus_vocabulary_sha256 = (
+            sha256_bytes(focus_path.read_bytes()) if focus_path.is_file() else None
+        )
+        self.focus_vocabulary = (
+            load_object(focus_path) if focus_path.is_file()
+            else {"names": [], "story_terms": []}
+        )
         self.runner = CodexRunner(
-            self.run_dir, args.model, semaphore, args.timeout
+            self.run_dir, self.args.model, semaphore, self.args.timeout
         )
 
     async def annotate_accepted_chapter(self) -> dict[str, Any]:
@@ -137,7 +160,19 @@ class ChineseAnnotationHarness(ChapterHarness):
         annotation_report_path = self.run_dir / "annotation-report.json"
         expected_level = str(manifest.get("level", "")).upper()
         if not self.args.refresh:
-            reusable = reusable_reader(prior_reader_path, chapter, expected_level)
+            reusable = reusable_reader(
+                prior_reader_path,
+                chapter,
+                expected_level,
+                expected_policy_version=(
+                    CHINESE_ANNOTATION_POLICY_VERSION
+                    if self.args.annotation_mode == "constrained-delta" else None
+                ),
+                expected_focus_vocabulary_sha256=(
+                    self.focus_vocabulary_sha256
+                    if self.args.annotation_mode == "constrained-delta" else None
+                ),
+            )
             if (reusable is not None
                 and self.args.annotation_mode == "constrained-delta" and (
                 reusable.get("annotation_audit", {}).get("mode")
@@ -194,6 +229,8 @@ class ChineseAnnotationHarness(ChapterHarness):
                 "annotation_audit": {
                     "mode": self.args.annotation_mode,
                     "review_policy": self.args.annotation_review_policy,
+                    "policy_version": CHINESE_ANNOTATION_POLICY_VERSION,
+                    "focus_vocabulary_sha256": self.focus_vocabulary_sha256,
                     "chapter_sha256": chapter_hash,
                     "chunks": len(annotated),
                     "attempts_per_chunk": [len(item["attempts"]) for item in annotated],
@@ -377,9 +414,9 @@ def parser() -> argparse.ArgumentParser:
         "--annotation-review-policy",
         choices=("chapter", "exhaustive-chunks"), default="chapter",
     )
-    result.add_argument("--annotation-review-effort", default="medium")
-    result.add_argument("--annotation-repair-effort", default="medium")
-    result.add_argument("--annotation-final-effort", default="high")
+    result.add_argument("--annotation-review-effort", default="low")
+    result.add_argument("--annotation-repair-effort", default="low")
+    result.add_argument("--annotation-final-effort", default="low")
     result.add_argument("--annotation-metadata-batch-targets", type=int, default=150)
     result.add_argument("--max-annotation-repairs", type=int, default=2)
     result.add_argument("--refresh", action="store_true")

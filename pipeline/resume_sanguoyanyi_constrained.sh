@@ -38,5 +38,5 @@ exec python3 -m pipeline.agent_harness book \
   --chapter-retries 2 \
   --length-repair-rounds 2 \
   --max-repairs 3 \
-  --final-effort xhigh \
+  --final-effort low \
   --skip-annotations

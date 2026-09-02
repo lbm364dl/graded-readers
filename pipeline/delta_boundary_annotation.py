@@ -9,6 +9,7 @@ import copy
 import hashlib
 import json
 from pathlib import Path
+import re
 from typing import Any
 
 import jieba.posseg as pseg
@@ -23,6 +24,10 @@ from pipeline.chinese_boundary_proposals import boundary_proposals
 
 SCHEMA = ROOT / "pipeline" / "schemas" / "delta-annotation.schema.json"
 PARTICLE_FLAGS = {"u", "ul", "uz", "ug", "uj", "uv", "ud", "y", "e", "zg"}
+PARTICLE_SURFACES = frozenset({
+    "的", "地", "得", "了", "着", "过", "吗", "呢", "吧", "啊", "呀",
+    "嘛", "么", "之", "所", "者", "也", "而", "乎", "矣", "焉",
+})
 
 
 def concise_dictionary_meaning(value: str) -> str:
@@ -36,8 +41,18 @@ def concise_dictionary_meaning(value: str) -> str:
     return head[:147].rstrip() + "..."
 
 
-def deterministic_baseline(text: str) -> tuple[list[dict[str, Any]], set[int]]:
-    surfaces = refined_fixed_segments(text)
+def deterministic_baseline(
+    text: str,
+    *,
+    protected_names: set[str] | frozenset[str] | None = None,
+    protected_compounds: set[str] | frozenset[str] | None = None,
+) -> tuple[list[dict[str, Any]], set[int]]:
+    names = frozenset(protected_names or ())
+    surfaces = refined_fixed_segments(
+        text,
+        protected_names=names,
+        protected_compounds=protected_compounds,
+    )
     hints = dictionary_hints(surfaces)
     segments: list[dict[str, Any]] = []
     unknown: set[int] = set()
@@ -53,7 +68,8 @@ def deterministic_baseline(text: str) -> tuple[list[dict[str, Any]], set[int]]:
         pinyin_hint = hint["pinyin_hint"]
         segments.append({
             "text": surface,
-            "type": ("particle" if flag in PARTICLE_FLAGS else
+            "type": ("name" if surface in names else
+                     "particle" if flag in PARTICLE_FLAGS else
                      "name" if pinyin_hint[:1].isupper() else "word"),
             "pinyin": pinyin_hint,
             "meaning_en": concise_dictionary_meaning(meanings[0]) if meanings else "[LUNA REQUIRED]",
@@ -79,10 +95,6 @@ def contextual_delta_targets(
         index
         for index, item in enumerate(baseline)
         if item["type"] != "punctuation"
-        and (
-            (len(item["text"]) == 1 and "\u4e00" <= item["text"] <= "\u9fff")
-            or item["type"] == "name"
-        )
     }
     return required | contextual
 
@@ -190,12 +202,19 @@ boundary_patches must not also have an override. Never repeat or add an index.
 BOUNDARY TARGETS are neutral tokenizer disagreements within this batch's sentence-safe
 region. Patch only genuine learner-facing boundary errors. Each patch must use one exact
 listed character span, be sorted/non-overlapping/lossless, and supply complete metadata.
-Keep ordinary words and particles tappable; names may have at most 6 Han characters and
-other segments at most 4. Return boundary_patches=[] when no correction is needed.
+Keep ordinary words and particles tappable. A compact verb plus directional or
+resultative complement may be one learner-facing predicate (for example 泛上来 or
+拿出来), but never absorb its object or clause. Names may have at most 6 Han characters
+and other segments at most 4. Return boundary_patches=[] when no correction is needed.
 
 For overrides, judge CURRENT_TYPE, CURRENT_PINYIN, and CURRENT_MEANING in the full TEXT
 context and return concise contextual metadata for the tapped token alone. Grammar
-overlays are optional exact-offset constructions, never clause paraphrases. Do not use
+overlays are exact-offset constructions, never clause paraphrases. A meaning-changing
+directional/resultative complement is high priority: explain the main verb, what the
+complement contributes, and their combined meaning. Give every overlay a concise
+lowercase grammar_candidate_key. It is a provisional clustering hint for later agent
+unification, not a canonical grammar lesson ID, and equivalent constructions need not
+already use identical keys. Do not use
 tools or external sources. Self-check all mandatory rows, indices, and offsets.
 
 TEXT:\n{text}
@@ -215,9 +234,7 @@ def delta_prompt(text: str, baseline: list[dict[str, Any]], unknown: set[int], l
     # both neighboring-token windows.
     target_rows = [
         [
-            item["index"], item["start"], item["end"], item["text"],
-            item["left"][-1] if item["left"] else "",
-            item["right"][0] if item["right"] else "",
+            item["index"], item["text"],
             baseline[item["index"]]["type"], item["pinyin_hint"],
             ("" if item["index"] in unknown
              else baseline[item["index"]]["meaning_en"]),
@@ -232,7 +249,8 @@ tokenizer disagreements, not instructions to change anything. Return a boundary 
 only for a genuine learner-facing word-boundary error. Patch start/end must exactly equal
 one listed target. Replacement text must concatenate to TEXT[start:end] exactly. Patches
 must be sorted, non-overlapping, and minimal. Keep ordinary words, particles, titles,
-real idioms, and complete names tappable; do not group clauses. Non-name Han segments
+real idioms, complete names, and compact verb-complement predicates tappable; do not
+group objects or clauses. Non-name Han segments
 may contain at most 4 characters; names at most 6. Supply complete contextual metadata
 for every replacement segment. Otherwise return boundary_patches=[].
 
@@ -243,8 +261,13 @@ have exactly one override. A REQUIRED=false row already has deterministic metada
 an override for it only when its existing type, pinyin hint, or dictionary meaning is wrong
 in this context. Never repeat an index. Do not return any other index. Use the exact surface and neighboring-token
 context to supply type, pinyin, and a concise English meaning. Meanings explain only the
-tapped token, never its sentence. Add only genuine grammar constructions as overlays, not sentence
-translations. Overlay offsets are zero-based Python character offsets into TEXT and the
+tapped token, never its sentence. Add only genuine grammar constructions as overlays,
+not sentence translations. Meaning-changing directional/resultative complements are
+high priority and should explain both the base verb and the complement's contribution.
+Give every overlay a concise lowercase grammar_candidate_key. Treat it only as a
+provisional clustering hint for later agent unification, not as a canonical lesson ID;
+equivalent constructions need not already use identical keys.
+Overlay offsets are zero-based Python character offsets into TEXT and the
 overlay text must match exactly. Self-check indices and offsets. Do not use tools or
 search for another source; everything required is below.
 
@@ -254,7 +277,7 @@ BOUNDARY TARGETS contain exact character spans plus each tokenizer's candidate
 character boundaries. TEXT provides all surrounding context:
 {json.dumps(boundary_targets, ensure_ascii=False, separators=(',', ':'))}
 
-TARGET ROW COLUMNS=[INDEX,START,END,TEXT,LEFT_TOKEN,RIGHT_TOKEN,CURRENT_TYPE,CURRENT_PINYIN,CURRENT_MEANING,REQUIRED]
+TARGET ROW COLUMNS=[INDEX,TEXT,CURRENT_TYPE,CURRENT_PINYIN,CURRENT_MEANING,REQUIRED]
 CONTEXTUAL TARGETS:\n{json.dumps(target_rows, ensure_ascii=False, separators=(',', ':'))}"""
 
 
@@ -350,7 +373,9 @@ def normalize_optional_overlays(
     text: str, value: dict[str, Any]
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     """Keep only exact, non-conflicting optional grammar overlays."""
-    expected = {"start", "end", "text", "pattern", "meaning_en"}
+    expected = {
+        "start", "end", "text", "grammar_candidate_key", "pattern", "meaning_en"
+    }
     valid: list[dict[str, Any]] = []
     discarded: list[dict[str, str]] = []
 
@@ -373,7 +398,12 @@ def normalize_optional_overlays(
         if item.get("text") != text[start:end]:
             record(item, "surface_mismatch")
             continue
-        if (not isinstance(item.get("pattern"), str) or not item["pattern"].strip()
+        if (not isinstance(item.get("grammar_candidate_key"), str)
+                or not re.fullmatch(
+                    r"[a-z][a-z0-9_.-]*",
+                    item["grammar_candidate_key"],
+                )
+                or not isinstance(item.get("pattern"), str) or not item["pattern"].strip()
                 or not isinstance(item.get("meaning_en"), str)
                 or not item["meaning_en"].strip()):
             record(item, "empty_explanation")
@@ -502,6 +532,24 @@ def normalize_optional_boundary_patches(
     duplicate_collapses = 0
     allowed = {(item["start"], item["end"])
                for item in compact_boundary_targets(text, baseline)}
+
+    def hides_transparent_units(patch: dict[str, Any]) -> bool:
+        quantity = re.compile(
+            r"^[一二三四五六七八九十百千万两]+(?:多)?"
+            r"(?:个|匹|两|斤|群|片|把|名|位|辆|座|件|只|本|张|杯)$"
+        )
+        for segment in patch.get("segments", []):
+            surface = str(segment.get("text", ""))
+            if quantity.fullmatch(surface):
+                return True
+            if surface.startswith("十分") and len(surface) > 2:
+                return True
+            if surface.startswith("很") and len(surface) > 1:
+                return True
+            if surface.startswith("往") and len(surface) > 1:
+                return True
+        return False
+
     for patch in value.get("boundary_patches", []):
         if patch in unique:
             duplicate_collapses += 1
@@ -510,6 +558,9 @@ def normalize_optional_boundary_patches(
             _apply_boundary_patches(text, baseline, [patch], allowed)
         except (TypeError, ValueError) as exc:
             record(patch, str(exc))
+            continue
+        if hides_transparent_units(patch):
+            record(patch, "groups transparent quantity, degree, or direction units")
             continue
         unique.append(patch)
 
@@ -558,7 +609,14 @@ def apply_delta(text: str, baseline: list[dict[str, Any]], unknown: set[int],
         if segments[output_index]["type"] == "punctuation":
             raise ValueError("delta cannot override punctuation")
         seen.add(index)
-        segments[output_index].update({key: override[key] for key in ("type", "pinyin", "meaning_en")})
+        kind = override["type"]
+        if kind == "particle" and baseline[index]["text"] not in PARTICLE_SURFACES:
+            kind = "word"
+        segments[output_index].update({
+            "type": kind,
+            "pinyin": override["pinyin"],
+            "meaning_en": override["meaning_en"],
+        })
     missing = unknown - seen - touched
     if missing:
         raise ValueError(f"delta omitted required meanings: {sorted(missing)[:20]}")
@@ -607,7 +665,7 @@ def parser() -> argparse.ArgumentParser:
     result.add_argument("--output-dir", required=True)
     result.add_argument("--level", default="hsk4")
     result.add_argument("--model", default="gpt-5.6-luna")
-    result.add_argument("--effort", default="medium")
+    result.add_argument("--effort", default="low")
     result.add_argument("--timeout", type=int, default=1200)
     result.add_argument("--refresh", action="store_true")
     return result
