@@ -14,8 +14,9 @@ from typing import Any
 
 import jieba.posseg as pseg
 
-from pipeline.agent_harness import ChapterHarness, CodexRunner, ROOT
+from pipeline.agent_harness import CHINESE_PINYIN_POLICY, ChapterHarness, CodexRunner, ROOT
 from pipeline.annotate_chinese import atomic_json, sha256_bytes, utc_now
+from pipeline.chinese_translation_policy import CHINESE_TRANSLATION_POLICY
 from pipeline.fixed_boundary_annotation import (
     _punctuation_char, _validate_segment_metadata, dictionary_hints,
     refined_fixed_segments,
@@ -217,6 +218,9 @@ unification, not a canonical grammar lesson ID, and equivalent constructions nee
 already use identical keys. Do not use
 tools or external sources. Self-check all mandatory rows, indices, and offsets.
 
+{CHINESE_PINYIN_POLICY}
+{CHINESE_TRANSLATION_POLICY}
+
 TEXT:\n{text}
 
 BOUNDARY TARGETS:\n{json.dumps(boundary_targets, ensure_ascii=False, separators=(',', ':'))}
@@ -271,6 +275,9 @@ Overlay offsets are zero-based Python character offsets into TEXT and the
 overlay text must match exactly. Self-check indices and offsets. Do not use tools or
 search for another source; everything required is below.
 
+{CHINESE_PINYIN_POLICY}
+{CHINESE_TRANSLATION_POLICY}
+
 TEXT:\n{text}
 
 BOUNDARY TARGETS contain exact character spans plus each tokenizer's candidate
@@ -302,6 +309,9 @@ Use the local context to provide contextual type, pinyin, and a concise English 
 for only the tapped token. grammar_overlays MUST be an empty array; the initial seed
 already owns chapter-level grammar overlays. boundary_patches MUST be an empty array;
 the initial seed already owns boundary decisions. Self-check every required index.
+
+{CHINESE_PINYIN_POLICY}
+{CHINESE_TRANSLATION_POLICY}
 
 TEXT:\n{text}
 
@@ -664,7 +674,7 @@ def parser() -> argparse.ArgumentParser:
     result.add_argument("--input", required=True)
     result.add_argument("--output-dir", required=True)
     result.add_argument("--level", default="hsk4")
-    result.add_argument("--model", default="gpt-5.6-luna")
+    result.add_argument("--model", default="gpt-6-luna")
     result.add_argument("--effort", default="low")
     result.add_argument("--timeout", type=int, default=1200)
     result.add_argument("--refresh", action="store_true")

@@ -1,0 +1,31 @@
+{
+  "id": "zh-489981d94e4f-1-bea768cf65145e9d",
+  "entry_id": "zh-489981d94e4f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-489981d94e4f-1",
+      "headword": "早些",
+      "kind": "word",
+      "reading": "zǎoxiē",
+      "senses": [
+        {
+          "id": "zh-489981d94e4f-1-s1",
+          "definition": "a little earlier; sooner"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他大声骂敌人背叛汉朝，叫他们早些投降。",
+        "gloss": "a little earlier",
+        "sense_id": "zh-489981d94e4f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a06530058051167aa089f7517402ef44350a5186016df4fbb04820ff520067c2"
+}

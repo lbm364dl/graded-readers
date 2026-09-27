@@ -1,0 +1,31 @@
+{
+  "id": "zh-bd0ba96ae735-1-1157611f256fe13b",
+  "entry_id": "zh-bd0ba96ae735-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-bd0ba96ae735-1",
+      "headword": "可惜",
+      "kind": "word",
+      "reading": "kěxī",
+      "senses": [
+        {
+          "id": "zh-bd0ba96ae735-1-s1",
+          "definition": "regrettable; a pity"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他对两个弟弟说，最难得到的就是民心，如今民心已经归顺，若不趁势夺取天下，实在可惜。",
+        "gloss": "regrettable",
+        "sense_id": "zh-bd0ba96ae735-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "181d279c7f10fe1f7620acb9667971cd9ce8dfc4ab3960939f78a0f59c74b18a"
+}

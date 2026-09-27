@@ -1,0 +1,36 @@
+{
+  "id": "zh-ce74189d9c09-1-873ac07815733076",
+  "entry_id": "zh-ce74189d9c09-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ce74189d9c09-1",
+      "headword": "游荡",
+      "kind": "word",
+      "reading": "yóudàng",
+      "senses": [
+        {
+          "id": "zh-ce74189d9c09-1-s1",
+          "definition": "to wander about without a settled purpose"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹操的叔父曾因他游荡无度，向曹嵩告状。",
+        "gloss": "to roam about",
+        "sense_id": "zh-ce74189d9c09-1-s1"
+      },
+      {
+        "sentence": "叔父见他游荡无度，便告诉曹嵩。",
+        "gloss": "to wander aimlessly",
+        "sense_id": "zh-ce74189d9c09-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "164eeb45830f19e950d9a949125797ca67dd1160e9fe812b9a64cd0aac3757c3"
+}

@@ -1,0 +1,40 @@
+{
+  "id": "zh-2846d6305575-1-c9ee2ac485ca2f27",
+  "entry_id": "zh-2846d6305575-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2846d6305575-1",
+      "headword": "快",
+      "kind": "word",
+      "reading": "kuài",
+      "senses": [
+        {
+          "id": "zh-2846d6305575-1-s1",
+          "definition": "quick; fast"
+        },
+        {
+          "id": "zh-2846d6305575-1-s2",
+          "definition": "soon; be close to"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "可是，他们没有严格保密，消息很快走漏，二人反而因此被害。",
+        "gloss": "quickly",
+        "sense_id": "zh-2846d6305575-1-s1"
+      },
+      {
+        "sentence": "第二天，青州太守龚景来信求救，说黄巾军围城，城快守不住了。",
+        "gloss": "soon; about to",
+        "sense_id": "zh-2846d6305575-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4e35bb6bafd5f46462b549a704825afe187974fa6c93a5a115124f4771abba84"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-638131345ac7-1-2b8c579a64439d1f",
+  "entry_id": "zh-638131345ac7-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-638131345ac7-1",
+      "headword": "捉住",
+      "kind": "construction",
+      "reading": "zhuōzhù",
+      "senses": [
+        {
+          "id": "zh-638131345ac7-1-s1",
+          "definition": "to seize and catch someone"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇帝命何进调兵捉住马元义，将他斩首，又把封谞等人关进牢里。",
+        "gloss": "seize; catch",
+        "sense_id": "zh-638131345ac7-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "39088bb225911baf73588eed28013bc9fac0f5bee19ed98eaba2f24010b2d54a"
+}

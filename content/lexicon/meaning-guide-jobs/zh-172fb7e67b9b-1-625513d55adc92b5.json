@@ -1,0 +1,36 @@
+{
+  "id": "zh-172fb7e67b9b-1-625513d55adc92b5",
+  "entry_id": "zh-172fb7e67b9b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-172fb7e67b9b-1",
+      "headword": "次",
+      "kind": "word",
+      "reading": "cì",
+      "senses": [
+        {
+          "id": "zh-172fb7e67b9b-1-s1",
+          "definition": "time; occasion"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "于是，三人取得了第一次胜利，初战便显出力量。",
+        "gloss": "time; occasion",
+        "sense_id": "zh-172fb7e67b9b-1-s1"
+      },
+      {
+        "sentence": "一次，有人夜里带刀走路，曹操把他抓住，按禁令用木棒责罚。",
+        "gloss": "occasion",
+        "sense_id": "zh-172fb7e67b9b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a7976efe7944d86d9d717960be2467882a8b7e114f4c9469a3dfd55556371ece"
+}

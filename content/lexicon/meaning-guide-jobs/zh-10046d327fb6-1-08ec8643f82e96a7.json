@@ -1,0 +1,31 @@
+{
+  "id": "zh-10046d327fb6-1-08ec8643f82e96a7",
+  "entry_id": "zh-10046d327fb6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-10046d327fb6-1",
+      "headword": "入帐",
+      "kind": "construction",
+      "reading": "rù zhàng",
+      "senses": [
+        {
+          "id": "zh-10046d327fb6-1-s1",
+          "definition": "enter a tent; go into the tent"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备到了卢植军中，入帐行礼，说明来意。",
+        "gloss": "enter the tent",
+        "sense_id": "zh-10046d327fb6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "60b0f4714afbbd474585b5d8d9f78568b1c0246b1c2794d98ed0705b138aa629"
+}

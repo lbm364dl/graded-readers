@@ -1,0 +1,248 @@
+{
+  "id": "zh-3ec82ab67c8d-1-b09330ef2035161e",
+  "entry_id": "zh-3ec82ab67c8d-1",
+  "reason": "requested",
+  "item": {
+    "entry": {
+      "id": "zh-3ec82ab67c8d-1",
+      "headword": "聚集",
+      "kind": "word",
+      "reading": "jùjí",
+      "senses": [
+        {
+          "id": "zh-3ec82ab67c8d-1-s1",
+          "definition": "to gather or assemble people or things"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角给百姓治病，聚集了很多人。",
+        "gloss": "gather",
+        "sense_id": "zh-3ec82ab67c8d-1-s1"
+      },
+      {
+        "sentence": "又聚集三百多个乡勇。",
+        "gloss": "gather",
+        "sense_id": "zh-3ec82ab67c8d-1-s1"
+      },
+      {
+        "sentence": "后来，他们聚集五百多个乡勇。",
+        "gloss": "gather",
+        "sense_id": "zh-3ec82ab67c8d-1-s1"
+      },
+      {
+        "sentence": "张角给人治病，借此聚集百姓。",
+        "gloss": "gather",
+        "sense_id": "zh-3ec82ab67c8d-1-s1"
+      },
+      {
+        "sentence": "祭礼结束后，他们聚集乡勇，在桃园中喝酒。",
+        "gloss": "gather",
+        "sense_id": "zh-3ec82ab67c8d-1-s1"
+      },
+      {
+        "sentence": "三人谢过商人，打造兵器，配上铠甲，又聚集五百多名乡勇，前去报到。",
+        "gloss": "gather",
+        "sense_id": "zh-3ec82ab67c8d-1-s1"
+      },
+      {
+        "sentence": "祭礼后，他们杀牛摆酒，聚集三百多名乡勇，在桃园中痛快喝酒。",
+        "gloss": "to gather",
+        "sense_id": "zh-3ec82ab67c8d-1-s1"
+      },
+      {
+        "sentence": "他们又聚集五百多名乡勇，去见邹靖。",
+        "gloss": "to gather",
+        "sense_id": "zh-3ec82ab67c8d-1-s1"
+      },
+      {
+        "sentence": "信徒不停增多，张角也从中聚集了许多百姓。",
+        "gloss": "assemble",
+        "sense_id": "zh-3ec82ab67c8d-1-s1"
+      },
+      {
+        "sentence": "祭罢天地，三人杀牛设酒，聚集乡勇三百多人，在桃园中痛饮。",
+        "gloss": "to gather",
+        "sense_id": "zh-3ec82ab67c8d-1-s1"
+      },
+      {
+        "sentence": "三人各置全身铠甲，又聚集五百多名乡勇。",
+        "gloss": "gather",
+        "sense_id": "zh-3ec82ab67c8d-1-s1"
+      },
+      {
+        "sentence": "祭礼后，他们杀牛设酒，聚集三百多名乡勇，在桃园痛饮。",
+        "gloss": "assemble",
+        "sense_id": "zh-3ec82ab67c8d-1-s1"
+      },
+      {
+        "sentence": "三人还为自己配备全身铠甲，又聚集五百多名乡勇，前去见邹靖。",
+        "gloss": "to gather",
+        "sense_id": "zh-3ec82ab67c8d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-3ec82ab67c8d-1",
+    "investigation_questions": [
+      {
+        "component": "聚",
+        "question": "Does usage research establish a distinct contribution for 聚 within 聚集 beyond the shared idea of gathering?"
+      },
+      {
+        "component": "集",
+        "question": "Does usage research establish a distinct contribution for 集 within 聚集 beyond the shared idea of gathering?"
+      }
+    ],
+    "claim_ids": [
+      "c1",
+      "c2"
+    ],
+    "structure": "overlapping",
+    "explanation_en": "聚集 means to bring people or things together, or to gather together as a group. 聚 and 集 both contribute the idea of gathering, with no established separate steps or distinct roles in the word.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "聚",
+        "contribution_en": "Contributes the overlapping idea of gathering or assembling.",
+        "claim_ids": [
+          "c2"
+        ]
+      },
+      {
+        "text": "集",
+        "contribution_en": "Also contributes the overlapping idea of gathering or assembling.",
+        "claim_ids": [
+          "c2"
+        ]
+      }
+    ],
+    "research": {
+      "entry_id": "zh-3ec82ab67c8d-1",
+      "status": "partial",
+      "sources": [
+        {
+          "id": "s1",
+          "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=24033&la=0&powerMode=0",
+          "title": "聚 — 教育部《國語辭典簡編本》",
+          "accessed_at": "2026-09-27",
+          "summary_en": "Defines 聚 as dispersed things coming together or accumulating, opposite to 散, and gives 聚集 as an example. This supports a standalone meaning of 聚 but does not assign that whole definition to 聚’s contribution in 聚集."
+        },
+        {
+          "id": "s2",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=97060&la=0&powerMode=0",
+          "title": "聚集 — 教育部《重編國語辭典修訂本》",
+          "accessed_at": "2026-09-27",
+          "summary_en": "Defines 聚集 as 集合 and gives literary examples involving gathering people. It lists 聚 and 集 as components but does not explain separate component contributions."
+        },
+        {
+          "id": "s3",
+          "url": "https://m.fx361.com/news/2025/0222/25545438.html",
+          "title": "同义并行复合词的辨析与二语词汇习得研究 — 何姝",
+          "accessed_at": "2026-09-27",
+          "summary_en": "The accessible page provides the abstract and bibliographic details; the main text requires app login. The abstract says the article discusses synonymic parallel compounds and examines the word groups including 聚集/集合 and 汇集/聚集, combining morpheme tracing with usage analysis. The accessible text does not substantiate a specific contrast between 聚 and 集 inside 聚集 or the dossier’s detailed account of the article’s findings."
+        },
+        {
+          "id": "s4",
+          "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=24041&la=0&powerMode=0",
+          "title": "聚集 — 教育部《國語辭典簡編本》",
+          "accessed_at": "2026-09-27",
+          "summary_en": "Defines 聚集 as 围聚、集合, gives 分散 and 散布 as antonyms, and illustrates fans gathering in a square."
+        },
+        {
+          "id": "s5",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=6064&la=0&powerMode=0",
+          "title": "聚 — 教育部《重編國語辭典修訂本》",
+          "accessed_at": "2026-09-27",
+          "summary_en": "Records 聚 as a verb meaning to assemble or meet, and separately to pile up or accumulate, among other senses. These are standalone senses and do not prove distinct roles for 聚 within 聚集."
+        },
+        {
+          "id": "s6",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=5404&la=0&powerMode=0",
+          "title": "集 — 教育部《重編國語辭典修訂本》",
+          "accessed_at": "2026-09-27",
+          "summary_en": "Records 集 as a verb meaning to bring dispersed things together and lists 聚集 among examples. It also records a separate sense ‘perch’; the entry does not explain the component’s specific contribution within 聚集."
+        }
+      ],
+      "claims": [
+        {
+          "id": "c1",
+          "text_en": "The supplied examples use 聚集 for people brought or assembled together; the two Ministry of Education dictionaries define the compound as gathering or assembling. The word’s general meaning is supported without inferring a particular motive or a required sequence of actions.",
+          "source_ids": [
+            "s2",
+            "s4"
+          ]
+        },
+        {
+          "id": "c2",
+          "text_en": "In standalone entries, 聚 has the overlapping meaning ‘assemble/meet’ and also a recorded accumulation meaning, while 集 is defined as bringing dispersed things together. These entries show related but not identical ranges for the separate words; they do not establish that accumulation is a nuance of 聚 in 聚集 or identify a separate contribution from each component there.",
+          "source_ids": [
+            "s5",
+            "s6"
+          ]
+        },
+        {
+          "id": "c3",
+          "text_en": "The accessible abstract of He Shu’s article identifies 聚集/集合 and 汇集/聚集 as word groups for comparison and mentions combining morpheme tracing with usage analysis. Since the article’s main text was gated, the dossier’s more detailed claims about its component analysis and conclusions could not be verified from the opened page.",
+          "source_ids": [
+            "s3"
+          ]
+        }
+      ],
+      "searches": [
+        {
+          "query": "site:dict.concised.moe.edu.tw/dictView.jsp 聚 教育部 國語辭典簡編本; site:dict.revised.moe.edu.tw/dictView.jsp 聚集 教育部 重編國語辭典; 何姝 同义并行复合词的辨析与二语词汇习得研究 聚 集",
+          "opened_urls": [
+            "https://dict.concised.moe.edu.tw/dictView.jsp?ID=24033&la=0&powerMode=0",
+            "https://dict.revised.moe.edu.tw/dictView.jsp?ID=97060&la=0&powerMode=0",
+            "https://m.fx361.com/news/2025/0222/25545438.html",
+            "https://dict.concised.moe.edu.tw/dictView.jsp?ID=24041&la=0&powerMode=0"
+          ]
+        },
+        {
+          "query": "site:dict.concised.moe.edu.tw/dictView.jsp?ID=21479 集 會集 鳥; site:dict.revised.moe.edu.tw/dictView.jsp 集 會合; site:dict.revised.moe.edu.tw/dictView.jsp 聚 集 會集 釋義",
+          "opened_urls": [
+            "https://dict.revised.moe.edu.tw/dictView.jsp?ID=6064&la=0&powerMode=0",
+            "https://dict.revised.moe.edu.tw/dictView.jsp?ID=5404&la=0&powerMode=0"
+          ]
+        },
+        {
+          "query": "(direct open)",
+          "opened_urls": [
+            "https://dict.concised.moe.edu.tw/dictView.jsp?ID=24033&la=0&powerMode=0",
+            "https://dict.revised.moe.edu.tw/dictView.jsp?ID=97060&la=0&powerMode=0",
+            "https://m.fx361.com/news/2025/0222/25545438.html",
+            "https://dict.concised.moe.edu.tw/dictView.jsp?ID=24041&la=0&powerMode=0",
+            "https://dict.revised.moe.edu.tw/dictView.jsp?ID=6064&la=0&powerMode=0",
+            "https://dict.revised.moe.edu.tw/dictView.jsp?ID=5404&la=0&powerMode=0"
+          ]
+        }
+      ],
+      "gaps": [
+        "The opened dictionaries support overlapping standalone meanings for 聚 and 集, but do not establish a distinct, usual-use nuance for either component within 聚集. They do not support treating 聚’s standalone accumulation sense as part of the supplied sense.",
+        "The article’s full text was not accessible on the opened page. Its abstract does not resolve the requested component-level question; the dossier’s detailed claims about the article’s comparison and conclusions remain unverified."
+      ]
+    },
+    "input_fingerprint": "7d094229e8dcaa8dd6dc046f364f734de9b161dd6aca98a6130e68e4f77f1567",
+    "revision": 2,
+    "editorial_policy": 5,
+    "evidence_status": "partial",
+    "editorial_route": "cached_research",
+    "research_questions": [],
+    "fulfilled_requests": [
+      "9199673b85a771c6c35dc46b899295fcd768c4632ad9e151856b0216895bf94a"
+    ]
+  },
+  "requests": [
+    {
+      "entry_id": "zh-3ec82ab67c8d-1",
+      "id": "hsk2-reader-juji-usage-ranges",
+      "reuse_reviewed_evidence": true,
+      "reason": "The reviewed guide still only repeats that both characters mean gathering. Use the CURRENT approved dossier c2 to give the learner a concrete orientation to their broader usage ranges: 聚 can describe assembling/meeting and also piling up/accumulating; 集 describes bringing dispersed things together. Distinguish these standalone usage ranges from the shared gathering contribution within 聚集. Explicitly avoid implying that accumulation is required in 聚集 or that its characters express two separate steps. Include these supported usage clues in the structured part contributions too, not just generic gather/gather. This is a clarification using existing verified evidence, not a new research request; retain internal questions for precise in-compound nuances that remain open."
+    }
+  ],
+  "status": "reviewed",
+  "result_digest": "52c88ab5b9749690c6a22e5304afa0253301a32028926239b53700d0375f16e5"
+}

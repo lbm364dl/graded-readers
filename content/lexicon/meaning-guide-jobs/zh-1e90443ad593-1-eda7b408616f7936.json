@@ -1,0 +1,31 @@
+{
+  "id": "zh-1e90443ad593-1-eda7b408616f7936",
+  "entry_id": "zh-1e90443ad593-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1e90443ad593-1",
+      "headword": "躲避",
+      "kind": "word",
+      "reading": "duǒbì",
+      "senses": [
+        {
+          "id": "zh-1e90443ad593-1-s1",
+          "definition": "to avoid; to keep out of the way of"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "灵帝惊倒，左右急忙救他入宫，百官奔走躲避。",
+        "gloss": "to hide",
+        "sense_id": "zh-1e90443ad593-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "de9c3def46d45745638cce5a16de954829a385c70d9fbeac2017f94abd50ac04"
+}

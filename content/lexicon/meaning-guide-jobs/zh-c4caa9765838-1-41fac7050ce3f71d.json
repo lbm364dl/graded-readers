@@ -1,0 +1,31 @@
+{
+  "id": "zh-c4caa9765838-1-41fac7050ce3f71d",
+  "entry_id": "zh-c4caa9765838-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c4caa9765838-1",
+      "headword": "带走",
+      "kind": "construction",
+      "reading": "dài zǒu",
+      "senses": [
+        {
+          "id": "zh-c4caa9765838-1-s1",
+          "definition": "to take someone or something away"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”军队带走卢植后，关羽说：“卢植已被抓，我们失去了依靠，只能回涿郡。",
+        "gloss": "take away",
+        "sense_id": "zh-c4caa9765838-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ccc7daa76de40515f70d568588988877ef3967fa519fc932b279b0e22c062c83"
+}

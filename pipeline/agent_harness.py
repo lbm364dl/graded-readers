@@ -20,6 +20,7 @@ from typing import Any
 
 from jsonschema import Draft202012Validator
 from opencc import OpenCC
+from pipeline.chinese_translation_policy import CHINESE_TRANSLATION_POLICY
 
 from pipeline.adaptation_policy import (
     policy_for,
@@ -47,6 +48,16 @@ DEFAULT_LEVEL_TARGETS = {
 }
 _T2S = OpenCC("t2s")
 _GRAMMAR_CANDIDATE_KEY = re.compile(r"^[a-z][a-z0-9_.-]*$")
+CHINESE_PINYIN_POLICY = """PINYIN POLICY: For learner-facing Standard Mandarin,
+represent natural pronunciation in ordinary, unstressed connected speech.
+Infer each syllable's pronunciation from its grammatical role and local context,
+especially in directional complements: grammaticalized, unstressed syllables
+that normally take neutral tone should be unmarked, even when dictionary hints
+show their full lexical tones. For example, 泛上来 `fàn shànglai` and 走进去
+`zǒu jìnqu` illustrate this principle; apply it to other constructions as context
+warrants. Preserve full tones for independent lexical verbs or clearly stressed
+uses. Do not mechanically neutralize every complement syllable. Review whether
+the written pinyin matches this contextual pronunciation, not just a dictionary."""
 
 
 def simplified(text: str) -> str:
@@ -482,6 +493,10 @@ def split_chinese_annotation_chunks(
     return chunks
 
 
+class CachedCallUnavailable(RuntimeError):
+    """A cache-only lookup cannot launch an agent."""
+
+
 @dataclass
 class CodexRunner:
     run_dir: Path
@@ -556,6 +571,24 @@ class CodexRunner:
             flags=re.IGNORECASE,
         ))
 
+    @staticmethod
+    def _check_tool_profile(job_dir: Path, profile: str | None, meta: dict) -> None:
+        if profile is None:
+            return
+        events = job_dir / f"events.attempt-{meta.get('attempt_count', 1):02d}.jsonl"
+        # JSONL uses LF delimiters. Unicode line separators may legally occur
+        # inside JSON strings (notably web snippets); splitlines() corrupts them.
+        items = [json.loads(line).get('item', {}) for line in events.read_text().split('\n')
+                 if line.strip()] if events.exists() else []
+        tool_types = {'command_execution', 'mcp_tool_call', 'collab_tool_call',
+                      'file_change', 'web_search'}
+        used = {item.get('type') for item in items} & tool_types
+        allowed = {'web_search'} if profile == 'research' else set()
+        if used - allowed:
+            raise ValueError(f'Worker used tools outside its {profile} role: {used - allowed}')
+        if profile == 'research' and 'web_search' not in used:
+            raise ValueError('Research worker did not actually use web search')
+
     async def call(
         self,
         job: str,
@@ -564,16 +597,26 @@ class CodexRunner:
         effort: str,
         *,
         refresh: bool = False,
+        tool_profile: str | None = None,
+        cache_only: bool = False,
     ) -> dict[str, Any]:
         job_dir = self.run_dir / "agents" / job
         job_dir.mkdir(parents=True, exist_ok=True)
         result_path = job_dir / "result.json"
         meta_path = job_dir / "meta.json"
         fingerprint = digest(prompt, schema.read_text(), self.model, effort)
+        if tool_profile not in (None, 'offline', 'research'):
+            raise ValueError('Unknown worker tool profile')
+        if tool_profile is not None:
+            fingerprint = digest(fingerprint, tool_profile, 'tool-profile-v1')
         if not refresh and result_path.exists() and meta_path.exists():
             meta = json.loads(meta_path.read_text())
             if meta.get("fingerprint") == fingerprint and meta.get("return_code") == 0:
+                self._check_tool_profile(job_dir, tool_profile, meta)
                 return json.loads(result_path.read_text())
+
+        if cache_only:
+            raise CachedCallUnavailable(job)
 
         command = [
             "codex", "exec", "--json", "--ephemeral", "--ignore-user-config",
@@ -582,6 +625,13 @@ class CodexRunner:
             "-C", str(ROOT), "--output-schema", str(schema),
             "-o", str(result_path), "-",
         ]
+        if tool_profile is not None:
+            # Explicit role capabilities; never enable shell/network execution.
+            config = [f'web_search="{"live" if tool_profile == "research" else "disabled"}"',
+                      'features.shell_tool=false', 'features.unified_exec=false',
+                      'tools.view_image=false', 'features.multi_agent=false',
+                      'mcp_servers={}']
+            command[2:2] = [arg for value in config for arg in ('-c', value)]
         started = utc_now()
         attempts: list[dict[str, Any]] = []
         process_timeout_retries = 0
@@ -752,9 +802,12 @@ class CodexRunner:
             "ended_at": utc_now(), "return_code": proc.returncode,
             "attempt_count": len(attempts), "attempts": attempts,
         }
+        if tool_profile is not None:
+            meta['tool_profile'] = tool_profile
         meta_path.write_text(json.dumps(meta, ensure_ascii=False, indent=2) + "\n")
         if proc.returncode != 0 or not result_path.exists():
             raise RuntimeError(f"agent failed: {job} (exit {proc.returncode})")
+        self._check_tool_profile(job_dir, tool_profile, meta)
         return json.loads(result_path.read_text())
 
 
@@ -1875,7 +1928,10 @@ surrounding clause. Its contextual meaning must describe the complete predicate,
 and a grammar overlay must explain what the complement contributes. Include
 whitespace and punctuation as punctuation segments.
 For every non-punctuation segment, give pinyin and a concise contextual English
-meaning for that segment alone. Separately add grammar_overlays for grammatical
+meaning for that segment alone.
+{CHINESE_PINYIN_POLICY}
+{CHINESE_TRANSLATION_POLICY}
+Separately add grammar_overlays for grammatical
 constructions spanning one or more segments. Overlay start/end are zero-based
 Python character offsets into TEXT (end exclusive), and overlay text must equal
 TEXT[start:end]. Every overlay must also have a concise lowercase
@@ -1934,8 +1990,17 @@ segmentation as an issue when the pieces have correct contextual meanings.
 Use this pre-reviewed semantic inventory to catch misleading readings or
 meanings inside historical terms and weapon names:
 {self.focus_vocabulary_semantic_guidance}
+Do not fuse a personal name with a neighboring verb, or a subject with its
+predicate, into one lexical segment. Do not invent lexical definitions for
+arbitrary clipped prefixes of names, weapons or titles. When a complete term
+uses component boundaries, its parts must be meaningful lexical/morphemic units,
+and a whole-term story overlay can explain their connection.
 Meanings must explain the individual segment in its local context, not paraphrase
-a whole clause. Grammar overlays should explain genuine, useful, localized
+a whole clause. Dictionary entries explain reusable words, not every contextual
+use: a dictionary link does not excuse missing help for a non-obvious grammatical
+role or participation in a larger expression. Short translations suffice for
+straightforward uses; flag confusing constructions whose logic remains unexplained.
+Grammar overlays should explain genuine, useful, localized
 grammar patterns separately from lexical segments. Each overlay's
 grammar_candidate_key is a provisional clustering hint, not a canonical lesson
 identifier; judge the pattern and explanation rather than demanding that keys from
@@ -1944,7 +2009,10 @@ meaning-changing directional or resultative complement is material, not
 optional: the learner must see both the main verb and what the complement
 contributes. Reject a complement whose gloss incorrectly steals the main verb's
 meaning, such as glossing 上来 itself as “surge upward” in 泛上来. Do not accept
-that mistake, and reject generic sentence or clause summaries. This is a
+that mistake, and reject generic sentence or clause summaries.
+{CHINESE_PINYIN_POLICY}
+{CHINESE_TRANSLATION_POLICY}
+This is a
 pragmatic learner reader, not a lexicography paper:
 report only problems that materially mislead a learner, hide a useful word or
 particle inside a larger span, split a real word/name/idiom, or turn an ordinary
@@ -4012,7 +4080,7 @@ def parser() -> argparse.ArgumentParser:
     run.add_argument("--level", default="hsk4")
     run.add_argument("--run-id")
     run.add_argument("--runs-dir", default=str(DEFAULT_RUNS))
-    run.add_argument("--model", default="gpt-5.6-luna")
+    run.add_argument("--model", default="gpt-6-luna")
     run.add_argument("--adapt-effort", default="low")
     run.add_argument("--review-effort", default="low")
     run.add_argument("--repair-effort", default="low")
@@ -4063,7 +4131,7 @@ def parser() -> argparse.ArgumentParser:
                           help="isolated output directory")
     annotate.add_argument("--level", required=True)
     annotate.add_argument("--title")
-    annotate.add_argument("--model", default="gpt-5.6-luna")
+    annotate.add_argument("--model", default="gpt-6-luna")
     annotate.add_argument("--annotation-effort", default="low")
     annotate.add_argument(
         "--annotation-mode", choices=("generative", "constrained", "constrained-delta"),
@@ -4108,7 +4176,7 @@ def parser() -> argparse.ArgumentParser:
             "multi-scene chapters"
         ),
     )
-    promote.add_argument("--model", default="gpt-5.6-luna")
+    promote.add_argument("--model", default="gpt-6-luna")
     promote.add_argument("--review-effort", default="low")
     promote.add_argument("--repair-effort", default="low")
     promote.add_argument("--max-repairs", type=int, default=3)
@@ -4139,7 +4207,7 @@ def parser() -> argparse.ArgumentParser:
     book.add_argument("--levels", nargs="+", default=["hsk1", "hsk2", "hsk3", "hsk4", "hsk5", "hsk6"])
     book.add_argument("--book-run-id", required=True)
     book.add_argument("--runs-dir", default=str(DEFAULT_RUNS))
-    book.add_argument("--model", default="gpt-5.6-luna")
+    book.add_argument("--model", default="gpt-6-luna")
     book.add_argument("--adapt-effort", default="low")
     book.add_argument("--review-effort", default="low")
     book.add_argument("--repair-effort", default="low")

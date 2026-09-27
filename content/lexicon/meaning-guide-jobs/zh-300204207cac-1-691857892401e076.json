@@ -1,0 +1,36 @@
+{
+  "id": "zh-300204207cac-1-691857892401e076",
+  "entry_id": "zh-300204207cac-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-300204207cac-1",
+      "headword": "能否",
+      "kind": "construction",
+      "reading": "néngfǒu",
+      "senses": [
+        {
+          "id": "zh-300204207cac-1-s1",
+          "definition": "whether something is possible or can be done"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "董卓能否活命，故事留下悬念。",
+        "gloss": "whether or not",
+        "sense_id": "zh-300204207cac-1-s1"
+      },
+      {
+        "sentence": "董卓最终能否活命，故事留下悬念。",
+        "gloss": "whether or not",
+        "sense_id": "zh-300204207cac-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "07ff119e22e8d6cea9b7539316c97008cea90bad7509968b26335828e75ae2e4"
+}

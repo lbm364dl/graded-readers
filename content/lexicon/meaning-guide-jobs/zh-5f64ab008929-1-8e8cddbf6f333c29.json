@@ -1,0 +1,31 @@
+{
+  "id": "zh-5f64ab008929-1-8e8cddbf6f333c29",
+  "entry_id": "zh-5f64ab008929-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5f64ab008929-1",
+      "headword": "头",
+      "kind": "word",
+      "reading": "tóu",
+      "senses": [
+        {
+          "id": "zh-5f64ab008929-1-s1",
+          "definition": "head"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他身材高大，头大眼圆，胡子很长，声音像雷一样响，气势惊人。",
+        "gloss": "head",
+        "sense_id": "zh-5f64ab008929-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2dfca71c730ceb4dde3eba4efd8b21faf3d8e41f30ff7c3d17fe04716f273873"
+}

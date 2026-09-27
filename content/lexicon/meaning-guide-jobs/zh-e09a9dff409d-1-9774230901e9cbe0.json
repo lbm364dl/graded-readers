@@ -1,0 +1,31 @@
+{
+  "id": "zh-e09a9dff409d-1-9774230901e9cbe0",
+  "entry_id": "zh-e09a9dff409d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e09a9dff409d-1",
+      "headword": "车盖",
+      "kind": "word",
+      "reading": "chēgài",
+      "senses": [
+        {
+          "id": "zh-e09a9dff409d-1-s1",
+          "definition": "canopy of a carriage"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "家旁有一棵大桑树，远远看去，像一把车盖。",
+        "gloss": "carriage canopy",
+        "sense_id": "zh-e09a9dff409d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f53d36c24edd546e223204e48c4de72bc8653df907c1eeffb52f02292936be53"
+}

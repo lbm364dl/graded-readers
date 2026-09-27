@@ -1,0 +1,31 @@
+{
+  "id": "zh-13bd3d94a7dd-1-cb48f6412fae83dd",
+  "entry_id": "zh-13bd3d94a7dd-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-13bd3d94a7dd-1",
+      "headword": "身长",
+      "kind": "word",
+      "reading": "shēncháng",
+      "senses": [
+        {
+          "id": "zh-13bd3d94a7dd-1-s1",
+          "definition": "to measure a specified height"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备回头看那人，只见他身长八尺，豹头环眼，燕颔虎须，声音如巨雷，气势如奔马。",
+        "gloss": "to be tall",
+        "sense_id": "zh-13bd3d94a7dd-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d4b6945a9fab04e8ec2d1e982eacc57974ecdfa7c7e68b43a700d8eedaea2e35"
+}

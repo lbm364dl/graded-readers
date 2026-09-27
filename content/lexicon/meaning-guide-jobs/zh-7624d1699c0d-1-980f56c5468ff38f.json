@@ -1,0 +1,31 @@
+{
+  "id": "zh-7624d1699c0d-1-980f56c5468ff38f",
+  "entry_id": "zh-7624d1699c0d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7624d1699c0d-1",
+      "headword": "迎敌",
+      "kind": "word",
+      "reading": "yíngdí",
+      "senses": [
+        {
+          "id": "zh-7624d1699c0d-1-s1",
+          "definition": "to meet or confront an enemy"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备带关羽、张飞去迎敌。",
+        "gloss": "meet the enemy",
+        "sense_id": "zh-7624d1699c0d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f0107c4725f526bcab7a915a8f7eb024316566abea473db1e6beb314db0aaf22"
+}

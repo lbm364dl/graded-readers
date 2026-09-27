@@ -1,0 +1,36 @@
+{
+  "id": "zh-e6657b4c48ea-1-5e179b881901145d",
+  "entry_id": "zh-e6657b4c48ea-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e6657b4c48ea-1",
+      "headword": "中风",
+      "kind": "word",
+      "reading": "zhòngfēng",
+      "senses": [
+        {
+          "id": "zh-e6657b4c48ea-1-s1",
+          "definition": "suffer a stroke"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹操便假装中风，骗过父亲，后来依旧放荡。",
+        "gloss": "to suffer a stroke",
+        "sense_id": "zh-e6657b4c48ea-1-s1"
+      },
+      {
+        "sentence": "曹嵩责备他后，他装作中风，骗过了父亲。",
+        "gloss": "to have a stroke",
+        "sense_id": "zh-e6657b4c48ea-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c1c11fc90bc8d492ff54f295772af7f556adf467c36d66bee680d48fe714c735"
+}

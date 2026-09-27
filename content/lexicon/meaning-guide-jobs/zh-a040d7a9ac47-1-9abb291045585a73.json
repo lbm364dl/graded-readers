@@ -1,0 +1,31 @@
+{
+  "id": "zh-a040d7a9ac47-1-9abb291045585a73",
+  "entry_id": "zh-a040d7a9ac47-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a040d7a9ac47-1",
+      "headword": "园中",
+      "kind": "word",
+      "reading": "yuánzhōng",
+      "senses": [
+        {
+          "id": "zh-a040d7a9ac47-1-s1",
+          "definition": "inside the garden"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "接着，他们在园中喝酒。",
+        "gloss": "in the garden",
+        "sense_id": "zh-a040d7a9ac47-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f1c9d6c3400b49f8f617d5d5ddd6afb469c057e177c6f949c22080c075f88f3a"
+}

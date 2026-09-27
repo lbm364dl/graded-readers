@@ -1,0 +1,41 @@
+{
+  "id": "zh-fb43354d2aae-1-958666f4047567cc",
+  "entry_id": "zh-fb43354d2aae-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-fb43354d2aae-1",
+      "headword": "自己",
+      "kind": "word",
+      "reading": "zìjǐ",
+      "senses": [
+        {
+          "id": "zh-fb43354d2aae-1-s1",
+          "definition": "oneself; one's own"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "那人说自己叫关羽。",
+        "gloss": "oneself",
+        "sense_id": "zh-fb43354d2aae-1-s1"
+      },
+      {
+        "sentence": "刘备说出自己的想法。",
+        "gloss": "his own",
+        "sense_id": "zh-fb43354d2aae-1-s1"
+      },
+      {
+        "sentence": "刘备说自己没有官职，董卓因此看不起三人。",
+        "gloss": "himself",
+        "sense_id": "zh-fb43354d2aae-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "694f057640aeb774f2028f01f91610708d9f2cad47b2c12ec7312a332084aaed"
+}

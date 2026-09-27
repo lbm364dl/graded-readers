@@ -1,0 +1,31 @@
+{
+  "id": "zh-eb66fac4ed80-1-41405b194fa218e1",
+  "entry_id": "zh-eb66fac4ed80-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-eb66fac4ed80-1",
+      "headword": "出动",
+      "kind": "word",
+      "reading": "chūdòng",
+      "senses": [
+        {
+          "id": "zh-eb66fac4ed80-1-s1",
+          "definition": "move out; set out for action"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "关羽带一千人伏在山左，张飞带一千人伏在山右，约定以鸣金为号，一齐出动。",
+        "gloss": "move out",
+        "sense_id": "zh-eb66fac4ed80-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a40fc0145b044c694297979ee534284669b4a69284162813954f5d688cf7db62"
+}

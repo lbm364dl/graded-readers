@@ -1,0 +1,31 @@
+{
+  "id": "zh-dea80a59d0ea-1-4ccf1d546ddb5651",
+  "entry_id": "zh-dea80a59d0ea-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-dea80a59d0ea-1",
+      "headword": "引军",
+      "kind": "construction",
+      "reading": "yǐnjūn",
+      "senses": [
+        {
+          "id": "zh-dea80a59d0ea-1-s1",
+          "definition": "to lead or command troops"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "次日，刘备与邹靖擂鼓前进，黄巾军迎战，刘备引军退走。",
+        "gloss": "lead the troops",
+        "sense_id": "zh-dea80a59d0ea-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4c8919e076164f59e8ffd3aa3aa6632136f7fb2c3d5e1f4c9cbfa228be9e124c"
+}

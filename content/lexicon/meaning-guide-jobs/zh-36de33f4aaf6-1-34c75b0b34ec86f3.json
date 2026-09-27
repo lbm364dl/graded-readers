@@ -1,0 +1,41 @@
+{
+  "id": "zh-36de33f4aaf6-1-34c75b0b34ec86f3",
+  "entry_id": "zh-36de33f4aaf6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-36de33f4aaf6-1",
+      "headword": "大声",
+      "kind": "word",
+      "reading": "dàshēng",
+      "senses": [
+        {
+          "id": "zh-36de33f4aaf6-1-s1",
+          "definition": "loudly; in a loud voice"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "走出帐外，张飞气得握紧刀，大声说：“我们拼命救他，他却这样对待我们！",
+        "gloss": "loudly",
+        "sense_id": "zh-36de33f4aaf6-1-s1"
+      },
+      {
+        "sentence": "随后有人大声说：“大丈夫不为国家尽力，为什么长叹？",
+        "gloss": "loudly",
+        "sense_id": "zh-36de33f4aaf6-1-s1"
+      },
+      {
+        "sentence": "他大声骂敌人背叛汉朝，叫他们早些投降。",
+        "gloss": "loudly",
+        "sense_id": "zh-36de33f4aaf6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "19797b13b641d74c1d3904c50335d13d92753ce84dd5773a2919007aed235357"
+}

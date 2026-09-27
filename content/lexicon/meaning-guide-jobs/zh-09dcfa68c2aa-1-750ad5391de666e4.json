@@ -1,0 +1,31 @@
+{
+  "id": "zh-09dcfa68c2aa-1-750ad5391de666e4",
+  "entry_id": "zh-09dcfa68c2aa-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-09dcfa68c2aa-1",
+      "headword": "骑马",
+      "kind": "construction",
+      "reading": "qímǎ",
+      "senses": [
+        {
+          "id": "zh-09dcfa68c2aa-1-s1",
+          "definition": "to ride a horse"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "程远志挥刀冲向张飞，关羽骑马迎上。",
+        "gloss": "ride a horse",
+        "sense_id": "zh-09dcfa68c2aa-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c29e4d639a15a1ef0b2e559e93d4a8ecf4b313f39be7702574d0b80ddba15f19"
+}

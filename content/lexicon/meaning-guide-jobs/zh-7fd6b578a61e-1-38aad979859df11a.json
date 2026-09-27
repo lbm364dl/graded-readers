@@ -1,0 +1,31 @@
+{
+  "id": "zh-7fd6b578a61e-1-38aad979859df11a",
+  "entry_id": "zh-7fd6b578a61e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7fd6b578a61e-1",
+      "headword": "加强",
+      "kind": "word",
+      "reading": "jiāqiáng",
+      "senses": [
+        {
+          "id": "zh-7fd6b578a61e-1-s1",
+          "definition": "make stronger; strengthen"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "朝廷命各地招兵，加强防守，抵抗黄巾军；又派卢植、皇甫嵩、朱俊各自率领精兵，分三路讨伐。",
+        "gloss": "to strengthen",
+        "sense_id": "zh-7fd6b578a61e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ac811ddb20de23272c1907645c9d70c4afd34dd6cd695d9cad2cd95617d33f07"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-8881d12997e6-1-dadeb6cbf578ab9d",
+  "entry_id": "zh-8881d12997e6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8881d12997e6-1",
+      "headword": "号召",
+      "kind": "word",
+      "reading": "hàozhào",
+      "senses": [
+        {
+          "id": "zh-8881d12997e6-1-s1",
+          "definition": "to call on; appeal to people to do something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他和张宝、张梁号召众人顺从天意，以求太平。",
+        "gloss": "to call on",
+        "sense_id": "zh-8881d12997e6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4f9498816edc8c2cbe6e99813fdea981c9ec20302c59891d0165c3987bc0c288"
+}

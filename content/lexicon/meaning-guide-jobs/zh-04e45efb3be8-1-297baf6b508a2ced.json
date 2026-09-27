@@ -1,0 +1,56 @@
+{
+  "id": "zh-04e45efb3be8-1-297baf6b508a2ced",
+  "entry_id": "zh-04e45efb3be8-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-04e45efb3be8-1",
+      "headword": "用",
+      "kind": "word",
+      "reading": "yòng",
+      "senses": [
+        {
+          "id": "zh-04e45efb3be8-1-s1",
+          "definition": "to use; by means of"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇甫嵩和朱隽商量后，决定用火攻。",
+        "gloss": "use",
+        "sense_id": "zh-04e45efb3be8-1-s1"
+      },
+      {
+        "sentence": "中平元年，疫病流行，他用符水给百姓治病，自称大贤良师。",
+        "gloss": "to use",
+        "sense_id": "zh-04e45efb3be8-1-s1"
+      },
+      {
+        "sentence": "他让人传播“苍天已死，黄天当立”和“岁在甲子，天下大吉”，还用白土在家门上写“甲子”。",
+        "gloss": "to use",
+        "sense_id": "zh-04e45efb3be8-1-s1"
+      },
+      {
+        "sentence": "刘备对关羽、张飞说：“敌人多，我们人少，必须用特别的办法才能取胜。",
+        "gloss": "use",
+        "sense_id": "zh-04e45efb3be8-1-s1"
+      },
+      {
+        "sentence": "黄巾军战事不利，退入长社，用草扎营。",
+        "gloss": "use",
+        "sense_id": "zh-04e45efb3be8-1-s1"
+      },
+      {
+        "sentence": "一次，有人夜里带刀走路，曹操把他抓住，按禁令用木棒责罚。",
+        "gloss": "to use",
+        "sense_id": "zh-04e45efb3be8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2908c8ba2194c9d785d0422ff7f11dc707a98508e0e80bedbdd9c03fbd163ec0"
+}

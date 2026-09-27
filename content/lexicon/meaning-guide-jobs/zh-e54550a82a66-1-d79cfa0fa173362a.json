@@ -1,0 +1,31 @@
+{
+  "id": "zh-e54550a82a66-1-d79cfa0fa173362a",
+  "entry_id": "zh-e54550a82a66-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e54550a82a66-1",
+      "headword": "双手",
+      "kind": "word",
+      "reading": "shuāngshǒu",
+      "senses": [
+        {
+          "id": "zh-e54550a82a66-1-s1",
+          "definition": "both hands"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他身材高大，耳朵很长，双手也比常人长。",
+        "gloss": "both hands",
+        "sense_id": "zh-e54550a82a66-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0ea64cf391c1495b03140f8474f61547384961f6874410304c52e2beac17e310"
+}

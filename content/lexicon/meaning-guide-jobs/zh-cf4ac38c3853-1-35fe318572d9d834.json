@@ -1,0 +1,31 @@
+{
+  "id": "zh-cf4ac38c3853-1-35fe318572d9d834",
+  "entry_id": "zh-cf4ac38c3853-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-cf4ac38c3853-1",
+      "headword": "走来",
+      "kind": "construction",
+      "reading": "zǒulái",
+      "senses": [
+        {
+          "id": "zh-cf4ac38c3853-1-s1",
+          "definition": "to come walking toward the speaker or a reference point"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备看着招军榜叹气，一个大汉走来问他。",
+        "gloss": "walk over",
+        "sense_id": "zh-cf4ac38c3853-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "079112ba76fe5393114bf0af91934fb849f71e81310a903b1fe2ce4eaea55f3a"
+}

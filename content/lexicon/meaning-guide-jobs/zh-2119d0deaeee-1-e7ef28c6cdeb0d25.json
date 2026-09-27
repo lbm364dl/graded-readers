@@ -1,0 +1,31 @@
+{
+  "id": "zh-2119d0deaeee-1-e7ef28c6cdeb0d25",
+  "entry_id": "zh-2119d0deaeee-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2119d0deaeee-1",
+      "headword": "丈八点钢矛",
+      "kind": "word",
+      "reading": "zhàngbādiǎngāngmáo",
+      "senses": [
+        {
+          "id": "zh-2119d0deaeee-1-s1",
+          "definition": "a zhangba steel-point spear"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备谢过他们，便请工匠打造双股剑、青龙偃月刀和丈八点钢矛。",
+        "gloss": "a zhangba pointed steel spear",
+        "sense_id": "zh-2119d0deaeee-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0fce2b9493fc40c8ff6c5b05456515b9f19dcc61fd2dc8cdc2557d315afb0935"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-2c08cddfb13b-1-87fcc2b2b2c29829",
+  "entry_id": "zh-2c08cddfb13b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2c08cddfb13b-1",
+      "headword": "必须",
+      "kind": "word",
+      "reading": "bìxū",
+      "senses": [
+        {
+          "id": "zh-2c08cddfb13b-1-s1",
+          "definition": "must; have to"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备对关羽、张飞说：“敌人多，我们人少，必须用特别的办法才能取胜。",
+        "gloss": "must",
+        "sense_id": "zh-2c08cddfb13b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "41e990454ee62ae496a040f92c6dbffc749723ab139ca661f07f371344a7904e"
+}

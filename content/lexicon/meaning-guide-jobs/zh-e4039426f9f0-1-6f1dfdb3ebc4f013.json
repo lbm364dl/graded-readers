@@ -1,0 +1,31 @@
+{
+  "id": "zh-e4039426f9f0-1-6f1dfdb3ebc4f013",
+  "entry_id": "zh-e4039426f9f0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e4039426f9f0-1",
+      "headword": "张梁",
+      "kind": "name",
+      "reading": "Zhāng Liáng",
+      "senses": [
+        {
+          "id": "zh-e4039426f9f0-1-s1",
+          "definition": "Zhang Liang"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "后来他和张宝、张梁一起，发动黄巾起事。",
+        "gloss": "Zhang Liang",
+        "sense_id": "zh-e4039426f9f0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "136170aad5af24414d8457c03bfc4aecf265c655d54ed7f3ec9cb8f639dfe4c9"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-95b72a3e025f-1-b3f3b19892c0c7fe",
+  "entry_id": "zh-95b72a3e025f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-95b72a3e025f-1",
+      "headword": "摆酒",
+      "kind": "construction",
+      "reading": "bǎi jiǔ",
+      "senses": [
+        {
+          "id": "zh-95b72a3e025f-1-s1",
+          "definition": "set out alcoholic drink"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "祭礼后，他们杀牛摆酒，聚集三百多名乡勇，在桃园中痛快喝酒。",
+        "gloss": "to set out alcoholic drinks",
+        "sense_id": "zh-95b72a3e025f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "42b0d49a617ea3d7a664e633a7b920bdda48ef2fe81dbcd6f9d7f5cc987224d6"
+}

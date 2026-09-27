@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-gan-qu-47e54b7d1cf95e90",
+  "entry_id": "zh-expression-gan-qu",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-gan-qu",
+      "headword": "赶去",
+      "reading": "gǎnqù",
+      "base_entry_id": "zh-94beea58b8a8-1",
+      "components": [
+        {
+          "entry_id": "zh-94beea58b8a8-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-99ae21ea6c39-1",
+          "role": "directional complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-gan-qu-s1",
+          "definition": "hurry off or hurry to a destination"
+        }
+      ],
+      "kind": "construction"
+    },
+    "examples": [
+      {
+        "sentence": "他急忙带兵赶去，却发现黄巾军已经败散，战事已经结束。",
+        "gloss": "hurry off or hurry to a destination",
+        "sense_id": "zh-expression-gan-qu-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "赶",
+        "role": "verb"
+      },
+      {
+        "headword": "去",
+        "role": "directional complement"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f737580cb6eef8a60ad6bd4a9c252dd931dba7e83273f355ae096727afc63f1e"
+}

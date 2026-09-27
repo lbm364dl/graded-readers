@@ -1,0 +1,31 @@
+{
+  "id": "zh-6e57b8b83c88-1-78e6caa54f7d446f",
+  "entry_id": "zh-6e57b8b83c88-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6e57b8b83c88-1",
+      "headword": "改变",
+      "kind": "word",
+      "reading": "gǎibiàn",
+      "senses": [
+        {
+          "id": "zh-6e57b8b83c88-1-s1",
+          "definition": "change; make different"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "窦武、陈蕃于是商量除掉宦官，想改变这种局面。",
+        "gloss": "to change",
+        "sense_id": "zh-6e57b8b83c88-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fb60a18a0a394f272a9552494121ebf98f6b0ce4c47de6379c1c4dc8c21f28d9"
+}

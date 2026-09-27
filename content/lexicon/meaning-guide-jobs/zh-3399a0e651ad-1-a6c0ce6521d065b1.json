@@ -1,0 +1,31 @@
+{
+  "id": "zh-3399a0e651ad-1-a6c0ce6521d065b1",
+  "entry_id": "zh-3399a0e651ad-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-3399a0e651ad-1",
+      "headword": "王",
+      "kind": "word",
+      "reading": "wáng",
+      "senses": [
+        {
+          "id": "zh-3399a0e651ad-1-s1",
+          "definition": "king; a royal title"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "太守刘焉是江夏竟陵人，也是汉鲁恭王的后裔。",
+        "gloss": "king",
+        "sense_id": "zh-3399a0e651ad-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c28abeac7de7077be6b3597963f400f34da945450afe166f3c29f14820415738"
+}

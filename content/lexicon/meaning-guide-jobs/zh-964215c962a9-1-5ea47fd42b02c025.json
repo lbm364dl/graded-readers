@@ -1,0 +1,31 @@
+{
+  "id": "zh-964215c962a9-1-5ea47fd42b02c025",
+  "entry_id": "zh-964215c962a9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-964215c962a9-1",
+      "headword": "说完",
+      "kind": "construction",
+      "reading": "shuō wán",
+      "senses": [
+        {
+          "id": "zh-964215c962a9-1-s1",
+          "definition": "to finish speaking"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”说完，他提刀走向董卓的帐篷。",
+        "gloss": "having finished speaking",
+        "sense_id": "zh-964215c962a9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9082053ffd56806661258d76fc52fcc53d590d246b018c62ef2a5fa2fd5235ed"
+}

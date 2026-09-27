@@ -1,0 +1,31 @@
+{
+  "id": "zh-53d9898b9fd6-1-9a64a17053a28f0f",
+  "entry_id": "zh-53d9898b9fd6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-53d9898b9fd6-1",
+      "headword": "泛滥",
+      "kind": "word",
+      "reading": "fànlàn",
+      "senses": [
+        {
+          "id": "zh-53d9898b9fd6-1-s1",
+          "definition": "to overflow or spread over an area, especially of water"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "建宁四年二月，洛阳地震，海水泛滥，沿海居民被大浪卷走。",
+        "gloss": "to flood",
+        "sense_id": "zh-53d9898b9fd6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5d1e9494df4141970d91ad683062bf642c25149f63cb90f1e809c03a5293821f"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-af351f2b0993-1-3b5d29d4d4a22161",
+  "entry_id": "zh-af351f2b0993-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-af351f2b0993-1",
+      "headword": "第二",
+      "kind": "word",
+      "reading": "dì-èr",
+      "senses": [
+        {
+          "id": "zh-af351f2b0993-1-s1",
+          "definition": "second in order"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备为兄，关羽第二，张飞为弟。",
+        "gloss": "second",
+        "sense_id": "zh-af351f2b0993-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4d7f78dac17cf8f6c1fc7536650f9d56d12485ec24c021432002183a948a270b"
+}

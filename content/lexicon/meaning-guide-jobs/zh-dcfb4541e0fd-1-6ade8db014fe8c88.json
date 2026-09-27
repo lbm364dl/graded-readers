@@ -1,0 +1,31 @@
+{
+  "id": "zh-dcfb4541e0fd-1-6ade8db014fe8c88",
+  "entry_id": "zh-dcfb4541e0fd-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-dcfb4541e0fd-1",
+      "headword": "反",
+      "kind": "word",
+      "reading": "fǎn",
+      "senses": [
+        {
+          "id": "zh-dcfb4541e0fd-1-s1",
+          "definition": "instead; contrary to what is expected"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他们没有仔细保密，反被宦官害死。",
+        "gloss": "instead",
+        "sense_id": "zh-dcfb4541e0fd-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f8c786197eb52626073340ad62fe09f79e58f73fbacd23e1bafeb5cd55e2276b"
+}

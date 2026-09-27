@@ -1,0 +1,31 @@
+{
+  "id": "zh-a89c6a6dc6dc-1-e27e5213f2d21b89",
+  "entry_id": "zh-a89c6a6dc6dc-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a89c6a6dc6dc-1",
+      "headword": "上马",
+      "kind": "word",
+      "reading": "shàngmǎ",
+      "senses": [
+        {
+          "id": "zh-a89c6a6dc6dc-1-s1",
+          "definition": "to mount a horse"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "二人各引兵攻打营寨，火焰冲天，黄巾军惊慌逃散，来不及上马，也来不及披甲。",
+        "gloss": "to mount a horse",
+        "sense_id": "zh-a89c6a6dc6dc-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e7f65dcda79acf98919139d1faabc528f9073865715b556965efee0cb1fd62ee"
+}

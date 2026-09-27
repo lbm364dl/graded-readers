@@ -1,0 +1,31 @@
+{
+  "id": "zh-9b5e342b6acb-1-c88bf5057351dbe9",
+  "entry_id": "zh-9b5e342b6acb-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9b5e342b6acb-1",
+      "headword": "车中",
+      "kind": "word",
+      "reading": "chēzhōng",
+      "senses": [
+        {
+          "id": "zh-9b5e342b6acb-1-s1",
+          "definition": "inside a vehicle"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备奉命率领军队返回，半路看见军马护送一辆囚车，车中正是卢植。",
+        "gloss": "inside the vehicle",
+        "sense_id": "zh-9b5e342b6acb-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7881ac34911c33791b465d8087d75e0ef314cbd38d67b040b9f32f0a5d45683d"
+}

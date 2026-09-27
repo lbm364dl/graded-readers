@@ -1,0 +1,31 @@
+{
+  "id": "zh-3f1784ce8b75-1-6697595d68da6e20",
+  "entry_id": "zh-3f1784ce8b75-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-3f1784ce8b75-1",
+      "headword": "商人",
+      "kind": "word",
+      "reading": "shāngrén",
+      "senses": [
+        {
+          "id": "zh-3f1784ce8b75-1-s1",
+          "definition": "merchant; person engaged in trade"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "这时，两个商人来到庄上。",
+        "gloss": "merchants",
+        "sense_id": "zh-3f1784ce8b75-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8cade4a440e6b628fcecf671d1d3351dcc2ab90bb5c35b9ea90243d40e73f1e2"
+}

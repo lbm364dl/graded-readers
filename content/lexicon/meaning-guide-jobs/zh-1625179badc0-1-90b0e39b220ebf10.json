@@ -1,0 +1,36 @@
+{
+  "id": "zh-1625179badc0-1-90b0e39b220ebf10",
+  "entry_id": "zh-1625179badc0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1625179badc0-1",
+      "headword": "月",
+      "kind": "word",
+      "reading": "yuè",
+      "senses": [
+        {
+          "id": "zh-1625179badc0-1-s1",
+          "definition": "month"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "建宁二年四月十五日，皇帝在宫中坐下。",
+        "gloss": "month",
+        "sense_id": "zh-1625179badc0-1-s1"
+      },
+      {
+        "sentence": "建宁四年二月，洛阳地震，海水泛滥，沿海居民被大浪卷走。",
+        "gloss": "month",
+        "sense_id": "zh-1625179badc0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d776e629effce5ee5710fa84f0d3e9e22b99b03bead42ea68ff748b64e8e21a2"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-60af498b3197-1-c816573014d6164e",
+  "entry_id": "zh-60af498b3197-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-60af498b3197-1",
+      "headword": "便会",
+      "kind": "construction",
+      "reading": "biàn huì",
+      "senses": [
+        {
+          "id": "zh-60af498b3197-1-s1",
+          "definition": "then will; as a result, will"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "老人把三卷天书交给他，要他替上天教化百姓、救助世人；若心生别念，便会受罚。",
+        "gloss": "then will",
+        "sense_id": "zh-60af498b3197-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "66cf0da010a95c8e94ac2bb543333b384120043cc0afa2fb964d9b9c57a2c8c4"
+}

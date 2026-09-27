@@ -1,0 +1,31 @@
+{
+  "id": "zh-eaa1d1456b66-1-b6039cb71f5568bd",
+  "entry_id": "zh-eaa1d1456b66-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-eaa1d1456b66-1",
+      "headword": "从前",
+      "kind": "word",
+      "reading": "cóngqián",
+      "senses": [
+        {
+          "id": "zh-eaa1d1456b66-1-s1",
+          "definition": "in front; ahead"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹操的军马都打着红旗，从前面截住黄巾军的去路。",
+        "gloss": "from the front",
+        "sense_id": "zh-eaa1d1456b66-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4914bcd66e9718b2df499abad3210da700ddea0164c2af5a5e58b629b493de61"
+}

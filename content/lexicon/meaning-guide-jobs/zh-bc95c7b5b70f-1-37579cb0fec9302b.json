@@ -1,0 +1,41 @@
+{
+  "id": "zh-bc95c7b5b70f-1-37579cb0fec9302b",
+  "entry_id": "zh-bc95c7b5b70f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-bc95c7b5b70f-1",
+      "headword": "不安",
+      "kind": "word",
+      "reading": "bù’ān",
+      "senses": [
+        {
+          "id": "zh-bc95c7b5b70f-1-s1",
+          "definition": "uneasy; unsettled"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "天下人心不安。",
+        "gloss": "uneasy",
+        "sense_id": "zh-bc95c7b5b70f-1-s1"
+      },
+      {
+        "sentence": "各地盗贼纷纷出现，社会更加不安。",
+        "gloss": "uneasy",
+        "sense_id": "zh-bc95c7b5b70f-1-s1"
+      },
+      {
+        "sentence": "第二天，青州太守派人送来求援消息，说黄巾军围住了城，城里的人十分不安。",
+        "gloss": "uneasy",
+        "sense_id": "zh-bc95c7b5b70f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f0871bd6f03dcaa800f0f25b406e81d242cee2bb40d2362fe660e56b8a85521e"
+}

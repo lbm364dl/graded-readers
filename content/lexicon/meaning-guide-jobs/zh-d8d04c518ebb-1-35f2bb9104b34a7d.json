@@ -1,0 +1,31 @@
+{
+  "id": "zh-d8d04c518ebb-1-35f2bb9104b34a7d",
+  "entry_id": "zh-d8d04c518ebb-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d8d04c518ebb-1",
+      "headword": "工匠",
+      "kind": "word",
+      "reading": "gōngjiàng",
+      "senses": [
+        {
+          "id": "zh-d8d04c518ebb-1-s1",
+          "definition": "a craft worker, especially one skilled in making things by hand"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "于是，刘备请工匠打造双股剑，关羽打造青龙偃月刀，重八十二斤，张飞打造丈八点钢矛，并各自准备全身铠甲。",
+        "gloss": "artisan",
+        "sense_id": "zh-d8d04c518ebb-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "82c98e13f750c6b4cb9c65d755f04b97b47b2e5cef834830d0cc03c46bd8120a"
+}

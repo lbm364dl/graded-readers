@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-chong-qu-5c232185a99871f6",
+  "entry_id": "zh-expression-chong-qu",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-chong-qu",
+      "headword": "冲去",
+      "reading": "chōngqu",
+      "kind": "expression",
+      "base_entry_id": "zh-c7d1e85e396e-1",
+      "components": [
+        {
+          "entry_id": "zh-c7d1e85e396e-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-99ae21ea6c39-1",
+          "role": "directional complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-chong-qu-s1",
+          "definition": "charge off; rush away"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备认出张角，便带关羽、张飞飞马冲去。",
+        "gloss": "charge off; rush away",
+        "sense_id": "zh-expression-chong-qu-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "冲",
+        "role": "verb"
+      },
+      {
+        "headword": "去",
+        "role": "directional complement"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f8550c6738ea355bdd63b3728c221e4ca6492506d19ac0ee215a859022aa67cd"
+}

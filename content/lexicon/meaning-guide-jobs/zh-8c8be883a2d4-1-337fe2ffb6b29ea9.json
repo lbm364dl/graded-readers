@@ -1,0 +1,61 @@
+{
+  "id": "zh-8c8be883a2d4-1-337fe2ffb6b29ea9",
+  "entry_id": "zh-8c8be883a2d4-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8c8be883a2d4-1",
+      "headword": "朱隽",
+      "kind": "name",
+      "reading": "Zhū Jùn",
+      "senses": [
+        {
+          "id": "zh-8c8be883a2d4-1-s1",
+          "definition": "Zhu Jun, a person in the passage"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "卢植、皇甫嵩、朱隽各自带兵，分三路前往作战。",
+        "gloss": "Zhu Jun",
+        "sense_id": "zh-8c8be883a2d4-1-s1"
+      },
+      {
+        "sentence": "到了颍川，刘备听说皇甫嵩、朱隽正在和黄巾军交战。",
+        "gloss": "Zhu Jun",
+        "sense_id": "zh-8c8be883a2d4-1-s1"
+      },
+      {
+        "sentence": "皇甫嵩和朱隽商量后，决定用火攻。",
+        "gloss": "Zhu Jun",
+        "sense_id": "zh-8c8be883a2d4-1-s1"
+      },
+      {
+        "sentence": "卢植让刘备带本部人马，再带一千官军到颍川，联络皇甫嵩、朱隽，约好时间一起进攻。",
+        "gloss": "Zhu Jun",
+        "sense_id": "zh-8c8be883a2d4-1-s1"
+      },
+      {
+        "sentence": "皇甫嵩、朱隽商量后，决定火攻，命士兵各带一把草，暗中埋下伏兵。",
+        "gloss": "Zhu Jun",
+        "sense_id": "zh-8c8be883a2d4-1-s1"
+      },
+      {
+        "sentence": "曹操见过皇甫嵩和朱隽，便带兵继续追击张梁、张宝。",
+        "gloss": "Zhu Jun",
+        "sense_id": "zh-8c8be883a2d4-1-s1"
+      },
+      {
+        "sentence": "刘备见到皇甫嵩和朱隽，转达卢植的意思。",
+        "gloss": "Zhu Jun",
+        "sense_id": "zh-8c8be883a2d4-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cd5d844cf09b962f75bc5fb11d86aed0f18cbbbfed28940cde3ac0d2f308c50d"
+}

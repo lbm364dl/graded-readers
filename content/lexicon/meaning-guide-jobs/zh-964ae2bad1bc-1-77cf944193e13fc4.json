@@ -1,0 +1,31 @@
+{
+  "id": "zh-964ae2bad1bc-1-77cf944193e13fc4",
+  "entry_id": "zh-964ae2bad1bc-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-964ae2bad1bc-1",
+      "headword": "内应",
+      "kind": "word",
+      "reading": "nèiyìng",
+      "senses": [
+        {
+          "id": "zh-964ae2bad1bc-1-s1",
+          "definition": "a person on the inside who secretly assists an outside group"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角暗中送金钱，联系朝中的封谞，准备做内应。",
+        "gloss": "inside agent",
+        "sense_id": "zh-964ae2bad1bc-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e28a4a1ba7c4354bfe7d53a6cc85fd017c07ac96372b1dfeed79c01036b10889"
+}

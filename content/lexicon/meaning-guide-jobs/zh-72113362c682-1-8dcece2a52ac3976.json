@@ -1,0 +1,31 @@
+{
+  "id": "zh-72113362c682-1-8dcece2a52ac3976",
+  "entry_id": "zh-72113362c682-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-72113362c682-1",
+      "headword": "不过",
+      "kind": "word",
+      "reading": "bùguò",
+      "senses": [
+        {
+          "id": "zh-72113362c682-1-s1",
+          "definition": "cannot overcome; cannot defeat"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备兵少，打不过，只好退到三十里外安营。",
+        "gloss": "only; merely",
+        "sense_id": "zh-72113362c682-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c33f88b6dab65f4fdd518e64032df445387d8a3208f5fa76d7338323056e63f0"
+}

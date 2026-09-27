@@ -1,0 +1,36 @@
+{
+  "id": "zh-2f740e176968-1-05cc763e541c78f1",
+  "entry_id": "zh-2f740e176968-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2f740e176968-1",
+      "headword": "十五",
+      "kind": "word",
+      "reading": "shíwǔ",
+      "senses": [
+        {
+          "id": "zh-2f740e176968-1-s1",
+          "definition": "fifteen"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他十五岁时曾外出学习，也交了几个好友。",
+        "gloss": "fifteen",
+        "sense_id": "zh-2f740e176968-1-s1"
+      },
+      {
+        "sentence": "张角有十五万军队，卢植有五万人，两边在广宗相持。",
+        "gloss": "fifteen",
+        "sense_id": "zh-2f740e176968-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9db0e5e50aaaaf7039ec67014c2a69fe2dac2f74fe1f1bccdfc2508069352ccc"
+}

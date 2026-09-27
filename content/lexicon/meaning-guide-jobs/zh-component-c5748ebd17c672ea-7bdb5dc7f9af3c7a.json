@@ -1,0 +1,26 @@
+{
+  "id": "zh-component-c5748ebd17c672ea-7bdb5dc7f9af3c7a",
+  "entry_id": "zh-component-c5748ebd17c672ea",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-component-c5748ebd17c672ea",
+      "headword": "三十",
+      "reading": "sān shí",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-c5748ebd17c672ea-s1",
+          "definition": "The number thirty."
+        }
+      ]
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2885d643cb595b99de7f81abe439fd25f1c1a5fcd3e16c7ca5a05c4ea81aa9d0"
+}

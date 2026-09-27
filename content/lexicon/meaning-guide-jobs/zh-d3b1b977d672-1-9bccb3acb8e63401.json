@@ -1,0 +1,31 @@
+{
+  "id": "zh-d3b1b977d672-1-9bccb3acb8e63401",
+  "entry_id": "zh-d3b1b977d672-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d3b1b977d672-1",
+      "headword": "倒",
+      "kind": "word",
+      "reading": "dǎo",
+      "senses": [
+        {
+          "id": "zh-d3b1b977d672-1-s1",
+          "definition": "fall; topple"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "灵帝惊倒，左右急忙救他入宫，百官奔走躲避。",
+        "gloss": "to fall",
+        "sense_id": "zh-d3b1b977d672-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "564c9bd922ee36b6d679dfd4d7d4a1317bcdc5fcf32b799fa3eb656368ab0721"
+}

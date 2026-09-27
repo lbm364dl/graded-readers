@@ -1,0 +1,31 @@
+{
+  "id": "zh-95cd843ca101-1-670bdc11a941bf1a",
+  "entry_id": "zh-95cd843ca101-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-95cd843ca101-1",
+      "headword": "传到",
+      "kind": "construction",
+      "reading": "chuándào",
+      "senses": [
+        {
+          "id": "zh-95cd843ca101-1-s1",
+          "definition": "be transmitted or passed on to a place; reach"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "榜文传到涿县，引出了刘备。",
+        "gloss": "to reach",
+        "sense_id": "zh-95cd843ca101-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f0bc263373f740a1e26e6dd3625bec38246d526777ecbd0eb93528917c1941dc"
+}

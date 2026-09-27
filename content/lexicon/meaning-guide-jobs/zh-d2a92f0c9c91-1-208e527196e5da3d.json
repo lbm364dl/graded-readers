@@ -1,0 +1,36 @@
+{
+  "id": "zh-d2a92f0c9c91-1-208e527196e5da3d",
+  "entry_id": "zh-d2a92f0c9c91-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d2a92f0c9c91-1",
+      "headword": "办法",
+      "kind": "word",
+      "reading": "bànfǎ",
+      "senses": [
+        {
+          "id": "zh-d2a92f0c9c91-1-s1",
+          "definition": "a way or method of doing something; a means or solution"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他因为没有办法为国出力，长长地叹气。",
+        "gloss": "way",
+        "sense_id": "zh-d2a92f0c9c91-1-s1"
+      },
+      {
+        "sentence": "刘备想出伏兵的办法。",
+        "gloss": "method",
+        "sense_id": "zh-d2a92f0c9c91-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b35f2fb9c259b06bb2c06ca7d5d25771e2d0a1bb0582fea35dfb829eb944f7d1"
+}

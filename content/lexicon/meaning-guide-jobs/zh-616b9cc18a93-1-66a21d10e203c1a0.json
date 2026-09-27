@@ -1,0 +1,31 @@
+{
+  "id": "zh-616b9cc18a93-1-66a21d10e203c1a0",
+  "entry_id": "zh-616b9cc18a93-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-616b9cc18a93-1",
+      "headword": "落下",
+      "kind": "construction",
+      "reading": "luòxià",
+      "senses": [
+        {
+          "id": "zh-616b9cc18a93-1-s1",
+          "definition": "to fall down; descend"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "接着，大雷、大雨和冰雹一起落下，直到半夜才停止，许多房屋被毁。",
+        "gloss": "fall down",
+        "sense_id": "zh-616b9cc18a93-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "97d96c40838cfababd3bc738f062b5a4fcbc0868c49c3a42ebb1a35aa7fd3424"
+}

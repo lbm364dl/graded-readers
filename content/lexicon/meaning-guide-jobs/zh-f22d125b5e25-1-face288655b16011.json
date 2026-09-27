@@ -1,0 +1,31 @@
+{
+  "id": "zh-f22d125b5e25-1-face288655b16011",
+  "entry_id": "zh-f22d125b5e25-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f22d125b5e25-1",
+      "headword": "真话",
+      "kind": "word",
+      "reading": "zhēnhuà",
+      "senses": [
+        {
+          "id": "zh-f22d125b5e25-1-s1",
+          "definition": "true words; what is true"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他们迫害敢说真话的官员，朝廷的坏事越来越多。",
+        "gloss": "the truth",
+        "sense_id": "zh-f22d125b5e25-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d2e3f984cbd8979ad3d59f115e259cc0ed42970b2316332f0b21827f5e9d430b"
+}

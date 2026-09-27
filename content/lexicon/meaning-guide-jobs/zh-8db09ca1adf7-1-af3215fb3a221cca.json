@@ -1,0 +1,31 @@
+{
+  "id": "zh-8db09ca1adf7-1-af3215fb3a221cca",
+  "entry_id": "zh-8db09ca1adf7-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8db09ca1adf7-1",
+      "headword": "批评",
+      "kind": "word",
+      "reading": "pīpíng",
+      "senses": [
+        {
+          "id": "zh-8db09ca1adf7-1-s1",
+          "definition": "to criticize"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "有人直言批评，也被定罪。",
+        "gloss": "criticize",
+        "sense_id": "zh-8db09ca1adf7-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "791cae32fc9a829399cb6eb1b1f99dab68b4094a85ebd38a6de6c8d0e1ccdcae"
+}

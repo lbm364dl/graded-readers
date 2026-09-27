@@ -1,0 +1,41 @@
+{
+  "id": "zh-137185418062-1-888fb25110e566da",
+  "entry_id": "zh-137185418062-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-137185418062-1",
+      "headword": "盗贼",
+      "kind": "word",
+      "reading": "dàozéi",
+      "senses": [
+        {
+          "id": "zh-137185418062-1-s1",
+          "definition": "bandits or thieves"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "各地盗贼纷纷出现，社会更加不安。",
+        "gloss": "bandits",
+        "sense_id": "zh-137185418062-1-s1"
+      },
+      {
+        "sentence": "皇帝信任张让，叫他“阿父”，朝政逐渐败坏，天下人心想要作乱，盗贼纷纷起来。",
+        "gloss": "bandits",
+        "sense_id": "zh-137185418062-1-s1"
+      },
+      {
+        "sentence": "原来是中山大商张世平、苏双，他们每年往北贩马，最近因盗贼出现而返回。",
+        "gloss": "bandits",
+        "sense_id": "zh-137185418062-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cba5f3e1eb52ef899cedd5e701151ae8d8162709e805c4c4821a4b4aba79320f"
+}

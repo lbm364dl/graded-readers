@@ -1,0 +1,31 @@
+{
+  "id": "zh-d68cc3bdb7e9-1-b242685f9f2a3504",
+  "entry_id": "zh-d68cc3bdb7e9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d68cc3bdb7e9-1",
+      "headword": "权",
+      "kind": "word",
+      "reading": "quán",
+      "senses": [
+        {
+          "id": "zh-d68cc3bdb7e9-1-s1",
+          "definition": "power or authority to influence or control events and people"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹节等宦官掌权，窦武和陈蕃想除掉他们。",
+        "gloss": "power",
+        "sense_id": "zh-d68cc3bdb7e9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9535e85264f39db4fb62b44c572d641421650e73e8a36167c5f733e19f70cdb8"
+}

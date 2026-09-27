@@ -1,0 +1,61 @@
+{
+  "id": "zh-2f4b6032adda-1-b53c1b83c60bce8c",
+  "entry_id": "zh-2f4b6032adda-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2f4b6032adda-1",
+      "headword": "并",
+      "kind": "word",
+      "reading": "bìng",
+      "senses": [
+        {
+          "id": "zh-2f4b6032adda-1-s1",
+          "definition": "and; also, linking an additional action or statement"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备请他们喝酒，并说明三人想讨贼安民。",
+        "gloss": "and",
+        "sense_id": "zh-2f4b6032adda-1-s1"
+      },
+      {
+        "sentence": "老人把天书三卷交给他，名为太平要术，并警告他不可生异心。",
+        "gloss": "and",
+        "sense_id": "zh-2f4b6032adda-1-s1"
+      },
+      {
+        "sentence": "朝廷立即派兵抓住马元义并杀了他，又把封谞等人关进监狱。",
+        "gloss": "and",
+        "sense_id": "zh-2f4b6032adda-1-s1"
+      },
+      {
+        "sentence": "于是，刘备请工匠打造双股剑，关羽打造青龙偃月刀，重八十二斤，张飞打造丈八点钢矛，并各自准备全身铠甲。",
+        "gloss": "and",
+        "sense_id": "zh-2f4b6032adda-1-s1"
+      },
+      {
+        "sentence": "刘焉迎接他们，并奖励士兵。",
+        "gloss": "and; also",
+        "sense_id": "zh-2f4b6032adda-1-s1"
+      },
+      {
+        "sentence": "他在县城四座城门放下十多根五颜六色的木棒，并定下严格的禁令。",
+        "gloss": "and",
+        "sense_id": "zh-2f4b6032adda-1-s1"
+      },
+      {
+        "sentence": "朝廷于是派董卓代替我，并押我回京问罪。",
+        "gloss": "and",
+        "sense_id": "zh-2f4b6032adda-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a0ad3768accf15a042a1210b05c48ef7104e84a70fb2798f637c0f374b34d413"
+}

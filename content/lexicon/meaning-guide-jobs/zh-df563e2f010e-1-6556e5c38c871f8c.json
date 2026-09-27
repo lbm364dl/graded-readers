@@ -1,0 +1,31 @@
+{
+  "id": "zh-df563e2f010e-1-6556e5c38c871f8c",
+  "entry_id": "zh-df563e2f010e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-df563e2f010e-1",
+      "headword": "道人",
+      "kind": "word",
+      "reading": "dàorén",
+      "senses": [
+        {
+          "id": "zh-df563e2f010e-1-s1",
+          "definition": "a person who practices Daoism"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角日夜学习，学会呼风唤雨，自称太平道人。",
+        "gloss": "Daoist practitioner",
+        "sense_id": "zh-df563e2f010e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cf68715b7952e002866743bf2fcdbb90079dd4496d2d4127f1c2906a68da01ea"
+}

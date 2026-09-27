@@ -1,0 +1,31 @@
+{
+  "id": "zh-9f810fecf16a-1-eafee80af1ead671",
+  "entry_id": "zh-9f810fecf16a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9f810fecf16a-1",
+      "headword": "三十里",
+      "kind": "word",
+      "reading": "sānshílǐ",
+      "senses": [
+        {
+          "id": "zh-9f810fecf16a-1-s1",
+          "definition": "thirty li, a traditional Chinese unit of distance"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备兵少，打不过，只好退到三十里外安营。",
+        "gloss": "thirty li",
+        "sense_id": "zh-9f810fecf16a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6120653ceaebbea06609bcd096398aa62250b2cdd285162b148876c59eee8bbe"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "zh-7afa38fcbf20-1-9deed312c487d524",
+  "entry_id": "zh-7afa38fcbf20-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7afa38fcbf20-1",
+      "headword": "率军",
+      "kind": "construction",
+      "reading": "shuài jūn",
+      "senses": [
+        {
+          "id": "zh-7afa38fcbf20-1-s1",
+          "definition": "to lead an army"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹操率军出现，拦住他们的去路，随即发动攻击。",
+        "gloss": "lead troops",
+        "sense_id": "zh-7afa38fcbf20-1-s1"
+      },
+      {
+        "sentence": "曹操拜见皇甫嵩、朱俊后，随即率军追击败退的黄巾军。",
+        "gloss": "lead troops",
+        "sense_id": "zh-7afa38fcbf20-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "76362108bcb22a5600708db952db601afd351979e9346ab65f1814596cd65c63"
+}

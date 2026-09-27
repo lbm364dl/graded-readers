@@ -1,0 +1,36 @@
+{
+  "id": "zh-6404af5f8303-1-e4226c9376d3d12f",
+  "entry_id": "zh-6404af5f8303-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6404af5f8303-1",
+      "headword": "曹节",
+      "kind": "name",
+      "reading": "Cáo Jié",
+      "senses": [
+        {
+          "id": "zh-6404af5f8303-1-s1",
+          "definition": "Cao Jie, a person in the passage"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "宦官曹节等人掌握权力，常常干涉朝廷的事。",
+        "gloss": "Cao Jie",
+        "sense_id": "zh-6404af5f8303-1-s1"
+      },
+      {
+        "sentence": "曹节偷看奏章后，立即告诉身边的人，于是宦官借别的事陷害蔡邕，皇帝把他放归田里。",
+        "gloss": "Cao Jie",
+        "sense_id": "zh-6404af5f8303-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cc64ece598f47aafd4657f8f8c0ecf0de5f8782f4d22a7dc7f561cc342b6e78b"
+}

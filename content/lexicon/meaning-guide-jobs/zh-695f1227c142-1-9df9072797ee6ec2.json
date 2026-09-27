@@ -1,0 +1,31 @@
+{
+  "id": "zh-695f1227c142-1-9df9072797ee6ec2",
+  "entry_id": "zh-695f1227c142-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-695f1227c142-1",
+      "headword": "乡里",
+      "kind": "word",
+      "reading": "xiānglǐ",
+      "senses": [
+        {
+          "id": "zh-695f1227c142-1-s1",
+          "definition": "one's home village or native place"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹节后来借别的事陷害蔡邕，使他返回乡里。",
+        "gloss": "native village",
+        "sense_id": "zh-695f1227c142-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3fc87b94802f6ebd9a8714312a37d16a5c9fd3b89b2bf9300e921eb20713c682"
+}

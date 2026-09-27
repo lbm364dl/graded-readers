@@ -1,0 +1,31 @@
+{
+  "id": "zh-29352fa60127-1-b9282f28007daf6e",
+  "entry_id": "zh-29352fa60127-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-29352fa60127-1",
+      "headword": "三卷",
+      "kind": "word",
+      "reading": "sānjuàn",
+      "senses": [
+        {
+          "id": "zh-29352fa60127-1-s1",
+          "definition": "three volumes"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "老人把天书三卷交给他，名为太平要术，并警告他不可生异心。",
+        "gloss": "three volumes",
+        "sense_id": "zh-29352fa60127-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "de8ef2517642cd35866404a45a0d228c617e70a6dd9cdd3aa2245dafba67820b"
+}

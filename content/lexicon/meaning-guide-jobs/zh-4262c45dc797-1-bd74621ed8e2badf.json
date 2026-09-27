@@ -1,0 +1,41 @@
+{
+  "id": "zh-4262c45dc797-1-bd74621ed8e2badf",
+  "entry_id": "zh-4262c45dc797-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4262c45dc797-1",
+      "headword": "说明",
+      "kind": "word",
+      "reading": "shuōmíng",
+      "senses": [
+        {
+          "id": "zh-4262c45dc797-1-s1",
+          "definition": "to explain or make something clear"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备请他们喝酒，并说明三人想讨贼安民。",
+        "gloss": "explain",
+        "sense_id": "zh-4262c45dc797-1-s1"
+      },
+      {
+        "sentence": "刘备请二人喝酒，说明自己想讨贼安民。",
+        "gloss": "to explain",
+        "sense_id": "zh-4262c45dc797-1-s1"
+      },
+      {
+        "sentence": "刘备见到卢植，说明来意。",
+        "gloss": "explain",
+        "sense_id": "zh-4262c45dc797-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f5ec52b68482c0f036d671600dc2dd3c5e8cb5263d77db1294d6768afd57e378"
+}

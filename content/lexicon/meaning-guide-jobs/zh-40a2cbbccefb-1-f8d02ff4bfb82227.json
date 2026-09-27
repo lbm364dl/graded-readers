@@ -1,0 +1,31 @@
+{
+  "id": "zh-40a2cbbccefb-1-f8d02ff4bfb82227",
+  "entry_id": "zh-40a2cbbccefb-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-40a2cbbccefb-1",
+      "headword": "敌人",
+      "kind": "word",
+      "reading": "dírén",
+      "senses": [
+        {
+          "id": "zh-40a2cbbccefb-1-s1",
+          "definition": "enemy"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人带人赶到青州，发现敌人很多。",
+        "gloss": "enemy",
+        "sense_id": "zh-40a2cbbccefb-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e2a758d7e5100e738aee38014f36a27a8e83a5940cc21e8c4b09d72d6493ab2d"
+}

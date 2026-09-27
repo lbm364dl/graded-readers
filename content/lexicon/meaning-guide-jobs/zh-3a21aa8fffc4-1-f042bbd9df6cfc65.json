@@ -1,0 +1,31 @@
+{
+  "id": "zh-3a21aa8fffc4-1-f042bbd9df6cfc65",
+  "entry_id": "zh-3a21aa8fffc4-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-3a21aa8fffc4-1",
+      "headword": "愿望",
+      "kind": "word",
+      "reading": "yuànwàng",
+      "senses": [
+        {
+          "id": "zh-3a21aa8fffc4-1-s1",
+          "definition": "a wish or desire"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备请他坐下，告诉他自己的愿望。",
+        "gloss": "wish",
+        "sense_id": "zh-3a21aa8fffc4-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c6d2fddf60f5ca9c3a23b4ac5ebd3b1e66ac0a665d2c66e0f8d398840ddcaaa1"
+}

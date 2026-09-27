@@ -1,0 +1,31 @@
+{
+  "id": "zh-d971892b025a-1-2c57260290453d73",
+  "entry_id": "zh-d971892b025a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d971892b025a-1",
+      "headword": "齐声",
+      "kind": "word",
+      "reading": "qíshēng",
+      "senses": [
+        {
+          "id": "zh-d971892b025a-1-s1",
+          "definition": "in unison; together in speaking or responding"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备和关羽齐声答应。",
+        "gloss": "all together",
+        "sense_id": "zh-d971892b025a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "84195de45e025b975b2e19f540400660208ec6de2eab651c6ba6ed53af9fdcc1"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-05520f3453b9-1-6cc8c684cff1b20e",
+  "entry_id": "zh-05520f3453b9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-05520f3453b9-1",
+      "headword": "贤能",
+      "kind": "word",
+      "reading": "xiánnéng",
+      "senses": [
+        {
+          "id": "zh-05520f3453b9-1-s1",
+          "definition": "wise and capable"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "桓帝在位时，压制正直贤能的人，却特别信任宦官。",
+        "gloss": "wise and capable",
+        "sense_id": "zh-05520f3453b9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bfd1f17140683e1598f8f9236fc711a56280aad3840b22cc21ff9424b422676a"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-3cc493bc5b3b-1-3038f9be1312f2fa",
+  "entry_id": "zh-3cc493bc5b3b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-3cc493bc5b3b-1",
+      "headword": "新",
+      "kind": "word",
+      "reading": "xīn",
+      "senses": [
+        {
+          "id": "zh-3cc493bc5b3b-1-s1",
+          "definition": "new"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "桓帝死后，窦武和陈蕃共辅佐新皇帝。",
+        "gloss": "new",
+        "sense_id": "zh-3cc493bc5b3b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "08d8506c80c2f057c7285353f9b1767ed297196a7cfe7dc0fab53da8ec26469f"
+}

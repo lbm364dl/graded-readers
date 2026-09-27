@@ -1,0 +1,45 @@
+{
+  "id": "zh-082c4ae74277-1-3865d13e10609a16",
+  "entry_id": "zh-082c4ae74277-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-082c4ae74277-1",
+      "headword": "心",
+      "kind": "word",
+      "reading": "xīn",
+      "senses": [
+        {
+          "id": "zh-082c4ae74277-1-s1",
+          "definition": "heart; inner feelings or intentions"
+        },
+        {
+          "id": "zh-082c4ae74277-1-s2",
+          "definition": "the bodily heart or chest area"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他们发誓，虽是异姓，既已结为兄弟，就要同心救民。",
+        "gloss": "heart; intention",
+        "sense_id": "zh-082c4ae74277-1-s1"
+      },
+      {
+        "sentence": "皇天后土，实鉴此心；背义忘恩，天人共戮。",
+        "gloss": "heart",
+        "sense_id": "zh-082c4ae74277-1-s1"
+      },
+      {
+        "sentence": "张飞挺矛直冲，一矛刺中邓茂心窝，邓茂翻身落马。",
+        "gloss": "pit of the stomach",
+        "sense_id": "zh-082c4ae74277-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fabed7d03ceb085383eaf1c719724ab744e60e1d75fba5527a746213ea36f0e8"
+}

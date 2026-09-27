@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-zuo-xiongdi-9b66db2cf973fb29",
+  "entry_id": "zh-expression-zuo-xiongdi",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-zuo-xiongdi",
+      "headword": "做兄弟",
+      "reading": "zuò xiōngdì",
+      "base_entry_id": "zh-94f5404441e8-1",
+      "components": [
+        {
+          "entry_id": "zh-94f5404441e8-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-f6c71210522b-1",
+          "role": "relationship"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-zuo-xiongdi-s1",
+          "definition": "become brothers; form a brotherhood"
+        }
+      ],
+      "kind": "construction"
+    },
+    "examples": [
+      {
+        "sentence": "我们做兄弟。",
+        "gloss": "become brothers; form a brotherhood",
+        "sense_id": "zh-expression-zuo-xiongdi-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "做",
+        "role": "verb"
+      },
+      {
+        "headword": "兄弟",
+        "role": "relationship"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a7c1344310010ac7f3675272bb408eb34cfdfd63768d2340b16acfade04364b5"
+}

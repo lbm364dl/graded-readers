@@ -1,0 +1,36 @@
+{
+  "id": "zh-b5648ff6faf9-1-9b19e15406c9e137",
+  "entry_id": "zh-b5648ff6faf9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b5648ff6faf9-1",
+      "headword": "鞭",
+      "kind": "word",
+      "reading": "biān",
+      "senses": [
+        {
+          "id": "zh-b5648ff6faf9-1-s1",
+          "definition": "whip"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他挥鞭喊道：“反国逆贼，为什么不早投降？",
+        "gloss": "whip",
+        "sense_id": "zh-b5648ff6faf9-1-s1"
+      },
+      {
+        "sentence": "他扬鞭喝道：“反国逆贼，为何还不早降？",
+        "gloss": "whip",
+        "sense_id": "zh-b5648ff6faf9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7abdff34a2c0dac6fdcc298fa074df52249a3f7201791dde1b8fd1de271f1ec0"
+}

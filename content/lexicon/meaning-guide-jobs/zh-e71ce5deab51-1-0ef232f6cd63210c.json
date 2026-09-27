@@ -1,0 +1,50 @@
+{
+  "id": "zh-e71ce5deab51-1-0ef232f6cd63210c",
+  "entry_id": "zh-e71ce5deab51-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e71ce5deab51-1",
+      "headword": "又",
+      "kind": "word",
+      "reading": "yòu",
+      "senses": [
+        {
+          "id": "zh-e71ce5deab51-1-s1",
+          "definition": "again; also"
+        },
+        {
+          "id": "zh-e71ce5deab51-1-s2",
+          "definition": "used before two coordinated adjectives to mean that both qualities apply"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "又聚集三百多个乡勇。",
+        "gloss": "again",
+        "sense_id": "zh-e71ce5deab51-1-s1"
+      },
+      {
+        "sentence": "程远志又来打张飞。",
+        "gloss": "again",
+        "sense_id": "zh-e71ce5deab51-1-s1"
+      },
+      {
+        "sentence": "张飞又气又不满，拿刀要杀董卓。",
+        "gloss": "and; both … and …",
+        "sense_id": "zh-e71ce5deab51-1-s2"
+      },
+      {
+        "sentence": "张飞又气又不满，拿刀要杀董卓。",
+        "gloss": "and",
+        "sense_id": "zh-e71ce5deab51-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7df4fb08c736f73519b1a797c75ed308ed86c9bc71c9e00ba5eb966d85ccc208"
+}

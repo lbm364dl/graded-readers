@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-zhan-cheng-aa5d884afdb2efe7",
+  "entry_id": "zh-expression-zhan-cheng",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-zhan-cheng",
+      "headword": "斩成",
+      "reading": "zhǎnchéng",
+      "base_entry_id": "zh-7b51d6bb4d8f-1",
+      "components": [
+        {
+          "entry_id": "zh-7b51d6bb4d8f-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-55466f4976ec-1",
+          "role": "result complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-zhan-cheng-s1",
+          "definition": "cut something into a resulting form"
+        }
+      ],
+      "kind": "construction"
+    },
+    "examples": [
+      {
+        "sentence": "程远志来不及防备，被关羽斩成两段。",
+        "gloss": "cut something into a resulting form",
+        "sense_id": "zh-expression-zhan-cheng-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "斩",
+        "role": "verb"
+      },
+      {
+        "headword": "成",
+        "role": "result complement"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "18a27f59af52e5f8735cb86a846e20badd7a5c764d15138b5950858a3d762359"
+}

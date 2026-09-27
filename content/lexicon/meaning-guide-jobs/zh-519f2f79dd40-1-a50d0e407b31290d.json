@@ -1,0 +1,31 @@
+{
+  "id": "zh-519f2f79dd40-1-a50d0e407b31290d",
+  "entry_id": "zh-519f2f79dd40-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-519f2f79dd40-1",
+      "headword": "半路",
+      "kind": "word",
+      "reading": "bànlù",
+      "senses": [
+        {
+          "id": "zh-519f2f79dd40-1-s1",
+          "definition": "halfway along a route; on the way"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备带兵回去，半路遇见护送囚车的军队，车里是卢植。",
+        "gloss": "halfway; on the way",
+        "sense_id": "zh-519f2f79dd40-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b8641e291820cf8bc1d930f811cab84e763ab4fa7df849a791052d6a32c5ca71"
+}

@@ -1,0 +1,95 @@
+{
+  "id": "zh-62f99c9a0c50-1-765b317cfc77f104",
+  "entry_id": "zh-62f99c9a0c50-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-62f99c9a0c50-1",
+      "headword": "少",
+      "kind": "word",
+      "reading": "shǎo",
+      "senses": [
+        {
+          "id": "zh-62f99c9a0c50-1-s1",
+          "definition": "few; not many in number"
+        },
+        {
+          "id": "zh-62f99c9a0c50-1-s2",
+          "definition": "to do or occur only a small amount; little, rarely."
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "幽州兵少，刘焉听从邹靖的建议，马上发布招军榜，招募人员保卫地方。",
+        "gloss": "few",
+        "sense_id": "zh-62f99c9a0c50-1-s1"
+      },
+      {
+        "sentence": "幽州兵少，刘焉听到消息后，请邹靖商量办法。",
+        "gloss": "few",
+        "sense_id": "zh-62f99c9a0c50-1-s1"
+      },
+      {
+        "sentence": "刘备兵少，打不过，只好退到三十里外安营。",
+        "gloss": "few",
+        "sense_id": "zh-62f99c9a0c50-1-s1"
+      },
+      {
+        "sentence": "邹靖说：“敌军很多，幽州兵少，应尽快招兵迎敌。",
+        "gloss": "few",
+        "sense_id": "zh-62f99c9a0c50-1-s1"
+      },
+      {
+        "sentence": "刘备不太爱读书，性情宽和，平时少说话，喜怒不露在脸上。",
+        "gloss": "seldom; rarely",
+        "sense_id": "zh-62f99c9a0c50-1-s2"
+      },
+      {
+        "sentence": "刘备兵少，只好退后三十里扎营。",
+        "gloss": "few",
+        "sense_id": "zh-62f99c9a0c50-1-s1"
+      },
+      {
+        "sentence": "刘备仔细分析局面，对关羽、张飞说：“敌多我少，不能硬打，关键是用伏兵。",
+        "gloss": "few",
+        "sense_id": "zh-62f99c9a0c50-1-s1"
+      },
+      {
+        "sentence": "邹靖说：“敌军多，幽州兵少，应尽快发布招军榜，招募义兵抵抗。",
+        "gloss": "few",
+        "sense_id": "zh-62f99c9a0c50-1-s1"
+      },
+      {
+        "sentence": "刘备兵少，只得退后三十里下寨。",
+        "gloss": "few; inferior in number",
+        "sense_id": "zh-62f99c9a0c50-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-62f99c9a0c50-1",
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "少 (shǎo) describes a number as small: few, not many.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "少",
+        "contribution_en": "Describes a number as small: few, not many.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "4377ab7941d1e302de66206388c2976d9f4af72912926958deefc71fedeb78ec",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b6a59f293a0e3748dc2df700e8d72b804987daa2ee0c3216790173dca196e93b"
+}

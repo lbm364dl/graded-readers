@@ -1,0 +1,31 @@
+{
+  "id": "zh-7479fbab3820-1-096808c64dcd2c6b",
+  "entry_id": "zh-7479fbab3820-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7479fbab3820-1",
+      "headword": "天人",
+      "kind": "word",
+      "reading": "tiānrén",
+      "senses": [
+        {
+          "id": "zh-7479fbab3820-1-s1",
+          "definition": "heaven and people"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇天后土，实鉴此心；背义忘恩，天人共戮。",
+        "gloss": "Heaven and people",
+        "sense_id": "zh-7479fbab3820-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3b4e596013edf202844257eb156a1bfce8cb988f99c2f86a40158ae418da8d33"
+}

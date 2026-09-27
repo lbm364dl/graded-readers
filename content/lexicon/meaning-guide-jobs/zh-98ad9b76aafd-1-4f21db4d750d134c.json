@@ -1,0 +1,31 @@
+{
+  "id": "zh-98ad9b76aafd-1-4f21db4d750d134c",
+  "entry_id": "zh-98ad9b76aafd-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-98ad9b76aafd-1",
+      "headword": "别念",
+      "kind": "word",
+      "reading": "biéniàn",
+      "senses": [
+        {
+          "id": "zh-98ad9b76aafd-1-s1",
+          "definition": "a different thought or intention"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "老人把三卷天书交给他，要他替上天教化百姓、救助世人；若心生别念，便会受罚。",
+        "gloss": "other thoughts; improper intentions",
+        "sense_id": "zh-98ad9b76aafd-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4e05bec00febfcbdc01bde72abb13a2338620c93178c0fe820763463d25459ed"
+}

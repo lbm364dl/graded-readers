@@ -1,0 +1,31 @@
+{
+  "id": "zh-5e7ef1b340f0-1-d409efa6a57bc131",
+  "entry_id": "zh-5e7ef1b340f0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5e7ef1b340f0-1",
+      "headword": "北行",
+      "kind": "construction",
+      "reading": "běi xíng",
+      "senses": [
+        {
+          "id": "zh-5e7ef1b340f0-1-s1",
+          "definition": "travel or move north"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备只得带兵北行。",
+        "gloss": "travel north",
+        "sense_id": "zh-5e7ef1b340f0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "97a65a4c8651e4696a48cf03bfa7f101258f6a6fd3d02beb7a7c484a61a2e85d"
+}

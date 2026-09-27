@@ -1,0 +1,31 @@
+{
+  "id": "zh-5cc0111f843e-1-33d7666aad871da0",
+  "entry_id": "zh-5cc0111f843e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5cc0111f843e-1",
+      "headword": "被捕",
+      "kind": "construction",
+      "reading": "bèibǔ",
+      "senses": [
+        {
+          "id": "zh-5cc0111f843e-1-s1",
+          "definition": "to be arrested"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "关羽认为卢植既已被捕，三人又没有官职可以依靠，不如回涿郡。",
+        "gloss": "be arrested",
+        "sense_id": "zh-5cc0111f843e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "823d33ca6350044235aa16553e18b7c2012d92c301f8e4aa58c9d2ec32e32b9e"
+}

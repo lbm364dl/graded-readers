@@ -1,0 +1,31 @@
+{
+  "id": "zh-263227d96edc-1-b59dd408db5e5f7f",
+  "entry_id": "zh-263227d96edc-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-263227d96edc-1",
+      "headword": "派人",
+      "kind": "construction",
+      "reading": "pàirén",
+      "senses": [
+        {
+          "id": "zh-263227d96edc-1-s1",
+          "definition": "to send someone"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "第二天，青州太守派人送来求援消息，说黄巾军围住了城，城里的人十分不安。",
+        "gloss": "send someone",
+        "sense_id": "zh-263227d96edc-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e308cbca5ae9305efc9a693a690d3e7675cd731e4b05992f0a3459bff283a5e4"
+}

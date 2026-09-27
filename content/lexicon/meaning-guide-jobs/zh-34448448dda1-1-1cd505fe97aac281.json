@@ -1,0 +1,31 @@
+{
+  "id": "zh-34448448dda1-1-1cd505fe97aac281",
+  "entry_id": "zh-34448448dda1-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-34448448dda1-1",
+      "headword": "随从",
+      "kind": "word",
+      "reading": "suícóng",
+      "senses": [
+        {
+          "id": "zh-34448448dda1-1-s1",
+          "definition": "attendants or people accompanying someone"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "这时有人来报，两位客人带着随从，赶着一群马到了庄上。",
+        "gloss": "attendants",
+        "sense_id": "zh-34448448dda1-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "93e2419c5c8830d42b4161620e43d67c8b803875f2d2486a72456f1b68dd9187"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-77bc7d196315-1-209b423bc610236b",
+  "entry_id": "zh-77bc7d196315-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-77bc7d196315-1",
+      "headword": "认出",
+      "kind": "construction",
+      "reading": "rènchū",
+      "senses": [
+        {
+          "id": "zh-77bc7d196315-1-s1",
+          "definition": "to recognize or identify someone or something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备认出是张角，马上带关羽、张飞冲下山。",
+        "gloss": "recognize",
+        "sense_id": "zh-77bc7d196315-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b97a6522fed88a3e4f5e062ce53d341997f555fc3df9b7e20b8a511ba469d6ca"
+}

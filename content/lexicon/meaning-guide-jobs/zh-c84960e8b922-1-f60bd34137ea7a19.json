@@ -1,0 +1,31 @@
+{
+  "id": "zh-c84960e8b922-1-f60bd34137ea7a19",
+  "entry_id": "zh-c84960e8b922-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c84960e8b922-1",
+      "headword": "认",
+      "kind": "word",
+      "reading": "rèn",
+      "senses": [
+        {
+          "id": "zh-c84960e8b922-1-s1",
+          "definition": "to regard or accept someone as having a particular relationship or identity"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "邹靖带他们见刘焉，刘焉认刘备为侄子。",
+        "gloss": "to recognize",
+        "sense_id": "zh-c84960e8b922-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4eb13a0ebde93459188e7230ed8ec11b2897fe911234753e55ae1b196f33faf4"
+}

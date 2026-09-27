@@ -1,0 +1,46 @@
+{
+  "id": "zh-aa228dda1ab1-1-2ca073f4db71b0b9",
+  "entry_id": "zh-aa228dda1ab1-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-aa228dda1ab1-1",
+      "headword": "榜文",
+      "kind": "word",
+      "reading": "bǎngwén",
+      "senses": [
+        {
+          "id": "zh-aa228dda1ab1-1-s1",
+          "definition": "an official posted notice or announcement"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "榜文到了涿县。",
+        "gloss": "recruitment notice",
+        "sense_id": "zh-aa228dda1ab1-1-s1"
+      },
+      {
+        "sentence": "他想为国家出力，救百姓，只是没有力量，看着榜文不断叹气。",
+        "gloss": "recruitment notice",
+        "sense_id": "zh-aa228dda1ab1-1-s1"
+      },
+      {
+        "sentence": "榜文传到涿县，引出了刘备。",
+        "gloss": "proclamation",
+        "sense_id": "zh-aa228dda1ab1-1-s1"
+      },
+      {
+        "sentence": "这天，他见到榜文，想到自己没有力量为国家出力，不能报国，不禁长叹。",
+        "gloss": "recruitment announcement",
+        "sense_id": "zh-aa228dda1ab1-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b604d0cfe6656fc496ea2b4a8204046f9af06b0423c20e74fba12c1065314a61"
+}

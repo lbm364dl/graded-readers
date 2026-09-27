@@ -1,0 +1,115 @@
+{
+  "id": "zh-df0d25193874-1-a7875627f6586510",
+  "entry_id": "zh-df0d25193874-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-df0d25193874-1",
+      "headword": "想",
+      "kind": "word",
+      "reading": "xiǎng",
+      "senses": [
+        {
+          "id": "zh-df0d25193874-1-s1",
+          "definition": "to want or intend to do something"
+        },
+        {
+          "id": "zh-df0d25193874-1-s2",
+          "definition": "to think of; come up with"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备想去打黄巾军。",
+        "gloss": "want",
+        "sense_id": "zh-df0d25193874-1-s1"
+      },
+      {
+        "sentence": "我想去救人。",
+        "gloss": "want",
+        "sense_id": "zh-df0d25193874-1-s1"
+      },
+      {
+        "sentence": "关羽也想救人。",
+        "gloss": "want",
+        "sense_id": "zh-df0d25193874-1-s1"
+      },
+      {
+        "sentence": "他想去打仗。",
+        "gloss": "want",
+        "sense_id": "zh-df0d25193874-1-s1"
+      },
+      {
+        "sentence": "刘备说：“我们想一起救人。",
+        "gloss": "want",
+        "sense_id": "zh-df0d25193874-1-s1"
+      },
+      {
+        "sentence": "三人想做同一件事。",
+        "gloss": "want",
+        "sense_id": "zh-df0d25193874-1-s1"
+      },
+      {
+        "sentence": "他想为国家出力，救百姓，只是没有力量，看着榜文不断叹气。",
+        "gloss": "want to",
+        "sense_id": "zh-df0d25193874-1-s1"
+      },
+      {
+        "sentence": "刘备请他们喝酒，并说明三人想讨贼安民。",
+        "gloss": "want to",
+        "sense_id": "zh-df0d25193874-1-s1"
+      },
+      {
+        "sentence": "刘备对关羽、张飞说：“我们人少，只有想个好主意，才能取胜。",
+        "gloss": "think of",
+        "sense_id": "zh-df0d25193874-1-s2"
+      },
+      {
+        "sentence": "窦武、陈蕃于是商量除掉宦官，想改变这种局面。",
+        "gloss": "to want",
+        "sense_id": "zh-df0d25193874-1-s1"
+      },
+      {
+        "sentence": "张飞想了解刘备为何叹气。",
+        "gloss": "want to; think",
+        "sense_id": "zh-df0d25193874-1-s1"
+      },
+      {
+        "sentence": "刘备说自己是汉室宗亲，想打败作乱的黄巾军，让百姓平安，只是力气不够。",
+        "gloss": "want to",
+        "sense_id": "zh-df0d25193874-1-s1"
+      },
+      {
+        "sentence": "刘备请二人喝酒，说明自己想讨贼安民。",
+        "gloss": "want to",
+        "sense_id": "zh-df0d25193874-1-s1"
+      },
+      {
+        "sentence": "刘备之前跟卢植学习，听说老师正在广宗和黄巾军作战，便想去帮助他。",
+        "gloss": "want to",
+        "sense_id": "zh-df0d25193874-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-df0d25193874-1",
+    "structure": "single_component",
+    "explanation_en": "想 expresses wanting or intending to do something. With an action following it, that action is presented as something the subject has in mind and wants to undertake.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "想",
+        "contribution_en": "Expresses wanting or intending the action that follows."
+      }
+    ],
+    "input_fingerprint": "228bac1c85e437b630c8055508a0995a99d19666d692f41d8ee4be93631a4ce9",
+    "revision": 1,
+    "editorial_policy": 2,
+    "evidence_status": "legacy_unresearched"
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4f91b01de72e70f28980bd793452488e7e7cce0c9e0c3c9a71efc352e4c473b3"
+}

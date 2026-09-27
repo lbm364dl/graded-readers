@@ -1,0 +1,31 @@
+{
+  "id": "zh-5e6f8cfbe46c-1-e1bdea7289f7b16d",
+  "entry_id": "zh-5e6f8cfbe46c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5e6f8cfbe46c-1",
+      "headword": "报效",
+      "kind": "word",
+      "reading": "bàoxiào",
+      "senses": [
+        {
+          "id": "zh-5e6f8cfbe46c-1-s1",
+          "definition": "to serve and repay (a country or other benefactor)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "第二天，三人备好乌牛、白马等祭礼，焚香再拜，发誓虽是异姓，也要报效国家、安定百姓。",
+        "gloss": "serve and repay the country",
+        "sense_id": "zh-5e6f8cfbe46c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "daa66cc963a8b1cea5b0704b2fb1516ecd38ed1f2e08a723cc5f5dff28320749"
+}

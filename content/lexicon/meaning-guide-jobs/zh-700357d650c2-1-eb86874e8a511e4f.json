@@ -1,0 +1,31 @@
+{
+  "id": "zh-700357d650c2-1-eb86874e8a511e4f",
+  "entry_id": "zh-700357d650c2-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-700357d650c2-1",
+      "headword": "汉鲁",
+      "kind": "name",
+      "reading": "Hàn Lǔ",
+      "senses": [
+        {
+          "id": "zh-700357d650c2-1-s1",
+          "definition": "Lu of the Han dynasty"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "太守刘焉是江夏竟陵人，也是汉鲁恭王的后裔。",
+        "gloss": "Han-period Lu",
+        "sense_id": "zh-700357d650c2-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5b6b018924eacd9f0a39f65b3662f25c34393733fc8b02c67c40d2e286edb22e"
+}

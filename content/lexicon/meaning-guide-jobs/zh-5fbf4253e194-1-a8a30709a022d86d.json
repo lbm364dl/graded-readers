@@ -1,0 +1,41 @@
+{
+  "id": "zh-5fbf4253e194-1-a8a30709a022d86d",
+  "entry_id": "zh-5fbf4253e194-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5fbf4253e194-1",
+      "headword": "最终",
+      "kind": "word",
+      "reading": "zuìzhōng",
+      "senses": [
+        {
+          "id": "zh-5fbf4253e194-1-s1",
+          "definition": "finally; in the end"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "最终，三人取得第一次胜利。",
+        "gloss": "finally",
+        "sense_id": "zh-5fbf4253e194-1-s1"
+      },
+      {
+        "sentence": "龚景率民兵出城助战，黄巾军死伤惨重，最终解开了青州之围。",
+        "gloss": "finally",
+        "sense_id": "zh-5fbf4253e194-1-s1"
+      },
+      {
+        "sentence": "董卓最终能否活命，故事留下悬念。",
+        "gloss": "ultimately",
+        "sense_id": "zh-5fbf4253e194-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "eec830d4f7848bb3df01ed480af3f5cb6d82e118252ad6a8581dfd724c4b7a51"
+}

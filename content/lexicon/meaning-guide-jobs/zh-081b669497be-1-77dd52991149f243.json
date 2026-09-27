@@ -1,0 +1,31 @@
+{
+  "id": "zh-081b669497be-1-77dd52991149f243",
+  "entry_id": "zh-081b669497be-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-081b669497be-1",
+      "headword": "几个",
+      "kind": "word",
+      "reading": "jǐ ge",
+      "senses": [
+        {
+          "id": "zh-081b669497be-1-s1",
+          "definition": "a small number of people or things"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他十五岁时曾外出学习，也交了几个好友。",
+        "gloss": "several",
+        "sense_id": "zh-081b669497be-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6a4b23c4978c73d0344806c37dcd67c2203b65d0c96da2ee6fa1f23b8cdba294"
+}

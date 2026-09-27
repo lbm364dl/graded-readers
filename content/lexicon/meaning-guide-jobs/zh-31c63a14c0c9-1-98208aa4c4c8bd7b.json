@@ -1,0 +1,31 @@
+{
+  "id": "zh-31c63a14c0c9-1-98208aa4c4c8bd7b",
+  "entry_id": "zh-31c63a14c0c9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-31c63a14c0c9-1",
+      "headword": "越来越",
+      "kind": "construction",
+      "reading": "yuèláiyuè",
+      "senses": [
+        {
+          "id": "zh-31c63a14c0c9-1-s1",
+          "definition": "increasingly; more and more"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他们迫害敢说真话的官员，朝廷的坏事越来越多。",
+        "gloss": "increasingly",
+        "sense_id": "zh-31c63a14c0c9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "aea586c74a380bbd3443cf0b094383ed4f4a8051c0e418c11aa0107f8f711b76"
+}

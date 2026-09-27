@@ -1,0 +1,31 @@
+{
+  "id": "zh-5a2650501f0e-1-e9a9f1acc694e27b",
+  "entry_id": "zh-5a2650501f0e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5a2650501f0e-1",
+      "headword": "一直",
+      "kind": "word",
+      "reading": "yìzhí",
+      "senses": [
+        {
+          "id": "zh-5a2650501f0e-1-s1",
+          "definition": "continuously; all the while"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备看着招军榜，一直叹气。",
+        "gloss": "continually",
+        "sense_id": "zh-5a2650501f0e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "42df6d8b6ff6942cd74d91c85d16cae3c32d34b22b14ec1dccb6b3f1642b33c6"
+}

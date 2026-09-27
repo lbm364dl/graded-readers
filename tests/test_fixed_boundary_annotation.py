@@ -4,9 +4,22 @@ import pytest
 
 from pipeline.fixed_boundary_annotation import (
     apply_correction_patches, correction_prompt, dictionary_hints, fixed_segments,
-    review_scoped_correction,
+    prompt_for, review_scoped_correction,
     refined_fixed_segments, validate_result,
 )
+from pipeline.agent_harness import CHINESE_PINYIN_POLICY
+
+
+def test_fixed_generation_and_correction_prompts_enforce_neutral_directional_lai():
+    generation = prompt_for("海水泛上来。", ["海水", "泛上来", "。"], "hsk3")
+    annotation = {"segments": [
+        {"text": "泛上来", "type": "word", "pinyin": "fàn shànglái",
+         "meaning_en": "surge up"},
+    ], "grammar_overlays": []}
+    correction = correction_prompt("泛上来", annotation)
+
+    assert CHINESE_PINYIN_POLICY in generation
+    assert CHINESE_PINYIN_POLICY in correction
 
 
 def test_fixed_segments_are_lossless_and_pos_aware():

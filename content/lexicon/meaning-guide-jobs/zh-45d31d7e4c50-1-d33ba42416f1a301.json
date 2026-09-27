@@ -1,0 +1,31 @@
+{
+  "id": "zh-45d31d7e4c50-1-d33ba42416f1a301",
+  "entry_id": "zh-45d31d7e4c50-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-45d31d7e4c50-1",
+      "headword": "骂",
+      "kind": "word",
+      "reading": "mà",
+      "senses": [
+        {
+          "id": "zh-45d31d7e4c50-1-s1",
+          "definition": "to scold or insult someone verbally"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他大声骂敌人背叛汉朝，叫他们早些投降。",
+        "gloss": "to scold",
+        "sense_id": "zh-45d31d7e4c50-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "560e0e2aa88336134c4cdfab1ac1917b3e120d7265115ca28d244cba701625c3"
+}

@@ -156,6 +156,13 @@ Give every subsegment a concise `meaning_en` for its sense inside this complete
 expression. This is the preview shown before dictionary lookup, so do not copy
 an unrelated first dictionary sense. For example, 路 in 三路夹攻 means a
 direction or attacking force here, not a physical road.
+Preserve established multi-character word components when they are the useful
+units; do not split them merely because character lookups are available. The
+dictionary can explain their characters separately. Conversely, do not force
+dropdowns to mirror every character-level dictionary split. Never assign a
+whole compound's meaning to one character or the whole question's interrogative
+force to its negative branch. Check numerical/contextual constraints and avoid
+unsupported specificity (for example, public judgment is not official judgment).
 
 Choose semantic or grammatical units that help a learner understand the whole:
 for example 同心协力 -> 同心 + 协力, 黄巾军 -> 黄巾 + 军, or a transparent
@@ -516,7 +523,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("run_dir", type=Path)
     parser.add_argument("--level", required=True)
-    parser.add_argument("--model", default="gpt-5.6-luna")
+    parser.add_argument("--model", default="gpt-6-luna")
     parser.add_argument("--effort", default="low")
     parser.add_argument("--timeout", type=int, default=900)
     parser.add_argument("--refresh", action="store_true")

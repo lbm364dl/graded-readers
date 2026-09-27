@@ -1,0 +1,31 @@
+{
+  "id": "zh-7bd9d53b62f0-1-c0b2aa95a92af38f",
+  "entry_id": "zh-7bd9d53b62f0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7bd9d53b62f0-1",
+      "headword": "座位",
+      "kind": "word",
+      "reading": "zuòwèi",
+      "senses": [
+        {
+          "id": "zh-7bd9d53b62f0-1-s1",
+          "definition": "seat; place to sit"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "一条大青蛇从梁上飞下，盘在座位上。",
+        "gloss": "seat",
+        "sense_id": "zh-7bd9d53b62f0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "074ff4004b32944cf2deed7e255484230d92b3bf86f3830a2f6507c828b011ef"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-3966c0d55d96-1-797869f638077381",
+  "entry_id": "zh-3966c0d55d96-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-3966c0d55d96-1",
+      "headword": "别的",
+      "kind": "word",
+      "reading": "biéde",
+      "senses": [
+        {
+          "id": "zh-3966c0d55d96-1-s1",
+          "definition": "another; other"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹节偷看奏章后，立即告诉身边的人，于是宦官借别的事陷害蔡邕，皇帝把他放归田里。",
+        "gloss": "other",
+        "sense_id": "zh-3966c0d55d96-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7bb0e23f0558dea629867e0ce000012a0f6e485dcc346a8ebf1354c519a8335a"
+}

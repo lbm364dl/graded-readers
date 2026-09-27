@@ -1,0 +1,31 @@
+{
+  "id": "zh-ec46c055ab6b-1-212406ba53a7048b",
+  "entry_id": "zh-ec46c055ab6b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ec46c055ab6b-1",
+      "headword": "于",
+      "kind": "particle",
+      "reading": "yú",
+      "senses": [
+        {
+          "id": "zh-ec46c055ab6b-1-s1",
+          "definition": "in; into"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备说自己姓刘，名备，是汉室宗亲，想打败黄巾军，救民于苦难，只是力量不足。",
+        "gloss": "in; from; among",
+        "sense_id": "zh-ec46c055ab6b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f17dd87ba17553057812d023e8765023bae3809171644b837a8a4aa449716f72"
+}

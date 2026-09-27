@@ -1,0 +1,31 @@
+{
+  "id": "zh-8013578e5e87-1-05cd263287c48008",
+  "entry_id": "zh-8013578e5e87-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8013578e5e87-1",
+      "headword": "图",
+      "kind": "word",
+      "reading": "tú",
+      "senses": [
+        {
+          "id": "zh-8013578e5e87-1-s1",
+          "definition": "to plan or seek to achieve"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "明日，三人在园中祭告天地，结为兄弟，同心协力救民，然后才能图大事。",
+        "gloss": "to pursue",
+        "sense_id": "zh-8013578e5e87-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4c90cc9fdc186219b58ef50535df931379421205f4ce81ee673d86908021b988"
+}

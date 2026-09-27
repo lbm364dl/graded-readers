@@ -1,0 +1,31 @@
+{
+  "id": "zh-2abd435486ed-1-7159d8bbee080c84",
+  "entry_id": "zh-2abd435486ed-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2abd435486ed-1",
+      "headword": "包围",
+      "kind": "word",
+      "reading": "bāowéi",
+      "senses": [
+        {
+          "id": "zh-2abd435486ed-1-s1",
+          "definition": "surround; encircle"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "第二天，青州太守龚景送来文书，说黄巾军包围青州，城快要守不住了，请求救援。",
+        "gloss": "to surround",
+        "sense_id": "zh-2abd435486ed-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "70175cec1ff09d397f8092a320cda41050c32314af201344a9f631e4837dbe70"
+}

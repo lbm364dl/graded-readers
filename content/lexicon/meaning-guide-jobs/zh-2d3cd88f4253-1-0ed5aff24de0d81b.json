@@ -1,0 +1,31 @@
+{
+  "id": "zh-2d3cd88f4253-1-0ed5aff24de0d81b",
+  "entry_id": "zh-2d3cd88f4253-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2d3cd88f4253-1",
+      "headword": "议",
+      "kind": "word",
+      "reading": "yì",
+      "senses": [
+        {
+          "id": "zh-2d3cd88f4253-1-s1",
+          "definition": "to discuss or deliberate"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人因共同志向相识，随后到张飞家中共议大事。",
+        "gloss": "to discuss",
+        "sense_id": "zh-2d3cd88f4253-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "59876a0a8418e311288e1f8823f0f2da3bc7fc875741e13c51e417c973316fe4"
+}

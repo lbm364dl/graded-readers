@@ -389,7 +389,7 @@ def parser() -> argparse.ArgumentParser:
     result.add_argument("--run-dir", action="append", required=True,
                         help="book run root; repeat to combine roots")
     result.add_argument("--batch-report")
-    result.add_argument("--model", default="gpt-5.6-luna")
+    result.add_argument("--model", default="gpt-6-luna")
     result.add_argument("--concurrency", type=int, default=8,
                         help="global maximum simultaneous model calls")
     result.add_argument("--chapter-concurrency", type=int, default=8)

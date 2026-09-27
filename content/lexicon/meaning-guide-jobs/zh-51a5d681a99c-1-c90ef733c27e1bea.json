@@ -1,0 +1,124 @@
+{
+  "id": "zh-51a5d681a99c-1-c90ef733c27e1bea",
+  "entry_id": "zh-51a5d681a99c-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-51a5d681a99c-1",
+      "headword": "名",
+      "kind": "word",
+      "reading": "míng",
+      "senses": [
+        {
+          "id": "zh-51a5d681a99c-1-s1",
+          "definition": "measure word for people"
+        },
+        {
+          "id": "zh-51a5d681a99c-1-s2",
+          "definition": "given name"
+        },
+        {
+          "id": "zh-51a5d681a99c-1-s3",
+          "definition": "to be named; to have the name"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人谢过商人，打造兵器，配上铠甲，又聚集五百多名乡勇，前去报到。",
+        "gloss": "measure word for people",
+        "sense_id": "zh-51a5d681a99c-1-s1"
+      },
+      {
+        "sentence": "黄巾军起兵后，曹操带着五千名士兵赶到颍川。",
+        "gloss": "classifier for people",
+        "sense_id": "zh-51a5d681a99c-1-s1"
+      },
+      {
+        "sentence": "张让等十名宦官结在一起作恶，被称为“十常侍”。",
+        "gloss": "persons; people",
+        "sense_id": "zh-51a5d681a99c-1-s1"
+      },
+      {
+        "sentence": "他有五百多名弟子，云游四方，都能书符念咒。",
+        "gloss": "classifier for people",
+        "sense_id": "zh-51a5d681a99c-1-s1"
+      },
+      {
+        "sentence": "张飞说自己姓张，名飞，字翼德，世居涿郡，家有庄田，平日卖酒屠猪，一向喜欢结交天下豪杰。",
+        "gloss": "given name",
+        "sense_id": "zh-51a5d681a99c-1-s2"
+      },
+      {
+        "sentence": "刘备说自己姓刘，名备，是汉室宗亲，想打败黄巾军，救民于苦难，只是力量不足。",
+        "gloss": "to be named; one’s given name is",
+        "sense_id": "zh-51a5d681a99c-1-s3"
+      },
+      {
+        "sentence": "那人姓关，名羽，字寿长，后来改字云长，是河东解良人。",
+        "gloss": "to be named; one’s given name is",
+        "sense_id": "zh-51a5d681a99c-1-s3"
+      },
+      {
+        "sentence": "刘备命良匠打造双股剑，关羽造青龙偃月刀，又名冷艳锯，重八十二斤；张飞造丈八点钢矛。",
+        "gloss": "named",
+        "sense_id": "zh-51a5d681a99c-1-s3"
+      },
+      {
+        "sentence": "黄巾起义时，曹操率领五千名马步军到颍川助战。",
+        "gloss": "classifier for people",
+        "sense_id": "zh-51a5d681a99c-1-s1"
+      },
+      {
+        "sentence": "一名宦官的叔父夜间提刀行走，也被曹操抓住，用五色棒责打。",
+        "gloss": "classifier for people",
+        "sense_id": "zh-51a5d681a99c-1-s1"
+      },
+      {
+        "sentence": "那人回答：“我姓张，名飞，字翼德，世居涿郡，颇有庄田，卖酒屠猪，专好结交天下豪杰。",
+        "gloss": "given name",
+        "sense_id": "zh-51a5d681a99c-1-s2"
+      },
+      {
+        "sentence": "”刘备说自己是汉室宗亲，姓刘，名备，有志破贼救民，只恨力量不足。",
+        "gloss": "to be named; one’s given name is",
+        "sense_id": "zh-51a5d681a99c-1-s3"
+      },
+      {
+        "sentence": "那人说：“我姓关，名羽，字寿长，后改字云长，是河东解良人。",
+        "gloss": "given name",
+        "sense_id": "zh-51a5d681a99c-1-s2"
+      },
+      {
+        "sentence": "黄巾起义后，他被任命为骑都尉，带领五千名骑兵和步兵赶到颍川。",
+        "gloss": "classifier for people",
+        "sense_id": "zh-51a5d681a99c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-51a5d681a99c-1",
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "名 follows a number to count people, usually before the word naming the group or role.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "名",
+        "contribution_en": "As a measure word, counts people after a number.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "c662585a37ed4c6c3041944aa9673779e830f5bbe1b6d1e69b78c42519ef9762",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0fadbabf91b167942e29c5fe44bd55c5c5d6dc88bb3966248658e975e4dc31b6"
+}

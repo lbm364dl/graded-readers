@@ -1,0 +1,31 @@
+{
+  "id": "zh-2702ce1ae34c-1-75f20c31dd518c74",
+  "entry_id": "zh-2702ce1ae34c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2702ce1ae34c-1",
+      "headword": "痛快",
+      "kind": "word",
+      "reading": "tòngkuài",
+      "senses": [
+        {
+          "id": "zh-2702ce1ae34c-1-s1",
+          "definition": "with satisfying enthusiasm or enjoyment"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "祭礼后，他们杀牛摆酒，聚集三百多名乡勇，在桃园中痛快喝酒。",
+        "gloss": "heartily",
+        "sense_id": "zh-2702ce1ae34c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "615b516edac5af17d25935f734ae6d30be29b6458f06c28318c72ee7aecbb085"
+}

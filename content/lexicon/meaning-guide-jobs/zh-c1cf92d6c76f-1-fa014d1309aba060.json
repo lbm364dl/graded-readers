@@ -1,0 +1,31 @@
+{
+  "id": "zh-c1cf92d6c76f-1-fa014d1309aba060",
+  "entry_id": "zh-c1cf92d6c76f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c1cf92d6c76f-1",
+      "headword": "白土",
+      "kind": "word",
+      "reading": "báitǔ",
+      "senses": [
+        {
+          "id": "zh-c1cf92d6c76f-1-s1",
+          "definition": "white soil or earth"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他让人传播“苍天已死，黄天当立”和“岁在甲子，天下大吉”，还用白土在家门上写“甲子”。",
+        "gloss": "white clay",
+        "sense_id": "zh-c1cf92d6c76f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cfae43ed7d0be1e5637786992b32cdc01438ff64e6b08f5198799fd6dfacd7ec"
+}

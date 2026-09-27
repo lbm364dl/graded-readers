@@ -1,0 +1,59 @@
+{
+  "id": "zh-expression-bu-ji-qi-shu-09e885fd87c6b76f",
+  "entry_id": "zh-expression-bu-ji-qi-shu",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-bu-ji-qi-shu",
+      "headword": "不计其数",
+      "reading": "bújìqíshù",
+      "kind": "expression",
+      "base_entry_id": "zh-f92332a0eeab-1",
+      "components": [
+        {
+          "entry_id": "zh-f92332a0eeab-1",
+          "role": "predicate"
+        },
+        {
+          "entry_id": "zh-9626329d6ccf-1",
+          "role": "possessive element"
+        },
+        {
+          "entry_id": "zh-a8df40502f55-1",
+          "role": "number"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-bu-ji-qi-shu-s1",
+          "definition": "too many to count"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备率军追赶，投降者不计其数，大胜而回。",
+        "gloss": "too many to count",
+        "sense_id": "zh-expression-bu-ji-qi-shu-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "不计",
+        "role": "predicate"
+      },
+      {
+        "headword": "其",
+        "role": "possessive element"
+      },
+      {
+        "headword": "数",
+        "role": "number"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d1b1f3dd74235090d75ef881cdd380d63b2bc11f0851b71cbd1b5c624eeedaa8"
+}

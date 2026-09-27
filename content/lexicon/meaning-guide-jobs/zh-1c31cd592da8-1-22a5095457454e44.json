@@ -1,0 +1,41 @@
+{
+  "id": "zh-1c31cd592da8-1-22a5095457454e44",
+  "entry_id": "zh-1c31cd592da8-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1c31cd592da8-1",
+      "headword": "都尉",
+      "kind": "word",
+      "reading": "dūwèi",
+      "senses": [
+        {
+          "id": "zh-1c31cd592da8-1-s1",
+          "definition": "a military official"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹操二十岁时被举为孝廉，后来做了洛阳北都尉。",
+        "gloss": "commandant; military official",
+        "sense_id": "zh-1c31cd592da8-1-s1"
+      },
+      {
+        "sentence": "曹操二十岁时举孝廉，做了郎官，后来任洛阳北都尉。",
+        "gloss": "commandant",
+        "sense_id": "zh-1c31cd592da8-1-s1"
+      },
+      {
+        "sentence": "黄巾起义后，他被任命为骑都尉，带领五千名骑兵和步兵赶到颍川。",
+        "gloss": "commandant",
+        "sense_id": "zh-1c31cd592da8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4b44fefb95f19daffc4cbba39cca1c7e879fb6a60f4049f8f666fad63bf3c61f"
+}

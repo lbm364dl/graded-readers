@@ -1,0 +1,40 @@
+{
+  "id": "zh-7708b5d0ec23-1-66c1377ec6e7a1b2",
+  "entry_id": "zh-7708b5d0ec23-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7708b5d0ec23-1",
+      "headword": "很少",
+      "kind": "word",
+      "reading": "hěnshǎo",
+      "senses": [
+        {
+          "id": "zh-7708b5d0ec23-1-s1",
+          "definition": "few; not many"
+        },
+        {
+          "id": "zh-7708b5d0ec23-1-s2",
+          "definition": "rarely; seldom"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "可是黄巾军数量很多，刘备这边的人很少，只好退到山下。",
+        "gloss": "few",
+        "sense_id": "zh-7708b5d0ec23-1-s1"
+      },
+      {
+        "sentence": "刘备不太专心读书，性情宽和，话不多，喜怒很少露在脸上。",
+        "gloss": "rarely",
+        "sense_id": "zh-7708b5d0ec23-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1ec3c283044c2163464a9447b49bb6295f6e325c1672aa1fef3ad93526df58b9"
+}

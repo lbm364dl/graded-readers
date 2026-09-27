@@ -1,0 +1,216 @@
+{
+  "id": "zh-abee4974732a-1-0b8ffd5b9f2439ee",
+  "entry_id": "zh-abee4974732a-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-abee4974732a-1",
+      "headword": "建议",
+      "kind": "word",
+      "reading": "jiànyì",
+      "senses": [
+        {
+          "id": "zh-abee4974732a-1-s1",
+          "definition": "a suggestion or piece of advice"
+        },
+        {
+          "id": "zh-abee4974732a-1-s2",
+          "definition": "to suggest or recommend a course of action"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "幽州的兵不够，刘焉听从邹靖的建议。",
+        "gloss": "advice",
+        "sense_id": "zh-abee4974732a-1-s1"
+      },
+      {
+        "sentence": "幽州兵少，刘焉听从邹靖的建议，马上发布招军榜，招募人员保卫地方。",
+        "gloss": "suggestion",
+        "sense_id": "zh-abee4974732a-1-s1"
+      },
+      {
+        "sentence": "卢植被押走后，关羽建议先回涿郡，刘备同意了。",
+        "gloss": "suggest",
+        "sense_id": "zh-abee4974732a-1-s1"
+      },
+      {
+        "sentence": "邹靖建议马上发布招军榜，招募乡勇。",
+        "gloss": "to suggest",
+        "sense_id": "zh-abee4974732a-1-s2"
+      },
+      {
+        "sentence": "刘焉听从建议，于是发布了招军榜。",
+        "gloss": "suggestion",
+        "sense_id": "zh-abee4974732a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-abee4974732a-1",
+    "claim_ids": [
+      "c1",
+      "c2",
+      "c3",
+      "c4"
+    ],
+    "structure": "compositional",
+    "explanation_en": "建议 can be a verb meaning to put forward advice or an opinion for someone to consider, or a noun for the suggestion or advice itself. 建 contributes the act of putting something forward, while 议 contributes the considered opinion; together they describe offering an opinion for consideration.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "建",
+        "contribution_en": "Contributes putting forward or proposing something.",
+        "claim_ids": [
+          "c2"
+        ]
+      },
+      {
+        "text": "议",
+        "contribution_en": "Contributes the idea of an opinion or considered discussion.",
+        "claim_ids": [
+          "c3"
+        ]
+      }
+    ],
+    "research": {
+      "entry_id": "zh-abee4974732a-1",
+      "status": "partial",
+      "sources": [
+        {
+          "id": "s1",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=93524&la=0&powerMode=0",
+          "title": "建議 — 教育部《重編國語辭典修訂本》",
+          "accessed_at": "2026-09-26",
+          "summary_en": "Distinguishes the verb sense, ‘put forward an opinion for others’ reference,’ from the noun senses ‘opinion; method.’ Its verb example is from the New Book of Tang, not the supplied sentence."
+        },
+        {
+          "id": "s2",
+          "url": "https://dict.hydict.cn/dictionary/dcontent/index/word/%E5%BB%BA",
+          "title": "建 — 汉语字典",
+          "accessed_at": "2026-09-26",
+          "summary_en": "Lists 建 with a ‘propose; put forward’ sense, citing 建言, 建策 and related compounds. It separately lists establishment and building senses; this supports a relevant character sense but does not establish the history of 建议."
+        },
+        {
+          "id": "s3",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E8%AD%B0",
+          "title": "議 — 漢語多功能字庫",
+          "accessed_at": "2026-09-26",
+          "summary_en": "Reports the Shuowen gloss ‘語也’ and analyzes 議 as 言 semantic component plus 義 phonetic component. It presents Duan Yucai’s interpretation of an original sense as speech appropriate to the circumstances, and describes later extensions from speech to planning and evaluating. These are character-level explanations, not a derivation of the modern compound 建议."
+        },
+        {
+          "id": "s4",
+          "url": "https://zh.wikisource.org/zh-hans/%E6%BC%A2%E6%9B%B8/%E5%8D%B7064%E4%B8%8B",
+          "title": "汉书/卷064下 — 维基文库",
+          "accessed_at": "2026-09-26",
+          "summary_en": "The displayed Hanshu passage says 捐之建议，以为不当击 while recounting his view that the campaign should not proceed. It attests the compound in a proposal or view-putting-forward context, but does not by itself prove a direct historical derivation of the modern senses."
+        },
+        {
+          "id": "s5",
+          "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=23026",
+          "title": "建議 — 教育部《國語辭典簡編本》",
+          "accessed_at": "2026-09-26",
+          "summary_en": "Defines 建议 as putting forward one’s own position to another person, and also as an opinion or method. The page has readable entry text; it supports the target verb meaning and the noun distinction."
+        }
+      ],
+      "claims": [
+        {
+          "id": "c1",
+          "text_en": "In the supplied example, 建议 is verbal: Zou Jing put forward advice, an opinion, or a proposal that Liu Yan followed. ‘Advice’ fits the context; the text does not specify a narrower kind of advice. The Ministry dictionary gives the matching general verb sense, and the Hanshu passage uses 建议 for putting forward a view.",
+          "source_ids": [
+            "s1",
+            "s4",
+            "s5"
+          ]
+        },
+        {
+          "id": "c2",
+          "text_en": "建 has a separately recorded sense ‘propose; put forward,’ illustrated in compounds such as 建言 and 建策. This makes ‘putting forward’ a plausible contribution of 建 in 建议; the character entry alone does not prove the modern compound’s formation or full lexical history.",
+          "source_ids": [
+            "s2"
+          ]
+        },
+        {
+          "id": "c3",
+          "text_en": "議 is associated with speech in the Shuowen gloss and, in the CUHK reference’s account, later senses include planning and evaluation. This supports a speech, discussion, or considered-view element relevant to 建议, while not establishing a complete derivation of the modern word from the individual character histories.",
+          "source_ids": [
+            "s3"
+          ]
+        },
+        {
+          "id": "c4",
+          "text_en": "建议 also has a noun use meaning an opinion or method; the Ministry entry separates it from the verb ‘put forward an opinion.’ The supplied example uses the verb, not this noun sense.",
+          "source_ids": [
+            "s1",
+            "s5"
+          ]
+        },
+        {
+          "id": "c5",
+          "text_en": "The Hanshu passage attests 建议 in a context where Juan Zhi puts forward the view that an attack should not be made. This is historical evidence for the compound’s use in that context, but it does not prove that the present-day verb and noun senses developed directly from this occurrence.",
+          "source_ids": [
+            "s4"
+          ]
+        }
+      ],
+      "searches": [
+        {
+          "query": "建议 汉语词典 词义 建议 建 议 词源",
+          "opened_urls": [
+            "https://dict.revised.moe.edu.tw/dictView.jsp?ID=93524&la=0&powerMode=0",
+            "https://dict.concised.moe.edu.tw/dictView.jsp?ID=23026",
+            "https://dict.hydict.cn/dictionary/dcontent/index/word/%E5%BB%BA"
+          ]
+        },
+        {
+          "query": "建议 词源 汉语 历史 词典 建議",
+          "opened_urls": [
+            "https://www.shidianguji.com/mid-page/7470270280449441819"
+          ]
+        },
+        {
+          "query": "議 說文 解字 谋也 商议 词典",
+          "opened_urls": [
+            "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E8%AD%B0",
+            "https://ctext.org/dictionary.pl?char=%E8%AD%B0&if=gb"
+          ]
+        },
+        {
+          "query": "\"捐之建议\" 汉书 原文 建议；\"捐之建议，以为不当击\" 汉书；汉书 卷六十四下 ctext 贾捐之 建议",
+          "opened_urls": [
+            "https://zh.wikisource.org/zh-hans/%E6%BC%A2%E6%9B%B8/%E5%8D%B7064%E4%B8%8B"
+          ]
+        },
+        {
+          "query": "(direct open)",
+          "opened_urls": [
+            "https://dict.revised.moe.edu.tw/dictView.jsp?ID=93524&la=0&powerMode=0",
+            "https://dict.concised.moe.edu.tw/dictView.jsp?ID=23026",
+            "https://dict.hydict.cn/dictionary/dcontent/index/word/%E5%BB%BA",
+            "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E8%AD%B0",
+            "https://www.shidianguji.com/mid-page/7470270280449441819",
+            "https://www.shidianguji.com/mid-page/7662122547425378350",
+            "https://ctext.org/han-shu/jia-juan-zhi-zhuan",
+            "https://dict.zdic.net/hans/%E5%BB%BA%E8%AE%AE",
+            "https://zh.wikisource.org/zh-hans/%E6%BC%A2%E6%9B%B8/%E5%8D%B7064%E4%B8%8B"
+          ]
+        }
+      ],
+      "gaps": [
+        "The sources support relevant senses of each character and a historical use of the compound, but do not establish the complete lexical development of modern 建议 or prove exactly how the character meanings combine in the modern word."
+      ]
+    },
+    "input_fingerprint": "027d35b0c4f690464e53d57248beeb50842c8b479621c8d5a690833a562fe4c8",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "partial",
+    "editorial_route": "cached_research",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0aafda7dde08b000985d6a698279dbed9c410208e776bd9d38a9fd21b4fcf4e0"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-83831c3f910c-1-e96f154848ddb89e",
+  "entry_id": "zh-83831c3f910c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-83831c3f910c-1",
+      "headword": "本",
+      "kind": "word",
+      "reading": "běn",
+      "senses": [
+        {
+          "id": "zh-83831c3f910c-1-s1",
+          "definition": "originally; inherently"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "朝代分合本是常事，但祸乱大约从桓帝、灵帝时开始。",
+        "gloss": "originally",
+        "sense_id": "zh-83831c3f910c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cba42dc5f6d2a49c647179ef9d673a864ae0a6a4d3706d2f198ec75f95d758e2"
+}

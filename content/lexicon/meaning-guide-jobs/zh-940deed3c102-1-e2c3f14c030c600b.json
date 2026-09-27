@@ -1,0 +1,31 @@
+{
+  "id": "zh-940deed3c102-1-e2c3f14c030c600b",
+  "entry_id": "zh-940deed3c102-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-940deed3c102-1",
+      "headword": "索要",
+      "kind": "word",
+      "reading": "suǒyào",
+      "senses": [
+        {
+          "id": "zh-940deed3c102-1-s1",
+          "definition": "to ask or demand that someone give something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "左丰来查看军情，向我索要贿赂。",
+        "gloss": "to demand",
+        "sense_id": "zh-940deed3c102-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6fb98427a8eefcb0561bc5d685fc9a8ee7bc02d6612a3d81ffc16dc384ffe988"
+}

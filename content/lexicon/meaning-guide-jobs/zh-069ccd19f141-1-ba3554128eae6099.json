@@ -1,0 +1,31 @@
+{
+  "id": "zh-069ccd19f141-1-ba3554128eae6099",
+  "entry_id": "zh-069ccd19f141-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-069ccd19f141-1",
+      "headword": "何进",
+      "kind": "name",
+      "reading": "Hé Jìn",
+      "senses": [
+        {
+          "id": "zh-069ccd19f141-1-s1",
+          "definition": "He Jin, a person named in the passage"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "何进请朝廷下令，命各地招兵抵抗黄巾军。",
+        "gloss": "He Jin",
+        "sense_id": "zh-069ccd19f141-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "03193d78385fe68a61d96c62514c9a659943ffb9ed9851b0c7d18f18b571fa31"
+}

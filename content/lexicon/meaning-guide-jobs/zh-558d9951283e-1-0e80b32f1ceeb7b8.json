@@ -1,0 +1,31 @@
+{
+  "id": "zh-558d9951283e-1-0e80b32f1ceeb7b8",
+  "entry_id": "zh-558d9951283e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-558d9951283e-1",
+      "headword": "机会",
+      "kind": "word",
+      "reading": "jīhuì",
+      "senses": [
+        {
+          "id": "zh-558d9951283e-1-s1",
+          "definition": "opportunity; favorable occasion"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他和两个弟弟商议后，决定抓住民心的机会。",
+        "gloss": "opportunity",
+        "sense_id": "zh-558d9951283e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "54ae5b1c834cea236d5095bb78575092de37fa1bd5e4d2d1d7eaeb5eb43c4f08"
+}

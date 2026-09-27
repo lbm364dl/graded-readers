@@ -1,0 +1,31 @@
+{
+  "id": "zh-6c4f9d770770-1-e743da7ddde95e02",
+  "entry_id": "zh-6c4f9d770770-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6c4f9d770770-1",
+      "headword": "四处",
+      "kind": "word",
+      "reading": "sìchù",
+      "senses": [
+        {
+          "id": "zh-6c4f9d770770-1-s1",
+          "definition": "in all directions; in various places"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "火光照亮天空，黄巾军来不及披上铠甲，也来不及给马装好马鞍，只好四处逃跑。",
+        "gloss": "in all directions",
+        "sense_id": "zh-6c4f9d770770-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c8580393e6e7d100995ce017f24c1b84882320d6f448dc112632872200788b1f"
+}

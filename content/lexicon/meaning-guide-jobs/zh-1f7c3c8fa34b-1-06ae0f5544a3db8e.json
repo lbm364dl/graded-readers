@@ -1,0 +1,31 @@
+{
+  "id": "zh-1f7c3c8fa34b-1-06ae0f5544a3db8e",
+  "entry_id": "zh-1f7c3c8fa34b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1f7c3c8fa34b-1",
+      "headword": "竟陵",
+      "kind": "name",
+      "reading": "Jìnglíng",
+      "senses": [
+        {
+          "id": "zh-1f7c3c8fa34b-1-s1",
+          "definition": "Jingling"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "太守刘焉是江夏竟陵人，也是汉鲁恭王的后裔。",
+        "gloss": "Jingling",
+        "sense_id": "zh-1f7c3c8fa34b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8c811135f47aa0e85c3397193fe3eb74e5dd6bc9bf1869012d00d704f76b9910"
+}

@@ -1,0 +1,75 @@
+{
+  "id": "zh-089d8c4c0070-1-8137673cb98582f9",
+  "entry_id": "zh-089d8c4c0070-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-089d8c4c0070-1",
+      "headword": "百",
+      "kind": "word",
+      "reading": "bǎi",
+      "senses": [
+        {
+          "id": "zh-089d8c4c0070-1-s1",
+          "definition": "hundred"
+        },
+        {
+          "id": "zh-089d8c4c0070-1-s2",
+          "definition": "many; numerous"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他和关羽、张飞带五百人赶往广宗。",
+        "gloss": "hundred",
+        "sense_id": "zh-089d8c4c0070-1-s1"
+      },
+      {
+        "sentence": "皇帝震惊得倒下，身边的人急忙把他送入宫中，百官也赶快躲开。",
+        "gloss": "hundred",
+        "sense_id": "zh-089d8c4c0070-1-s2"
+      },
+      {
+        "sentence": "刘焉命邹靖带刘备、关羽、张飞三人，领五百士兵前去破敌。",
+        "gloss": "hundred",
+        "sense_id": "zh-089d8c4c0070-1-s1"
+      },
+      {
+        "sentence": "于是刘备带关羽、张飞和本部五百人赶往广宗。",
+        "gloss": "hundred",
+        "sense_id": "zh-089d8c4c0070-1-s1"
+      },
+      {
+        "sentence": "刘焉命邹靖带刘备等三人，率五百兵前去破敌。",
+        "gloss": "hundred",
+        "sense_id": "zh-089d8c4c0070-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-089d8c4c0070-1",
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "百 means “one hundred.” As a numeral, it combines with another number to express a larger quantity, as in 五百, “five hundred.”",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "百",
+        "contribution_en": "the number one hundred",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "1fdbc9a0f2edbd3636081d7169fd514afdd08cbb4c79f2881a0516f389647685",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "42cc0767e53aec73fcc75fb86f9597d5fb88f513486596179fd0f974436ab6d6"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-adb659e141a6-1-6ae02465676dc253",
+  "entry_id": "zh-adb659e141a6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-adb659e141a6-1",
+      "headword": "开得",
+      "kind": "construction",
+      "reading": "kāi de",
+      "senses": [
+        {
+          "id": "zh-adb659e141a6-1-s1",
+          "definition": "verb plus 得 introducing a description of the resulting state or degree of an action"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞说，庄后有一座桃园，桃花开得正盛。",
+        "gloss": "to bloom in a certain state",
+        "sense_id": "zh-adb659e141a6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3b01582f0437278130ecde529d4de7a5d9dbc3676e017e0748001f5447e92bb8"
+}

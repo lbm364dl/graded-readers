@@ -1,0 +1,31 @@
+{
+  "id": "zh-846645d0ecee-1-e99a82f52b38f20c",
+  "entry_id": "zh-846645d0ecee-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-846645d0ecee-1",
+      "headword": "过错",
+      "kind": "word",
+      "reading": "guòcuò",
+      "senses": [
+        {
+          "id": "zh-846645d0ecee-1-s1",
+          "definition": "mistake; fault"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "从此叔父再说他的过错，曹嵩也不再相信，曹操更加任性放荡。",
+        "gloss": "mistake",
+        "sense_id": "zh-846645d0ecee-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e666bed9352e09c3acfb86a134dfd9eacb34b6aae3e0b4b2c28cf46575382f20"
+}

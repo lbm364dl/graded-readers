@@ -1,0 +1,31 @@
+{
+  "id": "zh-72464e2d283f-1-b8ee8e70b492ae1a",
+  "entry_id": "zh-72464e2d283f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-72464e2d283f-1",
+      "headword": "治病",
+      "kind": "word",
+      "reading": "zhìbìng",
+      "senses": [
+        {
+          "id": "zh-72464e2d283f-1-s1",
+          "definition": "to treat an illness or disease"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角给百姓治病，聚集了很多人。",
+        "gloss": "treat illnesses",
+        "sense_id": "zh-72464e2d283f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bf8b990f7492348c4218383dc6154db74f1c5be279895f1b814bfec6aedfd997"
+}

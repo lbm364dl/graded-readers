@@ -1,0 +1,31 @@
+{
+  "id": "zh-6b79973f8a3e-1-88f696bbea587730",
+  "entry_id": "zh-6b79973f8a3e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6b79973f8a3e-1",
+      "headword": "转眼",
+      "kind": "word",
+      "reading": "zhuǎnyǎn",
+      "senses": [
+        {
+          "id": "zh-6b79973f8a3e-1-s1",
+          "definition": "in an instant; in the blink of an eye"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "说完，老人仿佛化成清风，转眼不见。",
+        "gloss": "in the blink of an eye",
+        "sense_id": "zh-6b79973f8a3e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8c56c4cba205b3e7e0b6066b131fe219990482b49e2fb5d8dafd7f81ca39da47"
+}

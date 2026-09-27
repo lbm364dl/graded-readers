@@ -1,0 +1,31 @@
+{
+  "id": "zh-cb10785fad66-1-b771e7b3bfa75c21",
+  "entry_id": "zh-cb10785fad66-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-cb10785fad66-1",
+      "headword": "望风而逃",
+      "kind": "expression",
+      "reading": "wàng fēng ér táo",
+      "senses": [
+        {
+          "id": "zh-cb10785fad66-1-s1",
+          "definition": "flee at the first sign of danger"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军势力很大，官军望风而逃。",
+        "gloss": "to flee at the first sign of danger",
+        "sense_id": "zh-cb10785fad66-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ca24ac07c8860d7e9227ad6d83aab34e6f17bbe497582e761257fad1a375acff"
+}

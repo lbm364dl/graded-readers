@@ -1,0 +1,31 @@
+{
+  "id": "zh-73a9d007152a-1-3f05038ad85e6a67",
+  "entry_id": "zh-73a9d007152a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-73a9d007152a-1",
+      "headword": "忽然",
+      "kind": "word",
+      "reading": "hūrán",
+      "senses": [
+        {
+          "id": "zh-73a9d007152a-1-s1",
+          "definition": "suddenly"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "夜里大风忽然刮起。",
+        "gloss": "suddenly",
+        "sense_id": "zh-73a9d007152a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "89bd19da9661e8db164296ce9fe5fa8a4d4679ec20899ca2530984fdfd2f0c16"
+}

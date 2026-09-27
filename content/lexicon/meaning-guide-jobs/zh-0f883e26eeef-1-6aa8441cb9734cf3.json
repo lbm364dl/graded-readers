@@ -1,0 +1,31 @@
+{
+  "id": "zh-0f883e26eeef-1-6aa8441cb9734cf3",
+  "entry_id": "zh-0f883e26eeef-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-0f883e26eeef-1",
+      "headword": "点火",
+      "kind": "word",
+      "reading": "diǎnhuǒ",
+      "senses": [
+        {
+          "id": "zh-0f883e26eeef-1-s1",
+          "definition": "to ignite or set alight"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "夜里大风忽起，官军一齐点火并攻入营寨，黄巾军惊慌逃散。",
+        "gloss": "to set fire",
+        "sense_id": "zh-0f883e26eeef-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bd4d8a36e51544aa767dd5a498a6ce1376d13c8243c7970ddd1c0b4d804f06bf"
+}

@@ -16,8 +16,12 @@ import jieba
 import jieba.posseg as pseg
 from pypinyin import Style, lazy_pinyin
 
-from pipeline.agent_harness import ChapterHarness, CodexRunner, ROOT, split_annotation_chunks
+from pipeline.agent_harness import (
+    CHINESE_PINYIN_POLICY, ChapterHarness, CodexRunner, ROOT,
+    split_annotation_chunks,
+)
 from pipeline.annotate_chinese import atomic_json, sha256_bytes, utc_now
+from pipeline.chinese_translation_policy import CHINESE_TRANSLATION_POLICY
 from src.config import ALL_PUNCTUATION
 from src.segmentation.segmenter import ChineseSegmenter
 
@@ -234,8 +238,25 @@ meaning for lexical items. Punctuation/whitespace must have type punctuation and
 pinyin/meaning. Use particle only for grammatical particles, name for proper names, and
 idiom only when the entire fixed surface is a real lexicalized idiom; otherwise word.
 
+{CHINESE_PINYIN_POLICY}
+{CHINESE_TRANSLATION_POLICY}
+
 Add genuinely useful grammar overlays (constructions, not ordinary sentence
-translations). Directional and resultative complements that materially shape a
+translations). A dictionary definition or link does not replace contextual help:
+explain a non-obvious grammatical role or participation in a larger construction
+when short token translations alone would leave its interpretation unclear.
+Keep nested dropdown parts at meaningful word boundaries too: do not give an
+individual character the conventional meaning of its whole compound. A multi-
+character word can have its own internal explanation in the dictionary; the
+reader's component list should not destroy that word merely to show characters.
+Dictionary character explanations and contextual dropdowns need not use identical
+granularity. Prefer established word components in dropdowns, but keep useful
+construction groupings rather than mechanically copying every dictionary split.
+Assign each gloss to its actual component, not the whole construction: a negative
+branch of an A-not-A question is negative, not itself a question. Constrain glosses
+by context (an attack from three directions is not merely an attack from both
+sides), and avoid unsupported specificity such as public meaning official.
+Directional and resultative complements that materially shape a
 predicate are high priority, even when fixed boundaries keep the verb and complement
 as separate tokens. Explain the main verb, the complement's contribution, and their
 combined contextual meaning; never give the complement the whole predicate's gloss.
@@ -350,7 +371,11 @@ return start_index=12,end_index=14 even if their text begins at character 19.
 Replacement text concatenated must exactly equal the replaced source text. Patches
 must be sorted and non-overlapping. Split compositional phrases into dictionary
 words and particles; merge genuine compounds, idioms, complete names, and compact
-learner-facing verb-complement predicates. Meanings
+learner-facing verb-complement predicates. Never fuse a personal name with its
+following verb, or a subject with its description, into one dictionary word.
+Do not legitimize clipped place/weapon/name fragments by inventing definitions;
+each lexical component must actually contribute the meaning attributed to it.
+Meanings
 explain only the tapped segment in context. Return the complete corrected set of
 genuine localized grammar overlays; treat meaning-changing directional/resultative
 complements as high-value grammar rather than optional detail. Omit clause summaries
@@ -358,6 +383,8 @@ and lexical paraphrases. Every overlay needs a concise lowercase
 grammar_candidate_key. It is only a provisional clustering hint, not a canonical
 lesson ID; preserve existing keys unless an explicit grammar finding requires
 replacing the overlay.
+{CHINESE_PINYIN_POLICY}
+{CHINESE_TRANSLATION_POLICY}
 Patch only exact surfaces named by INDEPENDENT REVIEW FINDINGS. Do not improve
 unmentioned tokens. Change grammar overlays only for explicit grammar findings;
 otherwise return the existing overlays unchanged.
@@ -679,7 +706,7 @@ def parser() -> argparse.ArgumentParser:
     value.add_argument("--input", required=True)
     value.add_argument("--output-dir", required=True)
     value.add_argument("--level", default="hsk4")
-    value.add_argument("--model", default="gpt-5.6-luna")
+    value.add_argument("--model", default="gpt-6-luna")
     value.add_argument("--effort", default="low")
     value.add_argument("--chunk-size", type=int, default=200)
     value.add_argument("--chunk-maximum", type=int)

@@ -1,0 +1,31 @@
+{
+  "id": "zh-8b6ff498515b-1-f830f4b530203139",
+  "entry_id": "zh-8b6ff498515b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8b6ff498515b-1",
+      "headword": "时间",
+      "kind": "word",
+      "reading": "shíjiān",
+      "senses": [
+        {
+          "id": "zh-8b6ff498515b-1-s1",
+          "definition": "time; a point or period at which something happens"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "卢植让刘备带本部人马，再带一千官军到颍川，联络皇甫嵩、朱隽，约好时间一起进攻。",
+        "gloss": "time",
+        "sense_id": "zh-8b6ff498515b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d305e7b43ab415da4f739ae34e37eb16b421197dbd17a6a35cb80f45a47fd5c5"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-c638e15f5b9f-1-1a7236921e4d73f6",
+  "entry_id": "zh-c638e15f5b9f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c638e15f5b9f-1",
+      "headword": "向着",
+      "kind": "word",
+      "reading": "xiàngzhe",
+      "senses": [
+        {
+          "id": "zh-c638e15f5b9f-1-s1",
+          "definition": "face or be oriented toward"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角说：“民心已经向着我们，现在应当行动。",
+        "gloss": "be oriented toward",
+        "sense_id": "zh-c638e15f5b9f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4715cbb60eff2d34c24353c38aa10feab153de627a852179778f721a2c51048b"
+}

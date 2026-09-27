@@ -1,0 +1,31 @@
+{
+  "id": "zh-50272827b8e2-1-a35d1b7b575d3df8",
+  "entry_id": "zh-50272827b8e2-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-50272827b8e2-1",
+      "headword": "放",
+      "kind": "word",
+      "reading": "fàng",
+      "senses": [
+        {
+          "id": "zh-50272827b8e2-1-s1",
+          "definition": "release or set off"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "二更后，伏兵一齐放火，两人各带军队攻入营中。",
+        "gloss": "set off",
+        "sense_id": "zh-50272827b8e2-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6a4a43db9c3cdc96d3e1dfb0caae421aa4eaf58f4df1f10882bf3ef7f94acc20"
+}

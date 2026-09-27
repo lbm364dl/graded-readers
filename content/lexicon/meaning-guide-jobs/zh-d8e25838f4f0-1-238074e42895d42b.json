@@ -1,0 +1,31 @@
+{
+  "id": "zh-d8e25838f4f0-1-238074e42895d42b",
+  "entry_id": "zh-d8e25838f4f0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d8e25838f4f0-1",
+      "headword": "悄悄",
+      "kind": "word",
+      "reading": "qiāoqiāo",
+      "senses": [
+        {
+          "id": "zh-d8e25838f4f0-1-s1",
+          "definition": "quietly and secretly; without attracting attention"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他们让人准备草把，悄悄安排在四周。",
+        "gloss": "secretly",
+        "sense_id": "zh-d8e25838f4f0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0ace59fded4f8821a6de5e6aae852fbed1e0902d08fda8e869cf77517d69d745"
+}

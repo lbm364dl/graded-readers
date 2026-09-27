@@ -1,0 +1,31 @@
+{
+  "id": "zh-d02bb28b31ee-1-e0645466db7a0beb",
+  "entry_id": "zh-d02bb28b31ee-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d02bb28b31ee-1",
+      "headword": "军人",
+      "kind": "word",
+      "reading": "jūnrén",
+      "senses": [
+        {
+          "id": "zh-d02bb28b31ee-1-s1",
+          "definition": "a member of the military"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞听完大怒，要杀押送卢植的军人。",
+        "gloss": "soldiers",
+        "sense_id": "zh-d02bb28b31ee-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9922f114ea2939d6d12731c3bbe78bc6e126973ddb15221768f11126cea4e3ea"
+}

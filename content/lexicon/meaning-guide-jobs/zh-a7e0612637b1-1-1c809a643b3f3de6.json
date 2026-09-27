@@ -1,0 +1,31 @@
+{
+  "id": "zh-a7e0612637b1-1-1c809a643b3f3de6",
+  "entry_id": "zh-a7e0612637b1-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a7e0612637b1-1",
+      "headword": "大败",
+      "kind": "word",
+      "reading": "dàbài",
+      "senses": [
+        {
+          "id": "zh-a7e0612637b1-1-s1",
+          "definition": "suffer a crushing defeat; be badly defeated"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三路夹攻，黄巾军大败，青州也安全了。",
+        "gloss": "suffer a crushing defeat",
+        "sense_id": "zh-a7e0612637b1-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ec8a8bdf5df9b6749f4268ce33777971a987d26e52d20ae14e9c226f31a601a8"
+}

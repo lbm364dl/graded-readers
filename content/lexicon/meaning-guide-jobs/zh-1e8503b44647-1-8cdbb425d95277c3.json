@@ -1,0 +1,31 @@
+{
+  "id": "zh-1e8503b44647-1-8cdbb425d95277c3",
+  "entry_id": "zh-1e8503b44647-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1e8503b44647-1",
+      "headword": "养家",
+      "kind": "construction",
+      "reading": "yǎngjiā",
+      "senses": [
+        {
+          "id": "zh-1e8503b44647-1-s1",
+          "definition": "to provide for one’s family"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他很早失去父亲，依靠手艺养家，也一直孝顺母亲。",
+        "gloss": "to support the family",
+        "sense_id": "zh-1e8503b44647-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2663c9df78b5c09a9945cc98e962c954c19c88692abc0a64065e9c5691514224"
+}

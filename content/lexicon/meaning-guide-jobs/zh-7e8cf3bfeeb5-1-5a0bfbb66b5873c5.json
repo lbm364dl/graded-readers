@@ -1,0 +1,31 @@
+{
+  "id": "zh-7e8cf3bfeeb5-1-5a0bfbb66b5873c5",
+  "entry_id": "zh-7e8cf3bfeeb5-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7e8cf3bfeeb5-1",
+      "headword": "走向",
+      "kind": "construction",
+      "reading": "zǒuxiàng",
+      "senses": [
+        {
+          "id": "zh-7e8cf3bfeeb5-1-s1",
+          "definition": "to go toward a place or person"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”说完，他提刀走向董卓的帐篷。",
+        "gloss": "to walk toward",
+        "sense_id": "zh-7e8cf3bfeeb5-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c3051c381dde0a4aa49290f5b90eb43df291be6507d47cd8fcc94d6c84f1fdcb"
+}

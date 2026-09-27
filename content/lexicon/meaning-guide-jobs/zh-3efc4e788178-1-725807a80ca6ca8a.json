@@ -1,0 +1,31 @@
+{
+  "id": "zh-3efc4e788178-1-725807a80ca6ca8a",
+  "entry_id": "zh-3efc4e788178-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-3efc4e788178-1",
+      "headword": "豪强",
+      "kind": "word",
+      "reading": "háoqiáng",
+      "senses": [
+        {
+          "id": "zh-3efc4e788178-1-s1",
+          "definition": "a powerful local person or group that uses its influence to dominate others"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "因杀了仗势欺人的豪强，在外逃难五六年。",
+        "gloss": "powerful local bully",
+        "sense_id": "zh-3efc4e788178-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bc8e24437f6756f10fdbbcc2a0c3bb1ddd63c1b321a12e879d120058ac11d109"
+}

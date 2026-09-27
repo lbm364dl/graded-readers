@@ -1,0 +1,31 @@
+{
+  "id": "zh-4af4ba121b86-1-149a0199d109611e",
+  "entry_id": "zh-4af4ba121b86-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4af4ba121b86-1",
+      "headword": "围住",
+      "kind": "construction",
+      "reading": "wéizhù",
+      "senses": [
+        {
+          "id": "zh-4af4ba121b86-1-s1",
+          "definition": "surround and keep enclosed"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "不久，青州被黄巾军围住。",
+        "gloss": "surround",
+        "sense_id": "zh-4af4ba121b86-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e938d343b36bbcb661ffd80b7c3fbe2c5d3a606b65fa5d79cd394cfe0b31e033"
+}

@@ -1,0 +1,227 @@
+{
+  "id": "zh-3ec82ab67c8d-1-bd66081e0e577db3",
+  "entry_id": "zh-3ec82ab67c8d-1",
+  "reason": "requested",
+  "item": {
+    "entry": {
+      "id": "zh-3ec82ab67c8d-1",
+      "headword": "聚集",
+      "kind": "word",
+      "reading": "jùjí",
+      "senses": [
+        {
+          "id": "zh-3ec82ab67c8d-1-s1",
+          "definition": "to gather or assemble people or things"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角给百姓治病，聚集了很多人。",
+        "gloss": "gather",
+        "sense_id": "zh-3ec82ab67c8d-1-s1"
+      },
+      {
+        "sentence": "又聚集三百多个乡勇。",
+        "gloss": "gather",
+        "sense_id": "zh-3ec82ab67c8d-1-s1"
+      },
+      {
+        "sentence": "后来，他们聚集五百多个乡勇。",
+        "gloss": "gather",
+        "sense_id": "zh-3ec82ab67c8d-1-s1"
+      },
+      {
+        "sentence": "张角给人治病，借此聚集百姓。",
+        "gloss": "gather",
+        "sense_id": "zh-3ec82ab67c8d-1-s1"
+      },
+      {
+        "sentence": "祭礼结束后，他们聚集乡勇，在桃园中喝酒。",
+        "gloss": "gather",
+        "sense_id": "zh-3ec82ab67c8d-1-s1"
+      },
+      {
+        "sentence": "三人谢过商人，打造兵器，配上铠甲，又聚集五百多名乡勇，前去报到。",
+        "gloss": "gather",
+        "sense_id": "zh-3ec82ab67c8d-1-s1"
+      },
+      {
+        "sentence": "祭礼后，他们杀牛摆酒，聚集三百多名乡勇，在桃园中痛快喝酒。",
+        "gloss": "to gather",
+        "sense_id": "zh-3ec82ab67c8d-1-s1"
+      },
+      {
+        "sentence": "他们又聚集五百多名乡勇，去见邹靖。",
+        "gloss": "to gather",
+        "sense_id": "zh-3ec82ab67c8d-1-s1"
+      },
+      {
+        "sentence": "信徒不停增多，张角也从中聚集了许多百姓。",
+        "gloss": "assemble",
+        "sense_id": "zh-3ec82ab67c8d-1-s1"
+      },
+      {
+        "sentence": "祭罢天地，三人杀牛设酒，聚集乡勇三百多人，在桃园中痛饮。",
+        "gloss": "to gather",
+        "sense_id": "zh-3ec82ab67c8d-1-s1"
+      },
+      {
+        "sentence": "三人各置全身铠甲，又聚集五百多名乡勇。",
+        "gloss": "gather",
+        "sense_id": "zh-3ec82ab67c8d-1-s1"
+      },
+      {
+        "sentence": "祭礼后，他们杀牛设酒，聚集三百多名乡勇，在桃园痛饮。",
+        "gloss": "assemble",
+        "sense_id": "zh-3ec82ab67c8d-1-s1"
+      },
+      {
+        "sentence": "三人还为自己配备全身铠甲，又聚集五百多名乡勇，前去见邹靖。",
+        "gloss": "to gather",
+        "sense_id": "zh-3ec82ab67c8d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-3ec82ab67c8d-1",
+    "claim_ids": [
+      "c1",
+      "c2",
+      "c3"
+    ],
+    "structure": "overlapping",
+    "explanation_en": "聚集 means for people or things to gather together, or to assemble them together. 聚 and 集 both contribute the idea of gathering, so the word expresses coming together without assigning the parts separate steps.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "聚",
+        "contribution_en": "Contributes the idea of joining or gathering.",
+        "claim_ids": [
+          "c1"
+        ]
+      },
+      {
+        "text": "集",
+        "contribution_en": "Also contributes the idea of gathering or assembling.",
+        "claim_ids": [
+          "c2"
+        ]
+      }
+    ],
+    "research": {
+      "entry_id": "zh-3ec82ab67c8d-1",
+      "status": "partial",
+      "sources": [
+        {
+          "id": "s1",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=97060&q=1&word=聚",
+          "title": "聚集 — 教育部《重編國語辭典修訂本》",
+          "accessed_at": "2026-09-26",
+          "summary_en": "Defines 聚集 as 集合 and illustrates people gathering, including the examples 喜聚集惡少 and 聚集眾苗子."
+        },
+        {
+          "id": "s2",
+          "url": "https://zdic.net/hans/聚",
+          "title": "聚 — 汉典",
+          "accessed_at": "2026-09-26",
+          "summary_en": "Records a verb meaning for 聚 of joining or gathering, with literary examples. It separately records noun senses including village or settlement and a group, and other verb senses including accumulating and collecting. These separate senses do not establish the history of the compound 聚集."
+        },
+        {
+          "id": "s3",
+          "url": "https://zdic.net/hans/集",
+          "title": "集 — 汉典",
+          "accessed_at": "2026-09-26",
+          "summary_en": "Records 集 as meaning to gather or assemble. It quotes the Shuowen entry describing 雧 as birds in a tree and the Shuowen commentary as saying that meaning extended to gathering generally. The entry also records a bird-perching sense. These statements concern 集, not the formation of 聚集."
+        },
+        {
+          "id": "s4",
+          "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=24041&la=0&powerMode=0",
+          "title": "聚集 — 教育部《國語辭典簡編本》",
+          "accessed_at": "2026-09-26",
+          "summary_en": "Defines 聚集 as 围聚、集合 and gives an example of many fans gathering in a public square."
+        }
+      ],
+      "claims": [
+        {
+          "id": "c1",
+          "text_en": "For the supplied sense, 聚 independently has a recorded verb meaning of joining or gathering. Its separately recorded noun meanings, such as settlement and group, are not needed to explain 聚集.",
+          "source_ids": [
+            "s2"
+          ]
+        },
+        {
+          "id": "c2",
+          "text_en": "集 independently has a recorded meaning of gathering or assembling. The source quotes the Shuowen entry describing 雧 as birds in a tree and its commentary saying that this was extended to gathering generally. This supports a history recorded for 集, not a proven derivation of the compound 聚集.",
+          "source_ids": [
+            "s3"
+          ]
+        },
+        {
+          "id": "c3",
+          "text_en": "The compound 聚集 is defined as 集合, and dictionary examples use it for people gathering. Together with the component entries, this supports the broad paraphrase “gather together”; the sources do not establish a distinct division of meaning between the components.",
+          "source_ids": [
+            "s1",
+            "s2",
+            "s3",
+            "s4"
+          ]
+        }
+      ],
+      "searches": [
+        {
+          "query": "site:dict.revised.moe.edu.tw/dictView.jsp 聚集 教育部 重編國語辭典",
+          "opened_urls": [
+            "https://dict.revised.moe.edu.tw/dictView.jsp?ID=97060&q=1&word=聚"
+          ]
+        },
+        {
+          "query": "site:zdic.net/hans/聚 聚 汉典",
+          "opened_urls": [
+            "https://zdic.net/hans/聚"
+          ]
+        },
+        {
+          "query": "site:zdic.net/hans/集 集 汉典",
+          "opened_urls": [
+            "https://zdic.net/hans/集"
+          ]
+        },
+        {
+          "query": "聚集 词源 古汉语 聚集 词义",
+          "opened_urls": []
+        },
+        {
+          "query": "(direct open)",
+          "opened_urls": [
+            "https://dict.revised.moe.edu.tw/dictView.jsp?ID=97060&q=1&word=聚",
+            "https://zdic.net/hans/聚",
+            "https://zdic.net/hans/集",
+            "https://dict.concised.moe.edu.tw/dictView.jsp?ID=24041&la=0&powerMode=0"
+          ]
+        }
+      ],
+      "gaps": [
+        "The opened sources do not establish a specific historical path for forming 聚集 or a distinct contribution of each component within the compound. Older senses of 聚 and the recorded history of 集 do not by themselves prove either point."
+      ]
+    },
+    "input_fingerprint": "7d094229e8dcaa8dd6dc046f364f734de9b161dd6aca98a6130e68e4f77f1567",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "partial",
+    "editorial_route": "cached_research",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [
+    {
+      "entry_id": "zh-3ec82ab67c8d-1",
+      "id": "hsk2-reader-juji-nuances",
+      "reason": "The learner finds that saying 聚 and 集 both mean gather does not help. Explain supported differences in their usual uses and their overlap within 聚集 in plain concrete English. Do not invent a two-step process or a precise contrast. Existing research is in previous_guide: investigate only the missing contribution question, not the entire word history. Record any remaining meaningful gap as investigation_questions with component and question.",
+      "force_research": true
+    }
+  ],
+  "status": "reviewed",
+  "result_digest": "2355dc59a1b36acf6ce4203e1acc387bfc30397cc4f7b750a28d0e41c18b12fc"
+}

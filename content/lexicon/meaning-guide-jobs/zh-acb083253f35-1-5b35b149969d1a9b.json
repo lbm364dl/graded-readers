@@ -1,0 +1,41 @@
+{
+  "id": "zh-acb083253f35-1-5b35b149969d1a9b",
+  "entry_id": "zh-acb083253f35-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-acb083253f35-1",
+      "headword": "听说",
+      "kind": "construction",
+      "reading": "tīngshuō",
+      "senses": [
+        {
+          "id": "zh-acb083253f35-1-s1",
+          "definition": "hear or learn that something is the case"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "到了颍川，刘备听说皇甫嵩、朱隽正在和黄巾军交战。",
+        "gloss": "hear that",
+        "sense_id": "zh-acb083253f35-1-s1"
+      },
+      {
+        "sentence": "如今听说这里招军破贼，便来投军。",
+        "gloss": "to hear that",
+        "sense_id": "zh-acb083253f35-1-s1"
+      },
+      {
+        "sentence": "刘备之前跟卢植学习，听说老师正在广宗和黄巾军作战，便想去帮助他。",
+        "gloss": "hear that",
+        "sense_id": "zh-acb083253f35-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ecc0cd7a21cd271dacf900e7009a01c16ba65dc69d2d0ba86737e74880a23ba7"
+}

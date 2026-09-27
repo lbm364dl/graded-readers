@@ -1,0 +1,32 @@
+{
+  "type": "object", "additionalProperties": false,
+  "required": ["entry_id", "status", "sources", "claims", "searches", "gaps"],
+  "properties": {
+    "entry_id": {"type": "string"},
+    "status": {"type": "string", "enum": ["supported", "partial", "unresolved"]},
+    "sources": {"type": "array", "items": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "url", "title", "accessed_at", "summary_en"],
+      "properties": {
+        "id": {"type": "string"}, "url": {"type": "string"},
+        "title": {"type": "string"}, "accessed_at": {"type": "string"},
+        "summary_en": {"type": "string"}
+      }
+    }},
+    "claims": {"type": "array", "items": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "text_en", "source_ids"],
+      "properties": {
+        "id": {"type": "string"}, "text_en": {"type": "string"},
+        "source_ids": {"type": "array", "items": {"type": "string"}}
+      }
+    }},
+    "searches": {"type": "array", "items": {
+      "type": "object", "additionalProperties": false,
+      "required": ["query", "opened_urls"],
+      "properties": {"query": {"type": "string"},
+        "opened_urls": {"type": "array", "items": {"type": "string"}}}
+    }},
+    "gaps": {"type": "array", "items": {"type": "string"}}
+  }
+}

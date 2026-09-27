@@ -1,0 +1,46 @@
+{
+  "id": "zh-2f9ed1c568d9-1-76d137cba417e819",
+  "entry_id": "zh-2f9ed1c568d9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2f9ed1c568d9-1",
+      "headword": "温德殿",
+      "kind": "name",
+      "reading": "Wēndé Diàn",
+      "senses": [
+        {
+          "id": "zh-2f9ed1c568d9-1-s1",
+          "definition": "Wende Hall"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "建宁二年四月十五日，皇帝坐在温德殿。",
+        "gloss": "Wende Hall",
+        "sense_id": "zh-2f9ed1c568d9-1-s1"
+      },
+      {
+        "sentence": "后来雌鸡变成雄鸡，黑气飞进温德殿，玉堂出现彩虹，五原山岸也崩裂。",
+        "gloss": "Wende Hall",
+        "sense_id": "zh-2f9ed1c568d9-1-s1"
+      },
+      {
+        "sentence": "建宁二年四月十五日，灵帝登上温德殿，刚坐下，殿角忽然刮起狂风。",
+        "gloss": "Wende Hall",
+        "sense_id": "zh-2f9ed1c568d9-1-s1"
+      },
+      {
+        "sentence": "六月初一，十余丈的黑气飞入温德殿。",
+        "gloss": "Wende Palace",
+        "sense_id": "zh-2f9ed1c568d9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7bea8a85a26af9ace747037e64290dfcce198471c32f4906e1a1f70d595f3a7d"
+}

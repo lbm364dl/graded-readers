@@ -1,0 +1,31 @@
+{
+  "id": "zh-cd63c1887992-1-a825d5c216bde0e7",
+  "entry_id": "zh-cd63c1887992-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-cd63c1887992-1",
+      "headword": "懈怠",
+      "kind": "word",
+      "reading": "xièdài",
+      "senses": [
+        {
+          "id": "zh-cd63c1887992-1-s1",
+          "definition": "slack; negligent"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "左丰怀恨回报，诬告卢植筑高墙却不作战，使军心懈怠。",
+        "gloss": "slack; negligent",
+        "sense_id": "zh-cd63c1887992-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ef87b53255b5f711b1f70f400c384319518c87d7c61f5ab0f85ff8d659c1f2eb"
+}

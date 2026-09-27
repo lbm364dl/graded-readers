@@ -1,0 +1,31 @@
+{
+  "id": "zh-222bb32d72d5-1-6007847d055f429e",
+  "entry_id": "zh-222bb32d72d5-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-222bb32d72d5-1",
+      "headword": "起义",
+      "kind": "word",
+      "reading": "qǐyì",
+      "senses": [
+        {
+          "id": "zh-222bb32d72d5-1-s1",
+          "definition": "to rise in rebellion"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "汉朝自高祖斩白蛇起义，一统天下；后来光武中兴，传到献帝，终于分为三国。",
+        "gloss": "to rise in rebellion",
+        "sense_id": "zh-222bb32d72d5-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9337f9718fcce733e463236b4a2cf9cd3330843c321a160ab5b37ddad908d88c"
+}

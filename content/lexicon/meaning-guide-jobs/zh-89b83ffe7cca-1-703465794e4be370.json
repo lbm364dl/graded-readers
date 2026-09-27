@@ -1,0 +1,31 @@
+{
+  "id": "zh-89b83ffe7cca-1-703465794e4be370",
+  "entry_id": "zh-89b83ffe7cca-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-89b83ffe7cca-1",
+      "headword": "装",
+      "kind": "word",
+      "reading": "zhuāng",
+      "senses": [
+        {
+          "id": "zh-89b83ffe7cca-1-s1",
+          "definition": "to fit or equip something with a part or accessory"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军惊慌，马来不及装鞍，人来不及穿甲，四散逃跑。",
+        "gloss": "fit; put on",
+        "sense_id": "zh-89b83ffe7cca-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "70560142c84e2662598d395907a44983bd6878972187b5fba0c1ec14a56dfbc0"
+}

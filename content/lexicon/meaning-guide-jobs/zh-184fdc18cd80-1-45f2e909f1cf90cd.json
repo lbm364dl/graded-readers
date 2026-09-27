@@ -1,0 +1,31 @@
+{
+  "id": "zh-184fdc18cd80-1-45f2e909f1cf90cd",
+  "entry_id": "zh-184fdc18cd80-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-184fdc18cd80-1",
+      "headword": "戮",
+      "kind": "word",
+      "reading": "lù",
+      "senses": [
+        {
+          "id": "zh-184fdc18cd80-1-s1",
+          "definition": "to kill"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇天后土，实鉴此心；背义忘恩，天人共戮。",
+        "gloss": "to kill",
+        "sense_id": "zh-184fdc18cd80-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ca3486ba8a0ba3358a18d1952f1e3ad43a05f14f0033665fedea4741c7c924a8"
+}

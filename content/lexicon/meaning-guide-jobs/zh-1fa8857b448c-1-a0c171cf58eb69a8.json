@@ -1,0 +1,36 @@
+{
+  "id": "zh-1fa8857b448c-1-a0c171cf58eb69a8",
+  "entry_id": "zh-1fa8857b448c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1fa8857b448c-1",
+      "headword": "放火",
+      "kind": "word",
+      "reading": "fàng huǒ",
+      "senses": [
+        {
+          "id": "zh-1fa8857b448c-1-s1",
+          "definition": "start a fire deliberately"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "夜里风突然变大，士兵同时放火。",
+        "gloss": "set fire",
+        "sense_id": "zh-1fa8857b448c-1-s1"
+      },
+      {
+        "sentence": "二更后，伏兵一齐放火，两人各带军队攻入营中。",
+        "gloss": "start a fire deliberately",
+        "sense_id": "zh-1fa8857b448c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d18ec135381234160d55ff5077c212ae92548a235da57bfb5d7988ecab1c7ad7"
+}

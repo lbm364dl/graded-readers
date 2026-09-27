@@ -1,0 +1,31 @@
+{
+  "id": "zh-0bb7b18da597-1-26ffcb91a8c8b7a6",
+  "entry_id": "zh-0bb7b18da597-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-0bb7b18da597-1",
+      "headword": "立刻",
+      "kind": "word",
+      "reading": "lìkè",
+      "senses": [
+        {
+          "id": "zh-0bb7b18da597-1-s1",
+          "definition": "immediately; at once"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人立刻冲上去，把黄巾军打退，救下董卓。",
+        "gloss": "immediately",
+        "sense_id": "zh-0bb7b18da597-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6827b0376f16935e0bd49c3f614c40673bc6d1b124b8b3d35f5d1e6bb7d85d44"
+}

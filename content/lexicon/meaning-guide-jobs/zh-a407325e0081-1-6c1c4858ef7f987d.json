@@ -1,0 +1,36 @@
+{
+  "id": "zh-a407325e0081-1-6c1c4858ef7f987d",
+  "entry_id": "zh-a407325e0081-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a407325e0081-1",
+      "headword": "门",
+      "kind": "word",
+      "reading": "mén",
+      "senses": [
+        {
+          "id": "zh-a407325e0081-1-s1",
+          "definition": "a door or gate; an entrance"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "正饮酒时，一个大汉推着一辆车来到店门前休息，进门便叫酒保斟酒，说要赶进城投军。",
+        "gloss": "door",
+        "sense_id": "zh-a407325e0081-1-s1"
+      },
+      {
+        "sentence": "他在城的四门设下十多根五色棒。",
+        "gloss": "gate; door",
+        "sense_id": "zh-a407325e0081-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8e7b50bccf91efcd38803c18a94eb0603cf7fefc89e644e05fcf7e17778b4012"
+}

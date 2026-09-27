@@ -1,0 +1,31 @@
+{
+  "id": "zh-ea397701b61e-1-03b01fc3beaa820c",
+  "entry_id": "zh-ea397701b61e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ea397701b61e-1",
+      "headword": "贫寒",
+      "kind": "word",
+      "reading": "pínhán",
+      "senses": [
+        {
+          "id": "zh-ea397701b61e-1-s1",
+          "definition": "poor; impoverished"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备住在楼桑村，家境贫寒，靠卖草鞋、织席生活。",
+        "gloss": "poor; impoverished",
+        "sense_id": "zh-ea397701b61e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7673b612d5f13a8c7cd09a0a69b22f5111a20e121aae15b2d81ea298de5251e1"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "zh-77f34a38180f-1-e2a922ccbd6cdfbf",
+  "entry_id": "zh-77f34a38180f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-77f34a38180f-1",
+      "headword": "安",
+      "kind": "word",
+      "reading": "ān",
+      "senses": [
+        {
+          "id": "zh-77f34a38180f-1-s1",
+          "definition": "pacify; bring peace to"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备请他们入庄喝酒，说明讨贼安民的愿望。",
+        "gloss": "pacify",
+        "sense_id": "zh-77f34a38180f-1-s1"
+      },
+      {
+        "sentence": "刘备请他们喝酒，说明自己讨贼安民的企图。",
+        "gloss": "to pacify; make safe",
+        "sense_id": "zh-77f34a38180f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "58c028818e406e4baab0750c26fce0ded07fc7b31d758b57bd131f28b88a4eba"
+}

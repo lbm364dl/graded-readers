@@ -1,0 +1,65 @@
+{
+  "id": "zh-1bc709b8bf6c-1-0767e50c8f41ed5d",
+  "entry_id": "zh-1bc709b8bf6c-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-1bc709b8bf6c-1",
+      "headword": "还",
+      "kind": "word",
+      "reading": "hái",
+      "senses": [
+        {
+          "id": "zh-1bc709b8bf6c-1-s1",
+          "definition": "also; in addition"
+        },
+        {
+          "id": "zh-1bc709b8bf6c-1-s2",
+          "definition": "still; yet, continuing up to the present or a stated point"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "还送来钱和铁。",
+        "gloss": "also",
+        "sense_id": "zh-1bc709b8bf6c-1-s1"
+      },
+      {
+        "sentence": "还发誓同心救民。",
+        "gloss": "also",
+        "sense_id": "zh-1bc709b8bf6c-1-s1"
+      },
+      {
+        "sentence": "他让人传播“苍天已死，黄天当立”和“岁在甲子，天下大吉”，还用白土在家门上写“甲子”。",
+        "gloss": "also",
+        "sense_id": "zh-1bc709b8bf6c-1-s1"
+      },
+      {
+        "sentence": "我说军粮还不够，哪里有钱送给他？",
+        "gloss": "still; yet",
+        "sense_id": "zh-1bc709b8bf6c-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-1bc709b8bf6c-1",
+    "structure": "single_component",
+    "explanation_en": "还 adds something to what has already been mentioned, signaling that it too is included or happens in addition. It modifies the statement rather than naming the added item.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "还",
+        "contribution_en": "Signals that something is also included or happens in addition."
+      }
+    ],
+    "input_fingerprint": "cffe2ad0ec1824a8fb93814d3ac90f92c7858b1ac428157618d5939c01d177a9",
+    "revision": 1,
+    "editorial_policy": 2,
+    "evidence_status": "legacy_unresearched"
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d26afa3e6d4640bab0b72ed667db99eb879b1974d634881c5c46b1173b464c46"
+}

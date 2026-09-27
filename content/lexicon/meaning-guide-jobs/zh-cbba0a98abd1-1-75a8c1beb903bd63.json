@@ -1,0 +1,31 @@
+{
+  "id": "zh-cbba0a98abd1-1-75a8c1beb903bd63",
+  "entry_id": "zh-cbba0a98abd1-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-cbba0a98abd1-1",
+      "headword": "住",
+      "kind": "word",
+      "reading": "zhù",
+      "senses": [
+        {
+          "id": "zh-cbba0a98abd1-1-s1",
+          "definition": "live; reside"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他住在涿县，平时卖鞋和草席。",
+        "gloss": "live",
+        "sense_id": "zh-cbba0a98abd1-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d3efcfac25f54976d0b54861c6e0d8a63684c17b9b8967fe84d869045a5276b5"
+}

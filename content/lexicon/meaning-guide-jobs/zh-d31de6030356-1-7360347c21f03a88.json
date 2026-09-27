@@ -1,0 +1,31 @@
+{
+  "id": "zh-d31de6030356-1-7360347c21f03a88",
+  "entry_id": "zh-d31de6030356-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d31de6030356-1",
+      "headword": "草把",
+      "kind": "word",
+      "reading": "cǎobǎ",
+      "senses": [
+        {
+          "id": "zh-d31de6030356-1-s1",
+          "definition": "a bundle of grass or straw"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他们让人准备草把，悄悄安排在四周。",
+        "gloss": "straw bundles",
+        "sense_id": "zh-d31de6030356-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "be0dc89c9a9bb78f8ba714043513b089d33f05018a59ce76f978780e49095aa3"
+}

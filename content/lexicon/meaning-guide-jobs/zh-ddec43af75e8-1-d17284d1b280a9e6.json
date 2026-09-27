@@ -1,0 +1,31 @@
+{
+  "id": "zh-ddec43af75e8-1-d17284d1b280a9e6",
+  "entry_id": "zh-ddec43af75e8-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ddec43af75e8-1",
+      "headword": "奸雄",
+      "kind": "word",
+      "reading": "jiānxióng",
+      "senses": [
+        {
+          "id": "zh-ddec43af75e8-1-s1",
+          "definition": "an ambitious and unscrupulous person of ability"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "许劭起初不肯回答，后来才说，他是太平时的能臣，乱世中的奸雄。",
+        "gloss": "ambitious schemer",
+        "sense_id": "zh-ddec43af75e8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "dceb99ba7360b7645b74982e3b259c78f37de096f50ac2e0ed547ac9ab34f8c6"
+}

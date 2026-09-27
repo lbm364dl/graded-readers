@@ -1,0 +1,31 @@
+{
+  "id": "zh-f48551bc8b4d-1-2bcb3b9b6f66c55b",
+  "entry_id": "zh-f48551bc8b4d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f48551bc8b4d-1",
+      "headword": "非",
+      "kind": "word",
+      "reading": "fēi",
+      "senses": [
+        {
+          "id": "zh-f48551bc8b4d-1-s1",
+          "definition": "not"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "叔父刘元起听后很惊讶，认为他非同常人，因他家贫，常常资助他。",
+        "gloss": "not",
+        "sense_id": "zh-f48551bc8b4d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2eebd4bdc81bd184264b06177bf398251ed1f505ec355b78abacc77508f827b4"
+}

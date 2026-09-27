@@ -13,9 +13,11 @@ import '../services/etymology_service.dart';
 import '../services/glyph_service.dart';
 import '../services/progress_service.dart';
 import '../services/segmenter.dart';
+import '../services/chinese_reading_units.dart';
 import '../services/vocabulary_service.dart';
 import '../widgets/content_width.dart';
 import '../widgets/copy_text_button.dart';
+import 'usage_dictionary_screen.dart';
 
 TextStyle _cjkTextStyle({
   required double fontSize,
@@ -718,12 +720,20 @@ class _TokenEntry {
 }
 
 class _TappedWord {
+  final int? usageStartOffset;
+  final String usageSource;
+  final String usageSourceText;
+  final int usageSegmentIndex;
   final String surface;
   final AgentSegment? agent;
   final List<AgentGrammarOverlay> grammar;
   final List<_TappedWord> nestedAgentTargets;
 
   const _TappedWord({
+    this.usageStartOffset,
+    this.usageSource = '',
+    this.usageSourceText = '',
+    this.usageSegmentIndex = -1,
     required this.surface,
     this.agent,
     this.grammar = const [],
@@ -757,11 +767,13 @@ class _ParagraphData {
 // ---------------------------------------------------------------------------
 
 class ReaderScreen extends StatefulWidget {
+  final int? initialCharacterOffset;
   final Reader reader;
   final int initialChapter;
 
   const ReaderScreen({
     super.key,
+    this.initialCharacterOffset,
     required this.reader,
     required this.initialChapter,
   });
@@ -835,15 +847,16 @@ class _ReaderScreenState extends State<ReaderScreen> {
         paragraphText.clear();
       }
 
-      final japaneseUnits = widget.reader.language == Language.japanese
+      final displayUnits = widget.reader.language == Language.japanese
           ? buildJapaneseDisplayUnits(annotation)
-          : const <JapaneseDisplayUnit>[];
-      final japaneseUnitsByStart = {
-        for (final unit in japaneseUnits) unit.firstSegment: unit,
+          : (await ChineseReadingUnits.load())
+              .forAnnotation(ch.annotationAsset, annotation);
+      final displayUnitsByStart = {
+        for (final unit in displayUnits) unit.firstSegment: unit,
       };
       var segmentIndex = 0;
       while (segmentIndex < annotation.segments.length) {
-        final unit = japaneseUnitsByStart[segmentIndex];
+        final unit = displayUnitsByStart[segmentIndex];
         final segment = unit?.segment ?? annotation.segments[segmentIndex];
         final start = offset;
         final end = start + segment.text.length;
@@ -856,14 +869,21 @@ class _ReaderScreenState extends State<ReaderScreen> {
           continue;
         }
         final tappable = segment.type != 'punctuation';
-        final grammar = unit != null
-            ? [unit.grammar]
-            : japaneseGrammarForSegment(
-                segment: segment,
+        final grammar = widget.reader.language == Language.chinese
+            ? chineseGrammarForSpan(
                 start: start,
                 end: end,
                 overlays: annotation.grammarOverlays,
-              );
+                readingUnitGrammar: unit?.grammar,
+              )
+            : unit != null
+                ? [unit.grammar]
+                : japaneseGrammarForSegment(
+                    segment: segment,
+                    start: start,
+                    end: end,
+                    overlays: annotation.grammarOverlays,
+                  );
         paragraphTokens.add(_TokenEntry(
           text: segment.text,
           isCjk: segment.text.isNotEmpty && _isCJK(segment.text.codeUnitAt(0)),
@@ -880,20 +900,34 @@ class _ReaderScreenState extends State<ReaderScreen> {
               final nestedEnd = nestedStart + original.text.length;
               if (original.type != 'punctuation') {
                 nestedAgentTargets.add(_TappedWord(
+                  usageSource: ch.annotationAsset,
+                  usageSourceText: ch.content,
+                  usageSegmentIndex: i,
+                  usageStartOffset: nestedStart,
                   surface: original.text,
                   agent: original,
-                  grammar: japaneseGrammarForSegment(
-                    segment: original,
-                    start: nestedStart,
-                    end: nestedEnd,
-                    overlays: annotation.grammarOverlays,
-                  ),
+                  grammar: widget.reader.language == Language.chinese
+                      ? chineseGrammarForSpan(
+                          start: nestedStart,
+                          end: nestedEnd,
+                          overlays: annotation.grammarOverlays,
+                        )
+                      : japaneseGrammarForSegment(
+                          segment: original,
+                          start: nestedStart,
+                          end: nestedEnd,
+                          overlays: annotation.grammarOverlays,
+                        ),
                 ));
               }
               nestedStart = nestedEnd;
             }
           }
           words.add(_TappedWord(
+            usageStartOffset: start,
+            usageSource: ch.annotationAsset,
+            usageSourceText: ch.content,
+            usageSegmentIndex: segmentIndex,
             surface: segment.text,
             agent: segment,
             grammar: grammar,
@@ -1054,7 +1088,9 @@ class _ReaderScreenState extends State<ReaderScreen> {
 
     if (!mounted) return;
 
-    final chapter = (savedProgress?.chapter ?? widget.initialChapter)
+    final chapter = (widget.initialCharacterOffset != null
+            ? widget.initialChapter
+            : savedProgress?.chapter ?? widget.initialChapter)
         .clamp(0, widget.reader.chapters.length - 1);
     final scrollFraction = savedProgress?.scrollFraction ?? 0.0;
 
@@ -1223,6 +1259,9 @@ class _ReaderScreenState extends State<ReaderScreen> {
                   return const Center(child: CircularProgressIndicator());
                 }
                 return _ChapterView(
+                  initialCharacterOffset: index == widget.initialChapter
+                      ? widget.initialCharacterOffset
+                      : null,
                   chapter: chapter,
                   fontSize: _fontSize,
                   isDark: isDark,
@@ -1320,6 +1359,7 @@ class _ChapterSegmented {
 // ---------------------------------------------------------------------------
 
 class _ChapterView extends StatefulWidget {
+  final int? initialCharacterOffset;
   final _ChapterSegmented chapter;
   final double fontSize;
   final bool isDark;
@@ -1332,6 +1372,7 @@ class _ChapterView extends StatefulWidget {
   final ValueChanged<double> onScrollFractionChanged;
 
   const _ChapterView({
+    this.initialCharacterOffset,
     required this.chapter,
     required this.fontSize,
     required this.isDark,
@@ -1349,6 +1390,7 @@ class _ChapterView extends StatefulWidget {
 }
 
 class _ChapterViewState extends State<_ChapterView> {
+  final _sourceParagraphKey = GlobalKey();
   final Map<int, TapGestureRecognizer> _recognizers = {};
   late ScrollController _scrollController;
   bool _restoredScroll = false;
@@ -1378,6 +1420,20 @@ class _ChapterViewState extends State<_ChapterView> {
 
   void _restoreScroll() {
     if (_restoredScroll) return;
+    final target = _sourceParagraphKey.currentContext;
+    if (widget.initialCharacterOffset != null && target != null) {
+      _restoredScroll = true;
+      Scrollable.ensureVisible(target, alignment: 0.15);
+      for (final paragraph in widget.chapter.paragraphs) {
+        for (final token in paragraph.tokens) {
+          if (token.startOffset <= widget.initialCharacterOffset! &&
+              widget.initialCharacterOffset! < token.endOffset) {
+            widget.highlightedIndex.value = token.globalIndex;
+          }
+        }
+      }
+      return;
+    }
     _restoredScroll = true;
     if (widget.initialScrollFraction > 0 &&
         _scrollController.hasClients &&
@@ -1512,8 +1568,16 @@ class _ChapterViewState extends State<_ChapterView> {
                         ),
                       ),
                     ],
-                    ...widget.chapter.paragraphs
-                        .map((p) => _buildParagraph(p, highlightIdx)),
+                    ...widget.chapter.paragraphs.map((p) => Container(
+                        key: widget.initialCharacterOffset != null &&
+                                p.tokens.any((t) =>
+                                    t.startOffset <=
+                                        widget.initialCharacterOffset! &&
+                                    widget.initialCharacterOffset! <
+                                        t.endOffset)
+                            ? _sourceParagraphKey
+                            : null,
+                        child: _buildParagraph(p, highlightIdx))),
                   ],
                 ),
               ),
@@ -2383,6 +2447,15 @@ class _AgentDefinitionSheetState extends State<_AgentDefinitionSheet> {
                     _agent.meaningEn,
                     style: TextStyle(fontSize: 15, height: 1.45, color: muted),
                   ),
+                  if (_word.usageSource.isNotEmpty)
+                    UsageDictionaryLink(
+                        startOffset: _word.usageStartOffset,
+                        surface: _agent.text,
+                        reading: _agent.pinyin,
+                        gloss: _agent.meaningEn,
+                        source: _word.usageSource,
+                        segmentIndex: _word.usageSegmentIndex,
+                        sourceText: _word.usageSourceText),
                   if (widget.language == Language.japanese)
                     _buildJapaneseFormSummary(muted),
                   if (_agent.storyTermMeaningEn.isNotEmpty &&
@@ -2458,6 +2531,20 @@ class _AgentDefinitionSheetState extends State<_AgentDefinitionSheet> {
                                   fontSize: 14, height: 1.4, color: muted),
                             ),
                           )),
+                  ],
+                  if (widget.language == Language.chinese &&
+                      _word.nestedAgentTargets.isNotEmpty) ...[
+                    const SizedBox(height: 12),
+                    const Text('Components'),
+                    for (final part in _word.nestedAgentTargets)
+                      ListTile(
+                        key: ValueKey(
+                            'reading-unit-component-${part.usageSegmentIndex}'),
+                        title: Text('${part.surface}  ${part.agent!.pinyin}'),
+                        subtitle: Text(part.agent!.meaningEn),
+                        trailing: const Icon(Icons.chevron_right),
+                        onTap: () => _openNestedAgentTarget(part),
+                      ),
                   ],
                   if (widget.allWords.length > 1) ...[
                     const SizedBox(height: 12),
@@ -3060,6 +3147,21 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
 // ---------------------------------------------------------------------------
 // Simple single-word lookup sheet (for recursive lookups)
 // ---------------------------------------------------------------------------
+
+/// Open the existing character dictionary/etymology view from a structured link.
+Future<void> showDictionaryCharacter(
+    BuildContext context, String character) async {
+  if (character.runes.length != 1) return;
+  await DictionaryService.instance.initialize(language: Language.chinese);
+  if (!context.mounted) return;
+  await showModalBottomSheet<void>(
+    context: context,
+    isScrollControlled: true,
+    useSafeArea: true,
+    showDragHandle: true,
+    builder: (_) => _SingleWordSheet(word: character),
+  );
+}
 
 class _SingleWordSheet extends StatefulWidget {
   final String word;

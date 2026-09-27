@@ -1,0 +1,31 @@
+{
+  "id": "zh-e430d4590fe9-1-30a5447b47474878",
+  "entry_id": "zh-e430d4590fe9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e430d4590fe9-1",
+      "headword": "为首",
+      "kind": "construction",
+      "reading": "wéi shǒu",
+      "senses": [
+        {
+          "id": "zh-e430d4590fe9-1-s1",
+          "definition": "to be at the head; to lead"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "为首的是曹操，字孟德，小字阿瞒，又名吉利。",
+        "gloss": "to be at the head",
+        "sense_id": "zh-e430d4590fe9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1e663ae2cacef2cbc4617c0b7dd95bb2c42467dfabe24dc391caf6c6a4d27bd1"
+}

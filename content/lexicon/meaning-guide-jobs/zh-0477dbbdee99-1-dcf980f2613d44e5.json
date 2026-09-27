@@ -1,0 +1,31 @@
+{
+  "id": "zh-0477dbbdee99-1-dcf980f2613d44e5",
+  "entry_id": "zh-0477dbbdee99-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-0477dbbdee99-1",
+      "headword": "段",
+      "kind": "word",
+      "reading": "duàn",
+      "senses": [
+        {
+          "id": "zh-0477dbbdee99-1-s1",
+          "definition": "a section or piece of something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "程远志来不及防备，被关羽斩成两段。",
+        "gloss": "section; piece",
+        "sense_id": "zh-0477dbbdee99-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8f7c42c696db3e608d320d60d65229eb554db5a75f09d3cb5fca42ba5822ad8a"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-42432e177334-1-73b664fbad5350c9",
+  "entry_id": "zh-42432e177334-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-42432e177334-1",
+      "headword": "降",
+      "kind": "word",
+      "reading": "jiàng",
+      "senses": [
+        {
+          "id": "zh-42432e177334-1-s1",
+          "definition": "to surrender"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他扬鞭喝道：“反国逆贼，为何还不早降？",
+        "gloss": "to surrender",
+        "sense_id": "zh-42432e177334-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2fd335a9336e3a14f9e07803950595605e43bd9ad913faaf69ae5809be4fd4eb"
+}

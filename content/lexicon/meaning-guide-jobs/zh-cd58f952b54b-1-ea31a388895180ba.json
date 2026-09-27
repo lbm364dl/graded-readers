@@ -1,0 +1,31 @@
+{
+  "id": "zh-cd58f952b54b-1-ea31a388895180ba",
+  "entry_id": "zh-cd58f952b54b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-cd58f952b54b-1",
+      "headword": "增多",
+      "kind": "word",
+      "reading": "zēngduō",
+      "senses": [
+        {
+          "id": "zh-cd58f952b54b-1-s1",
+          "definition": "increase in number"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "五百多名弟子到各地传道，信徒逐渐增多。",
+        "gloss": "to increase",
+        "sense_id": "zh-cd58f952b54b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "43b657b69cb5537e7d342be686de8106f0d5999fcac15e1fe21bab9c1a0496be"
+}

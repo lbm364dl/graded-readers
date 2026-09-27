@@ -1,0 +1,31 @@
+{
+  "id": "zh-9e4b98f5277c-2-ce8e471baf208dd1",
+  "entry_id": "zh-9e4b98f5277c-2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9e4b98f5277c-2",
+      "headword": "人少",
+      "kind": "construction",
+      "reading": "rénshǎo",
+      "senses": [
+        {
+          "id": "zh-9e4b98f5277c-2-s1",
+          "definition": "there are few people; to have few people"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备对关羽、张飞说：“敌人多，我们人少，必须用特别的办法才能取胜。",
+        "gloss": "have fewer people",
+        "sense_id": "zh-9e4b98f5277c-2-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "163dc7559462f3a056854d304284ae80f88a2bc16bcdc3da3e01a3c1ccba5060"
+}

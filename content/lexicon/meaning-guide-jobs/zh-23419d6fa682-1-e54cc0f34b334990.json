@@ -1,0 +1,31 @@
+{
+  "id": "zh-23419d6fa682-1-e54cc0f34b334990",
+  "entry_id": "zh-23419d6fa682-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-23419d6fa682-1",
+      "headword": "率领",
+      "kind": "word",
+      "reading": "shuàilǐng",
+      "senses": [
+        {
+          "id": "zh-23419d6fa682-1-s1",
+          "definition": "to lead or command"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他率领打着红旗的军队追上来，挡住了黄巾军的路。",
+        "gloss": "lead",
+        "sense_id": "zh-23419d6fa682-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7fef74c72d47bb902a810b130faf07551b5175db3748e1c9eb4ce3153654618e"
+}

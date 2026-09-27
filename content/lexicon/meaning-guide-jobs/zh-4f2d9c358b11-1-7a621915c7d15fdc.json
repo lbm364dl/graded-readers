@@ -1,0 +1,31 @@
+{
+  "id": "zh-4f2d9c358b11-1-7a621915c7d15fdc",
+  "entry_id": "zh-4f2d9c358b11-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4f2d9c358b11-1",
+      "headword": "未能",
+      "kind": "word",
+      "reading": "wèinéng",
+      "senses": [
+        {
+          "id": "zh-4f2d9c358b11-1-s1",
+          "definition": "be unable to; fail to"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "卢植说，他围住张角，本来将要取胜，却因张角使用妖术，未能立即取胜。",
+        "gloss": "was unable to",
+        "sense_id": "zh-4f2d9c358b11-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2469810f83881bcddcc62de9e48ecb5db427bdbfca17e058ee51b3b070f9aa90"
+}

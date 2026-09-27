@@ -1,0 +1,31 @@
+{
+  "id": "zh-42b313974929-1-7469463aa9464801",
+  "entry_id": "zh-42b313974929-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-42b313974929-1",
+      "headword": "招募",
+      "kind": "word",
+      "reading": "zhāomù",
+      "senses": [
+        {
+          "id": "zh-42b313974929-1-s1",
+          "definition": "to recruit; enlist people"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "愿意出钱招募乡勇。",
+        "gloss": "recruit",
+        "sense_id": "zh-42b313974929-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "042ec5f1c991edeb0125d234d734c47fd71a3dee846d85402d73b36ba624d694"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-d5eba0a695f0-1-3fdd2164373dc9db",
+  "entry_id": "zh-d5eba0a695f0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d5eba0a695f0-1",
+      "headword": "同月",
+      "kind": "word",
+      "reading": "tóngyuè",
+      "senses": [
+        {
+          "id": "zh-d5eba0a695f0-1-s1",
+          "definition": "the same month"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "不求同年同月同日生，但愿同年同月同日死。",
+        "gloss": "the same month",
+        "sense_id": "zh-d5eba0a695f0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c989d7d361faea75b401c49637c7e1661012dfd6442ef8afd6103712dbe6e1bd"
+}

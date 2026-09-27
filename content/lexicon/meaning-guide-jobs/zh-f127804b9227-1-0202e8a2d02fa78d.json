@@ -1,0 +1,109 @@
+{
+  "id": "zh-f127804b9227-1-0202e8a2d02fa78d",
+  "entry_id": "zh-f127804b9227-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-f127804b9227-1",
+      "headword": "没有",
+      "kind": "word",
+      "reading": "méiyǒu",
+      "senses": [
+        {
+          "id": "zh-f127804b9227-1-s1",
+          "definition": "not have; there is not"
+        },
+        {
+          "id": "zh-f127804b9227-1-s2",
+          "definition": "not; fail to / did not"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "可是他没有钱，也没有人。",
+        "gloss": "not have",
+        "sense_id": "zh-f127804b9227-1-s1"
+      },
+      {
+        "sentence": "他因为没有办法为国出力，长长地叹气。",
+        "gloss": "not have",
+        "sense_id": "zh-f127804b9227-1-s1"
+      },
+      {
+        "sentence": "董卓问刘备有没有官职。",
+        "gloss": "whether or not",
+        "sense_id": "zh-f127804b9227-1-s1"
+      },
+      {
+        "sentence": "刘备说自己没有官职，董卓因此看不起三人。",
+        "gloss": "did not have",
+        "sense_id": "zh-f127804b9227-1-s1"
+      },
+      {
+        "sentence": "他想为国家出力，救百姓，只是没有力量，看着榜文不断叹气。",
+        "gloss": "not have",
+        "sense_id": "zh-f127804b9227-1-s1"
+      },
+      {
+        "sentence": "卢植说：“朝廷派来的人向我要钱，我没有同意。",
+        "gloss": "did not",
+        "sense_id": "zh-f127804b9227-1-s2"
+      },
+      {
+        "sentence": "”董卓听后便轻视他们，连礼貌也没有。",
+        "gloss": "not have",
+        "sense_id": "zh-f127804b9227-1-s1"
+      },
+      {
+        "sentence": "可是，他们没有严格保密，消息很快走漏，二人反而因此被害。",
+        "gloss": "did not",
+        "sense_id": "zh-f127804b9227-1-s2"
+      },
+      {
+        "sentence": "张角原是没有考中的读书人。",
+        "gloss": "did not",
+        "sense_id": "zh-f127804b9227-1-s2"
+      },
+      {
+        "sentence": "这天，他见到榜文，想到自己没有力量为国家出力，不能报国，不禁长叹。",
+        "gloss": "not have",
+        "sense_id": "zh-f127804b9227-1-s1"
+      },
+      {
+        "sentence": "他们准备兵器时，却没有马匹。",
+        "gloss": "did not have",
+        "sense_id": "zh-f127804b9227-1-s1"
+      },
+      {
+        "sentence": "董卓问他们担任什么官职，刘备回答：“我们没有官职。",
+        "gloss": "not have",
+        "sense_id": "zh-f127804b9227-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-f127804b9227-1",
+    "structure": "grammatical",
+    "explanation_en": "没有 expresses that something is absent: a person does not have it, or it does not exist. 没 negates 有, which supplies the sense of having or existing.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "没",
+        "contribution_en": "negates the having or existence expressed by 有"
+      },
+      {
+        "text": "有",
+        "contribution_en": "have; exist or be present"
+      }
+    ],
+    "input_fingerprint": "2d3a5ab0e46ed0f3f0ad20d945df471da916bb07cbbe6b37a9d56c6dfeedd2c6",
+    "revision": 1,
+    "editorial_policy": 2,
+    "evidence_status": "legacy_unresearched"
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4ba80c894e39aad5e1d0a21e489c15bf1cfa313eeaabfc667986fff9c58f5479"
+}

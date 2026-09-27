@@ -1,0 +1,31 @@
+{
+  "id": "zh-04ee32c08190-1-8846d31930759912",
+  "entry_id": "zh-04ee32c08190-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-04ee32c08190-1",
+      "headword": "见到",
+      "kind": "construction",
+      "reading": "jiàndào",
+      "senses": [
+        {
+          "id": "zh-04ee32c08190-1-s1",
+          "definition": "to see or encounter"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备在涿县见到招军榜。",
+        "gloss": "see",
+        "sense_id": "zh-04ee32c08190-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6b4e7a911512960c09beb03a85805f3e810a5daa316ef0d77e57f729949ac74e"
+}

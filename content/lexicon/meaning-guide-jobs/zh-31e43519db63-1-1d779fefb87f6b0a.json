@@ -1,0 +1,31 @@
+{
+  "id": "zh-31e43519db63-1-1d779fefb87f6b0a",
+  "entry_id": "zh-31e43519db63-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-31e43519db63-1",
+      "headword": "认为",
+      "kind": "word",
+      "reading": "rènwéi",
+      "senses": [
+        {
+          "id": "zh-31e43519db63-1-s1",
+          "definition": "to think or consider something to be the case"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇帝下诏询问多种灾异的原因，蔡邕上书，认为这是妇人与宦官干政导致的，言辞十分直接。",
+        "gloss": "believe; consider",
+        "sense_id": "zh-31e43519db63-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bc0cc57e9a031c3885ca096deadb322ed603e922509101748c8f4e39ff9f3897"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-9d60f24d450f-1-2bc5f0a9fbf87bb1",
+  "entry_id": "zh-9d60f24d450f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9d60f24d450f-1",
+      "headword": "相持",
+      "kind": "word",
+      "reading": "xiāngchí",
+      "senses": [
+        {
+          "id": "zh-9d60f24d450f-1-s1",
+          "definition": "to oppose one another while holding one's position"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角有十五万军队，卢植有五万人，两边在广宗相持。",
+        "gloss": "remain in stalemate",
+        "sense_id": "zh-9d60f24d450f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ae38c85cbd47921f23259fda592851c56a639663634e6c0cec589aa25a101739"
+}

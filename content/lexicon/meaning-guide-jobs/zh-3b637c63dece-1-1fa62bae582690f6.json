@@ -1,0 +1,31 @@
+{
+  "id": "zh-3b637c63dece-1-1fa62bae582690f6",
+  "entry_id": "zh-3b637c63dece-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-3b637c63dece-1",
+      "headword": "愤怒",
+      "kind": "word",
+      "reading": "fènnù",
+      "senses": [
+        {
+          "id": "zh-3b637c63dece-1-s1",
+          "definition": "anger; to be angry"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞听完愤怒不已，要杀押送卢植的士兵救人。",
+        "gloss": "angry",
+        "sense_id": "zh-3b637c63dece-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "74da23dac8e2e373b8ae0d7beef303398e8bf3b4f173fb103709523534969570"
+}

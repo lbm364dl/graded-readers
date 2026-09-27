@@ -1,0 +1,40 @@
+{
+  "id": "zh-b71852847d38-1-a7cb666c32d3168a",
+  "entry_id": "zh-b71852847d38-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b71852847d38-1",
+      "headword": "叫",
+      "kind": "word",
+      "reading": "jiào",
+      "senses": [
+        {
+          "id": "zh-b71852847d38-1-s1",
+          "definition": "tell or ask someone to do something"
+        },
+        {
+          "id": "zh-b71852847d38-1-s2",
+          "definition": "be called; have a particular name"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘焉发布招军榜，叫人到处报名。",
+        "gloss": "tell",
+        "sense_id": "zh-b71852847d38-1-s1"
+      },
+      {
+        "sentence": "那人说自己叫关羽。",
+        "gloss": "be called",
+        "sense_id": "zh-b71852847d38-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "96cc3542baaed31984800d0023d079bbe93b12502ede46aee352e22781fb57be"
+}

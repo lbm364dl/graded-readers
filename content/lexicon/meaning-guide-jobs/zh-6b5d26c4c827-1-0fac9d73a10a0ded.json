@@ -1,0 +1,31 @@
+{
+  "id": "zh-6b5d26c4c827-1-0fac9d73a10a0ded",
+  "entry_id": "zh-6b5d26c4c827-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6b5d26c4c827-1",
+      "headword": "见过",
+      "kind": "construction",
+      "reading": "jiànguò",
+      "senses": [
+        {
+          "id": "zh-6b5d26c4c827-1-s1",
+          "definition": "to have seen or met before"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹操见过皇甫嵩和朱隽，便带兵继续追击张梁、张宝。",
+        "gloss": "to have met",
+        "sense_id": "zh-6b5d26c4c827-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "adc5082d1c95d781ff8f1656b6e7d88eedef3d7c8a2819745f3c41a7053cc00f"
+}

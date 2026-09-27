@@ -1,0 +1,31 @@
+{
+  "id": "zh-ecf4ce25e0bd-1-b8e272b3c06e6b1f",
+  "entry_id": "zh-ecf4ce25e0bd-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ecf4ce25e0bd-1",
+      "headword": "半夜",
+      "kind": "word",
+      "reading": "bànyè",
+      "senses": [
+        {
+          "id": "zh-ecf4ce25e0bd-1-s1",
+          "definition": "the middle of the night; midnight"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "之后雷雨和冰雹下到半夜，许多房屋被毁。",
+        "gloss": "midnight",
+        "sense_id": "zh-ecf4ce25e0bd-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "85483d2fd51fe4c6869cb08b86dd91ef70abfc42493d34a5aba3cb5cbe340ba9"
+}

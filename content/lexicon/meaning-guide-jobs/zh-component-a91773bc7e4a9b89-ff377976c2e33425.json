@@ -1,0 +1,26 @@
+{
+  "id": "zh-component-a91773bc7e4a9b89-ff377976c2e33425",
+  "entry_id": "zh-component-a91773bc7e4a9b89",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-component-a91773bc7e4a9b89",
+      "headword": "势穷",
+      "reading": "shì qióng",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-a91773bc7e4a9b89-s1",
+          "definition": "To have reached the limit of one’s circumstances or momentum."
+        }
+      ]
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ea7b10ad8fca9d734f566377ad88a502680ac6561380e47bd7e4796c86d4973a"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-d01559d99e62-1-358c21760af1c4e5",
+  "entry_id": "zh-d01559d99e62-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d01559d99e62-1",
+      "headword": "干政",
+      "kind": "word",
+      "reading": "gānzhèng",
+      "senses": [
+        {
+          "id": "zh-d01559d99e62-1-s1",
+          "definition": "to interfere in government affairs"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇帝下诏询问多种灾异的原因，蔡邕上书，认为这是妇人与宦官干政导致的，言辞十分直接。",
+        "gloss": "interfere in government",
+        "sense_id": "zh-d01559d99e62-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5b63fc19fa02f4cccb398cfc54eb5b856d897a5bb4c2bd6935026944820a9e27"
+}

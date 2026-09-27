@@ -1,0 +1,31 @@
+{
+  "id": "zh-a7e675c6ca98-1-3609af5d9db20b94",
+  "entry_id": "zh-a7e675c6ca98-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a7e675c6ca98-1",
+      "headword": "宽和",
+      "kind": "word",
+      "reading": "kuānhé",
+      "senses": [
+        {
+          "id": "zh-a7e675c6ca98-1-s1",
+          "definition": "gentle and amiable"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备不太专心读书，性情宽和，话不多，喜怒很少露在脸上。",
+        "gloss": "gentle and amiable",
+        "sense_id": "zh-a7e675c6ca98-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "beec64fb610c1962fe79e48a5fcf142bb90b0d95fbf26784efc3441d000e94e8"
+}

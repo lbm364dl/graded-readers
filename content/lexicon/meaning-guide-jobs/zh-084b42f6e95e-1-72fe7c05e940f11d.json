@@ -1,0 +1,41 @@
+{
+  "id": "zh-084b42f6e95e-1-72fe7c05e940f11d",
+  "entry_id": "zh-084b42f6e95e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-084b42f6e95e-1",
+      "headword": "二",
+      "kind": "word",
+      "reading": "èr",
+      "senses": [
+        {
+          "id": "zh-084b42f6e95e-1-s1",
+          "definition": "two"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "建宁二年四月十五日，皇帝在宫中坐下。",
+        "gloss": "two",
+        "sense_id": "zh-084b42f6e95e-1-s1"
+      },
+      {
+        "sentence": "建宁四年二月，洛阳地震，海水泛滥，沿海居民被大浪卷走。",
+        "gloss": "two",
+        "sense_id": "zh-084b42f6e95e-1-s1"
+      },
+      {
+        "sentence": "二更后，伏兵一齐放火，两人各带军队攻入营中。",
+        "gloss": "two",
+        "sense_id": "zh-084b42f6e95e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "aa37d991dc5a5878d31924ba990621f3225e5b13e34b1de8ea9808b18b3ccb50"
+}

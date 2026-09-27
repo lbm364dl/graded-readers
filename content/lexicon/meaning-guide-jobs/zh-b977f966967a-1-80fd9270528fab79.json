@@ -1,0 +1,31 @@
+{
+  "id": "zh-b977f966967a-1-80fd9270528fab79",
+  "entry_id": "zh-b977f966967a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b977f966967a-1",
+      "headword": "备",
+      "kind": "word",
+      "reading": "bèi",
+      "senses": [
+        {
+          "id": "zh-b977f966967a-1-s1",
+          "definition": "to prepare"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人备好祭品，烧香行礼，再拜后发誓。",
+        "gloss": "to prepare",
+        "sense_id": "zh-b977f966967a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4544c4ff2ac9c80edff226ab36d18c984378629f626c844add915f6acd08bba3"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-5d0ae622f61f-1-8f337233d981d8d9",
+  "entry_id": "zh-5d0ae622f61f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5d0ae622f61f-1",
+      "headword": "关",
+      "kind": "word",
+      "reading": "guān",
+      "senses": [
+        {
+          "id": "zh-5d0ae622f61f-1-s1",
+          "definition": "confine; shut someone in"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备回去的路上，看见一辆车，车里关着的人正是卢植。",
+        "gloss": "confine",
+        "sense_id": "zh-5d0ae622f61f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5e8c4dab0ad7376b15d7060ec8a29729a019f08b3b6fdcba3dd780b6a54e2b08"
+}

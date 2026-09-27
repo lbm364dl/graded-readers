@@ -1,0 +1,31 @@
+{
+  "id": "zh-f6260fbff827-1-b87fdba24f198740",
+  "entry_id": "zh-f6260fbff827-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f6260fbff827-1",
+      "headword": "握紧",
+      "kind": "construction",
+      "reading": "wò jǐn",
+      "senses": [
+        {
+          "id": "zh-f6260fbff827-1-s1",
+          "definition": "grip or hold something tightly"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "走出帐外，张飞气得握紧刀，大声说：“我们拼命救他，他却这样对待我们！",
+        "gloss": "grip tightly",
+        "sense_id": "zh-f6260fbff827-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "073c2d2569fa0e2f98fd65f8aeceebed5116a5796018e18ed27199dc48c71818"
+}

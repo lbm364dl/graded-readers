@@ -51,6 +51,9 @@ void main() {
       () => Future<void>.delayed(const Duration(milliseconds: 200)),
     );
     for (var attempt = 0; attempt < 30; attempt++) {
+      await tester.runAsync(
+        () => Future<void>.delayed(const Duration(milliseconds: 100)),
+      );
       await tester.pump(const Duration(milliseconds: 100));
       if (find.byType(PageView).evaluate().isNotEmpty) break;
     }

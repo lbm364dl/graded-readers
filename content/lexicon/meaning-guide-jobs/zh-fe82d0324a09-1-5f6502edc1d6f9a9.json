@@ -1,0 +1,31 @@
+{
+  "id": "zh-fe82d0324a09-1-5f6502edc1d6f9a9",
+  "entry_id": "zh-fe82d0324a09-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-fe82d0324a09-1",
+      "headword": "闯进",
+      "kind": "construction",
+      "reading": "chuǎngjìn",
+      "senses": [
+        {
+          "id": "zh-fe82d0324a09-1-s1",
+          "definition": "to rush or force one's way into a place"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备离开后，张飞气得不得了，提刀要闯进帐中杀董卓。",
+        "gloss": "to force one’s way into",
+        "sense_id": "zh-fe82d0324a09-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f09b55eb351593df845260f95acd0727e7305557819f6e49fa84a0abf858d7ea"
+}

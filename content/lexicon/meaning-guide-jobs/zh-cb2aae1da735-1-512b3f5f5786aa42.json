@@ -1,0 +1,31 @@
+{
+  "id": "zh-cb2aae1da735-1-512b3f5f5786aa42",
+  "entry_id": "zh-cb2aae1da735-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-cb2aae1da735-1",
+      "headword": "追",
+      "kind": "word",
+      "reading": "zhuī",
+      "senses": [
+        {
+          "id": "zh-cb2aae1da735-1-s1",
+          "definition": "to chase; to pursue"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹操随后继续追他们。",
+        "gloss": "pursue",
+        "sense_id": "zh-cb2aae1da735-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "94073752f3270488cfe37cdf70d825b04c518e078cc9c4096e22b82eea7329ed"
+}

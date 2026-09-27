@@ -1,0 +1,31 @@
+{
+  "id": "zh-2c04a10af5fa-1-da2b35cbddaa530a",
+  "entry_id": "zh-2c04a10af5fa-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2c04a10af5fa-1",
+      "headword": "额头",
+      "kind": "word",
+      "reading": "étóu",
+      "senses": [
+        {
+          "id": "zh-2c04a10af5fa-1-s1",
+          "definition": "forehead"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "敌军都披着头发，额头缠着黄巾。",
+        "gloss": "forehead",
+        "sense_id": "zh-2c04a10af5fa-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0687773d41517b2500709a57b77f833cb0558fa586abb81d425884340c6f952c"
+}

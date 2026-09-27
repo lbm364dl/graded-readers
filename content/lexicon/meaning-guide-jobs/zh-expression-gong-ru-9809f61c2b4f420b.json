@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-gong-ru-9809f61c2b4f420b",
+  "entry_id": "zh-expression-gong-ru",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-gong-ru",
+      "headword": "攻入",
+      "reading": "gōngrù",
+      "base_entry_id": "zh-108be1223bd8-1",
+      "components": [
+        {
+          "entry_id": "zh-108be1223bd8-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-c404effc1720-1",
+          "role": "directional complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-gong-ru-s1",
+          "definition": "attack and enter a place"
+        }
+      ],
+      "kind": "construction"
+    },
+    "examples": [
+      {
+        "sentence": "二更后，伏兵一齐放火，两人各带军队攻入营中。",
+        "gloss": "attack and enter a place",
+        "sense_id": "zh-expression-gong-ru-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "攻",
+        "role": "verb"
+      },
+      {
+        "headword": "入",
+        "role": "directional complement"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fa0804d48ee48a7e956790e05d4475265bff0e8cc624cd2a64be071bfb871bfe"
+}

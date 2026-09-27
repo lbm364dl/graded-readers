@@ -1,0 +1,31 @@
+{
+  "id": "zh-431c38ea5a7b-1-afe13399b19d9cec",
+  "entry_id": "zh-431c38ea5a7b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-431c38ea5a7b-1",
+      "headword": "传告",
+      "kind": "word",
+      "reading": "chuángào",
+      "senses": [
+        {
+          "id": "zh-431c38ea5a7b-1-s1",
+          "definition": "pass information on and tell others"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹节在后面偷看奏章，把内容传告左右，后来又借别的事诬陷蔡邕，使他获罪，放归田里。",
+        "gloss": "pass on and report",
+        "sense_id": "zh-431c38ea5a7b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "99aea72f510c5b6d727ee3d48bd2d9da511dbba2622ecfb881ff76bf413c0525"
+}

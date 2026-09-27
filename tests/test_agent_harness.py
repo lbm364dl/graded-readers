@@ -7,6 +7,7 @@ import pytest
 
 from pipeline.agent_harness import (
     CHINESE_ANNOTATION_CHUNK_POLICY,
+    CHINESE_PINYIN_POLICY,
     ChapterHarness,
     DEFAULT_CHINESE_ANNOTATION_CHUNK_MAXIMUM,
     DEFAULT_CHINESE_ANNOTATION_CHUNK_TARGET,
@@ -112,7 +113,7 @@ def test_promote_parser_defaults_to_luna_low_review():
     args = parser().parse_args([
         "promote", "--run-dir", "run", "--candidate", "candidate.txt",
     ])
-    assert args.model == "gpt-5.6-luna"
+    assert args.model == "gpt-6-luna"
     assert args.review_effort == "low"
 
 
@@ -424,6 +425,24 @@ def constrained_delta_harness(runner, max_repairs=2):
     harness.args.annotation_review_policy = "exhaustive-chunks"
     harness.args.level = "hsk4"
     return harness
+
+
+@pytest.mark.asyncio
+async def test_annotation_generation_and_review_enforce_neutral_directional_lai():
+    annotation = {"segments": [{
+        "text": "泛上来", "type": "word", "pinyin": "fàn shànglai",
+        "meaning_en": "surge up",
+    }], "grammar_overlays": []}
+    runner = FakeAnnotationRunner([annotation], [{"verdict": "pass", "issues": []}])
+    harness = annotation_harness(runner)
+
+    await harness.annotation_candidate(0, "海水泛上来。")
+    await harness.review_annotation(0, "泛上来", annotation, "initial")
+
+    prompts = [call[3] for call in runner.calls]
+    assert all(CHINESE_PINYIN_POLICY in prompt for prompt in prompts)
+    assert all("fàn shànglai" in prompt and "zǒu jìnqu" in prompt
+               for prompt in prompts)
 
 
 class FakeConstrainedRunner:

@@ -1,0 +1,36 @@
+{
+  "id": "zh-3e0ab5bed622-1-34738036bdde40f4",
+  "entry_id": "zh-3e0ab5bed622-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-3e0ab5bed622-1",
+      "headword": "各自",
+      "kind": "word",
+      "reading": "gèzì",
+      "senses": [
+        {
+          "id": "zh-3e0ab5bed622-1-s1",
+          "definition": "each on one's own; separately"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "卢植、皇甫嵩、朱隽各自带兵，分三路前往作战。",
+        "gloss": "respectively",
+        "sense_id": "zh-3e0ab5bed622-1-s1"
+      },
+      {
+        "sentence": "于是，刘备请工匠打造双股剑，关羽打造青龙偃月刀，重八十二斤，张飞打造丈八点钢矛，并各自准备全身铠甲。",
+        "gloss": "each",
+        "sense_id": "zh-3e0ab5bed622-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "64f202b84e8910cd9123b84f3e16db27b184d14e8203bcc540f8d152fe18a08d"
+}

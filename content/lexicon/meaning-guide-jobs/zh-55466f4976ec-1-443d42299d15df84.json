@@ -1,0 +1,31 @@
+{
+  "id": "zh-55466f4976ec-1-443d42299d15df84",
+  "entry_id": "zh-55466f4976ec-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-55466f4976ec-1",
+      "headword": "成",
+      "kind": "word",
+      "reading": "chéng",
+      "senses": [
+        {
+          "id": "zh-55466f4976ec-1-s1",
+          "definition": "to become; into (a resulting state or form)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "程远志来不及防备，被关羽斩成两段。",
+        "gloss": "into; to become",
+        "sense_id": "zh-55466f4976ec-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6dbc77a5405fa8ca3d2238c1ac9424035fc634723da5601d46d50e8da64d133c"
+}

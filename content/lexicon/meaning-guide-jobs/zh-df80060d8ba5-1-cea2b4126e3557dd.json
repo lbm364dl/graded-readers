@@ -1,0 +1,36 @@
+{
+  "id": "zh-df80060d8ba5-1-cea2b4126e3557dd",
+  "entry_id": "zh-df80060d8ba5-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-df80060d8ba5-1",
+      "headword": "同心协力",
+      "kind": "expression",
+      "reading": "tóngxīn xiélì",
+      "senses": [
+        {
+          "id": "zh-df80060d8ba5-1-s1",
+          "definition": "work together with one purpose and combined effort"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他们发誓同心协力，上报国家，下安百姓。",
+        "gloss": "work together wholeheartedly",
+        "sense_id": "zh-df80060d8ba5-1-s1"
+      },
+      {
+        "sentence": "第二天，三人在园中祭告天地，结为兄弟，发誓同心协力救民。",
+        "gloss": "to work together with one heart",
+        "sense_id": "zh-df80060d8ba5-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "80105dc92ec5abb0390c46805530e81b89c37fbc4cbf7d1d6886ae3dc1145dc9"
+}

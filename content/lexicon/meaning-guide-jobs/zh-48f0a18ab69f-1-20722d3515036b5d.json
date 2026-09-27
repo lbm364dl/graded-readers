@@ -1,0 +1,31 @@
+{
+  "id": "zh-48f0a18ab69f-1-20722d3515036b5d",
+  "entry_id": "zh-48f0a18ab69f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-48f0a18ab69f-1",
+      "headword": "失侯",
+      "kind": "construction",
+      "reading": "shīhóu",
+      "senses": [
+        {
+          "id": "zh-48f0a18ab69f-1-s1",
+          "definition": "to lose one's marquis title"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘胜的儿子刘贞曾被封为涿鹿亭侯，后来因未按规定缴纳酬金而失侯，这一支便留在涿县。",
+        "gloss": "to lose one's title",
+        "sense_id": "zh-48f0a18ab69f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7ffe58957f27f21d78c8279519435dab36d60acfc3f096b83b44d30cd14d3445"
+}

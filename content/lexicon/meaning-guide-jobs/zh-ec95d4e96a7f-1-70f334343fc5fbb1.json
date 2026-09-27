@@ -1,0 +1,31 @@
+{
+  "id": "zh-ec95d4e96a7f-1-70f334343fc5fbb1",
+  "entry_id": "zh-ec95d4e96a7f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ec95d4e96a7f-1",
+      "headword": "上天",
+      "kind": "word",
+      "reading": "shàngtiān",
+      "senses": [
+        {
+          "id": "zh-ec95d4e96a7f-1-s1",
+          "definition": "Heaven; the deity or divine power regarded as ruling the world"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "老人把三卷天书交给他，要他替上天教化百姓、救助世人；若心生别念，便会受罚。",
+        "gloss": "Heaven",
+        "sense_id": "zh-ec95d4e96a7f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4537165bbb5f7ed010b69212994ce6c4c14c73e21d48eb5d9f42fdf80bb807fa"
+}

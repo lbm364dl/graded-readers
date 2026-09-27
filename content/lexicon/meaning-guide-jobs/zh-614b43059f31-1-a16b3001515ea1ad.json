@@ -1,0 +1,31 @@
+{
+  "id": "zh-614b43059f31-1-a16b3001515ea1ad",
+  "entry_id": "zh-614b43059f31-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-614b43059f31-1",
+      "headword": "获得",
+      "kind": "word",
+      "reading": "huòdé",
+      "senses": [
+        {
+          "id": "zh-614b43059f31-1-s1",
+          "definition": "to obtain or gain something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "于是，城内城外的人都不敢犯法，曹操也获得了很大的威名。",
+        "gloss": "to obtain",
+        "sense_id": "zh-614b43059f31-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "22881990f11b6932903409b871023b3daf4c716767414c6554c4361a499d0a19"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "zh-component-d9fd048e58aa7364-c4a42e54ac91e2cf",
+  "entry_id": "zh-component-d9fd048e58aa7364",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-component-d9fd048e58aa7364",
+      "headword": "门口",
+      "reading": "ménkǒu",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-d9fd048e58aa7364-s1",
+          "definition": "A doorway or entrance."
+        }
+      ]
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f56d20b8364b008fa81bf29c0549dec9b3effbe65099ce19a848bcd0f7a42160"
+}

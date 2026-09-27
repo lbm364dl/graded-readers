@@ -1,0 +1,177 @@
+{
+  "entries": [
+    {
+      "id": "zh-expression-kandao",
+      "headword": "看到",
+      "reading": "kàndào",
+      "base_entry_id": "zh-61f43315f98a-1",
+      "components": [
+        {
+          "entry_id": "zh-61f43315f98a-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-b56f36b529db-1",
+          "role": "result complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-kandao-s1",
+          "definition": "see; notice"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-you-nan",
+      "headword": "有难",
+      "reading": "yǒu nàn",
+      "base_entry_id": "zh-90ce0f66f094-1",
+      "components": [
+        {
+          "entry_id": "zh-90ce0f66f094-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-de73e9045636-1",
+          "role": "abstract noun"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-you-nan-s1",
+          "definition": "be in trouble; face calamity"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-zuo-xiongdi",
+      "headword": "做兄弟",
+      "reading": "zuò xiōngdì",
+      "base_entry_id": "zh-94f5404441e8-1",
+      "components": [
+        {
+          "entry_id": "zh-94f5404441e8-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-f6c71210522b-1",
+          "role": "relationship"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-zuo-xiongdi-s1",
+          "definition": "become brothers; form a brotherhood"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-bai-tiandi",
+      "headword": "拜天地",
+      "reading": "bài tiāndì",
+      "base_entry_id": "zh-428cf29b5093-1",
+      "components": [
+        {
+          "entry_id": "zh-428cf29b5093-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-5e431916de87-1",
+          "role": "object of the rite"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-bai-tiandi-s1",
+          "definition": "perform a rite before Heaven and Earth"
+        }
+      ]
+    }
+  ],
+  "bindings": [
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk1_001.json#cd13eaecc0d9:1:unit-3",
+      "entry_id": "zh-expression-kandao",
+      "sense_id": "zh-expression-kandao-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk1_001.json#cd13eaecc0d9:25:unit-26",
+      "entry_id": "zh-61f43315f98a-1",
+      "sense_id": "zh-61f43315f98a-1-s2",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk1_001.json#cd13eaecc0d9:49:unit-50",
+      "entry_id": "zh-expression-you-nan",
+      "sense_id": "zh-expression-you-nan-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk1_001.json#cd13eaecc0d9:80:unit-81",
+      "entry_id": "zh-1f2eb2608d23-1",
+      "sense_id": "zh-1f2eb2608d23-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk1_001.json#cd13eaecc0d9:95:unit-96",
+      "entry_id": "zh-7e92752bff47-1",
+      "sense_id": "zh-7e92752bff47-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk1_001.json#cd13eaecc0d9:98:unit-99",
+      "entry_id": "zh-6d8229118caa-1",
+      "sense_id": "zh-6d8229118caa-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk1_001.json#cd13eaecc0d9:127:unit-128",
+      "entry_id": "zh-1f2eb2608d23-1",
+      "sense_id": "zh-1f2eb2608d23-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk1_001.json#cd13eaecc0d9:153:unit-156",
+      "entry_id": "zh-39eae64cfc41-1",
+      "sense_id": "zh-39eae64cfc41-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk1_001.json#cd13eaecc0d9:170:unit-171",
+      "entry_id": "zh-expression-zuo-xiongdi",
+      "sense_id": "zh-expression-zuo-xiongdi-s1",
+      "canonical_start": 0,
+      "canonical_end": 3
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk1_001.json#cd13eaecc0d9:184:unit-185",
+      "entry_id": "zh-expression-bai-tiandi",
+      "sense_id": "zh-expression-bai-tiandi-s1",
+      "canonical_start": 0,
+      "canonical_end": 3
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk1_001.json#cd13eaecc0d9:257:unit-258",
+      "entry_id": "zh-90ce0f66f094-1",
+      "sense_id": "zh-90ce0f66f094-1-s3",
+      "canonical_start": 0,
+      "canonical_end": 1
+    }
+  ],
+  "input_fingerprint": "9834bba2d5a944f4048f1134af8ee0c54668fdc76040880684cdf8ed2b6cbed1",
+  "reviewed": true,
+  "review_digest": "0b90ff978bd45f3d039e9bd3ee6806ce7e6d11108f42abbc3c3bfb1783024870",
+  "model": "gpt-6-luna",
+  "proposal_effort": "low",
+  "review_effort": "high"
+}

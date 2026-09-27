@@ -1,0 +1,26 @@
+{
+  "id": "zh-component-a492ce676222a385-226b9442c469a2fd",
+  "entry_id": "zh-component-a492ce676222a385",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-component-a492ce676222a385",
+      "headword": "不及",
+      "reading": "bù jí",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-a492ce676222a385-s1",
+          "definition": "to be too late to reach or do something; to not have time for it"
+        }
+      ]
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9356d926eed24467e12eb69809a8f405378255f39a32782e9c5d4909a42d6525"
+}

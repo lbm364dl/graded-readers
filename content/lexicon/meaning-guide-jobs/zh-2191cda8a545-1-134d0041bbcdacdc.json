@@ -1,0 +1,31 @@
+{
+  "id": "zh-2191cda8a545-1-134d0041bbcdacdc",
+  "entry_id": "zh-2191cda8a545-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2191cda8a545-1",
+      "headword": "送",
+      "kind": "word",
+      "reading": "sòng",
+      "senses": [
+        {
+          "id": "zh-2191cda8a545-1-s1",
+          "definition": "to send or deliver something to someone or somewhere"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角暗中送金钱，联系朝中的封谞，准备做内应。",
+        "gloss": "to send",
+        "sense_id": "zh-2191cda8a545-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "dbb19db0ceb701665944a866b5889def6120e522425ea9a6fc6b51b4104c426e"
+}

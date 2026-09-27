@@ -1,0 +1,31 @@
+{
+  "id": "zh-f14b9b13c134-1-5faef1f703d62991",
+  "entry_id": "zh-f14b9b13c134-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f14b9b13c134-1",
+      "headword": "擂鼓",
+      "kind": "construction",
+      "reading": "léi gǔ",
+      "senses": [
+        {
+          "id": "zh-f14b9b13c134-1-s1",
+          "definition": "beat a drum or drums"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "次日，刘备与邹靖擂鼓前进，黄巾军迎战，刘备引军退走。",
+        "gloss": "beat the drums",
+        "sense_id": "zh-f14b9b13c134-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f0e66fd387323669ecc7d07f86c953c5a495aeac3c42e4ede65979cb1c52aa4f"
+}

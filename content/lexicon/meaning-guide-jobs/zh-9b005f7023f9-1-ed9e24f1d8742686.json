@@ -1,0 +1,31 @@
+{
+  "id": "zh-9b005f7023f9-1-ed9e24f1d8742686",
+  "entry_id": "zh-9b005f7023f9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9b005f7023f9-1",
+      "headword": "硬",
+      "kind": "word",
+      "reading": "yìng",
+      "senses": [
+        {
+          "id": "zh-9b005f7023f9-1-s1",
+          "definition": "by force; forcibly"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备仔细分析局面，对关羽、张飞说：“敌多我少，不能硬打，关键是用伏兵。",
+        "gloss": "by force",
+        "sense_id": "zh-9b005f7023f9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "895e402b0103b13155ede117a6b8791d804e972486dc44ea7472b84c0986e73d"
+}

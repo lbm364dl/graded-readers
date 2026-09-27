@@ -1,0 +1,36 @@
+{
+  "id": "zh-a94915907d43-1-776090b2b28258ed",
+  "entry_id": "zh-a94915907d43-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a94915907d43-1",
+      "headword": "乡中",
+      "kind": "word",
+      "reading": "xiāngzhōng",
+      "senses": [
+        {
+          "id": "zh-a94915907d43-1-s1",
+          "definition": "in the village"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备小时候常和乡中孩子在树下玩，对他们说：“我将来要当天子，就把这棵树当作车盖。",
+        "gloss": "in the village",
+        "sense_id": "zh-a94915907d43-1-s1"
+      },
+      {
+        "sentence": "刘备幼年和乡中孩子在树下玩，说将来要做天子，要乘这车盖。",
+        "gloss": "village children",
+        "sense_id": "zh-a94915907d43-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b5224255c7cbc149f7cbc78c7dc1428293af68c36026fe32a3f5fee25a2971b1"
+}

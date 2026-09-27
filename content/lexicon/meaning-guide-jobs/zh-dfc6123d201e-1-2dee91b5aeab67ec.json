@@ -1,0 +1,31 @@
+{
+  "id": "zh-dfc6123d201e-1-2dee91b5aeab67ec",
+  "entry_id": "zh-dfc6123d201e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-dfc6123d201e-1",
+      "headword": "作恶",
+      "kind": "word",
+      "reading": "zuò'è",
+      "senses": [
+        {
+          "id": "zh-dfc6123d201e-1-s1",
+          "definition": "do evil; commit wrongdoing"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "后来，张让等十人结党作恶，被称为十常侍。",
+        "gloss": "to do evil",
+        "sense_id": "zh-dfc6123d201e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9cf73b448bcde1b7afa664a94b4a00a3ec0410a37aaa7eeafafb90efcf77b6b7"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "zh-component-d5f99c1e3d7d348b-c75a2d8b6732621e",
+  "entry_id": "zh-component-d5f99c1e3d7d348b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-component-d5f99c1e3d7d348b",
+      "headword": "朋友",
+      "reading": "péngyou",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-d5f99c1e3d7d348b-s1",
+          "definition": "A person with whom one has a friendly relationship; a friend."
+        }
+      ]
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d9e415782aa83630445ea2e8ce8271ec5b81f4e64a0caa564d613e220b09d717"
+}

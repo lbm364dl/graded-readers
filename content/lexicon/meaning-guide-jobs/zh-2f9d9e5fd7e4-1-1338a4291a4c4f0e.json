@@ -1,0 +1,31 @@
+{
+  "id": "zh-2f9d9e5fd7e4-1-1338a4291a4c4f0e",
+  "entry_id": "zh-2f9d9e5fd7e4-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2f9d9e5fd7e4-1",
+      "headword": "何颙",
+      "kind": "name",
+      "reading": "Hé Yóng",
+      "senses": [
+        {
+          "id": "zh-2f9d9e5fd7e4-1-s1",
+          "definition": "He Yong, a person named in the passage"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "何颙也说，汉室将亡，安定天下的必是此人。",
+        "gloss": "He Yong",
+        "sense_id": "zh-2f9d9e5fd7e4-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7a6c8d023c301972c5242c5cf4b9fef5e24885c145ca1e30a898c8a7a0dc9a3b"
+}

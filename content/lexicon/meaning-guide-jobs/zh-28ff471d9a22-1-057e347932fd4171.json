@@ -1,0 +1,41 @@
+{
+  "id": "zh-28ff471d9a22-1-057e347932fd4171",
+  "entry_id": "zh-28ff471d9a22-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-28ff471d9a22-1",
+      "headword": "之后",
+      "kind": "word",
+      "reading": "zhīhòu",
+      "senses": [
+        {
+          "id": "zh-28ff471d9a22-1-s1",
+          "definition": "after; following a point in time"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "之后雷雨和冰雹下到半夜，许多房屋被毁。",
+        "gloss": "afterward",
+        "sense_id": "zh-28ff471d9a22-1-s1"
+      },
+      {
+        "sentence": "之后，张角设立三十六方。",
+        "gloss": "afterwards",
+        "sense_id": "zh-28ff471d9a22-1-s1"
+      },
+      {
+        "sentence": "之后，刘备、关羽、张飞一起到张飞庄上商议大事，三人也因共同志向相识。",
+        "gloss": "afterwards; after that",
+        "sense_id": "zh-28ff471d9a22-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5df5d01c441f578bbef40d61a3f0b4ba78b5a2e23bd9d6eec66dae0d2e7d99bf"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-6e099627519f-1-e6ec01f43357c1eb",
+  "entry_id": "zh-6e099627519f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6e099627519f-1",
+      "headword": "六七千",
+      "kind": "word",
+      "reading": "liù qī qiān",
+      "senses": [
+        {
+          "id": "zh-6e099627519f-1-s1",
+          "definition": "six or seven thousand; approximately six to seven thousand"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "大方有一万多人，小方有六七千人，各方首领都称将军。",
+        "gloss": "six or seven thousand",
+        "sense_id": "zh-6e099627519f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "32eec18df67c44a4bfa27f0b5221379925a16a8a43fd797f121659cc9058775a"
+}

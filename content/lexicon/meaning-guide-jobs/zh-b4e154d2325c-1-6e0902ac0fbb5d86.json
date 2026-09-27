@@ -1,0 +1,31 @@
+{
+  "id": "zh-b4e154d2325c-1-6e0902ac0fbb5d86",
+  "entry_id": "zh-b4e154d2325c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b4e154d2325c-1",
+      "headword": "出钱",
+      "kind": "word",
+      "reading": "chūqián",
+      "senses": [
+        {
+          "id": "zh-b4e154d2325c-1-s1",
+          "definition": "provide or contribute money"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "愿意出钱招募乡勇。",
+        "gloss": "provide money",
+        "sense_id": "zh-b4e154d2325c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3eb18244e3119b98dfa5f7ffec2bbdba22575721d67c1e0ff59addc07e5c8e3f"
+}

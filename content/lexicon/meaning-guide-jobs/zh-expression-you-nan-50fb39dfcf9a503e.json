@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-you-nan-50fb39dfcf9a503e",
+  "entry_id": "zh-expression-you-nan",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-you-nan",
+      "headword": "有难",
+      "reading": "yǒu nàn",
+      "base_entry_id": "zh-90ce0f66f094-1",
+      "components": [
+        {
+          "entry_id": "zh-90ce0f66f094-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-de73e9045636-1",
+          "role": "abstract noun"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-you-nan-s1",
+          "definition": "be in trouble; face calamity"
+        }
+      ],
+      "kind": "construction"
+    },
+    "examples": [
+      {
+        "sentence": "”刘备说：“国家有难。",
+        "gloss": "be in trouble; face calamity",
+        "sense_id": "zh-expression-you-nan-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "有",
+        "role": "verb"
+      },
+      {
+        "headword": "难",
+        "role": "abstract noun"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a534796f84eb05f95d61062ed3128b046f7d43dfa90b49ff89793fc0902e825e"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-d7df520b88dc-1-8e4b988f21911b82",
+  "entry_id": "zh-d7df520b88dc-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d7df520b88dc-1",
+      "headword": "不得了",
+      "kind": "word",
+      "reading": "bùdéliǎo",
+      "senses": [
+        {
+          "id": "zh-d7df520b88dc-1-s1",
+          "definition": "extremely; to an exceptional degree"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备离开后，张飞气得不得了，提刀要闯进帐中杀董卓。",
+        "gloss": "extremely; terribly",
+        "sense_id": "zh-d7df520b88dc-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e506f5240f1191671f8588a7eb48066f2c2151c4e6df331c86d1a7ae3175d945"
+}

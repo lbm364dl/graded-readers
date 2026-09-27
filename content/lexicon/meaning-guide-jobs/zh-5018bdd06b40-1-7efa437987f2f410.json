@@ -1,0 +1,31 @@
+{
+  "id": "zh-5018bdd06b40-1-7efa437987f2f410",
+  "entry_id": "zh-5018bdd06b40-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5018bdd06b40-1",
+      "headword": "败露",
+      "kind": "word",
+      "reading": "bàilù",
+      "senses": [
+        {
+          "id": "zh-5018bdd06b40-1-s1",
+          "definition": "to be exposed or come to light"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角得知事情败露，立刻连夜起兵，发动黄巾起事。",
+        "gloss": "be exposed",
+        "sense_id": "zh-5018bdd06b40-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c8bddba72f214c45170ce60d975a655c96c7d91cb67b40e319f16d1ec2afa06f"
+}

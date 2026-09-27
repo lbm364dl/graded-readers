@@ -1,0 +1,31 @@
+{
+  "id": "zh-6ae25c765c71-1-0c1d239c7306d826",
+  "entry_id": "zh-6ae25c765c71-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6ae25c765c71-1",
+      "headword": "毁坏",
+      "kind": "word",
+      "reading": "huǐhuài",
+      "senses": [
+        {
+          "id": "zh-6ae25c765c71-1-s1",
+          "definition": "to damage or destroy something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "大风、雷雨、冰雹毁坏房屋，地震和海水泛上来，百姓生活很难。",
+        "gloss": "destroy",
+        "sense_id": "zh-6ae25c765c71-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7b3042d277779dd5a51dbbc483a021de963147058d0386d24eb453c98eb7dd4b"
+}

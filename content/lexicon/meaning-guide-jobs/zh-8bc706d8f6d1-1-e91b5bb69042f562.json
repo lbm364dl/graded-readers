@@ -1,0 +1,31 @@
+{
+  "id": "zh-8bc706d8f6d1-1-e91b5bb69042f562",
+  "entry_id": "zh-8bc706d8f6d1-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8bc706d8f6d1-1",
+      "headword": "师",
+      "kind": "word",
+      "reading": "shī",
+      "senses": [
+        {
+          "id": "zh-8bc706d8f6d1-1-s1",
+          "definition": "a teacher or master; used as a title for a respected teacher"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "中平元年，疫病流行，他用符水给百姓治病，自称大贤良师。",
+        "gloss": "master; teacher, as the title component in 大贤良师",
+        "sense_id": "zh-8bc706d8f6d1-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "044a20fe8bcf42a77b0a883b475c740325ee8eb5c1421a20854f96afd02bca1b"
+}

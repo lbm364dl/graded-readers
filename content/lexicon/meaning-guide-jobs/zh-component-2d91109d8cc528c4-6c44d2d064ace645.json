@@ -1,0 +1,26 @@
+{
+  "id": "zh-component-2d91109d8cc528c4-6c44d2d064ace645",
+  "entry_id": "zh-component-2d91109d8cc528c4",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-component-2d91109d8cc528c4",
+      "headword": "居民",
+      "reading": "jūmín",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-2d91109d8cc528c4-s1",
+          "definition": "people who live in a particular place; residents"
+        }
+      ]
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4f6fe2c13bf9b43e7b12fb1599d13b00542cc348af17c9c8d3e2bb0f45a6d018"
+}

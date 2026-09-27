@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-ting-wan-32e197053de782f0",
+  "entry_id": "zh-expression-ting-wan",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-ting-wan",
+      "headword": "听完",
+      "reading": "tīngwán",
+      "kind": "expression",
+      "base_entry_id": "zh-1f2eb2608d23-1",
+      "components": [
+        {
+          "entry_id": "zh-1f2eb2608d23-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-28e0bba69ee9-1",
+          "role": "completion complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-ting-wan-s1",
+          "definition": "finish hearing or listening to something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”张飞听完十分生气，要杀押车的人，救下老师。",
+        "gloss": "finish hearing or listening to something",
+        "sense_id": "zh-expression-ting-wan-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "听",
+        "role": "verb"
+      },
+      {
+        "headword": "完",
+        "role": "completion complement"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3541a45d05b745058a1cae5a2dc380fbe4172f9bcecf362ba1b8dbb8d61b0a0d"
+}

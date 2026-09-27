@@ -1,0 +1,41 @@
+{
+  "id": "zh-385a845b6094-1-f6134c33734456cc",
+  "entry_id": "zh-385a845b6094-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-385a845b6094-1",
+      "headword": "等",
+      "kind": "word",
+      "reading": "děng",
+      "senses": [
+        {
+          "id": "zh-385a845b6094-1-s1",
+          "definition": "and others; and the rest of a group"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "宦官曹节等人掌握权力，常常干涉朝廷的事。",
+        "gloss": "and others",
+        "sense_id": "zh-385a845b6094-1-s1"
+      },
+      {
+        "sentence": "后来，张让等十人结党作恶，被称为十常侍。",
+        "gloss": "and others",
+        "sense_id": "zh-385a845b6094-1-s1"
+      },
+      {
+        "sentence": "朝廷立即派兵抓住马元义并杀了他，又把封谞等人关进监狱。",
+        "gloss": "and others",
+        "sense_id": "zh-385a845b6094-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9ef7dbddc53dd47b5c932a09e49d650d0c76b1c14a0466c6f14fc6a6889e5b8f"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-aac9e6373c49-1-8e751011c42b40fe",
+  "entry_id": "zh-aac9e6373c49-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-aac9e6373c49-1",
+      "headword": "犒",
+      "kind": "word",
+      "reading": "kào",
+      "senses": [
+        {
+          "id": "zh-aac9e6373c49-1-s1",
+          "definition": "to provide food or drink as a reward or to honor troops"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "龚景犒军后，邹靖准备回去。",
+        "gloss": "to reward with food and drink",
+        "sense_id": "zh-aac9e6373c49-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6dd5f1ea42d9b0eb65804a3deb120d7ba0a6c7a72af9bb12244de26e3a99ab1f"
+}

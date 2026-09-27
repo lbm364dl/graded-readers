@@ -1,0 +1,26 @@
+{
+  "id": "zh-component-a5140ced1007d25e-1729c6f36ba8bb03",
+  "entry_id": "zh-component-a5140ced1007d25e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-component-a5140ced1007d25e",
+      "headword": "丈夫",
+      "reading": "zhàngfu",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-a5140ced1007d25e-s1",
+          "definition": "A man; an adult male person."
+        }
+      ]
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3ffc5a7217251896eb51c8983cc53374a601dd23d910071e0c37353213848311"
+}

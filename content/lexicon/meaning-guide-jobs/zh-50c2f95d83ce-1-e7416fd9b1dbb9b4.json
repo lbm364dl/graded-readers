@@ -1,0 +1,31 @@
+{
+  "id": "zh-50c2f95d83ce-1-e7416fd9b1dbb9b4",
+  "entry_id": "zh-50c2f95d83ce-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-50c2f95d83ce-1",
+      "headword": "救",
+      "kind": "word",
+      "reading": "jiù",
+      "senses": [
+        {
+          "id": "zh-50c2f95d83ce-1-s1",
+          "definition": "save; rescue"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备决定去救那里。",
+        "gloss": "rescue",
+        "sense_id": "zh-50c2f95d83ce-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a1eee9655c6a5ac3cf831934a27c2836b46866557dcbd859be4b802a8a523e4f"
+}

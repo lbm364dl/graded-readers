@@ -1,0 +1,130 @@
+{
+  "id": "zh-99ae21ea6c39-1-654fad9e4f335ae3",
+  "entry_id": "zh-99ae21ea6c39-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-99ae21ea6c39-1",
+      "headword": "去",
+      "kind": "word",
+      "reading": "qù",
+      "senses": [
+        {
+          "id": "zh-99ae21ea6c39-1-s1",
+          "definition": "go; go to do something"
+        },
+        {
+          "id": "zh-99ae21ea6c39-1-s2",
+          "definition": "away; marks direction away from a reference point after a verb"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备想去打黄巾军。",
+        "gloss": "go",
+        "sense_id": "zh-99ae21ea6c39-1-s1"
+      },
+      {
+        "sentence": "我想去救人。",
+        "gloss": "go",
+        "sense_id": "zh-99ae21ea6c39-1-s1"
+      },
+      {
+        "sentence": "他想去打仗。",
+        "gloss": "go",
+        "sense_id": "zh-99ae21ea6c39-1-s1"
+      },
+      {
+        "sentence": "大家一起去打黄巾军。",
+        "gloss": "go",
+        "sense_id": "zh-99ae21ea6c39-1-s1"
+      },
+      {
+        "sentence": "刘备带关羽、张飞去迎敌。",
+        "gloss": "go",
+        "sense_id": "zh-99ae21ea6c39-1-s1"
+      },
+      {
+        "sentence": "刘备决定去救那里。",
+        "gloss": "go",
+        "sense_id": "zh-99ae21ea6c39-1-s1"
+      },
+      {
+        "sentence": "以后，刘备去找卢植。",
+        "gloss": "go",
+        "sense_id": "zh-99ae21ea6c39-1-s1"
+      },
+      {
+        "sentence": "刘备主动说：“我们应当马上去救他们。",
+        "gloss": "go",
+        "sense_id": "zh-99ae21ea6c39-1-s1"
+      },
+      {
+        "sentence": "他对邹靖说：“我曾经跟卢植学习，现在愿意去帮助他。",
+        "gloss": "go",
+        "sense_id": "zh-99ae21ea6c39-1-s1"
+      },
+      {
+        "sentence": "你带人去看看那里的情况，回来告诉我。",
+        "gloss": "go",
+        "sense_id": "zh-99ae21ea6c39-1-s1"
+      },
+      {
+        "sentence": "家旁有一棵大桑树，远远看去，像一把车盖。",
+        "gloss": "in 看去, indicating the viewpoint “when viewed”",
+        "sense_id": "zh-99ae21ea6c39-1-s2"
+      },
+      {
+        "sentence": "他们又聚集五百多名乡勇，去见邹靖。",
+        "gloss": "to go",
+        "sense_id": "zh-99ae21ea6c39-1-s1"
+      },
+      {
+        "sentence": "刘焉让邹靖带刘备、张飞、关羽三人，领五百人前去迎敌。",
+        "gloss": "to go",
+        "sense_id": "zh-99ae21ea6c39-1-s1"
+      },
+      {
+        "sentence": "刘焉和刘备商量，刘备说：“我愿意去救青州。",
+        "gloss": "go",
+        "sense_id": "zh-99ae21ea6c39-1-s1"
+      },
+      {
+        "sentence": "刘备之前跟卢植学习，听说老师正在广宗和黄巾军作战，便想去帮助他。",
+        "gloss": "go",
+        "sense_id": "zh-99ae21ea6c39-1-s1"
+      },
+      {
+        "sentence": "曹操的军马都打着红旗，从前面截住黄巾军的去路。",
+        "gloss": "to go",
+        "sense_id": "zh-99ae21ea6c39-1-s1"
+      },
+      {
+        "sentence": "他急忙带兵赶去，却发现黄巾军已经败散，战事已经结束。",
+        "gloss": "to go",
+        "sense_id": "zh-99ae21ea6c39-1-s1"
+      },
+      {
+        "sentence": "皇甫嵩说张梁、张宝会去广宗投靠张角，于是让刘备连夜前往。",
+        "gloss": "to go",
+        "sense_id": "zh-99ae21ea6c39-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-99ae21ea6c39-1",
+    "structure": "single_component",
+    "explanation_en": "去 means “go” or “go to.” Before an action, it can describe going somewhere to do that action, as in going to help.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "3fab92a9ebf9b6ba1475ac18aa24e507e699d11fb1b475062ecaed92abfac2da",
+    "revision": 1,
+    "editorial_policy": 2,
+    "evidence_status": "legacy_unresearched"
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a822c8a6bd274126d7d451f23f997057e1066cbffa5d5f878e7767b1a6f44f56"
+}

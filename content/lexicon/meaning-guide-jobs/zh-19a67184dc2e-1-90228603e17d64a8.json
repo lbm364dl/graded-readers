@@ -1,0 +1,31 @@
+{
+  "id": "zh-19a67184dc2e-1-90228603e17d64a8",
+  "entry_id": "zh-19a67184dc2e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-19a67184dc2e-1",
+      "headword": "椅上",
+      "kind": "construction",
+      "reading": "yǐshàng",
+      "senses": [
+        {
+          "id": "zh-19a67184dc2e-1-s1",
+          "definition": "on a chair"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "殿角忽起狂风，一条大青蛇从梁上飞下，盘在椅上。",
+        "gloss": "on the chair",
+        "sense_id": "zh-19a67184dc2e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a990ff59abcae386990a4b487986941536328f1a195105e988a4696cd97bfc6f"
+}

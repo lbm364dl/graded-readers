@@ -347,7 +347,7 @@ def parser() -> argparse.ArgumentParser:
     p.add_argument("--source", action="append", required=True)
     p.add_argument("--book-run-dir", required=True)
     p.add_argument("--level", required=True)
-    p.add_argument("--model", default="gpt-5.6-luna")
+    p.add_argument("--model", default="gpt-6-luna")
     p.add_argument("--review-effort", default="low")
     p.add_argument("--repair-effort", default="low")
     p.add_argument("--concurrency", type=int, default=16)

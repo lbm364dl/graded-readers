@@ -1,0 +1,36 @@
+{
+  "id": "zh-693e132f27eb-1-ef5ad77f1247805a",
+  "entry_id": "zh-693e132f27eb-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-693e132f27eb-1",
+      "headword": "声",
+      "kind": "word",
+      "reading": "shēng",
+      "senses": [
+        {
+          "id": "zh-693e132f27eb-1-s1",
+          "definition": "voice; sound"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他当时因无力报国，只能长声叹气。",
+        "gloss": "voice",
+        "sense_id": "zh-693e132f27eb-1-s1"
+      },
+      {
+        "sentence": "刘备带着关羽、张飞赶到颍川时，只听见喊杀声，也看见火光照亮天空。",
+        "gloss": "sound",
+        "sense_id": "zh-693e132f27eb-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8a05e5142e7e991c99e111a3655b2020ff18e86926e70278bc3212f6b0e736e3"
+}

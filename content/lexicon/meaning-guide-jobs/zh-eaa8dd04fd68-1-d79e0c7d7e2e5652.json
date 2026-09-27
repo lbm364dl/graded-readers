@@ -1,0 +1,51 @@
+{
+  "id": "zh-eaa8dd04fd68-1-d79e0c7d7e2e5652",
+  "entry_id": "zh-eaa8dd04fd68-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-eaa8dd04fd68-1",
+      "headword": "士兵",
+      "kind": "word",
+      "reading": "shìbīng",
+      "senses": [
+        {
+          "id": "zh-eaa8dd04fd68-1-s1",
+          "definition": "soldier"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "夜里风突然变大，士兵同时放火。",
+        "gloss": "soldiers",
+        "sense_id": "zh-eaa8dd04fd68-1-s1"
+      },
+      {
+        "sentence": "刘焉迎接他们，并奖励士兵。",
+        "gloss": "soldiers",
+        "sense_id": "zh-eaa8dd04fd68-1-s1"
+      },
+      {
+        "sentence": "皇甫嵩、朱隽商量后，决定火攻，命士兵各带一把草，暗中埋下伏兵。",
+        "gloss": "soldiers",
+        "sense_id": "zh-eaa8dd04fd68-1-s1"
+      },
+      {
+        "sentence": "黄巾军起兵后，曹操带着五千名士兵赶到颍川。",
+        "gloss": "soldier",
+        "sense_id": "zh-eaa8dd04fd68-1-s1"
+      },
+      {
+        "sentence": "张飞听后大怒，要杀押送卢植的士兵。",
+        "gloss": "soldiers",
+        "sense_id": "zh-eaa8dd04fd68-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c443bdf3bf968426a2743fb5dfb4ca31f8da5abfe42861c24283d493f74c1697"
+}

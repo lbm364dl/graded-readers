@@ -1,0 +1,66 @@
+{
+  "id": "zh-978d056de9ca-1-a9ea9c33ee5fc0e1",
+  "entry_id": "zh-978d056de9ca-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-978d056de9ca-1",
+      "headword": "姓",
+      "kind": "word",
+      "reading": "xìng",
+      "senses": [
+        {
+          "id": "zh-978d056de9ca-1-s1",
+          "definition": "to have or take a particular surname"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞说自己姓张，名飞，字翼德，世居涿郡，家有庄田，平日卖酒屠猪，一向喜欢结交天下豪杰。",
+        "gloss": "have the surname",
+        "sense_id": "zh-978d056de9ca-1-s1"
+      },
+      {
+        "sentence": "刘备说自己姓刘，名备，是汉室宗亲，想打败黄巾军，救民于苦难，只是力量不足。",
+        "gloss": "to have the surname",
+        "sense_id": "zh-978d056de9ca-1-s1"
+      },
+      {
+        "sentence": "那人姓关，名羽，字寿长，后来改字云长，是河东解良人。",
+        "gloss": "to have the surname",
+        "sense_id": "zh-978d056de9ca-1-s1"
+      },
+      {
+        "sentence": "他的父亲曹嵩原先姓夏侯，因成为宦官曹腾的养子，才改姓曹。",
+        "gloss": "to have the surname",
+        "sense_id": "zh-978d056de9ca-1-s1"
+      },
+      {
+        "sentence": "那人回答：“我姓张，名飞，字翼德，世居涿郡，颇有庄田，卖酒屠猪，专好结交天下豪杰。",
+        "gloss": "to have the surname",
+        "sense_id": "zh-978d056de9ca-1-s1"
+      },
+      {
+        "sentence": "”刘备说自己是汉室宗亲，姓刘，名备，有志破贼救民，只恨力量不足。",
+        "gloss": "to have the surname",
+        "sense_id": "zh-978d056de9ca-1-s1"
+      },
+      {
+        "sentence": "那人说：“我姓关，名羽，字寿长，后改字云长，是河东解良人。",
+        "gloss": "to have the surname",
+        "sense_id": "zh-978d056de9ca-1-s1"
+      },
+      {
+        "sentence": "他是沛国谯郡人，父亲曹嵩原本姓夏侯，因是中常侍曹腾的养子，才改姓曹。",
+        "gloss": "to have the surname",
+        "sense_id": "zh-978d056de9ca-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1cd6ce1130c4a567c29d502bd1b7b933604e8d36383d0c9062503a7c5d6c0c3f"
+}

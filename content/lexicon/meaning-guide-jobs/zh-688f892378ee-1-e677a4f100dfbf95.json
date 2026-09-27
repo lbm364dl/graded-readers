@@ -1,0 +1,31 @@
+{
+  "id": "zh-688f892378ee-1-e677a4f100dfbf95",
+  "entry_id": "zh-688f892378ee-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-688f892378ee-1",
+      "headword": "限制",
+      "kind": "word",
+      "reading": "xiànzhì",
+      "senses": [
+        {
+          "id": "zh-688f892378ee-1-s1",
+          "definition": "restriction; limits"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "这个结果导致宦官从此更加专横，做事也更不受限制，朝廷中的正直之士更加危险。",
+        "gloss": "restriction",
+        "sense_id": "zh-688f892378ee-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fde0823eada300696d93e5280f3c6df308979ea07361abda57cf1a874f294745"
+}

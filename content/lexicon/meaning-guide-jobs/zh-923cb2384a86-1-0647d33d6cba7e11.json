@@ -1,0 +1,36 @@
+{
+  "id": "zh-923cb2384a86-1-0647d33d6cba7e11",
+  "entry_id": "zh-923cb2384a86-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-923cb2384a86-1",
+      "headword": "下马",
+      "kind": "word",
+      "reading": "xiàmǎ",
+      "senses": [
+        {
+          "id": "zh-923cb2384a86-1-s1",
+          "definition": "to get down from a horse"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他很吃惊，连忙下马询问。",
+        "gloss": "dismount",
+        "sense_id": "zh-923cb2384a86-1-s1"
+      },
+      {
+        "sentence": "他下马询问，卢植说：“我围攻张角，快要取胜。",
+        "gloss": "to dismount from a horse",
+        "sense_id": "zh-923cb2384a86-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d8389896fe0b2a5e780874a4a752677270e4e6d4d73b6c10cf39415fa119a32a"
+}

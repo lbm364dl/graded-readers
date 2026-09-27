@@ -1,0 +1,31 @@
+{
+  "id": "zh-daabc364509c-1-9d4c1d103efd871e",
+  "entry_id": "zh-daabc364509c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-daabc364509c-1",
+      "headword": "赠送",
+      "kind": "word",
+      "reading": "zèngsòng",
+      "senses": [
+        {
+          "id": "zh-daabc364509c-1-s1",
+          "definition": "to give as a gift"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "二人了解后很高兴，赠送五十匹好马、金银五百两和铁一千斤，帮助三人打造兵器。",
+        "gloss": "to present as a gift",
+        "sense_id": "zh-daabc364509c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e6d5ac46b8ba1f0c1caa0cb36f0962fda4be13a034ff7e39990011c688f28daf"
+}

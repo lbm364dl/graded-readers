@@ -1,0 +1,31 @@
+{
+  "id": "zh-635643d28367-1-2bedb7c26e4d73c4",
+  "entry_id": "zh-635643d28367-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-635643d28367-1",
+      "headword": "树",
+      "kind": "word",
+      "reading": "shù",
+      "senses": [
+        {
+          "id": "zh-635643d28367-1-s1",
+          "definition": "tree"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备小时候常和孩子们在树下玩，说自己将来要做大事。",
+        "gloss": "tree",
+        "sense_id": "zh-635643d28367-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3e4730e77d09df82d100ac99b4d1dd74f7c2d522bf98faf73d134fd32f57491c"
+}

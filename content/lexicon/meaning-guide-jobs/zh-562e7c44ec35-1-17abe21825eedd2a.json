@@ -1,0 +1,31 @@
+{
+  "id": "zh-562e7c44ec35-1-17abe21825eedd2a",
+  "entry_id": "zh-562e7c44ec35-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-562e7c44ec35-1",
+      "headword": "窝",
+      "kind": "word",
+      "reading": "wō",
+      "senses": [
+        {
+          "id": "zh-562e7c44ec35-1-s1",
+          "definition": "hollow; pit"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞挺矛直冲，一矛刺中邓茂心窝，邓茂翻身落马。",
+        "gloss": "hollow; pit",
+        "sense_id": "zh-562e7c44ec35-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a5c6598f81ed309380ea40de4589587848eef1a4aec4e87cede36f96e3d8698f"
+}

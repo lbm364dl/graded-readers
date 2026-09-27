@@ -1,0 +1,91 @@
+{
+  "id": "zh-d88c3023292c-1-84cd40cd90bbe5ee",
+  "entry_id": "zh-d88c3023292c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d88c3023292c-1",
+      "headword": "羽",
+      "kind": "name",
+      "reading": "Yǔ",
+      "senses": [
+        {
+          "id": "zh-d88c3023292c-1-s1",
+          "definition": "the given name in the personal name 关羽"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "那人姓关，名羽，字寿长，后来改字云长，是河东解良人。",
+        "gloss": "Yu (given name)",
+        "sense_id": "zh-d88c3023292c-1-s1"
+      },
+      {
+        "sentence": "关羽因杀了一个仗势欺人的人，逃走五六年。",
+        "gloss": "Yu",
+        "sense_id": "zh-d88c3023292c-1-s1"
+      },
+      {
+        "sentence": "刘备告诉他自己的志向，关羽很高兴。",
+        "gloss": "Yu",
+        "sense_id": "zh-d88c3023292c-1-s1"
+      },
+      {
+        "sentence": "刘备和关羽齐声答应。",
+        "gloss": "Yu",
+        "sense_id": "zh-d88c3023292c-1-s1"
+      },
+      {
+        "sentence": "刘焉命邹靖带刘备、关羽、张飞三人，领五百士兵前去破敌。",
+        "gloss": "Yu",
+        "sense_id": "zh-d88c3023292c-1-s1"
+      },
+      {
+        "sentence": "两军相对，刘备骑马在前，关羽在左，张飞在右。",
+        "gloss": "Yu",
+        "sense_id": "zh-d88c3023292c-1-s1"
+      },
+      {
+        "sentence": "那人说：“我姓关，名羽，字寿长，后改字云长，是河东解良人。",
+        "gloss": "Yu",
+        "sense_id": "zh-d88c3023292c-1-s1"
+      },
+      {
+        "sentence": "”刘备告知自己的志向，关羽大喜。",
+        "gloss": "Yu; here, Guan Yu's given name",
+        "sense_id": "zh-d88c3023292c-1-s1"
+      },
+      {
+        "sentence": "”刘备、关羽一齐答应。",
+        "gloss": "Yu; here, Guan Yu's given name",
+        "sense_id": "zh-d88c3023292c-1-s1"
+      },
+      {
+        "sentence": "两军相对，刘备骑马出阵，关羽在左，张飞在右。",
+        "gloss": "Yu; part of Guan Yu's name",
+        "sense_id": "zh-d88c3023292c-1-s1"
+      },
+      {
+        "sentence": "关羽骑马迎战，挥刀将程远志斩成两段。",
+        "gloss": "Yu; part of Guan Yu's name",
+        "sense_id": "zh-d88c3023292c-1-s1"
+      },
+      {
+        "sentence": "刘焉让邹靖带五千人，与刘备、关羽、张飞一同赶往青州。",
+        "gloss": "Yu",
+        "sense_id": "zh-d88c3023292c-1-s1"
+      },
+      {
+        "sentence": "他对关羽、张飞说，敌众我寡，必须用伏兵应对。",
+        "gloss": "Yu",
+        "sense_id": "zh-d88c3023292c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2e44ecc3a58dc961468d55e14328cc2f72392e2fd5ab205ade479e6acab4336f"
+}

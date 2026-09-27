@@ -1,0 +1,36 @@
+{
+  "id": "zh-270102d52eac-1-91bcf563dca6c164",
+  "entry_id": "zh-270102d52eac-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-270102d52eac-1",
+      "headword": "飞",
+      "kind": "name",
+      "reading": "Fēi",
+      "senses": [
+        {
+          "id": "zh-270102d52eac-1-s1",
+          "definition": "Fei, a person's given name"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞说自己姓张，名飞，字翼德，世居涿郡，家有庄田，平日卖酒屠猪，一向喜欢结交天下豪杰。",
+        "gloss": "Fei",
+        "sense_id": "zh-270102d52eac-1-s1"
+      },
+      {
+        "sentence": "那人回答：“我姓张，名飞，字翼德，世居涿郡，颇有庄田，卖酒屠猪，专好结交天下豪杰。",
+        "gloss": "Fei",
+        "sense_id": "zh-270102d52eac-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7e0d2c14e27182e0366b37e2a8d4697dc9a6485a3ff4b7df2833186b5e815fd0"
+}

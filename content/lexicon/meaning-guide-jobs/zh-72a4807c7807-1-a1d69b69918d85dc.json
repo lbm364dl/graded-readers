@@ -1,0 +1,31 @@
+{
+  "id": "zh-72a4807c7807-1-a1d69b69918d85dc",
+  "entry_id": "zh-72a4807c7807-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-72a4807c7807-1",
+      "headword": "裹",
+      "kind": "word",
+      "reading": "guǒ",
+      "senses": [
+        {
+          "id": "zh-72a4807c7807-1-s1",
+          "definition": "to wrap or cover something around a person or thing"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "百姓纷纷裹上黄巾，跟随黄巾军的人有四五十万。",
+        "gloss": "to wrap",
+        "sense_id": "zh-72a4807c7807-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f6bac9c8bc07e3f15dea8197cda0cd802d011e15569d7e0bc93e868e8140a29f"
+}

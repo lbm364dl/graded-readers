@@ -11,6 +11,7 @@ output/*.html
 .venv/
 venv/
 runs/
+content/lexicon/*.lock
 
 # Local UI inspection captures, not product assets.
 .playwright-mcp/

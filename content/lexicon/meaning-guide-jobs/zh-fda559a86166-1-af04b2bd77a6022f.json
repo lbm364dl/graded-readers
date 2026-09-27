@@ -1,0 +1,31 @@
+{
+  "id": "zh-fda559a86166-1-af04b2bd77a6022f",
+  "entry_id": "zh-fda559a86166-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-fda559a86166-1",
+      "headword": "中的",
+      "kind": "construction",
+      "reading": "zhōng de",
+      "senses": [
+        {
+          "id": "zh-fda559a86166-1-s1",
+          "definition": "locative phrase plus 的 links a place to a following noun, meaning “within” that place"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角暗中送金钱，联系朝中的封谞，准备做内应。",
+        "gloss": "of the; within",
+        "sense_id": "zh-fda559a86166-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3d358c4cf8cbd16feea7b380b960776696832545250665d4e6547fa6d1e2167f"
+}

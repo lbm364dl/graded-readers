@@ -1,0 +1,31 @@
+{
+  "id": "zh-951ee4986cc4-1-51ea17eec19af268",
+  "entry_id": "zh-951ee4986cc4-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-951ee4986cc4-1",
+      "headword": "讨贼",
+      "kind": "construction",
+      "reading": "tǎozéi",
+      "senses": [
+        {
+          "id": "zh-951ee4986cc4-1-s1",
+          "definition": "to attack or suppress bandits"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备请他们喝酒，并说明三人想讨贼安民。",
+        "gloss": "suppress bandits",
+        "sense_id": "zh-951ee4986cc4-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a0317485b0a2462ff6d87c4eb806e7d521bcd51daaf0e96d0e9315228c1480c4"
+}

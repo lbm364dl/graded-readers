@@ -686,7 +686,7 @@ def parser() -> argparse.ArgumentParser:
     result = argparse.ArgumentParser(description=__doc__)
     result.add_argument("--run-dir", action="append", required=True)
     result.add_argument("--output-dir", required=True)
-    result.add_argument("--model", default="gpt-5.6-luna")
+    result.add_argument("--model", default="gpt-6-luna")
     result.add_argument("--classify-effort", default="low")
     result.add_argument("--repair-effort", default="low")
     result.add_argument("--review-effort", default="low")

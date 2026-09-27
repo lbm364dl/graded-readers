@@ -1,0 +1,31 @@
+{
+  "id": "zh-a299d55b8889-1-0790c3ad0a965e3e",
+  "entry_id": "zh-a299d55b8889-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a299d55b8889-1",
+      "headword": "彼此",
+      "kind": "word",
+      "reading": "bǐcǐ",
+      "senses": [
+        {
+          "id": "zh-a299d55b8889-1-s1",
+          "definition": "each other; one another"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人发现彼此都有救民的志向，于是一起到张飞家中。",
+        "gloss": "each other",
+        "sense_id": "zh-a299d55b8889-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4915a624aa0f6bd9b782fde92656dfa1155e15a1cf72b776b976f0c554dbb28a"
+}

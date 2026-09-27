@@ -1,0 +1,31 @@
+{
+  "id": "zh-f68d46416b1d-1-f7d8c6821d6edf9d",
+  "entry_id": "zh-f68d46416b1d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f68d46416b1d-1",
+      "headword": "攻打",
+      "kind": "word",
+      "reading": "gōng dǎ",
+      "senses": [
+        {
+          "id": "zh-f68d46416b1d-1-s1",
+          "definition": "attack; assault"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "二人各引兵攻打营寨，火焰冲天，黄巾军惊慌逃散，来不及上马，也来不及披甲。",
+        "gloss": "to attack",
+        "sense_id": "zh-f68d46416b1d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d911fd247b544aeff779b37c4842fb7af21d42094cdfa109599ea796d9a71894"
+}

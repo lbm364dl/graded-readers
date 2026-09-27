@@ -1,0 +1,31 @@
+{
+  "id": "zh-df1ab0045a06-1-fddfc1d33fb5ea1e",
+  "entry_id": "zh-df1ab0045a06-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-df1ab0045a06-1",
+      "headword": "二十岁",
+      "kind": "word",
+      "reading": "èr shí suì",
+      "senses": [
+        {
+          "id": "zh-df1ab0045a06-1-s1",
+          "definition": "twenty years old"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹操二十岁时举孝廉，做了郎官，后来任洛阳北都尉。",
+        "gloss": "twenty years old",
+        "sense_id": "zh-df1ab0045a06-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ef13cb4ede6fb179f48a8156c24df0227e993696ec0d48c6f6bfcc1fcfd68e57"
+}

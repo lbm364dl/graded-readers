@@ -1,0 +1,31 @@
+{
+  "id": "zh-2868224ed887-1-e9e4bc9cb5504d16",
+  "entry_id": "zh-2868224ed887-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2868224ed887-1",
+      "headword": "惊奇",
+      "kind": "word",
+      "reading": "jīngqí",
+      "senses": [
+        {
+          "id": "zh-2868224ed887-1-s1",
+          "definition": "to be surprised or amazed"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”叔父听后十分惊奇，常常帮助他。",
+        "gloss": "amazed; astonished",
+        "sense_id": "zh-2868224ed887-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "948928b188beb84af659861abb58d7d94c76054ca45a365adb12d8ca25186034"
+}

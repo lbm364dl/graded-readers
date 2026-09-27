@@ -1,0 +1,31 @@
+{
+  "id": "zh-715fded82187-1-93125202d2765a57",
+  "entry_id": "zh-715fded82187-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-715fded82187-1",
+      "headword": "壮大",
+      "kind": "word",
+      "reading": "zhuàngdà",
+      "senses": [
+        {
+          "id": "zh-715fded82187-1-s1",
+          "definition": "grow in strength or size"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”三人于是发动黄巾起事，百姓纷纷跟随，黄巾军很快壮大。",
+        "gloss": "grow strong",
+        "sense_id": "zh-715fded82187-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "aa96c6192092e4d3354f709a1c5f2bf2cac0a5d62620a6dc8cba0cb1c414a136"
+}

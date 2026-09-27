@@ -1,0 +1,31 @@
+{
+  "id": "zh-5278c17fb341-1-e62ccfa9cac80123",
+  "entry_id": "zh-5278c17fb341-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5278c17fb341-1",
+      "headword": "传话",
+      "kind": "word",
+      "reading": "chuánhuà",
+      "senses": [
+        {
+          "id": "zh-5278c17fb341-1-s1",
+          "definition": "pass on a message"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角让手下向百姓传话，说旧的天下已经衰弱，新的天下将要出现，还叫人用白土在家门上写下“甲子”二字。",
+        "gloss": "pass on a message",
+        "sense_id": "zh-5278c17fb341-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "802fb926d11b8ddea8d9f4676dd502f1ee86ae43e79525a08fd0dfb648a9b4b9"
+}

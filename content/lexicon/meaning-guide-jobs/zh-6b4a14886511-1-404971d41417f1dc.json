@@ -1,0 +1,31 @@
+{
+  "id": "zh-6b4a14886511-1-404971d41417f1dc",
+  "entry_id": "zh-6b4a14886511-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6b4a14886511-1",
+      "headword": "当地",
+      "kind": "word",
+      "reading": "dāngdì",
+      "senses": [
+        {
+          "id": "zh-6b4a14886511-1-s1",
+          "definition": "local; of the place concerned"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "那人叫关羽，曾因杀了当地一个仗势欺人的人，逃难了五六年。",
+        "gloss": "local",
+        "sense_id": "zh-6b4a14886511-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "10d18df8a736598c8b2959693d17f7a216a5ef1c8f2495582079421dc471d846"
+}

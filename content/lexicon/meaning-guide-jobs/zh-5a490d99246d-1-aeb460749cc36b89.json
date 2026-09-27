@@ -1,0 +1,31 @@
+{
+  "id": "zh-5a490d99246d-1-aeb460749cc36b89",
+  "entry_id": "zh-5a490d99246d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5a490d99246d-1",
+      "headword": "进来",
+      "kind": "construction",
+      "reading": "jìnlái",
+      "senses": [
+        {
+          "id": "zh-5a490d99246d-1-s1",
+          "definition": "to come in; to enter toward the speaker or a reference point"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他进来要酒，说要赶进城投军。",
+        "gloss": "come in",
+        "sense_id": "zh-5a490d99246d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "348cd76efae3719f7bf97258b02ca30c0c7cf870670e9fc26ca4c0dc5abd9753"
+}

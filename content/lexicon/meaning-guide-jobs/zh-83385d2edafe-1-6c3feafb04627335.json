@@ -1,0 +1,70 @@
+{
+  "id": "zh-83385d2edafe-1-6c3feafb04627335",
+  "entry_id": "zh-83385d2edafe-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-83385d2edafe-1",
+      "headword": "两",
+      "kind": "word",
+      "reading": "liǎng",
+      "senses": [
+        {
+          "id": "zh-83385d2edafe-1-s1",
+          "definition": "two, used before a measure word or noun"
+        },
+        {
+          "id": "zh-83385d2edafe-1-s2",
+          "definition": "a traditional Chinese unit of weight"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "后来，两个客人来到张飞家。",
+        "gloss": "two",
+        "sense_id": "zh-83385d2edafe-1-s1"
+      },
+      {
+        "sentence": "他和两个弟弟商议后，决定抓住民心的机会。",
+        "gloss": "two",
+        "sense_id": "zh-83385d2edafe-1-s1"
+      },
+      {
+        "sentence": "于是有人来报，两个客人带着伙伴和一群马来到庄上。",
+        "gloss": "two",
+        "sense_id": "zh-83385d2edafe-1-s1"
+      },
+      {
+        "sentence": "二人了解后很高兴，赠送五十匹好马、金银五百两和铁一千斤，帮助三人打造兵器。",
+        "gloss": "liang",
+        "sense_id": "zh-83385d2edafe-1-s2"
+      },
+      {
+        "sentence": "程远志来不及防备，被关羽斩成两段。",
+        "gloss": "two",
+        "sense_id": "zh-83385d2edafe-1-s1"
+      },
+      {
+        "sentence": "二更后，伏兵一齐放火，两人各带军队攻入营中。",
+        "gloss": "two",
+        "sense_id": "zh-83385d2edafe-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-83385d2edafe-1",
+    "structure": "single_component",
+    "explanation_en": "两 gives the quantity two, commonly before a classifier or noun to count people or things.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "1c1c834d4bd4f3ada40c733c3b5dfe3ea8a5d6c1819e62f1becbfcbec27162eb",
+    "revision": 1,
+    "editorial_policy": 2,
+    "evidence_status": "legacy_unresearched"
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "93e06cd921f2e0ceaa7c7141e219bf7616188bd771fbe795aeb8f5d29d9c70f5"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-1f910ce59937-1-32903b3f77246ef9",
+  "entry_id": "zh-1f910ce59937-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1f910ce59937-1",
+      "headword": "祸乱",
+      "kind": "word",
+      "reading": "huòluàn",
+      "senses": [
+        {
+          "id": "zh-1f910ce59937-1-s1",
+          "definition": "calamity and chaos"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "朝代分合本是常事，但祸乱大约从桓帝、灵帝时开始。",
+        "gloss": "calamity and chaos",
+        "sense_id": "zh-1f910ce59937-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2da01c5769c35f23da4670d8db259e70c75fc103a4ffb15ad987a6ee6ee02b86"
+}

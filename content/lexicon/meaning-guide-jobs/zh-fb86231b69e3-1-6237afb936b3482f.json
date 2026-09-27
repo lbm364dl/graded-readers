@@ -1,0 +1,31 @@
+{
+  "id": "zh-fb86231b69e3-1-6237afb936b3482f",
+  "entry_id": "zh-fb86231b69e3-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-fb86231b69e3-1",
+      "headword": "金银",
+      "kind": "word",
+      "reading": "jīnyín",
+      "senses": [
+        {
+          "id": "zh-fb86231b69e3-1-s1",
+          "definition": "gold and silver"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他们送来马匹、金银和铁。",
+        "gloss": "gold and silver",
+        "sense_id": "zh-fb86231b69e3-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "aca05a6ccd0d688e5adafdabeef2dbd9058e27f48744bcd7a6406201d1fcf31f"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-ba8bd7c8c974-1-8b2fcda3829a0631",
+  "entry_id": "zh-ba8bd7c8c974-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ba8bd7c8c974-1",
+      "headword": "只有",
+      "kind": "construction",
+      "reading": "zhǐyǒu",
+      "senses": [
+        {
+          "id": "zh-ba8bd7c8c974-1-s1",
+          "definition": "only by doing something can a result be achieved"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备对关羽、张飞说：“我们人少，只有想个好主意，才能取胜。",
+        "gloss": "only if",
+        "sense_id": "zh-ba8bd7c8c974-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9662ece363f948dff85203e12bdefbc46691be65b79ecb3008bc7b1b0cf596e2"
+}

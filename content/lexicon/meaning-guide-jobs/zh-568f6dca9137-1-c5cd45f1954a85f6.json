@@ -1,0 +1,31 @@
+{
+  "id": "zh-568f6dca9137-1-c5cd45f1954a85f6",
+  "entry_id": "zh-568f6dca9137-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-568f6dca9137-1",
+      "headword": "母亲",
+      "kind": "word",
+      "reading": "mǔqīn",
+      "senses": [
+        {
+          "id": "zh-568f6dca9137-1-s1",
+          "definition": "mother"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他很早失去父亲，依靠手艺养家，也一直孝顺母亲。",
+        "gloss": "mother",
+        "sense_id": "zh-568f6dca9137-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "27955a0488229cd0d9a6865176a3923134c856f0dfdfa19a47aec62209f8d5d6"
+}

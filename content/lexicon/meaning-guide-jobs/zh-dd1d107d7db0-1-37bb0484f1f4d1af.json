@@ -1,0 +1,31 @@
+{
+  "id": "zh-dd1d107d7db0-1-37bb0484f1f4d1af",
+  "entry_id": "zh-dd1d107d7db0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-dd1d107d7db0-1",
+      "headword": "一群",
+      "kind": "word",
+      "reading": "yìqún",
+      "senses": [
+        {
+          "id": "zh-dd1d107d7db0-1-s1",
+          "definition": "a group; a crowd or herd"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "后来，商人带着一群马来到张飞家。",
+        "gloss": "a group",
+        "sense_id": "zh-dd1d107d7db0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b7a10de90216b227dcc07e0b84476ab93f3ec834887e9ce5117f79620cf67282"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-ecc7fb355d53-1-3972f44d318a88b6",
+  "entry_id": "zh-ecc7fb355d53-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ecc7fb355d53-1",
+      "headword": "群臣",
+      "kind": "word",
+      "reading": "qúnchén",
+      "senses": [
+        {
+          "id": "zh-ecc7fb355d53-1-s1",
+          "definition": "a group of ministers serving a ruler"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇帝下诏，询问群臣灾害的原因。",
+        "gloss": "court ministers",
+        "sense_id": "zh-ecc7fb355d53-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6da8f8b294ed0ef9a5e0f86bd3c713dcef0df5237906648040178930f61cd190"
+}

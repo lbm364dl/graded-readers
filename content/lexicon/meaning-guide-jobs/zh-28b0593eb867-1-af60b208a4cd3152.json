@@ -1,0 +1,31 @@
+{
+  "id": "zh-28b0593eb867-1-af60b208a4cd3152",
+  "entry_id": "zh-28b0593eb867-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-28b0593eb867-1",
+      "headword": "又名",
+      "kind": "word",
+      "reading": "yòu míng",
+      "senses": [
+        {
+          "id": "zh-28b0593eb867-1-s1",
+          "definition": "also be called; have another name"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "为首的是曹操，字孟德，小字阿瞒，又名吉利。",
+        "gloss": "also called",
+        "sense_id": "zh-28b0593eb867-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bb4bb80a9b23a8cd7d404b87a738e156399593050a9c0898463d81e211e12e6a"
+}

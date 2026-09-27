@@ -1,0 +1,31 @@
+{
+  "id": "zh-7812011c2f83-1-929bfca76e559e0d",
+  "entry_id": "zh-7812011c2f83-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7812011c2f83-1",
+      "headword": "疏",
+      "kind": "word",
+      "reading": "shū",
+      "senses": [
+        {
+          "id": "zh-7812011c2f83-1-s1",
+          "definition": "a memorial or petition submitted to the ruler"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "议郎蔡邕上疏直言，说雌鸡变雄等灾异，是妇寺干政造成的。",
+        "gloss": "memorial; petition",
+        "sense_id": "zh-7812011c2f83-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "47f6b122bd1ab6489abf86a30886438f3c40d3976fa728102bb57ec614f232b7"
+}

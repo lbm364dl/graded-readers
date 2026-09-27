@@ -1,0 +1,31 @@
+{
+  "id": "zh-70d0c1b33626-1-14856bae171b83d9",
+  "entry_id": "zh-70d0c1b33626-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-70d0c1b33626-1",
+      "headword": "日期",
+      "kind": "word",
+      "reading": "rìqī",
+      "senses": [
+        {
+          "id": "zh-70d0c1b33626-1-s1",
+          "definition": "date; the day set for an event"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角一面私造黄旗，约好起事日期，一面派弟子送信，却被告密。",
+        "gloss": "date",
+        "sense_id": "zh-70d0c1b33626-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ac16ed9fe006d8869a66d56dffdac5964e7226d2391e5e0629f35885c88304fd"
+}

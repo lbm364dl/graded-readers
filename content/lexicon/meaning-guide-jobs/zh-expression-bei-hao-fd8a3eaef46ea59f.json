@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-bei-hao-fd8a3eaef46ea59f",
+  "entry_id": "zh-expression-bei-hao",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-bei-hao",
+      "headword": "备好",
+      "reading": "bèihǎo",
+      "base_entry_id": "zh-b977f966967a-1",
+      "components": [
+        {
+          "entry_id": "zh-b977f966967a-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-f867f3417859-2",
+          "role": "result complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-bei-hao-s1",
+          "definition": "prepare something and have it ready"
+        }
+      ],
+      "kind": "construction"
+    },
+    "examples": [
+      {
+        "sentence": "三人备好祭品，烧香行礼，再拜后发誓。",
+        "gloss": "prepare something and have it ready",
+        "sense_id": "zh-expression-bei-hao-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "备",
+        "role": "verb"
+      },
+      {
+        "headword": "好",
+        "role": "result complement"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "db5c55b8cca04f087e6888dad4a76fd6cc9bbcddd8e87c562e9c57a582dafd0a"
+}

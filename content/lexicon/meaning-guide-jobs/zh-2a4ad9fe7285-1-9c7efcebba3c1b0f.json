@@ -1,0 +1,36 @@
+{
+  "id": "zh-2a4ad9fe7285-1-9c7efcebba3c1b0f",
+  "entry_id": "zh-2a4ad9fe7285-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2a4ad9fe7285-1",
+      "headword": "海水",
+      "kind": "word",
+      "reading": "hǎishuǐ",
+      "senses": [
+        {
+          "id": "zh-2a4ad9fe7285-1-s1",
+          "definition": "seawater"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "大风、雷雨、冰雹毁坏房屋，地震和海水泛上来，百姓生活很难。",
+        "gloss": "seawater",
+        "sense_id": "zh-2a4ad9fe7285-1-s1"
+      },
+      {
+        "sentence": "建宁四年二月，洛阳地震，海水泛滥，沿海居民被大浪卷走。",
+        "gloss": "seawater",
+        "sense_id": "zh-2a4ad9fe7285-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5a3df0aa549c53541d167f0a4d9efcd1e075ce3e98d330b00d7f2b0141377f2b"
+}

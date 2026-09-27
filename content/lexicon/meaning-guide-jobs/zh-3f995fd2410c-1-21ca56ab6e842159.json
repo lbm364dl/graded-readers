@@ -1,0 +1,31 @@
+{
+  "id": "zh-3f995fd2410c-1-21ca56ab6e842159",
+  "entry_id": "zh-3f995fd2410c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-3f995fd2410c-1",
+      "headword": "直接",
+      "kind": "word",
+      "reading": "zhíjiē",
+      "senses": [
+        {
+          "id": "zh-3f995fd2410c-1-s1",
+          "definition": "in a straightforward or unreserved manner"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇帝下诏询问多种灾异的原因，蔡邕上书，认为这是妇人与宦官干政导致的，言辞十分直接。",
+        "gloss": "direct",
+        "sense_id": "zh-3f995fd2410c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ca71ee91c086ccedd1b77b279b046e1dfcd61d3a4be853838c16ba3ed5d7cf7b"
+}

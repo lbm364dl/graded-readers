@@ -1,0 +1,160 @@
+{
+  "id": "zh-6c4757411935-1-5e428ca0692844ac",
+  "entry_id": "zh-6c4757411935-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-6c4757411935-1",
+      "headword": "不能",
+      "kind": "word",
+      "reading": "bùnéng",
+      "senses": [
+        {
+          "id": "zh-6c4757411935-1-s1",
+          "definition": "cannot; be unable to"
+        },
+        {
+          "id": "zh-6c4757411935-1-s2",
+          "definition": "must not; should not"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备连忙劝他，说不能这样做。",
+        "gloss": "cannot",
+        "sense_id": "zh-6c4757411935-1-s1"
+      },
+      {
+        "sentence": "张飞听见后说：“大丈夫不能只叹气！",
+        "gloss": "cannot",
+        "sense_id": "zh-6c4757411935-1-s1"
+      },
+      {
+        "sentence": "刘备连忙拉住他：“这件事应当由朝廷处理，你不能冲动。",
+        "gloss": "must not",
+        "sense_id": "zh-6c4757411935-1-s1"
+      },
+      {
+        "sentence": "这天，他见到榜文，想到自己没有力量为国家出力，不能报国，不禁长叹。",
+        "gloss": "cannot",
+        "sense_id": "zh-6c4757411935-1-s1"
+      },
+      {
+        "sentence": "刘备急忙阻止他：“朝廷自有公论，你不能冲动。",
+        "gloss": "cannot",
+        "sense_id": "zh-6c4757411935-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-6c4757411935-1",
+    "claim_ids": [
+      "c1"
+    ],
+    "structure": "grammatical",
+    "explanation_en": "不 negates 能, which expresses whether someone is able to do something or whether conditions make it possible. Together, 不能 means that someone cannot do it.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "不",
+        "contribution_en": "Negates the ability or possibility expressed by 能.",
+        "claim_ids": [
+          "c1"
+        ]
+      },
+      {
+        "text": "能",
+        "contribution_en": "Expresses ability, or whether conditions make an action possible.",
+        "claim_ids": [
+          "c1"
+        ]
+      }
+    ],
+    "research": {
+      "entry_id": "zh-6c4757411935-1",
+      "status": "partial",
+      "sources": [
+        {
+          "id": "s1",
+          "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=1989&la=0&powerMode=0",
+          "title": "〈不能〉辭典檢視 - 教育部《國語辭典簡編本》2021",
+          "accessed_at": "2026-09-26",
+          "summary_en": "The Taiwan Ministry of Education dictionary lists one sense as being unable to do something, with an example where a household matter prevents someone from coming. It separately lists insufficient or absent ability."
+        },
+        {
+          "id": "s2",
+          "url": "https://www.chinesemaster.net/grammar/能力を表す助動詞",
+          "title": "可能・能力を表す助動詞「能」「可以」「能够」「会」 | 中国語文法辞典",
+          "accessed_at": "2026-09-26",
+          "summary_en": "This grammar reference describes 能 as chiefly expressing ability, also notes that ability or conditions can make an action possible, and says its usual negative is 不能. Its examples include a 不能 sentence translated with a prohibitive force, showing that context can support readings beyond inability."
+        }
+      ],
+      "claims": [
+        {
+          "id": "c1",
+          "text_en": "For the supplied inability sense, 不 negates 能: the grammar reference identifies 不能 as the usual negative of 能 and describes 能 as chiefly expressing ability, including ability or conditions that make an action possible. The MOE dictionary separately records inability and insufficient or absent ability.",
+          "source_ids": [
+            "s1",
+            "s2"
+          ]
+        },
+        {
+          "id": "c2",
+          "text_en": "The supplied sentence is compatible with “cannot do it this way.” The preceding advice may give the utterance an admonitory or prohibitive force, but the example alone does not specify whether the constraint is ability, circumstances, or permission. The grammar reference confirms that 不能 can take a prohibitive reading in some contexts; it does not determine the reading of this particular example.",
+          "source_ids": [
+            "s2"
+          ]
+        },
+        {
+          "id": "c3",
+          "text_en": "The modern component meanings explain the supplied inability sense compositionally; the opened sources do not establish a historical derivation, and none is needed to explain this target sense. Other contextual readings should be kept distinct from it.",
+          "source_ids": [
+            "s1",
+            "s2"
+          ]
+        }
+      ],
+      "searches": [
+        {
+          "query": "site:dict.concised.moe.edu.tw/dictView.jsp 不能 國語辭典簡編本",
+          "opened_urls": []
+        },
+        {
+          "query": "不能 能 助動詞 否定 ability Chinese grammar scholarly",
+          "opened_urls": []
+        },
+        {
+          "query": "中고중국어 不能 不可以 不得 ART002449377",
+          "opened_urls": []
+        },
+        {
+          "query": "A Study on Auxiliary Verb of dynamic modality (ability) of the Negative form in Middle Ancient Chinese",
+          "opened_urls": []
+        },
+        {
+          "query": "(direct open)",
+          "opened_urls": [
+            "https://dict.concised.moe.edu.tw/dictView.jsp?ID=1989&la=0&powerMode=0",
+            "https://www.chinesemaster.net/grammar/能力を表す助動詞"
+          ]
+        }
+      ],
+      "gaps": [
+        "The example’s 不能这样做 may be understood as inability or as advice against the action, but the sentence does not settle which constraint is intended. The opened sources establish that both readings are possible in context, not which one applies here.",
+        "The cited historical-study page could not be opened successfully, so its historical claims were excluded. No opened source was needed to explain the supplied sense from the modern meanings of 不 and 能."
+      ]
+    },
+    "input_fingerprint": "3cedd03bb451671627012276d38bc634fa4db3d8a35ad945dc1872771a23300b",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "partial",
+    "editorial_route": "cached_research",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "30667b4571c5fdbdc4f0fd174d267c518525badfe81a3600a9243107c80c522a"
+}

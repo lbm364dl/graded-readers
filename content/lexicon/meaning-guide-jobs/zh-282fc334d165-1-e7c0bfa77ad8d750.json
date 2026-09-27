@@ -1,0 +1,50 @@
+{
+  "id": "zh-282fc334d165-1-e7c0bfa77ad8d750",
+  "entry_id": "zh-282fc334d165-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-282fc334d165-1",
+      "headword": "仿佛",
+      "kind": "word",
+      "reading": "fǎngfú",
+      "senses": [
+        {
+          "id": "zh-282fc334d165-1-s1",
+          "definition": "seem; appear to be as if"
+        },
+        {
+          "id": "zh-282fc334d165-1-s2",
+          "definition": "resemble; be similar in appearance or form to"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "说完，老人仿佛化成清风，转眼不见。",
+        "gloss": "seem; as if",
+        "sense_id": "zh-282fc334d165-1-s1"
+      },
+      {
+        "sentence": "家住楼桑村，村东南有一棵大桑树，高五丈多，树冠仿佛车盖。",
+        "gloss": "to resemble",
+        "sense_id": "zh-282fc334d165-1-s2"
+      },
+      {
+        "sentence": "桥玄曾对曹操说，天下将乱，能安定天下的人，仿佛就是他。",
+        "gloss": "as if",
+        "sense_id": "zh-282fc334d165-1-s1"
+      },
+      {
+        "sentence": "刘备带着关羽、张飞赶到颍川时，听见喊杀声，又看见仿佛冲天的火光。",
+        "gloss": "as if",
+        "sense_id": "zh-282fc334d165-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ba13033da62c8707d8cdc3b9d37c0e19419a3bc3c9c07ba535a68af5d3ec5b96"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "zh-ee8354c32670-1-d10d6259906c4b4a",
+  "entry_id": "zh-ee8354c32670-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ee8354c32670-1",
+      "headword": "日益",
+      "kind": "word",
+      "reading": "rìyì",
+      "senses": [
+        {
+          "id": "zh-ee8354c32670-1-s1",
+          "definition": "increasingly; to an ever greater degree"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "朝政日益败坏，盗贼不停出现。",
+        "gloss": "increasingly",
+        "sense_id": "zh-ee8354c32670-1-s1"
+      },
+      {
+        "sentence": "朝政日益败坏，盗贼纷纷起来，天下人心更加不安。",
+        "gloss": "increasingly; day by day",
+        "sense_id": "zh-ee8354c32670-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "47a5d41250fe34cd2b5d432674760127f50c71045b74bb94647b9f7b0dca635f"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-6255b305af38-1-c6a8c85653285082",
+  "entry_id": "zh-6255b305af38-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6255b305af38-1",
+      "headword": "兴起",
+      "kind": "word",
+      "reading": "xīngqǐ",
+      "senses": [
+        {
+          "id": "zh-6255b305af38-1-s1",
+          "definition": "to arise or emerge"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他们每年往北贩马，近来因盗贼兴起，只得回来。",
+        "gloss": "rise up",
+        "sense_id": "zh-6255b305af38-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "78aa44a2f60ac217e9b3dca2aecfc4f68b21548ff942193d49eaa392cb14aa5b"
+}

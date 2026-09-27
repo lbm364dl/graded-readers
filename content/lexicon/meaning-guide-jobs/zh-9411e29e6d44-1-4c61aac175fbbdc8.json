@@ -1,0 +1,36 @@
+{
+  "id": "zh-9411e29e6d44-1-4c61aac175fbbdc8",
+  "entry_id": "zh-9411e29e6d44-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9411e29e6d44-1",
+      "headword": "失去",
+      "kind": "word",
+      "reading": "shīqù",
+      "senses": [
+        {
+          "id": "zh-9411e29e6d44-1-s1",
+          "definition": "to lose or no longer have"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他很早失去父亲，依靠手艺养家，也一直孝顺母亲。",
+        "gloss": "to lose",
+        "sense_id": "zh-9411e29e6d44-1-s1"
+      },
+      {
+        "sentence": "”军队带走卢植后，关羽说：“卢植已被抓，我们失去了依靠，只能回涿郡。",
+        "gloss": "lose",
+        "sense_id": "zh-9411e29e6d44-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9d2a2c18262cb7f13343462faf0ba22d4812cb4ac6f7134e07a55651df906516"
+}

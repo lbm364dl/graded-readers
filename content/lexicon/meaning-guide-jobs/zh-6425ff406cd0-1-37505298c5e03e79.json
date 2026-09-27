@@ -1,0 +1,31 @@
+{
+  "id": "zh-6425ff406cd0-1-37505298c5e03e79",
+  "entry_id": "zh-6425ff406cd0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6425ff406cd0-1",
+      "headword": "天明",
+      "kind": "word",
+      "reading": "tiānmíng",
+      "senses": [
+        {
+          "id": "zh-6425ff406cd0-1-s1",
+          "definition": "daybreak; dawn"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "战到天明，张梁、张宝带残兵逃走。",
+        "gloss": "daybreak",
+        "sense_id": "zh-6425ff406cd0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7befb288dc2d50735402d971571dcc39d052a87a56788abdcfb9544658acc030"
+}

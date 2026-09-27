@@ -1,0 +1,31 @@
+{
+  "id": "zh-b2cb8e0a7e90-1-c9742cd6a248857e",
+  "entry_id": "zh-b2cb8e0a7e90-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b2cb8e0a7e90-1",
+      "headword": "刘雄",
+      "kind": "name",
+      "reading": "Liú Xióng",
+      "senses": [
+        {
+          "id": "zh-b2cb8e0a7e90-1-s1",
+          "definition": "Liu Xiong, a person's name"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "祖父刘雄，父亲刘弘；刘弘曾举孝廉，也做过官，后来早亡。",
+        "gloss": "Liu Xiong",
+        "sense_id": "zh-b2cb8e0a7e90-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d422ab90f3836c16f95054e5cae9d1b07c9348c07ef396fe27b0a05725dc800d"
+}

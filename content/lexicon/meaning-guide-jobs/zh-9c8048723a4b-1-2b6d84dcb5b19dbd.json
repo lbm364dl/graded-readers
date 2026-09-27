@@ -1,0 +1,31 @@
+{
+  "id": "zh-9c8048723a4b-1-2b6d84dcb5b19dbd",
+  "entry_id": "zh-9c8048723a4b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9c8048723a4b-1",
+      "headword": "喊",
+      "kind": "word",
+      "reading": "hǎn",
+      "senses": [
+        {
+          "id": "zh-9c8048723a4b-1-s1",
+          "definition": "call out or shout loudly"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备带着关羽、张飞赶到颍川时，只听见喊杀声，也看见火光照亮天空。",
+        "gloss": "to yell; shout",
+        "sense_id": "zh-9c8048723a4b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "96efe9149ff2af80ba78e1de0a81ac77a0f9a6bf747e084781fb2d6ee4a3b0e4"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-d7d6f6d17109-1-aa81bac165b3fc95",
+  "entry_id": "zh-d7d6f6d17109-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d7d6f6d17109-1",
+      "headword": "私造",
+      "kind": "word",
+      "reading": "sīzào",
+      "senses": [
+        {
+          "id": "zh-d7d6f6d17109-1-s1",
+          "definition": "to make something privately or without authorization"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角一面私造黄旗，约好起事日期，一面派弟子送信，却被告密。",
+        "gloss": "to secretly make",
+        "sense_id": "zh-d7d6f6d17109-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "091c58fda8b60298c85274170c3368554b955b5c1e804549ab3315e5365b7d76"
+}

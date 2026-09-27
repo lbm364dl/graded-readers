@@ -1,0 +1,31 @@
+{
+  "id": "zh-b02dfe2160c6-1-3af6dc58625e1e16",
+  "entry_id": "zh-b02dfe2160c6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b02dfe2160c6-1",
+      "headword": "不",
+      "kind": "word",
+      "reading": "bù",
+      "senses": [
+        {
+          "id": "zh-b02dfe2160c6-1-s1",
+          "definition": "not; no"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "董卓能不能活下来，故事留下了悬念。",
+        "gloss": "not",
+        "sense_id": "zh-b02dfe2160c6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "77a6be271e6205f0d239009770c5ea776abc4679db69bb82e0af81bb72c0b316"
+}

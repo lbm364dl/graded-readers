@@ -1,0 +1,31 @@
+{
+  "id": "zh-7ad924a1c328-1-7f72737c99f2c4bd",
+  "entry_id": "zh-7ad924a1c328-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7ad924a1c328-1",
+      "headword": "安排",
+      "kind": "word",
+      "reading": "ānpái",
+      "senses": [
+        {
+          "id": "zh-7ad924a1c328-1-s1",
+          "definition": "arrange; position"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他们让人准备草把，悄悄安排在四周。",
+        "gloss": "arrange",
+        "sense_id": "zh-7ad924a1c328-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "27c0a25d4d50443d999f7e38ebc383d5864349b02215be5e5d41f83d9a08ffa6"
+}

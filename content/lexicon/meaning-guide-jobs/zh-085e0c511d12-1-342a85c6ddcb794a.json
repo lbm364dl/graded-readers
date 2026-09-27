@@ -1,0 +1,31 @@
+{
+  "id": "zh-085e0c511d12-1-342a85c6ddcb794a",
+  "entry_id": "zh-085e0c511d12-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-085e0c511d12-1",
+      "headword": "疫病",
+      "kind": "word",
+      "reading": "yìbìng",
+      "senses": [
+        {
+          "id": "zh-085e0c511d12-1-s1",
+          "definition": "epidemic disease"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "当时疫病流行，很多人相信张角。",
+        "gloss": "epidemic disease",
+        "sense_id": "zh-085e0c511d12-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a1232a9f18a8942011716aa818fe399c2ea37bf50e20376dbe49c22841f85378"
+}

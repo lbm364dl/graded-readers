@@ -1,0 +1,31 @@
+{
+  "id": "zh-1d3dce1517d0-1-a056ee4bdd366671",
+  "entry_id": "zh-1d3dce1517d0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1d3dce1517d0-1",
+      "headword": "山后",
+      "kind": "word",
+      "reading": "shān hòu",
+      "senses": [
+        {
+          "id": "zh-1d3dce1517d0-1-s1",
+          "definition": "the area behind a mountain"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "不到两天，他们听见山后喊声很大。",
+        "gloss": "behind the mountain",
+        "sense_id": "zh-1d3dce1517d0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "92e8028a645de1dfaaad223ca68f5c919e532077f7daca27c169eab3e4eb04a9"
+}

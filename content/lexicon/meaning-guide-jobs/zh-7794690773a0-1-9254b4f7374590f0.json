@@ -1,0 +1,41 @@
+{
+  "id": "zh-7794690773a0-1-9254b4f7374590f0",
+  "entry_id": "zh-7794690773a0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7794690773a0-1",
+      "headword": "青龙偃月刀",
+      "kind": "name",
+      "reading": "Qīnglóng Yǎnyuè Dāo",
+      "senses": [
+        {
+          "id": "zh-7794690773a0-1-s1",
+          "definition": "the name of Guan Yu’s weapon"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备命良匠打造双股剑，关羽造青龙偃月刀，又名冷艳锯，重八十二斤；张飞造丈八点钢矛。",
+        "gloss": "Green Dragon Crescent Blade (weapon name)",
+        "sense_id": "zh-7794690773a0-1-s1"
+      },
+      {
+        "sentence": "刘备谢过他们，便请工匠打造双股剑、青龙偃月刀和丈八点钢矛。",
+        "gloss": "Green Dragon Crescent Blade",
+        "sense_id": "zh-7794690773a0-1-s1"
+      },
+      {
+        "sentence": "青龙偃月刀重八十二斤。",
+        "gloss": "Green Dragon Crescent Blade",
+        "sense_id": "zh-7794690773a0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d0c887120c36ca79063e5917519b818573e97e7d707324291d214b123b8fa311"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-ya-zou-d746889b1519e16a",
+  "entry_id": "zh-expression-ya-zou",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-ya-zou",
+      "headword": "押走",
+      "reading": "yāzǒu",
+      "base_entry_id": "zh-f2854627cacf-1",
+      "components": [
+        {
+          "entry_id": "zh-f2854627cacf-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-f66de6c4cd41-1",
+          "role": "directional complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-ya-zou-s1",
+          "definition": "take someone away under guard"
+        }
+      ],
+      "kind": "construction"
+    },
+    "examples": [
+      {
+        "sentence": "卢植被押走后，关羽建议先回涿郡，刘备同意了。",
+        "gloss": "take someone away under guard",
+        "sense_id": "zh-expression-ya-zou-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "押",
+        "role": "verb"
+      },
+      {
+        "headword": "走",
+        "role": "directional complement"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0910ded1bf2e865faab3fb7e6d7933cce2d372c69336edbdce0dd530f9579daa"
+}

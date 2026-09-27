@@ -1,0 +1,31 @@
+{
+  "id": "zh-d3dc8c6e422d-1-4dc0d0c025e83e93",
+  "entry_id": "zh-d3dc8c6e422d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d3dc8c6e422d-1",
+      "headword": "夹击",
+      "kind": "word",
+      "reading": "jiājī",
+      "senses": [
+        {
+          "id": "zh-d3dc8c6e422d-1-s1",
+          "definition": "to attack from both sides"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三路夹击，黄巾军大败。",
+        "gloss": "to attack from both sides",
+        "sense_id": "zh-d3dc8c6e422d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "08132d7da388078d0aedee82eec646ae40a7b01e6a2905cd038b7be7e43c0ead"
+}

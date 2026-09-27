@@ -1,0 +1,36 @@
+{
+  "id": "zh-db043554e58a-1-1baf36d603551961",
+  "entry_id": "zh-db043554e58a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-db043554e58a-1",
+      "headword": "车里",
+      "kind": "word",
+      "reading": "chēlǐ",
+      "senses": [
+        {
+          "id": "zh-db043554e58a-1-s1",
+          "definition": "inside the cart"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备回去的路上，看见一辆车，车里关着的人正是卢植。",
+        "gloss": "inside the cart",
+        "sense_id": "zh-db043554e58a-1-s1"
+      },
+      {
+        "sentence": "刘备带兵回去，半路遇见护送囚车的军队，车里是卢植。",
+        "gloss": "inside the cart",
+        "sense_id": "zh-db043554e58a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f0fef18fa4d7ab9e93c071b514dc46ab51fd17f2e5e1343814a63c310d40bad1"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-6c4757411935-1-60b20afa45bbb6e7",
+  "entry_id": "zh-6c4757411935-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6c4757411935-1",
+      "headword": "不能",
+      "kind": "word",
+      "reading": "bùnéng",
+      "senses": [
+        {
+          "id": "zh-6c4757411935-1-s1",
+          "definition": "cannot; be unable to"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备连忙劝他，说不能这样做。",
+        "gloss": "cannot",
+        "sense_id": "zh-6c4757411935-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "19992752bc4f8960d08d8782e567fc5928afcb8bb7086a9b2570fe081c672027"
+}

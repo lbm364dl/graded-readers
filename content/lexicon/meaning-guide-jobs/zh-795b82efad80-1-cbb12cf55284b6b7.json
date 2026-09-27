@@ -1,0 +1,31 @@
+{
+  "id": "zh-795b82efad80-1-cbb12cf55284b6b7",
+  "entry_id": "zh-795b82efad80-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-795b82efad80-1",
+      "headword": "除掉",
+      "kind": "word",
+      "reading": "chúdiào",
+      "senses": [
+        {
+          "id": "zh-795b82efad80-1-s1",
+          "definition": "to get rid of; eliminate"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "窦武、陈蕃于是商量除掉宦官，想改变这种局面。",
+        "gloss": "to get rid of",
+        "sense_id": "zh-795b82efad80-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8765156a74a85fc5495eba05cfd668bc2aa8d1e278551e4dc86e95ce4b77f408"
+}

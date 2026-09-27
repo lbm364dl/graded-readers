@@ -1,0 +1,31 @@
+{
+  "id": "zh-e1ed24d97b31-1-969e47647a07abc9",
+  "entry_id": "zh-e1ed24d97b31-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e1ed24d97b31-1",
+      "headword": "不杀",
+      "kind": "construction",
+      "reading": "bùshā",
+      "senses": [
+        {
+          "id": "zh-e1ed24d97b31-1-s1",
+          "definition": "not kill"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "不杀他，我无法消气。",
+        "gloss": "if I do not kill",
+        "sense_id": "zh-e1ed24d97b31-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bee35da3906d3ca19a571379106bbad8526d6ad527b257248f08090a25e289cb"
+}

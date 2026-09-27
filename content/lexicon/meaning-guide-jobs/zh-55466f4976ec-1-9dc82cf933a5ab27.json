@@ -1,0 +1,70 @@
+{
+  "id": "zh-55466f4976ec-1-9dc82cf933a5ab27",
+  "entry_id": "zh-55466f4976ec-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-55466f4976ec-1",
+      "headword": "成",
+      "kind": "word",
+      "reading": "chéng",
+      "senses": [
+        {
+          "id": "zh-55466f4976ec-1-s1",
+          "definition": "to become; into (a resulting state or form)"
+        },
+        {
+          "id": "zh-55466f4976ec-1-s2",
+          "definition": "to divide or cut into (pieces or parts)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "程远志来不及防备，被关羽斩成两段。",
+        "gloss": "into; to become",
+        "sense_id": "zh-55466f4976ec-1-s1"
+      },
+      {
+        "sentence": "张角看出民心已顺，民心成了起事的关键，便和张宝、张梁商议。",
+        "gloss": "to become",
+        "sense_id": "zh-55466f4976ec-1-s1"
+      },
+      {
+        "sentence": "程远志挥刀冲来，关羽纵马迎上，一刀将他斩成两段。",
+        "gloss": "into",
+        "sense_id": "zh-55466f4976ec-1-s2"
+      },
+      {
+        "sentence": "关羽骑马迎战，挥刀将程远志斩成两段。",
+        "gloss": "into; resulting in",
+        "sense_id": "zh-55466f4976ec-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-55466f4976ec-1",
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "成 expresses becoming or turning into a resulting state or form.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "成",
+        "contribution_en": "expresses becoming or turning into a resulting state or form",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "30c95d3991270bb84e42321391726e4b1f16d07cff6f5e7debdf27a1cf9eab54",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0d41712c46764814710f74bac2c86ac79fd303df6221dfb3c96df7781fd1d3e0"
+}

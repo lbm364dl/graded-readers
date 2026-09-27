@@ -1,0 +1,31 @@
+{
+  "id": "zh-6f3b3aa1b4f3-1-681dd226a5183ae8",
+  "entry_id": "zh-6f3b3aa1b4f3-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6f3b3aa1b4f3-1",
+      "headword": "行礼",
+      "kind": "word",
+      "reading": "xínglǐ",
+      "senses": [
+        {
+          "id": "zh-6f3b3aa1b4f3-1-s1",
+          "definition": "to perform a ritual or formal gesture of respect"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人备好祭品，烧香行礼，再拜后发誓。",
+        "gloss": "to perform a salute",
+        "sense_id": "zh-6f3b3aa1b4f3-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d0b67ff735e132463fb9f9125e418640bb2e859c5d1fef680590e9151bb08f86"
+}

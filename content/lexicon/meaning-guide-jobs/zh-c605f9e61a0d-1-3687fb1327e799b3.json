@@ -1,0 +1,31 @@
+{
+  "id": "zh-c605f9e61a0d-1-3687fb1327e799b3",
+  "entry_id": "zh-c605f9e61a0d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c605f9e61a0d-1",
+      "headword": "城外",
+      "kind": "word",
+      "reading": "chéngwài",
+      "senses": [
+        {
+          "id": "zh-c605f9e61a0d-1-s1",
+          "definition": "outside the city"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "于是，城内城外的人都不敢犯法，曹操也获得了很大的威名。",
+        "gloss": "outside the city",
+        "sense_id": "zh-c605f9e61a0d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d4577ec459fe948f8b0d1bd2eb672d99e65cd3b6e574899416df67ecf3bf95ac"
+}

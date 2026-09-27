@@ -1,0 +1,31 @@
+{
+  "id": "zh-dda9b95b25b9-1-2eec5f2722566ba2",
+  "entry_id": "zh-dda9b95b25b9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-dda9b95b25b9-1",
+      "headword": "写下",
+      "kind": "construction",
+      "reading": "xiěxia",
+      "senses": [
+        {
+          "id": "zh-dda9b95b25b9-1-s1",
+          "definition": "write down; put into writing"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角让手下向百姓传话，说旧的天下已经衰弱，新的天下将要出现，还叫人用白土在家门上写下“甲子”二字。",
+        "gloss": "write down",
+        "sense_id": "zh-dda9b95b25b9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8406b1db1bcef856f8396a253eb0391fe8a7cbcff4ef0afbeb46ea3a9645fa42"
+}

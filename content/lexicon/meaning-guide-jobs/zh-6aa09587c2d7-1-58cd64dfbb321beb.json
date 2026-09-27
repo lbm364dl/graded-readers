@@ -1,0 +1,31 @@
+{
+  "id": "zh-6aa09587c2d7-1-58cd64dfbb321beb",
+  "entry_id": "zh-6aa09587c2d7-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6aa09587c2d7-1",
+      "headword": "议郎",
+      "kind": "word",
+      "reading": "yìláng",
+      "senses": [
+        {
+          "id": "zh-6aa09587c2d7-1-s1",
+          "definition": "an official title in the imperial court"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "议郎蔡邕上疏直言，说雌鸡变雄等灾异，是妇寺干政造成的。",
+        "gloss": "Counsellor",
+        "sense_id": "zh-6aa09587c2d7-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bfb7603f10ae8e99c5798db8af4f7d60d92f92995a12eaf8d174c640d16a0974"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-9a8d951dcb60-1-99f74931c9a96f5d",
+  "entry_id": "zh-9a8d951dcb60-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9a8d951dcb60-1",
+      "headword": "才",
+      "kind": "word",
+      "reading": "cái",
+      "senses": [
+        {
+          "id": "zh-9a8d951dcb60-1-s1",
+          "definition": "only then; not until then"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张梁、张宝拼命战斗，最后才逃脱。",
+        "gloss": "only then",
+        "sense_id": "zh-9a8d951dcb60-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d561e1be8d5797e6999c1872f496bad79295ce6217d587de48a61561d09aad38"
+}

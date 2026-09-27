@@ -1,0 +1,31 @@
+{
+  "id": "zh-ef039f718897-1-0698200a22c3bd4c",
+  "entry_id": "zh-ef039f718897-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ef039f718897-1",
+      "headword": "毕",
+      "kind": "word",
+      "reading": "bì",
+      "senses": [
+        {
+          "id": "zh-ef039f718897-1-s1",
+          "definition": "to finish; complete"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "誓毕，刘备为兄，关羽次之，张飞为弟。",
+        "gloss": "to finish",
+        "sense_id": "zh-ef039f718897-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4a76972499b9a72185d8cf08c002206ea70cedea9d7b98942d9018cf78909504"
+}

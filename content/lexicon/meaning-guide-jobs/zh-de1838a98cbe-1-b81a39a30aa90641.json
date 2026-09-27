@@ -1,0 +1,36 @@
+{
+  "id": "zh-de1838a98cbe-1-b81a39a30aa90641",
+  "entry_id": "zh-de1838a98cbe-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-de1838a98cbe-1",
+      "headword": "商议",
+      "kind": "word",
+      "reading": "shāngyì",
+      "senses": [
+        {
+          "id": "zh-de1838a98cbe-1-s1",
+          "definition": "discuss; consult with others to reach a decision"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他和两个弟弟商议后，决定抓住民心的机会。",
+        "gloss": "to discuss",
+        "sense_id": "zh-de1838a98cbe-1-s1"
+      },
+      {
+        "sentence": "之后，刘备、关羽、张飞一起到张飞庄上商议大事，三人也因共同志向相识。",
+        "gloss": "to discuss",
+        "sense_id": "zh-de1838a98cbe-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "afd00e60965f201801c0ae9df6034410aede3aa93afe121e8f87d665cc026fcb"
+}

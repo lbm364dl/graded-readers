@@ -1,0 +1,31 @@
+{
+  "id": "zh-402590868fff-1-cd3658c88c7b975b",
+  "entry_id": "zh-402590868fff-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-402590868fff-1",
+      "headword": "无法",
+      "kind": "word",
+      "reading": "wúfǎ",
+      "senses": [
+        {
+          "id": "zh-402590868fff-1-s1",
+          "definition": "be unable to; have no way to"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "不杀他，我无法消气。",
+        "gloss": "be unable to",
+        "sense_id": "zh-402590868fff-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5539a94dbe7bfcade5fbdc547243d85442a4ee558bfb9400eec23fed0c91fae8"
+}

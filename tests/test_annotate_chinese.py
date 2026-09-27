@@ -30,7 +30,7 @@ def accepted_run(tmp_path: Path, text: str = "修复后的正文。\n") -> Path:
 
 def args() -> Namespace:
     return Namespace(
-        model="gpt-5.6-luna", timeout=10, annotation_chunk=200,
+        model="gpt-6-luna", timeout=10, annotation_chunk=200,
         annotation_effort="low", annotation_review_effort="medium",
         annotation_repair_effort="medium", annotation_final_effort="xhigh",
         annotation_mode="generative", annotation_review_policy="exhaustive-chunks",

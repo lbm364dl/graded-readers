@@ -1,0 +1,31 @@
+{
+  "id": "zh-16833aa2becf-1-f51a98344561b7d3",
+  "entry_id": "zh-16833aa2becf-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-16833aa2becf-1",
+      "headword": "停",
+      "kind": "word",
+      "reading": "tíng",
+      "senses": [
+        {
+          "id": "zh-16833aa2becf-1-s1",
+          "definition": "stop; cease"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "忽然雷雨夹着冰雹，下到半夜才停，许多房屋被毁。",
+        "gloss": "to stop",
+        "sense_id": "zh-16833aa2becf-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6c8b6963d7fd2dfce1aebf4435c5fd49ac72cc6b2b20e1ab6de177e5b24277e6"
+}

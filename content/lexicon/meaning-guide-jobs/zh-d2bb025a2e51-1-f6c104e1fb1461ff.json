@@ -1,0 +1,31 @@
+{
+  "id": "zh-d2bb025a2e51-1-f6c104e1fb1461ff",
+  "entry_id": "zh-d2bb025a2e51-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d2bb025a2e51-1",
+      "headword": "开始",
+      "kind": "word",
+      "reading": "kāishǐ",
+      "senses": [
+        {
+          "id": "zh-d2bb025a2e51-1-s1",
+          "definition": "to begin; to start"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "朝代分合本是常事，但祸乱大约从桓帝、灵帝时开始。",
+        "gloss": "to begin",
+        "sense_id": "zh-d2bb025a2e51-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "23806af5132b4c49426b74755eb8ac3a2668cefacad5c6cae57b1ef7f03abc1d"
+}

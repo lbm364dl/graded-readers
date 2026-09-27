@@ -1,0 +1,31 @@
+{
+  "id": "zh-2a366d097bc6-1-3985af03e029dbdc",
+  "entry_id": "zh-2a366d097bc6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2a366d097bc6-1",
+      "headword": "阻止",
+      "kind": "word",
+      "reading": "zǔzhǐ",
+      "senses": [
+        {
+          "id": "zh-2a366d097bc6-1-s1",
+          "definition": "to stop someone from doing something; prevent"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备急忙阻止他：“朝廷自有公论，你不能冲动。",
+        "gloss": "stop; prevent",
+        "sense_id": "zh-2a366d097bc6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "479bdfe3ddf328676558fc90115fc5a05da3d9ac569d65d341561d4dd191b2e6"
+}

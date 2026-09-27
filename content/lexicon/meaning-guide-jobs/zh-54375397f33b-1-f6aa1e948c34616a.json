@@ -1,0 +1,31 @@
+{
+  "id": "zh-54375397f33b-1-f6aa1e948c34616a",
+  "entry_id": "zh-54375397f33b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-54375397f33b-1",
+      "headword": "桑树",
+      "kind": "word",
+      "reading": "sāngshù",
+      "senses": [
+        {
+          "id": "zh-54375397f33b-1-s1",
+          "definition": "mulberry tree"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "家旁有一棵大桑树，远远看去，像一把车盖。",
+        "gloss": "mulberry tree",
+        "sense_id": "zh-54375397f33b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "91d3355c88523fb9f03fb55d69e38de80e64de60e8ffd1feacfba2593de65b8e"
+}

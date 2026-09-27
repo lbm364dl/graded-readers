@@ -1,0 +1,75 @@
+{
+  "id": "zh-29b98b260b09-1-8a095f371daab197",
+  "entry_id": "zh-29b98b260b09-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-29b98b260b09-1",
+      "headword": "骑",
+      "kind": "word",
+      "reading": "qí",
+      "senses": [
+        {
+          "id": "zh-29b98b260b09-1-s1",
+          "definition": "to ride (an animal or vehicle)"
+        },
+        {
+          "id": "zh-29b98b260b09-1-s2",
+          "definition": "cavalry; mounted troops"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备骑马出阵，关羽在左，张飞在右。",
+        "gloss": "to ride",
+        "sense_id": "zh-29b98b260b09-1-s1"
+      },
+      {
+        "sentence": "两军相对，刘备骑马在前，关羽在左，张飞在右。",
+        "gloss": "ride",
+        "sense_id": "zh-29b98b260b09-1-s1"
+      },
+      {
+        "sentence": "两军相对，刘备骑马出阵，关羽在左，张飞在右。",
+        "gloss": "to ride",
+        "sense_id": "zh-29b98b260b09-1-s1"
+      },
+      {
+        "sentence": "关羽骑马迎战，挥刀将程远志斩成两段。",
+        "gloss": "to ride",
+        "sense_id": "zh-29b98b260b09-1-s1"
+      },
+      {
+        "sentence": "黄巾起义后，他被任命为骑都尉，带领五千名骑兵和步兵赶到颍川。",
+        "gloss": "cavalry",
+        "sense_id": "zh-29b98b260b09-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-29b98b260b09-1",
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "骑 means to ride an animal or vehicle, traveling mounted on it or using it for transport.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "骑",
+        "contribution_en": "The action of riding an animal or vehicle.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "c27dad8adc93214361dd97aff2d66af941c7aa768976d5a886e6d48e06095b1c",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "56734e0e9da286519ba32396211f1b5da3254f15500979a38e825a9753b9404f"
+}

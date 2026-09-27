@@ -1,0 +1,31 @@
+{
+  "id": "zh-0271678492b8-1-12da6115da02b292",
+  "entry_id": "zh-0271678492b8-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-0271678492b8-1",
+      "headword": "发出",
+      "kind": "word",
+      "reading": "fāchū",
+      "senses": [
+        {
+          "id": "zh-0271678492b8-1-s1",
+          "definition": "send out; give or emit a signal, sound, or other thing"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备发出信号，两边的人一起出来。",
+        "gloss": "send out",
+        "sense_id": "zh-0271678492b8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "151bd197fa2303c4614fbe448180db1e4bf321d2ae157c8ac75ac21394006ec0"
+}

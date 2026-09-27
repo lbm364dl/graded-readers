@@ -1,0 +1,38 @@
+{
+  "id": "zh-ceb2ef53d70e-1-c450b90e884164b2",
+  "entry_id": "zh-ceb2ef53d70e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ceb2ef53d70e-1",
+      "headword": "校尉",
+      "kind": "word",
+      "reading": "xiàowèi",
+      "senses": [
+        {
+          "id": "zh-ceb2ef53d70e-1-s1",
+          "definition": "a military officer title"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他听说军队将到，便召校尉邹靖商议。",
+        "gloss": "military officer",
+        "sense_id": "zh-ceb2ef53d70e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [
+    {
+      "entry_id": "zh-ceb2ef53d70e-1",
+      "reason": "Explain the supported character contributions in 校尉, not merely that it is a conventional military title. Verify the relevant xiào reading and military meaning of 校 and the officer meaning of 尉 using reliable lexical sources. Show structured 校|尉 parts if supported, while distinguishing this learner explanation from an unproven historical derivation or an exact equivalence to a modern military rank. Preserve the approved identity and definition.",
+      "force_research": true,
+      "id": "edit-91ed28d80f0bae84"
+    }
+  ],
+  "status": "reviewed",
+  "result_digest": "c2518346b1eee5b5ef1eaecab5121bd70bc5014721edb8129037a5ede475daa0"
+}

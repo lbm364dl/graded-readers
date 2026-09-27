@@ -1,0 +1,36 @@
+{
+  "id": "zh-e6730460f052-1-0103df4841410447",
+  "entry_id": "zh-e6730460f052-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e6730460f052-1",
+      "headword": "张让",
+      "kind": "name",
+      "reading": "Zhāng Ràng",
+      "senses": [
+        {
+          "id": "zh-e6730460f052-1-s1",
+          "definition": "Zhang Rang"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "后来，张让等十人结党作恶，被称为十常侍。",
+        "gloss": "Zhang Rang",
+        "sense_id": "zh-e6730460f052-1-s1"
+      },
+      {
+        "sentence": "皇帝信任张让，叫他“阿父”，朝政逐渐败坏，天下人心想要作乱，盗贼纷纷起来。",
+        "gloss": "Zhang Rang",
+        "sense_id": "zh-e6730460f052-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5224ffeade1679502fec30d46bfd1d8fe5f5bf5558505e315e37d62275700a2c"
+}

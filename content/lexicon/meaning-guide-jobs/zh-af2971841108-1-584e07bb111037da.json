@@ -1,0 +1,31 @@
+{
+  "id": "zh-af2971841108-1-584e07bb111037da",
+  "entry_id": "zh-af2971841108-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-af2971841108-1",
+      "headword": "崇信",
+      "kind": "word",
+      "reading": "chóngxìn",
+      "senses": [
+        {
+          "id": "zh-af2971841108-1-s1",
+          "definition": "to hold in high esteem and trust"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "桓帝禁锢善类，一贯崇信宦官。",
+        "gloss": "to revere and trust",
+        "sense_id": "zh-af2971841108-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "88bd4482768886879387fbf98fa83655d10aec85a39df39fc6112c3506f87e49"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-2bce9f568182-1-0b3f7a1d496980c3",
+  "entry_id": "zh-2bce9f568182-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2bce9f568182-1",
+      "headword": "冲向",
+      "kind": "construction",
+      "reading": "chōngxiàng",
+      "senses": [
+        {
+          "id": "zh-2bce9f568182-1-s1",
+          "definition": "rush or charge toward someone or something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "程远志挥刀冲向张飞，关羽骑马迎上。",
+        "gloss": "charge toward",
+        "sense_id": "zh-2bce9f568182-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2aa7821bb5c081b40cf287fd230b3c01f9ff0d8a2f3dfe3b63b110fcb9c36c27"
+}

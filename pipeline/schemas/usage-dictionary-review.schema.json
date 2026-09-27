@@ -1,0 +1,8 @@
+{
+  "type": "object", "additionalProperties": false,
+  "required": ["approved", "issues"],
+  "properties": {
+    "approved": {"type": "boolean"},
+    "issues": {"type": "array", "items": {"type": "string"}}
+  }
+}

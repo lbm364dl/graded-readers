@@ -1,0 +1,36 @@
+{
+  "id": "zh-6dbda89fdbd1-1-acdc945a2462de1f",
+  "entry_id": "zh-6dbda89fdbd1-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6dbda89fdbd1-1",
+      "headword": "关键",
+      "kind": "word",
+      "reading": "guānjiàn",
+      "senses": [
+        {
+          "id": "zh-6dbda89fdbd1-1-s1",
+          "definition": "key point; crucial aspect"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角看出民心已顺，民心成了起事的关键，便和张宝、张梁商议。",
+        "gloss": "key; crucial point",
+        "sense_id": "zh-6dbda89fdbd1-1-s1"
+      },
+      {
+        "sentence": "刘备仔细分析局面，对关羽、张飞说：“敌多我少，不能硬打，关键是用伏兵。",
+        "gloss": "key point",
+        "sense_id": "zh-6dbda89fdbd1-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fd79cd0e168a372b8c1f95f86db72600d58de6f2bcc4dffe4ec30efed9d23e08"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-5c2135425dd3-1-24340e83a684542e",
+  "entry_id": "zh-5c2135425dd3-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5c2135425dd3-1",
+      "headword": "沿海居民",
+      "kind": "word",
+      "reading": "yánhǎi jūmín",
+      "senses": [
+        {
+          "id": "zh-5c2135425dd3-1-s1",
+          "definition": "people who live along the coast"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "建宁四年二月，洛阳地震，海水泛滥，沿海居民被大浪卷走。",
+        "gloss": "coastal residents",
+        "sense_id": "zh-5c2135425dd3-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d13bb512d96e77297aaa4406c2ab054764b2b375cb39affec765db7d5cbb75e5"
+}

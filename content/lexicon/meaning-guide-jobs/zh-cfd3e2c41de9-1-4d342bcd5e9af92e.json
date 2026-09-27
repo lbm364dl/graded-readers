@@ -1,0 +1,41 @@
+{
+  "id": "zh-cfd3e2c41de9-1-4d342bcd5e9af92e",
+  "entry_id": "zh-cfd3e2c41de9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-cfd3e2c41de9-1",
+      "headword": "常常",
+      "kind": "word",
+      "reading": "chángcháng",
+      "senses": [
+        {
+          "id": "zh-cfd3e2c41de9-1-s1",
+          "definition": "often; frequently"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军人数很多，官军害怕，常常后退。",
+        "gloss": "often",
+        "sense_id": "zh-cfd3e2c41de9-1-s1"
+      },
+      {
+        "sentence": "宦官曹节等人掌握权力，常常干涉朝廷的事。",
+        "gloss": "often",
+        "sense_id": "zh-cfd3e2c41de9-1-s1"
+      },
+      {
+        "sentence": "叔父觉得这孩子与众不同，常常帮助他。",
+        "gloss": "frequently",
+        "sense_id": "zh-cfd3e2c41de9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "281dfdfb26e947d86c408e82670d6270083d481f1e549339add53f413b7640f9"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-be821fc093bd-1-f1e792807aa084f9",
+  "entry_id": "zh-be821fc093bd-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-be821fc093bd-1",
+      "headword": "小方",
+      "kind": "word",
+      "reading": "xiǎo fāng",
+      "senses": [
+        {
+          "id": "zh-be821fc093bd-1-s1",
+          "definition": "a smaller group or division"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "大方有一万多人，小方有六七千人，各方首领都称将军。",
+        "gloss": "smaller division",
+        "sense_id": "zh-be821fc093bd-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "03f086b3155ec7dbc5b882ac7c0467c5d735cec88b91f7f9ba8afac2f540dd90"
+}

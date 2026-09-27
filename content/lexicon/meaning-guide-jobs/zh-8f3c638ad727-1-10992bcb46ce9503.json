@@ -1,0 +1,31 @@
+{
+  "id": "zh-8f3c638ad727-1-10992bcb46ce9503",
+  "entry_id": "zh-8f3c638ad727-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8f3c638ad727-1",
+      "headword": "四月",
+      "kind": "word",
+      "reading": "sìyuè",
+      "senses": [
+        {
+          "id": "zh-8f3c638ad727-1-s1",
+          "definition": "April; the fourth month"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "建宁二年四月十五日，灵帝登上温德殿，刚坐下，殿角忽然刮起狂风。",
+        "gloss": "fourth month",
+        "sense_id": "zh-8f3c638ad727-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0a10562da25db6ac3b08a5c6175fc29e46301ccd35213ac057085d3f5fe8af42"
+}

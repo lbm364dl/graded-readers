@@ -1,0 +1,31 @@
+{
+  "id": "zh-abb1c5786738-1-eea2c8ef1f988388",
+  "entry_id": "zh-abb1c5786738-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-abb1c5786738-1",
+      "headword": "将亡",
+      "kind": "construction",
+      "reading": "jiāng wáng",
+      "senses": [
+        {
+          "id": "zh-abb1c5786738-1-s1",
+          "definition": "to be about to perish or come to an end"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "何颙也说，汉室将亡，安定天下的必是此人。",
+        "gloss": "will perish",
+        "sense_id": "zh-abb1c5786738-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "11a60994fe92a47e33c1c2347afa25c8c0811ef8bf89032473813a56db6a8d9e"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-ad175b07fc86-1-79cdd035f54db664",
+  "entry_id": "zh-ad175b07fc86-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ad175b07fc86-1",
+      "headword": "顺从",
+      "kind": "word",
+      "reading": "shùncóng",
+      "senses": [
+        {
+          "id": "zh-ad175b07fc86-1-s1",
+          "definition": "to follow; obey"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他和张宝、张梁号召众人顺从天意，以求太平。",
+        "gloss": "to follow; obey",
+        "sense_id": "zh-ad175b07fc86-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "96f204f3a499a5821e03db13d17c1e3d62180f3db91267d2cb6da71b38dd6226"
+}

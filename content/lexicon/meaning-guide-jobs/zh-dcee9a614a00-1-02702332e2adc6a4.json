@@ -1,0 +1,31 @@
+{
+  "id": "zh-dcee9a614a00-1-02702332e2adc6a4",
+  "entry_id": "zh-dcee9a614a00-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-dcee9a614a00-1",
+      "headword": "心里",
+      "kind": "word",
+      "reading": "xīnlǐ",
+      "senses": [
+        {
+          "id": "zh-dcee9a614a00-1-s1",
+          "definition": "inside; in one's heart or mind"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备家贫，平时靠卖鞋、织席生活，但心里有大志。",
+        "gloss": "in his heart",
+        "sense_id": "zh-dcee9a614a00-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "876c30dcec104461b8dd83157ff103fd3bbdc128eac2e3707959d2772e4b6f4f"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "zh-a8e94a177dd3-1-efb45e6ccdc46e0e",
+  "entry_id": "zh-a8e94a177dd3-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a8e94a177dd3-1",
+      "headword": "刘胜",
+      "kind": "name",
+      "reading": "Liú Shèng",
+      "senses": [
+        {
+          "id": "zh-a8e94a177dd3-1-s1",
+          "definition": "Liu Sheng, a person's name"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备是中山靖王刘胜之后，字玄德。",
+        "gloss": "Liu Sheng",
+        "sense_id": "zh-a8e94a177dd3-1-s1"
+      },
+      {
+        "sentence": "刘胜的儿子刘贞曾被封为涿鹿亭侯，后来因未按规定缴纳酬金而失侯，这一支便留在涿县。",
+        "gloss": "Liu Sheng",
+        "sense_id": "zh-a8e94a177dd3-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d503b9876335458e643e786bfe0f980a02a43aada4bd558932b2f221e6286078"
+}

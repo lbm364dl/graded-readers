@@ -1,0 +1,31 @@
+{
+  "id": "zh-23e89ba0a143-1-fd862d9f65620400",
+  "entry_id": "zh-23e89ba0a143-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-23e89ba0a143-1",
+      "headword": "变得",
+      "kind": "construction",
+      "reading": "biànde",
+      "senses": [
+        {
+          "id": "zh-23e89ba0a143-1-s1",
+          "definition": "become a particular state or quality"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "许多百姓跟着他们，天下变得很乱。",
+        "gloss": "become",
+        "sense_id": "zh-23e89ba0a143-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cc81c53d2d2ccb9b838e07f16bbe4f2830bb5190eb030cdfd13cffa8aa8e20fb"
+}

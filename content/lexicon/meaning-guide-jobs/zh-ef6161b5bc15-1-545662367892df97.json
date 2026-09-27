@@ -1,0 +1,31 @@
+{
+  "id": "zh-ef6161b5bc15-1-545662367892df97",
+  "entry_id": "zh-ef6161b5bc15-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ef6161b5bc15-1",
+      "headword": "将士",
+      "kind": "word",
+      "reading": "jiàngshì",
+      "senses": [
+        {
+          "id": "zh-ef6161b5bc15-1-s1",
+          "definition": "officers and soldiers; military personnel"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘焉亲自迎接，并赏劳将士。",
+        "gloss": "officers and soldiers",
+        "sense_id": "zh-ef6161b5bc15-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a1a417b04e897de04d20c2d17cd9946f217e5ecc277c48d81a9b33477066a48a"
+}

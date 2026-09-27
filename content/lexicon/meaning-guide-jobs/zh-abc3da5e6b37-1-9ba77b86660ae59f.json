@@ -1,0 +1,31 @@
+{
+  "id": "zh-abc3da5e6b37-1-9ba77b86660ae59f",
+  "entry_id": "zh-abc3da5e6b37-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-abc3da5e6b37-1",
+      "headword": "退",
+      "kind": "word",
+      "reading": "tuì",
+      "senses": [
+        {
+          "id": "zh-abc3da5e6b37-1-s1",
+          "definition": "to retreat or move back"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军大乱，退了五十多里。",
+        "gloss": "retreat",
+        "sense_id": "zh-abc3da5e6b37-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "52696fae16a1d84fd10d6ef76d35418de3a265656344ec8b4063de27b35a53b0"
+}

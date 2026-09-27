@@ -1,0 +1,31 @@
+{
+  "id": "zh-0e6e48aba166-1-3931c5fb9a461e09",
+  "entry_id": "zh-0e6e48aba166-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-0e6e48aba166-1",
+      "headword": "中兴",
+      "kind": "word",
+      "reading": "zhōngxīng",
+      "senses": [
+        {
+          "id": "zh-0e6e48aba166-1-s1",
+          "definition": "restore a declining state or dynasty to prosperity"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "汉朝自高祖斩白蛇起义，一统天下；后来光武中兴，传到献帝，终于分为三国。",
+        "gloss": "to restore prosperity",
+        "sense_id": "zh-0e6e48aba166-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3ad5c82d1e94c2df11f369114a7e84a689a0da55ef509bb0ae30d81e3c2469b2"
+}

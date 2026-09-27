@@ -1,0 +1,45 @@
+{
+  "id": "zh-f867f3417859-2-33039e172574fb6e",
+  "entry_id": "zh-f867f3417859-2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f867f3417859-2",
+      "headword": "好",
+      "kind": "word",
+      "reading": "hǎo",
+      "senses": [
+        {
+          "id": "zh-f867f3417859-2-s1",
+          "definition": "to arrange or agree on something in advance"
+        },
+        {
+          "id": "zh-f867f3417859-2-s2",
+          "definition": "to finish preparing something; to have something ready"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角一面私造黄旗，约好起事日期，一面派弟子送信，却被告密。",
+        "gloss": "properly; in advance",
+        "sense_id": "zh-f867f3417859-2-s1"
+      },
+      {
+        "sentence": "三人备好祭品，烧香行礼，再拜后发誓。",
+        "gloss": "to prepare well",
+        "sense_id": "zh-f867f3417859-2-s2"
+      },
+      {
+        "sentence": "卢植让刘备带本部人马，再带一千官军到颍川，联络皇甫嵩、朱隽，约好时间一起进攻。",
+        "gloss": "properly; in advance",
+        "sense_id": "zh-f867f3417859-2-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bf6bcbf7b96bf043894173d5e4b6bc667e372f972677b6b95fbc110d1e2c0136"
+}

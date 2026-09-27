@@ -1,0 +1,36 @@
+{
+  "id": "zh-7c12d4fa7041-1-5e62cdb0940f7607",
+  "entry_id": "zh-7c12d4fa7041-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7c12d4fa7041-1",
+      "headword": "正直",
+      "kind": "word",
+      "reading": "zhèngzhí",
+      "senses": [
+        {
+          "id": "zh-7c12d4fa7041-1-s1",
+          "definition": "upright; honest and principled"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "桓帝在位时，压制正直贤能的人，却特别信任宦官。",
+        "gloss": "upright",
+        "sense_id": "zh-7c12d4fa7041-1-s1"
+      },
+      {
+        "sentence": "这个结果导致宦官从此更加专横，做事也更不受限制，朝廷中的正直之士更加危险。",
+        "gloss": "upright",
+        "sense_id": "zh-7c12d4fa7041-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9e8bd96fa830632c01d72cbe41b3d588b61407748ae4aaad4da9679da7cf0fd8"
+}

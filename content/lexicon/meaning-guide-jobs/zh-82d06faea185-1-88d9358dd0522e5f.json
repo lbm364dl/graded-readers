@@ -1,0 +1,31 @@
+{
+  "id": "zh-82d06faea185-1-88d9358dd0522e5f",
+  "entry_id": "zh-82d06faea185-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-82d06faea185-1",
+      "headword": "圆",
+      "kind": "word",
+      "reading": "yuán",
+      "senses": [
+        {
+          "id": "zh-82d06faea185-1-s1",
+          "definition": "round"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他身材高大，头大眼圆，胡子很长，声音像雷一样响，气势惊人。",
+        "gloss": "round",
+        "sense_id": "zh-82d06faea185-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "89b934003ed90049e78a64691dc5739cfb8c64d455385913c3910c6e42b9591e"
+}

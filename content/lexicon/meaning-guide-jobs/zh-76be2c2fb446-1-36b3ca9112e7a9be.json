@@ -1,0 +1,36 @@
+{
+  "id": "zh-76be2c2fb446-1-36b3ca9112e7a9be",
+  "entry_id": "zh-76be2c2fb446-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-76be2c2fb446-1",
+      "headword": "进攻",
+      "kind": "word",
+      "reading": "jìngōng",
+      "senses": [
+        {
+          "id": "zh-76be2c2fb446-1-s1",
+          "definition": "to attack; to launch an offensive"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角带兵将要进攻幽州。",
+        "gloss": "to attack",
+        "sense_id": "zh-76be2c2fb446-1-s1"
+      },
+      {
+        "sentence": "卢植让刘备带本部人马，再带一千官军到颍川，联络皇甫嵩、朱隽，约好时间一起进攻。",
+        "gloss": "attack",
+        "sense_id": "zh-76be2c2fb446-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "aeece87693a12387c9d1c8fd44d52a43b96284df6942bcaa93655d15dd612d87"
+}

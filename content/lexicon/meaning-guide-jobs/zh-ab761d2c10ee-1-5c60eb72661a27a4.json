@@ -1,0 +1,41 @@
+{
+  "id": "zh-ab761d2c10ee-1-5c60eb72661a27a4",
+  "entry_id": "zh-ab761d2c10ee-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ab761d2c10ee-1",
+      "headword": "拜见",
+      "kind": "word",
+      "reading": "bàijiàn",
+      "senses": [
+        {
+          "id": "zh-ab761d2c10ee-1-s1",
+          "definition": "to visit and pay respects to someone"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹操拜见皇甫嵩、朱俊后，随即率军追击败退的黄巾军。",
+        "gloss": "pay respects to",
+        "sense_id": "zh-ab761d2c10ee-1-s1"
+      },
+      {
+        "sentence": "刘备拜见皇甫嵩、朱俊，说明自己是依据卢植的意思来助战。",
+        "gloss": "pay respects to",
+        "sense_id": "zh-ab761d2c10ee-1-s1"
+      },
+      {
+        "sentence": "邹靖再引他们拜见刘焉，刘备说明家族来历，刘焉认他为侄子。",
+        "gloss": "to pay respects to",
+        "sense_id": "zh-ab761d2c10ee-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5eb42620f06470c7b52d6d1766f5bb0b2591be810166bcda6e68dedda544da4d"
+}

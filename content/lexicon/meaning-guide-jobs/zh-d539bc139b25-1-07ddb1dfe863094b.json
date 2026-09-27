@@ -1,0 +1,31 @@
+{
+  "id": "zh-d539bc139b25-1-07ddb1dfe863094b",
+  "entry_id": "zh-d539bc139b25-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d539bc139b25-1",
+      "headword": "教化",
+      "kind": "word",
+      "reading": "jiàohuà",
+      "senses": [
+        {
+          "id": "zh-d539bc139b25-1-s1",
+          "definition": "educate and transform"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "老人把三卷天书交给他，要他替上天教化百姓、救助世人；若心生别念，便会受罚。",
+        "gloss": "educate and transform",
+        "sense_id": "zh-d539bc139b25-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "401bbd969e30f2ac188b44740c4f3253dd8f95bb66218d1b61f7cf3566433027"
+}

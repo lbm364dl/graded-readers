@@ -1,0 +1,31 @@
+{
+  "id": "zh-97ca75b405ba-1-34355c4988553c5e",
+  "entry_id": "zh-97ca75b405ba-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-97ca75b405ba-1",
+      "headword": "陷",
+      "kind": "word",
+      "reading": "xiàn",
+      "senses": [
+        {
+          "id": "zh-97ca75b405ba-1-s1",
+          "definition": "to fall or be captured"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "次日，青州太守龚景送来文书，说黄巾军围城将陷，请求救援。",
+        "gloss": "to fall; be on the verge of falling",
+        "sense_id": "zh-97ca75b405ba-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "08ebfd45cd97f4896ea7defe2f645727cfe2adbca5ca1646d32382b9fee09999"
+}

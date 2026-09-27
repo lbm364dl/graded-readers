@@ -397,15 +397,9 @@
             },
             {
               "start": 2,
-              "end": 3,
-              "text": "起",
-              "meaning_en": "to start"
-            },
-            {
-              "start": 3,
               "end": 4,
-              "text": "事",
-              "meaning_en": "an uprising"
+              "text": "起事",
+              "meaning_en": "to rise in revolt; launch an uprising"
             }
           ]
         },
@@ -1255,25 +1249,19 @@
           "learning_focus": "lookup",
           "lookup_reason": "story_term",
           "focus_review_note_en": "",
-          "composition_en": "招 means recruit, 军 means soldiers, and 榜 is a posted notice.",
+          "composition_en": "招军 means recruiting soldiers; 榜 is an official posted notice. Together, this is a notice calling for recruits.",
           "subsegments": [
             {
               "start": 0,
-              "end": 1,
-              "text": "招",
-              "meaning_en": "to recruit"
-            },
-            {
-              "start": 1,
               "end": 2,
-              "text": "军",
-              "meaning_en": "soldiers"
+              "text": "招军",
+              "meaning_en": "recruit soldiers"
             },
             {
               "start": 2,
               "end": 3,
               "text": "榜",
-              "meaning_en": "posted notice"
+              "meaning_en": "official posted notice"
             }
           ]
         },
@@ -2104,25 +2092,19 @@
           "learning_focus": "lookup",
           "lookup_reason": "story_term",
           "focus_review_note_en": "",
-          "composition_en": "招 means recruit, 军 means soldiers, and 榜 is a posted notice.",
+          "composition_en": "招军 means recruiting soldiers; 榜 is an official posted notice. Together, this is a notice calling for recruits.",
           "subsegments": [
             {
               "start": 0,
-              "end": 1,
-              "text": "招",
-              "meaning_en": "to recruit"
-            },
-            {
-              "start": 1,
               "end": 2,
-              "text": "军",
-              "meaning_en": "soldiers"
+              "text": "招军",
+              "meaning_en": "recruit soldiers"
             },
             {
               "start": 2,
               "end": 3,
               "text": "榜",
-              "meaning_en": "posted notice"
+              "meaning_en": "official posted notice"
             }
           ]
         },
@@ -2446,25 +2428,19 @@
           "learning_focus": "lookup",
           "lookup_reason": "story_term",
           "focus_review_note_en": "",
-          "composition_en": "招 means recruit, 军 means soldiers, and 榜 is a posted notice.",
+          "composition_en": "招军 means recruiting soldiers; 榜 is an official posted notice. Together, this is a notice calling for recruits.",
           "subsegments": [
             {
               "start": 0,
-              "end": 1,
-              "text": "招",
-              "meaning_en": "to recruit"
-            },
-            {
-              "start": 1,
               "end": 2,
-              "text": "军",
-              "meaning_en": "soldiers"
+              "text": "招军",
+              "meaning_en": "recruit soldiers"
             },
             {
               "start": 2,
               "end": 3,
               "text": "榜",
-              "meaning_en": "posted notice"
+              "meaning_en": "official posted notice"
             }
           ]
         },
@@ -4651,7 +4627,7 @@
           "text": "喝酒",
           "type": "word",
           "pinyin": "hējiǔ",
-          "meaning_en": "drink wine",
+          "meaning_en": "drink alcohol",
           "story_term": "",
           "story_term_meaning_en": "",
           "story_term_importance_en": "",
@@ -10321,8 +10297,8 @@
         {
           "text": "下来",
           "type": "word",
-          "pinyin": "xiàlái",
-          "meaning_en": "remain alive; survive",
+          "pinyin": "xiàlai",
+          "meaning_en": "continuation into a resulting state",
           "story_term": "",
           "story_term_meaning_en": "",
           "story_term_importance_en": "",

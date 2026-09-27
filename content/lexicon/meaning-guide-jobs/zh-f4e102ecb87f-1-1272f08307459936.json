@@ -1,0 +1,31 @@
+{
+  "id": "zh-f4e102ecb87f-1-1272f08307459936",
+  "entry_id": "zh-f4e102ecb87f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f4e102ecb87f-1",
+      "headword": "敌军",
+      "kind": "word",
+      "reading": "díjūn",
+      "senses": [
+        {
+          "id": "zh-f4e102ecb87f-1-s1",
+          "definition": "enemy troops or forces"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人到了大兴山下，和敌军相遇。",
+        "gloss": "enemy troops",
+        "sense_id": "zh-f4e102ecb87f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "744f094ce339d4b3d808e3cdda3c5d2e62a9db8f9cc0909351d0a5dac7453f6d"
+}

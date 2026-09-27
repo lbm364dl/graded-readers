@@ -1,0 +1,31 @@
+{
+  "id": "zh-dc0a3a028751-1-00f72bedf5b9b42d",
+  "entry_id": "zh-dc0a3a028751-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-dc0a3a028751-1",
+      "headword": "责打",
+      "kind": "word",
+      "reading": "zédǎ",
+      "senses": [
+        {
+          "id": "zh-dc0a3a028751-1-s1",
+          "definition": "to beat someone as punishment"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "一名宦官的叔父夜间提刀行走，也被曹操抓住，用五色棒责打。",
+        "gloss": "beat; cane",
+        "sense_id": "zh-dc0a3a028751-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e464fe7c7466f63656f7cfd7b443754cedd1536d42f84c4a045c9c5c6e91e4ac"
+}

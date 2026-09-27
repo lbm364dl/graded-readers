@@ -1,0 +1,31 @@
+{
+  "id": "zh-b8b642715663-1-232110a1fd71e107",
+  "entry_id": "zh-b8b642715663-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b8b642715663-1",
+      "headword": "引见",
+      "kind": "word",
+      "reading": "yǐnjiàn",
+      "senses": [
+        {
+          "id": "zh-b8b642715663-1-s1",
+          "definition": "to introduce someone to another person"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "后来，邹靖把他们引见给刘焉，刘焉认刘备为侄子。",
+        "gloss": "introduce",
+        "sense_id": "zh-b8b642715663-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f53b6ac4241449ea54b835fad59f0200f1bf83a770c36ba3111e4adfe1d89697"
+}

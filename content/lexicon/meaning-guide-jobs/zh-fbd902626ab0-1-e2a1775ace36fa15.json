@@ -1,0 +1,31 @@
+{
+  "id": "zh-fbd902626ab0-1-e2a1775ace36fa15",
+  "entry_id": "zh-fbd902626ab0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-fbd902626ab0-1",
+      "headword": "钢",
+      "kind": "word",
+      "reading": "gāng",
+      "senses": [
+        {
+          "id": "zh-fbd902626ab0-1-s1",
+          "definition": "steel"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "于是，刘备请工匠打造双股剑，关羽打造青龙偃月刀，重八十二斤，张飞打造丈八点钢矛，并各自准备全身铠甲。",
+        "gloss": "steel",
+        "sense_id": "zh-fbd902626ab0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "693a753cf39c649429ba0a89c5827a2ba419b3787b3f71fc681822b37a374d18"
+}

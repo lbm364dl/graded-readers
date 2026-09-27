@@ -1,0 +1,31 @@
+{
+  "id": "zh-aecc5d10602c-1-c231b7b58de6522f",
+  "entry_id": "zh-aecc5d10602c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-aecc5d10602c-1",
+      "headword": "带人",
+      "kind": "construction",
+      "reading": "dàirén",
+      "senses": [
+        {
+          "id": "zh-aecc5d10602c-1-s1",
+          "definition": "to take or lead people along"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "第二天，刘备带人上前，打了一会儿便假装退走。",
+        "gloss": "lead people",
+        "sense_id": "zh-aecc5d10602c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "71d3ed6d292bb2742159c9cb6e277a6450f43644b2e89da1d1bea8e2f22b3d69"
+}

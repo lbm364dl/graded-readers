@@ -1,0 +1,31 @@
+{
+  "id": "zh-9eac93b2a1ca-1-101465ba547ea8fb",
+  "entry_id": "zh-9eac93b2a1ca-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9eac93b2a1ca-1",
+      "headword": "气",
+      "kind": "word",
+      "reading": "qì",
+      "senses": [
+        {
+          "id": "zh-9eac93b2a1ca-1-s1",
+          "definition": "be angry; feel anger"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞又气又不满，拿刀要杀董卓。",
+        "gloss": "angry",
+        "sense_id": "zh-9eac93b2a1ca-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c9523029cc5f24c04b7e7cfeaea5311943071ea8e220167942a33f0bc441c250"
+}

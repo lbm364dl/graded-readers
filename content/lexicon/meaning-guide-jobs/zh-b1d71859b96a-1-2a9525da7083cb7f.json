@@ -1,0 +1,40 @@
+{
+  "id": "zh-b1d71859b96a-1-2a9525da7083cb7f",
+  "entry_id": "zh-b1d71859b96a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b1d71859b96a-1",
+      "headword": "招",
+      "kind": "word",
+      "reading": "zhāo",
+      "senses": [
+        {
+          "id": "zh-b1d71859b96a-1-s1",
+          "definition": "to recruit"
+        },
+        {
+          "id": "zh-b1d71859b96a-1-s2",
+          "definition": "recruiting; recruitment"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备看着招军榜叹气，一个大汉走来问他。",
+        "gloss": "recruit",
+        "sense_id": "zh-b1d71859b96a-1-s2"
+      },
+      {
+        "sentence": "如今听说这里招军破贼，便来投军。",
+        "gloss": "to recruit",
+        "sense_id": "zh-b1d71859b96a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1163c1ab5bbbb0bf3c2e991dbeba7ed7211a7e1149090a62b14b1238623ac060"
+}

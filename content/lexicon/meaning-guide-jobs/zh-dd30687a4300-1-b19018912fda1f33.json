@@ -1,0 +1,30 @@
+{
+  "id": "zh-dd30687a4300-1-b19018912fda1f33",
+  "entry_id": "zh-dd30687a4300-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-dd30687a4300-1",
+      "headword": "下来",
+      "kind": "construction",
+      "reading": "xiàlai",
+      "senses": [
+        {
+          "id": "zh-dd30687a4300-1-s1",
+          "definition": "remain alive; survive"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "董卓能不能活下来，故事留下了悬念。",
+        "gloss": "remain alive; survive",
+        "sense_id": "zh-dd30687a4300-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "pending"
+}

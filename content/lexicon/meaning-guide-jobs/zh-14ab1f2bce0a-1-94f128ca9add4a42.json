@@ -1,0 +1,31 @@
+{
+  "id": "zh-14ab1f2bce0a-1-94f128ca9add4a42",
+  "entry_id": "zh-14ab1f2bce0a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-14ab1f2bce0a-1",
+      "headword": "右",
+      "kind": "word",
+      "reading": "yòu",
+      "senses": [
+        {
+          "id": "zh-14ab1f2bce0a-1-s1",
+          "definition": "right; the right-hand side"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备骑马出阵，关羽在左，张飞在右。",
+        "gloss": "right",
+        "sense_id": "zh-14ab1f2bce0a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fa22c589f6bdc48701a426230905ecf29e14631192f492f5e351c2b39b7ce9a0"
+}

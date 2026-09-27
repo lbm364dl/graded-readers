@@ -1,0 +1,31 @@
+{
+  "id": "zh-5302b698dec5-1-1a5dc23ef8ba6bde",
+  "entry_id": "zh-5302b698dec5-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5302b698dec5-1",
+      "headword": "挥刀",
+      "kind": "construction",
+      "reading": "huīdāo",
+      "senses": [
+        {
+          "id": "zh-5302b698dec5-1-s1",
+          "definition": "swing or wield a knife"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "程远志挥刀冲向张飞，关羽骑马迎上。",
+        "gloss": "wave a knife",
+        "sense_id": "zh-5302b698dec5-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ae17e3afcd7ed26edc1cb64fe226beeac06c19ab81123bdc100664602df1ccf5"
+}

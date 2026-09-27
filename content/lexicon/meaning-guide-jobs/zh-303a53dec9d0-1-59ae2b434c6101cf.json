@@ -1,0 +1,56 @@
+{
+  "id": "zh-303a53dec9d0-1-59ae2b434c6101cf",
+  "entry_id": "zh-303a53dec9d0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-303a53dec9d0-1",
+      "headword": "仔细",
+      "kind": "word",
+      "reading": "zǐxì",
+      "senses": [
+        {
+          "id": "zh-303a53dec9d0-1-s1",
+          "definition": "carefully; attentively"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他们没有仔细保密，反被宦官害死。",
+        "gloss": "carefully",
+        "sense_id": "zh-303a53dec9d0-1-s1"
+      },
+      {
+        "sentence": "张角日夜仔细学习，后来能呼风唤雨，自称太平道人。",
+        "gloss": "carefully",
+        "sense_id": "zh-303a53dec9d0-1-s1"
+      },
+      {
+        "sentence": "他仔细看了榜文，想到自己家贫而有志，却无力报国，不免长叹。",
+        "gloss": "carefully",
+        "sense_id": "zh-303a53dec9d0-1-s1"
+      },
+      {
+        "sentence": "刘备邀请他同坐，仔细询问姓名。",
+        "gloss": "carefully",
+        "sense_id": "zh-303a53dec9d0-1-s1"
+      },
+      {
+        "sentence": "刘备仔细分析局面，对关羽、张飞说：“敌多我少，不能硬打，关键是用伏兵。",
+        "gloss": "carefully",
+        "sense_id": "zh-303a53dec9d0-1-s1"
+      },
+      {
+        "sentence": "刘备下马仔细询问。",
+        "gloss": "carefully",
+        "sense_id": "zh-303a53dec9d0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b491f72cb229823d0cb97bfb93ac41bd9f3071fe24a8a29e69cab3b9895c8b61"
+}

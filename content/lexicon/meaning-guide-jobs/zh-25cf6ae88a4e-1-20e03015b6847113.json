@@ -1,0 +1,31 @@
+{
+  "id": "zh-25cf6ae88a4e-1-20e03015b6847113",
+  "entry_id": "zh-25cf6ae88a4e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-25cf6ae88a4e-1",
+      "headword": "协助",
+      "kind": "word",
+      "reading": "xiézhù",
+      "senses": [
+        {
+          "id": "zh-25cf6ae88a4e-1-s1",
+          "definition": "assist; help with an activity"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备只得返回广宗，协助作战。",
+        "gloss": "to assist",
+        "sense_id": "zh-25cf6ae88a4e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d949cf9b0df59e0f85205eb5a755af4c4e5bf2fa78ae0e0c6650b08e94c44e62"
+}

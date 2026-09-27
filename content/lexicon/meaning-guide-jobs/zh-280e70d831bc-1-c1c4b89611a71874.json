@@ -1,0 +1,31 @@
+{
+  "id": "zh-280e70d831bc-1-c1c4b89611a71874",
+  "entry_id": "zh-280e70d831bc-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-280e70d831bc-1",
+      "headword": "对待",
+      "kind": "word",
+      "reading": "duìdài",
+      "senses": [
+        {
+          "id": "zh-280e70d831bc-1-s1",
+          "definition": "to treat or deal with someone in a particular way"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "走出帐外，张飞气得握紧刀，大声说：“我们拼命救他，他却这样对待我们！",
+        "gloss": "treat",
+        "sense_id": "zh-280e70d831bc-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9de94b8b12217f3e2af42f769423b976c42b5f02fd43ce8251cb7c2cf9adff37"
+}

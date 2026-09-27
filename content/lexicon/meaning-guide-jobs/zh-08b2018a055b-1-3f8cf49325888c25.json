@@ -1,0 +1,31 @@
+{
+  "id": "zh-08b2018a055b-1-3f8cf49325888c25",
+  "entry_id": "zh-08b2018a055b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-08b2018a055b-1",
+      "headword": "常",
+      "kind": "word",
+      "reading": "cháng",
+      "senses": [
+        {
+          "id": "zh-08b2018a055b-1-s1",
+          "definition": "often; frequently"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备小时候常和孩子们在树下玩，说自己将来要做大事。",
+        "gloss": "often",
+        "sense_id": "zh-08b2018a055b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7358b1a3daec9072bd29760e868202fe1c0eba9997c0c1594d5972785ad00082"
+}

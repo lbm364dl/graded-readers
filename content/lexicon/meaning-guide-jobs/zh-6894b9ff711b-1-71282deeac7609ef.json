@@ -1,0 +1,31 @@
+{
+  "id": "zh-6894b9ff711b-1-71282deeac7609ef",
+  "entry_id": "zh-6894b9ff711b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6894b9ff711b-1",
+      "headword": "厉声",
+      "kind": "word",
+      "reading": "lìshēng",
+      "senses": [
+        {
+          "id": "zh-6894b9ff711b-1-s1",
+          "definition": "in a loud, forceful voice"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "随后，一个人厉声问：“大丈夫不能为国家出力，为什么在这里长叹？",
+        "gloss": "in a stern/loud voice",
+        "sense_id": "zh-6894b9ff711b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "24a6ff9eb057497f4a6979865856e2077f3c135e135659050b9bb60ed2ef9cbe"
+}

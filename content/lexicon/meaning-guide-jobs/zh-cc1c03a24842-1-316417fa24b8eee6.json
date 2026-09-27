@@ -1,0 +1,31 @@
+{
+  "id": "zh-cc1c03a24842-1-316417fa24b8eee6",
+  "entry_id": "zh-cc1c03a24842-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-cc1c03a24842-1",
+      "headword": "看着",
+      "kind": "construction",
+      "reading": "kànzhe",
+      "senses": [
+        {
+          "id": "zh-cc1c03a24842-1-s1",
+          "definition": "to look at or watch something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备看着招军榜，一直叹气。",
+        "gloss": "look at",
+        "sense_id": "zh-cc1c03a24842-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "160bd7952a554090ab54fa629df802ea8077afff1ae83bbd10e635ea361c652f"
+}

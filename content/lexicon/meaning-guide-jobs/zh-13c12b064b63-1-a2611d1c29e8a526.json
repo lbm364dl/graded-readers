@@ -1,0 +1,77 @@
+{
+  "id": "zh-13c12b064b63-1-a2611d1c29e8a526",
+  "entry_id": "zh-13c12b064b63-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-13c12b064b63-1",
+      "headword": "下",
+      "kind": "construction",
+      "reading": "xià",
+      "senses": [
+        {
+          "id": "zh-13c12b064b63-1-s1",
+          "definition": "to successfully rescue or save"
+        },
+        {
+          "id": "zh-13c12b064b63-1-s2",
+          "definition": "to issue or send down (an order, decree, or similar directive)"
+        },
+        {
+          "id": "zh-13c12b064b63-1-s3",
+          "definition": "below; under or at the foot of something"
+        },
+        {
+          "id": "zh-13c12b064b63-1-s4",
+          "definition": "down; into a lower or settled position"
+        },
+        {
+          "id": "zh-13c12b064b63-1-s5",
+          "definition": "to successfully bring about the action expressed by the preceding verb"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”张飞听完十分生气，要杀押车的人，救下老师。",
+        "gloss": "down; result complement",
+        "sense_id": "zh-13c12b064b63-1-s1"
+      },
+      {
+        "sentence": "三人立刻冲上去，把黄巾军打退，救下董卓。",
+        "gloss": "down; result complement",
+        "sense_id": "zh-13c12b064b63-1-s1"
+      },
+      {
+        "sentence": "皇帝下诏询问多种灾异的原因，蔡邕上书，认为这是妇人与宦官干政导致的，言辞十分直接。",
+        "gloss": "issue; send down",
+        "sense_id": "zh-13c12b064b63-1-s2"
+      },
+      {
+        "sentence": "刘备小时候常和孩子们在树下玩，说自己将来要做大事。",
+        "gloss": "under",
+        "sense_id": "zh-13c12b064b63-1-s3"
+      },
+      {
+        "sentence": "三人到了大兴山下，和敌军相遇。",
+        "gloss": "below; at the foot of",
+        "sense_id": "zh-13c12b064b63-1-s3"
+      },
+      {
+        "sentence": "他在县城四座城门放下十多根五颜六色的木棒，并定下严格的禁令。",
+        "gloss": "down; indicating completion",
+        "sense_id": "zh-13c12b064b63-1-s4"
+      },
+      {
+        "sentence": "三人救下董卓，把他带回营中。",
+        "gloss": "down; successfully",
+        "sense_id": "zh-13c12b064b63-1-s5"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "052d79a4e85091c6b68ea33a51a72dd665a35acbc303495bd1fae34109955eb2"
+}

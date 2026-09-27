@@ -1,0 +1,31 @@
+{
+  "id": "zh-0118fdd84154-1-4b6c4c13cde8beb8",
+  "entry_id": "zh-0118fdd84154-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-0118fdd84154-1",
+      "headword": "命良匠",
+      "kind": "construction",
+      "reading": "mìng liángjiàng",
+      "senses": [
+        {
+          "id": "zh-0118fdd84154-1-s1",
+          "definition": "Boundary error: 命 (“order or command”) is combined with its object 良匠 (“skilled craftspeople”); this is not a single lexical headword."
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备命良匠打造双股剑，关羽造青龙偃月刀，又名冷艳锯，重八十二斤；张飞造丈八点钢矛。",
+        "gloss": "order skilled craftsmen",
+        "sense_id": "zh-0118fdd84154-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ae16a1ffe2cacf77c2ff6f684c368014eae778bbf965d8cdee00bc937761cb2b"
+}

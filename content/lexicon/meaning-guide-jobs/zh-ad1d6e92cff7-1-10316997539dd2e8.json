@@ -1,0 +1,36 @@
+{
+  "id": "zh-ad1d6e92cff7-1-10316997539dd2e8",
+  "entry_id": "zh-ad1d6e92cff7-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ad1d6e92cff7-1",
+      "headword": "分成",
+      "kind": "construction",
+      "reading": "fēnchéng",
+      "senses": [
+        {
+          "id": "zh-ad1d6e92cff7-1-s1",
+          "definition": "divide something into specified parts or groups"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "随后，他把信徒分成三十六方。",
+        "gloss": "divide into",
+        "sense_id": "zh-ad1d6e92cff7-1-s1"
+      },
+      {
+        "sentence": "后来信徒越来越多，他把众人分成三十六方，各立首领。",
+        "gloss": "divide into",
+        "sense_id": "zh-ad1d6e92cff7-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "45ecca51dbcd13b6e8a03307a4517d75497088231a47bbd0aa1a8d6b7351d82c"
+}

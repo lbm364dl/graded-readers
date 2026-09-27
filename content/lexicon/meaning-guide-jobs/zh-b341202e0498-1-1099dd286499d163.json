@@ -1,0 +1,31 @@
+{
+  "id": "zh-b341202e0498-1-1099dd286499d163",
+  "entry_id": "zh-b341202e0498-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b341202e0498-1",
+      "headword": "来报",
+      "kind": "construction",
+      "reading": "lái bào",
+      "senses": [
+        {
+          "id": "zh-b341202e0498-1-s1",
+          "definition": "come to report or announce something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "于是有人来报，两个客人带着伙伴和一群马来到庄上。",
+        "gloss": "come to report",
+        "sense_id": "zh-b341202e0498-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e9c845c88478ae55e2428ba7edbf9843714324b02ecfb5b67d53408e705eab86"
+}

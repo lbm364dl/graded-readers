@@ -1,0 +1,26 @@
+{
+  "id": "zh-component-cfd1d0d37cc64ed6-6cbc61f1c10b2459",
+  "entry_id": "zh-component-cfd1d0d37cc64ed6",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-component-cfd1d0d37cc64ed6",
+      "headword": "主意",
+      "reading": "zhǔyi",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-cfd1d0d37cc64ed6-s1",
+          "definition": "An idea or plan."
+        }
+      ]
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "81a0f63a58474b84daf4722ded468b989943866c6eff3be172b1eaa6c4031728"
+}

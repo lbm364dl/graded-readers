@@ -1,0 +1,31 @@
+{
+  "id": "zh-45569fc06340-1-79f3ab205e01cffb",
+  "entry_id": "zh-45569fc06340-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-45569fc06340-1",
+      "headword": "一会儿",
+      "kind": "word",
+      "reading": "yíhuìr",
+      "senses": [
+        {
+          "id": "zh-45569fc06340-1-s1",
+          "definition": "a short while"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "打了一会儿，他假装后退。",
+        "gloss": "for a while",
+        "sense_id": "zh-45569fc06340-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f8628c55734783b28780350ee31ac73afa320fb8e3ec497adf8d0754ff1c0106"
+}

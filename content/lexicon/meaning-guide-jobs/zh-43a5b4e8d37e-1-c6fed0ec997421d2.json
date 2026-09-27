@@ -1,0 +1,31 @@
+{
+  "id": "zh-43a5b4e8d37e-1-c6fed0ec997421d2",
+  "entry_id": "zh-43a5b4e8d37e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-43a5b4e8d37e-1",
+      "headword": "官",
+      "kind": "word",
+      "reading": "guān",
+      "senses": [
+        {
+          "id": "zh-43a5b4e8d37e-1-s1",
+          "definition": "official; government post"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹操以前做官时，也很重视城里的规矩。",
+        "gloss": "an official",
+        "sense_id": "zh-43a5b4e8d37e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "26d4359e6936b83e1c0bac8430be24678442c29281fb9086377cfa2d9ed7f3ba"
+}

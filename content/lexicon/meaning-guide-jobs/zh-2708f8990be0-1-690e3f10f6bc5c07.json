@@ -1,0 +1,30 @@
+{
+  "id": "zh-2708f8990be0-1-690e3f10f6bc5c07",
+  "entry_id": "zh-2708f8990be0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2708f8990be0-1",
+      "headword": "跟着",
+      "kind": "word",
+      "reading": "gēnzhe",
+      "senses": [
+        {
+          "id": "zh-2708f8990be0-1-s1",
+          "definition": "to follow someone or something by going along after them"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "许多百姓跟着他们，天下变得很乱。",
+        "gloss": "follow",
+        "sense_id": "zh-2708f8990be0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "pending"
+}

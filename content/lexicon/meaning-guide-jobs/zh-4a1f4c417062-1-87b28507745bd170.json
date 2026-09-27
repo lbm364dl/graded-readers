@@ -1,0 +1,31 @@
+{
+  "id": "zh-4a1f4c417062-1-87b28507745bd170",
+  "entry_id": "zh-4a1f4c417062-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4a1f4c417062-1",
+      "headword": "诬告",
+      "kind": "word",
+      "reading": "wūgào",
+      "senses": [
+        {
+          "id": "zh-4a1f4c417062-1-s1",
+          "definition": "to falsely accuse someone"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "左丰怀恨回报，诬告卢植筑高墙却不作战，使军心懈怠。",
+        "gloss": "to falsely accuse",
+        "sense_id": "zh-4a1f4c417062-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8d265e99fc5f46e626e3b163870ce1de7b78d65e97c17e104d2847f66c644605"
+}

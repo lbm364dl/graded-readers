@@ -1,0 +1,31 @@
+{
+  "id": "zh-c404effc1720-1-31dc2f80ff70a76a",
+  "entry_id": "zh-c404effc1720-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c404effc1720-1",
+      "headword": "入",
+      "kind": "word",
+      "reading": "rù",
+      "senses": [
+        {
+          "id": "zh-c404effc1720-1-s1",
+          "definition": "enter; go into"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "二更后，伏兵一齐放火，两人各带军队攻入营中。",
+        "gloss": "enter",
+        "sense_id": "zh-c404effc1720-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4c53dfd37f3fbd46eb2600e9918491182bcf5e4b6d788878b9ae05fb24ec7a5f"
+}

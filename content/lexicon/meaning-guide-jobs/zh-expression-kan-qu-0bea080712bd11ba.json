@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-kan-qu-0bea080712bd11ba",
+  "entry_id": "zh-expression-kan-qu",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-kan-qu",
+      "headword": "看去",
+      "reading": "kànqu",
+      "base_entry_id": "zh-61f43315f98a-1",
+      "components": [
+        {
+          "entry_id": "zh-61f43315f98a-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-99ae21ea6c39-1",
+          "role": "viewpoint complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-kan-qu-s1",
+          "definition": "when viewed; appear from a viewpoint"
+        }
+      ],
+      "kind": "construction"
+    },
+    "examples": [
+      {
+        "sentence": "家旁有一棵大桑树，远远看去，像一把车盖。",
+        "gloss": "when viewed; appear from a viewpoint",
+        "sense_id": "zh-expression-kan-qu-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "看",
+        "role": "verb"
+      },
+      {
+        "headword": "去",
+        "role": "viewpoint complement"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "dc2ae4f655bf304225de764464bc08a50f14df18ae06ea7c32e7cee02dfffaca"
+}

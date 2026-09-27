@@ -1,0 +1,31 @@
+{
+  "id": "zh-5c20d51c2ef3-1-104385dc12c21bfc",
+  "entry_id": "zh-5c20d51c2ef3-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5c20d51c2ef3-1",
+      "headword": "防守",
+      "kind": "word",
+      "reading": "fángshǒu",
+      "senses": [
+        {
+          "id": "zh-5c20d51c2ef3-1-s1",
+          "definition": "to defend against attack; defense"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "朝廷命各地招兵，加强防守，抵抗黄巾军；又派卢植、皇甫嵩、朱俊各自率领精兵，分三路讨伐。",
+        "gloss": "defense",
+        "sense_id": "zh-5c20d51c2ef3-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "239771455b8328f2db9d33ebd7eefd3c8b2a9d2b28af4efe6e93d58d13053b76"
+}

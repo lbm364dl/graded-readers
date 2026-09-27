@@ -1,0 +1,31 @@
+{
+  "id": "zh-61795d82c70b-1-727a54673bbe4469",
+  "entry_id": "zh-61795d82c70b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-61795d82c70b-1",
+      "headword": "破",
+      "kind": "word",
+      "reading": "pò",
+      "senses": [
+        {
+          "id": "zh-61795d82c70b-1-s1",
+          "definition": "to defeat or overcome"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "如今听说这里招军破贼，便来投军。",
+        "gloss": "to defeat",
+        "sense_id": "zh-61795d82c70b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8b92f62c5585cb9f8ea6cb248b434b35cb92ce4dce86152180486f53acf618d2"
+}

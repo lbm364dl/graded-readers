@@ -1,0 +1,36 @@
+{
+  "id": "zh-89bf5aeae158-1-c1948f08d7fe95dc",
+  "entry_id": "zh-89bf5aeae158-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-89bf5aeae158-1",
+      "headword": "相",
+      "kind": "word",
+      "reading": "xiāng",
+      "senses": [
+        {
+          "id": "zh-89bf5aeae158-1-s1",
+          "definition": "reciprocally; to or with one another"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刚才见你看招军榜叹气，所以前来相问。",
+        "gloss": "mutually; each other",
+        "sense_id": "zh-89bf5aeae158-1-s1"
+      },
+      {
+        "sentence": "当时张角有十五万黄巾军，卢植有五万兵，双方在广宗相拒，尚未分出胜负。",
+        "gloss": "to face; confront",
+        "sense_id": "zh-89bf5aeae158-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f4723eb7452b982c0a53111951fc60790ca14c9b54a294aed4f7eb287f6bb145"
+}

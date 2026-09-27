@@ -1,0 +1,26 @@
+{
+  "id": "zh-component-00f0dc19cafa1161-d32bd38519ce56b8",
+  "entry_id": "zh-component-00f0dc19cafa1161",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-component-00f0dc19cafa1161",
+      "headword": "十余",
+      "reading": "shí yú",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-00f0dc19cafa1161-s1",
+          "definition": "more than ten; over ten"
+        }
+      ]
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "dc01af3ef44fb0a377c9c139332180be473a853a8c88af32615336e71b0e7b09"
+}

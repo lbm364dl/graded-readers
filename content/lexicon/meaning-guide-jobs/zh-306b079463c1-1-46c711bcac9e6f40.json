@@ -1,0 +1,31 @@
+{
+  "id": "zh-306b079463c1-1-46c711bcac9e6f40",
+  "entry_id": "zh-306b079463c1-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-306b079463c1-1",
+      "headword": "获罪",
+      "kind": "word",
+      "reading": "huòzuì",
+      "senses": [
+        {
+          "id": "zh-306b079463c1-1-s1",
+          "definition": "to incur blame or punishment for an offense"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹节在后面偷看奏章，把内容传告左右，后来又借别的事诬陷蔡邕，使他获罪，放归田里。",
+        "gloss": "be convicted",
+        "sense_id": "zh-306b079463c1-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3e2f46ae256c3c8c37411a9648dd087e233140df9a4e6fe0aec1c3d4bbdc02de"
+}

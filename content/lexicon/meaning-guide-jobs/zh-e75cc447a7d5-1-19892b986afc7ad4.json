@@ -1,0 +1,31 @@
+{
+  "id": "zh-e75cc447a7d5-1-19892b986afc7ad4",
+  "entry_id": "zh-e75cc447a7d5-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e75cc447a7d5-1",
+      "headword": "推车",
+      "kind": "construction",
+      "reading": "tuīchē",
+      "senses": [
+        {
+          "id": "zh-e75cc447a7d5-1-s1",
+          "definition": "push a cart"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "不一会儿，一个大汉推车来到店里。",
+        "gloss": "push a cart",
+        "sense_id": "zh-e75cc447a7d5-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6b65cf4183d046dffc158e5410013aa668998ab0351aadc56380ae33b38e69d9"
+}

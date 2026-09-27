@@ -1,0 +1,31 @@
+{
+  "id": "zh-c42a9c699460-1-ae974df06abad8dd",
+  "entry_id": "zh-c42a9c699460-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c42a9c699460-1",
+      "headword": "少言",
+      "kind": "construction",
+      "reading": "shǎo yán",
+      "senses": [
+        {
+          "id": "zh-c42a9c699460-1-s1",
+          "definition": "to speak little"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备不怎么读书，性情宽和，少言而有大志，喜欢结交天下豪杰。",
+        "gloss": "reticent",
+        "sense_id": "zh-c42a9c699460-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c1ecd30855dda66727b5090c0e4c628abc9a3dc0b145442aa55393e33393849d"
+}

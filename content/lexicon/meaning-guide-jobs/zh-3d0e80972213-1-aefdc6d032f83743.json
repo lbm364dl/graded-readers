@@ -1,0 +1,31 @@
+{
+  "id": "zh-3d0e80972213-1-aefdc6d032f83743",
+  "entry_id": "zh-3d0e80972213-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-3d0e80972213-1",
+      "headword": "中平",
+      "kind": "name",
+      "reading": "Zhōngpíng",
+      "senses": [
+        {
+          "id": "zh-3d0e80972213-1-s1",
+          "definition": "Zhongping, a reign-era name"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "中平元年，疫病流行，他用符水给百姓治病，自称大贤良师。",
+        "gloss": "Zhongping",
+        "sense_id": "zh-3d0e80972213-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "90927b3bef1e94f46ce70ddf7da59191aced4263b5ce0af01342480a931e4c23"
+}

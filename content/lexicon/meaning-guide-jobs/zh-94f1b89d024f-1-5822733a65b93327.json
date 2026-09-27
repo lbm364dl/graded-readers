@@ -1,0 +1,31 @@
+{
+  "id": "zh-94f1b89d024f-1-5822733a65b93327",
+  "entry_id": "zh-94f1b89d024f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-94f1b89d024f-1",
+      "headword": "四周",
+      "kind": "word",
+      "reading": "sìzhōu",
+      "senses": [
+        {
+          "id": "zh-94f1b89d024f-1-s1",
+          "definition": "all around; the surrounding area"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他们让人准备草把，悄悄安排在四周。",
+        "gloss": "all around",
+        "sense_id": "zh-94f1b89d024f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "68e0231b60aa21b03223154579ab56f5d7b2d2fbccb283217d4da7038cc26c13"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-c0fe0d7bbc37-1-01a6f137a6f49498",
+  "entry_id": "zh-c0fe0d7bbc37-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c0fe0d7bbc37-1",
+      "headword": "向前",
+      "kind": "word",
+      "reading": "xiàngqián",
+      "senses": [
+        {
+          "id": "zh-c0fe0d7bbc37-1-s1",
+          "definition": "forward; toward the front"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "第二天，刘备带人向前打。",
+        "gloss": "forward",
+        "sense_id": "zh-c0fe0d7bbc37-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4295780b0d9b920c5aeb6c3510e0d12333dcd150c84a7c1de4b1f94d1c677ffe"
+}

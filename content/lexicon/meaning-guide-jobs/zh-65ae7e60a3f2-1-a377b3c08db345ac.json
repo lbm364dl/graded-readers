@@ -1,0 +1,31 @@
+{
+  "id": "zh-65ae7e60a3f2-1-a377b3c08db345ac",
+  "entry_id": "zh-65ae7e60a3f2-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-65ae7e60a3f2-1",
+      "headword": "判断",
+      "kind": "word",
+      "reading": "pànduàn",
+      "senses": [
+        {
+          "id": "zh-65ae7e60a3f2-1-s1",
+          "definition": "judge or reach a conclusion about something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇甫嵩判断张梁、张宝很可能回广宗找张角，便让刘备回去帮助卢植。",
+        "gloss": "judge",
+        "sense_id": "zh-65ae7e60a3f2-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b47b090573d674f9a3808361b6f77ffb7d58a5940ec2d7ea0698e4b61d614054"
+}

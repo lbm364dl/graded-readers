@@ -1,0 +1,31 @@
+{
+  "id": "zh-b3d215f03a88-1-b174a1cc5f353d93",
+  "entry_id": "zh-b3d215f03a88-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b3d215f03a88-1",
+      "headword": "举",
+      "kind": "word",
+      "reading": "jǔ",
+      "senses": [
+        {
+          "id": "zh-b3d215f03a88-1-s1",
+          "definition": "raise; lift up"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞举矛刺中邓茂，他从马上掉下。",
+        "gloss": "raise",
+        "sense_id": "zh-b3d215f03a88-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5348ce5919a8cc8e5cfa326944a866056bff90f4fd48b5a20e2e6cbf463aa24c"
+}

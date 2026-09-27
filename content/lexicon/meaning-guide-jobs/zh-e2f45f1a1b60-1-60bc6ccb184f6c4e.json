@@ -1,0 +1,31 @@
+{
+  "id": "zh-e2f45f1a1b60-1-60bc6ccb184f6c4e",
+  "entry_id": "zh-e2f45f1a1b60-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e2f45f1a1b60-1",
+      "headword": "看完",
+      "kind": "construction",
+      "reading": "kànwán",
+      "senses": [
+        {
+          "id": "zh-e2f45f1a1b60-1-s1",
+          "definition": "to finish reading or looking through something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "灵帝看完奏章叹气，因而起身更衣。",
+        "gloss": "finish reading",
+        "sense_id": "zh-e2f45f1a1b60-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0ccacc72f962f12900810b8fdb8daec3c99368232a6a515539c870abf36a0f1c"
+}

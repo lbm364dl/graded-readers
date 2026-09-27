@@ -1,0 +1,36 @@
+{
+  "id": "zh-5bb85e4468d0-1-8041fa2952d86f11",
+  "entry_id": "zh-5bb85e4468d0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5bb85e4468d0-1",
+      "headword": "震怒",
+      "kind": "word",
+      "reading": "zhènnù",
+      "senses": [
+        {
+          "id": "zh-5bb85e4468d0-1-s1",
+          "definition": "to become furious"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "朝廷震怒，命董卓接替卢植，把他押回京城问罪。",
+        "gloss": "to become furious",
+        "sense_id": "zh-5bb85e4468d0-1-s1"
+      },
+      {
+        "sentence": "朝廷震怒，派董卓接替他，并押他回京问罪。",
+        "gloss": "be enraged",
+        "sense_id": "zh-5bb85e4468d0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "67a039f0eb3a2be6d237c1f028ef849576750e7574c0df38b112e8d75e7c9cd5"
+}

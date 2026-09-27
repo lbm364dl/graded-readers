@@ -1,0 +1,36 @@
+{
+  "id": "zh-782b06f181a3-1-539c9dc9774a1800",
+  "entry_id": "zh-782b06f181a3-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-782b06f181a3-1",
+      "headword": "一向",
+      "kind": "word",
+      "reading": "yīxiàng",
+      "senses": [
+        {
+          "id": "zh-782b06f181a3-1-s1",
+          "definition": "consistently over a period of time; habitually or all along"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他一向有远大志向，喜欢结交天下豪杰，也是汉朝皇帝的后代。",
+        "gloss": "always; all along",
+        "sense_id": "zh-782b06f181a3-1-s1"
+      },
+      {
+        "sentence": "张飞说自己姓张，名飞，字翼德，世居涿郡，家有庄田，平日卖酒屠猪，一向喜欢结交天下豪杰。",
+        "gloss": "always; consistently",
+        "sense_id": "zh-782b06f181a3-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "063d36ace0c49122f0fd42073d1f64bb188e59e5aae245f0e99fdd0b1b50b919"
+}

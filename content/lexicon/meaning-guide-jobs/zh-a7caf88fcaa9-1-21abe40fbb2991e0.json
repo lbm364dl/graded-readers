@@ -1,0 +1,31 @@
+{
+  "id": "zh-a7caf88fcaa9-1-21abe40fbb2991e0",
+  "entry_id": "zh-a7caf88fcaa9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a7caf88fcaa9-1",
+      "headword": "出战",
+      "kind": "word",
+      "reading": "chūzhàn",
+      "senses": [
+        {
+          "id": "zh-a7caf88fcaa9-1-s1",
+          "definition": "go out to fight; enter battle"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "程远志派邓茂出战。",
+        "gloss": "go into battle",
+        "sense_id": "zh-a7caf88fcaa9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4a254b92a7b35de23067f51c15a2a256fc823d580cc92daf0e4bc6d32667793d"
+}

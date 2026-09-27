@@ -1,0 +1,31 @@
+{
+  "id": "zh-b5fde862b143-1-589c079c449c0f38",
+  "entry_id": "zh-b5fde862b143-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b5fde862b143-1",
+      "headword": "来犯",
+      "kind": "word",
+      "reading": "láifàn",
+      "senses": [
+        {
+          "id": "zh-b5fde862b143-1-s1",
+          "definition": "come to attack or invade"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "不久，消息传来：程远志率五万黄巾军来犯涿郡。",
+        "gloss": "to invade",
+        "sense_id": "zh-b5fde862b143-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "34da3eb86722d15f577a466f46438b5b888a25dd4d8104e78fbd26bb4c3ab2b7"
+}

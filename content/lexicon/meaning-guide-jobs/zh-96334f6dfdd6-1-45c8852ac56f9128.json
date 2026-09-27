@@ -1,0 +1,31 @@
+{
+  "id": "zh-96334f6dfdd6-1-45c8852ac56f9128",
+  "entry_id": "zh-96334f6dfdd6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-96334f6dfdd6-1",
+      "headword": "叹息",
+      "kind": "word",
+      "reading": "tànxī",
+      "senses": [
+        {
+          "id": "zh-96334f6dfdd6-1-s1",
+          "definition": "to sigh"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇帝看后叹息，曹节却偷偷看了奏章，并传给身边的人。",
+        "gloss": "to sigh",
+        "sense_id": "zh-96334f6dfdd6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ebd62b83f0de569cf93e2ba0f634fbf6381c01179f9af861fcd15b8bc3b101c7"
+}

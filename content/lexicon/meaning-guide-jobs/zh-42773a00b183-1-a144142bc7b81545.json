@@ -1,0 +1,75 @@
+{
+  "id": "zh-42773a00b183-1-a144142bc7b81545",
+  "entry_id": "zh-42773a00b183-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-42773a00b183-1",
+      "headword": "答应",
+      "kind": "word",
+      "reading": "dāying",
+      "senses": [
+        {
+          "id": "zh-42773a00b183-1-s1",
+          "definition": "to answer or respond aloud"
+        },
+        {
+          "id": "zh-42773a00b183-1-s2",
+          "definition": "to agree; consent"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备和关羽齐声答应。",
+        "gloss": "to answer",
+        "sense_id": "zh-42773a00b183-1-s1"
+      },
+      {
+        "sentence": "刘备和关羽齐声答应。",
+        "gloss": "to agree",
+        "sense_id": "zh-42773a00b183-1-s1"
+      },
+      {
+        "sentence": "”刘备、关羽一齐答应。",
+        "gloss": "to agree; consent",
+        "sense_id": "zh-42773a00b183-1-s1"
+      },
+      {
+        "sentence": "刘焉与刘备协商，刘备答应前往。",
+        "gloss": "to agree",
+        "sense_id": "zh-42773a00b183-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-42773a00b183-1",
+    "claim_ids": [],
+    "structure": "overlapping",
+    "explanation_en": "答应 means to answer or respond aloud. 答 contributes the idea of answering, while 应 reinforces it with the sense of responding in reply.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "答",
+        "contribution_en": "Contributes the idea of answering.",
+        "claim_ids": []
+      },
+      {
+        "text": "应",
+        "contribution_en": "Adds the sense of responding in reply.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "c3afded039fed6ab768c47790940cf5ce0ab7d24c2ef022454c716dc11b2d468",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0d4b6a9a9a93cfb9957a54c59e8852bea41d155a674fec247576ae84f0c7986b"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-c6072483506d-1-8dd2f0c75cb348bf",
+  "entry_id": "zh-c6072483506d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c6072483506d-1",
+      "headword": "主动",
+      "kind": "word",
+      "reading": "zhǔdòng",
+      "senses": [
+        {
+          "id": "zh-c6072483506d-1-s1",
+          "definition": "on one's own initiative; take the initiative"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备主动说：“我们应当马上去救他们。",
+        "gloss": "take the initiative",
+        "sense_id": "zh-c6072483506d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "668b849a6625e1a367b2d9e42d6d1ceeef86dd95df3b5bde7d8d0d0595b8ce4c"
+}

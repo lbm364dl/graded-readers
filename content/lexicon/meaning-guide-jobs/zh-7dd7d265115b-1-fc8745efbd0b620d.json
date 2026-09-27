@@ -1,0 +1,31 @@
+{
+  "id": "zh-7dd7d265115b-1-fc8745efbd0b620d",
+  "entry_id": "zh-7dd7d265115b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7dd7d265115b-1",
+      "headword": "用来",
+      "kind": "construction",
+      "reading": "yònglái",
+      "senses": [
+        {
+          "id": "zh-7dd7d265115b-1-s1",
+          "definition": "to use for; to serve as a means to"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "这些金银和铁也用来置办器用。",
+        "gloss": "be used to",
+        "sense_id": "zh-7dd7d265115b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "87c2e8179756d1d580458591053ba225407c2d31c63b81173f3f25d0df6e7a26"
+}

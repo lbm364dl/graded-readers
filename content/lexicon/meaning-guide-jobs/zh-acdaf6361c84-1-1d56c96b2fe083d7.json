@@ -1,0 +1,36 @@
+{
+  "id": "zh-acdaf6361c84-1-1d56c96b2fe083d7",
+  "entry_id": "zh-acdaf6361c84-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-acdaf6361c84-1",
+      "headword": "身",
+      "kind": "word",
+      "reading": "shēn",
+      "senses": [
+        {
+          "id": "zh-acdaf6361c84-1-s1",
+          "definition": "body"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞挺丈八蛇矛刺中邓茂胸口，使他翻身落马。",
+        "gloss": "body",
+        "sense_id": "zh-acdaf6361c84-1-s1"
+      },
+      {
+        "sentence": "张飞挺矛直冲，一矛刺中邓茂心窝，邓茂翻身落马。",
+        "gloss": "body",
+        "sense_id": "zh-acdaf6361c84-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c19312be4a5dd23eaced0d2aa750f102d0f47fd3be479dca232e2d06993989c2"
+}

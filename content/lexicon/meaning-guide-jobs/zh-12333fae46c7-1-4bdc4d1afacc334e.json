@@ -1,0 +1,31 @@
+{
+  "id": "zh-12333fae46c7-1-4bdc4d1afacc334e",
+  "entry_id": "zh-12333fae46c7-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-12333fae46c7-1",
+      "headword": "围攻",
+      "kind": "word",
+      "reading": "wéigōng",
+      "senses": [
+        {
+          "id": "zh-12333fae46c7-1-s1",
+          "definition": "attack and surround"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他下马询问，卢植说：“我围攻张角，快要取胜。",
+        "gloss": "to besiege and attack",
+        "sense_id": "zh-12333fae46c7-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "14cc5bf90e7b63a858c29d15ec1ef3f5a25ccdd609558833c77f52a28ae83cf8"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-15a8da6542d0-1-4bc83597175de024",
+  "entry_id": "zh-15a8da6542d0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-15a8da6542d0-1",
+      "headword": "南华",
+      "kind": "name",
+      "reading": "Nánhuá",
+      "senses": [
+        {
+          "id": "zh-15a8da6542d0-1-s1",
+          "definition": "Nanhua, a name in the passage"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "进山采药时，他遇到南华老仙。",
+        "gloss": "Nanhua",
+        "sense_id": "zh-15a8da6542d0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0f830d2e247cf9e5d6f75a97f803604cf74450caae9e7924eac213d8dbade1c3"
+}

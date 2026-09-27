@@ -1,0 +1,31 @@
+{
+  "id": "zh-73f89348dac3-1-2ed62b193e75498b",
+  "entry_id": "zh-73f89348dac3-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-73f89348dac3-1",
+      "headword": "漫山而",
+      "kind": "construction",
+      "reading": "màn shān ér",
+      "senses": [
+        {
+          "id": "zh-73f89348dac3-1-s1",
+          "definition": "spreading or advancing across the mountains"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人登上高冈远望，只见汉军大败，黄巾军从后面漫山而来。",
+        "gloss": "across the mountains",
+        "sense_id": "zh-73f89348dac3-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9a4c115627fd5b884b16b503a792d9ce439f5319026a6acaa2feba4ba47bdf2c"
+}

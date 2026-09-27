@@ -1,0 +1,31 @@
+{
+  "id": "zh-b10aea1219b0-1-5b47c18f44bc06fb",
+  "entry_id": "zh-b10aea1219b0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b10aea1219b0-1",
+      "headword": "带着",
+      "kind": "word",
+      "reading": "dàizhe",
+      "senses": [
+        {
+          "id": "zh-b10aea1219b0-1-s1",
+          "definition": "to have or bring someone or something along"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "这时有人来报，两位客人带着随从，赶着一群马到了庄上。",
+        "gloss": "bringing; with",
+        "sense_id": "zh-b10aea1219b0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "997f327e700459973267d5cf00df2b8a56aaf588ac870b339c255b73b28d8a82"
+}

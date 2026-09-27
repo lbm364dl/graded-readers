@@ -1,0 +1,31 @@
+{
+  "id": "zh-534df36b6942-1-5124ce41111d9f18",
+  "entry_id": "zh-534df36b6942-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-534df36b6942-1",
+      "headword": "鞍",
+      "kind": "word",
+      "reading": "ān",
+      "senses": [
+        {
+          "id": "zh-534df36b6942-1-s1",
+          "definition": "saddle"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军惊慌，马来不及装鞍，人来不及穿甲，四散逃跑。",
+        "gloss": "saddle",
+        "sense_id": "zh-534df36b6942-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8fcc002febf62c4b43dc21da99aa9b4eafee681a0b306db1a7fac942b4f6874e"
+}

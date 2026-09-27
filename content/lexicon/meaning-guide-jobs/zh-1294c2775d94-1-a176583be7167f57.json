@@ -1,0 +1,31 @@
+{
+  "id": "zh-1294c2775d94-1-a176583be7167f57",
+  "entry_id": "zh-1294c2775d94-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1294c2775d94-1",
+      "headword": "孟德",
+      "kind": "name",
+      "reading": "Mèng Dé",
+      "senses": [
+        {
+          "id": "zh-1294c2775d94-1-s1",
+          "definition": "Mengde, the courtesy name of Cao Cao"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "为首的是曹操，字孟德，小字阿瞒，又名吉利。",
+        "gloss": "Mengde",
+        "sense_id": "zh-1294c2775d94-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "112dd17da0a8885f1f285870e52b2b14a38996652183c1073f619f4c8f4cd3a1"
+}

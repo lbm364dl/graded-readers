@@ -1,0 +1,31 @@
+{
+  "id": "zh-5c179fce17ab-1-4a5d8093470f777b",
+  "entry_id": "zh-5c179fce17ab-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5c179fce17ab-1",
+      "headword": "力",
+      "kind": "word",
+      "reading": "lì",
+      "senses": [
+        {
+          "id": "zh-5c179fce17ab-1-s1",
+          "definition": "strength; effort"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "随后，一个人厉声问：“大丈夫不能为国家出力，为什么在这里长叹？",
+        "gloss": "strength; effort",
+        "sense_id": "zh-5c179fce17ab-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3c9ca89c5be765d3efa1c66ba087bdba101542ba97a9965ae8bbc292f92efcfc"
+}

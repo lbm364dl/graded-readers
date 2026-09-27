@@ -1,0 +1,31 @@
+{
+  "id": "zh-023c9fa59683-1-1443ea20fe134adf",
+  "entry_id": "zh-023c9fa59683-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-023c9fa59683-1",
+      "headword": "三十六方",
+      "kind": "word",
+      "reading": "sānshíliùfāng",
+      "senses": [
+        {
+          "id": "zh-023c9fa59683-1-s1",
+          "definition": "thirty-six divisions or groups"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "之后，张角设立三十六方。",
+        "gloss": "thirty-six divisions",
+        "sense_id": "zh-023c9fa59683-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a5b0d7db2dace977f1be4100fb9ff1f1097785f9ef6625f5bd8bd9bc7637baab"
+}

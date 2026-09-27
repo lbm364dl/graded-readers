@@ -1,0 +1,70 @@
+{
+  "id": "zh-32f02fd27c53-1-1fb700081e5ffc7e",
+  "entry_id": "zh-32f02fd27c53-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-32f02fd27c53-1",
+      "headword": "交",
+      "kind": "word",
+      "reading": "jiāo",
+      "senses": [
+        {
+          "id": "zh-32f02fd27c53-1-s1",
+          "definition": "to associate or make friends with"
+        },
+        {
+          "id": "zh-32f02fd27c53-1-s2",
+          "definition": "to fight; to engage in battle"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他十五岁时曾外出学习，也交了几个好友。",
+        "gloss": "to make friends with",
+        "sense_id": "zh-32f02fd27c53-1-s1"
+      },
+      {
+        "sentence": "马元义暗中带金帛，和宦官封谞结交，准备作为内应。",
+        "gloss": "to associate with",
+        "sense_id": "zh-32f02fd27c53-1-s1"
+      },
+      {
+        "sentence": "刘备说，老师卢植正在广宗与张角交战，自己曾跟随卢植学习，想去帮助他。",
+        "gloss": "to engage in",
+        "sense_id": "zh-32f02fd27c53-1-s2"
+      },
+      {
+        "sentence": "皇甫嵩、朱俊与黄巾军交战，黄巾军作战不利，退入长社，依草结营。",
+        "gloss": "to engage in",
+        "sense_id": "zh-32f02fd27c53-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-32f02fd27c53-1",
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "交 means to associate with someone or become friends with them.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "交",
+        "contribution_en": "to associate with someone or become friends with them",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "c61d773a450898fd8e29186acc4a75080bb7e7a090d93398e7431b0c0b9675dd",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "708d59541b40a3f86bdd4bf93d6f3308fad71b0b3659f72858e200176234e706"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-0454e7dd9560-1-90da36264e9e98bd",
+  "entry_id": "zh-0454e7dd9560-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-0454e7dd9560-1",
+      "headword": "偷偷",
+      "kind": "word",
+      "reading": "tōutōu",
+      "senses": [
+        {
+          "id": "zh-0454e7dd9560-1-s1",
+          "definition": "secretly; without others knowing"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇帝看后叹息，曹节却偷偷看了奏章，并传给身边的人。",
+        "gloss": "secretly",
+        "sense_id": "zh-0454e7dd9560-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "740aa1019cbda3ede0121cff523da464934270100c4da1dc4302647ca617e528"
+}

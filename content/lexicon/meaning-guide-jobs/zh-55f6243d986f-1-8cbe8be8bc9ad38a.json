@@ -1,0 +1,31 @@
+{
+  "id": "zh-55f6243d986f-1-8cbe8be8bc9ad38a",
+  "entry_id": "zh-55f6243d986f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-55f6243d986f-1",
+      "headword": "猪",
+      "kind": "word",
+      "reading": "zhū",
+      "senses": [
+        {
+          "id": "zh-55f6243d986f-1-s1",
+          "definition": "pig"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "大汉叫张飞，住在涿郡，有田，卖酒杀猪，也喜爱结交豪杰。",
+        "gloss": "pig",
+        "sense_id": "zh-55f6243d986f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7cd4841150371f0789fc470960e119c739b007975fe096bf3bd64c17449e1e1d"
+}

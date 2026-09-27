@@ -1,0 +1,31 @@
+{
+  "id": "zh-19cb63300645-1-9bbb7e194915f666",
+  "entry_id": "zh-19cb63300645-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-19cb63300645-1",
+      "headword": "四五十万",
+      "kind": "word",
+      "reading": "sìwǔshíwàn",
+      "senses": [
+        {
+          "id": "zh-19cb63300645-1-s1",
+          "definition": "four or five hundred thousand"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "百姓纷纷裹上黄巾，跟随黄巾军的人有四五十万。",
+        "gloss": "four to five hundred thousand",
+        "sense_id": "zh-19cb63300645-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "eb7c6c7871772d529e104754b6277bed0ec4ff5582ecc9e7a58b1e0f1066d804"
+}

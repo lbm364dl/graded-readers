@@ -1,0 +1,36 @@
+{
+  "id": "zh-81766ce3e3b6-1-2830de069320c308",
+  "entry_id": "zh-81766ce3e3b6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-81766ce3e3b6-1",
+      "headword": "依靠",
+      "kind": "word",
+      "reading": "yīkào",
+      "senses": [
+        {
+          "id": "zh-81766ce3e3b6-1-s1",
+          "definition": "rely on or depend on someone or something; support"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他很早失去父亲，依靠手艺养家，也一直孝顺母亲。",
+        "gloss": "to rely on",
+        "sense_id": "zh-81766ce3e3b6-1-s1"
+      },
+      {
+        "sentence": "”军队带走卢植后，关羽说：“卢植已被抓，我们失去了依靠，只能回涿郡。",
+        "gloss": "support; reliance",
+        "sense_id": "zh-81766ce3e3b6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c25977b69a85a11d12a4e405dba07a79dc2640538a857c1f9cf246dc2eb823e9"
+}

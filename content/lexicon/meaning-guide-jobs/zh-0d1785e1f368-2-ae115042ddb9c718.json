@@ -1,0 +1,100 @@
+{
+  "id": "zh-0d1785e1f368-2-ae115042ddb9c718",
+  "entry_id": "zh-0d1785e1f368-2",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-0d1785e1f368-2",
+      "headword": "为",
+      "kind": "word",
+      "reading": "wéi",
+      "senses": [
+        {
+          "id": "zh-0d1785e1f368-2-s1",
+          "definition": "serve as; take as"
+        },
+        {
+          "id": "zh-0d1785e1f368-2-s2",
+          "definition": "designate as a sign or signal"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备让关羽带一千人到山左，张飞带一千人到山右，在那里埋伏，以鸣金为号。",
+        "gloss": "take as",
+        "sense_id": "zh-0d1785e1f368-2-s1"
+      },
+      {
+        "sentence": "邹靖带他们见刘焉，刘焉认刘备为侄子。",
+        "gloss": "as",
+        "sense_id": "zh-0d1785e1f368-2-s1"
+      },
+      {
+        "sentence": "皇帝依旧信任张让，还称他为“阿父”。",
+        "gloss": "as",
+        "sense_id": "zh-0d1785e1f368-2-s1"
+      },
+      {
+        "sentence": "誓毕，刘备为兄，关羽次之，张飞为弟。",
+        "gloss": "to act as",
+        "sense_id": "zh-0d1785e1f368-2-s1"
+      },
+      {
+        "sentence": "后来，邹靖把他们引见给刘焉，刘焉认刘备为侄子。",
+        "gloss": "as",
+        "sense_id": "zh-0d1785e1f368-2-s1"
+      },
+      {
+        "sentence": "灵帝特别信任张让，称他为“阿父”。",
+        "gloss": "as; to be",
+        "sense_id": "zh-0d1785e1f368-2-s1"
+      },
+      {
+        "sentence": "邹靖再引他们拜见刘焉，刘备说明家族来历，刘焉认他为侄子。",
+        "gloss": "as",
+        "sense_id": "zh-0d1785e1f368-2-s1"
+      },
+      {
+        "sentence": "关羽带一千人伏在山左，张飞带一千人伏在山右，约定以鸣金为号，一齐出动。",
+        "gloss": "as; serving as",
+        "sense_id": "zh-0d1785e1f368-2-s2"
+      },
+      {
+        "sentence": "刘备说：“我曾拜卢植为师，听说老师在广宗与张角交战，想前去帮助他。",
+        "gloss": "to take as; to serve as",
+        "sense_id": "zh-0d1785e1f368-2-s1"
+      },
+      {
+        "sentence": "黄巾起义后，他被任命为骑都尉，带领五千名骑兵和步兵赶到颍川。",
+        "gloss": "as",
+        "sense_id": "zh-0d1785e1f368-2-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-0d1785e1f368-2",
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "为 links someone or something to a role or identity: it can mean to serve as something or to regard someone or something as something.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "为",
+        "contribution_en": "As a verb, links a person or thing to the role or identity they serve in or are regarded as.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "62515ad269ce8674887ad58df7e083cc86d625517576660ce0a3ac8e9959f309",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "11eaea350fb9cfa5bca16eca9b0f94388b31b8645de1f3d06c6ad26b9247a272"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-45ae7794e4cc-1-5c19182515664db5",
+  "entry_id": "zh-45ae7794e4cc-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-45ae7794e4cc-1",
+      "headword": "扎营",
+      "kind": "word",
+      "reading": "zhāyíng",
+      "senses": [
+        {
+          "id": "zh-45ae7794e4cc-1-s1",
+          "definition": "to set up camp"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军退到长社，靠着草地扎营。",
+        "gloss": "make camp",
+        "sense_id": "zh-45ae7794e4cc-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "af565a7e8a6f9d0007a2176e7908caa776e3baf9e54438be9c07e4ac134dcd7b"
+}

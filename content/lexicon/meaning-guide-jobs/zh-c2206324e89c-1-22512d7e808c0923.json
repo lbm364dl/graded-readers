@@ -1,0 +1,41 @@
+{
+  "id": "zh-c2206324e89c-1-22512d7e808c0923",
+  "entry_id": "zh-c2206324e89c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c2206324e89c-1",
+      "headword": "登上",
+      "kind": "construction",
+      "reading": "dēng shàng",
+      "senses": [
+        {
+          "id": "zh-c2206324e89c-1-s1",
+          "definition": "to climb up onto or reach the top of something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人登上高冈远望，只见汉军大败，黄巾军从后面漫山而来。",
+        "gloss": "to climb onto",
+        "sense_id": "zh-c2206324e89c-1-s1"
+      },
+      {
+        "sentence": "建宁二年四月十五日，灵帝登上温德殿，刚坐下，殿角忽然刮起狂风。",
+        "gloss": "ascend",
+        "sense_id": "zh-c2206324e89c-1-s1"
+      },
+      {
+        "sentence": "三人登上高处，只见汉军已经大败，黄巾军漫山遍野而来，旗上写着“天公将军”。",
+        "gloss": "climb up onto",
+        "sense_id": "zh-c2206324e89c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "703cc8382677011c4d05a5c6f334ce0f226db484b339db7ae93d8d171500d634"
+}

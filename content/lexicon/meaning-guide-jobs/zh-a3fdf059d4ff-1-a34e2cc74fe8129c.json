@@ -1,0 +1,41 @@
+{
+  "id": "zh-a3fdf059d4ff-1-a34e2cc74fe8129c",
+  "entry_id": "zh-a3fdf059d4ff-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a3fdf059d4ff-1",
+      "headword": "不见",
+      "kind": "word",
+      "reading": "bújiàn",
+      "senses": [
+        {
+          "id": "zh-a3fdf059d4ff-1-s1",
+          "definition": "become absent from view; disappear"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "过了一会儿，青蛇不见了。",
+        "gloss": "disappear",
+        "sense_id": "zh-a3fdf059d4ff-1-s1"
+      },
+      {
+        "sentence": "不久，青蛇不见了。",
+        "gloss": "to disappear",
+        "sense_id": "zh-a3fdf059d4ff-1-s1"
+      },
+      {
+        "sentence": "说完，老人仿佛化成清风，转眼不见。",
+        "gloss": "disappear",
+        "sense_id": "zh-a3fdf059d4ff-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "944fbfb9aa497140f9b23d4cd383b14f02bb275875e5a6e055907e3b2d15b313"
+}

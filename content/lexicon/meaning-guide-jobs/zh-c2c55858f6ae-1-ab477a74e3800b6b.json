@@ -1,0 +1,31 @@
+{
+  "id": "zh-c2c55858f6ae-1-ab477a74e3800b6b",
+  "entry_id": "zh-c2c55858f6ae-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c2c55858f6ae-1",
+      "headword": "贫穷",
+      "kind": "word",
+      "reading": "pínqióng",
+      "senses": [
+        {
+          "id": "zh-c2c55858f6ae-1-s1",
+          "definition": "poor; lacking wealth"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备虽然贫穷，却有远大志向。",
+        "gloss": "poor",
+        "sense_id": "zh-c2c55858f6ae-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "dbdf15ff0dac6b3608e8c98a38e216ab9a4f536a59832f0f53d228e7c57a63c2"
+}

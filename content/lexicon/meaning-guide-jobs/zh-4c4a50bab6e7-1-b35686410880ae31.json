@@ -1,0 +1,31 @@
+{
+  "id": "zh-4c4a50bab6e7-1-b35686410880ae31",
+  "entry_id": "zh-4c4a50bab6e7-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4c4a50bab6e7-1",
+      "headword": "求救",
+      "kind": "word",
+      "reading": "qiújiù",
+      "senses": [
+        {
+          "id": "zh-4c4a50bab6e7-1-s1",
+          "definition": "to ask for help"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "第二天，青州太守龚景来信求救，说黄巾军围城，城快守不住了。",
+        "gloss": "seek help",
+        "sense_id": "zh-4c4a50bab6e7-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2ecc7a5f4749eaef78a98957a58eae2d610d690dfe4bc2d2374834aca19bc98a"
+}

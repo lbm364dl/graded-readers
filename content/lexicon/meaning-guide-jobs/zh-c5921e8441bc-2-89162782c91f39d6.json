@@ -1,0 +1,31 @@
+{
+  "id": "zh-c5921e8441bc-2-89162782c91f39d6",
+  "entry_id": "zh-c5921e8441bc-2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c5921e8441bc-2",
+      "headword": "生",
+      "kind": "word",
+      "reading": "shēng",
+      "senses": [
+        {
+          "id": "zh-c5921e8441bc-2-s1",
+          "definition": "to be born"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "不求同年同月同日生，但愿同年同月同日死。",
+        "gloss": "to be born",
+        "sense_id": "zh-c5921e8441bc-2-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "165d79f4c6940e7d421c70242284ff3dede7cfebf89a34c6b65f0d34d6b3e48a"
+}

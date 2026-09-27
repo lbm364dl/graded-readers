@@ -1,0 +1,36 @@
+{
+  "id": "zh-81c69df6eb94-1-a10105d2e4662d03",
+  "entry_id": "zh-81c69df6eb94-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-81c69df6eb94-1",
+      "headword": "席",
+      "kind": "word",
+      "reading": "xí",
+      "senses": [
+        {
+          "id": "zh-81c69df6eb94-1-s1",
+          "definition": "a woven mat"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备家贫，平时靠卖鞋、织席生活，但心里有大志。",
+        "gloss": "mat",
+        "sense_id": "zh-81c69df6eb94-1-s1"
+      },
+      {
+        "sentence": "刘备家里很穷，靠卖草鞋、织席生活。",
+        "gloss": "mat",
+        "sense_id": "zh-81c69df6eb94-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "887d774150c5a6b3d7094f480efc7034db38aaecff48503e8acdde775776df05"
+}

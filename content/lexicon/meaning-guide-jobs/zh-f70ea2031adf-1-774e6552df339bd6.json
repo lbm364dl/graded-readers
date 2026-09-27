@@ -1,0 +1,36 @@
+{
+  "id": "zh-f70ea2031adf-1-774e6552df339bd6",
+  "entry_id": "zh-f70ea2031adf-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f70ea2031adf-1",
+      "headword": "更加",
+      "kind": "word",
+      "reading": "gèngjiā",
+      "senses": [
+        {
+          "id": "zh-f70ea2031adf-1-s1",
+          "definition": "even more; to a greater degree"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "各地盗贼纷纷出现，社会更加不安。",
+        "gloss": "even more",
+        "sense_id": "zh-f70ea2031adf-1-s1"
+      },
+      {
+        "sentence": "这个结果导致宦官从此更加专横，做事也更不受限制，朝廷中的正直之士更加危险。",
+        "gloss": "even more",
+        "sense_id": "zh-f70ea2031adf-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e62214ec864b58bdb52c3f5e8616df56205e8f65e848ed4da533699799beb1e7"
+}

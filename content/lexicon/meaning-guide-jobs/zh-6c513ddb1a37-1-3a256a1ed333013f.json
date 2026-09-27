@@ -1,0 +1,31 @@
+{
+  "id": "zh-6c513ddb1a37-1-3a256a1ed333013f",
+  "entry_id": "zh-6c513ddb1a37-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6c513ddb1a37-1",
+      "headword": "茂盛",
+      "kind": "word",
+      "reading": "màoshèng",
+      "senses": [
+        {
+          "id": "zh-6c513ddb1a37-1-s1",
+          "definition": "to grow thickly and vigorously; lush"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "楼桑村东南有一棵大桑树，高大茂盛，远看如同车盖。",
+        "gloss": "lush; luxuriant",
+        "sense_id": "zh-6c513ddb1a37-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "97f72703cb6394d9982ae407458a233e062ab5955211f78cb8a74fa44e4bfaf6"
+}

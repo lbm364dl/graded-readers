@@ -1,0 +1,26 @@
+{
+  "id": "zh-component-b37d0ca6a1907eba-ef9ff1db053080a2",
+  "entry_id": "zh-component-b37d0ca6a1907eba",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-component-b37d0ca6a1907eba",
+      "headword": "得到",
+      "reading": "dédào",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-b37d0ca6a1907eba-s1",
+          "definition": "to obtain; to get"
+        }
+      ]
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "50422f43eb138273298ce6869dc8639a74c57ad94c42a2d948f9fc9e7d081013"
+}

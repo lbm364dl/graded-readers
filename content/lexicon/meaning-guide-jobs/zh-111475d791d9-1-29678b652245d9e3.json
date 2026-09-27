@@ -1,0 +1,31 @@
+{
+  "id": "zh-111475d791d9-1-29678b652245d9e3",
+  "entry_id": "zh-111475d791d9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-111475d791d9-1",
+      "headword": "担任",
+      "kind": "word",
+      "reading": "dānrèn",
+      "senses": [
+        {
+          "id": "zh-111475d791d9-1-s1",
+          "definition": "to hold or serve in (a position or office)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "董卓问他们担任什么官职，刘备回答：“我们没有官职。",
+        "gloss": "hold; serve in",
+        "sense_id": "zh-111475d791d9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "13cd35334de02bb3e27e39ad7bc9dd99bc6a95a8b6cec9ef3a0ad8358b2b9a1c"
+}

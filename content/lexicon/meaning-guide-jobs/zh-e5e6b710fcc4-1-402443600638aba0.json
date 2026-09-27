@@ -1,0 +1,36 @@
+{
+  "id": "zh-e5e6b710fcc4-1-402443600638aba0",
+  "entry_id": "zh-e5e6b710fcc4-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e5e6b710fcc4-1",
+      "headword": "忽",
+      "kind": "word",
+      "reading": "hū",
+      "senses": [
+        {
+          "id": "zh-e5e6b710fcc4-1-s1",
+          "definition": "suddenly"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "夜里大风忽起，官军一齐点火并攻入营寨，黄巾军惊慌逃散。",
+        "gloss": "suddenly",
+        "sense_id": "zh-e5e6b710fcc4-1-s1"
+      },
+      {
+        "sentence": "夜里大风忽起，二更以后，一齐纵火。",
+        "gloss": "suddenly",
+        "sense_id": "zh-e5e6b710fcc4-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1eaf0d4f7e211abc3717e5d98e4090afa01ef436af16d5068930468d05daac46"
+}

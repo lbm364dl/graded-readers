@@ -1,0 +1,41 @@
+{
+  "id": "zh-8b7c6d87472d-1-15f4fcecf1108062",
+  "entry_id": "zh-8b7c6d87472d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8b7c6d87472d-1",
+      "headword": "酒",
+      "kind": "word",
+      "reading": "jiǔ",
+      "senses": [
+        {
+          "id": "zh-8b7c6d87472d-1-s1",
+          "definition": "alcoholic drink"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "大汉叫张飞，住在涿郡，有田，卖酒杀猪，也喜爱结交豪杰。",
+        "gloss": "alcohol",
+        "sense_id": "zh-8b7c6d87472d-1-s1"
+      },
+      {
+        "sentence": "”刘备十分高兴，于是和他进村店喝酒。",
+        "gloss": "alcohol",
+        "sense_id": "zh-8b7c6d87472d-1-s1"
+      },
+      {
+        "sentence": "他进来要酒，说要赶进城投军。",
+        "gloss": "alcohol",
+        "sense_id": "zh-8b7c6d87472d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a7e84da444439af61f5eb8b8e07be5eb1601aa97e98cc475d93241cf0c749d32"
+}

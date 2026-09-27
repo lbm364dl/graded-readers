@@ -1,0 +1,36 @@
+{
+  "id": "zh-aa30e6349cd8-1-f6e37f15ce080dfc",
+  "entry_id": "zh-aa30e6349cd8-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-aa30e6349cd8-1",
+      "headword": "尚未",
+      "kind": "word",
+      "reading": "shàngwèi",
+      "senses": [
+        {
+          "id": "zh-aa30e6349cd8-1-s1",
+          "definition": "not yet; still has not"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "当时张角有十五万黄巾军，卢植有五万兵马，双方在广宗相持，尚未分出胜负。",
+        "gloss": "not yet",
+        "sense_id": "zh-aa30e6349cd8-1-s1"
+      },
+      {
+        "sentence": "当时张角有十五万黄巾军，卢植有五万兵，双方在广宗相拒，尚未分出胜负。",
+        "gloss": "not yet",
+        "sense_id": "zh-aa30e6349cd8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5a3a302c5bb75e08ddbfbe0a24d285930889fe151e13c5494f96306108a7f6a9"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-d5fbecb120d3-1-fcab7cf6f8b4e07a",
+  "entry_id": "zh-d5fbecb120d3-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d5fbecb120d3-1",
+      "headword": "法术",
+      "kind": "word",
+      "reading": "fǎshù",
+      "senses": [
+        {
+          "id": "zh-d5fbecb120d3-1-s1",
+          "definition": "magic arts; sorcery"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备下马询问，卢植说，他围攻张角时本来快要取胜，却因张角使用法术而未能成功。",
+        "gloss": "magic arts; sorcery",
+        "sense_id": "zh-d5fbecb120d3-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c4e099a5dd4c9699c1e9e129e059b68ff3debbfa00c7dcd1d101de37f3a214d7"
+}

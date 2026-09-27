@@ -1,0 +1,36 @@
+{
+  "id": "zh-5890c084b931-1-a5ffd5802895385b",
+  "entry_id": "zh-5890c084b931-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5890c084b931-1",
+      "headword": "约",
+      "kind": "word",
+      "reading": "yuē",
+      "senses": [
+        {
+          "id": "zh-5890c084b931-1-s1",
+          "definition": "to agree on or arrange something in advance"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角一面私造黄旗，约好起事日期，一面派弟子送信，却被告密。",
+        "gloss": "to arrange; agree on",
+        "sense_id": "zh-5890c084b931-1-s1"
+      },
+      {
+        "sentence": "卢植让刘备带本部人马，再带一千官军到颍川，联络皇甫嵩、朱隽，约好时间一起进攻。",
+        "gloss": "arrange",
+        "sense_id": "zh-5890c084b931-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cec712a5dc2c7d3f7ba29ceb74e4590d6c8753788ade334214d556fa9b9d9f41"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "zh-6912269df2ed-1-e8907d98772f1da7",
+  "entry_id": "zh-6912269df2ed-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6912269df2ed-1",
+      "headword": "立即",
+      "kind": "word",
+      "reading": "lìjí",
+      "senses": [
+        {
+          "id": "zh-6912269df2ed-1-s1",
+          "definition": "immediately; without delay"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇帝受惊，百官立即纷纷躲开。",
+        "gloss": "immediately",
+        "sense_id": "zh-6912269df2ed-1-s1"
+      },
+      {
+        "sentence": "曹节偷看奏章后，立即告诉身边的人，于是宦官借别的事陷害蔡邕，皇帝把他放归田里。",
+        "gloss": "immediately",
+        "sense_id": "zh-6912269df2ed-1-s1"
+      },
+      {
+        "sentence": "朝廷立即派兵抓住马元义并杀了他，又把封谞等人关进监狱。",
+        "gloss": "immediately",
+        "sense_id": "zh-6912269df2ed-1-s1"
+      },
+      {
+        "sentence": "黄巾军追过山岭时，刘备军中发出信号，两边伏兵立即杀出，刘备也转身反击。",
+        "gloss": "immediately",
+        "sense_id": "zh-6912269df2ed-1-s1"
+      },
+      {
+        "sentence": "那时张梁、张宝已经败退，曹操率军拦住他们，立即发动攻击。",
+        "gloss": "immediately",
+        "sense_id": "zh-6912269df2ed-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "899936647edf81995e2e344f36c8a5db218b01560c2322bb15e0121dcd242e18"
+}

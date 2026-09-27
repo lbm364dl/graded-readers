@@ -1,0 +1,31 @@
+{
+  "id": "zh-3db29c7860f8-1-56486117faa74d66",
+  "entry_id": "zh-3db29c7860f8-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-3db29c7860f8-1",
+      "headword": "十常侍",
+      "kind": "name",
+      "reading": "Shí Chángshì",
+      "senses": [
+        {
+          "id": "zh-3db29c7860f8-1-s1",
+          "definition": "the collective name for the ten court attendants referred to here"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "后来，张让等十人结党作恶，被称为十常侍。",
+        "gloss": "the Ten Permanent Attendants",
+        "sense_id": "zh-3db29c7860f8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "67882f239c9234fb22e363f63cdaaf2dc375937dee3c0a83bcc96006cadbc6b5"
+}

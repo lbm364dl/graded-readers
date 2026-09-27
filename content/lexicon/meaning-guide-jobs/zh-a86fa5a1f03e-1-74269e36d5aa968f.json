@@ -1,0 +1,31 @@
+{
+  "id": "zh-a86fa5a1f03e-1-74269e36d5aa968f",
+  "entry_id": "zh-a86fa5a1f03e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a86fa5a1f03e-1",
+      "headword": "县",
+      "kind": "word",
+      "reading": "xiàn",
+      "senses": [
+        {
+          "id": "zh-a86fa5a1f03e-1-s1",
+          "definition": "county; an administrative division"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他在县城四座城门放下十多根五颜六色的木棒，并定下严格的禁令。",
+        "gloss": "county",
+        "sense_id": "zh-a86fa5a1f03e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6a568d9c9b05307c587d62f87657acf206c032f310f51b589b121dfcba714e3d"
+}

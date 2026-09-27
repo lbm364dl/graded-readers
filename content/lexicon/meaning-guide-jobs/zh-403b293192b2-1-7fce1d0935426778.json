@@ -1,0 +1,31 @@
+{
+  "id": "zh-403b293192b2-1-7fce1d0935426778",
+  "entry_id": "zh-403b293192b2-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-403b293192b2-1",
+      "headword": "定罪",
+      "kind": "word",
+      "reading": "dìngzuì",
+      "senses": [
+        {
+          "id": "zh-403b293192b2-1-s1",
+          "definition": "convict; find guilty"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "有人直言批评，也被定罪。",
+        "gloss": "convicted",
+        "sense_id": "zh-403b293192b2-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2ad7f15c080290e3b067c1216ded8dc52fb13b87eb44700fd90b47843b0737e0"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-a07bd3196be5-1-aaac8cc36b4f8e22",
+  "entry_id": "zh-a07bd3196be5-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a07bd3196be5-1",
+      "headword": "因此",
+      "kind": "word",
+      "reading": "yīncǐ",
+      "senses": [
+        {
+          "id": "zh-a07bd3196be5-1-s1",
+          "definition": "therefore; as a result"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备说自己没有官职，董卓因此看不起三人。",
+        "gloss": "therefore",
+        "sense_id": "zh-a07bd3196be5-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c65ff75f80860d38affd4284df276742ff3acb770068bee21ac3f4bfd1b20b6b"
+}

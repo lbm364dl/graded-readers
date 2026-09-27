@@ -1,0 +1,36 @@
+{
+  "id": "zh-94beea58b8a8-1-3cb5587a26802b42",
+  "entry_id": "zh-94beea58b8a8-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-94beea58b8a8-1",
+      "headword": "赶",
+      "kind": "word",
+      "reading": "gǎn",
+      "senses": [
+        {
+          "id": "zh-94beea58b8a8-1-s1",
+          "definition": "to hurry; to hasten"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他进来要酒，说要赶进城投军。",
+        "gloss": "to hurry",
+        "sense_id": "zh-94beea58b8a8-1-s1"
+      },
+      {
+        "sentence": "他急忙带兵赶去，却发现黄巾军已经败散，战事已经结束。",
+        "gloss": "to hurry",
+        "sense_id": "zh-94beea58b8a8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d8e7d1efc5e3c7cae9c9aa082d6cad3964f3f385dc40a67fdf06b5ddfd5dc2a3"
+}

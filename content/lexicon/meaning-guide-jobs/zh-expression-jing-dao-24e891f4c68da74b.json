@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-jing-dao-24e891f4c68da74b",
+  "entry_id": "zh-expression-jing-dao",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-jing-dao",
+      "headword": "惊倒",
+      "reading": "jīngdǎo",
+      "kind": "expression",
+      "base_entry_id": "zh-8691c36844e6-1",
+      "components": [
+        {
+          "entry_id": "zh-8691c36844e6-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-d3b1b977d672-1",
+          "role": "result complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-jing-dao-s1",
+          "definition": "be startled and fall over"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "灵帝惊倒，左右急忙救他入宫，百官奔走躲避。",
+        "gloss": "be startled and fall over",
+        "sense_id": "zh-expression-jing-dao-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "惊",
+        "role": "verb"
+      },
+      {
+        "headword": "倒",
+        "role": "result complement"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9021ba551a4a336af0a79d6f5b35cdb9b687914ddefcf06eb584d191f4c9aaea"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "zh-92ef8336ae0b-1-161c88fe6594d598",
+  "entry_id": "zh-92ef8336ae0b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-92ef8336ae0b-1",
+      "headword": "百姓",
+      "kind": "word",
+      "reading": "bǎixìng",
+      "senses": [
+        {
+          "id": "zh-92ef8336ae0b-1-s1",
+          "definition": "ordinary people"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角给百姓治病，聚集了很多人。",
+        "gloss": "common people",
+        "sense_id": "zh-92ef8336ae0b-1-s1"
+      },
+      {
+        "sentence": "许多百姓跟着他们，天下变得很乱。",
+        "gloss": "common people",
+        "sense_id": "zh-92ef8336ae0b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bc5df244f09c311d0f795d6720fc295462f649cd26b5c9ce10f5ac7e9e89ba4d"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-9cd9427712bc-1-6d355cf0d542a6be",
+  "entry_id": "zh-9cd9427712bc-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9cd9427712bc-1",
+      "headword": "虹",
+      "kind": "word",
+      "reading": "hóng",
+      "senses": [
+        {
+          "id": "zh-9cd9427712bc-1-s1",
+          "definition": "rainbow"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "秋七月，玉堂出现虹，五原山岸崩裂。",
+        "gloss": "rainbow",
+        "sense_id": "zh-9cd9427712bc-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "275d9da25ed97c3616722f98e92a14989c8d6ce3fddedf18b580d4b5af8283c4"
+}

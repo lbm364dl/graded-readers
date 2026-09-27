@@ -270,12 +270,12 @@ class AgentChapterAnnotation {
       );
 }
 
-/// A tightly bound Japanese inflection rendered as one reader tap target.
+/// A reviewed, tightly bound expression rendered as one reader tap target.
 ///
 /// The source annotation keeps morphemes separate for dictionary access.  This
 /// view layer joins only predicate-sized grammar overlays; the original pieces
 /// remain available through [grammar.components] in the explanation sheet.
-class JapaneseDisplayUnit {
+class ReadingDisplayUnit {
   final int firstSegment;
   final int lastSegment;
   final int start;
@@ -283,7 +283,7 @@ class JapaneseDisplayUnit {
   final AgentSegment segment;
   final AgentGrammarOverlay grammar;
 
-  const JapaneseDisplayUnit({
+  const ReadingDisplayUnit({
     required this.firstSegment,
     required this.lastSegment,
     required this.start,
@@ -293,11 +293,31 @@ class JapaneseDisplayUnit {
   });
 }
 
+typedef JapaneseDisplayUnit = ReadingDisplayUnit;
+
 /// Grammar cards for an unmerged Japanese segment belong on their lexical
 /// head, not on every word that merely overlaps a wider explanatory span.
 /// This keeps a clause-level audit overlay from appearing when the reader taps
 /// an ordinary subject or object while still exposing the explanation on the
 /// inflected predicate or grammar unit it describes.
+/// Chinese construction notes belong to every tap overlapping the construction,
+/// not only a token that happens to cover its entire span.
+List<AgentGrammarOverlay> chineseGrammarForSpan({
+  required int start,
+  required int end,
+  required List<AgentGrammarOverlay> overlays,
+  AgentGrammarOverlay? readingUnitGrammar,
+}) =>
+    [
+      if (readingUnitGrammar != null) readingUnitGrammar,
+      ...overlays.where((item) =>
+          item.start < end &&
+          start < item.end &&
+          !(readingUnitGrammar != null &&
+              item.pattern == readingUnitGrammar.pattern &&
+              item.meaningEn == readingUnitGrammar.meaningEn)),
+    ];
+
 List<AgentGrammarOverlay> japaneseGrammarForSegment({
   required AgentSegment segment,
   required int start,
@@ -353,8 +373,7 @@ List<JapaneseDisplayUnit> buildJapaneseDisplayUnits(
         explanation.contains('conventional expression') ||
         original.pattern.contains('お腹がすく');
     final isConnectiveNaku = description.contains('n-ga-naku') ||
-        (original.text.endsWith('がなく') &&
-            original.headLemma.endsWith('がない'));
+        (original.text.endsWith('がなく') && original.headLemma.endsWith('がない'));
     var grammar = original;
     if (isBenefactive &&
         covered.first > 0 &&
@@ -408,7 +427,9 @@ List<JapaneseDisplayUnit> buildJapaneseDisplayUnits(
     // ordinary topic sentence (for example 吾輩は猫である) into one giant tap
     // target.  Normal grammar units contain one lexical head; only reviewed
     // benefactive chains and genuine collocations may join two content words.
-    if ((!isBenefactive && !isCollocation && !isConnectiveNaku &&
+    if ((!isBenefactive &&
+            !isCollocation &&
+            !isConnectiveNaku &&
             contentCount > 1) ||
         (isBenefactive && contentCount > 2) ||
         (isCollocation && contentCount > 2) ||

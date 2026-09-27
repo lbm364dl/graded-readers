@@ -1,0 +1,31 @@
+{
+  "id": "zh-d1499646468f-1-a316258ccd7aaee9",
+  "entry_id": "zh-d1499646468f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d1499646468f-1",
+      "headword": "扎",
+      "kind": "word",
+      "reading": "zhā",
+      "senses": [
+        {
+          "id": "zh-d1499646468f-1-s1",
+          "definition": "to set up or pitch (a camp)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军战事不利，退入长社，用草扎营。",
+        "gloss": "set up",
+        "sense_id": "zh-d1499646468f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "34b76d35679bc26736d001683c4b8f32216bb7cfb8c17e097c3f84c0d6237af5"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-d6122c052801-1-d54043e022b6c688",
+  "entry_id": "zh-d6122c052801-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d6122c052801-1",
+      "headword": "披",
+      "kind": "word",
+      "reading": "pī",
+      "senses": [
+        {
+          "id": "zh-d6122c052801-1-s1",
+          "definition": "to wear or drape something over the body or shoulders"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "敌军都披着头发，额头缠着黄巾。",
+        "gloss": "to wear; drape",
+        "sense_id": "zh-d6122c052801-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3f250ddee1d1a3e6bb86bfb304a356907fb3b9e2a08f51a6d12b573536a937dd"
+}

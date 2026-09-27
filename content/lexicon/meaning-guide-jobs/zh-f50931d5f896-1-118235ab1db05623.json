@@ -1,0 +1,31 @@
+{
+  "id": "zh-f50931d5f896-1-118235ab1db05623",
+  "entry_id": "zh-f50931d5f896-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f50931d5f896-1",
+      "headword": "环",
+      "kind": "word",
+      "reading": "huán",
+      "senses": [
+        {
+          "id": "zh-f50931d5f896-1-s1",
+          "definition": "ring-shaped; encircling"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备回头看那人，只见他身长八尺，豹头环眼，燕颔虎须，声音如巨雷，气势如奔马。",
+        "gloss": "ring-shaped",
+        "sense_id": "zh-f50931d5f896-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "008945b82360c9df15c2a9d4bb444994b7768223a013a73f6151cd0922578cc0"
+}

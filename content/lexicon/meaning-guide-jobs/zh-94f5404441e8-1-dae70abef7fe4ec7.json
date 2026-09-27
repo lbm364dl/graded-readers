@@ -1,0 +1,163 @@
+{
+  "id": "zh-94f5404441e8-1-dae70abef7fe4ec7",
+  "entry_id": "zh-94f5404441e8-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-94f5404441e8-1",
+      "headword": "做",
+      "kind": "word",
+      "reading": "zuò",
+      "senses": [
+        {
+          "id": "zh-94f5404441e8-1-s1",
+          "definition": "do; carry out"
+        },
+        {
+          "id": "zh-94f5404441e8-1-s2",
+          "definition": "become; take on a status or relationship"
+        },
+        {
+          "id": "zh-94f5404441e8-1-s3",
+          "definition": "make; produce"
+        },
+        {
+          "id": "zh-94f5404441e8-1-s4",
+          "definition": "serve as; hold a position or role"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "我和你一起做大事。",
+        "gloss": "do",
+        "sense_id": "zh-94f5404441e8-1-s1"
+      },
+      {
+        "sentence": "三人想做同一件事。",
+        "gloss": "do",
+        "sense_id": "zh-94f5404441e8-1-s1"
+      },
+      {
+        "sentence": "我们做兄弟。",
+        "gloss": "become",
+        "sense_id": "zh-94f5404441e8-1-s2"
+      },
+      {
+        "sentence": "三人请人做兵器。",
+        "gloss": "make",
+        "sense_id": "zh-94f5404441e8-1-s3"
+      },
+      {
+        "sentence": "和你一起做大事。",
+        "gloss": "do",
+        "sense_id": "zh-94f5404441e8-1-s1"
+      },
+      {
+        "sentence": "刘备请人做剑。",
+        "gloss": "make",
+        "sense_id": "zh-94f5404441e8-1-s3"
+      },
+      {
+        "sentence": "关羽请人做刀。",
+        "gloss": "make",
+        "sense_id": "zh-94f5404441e8-1-s3"
+      },
+      {
+        "sentence": "张飞请人做矛。",
+        "gloss": "make",
+        "sense_id": "zh-94f5404441e8-1-s3"
+      },
+      {
+        "sentence": "准备一起做大事。",
+        "gloss": "undertake",
+        "sense_id": "zh-94f5404441e8-1-s1"
+      },
+      {
+        "sentence": "刘备连忙劝他，说不能这样做。",
+        "gloss": "do",
+        "sense_id": "zh-94f5404441e8-1-s1"
+      },
+      {
+        "sentence": "”他家有田，也有钱，愿意出钱招募乡勇，和刘备一起做大事。",
+        "gloss": "do",
+        "sense_id": "zh-94f5404441e8-1-s1"
+      },
+      {
+        "sentence": "张角暗中送金钱，联系朝中的封谞，准备做内应。",
+        "gloss": "to serve as; act as",
+        "sense_id": "zh-94f5404441e8-1-s2"
+      },
+      {
+        "sentence": "刘备小时候常和孩子们在树下玩，说自己将来要做大事。",
+        "gloss": "to do",
+        "sense_id": "zh-94f5404441e8-1-s1"
+      },
+      {
+        "sentence": "张飞说：“我愿意出钱招募乡勇，和你一起做大事。",
+        "gloss": "do",
+        "sense_id": "zh-94f5404441e8-1-s1"
+      },
+      {
+        "sentence": "曹操以前做官时，也很重视城里的规矩。",
+        "gloss": "to serve as",
+        "sense_id": "zh-94f5404441e8-1-s2"
+      },
+      {
+        "sentence": "他的父亲刘弘曾做过官，却很早去世。",
+        "gloss": "to serve as; to be",
+        "sense_id": "zh-94f5404441e8-1-s2"
+      },
+      {
+        "sentence": "张飞愿意拿出钱财，招募乡勇，和刘备一起做大事。",
+        "gloss": "to do; undertake",
+        "sense_id": "zh-94f5404441e8-1-s1"
+      },
+      {
+        "sentence": "曹操二十岁时被举为孝廉，后来做了洛阳北都尉。",
+        "gloss": "to serve as; to become",
+        "sense_id": "zh-94f5404441e8-1-s2"
+      },
+      {
+        "sentence": "祖父刘雄，父亲刘弘；刘弘曾举孝廉，也做过官，后来早亡。",
+        "gloss": "to serve as",
+        "sense_id": "zh-94f5404441e8-1-s4"
+      },
+      {
+        "sentence": "刘备幼年和乡中孩子在树下玩，说将来要做天子，要乘这车盖。",
+        "gloss": "to become",
+        "sense_id": "zh-94f5404441e8-1-s2"
+      },
+      {
+        "sentence": "张飞说：“我颇有资财，愿意出钱招募乡勇，与你一同做大事。",
+        "gloss": "to do",
+        "sense_id": "zh-94f5404441e8-1-s1"
+      },
+      {
+        "sentence": "曹操二十岁时举孝廉，做了郎官，后来任洛阳北都尉。",
+        "gloss": "to serve as",
+        "sense_id": "zh-94f5404441e8-1-s4"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-94f5404441e8-1",
+    "structure": "single_component",
+    "explanation_en": "做 broadly means to do or carry something out. With something to be produced as its object, it means “make”; with a role or relationship, it can mean “become” or “take on” that role.",
+    "caveat_en": "The meaning depends on what follows: 做 does not mean “become” with every kind of object.",
+    "parts": [
+      {
+        "text": "做",
+        "contribution_en": "A verb for carrying out an action; with the right object, producing something or taking on a role."
+      }
+    ],
+    "input_fingerprint": "5c2e33f5aefa0b37ef70b04cd25c591f7524a9598d322010f9e77f94fb0190c7",
+    "revision": 1,
+    "editorial_policy": 2,
+    "evidence_status": "legacy_unresearched"
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2cd3dac1cbaf29bf5fab4487787e777f5fdc76e4230aa71bb1d26590ae3409cf"
+}

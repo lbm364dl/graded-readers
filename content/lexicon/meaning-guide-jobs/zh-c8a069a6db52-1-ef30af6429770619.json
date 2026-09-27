@@ -1,0 +1,31 @@
+{
+  "id": "zh-c8a069a6db52-1-ef30af6429770619",
+  "entry_id": "zh-c8a069a6db52-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c8a069a6db52-1",
+      "headword": "囚车",
+      "kind": "word",
+      "reading": "qiúchē",
+      "senses": [
+        {
+          "id": "zh-c8a069a6db52-1-s1",
+          "definition": "a vehicle used to transport prisoners"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备带兵回去，半路遇见护送囚车的军队，车里是卢植。",
+        "gloss": "prisoner cart",
+        "sense_id": "zh-c8a069a6db52-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "38ab896f77fa9aedcf325a1c559cfe9f3ac43a20a19333e68dc722076a28ab5e"
+}

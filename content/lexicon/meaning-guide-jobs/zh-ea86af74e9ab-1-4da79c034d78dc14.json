@@ -1,0 +1,31 @@
+{
+  "id": "zh-ea86af74e9ab-1-4da79c034d78dc14",
+  "entry_id": "zh-ea86af74e9ab-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ea86af74e9ab-1",
+      "headword": "灾异",
+      "kind": "word",
+      "reading": "zāiyì",
+      "senses": [
+        {
+          "id": "zh-ea86af74e9ab-1-s1",
+          "definition": "disasters and unusual phenomena"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇帝下诏询问多种灾异的原因，蔡邕上书，认为这是妇人与宦官干政导致的，言辞十分直接。",
+        "gloss": "disasters and strange phenomena",
+        "sense_id": "zh-ea86af74e9ab-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8c0a1f5d7e3d9aa8fb0a08320490256d147d10ba7cc1984f1e4c88cd5e7a165b"
+}

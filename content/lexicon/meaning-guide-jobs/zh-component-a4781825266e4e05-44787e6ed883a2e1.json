@@ -1,0 +1,26 @@
+{
+  "id": "zh-component-a4781825266e4e05-44787e6ed883a2e1",
+  "entry_id": "zh-component-a4781825266e4e05",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-component-a4781825266e4e05",
+      "headword": "部分",
+      "reading": "bùfen",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-a4781825266e4e05-s1",
+          "definition": "A part or portion of a larger whole."
+        }
+      ]
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "723e5643f92929fd641068f79744725aa28259766e8e385ba5cf396211d39739"
+}

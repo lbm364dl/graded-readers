@@ -1,0 +1,36 @@
+{
+  "id": "zh-20835cc9cb04-1-15df99290b9f3bd9",
+  "entry_id": "zh-20835cc9cb04-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-20835cc9cb04-1",
+      "headword": "众人",
+      "kind": "word",
+      "reading": "zhòngrén",
+      "senses": [
+        {
+          "id": "zh-20835cc9cb04-1-s1",
+          "definition": "the people in a group; everyone"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他和张宝、张梁号召众人顺从天意，以求太平。",
+        "gloss": "everyone",
+        "sense_id": "zh-20835cc9cb04-1-s1"
+      },
+      {
+        "sentence": "后来信徒越来越多，他把众人分成三十六方，各立首领。",
+        "gloss": "everyone",
+        "sense_id": "zh-20835cc9cb04-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b5fac7dfe8c449741037ae21f0058ebfaf901517a9829ae013646358a2831f87"
+}

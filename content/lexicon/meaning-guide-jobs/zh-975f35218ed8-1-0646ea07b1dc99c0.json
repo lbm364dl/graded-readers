@@ -1,0 +1,188 @@
+{
+  "id": "zh-975f35218ed8-1-0646ea07b1dc99c0",
+  "entry_id": "zh-975f35218ed8-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-975f35218ed8-1",
+      "headword": "要",
+      "kind": "word",
+      "reading": "yào",
+      "senses": [
+        {
+          "id": "zh-975f35218ed8-1-s1",
+          "definition": "to want or intend to do something"
+        },
+        {
+          "id": "zh-975f35218ed8-1-s2",
+          "definition": "will or be going to; indicates an intended or expected future action"
+        },
+        {
+          "id": "zh-975f35218ed8-1-s3",
+          "definition": "must; indicates that something is required or inevitable"
+        },
+        {
+          "id": "zh-975f35218ed8-1-s4",
+          "definition": "to ask for or demand something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他说：“我要进城投军。",
+        "gloss": "want to",
+        "sense_id": "zh-975f35218ed8-1-s1"
+      },
+      {
+        "sentence": "张飞很生气，要杀护送卢植的人。",
+        "gloss": "want to",
+        "sense_id": "zh-975f35218ed8-1-s1"
+      },
+      {
+        "sentence": "张飞又气又不满，拿刀要杀董卓。",
+        "gloss": "intend to",
+        "sense_id": "zh-975f35218ed8-1-s1"
+      },
+      {
+        "sentence": "他要进城投军，前来报名。",
+        "gloss": "intend to",
+        "sense_id": "zh-975f35218ed8-1-s1"
+      },
+      {
+        "sentence": "”张飞听完十分生气，要杀押车的人，救下老师。",
+        "gloss": "want to",
+        "sense_id": "zh-975f35218ed8-1-s1"
+      },
+      {
+        "sentence": "我一定要杀了董卓！",
+        "gloss": "want to",
+        "sense_id": "zh-975f35218ed8-1-s1"
+      },
+      {
+        "sentence": "”他转身就要回去。",
+        "gloss": "be about to",
+        "sense_id": "zh-975f35218ed8-1-s1"
+      },
+      {
+        "sentence": "刘备小时候常和孩子们在树下玩，说自己将来要做大事。",
+        "gloss": "will; be going to",
+        "sense_id": "zh-975f35218ed8-1-s2"
+      },
+      {
+        "sentence": "他进来要酒，说要赶进城投军。",
+        "gloss": "want",
+        "sense_id": "zh-975f35218ed8-1-s1"
+      },
+      {
+        "sentence": "他进来要酒，说要赶进城投军。",
+        "gloss": "be going to",
+        "sense_id": "zh-975f35218ed8-1-s2"
+      },
+      {
+        "sentence": "有人违反禁令，不管地位高低，都要受到处罚。",
+        "gloss": "must",
+        "sense_id": "zh-975f35218ed8-1-s3"
+      },
+      {
+        "sentence": "张飞听后大怒，要杀押送卢植的士兵。",
+        "gloss": "want to",
+        "sense_id": "zh-975f35218ed8-1-s1"
+      },
+      {
+        "sentence": "老人送他三卷天书，告诫他要救人，不可生出异心。",
+        "gloss": "should",
+        "sense_id": "zh-975f35218ed8-1-s3"
+      },
+      {
+        "sentence": "刘备小时候常和乡中孩子在树下玩，对他们说：“我将来要当天子，就把这棵树当作车盖。",
+        "gloss": "will; want to",
+        "sense_id": "zh-975f35218ed8-1-s2"
+      },
+      {
+        "sentence": "正饮酒时，一个大汉推着一辆车来到店门前休息，进门便叫酒保斟酒，说要赶进城投军。",
+        "gloss": "to want; intend to",
+        "sense_id": "zh-975f35218ed8-1-s1"
+      },
+      {
+        "sentence": "违反禁令的人，不管有没有权势，都要受罚，谁也不能例外。",
+        "gloss": "will; must",
+        "sense_id": "zh-975f35218ed8-1-s3"
+      },
+      {
+        "sentence": "张飞听完大怒，要杀押送卢植的军人。",
+        "gloss": "to want to",
+        "sense_id": "zh-975f35218ed8-1-s1"
+      },
+      {
+        "sentence": "刘备离开后，张飞气得不得了，提刀要闯进帐中杀董卓。",
+        "gloss": "to want to; be about to",
+        "sense_id": "zh-975f35218ed8-1-s1"
+      },
+      {
+        "sentence": "老人把三卷天书交给他，要他替上天教化百姓、救助世人；若心生别念，便会受罚。",
+        "gloss": "want; require",
+        "sense_id": "zh-975f35218ed8-1-s1"
+      },
+      {
+        "sentence": "刘备幼年和乡中孩子在树下玩，说将来要做天子，要乘这车盖。",
+        "gloss": "will; want to",
+        "sense_id": "zh-975f35218ed8-1-s2"
+      },
+      {
+        "sentence": "正饮之间，一个大汉推车到店门口歇下，入店便叫酒保倒酒，说要赶进城投军。",
+        "gloss": "to want",
+        "sense_id": "zh-975f35218ed8-1-s1"
+      },
+      {
+        "sentence": "第二天，三人备好乌牛、白马等祭礼，焚香再拜，发誓虽是异姓，也要报效国家、安定百姓。",
+        "gloss": "will; must",
+        "sense_id": "zh-975f35218ed8-1-s2"
+      },
+      {
+        "sentence": "犯法的人不论身份高低，都要受罚。",
+        "gloss": "must",
+        "sense_id": "zh-975f35218ed8-1-s3"
+      },
+      {
+        "sentence": "宦官左丰奉命查看军情，企图向卢植索要行贿的钱。",
+        "gloss": "to ask for; demand",
+        "sense_id": "zh-975f35218ed8-1-s4"
+      },
+      {
+        "sentence": "张飞听完愤怒不已，要杀押送卢植的士兵救人。",
+        "gloss": "want to",
+        "sense_id": "zh-975f35218ed8-1-s1"
+      },
+      {
+        "sentence": "刘备离开后，张飞气得提刀要杀进营帐。",
+        "gloss": "want to",
+        "sense_id": "zh-975f35218ed8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-975f35218ed8-1",
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "Before an action, 要 can express that the subject wants or intends to do it. It also has conventional modal uses: it can present an action as expected in the future (“will” or “be going to”) or as required or inevitable (“must”).",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "要",
+        "contribution_en": "Marks desire or intention toward an action, and can also mark that the action is expected or required.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "516c78d70c4eb796fefae17d8358c4d98cea5e82ab43cf19481de44107a3772b",
+    "revision": 2,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7cc3ec03d977b2a5dd7ee04a8b22b6aed02861c114c28c29f9f7e4c00559bdd1"
+}

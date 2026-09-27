@@ -1,0 +1,56 @@
+{
+  "id": "zh-0d4832f27e26-1-ed615dc9e94ce8f7",
+  "entry_id": "zh-0d4832f27e26-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-0d4832f27e26-1",
+      "headword": "广宗",
+      "kind": "name",
+      "reading": "Guǎngzōng",
+      "senses": [
+        {
+          "id": "zh-0d4832f27e26-1-s1",
+          "definition": "Guangzong"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇甫嵩判断张梁、张宝很可能回广宗找张角，便让刘备回去帮助卢植。",
+        "gloss": "Guangzong",
+        "sense_id": "zh-0d4832f27e26-1-s1"
+      },
+      {
+        "sentence": "刘备之前跟卢植学习，听说老师正在广宗和黄巾军作战，便想去帮助他。",
+        "gloss": "Guangzong",
+        "sense_id": "zh-0d4832f27e26-1-s1"
+      },
+      {
+        "sentence": "他和关羽、张飞带五百人赶往广宗。",
+        "gloss": "Guangzong",
+        "sense_id": "zh-0d4832f27e26-1-s1"
+      },
+      {
+        "sentence": "张角有十五万军队，卢植有五万人，两边在广宗相持。",
+        "gloss": "Guangzong",
+        "sense_id": "zh-0d4832f27e26-1-s1"
+      },
+      {
+        "sentence": "皇甫嵩说张梁、张宝会去广宗投靠张角，于是让刘备连夜前往。",
+        "gloss": "Guangzong",
+        "sense_id": "zh-0d4832f27e26-1-s1"
+      },
+      {
+        "sentence": "刘备只得返回广宗。",
+        "gloss": "Guangzong",
+        "sense_id": "zh-0d4832f27e26-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3e4f59add628a27b79e389735be93a686a1fae1c64cf4a61272ce5f68c847277"
+}

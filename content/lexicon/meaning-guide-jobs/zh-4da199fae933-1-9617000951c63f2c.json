@@ -1,0 +1,46 @@
+{
+  "id": "zh-4da199fae933-1-9617000951c63f2c",
+  "entry_id": "zh-4da199fae933-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4da199fae933-1",
+      "headword": "消息",
+      "kind": "word",
+      "reading": "xiāoxi",
+      "senses": [
+        {
+          "id": "zh-4da199fae933-1-s1",
+          "definition": "information or news"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "第二天，青州太守派人送来求援消息，说黄巾军围住了城，城里的人十分不安。",
+        "gloss": "news",
+        "sense_id": "zh-4da199fae933-1-s1"
+      },
+      {
+        "sentence": "可是，他们没有严格保密，消息很快走漏，二人反而因此被害。",
+        "gloss": "news",
+        "sense_id": "zh-4da199fae933-1-s1"
+      },
+      {
+        "sentence": "幽州兵少，刘焉听到消息后，请邹靖商量办法。",
+        "gloss": "news",
+        "sense_id": "zh-4da199fae933-1-s1"
+      },
+      {
+        "sentence": "不久，消息传来：程远志率五万黄巾军来犯涿郡。",
+        "gloss": "news",
+        "sense_id": "zh-4da199fae933-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1b72816f5a06fa41fec01576e8579895330fb7f1bea4d7f3a8daf9ff5dd60819"
+}

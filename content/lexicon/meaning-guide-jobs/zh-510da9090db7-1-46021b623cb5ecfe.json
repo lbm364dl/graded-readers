@@ -1,0 +1,31 @@
+{
+  "id": "zh-510da9090db7-1-46021b623cb5ecfe",
+  "entry_id": "zh-510da9090db7-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-510da9090db7-1",
+      "headword": "想去",
+      "kind": "construction",
+      "reading": "xiǎng qù",
+      "senses": [
+        {
+          "id": "zh-510da9090db7-1-s1",
+          "definition": "to want to go"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备说，老师卢植正在广宗与张角交战，自己曾跟随卢植学习，想去帮助他。",
+        "gloss": "want to go",
+        "sense_id": "zh-510da9090db7-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d03a645d3f099554cbf5ff258969fa491ad7c8fbfdc48edf07c9809b96b26663"
+}

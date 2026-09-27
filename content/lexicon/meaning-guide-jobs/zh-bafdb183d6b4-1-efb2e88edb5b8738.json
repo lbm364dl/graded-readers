@@ -1,0 +1,36 @@
+{
+  "id": "zh-bafdb183d6b4-1-efb2e88edb5b8738",
+  "entry_id": "zh-bafdb183d6b4-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-bafdb183d6b4-1",
+      "headword": "崩裂",
+      "kind": "word",
+      "reading": "bēngliè",
+      "senses": [
+        {
+          "id": "zh-bafdb183d6b4-1-s1",
+          "definition": "to split or break apart"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "后来雌鸡变成雄鸡，黑气飞进温德殿，玉堂出现彩虹，五原山岸也崩裂。",
+        "gloss": "to split and collapse",
+        "sense_id": "zh-bafdb183d6b4-1-s1"
+      },
+      {
+        "sentence": "秋七月，玉堂出现虹，五原山岸崩裂。",
+        "gloss": "to split apart",
+        "sense_id": "zh-bafdb183d6b4-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "60dd9176bbe555db8f7b14b11d4a79b952390fa5d09a5be4b484690af7408a17"
+}

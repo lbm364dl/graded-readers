@@ -1,0 +1,31 @@
+{
+  "id": "zh-fe09c828de35-1-e841edff2a8d1200",
+  "entry_id": "zh-fe09c828de35-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-fe09c828de35-1",
+      "headword": "怀恨在心",
+      "kind": "expression",
+      "reading": "huái hèn zài xīn",
+      "senses": [
+        {
+          "id": "zh-fe09c828de35-1-s1",
+          "definition": "to harbor resentment"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "左丰因此怀恨在心，回奏朝廷，诬陷卢植只修高墙、不肯作战。",
+        "gloss": "to harbor resentment",
+        "sense_id": "zh-fe09c828de35-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9e183409627a754b3b1f1cbd7b092d1e8d0d77f650ebb26fccee386a6564eee0"
+}

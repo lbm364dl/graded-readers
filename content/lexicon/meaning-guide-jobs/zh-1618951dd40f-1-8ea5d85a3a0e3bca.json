@@ -1,0 +1,36 @@
+{
+  "id": "zh-1618951dd40f-1-8ea5d85a3a0e3bca",
+  "entry_id": "zh-1618951dd40f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1618951dd40f-1",
+      "headword": "愿意",
+      "kind": "word",
+      "reading": "yuànyì",
+      "senses": [
+        {
+          "id": "zh-1618951dd40f-1-s1",
+          "definition": "to be willing; be willing to"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他也愿意和有志的人交朋友。",
+        "gloss": "be willing",
+        "sense_id": "zh-1618951dd40f-1-s1"
+      },
+      {
+        "sentence": "愿意出钱招募乡勇。",
+        "gloss": "be willing",
+        "sense_id": "zh-1618951dd40f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "44b99e9265b72b537ae7f62f2d5d8430a35dc7915a985b8c0acf18ab6810ef8b"
+}

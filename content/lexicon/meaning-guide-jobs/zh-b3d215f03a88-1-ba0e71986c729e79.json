@@ -1,0 +1,155 @@
+{
+  "id": "zh-b3d215f03a88-1-ba0e71986c729e79",
+  "entry_id": "zh-b3d215f03a88-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-b3d215f03a88-1",
+      "headword": "举",
+      "kind": "word",
+      "reading": "jǔ",
+      "senses": [
+        {
+          "id": "zh-b3d215f03a88-1-s1",
+          "definition": "raise; lift up"
+        },
+        {
+          "id": "zh-b3d215f03a88-1-s2",
+          "definition": "recommend someone for office or recognition"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞举矛刺中邓茂，他从马上掉下。",
+        "gloss": "raise",
+        "sense_id": "zh-b3d215f03a88-1-s1"
+      },
+      {
+        "sentence": "祖父刘雄，父亲刘弘；刘弘曾举孝廉，也做过官，后来早亡。",
+        "gloss": "to recommend",
+        "sense_id": "zh-b3d215f03a88-1-s2"
+      },
+      {
+        "sentence": "曹操二十岁时举孝廉，做了郎官，后来任洛阳北都尉。",
+        "gloss": "to recommend",
+        "sense_id": "zh-b3d215f03a88-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-b3d215f03a88-1",
+    "claim_ids": [
+      "c1"
+    ],
+    "structure": "single_component",
+    "explanation_en": "举 means to raise or lift something. It names the lifting action without specifying how high the thing is raised or how it is held.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "举",
+        "contribution_en": "The action of raising or lifting something.",
+        "claim_ids": [
+          "c1"
+        ]
+      }
+    ],
+    "research": {
+      "entry_id": "zh-b3d215f03a88-1",
+      "status": "partial",
+      "sources": [
+        {
+          "id": "s1",
+          "url": "https://dict.variants.moe.edu.tw/dictView.jsp?ID=36966&la=0",
+          "title": "[A03400] 舉 - 教育部《異體字字典》",
+          "accessed_at": "2026-09-26",
+          "summary_en": "The entry defines the relevant sense as 擎起、抬起 (raise or lift) and cites the Shuowen gloss 對舉也 and examples from the Mengzi and Li Bai. It lists other senses separately. Its character-form analysis reports the Shuowen account 从手，與聲."
+        },
+        {
+          "id": "s2",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E8%88%89",
+          "title": "漢語多功能字庫: 舉",
+          "accessed_at": "2026-09-26",
+          "summary_en": "The database gives the Shuowen gloss 對舉也 and analyzes the traditional graph as 手 semantic component plus 與 phonetic component. Its interpretive discussion describes the original meaning as supporting an object upward with both hands, and separately records senses such as flying or rising. It also shows the traditional-to-simplified correspondence 舉/举."
+        },
+        {
+          "id": "s3",
+          "url": "https://zdic.net/hans/%E4%B8%BE",
+          "title": "举 jǔ - 汉典",
+          "accessed_at": "2026-09-26",
+          "summary_en": "The entry gives the physical sense as lifting, including the Shuowen gloss 對舉也 and the Guangyun gloss 擎也. It lists distinct senses such as taking or holding, rising, and raising the head. Its character analysis labels the traditional form pictophonetic, with 手 as the semantic part and 舉 as the phonetic part."
+        }
+      ],
+      "claims": [
+        {
+          "id": "c1",
+          "text_en": "For the supplied sense, 举 contributes the action of raising or lifting. In the example 张飞举矛, the spear is what is raised; the wording does not specify its height, exact movement, or whether it is held overhead.",
+          "source_ids": [
+            "s1",
+            "s2",
+            "s3"
+          ]
+        },
+        {
+          "id": "c2",
+          "text_en": "The older gloss 對舉也 and the CUHK database's interpretation of supporting an object upward with both hands align with the modern raising/lifting sense. The sources do not establish that every modern use requires two hands, or demonstrate a detailed historical path from the older gloss to this particular example.",
+          "source_ids": [
+            "s1",
+            "s2"
+          ]
+        },
+        {
+          "id": "c3",
+          "text_en": "In the traditional graph analysis reported by these references, 手 is the semantic component and 與 supplies the sound; the references do not assign 與 a separate lexical contribution to the word's meaning. The CUHK database identifies 举 as the simplified counterpart of 舉.",
+          "source_ids": [
+            "s1",
+            "s2",
+            "s3"
+          ]
+        }
+      ],
+      "searches": [
+        {
+          "query": "site:dict.variants.moe.edu.tw/dictView.jsp 舉 對舉也 擎起 抬起",
+          "opened_urls": [
+            "https://dict.variants.moe.edu.tw/dictView.jsp?ID=36966&la=0"
+          ]
+        },
+        {
+          "query": "site:humanum.arts.cuhk.edu.hk/Lexis/lexi-mf 舉 手 與 本義",
+          "opened_urls": [
+            "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E8%88%89"
+          ]
+        },
+        {
+          "query": "汉典 举 抬起 举字 字义",
+          "opened_urls": [
+            "https://zdic.net/hans/%E4%B8%BE"
+          ]
+        },
+        {
+          "query": "(direct open)",
+          "opened_urls": [
+            "https://dict.variants.moe.edu.tw/dictView.jsp?ID=36966&la=0",
+            "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E8%88%89",
+            "https://zdic.net/hans/%E4%B8%BE"
+          ]
+        }
+      ],
+      "gaps": [
+        "The sources support a historical lifting/supporting sense and its relation to the modern gloss, but do not establish a detailed chronological derivation or show that the modern spear-raising use specifically inherits the older two-handed characterization."
+      ]
+    },
+    "input_fingerprint": "a5a469a460998a03dd840b4ec5205cf983a407534d7bf3696381dad419d9e1e9",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "partial",
+    "editorial_route": "cached_research",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "36d0166946fad5a61b6ffdf379026f4354acfd76a71b082b8fd87b4266e097ca"
+}

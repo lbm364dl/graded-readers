@@ -1,0 +1,31 @@
+{
+  "id": "zh-982577afeb81-1-2cf14ec1c6024156",
+  "entry_id": "zh-982577afeb81-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-982577afeb81-1",
+      "headword": "协商",
+      "kind": "word",
+      "reading": "xiéshāng",
+      "senses": [
+        {
+          "id": "zh-982577afeb81-1-s1",
+          "definition": "discuss something together in order to reach an understanding or decision"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘焉与刘备协商，刘备答应前往。",
+        "gloss": "to discuss; consult",
+        "sense_id": "zh-982577afeb81-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f02ffc5bbb7b5e7838ad2f725eaf33e15090ea1fc66a1924047358676e37744a"
+}

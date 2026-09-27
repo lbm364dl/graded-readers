@@ -1,0 +1,31 @@
+{
+  "id": "zh-e1dbc1c99fb4-1-cc5c47e049ccd597",
+  "entry_id": "zh-e1dbc1c99fb4-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e1dbc1c99fb4-1",
+      "headword": "一个",
+      "kind": "word",
+      "reading": "yí ge",
+      "senses": [
+        {
+          "id": "zh-e1dbc1c99fb4-1-s1",
+          "definition": "one; a single"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "不一会儿，一个大汉推车来到店里。",
+        "gloss": "one",
+        "sense_id": "zh-e1dbc1c99fb4-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8105d54e24077e744cfa0e67300b0f326548804c94c8f890fffc812ca315da80"
+}

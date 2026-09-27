@@ -1,0 +1,31 @@
+{
+  "id": "zh-2af437d328db-1-260c9ee407d7a349",
+  "entry_id": "zh-2af437d328db-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2af437d328db-1",
+      "headword": "分析",
+      "kind": "word",
+      "reading": "fēnxī",
+      "senses": [
+        {
+          "id": "zh-2af437d328db-1-s1",
+          "definition": "analyze; examine something carefully to understand its parts or situation"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备仔细分析局面，对关羽、张飞说：“敌多我少，不能硬打，关键是用伏兵。",
+        "gloss": "to analyze",
+        "sense_id": "zh-2af437d328db-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "957df1d5a7a46073f7e3fcfdefc8a6c40f2513556d02f9f1b7fdb587ef4f83f6"
+}

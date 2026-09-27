@@ -1,0 +1,36 @@
+{
+  "id": "zh-7e5416554da9-1-0b36eab588b9fbb0",
+  "entry_id": "zh-7e5416554da9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7e5416554da9-1",
+      "headword": "作乱",
+      "kind": "word",
+      "reading": "zuòluàn",
+      "senses": [
+        {
+          "id": "zh-7e5416554da9-1-s1",
+          "definition": "rebel or cause disorder"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇帝信任张让，叫他“阿父”，朝政逐渐败坏，天下人心想要作乱，盗贼纷纷起来。",
+        "gloss": "to rebel",
+        "sense_id": "zh-7e5416554da9-1-s1"
+      },
+      {
+        "sentence": "刘备说自己是汉室宗亲，想打败作乱的黄巾军，让百姓平安，只是力气不够。",
+        "gloss": "rebel; cause disorder",
+        "sense_id": "zh-7e5416554da9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0bfa95bf1857e69f33181ced18c2ee1688b392b2fd5857927dca74101a2e2b3e"
+}

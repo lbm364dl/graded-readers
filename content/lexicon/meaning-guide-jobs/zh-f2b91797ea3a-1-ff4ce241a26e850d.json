@@ -1,0 +1,160 @@
+{
+  "id": "zh-f2b91797ea3a-1-ff4ce241a26e850d",
+  "entry_id": "zh-f2b91797ea3a-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-f2b91797ea3a-1",
+      "headword": "很",
+      "kind": "word",
+      "reading": "hěn",
+      "senses": [
+        {
+          "id": "zh-f2b91797ea3a-1-s1",
+          "definition": "very; quite (intensifier before an adjective)"
+        },
+        {
+          "id": "zh-f2b91797ea3a-1-s2",
+          "definition": "very; greatly (intensifier before a verb)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”刘备听了很高兴。",
+        "gloss": "very",
+        "sense_id": "zh-f2b91797ea3a-1-s1"
+      },
+      {
+        "sentence": "”关羽听了很高兴。",
+        "gloss": "very",
+        "sense_id": "zh-f2b91797ea3a-1-s1"
+      },
+      {
+        "sentence": "桃花开得很好看。",
+        "gloss": "very",
+        "sense_id": "zh-f2b91797ea3a-1-s1"
+      },
+      {
+        "sentence": "许多百姓跟着他们，天下变得很乱。",
+        "gloss": "very",
+        "sense_id": "zh-f2b91797ea3a-1-s1"
+      },
+      {
+        "sentence": "刘备家里很穷，从小就有大志。",
+        "gloss": "very",
+        "sense_id": "zh-f2b91797ea3a-1-s1"
+      },
+      {
+        "sentence": "”刘备听了很开心。",
+        "gloss": "very",
+        "sense_id": "zh-f2b91797ea3a-1-s1"
+      },
+      {
+        "sentence": "关羽也很高兴。",
+        "gloss": "very",
+        "sense_id": "zh-f2b91797ea3a-1-s1"
+      },
+      {
+        "sentence": "张飞很生气，要杀护送卢植的人。",
+        "gloss": "very",
+        "sense_id": "zh-f2b91797ea3a-1-s1"
+      },
+      {
+        "sentence": "汉朝末年，朝廷很乱，灾害和不祥的事不断发生。",
+        "gloss": "very",
+        "sense_id": "zh-f2b91797ea3a-1-s1"
+      },
+      {
+        "sentence": "大风、雷雨、冰雹毁坏房屋，地震和海水泛上来，百姓生活很难。",
+        "gloss": "very",
+        "sense_id": "zh-f2b91797ea3a-1-s1"
+      },
+      {
+        "sentence": "刘备很高兴，便和他一起喝酒。",
+        "gloss": "very",
+        "sense_id": "zh-f2b91797ea3a-1-s1"
+      },
+      {
+        "sentence": "关羽很高兴。",
+        "gloss": "very",
+        "sense_id": "zh-f2b91797ea3a-1-s1"
+      },
+      {
+        "sentence": "程远志很生气，派邓茂上前。",
+        "gloss": "very",
+        "sense_id": "zh-f2b91797ea3a-1-s1"
+      },
+      {
+        "sentence": "卢植见到他们很高兴，把他们留下。",
+        "gloss": "very",
+        "sense_id": "zh-f2b91797ea3a-1-s1"
+      },
+      {
+        "sentence": "皇甫嵩判断张梁、张宝很可能回广宗找张角，便让刘备回去帮助卢植。",
+        "gloss": "very",
+        "sense_id": "zh-f2b91797ea3a-1-s1"
+      },
+      {
+        "sentence": "他很吃惊，连忙下马询问。",
+        "gloss": "very",
+        "sense_id": "zh-f2b91797ea3a-1-s1"
+      },
+      {
+        "sentence": "可是，他们没有严格保密，消息很快走漏，二人反而因此被害。",
+        "gloss": "very",
+        "sense_id": "zh-f2b91797ea3a-1-s1"
+      },
+      {
+        "sentence": "刘备家里很穷，靠卖草鞋、织席生活。",
+        "gloss": "very",
+        "sense_id": "zh-f2b91797ea3a-1-s1"
+      },
+      {
+        "sentence": "他很早失去父亲，依靠手艺养家，也一直孝顺母亲。",
+        "gloss": "very",
+        "sense_id": "zh-f2b91797ea3a-1-s1"
+      },
+      {
+        "sentence": "刘备告诉关羽自己的志向，关羽听后很兴奋。",
+        "gloss": "very",
+        "sense_id": "zh-f2b91797ea3a-1-s1"
+      },
+      {
+        "sentence": "二人了解后很高兴，赠送五十匹好马、金银五百两和铁一千斤，帮助三人打造兵器。",
+        "gloss": "very",
+        "sense_id": "zh-f2b91797ea3a-1-s1"
+      },
+      {
+        "sentence": "卢植很高兴，让他留下听命。",
+        "gloss": "very",
+        "sense_id": "zh-f2b91797ea3a-1-s1"
+      },
+      {
+        "sentence": "曹操以前做官时，也很重视城里的规矩。",
+        "gloss": "very",
+        "sense_id": "zh-f2b91797ea3a-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-f2b91797ea3a-1",
+    "structure": "single_component",
+    "explanation_en": "很 intensifies an adjective, raising the stated degree of a quality. It is often translated as “very” or “quite.”",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "很",
+        "contribution_en": "Raises the degree of the adjective that follows."
+      }
+    ],
+    "input_fingerprint": "3a3fbe2b6530f13503e74ff24e974b16b92c1b900a1369d30c236b09d63e9732",
+    "revision": 1,
+    "editorial_policy": 2,
+    "evidence_status": "legacy_unresearched"
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "444f85f49a1427f71c9ea77a85349a28dad56fc867aaf192e0d70f06988fc7cf"
+}

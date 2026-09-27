@@ -1,0 +1,41 @@
+{
+  "id": "zh-50b4f5e779dc-1-cfdc96d5d79fea3a",
+  "entry_id": "zh-50b4f5e779dc-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-50b4f5e779dc-1",
+      "headword": "受罚",
+      "kind": "construction",
+      "reading": "shòufá",
+      "senses": [
+        {
+          "id": "zh-50b4f5e779dc-1-s1",
+          "definition": "undergo punishment; be punished"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "违反禁令的人，不管有没有权势，都要受罚，谁也不能例外。",
+        "gloss": "be punished",
+        "sense_id": "zh-50b4f5e779dc-1-s1"
+      },
+      {
+        "sentence": "老人把三卷天书交给他，要他替上天教化百姓、救助世人；若心生别念，便会受罚。",
+        "gloss": "be punished",
+        "sense_id": "zh-50b4f5e779dc-1-s1"
+      },
+      {
+        "sentence": "犯法的人不论身份高低，都要受罚。",
+        "gloss": "to be punished",
+        "sense_id": "zh-50b4f5e779dc-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "72c51ad31b8510d4400982039ce6fea9a9d8fa9b6d60a10c2018aa823f81fabd"
+}

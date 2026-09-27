@@ -1,0 +1,36 @@
+{
+  "id": "zh-c1b6acc5756f-1-df241b4412118e99",
+  "entry_id": "zh-c1b6acc5756f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c1b6acc5756f-1",
+      "headword": "投",
+      "kind": "word",
+      "reading": "tóu",
+      "senses": [
+        {
+          "id": "zh-c1b6acc5756f-1-s1",
+          "definition": "to join or enlist in (an organization or force)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他进来要酒，说要赶进城投军。",
+        "gloss": "join; enter",
+        "sense_id": "zh-c1b6acc5756f-1-s1"
+      },
+      {
+        "sentence": "如今听说这里招军破贼，便来投军。",
+        "gloss": "to join; enlist in",
+        "sense_id": "zh-c1b6acc5756f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "61df8755702952da7685dd2cacab040aee022a35280f8db71d49df46a873c6ed"
+}

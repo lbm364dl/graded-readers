@@ -1,0 +1,31 @@
+{
+  "id": "zh-79f41caf6317-1-82e7dfd58f6622da",
+  "entry_id": "zh-79f41caf6317-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-79f41caf6317-1",
+      "headword": "逼近",
+      "kind": "word",
+      "reading": "bījìn",
+      "senses": [
+        {
+          "id": "zh-79f41caf6317-1-s1",
+          "definition": "to approach or draw near to"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角率领黄巾军逼近幽州。",
+        "gloss": "to approach",
+        "sense_id": "zh-79f41caf6317-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6225e03c0d9615e437eede6a3a16412eb11655c087a05062f522c77ff1e9c0de"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-5002135e05a6-1-39e1bd77182dafe0",
+  "entry_id": "zh-5002135e05a6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5002135e05a6-1",
+      "headword": "派来",
+      "kind": "construction",
+      "reading": "pài lái",
+      "senses": [
+        {
+          "id": "zh-5002135e05a6-1-s1",
+          "definition": "to send someone here or over"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "卢植说：“朝廷派来的人向我要钱，我没有同意。",
+        "gloss": "send over",
+        "sense_id": "zh-5002135e05a6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "72053a30df01fa0d43185927d108bf838b248d61c2572abfe5fff0061ef94127"
+}

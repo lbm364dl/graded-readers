@@ -1,0 +1,31 @@
+{
+  "id": "zh-c277be8a4b92-1-02cb2dbb838c462d",
+  "entry_id": "zh-c277be8a4b92-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c277be8a4b92-1",
+      "headword": "找",
+      "kind": "word",
+      "reading": "zhǎo",
+      "senses": [
+        {
+          "id": "zh-c277be8a4b92-1-s1",
+          "definition": "to look for; seek"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "以后，刘备去找卢植。",
+        "gloss": "look for",
+        "sense_id": "zh-c277be8a4b92-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3f9a750204cd53a0bc967b391de906148acbcc5ec7f9237ba90c9e050689c907"
+}

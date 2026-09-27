@@ -1,0 +1,31 @@
+{
+  "id": "zh-45b5b99d4b48-1-68717a3f758e9980",
+  "entry_id": "zh-45b5b99d4b48-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-45b5b99d4b48-1",
+      "headword": "杀到",
+      "kind": "construction",
+      "reading": "shā dào",
+      "senses": [
+        {
+          "id": "zh-45b5b99d4b48-1-s1",
+          "definition": "fight or attack until reaching a place or point"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "杀到天明，张梁、张宝带着残军夺路而逃。",
+        "gloss": "kill until reaching",
+        "sense_id": "zh-45b5b99d4b48-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3e0063b728a2d902a9fbae62a767c97bc67d7eec5d95547ed166c40261ab80c9"
+}

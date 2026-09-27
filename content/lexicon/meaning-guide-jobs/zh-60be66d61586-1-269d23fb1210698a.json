@@ -1,0 +1,300 @@
+{
+  "id": "zh-60be66d61586-1-269d23fb1210698a",
+  "entry_id": "zh-60be66d61586-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-60be66d61586-1",
+      "headword": "后",
+      "kind": "word",
+      "reading": "hòu",
+      "senses": [
+        {
+          "id": "zh-60be66d61586-1-s1",
+          "definition": "after; following a time, event, or action"
+        },
+        {
+          "id": "zh-60be66d61586-1-s2",
+          "definition": "behind; toward or at the back"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞听见后说：“大丈夫不能只叹气！",
+        "gloss": "afterward",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "祭礼结束后，他们聚集乡勇，在桃园中喝酒。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "事情结束后，刘备想起老师卢植。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "皇甫嵩和朱隽商量后，决定用火攻。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "卢植被押走后，关羽建议先回涿郡，刘备同意了。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "两天后，他们看见董卓带领的汉军被张角打败，黄巾军正在追赶董卓。",
+        "gloss": "later",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "”董卓听后便轻视他们，连礼貌也没有。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "桓帝死后，窦武和陈蕃共辅佐新皇帝。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "曹节偷看奏章后，立即告诉身边的人，于是宦官借别的事陷害蔡邕，皇帝把他放归田里。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "他和两个弟弟商议后，决定抓住民心的机会。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "幽州兵少，刘焉听到消息后，请邹靖商量办法。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "刘备告诉关羽自己的志向，关羽听后很兴奋。",
+        "gloss": "after; afterwards",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "三人备好祭品，烧香行礼，再拜后发誓。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "祭礼后，他们杀牛摆酒，聚集三百多名乡勇，在桃园中痛快喝酒。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "二人了解后很高兴，赠送五十匹好马、金银五百两和铁一千斤，帮助三人打造兵器。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "程远志被杀后，黄巾军纷纷逃走，刘备带兵追赶，许多人投降。",
+        "gloss": "after; afterward",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "皇甫嵩、朱隽商量后，决定火攻，命士兵各带一把草，暗中埋下伏兵。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "二更后，伏兵一齐放火，两人各带军队攻入营中。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "黄巾军起兵后，曹操带着五千名士兵赶到颍川。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "张飞听后大怒，要杀押送卢植的士兵。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "”军队带走卢植后，关羽说：“卢植已被抓，我们失去了依靠，只能回涿郡。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "”董卓听后轻视他们，连礼也不行。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "刘备离开后，张飞非常生气：“我们冒着危险救他，他竟然这样无礼！",
+        "gloss": "after; later",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "灵帝即位后，窦武和陈蕃一起辅佐他。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "皇帝看后叹息，曹节却偷偷看了奏章，并传给身边的人。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "幽州太守刘焉听说后，召邹靖商议。",
+        "gloss": "behind",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "”叔父听后十分惊奇，常常帮助他。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "刘备听后十分高兴，两人便到村店中饮酒。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "二人听后很高兴，赠送良马五十匹、金银五百两和镔铁一千斤。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "程远志被斩后，黄巾军有的逃走，有的投降。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "刘备兵少，只好退后三十里扎营。",
+        "gloss": "back",
+        "sense_id": "zh-60be66d61586-1-s2"
+      },
+      {
+        "sentence": "龚景犒军后，邹靖准备回去。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "曹操拜见皇甫嵩、朱俊后，随即率军追击败退的黄巾军。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "两天后，山后突然传来喊声。",
+        "gloss": "later",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "刘备离开后，张飞气得不得了，提刀要闯进帐中杀董卓。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "桓帝死后，灵帝即位，大将军窦武、太傅陈蕃一同辅佐他。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "叔父刘元起听后很惊讶，认为他非同常人，因他家贫，常常资助他。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "看见招军榜后，他想到自己家贫，没有力量为国家出力，不禁长叹。",
+        "gloss": "after; afterward",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "那人说：“我姓关，名羽，字寿长，后改字云长，是河东解良人。",
+        "gloss": "later",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "祭礼后，他们杀牛设酒，聚集三百多名乡勇，在桃园痛饮。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "两人听后很高兴，赠送五十匹好马、五百两金银和一千斤铁。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "程远志被斩后，黄巾军纷纷逃走。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "救军抵达后，黄巾军分兵，双方立刻混战。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "刘备兵少，只得退后三十里下寨。",
+        "gloss": "back; rear",
+        "sense_id": "zh-60be66d61586-1-s2"
+      },
+      {
+        "sentence": "二人商量后，命士兵每人束一把草，又暗中埋下伏兵。",
+        "gloss": "after; afterwards",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "曹嵩责备他后，他装作中风，骗过了父亲。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "曹操听后大喜。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "黄巾起义后，他被任命为骑都尉，带领五千名骑兵和步兵赶到颍川。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "两天后，山后传来巨大的喊杀声。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      },
+      {
+        "sentence": "刘备离开后，张飞气得提刀要杀进营帐。",
+        "gloss": "after",
+        "sense_id": "zh-60be66d61586-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-60be66d61586-1",
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "后 refers to the time that comes after a stated time, event, or action, so it can mean “after” or “later.”",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "后",
+        "contribution_en": "Points to what comes later in a time sequence.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "a6a910674dde0c7c00f515e32669d39abc7ce503efa7923cc2bc6bf56f61d6ce",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "276ad536e34779893793304f899bb0e04a6839202fd0cb9aee6ab2df9c937554"
+}

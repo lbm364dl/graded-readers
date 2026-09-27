@@ -1,0 +1,36 @@
+{
+  "id": "zh-cbe8c852cd2f-1-b3f709115614f0cf",
+  "entry_id": "zh-cbe8c852cd2f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-cbe8c852cd2f-1",
+      "headword": "报国",
+      "kind": "word",
+      "reading": "bàoguó",
+      "senses": [
+        {
+          "id": "zh-cbe8c852cd2f-1-s1",
+          "definition": "to serve one's country"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他当时因无力报国，只能长声叹气。",
+        "gloss": "to serve the country",
+        "sense_id": "zh-cbe8c852cd2f-1-s1"
+      },
+      {
+        "sentence": "这天，他见到榜文，想到自己没有力量为国家出力，不能报国，不禁长叹。",
+        "gloss": "serve one's country",
+        "sense_id": "zh-cbe8c852cd2f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "783a91655d2f6f98c13399c8290d11f6f6767f439de4ddbafe5a8af864df02f2"
+}

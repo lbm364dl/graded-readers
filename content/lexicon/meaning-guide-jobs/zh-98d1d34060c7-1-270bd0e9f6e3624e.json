@@ -1,0 +1,31 @@
+{
+  "id": "zh-98d1d34060c7-1-270bd0e9f6e3624e",
+  "entry_id": "zh-98d1d34060c7-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-98d1d34060c7-1",
+      "headword": "被害",
+      "kind": "construction",
+      "reading": "bèihài",
+      "senses": [
+        {
+          "id": "zh-98d1d34060c7-1-s1",
+          "definition": "to be harmed or killed"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "可是，他们没有严格保密，消息很快走漏，二人反而因此被害。",
+        "gloss": "to be killed",
+        "sense_id": "zh-98d1d34060c7-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "abadd468741310543296f18c15a221254bc5e86626fd630f4245b47e7ce5ecde"
+}

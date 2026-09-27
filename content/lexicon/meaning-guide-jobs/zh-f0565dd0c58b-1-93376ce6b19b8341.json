@@ -1,0 +1,31 @@
+{
+  "id": "zh-f0565dd0c58b-1-93376ce6b19b8341",
+  "entry_id": "zh-f0565dd0c58b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f0565dd0c58b-1",
+      "headword": "打着",
+      "kind": "word",
+      "reading": "dǎzhe",
+      "senses": [
+        {
+          "id": "zh-f0565dd0c58b-1-s1",
+          "definition": "to hold up or display (a flag or similar object)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "一支全打着红旗的军队迎面而来，截住败退的黄巾军。",
+        "gloss": "bearing; carrying",
+        "sense_id": "zh-f0565dd0c58b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fd2888c74e29ccbd87aeec16d821f71033fcb91091a489a6eefb53f69275dfa6"
+}

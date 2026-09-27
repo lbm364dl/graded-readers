@@ -1,0 +1,36 @@
+{
+  "id": "zh-05cba32d01a8-1-ac6629f810897db2",
+  "entry_id": "zh-05cba32d01a8-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-05cba32d01a8-1",
+      "headword": "反国",
+      "kind": "construction",
+      "reading": "fǎn guó",
+      "senses": [
+        {
+          "id": "zh-05cba32d01a8-1-s1",
+          "definition": "rebel against the state"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他挥鞭喊道：“反国逆贼，为什么不早投降？",
+        "gloss": "betray the state",
+        "sense_id": "zh-05cba32d01a8-1-s1"
+      },
+      {
+        "sentence": "他扬鞭喝道：“反国逆贼，为何还不早降？",
+        "gloss": "rebellious against the state",
+        "sense_id": "zh-05cba32d01a8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "61fcaf0d0f7df3446ba9b71c7892fa6930485473ebbe64533583a201411701b3"
+}

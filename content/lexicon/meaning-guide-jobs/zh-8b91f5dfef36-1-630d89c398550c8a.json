@@ -1,0 +1,31 @@
+{
+  "id": "zh-8b91f5dfef36-1-630d89c398550c8a",
+  "entry_id": "zh-8b91f5dfef36-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8b91f5dfef36-1",
+      "headword": "汉室",
+      "kind": "name",
+      "reading": "Hànshì",
+      "senses": [
+        {
+          "id": "zh-8b91f5dfef36-1-s1",
+          "definition": "the Han imperial house or dynasty"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备说自己是汉室宗亲，想打败作乱的黄巾军，让百姓平安，只是力气不够。",
+        "gloss": "Han imperial clan",
+        "sense_id": "zh-8b91f5dfef36-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cedd9781db8b87b7c07f671539ea1fc04dc711b653c4a5210aa26605acbfabe4"
+}

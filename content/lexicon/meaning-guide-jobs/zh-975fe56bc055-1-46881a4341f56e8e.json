@@ -1,0 +1,31 @@
+{
+  "id": "zh-975fe56bc055-1-46881a4341f56e8e",
+  "entry_id": "zh-975fe56bc055-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-975fe56bc055-1",
+      "headword": "烧香",
+      "kind": "word",
+      "reading": "shāoxiāng",
+      "senses": [
+        {
+          "id": "zh-975fe56bc055-1-s1",
+          "definition": "to burn incense"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人备好祭品，烧香行礼，再拜后发誓。",
+        "gloss": "to burn incense",
+        "sense_id": "zh-975fe56bc055-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b64583e70b30da1276d60e7b5ff1f6c72f90f1b3420a21206a392b68bfdc2ba5"
+}

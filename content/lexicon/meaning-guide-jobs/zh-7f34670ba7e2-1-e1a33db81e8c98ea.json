@@ -1,0 +1,31 @@
+{
+  "id": "zh-7f34670ba7e2-1-e1a33db81e8c98ea",
+  "entry_id": "zh-7f34670ba7e2-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7f34670ba7e2-1",
+      "headword": "弄权",
+      "kind": "word",
+      "reading": "nòngquán",
+      "senses": [
+        {
+          "id": "zh-7f34670ba7e2-1-s1",
+          "definition": "to wield power"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "宦官弄权，干预朝政，也迫害直言的官员，天下人心很不安。",
+        "gloss": "to wield power",
+        "sense_id": "zh-7f34670ba7e2-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "db22dc7769b86b6c893b62b838d7ce55bf6d3d8bcc591910dd0051ee2f010b39"
+}

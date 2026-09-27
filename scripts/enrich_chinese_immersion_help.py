@@ -760,7 +760,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("run_dir", type=Path)
     parser.add_argument("--level", default="hsk1")
-    parser.add_argument("--model", default="gpt-5.6-luna")
+    parser.add_argument("--model", default="gpt-6-luna")
     parser.add_argument("--effort", default="low")
     parser.add_argument("--timeout", type=int, default=900)
     parser.add_argument("--max-repairs", type=int, default=3)

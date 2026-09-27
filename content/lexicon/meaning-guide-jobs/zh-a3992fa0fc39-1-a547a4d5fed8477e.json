@@ -1,0 +1,36 @@
+{
+  "id": "zh-a3992fa0fc39-1-a547a4d5fed8477e",
+  "entry_id": "zh-a3992fa0fc39-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a3992fa0fc39-1",
+      "headword": "回头",
+      "kind": "construction",
+      "reading": "huítóu",
+      "senses": [
+        {
+          "id": "zh-a3992fa0fc39-1-s1",
+          "definition": "turn back"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "两路伏兵同时冲出，刘备也回头进攻。",
+        "gloss": "to turn back",
+        "sense_id": "zh-a3992fa0fc39-1-s1"
+      },
+      {
+        "sentence": "刘备回头看那人，只见他身长八尺，豹头环眼，燕颔虎须，声音如巨雷，气势如奔马。",
+        "gloss": "to turn back",
+        "sense_id": "zh-a3992fa0fc39-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6860915e13c62cb52ba80d3aeac24437810e05a38707d7d0ed02bee21f4a178a"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-ee3d9d774d2b-1-5df830a143753e27",
+  "entry_id": "zh-ee3d9d774d2b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ee3d9d774d2b-1",
+      "headword": "诏",
+      "kind": "word",
+      "reading": "zhào",
+      "senses": [
+        {
+          "id": "zh-ee3d9d774d2b-1-s1",
+          "definition": "an imperial edict or order"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇帝下诏询问多种灾异的原因，蔡邕上书，认为这是妇人与宦官干政导致的，言辞十分直接。",
+        "gloss": "imperial edict",
+        "sense_id": "zh-ee3d9d774d2b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "41b4f22bd017f4f39d43f3ca381f65a791c497396402e3d70a217ab644cd8c1a"
+}

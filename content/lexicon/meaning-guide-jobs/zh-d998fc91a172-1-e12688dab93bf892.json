@@ -1,0 +1,31 @@
+{
+  "id": "zh-d998fc91a172-1-e12688dab93bf892",
+  "entry_id": "zh-d998fc91a172-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d998fc91a172-1",
+      "headword": "卖",
+      "kind": "word",
+      "reading": "mài",
+      "senses": [
+        {
+          "id": "zh-d998fc91a172-1-s1",
+          "definition": "sell; offer goods in exchange for money"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他住在涿县，平时卖鞋和草席。",
+        "gloss": "sell",
+        "sense_id": "zh-d998fc91a172-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "621be51f93d993de24b8556787670f3b3b255092f5f3d7ebbc31d1b14b7d23c1"
+}

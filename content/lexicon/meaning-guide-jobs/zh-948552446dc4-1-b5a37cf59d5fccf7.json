@@ -1,0 +1,41 @@
+{
+  "id": "zh-948552446dc4-1-b5a37cf59d5fccf7",
+  "entry_id": "zh-948552446dc4-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-948552446dc4-1",
+      "headword": "五千",
+      "kind": "word",
+      "reading": "wǔqiān",
+      "senses": [
+        {
+          "id": "zh-948552446dc4-1-s1",
+          "definition": "five thousand"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”刘焉让邹靖带五千人同行。",
+        "gloss": "five thousand",
+        "sense_id": "zh-948552446dc4-1-s1"
+      },
+      {
+        "sentence": "”于是，邹靖带五千人，和刘备、关羽、张飞一起出发。",
+        "gloss": "five thousand",
+        "sense_id": "zh-948552446dc4-1-s1"
+      },
+      {
+        "sentence": "黄巾军起兵后，曹操带着五千名士兵赶到颍川。",
+        "gloss": "five thousand",
+        "sense_id": "zh-948552446dc4-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "388adc61599d1e7c142911fd41aa7328d536861829c71b4c83eb451a0cb3c61b"
+}

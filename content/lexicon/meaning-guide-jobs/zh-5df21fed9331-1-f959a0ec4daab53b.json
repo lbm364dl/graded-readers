@@ -1,0 +1,36 @@
+{
+  "id": "zh-5df21fed9331-1-f959a0ec4daab53b",
+  "entry_id": "zh-5df21fed9331-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5df21fed9331-1",
+      "headword": "敢",
+      "kind": "word",
+      "reading": "gǎn",
+      "senses": [
+        {
+          "id": "zh-5df21fed9331-1-s1",
+          "definition": "dare to; be willing or bold enough to"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他们迫害敢说真话的官员，朝廷的坏事越来越多。",
+        "gloss": "dare to",
+        "sense_id": "zh-5df21fed9331-1-s1"
+      },
+      {
+        "sentence": "于是，城内城外的人都不敢犯法，曹操也获得了很大的威名。",
+        "gloss": "to dare",
+        "sense_id": "zh-5df21fed9331-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a67ad2c0574998b05f8232c4260b9b51cd6c61100f3adea45e2e22b1c4002960"
+}

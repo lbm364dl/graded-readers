@@ -1,0 +1,36 @@
+{
+  "id": "zh-43584f37c1f4-1-4ea61b0e3518b857",
+  "entry_id": "zh-43584f37c1f4-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-43584f37c1f4-1",
+      "headword": "现在",
+      "kind": "word",
+      "reading": "xiànzài",
+      "senses": [
+        {
+          "id": "zh-43584f37c1f4-1-s1",
+          "definition": "now; at the present time"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角说：“民心已经向着我们，现在应当行动。",
+        "gloss": "now",
+        "sense_id": "zh-43584f37c1f4-1-s1"
+      },
+      {
+        "sentence": "他对邹靖说：“我曾经跟卢植学习，现在愿意去帮助他。",
+        "gloss": "now",
+        "sense_id": "zh-43584f37c1f4-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3d0d61b1fb85c223dac438fc99cda912424b3556718cd8975d5c43d411c6a7a9"
+}

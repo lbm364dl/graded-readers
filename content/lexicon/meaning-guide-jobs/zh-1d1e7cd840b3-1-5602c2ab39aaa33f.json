@@ -1,0 +1,31 @@
+{
+  "id": "zh-1d1e7cd840b3-1-5602c2ab39aaa33f",
+  "entry_id": "zh-1d1e7cd840b3-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1d1e7cd840b3-1",
+      "headword": "何职",
+      "kind": "word",
+      "reading": "hézhí",
+      "senses": [
+        {
+          "id": "zh-1d1e7cd840b3-1-s1",
+          "definition": "what official post or position"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "董卓问他们担任何职，刘备回答：“我们都是白身。",
+        "gloss": "what office",
+        "sense_id": "zh-1d1e7cd840b3-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "062aaadccd330b061ed589620ebdb2eedfc2657e395c0db0a6f7471a221a227e"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-2a2ed95378f6-1-8b968464c914ded6",
+  "entry_id": "zh-2a2ed95378f6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2a2ed95378f6-1",
+      "headword": "赶往",
+      "kind": "construction",
+      "reading": "gǎnwǎng",
+      "senses": [
+        {
+          "id": "zh-2a2ed95378f6-1-s1",
+          "definition": "to hurry toward a place"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他和关羽、张飞带五百人赶往广宗。",
+        "gloss": "hurry to",
+        "sense_id": "zh-2a2ed95378f6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2c956fff31df94a9eeb2c02e333f69ed6cdc9ad5252780967e513b2c48698e61"
+}

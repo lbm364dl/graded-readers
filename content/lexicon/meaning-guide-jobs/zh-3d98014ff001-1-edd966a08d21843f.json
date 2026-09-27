@@ -1,0 +1,31 @@
+{
+  "id": "zh-3d98014ff001-1-edd966a08d21843f",
+  "entry_id": "zh-3d98014ff001-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-3d98014ff001-1",
+      "headword": "偷看",
+      "kind": "word",
+      "reading": "tōukàn",
+      "senses": [
+        {
+          "id": "zh-3d98014ff001-1-s1",
+          "definition": "sneak a look at; look at furtively"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹节偷看奏章后，立即告诉身边的人，于是宦官借别的事陷害蔡邕，皇帝把他放归田里。",
+        "gloss": "sneak a look at",
+        "sense_id": "zh-3d98014ff001-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a766c12b92637ea6a44f0bca74698b84c4b9da045a9f0e5a28b3b2004f2073bd"
+}

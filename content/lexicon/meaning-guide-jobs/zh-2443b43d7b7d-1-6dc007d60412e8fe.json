@@ -1,0 +1,31 @@
+{
+  "id": "zh-2443b43d7b7d-1-6dc007d60412e8fe",
+  "entry_id": "zh-2443b43d7b7d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2443b43d7b7d-1",
+      "headword": "军粮",
+      "kind": "word",
+      "reading": "jūnliáng",
+      "senses": [
+        {
+          "id": "zh-2443b43d7b7d-1-s1",
+          "definition": "food supplies for an army"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "我说军粮还不够，哪里有钱送给他？",
+        "gloss": "army provisions",
+        "sense_id": "zh-2443b43d7b7d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "dbbcd082a9950c94dddbd5687dbc4400510e8812a089aeb33a50d03b3bf0366d"
+}

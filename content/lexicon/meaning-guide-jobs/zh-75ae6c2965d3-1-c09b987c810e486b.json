@@ -1,0 +1,36 @@
+{
+  "id": "zh-75ae6c2965d3-1-c09b987c810e486b",
+  "entry_id": "zh-75ae6c2965d3-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-75ae6c2965d3-1",
+      "headword": "骗过",
+      "kind": "word",
+      "reading": "piànguò",
+      "senses": [
+        {
+          "id": "zh-75ae6c2965d3-1-s1",
+          "definition": "to deceive someone successfully"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹嵩责备他后，他装作中风，骗过了父亲。",
+        "gloss": "to fool successfully",
+        "sense_id": "zh-75ae6c2965d3-1-s1"
+      },
+      {
+        "sentence": "曹操便假装中风，骗过父亲，后来依旧放荡。",
+        "gloss": "to deceive someone successfully",
+        "sense_id": "zh-75ae6c2965d3-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "27e5df6c70ec13f4f21887c6de0d7be82eb41bd8b1e4c9add256ea56a878890f"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "zh-c680a707a2b8-1-7f4d83cd4b09c8e7",
+  "entry_id": "zh-c680a707a2b8-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c680a707a2b8-1",
+      "headword": "大喜",
+      "kind": "word",
+      "reading": "dàxǐ",
+      "senses": [
+        {
+          "id": "zh-c680a707a2b8-1-s1",
+          "definition": "to be very happy"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”刘备告知自己的志向，关羽大喜。",
+        "gloss": "to be overjoyed",
+        "sense_id": "zh-c680a707a2b8-1-s1"
+      },
+      {
+        "sentence": "曹操听后大喜。",
+        "gloss": "be delighted",
+        "sense_id": "zh-c680a707a2b8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "12424a904184dbc941f207f70dbb72b1b1b426f356258e2e2ed0e3b5b5cfa5c5"
+}

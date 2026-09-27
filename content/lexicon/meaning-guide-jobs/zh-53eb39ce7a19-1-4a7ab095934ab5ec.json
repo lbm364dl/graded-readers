@@ -1,0 +1,36 @@
+{
+  "id": "zh-53eb39ce7a19-1-4a7ab095934ab5ec",
+  "entry_id": "zh-53eb39ce7a19-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-53eb39ce7a19-1",
+      "headword": "斤",
+      "kind": "word",
+      "reading": "jīn",
+      "senses": [
+        {
+          "id": "zh-53eb39ce7a19-1-s1",
+          "definition": "a traditional Chinese unit of weight"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "二人了解后很高兴，赠送五十匹好马、金银五百两和铁一千斤，帮助三人打造兵器。",
+        "gloss": "jin",
+        "sense_id": "zh-53eb39ce7a19-1-s1"
+      },
+      {
+        "sentence": "于是，刘备请工匠打造双股剑，关羽打造青龙偃月刀，重八十二斤，张飞打造丈八点钢矛，并各自准备全身铠甲。",
+        "gloss": "jin",
+        "sense_id": "zh-53eb39ce7a19-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ed20b5d75d1474a170d096de0e21642a5998c4d88d8f70b1ec83c6dfd50e6e82"
+}

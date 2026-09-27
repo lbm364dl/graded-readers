@@ -1,5 +1,19 @@
 # Graded Reader Pipeline
 
+## Dictionary investigation backlog
+
+Successful dictionary updates refresh `content/lexicon/dictionary.investigations.json`
+from reviewed guide `investigation_questions` (component + question), existing
+research gaps, and reader notes in `dictionary.investigation-notes.json`.
+Issues have stable IDs, entry links, evidence, a current flag and persistent triage
+status. They are internal and are not included in learner-facing guide prose.
+Refreshing this backlog makes no model/web calls and does not schedule editorial
+jobs. A later deliberate investigation can produce a targeted editorial request;
+`python -m pipeline.dictionary_corpus --edit-guides` applies those requests using
+the already reviewed lexical/tap/expression layers, without rerunning their agents.
+Ordinary updates do not repeatedly research an unresolved issue. Disappearing
+questions are marked non-current, not silently treated as proven or deleted.
+
 ## Overview
 
 This pipeline systematically generates and validates graded reader texts using
@@ -22,6 +36,306 @@ a given level. Glossary characters (proper nouns, place names) are excluded
 from this count.
 
 ## Quick start
+
+### HSK1 usage dictionary pilot
+
+`python3 -m pipeline.usage_dictionary --update` matches reviewed usages to shared
+entries/senses, runs an independent critic and bounded repair loop, and publishes
+`app/assets/usage_dictionary.json` only after all checks pass. Requires Python 3.11+
+and the same authenticated Codex CLI as the annotation pipeline. Proposal,
+review and repair calls use `gpt-6-luna` at `low`, with up to four concurrent calls.
+A Luna `medium` adjudicator filters failed reviews before repairs, so low-effort
+critics do not force speculative distinctions or oscillate on acceptable variants.
+This is an explicit post-annotation step. The original HSK1 registries remain
+reproducible and separate from the incremental HSK2 trial described below.
+
+### Incremental dictionary across HSK levels
+
+`python -m pipeline.dictionary_corpus --prepare --scope full` matches the
+already-reviewed HSK2 annotation to shared identities, reviews new usage links,
+and prints the dictionary-editor work plan without starting research jobs.
+`python -m pipeline.dictionary_corpus --update --scope full --workers 8` updates
+and publishes the full HSK2 chapter alongside HSK1. Previously reviewed matching,
+reading-unit and dictionary decisions are reused. Optional `--scope sample`
+limits indexing to the oath-and-drinking paragraph beginning `第二天，三人在桃园`;
+that limited coverage is explicitly recorded and labeled in the UI. Source text,
+lexical boundaries, IDs and offsets are never rewritten by dictionary editing.
+`--workers 8` allows up to eight
+independent editorial jobs; the default is four. Whole jobs are bounded so source
+verification and final editing do not wait behind every remaining research call.
+Research, verification, writing and review remain separate roles with the same
+tool restrictions. Failed jobs do not publish a partial dictionary.
+Use `--levels hsk1 hsk2 hsk3 hsk4` to extend the corpus through chapter 1 of
+HSK3 and HSK4. Add `hsk5 hsk6` to that list to extend both complete first
+chapters through HSK6; already published levels remain part of the same corpus.
+Verify the generated higher-level assets with
+`python -m scripts.audit_hsk56_dictionary_publication` after asset generation.
+Subsequent rebuilds default to the published level list. Each
+level reuses the shared dictionary identities, including identities approved for
+earlier levels in the same run; this prevents duplicate entries across new texts.
+Every level has its own reviewed sense and reading-unit registry. Existing
+annotations supply lexical evidence; dictionary editing does not regenerate them.
+New tap-unit runs split large chapters at sentence-ending punctuation, keeping
+original global segment indices. Each batch gets an offline draft and independent
+high-effort review; the reassembled chapter is validated again for overlaps and
+exact source spans. Previously approved chapter decisions remain reusable.
+Research validation permits at most two corrective attempts per stage, plus one
+malformed-JSON retry; final guide validation permits one offline high-effort
+repair. Every repaired output passes the same checks before it can be accepted.
+
+HSK1 is rebuilt deterministically, not sent back to agents. Later-level occurrences reuse
+approved entry/sense IDs and definitions. New entries/senses get deterministic
+ASCII IDs; model spellings cannot rename existing identities. Shared metadata
+cannot be rewritten by an occurrence-linking job. Conflicting reviewed meanings
+fail rather than being silently merged. Canonical expression entries can also
+acquire direct lexical occurrences in another text without becoming duplicates.
+Lexical homonyms with different readings get separate entries; occurrence linking
+must not change an approved entry's reading (e.g. nàn versus nán for 难).
+Pronunciation variation of the same lexical item or person does not create a
+second identity; observed source readings supplement the canonical reading.
+Canonical bindings can reuse a word across different source boundaries, such as
+救下 versus 救|下, or select an independently reviewed carrier inside an inflected
+token, such as 开 inside 开得. These create additional span usages, never rewrite
+the original lexical sense assignments. Exact whole-token bindings still require
+the already reviewed sense. Copied canonical offsets can be restored only when
+the chosen headword occurs once in the supplied unit; repeated substrings remain
+ambiguous. Canonical names and lexical compounds retain their classification;
+they are not automatically grammatical constructions.
+Each matching/repair batch is checked for missing, duplicate, unknown and
+wrong-headword occurrence links before it joins the corpus. Copied ID typos may
+be restored deterministically only for a unique matching headword whose existing
+sense definitions match exactly; ambiguous identities still require agent repair.
+Occurrence-reference repair is similarly limited to a unique same-headword,
+same-source, same-position reference with a one-character fingerprint typo.
+Missing, duplicate and misassigned uses still require bounded agent correction.
+Existing canonical-expression components and definitions are restored from their
+immutable approved registry before validating new bindings. Incremental updates
+seed identities from the published snapshot, allowing a reviewed next-scope
+registry to coexist with the previous publication while explanations are pending.
+
+`hsk2.senses.json` and `hsk2.reading-units.json` hold source-local decisions.
+`corpus.expressions.json` retains unchanged binding decisions by per-candidate
+fingerprints, and `corpus.meaning-guides.json` starts with approved HSK1 guides.
+New expression bindings are reviewed in bounded batches of thirty. Each batch
+retains the prior canonical registry and commits an independently reviewed subset;
+a failed later batch resumes from that subset. Publication still requires the
+complete requested corpus, not a partial set of bindings.
+Only new entries, changed sense coverage or explicit requests trigger dictionary
+research/editing. `corpus.last-update.json` records reuse and scheduled work.
+Lexical reviews retain per-headword approval fingerprints and content-addressed
+approved batch checkpoints. Reviews retain validated successful sibling batches
+even when another batch fails; failed headwords remain unapproved and cannot be
+published. When a lexical review agent times out, the corpus updater retries only
+pending headwords in batches of five rather than the default twenty. Successful
+approvals remain cached; smaller batches do not bypass independent review or
+validation. Other failures are not silently treated as timeouts.
+A targeted editorial review uses high effort and can
+correct one entry without rerunning the corpus. ID-addressed review findings scope
+repairs to affected headwords, retaining all other entries and links untouched;
+unaddressed findings conservatively retain full-batch repair. The assembled batch
+still passes independent review and complete occurrence validation afterward.
+Initial proposal repairs likewise scope exact identity/link failures by headword,
+including both sides of a misplaced occurrence. Unexpected headwords retain the
+full-batch fallback; a scoped repair cannot return or alter withheld headwords.
+Copied occurrence fingerprints may be corrected for a single substituted
+character or a short duplicated block only when the source path, segment number,
+and supplied headword identify exactly one current occurrence. This cannot repair
+a changed source, position or headword, or choose between senses.
+Naming predicates and their particular name arguments stay separate taps and
+dictionary identities. Their contextual grammar notes explain the surname,
+given-name or courtesy-name role without creating a word for the filled phrase.
+Existing shared definitions stay
+read-only during occurrence linking; a deterministic metadata guard also checks
+cached and newly approved review results before they can be accepted.
+When review reuses an approved expression newly attested as a whole lexical token,
+ID allocation protects that shared identity even if it was absent from the local
+provisional registry; examples must join the existing entry, not a duplicate.
+A newly discovered construction must not donate its whole meaning to one component
+(e.g. 没有 inside 有没有, or 下来
+inside 活下来). Context-specific gloss corrections are recorded separately in
+`contextual-gloss-corrections.json`; these do not change segmentation or sense IDs.
+Once `corpus.json` is published, the normal usage-dictionary, reading-unit and
+asset-generation commands preserve the enabled corpus rather than reverting to
+HSK1. No-flag rebuilds and `dictionary_corpus --plan` make no model calls.
+
+All Chinese annotation, review, reading-unit and dictionary roles share
+`chinese_translation_policy.py`: English must not add unsupported specificity.
+For example, 酒 is not automatically wine (or a particular kind of wine), and
+historical plausibility is not evidence. A narrower contextual gloss needs actual
+contextual support. Updating this guidance does not blanket-regenerate approved
+annotations or dictionary explanations.
+
+The durable registry is `content/lexicon/hsk1.senses.json`. Existing IDs are sent
+back to agents on updates; retired entries/senses retain their IDs with empty
+evidence lists and are omitted from the app. Each current lexical segment must
+link to exactly one sense. Contextual glosses remain separate from shared definitions.
+Source fingerprints and a digest of reviewed decisions prevent stale publication.
+The app also rejects links if its chapter text differs from the indexed source.
+
+Dictionary guides explain reusable lexical meanings; reader annotations retain
+the contextual layer. A dictionary link is not a replacement for a construction
+note, a non-obvious grammatical role, or an explanation of a word's contribution
+to a larger expression. Short translations are sufficient for straightforward
+uses, not for uses whose interpretation depends on an unexplained construction.
+Chinese grammar overlays are displayed on overlapping taps, including grouped
+reading units and their original lexical components.
+
+Source-boundary corrections must precede final dictionary editing. Independent
+review must distinguish complete compounds/names from fused name+verb tokens and
+ordinary subject+predicate phrases; relabeling a malformed token as a construction
+is not a substitute for correcting its boundaries. `lexical_boundary_migration`
+provides pure span-checked helpers: unchanged evidence can retain valid per-word
+approvals, changed/new links remain unapproved, and original prose cannot change.
+Callers must lock the corpus, verify the reviewed source digest, retain backups,
+validate complete staged sources/registries, and only then write changes. Existing
+story explanations are retained when their exact term survives a merge.
+
+Use `--propose` for an initial unreviewed registry, `--review` to independently
+review/repair an existing proposal and publish it, or no flags for a deterministic,
+model-free rebuild. Agent logs are in `runs/usage-dictionary-hsk1/agents/`.
+Failed review leaves the previous published asset untouched. Updates re-evaluate
+the HSK1 corpus against the existing registry; unchanged proposal inputs need no
+new matching calls. Cross-book aliases and nested subsegments are not yet indexed.
+
+In the Chinese library, open **Reading dictionary**, or tap **Dictionary** in an
+HSK1 word's explanation. A shared sense shows actual source examples; tapping an
+example opens its chapter and highlights the occurrence.
+
+Reading tap boundaries are independent of these dictionary segments. The HSK1
+`--update` command also runs `pipeline.chinese_reading_units`: Luna low proposes
+contextual predicate-sized units and compact reusable constructions; an independent Luna high pass reviews and
+corrects them. `content/lexicon/hsk1.reading-units.json` stores reviewed decisions;
+`app/assets/chinese_reading_units.json` is the generated display layer. The reader
+opens whole forms such as 看到了 and 来了 and exposes original lexical segments
+under Components, preserving their contextual dictionary links. It does not infer
+groupings from spelling or merge every aspect particle mechanically.
+Separate glosses can hide a construction's logic: 国家 | 有难 keeps the subject
+separate while explaining 有 + noun 难 (nàn, trouble), not adjective 难 (nán).
+Agents explain the semantic/grammatical bridge and relevant reading or word-class
+contrast. Ordinary verb + referential object phrases and whole clauses remain
+separate; this is not a license for arbitrary phrase grouping.
+
+Run `python -m pipeline.chinese_reading_units --update` after HSK1 source changes.
+Both the asset publisher and reader reject stale display-unit data instead of
+silently reverting to fragmented taps. Other levels retain their existing display.
+
+The layered dictionary pilot also maps those reviewed reading units to canonical
+entries using `pipeline.expression_dictionary` (invoked by dictionary `--update`).
+For example, 看到了 opens as one unit but links to 看到; 看到 links to its base
+看 and result complement 到. The 看 page lists attested expressions built on it.
+Simple aspect forms such as 来了 link to the existing 来 sense without creating
+duplicate headwords/examples. Base lexical occurrence IDs and tap boundaries are
+unchanged. `hsk1.expressions.json` stores reviewed expression IDs, ordered component
+relations and precise surface-to-canonical span bindings. Luna low proposes and
+Luna high reviews; deterministic validation checks spans, references, sense reuse,
+complete reading-unit coverage and unchanged-input caching before publication.
+Only attested expressions from the HSK1 reading-unit layer are added in this first
+trial; it does not fabricate unseen complements or reanalyse every existing compound.
+Compact constructions such as 有难 likewise receive a reusable entry linked to
+their original components; the original 有 and 难 occurrences remain intact.
+Invalid tap proposals are returned to the independent reviewer, and invalid
+expression links receive at most two validation-guided repair attempts. Duplicate
+identity and component-reconstruction errors identify the offending headword and
+the exact existing identities or reconstructed text, rather than asking the editor
+to rediscover the problem across the entire registry. Invalid final
+results fail closed rather than changing an existing lexical sense assignment.
+
+Every pilot entry also has a **How this word makes sense** explanation. Context
+annotation, occurrence-to-sense linking and dictionary editing are separate jobs.
+New occurrences reuse an existing sense/definition whenever it fits. Only a new
+entry, changed meaning coverage or an explicit editorial request invokes the
+dictionary editor. Adding examples does NOT regenerate approved explanations.
+Learner-facing explanations emphasize supported present-day composition, not a
+research report or proof of historical origin. Irrelevant historical disclaimers,
+source-access details and inline internal citation IDs stay out of the prose;
+the structured research dossier retains evidence and limitations. Single-character
+entries explain their lexical role and leave graph origins to the hanzi dictionary.
+
+Dictionary editing defaults to two independent Luna calls: a low-effort offline
+draft and a high-effort offline review. Both return a structured research decision
+and concrete questions. Either can escalate uncertain composition or a necessary
+historical claim; the reviewer cannot erase the writer's research concern. A
+deterministic backstop also routes explicit uncertainty and historical claims
+to research. A lexicalized label alone is not uncertainty: a confidently explained
+conventional meaning need not establish its historical origin. Reviewers must not
+use that label to hide a real gap in understanding a useful component contribution.
+Accepted offline explanations carry `evidence_status=reviewed_unresearched`, no
+research dossier and no source claim IDs. They are reviewed, not source-verified.
+
+Escalation runs external research, independent high-effort source verification,
+then writing and editorial review using the verified dossier. Research/verification
+have live web search but no shell; writing and review have web and shell disabled.
+Already completed, valid research is checked by a cache-only lookup and reused
+before considering the offline route; a cache miss cannot launch a research call.
+`editorial_route` records offline review, research, or reused cached research.
+Use `dictionary_meaning_guides --request WORD --reason REASON --research` to
+explicitly require source verification even for an otherwise simple entry.
+Role settings are part of the agent cache key, and tool-event audits reject
+unexpected tool use or a researcher that did not actually browse. These are AI
+checks, not specialist certification. Historical lexical explanations are allowed
+when supported; unsupported historical narratives and forced splits are not.
+The reviewer checks both invented explanations AND giving up too early. A research
+gap is not proof that a word cannot be explained. Dossiers retain source URLs,
+titles, access dates, paraphrased evidence, claim-to-source links, searches and gaps.
+Researched explanations and parts cite claim IDs; invalid provenance fails closed,
+with at most two research repair attempts. The app exposes sources and research notes
+only for entries that actually have a research dossier.
+Guides must stand alone as reusable dictionary explanations: source sentences
+constrain sense coverage but are not narrated in the explanation, parts, or
+caveats. Context-specific commentary belongs to occurrence annotations instead.
+Generic illustrations use the smallest canonical form needed for the point, not
+unrelated particles or sentence scaffolding (e.g. 看到 rather than 看到了 when
+explaining 到 rather than its interaction with 了).
+
+Reviewed guides live in `content/lexicon/hsk1.meaning-guides.json`. Their input
+fingerprints cover lexical identity, sense definitions and word-part relations,
+NOT examples or the current prompt version. Earlier reviewed guides are migrated
+without rewriting and explicitly labeled legacy/unresearched in the registry.
+Prompt changes apply to subsequent editorial jobs; they do not trigger corpus-wide
+rewrites. Explicit requests opt existing entries into re-editing. Requests for the
+same entry coalesce into one job; fulfilled request hashes prevent repeated work.
+`meaning-guide-jobs/` records pending/reviewed/failed jobs; `meaning-guide-history/`
+retains previous registries. A per-registry process lock prevents overlapping
+editorial runs. Failures preserve the previously published dictionary; completed
+agent steps remain cached for retry. Parts must reconstruct the headword and
+references must resolve before publication. Tap units and lexical occurrences are
+never changed by dictionary editorial work.
+
+```bash
+# Queue a targeted improvement (no model call yet); prints pending jobs.
+python -m pipeline.dictionary_meaning_guides --request 国家 \
+  --reason 'Investigate the contribution of 家 using external sources'
+# Inspect pending jobs without changing them.
+python -m pipeline.dictionary_meaning_guides
+# Process queued/missing/changed entries and publish.
+python -m pipeline.usage_dictionary --update
+# Same request mechanism for word entries discovered within other words.
+python -m pipeline.dictionary_meaning_guides --components --request 黄巾 \
+  --reason 'Clarify the connection between the cloth and the group name'
+```
+
+Publication also runs `dictionary_component_links`: every genuine guide part has
+code-point `start`/`end` offsets within its headword, `entry_id`, nullable `sense_id`,
+and `link_status`. A unique existing headword is an entry-level navigation link,
+not an inferred sense match. Missing multi-character parts are recursively promoted
+by `component_words` into real lexical entries: low/high identity creation followed
+by the same researched editorial workflow. `hsk1.component-words.json` stores their
+identities and `hsk1.component-meaning-guides.json` their reusable explanations.
+For example, 黄巾军 links to 黄巾, which explains 黄 + 巾. Strictly shorter written
+parts guarantee termination. Existing component entries/guides are reused, including
+when discovered in another parent. `origin=component_word` records that evidence is
+within a compound, not a fabricated standalone usage; reverse `component_uses`
+links lead back to parent words and their real examples.
+
+Single characters with an existing lexical entry link there. Otherwise they carry
+a typed `character_ref` (`dictionary=hanzi-etymology`, exact character and Unicode
+ID), opening the app's existing character/etymology view rather than manufacturing
+thin lexical entries. Single-character lexical entries also carry a `character_ref`
+and expose a **Character & etymology** link, keeping the word and character views
+connected without conflating their meanings. This uses the currently imported etymology data; it is not
+yet an automatic sync with the separate etymology repo's new editorial exports.
+Whole-word parts are marked `whole_entry` with no self-link. Ambiguous word-level
+targets fail closed rather than silently choosing a sense or homograph.
 
 ```bash
 # Extract character sets from word/character CSVs

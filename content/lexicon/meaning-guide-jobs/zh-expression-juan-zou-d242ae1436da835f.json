@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-juan-zou-d242ae1436da835f",
+  "entry_id": "zh-expression-juan-zou",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-juan-zou",
+      "headword": "卷走",
+      "reading": "juǎnzǒu",
+      "base_entry_id": "zh-ef4b231493a1-1",
+      "components": [
+        {
+          "entry_id": "zh-ef4b231493a1-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-f66de6c4cd41-1",
+          "role": "directional complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-juan-zou-s1",
+          "definition": "sweep or carry away"
+        }
+      ],
+      "kind": "construction"
+    },
+    "examples": [
+      {
+        "sentence": "建宁四年二月，洛阳地震，海水泛滥，沿海居民被大浪卷走。",
+        "gloss": "sweep or carry away",
+        "sense_id": "zh-expression-juan-zou-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "卷",
+        "role": "verb"
+      },
+      {
+        "headword": "走",
+        "role": "directional complement"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9fdbd46139765f0c2a1bbd620c947acb4690339396440a9bdfacf29947dddc0c"
+}

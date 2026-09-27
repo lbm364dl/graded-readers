@@ -1,0 +1,31 @@
+{
+  "id": "zh-0657b793cbb9-1-16883d724675d787",
+  "entry_id": "zh-0657b793cbb9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-0657b793cbb9-1",
+      "headword": "带领",
+      "kind": "word",
+      "reading": "dàilǐng",
+      "senses": [
+        {
+          "id": "zh-0657b793cbb9-1-s1",
+          "definition": "to lead or guide people"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "两天后，他们看见董卓带领的汉军被张角打败，黄巾军正在追赶董卓。",
+        "gloss": "lead",
+        "sense_id": "zh-0657b793cbb9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9a0fe0e3d5a9a93a63c98130057702e26f65b5ab33b83128d0479ec8aefe22e6"
+}

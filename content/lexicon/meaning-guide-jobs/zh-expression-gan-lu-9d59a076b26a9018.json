@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-gan-lu-9d59a076b26a9018",
+  "entry_id": "zh-expression-gan-lu",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-gan-lu",
+      "headword": "赶路",
+      "reading": "gǎnlù",
+      "kind": "expression",
+      "base_entry_id": "zh-94beea58b8a8-1",
+      "components": [
+        {
+          "entry_id": "zh-94beea58b8a8-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-09c7804e4ff8-1",
+          "role": "journey"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-gan-lu-s1",
+          "definition": "hurry along on a journey"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备接受命令，连夜赶路。",
+        "gloss": "hurry along on a journey",
+        "sense_id": "zh-expression-gan-lu-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "赶",
+        "role": "verb"
+      },
+      {
+        "headword": "路",
+        "role": "journey"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3204cf4309ca1bfdcad382c814c84acba4d340c39f6e512fb3a08c90f7078e49"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-3869deb566dd-1-799ea583e641757c",
+  "entry_id": "zh-3869deb566dd-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-3869deb566dd-1",
+      "headword": "邹靖",
+      "kind": "name",
+      "reading": "Zōu Jìng",
+      "senses": [
+        {
+          "id": "zh-3869deb566dd-1-s1",
+          "definition": "a personal name"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "幽州的兵不够，刘焉听从邹靖的建议。",
+        "gloss": "Zou Jing",
+        "sense_id": "zh-3869deb566dd-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a3b70b809ec09724846de33f2bcbfd48d261d6bf8482d391a794e37c0f1ecca3"
+}

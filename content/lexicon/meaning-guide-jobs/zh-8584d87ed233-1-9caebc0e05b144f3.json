@@ -1,0 +1,31 @@
+{
+  "id": "zh-8584d87ed233-1-9caebc0e05b144f3",
+  "entry_id": "zh-8584d87ed233-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8584d87ed233-1",
+      "headword": "设立",
+      "kind": "word",
+      "reading": "shèlì",
+      "senses": [
+        {
+          "id": "zh-8584d87ed233-1-s1",
+          "definition": "to establish or set up"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "之后，张角设立三十六方。",
+        "gloss": "to establish",
+        "sense_id": "zh-8584d87ed233-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c34ead1793a5fb0a74acc12151b5c28829fcf942675804c530350a192f7c8239"
+}

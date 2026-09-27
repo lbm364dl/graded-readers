@@ -1,0 +1,31 @@
+{
+  "id": "zh-ef4b231493a1-1-18b36292baaeadce",
+  "entry_id": "zh-ef4b231493a1-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ef4b231493a1-1",
+      "headword": "卷",
+      "kind": "word",
+      "reading": "juǎn",
+      "senses": [
+        {
+          "id": "zh-ef4b231493a1-1-s1",
+          "definition": "sweep or carry along"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "建宁四年二月，洛阳地震，海水泛滥，沿海居民被大浪卷走。",
+        "gloss": "to sweep away",
+        "sense_id": "zh-ef4b231493a1-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6d6f4e6199f2dab7ea426565ee7e1a41eb0e43fa3165a194f9e7654d1e10d4de"
+}

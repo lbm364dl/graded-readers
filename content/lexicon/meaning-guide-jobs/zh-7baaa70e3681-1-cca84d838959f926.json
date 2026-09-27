@@ -1,0 +1,31 @@
+{
+  "id": "zh-7baaa70e3681-1-cca84d838959f926",
+  "entry_id": "zh-7baaa70e3681-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7baaa70e3681-1",
+      "headword": "要钱",
+      "kind": "word",
+      "reading": "yàoqián",
+      "senses": [
+        {
+          "id": "zh-7baaa70e3681-1-s1",
+          "definition": "to ask someone for money; to demand money"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "卢植说：“朝廷派来的人向我要钱，我没有同意。",
+        "gloss": "demand money",
+        "sense_id": "zh-7baaa70e3681-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4bc6632b866d8a96c2020c41e8ced8c53ae1fb0140a11101e5b47802fcd7ecfa"
+}

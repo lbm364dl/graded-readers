@@ -1,0 +1,31 @@
+{
+  "id": "zh-4b6ac550f7d2-1-b98d97fa337a6659",
+  "entry_id": "zh-4b6ac550f7d2-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4b6ac550f7d2-1",
+      "headword": "皇天后土",
+      "kind": "expression",
+      "reading": "huáng tiān hòu tǔ",
+      "senses": [
+        {
+          "id": "zh-4b6ac550f7d2-1-s1",
+          "definition": "Heaven and Earth, invoked as witnesses"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇天后土，实鉴此心；背义忘恩，天人共戮。",
+        "gloss": "Heaven and Earth",
+        "sense_id": "zh-4b6ac550f7d2-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "20608e2ea16db707895cad7f15e1ab203923baf93a411cd51e2113bfa0d87c2c"
+}

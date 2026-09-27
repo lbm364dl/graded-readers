@@ -1,0 +1,31 @@
+{
+  "id": "zh-a9ac5160cd20-1-5b89ec2be6f1fe53",
+  "entry_id": "zh-a9ac5160cd20-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a9ac5160cd20-1",
+      "headword": "发誓",
+      "kind": "word",
+      "reading": "fāshì",
+      "senses": [
+        {
+          "id": "zh-a9ac5160cd20-1-s1",
+          "definition": "swear; make a solemn promise"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "还发誓同心救民。",
+        "gloss": "swear",
+        "sense_id": "zh-a9ac5160cd20-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a6a2e9c26d85d556171c456aac51613e826ae2be6f1ae9dd347849c5365bb6ef"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-a21911780672-1-301ece219bfb3eb5",
+  "entry_id": "zh-a21911780672-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a21911780672-1",
+      "headword": "奖励",
+      "kind": "word",
+      "reading": "jiǎnglì",
+      "senses": [
+        {
+          "id": "zh-a21911780672-1-s1",
+          "definition": "to reward; reward"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘焉迎接他们，并奖励士兵。",
+        "gloss": "reward",
+        "sense_id": "zh-a21911780672-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1017c010349dd45ffbdc3a864248e7757644432d3c944639afdb900e9bc66b5c"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-ba166c7bc196-1-60090ef81201ea13",
+  "entry_id": "zh-ba166c7bc196-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ba166c7bc196-1",
+      "headword": "有没有",
+      "kind": "construction",
+      "reading": "yǒu méi yǒu",
+      "senses": [
+        {
+          "id": "zh-ba166c7bc196-1-s1",
+          "definition": "whether someone has or possesses something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "董卓问他们有没有职位。",
+        "gloss": "whether they have",
+        "sense_id": "zh-ba166c7bc196-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7a195f79a53df529728dc6350df697ade01e7afcce6eda9679e1fb04e5cf41ef"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-c36a67703940-1-82ae2cb10e3ff5b3",
+  "entry_id": "zh-c36a67703940-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c36a67703940-1",
+      "headword": "四面",
+      "kind": "word",
+      "reading": "sìmiàn",
+      "senses": [
+        {
+          "id": "zh-c36a67703940-1-s1",
+          "definition": "all sides; every direction"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人上山，看见汉军已经失败，黄巾军从四面赶来，旗上写着“天公将军”。",
+        "gloss": "all directions",
+        "sense_id": "zh-c36a67703940-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0291923ec6677ef1d49c609515da22f225b61124f97dba231fb3ab5fee2ead67"
+}

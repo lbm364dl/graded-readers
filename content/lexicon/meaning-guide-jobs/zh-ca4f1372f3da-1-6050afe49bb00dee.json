@@ -1,0 +1,31 @@
+{
+  "id": "zh-ca4f1372f3da-1-6050afe49bb00dee",
+  "entry_id": "zh-ca4f1372f3da-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ca4f1372f3da-1",
+      "headword": "害",
+      "kind": "word",
+      "reading": "hài",
+      "senses": [
+        {
+          "id": "zh-ca4f1372f3da-1-s1",
+          "definition": "to harm or kill"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "宦官曹节等人掌权，窦武、陈蕃企图除掉他们，却因事情没有保密而被害。",
+        "gloss": "harm",
+        "sense_id": "zh-ca4f1372f3da-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a7a6a877af7bfd00f81f9309ac8058801a8eacdb8b4961a395ed39f7ce8521e3"
+}

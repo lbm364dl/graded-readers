@@ -1,0 +1,31 @@
+{
+  "id": "zh-37ef6bce1cad-1-cf64df647f5b9a0d",
+  "entry_id": "zh-37ef6bce1cad-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-37ef6bce1cad-1",
+      "headword": "秋七月",
+      "kind": "word",
+      "reading": "qiū qī yuè",
+      "senses": [
+        {
+          "id": "zh-37ef6bce1cad-1-s1",
+          "definition": "the seventh month of autumn"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "秋七月，玉堂出现虹，五原山岸崩裂。",
+        "gloss": "autumn, seventh month",
+        "sense_id": "zh-37ef6bce1cad-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "11487753548bf210776044e159e5c7eaa5e1481cd247031c83297e07dee241ab"
+}

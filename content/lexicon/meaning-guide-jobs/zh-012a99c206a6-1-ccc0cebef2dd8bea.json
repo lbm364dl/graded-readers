@@ -1,0 +1,31 @@
+{
+  "id": "zh-012a99c206a6-1-ccc0cebef2dd8bea",
+  "entry_id": "zh-012a99c206a6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-012a99c206a6-1",
+      "headword": "送入",
+      "kind": "construction",
+      "reading": "sòngrù",
+      "senses": [
+        {
+          "id": "zh-012a99c206a6-1-s1",
+          "definition": "to send or convey someone or something into a place"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇帝震惊得倒下，身边的人急忙把他送入宫中，百官也赶快躲开。",
+        "gloss": "to send into",
+        "sense_id": "zh-012a99c206a6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "22b34e0d0f42ab7c04a673aa37cb6486892d283efc07707b0b7bbcc885d75445"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "zh-cdfd0b34e491-1-f10ac0a4dbf3f19c",
+  "entry_id": "zh-cdfd0b34e491-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-cdfd0b34e491-1",
+      "headword": "使用",
+      "kind": "word",
+      "reading": "shǐyòng",
+      "senses": [
+        {
+          "id": "zh-cdfd0b34e491-1-s1",
+          "definition": "use; employ"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "卢植说，他围住张角，本来将要取胜，却因张角使用妖术，未能立即取胜。",
+        "gloss": "to use",
+        "sense_id": "zh-cdfd0b34e491-1-s1"
+      },
+      {
+        "sentence": "刘备下马询问，卢植说，他围攻张角时本来快要取胜，却因张角使用法术而未能成功。",
+        "gloss": "to use",
+        "sense_id": "zh-cdfd0b34e491-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "18f7839958eb93002619fd4884237a574775e5d1f9332732839f5c95d0a9fd27"
+}

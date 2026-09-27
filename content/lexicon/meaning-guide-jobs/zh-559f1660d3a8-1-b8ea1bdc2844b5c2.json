@@ -1,0 +1,36 @@
+{
+  "id": "zh-559f1660d3a8-1-b8ea1bdc2844b5c2",
+  "entry_id": "zh-559f1660d3a8-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-559f1660d3a8-1",
+      "headword": "山下",
+      "kind": "word",
+      "reading": "shānxià",
+      "senses": [
+        {
+          "id": "zh-559f1660d3a8-1-s1",
+          "definition": "the area below a mountain"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "两队人在山下相遇，刘备叫黄巾军投降。",
+        "gloss": "below the mountain",
+        "sense_id": "zh-559f1660d3a8-1-s1"
+      },
+      {
+        "sentence": "可是黄巾军数量很多，刘备这边的人很少，只好退到山下。",
+        "gloss": "below the mountain",
+        "sense_id": "zh-559f1660d3a8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "81ec422f80ea6a3d1e74ce1ccdcfbe46700f031b11ef846cde30e8fd891615f8"
+}

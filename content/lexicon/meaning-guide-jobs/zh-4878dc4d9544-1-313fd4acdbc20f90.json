@@ -1,0 +1,41 @@
+{
+  "id": "zh-4878dc4d9544-1-313fd4acdbc20f90",
+  "entry_id": "zh-4878dc4d9544-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4878dc4d9544-1",
+      "headword": "随即",
+      "kind": "word",
+      "reading": "suíjí",
+      "senses": [
+        {
+          "id": "zh-4878dc4d9544-1-s1",
+          "definition": "immediately afterward; at once following an event"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹操率军出现，拦住他们的去路，随即发动攻击。",
+        "gloss": "immediately",
+        "sense_id": "zh-4878dc4d9544-1-s1"
+      },
+      {
+        "sentence": "曹操拜见皇甫嵩、朱俊后，随即率军追击败退的黄巾军。",
+        "gloss": "immediately",
+        "sense_id": "zh-4878dc4d9544-1-s1"
+      },
+      {
+        "sentence": "张梁、张宝死战脱身，曹操随即带兵追击。",
+        "gloss": "immediately",
+        "sense_id": "zh-4878dc4d9544-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "22eee582f74ed12e382a82b643f080b422f1af120b0519b0ae159b3e3816f599"
+}

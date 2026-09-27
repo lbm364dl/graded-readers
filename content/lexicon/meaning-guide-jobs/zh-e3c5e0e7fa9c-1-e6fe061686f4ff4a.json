@@ -1,0 +1,31 @@
+{
+  "id": "zh-e3c5e0e7fa9c-1-e6fe061686f4ff4a",
+  "entry_id": "zh-e3c5e0e7fa9c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e3c5e0e7fa9c-1",
+      "headword": "一刀",
+      "kind": "word",
+      "reading": "yìdāo",
+      "senses": [
+        {
+          "id": "zh-e3c5e0e7fa9c-1-s1",
+          "definition": "one stroke or blow with a blade"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "程远志又来打张飞，关羽马上赶到，一刀斩了程远志。",
+        "gloss": "with one stroke",
+        "sense_id": "zh-e3c5e0e7fa9c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8505d4fcbc0a681146c6e153f0ad9111396877471878ba355e16d65ffb86c68b"
+}

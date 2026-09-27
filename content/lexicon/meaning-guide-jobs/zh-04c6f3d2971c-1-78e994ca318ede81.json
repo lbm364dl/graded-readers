@@ -1,0 +1,36 @@
+{
+  "id": "zh-04c6f3d2971c-1-78e994ca318ede81",
+  "entry_id": "zh-04c6f3d2971c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-04c6f3d2971c-1",
+      "headword": "胜负",
+      "kind": "word",
+      "reading": "shèngfù",
+      "senses": [
+        {
+          "id": "zh-04c6f3d2971c-1-s1",
+          "definition": "victory or defeat; the outcome of a contest"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "当时张角有十五万黄巾军，卢植有五万兵马，双方在广宗相持，尚未分出胜负。",
+        "gloss": "victory or defeat",
+        "sense_id": "zh-04c6f3d2971c-1-s1"
+      },
+      {
+        "sentence": "当时张角有十五万黄巾军，卢植有五万兵，双方在广宗相拒，尚未分出胜负。",
+        "gloss": "victory or defeat; outcome",
+        "sense_id": "zh-04c6f3d2971c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "23dfb28360fa246ec04ff053a0c957602e7765a96c3d09421b5ea3e0fed3ef5d"
+}

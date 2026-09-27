@@ -629,6 +629,21 @@ def main() -> None:
         help="emit only chapters with ready reviewed sidecars",
     )
     args = parser.parse_args()
+    # Validate the pilot's independent tap boundaries before replacing assets.
+    # Source edits require an agent update, never silent lexical fragmentation.
+    from pipeline.chinese_reading_units import (
+        DECISIONS as unit_decisions, OUTPUT as unit_output, build as build_units,
+    )
+    from pipeline.annotate_chinese import atomic_json
+    unit_payload = build_units(json.loads(unit_decisions.read_text()))
+    from pipeline.usage_dictionary import (
+        DECISIONS as dictionary_decisions, OUTPUT as dictionary_output, build_published,
+    )
+    dictionary_payload = build_published(json.loads(dictionary_decisions.read_text()))
+    from pipeline import dictionary_corpus
+    if dictionary_corpus.MANIFEST.exists():
+        dictionary_payload = dictionary_corpus.build(publish=False)
+        _, unit_payload = dictionary_corpus.editorial_input()
     ASSET_ROOT.mkdir(parents=True, exist_ok=True)
     annotation_root = ASSET_ROOT / "annotations"
     if annotation_root.exists():
@@ -646,6 +661,8 @@ def main() -> None:
         )
         chapters = sum(len(entry["chapters"]) for entry in entries)
         print(f"Wrote {destination}: {len(entries)} readers, {chapters} chapters")
+    atomic_json(unit_output, unit_payload)
+    atomic_json(dictionary_output, dictionary_payload)
 
 
 if __name__ == "__main__":

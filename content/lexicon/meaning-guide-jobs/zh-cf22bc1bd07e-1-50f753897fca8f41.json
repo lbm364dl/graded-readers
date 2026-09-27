@@ -1,0 +1,41 @@
+{
+  "id": "zh-cf22bc1bd07e-1-50f753897fca8f41",
+  "entry_id": "zh-cf22bc1bd07e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-cf22bc1bd07e-1",
+      "headword": "怒",
+      "kind": "word",
+      "reading": "nù",
+      "senses": [
+        {
+          "id": "zh-cf22bc1bd07e-1-s1",
+          "definition": "angry; anger"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "程远志大怒，命邓茂出战。",
+        "gloss": "angry",
+        "sense_id": "zh-cf22bc1bd07e-1-s1"
+      },
+      {
+        "sentence": "张飞听完大怒，要杀押送卢植的军人。",
+        "gloss": "angry",
+        "sense_id": "zh-cf22bc1bd07e-1-s1"
+      },
+      {
+        "sentence": "程远志大怒，派邓茂出战。",
+        "gloss": "angry",
+        "sense_id": "zh-cf22bc1bd07e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "381a9956e02c82bde80c337921ab6579a8e6538c0385b64bcc01624e9e8cec65"
+}

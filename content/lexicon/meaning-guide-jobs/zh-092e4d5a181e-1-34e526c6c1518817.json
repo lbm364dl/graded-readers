@@ -1,0 +1,31 @@
+{
+  "id": "zh-092e4d5a181e-1-34e526c6c1518817",
+  "entry_id": "zh-092e4d5a181e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-092e4d5a181e-1",
+      "headword": "根",
+      "kind": "word",
+      "reading": "gēn",
+      "senses": [
+        {
+          "id": "zh-092e4d5a181e-1-s1",
+          "definition": "classifier for long, slender objects"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他在县城四座城门放下十多根五颜六色的木棒，并定下严格的禁令。",
+        "gloss": "classifier for long objects",
+        "sense_id": "zh-092e4d5a181e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e243c28094e27a8e2e6b542072f8a7c2a003fec0cb002f57dda8b6b854165f71"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "zh-9edf120e470a-1-5c81ed6b336d2296",
+  "entry_id": "zh-9edf120e470a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9edf120e470a-1",
+      "headword": "商量",
+      "kind": "word",
+      "reading": "shāngliang",
+      "senses": [
+        {
+          "id": "zh-9edf120e470a-1-s1",
+          "definition": "discuss; consult with others to reach a decision"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "跟随他的人不断增加，他便和两个弟弟商量起事。",
+        "gloss": "discuss",
+        "sense_id": "zh-9edf120e470a-1-s1"
+      },
+      {
+        "sentence": "皇甫嵩和朱隽商量后，决定用火攻。",
+        "gloss": "discuss",
+        "sense_id": "zh-9edf120e470a-1-s1"
+      },
+      {
+        "sentence": "窦武、陈蕃于是商量除掉宦官，想改变这种局面。",
+        "gloss": "to discuss",
+        "sense_id": "zh-9edf120e470a-1-s1"
+      },
+      {
+        "sentence": "幽州兵少，刘焉听到消息后，请邹靖商量办法。",
+        "gloss": "to discuss",
+        "sense_id": "zh-9edf120e470a-1-s1"
+      },
+      {
+        "sentence": "刘焉和刘备商量，刘备说：“我愿意去救青州。",
+        "gloss": "discuss",
+        "sense_id": "zh-9edf120e470a-1-s1"
+      },
+      {
+        "sentence": "皇甫嵩、朱隽商量后，决定火攻，命士兵各带一把草，暗中埋下伏兵。",
+        "gloss": "discuss",
+        "sense_id": "zh-9edf120e470a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8616b8b2d4c4cf7118c4f2ed7bb6677dd7fafeabc1eafa7e28d5effadeb5c1ce"
+}

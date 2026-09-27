@@ -1,0 +1,31 @@
+{
+  "id": "zh-dcce132231a6-1-269cc9a2cebf90fa",
+  "entry_id": "zh-dcce132231a6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-dcce132231a6-1",
+      "headword": "安营",
+      "kind": "construction",
+      "reading": "ānyíng",
+      "senses": [
+        {
+          "id": "zh-dcce132231a6-1-s1",
+          "definition": "to set up a camp"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备兵少，打不过，只好退到三十里外安营。",
+        "gloss": "make camp",
+        "sense_id": "zh-dcce132231a6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "504f11aa1368fed23413bf91a0634f6e441f6e2c6b91d8a8c93a170624937a11"
+}

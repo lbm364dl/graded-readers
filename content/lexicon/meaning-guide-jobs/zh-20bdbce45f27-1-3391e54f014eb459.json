@@ -1,0 +1,36 @@
+{
+  "id": "zh-20bdbce45f27-1-3391e54f014eb459",
+  "entry_id": "zh-20bdbce45f27-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-20bdbce45f27-1",
+      "headword": "随后",
+      "kind": "word",
+      "reading": "suíhòu",
+      "senses": [
+        {
+          "id": "zh-20bdbce45f27-1-s1",
+          "definition": "afterward; following that"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹操随后继续追他们。",
+        "gloss": "afterward",
+        "sense_id": "zh-20bdbce45f27-1-s1"
+      },
+      {
+        "sentence": "随后有人大声说：“大丈夫不为国家尽力，为什么长叹？",
+        "gloss": "afterward",
+        "sense_id": "zh-20bdbce45f27-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "be09791c3e56a2d384df2f80b962ea98dc6ec777861c77fcb6607b9a52bc6661"
+}

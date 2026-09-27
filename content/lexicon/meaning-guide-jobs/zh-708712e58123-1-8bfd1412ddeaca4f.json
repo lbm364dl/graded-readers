@@ -1,0 +1,31 @@
+{
+  "id": "zh-708712e58123-1-8bfd1412ddeaca4f",
+  "entry_id": "zh-708712e58123-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-708712e58123-1",
+      "headword": "由",
+      "kind": "word",
+      "reading": "yóu",
+      "senses": [
+        {
+          "id": "zh-708712e58123-1-s1",
+          "definition": "by; handled or determined by"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备连忙拉住他：“这件事应当由朝廷处理，你不能冲动。",
+        "gloss": "by",
+        "sense_id": "zh-708712e58123-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "878fdb16878add5bc247c2d7febf769da1eb2e81dc115b58d1cbc0f99893575b"
+}

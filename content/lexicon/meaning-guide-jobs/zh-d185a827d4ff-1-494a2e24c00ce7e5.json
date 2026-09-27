@@ -1,0 +1,31 @@
+{
+  "id": "zh-d185a827d4ff-1-494a2e24c00ce7e5",
+  "entry_id": "zh-d185a827d4ff-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d185a827d4ff-1",
+      "headword": "身边",
+      "kind": "word",
+      "reading": "shēnbiān",
+      "senses": [
+        {
+          "id": "zh-d185a827d4ff-1-s1",
+          "definition": "at one's side; nearby"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹节偷看奏章后，立即告诉身边的人，于是宦官借别的事陷害蔡邕，皇帝把他放归田里。",
+        "gloss": "at one's side",
+        "sense_id": "zh-d185a827d4ff-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b7b509b8bfb460952bfd9ecfa327009270fb0d992a75c6ddc952f041aae8bae3"
+}

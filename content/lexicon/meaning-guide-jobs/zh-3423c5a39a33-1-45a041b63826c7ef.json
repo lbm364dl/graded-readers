@@ -1,0 +1,31 @@
+{
+  "id": "zh-3423c5a39a33-1-45a041b63826c7ef",
+  "entry_id": "zh-3423c5a39a33-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-3423c5a39a33-1",
+      "headword": "乱世",
+      "kind": "word",
+      "reading": "luànshì",
+      "senses": [
+        {
+          "id": "zh-3423c5a39a33-1-s1",
+          "definition": "a time of disorder"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "许劭起初不肯回答，后来才说，他是太平时的能臣，乱世中的奸雄。",
+        "gloss": "times of disorder",
+        "sense_id": "zh-3423c5a39a33-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7835593632dd96e372891fdaad8a25e6efb871b27e84a79c3eb338f32d9be176"
+}

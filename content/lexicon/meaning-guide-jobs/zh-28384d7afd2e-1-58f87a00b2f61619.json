@@ -1,0 +1,31 @@
+{
+  "id": "zh-28384d7afd2e-1-58f87a00b2f61619",
+  "entry_id": "zh-28384d7afd2e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-28384d7afd2e-1",
+      "headword": "失败",
+      "kind": "word",
+      "reading": "shībài",
+      "senses": [
+        {
+          "id": "zh-28384d7afd2e-1-s1",
+          "definition": "to fail or be defeated"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人上山，看见汉军已经失败，黄巾军从四面赶来，旗上写着“天公将军”。",
+        "gloss": "be defeated",
+        "sense_id": "zh-28384d7afd2e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "36616e0e9375ab61e7c1ed0742fc33003e03c7ef19af1266b3ff2824f0e58688"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-28e0bba69ee9-1-bd2589ddeddf7f06",
+  "entry_id": "zh-28e0bba69ee9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-28e0bba69ee9-1",
+      "headword": "完",
+      "kind": "construction",
+      "reading": "wán",
+      "senses": [
+        {
+          "id": "zh-28e0bba69ee9-1-s1",
+          "definition": "completion complement: finish doing something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”张飞听完十分生气，要杀押车的人，救下老师。",
+        "gloss": "completion complement",
+        "sense_id": "zh-28e0bba69ee9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bc39bbb0bbb172200e30fb1c232dfc42725d58cca76a83d6c5aee904078f5909"
+}

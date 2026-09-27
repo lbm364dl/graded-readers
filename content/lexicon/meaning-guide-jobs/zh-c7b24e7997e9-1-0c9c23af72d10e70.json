@@ -1,0 +1,46 @@
+{
+  "id": "zh-c7b24e7997e9-1-0c9c23af72d10e70",
+  "entry_id": "zh-c7b24e7997e9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c7b24e7997e9-1",
+      "headword": "结束",
+      "kind": "word",
+      "reading": "jiéshù",
+      "senses": [
+        {
+          "id": "zh-c7b24e7997e9-1-s1",
+          "definition": "to end; to be over"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "祭礼结束后，他们聚集乡勇，在桃园中喝酒。",
+        "gloss": "end",
+        "sense_id": "zh-c7b24e7997e9-1-s1"
+      },
+      {
+        "sentence": "事情结束后，刘备想起老师卢植。",
+        "gloss": "end",
+        "sense_id": "zh-c7b24e7997e9-1-s1"
+      },
+      {
+        "sentence": "刘备赶到颍川时，火攻已经结束。",
+        "gloss": "end",
+        "sense_id": "zh-c7b24e7997e9-1-s1"
+      },
+      {
+        "sentence": "他急忙带兵赶去，却发现黄巾军已经败散，战事已经结束。",
+        "gloss": "to end",
+        "sense_id": "zh-c7b24e7997e9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "af5c86590aaddee444cd0dce314573ad51c9189f2a54dd41472b0353ab8a8d00"
+}

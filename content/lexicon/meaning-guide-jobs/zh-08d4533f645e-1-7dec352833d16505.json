@@ -1,0 +1,31 @@
+{
+  "id": "zh-08d4533f645e-1-7dec352833d16505",
+  "entry_id": "zh-08d4533f645e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-08d4533f645e-1",
+      "headword": "良马",
+      "kind": "word",
+      "reading": "liángmǎ",
+      "senses": [
+        {
+          "id": "zh-08d4533f645e-1-s1",
+          "definition": "a fine or good-quality horse"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "二人听后很高兴，赠送良马五十匹、金银五百两和镔铁一千斤。",
+        "gloss": "fine horses",
+        "sense_id": "zh-08d4533f645e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ee6e5712df90e85b96701f1d8ec0cbb39fd20896669f2e7560f55557c0e7f233"
+}

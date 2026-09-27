@@ -1,0 +1,36 @@
+{
+  "id": "zh-47cc8021ca22-1-fa5907d1a5ffa111",
+  "entry_id": "zh-47cc8021ca22-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-47cc8021ca22-1",
+      "headword": "被",
+      "kind": "particle",
+      "reading": "bèi",
+      "senses": [
+        {
+          "id": "zh-47cc8021ca22-1-s1",
+          "definition": "marks a passive construction, indicating that the subject undergoes an action"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "不久，青州被黄巾军围住。",
+        "gloss": "passive marker",
+        "sense_id": "zh-47cc8021ca22-1-s1"
+      },
+      {
+        "sentence": "卢植因为拒绝行贿，被人诬陷，押回京城。",
+        "gloss": "passive marker",
+        "sense_id": "zh-47cc8021ca22-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "86b90a0edcb2916e676e35806a5025fa9149ed8021fec7cf744dda310ff24ba1"
+}

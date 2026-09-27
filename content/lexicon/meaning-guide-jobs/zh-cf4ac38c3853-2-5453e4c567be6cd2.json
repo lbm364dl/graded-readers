@@ -1,0 +1,31 @@
+{
+  "id": "zh-cf4ac38c3853-2-5453e4c567be6cd2",
+  "entry_id": "zh-cf4ac38c3853-2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-cf4ac38c3853-2",
+      "headword": "走来",
+      "kind": "word",
+      "reading": "zǒu lai",
+      "senses": [
+        {
+          "id": "zh-cf4ac38c3853-2-s1",
+          "definition": "walk over; come"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备看着招军榜叹气，张飞走来询问。",
+        "gloss": "walk over; come",
+        "sense_id": "zh-cf4ac38c3853-2-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1094fddb6dc6b5f0bafaa7d5bb3742cdddad2fa15a939b9c07e4d55afc2b5573"
+}

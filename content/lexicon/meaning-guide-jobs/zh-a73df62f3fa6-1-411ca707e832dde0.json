@@ -1,0 +1,31 @@
+{
+  "id": "zh-a73df62f3fa6-1-411ca707e832dde0",
+  "entry_id": "zh-a73df62f3fa6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a73df62f3fa6-1",
+      "headword": "夏恽",
+      "kind": "name",
+      "reading": "Xià Yùn",
+      "senses": [
+        {
+          "id": "zh-a73df62f3fa6-1-s1",
+          "definition": "Xia Yun"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "后来，张让、赵忠、封谞、段珪、曹节、侯览、蹇硕、程旷、夏恽、郭胜十人结党作恶，被称为十常侍。",
+        "gloss": "Xia Yun",
+        "sense_id": "zh-a73df62f3fa6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f00e4863c39301486fe3b051c18ad8ec18d1c4ac8ae9180950ed039b50502fa9"
+}

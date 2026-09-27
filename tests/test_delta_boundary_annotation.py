@@ -5,12 +5,26 @@ import pytest
 from pipeline.delta_boundary_annotation import (
     apply_delta, boundary_covered_indices, collapse_identical_overrides,
     compact_boundary_targets, compact_delta_targets,
-    concise_dictionary_meaning, delta_prompt,
+    concise_dictionary_meaning, delta_batch_prompt, delta_prompt,
     contextual_delta_batches, contextual_delta_targets, deterministic_baseline,
     missing_required_prompt,
     normalize_batch_overrides,
     normalize_optional_boundary_patches, normalize_optional_overlays,
 )
+from pipeline.agent_harness import CHINESE_PINYIN_POLICY
+
+
+def test_delta_prompts_enforce_neutral_directional_lai():
+    baseline = [{
+        "text": "泛上来", "type": "word", "pinyin": "fàn shànglái",
+        "meaning_en": "[LUNA REQUIRED]",
+    }]
+    batch = delta_batch_prompt("泛上来", baseline, {0}, "hsk3", 0, 3, False)
+    seed = delta_prompt("泛上来", baseline, {0}, "hsk3")
+    completion = missing_required_prompt("泛上来", baseline, {0}, "hsk3")
+
+    assert all(CHINESE_PINYIN_POLICY in prompt
+               for prompt in (batch, seed, completion))
 
 
 def test_batch_override_normalization_discards_extras_and_conflicts_for_completion():

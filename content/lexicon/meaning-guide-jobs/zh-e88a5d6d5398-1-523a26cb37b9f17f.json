@@ -1,0 +1,31 @@
+{
+  "id": "zh-e88a5d6d5398-1-523a26cb37b9f17f",
+  "entry_id": "zh-e88a5d6d5398-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e88a5d6d5398-1",
+      "headword": "地公",
+      "kind": "name",
+      "reading": "dìgōng",
+      "senses": [
+        {
+          "id": "zh-e88a5d6d5398-1-s1",
+          "definition": "Earth General (a title)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角知道事情暴露，马上起兵，自称天公将军；张宝称地公将军，张梁称人公将军。",
+        "gloss": "Earth General",
+        "sense_id": "zh-e88a5d6d5398-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "07501e32b996d4191727e66a119dad71e2893e9978029fa04326c832f31de6cf"
+}

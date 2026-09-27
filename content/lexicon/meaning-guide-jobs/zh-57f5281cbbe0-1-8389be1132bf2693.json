@@ -1,0 +1,31 @@
+{
+  "id": "zh-57f5281cbbe0-1-8389be1132bf2693",
+  "entry_id": "zh-57f5281cbbe0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-57f5281cbbe0-1",
+      "headword": "四年",
+      "kind": "word",
+      "reading": "sìnián",
+      "senses": [
+        {
+          "id": "zh-57f5281cbbe0-1-s1",
+          "definition": "four years; the fourth year (of a reign or period)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "建宁四年二月，洛阳发生地震，海水泛滥，沿海居民被大浪卷走。",
+        "gloss": "fourth year",
+        "sense_id": "zh-57f5281cbbe0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a872a97e90e166d60add54cca46145265206eaf23e8120b7a4871341097391a1"
+}

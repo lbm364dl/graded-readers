@@ -7717,7 +7717,7 @@ def parser() -> argparse.ArgumentParser:
             item.add_argument("--chapter-retries", type=int, default=2)
             item.add_argument("--length-repair-rounds", type=int, default=2)
         item.add_argument("--runs-dir", default=str(DEFAULT_RUNS))
-        item.add_argument("--model", default="gpt-5.6-luna")
+        item.add_argument("--model", default="gpt-6-luna")
         item.add_argument("--adapt-effort", default="low")
         item.add_argument("--review-effort", default="low")
         item.add_argument("--repair-effort", default="low")

@@ -1,0 +1,31 @@
+{
+  "id": "zh-dfbacca03282-1-f4409cee3d0da5d2",
+  "entry_id": "zh-dfbacca03282-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-dfbacca03282-1",
+      "headword": "怀恨",
+      "kind": "word",
+      "reading": "huáihèn",
+      "senses": [
+        {
+          "id": "zh-dfbacca03282-1-s1",
+          "definition": "bear resentment or a grudge"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他因此怀恨，诬陷我不作战。",
+        "gloss": "to bear a grudge; feel hatred",
+        "sense_id": "zh-dfbacca03282-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2445fe7bdfdfe0e341710d0985e024a9fc36647c9112e97dd50f8392142f728f"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-b89f58050385-1-a13205d090f3c8e9",
+  "entry_id": "zh-b89f58050385-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b89f58050385-1",
+      "headword": "小时候",
+      "kind": "word",
+      "reading": "xiǎoshíhou",
+      "senses": [
+        {
+          "id": "zh-b89f58050385-1-s1",
+          "definition": "the time when someone was a child"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备小时候常和孩子们在树下玩，说自己将来要做大事。",
+        "gloss": "when one was a child",
+        "sense_id": "zh-b89f58050385-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "da3c26b1b8e9f256d3e6efd76e77c6a8f4334aed42cdefd814c281b4429dd126"
+}

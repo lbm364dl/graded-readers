@@ -1,0 +1,109 @@
+{
+  "id": "zh-0c45484446da-1-f57b80a0067b40f0",
+  "entry_id": "zh-0c45484446da-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-0c45484446da-1",
+      "headword": "大事",
+      "kind": "word",
+      "reading": "dàshì",
+      "senses": [
+        {
+          "id": "zh-0c45484446da-1-s1",
+          "definition": "important undertaking"
+        },
+        {
+          "id": "zh-0c45484446da-1-s2",
+          "definition": "important matter"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "我和你一起做大事。",
+        "gloss": "great undertaking",
+        "sense_id": "zh-0c45484446da-1-s1"
+      },
+      {
+        "sentence": "和你一起做大事。",
+        "gloss": "great undertaking",
+        "sense_id": "zh-0c45484446da-1-s1"
+      },
+      {
+        "sentence": "准备一起做大事。",
+        "gloss": "great undertaking",
+        "sense_id": "zh-0c45484446da-1-s1"
+      },
+      {
+        "sentence": "”他家有田，也有钱，愿意出钱招募乡勇，和刘备一起做大事。",
+        "gloss": "great undertaking",
+        "sense_id": "zh-0c45484446da-1-s1"
+      },
+      {
+        "sentence": "刘备小时候常和孩子们在树下玩，说自己将来要做大事。",
+        "gloss": "great undertaking",
+        "sense_id": "zh-0c45484446da-1-s1"
+      },
+      {
+        "sentence": "张飞说：“我愿意出钱招募乡勇，和你一起做大事。",
+        "gloss": "great undertaking",
+        "sense_id": "zh-0c45484446da-1-s1"
+      },
+      {
+        "sentence": "之后，刘备、关羽、张飞一起到张飞庄上商议大事，三人也因共同志向相识。",
+        "gloss": "important matter",
+        "sense_id": "zh-0c45484446da-1-s1"
+      },
+      {
+        "sentence": "张飞愿意拿出钱财，招募乡勇，和刘备一起做大事。",
+        "gloss": "great undertaking",
+        "sense_id": "zh-0c45484446da-1-s1"
+      },
+      {
+        "sentence": "三人因共同志向相识，随后到张飞家中共议大事。",
+        "gloss": "important matter",
+        "sense_id": "zh-0c45484446da-1-s2"
+      },
+      {
+        "sentence": "明日，三人在园中祭告天地，结为兄弟，同心协力救民，然后才能图大事。",
+        "gloss": "great undertaking",
+        "sense_id": "zh-0c45484446da-1-s1"
+      },
+      {
+        "sentence": "张飞说：“我颇有资财，愿意出钱招募乡勇，与你一同做大事。",
+        "gloss": "great undertaking",
+        "sense_id": "zh-0c45484446da-1-s1"
+      },
+      {
+        "sentence": "三人因共同志向相识，一同到张飞庄上商量大事。",
+        "gloss": "important matter",
+        "sense_id": "zh-0c45484446da-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-0c45484446da-1",
+    "structure": "compositional",
+    "explanation_en": "大 means great in size or importance, and 事 means a matter or undertaking. Together, 大事 is a matter of great importance or scale—an important undertaking.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "大",
+        "contribution_en": "great in scale or importance"
+      },
+      {
+        "text": "事",
+        "contribution_en": "a matter or undertaking"
+      }
+    ],
+    "input_fingerprint": "7b0e54f4df170256ac10418472a0665a0f628d31b2bd6c22c5c09b5c60f53db1",
+    "revision": 1,
+    "editorial_policy": 2,
+    "evidence_status": "legacy_unresearched"
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "899929618bb91ed7fb6392528218b663d4b486de95db283c0def4064d3b8ee89"
+}

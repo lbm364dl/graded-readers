@@ -1,0 +1,36 @@
+{
+  "id": "zh-a2bef29e1938-1-76014ac54727ab7d",
+  "entry_id": "zh-a2bef29e1938-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a2bef29e1938-1",
+      "headword": "不求",
+      "kind": "word",
+      "reading": "bùqiú",
+      "senses": [
+        {
+          "id": "zh-a2bef29e1938-1-s1",
+          "definition": "not seek; not ask for"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "不求同年同月同日生，但愿同年同月同日死。",
+        "gloss": "not seek; do not ask for",
+        "sense_id": "zh-a2bef29e1938-1-s1"
+      },
+      {
+        "sentence": "不求同年同月同日生，但愿同年同月同日死。",
+        "gloss": "not seek",
+        "sense_id": "zh-a2bef29e1938-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8d4909b02ebb7a20f310ba663c19443b75d8cc88637c2a2b014017be0d4f5abf"
+}

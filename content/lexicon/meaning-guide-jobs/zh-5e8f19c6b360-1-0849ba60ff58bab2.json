@@ -1,0 +1,31 @@
+{
+  "id": "zh-5e8f19c6b360-1-0849ba60ff58bab2",
+  "entry_id": "zh-5e8f19c6b360-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5e8f19c6b360-1",
+      "headword": "接替",
+      "kind": "word",
+      "reading": "jiētì",
+      "senses": [
+        {
+          "id": "zh-5e8f19c6b360-1-s1",
+          "definition": "to replace; take over from someone"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "朝廷把我押回京城，又让董卓来接替我。",
+        "gloss": "replace",
+        "sense_id": "zh-5e8f19c6b360-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7fc3c70340c3495d926c9cd23d62cb88e18d4c66c2bc3207303e85d7575b35e0"
+}

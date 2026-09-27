@@ -1,0 +1,36 @@
+{
+  "id": "zh-f935696403de-1-b5c3816d116e2495",
+  "entry_id": "zh-f935696403de-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f935696403de-1",
+      "headword": "尚且",
+      "kind": "word",
+      "reading": "shàngqiě",
+      "senses": [
+        {
+          "id": "zh-f935696403de-1-s1",
+          "definition": "even; still (emphasizing that something is the case despite circumstances)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "卢植拒绝说，军粮尚且不足，哪有钱奉承他。",
+        "gloss": "even",
+        "sense_id": "zh-f935696403de-1-s1"
+      },
+      {
+        "sentence": "卢植说军粮尚且不足，哪有钱讨好使者？",
+        "gloss": "even; moreover",
+        "sense_id": "zh-f935696403de-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "45460201f57437e6de77bec321336e90cdc8a875e0ad04a62ece238402c5dc84"
+}

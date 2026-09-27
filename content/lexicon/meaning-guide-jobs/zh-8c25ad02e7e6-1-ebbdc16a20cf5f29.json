@@ -1,0 +1,31 @@
+{
+  "id": "zh-8c25ad02e7e6-1-ebbdc16a20cf5f29",
+  "entry_id": "zh-8c25ad02e7e6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8c25ad02e7e6-1",
+      "headword": "挺起",
+      "kind": "construction",
+      "reading": "tǐngqǐ",
+      "senses": [
+        {
+          "id": "zh-8c25ad02e7e6-1-s1",
+          "definition": "raise something upright"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞挺起长矛，刺中邓茂的心口，邓茂翻身落马。",
+        "gloss": "raise upright",
+        "sense_id": "zh-8c25ad02e7e6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "97b99ab14e6024efce5500246e949b441d309dbcd7f04837ea0e57a875f89487"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-8f26ce2c892e-1-dc6ca662ebe16e32",
+  "entry_id": "zh-8f26ce2c892e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8f26ce2c892e-1",
+      "headword": "不免",
+      "kind": "word",
+      "reading": "bùmiǎn",
+      "senses": [
+        {
+          "id": "zh-8f26ce2c892e-1-s1",
+          "definition": "inevitably; cannot help but"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他仔细看了榜文，想到自己家贫而有志，却无力报国，不免长叹。",
+        "gloss": "cannot help but",
+        "sense_id": "zh-8f26ce2c892e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b46a13f26394384cb665647d9b0a5ce96231187422b7f5ff463430a32ca07da4"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "zh-9f60d13af22b-1-bb4aa6f37a075b1c",
+  "entry_id": "zh-9f60d13af22b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9f60d13af22b-1",
+      "headword": "天公",
+      "kind": "word",
+      "reading": "tiāngōng",
+      "senses": [
+        {
+          "id": "zh-9f60d13af22b-1-s1",
+          "definition": "Heavenly Lord; used in the title 天公将军 (Heavenly Lord General)."
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角知道事情暴露，马上起兵，自称天公将军；张宝称地公将军，张梁称人公将军。",
+        "gloss": "Heavenly",
+        "sense_id": "zh-9f60d13af22b-1-s1"
+      },
+      {
+        "sentence": "三人上山，看见汉军已经失败，黄巾军从四面赶来，旗上写着“天公将军”。",
+        "gloss": "Heavenly Duke",
+        "sense_id": "zh-9f60d13af22b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "93b5cf4431864012bbc89941613a142f85d9bce3631ef9a3e20ae4f50cfa921b"
+}

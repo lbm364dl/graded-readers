@@ -1,0 +1,31 @@
+{
+  "id": "zh-5253040db864-1-2b0474776aded945",
+  "entry_id": "zh-5253040db864-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5253040db864-1",
+      "headword": "任务",
+      "kind": "word",
+      "reading": "rènwu",
+      "senses": [
+        {
+          "id": "zh-5253040db864-1-s1",
+          "definition": "task; assignment"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”刘备马上接受这个任务。",
+        "gloss": "task",
+        "sense_id": "zh-5253040db864-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b7de60fbbccf2e3c0ba88d1a65d15011ee205b71cefa6b9c3116057254fd8dc8"
+}

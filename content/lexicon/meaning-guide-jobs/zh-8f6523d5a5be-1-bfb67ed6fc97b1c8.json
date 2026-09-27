@@ -1,0 +1,31 @@
+{
+  "id": "zh-8f6523d5a5be-1-bfb67ed6fc97b1c8",
+  "entry_id": "zh-8f6523d5a5be-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8f6523d5a5be-1",
+      "headword": "胡子",
+      "kind": "word",
+      "reading": "húzi",
+      "senses": [
+        {
+          "id": "zh-8f6523d5a5be-1-s1",
+          "definition": "facial hair"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他身材高大，头大眼圆，胡子很长，声音像雷一样响，气势惊人。",
+        "gloss": "beard",
+        "sense_id": "zh-8f6523d5a5be-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "96012abdd177c2c8d4605b13f431bed8e09ad245351ce535e1ad0cf192f5043e"
+}

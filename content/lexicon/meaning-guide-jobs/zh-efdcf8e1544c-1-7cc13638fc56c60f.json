@@ -1,0 +1,31 @@
+{
+  "id": "zh-efdcf8e1544c-1-7cc13638fc56c60f",
+  "entry_id": "zh-efdcf8e1544c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-efdcf8e1544c-1",
+      "headword": "山中",
+      "kind": "word",
+      "reading": "shānzhōng",
+      "senses": [
+        {
+          "id": "zh-efdcf8e1544c-1-s1",
+          "definition": "in the mountains; among mountains"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军追来，进入山中。",
+        "gloss": "the mountains",
+        "sense_id": "zh-efdcf8e1544c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0d21e51c2e8f6745810114ff5286261a586db9d9428cfd6296ed10f2d9ca0e27"
+}

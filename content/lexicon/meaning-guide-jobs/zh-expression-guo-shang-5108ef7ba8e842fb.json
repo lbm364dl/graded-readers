@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-guo-shang-5108ef7ba8e842fb",
+  "entry_id": "zh-expression-guo-shang",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-guo-shang",
+      "headword": "裹上",
+      "reading": "guǒshàng",
+      "base_entry_id": "zh-72a4807c7807-1",
+      "components": [
+        {
+          "entry_id": "zh-72a4807c7807-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-db5ba671d244-1",
+          "role": "result complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-guo-shang-s1",
+          "definition": "wrap or attach a covering onto something"
+        }
+      ],
+      "kind": "construction"
+    },
+    "examples": [
+      {
+        "sentence": "百姓纷纷裹上黄巾，跟随黄巾军的人有四五十万。",
+        "gloss": "wrap or attach a covering onto something",
+        "sense_id": "zh-expression-guo-shang-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "裹",
+        "role": "verb"
+      },
+      {
+        "headword": "上",
+        "role": "result complement"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c88152d691ac611b4b512c41d37982ed3ff9c1c2657c7422b4460a615a5c1cc1"
+}

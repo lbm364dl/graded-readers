@@ -1,0 +1,31 @@
+{
+  "id": "zh-d87059e4c8ca-1-951246d8cd7dba5b",
+  "entry_id": "zh-d87059e4c8ca-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d87059e4c8ca-1",
+      "headword": "看看",
+      "kind": "construction",
+      "reading": "kàn kan",
+      "senses": [
+        {
+          "id": "zh-d87059e4c8ca-1-s1",
+          "definition": "to have a look; look briefly or casually"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "你带人去看看那里的情况，回来告诉我。",
+        "gloss": "take a look",
+        "sense_id": "zh-d87059e4c8ca-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a3908eb615cd3babde62abbe9229a103be443e7eb621e842096e6b9f5206de16"
+}

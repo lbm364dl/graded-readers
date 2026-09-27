@@ -1,0 +1,31 @@
+{
+  "id": "zh-6c766c7edf82-1-c0351370e187eeaa",
+  "entry_id": "zh-6c766c7edf82-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6c766c7edf82-1",
+      "headword": "冀",
+      "kind": "name",
+      "reading": "Jì",
+      "senses": [
+        {
+          "id": "zh-6c766c7edf82-1-s1",
+          "definition": "Ji, a province name"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "青、幽、徐、冀等八州百姓，家家信奉大贤良师张角。",
+        "gloss": "Ji Province",
+        "sense_id": "zh-6c766c7edf82-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fe81c4f393c429e86bbe7bea7fa579bedb2cf3ab18d4b3211f16ee72f235c5e4"
+}

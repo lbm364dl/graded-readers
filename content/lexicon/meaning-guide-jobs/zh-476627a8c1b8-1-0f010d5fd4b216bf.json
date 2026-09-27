@@ -1,0 +1,36 @@
+{
+  "id": "zh-476627a8c1b8-1-0f010d5fd4b216bf",
+  "entry_id": "zh-476627a8c1b8-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-476627a8c1b8-1",
+      "headword": "头发",
+      "kind": "word",
+      "reading": "tóufa",
+      "senses": [
+        {
+          "id": "zh-476627a8c1b8-1-s1",
+          "definition": "hair"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军披着头发，额上围着黄巾。",
+        "gloss": "hair",
+        "sense_id": "zh-476627a8c1b8-1-s1"
+      },
+      {
+        "sentence": "敌军都披着头发，额头缠着黄巾。",
+        "gloss": "hair",
+        "sense_id": "zh-476627a8c1b8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "094220cb627f046602df42d6ccf926f35355b1d92bf099dc4bd56e33436676ab"
+}

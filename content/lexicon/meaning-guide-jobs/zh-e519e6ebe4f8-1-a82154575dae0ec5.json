@@ -1,0 +1,31 @@
+{
+  "id": "zh-e519e6ebe4f8-1-a82154575dae0ec5",
+  "entry_id": "zh-e519e6ebe4f8-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e519e6ebe4f8-1",
+      "headword": "书符",
+      "kind": "word",
+      "reading": "shūfú",
+      "senses": [
+        {
+          "id": "zh-e519e6ebe4f8-1-s1",
+          "definition": "to write talismans"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他有五百多名弟子，云游四方，都能书符念咒。",
+        "gloss": "to write talismans",
+        "sense_id": "zh-e519e6ebe4f8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f2ba63b3b33968f147a765118517a06d7048e558a46ca73db83e853c9d143fc1"
+}

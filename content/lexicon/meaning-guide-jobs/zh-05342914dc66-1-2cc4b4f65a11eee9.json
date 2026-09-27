@@ -1,0 +1,36 @@
+{
+  "id": "zh-05342914dc66-1-2cc4b4f65a11eee9",
+  "entry_id": "zh-05342914dc66-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-05342914dc66-1",
+      "headword": "天子",
+      "kind": "word",
+      "reading": "tiānzǐ",
+      "senses": [
+        {
+          "id": "zh-05342914dc66-1-s1",
+          "definition": "emperor; Son of Heaven"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备小时候常和乡中孩子在树下玩，对他们说：“我将来要当天子，就把这棵树当作车盖。",
+        "gloss": "Son of Heaven; emperor",
+        "sense_id": "zh-05342914dc66-1-s1"
+      },
+      {
+        "sentence": "刘备幼年和乡中孩子在树下玩，说将来要做天子，要乘这车盖。",
+        "gloss": "Son of Heaven",
+        "sense_id": "zh-05342914dc66-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b40f402937bb3c61681869617c49bef56f55d327eabc1e9e12e80cec540e40a9"
+}

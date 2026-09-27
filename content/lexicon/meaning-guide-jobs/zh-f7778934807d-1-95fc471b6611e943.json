@@ -1,0 +1,70 @@
+{
+  "id": "zh-f7778934807d-1-95fc471b6611e943",
+  "entry_id": "zh-f7778934807d-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-f7778934807d-1",
+      "headword": "过",
+      "kind": "word",
+      "reading": "guò",
+      "senses": [
+        {
+          "id": "zh-f7778934807d-1-s1",
+          "definition": "to pass; to go over"
+        },
+        {
+          "id": "zh-f7778934807d-1-s2",
+          "definition": "to deceive or fool someone successfully"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刚过山岭，刘备鸣金发出信号，两边的人一起冲下。",
+        "gloss": "pass",
+        "sense_id": "zh-f7778934807d-1-s1"
+      },
+      {
+        "sentence": "过了一会儿，青蛇不见了。",
+        "gloss": "pass",
+        "sense_id": "zh-f7778934807d-1-s1"
+      },
+      {
+        "sentence": "黄巾军追赶他们，刚过山岭，刘备便发出信号。",
+        "gloss": "to pass",
+        "sense_id": "zh-f7778934807d-1-s1"
+      },
+      {
+        "sentence": "曹操便假装中风，骗过父亲，后来依旧放荡。",
+        "gloss": "through; past, as in 骗过",
+        "sense_id": "zh-f7778934807d-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-f7778934807d-1",
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "过 means to pass a point or go across an intervening place.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "过",
+        "contribution_en": "Expresses passing a point or going across a place.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "a00acd722d5c39273b87cc7de8927f2617d13948f8f0e095915431d6b7e60430",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "db68eac602a278557c340f784d513abc66b164a84ba8663ddd6ce478c55c6219"
+}

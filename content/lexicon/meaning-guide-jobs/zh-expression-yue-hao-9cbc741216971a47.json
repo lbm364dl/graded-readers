@@ -1,0 +1,56 @@
+{
+  "id": "zh-expression-yue-hao-9cbc741216971a47",
+  "entry_id": "zh-expression-yue-hao",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-yue-hao",
+      "headword": "约好",
+      "reading": "yuēhǎo",
+      "base_entry_id": "zh-5890c084b931-1",
+      "components": [
+        {
+          "entry_id": "zh-5890c084b931-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-f867f3417859-2",
+          "role": "result complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-yue-hao-s1",
+          "definition": "arrange or agree on something in advance"
+        }
+      ],
+      "kind": "construction"
+    },
+    "examples": [
+      {
+        "sentence": "张角一面私造黄旗，约好起事日期，一面派弟子送信，却被告密。",
+        "gloss": "arrange or agree on something in advance",
+        "sense_id": "zh-expression-yue-hao-s1"
+      },
+      {
+        "sentence": "卢植让刘备带本部人马，再带一千官军到颍川，联络皇甫嵩、朱隽，约好时间一起进攻。",
+        "gloss": "arrange or agree on something in advance",
+        "sense_id": "zh-expression-yue-hao-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "约",
+        "role": "verb"
+      },
+      {
+        "headword": "好",
+        "role": "result complement"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a817284da91471eadbd2e54abcb00efe96b7a3a4e2a18aaff41430a27b1c4a11"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "zh-5a8650445fc6-1-6eaffd51b95ed660",
+  "entry_id": "zh-5a8650445fc6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5a8650445fc6-1",
+      "headword": "曾",
+      "kind": "word",
+      "reading": "céng",
+      "senses": [
+        {
+          "id": "zh-5a8650445fc6-1-s1",
+          "definition": "once; previously"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他十五岁时曾外出学习，也交了几个好友。",
+        "gloss": "once; previously",
+        "sense_id": "zh-5a8650445fc6-1-s1"
+      },
+      {
+        "sentence": "那人叫关羽，曾因杀了当地一个仗势欺人的人，逃难了五六年。",
+        "gloss": "once; formerly",
+        "sense_id": "zh-5a8650445fc6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "acbaef2a6b76ff5d92ec06c0ed2f44d6641bf3e9f440387b27de559e4aba6fac"
+}

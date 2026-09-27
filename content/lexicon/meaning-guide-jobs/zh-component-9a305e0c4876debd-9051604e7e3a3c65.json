@@ -1,0 +1,26 @@
+{
+  "id": "zh-component-9a305e0c4876debd-9051604e7e3a3c65",
+  "entry_id": "zh-component-9a305e0c4876debd",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-component-9a305e0c4876debd",
+      "headword": "告密",
+      "reading": "gàomì",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-9a305e0c4876debd-s1",
+          "definition": "To inform on someone by revealing their secret or confidential information."
+        }
+      ]
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "56ec41ec6213de7e1fec4f45fdd7f1dd815470ffbce7681a5cf4a741e43d4aa0"
+}

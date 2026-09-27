@@ -1,0 +1,31 @@
+{
+  "id": "zh-55bf31aa05f1-1-fe3aeeb7d2323849",
+  "entry_id": "zh-55bf31aa05f1-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-55bf31aa05f1-1",
+      "headword": "之士",
+      "kind": "construction",
+      "reading": "zhīshì",
+      "senses": [
+        {
+          "id": "zh-55bf31aa05f1-1-s1",
+          "definition": "a person of a specified kind or quality"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "这个结果导致宦官从此更加专横，做事也更不受限制，朝廷中的正直之士更加危险。",
+        "gloss": "people of integrity",
+        "sense_id": "zh-55bf31aa05f1-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5c19a7211c40ce017ea953c83ac5a604a3e80b9356aed1ff26600028b50ec009"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-ca7725ae712d-1-313f2eca054fed6c",
+  "entry_id": "zh-ca7725ae712d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ca7725ae712d-1",
+      "headword": "夺得",
+      "kind": "word",
+      "reading": "duódé",
+      "senses": [
+        {
+          "id": "zh-ca7725ae712d-1-s1",
+          "definition": "to obtain or take possession of something, often by effort or force"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "这一战中，曹操杀死一万多人，夺得旗子、战鼓和许多马匹。",
+        "gloss": "to seize; capture",
+        "sense_id": "zh-ca7725ae712d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "465b84fee404778b131bc6d11e6ffa07d4017f09790b12f6c9f0b05700939492"
+}

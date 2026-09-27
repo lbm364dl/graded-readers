@@ -1,0 +1,41 @@
+{
+  "id": "zh-f25cebd24730-1-53ce02fb4bda82cc",
+  "entry_id": "zh-f25cebd24730-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f25cebd24730-1",
+      "headword": "棒",
+      "kind": "word",
+      "reading": "bàng",
+      "senses": [
+        {
+          "id": "zh-f25cebd24730-1-s1",
+          "definition": "a stick or rod"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他在城的四门设下十多根五色棒。",
+        "gloss": "stick; rod",
+        "sense_id": "zh-f25cebd24730-1-s1"
+      },
+      {
+        "sentence": "一名宦官的叔父夜间提刀行走，也被曹操抓住，用五色棒责打。",
+        "gloss": "stick",
+        "sense_id": "zh-f25cebd24730-1-s1"
+      },
+      {
+        "sentence": "刚到任，他就在城中四门设置十多根五色棒。",
+        "gloss": "stick",
+        "sense_id": "zh-f25cebd24730-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c65ce4795d8a252d0fd9512caea10da9b441ec5b7d9681b0724b9280522021fb"
+}

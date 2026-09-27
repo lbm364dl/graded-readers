@@ -1,0 +1,36 @@
+{
+  "id": "zh-f0129ab31fcf-1-efa9596572ed0681",
+  "entry_id": "zh-f0129ab31fcf-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f0129ab31fcf-1",
+      "headword": "房屋",
+      "kind": "word",
+      "reading": "fángwū",
+      "senses": [
+        {
+          "id": "zh-f0129ab31fcf-1-s1",
+          "definition": "buildings or houses"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "大风、雷雨、冰雹毁坏房屋，地震和海水泛上来，百姓生活很难。",
+        "gloss": "houses",
+        "sense_id": "zh-f0129ab31fcf-1-s1"
+      },
+      {
+        "sentence": "之后雷雨和冰雹下到半夜，许多房屋被毁。",
+        "gloss": "houses",
+        "sense_id": "zh-f0129ab31fcf-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3abd7d6a7b62fe1442212a80253d7b97e6548b287b5c1df347c344d6301d3ffc"
+}

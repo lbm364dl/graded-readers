@@ -1,0 +1,31 @@
+{
+  "id": "zh-597ae23d84d4-1-d885ab097472aedf",
+  "entry_id": "zh-597ae23d84d4-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-597ae23d84d4-1",
+      "headword": "长",
+      "kind": "word",
+      "reading": "cháng",
+      "senses": [
+        {
+          "id": "zh-597ae23d84d4-1-s1",
+          "definition": "long; for a long time"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他当时因无力报国，只能长声叹气。",
+        "gloss": "long",
+        "sense_id": "zh-597ae23d84d4-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fa8acb022ad3ea4cf1d1c8895a2603ee03d83bbc57b118add1b2d7e51ae31677"
+}

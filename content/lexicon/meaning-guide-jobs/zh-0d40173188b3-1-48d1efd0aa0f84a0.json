@@ -1,0 +1,31 @@
+{
+  "id": "zh-0d40173188b3-1-48d1efd0aa0f84a0",
+  "entry_id": "zh-0d40173188b3-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-0d40173188b3-1",
+      "headword": "抵抗",
+      "kind": "word",
+      "reading": "dǐkàng",
+      "senses": [
+        {
+          "id": "zh-0d40173188b3-1-s1",
+          "definition": "to resist; oppose"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "朝廷命各地招兵，抵抗黄巾军。",
+        "gloss": "resist",
+        "sense_id": "zh-0d40173188b3-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a8ae7b0cc59335a7ca60042678523b8c7eeda059f2322435a6275abb76b15ab6"
+}

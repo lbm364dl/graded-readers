@@ -1,0 +1,80 @@
+{
+  "id": "zh-72eaab5334dc-1-3cda942499b19ea1",
+  "entry_id": "zh-72eaab5334dc-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-72eaab5334dc-1",
+      "headword": "围",
+      "kind": "word",
+      "reading": "wéi",
+      "senses": [
+        {
+          "id": "zh-72eaab5334dc-1-s1",
+          "definition": "a siege; the act of surrounding a place to capture it"
+        },
+        {
+          "id": "zh-72eaab5334dc-1-s2",
+          "definition": "to wrap or wind around"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "青州城里的人也出来帮忙，青州之围终于解开。",
+        "gloss": "siege",
+        "sense_id": "zh-72eaab5334dc-1-s1"
+      },
+      {
+        "sentence": "龚景又带乡勇出城相助，青州之围终于解开。",
+        "gloss": "siege",
+        "sense_id": "zh-72eaab5334dc-1-s1"
+      },
+      {
+        "sentence": "黄巾军披着头发，额上围着黄巾。",
+        "gloss": "wrap",
+        "sense_id": "zh-72eaab5334dc-1-s2"
+      },
+      {
+        "sentence": "龚景率乡勇出城助战，刘备解开了青州之围。",
+        "gloss": "siege; encirclement",
+        "sense_id": "zh-72eaab5334dc-1-s1"
+      },
+      {
+        "sentence": "次日，青州太守龚景送来文书，说黄巾军围城将陷，请求救援。",
+        "gloss": "to besiege",
+        "sense_id": "zh-72eaab5334dc-1-s2"
+      },
+      {
+        "sentence": "龚景率民兵出城助战，黄巾军死伤惨重，最终解开了青州之围。",
+        "gloss": "siege",
+        "sense_id": "zh-72eaab5334dc-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-72eaab5334dc-1",
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "围 means to surround a place; as a noun, it refers to that act of surrounding a place to capture it, or the siege itself.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "围",
+        "contribution_en": "Means to surround; as a noun, refers to the act of surrounding a place to capture it or the siege.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "a4f588eca5597df400f7e5fea1b581100fb4225e6deb5ac24c13987932ecc99c",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e3f9c4d596d84327b26fba387b2a9362481f2122907da1c6a7e64437896f849f"
+}

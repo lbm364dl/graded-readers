@@ -1,0 +1,31 @@
+{
+  "id": "zh-d97ca182a054-1-6f9405f64431153c",
+  "entry_id": "zh-d97ca182a054-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d97ca182a054-1",
+      "headword": "保密",
+      "kind": "word",
+      "reading": "bǎomì",
+      "senses": [
+        {
+          "id": "zh-d97ca182a054-1-s1",
+          "definition": "keep something secret or confidential"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "可是，他们没有严格保密，消息很快走漏，二人反而因此被害。",
+        "gloss": "keep confidential",
+        "sense_id": "zh-d97ca182a054-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2c8904651b54d2af59eea65b4aacf2c0b4524d1e0888e4b13d16c10774ed0221"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-ad8fdd38c5d6-1-7cb8c10fd8dc550c",
+  "entry_id": "zh-ad8fdd38c5d6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ad8fdd38c5d6-1",
+      "headword": "冲杀",
+      "kind": "construction",
+      "reading": "chōngshā",
+      "senses": [
+        {
+          "id": "zh-ad8fdd38c5d6-1-s1",
+          "definition": "charge into an attack"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备根据旗号判断来军是张角，便带兵冲杀。",
+        "gloss": "to charge and attack",
+        "sense_id": "zh-ad8fdd38c5d6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "49704d1f1b2026cb4a81f7b9cdfa00604943c804af185354b153f17d6dd5dee3"
+}

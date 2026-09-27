@@ -1,0 +1,31 @@
+{
+  "id": "zh-7ff9df9923a8-1-f26cfceea2b8d5b1",
+  "entry_id": "zh-7ff9df9923a8-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7ff9df9923a8-1",
+      "headword": "作",
+      "kind": "word",
+      "reading": "zuò",
+      "senses": [
+        {
+          "id": "zh-7ff9df9923a8-1-s1",
+          "definition": "serve as; act as"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角派马元义带着金帛，暗中结交宦官封谞，企图让他在朝中作内应。",
+        "gloss": "act as",
+        "sense_id": "zh-7ff9df9923a8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1849e7eee189c36672efd0ad65ed7fc54ed1746f14435493c6fed1593dbab3b5"
+}

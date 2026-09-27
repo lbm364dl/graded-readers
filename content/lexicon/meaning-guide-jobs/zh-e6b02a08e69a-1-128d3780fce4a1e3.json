@@ -1,0 +1,46 @@
+{
+  "id": "zh-e6b02a08e69a-1-128d3780fce4a1e3",
+  "entry_id": "zh-e6b02a08e69a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e6b02a08e69a-1",
+      "headword": "正在",
+      "kind": "word",
+      "reading": "zhèngzài",
+      "senses": [
+        {
+          "id": "zh-e6b02a08e69a-1-s1",
+          "definition": "be in the process of doing something or be at a place at the present time"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "后来卢植说：“张梁、张宝正在颍川。",
+        "gloss": "currently be at",
+        "sense_id": "zh-e6b02a08e69a-1-s1"
+      },
+      {
+        "sentence": "到了颍川，刘备听说皇甫嵩、朱隽正在和黄巾军交战。",
+        "gloss": "be currently fighting",
+        "sense_id": "zh-e6b02a08e69a-1-s1"
+      },
+      {
+        "sentence": "两天后，他们看见董卓带领的汉军被张角打败，黄巾军正在追赶董卓。",
+        "gloss": "currently",
+        "sense_id": "zh-e6b02a08e69a-1-s1"
+      },
+      {
+        "sentence": "刘备之前跟卢植学习，听说老师正在广宗和黄巾军作战，便想去帮助他。",
+        "gloss": "be currently doing",
+        "sense_id": "zh-e6b02a08e69a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6ca61030a52f9e2f9e961e0d1cd11d0b1fe02a6d939e057f1197346c3f6eabc7"
+}

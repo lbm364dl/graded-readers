@@ -1,0 +1,31 @@
+{
+  "id": "zh-c2902702ee25-1-3adf04bb07440252",
+  "entry_id": "zh-c2902702ee25-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c2902702ee25-1",
+      "headword": "行贿",
+      "kind": "word",
+      "reading": "xínghuì",
+      "senses": [
+        {
+          "id": "zh-c2902702ee25-1-s1",
+          "definition": "to offer a bribe"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "卢植因为拒绝行贿，被人诬陷，押回京城。",
+        "gloss": "bribe",
+        "sense_id": "zh-c2902702ee25-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d8b110b4d78f411eb6a067e06cdaa0e33d263a3c1374b43a8fe3d6539d3a7162"
+}

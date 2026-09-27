@@ -1,0 +1,36 @@
+{
+  "id": "zh-f3f512648742-1-34a0292e694f9166",
+  "entry_id": "zh-f3f512648742-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f3f512648742-1",
+      "headword": "回答",
+      "kind": "word",
+      "reading": "huídá",
+      "senses": [
+        {
+          "id": "zh-f3f512648742-1-s1",
+          "definition": "answer; respond to a question or person"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备回答：“我们是白身。",
+        "gloss": "answer",
+        "sense_id": "zh-f3f512648742-1-s1"
+      },
+      {
+        "sentence": "董卓问他们担任什么官职，刘备回答：“我们没有官职。",
+        "gloss": "reply",
+        "sense_id": "zh-f3f512648742-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "87da23632f5009cfb5c9b49e2a25073daf2dba2151d790b0b01679d786ca7b2a"
+}

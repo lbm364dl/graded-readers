@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-shou-bu-zhu-19658a7ed5f5ae54",
+  "entry_id": "zh-expression-shou-bu-zhu",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-shou-bu-zhu",
+      "headword": "守不住",
+      "reading": "shǒu bu zhù",
+      "base_entry_id": "zh-3e99b40c4d39-1",
+      "components": [
+        {
+          "entry_id": "zh-3e99b40c4d39-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-9bbe3638e572-1",
+          "role": "potential complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-shou-bu-zhu-s1",
+          "definition": "be unable to hold or defend something"
+        }
+      ],
+      "kind": "construction"
+    },
+    "examples": [
+      {
+        "sentence": "第二天，青州太守龚景来信求救，说黄巾军围城，城快守不住了。",
+        "gloss": "be unable to hold or defend something",
+        "sense_id": "zh-expression-shou-bu-zhu-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "守",
+        "role": "verb"
+      },
+      {
+        "headword": "不住",
+        "role": "potential complement"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bacdf7777a4fff5b133ba95c5c76571a3c6feb523c92c4f56daa03ac894a94c8"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-65b5d7cf7468-1-db313864096f52c8",
+  "entry_id": "zh-65b5d7cf7468-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-65b5d7cf7468-1",
+      "headword": "行走",
+      "kind": "word",
+      "reading": "xíngzǒu",
+      "senses": [
+        {
+          "id": "zh-65b5d7cf7468-1-s1",
+          "definition": "to walk; to go on foot"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "一名宦官的叔父夜间提刀行走，也被曹操抓住，用五色棒责打。",
+        "gloss": "walk",
+        "sense_id": "zh-65b5d7cf7468-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e82835e137ffa3f5d78561e8b900c781f1c90e9e699dc2d57d0415ad297a832a"
+}

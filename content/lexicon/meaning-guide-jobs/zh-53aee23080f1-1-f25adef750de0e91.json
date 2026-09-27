@@ -1,0 +1,51 @@
+{
+  "id": "zh-53aee23080f1-1-f25adef750de0e91",
+  "entry_id": "zh-53aee23080f1-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-53aee23080f1-1",
+      "headword": "有人",
+      "kind": "word",
+      "reading": "yǒurén",
+      "senses": [
+        {
+          "id": "zh-53aee23080f1-1-s1",
+          "definition": "someone; some people"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "有人直言批评，也被定罪。",
+        "gloss": "some people",
+        "sense_id": "zh-53aee23080f1-1-s1"
+      },
+      {
+        "sentence": "随后有人大声说：“大丈夫不为国家尽力，为什么长叹？",
+        "gloss": "someone",
+        "sense_id": "zh-53aee23080f1-1-s1"
+      },
+      {
+        "sentence": "于是有人来报，两个客人带着伙伴和一群马来到庄上。",
+        "gloss": "someone",
+        "sense_id": "zh-53aee23080f1-1-s1"
+      },
+      {
+        "sentence": "有人违反禁令，不管地位高低，都要受到处罚。",
+        "gloss": "someone",
+        "sense_id": "zh-53aee23080f1-1-s1"
+      },
+      {
+        "sentence": "一次，有人夜里带刀走路，曹操把他抓住，按禁令用木棒责罚。",
+        "gloss": "someone",
+        "sense_id": "zh-53aee23080f1-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b0603319463a99486166b4d535e266588c6deaf256f9ae4b6ddeb690ec2e4028"
+}

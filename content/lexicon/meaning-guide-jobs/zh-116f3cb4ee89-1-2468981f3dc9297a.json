@@ -1,0 +1,31 @@
+{
+  "id": "zh-116f3cb4ee89-1-2468981f3dc9297a",
+  "entry_id": "zh-116f3cb4ee89-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-116f3cb4ee89-1",
+      "headword": "束",
+      "kind": "word",
+      "reading": "shù",
+      "senses": [
+        {
+          "id": "zh-116f3cb4ee89-1-s1",
+          "definition": "bind or bundle together"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "二人商量后，命士兵每人束一把草，又暗中埋下伏兵。",
+        "gloss": "to bundle; tie",
+        "sense_id": "zh-116f3cb4ee89-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ccbd75f001e6d46d6a2f0718c0923e934dba7403dc47f567889d7d0381e36805"
+}

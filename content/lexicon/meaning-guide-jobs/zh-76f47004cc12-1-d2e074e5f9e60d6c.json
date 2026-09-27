@@ -1,0 +1,51 @@
+{
+  "id": "zh-76f47004cc12-1-d2e074e5f9e60d6c",
+  "entry_id": "zh-76f47004cc12-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-76f47004cc12-1",
+      "headword": "城",
+      "kind": "word",
+      "reading": "chéng",
+      "senses": [
+        {
+          "id": "zh-76f47004cc12-1-s1",
+          "definition": "city"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "第二天，青州太守派人送来求援消息，说黄巾军围住了城，城里的人十分不安。",
+        "gloss": "city",
+        "sense_id": "zh-76f47004cc12-1-s1"
+      },
+      {
+        "sentence": "他进来要酒，说要赶进城投军。",
+        "gloss": "city",
+        "sense_id": "zh-76f47004cc12-1-s1"
+      },
+      {
+        "sentence": "第二天，青州太守龚景来信求救，说黄巾军围城，城快守不住了。",
+        "gloss": "city",
+        "sense_id": "zh-76f47004cc12-1-s1"
+      },
+      {
+        "sentence": "龚景又带乡勇出城相助，青州之围终于解开。",
+        "gloss": "city",
+        "sense_id": "zh-76f47004cc12-1-s1"
+      },
+      {
+        "sentence": "他在县城四座城门放下十多根五颜六色的木棒，并定下严格的禁令。",
+        "gloss": "city",
+        "sense_id": "zh-76f47004cc12-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d65d76df35fc8eb6870d8f94115f3da4e89789e094bf87b97edf7e045e603ce1"
+}

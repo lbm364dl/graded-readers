@@ -1,0 +1,31 @@
+{
+  "id": "zh-426431cc1ede-1-24149a2393ba92bb",
+  "entry_id": "zh-426431cc1ede-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-426431cc1ede-1",
+      "headword": "上报",
+      "kind": "word",
+      "reading": "shàngbào",
+      "senses": [
+        {
+          "id": "zh-426431cc1ede-1-s1",
+          "definition": "to report to or serve a higher authority"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他们发誓同心协力，上报国家，下安百姓。",
+        "gloss": "serve or repay the state",
+        "sense_id": "zh-426431cc1ede-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9fe1b648e69997aef8537a3e20360276f2408d68a1259f87bf556b87f4bffaa2"
+}

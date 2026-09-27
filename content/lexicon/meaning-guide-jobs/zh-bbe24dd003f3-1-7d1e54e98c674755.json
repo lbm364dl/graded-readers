@@ -1,0 +1,36 @@
+{
+  "id": "zh-bbe24dd003f3-1-7d1e54e98c674755",
+  "entry_id": "zh-bbe24dd003f3-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-bbe24dd003f3-1",
+      "headword": "民心",
+      "kind": "word",
+      "reading": "mínxīn",
+      "senses": [
+        {
+          "id": "zh-bbe24dd003f3-1-s1",
+          "definition": "the people's feelings, wishes, or support"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角说：“民心已经向着我们，现在应当行动。",
+        "gloss": "popular support",
+        "sense_id": "zh-bbe24dd003f3-1-s1"
+      },
+      {
+        "sentence": "他和两个弟弟商议后，决定抓住民心的机会。",
+        "gloss": "popular support",
+        "sense_id": "zh-bbe24dd003f3-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0198814b5fe476366fb0351c932dd725b937fd3867802cea2968b97cd8c35a81"
+}
