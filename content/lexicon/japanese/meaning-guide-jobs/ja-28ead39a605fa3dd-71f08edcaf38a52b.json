@@ -1,0 +1,37 @@
+{
+  "id": "ja-28ead39a605fa3dd-71f08edcaf38a52b",
+  "entry_id": "ja-28ead39a605fa3dd",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-28ead39a605fa3dd",
+      "headword": "というもの",
+      "reading": "というもの",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-28ead39a605fa3dd-1",
+          "definition": "A pattern that refers to something as a thing or concept called X, often emphasizing its nature."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そこで吾輩は初めて人間というものを見た。",
+        "gloss": "what is called; the nature of",
+        "sense_id": "ja-28ead39a605fa3dd-1"
+      },
+      {
+        "sentence": "掌の上で少し落ち着き、書生の顔を見たことが、人間というものの見始めだったのだろう。",
+        "gloss": "the thing called; the nature of",
+        "sense_id": "ja-28ead39a605fa3dd-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3e85c7a5fad753c4c937089c1fcdfed1ed4c89e7e98dc30bbb8afc6549b72dad"
+}

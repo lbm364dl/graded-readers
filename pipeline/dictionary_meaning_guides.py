@@ -207,18 +207,31 @@ def validate_rows(items, rows):
                  *(p['contribution_en'] for p in parts)]
         if any(re.search(r'\[c\d+(?:\s*,\s*c?\d+)*\]', text) for text in prose):
             raise ValueError('Use structured claim_ids, not inline research IDs in learner prose')
-        if any(re.search(r'\bin (?:the|this|these) '
-                         r'(?:examples?|passage|sentence|story)\b', text, re.I)
+        if any(re.search(r'\bin (?:(?:the|this|these) '
+                         r'(?:examples?|passage|story)|(?:this|these) sentences?)\b', text, re.I)
                for text in prose):
             raise ValueError('Meaning guides must not narrate a particular source example')
         inline_limit = re.search(
-            r'\b(?:not(?: fully)? (?:predictable|derivable|recoverable|explained)|'
+            r'\b(?:not (?:(?:fully|reliably|directly|simply|completely) )*'
+            r'(?:predictable|derivable|recoverable|explained)|'
             r'(?:does not|do not|cannot|can\x27t) (?:by (?:itself|themselves) )?'
-            r'(?:fully )?(?:explain|predict|derive|specify)|'
-            r'rather than (?:a )?(?:literal|character-by-character))\b',
+            r'(?:fully )?(?:explain|predict|derive|specify|establish|'
+            r'provide (?:reliable|dependable|predictable) (?:separate )?'
+            r'(?:contributions|meanings))|'
+            r'rather than (?:a )?(?:literal|character-by-character)|'
+            r'proposed rather than (?:established|demonstrated)|'
+            r'not (?:a )?(?:direct|simple|literal) combination of '
+            r'(?:the |its )?(?:separate |individual )?(?:meanings|parts)|'
+            r'proposed (?:origins?|derivations?)\b[^.!?]{0,160}\b'
+            r'(?:is|are) not established|'
+            r'contributions?\b[^.!?]{0,160}\b(?:is|are) not '
+            r'(?:established|known|recoverable)|'
+            r'should not be parsed(?: simply)? as|'
+            r'(?:link|connection|derivation|origin|analysis|formation) '
+            r'(?:is|remains) (?:conjectural|uncertain|unconfirmed|unestablished))\b',
             row['explanation_en'], re.I)
         if row['structure'] == 'lexicalized' and not row['caveat_en'].strip() and not inline_limit:
-            raise ValueError('Lexicalized explanation must acknowledge its limits')
+            raise ValueError(row['entry_id'] + ': Lexicalized explanation must acknowledge its limits')
     if seen != set(expected):
         raise ValueError('Every dictionary entry needs a meaning guide')
 
@@ -256,7 +269,7 @@ def extend(dictionary, decisions):
     return output
 
 
-async def update(dictionary, path=DECISIONS, *, run_dir=None, requests=None, workers=4):
+async def update(dictionary, path=DECISIONS, *, run_dir=None, requests=None, workers=4, policies=None):
     if type(workers) is not int or not 1 <= workers <= 8:
         raise ValueError('Dictionary editor workers must be between 1 and 8')
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -265,13 +278,14 @@ async def update(dictionary, path=DECISIONS, *, run_dir=None, requests=None, wor
             fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         except BlockingIOError:
             raise ValueError('Dictionary editor already running for this registry') from None
-        return await _update(dictionary, path, run_dir=run_dir, requests=requests, workers=workers)
+        return await _update(dictionary, path, run_dir=run_dir, requests=requests, workers=workers, policies=policies)
 
 
-async def _update(dictionary, path, *, run_dir=None, requests=None, workers=4):
+async def _update(dictionary, path, *, run_dir=None, requests=None, workers=4, policies=None):
     from pipeline.agent_harness import CodexRunner
     from pipeline.annotate_chinese import atomic_json
-    from pipeline.dictionary_editor import research, cached_research, validate_citations
+    from pipeline.dictionary_editor import (research, cached_research, validate_citations,
+                                            normalize_duplicate_citation_markers)
     from pipeline.dictionary_adaptive_editor import edit as adaptive_edit
     previous = json.loads(path.read_text()) if path.exists() else {}
     if requests is None:
@@ -280,12 +294,18 @@ async def _update(dictionary, path, *, run_dir=None, requests=None, workers=4):
     runner = CodexRunner(run_dir or ROOT / 'runs/dictionary-meaning-guides-hsk1',
                          'gpt-6-luna', asyncio.Semaphore(workers), 600)
     completed = 0
+    policies = policies or {}
+    guide_policy = policies.get('guide', POLICY)
+    editorial_style = policies.get('style', EDITORIAL_STYLE)
+    research_options = {'policy': policies['research']} if 'research' in policies else {}
+    adaptive_options = ({'policy': policies['adaptive'], 'editorial_style': editorial_style}
+                        if 'adaptive' in policies else {})
 
     async def researched_edit(jid, item, prior, requests, dossier):
-        prompt = POLICY + '\nINPUT:\n' + json.dumps([dict(
+        prompt = guide_policy + '\nINPUT:\n' + json.dumps([dict(
             **item, previous_guide=prior, requests=requests, research=dossier)], ensure_ascii=False)
         proposal = await runner.call(jid + '/propose', prompt, SCHEMA, 'low', tool_profile='offline')
-        review_prompt = prompt + '\n' + EDITORIAL_STYLE + """\nIndependently edit this proposal for semantic accuracy.
+        review_prompt = prompt + '\n' + editorial_style + """\nIndependently edit this proposal for semantic accuracy.
 Check each cited claim against the supplied source summaries. Remove unsupported
 historical derivations, forced character splits and false fine-grained distinctions.
 Also check whether the writer gave up too early: explain supported contributions
@@ -298,6 +318,8 @@ Return the complete corrected guides for all requested IDs.\nPROPOSAL:\n"""
         reviewed = await runner.call(jid + '/review', review_prompt +
                                      json.dumps(proposal, ensure_ascii=False), SCHEMA, 'high',
                                      tool_profile='offline')
+        reviewed['guides'] = [normalize_duplicate_citation_markers(row, dossier)
+                              for row in reviewed['guides']]
         try:
             validate_rows([item], reviewed['guides'])
             validate_citations(reviewed['guides'][0], dossier)
@@ -306,9 +328,15 @@ Return the complete corrected guides for all requested IDs.\nPROPOSAL:\n"""
                 json.dumps(reviewed, ensure_ascii=False) +
                 '\nThe reviewed output failed validation: ' + str(error) +
                 '\nRepair the complete guide using only the supplied evidence. '
-                'Parts must concatenate to the exact headword, not a traditional '
-                'variant or an illustrative phrase. Preserve all citation checks.',
+                'Parts must concatenate to the exact headword, not a different '
+                'spelling or an illustrative phrase. Investigation question components '
+                'must be exact substrings of the headword, not readings. If structure '
+                'is lexicalized, preserve a concrete supported limitation in '
+                'explanation_en or caveat_en; do not return a bare definition. '
+                'Preserve all citation checks.',
                 SCHEMA, 'high', tool_profile='offline')
+            reviewed['guides'] = [normalize_duplicate_citation_markers(row, dossier)
+                                  for row in reviewed['guides']]
             validate_rows([item], reviewed['guides'])
             validate_citations(reviewed['guides'][0], dossier)
         return reviewed['guides'][0]
@@ -320,7 +348,7 @@ Return the complete corrected guides for all requested IDs.\nPROPOSAL:\n"""
         receipt = path.parent / 'meaning-guide-jobs' / (jid + '.json')
         atomic_json(receipt, dict(job, status='pending'))
         try:
-            dossier = await cached_research(runner, jid, item, prior, job['requests'])
+            dossier = await cached_research(runner, jid, item, prior, job['requests'], **research_options)
             if (dossier is None and prior and matches(prior, item)
                     and prior.get('research') and job['requests']
                     and all(r.get('reuse_reviewed_evidence') and not r.get('force_research')
@@ -330,14 +358,14 @@ Return the complete corrected guides for all requested IDs.\nPROPOSAL:\n"""
                 dossier = deepcopy(prior['research'])
             row, questions = None, []
             if dossier is None and not any(r.get('force_research') for r in job['requests']):
-                row, questions = await adaptive_edit(runner, jid, item, prior, job['requests'])
+                row, questions = await adaptive_edit(runner, jid, item, prior, job['requests'], **adaptive_options)
             route = 'offline_review'
             if row is None:
                 route = 'cached_research' if dossier is not None else 'researched'
                 if dossier is None:
                     research_requests = job['requests'] + ([dict(
                         reason='Research escalation: ' + ' '.join(questions))] if questions else [])
-                    dossier = await research(runner, jid, item, prior, research_requests)
+                    dossier = await research(runner, jid, item, prior, research_requests, **research_options)
                 row = await researched_edit(jid, item, prior, job['requests'], dossier)
                 row['research'] = dossier
             row.update(input_fingerprint=input_fingerprint(item),

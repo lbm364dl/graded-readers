@@ -84,6 +84,24 @@ def test_reviewer_can_fix_a_malformed_draft_component(tmp_path, monkeypatch):
     assert output['entries'][0]['meaning_guide']['parts'][0]['text'] == '三'
 
 
+def test_second_scoped_repair_corrects_a_repeated_identity_typo(tmp_path, monkeypatch):
+    stages = []
+    async def call(self, job, prompt, *args, **kwargs):
+        stage = job.rsplit('/', 1)[-1]
+        stages.append(stage)
+        result = packet()
+        if stage in ('adaptive-review', 'adaptive-review-repair'):
+            result['guides'][0]['entry_id'] = 'three-hundredd'
+        if stage == 'adaptive-review-repair-2':
+            assert 'ONLY allowed entry_id is three-hundred' in prompt
+        return result
+    monkeypatch.setattr(CodexRunner, 'call', call)
+    output = asyncio.run(guides.update(corpus(), tmp_path/'guides.json', run_dir=tmp_path/'runs'))
+    assert output['entries'][0]['meaning_guide']['editorial_route'] == 'offline_review'
+    assert stages == ['adaptive-propose', 'adaptive-review',
+                      'adaptive-review-repair', 'adaptive-review-repair-2']
+
+
 def test_corrected_draft_classification_alone_does_not_require_research(tmp_path, monkeypatch):
     calls = []
     async def call(self, job, *args, **kwargs):
@@ -96,6 +114,22 @@ def test_corrected_draft_classification_alone_does_not_require_research(tmp_path
     output = asyncio.run(guides.update(corpus(), tmp_path / 'guides.json', run_dir=tmp_path / 'runs'))
     assert len(calls) == 2
     assert output['entries'][0]['meaning_guide']['editorial_route'] == 'offline_review'
+
+
+def test_unknown_interrogative_referent_is_not_unknown_word_formation():
+    row = packet()['guides'][0]
+    row['explanation_en'] = 'どこ asks about an unknown place; a particle marks its role.'
+    assert not adaptive.evidence_needed(row)
+    row['explanation_en'] = 'It refers to a place that is unknown or being asked about.'
+    assert not adaptive.evidence_needed(row)
+    row['explanation_en'] = 'The contribution of the first component is unknown.'
+    assert adaptive.evidence_needed(row)
+    row['explanation_en'] = '誰 asks which person is meant when their identity is unknown.'
+    assert not adaptive.evidence_needed(row)
+    row['explanation_en'] = 'The component\'s identity is unknown.'
+    assert adaptive.evidence_needed(row)
+    row['explanation_en'] = 'The name was historically used for a person whose identity is unknown.'
+    assert adaptive.evidence_needed(row)
 
 
 def test_conventional_meaning_alone_is_not_a_historical_research_claim():
@@ -111,7 +145,7 @@ def test_conventional_meaning_alone_is_not_a_historical_research_claim():
 def test_invalid_offline_approval_cannot_publish(tmp_path, monkeypatch, problem):
     async def call(self, job, *args, **kwargs):
         result = packet()
-        if job.endswith(('adaptive-review', 'adaptive-review-repair')):
+        if job.rsplit('/', 1)[-1].startswith('adaptive-review'):
             if problem == 'citation': result['guides'][0]['claim_ids'] = ['invented-source']
             if problem == 'parts': result['guides'][0]['parts'][0]['text'] = '四'
             if problem == 'uncertainty': result['research_questions'] = ['An unresolved question']

@@ -1,0 +1,32 @@
+{
+  "id": "ja-7a7700ba1f3c07b7-258e01a0a7fe028d",
+  "entry_id": "ja-7a7700ba1f3c07b7",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-7a7700ba1f3c07b7",
+      "headword": "斑",
+      "reading": "まだら",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-7a7700ba1f3c07b7-1",
+          "definition": "a spot or mottled pattern"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は黄を含んだ淡い灰色で、黒い斑がある。",
+        "gloss": "spot; mottled pattern",
+        "sense_id": "ja-7a7700ba1f3c07b7-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "74de4e3d1a583e584f3e9480c2a1e96cd4618b11ba9ceae42a71b15d743351e3"
+}

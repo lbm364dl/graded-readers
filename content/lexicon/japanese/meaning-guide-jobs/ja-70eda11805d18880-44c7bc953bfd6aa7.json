@@ -1,0 +1,32 @@
+{
+  "id": "ja-70eda11805d18880-44c7bc953bfd6aa7",
+  "entry_id": "ja-70eda11805d18880",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-70eda11805d18880",
+      "headword": "一日中",
+      "reading": "いちにちじゅう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-70eda11805d18880-1",
+          "definition": "the whole day; all day long"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "学校から帰ると、ほとんど一日中、書斎にこもっている。",
+        "gloss": "all day long",
+        "sense_id": "ja-70eda11805d18880-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d8136d254446ef0c2ae13d02c6510c4e1bb514276d11ba9094622db22c4afabf"
+}

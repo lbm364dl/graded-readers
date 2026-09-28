@@ -1,0 +1,66 @@
+{
+  "id": "ja-251db285792ab022-095ffabb7d8dc5c5",
+  "entry_id": "ja-251db285792ab022",
+  "reason": "requested",
+  "item": {
+    "entry": {
+      "id": "ja-251db285792ab022",
+      "headword": "中",
+      "reading": "なか",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-251db285792ab022-1",
+          "definition": "Inside; interior; the midst of something."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は笹原の中へ捨てられました。",
+        "gloss": "inside; midst",
+        "sense_id": "ja-251db285792ab022-1"
+      },
+      {
+        "sentence": "主人は吾輩を見て、「家の中に置いてやれ」と言いました。",
+        "gloss": "inside",
+        "sense_id": "ja-251db285792ab022-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-251db285792ab022",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "中（なか）means the inside or interior of a space or thing. It also refers to being within a group, range, or situation, extending the spatial idea of being inside to a broader context.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "中",
+        "contribution_en": "As a whole, means inside or interior, and extends to being within something in a broader sense.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "4ab5b525e4aa267051a84036b127da624eb4890f78dd105f269c369cdf299376",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [
+    {
+      "id": "ja-audit-request-dc626debd9cc427a",
+      "reason": "The main explanation and part gloss repeat the same meaning of 中. Requested change: Keep one concise explanation of 中 meaning “inside; within,” including the broader extension only once.",
+      "entry_id": "ja-251db285792ab022",
+      "force_research": false,
+      "reuse_reviewed_evidence": true
+    }
+  ],
+  "status": "reviewed",
+  "result_digest": "c0df78c2eddbc86cf9a2680bfe39b626ddd9e0a0a77e6b7e35c0027526afad31"
+}

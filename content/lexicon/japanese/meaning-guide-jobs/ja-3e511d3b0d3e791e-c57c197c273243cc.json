@@ -1,0 +1,47 @@
+{
+  "id": "ja-3e511d3b0d3e791e-c57c197c273243cc",
+  "entry_id": "ja-3e511d3b0d3e791e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-3e511d3b0d3e791e",
+      "headword": "へ",
+      "reading": "へ",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-3e511d3b0d3e791e-1",
+          "definition": "Indicates direction or destination; toward, to, or into."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は笹原の中へ捨てられました。",
+        "gloss": "to; into",
+        "sense_id": "ja-3e511d3b0d3e791e-1"
+      },
+      {
+        "sentence": "吾輩は池を左に見ながら、ゆっくり歩き、人の家へ入りました。",
+        "gloss": "toward; to",
+        "sense_id": "ja-3e511d3b0d3e791e-1"
+      },
+      {
+        "sentence": "女の人は吾輩を何度も外へ出しましたが、吾輩は台所へ入りました。",
+        "gloss": "toward",
+        "sense_id": "ja-3e511d3b0d3e791e-1"
+      },
+      {
+        "sentence": "女の人は吾輩を何度も外へ出しましたが、吾輩は台所へ入りました。",
+        "gloss": "toward; into",
+        "sense_id": "ja-3e511d3b0d3e791e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "14398934af2d09a1f6170a85d0601c93d2afd1edddc5d257392b1a781c22463d"
+}

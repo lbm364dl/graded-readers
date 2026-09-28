@@ -1,0 +1,32 @@
+{
+  "id": "ja-fb77ad9cf75ed363-a2c00a35ed77d6ad",
+  "entry_id": "ja-fb77ad9cf75ed363",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-fb77ad9cf75ed363",
+      "headword": "元気",
+      "reading": "げんき",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-fb77ad9cf75ed363-1",
+          "definition": "vigor; energy; vitality"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "元気も体格も失った黒は、最後に「いたちと魚屋の天秤棒には、もうこりごりだ」と言った。",
+        "gloss": "strength; vigor",
+        "sense_id": "ja-fb77ad9cf75ed363-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3afba9224163cb4deff8e3fde2ee146f2cc36d7ccd0771d884c68f4c82c1b9cb"
+}

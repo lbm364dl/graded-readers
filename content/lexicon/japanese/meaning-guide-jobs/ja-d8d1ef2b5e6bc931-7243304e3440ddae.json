@@ -1,0 +1,127 @@
+{
+  "id": "ja-d8d1ef2b5e6bc931-7243304e3440ddae",
+  "entry_id": "ja-d8d1ef2b5e6bc931",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-d8d1ef2b5e6bc931",
+      "headword": "その後",
+      "reading": "そのご",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d8d1ef2b5e6bc931-1",
+          "definition": "after that; afterward"
+        },
+        {
+          "id": "ja-d8d1ef2b5e6bc931-2",
+          "definition": "the time or events after that"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩はその後、黒と何回も会い、話をするようになった。",
+        "gloss": "after that",
+        "sense_id": "ja-d8d1ef2b5e6bc931-1"
+      },
+      {
+        "sentence": "その後、猫にはたくさん会ったが、こんな変な顔には一度も会わなかった。",
+        "gloss": "after that",
+        "sense_id": "ja-d8d1ef2b5e6bc931-1"
+      },
+      {
+        "sentence": "その後、黒は足を悪くし、毛の色も悪くなり、目には目やにがたまった。",
+        "gloss": "after that",
+        "sense_id": "ja-d8d1ef2b5e6bc931-1"
+      },
+      {
+        "sentence": "その後、吾輩はほかの猫にもたくさん会ったが、こんな変な顔には一度も出会わなかった。",
+        "gloss": "after that",
+        "sense_id": "ja-d8d1ef2b5e6bc931-1"
+      },
+      {
+        "sentence": "そこまでは覚えているが、その後は何が起きたのか、いくら考えても分からない。",
+        "gloss": "after that",
+        "sense_id": "ja-d8d1ef2b5e6bc931-2"
+      },
+      {
+        "sentence": "その後、朝は飯櫃の上、夜は炬燵の上、天気のよい昼は椽側で寝るようになった。",
+        "gloss": "after that",
+        "sense_id": "ja-d8d1ef2b5e6bc931-1"
+      },
+      {
+        "sentence": "その後、吾輩は何度も黒に会った。",
+        "gloss": "after that",
+        "sense_id": "ja-d8d1ef2b5e6bc931-1"
+      },
+      {
+        "sentence": "しかし車屋の黒は、その後、跛になった。",
+        "gloss": "after that",
+        "sense_id": "ja-d8d1ef2b5e6bc931-1"
+      },
+      {
+        "sentence": "その後、吾輩は猫にもかなり出会ったが、こんな変わった顔をしたものには、一度も出会わなかった。",
+        "gloss": "after that; thereafter",
+        "sense_id": "ja-d8d1ef2b5e6bc931-1"
+      },
+      {
+        "sentence": "そこまでは覚えているが、その後のことは、いくら思い出そうとしても分からない。",
+        "gloss": "after that; afterward",
+        "sense_id": "ja-d8d1ef2b5e6bc931-2"
+      },
+      {
+        "sentence": "その後、いろいろ経験して、朝は飯櫃の上、夜は炬燵の上、天気のよい昼は縁側で寝るようになった。",
+        "gloss": "after that",
+        "sense_id": "ja-d8d1ef2b5e6bc931-1"
+      },
+      {
+        "sentence": "畳で爪を研いだ時など、細君はひどく怒り、その後は座敷へ入りにくくなった。",
+        "gloss": "after that",
+        "sense_id": "ja-d8d1ef2b5e6bc931-1"
+      },
+      {
+        "sentence": "その後も吾輩は黒とたびたび会った。",
+        "gloss": "after that; afterward",
+        "sense_id": "ja-d8d1ef2b5e6bc931-1"
+      },
+      {
+        "sentence": "その後、車屋の黒は跛になった。",
+        "gloss": "after that",
+        "sense_id": "ja-d8d1ef2b5e6bc931-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-d8d1ef2b5e6bc931",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "compositional",
+    "explanation_en": "その後 means “after that” or “afterward.” その points to an event or time already identified, and 後 means the time following it; together they refer to what comes afterward.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "その",
+        "contribution_en": "Points to an event or time already identified.",
+        "claim_ids": []
+      },
+      {
+        "text": "後",
+        "contribution_en": "Means the time following that event or time.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "823bc5bf258d4c7fd5b8c675008631b002a636d8229328a8123041ab3768b66f",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "05ae37bcad6528f509562cb412787fd67df4839e1a00db0f9bbf300edcbcc054"
+}

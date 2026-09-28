@@ -1,0 +1,61 @@
+{
+  "id": "ja-f7262cf1a98195aa-9110146ffe900762",
+  "entry_id": "ja-f7262cf1a98195aa",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-f7262cf1a98195aa",
+      "headword": "前",
+      "reading": "まえ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-f7262cf1a98195aa-1",
+          "definition": "before; previously"
+        },
+        {
+          "id": "ja-f7262cf1a98195aa-2",
+          "definition": "the front; the area ahead of something"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そこは前までと違ってひどく明るかった。",
+        "gloss": "before; previously",
+        "sense_id": "ja-f7262cf1a98195aa-1"
+      },
+      {
+        "sentence": "吾輩は池の前に座り、どうすればよいか考えた。",
+        "gloss": "front; in front of",
+        "sense_id": "ja-f7262cf1a98195aa-2"
+      },
+      {
+        "sentence": "吾輩は足を前へ伸ばし、首を低くして、大きな欠伸をした。",
+        "gloss": "front; ahead",
+        "sense_id": "ja-f7262cf1a98195aa-2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-f7262cf1a98195aa",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "前 (まえ) refers to an earlier time or state: “before” or “previously.”",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "ecf25e0cb1055097e99ada5b10ea39fb82604491ae409348551a52338714f76a",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "91650bd1d5aac79f85901a33a8d6f9c24048a78ea4d4ccd5c3463701716b803a"
+}

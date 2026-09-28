@@ -1,0 +1,55 @@
+{
+  "id": "ja-a3df6964e71cf418-ef07221a804ac3ba",
+  "entry_id": "ja-a3df6964e71cf418",
+  "reason": "requested",
+  "item": {
+    "entry": {
+      "id": "ja-a3df6964e71cf418",
+      "headword": "いる",
+      "reading": "いる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-a3df6964e71cf418-1",
+          "definition": "To exist or be present (of living things)."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "兄弟も母もいません。",
+        "gloss": "are not present",
+        "sense_id": "ja-a3df6964e71cf418-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-a3df6964e71cf418",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "いる means that a living thing exists or is present. It is understood as a whole verb, with no smaller meaningful parts to explain.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "49232a5f6d98ec22e37c3420ea9790daa06c66e2ff2939d2590e7d77eb648987",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [
+    {
+      "id": "ja-audit-request-29d6d6d864804d9f",
+      "reason": "The direct definition of いる is followed by an unnecessary negative claim about having no smaller meaningful parts. Requested change: Keep the direct meaning “to exist; be present (of living things)” and remove the breakdown claim.",
+      "entry_id": "ja-a3df6964e71cf418",
+      "force_research": false,
+      "reuse_reviewed_evidence": true
+    }
+  ],
+  "status": "reviewed",
+  "result_digest": "3c46e8c4b70b357e756aa50e4ca93a2baa6b1c5b553462c69764d606ca52b5b7"
+}

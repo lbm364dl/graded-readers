@@ -1,0 +1,32 @@
+{
+  "id": "ja-7c12d53050b2523d-813c2f51b8cb739c",
+  "entry_id": "ja-7c12d53050b2523d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-7c12d53050b2523d",
+      "headword": "やっと",
+      "reading": "やっと",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-7c12d53050b2523d-1",
+          "definition": "at last; finally"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "やっと笹原を出ると、向こうに大きな池があった。",
+        "gloss": "at last",
+        "sense_id": "ja-7c12d53050b2523d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "815361d775230bfdb4bf2c48d15165f95fdd2047cc5607ee0b90b0c5a873a147"
+}

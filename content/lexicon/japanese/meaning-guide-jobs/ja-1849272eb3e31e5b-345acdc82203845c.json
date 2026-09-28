@@ -1,0 +1,32 @@
+{
+  "id": "ja-1849272eb3e31e5b-345acdc82203845c",
+  "entry_id": "ja-1849272eb3e31e5b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-1849272eb3e31e5b",
+      "headword": "ように",
+      "reading": "ように",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-1849272eb3e31e5b-1",
+          "definition": "so that; in order that"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は時々、足音を立てないように書斎をのぞく。",
+        "gloss": "so that; in order that",
+        "sense_id": "ja-1849272eb3e31e5b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ea910e365eb01eb4fb9c973a5d4950a4ca9d75042575195c8f646f74952c02a2"
+}

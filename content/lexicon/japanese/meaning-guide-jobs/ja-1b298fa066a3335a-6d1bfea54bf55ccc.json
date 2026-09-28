@@ -1,0 +1,46 @@
+{
+  "id": "ja-1b298fa066a3335a-6d1bfea54bf55ccc",
+  "entry_id": "ja-1b298fa066a3335a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-1b298fa066a3335a",
+      "headword": "よい",
+      "reading": "よい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-1b298fa066a3335a-1",
+          "definition": "good; pleasant; favorable"
+        },
+        {
+          "id": "ja-1b298fa066a3335a-2",
+          "definition": "well; favorably"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "広くはないが、日がよく入り、静かで気持ちのよい所だ。",
+        "gloss": "well; abundantly",
+        "sense_id": "ja-1b298fa066a3335a-2"
+      },
+      {
+        "sentence": "広くはないが、日がよく入り、静かで気持ちのよい所だ。",
+        "gloss": "pleasant",
+        "sense_id": "ja-1b298fa066a3335a-1"
+      },
+      {
+        "sentence": "黒は「人間は、格好のよい泥棒だ」と怒った。",
+        "gloss": "good-looking; fine",
+        "sense_id": "ja-1b298fa066a3335a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "17c58d99c0f270c39fa072460a29297e212538463bb26bf3cb9c21aa55db671f"
+}

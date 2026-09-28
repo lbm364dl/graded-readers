@@ -64,6 +64,8 @@ flutter:
   assets:
     - assets/content.json
     - assets/usage_dictionary.json
+    - assets/usage_dictionary_ja.json
+    - assets/grammar_dictionary_ja.json
     - assets/chinese_reading_units.json
     - assets/content_ja.json
     - assets/annotations/

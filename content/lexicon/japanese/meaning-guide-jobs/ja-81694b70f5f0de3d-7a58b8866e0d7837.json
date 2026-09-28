@@ -1,0 +1,55 @@
+{
+  "id": "ja-81694b70f5f0de3d-7a58b8866e0d7837",
+  "entry_id": "ja-81694b70f5f0de3d",
+  "reason": "requested",
+  "item": {
+    "entry": {
+      "id": "ja-81694b70f5f0de3d",
+      "headword": "ニャーニャー",
+      "reading": "にゃーにゃー",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-81694b70f5f0de3d-1",
+          "definition": "The sound of a cat meowing; meow-meow."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "暗い所でニャーニャー泣いていました。",
+        "gloss": "meow-meow",
+        "sense_id": "ja-81694b70f5f0de3d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-81694b70f5f0de3d",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "lexicalized",
+    "explanation_en": "ニャーニャー is a conventional sound-imitating word for a cat’s repeated meow. It can also modify a verb such as 鳴く to describe making that sound.",
+    "caveat_en": "The repeated kana represent the recurring call; they are not separate semantic parts of the word.",
+    "parts": [],
+    "input_fingerprint": "499fe57802dfe2d037b28eae246941523024d30cf3d9493a4bfd6277684a09f3",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [
+    {
+      "id": "ja-audit-request-7932431dec03d362",
+      "reason": "The caveat about repeated kana not being separate semantic parts corrects an unstated misconception. Requested change: Remove the caveat; retain the useful description of the conventional cat-call word and its use with verbs.",
+      "entry_id": "ja-81694b70f5f0de3d",
+      "force_research": false,
+      "reuse_reviewed_evidence": true
+    }
+  ],
+  "status": "reviewed",
+  "result_digest": "cebcfdb11f2f4d8dc59455c70397aa6512dc7eef2a1d62fea5ef64191245c98e"
+}

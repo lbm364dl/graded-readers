@@ -1,0 +1,46 @@
+{
+  "id": "ja-987fafee142a9e13-c577df7f90c52a19",
+  "entry_id": "ja-987fafee142a9e13",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-987fafee142a9e13",
+      "headword": "日",
+      "reading": "ひ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-987fafee142a9e13-1",
+          "definition": "sun; sunlight; daylight"
+        },
+        {
+          "id": "ja-987fafee142a9e13-2",
+          "definition": "day; a period of daylight"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "広くはないが、日がよく入り、静かで気持ちのよい所だ。",
+        "gloss": "sunlight; daylight",
+        "sense_id": "ja-987fafee142a9e13-1"
+      },
+      {
+        "sentence": "ある暖かい日の午後、昼ごはんの後で寝てから、吾輩は茶園を歩いた。",
+        "gloss": "day",
+        "sense_id": "ja-987fafee142a9e13-2"
+      },
+      {
+        "sentence": "ある日、黒は人間の悪い話をした。",
+        "gloss": "day",
+        "sense_id": "ja-987fafee142a9e13-2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3283fea3f26a9980a17efe23923bafd1e8c58ace5da50f8ece77b6976d23e9a5"
+}

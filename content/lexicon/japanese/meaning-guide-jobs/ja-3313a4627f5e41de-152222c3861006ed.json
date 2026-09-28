@@ -1,0 +1,32 @@
+{
+  "id": "ja-3313a4627f5e41de-152222c3861006ed",
+  "entry_id": "ja-3313a4627f5e41de",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-3313a4627f5e41de",
+      "headword": "吹く",
+      "reading": "ふく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-3313a4627f5e41de-1",
+          "definition": "to blow; to send out air or smoke"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "手の上に乗せられ、顔を見ると、毛のない顔は薬缶のようで、顔の真ん中の出た所の穴から時々煙を吹いた。",
+        "gloss": "blew; emitted",
+        "sense_id": "ja-3313a4627f5e41de-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "27bcc1db0bfb6c9528fdf5415c46fd444d4957c2fcb38c74e1dcbbbaf92b988d"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-55dd323cfe142cb0-5a94d69f1cf3e736",
+  "entry_id": "ja-55dd323cfe142cb0",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-55dd323cfe142cb0",
+      "headword": "ヴァイオリン",
+      "reading": "ばいおりん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-55dd323cfe142cb0-1",
+          "definition": "violin"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "俳句を作って雑誌へ投稿し、新体詩を書き、間違いの多い英文を作り、弓に熱中し、謡を習い、時にはヴァイオリンまで鳴らした。",
+        "gloss": "violin",
+        "sense_id": "ja-55dd323cfe142cb0-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "41da3b2a2141bbf979ef281327940554e20ac1edbe2f7f6ed7f21051c9fa232b"
+}

@@ -1,0 +1,60 @@
+{
+  "id": "ja-1eb517229b171abf-752f87f9e705b478",
+  "entry_id": "ja-1eb517229b171abf",
+  "reason": "requested",
+  "item": {
+    "entry": {
+      "id": "ja-1eb517229b171abf",
+      "headword": "入る",
+      "reading": "はいる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-1eb517229b171abf-1",
+          "definition": "To enter; go into a place or space."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は池を左に見ながら、ゆっくり歩き、人の家へ入りました。",
+        "gloss": "entered; went into",
+        "sense_id": "ja-1eb517229b171abf-1"
+      },
+      {
+        "sentence": "女の人は吾輩を何度も外へ出しましたが、吾輩は台所へ入りました。",
+        "gloss": "entered; went into",
+        "sense_id": "ja-1eb517229b171abf-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-1eb517229b171abf",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "入る（はいる）means to enter or go into a place or space. It describes movement from outside a place to inside it and is best understood as a whole verb, not divided into smaller meaningful parts.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "ac696035b420cb71d4e1de27de1f95ac67db6f3a56c8ef714bea262b308c449e",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [
+    {
+      "id": "ja-audit-request-927500a0563439b2",
+      "reason": "The final sentence repeats that 入る is understood as a whole rather than divided into parts. Requested change: Retain the useful movement-from-outside-to-inside distinction and remove the breakdown claim.",
+      "entry_id": "ja-1eb517229b171abf",
+      "force_research": false,
+      "reuse_reviewed_evidence": true
+    }
+  ],
+  "status": "reviewed",
+  "result_digest": "688664fa3bef409d65b0a57a7d2247e11b4ea0d17f00138099cfb4c72d584696"
+}

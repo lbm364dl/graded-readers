@@ -1,0 +1,134 @@
+{
+  "id": "ja-1b298fa066a3335a-9306f97414946b29",
+  "entry_id": "ja-1b298fa066a3335a",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-1b298fa066a3335a",
+      "headword": "よい",
+      "reading": "よい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-1b298fa066a3335a-1",
+          "definition": "good; pleasant; favorable"
+        },
+        {
+          "id": "ja-1b298fa066a3335a-2",
+          "definition": "well; favorably"
+        },
+        {
+          "id": "ja-1b298fa066a3335a-3",
+          "definition": "in good physical condition; well-built"
+        },
+        {
+          "id": "ja-1b298fa066a3335a-4",
+          "definition": "convenient; suitable"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "広くはないが、日がよく入り、静かで気持ちのよい所だ。",
+        "gloss": "well; abundantly",
+        "sense_id": "ja-1b298fa066a3335a-2"
+      },
+      {
+        "sentence": "広くはないが、日がよく入り、静かで気持ちのよい所だ。",
+        "gloss": "pleasant",
+        "sense_id": "ja-1b298fa066a3335a-1"
+      },
+      {
+        "sentence": "黒は「人間は、格好のよい泥棒だ」と怒った。",
+        "gloss": "good-looking; fine",
+        "sense_id": "ja-1b298fa066a3335a-1"
+      },
+      {
+        "sentence": "「人間は、体のよい泥棒だ」と黒は怒った。",
+        "gloss": "healthy-looking; well-built",
+        "sense_id": "ja-1b298fa066a3335a-3"
+      },
+      {
+        "sentence": "吾輩は池の前に座り、どうすればよいか考えた。",
+        "gloss": "good; advisable",
+        "sense_id": "ja-1b298fa066a3335a-1"
+      },
+      {
+        "sentence": "人間に生まれたなら、教師になるのが一番よい。",
+        "gloss": "good; best",
+        "sense_id": "ja-1b298fa066a3335a-1"
+      },
+      {
+        "sentence": "その後、朝は飯櫃の上、夜は炬燵の上、天気のよい昼は椽側で寝るようになった。",
+        "gloss": "fine; good",
+        "sense_id": "ja-1b298fa066a3335a-1"
+      },
+      {
+        "sentence": "吾輩はただ、その日その日を何とか過ごせればよいと思っている。",
+        "gloss": "good; sufficient",
+        "sense_id": "ja-1b298fa066a3335a-1"
+      },
+      {
+        "sentence": "広くはないが、明るくて気持ちのよい場所だ。",
+        "gloss": "pleasant",
+        "sense_id": "ja-1b298fa066a3335a-1"
+      },
+      {
+        "sentence": "吾輩は池の前に座り、これからどうすればよいか考えた。",
+        "gloss": "good; advisable",
+        "sense_id": "ja-1b298fa066a3335a-1"
+      },
+      {
+        "sentence": "しかし、よい考えは何も浮かばない。",
+        "gloss": "good; satisfactory",
+        "sense_id": "ja-1b298fa066a3335a-1"
+      },
+      {
+        "sentence": "邸内に入ったものの、どうすればよいかは分からない。",
+        "gloss": "good; advisable",
+        "sense_id": "ja-1b298fa066a3335a-1"
+      },
+      {
+        "sentence": "自分の都合がよければ、小供は吾輩を逆さにしたり、頭へ袋をかぶせたり、外へ放り出したりする。",
+        "gloss": "if it is convenient",
+        "sense_id": "ja-1b298fa066a3335a-4"
+      },
+      {
+        "sentence": "ただ、その日その日をどうにか過ごせればよい。",
+        "gloss": "good; sufficient",
+        "sense_id": "ja-1b298fa066a3335a-1"
+      },
+      {
+        "sentence": "鼠をたくさん食べるから、そんなに太って毛つやもよいのだろう」と言うと、黒は急にため息をついた。",
+        "gloss": "good; healthy-looking",
+        "sense_id": "ja-1b298fa066a3335a-3"
+      },
+      {
+        "sentence": "人間てものは、体裁のよい泥棒だぜ」\n",
+        "gloss": "good-looking; respectable",
+        "sense_id": "ja-1b298fa066a3335a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-1b298fa066a3335a",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "よい evaluates something positively: it can be good in quality, pleasant to experience, or favorable. Used adverbially, よく describes something as happening well or favorably; with verbs such as 入る, it can also suggest that something comes in freely or in abundance. In 体のよい, it describes someone as healthy-looking or well-built.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "f317452aaaf7d2f3f95165c9c45563c3e9281355a5b3fd6e7d98023538d9bc53",
+    "revision": 2,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "afac5c4f6b70931cdecbbc334008b85dec9842273cc59e13e33d07063e05bf35"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-011ab850a8c48d40-67b2ba3666d10ebc",
+  "entry_id": "ja-011ab850a8c48d40",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-011ab850a8c48d40",
+      "headword": "求める",
+      "reading": "もとめる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-011ab850a8c48d40-1",
+          "definition": "to seek; look for"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "腹が減り、寒くなったので、食べ物を求めて池のそばを歩いた。",
+        "gloss": "seeking; in search of",
+        "sense_id": "ja-011ab850a8c48d40-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3b650cb17f9bc300832f7508309fdc98396084440915af78792f9dce45d3568a"
+}

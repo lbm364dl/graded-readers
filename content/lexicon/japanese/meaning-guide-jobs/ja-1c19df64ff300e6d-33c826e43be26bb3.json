@@ -1,0 +1,32 @@
+{
+  "id": "ja-1c19df64ff300e6d-33c826e43be26bb3",
+  "entry_id": "ja-1c19df64ff300e6d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-1c19df64ff300e6d",
+      "headword": "周り",
+      "reading": "まわり",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-1c19df64ff300e6d-1",
+          "definition": "the area around something; surroundings; vicinity"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "その上、今までいた場所とは違い、周りがひどく明るい。",
+        "gloss": "surroundings; area around",
+        "sense_id": "ja-1c19df64ff300e6d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9d7fb05a3afeb9800475f821c36afc6f664135c18c770746c05cb1c14c86de06"
+}

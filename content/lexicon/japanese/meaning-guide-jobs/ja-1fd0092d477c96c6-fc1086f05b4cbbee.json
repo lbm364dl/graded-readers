@@ -1,0 +1,32 @@
+{
+  "id": "ja-1fd0092d477c96c6-fc1086f05b4cbbee",
+  "entry_id": "ja-1fd0092d477c96c6",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-1fd0092d477c96c6",
+      "headword": "気",
+      "reading": "き",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-1fd0092d477c96c6-1",
+          "definition": "feeling; mood; inclination"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "黒の子分になって他の御馳走を探し歩く気にもならなかった。",
+        "gloss": "inclination; feeling",
+        "sense_id": "ja-1fd0092d477c96c6-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "88868deaee6eb2a66992043a560a3f0861da8553b1199c608cfb1cec15ddbc9f"
+}

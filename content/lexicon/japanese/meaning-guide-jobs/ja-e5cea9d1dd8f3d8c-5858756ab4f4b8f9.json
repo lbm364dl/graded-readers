@@ -1,0 +1,32 @@
+{
+  "id": "ja-e5cea9d1dd8f3d8c-5858756ab4f4b8f9",
+  "entry_id": "ja-e5cea9d1dd8f3d8c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e5cea9d1dd8f3d8c",
+      "headword": "煙草",
+      "reading": "たばこ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e5cea9d1dd8f3d8c-1",
+          "definition": "tobacco; a cigarette"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "後で、それがたばこだと知った。",
+        "gloss": "tobacco; cigarette",
+        "sense_id": "ja-e5cea9d1dd8f3d8c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1cb38b92569b1ac8d6fe07cc6e9ff151ffbfd8b207b48c62d869899fd5b6fda3"
+}

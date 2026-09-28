@@ -1,0 +1,61 @@
+{
+  "id": "ja-bcb1db6cacd2ce60-b90f4de645a74e85",
+  "entry_id": "ja-bcb1db6cacd2ce60",
+  "reason": "requested",
+  "item": {
+    "entry": {
+      "id": "ja-bcb1db6cacd2ce60",
+      "headword": "手",
+      "reading": "て",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-bcb1db6cacd2ce60-1",
+          "definition": "Hand."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "男の人の手の上で、吾輩の目が回りました。",
+        "gloss": "hand",
+        "sense_id": "ja-bcb1db6cacd2ce60-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-bcb1db6cacd2ce60",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "手（て）means “hand,” the body part at the end of the arm. It is a simple Japanese word used for the hand as a whole.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "手",
+        "contribution_en": "The whole word means “hand.”",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "04ae0ebb4d093610ec0d089bc555855ab304291f472dbab53c97d4882c466bbc",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [
+    {
+      "id": "ja-audit-request-6aee7017e7d1353d",
+      "reason": "The explanation defines 手 twice and adds unnecessary whole-word commentary. Requested change: Use one concise definition such as “hand; the body part at the end of the arm,” removing the redundant sentence and part gloss.",
+      "entry_id": "ja-bcb1db6cacd2ce60",
+      "force_research": false,
+      "reuse_reviewed_evidence": true
+    }
+  ],
+  "status": "reviewed",
+  "result_digest": "f251970ed93c8ccc797d65540afb5241c66d6ae25f5c49db92e9765d7607c2ea"
+}

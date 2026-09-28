@@ -1,0 +1,32 @@
+{
+  "id": "ja-4c58f7c026c84f39-58e5f3036926c5b7",
+  "entry_id": "ja-4c58f7c026c84f39",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-4c58f7c026c84f39",
+      "headword": "暗い",
+      "reading": "くらい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-4c58f7c026c84f39-1",
+          "definition": "Dark; lacking light."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "暗い所でニャーニャー泣いていました。",
+        "gloss": "dark",
+        "sense_id": "ja-4c58f7c026c84f39-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8e52227710ee64d23107bad7bf218e3449a2ca513d737c5b8741156a5d4f4a75"
+}

@@ -1,0 +1,71 @@
+{
+  "id": "ja-b152b696da6b836a-7d75536c8a07b921",
+  "entry_id": "ja-b152b696da6b836a",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-b152b696da6b836a",
+      "headword": "ただ",
+      "reading": "ただ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-b152b696da6b836a-1",
+          "definition": "Only; just; merely."
+        },
+        {
+          "id": "ja-b152b696da6b836a-2",
+          "definition": "However; but."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ただ、薄暗くてじめじめした場所で、ニャーニャー泣いていたことだけは覚えている。",
+        "gloss": "however; only",
+        "sense_id": "ja-b152b696da6b836a-1"
+      },
+      {
+        "sentence": "ただ、書生の掌の上に乗せられ、ふわりと持ち上げられた感じが残っている。",
+        "gloss": "however; just",
+        "sense_id": "ja-b152b696da6b836a-1"
+      },
+      {
+        "sentence": "ただ、その時、吾輩は薄暗くてじめじめした所で、ニャーニャー泣いていたことだけは覚えている。",
+        "gloss": "however",
+        "sense_id": "ja-b152b696da6b836a-2"
+      },
+      {
+        "sentence": "ただ、書生の手のひらに乗せられて、すっと上へ持ち上げられた時、何だかふわふわするような感じがしただけだった。",
+        "gloss": "just; merely",
+        "sense_id": "ja-b152b696da6b836a-1"
+      },
+      {
+        "sentence": "吾輩はただ、その日その日を何とか過ごせればよいと思っている。",
+        "gloss": "just; merely",
+        "sense_id": "ja-b152b696da6b836a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-b152b696da6b836a",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "ただ means “only,” “just,” or “merely,” limiting the thing or extent being referred to.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "2057ea664edd188fbd7ec2e07a2f0939a1e1490c27a4461b25b741c742400719",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "eb2673cf647cecb84eae85d2f4aa4915eca77cda1f227b935b77d78ca969ffb8"
+}

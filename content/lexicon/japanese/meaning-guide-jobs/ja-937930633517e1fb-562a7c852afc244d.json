@@ -1,0 +1,32 @@
+{
+  "id": "ja-937930633517e1fb-562a7c852afc244d",
+  "entry_id": "ja-937930633517e1fb",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-937930633517e1fb",
+      "headword": "それほど",
+      "reading": "それほど",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-937930633517e1fb-1",
+          "definition": "that much; to that extent; so"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "だが、実際はそれほど勤勉ではない。",
+        "gloss": "that much; so",
+        "sense_id": "ja-937930633517e1fb-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4bad3717f5f0c54967a5d7e4ff540d02d95258459fb061a7fe8f45696090456b"
+}

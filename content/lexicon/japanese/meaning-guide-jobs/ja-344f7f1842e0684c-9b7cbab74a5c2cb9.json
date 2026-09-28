@@ -1,0 +1,42 @@
+{
+  "id": "ja-344f7f1842e0684c-9b7cbab74a5c2cb9",
+  "entry_id": "ja-344f7f1842e0684c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-344f7f1842e0684c",
+      "headword": "ない",
+      "reading": "ない",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-344f7f1842e0684c-1",
+          "definition": "not exist; be absent"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "名前はまだない。",
+        "gloss": "does not exist; there is none",
+        "sense_id": "ja-344f7f1842e0684c-1"
+      },
+      {
+        "sentence": "手の上に乗せられ、顔を見ると、毛のない顔は薬缶のようで、顔の真ん中の出た所の穴から時々煙を吹いた。",
+        "gloss": "without; lacking",
+        "sense_id": "ja-344f7f1842e0684c-1"
+      },
+      {
+        "sentence": "名前はまだない」と答えた。",
+        "gloss": "does not exist; there is no",
+        "sense_id": "ja-344f7f1842e0684c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e14f19a6ea7fc872ce8860a4b9210dfd1e08fd627df653554891c8f76a581589"
+}

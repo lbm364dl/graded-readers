@@ -1,0 +1,37 @@
+{
+  "id": "ja-c94aa75974dccee4-04fceed8185dae80",
+  "entry_id": "ja-c94aa75974dccee4",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-c94aa75974dccee4",
+      "headword": "四匹",
+      "reading": "よんひき",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-c94aa75974dccee4-1",
+          "definition": "four small animals"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "先日、白君自身が玉のような子猫を四匹産んだ。",
+        "gloss": "four small animals",
+        "sense_id": "ja-c94aa75974dccee4-1"
+      },
+      {
+        "sentence": "ところが、その家の書生が三日目に子猫を四匹とも裏の池へ持って行き、捨てて来たそうだ。",
+        "gloss": "four small animals",
+        "sense_id": "ja-c94aa75974dccee4-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a18c35b18afc4c88757763d476e0d72cd083ded2bb2ebcf1177fa5c2b43f2338"
+}

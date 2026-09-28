@@ -1,0 +1,32 @@
+{
+  "id": "ja-20c07273200f299c-489bd322b504117c",
+  "entry_id": "ja-20c07273200f299c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-20c07273200f299c",
+      "headword": "描く",
+      "reading": "えがく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-20c07273200f299c-1",
+          "definition": "to draw, paint, or depict"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "今日から謡や俳句をやめ、絵をかく決心をしたらしい。",
+        "gloss": "draw; paint",
+        "sense_id": "ja-20c07273200f299c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2660f0d77578a2ff549969565458c304a5503e3dd09c95b069f213140eccd40b"
+}

@@ -1,0 +1,115 @@
+{
+  "id": "ja-c0c8bbb908ed5fac-301e2b07baa2a8e8",
+  "entry_id": "ja-c0c8bbb908ed5fac",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-c0c8bbb908ed5fac",
+      "headword": "もう",
+      "reading": "もう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-c0c8bbb908ed5fac-1",
+          "definition": "any longer; any more"
+        },
+        {
+          "id": "ja-c0c8bbb908ed5fac-2",
+          "definition": "already; by now"
+        },
+        {
+          "id": "ja-c0c8bbb908ed5fac-3",
+          "definition": "again; another time"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ところが小便がしたくなり、もう待てなかった。",
+        "gloss": "any longer; no more",
+        "sense_id": "ja-c0c8bbb908ed5fac-1"
+      },
+      {
+        "sentence": "元気も体格も失った黒は、最後に「いたちと魚屋の天秤棒には、もうこりごりだ」と言った。",
+        "gloss": "anymore; no longer",
+        "sense_id": "ja-c0c8bbb908ed5fac-1"
+      },
+      {
+        "sentence": "もう助からないと思った時、どさりと音がして、目から火が出た。",
+        "gloss": "any longer; no more",
+        "sense_id": "ja-c0c8bbb908ed5fac-1"
+      },
+      {
+        "sentence": "吾輩はもう十分に寝たので欠伸がしたかったが、主人が一生懸命なので、しばらく動かずにいた。",
+        "gloss": "already",
+        "sense_id": "ja-c0c8bbb908ed5fac-2"
+      },
+      {
+        "sentence": "そして、もう写生の邪魔をしたのだから仕方がないと思い、裏へ行って用を足そうと、ゆっくり歩き出した。",
+        "gloss": "already",
+        "sense_id": "ja-c0c8bbb908ed5fac-2"
+      },
+      {
+        "sentence": "最後に茶園で会った時、吾輩が「どうした」と聞くと、黒は「鼬の最後っ屁と、肴屋の天秤棒には、もうこりごりだ」と答えた。",
+        "gloss": "already; any more",
+        "sense_id": "ja-c0c8bbb908ed5fac-1"
+      },
+      {
+        "sentence": "もう助からないと思った時、どさりという音がして、目の前に火花が散った。",
+        "gloss": "any longer; no more",
+        "sense_id": "ja-c0c8bbb908ed5fac-1"
+      },
+      {
+        "sentence": "もう待ってはいられない。",
+        "gloss": "any longer; anymore",
+        "sense_id": "ja-c0c8bbb908ed5fac-1"
+      },
+      {
+        "sentence": "後から考えると、その時にはもう家の中へ入っていたのである。",
+        "gloss": "already",
+        "sense_id": "ja-c0c8bbb908ed5fac-2"
+      },
+      {
+        "sentence": "そこで吾輩は、書生以外の人間をもう一度見た。",
+        "gloss": "again; another time",
+        "sense_id": "ja-c0c8bbb908ed5fac-3"
+      },
+      {
+        "sentence": "吾輩はもう十分に寝ていたし、欠伸もしたかった。",
+        "gloss": "already; by now",
+        "sense_id": "ja-c0c8bbb908ed5fac-2"
+      },
+      {
+        "sentence": "体がむずむずして、もう一分も我慢できなくなった。",
+        "gloss": "already; any longer",
+        "sense_id": "ja-c0c8bbb908ed5fac-1"
+      },
+      {
+        "sentence": "茶園で会った最後の日、吾輩が具合を尋ねると、黒は「鼬の最後っ屁と、肴屋の天秤棒には、もうこりごりだ」と答えた。",
+        "gloss": "already; by now",
+        "sense_id": "ja-c0c8bbb908ed5fac-2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-c0c8bbb908ed5fac",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "もう presents a situation as having reached a point by now: it can mean “already” or “by now.” With a negative expression, it marks the end of continuation, meaning “not any longer” or “no more”; with expressions such as もうこりごりだ, it conveys having had enough and wanting no more.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "68df3fceb5ce69cea87f113ebb7faa70fca44002f2b46b49bae2cfa4625c4a13",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3c24c7ea0876075b71d0fbc98faa7ab3747c1296e5d779ecd7c90fa41b68577f"
+}

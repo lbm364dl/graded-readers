@@ -1,0 +1,32 @@
+{
+  "id": "ja-c3b47134f98c7606-d7d43cfffbe2912f",
+  "entry_id": "ja-c3b47134f98c7606",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-c3b47134f98c7606",
+      "headword": "Vようとはしない",
+      "reading": "ようとはしない",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-c3b47134f98c7606-1",
+          "definition": "Used after a verb's volitional form to indicate that someone makes no attempt or is unwilling to do the action."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "強いが教育がなく、誰も付き合おうとはしない。",
+        "gloss": "does not make an attempt to; refuses to",
+        "sense_id": "ja-c3b47134f98c7606-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "009444773b30c0bb858a1c790ec76b0322a6a616657d65b81e99f470dba14e75"
+}

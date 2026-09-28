@@ -1,0 +1,32 @@
+{
+  "id": "ja-b139f850a1d5d8bb-07a784eca3175c2d",
+  "entry_id": "ja-b139f850a1d5d8bb",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-b139f850a1d5d8bb",
+      "headword": "飾る",
+      "reading": "かざる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-b139f850a1d5d8bb-1",
+          "definition": "to decorate; to adorn"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "第一、毛で飾られているはずの顔が、つるつるしていて、まるで薬缶のようである。",
+        "gloss": "is decorated; is adorned",
+        "sense_id": "ja-b139f850a1d5d8bb-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "626c891067522f44289a8b28bfa3e17cf56ee140eeda672b9822ea9e2cf075f9"
+}

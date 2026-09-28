@@ -1,0 +1,32 @@
+{
+  "id": "ja-876e2d4a0dbd1eda-2c5353d5d8dbfbe1",
+  "entry_id": "ja-876e2d4a0dbd1eda",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-876e2d4a0dbd1eda",
+      "headword": "付ける",
+      "reading": "つける",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-876e2d4a0dbd1eda-1",
+          "definition": "to attach; to give or assign a name"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "今まで名前さえ付けてもらえないことからも、吾輩がどれほど大切にされなかったか分かる。",
+        "gloss": "not be able to get someone to attach; not be given",
+        "sense_id": "ja-876e2d4a0dbd1eda-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b9d6e781a73ff4c3fead621d26fab737ac9e4b906ee5a26d17f731fc4d209b0c"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-e04c28f2bedecfee-b258635b9b26e357",
+  "entry_id": "ja-e04c28f2bedecfee",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e04c28f2bedecfee",
+      "headword": "歩く",
+      "reading": "あるく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e04c28f2bedecfee-1",
+          "definition": "To walk; move on foot."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は池を左に見ながら、ゆっくり歩き、人の家へ入りました。",
+        "gloss": "walking",
+        "sense_id": "ja-e04c28f2bedecfee-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ec962817392f9644aed37d8551126e91fc3f9c70c322a056c9c152c6e87da889"
+}

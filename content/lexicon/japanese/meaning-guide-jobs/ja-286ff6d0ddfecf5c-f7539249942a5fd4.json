@@ -1,0 +1,32 @@
+{
+  "id": "ja-286ff6d0ddfecf5c-f7539249942a5fd4",
+  "entry_id": "ja-286ff6d0ddfecf5c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-286ff6d0ddfecf5c",
+      "headword": "跛",
+      "reading": "びっこ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-286ff6d0ddfecf5c-1",
+          "definition": "lameness; difficulty walking normally"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "しかし車屋の黒は、その後、跛になった。",
+        "gloss": "lameness",
+        "sense_id": "ja-286ff6d0ddfecf5c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0058782bd8eab3b9f6b158140120026e04e0792cd20e00593103e5eddbf33888"
+}

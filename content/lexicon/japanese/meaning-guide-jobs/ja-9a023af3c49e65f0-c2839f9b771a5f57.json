@@ -1,0 +1,32 @@
+{
+  "id": "ja-9a023af3c49e65f0-c2839f9b771a5f57",
+  "entry_id": "ja-9a023af3c49e65f0",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9a023af3c49e65f0",
+      "headword": "めったにない",
+      "reading": "めったにない",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-9a023af3c49e65f0-1",
+          "definition": "rarely; hardly ever"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩の主人は教師だが、吾輩と顔を合わせることはめったにない。",
+        "gloss": "rarely; hardly ever",
+        "sense_id": "ja-9a023af3c49e65f0-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7c3cbcb50b2a3c98112f71f418f24243f6a7064f4bc67a6559fcc93e9a39961a"
+}

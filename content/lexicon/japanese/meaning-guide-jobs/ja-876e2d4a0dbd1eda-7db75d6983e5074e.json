@@ -1,0 +1,61 @@
+{
+  "id": "ja-876e2d4a0dbd1eda-7db75d6983e5074e",
+  "entry_id": "ja-876e2d4a0dbd1eda",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-876e2d4a0dbd1eda",
+      "headword": "付ける",
+      "reading": "つける",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-876e2d4a0dbd1eda-1",
+          "definition": "to attach; to give or assign a name"
+        },
+        {
+          "id": "ja-876e2d4a0dbd1eda-2",
+          "definition": "to apply or add something to a surface or object"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "今まで名前さえ付けてもらえないことからも、吾輩がどれほど大切にされなかったか分かる。",
+        "gloss": "not be able to get someone to attach; not be given",
+        "sense_id": "ja-876e2d4a0dbd1eda-1"
+      },
+      {
+        "sentence": "どれほど大切にされなかったかは、今まで名前さえつけてもらえないことでも分かる。",
+        "gloss": "has not had anyone give it a name",
+        "sense_id": "ja-876e2d4a0dbd1eda-1"
+      },
+      {
+        "sentence": "主人は吾輩の輪郭をかき、顔の辺りに色をつけている。",
+        "gloss": "is applying; is adding",
+        "sense_id": "ja-876e2d4a0dbd1eda-2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-876e2d4a0dbd1eda",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "付ける means to attach something to a person or thing. With 名前 as its object, it means to give or assign a name, attaching it as an identifying label.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "6ebe64fa0ae69f1a317732f8840f4647aec53a357e57e1ac1898b4ee6cc82440",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "03854efec8fe8b3257fa1bc50e2989d63e7d3b98f4b0ca304e65533631e06ca1"
+}

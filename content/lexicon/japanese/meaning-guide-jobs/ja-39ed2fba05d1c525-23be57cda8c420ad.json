@@ -1,0 +1,32 @@
+{
+  "id": "ja-39ed2fba05d1c525-23be57cda8c420ad",
+  "entry_id": "ja-39ed2fba05d1c525",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-39ed2fba05d1c525",
+      "headword": "愛情",
+      "reading": "あいじょう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-39ed2fba05d1c525-1",
+          "definition": "affection; love"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "　吾輩が尊敬している、筋向の白君は、会うたびに「人間ほど愛情のないものはない」と言う。",
+        "gloss": "affection",
+        "sense_id": "ja-39ed2fba05d1c525-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "60d5b690b2590cfaf8b007d84f2a984c8549a1ccce821aabaaeca5fad1e2d231"
+}

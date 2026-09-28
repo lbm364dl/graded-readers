@@ -1,0 +1,32 @@
+{
+  "id": "ja-df491a8fafc29017-f4d2bf860eb1359e",
+  "entry_id": "ja-df491a8fafc29017",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-df491a8fafc29017",
+      "headword": "読みかける",
+      "reading": "よみかける",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-df491a8fafc29017-1",
+          "definition": "to begin reading and leave something unfinished"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩がそっと書斎をのぞくと、主人は昼寝をしていたり、読みかけの本に涎をたらしていたりする。",
+        "gloss": "partially read; unfinished reading",
+        "sense_id": "ja-df491a8fafc29017-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a700815dffc14eeec5588dced82e21835ead65b4bb6ed98896a6b85ee557ac3e"
+}

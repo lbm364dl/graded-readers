@@ -1,0 +1,32 @@
+{
+  "id": "ja-036cf050afa832ad-7fac17baffecc3f1",
+  "entry_id": "ja-036cf050afa832ad",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-036cf050afa832ad",
+      "headword": "毎夜",
+      "reading": "まいよ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-036cf050afa832ad-1",
+          "definition": "every night; each night"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "これが毎夜の決まった日課である。",
+        "gloss": "every night",
+        "sense_id": "ja-036cf050afa832ad-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c4ea8960be756e0ee71344748225e989002655f65ab5298578dcd6e0036e45ae"
+}

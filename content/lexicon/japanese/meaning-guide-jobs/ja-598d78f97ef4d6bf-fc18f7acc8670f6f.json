@@ -1,0 +1,32 @@
+{
+  "id": "ja-598d78f97ef4d6bf-fc18f7acc8670f6f",
+  "entry_id": "ja-598d78f97ef4d6bf",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-598d78f97ef4d6bf",
+      "headword": "なので",
+      "reading": "なので",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-598d78f97ef4d6bf-1",
+          "definition": "because; since; used to give a reason or cause"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩はもう十分に寝たので欠伸がしたかったが、主人が一生懸命なので、しばらく動かずにいた。",
+        "gloss": "because; since",
+        "sense_id": "ja-598d78f97ef4d6bf-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "59878ecef4d9e8509d2b02ee815412857143ec19496ffb03552b2ff54c4881ea"
+}

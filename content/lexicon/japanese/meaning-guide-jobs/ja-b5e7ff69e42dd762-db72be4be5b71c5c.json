@@ -1,0 +1,32 @@
+{
+  "id": "ja-b5e7ff69e42dd762-db72be4be5b71c5c",
+  "entry_id": "ja-b5e7ff69e42dd762",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-b5e7ff69e42dd762",
+      "headword": "さっぱりとする",
+      "reading": "さっぱりとする",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-b5e7ff69e42dd762-1",
+          "definition": "feel refreshed or pleasantly clean; be fresh and uncluttered"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "広くはないが、さっぱりとして気持ちよく、日の当たる所だ。",
+        "gloss": "feel refreshed; be fresh and pleasant",
+        "sense_id": "ja-b5e7ff69e42dd762-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "64b325d89a5ff984336f0e454f150130f80bd6e4f9fee6a79917ed965b7dd926"
+}

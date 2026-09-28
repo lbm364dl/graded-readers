@@ -1,0 +1,32 @@
+{
+  "id": "ja-e340c18d172ba243-b5e1413bb214e2ac",
+  "entry_id": "ja-e340c18d172ba243",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e340c18d172ba243",
+      "headword": "爪",
+      "reading": "つめ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e340c18d172ba243-1",
+          "definition": "claw; nail"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "この間も、畳で爪を磨いただけなのに、奥さんがたいへん怒り、それから座敷へ入れなくなった。",
+        "gloss": "claw; nail",
+        "sense_id": "ja-e340c18d172ba243-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "367f399e9bc26d438061a9e5a0d6658f082dfd9886dfc12ec4b748c69480158e"
+}

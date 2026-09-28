@@ -1,5 +1,74 @@
 # Graded Reader Pipeline
 
+## Japanese usage-dictionary pilot (N5)
+
+The pilot now has a separate **grammar dictionary**. Particles and productive
+patterns open grammar entries rather than masquerading as vocabulary. Inflected
+verbs keep their lexical links and additionally link to reusable conjugation or
+construction entries. Existing tap units, inline explanations and form chains are
+preserved. The Japanese home screen offers both dictionary browsers.
+
+`python -m pipeline.japanese_grammar_dictionary --update` runs an offline Luna
+proposer and independent reviewer on actual particle roles, form steps and grammar
+overlays. The word pipeline's `--update` invokes this stage automatically. Registry:
+`content/lexicon/japanese/n5.grammar.json`; app asset:
+`app/assets/grammar_dictionary_ja.json`. Every candidate is assigned exactly once
+to one or more canonical grammar IDs; functions of the same written particle may
+have separate entries. Candidate annotation keys are not canonical identities.
+Unchanged runs make zero model calls. New contexts reuse immutable approved
+lessons; only genuinely new functions receive new entries. Context explanations
+and edition-checked example links are stored separately from generic explanations.
+Old functional word IDs remain compatible, but word browsing hides them and links
+from word components redirect to the grammar dictionary.
+`--plan` reports pending grammar work without model calls. A deliberate correction
+uses `--request <entry-id-or-title> --reason "..."`, followed by `--update`;
+only the requested lessons are re-edited and unrelated reviewed lessons remain
+unchanged. Grammar reading fields represent pronunciation (は → わ, へ → え).
+Per-candidate fingerprints retain unaffected occurrence assignments when text is
+added or changed. Agents receive only new/changed candidates, with their relevant
+sentence rather than repeated whole chapters, plus the approved entry registry.
+Conjugation dropdowns use one linked chain: lexical base → intermediate grammar
+step → subsequent grammar step. Reviewed `layer: form` records bind exact stored
+form/readings/labels to canonical grammar IDs; the app never guesses from suffixes.
+For example, 入る opens its word entry, 入ります opens polite nonpast ます, and
+入りました opens polite past ました. The chain replaces the duplicate top-level
+word/grammar buttons and legacy local dictionary-form lookup. Intermediate forms
+are not counted as observed text examples; when a lesson is only represented by
+these stages, its source links are explicitly labeled conjugation chains.
+
+`python -m pipeline.japanese_usage_dictionary --plan` inspects pending work without
+model calls. `--update --workers 4` reviews the existing 吾輩は猫である N5 first
+chapter, leaving its source text, lexical boundaries, form steps and grammar
+overlays untouched. Inflected surfaces link to lemma/reading identities and shared
+senses. Reviewed collocations also get whole-expression entries; productive merged
+tap units can link to their canonical grammar component instead of creating a new
+entry for each verb plugged into the pattern.
+
+Japanese registries live in `content/lexicon/japanese/`; the published app asset is
+`app/assets/usage_dictionary_ja.json`. They are separate from the Chinese IDs and
+caches. Agents link occurrences first, then write/review reusable explanations.
+The shared editor accepts explicit Japanese policies: no Chinese translation,
+Mandarin-reading or Chinese etymology instructions leak into this route. Ordinary
+modern explanations use offline agents; genuinely uncertain contributions escalate
+to bounded browser research and independent source verification. Multi-character
+lexical components receive independently reviewed entries and explanations;
+single-kanji references open Japanese dictionary lookups, labeled as dictionary
+senses rather than proofs of historical formation.
+
+Adding another occurrence does not invalidate an approved word explanation unless
+its sense coverage or structured component relationships change. Targeted edits:
+`python -m pipeline.japanese_usage_dictionary --request 名前 --reason "Explain the
+contribution of 前 more clearly"` (optionally `--research`), followed by `--update`.
+Internal investigation questions persist in `japanese/investigations.json` and do
+not automatically schedule research. Completed review caches survive interrupted
+runs; publication waits for all explanations and component links to validate.
+
+The app's Japanese dictionary supports written words, hiragana/katakana readings
+and English meaning search. Examples retain exact source offsets and JLPT labels,
+and navigate back into the Japanese reader. Other JLPT levels remain outside this
+pilot; their existing contextual annotations and local dictionary lookups continue
+to work.
+
 ## Dictionary investigation backlog
 
 Successful dictionary updates refresh `content/lexicon/dictionary.investigations.json`
@@ -570,6 +639,35 @@ construction is classified from its lexical parts, with its hardest required
 part controlling reading focus; absence of the combined surface from the HSK
 list is not itself evidence that the construction is above level.
 
+### Japanese linked form-chain meanings
+
+Reusable grammar entries are focused lessons, not catalogs of inflected variants
+found in a passage. A construction entry explains its own meaning and formation;
+polite/past/negative/imperative transformations belong to their separate entries
+and occurrence chains. Both new-entry agents and scoped editorial agents use this
+rule. Minimal examples, prerequisites and useful contrasts remain appropriate
+when they clarify the entry's own concept.
+
+Agent annotations supply exact source forms, readings and ordered transformation
+steps. `pipeline.japanese_grammar_dictionary` links each transformation to its
+reviewed grammar entry. For compact merged units, it also supplies the agent with
+the whole overlay and component spans, preserving the original tail-step identity.
+Agents must return `display_meaning_en` for the **complete displayed form** and
+`display_base_meaning_en` for its complete base. These occurrence-specific fields
+are independently reviewed and required by validation, not constructed by joining
+English fragments. Thus 住むことにします means “decide to live,” and
+住むことにしました means “decided to live”; lexical idioms keep their combined
+meaning. Tense, politeness and other formation labels are shown separately.
+
+Only candidates whose evidence changed are sent to agents. Existing dictionary
+entries and unaffected assignments are reused; full approved explanation prose
+stays local. The app checks the exact source edition, tail step and complete
+display form before using its reviewed meaning. Older assets may show the final
+contextual translation, but must not label a full intermediate form with a
+tail-only translation. Repository-wide feedback handling is documented in
+`AGENTS.md`: improve the appropriate shared layer, check comparable cases and
+update future agent instructions instead of accumulating ad hoc exceptions.
+
 ### Audited 吾輩は猫である publication
 
 The Japanese full-book pipeline has an equivalent deterministic publication
@@ -675,6 +773,102 @@ can't be simplified. Need a different validation approach — perhaps exclude
 the poem text from the character count, or add poem characters to the glossary.
 
 ## Japanese agent harness
+
+### Independent dictionary editorial review
+
+Extend cumulative coverage without rewriting source annotations:
+
+```bash
+python -m pipeline.japanese_usage_dictionary --update --levels n5 n4 n3 n2 n1 --workers 4
+```
+
+`content/lexicon/japanese/coverage.json` records the selected levels. Existing
+N5-named registries are retained as shared stores for compatibility, not separate
+per-level dictionaries. Shared lexical identities and grammar lessons are reused
+across levels. Lexical routing uses 16-group reviewed batches; grammar routing
+uses 96-candidate reviewed batches with durable checkpoints.
+Grammar batch boundaries keep a tap unit's contiguous conjugation stages together,
+so separate reviewers do not independently paraphrase the same base meaning.
+Independent lexical batches run concurrently under the configured tool-call ceiling. Only changed groups
+and candidates go to agents. Assets publish after complete validation; interrupted
+runs resume from approved batches rather than repeating completed work.
+Lexical repairs retain short occurrence aliases and report every missing or extra
+sense assignment explicitly; durable registries retain canonical occurrence IDs.
+Cached worker responses that violate their assigned tool capabilities are rejected
+as cache misses: a retry reruns only that job, and cache-only probes launch nothing.
+Grammar repair errors use the same short candidate aliases as their input records,
+while durable records retain canonical IDs. Overlapping ID prefixes are replaced
+longest-first so an error cannot accidentally identify the wrong candidate.
+Exact-coverage errors enumerate all missing and extra assignments, including
+repeated duplicates, so repairs can address the whole batch rather than guessing.
+Missing complete-form meanings likewise report every affected candidate and its
+missing fields together, rather than spending one repair on each omission.
+Inconsistent base meanings report every conflicting chain and its stage IDs/glosses,
+so reviewers can resolve the actual disagreement without scanning unrelated rows.
+Grammar repairs receive only new lesson prose and complete assignments; approved
+existing lesson explanations stay local and are not regenerated.
+Repairs are complete replacements, not patches: every new lesson referenced by
+the assignments must be returned again, even if its definition needed no change.
+Plain-nonpast lexical verbs still route their observed verb form to the reusable
+plain-nonpast grammar lesson alongside their separate word link. Empty grammar
+destinations are invalid at the schema boundary.
+Grammar display identities follow the reader's compact-unit rules, including
+noun-absence connective phrases and benefactive chains whose overlay starts at
+the linking particle. Expanded identities retain the original tail-step IDs and
+source boundaries; changed identities trigger a scoped re-review of their complete
+meanings, rather than displaying a tail-only gloss on the larger expression.
+New grammar routing batches require reviewed meanings for every complete form
+step, including ordinary standalone inflections; provisional source glosses are
+retained only as identity guards. After the migration, run
+`python -m pipeline.japanese_dictionary_publication_audit` to verify all five
+levels against the actual app assets and write the publication evidence report.
+Component words that later gain an attested entry with the same headword,
+reading, and kind retain their old records with `superseded_by` compatibility
+links. Search and component navigation prefer the canonical attested destination;
+homographs with different readings or grammatical kinds remain distinct.
+Dictionary parts have separately reviewed destinations in `component-links.json`.
+The resolver receives existing functional identities in a separate catalog:
+particles and constructions excluded from lexical destinations must be routed to
+the appropriate grammar lesson, not recreated as new words. Duplicate-identity
+validation names the conflicting headwords and readings for targeted repair.
+Agents use short per-batch component IDs; the host restores stable IDs before
+validation and storage. Unknown aliases are rejected, and repair errors list
+missing/unknown IDs and undefined/unreferenced lexical entries explicitly.
+An inflected written part can link to its base word and grammar lessons without
+becoming a fake dictionary headword. Grammar routing precedes this resolver so
+the canonical lesson catalog is available. Genuine missing component words are
+created and explained recursively; unchanged part bindings are reused.
+Reverse component usages are rebuilt from the final reviewed destinations, so
+replacing a generic particle link with a precise grammar link cannot leave a
+stale "part of this word" relationship on the old lexical record.
+Expressions that are single annotation units in another level are promoted into
+the shared word store. Sense IDs, definitions, and approved meaning guides are
+reused; the secondary store retains compatibility records with empty usages.
+
+`pipeline.japanese_dictionary_audit` audits the complete published pilot:
+word explanations, grammar lessons, source segments, overlays, and reviewed
+occurrence chains. Low-effort proposals receive high-effort review. A complete
+coverage ledger is validated; compact agent-facing IDs are restored to canonical
+IDs before publication. Unchanged reviewed audits are cached.
+
+The N5 baseline audit and root triage are recorded in
+`content/lexicon/japanese/n5.editorial-audit.json` and
+`n5.editorial-triage.json`. Triage distinguishes real edits from publication or
+presentation defects and retains useful component explanations and honest gaps.
+Scoped entry requests reuse approved research; `--occurrence-request` edits
+contextual notes/full-form meanings without changing dictionary routing.
+
+Grammar formations can link to prerequisite lessons using `grammar_entry_id`.
+References must exist and be acyclic; publication includes their transitive
+closure. 連用形 and ます-stem name the same stem, whereas ます is the complete
+polite nonpast operation. Related suffix lessons link to the shared stem rather
+than duplicating its formation rules.
+
+The app renders reviewed occurrence chains and canonical grammar context, not
+legacy overlay lookup cards. Reviewed display meanings override provisional
+source glosses only after exact source/form identity checks. Particle readings
+and functions come from the matched lesson. Source text and tap boundaries remain
+unchanged.
 
 `pipeline.japanese_agent_harness` applies the resumable, fail-closed
 adapt/review/repair/fresh-rewrite workflow to Japanese sources without changing

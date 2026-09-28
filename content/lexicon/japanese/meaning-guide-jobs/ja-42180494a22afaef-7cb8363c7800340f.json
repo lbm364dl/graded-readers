@@ -1,0 +1,32 @@
+{
+  "id": "ja-42180494a22afaef-7cb8363c7800340f",
+  "entry_id": "ja-42180494a22afaef",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-42180494a22afaef",
+      "headword": "苦しい",
+      "reading": "くるしい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-42180494a22afaef-1",
+          "definition": "difficult or hard to endure; painful or distressing"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "苦しかったが、我慢して進むと、人間の気配がする所に出た。",
+        "gloss": "was difficult",
+        "sense_id": "ja-42180494a22afaef-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b97c2c33d322360f786946afbdadcc8f888d9ece70cc99ed9cfbc4f40bcb7f40"
+}

@@ -1,0 +1,37 @@
+{
+  "id": "ja-b152b696da6b836a-39647edfc34232bf",
+  "entry_id": "ja-b152b696da6b836a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-b152b696da6b836a",
+      "headword": "ただ",
+      "reading": "ただ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-b152b696da6b836a-1",
+          "definition": "Only; just; merely."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ただ、薄暗くてじめじめした場所で、ニャーニャー泣いていたことだけは覚えている。",
+        "gloss": "however; only",
+        "sense_id": "ja-b152b696da6b836a-1"
+      },
+      {
+        "sentence": "ただ、書生の掌の上に乗せられ、ふわりと持ち上げられた感じが残っている。",
+        "gloss": "however; just",
+        "sense_id": "ja-b152b696da6b836a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f7bb04e770d6b06af65ac1ed9d4c34ce9eba26166a059356890d28906a9a49ce"
+}

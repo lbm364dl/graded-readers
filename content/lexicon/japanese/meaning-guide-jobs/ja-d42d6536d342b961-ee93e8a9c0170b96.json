@@ -1,0 +1,50 @@
+{
+  "id": "ja-d42d6536d342b961-ee93e8a9c0170b96",
+  "entry_id": "ja-d42d6536d342b961",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d42d6536d342b961",
+      "headword": "する",
+      "reading": "する",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d42d6536d342b961-1",
+          "definition": "to make or produce a sound"
+        },
+        {
+          "id": "ja-d42d6536d342b961-2",
+          "definition": "to do; to engage in an activity"
+        },
+        {
+          "id": "ja-d42d6536d342b961-3",
+          "definition": "to speak about; to tell or relate"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "大きな音がして落ち、目から火が出たところまでは覚えている。",
+        "gloss": "make; produce a sound",
+        "sense_id": "ja-d42d6536d342b961-1"
+      },
+      {
+        "sentence": "吾輩はその後、黒と何回も会い、話をするようになった。",
+        "gloss": "do; engage in",
+        "sense_id": "ja-d42d6536d342b961-2"
+      },
+      {
+        "sentence": "ある日、黒は人間の悪い話をした。",
+        "gloss": "told; related",
+        "sense_id": "ja-d42d6536d342b961-3"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b30534d414d655b49b778071cd1dbea6d8bc857cf58aba9d577f65fa1f306bb4"
+}

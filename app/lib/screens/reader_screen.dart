@@ -17,7 +17,10 @@ import '../services/chinese_reading_units.dart';
 import '../services/vocabulary_service.dart';
 import '../widgets/content_width.dart';
 import '../widgets/copy_text_button.dart';
+import '../widgets/japanese_form_chain.dart';
+import '../widgets/japanese_grammar_context.dart';
 import 'usage_dictionary_screen.dart';
+import 'grammar_dictionary_screen.dart';
 
 TextStyle _cjkTextStyle({
   required double fontSize,
@@ -1917,15 +1920,6 @@ class _AgentDefinitionSheetState extends State<_AgentDefinitionSheet> {
     );
   }
 
-  _TappedWord? _nestedAgentTargetFor(AgentGrammarComponent component) {
-    for (final target in _word.nestedAgentTargets) {
-      if (target.surface == component.text && target.agent != null) {
-        return target;
-      }
-    }
-    return null;
-  }
-
   void _openNestedAgentTarget(_TappedWord target) {
     showModalBottomSheet(
       context: context,
@@ -2029,280 +2023,49 @@ class _AgentDefinitionSheetState extends State<_AgentDefinitionSheet> {
     }
   }
 
+  bool get _hasJapaneseChain =>
+      _agent.formSteps.isNotEmpty ||
+      (_word.nestedAgentTargets.length > 1 &&
+          _word.nestedAgentTargets.last.agent!.formSteps.isNotEmpty);
+
   Widget _buildJapaneseFormSummary(Color? muted) {
-    final lemmaChanged = _agent.lemma.isNotEmpty &&
-        (_agent.lemma != _word.surface || _agent.lemmaReading != _agent.pinyin);
-    final hasForm = _agent.conjugationForm.isNotEmpty &&
-        _agent.conjugationForm != 'non-inflecting';
-    final hasDictionaryLink = _agent.dictionaryKey.isNotEmpty;
-    if (!lemmaChanged &&
-        !hasForm &&
-        !hasDictionaryLink &&
-        _agent.formSteps.isEmpty &&
-        _agent.partOfSpeech.isEmpty) {
+    final details = <String>[
+      if (_agent.partOfSpeech.isNotEmpty) _agent.partOfSpeech,
+      if (!_hasJapaneseChain &&
+          _agent.conjugationForm.isNotEmpty &&
+          _agent.conjugationForm != 'non-inflecting')
+        _agent.conjugationForm,
+    ];
+    if (!_hasJapaneseChain && details.isEmpty) {
       return const SizedBox.shrink();
-    }
-    final details = <String>[];
-    if (_agent.partOfSpeech.isNotEmpty) details.add(_agent.partOfSpeech);
-    if (hasForm && _agent.formSteps.isEmpty) {
-      details.add(_agent.conjugationForm);
     }
     return Padding(
       padding: const EdgeInsets.only(top: 9),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          if (lemmaChanged || hasDictionaryLink)
-            InkWell(
-              onTap: hasDictionaryLink
-                  ? () => _openNestedLookup(
-                        _agent.dictionaryKey,
-                        exactCanonical: true,
-                        preferredDefinition: _agent.dictionaryDefinitionEn,
-                      )
-                  : null,
-              borderRadius: BorderRadius.circular(6),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 3),
-                child: Row(
-                  children: [
-                    Text(
-                      hasDictionaryLink
-                          ? 'Dictionary entry  '
-                          : 'Dictionary form  ',
-                      style: TextStyle(fontSize: 12, color: Colors.grey[500]),
-                    ),
-                    Expanded(
-                      child: Text(
-                        formatJapaneseLemmaReading(
-                          _agent.lemma,
-                          _agent.lemmaReading,
-                        ),
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w600,
-                          color: hasDictionaryLink ? AppTheme.primary : muted,
-                        ),
-                      ),
-                    ),
-                    if (hasDictionaryLink)
-                      const Icon(Icons.chevron_right, size: 18),
-                  ],
-                ),
-              ),
+          if (_hasJapaneseChain)
+            JapaneseFormChain(
+              segment: _agent,
+              source: _word.usageSource,
+              sourceText: _word.usageSourceText,
+              segmentIndex: _word.usageSegmentIndex,
+              startOffset: _word.usageStartOffset ?? -1,
+              includeSurfaceMeaning: true,
+              parts: _word.nestedAgentTargets.length > 1
+                  ? _word.nestedAgentTargets
+                      .map((part) => (
+                            segment: part.agent!,
+                            index: part.usageSegmentIndex,
+                            start: part.usageStartOffset ?? -1
+                          ))
+                      .toList()
+                  : const [],
+              overlay: _word.grammar.isEmpty ? null : _word.grammar.last,
             ),
-          if (_agent.formSteps.isNotEmpty) ...[
-            const SizedBox(height: 6),
-            ..._agent.formSteps.map(
-              (step) => Padding(
-                padding: const EdgeInsets.only(bottom: 5),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      width: 20,
-                      child: Text(
-                        '→',
-                        style: TextStyle(fontSize: 14, color: Colors.grey[500]),
-                      ),
-                    ),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            formatJapaneseLemmaReading(step.form, step.reading),
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w600,
-                              color: muted,
-                            ),
-                          ),
-                          Text(
-                            '${step.label} · ${step.meaningEn}',
-                            style: TextStyle(
-                              fontSize: 12.5,
-                              height: 1.3,
-                              color: Colors.grey[500],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
           if (details.isNotEmpty)
-            Padding(
-              padding: EdgeInsets.only(
-                top: lemmaChanged ||
-                        hasDictionaryLink ||
-                        _agent.formSteps.isNotEmpty
-                    ? 3
-                    : 0,
-              ),
-              child: Text(
-                details.join(' · '),
-                style: TextStyle(fontSize: 12.5, color: Colors.grey[500]),
-              ),
-            ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildJapaneseGrammar(
-    AgentGrammarOverlay item,
-    Color? muted,
-    bool isDark,
-  ) {
-    final visibleComponents = item.components.where((component) {
-      return !RegExp(r'^[\s、。！？「」『』（）［］【】]+$').hasMatch(component.text);
-    }).toList(growable: false);
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 12),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            item.text,
-            style: _cjkTextStyle(
-              fontSize: 20,
-              language: Language.japanese,
-              fontWeight: FontWeight.w600,
-              color: AppTheme.primary,
-            ),
-          ),
-          const SizedBox(height: 2),
-          Text(
-            item.formLabel.isNotEmpty ? item.formLabel : item.pattern,
-            style: TextStyle(
-              fontSize: 13,
-              fontWeight: FontWeight.w600,
-              color: muted,
-            ),
-          ),
-          if (item.headLemma.isNotEmpty)
-            Text(
-              'From ${formatJapaneseLemmaReading(
-                item.headLemma,
-                item.headLemmaReading,
-              )}',
-              style: TextStyle(fontSize: 12.5, color: Colors.grey[500]),
-            ),
-          const SizedBox(height: 5),
-          Text(
-            item.meaningEn,
-            style: TextStyle(fontSize: 14, height: 1.4, color: muted),
-          ),
-          if (item.explanationEn.isNotEmpty &&
-              item.explanationEn != item.meaningEn) ...[
-            const SizedBox(height: 3),
-            Text(
-              item.explanationEn,
-              style: TextStyle(fontSize: 13, height: 1.4, color: muted),
-            ),
-          ],
-          if (visibleComponents.isNotEmpty) ...[
-            const SizedBox(height: 7),
-            Container(
-              decoration: BoxDecoration(
-                color: isDark
-                    ? Colors.white10
-                    : Colors.black.withValues(alpha: 0.035),
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: Column(
-                children: visibleComponents.asMap().entries.map((entry) {
-                  final component = entry.value;
-                  final hasDictionaryLink = component.dictionaryKey.isNotEmpty;
-                  final nestedAgentTarget = _nestedAgentTargetFor(component);
-                  final canOpen =
-                      nestedAgentTarget != null || hasDictionaryLink;
-                  return InkWell(
-                    onTap: canOpen
-                        ? () {
-                            if (nestedAgentTarget != null) {
-                              _openNestedAgentTarget(nestedAgentTarget);
-                              return;
-                            }
-                            _openNestedLookup(
-                              component.dictionaryKey,
-                              exactCanonical: true,
-                              preferredDefinition:
-                                  component.dictionaryDefinitionEn,
-                            );
-                          }
-                        : null,
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 8),
-                      decoration: entry.key == 0
-                          ? null
-                          : BoxDecoration(
-                              border: Border(
-                                top: BorderSide(
-                                  color:
-                                      isDark ? Colors.white12 : Colors.black12,
-                                ),
-                              ),
-                            ),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            width: 64,
-                            child: Text(
-                              component.text,
-                              style: _cjkTextStyle(
-                                fontSize: 16,
-                                language: Language.japanese,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(width: 8),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  formatJapaneseLemmaReading(
-                                    component.lemma,
-                                    component.lemmaReading,
-                                  ),
-                                  style: TextStyle(
-                                    fontSize: 12.5,
-                                    color: canOpen
-                                        ? AppTheme.primary
-                                        : Colors.grey[500],
-                                  ),
-                                ),
-                                Text(
-                                  component.functionEn,
-                                  style: TextStyle(
-                                    fontSize: 12.5,
-                                    height: 1.35,
-                                    color: muted,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          if (canOpen) ...[
-                            const SizedBox(width: 4),
-                            const Icon(Icons.chevron_right, size: 18),
-                          ],
-                        ],
-                      ),
-                    ),
-                  );
-                }).toList(),
-              ),
-            ),
-          ],
+            Text(details.join(' · '),
+                style: TextStyle(fontSize: 12.5, color: muted)),
         ],
       ),
     );
@@ -2374,7 +2137,20 @@ class _AgentDefinitionSheetState extends State<_AgentDefinitionSheet> {
                                 onCharTap: _openNestedLookup,
                               ),
                             ),
-                            if (_agent.pinyin.isNotEmpty)
+                            if (_agent.pinyin.isNotEmpty &&
+                                widget.language == Language.japanese)
+                              JapaneseSegmentText(
+                                  segment: _agent,
+                                  source: _word.usageSource,
+                                  sourceText: _word.usageSourceText,
+                                  segmentIndex: _word.usageSegmentIndex,
+                                  startOffset: _word.usageStartOffset ?? -1,
+                                  reading: true,
+                                  style: const TextStyle(
+                                      fontSize: 17,
+                                      color: AppTheme.primary,
+                                      fontStyle: FontStyle.italic))
+                            else if (_agent.pinyin.isNotEmpty)
                               Text(
                                 _agent.pinyin,
                                 style: const TextStyle(
@@ -2443,12 +2219,27 @@ class _AgentDefinitionSheetState extends State<_AgentDefinitionSheet> {
                     color: isDark ? Colors.grey[800] : Colors.grey[200],
                   ),
                   const SizedBox(height: 12),
-                  Text(
-                    _agent.meaningEn,
-                    style: TextStyle(fontSize: 15, height: 1.45, color: muted),
-                  ),
-                  if (_word.usageSource.isNotEmpty)
+                  if (widget.language == Language.japanese &&
+                      !_hasJapaneseChain)
+                    JapaneseSegmentText(
+                        segment: _agent,
+                        source: _word.usageSource,
+                        sourceText: _word.usageSourceText,
+                        segmentIndex: _word.usageSegmentIndex,
+                        startOffset: _word.usageStartOffset ?? -1,
+                        style:
+                            TextStyle(fontSize: 15, height: 1.45, color: muted))
+                  else if (widget.language != Language.japanese)
+                    Text(
+                      _agent.meaningEn,
+                      style:
+                          TextStyle(fontSize: 15, height: 1.45, color: muted),
+                    ),
+                  if (_word.usageSource.isNotEmpty &&
+                      (widget.language != Language.japanese ||
+                          !_hasJapaneseChain))
                     UsageDictionaryLink(
+                        language: widget.language,
                         startOffset: _word.usageStartOffset,
                         surface: _agent.text,
                         reading: _agent.pinyin,
@@ -2456,8 +2247,21 @@ class _AgentDefinitionSheetState extends State<_AgentDefinitionSheet> {
                         source: _word.usageSource,
                         segmentIndex: _word.usageSegmentIndex,
                         sourceText: _word.usageSourceText),
+                  if (widget.language == Language.japanese &&
+                      !_hasJapaneseChain)
+                    GrammarDictionaryLinks(
+                        source: _word.usageSource,
+                        sourceText: _word.usageSourceText,
+                        surface: _agent.text,
+                        startOffset: _word.usageStartOffset ?? -1),
                   if (widget.language == Language.japanese)
                     _buildJapaneseFormSummary(muted),
+                  if (widget.language == Language.japanese &&
+                      _word.grammar.isNotEmpty)
+                    JapaneseGrammarContext(
+                        source: _word.usageSource,
+                        sourceText: _word.usageSourceText,
+                        overlays: _word.grammar),
                   if (_agent.storyTermMeaningEn.isNotEmpty &&
                       _agent.storyTermMeaningEn != _agent.meaningEn) ...[
                     const SizedBox(height: 8),
@@ -2507,7 +2311,8 @@ class _AgentDefinitionSheetState extends State<_AgentDefinitionSheet> {
                       }).toList(),
                     ),
                   ],
-                  if (_word.grammar.isNotEmpty) ...[
+                  if (_word.grammar.isNotEmpty &&
+                      widget.language != Language.japanese) ...[
                     const SizedBox(height: 12),
                     Text(
                       'Grammar',
@@ -2518,19 +2323,14 @@ class _AgentDefinitionSheetState extends State<_AgentDefinitionSheet> {
                       ),
                     ),
                     const SizedBox(height: 4),
-                    if (widget.language == Language.japanese)
-                      ..._word.grammar.map(
-                        (item) => _buildJapaneseGrammar(item, muted, isDark),
-                      )
-                    else
-                      ..._word.grammar.map((item) => Padding(
-                            padding: const EdgeInsets.only(bottom: 6),
-                            child: Text(
-                              '${item.pattern} — ${item.meaningEn}',
-                              style: TextStyle(
-                                  fontSize: 14, height: 1.4, color: muted),
-                            ),
-                          )),
+                    ..._word.grammar.map((item) => Padding(
+                          padding: const EdgeInsets.only(bottom: 6),
+                          child: Text(
+                            '${item.pattern} — ${item.meaningEn}',
+                            style: TextStyle(
+                                fontSize: 14, height: 1.4, color: muted),
+                          ),
+                        )),
                   ],
                   if (widget.language == Language.chinese &&
                       _word.nestedAgentTargets.isNotEmpty) ...[
@@ -3149,11 +2949,43 @@ class _WordDefinitionSheetState extends State<_WordDefinitionSheet> {
 // ---------------------------------------------------------------------------
 
 /// Open the existing character dictionary/etymology view from a structured link.
-Future<void> showDictionaryCharacter(
-    BuildContext context, String character) async {
+Future<void> showDictionaryCharacter(BuildContext context, String character,
+    {Language language = Language.chinese}) async {
   if (character.runes.length != 1) return;
-  await DictionaryService.instance.initialize(language: Language.chinese);
+  await DictionaryService.instance.initialize(language: language);
   if (!context.mounted) return;
+  if (language == Language.japanese) {
+    final entry = DictionaryService.instance.lookupExactCanonical(character);
+    await showModalBottomSheet<void>(
+      context: context,
+      useSafeArea: true,
+      showDragHandle: true,
+      builder: (_) => Padding(
+        padding: const EdgeInsets.all(24),
+        child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(character,
+                  style: Theme.of(context).textTheme.headlineMedium),
+              const SizedBox(height: 8),
+              const Text('Japanese dictionary lookup'),
+              const SizedBox(height: 8),
+              if (entry != null) ...[
+                Text(entry.pinyin),
+                for (final definition in entry.definitions) Text(definition),
+              ] else
+                const Text(
+                    'No standalone entry in the local Japanese dictionary.'),
+              const SizedBox(height: 8),
+              const Text(
+                  'These are dictionary senses, not a historical explanation '
+                  'of the kanji or its contribution to every compound.'),
+            ]),
+      ),
+    );
+    return;
+  }
   await showModalBottomSheet<void>(
     context: context,
     isScrollControlled: true,

@@ -1,0 +1,32 @@
+{
+  "id": "ja-8326d0c03c9badcf-a4a315f4afccd5fe",
+  "entry_id": "ja-8326d0c03c9badcf",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-8326d0c03c9badcf",
+      "headword": "投げ出す",
+      "reading": "なげだす",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-8326d0c03c9badcf-1",
+          "definition": "to throw or cast something out"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "女の人は吾輩を台所へ投げ出した。",
+        "gloss": "threw out; cast out",
+        "sense_id": "ja-8326d0c03c9badcf-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3c9ac033bc8afc5086e74b176f76769d4cd9808cd92a0bcca2a50ac116e786de"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-66baeda970cf0df4-ed77eb67a0731a46",
+  "entry_id": "ja-66baeda970cf0df4",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-66baeda970cf0df4",
+      "headword": "心",
+      "reading": "こころ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-66baeda970cf0df4-1",
+          "definition": "the mind or heart; one's thoughts and feelings"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "小供が騒いで昼寝のできない時や、退屈で気分がすぐれない時、吾輩はここへ来て、静かに心を休めるのが習慣だった。",
+        "gloss": "mind; heart",
+        "sense_id": "ja-66baeda970cf0df4-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "56bd3ba4716638eeadad07ab155d8b643295c64786c990e671717f2829c6cac9"
+}

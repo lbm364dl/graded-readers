@@ -1,0 +1,32 @@
+{
+  "id": "ja-faf0ee4634d9b486-d88fd40201f2ad1b",
+  "entry_id": "ja-faf0ee4634d9b486",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-faf0ee4634d9b486",
+      "headword": "上手になる",
+      "reading": "じょうずになる",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-faf0ee4634d9b486-1",
+          "definition": "become skilled; become good at something"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人は俳句、新しい詩、英語、弓、歌、バイオリンなど、何にでも手を出すが、どれも上手にならない。",
+        "gloss": "does not become skilled; cannot get good at them",
+        "sense_id": "ja-faf0ee4634d9b486-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6c3d39264105c6317c8fc956f6c761acd475499a603b399ed93b704d03368d0d"
+}

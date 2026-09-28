@@ -1,0 +1,32 @@
+{
+  "id": "ja-45dc098a4a747fb5-d288745327c3f46e",
+  "entry_id": "ja-45dc098a4a747fb5",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-45dc098a4a747fb5",
+      "headword": "布団",
+      "reading": "ふとん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-45dc098a4a747fb5-1",
+          "definition": "bedding; futon"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "特に、時々吾輩と同じ布団で寝る子供は、ひどいものである。",
+        "gloss": "bedding; futon",
+        "sense_id": "ja-45dc098a4a747fb5-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4c9a25e66d63d7caf8d0f0cee4652b9c64bb540c8d4945a2f8a5d470385935c8"
+}

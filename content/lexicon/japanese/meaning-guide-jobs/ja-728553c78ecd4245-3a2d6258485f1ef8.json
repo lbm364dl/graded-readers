@@ -1,0 +1,32 @@
+{
+  "id": "ja-728553c78ecd4245-3a2d6258485f1ef8",
+  "entry_id": "ja-728553c78ecd4245",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-728553c78ecd4245",
+      "headword": "突き出る",
+      "reading": "つきでる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-728553c78ecd4245-1",
+          "definition": "to stick out; protrude; project outward"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "顔の真ん中から何かがひどく突き出ていて、その穴の中から時々ぷうぷうと煙を吹いた。",
+        "gloss": "sticking out; protruding",
+        "sense_id": "ja-728553c78ecd4245-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3ef737ea1948c713c6640e11f9755fad6a72f90620adc3b9514a9d3a9cc3bf29"
+}

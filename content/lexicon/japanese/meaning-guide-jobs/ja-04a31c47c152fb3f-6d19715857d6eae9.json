@@ -1,0 +1,32 @@
+{
+  "id": "ja-04a31c47c152fb3f-6d19715857d6eae9",
+  "entry_id": "ja-04a31c47c152fb3f",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-04a31c47c152fb3f",
+      "headword": "長い",
+      "reading": "ながい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-04a31c47c152fb3f-1",
+          "definition": "long in length, duration, or extent"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は人間と同居し、彼等を長く見ているうちに、彼等は我儘なものだと考えるようになった。",
+        "gloss": "for a long time",
+        "sense_id": "ja-04a31c47c152fb3f-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ff8ef96609e1cbcf9b17821b0bf9df7277d34aa7270dcfe8f1766d268b1921d8"
+}

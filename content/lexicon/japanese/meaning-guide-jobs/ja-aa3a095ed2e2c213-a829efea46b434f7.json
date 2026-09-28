@@ -1,0 +1,32 @@
+{
+  "id": "ja-aa3a095ed2e2c213-a829efea46b434f7",
+  "entry_id": "ja-aa3a095ed2e2c213",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-aa3a095ed2e2c213",
+      "headword": "落ち着く",
+      "reading": "おちつく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-aa3a095ed2e2c213-1",
+          "definition": "to settle down; become calm"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "掌の上で少し落ち着き、書生の顔を見たことが、人間というものの見始めだったのだろう。",
+        "gloss": "settled down",
+        "sense_id": "ja-aa3a095ed2e2c213-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7c8f8023536a6fa759958dfc4c5aee40aadc3aaaf3497ff3b707a916db7dc8e3"
+}

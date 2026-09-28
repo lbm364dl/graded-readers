@@ -1,0 +1,32 @@
+{
+  "id": "ja-16384cd152833337-d3e2119d18a6b8f3",
+  "entry_id": "ja-16384cd152833337",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-16384cd152833337",
+      "headword": "自慢する",
+      "reading": "じまんする",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-16384cd152833337-1",
+          "definition": "to boast; to brag"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "何度も会ううち、黒は鼠を三、四十匹とったことがあると自慢した。",
+        "gloss": "boasted",
+        "sense_id": "ja-16384cd152833337-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c00619bdec322c9cc836933dba876a5a6cdc8af2d46a90d86f3d46150a2856da"
+}

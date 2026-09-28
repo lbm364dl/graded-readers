@@ -1,0 +1,42 @@
+{
+  "id": "ja-1c1b1afb1d42a382-841144f3e4142f4a",
+  "entry_id": "ja-1c1b1afb1d42a382",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-1c1b1afb1d42a382",
+      "headword": "来る",
+      "reading": "くる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-1c1b1afb1d42a382-1",
+          "definition": "to come; to arrive"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "笹原を出ると池があり、鳴いて書生を呼んだが、誰も来なかった。",
+        "gloss": "did not come",
+        "sense_id": "ja-1c1b1afb1d42a382-1"
+      },
+      {
+        "sentence": "最後に主人が来た。",
+        "gloss": "came",
+        "sense_id": "ja-1c1b1afb1d42a382-1"
+      },
+      {
+        "sentence": "子供が騒ぐ時や、つまらなくて気分が悪い時、吾輩はここへ来て休む。",
+        "gloss": "come, then",
+        "sense_id": "ja-1c1b1afb1d42a382-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cb4d26ffadb8a024ee5f70ce4dce537f797003c566223fecf36749e2601051ed"
+}

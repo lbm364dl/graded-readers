@@ -1,0 +1,32 @@
+{
+  "id": "ja-e78e3854f1cabdb1-7d72fad7f203cacd",
+  "entry_id": "ja-e78e3854f1cabdb1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e78e3854f1cabdb1",
+      "headword": "入り込む",
+      "reading": "はいりこむ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e78e3854f1cabdb1-1",
+          "definition": "to enter or squeeze into a place; to get inside"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は二人の間に少し空いた場所を見つけ、どうにか入り込む。",
+        "gloss": "squeeze into; enter",
+        "sense_id": "ja-e78e3854f1cabdb1-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7b5f3174c0a039dac50c626e41d5fc859003efea9695b1d44e731400e1d4b815"
+}

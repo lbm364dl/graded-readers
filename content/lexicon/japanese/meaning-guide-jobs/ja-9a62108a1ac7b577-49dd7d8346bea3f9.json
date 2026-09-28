@@ -1,0 +1,32 @@
+{
+  "id": "ja-9a62108a1ac7b577-49dd7d8346bea3f9",
+  "entry_id": "ja-9a62108a1ac7b577",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9a62108a1ac7b577",
+      "headword": "また",
+      "reading": "また",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-9a62108a1ac7b577-1",
+          "definition": "again"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "女の人に台所から外へ何回も投げられたが、吾輩はまた入った。",
+        "gloss": "again",
+        "sense_id": "ja-9a62108a1ac7b577-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6cd03e3b75c63cd7e517d2ead8404f95cbad9d0feb601fa023b544d038abaae8"
+}

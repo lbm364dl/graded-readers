@@ -1,0 +1,32 @@
+{
+  "id": "ja-83ebcf00665f8703-5f688861e1243e8f",
+  "entry_id": "ja-83ebcf00665f8703",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-83ebcf00665f8703",
+      "headword": "習う",
+      "reading": "ならう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-83ebcf00665f8703-1",
+          "definition": "to learn or practice under instruction"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "弓に熱中したり、謡を習ったり、バイオリンを鳴らしたりもしたが、どれも上手くならなかった。",
+        "gloss": "practicing; learning",
+        "sense_id": "ja-83ebcf00665f8703-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "811dfb90054d2184ded84b107a1d31b3ef2b76573a72e40fd0374a3a9b7352e2"
+}

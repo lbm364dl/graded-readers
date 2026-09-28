@@ -1,0 +1,91 @@
+{
+  "id": "ja-b105943e2d87f9eb-e1f8d10948d19da2",
+  "entry_id": "ja-b105943e2d87f9eb",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-b105943e2d87f9eb",
+      "headword": "ようだ",
+      "reading": "ようだ",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-b105943e2d87f9eb-1",
+          "definition": "Expresses resemblance or appearance: to be like or as if; with a clause, to seem or appear to be the case."
+        },
+        {
+          "id": "ja-b105943e2d87f9eb-2",
+          "definition": "Indicates a manner or desired result: in such a way that; so that."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ただ、書生の手のひらに乗せられて、すっと上へ持ち上げられた時、何だかふわふわするような感じがしただけだった。",
+        "gloss": "like; seeming",
+        "sense_id": "ja-b105943e2d87f9eb-1"
+      },
+      {
+        "sentence": "主人は胃が弱く、顔の色も黄色く、元気がないように見える。",
+        "gloss": "as if; seemingly",
+        "sense_id": "ja-b105943e2d87f9eb-1"
+      },
+      {
+        "sentence": "太陽の光を受けた毛は、黒い中から火が出るように光っていた。",
+        "gloss": "as if; in such a way that",
+        "sense_id": "ja-b105943e2d87f9eb-1"
+      },
+      {
+        "sentence": "食べ物には困っていないようだった。",
+        "gloss": "it seemed that; apparently",
+        "sense_id": "ja-b105943e2d87f9eb-1"
+      },
+      {
+        "sentence": "どうも喉にからむようで、吾輩は実に困った。",
+        "gloss": "seems; appears to be",
+        "sense_id": "ja-b105943e2d87f9eb-1"
+      },
+      {
+        "sentence": "吾輩が近づいても気にしないように、大きないびきをかいている。",
+        "gloss": "so that; in such a way that",
+        "sense_id": "ja-b105943e2d87f9eb-2"
+      },
+      {
+        "sentence": "太陽の光が黒い毛を照らし、毛の間から火が出るように輝いている。",
+        "gloss": "as if; in a way that",
+        "sense_id": "ja-b105943e2d87f9eb-1"
+      },
+      {
+        "sentence": "吾輩が、家なら教師の方が大きいようだと言うと、黒は「家が大きくても腹の足しにはならない」と怒り、乱暴に立ち去った。",
+        "gloss": "seems; appears to be",
+        "sense_id": "ja-b105943e2d87f9eb-1"
+      },
+      {
+        "sentence": "吾輩には、この男が、こんな冗談を言って人を担ぐことを楽しんでいるように思われた。",
+        "gloss": "as if; seemingly",
+        "sense_id": "ja-b105943e2d87f9eb-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-b105943e2d87f9eb",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "grammatical",
+    "explanation_en": "ようだ presents something as matching an appearance or comparison: it is “like” or “as if” something, or a whole clause “seems” to be true. It follows a noun with の or a plain-form clause; ような and ように let the comparison describe a noun or manner.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "80c5636adbf7a6acb051671abfbf0c43538e77a138dcfaf78877b95ed50cfc9d",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "30b37f1dffa1a52eb3f57c34491f02ac31d89fae11b949b1730e9a3864ead39d"
+}

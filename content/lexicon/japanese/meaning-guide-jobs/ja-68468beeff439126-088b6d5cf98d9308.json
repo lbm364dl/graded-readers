@@ -1,0 +1,32 @@
+{
+  "id": "ja-68468beeff439126-088b6d5cf98d9308",
+  "entry_id": "ja-68468beeff439126",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-68468beeff439126",
+      "headword": "では",
+      "reading": "では",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-68468beeff439126-1",
+          "definition": "well then; a discourse expression used to introduce what follows"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人は吾輩を見て、「では、家の内に置いてやれ」と言った。",
+        "gloss": "well then",
+        "sense_id": "ja-68468beeff439126-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ec476837ac61160ea4ba3151703f41f9b14ce642f1fff2cf4c72cf0de1e46ef3"
+}

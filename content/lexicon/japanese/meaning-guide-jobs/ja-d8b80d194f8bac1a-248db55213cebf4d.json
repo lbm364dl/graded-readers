@@ -1,0 +1,32 @@
+{
+  "id": "ja-d8b80d194f8bac1a-248db55213cebf4d",
+  "entry_id": "ja-d8b80d194f8bac1a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d8b80d194f8bac1a",
+      "headword": "打ち負かす",
+      "reading": "うちまかす",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d8b80d194f8bac1a-1",
+          "definition": "to defeat; to overpower"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "声には犬をも打ち負かすほどの力があった。",
+        "gloss": "overpower; defeat",
+        "sense_id": "ja-d8b80d194f8bac1a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d7957649c71d1bd884fc44da563feb2c4693adf3b7a6c7f5422e1af0484214d5"
+}

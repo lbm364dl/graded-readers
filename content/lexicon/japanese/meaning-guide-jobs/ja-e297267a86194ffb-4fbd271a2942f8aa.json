@@ -1,0 +1,32 @@
+{
+  "id": "ja-e297267a86194ffb-4fbd271a2942f8aa",
+  "entry_id": "ja-e297267a86194ffb",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e297267a86194ffb",
+      "headword": "そのうえ",
+      "reading": "そのうえ",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-e297267a86194ffb-1",
+          "definition": "moreover; in addition"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そのうえ、吾輩が少しでも手を出すと、家の者全員で追いかけ、いじめる。",
+        "gloss": "moreover; on top of that",
+        "sense_id": "ja-e297267a86194ffb-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9c7e3dadda1f7dc48847c0916c7f11008ddc156b5914eef75f5b5757573d75c3"
+}

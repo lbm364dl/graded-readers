@@ -1,0 +1,32 @@
+{
+  "id": "ja-a18afe1bcdf4dcf8-8b36b16b78a30d73",
+  "entry_id": "ja-a18afe1bcdf4dcf8",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a18afe1bcdf4dcf8",
+      "headword": "だけに",
+      "reading": "だけに",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-a18afe1bcdf4dcf8-1",
+          "definition": "precisely because; given that; for that very reason"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "車屋の猫だけに力は強いが、教育がないので、あまり誰も付き合わないらしい。",
+        "gloss": "precisely because; being",
+        "sense_id": "ja-a18afe1bcdf4dcf8-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "626fee57a53a9cecec68039b45e524c2e05dcf541aef626a73633db80051a5e5"
+}

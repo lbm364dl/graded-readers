@@ -1,0 +1,32 @@
+{
+  "id": "ja-b8cb8e41e94f10f4-31eda1ecfac680c5",
+  "entry_id": "ja-b8cb8e41e94f10f4",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-b8cb8e41e94f10f4",
+      "headword": "ぶら下げる",
+      "reading": "ぶらさげる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-b8cb8e41e94f10f4-1",
+          "definition": "to hang or dangle something down"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "おさんは吾輩をぶら下げ、「この宿なしの子猫は、何度外へ出しても台所へ上がって来て困ります」と訴えた。",
+        "gloss": "hanging me down",
+        "sense_id": "ja-b8cb8e41e94f10f4-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7d271407a732d8d01d27022c082aa108b1dc8d40b0764dc8dc7c1b75d3dc9986"
+}

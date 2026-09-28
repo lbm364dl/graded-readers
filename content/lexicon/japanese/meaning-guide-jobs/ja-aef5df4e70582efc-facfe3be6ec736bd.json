@@ -1,0 +1,32 @@
+{
+  "id": "ja-aef5df4e70582efc-facfe3be6ec736bd",
+  "entry_id": "ja-aef5df4e70582efc",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-aef5df4e70582efc",
+      "headword": "怖い",
+      "reading": "こわい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-aef5df4e70582efc-1",
+          "definition": "scary; frightening; afraid"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は何も考えないで、怖くなかった。",
+        "gloss": "was not afraid",
+        "sense_id": "ja-aef5df4e70582efc-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "76da500936d17b38e60682301941b65e3efe6e9308de4e2e67b59eb43145a9fe"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-88978c224e567b87-b3276013a02114da",
+  "entry_id": "ja-88978c224e567b87",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-88978c224e567b87",
+      "headword": "紙",
+      "reading": "かみ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-88978c224e567b87-1",
+          "definition": "paper"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が家に来て一月ほどたった給料日に、主人は水彩絵具と毛筆とワットマンという紙を買い、今日から絵をかくと決めた。",
+        "gloss": "paper",
+        "sense_id": "ja-88978c224e567b87-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2be9061e11eec53290392d05437d63241fd2e0dd8f5d41dbbcba439c4272e5d1"
+}

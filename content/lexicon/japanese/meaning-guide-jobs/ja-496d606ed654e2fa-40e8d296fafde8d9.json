@@ -1,0 +1,32 @@
+{
+  "id": "ja-496d606ed654e2fa-40e8d296fafde8d9",
+  "entry_id": "ja-496d606ed654e2fa",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-496d606ed654e2fa",
+      "headword": "入れなくなる",
+      "reading": "はいれなくなる",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-496d606ed654e2fa-1",
+          "definition": "become unable to enter"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "この間も、畳で爪を磨いただけなのに、奥さんがたいへん怒り、それから座敷へ入れなくなった。",
+        "gloss": "could no longer enter",
+        "sense_id": "ja-496d606ed654e2fa-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6c4d79545e96de9dd8471de87ff483e39bb6b81bd4aa5ce20bfa2d724a22cd65"
+}

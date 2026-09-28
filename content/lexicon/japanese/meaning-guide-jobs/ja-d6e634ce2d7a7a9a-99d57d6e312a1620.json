@@ -1,0 +1,37 @@
+{
+  "id": "ja-d6e634ce2d7a7a9a-99d57d6e312a1620",
+  "entry_id": "ja-d6e634ce2d7a7a9a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d6e634ce2d7a7a9a",
+      "headword": "必ず",
+      "reading": "かならず",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d6e634ce2d7a7a9a-1",
+          "definition": "always; without fail; surely"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "朝、主人が新聞を読むときは、必ず膝の上に乗る。",
+        "gloss": "always; without fail",
+        "sense_id": "ja-d6e634ce2d7a7a9a-1"
+      },
+      {
+        "sentence": "すると胃の弱い主人が必ず目を覚まし、隣の部屋から飛び出して来る。",
+        "gloss": "surely; invariably",
+        "sense_id": "ja-d6e634ce2d7a7a9a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3489bf0d6153db765c37492461a6a6a752ec7a8d8b129277d3d4de93e71aa995"
+}

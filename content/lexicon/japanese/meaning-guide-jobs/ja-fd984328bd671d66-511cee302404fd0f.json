@@ -1,0 +1,32 @@
+{
+  "id": "ja-fd984328bd671d66-511cee302404fd0f",
+  "entry_id": "ja-fd984328bd671d66",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-fd984328bd671d66",
+      "headword": "つもりらしい",
+      "reading": "つもりらしい",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-fd984328bd671d66-1",
+          "definition": "to apparently intend to do something"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "今日から謡や俳句をやめ、絵をかくつもりらしい。",
+        "gloss": "apparently intends to",
+        "sense_id": "ja-fd984328bd671d66-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ae8b7cdac22cc9cca8ea631b3a92f662e9861bfa5ba96d90836a9974bad92c8b"
+}

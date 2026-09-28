@@ -1,0 +1,32 @@
+{
+  "id": "ja-4d854b0f662f91d5-b4d59d54a28ba937",
+  "entry_id": "ja-4d854b0f662f91d5",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-4d854b0f662f91d5",
+      "headword": "家内",
+      "reading": "かない",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-4d854b0f662f91d5-1",
+          "definition": "one's household; family"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が少しでも手を出すと、家内総がかりで追い回される。",
+        "gloss": "the household; family",
+        "sense_id": "ja-4d854b0f662f91d5-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c587a7fb47a5867170b30704198a6517518e49cf99e257444a5aab162ce65267"
+}

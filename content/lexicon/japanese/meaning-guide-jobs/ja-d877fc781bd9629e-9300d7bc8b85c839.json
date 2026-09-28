@@ -1,0 +1,32 @@
+{
+  "id": "ja-d877fc781bd9629e-9300d7bc8b85c839",
+  "entry_id": "ja-d877fc781bd9629e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d877fc781bd9629e",
+      "headword": "決める",
+      "reading": "きめる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d877fc781bd9629e-1",
+          "definition": "To decide; to determine."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩はその話を聞き、決して鼠をとるまいと決めた。",
+        "gloss": "decided",
+        "sense_id": "ja-d877fc781bd9629e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "88c0c6278f33f08b6c7ff183b065f232b9c1c3ced02bf15e0cf1d2689839d51e"
+}

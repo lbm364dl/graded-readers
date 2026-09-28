@@ -1,0 +1,32 @@
+{
+  "id": "ja-2929f25a53ba32a4-fbc35ad6ec36da8f",
+  "entry_id": "ja-2929f25a53ba32a4",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-2929f25a53ba32a4",
+      "headword": "とする",
+      "reading": "とする",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-2929f25a53ba32a4-1",
+          "definition": "try or attempt to do something; be about to do something"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が大きくあくびをして裏へ行こうとすると、主人は「この馬鹿野郎」と怒鳴った。",
+        "gloss": "when/if attempting to",
+        "sense_id": "ja-2929f25a53ba32a4-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d1736f1c1c35cf407d2d514723309e77a565b22c39b61a09682f4d0afeaa82da"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-e63ceb2e863d9165-b40a1dddd868467f",
+  "entry_id": "ja-e63ceb2e863d9165",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e63ceb2e863d9165",
+      "headword": "立派",
+      "reading": "りっぱ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e63ceb2e863d9165-1",
+          "definition": "fine; excellent; impressive"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は猫として、決して立派な姿ではない。",
+        "gloss": "fine; impressive",
+        "sense_id": "ja-e63ceb2e863d9165-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9d573f807b6e63153b57c90c2ace25e7000c2063a05aeff6558cdceb44d4506b"
+}

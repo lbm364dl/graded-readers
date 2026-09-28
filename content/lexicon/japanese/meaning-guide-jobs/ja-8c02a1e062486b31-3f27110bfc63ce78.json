@@ -1,0 +1,32 @@
+{
+  "id": "ja-8c02a1e062486b31-3f27110bfc63ce78",
+  "entry_id": "ja-8c02a1e062486b31",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-8c02a1e062486b31",
+      "headword": "本人",
+      "reading": "ほんにん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-8c02a1e062486b31-1",
+          "definition": "the person themself; the person in question"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "家の者は、主人を大変な勉強家だと思っているし、本人もそう見せている。",
+        "gloss": "the person himself; he himself",
+        "sense_id": "ja-8c02a1e062486b31-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "86bc16898f3d0676fe305a720dc0268edccde1a3aada12bcc7fec7ecaca30ccf"
+}

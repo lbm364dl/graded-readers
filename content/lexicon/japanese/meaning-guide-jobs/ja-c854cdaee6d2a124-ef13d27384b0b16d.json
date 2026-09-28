@@ -1,0 +1,32 @@
+{
+  "id": "ja-c854cdaee6d2a124-ef13d27384b0b16d",
+  "entry_id": "ja-c854cdaee6d2a124",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-c854cdaee6d2a124",
+      "headword": "ある",
+      "reading": "ある",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-c854cdaee6d2a124-1",
+          "definition": "To exist or be present (of things and abstract entities)."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "名前はまだありません。",
+        "gloss": "does not exist; there is not",
+        "sense_id": "ja-c854cdaee6d2a124-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f2f7719bff7c7b87a34cddbdd51721c32e316cd0c7d771e2d472a4f47e2a4147"
+}

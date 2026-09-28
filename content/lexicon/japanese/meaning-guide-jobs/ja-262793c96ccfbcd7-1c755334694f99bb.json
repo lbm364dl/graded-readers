@@ -1,0 +1,32 @@
+{
+  "id": "ja-262793c96ccfbcd7-1c755334694f99bb",
+  "entry_id": "ja-262793c96ccfbcd7",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-262793c96ccfbcd7",
+      "headword": "昼寝する",
+      "reading": "ひるねする",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-262793c96ccfbcd7-1",
+          "definition": "to take a nap, especially during the day"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "次の日、主人は縁側で昼寝する吾輩を写生し始めた。",
+        "gloss": "takes a nap",
+        "sense_id": "ja-262793c96ccfbcd7-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "af32168eab16582738977cc66ade0f7393e419cf07c08e9a46d0eade64c3aa3a"
+}

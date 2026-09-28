@@ -1,0 +1,32 @@
+{
+  "id": "ja-82cd31817af61f4f-63bd4abf580198af",
+  "entry_id": "ja-82cd31817af61f4f",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-82cd31817af61f4f",
+      "headword": "すると",
+      "reading": "すると",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-82cd31817af61f4f-1",
+          "definition": "then; thereupon, marking what happens next"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "すると、速く動き出し、目が変になって気分も悪くなった。",
+        "gloss": "then; thereupon",
+        "sense_id": "ja-82cd31817af61f4f-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3c8725aa7a4f6c0d4687b80f9e9d39d8fadb6cadfba6767a3abaaaf3e4e7f1b8"
+}

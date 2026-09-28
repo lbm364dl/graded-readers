@@ -1,0 +1,32 @@
+{
+  "id": "ja-8adbccc7bdc6def4-3982a1383026e07d",
+  "entry_id": "ja-8adbccc7bdc6def4",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-8adbccc7bdc6def4",
+      "headword": "栄える",
+      "reading": "さかえる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-8adbccc7bdc6def4-1",
+          "definition": "to prosper; flourish"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "人間も、いつまでも栄えることはあるまい。",
+        "gloss": "prosper; flourish",
+        "sense_id": "ja-8adbccc7bdc6def4-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "72c4e2cc1335880afc5dd509246475706319f502cec2b322fd2fdd082d8b580c"
+}

@@ -1,0 +1,37 @@
+{
+  "id": "ja-93648cfef338ffb5-faf92a41ff5765d6",
+  "entry_id": "ja-93648cfef338ffb5",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-93648cfef338ffb5",
+      "headword": "座敷",
+      "reading": "ざしき",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-93648cfef338ffb5-1",
+          "definition": "tatami room; drawing room"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "この間も、畳で爪を磨いただけなのに、奥さんがたいへん怒り、それから座敷へ入れなくなった。",
+        "gloss": "tatami room; drawing room",
+        "sense_id": "ja-93648cfef338ffb5-1"
+      },
+      {
+        "sentence": "すると主人は、失望と怒りの混じった声で、座敷から「この馬鹿野郎」と怒鳴った。",
+        "gloss": "tatami room",
+        "sense_id": "ja-93648cfef338ffb5-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "963fb66517117bd2db170abb1cae1195d8816e93d2613247b5ec53c5358c68ba"
+}

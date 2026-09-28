@@ -1,0 +1,32 @@
+{
+  "id": "ja-610badd6d6d95c56-e218e442145b2a79",
+  "entry_id": "ja-610badd6d6d95c56",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-610badd6d6d95c56",
+      "headword": "何とか",
+      "reading": "なんとか",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-610badd6d6d95c56-1",
+          "definition": "somehow; by some means"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩はただ、その日その日を何とか過ごせればよいと思っている。",
+        "gloss": "somehow",
+        "sense_id": "ja-610badd6d6d95c56-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ab420b7e8fb845620c8ff1e35e72068abde4d6e392c8d64627733afedfc9dfab"
+}

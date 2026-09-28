@@ -1,0 +1,32 @@
+{
+  "id": "ja-681a82211229d9ed-d4e5f5a375acbebd",
+  "entry_id": "ja-681a82211229d9ed",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-681a82211229d9ed",
+      "headword": "あまり",
+      "reading": "あまり",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-681a82211229d9ed-1",
+          "definition": "not much; not very (typically used with a negative)"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "車屋の猫だけに力は強いが、教育がないので、あまり誰も付き合わないらしい。",
+        "gloss": "not very; not much",
+        "sense_id": "ja-681a82211229d9ed-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "67575f9d933a267a5a93d92aef8d5c8969d82fd62b95c3fd1a212fcd05e84daa"
+}

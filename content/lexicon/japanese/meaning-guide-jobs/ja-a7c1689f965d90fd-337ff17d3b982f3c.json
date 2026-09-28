@@ -1,0 +1,32 @@
+{
+  "id": "ja-a7c1689f965d90fd-337ff17d3b982f3c",
+  "entry_id": "ja-a7c1689f965d90fd",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a7c1689f965d90fd",
+      "headword": "速い",
+      "reading": "はやい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-a7c1689f965d90fd-1",
+          "definition": "fast; quick"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "すると、速く動き出し、目が変になって気分も悪くなった。",
+        "gloss": "quickly",
+        "sense_id": "ja-a7c1689f965d90fd-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0798e098d95740a4e6b055a4802d52821aacf418c8a45bf60d41bf8af8361c27"
+}

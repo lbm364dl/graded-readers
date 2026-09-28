@@ -1,0 +1,47 @@
+{
+  "id": "ja-5cd66c6663bca201-5598d492dd6176a8",
+  "entry_id": "ja-5cd66c6663bca201",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5cd66c6663bca201",
+      "headword": "ひどい",
+      "reading": "ひどい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-5cd66c6663bca201-1",
+          "definition": "terrible; severe; intense"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "顔の真ん中から何かがひどく突き出ていて、その穴の中から時々ぷうぷうと煙を吹いた。",
+        "gloss": "terribly; severely",
+        "sense_id": "ja-5cd66c6663bca201-1"
+      },
+      {
+        "sentence": "そこは前までと違ってひどく明るかった。",
+        "gloss": "extremely; intensely",
+        "sense_id": "ja-5cd66c6663bca201-1"
+      },
+      {
+        "sentence": "先日などは、物差しで尻をひどくたたかれた。",
+        "gloss": "severely; badly",
+        "sense_id": "ja-5cd66c6663bca201-1"
+      },
+      {
+        "sentence": "吾輩は、今までじっとしていた者の気持ちも知らず、ひどいものだと思った。",
+        "gloss": "awful; terrible",
+        "sense_id": "ja-5cd66c6663bca201-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "47a6d08ed06851e31cc81e13234fde74e55a4291d72fdb2f43264e45e4379b07"
+}

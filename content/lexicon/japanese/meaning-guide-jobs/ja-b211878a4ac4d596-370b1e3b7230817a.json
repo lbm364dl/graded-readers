@@ -1,0 +1,32 @@
+{
+  "id": "ja-b211878a4ac4d596-370b1e3b7230817a",
+  "entry_id": "ja-b211878a4ac4d596",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-b211878a4ac4d596",
+      "headword": "二枚",
+      "reading": "にまい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-b211878a4ac4d596-1",
+          "definition": "two flat objects, counted with 枚"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "風で葉が二枚落ちると、黒は丸い目を開いた。",
+        "gloss": "two flat objects; two leaves",
+        "sense_id": "ja-b211878a4ac4d596-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cb7cb893432cf1afd830dd64a1fd6bcd614f89b76721d6a8ad2dbd16eecc9424"
+}

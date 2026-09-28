@@ -9,6 +9,7 @@ import 'book_screen.dart';
 import 'reader_screen.dart';
 import 'vocabulary_screen.dart';
 import 'usage_dictionary_screen.dart';
+import 'grammar_dictionary_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   final ContentRepository repo;
@@ -34,13 +35,20 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: const Text('Graded Readers'),
         actions: [
-          if (language == Language.chinese)
+          if (language == Language.japanese)
             IconButton(
-                tooltip: 'Reading dictionary',
-                icon: const Icon(Icons.menu_book_outlined),
+                tooltip: 'Grammar dictionary',
+                icon: const Icon(Icons.account_tree_outlined),
                 onPressed: () => Navigator.of(context).push(
                     MaterialPageRoute<void>(
-                        builder: (_) => const UsageDictionaryScreen()))),
+                        builder: (_) => const GrammarDictionaryScreen()))),
+          IconButton(
+              tooltip: 'Reading dictionary',
+              icon: const Icon(Icons.menu_book_outlined),
+              onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute<void>(
+                      builder: (_) =>
+                          UsageDictionaryScreen(language: language)))),
           _LanguageToggle(
             language: language,
             onChanged: (lang) => langNotifier.switchTo(lang),

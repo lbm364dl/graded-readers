@@ -1,0 +1,32 @@
+{
+  "id": "ja-12a0d1f037340d68-09b45f3da772973d",
+  "entry_id": "ja-12a0d1f037340d68",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-12a0d1f037340d68",
+      "headword": "のそのそ",
+      "reading": "のそのそ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-12a0d1f037340d68-1",
+          "definition": "slowly and sluggishly"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そして、のそのそ裏へ向かった。",
+        "gloss": "slowly and sluggishly",
+        "sense_id": "ja-12a0d1f037340d68-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "abb9a4c564bf3655ab4ba3558dd192478e8aca2e8ad77f851f63766b1e8e762e"
+}

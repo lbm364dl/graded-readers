@@ -1,0 +1,32 @@
+{
+  "id": "ja-458d047301b56555-33827871ede5a215",
+  "entry_id": "ja-458d047301b56555",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-458d047301b56555",
+      "headword": "感心する",
+      "reading": "かんしんする",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-458d047301b56555-1",
+          "definition": "to be impressed by or admire something"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "しかし主人の熱心さには感心した。",
+        "gloss": "was impressed by; admired",
+        "sense_id": "ja-458d047301b56555-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8b1872b347409b727d7ffc8182e77cc1cb20de707241b817e2158dbb3882b0e5"
+}

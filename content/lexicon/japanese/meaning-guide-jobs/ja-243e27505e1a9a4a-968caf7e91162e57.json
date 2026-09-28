@@ -1,0 +1,32 @@
+{
+  "id": "ja-243e27505e1a9a4a-968caf7e91162e57",
+  "entry_id": "ja-243e27505e1a9a4a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-243e27505e1a9a4a",
+      "headword": "楽",
+      "reading": "らく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-243e27505e1a9a4a-1",
+          "definition": "easy and not demanding; comfortable"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "教師というものは、ずいぶん楽な仕事だ。",
+        "gloss": "easy; comfortable",
+        "sense_id": "ja-243e27505e1a9a4a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6e94d60bdc39769e3c55056832d8287e6173efdfc1c08ce0add6451a301f56f7"
+}

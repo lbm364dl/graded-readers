@@ -1,0 +1,32 @@
+{
+  "id": "ja-cdac119e745b8896-99a43e8daa1ae37c",
+  "entry_id": "ja-cdac119e745b8896",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-cdac119e745b8896",
+      "headword": "議論",
+      "reading": "ぎろん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-cdac119e745b8896-1",
+          "definition": "an argument or discussion"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩には、白君の言うことも、どれももっともな議論に思われた。",
+        "gloss": "argument; discussion",
+        "sense_id": "ja-cdac119e745b8896-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "577e304c71d3ed08062a25c8a8ee8cdf2d28c9f0c7cff5f302f02c5d886a4a38"
+}

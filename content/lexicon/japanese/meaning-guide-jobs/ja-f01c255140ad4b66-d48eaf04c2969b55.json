@@ -1,0 +1,32 @@
+{
+  "id": "ja-f01c255140ad4b66-d48eaf04c2969b55",
+  "entry_id": "ja-f01c255140ad4b66",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-f01c255140ad4b66",
+      "headword": "大いに",
+      "reading": "おおいに",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-f01c255140ad4b66-1",
+          "definition": "greatly; very much; to a considerable degree"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人は大いに感心し、翌日から写生を始めた。",
+        "gloss": "greatly; very much",
+        "sense_id": "ja-f01c255140ad4b66-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "287ad875ecfd3c5a657b9341144b5675be7880c62573198d9f2ee60ecca0f7f4"
+}

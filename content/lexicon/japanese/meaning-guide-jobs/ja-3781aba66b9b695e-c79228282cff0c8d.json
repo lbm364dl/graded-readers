@@ -1,0 +1,32 @@
+{
+  "id": "ja-3781aba66b9b695e-c79228282cff0c8d",
+  "entry_id": "ja-3781aba66b9b695e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-3781aba66b9b695e",
+      "headword": "通路",
+      "reading": "つうろ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-3781aba66b9b695e-1",
+          "definition": "a passageway or route"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "以来、その穴は、隣家の三毛を訪ねる時の通路にもなった。",
+        "gloss": "passageway; route",
+        "sense_id": "ja-3781aba66b9b695e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4ad7bd58d32c9943edaf5fd0227398be1c02838cc7e1e8c8bc7445e8e665fc82"
+}

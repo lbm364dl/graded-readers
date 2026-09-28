@@ -1,0 +1,32 @@
+{
+  "id": "ja-0484967dcf86c14e-4fc2a99e0361824c",
+  "entry_id": "ja-0484967dcf86c14e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-0484967dcf86c14e",
+      "headword": "這い上がる",
+      "reading": "はいあがる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-0484967dcf86c14e-1",
+          "definition": "to climb or crawl up"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "それでも吾輩は這い上がった。",
+        "gloss": "climbed up; crawled up",
+        "sense_id": "ja-0484967dcf86c14e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a271c5fc836d00af18ec8e45809d66c524326b84e49fcba3daf13d3a33ce30a3"
+}

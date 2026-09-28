@@ -1,0 +1,37 @@
+{
+  "id": "ja-06fd9fcea01c049d-0711e60de57bdeb4",
+  "entry_id": "ja-06fd9fcea01c049d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-06fd9fcea01c049d",
+      "headword": "閉じる",
+      "reading": "とじる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-06fd9fcea01c049d-1",
+          "definition": "to close; shut"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "これはだめだと思い、目を閉じて運に任せた。",
+        "gloss": "close them and",
+        "sense_id": "ja-06fd9fcea01c049d-1"
+      },
+      {
+        "sentence": "寝ているところをかいたのだから仕方がないとしても、目らしい所さえないので、目を閉じた猫なのか、目の見えない猫なのか、はっきり分からない。",
+        "gloss": "closed",
+        "sense_id": "ja-06fd9fcea01c049d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3fe8f995b4114a7293faa15d1b3c895abd0396b9b81b47788ffb2e843efeebbb"
+}

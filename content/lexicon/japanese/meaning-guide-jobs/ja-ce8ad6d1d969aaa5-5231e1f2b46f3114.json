@@ -1,0 +1,37 @@
+{
+  "id": "ja-ce8ad6d1d969aaa5-5231e1f2b46f3114",
+  "entry_id": "ja-ce8ad6d1d969aaa5",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ce8ad6d1d969aaa5",
+      "headword": "別",
+      "reading": "べつ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-ce8ad6d1d969aaa5-1",
+          "definition": "something distinct or separate; another of a different kind"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "隣の三毛君も、また別の理由で人間に憤慨している。",
+        "gloss": "different; another",
+        "sense_id": "ja-ce8ad6d1d969aaa5-1"
+      },
+      {
+        "sentence": "美学者は少しも困らず、「別の本と間違えたと言えばいい」と笑った。",
+        "gloss": "different; another",
+        "sense_id": "ja-ce8ad6d1d969aaa5-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6ae4c3164aef991f86f3d0b28df0a5802f9e6428ae71b2bb6fe057bf3f3f45d4"
+}

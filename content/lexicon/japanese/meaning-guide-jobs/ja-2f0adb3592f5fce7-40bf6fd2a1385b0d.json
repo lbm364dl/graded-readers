@@ -1,0 +1,32 @@
+{
+  "id": "ja-2f0adb3592f5fce7-40bf6fd2a1385b0d",
+  "entry_id": "ja-2f0adb3592f5fce7",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-2f0adb3592f5fce7",
+      "headword": "こもる",
+      "reading": "こもる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-2f0adb3592f5fce7-1",
+          "definition": "to stay in a place secluded or shut away"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "学校から帰ると、ほとんど一日中、書斎にこもっている。",
+        "gloss": "be shut away; remain secluded",
+        "sense_id": "ja-2f0adb3592f5fce7-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "451724ae2301d530209379ae8f0eeaf5d5a3569690ff38ca2270aaed28982ae7"
+}

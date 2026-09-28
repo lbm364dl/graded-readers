@@ -1,0 +1,32 @@
+{
+  "id": "ja-e0ae737e9d558500-8465d8001ead3d7e",
+  "entry_id": "ja-e0ae737e9d558500",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e0ae737e9d558500",
+      "headword": "苦しみ",
+      "reading": "くるしみ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e0ae737e9d558500-1",
+          "definition": "suffering; distress"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "人間は、自分たちの都合には敏感だが、他の者の苦しみには実に鈍い。",
+        "gloss": "suffering; distress",
+        "sense_id": "ja-e0ae737e9d558500-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "97f55fc91acdb5ec6da046fc45dc35e1d1a0d070f615673ca156a8a59cde32ae"
+}

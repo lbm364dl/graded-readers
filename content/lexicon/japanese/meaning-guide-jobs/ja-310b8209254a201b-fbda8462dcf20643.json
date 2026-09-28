@@ -1,0 +1,32 @@
+{
+  "id": "ja-310b8209254a201b-fbda8462dcf20643",
+  "entry_id": "ja-310b8209254a201b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-310b8209254a201b",
+      "headword": "四",
+      "reading": "よん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-310b8209254a201b-1",
+          "definition": "four"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "これを四、五度も繰り返した。",
+        "gloss": "four",
+        "sense_id": "ja-310b8209254a201b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4cbfb5d89cadeb99519f6ece7cdcd7c3915360c328bb1682f4389e6f85e13647"
+}

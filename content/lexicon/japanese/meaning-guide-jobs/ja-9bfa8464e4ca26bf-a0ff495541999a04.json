@@ -1,0 +1,32 @@
+{
+  "id": "ja-9bfa8464e4ca26bf-a0ff495541999a04",
+  "entry_id": "ja-9bfa8464e4ca26bf",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9bfa8464e4ca26bf",
+      "headword": "いじめる",
+      "reading": "いじめる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-9bfa8464e4ca26bf-1",
+          "definition": "to bully; mistreat"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そのうえ、吾輩が少しでも手を出すと、家の者全員で追いかけ、いじめる。",
+        "gloss": "bully; mistreat",
+        "sense_id": "ja-9bfa8464e4ca26bf-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5dceef2f6b89e9d9c65450815562c369a8ab206c49d4ba954bff2ecfe558f7fb"
+}

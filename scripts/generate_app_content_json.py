@@ -644,6 +644,12 @@ def main() -> None:
     if dictionary_corpus.MANIFEST.exists():
         dictionary_payload = dictionary_corpus.build(publish=False)
         _, unit_payload = dictionary_corpus.editorial_input()
+    from pipeline import japanese_usage_dictionary
+    japanese_payload = (japanese_usage_dictionary.build()
+                        if japanese_usage_dictionary.SENSES.exists() else None)
+    from pipeline import japanese_grammar_dictionary
+    grammar_payload = (japanese_grammar_dictionary.build()
+                       if japanese_grammar_dictionary.REGISTRY.exists() else None)
     ASSET_ROOT.mkdir(parents=True, exist_ok=True)
     annotation_root = ASSET_ROOT / "annotations"
     if annotation_root.exists():
@@ -663,6 +669,10 @@ def main() -> None:
         print(f"Wrote {destination}: {len(entries)} readers, {chapters} chapters")
     atomic_json(unit_output, unit_payload)
     atomic_json(dictionary_output, dictionary_payload)
+    if japanese_payload is not None:
+        atomic_json(japanese_usage_dictionary.OUTPUT, japanese_payload)
+    if grammar_payload is not None:
+        atomic_json(japanese_grammar_dictionary.OUTPUT, grammar_payload)
 
 
 if __name__ == "__main__":

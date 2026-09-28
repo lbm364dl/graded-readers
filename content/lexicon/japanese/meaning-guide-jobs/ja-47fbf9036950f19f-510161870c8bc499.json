@@ -1,0 +1,32 @@
+{
+  "id": "ja-47fbf9036950f19f-510161870c8bc499",
+  "entry_id": "ja-47fbf9036950f19f",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-47fbf9036950f19f",
+      "headword": "健康",
+      "reading": "けんこう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-47fbf9036950f19f-1",
+          "definition": "health; healthy condition; healthy"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は鼠を決してとらず、まずまず健康に暮らしている。",
+        "gloss": "healthy; in good health",
+        "sense_id": "ja-47fbf9036950f19f-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2288e2f48f3ed2581819312434c2d2739c8b42bb6068f1c3175d33ffc0319ae0"
+}

@@ -1,0 +1,37 @@
+{
+  "id": "ja-7f20f497b2475101-da12f52bb5ba8b69",
+  "entry_id": "ja-7f20f497b2475101",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-7f20f497b2475101",
+      "headword": "姿",
+      "reading": "すがた",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-7f20f497b2475101-1",
+          "definition": "appearance; figure"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は猫として、決して立派な姿ではない。",
+        "gloss": "appearance; figure",
+        "sense_id": "ja-7f20f497b2475101-1"
+      },
+      {
+        "sentence": "それでも、主人の絵に現れた妙な姿とは違う。",
+        "gloss": "appearance; figure",
+        "sense_id": "ja-7f20f497b2475101-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e2aa0a5f35b4207bc15d66b8a7f0f91ae0a5bd3833ed3bc13e63ea1af10f05f8"
+}

@@ -1,0 +1,42 @@
+{
+  "id": "ja-09bed1aa792d95f3-db12296b7b462f4e",
+  "entry_id": "ja-09bed1aa792d95f3",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-09bed1aa792d95f3",
+      "headword": "相手",
+      "reading": "あいて",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-09bed1aa792d95f3-1",
+          "definition": "the person or party one deals with; an opponent or counterpart"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "どこへ行っても追い払われ、相手にしてくれる者はいなかった。",
+        "gloss": "person one deals with",
+        "sense_id": "ja-09bed1aa792d95f3-1"
+      },
+      {
+        "sentence": "相手がこの決まりを守らなければ、力で取り返してもよい。",
+        "gloss": "the other party",
+        "sense_id": "ja-09bed1aa792d95f3-1"
+      },
+      {
+        "sentence": "吾輩が相手の名を聞くと、「おれは車屋の黒だ」と答えた。",
+        "gloss": "the other person",
+        "sense_id": "ja-09bed1aa792d95f3-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e398d41abfd97542085c753e7e128cd1b3cd97fbf8a78530b54bf2bd063736fb"
+}

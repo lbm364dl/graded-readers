@@ -1,0 +1,32 @@
+{
+  "id": "ja-0cdc76a332ffdf95-84abb90842c4ade6",
+  "entry_id": "ja-0cdc76a332ffdf95",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-0cdc76a332ffdf95",
+      "headword": "すでに",
+      "reading": "すでに",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-0cdc76a332ffdf95-1",
+          "definition": "already; by a particular time or before now"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そこは、すでに家の内だった。",
+        "gloss": "already",
+        "sense_id": "ja-0cdc76a332ffdf95-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9030d80463a419e8f3a906395beed61ce8a36aaf6d8450cac47fe89862a1abea"
+}

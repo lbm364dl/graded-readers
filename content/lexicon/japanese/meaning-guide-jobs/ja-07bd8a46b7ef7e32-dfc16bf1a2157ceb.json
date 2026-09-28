@@ -1,0 +1,32 @@
+{
+  "id": "ja-07bd8a46b7ef7e32-dfc16bf1a2157ceb",
+  "entry_id": "ja-07bd8a46b7ef7e32",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-07bd8a46b7ef7e32",
+      "headword": "作る",
+      "reading": "つくる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-07bd8a46b7ef7e32-1",
+          "definition": "to make; to create or compose"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "俳句を作って雑誌へ送り、新しい詩を書き、間違いの多い英文を書いた。",
+        "gloss": "making; composing",
+        "sense_id": "ja-07bd8a46b7ef7e32-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ada4990acc56c1a4b2c1e22d971249f0852c48780d66f49f5d55dee1200bdee6"
+}

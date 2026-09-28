@@ -1,0 +1,32 @@
+{
+  "id": "ja-9387862c9e734c7e-d53b387b1092fb88",
+  "entry_id": "ja-9387862c9e734c7e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9387862c9e734c7e",
+      "headword": "大笑いする",
+      "reading": "おおわらいする",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-9387862c9e734c7e-1",
+          "definition": "to laugh loudly or heartily"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "黒は大笑いした。",
+        "gloss": "laughed loudly",
+        "sense_id": "ja-9387862c9e734c7e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "37a5d3659df1578c2eca90aa34bc6d6460cbbc7fb6cabd07ba71e07f17e73257"
+}

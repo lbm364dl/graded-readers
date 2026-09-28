@@ -1,0 +1,32 @@
+{
+  "id": "ja-7085d853ccc38f7b-2ebcbfee2f6065c5",
+  "entry_id": "ja-7085d853ccc38f7b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-7085d853ccc38f7b",
+      "headword": "買う",
+      "reading": "かう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-7085d853ccc38f7b-1",
+          "definition": "buy; purchase"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が家に来て一月ほどたった給料日に、主人は水彩絵具と毛筆とワットマンという紙を買い、今日から絵をかくと決めた。",
+        "gloss": "bought, and",
+        "sense_id": "ja-7085d853ccc38f7b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "806a45df3e8ad123cae850108bb4771be81784a57409324a909b11b4d42e053b"
+}

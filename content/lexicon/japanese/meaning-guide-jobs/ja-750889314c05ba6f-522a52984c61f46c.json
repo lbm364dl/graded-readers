@@ -1,0 +1,32 @@
+{
+  "id": "ja-750889314c05ba6f-522a52984c61f46c",
+  "entry_id": "ja-750889314c05ba6f",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-750889314c05ba6f",
+      "headword": "探し歩く",
+      "reading": "さがしあるく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-750889314c05ba6f-1",
+          "definition": "To walk around while looking or searching for something."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "黒の子分になって他の御馳走を探し歩く気にもならなかった。",
+        "gloss": "walk around searching for",
+        "sense_id": "ja-750889314c05ba6f-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "35f72b80ed7aa201adca97905fc793d3f6db80f70b4e50158a2a6494e3a8f3e9"
+}

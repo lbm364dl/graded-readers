@@ -1,0 +1,32 @@
+{
+  "id": "ja-042d36a2e23bd95e-5b50501c3b7f7e80",
+  "entry_id": "ja-042d36a2e23bd95e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-042d36a2e23bd95e",
+      "headword": "学校",
+      "reading": "がっこう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-042d36a2e23bd95e-1",
+          "definition": "school"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "学校から帰ると、ほとんど一日中、書斎にこもっている。",
+        "gloss": "school",
+        "sense_id": "ja-042d36a2e23bd95e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "708219e88d8b80a64cfde66c7e4212897403e990d30509be2fa389ccd00cca40"
+}

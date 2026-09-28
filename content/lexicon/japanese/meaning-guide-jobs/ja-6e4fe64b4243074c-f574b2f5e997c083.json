@@ -1,0 +1,32 @@
+{
+  "id": "ja-6e4fe64b4243074c-f574b2f5e997c083",
+  "entry_id": "ja-6e4fe64b4243074c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-6e4fe64b4243074c",
+      "headword": "仕方ない",
+      "reading": "しかたない",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-6e4fe64b4243074c-1",
+          "definition": "unavoidable; there is no choice"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "仕方なく主人のそばで暮らし、朝は膝、昼は背中に乗った。",
+        "gloss": "reluctantly; with no choice",
+        "sense_id": "ja-6e4fe64b4243074c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d210ba60001b1ad33f4f8cbd4fa4572675b62bcd9598b6d4abb1339876b7a4d5"
+}

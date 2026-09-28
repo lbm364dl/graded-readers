@@ -1,0 +1,32 @@
+{
+  "id": "ja-4091cca732c91871-c7cfba3e57aedb81",
+  "entry_id": "ja-4091cca732c91871",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-4091cca732c91871",
+      "headword": "信じる",
+      "reading": "しんじる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-4091cca732c91871-1",
+          "definition": "to believe; to trust"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "君がそんなに真面目に信じるとは思わなかった」\n",
+        "gloss": "believe; trust",
+        "sense_id": "ja-4091cca732c91871-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "88be3358a58415f3de0213319e38b2530dec87a819917144f0cd7d31b9784ad1"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-8b8643bae53ae410-a9efd1c6686a0a7c",
+  "entry_id": "ja-8b8643bae53ae410",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-8b8643bae53ae410",
+      "headword": "務まる",
+      "reading": "つとまる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-8b8643bae53ae410-1",
+          "definition": "to be capable of performing a role or task; to be suitable for a position"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "こんなに寝ていて仕事が務まるなら、猫にできないはずもない。",
+        "gloss": "can be carried out; be suitable for the job",
+        "sense_id": "ja-8b8643bae53ae410-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8917b9de72f917c9b3b6c2042d46b937b78753ea13282436285327c9b1c9937a"
+}

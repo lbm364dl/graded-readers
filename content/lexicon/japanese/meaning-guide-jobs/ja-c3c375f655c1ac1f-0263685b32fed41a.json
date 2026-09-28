@@ -1,0 +1,32 @@
+{
+  "id": "ja-c3c375f655c1ac1f-0263685b32fed41a",
+  "entry_id": "ja-c3c375f655c1ac1f",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-c3c375f655c1ac1f",
+      "headword": "光る",
+      "reading": "ひかる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-c3c375f655c1ac1f-1",
+          "definition": "to shine; to emit light"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "太陽の光を受けた毛は、黒い中から火が出るように光っていた。",
+        "gloss": "was shining",
+        "sense_id": "ja-c3c375f655c1ac1f-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f8c5f3bf8404213ae0644ffa2f7f413ca9175543d1ecb758cec2257708304197"
+}

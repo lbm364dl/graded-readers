@@ -1,0 +1,32 @@
+{
+  "id": "ja-3025e1215a4b480a-792219d4cb941fc6",
+  "entry_id": "ja-3025e1215a4b480a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-3025e1215a4b480a",
+      "headword": "抜ける",
+      "reading": "ぬける",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-3025e1215a4b480a-1",
+          "definition": "to come out; fall out; come loose"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "つやのあった毛はだんだん色があせて抜け、きれいだった目には目やにがたまった。",
+        "gloss": "coming out; falling out",
+        "sense_id": "ja-3025e1215a4b480a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "394a255622088595d606f23231060ae3f9b5e4c2c26989c2ad8481cf81a521c4"
+}

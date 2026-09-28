@@ -1,0 +1,32 @@
+{
+  "id": "ja-51eda065618691f8-2f2409fffd378349",
+  "entry_id": "ja-51eda065618691f8",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-51eda065618691f8",
+      "headword": "暗くなる",
+      "reading": "くらくなる",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-51eda065618691f8-1",
+          "definition": "to become dark"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "暗くなり、腹は減り、寒く、雨まで降ってきたので、明るく暖かそうな方へ歩いた。",
+        "gloss": "became dark, and",
+        "sense_id": "ja-51eda065618691f8-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e17960b0ad1828c7647c6e826bba68720c6bfed9aa1d08a564c5a52b160bed8d"
+}

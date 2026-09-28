@@ -76,15 +76,25 @@ def evidence_needed(row):
     """Conservative backstop, not a word-list classifier or a claim of certainty."""
     prose = ' '.join([row['explanation_en'], row['caveat_en'],
                       *(p['contribution_en'] for p in row['parts'])])
+    # An interrogative can denote an unknown referent without its explanation
+    # being uncertain. Keep actual explanatory uncertainty/history checks.
+    prose = re.sub(r'\bunknown (?:place|location|person|thing|time|amount|number)\b',
+                   'unspecified referent', prose, flags=re.I)
+    prose = re.sub(r'\b(?:place|location|person|thing|time|amount|number) '
+                   r'(?:that |which )?is unknown\b', 'unspecified referent',
+                   prose, flags=re.I)
+    prose = re.sub(r"\b(?:their|his|her|whose|someone's|a person's) identity "
+                   r'(?:is |was |remains )?unknown\b',
+                   'unspecified referent identity', prose, flags=re.I)
     return bool(re.search(
         r'\b(etymolog\w*|ancient|historically|originated|originally meant|'
         r'named after|developed from|uncertain|unclear|unknown|'
         r'not established|cannot be explained|cannot explain)\b', prose, re.I))
 
 
-async def edit(runner, job, item, previous, requests):
+async def edit(runner, job, item, previous, requests, *, policy=None, editorial_style=None):
     from pipeline.dictionary_meaning_guides import EDITORIAL_STYLE
-    prompt = POLICY + '\n' + EDITORIAL_STYLE + '\nINPUT:\n' + json.dumps(
+    prompt = (policy or POLICY) + '\n' + (editorial_style or EDITORIAL_STYLE) + '\nINPUT:\n' + json.dumps(
         dict(**item, previous_guide=previous, requests=requests), ensure_ascii=False)
     proposed = await runner.call(job + '/adaptive-propose', prompt, SCHEMA, 'low', tool_profile='offline')
     # The independent reviewer sees the original coverage, not only the draft.
@@ -97,16 +107,24 @@ An unsupported historical claim must trigger research, even if you could delete
 the claim to make the prose sound confident. Return the complete schema object.
 DRAFT:\n""" + json.dumps(proposed, ensure_ascii=False)
     reviewed = await runner.call(job + '/adaptive-review', review_prompt, SCHEMA, 'high', tool_profile='offline')
-    try:
-        validate_packet(reviewed, item)
-    except (ValueError, ValidationError) as error:
-        reviewed = await runner.call(job + '/adaptive-review-repair', review_prompt +
-            '\nRepair this invalid final packet: ' + str(error) + '\n' +
-            json.dumps(reviewed, ensure_ascii=False) +
-            '\nReturn the complete corrected packet. Preserve genuine research questions; '
-            'do not manufacture source claim IDs. Parts must match the exact headword.',
-            SCHEMA, 'high', tool_profile='offline')
-        validate_packet(reviewed, item)
+    for attempt in range(3):
+        try:
+            validate_packet(reviewed, item)
+            break
+        except (ValueError, ValidationError) as error:
+            if attempt == 2:
+                raise
+            suffix = '/adaptive-review-repair' if attempt == 0 else '/adaptive-review-repair-2'
+            # Preserve the original first repair cache; only subsequent repairs
+            # need the stronger exact-identity reminder.
+            identity = ('' if attempt == 0 else
+                '\nThe ONLY allowed entry_id is ' + item['entry']['id'] + '. Copy it exactly.')
+            reviewed = await runner.call(job + suffix, review_prompt +
+                '\nRepair this invalid final packet: ' + str(error) + '\n' +
+                json.dumps(reviewed, ensure_ascii=False) +
+                '\nReturn the complete corrected packet. Preserve genuine research questions; '
+                'do not manufacture source claim IDs. Parts must match the exact headword.' + identity,
+                SCHEMA, 'high', tool_profile='offline')
     # Either agent can escalate. The proposer need not produce a publishable row
     # when it has already identified a genuine missing piece of evidence.
     validate_schema(proposed)

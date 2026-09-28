@@ -1,0 +1,32 @@
+{
+  "id": "ja-2c9cbe07b98aac79-2ee6043b36226a61",
+  "entry_id": "ja-2c9cbe07b98aac79",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-2c9cbe07b98aac79",
+      "headword": "菊",
+      "reading": "きく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-2c9cbe07b98aac79-1",
+          "definition": "a chrysanthemum"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "茶の木の根を一つ一つ嗅ぎながら西側の杉の垣根へ行くと、枯れた菊を押し倒し、その上で大きな猫が眠っていた。",
+        "gloss": "chrysanthemum",
+        "sense_id": "ja-2c9cbe07b98aac79-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4c99d72bec86d3c895611d0767ed9f8cf8cbe771a816439d6169ae8e6d6190f7"
+}

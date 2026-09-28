@@ -1,0 +1,32 @@
+{
+  "id": "ja-5dbc8b15eb27d6b0-41355330159e2e2d",
+  "entry_id": "ja-5dbc8b15eb27d6b0",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5dbc8b15eb27d6b0",
+      "headword": "そればかりか",
+      "reading": "そればかりか",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-5dbc8b15eb27d6b0-1",
+          "definition": "not only that, but also; used to add a further point"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そればかりか、顔の真ん中が突起している。",
+        "gloss": "not only that, but also",
+        "sense_id": "ja-5dbc8b15eb27d6b0-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7da52ce56ff8ab0e48a146032ce815d861f7813b3cc22352e73ad2cb5182b7f9"
+}

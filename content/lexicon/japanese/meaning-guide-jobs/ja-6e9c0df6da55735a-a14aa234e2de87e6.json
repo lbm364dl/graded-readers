@@ -1,0 +1,32 @@
+{
+  "id": "ja-6e9c0df6da55735a-a14aa234e2de87e6",
+  "entry_id": "ja-6e9c0df6da55735a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-6e9c0df6da55735a",
+      "headword": "十坪",
+      "reading": "じゅっつぼ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-6e9c0df6da55735a-1",
+          "definition": "ten tsubo, a traditional Japanese unit of area"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩の家の裏には、十坪ほどの茶園がある。",
+        "gloss": "ten tsubo",
+        "sense_id": "ja-6e9c0df6da55735a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "06a8d7e20c183b355190a2ecea343c89a637905b9560e7f50dc59f967370a484"
+}

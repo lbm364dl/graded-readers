@@ -1,0 +1,37 @@
+{
+  "id": "ja-e70808894612874b-377bc8d16f2e5483",
+  "entry_id": "ja-e70808894612874b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e70808894612874b",
+      "headword": "など",
+      "reading": "など",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-e70808894612874b-1",
+          "definition": "such as; and so on"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "先日などは、物差しで尻をひどくたたかれた。",
+        "gloss": "for example; such as",
+        "sense_id": "ja-e70808894612874b-1"
+      },
+      {
+        "sentence": "主人は俳句、新しい詩、英語、弓、歌、バイオリンなど、何にでも手を出すが、どれも上手にならない。",
+        "gloss": "and so on; such as",
+        "sense_id": "ja-e70808894612874b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "af9904d9f693ef26b242681fbe93edd0dc8f66118b9a5f428a1137c6193f151f"
+}

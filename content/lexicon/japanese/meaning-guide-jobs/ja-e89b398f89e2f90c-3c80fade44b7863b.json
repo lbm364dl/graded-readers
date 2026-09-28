@@ -1,0 +1,32 @@
+{
+  "id": "ja-e89b398f89e2f90c-3c80fade44b7863b",
+  "entry_id": "ja-e89b398f89e2f90c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e89b398f89e2f90c",
+      "headword": "とるまい",
+      "reading": "とるまい",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-e89b398f89e2f90c-1",
+          "definition": "Expresses the speaker’s intention or resolve not to do an action."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩はその話を聞き、決して鼠をとるまいと決めた。",
+        "gloss": "will not catch; resolved not to catch",
+        "sense_id": "ja-e89b398f89e2f90c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b7fcc140a5260b24a8ba905ab8919949095cb6879e406eab51eb87f668d01dad"
+}

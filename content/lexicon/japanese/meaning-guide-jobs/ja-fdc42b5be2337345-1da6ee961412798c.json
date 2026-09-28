@@ -1,0 +1,32 @@
+{
+  "id": "ja-fdc42b5be2337345-1da6ee961412798c",
+  "entry_id": "ja-fdc42b5be2337345",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-fdc42b5be2337345",
+      "headword": "天気",
+      "reading": "てんき",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-fdc42b5be2337345-1",
+          "definition": "weather"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "その後、朝は飯櫃の上、夜は炬燵の上、天気のよい昼は椽側で寝るようになった。",
+        "gloss": "weather",
+        "sense_id": "ja-fdc42b5be2337345-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5764417cdd625be15c7279d7e2abeecabdbbb769a0d66f7ab91e369680ac2768"
+}

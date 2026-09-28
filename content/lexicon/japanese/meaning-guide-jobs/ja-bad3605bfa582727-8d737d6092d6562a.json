@@ -1,0 +1,32 @@
+{
+  "id": "ja-bad3605bfa582727-8d737d6092d6562a",
+  "entry_id": "ja-bad3605bfa582727",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-bad3605bfa582727",
+      "headword": "鳥",
+      "reading": "とり",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-bad3605bfa582727-1",
+          "definition": "bird"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そして、絵をかくなら自然そのものを写すべきだ、空には星、地には露、池には金魚、枯れ木には鳥がいる、自然全体が大きな絵なのだ、と語った。",
+        "gloss": "bird",
+        "sense_id": "ja-bad3605bfa582727-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0577474386bf4eb2b879aed029354d20bb67d8e0f00878b57840a3a5e14dc65e"
+}

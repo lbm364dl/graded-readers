@@ -1,0 +1,32 @@
+{
+  "id": "ja-39f72d153f32ac2b-024e673879808f4c",
+  "entry_id": "ja-39f72d153f32ac2b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-39f72d153f32ac2b",
+      "headword": "欲",
+      "reading": "よく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-39f72d153f32ac2b-1",
+          "definition": "desire; wish"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "しかし欲を言えばきりがない。",
+        "gloss": "desire; wish",
+        "sense_id": "ja-39f72d153f32ac2b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "97cc09623f9bb381d2697098b92173eb860b2eef339089843ff2400cebc11ec8"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-7b670af0f888ff63-4971e413da443f16",
+  "entry_id": "ja-7b670af0f888ff63",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-7b670af0f888ff63",
+      "headword": "出す",
+      "reading": "だす",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-7b670af0f888ff63-1",
+          "definition": "To take or send something out; let out."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "女の人は吾輩を何度も外へ出しましたが、吾輩は台所へ入りました。",
+        "gloss": "let out; sent outside",
+        "sense_id": "ja-7b670af0f888ff63-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bae8243338e770fde65f7cc0b312d02109075d1a24d33e17d0baecad2b2ba49b"
+}

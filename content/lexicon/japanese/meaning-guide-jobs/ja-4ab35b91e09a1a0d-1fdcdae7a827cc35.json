@@ -1,0 +1,32 @@
+{
+  "id": "ja-4ab35b91e09a1a0d-1fdcdae7a827cc35",
+  "entry_id": "ja-4ab35b91e09a1a0d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-4ab35b91e09a1a0d",
+      "headword": "助かる",
+      "reading": "たすかる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-4ab35b91e09a1a0d-1",
+          "definition": "to be saved; to survive"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "もう助からないと思った時、どさりと音がして、目から火が出た。",
+        "gloss": "cannot be saved; will not survive",
+        "sense_id": "ja-4ab35b91e09a1a0d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4ead8f6aa676ae5f38e2d84d95e3afaaf631bfa7a6973a96d1d3624bc1520f95"
+}

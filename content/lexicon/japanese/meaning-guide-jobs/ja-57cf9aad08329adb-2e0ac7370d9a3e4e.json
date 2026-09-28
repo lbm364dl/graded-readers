@@ -1,0 +1,32 @@
+{
+  "id": "ja-57cf9aad08329adb-2e0ac7370d9a3e4e",
+  "entry_id": "ja-57cf9aad08329adb",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-57cf9aad08329adb",
+      "headword": "戦う",
+      "reading": "たたかう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-57cf9aad08329adb-1",
+          "definition": "to fight; wage war"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そして、「猫族が親子の愛を守り、美しい家族の生活をするには、人間と戦い、彼らを滅ぼさなければならない」と言った。",
+        "gloss": "fighting; waging war",
+        "sense_id": "ja-57cf9aad08329adb-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "704de69cc6ee4758219e782604406a70833a8c6ef050c64a0543094f2c0db651"
+}

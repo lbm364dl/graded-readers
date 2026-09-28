@@ -1,0 +1,32 @@
+{
+  "id": "ja-4b8a19181a3df6eb-b31f0ec551124d00",
+  "entry_id": "ja-4b8a19181a3df6eb",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-4b8a19181a3df6eb",
+      "headword": "じめじめする",
+      "reading": "じめじめする",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-4b8a19181a3df6eb-1",
+          "definition": "To be damp or clammy."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ただ、薄暗くてじめじめした場所で、ニャーニャー泣いていたことだけは覚えている。",
+        "gloss": "damp; clammy",
+        "sense_id": "ja-4b8a19181a3df6eb-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2ebe028655525735c2eef372be280b4d07191294724aed100e0966cfadfda2b5"
+}

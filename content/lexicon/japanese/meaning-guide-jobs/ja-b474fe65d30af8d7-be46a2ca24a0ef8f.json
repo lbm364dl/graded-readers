@@ -1,0 +1,32 @@
+{
+  "id": "ja-b474fe65d30af8d7-be46a2ca24a0ef8f",
+  "entry_id": "ja-b474fe65d30af8d7",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-b474fe65d30af8d7",
+      "headword": "しばらく",
+      "reading": "しばらく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-b474fe65d30af8d7-1",
+          "definition": "for a while; for some time"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "この書生の手の上で、吾輩はしばらく気持ちよく座っていた。",
+        "gloss": "for a while",
+        "sense_id": "ja-b474fe65d30af8d7-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6d24ac4d3ddd20e785e78bcfd9697667124b373640d4d9cc8d1b7e20c2f6d424"
+}

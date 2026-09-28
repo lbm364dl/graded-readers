@@ -1,0 +1,32 @@
+{
+  "id": "ja-41787ef3bf50fb7d-0d8368302fa8aaeb",
+  "entry_id": "ja-41787ef3bf50fb7d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-41787ef3bf50fb7d",
+      "headword": "熱心",
+      "reading": "ねっしん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-41787ef3bf50fb7d-1",
+          "definition": "earnestness; enthusiasm or zeal"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "しかし主人の熱心さには感心した。",
+        "gloss": "earnestness; enthusiasm",
+        "sense_id": "ja-41787ef3bf50fb7d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ad951fdd941b82773c9650993a63c90ffe0066aca622a68fba0e49f7b1ec30e2"
+}

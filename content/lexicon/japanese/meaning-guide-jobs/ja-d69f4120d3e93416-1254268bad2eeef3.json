@@ -1,0 +1,32 @@
+{
+  "id": "ja-d69f4120d3e93416-1254268bad2eeef3",
+  "entry_id": "ja-d69f4120d3e93416",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d69f4120d3e93416",
+      "headword": "立てる",
+      "reading": "たてる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d69f4120d3e93416-1",
+          "definition": "to make; to produce"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は時々、足音を立てないように書斎をのぞく。",
+        "gloss": "not make; not produce",
+        "sense_id": "ja-d69f4120d3e93416-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6cb8259f6a8953bd0c169bc2a950d2f9efc2d4063fc82b2bda6b48ca995ca39c"
+}

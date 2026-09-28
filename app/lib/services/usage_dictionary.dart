@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
+import '../models.dart';
 
 class _PinyinLetter {
   final String base;
@@ -184,31 +185,53 @@ bool _matchesPinyin(_PinyinPattern entry, _PinyinPattern query) {
 
 /// Reviewed corpus links, separate from the general lookup dictionary.
 class UsageDictionary {
+  final Language language;
   final Map<String, dynamic> sources;
   final List<Map<String, dynamic>> entries;
   final List<Map<String, dynamic>> occurrences;
   final List<Map<String, dynamic>> readingBindings;
+  late final Map<String, Map<String, dynamic>> _entriesById = {
+    for (final entry in entries) entry['id'] as String: entry,
+  };
+  late final Map<String, Map<String, dynamic>> _occurrencesById = {
+    for (final use in occurrences) use['id'] as String: use,
+  };
+  late final Map<(String, int), Map<String, dynamic>> _segments = {
+    for (final use in occurrences.where((use) => use['layer'] != 'expression'))
+      (use['source'] as String, use['segment_index'] as int): use,
+  };
+  late final Map<(String, int), Map<String, dynamic>> _readingBindings = {
+    for (final binding in readingBindings)
+      (binding['source'] as String, binding['segment_index'] as int): binding,
+  };
 
   UsageDictionary.fromJson(Map<String, dynamic> json)
-      : sources = Map<String, dynamic>.from(json['sources'] as Map),
+      : language = json['language'] == 'japanese'
+            ? Language.japanese
+            : Language.chinese,
+        sources = Map<String, dynamic>.from(json['sources'] as Map),
         entries = (json['entries'] as List).cast<Map<String, dynamic>>(),
         occurrences =
             (json['occurrences'] as List).cast<Map<String, dynamic>>(),
         readingBindings = (json['reading_bindings'] as List? ?? const [])
             .cast<Map<String, dynamic>>();
 
-  static Future<UsageDictionary>? _pending;
-  static UsageDictionary? _cached;
-  static Future<UsageDictionary> load() =>
-      _cached != null ? Future.value(_cached) : _pending ??= _load();
+  static final _pending = <Language, Future<UsageDictionary>>{};
+  static final _cached = <Language, UsageDictionary>{};
+  static Future<UsageDictionary> load({Language language = Language.chinese}) =>
+      _cached.containsKey(language)
+          ? Future.value(_cached[language])
+          : _pending.putIfAbsent(language, () => _load(language));
 
-  static Future<UsageDictionary> _load() async {
+  static Future<UsageDictionary> _load(Language language) async {
     try {
-      return _cached = UsageDictionary.fromJson(jsonDecode(
-        await rootBundle.loadString('assets/usage_dictionary.json'),
+      return _cached[language] = UsageDictionary.fromJson(jsonDecode(
+        await rootBundle.loadString(language == Language.japanese
+            ? 'assets/usage_dictionary_ja.json'
+            : 'assets/usage_dictionary.json'),
       ) as Map<String, dynamic>);
     } catch (_) {
-      _pending = null;
+      _pending.remove(language);
       rethrow;
     }
   }
@@ -217,12 +240,8 @@ class UsageDictionary {
       {int? startOffset, String? surface, String? reading, String? gloss}) {
     if (sources[source]?['text'] != text) return null;
     if (surface != null) {
-      for (final binding in readingBindings) {
-        if (binding['source'] != source ||
-            binding['segment_index'] != index ||
-            binding['surface'] != surface) {
-          continue;
-        }
+      final binding = _readingBindings[(source, index)];
+      if (binding != null && binding['surface'] == surface) {
         if (reading != null && binding['reading'] != reading) return null;
         if (gloss != null && binding['gloss'] != gloss) return null;
         if (startOffset != null &&
@@ -231,35 +250,56 @@ class UsageDictionary {
                 startOffset) {
           return null;
         }
-        return occurrences
-            .singleWhere((o) => o['id'] == binding['occurrence_id']);
+        return _occurrencesById[binding['occurrence_id']];
       }
     }
-    for (final use in occurrences) {
-      if (use['layer'] == 'expression') continue;
-      if (use['source'] != source || use['segment_index'] != index) continue;
-      if (surface != null && use['surface'] != surface) return null;
-      if (reading != null && use['reading'] != reading) return null;
-      if (gloss != null && use['gloss'] != gloss) return null;
-      if (startOffset != null &&
-          String.fromCharCodes(text.runes.take(use['start'] as int)).length !=
-              startOffset) {
-        return null;
-      }
-      return use;
+    final use = _segments[(source, index)];
+    if (use == null) return null;
+    if (surface != null && use['surface'] != surface) return null;
+    if (reading != null && use['reading'] != reading) return null;
+    if (gloss != null && use['gloss'] != gloss) return null;
+    if (startOffset != null &&
+        String.fromCharCodes(text.runes.take(use['start'] as int)).length !=
+            startOffset) {
+      return null;
     }
-    return null;
+    return use;
   }
 
-  Map<String, dynamic> entry(String id) =>
-      entries.singleWhere((e) => e['id'] == id);
+  Map<String, dynamic> entry(String id) {
+    final seen = <String>{};
+    var target = id;
+    while (seen.add(target)) {
+      final result = _entriesById[target];
+      if (result == null) throw StateError('Unknown dictionary entry: $target');
+      if (result['superseded_by'] == null) return result;
+      target = result['superseded_by'] as String;
+    }
+    throw StateError('Cyclic dictionary aliases');
+  }
 
   List<Map<String, dynamic>> expressionsFor(String baseId) =>
       entries.where((e) => e['base_entry_id'] == baseId).toList();
 
   List<Map<String, dynamic>> search(String query) {
     final q = query.trim().toLowerCase();
-    if (q.isEmpty) return entries;
+    final searchable = entries
+        .where((e) => !isGrammarOnly(e) && e['superseded_by'] == null)
+        .toList();
+    if (q.isEmpty) return searchable;
+    if (language == Language.japanese) {
+      String kana(String value) => String.fromCharCodes(
+          value.runes.map((r) => r >= 0x30a1 && r <= 0x30f6 ? r - 0x60 : r));
+      final normalized = kana(q);
+      return searchable.where((entry) {
+        final definitions = (entry['senses'] as List)
+            .map((sense) => sense['definition'])
+            .join(' ');
+        return kana('${entry['headword']} ${entry['reading']} $definitions'
+                .toLowerCase())
+            .contains(normalized);
+      }).toList();
+    }
 
     final numberedPinyin = _numberedPinyinPattern(q);
     final hasDigits = RegExp(r'\d').hasMatch(q);
@@ -283,4 +323,11 @@ class UsageDictionary {
       return readings.any((reading) => _matchesPinyin(reading, pinyinQuery));
     }).toList();
   }
+
+  bool isGrammarOnly(Map<String, dynamic> entry) =>
+      language == Language.japanese &&
+      (entry['kind'] == 'particle' ||
+          entry['kind'] == 'construction' ||
+          entry['headword'] == 'です' ||
+          entry['headword'] == 'か');
 }

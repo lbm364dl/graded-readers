@@ -1,5 +1,91 @@
 # Meaning-guide pilot checks
 
+## Linked Japanese conjugation chains (2026-09-27)
+
+The N5 pilot now has 27 grammar entries, with 58 actual grammar candidates and
+33 separately reviewed intermediate/final form-step bindings. Conjugation cards
+show one linked chain: 入る opens the shared word entry, 入ります opens polite
+nonpast ます, and 入りました opens polite past ました. Equivalent chains cover
+negative, passive, progressive, connective and benefactive forms. Each stage links
+to the grammar introduced at that stage, rather than repeating the whole pattern.
+The legacy dictionary-form lookup and duplicate top-level buttons are removed from
+these cards. Chain navigation opens independent entries without a passage-specific
+intro; the dropdown retains the original contextual gloss and step explanations.
+
+Intermediate forms are explanation metadata, not claimed source occurrences.
+Lessons represented only through these stages label their source links as
+"Conjugation chains from our texts" instead of fabricated observed examples.
+Links require an exact source edition, segment, step index, form, reading, label
+and meaning. An uncovered or stale stage is not linked using suffix guesses.
+
+The initial full-entry echo caused repeated rejection of an unrequested one-word
+rephrasing in the existing polite-past lesson. The linking stage now returns only
+new lessons; approved prose is reused locally from the registry, and intentional
+edits continue through the scoped editorial route. Regressions verify this reuse,
+step-level roles and direct entry navigation. No source annotations or original
+tap boundaries were changed. Verification: 1,008 Python tests passed (48 skipped),
+all 330 Flutter tests passed, static analysis reported no issues, the release web
+build succeeded, and a phone-sized browser check exercised all three chain links.
+
+## Japanese N5 grammar dictionary (2026-09-27)
+
+The pilot now publishes 26 reusable grammar entries linked to 58 annotated
+particle/form/pattern candidates. Particles open grammar rather than lexical word
+entries; inflected verbs retain both destinations. Merged 住むことにしました keeps
+its lexical 住む link alongside the decision pattern and polite-past grammar.
+Canonical grammar IDs are reviewed independently of provisional annotation keys.
+Generic explanation, structured formation steps, contextual role and source
+example references are separate fields. Unused proposal entries are not published.
+
+The independent review corrected an initial misanalysis of 生まれた as passive:
+it is the past form of the lexical intransitive 生まれる. It also separated subject
+and contrast が, and positional/result-location/residence に. Scoped pronunciation
+edits corrected grammar reading fields for は, へ and を without touching unrelated
+lessons or the original source annotations. No external research was needed.
+
+Unchanged runs make zero model calls. Per-candidate fingerprints preserve
+unaffected assignments; new occurrences reuse approved lessons rather than
+regenerating them. Explicit scoped editorial requests permit deliberate lesson
+corrections while retaining IDs and untouched entries. Regression coverage checks
+missing/duplicate/dangling links, invalid review digests, Unicode offsets, reuse,
+particle routing and dual lexical/grammar links on inflected and merged forms.
+
+Verification: 1,006 Python tests passed (48 skipped), all 328 Flutter tests passed,
+static analysis reported no issues, and the release web build succeeded. Live
+browser checks verify grammar browsing and kana search, particle-to-grammar links,
+source navigation, lexical/grammar links and existing Japanese word-dictionary
+flows. Source prose, annotations and original tap-unit definitions are unchanged.
+
+## Japanese N5 dictionary pilot (2026-09-27)
+
+The existing 吾輩は猫である N5 chapter now has 56 shared lexical/functional
+entries, the whole expression 目が回る, and two independently explained component
+entries (こと and する): 59 entries and 95 occurrences in total. 見ました, 見て
+and 見ながら share 見る and one sense; their inflection/context explanations remain
+in the reader. Merged 住むことにしました links to the canonical ことにする pattern.
+Japanese source prose, annotations, tap units and grammar overlays are unchanged.
+
+Of the 56 primary entries, 51 use the offline editor and five retain verified
+research dossiers. 吾輩 received a targeted component explanation after the first
+draft gave only its register; 名前 now has structured 名/前 parts, an honest
+unresolved contribution question, and no unnecessary expansion into additional
+historical senses absent from the pilot's sense coverage. These 名前 edits reused
+approved evidence without new searches. Japanese spelling, semantic composition
+and historical formation remain distinct from Chinese character etymology.
+
+The pilot exposed overly broad validation heuristics: grammatical "role in the
+sentence" language is not story narration, and an interrogative's unknown place
+is not uncertainty about word formation. Both have regressions. Explicit formation
+limits need not be repeated in a caveat field. Redundant inline citation markers
+are removed only when the same IDs are already structured and known in the verified
+dossier; unknown/unstructured citations still fail validation.
+
+Verification: 1,000 Python tests passed (48 skipped), all 323 Flutter tests passed,
+static analysis reported no issues, and the release web build succeeded. Live
+browser checks cover the shared 見る entry, Japanese example navigation, intact
+目が回りました dictionary links and katakana search. A real unchanged update with
+model calls replaced by a failing mock passes, proving zero new model calls.
+
 ## Legacy dropdown audit (2026-09-27)
 
 Reviewed the 109 nested-dropdown occurrences (56 distinct decompositions) across

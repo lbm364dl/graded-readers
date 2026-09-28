@@ -1,0 +1,41 @@
+{
+  "id": "ja-9a741e095af469df-6adfa1031189a10a",
+  "entry_id": "ja-9a741e095af469df",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9a741e095af469df",
+      "headword": "ため",
+      "reading": "ため",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-9a741e095af469df-1",
+          "definition": "because; due to (indicates a cause or reason)"
+        },
+        {
+          "id": "ja-9a741e095af469df-2",
+          "definition": "for the purpose of; for the sake of (indicates an aim)"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "友人に勧められたため、まず吾輩を写生することにしたらしい。",
+        "gloss": "because; due to",
+        "sense_id": "ja-9a741e095af469df-1"
+      },
+      {
+        "sentence": "ある小春日和の午後、昼飯のあとで一眠りし、運動のため茶園へ歩いて行った。",
+        "gloss": "for the purpose of",
+        "sense_id": "ja-9a741e095af469df-2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5fb5807eb2fe42fcec5970b35d139f7f59e66270d42d6fec5cb2670179a36471"
+}

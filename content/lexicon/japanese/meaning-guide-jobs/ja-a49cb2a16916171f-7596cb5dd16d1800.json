@@ -1,0 +1,32 @@
+{
+  "id": "ja-a49cb2a16916171f-7596cb5dd16d1800",
+  "entry_id": "ja-a49cb2a16916171f",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a49cb2a16916171f",
+      "headword": "不人望",
+      "reading": "ふじんぼう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-a49cb2a16916171f-1",
+          "definition": "unpopular; lacking the favor or regard of others"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩はこの家で、主人以外のものには不人望だった。",
+        "gloss": "was unpopular or unwanted",
+        "sense_id": "ja-a49cb2a16916171f-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c93f138aa54643e5729ef1e56973f1a9ee58eb26835583c492fa5e78804937ab"
+}

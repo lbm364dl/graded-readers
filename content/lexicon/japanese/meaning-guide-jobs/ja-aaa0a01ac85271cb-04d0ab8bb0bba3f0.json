@@ -1,0 +1,37 @@
+{
+  "id": "ja-aaa0a01ac85271cb-04d0ab8bb0bba3f0",
+  "entry_id": "ja-aaa0a01ac85271cb",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-aaa0a01ac85271cb",
+      "headword": "有る",
+      "reading": "ある",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-aaa0a01ac85271cb-1",
+          "definition": "to exist; be present"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "毛があるはずの顔はつるつるで、やかんのようだった。",
+        "gloss": "to exist; to have",
+        "sense_id": "ja-aaa0a01ac85271cb-1"
+      },
+      {
+        "sentence": "吾輩の家の裏には、十坪ほどの茶園がある。",
+        "gloss": "there is; exists",
+        "sense_id": "ja-aaa0a01ac85271cb-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e1be924ecb66c59042f7c0ab2733d22163a058bd0f59e30a8779f33db841f702"
+}

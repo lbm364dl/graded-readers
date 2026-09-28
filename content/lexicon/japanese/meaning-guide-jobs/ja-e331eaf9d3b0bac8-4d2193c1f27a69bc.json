@@ -1,0 +1,32 @@
+{
+  "id": "ja-e331eaf9d3b0bac8-4d2193c1f27a69bc",
+  "entry_id": "ja-e331eaf9d3b0bac8",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e331eaf9d3b0bac8",
+      "headword": "持ち上げる",
+      "reading": "もちあげる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e331eaf9d3b0bac8-1",
+          "definition": "to lift or raise something"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ただ、書生の掌の上に乗せられ、ふわりと持ち上げられた感じが残っている。",
+        "gloss": "was lifted up",
+        "sense_id": "ja-e331eaf9d3b0bac8-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2af9e48ae5264eda154380161013a24a04b8c82b3c4d719d97fbdbcd47b436fe"
+}

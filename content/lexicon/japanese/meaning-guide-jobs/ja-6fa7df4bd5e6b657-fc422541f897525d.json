@@ -1,0 +1,66 @@
+{
+  "id": "ja-6fa7df4bd5e6b657-fc422541f897525d",
+  "entry_id": "ja-6fa7df4bd5e6b657",
+  "reason": "requested",
+  "item": {
+    "entry": {
+      "id": "ja-6fa7df4bd5e6b657",
+      "headword": "兄弟",
+      "reading": "きょうだい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-6fa7df4bd5e6b657-1",
+          "definition": "Sibling or siblings; brothers and sisters."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "兄弟も母もいません。",
+        "gloss": "siblings",
+        "sense_id": "ja-6fa7df4bd5e6b657-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-6fa7df4bd5e6b657",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "compositional",
+    "explanation_en": "兄弟 pairs the Japanese words for older brother and younger brother to refer to siblings collectively. In modern use, it can mean siblings of any gender, as a group or in relation to one person.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "兄",
+        "contribution_en": "Means older brother; here it names one side of the sibling pair.",
+        "claim_ids": []
+      },
+      {
+        "text": "弟",
+        "contribution_en": "Means younger brother; paired with 兄, it covers the sibling relationship broadly, including sisters in modern use.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "cf85372e31daceeb2195006ebc9569f606ec18187c5ccd727342db28e146e264",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [
+    {
+      "id": "ja-audit-request-e7c01dac8e5198f8",
+      "reason": "The component description can read as a generative rule for covering siblings of any gender, obscuring that this is the conventional meaning of the whole word. Requested change: Retain the intuitive 兄 (older brother) + 弟 (younger brother) explanation and structured parts. Explain that the conventional WHOLE can cover siblings of any gender; do not imply that 弟 itself contributes sisters. Do not reduce the entry to just a definition.",
+      "entry_id": "ja-6fa7df4bd5e6b657",
+      "force_research": false,
+      "reuse_reviewed_evidence": true
+    }
+  ],
+  "status": "reviewed",
+  "result_digest": "29125ce4444f90a18916dbda6f52fbd9e1dca28bce12693d1b74e2624efcb954"
+}

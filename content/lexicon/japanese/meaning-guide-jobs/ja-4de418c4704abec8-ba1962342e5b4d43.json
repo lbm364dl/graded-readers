@@ -1,0 +1,32 @@
+{
+  "id": "ja-4de418c4704abec8-ba1962342e5b4d43",
+  "entry_id": "ja-4de418c4704abec8",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-4de418c4704abec8",
+      "headword": "名",
+      "reading": "な",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-4de418c4704abec8-1",
+          "definition": "name"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が相手の名を聞くと、「おれは車屋の黒だ」と答えた。",
+        "gloss": "name",
+        "sense_id": "ja-4de418c4704abec8-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5d0e2b061d164504109ea145fe20e5150f2ffeeef55aeda913ecfb2705d16b5c"
+}

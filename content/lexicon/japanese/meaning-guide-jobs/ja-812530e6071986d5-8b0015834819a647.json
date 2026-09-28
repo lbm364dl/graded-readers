@@ -1,0 +1,32 @@
+{
+  "id": "ja-812530e6071986d5-8b0015834819a647",
+  "entry_id": "ja-812530e6071986d5",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-812530e6071986d5",
+      "headword": "感じ",
+      "reading": "かんじ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-812530e6071986d5-1",
+          "definition": "feeling; sensation"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ただ、書生の掌の上に乗せられ、ふわりと持ち上げられた感じが残っている。",
+        "gloss": "feeling; sensation",
+        "sense_id": "ja-812530e6071986d5-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7d3b707f831d1605d9c46fe39eff5ebd9731abdd580baca55ee1c46981c1556d"
+}

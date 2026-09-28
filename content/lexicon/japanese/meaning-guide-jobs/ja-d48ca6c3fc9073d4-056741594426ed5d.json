@@ -1,0 +1,91 @@
+{
+  "id": "ja-d48ca6c3fc9073d4-056741594426ed5d",
+  "entry_id": "ja-d48ca6c3fc9073d4",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-d48ca6c3fc9073d4",
+      "headword": "聞く",
+      "reading": "きく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d48ca6c3fc9073d4-1",
+          "definition": "to hear; listen; learn by hearing"
+        },
+        {
+          "id": "ja-d48ca6c3fc9073d4-2",
+          "definition": "to ask; inquire"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "後で聞くとその人間は書生で、猫をつかまえて煮て食べることもあるそうだ。",
+        "gloss": "hear; learn",
+        "sense_id": "ja-d48ca6c3fc9073d4-1"
+      },
+      {
+        "sentence": "吾輩はその話を聞き、決して鼠をとるまいと決めた。",
+        "gloss": "hearing; listening to",
+        "sense_id": "ja-d48ca6c3fc9073d4-1"
+      },
+      {
+        "sentence": "後で聞いた話では、その人間は書生といい、人間の中でも特に悪い者だったらしい。",
+        "gloss": "heard",
+        "sense_id": "ja-d48ca6c3fc9073d4-1"
+      },
+      {
+        "sentence": "しかも、あとで聞いた話では、それは書生という、人間の中でも一番乱暴な種類の人だった。",
+        "gloss": "heard",
+        "sense_id": "ja-d48ca6c3fc9073d4-1"
+      },
+      {
+        "sentence": "猫は吾輩を馬鹿にし、「どこに住んでいる」と聞いた。",
+        "gloss": "asked",
+        "sense_id": "ja-d48ca6c3fc9073d4-2"
+      },
+      {
+        "sentence": "吾輩が相手の名を聞くと、「おれは車屋の黒だ」と答えた。",
+        "gloss": "ask (someone’s name)",
+        "sense_id": "ja-d48ca6c3fc9073d4-2"
+      },
+      {
+        "sentence": "ある日、暖かい茶園で一緒に寝転びながら、黒は吾輩に「今まで鼠を何匹とったことがある」と聞いた。",
+        "gloss": "asked",
+        "sense_id": "ja-d48ca6c3fc9073d4-2"
+      },
+      {
+        "sentence": "吾輩はその話を聞いて、この時から決して鼠をとるまいと決心した。",
+        "gloss": "hearing; after hearing",
+        "sense_id": "ja-d48ca6c3fc9073d4-1"
+      },
+      {
+        "sentence": "最後に茶園で会った時、吾輩が「どうした」と聞くと、黒は「鼬の最後っ屁と、肴屋の天秤棒には、もうこりごりだ」と答えた。",
+        "gloss": "ask",
+        "sense_id": "ja-d48ca6c3fc9073d4-2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-d48ca6c3fc9073d4",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "聞く (きく) means to hear or listen, and also to learn something through hearing it. It can refer to receiving sound or taking in spoken information; context shows which part of this range is intended.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "83f42b9bd30aba34143f0321fb56c836ac8307eb8281a1957ccebbea0da35bea",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9ae21e3b72774fba88708e99012caad33dbc49b5847313e45d7500a05c446188"
+}

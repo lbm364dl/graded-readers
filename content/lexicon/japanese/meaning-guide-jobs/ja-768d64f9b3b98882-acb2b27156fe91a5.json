@@ -1,0 +1,32 @@
+{
+  "id": "ja-768d64f9b3b98882-acb2b27156fe91a5",
+  "entry_id": "ja-768d64f9b3b98882",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-768d64f9b3b98882",
+      "headword": "こんなに",
+      "reading": "こんなに",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-768d64f9b3b98882-1",
+          "definition": "to this extent; this much or so much"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "こんなに寝ていても仕事が続くなら、猫にだって出来ないことはない、と。",
+        "gloss": "this much; so much",
+        "sense_id": "ja-768d64f9b3b98882-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b7177e2e02f13f9ecbeca1a801a81c7013d02042c676bd07b866aeae60f9174c"
+}

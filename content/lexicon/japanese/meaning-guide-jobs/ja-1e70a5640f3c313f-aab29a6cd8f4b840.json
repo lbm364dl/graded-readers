@@ -1,0 +1,32 @@
+{
+  "id": "ja-1e70a5640f3c313f-aab29a6cd8f4b840",
+  "entry_id": "ja-1e70a5640f3c313f",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-1e70a5640f3c313f",
+      "headword": "十分",
+      "reading": "じゅうぶん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-1e70a5640f3c313f-1",
+          "definition": "sufficient; enough; to an adequate degree"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩はもう十分に寝たので欠伸がしたかったが、主人が一生懸命なので、しばらく動かずにいた。",
+        "gloss": "enough; sufficiently",
+        "sense_id": "ja-1e70a5640f3c313f-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0e72a8a5e8cf9957387f66806bbcd420cf4812c0cbddcb73d6674f50e626adfb"
+}

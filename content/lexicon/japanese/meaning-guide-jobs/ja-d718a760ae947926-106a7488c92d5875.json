@@ -1,0 +1,225 @@
+{
+  "id": "ja-d718a760ae947926-106a7488c92d5875",
+  "entry_id": "ja-d718a760ae947926",
+  "reason": "requested",
+  "item": {
+    "entry": {
+      "id": "ja-d718a760ae947926",
+      "headword": "吾輩",
+      "reading": "わがはい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d718a760ae947926-1",
+          "definition": "I; a formal, literary first-person pronoun, traditionally masculine."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は猫です。",
+        "gloss": "I; this speaker (old-fashioned male narrator)",
+        "sense_id": "ja-d718a760ae947926-1"
+      },
+      {
+        "sentence": "男の人の手の上で、吾輩の目が回りました。",
+        "gloss": "I; the narrator",
+        "sense_id": "ja-d718a760ae947926-1"
+      },
+      {
+        "sentence": "吾輩は笹原の中へ捨てられました。",
+        "gloss": "I; the narrator",
+        "sense_id": "ja-d718a760ae947926-1"
+      },
+      {
+        "sentence": "吾輩は池を左に見ながら、ゆっくり歩き、人の家へ入りました。",
+        "gloss": "I; the speaker",
+        "sense_id": "ja-d718a760ae947926-1"
+      },
+      {
+        "sentence": "女の人は吾輩を何度も外へ出しましたが、吾輩は台所へ入りました。",
+        "gloss": "I; this narrator",
+        "sense_id": "ja-d718a760ae947926-1"
+      },
+      {
+        "sentence": "主人は吾輩を見て、「家の中に置いてやれ」と言いました。",
+        "gloss": "I; me (literary, masculine)",
+        "sense_id": "ja-d718a760ae947926-1"
+      },
+      {
+        "sentence": "吾輩はこの家に住むことにしました。",
+        "gloss": "I; this speaker",
+        "sense_id": "ja-d718a760ae947926-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-d718a760ae947926",
+    "investigation_questions": [
+      {
+        "component": "吾",
+        "question": "What evidence, if any, establishes how 吾 contributes to the historical formation of わがはい?"
+      },
+      {
+        "component": "輩",
+        "question": "What evidence, if any, connects the group-related sense of 輩 to the historical formation of わがはい?"
+      }
+    ],
+    "claim_ids": [
+      "c1",
+      "c2",
+      "c3"
+    ],
+    "structure": "overlapping",
+    "explanation_en": "吾輩 is a formal, literary first-person pronoun, traditionally masculine, meaning “I/me”; it also had an earlier “we/us” use. As a modern reading of the written components, 吾 suggests “self” or “my/our,” and 輩 suggests a group or companions, giving a cue toward “our group”; this does not establish how the Japanese word was formed. The documented usage history is that the plural use came before the singular one.",
+    "caveat_en": "The component glosses help explain the spelling, but the available evidence does not establish them as the word’s historical derivation.",
+    "parts": [
+      {
+        "text": "吾",
+        "contribution_en": "Suggests “self” or “my/our” as a modern Japanese component gloss.",
+        "claim_ids": [
+          "c1"
+        ]
+      },
+      {
+        "text": "輩",
+        "contribution_en": "Suggests a group, such as companions; this helps explain the spelling but is not the conventional meaning of the whole word.",
+        "claim_ids": [
+          "c2"
+        ]
+      }
+    ],
+    "research": {
+      "entry_id": "ja-d718a760ae947926",
+      "status": "partial",
+      "sources": [
+        {
+          "id": "s1",
+          "url": "https://kotobank.jp/word/我が輩-664623",
+          "title": "我が輩（読み）ワガハイ - コトバンク（デジタル大辞泉・精選版 日本国語大辞典）",
+          "accessed_at": "2026-09-27",
+          "summary_en": "Digital Daijisen describes わがはい as a masculine first-person pronoun and gives both a singular, self-important use and a plural use. The historical dictionary records a masculine plural use, with an example dated around 1467, then says the singular use developed from it, with an example dated 1871–72. Both dictionaries also separately list わがともがら, meaning ‘our companions/us’; this is a different reading from わがはい."
+        },
+        {
+          "id": "s2",
+          "url": "https://www.kanjipedia.jp/kanji/0002093400",
+          "title": "吾 | 漢字一字 - 漢字ペディア",
+          "accessed_at": "2026-09-27",
+          "summary_en": "The kanji reference gives 吾 the Japanese readings われ and わが, with senses including ‘self’ and ‘my/our.’ It lists 吾が as a word form. This supports a modern component gloss, not the historical derivation of 吾輩."
+        },
+        {
+          "id": "s3",
+          "url": "https://kotobank.jp/word/我が-664488",
+          "title": "我が（読み）ワガ - コトバンク（デジタル大辞泉・精選版 日本国語大辞典）",
+          "accessed_at": "2026-09-27",
+          "summary_en": "Digital Daijisen defines わが as ‘mine/my’ or ‘ours/our’ and analyzes it as わ plus the particle が. The historical dictionary likewise analyzes わが as わ plus が, with historical examples. The page identifies 吾が as an alternate spelling."
+        },
+        {
+          "id": "s4",
+          "url": "https://kotobank.jp/word/輩-585004",
+          "title": "輩（読み）トモガラ - コトバンク（デジタル大辞泉・精選版 日本国語大辞典）",
+          "accessed_at": "2026-09-27",
+          "summary_en": "The Japanese dictionary gives 輩, read ともがら, meanings such as companions and people of the same kind. Its kanji entry also gives the reading はい and the sense ‘companions of the same rank.’ These Japanese senses support a group-related component gloss."
+        }
+      ],
+      "claims": [
+        {
+          "id": "c1",
+          "text_en": "As a modern component gloss, 吾 can contribute ‘self’ or ‘my/our’: the kanji reference gives it the readings われ and わが and those senses, while the Japanese dictionary analyzes わが as わ plus が and defines it as ‘my/our.’ This supports a cautious component interpretation of the spelling 吾輩, but does not establish how the word historically formed.",
+          "source_ids": [
+            "s2",
+            "s3"
+          ]
+        },
+        {
+          "id": "c2",
+          "text_en": "輩 has Japanese group-related senses, including ‘companions’ and ‘people of the same kind.’ A gloss such as ‘my/our companions’ is therefore useful for explaining the written components, but it is not the conventional lexical meaning of わがはい.",
+          "source_ids": [
+            "s4",
+            "s1"
+          ]
+        },
+        {
+          "id": "c3",
+          "text_en": "The established Japanese word わがはい is a masculine first-person pronoun. The historical dictionary records an earlier plural use, ‘we/us,’ and describes the singular ‘I/me’ use as developing from it; its cited examples are dated around 1467 and 1871–72 respectively. This documents a Japanese usage history, not an etymological derivation from the modern meanings of 吾 and 輩.",
+          "source_ids": [
+            "s1"
+          ]
+        },
+        {
+          "id": "c4",
+          "text_en": "The dictionary’s わがともがら entry means ‘our companions/us,’ but it is read ともがら, not はい. Its existence is consistent with the component gloss, but does not prove that わがはい historically arose from that phrase.",
+          "source_ids": [
+            "s1",
+            "s4"
+          ]
+        }
+      ],
+      "searches": [
+        {
+          "query": "吾輩 語源 吾 輩 日本語 辞書 わがはい",
+          "opened_urls": [
+            "https://kotobank.jp/word/吾輩-2814880",
+            "https://kotobank.jp/word/我が輩-664623"
+          ]
+        },
+        {
+          "query": "site:kotobank.jp/word 吾 漢字 わが われ 意味 日本国語大辞典; 吾 漢字ペディア わが われ 意味",
+          "opened_urls": [
+            "https://kotobank.jp/word/我が-664488",
+            "https://www.kanjipedia.jp/kanji/0002093400"
+          ]
+        },
+        {
+          "query": "輩 わがはい 語構成 吾輩 日本語",
+          "opened_urls": [
+            "https://kotobank.jp/word/輩-585004"
+          ]
+        },
+        {
+          "query": "自称詞の歴史社会言語学的研究 拙者から僕へ 吾輩 輩",
+          "opened_urls": [
+            "https://www.jstage.jst.go.jp/article/kotoba/39/0/39_87/_pdf/-char/ja"
+          ]
+        },
+        {
+          "query": "(direct open)",
+          "opened_urls": [
+            "https://kotobank.jp/word/我が輩-664623",
+            "https://www.kanjipedia.jp/kanji/0002093400",
+            "https://kotobank.jp/word/我が-664488",
+            "https://kotobank.jp/word/輩-585004",
+            "https://www.jstage.jst.go.jp/article/kotoba/39/0/39_87/_pdf/-char/ja",
+            "https://kotobank.jp/word/吾輩-2814880",
+            "https://kotobank.jp/word/吾が-422480"
+          ]
+        }
+      ],
+      "gaps": [
+        "The consulted Japanese dictionary and kanji sources support separate component senses and a plural-to-singular usage history, but do not establish the historical formation or derivation of わがはい from those components. The J-STAGE PDF could not be read in detail during this check, so it is not used to support claims."
+      ]
+    },
+    "input_fingerprint": "0a2b90c32fd685fde3ca1bae15dda49ef88e119f01f6e09d1d751f4eb392ec67",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "partial",
+    "editorial_route": "cached_research",
+    "research_questions": [],
+    "fulfilled_requests": [
+      "1a75242cfcdb6e58377e07eab8c17989adc73cff84a47ae6b9430b86a7a9811e"
+    ]
+  },
+  "requests": [
+    {
+      "id": "ja-audit-request-06e13a4ec1c1f22a",
+      "reason": "The modern pronoun definition is useful, but the explanation adds a usage chronology and extended component etymology that do not help identify the modern word. Requested change: Shorten the usage chronology and repeated uncertainty. Retain the useful 吾/輩 spelling-to-meaning bridge, structured character parts and an honest concise distinction from historical derivation; do not reduce the explanation to just a definition. Reuse reviewed evidence.",
+      "entry_id": "ja-d718a760ae947926",
+      "force_research": false,
+      "reuse_reviewed_evidence": true
+    }
+  ],
+  "status": "reviewed",
+  "result_digest": "cdbd44a791bd71b65aa43d74e68266c4cf226a97eb1c5a2c67f7b0e25ddf4f6e"
+}

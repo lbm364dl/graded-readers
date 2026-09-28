@@ -1,0 +1,32 @@
+{
+  "id": "ja-e4adc046ea274099-e05ab41479d41a40",
+  "entry_id": "ja-e4adc046ea274099",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e4adc046ea274099",
+      "headword": "随分",
+      "reading": "ずいぶん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e4adc046ea274099-1",
+          "definition": "quite; very; considerably"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が教師の家だと言うと、「ずいぶん痩せているな」と笑った。",
+        "gloss": "quite; very",
+        "sense_id": "ja-e4adc046ea274099-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "939a12dc9336bdfe22eabd0d34799faf2edbcea52476f101ee6ef34cff77e0ca"
+}

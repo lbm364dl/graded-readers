@@ -1,0 +1,32 @@
+{
+  "id": "ja-21fc8d04faeef620-82980f3209bbe12a",
+  "entry_id": "ja-21fc8d04faeef620",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-21fc8d04faeef620",
+      "headword": "時間",
+      "reading": "じかん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-21fc8d04faeef620-1",
+          "definition": "time; duration"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "冬の日差しが早く傾き、吾輩の昼寝の時間も短くなった。",
+        "gloss": "time; duration",
+        "sense_id": "ja-21fc8d04faeef620-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "acefe6e679a57e0cdb18bad8aa0d005389718ee174e89dcf8b23f67a6883b405"
+}

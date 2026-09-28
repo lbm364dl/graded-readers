@@ -1,0 +1,37 @@
+{
+  "id": "ja-2ffb7e5fc841dd9b-20ebc69b700f96d5",
+  "entry_id": "ja-2ffb7e5fc841dd9b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-2ffb7e5fc841dd9b",
+      "headword": "すっかり",
+      "reading": "すっかり",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-2ffb7e5fc841dd9b-1",
+          "definition": "completely; entirely; thoroughly"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は、おさんという者がすっかり嫌になった。",
+        "gloss": "completely; entirely",
+        "sense_id": "ja-2ffb7e5fc841dd9b-1"
+      },
+      {
+        "sentence": "主人はすっかり感心し、翌日から写生を始めることにした。",
+        "gloss": "completely; thoroughly",
+        "sense_id": "ja-2ffb7e5fc841dd9b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1848a36a493da72b48055be8e6e71a1e45ead3427bbd18f707d20d26e03d9df3"
+}

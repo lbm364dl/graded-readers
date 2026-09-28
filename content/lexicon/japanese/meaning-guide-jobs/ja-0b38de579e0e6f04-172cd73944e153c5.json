@@ -1,0 +1,41 @@
+{
+  "id": "ja-0b38de579e0e6f04-172cd73944e153c5",
+  "entry_id": "ja-0b38de579e0e6f04",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-0b38de579e0e6f04",
+      "headword": "決まる",
+      "reading": "きまる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-0b38de579e0e6f04-1",
+          "definition": "to be decided, settled, or fixed"
+        },
+        {
+          "id": "ja-0b38de579e0e6f04-2",
+          "definition": "to be certain; to be obvious"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "これが毎夜の決まった日課である。",
+        "gloss": "fixed; customary",
+        "sense_id": "ja-0b38de579e0e6f04-1"
+      },
+      {
+        "sentence": "「車屋に決まっていらあ。",
+        "gloss": "is obviously; must be",
+        "sense_id": "ja-0b38de579e0e6f04-2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0b4203fa8d420a8e1cf37d3e9caace0bae6f30789a0022fcc2e7e85dddb28197"
+}

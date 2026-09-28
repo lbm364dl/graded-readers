@@ -1,0 +1,66 @@
+{
+  "id": "ja-214b2a50ed57ac39-90d6116869bbc0ea",
+  "entry_id": "ja-214b2a50ed57ac39",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-214b2a50ed57ac39",
+      "headword": "優れる",
+      "reading": "すぐれる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-214b2a50ed57ac39-1",
+          "definition": "to excel; to be superior"
+        },
+        {
+          "id": "ja-214b2a50ed57ac39-2",
+          "definition": "to be in good condition; to feel well"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人は、特に人より優れた力があるわけではないのに、何にでも手を出したがる男だ。",
+        "gloss": "superior; surpassing",
+        "sense_id": "ja-214b2a50ed57ac39-1"
+      },
+      {
+        "sentence": "元来、主人は人より特に優れた才能があるわけではない。",
+        "gloss": "excelled; was superior",
+        "sense_id": "ja-214b2a50ed57ac39-1"
+      },
+      {
+        "sentence": "背も毛並みも顔つきも、他の猫より優れているとは思わない。",
+        "gloss": "be superior; excel",
+        "sense_id": "ja-214b2a50ed57ac39-1"
+      },
+      {
+        "sentence": "小供が騒いで昼寝のできない時や、退屈で気分がすぐれない時、吾輩はここへ来て、静かに心を休めるのが習慣だった。",
+        "gloss": "not feeling well",
+        "sense_id": "ja-214b2a50ed57ac39-2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-214b2a50ed57ac39",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "優れる means to have notably high quality, ability, or performance. It commonly appears as 優れている or before a noun as 優れた; より can mark what something surpasses.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "b0dedd02bf32e63e37f0d61cee83c9cac49f4b8cab31be6cfa7131a0136fece6",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f1561f847ec975558f9996c054c0f7671025ca87937aec4898d9b0148a3338be"
+}

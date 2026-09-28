@@ -1,0 +1,32 @@
+{
+  "id": "ja-19a265108de2e210-c31755de00bdd961",
+  "entry_id": "ja-19a265108de2e210",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-19a265108de2e210",
+      "headword": "我慢できなくなる",
+      "reading": "がまんできなくなる",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-19a265108de2e210-1",
+          "definition": "to become unable to endure or tolerate something"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "しかし、とうとう我慢できなくなった。",
+        "gloss": "could no longer endure",
+        "sense_id": "ja-19a265108de2e210-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "73d8cf077705b7183e659173b0da6e5564205ac4c2041ba1c408da8a1a887503"
+}

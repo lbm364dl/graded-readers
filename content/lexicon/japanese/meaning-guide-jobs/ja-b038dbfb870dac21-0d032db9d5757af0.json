@@ -1,0 +1,37 @@
+{
+  "id": "ja-b038dbfb870dac21-0d032db9d5757af0",
+  "entry_id": "ja-b038dbfb870dac21",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-b038dbfb870dac21",
+      "headword": "よ",
+      "reading": "よ",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-b038dbfb870dac21-1",
+          "definition": "A sentence-final particle that adds emphasis or presents a statement as information for the listener."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "「おれは車屋の黒よ」\n",
+        "gloss": "you know; emphasis",
+        "sense_id": "ja-b038dbfb870dac21-1"
+      },
+      {
+        "sentence": "「実は君、あれは出鱈目だよ。",
+        "gloss": "emphatic assertion",
+        "sense_id": "ja-b038dbfb870dac21-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b41a953eca0d17354372bda9611ea55d95c7ba80bafea22c7bb55d8a6b1cbbcd"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-ab19ce20c9c6e8c2-7138b1c92ec03400",
+  "entry_id": "ja-ab19ce20c9c6e8c2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ab19ce20c9c6e8c2",
+      "headword": "目に遭う",
+      "reading": "めにあう",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-ab19ce20c9c6e8c2-1",
+          "definition": "to suffer an unpleasant experience; to have a hard time"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "鼬にはひどい目に遭ったが、鼠なら百匹でも二百匹でも相手になるという。",
+        "gloss": "had an unpleasant experience; suffered",
+        "sense_id": "ja-ab19ce20c9c6e8c2-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d71488a132f3d8bf40d75fe5c83096fdc1e0b3a1f80609c3f4707e39a31f1a4b"
+}

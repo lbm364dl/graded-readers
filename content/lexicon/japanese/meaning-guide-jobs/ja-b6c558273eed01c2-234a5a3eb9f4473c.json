@@ -1,0 +1,37 @@
+{
+  "id": "ja-b6c558273eed01c2-234a5a3eb9f4473c",
+  "entry_id": "ja-b6c558273eed01c2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-b6c558273eed01c2",
+      "headword": "職業",
+      "reading": "しょくぎょう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-b6c558273eed01c2-1",
+          "definition": "an occupation or profession"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "職業は教師だそうだ。",
+        "gloss": "occupation; profession",
+        "sense_id": "ja-b6c558273eed01c2-1"
+      },
+      {
+        "sentence": "教師というものは、実に楽な職業だ。",
+        "gloss": "occupation; profession",
+        "sense_id": "ja-b6c558273eed01c2-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7029eb98163623ab0070f54714ceb8077c0881147f9095208a331f571ebc29ab"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-eab74c49be2755f2-e41183fe667d4a54",
+  "entry_id": "ja-eab74c49be2755f2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-eab74c49be2755f2",
+      "headword": "辞める",
+      "reading": "やめる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-eab74c49be2755f2-1",
+          "definition": "to quit or give up an activity"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "今日から謡や俳句をやめ、絵をかく決心をしたらしい。",
+        "gloss": "quit; give up",
+        "sense_id": "ja-eab74c49be2755f2-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "796ebc7feb8d8c2be1d6128a1588c08a3464b9aed0a45c7fb6562888f5511a8c"
+}

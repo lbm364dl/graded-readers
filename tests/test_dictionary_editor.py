@@ -94,9 +94,17 @@ async def test_worker_capabilities_are_command_flags_and_cache_identity(tmp_path
     assert f'web_search="{"live" if profile == "research" else "disabled"}"' in launches[0]
     await runner.call('job', 'prompt', schema, 'low', tool_profile=profile, cache_only=True)
     assert len(launches) == 1
+    from pipeline.agent_harness import CachedCallUnavailable
+    events = tmp_path / 'agents/job/events.attempt-01.jsonl'
+    events.write_text(json.dumps(dict(item=dict(type='mcp_tool_call'))) + '\n')
+    with pytest.raises(CachedCallUnavailable):
+        await runner.call('job', 'prompt', schema, 'low', tool_profile=profile, cache_only=True)
+    assert len(launches) == 1
+    await runner.call('job', 'prompt', schema, 'low', tool_profile=profile)
+    assert len(launches) == 2
     other = 'research' if profile == 'offline' else 'offline'
     await runner.call('job', 'prompt', schema, 'low', tool_profile=other)
-    assert len(launches) == 2
+    assert len(launches) == 3
 
 
 @pytest.mark.asyncio

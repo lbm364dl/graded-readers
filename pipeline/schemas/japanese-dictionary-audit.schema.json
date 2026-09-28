@@ -1,0 +1,21 @@
+{
+  "type": "object", "additionalProperties": false,
+  "required": ["word_entry_ids", "grammar_entry_ids", "segment_ids", "overlay_ids", "occurrence_ids", "issues"],
+  "properties": {
+    "word_entry_ids": {"type": "array", "items": {"type": "string"}},
+    "grammar_entry_ids": {"type": "array", "items": {"type": "string"}},
+    "segment_ids": {"type": "array", "items": {"type": "string"}},
+    "overlay_ids": {"type": "array", "items": {"type": "string"}},
+    "occurrence_ids": {"type": "array", "items": {"type": "string"}},
+    "issues": {"type": "array", "items": {
+      "type": "object", "additionalProperties": false,
+      "required": ["kind", "target_id", "reason", "requested_change"],
+      "properties": {
+        "kind": {"enum": ["word", "grammar", "annotation", "overlay", "occurrence"]},
+        "target_id": {"type": "string"},
+        "reason": {"type": "string", "minLength": 1},
+        "requested_change": {"type": "string", "minLength": 1}
+      }
+    }}
+  }
+}

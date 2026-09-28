@@ -1,0 +1,32 @@
+{
+  "id": "ja-11f55f3c5a7248aa-47a21e6ce56b4cc2",
+  "entry_id": "ja-11f55f3c5a7248aa",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-11f55f3c5a7248aa",
+      "headword": "隣家",
+      "reading": "りんか",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-11f55f3c5a7248aa-1",
+          "definition": "a neighboring house"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "以来、その穴は、隣家の三毛を訪ねる時の通路にもなった。",
+        "gloss": "neighboring house",
+        "sense_id": "ja-11f55f3c5a7248aa-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7b32598980b3f99261bb332d7dd2dec1760300c7971f81d93a5a8ca42c636a59"
+}

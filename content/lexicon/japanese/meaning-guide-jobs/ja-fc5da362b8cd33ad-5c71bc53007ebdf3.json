@@ -1,0 +1,32 @@
+{
+  "id": "ja-fc5da362b8cd33ad-5c71bc53007ebdf3",
+  "entry_id": "ja-fc5da362b8cd33ad",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-fc5da362b8cd33ad",
+      "headword": "三枚",
+      "reading": "さんまい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-fc5da362b8cd33ad-1",
+          "definition": "three flat objects, counted with 枚"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "風で葉が二、三枚落ちると、猫は突然、丸い目を開いた。",
+        "gloss": "three flat objects; here, three leaves",
+        "sense_id": "ja-fc5da362b8cd33ad-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8e3e38449e25b6f73ce6d69537e2279d34140961d6eee92c0bf6089c683a3fcb"
+}

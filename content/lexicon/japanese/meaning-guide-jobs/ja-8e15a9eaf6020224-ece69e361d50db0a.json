@@ -1,0 +1,32 @@
+{
+  "id": "ja-8e15a9eaf6020224-ece69e361d50db0a",
+  "entry_id": "ja-8e15a9eaf6020224",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-8e15a9eaf6020224",
+      "headword": "皮",
+      "reading": "かわ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-8e15a9eaf6020224-1",
+          "definition": "skin or hide"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "お前の主人を見ろ、骨と皮ばかりだ」と言った。",
+        "gloss": "skin; flesh",
+        "sense_id": "ja-8e15a9eaf6020224-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0c52e8b7c673b5a9d4a60618c6bb92e4343cd76ec7ce54c3379ec3f24f44834f"
+}

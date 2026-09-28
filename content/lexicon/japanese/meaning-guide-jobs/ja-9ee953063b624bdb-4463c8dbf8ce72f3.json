@@ -1,0 +1,32 @@
+{
+  "id": "ja-9ee953063b624bdb-4463c8dbf8ce72f3",
+  "entry_id": "ja-9ee953063b624bdb",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9ee953063b624bdb",
+      "headword": "震える",
+      "reading": "ふるえる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-9ee953063b624bdb-1",
+          "definition": "to tremble; to shiver"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "台所の板の間で他の者が震えていても、彼らは少しも気にしない。",
+        "gloss": "be trembling and",
+        "sense_id": "ja-9ee953063b624bdb-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cc829d5612527612a5400f8d7c6e47dd6949450db2cd9bde9627cdd6b90468a2"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-59e6d20451a5b8eb-58becf27ccc7ab7a",
+  "entry_id": "ja-59e6d20451a5b8eb",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-59e6d20451a5b8eb",
+      "headword": "やがて",
+      "reading": "やがて",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-59e6d20451a5b8eb-1",
+          "definition": "eventually; before long"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "やがて人間の家らしい所へ着き、竹垣の穴から中へ入った。",
+        "gloss": "eventually; before long",
+        "sense_id": "ja-59e6d20451a5b8eb-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "36a7451570ede98c430065f342ea60039ee95699909718aa43402bda08064024"
+}

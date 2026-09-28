@@ -1,0 +1,32 @@
+{
+  "id": "ja-fdf673be5bc4741f-30245aed5d37736c",
+  "entry_id": "ja-fdf673be5bc4741f",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-fdf673be5bc4741f",
+      "headword": "自分",
+      "reading": "じぶん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-fdf673be5bc4741f-1",
+          "definition": "oneself; one's own"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "おさんは不満そうだったが、吾輩はこの家を自分の住家と決めた。",
+        "gloss": "oneself; my own",
+        "sense_id": "ja-fdf673be5bc4741f-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d12549de7082db3d5b2337793c839da672274968210ee190341c5e868d0564a3"
+}

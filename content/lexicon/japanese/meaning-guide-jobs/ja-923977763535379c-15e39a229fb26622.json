@@ -1,0 +1,32 @@
+{
+  "id": "ja-923977763535379c-15e39a229fb26622",
+  "entry_id": "ja-923977763535379c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-923977763535379c",
+      "headword": "ほとんど",
+      "reading": "ほとんど",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-923977763535379c-1",
+          "definition": "almost; nearly"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "学校から帰ると、ほとんど一日中、書斎にこもっている。",
+        "gloss": "almost; nearly",
+        "sense_id": "ja-923977763535379c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "367982cd6a86286a4a5963e852cc34f885f71599a4bf28f51a317f42c593e91a"
+}

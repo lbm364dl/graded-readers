@@ -1,0 +1,86 @@
+{
+  "id": "ja-5c760d26581ab249-85881259b9519104",
+  "entry_id": "ja-5c760d26581ab249",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-5c760d26581ab249",
+      "headword": "まで",
+      "reading": "まで",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-5c760d26581ab249-1",
+          "definition": "up to or until a point in space, time, or extent"
+        },
+        {
+          "id": "ja-5c760d26581ab249-2",
+          "definition": "even; extending as far as an unexpected person or event"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "大きな音がして落ち、目から火が出たところまでは覚えている。",
+        "gloss": "up to; until",
+        "sense_id": "ja-5c760d26581ab249-1"
+      },
+      {
+        "sentence": "そこは前までと違ってひどく明るかった。",
+        "gloss": "up to; until",
+        "sense_id": "ja-5c760d26581ab249-1"
+      },
+      {
+        "sentence": "吾輩は、今までじっとしていた者の気持ちも知らず、ひどいものだと思った。",
+        "gloss": "until; up to",
+        "sense_id": "ja-5c760d26581ab249-1"
+      },
+      {
+        "sentence": "そこまでは覚えているが、その後は何が起きたのか、いくら考えても分からない。",
+        "gloss": "up to; until",
+        "sense_id": "ja-5c760d26581ab249-1"
+      },
+      {
+        "sentence": "たくさんいた兄弟も一匹も見えず、母親まで姿を消していた。",
+        "gloss": "even; up to",
+        "sense_id": "ja-5c760d26581ab249-2"
+      },
+      {
+        "sentence": "声も出せないので、食物のある所まで歩く決心をし、池を左に見ながら、ゆっくり回り始めた。",
+        "gloss": "up to; as far as",
+        "sense_id": "ja-5c760d26581ab249-1"
+      },
+      {
+        "sentence": "暗くなり、腹は減り、寒く、雨まで降ってきたので、明るく暖かそうな方へ歩いた。",
+        "gloss": "even; as far as",
+        "sense_id": "ja-5c760d26581ab249-2"
+      },
+      {
+        "sentence": "今まで名前さえ付けてもらえないことからも、吾輩がどれほど大切にされなかったか分かる。",
+        "gloss": "until",
+        "sense_id": "ja-5c760d26581ab249-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-5c760d26581ab249",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "grammatical",
+    "explanation_en": "まで marks the point a range reaches. Depending on whether the range is spatial, temporal, or one of extent, it means “up to” or “until.”",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "52d6077ee1d8411bb50e8fc64063854eace9d08cb57b4162589616ebb90ec7a6",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "73e0001bc5e66c69709a0bea2702948d76cecc112b618ce1bf36a3679eca58ad"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-8c1e4bb4cd6be1ce-fece42f2e3a7d368",
+  "entry_id": "ja-8c1e4bb4cd6be1ce",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-8c1e4bb4cd6be1ce",
+      "headword": "当たる",
+      "reading": "あたる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-8c1e4bb4cd6be1ce-1",
+          "definition": "be struck by or receive (such as sunlight)"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "広くはないが、さっぱりとして気持ちよく、日の当たる所だ。",
+        "gloss": "receive; be struck by sunlight",
+        "sense_id": "ja-8c1e4bb4cd6be1ce-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3ec0d697737faec3477f9387cd3ff7abf8dde5f9fbbe20e7076a66e875acdc6e"
+}

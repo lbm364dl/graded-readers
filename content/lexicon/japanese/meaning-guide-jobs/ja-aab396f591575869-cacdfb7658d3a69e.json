@@ -1,0 +1,32 @@
+{
+  "id": "ja-aab396f591575869-cacdfb7658d3a69e",
+  "entry_id": "ja-aab396f591575869",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-aab396f591575869",
+      "headword": "そういう",
+      "reading": "そういう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-aab396f591575869-1",
+          "definition": "such; of that kind; like that"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩も負けずに、「そういう君は誰だ」と聞いた。",
+        "gloss": "such; like that",
+        "sense_id": "ja-aab396f591575869-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "82efc6cdb198239539b8244ae762e26ebc8a72fbe50db50a3671e4dee6102624"
+}

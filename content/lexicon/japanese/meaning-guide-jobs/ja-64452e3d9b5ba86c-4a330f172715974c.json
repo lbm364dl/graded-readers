@@ -1,0 +1,399 @@
+{
+  "id": "ja-64452e3d9b5ba86c-4a330f172715974c",
+  "entry_id": "ja-64452e3d9b5ba86c",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-64452e3d9b5ba86c",
+      "headword": "だ",
+      "reading": "だ",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-64452e3d9b5ba86c-1",
+          "definition": "Copula used to state that something has a particular identity or quality."
+        },
+        {
+          "id": "ja-64452e3d9b5ba86c-2",
+          "definition": "Copula followed by から to form a connective meaning because or since."
+        },
+        {
+          "id": "ja-64452e3d9b5ba86c-3",
+          "definition": "Conditional form of the copula, framing a condition or topic."
+        },
+        {
+          "id": "ja-64452e3d9b5ba86c-4",
+          "definition": "Negative copula used to state that something is not the case."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "後で、それがたばこだと知った。",
+        "gloss": "is; am; are",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "広くはないが、日がよく入り、静かで気持ちのよい所だ。",
+        "gloss": "is; it is",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "「君は何だ」と言った。",
+        "gloss": "is; are",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "黒は「車屋の黒だ」と言った。",
+        "gloss": "is",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "黒は「人間は、格好のよい泥棒だ」と怒った。",
+        "gloss": "is; is a",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "後で聞いた話では、その人間は書生といい、人間の中でも特に悪い者だったらしい。",
+        "gloss": "was",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "掌の上で少し落ち着き、書生の顔を見たことが、人間というものの見始めだったのだろう。",
+        "gloss": "was",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "吾輩の主人は教師だが、吾輩と顔を合わせることはめったにない。",
+        "gloss": "is; am",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "家のものは勉強家だと思っているが、実際はそうでもない。",
+        "gloss": "is; are",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "吾輩は動かずにいたが、絵は妙な色で、目もなく、目の見えない猫なのか、寝ている猫なのか分からない。",
+        "gloss": "being; and",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "吾輩は、今までじっとしていた者の気持ちも知らず、ひどいものだと思った。",
+        "gloss": "is; it is",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "広くはないが、さっぱりとして気持ちよく、日の当たる所だ。",
+        "gloss": "is",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "吾輩が近づくと、彼は丸い目を開け、「お前は何だ」と言った。",
+        "gloss": "is; are",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "名前はまだない」と答えると、彼は「おれは車屋の黒だ」と名乗った。",
+        "gloss": "is; am",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "「人間は、体のよい泥棒だ」と黒は怒った。",
+        "gloss": "is; equals",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "吾輩がここで初めて見たのは人間だった。",
+        "gloss": "was",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "しかも、あとで聞いた話では、それは書生という、人間の中でも一番乱暴な種類の人だった。",
+        "gloss": "was",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "ただ、書生の手のひらに乗せられて、すっと上へ持ち上げられた時、何だかふわふわするような感じがしただけだった。",
+        "gloss": "was; it was merely",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "それが、吾輩にとって人間というものを初めて見た時だったのだろう。",
+        "gloss": "was",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "その時に「妙なものだ」と思った気持ちは、今でも残っている。",
+        "gloss": "is; am",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "これが人間の飲むたばこという物だと、ようやくこの頃知った。",
+        "gloss": "is",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "それまでいた所と違い、そこはあまりにも明るく、目を開けていられないほどだった。",
+        "gloss": "was",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "そこは、すでに家の内だった。",
+        "gloss": "was",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "最初に会ったのは、おさんという下女だった。",
+        "gloss": "was",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "家の者は、主人を大変な勉強家だと思っているし、本人もそう見せている。",
+        "gloss": "is; am; are",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "教師というものは、ずいぶん楽な仕事だ。",
+        "gloss": "is; equals",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "主人が好きだからというわけではない。",
+        "gloss": "because; since",
+        "sense_id": "ja-64452e3d9b5ba86c-2"
+      },
+      {
+        "sentence": "主人は、特に人より優れた力があるわけではないのに、何にでも手を出したがる男だ。",
+        "gloss": "is",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "中身は水彩絵具と毛筆と、ワットマンという紙だった。",
+        "gloss": "was",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "広くはないが、明るくて気持ちのよい場所だ。",
+        "gloss": "is",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "猫は吾輩を見つめ、「お前はいったい何だ」と言った。",
+        "gloss": "is; am",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "吾輩が教師の家だと言うと、「ずいぶん痩せているな」と笑った。",
+        "gloss": "is; am",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "吾輩が相手の名を聞くと、「おれは車屋の黒だ」と答えた。",
+        "gloss": "am; is",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "黒は近所で有名な乱暴な猫だった。",
+        "gloss": "was",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "お前の主人を見ろ、骨と皮ばかりだ」と言った。",
+        "gloss": "is; consists of",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "「人間は、体裁のよい泥棒だ」と黒は怒った。",
+        "gloss": "is; are",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "しかも、あとで聞いたところによると、その人間は書生で、人間の中でも一番凶悪な種族だったらしい。",
+        "gloss": "being; and",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "しかも、あとで聞いたところによると、その人間は書生で、人間の中でも一番凶悪な種族だったらしい。",
+        "gloss": "apparently was; seems to have been",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "それが、いわゆる人間というものを見た最初だったのだろう。",
+        "gloss": "was",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "この時、妙なものだと思った感じは、今でも残っている。",
+        "gloss": "is; be",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "これが人間が吸うたばこというものだと、吾輩がようやくこの頃知った。",
+        "gloss": "is; represents",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "目を開けているのもつらいほどだった。",
+        "gloss": "was",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "最初に出会ったのは、おさんだった。",
+        "gloss": "was",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "何だ」と言って出て来た。",
+        "gloss": "is; what is it?",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "家の者は、主人をたいへんな勉強家だと思っているし、本人もそう見せている。",
+        "gloss": "is; am",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "しかし実際は、家の者が言うほど勤勉ではない。",
+        "gloss": "is not; are not",
+        "sense_id": "ja-64452e3d9b5ba86c-4"
+      },
+      {
+        "sentence": "胃が弱く、皮膚は淡い黄色で、弾力のない不活発な様子を見せている。",
+        "gloss": "being; and is",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "教師というものは、実に楽な職業だ。",
+        "gloss": "is",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "小供は五つと三つで、夜になると二人で一つの床に入る。",
+        "gloss": "being; and",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "吾輩は人間と同居し、彼等を長く見ているうちに、彼等は我儘なものだと考えるようになった。",
+        "gloss": "is; are",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "吾輩がこの家に住み始めて一月ほどたった、ある月給日のことだった。",
+        "gloss": "was",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "中身は水彩絵具と毛筆、それにワットマンという紙だった。",
+        "gloss": "was",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "吾輩は黄を含んだ淡い灰色で、黒い斑がある。",
+        "gloss": "being; and",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "ところが主人の絵は、黄色でも黒でも灰色でも茶色でもなく、何とも説明できない色だった。",
+        "gloss": "being; and being",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "ところが主人の絵は、黄色でも黒でも灰色でも茶色でもなく、何とも説明できない色だった。",
+        "gloss": "was",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "小供が騒いで昼寝のできない時や、退屈で気分がすぐれない時、吾輩はここへ来て、静かに心を休めるのが習慣だった。",
+        "gloss": "was; used to be",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "彼は純粋な黒猫で、体格は吾輩の倍もあった。",
+        "gloss": "being; and",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "「おめえは一体、何だ」\n",
+        "gloss": "is; are",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "「猫だ？",
+        "gloss": "is; equals",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "吾輩も負けずに、「そういう君は誰だ」と聞いた。",
+        "gloss": "is; am",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "車屋の黒は、この近所で知らない者のない乱暴な猫だった。",
+        "gloss": "was",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "おめえの主人を見ろ、骨と皮ばかりだぜ」\n",
+        "gloss": "is; emphatically",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "吾輩が、家なら教師の方が大きいようだと言うと、黒は「家が大きくても腹の足しにはならない」と怒り、乱暴に立ち去った。",
+        "gloss": "if it is the house; as for the house",
+        "sense_id": "ja-64452e3d9b5ba86c-3"
+      },
+      {
+        "sentence": "そこで吾輩は、黒の方が年上だからたくさんとっただろうと、わざと尋ねた。",
+        "gloss": "because; since it is",
+        "sense_id": "ja-64452e3d9b5ba86c-2"
+      },
+      {
+        "sentence": "鼬にはひどい目に遭ったが、鼠なら百匹でも二百匹でも相手になるという。",
+        "gloss": "if it is; when it comes to",
+        "sense_id": "ja-64452e3d9b5ba86c-3"
+      },
+      {
+        "sentence": "吾輩が、「鼠なら君ににらまれたら終わりだ。",
+        "gloss": "if it is; as for",
+        "sense_id": "ja-64452e3d9b5ba86c-3"
+      },
+      {
+        "sentence": "吾輩が、「鼠なら君ににらまれたら終わりだ。",
+        "gloss": "is; it is finished",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "人間てものは、体裁のよい泥棒だぜ」\n",
+        "gloss": "is; are",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "私が適当に作った話だ。",
+        "gloss": "is; am",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-64452e3d9b5ba86c",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "grammatical",
+    "explanation_en": "After a noun or な-adjective, だ asserts an identity or quality. Followed by から, it makes that assertion the reason for what follows, as in 学生だから (“because [someone] is a student”); だ is plain style, while です is the polite copula.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "43e5c0d7babe42b8a1ab5aca6fc250799b7f19b395a2ed7feed260fc0e48b900",
+    "revision": 2,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e737b78069d7e0c62850d39a867a7cb7714b5576c9ac88f36cc3b9b5b9205209"
+}

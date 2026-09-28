@@ -1,0 +1,32 @@
+{
+  "id": "ja-2b9ae86bebb8395f-b66a9dc5a1768a01",
+  "entry_id": "ja-2b9ae86bebb8395f",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-2b9ae86bebb8395f",
+      "headword": "間違える",
+      "reading": "まちがえる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-2b9ae86bebb8395f-1",
+          "definition": "to mistake something for something else; to get something wrong"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "美学者は少しも困らず、「別の本と間違えたと言えばいい」と笑った。",
+        "gloss": "mistook; confused with",
+        "sense_id": "ja-2b9ae86bebb8395f-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3df715461818aa5505ccddc3123d528757955a8a7b833cd5642a6b0424d91164"
+}

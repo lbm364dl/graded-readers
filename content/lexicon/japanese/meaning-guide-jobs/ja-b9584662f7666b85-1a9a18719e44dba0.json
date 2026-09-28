@@ -1,0 +1,37 @@
+{
+  "id": "ja-b9584662f7666b85-1a9a18719e44dba0",
+  "entry_id": "ja-b9584662f7666b85",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-b9584662f7666b85",
+      "headword": "大きい",
+      "reading": "おおきい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-b9584662f7666b85-1",
+          "definition": "large; big"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "大きな音がして落ち、目から火が出たところまでは覚えている。",
+        "gloss": "large; big",
+        "sense_id": "ja-b9584662f7666b85-1"
+      },
+      {
+        "sentence": "西の垣のそばへ行くと、大きな黒い猫が枯菊の上で寝ていた。",
+        "gloss": "large",
+        "sense_id": "ja-b9584662f7666b85-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "51ea684a2c066bbe05c6daf9d2a3948a03531a7d0148c84117f71a750b306ada"
+}

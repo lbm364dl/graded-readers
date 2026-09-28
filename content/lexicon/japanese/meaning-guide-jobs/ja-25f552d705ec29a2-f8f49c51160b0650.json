@@ -1,0 +1,32 @@
+{
+  "id": "ja-25f552d705ec29a2-f8f49c51160b0650",
+  "entry_id": "ja-25f552d705ec29a2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-25f552d705ec29a2",
+      "headword": "まったく",
+      "reading": "まったく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-25f552d705ec29a2-1",
+          "definition": "Completely; not at all."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩はどこで生まれたのか、まったく分からない。",
+        "gloss": "at all; completely",
+        "sense_id": "ja-25f552d705ec29a2-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "88a7dd5b8616823f0e19b5e6d51078c04debe63b107b4525cee25d22e337b3c2"
+}

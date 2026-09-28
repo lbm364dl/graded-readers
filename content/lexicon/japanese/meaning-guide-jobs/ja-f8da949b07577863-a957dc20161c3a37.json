@@ -1,0 +1,32 @@
+{
+  "id": "ja-f8da949b07577863-a957dc20161c3a37",
+  "entry_id": "ja-f8da949b07577863",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-f8da949b07577863",
+      "headword": "筋向",
+      "reading": "すじむかい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-f8da949b07577863-1",
+          "definition": "across the street; opposite"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "　吾輩が尊敬している、筋向の白君は、会うたびに「人間ほど愛情のないものはない」と言う。",
+        "gloss": "across the street; opposite",
+        "sense_id": "ja-f8da949b07577863-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e06ba7a36b3b30c9d1d335c3027d7fb98e130954d10526f54a35233a43f2812e"
+}

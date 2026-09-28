@@ -1,0 +1,32 @@
+{
+  "id": "ja-9e367a66eccc3361-688132789cae7ec2",
+  "entry_id": "ja-9e367a66eccc3361",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9e367a66eccc3361",
+      "headword": "送る",
+      "reading": "おくる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-9e367a66eccc3361-1",
+          "definition": "to send; dispatch"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "俳句を作って雑誌へ送り、新しい詩を書き、間違いの多い英文を書いた。",
+        "gloss": "sending",
+        "sense_id": "ja-9e367a66eccc3361-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a13b1a3bb0e29434847ec1fe29e20dfce60b4e06cb12383e76346f0f9ec20936"
+}

@@ -1,0 +1,52 @@
+{
+  "id": "ja-a21ac6484339a3a0-8d6d31b5110f5550",
+  "entry_id": "ja-a21ac6484339a3a0",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a21ac6484339a3a0",
+      "headword": "そして",
+      "reading": "そして",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-a21ac6484339a3a0-1",
+          "definition": "and; and then"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そして、その穴の中から時々、ぷうぷうと煙を吹く。",
+        "gloss": "and then; and",
+        "sense_id": "ja-a21ac6484339a3a0-1"
+      },
+      {
+        "sentence": "そして、「そんなら、家の内に置いてやれ」と言った。",
+        "gloss": "and then",
+        "sense_id": "ja-a21ac6484339a3a0-1"
+      },
+      {
+        "sentence": "そして、「猫族が親子の愛を守り、美しい家族の生活をするには、人間と戦い、彼らを滅ぼさなければならない」と言った。",
+        "gloss": "and then; and",
+        "sense_id": "ja-a21ac6484339a3a0-1"
+      },
+      {
+        "sentence": "そして、もう写生の邪魔をしたのだから仕方がないと思い、裏へ行って用を足そうと、ゆっくり歩き出した。",
+        "gloss": "and then",
+        "sense_id": "ja-a21ac6484339a3a0-1"
+      },
+      {
+        "sentence": "そして、自分は三、四十匹はとった、鼬にはひどい目にあった、と得意そうに話した。",
+        "gloss": "and; then",
+        "sense_id": "ja-a21ac6484339a3a0-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0a0a5f2b69a21099114743d0fc897069ee4093c45aa6e442b8f5eb223850b999"
+}

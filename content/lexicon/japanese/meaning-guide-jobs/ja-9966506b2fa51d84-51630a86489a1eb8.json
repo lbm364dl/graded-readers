@@ -1,0 +1,37 @@
+{
+  "id": "ja-9966506b2fa51d84-51630a86489a1eb8",
+  "entry_id": "ja-9966506b2fa51d84",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9966506b2fa51d84",
+      "headword": "者",
+      "reading": "もの",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-9966506b2fa51d84-1",
+          "definition": "A person; an individual."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "後で聞いた話では、その人間は書生といい、人間の中でも特に悪い者だったらしい。",
+        "gloss": "person; one",
+        "sense_id": "ja-9966506b2fa51d84-1"
+      },
+      {
+        "sentence": "吾輩は、今までじっとしていた者の気持ちも知らず、ひどいものだと思った。",
+        "gloss": "person; one who",
+        "sense_id": "ja-9966506b2fa51d84-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4e30c94f460cf47f03930b2c5e2bfe135cb8bbaf578c560db8b76ec74fdbd797"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-815fda67aa4efa64-f2d1d14690f9104e",
+  "entry_id": "ja-815fda67aa4efa64",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-815fda67aa4efa64",
+      "headword": "昼ごはん",
+      "reading": "ひるごはん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-815fda67aa4efa64-1",
+          "definition": "lunch; the midday meal"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ある暖かい日の午後、昼ごはんの後で寝てから、吾輩は茶園を歩いた。",
+        "gloss": "lunch",
+        "sense_id": "ja-815fda67aa4efa64-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "389147bfeba74aa24abfa00e2c4bd5423f8942b2e6e7571abad43388cfe06c82"
+}

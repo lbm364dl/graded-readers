@@ -1,0 +1,32 @@
+{
+  "id": "ja-5f168ca69c52f144-ae456fc4e494a9ec",
+  "entry_id": "ja-5f168ca69c52f144",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5f168ca69c52f144",
+      "headword": "やかん",
+      "reading": "やかん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-5f168ca69c52f144-1",
+          "definition": "kettle"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "毛があるはずの顔はつるつるで、やかんのようだった。",
+        "gloss": "kettle",
+        "sense_id": "ja-5f168ca69c52f144-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "49bf5876597f0aca766892fbffe19edf7ec6fda29d0d745d717b5e09913d012b"
+}

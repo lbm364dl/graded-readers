@@ -1,0 +1,32 @@
+{
+  "id": "ja-0daa45113467b556-aa98b8e0f5595c30",
+  "entry_id": "ja-0daa45113467b556",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-0daa45113467b556",
+      "headword": "大飯",
+      "reading": "おおめし",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-0daa45113467b556-1",
+          "definition": "a large amount of food; a large meal"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "大飯を食べ、本を開く。",
+        "gloss": "a large meal",
+        "sense_id": "ja-0daa45113467b556-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cc728c2ec1e1bf537f8651d79a8c5ced1fc023a7fe020addfd1d616001005dbe"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-91e91876c096c10d-51f21d013273644a",
+  "entry_id": "ja-91e91876c096c10d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-91e91876c096c10d",
+      "headword": "だって",
+      "reading": "だって",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-91e91876c096c10d-1",
+          "definition": "particle meaning even or also, emphasizing that the stated person or thing is included"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "こんなに寝ていても仕事が続くなら、猫にだって出来ないことはない、と。",
+        "gloss": "even; also",
+        "sense_id": "ja-91e91876c096c10d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "03bce43baf0ba52ced3edd6cf2f25d118abd135a36570065457a9542a523adca"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-0b94c618bb4063b2-fff1ad14c80875ac",
+  "entry_id": "ja-0b94c618bb4063b2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-0b94c618bb4063b2",
+      "headword": "無い",
+      "reading": "ない",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-0b94c618bb4063b2-1",
+          "definition": "to be absent or not exist; to be lacking"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "名前はまだ無い。",
+        "gloss": "does not exist; there is no",
+        "sense_id": "ja-0b94c618bb4063b2-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "699e5f885723e3dc1d261346bcb4f4c4af362449bb97fc3108f30043a38e3c36"
+}

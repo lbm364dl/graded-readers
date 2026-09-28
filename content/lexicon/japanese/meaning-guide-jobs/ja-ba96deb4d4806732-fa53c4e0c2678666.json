@@ -1,0 +1,32 @@
+{
+  "id": "ja-ba96deb4d4806732-fa53c4e0c2678666",
+  "entry_id": "ja-ba96deb4d4806732",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ba96deb4d4806732",
+      "headword": "読む",
+      "reading": "よむ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-ba96deb4d4806732-1",
+          "definition": "to read"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "二、三ページ読むと眠くなる。",
+        "gloss": "read",
+        "sense_id": "ja-ba96deb4d4806732-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7a4f6d8f93b858972cad8072cc6ad6c68f741a2cb4fe3da6b780b57f30f32b2b"
+}

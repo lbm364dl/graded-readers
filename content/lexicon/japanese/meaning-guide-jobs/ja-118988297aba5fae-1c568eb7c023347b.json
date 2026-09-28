@@ -1,0 +1,32 @@
+{
+  "id": "ja-118988297aba5fae-1c568eb7c023347b",
+  "entry_id": "ja-118988297aba5fae",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-118988297aba5fae",
+      "headword": "暮らす",
+      "reading": "くらす",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-118988297aba5fae-1",
+          "definition": "to live; to reside or go about one's daily life"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "仕方なく主人のそばで暮らし、朝は膝、昼は背中に乗った。",
+        "gloss": "live; reside",
+        "sense_id": "ja-118988297aba5fae-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e83d0d2a26bce5b0a6d53b7f42fc4faca99e20c5f8dc9e0e46a2b889ef9c6ad0"
+}

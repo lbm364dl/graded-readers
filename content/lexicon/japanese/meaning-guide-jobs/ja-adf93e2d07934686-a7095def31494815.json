@@ -1,0 +1,32 @@
+{
+  "id": "ja-adf93e2d07934686-a7095def31494815",
+  "entry_id": "ja-adf93e2d07934686",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-adf93e2d07934686",
+      "headword": "次第",
+      "reading": "しだい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-adf93e2d07934686-1",
+          "definition": "depending on; according to"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "自分の気分しだいで、吾輩を逆さにしたり、頭に袋をかぶせたり、外へ投げ出したり、へっついの中へ押し込んだりする。",
+        "gloss": "depending on",
+        "sense_id": "ja-adf93e2d07934686-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "db28a16d2b0aa801560750145a616a3eb6d00bbb18aa3599ded9b9ab25e53916"
+}

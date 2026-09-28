@@ -1,0 +1,32 @@
+{
+  "id": "ja-7317ec19f7f5af2f-9e3eaf3e2eac9d3a",
+  "entry_id": "ja-7317ec19f7f5af2f",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-7317ec19f7f5af2f",
+      "headword": "別に",
+      "reading": "べつに",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-7317ec19f7f5af2f-1",
+          "definition": "separately; particularly or especially; with a negative, not particularly or not especially"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "けれど、その時の吾輩にはそんな考えはなく、別に怖いとも思わなかった。",
+        "gloss": "not particularly; not especially",
+        "sense_id": "ja-7317ec19f7f5af2f-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3c0fcb8c44cc50dbcb4cedd84b6ee9f2695cbdd089668f8ba262acb0030aeb10"
+}

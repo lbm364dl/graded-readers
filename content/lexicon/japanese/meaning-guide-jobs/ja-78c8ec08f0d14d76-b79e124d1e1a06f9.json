@@ -1,0 +1,41 @@
+{
+  "id": "ja-78c8ec08f0d14d76-b79e124d1e1a06f9",
+  "entry_id": "ja-78c8ec08f0d14d76",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-78c8ec08f0d14d76",
+      "headword": "らしい",
+      "reading": "らしい",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-78c8ec08f0d14d76-1",
+          "definition": "Expresses an inference based on evidence: apparently; it seems that."
+        },
+        {
+          "id": "ja-78c8ec08f0d14d76-2",
+          "definition": "Indicates resemblance or a characteristic quality: like X; characteristic of X."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "後で聞いた話では、その人間は書生といい、人間の中でも特に悪い者だったらしい。",
+        "gloss": "apparently; it seems",
+        "sense_id": "ja-78c8ec08f0d14d76-1"
+      },
+      {
+        "sentence": "やがて人間の家らしい所へ着き、竹垣の穴から中へ入った。",
+        "gloss": "seeming like; characteristic of",
+        "sense_id": "ja-78c8ec08f0d14d76-2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "595e300f96cb436bb24014244de1ac3f148fd889dffeb87c594620e4ce538da0"
+}

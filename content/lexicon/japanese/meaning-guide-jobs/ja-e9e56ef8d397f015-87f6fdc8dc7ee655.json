@@ -1,0 +1,32 @@
+{
+  "id": "ja-e9e56ef8d397f015-87f6fdc8dc7ee655",
+  "entry_id": "ja-e9e56ef8d397f015",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e9e56ef8d397f015",
+      "headword": "この",
+      "reading": "この",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e9e56ef8d397f015-1",
+          "definition": "This; referring to something near the speaker or currently in focus."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩はこの家に住むことにしました。",
+        "gloss": "this",
+        "sense_id": "ja-e9e56ef8d397f015-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "55151e2ed3bd64cd4fafc5c1c4cb4797602e436996914d8fe703c166c65c0d34"
+}

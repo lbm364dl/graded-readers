@@ -1,0 +1,32 @@
+{
+  "id": "ja-5cb35b105de32650-87f00761e72037c7",
+  "entry_id": "ja-5cb35b105de32650",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5cb35b105de32650",
+      "headword": "目",
+      "reading": "め",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-5cb35b105de32650-1",
+          "definition": "Eye; the organ of sight."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "男の人の手の上で、吾輩の目が回りました。",
+        "gloss": "eyes",
+        "sense_id": "ja-5cb35b105de32650-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cb80bb4eafc8bc79ef22d746fd3f690d3b4a39d71cc1a7f03cc55ace18f7d898"
+}

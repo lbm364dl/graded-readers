@@ -1,0 +1,37 @@
+{
+  "id": "ja-a81521290cf67a21-3c7b0a4188826869",
+  "entry_id": "ja-a81521290cf67a21",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a81521290cf67a21",
+      "headword": "彼等",
+      "reading": "かれら",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-a81521290cf67a21-1",
+          "definition": "they; them"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は人間と同居し、彼等を長く見ているうちに、彼等は我儘なものだと考えるようになった。",
+        "gloss": "them; they",
+        "sense_id": "ja-a81521290cf67a21-1"
+      },
+      {
+        "sentence": "吾輩は人間と同居し、彼等を長く見ているうちに、彼等は我儘なものだと考えるようになった。",
+        "gloss": "they",
+        "sense_id": "ja-a81521290cf67a21-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2152e472d425372060e41dcd4e18c6e448d7321b10f8e99284718778ade752f7"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-b2369ad5ca718e67-8b4f0fadfd1721cf",
+  "entry_id": "ja-b2369ad5ca718e67",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-b2369ad5ca718e67",
+      "headword": "畳",
+      "reading": "たたみ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-b2369ad5ca718e67-1",
+          "definition": "tatami mat"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "この間も、畳で爪を磨いただけなのに、奥さんがたいへん怒り、それから座敷へ入れなくなった。",
+        "gloss": "tatami mat",
+        "sense_id": "ja-b2369ad5ca718e67-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9fc5bf9d0701b387d7f08450bfc79b47836ff9e63a70d27412b398fc30b18f31"
+}

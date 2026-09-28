@@ -1,0 +1,32 @@
+{
+  "id": "ja-e11bd2922cbf9cef-aaea4ae7f4b1e0c2",
+  "entry_id": "ja-e11bd2922cbf9cef",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e11bd2922cbf9cef",
+      "headword": "今",
+      "reading": "いま",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e11bd2922cbf9cef-1",
+          "definition": "now; at present"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は、今までじっとしていた者の気持ちも知らず、ひどいものだと思った。",
+        "gloss": "now; up to now",
+        "sense_id": "ja-e11bd2922cbf9cef-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "291c48fbe9745c8d8383a44f0cca58b14984b2f2b8d00439e281f65a0158d150"
+}

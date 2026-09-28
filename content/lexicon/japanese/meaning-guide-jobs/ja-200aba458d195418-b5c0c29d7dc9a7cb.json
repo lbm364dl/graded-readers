@@ -1,0 +1,32 @@
+{
+  "id": "ja-200aba458d195418-b5c0c29d7dc9a7cb",
+  "entry_id": "ja-200aba458d195418",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-200aba458d195418",
+      "headword": "その",
+      "reading": "その",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-200aba458d195418-1",
+          "definition": "That; referring to something mentioned or understood from context."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "その時、初めて人を見ました。",
+        "gloss": "that; that particular",
+        "sense_id": "ja-200aba458d195418-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "67ecbddc8ee914a22c69e8fba1e205d94eee1a4975d3513cd0bda646261c0337"
+}

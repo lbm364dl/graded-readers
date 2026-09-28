@@ -1,0 +1,32 @@
+{
+  "id": "ja-0ddae203431d185b-73d245b8ba5830f0",
+  "entry_id": "ja-0ddae203431d185b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-0ddae203431d185b",
+      "headword": "目刺し",
+      "reading": "めざし",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-0ddae203431d185b-1",
+          "definition": "dried sardines, typically prepared by skewering them through the eyes"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "我々猫の間では、目刺しの頭でも、ぼらのへそでも、最初に見つけた者が食べる権利を持つ。",
+        "gloss": "dried sardines",
+        "sense_id": "ja-0ddae203431d185b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "60e876dc955e219b7f18cb0ffe57c3dc96fd9be70b47ef8b5b34ec2eb2c88eda"
+}

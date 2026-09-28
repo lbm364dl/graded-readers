@@ -1,0 +1,32 @@
+{
+  "id": "ja-b604e59aabb69539-1c6eed0306966154",
+  "entry_id": "ja-b604e59aabb69539",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-b604e59aabb69539",
+      "headword": "てもよい",
+      "reading": "てもよい",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-b604e59aabb69539-1",
+          "definition": "it is permissible to do the action expressed by the preceding verb or phrase"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "相手がこの決まりを守らなければ、力で取り返してもよい。",
+        "gloss": "may take back; it is permissible to reclaim",
+        "sense_id": "ja-b604e59aabb69539-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "45c62eb193cfb009193c1b30358d992d713bb56c2114f3d3b45c8c19327da68e"
+}

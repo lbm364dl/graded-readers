@@ -1,0 +1,32 @@
+{
+  "id": "ja-53b4e154ae5595c5-6fa029de722b9b77",
+  "entry_id": "ja-53b4e154ae5595c5",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-53b4e154ae5595c5",
+      "headword": "嗅ぐ",
+      "reading": "かぐ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-53b4e154ae5595c5-1",
+          "definition": "to smell; sniff"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "茶の木の根を一つ一つ嗅ぎながら西側の杉の垣根へ行くと、枯れた菊を押し倒し、その上で大きな猫が眠っていた。",
+        "gloss": "while sniffing",
+        "sense_id": "ja-53b4e154ae5595c5-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9e3b208b4b79a711a7b3caa6e0a349948eb1bfb37b0ade46ed25c0ef627c3e73"
+}

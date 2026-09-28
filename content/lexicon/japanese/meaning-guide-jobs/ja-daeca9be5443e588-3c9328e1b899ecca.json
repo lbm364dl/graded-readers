@@ -1,0 +1,32 @@
+{
+  "id": "ja-daeca9be5443e588-3c9328e1b899ecca",
+  "entry_id": "ja-daeca9be5443e588",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-daeca9be5443e588",
+      "headword": "もっともだ",
+      "reading": "もっともだ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-daeca9be5443e588-1",
+          "definition": "reasonable; well-founded; sound"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩には、白君の言うことも、どれももっともな議論に思われた。",
+        "gloss": "reasonable; well-founded",
+        "sense_id": "ja-daeca9be5443e588-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a7c7249317af0a23cde1a8695a0a696db0cb953622ef8e84708a141766906a03"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-65c1321ef4e3e4d8-9c77f5c19f468b04",
+  "entry_id": "ja-65c1321ef4e3e4d8",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-65c1321ef4e3e4d8",
+      "headword": "さっき",
+      "reading": "さっき",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-65c1321ef4e3e4d8-1",
+          "definition": "a little while ago; just now"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "だが、さっきから小便がしたくてたまらない。",
+        "gloss": "a little while ago",
+        "sense_id": "ja-65c1321ef4e3e4d8-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9edf4160f6741ecb742934ee06c1e1ce7074717b1635dec68eeda1fe3f106e3b"
+}

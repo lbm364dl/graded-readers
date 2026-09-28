@@ -1,0 +1,32 @@
+{
+  "id": "ja-517893e221fa8388-c0527a4717a36f7b",
+  "entry_id": "ja-517893e221fa8388",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-517893e221fa8388",
+      "headword": "何とも",
+      "reading": "なんとも",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-517893e221fa8388-1",
+          "definition": "in any way; somehow; at all"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ところが主人の絵は、黄色でも黒でも灰色でも茶色でもなく、何とも説明できない色だった。",
+        "gloss": "in any way; somehow",
+        "sense_id": "ja-517893e221fa8388-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0c05d7c52888828ec66370cf415ac573a40a0c8669b771cd2a23316736e5b5f0"
+}

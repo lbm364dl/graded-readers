@@ -1,0 +1,32 @@
+{
+  "id": "ja-5b4ab6aa18feb0e0-41929eba9d37fb8b",
+  "entry_id": "ja-5b4ab6aa18feb0e0",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5b4ab6aa18feb0e0",
+      "headword": "増長",
+      "reading": "ぞうちょう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-5b4ab6aa18feb0e0-1",
+          "definition": "increasing arrogance or conceit"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "少し人間より強い者が現れて懲らしめてやらなくては、この先どこまで増長するか分からない。",
+        "gloss": "grow arrogant",
+        "sense_id": "ja-5b4ab6aa18feb0e0-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "531c737163e27a39a5449026ba7d90a08d6571f4d7ec41f7ecdea70362d1db6b"
+}

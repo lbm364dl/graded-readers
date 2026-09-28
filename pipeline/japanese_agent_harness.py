@@ -4649,6 +4649,41 @@ key. Use an empty string when the primary card does not itself carry a grammar
 point, and always use an empty string for punctuation. This primary key is the
 metadata home for a standalone learned unit: never manufacture a parts overlay
 just to attach a key.
+The shared grammar dictionary consumes particle roles, form_steps and overlays.
+Each form step will be linked to its own reusable grammar entry in the reader's
+chain. Show the genuine successive transformations (e.g. 入る→入ります→入りました),
+with precise form labels and readings. Intermediate forms explain formation;
+they are not extra tokens or claimed occurrences in the source sentence. Never
+replace the lexical base with an inflected dictionary headword or add duplicate
+legacy dictionary links to compensate for a missing step.
+Use this same formation convention for merged constructions and collocations,
+not only simple verbs. Keep the lexical base, construction and inflection
+stages distinct: 住む → 住むことにする → 住むことにします → 住むことにしました.
+For a lexical expression, retain its expression base (目が回る), followed by
+its successive inflected forms. Supply exact component spans, canonical bases
+and readings so the reader can compose the full chain from reviewed parts;
+do not change tap boundaries or invent an extra lexical entry for a productive
+grammar pattern. Keep contextual explanations concise, supplementing rather
+than repeating the chain or reusable dictionary explanations.
+Each stage's meaning_en must translate its COMPLETE form, including its lexical
+action, not just a suffix or construction category. A whole 住むことにします
+stage means 'decide to live', not bare 'decide to'; 住むことにしました means
+'decided to live'. Keep politeness and formation labels separate from meanings.
+If an original segment represents only a tail such as ことにしました, its gloss
+may describe that tail, but the grammar pipeline must review complete meanings
+for the merged display chain using the full overlay and its component spans.
+Preserve idiomatic combined meanings (e.g. 目が回る), not literal character sums.
+Reusable grammar lessons should explain one pattern and its own formation, not
+catalog unrelated inflected variants drawn from the passage. Leave polite/past/
+negative/imperative combinations to their linked transformation entries and keep
+occurrence-specific analysis in the form chain.
+Keep lexical identity separate from grammar: an inflected verb retains its base
+lemma while describing its tense, register, voice and construction explicitly.
+Identify each particle's actual contextual function, not just a generic English
+gloss. Same-written particles can have different functions; candidate keys are
+provisional hints, not canonical dictionary IDs. Reusable pattern explanations
+must not depend on a particular narrator or example. Preserve the full useful
+tap unit and its contextual explanation; dictionary links do not replace those.
 For standalone reporting/naming という, keep the whole learned construction as
 both surface and lemma (reading という), with a contextual meaning, form label,
 and `to-iu`-style key. Do not reduce the grammar card to bare lexical 言う.

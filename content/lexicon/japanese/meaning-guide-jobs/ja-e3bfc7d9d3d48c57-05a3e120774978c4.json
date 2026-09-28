@@ -1,0 +1,96 @@
+{
+  "id": "ja-e3bfc7d9d3d48c57-05a3e120774978c4",
+  "entry_id": "ja-e3bfc7d9d3d48c57",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-e3bfc7d9d3d48c57",
+      "headword": "ほど",
+      "reading": "ほど",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-e3bfc7d9d3d48c57-1",
+          "definition": "about; approximately"
+        },
+        {
+          "id": "ja-e3bfc7d9d3d48c57-2",
+          "definition": "to the extent or degree that; as ... as; the more ..., the more ..."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が家に来て一月ほどたった給料日に、主人は水彩絵具と毛筆とワットマンという紙を買い、今日から絵をかくと決めた。",
+        "gloss": "about; approximately",
+        "sense_id": "ja-e3bfc7d9d3d48c57-1"
+      },
+      {
+        "sentence": "吾輩の家の裏には、十坪ほどの茶園がある。",
+        "gloss": "about; approximately",
+        "sense_id": "ja-e3bfc7d9d3d48c57-1"
+      },
+      {
+        "sentence": "黒の主人はそのお金で一円五十銭ほど得たのに、黒にはろくな食べ物を与えなかったという。",
+        "gloss": "about; approximately",
+        "sense_id": "ja-e3bfc7d9d3d48c57-1"
+      },
+      {
+        "sentence": "それまでいた所と違い、そこはあまりにも明るく、目を開けていられないほどだった。",
+        "gloss": "to the extent that",
+        "sense_id": "ja-e3bfc7d9d3d48c57-2"
+      },
+      {
+        "sentence": "ところが主人に言わせると、教師ほどつらい仕事はないらしい。",
+        "gloss": "as; to the extent that",
+        "sense_id": "ja-e3bfc7d9d3d48c57-2"
+      },
+      {
+        "sentence": "吾輩は人間と一緒に暮らし、彼らを見れば見るほど、彼らは我儘なものだと考えるようになった。",
+        "gloss": "to the extent that; the more",
+        "sense_id": "ja-e3bfc7d9d3d48c57-2"
+      },
+      {
+        "sentence": "　吾輩が尊敬している、筋向の白君は、会うたびに「人間ほど愛情のないものはない」と言う。",
+        "gloss": "to the extent of; as ... as",
+        "sense_id": "ja-e3bfc7d9d3d48c57-2"
+      },
+      {
+        "sentence": "吾輩がこの家に来て一月ほど後の、ある給料日に、主人は大きな包みを持って帰って来た。",
+        "gloss": "about; approximately",
+        "sense_id": "ja-e3bfc7d9d3d48c57-1"
+      },
+      {
+        "sentence": "声には犬も怖がるほどの力があったので、吾輩は少し怖かったが、「吾輩は猫である。",
+        "gloss": "to the extent that",
+        "sense_id": "ja-e3bfc7d9d3d48c57-2"
+      },
+      {
+        "sentence": "車屋の主人は黒のおかげで一円五十銭ほど儲けているのに、ろくな食べ物もくれない。",
+        "gloss": "about; approximately",
+        "sense_id": "ja-e3bfc7d9d3d48c57-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-e3bfc7d9d3d48c57",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "ほど follows a number or quantity to mark it as approximate: 三日ほど means “about three days.” It presents the amount as an estimate rather than an exact figure.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "66524e3a2da93d5fd754113e65ddf817b2600102d54c561256ba5d0cb5ddc814",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3331d739008bbe2ad4b827bf66c915df13dfdf92e2b4f16579b06d01e505fa5e"
+}

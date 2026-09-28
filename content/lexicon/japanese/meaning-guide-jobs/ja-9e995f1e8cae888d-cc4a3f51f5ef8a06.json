@@ -1,0 +1,32 @@
+{
+  "id": "ja-9e995f1e8cae888d-cc4a3f51f5ef8a06",
+  "entry_id": "ja-9e995f1e8cae888d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9e995f1e8cae888d",
+      "headword": "過信する",
+      "reading": "かしんする",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-9e995f1e8cae888d-1",
+          "definition": "to have excessive confidence in; overestimate"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "人間は自分の力を過信して、みんな増長している。",
+        "gloss": "overestimating; overconfidently relying on",
+        "sense_id": "ja-9e995f1e8cae888d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "926264ef428abc8e1128a40ed335f714201fffcc9cbfccc83be32266c4385b6b"
+}

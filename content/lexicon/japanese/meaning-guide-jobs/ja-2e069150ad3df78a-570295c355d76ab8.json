@@ -1,0 +1,32 @@
+{
+  "id": "ja-2e069150ad3df78a-570295c355d76ab8",
+  "entry_id": "ja-2e069150ad3df78a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-2e069150ad3df78a",
+      "headword": "だそうだ",
+      "reading": "だそうだ",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-2e069150ad3df78a-1",
+          "definition": "expresses hearsay: it is said that; reportedly"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "職業は教師だそうだ。",
+        "gloss": "it is said that; reportedly",
+        "sense_id": "ja-2e069150ad3df78a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ee4f6c159160b6337eae4c1ad7537488c82b8bb564aa89dbb5ecd803afeb2451"
+}

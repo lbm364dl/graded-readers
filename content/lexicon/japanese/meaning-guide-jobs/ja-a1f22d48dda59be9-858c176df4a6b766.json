@@ -1,0 +1,37 @@
+{
+  "id": "ja-a1f22d48dda59be9-858c176df4a6b766",
+  "entry_id": "ja-a1f22d48dda59be9",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a1f22d48dda59be9",
+      "headword": "子猫",
+      "reading": "こねこ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-a1f22d48dda59be9-1",
+          "definition": "kitten"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "先日、白君自身が玉のような子猫を四匹産んだ。",
+        "gloss": "kitten",
+        "sense_id": "ja-a1f22d48dda59be9-1"
+      },
+      {
+        "sentence": "ところが、その家の書生が三日目に子猫を四匹とも裏の池へ持って行き、捨てて来たそうだ。",
+        "gloss": "kitten",
+        "sense_id": "ja-a1f22d48dda59be9-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d3c4fb57be383473ce38343bff2379dfa20b3b6cbc59488440f8621b9eca0a87"
+}

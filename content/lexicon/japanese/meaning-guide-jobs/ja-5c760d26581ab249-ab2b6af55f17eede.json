@@ -1,0 +1,32 @@
+{
+  "id": "ja-5c760d26581ab249-ab2b6af55f17eede",
+  "entry_id": "ja-5c760d26581ab249",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5c760d26581ab249",
+      "headword": "まで",
+      "reading": "まで",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-5c760d26581ab249-1",
+          "definition": "up to or until a point in space, time, or extent"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "大きな音がして落ち、目から火が出たところまでは覚えている。",
+        "gloss": "up to; until",
+        "sense_id": "ja-5c760d26581ab249-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e32ac4cb5e9ab89e74883cae209d106c247bedda8e2dd0c24db2b041748e72cf"
+}

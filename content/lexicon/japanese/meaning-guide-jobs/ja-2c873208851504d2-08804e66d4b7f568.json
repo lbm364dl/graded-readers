@@ -1,0 +1,32 @@
+{
+  "id": "ja-2c873208851504d2-08804e66d4b7f568",
+  "entry_id": "ja-2c873208851504d2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-2c873208851504d2",
+      "headword": "顔つき",
+      "reading": "かおつき",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-2c873208851504d2-1",
+          "definition": "facial appearance; features or expression"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "背も毛並みも顔つきも、他の猫より優れているとは思わない。",
+        "gloss": "facial appearance; look",
+        "sense_id": "ja-2c873208851504d2-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1a576db06b4d0c995e4a02891c6f8e86a7b62af699a98531aed2951d041974fd"
+}

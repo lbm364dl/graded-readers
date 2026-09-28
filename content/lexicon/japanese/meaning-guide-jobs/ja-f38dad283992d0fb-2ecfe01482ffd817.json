@@ -1,0 +1,32 @@
+{
+  "id": "ja-f38dad283992d0fb-2ecfe01482ffd817",
+  "entry_id": "ja-f38dad283992d0fb",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-f38dad283992d0fb",
+      "headword": "つもり",
+      "reading": "つもり",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-f38dad283992d0fb-1",
+          "definition": "intention; plan"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "この教師の家で、生涯、無名の猫として終わるつもりである。",
+        "gloss": "intention; plan",
+        "sense_id": "ja-f38dad283992d0fb-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "89223f87a72747c49b2487bdfdbabec4a949be96be540de436a3b7cbede41098"
+}

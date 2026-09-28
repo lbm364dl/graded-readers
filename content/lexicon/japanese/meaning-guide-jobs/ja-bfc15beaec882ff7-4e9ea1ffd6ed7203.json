@@ -1,0 +1,32 @@
+{
+  "id": "ja-bfc15beaec882ff7-4e9ea1ffd6ed7203",
+  "entry_id": "ja-bfc15beaec882ff7",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-bfc15beaec882ff7",
+      "headword": "終日",
+      "reading": "しゅうじつ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-bfc15beaec882ff7-1",
+          "definition": "the whole day; throughout the day"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "学校から帰ると、終日、書斎にこもり、ほとんど出てこない。",
+        "gloss": "all day",
+        "sense_id": "ja-bfc15beaec882ff7-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "75b606194e683ce31c5fd6684e5eea5e94e494c907511c0a9b055bd360ad2e50"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-7f6ece2798a0da95-e21a7fac67cb0d20",
+  "entry_id": "ja-7f6ece2798a0da95",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-7f6ece2798a0da95",
+      "headword": "罵る",
+      "reading": "ののしる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-7f6ece2798a0da95-1",
+          "definition": "to insult or verbally abuse someone"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人は人を罵る時、いつもこの言葉しか使わない。",
+        "gloss": "to insult; to abuse verbally",
+        "sense_id": "ja-7f6ece2798a0da95-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9a2d7269ea959ae76d49b7ab629f3523e66327a46993130255a04ee0fb17730d"
+}

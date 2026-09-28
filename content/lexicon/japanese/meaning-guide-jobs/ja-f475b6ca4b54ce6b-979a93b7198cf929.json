@@ -1,0 +1,32 @@
+{
+  "id": "ja-f475b6ca4b54ce6b-979a93b7198cf929",
+  "entry_id": "ja-f475b6ca4b54ce6b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-f475b6ca4b54ce6b",
+      "headword": "平気だ",
+      "reading": "へいきだ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-f475b6ca4b54ce6b-1",
+          "definition": "unconcerned; unperturbed"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "力が強いことを頼みにして、猫が正当に食べられる物まで奪い、平気な顔をしているのである。",
+        "gloss": "unperturbed; unconcerned",
+        "sense_id": "ja-f475b6ca4b54ce6b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "eb31a65bf2e5ded9d8d7fd9225fbb1cb7c3f8e6baa663be731ccc3094dc34d9f"
+}

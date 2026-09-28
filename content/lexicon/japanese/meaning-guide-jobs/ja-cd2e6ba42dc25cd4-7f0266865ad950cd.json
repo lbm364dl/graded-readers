@@ -1,0 +1,32 @@
+{
+  "id": "ja-cd2e6ba42dc25cd4-7f0266865ad950cd",
+  "entry_id": "ja-cd2e6ba42dc25cd4",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-cd2e6ba42dc25cd4",
+      "headword": "そのうち",
+      "reading": "そのうち",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-cd2e6ba42dc25cd4-1",
+          "definition": "before long; eventually"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そのうち風が池の上を静かに渡り、日が暮れ始めた。",
+        "gloss": "before long",
+        "sense_id": "ja-cd2e6ba42dc25cd4-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0f2c77c20fdb9595cf373034a11f9e0a49e10295d59d6236f195430625b82641"
+}

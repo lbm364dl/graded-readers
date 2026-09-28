@@ -1,0 +1,32 @@
+{
+  "id": "ja-9bace19f7278da77-7c989d1938270237",
+  "entry_id": "ja-9bace19f7278da77",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9bace19f7278da77",
+      "headword": "たち",
+      "reading": "たち",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-9bace19f7278da77-1",
+          "definition": "plural suffix for people and other animate beings"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "この書生という人間は、時々、吾輩たちを捕まえて、煮て食うという話である。",
+        "gloss": "plural marker for people or animate beings",
+        "sense_id": "ja-9bace19f7278da77-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d370dcf4564fcb184820d7eccadbb95c947649a3d03366193b7eb03ae24c8796"
+}

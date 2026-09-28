@@ -1,0 +1,32 @@
+{
+  "id": "ja-1c0130af504d324d-48a087d7aa6d676a",
+  "entry_id": "ja-1c0130af504d324d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-1c0130af504d324d",
+      "headword": "杉垣",
+      "reading": "すぎがき",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-1c0130af504d324d-1",
+          "definition": "a hedge made of cedar"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ある小春の穏やかな日、昼寝のあとでそこへ行くと、杉垣のそばで大きな黒猫が気持ちよさそうに寝ていた。",
+        "gloss": "cedar hedge",
+        "sense_id": "ja-1c0130af504d324d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fd78c43b66030c56e89adf69ac7bf3505828307ff84e7a46c04ad3e970b7ec2f"
+}

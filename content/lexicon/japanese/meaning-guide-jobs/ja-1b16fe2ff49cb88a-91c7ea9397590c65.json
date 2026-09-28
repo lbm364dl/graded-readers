@@ -1,0 +1,32 @@
+{
+  "id": "ja-1b16fe2ff49cb88a-91c7ea9397590c65",
+  "entry_id": "ja-1b16fe2ff49cb88a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-1b16fe2ff49cb88a",
+      "headword": "以外",
+      "reading": "いがい",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-1b16fe2ff49cb88a-1",
+          "definition": "other than; except for"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩はこの家で、主人以外のものには不人望だった。",
+        "gloss": "except; other than",
+        "sense_id": "ja-1b16fe2ff49cb88a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4b0e67e2e44da36b5a454bd1d4c4f1d89d70f61375ac127a1503aad93e198830"
+}

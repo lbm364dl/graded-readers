@@ -1,0 +1,32 @@
+{
+  "id": "ja-ad1d812b036dfb39-fa3595466bc126da",
+  "entry_id": "ja-ad1d812b036dfb39",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ad1d812b036dfb39",
+      "headword": "嫌になる",
+      "reading": "いやになる",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-ad1d812b036dfb39-1",
+          "definition": "to come to dislike; become fed up with"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は、おさんという者がすっかり嫌になった。",
+        "gloss": "became fed up with; came to dislike",
+        "sense_id": "ja-ad1d812b036dfb39-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e31fb26bcd4234c95595eedab48b7effa58a85889ce40a0a4683981fe13176e2"
+}

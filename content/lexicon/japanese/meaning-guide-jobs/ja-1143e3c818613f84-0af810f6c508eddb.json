@@ -1,0 +1,32 @@
+{
+  "id": "ja-1143e3c818613f84-0af810f6c508eddb",
+  "entry_id": "ja-1143e3c818613f84",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-1143e3c818613f84",
+      "headword": "猫ながら",
+      "reading": "ねこながら",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-1143e3c818613f84-1",
+          "definition": "although being [something]; even though [something]"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は猫ながら、時々考える。",
+        "gloss": "although being a cat; as a cat",
+        "sense_id": "ja-1143e3c818613f84-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6f813a4a061ace55abb3bd2da117fd4f98eaa2c787643573fe916339164bc1d0"
+}

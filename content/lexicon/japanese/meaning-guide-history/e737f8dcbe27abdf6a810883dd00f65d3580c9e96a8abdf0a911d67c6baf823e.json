@@ -1,0 +1,299 @@
+{
+  "schema_version": 2,
+  "policy_version": 5,
+  "reviewed": true,
+  "model": "gpt-6-luna",
+  "proposal_effort": "low",
+  "review_effort": "high",
+  "guides": [
+    {
+      "entry_id": "ja-81e4f56987c10f0e",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "顔 means “face,” を marks it as what is brought together, and 合わせる means “bring together.” The phrase evokes bringing one person’s face together with another’s, and conventionally means to meet face-to-face.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "顔",
+          "contribution_en": "face",
+          "claim_ids": []
+        },
+        {
+          "text": "を",
+          "contribution_en": "marks 顔 as what is brought together",
+          "claim_ids": []
+        },
+        {
+          "text": "合わせる",
+          "contribution_en": "bring together",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "b2c75417ba6fd7d57b082ad6046aa27113c24d15d79ac5cf7121c86f224677ef",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-8ee043c63467ab74",
+      "investigation_questions": [
+        {
+          "component": "分",
+          "question": "Does 分 have a distinct, reliably established contribution to modern 気分 beyond its broad association with state, degree, or manner?"
+        }
+      ],
+      "claim_ids": [
+        "c2"
+      ],
+      "structure": "compositional",
+      "explanation_en": "気分 means a person’s mind-body state or feeling. 悪い describes that state as bad; together, 気分が悪い is a usual way to say someone feels physically unwell.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "気分",
+          "contribution_en": "A person’s mind-body state or feeling. 分 has a broad state-like association, though its distinct contribution within 気分 is not established.",
+          "claim_ids": [
+            "c1",
+            "c2"
+          ]
+        },
+        {
+          "text": "が",
+          "contribution_en": "Marks 気分 as the subject described by 悪い.",
+          "claim_ids": []
+        },
+        {
+          "text": "悪い",
+          "contribution_en": "Describes the state as bad; with 気分, the expression can mean feeling physically unwell.",
+          "claim_ids": [
+            "c2"
+          ]
+        }
+      ],
+      "research": {
+        "entry_id": "ja-8ee043c63467ab74",
+        "status": "partial",
+        "sources": [
+          {
+            "id": "s1",
+            "url": "https://kotobank.jp/word/%E6%B0%97%E5%88%86-51511",
+            "title": "気分（キブン）とは？ 意味や使い方 - コトバンク",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The opened page aggregates several reference works. Digital Daijisen describes 気分 as a somewhat vague mind-body state lasting for a period and gives a bodily-condition sub-sense, including 船酔いで気分が悪くなる. The Seisenban Nihon Kokugo Daijiten separately lists senses including feeling/state and being unwell or ill, with cited historical examples. These are word-level definitions and attestations; they do not explain 分's independent contribution or establish the compound's derivation."
+          },
+          {
+            "id": "s2",
+            "url": "https://www.kanjipedia.jp/kanji/0006175200",
+            "title": "分 | 漢字一字 | 漢字ペディア",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The opened entry lists a character sense of 分 as the state, degree, or manner of things and includes 気分 among its examples. This supports a possible broad semantic association, but the entry does not analyze 分's contribution within 気分 or give a word-specific etymology."
+          },
+          {
+            "id": "s3",
+            "url": "https://www.collinsdictionary.com/dictionary/japanese-english/%E6%B0%97%E5%88%86%E3%81%8C%E6%82%AA%E3%81%84",
+            "title": "English Translation of “気分が悪い” | Collins Japanese-English Dictionary",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The opened entry translates 気分が悪い as awful or lousy and gives examples whose English explanations mean feeling ill. It supports the expression's unwell reading, but offers no component analysis."
+          }
+        ],
+        "claims": [
+          {
+            "id": "c1",
+            "text_en": "A Japanese character dictionary lists one sense of 分 as 'state, degree, or manner' and gives 気分 as an example. This supports a broad state-like association for the character in this compound, but does not demonstrate that modern speakers assign 分 a distinct, independently recoverable contribution in 気分, much less a specific 'sick/unwell' meaning.",
+            "source_ids": [
+              "s2"
+            ]
+          },
+          {
+            "id": "c2",
+            "text_en": "Dictionaries define 気分 at the word level as a mind-body state or feeling; one modern sub-sense concerns feelings arising from bodily condition. 気分が悪い can therefore mean feeling physically unwell without requiring a separate gloss for 分.",
+            "source_ids": [
+              "s1",
+              "s3"
+            ]
+          },
+          {
+            "id": "c3",
+            "text_en": "The Seisenban Nihon Kokugo Daijiten records a separate sense of 気分 meaning being unwell or ill and cites a 1229 吾妻鏡 example. This is evidence for historical use of the whole word, not for a historical derivation from the isolated character sense of 分.",
+            "source_ids": [
+              "s1"
+            ]
+          }
+        ],
+        "searches": [
+          {
+            "query": "(direct open)",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E6%B0%97%E5%88%86-51511",
+              "https://www.kanjipedia.jp/kanji/0006175200",
+              "https://www.collinsdictionary.com/dictionary/japanese-english/%E6%B0%97%E5%88%86%E3%81%8C%E6%82%AA%E3%81%84",
+              "https://hiroshima.repo.nii.ac.jp/record/2022409/files/kokubungakukou_130_12.pdf",
+              "https://dictionary.goo.ne.jp/word/%E6%B0%97%E5%88%86/"
+            ]
+          },
+          {
+            "query": "気分 意味 分 国語辞典 気分が悪い",
+            "opened_urls": [
+              "https://www.kanjipedia.jp/kanji/0006175200",
+              "https://www.collinsdictionary.com/dictionary/japanese-english/%E6%B0%97%E5%88%86%E3%81%8C%E6%82%AA%E3%81%84"
+            ]
+          },
+          {
+            "query": "気分 語源 分 日本語 語源辞典",
+            "opened_urls": [
+              "https://hiroshima.repo.nii.ac.jp/record/2022409/files/kokubungakukou_130_12.pdf"
+            ]
+          },
+          {
+            "query": "気分 気分が悪い 吾妻鏡 1229 精選版 日本国語大辞典",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E6%B0%97%E5%88%86-51511"
+            ]
+          }
+        ],
+        "gaps": [
+          "No opened source establishes whether 分 makes a distinct modern semantic contribution beyond its broad dictionary association with state, degree, or manner.",
+          "No opened source establishes a proven historical derivation of 気分 from the meanings of its individual characters.",
+          "The Hiroshima repository PDF and goo dictionary page returned internal errors when opened, so their search results were not used as evidence."
+        ]
+      },
+      "input_fingerprint": "91dd50b8402361c0ba9bdbb1ca58a1ef178775ed2ee896773e5ed055403abc7c",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "partial",
+      "editorial_route": "researched",
+      "research_questions": [
+        "What contribution, if any, does 分 make to the modern meaning of 気分 beyond its role in the established word?"
+      ],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-a6bd7b9372edf0eb",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "grammatical",
+      "explanation_en": "腹が減る presents the belly or stomach as something that 減る, or decreases: が marks 腹 as the subject, and 減る means “become less.” The phrase pictures the belly as getting emptier and conventionally means “to get hungry” or “to feel hungry.”",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "腹",
+          "contribution_en": "the belly or stomach that is described as decreasing",
+          "claim_ids": []
+        },
+        {
+          "text": "が",
+          "contribution_en": "marks 腹 as the subject of 減る",
+          "claim_ids": []
+        },
+        {
+          "text": "減る",
+          "contribution_en": "means “decrease” or “become less”; with 腹, it gives the image of a belly getting emptier",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "98e07f54f4dc4e54f64933e13cd71b243813d9addac403011dd6e49b975924df",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-ab9baaa9ce5df70e",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "grammatical",
+      "explanation_en": "音がする says that a sound occurs or is made; it can also describe a sound that someone hears. 音 names the sound, が marks it as the subject, and する makes its occurrence the event being reported without naming its source.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "音",
+          "contribution_en": "names the sound that occurs or is heard",
+          "claim_ids": []
+        },
+        {
+          "text": "がする",
+          "contribution_en": "が marks 音 as the subject, and する says that the sound occurs or is made",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "6198828f06fb40654efd9648a005defd4721f3deed1e18d2538070e9eb7dc2fc",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-ccef940dc92e4944",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "grammatical",
+      "explanation_en": "目が回る is a conventional expression for feeling dizzy: it pictures the eyes or what one sees as spinning. が marks 目 as what 回る describes.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "目",
+          "contribution_en": "Eyes, pictured as spinning.",
+          "claim_ids": []
+        },
+        {
+          "text": "が",
+          "contribution_en": "Marks 目 as the subject of 回る.",
+          "claim_ids": []
+        },
+        {
+          "text": "回る",
+          "contribution_en": "To turn or spin; here it supplies the image behind the expression for dizziness.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "01a14d56df21feb7dd271176c3a5a768fd44724211843a7c8d1e0bd34e03292d",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-ef6e2c1fc0b5a63b",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "grammatical",
+      "explanation_en": "胸が悪くなる describes the chest becoming unwell and conventionally means to start feeling nauseated or ill. が marks 胸 as the thing undergoing the change, and 悪くなる means “become unwell.”",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "胸",
+          "contribution_en": "Chest, the body area named as becoming unwell in this expression.",
+          "claim_ids": []
+        },
+        {
+          "text": "が",
+          "contribution_en": "Marks 胸 as what undergoes the change.",
+          "claim_ids": []
+        },
+        {
+          "text": "悪くなる",
+          "contribution_en": "Become unwell; with 胸, this conventionally describes starting to feel nauseated or ill.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "b24dda220d8a71fd07ce67522abba66a166bbee8d37e73506e90194e5369872a",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    }
+  ],
+  "review_digest": "a7d3f080dc90f948a57199ee72284ded108a0611d02a8c1f60426b52fc4c226f"
+}

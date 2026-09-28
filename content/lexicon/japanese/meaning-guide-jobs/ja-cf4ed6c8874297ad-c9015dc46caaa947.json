@@ -1,0 +1,32 @@
+{
+  "id": "ja-cf4ed6c8874297ad-c9015dc46caaa947",
+  "entry_id": "ja-cf4ed6c8874297ad",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-cf4ed6c8874297ad",
+      "headword": "冬",
+      "reading": "ふゆ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-cf4ed6c8874297ad-1",
+          "definition": "winter"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "冬の日差しが早く傾き、吾輩の昼寝の時間も短くなった。",
+        "gloss": "winter",
+        "sense_id": "ja-cf4ed6c8874297ad-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "67d87a8515ffdbd106acf2dd8cfc134eba5fe823c39793e98f4b641f7ca09278"
+}

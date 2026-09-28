@@ -1,0 +1,32 @@
+{
+  "id": "ja-c9292871c7ec6e4c-56fd20e1a6fa1dfd",
+  "entry_id": "ja-c9292871c7ec6e4c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-c9292871c7ec6e4c",
+      "headword": "かと思う",
+      "reading": "かとおもう",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-c9292871c7ec6e4c-1",
+          "definition": "a construction expressing that one thinks or wonders whether something might happen"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "鳴けば書生が来るかと思い、「ニャー、ニャー」と鳴いたが、誰も来ない。",
+        "gloss": "thinking that ... might; wondering if ...",
+        "sense_id": "ja-c9292871c7ec6e4c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "03b22414bf043dc7e8b91474f7b10d02ee4f4b0f49831968e1486d321a817661"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-ce69526ec8122de1-948369f032137152",
+  "entry_id": "ja-ce69526ec8122de1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ce69526ec8122de1",
+      "headword": "それで",
+      "reading": "それで",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-ce69526ec8122de1-1",
+          "definition": "so; as a result"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "それで吾輩は、この家に住むことにしたのである。",
+        "gloss": "so; thereupon",
+        "sense_id": "ja-ce69526ec8122de1-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f40333bb6db87c610426d48f995bb9c452463d2da9e23d8ca22c97ab8dc2b8de"
+}

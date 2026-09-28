@@ -1,0 +1,32 @@
+{
+  "id": "ja-a51a952ad4fe8e09-cb1fe9fb8b684eee",
+  "entry_id": "ja-a51a952ad4fe8e09",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a51a952ad4fe8e09",
+      "headword": "いわゆる",
+      "reading": "いわゆる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-a51a952ad4fe8e09-1",
+          "definition": "so-called"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "それが、いわゆる人間というものを見た最初だったのだろう。",
+        "gloss": "so-called",
+        "sense_id": "ja-a51a952ad4fe8e09-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a603c558688ed80a5126fc1c3e1e831d604929b927351a1b4b335b5c591e5f12"
+}

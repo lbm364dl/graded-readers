@@ -1,0 +1,37 @@
+{
+  "id": "ja-8d9e2a8906564b84-4432d84efc9cee27",
+  "entry_id": "ja-8d9e2a8906564b84",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-8d9e2a8906564b84",
+      "headword": "首",
+      "reading": "くび",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-8d9e2a8906564b84-1",
+          "definition": "the neck"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "おさんは吾輩を見るなり、首をつかんで表へ投げ出した。",
+        "gloss": "neck",
+        "sense_id": "ja-8d9e2a8906564b84-1"
+      },
+      {
+        "sentence": "吾輩は足を前へ伸ばし、首を低くして、大きな欠伸をした。",
+        "gloss": "neck",
+        "sense_id": "ja-8d9e2a8906564b84-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a140bcafd192c1b3df4eb12cae975ea3c2917a08be538c55691370ff85361833"
+}

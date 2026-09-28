@@ -1,0 +1,32 @@
+{
+  "id": "ja-cb4ad54ba33d9c57-82123796fb455b11",
+  "entry_id": "ja-cb4ad54ba33d9c57",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-cb4ad54ba33d9c57",
+      "headword": "所",
+      "reading": "ところ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-cb4ad54ba33d9c57-1",
+          "definition": "Place; location."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "暗い所でニャーニャー泣いていました。",
+        "gloss": "place",
+        "sense_id": "ja-cb4ad54ba33d9c57-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "37ab81d48c916af724ad8ec19bdf09d048a3197456c306775ca05fabb9b3b05c"
+}

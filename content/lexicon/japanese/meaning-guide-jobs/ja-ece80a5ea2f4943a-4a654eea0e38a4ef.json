@@ -1,0 +1,32 @@
+{
+  "id": "ja-ece80a5ea2f4943a-4a654eea0e38a4ef",
+  "entry_id": "ja-ece80a5ea2f4943a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ece80a5ea2f4943a",
+      "headword": "運び始める",
+      "reading": "はこびはじめる",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-ece80a5ea2f4943a-1",
+          "definition": "to begin carrying or transporting"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ところが、やがて書生はものすごい速さで吾輩を運び始めた。",
+        "gloss": "began carrying me",
+        "sense_id": "ja-ece80a5ea2f4943a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "be437bb50ce03e897882c8a10d08655cad2afd540b5ead5bc433054901dcaa60"
+}

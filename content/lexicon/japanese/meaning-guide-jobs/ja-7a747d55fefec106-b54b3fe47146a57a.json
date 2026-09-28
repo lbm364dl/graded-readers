@@ -1,0 +1,32 @@
+{
+  "id": "ja-7a747d55fefec106-b54b3fe47146a57a",
+  "entry_id": "ja-7a747d55fefec106",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-7a747d55fefec106",
+      "headword": "経つ",
+      "reading": "たつ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-7a747d55fefec106-1",
+          "definition": "pass; elapse, of time"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が家に来て一月ほどたった給料日に、主人は水彩絵具と毛筆とワットマンという紙を買い、今日から絵をかくと決めた。",
+        "gloss": "had passed",
+        "sense_id": "ja-7a747d55fefec106-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "06da6091c2e1646483ef718aaaaed688836adb8f7f7077af644e776e3d1789a2"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-2f3d458a777f5beb-07e13eb0077193c3",
+  "entry_id": "ja-2f3d458a777f5beb",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-2f3d458a777f5beb",
+      "headword": "母親",
+      "reading": "ははおや",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-2f3d458a777f5beb-1",
+          "definition": "mother"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "気がつくと、書生も母親も兄弟もいない。",
+        "gloss": "mother",
+        "sense_id": "ja-2f3d458a777f5beb-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "00f04328c19313c5eca8959af9ec319a046845233b986a27828b9b78a3110576"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-2a66371c33595b87-e2b29b045908d1db",
+  "entry_id": "ja-2a66371c33595b87",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-2a66371c33595b87",
+      "headword": "見つける",
+      "reading": "みつける",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-2a66371c33595b87-1",
+          "definition": "to find; discover"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "人のにおいがする家を見つけ、こわれた竹垣の穴から中へ入った。",
+        "gloss": "found; discovered",
+        "sense_id": "ja-2a66371c33595b87-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a826e92183c6ac0be4b37d37be77cdaaf43970f507034b705dce9271319f4e8b"
+}

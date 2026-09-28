@@ -1,0 +1,32 @@
+{
+  "id": "ja-4f192e5775e26b0d-0db1d346a1643409",
+  "entry_id": "ja-4f192e5775e26b0d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-4f192e5775e26b0d",
+      "headword": "弾力",
+      "reading": "だんりょく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-4f192e5775e26b0d-1",
+          "definition": "elasticity; the ability to spring back after being pressed or stretched"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "胃が弱く、皮膚は淡い黄色で、弾力のない不活発な様子を見せている。",
+        "gloss": "elasticity",
+        "sense_id": "ja-4f192e5775e26b0d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "118374fc3f470f2b6d823f3f3ce6cd241dc5fc4b1ca8dffe3a79624ec7591761"
+}

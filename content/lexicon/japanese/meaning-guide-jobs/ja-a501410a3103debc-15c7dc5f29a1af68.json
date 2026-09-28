@@ -1,0 +1,32 @@
+{
+  "id": "ja-a501410a3103debc-15c7dc5f29a1af68",
+  "entry_id": "ja-a501410a3103debc",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a501410a3103debc",
+      "headword": "薬缶",
+      "reading": "やかん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-a501410a3103debc-1",
+          "definition": "a kettle"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "手の上に乗せられ、顔を見ると、毛のない顔は薬缶のようで、顔の真ん中の出た所の穴から時々煙を吹いた。",
+        "gloss": "kettle",
+        "sense_id": "ja-a501410a3103debc-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "68efec69bc2369b7a18b11157c01d374ad68bc464752c2cfef9459e521595c6e"
+}

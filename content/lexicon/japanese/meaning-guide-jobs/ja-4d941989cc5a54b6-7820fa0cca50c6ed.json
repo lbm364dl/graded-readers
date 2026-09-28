@@ -1,0 +1,32 @@
+{
+  "id": "ja-4d941989cc5a54b6-7820fa0cca50c6ed",
+  "entry_id": "ja-4d941989cc5a54b6",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-4d941989cc5a54b6",
+      "headword": "としても",
+      "reading": "としても",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-4d941989cc5a54b6-1",
+          "definition": "even if; even supposing"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "寝ているところをかいたのだから仕方がないとしても、目らしい所さえないので、目を閉じた猫なのか、目の見えない猫なのか、はっきり分からない。",
+        "gloss": "even if; even supposing",
+        "sense_id": "ja-4d941989cc5a54b6-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fa7cd5107d8a4230cb56829becf67d8ab1149609b8817aa33586bd5f61979cb8"
+}

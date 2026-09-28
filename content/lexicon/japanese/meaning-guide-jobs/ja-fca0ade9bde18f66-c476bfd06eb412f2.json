@@ -1,0 +1,32 @@
+{
+  "id": "ja-fca0ade9bde18f66-c476bfd06eb412f2",
+  "entry_id": "ja-fca0ade9bde18f66",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-fca0ade9bde18f66",
+      "headword": "一円",
+      "reading": "いちえん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-fca0ade9bde18f66-1",
+          "definition": "one yen"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "黒の主人はそのお金で一円五十銭ほど得たのに、黒にはろくな食べ物を与えなかったという。",
+        "gloss": "one yen",
+        "sense_id": "ja-fca0ade9bde18f66-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7ec185501589ee3dc5aeded2c68c6206ffd96ec12cd510fac02bdc0096d8435e"
+}

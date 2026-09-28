@@ -1,0 +1,32 @@
+{
+  "id": "ja-fb4713fbdcc8041e-0924ced598c9f08f",
+  "entry_id": "ja-fb4713fbdcc8041e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-fb4713fbdcc8041e",
+      "headword": "縁側",
+      "reading": "えんがわ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-fb4713fbdcc8041e-1",
+          "definition": "a veranda alongside a Japanese room"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "次の日、主人は縁側で昼寝する吾輩を写生し始めた。",
+        "gloss": "veranda",
+        "sense_id": "ja-fb4713fbdcc8041e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "640e43c6405f308799ad3a3c7b0c4abb4d3b579d32e1cb44e323e419bf3d912f"
+}

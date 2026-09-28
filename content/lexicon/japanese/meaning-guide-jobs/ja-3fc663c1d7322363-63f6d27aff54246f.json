@@ -1,0 +1,32 @@
+{
+  "id": "ja-3fc663c1d7322363-63f6d27aff54246f",
+  "entry_id": "ja-3fc663c1d7322363",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-3fc663c1d7322363",
+      "headword": "習慣",
+      "reading": "しゅうかん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-3fc663c1d7322363-1",
+          "definition": "a habit; a customary practice"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "これが主人の毎晩の習慣である。",
+        "gloss": "habit; custom",
+        "sense_id": "ja-3fc663c1d7322363-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9bb4f7a31bbe75adefca624a9994126b564ea78e7bc3c8ec0b64082f010c8189"
+}

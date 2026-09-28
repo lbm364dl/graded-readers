@@ -1,0 +1,32 @@
+{
+  "id": "ja-a7ee1208d61270be-d507540fcd350c28",
+  "entry_id": "ja-a7ee1208d61270be",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a7ee1208d61270be",
+      "headword": "去年",
+      "reading": "きょねん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-a7ee1208d61270be-1",
+          "definition": "last year"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が感心して聞いていると、黒は去年の大掃除の日の話を始めた。",
+        "gloss": "last year",
+        "sense_id": "ja-a7ee1208d61270be-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "828f3b5c54913875eccadc99755f092f70e304362296772e141a6e2950150af2"
+}

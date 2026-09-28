@@ -1,0 +1,55 @@
+{
+  "id": "ja-c077953bae1b6adf-bb83c9cbe82affef",
+  "entry_id": "ja-c077953bae1b6adf",
+  "reason": "requested",
+  "item": {
+    "entry": {
+      "id": "ja-c077953bae1b6adf",
+      "headword": "泣く",
+      "reading": "なく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-c077953bae1b6adf-1",
+          "definition": "To cry or weep."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "暗い所でニャーニャー泣いていました。",
+        "gloss": "was crying",
+        "sense_id": "ja-c077953bae1b6adf-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-c077953bae1b6adf",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "泣く (なく) means to cry or weep. It is a simple verb best understood as a whole, rather than divided into smaller meaningful parts.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "d8db0324dbf97a1a7492112f540682a4087fe63136ca32f8e33c4436f1df9277",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [
+    {
+      "id": "ja-audit-request-eb4379a7b89b4518",
+      "reason": "Calling 泣く a simple verb and explaining that it is not divided into parts does not clarify its lexical meaning. Requested change: Define 泣く directly as “to cry; weep” and remove the simplicity and breakdown commentary.",
+      "entry_id": "ja-c077953bae1b6adf",
+      "force_research": false,
+      "reuse_reviewed_evidence": true
+    }
+  ],
+  "status": "reviewed",
+  "result_digest": "34b977e4849343eccd2ac2d4ba3869a7e121192597fe6978dd50612245b57a71"
+}

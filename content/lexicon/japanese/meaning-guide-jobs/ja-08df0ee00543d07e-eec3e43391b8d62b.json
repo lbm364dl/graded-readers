@@ -1,0 +1,32 @@
+{
+  "id": "ja-08df0ee00543d07e-eec3e43391b8d62b",
+  "entry_id": "ja-08df0ee00543d07e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-08df0ee00543d07e",
+      "headword": "長々と",
+      "reading": "ながながと",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-08df0ee00543d07e-1",
+          "definition": "for a long time; at great length"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "茶の木の根を一本ずつ嗅ぎながら杉垣の近くまで来ると、枯菊を押し倒して、大きな猫が長々と眠っていた。",
+        "gloss": "at great length; for a long time",
+        "sense_id": "ja-08df0ee00543d07e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5cee1c0ffffe2ed93a1d7f3d658965b39218109e3cc10a421f4475d42ee400e2"
+}

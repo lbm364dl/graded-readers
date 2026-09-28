@@ -1,0 +1,32 @@
+{
+  "id": "ja-59d2eaeef94bb9df-f42a94fbbc7132a2",
+  "entry_id": "ja-59d2eaeef94bb9df",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-59d2eaeef94bb9df",
+      "headword": "世話をする",
+      "reading": "せわをする",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-59d2eaeef94bb9df-1",
+          "definition": "to take care of or look after someone or something"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ほかに吾輩の世話をする者がいなかったからである。",
+        "gloss": "to take care of",
+        "sense_id": "ja-59d2eaeef94bb9df-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f0697a635f465706d7136b445add041abc55d7c78bcd47a44d28dec20297668d"
+}

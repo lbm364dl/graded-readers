@@ -1,0 +1,32 @@
+{
+  "id": "ja-d02d0a9457823268-fb0b398275381f6a",
+  "entry_id": "ja-d02d0a9457823268",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d02d0a9457823268",
+      "headword": "誰も",
+      "reading": "だれも",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d02d0a9457823268-1",
+          "definition": "everyone; no one (with a negative predicate)"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "笹原を出ると池があり、鳴いて書生を呼んだが、誰も来なかった。",
+        "gloss": "no one",
+        "sense_id": "ja-d02d0a9457823268-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "998663deb905787340eb0cf737c8866210683364186a2ac9bc5ebe8e60516405"
+}

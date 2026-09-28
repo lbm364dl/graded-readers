@@ -1,0 +1,110 @@
+{
+  "id": "ja-a9b7e29d33d491f2-597fd2b75c585b87",
+  "entry_id": "ja-a9b7e29d33d491f2",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-a9b7e29d33d491f2",
+      "headword": "出る",
+      "reading": "でる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-a9b7e29d33d491f2-1",
+          "definition": "to come out; to protrude"
+        },
+        {
+          "id": "ja-a9b7e29d33d491f2-2",
+          "definition": "to go out; to leave"
+        },
+        {
+          "id": "ja-a9b7e29d33d491f2-3",
+          "definition": "to arise; to occur; to come to mind"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "手の上に乗せられ、顔を見ると、毛のない顔は薬缶のようで、顔の真ん中の出た所の穴から時々煙を吹いた。",
+        "gloss": "protruding; sticking out",
+        "sense_id": "ja-a9b7e29d33d491f2-1"
+      },
+      {
+        "sentence": "とても明るい所で、痛いので出てみると、吾輩はわらの上から笹原へ捨てられていた。",
+        "gloss": "try going out",
+        "sense_id": "ja-a9b7e29d33d491f2-2"
+      },
+      {
+        "sentence": "笹原を出ると池があり、鳴いて書生を呼んだが、誰も来なかった。",
+        "gloss": "leave; go out of",
+        "sense_id": "ja-a9b7e29d33d491f2-2"
+      },
+      {
+        "sentence": "目が回り、胸が悪くなったと思ったとき、どさりと音がして、目から火が出た。",
+        "gloss": "came out; appeared",
+        "sense_id": "ja-a9b7e29d33d491f2-1"
+      },
+      {
+        "sentence": "痛みにたえながら外へ出ると、大きな池があった。",
+        "gloss": "go out",
+        "sense_id": "ja-a9b7e29d33d491f2-2"
+      },
+      {
+        "sentence": "やっと笹原を出ると、向こうに大きな池があった。",
+        "gloss": "leave; go out of",
+        "sense_id": "ja-a9b7e29d33d491f2-2"
+      },
+      {
+        "sentence": "しかし、よい考えは出ない。",
+        "gloss": "does not come out; does not occur",
+        "sense_id": "ja-a9b7e29d33d491f2-3"
+      },
+      {
+        "sentence": "苦しかったが、我慢して進むと、人間の気配がする所に出た。",
+        "gloss": "came out; emerged",
+        "sense_id": "ja-a9b7e29d33d491f2-1"
+      },
+      {
+        "sentence": "ついに家の主人が出て来て、吾輩を見た。",
+        "gloss": "came out",
+        "sense_id": "ja-a9b7e29d33d491f2-1"
+      },
+      {
+        "sentence": "学校から帰ると、書斎に入ったまま、ほとんど出て来ない。",
+        "gloss": "does not come out toward here",
+        "sense_id": "ja-a9b7e29d33d491f2-1"
+      },
+      {
+        "sentence": "主人は書斎から出て来て、吾輩の後ろで熱心に筆を動かしていた。",
+        "gloss": "come out and",
+        "sense_id": "ja-a9b7e29d33d491f2-1"
+      },
+      {
+        "sentence": "太陽の光を受けた毛は、黒い中から火が出るように光っていた。",
+        "gloss": "come out",
+        "sense_id": "ja-a9b7e29d33d491f2-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-a9b7e29d33d491f2",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "出る (でる) describes moving from within a boundary to the outside or into view. When the boundary is a surface, something protrudes; when it is a place, someone or something goes out or leaves. The place being left can be marked with を, as in 家を出る (leave the house).",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "422170fe243aadeb5ac6ebd1d62a749a96761778c121c10924da22da5955e2d8",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fbcba35413e482301c2a722a6d6b4c88c78ab1622255c1f64ae612e192d0fb66"
+}

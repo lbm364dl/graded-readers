@@ -1,0 +1,46 @@
+{
+  "id": "ja-a9b7e29d33d491f2-cc434dd6fc642b12",
+  "entry_id": "ja-a9b7e29d33d491f2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a9b7e29d33d491f2",
+      "headword": "出る",
+      "reading": "でる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-a9b7e29d33d491f2-1",
+          "definition": "to come out; to protrude"
+        },
+        {
+          "id": "ja-a9b7e29d33d491f2-2",
+          "definition": "to go out; to leave"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "手の上に乗せられ、顔を見ると、毛のない顔は薬缶のようで、顔の真ん中の出た所の穴から時々煙を吹いた。",
+        "gloss": "protruding; sticking out",
+        "sense_id": "ja-a9b7e29d33d491f2-1"
+      },
+      {
+        "sentence": "とても明るい所で、痛いので出てみると、吾輩はわらの上から笹原へ捨てられていた。",
+        "gloss": "try going out",
+        "sense_id": "ja-a9b7e29d33d491f2-2"
+      },
+      {
+        "sentence": "笹原を出ると池があり、鳴いて書生を呼んだが、誰も来なかった。",
+        "gloss": "leave; go out of",
+        "sense_id": "ja-a9b7e29d33d491f2-2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "06ed3426e5c81ba6c2009551b29e699bacf75eb9182aadac33e61bf7f2fbd47e"
+}

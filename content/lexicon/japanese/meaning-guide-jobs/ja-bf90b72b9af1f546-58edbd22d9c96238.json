@@ -1,0 +1,37 @@
+{
+  "id": "ja-bf90b72b9af1f546-58edbd22d9c96238",
+  "entry_id": "ja-bf90b72b9af1f546",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-bf90b72b9af1f546",
+      "headword": "たらす",
+      "reading": "たらす",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-bf90b72b9af1f546-1",
+          "definition": "to let or cause a liquid to drip or fall"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "読みかけの本の上に、よだれをたらしていることさえある。",
+        "gloss": "is drooling; is letting drool fall",
+        "sense_id": "ja-bf90b72b9af1f546-1"
+      },
+      {
+        "sentence": "しかし二、三ページ読むと眠くなり、本の上によだれをたらす。",
+        "gloss": "let drip; drool",
+        "sense_id": "ja-bf90b72b9af1f546-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d3b3641f2385fdc8ce72c7cea99b1d5f7f6f00aebaae7f810fd21aa0660e4742"
+}

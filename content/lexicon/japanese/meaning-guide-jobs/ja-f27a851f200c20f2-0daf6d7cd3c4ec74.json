@@ -1,0 +1,42 @@
+{
+  "id": "ja-f27a851f200c20f2-0daf6d7cd3c4ec74",
+  "entry_id": "ja-f27a851f200c20f2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-f27a851f200c20f2",
+      "headword": "寝る",
+      "reading": "ねる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-f27a851f200c20f2-1",
+          "definition": "to sleep"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ある暖かい日の午後、昼ごはんの後で寝てから、吾輩は茶園を歩いた。",
+        "gloss": "sleeping",
+        "sense_id": "ja-f27a851f200c20f2-1"
+      },
+      {
+        "sentence": "西の垣のそばへ行くと、大きな黒い猫が枯菊の上で寝ていた。",
+        "gloss": "was sleeping",
+        "sense_id": "ja-f27a851f200c20f2-1"
+      },
+      {
+        "sentence": "鼠をとるより、寝ている方がよいと思った。",
+        "gloss": "be sleeping",
+        "sense_id": "ja-f27a851f200c20f2-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4dc6eb70772e561e2a5f4c15a16f6eb00dffe319e43f63f07b0a788430d57796"
+}

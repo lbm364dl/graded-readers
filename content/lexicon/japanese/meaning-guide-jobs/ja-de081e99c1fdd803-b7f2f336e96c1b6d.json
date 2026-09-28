@@ -1,0 +1,37 @@
+{
+  "id": "ja-de081e99c1fdd803-b7f2f336e96c1b6d",
+  "entry_id": "ja-de081e99c1fdd803",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-de081e99c1fdd803",
+      "headword": "絵",
+      "reading": "え",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-de081e99c1fdd803-1",
+          "definition": "a picture, drawing, or painting"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が家に来て一月ほどたった給料日に、主人は水彩絵具と毛筆とワットマンという紙を買い、今日から絵をかくと決めた。",
+        "gloss": "picture; painting",
+        "sense_id": "ja-de081e99c1fdd803-1"
+      },
+      {
+        "sentence": "吾輩は動かずにいたが、絵は妙な色で、目もなく、目の見えない猫なのか、寝ている猫なのか分からない。",
+        "gloss": "picture; drawing",
+        "sense_id": "ja-de081e99c1fdd803-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "86cf5806306236653022c1de0ba2e65e06aa153a4b5412cff2680e6b49de73f6"
+}

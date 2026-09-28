@@ -1,0 +1,32 @@
+{
+  "id": "ja-cb661c9785c94247-d797807fc54893e3",
+  "entry_id": "ja-cb661c9785c94247",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-cb661c9785c94247",
+      "headword": "へそ",
+      "reading": "へそ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-cb661c9785c94247-1",
+          "definition": "navel; belly button"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "我々猫の間では、目刺しの頭でも、ぼらのへそでも、最初に見つけた者が食べる権利を持つ。",
+        "gloss": "navel; belly button",
+        "sense_id": "ja-cb661c9785c94247-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5a2eb66b1321c83d891ab5ded3dcd31fc4cd5ab680b3ed41caf3d9243f070fdc"
+}

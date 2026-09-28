@@ -1,0 +1,32 @@
+{
+  "id": "ja-cbbbefada616c64d-d9003f9511eee3e8",
+  "entry_id": "ja-cbbbefada616c64d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-cbbbefada616c64d",
+      "headword": "楽しむ",
+      "reading": "たのしむ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-cbbbefada616c64d-1",
+          "definition": "to enjoy something; to take pleasure in it"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩には、この男が、こんな冗談を言って人を担ぐことを楽しんでいるように思われた。",
+        "gloss": "is enjoying",
+        "sense_id": "ja-cbbbefada616c64d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a0d5e6a2fa2fdc2b7175d78d3e13d5a5b53bf953bb8c376c1eda88e86e46f344"
+}

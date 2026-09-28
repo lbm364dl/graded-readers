@@ -1,0 +1,32 @@
+{
+  "id": "ja-f843f42b0e22acb2-c6e218b98a30c422",
+  "entry_id": "ja-f843f42b0e22acb2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-f843f42b0e22acb2",
+      "headword": "突起する",
+      "reading": "とっきする",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-f843f42b0e22acb2-1",
+          "definition": "to protrude; to project outward"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そればかりか、顔の真ん中が突起している。",
+        "gloss": "is protruding; projects outward",
+        "sense_id": "ja-f843f42b0e22acb2-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "53050ca1257c620bc41c909685ee20c7748fc9f4dadcd4262cd30b8235024c6e"
+}

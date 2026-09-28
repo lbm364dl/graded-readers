@@ -1,0 +1,32 @@
+{
+  "id": "ja-c9efd91c6e48f280-179a5efd23961b40",
+  "entry_id": "ja-c9efd91c6e48f280",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-c9efd91c6e48f280",
+      "headword": "かなり",
+      "reading": "かなり",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-c9efd91c6e48f280-1",
+          "definition": "quite; considerably; to a substantial degree"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "その後、吾輩は猫にもかなり出会ったが、こんな変わった顔をしたものには、一度も出会わなかった。",
+        "gloss": "quite; considerably",
+        "sense_id": "ja-c9efd91c6e48f280-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "98ec4b73564b1311c5bc4ce06311e40d2554b6e671b199f7399cb858a44871fd"
+}

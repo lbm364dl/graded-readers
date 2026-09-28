@@ -1,0 +1,32 @@
+{
+  "id": "ja-0dd42cb3f7977a6b-17a5088b6f188fce",
+  "entry_id": "ja-0dd42cb3f7977a6b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-0dd42cb3f7977a6b",
+      "headword": "混じる",
+      "reading": "まじる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-0dd42cb3f7977a6b-1",
+          "definition": "to be mixed; be blended with something"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "すると主人は、失望と怒りの混じった声で、座敷から「この馬鹿野郎」と怒鳴った。",
+        "gloss": "was mingled",
+        "sense_id": "ja-0dd42cb3f7977a6b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "388301470f59c2a323418a5b42fd1795736137154761ef02191fd1239d5f1772"
+}

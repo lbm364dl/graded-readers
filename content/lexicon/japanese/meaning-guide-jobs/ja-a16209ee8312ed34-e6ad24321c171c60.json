@@ -1,0 +1,32 @@
+{
+  "id": "ja-a16209ee8312ed34-e6ad24321c171c60",
+  "entry_id": "ja-a16209ee8312ed34",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a16209ee8312ed34",
+      "headword": "主人",
+      "reading": "しゅじん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-a16209ee8312ed34-1",
+          "definition": "Master or head of a household."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人は吾輩を見て、「家の中に置いてやれ」と言いました。",
+        "gloss": "the master of the household",
+        "sense_id": "ja-a16209ee8312ed34-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e54185c1a3d316eea9d4afdaf74c8d20e8a297fdf0a57f757682495d1a29567e"
+}

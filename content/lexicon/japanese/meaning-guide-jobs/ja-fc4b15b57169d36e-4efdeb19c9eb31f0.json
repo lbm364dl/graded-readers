@@ -1,0 +1,32 @@
+{
+  "id": "ja-fc4b15b57169d36e-4efdeb19c9eb31f0",
+  "entry_id": "ja-fc4b15b57169d36e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-fc4b15b57169d36e",
+      "headword": "それなのに",
+      "reading": "それなのに",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-fc4b15b57169d36e-1",
+          "definition": "and yet; nevertheless"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "それなのに、何にでも手を出したがる。",
+        "gloss": "and yet; nevertheless",
+        "sense_id": "ja-fc4b15b57169d36e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "43fac90a3b3ac848e7d8c3feaacac162642bed02926cd8807739334c67aa5ebc"
+}

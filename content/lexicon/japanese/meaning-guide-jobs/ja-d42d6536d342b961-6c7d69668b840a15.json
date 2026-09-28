@@ -1,0 +1,190 @@
+{
+  "id": "ja-d42d6536d342b961-6c7d69668b840a15",
+  "entry_id": "ja-d42d6536d342b961",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-d42d6536d342b961",
+      "headword": "する",
+      "reading": "する",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d42d6536d342b961-1",
+          "definition": "to make or produce a sound"
+        },
+        {
+          "id": "ja-d42d6536d342b961-2",
+          "definition": "to do; to engage in an activity"
+        },
+        {
+          "id": "ja-d42d6536d342b961-3",
+          "definition": "to speak about; to tell or relate"
+        },
+        {
+          "id": "ja-d42d6536d342b961-4",
+          "definition": "to give off or indicate a sign or sensation"
+        },
+        {
+          "id": "ja-d42d6536d342b961-5",
+          "definition": "to have or feel a sensation or urge"
+        },
+        {
+          "id": "ja-d42d6536d342b961-6",
+          "definition": "to treat or deal with someone"
+        },
+        {
+          "id": "ja-d42d6536d342b961-7",
+          "definition": "to have or show a particular expression or appearance"
+        },
+        {
+          "id": "ja-d42d6536d342b961-8",
+          "definition": "to happen; to come about"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "大きな音がして落ち、目から火が出たところまでは覚えている。",
+        "gloss": "make; produce a sound",
+        "sense_id": "ja-d42d6536d342b961-1"
+      },
+      {
+        "sentence": "吾輩はその後、黒と何回も会い、話をするようになった。",
+        "gloss": "do; engage in",
+        "sense_id": "ja-d42d6536d342b961-2"
+      },
+      {
+        "sentence": "ある日、黒は人間の悪い話をした。",
+        "gloss": "told; related",
+        "sense_id": "ja-d42d6536d342b961-3"
+      },
+      {
+        "sentence": "目が回り、胸が悪くなったと思ったとき、どさりと音がして、目から火が出た。",
+        "gloss": "making; producing",
+        "sense_id": "ja-d42d6536d342b961-1"
+      },
+      {
+        "sentence": "吾輩が大きくあくびをして裏へ行こうとすると、主人は「この馬鹿野郎」と怒鳴った。",
+        "gloss": "yawning",
+        "sense_id": "ja-d42d6536d342b961-2"
+      },
+      {
+        "sentence": "吾輩が鼠をとったことはないと言うと、黒は、人間が猫のとった鼠を取り上げて交番へ持って行き、五銭をもらうという話をした。",
+        "gloss": "told; related",
+        "sense_id": "ja-d42d6536d342b961-3"
+      },
+      {
+        "sentence": "ただ、書生の手のひらに乗せられて、すっと上へ持ち上げられた時、何だかふわふわするような感じがしただけだった。",
+        "gloss": "felt; had",
+        "sense_id": "ja-d42d6536d342b961-5"
+      },
+      {
+        "sentence": "もう助からないと思った時、どさりと音がして、目から火が出た。",
+        "gloss": "making a sound; occurring",
+        "sense_id": "ja-d42d6536d342b961-1"
+      },
+      {
+        "sentence": "吾輩は池の前に座り、どうすればよいか考えた。",
+        "gloss": "if one does; should do",
+        "sense_id": "ja-d42d6536d342b961-2"
+      },
+      {
+        "sentence": "声も出せないので、食物のある所まで歩く決心をし、池を左に見ながら、ゆっくり回り始めた。",
+        "gloss": "make; take [a decision]",
+        "sense_id": "ja-d42d6536d342b961-2"
+      },
+      {
+        "sentence": "苦しかったが、我慢して進むと、人間の気配がする所に出た。",
+        "gloss": "there is; one senses",
+        "sense_id": "ja-d42d6536d342b961-4"
+      },
+      {
+        "sentence": "すると主人は、昼寝をしていることが多い。",
+        "gloss": "is doing; is engaged in",
+        "sense_id": "ja-d42d6536d342b961-2"
+      },
+      {
+        "sentence": "どこへ行っても追い払われ、相手にしてくれる者はいなかった。",
+        "gloss": "deal with me as a favor; treat me for my benefit",
+        "sense_id": "ja-d42d6536d342b961-6"
+      },
+      {
+        "sentence": "そして、「猫族が親子の愛を守り、美しい家族の生活をするには、人間と戦い、彼らを滅ぼさなければならない」と言った。",
+        "gloss": "lead; carry out",
+        "sense_id": "ja-d42d6536d342b961-2"
+      },
+      {
+        "sentence": "ところが人間は、吾輩たちが見つけたごちそうを、いつも力で奪って平気な顔をしている。",
+        "gloss": "is wearing; has an expression of",
+        "sense_id": "ja-d42d6536d342b961-7"
+      },
+      {
+        "sentence": "吾輩の家の主人が、その我儘で失敗した話をしよう。",
+        "gloss": "to tell (a story)",
+        "sense_id": "ja-d42d6536d342b961-3"
+      },
+      {
+        "sentence": "弓に熱中したり、謡を習ったり、バイオリンを鳴らしたりもしたが、どれも上手くならなかった。",
+        "gloss": "did",
+        "sense_id": "ja-d42d6536d342b961-2"
+      },
+      {
+        "sentence": "今日から謡や俳句をやめ、絵をかく決心をしたらしい。",
+        "gloss": "apparently decided",
+        "sense_id": "ja-d42d6536d342b961-2"
+      },
+      {
+        "sentence": "翌日から主人は、しばらく毎日、書斎で昼寝もせず絵ばかりかいた。",
+        "gloss": "without doing so",
+        "sense_id": "ja-d42d6536d342b961-2"
+      },
+      {
+        "sentence": "その日、吾輩はいつものように椽側で気持ちよく昼寝をしていた。",
+        "gloss": "was taking a nap",
+        "sense_id": "ja-d42d6536d342b961-2"
+      },
+      {
+        "sentence": "吾輩はもう十分に寝たので欠伸がしたかったが、主人が一生懸命なので、しばらく動かずにいた。",
+        "gloss": "wanted to do; wanted to yawn",
+        "sense_id": "ja-d42d6536d342b961-5"
+      },
+      {
+        "sentence": "吾輩は足を前へ伸ばし、首を低くして、大きな欠伸をした。",
+        "gloss": "did; made",
+        "sense_id": "ja-d42d6536d342b961-2"
+      },
+      {
+        "sentence": "そして、もう写生の邪魔をしたのだから仕方がないと思い、裏へ行って用を足そうと、ゆっくり歩き出した。",
+        "gloss": "did; caused",
+        "sense_id": "ja-d42d6536d342b961-2"
+      },
+      {
+        "sentence": "最後に茶園で会った時、吾輩が「どうした」と聞くと、黒は「鼬の最後っ屁と、肴屋の天秤棒には、もうこりごりだ」と答えた。",
+        "gloss": "happened",
+        "sense_id": "ja-d42d6536d342b961-8"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-d42d6536d342b961",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "する takes its meaning from the word or phrase around it. With a sound, it means to make or produce that sound; with an activity noun, it means to do or engage in that activity; with 話をする, it means to talk about or tell something.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "4171625460f99c1d20c215a759af35b2f51206f61beb84f2ee1609087d1fd3f7",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5b8daf7c20d1a3dbc7059e35d4b83f0976933339c76020bec662a12c402fb3a5"
+}

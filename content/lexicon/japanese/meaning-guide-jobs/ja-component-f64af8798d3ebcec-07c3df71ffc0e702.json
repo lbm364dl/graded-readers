@@ -1,0 +1,26 @@
+{
+  "id": "ja-component-f64af8798d3ebcec-07c3df71ffc0e702",
+  "entry_id": "ja-component-f64af8798d3ebcec",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-component-f64af8798d3ebcec",
+      "headword": "限る",
+      "reading": "かぎる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-component-f64af8798d3ebcec-1",
+          "definition": "To limit or confine something to a scope or range."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d5aaf74c8a828d4530f315a08c0e24662217418338a72c2ff0eaa6c88bf02f66"
+}

@@ -12,6 +12,9 @@ output/*.html
 venv/
 runs/
 content/lexicon/*.lock
+content/lexicon/japanese/*.lock
+content/lexicon/japanese/.link-batches/
+content/lexicon/japanese/pending-component-links.json
 
 # Local UI inspection captures, not product assets.
 .playwright-mcp/

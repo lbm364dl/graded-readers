@@ -1,0 +1,32 @@
+{
+  "id": "ja-bd2f849598196d74-7c96cb58edfc18d9",
+  "entry_id": "ja-bd2f849598196d74",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-bd2f849598196d74",
+      "headword": "理解する",
+      "reading": "りかいする",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-bd2f849598196d74-1",
+          "definition": "to understand; to comprehend"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "　隣の三毛君は、人間は所有権ということを理解していないと怒っている。",
+        "gloss": "does not understand",
+        "sense_id": "ja-bd2f849598196d74-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "070bf0f075f120ea88388ff199afbea465b8a1090fdef4dbcd47f748386bbdbb"
+}

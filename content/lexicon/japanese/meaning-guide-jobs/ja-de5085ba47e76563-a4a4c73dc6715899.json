@@ -1,0 +1,32 @@
+{
+  "id": "ja-de5085ba47e76563-a4a4c73dc6715899",
+  "entry_id": "ja-de5085ba47e76563",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-de5085ba47e76563",
+      "headword": "そろりそろり",
+      "reading": "そろりそろり",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-de5085ba47e76563-1",
+          "definition": "slowly and cautiously; with careful, quiet movement"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "食物のある場所を探そうと決心し、池を左に見ながら、そろりそろりと這って行き始めた。",
+        "gloss": "very slowly and cautiously",
+        "sense_id": "ja-de5085ba47e76563-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "abd6f8a64e802db52e5c2ade87402846dd3eff362c2afd9358d920e8b1ae23de"
+}

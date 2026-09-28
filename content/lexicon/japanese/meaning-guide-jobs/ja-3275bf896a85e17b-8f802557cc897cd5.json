@@ -1,0 +1,32 @@
+{
+  "id": "ja-3275bf896a85e17b-8f802557cc897cd5",
+  "entry_id": "ja-3275bf896a85e17b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-3275bf896a85e17b",
+      "headword": "宿なし",
+      "reading": "やどなし",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-3275bf896a85e17b-1",
+          "definition": "a person or animal without a home; homeless"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "おさんは吾輩をぶら下げ、「この宿なしの子猫は、何度外へ出しても台所へ上がって来て困ります」と訴えた。",
+        "gloss": "homeless; without a home",
+        "sense_id": "ja-3275bf896a85e17b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1c4bf3a46bcd8c14f11db7f7c2cd3be6425935d2b97179c6bd984121a35308ec"
+}

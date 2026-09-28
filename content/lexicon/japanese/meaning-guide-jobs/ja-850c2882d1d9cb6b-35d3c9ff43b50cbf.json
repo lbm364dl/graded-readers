@@ -1,0 +1,32 @@
+{
+  "id": "ja-850c2882d1d9cb6b-35d3c9ff43b50cbf",
+  "entry_id": "ja-850c2882d1d9cb6b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-850c2882d1d9cb6b",
+      "headword": "詩",
+      "reading": "し",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-850c2882d1d9cb6b-1",
+          "definition": "poem; poetry"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人は俳句、新しい詩、英語、弓、歌、バイオリンなど、何にでも手を出すが、どれも上手にならない。",
+        "gloss": "poem; poetry",
+        "sense_id": "ja-850c2882d1d9cb6b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d7db7e97c9169027e976d0581637d864e28cad0120a5b6490c7cb4cac7addde2"
+}

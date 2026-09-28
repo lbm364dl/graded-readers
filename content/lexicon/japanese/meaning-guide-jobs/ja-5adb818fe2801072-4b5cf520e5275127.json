@@ -1,0 +1,32 @@
+{
+  "id": "ja-5adb818fe2801072-4b5cf520e5275127",
+  "entry_id": "ja-5adb818fe2801072",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5adb818fe2801072",
+      "headword": "何より",
+      "reading": "なにより",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-5adb818fe2801072-1",
+          "definition": "above all; more than anything"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "何より元気を失い、体つきも悪くなった。",
+        "gloss": "more than anything; above all",
+        "sense_id": "ja-5adb818fe2801072-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "69706806adafdf21fd70f5ab072beac9e06ad653672ce0c281db38fd2513fcd8"
+}

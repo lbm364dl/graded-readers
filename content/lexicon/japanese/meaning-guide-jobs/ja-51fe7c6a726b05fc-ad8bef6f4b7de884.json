@@ -1,0 +1,32 @@
+{
+  "id": "ja-51fe7c6a726b05fc-ad8bef6f4b7de884",
+  "entry_id": "ja-51fe7c6a726b05fc",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-51fe7c6a726b05fc",
+      "headword": "骨",
+      "reading": "ほね",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-51fe7c6a726b05fc-1",
+          "definition": "bone"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "お前の主人を見ろ、骨と皮ばかりだ」と言った。",
+        "gloss": "bones",
+        "sense_id": "ja-51fe7c6a726b05fc-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0382a3dbe01a7c1d7e28d0cafcaef8f106147704a8e0e82341228ccdef226910"
+}

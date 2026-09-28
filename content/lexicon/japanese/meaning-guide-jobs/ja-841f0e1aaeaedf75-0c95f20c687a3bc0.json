@@ -1,0 +1,32 @@
+{
+  "id": "ja-841f0e1aaeaedf75-0c95f20c687a3bc0",
+  "entry_id": "ja-841f0e1aaeaedf75",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-841f0e1aaeaedf75",
+      "headword": "一眠りする",
+      "reading": "ひとねむりする",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-841f0e1aaeaedf75-1",
+          "definition": "to take a nap"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ある小春日和の午後、昼飯のあとで一眠りし、運動のため茶園へ歩いて行った。",
+        "gloss": "take a nap; nap",
+        "sense_id": "ja-841f0e1aaeaedf75-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fbb4610a8bc71335f33048fc9af7dfd977f9dad09a90c0c8d48a8bda8912d3f1"
+}

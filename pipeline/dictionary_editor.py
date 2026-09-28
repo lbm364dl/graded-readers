@@ -1,6 +1,7 @@
 """Research and source validation for targeted dictionary editorial jobs."""
 import json
 import re
+from copy import deepcopy
 from datetime import date
 from urllib.parse import urlparse
 
@@ -83,7 +84,27 @@ def validate_citations(row, dossier):
         raise ValueError('Researched guide must cite its supporting claims')
 
 
-async def cached_research(runner, job, item, previous, requests):
+def normalize_duplicate_citation_markers(row, dossier):
+    """Remove only redundant prose markers already recorded as valid claim IDs.
+
+    No semantic editing or evidence fabrication: unknown or unstructured markers
+    remain for strict validation/review to reject.
+    """
+    result = deepcopy(row)
+    known = {claim['id'] for claim in dossier['claims']}
+    marker = re.compile(r'\[c\d+(?:\s*,\s*c?\d+)*\]')
+    for node in [result, *result['parts']]:
+        declared = set(node.get('claim_ids', [])) & known
+        def replace(match):
+            ids = {'c' + number for number in re.findall(r'\d+', match.group())}
+            return '' if ids <= declared else match.group()
+        for field in ('explanation_en', 'caveat_en', 'contribution_en'):
+            if field in node:
+                node[field] = marker.sub(replace, node[field]).strip()
+    return result
+
+
+async def cached_research(runner, job, item, previous, requests, *, policy=None):
     """Reuse a complete, verified dossier; never start a missing research call."""
     from pipeline.agent_harness import CachedCallUnavailable
     if not (runner.run_dir / 'agents' / job / 'research/meta.json').exists():
@@ -109,13 +130,13 @@ async def cached_research(runner, job, item, previous, requests):
             pass
     for candidate in candidates:
         try:
-            return await research(CacheOnly(), job, item, previous, candidate)
+            return await research(CacheOnly(), job, item, previous, candidate, **({'policy': policy} if policy else {}))
         except (CachedCallUnavailable, ValueError, ValidationError):
             continue
     return None
 
 
-async def research(runner, job, item, previous, requests):
+async def research(runner, job, item, previous, requests, *, policy=None):
     async def checked_call(stage, prompt, effort):
         result = None
         format_retried = False
@@ -147,7 +168,7 @@ async def research(runner, job, item, previous, requests):
                                'left without evidence, explicitly recording the limitation. ')
                 prompt += '\nValidation failed: ' + str(error)
                 prompt += ('\nRecheck the actual sources and repair the dossier. Do not invent access records. '
-                           'Use readable Unicode URLs for Chinese page names, not manually typed percent escapes. '
+                           'Use readable Unicode URLs for non-ASCII page names, not manually typed percent escapes. '
                            'Copy each source URL EXACTLY from its corresponding opened_urls item. '
                            'Do not retype malformed prior URLs. If a URL cannot be recorded reliably, '
                            'omit that source and any claims without remaining support; record the gap. '
@@ -156,7 +177,7 @@ async def research(runner, job, item, previous, requests):
                            'record direct opens with query="(direct open)" and put their exact URLs in '
                            'opened_urls. Every retained source URL must appear in this audit.\n')
                 prompt += json.dumps(result, ensure_ascii=False)
-    prompt = RESEARCH_POLICY + '\nTODAY: ' + date.today().isoformat()
+    prompt = (policy or RESEARCH_POLICY) + '\nTODAY: ' + date.today().isoformat()
     prompt += '\nINPUT:\n' + json.dumps(dict(
         **item, previous_guide=previous, requests=requests), ensure_ascii=False)
     dossier = await checked_call('research', prompt, 'low')

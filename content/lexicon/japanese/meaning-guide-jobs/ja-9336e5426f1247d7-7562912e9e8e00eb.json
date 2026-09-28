@@ -1,0 +1,32 @@
+{
+  "id": "ja-9336e5426f1247d7-7562912e9e8e00eb",
+  "entry_id": "ja-9336e5426f1247d7",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9336e5426f1247d7",
+      "headword": "ぬれる",
+      "reading": "ぬれる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-9336e5426f1247d7-1",
+          "definition": "to become wet; be wet"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "暗くてぬれている所で、ニャーニャー鳴いていたことだけは覚えている。",
+        "gloss": "is wet; soaked",
+        "sense_id": "ja-9336e5426f1247d7-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c17d1529130222ab4623df01220c2c60442bf9f2f7bc2f9b65279a08e2c44e40"
+}

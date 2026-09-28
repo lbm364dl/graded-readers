@@ -1,0 +1,32 @@
+{
+  "id": "ja-72fc54076f9f2906-33890d5023afedde",
+  "entry_id": "ja-72fc54076f9f2906",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-72fc54076f9f2906",
+      "headword": "日課",
+      "reading": "にっか",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-72fc54076f9f2906-1",
+          "definition": "a daily routine or regular daily task"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "これが毎夜の決まった日課である。",
+        "gloss": "daily routine",
+        "sense_id": "ja-72fc54076f9f2906-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "96b3ec4be40421a303b0dffaaefda9c00f0d9038a8b5e7700c0a7f1dc5cbacd2"
+}

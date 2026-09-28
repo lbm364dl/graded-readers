@@ -1,0 +1,32 @@
+{
+  "id": "ja-7e4678d736ff4cb2-1ebb64abbdbf2787",
+  "entry_id": "ja-7e4678d736ff4cb2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-7e4678d736ff4cb2",
+      "headword": "それから",
+      "reading": "それから",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-7e4678d736ff4cb2-1",
+          "definition": "after that; then"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "この間も、畳で爪を磨いただけなのに、奥さんがたいへん怒り、それから座敷へ入れなくなった。",
+        "gloss": "after that; then",
+        "sense_id": "ja-7e4678d736ff4cb2-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cbeac24524c3b38f4028c0a97c5ab4cebf66e6af87516c4f2195c8961e0d47d1"
+}

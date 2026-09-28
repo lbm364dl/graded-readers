@@ -1,0 +1,32 @@
+{
+  "id": "ja-e871e5c8672e7c38-6e8cafc3520cd13b",
+  "entry_id": "ja-e871e5c8672e7c38",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e871e5c8672e7c38",
+      "headword": "格好",
+      "reading": "かっこう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e871e5c8672e7c38-1",
+          "definition": "Appearance; looks."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "黒は「人間は、格好のよい泥棒だ」と怒った。",
+        "gloss": "appearance; looks",
+        "sense_id": "ja-e871e5c8672e7c38-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2000998bd35f9f18d2aa79ab3c29308924df842e79ff09564c418f1a8085295b"
+}

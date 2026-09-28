@@ -1,0 +1,32 @@
+{
+  "id": "ja-372bfe6a7e563d85-0d084802b18f444a",
+  "entry_id": "ja-372bfe6a7e563d85",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-372bfe6a7e563d85",
+      "headword": "やめる",
+      "reading": "やめる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-372bfe6a7e563d85-1",
+          "definition": "to stop; to quit doing something"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "今日から謡や俳句をやめ、絵をかくつもりらしい。",
+        "gloss": "quit; stop",
+        "sense_id": "ja-372bfe6a7e563d85-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "68df6e4eb8025cd3db4b1e852c1e081a4b59868b2ff99df60ca7ec1ac1fa061d"
+}

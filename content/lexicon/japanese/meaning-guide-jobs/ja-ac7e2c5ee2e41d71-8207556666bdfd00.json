@@ -1,0 +1,32 @@
+{
+  "id": "ja-ac7e2c5ee2e41d71-8207556666bdfd00",
+  "entry_id": "ja-ac7e2c5ee2e41d71",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ac7e2c5ee2e41d71",
+      "headword": "じっとする",
+      "reading": "じっとする",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-ac7e2c5ee2e41d71-1",
+          "definition": "remain still; stay motionless"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は、今までじっとしていた者の気持ちも知らず、ひどいものだと思った。",
+        "gloss": "had been sitting still",
+        "sense_id": "ja-ac7e2c5ee2e41d71-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b4da07b624b26ed1b26da78ff218df872a3fa88cc8cef5a75df5f65e6119f62e"
+}

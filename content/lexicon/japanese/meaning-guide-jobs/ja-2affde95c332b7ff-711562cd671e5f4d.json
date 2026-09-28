@@ -1,0 +1,32 @@
+{
+  "id": "ja-2affde95c332b7ff-711562cd671e5f4d",
+  "entry_id": "ja-2affde95c332b7ff",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-2affde95c332b7ff",
+      "headword": "失敗する",
+      "reading": "しっぱいする",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-2affde95c332b7ff-1",
+          "definition": "to fail; to make a mistake"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩の家の主人が、その我儘で失敗した話をしよう。",
+        "gloss": "failed",
+        "sense_id": "ja-2affde95c332b7ff-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "61bfdcba6d584b4edb4502d6ff25cfe9d851824c61368e44ebf1ed06f01f646a"
+}

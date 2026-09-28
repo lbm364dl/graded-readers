@@ -1,0 +1,32 @@
+{
+  "id": "ja-5c1c3ef88b0861c0-f56fc1b89de55059",
+  "entry_id": "ja-5c1c3ef88b0861c0",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5c1c3ef88b0861c0",
+      "headword": "両足",
+      "reading": "りょうあし",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-5c1c3ef88b0861c0-1",
+          "definition": "both feet or legs"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は仕方なく両足を前へ伸ばし、首を低く出して、大きな欠伸をした。",
+        "gloss": "both legs",
+        "sense_id": "ja-5c1c3ef88b0861c0-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6dc5ab98875b64c7e5b2f8be61b3fcffb09c8b192a7f1b29a1a93385ca7d52d5"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-08067b0efbd73902-8e0a488947a82998",
+  "entry_id": "ja-08067b0efbd73902",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-08067b0efbd73902",
+      "headword": "むずむずする",
+      "reading": "むずむずする",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-08067b0efbd73902-1",
+          "definition": "to feel itchy or restless"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "体がむずむずして、もう一分も我慢できなくなった。",
+        "gloss": "feeling itchy and restless",
+        "sense_id": "ja-08067b0efbd73902-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6bffc91bb134a8da7094447c7bab9adf2fa01b05fc338d349b61c6568fef0169"
+}

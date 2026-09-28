@@ -1,0 +1,32 @@
+{
+  "id": "ja-69d3123f4b39866a-a8ef8c722260aad5",
+  "entry_id": "ja-69d3123f4b39866a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-69d3123f4b39866a",
+      "headword": "どうも",
+      "reading": "どうも",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-69d3123f4b39866a-1",
+          "definition": "somehow; in some way"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "どうも苦しくなって、吾輩はたいへん困った。",
+        "gloss": "somehow; really",
+        "sense_id": "ja-69d3123f4b39866a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b81e25c661d7dddb5a2b72bef19aba3d2b3ce28565bf703c5122dfac3ae1dc08"
+}

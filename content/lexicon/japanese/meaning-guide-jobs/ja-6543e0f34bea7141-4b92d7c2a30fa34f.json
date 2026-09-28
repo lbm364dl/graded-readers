@@ -1,0 +1,32 @@
+{
+  "id": "ja-6543e0f34bea7141-4b92d7c2a30fa34f",
+  "entry_id": "ja-6543e0f34bea7141",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-6543e0f34bea7141",
+      "headword": "種類",
+      "reading": "しゅるい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-6543e0f34bea7141-1",
+          "definition": "a kind, type, or category of something"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "しかも、あとで聞いた話では、それは書生という、人間の中でも一番乱暴な種類の人だった。",
+        "gloss": "kind; type",
+        "sense_id": "ja-6543e0f34bea7141-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fd94bca1c718987729123a183868d7674677035f65e0d62f161b0f69f73e6081"
+}

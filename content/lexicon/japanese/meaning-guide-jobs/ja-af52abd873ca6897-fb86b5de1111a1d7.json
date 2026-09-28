@@ -1,0 +1,32 @@
+{
+  "id": "ja-af52abd873ca6897-fb86b5de1111a1d7",
+  "entry_id": "ja-af52abd873ca6897",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-af52abd873ca6897",
+      "headword": "枯れる",
+      "reading": "かれる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-af52abd873ca6897-1",
+          "definition": "to wither"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "茶の木の根を一つ一つ嗅ぎながら西側の杉の垣根へ行くと、枯れた菊を押し倒し、その上で大きな猫が眠っていた。",
+        "gloss": "withered",
+        "sense_id": "ja-af52abd873ca6897-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fc9c77b264701e9b21f14123afd7dacfdc53a7e4244f90f3c6d4b87ea7514ba2"
+}

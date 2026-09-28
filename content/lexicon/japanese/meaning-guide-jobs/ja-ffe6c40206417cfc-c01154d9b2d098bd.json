@@ -1,0 +1,37 @@
+{
+  "id": "ja-ffe6c40206417cfc-c01154d9b2d098bd",
+  "entry_id": "ja-ffe6c40206417cfc",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ffe6c40206417cfc",
+      "headword": "都合",
+      "reading": "つごう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-ffe6c40206417cfc-1",
+          "definition": "circumstances; convenience; the way things suit a person or situation"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "自分の都合がよければ、小供は吾輩を逆さにしたり、頭へ袋をかぶせたり、外へ放り出したりする。",
+        "gloss": "circumstances; convenience",
+        "sense_id": "ja-ffe6c40206417cfc-1"
+      },
+      {
+        "sentence": "人間は、自分たちの都合には敏感だが、他の者の苦しみには実に鈍い。",
+        "gloss": "convenience; circumstances",
+        "sense_id": "ja-ffe6c40206417cfc-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7d2f6ea2ac83ab57ea0857ad9712dfc35d082c63bd75f0f7539d075ff0399381"
+}

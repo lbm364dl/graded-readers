@@ -1,0 +1,32 @@
+{
+  "id": "ja-e724ad9076f016f8-1dd986ab1b64eee9",
+  "entry_id": "ja-e724ad9076f016f8",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e724ad9076f016f8",
+      "headword": "欲を言えばきりがない",
+      "reading": "よくをいえばきりがない",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-e724ad9076f016f8-1",
+          "definition": "if one talks about what one wants, there is no end; one can always want more"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "しかし欲を言えばきりがない。",
+        "gloss": "if one talks about what one wants, there is no end; one can always want more",
+        "sense_id": "ja-e724ad9076f016f8-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "be6ef1a559b92608697baf6ffa841ba987c9735ededdebfed1f8a06bd9f6405f"
+}

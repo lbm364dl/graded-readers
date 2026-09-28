@@ -1,0 +1,32 @@
+{
+  "id": "ja-122673c619fc846d-25dc8c82ff0fa00a",
+  "entry_id": "ja-122673c619fc846d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-122673c619fc846d",
+      "headword": "見える",
+      "reading": "みえる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-122673c619fc846d-1",
+          "definition": "to be visible; to appear in sight or be perceptible"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は動かずにいたが、絵は妙な色で、目もなく、目の見えない猫なのか、寝ている猫なのか分からない。",
+        "gloss": "unable to see; blind",
+        "sense_id": "ja-122673c619fc846d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d89ccd8ee3a6de73c95a680a0debb2af299dfffbad48f5a7ebab26f358103d6f"
+}

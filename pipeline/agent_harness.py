@@ -612,8 +612,14 @@ class CodexRunner:
         if not refresh and result_path.exists() and meta_path.exists():
             meta = json.loads(meta_path.read_text())
             if meta.get("fingerprint") == fingerprint and meta.get("return_code") == 0:
-                self._check_tool_profile(job_dir, tool_profile, meta)
-                return json.loads(result_path.read_text())
+                try:
+                    self._check_tool_profile(job_dir, tool_profile, meta)
+                except ValueError:
+                    # A capability violation is not a reusable successful result.
+                    # Cache-only probes must miss; normal retries rerun this job.
+                    pass
+                else:
+                    return json.loads(result_path.read_text())
 
         if cache_only:
             raise CachedCallUnavailable(job)

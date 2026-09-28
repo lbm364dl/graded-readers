@@ -1,0 +1,37 @@
+{
+  "id": "ja-4585e3466c3b7cc4-ed09a7ba731fe95c",
+  "entry_id": "ja-4585e3466c3b7cc4",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-4585e3466c3b7cc4",
+      "headword": "小供",
+      "reading": "こども",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-4585e3466c3b7cc4-1",
+          "definition": "a child; a young person"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "しかし、夜になると、家の小供の寝床へもぐり込み、いっしょに寝るのが一番気持ちよい。",
+        "gloss": "child",
+        "sense_id": "ja-4585e3466c3b7cc4-1"
+      },
+      {
+        "sentence": "小供は五つと三つの二人で、一つの寝床に入る。",
+        "gloss": "child",
+        "sense_id": "ja-4585e3466c3b7cc4-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "eff48491273808128a61b113437ce29461b8456f219be5af8d3a7f9a3470e968"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-b7ffa86ae2c585a7-457747c1964963ee",
+  "entry_id": "ja-b7ffa86ae2c585a7",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-b7ffa86ae2c585a7",
+      "headword": "目の前",
+      "reading": "めのまえ",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-b7ffa86ae2c585a7-1",
+          "definition": "the space directly in front of someone; right before one’s eyes"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "もう助からないと思った時、どさりという音がして、目の前に火花が散った。",
+        "gloss": "right in front of one’s eyes",
+        "sense_id": "ja-b7ffa86ae2c585a7-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b6ec906c3207b09eb4a8d280be76c770f603e3380e261b085c939d1b15836135"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-1a5ce7bf008c300d-eab9fba6598036ad",
+  "entry_id": "ja-1a5ce7bf008c300d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-1a5ce7bf008c300d",
+      "headword": "見当がつく",
+      "reading": "けんとうがつく",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-1a5ce7bf008c300d-1",
+          "definition": "to have an idea or estimate; to figure out"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩がどこで生まれたのか、今となってはまったく見当がつかない。",
+        "gloss": "have no idea; cannot figure out",
+        "sense_id": "ja-1a5ce7bf008c300d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f42f32a38c333fdee661148767db3391a1c9712013aa8904ab260af62f07f648"
+}

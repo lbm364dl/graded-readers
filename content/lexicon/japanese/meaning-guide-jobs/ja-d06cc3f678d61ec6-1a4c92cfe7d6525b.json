@@ -1,0 +1,32 @@
+{
+  "id": "ja-d06cc3f678d61ec6-1a4c92cfe7d6525b",
+  "entry_id": "ja-d06cc3f678d61ec6",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d06cc3f678d61ec6",
+      "headword": "大胆さ",
+      "reading": "だいたんさ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d06cc3f678d61ec6-1",
+          "definition": "boldness; audacity"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "人の庭へ入りながら、これほど平気で眠れるものかと、吾輩はその大胆さに驚いた。",
+        "gloss": "boldness; audacity",
+        "sense_id": "ja-d06cc3f678d61ec6-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "463928bd9405f47102e6996f8607156190023fe56473e215ca8d17493a956dc3"
+}

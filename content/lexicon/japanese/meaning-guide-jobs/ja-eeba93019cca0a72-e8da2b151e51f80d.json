@@ -1,0 +1,37 @@
+{
+  "id": "ja-eeba93019cca0a72-e8da2b151e51f80d",
+  "entry_id": "ja-eeba93019cca0a72",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-eeba93019cca0a72",
+      "headword": "ごちそう",
+      "reading": "ごちそう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-eeba93019cca0a72-1",
+          "definition": "a feast; delicious or special food"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ところが人間は、吾輩たちが見つけたごちそうを、いつも力で奪って平気な顔をしている。",
+        "gloss": "delicious food; feast",
+        "sense_id": "ja-eeba93019cca0a72-1"
+      },
+      {
+        "sentence": "ごちそうを食べるより、寝ている方が気楽だからである。",
+        "gloss": "a feast; delicious food",
+        "sense_id": "ja-eeba93019cca0a72-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "80ab1b12f0313f28dbc94c3cf52143fb9bf1c9e5d92646930088343098bde475"
+}

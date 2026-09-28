@@ -1,0 +1,32 @@
+{
+  "id": "ja-cb4e4b43de91c91f-0d5447522996f57f",
+  "entry_id": "ja-cb4e4b43de91c91f",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-cb4e4b43de91c91f",
+      "headword": "全員",
+      "reading": "ぜんいん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-cb4e4b43de91c91f-1",
+          "definition": "all the members; everyone"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そのうえ、吾輩が少しでも手を出すと、家の者全員で追いかけ、いじめる。",
+        "gloss": "everyone; all members",
+        "sense_id": "ja-cb4e4b43de91c91f-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a345cc6f7e51bd9214f31c228f7e3d40f55d41a91b828ce27ff6c298202468bb"
+}

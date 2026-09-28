@@ -1,0 +1,32 @@
+{
+  "id": "ja-004f506f32fc0b84-075064aff1416e2b",
+  "entry_id": "ja-004f506f32fc0b84",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-004f506f32fc0b84",
+      "headword": "腹の足しになる",
+      "reading": "はらのたしになる",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-004f506f32fc0b84-1",
+          "definition": "to help satisfy hunger"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が、家なら教師の方が大きいようだと言うと、黒は「家が大きくても腹の足しにはならない」と怒り、乱暴に立ち去った。",
+        "gloss": "is no help in satisfying hunger",
+        "sense_id": "ja-004f506f32fc0b84-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "aa183288f34921e17a2cdf3120c39cd3a40d1378427e81b0d1f2168c5bd90180"
+}

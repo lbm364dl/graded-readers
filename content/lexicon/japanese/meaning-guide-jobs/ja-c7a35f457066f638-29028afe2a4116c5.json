@@ -1,0 +1,32 @@
+{
+  "id": "ja-c7a35f457066f638-29028afe2a4116c5",
+  "entry_id": "ja-c7a35f457066f638",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-c7a35f457066f638",
+      "headword": "降る",
+      "reading": "ふる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-c7a35f457066f638-1",
+          "definition": "to fall from the sky as rain, snow, or similar precipitation"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "暗くなり、腹は減り、寒く、雨まで降ってきたので、明るく暖かそうな方へ歩いた。",
+        "gloss": "rain started falling toward the narrator",
+        "sense_id": "ja-c7a35f457066f638-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ee8ce96cd823796cb998d5394d05856f502e10d0dec26856ee33780fa6a1a03e"
+}

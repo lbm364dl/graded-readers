@@ -1,0 +1,32 @@
+{
+  "id": "ja-8ae48863176bb6fe-d92f8b98b0bcbab5",
+  "entry_id": "ja-8ae48863176bb6fe",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-8ae48863176bb6fe",
+      "headword": "額",
+      "reading": "ひたい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-8ae48863176bb6fe-1",
+          "definition": "forehead"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "その目は琥珀より美しく光り、吾輩の額を射るように見た。",
+        "gloss": "forehead",
+        "sense_id": "ja-8ae48863176bb6fe-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "37b49f045f6cc59835ba8100fca61c8a44a18e3dff549a60be127b08cad904cb"
+}

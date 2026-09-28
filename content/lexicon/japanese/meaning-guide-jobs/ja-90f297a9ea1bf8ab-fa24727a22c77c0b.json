@@ -1,0 +1,32 @@
+{
+  "id": "ja-90f297a9ea1bf8ab-fa24727a22c77c0b",
+  "entry_id": "ja-90f297a9ea1bf8ab",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-90f297a9ea1bf8ab",
+      "headword": "遭う",
+      "reading": "あう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-90f297a9ea1bf8ab-1",
+          "definition": "to encounter or suffer an unpleasant event"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そして、自分は三、四十匹はとった、鼬にはひどい目にあった、と得意そうに話した。",
+        "gloss": "suffered; experienced",
+        "sense_id": "ja-90f297a9ea1bf8ab-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e7f74c13ad06d965788577aad971be1048596fdf909a3130952308e0cda58358"
+}

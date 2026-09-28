@@ -1,0 +1,32 @@
+{
+  "id": "ja-b955b899d9004dab-6c892f62f709df92",
+  "entry_id": "ja-b955b899d9004dab",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-b955b899d9004dab",
+      "headword": "猫族",
+      "reading": "びょうぞく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-b955b899d9004dab-1",
+          "definition": "the feline race; cats collectively"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そして、「猫族が親子の愛を守り、美しい家族の生活をするには、人間と戦い、彼らを滅ぼさなければならない」と言った。",
+        "gloss": "the feline race; cats as a collective",
+        "sense_id": "ja-b955b899d9004dab-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9ddb0a30ff62418b6e3f96652c4fc02220a8f17b2b8933df4be731b4efcda957"
+}

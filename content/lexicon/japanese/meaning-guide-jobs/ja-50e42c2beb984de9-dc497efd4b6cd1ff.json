@@ -1,0 +1,32 @@
+{
+  "id": "ja-50e42c2beb984de9-dc497efd4b6cd1ff",
+  "entry_id": "ja-50e42c2beb984de9",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-50e42c2beb984de9",
+      "headword": "正直",
+      "reading": "しょうじき",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-50e42c2beb984de9-1",
+          "definition": "honest; frank; honestly"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は、「とろうと思っているが、まだ一匹もとっていない」と正直に答えた。",
+        "gloss": "honestly",
+        "sense_id": "ja-50e42c2beb984de9-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4c41fe5277e40cf9fac7ba9e2d0eb2b83fddd7fdea9f0268a6db7469bed64684"
+}

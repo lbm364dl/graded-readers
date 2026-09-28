@@ -1,0 +1,32 @@
+{
+  "id": "ja-622e48761fd20c36-f6fa8658073deaa0",
+  "entry_id": "ja-622e48761fd20c36",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-622e48761fd20c36",
+      "headword": "射るように",
+      "reading": "いるように",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-622e48761fd20c36-1",
+          "definition": "A pattern using a verb in dictionary form + ように to describe something as if it were doing that action; 射るように means “as if to pierce.”"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "その目は琥珀より美しく光り、吾輩の額を射るように見た。",
+        "gloss": "as if to pierce",
+        "sense_id": "ja-622e48761fd20c36-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "35ce82a39988c9e830ac1cdb8bf7c420fb671812b5146787bc19311d04f80fae"
+}

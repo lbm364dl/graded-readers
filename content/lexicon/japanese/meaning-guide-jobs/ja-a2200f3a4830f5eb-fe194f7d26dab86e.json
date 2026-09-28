@@ -1,0 +1,37 @@
+{
+  "id": "ja-a2200f3a4830f5eb-fe194f7d26dab86e",
+  "entry_id": "ja-a2200f3a4830f5eb",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a2200f3a4830f5eb",
+      "headword": "のに",
+      "reading": "のに",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-a2200f3a4830f5eb-1",
+          "definition": "although; even though; despite the fact that"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "それでも始めると、胃が弱いのに一生懸命だった。",
+        "gloss": "although; even though",
+        "sense_id": "ja-a2200f3a4830f5eb-1"
+      },
+      {
+        "sentence": "黒の主人はそのお金で一円五十銭ほど得たのに、黒にはろくな食べ物を与えなかったという。",
+        "gloss": "although; despite the fact that",
+        "sense_id": "ja-a2200f3a4830f5eb-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c59924deb93f29923482ae9ed777f6f087346347edc55637cbd07491b6ba7452"
+}

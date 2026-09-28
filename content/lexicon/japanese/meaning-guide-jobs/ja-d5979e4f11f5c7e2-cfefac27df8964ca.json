@@ -1,0 +1,37 @@
+{
+  "id": "ja-d5979e4f11f5c7e2-cfefac27df8964ca",
+  "entry_id": "ja-d5979e4f11f5c7e2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d5979e4f11f5c7e2",
+      "headword": "御馳走",
+      "reading": "ごちそう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d5979e4f11f5c7e2-1",
+          "definition": "delicious food; a feast or treat"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ところが人間は、吾輩たちが見付けた御馳走を、いつも自分たちの物のように取り上げる。",
+        "gloss": "delicious food; feast",
+        "sense_id": "ja-d5979e4f11f5c7e2-1"
+      },
+      {
+        "sentence": "黒の子分になって他の御馳走を探し歩く気にもならなかった。",
+        "gloss": "treat; delicious food",
+        "sense_id": "ja-d5979e4f11f5c7e2-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7e62c8b4ae3d1a1b688a3f453e0b2c1a06054589c28fda57e9f87baa719a3707"
+}

@@ -1,0 +1,77 @@
+{
+  "id": "ja-0e97cf4146f7d4e9-499a9efe40dc5062",
+  "entry_id": "ja-0e97cf4146f7d4e9",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-0e97cf4146f7d4e9",
+      "headword": "今まで",
+      "reading": "いままで",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-0e97cf4146f7d4e9-1",
+          "definition": "until now; up to the present"
+        },
+        {
+          "id": "ja-0e97cf4146f7d4e9-2",
+          "definition": "up to a particular time or point in the past"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は、今までじっとしていた者の気持ちも知らず、そんな悪口を言うのはひどいと思った。",
+        "gloss": "until now",
+        "sense_id": "ja-0e97cf4146f7d4e9-1"
+      },
+      {
+        "sentence": "ある日、暖かい茶園で一緒に寝転びながら、黒は吾輩に「今まで鼠を何匹とったことがある」と聞いた。",
+        "gloss": "until now",
+        "sense_id": "ja-0e97cf4146f7d4e9-1"
+      },
+      {
+        "sentence": "その上、今までいた場所とは違い、周りがひどく明るい。",
+        "gloss": "until now; up to that point",
+        "sense_id": "ja-0e97cf4146f7d4e9-2"
+      },
+      {
+        "sentence": "どれほど大切にされなかったかは、今まで名前さえつけてもらえないことでも分かる。",
+        "gloss": "until now; up to this point",
+        "sense_id": "ja-0e97cf4146f7d4e9-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-0e97cf4146f7d4e9",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "grammatical",
+    "explanation_en": "今まで combines 今 (いま, “now”) with the particle まで, which marks a limit. Together, it means “until now” or “up to the present,” placing an action or state at the present as its endpoint.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "今",
+        "contribution_en": "“now”; gives the time being used as the endpoint’s reference.",
+        "claim_ids": []
+      },
+      {
+        "text": "まで",
+        "contribution_en": "Particle marking a limit or endpoint: “up to” or “until.”",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "a9699354c25c4fda4b3d715f3b98ef85b92b87ef691dfec32e98b2cf8b4e9633",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "087e29084c2580b79c163258b4bfa20d755bcd68e429f65b817e211f15c90c21"
+}

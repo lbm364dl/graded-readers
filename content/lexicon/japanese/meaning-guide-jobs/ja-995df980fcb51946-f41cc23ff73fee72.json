@@ -1,0 +1,32 @@
+{
+  "id": "ja-995df980fcb51946-f41cc23ff73fee72",
+  "entry_id": "ja-995df980fcb51946",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-995df980fcb51946",
+      "headword": "気づく",
+      "reading": "きづく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-995df980fcb51946-1",
+          "definition": "to notice; to realize"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ふと気づくと、書生はいなかった。",
+        "gloss": "notice; realize",
+        "sense_id": "ja-995df980fcb51946-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c54370e739dcea1a58fd572703e3bb8967320e09537beb035036a606a09ba4ec"
+}

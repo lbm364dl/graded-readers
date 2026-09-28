@@ -1,0 +1,42 @@
+{
+  "id": "ja-ed5bc8ce52afb0d2-e37df2ca75cbb8a6",
+  "entry_id": "ja-ed5bc8ce52afb0d2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ed5bc8ce52afb0d2",
+      "headword": "鼠",
+      "reading": "ねずみ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-ed5bc8ce52afb0d2-1",
+          "definition": "a mouse or rat"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "猫がとった鼠を、人間が取り上げて交番へ持って行く。",
+        "gloss": "mouse",
+        "sense_id": "ja-ed5bc8ce52afb0d2-1"
+      },
+      {
+        "sentence": "吾輩はその話を聞き、決して鼠をとるまいと決めた。",
+        "gloss": "mouse; rat",
+        "sense_id": "ja-ed5bc8ce52afb0d2-1"
+      },
+      {
+        "sentence": "鼠をとるより、寝ている方がよいと思った。",
+        "gloss": "mouse",
+        "sense_id": "ja-ed5bc8ce52afb0d2-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d1b93f02714e21e02407d480fcdb3bc0efe1f5e0d4d407b9d4bfb41abc751376"
+}

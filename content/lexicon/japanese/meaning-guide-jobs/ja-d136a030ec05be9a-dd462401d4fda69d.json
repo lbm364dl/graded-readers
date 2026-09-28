@@ -1,0 +1,32 @@
+{
+  "id": "ja-d136a030ec05be9a-dd462401d4fda69d",
+  "entry_id": "ja-d136a030ec05be9a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d136a030ec05be9a",
+      "headword": "雨",
+      "reading": "あめ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d136a030ec05be9a-1",
+          "definition": "rain"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "暗くなり、腹は減り、寒く、雨まで降ってきたので、明るく暖かそうな方へ歩いた。",
+        "gloss": "rain",
+        "sense_id": "ja-d136a030ec05be9a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "679b506574168d39dfd735ec1c0ca03f6b370a55514c09cd9523c76cbab3e0d0"
+}

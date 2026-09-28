@@ -1,0 +1,37 @@
+{
+  "id": "ja-330d237659e1f495-2c5e4efb52753642",
+  "entry_id": "ja-330d237659e1f495",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-330d237659e1f495",
+      "headword": "書く",
+      "reading": "かく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-330d237659e1f495-1",
+          "definition": "to write"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "俳句を作って雑誌へ送り、新しい詩を書き、間違いの多い英文を書いた。",
+        "gloss": "writing",
+        "sense_id": "ja-330d237659e1f495-1"
+      },
+      {
+        "sentence": "俳句を作って雑誌へ送り、新しい詩を書き、間違いの多い英文を書いた。",
+        "gloss": "wrote",
+        "sense_id": "ja-330d237659e1f495-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8d507dc60f68236e6be2f4a3fd1f7e4ab71a328cde4317ac204f2a101f22674a"
+}

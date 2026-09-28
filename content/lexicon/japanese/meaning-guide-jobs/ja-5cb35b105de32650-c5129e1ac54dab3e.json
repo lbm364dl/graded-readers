@@ -1,0 +1,55 @@
+{
+  "id": "ja-5cb35b105de32650-c5129e1ac54dab3e",
+  "entry_id": "ja-5cb35b105de32650",
+  "reason": "requested",
+  "item": {
+    "entry": {
+      "id": "ja-5cb35b105de32650",
+      "headword": "目",
+      "reading": "め",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-5cb35b105de32650-1",
+          "definition": "Eye; the organ of sight."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "男の人の手の上で、吾輩の目が回りました。",
+        "gloss": "eyes",
+        "sense_id": "ja-5cb35b105de32650-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-5cb35b105de32650",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "目（め）means “eye,” the organ of sight. It is a simple Japanese word with no meaningful smaller parts to explain.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "d8fc6413d32e70b3b321837a7144d19f38fab87576b9434fdfd235f3596ac920",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [
+    {
+      "id": "ja-audit-request-cb579c5d495a93ee",
+      "reason": "The entry defines 目 and then adds an unnecessary claim that it has no meaningful smaller parts. Requested change: Keep “eye; organ of sight” and remove the breakdown claim.",
+      "entry_id": "ja-5cb35b105de32650",
+      "force_research": false,
+      "reuse_reviewed_evidence": true
+    }
+  ],
+  "status": "reviewed",
+  "result_digest": "74ad3e4353f4a18d79b7c484269536b367e0d16ef05cc652e73b87b40f397f76"
+}

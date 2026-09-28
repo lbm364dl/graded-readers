@@ -1,0 +1,32 @@
+{
+  "id": "ja-575acd3faeb72683-910b6676b9de375c",
+  "entry_id": "ja-575acd3faeb72683",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-575acd3faeb72683",
+      "headword": "激しい",
+      "reading": "はげしい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-575acd3faeb72683-1",
+          "definition": "violent; intense; strong in degree or force"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "目は激しく回り、胸も悪くなった。",
+        "gloss": "violently; intensely",
+        "sense_id": "ja-575acd3faeb72683-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e45d3d986c60952b8a5519f6649e1dcd133918b59425758cbc5359d0f6deb6a4"
+}

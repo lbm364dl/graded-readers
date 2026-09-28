@@ -1,0 +1,42 @@
+{
+  "id": "ja-ef07adf95656f9a8-375af65631150f73",
+  "entry_id": "ja-ef07adf95656f9a8",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ef07adf95656f9a8",
+      "headword": "他",
+      "reading": "ほか",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-ef07adf95656f9a8-1",
+          "definition": "another; other; besides"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "その後、吾輩はほかの猫にもたくさん会ったが、こんな変な顔には一度も出会わなかった。",
+        "gloss": "other; other ones",
+        "sense_id": "ja-ef07adf95656f9a8-1"
+      },
+      {
+        "sentence": "ほかに吾輩の世話をする者がいなかったからである。",
+        "gloss": "another; besides",
+        "sense_id": "ja-ef07adf95656f9a8-1"
+      },
+      {
+        "sentence": "台所の板の間で他の者が震えていても、彼らは少しも気にしない。",
+        "gloss": "other",
+        "sense_id": "ja-ef07adf95656f9a8-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2183620ec4a5ac5603c108ec7cac63a638d9534fff1f88fedb98f79f6d936702"
+}

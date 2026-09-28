@@ -1,0 +1,32 @@
+{
+  "id": "ja-86fd9a1dc3df13bd-0d76586d088eff1d",
+  "entry_id": "ja-86fd9a1dc3df13bd",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-86fd9a1dc3df13bd",
+      "headword": "寝転ぶ",
+      "reading": "ねころぶ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-86fd9a1dc3df13bd-1",
+          "definition": "to lie down or lounge in a relaxed position"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ある日、暖かい茶園で一緒に寝転びながら、黒は吾輩に「今まで鼠を何匹とったことがある」と聞いた。",
+        "gloss": "while lounging",
+        "sense_id": "ja-86fd9a1dc3df13bd-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e320d08fbbeabec2c282c8f7cbba8a1bf8588b1d4b4b4a7bf2b060331eb2cb37"
+}

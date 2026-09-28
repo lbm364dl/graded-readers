@@ -1,0 +1,32 @@
+{
+  "id": "ja-dfbe137547d2976e-bacec6e7f1498078",
+  "entry_id": "ja-dfbe137547d2976e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-dfbe137547d2976e",
+      "headword": "会う",
+      "reading": "あう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-dfbe137547d2976e-1",
+          "definition": "to meet; to see someone"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩はその後、黒と何回も会い、話をするようになった。",
+        "gloss": "meet",
+        "sense_id": "ja-dfbe137547d2976e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5fb5805add9a726a001a671dbf643ff688249827ef6f5edf0d61eb22153b8151"
+}

@@ -1,0 +1,70 @@
+{
+  "id": "ja-1b298fa066a3335a-377aafe9226b9838",
+  "entry_id": "ja-1b298fa066a3335a",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-1b298fa066a3335a",
+      "headword": "よい",
+      "reading": "よい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-1b298fa066a3335a-1",
+          "definition": "good; pleasant; favorable"
+        },
+        {
+          "id": "ja-1b298fa066a3335a-2",
+          "definition": "well; favorably"
+        },
+        {
+          "id": "ja-1b298fa066a3335a-3",
+          "definition": "in good physical condition; well-built"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "広くはないが、日がよく入り、静かで気持ちのよい所だ。",
+        "gloss": "well; abundantly",
+        "sense_id": "ja-1b298fa066a3335a-2"
+      },
+      {
+        "sentence": "広くはないが、日がよく入り、静かで気持ちのよい所だ。",
+        "gloss": "pleasant",
+        "sense_id": "ja-1b298fa066a3335a-1"
+      },
+      {
+        "sentence": "黒は「人間は、格好のよい泥棒だ」と怒った。",
+        "gloss": "good-looking; fine",
+        "sense_id": "ja-1b298fa066a3335a-1"
+      },
+      {
+        "sentence": "「人間は、体のよい泥棒だ」と黒は怒った。",
+        "gloss": "healthy-looking; well-built",
+        "sense_id": "ja-1b298fa066a3335a-3"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-1b298fa066a3335a",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "よい evaluates something positively: it can be good in quality, pleasant to experience, or favorable in the circumstances. In its adverbial form よく, it describes something as happening well or favorably; with some verbs, it can also mean fully or abundantly.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "c005b0ce1277a3695c93580a29ae4546eba72448fb3120afe89366607c475bfc",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ffeaf297010798c7997371465e50b89558e641c9b211f4afe214ed89cb5cda6f"
+}

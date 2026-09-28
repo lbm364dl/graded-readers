@@ -1,0 +1,32 @@
+{
+  "id": "ja-b272edbac590da03-3848b59e04c1021e",
+  "entry_id": "ja-b272edbac590da03",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-b272edbac590da03",
+      "headword": "歌",
+      "reading": "うた",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-b272edbac590da03-1",
+          "definition": "song"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人は俳句、新しい詩、英語、弓、歌、バイオリンなど、何にでも手を出すが、どれも上手にならない。",
+        "gloss": "song",
+        "sense_id": "ja-b272edbac590da03-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "dbc4181608339c34d14f1e5b9853109342c3c299340929c0d81d2e76cb52bfd0"
+}

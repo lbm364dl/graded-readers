@@ -1,0 +1,41 @@
+{
+  "id": "ja-f98cf8f6c3e800c4-ce9c081369826c41",
+  "entry_id": "ja-f98cf8f6c3e800c4",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-f98cf8f6c3e800c4",
+      "headword": "守る",
+      "reading": "まもる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-f98cf8f6c3e800c4-1",
+          "definition": "to protect; safeguard"
+        },
+        {
+          "id": "ja-f98cf8f6c3e800c4-2",
+          "definition": "to obey; observe (a rule)"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そして、「猫族が親子の愛を守り、美しい家族の生活をするには、人間と戦い、彼らを滅ぼさなければならない」と言った。",
+        "gloss": "protecting; safeguarding",
+        "sense_id": "ja-f98cf8f6c3e800c4-1"
+      },
+      {
+        "sentence": "相手がこの決まりを守らなければ、力で取り返してもよい。",
+        "gloss": "if one does not obey",
+        "sense_id": "ja-f98cf8f6c3e800c4-2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c04b44e7f3562993b84bc229d1a1c3026dd2dfa09def2f39a1a7c64fe58153ce"
+}

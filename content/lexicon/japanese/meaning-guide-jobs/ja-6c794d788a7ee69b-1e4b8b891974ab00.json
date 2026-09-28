@@ -1,0 +1,32 @@
+{
+  "id": "ja-6c794d788a7ee69b-1e4b8b891974ab00",
+  "entry_id": "ja-6c794d788a7ee69b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-6c794d788a7ee69b",
+      "headword": "骨と皮ばかり",
+      "reading": "ほねとかわばかり",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-6c794d788a7ee69b-1",
+          "definition": "nothing but bones and skin; extremely thin"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "おめえの主人を見ろ、骨と皮ばかりだぜ」\n",
+        "gloss": "nothing but bones and skin; extremely thin",
+        "sense_id": "ja-6c794d788a7ee69b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "079d72d3080c34b3b2b758dc8533548a86f61df2d1e71e2d55c97a83400f4697"
+}

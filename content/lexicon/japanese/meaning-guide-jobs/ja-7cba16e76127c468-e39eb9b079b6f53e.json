@@ -1,0 +1,32 @@
+{
+  "id": "ja-7cba16e76127c468-e39eb9b079b6f53e",
+  "entry_id": "ja-7cba16e76127c468",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-7cba16e76127c468",
+      "headword": "崩れる",
+      "reading": "くずれる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-7cba16e76127c468-1",
+          "definition": "to collapse, crumble, or fall apart"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "竹垣の崩れた穴から、とある邸内にもぐり込んだ。",
+        "gloss": "collapsed; fallen apart",
+        "sense_id": "ja-7cba16e76127c468-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7ee796dc5506e9e3258576dae34309fbc0c8f6ed513ed802693d05ff3882fdaf"
+}

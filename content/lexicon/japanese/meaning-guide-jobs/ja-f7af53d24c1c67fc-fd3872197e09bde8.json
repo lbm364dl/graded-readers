@@ -1,0 +1,32 @@
+{
+  "id": "ja-f7af53d24c1c67fc-fd3872197e09bde8",
+  "entry_id": "ja-f7af53d24c1c67fc",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-f7af53d24c1c67fc",
+      "headword": "初めて",
+      "reading": "はじめて",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-f7af53d24c1c67fc-1",
+          "definition": "For the first time."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "その時、初めて人を見ました。",
+        "gloss": "for the first time",
+        "sense_id": "ja-f7af53d24c1c67fc-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "33c632453c52eb44afd62ae7259ee5f48f39a8e6dd5e84edc3cd02d12143d368"
+}

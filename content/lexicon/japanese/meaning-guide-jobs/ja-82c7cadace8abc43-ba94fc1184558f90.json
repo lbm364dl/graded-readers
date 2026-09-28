@@ -1,0 +1,32 @@
+{
+  "id": "ja-82c7cadace8abc43-ba94fc1184558f90",
+  "entry_id": "ja-82c7cadace8abc43",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-82c7cadace8abc43",
+      "headword": "方",
+      "reading": "ほう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-82c7cadace8abc43-1",
+          "definition": "A way, option, or course of action."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "鼠をとるより、寝ている方がよいと思った。",
+        "gloss": "way; option",
+        "sense_id": "ja-82c7cadace8abc43-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d55db451d5714408e8253bb5ddcf36379735b01796ff69f30efbccb49d4375e8"
+}

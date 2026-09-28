@@ -1,0 +1,37 @@
+{
+  "id": "ja-21dd28d312fa2429-e6660d5f14f9ac5a",
+  "entry_id": "ja-21dd28d312fa2429",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-21dd28d312fa2429",
+      "headword": "眠る",
+      "reading": "ねむる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-21dd28d312fa2429-1",
+          "definition": "to sleep"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ある小春日和の午後、昼飯のあとで少し眠り、運動をかねて茶園を歩いた。",
+        "gloss": "slept briefly",
+        "sense_id": "ja-21dd28d312fa2429-1"
+      },
+      {
+        "sentence": "茶の木の根を一つ一つ嗅ぎながら西側の杉の垣根へ行くと、枯れた菊を押し倒し、その上で大きな猫が眠っていた。",
+        "gloss": "was sleeping",
+        "sense_id": "ja-21dd28d312fa2429-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7c393d58ba03c2001f2234be78ee7ee72cdfb3a6eb6bbdfc04269154b3f6feba"
+}

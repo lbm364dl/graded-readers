@@ -1,0 +1,32 @@
+{
+  "id": "ja-d9dbc1f5e6c349af-d2f26502237ca75f",
+  "entry_id": "ja-d9dbc1f5e6c349af",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d9dbc1f5e6c349af",
+      "headword": "英文",
+      "reading": "えいぶん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d9dbc1f5e6c349af-1",
+          "definition": "English text or composition"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "俳句を作って雑誌へ送り、新しい詩を書き、間違いの多い英文を書いた。",
+        "gloss": "English writing",
+        "sense_id": "ja-d9dbc1f5e6c349af-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0cd8c004211139e0cbf835a841467e8242145345d9af97d5d7f427146ac6708b"
+}

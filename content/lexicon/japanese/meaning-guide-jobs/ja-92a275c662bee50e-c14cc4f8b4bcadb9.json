@@ -1,0 +1,32 @@
+{
+  "id": "ja-92a275c662bee50e-c14cc4f8b4bcadb9",
+  "entry_id": "ja-92a275c662bee50e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-92a275c662bee50e",
+      "headword": "全体",
+      "reading": "ぜんたい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-92a275c662bee50e-1",
+          "definition": "the whole; entirety"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そして、絵をかくなら自然そのものを写すべきだ、空には星、地には露、池には金魚、枯れ木には鳥がいる、自然全体が大きな絵なのだ、と語った。",
+        "gloss": "the whole; entirety",
+        "sense_id": "ja-92a275c662bee50e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "573a271ba55a3866bfa858c797284024871b2512438ec891ba1f5f490bac6d03"
+}

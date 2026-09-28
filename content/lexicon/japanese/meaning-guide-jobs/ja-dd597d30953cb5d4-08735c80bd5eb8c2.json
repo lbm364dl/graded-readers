@@ -1,0 +1,32 @@
+{
+  "id": "ja-dd597d30953cb5d4-08735c80bd5eb8c2",
+  "entry_id": "ja-dd597d30953cb5d4",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-dd597d30953cb5d4",
+      "headword": "見せる",
+      "reading": "みせる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-dd597d30953cb5d4-1",
+          "definition": "to show; to make something appear a certain way"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "家の者は、主人を大変な勉強家だと思っているし、本人もそう見せている。",
+        "gloss": "is making himself appear; is pretending to be",
+        "sense_id": "ja-dd597d30953cb5d4-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "629373e8ea99e20b4d03416c23f71b3911c619a09a433cd3342e2cf2dff83be0"
+}

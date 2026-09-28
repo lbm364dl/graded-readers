@@ -1,0 +1,32 @@
+{
+  "id": "ja-280679f2d7fc8e2d-6cad7e0d5af6d4cc",
+  "entry_id": "ja-280679f2d7fc8e2d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-280679f2d7fc8e2d",
+      "headword": "逆さにする",
+      "reading": "さかさにする",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-280679f2d7fc8e2d-1",
+          "definition": "to turn something upside down"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "自分の気分しだいで、吾輩を逆さにしたり、頭に袋をかぶせたり、外へ投げ出したり、へっついの中へ押し込んだりする。",
+        "gloss": "do things such as turning [someone] upside down",
+        "sense_id": "ja-280679f2d7fc8e2d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d377fc78110fc7e5dc67988df74e1df022dff2ba8ce570f32d0a18c37126f3f3"
+}

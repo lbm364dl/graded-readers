@@ -3,16 +3,19 @@ import 'package:flutter/services.dart';
 import '../data.dart';
 import '../models.dart';
 import '../services/usage_dictionary.dart';
+import '../services/grammar_dictionary.dart';
+import 'grammar_dictionary_screen.dart';
 import 'reader_screen.dart';
 
 class UsageDictionaryScreen extends StatefulWidget {
-  const UsageDictionaryScreen({super.key});
+  final Language language;
+  const UsageDictionaryScreen({super.key, this.language = Language.chinese});
   @override
   State<UsageDictionaryScreen> createState() => _UsageDictionaryScreenState();
 }
 
 class _UsageDictionaryScreenState extends State<UsageDictionaryScreen> {
-  final _dictionary = UsageDictionary.load();
+  late final _dictionary = UsageDictionary.load(language: widget.language);
   String _query = '';
 
   @override
@@ -21,20 +24,39 @@ class _UsageDictionaryScreenState extends State<UsageDictionaryScreen> {
         body: Column(children: [
           FutureBuilder<UsageDictionary>(
               future: _dictionary,
-              builder: (context, snapshot) => Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Text(snapshot.data?.sources.values.any((source) =>
-                              source['dictionary_coverage']?['scope'] ==
-                              'sample') ==
-                          true
-                      ? 'Words and meanings from HSK 1 + an HSK 2 excerpt'
-                      : 'Words and meanings from our reading texts'))),
+              builder: (context, snapshot) {
+                final levels = widget.language == Language.japanese
+                    ? (snapshot.data?.sources.values
+                            .map((source) => source['level'] as String)
+                            .toSet()
+                            .toList() ??
+                        <String>[])
+                    : <String>[];
+                levels.sort((a, b) => int.parse(b.substring(1))
+                    .compareTo(int.parse(a.substring(1))));
+                return Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Text(widget.language == Language.japanese
+                        ? levels.isEmpty
+                            ? 'Japanese dictionary'
+                            : 'Japanese dictionary · JLPT ${levels.join(', ')}'
+                        : snapshot.data?.sources.values.any((source) =>
+                                    source['dictionary_coverage']?['scope'] ==
+                                    'sample') ==
+                                true
+                            ? 'Words and meanings from HSK 1 + an HSK 2 excerpt'
+                            : 'Words and meanings from our reading texts'));
+              }),
           Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: TextField(
-                decoration: const InputDecoration(
-                    labelText: 'Search words, pinyin, or meanings',
-                    hintText: 'e.g. hen3 duo1',
+                decoration: InputDecoration(
+                    labelText: widget.language == Language.japanese
+                        ? 'Search words, kana, or meanings'
+                        : 'Search words, pinyin, or meanings',
+                    hintText: widget.language == Language.japanese
+                        ? 'e.g. みる or 見る'
+                        : 'e.g. hen3 duo1',
                     prefixIcon: Icon(Icons.search)),
                 onChanged: (value) => setState(() => _query = value),
               )),
@@ -94,7 +116,8 @@ class UsageEntryScreen extends StatelessWidget {
       BuildContext context, Map<String, dynamic> use) async {
     try {
       final source = dictionary.sources[use['source']];
-      final readers = await ContentRepository().loadReaders(Language.chinese);
+      final readers =
+          await ContentRepository().loadReaders(dictionary.language);
       final reader = readers.singleWhere((r) => r.id == source['reader_id']);
       final chapter = (source['chapter'] as int) - 1;
       if (reader.chapters[chapter].content != source['text']) {
@@ -119,110 +142,137 @@ class UsageEntryScreen extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(title: Text(entry['headword'] as String)),
-        body: ListView(padding: const EdgeInsets.all(20), children: [
-          Text(entry['reading'] as String,
-              style: Theme.of(context).textTheme.titleLarge),
-          Text(
-              '${entry['kind'] == 'construction' ? 'Grammar construction' : entry['kind']}${entry['origin'] == 'component_word' ? ' · used within other words' : ''}'),
-          if (entry['kind'] == 'construction')
-            const Text(
-                'A reusable grammatical pattern, not an indivisible word.'),
-          if (entry['character_ref'] != null)
-            Align(
-              alignment: Alignment.centerLeft,
-              child: TextButton.icon(
-                key: const ValueKey('entry-character-link'),
-                icon: const Icon(Icons.history_edu),
-                label: const Text('Character & etymology'),
-                onPressed: () => showDictionaryCharacter(
-                    context, entry['character_ref']['character'] as String),
+  Widget build(BuildContext context) => dictionary.isGrammarOnly(entry)
+      ? FutureBuilder<GrammarDictionary>(
+          future: GrammarDictionary.load(),
+          builder: (context, snapshot) {
+            if (snapshot.hasError) {
+              return const Scaffold(
+                  body: Center(
+                      child: Text('Grammar dictionary could not be loaded.')));
+            }
+            if (!snapshot.hasData) {
+              return const Scaffold(
+                  body: Center(child: CircularProgressIndicator()));
+            }
+            final ids = (snapshot.data!.wordRoutes[entry['id']] as List? ?? [])
+                .cast<String>();
+            if (ids.length == 1) {
+              return GrammarEntryScreen(
+                  dictionary: snapshot.data!,
+                  entry: snapshot.data!.entry(ids.single));
+            }
+            return GrammarDictionaryScreen(entryIds: ids);
+          })
+      : Scaffold(
+          appBar: AppBar(title: Text(entry['headword'] as String)),
+          body: ListView(padding: const EdgeInsets.all(20), children: [
+            Text(entry['reading'] as String,
+                style: Theme.of(context).textTheme.titleLarge),
+            Text(
+                '${entry['kind'] == 'construction' ? 'Grammar construction' : entry['kind']}${entry['origin'] == 'component_word' ? ' · used within other words' : ''}'),
+            if (entry['kind'] == 'construction')
+              const Text(
+                  'A reusable grammatical pattern, not an indivisible word.'),
+            if (entry['character_ref'] != null)
+              Align(
+                alignment: Alignment.centerLeft,
+                child: TextButton.icon(
+                  key: const ValueKey('entry-character-link'),
+                  icon: const Icon(Icons.history_edu),
+                  label: Text(dictionary.language == Language.japanese
+                      ? 'Japanese character dictionary'
+                      : 'Character & etymology'),
+                  onPressed: () => showDictionaryCharacter(
+                      context, entry['character_ref']['character'] as String,
+                      language: dictionary.language),
+                ),
               ),
-            ),
-          const SizedBox(height: 16),
-          for (final sense in entry['senses'] as List)
-            Padding(
-              padding: const EdgeInsets.only(bottom: 8),
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    if (sense['id'] == selectedSense) ...[
-                      Text('Used in this passage',
-                          style: Theme.of(context)
-                              .textTheme
-                              .labelSmall
-                              ?.copyWith(
-                                  color:
-                                      Theme.of(context).colorScheme.primary)),
-                      const SizedBox(height: 4),
-                    ],
-                    Text(
-                        '${sense['parent_entry_id'] == null ? '' : 'In ${dictionary.entry(sense['parent_entry_id'] as String)['headword']}: '}'
-                        '${sense['definition']}',
-                        style: Theme.of(context).textTheme.titleMedium),
-                  ]),
-            ),
-          const SizedBox(height: 16),
-          if (entry['meaning_guide'] != null) ...[
-            _meaningGuide(
-                context, entry['meaning_guide'] as Map<String, dynamic>),
-            const SizedBox(height: 20),
-          ],
-          if (entry['base_entry_id'] != null) ...[
-            const Text('Based on'),
-            for (final component in entry['components'] as List)
-              _relatedEntry(
-                  context,
-                  dictionary.entry(component['entry_id'] as String),
-                  component['role'] as String),
             const SizedBox(height: 16),
-          ],
-          if (dictionary.expressionsFor(entry['id'] as String).isNotEmpty) ...[
-            Text('Expressions with ${entry['headword']}'),
-            for (final related
-                in dictionary.expressionsFor(entry['id'] as String))
-              _relatedEntry(
-                  context,
-                  related,
-                  (related['senses'] as List)
-                      .map((s) => s['definition'])
-                      .join('; ')),
+            for (final sense in entry['senses'] as List)
+              Padding(
+                padding: const EdgeInsets.only(bottom: 8),
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      if (sense['id'] == selectedSense) ...[
+                        Text('Used in this passage',
+                            style: Theme.of(context)
+                                .textTheme
+                                .labelSmall
+                                ?.copyWith(
+                                    color:
+                                        Theme.of(context).colorScheme.primary)),
+                        const SizedBox(height: 4),
+                      ],
+                      Text(
+                          '${sense['parent_entry_id'] == null ? '' : 'In ${dictionary.entry(sense['parent_entry_id'] as String)['headword']}: '}'
+                          '${sense['definition']}',
+                          style: Theme.of(context).textTheme.titleMedium),
+                    ]),
+              ),
             const SizedBox(height: 16),
-          ],
-          if ((entry['component_uses'] as List? ?? []).isNotEmpty) ...[
-            Text('Used in', style: Theme.of(context).textTheme.titleMedium),
-            for (final use in entry['component_uses'] as List)
-              _relatedEntry(
-                  context,
-                  dictionary.entry(use['parent_entry_id'] as String),
-                  use['contribution_en'] as String),
-            const SizedBox(height: 16),
-          ],
-          for (final sense in entry['senses'] as List) ...[
-            if (entry['origin'] != 'component_word') ...[
-              Text(
-                  (entry['senses'] as List).length == 1
-                      ? 'Examples from our texts'
-                      : 'Examples · ${sense['definition']}',
-                  style: Theme.of(context).textTheme.titleMedium),
-              for (final use in dictionary.occurrences
-                  .where((o) => o['sense_id'] == sense['id']))
-                Card(
-                    child: ListTile(
-                  key: ValueKey('dictionary-example-${use['id']}'),
-                  title: _example(context, use),
-                  subtitle: Text('${use['reading']} · ${use['gloss']}\n'
-                      '${dictionary.sources[use['source']]['title']} · HSK ${dictionary.sources[use['source']]['level']} · Chapter ${dictionary.sources[use['source']]['chapter']}'),
-                  isThreeLine: true,
-                  trailing: const Icon(Icons.open_in_new),
-                  onTap: () => _openSource(context, use),
-                )),
+            if (entry['meaning_guide'] != null) ...[
+              _meaningGuide(
+                  context, entry['meaning_guide'] as Map<String, dynamic>),
               const SizedBox(height: 20),
             ],
-          ],
-        ]),
-      );
+            if (entry['base_entry_id'] != null) ...[
+              const Text('Based on'),
+              for (final component in entry['components'] as List)
+                _relatedEntry(
+                    context,
+                    dictionary.entry(component['entry_id'] as String),
+                    component['role'] as String),
+              const SizedBox(height: 16),
+            ],
+            if (dictionary
+                .expressionsFor(entry['id'] as String)
+                .isNotEmpty) ...[
+              Text('Expressions with ${entry['headword']}'),
+              for (final related
+                  in dictionary.expressionsFor(entry['id'] as String))
+                _relatedEntry(
+                    context,
+                    related,
+                    (related['senses'] as List)
+                        .map((s) => s['definition'])
+                        .join('; ')),
+              const SizedBox(height: 16),
+            ],
+            if ((entry['component_uses'] as List? ?? []).isNotEmpty) ...[
+              Text('Used in', style: Theme.of(context).textTheme.titleMedium),
+              for (final use in entry['component_uses'] as List)
+                _relatedEntry(
+                    context,
+                    dictionary.entry(use['parent_entry_id'] as String),
+                    use['contribution_en'] as String),
+              const SizedBox(height: 16),
+            ],
+            for (final sense in entry['senses'] as List) ...[
+              if (entry['origin'] != 'component_word') ...[
+                Text(
+                    (entry['senses'] as List).length == 1
+                        ? 'Examples from our texts'
+                        : 'Examples · ${sense['definition']}',
+                    style: Theme.of(context).textTheme.titleMedium),
+                for (final use in dictionary.occurrences
+                    .where((o) => o['sense_id'] == sense['id']))
+                  Card(
+                      child: ListTile(
+                    key: ValueKey('dictionary-example-${use['id']}'),
+                    title: _example(context, use),
+                    subtitle: Text('${use['reading']} · ${use['gloss']}\n'
+                        '${dictionary.sources[use['source']]['title']} · ${dictionary.language == Language.japanese ? 'JLPT' : 'HSK'} ${dictionary.sources[use['source']]['level']} · Chapter ${dictionary.sources[use['source']]['chapter']}'),
+                    isThreeLine: true,
+                    trailing: const Icon(Icons.open_in_new),
+                    onTap: () => _openSource(context, use),
+                  )),
+                const SizedBox(height: 20),
+              ],
+            ],
+          ]),
+        );
 
   Widget _meaningGuide(BuildContext context, Map<String, dynamic> guide) =>
       Container(
@@ -249,11 +299,18 @@ class UsageEntryScreen extends StatelessWidget {
                   title: Text('${part['text']} — ${part['contribution_en']}'),
                   trailing: const Icon(Icons.chevron_right),
                   subtitle: part['character_ref'] != null
-                      ? const Text('Character · etymology')
-                      : null,
+                      ? Text(dictionary.language == Language.japanese
+                          ? 'Japanese character dictionary'
+                          : 'Character · etymology')
+                      : dictionary.language == Language.japanese
+                          ? Text(
+                              '${dictionary.isGrammarOnly(dictionary.entry(part['entry_id'] as String)) ? 'Related grammar entry' : 'Related dictionary entry'} · '
+                              '${dictionary.entry(part['entry_id'] as String)['reading']}')
+                          : null,
                   onTap: () => part['character_ref'] != null
                       ? showDictionaryCharacter(
-                          context, part['character_ref']['character'] as String)
+                          context, part['character_ref']['character'] as String,
+                          language: dictionary.language)
                       : Navigator.of(context).push(MaterialPageRoute<void>(
                           builder: (_) => UsageEntryScreen(
                               dictionary: dictionary,
@@ -270,6 +327,24 @@ class UsageEntryScreen extends StatelessWidget {
                     TextSpan(text: part['contribution_en'] as String),
                   ]),
                   style: const TextStyle(height: 1.5)),
+            for (final id in (part['grammar_entry_ids'] as List? ?? const [])
+                .cast<String>())
+              FutureBuilder<GrammarDictionary>(
+                future: GrammarDictionary.load(),
+                builder: (context, snapshot) {
+                  if (!snapshot.hasData) return const SizedBox.shrink();
+                  final lesson = snapshot.data!.entry(id);
+                  return TextButton.icon(
+                    key: ValueKey('meaning-part-grammar-${part['start']}-$id'),
+                    icon: const Icon(Icons.account_tree_outlined),
+                    label: Text('Grammar · ${lesson['title']}'),
+                    onPressed: () => Navigator.of(context).push(
+                        MaterialPageRoute<void>(
+                            builder: (_) => GrammarEntryScreen(
+                                dictionary: snapshot.data!, entry: lesson))),
+                  );
+                },
+              ),
           ],
           if ((guide['caveat_en'] as String).isNotEmpty) ...[
             const SizedBox(height: 12),
@@ -361,6 +436,7 @@ class UsageEntryScreen extends StatelessWidget {
 }
 
 class UsageDictionaryLink extends StatelessWidget {
+  final Language language;
   final int? startOffset;
   final String? surface;
   final String? reading;
@@ -370,6 +446,7 @@ class UsageDictionaryLink extends StatelessWidget {
   final String sourceText;
   const UsageDictionaryLink(
       {super.key,
+      this.language = Language.chinese,
       this.startOffset,
       this.surface,
       this.reading,
@@ -380,18 +457,44 @@ class UsageDictionaryLink extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => FutureBuilder<UsageDictionary>(
-      future: UsageDictionary.load(),
+      future: UsageDictionary.load(language: language),
       builder: (context, snapshot) {
         if (!snapshot.hasData) return const SizedBox.shrink();
         final dictionary = snapshot.data!;
-        final use = dictionary.occurrence(source, segmentIndex, sourceText,
+        final matchedUse = dictionary.occurrence(
+            source, segmentIndex, sourceText,
             startOffset: startOffset,
             surface: surface,
             reading: reading,
             gloss: gloss);
-        if (use == null) return const SizedBox.shrink();
-        final entry =
+        if (matchedUse == null) return const SizedBox.shrink();
+        var use = matchedUse;
+        var entry =
             dictionary.entries.singleWhere((e) => e['id'] == use['entry_id']);
+        if (dictionary.isGrammarOnly(entry)) {
+          // A merged productive pattern can still contain a lexical verb.
+          // Keep that verb link alongside grammar; do not invent a phrase word.
+          if (entry['kind'] != 'construction' ||
+              startOffset == null ||
+              surface == null ||
+              surface == use['surface']) {
+            return const SizedBox.shrink();
+          }
+          final start = sourceText.substring(0, startOffset!).runes.length;
+          final end = start + surface!.runes.length;
+          final lexical = dictionary.occurrences
+              .where((o) =>
+                  o['source'] == source &&
+                  o['layer'] != 'expression' &&
+                  (o['start'] as int) >= start &&
+                  (o['end'] as int) <= end &&
+                  !dictionary
+                      .isGrammarOnly(dictionary.entry(o['entry_id'] as String)))
+              .toList();
+          if (lexical.length != 1) return const SizedBox.shrink();
+          use = lexical.single;
+          entry = dictionary.entry(use['entry_id'] as String);
+        }
         final count = dictionary.occurrences
             .where((o) => o['entry_id'] == entry['id'])
             .length;

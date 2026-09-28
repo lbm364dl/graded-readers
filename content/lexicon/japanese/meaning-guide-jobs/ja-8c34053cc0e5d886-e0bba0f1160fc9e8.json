@@ -1,0 +1,32 @@
+{
+  "id": "ja-8c34053cc0e5d886-e0bba0f1160fc9e8",
+  "entry_id": "ja-8c34053cc0e5d886",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-8c34053cc0e5d886",
+      "headword": "どれも",
+      "reading": "どれも",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-8c34053cc0e5d886-1",
+          "definition": "each one; every one (with affirmative predicates), or none of them (with negative predicates)"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "弓に熱中したり、謡を習ったり、バイオリンを鳴らしたりもしたが、どれも上手くならなかった。",
+        "gloss": "none of them",
+        "sense_id": "ja-8c34053cc0e5d886-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "deecdb557e4abfa2fec6e510a2698f028482214da434f2f41667cdc47c671c21"
+}

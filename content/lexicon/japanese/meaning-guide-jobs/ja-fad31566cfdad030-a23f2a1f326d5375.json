@@ -1,0 +1,32 @@
+{
+  "id": "ja-fad31566cfdad030-a23f2a1f326d5375",
+  "entry_id": "ja-fad31566cfdad030",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-fad31566cfdad030",
+      "headword": "な",
+      "reading": "な",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-fad31566cfdad030-1",
+          "definition": "Sentence-final particle expressing observation, emphasis, or exclamation."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が教師の家だと言うと、「ずいぶん痩せているな」と笑った。",
+        "gloss": "expressing observation or exclamation",
+        "sense_id": "ja-fad31566cfdad030-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a9e3ce03bd65a33d5750215b8017047d4f93bd143c22befa910778944a0f6302"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-168020341a5d49b1-9afb711eb846fc4f",
+  "entry_id": "ja-168020341a5d49b1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-168020341a5d49b1",
+      "headword": "にとって",
+      "reading": "にとって",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-168020341a5d49b1-1",
+          "definition": "from the perspective of; for"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "それが、吾輩にとって人間というものを初めて見た時だったのだろう。",
+        "gloss": "for; from the viewpoint of",
+        "sense_id": "ja-168020341a5d49b1-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b9edb33500323408379d8d3550cf4033d28e15e4d2758937c4e629e8c0d52901"
+}

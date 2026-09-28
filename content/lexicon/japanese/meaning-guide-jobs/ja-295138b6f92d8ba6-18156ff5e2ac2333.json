@@ -1,0 +1,32 @@
+{
+  "id": "ja-295138b6f92d8ba6-18156ff5e2ac2333",
+  "entry_id": "ja-295138b6f92d8ba6",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-295138b6f92d8ba6",
+      "headword": "床",
+      "reading": "とこ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-295138b6f92d8ba6-1",
+          "definition": "bed; bedding"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "小供は五つと三つで、夜になると二人で一つの床に入る。",
+        "gloss": "bed; bedding",
+        "sense_id": "ja-295138b6f92d8ba6-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "66e4496b9b59dcc1f98d0ea6b0a76e689519702dc7ed7364ef38fff8f06a02d5"
+}

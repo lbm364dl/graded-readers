@@ -1,0 +1,37 @@
+{
+  "id": "ja-708353831e1f7459-b50dd0b33b4e28e3",
+  "entry_id": "ja-708353831e1f7459",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-708353831e1f7459",
+      "headword": "一度",
+      "reading": "いちど",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-708353831e1f7459-1",
+          "definition": "once; one time"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そこで吾輩は、書生以外の人間をもう一度見た。",
+        "gloss": "one more time",
+        "sense_id": "ja-708353831e1f7459-1"
+      },
+      {
+        "sentence": "しかも一度始めると、胃が弱いくせに妙に熱心である。",
+        "gloss": "once",
+        "sense_id": "ja-708353831e1f7459-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "73900c0c65b588745a03b47124dae286bee780a1f5ba04f7c870d329494d1f93"
+}

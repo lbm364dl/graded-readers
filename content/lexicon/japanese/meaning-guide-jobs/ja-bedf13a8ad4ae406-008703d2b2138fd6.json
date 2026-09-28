@@ -1,0 +1,32 @@
+{
+  "id": "ja-bedf13a8ad4ae406-008703d2b2138fd6",
+  "entry_id": "ja-bedf13a8ad4ae406",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-bedf13a8ad4ae406",
+      "headword": "押し倒す",
+      "reading": "おしたおす",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-bedf13a8ad4ae406-1",
+          "definition": "to push over; to knock down"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "茶の木の根を一つ一つ嗅ぎながら西側の杉の垣根へ行くと、枯れた菊を押し倒し、その上で大きな猫が眠っていた。",
+        "gloss": "knocking down",
+        "sense_id": "ja-bedf13a8ad4ae406-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e32566611cd031d89248700bea656648f3d22078d5c60097c5aab812b6c013ad"
+}

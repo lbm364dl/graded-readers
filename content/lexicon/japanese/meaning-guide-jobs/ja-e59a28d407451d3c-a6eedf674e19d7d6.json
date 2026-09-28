@@ -1,0 +1,32 @@
+{
+  "id": "ja-e59a28d407451d3c-a6eedf674e19d7d6",
+  "entry_id": "ja-e59a28d407451d3c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e59a28d407451d3c",
+      "headword": "入りにくくなる",
+      "reading": "はいりにくくなる",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-e59a28d407451d3c-1",
+          "definition": "for something to become difficult to enter"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "畳で爪を研いだ時など、細君はひどく怒り、その後は座敷へ入りにくくなった。",
+        "gloss": "became difficult to enter",
+        "sense_id": "ja-e59a28d407451d3c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1872dd881953de41e7559162000f2078d7e07197b2e74c34ad68bfa6bb2eb512"
+}

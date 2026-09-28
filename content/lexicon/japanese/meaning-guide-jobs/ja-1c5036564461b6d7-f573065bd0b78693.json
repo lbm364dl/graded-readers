@@ -1,0 +1,32 @@
+{
+  "id": "ja-1c5036564461b6d7-f573065bd0b78693",
+  "entry_id": "ja-1c5036564461b6d7",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-1c5036564461b6d7",
+      "headword": "においがする",
+      "reading": "においがする",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-1c5036564461b6d7-1",
+          "definition": "to have or give off a smell"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "人のにおいがする家を見つけ、こわれた竹垣の穴から中へ入った。",
+        "gloss": "smells; gives off a smell",
+        "sense_id": "ja-1c5036564461b6d7-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "96be8851bfc09fecc10bba1fb69d10a0f061478ba3fb23d78810efd0833a83b7"
+}

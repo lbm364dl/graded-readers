@@ -1,0 +1,37 @@
+{
+  "id": "ja-45887251b1a4e64c-b80e34f93d227316",
+  "entry_id": "ja-45887251b1a4e64c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-45887251b1a4e64c",
+      "headword": "かもしれない",
+      "reading": "かもしれない",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-45887251b1a4e64c-1",
+          "definition": "may; might; expresses possibility or uncertainty"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "泣けば書生が迎えに来るかもしれないと思い、「ニャー、ニャー」と声を出してみたが、誰も来なかった。",
+        "gloss": "might; may",
+        "sense_id": "ja-45887251b1a4e64c-1"
+      },
+      {
+        "sentence": "この穴がなければ、吾輩は道ばたで餓死していたかもしれない。",
+        "gloss": "might; may",
+        "sense_id": "ja-45887251b1a4e64c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a4d7856cf6f52d3149d066aa935a2aaa62f4f719c4b3257b1c960929fe5de6a6"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-6b0fbf5db1140458-7e9f6c70975493fe",
+  "entry_id": "ja-6b0fbf5db1140458",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-6b0fbf5db1140458",
+      "headword": "馬鹿野郎",
+      "reading": "ばかやろう",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-6b0fbf5db1140458-1",
+          "definition": "idiot; fool; an insulting or angry form of address"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が大きくあくびをして裏へ行こうとすると、主人は「この馬鹿野郎」と怒鳴った。",
+        "gloss": "you idiot; damn fool",
+        "sense_id": "ja-6b0fbf5db1140458-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d166888179416b62754c62731f95379e06e2d53100721aaff12e8aeecc2bd5ef"
+}

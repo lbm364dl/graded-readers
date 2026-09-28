@@ -42,6 +42,50 @@ def test_lexicalized_limit_can_be_in_explanation_without_duplicate_caveat(corpus
     guides.validate_rows(guides.inputs(corpus), [item])
 
 
+def test_lexicalized_formation_limit_need_not_be_repeated_in_caveat(corpus):
+    item = row()
+    item.update(structure='lexicalized', explanation_en=
+        'Available evidence does not establish what the second part contributed '
+        'when the word formed.')
+    guides.validate_rows(guides.inputs(corpus), [item])
+
+
+@pytest.mark.parametrize('modifier', ['reliably', 'directly', 'simply', 'completely', 'fully reliably'])
+def test_concrete_inline_limits_allow_natural_qualifiers(corpus, modifier):
+    item = row()
+    item.update(structure='lexicalized', explanation_en=
+        f'The conventional meaning is not {modifier} explained by adding the parts. '
+        'The whole has an established extended meaning.')
+    guides.validate_rows(guides.inputs(corpus), [item])
+
+
+def test_conjectural_naming_link_is_an_explicit_inline_limit(corpus):
+    item = row()
+    item.update(structure='lexicalized', explanation_en=
+        'The naming link is conjectural; the modern meaning is conventional.')
+    guides.validate_rows(guides.inputs(corpus), [item])
+
+
+@pytest.mark.parametrize('prose', [
+    'The historical shortening is proposed rather than established.',
+    'The connection is proposed rather than demonstrated.',
+    'The modern word should not be parsed simply as these two parts.',
+    'The written characters do not provide dependable separate contributions '
+    'to this modern meaning, so understand the word as a whole.',
+    'The parts cannot provide reliable meanings for the complete expression.',
+    'The individual contributions of these characters to the modern meaning '
+    'are not established.',
+    'The modern meaning is not a direct combination of separate meanings of '
+    'the written characters.',
+    'Proposed origins involving the written characters are not established '
+    'by the available evidence.',
+])
+def test_explicit_lexicalized_limits_are_recognized(corpus, prose):
+    item = row()
+    item.update(structure='lexicalized', explanation_en=prose)
+    guides.validate_rows(guides.inputs(corpus), [item])
+
+
 def test_component_reconstruction_error_identifies_duplicate_whole_word(corpus):
     item = row()
     item['parts'].append(dict(text='看到', contribution_en='see', claim_ids=[]))
@@ -66,6 +110,16 @@ def test_lexicalized_limit_can_describe_what_characters_do_not_specify(corpus):
     item.update(structure='lexicalized', explanation_en=
                 'This is a conventional title. Its characters do not by themselves '
                 'specify the exact rank or duties.')
+    guides.validate_rows(guides.inputs(corpus), [item])
+
+
+def test_lexicalized_bare_definition_names_entry_in_repair_error(corpus):
+    item = row()
+    item.update(structure='lexicalized', explanation_en='The word means seeing.',
+                caveat_en='', parts=[])
+    with pytest.raises(ValueError, match='word-kandao: Lexicalized explanation'):
+        guides.validate_rows(guides.inputs(corpus), [item])
+    item['caveat_en'] = 'This meaning is not predictable from the separate characters.'
     guides.validate_rows(guides.inputs(corpus), [item])
 
 
@@ -301,7 +355,11 @@ def test_source_specific_narration_cannot_publish(corpus, field):
         guides.validate_rows(guides.inputs(corpus), [item])
 
 
-def test_generic_sentence_context_is_not_source_narration(corpus):
+@pytest.mark.parametrize('prose', [
+    'Its role as subject or object comes from the sentence.',
+    'A particle shows its role in the sentence.',
+])
+def test_generic_sentence_context_is_not_source_narration(corpus, prose):
     item = row()
-    item['caveat_en'] = 'Its role as subject or object comes from the sentence.'
+    item['caveat_en'] = prose
     guides.validate_rows(guides.inputs(corpus), [item])

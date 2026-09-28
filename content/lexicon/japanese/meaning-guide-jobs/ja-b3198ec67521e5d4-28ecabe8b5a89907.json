@@ -1,0 +1,32 @@
+{
+  "id": "ja-b3198ec67521e5d4-28ecabe8b5a89907",
+  "entry_id": "ja-b3198ec67521e5d4",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-b3198ec67521e5d4",
+      "headword": "くれる",
+      "reading": "くれる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-b3198ec67521e5d4-1",
+          "definition": "to give something to the speaker or someone in the speaker’s in-group"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "車屋の主人は黒のおかげで一円五十銭ほど儲けているのに、ろくな食べ物もくれない。",
+        "gloss": "does not give me",
+        "sense_id": "ja-b3198ec67521e5d4-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "980e6f0d8869109aab8758128489a21c41e3068b9dc2eea120496bd2a1866d30"
+}

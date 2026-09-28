@@ -1,0 +1,32 @@
+{
+  "id": "ja-e17e6cf4fe4abaae-111c5fff825e7bb4",
+  "entry_id": "ja-e17e6cf4fe4abaae",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e17e6cf4fe4abaae",
+      "headword": "尻",
+      "reading": "しり",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e17e6cf4fe4abaae-1",
+          "definition": "buttocks; the rear part of the body on which one sits"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "先日などは、物差しで尻をひどくたたかれた。",
+        "gloss": "buttocks",
+        "sense_id": "ja-e17e6cf4fe4abaae-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "efcba8dd72543699d283b2a9837c5d091ab64de51f7f2aac183196920aedc7a0"
+}

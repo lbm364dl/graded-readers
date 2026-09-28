@@ -1,0 +1,32 @@
+{
+  "id": "ja-a4a05eee3d655fc0-deaf300fbe8c7c77",
+  "entry_id": "ja-a4a05eee3d655fc0",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a4a05eee3d655fc0",
+      "headword": "続く",
+      "reading": "つづく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-a4a05eee3d655fc0-1",
+          "definition": "to continue; to last"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "こんなに寝ていても仕事が続くなら、猫にだって出来ないことはない、と。",
+        "gloss": "continue; keep going",
+        "sense_id": "ja-a4a05eee3d655fc0-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c5c675d957970100377977b77c92c23b19f2e195551df132cefab8c84c573405"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-848baaa587cee225-d1f1b192d1a74b9e",
+  "entry_id": "ja-848baaa587cee225",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-848baaa587cee225",
+      "headword": "体格",
+      "reading": "たいかく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-848baaa587cee225-1",
+          "definition": "physique; build"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "元気も体格も失った黒は、最後に「いたちと魚屋の天秤棒には、もうこりごりだ」と言った。",
+        "gloss": "physique; build",
+        "sense_id": "ja-848baaa587cee225-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b2f7bdac553a3c5e695dbb7acf7ad299ebe5f94bf5ce8167643d22a574ff7f1f"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-c0cbbea4d1402cc9-7b1ff8d35b33f0b9",
+  "entry_id": "ja-c0cbbea4d1402cc9",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-c0cbbea4d1402cc9",
+      "headword": "二人",
+      "reading": "ふたり",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-c0cbbea4d1402cc9-1",
+          "definition": "two people"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "夜は五つと三つの子供の寝床へもぐり込み、二人の間で一緒に寝る。",
+        "gloss": "the two people",
+        "sense_id": "ja-c0cbbea4d1402cc9-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4a7cd45031e6a0620d8a4468924894f4080f6114f9220f20bf99089081c9ee7d"
+}

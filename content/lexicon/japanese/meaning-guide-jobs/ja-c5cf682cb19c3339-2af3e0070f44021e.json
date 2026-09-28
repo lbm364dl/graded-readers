@@ -1,0 +1,32 @@
+{
+  "id": "ja-c5cf682cb19c3339-2af3e0070f44021e",
+  "entry_id": "ja-c5cf682cb19c3339",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-c5cf682cb19c3339",
+      "headword": "いびき",
+      "reading": "いびき",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-c5cf682cb19c3339-1",
+          "definition": "snoring; the sound made while snoring"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が近づいても気にしないように、大きないびきをかいている。",
+        "gloss": "snore; snoring",
+        "sense_id": "ja-c5cf682cb19c3339-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f601686b96cfcdb11d81d60027991da585bcb0dc51495613bcc321b470349fca"
+}

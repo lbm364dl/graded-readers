@@ -1,0 +1,32 @@
+{
+  "id": "ja-bbb8fb1dc0ed93f8-6cbb561e2c3389e1",
+  "entry_id": "ja-bbb8fb1dc0ed93f8",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-bbb8fb1dc0ed93f8",
+      "headword": "見つめる",
+      "reading": "みつめる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-bbb8fb1dc0ed93f8-1",
+          "definition": "to gaze at; to stare at"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "猫は吾輩を見つめ、「お前はいったい何だ」と言った。",
+        "gloss": "staring at",
+        "sense_id": "ja-bbb8fb1dc0ed93f8-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9ec62a59d0b110eaf5c4da569ee88a53aed30fde2dfb6e907645079a6f76dcc1"
+}

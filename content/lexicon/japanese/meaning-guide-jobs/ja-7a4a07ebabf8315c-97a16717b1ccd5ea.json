@@ -1,0 +1,32 @@
+{
+  "id": "ja-7a4a07ebabf8315c-97a16717b1ccd5ea",
+  "entry_id": "ja-7a4a07ebabf8315c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-7a4a07ebabf8315c",
+      "headword": "空腹",
+      "reading": "くうふく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-7a4a07ebabf8315c-1",
+          "definition": "hunger; an empty stomach"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "だが、寒さと空腹には勝てず、隙を見て台所へ這い上がった。",
+        "gloss": "hunger; an empty stomach",
+        "sense_id": "ja-7a4a07ebabf8315c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8b0f2e8630c73b2cc71872523a4507b4556d358fd1cfcb1a18e9fb0684c73234"
+}

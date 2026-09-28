@@ -1,0 +1,32 @@
+{
+  "id": "ja-1a8c794310ed7bc4-87de8387a17becfb",
+  "entry_id": "ja-1a8c794310ed7bc4",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-1a8c794310ed7bc4",
+      "headword": "炬燵",
+      "reading": "こたつ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-1a8c794310ed7bc4-1",
+          "definition": "a low table with a heater and a covering quilt"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "その後、朝は飯櫃の上、夜は炬燵の上、天気のよい昼は椽側で寝るようになった。",
+        "gloss": "kotatsu",
+        "sense_id": "ja-1a8c794310ed7bc4-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "139658d66254c174c9b6f5d40dd0020fea9e3ad0623acbd6def65992dd321508"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-614bf17f6505276b-b6e3ae85d63b362b",
+  "entry_id": "ja-614bf17f6505276b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-614bf17f6505276b",
+      "headword": "間違い",
+      "reading": "まちがい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-614bf17f6505276b-1",
+          "definition": "mistake; error"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "俳句を作って雑誌へ送り、新しい詩を書き、間違いの多い英文を書いた。",
+        "gloss": "mistakes",
+        "sense_id": "ja-614bf17f6505276b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "58978aaa4e679fcb70fc6c56e70e1f7d2b0993d8cecb31de035e2623f20674b7"
+}

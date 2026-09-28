@@ -1,0 +1,32 @@
+{
+  "id": "ja-b50f66e0eb7f06a9-78562b68fe913d8b",
+  "entry_id": "ja-b50f66e0eb7f06a9",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-b50f66e0eb7f06a9",
+      "headword": "も",
+      "reading": "も",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-b50f66e0eb7f06a9-1",
+          "definition": "Also; too; even. With negation, can mean neither or not ... either."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "兄弟も母もいません。",
+        "gloss": "neither; not ... either",
+        "sense_id": "ja-b50f66e0eb7f06a9-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fd4de037ef1203c0cfc112ab36ccace9372690969beb08f720659749255a6a49"
+}

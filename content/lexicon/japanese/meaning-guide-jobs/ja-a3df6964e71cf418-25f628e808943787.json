@@ -1,0 +1,32 @@
+{
+  "id": "ja-a3df6964e71cf418-25f628e808943787",
+  "entry_id": "ja-a3df6964e71cf418",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a3df6964e71cf418",
+      "headword": "いる",
+      "reading": "いる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-a3df6964e71cf418-1",
+          "definition": "To exist or be present (of living things)."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "兄弟も母もいません。",
+        "gloss": "are not present",
+        "sense_id": "ja-a3df6964e71cf418-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c83dd38cbf380855739884b9fc8bf8f0649c6ef4af59ed1e72f3ec76729ac616"
+}

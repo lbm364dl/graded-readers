@@ -1,0 +1,757 @@
+{
+  "id": "ja-5a3faf1d2f144180-4374ae1d2a189139",
+  "entry_id": "ja-5a3faf1d2f144180",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-5a3faf1d2f144180",
+      "headword": "の",
+      "reading": "の",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-5a3faf1d2f144180-1",
+          "definition": "Links nouns to show possession, association, or a noun modifying another noun; of, belonging to, or one's."
+        },
+        {
+          "id": "ja-5a3faf1d2f144180-2",
+          "definition": "Nominalizes a preceding clause so it can function as a noun."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "男の人の手の上で、吾輩の目が回りました。",
+        "gloss": "of; linking noun modifier",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "男の人の手の上で、吾輩の目が回りました。",
+        "gloss": "my",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "吾輩は笹原の中へ捨てられました。",
+        "gloss": "of; in",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "吾輩は池を左に見ながら、ゆっくり歩き、人の家へ入りました。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "主人は吾輩を見て、「家の中に置いてやれ」と言いました。",
+        "gloss": "of; belonging to",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "手の上に乗せられ、顔を見ると、毛のない顔は薬缶のようで、顔の真ん中の出た所の穴から時々煙を吹いた。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "この書生の手の上で、吾輩はしばらく気持ちよく座っていた。",
+        "gloss": "of; ’s",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "とても明るい所で、痛いので出てみると、吾輩はわらの上から笹原へ捨てられていた。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "腹が減り、寒くなったので、食べ物を求めて池のそばを歩いた。",
+        "gloss": "of; linking modifier",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "人のにおいがする家を見つけ、こわれた竹垣の穴から中へ入った。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "主人は吾輩を見て、「では、家の内に置いてやれ」と言った。",
+        "gloss": "of; in",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "吾輩の家の裏には、小さな茶園がある。",
+        "gloss": "of; linking 吾輩 to 家",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "吾輩の家の裏には、小さな茶園がある。",
+        "gloss": "of; linking 家 to 裏",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "広くはないが、日がよく入り、静かで気持ちのよい所だ。",
+        "gloss": "linking particle",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "ある暖かい日の午後、昼ごはんの後で寝てから、吾輩は茶園を歩いた。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "西の垣のそばへ行くと、大きな黒い猫が枯菊の上で寝ていた。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "黒は「車屋の黒だ」と言った。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "ある日、黒は人間の悪い話をした。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "黒は「人間は、格好のよい泥棒だ」と怒った。",
+        "gloss": "linking; of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "後で聞いた話では、その人間は書生といい、人間の中でも特に悪い者だったらしい。",
+        "gloss": "among; of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "しかし、その時の吾輩には何も考えがなく、怖いとも思わなかった。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "ただ、書生の掌の上に乗せられ、ふわりと持ち上げられた感じが残っている。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "掌の上で少し落ち着き、書生の顔を見たことが、人間というものの見始めだったのだろう。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "顔の真ん中から何かがひどく突き出ていて、その穴の中から時々ぷうぷうと煙を吹いた。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "これが人間の飲むたばこだということを、吾輩はようやくこの頃知った。",
+        "gloss": "of; belonging to",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "この書生の手の上で休んでいると、急に速く動き始めた。",
+        "gloss": "of; belonging to",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "この書生の手の上で休んでいると、急に速く動き始めた。",
+        "gloss": "of; on",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "吾輩は藁の上から笹原へ捨てられていた。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "やがて人間の家らしい所へ着き、竹垣の穴から中へ入った。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "明るく暖かい方へ進むと、いつの間にか家の中にいた。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "最初に会ったおさんは乱暴で、吾輩の頸筋をつかみ、台所から何度も外へ投げ出した。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "おさんは不満そうだったが、吾輩はこの家を自分の住家と決めた。",
+        "gloss": "of; my",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "吾輩の主人は教師だが、吾輩と顔を合わせることはめったにない。",
+        "gloss": "of; possessive marker",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "家のものは勉強家だと思っているが、実際はそうでもない。",
+        "gloss": "of; belonging to",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "吾輩がそっと書斎をのぞくと、主人は昼寝をしていたり、読みかけの本に涎をたらしていたりする。",
+        "gloss": "linking; of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "これが毎晩の生活である。",
+        "gloss": "of; linking modifier",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "吾輩はこの家で、主人以外のものには不人望だった。",
+        "gloss": "of; belonging to",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "仕方なく主人のそばで暮らし、朝は膝、昼は背中に乗った。",
+        "gloss": "of; belonging to",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "夜は五つと三つの子供の寝床へもぐり込み、二人の間で一緒に寝る。",
+        "gloss": "attributive linker",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "夜は五つと三つの子供の寝床へもぐり込み、二人の間で一緒に寝る。",
+        "gloss": "possessive/attributive linker",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "わがままな主人の失敗を一つ話そう。",
+        "gloss": "of; linking modifier",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "次の日、主人は縁側で昼寝する吾輩を写生し始めた。",
+        "gloss": "of; linking the time expression",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "吾輩は動かずにいたが、絵は妙な色で、目もなく、目の見えない猫なのか、寝ている猫なのか分からない。",
+        "gloss": "of; linking noun modifier",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "しかし主人の熱心さには感心した。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "吾輩は、今までじっとしていた者の気持ちも知らず、ひどいものだと思った。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "吾輩の家の裏には、十坪ほどの茶園がある。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "吾輩の家の裏には、十坪ほどの茶園がある。",
+        "gloss": "linking modifier",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "広くはないが、さっぱりとして気持ちよく、日の当たる所だ。",
+        "gloss": "attributive linker",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "ある小春の穏やかな日、昼寝のあとでそこへ行くと、杉垣のそばで大きな黒猫が気持ちよさそうに寝ていた。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "名前はまだない」と答えると、彼は「おれは車屋の黒だ」と名乗った。",
+        "gloss": "of; belonging to",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "黒は乱暴で、体は吾輩の二倍もあり、たいへん強そうだった。",
+        "gloss": "possessive/linking particle",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "吾輩が鼠をとったことはないと言うと、黒は、人間が猫のとった鼠を取り上げて交番へ持って行き、五銭をもらうという話をした。",
+        "gloss": "possessive/attributive marker",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "黒の主人はそのお金で一円五十銭ほど得たのに、黒にはろくな食べ物を与えなかったという。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "「人間は、体のよい泥棒だ」と黒は怒った。",
+        "gloss": "of; linking noun modifier",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "その後、黒は足を悪くし、毛の色も悪くなり、目には目やにがたまった。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "元気も体格も失った黒は、最後に「いたちと魚屋の天秤棒には、もうこりごりだ」と言った。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "しかも、あとで聞いた話では、それは書生という、人間の中でも一番乱暴な種類の人だった。",
+        "gloss": "of; among",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "しかも、あとで聞いた話では、それは書生という、人間の中でも一番乱暴な種類の人だった。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "けれど、その時の吾輩にはそんな考えはなく、別に怖いとも思わなかった。",
+        "gloss": "of; belonging to",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "ただ、書生の手のひらに乗せられて、すっと上へ持ち上げられた時、何だかふわふわするような感じがしただけだった。",
+        "gloss": "of; linking modifier",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "手のひらの上で少し落ち着いてから、吾輩は書生の顔を見た。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "その後、吾輩はほかの猫にもたくさん会ったが、こんな変な顔には一度も出会わなかった。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "顔の真ん中が、あまりにも突き出ている。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "そして、その穴の中から時々、ぷうぷうと煙を吹く。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "これが人間の飲むたばこという物だと、ようやくこの頃知った。",
+        "gloss": "of; belonging to",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "この書生の手のひらの上で、吾輩はしばらく気持ちよく座っていた。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "吾輩は藁の上から、急に笹原の中へ棄てられたのである。",
+        "gloss": "of; modifying",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "吾輩は池の前に座り、どうすればよいか考えた。",
+        "gloss": "of; linking noun modifier",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "風が池の上を通り、日が暮れ始めると、腹がひどく減ってきた。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "声も出せないので、食物のある所まで歩く決心をし、池を左に見ながら、ゆっくり回り始めた。",
+        "gloss": "of; linking modifier",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "苦しかったが、我慢して進むと、人間の気配がする所に出た。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "竹垣の崩れた穴から、とある邸内にもぐり込んだ。",
+        "gloss": "of; modifying",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "そこは、すでに家の内だった。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "ついに家の主人が出て来て、吾輩を見た。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "そして、「そんなら、家の内に置いてやれ」と言った。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "そこで吾輩は、この家を自分の住家と極めたのである。",
+        "gloss": "of; ’s",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "吾輩の主人は教師である。",
+        "gloss": "of; possessive linker",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "読みかけの本の上に、よだれをたらしていることさえある。",
+        "gloss": "of; linking noun modifier",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "読みかけの本の上に、よだれをたらしていることさえある。",
+        "gloss": "of; indicating relation",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "主人は胃が弱く、顔の色も黄色く、元気がないように見える。",
+        "gloss": "of; linking modifier",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "しかし二、三ページ読むと眠くなり、本の上によだれをたらす。",
+        "gloss": "of; belonging to",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "これが主人の毎晩の習慣である。",
+        "gloss": "indicates possession or attribution",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "これが主人の毎晩の習慣である。",
+        "gloss": "links a modifier to a noun",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "人間に生まれたなら、教師になるのが一番よい。",
+        "gloss": "nominalizes the preceding clause",
+        "sense_id": "ja-5a3faf1d2f144180-2"
+      },
+      {
+        "sentence": "友達が来るたびに、主人は仕事の不平をいろいろ言っている。",
+        "gloss": "of; relating to",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "吾輩がこの家に住み始めたころは、主人以外の家の者には、ひどく嫌われていた。",
+        "gloss": "of; belonging to",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "仕方がないので、吾輩を家に入れてくれた主人の近くに、出来るだけいることにした。",
+        "gloss": "of; possessive marker",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "朝、主人が新聞を読むときは、必ず膝の上に乗る。",
+        "gloss": "of; linking noun modifier",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "その後、朝は飯櫃の上、夜は炬燵の上、天気のよい昼は椽側で寝るようになった。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "ほかに吾輩の世話をする者がいなかったからである。",
+        "gloss": "of; belonging to",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "しかし、夜になると、家の小供の寝床へもぐり込み、いっしょに寝るのが一番気持ちよい。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "しかし、夜になると、家の小供の寝床へもぐり込み、いっしょに寝るのが一番気持ちよい。",
+        "gloss": "the act of",
+        "sense_id": "ja-5a3faf1d2f144180-2"
+      },
+      {
+        "sentence": "小供は五つと三つの二人で、一つの寝床に入る。",
+        "gloss": "linking modifier",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "小供は五つと三つの二人で、一つの寝床に入る。",
+        "gloss": "of; linking modifier",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "吾輩は二人の間に少し空いた場所を見つけ、どうにか入り込む。",
+        "gloss": "of; linking modifier",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "すると胃の弱い主人が必ず目を覚まし、隣の部屋から飛び出して来る。",
+        "gloss": "of; linking modifier",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "先日は、物差しで吾輩の尻をひどくたたかれた。",
+        "gloss": "possessive marker",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "自分の気分しだいで、吾輩を逆さにしたり、頭に袋をかぶせたり、外へ投げ出したり、へっついの中へ押し込んだりする。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "そのうえ、吾輩が少しでも手を出すと、家の者全員で追いかけ、いじめる。",
+        "gloss": "of; belonging to",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "台所の板の間で他の者が震えていても、彼らは少しも気にしない。",
+        "gloss": "of; linking modifier",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "　吾輩が尊敬している、筋向の白君は、会うたびに「人間ほど愛情のないものはない」と言う。",
+        "gloss": "linking modifier",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "ところが、その家の書生が三日目に子猫を四匹とも裏の池へ持って行き、捨てて来たそうだ。",
+        "gloss": "of; belonging to",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "ところが、その家の書生が三日目に子猫を四匹とも裏の池へ持って行き、捨てて来たそうだ。",
+        "gloss": "of; adjoining",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "そして、「猫族が親子の愛を守り、美しい家族の生活をするには、人間と戦い、彼らを滅ぼさなければならない」と言った。",
+        "gloss": "of; linking noun modifier",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "　隣の三毛君は、人間は所有権ということを理解していないと怒っている。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "我々猫の間では、目刺しの頭でも、ぼらのへそでも、最初に見つけた者が食べる権利を持つ。",
+        "gloss": "of; belonging to",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "我々猫の間では、目刺しの頭でも、ぼらのへそでも、最初に見つけた者が食べる権利を持つ。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "　白君は軍人の家に、三毛君は弁護士の家に、吾輩は先生の家に住んでいる。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "気を長くして、猫の時節を待つことにしよう。",
+        "gloss": "of; belonging to",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "吾輩の家の主人が、その我儘で失敗した話をしよう。",
+        "gloss": "of; ’s",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "俳句を作って雑誌へ送り、新しい詩を書き、間違いの多い英文を書いた。",
+        "gloss": "linking modifier to noun",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "便所で謡を歌うので、近所の人から「後架先生」と呼ばれても、気にせず同じ歌を繰り返していた。",
+        "gloss": "of; belonging to",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "吾輩がこの家に来て一月ほど後の、ある給料日に、主人は大きな包みを持って帰って来た。",
+        "gloss": "linking; of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "主人が「自分で筆を持つと、絵は実に難しい」と言うと、友人は、室内の想像だけでは絵はかけない、自然そのものを見て写生すべきだと教えた。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "主人は書斎から出て来て、吾輩の後ろで熱心に筆を動かしていた。",
+        "gloss": "of; possessive marker",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "そして、もう写生の邪魔をしたのだから仕方がないと思い、裏へ行って用を足そうと、ゆっくり歩き出した。",
+        "gloss": "of; nominal modifier",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "すると主人は、失望と怒りの混じった声で、座敷から「この馬鹿野郎」と怒鳴った。",
+        "gloss": "of; linking modifier",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "吾輩は、今までじっとしていた者の気持ちも知らず、そんな悪口を言うのはひどいと思った。",
+        "gloss": "of; ’s",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "人間は自分の力を信じすぎて、すぐ増長する。",
+        "gloss": "of; one's",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "吾輩の家の裏には、十坪ほどの茶園がある。",
+        "gloss": "of; possessive linker",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "吾輩の家の裏には、十坪ほどの茶園がある。",
+        "gloss": "of; linking noun modifier",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "吾輩の家の裏には、十坪ほどの茶園がある。",
+        "gloss": "nominal modifier",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "広くはないが、明るくて気持ちのよい場所だ。",
+        "gloss": "of; linking modifier",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "家の子供が騒いで昼寝ができない時や、退屈で気分が悪い時、吾輩はここへ来て休むことにしている。",
+        "gloss": "possessive/linking particle",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "ある小春日和の午後、昼飯のあとで少し眠り、運動をかねて茶園を歩いた。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "茶の木の根を一つ一つ嗅ぎながら西側の杉の垣根へ行くと、枯れた菊を押し倒し、その上で大きな猫が眠っていた。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "全身が真っ黒で、体は吾輩の倍もある。",
+        "gloss": "of; possessive marker",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "太陽の光を受けた毛は、黒い中から火が出るように光っていた。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "声には犬も怖がるほどの力があったので、吾輩は少し怖かったが、「吾輩は猫である。",
+        "gloss": "linking; of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "吾輩が教師の家だと言うと、「ずいぶん痩せているな」と笑った。",
+        "gloss": "of; linking nouns",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "吾輩が相手の名を聞くと、「おれは車屋の黒だ」と答えた。",
+        "gloss": "links nouns; of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "吾輩が相手の名を聞くと、「おれは車屋の黒だ」と答えた。",
+        "gloss": "of; belonging to",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "車屋の猫だけに力は強いが、教育がないので、あまり誰も付き合わないらしい。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "吾輩が「車屋と教師では、どちらが偉いか」と尋ねると、黒は「車屋の方が強いに決まっている。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "お前の主人を見ろ、骨と皮ばかりだ」と言った。",
+        "gloss": "possessive marker",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "車屋の主人は黒のおかげで一円五十銭ほど儲けているのに、ろくな食べ物もくれない。",
+        "gloss": "of; linking modifier to noun",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "「人間は、体裁のよい泥棒だ」と黒は怒った。",
+        "gloss": "linking; of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "黒の子分になって食べ物を探すこともしなかった。",
+        "gloss": "of; belonging to",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "しかし車屋の黒は、その後、跛になった。",
+        "gloss": "of; belonging to",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "つやのあった毛はだんだん色があせて抜け、きれいだった目には目やにがたまった。",
+        "gloss": "attributive linker",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "最後に茶園で会った時、吾輩が「どうした」と聞くと、黒は「鼬の最後っ屁と、肴屋の天秤棒には、もうこりごりだ」と答えた。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-5a3faf1d2f144180",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "grammatical",
+    "explanation_en": "の links a noun or noun-like phrase to a following noun, showing how the first phrase relates to or describes the second. The relation may be possession, association, kind, or location; English may express it with “of,” “my,” or another phrase, or leave it implicit.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "の",
+        "contribution_en": "Marks the relation between a noun phrase and the noun that follows it.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "7e3a05e54d0bf9a0fc381421989170ae5de83b0831fec1132ac68e2f0a180daa",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9cdaa63766a37281bb19619c193c60310cdcf27a4a00991e8a0a506a55bb4a66"
+}

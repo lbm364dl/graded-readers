@@ -1,0 +1,32 @@
+{
+  "id": "ja-77fabf1fe4304777-6cee7eefa699519a",
+  "entry_id": "ja-77fabf1fe4304777",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-77fabf1fe4304777",
+      "headword": "終える",
+      "reading": "おえる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-77fabf1fe4304777-1",
+          "definition": "To finish or bring something to an end."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は怖くなり、適当に話を終えて家へ帰った。",
+        "gloss": "finishing; having finished",
+        "sense_id": "ja-77fabf1fe4304777-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "31b54d454b95bb242d31d38c62c5a75a23a7fa97947ff2e2601546b4de6f59c3"
+}

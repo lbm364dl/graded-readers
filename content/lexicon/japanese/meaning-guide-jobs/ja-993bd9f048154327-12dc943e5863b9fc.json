@@ -1,0 +1,42 @@
+{
+  "id": "ja-993bd9f048154327-12dc943e5863b9fc",
+  "entry_id": "ja-993bd9f048154327",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-993bd9f048154327",
+      "headword": "困る",
+      "reading": "こまる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-993bd9f048154327-1",
+          "definition": "to be troubled; to have difficulty"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "どうも苦しくなって、吾輩はたいへん困った。",
+        "gloss": "was troubled; was in trouble",
+        "sense_id": "ja-993bd9f048154327-1"
+      },
+      {
+        "sentence": "少し人間より強い者が現れて、困らせてやらねばならない。",
+        "gloss": "must deliberately cause someone trouble",
+        "sense_id": "ja-993bd9f048154327-1"
+      },
+      {
+        "sentence": "食べ物には困っていないようだった。",
+        "gloss": "not being troubled; not lacking",
+        "sense_id": "ja-993bd9f048154327-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "47d5f5b6cd0fd657a3d72d5d7aa3ffd9b9373ac595864b53490d0279f7f37052"
+}

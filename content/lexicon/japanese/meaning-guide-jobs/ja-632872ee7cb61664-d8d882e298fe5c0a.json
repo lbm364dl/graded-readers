@@ -1,0 +1,32 @@
+{
+  "id": "ja-632872ee7cb61664-d8d882e298fe5c0a",
+  "entry_id": "ja-632872ee7cb61664",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-632872ee7cb61664",
+      "headword": "儲ける",
+      "reading": "もうける",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-632872ee7cb61664-1",
+          "definition": "to make a profit; earn money"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "車屋の主人は黒のおかげで一円五十銭ほど儲けているのに、ろくな食べ物もくれない。",
+        "gloss": "is making a profit",
+        "sense_id": "ja-632872ee7cb61664-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "afbe51d3066fea02908744fd403c101c6ba172a27fc96023c694fe9d645803ff"
+}

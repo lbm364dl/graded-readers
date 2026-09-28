@@ -1,0 +1,42 @@
+{
+  "id": "ja-d41901effa079f98-37ee0e2f860342fb",
+  "entry_id": "ja-d41901effa079f98",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d41901effa079f98",
+      "headword": "気にする",
+      "reading": "きにする",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d41901effa079f98-1",
+          "definition": "to care about; to mind; to be concerned about"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "台所の板の間で他の者が震えていても、彼らは少しも気にしない。",
+        "gloss": "do not care; pay no attention",
+        "sense_id": "ja-d41901effa079f98-1"
+      },
+      {
+        "sentence": "便所で謡を歌うので、近所の人から「後架先生」と呼ばれても、気にせず同じ歌を繰り返していた。",
+        "gloss": "without caring",
+        "sense_id": "ja-d41901effa079f98-1"
+      },
+      {
+        "sentence": "吾輩が近づいても気にせず、大きないびきをかいて寝ている。",
+        "gloss": "without caring; paying no attention",
+        "sense_id": "ja-d41901effa079f98-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3e47eee33361cd26dd6189ce7224fa34febee759609c880c928b4ef7f583e598"
+}

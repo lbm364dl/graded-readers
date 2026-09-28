@@ -1,0 +1,63 @@
+{
+  "id": "ja-7b670af0f888ff63-9ed334734de16d5a",
+  "entry_id": "ja-7b670af0f888ff63",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-7b670af0f888ff63",
+      "headword": "出す",
+      "reading": "だす",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-7b670af0f888ff63-1",
+          "definition": "To take or send something out; let out."
+        },
+        {
+          "id": "ja-7b670af0f888ff63-2",
+          "definition": "To produce or emit something, such as a sound."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "女の人は吾輩を何度も外へ出しましたが、吾輩は台所へ入りました。",
+        "gloss": "let out; sent outside",
+        "sense_id": "ja-7b670af0f888ff63-1"
+      },
+      {
+        "sentence": "声も出せないので、食物のある所まで歩く決心をし、池を左に見ながら、ゆっくり回り始めた。",
+        "gloss": "cannot make [a sound]",
+        "sense_id": "ja-7b670af0f888ff63-2"
+      },
+      {
+        "sentence": "そのうえ、吾輩が少しでも手を出すと、家の者全員で追いかけ、いじめる。",
+        "gloss": "to put out; extend",
+        "sense_id": "ja-7b670af0f888ff63-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-7b670af0f888ff63",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "出す means to take, send, or let something out of a place. These uses share the idea of causing something to move outward; the English verb depends on how it leaves.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "3fb1565f3cda6e8853e1c631f42585e62fa2f67d4fea0f35d301ccc2adf5bf83",
+    "revision": 2,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": [
+      "c0b1eb08320ae85713f9921289beef7c5a84e77436ce1a852459ccfa2d833283"
+    ]
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4fb7ad70f4ee4547b04017767d47ede280e2b02ca87e8ed75a15cb0123d74822"
+}

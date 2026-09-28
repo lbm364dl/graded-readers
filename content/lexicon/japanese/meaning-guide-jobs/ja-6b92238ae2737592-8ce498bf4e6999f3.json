@@ -1,0 +1,32 @@
+{
+  "id": "ja-6b92238ae2737592-8ce498bf4e6999f3",
+  "entry_id": "ja-6b92238ae2737592",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-6b92238ae2737592",
+      "headword": "実は",
+      "reading": "じつは",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-6b92238ae2737592-1",
+          "definition": "actually; in fact"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "「実は君、あれは出鱈目だよ。",
+        "gloss": "actually; in fact",
+        "sense_id": "ja-6b92238ae2737592-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5f1e2e0b32be0dab2d6ea5d815d5f67e6c43042c5d7518395859df8a24948550"
+}

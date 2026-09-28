@@ -1,0 +1,32 @@
+{
+  "id": "ja-9945dbd0d430287d-c2e62972de06ef86",
+  "entry_id": "ja-9945dbd0d430287d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9945dbd0d430287d",
+      "headword": "給料日",
+      "reading": "きゅうりょうび",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-9945dbd0d430287d-1",
+          "definition": "a day when wages or salary are paid; payday"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が家に来て一月ほどたった給料日に、主人は水彩絵具と毛筆とワットマンという紙を買い、今日から絵をかくと決めた。",
+        "gloss": "payday",
+        "sense_id": "ja-9945dbd0d430287d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8b7594863625226278172339375ecad09f798363fdbbe951c410e95530ec20f6"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-a8d34c11ad7b72a3-aa9a0534d0b4ac24",
+  "entry_id": "ja-a8d34c11ad7b72a3",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a8d34c11ad7b72a3",
+      "headword": "無学",
+      "reading": "むがく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-a8d34c11ad7b72a3-1",
+          "definition": "Lacking education or learning; uneducated, ignorant."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩はその名を聞くと少し不安になったが、同時に、どれほど無学なのか試してみたくなった。",
+        "gloss": "uneducated; ignorant",
+        "sense_id": "ja-a8d34c11ad7b72a3-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c5b741856a52cfde170b6e8ae291f8422624f038d5975c46278637e52b0bec65"
+}

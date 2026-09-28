@@ -1,0 +1,47 @@
+{
+  "id": "ja-1ee5ff033748b06c-b681aa3377186296",
+  "entry_id": "ja-1ee5ff033748b06c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-1ee5ff033748b06c",
+      "headword": "だろう",
+      "reading": "だろう",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-1ee5ff033748b06c-1",
+          "definition": "expresses conjecture or supposition, often translated “probably” or “I suppose”; in questions, it can express wondering"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "何とかなるだろうと思い、竹垣の崩れた穴から、とある邸内へもぐり込んだ。",
+        "gloss": "probably; I suppose",
+        "sense_id": "ja-1ee5ff033748b06c-1"
+      },
+      {
+        "sentence": "「どうせそんなことだろう。",
+        "gloss": "probably is; I suppose",
+        "sense_id": "ja-1ee5ff033748b06c-1"
+      },
+      {
+        "sentence": "「車屋と教師では、どちらが偉いだろう」\n",
+        "gloss": "probably; I wonder",
+        "sense_id": "ja-1ee5ff033748b06c-1"
+      },
+      {
+        "sentence": "そこで吾輩は、黒の方が年上だからたくさんとっただろうと、わざと尋ねた。",
+        "gloss": "probably; I suppose",
+        "sense_id": "ja-1ee5ff033748b06c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f5c664a2a86e0c569b5f9ad0b6e2b17f308d69d0988cc36ace6355447a8647ee"
+}

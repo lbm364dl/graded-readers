@@ -1,0 +1,32 @@
+{
+  "id": "ja-0a46d72d1613ee25-2066ac649b2617fe",
+  "entry_id": "ja-0a46d72d1613ee25",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-0a46d72d1613ee25",
+      "headword": "気配",
+      "reading": "けはい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-0a46d72d1613ee25-1",
+          "definition": "a sign or indication that someone or something is present"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "苦しかったが、我慢して進むと、人間の気配がする所に出た。",
+        "gloss": "sign; presence",
+        "sense_id": "ja-0a46d72d1613ee25-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6e6d8649adeb7cb61536b9a0febca1209106fc9877460ee2d1ef732cf1728b60"
+}

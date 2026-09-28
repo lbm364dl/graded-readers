@@ -1,0 +1,32 @@
+{
+  "id": "ja-7164c945b9c75c13-2d447ed3f3c82b6d",
+  "entry_id": "ja-7164c945b9c75c13",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-7164c945b9c75c13",
+      "headword": "ページ",
+      "reading": "ページ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-7164c945b9c75c13-1",
+          "definition": "page; a numbered side of a book or other publication"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "二、三ページ読むと眠くなる。",
+        "gloss": "three pages",
+        "sense_id": "ja-7164c945b9c75c13-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1df2259f065db7c8239af5bb2b088039fbdb2a63381e3d81af4802e89a485487"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-77f063cad55c3d06-62ef961f8bc0e942",
+  "entry_id": "ja-77f063cad55c3d06",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-77f063cad55c3d06",
+      "headword": "懲らしめる",
+      "reading": "こらしめる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-77f063cad55c3d06-1",
+          "definition": "to punish or discipline someone to correct their behavior"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "少し人間より強い者が現れて懲らしめてやらなくては、この先どこまで増長するか分からない。",
+        "gloss": "must teach him a lesson",
+        "sense_id": "ja-77f063cad55c3d06-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "75b7e0658fbe50947c926cad442f001c0b108df23a21442eeb83c71d4b1ae410"
+}

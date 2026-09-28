@@ -1,0 +1,32 @@
+{
+  "id": "ja-1b482d05683f1f9a-bac4775d006def0b",
+  "entry_id": "ja-1b482d05683f1f9a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-1b482d05683f1f9a",
+      "headword": "たくてたまらない",
+      "reading": "たくてたまらない",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-1b482d05683f1f9a-1",
+          "definition": "to want to do something intensely; to be unable to bear wanting to do something"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "だが、さっきから小便がしたくてたまらない。",
+        "gloss": "desperately want to; cannot stand wanting to",
+        "sense_id": "ja-1b482d05683f1f9a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "03aeda2a1d8fb1cb19df694217d31ed1063e1976c323a15dd6a56774dd2fc0c4"
+}

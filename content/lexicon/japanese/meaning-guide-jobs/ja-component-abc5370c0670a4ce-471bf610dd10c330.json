@@ -1,0 +1,26 @@
+{
+  "id": "ja-component-abc5370c0670a4ce-471bf610dd10c330",
+  "entry_id": "ja-component-abc5370c0670a4ce",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-component-abc5370c0670a4ce",
+      "headword": "ぶら",
+      "reading": "ぶら",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-component-abc5370c0670a4ce-1",
+          "definition": "A mimetic expression evoking something hanging or moving loosely."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "712b13dbc28ed43c46831827a122533a1eaa46ffae422f66a9c3dbaabb18ca09"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-d1880d9fae51460e-246d6242d1a65161",
+  "entry_id": "ja-d1880d9fae51460e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d1880d9fae51460e",
+      "headword": "得る",
+      "reading": "える",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d1880d9fae51460e-1",
+          "definition": "to earn; to obtain"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "黒の主人はそのお金で一円五十銭ほど得たのに、黒にはろくな食べ物を与えなかったという。",
+        "gloss": "earned; obtained",
+        "sense_id": "ja-d1880d9fae51460e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "75124d5256ea583c733432191c9d3156c00c44d2ca1d04c79ec6217a6ac57461"
+}

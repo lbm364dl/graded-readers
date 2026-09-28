@@ -1,0 +1,41 @@
+{
+  "id": "ja-da50e7d1261bf560-c14bd5c37ea322a9",
+  "entry_id": "ja-da50e7d1261bf560",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-da50e7d1261bf560",
+      "headword": "訴える",
+      "reading": "うったえる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-da50e7d1261bf560-1",
+          "definition": "to complain; make a complaint or appeal"
+        },
+        {
+          "id": "ja-da50e7d1261bf560-2",
+          "definition": "to appeal to; resort to something"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "おさんは吾輩をぶら下げ、「この宿なしの子猫は、何度外へ出しても台所へ上がって来て困ります」と訴えた。",
+        "gloss": "complained; appealed",
+        "sense_id": "ja-da50e7d1261bf560-1"
+      },
+      {
+        "sentence": "それが当然の決まりであり、相手が守らなければ、力に訴えてもよい。",
+        "gloss": "resorting to; appealing to",
+        "sense_id": "ja-da50e7d1261bf560-2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7dca68ef71c80827636ad6b963e2739448c29a477278e6416d7efb1f7f4ea8d9"
+}
