@@ -13,7 +13,8 @@ The reader links both layers from the original tap units; the separate word
 and grammar browsers show reusable explanations and source examples. This is
 a manually reviewed first-chapter pilot, not yet an agent-driven incremental
 dictionary editor or a full Korean morphology/form-chain system. See
-`pipeline/korean_agent_instructions.md` for the authoring and review rules.
+`pipeline/korean_agent_instructions.md` for the authoring rules and
+`pipeline/korean_parity_audit.md` for the full gap inventory.
 
 ## Japanese usage-dictionary pilot (N5)
 

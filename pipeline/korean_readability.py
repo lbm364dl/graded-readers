@@ -124,3 +124,35 @@ def validate_chapter(chapter: dict) -> dict:
     if not result["passes"]:
         raise ValueError(f"Korean Level 1 readability gate failed: {result}")
     return result
+
+
+def classify_segment(segment: dict) -> dict:
+    """Carry the same explicit target/lookup distinction as other readers."""
+    if segment["type"] == "punctuation":
+        return {"curriculum_status": "not_applicable",
+                "matched_curriculum_level": None,
+                "learning_focus": "not_applicable", "lookup_reason": "",
+                "story_role": "none"}
+    lexical = segment["lexical"]
+    kind, identity = lexical["kind"], lexical["id"]
+    if kind == "grammar":
+        return {"curriculum_status": "not_applicable",
+                "matched_curriculum_level": None,
+                "learning_focus": "target", "lookup_reason": "",
+                "story_role": "none"}
+    if kind == "proper_name":
+        return {"curriculum_status": "unlisted",
+                "matched_curriculum_level": None,
+                "learning_focus": "lookup", "lookup_reason": "proper_name",
+                "story_role": "name"}
+    if kind == "story_term":
+        return {"curriculum_status": "unlisted",
+                "matched_curriculum_level": None,
+                "learning_focus": "lookup", "lookup_reason": "story_term",
+                "story_role": "story_term"}
+    level = {"A": 1, "B": 2, "C": 3}[vocabulary()[identity]]
+    return {"curriculum_status": "in_level" if level == 1 else "above_level",
+            "matched_curriculum_level": level,
+            "learning_focus": "target" if level == 1 else "lookup",
+            "lookup_reason": "" if level == 1 else "above_level",
+            "story_role": "none"}

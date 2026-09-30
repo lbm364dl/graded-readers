@@ -4,9 +4,12 @@ from pathlib import Path
 import pytest
 
 from scripts import generate_app_content_json as publication
-from pipeline.korean_readability import diagnostics, validate_chapter, vocabulary
+from pipeline.korean_readability import (
+    classify_segment, diagnostics, validate_chapter, vocabulary,
+)
 from pipeline.publish_honggildong_smoke import build as publish_korean
 from pipeline.korean_dictionary import build_assets
+from pipeline.korean_sentence_breakdowns import build as build_breakdowns
 
 
 def pilot_chapter():
@@ -147,3 +150,38 @@ def test_korean_dictionary_keeps_repeated_word_positions_distinct(tmp_path):
              if use["entry_id"] == "topic-eun-neun"]
     assert len(topic) == 3
     assert len({use["start"] for use in topic}) == 3
+
+
+def test_korean_focus_distinguishes_story_and_above_level_vocabulary():
+    segments = pilot_chapter()["segments"]
+    assert classify_segment(segments[2])["lookup_reason"] == "proper_name"
+    assert classify_segment(segments[16])["lookup_reason"] == "story_term"
+    assert classify_segment(segments[14])["learning_focus"] == "target"
+    above = {**segments[14], "lexical": {"kind": "vocabulary", "id": "아이02/감"}}
+    assert classify_segment(above)["curriculum_status"] == "above_level"
+    assert classify_segment(above)["lookup_reason"] == "above_level"
+    assert classify_segment(segments[3])["curriculum_status"] == "not_applicable"
+
+
+def test_korean_form_chains_require_reviewed_complete_stages(tmp_path):
+    chapter = pilot_chapter()
+    assert chapter["segments"][7]["form_steps"][-1]["form"] == "살았습니다"
+    chapter["segments"][7]["form_steps"][-1]["form"] = "살았어요"
+    with pytest.raises(ValueError, match="does not end at tap surface"):
+        build_assets(chapter, tmp_path)
+    chapter = pilot_chapter()
+    chapter["segments"][7]["form_steps"] = []
+    with pytest.raises(ValueError, match="form review is incomplete"):
+        build_assets(chapter, tmp_path)
+
+
+def test_korean_sentence_breakdowns_are_selective_and_source_bound(tmp_path):
+    result = build_breakdowns(pilot_chapter(), tmp_path)
+    assert len(result["breakdowns"]) == 2
+    assert result["breakdowns"][0]["start"] == 22
+    assert not any(item["start"] == 0 for item in result["breakdowns"])
+    chapter = pilot_chapter()
+    chapter["segments"][14]["text"] = "낮은"
+    chapter["text"] = "".join(segment["text"] for segment in chapter["segments"])
+    with pytest.raises(ValueError, match="lost source alignment"):
+        build_breakdowns(chapter, tmp_path)

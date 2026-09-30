@@ -31,13 +31,25 @@ guessing. Repeated positions must remain distinct examples. New chapters
 reuse matching IDs and definitions before creating entries. The current
 publication scope has no automatic Korean dictionary proposer/reviewer yet;
 do not call it an end-to-end agent generation pipeline.
+Publish target/lookup metadata from the reviewed lexical identity and the
+versioned NIKL grade. A name is optional story lookup; a non-beginner story
+term is optional story vocabulary with occurrence-specific importance; an
+ordinary above-level word is extra vocabulary. Do not mark every Korean tap
+as a target, or promote an ordinary beginner word to story vocabulary because
+it matters in a sentence. For inflected forms, write ordered stages with the
+meaning of each complete form and an explicit grammar destination. Sentence
+breakdowns are optional: add one when a learner must connect several clauses
+or constructions to grasp a long/difficult sentence, and leave simple ones
+alone. Their parts must align with existing taps and their whole translation
+must be natural English. The current whole-construction form-routing gap is
+recorded in `korean_parity_audit.md`.
 When a learner reports one weak annotation, audit comparable occurrences and
 fix the shared data or rule. Add a regression for the issue and a contrasting
 case that should still pass.
 
 Run `python -m pipeline.publish_honggildong_smoke` to validate the single
-chapter and produce its two Korean app assets. The publisher checks explicit
+chapter and produce its Korean app assets. The publisher checks explicit
 lexical identities against the versioned NIKL list, source-alignment review,
-annotation reconstruction, linked word and grammar entries, an above-beginner
-budget, story-term budget, and sentence length. Inspect the rebuilt app preview
-after asset changes.
+annotation reconstruction, linked word and grammar entries, explicit form
+stages, selected sentence explanations, an above-beginner budget, story-term
+budget, and sentence length. Inspect the rebuilt app preview after asset changes.

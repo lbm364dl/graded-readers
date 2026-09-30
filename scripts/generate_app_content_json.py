@@ -607,19 +607,26 @@ def load_korean_annotations(
                 or not alignment.get("beats")):
             raise ValueError(f"unreviewed Korean source alignment in chapter {number}: {path}")
         validate_chapter(item)
+        from pipeline.korean_readability import classify_segment
         published = []
         for segment in segments:
             required = {"text", "type", "meaning_en"}
-            allowed = required | ({"lexical"} if segment["type"] == "word" else set())
-            if set(segment) != allowed:
+            allowed = required | ({"lexical", "story_importance_en", "form_steps"}
+                                  if segment["type"] == "word" else set())
+            if (not required.issubset(segment) or not set(segment).issubset(allowed)
+                    or (segment["type"] == "word" and "lexical" not in segment)):
                 raise ValueError(f"invalid Korean segment: {path}")
             kind = segment["type"]
             if kind not in {"word", "punctuation"} or (kind == "word") != bool(segment["meaning_en"].strip()):
                 raise ValueError(f"invalid Korean segment meaning: {path}")
-            published.append({**segment, "pinyin": "", "learning_focus":
-                              "not_applicable" if kind == "punctuation" else "target"})
+            if kind == "word" and segment["lexical"]["kind"] == "story_term" and not str(segment.get("story_importance_en", "")).strip():
+                raise ValueError(f"Korean story vocabulary lacks importance: {path}")
+            published.append({**segment, "pinyin": "", "target_curriculum_level": 1,
+                              **classify_segment(segment)})
         from pipeline.korean_dictionary import build_assets
         build_assets(item, ASSET_ROOT)
+        from pipeline.korean_sentence_breakdowns import build as build_sentence_breakdowns
+        build_sentence_breakdowns(item, ASSET_ROOT)
         relative = Path("annotations") / f"korean_{book_id}_{level_key}_{number:03d}.json"
         destination = ASSET_ROOT / relative
         destination.parent.mkdir(parents=True, exist_ok=True)

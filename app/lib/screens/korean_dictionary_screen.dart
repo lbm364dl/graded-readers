@@ -218,3 +218,77 @@ class KoreanDictionaryLinks extends StatelessWidget {
         },
       );
 }
+
+/// Reviewed complete-form meanings; each stage opens its grammar lesson.
+class KoreanFormChain extends StatelessWidget {
+  final AgentSegment segment;
+  final String source;
+  final String sourceText;
+  final int segmentIndex;
+  const KoreanFormChain(
+      {super.key,
+      required this.segment,
+      required this.source,
+      required this.sourceText,
+      required this.segmentIndex});
+
+  @override
+  Widget build(BuildContext context) => FutureBuilder<KoreanDictionary>(
+        future: KoreanDictionary.load(),
+        builder: (context, snapshot) {
+          if (!snapshot.hasData || segment.formSteps.isEmpty) {
+            return const SizedBox.shrink();
+          }
+          final dictionary = snapshot.data!;
+          final baseUse = dictionary.wordUse(source, sourceText, segmentIndex,
+              segment.text, segment.meaningEn);
+          if (baseUse == null) return const SizedBox.shrink();
+          final base =
+              dictionary.entry(baseUse['entry_id'] as String, isGrammar: false);
+          return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(height: 10),
+                Text('How this form is built',
+                    style: Theme.of(context).textTheme.labelMedium),
+                ListTile(
+                  dense: true,
+                  contentPadding: EdgeInsets.zero,
+                  title: Text(base['headword'] as String),
+                  subtitle: Text('Base · ${base['definition_en']}'),
+                  trailing: const Icon(Icons.chevron_right),
+                  onTap: () =>
+                      Navigator.of(context).push(MaterialPageRoute<void>(
+                    builder: (_) => KoreanEntryScreen(
+                        dictionary: dictionary,
+                        entry: base,
+                        grammar: false,
+                        selectedUse: baseUse),
+                  )),
+                ),
+                for (final step in segment.formSteps)
+                  ListTile(
+                    dense: true,
+                    contentPadding: EdgeInsets.zero,
+                    title: Text('→ ${step.form}'),
+                    subtitle: Text('${step.label} · ${step.meaningEn}'),
+                    trailing: const Icon(Icons.chevron_right),
+                    onTap: () {
+                      final id = step.grammarEntryIds.single;
+                      final use = dictionary
+                          .grammarUses(
+                              source, sourceText, segmentIndex, segment.text)
+                          .singleWhere((use) => use['entry_id'] == id);
+                      Navigator.of(context).push(MaterialPageRoute<void>(
+                        builder: (_) => KoreanEntryScreen(
+                            dictionary: dictionary,
+                            entry: dictionary.entry(id, isGrammar: true),
+                            grammar: true,
+                            selectedUse: use),
+                      ));
+                    },
+                  ),
+              ]);
+        },
+      );
+}

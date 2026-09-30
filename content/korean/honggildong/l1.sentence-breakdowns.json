@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "reviewed": true,
+  "breakdowns": [
+    {
+      "source": "assets/annotations/korean_honggildong_l1_001.json",
+      "start": 22,
+      "sentence": "길동의 아버지는 높은 벼슬을 한 사람이었습니다.",
+      "translation_en": "Gildong’s father was a man who held a high government post.",
+      "parts": [
+        {"text": "길동의 아버지는 ", "explanation_en": "This introduces Gildong’s father as the person being described."},
+        {"text": "높은 벼슬을 한 ", "explanation_en": "This describes the father by the high official post he held."},
+        {"text": "사람이었습니다.", "explanation_en": "The main statement says he was such a person."}
+      ]
+    },
+    {
+      "source": "assets/annotations/korean_honggildong_l1_001.json",
+      "start": 49,
+      "sentence": "하지만 길동은 아버지를 “아버지”라고 부를 수 없었습니다.",
+      "translation_en": "But Gildong could not call his father ‘Father.’",
+      "parts": [
+        {"text": "하지만 ", "explanation_en": "But signals a contrast with his father’s high status."},
+        {"text": "길동은 아버지를 ", "explanation_en": "Gildong is the topic; his father is the person he wanted to address."},
+        {"text": "“아버지”라고 ", "explanation_en": "This marks the exact title Gildong could not use."},
+        {"text": "부를 수 없었습니다.", "explanation_en": "This says that calling him by that title was not possible."}
+      ]
+    }
+  ]
+}

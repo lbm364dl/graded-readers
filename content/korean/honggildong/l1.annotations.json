@@ -67,7 +67,27 @@
           "lexical": {
             "kind": "vocabulary",
             "id": "살다01/동"
-          }
+          },
+          "form_steps": [
+            {
+              "form": "살았다",
+              "reading": "살았다",
+              "label": "plain past",
+              "meaning_en": "lived",
+              "grammar_entry_ids": [
+                "past-ass-eoss"
+              ]
+            },
+            {
+              "form": "살았습니다",
+              "reading": "살았습니다",
+              "label": "formal polite past",
+              "meaning_en": "lived",
+              "grammar_entry_ids": [
+                "polite-seumnida"
+              ]
+            }
+          ]
         },
         {
           "text": ".",
@@ -114,7 +134,18 @@
           "lexical": {
             "kind": "vocabulary",
             "id": "높다/형"
-          }
+          },
+          "form_steps": [
+            {
+              "form": "높은",
+              "reading": "높은",
+              "label": "noun modifier",
+              "meaning_en": "high; high-ranking",
+              "grammar_entry_ids": [
+                "modifier-eun"
+              ]
+            }
+          ]
         },
         {
           "text": " ",
@@ -128,7 +159,8 @@
           "lexical": {
             "kind": "story_term",
             "id": "벼슬/명"
-          }
+          },
+          "story_importance_en": "His father’s official post explains the family’s high status."
         },
         {
           "text": " ",
@@ -142,7 +174,18 @@
           "lexical": {
             "kind": "vocabulary",
             "id": "하다01/동"
-          }
+          },
+          "form_steps": [
+            {
+              "form": "한",
+              "reading": "한",
+              "label": "completed action modifier",
+              "meaning_en": "did; held",
+              "grammar_entry_ids": [
+                "past-action-modifier-n"
+              ]
+            }
+          ]
         },
         {
           "text": " ",
@@ -156,7 +199,36 @@
           "lexical": {
             "kind": "vocabulary",
             "id": "사람/명"
-          }
+          },
+          "form_steps": [
+            {
+              "form": "사람이다",
+              "reading": "사람이다",
+              "label": "plain identification",
+              "meaning_en": "is a person",
+              "grammar_entry_ids": [
+                "copula-ida"
+              ]
+            },
+            {
+              "form": "사람이었다",
+              "reading": "사람이었다",
+              "label": "plain past identification",
+              "meaning_en": "was a person",
+              "grammar_entry_ids": [
+                "past-ass-eoss"
+              ]
+            },
+            {
+              "form": "사람이었습니다",
+              "reading": "사람이었습니다",
+              "label": "formal polite past identification",
+              "meaning_en": "was a person",
+              "grammar_entry_ids": [
+                "polite-seumnida"
+              ]
+            }
+          ]
         },
         {
           "text": ".",
@@ -250,7 +322,18 @@
           "lexical": {
             "kind": "vocabulary",
             "id": "부르다01/동"
-          }
+          },
+          "form_steps": [
+            {
+              "form": "부를",
+              "reading": "부를",
+              "label": "modifier before 수",
+              "meaning_en": "to call; will call",
+              "grammar_entry_ids": [
+                "prospective-modifier-eul"
+              ]
+            }
+          ]
         },
         {
           "text": " ",
@@ -278,7 +361,27 @@
           "lexical": {
             "kind": "vocabulary",
             "id": "없다01/형"
-          }
+          },
+          "form_steps": [
+            {
+              "form": "없었다",
+              "reading": "없었다",
+              "label": "plain past",
+              "meaning_en": "was absent; was unavailable",
+              "grammar_entry_ids": [
+                "past-ass-eoss"
+              ]
+            },
+            {
+              "form": "없었습니다",
+              "reading": "없었습니다",
+              "label": "formal polite past",
+              "meaning_en": "was absent; was unavailable",
+              "grammar_entry_ids": [
+                "polite-seumnida"
+              ]
+            }
+          ]
         },
         {
           "text": ".",
@@ -311,7 +414,27 @@
           "lexical": {
             "kind": "vocabulary",
             "id": "슬프다/형"
-          }
+          },
+          "form_steps": [
+            {
+              "form": "슬펐다",
+              "reading": "슬펐다",
+              "label": "plain past",
+              "meaning_en": "was sad",
+              "grammar_entry_ids": [
+                "past-ass-eoss"
+              ]
+            },
+            {
+              "form": "슬펐습니다",
+              "reading": "슬펐습니다",
+              "label": "formal polite past",
+              "meaning_en": "was sad",
+              "grammar_entry_ids": [
+                "polite-seumnida"
+              ]
+            }
+          ]
         },
         {
           "text": ".",
@@ -414,6 +537,11 @@
         },
         {
           "segment_index": 34,
+          "entry_id": "prospective-modifier-eul",
+          "context_en": "부를 modifies 수 in the expression for being able to call someone."
+        },
+        {
+          "segment_index": 34,
           "entry_id": "ability-eul-su-eopda",
           "context_en": "부를 수 없었습니다 means that Gildong could not call him that."
         },
@@ -442,7 +570,19 @@
           "entry_id": "polite-seumnida",
           "context_en": "The narrator uses a formal polite ending."
         }
-      ]
+      ],
+      "form_audit": {
+        "reviewed": true,
+        "inflected_segment_indices": [
+          7,
+          14,
+          18,
+          20,
+          34,
+          38,
+          43
+        ]
+      }
     }
   ]
 }

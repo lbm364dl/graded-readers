@@ -12,6 +12,7 @@
     {"id": "polite-seumnida", "title_en": "Formal polite statement", "pattern": "-습니다", "explanation_en": "Ends a statement in a formal, polite style."},
     {"id": "modifier-eun", "title_en": "Description before a noun", "pattern": "-(으)ㄴ", "explanation_en": "Turns a descriptive word into a modifier placed before its noun."},
     {"id": "past-action-modifier-n", "title_en": "Completed action before a noun", "pattern": "-(으)ㄴ", "explanation_en": "After an action verb, this form describes a noun by an action already completed."},
+    {"id": "prospective-modifier-eul", "title_en": "Action before a following noun", "pattern": "-(으)ㄹ", "explanation_en": "Forms a modifier for an action considered possible or expected; before 수 it helps express ability or possibility."},
     {"id": "copula-ida", "title_en": "Is or was", "pattern": "이다", "explanation_en": "Connects a noun to what someone or something is. It can take past and polite endings."},
     {"id": "ability-eul-su-eopda", "title_en": "Cannot do something", "pattern": "-(으)ㄹ 수 없다", "explanation_en": "A verb in its -(으)ㄹ modifier form followed by 수 없다 means that doing it is not possible."}
   ]

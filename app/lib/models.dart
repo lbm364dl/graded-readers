@@ -5,12 +5,14 @@ class AgentFormStep {
   final String reading;
   final String label;
   final String meaningEn;
+  final List<String> grammarEntryIds;
 
   const AgentFormStep({
     required this.form,
     required this.reading,
     required this.label,
     required this.meaningEn,
+    this.grammarEntryIds = const [],
   });
 
   factory AgentFormStep.fromJson(Map<String, dynamic> json) => AgentFormStep(
@@ -18,6 +20,8 @@ class AgentFormStep {
         reading: json['reading'] as String,
         label: json['label'] as String,
         meaningEn: json['meaning_en'] as String,
+        grammarEntryIds:
+            (json['grammar_entry_ids'] as List? ?? const []).cast<String>(),
       );
 }
 

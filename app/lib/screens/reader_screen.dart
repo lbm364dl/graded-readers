@@ -19,6 +19,7 @@ import '../widgets/content_width.dart';
 import '../widgets/copy_text_button.dart';
 import '../widgets/japanese_form_chain.dart';
 import '../widgets/japanese_grammar_context.dart';
+import '../widgets/korean_sentence_breakdown.dart';
 import 'usage_dictionary_screen.dart';
 import 'grammar_dictionary_screen.dart';
 import 'korean_dictionary_screen.dart';
@@ -2262,6 +2263,19 @@ class _AgentDefinitionSheetState extends State<_AgentDefinitionSheet> {
                         segmentIndex: _word.usageSegmentIndex,
                         surface: _agent.text,
                         gloss: _agent.meaningEn),
+                  if (widget.language == Language.korean &&
+                      _agent.formSteps.isNotEmpty)
+                    KoreanFormChain(
+                        segment: _agent,
+                        source: _word.usageSource,
+                        sourceText: _word.usageSourceText,
+                        segmentIndex: _word.usageSegmentIndex),
+                  if (widget.language == Language.korean &&
+                      _word.usageStartOffset != null)
+                    KoreanSentenceBreakdownLink(
+                        source: _word.usageSource,
+                        sourceText: _word.usageSourceText,
+                        startOffset: _word.usageStartOffset!),
                   if (widget.language == Language.japanese &&
                       !_hasJapaneseChain)
                     GrammarDictionaryLinks(

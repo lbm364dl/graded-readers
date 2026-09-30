@@ -93,6 +93,31 @@ def build_assets(chapter: dict, output_dir: Path) -> tuple[dict, dict]:
         if segment["type"] == "word" and segment["lexical"]["kind"] == "grammar":
             if (index, segment["lexical"]["id"]) not in seen:
                 raise ValueError(f"Korean grammar tap has no linked lesson: {index}")
+    form_audit = chapter.get("form_audit", {})
+    inflected = form_audit.get("inflected_segment_indices")
+    if (form_audit.get("reviewed") is not True or not isinstance(inflected, list)
+            or len(set(inflected)) != len(inflected)
+            or set(inflected) != {i for i, segment in enumerate(segments)
+                                       if segment.get("form_steps")}):
+        raise ValueError("Korean form review is incomplete")
+    for index in inflected:
+        if not isinstance(index, int) or not 0 <= index < len(segments):
+            raise ValueError("invalid Korean form-review index")
+        segment = segments[index]
+        steps = segment["form_steps"]
+        forms = set()
+        for step in steps:
+            if (set(step) != {"form", "reading", "label", "meaning_en",
+                             "grammar_entry_ids"}
+                    or not all(str(step[key]).strip() for key in
+                               ("form", "reading", "label", "meaning_en"))
+                    or step["form"] in forms or len(step["grammar_entry_ids"]) != 1
+                    or any((index, entry_id) not in seen
+                           for entry_id in step["grammar_entry_ids"])):
+                raise ValueError(f"invalid Korean complete-form step: {index}")
+            forms.add(step["form"])
+        if steps[-1]["form"] != segment["text"] or steps[-1]["reading"] != segment["text"]:
+            raise ValueError(f"Korean form chain does not end at tap surface: {index}")
     used_words = {item["entry_id"] for item in word_uses}
     used_grammar = {item["entry_id"] for item in grammar_uses}
     if set(words) != used_words or set(grammar) != used_grammar:
