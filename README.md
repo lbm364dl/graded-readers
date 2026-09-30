@@ -1,6 +1,6 @@
-# Graded Readers — Chinese & Japanese
+# Graded Readers — Chinese, Japanese & Korean
 
-Classical literature simplified for language learners. Chinese texts graded by HSK level (1–6), Japanese texts graded by JLPT level (N5–N1).
+Classical literature simplified for language learners. Chinese texts graded by HSK level (1–6), Japanese texts graded by JLPT level (N5–N1). Korean has an opening Level 1 pilot; its level is not yet mapped to TOPIK.
 
 Each book is retold at multiple difficulty levels using progressively richer vocabulary, so a beginner and an advanced learner can both enjoy the same stories. Every reader follows a **95/5 vocabulary constraint**: at least 95% of word tokens come from the target level or below.
 
@@ -56,13 +56,17 @@ Each book is retold at multiple difficulty levels using progressively richer voc
 
 **97 readers, 800 chapters, 660K characters** of graded Japanese text.
 
+### Korean (pilot)
+
+The opening of **홍길동전 (The Tale of Hong Gildong)** is available as a modern-Korean Level 1 pilot with contextual tap glosses. The [1920 National Library of Korea woodblock scan](https://commons.wikimedia.org/wiki/File:CNTS-00047987469_%ED%99%8D%EA%B8%B8%EB%8F%99%EC%A0%84.pdf) is the fixed source edition; see [source provenance](books/korean/README.md). Further chapters, dictionary entries, grammar links, and calibrated Korean levels remain to be developed.
+
 ## Mobile App
 
 A Flutter app for Android and iOS with an interactive reading experience.
 
 ### Reading
 
-- **Dual language** — toggle between Chinese and Japanese, preference remembered
+- **Language switcher** — toggle between Chinese, Japanese, and the Korean pilot; preference remembered
 - **Word segmentation** — CJK text automatically split into tappable words
 - **Japanese deinflection** — conjugated verbs (masu, te-form, volitional, conditional, てしまう, irregular する/来る, etc.) map back to dictionary form
 - **Conjugation breakdown** — shows intermediate forms between inflected and dictionary form for educational purposes

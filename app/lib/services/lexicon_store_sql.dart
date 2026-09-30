@@ -11,8 +11,11 @@ abstract class SqlLexiconStore implements LexiconStore {
   @override
   bool get isReady => database != null;
 
-  String languageCode(Language language) =>
-      language == Language.chinese ? 'zh' : 'ja';
+  String languageCode(Language language) => switch (language) {
+        Language.chinese => 'zh',
+        Language.japanese => 'ja',
+        Language.korean => 'ko',
+      };
 
   @override
   List<String> words(Language language) {

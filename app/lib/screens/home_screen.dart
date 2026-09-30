@@ -42,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 onPressed: () => Navigator.of(context).push(
                     MaterialPageRoute<void>(
                         builder: (_) => const GrammarDictionaryScreen()))),
-          IconButton(
+          if (language != Language.korean) IconButton(
               tooltip: 'Reading dictionary',
               icon: const Icon(Icons.menu_book_outlined),
               onPressed: () => Navigator.of(context).push(
@@ -135,7 +135,9 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _buildByLevel(List<Book> books, Language language) {
-    final maxLevel = language == Language.chinese ? 6 : 5;
+    final maxLevel = language == Language.korean
+        ? books.expand((book) => book.levels.keys).fold<int>(0, (max, level) => level > max ? level : max)
+        : language == Language.japanese ? 5 : 6;
 
     return ContentWidth(
       child: ListView(
@@ -202,6 +204,7 @@ class _LanguageToggle extends StatelessWidget {
           children: [
             _langChip('中文', Language.chinese),
             _langChip('日本語', Language.japanese),
+            _langChip('한국어', Language.korean),
           ],
         ),
       ),
@@ -353,6 +356,7 @@ class _LevelHeader extends StatelessWidget {
   }
 
   String _levelTag(int level) {
+    if (language == Language.korean) return 'Level $level';
     if (language == Language.japanese) {
       const labels = {1: 'N5', 2: 'N4', 3: 'N3', 4: 'N2', 5: 'N1'};
       return 'JLPT ${labels[level] ?? level}';
@@ -361,6 +365,9 @@ class _LevelHeader extends StatelessWidget {
   }
 
   String _levelDescription(int level) {
+    if (language == Language.korean) {
+      return level == 1 ? 'Beginner pilot' : '';
+    }
     if (language == Language.japanese) {
       switch (level) {
         case 1:
@@ -424,7 +431,7 @@ class _LevelBookTile extends StatelessWidget {
         ),
       ),
       title: Text(book.title),
-      subtitle: Text('${reader.chapters.length} chapters'),
+      subtitle: Text('${reader.chapters.length} ${reader.chapters.length == 1 ? 'chapter' : 'chapters'}'),
       trailing: const Icon(Icons.chevron_right, size: 20),
       onTap: onTap,
     );
@@ -536,7 +543,7 @@ class _BookOverviewScreenState extends State<BookOverviewScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '${reader.chapters.length} chapters · ${_formatCharCount(totalChars)} chars',
+                      '${reader.chapters.length} ${reader.chapters.length == 1 ? 'chapter' : 'chapters'} · ${_formatCharCount(totalChars)} chars',
                     ),
                     if (hasProgress) ...[
                       const SizedBox(height: 6),

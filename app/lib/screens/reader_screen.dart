@@ -30,10 +30,9 @@ TextStyle _cjkTextStyle({
   double? height,
   Color? backgroundColor,
 }) {
-  final primaryFamily =
-      language == Language.japanese ? 'NotoSansJP' : 'NotoSansSC';
-  final fallbackFamily =
-      language == Language.japanese ? 'NotoSansSC' : 'NotoSansJP';
+  final primaryFamily = AppTheme.scriptFont(language);
+  final fallbackFamily = language == Language.japanese
+      ? 'NotoSansSC' : 'NotoSansJP';
   return TextStyle(
     fontFamily: primaryFamily,
     fontSize: fontSize,
@@ -850,10 +849,12 @@ class _ReaderScreenState extends State<ReaderScreen> {
         paragraphText.clear();
       }
 
-      final displayUnits = widget.reader.language == Language.japanese
-          ? buildJapaneseDisplayUnits(annotation)
-          : (await ChineseReadingUnits.load())
-              .forAnnotation(ch.annotationAsset, annotation);
+      final displayUnits = switch (widget.reader.language) {
+        Language.japanese => buildJapaneseDisplayUnits(annotation),
+        Language.chinese => (await ChineseReadingUnits.load())
+            .forAnnotation(ch.annotationAsset, annotation),
+        Language.korean => <ReadingDisplayUnit>[],
+      };
       final displayUnitsByStart = {
         for (final unit in displayUnits) unit.firstSegment: unit,
       };
@@ -956,7 +957,8 @@ class _ReaderScreenState extends State<ReaderScreen> {
     // its reviewed agent sidecar exists, render plain non-interactive prose so
     // a tap cannot surface stale segmentation or explanations.
     if (widget.reader.language == Language.chinese ||
-        widget.reader.language == Language.japanese) {
+        widget.reader.language == Language.japanese ||
+        widget.reader.language == Language.korean) {
       var paragraphOffset = 0;
       final paragraphs = ch.content
           .split(RegExp(r'\n\s*\n'))
@@ -1853,6 +1855,7 @@ _CurriculumBadge? _curriculumBadge(
   String surface,
 ) {
   if (entry == null) return null;
+  if (language == Language.korean) return null;
   if (language == Language.chinese) {
     final isSingleCharacter = surface.runes.length == 1;
     final level = isSingleCharacter
@@ -2128,13 +2131,15 @@ class _AgentDefinitionSheetState extends State<_AgentDefinitionSheet> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Semantics(
-                              label:
-                                  '${_word.surface}. Tap a character for its entry.',
+                              label: widget.language == Language.korean
+                                  ? _word.surface
+                                  : '${_word.surface}. Tap a character for its entry.',
                               child: _buildPlainWord(
                                 word: _word.surface,
                                 language: widget.language,
                                 fontSize: 32,
-                                onCharTap: _openNestedLookup,
+                                onCharTap: widget.language == Language.korean
+                                    ? null : _openNestedLookup,
                               ),
                             ),
                             if (_agent.pinyin.isNotEmpty &&
@@ -2235,7 +2240,8 @@ class _AgentDefinitionSheetState extends State<_AgentDefinitionSheet> {
                       style:
                           TextStyle(fontSize: 15, height: 1.45, color: muted),
                     ),
-                  if (_word.usageSource.isNotEmpty &&
+                  if (widget.language != Language.korean &&
+                      _word.usageSource.isNotEmpty &&
                       (widget.language != Language.japanese ||
                           !_hasJapaneseChain))
                     UsageDictionaryLink(

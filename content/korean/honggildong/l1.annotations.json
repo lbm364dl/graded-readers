@@ -1,0 +1,244 @@
+{
+  "schema_version": 1,
+  "language": "korean",
+  "book": "honggildong",
+  "level": "l1",
+  "chapters": [
+    {
+      "number": 1,
+      "title": "1. 길동의 집",
+      "text": "옛날에 홍길동이라는 아이가 살았습니다. 길동의 아버지는 높은 벼슬을 한 사람이었습니다. 하지만 길동은 아버지를 “아버지”라고 부를 수 없었습니다. 길동은 슬펐습니다.",
+      "segments": [
+        {
+          "text": "옛날에",
+          "type": "word",
+          "meaning_en": "long ago"
+        },
+        {
+          "text": " ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "홍길동",
+          "type": "word",
+          "meaning_en": "Hong Gildong"
+        },
+        {
+          "text": "이라는",
+          "type": "word",
+          "meaning_en": "called; named"
+        },
+        {
+          "text": " ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "아이가",
+          "type": "word",
+          "meaning_en": "a child (subject)"
+        },
+        {
+          "text": " ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "살았습니다",
+          "type": "word",
+          "meaning_en": "lived (polite past)"
+        },
+        {
+          "text": ".",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": " ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "길동의",
+          "type": "word",
+          "meaning_en": "Gildong’s"
+        },
+        {
+          "text": " ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "아버지는",
+          "type": "word",
+          "meaning_en": "father (topic)"
+        },
+        {
+          "text": " ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "높은",
+          "type": "word",
+          "meaning_en": "high-ranking"
+        },
+        {
+          "text": " ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "벼슬을",
+          "type": "word",
+          "meaning_en": "official position (object)"
+        },
+        {
+          "text": " ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "한",
+          "type": "word",
+          "meaning_en": "who held"
+        },
+        {
+          "text": " ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "사람이었습니다",
+          "type": "word",
+          "meaning_en": "was a person (polite past)"
+        },
+        {
+          "text": ".",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": " ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "하지만",
+          "type": "word",
+          "meaning_en": "but"
+        },
+        {
+          "text": " ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "길동은",
+          "type": "word",
+          "meaning_en": "Gildong (topic)"
+        },
+        {
+          "text": " ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "아버지를",
+          "type": "word",
+          "meaning_en": "father (object)"
+        },
+        {
+          "text": " ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "“",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "아버지",
+          "type": "word",
+          "meaning_en": "father"
+        },
+        {
+          "text": "”",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "라고",
+          "type": "word",
+          "meaning_en": "as; saying"
+        },
+        {
+          "text": " ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "부를",
+          "type": "word",
+          "meaning_en": "to call"
+        },
+        {
+          "text": " ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "수",
+          "type": "word",
+          "meaning_en": "way; ability"
+        },
+        {
+          "text": " ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "없었습니다",
+          "type": "word",
+          "meaning_en": "did not have; could not (polite past)"
+        },
+        {
+          "text": ".",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": " ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "길동은",
+          "type": "word",
+          "meaning_en": "Gildong (topic)"
+        },
+        {
+          "text": " ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "슬펐습니다",
+          "type": "word",
+          "meaning_en": "was sad (polite past)"
+        },
+        {
+          "text": ".",
+          "type": "punctuation",
+          "meaning_en": ""
+        }
+      ],
+      "annotation_audit": {
+        "all_reviewed": true,
+        "scope": "opening pilot; contextual tap glosses only"
+      }
+    }
+  ]
+}

@@ -68,6 +68,7 @@ flutter:
     - assets/grammar_dictionary_ja.json
     - assets/chinese_reading_units.json
     - assets/content_ja.json
+    - assets/content_ko.json
     - assets/annotations/
     - assets/lexicon.sqlite3
     - assets/lexicon_manifest.json
@@ -83,6 +84,9 @@ flutter:
     - family: NotoSansJP
       fonts:
         - asset: assets/fonts/NotoSansJP[wght].ttf
+    - family: NotoSansKR
+      fonts:
+        - asset: assets/fonts/NotoSansKR[wght].ttf
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

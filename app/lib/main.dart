@@ -15,8 +15,9 @@ void main() async {
 
   final prefs = await SharedPreferences.getInstance();
   final savedLang = prefs.getString(_languageKey);
-  final initialLang =
-      savedLang == 'japanese' ? Language.japanese : Language.chinese;
+  final initialLang = Language.values.firstWhere(
+      (language) => language.name == savedLang,
+      orElse: () => Language.chinese);
 
   runApp(GradedReadersApp(initialLanguage: initialLang));
 
@@ -40,8 +41,7 @@ class LanguageNotifier extends ValueNotifier<Language> {
     unawaited(DictionaryService.instance.switchLanguage(language));
     value = language;
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setString(
-        _languageKey, language == Language.japanese ? 'japanese' : 'chinese');
+    await prefs.setString(_languageKey, language.name);
   }
 }
 

@@ -14,6 +14,7 @@ class ContentRepository {
   static const _assetPaths = {
     Language.chinese: 'assets/content.json',
     Language.japanese: 'assets/content_ja.json',
+    Language.korean: 'assets/content_ko.json',
   };
 
   Future<List<Reader>> loadReaders(Language language) async {

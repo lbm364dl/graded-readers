@@ -25,6 +25,7 @@ ASSET_ROOT = ROOT / "app/assets"
 LANGUAGES = {
     "chinese": ({f"hsk{i}": i for i in range(1, 7)}, "content.json"),
     "japanese": ({f"n{i}": 6 - i for i in range(1, 6)}, "content_ja.json"),
+    "korean": ({f"l{i}": i for i in range(1, 7)}, "content_ko.json"),
 }
 HEADER = re.compile(r"^##\s+(.+)$")
 
@@ -341,6 +342,10 @@ def load_annotations(
             path, chapters, book_id=book_id, level_key=level_key,
             require_complete=require_complete,
         )
+    if language == "korean":
+        return load_korean_annotations(path, chapters, book_id=book_id,
+                                       level_key=level_key,
+                                       require_complete=require_complete)
     if not path.is_file():
         if not require_complete:
             return ["" for _ in chapters]
@@ -563,6 +568,58 @@ def load_annotations(
     return assets
 
 
+def load_korean_annotations(
+    path: Path, chapters: list[dict[str, str]], *, book_id: str,
+    level_key: str, require_complete: bool,
+) -> list[str]:
+    """Publish reviewed Korean tap units without Chinese/Japanese lookup guesses."""
+    if not path.is_file():
+        if not require_complete:
+            return ["" for _ in chapters]
+        raise ValueError(f"reviewed Korean annotations missing: {path}")
+    document = json.loads(path.read_text(encoding="utf-8"))
+    if document.get("schema_version") != 1 or document.get("language") != "korean":
+        raise ValueError(f"invalid Korean annotation document: {path}")
+    annotated = document.get("chapters")
+    if not isinstance(annotated, list):
+        raise ValueError(f"invalid Korean annotation chapters: {path}")
+    by_number = {item.get("number"): item for item in annotated if isinstance(item, dict)}
+    if len(by_number) != len(annotated) or any(
+        not isinstance(n, int) or not 1 <= n <= len(chapters) for n in by_number
+    ):
+        raise ValueError(f"invalid Korean annotation numbering: {path}")
+    if require_complete and set(by_number) != set(range(1, len(chapters) + 1)):
+        raise ValueError(f"Korean annotation chapter count does not match prose: {path}")
+    assets = ["" for _ in chapters]
+    for number, item in sorted(by_number.items()):
+        chapter = chapters[number - 1]
+        segments = item.get("segments")
+        if (item.get("text") != chapter["content"] or not isinstance(segments, list)
+                or not segments or item.get("annotation_audit", {}).get("all_reviewed") is not True):
+            raise ValueError(f"unreviewed Korean chapter {number}: {path}")
+        if "".join(segment.get("text", "") for segment in segments) != chapter["content"]:
+            raise ValueError(f"Korean segments do not reconstruct chapter {number}: {path}")
+        published = []
+        for segment in segments:
+            if set(segment) != {"text", "type", "meaning_en"}:
+                raise ValueError(f"invalid Korean segment: {path}")
+            kind = segment["type"]
+            if kind not in {"word", "punctuation"} or (kind == "word") != bool(segment["meaning_en"].strip()):
+                raise ValueError(f"invalid Korean segment meaning: {path}")
+            published.append({**segment, "pinyin": "", "learning_focus":
+                              "not_applicable" if kind == "punctuation" else "target"})
+        relative = Path("annotations") / f"korean_{book_id}_{level_key}_{number:03d}.json"
+        destination = ASSET_ROOT / relative
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        destination.write_text(json.dumps({
+            "language": "korean", "text": chapter["content"],
+            "segments": published, "grammar_overlays": [],
+            "annotation_audit": item["annotation_audit"],
+        }, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
+        assets[number - 1] = f"assets/{relative.as_posix()}"
+    return assets
+
+
 def build_language(
     language: str, levels: dict[str, int], *, require_complete_annotations: bool = True
 ) -> list[dict]:
@@ -650,6 +707,8 @@ def main() -> None:
     from pipeline import japanese_grammar_dictionary
     grammar_payload = (japanese_grammar_dictionary.build()
                        if japanese_grammar_dictionary.REGISTRY.exists() else None)
+    from pipeline import japanese_sentence_breakdowns
+    sentence_breakdown_payload = japanese_sentence_breakdowns.build()
     ASSET_ROOT.mkdir(parents=True, exist_ok=True)
     annotation_root = ASSET_ROOT / "annotations"
     if annotation_root.exists():
@@ -673,6 +732,7 @@ def main() -> None:
         atomic_json(japanese_usage_dictionary.OUTPUT, japanese_payload)
     if grammar_payload is not None:
         atomic_json(japanese_grammar_dictionary.OUTPUT, grammar_payload)
+    atomic_json(japanese_sentence_breakdowns.OUTPUT, sentence_breakdown_payload)
 
 
 if __name__ == "__main__":

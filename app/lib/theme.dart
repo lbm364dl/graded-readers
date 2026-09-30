@@ -26,8 +26,27 @@ class AppTheme {
     5: Color(0xFFE53935), // N1
   };
 
+  static const koreanColors = <int, Color>{
+    1: Color(0xFF43A047),
+    2: Color(0xFF039BE5),
+    3: Color(0xFFFFB300),
+    4: Color(0xFFFB8C00),
+    5: Color(0xFFF4511E),
+    6: Color(0xFFE53935),
+  };
+
+  static String scriptFont(Language language) => switch (language) {
+        Language.chinese => 'NotoSansSC',
+        Language.japanese => 'NotoSansJP',
+        Language.korean => 'NotoSansKR',
+      };
+
   static Color levelColor(int level, [Language language = Language.chinese]) {
-    final colors = language == Language.japanese ? jlptColors : hskColors;
+    final colors = switch (language) {
+      Language.chinese => hskColors,
+      Language.japanese => jlptColors,
+      Language.korean => koreanColors,
+    };
     return colors[level] ?? const Color(0xFF9E9E9E);
   }
 
@@ -38,8 +57,9 @@ class AppTheme {
     return base.apply(
       fontFamily: 'NotoSans',
       fontFamilyFallback: [
-        language == Language.japanese ? 'NotoSansJP' : 'NotoSansSC',
-        language == Language.japanese ? 'NotoSansSC' : 'NotoSansJP',
+        scriptFont(language),
+        'NotoSansSC',
+        'NotoSansJP',
       ],
     );
   }
@@ -50,8 +70,9 @@ class AppTheme {
       useMaterial3: true,
       fontFamily: 'NotoSans',
       fontFamilyFallback: [
-        language == Language.japanese ? 'NotoSansJP' : 'NotoSansSC',
-        language == Language.japanese ? 'NotoSansSC' : 'NotoSansJP',
+        scriptFont(language),
+        'NotoSansSC',
+        'NotoSansJP',
       ],
       textTheme: textTheme,
       colorScheme: ColorScheme.fromSeed(
@@ -108,8 +129,9 @@ class AppTheme {
       useMaterial3: true,
       fontFamily: 'NotoSans',
       fontFamilyFallback: [
-        language == Language.japanese ? 'NotoSansJP' : 'NotoSansSC',
-        language == Language.japanese ? 'NotoSansSC' : 'NotoSansJP',
+        scriptFont(language),
+        'NotoSansSC',
+        'NotoSansJP',
       ],
       textTheme: textTheme,
       colorScheme: ColorScheme.fromSeed(
