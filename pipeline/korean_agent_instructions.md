@@ -61,3 +61,7 @@ covers a larger construction containing that tap, add a reviewed row for the
 complete source phrase and its complete meaning, linked to that grammar entry.
 Record the exact ending segment for this phrase so publication can verify the
 span. Taps without a form chain keep their direct word and grammar links.
+Keep the reusable dictionary form and its definition visibly separate from
+the form used in a passage and its contextual gloss. A past or polite gloss
+belongs to the observed form, never to the dictionary headword. Check other
+inflected and particle-attached taps when a learner reports this confusion.

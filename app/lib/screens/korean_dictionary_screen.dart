@@ -130,6 +130,12 @@ class KoreanEntryScreen extends StatelessWidget {
         if (grammar)
           Text(entry['pattern'] as String,
               style: Theme.of(context).textTheme.titleLarge),
+        if (!grammar) ...[
+          Text(entry['kind'] == 'word' ? 'Dictionary form' : 'Dictionary entry',
+              style: Theme.of(context).textTheme.labelMedium),
+          Text(entry['headword'] as String,
+              style: Theme.of(context).textTheme.titleLarge),
+        ],
         const SizedBox(height: 12),
         Text(
             grammar
@@ -138,8 +144,11 @@ class KoreanEntryScreen extends StatelessWidget {
             style: Theme.of(context).textTheme.titleMedium),
         if (selectedUse != null) ...[
           const SizedBox(height: 18),
-          Text('In this passage',
+          Text(grammar ? 'In this passage' : 'Form in this passage',
               style: Theme.of(context).textTheme.labelMedium),
+          if (!grammar)
+            Text(selectedUse!['surface'] as String,
+                style: Theme.of(context).textTheme.titleMedium),
           Text((grammar ? selectedUse!['context_en'] : selectedUse!['gloss'])
               as String),
         ],
@@ -149,8 +158,9 @@ class KoreanEntryScreen extends StatelessWidget {
         for (final use in uses)
           ListTile(
             title: Text(use['sentence'] as String),
-            subtitle:
-                Text((grammar ? use['context_en'] : use['gloss']) as String),
+            subtitle: Text(grammar
+                ? use['context_en'] as String
+                : '${use['surface']} · ${use['gloss']}'),
             trailing: const Icon(Icons.open_in_new),
             onTap: () => _openSource(context, use),
           ),
@@ -292,7 +302,8 @@ class KoreanFormChain extends StatelessWidget {
                   dense: true,
                   contentPadding: EdgeInsets.zero,
                   title: Text(base['headword'] as String),
-                  subtitle: Text('Base · ${base['definition_en']}'),
+                  subtitle:
+                      Text('Dictionary form · ${base['definition_en']}'),
                   trailing: const Icon(Icons.chevron_right),
                   onTap: () =>
                       Navigator.of(context).push(MaterialPageRoute<void>(

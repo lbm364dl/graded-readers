@@ -125,4 +125,64 @@ void main() {
     expect(find.textContaining('Grammar ·'), findsOneWidget);
     expect(find.textContaining('Dictionary ·'), findsNothing);
   });
+
+  testWidgets('Dictionary form and observed Korean form have separate meanings',
+      (tester) async {
+    final dictionary = (await tester.runAsync(KoreanDictionary.load))!;
+    final source = dictionary.words['sources'].keys.single as String;
+    final text = dictionary.words['sources'][source]['text'] as String;
+    final annotation = (await tester.runAsync(() async => jsonDecode(
+        await rootBundle.loadString(source)) as Map<String, dynamic>))!;
+    final segments = (annotation['segments'] as List)
+        .cast<Map<String, dynamic>>()
+        .map(AgentSegment.fromJson)
+        .toList();
+
+    Future<void> openBase(int index) async {
+      await tester.pumpWidget(MaterialApp(
+          home: Scaffold(
+              body: KoreanTapLinks(
+                  segment: segments[index],
+                  source: source,
+                  sourceText: text,
+                  segmentIndex: index))));
+      await tester.runAsync(() async => Future<void>.delayed(Duration.zero));
+      await tester.pumpAndSettle();
+      await tester.tap(find.byType(ListTile).first);
+      await tester.pumpAndSettle();
+    }
+
+    await openBase(7);
+    expect(find.text('Dictionary form'), findsOneWidget);
+    expect(find.text('살다'), findsWidgets);
+    expect(find.text('to live'), findsOneWidget);
+    expect(find.text('Form in this passage'), findsOneWidget);
+    expect(find.text('살았습니다'), findsOneWidget);
+    expect(find.text('lived (polite past)'), findsOneWidget);
+    expect(find.text('살다 · lived (polite past)'), findsNothing);
+    await tester.pageBack();
+    await tester.pumpAndSettle();
+
+    await openBase(20);
+    expect(find.text('Dictionary form'), findsOneWidget);
+    expect(find.text('사람이었습니다'), findsOneWidget);
+    expect(find.text('person'), findsOneWidget);
+    await tester.pageBack();
+    await tester.pumpAndSettle();
+
+    await tester.pumpWidget(MaterialApp(
+        home: Scaffold(
+            body: KoreanTapLinks(
+                segment: segments[16],
+                source: source,
+                sourceText: text,
+                segmentIndex: 16))));
+    await tester.runAsync(() async => Future<void>.delayed(Duration.zero));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Dictionary · 벼슬'));
+    await tester.pumpAndSettle();
+    expect(find.text('Dictionary entry'), findsOneWidget);
+    expect(find.text('Form in this passage'), findsOneWidget);
+    expect(find.text('벼슬을'), findsOneWidget);
+  });
 }
