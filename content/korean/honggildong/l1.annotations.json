@@ -543,7 +543,10 @@
         {
           "segment_index": 34,
           "entry_id": "ability-eul-su-eopda",
-          "context_en": "부를 수 없었습니다 means that Gildong could not call him that."
+          "context_en": "부를 수 없었습니다 means that Gildong could not call him that.",
+          "display_form": "부를 수 없었습니다",
+          "display_meaning_en": "could not call",
+          "display_end_segment_index": 38
         },
         {
           "segment_index": 38,

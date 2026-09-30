@@ -159,6 +159,35 @@ class KoreanEntryScreen extends StatelessWidget {
   }
 }
 
+/// Keep the lexical and grammar destinations on form rows when a chain exists.
+class KoreanTapLinks extends StatelessWidget {
+  final AgentSegment segment;
+  final String source;
+  final String sourceText;
+  final int segmentIndex;
+
+  const KoreanTapLinks(
+      {super.key,
+      required this.segment,
+      required this.source,
+      required this.sourceText,
+      required this.segmentIndex});
+
+  @override
+  Widget build(BuildContext context) => segment.formSteps.isNotEmpty
+      ? KoreanFormChain(
+          segment: segment,
+          source: source,
+          sourceText: sourceText,
+          segmentIndex: segmentIndex)
+      : KoreanDictionaryLinks(
+          source: source,
+          sourceText: sourceText,
+          segmentIndex: segmentIndex,
+          surface: segment.text,
+          gloss: segment.meaningEn);
+}
+
 class KoreanDictionaryLinks extends StatelessWidget {
   final String source;
   final String sourceText;
@@ -245,6 +274,14 @@ class KoreanFormChain extends StatelessWidget {
           if (baseUse == null) return const SizedBox.shrink();
           final base =
               dictionary.entry(baseUse['entry_id'] as String, isGrammar: false);
+          final grammarUses = dictionary.grammarUses(
+              source, sourceText, segmentIndex, segment.text);
+          final stageIds = {
+            for (final step in segment.formSteps) ...step.grammarEntryIds
+          };
+          final constructionUses = grammarUses
+              .where((use) => !stageIds.contains(use['entry_id']))
+              .toList();
           return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -287,6 +324,24 @@ class KoreanFormChain extends StatelessWidget {
                             selectedUse: use),
                       ));
                     },
+                  ),
+                for (final use in constructionUses)
+                  ListTile(
+                    dense: true,
+                    contentPadding: EdgeInsets.zero,
+                    title: Text('→ ${use['display_form']}'),
+                    subtitle: Text(use['display_meaning_en'] as String),
+                    trailing: const Icon(Icons.chevron_right),
+                    onTap: () => Navigator.of(context).push(
+                        MaterialPageRoute<void>(
+                      builder: (_) => KoreanEntryScreen(
+                          dictionary: dictionary,
+                          entry: dictionary.entry(
+                              use['entry_id'] as String,
+                              isGrammar: true),
+                          grammar: true,
+                          selectedUse: use),
+                    )),
                   ),
               ]);
         },

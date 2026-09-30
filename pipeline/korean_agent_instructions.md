@@ -53,3 +53,11 @@ lexical identities against the versioned NIKL list, source-alignment review,
 annotation reconstruction, linked word and grammar entries, explicit form
 stages, selected sentence explanations, an above-beginner budget, story-term
 budget, and sentence length. Inspect the rebuilt app preview after asset changes.
+
+On a tap with a form chain, put the base-word destination on the base row and
+each transformation's grammar destination on its own row. Do not also show
+those links in a separate list above the chain. If another grammar pattern
+covers a larger construction containing that tap, add a reviewed row for the
+complete source phrase and its complete meaning, linked to that grammar entry.
+Record the exact ending segment for this phrase so publication can verify the
+span. Taps without a form chain keep their direct word and grammar links.

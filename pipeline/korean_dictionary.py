@@ -81,6 +81,21 @@ def build_assets(chapter: dict, output_dir: Path) -> tuple[dict, dict]:
             raise ValueError(f"invalid Korean grammar occurrence: {link}")
         seen.add((index, entry_id))
         start, end = positions[index]
+        stage_ids = {grammar_id for step in segments[index].get("form_steps", [])
+                     for grammar_id in step["grammar_entry_ids"]}
+        display_keys = {"display_form", "display_meaning_en", "display_end_segment_index"}
+        display = {}
+        if segments[index].get("form_steps") and entry_id not in stage_ids:
+            if not display_keys <= link.keys():
+                raise ValueError(f"Korean construction stage lacks complete form: {link}")
+            last = link["display_end_segment_index"]
+            if (not isinstance(last, int) or not index <= last < len(segments)
+                    or not str(link["display_meaning_en"]).strip()
+                    or link["display_form"] != source_text[start:positions[last][1]]):
+                raise ValueError(f"invalid Korean construction stage: {link}")
+            display = {key: link[key] for key in display_keys}
+        elif display_keys & link.keys():
+            raise ValueError(f"unexpected Korean construction stage: {link}")
         sentence, sentence_start = _sentence(source_text, start)
         grammar_uses.append({
             "id": f"{SOURCE}#grammar-{index}-{entry_id}", "source": SOURCE,
@@ -88,6 +103,7 @@ def build_assets(chapter: dict, output_dir: Path) -> tuple[dict, dict]:
             "surface": segments[index]["text"], "entry_id": entry_id,
             "context_en": link["context_en"], "sentence": sentence,
             "sentence_start": sentence_start,
+            **display,
         })
     for index, segment in enumerate(segments):
         if segment["type"] == "word" and segment["lexical"]["kind"] == "grammar":

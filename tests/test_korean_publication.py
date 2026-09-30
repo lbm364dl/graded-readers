@@ -175,6 +175,35 @@ def test_korean_form_chains_require_reviewed_complete_stages(tmp_path):
         build_assets(chapter, tmp_path)
 
 
+def test_korean_construction_stage_requires_exact_complete_phrase(tmp_path):
+    chapter = pilot_chapter()
+    _, grammar = build_assets(chapter, tmp_path)
+    construction = next(use for use in grammar["occurrences"]
+                        if use["entry_id"] == "ability-eul-su-eopda")
+    assert construction["display_form"] == "부를 수 없었습니다"
+    assert construction["display_meaning_en"] == "could not call"
+    chapter["grammar_links"] = [
+        {key: value for key, value in link.items()
+         if key != "display_meaning_en"}
+        if link["entry_id"] == "ability-eul-su-eopda" else link
+        for link in chapter["grammar_links"]
+    ]
+    with pytest.raises(ValueError, match="lacks complete form"):
+        build_assets(chapter, tmp_path)
+    chapter = pilot_chapter()
+    construction = next(link for link in chapter["grammar_links"]
+                        if link["entry_id"] == "ability-eul-su-eopda")
+    construction["display_form"] = "부를 수 있다"
+    with pytest.raises(ValueError, match="invalid Korean construction stage"):
+        build_assets(chapter, tmp_path)
+    chapter = pilot_chapter()
+    simple = next(link for link in chapter["grammar_links"]
+                  if link["entry_id"] == "object-eul-reul")
+    simple["display_form"] = "벼슬을"
+    with pytest.raises(ValueError, match="unexpected Korean construction stage"):
+        build_assets(chapter, tmp_path)
+
+
 def test_korean_sentence_breakdowns_are_selective_and_source_bound(tmp_path):
     result = build_breakdowns(pilot_chapter(), tmp_path)
     assert len(result["breakdowns"]) == 2

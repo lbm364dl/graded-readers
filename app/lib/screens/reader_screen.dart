@@ -2257,15 +2257,7 @@ class _AgentDefinitionSheetState extends State<_AgentDefinitionSheet> {
                         sourceText: _word.usageSourceText),
                   if (widget.language == Language.korean &&
                       _word.usageSource.isNotEmpty)
-                    KoreanDictionaryLinks(
-                        source: _word.usageSource,
-                        sourceText: _word.usageSourceText,
-                        segmentIndex: _word.usageSegmentIndex,
-                        surface: _agent.text,
-                        gloss: _agent.meaningEn),
-                  if (widget.language == Language.korean &&
-                      _agent.formSteps.isNotEmpty)
-                    KoreanFormChain(
+                    KoreanTapLinks(
                         segment: _agent,
                         source: _word.usageSource,
                         sourceText: _word.usageSourceText,
