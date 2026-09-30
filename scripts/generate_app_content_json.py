@@ -618,6 +618,8 @@ def load_korean_annotations(
                 raise ValueError(f"invalid Korean segment meaning: {path}")
             published.append({**segment, "pinyin": "", "learning_focus":
                               "not_applicable" if kind == "punctuation" else "target"})
+        from pipeline.korean_dictionary import build_assets
+        build_assets(item, ASSET_ROOT)
         relative = Path("annotations") / f"korean_{book_id}_{level_key}_{number:03d}.json"
         destination = ASSET_ROOT / relative
         destination.parent.mkdir(parents=True, exist_ok=True)

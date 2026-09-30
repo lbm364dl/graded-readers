@@ -1,0 +1,68 @@
+import 'dart:convert';
+
+import 'package:flutter/services.dart';
+
+/// Reviewed Korean word senses and grammar lessons tied to exact source spans.
+class KoreanDictionary {
+  final Map<String, dynamic> words;
+  final Map<String, dynamic> grammar;
+
+  KoreanDictionary(this.words, this.grammar) {
+    for (final data in [words, grammar]) {
+      if (data['language'] != 'korean') {
+        throw StateError('Invalid Korean dictionary language');
+      }
+    }
+  }
+
+  static Future<KoreanDictionary>? _pending;
+  static Future<KoreanDictionary> load() => _pending ??= _load();
+
+  static Future<KoreanDictionary> _load() async {
+    try {
+      final values = await Future.wait([
+        rootBundle.loadString('assets/usage_dictionary_ko.json'),
+        rootBundle.loadString('assets/grammar_dictionary_ko.json'),
+      ]);
+      return KoreanDictionary(
+        jsonDecode(values[0]) as Map<String, dynamic>,
+        jsonDecode(values[1]) as Map<String, dynamic>,
+      );
+    } catch (_) {
+      _pending = null;
+      rethrow;
+    }
+  }
+
+  Map<String, dynamic>? wordUse(String source, String sourceText,
+      int segmentIndex, String surface, String gloss) {
+    if (words['sources'][source]?['text'] != sourceText) return null;
+    for (final value in words['occurrences'] as List) {
+      final use = value as Map<String, dynamic>;
+      if (use['source'] == source &&
+          use['segment_index'] == segmentIndex &&
+          use['surface'] == surface &&
+          use['gloss'] == gloss) {
+        return use;
+      }
+    }
+    return null;
+  }
+
+  List<Map<String, dynamic>> grammarUses(
+      String source, String sourceText, int segmentIndex, String surface) {
+    if (grammar['sources'][source]?['text'] != sourceText) return [];
+    return (grammar['occurrences'] as List)
+        .cast<Map<String, dynamic>>()
+        .where((use) =>
+            use['source'] == source &&
+            use['segment_index'] == segmentIndex &&
+            use['surface'] == surface)
+        .toList();
+  }
+
+  Map<String, dynamic> entry(String id, {required bool isGrammar}) =>
+      ((isGrammar ? grammar : words)['entries'] as List)
+          .cast<Map<String, dynamic>>()
+          .singleWhere((entry) => entry['id'] == id);
+}

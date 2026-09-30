@@ -330,7 +330,119 @@
           "Hong Gildong is born to an official household",
           "His social position prevents him from addressing his father as father"
         ]
-      }
+      },
+      "grammar_links": [
+        {
+          "segment_index": 0,
+          "entry_id": "time-e",
+          "context_en": "에 places the story in the old days."
+        },
+        {
+          "segment_index": 3,
+          "entry_id": "naming-iran",
+          "context_en": "이라는 introduces the child by the name 홍길동."
+        },
+        {
+          "segment_index": 5,
+          "entry_id": "subject-i-ga",
+          "context_en": "가 marks the child as the one who lived."
+        },
+        {
+          "segment_index": 7,
+          "entry_id": "past-ass-eoss",
+          "context_en": "살았습니다 says that the living happened in the past."
+        },
+        {
+          "segment_index": 7,
+          "entry_id": "polite-seumnida",
+          "context_en": "The narrator uses a formal polite ending."
+        },
+        {
+          "segment_index": 10,
+          "entry_id": "possessive-ui",
+          "context_en": "의 relates 길동 to his father."
+        },
+        {
+          "segment_index": 12,
+          "entry_id": "topic-eun-neun",
+          "context_en": "는 makes Gildong’s father the topic of this statement."
+        },
+        {
+          "segment_index": 14,
+          "entry_id": "modifier-eun",
+          "context_en": "높은 describes the official post before the noun 벼슬."
+        },
+        {
+          "segment_index": 16,
+          "entry_id": "object-eul-reul",
+          "context_en": "을 marks the official post as what the father held."
+        },
+        {
+          "segment_index": 18,
+          "entry_id": "past-action-modifier-n",
+          "context_en": "한 describes the person by the post he held."
+        },
+        {
+          "segment_index": 20,
+          "entry_id": "copula-ida",
+          "context_en": "이었습니다 identifies the father as a person of high rank."
+        },
+        {
+          "segment_index": 20,
+          "entry_id": "past-ass-eoss",
+          "context_en": "이었습니다 puts that identification in the past."
+        },
+        {
+          "segment_index": 20,
+          "entry_id": "polite-seumnida",
+          "context_en": "The narrator uses a formal polite ending."
+        },
+        {
+          "segment_index": 25,
+          "entry_id": "topic-eun-neun",
+          "context_en": "은 makes Gildong the topic of the restriction."
+        },
+        {
+          "segment_index": 27,
+          "entry_id": "object-eul-reul",
+          "context_en": "를 marks father as the person Gildong could not call by that title."
+        },
+        {
+          "segment_index": 32,
+          "entry_id": "quotation-rago",
+          "context_en": "라고 marks 아버지 as the exact title Gildong could not say."
+        },
+        {
+          "segment_index": 34,
+          "entry_id": "ability-eul-su-eopda",
+          "context_en": "부를 수 없었습니다 means that Gildong could not call him that."
+        },
+        {
+          "segment_index": 38,
+          "entry_id": "past-ass-eoss",
+          "context_en": "없었습니다 places the inability in the past."
+        },
+        {
+          "segment_index": 38,
+          "entry_id": "polite-seumnida",
+          "context_en": "The narrator uses a formal polite ending."
+        },
+        {
+          "segment_index": 41,
+          "entry_id": "topic-eun-neun",
+          "context_en": "은 makes Gildong the topic of this statement."
+        },
+        {
+          "segment_index": 43,
+          "entry_id": "past-ass-eoss",
+          "context_en": "슬펐습니다 says that he was sad in the past."
+        },
+        {
+          "segment_index": 43,
+          "entry_id": "polite-seumnida",
+          "context_en": "The narrator uses a formal polite ending."
+        }
+      ]
     }
   ]
 }

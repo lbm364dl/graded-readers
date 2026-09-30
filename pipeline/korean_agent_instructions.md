@@ -23,6 +23,14 @@ prose and tap boundaries during annotation repair unless the prose itself is
 being deliberately revised. Every segment must reconstruct the source exactly;
 every word tap needs a useful English meaning of its whole occurrence. Explain
 an idiom as an idiom rather than concatenating literal component meanings.
+Each lexical identity needs a standalone entry in `l1.words.json` or
+`l1.grammar.json`. Grammar links on occurrence records carry their own
+`context_en`; never copy a one-passage note into a reusable lesson. Link
+inflections and particles to grammar lessons explicitly, without suffix
+guessing. Repeated positions must remain distinct examples. New chapters
+reuse matching IDs and definitions before creating entries. The current
+publication scope has no automatic Korean dictionary proposer/reviewer yet;
+do not call it an end-to-end agent generation pipeline.
 When a learner reports one weak annotation, audit comparable occurrences and
 fix the shared data or rule. Add a regression for the issue and a contrasting
 case that should still pass.
@@ -30,5 +38,6 @@ case that should still pass.
 Run `python -m pipeline.publish_honggildong_smoke` to validate the single
 chapter and produce its two Korean app assets. The publisher checks explicit
 lexical identities against the versioned NIKL list, source-alignment review,
-annotation reconstruction, an above-beginner budget, story-term budget, and
-sentence length. Inspect the rebuilt app preview after asset changes.
+annotation reconstruction, linked word and grammar entries, an above-beginner
+budget, story-term budget, and sentence length. Inspect the rebuilt app preview
+after asset changes.

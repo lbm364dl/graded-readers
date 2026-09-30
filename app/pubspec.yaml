@@ -66,6 +66,8 @@ flutter:
     - assets/usage_dictionary.json
     - assets/usage_dictionary_ja.json
     - assets/grammar_dictionary_ja.json
+    - assets/usage_dictionary_ko.json
+    - assets/grammar_dictionary_ko.json
     - assets/chinese_reading_units.json
     - assets/content_ja.json
     - assets/content_ko.json

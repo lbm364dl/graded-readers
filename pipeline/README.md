@@ -6,7 +6,13 @@
 *Hong Gildong* Level 1, chapter 1. It checks reviewed lexical identities
 against the attributed NIKL learner vocabulary list, source-beat review,
 sentence length, contextual tap coverage, and exact text reconstruction. The
-normal app asset builder applies the same Korean gate. See
+normal app asset builder applies the same Korean gate. Reviewed word senses,
+grammar lessons, and exact source-position links live separately in
+`content/lexicon/korean/` and publish to the two Korean dictionary assets.
+The reader links both layers from the original tap units; the separate word
+and grammar browsers show reusable explanations and source examples. This is
+a manually reviewed first-chapter pilot, not yet an agent-driven incremental
+dictionary editor or a full Korean morphology/form-chain system. See
 `pipeline/korean_agent_instructions.md` for the authoring and review rules.
 
 ## Japanese usage-dictionary pilot (N5)

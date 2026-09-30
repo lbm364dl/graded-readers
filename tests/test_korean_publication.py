@@ -6,6 +6,7 @@ import pytest
 from scripts import generate_app_content_json as publication
 from pipeline.korean_readability import diagnostics, validate_chapter, vocabulary
 from pipeline.publish_honggildong_smoke import build as publish_korean
+from pipeline.korean_dictionary import build_assets
 
 
 def pilot_chapter():
@@ -112,3 +113,37 @@ def test_korean_publisher_writes_only_first_chapter(tmp_path, monkeypatch):
     entries = json.loads((tmp_path / "content_ko.json").read_text(encoding="utf-8"))
     assert len(entries) == len(entries[0]["chapters"]) == 1
     assert len(list((tmp_path / "annotations").glob("*.json"))) == 1
+    words = json.loads((tmp_path / "usage_dictionary_ko.json").read_text())
+    grammar = json.loads((tmp_path / "grammar_dictionary_ko.json").read_text())
+    assert {entry["id"] for entry in words["entries"]} == {
+        use["entry_id"] for use in words["occurrences"]
+    }
+    assert {entry["id"] for entry in grammar["entries"]} == {
+        use["entry_id"] for use in grammar["occurrences"]
+    }
+    assert all(use["sentence"] in words["sources"][use["source"]]["text"]
+               for use in words["occurrences"])
+
+
+def test_korean_dictionary_rejects_stale_or_missing_grammar_links(tmp_path):
+    chapter = pilot_chapter()
+    chapter["grammar_links"] = [link for link in chapter["grammar_links"]
+                                if link["segment_index"] != 3]
+    with pytest.raises(ValueError, match="grammar tap has no linked lesson"):
+        build_assets(chapter, tmp_path)
+    assert not list(tmp_path.iterdir())
+    chapter = pilot_chapter()
+    chapter["grammar_links"][0]["entry_id"] = "unknown-pattern"
+    with pytest.raises(ValueError, match="invalid Korean grammar occurrence"):
+        build_assets(chapter, tmp_path)
+
+
+def test_korean_dictionary_keeps_repeated_word_positions_distinct(tmp_path):
+    words, grammar = build_assets(pilot_chapter(), tmp_path)
+    father = [use for use in words["occurrences"] if use["entry_id"] == "아버지/명"]
+    assert len(father) == 3
+    assert len({use["start"] for use in father}) == 3
+    topic = [use for use in grammar["occurrences"]
+             if use["entry_id"] == "topic-eun-neun"]
+    assert len(topic) == 3
+    assert len({use["start"] for use in topic}) == 3

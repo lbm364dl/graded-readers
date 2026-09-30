@@ -21,6 +21,7 @@ import '../widgets/japanese_form_chain.dart';
 import '../widgets/japanese_grammar_context.dart';
 import 'usage_dictionary_screen.dart';
 import 'grammar_dictionary_screen.dart';
+import 'korean_dictionary_screen.dart';
 
 TextStyle _cjkTextStyle({
   required double fontSize,
@@ -2253,6 +2254,14 @@ class _AgentDefinitionSheetState extends State<_AgentDefinitionSheet> {
                         source: _word.usageSource,
                         segmentIndex: _word.usageSegmentIndex,
                         sourceText: _word.usageSourceText),
+                  if (widget.language == Language.korean &&
+                      _word.usageSource.isNotEmpty)
+                    KoreanDictionaryLinks(
+                        source: _word.usageSource,
+                        sourceText: _word.usageSourceText,
+                        segmentIndex: _word.usageSegmentIndex,
+                        surface: _agent.text,
+                        gloss: _agent.meaningEn),
                   if (widget.language == Language.japanese &&
                       !_hasJapaneseChain)
                     GrammarDictionaryLinks(

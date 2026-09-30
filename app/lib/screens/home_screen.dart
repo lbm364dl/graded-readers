@@ -10,6 +10,7 @@ import 'reader_screen.dart';
 import 'vocabulary_screen.dart';
 import 'usage_dictionary_screen.dart';
 import 'grammar_dictionary_screen.dart';
+import 'korean_dictionary_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   final ContentRepository repo;
@@ -42,6 +43,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 onPressed: () => Navigator.of(context).push(
                     MaterialPageRoute<void>(
                         builder: (_) => const GrammarDictionaryScreen()))),
+          if (language == Language.korean)
+            IconButton(
+                tooltip: 'Grammar dictionary',
+                icon: const Icon(Icons.account_tree_outlined),
+                onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute<void>(
+                        builder: (_) => const KoreanDictionaryScreen(grammar: true)))),
           if (language != Language.korean) IconButton(
               tooltip: 'Reading dictionary',
               icon: const Icon(Icons.menu_book_outlined),
@@ -49,6 +57,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   MaterialPageRoute<void>(
                       builder: (_) =>
                           UsageDictionaryScreen(language: language)))),
+          if (language == Language.korean)
+            IconButton(
+                tooltip: 'Reading dictionary',
+                icon: const Icon(Icons.menu_book_outlined),
+                onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute<void>(
+                        builder: (_) => const KoreanDictionaryScreen()))),
           _LanguageToggle(
             language: language,
             onChanged: (lang) => langNotifier.switchTo(lang),

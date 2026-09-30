@@ -21,6 +21,7 @@ MAX_NON_BEGINNER_RATIO = 0.10
 MAX_STORY_TERMS = 1
 MAX_SENTENCE_EOJEOL = 12
 EXCEPTIONS = ROOT / "content/lexicon/korean/l1.exceptions.json"
+GRAMMAR = ROOT / "content/lexicon/korean/l1.grammar.json"
 
 
 @lru_cache(maxsize=1)
@@ -60,6 +61,10 @@ def diagnostics(chapter: dict) -> dict:
     if exception_doc.get("reviewed") is not True:
         raise ValueError("Korean lexical exceptions are unreviewed")
     exceptions = {(item["kind"], item["id"]) for item in exception_doc["entries"]}
+    grammar_doc = json.loads(GRAMMAR.read_text(encoding="utf-8"))
+    if grammar_doc.get("reviewed") is not True:
+        raise ValueError("Korean grammar registry is unreviewed")
+    grammar_ids = {item["id"] for item in grammar_doc["entries"]}
     counts = Counter()
     above: list[str] = []
     story_terms: set[str] = set()
@@ -91,7 +96,7 @@ def diagnostics(chapter: dict) -> dict:
             story_terms.add(identity)
             counts["story_term"] += 1
         elif lexical["kind"] == "grammar":
-            if ("grammar", identity) not in exceptions:
+            if identity not in grammar_ids:
                 raise ValueError(f"unreviewed Korean grammar identity: {identity}")
             counts["grammar"] += 1
         else:
