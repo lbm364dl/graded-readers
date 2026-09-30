@@ -12,7 +12,11 @@
         {
           "text": "옛날에",
           "type": "word",
-          "meaning_en": "long ago"
+          "meaning_en": "long ago",
+          "lexical": {
+            "kind": "vocabulary",
+            "id": "옛날/명"
+          }
         },
         {
           "text": " ",
@@ -22,12 +26,20 @@
         {
           "text": "홍길동",
           "type": "word",
-          "meaning_en": "Hong Gildong"
+          "meaning_en": "Hong Gildong",
+          "lexical": {
+            "kind": "proper_name",
+            "id": "hong-gildong"
+          }
         },
         {
           "text": "이라는",
           "type": "word",
-          "meaning_en": "called; named"
+          "meaning_en": "called; named",
+          "lexical": {
+            "kind": "grammar",
+            "id": "naming-iran"
+          }
         },
         {
           "text": " ",
@@ -37,7 +49,11 @@
         {
           "text": "아이가",
           "type": "word",
-          "meaning_en": "a child (subject)"
+          "meaning_en": "a child (subject)",
+          "lexical": {
+            "kind": "vocabulary",
+            "id": "아이01/명"
+          }
         },
         {
           "text": " ",
@@ -47,7 +63,11 @@
         {
           "text": "살았습니다",
           "type": "word",
-          "meaning_en": "lived (polite past)"
+          "meaning_en": "lived (polite past)",
+          "lexical": {
+            "kind": "vocabulary",
+            "id": "살다01/동"
+          }
         },
         {
           "text": ".",
@@ -62,7 +82,11 @@
         {
           "text": "길동의",
           "type": "word",
-          "meaning_en": "Gildong’s"
+          "meaning_en": "Gildong’s",
+          "lexical": {
+            "kind": "proper_name",
+            "id": "hong-gildong"
+          }
         },
         {
           "text": " ",
@@ -72,7 +96,11 @@
         {
           "text": "아버지는",
           "type": "word",
-          "meaning_en": "father (topic)"
+          "meaning_en": "father (topic)",
+          "lexical": {
+            "kind": "vocabulary",
+            "id": "아버지/명"
+          }
         },
         {
           "text": " ",
@@ -82,7 +110,11 @@
         {
           "text": "높은",
           "type": "word",
-          "meaning_en": "high-ranking"
+          "meaning_en": "high-ranking",
+          "lexical": {
+            "kind": "vocabulary",
+            "id": "높다/형"
+          }
         },
         {
           "text": " ",
@@ -92,7 +124,11 @@
         {
           "text": "벼슬을",
           "type": "word",
-          "meaning_en": "official position (object)"
+          "meaning_en": "official position (object)",
+          "lexical": {
+            "kind": "story_term",
+            "id": "벼슬/명"
+          }
         },
         {
           "text": " ",
@@ -102,7 +138,11 @@
         {
           "text": "한",
           "type": "word",
-          "meaning_en": "who held"
+          "meaning_en": "who held",
+          "lexical": {
+            "kind": "vocabulary",
+            "id": "하다01/동"
+          }
         },
         {
           "text": " ",
@@ -112,7 +152,11 @@
         {
           "text": "사람이었습니다",
           "type": "word",
-          "meaning_en": "was a person (polite past)"
+          "meaning_en": "was a person (polite past)",
+          "lexical": {
+            "kind": "vocabulary",
+            "id": "사람/명"
+          }
         },
         {
           "text": ".",
@@ -127,7 +171,11 @@
         {
           "text": "하지만",
           "type": "word",
-          "meaning_en": "but"
+          "meaning_en": "but",
+          "lexical": {
+            "kind": "vocabulary",
+            "id": "하지만/부"
+          }
         },
         {
           "text": " ",
@@ -137,7 +185,11 @@
         {
           "text": "길동은",
           "type": "word",
-          "meaning_en": "Gildong (topic)"
+          "meaning_en": "Gildong (topic)",
+          "lexical": {
+            "kind": "proper_name",
+            "id": "hong-gildong"
+          }
         },
         {
           "text": " ",
@@ -147,7 +199,11 @@
         {
           "text": "아버지를",
           "type": "word",
-          "meaning_en": "father (object)"
+          "meaning_en": "father (object)",
+          "lexical": {
+            "kind": "vocabulary",
+            "id": "아버지/명"
+          }
         },
         {
           "text": " ",
@@ -162,7 +218,11 @@
         {
           "text": "아버지",
           "type": "word",
-          "meaning_en": "father"
+          "meaning_en": "father",
+          "lexical": {
+            "kind": "vocabulary",
+            "id": "아버지/명"
+          }
         },
         {
           "text": "”",
@@ -172,7 +232,11 @@
         {
           "text": "라고",
           "type": "word",
-          "meaning_en": "as; saying"
+          "meaning_en": "as; saying",
+          "lexical": {
+            "kind": "grammar",
+            "id": "quotation-rago"
+          }
         },
         {
           "text": " ",
@@ -182,7 +246,11 @@
         {
           "text": "부를",
           "type": "word",
-          "meaning_en": "to call"
+          "meaning_en": "to call",
+          "lexical": {
+            "kind": "vocabulary",
+            "id": "부르다01/동"
+          }
         },
         {
           "text": " ",
@@ -192,7 +260,11 @@
         {
           "text": "수",
           "type": "word",
-          "meaning_en": "way; ability"
+          "meaning_en": "way; ability",
+          "lexical": {
+            "kind": "vocabulary",
+            "id": "수02/의"
+          }
         },
         {
           "text": " ",
@@ -202,7 +274,11 @@
         {
           "text": "없었습니다",
           "type": "word",
-          "meaning_en": "did not have; could not (polite past)"
+          "meaning_en": "did not have; could not (polite past)",
+          "lexical": {
+            "kind": "vocabulary",
+            "id": "없다01/형"
+          }
         },
         {
           "text": ".",
@@ -217,7 +293,11 @@
         {
           "text": "길동은",
           "type": "word",
-          "meaning_en": "Gildong (topic)"
+          "meaning_en": "Gildong (topic)",
+          "lexical": {
+            "kind": "proper_name",
+            "id": "hong-gildong"
+          }
         },
         {
           "text": " ",
@@ -227,7 +307,11 @@
         {
           "text": "슬펐습니다",
           "type": "word",
-          "meaning_en": "was sad (polite past)"
+          "meaning_en": "was sad (polite past)",
+          "lexical": {
+            "kind": "vocabulary",
+            "id": "슬프다/형"
+          }
         },
         {
           "text": ".",
@@ -237,7 +321,15 @@
       ],
       "annotation_audit": {
         "all_reviewed": true,
-        "scope": "opening pilot; contextual tap glosses only"
+        "scope": "Chapter 1; contextual tap glosses and reviewed lexical identities"
+      },
+      "source_alignment": {
+        "reviewed": true,
+        "edition": "CNTS-00047987469",
+        "beats": [
+          "Hong Gildong is born to an official household",
+          "His social position prevents him from addressing his father as father"
+        ]
       }
     }
   ]

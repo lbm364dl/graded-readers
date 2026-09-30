@@ -1,0 +1,9 @@
+{
+  "reviewed": true,
+  "entries": [
+    {"kind": "proper_name", "id": "hong-gildong", "label": "홍길동 / 길동", "reason": "The protagonist's name, introduced in this chapter."},
+    {"kind": "story_term", "id": "벼슬/명", "label": "벼슬", "reason": "A historical government post central to the father's status."},
+    {"kind": "grammar", "id": "naming-iran", "label": "(이)라는", "explanation_en": "Introduces the name by which someone is called."},
+    {"kind": "grammar", "id": "quotation-rago", "label": "(이)라고", "explanation_en": "Marks the word or phrase used when calling someone something."}
+  ]
+}

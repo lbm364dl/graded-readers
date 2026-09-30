@@ -578,7 +578,8 @@ def load_korean_annotations(
             return ["" for _ in chapters]
         raise ValueError(f"reviewed Korean annotations missing: {path}")
     document = json.loads(path.read_text(encoding="utf-8"))
-    if document.get("schema_version") != 1 or document.get("language") != "korean":
+    if (document.get("schema_version") != 1 or document.get("language") != "korean"
+            or document.get("book") != book_id or document.get("level") != level_key):
         raise ValueError(f"invalid Korean annotation document: {path}")
     annotated = document.get("chapters")
     if not isinstance(annotated, list):
@@ -599,9 +600,18 @@ def load_korean_annotations(
             raise ValueError(f"unreviewed Korean chapter {number}: {path}")
         if "".join(segment.get("text", "") for segment in segments) != chapter["content"]:
             raise ValueError(f"Korean segments do not reconstruct chapter {number}: {path}")
+        from pipeline.korean_readability import validate_chapter
+        alignment = item.get("source_alignment", {})
+        if (alignment.get("reviewed") is not True
+                or alignment.get("edition") != "CNTS-00047987469"
+                or not alignment.get("beats")):
+            raise ValueError(f"unreviewed Korean source alignment in chapter {number}: {path}")
+        validate_chapter(item)
         published = []
         for segment in segments:
-            if set(segment) != {"text", "type", "meaning_en"}:
+            required = {"text", "type", "meaning_en"}
+            allowed = required | ({"lexical"} if segment["type"] == "word" else set())
+            if set(segment) != allowed:
                 raise ValueError(f"invalid Korean segment: {path}")
             kind = segment["type"]
             if kind not in {"word", "punctuation"} or (kind == "word") != bool(segment["meaning_en"].strip()):

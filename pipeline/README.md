@@ -1,5 +1,14 @@
 # Graded Reader Pipeline
 
+## Korean Level 1 pilot
+
+`python -m pipeline.publish_honggildong_smoke` validates and publishes only
+*Hong Gildong* Level 1, chapter 1. It checks reviewed lexical identities
+against the attributed NIKL learner vocabulary list, source-beat review,
+sentence length, contextual tap coverage, and exact text reconstruction. The
+normal app asset builder applies the same Korean gate. See
+`pipeline/korean_agent_instructions.md` for the authoring and review rules.
+
 ## Japanese usage-dictionary pilot (N5)
 
 The pilot now has a separate **grammar dictionary**. Particles and productive
