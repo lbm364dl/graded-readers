@@ -13,9 +13,9 @@ from pipeline.agent_harness import CodexRunner
 from pipeline import korean_dictionary as dictionary
 from pipeline import korean_readability as readability
 from pipeline import korean_sentence_breakdowns as sentence_help
-from pipeline.korean_agent_harness import POLICY, approved, digest, read, save, normalize_existing
+from pipeline.korean_agent_harness import POLICY, LINGUISTIC_REFERENCE, approved, digest, read, save, normalize_existing
 from pipeline import korean_contracts as contracts
-from pipeline.korean_sources import EDITION, ROOT, load_unit, sha
+from pipeline.korean_sources import EDITION, ROOT, load_selected_unit, sha
 from scripts import generate_app_content_json as app_content
 
 CONTENT = ROOT / "content/korean/honggildong"
@@ -31,8 +31,12 @@ def relevant_entries(chapter: dict, words: dict, grammar: dict) -> dict:
 
 
 def source_check(chapter: dict) -> None:
-    manifest, unit, source = load_unit(chapter["number"])
     alignment = chapter["source_alignment"]
+    if not isinstance(alignment.get('unit'), dict):
+        raise ValueError('Korean reviewed source stopping point is missing')
+    manifest, unit, source = load_selected_unit(alignment['unit'])
+    if unit['number'] != chapter['number']:
+        raise ValueError('Korean source scope numbering changed')
     if alignment["edition"] != EDITION or alignment.get("reviewed") is not True or not alignment["beats"]:
         raise ValueError("Korean source edition/review is missing")
     full = (ROOT / "books/korean/honggildong" / manifest["text_file"]).read_text(encoding="utf-8")
@@ -54,7 +58,8 @@ def verify_run(run_dir: Path) -> tuple[dict, dict, dict, dict]:
         if Path(name).name != name or sha((run_dir / name).read_bytes()) != expected:
             raise ValueError("Korean reviewed run artifact changed")
     required = {"plan", "lexical-plan", "prose", "annotation", "dictionary", "sentence-help"}
-    if set(report["stages"]) != required or report["policy_sha256"] != sha(POLICY.read_bytes()):
+    if (set(report["stages"]) != required or report["policy_sha256"] != sha(POLICY.read_bytes())
+            or report.get('linguistic_reference_sha256') != sha(LINGUISTIC_REFERENCE.read_bytes())):
         raise ValueError("Korean run coverage or policy is stale")
     reviews = {}
     for stage, evidence in report["stages"].items():
@@ -85,6 +90,33 @@ def verify_run(run_dir: Path) -> tuple[dict, dict, dict, dict]:
                 if stage != "annotation":
                     raise ValueError("Only Korean annotation may assemble source chunks")
                 values, texts = [], []
+                if 'reuse_plan_job' in proposal_meta:
+                    reuse_job = proposal_meta['reuse_plan_job']
+                    old_job = proposal_meta['reuse_source_job']
+                    if any(Path(job).name != job for job in (reuse_job, old_job)):
+                        raise ValueError('invalid Korean annotation reuse job')
+                    selection = read(run_dir / 'agents' / reuse_job / 'result.json')
+                    reuse_meta = read(run_dir / 'agents' / reuse_job / 'meta.json')
+                    if reuse_meta.get('return_code') != 0 or digest(selection) != proposal_meta['reuse_plan_digest']:
+                        raise ValueError('Korean annotation reuse plan changed after review')
+                    CodexRunner._check_tool_profile(run_dir / 'agents' / reuse_job, 'offline', reuse_meta)
+                    validate(selection, contracts.ANNOTATION_REUSE_PLAN)
+                    old_meta = read(run_dir / 'agents' / old_job / 'meta.json')
+                    reused = contracts.reuse_selection(selection, [c['text'] for c in old_meta['chunks']],
+                        [c['text'] for c in proposal_meta['chunks']])
+                    if any(proposal_meta['chunks'][new - 1] != old_meta['chunks'][old - 1] for new, old in reused.items()):
+                        raise ValueError('Korean retained occurrence differs from reuse plan')
+                if 'repair_plan_job' in proposal_meta:
+                    repair_job = proposal_meta['repair_plan_job']
+                    if Path(repair_job).name != repair_job:
+                        raise ValueError('invalid Korean annotation repair job')
+                    selection = read(run_dir / 'agents' / repair_job / 'result.json')
+                    repair_meta = read(run_dir / 'agents' / repair_job / 'meta.json')
+                    if repair_meta.get('return_code') != 0 or digest(selection) != proposal_meta['repair_plan_digest']:
+                        raise ValueError('Korean annotation repair plan changed after review')
+                    CodexRunner._check_tool_profile(run_dir / 'agents' / repair_job, 'offline', repair_meta)
+                    validate(selection, contracts.ANNOTATION_REPAIR_PLAN)
+                    contracts.repair_selection(selection, len(proposal_meta['chunks']))
                 for chunk in proposal_meta["chunks"]:
                     chunk_job = chunk["job"]
                     if Path(chunk_job).name != chunk_job:
@@ -97,7 +129,19 @@ def verify_run(run_dir: Path) -> tuple[dict, dict, dict, dict]:
                     validate(chunk_value, contracts.ANNOTATION)
                     values.append(chunk_value)
                     texts.append(chunk["text"])
-                if contracts.combine_annotations(values, texts) != proposal:
+                replayed = contracts.combine_annotations(values, texts)
+                if 'grammar_binding_job' in proposal_meta:
+                    binding_job = proposal_meta['grammar_binding_job']
+                    if Path(binding_job).name != binding_job:
+                        raise ValueError('invalid Korean grammar binding job')
+                    bindings = read(run_dir / 'agents' / binding_job / 'result.json')
+                    binding_meta = read(run_dir / 'agents' / binding_job / 'meta.json')
+                    if binding_meta.get('return_code') != 0 or digest(bindings) != proposal_meta['grammar_binding_digest']:
+                        raise ValueError('Korean grammar bindings changed after annotation review')
+                    CodexRunner._check_tool_profile(run_dir / 'agents' / binding_job, 'offline', binding_meta)
+                    validate(bindings, contracts.GRAMMAR_BINDINGS)
+                    replayed = contracts.bind_grammar_identities(replayed, bindings, set(proposal_meta['approved_grammar_ids']))
+                if replayed != proposal:
                     raise ValueError("Korean assembled annotation differs from source chunks")
             if digest(proposal) != evidence["output_digest"]:
                 raise ValueError("Korean proposal changed after review")
@@ -108,11 +152,11 @@ def verify_run(run_dir: Path) -> tuple[dict, dict, dict, dict]:
     source_check(chapter)
     if chapter["number"] != report["number"]:
         raise ValueError("Korean run chapter numbering changed")
-    manifest, unit, _ = load_unit(chapter["number"])
+    manifest, unit, _ = load_selected_unit(chapter['source_alignment']['unit'])
     if (report["source_sha256"] != manifest["text_sha256"] or report["source_unit"] != unit
             or report.get("source_notes_sha256") != manifest.get("notes_sha256")):
         raise ValueError("Korean run source edition changed")
-    _, unit, source = load_unit(chapter["number"])
+    _, unit, source = load_selected_unit(chapter['source_alignment']['unit'])
     outputs = {}
     for name, record in report["stages"].items():
         job = record.get("proposal_job")
@@ -151,6 +195,7 @@ def verify_run(run_dir: Path) -> tuple[dict, dict, dict, dict]:
         raise ValueError("Korean sentence help differs from reviewed proposal")
     evidence = {"number": chapter["number"], "chapter_digest": digest(chapter),
                 "source_sha256": report["source_sha256"], "source_notes_sha256": report.get("source_notes_sha256"), "policy_sha256": report["policy_sha256"],
+                "linguistic_reference_sha256": report['linguistic_reference_sha256'],
                 "reviews": reviews}
     return chapter, delta, help_data, evidence
 
@@ -158,11 +203,12 @@ def verify_run(run_dir: Path) -> tuple[dict, dict, dict, dict]:
 def validate_evidence(chapter: dict, evidence: dict, words: dict, grammar: dict,
                       breakdowns: list[dict]) -> None:
     source_check(chapter)
-    manifest, _, _ = load_unit(chapter["number"])
+    manifest, _, _ = load_selected_unit(chapter['source_alignment']['unit'])
     if (evidence.get("chapter_digest") != digest(chapter)
             or evidence.get("source_sha256") != manifest["text_sha256"]
             or evidence.get("source_notes_sha256") != manifest.get("notes_sha256")
             or evidence.get("policy_sha256") != sha(POLICY.read_bytes())
+            or evidence.get('linguistic_reference_sha256') != sha(LINGUISTIC_REFERENCE.read_bytes())
             or evidence.get("dictionary_digest") != digest(relevant_entries(chapter, words, grammar))
             or evidence.get("breakdowns_digest") != digest(breakdowns)):
         raise ValueError("Korean publication evidence is stale")
@@ -202,6 +248,12 @@ def publish(run_root: Path, *, promote: bool = True) -> dict:
     chapters = [item[0] for item in accepted]
     if [c["number"] for c in chapters] != list(range(1, len(chapters) + 1)):
         raise ValueError("Korean publication requires consecutive chapters starting at 1")
+    next_start = 0
+    for chapter in chapters:
+        unit = chapter['source_alignment']['unit']
+        if unit['start'] != next_start:
+            raise ValueError('Korean chapter source scopes overlap or skip narrative')
+        next_start = unit['end'] + 2
     words, grammar = dictionary._registry(dictionary.WORDS), dictionary._registry(dictionary.GRAMMAR)
     for _, delta, _, _ in accepted:
         for registry, entries in ((words, delta["words"]), (grammar, delta["grammar"])):

@@ -103,5 +103,23 @@ def main() -> None:
     print(json.dumps({"edition": manifest["edition"], "mapped_units": len(manifest["units"]), "verified": True}))
 
 
+def load_selected_unit(unit: dict) -> tuple[dict, dict, str]:
+    """Verify an agent-selected contiguous span against original paragraph ends."""
+    manifest, _, _ = load_unit(1)
+    text = (DIRECTORY / manifest['text_file']).read_text(encoding='utf-8').rstrip('\n')
+    paragraphs = text.split('\n\n')
+    starts, ends, cursor = set(), set(), 0
+    for paragraph in paragraphs:
+        starts.add(cursor)
+        cursor += len(paragraph)
+        ends.add(cursor)
+        cursor += 2
+    if (type(unit.get('start')) is not int or type(unit.get('end')) is not int
+            or unit['start'] not in starts or unit['end'] not in ends
+            or unit['start'] >= unit['end']):
+        raise ValueError('Korean selected source scope must follow complete original paragraphs')
+    return manifest, unit, text[unit['start']:unit['end']]
+
+
 if __name__ == "__main__":
     main()

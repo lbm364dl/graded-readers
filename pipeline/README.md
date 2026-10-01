@@ -3,8 +3,10 @@
 ## Korean Level 1 pipeline
 
 The current scope is *Hong Gildong*, Level 1, using the pinned searchable
-Wikisource/Jikji 30-sheet original. The first two source units are mapped;
-the initial publication remains chapter 1. NIKL A is a vocabulary baseline,
+Wikisource/Jikji 30-sheet original. The planning agent chooses a contiguous
+source span and a coherent stopping paragraph from the remaining narrative;
+the two mapped reference scenes are not chapter limits. The initial publication
+remains chapter 1. NIKL A is a vocabulary baseline,
 not TOPIK certification.
 
 ```sh
@@ -16,9 +18,35 @@ not TOPIK certification.
 
 The harness proposes a source plan, reviewed name/story identities, beginner prose,
 exact tap annotations, missing dictionary entries and selective sentence help. Each stage has an
-independent review and up to five repairs after the first attempt. Annotation
-proposals use sentence chunks with exact reconstruction checks; the assembled
-chapter receives an independent review. Publication replays chunk assembly and
+independent review and up to five repairs after the first attempt.
+Chapter length has no numeric quota. Source planning records the coverage and
+omission decisions; prose records why its extent and stopping point suit the
+level. Independent review checks both avoidable compression and padding. The
+source spans are adaptation divisions, not original chapters. Publication
+requires successive chapters to start immediately after the preceding span.
+Annotation
+proposals use sentence chunks with exact reconstruction checks.
+Each chunk also validates exact lexical identities and form routes locally,
+so a repair resends the failed chunk rather than all otherwise valid sentences.
+Four annotation jobs run concurrently by default (`--workers` changes this).
+An independent review failure is mapped to affected sentence chunks before
+repair; unrelated chunks retain their original model evidence. After a prose
+revision, an agent selects exact unchanged occurrences whose contextual analysis
+remains valid, excluding unresolved errors. Reuse preserves distinct source
+positions and is checked again during publication.
+Triage explicitly refers unsuitable wording to prose review; annotation and
+technical errors stay in annotation repair. Spacing-unit sentence length is
+reported for linguistic review and selective help, with no automatic length
+rejection. Vocabulary and reviewed-identity checks remain enforced.
+Reviewed linguistic references in `data/korean/linguistic-reference.json` are
+supplied to linguistic review and annotation repair, separately from story
+source notes. Their fingerprint is retained in publication evidence. Spelling
+and pronunciation are distinct; a phonetic sound change does not by itself
+justify a written conjugation rule. Restarts resume the latest matching review
+findings; changed context prompts a fresh review of the latest valid proposal.
+New grammar IDs from separate chunks are coordinated through explicit bindings
+to existing or canonical draft identities; the mapped complete chapter receives
+an independent review. Publication replays chunk assembly and those bindings and
 checks the underlying completed model jobs. It uses the existing
 Codex runner's fingerprinted job cache; an unchanged completed run returns
 without model calls. Existing entries are immutable and only missing identities

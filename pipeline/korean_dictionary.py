@@ -133,7 +133,7 @@ def build_assets(chapter: dict, output_dir: Path, *, source_id: str = SOURCE,
             if (set(step) != {"form", "reading", "label", "meaning_en",
                              "grammar_entry_ids"}
                     or not all(str(step[key]).strip() for key in
-                               ("form", "reading", "label", "meaning_en"))
+                               ("form", "label", "meaning_en"))
                     or step["form"] in forms or len(step["grammar_entry_ids"]) != 1
                     or any((index, entry_id) not in seen
                            for entry_id in step["grammar_entry_ids"])):

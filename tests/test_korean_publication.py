@@ -75,7 +75,7 @@ def test_korean_level_gate_rejects_homonym_substitution_and_above_level_load():
         validate_chapter(chapter)
 
 
-def test_korean_level_gate_rejects_unreviewed_lexeme_and_long_sentence():
+def test_korean_level_gate_rejects_unresolved_lexeme_but_reports_length_for_review():
     chapter = pilot_chapter()
     chapter["segments"][7]["lexical"]["id"] = "살다/동"
     with pytest.raises(ValueError, match="unresolved Korean vocabulary"):
@@ -86,8 +86,7 @@ def test_korean_level_gate_rejects_unreviewed_lexeme_and_long_sentence():
             segment["text"] = ","
     chapter["text"] = "".join(segment["text"] for segment in chapter["segments"])
     assert diagnostics(chapter)["longest_sentence_eojeol"] > 12
-    with pytest.raises(ValueError, match="readability gate failed"):
-        validate_chapter(chapter)
+    assert diagnostics(chapter)['passes']
 
 
 def test_normal_app_builder_rejects_stale_reviewed_content(tmp_path):

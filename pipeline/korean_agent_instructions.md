@@ -1,7 +1,9 @@
 # Korean graded-reader pipeline: Level 1 pilot
 
 The current generation scope is *Hong Gildong*, Level 1, using mapped source
-units from `books/korean/honggildong/source.json`. The narrative reference is
+spans selected by the planning agent from the remaining original narrative. The
+two mapped scenes in `books/korean/honggildong/source.json` are reference examples,
+not chapter limits. The narrative reference is
 the pinned Wikisource/Jikji transcription of the 30-sheet Gyeongpan edition,
 revision 460078, in `books/korean/honggildong/original.txt`. Preserve its original
 text and exact source offsets; do not mix editions or copy a modern adaptation.
@@ -24,6 +26,21 @@ when vocabulary or sentence difficulty requires revising unpublished prose.
 
 Write natural modern Korean for a beginner. Keep sentences short enough to
 follow, but let an essential story word appear with a clear contextual gloss.
+Choose total chapter length by narrative coverage and learner difficulty, never
+by a character, word, sentence or source-paragraph quota. Review the entire
+remaining source and retain meaningful actions, relationships and development
+whenever they can be expressed naturally at the requested level. Short sentences
+can form a substantial chapter. Avoid both unnecessary compression into a bare
+summary and padding through repetition or invented detail. A brief chapter is
+valid when its scene or actual level constraints justify it. Record the scope
+decision in the source plan and the length decision with the generated prose;
+an independent reviewer must assess omissions and the coherent stopping point,
+including whether more source narrative could reasonably be retained. These are
+editorial records, not learner-facing disclaimers. Choose the source stopping
+paragraph at a coherent narrative boundary; do not consume the entire remaining
+book by default. Subsequent chapters start immediately after that reviewed
+paragraph. Publication rejects overlapping or skipped source spans. Original
+source boundaries and adaptation length are separate editorial judgments.
 The NIKL A band is our beginner *vocabulary baseline*, not an official TOPIK
 list. Keep reviewed NIKL homonym number and part of speech in each occurrence's
 `lexical.id`, even when its surface is inflected. Do not infer lemma or grammar

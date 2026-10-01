@@ -126,6 +126,258 @@
       "title_en": "An action describing a noun",
       "pattern": "-는",
       "explanation_en": "Attach -는 to an action verb stem and place the resulting modifier before a noun. Drop a stem-final ㄹ before adding -는. The modifier describes an ongoing or habitual action associated with the noun. Its time is understood relative to the main statement, so it can describe an action taking place at a past time."
+    },
+    {
+      "id": "ability-eul-su-itda",
+      "title_en": "Can do something",
+      "pattern": "-(으)ㄹ 수 있다",
+      "explanation_en": "A verb modifier followed by 수 있다 expresses ability or possibility. Add -을 to a stem ending in a consonant other than ㄹ, or -ㄹ to a vowel-ending stem; a ㄹ-ending stem keeps its ㄹ. Follow this modifier with 수 있다 to mean ‘can do’."
+    },
+    {
+      "id": "additive-gi-do-hada",
+      "title_en": "Also doing or being",
+      "pattern": "-기도 하다",
+      "explanation_en": "Attach -기도 하다 to an action or descriptive stem to add another action or state, meaning ‘also do’ or ‘also be’. The predicate becomes a noun-like expression with -기, 도 adds ‘also’, and 하다 completes the predicate."
+    },
+    {
+      "id": "adverbial-ge",
+      "title_en": "Describing how something happens",
+      "pattern": "-게",
+      "explanation_en": "Attach -게 to a descriptive stem to describe how an action happens or the degree of a quality. With an action verb, -게 can link the action to a following predicate that controls or changes whether it happens."
+    },
+    {
+      "id": "appearance-geot-gatda",
+      "title_en": "Seems or appears",
+      "pattern": "modifier + 것 같다",
+      "explanation_en": "Place a clause in noun-modifying form before 것 같다 to express an impression or an uncertain judgment: ‘seems’ or ‘appears’. For a current description, use -(으)ㄴ with descriptive predicates or -인 after a noun; for an ongoing action, use -는 with an action verb."
+    },
+    {
+      "id": "becoming-complement-i-ga",
+      "title_en": "What someone or something becomes",
+      "pattern": "이/가 되다",
+      "explanation_en": "Before 되다, attach 이 to a consonant-ending noun or 가 to a vowel-ending noun. This marked noun identifies the role, state, or age that someone or something reaches."
+    },
+    {
+      "id": "benefactive-a-eo-juda",
+      "title_en": "Doing something for someone",
+      "pattern": "-아/어 주다",
+      "explanation_en": "Connect an action verb to 주다 with -아/어 to present the action as done for someone. Use -아 when the stem's final vowel is ㅏ or ㅗ and -어 otherwise; 하다 becomes 해. The person receiving the benefit may be stated or understood."
+    },
+    {
+      "id": "change-ge-doeda",
+      "title_en": "Coming to do something",
+      "pattern": "-게 되다",
+      "explanation_en": "Attach -게 되다 to an action verb stem to describe a change in circumstances or a resulting situation, often meaning ‘come to do’ or ‘end up doing’. The construction emphasizes how the situation develops rather than a deliberate decision."
+    },
+    {
+      "id": "classification-euro-ro",
+      "title_en": "Regarding something as a category",
+      "pattern": "(으)로",
+      "explanation_en": "Attach 으로 after a consonant other than ㄹ, or 로 after a vowel or ㄹ. With predicates of judgment or classification, the marked noun gives the role or category in which someone or something is regarded: ‘as’."
+    },
+    {
+      "id": "comparison-boda",
+      "title_en": "Than in a comparison",
+      "pattern": "보다",
+      "explanation_en": "Attach 보다 to the noun or quantity used as the comparison point. The following predicate states how something differs from it. 보다 has the same form after consonants and vowels; 더 may be added to emphasize ‘more’."
+    },
+    {
+      "id": "comparison-wa-gwa",
+      "title_en": "Comparing with someone or something",
+      "pattern": "와/과",
+      "explanation_en": "With predicates of sameness or difference, attach 와 after a vowel or 과 after a consonant to mark the comparison partner. English may use ‘the same as’ or ‘different from’, depending on the predicate."
+    },
+    {
+      "id": "concessive-a-eodo",
+      "title_en": "Even if or even though",
+      "pattern": "-아/어도",
+      "explanation_en": "Attach -아도 or -어도 to an action or descriptive stem to say that the following result holds despite that condition: ‘even if’ or ‘even though’. Use -아도 after a stem whose final vowel is ㅏ or ㅗ and -어도 otherwise; 하다 becomes 해도. Regular contractions and irregular stem changes apply."
+    },
+    {
+      "id": "conditional-eumyeon",
+      "title_en": "If or when",
+      "pattern": "-(으)면",
+      "explanation_en": "Attach -으면 after a stem ending in a consonant other than ㄹ, or -면 after a vowel or ㄹ. This introduces a condition, meaning ‘if’, or a regularly occurring situation, meaning ‘when’. For nouns, use -이면 after a consonant or -면 after a vowel."
+    },
+    {
+      "id": "connective-a-eo",
+      "title_en": "Linking a verb to an auxiliary",
+      "pattern": "-아/어",
+      "explanation_en": "The -아/어 form connects a verb to a following auxiliary that adds meaning to the action. Use -아 when the stem's final vowel is ㅏ or ㅗ and -어 otherwise; 하다 becomes 해. Vowels may contract, and irregular verbs may change their stems. The following auxiliary determines the meaning of the complete construction."
+    },
+    {
+      "id": "connective-eun-neun-de",
+      "title_en": "Background or contrast",
+      "pattern": "-(으)ㄴ데 / -는데 / -인데",
+      "explanation_en": "This connective supplies background for the next clause or introduces a contrast. Use -는데 with action verbs and 있다 or 없다. With descriptive stems, use -은데 after a consonant or -ㄴ데 after a vowel; drop a final ㄹ before -ㄴ데. Use -인데 after nouns and -는데 after a past-marked stem."
+    },
+    {
+      "id": "connective-myeo",
+      "title_en": "While or and",
+      "pattern": "-(으)며",
+      "explanation_en": "Attach -으며 after a stem ending in a consonant other than ㄹ, or -며 after a vowel or ㄹ. It connects simultaneous actions or joins related actions and descriptions, meaning ‘while’ or ‘and’. It is especially common in written language."
+    },
+    {
+      "id": "copula-modifier-in",
+      "title_en": "A noun identifying another noun",
+      "pattern": "noun + 인",
+      "explanation_en": "Attach -인 to a noun to make it identify or classify a following noun. This is the noun-modifying form of 이다 and means ‘who is’ or ‘which is’. The form -인 follows both consonant-ending and vowel-ending nouns."
+    },
+    {
+      "id": "desire-go-sipda",
+      "title_en": "Wanting to do something",
+      "pattern": "-고 싶다",
+      "explanation_en": "Attach -고 싶다 to an action verb stem to mean ‘want to do’. It normally expresses the speaker's own desire in a statement or asks about the listener's desire in a question."
+    },
+    {
+      "id": "direction-euro-ro",
+      "title_en": "Direction of movement",
+      "pattern": "(으)로",
+      "explanation_en": "Attach 으로 after a consonant other than ㄹ, or 로 after a vowel or ㄹ, to indicate the direction or destination of movement. It presents the place as where someone or something heads."
+    },
+    {
+      "id": "exclusive-man",
+      "title_en": "Only",
+      "pattern": "만",
+      "explanation_en": "Attach 만 to a noun to restrict a statement to that person, thing, or quantity: ‘only’. It has the same form after consonants and vowels and can follow some other particles."
+    },
+    {
+      "id": "existential-modifier-neun",
+      "title_en": "Existing or present before a noun",
+      "pattern": "있는 / 없는",
+      "explanation_en": "Use 있는 before a noun to describe something that exists, is present, or is available, and 없는 for something absent or unavailable. 있다 and 없다 take -는 in this use, giving 있는 and 없는."
+    },
+    {
+      "id": "formal-question-seumnikka",
+      "title_en": "Formal polite question",
+      "pattern": "-습니까 / -ㅂ니까",
+      "explanation_en": "Attach -습니까 to a consonant-ending predicate stem or -ㅂ니까 to a vowel-ending stem to ask a formal polite question. Drop a stem-final ㄹ before adding -ㅂ니까. With a noun, use -입니까."
+    },
+    {
+      "id": "honorific-recipient-kke",
+      "title_en": "Respectfully marking a recipient",
+      "pattern": "께",
+      "explanation_en": "Attach 께 to a noun referring to a respected person to mark the recipient or person toward whom an action is directed. It is the respectful counterpart of 에게 and has the same form after consonants and vowels."
+    },
+    {
+      "id": "imperative-eora-ara",
+      "title_en": "Plain command",
+      "pattern": "-아라 / -어라",
+      "explanation_en": "Attach -아라 to an action stem whose final vowel is ㅏ or ㅗ and -어라 otherwise to give a plain command. 하다 becomes 해라, and adjoining vowels may contract. This direct style is used with someone younger or lower in status, or in familiar speech."
+    },
+    {
+      "id": "informal-question-ni",
+      "title_en": "Familiar informal question",
+      "pattern": "-니",
+      "explanation_en": "Attach -니 to a predicate stem to ask a familiar, non-polite question, usually to someone close or younger. Drop a stem-final ㄹ before -니. After a noun, use -이니 after a consonant or -니 after a vowel."
+    },
+    {
+      "id": "location-e",
+      "title_en": "Place or destination",
+      "pattern": "에",
+      "explanation_en": "Attach 에 to a place noun to mark where someone or something is, or the destination of movement. It has the same form after consonants and vowels. Use 에서 instead when marking the place where an action takes place."
+    },
+    {
+      "id": "negative-connective-ji",
+      "title_en": "Linking to a negative auxiliary",
+      "pattern": "-지",
+      "explanation_en": "Attach -지 directly to an action or descriptive stem before a negative auxiliary such as 않다. The -지 form links the predicate to the auxiliary; the auxiliary supplies the negation and completes the construction."
+    },
+    {
+      "id": "negative-ji-anhda",
+      "title_en": "Not doing or being",
+      "pattern": "-지 않다",
+      "explanation_en": "Attach -지 않다 to an action or descriptive stem to negate its meaning: ‘do not’ or ‘be not’. The original predicate takes -지, while 않다 completes the negative predicate."
+    },
+    {
+      "id": "nominalized-negation-geosi-anida",
+      "title_en": "Denying a situation",
+      "pattern": "modifier + 것이 아니다",
+      "explanation_en": "Put a clause in noun-modifying form before 것이 아니다 to mean ‘it is not the case that’. Use -는 for an ongoing action or 있다 and 없다, -(으)ㄴ for a current description, or -인 after a noun. 것 turns the clause into a situation that 아니다 denies; the wording determines which part of the claim is rejected."
+    },
+    {
+      "id": "nominalizer-gi",
+      "title_en": "Turning an action or state into a noun",
+      "pattern": "-기",
+      "explanation_en": "Attach -기 to an action or descriptive stem to make a noun-like expression referring to doing something or being in a state. It can take particles or appear within a larger grammatical construction."
+    },
+    {
+      "id": "noun-coordination-wa-gwa",
+      "title_en": "Joining nouns with and",
+      "pattern": "와/과",
+      "explanation_en": "Attach 와 after a vowel-ending noun or 과 after a consonant-ending noun to join it to another noun, meaning ‘and’. A particle attached to the final noun can apply to the coordinated group."
+    },
+    {
+      "id": "plain-declarative-da",
+      "title_en": "Plain statement",
+      "pattern": "-다 / -ㄴ다 / -는다",
+      "explanation_en": "Plain statements are common in narration, private thoughts, and non-polite speech. Descriptive predicates and 있다 or 없다 take -다. Present action verbs take -ㄴ다 after a vowel or -는다 after a consonant; drop a final ㄹ before -ㄴ다. A noun takes -이다, and a past-marked predicate takes -다."
+    },
+    {
+      "id": "plain-question-nya",
+      "title_en": "Plain direct question",
+      "pattern": "-냐 / -느냐 / -(으)냐",
+      "explanation_en": "These endings ask direct questions in a non-polite style. -냐 can follow a predicate stem. The fuller forms are -느냐 with action verbs and 있다 or 없다, and -(으)냐 with descriptive predicates. Drop a stem-final ㄹ before these endings. Nouns take -이냐 after a consonant or -냐 after a vowel. The style may sound familiar or stern depending on the relationship and tone."
+    },
+    {
+      "id": "plural-deul",
+      "title_en": "Making plurality explicit",
+      "pattern": "들",
+      "explanation_en": "Attach 들 to a noun to make its plural meaning explicit, especially with people. Korean nouns can also have plural meaning without 들, so this marker is not required whenever English uses a plural."
+    },
+    {
+      "id": "position-state-e",
+      "title_en": "A position or state occupied",
+      "pattern": "에",
+      "explanation_en": "Attach 에 to a noun naming a position, role, or state to mark what someone or something occupies or is in. With 있다, this can express holding a position or being in a particular state. The same form follows consonants and vowels."
+    },
+    {
+      "id": "possessor-ege",
+      "title_en": "The person who has something",
+      "pattern": "에게 … 있다/없다",
+      "explanation_en": "With 있다 or 없다, attach 에게 to the person who has or lacks something. The possessed thing or relationship is normally marked with 이 or 가. This structure often translates into English with ‘have’ rather than ‘there is’."
+    },
+    {
+      "id": "progressive-go-itda",
+      "title_en": "An action in progress",
+      "pattern": "-고 있다",
+      "explanation_en": "Attach -고 있다 to an action verb stem to describe an action in progress, often translated as ‘be doing’. 있다 functions as an auxiliary here, rather than independently stating that something exists."
+    },
+    {
+      "id": "reason-a-eoseo",
+      "title_en": "Giving a reason",
+      "pattern": "-아/어서",
+      "explanation_en": "Attach -아서 to a stem whose final vowel is ㅏ or ㅗ and -어서 otherwise to give a reason for the following statement. 하다 becomes 해서, and 아니다 becomes 아니라서. Regular contractions and irregular stem changes apply. The final predicate normally establishes the time of the whole statement."
+    },
+    {
+      "id": "recipient-ege",
+      "title_en": "The person an action is directed to",
+      "pattern": "에게",
+      "explanation_en": "Attach 에게 to a person or animal to mark the recipient or the one toward whom an action is directed, often translated as ‘to’. It has the same form after consonants and vowels."
+    },
+    {
+      "id": "reflective-question-eul-kka",
+      "title_en": "Wondering to oneself",
+      "pattern": "-(으)ㄹ까",
+      "explanation_en": "Use -(으)ㄹ까 to ask a question inwardly or wonder about an explanation or possibility. Add -을까 after a consonant other than ㄹ, or -ㄹ까 after a vowel; a ㄹ-ending stem takes -까. Nouns take -일까. The ending conveys reflection or uncertainty rather than necessarily referring to future time."
+    },
+    {
+      "id": "short-negation-an",
+      "title_en": "Negating with not",
+      "pattern": "안 + predicate",
+      "explanation_en": "Place 안 before an action or descriptive predicate to negate it. With many activity nouns followed by 하다, 안 goes between the noun and 하다. To deny a noun identity, use 아니다 instead."
+    },
+    {
+      "id": "tentative-question-eul-kka",
+      "title_en": "Considering an uncertain possibility",
+      "pattern": "-(으)ㄹ까",
+      "explanation_en": "Use -(으)ㄹ까 to consider whether something might happen or be true. Add -을까 after a consonant other than ㄹ, or -ㄹ까 after a vowel; a ㄹ-ending stem takes -까. Nouns take -일까. Before a predicate of worry, the clause identifies the uncertain possibility causing concern."
+    },
+    {
+      "id": "with-wa-gwa",
+      "title_en": "Together with someone",
+      "pattern": "와/과",
+      "explanation_en": "Attach 와 after a vowel-ending noun or 과 after a consonant-ending noun to mark a companion or someone participating in an action together: ‘with’. 함께 or 같이 may follow to emphasize doing it together."
     }
   ]
 }

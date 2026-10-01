@@ -35,19 +35,29 @@ SEGMENT = {"anyOf": [WORD_SEGMENT, PUNCTUATION_SEGMENT]}
 ANNOTATION = obj({"segments": {"type": "array", "minItems": 1, "items": SEGMENT},
                   "grammar_links": {"type": "array", "items": LINK},
                   "inflected_segment_indices": {"type": "array", "items": {"type": "integer"}}})
-PLAN = obj({"title": STRING, "beats": {"type": "array", "minItems": 1,
+PLAN = obj({"title": STRING, "scope_reason_en": NONEMPTY,
+    "last_source_paragraph_index": {"type": "integer", "minimum": 0}, "beats": {"type": "array", "minItems": 1,
     "items": obj({"source_paragraph_index": {"type": "integer"}, "event_en": STRING})}})
 FOCUS_ENTRY = obj({"id": NONEMPTY, "headword": NONEMPTY,
     "kind": {"type": "string", "enum": ["proper_name", "story_term"]},
     "aliases": {"type": "array", "minItems": 1, "items": NONEMPTY}, "role_en": NONEMPTY})
 FOCUS = obj({"entries": {"type": "array", "items": FOCUS_ENTRY}})
-PROSE = obj({"title": STRING, "text": STRING})
+PROSE = obj({"title": NONEMPTY, "text": NONEMPTY, "length_reason_en": NONEMPTY})
 WORD = obj({"id": STRING, "headword": STRING,
             "kind": {"type": "string", "enum": ["word", "proper_name", "story_term"]},
             "definition_en": STRING})
 GRAMMAR = obj({"id": STRING, "title_en": STRING, "pattern": STRING, "explanation_en": STRING})
 DICTIONARY = obj({"words": {"type": "array", "items": WORD},
                   "grammar": {"type": "array", "items": GRAMMAR}})
+GRAMMAR_BINDINGS = obj({'bindings': {'type': 'array', 'items': obj({
+    'draft_id': NONEMPTY, 'entry_id': NONEMPTY})}})
+ANNOTATION_REPAIR_PLAN = obj({'repairs': {'type': 'array', 'items': obj({
+    'chunk_index': {'type': 'integer', 'minimum': 1},
+    'issues': {'type': 'array', 'minItems': 1, 'items': NONEMPTY}})},
+    'prose_revision_reason_en': STRING})
+ANNOTATION_REUSE_PLAN = obj({'reused_chunks': {'type': 'array', 'items': obj({
+    'old_chunk_index': {'type': 'integer', 'minimum': 1},
+    'new_chunk_index': {'type': 'integer', 'minimum': 1}})}})
 PART = obj({"text": STRING, "explanation_en": STRING})
 BREAKDOWNS = obj({"sentences": {"type": "array", "items": obj({
     "start": {"type": "integer"}, "sentence": STRING, "selected": {"type": "boolean"},
@@ -61,6 +71,9 @@ def schema_path(name: str) -> Path:
 def write_schemas() -> None:
     for name, schema in {"review": REVIEW, "plan": PLAN, "prose": PROSE,
                          "annotation": ANNOTATION, "lexical-plan": FOCUS, "dictionary": DICTIONARY,
+                         'grammar-bindings': GRAMMAR_BINDINGS,
+                         'annotation-repair-plan': ANNOTATION_REPAIR_PLAN,
+                         'annotation-reuse-plan': ANNOTATION_REUSE_PLAN,
                          "breakdowns": BREAKDOWNS}.items():
         schema_path(name).write_text(json.dumps(schema, ensure_ascii=False, indent=2) + "\n")
 
@@ -80,13 +93,23 @@ def lexical_catalog() -> dict[str, list[dict]]:
 
 def bind_plan(plan: dict, source: str, source_start: int) -> dict:
     bound = {"title": plan["title"], "beats": []}
+    if 'scope_reason_en' in plan:
+        bound['scope_reason_en'] = plan['scope_reason_en']
     paragraphs = source.split("\n\n")
+    if 'last_source_paragraph_index' in plan:
+        last = plan['last_source_paragraph_index']
+        if type(last) is not int or not 0 <= last < len(paragraphs):
+            raise ValueError('Korean source stopping point is outside the remaining source')
+        bound['scope'] = {'start': source_start,
+                          'end': source_start + sum(len(p) + 2 for p in paragraphs[:last]) + len(paragraphs[last])}
     indices = [beat["source_paragraph_index"] for beat in plan["beats"]]
     if indices != sorted(set(indices)):
         raise ValueError("Korean source plan repeats or reorders paragraphs")
     for beat in plan["beats"]:
         index = beat["source_paragraph_index"]
-        if type(index) is not int or not 0 <= index < len(paragraphs) or not beat["event_en"].strip():
+        if (type(index) is not int or not 0 <= index < len(paragraphs)
+                or ('last_source_paragraph_index' in plan and index > last)
+                or not beat["event_en"].strip()):
             raise ValueError("Korean source plan selects an invalid paragraph")
         quote = paragraphs[index]
         start = source_start + sum(len(p) + 2 for p in paragraphs[:index])
@@ -138,6 +161,12 @@ def canonical_annotation(value: dict, prose: dict, number: int, edition: str, pl
             "source_alignment": {"edition": edition, "reviewed": True, "beats": plan["beats"]}}
     if focus is not None:
         result["lexical_focus"] = focus
+    if 'scope' in plan:
+        result['source_alignment']['unit'] = {'number': number, **plan['scope'], 'label': plan['title']}
+    if 'length_reason_en' in prose:
+        result['adaptation_decisions'] = {
+            'scope_reason_en': plan['scope_reason_en'],
+            'length_reason_en': prose['length_reason_en']}
     return result
 
 
@@ -145,6 +174,76 @@ def annotation_chunks(text: str) -> list[str]:
     inventory = sentence_inventory(text)
     starts = [0] + [row["start"] for row in inventory[1:]] + [len(text)]
     return [text[start:end] for start, end in zip(starts, starts[1:])]
+
+
+def bind_grammar_identities(value: dict, bindings: dict, approved_ids: set) -> dict:
+    """Apply explicitly proposed identities; never infer a pattern from spelling."""
+    mapping = {row['draft_id']: row['entry_id'] for row in bindings['bindings']}
+    used = {link['entry_id'] for link in value['grammar_links']}
+    used.update(s['lexical_id'] for s in value['segments'] if s['lexical_kind'] == 'grammar')
+    new = used - approved_ids
+    if len(mapping) != len(bindings['bindings']) or mapping.keys() != new:
+        raise ValueError('Korean grammar bindings must cover only new draft identities exactly once')
+    if any(target not in used | approved_ids or mapping.get(target, target) != target
+           for target in mapping.values()):
+        raise ValueError('Korean grammar bindings need an existing or self-bound canonical identity')
+    result = json.loads(json.dumps(value))
+    for link in result['grammar_links']:
+        link['entry_id'] = mapping.get(link['entry_id'], link['entry_id'])
+    for segment in result['segments']:
+        if segment['lexical_kind'] == 'grammar':
+            segment['lexical_id'] = mapping.get(segment['lexical_id'], segment['lexical_id'])
+        for step in segment['form_steps']:
+            step['grammar_entry_ids'] = [mapping.get(identity, identity) for identity in step['grammar_entry_ids']]
+    return result
+
+
+def repair_selection(plan: dict, chunk_count: int) -> dict:
+    selected = {row['chunk_index']: row['issues'] for row in plan['repairs']}
+    if (len(selected) != len(plan['repairs']) or not selected
+            or any(type(index) is not int or not 1 <= index <= chunk_count for index in selected)):
+        raise ValueError('Korean repair plan repeats a chunk or escapes chapter coverage')
+    return selected
+
+
+def reuse_selection(plan: dict, old_texts: list[str], new_texts: list[str]) -> dict:
+    selected, old_indices = {}, set()
+    for row in plan['reused_chunks']:
+        old, new = row['old_chunk_index'], row['new_chunk_index']
+        if (type(old) is not int or type(new) is not int
+                or not 1 <= old <= len(old_texts) or not 1 <= new <= len(new_texts)
+                or old in old_indices or new in selected
+                or old_texts[old - 1] != new_texts[new - 1]):
+            raise ValueError('Korean reuse needs distinct occurrences with identical source text')
+        selected[new] = old
+        old_indices.add(old)
+    if [selected[i] for i in sorted(selected)] != sorted(old_indices):
+        raise ValueError('Korean reuse reorders source occurrences')
+    return selected
+
+
+def slice_annotations(value: dict, texts: list[str]) -> list[dict]:
+    check_reconstruction(value['segments'], ''.join(texts))
+    chunks, first = [], 0
+    for text in texts:
+        last, length = first, 0
+        while length < len(text):
+            length += len(value['segments'][last]['text'])
+            last += 1
+        if length != len(text):
+            raise ValueError('Korean annotation slice crosses a tap')
+        links = []
+        for link in value['grammar_links']:
+            if first <= link['segment_index'] < last:
+                if link['display_end_segment_index'] >= last:
+                    raise ValueError('Korean annotation slice crosses a construction')
+                links.append({**link, 'segment_index': link['segment_index'] - first,
+                    'display_end_segment_index': link['display_end_segment_index'] - first
+                    if link['display_end_segment_index'] != -1 else -1})
+        chunks.append({'segments': value['segments'][first:last], 'grammar_links': links,
+                       'inflected_segment_indices': [index - first for index in value['inflected_segment_indices'] if first <= index < last]})
+        first = last
+    return chunks
 
 
 def combine_annotations(values: list[dict], texts: list[str]) -> dict:

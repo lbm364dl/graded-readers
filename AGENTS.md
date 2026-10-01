@@ -60,6 +60,14 @@ IDs as compatibility destinations; do not merge different readings or kinds.
 
 ## Verify and minimize unnecessary work
 
+Choose chapter length through reviewed source coverage, narrative coherence and
+the requested learner level. Unless the user explicitly requests a fixed size,
+do not impose chapter-wide character, word, sentence or source-paragraph quotas.
+Short individual sentences do not require a short chapter. Review avoidable
+compression and repetitive padding alike; a brief chapter is valid when the
+source scene or actual learner difficulty justifies it. Keep this decision in
+pipeline planning and review, never as a manual expansion of one sample.
+
 Preserve unrelated worktree changes. Reuse reviewed data and cached agent work;
 send agents only new or changed material, with review proportional to the risk.
 Changing UI wording is not a reason to rerun unrelated dictionary research.

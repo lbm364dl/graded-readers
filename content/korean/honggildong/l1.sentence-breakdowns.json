@@ -4,73 +4,389 @@
   "breakdowns": [
     {
       "source": "assets/annotations/korean_honggildong_l1_001.json",
-      "start": 26,
-      "sentence": "어머니는 그 집에서 일하는 사람이었습니다.",
-      "translation_en": "His mother was someone who worked in that household.",
+      "start": 47,
+      "sentence": "나라에서 중요한 일을 했고, 많은 사람들이 그를 잘 알았습니다.",
+      "translation_en": "He did important work for the country, and many people knew him well.",
       "parts": [
         {
-          "text": "어머니는",
-          "explanation_en": "His mother is the topic; the rest of the sentence describes her role."
+          "text": "나라에서 중요한 일을 했고,",
+          "explanation_en": "Minister Hong is the understood subject: he did important work for the country. -고 connects this to the next statement."
         },
         {
-          "text": " 그 집에서",
-          "explanation_en": "That household is the place where she worked."
+          "text": " 많은 사람들이",
+          "explanation_en": "The subject changes to many people."
         },
         {
-          "text": " 일하는",
-          "explanation_en": "Modifies the following 사람: 'who works.' Here it describes her work at the time of the past statement, so English uses 'who worked.'"
+          "text": " 그를 잘 알았습니다.",
+          "explanation_en": "Those people knew him well; 그 refers to Minister Hong."
+        }
+      ]
+    },
+    {
+      "source": "assets/annotations/korean_honggildong_l1_001.json",
+      "start": 198,
+      "sentence": "춘섬은 처음에 홍 판서의 집에서 일하는 사람이었습니다.",
+      "translation_en": "At first, Chunseom was someone who worked in Minister Hong's household.",
+      "parts": [
+        {
+          "text": "춘섬은 처음에",
+          "explanation_en": "Introduces Chunseom's initial situation."
+        },
+        {
+          "text": " 홍 판서의 집에서 일하는",
+          "explanation_en": "Describes the following person as working in Minister Hong's household. The main predicate sets the past time."
         },
         {
           "text": " 사람이었습니다.",
-          "explanation_en": "Means 'was a person.' Together with the preceding modifier, this identifies her as someone who worked in that household."
+          "explanation_en": "Completes the identification: she was such a person."
         }
       ]
     },
     {
       "source": "assets/annotations/korean_honggildong_l1_001.json",
-      "start": 76,
-      "sentence": "그래서 아버지는 길동이 아버지를 “아버지”라고 부르지 못하게 했습니다.",
-      "translation_en": "So his father prevented Gildong from calling him “Father.”",
+      "start": 296,
+      "sentence": "하지만 길동의 어머니가 유 부인이 아니라서 마음이 아프기도 했습니다.",
+      "translation_en": "But he also felt hurt because Gildong's mother was not Lady Yu.",
       "parts": [
         {
-          "text": "그래서",
-          "explanation_en": "Means 'so,' connecting this restriction to the preceding explanation of his mother's status."
+          "text": "하지만",
+          "explanation_en": "Contrasts this feeling with Minister Hong's happiness in the previous sentence."
         },
         {
-          "text": " 아버지는",
-          "explanation_en": "His father is the topic and the person who imposes the restriction."
+          "text": " 길동의 어머니가 유 부인이 아니라서",
+          "explanation_en": "Gives the reason: Gildong's mother was not Lady Yu, Minister Hong's wife."
         },
         {
-          "text": " 길동이",
-          "explanation_en": "Gildong is the subject of the embedded action: he is the person who would use the title."
-        },
-        {
-          "text": " 아버지를 “아버지”라고",
-          "explanation_en": "His father is the person addressed, and “아버지” is the exact title, 'Father,' that Gildong would use."
-        },
-        {
-          "text": " 부르지 못하게 했습니다.",
-          "explanation_en": "부르지 못하다 means 'cannot call'; adding -게 하다 means making that inability happen. In this past-tense context, the complete phrase means 'prevented him from calling him that.'"
+          "text": " 마음이 아프기도 했습니다.",
+          "explanation_en": "Minister Hong also felt emotional pain. -기도 하다 adds this feeling to his happiness."
         }
       ]
     },
     {
       "source": "assets/annotations/korean_honggildong_l1_001.json",
-      "start": 116,
-      "sentence": "길동은 형을 “형”이라고 부를 수도 없었습니다.",
-      "translation_en": "Gildong could not even call his older brother “Brother.”",
+      "start": 367,
+      "sentence": "하나를 배우면 다른 것도 많이 알 수 있었습니다.",
+      "translation_en": "If he learned one thing, he could understand many other things too.",
       "parts": [
         {
-          "text": "길동은",
-          "explanation_en": "Gildong is the topic; this sentence describes another restriction he faced."
+          "text": "하나를 배우면",
+          "explanation_en": "Sets the condition: if Gildong learned one thing."
         },
         {
-          "text": " 형을 “형”이라고",
-          "explanation_en": "His older brother is the person addressed, and “형” is the family title a boy uses for his older brother."
+          "text": " 다른 것도 많이",
+          "explanation_en": "Adds many other things beyond the one he learned."
         },
         {
-          "text": " 부를 수도 없었습니다.",
-          "explanation_en": "The complete phrase means 'could not even call him that.' 부를 수 없다 expresses inability, 도 adds 'even,' and the ending places the restriction in the past."
+          "text": " 알 수 있었습니다.",
+          "explanation_en": "Expresses his ability to understand them in the past."
+        }
+      ]
+    },
+    {
+      "source": "assets/annotations/korean_honggildong_l1_001.json",
+      "start": 445,
+      "sentence": "춘섬은 집에서 일하는 사람이었고, 사람들은 춘섬을 중요한 사람으로 생각하지 않았습니다.",
+      "translation_en": "Chunseom worked in the household, and people did not regard her as an important person.",
+      "parts": [
+        {
+          "text": "춘섬은",
+          "explanation_en": "Introduces Chunseom as the first topic."
+        },
+        {
+          "text": " 집에서 일하는 사람이었고,",
+          "explanation_en": "Identifies her as someone who worked in the household; -고 connects this description to the next clause."
+        },
+        {
+          "text": " 사람들은 춘섬을",
+          "explanation_en": "Changes the topic to people and marks Chunseom as the person they judged."
+        },
+        {
+          "text": " 중요한 사람으로",
+          "explanation_en": "Gives the category: an important person."
+        },
+        {
+          "text": " 생각하지 않았습니다.",
+          "explanation_en": "Negates that judgment: they did not regard her that way."
+        }
+      ]
+    },
+    {
+      "source": "assets/annotations/korean_honggildong_l1_001.json",
+      "start": 494,
+      "sentence": "사람들은 춘섬의 아들인 길동도 중요한 사람으로 생각하지 않았습니다.",
+      "translation_en": "People did not regard Gildong, Chunseom's son, as an important person either.",
+      "parts": [
+        {
+          "text": "사람들은",
+          "explanation_en": "People are the topic and the ones making the judgment."
+        },
+        {
+          "text": " 춘섬의 아들인 길동도",
+          "explanation_en": "Identifies Gildong as Chunseom's son. 도 adds him to the dismissive treatment of his mother."
+        },
+        {
+          "text": " 중요한 사람으로",
+          "explanation_en": "Names the category in which he was not regarded: an important person."
+        },
+        {
+          "text": " 생각하지 않았습니다.",
+          "explanation_en": "Says that people did not regard him that way."
+        }
+      ]
+    },
+    {
+      "source": "assets/annotations/korean_honggildong_l1_001.json",
+      "start": 532,
+      "sentence": "길동이 홍 판서를 ‘아버지’라고 부르면 홍 판서는 화를 냈습니다.",
+      "translation_en": "Whenever Gildong called Minister Hong “Father,” Minister Hong got angry.",
+      "parts": [
+        {
+          "text": "길동이 홍 판서를",
+          "explanation_en": "Gildong is the caller; Minister Hong is the person he addresses."
+        },
+        {
+          "text": " ‘아버지’라고 부르면",
+          "explanation_en": "Gives the recurring condition: whenever he called him “Father.”"
+        },
+        {
+          "text": " 홍 판서는 화를 냈습니다.",
+          "explanation_en": "Minister Hong is now the subject. 화를 내다 means to get angry."
+        }
+      ]
+    },
+    {
+      "source": "assets/annotations/korean_honggildong_l1_001.json",
+      "start": 569,
+      "sentence": "인형을 ‘형’이라고 불러도 화를 냈습니다.",
+      "translation_en": "Minister Hong also got angry if Gildong called Inhyeong “Older Brother.”",
+      "parts": [
+        {
+          "text": "인형을 ‘형’이라고 불러도",
+          "explanation_en": "Gildong is the understood caller. Calling Inhyeong “Older Brother” also led to the same reaction."
+        },
+        {
+          "text": " 화를 냈습니다.",
+          "explanation_en": "Minister Hong, rather than Gildong, is the understood person who got angry."
+        }
+      ]
+    },
+    {
+      "source": "assets/annotations/korean_honggildong_l1_001.json",
+      "start": 670,
+      "sentence": "그 집에서 일하는 다른 사람들도 길동을 중요한 사람으로 생각하지 않았습니다.",
+      "translation_en": "The other people working in that household did not regard Gildong as an important person either.",
+      "parts": [
+        {
+          "text": "그 집에서 일하는 다른 사람들도",
+          "explanation_en": "Identifies the other people working in that household. 도 says they too treated Gildong this way."
+        },
+        {
+          "text": " 길동을 중요한 사람으로",
+          "explanation_en": "Gildong is the person being judged; 중요한 사람으로 means as an important person."
+        },
+        {
+          "text": " 생각하지 않았습니다.",
+          "explanation_en": "Negates the judgment: they did not regard him as important."
+        }
+      ]
+    },
+    {
+      "source": "assets/annotations/korean_honggildong_l1_001.json",
+      "start": 793,
+      "sentence": "“나는 나라를 돕고 큰 일을 하고 싶다.",
+      "translation_en": "“I want to help the country and do great things.",
+      "parts": [
+        {
+          "text": "“나는",
+          "explanation_en": "Gildong speaks about his own wish."
+        },
+        {
+          "text": " 나라를 돕고",
+          "explanation_en": "Helping the country is the first action he wants to do; -고 connects it to the next action."
+        },
+        {
+          "text": " 큰 일을 하고 싶다.",
+          "explanation_en": "He wants to do great things. The desire expressed by 싶다 also applies to helping the country."
+        }
+      ]
+    },
+    {
+      "source": "assets/annotations/korean_honggildong_l1_001.json",
+      "start": 816,
+      "sentence": "그런데 왜 이렇게 혼자인 것 같을까?",
+      "translation_en": "But why do I feel so alone?",
+      "parts": [
+        {
+          "text": "그런데 왜 이렇게",
+          "explanation_en": "Turns from his ambition to a question: but why so…?"
+        },
+        {
+          "text": " 혼자인 것",
+          "explanation_en": "Presents being alone as the situation he is considering."
+        },
+        {
+          "text": " 같을까?",
+          "explanation_en": "Completes the impression construction and an inward question: why does he feel that way?"
+        }
+      ]
+    },
+    {
+      "source": "assets/annotations/korean_honggildong_l1_001.json",
+      "start": 931,
+      "sentence": "그리고 칼을 가지고 싸우는 연습을 했습니다.",
+      "translation_en": "Then he practiced fighting with a sword.",
+      "parts": [
+        {
+          "text": "그리고 칼을 가지고",
+          "explanation_en": "Continues Gildong's actions: he holds and uses a sword."
+        },
+        {
+          "text": " 싸우는 연습을",
+          "explanation_en": "싸우는 describes the practice as practice in fighting."
+        },
+        {
+          "text": " 했습니다.",
+          "explanation_en": "Completes 연습을 하다, meaning to practice, in the past."
+        }
+      ]
+    },
+    {
+      "source": "assets/annotations/korean_honggildong_l1_001.json",
+      "start": 994,
+      "sentence": "“밤이 늦었는데 왜 아직 안 자니?”",
+      "translation_en": "“It's late. Why aren't you asleep yet?”",
+      "parts": [
+        {
+          "text": "“밤이 늦었는데",
+          "explanation_en": "Gives the late hour as background for the father's question."
+        },
+        {
+          "text": " 왜 아직 안 자니?”",
+          "explanation_en": "Asks why Gildong is still not sleeping. -니 is a familiar question ending used toward his child."
+        }
+      ]
+    },
+    {
+      "source": "assets/annotations/korean_honggildong_l1_001.json",
+      "start": 1029,
+      "sentence": "“달이 좋아서 보고 있었습니다.",
+      "translation_en": "“I was looking at the moon because it was lovely.",
+      "parts": [
+        {
+          "text": "“달이 좋아서",
+          "explanation_en": "Gives the reason: the moon was lovely."
+        },
+        {
+          "text": " 보고 있었습니다.",
+          "explanation_en": "Gildong was looking at it. The moon is the understood object, and -고 있었다 describes an ongoing past action."
+        }
+      ]
+    },
+    {
+      "source": "assets/annotations/korean_honggildong_l1_001.json",
+      "start": 1086,
+      "sentence": "저도 사람인데, 왜 저는 다른 사람들과 다릅니까?”",
+      "translation_en": "I'm a person too, so why am I different from other people?”",
+      "parts": [
+        {
+          "text": "저도 사람인데,",
+          "explanation_en": "Gildong says he is a person too; -인데 presents this as background contrasting with his unequal situation."
+        },
+        {
+          "text": " 왜 저는",
+          "explanation_en": "Introduces his question about himself."
+        },
+        {
+          "text": " 다른 사람들과 다릅니까?”",
+          "explanation_en": "Asks why he is different from other people. 과 marks the comparison, and -ㅂ니까 makes the question formally polite."
+        }
+      ]
+    },
+    {
+      "source": "assets/annotations/korean_honggildong_l1_001.json",
+      "start": 1314,
+      "sentence": "하지만 길동에게 좋은 말을 해 주면, 길동이 아버지의 말을 듣지 않을까 걱정했습니다.",
+      "translation_en": "But he worried that if he spoke kindly to Gildong, Gildong might stop obeying him.",
+      "parts": [
+        {
+          "text": "하지만",
+          "explanation_en": "Contrasts the father's worry with his sympathy."
+        },
+        {
+          "text": " 길동에게 좋은 말을 해 주면,",
+          "explanation_en": "Sets the condition: if Minister Hong spoke kindly to Gildong. 주다 presents the speech as something done for him."
+        },
+        {
+          "text": " 길동이 아버지의 말을",
+          "explanation_en": "Gildong becomes the subject of the feared outcome; his father's words mean his instructions here."
+        },
+        {
+          "text": " 듣지 않을까",
+          "explanation_en": "Expresses the uncertain negative possibility: Gildong might not heed or obey those instructions."
+        },
+        {
+          "text": " 걱정했습니다.",
+          "explanation_en": "Minister Hong is the understood subject again: he worried about that possible outcome."
+        }
+      ]
+    },
+    {
+      "source": "assets/annotations/korean_honggildong_l1_001.json",
+      "start": 1384,
+      "sentence": "“높은 벼슬을 하는 사람의 집에서 일하는 여자의 아들은 너만 있는 것이 아니다.",
+      "translation_en": "“You are not the only son of a woman who works in a high-ranking official's household.",
+      "parts": [
+        {
+          "text": "“높은 벼슬을 하는 사람의",
+          "explanation_en": "Identifies a person who holds a high-ranking official post; 의 connects that official to the following household."
+        },
+        {
+          "text": " 집에서 일하는 여자의",
+          "explanation_en": "Describes a woman working in that household; 의 connects her to her son."
+        },
+        {
+          "text": " 아들은",
+          "explanation_en": "Makes sons of such women the topic of the statement."
+        },
+        {
+          "text": " 너만 있는 것이 아니다.",
+          "explanation_en": "Rejects the idea that Gildong is the only one: other sons are in this situation too."
+        }
+      ]
+    },
+    {
+      "source": "assets/annotations/korean_honggildong_l1_001.json",
+      "start": 1445,
+      "sentence": "다시 이런 말을 하면 내 앞에 올 수 없다.”",
+      "translation_en": "If you say such things again, you cannot come before me.”",
+      "parts": [
+        {
+          "text": "다시 이런 말을 하면",
+          "explanation_en": "Sets the condition: if Gildong says such things again."
+        },
+        {
+          "text": " 내 앞에",
+          "explanation_en": "Means into the father's presence; 내 is the father's 'my'."
+        },
+        {
+          "text": " 올 수 없다.”",
+          "explanation_en": "The father uses 'cannot come' as a prohibition in this warning."
+        }
+      ]
+    },
+    {
+      "source": "assets/annotations/korean_honggildong_l1_001.json",
+      "start": 1524,
+      "sentence": "홍 판서의 말을 듣고 길동은 방으로 돌아갔습니다.",
+      "translation_en": "After hearing Minister Hong's words, Gildong returned to his room.",
+      "parts": [
+        {
+          "text": "홍 판서의 말을 듣고",
+          "explanation_en": "Gildong heard Minister Hong's words; -고 connects hearing them to his next action."
+        },
+        {
+          "text": " 길동은 방으로 돌아갔습니다.",
+          "explanation_en": "Makes Gildong explicit as the subject and says he returned to his room; 으로 marks the destination."
         }
       ]
     }
@@ -79,100 +395,816 @@
     "1": [
       {
         "start": 0,
-        "sentence": "길동의 아버지는 나라의 중요한 일을 했습니다.",
+        "sentence": "옛날에 홍 판서라는 사람이 있었습니다.",
         "selected": false,
-        "reason_en": "A straightforward statement about his father's work; the noun modifier and past ending are explained by the existing tap annotations.",
+        "reason_en": "A short introduction with one naming modifier and one main predicate.",
         "translation_en": "",
         "parts": []
       },
       {
-        "start": 26,
-        "sentence": "어머니는 그 집에서 일하는 사람이었습니다.",
+        "start": 22,
+        "sentence": "홍 판서는 나라에서 높은 벼슬에 있었습니다.",
+        "selected": false,
+        "reason_en": "One straightforward statement about his position; taps explain the story term.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 47,
+        "sentence": "나라에서 중요한 일을 했고, 많은 사람들이 그를 잘 알았습니다.",
         "selected": true,
-        "reason_en": "A beginner needs to connect the modifying clause 일하는 to 사람 and understand its time relative to the past-tense main statement.",
-        "translation_en": "His mother was someone who worked in that household.",
+        "reason_en": "Two connected clauses have different subjects; help shows the subject change.",
+        "translation_en": "He did important work for the country, and many people knew him well.",
         "parts": [
           {
-            "text": "어머니는",
-            "explanation_en": "His mother is the topic; the rest of the sentence describes her role."
+            "text": "나라에서 중요한 일을 했고,",
+            "explanation_en": "Minister Hong is the understood subject: he did important work for the country. -고 connects this to the next statement."
           },
           {
-            "text": " 그 집에서",
-            "explanation_en": "That household is the place where she worked."
+            "text": " 많은 사람들이",
+            "explanation_en": "The subject changes to many people."
           },
           {
-            "text": " 일하는",
-            "explanation_en": "Modifies the following 사람: 'who works.' Here it describes her work at the time of the past statement, so English uses 'who worked.'"
+            "text": " 그를 잘 알았습니다.",
+            "explanation_en": "Those people knew him well; 그 refers to Minister Hong."
+          }
+        ]
+      },
+      {
+        "start": 84,
+        "sentence": "홍 판서에게는 두 아들이 있었습니다.",
+        "selected": false,
+        "reason_en": "A short possession statement; the possessor construction is explained on its tap.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 105,
+        "sentence": "첫째 아들은 홍인형이었습니다.",
+        "selected": false,
+        "reason_en": "A simple identification of the first son.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 122,
+        "sentence": "인형의 어머니는 유 부인이었습니다.",
+        "selected": false,
+        "reason_en": "A simple identification with one family relationship.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 142,
+        "sentence": "유 부인은 홍 판서의 아내였습니다.",
+        "selected": false,
+        "reason_en": "One direct statement of a family relationship.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 162,
+        "sentence": "둘째 아들은 홍길동이었습니다.",
+        "selected": false,
+        "reason_en": "A simple identification parallel to the first son's introduction.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 179,
+        "sentence": "길동의 어머니는 춘섬이었습니다.",
+        "selected": false,
+        "reason_en": "A short identification of Gildong's mother.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 198,
+        "sentence": "춘섬은 처음에 홍 판서의 집에서 일하는 사람이었습니다.",
+        "selected": true,
+        "reason_en": "A noun-modifying clause connects Chunseom's work and workplace to her identity.",
+        "translation_en": "At first, Chunseom was someone who worked in Minister Hong's household.",
+        "parts": [
+          {
+            "text": "춘섬은 처음에",
+            "explanation_en": "Introduces Chunseom's initial situation."
+          },
+          {
+            "text": " 홍 판서의 집에서 일하는",
+            "explanation_en": "Describes the following person as working in Minister Hong's household. The main predicate sets the past time."
           },
           {
             "text": " 사람이었습니다.",
-            "explanation_en": "Means 'was a person.' Together with the preceding modifier, this identifies her as someone who worked in that household."
+            "explanation_en": "Completes the identification: she was such a person."
           }
         ]
       },
       {
-        "start": 50,
-        "sentence": "하지만 어머니는 아버지의 아내가 아니었습니다.",
+        "start": 229,
+        "sentence": "나중에는 홍 판서와 함께 살게 되었습니다.",
         "selected": false,
-        "reason_en": "One short negative statement about a family relationship; the existing annotations explain the possessive phrase and 아니다 construction.",
+        "reason_en": "One change-of-circumstances statement; the phrase row explains 살게 되었습니다.",
         "translation_en": "",
         "parts": []
       },
       {
-        "start": 76,
-        "sentence": "그래서 아버지는 길동이 아버지를 “아버지”라고 부르지 못하게 했습니다.",
-        "selected": true,
-        "reason_en": "The sentence combines an embedded subject, a quoted title, inability, and causation. A breakdown helps distinguish who imposes the restriction from who cannot use the title.",
-        "translation_en": "So his father prevented Gildong from calling him “Father.”",
-        "parts": [
-          {
-            "text": "그래서",
-            "explanation_en": "Means 'so,' connecting this restriction to the preceding explanation of his mother's status."
-          },
-          {
-            "text": " 아버지는",
-            "explanation_en": "His father is the topic and the person who imposes the restriction."
-          },
-          {
-            "text": " 길동이",
-            "explanation_en": "Gildong is the subject of the embedded action: he is the person who would use the title."
-          },
-          {
-            "text": " 아버지를 “아버지”라고",
-            "explanation_en": "His father is the person addressed, and “아버지” is the exact title, 'Father,' that Gildong would use."
-          },
-          {
-            "text": " 부르지 못하게 했습니다.",
-            "explanation_en": "부르지 못하다 means 'cannot call'; adding -게 하다 means making that inability happen. In this past-tense context, the complete phrase means 'prevented him from calling him that.'"
-          }
-        ]
-      },
-      {
-        "start": 116,
-        "sentence": "길동은 형을 “형”이라고 부를 수도 없었습니다.",
-        "selected": true,
-        "reason_en": "The quoted family title and the construction 부를 수도 없었습니다 require connecting several taps to understand both inability and the emphasis added by 도.",
-        "translation_en": "Gildong could not even call his older brother “Brother.”",
-        "parts": [
-          {
-            "text": "길동은",
-            "explanation_en": "Gildong is the topic; this sentence describes another restriction he faced."
-          },
-          {
-            "text": " 형을 “형”이라고",
-            "explanation_en": "His older brother is the person addressed, and “형” is the family title a boy uses for his older brother."
-          },
-          {
-            "text": " 부를 수도 없었습니다.",
-            "explanation_en": "The complete phrase means 'could not even call him that.' 부를 수 없다 expresses inability, 도 adds 'even,' and the ending places the restriction in the past."
-          }
-        ]
-      },
-      {
-        "start": 143,
-        "sentence": "길동은 마음이 매우 아프고 슬펐습니다.",
+        "start": 253,
+        "sentence": "그리고 길동이 태어났습니다.",
         "selected": false,
-        "reason_en": "A short statement joining two feelings with -고. The tap annotations already explain emotional pain and how the final past ending applies to both feelings.",
+        "reason_en": "A short statement of one event.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 269,
+        "sentence": "홍 판서는 아들을 보고 기분이 아주 좋았습니다.",
+        "selected": false,
+        "reason_en": "A brief action followed by a feeling with the same understood experiencer.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 296,
+        "sentence": "하지만 길동의 어머니가 유 부인이 아니라서 마음이 아프기도 했습니다.",
+        "selected": true,
+        "reason_en": "The negative reason clause combines with an additional feeling and an implicit experiencer.",
+        "translation_en": "But he also felt hurt because Gildong's mother was not Lady Yu.",
+        "parts": [
+          {
+            "text": "하지만",
+            "explanation_en": "Contrasts this feeling with Minister Hong's happiness in the previous sentence."
+          },
+          {
+            "text": " 길동의 어머니가 유 부인이 아니라서",
+            "explanation_en": "Gives the reason: Gildong's mother was not Lady Yu, Minister Hong's wife."
+          },
+          {
+            "text": " 마음이 아프기도 했습니다.",
+            "explanation_en": "Minister Hong also felt emotional pain. -기도 하다 adds this feeling to his happiness."
+          }
+        ]
+      },
+      {
+        "start": 336,
+        "sentence": "길동은 여덟 살이 되었습니다.",
+        "selected": false,
+        "reason_en": "A short statement of reaching an age.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 353,
+        "sentence": "공부를 아주 잘했습니다.",
+        "selected": false,
+        "reason_en": "One simple predicate with Gildong understood as the subject.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 367,
+        "sentence": "하나를 배우면 다른 것도 많이 알 수 있었습니다.",
+        "selected": true,
+        "reason_en": "A condition connects learning one thing to an ability involving other things.",
+        "translation_en": "If he learned one thing, he could understand many other things too.",
+        "parts": [
+          {
+            "text": "하나를 배우면",
+            "explanation_en": "Sets the condition: if Gildong learned one thing."
+          },
+          {
+            "text": " 다른 것도 많이",
+            "explanation_en": "Adds many other things beyond the one he learned."
+          },
+          {
+            "text": " 알 수 있었습니다.",
+            "explanation_en": "Expresses his ability to understand them in the past."
+          }
+        ]
+      },
+      {
+        "start": 395,
+        "sentence": "홍 판서는 길동을 더 많이 사랑했습니다.",
+        "selected": false,
+        "reason_en": "One direct statement about Minister Hong's affection.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 419,
+        "sentence": "하지만 길동은 형과 똑같이 살 수 없었습니다.",
+        "selected": false,
+        "reason_en": "One comparison within a short inability statement; phrase help explains the predicate.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 445,
+        "sentence": "춘섬은 집에서 일하는 사람이었고, 사람들은 춘섬을 중요한 사람으로 생각하지 않았습니다.",
+        "selected": true,
+        "reason_en": "A modifying clause and a subject change connect her household role to others' negative judgment.",
+        "translation_en": "Chunseom worked in the household, and people did not regard her as an important person.",
+        "parts": [
+          {
+            "text": "춘섬은",
+            "explanation_en": "Introduces Chunseom as the first topic."
+          },
+          {
+            "text": " 집에서 일하는 사람이었고,",
+            "explanation_en": "Identifies her as someone who worked in the household; -고 connects this description to the next clause."
+          },
+          {
+            "text": " 사람들은 춘섬을",
+            "explanation_en": "Changes the topic to people and marks Chunseom as the person they judged."
+          },
+          {
+            "text": " 중요한 사람으로",
+            "explanation_en": "Gives the category: an important person."
+          },
+          {
+            "text": " 생각하지 않았습니다.",
+            "explanation_en": "Negates that judgment: they did not regard her that way."
+          }
+        ]
+      },
+      {
+        "start": 494,
+        "sentence": "사람들은 춘섬의 아들인 길동도 중요한 사람으로 생각하지 않았습니다.",
+        "selected": true,
+        "reason_en": "The embedded family relationship and 도 must connect to the negative judgment.",
+        "translation_en": "People did not regard Gildong, Chunseom's son, as an important person either.",
+        "parts": [
+          {
+            "text": "사람들은",
+            "explanation_en": "People are the topic and the ones making the judgment."
+          },
+          {
+            "text": " 춘섬의 아들인 길동도",
+            "explanation_en": "Identifies Gildong as Chunseom's son. 도 adds him to the dismissive treatment of his mother."
+          },
+          {
+            "text": " 중요한 사람으로",
+            "explanation_en": "Names the category in which he was not regarded: an important person."
+          },
+          {
+            "text": " 생각하지 않았습니다.",
+            "explanation_en": "Says that people did not regard him that way."
+          }
+        ]
+      },
+      {
+        "start": 532,
+        "sentence": "길동이 홍 판서를 ‘아버지’라고 부르면 홍 판서는 화를 냈습니다.",
+        "selected": true,
+        "reason_en": "The quoted title occurs inside a condition, followed by a clause with a different subject.",
+        "translation_en": "Whenever Gildong called Minister Hong “Father,” Minister Hong got angry.",
+        "parts": [
+          {
+            "text": "길동이 홍 판서를",
+            "explanation_en": "Gildong is the caller; Minister Hong is the person he addresses."
+          },
+          {
+            "text": " ‘아버지’라고 부르면",
+            "explanation_en": "Gives the recurring condition: whenever he called him “Father.”"
+          },
+          {
+            "text": " 홍 판서는 화를 냈습니다.",
+            "explanation_en": "Minister Hong is now the subject. 화를 내다 means to get angry."
+          }
+        ]
+      },
+      {
+        "start": 569,
+        "sentence": "인형을 ‘형’이라고 불러도 화를 냈습니다.",
+        "selected": true,
+        "reason_en": "The omitted caller and angry person differ, while the quoted title and concessive ending connect the actions.",
+        "translation_en": "Minister Hong also got angry if Gildong called Inhyeong “Older Brother.”",
+        "parts": [
+          {
+            "text": "인형을 ‘형’이라고 불러도",
+            "explanation_en": "Gildong is the understood caller. Calling Inhyeong “Older Brother” also led to the same reaction."
+          },
+          {
+            "text": " 화를 냈습니다.",
+            "explanation_en": "Minister Hong, rather than Gildong, is the understood person who got angry."
+          }
+        ]
+      },
+      {
+        "start": 594,
+        "sentence": "길동은 이제 열 살보다 나이가 많았습니다.",
+        "selected": false,
+        "reason_en": "One age comparison; the comparison tap explains that he was older than ten.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 618,
+        "sentence": "하지만 아버지를 ‘아버지’라고 부를 수 없었습니다.",
+        "selected": false,
+        "reason_en": "A short quoted-title restriction; direct quotation and inability phrase help are sufficient.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 647,
+        "sentence": "형을 ‘형’이라고 부를 수도 없었습니다.",
+        "selected": false,
+        "reason_en": "A short restriction parallel to the preceding sentence; 도 and the inability phrase have tap help.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 670,
+        "sentence": "그 집에서 일하는 다른 사람들도 길동을 중요한 사람으로 생각하지 않았습니다.",
+        "selected": true,
+        "reason_en": "A longer modifying phrase identifies the people, and 도 links their judgment to earlier treatment.",
+        "translation_en": "The other people working in that household did not regard Gildong as an important person either.",
+        "parts": [
+          {
+            "text": "그 집에서 일하는 다른 사람들도",
+            "explanation_en": "Identifies the other people working in that household. 도 says they too treated Gildong this way."
+          },
+          {
+            "text": " 길동을 중요한 사람으로",
+            "explanation_en": "Gildong is the person being judged; 중요한 사람으로 means as an important person."
+          },
+          {
+            "text": " 생각하지 않았습니다.",
+            "explanation_en": "Negates the judgment: they did not regard him as important."
+          }
+        ]
+      },
+      {
+        "start": 713,
+        "sentence": "길동은 마음이 매우 아팠습니다.",
+        "selected": false,
+        "reason_en": "A short emotional statement; taps explain 마음이 아프다 as feeling hurt.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 732,
+        "sentence": "어느 가을 밤이었습니다.",
+        "selected": false,
+        "reason_en": "A simple statement setting the scene.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 746,
+        "sentence": "달이 밝았습니다.",
+        "selected": false,
+        "reason_en": "One subject and one descriptive predicate.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 756,
+        "sentence": "길동은 책을 읽고 있었습니다.",
+        "selected": false,
+        "reason_en": "A short progressive statement with exact phrase help.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 773,
+        "sentence": "그리고 더 읽지 않고 말했습니다.",
+        "selected": false,
+        "reason_en": "A short sequence with the same understood subject; the negative phrase is explained on its tap.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 793,
+        "sentence": "“나는 나라를 돕고 큰 일을 하고 싶다.",
+        "selected": true,
+        "reason_en": "The final desire construction applies to both connected actions.",
+        "translation_en": "“I want to help the country and do great things.",
+        "parts": [
+          {
+            "text": "“나는",
+            "explanation_en": "Gildong speaks about his own wish."
+          },
+          {
+            "text": " 나라를 돕고",
+            "explanation_en": "Helping the country is the first action he wants to do; -고 connects it to the next action."
+          },
+          {
+            "text": " 큰 일을 하고 싶다.",
+            "explanation_en": "He wants to do great things. The desire expressed by 싶다 also applies to helping the country."
+          }
+        ]
+      },
+      {
+        "start": 816,
+        "sentence": "그런데 왜 이렇게 혼자인 것 같을까?",
+        "selected": true,
+        "reason_en": "A copula modifier, appearance construction, and reflective question together express a feeling.",
+        "translation_en": "But why do I feel so alone?",
+        "parts": [
+          {
+            "text": "그런데 왜 이렇게",
+            "explanation_en": "Turns from his ambition to a question: but why so…?"
+          },
+          {
+            "text": " 혼자인 것",
+            "explanation_en": "Presents being alone as the situation he is considering."
+          },
+          {
+            "text": " 같을까?",
+            "explanation_en": "Completes the impression construction and an inward question: why does he feel that way?"
+          }
+        ]
+      },
+      {
+        "start": 837,
+        "sentence": "나에게도 아버지가 있다.",
+        "selected": false,
+        "reason_en": "A short possession statement; 에게 and 도 have contextual tap explanations.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 851,
+        "sentence": "형도 있다.",
+        "selected": false,
+        "reason_en": "A very short statement adding an older brother to the family relationships.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 858,
+        "sentence": "하지만 아버지를 아버지라고 부를 수 없다.",
+        "selected": false,
+        "reason_en": "A short quoted-title restriction with explicit quotation and inability help.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 882,
+        "sentence": "형을 형이라고 부를 수도 없다.",
+        "selected": false,
+        "reason_en": "A short parallel restriction; the additive marker and inability construction have tap help.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 900,
+        "sentence": "정말 마음이 아프다.”",
+        "selected": false,
+        "reason_en": "One brief expression of emotional pain.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 914,
+        "sentence": "길동은 집 밖으로 나갔습니다.",
+        "selected": false,
+        "reason_en": "One movement with a clear destination.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 931,
+        "sentence": "그리고 칼을 가지고 싸우는 연습을 했습니다.",
+        "selected": true,
+        "reason_en": "Holding the sword connects to a noun-modifying action and the practice predicate.",
+        "translation_en": "Then he practiced fighting with a sword.",
+        "parts": [
+          {
+            "text": "그리고 칼을 가지고",
+            "explanation_en": "Continues Gildong's actions: he holds and uses a sword."
+          },
+          {
+            "text": " 싸우는 연습을",
+            "explanation_en": "싸우는 describes the practice as practice in fighting."
+          },
+          {
+            "text": " 했습니다.",
+            "explanation_en": "Completes 연습을 하다, meaning to practice, in the past."
+          }
+        ]
+      },
+      {
+        "start": 956,
+        "sentence": "홍 판서도 밖에서 달을 보고 있었습니다.",
+        "selected": false,
+        "reason_en": "One progressive action with a clear subject, place, and object.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 979,
+        "sentence": "길동을 보고 불렀습니다.",
+        "selected": false,
+        "reason_en": "A short sequence with Minister Hong understood as the same subject for both actions.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 994,
+        "sentence": "“밤이 늦었는데 왜 아직 안 자니?”",
+        "selected": true,
+        "reason_en": "The background clause connects the late hour to an informal negative question.",
+        "translation_en": "“It's late. Why aren't you asleep yet?”",
+        "parts": [
+          {
+            "text": "“밤이 늦었는데",
+            "explanation_en": "Gives the late hour as background for the father's question."
+          },
+          {
+            "text": " 왜 아직 안 자니?”",
+            "explanation_en": "Asks why Gildong is still not sleeping. -니 is a familiar question ending used toward his child."
+          }
+        ]
+      },
+      {
+        "start": 1016,
+        "sentence": "길동은 대답했습니다.",
+        "selected": false,
+        "reason_en": "One simple action with an explicit subject.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1029,
+        "sentence": "“달이 좋아서 보고 있었습니다.",
+        "selected": true,
+        "reason_en": "A reason clause connects the lovely moon to an ongoing past action with an omitted object.",
+        "translation_en": "“I was looking at the moon because it was lovely.",
+        "parts": [
+          {
+            "text": "“달이 좋아서",
+            "explanation_en": "Gives the reason: the moon was lovely."
+          },
+          {
+            "text": " 보고 있었습니다.",
+            "explanation_en": "Gildong was looking at it. The moon is the understood object, and -고 있었다 describes an ongoing past action."
+          }
+        ]
+      },
+      {
+        "start": 1047,
+        "sentence": "다른 사람들은 모두 중요한 사람입니다.",
+        "selected": false,
+        "reason_en": "One direct identification of other people.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1069,
+        "sentence": "그런데 저는 그렇지 않습니다.",
+        "selected": false,
+        "reason_en": "A brief contrast with one negative predicate; phrase help explains the reference to the previous statement.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1086,
+        "sentence": "저도 사람인데, 왜 저는 다른 사람들과 다릅니까?”",
+        "selected": true,
+        "reason_en": "A contrast clause connects shared humanity to a formal question comparing himself with others.",
+        "translation_en": "I'm a person too, so why am I different from other people?”",
+        "parts": [
+          {
+            "text": "저도 사람인데,",
+            "explanation_en": "Gildong says he is a person too; -인데 presents this as background contrasting with his unequal situation."
+          },
+          {
+            "text": " 왜 저는",
+            "explanation_en": "Introduces his question about himself."
+          },
+          {
+            "text": " 다른 사람들과 다릅니까?”",
+            "explanation_en": "Asks why he is different from other people. 과 marks the comparison, and -ㅂ니까 makes the question formally polite."
+          }
+        ]
+      },
+      {
+        "start": 1116,
+        "sentence": "홍 판서는 길동의 말을 이해했습니다.",
+        "selected": false,
+        "reason_en": "A single action with a clear subject and object.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1137,
+        "sentence": "그런데도 화를 내며 물었습니다.",
+        "selected": false,
+        "reason_en": "A short statement of asking while angry; contextual taps explain both the contrast and simultaneous action.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1156,
+        "sentence": "“그게 무슨 말이냐?”",
+        "selected": false,
+        "reason_en": "A brief direct question whose natural meaning is provided by tap help.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1170,
+        "sentence": "길동이 다시 말했습니다.",
+        "selected": false,
+        "reason_en": "One simple speech action.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1185,
+        "sentence": "“저는 아버지의 아들입니다.",
+        "selected": false,
+        "reason_en": "A short statement of the speaker's family relationship.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1201,
+        "sentence": "아버지와 어머니께 감사합니다.",
+        "selected": false,
+        "reason_en": "One gratitude statement; the coordination and respectful recipient marker have tap explanations.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1218,
+        "sentence": "하지만 저는 아버지를 ‘아버지’라고 부를 수 없습니다.",
+        "selected": false,
+        "reason_en": "One quoted-title restriction with a clear subject; quotation and inability phrase help are sufficient.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1249,
+        "sentence": "형을 ‘형’이라고 부를 수도 없습니다.",
+        "selected": false,
+        "reason_en": "A short parallel restriction explained by the quotation, additive, and inability taps.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1271,
+        "sentence": "그래서 항상 슬픕니다.”",
+        "selected": false,
+        "reason_en": "One short statement of the resulting feeling.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1286,
+        "sentence": "길동은 울었습니다.",
+        "selected": false,
+        "reason_en": "One simple action.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1297,
+        "sentence": "홍 판서도 마음이 아팠습니다.",
+        "selected": false,
+        "reason_en": "A short emotional statement adding the father's feeling to Gildong's.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1314,
+        "sentence": "하지만 길동에게 좋은 말을 해 주면, 길동이 아버지의 말을 듣지 않을까 걱정했습니다.",
+        "selected": true,
+        "reason_en": "A condition, benefactive construction, embedded negative possibility, and worry predicate must be connected.",
+        "translation_en": "But he worried that if he spoke kindly to Gildong, Gildong might stop obeying him.",
+        "parts": [
+          {
+            "text": "하지만",
+            "explanation_en": "Contrasts the father's worry with his sympathy."
+          },
+          {
+            "text": " 길동에게 좋은 말을 해 주면,",
+            "explanation_en": "Sets the condition: if Minister Hong spoke kindly to Gildong. 주다 presents the speech as something done for him."
+          },
+          {
+            "text": " 길동이 아버지의 말을",
+            "explanation_en": "Gildong becomes the subject of the feared outcome; his father's words mean his instructions here."
+          },
+          {
+            "text": " 듣지 않을까",
+            "explanation_en": "Expresses the uncertain negative possibility: Gildong might not heed or obey those instructions."
+          },
+          {
+            "text": " 걱정했습니다.",
+            "explanation_en": "Minister Hong is the understood subject again: he worried about that possible outcome."
+          }
+        ]
+      },
+      {
+        "start": 1362,
+        "sentence": "그래서 길동에게 크게 화를 냈습니다.",
+        "selected": false,
+        "reason_en": "A short result statement; taps explain getting angry and toward whom.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1384,
+        "sentence": "“높은 벼슬을 하는 사람의 집에서 일하는 여자의 아들은 너만 있는 것이 아니다.",
+        "selected": true,
+        "reason_en": "Nested noun modifiers identify the household and mother before a nominalized negation rejects 'only you'.",
+        "translation_en": "“You are not the only son of a woman who works in a high-ranking official's household.",
+        "parts": [
+          {
+            "text": "“높은 벼슬을 하는 사람의",
+            "explanation_en": "Identifies a person who holds a high-ranking official post; 의 connects that official to the following household."
+          },
+          {
+            "text": " 집에서 일하는 여자의",
+            "explanation_en": "Describes a woman working in that household; 의 connects her to her son."
+          },
+          {
+            "text": " 아들은",
+            "explanation_en": "Makes sons of such women the topic of the statement."
+          },
+          {
+            "text": " 너만 있는 것이 아니다.",
+            "explanation_en": "Rejects the idea that Gildong is the only one: other sons are in this situation too."
+          }
+        ]
+      },
+      {
+        "start": 1429,
+        "sentence": "왜 너는 이런 말을 하느냐?",
+        "selected": false,
+        "reason_en": "A short direct question with one predicate.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1445,
+        "sentence": "다시 이런 말을 하면 내 앞에 올 수 없다.”",
+        "selected": true,
+        "reason_en": "A condition connects repeating the complaint to a prohibition expressed through inability.",
+        "translation_en": "If you say such things again, you cannot come before me.”",
+        "parts": [
+          {
+            "text": "다시 이런 말을 하면",
+            "explanation_en": "Sets the condition: if Gildong says such things again."
+          },
+          {
+            "text": " 내 앞에",
+            "explanation_en": "Means into the father's presence; 내 is the father's 'my'."
+          },
+          {
+            "text": " 올 수 없다.”",
+            "explanation_en": "The father uses 'cannot come' as a prohibition in this warning."
+          }
+        ]
+      },
+      {
+        "start": 1472,
+        "sentence": "길동은 아무 말도 할 수 없었습니다.",
+        "selected": false,
+        "reason_en": "One short inability statement; taps explain 아무 말도 with the negative predicate.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1493,
+        "sentence": "아버지 앞에서 계속 울었습니다.",
+        "selected": false,
+        "reason_en": "One action with a simple place phrase and Gildong understood as the subject.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1512,
+        "sentence": "“이제 돌아가라.”",
+        "selected": false,
+        "reason_en": "A brief command with one verb.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1524,
+        "sentence": "홍 판서의 말을 듣고 길동은 방으로 돌아갔습니다.",
+        "selected": true,
+        "reason_en": "The listener is implicit in the opening clause and becomes explicit in the connected return action.",
+        "translation_en": "After hearing Minister Hong's words, Gildong returned to his room.",
+        "parts": [
+          {
+            "text": "홍 판서의 말을 듣고",
+            "explanation_en": "Gildong heard Minister Hong's words; -고 connects hearing them to his next action."
+          },
+          {
+            "text": " 길동은 방으로 돌아갔습니다.",
+            "explanation_en": "Makes Gildong explicit as the subject and says he returned to his room; 으로 marks the destination."
+          }
+        ]
+      },
+      {
+        "start": 1552,
+        "sentence": "방에서도 길동의 마음은 계속 슬펐습니다.",
+        "selected": false,
+        "reason_en": "One emotional state with a simple place phrase; 도 connects it to his earlier sadness.",
         "translation_en": "",
         "parts": []
       }

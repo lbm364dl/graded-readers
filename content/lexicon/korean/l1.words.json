@@ -180,6 +180,594 @@
       "headword": "형",
       "kind": "word",
       "definition_en": "older brother of a male; also a familiar form of address used by a male for an older male"
+    },
+    {
+      "id": "chunseom",
+      "headword": "춘섬",
+      "kind": "proper_name",
+      "definition_en": "Chunseom, Hong Gildong's mother and Minister Hong's concubine, formerly a servant in his household"
+    },
+    {
+      "id": "hong-father",
+      "headword": "홍 판서",
+      "kind": "proper_name",
+      "definition_en": "Minister Hong, a high-ranking government official and the father of Hong Inhyeong and Hong Gildong"
+    },
+    {
+      "id": "hong-inhyeong",
+      "headword": "홍인형",
+      "kind": "proper_name",
+      "definition_en": "Hong Inhyeong, the son of Minister Hong and Lady Yu and Hong Gildong's older half-brother"
+    },
+    {
+      "id": "lady-yu",
+      "headword": "유 부인",
+      "kind": "proper_name",
+      "definition_en": "Lady Yu, Minister Hong's wife and Hong Inhyeong's mother"
+    },
+    {
+      "id": "가을01/명",
+      "headword": "가을",
+      "kind": "word",
+      "definition_en": "autumn; fall"
+    },
+    {
+      "id": "가지다/동",
+      "headword": "가지다",
+      "kind": "word",
+      "definition_en": "to have, possess, or hold something"
+    },
+    {
+      "id": "감사하다05/형",
+      "headword": "감사하다",
+      "kind": "word",
+      "definition_en": "to be grateful or thankful"
+    },
+    {
+      "id": "같다/형",
+      "headword": "같다",
+      "kind": "word",
+      "definition_en": "to be the same or alike; to seem or appear when used after a noun or a clause ending in 것"
+    },
+    {
+      "id": "걱정하다/동",
+      "headword": "걱정하다",
+      "kind": "word",
+      "definition_en": "to worry; to feel concerned about something"
+    },
+    {
+      "id": "것01/의",
+      "headword": "것",
+      "kind": "word",
+      "definition_en": "a thing, fact, or situation; a dependent noun used after a modifier"
+    },
+    {
+      "id": "계속04/부",
+      "headword": "계속",
+      "kind": "word",
+      "definition_en": "continuously; without stopping; repeatedly"
+    },
+    {
+      "id": "공부01/명",
+      "headword": "공부",
+      "kind": "word",
+      "definition_en": "study; the activity of learning"
+    },
+    {
+      "id": "그01/대",
+      "headword": "그",
+      "kind": "word",
+      "definition_en": "he; that person, referring to someone already mentioned or known"
+    },
+    {
+      "id": "그것/대",
+      "headword": "그것",
+      "kind": "word",
+      "definition_en": "that thing; something already mentioned or near the listener"
+    },
+    {
+      "id": "그런데/부",
+      "headword": "그런데",
+      "kind": "word",
+      "definition_en": "but; however; a word that introduces a contrast or a shift in topic"
+    },
+    {
+      "id": "그렇다/형",
+      "headword": "그렇다",
+      "kind": "word",
+      "definition_en": "to be so; to be that way"
+    },
+    {
+      "id": "그리고/부",
+      "headword": "그리고",
+      "kind": "word",
+      "definition_en": "and; and then; connects another statement or event"
+    },
+    {
+      "id": "기분01/명",
+      "headword": "기분",
+      "kind": "word",
+      "definition_en": "mood; how someone feels"
+    },
+    {
+      "id": "나03/대",
+      "headword": "나",
+      "kind": "word",
+      "definition_en": "I; me, used in informal or plain speech"
+    },
+    {
+      "id": "나가다/동",
+      "headword": "나가다",
+      "kind": "word",
+      "definition_en": "to go out; to leave an enclosed place"
+    },
+    {
+      "id": "나이01/명",
+      "headword": "나이",
+      "kind": "word",
+      "definition_en": "age; the number of years someone has lived"
+    },
+    {
+      "id": "나중01/명",
+      "headword": "나중",
+      "kind": "word",
+      "definition_en": "a later time; the time after something else"
+    },
+    {
+      "id": "내다02/동",
+      "headword": "내다",
+      "kind": "word",
+      "definition_en": "to put or bring something out; to produce a sound or express a feeling"
+    },
+    {
+      "id": "너01/대",
+      "headword": "너",
+      "kind": "word",
+      "definition_en": "you, used informally with someone close or younger"
+    },
+    {
+      "id": "늦다/형",
+      "headword": "늦다",
+      "kind": "word",
+      "definition_en": "to be late; to be past the usual or expected time"
+    },
+    {
+      "id": "다르다01/형",
+      "headword": "다르다",
+      "kind": "word",
+      "definition_en": "to be different; not to be the same"
+    },
+    {
+      "id": "다른/관",
+      "headword": "다른",
+      "kind": "word",
+      "definition_en": "other; another; used before a noun"
+    },
+    {
+      "id": "다시01/부",
+      "headword": "다시",
+      "kind": "word",
+      "definition_en": "again; once more"
+    },
+    {
+      "id": "달05/명",
+      "headword": "달",
+      "kind": "word",
+      "definition_en": "the moon"
+    },
+    {
+      "id": "대답하다/동",
+      "headword": "대답하다",
+      "kind": "word",
+      "definition_en": "to answer; to respond to a question or call"
+    },
+    {
+      "id": "더01/부",
+      "headword": "더",
+      "kind": "word",
+      "definition_en": "more; further; to a greater degree"
+    },
+    {
+      "id": "돌아가다/동",
+      "headword": "돌아가다",
+      "kind": "word",
+      "definition_en": "to go back; to return to a previous place"
+    },
+    {
+      "id": "돕다/동",
+      "headword": "돕다",
+      "kind": "word",
+      "definition_en": "to help; to assist"
+    },
+    {
+      "id": "되다01/동",
+      "headword": "되다",
+      "kind": "word",
+      "definition_en": "to become; to reach a state, role, or age"
+    },
+    {
+      "id": "두01/관",
+      "headword": "두",
+      "kind": "word",
+      "definition_en": "two, used before a noun or counting word"
+    },
+    {
+      "id": "둘째/관",
+      "headword": "둘째",
+      "kind": "word",
+      "definition_en": "second in order, used before a noun"
+    },
+    {
+      "id": "듣다01/동",
+      "headword": "듣다",
+      "kind": "word",
+      "definition_en": "to hear; to listen to; to heed someone's words"
+    },
+    {
+      "id": "똑같이/부",
+      "headword": "똑같이",
+      "kind": "word",
+      "definition_en": "in exactly the same way; equally"
+    },
+    {
+      "id": "많다/형",
+      "headword": "많다",
+      "kind": "word",
+      "definition_en": "to be many or much; to be large in number or amount"
+    },
+    {
+      "id": "많이/부",
+      "headword": "많이",
+      "kind": "word",
+      "definition_en": "a lot; much; in a large amount or to a great degree"
+    },
+    {
+      "id": "말01/명",
+      "headword": "말",
+      "kind": "word",
+      "definition_en": "speech; words; something someone says"
+    },
+    {
+      "id": "말하다/동",
+      "headword": "말하다",
+      "kind": "word",
+      "definition_en": "to speak; to say something"
+    },
+    {
+      "id": "모두01/부",
+      "headword": "모두",
+      "kind": "word",
+      "definition_en": "all; without exception"
+    },
+    {
+      "id": "무슨/관",
+      "headword": "무슨",
+      "kind": "word",
+      "definition_en": "what; what kind of, used before a noun"
+    },
+    {
+      "id": "묻다03/동",
+      "headword": "묻다",
+      "kind": "word",
+      "definition_en": "to ask a question"
+    },
+    {
+      "id": "밖/명",
+      "headword": "밖",
+      "kind": "word",
+      "definition_en": "the outside; the area beyond a place or boundary"
+    },
+    {
+      "id": "밝다/형",
+      "headword": "밝다",
+      "kind": "word",
+      "definition_en": "to be bright; to have plenty of light"
+    },
+    {
+      "id": "밤01/명",
+      "headword": "밤",
+      "kind": "word",
+      "definition_en": "night; the time between evening and morning"
+    },
+    {
+      "id": "방07/명",
+      "headword": "방",
+      "kind": "word",
+      "definition_en": "room; an enclosed space inside a building"
+    },
+    {
+      "id": "배우다01/동",
+      "headword": "배우다",
+      "kind": "word",
+      "definition_en": "to learn; to acquire knowledge or a skill"
+    },
+    {
+      "id": "보다01/동",
+      "headword": "보다",
+      "kind": "word",
+      "definition_en": "to see; to look at; to watch"
+    },
+    {
+      "id": "사랑하다/동",
+      "headword": "사랑하다",
+      "kind": "word",
+      "definition_en": "to love; to feel deep affection for someone or something"
+    },
+    {
+      "id": "살04/의",
+      "headword": "살",
+      "kind": "word",
+      "definition_en": "a counting word for years of age, used after a native Korean number"
+    },
+    {
+      "id": "생각하다/동",
+      "headword": "생각하다",
+      "kind": "word",
+      "definition_en": "to think; to consider or regard someone or something in a certain way"
+    },
+    {
+      "id": "싶다/보",
+      "headword": "싶다",
+      "kind": "word",
+      "definition_en": "to want to do something, used as an auxiliary after a verb in -고"
+    },
+    {
+      "id": "싸우다/동",
+      "headword": "싸우다",
+      "kind": "word",
+      "definition_en": "to fight; to argue or engage in combat"
+    },
+    {
+      "id": "아들/명",
+      "headword": "아들",
+      "kind": "word",
+      "definition_en": "son; a male child in relation to his parents"
+    },
+    {
+      "id": "아무01/관",
+      "headword": "아무",
+      "kind": "word",
+      "definition_en": "any, without specifying which; with a negative predicate, helps express none at all"
+    },
+    {
+      "id": "아주01/부",
+      "headword": "아주",
+      "kind": "word",
+      "definition_en": "very; to a high degree"
+    },
+    {
+      "id": "아직01/부",
+      "headword": "아직",
+      "kind": "word",
+      "definition_en": "still; yet, indicating that a situation continues or a change has not happened"
+    },
+    {
+      "id": "안02/부",
+      "headword": "안",
+      "kind": "word",
+      "definition_en": "not; an adverb placed before a predicate to negate it"
+    },
+    {
+      "id": "않다/보",
+      "headword": "않다",
+      "kind": "word",
+      "definition_en": "not to do or be; a negative auxiliary used after a predicate in -지"
+    },
+    {
+      "id": "알다/동",
+      "headword": "알다",
+      "kind": "word",
+      "definition_en": "to know; to understand or be familiar with something"
+    },
+    {
+      "id": "앞/명",
+      "headword": "앞",
+      "kind": "word",
+      "definition_en": "the front; the space in front of someone or something"
+    },
+    {
+      "id": "어느01/관",
+      "headword": "어느",
+      "kind": "word",
+      "definition_en": "which; a certain or unspecified, used before a noun"
+    },
+    {
+      "id": "여덟/수",
+      "headword": "여덟",
+      "kind": "word",
+      "definition_en": "eight"
+    },
+    {
+      "id": "여자02/명",
+      "headword": "여자",
+      "kind": "word",
+      "definition_en": "woman; a female person"
+    },
+    {
+      "id": "연습03/명",
+      "headword": "연습",
+      "kind": "word",
+      "definition_en": "practice; repeated activity to improve a skill"
+    },
+    {
+      "id": "열03/수",
+      "headword": "열",
+      "kind": "word",
+      "definition_en": "ten"
+    },
+    {
+      "id": "오다01/동",
+      "headword": "오다",
+      "kind": "word",
+      "definition_en": "to come; to move toward the speaker or a reference point"
+    },
+    {
+      "id": "왜02/부",
+      "headword": "왜",
+      "kind": "word",
+      "definition_en": "why; for what reason"
+    },
+    {
+      "id": "울다01/동",
+      "headword": "울다",
+      "kind": "word",
+      "definition_en": "to cry; to shed tears"
+    },
+    {
+      "id": "이런01/관",
+      "headword": "이런",
+      "kind": "word",
+      "definition_en": "this kind of; such, used before a noun"
+    },
+    {
+      "id": "이렇다/형",
+      "headword": "이렇다",
+      "kind": "word",
+      "definition_en": "to be like this; to be this way"
+    },
+    {
+      "id": "이제01/부",
+      "headword": "이제",
+      "kind": "word",
+      "definition_en": "now; at this point, often after a change"
+    },
+    {
+      "id": "이해하다02/동",
+      "headword": "이해하다",
+      "kind": "word",
+      "definition_en": "to understand; to grasp the meaning or reason for something"
+    },
+    {
+      "id": "읽다/동",
+      "headword": "읽다",
+      "kind": "word",
+      "definition_en": "to read"
+    },
+    {
+      "id": "있다01/동",
+      "headword": "있다",
+      "kind": "word",
+      "definition_en": "to stay or remain in a place; to occupy a position"
+    },
+    {
+      "id": "있다01/보",
+      "headword": "있다",
+      "kind": "word",
+      "definition_en": "an auxiliary indicating that an action is ongoing or that a resulting state continues"
+    },
+    {
+      "id": "있다01/형",
+      "headword": "있다",
+      "kind": "word",
+      "definition_en": "to exist; to be present or available; to have something"
+    },
+    {
+      "id": "자다01/동",
+      "headword": "자다",
+      "kind": "word",
+      "definition_en": "to sleep"
+    },
+    {
+      "id": "잘02/부",
+      "headword": "잘",
+      "kind": "word",
+      "definition_en": "well; skillfully or successfully"
+    },
+    {
+      "id": "잘하다/동",
+      "headword": "잘하다",
+      "kind": "word",
+      "definition_en": "to do well; to be good at an activity"
+    },
+    {
+      "id": "저03/대",
+      "headword": "저",
+      "kind": "word",
+      "definition_en": "I; me, used humbly when speaking respectfully"
+    },
+    {
+      "id": "정말01/부",
+      "headword": "정말",
+      "kind": "word",
+      "definition_en": "really; truly"
+    },
+    {
+      "id": "좋다01/형",
+      "headword": "좋다",
+      "kind": "word",
+      "definition_en": "to be good, pleasant, or desirable"
+    },
+    {
+      "id": "주다01/보",
+      "headword": "주다",
+      "kind": "word",
+      "definition_en": "to do an action for someone, used as an auxiliary after a verb in -아/어"
+    },
+    {
+      "id": "책01/명",
+      "headword": "책",
+      "kind": "word",
+      "definition_en": "book"
+    },
+    {
+      "id": "처음/명",
+      "headword": "처음",
+      "kind": "word",
+      "definition_en": "the beginning; the first time"
+    },
+    {
+      "id": "첫째/관",
+      "headword": "첫째",
+      "kind": "word",
+      "definition_en": "first in order, used before a noun"
+    },
+    {
+      "id": "칼01/명",
+      "headword": "칼",
+      "kind": "word",
+      "definition_en": "knife; sword; a tool or weapon with a sharp blade"
+    },
+    {
+      "id": "크다01/형",
+      "headword": "크다",
+      "kind": "word",
+      "definition_en": "to be big or large; to be great in size, degree, or importance"
+    },
+    {
+      "id": "태어나다/동",
+      "headword": "태어나다",
+      "kind": "word",
+      "definition_en": "to be born"
+    },
+    {
+      "id": "하나/수",
+      "headword": "하나",
+      "kind": "word",
+      "definition_en": "one"
+    },
+    {
+      "id": "함께/부",
+      "headword": "함께",
+      "kind": "word",
+      "definition_en": "together; with another person or thing"
+    },
+    {
+      "id": "항상/부",
+      "headword": "항상",
+      "kind": "word",
+      "definition_en": "always; at all times"
+    },
+    {
+      "id": "혼자01/명",
+      "headword": "혼자",
+      "kind": "word",
+      "definition_en": "one person alone; oneself without others"
+    },
+    {
+      "id": "화06/명",
+      "headword": "화",
+      "kind": "word",
+      "definition_en": "anger; a feeling of being upset or displeased"
     }
   ]
 }

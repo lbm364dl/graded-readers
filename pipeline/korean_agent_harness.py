@@ -5,6 +5,7 @@ import argparse
 import asyncio
 import hashlib
 import json
+import re
 from pathlib import Path
 
 from jsonschema import ValidationError, validate
@@ -12,15 +13,21 @@ from jsonschema import ValidationError, validate
 from pipeline.agent_harness import CachedCallUnavailable, CodexRunner
 from pipeline import korean_contracts as contracts
 from pipeline import korean_dictionary as dictionaries
-from pipeline.korean_readability import MAX_STORY_TERMS, ROOT, diagnostics
-from pipeline.korean_sources import EDITION, load_unit, sha
+from pipeline.korean_readability import MAX_STORY_TERMS, MAX_NON_BEGINNER_RATIO, VOCAB_SHA256, ROOT, diagnostics
+from pipeline.korean_sources import EDITION, load_unit, load_selected_unit, sha
 from pipeline.korean_sentence_breakdowns import build as validate_breakdowns
 
 POLICY = ROOT / "pipeline/korean_agent_instructions.md"
+LINGUISTIC_REFERENCE = ROOT / 'data/korean/linguistic-reference.json'
 REVIEW_POLICY = """Independently review the supplied Korean output for an absolute beginner.
 Check exact source evidence, natural modern Korean, learner difficulty, English
-accuracy and all requested coverage. Approve only if issues is empty. Report
-concrete errors with the exact affected form/span; do not invent concerns or
+accuracy and all requested coverage. Approve only if issues is empty.
+For source planning and prose, assess narrative coverage, meaningful omissions
+and the stopping point at the requested level. Do not impose a length quota.
+Reject avoidable compression or repetitive padding with concrete source-based
+evidence; accept a short chapter when the scene and actual learner difficulty
+justify it. More sentences do not by themselves make a chapter more difficult.
+Report concrete errors with the exact affected form/span; do not invent concerns or
 require optional analysis for a simple sentence. Different terminology alone
 is not an error. Productive grammar links to lessons, not invented word entries.
 Every displayed stage explains its COMPLETE form; form labels carry tense and
@@ -49,12 +56,41 @@ def save(path: Path, value) -> None:
     temp.replace(path)
 
 
+def latest_prose_revision(run_dir: Path) -> int:
+    """Resume a later reviewed draft; stage() rechecks the current task/context."""
+    candidates = []
+    for path in (run_dir / 'agents').glob('prose-revision*-*/result.json'):
+        match = re.fullmatch(r'prose-revision([12])-(\d+)', path.parent.name)
+        if not match: continue
+        review_dir = path.parent.parent / f'prose-revision{match[1]}-review-{match[2]}'
+        try:
+            meta = read(path.parent / 'meta.json')
+            review_meta = read(review_dir / 'meta.json')
+            if meta.get('return_code') != 0 or review_meta.get('return_code') != 0 or not approved(read(review_dir / 'result.json')):
+                continue
+            validate(read(path), contracts.PROSE)
+            CodexRunner._check_tool_profile(path.parent, 'offline', meta)
+            CodexRunner._check_tool_profile(review_dir, 'offline', review_meta)
+            candidates.append((review_meta.get('ended_at', ''), int(match[1])))
+        except (OSError, ValueError, ValidationError):
+            continue
+    return max(candidates)[1] if candidates else 0
+
+
 def payload(**values) -> str:
     return "\nINPUT:\n" + json.dumps(values, ensure_ascii=False)
 
 
 def approved(review: dict) -> bool:
     return review.get("approved") is True and review.get("issues") == []
+
+
+def check_prose(value: dict) -> None:
+    """Require real narrative and a reviewed length decision, not a word quota."""
+    if (not value['title'].strip() or not value['text'].strip()
+            or not value['length_reason_en'].strip()
+            or not contracts.sentence_inventory(value['text'])):
+        raise ValueError('Korean prose needs a title, narrative and an explained length decision')
 
 
 def normalize_existing(chapter: dict, words: dict) -> dict:
@@ -119,10 +155,51 @@ def validate_focus(value: dict, words: dict, catalog: dict, notes: dict | None =
             if candidates and entry["id"] not in {e["id"] for e in candidates}:
                 raise ValueError(f"Use the canonical NIKL identity for story word {entry['headword']}: {candidates}")
 
+def annotation_requests(value: dict, catalog: dict, focus: dict, words: dict) -> tuple[dict, set]:
+    """Use the same exact identity checks for chunks and the assembled chapter."""
+    requests, grammar_ids = {}, set()
+    profiles = {entry["id"]: entry for entry in focus["entries"]}
+    identity_errors = []
+    for segment in value["segments"]:
+        if segment["type"] == "punctuation":
+            if any(c.isalnum() for c in segment["text"]):
+                raise ValueError("Korean words cannot hide in punctuation")
+            continue
+        identity, kind = segment["lexical_id"], segment["lexical_kind"]
+        candidates = catalog.get(segment["lemma"], [])
+        if kind in ("proper_name", "story_term"):
+            profile = profiles.get(identity)
+            if profile is None or any(profile[key] != segment[field] for key, field in
+                    (("headword", "lemma"), ("kind", "lexical_kind"))):
+                raise ValueError(f"Use exact lexical-plan IDs, headwords and kinds: {focus}")
+        planned_story = [e for e in profiles.values() if e["kind"] == "story_term" and segment["lemma"] in e["aliases"]]
+        if kind == "vocabulary" and not candidates and planned_story:
+            raise ValueError(f"This is the reviewed story exception, not a NIKL word: {planned_story}")
+        if kind == "vocabulary" and not candidates:
+            raise UnannotatableProseError(f"Ordinary word {segment['lemma']} is absent from the learner lexicon; simplify prose instead of inventing its ID or a story-term exemption")
+        if kind == "vocabulary" and identity not in {e["id"] for e in candidates}:
+            identity_errors.append(f"Exact NIKL candidates for {segment['lemma']}: {candidates}")
+        if kind != "grammar":
+            request = {"headword": segment["lemma"], "kind": kind.replace("vocabulary", "word")}
+            if identity in requests and requests[identity] != request:
+                raise ValueError("Korean same identity has different headwords or kinds")
+            if identity in words and any(words[identity][key] != request[key] for key in request):
+                raise ValueError(f"Korean annotation changed approved identity {identity}: requested {request}, approved headword={words[identity]['headword']}, kind={words[identity]['kind']}")
+            requests[identity] = request
+        else:
+            grammar_ids.add(identity)
+    if identity_errors:
+        raise ValueError("; ".join(identity_errors))
+    grammar_ids.update(link["entry_id"] for link in value["grammar_links"])
+    return requests, grammar_ids
+
+
 class KoreanHarness:
-    def __init__(self, run_dir: Path, number: int, runner=None, existing: Path | None = None, model: str = "gpt-6.1-sol"):
+    def __init__(self, run_dir: Path, number: int, runner=None, existing: Path | None = None, model: str = "gpt-6.1-sol", workers: int = 4):
         self.run_dir, self.number, self.existing = run_dir, number, existing
-        self.runner = runner or CodexRunner(run_dir, model, asyncio.Semaphore(2), timeout=600)
+        if workers < 1:
+            raise ValueError('Korean pipeline workers must be positive')
+        self.runner = runner or CodexRunner(run_dir, model, asyncio.Semaphore(workers), timeout=600)
         self.policy = POLICY.read_text(encoding="utf-8")
         self.stages = {}
         self.words, self.grammar = dictionaries._registry(dictionaries.WORDS), dictionaries._registry(dictionaries.GRAMMAR)
@@ -130,8 +207,24 @@ class KoreanHarness:
 
     async def stage(self, name: str, prompt: str, schema: str, check, review_context: dict,
                     initial: dict | None = None, cache_prefix: str = "", producer=None) -> dict:
+        if name in ('annotation', 'dictionary', 'sentence-help'):
+            review_context = {**review_context, 'linguistic_reference': read(LINGUISTIC_REFERENCE),
+                'form_reading_policy': 'A reading may be empty or equal the written form, meaning no separate pronunciation note. The app displays only readings differing from the written form. Do not require optional pronunciation notes on every occurrence. Any differing pronunciation supplied must be accurate; written morphology and pronunciation remain distinct.'}
+        def review_payload(value):
+            evidence = {}
+            if name == 'annotation':
+                ids = {s['lexical_id'] for s in value['segments'] if s['lexical_kind'] == 'vocabulary'}
+                attested = {s[key] for s in value['segments'] if s['lexical_kind'] == 'vocabulary'
+                            for key in ('lemma', 'text')}
+                evidence = {'vocabulary_evidence': {'source_sha256': VOCAB_SHA256,
+                    'entries': sorted([entry for candidates in self.catalog.values() for entry in candidates
+                                      if entry['id'] in ids or entry['headword'] in attested], key=lambda entry: entry['id']),
+                    'max_non_beginner_ratio': MAX_NON_BEGINNER_RATIO,
+                    'policy': 'NIKL A is the beginner baseline. Attested B/C ordinary vocabulary is not an unresolved identity or a story exemption. Assess its actual learner difficulty within the checked budget; accepted occurrences are marked above level. Do not reject an identity merely because it is absent from the A-only list.'}}
+            return payload(stage=name, task=prompt, context=review_context, output=value, **evidence)
         # A completed independent review binds the exact current task/context to
         # its output. Reuse it even if an earlier repair attempt was overwritten.
+        resume = None
         for attempt in reversed(range(6)):
             job = f"{name}{cache_prefix}-{attempt}"
             review_job = f"{name}{cache_prefix}-review-{attempt}"
@@ -141,24 +234,34 @@ class KoreanHarness:
                 continue
             value = read(proposal_path)
             try:
-                review = await self.runner.call(review_job, self.policy + "\n" + REVIEW_POLICY
-                    + payload(stage=name, task=prompt, context=review_context, output=value),
-                    contracts.schema_path("review"), "high", tool_profile="offline", cache_only=True)
-                if not approved(review):
-                    continue
                 validate(value, read(contracts.schema_path(schema)))
                 check(value)
+                review_prompt = self.policy + "\n" + REVIEW_POLICY + review_payload(value)
+                try:
+                    review = await self.runner.call(review_job, review_prompt,
+                        contracts.schema_path("review"), "high", tool_profile="offline", cache_only=True)
+                except CachedCallUnavailable:
+                    if resume is not None:
+                        continue
+                    # Re-review the latest structurally valid proposal against
+                    # changed context before commissioning another proposal.
+                    review = await self.runner.call(review_job, review_prompt,
+                        contracts.schema_path("review"), "high", tool_profile="offline")
             except UnannotatableProseError:
                 raise
             except (CachedCallUnavailable, ValidationError, ValueError, KeyError, IndexError, TypeError):
+                continue
+            if not approved(review):
+                if resume is None:
+                    resume = (attempt + 1, review['issues'], value)
                 continue
             self.stages[name] = {"proposal_job": job, "review_job": review_job,
                 "output_digest": digest(value), "review_digest": digest(review),
                 "context_digest": digest(review_context), "approved": True}
             print(f"{name}: reused approved output", flush=True)
             return value
-        problems, previous = [], None
-        for attempt in range(6):
+        start, problems, previous = resume or (0, [], None)
+        for attempt in range(start, 6):
             print(f"{name}: attempt {attempt + 1}", flush=True)
             job = f"{name}{cache_prefix}-{attempt}"
             proposal_job = None if attempt == 0 and initial is not None else job
@@ -180,7 +283,7 @@ class KoreanHarness:
                 continue
             review_job = f"{name}{cache_prefix}-review-{attempt}"
             review = await self.runner.call(review_job, self.policy + "\n" + REVIEW_POLICY
-                + payload(stage=name, task=prompt, context=review_context, output=value),
+                + review_payload(value),
                 contracts.schema_path("review"), "high", tool_profile="offline")
             if approved(review):
                 self.stages[name] = {"proposal_job": proposal_job, "review_job": review_job,
@@ -193,13 +296,22 @@ class KoreanHarness:
 
     async def run(self) -> dict:
         self.run_dir.mkdir(parents=True, exist_ok=True)
-        manifest, unit, source = load_unit(self.number)
+        manifest, _, _ = load_unit(1)
         source_notes = read(ROOT / "books/korean/honggildong" / manifest["notes_file"]) if "notes_file" in manifest else {"notes": []}
         source_id = f"assets/annotations/korean_honggildong_l1_{self.number:03d}.json"
         existing = None
         if self.existing:
             existing = next(chapter for chapter in read(self.existing)["chapters"] if chapter["number"] == self.number)
         prior = read(ROOT / "content/korean/honggildong/l1.annotations.json")["chapters"]
+        previous_chapter = next((c for c in prior if c['number'] == self.number - 1), None)
+        if self.number > 1 and (previous_chapter is None or 'unit' not in previous_chapter['source_alignment']):
+            raise ValueError('The preceding Korean chapter needs a reviewed source stopping point')
+        source_start = previous_chapter['source_alignment']['unit']['end'] + 2 if previous_chapter else 0
+        full_source = (ROOT / 'books/korean/honggildong' / manifest['text_file']).read_text(encoding='utf-8').rstrip('\n')
+        if source_start >= len(full_source):
+            raise ValueError('No Korean source remains for another chapter')
+        source = full_source[source_start:]
+        unit = {'number': self.number, 'start': source_start, 'end': len(full_source), 'label': 'Remaining original narrative'}
         previous_text = "\n".join(chapter["text"] for chapter in prior if chapter["number"] < self.number)
         report_path = self.run_dir / "report.json"
         if report_path.exists():
@@ -216,7 +328,7 @@ class KoreanHarness:
                     merged.append(copy)
                 report = read(report_path)
                 if (report["previous_chapters_digest"] == digest(previous_text)
-                        and report["source_unit"] == unit
+                        and report["source_unit"]['start'] == source_start
                         and report["dictionary_digest"] == digest(relevant_entries(old_chapter, *merged))
                         and report.get("existing_input_digest") == (digest(existing) if existing else None)):
                     return report
@@ -225,16 +337,19 @@ class KoreanHarness:
         report_path.unlink(missing_ok=True)
         context = {"edition": EDITION, "source": source, "unit": unit,
                    "previous_chapters": previous_text, "source_notes": source_notes}
-        plan = await self.stage("plan", "Select only the setup and central conflict for this short Level 1 chapter, using at most two source paragraphs. "
+        plan = await self.stage("plan", "Choose a coherent next Level 1 chapter from the remaining original narrative. Select last_source_paragraph_index as its stopping point: the chapter covers the contiguous source prefix through that paragraph, including justified omissions within it. Stop at a natural narrative boundary; do not cover the entire remaining book by default. There is no fixed source-slice size. "
             "Give a Korean title and select source_paragraph_index from the numbered paragraphs, "
             "with the event supported by that paragraph in English. Do not copy or reconstruct old Hangul. "
             "Selected paragraphs must support ALL details of their events, in source order without duplicates. "
-            "Preserve causality; omit secondary characters, birth omens, elaborate descriptions and secondary actions. Do not summarize every detail in a paragraph; event_en contains only the retained beginner narrative. If existing_text is supplied, plan ONLY its retained events; "
+            "Judge how much meaningful narrative can be retained through natural beginner wording. There is no paragraph quota or total-length target. Preserve causality, character relationships, understandable actions and development; do not collapse a scene into a bare summary when its events can be expressed at this level. Omit or simplify details only when they add unnecessary learner difficulty or distract from the coherent scene. In scope_reason_en explain retained coverage, significant omissions, level tradeoffs and the natural stopping point. Do not pad with repetition or invent events. If existing_text is supplied, plan ONLY its retained events; "
             "do not request omitted side stories, births or scenes."
             + payload(**context, paragraphs=[{"index": i, "text": p} for i, p in enumerate(source.split("\n\n"))],
                       existing_text=existing["text"] if existing else ""), "plan",
             lambda value: contracts.bind_plan(value, source, unit["start"]), context)
         bound_plan = contracts.bind_plan(plan, source, unit["start"])
+        unit = {'number': self.number, **bound_plan['scope'], 'label': plan['title']}
+        _, _, source = load_selected_unit(unit)
+        context = {**context, 'source': source, 'unit': unit}
         beginner = [entry for entries in self.catalog.values() for entry in entries if entry["grade"] == "A"]
         focus_context = {**context, "plan": bound_plan, "approved_words": list(self.words.values()),
                          "story_term_budget": MAX_STORY_TERMS}
@@ -249,20 +364,16 @@ class KoreanHarness:
             "lexical-plan", lambda value: validate_focus(value, self.words, self.catalog, source_notes), focus_context)
         profiles = {e["id"]: e for e in focus["entries"]}
         prose_prompt = "Write a natural modern Korean Level 1 chapter following the reviewed source plan. "
-        prose_prompt += "Use 5–6 very short sentences, 100–180 characters excluding spaces, with 5–9 sentences and 100–250 characters as hard limits. Formal polite narration. "
-        prose_prompt += "Keep the story's injustice without inventing actions or motives. Prefer beginner words from the supplied A list; avoid literary vocabulary and complex embedded clauses. Omit secondary details, minor relatives' names and difficult physical descriptions. "
+        prose_prompt += "Choose the chapter's length yourself: retain as much meaningful source narrative as can be expressed naturally at this level and stop at a coherent scene boundary. No target, minimum or maximum number of characters, words or sentences. Formal polite narration. "
+        prose_prompt += "Keep the story's injustice without inventing actions or motives. Prefer beginner words from the supplied A list; manage difficult ideas with clear, connected sentences. Do not confuse short individual sentences with a short chapter. Preserve the reviewed narrative development rather than summarizing it away; never pad or repeat facts to make the chapter longer. In length_reason_en explain why this coverage and stopping point suit the level, whether more meaningful source content could be retained, and any necessary omissions. "
         prose_prompt += "Give title without chapter number and prose without headings or explanations."
-        prose_prompt += payload(plan=bound_plan, source=source, beginner_words=[e["headword"] for e in beginner], previous=previous_text, reusable_words=[entry["headword"] for entry in self.words.values() if entry["kind"] == "word" or entry["id"] in profiles], lexical_plan=focus)
+        prose_prompt += payload(plan=bound_plan, source=source, beginner_words=[e["headword"] for e in beginner], previous=previous_text, existing_text=existing['text'] if existing else None, reusable_words=[entry["headword"] for entry in self.words.values() if entry["kind"] == "word" or entry["id"] in profiles], lexical_plan=focus)
         prose_prompt += " Prefer the supplied reusable word headwords when they can express the retained events naturally. Explain status with simple everyday words instead of literary terms. Do not mechanically keep every detail of the source plan. Use ONLY the planned story exemption; all other wording should be ordinary beginner vocabulary. "
-        def check_prose(value):
-            if (not value["title"].strip() or not 100 <= len("".join(value["text"].split())) <= 250
-                    or not 5 <= len(contracts.sentence_inventory(value["text"])) <= 9
-                    or len(value["text"].split()) > 90):
-                raise ValueError("Korean Level 1 prose must have 5–9 sentences, 100–250 characters excluding spaces, and at most 90 whitespace units")
         prose_repair = ""
-        for prose_attempt in range(3):
+        reuse_candidate = None
+        for prose_attempt in range(latest_prose_revision(self.run_dir) if not existing else 0, 3):
             prose = await self.stage("prose", prose_prompt + prose_repair, "prose", check_prose,
-                {**context, "plan": bound_plan, "lexical_plan": focus}, initial={"title": existing["title"].split(". ", 1)[-1], "text": existing["text"]} if existing else None,
+                {**context, "plan": bound_plan, "lexical_plan": focus},
                 cache_prefix=f"-revision{prose_attempt}" if prose_attempt else "")
             if existing and prose["text"] != existing["text"]:
                 raise ValueError("Existing Korean prose failed review; explicit prose repair is required")
@@ -271,38 +382,9 @@ class KoreanHarness:
                 contracts.check_reconstruction(value["segments"], prose["text"])
                 required_words.clear()
                 required_grammar.clear()
-                identity_errors = []
-                for segment in value["segments"]:
-                    if segment["type"] == "punctuation":
-                        if any(c.isalnum() for c in segment["text"]):
-                            raise ValueError("Korean words cannot hide in punctuation")
-                        continue
-                    identity, kind = segment["lexical_id"], segment["lexical_kind"]
-                    candidates = self.catalog.get(segment["lemma"], [])
-                    if kind in ("proper_name", "story_term"):
-                        profile = profiles.get(identity)
-                        if profile is None or any(profile[key] != segment[field] for key, field in
-                                (("headword", "lemma"), ("kind", "lexical_kind"))):
-                            raise ValueError(f"Use exact lexical-plan IDs, headwords and kinds: {focus}")
-                    planned_story = [e for e in profiles.values() if e["kind"] == "story_term" and segment["lemma"] in e["aliases"]]
-                    if kind == "vocabulary" and not candidates and planned_story:
-                        raise ValueError(f"This is the reviewed story exception, not a NIKL word: {planned_story}")
-                    if kind == "vocabulary" and not candidates:
-                        raise UnannotatableProseError(f"Ordinary word {segment['lemma']} is absent from the learner lexicon; simplify prose instead of inventing its ID or a story-term exemption")
-                    if kind == "vocabulary" and identity not in {e["id"] for e in candidates}:
-                        identity_errors.append(f"Exact NIKL candidates for {segment['lemma']}: {candidates}")
-                    if kind != "grammar":
-                        request = {"headword": segment["lemma"], "kind": kind.replace("vocabulary", "word")}
-                        if identity in required_words and required_words[identity] != request:
-                            raise ValueError("Korean same identity has different headwords or kinds")
-                        if identity in self.words and any(self.words[identity][key] != request[key] for key in request):
-                            raise ValueError(f"Korean annotation changed approved identity {identity}: requested {request}, approved headword={self.words[identity]['headword']}, kind={self.words[identity]['kind']}")
-                        required_words[identity] = request
-                    else:
-                        required_grammar.add(identity)
-                if identity_errors:
-                    raise ValueError("; ".join(identity_errors))
-                required_grammar.update(link["entry_id"] for link in value["grammar_links"])
+                requests, grammar_ids = annotation_requests(value, self.catalog, focus, self.words)
+                required_words.update(requests)
+                required_grammar.update(grammar_ids)
                 chapter = contracts.canonical_annotation(value, prose, self.number, EDITION, bound_plan, focus)
                 exceptions = [{"id": identity, "kind": entry["kind"]} for identity, entry in required_words.items()
                               if entry["kind"] in ("proper_name", "story_term")]
@@ -324,19 +406,120 @@ class KoreanHarness:
             annotation_prompt += payload(prose=prose, words=list(self.words.values()), grammar=list(self.grammar.values()), lexical_plan=focus, nikl_A=[([e["id"], e["meaning"]] if e["meaning"] else e["id"]) for e in beginner])
             async def produce_annotation(job, issues):
                 texts = contracts.annotation_chunks(prose["text"])
+                selected, previous_chunks, old_lineage, repair_evidence = None, None, None, {}
+                reused = {}
+                if not issues and reuse_candidate is not None:
+                    old_job, old_prose, old_review = reuse_candidate
+                    old_meta = read(self.run_dir / 'agents' / old_job / 'meta.json')
+                    old_texts = [record['text'] for record in old_meta['chunks']]
+                    old_value = read(self.run_dir / 'agents' / old_job / 'result.json')
+                    old_values = contracts.slice_annotations(old_value, old_texts)
+                    reusable = set()
+                    for i, record in enumerate(old_meta['chunks']):
+                        path = self.run_dir / 'agents' / record['job'] / 'result.json'
+                        if path.exists() and digest(read(path)) == record['digest']:
+                            reusable.add(i)
+                    candidates = [{'old_chunk_index': i + 1, 'new_chunk_index': j + 1,
+                                   'text': text, 'annotation': old_values[i]}
+                                  for j, text in enumerate(texts) for i, old_text in enumerate(old_texts)
+                                  if i in reusable and old_text == text]
+                    reuse_job = f'{job}-reuse-plan'
+                    reuse_plan = await self.runner.call(reuse_job, self.policy + '\n'
+                        'Select reusable exact sentence occurrences after a deliberate prose revision. '
+                        'Use only candidate old/new pairs whose text and contextual roles/meanings remain valid. '
+                        'Exclude occurrences affected by unresolved annotation-review issues; do not carry a known error forward. '
+                        'Keep repeated positions distinct and preserve narrative order. Do not rewrite annotations or infer new word forms. '
+                        + payload(old_prose=old_prose, new_prose=prose, unresolved_review=old_review, candidates=candidates),
+                        contracts.schema_path('annotation-reuse-plan'), 'medium', tool_profile='offline')
+                    validate(reuse_plan, contracts.ANNOTATION_REUSE_PLAN)
+                    reused = contracts.reuse_selection(reuse_plan, old_texts, texts)
+                    if any(old - 1 not in reusable for old in reused.values()):
+                        raise ValueError('Korean reuse selected unavailable annotation evidence')
+                    old_lineage = old_meta['chunks']
+                    repair_evidence.update(reuse_plan_job=reuse_job, reuse_plan_digest=digest(reuse_plan), reuse_source_job=old_job)
+                    print(f'annotation reuse after prose revision: {len(reused)} of {len(texts)} chunks', flush=True)
+                prefix, attempt = job.rsplit('-', 1)
+                previous_job = f'{prefix}-{int(attempt) - 1}'
+                if issues and int(attempt) > 0 and (self.run_dir / 'agents' / previous_job / 'meta.json').exists():
+                    old_meta = read(self.run_dir / 'agents' / previous_job / 'meta.json')
+                    if old_meta.get('kind') == 'annotation_assembly' and [c['text'] for c in old_meta['chunks']] == texts:
+                        previous = read(self.run_dir / 'agents' / previous_job / 'result.json')
+                        previous_chunks = contracts.slice_annotations(previous, texts)
+                        old_lineage = old_meta['chunks']
+                        inventory, offset = [], 0
+                        for number, (text, value) in enumerate(zip(texts, previous_chunks), 1):
+                            inventory.append({'chunk_index': number, 'text': text,
+                                'first_segment_index': offset, 'last_segment_index': offset + len(value['segments']) - 1})
+                            offset += len(value['segments'])
+                        repair_job = f'{job}-repair-plan'
+                        repair_context = {
+                            'segments': [{'index': i, 'text': s['text'], 'lexical_id': s['lexical_id'],
+                                'form_steps': [{'form': step['form'], 'reading': step['reading']} for step in s['form_steps']]}
+                                for i, s in enumerate(previous['segments'])],
+                            'grammar_links': [{key: link[key] for key in ('segment_index', 'entry_id',
+                                'display_form', 'display_meaning_en', 'display_end_segment_index')}
+                                for link in previous['grammar_links']]}
+                        selection = await self.runner.call(repair_job, self.policy + '\n'
+                            'Map every independent annotation-review issue to the exact sentence chunks needing repair. '
+                            'Inspect all comparable occurrences implicated by a general issue; select every affected chunk, '
+                            'while preserving unrelated chunks. Do not select all sentences merely because the chapter failed review. '
+                            'For each selected chunk provide concrete correction instructions using local segment indices or exact forms, '
+                            'including the reviewed canonical grammar IDs. This is triage: forward the review findings; '
+                            'Reuse approved grammar identities only when their lessons cover the reviewed function. If none does, instruct the chunk to propose a distinct new grammar identity for independent review; never omit the link or force a different function into an existing lesson. '
+                            'do not research or derive corrected pronunciations here. Chunk agents handle the linguistic corrections. '
+                            'If resolving a review issue requires changing the actual prose (for example an unsuitable vocabulary choice), '
+                            'set prose_revision_reason_en to the concrete wording issue and return no annotation repairs. '
+                            'Otherwise leave that reason empty; grammar-link, identity, pronunciation and technical errors need annotation repair, not new prose. '
+                            'For a general pronunciation issue, identify chunks containing pronunciation notes that differ from their written forms. '
+                            'Do not rewrite prose. '
+                            + payload(annotation_index=repair_context, review_issues=issues, chunks=inventory,
+                                      linguistic_reference=read(LINGUISTIC_REFERENCE)),
+                            contracts.schema_path('annotation-repair-plan'), 'high', tool_profile='offline')
+                        validate(selection, contracts.ANNOTATION_REPAIR_PLAN)
+                        if selection.get('prose_revision_reason_en', '').strip():
+                            raise UnannotatableProseError(selection['prose_revision_reason_en'])
+                        selected = contracts.repair_selection(selection, len(texts))
+                        repair_evidence = {'repair_plan_job': repair_job, 'repair_plan_digest': digest(selection)}
+                        print(f'annotation repair: {len(selected)} of {len(texts)} chunks selected', flush=True)
                 async def chunk(number, text):
-                    errors, previous_chunk = issues, None
+                    if number in reused:
+                        record = old_lineage[reused[number] - 1]
+                        value = read(self.run_dir / 'agents' / record['job'] / 'result.json')
+                        if digest(value) != record['digest']:
+                            raise ValueError('Korean reusable annotation occurrence changed')
+                        return value, record
+                    if selected is not None and number not in selected:
+                        record = old_lineage[number - 1]
+                        value = read(self.run_dir / 'agents' / record['job'] / 'result.json')
+                        if digest(value) != record['digest']:
+                            raise ValueError('Korean retained annotation chunk changed')
+                        return value, record
+                    errors = selected[number] if selected is not None else issues
+                    previous_chunk = previous_chunks[number - 1] if previous_chunks is not None else None
                     for repair in range(3):
                         chunk_job = f"{job}-chunk-{number:03d}-{repair}"
-                        value = await self.runner.call(chunk_job, self.policy + "\n" + annotation_prompt
-                            + "\nThis job annotates ONLY chunk_text, not the full chapter. "
-                            "All segment/link indices start at zero for this chunk. Include trailing spaces/newlines as punctuation. "
-                            + payload(chunk_text=text, previous_chunk=previous_chunk, issues=errors),
-                            contracts.schema_path("annotation"), "medium", tool_profile="offline")
+                        try:
+                            value = await self.runner.call(chunk_job, self.policy + "\n" + annotation_prompt
+                                + "\nThis job annotates ONLY chunk_text, not the full chapter. "
+                                "All segment/link indices start at zero for this chunk. Include trailing spaces/newlines as punctuation. "
+                                + payload(chunk_text=text, previous_chunk=previous_chunk, issues=errors,
+                                    **({'linguistic_reference': read(LINGUISTIC_REFERENCE)} if errors else {})),
+                                contracts.schema_path("annotation"), "medium", tool_profile="offline")
+                        except ValueError as error:
+                            # A rejected worker result has no trusted annotation
+                            # to inherit. Retry this chunk, preserving siblings.
+                            errors = [str(error), 'Use only the supplied data. Do not call any tools, including resource listing.']
+                            continue
                         try:
                             validate(value, contracts.ANNOTATION)
                             contracts.check_reconstruction(value["segments"], text)
-                            print(f"annotation chunk {number}: reconstruction passed", flush=True)
+                            requests, grammar_ids = annotation_requests(value, self.catalog, focus, self.words)
+                            fragment = contracts.canonical_annotation(value,
+                                {'title': prose['title'], 'text': text}, self.number, EDITION, bound_plan, focus)
+                            dictionaries.build_assets(fragment, self.run_dir, source_id=source_id,
+                                word_registry={identity: {'id': identity, **entry} for identity, entry in requests.items()},
+                                grammar_registry={identity: {'id': identity} for identity in grammar_ids}, write=False)
+                            print(f"annotation chunk {number}: structure passed", flush=True)
                             return value, {"job": chunk_job, "text": text, "digest": digest(value)}
                         except (ValidationError, ValueError, KeyError, IndexError, TypeError) as error:
                             errors, previous_chunk = [str(error)], value
@@ -347,9 +530,37 @@ class KoreanHarness:
                         raise result
                 values, lineage = zip(*results)
                 combined = contracts.combine_annotations(list(values), texts)
+                assembly = {'return_code': 0, 'kind': 'annotation_assembly', 'chunks': list(lineage), **repair_evidence}
+                new_ids = sorted({link['entry_id'] for link in combined['grammar_links']} - self.grammar.keys())
+                if new_ids:
+                    errors, previous_bindings = [], None
+                    for repair in range(3):
+                        binding_job = f'{job}-grammar-bindings-{repair}'
+                        bindings = await self.runner.call(binding_job, self.policy + '\n'
+                            'Coordinate the new grammar identities proposed by separate sentence chunks. '
+                            'Map genuinely equivalent functions to one canonical identity and reuse an approved identity where appropriate. '
+                            'Keep distinct functions, formations and contrasts separate even when their spelling overlaps. '
+                            'Existing approved IDs are immutable. Cover every new draft ID; canonical IDs must be an approved ID or one of the supplied draft IDs, self-bound. '
+                            'Do not edit source text, meanings, boundaries or definitions. The complete mapped annotation will receive independent review. '
+                            + payload(annotation=combined, new_ids=new_ids, approved_grammar=list(self.grammar.values()),
+                                      previous_bindings=previous_bindings, issues=errors, independent_review_issues=issues),
+                            contracts.schema_path('grammar-bindings'), 'medium', tool_profile='offline')
+                        try:
+                            validate(bindings, contracts.GRAMMAR_BINDINGS)
+                            mapped = contracts.bind_grammar_identities(combined, bindings, set(self.grammar))
+                            check_annotation(mapped)
+                            combined = mapped
+                            assembly.update(grammar_binding_job=binding_job, grammar_binding_digest=digest(bindings),
+                                            approved_grammar_ids=sorted(self.grammar))
+                            break
+                        except UnannotatableProseError:
+                            raise
+                        except (ValidationError, ValueError) as error:
+                            errors, previous_bindings = [str(error)], bindings
+                    else:
+                        raise ValueError(f'Korean grammar identity coordination failed: {errors}')
                 save(self.run_dir / "agents" / job / "result.json", combined)
-                save(self.run_dir / "agents" / job / "meta.json", {"return_code": 0,
-                    "kind": "annotation_assembly", "chunks": list(lineage)})
+                save(self.run_dir / "agents" / job / "meta.json", assembly)
                 return combined
             try:
                 annotation = await self.stage("annotation", annotation_prompt, "annotation", check_annotation,
@@ -357,12 +568,24 @@ class KoreanHarness:
                     initial=normalize_existing(existing, self.words) if existing else None,
                     cache_prefix=f"-revision{prose_attempt}" if prose_attempt else "", producer=produce_annotation)
                 chapter = contracts.canonical_annotation(annotation, prose, self.number, EDITION, bound_plan, focus)
-            except ValueError as error:
+            except UnannotatableProseError as error:
                 if existing or prose_attempt == 2:
                     raise
-                print("annotation failed; simplifying generated prose before reannotation", flush=True)
+                print(f"annotation failed; revising generated prose before reannotation: {error}", flush=True)
+                reuse_candidate = None
+                old_prefix = f'annotation-revision{prose_attempt}' if prose_attempt else 'annotation'
+                for attempt in reversed(range(6)):
+                    old_job = f'{old_prefix}-{attempt}'
+                    meta_path = self.run_dir / 'agents' / old_job / 'meta.json'
+                    if not meta_path.exists(): continue
+                    old_meta = read(meta_path)
+                    if old_meta.get('kind') != 'annotation_assembly' or ''.join(c['text'] for c in old_meta['chunks']) != prose['text']:
+                        continue
+                    old_review_path = self.run_dir / 'agents' / f'{old_prefix}-review-{attempt}' / 'result.json'
+                    reuse_candidate = (old_job, prose, read(old_review_path) if old_review_path.exists() else {'issues': [str(error)]})
+                    break
                 prose_repair = payload(repair_reason=str(error), previous_prose=prose,
-                    instruction="Deliberately revise the unpublished prose to use simpler A-band words and simpler constructions, omitting secondary details. Do not evade difficulty gates by inventing lexical identities or reclassifying ordinary words as story terms.")
+                    instruction="Deliberately revise only the affected unpublished prose to use simpler A-band words and constructions. Preserve the reviewed scene, stopping point, meaningful development and unaffected wording. Do not shorten a chapter merely because annotation failed. Do not evade difficulty gates by inventing lexical identities or reclassifying ordinary words as story terms.")
                 continue
             break
         missing_words = required_words.keys() - self.words.keys()
@@ -411,6 +634,7 @@ class KoreanHarness:
         report = {"schema_version": 1, "status": "complete", "number": self.number,
             "edition": EDITION, "source_sha256": manifest["text_sha256"], "source_notes_sha256": manifest.get("notes_sha256"), "source_unit": unit,
             "policy_sha256": sha(self.policy.encode()), "stages": self.stages,
+            "linguistic_reference_sha256": sha(LINGUISTIC_REFERENCE.read_bytes()),
             "previous_chapters_digest": digest(previous_text),
             "existing_input_digest": digest(existing) if existing else None,
             "dictionary_digest": digest({"words": [words[key] for key in sorted(required_words)],
@@ -427,8 +651,9 @@ def main() -> None:
     parser.add_argument("--run-dir", type=Path, required=True)
     parser.add_argument("--existing", type=Path)
     parser.add_argument("--model", default="gpt-6.1-sol")
+    parser.add_argument('--workers', type=int, default=4, help='Concurrent annotation model jobs (default: 4)')
     args = parser.parse_args()
-    report = asyncio.run(KoreanHarness(args.run_dir, args.chapter, existing=args.existing, model=args.model).run())
+    report = asyncio.run(KoreanHarness(args.run_dir, args.chapter, existing=args.existing, model=args.model, workers=args.workers).run())
     print(json.dumps({"status": report["status"], "chapter": report["number"], "stages": list(report["stages"])}))
 
 

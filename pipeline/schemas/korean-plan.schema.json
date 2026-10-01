@@ -5,6 +5,14 @@
     "title": {
       "type": "string"
     },
+    "scope_reason_en": {
+      "type": "string",
+      "minLength": 1
+    },
+    "last_source_paragraph_index": {
+      "type": "integer",
+      "minimum": 0
+    },
     "beats": {
       "type": "array",
       "minItems": 1,
@@ -28,6 +36,8 @@
   },
   "required": [
     "title",
+    "scope_reason_en",
+    "last_source_paragraph_index",
     "beats"
   ]
 }

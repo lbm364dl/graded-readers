@@ -9,11 +9,181 @@ from pipeline import korean_contracts as contracts
 from pipeline import korean_dictionary as dictionary
 from pipeline import korean_publication as publication
 from pipeline import korean_sources as sources
-from pipeline.korean_agent_harness import KoreanHarness, digest, validate_delta
+from pipeline.korean_agent_harness import KoreanHarness, check_prose, digest, validate_delta
 
 
 def manual_chapter():
     return json.loads(Path('tests/fixtures/korean_manual_annotations.json').read_text())['chapters'][0]
+
+
+def test_chapter_quantity_is_not_a_prose_gate_but_empty_work_is_rejected():
+    from jsonschema import validate
+    short = {'title': '도착', 'text': '아이가 왔습니다.',
+             'length_reason_en': 'This source scene contains only the arrival; further detail would be invented.'}
+    long = {**short, 'text': manual_chapter()['text'] * 8,
+            'length_reason_en': 'Synthetic quantity fixture; narrative quality is assessed by independent review.'}
+    assert len(long['text']) > 250
+    assert len(contracts.sentence_inventory(long['text'])) > 9
+    for value in (short, long):
+        validate(value, contracts.PROSE)
+        check_prose(value)
+    for field in ('title', 'text', 'length_reason_en'):
+        with pytest.raises(ValueError, match='explained length decision'):
+            check_prose({**short, field: ' '})
+
+
+def test_source_coverage_has_no_two_paragraph_quota_and_records_reason():
+    from jsonschema import validate
+    plan = {'title': '가족', 'scope_reason_en': 'All three paragraphs advance the family scene using beginner wording.', 'last_source_paragraph_index': 2,
+            'beats': [{'source_paragraph_index': i, 'event_en': f'Event {i}'} for i in range(3)]}
+    validate(plan, contracts.PLAN)
+    bound = contracts.bind_plan(plan, '하나\n\n둘\n\n셋', 0)
+    assert len(bound['beats']) == 3
+    assert bound['scope_reason_en'] == plan['scope_reason_en']
+
+
+def test_explicit_grammar_bindings_unify_equivalents_and_preserve_contrasts():
+    value = {'segments': [{'lexical_kind': 'grammar', 'lexical_id': 'condition-b',
+                          'form_steps': [{'grammar_entry_ids': ['condition-a']}], 'text': 'unchanged'}],
+             'grammar_links': [{'entry_id': x} for x in ('condition-a', 'condition-b', 'subject-i-ga')]}
+    rows = [{'draft_id': 'condition-a', 'entry_id': 'condition-a'},
+            {'draft_id': 'condition-b', 'entry_id': 'condition-a'}]
+    mapped = contracts.bind_grammar_identities(value, {'bindings': rows}, {'subject-i-ga'})
+    assert mapped['segments'][0]['lexical_id'] == 'condition-a'
+    assert mapped['segments'][0]['form_steps'][0]['grammar_entry_ids'] == ['condition-a']
+    assert mapped['grammar_links'][-1]['entry_id'] == 'subject-i-ga'
+    assert mapped['segments'][0]['text'] == value['segments'][0]['text']
+    assert value['segments'][0]['lexical_id'] == 'condition-b'
+    distinct = [{'draft_id': x, 'entry_id': x} for x in ('condition-a', 'condition-b')]
+    assert contracts.bind_grammar_identities(value, {'bindings': distinct}, {'subject-i-ga'}) == value
+    with pytest.raises(ValueError, match='only new draft identities'):
+        contracts.bind_grammar_identities(value, {'bindings': rows + [{'draft_id': 'subject-i-ga', 'entry_id': 'condition-a'}]}, {'subject-i-ga'})
+    with pytest.raises(ValueError, match='canonical identity'):
+        contracts.bind_grammar_identities(value, {'bindings': [{**r, 'entry_id': 'invented'} for r in rows]}, {'subject-i-ga'})
+
+
+def test_annotation_slicing_and_review_repair_selection_preserve_other_chunks():
+    from pipeline.korean_agent_harness import normalize_existing
+    chapter = manual_chapter()
+    raw = normalize_existing(chapter, dictionary._registry(dictionary.WORDS))
+    texts = contracts.annotation_chunks(chapter['text'])
+    chunks = contracts.slice_annotations(raw, texts)
+    assert contracts.combine_annotations(chunks, texts) == raw
+    selected = contracts.repair_selection({'repairs': [{'chunk_index': 2, 'issues': ['Correct the reviewed occurrence meaning.']}]}, len(texts))
+    assert set(selected) == {2}
+    for rows in ([{'chunk_index': 0, 'issues': ['bad']}],
+                 [{'chunk_index': 1, 'issues': ['bad']}] * 2,
+                 [{'chunk_index': len(texts) + 1, 'issues': ['bad']}]):
+        with pytest.raises(ValueError, match='escapes chapter coverage'):
+            contracts.repair_selection({'repairs': rows}, len(texts))
+
+
+def test_agent_source_boundary_can_extend_beyond_reference_scene():
+    manifest, reference, _ = sources.load_unit(1)
+    source = (sources.DIRECTORY / manifest['text_file']).read_text().rstrip('\n')
+    plan = {'title': '가족과 대화', 'scope_reason_en': 'Retain the connected conversation.',
+            'last_source_paragraph_index': 16,
+            'beats': [{'source_paragraph_index': 16, 'event_en': 'Closing conversation'}]}
+    bound = contracts.bind_plan(plan, source, 0)
+    unit = {'number': 1, **bound['scope'], 'label': plan['title']}
+    assert unit['end'] > reference['end']
+    _, _, selected = sources.load_selected_unit(unit)
+    assert selected == source[:unit['end']]
+    with pytest.raises(ValueError, match='complete original paragraphs'):
+        sources.load_selected_unit({**unit, 'end': unit['end'] - 1})
+    plan['last_source_paragraph_index'] = 0
+    with pytest.raises(ValueError, match='invalid paragraph'):
+        contracts.bind_plan(plan, source, 0)
+
+
+def test_publication_rejects_overlapping_or_skipped_chapter_scopes(tmp_path, monkeypatch):
+    chapter = manual_chapter()
+    chapter['source_alignment']['unit'] = {'number': 1, 'start': 0, 'end': 100, 'label': 'test'}
+    second = copy.deepcopy(chapter)
+    second['number'] = 2
+    second['source_alignment']['unit']['number'] = 2
+    for number in (1, 2):
+        path = tmp_path / f'chapter-{number:03d}'
+        path.mkdir()
+        (path / 'report.json').write_text('{}')
+    monkeypatch.setattr(publication, 'verify_run', lambda path: (
+        chapter if path.name == 'chapter-001' else second, {}, {}, {}))
+    for start in (0, 103):
+        second['source_alignment']['unit']['start'] = start
+        with pytest.raises(ValueError, match='overlap or skip'):
+            publication.publish(tmp_path)
+
+
+@pytest.mark.parametrize('prose_revision,worker_failure', [(False, False), (False, True), (True, False), ('technical_failure', False)])
+def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_path, prose_revision, worker_failure):
+    from pipeline.korean_agent_harness import normalize_existing, save, UnannotatableProseError
+    chapter = manual_chapter()
+    raw = normalize_existing(chapter, dictionary._registry(dictionary.WORDS))
+    texts = contracts.annotation_chunks(chapter['text'])
+    chunks = contracts.slice_annotations(raw, texts)
+    revised = copy.deepcopy(raw)
+    revised['segments'] = revised['segments'][2:]
+    revised['grammar_links'] = [{**link, 'segment_index': link['segment_index'] - 2,
+        'display_end_segment_index': link['display_end_segment_index'] - 2
+        if link['display_end_segment_index'] != -1 else -1}
+        for link in raw['grammar_links'] if link['segment_index'] >= 2]
+    revised['inflected_segment_indices'] = [i - 2 for i in raw['inflected_segment_indices'] if i >= 2]
+    revised_text = ''.join(s['text'] for s in revised['segments'])
+    revised_chunks = contracts.slice_annotations(revised, contracts.annotation_chunks(revised_text))
+    class Runner:
+        def __init__(self): self.jobs = []
+        async def call(self, job, *args, **kwargs):
+            self.jobs.append(job)
+            value = await self.respond(job)
+            save(tmp_path / 'agents' / job / 'result.json', value)
+            save(tmp_path / 'agents' / job / 'meta.json', {'return_code': 0})
+            return value
+        async def respond(self, job):
+            if prose_revision and job == 'annotation-review-0':
+                return {'approved': False, 'issues': ['First sentence needs deliberate prose review.']}
+            if prose_revision and job == 'annotation-1-repair-plan':
+                if prose_revision == 'technical_failure':
+                    raise ValueError('Invalid annotation repair evidence')
+                return {'repairs': [], 'prose_revision_reason_en': 'Revise the first sentence deliberately'}
+            if job.endswith('-reuse-plan'):
+                return {'reused_chunks': [{'old_chunk_index': i, 'new_chunk_index': i} for i in range(2, len(chunks) + 1)]}
+            if '-review-' in job: return {'approved': True, 'issues': []}
+            if job.startswith('plan-'):
+                return {'title': '제목', 'scope_reason_en': 'Test scene decision', 'last_source_paragraph_index': 0,
+                        'beats': [{'source_paragraph_index': 0, 'event_en': 'Test setup'}]}
+            if job.startswith('lexical-plan-'):
+                return {'entries': [
+                    {'id': 'hong-gildong', 'headword': '홍길동', 'kind': 'proper_name', 'aliases': ['홍길동'], 'role_en': 'central child'},
+                    {'id': '벼슬/명', 'headword': '벼슬', 'kind': 'story_term', 'aliases': ['벼슬'], 'role_en': 'historical office'}]}
+            if job.startswith('prose-'):
+                return {'title': '제목', 'text': revised_text if 'revision1' in job else chapter['text'], 'length_reason_en': 'Test source-scene extent'}
+            if '-chunk-' in job:
+                number, attempt = map(int, job.split('-chunk-')[1].split('-'))
+                if worker_failure and number == 1 and attempt == 0:
+                    raise ValueError('Worker used tools outside its offline role')
+                value = copy.deepcopy((revised_chunks if 'revision1' in job else chunks)[number - 1])
+                if not prose_revision and number == 1 and attempt == 0:
+                    next(s for s in value['segments'] if s['lexical_kind'] == 'vocabulary')['lexical_id'] = 'invented'
+                return value
+            if job.startswith('sentence-help-'):
+                return {'sentences': [{**row, 'selected': False, 'reason_en': 'Synthetic selection fixture',
+                                      'translation_en': '', 'parts': []}
+                                     for row in contracts.sentence_inventory(revised_text if prose_revision else chapter['text'])]}
+            raise AssertionError(job)
+    runner = Runner()
+    if prose_revision == 'technical_failure':
+        with pytest.raises(ValueError, match='Invalid annotation repair evidence'):
+            asyncio.run(KoreanHarness(tmp_path, 1, runner=runner).run())
+        assert not any('prose-revision' in job for job in runner.jobs)
+        return
+    assert asyncio.run(KoreanHarness(tmp_path, 1, runner=runner).run())['status'] == 'complete'
+    jobs = [job for job in runner.jobs if '-chunk-' in job]
+    assert jobs.count('annotation-0-chunk-001-0') == 1
+    assert jobs.count('annotation-0-chunk-001-1') == (0 if prose_revision else 1)
+    assert all(jobs.count(f'annotation-0-chunk-{i:03d}-0') == 1 for i in range(2, len(chunks) + 1))
+    assert len(jobs) == len(chunks) + 1
+    if prose_revision:
+        assert [job for job in jobs if 'revision1' in job] == ['annotation-revision1-0-chunk-001-0']
 
 
 def test_form_reading_can_show_pronunciation_but_form_must_match_tap(tmp_path):
@@ -27,6 +197,16 @@ def test_form_reading_can_show_pronunciation_but_form_must_match_tap(tmp_path):
         dictionary.build_assets(chapter, tmp_path, write=False)
 
 
+def test_korean_pronunciation_note_is_optional_but_complete_meaning_is_required(tmp_path):
+    chapter = manual_chapter()
+    step = chapter['segments'][7]['form_steps'][-1]
+    step['reading'] = ''
+    dictionary.build_assets(chapter, tmp_path, write=False)
+    step['meaning_en'] = ''
+    with pytest.raises(ValueError, match='complete-form transformation'):
+        dictionary.build_assets(chapter, tmp_path, write=False)
+
+
 def test_transformations_require_one_grammar_destination():
     from jsonschema import validate, ValidationError
     step = manual_chapter()['segments'][7]['form_steps'][0]
@@ -34,6 +214,47 @@ def test_transformations_require_one_grammar_destination():
     for ids in ([], ['past-ass-eoss', 'polite-seumnida']):
         with pytest.raises(ValidationError):
             validate({**step, 'grammar_entry_ids': ids}, contracts.STEP)
+
+
+@pytest.mark.parametrize('identity,lemma', [('똑같다/형', '똑같다'), ('똑같이/부', '똑같이')])
+def test_annotation_review_receives_attested_identity_grades_and_budget(tmp_path, identity, lemma):
+    import json
+    from pipeline.korean_agent_harness import normalize_existing
+    raw = normalize_existing(manual_chapter(), dictionary._registry(dictionary.WORDS))
+    word = {**raw['segments'][0], 'text': '똑같이', 'lexical_id': identity,
+            'lemma': lemma, 'lexical_kind': 'vocabulary', 'form_steps': []}
+    value = {'segments': [word], 'grammar_links': [], 'inflected_segment_indices': []}
+    class Runner:
+        async def call(self, job, prompt, *args, **kwargs):
+            if 'review' not in job: return value
+            data = json.loads(prompt.split('\nINPUT:\n', 1)[1])
+            evidence = data['vocabulary_evidence']
+            expected = {'똑같이/부': 'B'}
+            if identity == '똑같다/형': expected['똑같다/형'] = 'A'
+            assert {entry['id']: entry['grade'] for entry in evidence['entries']} == expected
+            assert evidence['max_non_beginner_ratio'] == 0.10
+            assert data['context']['linguistic_reference']['reviewed']
+            return {'approved': True, 'issues': []}
+    assert asyncio.run(KoreanHarness(tmp_path, 1, runner=Runner()).stage(
+        'annotation', 'task', 'annotation', lambda _: None, {})) == value
+
+
+def test_resume_uses_latest_reviewed_prose_not_largest_revision_number(tmp_path):
+    from pipeline.korean_agent_harness import latest_prose_revision, save
+    assert latest_prose_revision(tmp_path) == 0
+    value = {'title': '제목', 'text': '아이가 왔습니다.', 'length_reason_en': 'A complete test scene.'}
+    for revision, attempt, date, accepted in [(2, 0, '2026-01-01', True),
+                                             (1, 3, '2026-01-02', True),
+                                             (2, 1, '2026-01-03', False)]:
+        job = tmp_path / 'agents' / f'prose-revision{revision}-{attempt}'
+        review = tmp_path / 'agents' / f'prose-revision{revision}-review-{attempt}'
+        save(job / 'result.json', value)
+        save(job / 'meta.json', {'return_code': 0})
+        save(review / 'result.json', {'approved': accepted, 'issues': [] if accepted else ['Unresolved issue']})
+        save(review / 'meta.json', {'return_code': 0, 'ended_at': date})
+    assert latest_prose_revision(tmp_path) == 1
+    save(tmp_path / 'agents/prose-revision1-3/meta.json', {'return_code': 1})
+    assert latest_prose_revision(tmp_path) == 2
 
 
 def test_sentence_help_can_end_inside_punctuation_but_cannot_split_words(tmp_path):
@@ -117,7 +338,7 @@ def test_independent_review_rejection_repairs_and_only_approval_completes(tmp_pa
             if '-review-' in job:
                 assert 'Unsupported people group' in prompt or job.endswith('1')
                 return {'approved': True, 'issues': []}
-            return {'title': '제목', 'text': 'bad' if job.endswith('0') else 'fixed'}
+            return {'title': '제목', 'text': 'bad' if job.endswith('0') else 'fixed', 'length_reason_en': 'Test editorial decision'}
     runner = Runner()
     harness = KoreanHarness(tmp_path, 1, runner=runner)
     result = asyncio.run(harness.stage('prose', 'task', 'prose', lambda _: None, {}))
@@ -147,6 +368,40 @@ def test_publication_rejects_incomplete_run_before_writing(tmp_path):
         publication.publish(tmp_path)
 
 
+def test_publication_replays_grammar_binding_job_and_rejects_changed_result(tmp_path):
+    from pipeline.korean_agent_harness import read, save
+    make_reviewed_run(tmp_path)
+    chapter = read(tmp_path / 'chapter.json')
+    raw = read(tmp_path / 'agents/annotation/result.json')
+    lineage, first = [], 0
+    for i, text in enumerate(contracts.annotation_chunks(chapter['text'])):
+        last, length = first, 0
+        while length < len(text):
+            length += len(raw['segments'][last]['text'])
+            last += 1
+        chunk = {'segments': raw['segments'][first:last],
+                 'grammar_links': [{**link, 'segment_index': link['segment_index'] - first,
+                    'display_end_segment_index': link['display_end_segment_index'] - first
+                    if link['display_end_segment_index'] != -1 else -1}
+                    for link in raw['grammar_links'] if first <= link['segment_index'] < last],
+                 'inflected_segment_indices': [index - first for index in raw['inflected_segment_indices'] if first <= index < last]}
+        job = f'raw-chunk-{i}'
+        save(tmp_path / 'agents' / job / 'result.json', chunk)
+        save(tmp_path / 'agents' / job / 'meta.json', {'return_code': 0})
+        lineage.append({'job': job, 'text': text, 'digest': digest(chunk)})
+        first = last
+    bindings = {'bindings': []}
+    save(tmp_path / 'agents/binding/result.json', bindings)
+    save(tmp_path / 'agents/binding/meta.json', {'return_code': 0})
+    save(tmp_path / 'agents/annotation/meta.json', {'return_code': 0, 'kind': 'annotation_assembly',
+         'chunks': lineage, 'grammar_binding_job': 'binding', 'grammar_binding_digest': digest(bindings),
+         'approved_grammar_ids': sorted(dictionary._registry(dictionary.GRAMMAR))})
+    assert publication.verify_run(tmp_path)[0] == chapter
+    save(tmp_path / 'agents/binding/result.json', {'bindings': [{'draft_id': 'changed', 'entry_id': 'changed'}]})
+    with pytest.raises(ValueError, match='bindings changed after annotation review'):
+        publication.verify_run(tmp_path)
+
+
 def test_completed_run_cache_avoids_calls_but_changed_dictionary_invalidates(tmp_path, monkeypatch):
     chapter = manual_chapter()
     _, unit, _ = sources.load_unit(1)
@@ -172,9 +427,10 @@ def make_reviewed_run(run):
     from pipeline.korean_agent_harness import POLICY, normalize_existing, save
     chapter = manual_chapter()
     manifest, unit, source = sources.load_unit(1)
-    plan = {'title': '제목', 'beats': [{'source_paragraph_index': 0, 'event_en': 'Family setup'}]}
+    plan = {'title': '제목', 'scope_reason_en': 'Coherent family setup; omit unrelated detail.', 'last_source_paragraph_index': 0, 'beats': [{'source_paragraph_index': 0, 'event_en': 'Family setup'}]}
     bound = contracts.bind_plan(plan, source, unit['start'])
-    prose = {'title': '제목', 'text': chapter['text']}
+    unit = {'number': 1, **bound['scope'], 'label': plan['title']}
+    prose = {'title': '제목', 'text': chapter['text'], 'length_reason_en': 'The family scene reaches its supported conflict.'}
     annotation = normalize_existing(chapter, dictionary._registry(dictionary.WORDS))
     focus = {'entries': [
         {'id': 'hong-gildong', 'headword': '홍길동', 'kind': 'proper_name', 'aliases': ['홍길동'], 'role_en': 'central child'},
@@ -191,7 +447,9 @@ def make_reviewed_run(run):
     help_data = contracts.selected_breakdowns(help_output, chapter, dictionary.SOURCE)
     report = {'status': 'complete', 'number': 1, 'edition': sources.EDITION,
               'source_sha256': manifest['text_sha256'], 'source_notes_sha256': manifest.get('notes_sha256'), 'source_unit': unit,
-              'policy_sha256': sources.sha(POLICY.read_bytes()), 'stages': {}, 'artifacts': {}}
+              'policy_sha256': sources.sha(POLICY.read_bytes()),
+              'linguistic_reference_sha256': sources.sha((sources.ROOT / 'data/korean/linguistic-reference.json').read_bytes()),
+              'stages': {}, 'artifacts': {}}
     for name, value in {'plan': plan, 'lexical-plan': focus, 'prose': prose, 'annotation': annotation, 'sentence-help': help_output}.items():
         review = {'approved': True, 'issues': []}
         save(run / 'agents' / name / 'result.json', value)
@@ -235,6 +493,19 @@ def test_review_rejection_cannot_be_published(tmp_path):
         publication.verify_run(tmp_path)
 
 
+@pytest.mark.parametrize('changed', [False, True])
+def test_publication_binds_reviewed_linguistic_reference(tmp_path, monkeypatch, changed):
+    make_reviewed_run(tmp_path)
+    reference = tmp_path / 'linguistic-reference.json'
+    reference.write_bytes(publication.LINGUISTIC_REFERENCE.read_bytes() + (b'\n' if changed else b''))
+    monkeypatch.setattr(publication, 'LINGUISTIC_REFERENCE', reference)
+    if changed:
+        with pytest.raises(ValueError, match='policy is stale'):
+            publication.verify_run(tmp_path)
+    else:
+        publication.verify_run(tmp_path)
+
+
 def test_form_chain_needs_word_base_but_plain_grammar_tap_is_valid(tmp_path):
     chapter = manual_chapter()
     dictionary.build_assets(chapter, tmp_path, write=False)
@@ -251,7 +522,7 @@ def test_unannotatable_prose_returns_to_prose_instead_of_inventing_ids(tmp_path)
             self.jobs = []
         async def call(self, job, *args, **kwargs):
             self.jobs.append(job)
-            return {'title': '제목', 'text': 'literary word'}
+            return {'title': '제목', 'text': 'literary word', 'length_reason_en': 'Test editorial decision'}
     runner = Runner()
     harness = KoreanHarness(tmp_path, 1, runner=runner)
     def reject(_):
@@ -267,7 +538,7 @@ def test_approval_with_remaining_issues_is_not_approval(tmp_path):
         async def call(self, job, *args, **kwargs):
             if 'review' in job:
                 return {'approved': True, 'issues': ['unresolved complete meaning']}
-            return {'title': '제목', 'text': 'text'}
+            return {'title': '제목', 'text': 'text', 'length_reason_en': 'Test editorial decision'}
     harness = KoreanHarness(tmp_path, 1, runner=Runner())
     with pytest.raises(ValueError, match='failed review'):
         asyncio.run(harness.stage('prose', 'task', 'prose', lambda _: None, {}))
@@ -290,26 +561,36 @@ def test_dictionary_rejects_same_length_unattested_surface(tmp_path):
     assert not list(tmp_path.iterdir())
 
 
-def test_partial_stage_reuses_actual_cached_review_only_for_matching_context(tmp_path):
+@pytest.mark.parametrize('approved_review', [False, True])
+def test_partial_stage_reuses_actual_cached_review_only_for_matching_context(tmp_path, approved_review):
     from pipeline.agent_harness import CodexRunner, digest as runner_digest
     from pipeline.korean_agent_harness import REVIEW_POLICY, payload, save
-    value = {'title': '제목', 'text': 'reviewed output'}
+    value = {'title': '제목', 'text': 'reviewed output', 'length_reason_en': 'Test editorial decision'}
     context = {'source': 'same source'}
     harness = KoreanHarness(tmp_path, 1, runner=CodexRunner(tmp_path, 'test-model', asyncio.Semaphore(1)))
     prompt = harness.policy + '\n' + REVIEW_POLICY + payload(stage='prose', task='task', context=context, output=value)
     fingerprint = runner_digest(prompt, contracts.schema_path('review').read_text(), 'test-model', 'high')
     fingerprint = runner_digest(fingerprint, 'offline', 'tool-profile-v1')
     save(tmp_path / 'agents/prose-4/result.json', value)
-    save(tmp_path / 'agents/prose-review-4/result.json', {'approved': True, 'issues': []})
+    save(tmp_path / 'agents/prose-review-4/result.json', {'approved': approved_review,
+         'issues': [] if approved_review else ['Concrete wording correction']})
     save(tmp_path / 'agents/prose-review-4/meta.json', {'return_code': 0, 'fingerprint': fingerprint})
+    save(tmp_path / 'agents/prose-3/result.json', value)
+    save(tmp_path / 'agents/prose-review-3/result.json', {'approved': False, 'issues': ['Older stale finding']})
+    save(tmp_path / 'agents/prose-review-3/meta.json', {'return_code': 0, 'fingerprint': 'obsolete-context'})
     original = harness.runner.call
     async def cache_only(job, *args, **kwargs):
         if not kwargs.get('cache_only'):
+            if not approved_review and job == 'prose-5':
+                assert 'Concrete wording correction' in args[0]
+                return value
+            if not approved_review and job == 'prose-review-5':
+                return {'approved': True, 'issues': []}
             raise AssertionError('new model work required')
         return await original(job, *args, **kwargs)
     harness.runner.call = cache_only
     assert asyncio.run(harness.stage('prose', 'task', 'prose', lambda _: None, context)) == value
-    assert harness.stages['prose']['proposal_job'] == 'prose-4'
+    assert harness.stages['prose']['proposal_job'] == ('prose-4' if approved_review else 'prose-5')
     with pytest.raises(AssertionError, match='new model work required'):
         asyncio.run(harness.stage('prose', 'task', 'prose', lambda _: None, {'source': 'changed source'}))
 

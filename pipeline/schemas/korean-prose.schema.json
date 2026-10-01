@@ -3,14 +3,21 @@
   "additionalProperties": false,
   "properties": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1
     },
     "text": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1
+    },
+    "length_reason_en": {
+      "type": "string",
+      "minLength": 1
     }
   },
   "required": [
     "title",
-    "text"
+    "text",
+    "length_reason_en"
   ]
 }

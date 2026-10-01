@@ -19,7 +19,6 @@ VOCAB_SOURCE = ROOT / "data/korean/words/nikl_2003.tsv"
 VOCAB_SHA256 = "00249cf0509427fc2e434f318b1a37c599c694b807dc37f8b17b4601e2482c6e"
 MAX_NON_BEGINNER_RATIO = 0.10
 MAX_STORY_TERMS = 1
-MAX_SENTENCE_EOJEOL = 12
 EXCEPTIONS = ROOT / "content/lexicon/korean/l1.exceptions.json"
 GRAMMAR = ROOT / "content/lexicon/korean/l1.grammar.json"
 
@@ -117,7 +116,9 @@ def diagnostics(chapter: dict, *, exception_entries: list | None = None,
         "above_beginner_ratio": round(ratio, 4),
         "story_terms": sorted(story_terms),
         "longest_sentence_eojeol": longest,
-        "passes": ratio <= MAX_NON_BEGINNER_RATIO and longest <= MAX_SENTENCE_EOJEOL,
+        # Sentence length is evidence for independent linguistic review and
+        # selective help, not a proxy for grammatical difficulty.
+        "passes": ratio <= MAX_NON_BEGINNER_RATIO,
     }
 
 

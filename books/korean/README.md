@@ -11,9 +11,11 @@ The adaptations are newly written modern Korean, not a modern translation.
 
 `honggildong/original.wiki` preserves the pinned raw transcription;
 `original.txt` extracts its original Hangul without modernization.
-`source.json` records both checksums and Unicode source spans. Source units
-are pipeline divisions, not chapter headings in the original. The first two
-units are mapped; only the first chapter is currently requested for publication.
+`source.json` records both checksums and two reference scene spans. They are not
+chapter headings in the original or generation limits. The planning agent chooses
+each adaptation's source extent and stopping paragraph from the remaining
+narrative; reviewed publication evidence retains those exact spans. Only the
+first chapter is currently requested for publication.
 Run `.venv/bin/python -m pipeline.korean_sources` to verify the local snapshot,
 or add `--import` to redownload the pinned revision. A changed revision fails.
 
