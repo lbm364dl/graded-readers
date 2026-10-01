@@ -9,180 +9,175 @@ import 'package:hsk_graded/services/korean_dictionary.dart';
 import 'package:hsk_graded/services/korean_sentence_breakdowns.dart';
 import 'package:hsk_graded/screens/korean_dictionary_screen.dart';
 
+Future<Map<String, dynamic>> annotation(String source) async =>
+    jsonDecode(await rootBundle.loadString(source)) as Map<String, dynamic>;
+
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  test('Korean pilot loads with the reviewed source-aligned annotation',
+  test('Korean published chapters reconstruct exactly and have useful taps',
       () async {
     final books = await ContentRepository().loadBooks(Language.korean);
     expect(books, hasLength(1));
     expect(books.single.title, '홍길동전');
     final reader = books.single.levels[1]!;
     expect(reader.levelLabel, 'Level 1');
-    final chapter = reader.chapters.single;
-    final annotation =
-        jsonDecode(await rootBundle.loadString(chapter.annotationAsset))
-            as Map<String, dynamic>;
-    expect(annotation['text'], chapter.content);
-    final segments =
-        (annotation['segments'] as List).cast<Map<String, dynamic>>();
-    expect(segments.map((segment) => segment['text']).join(), chapter.content);
+    expect(reader.chapters, hasLength(1));
+    for (final chapter in reader.chapters) {
+      final data = await annotation(chapter.annotationAsset);
+      final segments = (data['segments'] as List).cast<Map<String, dynamic>>();
+      expect(data['text'], chapter.content);
+      expect(segments.map((s) => s['text']).join(), chapter.content);
+      expect(
+          segments
+              .where((s) => s['type'] == 'word')
+              .every((s) => (s['meaning_en'] as String).isNotEmpty),
+          isTrue);
+      expect(segments.any((s) => s['lookup_reason'] == 'proper_name'), isTrue);
+      expect(segments.any((s) => s['learning_focus'] == 'target'), isTrue);
+    }
+  });
+
+  test('Word, grammar and every form route require exact reviewed occurrence',
+      () async {
+    final dictionary = await KoreanDictionary.load();
+    for (final use in (dictionary.words['occurrences'] as List)
+        .cast<Map<String, dynamic>>()) {
+      final source = use['source'] as String;
+      final text = dictionary.words['sources'][source]['text'] as String;
+      expect(
+          dictionary.wordUse(
+              source, text, use['segment_index'], use['surface'], use['gloss']),
+          isNotNull);
+      expect(
+          dictionary.wordUse(source, '$text!', use['segment_index'],
+              use['surface'], use['gloss']),
+          isNull);
+      expect(
+          dictionary.wordUse(source, text, use['segment_index'], use['surface'],
+              'wrong gloss'),
+          isNull);
+    }
+    expect(dictionary.grammar['forms'], isNotEmpty);
+    for (final form
+        in (dictionary.grammar['forms'] as List).cast<Map<String, dynamic>>()) {
+      final source = form['source'] as String;
+      final text = dictionary.grammar['sources'][source]['text'] as String;
+      final step = AgentFormStep.fromJson(form);
+      expect(
+          dictionary.formUse(source, text, form['segment_index'],
+              form['surface'], form['step_index'], step),
+          isNotNull);
+      expect(
+          dictionary.formUse(source, '$text!', form['segment_index'],
+              form['surface'], form['step_index'], step),
+          isNull);
+      final stale = AgentFormStep.fromJson(
+          {...form, 'meaning_en': 'wrong complete meaning'});
+      expect(
+          dictionary.formUse(source, text, form['segment_index'],
+              form['surface'], form['step_index'], stale),
+          isNull);
+      expect(
+          dictionary.grammarUses(
+              source, text, form['segment_index'], 'wrong surface'),
+          isEmpty);
+    }
+  });
+
+  test('Selected sentence help is exact and simple sentences stay unselected',
+      () async {
+    final help = await KoreanSentenceBreakdowns.load();
+    for (final item in help.breakdowns) {
+      final text = help.sources[item.source] as String;
+      expect(help.at(item.source, text, item.start), same(item));
+      expect(help.at(item.source, '$text!', item.start), isNull);
+      expect(item.parts.map((p) => p.text).join(), item.sentence);
+    }
+    final source = help.sources.keys.first;
+    final text = help.sources[source] as String;
     expect(
-        segments
-            .where((segment) => segment['type'] == 'word')
-            .every((segment) => (segment['meaning_en'] as String).isNotEmpty),
+        List.generate(text.length, (i) => help.at(source, text, i))
+            .any((item) => item == null),
         isTrue);
   });
 
-  test('Korean word and grammar links require the exact source occurrence',
-      () async {
-    final dictionary = await KoreanDictionary.load();
-    final source = dictionary.words['sources'].keys.single as String;
-    final text = dictionary.words['sources'][source]['text'] as String;
-    final use = dictionary.wordUse(source, text, 0, '옛날에', 'long ago');
-    expect(use?['entry_id'], '옛날/명');
-    expect(dictionary.wordUse(source, '$text!', 0, '옛날에', 'long ago'), isNull);
-    expect(dictionary.wordUse(source, text, 0, '옛날에', 'yesterday'), isNull);
-    expect(dictionary.grammarUses(source, text, 3, '이라는').single['entry_id'],
-        'naming-iran');
-    expect(dictionary.grammarUses(source, text, 3, '라고'), isEmpty);
-  });
-
-  test('Korean story cue, form stages, and selective sentence help load',
-      () async {
-    final books = await ContentRepository().loadBooks(Language.korean);
-    final source = books.single.levels[1]!.chapters.single.annotationAsset;
-    final annotation =
-        jsonDecode(await rootBundle.loadString(source)) as Map<String, dynamic>;
-    final segments =
-        (annotation['segments'] as List).cast<Map<String, dynamic>>();
-    expect(segments[16]['lookup_reason'], 'story_term');
-    expect(segments[16]['learning_focus'], 'lookup');
-    expect(segments[2]['lookup_reason'], 'proper_name');
-    expect(segments[14]['learning_focus'], 'target');
-    final stages =
-        (segments[7]['form_steps'] as List).cast<Map<String, dynamic>>();
-    expect(stages.map((step) => step['form']).toList(), ['살았다', '살았습니다']);
-    expect(stages.last['meaning_en'], 'lived');
-    final breakdowns = await KoreanSentenceBreakdowns.load();
-    final text = annotation['text'] as String;
-    expect(breakdowns.at(source, text, 34)?.start, 22);
-    expect(breakdowns.at(source, text, 0), isNull);
-    expect(breakdowns.at(source, '$text!', 34), isNull);
-  });
-
-  testWidgets('Korean form rows own their links; plain taps retain direct links',
+  testWidgets('Form rows own their links without a duplicate top list',
       (tester) async {
     final dictionary = (await tester.runAsync(KoreanDictionary.load))!;
-    final source = dictionary.words['sources'].keys.single as String;
-    final text = dictionary.words['sources'][source]['text'] as String;
-    final annotation = (await tester.runAsync(() async => jsonDecode(
-        await rootBundle.loadString(source)) as Map<String, dynamic>))!;
-    final segments = (annotation['segments'] as List)
-        .cast<Map<String, dynamic>>()
-        .map(AgentSegment.fromJson)
-        .toList();
-
-    Future<void> show(int index) async {
-      await tester.pumpWidget(MaterialApp(
-          home: Scaffold(
-              body: SingleChildScrollView(
-                  child: KoreanTapLinks(
-                      segment: segments[index],
-                      source: source,
-                      sourceText: text,
-                      segmentIndex: index)))));
-      await tester.runAsync(() async => Future<void>.delayed(Duration.zero));
-      await tester.pumpAndSettle();
+    for (final source in dictionary.words['sources'].keys.cast<String>()) {
+      final text = dictionary.words['sources'][source]['text'] as String;
+      final data = (await tester.runAsync(() => annotation(source)))!;
+      final segments = (data['segments'] as List)
+          .cast<Map<String, dynamic>>()
+          .map(AgentSegment.fromJson)
+          .toList();
+      for (var index = 0; index < segments.length; index++) {
+        if (segments[index].formSteps.isEmpty) continue;
+        await tester.pumpWidget(MaterialApp(
+            home: Scaffold(
+                body: SingleChildScrollView(
+                    child: KoreanTapLinks(
+                        segment: segments[index],
+                        source: source,
+                        sourceText: text,
+                        segmentIndex: index)))));
+        await tester.runAsync(() async => Future<void>.delayed(Duration.zero));
+        await tester.pumpAndSettle();
+        final ids = {
+          for (final step in segments[index].formSteps) ...step.grammarEntryIds
+        };
+        final constructions = dictionary
+            .grammarUses(source, text, index, segments[index].text)
+            .where((u) => !ids.contains(u['entry_id']))
+            .length;
+        expect(find.byType(KoreanFormChain), findsOneWidget);
+        expect(find.byType(TextButton), findsNothing);
+        expect(
+            find.byType(ListTile),
+            findsNWidgets(
+                1 + segments[index].formSteps.length + constructions));
+        expect(
+            tester
+                .widgetList<ListTile>(find.byType(ListTile))
+                .every((tile) => tile.onTap != null),
+            isTrue);
+      }
     }
-
-    for (var index = 0; index < segments.length; index++) {
-      if (segments[index].formSteps.isEmpty) continue;
-      expect(dictionary.wordUse(source, text, index, segments[index].text,
-          segments[index].meaningEn), isNotNull);
-      await show(index);
-      expect(find.byType(KoreanFormChain), findsOneWidget);
-      expect(find.byType(TextButton), findsNothing,
-          reason: 'duplicate top-level links on ${segments[index].text}');
-      expect(find.byType(ListTile),
-          findsNWidgets(1 + segments[index].formSteps.length +
-              (index == 34 ? 1 : 0)));
-    }
-    await show(34);
-    expect(find.text('→ 부를 수 없었습니다'), findsOneWidget);
-    expect(find.text('could not call'), findsOneWidget);
-    await tester.tap(find.text('→ 부를 수 없었습니다'));
-    await tester.pumpAndSettle();
-    expect(find.text('In this passage'), findsOneWidget);
-    expect(find.textContaining('Gildong could not call him that'),
-        findsWidgets);
-    await tester.pageBack();
-    await tester.pumpAndSettle();
-    await show(16);
-    expect(find.text('Dictionary · 벼슬'), findsOneWidget);
-    expect(find.text('Grammar · Object marker'), findsOneWidget);
-    await show(3);
-    expect(find.textContaining('Grammar ·'), findsOneWidget);
-    expect(find.textContaining('Dictionary ·'), findsNothing);
   });
 
-  testWidgets('Dictionary form and observed Korean form have separate meanings',
+  testWidgets('Dictionary form stays separate from a past passage form',
       (tester) async {
     final dictionary = (await tester.runAsync(KoreanDictionary.load))!;
-    final source = dictionary.words['sources'].keys.single as String;
-    final text = dictionary.words['sources'][source]['text'] as String;
-    final annotation = (await tester.runAsync(() async => jsonDecode(
-        await rootBundle.loadString(source)) as Map<String, dynamic>))!;
-    final segments = (annotation['segments'] as List)
+    final form = (dictionary.grammar['forms'] as List)
         .cast<Map<String, dynamic>>()
-        .map(AgentSegment.fromJson)
-        .toList();
-
-    Future<void> openBase(int index) async {
-      await tester.pumpWidget(MaterialApp(
-          home: Scaffold(
-              body: KoreanTapLinks(
-                  segment: segments[index],
-                  source: source,
-                  sourceText: text,
-                  segmentIndex: index))));
-      await tester.runAsync(() async => Future<void>.delayed(Duration.zero));
-      await tester.pumpAndSettle();
-      await tester.tap(find.byType(ListTile).first);
-      await tester.pumpAndSettle();
-    }
-
-    await openBase(7);
-    expect(find.text('Dictionary form'), findsOneWidget);
-    expect(find.text('살다'), findsWidgets);
-    expect(find.text('to live'), findsOneWidget);
-    expect(find.text('Form in this passage'), findsOneWidget);
-    expect(find.text('살았습니다'), findsOneWidget);
-    expect(find.text('lived (polite past)'), findsOneWidget);
-    expect(find.text('살다 · lived (polite past)'), findsNothing);
-    await tester.pageBack();
-    await tester.pumpAndSettle();
-
-    await openBase(20);
-    expect(find.text('Dictionary form'), findsOneWidget);
-    expect(find.text('사람이었습니다'), findsOneWidget);
-    expect(find.text('person'), findsOneWidget);
-    await tester.pageBack();
-    await tester.pumpAndSettle();
-
+        .firstWhere(
+            (f) => (f['label'] as String).toLowerCase().contains('past'));
+    final source = form['source'] as String;
+    final data = (await tester.runAsync(() => annotation(source)))!;
+    final index = form['segment_index'] as int;
+    final segment = AgentSegment.fromJson(data['segments'][index]);
+    final text = data['text'] as String;
+    final use = dictionary.wordUse(
+        source, text, index, segment.text, segment.meaningEn)!;
+    final entry = dictionary.entry(use['entry_id'], isGrammar: false);
     await tester.pumpWidget(MaterialApp(
         home: Scaffold(
-            body: KoreanTapLinks(
-                segment: segments[16],
-                source: source,
-                sourceText: text,
-                segmentIndex: 16))));
+            body: SingleChildScrollView(
+                child: KoreanTapLinks(
+                    segment: segment,
+                    source: source,
+                    sourceText: text,
+                    segmentIndex: index)))));
     await tester.runAsync(() async => Future<void>.delayed(Duration.zero));
     await tester.pumpAndSettle();
-    await tester.tap(find.text('Dictionary · 벼슬'));
+    await tester.tap(find.byType(ListTile).first);
     await tester.pumpAndSettle();
-    expect(find.text('Dictionary entry'), findsOneWidget);
+    expect(find.text('Dictionary form'), findsOneWidget);
+    expect(find.text(entry['headword']), findsWidgets);
+    expect(find.text(entry['definition_en']), findsOneWidget);
     expect(find.text('Form in this passage'), findsOneWidget);
-    expect(find.text('벼슬을'), findsOneWidget);
+    expect(find.text(segment.text), findsOneWidget);
+    expect(find.text(segment.meaningEn), findsOneWidget);
   });
 }

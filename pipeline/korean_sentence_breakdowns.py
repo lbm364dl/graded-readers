@@ -12,8 +12,9 @@ SOURCE = "assets/annotations/korean_honggildong_l1_001.json"
 BREAKDOWNS = ROOT / "content/korean/honggildong/l1.sentence-breakdowns.json"
 
 
-def build(chapter: dict, output_dir: Path) -> dict:
-    data = json.loads(BREAKDOWNS.read_text(encoding="utf-8"))
+def build(chapter: dict, output_dir: Path, *, source_id: str = SOURCE,
+          data: dict | None = None, write: bool = True) -> dict:
+    data = json.loads(BREAKDOWNS.read_text(encoding="utf-8")) if data is None else data
     if (data.get("schema_version") != 1 or data.get("reviewed") is not True
             or not isinstance(data.get("breakdowns"), list)):
         raise ValueError("unreviewed Korean sentence breakdowns")
@@ -21,15 +22,19 @@ def build(chapter: dict, output_dir: Path) -> dict:
     boundaries = {0}
     offset = 0
     for segment in chapter["segments"]:
+        # Sentence punctuation and following spaces can share one segment.
+        # Analysis may end before those spaces without splitting a word tap.
+        if segment['type'] == 'punctuation':
+            boundaries.update(range(offset, offset + len(segment['text']) + 1))
         offset += len(segment["text"])
         boundaries.add(offset)
-    if offset != len(text):
+    if "".join(segment["text"] for segment in chapter["segments"]) != text:
         raise ValueError("Korean breakdown source segmentation changed")
     spans = []
     for item in data["breakdowns"]:
         start, sentence = item["start"], item["sentence"]
         end = start + len(sentence)
-        if (item["source"] != SOURCE or start not in boundaries
+        if (item["source"] != source_id or start not in boundaries
                 or end not in boundaries or text[start:end] != sentence
                 or not item["translation_en"].strip()
                 or not item["parts"]
@@ -44,11 +49,30 @@ def build(chapter: dict, output_dir: Path) -> dict:
                for previous_start, previous_end in spans):
             raise ValueError("overlapping Korean sentence breakdowns")
         spans.append((start, end))
-    result = {"schema_version": 1, "sources": {SOURCE: text},
+    result = {"schema_version": 1, "sources": {source_id: text},
               "breakdowns": data["breakdowns"]}
+    if write:
+        write_asset(output_dir, result)
+    return result
+
+
+def write_asset(output_dir: Path, result: dict) -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
     (output_dir / "korean_sentence_breakdowns.json").write_text(
-        json.dumps(result, ensure_ascii=False, separators=(",", ":")) + "\n",
-        encoding="utf-8",
-    )
+        json.dumps(result, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
+
+
+def build_collection(chapters: list[dict], output_dir: Path) -> dict:
+    reviewed = json.loads(BREAKDOWNS.read_text(encoding="utf-8"))
+    result = {"schema_version": 1, "sources": {}, "breakdowns": []}
+    expected = {f"assets/annotations/korean_honggildong_l1_{c['number']:03d}.json" for c in chapters}
+    if any(item["source"] not in expected for item in reviewed["breakdowns"]):
+        raise ValueError("Korean sentence breakdown refers to an unpublished chapter")
+    for chapter in chapters:
+        source_id = f"assets/annotations/korean_honggildong_l1_{chapter['number']:03d}.json"
+        data = {**reviewed, "breakdowns": [item for item in reviewed["breakdowns"] if item["source"] == source_id]}
+        asset = build(chapter, output_dir, source_id=source_id, data=data, write=False)
+        result["sources"].update(asset["sources"])
+        result["breakdowns"].extend(asset["breakdowns"])
+    write_asset(output_dir, result)
     return result

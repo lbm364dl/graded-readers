@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
+import '../models.dart';
 
 /// Reviewed Korean word senses and grammar lessons tied to exact source spans.
 class KoreanDictionary {
@@ -59,6 +60,28 @@ class KoreanDictionary {
             use['segment_index'] == segmentIndex &&
             use['surface'] == surface)
         .toList();
+  }
+
+  Map<String, dynamic>? formUse(String source, String sourceText,
+      int segmentIndex, String surface, int stepIndex, AgentFormStep step) {
+    if (grammar['sources'][source]?['text'] != sourceText) return null;
+    final forms =
+        (grammar['forms'] as List? ?? const []).cast<Map<String, dynamic>>();
+    final matches = forms.where((form) =>
+        form['source'] == source &&
+        form['segment_index'] == segmentIndex &&
+        form['surface'] == surface &&
+        form['step_index'] == stepIndex &&
+        form['form'] == step.form &&
+        form['reading'] == step.reading &&
+        form['label'] == step.label &&
+        form['meaning_en'] == step.meaningEn &&
+        (form['grammar_entry_ids'] as List).join('\u0000') ==
+            step.grammarEntryIds.join('\u0000'));
+    if (matches.length != 1 || step.grammarEntryIds.length != 1) return null;
+    return grammarUses(source, sourceText, segmentIndex, surface)
+        .where((use) => use['entry_id'] == step.grammarEntryIds.single)
+        .singleOrNull;
   }
 
   Map<String, dynamic> entry(String id, {required bool isGrammar}) =>

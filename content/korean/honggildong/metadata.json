@@ -4,7 +4,9 @@
   "title_en": "The Tale of Hong Gildong",
   "author_native": "허균",
   "author_attribution": "traditional; scholarly discussion continues",
-  "source_edition": "National Library of Korea CNTS-00047987469, 1920 woodblock scan",
-  "scope": "opening pilot",
-  "enabled_levels": ["l1"]
+  "source_edition": "Wikisource/Jikji 30-sheet Gyeongpan edition, revision 460078",
+  "scope": "reviewed Level 1 pipeline chapters",
+  "enabled_levels": [
+    "l1"
+  ]
 }

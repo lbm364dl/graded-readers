@@ -58,7 +58,7 @@ Each book is retold at multiple difficulty levels using progressively richer voc
 
 ### Korean (pilot)
 
-The opening of **홍길동전 (The Tale of Hong Gildong)** is available as a modern-Korean Level 1 pilot with contextual tap glosses. The [1920 National Library of Korea woodblock scan](https://commons.wikimedia.org/wiki/File:CNTS-00047987469_%ED%99%8D%EA%B8%B8%EB%8F%99%EC%A0%84.pdf) is the fixed source edition; see [source provenance](books/korean/README.md). Further chapters, dictionary entries, grammar links, and calibrated Korean levels remain to be developed.
+The opening of **홍길동전 (The Tale of Hong Gildong)** is available as a modern-Korean Level 1 pilot with contextual tap glosses, reusable word/grammar dictionaries, linked complete-form explanations and selective sentence breakdowns. The generation pipeline uses a [pinned searchable Wikisource/Jikji original](https://ko.wikisource.org/w/index.php?title=홍길동전_(30장_경판본)&oldid=460078), with independent stage reviews and incremental dictionary reuse. See [source provenance](books/korean/README.md) and [pipeline commands](pipeline/README.md). More source units and calibrated Korean levels remain to be developed.
 
 ## Mobile App
 

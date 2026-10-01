@@ -1,20 +1,42 @@
 # Graded Reader Pipeline
 
-## Korean Level 1 pilot
+## Korean Level 1 pipeline
 
-`python -m pipeline.publish_honggildong_smoke` validates and publishes only
-*Hong Gildong* Level 1, chapter 1. It checks reviewed lexical identities
-against the attributed NIKL learner vocabulary list, source-beat review,
-sentence length, contextual tap coverage, and exact text reconstruction. The
-normal app asset builder applies the same Korean gate. Reviewed word senses,
-grammar lessons, and exact source-position links live separately in
-`content/lexicon/korean/` and publish to the two Korean dictionary assets.
-The reader links both layers from the original tap units; the separate word
-and grammar browsers show reusable explanations and source examples. This is
-a manually reviewed first-chapter pilot, not yet an agent-driven incremental
-dictionary editor or a full Korean morphology/form-chain system. See
-`pipeline/korean_agent_instructions.md` for the authoring rules and
-`pipeline/korean_parity_audit.md` for the full gap inventory.
+The current scope is *Hong Gildong*, Level 1, using the pinned searchable
+Wikisource/Jikji 30-sheet original. The first two source units are mapped;
+the initial publication remains chapter 1. NIKL A is a vocabulary baseline,
+not TOPIK certification.
+
+```sh
+.venv/bin/python -m pipeline.korean_sources
+.venv/bin/python -m pipeline.korean_agent_harness --chapter 1 --run-dir runs/korean-l1/chapter-001
+.venv/bin/python -m pipeline.korean_publication --run-dir runs/korean-l1 --check
+.venv/bin/python -m pipeline.korean_publication --run-dir runs/korean-l1
+```
+
+The harness proposes a source plan, reviewed name/story identities, beginner prose,
+exact tap annotations, missing dictionary entries and selective sentence help. Each stage has an
+independent review and up to five repairs after the first attempt. Annotation
+proposals use sentence chunks with exact reconstruction checks; the assembled
+chapter receives an independent review. Publication replays chunk assembly and
+checks the underlying completed model jobs. It uses the existing
+Codex runner's fingerprinted job cache; an unchanged completed run returns
+without model calls. Existing entries are immutable and only missing identities
+are sent to the dictionary editor. The tested default model is `gpt-6.1-sol`; override it with
+`--model` when running a different model. Completed-run reuse remains subject to
+content/source/evidence validation. `--existing` adopts a chapter only if its
+prose passes review unchanged; source errors require deliberate regeneration.
+
+Publication validates all accepted consecutive chapter runs in a temporary
+staging directory before replacing Korean content/assets. It preserves shared
+registries and cumulative source occurrences. Exported `l1.review.json` keeps
+review evidence and content/dictionary/source fingerprints, so normal app
+rebuilds reject stale data without needing ignored local run directories.
+`python -m pipeline.publish_honggildong_smoke` rebuilds already reviewed Korean
+content; it does not generate or approve new prose.
+
+See `korean_agent_instructions.md` for reusable authoring rules and
+`korean_parity_audit.md` for remaining differences from Chinese/Japanese.
 
 ## Japanese usage-dictionary pilot (N5)
 

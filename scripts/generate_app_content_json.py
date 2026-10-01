@@ -573,6 +573,8 @@ def load_korean_annotations(
     level_key: str, require_complete: bool,
 ) -> list[str]:
     """Publish reviewed Korean tap units without Chinese/Japanese lookup guesses."""
+    if book_id != "honggildong" or level_key != "l1":
+        raise ValueError("Korean source/review pipeline currently supports Hong Gildong Level 1 only")
     if not path.is_file():
         if not require_complete:
             return ["" for _ in chapters]
@@ -592,6 +594,18 @@ def load_korean_annotations(
     if require_complete and set(by_number) != set(range(1, len(chapters) + 1)):
         raise ValueError(f"Korean annotation chapter count does not match prose: {path}")
     assets = ["" for _ in chapters]
+    from pipeline.korean_publication import validate_evidence
+    from pipeline import korean_dictionary, korean_sentence_breakdowns
+    review_path = path.with_name(f"{level_key}.review.json")
+    if not review_path.is_file():
+        raise ValueError(f"Korean independent run evidence missing: {review_path}")
+    proofs = json.loads(review_path.read_text(encoding="utf-8"))
+    proof_by_number = {proof["number"]: proof for proof in proofs["chapters"]}
+    if len(proof_by_number) != len(proofs["chapters"]) or proof_by_number.keys() != by_number.keys():
+        raise ValueError("Korean independent run evidence coverage mismatch")
+    word_registry = korean_dictionary._registry(korean_dictionary.WORDS)
+    grammar_registry = korean_dictionary._registry(korean_dictionary.GRAMMAR)
+    breakdowns = json.loads(korean_sentence_breakdowns.BREAKDOWNS.read_text(encoding="utf-8"))
     for number, item in sorted(by_number.items()):
         chapter = chapters[number - 1]
         segments = item.get("segments")
@@ -602,11 +616,14 @@ def load_korean_annotations(
             raise ValueError(f"Korean segments do not reconstruct chapter {number}: {path}")
         from pipeline.korean_readability import validate_chapter
         alignment = item.get("source_alignment", {})
-        if (alignment.get("reviewed") is not True
-                or alignment.get("edition") != "CNTS-00047987469"
+        from pipeline.korean_sources import EDITION
+        if (alignment.get("reviewed") is not True or alignment.get("edition") != EDITION
                 or not alignment.get("beats")):
             raise ValueError(f"unreviewed Korean source alignment in chapter {number}: {path}")
         validate_chapter(item)
+        source_id = f"assets/annotations/korean_{book_id}_{level_key}_{number:03d}.json"
+        validate_evidence(item, proof_by_number[number], word_registry, grammar_registry,
+                          [row for row in breakdowns["breakdowns"] if row["source"] == source_id])
         from pipeline.korean_readability import classify_segment
         published = []
         for segment in segments:
@@ -623,10 +640,6 @@ def load_korean_annotations(
                 raise ValueError(f"Korean story vocabulary lacks importance: {path}")
             published.append({**segment, "pinyin": "", "target_curriculum_level": 1,
                               **classify_segment(segment)})
-        from pipeline.korean_dictionary import build_assets
-        build_assets(item, ASSET_ROOT)
-        from pipeline.korean_sentence_breakdowns import build as build_sentence_breakdowns
-        build_sentence_breakdowns(item, ASSET_ROOT)
         relative = Path("annotations") / f"korean_{book_id}_{level_key}_{number:03d}.json"
         destination = ASSET_ROOT / relative
         destination.parent.mkdir(parents=True, exist_ok=True)
@@ -636,6 +649,8 @@ def load_korean_annotations(
             "annotation_audit": item["annotation_audit"],
         }, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
         assets[number - 1] = f"assets/{relative.as_posix()}"
+    korean_dictionary.build_collection(list(by_number.values()), ASSET_ROOT)
+    korean_sentence_breakdowns.build_collection(list(by_number.values()), ASSET_ROOT)
     return assets
 
 

@@ -302,8 +302,7 @@ class KoreanFormChain extends StatelessWidget {
                   dense: true,
                   contentPadding: EdgeInsets.zero,
                   title: Text(base['headword'] as String),
-                  subtitle:
-                      Text('Dictionary form · ${base['definition_en']}'),
+                  subtitle: Text('Dictionary form · ${base['definition_en']}'),
                   trailing: const Icon(Icons.chevron_right),
                   onTap: () =>
                       Navigator.of(context).push(MaterialPageRoute<void>(
@@ -314,27 +313,44 @@ class KoreanFormChain extends StatelessWidget {
                         selectedUse: baseUse),
                   )),
                 ),
-                for (final step in segment.formSteps)
+                for (final indexed in segment.formSteps.asMap().entries)
                   ListTile(
                     dense: true,
                     contentPadding: EdgeInsets.zero,
-                    title: Text('→ ${step.form}'),
-                    subtitle: Text('${step.label} · ${step.meaningEn}'),
-                    trailing: const Icon(Icons.chevron_right),
-                    onTap: () {
-                      final id = step.grammarEntryIds.single;
-                      final use = dictionary
-                          .grammarUses(
-                              source, sourceText, segmentIndex, segment.text)
-                          .singleWhere((use) => use['entry_id'] == id);
-                      Navigator.of(context).push(MaterialPageRoute<void>(
-                        builder: (_) => KoreanEntryScreen(
-                            dictionary: dictionary,
-                            entry: dictionary.entry(id, isGrammar: true),
-                            grammar: true,
-                            selectedUse: use),
-                      ));
-                    },
+                    title: Text('→ ${indexed.value.form}'),
+                    subtitle: Text(
+                        '${indexed.value.label} · ${indexed.value.meaningEn}'),
+                    trailing: dictionary.formUse(
+                                source,
+                                sourceText,
+                                segmentIndex,
+                                segment.text,
+                                indexed.key,
+                                indexed.value) ==
+                            null
+                        ? null
+                        : const Icon(Icons.chevron_right),
+                    onTap: dictionary.formUse(source, sourceText, segmentIndex,
+                                segment.text, indexed.key, indexed.value) ==
+                            null
+                        ? null
+                        : () {
+                            final id = indexed.value.grammarEntryIds.single;
+                            final use = dictionary.formUse(
+                                source,
+                                sourceText,
+                                segmentIndex,
+                                segment.text,
+                                indexed.key,
+                                indexed.value)!;
+                            Navigator.of(context).push(MaterialPageRoute<void>(
+                              builder: (_) => KoreanEntryScreen(
+                                  dictionary: dictionary,
+                                  entry: dictionary.entry(id, isGrammar: true),
+                                  grammar: true,
+                                  selectedUse: use),
+                            ));
+                          },
                   ),
                 for (final use in constructionUses)
                   ListTile(
@@ -343,12 +359,11 @@ class KoreanFormChain extends StatelessWidget {
                     title: Text('→ ${use['display_form']}'),
                     subtitle: Text(use['display_meaning_en'] as String),
                     trailing: const Icon(Icons.chevron_right),
-                    onTap: () => Navigator.of(context).push(
-                        MaterialPageRoute<void>(
+                    onTap: () =>
+                        Navigator.of(context).push(MaterialPageRoute<void>(
                       builder: (_) => KoreanEntryScreen(
                           dictionary: dictionary,
-                          entry: dictionary.entry(
-                              use['entry_id'] as String,
+                          entry: dictionary.entry(use['entry_id'] as String,
                               isGrammar: true),
                           grammar: true,
                           selectedUse: use),

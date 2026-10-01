@@ -1,11 +1,26 @@
 # Korean graded-reader pipeline: Level 1 pilot
 
-The only current publication scope is *Hong Gildong*, Level 1, chapter 1.
-Develop later chapters and levels through the same gates, but do not publish
-them before their prose, lexical occurrences, source alignment, and tap glosses
-are reviewed. The narrative reference is the 1920 National Library of Korea
-scan in `books/korean/`; do not copy a modern adaptation. Record the source
-beats retained in each chapter and review them against this edition.
+The current generation scope is *Hong Gildong*, Level 1, using mapped source
+units from `books/korean/honggildong/source.json`. The narrative reference is
+the pinned Wikisource/Jikji transcription of the 30-sheet Gyeongpan edition,
+revision 460078, in `books/korean/honggildong/original.txt`. Preserve its original
+text and exact source offsets; do not mix editions or copy a modern adaptation.
+Use reviewed source notes when interpreting archaic names or placeholders. A
+placeholder is not a personal name; refer to a person by an attested title or
+relationship when necessary. Keep research findings in source notes, not as
+permanent disclaimers in learner-facing dictionary entries.
+The separate 1920 scan is a different edition and is not the generation input.
+Record retained source quotes and independently review every chapter against
+the pinned source, the reviewed plan and preceding chapters before publication.
+
+Before prose, independently review a lexical plan for named people and essential
+story vocabulary. Reuse full-name IDs with explicitly reviewed aliases; keep
+family members distinct. Permit only one essential story-term exemption, with
+its source-specific role recorded in the plan. Ordinary difficult words and
+optional literary detail require simpler wording, not extra exemptions.
+Annotation proposals run in exact sentence chunks; preserve separators and
+review the assembled chapter independently. Do not retry annotation endlessly
+when vocabulary or sentence difficulty requires revising unpublished prose.
 
 Write natural modern Korean for a beginner. Keep sentences short enough to
 follow, but let an essential story word appear with a clear contextual gloss.
@@ -29,8 +44,10 @@ Each lexical identity needs a standalone entry in `l1.words.json` or
 inflections and particles to grammar lessons explicitly, without suffix
 guessing. Repeated positions must remain distinct examples. New chapters
 reuse matching IDs and definitions before creating entries. The current
-publication scope has no automatic Korean dictionary proposer/reviewer yet;
-do not call it an end-to-end agent generation pipeline.
+pipeline proposes and independently reviews only missing word/grammar entries.
+Approved definitions remain immutable during new-chapter generation. A changed
+sense or uncertain component needs a deliberate editorial task, not a speculative
+new entry or a silently rewritten definition.
 Publish target/lookup metadata from the reviewed lexical identity and the
 versioned NIKL grade. A name is optional story lookup; a non-beginner story
 term is optional story vocabulary with occurrence-specific importance; an
@@ -41,18 +58,25 @@ meaning of each complete form and an explicit grammar destination. Sentence
 breakdowns are optional: add one when a learner must connect several clauses
 or constructions to grasp a long/difficult sentence, and leave simple ones
 alone. Their parts must align with existing taps and their whole translation
-must be natural English. The current whole-construction form-routing gap is
-recorded in `korean_parity_audit.md`.
+must be natural English. Selectively explain whole constructions through exact
+phrase rows when several taps contribute to one pattern.
 When a learner reports one weak annotation, audit comparable occurrences and
 fix the shared data or rule. Add a regression for the issue and a contrasting
 case that should still pass.
 
-Run `python -m pipeline.publish_honggildong_smoke` to validate the single
-chapter and produce its Korean app assets. The publisher checks explicit
-lexical identities against the versioned NIKL list, source-alignment review,
-annotation reconstruction, linked word and grammar entries, explicit form
-stages, selected sentence explanations, an above-beginner budget, story-term
-budget, and sentence length. Inspect the rebuilt app preview after asset changes.
+Use `python -m pipeline.korean_agent_harness --chapter 1 --run-dir
+runs/korean-l1/chapter-001` for generation. Each source plan, prose, annotation,
+new dictionary delta and sentence-help selection requires an independent review.
+Repair source errors in prose before annotating; do not preserve unsupported
+claims merely because a manual pilot already used them. Distinguish the people
+actually named in the source from broader groups, and state family relationships
+clearly in modern Korean. Omit secondary details rather than inventing them.
+Use `python -m pipeline.korean_publication --run-dir runs/korean-l1 --check`
+to validate accepted runs without writes, then omit `--check` to publish.
+Publication requires completed review evidence, exact source spans, reconstruction,
+lexical identities, complete-form steps, dictionary links and readability budgets.
+Unchanged accepted runs and approved dictionary entries must be reused.
+Inspect the rebuilt app preview after asset changes.
 
 On a tap with a form chain, put the base-word destination on the base row and
 each transformation's grammar destination on its own row. Do not also show

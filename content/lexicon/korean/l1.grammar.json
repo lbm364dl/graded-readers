@@ -1,19 +1,131 @@
 {
   "reviewed": true,
   "entries": [
-    {"id": "time-e", "title_en": "Time marker", "pattern": "에", "explanation_en": "After a time expression, 에 says when something happens."},
-    {"id": "subject-i-ga", "title_en": "Subject marker", "pattern": "이/가", "explanation_en": "Marks the noun that is the subject of a statement."},
-    {"id": "topic-eun-neun", "title_en": "Topic marker", "pattern": "은/는", "explanation_en": "Sets up the noun that the rest of the statement is about; it can also signal contrast."},
-    {"id": "possessive-ui", "title_en": "Possession or relationship", "pattern": "의", "explanation_en": "Connects a noun to another noun it owns or is related to."},
-    {"id": "object-eul-reul", "title_en": "Object marker", "pattern": "을/를", "explanation_en": "Marks the noun affected by the verb."},
-    {"id": "naming-iran", "title_en": "Called or named", "pattern": "(이)라는", "explanation_en": "Follows a name before a noun to say what that person or thing is called."},
-    {"id": "quotation-rago", "title_en": "Quoted name or words", "pattern": "(이)라고", "explanation_en": "Marks the name or words used with a verb such as ‘call’ or ‘say’."},
-    {"id": "past-ass-eoss", "title_en": "Past time", "pattern": "-았/었-", "explanation_en": "Places the action or state before now. The written form changes with the preceding stem."},
-    {"id": "polite-seumnida", "title_en": "Formal polite statement", "pattern": "-습니다", "explanation_en": "Ends a statement in a formal, polite style."},
-    {"id": "modifier-eun", "title_en": "Description before a noun", "pattern": "-(으)ㄴ", "explanation_en": "Turns a descriptive word into a modifier placed before its noun."},
-    {"id": "past-action-modifier-n", "title_en": "Completed action before a noun", "pattern": "-(으)ㄴ", "explanation_en": "After an action verb, this form describes a noun by an action already completed."},
-    {"id": "prospective-modifier-eul", "title_en": "Action before a following noun", "pattern": "-(으)ㄹ", "explanation_en": "Forms a modifier for an action considered possible or expected; before 수 it helps express ability or possibility."},
-    {"id": "copula-ida", "title_en": "Is or was", "pattern": "이다", "explanation_en": "Connects a noun to what someone or something is. It can take past and polite endings."},
-    {"id": "ability-eul-su-eopda", "title_en": "Cannot do something", "pattern": "-(으)ㄹ 수 없다", "explanation_en": "A verb in its -(으)ㄹ modifier form followed by 수 없다 means that doing it is not possible."}
+    {
+      "id": "time-e",
+      "title_en": "Time marker",
+      "pattern": "에",
+      "explanation_en": "After a time expression, 에 says when something happens."
+    },
+    {
+      "id": "subject-i-ga",
+      "title_en": "Subject marker",
+      "pattern": "이/가",
+      "explanation_en": "Marks the noun that is the subject of a statement."
+    },
+    {
+      "id": "topic-eun-neun",
+      "title_en": "Topic marker",
+      "pattern": "은/는",
+      "explanation_en": "Sets up the noun that the rest of the statement is about; it can also signal contrast."
+    },
+    {
+      "id": "possessive-ui",
+      "title_en": "Possession or relationship",
+      "pattern": "의",
+      "explanation_en": "Connects a noun to another noun it owns or is related to."
+    },
+    {
+      "id": "object-eul-reul",
+      "title_en": "Object marker",
+      "pattern": "을/를",
+      "explanation_en": "Marks the noun affected by the verb."
+    },
+    {
+      "id": "naming-iran",
+      "title_en": "Called or named",
+      "pattern": "(이)라는",
+      "explanation_en": "Follows a name before a noun to say what that person or thing is called."
+    },
+    {
+      "id": "quotation-rago",
+      "title_en": "Quoted name or words",
+      "pattern": "(이)라고",
+      "explanation_en": "Marks the name or words used with a verb such as ‘call’ or ‘say’."
+    },
+    {
+      "id": "past-ass-eoss",
+      "title_en": "Past time",
+      "pattern": "-았/었-",
+      "explanation_en": "Places the action or state before now. The written form changes with the preceding stem."
+    },
+    {
+      "id": "polite-seumnida",
+      "title_en": "Formal polite statement",
+      "pattern": "-습니다",
+      "explanation_en": "Ends a statement in a formal, polite style."
+    },
+    {
+      "id": "modifier-eun",
+      "title_en": "Description before a noun",
+      "pattern": "-(으)ㄴ",
+      "explanation_en": "Turns a descriptive word into a modifier placed before its noun."
+    },
+    {
+      "id": "past-action-modifier-n",
+      "title_en": "Completed action before a noun",
+      "pattern": "-(으)ㄴ",
+      "explanation_en": "After an action verb, this form describes a noun by an action already completed."
+    },
+    {
+      "id": "prospective-modifier-eul",
+      "title_en": "Action before a following noun",
+      "pattern": "-(으)ㄹ",
+      "explanation_en": "Forms a modifier for an action considered possible or expected; before 수 it helps express ability or possibility."
+    },
+    {
+      "id": "copula-ida",
+      "title_en": "Is or was",
+      "pattern": "이다",
+      "explanation_en": "Connects a noun to what someone or something is. It can take past and polite endings."
+    },
+    {
+      "id": "ability-eul-su-eopda",
+      "title_en": "Cannot do something",
+      "pattern": "-(으)ㄹ 수 없다",
+      "explanation_en": "A verb in its -(으)ㄹ modifier form followed by 수 없다 means that doing it is not possible."
+    },
+    {
+      "id": "action-location-eseo",
+      "title_en": "Place where an action happens",
+      "pattern": "에서",
+      "explanation_en": "Attach 에서 to a place noun to mark where an action takes place. The same form follows nouns ending in a consonant or a vowel."
+    },
+    {
+      "id": "additive-do",
+      "title_en": "Also or even",
+      "pattern": "도",
+      "explanation_en": "Attach 도 to a noun to mean ‘also’ or ‘too’. With emphasis, it can mean ‘even’. It usually replaces a subject, topic, or object marker, but can follow other particles."
+    },
+    {
+      "id": "causative-ge-hada",
+      "title_en": "Make or let something happen",
+      "pattern": "-게 하다",
+      "explanation_en": "Attach -게 to a verb or descriptive stem and follow it with 하다. The construction means to make or let someone perform an action, or to cause a state. When the action is negative, it can express preventing someone from doing something."
+    },
+    {
+      "id": "connective-go",
+      "title_en": "Connecting actions or descriptions",
+      "pattern": "-고",
+      "explanation_en": "Attach -고 to a verb or descriptive stem to connect it to another action or description, often meaning ‘and’. The final predicate can supply the tense for both connected parts when they share the same time."
+    },
+    {
+      "id": "negative-complement-i-ga",
+      "title_en": "Naming what something is not",
+      "pattern": "이/가 아니다",
+      "explanation_en": "Before 아니다, mark the noun naming what someone or something is not with 이 after a consonant or 가 after a vowel. This noun gives the identity or category being denied."
+    },
+    {
+      "id": "negative-ji-mothada",
+      "title_en": "Being unable to do something",
+      "pattern": "-지 못하다",
+      "explanation_en": "Attach -지 to a verb stem and follow it with 못하다 to express inability to perform the action. The inability may come from lack of skill or from circumstances that prevent the action."
+    },
+    {
+      "id": "present-action-modifier-neun",
+      "title_en": "An action describing a noun",
+      "pattern": "-는",
+      "explanation_en": "Attach -는 to an action verb stem and place the resulting modifier before a noun. Drop a stem-final ㄹ before adding -는. The modifier describes an ongoing or habitual action associated with the noun. Its time is understood relative to the main statement, so it can describe an action taking place at a past time."
+    }
   ]
 }

@@ -1,19 +1,185 @@
 {
   "reviewed": true,
   "entries": [
-    {"id": "옛날/명", "headword": "옛날", "kind": "word", "definition_en": "long ago; old times"},
-    {"id": "hong-gildong", "headword": "홍길동", "kind": "proper_name", "definition_en": "Hong Gildong, the central character of the tale"},
-    {"id": "아이01/명", "headword": "아이", "kind": "word", "definition_en": "child"},
-    {"id": "살다01/동", "headword": "살다", "kind": "word", "definition_en": "to live"},
-    {"id": "아버지/명", "headword": "아버지", "kind": "word", "definition_en": "father"},
-    {"id": "높다/형", "headword": "높다", "kind": "word", "definition_en": "to be high; to have high rank or status"},
-    {"id": "벼슬/명", "headword": "벼슬", "kind": "story_term", "definition_en": "an official post or rank in the historical government"},
-    {"id": "하다01/동", "headword": "하다", "kind": "word", "definition_en": "to do; to hold or carry out an activity or role"},
-    {"id": "사람/명", "headword": "사람", "kind": "word", "definition_en": "person"},
-    {"id": "하지만/부", "headword": "하지만", "kind": "word", "definition_en": "but; however"},
-    {"id": "부르다01/동", "headword": "부르다", "kind": "word", "definition_en": "to call someone by a name or title; to summon"},
-    {"id": "수02/의", "headword": "수", "kind": "word", "definition_en": "a way or possibility of doing something, used after a verb modifier"},
-    {"id": "없다01/형", "headword": "없다", "kind": "word", "definition_en": "to be absent; not to exist or be available"},
-    {"id": "슬프다/형", "headword": "슬프다", "kind": "word", "definition_en": "to be sad"}
+    {
+      "id": "옛날/명",
+      "headword": "옛날",
+      "kind": "word",
+      "definition_en": "long ago; old times"
+    },
+    {
+      "id": "hong-gildong",
+      "headword": "홍길동",
+      "kind": "proper_name",
+      "definition_en": "Hong Gildong, the central character of the tale"
+    },
+    {
+      "id": "아이01/명",
+      "headword": "아이",
+      "kind": "word",
+      "definition_en": "child"
+    },
+    {
+      "id": "살다01/동",
+      "headword": "살다",
+      "kind": "word",
+      "definition_en": "to live"
+    },
+    {
+      "id": "아버지/명",
+      "headword": "아버지",
+      "kind": "word",
+      "definition_en": "father"
+    },
+    {
+      "id": "높다/형",
+      "headword": "높다",
+      "kind": "word",
+      "definition_en": "to be high; to have high rank or status"
+    },
+    {
+      "id": "벼슬/명",
+      "headword": "벼슬",
+      "kind": "story_term",
+      "definition_en": "an official post or rank in the historical government"
+    },
+    {
+      "id": "하다01/동",
+      "headword": "하다",
+      "kind": "word",
+      "definition_en": "to do; to hold or carry out an activity or role"
+    },
+    {
+      "id": "사람/명",
+      "headword": "사람",
+      "kind": "word",
+      "definition_en": "person"
+    },
+    {
+      "id": "하지만/부",
+      "headword": "하지만",
+      "kind": "word",
+      "definition_en": "but; however"
+    },
+    {
+      "id": "부르다01/동",
+      "headword": "부르다",
+      "kind": "word",
+      "definition_en": "to call someone by a name or title; to summon"
+    },
+    {
+      "id": "수02/의",
+      "headword": "수",
+      "kind": "word",
+      "definition_en": "a way or possibility of doing something, used after a verb modifier"
+    },
+    {
+      "id": "없다01/형",
+      "headword": "없다",
+      "kind": "word",
+      "definition_en": "to be absent; not to exist or be available"
+    },
+    {
+      "id": "슬프다/형",
+      "headword": "슬프다",
+      "kind": "word",
+      "definition_en": "to be sad"
+    },
+    {
+      "id": "그01/관",
+      "headword": "그",
+      "kind": "word",
+      "definition_en": "that; used before a noun to refer to something already mentioned or known"
+    },
+    {
+      "id": "그래서/부",
+      "headword": "그래서",
+      "kind": "word",
+      "definition_en": "so; therefore; connects a cause or reason to its result"
+    },
+    {
+      "id": "나라01/명",
+      "headword": "나라",
+      "kind": "word",
+      "definition_en": "country; nation"
+    },
+    {
+      "id": "마음01/명",
+      "headword": "마음",
+      "kind": "word",
+      "definition_en": "mind; heart; a person's feelings, thoughts, or intentions"
+    },
+    {
+      "id": "매우01/부",
+      "headword": "매우",
+      "kind": "word",
+      "definition_en": "very; to a great degree"
+    },
+    {
+      "id": "못하다/보",
+      "headword": "못하다",
+      "kind": "word",
+      "definition_en": "to be unable to do something; used after a verb ending in -지"
+    },
+    {
+      "id": "아내01/명",
+      "headword": "아내",
+      "kind": "word",
+      "definition_en": "wife"
+    },
+    {
+      "id": "아니다/형",
+      "headword": "아니다",
+      "kind": "word",
+      "definition_en": "not to be; denies that someone or something is the person or thing named"
+    },
+    {
+      "id": "아프다/형",
+      "headword": "아프다",
+      "kind": "word",
+      "definition_en": "to hurt; to be painful or ill; also describes emotional pain"
+    },
+    {
+      "id": "어머니01/명",
+      "headword": "어머니",
+      "kind": "word",
+      "definition_en": "mother"
+    },
+    {
+      "id": "일01/명",
+      "headword": "일",
+      "kind": "word",
+      "definition_en": "work; a task; a matter or event"
+    },
+    {
+      "id": "일하다/동",
+      "headword": "일하다",
+      "kind": "word",
+      "definition_en": "to work; to carry out a task or job"
+    },
+    {
+      "id": "중요하다02/형",
+      "headword": "중요하다",
+      "kind": "word",
+      "definition_en": "to be important"
+    },
+    {
+      "id": "집01/명",
+      "headword": "집",
+      "kind": "word",
+      "definition_en": "house; home; a household"
+    },
+    {
+      "id": "하다01/보",
+      "headword": "하다",
+      "kind": "word",
+      "definition_en": "used after -게 to express making or allowing someone to act or something to be a certain way"
+    },
+    {
+      "id": "형01/명",
+      "headword": "형",
+      "kind": "word",
+      "definition_en": "older brother of a male; also a familiar form of address used by a male for an older male"
+    }
   ]
 }

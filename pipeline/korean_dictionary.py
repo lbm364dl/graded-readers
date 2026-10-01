@@ -33,16 +33,20 @@ def _sentence(text: str, start: int) -> tuple[str, int]:
     return text[before:after], before
 
 
-def build_assets(chapter: dict, output_dir: Path) -> tuple[dict, dict]:
+def build_assets(chapter: dict, output_dir: Path, *, source_id: str = SOURCE,
+                 word_registry: dict | None = None, grammar_registry: dict | None = None,
+                 write: bool = True) -> tuple[dict, dict]:
     """Reject stale or missing links before writing either published asset."""
-    words = _registry(WORDS)
-    grammar = _registry(GRAMMAR)
+    words = _registry(WORDS) if word_registry is None else word_registry
+    grammar = _registry(GRAMMAR) if grammar_registry is None else grammar_registry
     segments = chapter["segments"]
     source_text = chapter["text"]
     offset = 0
     word_uses = []
     positions = []
     for index, segment in enumerate(segments):
+        if not segment["text"]:
+            raise ValueError("Korean dictionary tap cannot be empty")
         start = offset
         offset += len(segment["text"])
         positions.append((start, offset))
@@ -58,13 +62,13 @@ def build_assets(chapter: dict, output_dir: Path) -> tuple[dict, dict]:
             raise ValueError(f"missing Korean word entry: {lexical['id']}")
         sentence, sentence_start = _sentence(source_text, start)
         word_uses.append({
-            "id": f"{SOURCE}#word-{index}", "source": SOURCE,
+            "id": f"{source_id}#word-{index}", "source": source_id,
             "segment_index": index, "start": start, "end": offset,
             "surface": segment["text"], "gloss": segment["meaning_en"],
             "entry_id": lexical["id"], "sentence": sentence,
             "sentence_start": sentence_start,
         })
-    if offset != len(source_text):
+    if "".join(segment["text"] for segment in segments) != source_text:
         raise ValueError("Korean dictionary positions do not reconstruct source")
     links = chapter.get("grammar_links")
     if not isinstance(links, list):
@@ -98,7 +102,7 @@ def build_assets(chapter: dict, output_dir: Path) -> tuple[dict, dict]:
             raise ValueError(f"unexpected Korean construction stage: {link}")
         sentence, sentence_start = _sentence(source_text, start)
         grammar_uses.append({
-            "id": f"{SOURCE}#grammar-{index}-{entry_id}", "source": SOURCE,
+            "id": f"{source_id}#grammar-{index}-{entry_id}", "source": source_id,
             "segment_index": index, "start": start, "end": end,
             "surface": segments[index]["text"], "entry_id": entry_id,
             "context_en": link["context_en"], "sentence": sentence,
@@ -116,13 +120,16 @@ def build_assets(chapter: dict, output_dir: Path) -> tuple[dict, dict]:
             or set(inflected) != {i for i, segment in enumerate(segments)
                                        if segment.get("form_steps")}):
         raise ValueError("Korean form review is incomplete")
+    form_uses = []
     for index in inflected:
         if not isinstance(index, int) or not 0 <= index < len(segments):
             raise ValueError("invalid Korean form-review index")
         segment = segments[index]
+        if segment["type"] != "word" or segment["lexical"]["kind"] == "grammar":
+            raise ValueError("Korean form chain needs an attested lexical base")
         steps = segment["form_steps"]
         forms = set()
-        for step in steps:
+        for step_index, step in enumerate(steps):
             if (set(step) != {"form", "reading", "label", "meaning_en",
                              "grammar_entry_ids"}
                     or not all(str(step[key]).strip() for key in
@@ -130,27 +137,53 @@ def build_assets(chapter: dict, output_dir: Path) -> tuple[dict, dict]:
                     or step["form"] in forms or len(step["grammar_entry_ids"]) != 1
                     or any((index, entry_id) not in seen
                            for entry_id in step["grammar_entry_ids"])):
-                raise ValueError(f"invalid Korean complete-form step: {index}")
+                raise ValueError(f"Invalid Korean complete-form transformation at segment index {index} ({segment['text']!r}), step {step_index}: {step}. Steps need exactly one grammar ID linked on the same segment. The lexical dictionary-form base is already shown separately; do not include a duplicate base step with no grammar ID.")
             forms.add(step["form"])
-        if steps[-1]["form"] != segment["text"] or steps[-1]["reading"] != segment["text"]:
+            form_uses.append({"source": source_id, "segment_index": index,
+                              "surface": segment["text"], "step_index": step_index,
+                              **step})
+        if steps[-1]["form"] != segment["text"]:
             raise ValueError(f"Korean form chain does not end at tap surface: {index}")
     used_words = {item["entry_id"] for item in word_uses}
     used_grammar = {item["entry_id"] for item in grammar_uses}
-    if set(words) != used_words or set(grammar) != used_grammar:
+    if not used_words <= words.keys() or not used_grammar <= grammar.keys():
         raise ValueError("Korean dictionary entries do not match chapter usage")
-    source = {SOURCE: {
-        "reader_id": "honggildong_l1", "chapter": 1,
+    source = {source_id: {
+        "reader_id": "honggildong_l1", "chapter": chapter.get("number", 1),
         "title": chapter["title"], "level": "Level 1", "text": source_text,
     }}
     word_asset = {"schema_version": 1, "language": "korean", "sources": source,
                   "entries": list(words.values()), "occurrences": word_uses}
     grammar_asset = {"schema_version": 1, "language": "korean", "sources": source,
-                     "entries": list(grammar.values()), "occurrences": grammar_uses}
-    output_dir.mkdir(parents=True, exist_ok=True)
-    for name, asset in (("usage_dictionary_ko.json", word_asset),
-                        ("grammar_dictionary_ko.json", grammar_asset)):
-        (output_dir / name).write_text(
-            json.dumps(asset, ensure_ascii=False, separators=(",", ":")) + "\n",
-            encoding="utf-8",
-        )
+                     "entries": list(grammar.values()), "occurrences": grammar_uses,
+                     "forms": form_uses}
+    if write:
+        write_assets(output_dir, word_asset, grammar_asset)
     return word_asset, grammar_asset
+
+
+def write_assets(output_dir: Path, words: dict, grammar: dict) -> None:
+    output_dir.mkdir(parents=True, exist_ok=True)
+    for name, asset in (("usage_dictionary_ko.json", words), ("grammar_dictionary_ko.json", grammar)):
+        (output_dir / name).write_text(json.dumps(asset, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
+
+
+def build_collection(chapters: list[dict], output_dir: Path) -> tuple[dict, dict]:
+    """Publish cumulative occurrences without discarding reusable entries."""
+    words, grammar = _registry(WORDS), _registry(GRAMMAR)
+    merged = [{"schema_version": 1, "language": "korean", "sources": {},
+               "entries": list(registry.values()), "occurrences": []}
+              for registry in (words, grammar)]
+    merged[1]["forms"] = []
+    for chapter in chapters:
+        source_id = f"assets/annotations/korean_honggildong_l1_{chapter['number']:03d}.json"
+        assets = build_assets(chapter, output_dir, source_id=source_id,
+                              word_registry=words, grammar_registry=grammar, write=False)
+        for combined, asset in zip(merged, assets):
+            if combined["sources"].keys() & asset["sources"].keys():
+                raise ValueError("duplicate Korean dictionary chapter")
+            combined["sources"].update(asset["sources"])
+            combined["occurrences"].extend(asset["occurrences"])
+        merged[1]["forms"].extend(assets[1]["forms"])
+    write_assets(output_dir, *merged)
+    return tuple(merged)

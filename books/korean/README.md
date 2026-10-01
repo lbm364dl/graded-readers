@@ -1,17 +1,32 @@
-# Hong Gildong source edition
+# Hong Gildong source editions
 
-`honggildong_1920.pdf` is the 1920 Baek Du-yong woodblock edition held by the
-National Library of Korea (control number `CNTS-00047987469`). Its SHA-256 is
-`bc837d646005cb06b44f4bc564caf4d9132c3a0c732824e8f3bdbfba0d6eb8be`.
+The generation input is the complete original-text transcription of the
+**30-sheet Gyeongpan edition**, supplied by the Jikji Project on Wikisource.
+We pin [revision 460078](https://ko.wikisource.org/w/index.php?title=홍길동전_(30장_경판본)&oldid=460078).
+[The provenance discussion](https://ko.wikisource.org/wiki/토론:홍길동전_(30장_경판본))
+identifies the Jikji source and the complete public-domain original.
+Wikisource marks the original PD-old-100; site contributions are under
+CC BY-SA 4.0. Retain the Wikisource/Jikji attribution and revision link.
+The adaptations are newly written modern Korean, not a modern translation.
 
-Catalog: https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?menuNo=200019&wrtSn=9011751
+`honggildong/original.wiki` preserves the pinned raw transcription;
+`original.txt` extracts its original Hangul without modernization.
+`source.json` records both checksums and Unicode source spans. Source units
+are pipeline divisions, not chapter headings in the original. The first two
+units are mapped; only the first chapter is currently requested for publication.
+Run `.venv/bin/python -m pipeline.korean_sources` to verify the local snapshot,
+or add `--import` to redownload the pinned revision. A changed revision fails.
 
-Scan and public-domain statement: https://commons.wikimedia.org/wiki/File:CNTS-00047987469_%ED%99%8D%EA%B8%B8%EB%8F%99%EC%A0%84.pdf
+The archived `honggildong_1920.pdf` is a **different, 24-sheet edition**, the
+1920 Baek Du-yong woodblock scan held by the National Library of Korea,
+control number `CNTS-00047987469`. It is not the generation input.
+Its SHA-256 is `bc837d646005cb06b44f4bc564caf4d9132c3a0c732824e8f3bdbfba0d6eb8be`.
+[Scan and public-domain record](https://commons.wikimedia.org/wiki/File:CNTS-00047987469_%ED%99%8D%EA%B8%B8%EB%8F%99%EC%A0%84.pdf).
+Do not mix plot details from these editions.
 
-The original work is out of copyright in Korea: the traditionally attributed
-author died in 1618, and the 1920 edition is also older than the 70-year term
-for anonymous works. Wikimedia Commons identifies this scan as a mechanical
-reproduction of the public-domain work. Our graded text is newly written modern
-Korean, not a copy of a modern adaptation or translation. Keep this edition as
-the narrative reference; other versions differ in plot details. Credit the
-National Library of Korea and link the record when publishing adaptations.
+Reviewed interpretation notes in `honggildong/source-notes.json` retain research
+references and exact source spans. In particular, the father's apparent given
+name is an unspecified-name placeholder, not a literal name “Moe/Mo”; see
+[Yu Gwang-su (2019), page 442, footnote 16](https://journal.kci.go.kr/insewtdgu/archive/articlePdf?artiId=ART002526509).
+Use his attested surname/title or family relationship in beginner adaptations.
+The manifest fingerprints these notes so updates invalidate stale run evidence.

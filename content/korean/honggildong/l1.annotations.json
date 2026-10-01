@@ -6,106 +6,16 @@
   "chapters": [
     {
       "number": 1,
-      "title": "1. 길동의 집",
-      "text": "옛날에 홍길동이라는 아이가 살았습니다. 길동의 아버지는 높은 벼슬을 한 사람이었습니다. 하지만 길동은 아버지를 “아버지”라고 부를 수 없었습니다. 길동은 슬펐습니다.",
+      "title": "1. 길동의 고민",
+      "text": "길동의 아버지는 나라의 중요한 일을 했습니다. 어머니는 그 집에서 일하는 사람이었습니다. 하지만 어머니는 아버지의 아내가 아니었습니다. 그래서 아버지는 길동이 아버지를 “아버지”라고 부르지 못하게 했습니다. 길동은 형을 “형”이라고 부를 수도 없었습니다. 길동은 마음이 매우 아프고 슬펐습니다.",
       "segments": [
-        {
-          "text": "옛날에",
-          "type": "word",
-          "meaning_en": "long ago",
-          "lexical": {
-            "kind": "vocabulary",
-            "id": "옛날/명"
-          }
-        },
-        {
-          "text": " ",
-          "type": "punctuation",
-          "meaning_en": ""
-        },
-        {
-          "text": "홍길동",
-          "type": "word",
-          "meaning_en": "Hong Gildong",
-          "lexical": {
-            "kind": "proper_name",
-            "id": "hong-gildong"
-          }
-        },
-        {
-          "text": "이라는",
-          "type": "word",
-          "meaning_en": "called; named",
-          "lexical": {
-            "kind": "grammar",
-            "id": "naming-iran"
-          }
-        },
-        {
-          "text": " ",
-          "type": "punctuation",
-          "meaning_en": ""
-        },
-        {
-          "text": "아이가",
-          "type": "word",
-          "meaning_en": "a child (subject)",
-          "lexical": {
-            "kind": "vocabulary",
-            "id": "아이01/명"
-          }
-        },
-        {
-          "text": " ",
-          "type": "punctuation",
-          "meaning_en": ""
-        },
-        {
-          "text": "살았습니다",
-          "type": "word",
-          "meaning_en": "lived (polite past)",
-          "lexical": {
-            "kind": "vocabulary",
-            "id": "살다01/동"
-          },
-          "form_steps": [
-            {
-              "form": "살았다",
-              "reading": "살았다",
-              "label": "plain past",
-              "meaning_en": "lived",
-              "grammar_entry_ids": [
-                "past-ass-eoss"
-              ]
-            },
-            {
-              "form": "살았습니다",
-              "reading": "살았습니다",
-              "label": "formal polite past",
-              "meaning_en": "lived",
-              "grammar_entry_ids": [
-                "polite-seumnida"
-              ]
-            }
-          ]
-        },
-        {
-          "text": ".",
-          "type": "punctuation",
-          "meaning_en": ""
-        },
-        {
-          "text": " ",
-          "type": "punctuation",
-          "meaning_en": ""
-        },
         {
           "text": "길동의",
           "type": "word",
           "meaning_en": "Gildong’s",
           "lexical": {
-            "kind": "proper_name",
-            "id": "hong-gildong"
+            "id": "hong-gildong",
+            "kind": "proper_name"
           }
         },
         {
@@ -116,10 +26,10 @@
         {
           "text": "아버지는",
           "type": "word",
-          "meaning_en": "father (topic)",
+          "meaning_en": "his father",
           "lexical": {
-            "kind": "vocabulary",
-            "id": "아버지/명"
+            "id": "아버지/명",
+            "kind": "vocabulary"
           }
         },
         {
@@ -128,19 +38,33 @@
           "meaning_en": ""
         },
         {
-          "text": "높은",
+          "text": "나라의",
           "type": "word",
-          "meaning_en": "high-ranking",
+          "meaning_en": "the country’s",
           "lexical": {
-            "kind": "vocabulary",
-            "id": "높다/형"
+            "id": "나라01/명",
+            "kind": "vocabulary"
+          }
+        },
+        {
+          "text": " ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "중요한",
+          "type": "word",
+          "meaning_en": "important",
+          "lexical": {
+            "id": "중요하다02/형",
+            "kind": "vocabulary"
           },
           "form_steps": [
             {
-              "form": "높은",
-              "reading": "높은",
-              "label": "noun modifier",
-              "meaning_en": "high; high-ranking",
+              "form": "중요한",
+              "reading": "중요한",
+              "label": "Noun-modifying form",
+              "meaning_en": "important",
               "grammar_entry_ids": [
                 "modifier-eun"
               ]
@@ -153,14 +77,13 @@
           "meaning_en": ""
         },
         {
-          "text": "벼슬을",
+          "text": "일을",
           "type": "word",
-          "meaning_en": "official position (object)",
+          "meaning_en": "work",
           "lexical": {
-            "kind": "story_term",
-            "id": "벼슬/명"
-          },
-          "story_importance_en": "His father’s official post explains the family’s high status."
+            "id": "일01/명",
+            "kind": "vocabulary"
+          }
         },
         {
           "text": " ",
@@ -168,21 +91,97 @@
           "meaning_en": ""
         },
         {
-          "text": "한",
+          "text": "했습니다",
           "type": "word",
-          "meaning_en": "who held",
+          "meaning_en": "did",
           "lexical": {
-            "kind": "vocabulary",
-            "id": "하다01/동"
+            "id": "하다01/동",
+            "kind": "vocabulary"
           },
           "form_steps": [
             {
-              "form": "한",
-              "reading": "한",
-              "label": "completed action modifier",
-              "meaning_en": "did; held",
+              "form": "했다",
+              "reading": "했다",
+              "label": "Past",
+              "meaning_en": "did",
               "grammar_entry_ids": [
-                "past-action-modifier-n"
+                "past-ass-eoss"
+              ]
+            },
+            {
+              "form": "했습니다",
+              "reading": "했습니다",
+              "label": "Past, formal polite",
+              "meaning_en": "did",
+              "grammar_entry_ids": [
+                "polite-seumnida"
+              ]
+            }
+          ]
+        },
+        {
+          "text": ". ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "어머니는",
+          "type": "word",
+          "meaning_en": "his mother (as the topic)",
+          "lexical": {
+            "id": "어머니01/명",
+            "kind": "vocabulary"
+          }
+        },
+        {
+          "text": " ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "그",
+          "type": "word",
+          "meaning_en": "that",
+          "lexical": {
+            "id": "그01/관",
+            "kind": "vocabulary"
+          }
+        },
+        {
+          "text": " ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "집에서",
+          "type": "word",
+          "meaning_en": "in the household",
+          "lexical": {
+            "id": "집01/명",
+            "kind": "vocabulary"
+          }
+        },
+        {
+          "text": " ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "일하는",
+          "type": "word",
+          "meaning_en": "who worked",
+          "lexical": {
+            "id": "일하다/동",
+            "kind": "vocabulary"
+          },
+          "form_steps": [
+            {
+              "form": "일하는",
+              "reading": "일하는",
+              "label": "Present action modifier",
+              "meaning_en": "who works",
+              "grammar_entry_ids": [
+                "present-action-modifier-neun"
               ]
             }
           ]
@@ -195,16 +194,16 @@
         {
           "text": "사람이었습니다",
           "type": "word",
-          "meaning_en": "was a person (polite past)",
+          "meaning_en": "was a person",
           "lexical": {
-            "kind": "vocabulary",
-            "id": "사람/명"
+            "id": "사람/명",
+            "kind": "vocabulary"
           },
           "form_steps": [
             {
               "form": "사람이다",
               "reading": "사람이다",
-              "label": "plain identification",
+              "label": "Copula",
               "meaning_en": "is a person",
               "grammar_entry_ids": [
                 "copula-ida"
@@ -213,7 +212,7 @@
             {
               "form": "사람이었다",
               "reading": "사람이었다",
-              "label": "plain past identification",
+              "label": "Past",
               "meaning_en": "was a person",
               "grammar_entry_ids": [
                 "past-ass-eoss"
@@ -222,7 +221,7 @@
             {
               "form": "사람이었습니다",
               "reading": "사람이었습니다",
-              "label": "formal polite past identification",
+              "label": "Formal polite statement",
               "meaning_en": "was a person",
               "grammar_entry_ids": [
                 "polite-seumnida"
@@ -231,22 +230,17 @@
           ]
         },
         {
-          "text": ".",
-          "type": "punctuation",
-          "meaning_en": ""
-        },
-        {
-          "text": " ",
+          "text": ". ",
           "type": "punctuation",
           "meaning_en": ""
         },
         {
           "text": "하지만",
           "type": "word",
-          "meaning_en": "but",
+          "meaning_en": "but; however",
           "lexical": {
-            "kind": "vocabulary",
-            "id": "하지만/부"
+            "id": "하지만/부",
+            "kind": "vocabulary"
           }
         },
         {
@@ -255,13 +249,118 @@
           "meaning_en": ""
         },
         {
-          "text": "길동은",
+          "text": "어머니는",
           "type": "word",
-          "meaning_en": "Gildong (topic)",
+          "meaning_en": "his mother",
           "lexical": {
-            "kind": "proper_name",
-            "id": "hong-gildong"
+            "id": "어머니01/명",
+            "kind": "vocabulary"
           }
+        },
+        {
+          "text": " ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "아버지의",
+          "type": "word",
+          "meaning_en": "his father's",
+          "lexical": {
+            "id": "아버지/명",
+            "kind": "vocabulary"
+          }
+        },
+        {
+          "text": " ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "아내가",
+          "type": "word",
+          "meaning_en": "wife",
+          "lexical": {
+            "id": "아내01/명",
+            "kind": "vocabulary"
+          }
+        },
+        {
+          "text": " ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "아니었습니다",
+          "type": "word",
+          "meaning_en": "was not",
+          "lexical": {
+            "id": "아니다/형",
+            "kind": "vocabulary"
+          },
+          "form_steps": [
+            {
+              "form": "아니었다",
+              "reading": "아니었다",
+              "label": "Past",
+              "meaning_en": "was not",
+              "grammar_entry_ids": [
+                "past-ass-eoss"
+              ]
+            },
+            {
+              "form": "아니었습니다",
+              "reading": "아니었습니다",
+              "label": "Formal polite",
+              "meaning_en": "was not",
+              "grammar_entry_ids": [
+                "polite-seumnida"
+              ]
+            }
+          ]
+        },
+        {
+          "text": ". ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "그래서",
+          "type": "word",
+          "meaning_en": "so; for that reason",
+          "lexical": {
+            "id": "그래서/부",
+            "kind": "vocabulary"
+          }
+        },
+        {
+          "text": " ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "아버지는",
+          "type": "word",
+          "meaning_en": "his father, as the topic",
+          "lexical": {
+            "id": "아버지/명",
+            "kind": "vocabulary"
+          }
+        },
+        {
+          "text": " ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "길동이",
+          "type": "word",
+          "meaning_en": "Gildong, as the person who would call him",
+          "lexical": {
+            "id": "hong-gildong",
+            "kind": "proper_name"
+          },
+          "story_importance_en": "Gildong is the son whose use of the family title is forbidden."
         },
         {
           "text": " ",
@@ -271,10 +370,10 @@
         {
           "text": "아버지를",
           "type": "word",
-          "meaning_en": "father (object)",
+          "meaning_en": "his father, as the person being called",
           "lexical": {
-            "kind": "vocabulary",
-            "id": "아버지/명"
+            "id": "아버지/명",
+            "kind": "vocabulary"
           }
         },
         {
@@ -290,10 +389,10 @@
         {
           "text": "아버지",
           "type": "word",
-          "meaning_en": "father",
+          "meaning_en": "Father",
           "lexical": {
-            "kind": "vocabulary",
-            "id": "아버지/명"
+            "id": "아버지/명",
+            "kind": "vocabulary"
           }
         },
         {
@@ -304,10 +403,155 @@
         {
           "text": "라고",
           "type": "word",
-          "meaning_en": "as; saying",
+          "meaning_en": "by the quoted title",
           "lexical": {
-            "kind": "grammar",
-            "id": "quotation-rago"
+            "id": "quotation-rago",
+            "kind": "grammar"
+          }
+        },
+        {
+          "text": " ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "부르지",
+          "type": "word",
+          "meaning_en": "call, linked to the following expression of inability",
+          "lexical": {
+            "id": "부르다01/동",
+            "kind": "vocabulary"
+          },
+          "form_steps": [
+            {
+              "form": "부르지",
+              "reading": "부르지",
+              "label": "Connective form before 못하다",
+              "meaning_en": "call, linked to the following expression of inability",
+              "grammar_entry_ids": [
+                "negative-ji-mothada"
+              ]
+            }
+          ]
+        },
+        {
+          "text": " ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "못하게",
+          "type": "word",
+          "meaning_en": "so that he could not do so",
+          "lexical": {
+            "id": "못하다/보",
+            "kind": "vocabulary"
+          },
+          "form_steps": [
+            {
+              "form": "못하게",
+              "reading": "모타게",
+              "label": "Result-state connective in -게 하다",
+              "meaning_en": "so that he could not do so",
+              "grammar_entry_ids": [
+                "causative-ge-hada"
+              ]
+            }
+          ]
+        },
+        {
+          "text": " ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "했습니다",
+          "type": "word",
+          "meaning_en": "made it so",
+          "lexical": {
+            "id": "하다01/보",
+            "kind": "vocabulary"
+          },
+          "form_steps": [
+            {
+              "form": "했다",
+              "reading": "핻따",
+              "label": "Past tense",
+              "meaning_en": "made it so",
+              "grammar_entry_ids": [
+                "past-ass-eoss"
+              ]
+            },
+            {
+              "form": "했습니다",
+              "reading": "핻씀니다",
+              "label": "Formal polite past statement",
+              "meaning_en": "made it so",
+              "grammar_entry_ids": [
+                "polite-seumnida"
+              ]
+            }
+          ]
+        },
+        {
+          "text": ". ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "길동은",
+          "type": "word",
+          "meaning_en": "Gildong (the topic)",
+          "lexical": {
+            "id": "hong-gildong",
+            "kind": "proper_name"
+          }
+        },
+        {
+          "text": " ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "형을",
+          "type": "word",
+          "meaning_en": "his older brother (the person being called)",
+          "lexical": {
+            "id": "형01/명",
+            "kind": "vocabulary"
+          }
+        },
+        {
+          "text": " ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "“",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "형",
+          "type": "word",
+          "meaning_en": "older brother (the title used to address him)",
+          "lexical": {
+            "id": "형01/명",
+            "kind": "vocabulary"
+          }
+        },
+        {
+          "text": "”",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "이라고",
+          "type": "word",
+          "meaning_en": "by the title just quoted",
+          "lexical": {
+            "id": "quotation-rago",
+            "kind": "grammar"
           }
         },
         {
@@ -318,17 +562,17 @@
         {
           "text": "부를",
           "type": "word",
-          "meaning_en": "to call",
+          "meaning_en": "call (an action whose possibility is being considered)",
           "lexical": {
-            "kind": "vocabulary",
-            "id": "부르다01/동"
+            "id": "부르다01/동",
+            "kind": "vocabulary"
           },
           "form_steps": [
             {
               "form": "부를",
               "reading": "부를",
-              "label": "modifier before 수",
-              "meaning_en": "to call; will call",
+              "label": "Prospective modifier before 수",
+              "meaning_en": "call (an action whose possibility is being considered)",
               "grammar_entry_ids": [
                 "prospective-modifier-eul"
               ]
@@ -341,12 +585,12 @@
           "meaning_en": ""
         },
         {
-          "text": "수",
+          "text": "수도",
           "type": "word",
-          "meaning_en": "way; ability",
+          "meaning_en": "even the possibility (of calling him that)",
           "lexical": {
-            "kind": "vocabulary",
-            "id": "수02/의"
+            "id": "수02/의",
+            "kind": "vocabulary"
           }
         },
         {
@@ -357,17 +601,17 @@
         {
           "text": "없었습니다",
           "type": "word",
-          "meaning_en": "did not have; could not (polite past)",
+          "meaning_en": "was not available (there was no possibility of doing so)",
           "lexical": {
-            "kind": "vocabulary",
-            "id": "없다01/형"
+            "id": "없다01/형",
+            "kind": "vocabulary"
           },
           "form_steps": [
             {
               "form": "없었다",
               "reading": "없었다",
-              "label": "plain past",
-              "meaning_en": "was absent; was unavailable",
+              "label": "Past",
+              "meaning_en": "was not available",
               "grammar_entry_ids": [
                 "past-ass-eoss"
               ]
@@ -375,8 +619,8 @@
             {
               "form": "없었습니다",
               "reading": "없었습니다",
-              "label": "formal polite past",
-              "meaning_en": "was absent; was unavailable",
+              "label": "Formal polite statement",
+              "meaning_en": "was not available",
               "grammar_entry_ids": [
                 "polite-seumnida"
               ]
@@ -384,9 +628,18 @@
           ]
         },
         {
-          "text": ".",
+          "text": ". ",
           "type": "punctuation",
           "meaning_en": ""
+        },
+        {
+          "text": "길동은",
+          "type": "word",
+          "meaning_en": "Gildong (the person being discussed)",
+          "lexical": {
+            "id": "hong-gildong",
+            "kind": "proper_name"
+          }
         },
         {
           "text": " ",
@@ -394,13 +647,52 @@
           "meaning_en": ""
         },
         {
-          "text": "길동은",
+          "text": "마음이",
           "type": "word",
-          "meaning_en": "Gildong (topic)",
+          "meaning_en": "his heart; his feelings (the subject)",
           "lexical": {
-            "kind": "proper_name",
-            "id": "hong-gildong"
+            "id": "마음01/명",
+            "kind": "vocabulary"
           }
+        },
+        {
+          "text": " ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "매우",
+          "type": "word",
+          "meaning_en": "very",
+          "lexical": {
+            "id": "매우01/부",
+            "kind": "vocabulary"
+          }
+        },
+        {
+          "text": " ",
+          "type": "punctuation",
+          "meaning_en": ""
+        },
+        {
+          "text": "아프고",
+          "type": "word",
+          "meaning_en": "hurt emotionally, and",
+          "lexical": {
+            "id": "아프다/형",
+            "kind": "vocabulary"
+          },
+          "form_steps": [
+            {
+              "form": "아프고",
+              "reading": "아프고",
+              "label": "Connecting form",
+              "meaning_en": "hurts; feels painful, and",
+              "grammar_entry_ids": [
+                "connective-go"
+              ]
+            }
+          ]
         },
         {
           "text": " ",
@@ -410,16 +702,16 @@
         {
           "text": "슬펐습니다",
           "type": "word",
-          "meaning_en": "was sad (polite past)",
+          "meaning_en": "was sad",
           "lexical": {
-            "kind": "vocabulary",
-            "id": "슬프다/형"
+            "id": "슬프다/형",
+            "kind": "vocabulary"
           },
           "form_steps": [
             {
               "form": "슬펐다",
               "reading": "슬펐다",
-              "label": "plain past",
+              "label": "Past form",
               "meaning_en": "was sad",
               "grammar_entry_ids": [
                 "past-ass-eoss"
@@ -428,7 +720,7 @@
             {
               "form": "슬펐습니다",
               "reading": "슬펐습니다",
-              "label": "formal polite past",
+              "label": "Formal polite past statement",
               "meaning_en": "was sad",
               "grammar_entry_ids": [
                 "polite-seumnida"
@@ -442,148 +734,314 @@
           "meaning_en": ""
         }
       ],
-      "annotation_audit": {
-        "all_reviewed": true,
-        "scope": "Chapter 1; contextual tap glosses and reviewed lexical identities"
-      },
-      "source_alignment": {
-        "reviewed": true,
-        "edition": "CNTS-00047987469",
-        "beats": [
-          "Hong Gildong is born to an official household",
-          "His social position prevents him from addressing his father as father"
-        ]
-      },
       "grammar_links": [
         {
           "segment_index": 0,
-          "entry_id": "time-e",
-          "context_en": "에 places the story in the old days."
+          "entry_id": "possessive-ui",
+          "context_en": "의 connects Gildong to his father: ‘Gildong’s father’. 길동 is the reviewed shortened name of 홍길동."
         },
         {
-          "segment_index": 3,
-          "entry_id": "naming-iran",
-          "context_en": "이라는 introduces the child by the name 홍길동."
+          "segment_index": 2,
+          "entry_id": "topic-eun-neun",
+          "context_en": "는 sets Gildong’s father as the topic: the sentence tells us what work he did."
         },
         {
-          "segment_index": 5,
-          "entry_id": "subject-i-ga",
-          "context_en": "가 marks the child as the one who lived."
+          "segment_index": 4,
+          "entry_id": "possessive-ui",
+          "context_en": "의 connects the country to its important work, referring here to work for the country."
         },
         {
-          "segment_index": 7,
-          "entry_id": "past-ass-eoss",
-          "context_en": "살았습니다 says that the living happened in the past."
+          "segment_index": 6,
+          "entry_id": "modifier-eun",
+          "context_en": "중요한 describes the following noun 일: ‘important work’. This is a descriptive modifier, not a completed action."
         },
         {
-          "segment_index": 7,
-          "entry_id": "polite-seumnida",
-          "context_en": "The narrator uses a formal polite ending."
+          "segment_index": 8,
+          "entry_id": "object-eul-reul",
+          "context_en": "을 marks 일 as the work that his father did."
         },
         {
           "segment_index": 10,
-          "entry_id": "possessive-ui",
-          "context_en": "의 relates 길동 to his father."
+          "entry_id": "past-ass-eoss",
+          "context_en": "하다 becomes 했다 in the past; 하였 contracts to 했. His father did this work before the time of narration."
+        },
+        {
+          "segment_index": 10,
+          "entry_id": "polite-seumnida",
+          "context_en": "했습니다 presents the past action ‘did’ in the narrator’s formal polite style."
         },
         {
           "segment_index": 12,
           "entry_id": "topic-eun-neun",
-          "context_en": "는 makes Gildong’s father the topic of this statement."
-        },
-        {
-          "segment_index": 14,
-          "entry_id": "modifier-eun",
-          "context_en": "높은 describes the official post before the noun 벼슬."
+          "context_en": "는 makes Gildong's mother the topic: the sentence explains her role in the household."
         },
         {
           "segment_index": 16,
-          "entry_id": "object-eul-reul",
-          "context_en": "을 marks the official post as what the father held."
+          "entry_id": "action-location-eseo",
+          "context_en": "에서 marks the household as the place where his mother worked."
         },
         {
           "segment_index": 18,
-          "entry_id": "past-action-modifier-n",
-          "context_en": "한 describes the person by the post he held."
+          "entry_id": "present-action-modifier-neun",
+          "context_en": "일하는 modifies 사람: a person who works. The modifier describes her work at the time of the past-tense statement, so the natural English translation is 'who worked.'"
         },
         {
           "segment_index": 20,
           "entry_id": "copula-ida",
-          "context_en": "이었습니다 identifies the father as a person of high rank."
+          "context_en": "이다 connects his mother with 사람이, identifying her as a person who worked in that household; 이 here belongs to the copula, not a subject particle."
         },
         {
           "segment_index": 20,
           "entry_id": "past-ass-eoss",
-          "context_en": "이었습니다 puts that identification in the past."
+          "context_en": "었 places her role as a household worker in the past."
         },
         {
           "segment_index": 20,
           "entry_id": "polite-seumnida",
-          "context_en": "The narrator uses a formal polite ending."
+          "context_en": "습니다 ends the statement about his mother's former role in a formal, polite style."
         },
         {
-          "segment_index": 25,
+          "segment_index": 24,
           "entry_id": "topic-eun-neun",
-          "context_en": "은 makes Gildong the topic of the restriction."
+          "context_en": "는 sets his mother as the topic: the sentence explains her relationship to his father."
         },
         {
-          "segment_index": 27,
+          "segment_index": 26,
+          "entry_id": "possessive-ui",
+          "context_en": "의 connects 아버지 to 아내: ‘his father's wife.’"
+        },
+        {
+          "segment_index": 28,
+          "entry_id": "negative-complement-i-ga",
+          "context_en": "가 marks 아내 as the role denied by 아니다: his mother was not his father's wife."
+        },
+        {
+          "segment_index": 30,
+          "entry_id": "past-ass-eoss",
+          "context_en": "The past form 아니었다 places the statement about her status in the past."
+        },
+        {
+          "segment_index": 30,
+          "entry_id": "polite-seumnida",
+          "context_en": "-습니다 ends 아니었습니다 as a formal polite statement; the meaning remains ‘was not.’"
+        },
+        {
+          "segment_index": 34,
+          "entry_id": "topic-eun-neun",
+          "context_en": "는 makes Gildong's father the topic: the following statement describes what he imposed."
+        },
+        {
+          "segment_index": 36,
+          "entry_id": "subject-i-ga",
+          "context_en": "이 marks Gildong as the subject of the embedded action of calling his father by a title."
+        },
+        {
+          "segment_index": 38,
           "entry_id": "object-eul-reul",
-          "context_en": "를 marks father as the person Gildong could not call by that title."
+          "context_en": "를 marks the father as the person Gildong would address."
         },
         {
-          "segment_index": 32,
+          "segment_index": 43,
           "entry_id": "quotation-rago",
-          "context_en": "라고 marks 아버지 as the exact title Gildong could not say."
+          "context_en": "라고 marks “아버지” as the exact title used in addressing his father."
         },
         {
-          "segment_index": 34,
-          "entry_id": "prospective-modifier-eul",
-          "context_en": "부를 modifies 수 in the expression for being able to call someone."
+          "segment_index": 45,
+          "entry_id": "negative-ji-mothada",
+          "context_en": "부르지 connects to 못하다 to express inability to call. Here that inability is imposed by the father."
         },
         {
-          "segment_index": 34,
-          "entry_id": "ability-eul-su-eopda",
-          "context_en": "부를 수 없었습니다 means that Gildong could not call him that.",
-          "display_form": "부를 수 없었습니다",
-          "display_meaning_en": "could not call",
-          "display_end_segment_index": 38
+          "segment_index": 45,
+          "entry_id": "causative-ge-hada",
+          "context_en": "The entire construction says that the father prevented Gildong from using the title. The past tense belongs to 했습니다.",
+          "display_form": "부르지 못하게 했습니다",
+          "display_meaning_en": "prevented him from calling him that",
+          "display_end_segment_index": 49
         },
         {
-          "segment_index": 38,
+          "segment_index": 47,
+          "entry_id": "causative-ge-hada",
+          "context_en": "못하게 states the inability that the following 했습니다 causes: the father makes it so that Gildong cannot use the title."
+        },
+        {
+          "segment_index": 49,
           "entry_id": "past-ass-eoss",
-          "context_en": "없었습니다 places the inability in the past."
+          "context_en": "했- places the father's act of preventing the use of the title in the past."
         },
         {
-          "segment_index": 38,
+          "segment_index": 49,
           "entry_id": "polite-seumnida",
-          "context_en": "The narrator uses a formal polite ending."
+          "context_en": "-습니다 ends the narration in a formal polite style."
         },
         {
-          "segment_index": 41,
+          "segment_index": 51,
           "entry_id": "topic-eun-neun",
-          "context_en": "은 makes Gildong the topic of this statement."
+          "context_en": "은 makes Gildong the topic: the sentence explains another restriction he faced."
         },
         {
-          "segment_index": 43,
+          "segment_index": 53,
+          "entry_id": "object-eul-reul",
+          "context_en": "을 marks his older brother as the person Gildong could not address by the quoted family title."
+        },
+        {
+          "segment_index": 58,
+          "entry_id": "quotation-rago",
+          "context_en": "이라고 marks “형” as the title used with 부르다, ‘call someone by a name or title.’"
+        },
+        {
+          "segment_index": 60,
+          "entry_id": "prospective-modifier-eul",
+          "context_en": "부르다 becomes 부를 before 수, presenting calling him that as a possible action rather than stating that it happened."
+        },
+        {
+          "segment_index": 60,
+          "entry_id": "ability-eul-su-eopda",
+          "context_en": "부를 수 없었습니다 says Gildong could not call him that; 도 adds ‘even,’ emphasizing that this family title was forbidden too.",
+          "display_form": "부를 수도 없었습니다",
+          "display_meaning_en": "could not even call him that",
+          "display_end_segment_index": 64
+        },
+        {
+          "segment_index": 62,
+          "entry_id": "additive-do",
+          "context_en": "도 attaches to 수 and emphasizes that even the possibility of addressing his older brother as ‘older brother’ was unavailable."
+        },
+        {
+          "segment_index": 64,
           "entry_id": "past-ass-eoss",
-          "context_en": "슬펐습니다 says that he was sad in the past."
+          "context_en": "없다 becomes 없었다, placing the lack of permission or possibility in the past."
         },
         {
-          "segment_index": 43,
+          "segment_index": 64,
           "entry_id": "polite-seumnida",
-          "context_en": "The narrator uses a formal polite ending."
+          "context_en": "없었습니다 presents the past state in the passage’s formal polite narrative style."
+        },
+        {
+          "segment_index": 66,
+          "entry_id": "topic-eun-neun",
+          "context_en": "은 sets Gildong as the topic: the sentence describes how he felt."
+        },
+        {
+          "segment_index": 68,
+          "entry_id": "subject-i-ga",
+          "context_en": "이 marks 마음 as the subject. 마음이 아프다 describes emotional pain: Gildong felt hurt."
+        },
+        {
+          "segment_index": 72,
+          "entry_id": "connective-go",
+          "context_en": "-고 connects feeling hurt with being sad. The past ending on 슬펐습니다 places both feelings in the past."
+        },
+        {
+          "segment_index": 74,
+          "entry_id": "past-ass-eoss",
+          "context_en": "슬프다 becomes 슬펐다 with -었-, expressing that Gildong was sad."
+        },
+        {
+          "segment_index": 74,
+          "entry_id": "polite-seumnida",
+          "context_en": "-습니다 gives the past statement 슬펐습니다 its formal polite ending."
         }
       ],
+      "annotation_audit": {
+        "all_reviewed": true
+      },
       "form_audit": {
         "reviewed": true,
         "inflected_segment_indices": [
-          7,
-          14,
+          6,
+          10,
           18,
           20,
-          34,
-          38,
-          43
+          30,
+          45,
+          47,
+          49,
+          60,
+          64,
+          72,
+          74
+        ]
+      },
+      "source_alignment": {
+        "edition": "wikisource-honggildong-gyeongpan30-460078",
+        "reviewed": true,
+        "beats": [
+          {
+            "source_paragraph_index": 0,
+            "event_en": "Gildong's father is Minister Hong, and his mother is a servant.",
+            "quote": "화셜 됴션국 셰종됴 시졀의 ᄒᆞᆫ ᄌᆡ샹이 이시니 셩은 홍이오 명은 뫼라. ᄃᆡᄃᆡ 명문거죡으로 쇼년 등과ᄒᆞ여 벼ᄉᆞᆯ이 니죠판셔의 니르ᄆᆡ, 물망이 됴야의 읏듬이오, 츙효 겸비ᄒᆞ기로 일홈이 일국의 진동ᄒᆞ더라. 일즉 두 아들을 두어시니, 일ᄌᆞᄂᆞᆫ 일홈이 인형이니 뎡실 뉴시 쇼ᄉᆡᆼ이오, 일ᄌᆞᄂᆞᆫ 일홈이 길동이니 시비 츈셤의 쇼ᄉᆡᆼ이라.",
+            "start": 0,
+            "end": 196
+          },
+          {
+            "source_paragraph_index": 4,
+            "event_en": "Because of his mother's low status, Gildong's father forbids him from calling him Father or calling his older brother Brother. This makes Gildong deeply unhappy.",
+            "quote": "길동이 졈졈 ᄌᆞ라 팔 셰 되ᄆᆡ, 춍명이 과인ᄒᆞ여 ᄒᆞᆫ아흘 드르면 ᄇᆡᆨ을 통ᄒᆞ니 공이 더옥 ᄋᆡ즁ᄒᆞ나, 근본 쳔ᄉᆡᆼ이라 길동이 ᄆᆡ양 호부호형ᄒᆞ면 문득 ᄭᅮ지져 못ᄒᆞ계 ᄒᆞ니, 길동이 십 셰 넘도록 감히 부형을 부르지 못ᄒᆞ고, 비복 등이 쳔ᄃᆡᄒᆞ물 각골통한ᄒᆞ여 심ᄉᆞᄅᆞᆯ 졍치 못ᄒᆞ더니, 츄구월 망간을 당ᄒᆞᄆᆡ, 명월은 죠요ᄒᆞ고 쳥풍은 쇼슬ᄒᆞ여 사ᄅᆞᆷ의 심회ᄅᆞᆯ 돕ᄂᆞᆫ지라. 길동이 셔당의셔 글을 닑다가 문득 셔안을 밀치고 탄왈,",
+            "start": 826,
+            "end": 1086
+          }
+        ]
+      },
+      "lexical_focus": {
+        "entries": [
+          {
+            "id": "hong-gildong",
+            "headword": "홍길동",
+            "kind": "proper_name",
+            "aliases": [
+              "홍길동",
+              "길동"
+            ],
+            "role_en": "Central character; son of Minister Hong and Chunseom, and younger half-brother of Hong Inhyeong. His father forbids him from addressing his father and older brother by those family titles."
+          },
+          {
+            "id": "hong-father",
+            "headword": "홍 판서",
+            "kind": "proper_name",
+            "aliases": [
+              "홍 판서",
+              "홍 공"
+            ],
+            "role_en": "Father of Hong Gildong and Hong Inhyeong, identified by his surname and official title according to the reviewed source note."
+          },
+          {
+            "id": "hong-inhyeong",
+            "headword": "홍인형",
+            "kind": "proper_name",
+            "aliases": [
+              "홍인형",
+              "인형"
+            ],
+            "role_en": "Minister Hong's son by his wife, Lady Yu; Gildong's older half-brother."
+          },
+          {
+            "id": "lady-yu",
+            "headword": "유씨",
+            "kind": "proper_name",
+            "aliases": [
+              "유씨",
+              "유 부인"
+            ],
+            "role_en": "Minister Hong's wife and Hong Inhyeong's mother; distinct from Gildong's mother, Chunseom."
+          },
+          {
+            "id": "chunseom",
+            "headword": "춘섬",
+            "kind": "proper_name",
+            "aliases": [
+              "춘섬"
+            ],
+            "role_en": "Gildong's mother, initially a servant in Minister Hong's household and subsequently his concubine."
+          },
+          {
+            "id": "seo-ja",
+            "headword": "서자",
+            "kind": "story_term",
+            "aliases": [
+              "서자"
+            ],
+            "role_en": "The sole essential historical story-term exemption: Gildong's status as Minister Hong's son by Chunseom rather than by his wife explains the restrictions on acknowledging his father and older brother."
+          }
         ]
       }
     }

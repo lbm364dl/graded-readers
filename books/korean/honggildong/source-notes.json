@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "reviewed": true,
+  "edition": "wikisource-honggildong-gyeongpan30-460078",
+  "notes": [
+    {
+      "id": "father-name-placeholder",
+      "start": 38,
+      "end": 39,
+      "quote": "뫼",
+      "finding_en": "The father's apparent given name is a variant of the placeholder 某, not a personal name. Refer to him by his surname and office (Minister Hong) or as Gildong's father. Do not create a literal Hong Moe/Hong Mo character.",
+      "reference_url": "https://journal.kci.go.kr/insewtdgu/archive/articlePdf?artiId=ART002526509",
+      "reference_locator": "Yu Gwang-su (2019), page 442, footnote 16",
+      "rejected_literal_headwords": [
+        "홍모",
+        "홍뫼"
+      ],
+      "profile": {
+        "id": "hong-father",
+        "headword": "홍 판서",
+        "kind": "proper_name",
+        "aliases": [
+          "홍 판서",
+          "홍 공"
+        ],
+        "role_en": "Gildong's father, referred to by surname and official title"
+      }
+    }
+  ]
+}

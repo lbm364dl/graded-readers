@@ -46,7 +46,8 @@ def vocabulary() -> dict[str, str]:
     return result
 
 
-def diagnostics(chapter: dict) -> dict:
+def diagnostics(chapter: dict, *, exception_entries: list | None = None,
+                grammar_ids: set[str] | None = None) -> dict:
     """Check a manually segmented chapter; never infer lemma from a suffix."""
     text = chapter["text"]
     segments = chapter["segments"]
@@ -60,11 +61,12 @@ def diagnostics(chapter: dict) -> dict:
     exception_doc = json.loads(EXCEPTIONS.read_text(encoding="utf-8"))
     if exception_doc.get("reviewed") is not True:
         raise ValueError("Korean lexical exceptions are unreviewed")
-    exceptions = {(item["kind"], item["id"]) for item in exception_doc["entries"]}
+    exceptions = {(item["kind"], item["id"]) for item in
+                  (exception_doc["entries"] if exception_entries is None else exception_entries)}
     grammar_doc = json.loads(GRAMMAR.read_text(encoding="utf-8"))
     if grammar_doc.get("reviewed") is not True:
         raise ValueError("Korean grammar registry is unreviewed")
-    grammar_ids = {item["id"] for item in grammar_doc["entries"]}
+    grammar_ids = {item["id"] for item in grammar_doc["entries"]} if grammar_ids is None else grammar_ids
     counts = Counter()
     above: list[str] = []
     story_terms: set[str] = set()
@@ -119,8 +121,8 @@ def diagnostics(chapter: dict) -> dict:
     }
 
 
-def validate_chapter(chapter: dict) -> dict:
-    result = diagnostics(chapter)
+def validate_chapter(chapter: dict, **kwargs) -> dict:
+    result = diagnostics(chapter, **kwargs)
     if not result["passes"]:
         raise ValueError(f"Korean Level 1 readability gate failed: {result}")
     return result

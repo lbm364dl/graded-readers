@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "beats": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "source_paragraph_index": {
+            "type": "integer"
+          },
+          "event_en": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_paragraph_index",
+          "event_en"
+        ]
+      }
+    }
+  },
+  "required": [
+    "title",
+    "beats"
+  ]
+}

@@ -1,29 +1,41 @@
-# Korean pilot against the Chinese and Japanese pipelines
+# Korean pipeline coverage and remaining differences
 
-Scope checked: the current source, agent harness, annotation/publication code,
-reviewed registries, app services and reader UI for Chinese *Three Kingdoms*
-and Japanese *I Am a Cat*, compared with Korean *Hong Gildong* Level 1,
-chapter 1. This records the actual first-chapter implementation, not a claim
-that Korean has full pipeline parity. The Japanese sentence-breakdown files are
-currently separate, uncommitted work in this workspace; preserve that work.
+Scope inspected: source/manifests, generation harnesses, dictionary editorial
+jobs, publication validators, form and sentence-help layers, and app services/UI
+for Chinese *Three Kingdoms*, Japanese *I Am a Cat*, and Korean *Hong Gildong*.
+Korean currently publishes only Level 1 chapter 1. This does not claim full
+feature parity or TOPIK calibration.
 
-| Layer | Chinese / Japanese implementation | Korean first-chapter state |
+| Layer | Korean implementation | Remaining scope |
 | --- | --- | --- |
-| Source and adaptation | Source indexes/manifests, scene plans, chapter runs, source-grounded adaptation reviews and repair ladders in `agent_harness.py`, `japanese_agent_harness.py`, and the two book publishers. | Public-domain scan is recorded, but the four-sentence prose was written manually. `source_alignment.reviewed` and two beat labels are a manual assertion, not source-position evidence or an independent source review. No Korean generation agent or scene-run artifacts exist. |
-| Curriculum and readability | Chinese records HSK word status, matched level, character evidence and focus; Japanese records matched editorial JLPT band, story roles, focus and a lexical budget. | NIKL A/B/C identity and a 10% lexical budget are checked. Published occurrences now distinguish beginner target, above-level lookup, name and reviewed story term. NIKL A is not TOPIK 1. Sentence length is checked in space-delimited units, which is a coarse readability screen. |
-| Tap annotation | Both languages have independently reviewed segmentation and grammar overlays tied to exact prose. Chinese has reviewed reading units and occasional word-internal component help. | Existing taps reconstruct the text and have contextual meanings; 14 grammar lessons link to reviewed positions. Segmentation and meanings were authored manually; no independent annotation review or phrase grouping/overlay layer exists. |
-| Display units and meaning guides | Chinese keeps lexical segments separate from reviewed reader tap units; Japanese can merge linked grammar constructions while retaining original segment positions. Both can explain internal components without changing dictionary identities. | Korean currently displays annotation segments directly. It has no reviewed reader-unit layer, merged tap construction, or reusable component/meaning-guide graph. The phrase `부를 수 없었습니다` now has a linked explanation row on the `부를` tap, but is not a merged tap. |
-| Story vocabulary | Both languages distinguish names and essential story words from ordinary target vocabulary and show an optional lookup cue; contextual importance is stored on occurrences. | 홍길동 is a name lookup; 벼슬 is a story-term lookup with a passage-specific importance note. Ordinary A-band words remain targets. No other terms are exempted. |
-| Reusable dictionaries | Chinese has shared sense identities, expressions, meaning guides and incremental editorial jobs; Japanese has shared word senses, grammar lessons, component links, reviewed form routes and occurrence examples. | Fourteen manually reviewed word entries and 14 grammar lessons cover the chapter, with distinct source-position examples. The two naming/quotation taps route to grammar only. No independent dictionary editor/reviewer, component graph, sense disambiguation workflow or incremental cache exists. |
-| Form explanations | Japanese stores ordered complete-form meanings and separately reviewed grammar destinations, including merged constructions. In its tap sheet, base and transformation rows carry their own links; there is no duplicate link list above a chain. | Seven inflected tap units have complete-form steps. Their links now appear on the base and transformation rows, without a duplicate list. A reviewed extra row links `부를 수 없었습니다` to its larger ability construction, with its complete phrase meaning and source span. It is not yet the multi-stage, merged construction chain Japanese supports. Korean form destinations are embedded in annotation steps rather than independently reviewed form-layer occurrence records. |
-| Sentence analysis | Japanese publishes optional, source-aligned sentence parts for selected difficult sentences; simple sentences need no breakdown. | Two of four sentences have source-aligned parts and full translations. The plain opening and closing sentences remain without a breakdown. |
-| Publication and app | Chinese/Japanese audit reviewed run evidence, reuse approved entries, reject stale source links and publish dedicated assets. Their readers expose appropriate dictionary, grammar, focus and form layers. | Korean publication validates its one chapter, lexical identities, entries, positions, form data and breakdown spans. The app shows separate word/grammar browsers, lookup cues, linked form stages and selected sentence breakdowns. The construction row's source span and complete meaning are validated. The source-review boolean is not equivalent to the other pipelines' run evidence. |
+| Source and adaptation | Complete searchable Wikisource/Jikji original pinned to revision 460078, raw/extracted checksums, Unicode paragraph spans, reviewed source notes and lexical identity plan, reviewed source plan and independently reviewed modern prose. The placeholder 某 in the father's name has an edition-specific scholarly reference; it is not treated as a literal personal name. | Only two source units mapped; later units and other levels require mapping and review. The archived 24-sheet scan is a different edition. |
+| Annotation and difficulty | Independently reviewed exact taps, meanings and explicit NIKL identities. Reconstruction, lexical budget, story-term budget and sentence length gate publication. Unannotatable ordinary words send unpublished prose back for simplification. | NIKL A/B/C is a vocabulary baseline, not TOPIK. Sentence length is a coarse screen alongside independent beginner review. |
+| Dictionary editing | Approved reusable entries remain immutable. Only missing word/grammar IDs go to a proposer and independent reviewer. Exact source positions keep repeated uses separate. | No Korean component graph or multi-sense editorial workflow yet. Meaning uncertainty must remain an editorial issue. |
+| Form and construction explanations | Complete-form meanings and separate form labels, exact reviewed per-stage grammar routes; base and transformation rows carry their links without a duplicate list. Wider constructions have exact phrase rows with their full meaning. | No independently editable merged reader-unit layer or Japanese-style merged construction chains. Korean displays annotation taps directly. |
+| Sentence help | Every sentence is inventoried and independently reviewed for selection; selected parts align to taps, while simple sentences remain unselected. | Selection is a reviewed judgment, not an automatic rule based only on length. |
+| Publication and reuse | Fingerprinted runner cache and completed-run cache; staged validation before promotion; cumulative dictionaries/help; retained review evidence rejects changed source/content/definitions/help in normal app builds. | Current publisher explicitly supports Hong Gildong Level 1. Other books/levels need their own source/scope configuration. |
+| App | Word and grammar browsers, focus/lookup cues, contextual examples, separate dictionary/observed forms, stage links and optional sentence analyses. Stale stage meanings, labels or source text disable their routes. | Current UI does not expose a component/meaning-guide graph or merged Korean taps. |
 
-Before expanding Korean beyond chapter 1, add a source-position scene map and
-independent adaptation/annotation review, then use approved word/grammar IDs
-incrementally. An agent run should only handle new or changed passages; stable
-entries and occurrence links must remain reusable. Add a reviewed
-whole-construction chain where the passage needs one, without inventing a word
-entry for productive grammar or changing the original tap boundaries. Keep
-publication blocked if any required review, source span, exact form meaning or
-dictionary link is missing.
+Regression coverage includes source tampering, exact paragraph binding,
+independent rejection/repair, approved-entry reuse, unchanged-run cache reuse,
+changed-definition invalidation, reviewed-proposal/artifact consistency,
+cumulative source occurrences and form routes, and selective sentence help.
+Transformation rows require exactly one grammar destination and omit the
+separately displayed dictionary base. Pronunciation readings may differ from
+spelling, while the final written form must match the tap exactly.
+Sentence analysis may divide punctuation from trailing whitespace but cannot
+divide lexical taps. Approved-entry lists are sorted before model requests so
+process hash randomization cannot invalidate otherwise identical cache inputs.
+Manual pilot fixtures preserve earlier inflection/construction regressions;
+they are test data, not approved source-adaptation evidence for publication.
+
+Verified publication (2026-10-01): chapter 1 was generated from the pinned text
+and passed all six independent review stages. All 31 ordinary vocabulary
+occurrences are NIKL A; no story-term exemption was needed. The longest sentence
+has eight eojeol; three of six sentences have selected help. Publication retains
+30 reusable word entries and 21 grammar entries, including unused approved
+pilot entries. A completed-run rerun made zero model calls with unchanged job
+metadata. Validation passed 47 Python checks, 357 Flutter tests, Flutter analysis
+and a release web build. Playwright checked the rebuilt Chrome preview at
+390×844, dictionary/base meanings, stage grammar destinations and selected
+sentence help.

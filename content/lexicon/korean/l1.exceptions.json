@@ -1,7 +1,13 @@
 {
   "reviewed": true,
   "entries": [
-    {"kind": "proper_name", "id": "hong-gildong", "label": "홍길동 / 길동", "reason": "The protagonist's name, introduced in this chapter."},
-    {"kind": "story_term", "id": "벼슬/명", "label": "벼슬", "reason": "A historical government post central to the father's status."}
+    {
+      "id": "hong-gildong",
+      "kind": "proper_name"
+    },
+    {
+      "id": "벼슬/명",
+      "kind": "story_term"
+    }
   ]
 }

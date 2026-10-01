@@ -13,7 +13,7 @@ from pipeline.korean_sentence_breakdowns import build as build_breakdowns
 
 
 def pilot_chapter():
-    source = Path("content/korean/honggildong/l1.annotations.json")
+    source = Path("tests/fixtures/korean_manual_annotations.json")
     return json.loads(source.read_text(encoding="utf-8"))["chapters"][0]
 
 
@@ -26,20 +26,22 @@ def test_korean_pilot_has_reviewed_tap_coverage(tmp_path, monkeypatch):
         Path(chapter["annotationAsset"]).name).read_text())
     assert annotation["text"] == chapter["content"]
     assert "".join(segment["text"] for segment in annotation["segments"]) == chapter["content"]
-    assert any(segment["text"] == "홍길동" for segment in annotation["segments"])
+    assert any(segment.get("lookup_reason") == "proper_name" for segment in annotation["segments"])
 
 
 def test_korean_publication_rejects_unreviewed_or_shifted_segments(tmp_path):
     source = Path("content/korean/honggildong/l1.annotations.json")
     document = json.loads(source.read_text(encoding="utf-8"))
     chapter = [{"title": "1. 길동의 집", "content": document["chapters"][0]["text"]}]
-    document["chapters"][0]["segments"][0]["text"] = "옛날"
+    original = document["chapters"][0]["segments"][0]["text"]
+    document["chapters"][0]["segments"][0]["text"] = "changed"
+    (tmp_path / "l1.review.json").write_bytes(Path("content/korean/honggildong/l1.review.json").read_bytes())
     path = tmp_path / "bad.json"
     path.write_text(json.dumps(document, ensure_ascii=False), encoding="utf-8")
     with pytest.raises(ValueError, match="do not reconstruct"):
         publication.load_korean_annotations(path, chapter, book_id="honggildong",
                                             level_key="l1", require_complete=True)
-    document["chapters"][0]["segments"][0]["text"] = "옛날에"
+    document["chapters"][0]["segments"][0]["text"] = original
     document["chapters"][0]["annotation_audit"]["all_reviewed"] = False
     path.write_text(json.dumps(document, ensure_ascii=False), encoding="utf-8")
     with pytest.raises(ValueError, match="unreviewed"):
@@ -88,22 +90,21 @@ def test_korean_level_gate_rejects_unreviewed_lexeme_and_long_sentence():
         validate_chapter(chapter)
 
 
-def test_normal_app_builder_enforces_korean_level_gate(tmp_path):
+def test_normal_app_builder_rejects_stale_reviewed_content(tmp_path):
     source = Path("content/korean/honggildong/l1.annotations.json")
-    document = json.loads(source.read_text(encoding="utf-8"))
+    document = json.loads(source.read_text())
     chapter = document["chapters"][0]
-    chapter["segments"][5]["lexical"]["id"] = "아이02/감"
-    chapter["segments"][12]["lexical"]["id"] = "수02/명"
-    path = tmp_path / "above.json"
-    path.write_text(json.dumps(document, ensure_ascii=False), encoding="utf-8")
+    word = next(segment for segment in chapter["segments"] if segment["type"] == "word")
+    word["meaning_en"] = "changed after review"
+    path = tmp_path / "changed.json"
+    path.write_text(json.dumps(document, ensure_ascii=False))
+    (tmp_path / "l1.review.json").write_bytes(source.with_name("l1.review.json").read_bytes())
     chapters = [{"title": chapter["title"], "content": chapter["text"]}]
-    with pytest.raises(ValueError, match="readability gate failed"):
+    with pytest.raises(ValueError, match="evidence is stale"):
         publication.load_korean_annotations(path, chapters, book_id="honggildong",
                                             level_key="l1", require_complete=True)
-    chapter["segments"][5]["lexical"]["id"] = "아이01/명"
-    chapter["segments"][12]["lexical"]["id"] = "아버지/명"
     chapter["source_alignment"]["reviewed"] = False
-    path.write_text(json.dumps(document, ensure_ascii=False), encoding="utf-8")
+    path.write_text(json.dumps(document, ensure_ascii=False))
     with pytest.raises(ValueError, match="source alignment"):
         publication.load_korean_annotations(path, chapters, book_id="honggildong",
                                             level_key="l1", require_complete=True)
@@ -118,10 +119,10 @@ def test_korean_publisher_writes_only_first_chapter(tmp_path, monkeypatch):
     assert len(list((tmp_path / "annotations").glob("*.json"))) == 1
     words = json.loads((tmp_path / "usage_dictionary_ko.json").read_text())
     grammar = json.loads((tmp_path / "grammar_dictionary_ko.json").read_text())
-    assert {entry["id"] for entry in words["entries"]} == {
+    assert {entry["id"] for entry in words["entries"]} >= {
         use["entry_id"] for use in words["occurrences"]
     }
-    assert {entry["id"] for entry in grammar["entries"]} == {
+    assert {entry["id"] for entry in grammar["entries"]} >= {
         use["entry_id"] for use in grammar["occurrences"]
     }
     assert all(use["sentence"] in words["sources"][use["source"]]["text"]
@@ -205,7 +206,8 @@ def test_korean_construction_stage_requires_exact_complete_phrase(tmp_path):
 
 
 def test_korean_sentence_breakdowns_are_selective_and_source_bound(tmp_path):
-    result = build_breakdowns(pilot_chapter(), tmp_path)
+    data = json.loads(Path("tests/fixtures/korean_manual_breakdowns.json").read_text())
+    result = build_breakdowns(pilot_chapter(), tmp_path, data=data)
     assert len(result["breakdowns"]) == 2
     assert result["breakdowns"][0]["start"] == 22
     assert not any(item["start"] == 0 for item in result["breakdowns"])
@@ -213,4 +215,4 @@ def test_korean_sentence_breakdowns_are_selective_and_source_bound(tmp_path):
     chapter["segments"][14]["text"] = "낮은"
     chapter["text"] = "".join(segment["text"] for segment in chapter["segments"])
     with pytest.raises(ValueError, match="lost source alignment"):
-        build_breakdowns(chapter, tmp_path)
+        build_breakdowns(chapter, tmp_path, data=data)

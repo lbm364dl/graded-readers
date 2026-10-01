@@ -4,26 +4,178 @@
   "breakdowns": [
     {
       "source": "assets/annotations/korean_honggildong_l1_001.json",
-      "start": 22,
-      "sentence": "길동의 아버지는 높은 벼슬을 한 사람이었습니다.",
-      "translation_en": "Gildong’s father was a man who held a high government post.",
+      "start": 26,
+      "sentence": "어머니는 그 집에서 일하는 사람이었습니다.",
+      "translation_en": "His mother was someone who worked in that household.",
       "parts": [
-        {"text": "길동의 아버지는 ", "explanation_en": "This introduces Gildong’s father as the person being described."},
-        {"text": "높은 벼슬을 한 ", "explanation_en": "This describes the father by the high official post he held."},
-        {"text": "사람이었습니다.", "explanation_en": "The main statement says he was such a person."}
+        {
+          "text": "어머니는",
+          "explanation_en": "His mother is the topic; the rest of the sentence describes her role."
+        },
+        {
+          "text": " 그 집에서",
+          "explanation_en": "That household is the place where she worked."
+        },
+        {
+          "text": " 일하는",
+          "explanation_en": "Modifies the following 사람: 'who works.' Here it describes her work at the time of the past statement, so English uses 'who worked.'"
+        },
+        {
+          "text": " 사람이었습니다.",
+          "explanation_en": "Means 'was a person.' Together with the preceding modifier, this identifies her as someone who worked in that household."
+        }
       ]
     },
     {
       "source": "assets/annotations/korean_honggildong_l1_001.json",
-      "start": 49,
-      "sentence": "하지만 길동은 아버지를 “아버지”라고 부를 수 없었습니다.",
-      "translation_en": "But Gildong could not call his father ‘Father.’",
+      "start": 76,
+      "sentence": "그래서 아버지는 길동이 아버지를 “아버지”라고 부르지 못하게 했습니다.",
+      "translation_en": "So his father prevented Gildong from calling him “Father.”",
       "parts": [
-        {"text": "하지만 ", "explanation_en": "But signals a contrast with his father’s high status."},
-        {"text": "길동은 아버지를 ", "explanation_en": "Gildong is the topic; his father is the person he wanted to address."},
-        {"text": "“아버지”라고 ", "explanation_en": "This marks the exact title Gildong could not use."},
-        {"text": "부를 수 없었습니다.", "explanation_en": "This says that calling him by that title was not possible."}
+        {
+          "text": "그래서",
+          "explanation_en": "Means 'so,' connecting this restriction to the preceding explanation of his mother's status."
+        },
+        {
+          "text": " 아버지는",
+          "explanation_en": "His father is the topic and the person who imposes the restriction."
+        },
+        {
+          "text": " 길동이",
+          "explanation_en": "Gildong is the subject of the embedded action: he is the person who would use the title."
+        },
+        {
+          "text": " 아버지를 “아버지”라고",
+          "explanation_en": "His father is the person addressed, and “아버지” is the exact title, 'Father,' that Gildong would use."
+        },
+        {
+          "text": " 부르지 못하게 했습니다.",
+          "explanation_en": "부르지 못하다 means 'cannot call'; adding -게 하다 means making that inability happen. In this past-tense context, the complete phrase means 'prevented him from calling him that.'"
+        }
+      ]
+    },
+    {
+      "source": "assets/annotations/korean_honggildong_l1_001.json",
+      "start": 116,
+      "sentence": "길동은 형을 “형”이라고 부를 수도 없었습니다.",
+      "translation_en": "Gildong could not even call his older brother “Brother.”",
+      "parts": [
+        {
+          "text": "길동은",
+          "explanation_en": "Gildong is the topic; this sentence describes another restriction he faced."
+        },
+        {
+          "text": " 형을 “형”이라고",
+          "explanation_en": "His older brother is the person addressed, and “형” is the family title a boy uses for his older brother."
+        },
+        {
+          "text": " 부를 수도 없었습니다.",
+          "explanation_en": "The complete phrase means 'could not even call him that.' 부를 수 없다 expresses inability, 도 adds 'even,' and the ending places the restriction in the past."
+        }
       ]
     }
-  ]
+  ],
+  "audits": {
+    "1": [
+      {
+        "start": 0,
+        "sentence": "길동의 아버지는 나라의 중요한 일을 했습니다.",
+        "selected": false,
+        "reason_en": "A straightforward statement about his father's work; the noun modifier and past ending are explained by the existing tap annotations.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 26,
+        "sentence": "어머니는 그 집에서 일하는 사람이었습니다.",
+        "selected": true,
+        "reason_en": "A beginner needs to connect the modifying clause 일하는 to 사람 and understand its time relative to the past-tense main statement.",
+        "translation_en": "His mother was someone who worked in that household.",
+        "parts": [
+          {
+            "text": "어머니는",
+            "explanation_en": "His mother is the topic; the rest of the sentence describes her role."
+          },
+          {
+            "text": " 그 집에서",
+            "explanation_en": "That household is the place where she worked."
+          },
+          {
+            "text": " 일하는",
+            "explanation_en": "Modifies the following 사람: 'who works.' Here it describes her work at the time of the past statement, so English uses 'who worked.'"
+          },
+          {
+            "text": " 사람이었습니다.",
+            "explanation_en": "Means 'was a person.' Together with the preceding modifier, this identifies her as someone who worked in that household."
+          }
+        ]
+      },
+      {
+        "start": 50,
+        "sentence": "하지만 어머니는 아버지의 아내가 아니었습니다.",
+        "selected": false,
+        "reason_en": "One short negative statement about a family relationship; the existing annotations explain the possessive phrase and 아니다 construction.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 76,
+        "sentence": "그래서 아버지는 길동이 아버지를 “아버지”라고 부르지 못하게 했습니다.",
+        "selected": true,
+        "reason_en": "The sentence combines an embedded subject, a quoted title, inability, and causation. A breakdown helps distinguish who imposes the restriction from who cannot use the title.",
+        "translation_en": "So his father prevented Gildong from calling him “Father.”",
+        "parts": [
+          {
+            "text": "그래서",
+            "explanation_en": "Means 'so,' connecting this restriction to the preceding explanation of his mother's status."
+          },
+          {
+            "text": " 아버지는",
+            "explanation_en": "His father is the topic and the person who imposes the restriction."
+          },
+          {
+            "text": " 길동이",
+            "explanation_en": "Gildong is the subject of the embedded action: he is the person who would use the title."
+          },
+          {
+            "text": " 아버지를 “아버지”라고",
+            "explanation_en": "His father is the person addressed, and “아버지” is the exact title, 'Father,' that Gildong would use."
+          },
+          {
+            "text": " 부르지 못하게 했습니다.",
+            "explanation_en": "부르지 못하다 means 'cannot call'; adding -게 하다 means making that inability happen. In this past-tense context, the complete phrase means 'prevented him from calling him that.'"
+          }
+        ]
+      },
+      {
+        "start": 116,
+        "sentence": "길동은 형을 “형”이라고 부를 수도 없었습니다.",
+        "selected": true,
+        "reason_en": "The quoted family title and the construction 부를 수도 없었습니다 require connecting several taps to understand both inability and the emphasis added by 도.",
+        "translation_en": "Gildong could not even call his older brother “Brother.”",
+        "parts": [
+          {
+            "text": "길동은",
+            "explanation_en": "Gildong is the topic; this sentence describes another restriction he faced."
+          },
+          {
+            "text": " 형을 “형”이라고",
+            "explanation_en": "His older brother is the person addressed, and “형” is the family title a boy uses for his older brother."
+          },
+          {
+            "text": " 부를 수도 없었습니다.",
+            "explanation_en": "The complete phrase means 'could not even call him that.' 부를 수 없다 expresses inability, 도 adds 'even,' and the ending places the restriction in the past."
+          }
+        ]
+      },
+      {
+        "start": 143,
+        "sentence": "길동은 마음이 매우 아프고 슬펐습니다.",
+        "selected": false,
+        "reason_en": "A short statement joining two feelings with -고. The tap annotations already explain emotional pain and how the final past ending applies to both feelings.",
+        "translation_en": "",
+        "parts": []
+      }
+    ]
+  }
 }

@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "edition": "wikisource-honggildong-gyeongpan30-460078",
+  "book": "honggildong",
+  "title": "홍길동전 (30장 경판본)",
+  "revision": 460078,
+  "url": "https://ko.wikisource.org/w/index.php?title=홍길동전_(30장_경판본)&oldid=460078",
+  "raw_url": "https://ko.wikisource.org/w/index.php?title=%ED%99%8D%EA%B8%B8%EB%8F%99%EC%A0%84_(30%EC%9E%A5_%EA%B2%BD%ED%8C%90%EB%B3%B8)&oldid=460078&action=raw",
+  "raw_file": "original.wiki",
+  "text_file": "original.txt",
+  "raw_sha256": "d4c8bba88653fcea7f4bb57f6d8b5dea753e1188741419a4cdf1c0aa01e8d808",
+  "text_sha256": "310f0d76f9a9c614d4cf920e9b3303e30473649c7d22e79169165e7d4b88d197",
+  "provenance_url": "https://ko.wikisource.org/wiki/토론:홍길동전_(30장_경판본)",
+  "provenance": "Wikisource transcription from the Jikji Project; original 30-sheet Gyeongpan edition.",
+  "rights": "Original text marked PD-old-100 by Wikisource. Site contributions are under CC BY-SA 4.0; retain Wikisource/Jikji attribution and revision link.",
+  "units": [
+    {
+      "number": 1,
+      "start": 0,
+      "end": 1086,
+      "label": "Family and childhood"
+    },
+    {
+      "number": 2,
+      "start": 1088,
+      "end": 1923,
+      "label": "Night conversation with his father"
+    }
+  ],
+  "notes_file": "source-notes.json",
+  "notes_sha256": "5e088f495a768b4f654c61973edfc03825e4cad076d356a19e9f9efa3c68180b"
+}
