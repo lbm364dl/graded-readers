@@ -625,3 +625,5 @@ research or change historical content.
 ### Lexical planning objection adjudication (2026-10-02)
 
 TOPIK 3 exposed a reviewer request to rename the approved hong-gildong identity, which local validation correctly rejected. Lexical planning now independently adjudicates objections before repair, preserving registry identities and supported homonymous aliases while rejecting invented names and omissions. Publication binds both reviews and detects altered original objections. The shared stage and publication tests cover supported versus unsupported objections for both source and lexical planning; 133 pipeline/publication tests passed. Levels 3, 4 and 6 remain in progress; this does not claim completed pilot coverage.
+
+Prose objections now receive the same independent adjudication: the beginner vocabulary core is not a TOPIK 4 ceiling, faithful adaptation is not verbatim transcription, and actual source errors, invented actions, lost causality or excessive difficulty still require repair. Both decisions remain publication evidence.

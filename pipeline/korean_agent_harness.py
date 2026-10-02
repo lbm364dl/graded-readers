@@ -445,17 +445,17 @@ class KoreanHarness:
                 instructions += ' The output is lossless_annotation_rows: use its explicit column lists to read each row. Every source segment retains its original index; nested form_steps use form_step_columns and grammar_links use grammar_link_columns. All meanings, readings, roles and occurrence positions are preserved. Review the complete annotation, not a sample.'
             return payload(stage=name, task=instructions, task_inputs=task_inputs, context=transmitted_context, output=transmitted_output, **evidence)
         async def adjudicate_plan(review_job, review, value):
-            if name not in ('plan', 'lexical-plan') or approved(review):
+            if name not in ('plan', 'lexical-plan', 'prose') or approved(review):
                 return review_job, review, {}
             primary_job, primary = review_job, review
             review_job += '-adjudication'
             review = await self.runner.call(review_job, self.policy + '\n'
-                'Independently adjudicate the proposed planning objections against the exact source, approved identities and stage task. '
+                'Independently adjudicate the proposed source, lexical planning or prose objections against the exact source, approved identities and stage task. '
                 'The proposal has already passed JSON schema and local stage validation. Approved lexical IDs, headwords and kinds are authoritative; do not change them merely because the source uses a shorter name. New identities are allowed when absent from the registry. A supported name alias can share its spelling with an ordinary word without merging their identities. Historical names mentioned in the planned narration are in scope even if they do not act in the scene. A story-term budget is a maximum, not a requirement to use an exemption. Retain objections to invented named identities or missing needed named people. '
                 'Retain every genuine material error, with a short exact source quotation supporting the correction. '
                 'Discard unsupported source claims, contradictory corrections, terminology-only objections, requests for later-stage fields, '
                 'and demands to include every paragraph or to keep extending a coherent chapter merely because more source remains. '
-                'Faithful English paraphrases need not reproduce the source literally. Account for justified learner-level omissions. '
+                'Faithful English plans and modern Korean adaptations need not reproduce the source literally. Account for justified learner-level omissions. The supplied beginner vocabulary core is not the requested TOPIK ceiling; absence from that list alone is not evidence of excessive difficulty. Curriculum bindings and honest optional higher-level grammar are reviewed separately. Retain clearly excessive overall difficulty with exact affected wording, genuine source contradictions, invented actions and missing causal development. '
                 'Do not rewrite the proposal, invent new objections, or approve because a retry is expensive. '
                 'issues is an executable repair list, not a discussion of the objections. '
                 'Omit dismissed objections entirely: never put statements such as "this objection is unsupported" in issues. '

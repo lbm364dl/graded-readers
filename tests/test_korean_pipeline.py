@@ -716,7 +716,7 @@ def test_review_rejection_cannot_be_published(tmp_path):
         publication.verify_run(tmp_path)
 
 
-@pytest.mark.parametrize('stage', ['plan', 'lexical-plan'])
+@pytest.mark.parametrize('stage', ['plan', 'lexical-plan', 'prose'])
 @pytest.mark.parametrize('tamper', [False, True])
 def test_publication_preserves_source_review_adjudication_lineage(tmp_path, tamper, stage):
     from pipeline.korean_agent_harness import read, save
@@ -1269,7 +1269,7 @@ def test_planning_context_distinguishes_first_chapter_from_published_continuatio
         asyncio.run(harness.run())
 
 
-@pytest.mark.parametrize('stage', ['plan', 'lexical-plan'])
+@pytest.mark.parametrize('stage', ['plan', 'lexical-plan', 'prose'])
 @pytest.mark.parametrize('supported_objection', [False, True])
 def test_source_plan_objections_require_independent_adjudication_before_rewrite(tmp_path, supported_objection, stage):
     from pipeline.korean_agent_harness import save
@@ -1277,6 +1277,8 @@ def test_source_plan_objections_require_independent_adjudication_before_rewrite(
         'last_source_paragraph_index': 0, 'beats': [{'source_paragraph_index': 0, 'event_en': 'Family setup'}]}
     if stage == 'lexical-plan':
         proposal = {'entries': [{'id': 'hong-gildong', 'headword': '홍길동', 'kind': 'proper_name', 'aliases': ['홍길동', '길동'], 'role_en': 'Protagonist'}]}
+    if stage == 'prose':
+        proposal = {'title': '제목', 'text': '길동은 집을 떠났다.', 'length_reason_en': 'Coherent departure'}
     rejected = {'approved': False, 'issues': ['Proposed source objection']}
     class Runner:
         def __init__(self): self.jobs = []
