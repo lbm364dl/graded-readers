@@ -516,8 +516,15 @@ class KoreanHarness:
             elif producer is not None:
                 value = await producer(job, problems)
             else:
+                repair_scope = (
+                    '\nRepair the supplied previous draft only where the issues require changes. '
+                    'Preserve unaffected source events, identities, aliases, wording and narrative boundaries. '
+                    'Do not restart planning or replace a coherent chapter with a different scene. '
+                    'When missing narrative development is an issue, restore that development within the reviewed span, '
+                    'retaining the correct existing passages and connections. Return the complete repaired output.\n'
+                    if previous is not None else '')
                 value = await self.runner.call(
-                    job, self.policy + "\n" + prompt + payload(previous=previous, issues=problems),
+                    job, self.policy + "\n" + prompt + repair_scope + payload(previous=previous, issues=problems),
                     contracts.schema_path(schema), "low", tool_profile="offline")
             try:
                 validate(value, contracts.ANNOTATION if schema == 'annotation' else read(contracts.schema_path(schema)))

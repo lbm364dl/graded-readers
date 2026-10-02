@@ -508,6 +508,11 @@ def test_independent_review_rejection_repairs_and_only_approval_completes(tmp_pa
             if '-review-' in job:
                 assert 'Unsupported people group' in prompt or job.endswith('1')
                 return {'approved': True, 'issues': []}
+            if job == 'prose-0':
+                assert 'Repair the supplied previous draft only' not in prompt
+            if job == 'prose-1':
+                assert 'Preserve unaffected source events, identities, aliases' in prompt
+                assert 'Return the complete repaired output' in prompt
             return {'title': '제목', 'text': 'bad' if job.endswith('0') else 'fixed', 'length_reason_en': 'Test editorial decision'}
     runner = Runner()
     harness = KoreanHarness(tmp_path, 1, runner=runner)
