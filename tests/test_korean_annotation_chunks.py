@@ -67,6 +67,20 @@ def test_phrase_attachment_is_its_start_not_its_grammar_bearing_final_word(ancho
     assert segments == before
 
 
+def test_failed_anchor_reports_all_exact_alternatives_without_retargeting():
+    segments = [{'text': text} for text in ('가는', ' ', '곳', ' ', '가는', ' ', '곳')]
+    before = copy.deepcopy(segments)
+    assert chunks.matching_starts(segments, '가는 곳') == [
+        {'segment_index': 0, 'text': '가는'}, {'segment_index': 4, 'text': '가는'}]
+    with pytest.raises(ValueError, match='Exact existing start segments') as error:
+        chunks.endpoint(segments, 2, '가는 곳')
+    assert "'segment_index': 0" in str(error.value)
+    assert "'segment_index': 4" in str(error.value)
+    assert chunks.matching_starts(segments, '가는 곳으로') == []
+    assert chunks.matching_starts(segments, '가') == []
+    assert segments == before
+
+
 def test_raw_chunk_digest_is_required_and_tampering_is_rejected(tmp_path):
     raw = attached(fixture())
     decoded = chunks.decode(raw)

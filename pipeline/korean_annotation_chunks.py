@@ -43,7 +43,25 @@ def endpoint(segments, start, form):
         if not form.startswith(surface):
             break
     raise ValueError(f'Attached Korean link form {form!r} does not match complete source segments '
-        f'from anchor {start} ({segments[start]["text"]!r}). Preserve tap boundaries and supply the exact complete form.')
+        f'from anchor {start} ({segments[start]["text"]!r}). Preserve tap boundaries and supply the exact complete form. '
+        f'Exact existing start segments for this complete form: {matching_starts(segments, form)}. '
+        'If the displayed form is correct, attach the link to its appropriate first segment, not its grammatical ending. '
+        'An empty list means this form is not present at complete tap boundaries; use the actual source form, not a dictionary-form paraphrase.')
+
+
+def matching_starts(segments, form):
+    """Diagnostic candidates only; never retarget a link or alter its form."""
+    matches = []
+    for start, segment in enumerate(segments):
+        surface = ''
+        for item in segments[start:]:
+            surface += item['text']
+            if surface == form:
+                matches.append({'segment_index': start, 'text': segment['text']})
+                break
+            if not form.startswith(surface):
+                break
+    return matches
 
 
 def decode(value):
