@@ -141,7 +141,10 @@ def check_reconstruction(segments: list[dict], text: str) -> None:
                          "Preserve spaces and newlines in punctuation segments; do not rewrite prose.")
 
 
-def canonical_annotation(value: dict, prose: dict, number: int, edition: str, plan: dict, focus: dict | None = None) -> dict:
+def canonical_annotation(value: dict, prose: dict, number: int, edition: str, plan: dict, focus: dict | None = None, *, level: int = 1) -> dict:
+    from pipeline.korean_levels import LEVEL_GOALS
+    if type(level) is not int or level not in LEVEL_GOALS:
+        raise ValueError("Korean target level must be 1–6")
     segments = []
     for segment in value["segments"]:
         item = {key: segment[key] for key in ("text", "type", "meaning_en")}
@@ -173,6 +176,8 @@ def canonical_annotation(value: dict, prose: dict, number: int, edition: str, pl
             "annotation_audit": {"all_reviewed": True},
             "form_audit": {"reviewed": True, "inflected_segment_indices": value["inflected_segment_indices"]},
             "source_alignment": {"edition": edition, "reviewed": True, "beats": plan["beats"]}}
+    if level > 1:
+        result["target_level"] = level
     if focus is not None:
         result["lexical_focus"] = focus
     if 'scope' in plan:

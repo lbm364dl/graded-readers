@@ -131,11 +131,12 @@ def validate_chapter(chapter: dict, **kwargs) -> dict:
     if 'curriculum' in chapter:
         from pipeline.korean_curriculum import evaluate_bindings
         evidence = chapter['curriculum']
-        grade = evaluate_bindings(chapter, evidence['bindings'])
+        from pipeline.korean_levels import target_level
+        grade = evaluate_bindings(chapter, evidence['bindings'], level=target_level(chapter))
         if grade != evidence['evaluation']:
             raise ValueError('Korean curriculum evaluation is stale')
         if not grade['passes']:
-            raise ValueError(f'Korean curriculum Level 1 readability gate failed: {grade}')
+            raise ValueError(f'Korean curriculum Level {grade["target_level"]} readability gate failed: {grade}')
         extra = [identity for identity, count in grade['above_level_vocabulary'].items()
                  for _ in range(count)]
         return {**result, 'curriculum': grade, 'passes': grade['passes'],

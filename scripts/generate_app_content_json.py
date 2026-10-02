@@ -573,8 +573,8 @@ def load_korean_annotations(
     level_key: str, require_complete: bool,
 ) -> list[str]:
     """Publish reviewed Korean tap units without Chinese/Japanese lookup guesses."""
-    if book_id != "honggildong" or level_key != "l1":
-        raise ValueError("Korean source/review pipeline currently supports Hong Gildong Level 1 only")
+    if book_id != "honggildong" or level_key not in {f"l{n}" for n in range(1, 7)}:
+        raise ValueError("Korean source/review pipeline supports Hong Gildong TOPIK 1–6")
     if not path.is_file():
         if not require_complete:
             return ["" for _ in chapters]
@@ -605,8 +605,12 @@ def load_korean_annotations(
         raise ValueError("Korean independent run evidence coverage mismatch")
     word_registry = korean_dictionary._registry(korean_dictionary.WORDS)
     grammar_registry = korean_dictionary._registry(korean_dictionary.GRAMMAR)
-    breakdowns = json.loads(korean_sentence_breakdowns.BREAKDOWNS.read_text(encoding="utf-8"))
+    breakdown_path = korean_sentence_breakdowns.BREAKDOWNS.with_name(f"{level_key}.sentence-breakdowns.json")
+    breakdowns = json.loads(breakdown_path.read_text(encoding="utf-8"))
     for number, item in sorted(by_number.items()):
+        from pipeline.korean_levels import target_level
+        if target_level(item) != int(level_key[1:]):
+            raise ValueError("Korean edition target differs from reviewed annotation")
         chapter = chapters[number - 1]
         segments = item.get("segments")
         if (item.get("text") != chapter["content"] or not isinstance(segments, list)
@@ -638,7 +642,7 @@ def load_korean_annotations(
                 raise ValueError(f"invalid Korean segment meaning: {path}")
             if kind == "word" and segment["lexical"]["kind"] == "story_term" and not str(segment.get("story_importance_en", "")).strip():
                 raise ValueError(f"Korean story vocabulary lacks importance: {path}")
-            published.append({**segment, "pinyin": "", "target_curriculum_level": 1,
+            published.append({**segment, "pinyin": "", "target_curriculum_level": int(level_key[1:]),
                               **classify_segment(segment, item.get('curriculum'))})
         relative = Path("annotations") / f"korean_{book_id}_{level_key}_{number:03d}.json"
         destination = ASSET_ROOT / relative
@@ -649,8 +653,6 @@ def load_korean_annotations(
             "annotation_audit": item["annotation_audit"],
         }, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
         assets[number - 1] = f"assets/{relative.as_posix()}"
-    korean_dictionary.build_collection(list(by_number.values()), ASSET_ROOT)
-    korean_sentence_breakdowns.build_collection(list(by_number.values()), ASSET_ROOT)
     return assets
 
 
@@ -708,6 +710,16 @@ def build_language(
                 "level": internal_level,
                 "chapters": chapters,
             })
+    if language == "korean" and entries:
+        from pipeline import korean_dictionary, korean_sentence_breakdowns
+        all_chapters = []
+        for entry in entries:
+            book, level_key = entry['id'].rsplit('_', 1)
+            document = json.loads((language_root / book / f'{level_key}.annotations.json').read_text(encoding='utf-8'))
+            numbers = {int(Path(c['annotationAsset']).stem.rsplit('_', 1)[1]) for c in entry['chapters']}
+            all_chapters.extend(c for c in document['chapters'] if c['number'] in numbers)
+        korean_dictionary.build_collection(all_chapters, ASSET_ROOT)
+        korean_sentence_breakdowns.build_collection(all_chapters, ASSET_ROOT)
     return sorted(entries, key=lambda item: (item["level"], item["id"]))
 
 

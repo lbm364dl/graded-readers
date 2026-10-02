@@ -1,4 +1,4 @@
-"""Resumable source-grounded Korean Level 1 generation and independent reviews."""
+"""Resumable source-grounded Korean TOPIK 1–6 generation and reviews."""
 from __future__ import annotations
 
 import argparse
@@ -17,6 +17,7 @@ from pipeline.korean_readability import MAX_STORY_TERMS, MAX_NON_BEGINNER_RATIO,
 from pipeline.korean_sources import EDITION, load_unit, load_selected_unit, sha
 from pipeline.korean_sentence_breakdowns import build as validate_breakdowns
 from pipeline import korean_curriculum as curriculum
+from pipeline.korean_levels import LEVEL_GOALS, LEVEL_POLICY
 
 POLICY = ROOT / "pipeline/korean_agent_instructions.md"
 LINGUISTIC_REFERENCE = ROOT / 'data/korean/linguistic-reference.json'
@@ -250,12 +251,18 @@ def annotation_requests(value: dict, catalog: dict, focus: dict, words: dict) ->
 
 
 class KoreanHarness:
-    def __init__(self, run_dir: Path, number: int, runner=None, existing: Path | None = None, model: str = "gpt-6.1-sol", workers: int = 4):
+    def __init__(self, run_dir: Path, number: int, runner=None, existing: Path | None = None, model: str = "gpt-6.1-sol", workers: int = 4, level: int = 1):
+        curriculum.entries("grammar", level)
+        self.level = level
         self.run_dir, self.number, self.existing = run_dir, number, existing
         if workers < 1:
             raise ValueError('Korean pipeline workers must be positive')
         self.runner = runner or CodexRunner(run_dir, model, asyncio.Semaphore(workers), timeout=600)
         self.policy = POLICY.read_text(encoding="utf-8")
+        self.review_policy = REVIEW_POLICY
+        if level > 1:
+            self.policy += "\n" + LEVEL_POLICY.read_text(encoding="utf-8") + f"\nRUN TARGET: TOPIK {level}. {LEVEL_GOALS[level]}\n"
+            self.review_policy = REVIEW_POLICY.replace("for an absolute beginner", f"for a TOPIK {level} learner")
         self.stages = {}
         self.words, self.grammar = dictionaries._registry(dictionaries.WORDS), dictionaries._registry(dictionaries.GRAMMAR)
         self.catalog = contracts.lexical_catalog()
@@ -268,7 +275,7 @@ class KoreanHarness:
         def review_payload(value):
             evidence = {}
             if name == 'curriculum':
-                evidence = {'computed_curriculum_evaluation': curriculum.evaluate_bindings(review_context['chapter'], value)}
+                evidence = {'computed_curriculum_evaluation': curriculum.evaluate_bindings(review_context['chapter'], value, level=self.level)}
             if name == 'annotation':
                 ids = {s['lexical_id'] for s in value['segments'] if s['lexical_kind'] == 'vocabulary'}
                 attested = {s[key] for s in value['segments'] if s['lexical_kind'] == 'vocabulary'
@@ -300,7 +307,7 @@ class KoreanHarness:
             try:
                 validate(value, read(contracts.schema_path(schema)))
                 check(value)
-                review_prompt = self.policy + "\n" + REVIEW_POLICY + review_payload(value)
+                review_prompt = self.policy + "\n" + self.review_policy + review_payload(value)
                 try:
                     review = await self.runner.call(review_job, review_prompt,
                         contracts.schema_path("review"), "high", tool_profile="offline", cache_only=True)
@@ -346,7 +353,7 @@ class KoreanHarness:
                 problems, previous = [str(error)], value
                 continue
             review_job = f"{name}{cache_prefix}-review-{attempt}"
-            review = await self.runner.call(review_job, self.policy + "\n" + REVIEW_POLICY
+            review = await self.runner.call(review_job, self.policy + "\n" + self.review_policy
                 + review_payload(value),
                 contracts.schema_path("review"), "high", tool_profile="offline")
             if approved(review):
@@ -362,11 +369,12 @@ class KoreanHarness:
         self.run_dir.mkdir(parents=True, exist_ok=True)
         manifest, _, _ = load_unit(1)
         source_notes = read(ROOT / "books/korean/honggildong" / manifest["notes_file"]) if "notes_file" in manifest else {"notes": []}
-        source_id = f"assets/annotations/korean_honggildong_l1_{self.number:03d}.json"
+        source_id = f"assets/annotations/korean_honggildong_l{self.level}_{self.number:03d}.json"
         existing = None
         if self.existing:
             existing = next(chapter for chapter in read(self.existing)["chapters"] if chapter["number"] == self.number)
-        prior = read(ROOT / "content/korean/honggildong/l1.annotations.json")["chapters"]
+        prior_path = ROOT / f"content/korean/honggildong/l{self.level}.annotations.json"
+        prior = read(prior_path)["chapters"] if prior_path.is_file() else []
         previous_chapter = next((c for c in prior if c['number'] == self.number - 1), None)
         if self.number > 1 and (previous_chapter is None or 'unit' not in previous_chapter['source_alignment']):
             raise ValueError('The preceding Korean chapter needs a reviewed source stopping point')
@@ -391,7 +399,8 @@ class KoreanHarness:
                         copy[entry["id"]] = entry
                     merged.append(copy)
                 report = read(report_path)
-                if (report["previous_chapters_digest"] == digest(previous_text)
+                if (report.get('target_level', 1) == self.level
+                        and report["previous_chapters_digest"] == digest(previous_text)
                         and report["source_unit"]['start'] == source_start
                         and report["dictionary_digest"] == digest(relevant_entries(old_chapter, *merged))
                         and report.get("existing_input_digest") == (digest(existing) if existing else None)):
@@ -399,13 +408,13 @@ class KoreanHarness:
             except (ValueError, KeyError, FileNotFoundError):
                 pass
         report_path.unlink(missing_ok=True)
-        context = {"edition": EDITION, "source": source, "unit": unit,
+        context = {"target_level": self.level, "target_goals": LEVEL_GOALS[self.level], "edition": EDITION, "source": source, "unit": unit,
                    "previous_chapters": previous_text, "source_notes": source_notes}
-        plan = await self.stage("plan", "Choose a coherent next Level 1 chapter from the remaining original narrative. Select last_source_paragraph_index as its stopping point: the chapter covers the contiguous source prefix through that paragraph, including justified omissions within it. Stop at a natural narrative boundary; do not cover the entire remaining book by default. There is no fixed source-slice size. "
+        plan = await self.stage("plan", f"Choose a coherent next TOPIK {self.level} chapter from the remaining original narrative. Select last_source_paragraph_index as its stopping point: the chapter covers the contiguous source prefix through that paragraph, including justified omissions within it. Stop at a natural narrative boundary; do not cover the entire remaining book by default. There is no fixed source-slice size. "
             "Give a Korean title and select source_paragraph_index from the numbered paragraphs, "
             "with the event supported by that paragraph in English. Do not copy or reconstruct old Hangul. "
             "Selected paragraphs must support ALL details of their events, in source order without duplicates. "
-            "Judge how much meaningful narrative can be retained through natural beginner wording. There is no paragraph quota or total-length target. Preserve causality, character relationships, understandable actions and development; do not collapse a scene into a bare summary when its events can be expressed at this level. Omit or simplify details only when they add unnecessary learner difficulty or distract from the coherent scene. In scope_reason_en explain retained coverage, significant omissions, level tradeoffs and the natural stopping point. Do not pad with repetition or invent events. If existing_text is supplied, plan ONLY its retained events; "
+            "Judge how much meaningful narrative can be retained through natural wording appropriate to the requested target. There is no paragraph quota or total-length target. Preserve causality, character relationships, understandable actions and development; do not collapse a scene into a bare summary when its events can be expressed at this level. Omit or simplify details only when they add unnecessary learner difficulty or distract from the coherent scene. In scope_reason_en explain retained coverage, significant omissions, level tradeoffs and the natural stopping point. Do not pad with repetition or invent events. If existing_text is supplied, plan ONLY its retained events; "
             "do not request omitted side stories, births or scenes."
             + payload(**context, paragraphs=[{"index": i, "text": p} for i, p in enumerate(source.split("\n\n"))],
                       existing_text=existing["text"] if existing else ""), "plan",
@@ -415,9 +424,10 @@ class KoreanHarness:
         _, _, source = load_selected_unit(unit)
         context = {**context, 'source': source, 'unit': unit}
         beginner = [entry for entries in self.catalog.values() for entry in entries if entry["grade"] == "A"]
-        curriculum_context = {'target_level': 1, 'source_sha256': curriculum.SOURCE_SHA256,
+        curriculum_context = {'target_level': self.level, 'target_goals': LEVEL_GOALS[self.level], 'source_sha256': curriculum.SOURCE_SHA256,
                               'vocabulary': curriculum.prompt_entries('vocabulary', 1),
-                              'grammar': curriculum.prompt_entries('grammar', 1)}
+                              'grammar': curriculum.prompt_entries('grammar', self.level),
+                              'vocabulary_catalog_policy': 'The supplied beginner core is not a target ceiling. Higher-level word candidates are retrieved during binding review; use natural words appropriate to the target.'}
         context = {**context, 'curriculum': curriculum_context}
         focus_context = {**context, "plan": bound_plan, "approved_words": list(self.words.values()),
                          "story_term_budget": MAX_STORY_TERMS}
@@ -425,18 +435,18 @@ class KoreanHarness:
             "Include the named people who may appear, with their canonical full headword, exact existing ID when available, "
             "reviewed short-name aliases and passage-specific role_en. Distinguish the father from the son. "
             f"Allow at most {MAX_STORY_TERMS} essential historical story term, only if needed to express the central conflict. "
-            "Do not exempt ordinary difficult vocabulary or optional literary detail. An unlisted ordinary word needs simpler prose. "
+            "Do not exempt ordinary difficult vocabulary or optional literary detail. An unlisted ordinary word must receive honest difficulty review; do not assume its grade from catalog absence. "
             "Prefer everyday wording for secondary descriptions and roles. Story terms may use a stable English ID if absent from NIKL. "
             "Do not generate definitions; those belong to the separate dictionary editor. New IDs must be stable and distinct."
             + payload(**focus_context, nikl_A=[e["headword"] for e in beginner]),
             "lexical-plan", lambda value: validate_focus(value, self.words, self.catalog, source_notes), focus_context)
         profiles = {e["id"]: e for e in focus["entries"]}
-        prose_prompt = "Write a natural modern Korean Level 1 chapter following the reviewed source plan. "
-        prose_prompt += "Choose the chapter's length yourself: retain as much meaningful source narrative as can be expressed naturally at this level and stop at a coherent scene boundary. No target, minimum or maximum number of characters, words or sentences. Formal polite narration. "
-        prose_prompt += "Keep the story's injustice without inventing actions or motives. Use NIKL six-level curriculum Level 1 vocabulary and grammar from the supplied curriculum; the old A band is only a lexical identity catalog, never a Level 1 grade. Manage difficult ideas with clear, connected sentences. Keep Level 1 grammar as the core. A few common higher-level patterns can appear when they improve natural wording or source fidelity; keep their real grades and treat them as optional learning for Level 1. Judge their variety, repetition, complexity and importance to understanding across the whole chapter. Do not simplify natural Korean mechanically merely to eliminate every Level 2 form, and do not let optional labels excuse advanced prose. Productive noun+하다 words require explicit evidence for the noun, 하다 and their actual combined meaning. Do not confuse short individual sentences with a short chapter. Preserve the reviewed narrative development rather than summarizing it away; never pad or repeat facts to make the chapter longer. In length_reason_en explain why this coverage and stopping point suit the level, whether more meaningful source content could be retained, and any necessary omissions. "
+        prose_prompt = f"Write a natural modern Korean TOPIK {self.level} chapter following the reviewed source plan. {LEVEL_GOALS[self.level]} "
+        prose_prompt += "Choose the chapter's length yourself: retain as much meaningful source narrative as can be expressed naturally at this level and stop at a coherent scene boundary. No target, minimum or maximum number of characters, words or sentences. " + ("Formal polite narration. " if self.level == 1 else "Use a consistent natural modern written narrative register suitable for this level. ")
+        prose_prompt += f"Keep the story's injustice without inventing actions or motives. Use NIKL six-level curriculum Level {self.level} and lower vocabulary and grammar, guided by the supplied curriculum; the old A band is only a lexical identity catalog, never a Level 1 grade. Manage difficult ideas with clear, connected sentences. Use grammar appropriate to TOPIK {self.level} as the core. A few common higher-level patterns can appear when they improve natural wording or source fidelity; keep their real grades and treat them as optional learning for TOPIK {self.level}. Judge their variety, repetition, complexity and importance to understanding across the whole chapter. Do not simplify natural Korean mechanically merely to eliminate every above-target form, and do not let optional labels excuse advanced prose. Productive noun+하다 words require explicit evidence for the noun, 하다 and their actual combined meaning. Do not confuse short individual sentences with a short chapter. Preserve the reviewed narrative development rather than summarizing it away; never pad or repeat facts to make the chapter longer. In length_reason_en explain why this coverage and stopping point suit the level, whether more meaningful source content could be retained, and any necessary omissions. "
         prose_prompt += "Give title without chapter number and prose without headings or explanations."
         prose_prompt += payload(plan=bound_plan, source=source, curriculum=curriculum_context, previous=previous_text, existing_text=existing['text'] if existing else None, reusable_words=[entry["headword"] for entry in self.words.values() if entry["kind"] == "word" or entry["id"] in profiles], lexical_plan=focus)
-        prose_prompt += " Prefer the supplied reusable word headwords when they can express the retained events naturally. Explain status with simple everyday words instead of literary terms. Do not mechanically keep every detail of the source plan. Use ONLY the planned story exemption; all other wording should be ordinary beginner vocabulary. "
+        prose_prompt += " Prefer the supplied reusable word headwords when they can express the retained events naturally. Explain status with wording suitable to this target, preserving its source meaning. Do not mechanically keep every detail of the source plan. Use ONLY the planned story exemption; all other wording should be ordinary vocabulary appropriate to the target level. "
         prose_repair = ""
         reuse_candidate = annotation_reuse_candidate(self.run_dir)
         for prose_attempt in range(latest_prose_revision(self.run_dir) if not existing else 0, 3):
@@ -645,31 +655,30 @@ class KoreanHarness:
                     {"prose": prose, "approved_words": list(self.words.values()), "approved_grammar": list(self.grammar.values()), "lexical_plan": focus},
                     initial=normalize_existing(existing, self.words) if existing else None,
                     cache_prefix=f"-revision{prose_attempt}" if prose_attempt else "", producer=produce_annotation)
-                chapter = contracts.canonical_annotation(annotation, prose, self.number, EDITION, bound_plan, focus)
+                chapter = contracts.canonical_annotation(annotation, prose, self.number, EDITION, bound_plan, focus, level=self.level)
                 def check_curriculum(value):
                     if value.get('prose_revision_reason_en', '').strip():
                         raise UnannotatableProseError(value['prose_revision_reason_en'])
-                    grade = curriculum.evaluate_bindings(chapter, value)
+                    grade = curriculum.evaluate_bindings(chapter, value, level=self.level)
                     if not grade['passes']:
-                        raise UnannotatableProseError(f"Six-level curriculum Level 1 requires prose revision: {grade}")
+                        raise UnannotatableProseError(f"Six-level curriculum Level {self.level} requires prose revision: {grade}")
                 candidate_ids = {entry['id'] for request in required_words.values()
                     for entry in curriculum.vocabulary_context_candidates(request['headword'])}
-                curriculum_review = {'chapter': chapter, 'word_requests': required_words,
+                curriculum_review = {'target_level': self.level, 'target_goals': LEVEL_GOALS[self.level], 'chapter': chapter, 'word_requests': required_words,
                     'approved_words': [self.words[key] for key in sorted(required_words.keys() & self.words.keys())],
                     'legacy_identity_evidence': [entry for candidates in self.catalog.values() for entry in candidates if entry['id'] in required_words],
                     'approved_grammar': [self.grammar[key] for key in sorted(required_grammar & self.grammar.keys())],
                     'source_sha256': curriculum.SOURCE_SHA256,
                     'grammar_occurrence_counts': curriculum.grammar_occurrence_counts(chapter),
                     'vocabulary_candidates': [entry for entry in curriculum.prompt_entries('vocabulary')
-                        if entry['id'] in candidate_ids and entry['level'] != 1]
-                        + curriculum.prompt_entries('vocabulary', 1),
+                        if entry['id'] in candidate_ids or (self.level == 1 and entry['level'] == 1)],
                     'grammar_catalog': curriculum.prompt_entries('grammar')}
                 bindings = await self.stage('curriculum',
                     'Curriculum vocabulary grades identify lexical identities and parts of speech, not only the illustrative 길잡이말 phrase. A guide phrase is not an exhaustive sense inventory: an independently verified sense of the same lexeme can share the grade. Aggregated homonym/POS rows include each listed identity even if the single guide illustrates only one; do not merge unrelated homonyms. Grammar meanings remain function-specific: identical spelling does not license a different function. When no honest source match exists, use equivalence unlisted with empty source_ids and explain the catalog gap in analysis_en. Its grade stays null, never guessed or relabeled as Level 2. Unlisted grammar needs optional_reason_en and the same whole-chapter difficulty review as higher-level grammar. Unlisted ordinary vocabulary counts toward the extra-vocabulary budget. Catalog absence alone is not a reason to rewrite natural beginner Korean. Bind EVERY ordinary lexical identity and EVERY linked grammar identity in this chapter to exact source IDs from the supplied six-level NIKL curriculum. Preserve dictionary IDs: source homonym numbers can differ between editions. A spelling match alone is not evidence of equivalent sense or POS. Give one binding per kind and entry_id. Listed means the same lexical identity and POS or grammar function. Productive means a justified compositional formation with ALL required lexical and grammatical sources; never concatenate glosses or treat an idiom as productive. Grammatical means a dependent lexical unit explicitly covered by a source construction, such as 수 in the ability pattern. Source entries can cover related forms of their own construction, but do not use an unrelated simpler pattern to hide a difficult construction. Never assign levels yourself: the validator computes the maximum source grade. Missing source coverage uses honest unlisted status; missing or uncertain meaning needs investigation, not invented mappings. Higher-level grammar is allowed sparingly with its actual source grade: give a specific optional_reason_en for each above-level grammar binding, also required for unlisted grammar, empty for vocabulary and in-level grammar. Explain in level_reason_en whether the complete chapter remains suitable, considering occurrence frequency, variety, complexity and dependence on these patterns. No fixed grammar count or percentage. Optional is outside the learning goals, not dispensable sentence meaning. If it cannot honestly fit the level, set prose_revision_reason_en to concrete prose repairs and the pipeline will revise; otherwise leave it empty. The independent reviewer must reject implausible optional rationales and excessive overall difficulty, rather than reject every higher-level pattern. No bindings for names or planned story terms. Independently verify all senses and roles. Write concise analyses, explaining ambiguity or productive prerequisites when necessary rather than repeating source bookkeeping for every simple match. '
                     + payload(**{**curriculum_review, 'chapter': curriculum.chapter_view(chapter)}), 'curriculum', check_curriculum, curriculum_review,
                     cache_prefix=f'-revision{prose_attempt}' if prose_attempt else '')
                 chapter['curriculum'] = {'bindings': bindings,
-                                        'evaluation': curriculum.evaluate_bindings(chapter, bindings)}
+                                        'evaluation': curriculum.evaluate_bindings(chapter, bindings, level=self.level)}
             except UnannotatableProseError as error:
                 if existing or prose_attempt == 2:
                     raise
@@ -687,7 +696,7 @@ class KoreanHarness:
                     reuse_candidate = (old_job, prose, read(old_review_path) if old_review_path.exists() else {'issues': [str(error)]})
                     break
                 prose_repair = payload(repair_reason=str(error), previous_prose=prose,
-                    instruction="Deliberately revise only the affected unpublished prose to use NIKL six-level curriculum Level 1 vocabulary and grammar. Preserve the reviewed scene, stopping point, meaningful development and unaffected wording. Do not shorten a chapter merely because annotation failed. Do not evade difficulty gates by inventing lexical identities or reclassifying ordinary words as story terms.")
+                    instruction=f"Deliberately revise only the affected unpublished prose to use NIKL six-level curriculum Level {self.level} and lower vocabulary and grammar. Preserve the reviewed scene, stopping point, meaningful development and unaffected wording. Do not shorten a chapter merely because annotation failed. Do not evade difficulty gates by inventing lexical identities or reclassifying ordinary words as story terms.")
                 continue
             break
         missing_words = required_words.keys() - self.words.keys()
@@ -714,7 +723,7 @@ class KoreanHarness:
         breakdown_context = {"chapter": chapter, "sentences": inventory}
         initial_help = None
         if existing:
-            old = read(ROOT / "content/korean/honggildong/l1.sentence-breakdowns.json")
+            old = read(ROOT / f"content/korean/honggildong/l{self.level}.sentence-breakdowns.json")
             initial_help = {"sentences": [{**row, "selected": bool(match),
                 "reason_en": "Reviewed construction needs linked sentence parts" if match else "Simple sentence needs no breakdown",
                 "translation_en": match.get("translation_en", ""), "parts": match.get("parts", [])}
@@ -723,7 +732,7 @@ class KoreanHarness:
         def check_help(value):
             data = contracts.selected_breakdowns(value, chapter, source_id)
             validate_breakdowns(chapter, self.run_dir, source_id=source_id, data=data, write=False)
-        help_output = await self.stage("sentence-help", "Review each sentence for beginner difficulty. "
+        help_output = await self.stage("sentence-help", f"Review each sentence for TOPIK {self.level} learner difficulty. "
             "Select a breakdown only when connecting clauses or constructions warrants one. "
             "For simple sentences selected=false, no translation or parts. Explain selection/nonselection in reason_en. "
             "Selected parts must concatenate to the exact sentence and end at existing word-tap boundaries. Punctuation segments may be divided, so the sentence can end before trailing spaces in a shared punctuation segment. "
@@ -735,7 +744,7 @@ class KoreanHarness:
             save(self.run_dir / filename, value)
         report = {"schema_version": 1, "status": "complete", "number": self.number,
             "edition": EDITION, "source_sha256": manifest["text_sha256"], "source_notes_sha256": manifest.get("notes_sha256"), "source_unit": unit,
-            "policy_sha256": sha(self.policy.encode()), "stages": self.stages,
+            "policy_sha256": sha(POLICY.read_bytes()), "stages": self.stages,
             "linguistic_reference_sha256": sha(LINGUISTIC_REFERENCE.read_bytes()),
             "previous_chapters_digest": digest(previous_text),
             "existing_input_digest": digest(existing) if existing else None,
@@ -743,19 +752,22 @@ class KoreanHarness:
                                           "grammar": [grammar[key] for key in sorted(required_grammar)]}),
             "artifacts": {name: sha((self.run_dir / name).read_bytes()) for name in
                           ("chapter.json", "dictionary-delta.json", "sentence-breakdowns.json", "source-plan.json", "lexical-plan.json")}}
+        if self.level > 1:
+            report.update(target_level=self.level, level_policy_sha256=sha(LEVEL_POLICY.read_bytes()))
         save(self.run_dir / "report.json", report)
         return report
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--level", type=int, choices=range(1, 7), default=1)
     parser.add_argument("--chapter", type=int, required=True)
     parser.add_argument("--run-dir", type=Path, required=True)
     parser.add_argument("--existing", type=Path)
     parser.add_argument("--model", default="gpt-6.1-sol")
     parser.add_argument('--workers', type=int, default=4, help='Concurrent annotation model jobs (default: 4)')
     args = parser.parse_args()
-    report = asyncio.run(KoreanHarness(args.run_dir, args.chapter, existing=args.existing, model=args.model, workers=args.workers).run())
+    report = asyncio.run(KoreanHarness(args.run_dir, args.chapter, existing=args.existing, model=args.model, workers=args.workers, level=args.level).run())
     print(json.dumps({"status": report["status"], "chapter": report["number"], "stages": list(report["stages"])}))
 
 

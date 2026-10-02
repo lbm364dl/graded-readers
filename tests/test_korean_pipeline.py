@@ -463,7 +463,7 @@ def test_completed_run_cache_avoids_calls_but_changed_dictionary_invalidates(tmp
     assert not (tmp_path / 'report.json').exists()
 
 
-def make_reviewed_run(run):
+def make_reviewed_run(run, level=1):
     from pipeline.korean_agent_harness import POLICY, normalize_existing, save
     chapter = manual_chapter()
     manifest, unit, source = sources.load_unit(1)
@@ -475,10 +475,10 @@ def make_reviewed_run(run):
     focus = {'entries': [
         {'id': 'hong-gildong', 'headword': '홍길동', 'kind': 'proper_name', 'aliases': ['홍길동'], 'role_en': 'central child'},
         {'id': '벼슬/명', 'headword': '벼슬', 'kind': 'story_term', 'aliases': ['벼슬'], 'role_en': 'historical office'}]}
-    chapter = contracts.canonical_annotation(annotation, prose, 1, sources.EDITION, bound, focus)
+    chapter = contracts.canonical_annotation(annotation, prose, 1, sources.EDITION, bound, focus, level=level)
     from pipeline.korean_curriculum import evaluate_bindings
     bindings = protocol_curriculum_bindings(chapter)
-    chapter['curriculum'] = {'bindings': bindings, 'evaluation': evaluate_bindings(chapter, bindings)}
+    chapter['curriculum'] = {'bindings': bindings, 'evaluation': evaluate_bindings(chapter, bindings, level=level)}
     old = json.loads(Path('tests/fixtures/korean_manual_breakdowns.json').read_text())
     rows = []
     for sentence in contracts.sentence_inventory(chapter['text']):
@@ -487,12 +487,15 @@ def make_reviewed_run(run):
                      'translation_en': match['translation_en'] if match else '',
                      'parts': match['parts'] if match else []})
     help_output = {'sentences': rows}
-    help_data = contracts.selected_breakdowns(help_output, chapter, dictionary.SOURCE)
+    from pipeline.korean_levels import source_id, LEVEL_POLICY
+    help_data = contracts.selected_breakdowns(help_output, chapter, source_id(chapter))
     report = {'status': 'complete', 'number': 1, 'edition': sources.EDITION,
               'source_sha256': manifest['text_sha256'], 'source_notes_sha256': manifest.get('notes_sha256'), 'source_unit': unit,
               'policy_sha256': sources.sha(POLICY.read_bytes()),
               'linguistic_reference_sha256': sources.sha((sources.ROOT / 'data/korean/linguistic-reference.json').read_bytes()),
               'stages': {}, 'artifacts': {}}
+    if level > 1:
+        report.update(target_level=level, level_policy_sha256=sources.sha(LEVEL_POLICY.read_bytes()))
     for name, value in {'plan': plan, 'lexical-plan': focus, 'prose': prose, 'annotation': annotation,
                         'sentence-help': help_output, 'curriculum': bindings}.items():
         review = {'approved': True, 'issues': []}
@@ -898,3 +901,64 @@ def test_semantic_form_repair_preserves_neutral_root_and_other_occurrences(tmp_p
     assert result['segments'][target]['form_steps'][0] == raw['segments'][target]['form_steps'][0]
     assert harness.words == roots
     assert harness.stages['annotation']['review_job'] == 'annotation-review-1'
+
+
+@pytest.mark.parametrize('level', [2, 3, 4, 5, 6])
+def test_reviewed_run_binds_actual_target_and_source_identity(tmp_path, level):
+    from pipeline.korean_agent_harness import read, save
+    from pipeline.korean_levels import source_id
+    report = make_reviewed_run(tmp_path, level=level)
+    chapter, _, help_data, proof = publication.verify_run(tmp_path)
+    assert chapter['target_level'] == level
+    assert chapter['curriculum']['evaluation']['target_level'] == level
+    assert proof['target_level'] == level
+    assert all(row['source'] == source_id(chapter) for row in help_data['breakdowns'])
+    report['target_level'] = 1
+    save(tmp_path / 'report.json', report)
+    with pytest.raises(ValueError, match='target differs'):
+        publication.verify_run(tmp_path)
+
+
+def test_higher_target_policy_is_explicit_and_does_not_relabel_beginner(tmp_path):
+    from pipeline.korean_levels import source_id
+    beginner = KoreanHarness(tmp_path / 'one', 1, runner=object())
+    advanced = KoreanHarness(tmp_path / 'five', 1, runner=object(), level=5)
+    assert 'RUN TARGET: TOPIK 5' in advanced.policy
+    assert 'for a TOPIK 5 learner' in advanced.review_policy
+    assert 'Do not merely relabel' in advanced.policy
+    assert 'RUN TARGET:' not in beginner.policy
+    assert source_id({'number': 1}) != source_id({'number': 1, 'target_level': 5})
+    with pytest.raises(ValueError, match='level must be'):
+        KoreanHarness(tmp_path / 'bad', 1, runner=object(), level=7)
+
+
+def test_publication_preserves_other_editions_and_merges_exact_source_routes(tmp_path, monkeypatch):
+    run = tmp_path / 'chapter-001'
+    make_reviewed_run(run, level=2)
+    from pipeline import korean_dictionary, korean_sentence_breakdowns
+    original = publication.app_content.build_language
+    observed = {}
+
+    def capture(language, levels):
+        entries = original(language, levels)
+        assert {e['level'] for e in entries} == {1, 2}
+        assets = publication.app_content.ASSET_ROOT
+        words = json.loads((assets / 'usage_dictionary_ko.json').read_text())
+        grammar = json.loads((assets / 'grammar_dictionary_ko.json').read_text())
+        help_data = json.loads((assets / 'korean_sentence_breakdowns.json').read_text())
+        assert set(words['sources']) == set(grammar['sources']) == set(help_data['sources'])
+        assert {row['level'] for row in words['sources'].values()} == {'TOPIK 1', 'TOPIK 2'}
+        assert len({row['id'] for row in words['entries']}) == len(words['entries'])
+        for entry in entries:
+            for chapter in entry['chapters']:
+                data = json.loads((assets / chapter['annotationAsset'].removeprefix('assets/')).read_text())
+                assert all(s['target_curriculum_level'] == entry['level'] for s in data['segments'])
+        observed['checked'] = True
+        return entries
+
+    before = (publication.CONTENT / 'l1.annotations.json').read_bytes()
+    monkeypatch.setattr(publication.app_content, 'build_language', capture)
+    result = publication.publish(tmp_path, promote=False)
+    assert result['level'] == 2
+    assert observed['checked']
+    assert (publication.CONTENT / 'l1.annotations.json').read_bytes() == before

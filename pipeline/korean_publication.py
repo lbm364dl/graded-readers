@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import shutil
 from contextlib import contextmanager
 import json
 from pathlib import Path
@@ -49,6 +50,7 @@ def source_check(chapter: dict) -> None:
 
 
 def verify_run(run_dir: Path) -> tuple[dict, dict, dict, dict]:
+    from pipeline.korean_levels import target_level, source_id, LEVEL_POLICY
     report = read(run_dir / "report.json")
     if report.get("status") != "complete" or report.get("edition") != EDITION:
         raise ValueError("Korean run is incomplete or uses a different edition")
@@ -183,9 +185,14 @@ def verify_run(run_dir: Path) -> tuple[dict, dict, dict, dict]:
     focus = read(run_dir / "lexical-plan.json")
     if focus != outputs["lexical-plan"]:
         raise ValueError("Korean lexical plan differs from reviewed proposal")
-    expected_chapter = contracts.canonical_annotation(annotation, prose, chapter["number"], EDITION, plan, focus)
+    level = target_level(chapter)
+    if report.get('target_level', 1) != level:
+        raise ValueError('Korean run target differs from the reviewed chapter')
+    if level > 1 and report.get('level_policy_sha256') != sha(LEVEL_POLICY.read_bytes()):
+        raise ValueError('Korean level instructions are stale')
+    expected_chapter = contracts.canonical_annotation(annotation, prose, chapter["number"], EDITION, plan, focus, level=level)
     expected_chapter['curriculum'] = {'bindings': outputs['curriculum'],
-        'evaluation': curriculum.evaluate_bindings(expected_chapter, outputs['curriculum'])}
+        'evaluation': curriculum.evaluate_bindings(expected_chapter, outputs['curriculum'], level=level)}
     if expected_chapter != chapter:
         raise ValueError("Korean chapter differs from reviewed proposals")
     if "dictionary" in outputs and outputs["dictionary"] != delta:
@@ -195,17 +202,25 @@ def verify_run(run_dir: Path) -> tuple[dict, dict, dict, dict]:
     help_output = outputs.get("sentence-help", {"sentences": help_data["audit"]})
     if (digest(help_output) != report["stages"]["sentence-help"]["output_digest"]
             or contracts.selected_breakdowns(help_output, chapter,
-                f"assets/annotations/korean_honggildong_l1_{chapter['number']:03d}.json") != help_data):
+                source_id(chapter)) != help_data):
         raise ValueError("Korean sentence help differs from reviewed proposal")
     evidence = {"number": chapter["number"], "chapter_digest": digest(chapter),
                 "source_sha256": report["source_sha256"], "source_notes_sha256": report.get("source_notes_sha256"), "policy_sha256": report["policy_sha256"],
                 "linguistic_reference_sha256": report['linguistic_reference_sha256'],
                 "reviews": reviews}
+    if level > 1:
+        evidence.update(target_level=level, level_policy_sha256=report['level_policy_sha256'])
     return chapter, delta, help_data, evidence
 
 
 def validate_evidence(chapter: dict, evidence: dict, words: dict, grammar: dict,
                       breakdowns: list[dict]) -> None:
+    from pipeline.korean_levels import target_level, LEVEL_POLICY
+    level = target_level(chapter)
+    if evidence.get('target_level', 1) != level:
+        raise ValueError('Korean publication target differs from review evidence')
+    if level > 1 and evidence.get('level_policy_sha256') != sha(LEVEL_POLICY.read_bytes()):
+        raise ValueError('Korean level instructions are stale')
     source_check(chapter)
     manifest, _, _ = load_selected_unit(chapter['source_alignment']['unit'])
     if (evidence.get("chapter_digest") != digest(chapter)
@@ -220,7 +235,7 @@ def validate_evidence(chapter: dict, evidence: dict, words: dict, grammar: dict,
         raise ValueError("Korean independent review coverage is incomplete")
     if 'curriculum' not in chapter:
         raise ValueError('Korean publication lacks reviewed six-level curriculum evidence')
-    grade = curriculum.evaluate_bindings(chapter, chapter['curriculum']['bindings'])
+    grade = curriculum.evaluate_bindings(chapter, chapter['curriculum']['bindings'], level=level)
     if grade != chapter['curriculum']['evaluation'] or not grade['passes']:
         raise ValueError('Korean published curriculum evidence is stale or above level')
     if evidence['reviews']['curriculum']['output_digest'] != digest(chapter['curriculum']['bindings']):
@@ -257,6 +272,11 @@ def publish(run_root: Path, *, promote: bool = True) -> dict:
         raise ValueError("No accepted Korean chapter runs")
     accepted = [verify_run(report.parent) for report in runs]
     chapters = [item[0] for item in accepted]
+    from pipeline.korean_levels import target_level
+    level = target_level(chapters[0])
+    level_key = f"l{level}"
+    if any(target_level(c) != level for c in chapters):
+        raise ValueError("A Korean edition publication must have one target level")
     if [c["number"] for c in chapters] != list(range(1, len(chapters) + 1)):
         raise ValueError("Korean publication requires consecutive chapters starting at 1")
     next_start = 0
@@ -284,22 +304,24 @@ def publish(run_root: Path, *, promote: bool = True) -> dict:
     with tempfile.TemporaryDirectory(prefix="korean-publication-") as temporary:
         root = Path(temporary)
         book = root / "content/korean/honggildong"
+        shutil.copytree(CONTENT, book)
         lexicon, assets = root / "lexicon", root / "assets"
         metadata = {**read(CONTENT / "metadata.json"), "source_edition": "Wikisource/Jikji 30-sheet Gyeongpan edition, revision 460078",
-                    "scope": "reviewed TOPIK-aligned curriculum Level 1 pipeline chapters", "enabled_levels": ["l1"],
+                    "scope": "reviewed TOPIK-aligned curriculum pipeline chapters",
+                    "enabled_levels": sorted(set(read(CONTENT / "metadata.json").get("enabled_levels", [])) | {level_key}),
                     "curriculum_source": curriculum.catalog()['source_url'],
                     "curriculum_source_sha256": curriculum.SOURCE_SHA256,
                     "level_system": curriculum.catalog()['level_system']}
         save(book / "metadata.json", metadata)
-        save(book / "l1.annotations.json", {"schema_version": 1, "language": "korean", "book": "honggildong", "level": "l1", "chapters": chapters})
-        save(book / "l1.sentence-breakdowns.json", {"schema_version": 1, "reviewed": True, "breakdowns": breakdowns,
+        save(book / f"{level_key}.annotations.json", {"schema_version": 1, "language": "korean", "book": "honggildong", "level": level_key, "chapters": chapters})
+        save(book / f"{level_key}.sentence-breakdowns.json", {"schema_version": 1, "reviewed": True, "breakdowns": breakdowns,
              "audits": {str(c["number"]): help_data["audit"] for c, _, help_data, _ in accepted}})
-        save(book / "l1.review.json", {"schema_version": 1, "chapters": evidence})
+        save(book / f"{level_key}.review.json", {"schema_version": 1, "chapters": evidence})
         for name, entries in (("words", words.values()), ("grammar", grammar.values()), ("exceptions", exceptions)):
             save(lexicon / f"l1.{name}.json", {**read(LEXICON / f"l1.{name}.json"), "reviewed": True, "entries": list(entries)})
-        (book / "l1.md").write_text("# 홍길동전\n\n" + "\n\n".join(f"## {c['title']}\n\n{c['text']}" for c in chapters) + "\n", encoding="utf-8")
+        (book / f"{level_key}.md").write_text("# 홍길동전\n\n" + "\n\n".join(f"## {c['title']}\n\n{c['text']}" for c in chapters) + "\n", encoding="utf-8")
         with staged_paths(root / "content", lexicon, assets):
-            entries = app_content.build_language("korean", {"l1": 1})
+            entries = app_content.build_language("korean", {f"l{n}": n for n in range(1, 7)})
             save(assets / "content_ko.json", entries)
         if promote:
             for staged, destination in ((book, CONTENT), (lexicon, LEXICON), (assets, ROOT / "app/assets")):
@@ -310,7 +332,7 @@ def publish(run_root: Path, *, promote: bool = True) -> dict:
                         temporary_path = target.with_suffix(target.suffix + ".tmp")
                         temporary_path.write_bytes(path.read_bytes())
                         temporary_path.replace(target)
-    return {"status": "published" if promote else "validated", "chapters": len(chapters),
+    return {"status": "published" if promote else "validated", "level": level, "chapters": len(chapters),
             "word_entries": len(words), "grammar_entries": len(grammar)}
 
 

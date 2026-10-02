@@ -1,12 +1,13 @@
 # Graded Reader Pipeline
 
-## Korean Level 1 pipeline
+## Korean TOPIK 1–6 pipeline
 
-The current scope is *Hong Gildong*, Level 1, using the pinned searchable
+The generation scope is *Hong Gildong*, TOPIK 1–6, using the pinned searchable
 Wikisource/Jikji 30-sheet original. The planning agent chooses a contiguous
 source span and a coherent stopping paragraph from the remaining narrative;
 the two mapped reference scenes are not chapter limits. The initial publication
-remains chapter 1. The baseline is the six-level NIKL International Standard
+currently contains chapter 1 at TOPIK 1; other editions require their own real
+generation and independent reviews before publication. The baseline is the six-level NIKL International Standard
 Curriculum (2017, corrected 2020-11-17), aligned with TOPIK levels rather than an
 exhaustive exam word list. The earlier A/B/C catalog preserves lexical IDs only.
 Ordinary extra vocabulary retains its source grade and the existing 10% budget.
@@ -25,9 +26,23 @@ source meanings still distinguish functions.
 .venv/bin/python -m pipeline.korean_agent_harness --chapter 1 --run-dir runs/korean-topik1/chapter-001
 .venv/bin/python -m pipeline.korean_publication --run-dir runs/korean-topik1 --check
 .venv/bin/python -m pipeline.korean_publication --run-dir runs/korean-topik1
+# Generate and validate the next edition, preserving already published levels.
+.venv/bin/python -m pipeline.korean_agent_harness --level 2 --chapter 1 --run-dir runs/korean-topik2/chapter-001
+.venv/bin/python -m pipeline.korean_publication --run-dir runs/korean-topik2 --check
+.venv/bin/python -m pipeline.korean_publication --run-dir runs/korean-topik2
 ```
 
-The harness proposes a source plan, reviewed name/story identities, beginner prose,
+`--level` accepts 1–6 and defaults to 1. Each edition chooses its source scope,
+prose register and selective sentence help for that target. Higher-edition
+instructions are in `korean_level_instructions.md`; their fingerprint and the
+explicit target are checked in publication evidence. Do not relabel beginner
+prose or force increasing chapter lengths. Curriculum review retrieves the actual
+word candidates and prerequisites rather than transmitting all 10,635 words.
+The approved dictionary registry remains shared under its historical `l1.*`
+filenames. Publication preserves other editions and combines all published
+source routes in the app dictionary and sentence-help assets.
+
+The harness proposes a source plan, reviewed name/story identities, target-level prose,
 exact tap annotations, curriculum bindings, missing dictionary entries and selective sentence help. Each of the seven stages has an
 independent review and up to seven repairs after the first attempt.
 After a restart, the harness recovers saved annotation assemblies and asks the

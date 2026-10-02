@@ -10,7 +10,7 @@ teaching baseline; it is not an exhaustive exam specification.
 | Layer | Korean implementation | Remaining scope |
 | --- | --- | --- |
 | Source and adaptation | Complete searchable Wikisource/Jikji original pinned to revision 460078, raw/extracted checksums, Unicode paragraph spans, reviewed source notes and lexical identity plan, reviewed source plan and independently reviewed modern prose. The agent selects a contiguous source span and a coherent stopping paragraph from the remaining narrative, with reviewed coverage/omission reasoning. Total chapter length has no numeric quota. The placeholder 某 in the father's name has an edition-specific scholarly reference; it is not treated as a literal personal name. | Source-boundary decisions still require independent review; the two manually mapped scenes are reference examples. Other levels require their own learner policy. The archived 24-sheet scan is a different edition. |
-| Annotation and difficulty | Independently reviewed exact taps, meanings and explicit NIKL identities. Reconstruction, lexical budget and story-term budget gate publication. Unannotatable ordinary words send unpublished prose back for simplification. Sentence length is reported for review rather than mechanically rejected. | The 2017 NIKL curriculum (corrected 2020-11-17) supplies six vocabulary and grammar bands. Explicit independently reviewed sense/POS and construction bindings determine grades; the older A/B/C list only preserves identities. Optional higher-level grammar retains true grades and contextual labels; editorial review judges overall load without a grammar quota. Higher-level generation is not configured yet. |
+| Annotation and difficulty | Independently reviewed exact taps, meanings and explicit NIKL identities. Reconstruction, lexical budget and story-term budget gate publication. Unannotatable ordinary words send unpublished prose back for simplification. Sentence length is reported for review rather than mechanically rejected. | The 2017 NIKL curriculum (corrected 2020-11-17) supplies six vocabulary and grammar bands. Explicit independently reviewed sense/POS and construction bindings determine grades; the older A/B/C list only preserves identities. Optional higher-level grammar retains true grades and contextual labels; editorial review judges overall load without a grammar quota. Generation and target-bound review support TOPIK 1–6; only TOPIK 1 is published so far. |
 | Dictionary editing | Approved reusable entries remain immutable. Only missing word/grammar IDs go to a proposer and independent reviewer. Exact source positions keep repeated uses separate. | No Korean component graph or multi-sense editorial workflow yet. Meaning uncertainty must remain an editorial issue. |
 | Form and construction explanations | Complete-form meanings and separate form labels, exact reviewed per-stage grammar routes; base and transformation rows carry their links without a duplicate list. Wider constructions have exact phrase rows with their full meaning. | No independently editable merged reader-unit layer or Japanese-style merged construction chains. Korean displays annotation taps directly. |
 | Sentence help | Every sentence is inventoried and independently reviewed for selection; selected parts align to taps, while simple sentences remain unselected. | Selection is a reviewed judgment, not an automatic length rule. Korean sentence-help parts currently explain structure in text; grammar lessons open from word/form rows, without inline lesson buttons in the sentence-help parts. |
@@ -147,3 +147,19 @@ Korean coverage (one chapter, ten optional grammar identities) was recomputed;
 its stored evaluations remain correct and need no content repair. Validation:
 81 curriculum/pipeline/publication Python tests and eight Korean reader Flutter
 tests passed, including contextual optional labels and neutral generic lessons.
+
+
+TOPIK edition support: the harness now accepts explicit targets 1–6. The planning
+and prose prompts, independent reviewers, curriculum evaluation and selective
+sentence help use that target. Higher-edition instructions describe register and
+level-appropriate narrative complexity without imposing length or grammar quotas.
+Source asset IDs, dictionary example labels and publication evidence preserve
+each edition's target. Approved dictionary entries remain shared. Publication
+stages existing editions alongside the incoming one and combines their exact
+dictionary and sentence-help routes; it rejects target mismatches. Regression
+coverage verifies reviewed target/source identities for all levels 2–6 and a
+TOPIK 2 publication retaining TOPIK 1, including unique dictionary entries and
+per-edition app tap labels. All 102 focused Python checks pass, and the existing
+real TOPIK 1 run passes publication replay. The real TOPIK 2 run has approved
+source and lexical plans; its chapter draft is under independent prose review.
+This support does not establish that TOPIK 2–6 chapters are already published.

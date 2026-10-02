@@ -63,16 +63,23 @@ def write_asset(output_dir: Path, result: dict) -> None:
 
 
 def build_collection(chapters: list[dict], output_dir: Path) -> dict:
-    reviewed = json.loads(BREAKDOWNS.read_text(encoding="utf-8"))
+    from pipeline.korean_levels import source_id as chapter_source_id, target_level
     result = {"schema_version": 1, "sources": {}, "breakdowns": []}
-    expected = {f"assets/annotations/korean_honggildong_l1_{c['number']:03d}.json" for c in chapters}
-    if any(item["source"] not in expected for item in reviewed["breakdowns"]):
-        raise ValueError("Korean sentence breakdown refers to an unpublished chapter")
+    by_level = {}
     for chapter in chapters:
-        source_id = f"assets/annotations/korean_honggildong_l1_{chapter['number']:03d}.json"
-        data = {**reviewed, "breakdowns": [item for item in reviewed["breakdowns"] if item["source"] == source_id]}
-        asset = build(chapter, output_dir, source_id=source_id, data=data, write=False)
-        result["sources"].update(asset["sources"])
-        result["breakdowns"].extend(asset["breakdowns"])
+        by_level.setdefault(target_level(chapter), []).append(chapter)
+    for level, edition_chapters in by_level.items():
+        reviewed = json.loads(BREAKDOWNS.with_name(f'l{level}.sentence-breakdowns.json').read_text(encoding='utf-8'))
+        expected = {chapter_source_id(c) for c in edition_chapters}
+        if any(item['source'] not in expected for item in reviewed['breakdowns']):
+            raise ValueError('Korean sentence breakdown refers to an unpublished chapter')
+        for chapter in edition_chapters:
+            source_id = chapter_source_id(chapter)
+            data = {**reviewed, 'breakdowns': [item for item in reviewed['breakdowns'] if item['source'] == source_id]}
+            asset = build(chapter, output_dir, source_id=source_id, data=data, write=False)
+            if source_id in result['sources']:
+                raise ValueError('duplicate Korean sentence-help chapter')
+            result['sources'].update(asset['sources'])
+            result['breakdowns'].extend(asset['breakdowns'])
     write_asset(output_dir, result)
     return result

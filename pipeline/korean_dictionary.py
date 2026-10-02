@@ -177,9 +177,11 @@ def build_assets(chapter: dict, output_dir: Path, *, source_id: str = SOURCE,
     used_grammar = {item["entry_id"] for item in grammar_uses}
     if not used_words <= words.keys() or not used_grammar <= grammar.keys():
         raise ValueError("Korean dictionary entries do not match chapter usage")
+    from pipeline.korean_levels import target_level
+    level = target_level(chapter)
     source = {source_id: {
-        "reader_id": "honggildong_l1", "chapter": chapter.get("number", 1),
-        "title": chapter["title"], "level": "TOPIK 1", "text": source_text,
+        "reader_id": f"honggildong_l{level}", "chapter": chapter.get("number", 1),
+        "title": chapter["title"], "level": f"TOPIK {level}", "text": source_text,
     }}
     word_asset = {"schema_version": 1, "language": "korean", "sources": source,
                   "entries": list(words.values()), "occurrences": word_uses}
@@ -205,7 +207,8 @@ def build_collection(chapters: list[dict], output_dir: Path) -> tuple[dict, dict
               for registry in (words, grammar)]
     merged[1]["forms"] = []
     for chapter in chapters:
-        source_id = f"assets/annotations/korean_honggildong_l1_{chapter['number']:03d}.json"
+        from pipeline.korean_levels import source_id as chapter_source_id
+        source_id = chapter_source_id(chapter)
         assets = build_assets(chapter, output_dir, source_id=source_id,
                               word_registry=words, grammar_registry=grammar, write=False)
         for combined, asset in zip(merged, assets):
