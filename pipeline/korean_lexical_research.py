@@ -124,6 +124,24 @@ def primary_record_evidence(url):
         return {'primary_url': url, 'retrieval_error': type(error).__name__}
 
 
+def proposal_reference_urls(proposal):
+    """Include primary records cited to explain unresolved usages, too."""
+    urls = {entry['primary_url'] for entry in proposal['entries']}
+    for entry in proposal['unresolved']:
+        for url in re.findall(r'https://[^\s<>\)\]]+', entry['reason_en']):
+            parsed = urlparse(url)
+            if parsed.hostname == 'krdict.korean.go.kr' and parsed.path.endswith('/dicSearch/SearchView'):
+                field = 'ParaWordNo'
+            elif parsed.hostname == 'stdict.korean.go.kr' and parsed.path in ('/search/searchView.do', '/m/search/searchView.do'):
+                field = 'word_no'
+            else:
+                continue
+            numbers = parse_qs(parsed.query).get(field, [])
+            if len(numbers) == 1 and re.fullmatch(r'[1-9]\d*', numbers[0]):
+                urls.add(url)
+    return sorted(urls)
+
+
 def check_proposal(value, headwords):
     validate(value, PROPOSAL)
     represented = {e['headword'] for e in value['entries']} | {e['headword'] for e in value['unresolved']}
@@ -280,7 +298,7 @@ async def _research_batch(headwords, run_dir, *, runner=None, registry=REGISTRY,
             async with retrieval_limit:
                 return await asyncio.to_thread(primary_record_evidence, url)
         proposal_records = await asyncio.gather(*(retrieve_record(url)
-            for url in sorted({e['primary_url'] for e in proposal['entries']})))
+            for url in proposal_reference_urls(proposal)))
         reviewed_evidence = [*primary_evidence, {'proposal_records': proposal_records}]
         review = await runner.call(f'lexical-research-review-{key}-{attempt}',
             RESEARCH_POLICY + '\nINDEPENDENT REVIEW: '

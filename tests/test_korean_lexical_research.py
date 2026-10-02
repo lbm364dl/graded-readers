@@ -261,6 +261,27 @@ def test_rejected_research_is_repaired_before_promotion(tmp_path):
     assert research.candidates(tmp_path / 'lexemes.json')[0]['grade'] is None
 
 
+def test_unresolved_primary_references_reach_independent_review(tmp_path, monkeypatch):
+    url = 'https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=66315'
+    seen = []
+    monkeypatch.setattr(research, 'primary_record_evidence', lambda reference:
+        seen.append(reference) or {'primary_url': reference, 'text': 'Actual verb record and sleep sense.'})
+    class Runner:
+        async def call(self, job, prompt, *args, **kwargs):
+            if '-review-' in job:
+                inputs = json.loads(prompt.rsplit('\nINPUT:\n', 1)[1])
+                records = inputs['primary_evidence'][-1]['proposal_records']
+                assert records == [{'primary_url': url, 'text': 'Actual verb record and sleep sense.'}]
+                return {'approved': True, 'issues': []}
+            return {'entries': [], 'unresolved': [{'headword': '잠을 이루다',
+                'reason_en': f'Expression under [이루다]({url}); not a standalone lemma. See also https://example.test/claim and https://krdict.korean.go.kr/search-results.'}]}
+    result = asyncio.run(research.research(['잠을 이루다'], tmp_path / 'run',
+        runner=Runner(), registry=tmp_path / 'lexemes.json'))
+    assert result['status'] == 'reviewed'
+    assert seen == [url]  # Neither external claims nor search pages are retrieved.
+    assert research.candidates(tmp_path / 'lexemes.json') == []
+
+
 def test_primary_attested_word_is_ordinary_unlisted_vocabulary_not_an_exemption(monkeypatch):
     from pipeline.korean_readability import diagnostics
     from pipeline.korean_curriculum import evaluate_bindings
