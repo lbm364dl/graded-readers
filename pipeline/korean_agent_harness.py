@@ -289,6 +289,11 @@ def annotation_requests(value: dict, catalog: dict, focus: dict, words: dict) ->
     requests, grammar_ids = {}, set()
     profiles = {entry["id"]: entry for entry in focus["entries"]}
     identity_errors, unresolved_headwords, unresolved_occurrences = [], set(), {}
+    identity_labels = {}
+    for rows in catalog.values():
+        for entry in rows:
+            for label in (entry["id"], entry["id"].rsplit("/", 1)[0]):
+                identity_labels.setdefault(label, set()).add(entry["headword"])
     for segment_index, segment in enumerate(value["segments"]):
         if segment["type"] == "punctuation":
             if any(c.isalnum() for c in segment["text"]):
@@ -306,6 +311,8 @@ def annotation_requests(value: dict, catalog: dict, focus: dict, words: dict) ->
         planned_story = [e for e in profiles.values() if e["kind"] == "story_term" and segment["lemma"] in e["aliases"]]
         if kind == "vocabulary" and not candidates and planned_story:
             raise ValueError(f"This is the reviewed story exception, not a NIKL word: {planned_story}")
+        if kind == "vocabulary" and not candidates and segment["lemma"] in identity_labels:
+            raise ValueError(f"Headword field contains a supplied canonical identity label {segment['lemma']!r}. Use its supplied dictionary headword from {sorted(identity_labels[segment['lemma']])}; keep the exact identity and POS in lexical_id. This is a field repair, not a missing-word research request. Do not infer or merge a different sense.")
         if kind == "vocabulary" and not candidates:
             raise MissingLexicalIdentityError(
                 f"Ordinary word {segment['lemma']} has no supplied lexical identity. Obtain primary dictionary evidence before assigning an ID; do not invent a story-term exemption. If this is a productive grammatical formation rather than an independent lexeme, use its attested lexical base and complete-form stages linked to the actual grammar transformations; reuse comparable reviewed analyses. If primary research finds no standalone headword and this is a transparent noun compound, correct its unapproved segmentation using independently attested component headwords and adjacent learner-sized taps. Preserve every source character, including the absence of spaces. Do not split idioms, infer a pattern merely from a suffix, or guess component contributions; uncertain meanings remain an editorial research need.",
@@ -757,7 +764,7 @@ class KoreanHarness:
                     self.catalog = contracts.lexical_catalog()
                 candidate_entries = lexical_candidates(proposed['headwords'], self.catalog)
             annotation_prompt = "Annotate this exact prose in source-aligned sentence chunks. The assembled result must preserve every character and use learner-sized taps. "
-            annotation_prompt += "Supply the dictionary headword in lemma, an exact NIKL lexical ID for vocabulary, "
+            annotation_prompt += "Supply only the dictionary headword in lemma: canonical IDs, POS labels and identity homonym numbers belong in lexical_id, not lemma. Use an exact NIKL lexical ID for vocabulary, "
             annotation_prompt += "or a supplied independently reviewed krdict-/stdict- candidate ID where the teaching catalogs lack that lexeme. Copy candidate IDs verbatim; do not strip homonym numbers, add an unsupported number, or manufacture an unsuffixed identity. "
             annotation_prompt += "approved IDs for existing names/grammar; shortened names keep the approved full-name identity and headword. Do not duplicate an entry for a shortened name. Use stable English IDs for genuinely new grammar functions. "
             annotation_prompt += "Every inflected word needs ordered complete-form transformation steps rooted in an attested lexical word or name, never a grammar identity. Productive adjective-plus-하다 constructions keep their lexical adjective base and link the transformation separately. The dictionary-form base is supplied by lemma and its own UI row: DO NOT repeat it in form_steps. Each step uses the schema field grammar_entry_ids: an array containing EXACTLY ONE grammar ID, with a matching grammar_links record on the same segment. There is no singular grammar_entry_id field. "

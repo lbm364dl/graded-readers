@@ -1849,3 +1849,22 @@ def test_plan_review_exposes_actual_retained_coverage_without_assuming_opening(t
     harness = KoreanHarness(tmp_path, 6, runner=Runner())
     assert asyncio.run(harness.stage('plan', 'Plan source', 'plan', lambda _: None,
         {'chapter_number': 1, 'source_start': 0, 'existing_text': ''})) == proposal
+
+
+@pytest.mark.parametrize('lemma', ['염려하다01', '염려하다01/동', 'krdict-123', 'unknown-word'])
+def test_identity_labels_in_headword_fields_need_repair_not_lexical_research(lemma):
+    from pipeline.korean_agent_harness import annotation_requests, MissingLexicalIdentityError
+    catalog = {'염려하다': [
+        {'id': '염려하다01/동', 'headword': '염려하다', 'pos': '동', 'meaning': 'worry', 'grade': 'A'},
+        {'id': 'krdict-123/동', 'headword': '염려하다', 'pos': '동', 'meaning': 'worry', 'grade': None}]}
+    raw = {'segments': [{'type': 'word', 'text': '염려했다', 'meaning_en': 'worried',
+        'lemma': lemma, 'lexical_kind': 'vocabulary', 'lexical_id': '염려하다01/동',
+        'story_importance_en': '', 'form_steps': []}], 'grammar_links': [], 'inflected_segment_indices': []}
+    with pytest.raises(ValueError) as failure:
+        annotation_requests(raw, catalog, {'entries': []}, {})
+    if lemma == 'unknown-word':
+        assert isinstance(failure.value, MissingLexicalIdentityError)
+    else:
+        assert not isinstance(failure.value, MissingLexicalIdentityError)
+        assert 'field repair' in str(failure.value)
+        assert '염려하다' in str(failure.value)
