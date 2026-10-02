@@ -1121,6 +1121,12 @@ def test_partial_review_repair_recovers_new_proposals_not_rejected_data(tmp_path
             elif '-review-' in job:
                 value = {'approved': True, 'issues': []}
             elif job.endswith('-repair-plan'):
+                inputs = json.loads(args[0].rsplit('\nINPUT:\n', 1)[1])
+                approved_ids = set(dictionary._registry(dictionary.WORDS))
+                assert set(inputs['approved_word_entry_ids']) == approved_ids
+                candidates = {entry['id'] for entries in contracts.lexical_catalog().values() for entry in entries}
+                assert candidates - approved_ids  # Catalog candidates are not approved definitions.
+                assert 'Only IDs in approved_word_entry_ids' in args[0]
                 value = {'repairs': [{'chunk_index': 1, 'issues': ['Clarify contextual meaning.']}],
                     'prose_revision_reason_en': '', 'dictionary_revision_entry_ids': []}
             elif '-chunk-' in job:

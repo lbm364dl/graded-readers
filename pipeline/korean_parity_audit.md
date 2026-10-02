@@ -441,3 +441,33 @@ destinations rather than inventing whole-formation lemmas. A regression exercise
 that existing analysis through canonicalization and asset validation, contrasting
 an invented 대우받다 identity that remains rejected. The stopped run resumed
 from cache; no approved dictionary definitions or source prose were rewritten.
+
+Unresolved lexical research can cite an expression under another dictionary
+headword without proposing a new lemma. Those cited direct primary records now
+reach the offline independent reviewer too; previously only proposed entries'
+URLs were retrieved. Retrieval accepts exact official record URLs, not arbitrary
+external claims or search pages. Regression coverage checks this evidence handoff
+and the contrasting URLs that must not be retrieved.
+
+Curriculum generation and independent review now receive matching, independently
+reviewed occurrence investigations, as annotation review already did. Evidence
+is scoped to requested vocabulary identities and exact observed forms/meanings;
+names, unrelated batches and different senses do not inherit approval. It supplies
+no curriculum grade. This repairs repeated requests to reinvestigate the already
+reviewed interpersonal use of 가까이하다; unrelated mappings remain cached.
+
+Repair triage now receives the exact approved word-ID set. Only those definitions
+may be sent to shared dictionary revision. Catalog candidates and requested new
+entries are distinct: uncertain occurrence senses need primary lexical research,
+and new reusable definitions remain the later dictionary editor's responsibility.
+Regressions exercise repair recovery with both approved IDs and candidates outside
+that set. The TOPIK 5 run resumed after incorrectly selecting unapproved 놓다 and
+태우다 entries for dictionary revision.
+
+Targeted review of the current TOPIK 4 and 5 drafts verified 걸리다's mind-bothering
+sense, 놓다's worry/tension-easing sense and 태우다's anxiety-causing sense under
+their existing identities. The distinct adverb use of 본래 received primary
+identity stdict-429486/부; its noun identity remains separate. Actual direct record
+text and independent approval are stored in the supplemental registry. These are
+lexical findings, not approved chapter annotations or curriculum grades. Final
+review and publication of the advanced drafts remain required.

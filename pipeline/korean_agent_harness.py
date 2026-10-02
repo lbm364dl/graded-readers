@@ -672,12 +672,14 @@ class KoreanHarness:
                             'set prose_revision_reason_en to the concrete wording issue and return no annotation repairs. '
                             'Otherwise leave that reason empty; grammar-link, identity, pronunciation and technical errors need annotation repair, not new prose. '
                             'If an approved word definition lacks a legitimate observed sense, put its exact ID in dictionary_revision_entry_ids. '
+                            'Only IDs in approved_word_entry_ids have approved definitions eligible for shared revision. Lexical candidates and requested new entries are not approved definitions. For those, repair the annotation using verified sense evidence; uncertain meanings need separate lexical research, and new reusable definitions belong to the later dictionary stage. '
                             'That stops annotation for separate shared dictionary editorial review against all published uses and this draft; '
                             'do not retry this as annotation or hide unapproved sense proposals in learner notes. Leave the array empty if no shared definition correction is needed. '
 
                             'For a general pronunciation issue, identify chunks containing pronunciation notes that differ from their written forms. '
                             'Do not rewrite prose. '
                             + payload(annotation_index=repair_context, review_issues=issues, chunks=inventory,
+                                      approved_word_entry_ids=sorted(self.words),
                                       linguistic_reference=read(LINGUISTIC_REFERENCE)),
                             contracts.schema_path('annotation-repair-plan'), 'high', tool_profile='offline')
                         validate(selection, contracts.ANNOTATION_REPAIR_PLAN)
