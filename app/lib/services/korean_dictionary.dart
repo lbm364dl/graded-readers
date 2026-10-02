@@ -40,7 +40,8 @@ class KoreanDictionary {
     if (words['sources'][source]?['text'] != sourceText) return null;
     for (final value in words['occurrences'] as List) {
       final use = value as Map<String, dynamic>;
-      if (use['source'] == source &&
+      if (use['occurrence_kind'] != 'expression' &&
+          use['source'] == source &&
           use['segment_index'] == segmentIndex &&
           use['surface'] == surface &&
           use['gloss'] == gloss) {
@@ -48,6 +49,24 @@ class KoreanDictionary {
       }
     }
     return null;
+  }
+
+  List<Map<String, dynamic>> expressionUses(
+      String source, String sourceText, int segmentIndex, String surface) {
+    if (words['sources'][source]?['text'] != sourceText) return [];
+    final uses = (words['occurrences'] as List).cast<Map<String, dynamic>>();
+    if (!uses.any((use) =>
+        use['occurrence_kind'] != 'expression' &&
+        use['source'] == source &&
+        use['segment_index'] == segmentIndex &&
+        use['surface'] == surface)) return [];
+    return uses
+        .where((use) =>
+            use['occurrence_kind'] == 'expression' &&
+            use['source'] == source &&
+            use['segment_index'] <= segmentIndex &&
+            segmentIndex <= use['end_segment_index'])
+        .toList();
   }
 
   List<Map<String, dynamic>> grammarUses(
@@ -98,4 +117,16 @@ class KoreanDictionary {
       ((isGrammar ? grammar : words)['entries'] as List)
           .cast<Map<String, dynamic>>()
           .singleWhere((entry) => entry['id'] == id);
+
+  List<List<Map<String, dynamic>>> exampleGroups(String id,
+      {required bool isGrammar}) {
+    final groups = <String, List<Map<String, dynamic>>>{};
+    for (final use in ((isGrammar ? grammar : words)['occurrences'] as List)
+        .cast<Map<String, dynamic>>()
+        .where((use) => use['entry_id'] == id)) {
+      final position = use['sentence_start'] ?? use['start'] ?? use['id'];
+      groups.putIfAbsent('${use['source']}\u0000$position', () => []).add(use);
+    }
+    return groups.values.toList();
+  }
 }

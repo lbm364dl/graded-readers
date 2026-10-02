@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import hashlib
+from functools import lru_cache
 from pathlib import Path
 
 from pipeline.korean_readability import ROOT
@@ -55,13 +56,17 @@ def _registry(path: Path) -> dict[str, dict]:
     return by_id
 
 
+@lru_cache(maxsize=32)
+def _sentence_ranges(text: str) -> tuple[tuple[str, int], ...]:
+    from pipeline.korean_contracts import sentence_inventory
+    return tuple((row['sentence'], row['start']) for row in sentence_inventory(text))
+
+
 def _sentence(text: str, start: int) -> tuple[str, int]:
-    before = max(text.rfind(mark, 0, start) for mark in ".!?。！？") + 1
-    while before < len(text) and text[before].isspace():
-        before += 1
-    after = min((position + 1 for mark in ".!?。！？"
-                 if (position := text.find(mark, start)) >= 0), default=len(text))
-    return text[before:after], before
+    for sentence, before in _sentence_ranges(text):
+        if before <= start < before + len(sentence):
+            return sentence, before
+    raise ValueError('Korean dictionary occurrence is outside a source sentence')
 
 
 def build_assets(chapter: dict, output_dir: Path, *, source_id: str = SOURCE,
@@ -101,6 +106,29 @@ def build_assets(chapter: dict, output_dir: Path, *, source_id: str = SOURCE,
         })
     if "".join(segment["text"] for segment in segments) != source_text:
         raise ValueError("Korean dictionary positions do not reconstruct source")
+    expression_seen = set()
+    for link in chapter.get('expression_links', []):
+        first, last, identity = link['segment_index'], link['end_segment_index'], link['entry_id']
+        if (type(first) is not int or type(last) is not int or not 0 <= first <= last < len(segments)
+                or segments[first]['type'] != 'word' or segments[last]['type'] != 'word'
+                or identity not in words or words[identity]['kind'] != 'word'
+                or not str(link['meaning_en']).strip() or not str(link['context_en']).strip()):
+            raise ValueError('Invalid Korean lexical expression destination or span')
+        surface = ''.join(segment['text'] for segment in segments[first:last + 1])
+        if link['form'] != surface or not any(segment.get('lexical', {}).get('id') == identity
+                for segment in segments[first:last + 1]):
+            raise ValueError('Korean lexical expression must preserve its exact source form and attested component identity')
+        key = (first, last, identity)
+        if key in expression_seen:
+            raise ValueError('Duplicate Korean lexical expression occurrence')
+        expression_seen.add(key)
+        start, end = positions[first][0], positions[last][1]
+        sentence, sentence_start = _sentence(source_text, start)
+        word_uses.append({'id': f'{source_id}#expression-{first}-{last}-{identity}',
+            'source': source_id, 'occurrence_kind': 'expression', 'segment_index': first,
+            'end_segment_index': last, 'start': start, 'end': end, 'surface': surface,
+            'gloss': link['meaning_en'], 'context_en': link['context_en'], 'entry_id': identity,
+            'sentence': sentence, 'sentence_start': sentence_start})
     links = chapter.get("grammar_links")
     if not isinstance(links, list):
         raise ValueError("Korean grammar occurrence review missing")
@@ -109,6 +137,8 @@ def build_assets(chapter: dict, output_dir: Path, *, source_id: str = SOURCE,
     for link in links:
         index = link["segment_index"]
         entry_id = link["entry_id"]
+        if entry_id in words:
+            raise ValueError('Korean grammar link points to a word entry; use expression_links for a lexical expression')
         if (not isinstance(index, int) or not 0 <= index < len(segments)
                 or segments[index]["type"] != "word" or entry_id not in grammar
                 or not str(link.get("context_en", "")).strip()

@@ -15,6 +15,103 @@ Future<Map<String, dynamic>> annotation(String source) async =>
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
+  testWidgets(
+      'Lexical expressions retain word destinations and one card per source sentence',
+      (tester) async {
+    const source = 'fixture';
+    const text = '마음 놓고. 마음 놓고.';
+    final uses = <Map<String, dynamic>>[];
+    for (final offset in [0, 7]) {
+      final index = offset == 0 ? 0 : 4;
+      uses.add({
+        'id': 'mind-$index',
+        'source': source,
+        'segment_index': index,
+        'surface': '마음',
+        'gloss': 'mind',
+        'entry_id': 'mind',
+        'start': offset,
+        'sentence': '마음 놓고.',
+        'sentence_start': offset
+      });
+      uses.add({
+        'id': 'word-$index',
+        'source': source,
+        'segment_index': index + 2,
+        'surface': '놓고',
+        'gloss': 'ease worries and',
+        'entry_id': 'release',
+        'start': offset + 3,
+        'sentence': '마음 놓고.',
+        'sentence_start': offset
+      });
+      uses.add({
+        'id': 'expression-$index',
+        'source': source,
+        'occurrence_kind': 'expression',
+        'segment_index': index,
+        'end_segment_index': index + 2,
+        'surface': '마음 놓고',
+        'gloss': 'at ease',
+        'entry_id': 'release',
+        'start': offset,
+        'context_en': 'The phrase expresses relief from worry.',
+        'sentence': '마음 놓고.',
+        'sentence_start': offset
+      });
+    }
+    final dictionary = KoreanDictionary({
+      'language': 'korean',
+      'sources': {
+        source: {'text': text}
+      },
+      'entries': [
+        {
+          'id': 'mind',
+          'headword': '마음',
+          'kind': 'word',
+          'definition_en': 'mind'
+        },
+        {
+          'id': 'release',
+          'headword': '놓다',
+          'kind': 'word',
+          'definition_en': 'To ease worry or tension.'
+        }
+      ],
+      'occurrences': uses
+    }, {
+      'language': 'korean',
+      'sources': {},
+      'entries': [],
+      'occurrences': []
+    });
+    final expressions = dictionary.expressionUses(source, text, 2, '놓고');
+    expect(expressions.single['entry_id'], 'release');
+    expect(
+        dictionary.expressionUses(source, '$text changed', 2, '놓고'), isEmpty);
+    expect(
+        dictionary.expressionUses(source, text, 2, 'wrong surface'), isEmpty);
+    expect(dictionary.expressionUses(source, text, 99, '놓고'), isEmpty);
+    expect(dictionary.wordUse(source, text, 2, '놓고', 'ease worries and')!['id'],
+        'word-0');
+    final groups = dictionary.exampleGroups('release', isGrammar: false);
+    expect(groups.length, 2);
+    expect(groups.every((group) => group.length == 2), isTrue);
+    await tester.pumpWidget(MaterialApp(
+        home: KoreanEntryScreen(
+            dictionary: dictionary,
+            entry: dictionary.entry('release', isGrammar: false),
+            grammar: false,
+            selectedUse: expressions.single)));
+    expect(find.text('마음 놓고'), findsOneWidget);
+    expect(find.text('at ease'), findsOneWidget);
+    expect(find.text('To ease worry or tension.'), findsOneWidget);
+    expect(find.text('마음 놓고.'), findsNWidgets(2));
+    expect(find.textContaining('놓고 · ease worries and'), findsNWidgets(2));
+    expect(find.textContaining('마음 놓고 · at ease'), findsNWidgets(2));
+  });
+
   test('Optional grammar retains its true grade and is contextual', () {
     expect(koreanGrammarLevelCue(null), isEmpty);
     expect(
@@ -245,13 +342,31 @@ void main() {
         final constructions = dictionary
             .grammarUses(source, text, index, segments[index].text)
             .where((u) => !ids.contains(u['entry_id']))
-            .length;
+            .toList();
+        final inlineLessons = constructions
+            .where((use) =>
+                use['segment_index'] == index &&
+                use['display_end_segment_index'] == index &&
+                use['display_form'] == segments[index].formSteps.last.form &&
+                use['display_meaning_en'] ==
+                    segments[index].formSteps.last.meaningEn)
+            .toList();
+        final expressions = dictionary.expressionUses(
+            source, text, index, segments[index].text);
         expect(find.byType(KoreanFormChain), findsOneWidget);
-        expect(find.byType(TextButton), findsNothing);
+        expect(find.byType(TextButton), findsNWidgets(inlineLessons.length));
+        for (final use in inlineLessons) {
+          final title =
+              dictionary.entry(use['entry_id'], isGrammar: true)['title_en'];
+          expect(find.textContaining('Grammar · $title'), findsOneWidget);
+        }
         expect(
             find.byType(ListTile),
-            findsNWidgets(
-                1 + segments[index].formSteps.length + constructions));
+            findsNWidgets(1 +
+                segments[index].formSteps.length +
+                constructions.length -
+                inlineLessons.length +
+                expressions.length));
         expect(
             tester
                 .widgetList<ListTile>(find.byType(ListTile))

@@ -21,6 +21,9 @@ STEP = obj({"form": STRING, "reading": STRING, "label": STRING,
 LINK = obj({"segment_index": {"type": "integer"}, "entry_id": STRING,
             "context_en": STRING, "display_form": STRING,
             "display_meaning_en": STRING, "display_end_segment_index": {"type": "integer"}})
+EXPRESSION_LINK = obj({'segment_index': {'type': 'integer', 'minimum': 0},
+    'end_segment_index': {'type': 'integer', 'minimum': 0}, 'entry_id': STRING,
+    'form': STRING, 'meaning_en': STRING, 'context_en': STRING})
 NONEMPTY = {"type": "string", "minLength": 1}
 WORD_SEGMENT = obj({"text": NONEMPTY, "type": {"type": "string", "enum": ["word"]},
     "meaning_en": NONEMPTY, "lemma": NONEMPTY,
@@ -34,7 +37,9 @@ PUNCTUATION_SEGMENT = obj({"text": NONEMPTY, "type": {"type": "string", "enum": 
 SEGMENT = {"anyOf": [WORD_SEGMENT, PUNCTUATION_SEGMENT]}
 ANNOTATION = obj({"segments": {"type": "array", "minItems": 1, "items": SEGMENT},
                   "grammar_links": {"type": "array", "items": LINK},
-                  "inflected_segment_indices": {"type": "array", "items": {"type": "integer"}}})
+                  "inflected_segment_indices": {"type": "array", "items": {"type": "integer"}},
+                  'expression_links': {'type': 'array', 'items': EXPRESSION_LINK}},
+                 required=['segments', 'grammar_links', 'inflected_segment_indices'])
 PLAN = obj({"title": STRING, "scope_reason_en": NONEMPTY,
     "last_source_paragraph_index": {"type": "integer", "minimum": 0}, "beats": {"type": "array", "minItems": 1,
     "items": obj({"source_paragraph_index": {"type": "integer"}, "event_en": STRING})}})
@@ -192,6 +197,8 @@ def canonical_annotation(value: dict, prose: dict, number: int, edition: str, pl
             "source_alignment": {"edition": edition, "reviewed": True, "beats": plan["beats"]}}
     if level > 1:
         result["target_level"] = level
+    if value.get('expression_links'):
+        result['expression_links'] = value['expression_links']
     if focus is not None:
         result["lexical_focus"] = focus
     if 'scope' in plan:
@@ -244,11 +251,14 @@ def annotation_view(value: dict, *, max_characters: int = 800000) -> dict:
             else:
                 row.append(segment[column])
         rows.append([index, *row])
-    return {'format': 'lossless_annotation_rows', 'segment_columns': ['index', *columns],
+    result = {'format': 'lossless_annotation_rows', 'segment_columns': ['index', *columns],
         'form_step_columns': step_columns, 'segments': rows,
         'grammar_link_columns': link_columns,
         'grammar_links': [[link[column] for column in link_columns] for link in value['grammar_links']],
         'inflected_segment_indices': value['inflected_segment_indices']}
+    if 'expression_links' in value:
+        result['expression_links'] = value['expression_links']
+    return result
 
 
 def bind_grammar_identities(value: dict, bindings: dict, approved_ids: set) -> dict:
@@ -317,6 +327,15 @@ def slice_annotations(value: dict, texts: list[str]) -> list[dict]:
                     if link['display_end_segment_index'] != -1 else -1})
         chunks.append({'segments': value['segments'][first:last], 'grammar_links': links,
                        'inflected_segment_indices': [index - first for index in value['inflected_segment_indices'] if first <= index < last]})
+        if 'expression_links' in value:
+            expressions = []
+            for link in value['expression_links']:
+                if first <= link['segment_index'] < last:
+                    if link['end_segment_index'] >= last:
+                        raise ValueError('Korean annotation slice crosses a lexical expression')
+                    expressions.append({**link, 'segment_index': link['segment_index'] - first,
+                        'end_segment_index': link['end_segment_index'] - first})
+            chunks[-1]['expression_links'] = expressions
         first = last
     return chunks
 
@@ -338,6 +357,14 @@ def combine_annotations(values: list[dict], texts: list[str]) -> dict:
             raise ValueError("Korean annotation chunk form index escapes its source")
         result["segments"].extend(value["segments"])
         result["inflected_segment_indices"].extend(i + offset for i in value["inflected_segment_indices"])
+        if 'expression_links' in value:
+            result.setdefault('expression_links', [])
+            for link in value['expression_links']:
+                if not 0 <= link['segment_index'] <= link['end_segment_index'] < len(value['segments']):
+                    raise ValueError('Korean expression link escapes its source chunk')
+                result.setdefault('expression_links', []).append({**link,
+                    'segment_index': link['segment_index'] + offset,
+                    'end_segment_index': link['end_segment_index'] + offset})
     return result
 
 

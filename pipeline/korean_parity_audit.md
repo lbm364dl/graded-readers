@@ -521,3 +521,41 @@ characters without sampling or shortening. All 32 completed annotation batches
 were recovered on resume. A regression reconstructs every field and occurrence
 from the packed view, proves no mutation, and contrasts the unchanged small-input
 path. The relevant 120-test suite passed. Final semantic review is still required.
+
+## TOPIK 5 publication and structured expression links
+
+TOPIK 5 chapter 1 passed all seven independent gates and publication replay:
+2,732 characters, source paragraphs 0–23, 1,347 segments and 14 selected sentence
+breakdowns. The exceptional vocabulary ratio is 0.07249. Published levels are
+currently 1, 2 and 5, sharing 441 word entries and 167 grammar entries. The
+reviewed self-directed-judgment sense of 알다 was audited across 13 published and
+draft occurrences before promotion; approved older dictionary evidence remains
+verifiable through the revision ledger.
+
+TOPIK 4 review exposed a missing shared representation for idiomatic lexical
+expressions. Fresh annotations now include expression_links with exact component
+spans, a component's attested lexical identity, complete idiomatic meaning and
+passage context. Word identities are rejected in grammar_links. App expression
+cards open the lexical entry while preserving the original component taps.
+Legacy annotations remain readable. Existing published annotations have not been
+retroactively given expression spans; the new layer is available to the active
+chapter-generation and repair runs. Regression coverage contrasts valid spans
+with incorrect text, unrelated word identities and invalid ranges.
+
+Dictionary examples now group annotation layers by source and sentence position,
+keeping their useful notes together. Identical sentences at distinct positions
+remain separate. Closing quotes use the same source sentence inventory as
+sentence help rather than leaking into the next example. Quoted, unquoted and
+repeated-position cases are covered without changing source text or tap bounds.
+
+The complete-form UI merges identical single-tap form/meaning rows into a single
+displayed stage while retaining both grammar destinations. Different meanings
+and wider constructions remain separate. All nine Korean Flutter tests passed;
+the actual mobile Chrome preview showed 살다 → 살았다 (“lived”) and a separate
+English Plain statement lesson button, which opened its correct lesson.
+
+TOPIK 6 reuse planning also exceeded the model input limit. Its candidate
+annotations now use the same lossless row format as whole reviews; no fields or
+occurrences are dropped. The real resumed run recovered 10 of 32 batches after
+independent selection. Seven targeted reuse/packing tests passed. The remaining
+batches require fresh work because of review findings; final approval is pending.

@@ -231,11 +231,49 @@
       "items": {
         "type": "integer"
       }
+    },
+    "expression_links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "segment_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "end_segment_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "entry_id": {
+            "type": "string"
+          },
+          "form": {
+            "type": "string"
+          },
+          "meaning_en": {
+            "type": "string"
+          },
+          "context_en": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "segment_index",
+          "end_segment_index",
+          "entry_id",
+          "form",
+          "meaning_en",
+          "context_en"
+        ]
+      }
     }
   },
   "required": [
     "segments",
     "grammar_links",
-    "inflected_segment_indices"
+    "inflected_segment_indices",
+    "expression_links"
   ]
 }

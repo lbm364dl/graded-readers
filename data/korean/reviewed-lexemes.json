@@ -8965,6 +8965,310 @@
         ]
       },
       "occurrence_requests_digest": "0b5789628e2cf46182392d6a12494b540bdfe6e6b7cec5b26e8203e7552994bb"
+    },
+    {
+      "headwords": [
+        "판서"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "stdict-351555/명",
+            "headword": "판서",
+            "pos": "명",
+            "meaning_en": "A chief government official in late Goryeo; the minister heading one of the six ministries in Joseon.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=351555",
+            "evidence_en": "The supplied direct Standard Dictionary record attests 판서 (判書), 명사, with three historical office senses, including the head of a Joseon ministry. This covers the requested minister sense. No exact Basic Dictionary headword was found in web searches; no existing catalog identity was supplied."
+          },
+          {
+            "id": "stdict-351556/명",
+            "headword": "판서",
+            "pos": "명",
+            "meaning_en": "Historically, writing the date and name and affixing a seal to a document submitted to the king.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=351556",
+            "evidence_en": "The supplied direct Standard Dictionary record attests 판서 (判署), 명사, with this historical documentary practice as its definition. It is a distinct homonym of 判書 and 板書; no existing catalog identity was supplied."
+          },
+          {
+            "id": "stdict-351558/명",
+            "headword": "판서",
+            "pos": "명",
+            "meaning_en": "Writing on a blackboard with chalk, or the resulting writing.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=351558",
+            "evidence_en": "The supplied direct Standard Dictionary record attests 판서 (板書), 명사, explicitly defining both the act and its written result. It is a distinct homonym of 判書 and 判署; no existing catalog identity was supplied."
+          }
+        ],
+        "unresolved": []
+      },
+      "proposal_digest": "d4ce1c0d9594dbc28cdf169297690ac3ecfa24d21ee312785c0196e2303128e0",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "c6a0027d0694ef196c9553b759424d8b6193bc75b157ffd83bda766412ea8f52",
+      "primary_evidence": [
+        {
+          "headword_request": "판서",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%ED%8C%90%EC%84%9C",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=351555",
+              "content_sha256": "61f4e9d0f92b0f77fd9aef916ac02bd971377cb652601eec251e7b88421c5fb1",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 판서 1 (判書 ) 원어 判 판가름할 판 부수 刀/총획 7 書 글 서 부수 曰/총획 10 한자 발음 [판서 ] 「명사」 「1」 『역사』 고려 말기에 둔, 전리사(典理司)·군부사(軍簿司) 따위의 으뜸 벼슬. 품계는 정삼품이다. 「2」 『역사』 고려 말기에 둔, 육조(六曹)의 으뜸 벼슬. 정삼품 벼슬로 공양왕 1년(1389)에 상서(尙書)를 고친 것이다. 「3」 『역사』 조선 시대에 둔, 육조의 으뜸 벼슬. 정이품 벼슬로 태종 5년(1405)에 베풀어서 고종 31년(1894)에 없앴다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=351556",
+              "content_sha256": "94d3f9cea2b15e45a0954b687897d5448f7945dfa13ac100b9be8bcd171b397c",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 판서 2 (判署 ) 원어 判 판가름할 판 부수 刀/총획 7 署 관청 서 부수 网/총획 14 한자 발음 [판서 ] 부표제어 판서-하다 1 「명사」 『역사』 임금에게 아뢰는 문서에 날짜와 이름을 쓰고 도장을 찍던 일. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=351558",
+              "content_sha256": "5075fbf7468a91da3bc06072d903ac7929c33c071bf039ed08cfbb39092c31a6",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 판서 3 (板書 ) 원어 板 널빤지 판 부수 木/총획 8 書 글 서 부수 曰/총획 10 한자 발음 [판서 ] 부표제어 판서-하다 2 「명사」 칠판에 분필로 글을 씀. 또는 그 글. 그 강의는 주로 선생님의 판서와 설명으로 진행되었다. 키가 작아 맨 앞줄에 앉는 명애가 며칠 전 판서를 전혀 필기하지 않는 걸 발견하고야 눈이 나쁘다는 걸 알게 됐다. ≪황순원, 신들의 주사위≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "proposal_records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=351555",
+              "content_sha256": "61f4e9d0f92b0f77fd9aef916ac02bd971377cb652601eec251e7b88421c5fb1",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 판서 1 (判書 ) 원어 判 판가름할 판 부수 刀/총획 7 書 글 서 부수 曰/총획 10 한자 발음 [판서 ] 「명사」 「1」 『역사』 고려 말기에 둔, 전리사(典理司)·군부사(軍簿司) 따위의 으뜸 벼슬. 품계는 정삼품이다. 「2」 『역사』 고려 말기에 둔, 육조(六曹)의 으뜸 벼슬. 정삼품 벼슬로 공양왕 1년(1389)에 상서(尙書)를 고친 것이다. 「3」 『역사』 조선 시대에 둔, 육조의 으뜸 벼슬. 정이품 벼슬로 태종 5년(1405)에 베풀어서 고종 31년(1894)에 없앴다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=351556",
+              "content_sha256": "94d3f9cea2b15e45a0954b687897d5448f7945dfa13ac100b9be8bcd171b397c",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 판서 2 (判署 ) 원어 判 판가름할 판 부수 刀/총획 7 署 관청 서 부수 网/총획 14 한자 발음 [판서 ] 부표제어 판서-하다 1 「명사」 『역사』 임금에게 아뢰는 문서에 날짜와 이름을 쓰고 도장을 찍던 일. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=351558",
+              "content_sha256": "5075fbf7468a91da3bc06072d903ac7929c33c071bf039ed08cfbb39092c31a6",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 판서 3 (板書 ) 원어 板 널빤지 판 부수 木/총획 8 書 글 서 부수 曰/총획 10 한자 발음 [판서 ] 부표제어 판서-하다 2 「명사」 칠판에 분필로 글을 씀. 또는 그 글. 그 강의는 주로 선생님의 판서와 설명으로 진행되었다. 키가 작아 맨 앞줄에 앉는 명애가 며칠 전 판서를 전혀 필기하지 않는 걸 발견하고야 눈이 나쁘다는 걸 알게 됐다. ≪황순원, 신들의 주사위≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "0b11504bff2234e43c200a242a8dd6800715888c4afebc2c79f95d567736af39",
+      "occurrence_requests": {
+        "판서": [
+          {
+            "text": "판서에",
+            "meaning_en": "to the rank of minister"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "4458f04ea98134ee0a0ef0bc52b5c9a043882f57f8c81f6318d642fb2fe8fda3"
+    },
+    {
+      "headwords": [
+        "판서"
+      ],
+      "proposal": {
+        "entries": [],
+        "unresolved": [
+          {
+            "headword": "판서",
+            "reason_en": "The requested noun meaning ‘minister’ is already covered by stdict-351555/명 (判書). The supplied readable direct Standard Dictionary record verifies the exact headword 판서, noun POS, and historical sense of the official heading a ministry: https://stdict.korean.go.kr/search/searchView.do?word_no=351555. The other attested noun homonyms, 判署 (dating, signing and sealing a document submitted to the king) and 板書 (blackboard writing), are also already covered by stdict-351556/명 and stdict-351558/명 respectively. No standalone Basic Dictionary record was verified. No new identity is warranted."
+          }
+        ]
+      },
+      "proposal_digest": "ac86c9b5ae6303fbaba1173d33adaa7ce7c4206229948aa919be0251a919b84b",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "c6a0027d0694ef196c9553b759424d8b6193bc75b157ffd83bda766412ea8f52",
+      "primary_evidence": [
+        {
+          "headword_request": "판서",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%ED%8C%90%EC%84%9C",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=351555",
+              "content_sha256": "61f4e9d0f92b0f77fd9aef916ac02bd971377cb652601eec251e7b88421c5fb1",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 판서 1 (判書 ) 원어 判 판가름할 판 부수 刀/총획 7 書 글 서 부수 曰/총획 10 한자 발음 [판서 ] 「명사」 「1」 『역사』 고려 말기에 둔, 전리사(典理司)·군부사(軍簿司) 따위의 으뜸 벼슬. 품계는 정삼품이다. 「2」 『역사』 고려 말기에 둔, 육조(六曹)의 으뜸 벼슬. 정삼품 벼슬로 공양왕 1년(1389)에 상서(尙書)를 고친 것이다. 「3」 『역사』 조선 시대에 둔, 육조의 으뜸 벼슬. 정이품 벼슬로 태종 5년(1405)에 베풀어서 고종 31년(1894)에 없앴다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=351556",
+              "content_sha256": "94d3f9cea2b15e45a0954b687897d5448f7945dfa13ac100b9be8bcd171b397c",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 판서 2 (判署 ) 원어 判 판가름할 판 부수 刀/총획 7 署 관청 서 부수 网/총획 14 한자 발음 [판서 ] 부표제어 판서-하다 1 「명사」 『역사』 임금에게 아뢰는 문서에 날짜와 이름을 쓰고 도장을 찍던 일. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=351558",
+              "content_sha256": "5075fbf7468a91da3bc06072d903ac7929c33c071bf039ed08cfbb39092c31a6",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 판서 3 (板書 ) 원어 板 널빤지 판 부수 木/총획 8 書 글 서 부수 曰/총획 10 한자 발음 [판서 ] 부표제어 판서-하다 2 「명사」 칠판에 분필로 글을 씀. 또는 그 글. 그 강의는 주로 선생님의 판서와 설명으로 진행되었다. 키가 작아 맨 앞줄에 앉는 명애가 며칠 전 판서를 전혀 필기하지 않는 걸 발견하고야 눈이 나쁘다는 걸 알게 됐다. ≪황순원, 신들의 주사위≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "proposal_records": []
+        }
+      ],
+      "primary_evidence_digest": "d6e6f4a59ced278e656f9a22f3762feb736c0ec182adec8c4750305766fcdb5d",
+      "occurrence_requests": {
+        "판서": [
+          {
+            "text": "판서는",
+            "meaning_en": "the minister"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "706b7fc1a023bf662105c3f64a157ce75b90b55fdb6b0b186f1fa374f25bff31"
+    },
+    {
+      "headwords": [
+        "내가"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "stdict-64052/명",
+            "headword": "내가",
+            "pos": "명",
+            "meaning_en": "An honorific term for someone's visit.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=64052",
+            "evidence_en": "The supplied direct Standard Dictionary record explicitly lists 내가 (來駕), POS 명사, defined as ‘내방’의 높임말. No standalone Basic Dictionary record was verified. No existing catalog identity was supplied."
+          }
+        ],
+        "unresolved": [
+          {
+            "headword": "내가",
+            "reason_en": "The grammatical use meaning 'I' as subject combines the pronoun 나 (in its 내 form) with the subject particle 가; it does not warrant a new dictionary lemma. This usage is separate from the attested noun 내가 (來駕)."
+          }
+        ]
+      },
+      "proposal_digest": "e63264ef704a2aeb4280986c2f47135c6126d1e7acdc1c61957b654055bcfeb0",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "c6a0027d0694ef196c9553b759424d8b6193bc75b157ffd83bda766412ea8f52",
+      "primary_evidence": [
+        {
+          "headword_request": "내가",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EB%82%B4%EA%B0%80",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=64052",
+              "content_sha256": "3c1402ed35228db3c15cfd09705f863b2fcb412058c70dfb7b65e3a9c7adae37",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 내가 (來駕 ) 원어 來 올 래 올 내 부수 人/총획 8 駕 탈것 가 부수 馬/총획 15 한자 발음 [내가 ] 「명사」 ‘ 내방 ’의 높임말. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "proposal_records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=64052",
+              "content_sha256": "3c1402ed35228db3c15cfd09705f863b2fcb412058c70dfb7b65e3a9c7adae37",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 내가 (來駕 ) 원어 來 올 래 올 내 부수 人/총획 8 駕 탈것 가 부수 馬/총획 15 한자 발음 [내가 ] 「명사」 ‘ 내방 ’의 높임말. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "d6e9317fc6e0b97e4d860b96c91ff36287518b80fdc7db24779035bcb45cfbee"
+    },
+    {
+      "headwords": [
+        "그러고",
+        "눈살을 찌푸리다"
+      ],
+      "proposal": {
+        "entries": [],
+        "unresolved": [
+          {
+            "headword": "그러고",
+            "reason_en": "The supplied Standard Dictionary record (word_no=44772) attests the exact spelling and defines it as a contraction of 그리하고, but supplies no standalone POS. It is a conjugated form of 그러다, excluded from new lemma creation by this request—not an incorrect word. Evidence: https://stdict.korean.go.kr/search/searchView.do?word_no=44772; NIKL explanation: https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=&pageIndex=1&qna_seq=330925."
+          },
+          {
+            "headword": "눈살을 찌푸리다",
+            "reason_en": "No readable direct Basic or Standard Dictionary record was verified for this exact standalone headword with an eligible POS. Search evidence points to the idiom 눈살(을) 찌푸리다, but an idiom under another headword or a secondary reproduction does not establish the requested primary lexeme identity. Leave for expression editorial review; catalog absence does not imply incorrect Korean."
+          }
+        ]
+      },
+      "proposal_digest": "42f818018ae58077e8b0437503bba44668c256432e2cfb0f401baf56a691c00b",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "c6a0027d0694ef196c9553b759424d8b6193bc75b157ffd83bda766412ea8f52",
+      "primary_evidence": [
+        {
+          "headword_request": "그러고",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EA%B7%B8%EB%9F%AC%EA%B3%A0",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=44772",
+              "content_sha256": "3ff2e91e3c7108d905615faa53bfe15563785885e47bcfbb771537d3983d324c",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 그러고 「참고 어휘」 고러고 , 이러고 , 저러고 ‘그리하고’가 줄어든 말. 그러고도 네가 잘했다고 하는 거냐? 그러고 있지 말고 이리 와 봐. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "눈살을 찌푸리다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EB%88%88%EC%82%B4%EC%9D%84+%EC%B0%8C%ED%91%B8%EB%A6%AC%EB%8B%A4",
+          "records": []
+        },
+        {
+          "proposal_records": []
+        }
+      ],
+      "primary_evidence_digest": "34e22ec447ac1a866025ce6d9e826ed98eb6b2d6f25387b8c55cc676875ee9ed"
+    },
+    {
+      "headwords": [
+        "속을 태우다",
+        "정신을 차리다"
+      ],
+      "proposal": {
+        "entries": [],
+        "unresolved": [
+          {
+            "headword": "속을 태우다",
+            "reason_en": "Attested as the idiom 속(을) 태우다 under 속, meaning to worry intensely or fret, rather than as a standalone headword with its own POS and primary identity. See [NIKL Basic Dictionary: 속](https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=71278). No qualifying standalone Standard Dictionary record was verified; retain for expression editorial review."
+          },
+          {
+            "headword": "정신을 차리다",
+            "reason_en": "The readable record lists 정신(을) 차리다 as an idiom under the noun 정신: regain consciousness, recognize and regret one's mistakes, or recover sound judgment. It does not establish a standalone verb identity for the requested phrase. See [NIKL Basic Dictionary: 정신](https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=75789). No qualifying standalone Standard Dictionary record was verified; retain for expression editorial review."
+          }
+        ]
+      },
+      "proposal_digest": "e4f974c297a695b1b5d24092591cf5d8d662fddecb27f4908a5e908c3d373abb",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "c6a0027d0694ef196c9553b759424d8b6193bc75b157ffd83bda766412ea8f52",
+      "primary_evidence": [
+        {
+          "headword_request": "속을 태우다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%86%8D%EC%9D%84+%ED%83%9C%EC%9A%B0%EB%8B%A4",
+          "records": []
+        },
+        {
+          "headword_request": "정신을 차리다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%A0%95%EC%8B%A0%EC%9D%84+%EC%B0%A8%EB%A6%AC%EB%8B%A4",
+          "records": []
+        },
+        {
+          "proposal_records": [
+            {
+              "primary_url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=71278",
+              "content_sha256": "aa0e1508b583b1b0f4818d7dec758827487b829fc210847b39e00042a906f804",
+              "text": "한국어기초사전 이 누리집은 대한민국 공식 전자정부 누리집입니다. Search by Category Small Window Dictionary Search Advanced Search Delete Delete Phụ âm b c d đ g h k l m n p q r s t v x f j w z Nguyên âm a á à ả ã ạ ă ắ ằ ẳ ẵ ặ â ấ ầ ẩ ẫ ậ o ó ò ỏ õ ọ ô ố ồ ổ ỗ ộ ơ ớ ờ ở ỡ ợ e é è ẻ ẽ ẹ ê ế ề ể ễ ệ u ú ù ủ ũ ụ ư ứ ừ ử ữ ự i í ì ỉ ĩ ị y ý ỳ ỷ ỹ ỵ à â æ À Â Æ ç Ç é è ë ê É È Ë Ê î ï Î Ï ô œ Ô Œ ù û ü Ù Û Ü á Á é É í Í ó Ó ú ü Ú Ü ñ Ñ ¡ ¿ Download 가 가 Print 속 Pronunciation [속ː 듣기 ] Application 속이[소ː기 듣기 ], 속도[속ː또 듣기 ], 속만[송ː만 듣기 ] Part of Speech 「명사」 Noun 1 . inside stuff; interior; flesh 1 . 거죽이나 껍질로 싸인 물체의 안쪽 부분. The inside part of an object that is covered with a coat or skin. 수박 속 . 연필 속 . 피부 속 . 속 이 차다. 속 을 파먹다. 그 배추는 싱싱하고 속 이 꽉 차 있었다. 바나나의 껍질을 벗기자 하얀 속 이 드러났다. 가: 이 축구공은 왜 이렇게 물렁물렁해? 나: 속 에 공기를 빵빵하게 넣어야지. Antonym 겉 2 . inside 2 . 일정하게 둘러싸인 것의 안쪽으로 들어간 부분. The interior part of something that is enclosed. 건물 속 . 우물 속 . 이불 속 . 주머니 속 . 속 에 숨기다. 속 으로 들어가다. 나는 그가 준 돈뭉치를 가방 속 에 깊숙이 넣었다. 서랍 속 에는 속옷들이 가지런히 정리되어 있었다. 우리는 상자 속 에 가득 담긴 과자들을 꺼내서 먹었다. 가: 혹시 방금 사슴 한 마리 못 봤나요? 나: 봤어요, 저기 동굴 속 으로 뛰어 들어가던걸요. See More 3 . stomach 3 . 사람의 몸에서 배의 안 또는 위장. The interior of the abdomen or stomach in the human body. 속 이 거북하다. 속 이 더부룩하다. 속 이 메스껍다. 속 이 아프다. 속 이 울렁거리다. 한 남자가 속 이 아프다며 병원을 찾아왔다. 나는 어제 마신 술로 속 이 쓰리고 메스꺼웠다. 가: 얼굴이 안 좋은데 어디 아파? 나: 속 이 울렁거리는 게 토할 것 같아. 4 . mind 4 . 사람이나 사물을 대하는 자세나 태도. A manner or attitude towards a person or thing. 속 이 넓다. 속 이 좁다. 속 이 좋다. 민준이는 속 이 좁아서 별것도 아닌 일에 쉽게 화를 내곤 했다. 나보다 나이가 많은 그녀는 속 이 넓어 내 얘기를 잘 받아 주는 편이었다. 가: 너는 참 속 도 좋다. 그런 일을 당하고도 기분이 좋니? 나: 내가 워낙 매사에 긍정적이잖아. 5 . inside 5 . 품고 있는 마음이나 생각. A mind or thought that one carries. 속 이 검다. 속 이 궁금하다. 속 이 후련하다. 속 을 끙끙 앓다. 속 을 드러내다. 속 을 털어놓다. 나는 겉으로 아무렇지 않은 척했지만 속 으로는 몹시 서운했다. 민준이는 속 에 담아두었던 말들을 하고 나니 기분이 좋아졌다고 했다. 가: 대체 걔는 무슨 생각으로 그런 짓을 한 거라니? 나: 나도 당최 그 아이의 속 을 모르겠다니까. See More Antonym 겉 6 . inside 6 . 어떤 현상이나 상황, 일의 안이나 가운데. The inside or middle of a phenomenon, situation or affair. 기쁨 속 . 두려움 속 . 소설 속 . 이야기 속 . 충격 속 . 소설 속 의 이야기들은 작가가 직접 겪은 실화였다. 사람들은 전쟁에 대한 공포와 두려움 속 에서 하루하루를 살아갔다. 미궁 속 으로 빠졌던 그 사건은 이십 년이 흐른 뒤에서야 비로소 진상이 밝혀졌다. 가: 상상 속 의 동물들이 존재할 수도 있지 않을까? 나: 현실 속 에서는 불가능하니까 상상의 동물이지. 7 . inside 7 . 감추어진 일의 내용. The substance of a hidden affair. 속 이 드러나다. 속 을 들여다보다. 속 을 알다. 그 일을 쉬워 보였지만 막상 속 으로 들어가 보니 생각보다 어려웠다. 우리 회사가 좋아 보이지만 막상 속 을 알면 그런 마음이 들지 않을 것이다. 가: 너는 사장이라서 좋겠다. 돈도 엄청 벌 거 아냐. 나: 돈은 많이 벌긴 하지만 사실 속 을 들여다보면 사장 자리도 참 힘들어. Synonym 속사정 8 . independence 8 . 일의 옳고 그름을 분별할 수 있는 힘이나 정신. 또는 소신 있게 행동하는 태도. The power or intelligence to tell right from wrong, or the attitude of acting in an independent manner. 속 이 없다. 민준이는 속 도 없이 다른 사람이 하자는 대로만 한다. 그는 속 도 없이 다른 사람이 하자는 대로만 하는 것이었다. 가: 쟤는 누가 뭐라고 해도 매일 허허거리기만 하고 생각이 없는 것 같아. 나: 쟤가 저렇게 속 이 없어 보이긴 해도 알고 보면 엄청 똑똑한 애야. Send opinion Send opinion Security Characters Play audio Refresh Name Title Content Send opinion We are looking forward to receiving your opinions regarding dictionary content. (Although we are not able to reply, we will refer to your opinion for dictionary content development and supplementation.) Idioms·Proverbs 26 Idiom 속(을) 긁다 scratch someone's inside 다른 사람의 기분이 나쁘게 얄미운 행동이나 말을 하다. To behave in an annoying manner or say something impudent to get on someone's nerves. 시험에서 떨어진 내 앞에서 그는 시험에 합격했다 자랑하며 내 속을 긁었다 . 가: 저 사람은 도대체 왜 저렇게 말하는 거야? 내 속을 긁으려고 작정했나. 나: 신경 쓰지 마. 괜히 네가 부러워서 저러는 걸 거야. Sentence 1이 2의 속(을) 긁다 Idiom 속(을) 끓이다 boil one's inside 자꾸 신경을 쓰며 마음을 태우다. To be anxious and care about something. 나는 내가 저지른 실수로 속을 끓이며 안절부절 못하고 있었다. 가: 돈을 잃어버리고 나서는 잠도 못자고 밥도 못 먹겠어. 나: 그렇게 속 끓이고 있어봤자 네 건강만 나빠져. 그냥 잊어버려. Sentence 1이 속(을) 끓이다 Idiom 속(을) 떠보다 sound out someone's inside 남의 마음을 알아보려고 넘겨짚다. To hint at something to find out someone's intention. 두 사람은 서로의 속마음을 캐내려고 이리저리 서로의 속을 떠보고 있었다. 가: 내가 슬쩍 속을 떠봤는데 걔도 너 좋아하는 것 같아. 나: 정말? 그럼 내가 고백을 해도 되겠지? Sentence 1이 2의 속(을) 떠보다 Idiom 속(을) 썩이다 rot one's inside 뜻대로 되지 않아 속상하거나 걱정하고 괴로워하다. 또는 그렇게 하게 하다. To be upset, worried or agonized as something does not go as one wishes, or make someone upset, worried or agonized by doing something against his/her wishes. 일이 잘 풀리지 않아 나는 한동안 썩였다 . 큰 아들은 한 번도 내 속을 썩이는 일 없이 잘 자라준 반면, 둘째 아들은 매일 말썽을 일으켰다. 가: 가게 직원들이 다 그만둔다고 했다면서? 나: 응, 직원들이 얼마나 내 속을 썩였는 줄 너는 모를 거야. Sentence 1이 속(을) 썩이다, 1이 2의 속(을) 썩이다 Idiom 속(을) 주다[터놓다] give one's inside; open one's inside 마음속에 있는 것을 감추지 않고 솔직하게 드러내 보이다. To open one's heart without concealing. 우리는 서로에게 속을 터놓으며 허심탄회하게 이야기를 나눴다. 가: 지수는 우리한테 좀처럼 속을 주지 않는 것 같아. 나: 맞아, 걔가 무슨 생각을 하는지 모르니까 나도 지수한테는 내 속마음을 얘기하기가 그렇더라고. Sentence 1이 2에게 속(을) 주다[터놓다] Idiom 속(을) 차리다 1 . take one's inside 1 . 생각이 있게 행동하다. To behave with discernment. 가: 난 그냥 평생 이렇게 놀면서 살래. 나: 너도 나이가 서른인데 속 좀 차려라 . 언제까지 그러고 살래? Sentence 1이 속(을) 차리다 2 . take one's inside 2 . 자기의 실속이나 이익을 챙기다. To take one's own interests or benefits. 가: 세상에 김 선생은 어쩜 십 원도 손해를 안 보려고 하는지. 나: 김 선생이 다른 건 몰라도 제 속은 확실하게 차리는 사람이잖아요. Sentence 1이 속(을) 차리다 Idiom 속(을) 태우다 burn one's inside 몹시 걱정이 되어 마음을 졸이다. To worry about something very much and feel agitated. 그는 자식 문제로 속을 태우며 몇 달 동안 잠도 잘 못 잤다고 했다. 석 달 동안 지수에게서 아무 연락이 없어 온 가족들이 속만 태우고 있었다. Sentence 1이 속(을) 태우다 Idiom 속(이) 뒤집히다 1 . One's stomach is turned inside out 1 . 비위가 상하여 토할 것 같이 되다. To be disgusted at something and feel like throwing up. 가: 이게 무슨 냄새! 아우, 역겨워요. 나: 냄새가 너무 지독해서 저도 속이 뒤집힐 것 같아요. Sentence 1이 속(이) 뒤집히다 2 . One's stomach is turned inside out 2 . 몹시 아니꼽고 얄밉게 느껴지다. To feel very displeased and annoyed with someone. 가: 김 선생은 사사건건 제가 하는 일에 트집을 잡아요. 나: 저한테도 그래요. 매번 아주 속이 뒤집혀 죽겠어요. Idiom 속(이) 보이다 One's inside is seen 의도가 뻔히 드러나다. For one's intention to be obviously revealed. 가: 너 오늘따라 너무 예쁘다. 나: 속 보이는 소리 하지 마. 너 나한테 뭐 부탁할 거 있지? Sentence 1이 속(이) 보이다 Idiom 속(이) 시원하다 feel cool in one's inside 좋은 일이 생기거나 그 동안 신경이 쓰였던 일이 해결되어 마음이 홀가분하다. To feel relieved as something good happened or a nagging problem has been solved. 고민해오던 문제가 해결되고 나니 속이 시원했다 . 가: 드디어 논문을 다 썼어! 나: 그동안 논문을 쓰느라 고생했어. 이젠 다 끝났으니 정말 속 시원하겠다 . Sentence 1이 속(이) 시원하다 Idiom 속(이) 타다 One's inside burns 걱정이 되어서 마음이 조마조마하다. To worry about something and be fretful. 두 시간이 넘도록 그가 전화를 받지 않자 나는 까맣게 속이 탔다 . 가: 그때 회의장에는 늦지 않고 도착했어? 나: 응, 차가 밀려서 지각할까봐 내가 얼마나 속이 탔는지 몰라. 그래도 다행히 늦지는 않았어. Sentence 1이 속(이) 타다 Idiom 속(이) 트이다 One's mind opens 마음이 넓고 말과 행동이 대범하다. To be broad-minded, and behave and speak in a bold manner. 가: 실수로 너희 할아버지가 가장 아끼는 도자기를 깨고 말았어. 나: 괜찮아, 우리 할아버지는 속이 트이신 분이라서 아마 이해해 주실 거야. Sentence 1이 속(이) 트이다 Idiom 속(이) 풀리다 1 . One's inside is eased 1 . 화를 냈거나 토라졌던 감정이 누그러지다. For one's anger or sulking to be relieved. 그들이 아무리 사과를 해도 그 때의 일을 생각하면 쉽게 속이 풀리지 않을 것 같다. 가: 아직도 화 많이 났어? 나: 응, 내 돈을 훔쳐간 사람을 잡아서 경찰서에 데려가기 전에는 속이 안 풀릴 것 같아. Sentence 1이 속(이) 풀리다 Reference Word 속이 내려가다 2 . One's stomach is eased 2 . 거북하던 배 속이 괜찮아지다. For uncomfortable feelings in one's stomach to be relieved. 어머니가 배를 어루만져주니 메스꺼웠던 속이 풀리는 것 같았다. 가: 어제 술 많이 마셨더니 속이 쓰리네. 나: 속 풀리게 해장국이나 먹으러 가자. Sentence 1이 속(이) 풀리다 Idiom 속에 얹히다 have something sit on one's inside 마음에 걸리는 일이 있어 기분이 개운하지 않다. To feel uncomfortable because something weighs on one's mind. 나는 아내에게 퉁명스럽게 대답을 한 게 속에 얹혔다 . 가: 기분이 안 좋아? 아까부터 표정이 안 좋네? 나: 아까 지수랑 말다툼을 한 게 계속 속에 얹혀서 . Sentence 1이 속에 얹히다 Idiom 속에 없는 말[소리] remarks(words) that are not in one's inside 속마음과 다르게 하는 말. A remark that is different from what is really on one's mind. 그는 속에도 없는 말 을 하며 사장에게 잘 보이려 애를 썼다. 가: 승규가 공부도 잘하고 성격도 좋지. 나: 너 속에 없는 소리 하지 마. 네가 승규를 싫어하는 건 다 아는 사실인데 뭐. Idiom 속에(서) 방망이가 치밀다 have a bat surge up in one's inside 분한 마음이 복받쳐 오르다. To be overwhelmed with resentment. 그에게 모욕을 당한 일만 생각하면 나는 속에서 방망이가 치밀었다 . Sentence 1이 속에(서) 방망이가 치밀다 Idiom 속을 달래다 soothe one's stomach 거북하고 메스꺼운 속을 편안하게 만들다. To relieve disgusting or uncomfortable feelings in one's stomach. 나는 죽을 먹으며 속을 좀 달랬다 . 가: 속이 메슥거리는 게 영 좋지 않네. 나: 자, 이 차 한 잔 마시면서 속을 달래 . Sentence 1이 속을 달래다 Idiom 속을 쓰다 1 . use one's inside 1 . 걱정하거나 염려하다. To worry or concern. 나는 어머니의 병환이 더 심해지지는 않을까 속을 쓰느라 한숨도 자지 못했다. 가: 지수가 학교생활은 잘 하고 있나 모르겠네. 나: 지수한테 속 쓰는 건 이젠 그만하고 네 걱정이나 해. Sentence 1이 2에/에게 속을 쓰다 2 . use one's inside 2 . 남을 돌보거나 좋은 마음을 베풀다. To care for someone or do him/her a favor. 그녀는 남들에게 속을 쓰며 주위 사람들을 잘 챙겨 동료들 사이에서 인기가 많다. Sentence 1이 2에/에게 속을 쓰다 Idiom 속이 끓다 One's inside boils 화가 나거나 분해서 격한 감정이 마음속에서 치밀어 오르다. For strong emotion to surge up within one's mind due to anger or resentment. 내 사정은 헤아려주지 않고 일을 시킨 그가 원망스러워 나는 부글부글 속이 끓었다 . 가: 공부 좀 못하면 어때요. 건강하기만 하면 되지. 나: 어이구, 너 때문에 내 속이 끓는다 끓어 ! Sentence 1이 속이 끓다 Idiom 속이 내려가다 One's inside goes down 화가 가라앉거나 토라졌던 감정이 누그러지다. For one's anger or sulking to be relieved. 그가 정중히 사과하는 모습을 보니 나도 어느 정도 속이 내려갔다 . Sentence 1이 속이 내려가다 Reference Word 속(이) 풀리다 Idiom 속이 떨리다 One's inside trembles 마음속으로 몹시 겁이 나고 두렵다. To be very scared and afraid at heart. 나는 내가 한 거짓말이 탄로가 날까 속이 떨렸다 . 가: 엄마한테 혼날 줄 알고 얼마나 속이 떨렸다고 . 나: 그래서 아까 그렇게 표정이 어두웠구나. Sentence 1이 속이 떨리다 Reference Word 간이 떨리다 Idiom 속이 시커멓다 have a pitch-black inside 마음이 순수하지 않고 생각하는 것이 엉큼하고 음흉하다. To be worldly-wise and think in a sly and crafty manner. 그들은 모두 자신의 이득만 챙기려는 속이 시커먼 사람들이었다. Sentence 1이 속이 시커멓다 Idiom 속이 치밀다 One's inside surges up 기분이 언짢아 분한 마음이 복받쳐 오르다. To be upset and overwhelmed with resentment. 나보다 한참 어린 사내가 반말을 하며 일을 시키니 속이 치밀어 올랐다. 가: 너 사기 당했다며! 나: 응, 내가 속은 걸 생각하면 속이 울컥울컥 치밀어 . Sentence 1이 속이 치밀다 Proverbs 속 빈 강정 gangjeong, sweet rice puffs, whose inside is empty 겉만 그럴듯하고 실속은 없음. Something that is very showy on the outside, but hollow on the inside. 가: 이 회사 어때? 나: 규모는 크지만 부채가 많아서 속 빈 강정 이라는 소문이 있어. Proverbs 속에 뼈 있는 소리 1 . a sound with a bone inside 1 . 말의 내용에 심각한 뜻이 담겨 있음. A word that has a profound meaning. 그의 농담은 듣기에는 재밌었지만 속에 뼈가 있는 소리 였다. 2 . a sound with a bone inside 2 . 하는 말에 악의가 들어 있음. A word that has a malicious intention. 가: 뭐 네가 우리 중에서 인기가 많은 건 사실이지. 근데 그 인기가 언제까지 갈까? 나: 어째 속에 뼈 있는 소리 인 것 같다. Proverbs 속이 빈 깡통이 소리만 요란하다 A can whose inside is empty makes a loud noise; Empty vessles make the greatest sound; The worst wheel of the cart always creaks most 실속이 없는 것이 겉으로 보기에는 실속이 있는 것처럼 요란해 보이다. Something that is hollow inside looks gaudy outside as if it is rich in content. 속이 빈 깡통이 소리만 요란하다 는 말처럼 그 책은 제목만 거창했지 별 내용은 없었다. 가: 걔는 별로 아는 것도 없으면서 잘난 척은 왜 그렇게 하는지. 나: 원래 속이 빈 깡통이 소리만 요란하다 고 하잖아. 진짜 똑똑한 사람들은 잘난 척 안 해. Reference Word 빈 수레가 더 요란하다 View Mode Korean + English Korean English My Search History Listening to Korean pronunciation services are partly provided by NAVER Cultural Foundation Corp. Help Translation guideline Copyright Policy Notice Open API Suggestion Basic Korean Dictionary National Institute of Korean Language Move"
+            },
+            {
+              "primary_url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=75789",
+              "content_sha256": "76cf1159805417e9088207438d05e41dc48fed1904c6bc51d12c8a0ec7774780",
+              "text": "한국어기초사전 본문바로가기 이 누리집은 대한민국 공식 전자정부 누리집입니다. 범주별 찾기 사전 통계 작은 창 사전 찾기 자세히 찾기 사전 내려받기 가 가 인쇄 정신 (精神 ) 발음 [정신 듣기 ] 파생어 정신적 2 , 정신적 1 품사 「명사」 1 . 육체나 물질과 반대되는 영혼이나 마음. 정신 세계. 건전한 정신 . 육체와 정신 . 정신 을 느끼다. 정신 을 분석하다. 정신 이 올곧지 못하면 우리의 육체도 많은 스트레스를 받는다. 우리는 이런 그림 한 폭에서도 조상들의 정신 을 느낄 수 있었다. 아이는 눈에 보이지 않는 정신 이 어떻게 존재하는 것인지 궁금했다. 가: 오늘 하루만 아침 운동 안 하면 안 될까? 나: 안 돼. 건강한 육체에 건전한 정신 이 깃듣다는 말 몰라? 빨리 일어나서 나와. 참고어 물질 2 . 무엇에 대해 느끼고 생각하고 판단하는 힘. 맑은 정신 . 새로운 정신 . 정신 이 흐려지다. 정신 을 가다듬다. 정신 을 집중하다. 지수는 정신 을 집중하여 책을 읽었다. 갑자기 너무 많은 것을 알게 된 그는 정신 이 혼란스러웠다. 가: 일을 오래 했더니 집중력이 떨어지지 않아요? 나: 맞아요. 우리 잠깐 산책하고 와서 맑은 정신 으로 다시 일해요. 3 . 마음의 자세나 태도. 기업가 정신 . 신고 정신 . 절약 정신 . 정신 을 가지다. 정신 을 일깨우다. 지수는 비판 정신 을 가지고 모든 것을 바라본다. 승규는 어려운 사람들을 돕는 봉사 정신 이 투철하다. 가: 이것 봐. 재활용 플라스틱을 이용해서 화분을 만들었어. 나: 또 절약 정신 을 발휘했구나. 4 . 무엇의 밑바탕에 깔리는 의의나 목적, 이념, 사상. 근대화 정신 . 독립 정신 . 민주주의 정신 . 자립 정신 . 자유 정신 . 그는 합리주의 정신 을 추구하며 자신의 이론을 전개해 나갔다. 선조들이 민주주의 정신 을 실현시키기 위하여 애쓴 것이 지금 우리 사회의 토대가 되었다. 가: 감독님, 새 영화에 대해 한 말씀 해 주시죠. 나: 이번 영화에는 휴머니즘 정신 이 드러나도록 노력했습니다. 주로 '~ 정신'으로 쓴다. 의견 보내기 의견 보내기: 보안 문자, 필명, 제목, 의견으로 구성 보안 문자 음성으로 듣기 새로 고침 필명 제목 의견 의견 보내기 사전 내용에 대한 여러분의 다양한 의견을 기다립니다. (답변은 드리지 않습니다만, 보내주신 내용은 사전 내용 개선과 보완을 위해 참고하겠습니다.) 관용구·속담 6 관용구 정신(을) 뽑다 정신을 얼떨떨하게 만들다. 아이들이 시끄럽게 떠들고 뛰어다녀서 사람들의 정신을 뽑아 놓았다. 문형 1이 2의 정신을 뽑다 관용구 정신(을) 차리다 1 . 잃었던 의식을 다시 찾다. 그는 교통사고가 난 지 한 달 만에 정신을 차렸다 . 문형 1이 정신(을) 차리다 2 . 잘못이나 실패의 원인을 알고 뉘우치다. 민준이가 아침 일찍 일어난 걸 보니 이제야 정신을 차렸나 보다. 문형 1이 정신(을) 차리다 3 . 사리를 분별할 수 있는 정신을 가지다. 그녀는 울음을 그치고 이제야 정신을 차린 듯 상황을 파악하기 시작했다. 문형 1이 정신(을) 차리다 관용구 정신(이) 나다 1 . 사리를 분별할 정신이 생기다. 지수는 바쁜 일을 끝내자 조금 정신이 나서 앞으로의 일정을 정리할 수 있었다. 문형 1이 정신(이) 나다 2 . 어떤 일을 할 기운이 생기다. 어제까지는 우울해서 아무것도 하기 싫었는데 오늘은 좀 정신이 난다 . 문형 1이 정신(이) 나다 3 . 잃었던 의식이 돌아오다. 밤새 끙끙 앓던 아이는 아침이 되자 정신이 나는 것 같았다. 문형 1이 정신(이) 나다 관용구 정신(이) 들다 1 . 잃었던 의식이 돌아오다. 의사는 수술이 끝난 환자가 정신이 들었는지 수시로 확인했다. 문형 1이 정신(이) 들다 2 . 잘못이나 실패의 원인을 알고 깨우치다. 아이는 자신이 뭘 잘못했는지도 모르고 있으니 어떻게 해야 정신이 들지 모르겠다. 문형 1이 정신(이) 들다 관용구 정신(이) 빠지다 1 . 비정상적으로 생각하고 행동하다. 그 사람이 그런 이상한 행동을 하는 걸 보면 정신이 빠진 사람인 게 분명해. 문형 1이 정신(이) 빠지다 2 . 무엇을 잘 알아차리거나 인식하지 못하다. 유민이는 어떤 상황인지 알지 못하고 정신이 빠진 것처럼 멍하니 서 있었다. 문형 1이 정신(이) 빠지다 3 . 어떤 것에 정신이 쏠려 다른 일을 생각하지 못하다. 우리는 노는 데 정신이 빠져 수업이 시작된 줄도 몰랐다. 문형 1이 2에 정신(이) 빠지다 관용구 정신(이) 팔리다 어떤 것에 관심이 쏠리다. 군것질거리에 정신이 팔린 아이는 엄마에게 하나만 사 달라며 졸랐다. 문형 1이 2에 정신(이) 팔리다 다른 언어 사전 보기 한국어-러시아어 한국어-몽골어 한국어-베트남어 한국어-스페인어 한국어-아랍어 한국어-영어 한국어-인도네시아어 한국어-일본어 한국어-중국어 한국어-타이어 한국어-프랑스어 내가 살펴본 단어 한국어 발음 듣기 서비스의 일부는 네이버문화재단에서 후원 하였습니다. 사전 내려받기 사전 내려받기 용도를 입력해 주세요. 사전 내려받기: 내려받기 용도으로 구성 내려받기 용도 학습 자료 용도 강의 자료 용도 연구 자료 용도 기타 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 사전 내려받기: 구분, 파일 형식, 필수 항목, 선택 항목, 다국어 대역으로 구성 구분 뜻풀이 단위 표제어 단위 파일 형식 MS 엑셀 HWP 한글 MS 워드 텍스트 XML JSON 필수 항목 어휘, 구분, 품사, 뜻풀이, 용례 선택 항목 전체 고유어 여부 원어 발음 활용 파생어 ☞(가 보라) 어휘 등급 의미 범주 주제 및 상황 범주 전체 참고 검색용 이형태 관련어 의미 참고 다중 매체 정보 문형 문형 참고 부표제어 부표제어 전체 참고 부표제어 관련어 부표제어 의미 참고 부표제어 문형 부표제어 문형 참고 다국어 대역 전체 전자 우편 주소 내려받기 버튼을 누르면 입력하신 전자 우편 주소로 내려받기 경로가 전송됩니다. 요청이 많을 경우, 다소 시간이 소요될 수 있습니다. 전자 우편을 받지 못한 경우에는 스팸 메일함을 확인해 주세요. 내려받기 취소 닫기 주제 및 상황 범주 선택 해제 0 개 선택 주제 및 상황 범주별 찾기: 초급, 중급, 고급으로 구성 초급( ) 중급( ) 고급( ) 인사하기 소개하기(자기소개) 소개하기(가족소개) 개인 정보 교환하기 개인 정보 교환하기 위치 표현하기 교통 이용하기 길찾기 교통 이용하기 지리정보 지리정보 물건 사기 물건 사기 경제∙경영 음식 주문하기 음식 설명하기 식문화 요리 설명하기 요리 설명하기 시간 표현하기 날짜 표현하기 요일 표현하기 날씨와 계절 날씨와 계절 기후 하루 생활 학교생활 학교생활 교육 한국 생활 한국 생활 직업과 진로 직업과 진로 직장 생활 직장 생활 약속하기 전화하기 감사하기 사과하기 여행 여행 여가 생활 주말 및 휴가 주말 및 휴가 취미 취미 가족 행사 가족 행사 가족 행사-명절 건강 건강 보건과 의료 병원 이용하기 약국 이용하기 공공 기관 이용하기(도서관) 공공기관 이용하기 공공 기관 이용하기(우체국) 공공 기관 이용하기(출입국 관리 사무소) 초대와 방문 초대와 방문 집 구하기 집 구하기 주거 생활 집안일 집안일 감정, 기분 표현하기 감정, 기분 표현하기 심리 성격 표현하기 성격 표현하기 복장 표현하기 복장 표현하기 외양 외모 표현하기 외모 표현하기 영화 보기 공연과 감상 대중 문화 대중 매체 컴퓨터와 인터넷 컴퓨터와 인터넷 사건, 사고, 재해 기술하기 사회 문제 환경 문제 환경 문제 사회 제도 문화 비교하기 문화 차이 인간관계 인간관계 한국의 문학 예술 문제 해결하기(분실 및 고장) 실수담 말하기 연애와 결혼 건축 과학과 기술 법 스포츠 언론 언어 언어 역사 정치 종교 철학∙윤리 선택 완료 취소 닫기 원어 한자 精 찧을 정 부수 米/총획 14 神 귀신 신 부수 示/총획 10 도움말 저작권 정책 알립니다 개발 지원(Open API) 의견 제시 사전 전체 내려받기 한국어교수학습샘터 한국어학습자말뭉치나눔터 국립국어원 표준국어대사전 우리말샘 한국수어사전 이동"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "6a9a6d62d7f4370bef530f45e2b3a9c1ffbd269bf777a62e0a7410858774546e"
     }
   ]
 }

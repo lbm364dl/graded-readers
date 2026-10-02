@@ -215,7 +215,8 @@ def verify_run(run_dir: Path) -> tuple[dict, dict, dict, dict]:
         job = record.get("proposal_job")
         if job:
             outputs[name] = read(run_dir / "agents" / job / "result.json")
-            validate(outputs[name], read(contracts.schema_path("breakdowns" if name == "sentence-help" else name)))
+            validate(outputs[name], contracts.ANNOTATION if name == 'annotation' else
+                read(contracts.schema_path("breakdowns" if name == "sentence-help" else name)))
     plan = contracts.bind_plan(outputs["plan"], source, unit["start"])
     if read(run_dir / "source-plan.json") != plan:
         raise ValueError("Korean source plan differs from reviewed proposal")

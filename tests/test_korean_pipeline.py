@@ -149,6 +149,11 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
         def __init__(self): self.jobs = []
         async def call(self, job, *args, **kwargs):
             self.jobs.append(job)
+            if job.endswith('-reuse-plan'):
+                # Reuse planning sees the same complete lossless annotations as
+                # large reviews, even when individual chunks are small.
+                assert 'segment_columns' in args[0]
+                assert 'grammar_link_columns' in args[0]
             value = await self.respond(job)
             save(tmp_path / 'agents' / job / 'result.json', value)
             save(tmp_path / 'agents' / job / 'meta.json', {'return_code': 0})
@@ -415,6 +420,52 @@ def test_large_annotation_agent_view_preserves_every_field_and_occurrence():
     assert restored == raw == original
     assert len(json.dumps(packed, ensure_ascii=False)) < len(json.dumps(raw, ensure_ascii=False))
     assert contracts.annotation_view(raw, max_characters=10000000) is raw
+
+
+def test_lexical_expression_spans_keep_taps_and_word_destinations_separate_from_grammar(tmp_path):
+    from pipeline.korean_agent_harness import normalize_existing
+    word = lambda text, identity, meaning: {'text': text, 'type': 'word', 'meaning_en': meaning,
+        'lexical': {'id': identity, 'kind': 'vocabulary'}}
+    punctuation = lambda text: {'text': text, 'type': 'punctuation', 'meaning_en': ''}
+    mind, release = '마음01/명', '놓다01/동'
+    segments = [word('마음', mind, 'mind'), punctuation(' '), word('놓고', release, 'ease worries and'),
+                punctuation('. '), word('마음', mind, 'mind'), punctuation(' '),
+                word('놓고', release, 'ease worries and'), punctuation('.')]
+    for index in [2, 6]:
+        segments[index]['form_steps'] = [{'form': '놓고', 'reading': '', 'label': 'Connective form',
+            'meaning_en': 'ease worries and', 'grammar_entry_ids': ['connective-go']}]
+    chapter = {'number': 1, 'title': 'fixture', 'text': '마음 놓고. 마음 놓고.', 'segments': segments,
+        'form_audit': {'reviewed': True, 'inflected_segment_indices': [2, 6]},
+        'grammar_links': [{'segment_index': i, 'entry_id': 'connective-go',
+            'context_en': 'Connects the following action.'} for i in [2, 6]],
+        'expression_links': [{'segment_index': i, 'end_segment_index': i + 2, 'entry_id': release,
+            'form': '마음 놓고', 'meaning_en': 'at ease', 'context_en': 'The phrase expresses relief from worry.'}
+            for i in [0, 4]]}
+    registry = {mind: {'id': mind, 'headword': '마음', 'kind': 'word', 'definition_en': 'mind'},
+        release: {'id': release, 'headword': '놓다', 'kind': 'word', 'definition_en': 'To put down; to ease worry or tension.'},
+        'other': {'id': 'other', 'headword': '다른', 'kind': 'word', 'definition_en': 'other'}}
+    grammar = {'connective-go': {'id': 'connective-go'}}
+    before = copy.deepcopy(chapter)
+    words, lessons = dictionary.build_assets(chapter, tmp_path, word_registry=registry, grammar_registry=grammar, write=False)
+    expressions = [use for use in words['occurrences'] if use.get('occurrence_kind') == 'expression']
+    assert len(expressions) == 2
+    assert all(use['surface'] == '마음 놓고' and use['gloss'] == 'at ease' and use['entry_id'] == release for use in expressions)
+    assert expressions[0]['sentence_start'] != expressions[1]['sentence_start']
+    assert all(use['entry_id'] == 'connective-go' for use in lessons['occurrences'])
+    assert chapter == before
+    for replacement in [{'form': '마음놓고'}, {'entry_id': 'other'}, {'end_segment_index': 99}]:
+        broken = copy.deepcopy(chapter)
+        broken['expression_links'][0].update(replacement)
+        with pytest.raises(ValueError, match='lexical expression'):
+            dictionary.build_assets(broken, tmp_path, word_registry=registry, grammar_registry=grammar, write=False)
+    broken = copy.deepcopy(chapter)
+    broken['grammar_links'].append({'segment_index': 0, 'entry_id': mind, 'context_en': 'Wrong lexical layer.'})
+    with pytest.raises(ValueError, match='grammar link points to a word'):
+        dictionary.build_assets(broken, tmp_path, word_registry=registry,
+            grammar_registry={**grammar, mind: {'id': mind}}, write=False)
+    raw = normalize_existing(chapter, registry)
+    texts = ['마음 놓고. ', '마음 놓고.']
+    assert contracts.combine_annotations(contracts.slice_annotations(raw, texts), texts) == raw
 
 
 def test_dictionary_delta_reuses_approved_entries_and_allows_only_missing():
@@ -794,6 +845,16 @@ def test_sentence_chunks_include_every_separator_and_quoted_sentence():
     assert chunks[-1] == '그는 웃었습니다.'
 
 
+@pytest.mark.parametrize('quote', ['”', '’', '"', ''])
+def test_dictionary_examples_keep_closing_quotes_with_their_sentence(quote):
+    text = f'말했습니다.{quote}\n그는 살았습니다. 그는 살았습니다.'
+    first = text.index('살았습니다')
+    second = text.index('살았습니다', first + 1)
+    assert dictionary._sentence(text, 0) == (f'말했습니다.{quote}', 0)
+    assert dictionary._sentence(text, first) == ('그는 살았습니다.', text.index('그는'))
+    assert dictionary._sentence(text, second) == ('그는 살았습니다.', text.rindex('그는'))
+
+
 def test_lexical_plan_reuses_names_and_only_exempts_essential_nonbeginner_words():
     from pipeline.korean_agent_harness import validate_focus
     words = dictionary._registry(dictionary.WORDS)
@@ -1065,16 +1126,18 @@ def test_publication_preserves_other_editions_and_merges_exact_source_routes(tmp
     from pipeline import korean_dictionary, korean_sentence_breakdowns
     original = publication.app_content.build_language
     observed = {}
+    expected_levels = {int(level[1:]) for level in json.loads(
+        (publication.CONTENT / 'metadata.json').read_text())['enabled_levels']} | {2}
 
     def capture(language, levels):
         entries = original(language, levels)
-        assert {e['level'] for e in entries} == {1, 2}
+        assert {e['level'] for e in entries} == expected_levels
         assets = publication.app_content.ASSET_ROOT
         words = json.loads((assets / 'usage_dictionary_ko.json').read_text())
         grammar = json.loads((assets / 'grammar_dictionary_ko.json').read_text())
         help_data = json.loads((assets / 'korean_sentence_breakdowns.json').read_text())
         assert set(words['sources']) == set(grammar['sources']) == set(help_data['sources'])
-        assert {row['level'] for row in words['sources'].values()} == {'TOPIK 1', 'TOPIK 2'}
+        assert {row['level'] for row in words['sources'].values()} == {f'TOPIK {level}' for level in expected_levels}
         assert len({row['id'] for row in words['entries']}) == len(words['entries'])
         for entry in entries:
             for chapter in entry['chapters']:

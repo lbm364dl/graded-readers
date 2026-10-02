@@ -129,12 +129,8 @@ class KoreanEntryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final uses = ((grammar
-            ? dictionary.grammar
-            : dictionary.words)['occurrences'] as List)
-        .cast<Map<String, dynamic>>()
-        .where((use) => use['entry_id'] == entry['id'])
-        .toList();
+    final examples =
+        dictionary.exampleGroups(entry['id'] as String, isGrammar: grammar);
     return Scaffold(
       appBar: AppBar(
           title: Text(grammar
@@ -168,18 +164,23 @@ class KoreanEntryScreen extends StatelessWidget {
                 style: Theme.of(context).textTheme.labelMedium),
           Text((grammar ? selectedUse!['context_en'] : selectedUse!['gloss'])
               as String),
+          if (!grammar && selectedUse!['occurrence_kind'] == 'expression')
+            Text(selectedUse!['context_en'] as String),
         ],
         const SizedBox(height: 24),
         Text('Examples from our texts',
             style: Theme.of(context).textTheme.titleMedium),
-        for (final use in uses)
+        for (final group in examples)
           ListTile(
-            title: Text(use['sentence'] as String),
-            subtitle: Text(grammar
-                ? _withGrammarLevel(use['context_en'] as String, use)
-                : '${use['surface']} · ${use['gloss']}'),
+            title: Text(group.first['sentence'] as String),
+            subtitle: Text({
+              for (final use in group)
+                grammar
+                    ? _withGrammarLevel(use['context_en'] as String, use)
+                    : '${use['surface']} · ${use['gloss']}${use['occurrence_kind'] == 'expression' ? '\n${use['context_en']}' : ''}'
+            }.join('\n')),
             trailing: const Icon(Icons.open_in_new),
-            onTap: () => _openSource(context, use),
+            onTap: () => _openSource(context, group.first),
           ),
       ]),
     );
@@ -201,18 +202,65 @@ class KoreanTapLinks extends StatelessWidget {
       required this.segmentIndex});
 
   @override
-  Widget build(BuildContext context) => segment.formSteps.isNotEmpty
-      ? KoreanFormChain(
-          segment: segment,
-          source: source,
-          sourceText: sourceText,
-          segmentIndex: segmentIndex)
-      : KoreanDictionaryLinks(
-          source: source,
-          sourceText: sourceText,
-          segmentIndex: segmentIndex,
-          surface: segment.text,
-          gloss: segment.meaningEn);
+  Widget build(BuildContext context) =>
+      Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        KoreanExpressionLinks(
+            source: source,
+            sourceText: sourceText,
+            segmentIndex: segmentIndex,
+            surface: segment.text),
+        if (segment.formSteps.isNotEmpty)
+          KoreanFormChain(
+              segment: segment,
+              source: source,
+              sourceText: sourceText,
+              segmentIndex: segmentIndex)
+        else
+          KoreanDictionaryLinks(
+              source: source,
+              sourceText: sourceText,
+              segmentIndex: segmentIndex,
+              surface: segment.text,
+              gloss: segment.meaningEn),
+      ]);
+}
+
+class KoreanExpressionLinks extends StatelessWidget {
+  final String source, sourceText, surface;
+  final int segmentIndex;
+  const KoreanExpressionLinks(
+      {super.key,
+      required this.source,
+      required this.sourceText,
+      required this.segmentIndex,
+      required this.surface});
+
+  @override
+  Widget build(BuildContext context) => FutureBuilder<KoreanDictionary>(
+      future: KoreanDictionary.load(),
+      builder: (context, snapshot) {
+        if (!snapshot.hasData) return const SizedBox.shrink();
+        final dictionary = snapshot.data!;
+        final uses = dictionary.expressionUses(
+            source, sourceText, segmentIndex, surface);
+        return Column(children: [
+          for (final use in uses)
+            ListTile(
+              dense: true,
+              contentPadding: EdgeInsets.zero,
+              title: Text(use['surface'] as String),
+              subtitle: Text('Expression · ${use['gloss']}'),
+              trailing: const Icon(Icons.menu_book_outlined),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute<void>(
+                  builder: (_) => KoreanEntryScreen(
+                      dictionary: dictionary,
+                      entry: dictionary.entry(use['entry_id'] as String,
+                          isGrammar: false),
+                      grammar: false,
+                      selectedUse: use))),
+            )
+        ]);
+      });
 }
 
 class KoreanDictionaryLinks extends StatelessWidget {
@@ -266,8 +314,12 @@ class KoreanDictionaryLinks extends StatelessWidget {
 class KoreanGrammarLink extends StatelessWidget {
   final KoreanDictionary dictionary;
   final Map<String, dynamic> use;
+  final bool showCompleteForm;
   const KoreanGrammarLink(
-      {super.key, required this.dictionary, required this.use});
+      {super.key,
+      required this.dictionary,
+      required this.use,
+      this.showCompleteForm = true});
 
   @override
   Widget build(BuildContext context) {
@@ -278,7 +330,7 @@ class KoreanGrammarLink extends StatelessWidget {
             entry: entry,
             grammar: true,
             selectedUse: use)));
-    if (use['display_form'] != null) {
+    if (use['display_form'] != null && showCompleteForm) {
       return ListTile(
           dense: true,
           contentPadding: EdgeInsets.zero,
@@ -392,23 +444,33 @@ class KoreanFormChain extends StatelessWidget {
                           },
                   ),
                 for (final use in constructionUses)
-                  ListTile(
-                    dense: true,
-                    contentPadding: EdgeInsets.zero,
-                    title: Text('→ ${use['display_form']}'),
-                    subtitle: Text(_withGrammarLevel(
-                        use['display_meaning_en'] as String, use)),
-                    trailing: const Icon(Icons.chevron_right),
-                    onTap: () =>
-                        Navigator.of(context).push(MaterialPageRoute<void>(
-                      builder: (_) => KoreanEntryScreen(
-                          dictionary: dictionary,
-                          entry: dictionary.entry(use['entry_id'] as String,
-                              isGrammar: true),
-                          grammar: true,
-                          selectedUse: use),
-                    )),
-                  ),
+                  if (use['segment_index'] == segmentIndex &&
+                      use['display_end_segment_index'] == segmentIndex &&
+                      use['display_form'] == segment.formSteps.last.form &&
+                      use['display_meaning_en'] ==
+                          segment.formSteps.last.meaningEn)
+                    KoreanGrammarLink(
+                        dictionary: dictionary,
+                        use: use,
+                        showCompleteForm: false)
+                  else
+                    ListTile(
+                      dense: true,
+                      contentPadding: EdgeInsets.zero,
+                      title: Text('→ ${use['display_form']}'),
+                      subtitle: Text(_withGrammarLevel(
+                          use['display_meaning_en'] as String, use)),
+                      trailing: const Icon(Icons.chevron_right),
+                      onTap: () =>
+                          Navigator.of(context).push(MaterialPageRoute<void>(
+                        builder: (_) => KoreanEntryScreen(
+                            dictionary: dictionary,
+                            entry: dictionary.entry(use['entry_id'] as String,
+                                isGrammar: true),
+                            grammar: true,
+                            selectedUse: use),
+                      )),
+                    ),
               ]);
         },
       );

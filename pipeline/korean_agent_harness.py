@@ -178,10 +178,13 @@ def normalize_existing(chapter: dict, words: dict) -> dict:
             "lexical_kind": lexical.get("kind", ""), "lexical_id": lexical.get("id", ""),
             "story_importance_en": segment.get("story_importance_en", ""),
             "form_steps": segment.get("form_steps", [])})
-    return {"segments": segments, "grammar_links": [{
+    result = {"segments": segments, "grammar_links": [{
         "display_form": "", "display_meaning_en": "", "display_end_segment_index": -1, **link
     } for link in chapter["grammar_links"]],
         "inflected_segment_indices": chapter["form_audit"]["inflected_segment_indices"]}
+    if chapter.get('expression_links'):
+        result['expression_links'] = chapter['expression_links']
+    return result
 
 
 def validate_delta(delta: dict, required_words: dict, required_grammar: set[str],
@@ -441,7 +444,7 @@ class KoreanHarness:
                 continue
             value = read(proposal_path)
             try:
-                validate(value, read(contracts.schema_path(schema)))
+                validate(value, contracts.ANNOTATION if schema == 'annotation' else read(contracts.schema_path(schema)))
                 check(value)
                 review_prompt = self.policy + "\n" + self.review_policy + review_payload(value)
                 try:
@@ -481,7 +484,7 @@ class KoreanHarness:
                     job, self.policy + "\n" + prompt + payload(previous=previous, issues=problems),
                     contracts.schema_path(schema), "medium", tool_profile="offline")
             try:
-                validate(value, read(contracts.schema_path(schema)))
+                validate(value, contracts.ANNOTATION if schema == 'annotation' else read(contracts.schema_path(schema)))
                 check(value)
             except UnannotatableProseError:
                 raise
@@ -672,6 +675,7 @@ class KoreanHarness:
             annotation_prompt += "Every inflected word needs ordered complete-form transformation steps rooted in an attested lexical word or name, never a grammar identity. Productive adjective-plus-하다 constructions keep their lexical adjective base and link the transformation separately. The dictionary-form base is supplied by lemma and its own UI row: DO NOT repeat it in form_steps. Each step uses the schema field grammar_entry_ids: an array containing EXACTLY ONE grammar ID, with a matching grammar_links record on the same segment. There is no singular grammar_entry_id field. "
             annotation_prompt += "Each stage must have a distinct COMPLETE form. Grammar roles that add no new form belong in grammar_links with complete-phrase display fields, not repeated stages. Do not invent a bare-stem intermediate merely to make forms differ. "
             annotation_prompt += "Attested fixed expressions need explicit lexical destinations and their complete idiomatic meanings. Use the supplied primary lexical references to identify canonical dictionary headwords and restricted senses; an expression frame is not automatically a new lemma. Do not invent grammar entries for lexical expressions or claim unsupported component meanings. "
+            annotation_prompt += "For a multiword lexical expression, preserve its component tap boundaries and supply expression_links with the exact source form, complete meaning, contextual role, inclusive segment indices and the attested word entry_id of a lexical component within the span. This is a lexical destination, never a grammar_links record or an invented standalone expression lemma. Use separately verified component senses; uncertainty belongs in editorial research, not learner-facing notes. "
             annotation_prompt += "Prefer the attested whole-word identity. A transparent noun compound without a standalone dictionary headword may use adjacent taps rooted in independently attested component words, preserving the original spelling and spacing exactly. Choosing or correcting unapproved tap segmentation here is annotation work, not a prose rewrite. Explain only supported component contributions and retain the combined contextual meaning in the sentence analysis; never manufacture an idiom's meaning from its components. "
             annotation_prompt += "When a productive grammatical formation has no independent word identity, root its chain in an attested lexical base and link ordered complete forms to their actual grammar transformations, rather than requesting a dictionary entry for the entire formation. A noun can be that lexical base. Reuse comparable reviewed analyses where their function matches; a shared suffix alone does not establish that function. "
             annotation_prompt += "Audit every tap for inflection and grammar roles; particles stay attached unless a learner-sized grammar unit warrants a separate tap. "
@@ -701,7 +705,7 @@ class KoreanHarness:
                         if path.exists() and digest(read(path)) == record['digest']:
                             reusable.add(i)
                     candidates = [{'old_chunk_index': i + 1, 'new_chunk_index': j + 1,
-                                   'text': text, 'annotation': old_values[i]}
+                                   'text': text, 'annotation': contracts.annotation_view(old_values[i], max_characters=0)}
                                   for j, text in enumerate(texts) for i, old_text in enumerate(old_texts)
                                   if i in reusable and old_text == text]
                     reuse_job = f'{job}-reuse-plan'
