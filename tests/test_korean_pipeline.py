@@ -1891,7 +1891,8 @@ def test_bad_grammar_anchor_reports_actual_indexed_segments_and_preserves_valid_
     assert chapter == before
 
 
-def test_publication_replays_segment_attached_chunks_and_rejects_raw_tampering(tmp_path):
+@pytest.mark.parametrize('format_name', ['segment-anchored-annotation-v1', 'segment-contained-annotation-v2'])
+def test_publication_replays_segment_attached_chunks_and_rejects_raw_tampering(tmp_path, format_name):
     from tests.test_korean_annotation_chunks import attached
     from pipeline.korean_annotation_chunks import decode
     from pipeline.korean_agent_harness import read, save, normalize_existing, annotation_chunk_record
@@ -1899,6 +1900,7 @@ def test_publication_replays_segment_attached_chunks_and_rejects_raw_tampering(t
     chapter = read(tmp_path/'chapter.json')
     raw = normalize_existing(chapter, dictionary._registry(dictionary.WORDS))
     worker = attached(raw)
+    worker['format'] = format_name
     decoded = decode(worker)
     assert decoded == raw
     job = 'annotation-chunk-001-0'

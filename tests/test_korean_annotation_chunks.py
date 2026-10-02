@@ -34,6 +34,9 @@ def test_attached_links_preserve_complete_reviewed_annotation_and_legacy_format(
     assert chunks.decode(attached(raw)) == raw
     assert chunks.decode(raw) == raw
     assert raw == before
+    legacy = attached(raw)
+    legacy['format'] = chunks.LEGACY_FORMAT
+    assert chunks.decode(legacy) == raw
 
 
 @pytest.mark.parametrize('form,expected', [('가는 ', 1), ('가는 곳', 2), ('가', None), ('가는 곳으로', None)])
@@ -81,8 +84,54 @@ def test_failed_anchor_reports_all_exact_alternatives_without_retargeting():
     assert segments == before
 
 
-def test_raw_chunk_digest_is_required_and_tampering_is_rejected(tmp_path):
+@pytest.mark.parametrize('anchor,form,expected', [
+    (0, '가는 곳', (0, 2)), (2, '가는 곳', (0, 2)), (2, '곳', (2, 2)),
+    (0, '곳', None), (2, '가는 곳으로', None), (0, '가', None)])
+def test_v2_uses_only_an_exact_complete_span_containing_its_attachment(anchor, form, expected):
+    segments = [{'text': '가는'}, {'text': ' '}, {'text': '곳'}]
+    before = copy.deepcopy(segments)
+    if expected is None:
+        with pytest.raises(ValueError, match='exactly one complete source span'):
+            chunks.contained_span(segments, anchor, form)
+    else:
+        assert chunks.contained_span(segments, anchor, form) == expected
+    assert segments == before
+
+
+def test_v2_repeated_positions_stay_distinct_and_overlap_is_rejected():
+    segments = [{'text': text} for text in ('가는', ' ', '곳', ' ', '가는', ' ', '곳')]
+    assert chunks.contained_span(segments, 2, '가는 곳') == (0, 2)
+    assert chunks.contained_span(segments, 6, '가는 곳') == (4, 6)
+    with pytest.raises(ValueError, match='found'):
+        chunks.contained_span([{'text': '가'}, {'text': '가'}, {'text': '가'}], 1, '가가')
+
+
+def test_v2_replays_contained_links_but_v1_keeps_its_strict_anchor_contract():
+    raw = fixture()
+    value = attached(raw)
+    link = next(link for link in raw['grammar_links'] if
+                link['display_form'] and link['display_end_segment_index'] > link['segment_index']
+                and raw['segments'][link['display_end_segment_index']]['type'] == 'word')
+    start, end = link['segment_index'], link['display_end_segment_index']
+    nested = next(item for item in value['segments'][start]['grammar_links']
+                  if item['entry_id'] == link['entry_id'])
+    value['segments'][start]['grammar_links'].remove(nested)
+    value['segments'][end]['grammar_links'].append(nested)
+    before = copy.deepcopy(value)
+    decoded = chunks.decode(value)
+    assert sorted(decoded['grammar_links'], key=lambda item: (item['segment_index'], item['entry_id'])) == \
+           sorted(raw['grammar_links'], key=lambda item: (item['segment_index'], item['entry_id']))
+    assert decoded['segments'] == raw['segments']
+    assert value == before
+    value['format'] = chunks.LEGACY_FORMAT
+    with pytest.raises(ValueError, match='Preserve tap boundaries'):
+        chunks.decode(value)
+
+
+@pytest.mark.parametrize('format_name', [chunks.LEGACY_FORMAT, chunks.FORMAT])
+def test_raw_chunk_digest_is_required_and_tampering_is_rejected(tmp_path, format_name):
     raw = attached(fixture())
+    raw['format'] = format_name
     decoded = chunks.decode(raw)
     path = tmp_path/'result.json'
     save(path, raw)

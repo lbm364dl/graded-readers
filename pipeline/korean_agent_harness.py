@@ -84,17 +84,17 @@ def digest(value) -> str:
 
 
 def read_annotation_chunk(path: Path, record=None):
-    from pipeline.korean_annotation_chunks import FORMAT, decode
+    from pipeline.korean_annotation_chunks import FORMATS, decode
     raw = read(path)
-    if record is not None and raw.get('format') == FORMAT and record.get('raw_digest') != digest(raw):
+    if record is not None and raw.get('format') in FORMATS and record.get('raw_digest') != digest(raw):
         raise ValueError('Korean attached chunk changed after review')
     return decode(raw)
 
 
 def annotation_chunk_record(job, text, value, raw=None):
-    from pipeline.korean_annotation_chunks import FORMAT
+    from pipeline.korean_annotation_chunks import FORMATS
     record = {'job': job, 'text': text, 'digest': digest(value)}
-    if raw is not None and raw.get('format') == FORMAT:
+    if raw is not None and raw.get('format') in FORMATS:
         record['raw_digest'] = digest(raw)
     return record
 
@@ -981,13 +981,13 @@ class KoreanHarness:
                         try:
                             value = await self.runner.call(chunk_job, self.policy + "\n" + annotation_prompt
                                 + "\nThis job annotates ONLY chunk_text, not the full chapter. "
-                                "Use segment-anchored-annotation-v1: attach grammar_links and expression_links directly to their first included word segment, and mark each segment is_inflected. Do not output numeric link indices; the pipeline computes anchors and ending indices from the exact complete forms. Include trailing spaces/newlines as punctuation. "
-                                "The attachment marks the START of display_form or expression form, not the word carrying the grammatical ending. For example, with segments 가는, space, 곳, a link displaying 가는 곳 belongs in 가는. A link displaying only 곳 belongs in 곳. If a form begins earlier than the segment containing the link, move the link to that earlier segment; do not shorten its complete form or change source taps to make it fit. "
+                                "Use segment-contained-annotation-v2: attach grammar_links and expression_links to a word INCLUDED in their exact complete source form, and mark each segment is_inflected. This worker-format rule supersedes the general first-segment attachment instruction: the attachment may be the grammatical ending or the first word. The pipeline derives the unique exact complete-form span containing that segment and publishes its first/last indices. Do not output numeric link indices. Include trailing spaces/newlines as punctuation. "
+                                "For example, with segments 가는, space, 곳, a construction displaying 가는 곳 may be attached to 가는 or 곳; one displaying only 곳 must be attached to 곳. Preserve the complete source form and tap boundaries. A form-step lesson stays attached to its step's segment with EMPTY display strings; its complete-form meaning is already in the step. Other construction links need their complete source phrase and meaning. "
                                 + payload(chunk_text=text, previous_chunk=previous_chunk, issues=errors,
                                     **({'newly_reviewed_lexical_candidates': new_candidates} if new_candidates else {}),
                                     **({'reviewed_lexical_usage_evidence': reviewed_usages} if reviewed_usages else {}),
                                     **({'linguistic_reference': read(LINGUISTIC_REFERENCE)} if errors else {})),
-                                contracts.schema_path("chunk-annotation"), "low", tool_profile="offline")
+                                contracts.schema_path("chunk-annotation-v2"), "low", tool_profile="offline")
                         except ValueError as error:
                             # A rejected worker result has no trusted annotation
                             # to inherit. Retry this chunk, preserving siblings.
