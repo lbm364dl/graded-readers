@@ -544,6 +544,32 @@ def test_reviewed_artifacts_must_match_actual_proposals_even_if_hash_updated(tmp
         publication.verify_run(tmp_path)
 
 
+@pytest.mark.parametrize('tamper', [False, True])
+def test_publication_replays_dictionary_assembly_workers(tmp_path, tamper):
+    from pipeline.korean_agent_harness import read, save
+    report = make_reviewed_run(tmp_path)
+    value = read(tmp_path / 'dictionary-delta.json')
+    child = tmp_path / 'agents/dictionary-0-entries-000-0'
+    save(child / 'result.json', value)
+    save(child / 'meta.json', {'return_code': 0})
+    parent = tmp_path / 'agents/dictionary-0'
+    save(parent / 'result.json', value)
+    save(parent / 'meta.json', {'return_code': 0, 'kind': 'dictionary_assembly',
+        'batches': [{'job': child.name, 'digest': digest(value)}]})
+    review = {'approved': True, 'issues': []}
+    save(tmp_path / 'agents/dictionary-review-0/result.json', review)
+    save(tmp_path / 'agents/dictionary-review-0/meta.json', {'return_code': 0,
+        'model': 'test', 'effort': 'test', 'fingerprint': 'test'})
+    report['stages']['dictionary'] = {'proposal_job': parent.name, 'review_job': 'dictionary-review-0',
+        'output_digest': digest(value), 'review_digest': digest(review), 'approved': True}
+    save(tmp_path / 'report.json', report)
+    publication.verify_run(tmp_path)
+    if tamper:
+        save(child / 'result.json', {'words': [], 'grammar': [{'id': 'changed'}]})
+        with pytest.raises(ValueError, match='Dictionary worker changed after review'):
+            publication.verify_run(tmp_path)
+
+
 def test_review_rejection_cannot_be_published(tmp_path):
     from pipeline.korean_agent_harness import save
     report = make_reviewed_run(tmp_path)

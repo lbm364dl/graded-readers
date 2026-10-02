@@ -471,3 +471,20 @@ identity stdict-429486/부; its noun identity remains separate. Actual direct re
 text and independent approval are stored in the supplemental registry. These are
 lexical findings, not approved chapter annotations or curriculum grades. Final
 review and publication of the advanced drafts remain required.
+
+The advanced drafts need substantially larger new dictionary deltas than the
+published beginner editions (the checked TOPIK 5 proposal requested 229 new word
+definitions and 70 grammar lessons). New deltas above 32 entries now use bounded
+24-entry drafting jobs under the existing worker limit. This bounds agent work,
+not chapter length or learner content. Completed jobs are cached, repairs select
+only affected identities and preserve unrelated definitions even within a selected
+batch. The assembled full delta still goes through the existing independent
+dictionary review. Matching reviewed lexical usage evidence reaches both drafting
+and final review without becoming a grade or passage-specific definition.
+
+Publication replays every dictionary child job, verifies its digest and offline
+tool profile, and compares the assembled delta to the reviewed proposal. Tests
+cover full requested identity coverage, local identity failures without redrafting
+successful siblings, focused review repairs, altered worker definitions, tool use,
+changed repair plans and the actual publication verifier. Legacy completed
+dictionary reviews and small deltas retain their original paths.

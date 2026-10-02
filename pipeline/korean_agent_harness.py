@@ -345,10 +345,15 @@ class KoreanHarness:
             review_context = {**review_context, 'linguistic_reference': read(LINGUISTIC_REFERENCE),
                 'lexical_reference': read(LEXICAL_REFERENCE),
                 'form_reading_policy': 'A reading may be empty or equal the written form, meaning no separate pronunciation note. The app displays only readings differing from the written form. Do not require optional pronunciation notes on every occurrence. Any differing pronunciation supplied must be accurate; written morphology and pronunciation remain distinct.'}
+        if (name == 'dictionary' and producer is None
+                and len(review_context['word_requests']) + len(review_context['grammar_requests']) > 32):
+            from pipeline.korean_dictionary_jobs import producer as dictionary_producer
+            producer = dictionary_producer(self, prompt, review_context)
         def review_payload(value):
             evidence = {}
             if name == 'curriculum':
                 evidence = {'computed_curriculum_evaluation': curriculum.evaluate_bindings(review_context['chapter'], value, level=self.level)}
+            if name in ('curriculum', 'dictionary'):
                 from pipeline.korean_lexical_research import chapter_usage_evidence
                 reviewed_usages = chapter_usage_evidence(review_context['chapter'], review_context.get('word_requests', {}))
                 if reviewed_usages:
