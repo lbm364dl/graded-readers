@@ -197,3 +197,19 @@ bindings to wait for shared dictionary publication; it cannot itself publish.
 Validation: 108 focused Python tests and complete TOPIK 1 publication replay pass.
 Real TOPIK 3 and 5 runs reused their approved plans and prose and are progressing
 through annotation/curriculum reviews; TOPIK 4 prose is prepared.
+
+
+Interrupted assembly recovery: TOPIK 2 stopped after its 77 sentence jobs because
+one chunk retained a duplicate complete-form stage through all local attempts.
+The parent assembly had not been saved, so ordinary assembly reuse could not
+recover the other workers. The shared producer now checks completed worker
+proposals against exact chunk text, lexical identities, complete-form routes
+and offline tool evidence before recovering them when no reviewer objections
+exist. A rejected proposal guides a fresh numbered repair without overwriting
+the old evidence. These are still unapproved proposals until full independent
+chapter review. Regression coverage distinguishes a valid cached worker, an
+invalid identity and a worker that called tools outside its role, and verifies
+that full review remains required. The real TOPIK 2 restart recovered 76 workers
+and repaired the remaining chunk. All six editions now have reviewed prose;
+TOPIK 3–6 are proceeding through annotation and curriculum checkpoints before
+shared dictionary work. TOPIK 2–6 are not yet published.

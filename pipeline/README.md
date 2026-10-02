@@ -77,6 +77,12 @@ reuse agent to approve exact unchanged occurrences, preserving unresolved issues
 and distinct positions. Selected chunk digests must still match. Curriculum
 search includes possible compound prerequisites as candidates; it never grades
 a derived word from spelling alone.
+If a process stops before writing its parent assembly, locally valid completed
+worker proposals can also be recovered for the same exact chunk text. Completion,
+offline tool use, lexical identities and complete-form routes are checked again.
+Invalid proposals guide fresh repair jobs; rejected tool outputs are skipped.
+Recovery never supplies independent approval: the assembled chapter still passes
+the normal full review, and known reviewer objections prevent this shortcut.
 Chapter length has no numeric quota. Source planning records the coverage and
 omission decisions; prose records why its extent and stopping point suit the
 level. Independent review checks both avoidable compression and padding. The

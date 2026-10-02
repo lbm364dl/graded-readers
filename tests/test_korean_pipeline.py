@@ -129,8 +129,8 @@ def test_publication_rejects_overlapping_or_skipped_chapter_scopes(tmp_path, mon
             publication.publish(tmp_path)
 
 
-@pytest.mark.parametrize('prose_revision,worker_failure', [(False, False), (False, True), (True, False), ('technical_failure', False)])
-def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_path, prose_revision, worker_failure):
+@pytest.mark.parametrize('prose_revision,worker_failure,recover_partial', [(False, False, False), (False, True, False), (True, False, False), ('technical_failure', False, False), (False, False, True), (False, False, 'rejected_worker')])
+def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_path, prose_revision, worker_failure, recover_partial):
     from pipeline.korean_agent_harness import normalize_existing, save, UnannotatableProseError
     chapter = manual_chapter()
     raw = normalize_existing(chapter, dictionary._registry(dictionary.WORDS))
@@ -191,6 +191,17 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
                                      for row in contracts.sentence_inventory(revised_text if prose_revision else chapter['text'])]}
             raise AssertionError(job)
     runner = Runner()
+    if recover_partial:
+        # An earlier process completed workers but never saved the parent
+        # assembly: one valid proposal and one invalid identity to repair.
+        bad = copy.deepcopy(chunks[0])
+        next(s for s in bad['segments'] if s['lexical_kind'] == 'vocabulary')['lexical_id'] = 'invented'
+        for index, value in ((1, bad), (2, chunks[1])):
+            job = f'annotation-0-chunk-{index:03d}-0'
+            save(tmp_path / 'agents' / job / 'result.json', value)
+            save(tmp_path / 'agents' / job / 'meta.json', {'return_code': 0})
+        if recover_partial == 'rejected_worker':
+            (tmp_path / 'agents' / 'annotation-0-chunk-002-0' / 'events.attempt-01.jsonl').write_text(json.dumps({'item': {'type': 'mcp_tool_call'}}) + '\n')
     if prose_revision == 'technical_failure':
         with pytest.raises(ValueError, match='Invalid annotation repair evidence'):
             asyncio.run(KoreanHarness(tmp_path, 1, runner=runner).run())
@@ -198,10 +209,14 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
         return
     assert asyncio.run(KoreanHarness(tmp_path, 1, runner=runner).run())['status'] == 'complete'
     jobs = [job for job in runner.jobs if '-chunk-' in job]
-    assert jobs.count('annotation-0-chunk-001-0') == 1
+    assert jobs.count('annotation-0-chunk-001-0') == (0 if recover_partial else 1)
     assert jobs.count('annotation-0-chunk-001-1') == (0 if prose_revision else 1)
-    assert all(jobs.count(f'annotation-0-chunk-{i:03d}-0') == 1 for i in range(2, len(chunks) + 1))
-    assert len(jobs) == len(chunks) + 1
+    assert all(jobs.count(f'annotation-0-chunk-{i:03d}-0') == (0 if recover_partial and i == 2 else 1) for i in range(2, len(chunks) + 1))
+    assert len(jobs) == len(chunks) + (-1 if recover_partial else 1) + (1 if recover_partial == 'rejected_worker' else 0)
+    if recover_partial:
+        assert 'annotation-review-0' in runner.jobs  # Recovery is never approval.
+        if recover_partial == 'rejected_worker':
+            assert 'annotation-0-chunk-002-1' in runner.jobs
     if prose_revision:
         assert [job for job in jobs if 'revision1' in job] == ['annotation-revision1-0-chunk-001-0']
 

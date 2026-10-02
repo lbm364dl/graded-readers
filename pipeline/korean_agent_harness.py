@@ -606,6 +606,16 @@ class KoreanHarness:
                         selected = contracts.repair_selection(selection, len(texts))
                         repair_evidence = {'repair_plan_job': repair_job, 'repair_plan_digest': digest(selection)}
                         print(f'annotation repair: {len(selected)} of {len(texts)} chunks selected', flush=True)
+                def validate_chunk(value, text):
+                    validate(value, contracts.ANNOTATION)
+                    contracts.check_reconstruction(value['segments'], text)
+                    requests, grammar_ids = annotation_requests(value, self.catalog, focus, self.words)
+                    fragment = contracts.canonical_annotation(value,
+                        {'title': prose['title'], 'text': text}, self.number, EDITION, bound_plan, focus, level=self.level)
+                    dictionaries.build_assets(fragment, self.run_dir, source_id=source_id,
+                        word_registry={identity: {'id': identity, **entry} for identity, entry in requests.items()},
+                        grammar_registry={identity: {'id': identity} for identity in grammar_ids}, write=False)
+
                 async def chunk(number, text):
                     if number in reused:
                         record = old_lineage[reused[number] - 1]
@@ -621,7 +631,38 @@ class KoreanHarness:
                         return value, record
                     errors = selected[number] if selected is not None else issues
                     previous_chunk = previous_chunks[number - 1] if previous_chunks is not None else None
-                    for repair in range(3):
+                    repair_start = 0
+                    # A process may stop before writing the parent assembly. Its
+                    # completed workers are proposals, not approved annotations.
+                    # Recover only locally valid outputs when there are no known
+                    # reviewer objections; the whole chapter still gets reviewed.
+                    if not errors and previous_chunk is None:
+                        cached = []
+                        for path in (self.run_dir / 'agents').glob(f'{job}-chunk-{number:03d}-*/result.json'):
+                            suffix = path.parent.name.rsplit('-', 1)[-1]
+                            if suffix.isdigit():
+                                cached.append((int(suffix), path))
+                        if cached:
+                            repair_start = max(attempt for attempt, _ in cached) + 1
+                        for _, path in sorted(cached, reverse=True):
+                            try:
+                                meta = read(path.with_name('meta.json'))
+                                if meta.get('return_code') != 0:
+                                    continue
+                                CodexRunner._check_tool_profile(path.parent, 'offline', meta)
+                                value = read(path)
+                                # A different partition is not a reusable proposal.
+                                contracts.check_reconstruction(value['segments'], text)
+                            except (ValueError, KeyError, TypeError, FileNotFoundError):
+                                continue
+                            try:
+                                validate_chunk(value, text)
+                                print(f'annotation chunk {number}: recovered completed proposal', flush=True)
+                                return value, {'job': path.parent.name, 'text': text, 'digest': digest(value)}
+                            except (ValidationError, ValueError, KeyError, IndexError, TypeError) as error:
+                                if previous_chunk is None:
+                                    errors, previous_chunk = [str(error)], value
+                    for repair in range(repair_start, repair_start + 3):
                         chunk_job = f"{job}-chunk-{number:03d}-{repair}"
                         try:
                             value = await self.runner.call(chunk_job, self.policy + "\n" + annotation_prompt
@@ -636,14 +677,7 @@ class KoreanHarness:
                             errors = [str(error), 'Use only the supplied data. Do not call any tools, including resource listing.']
                             continue
                         try:
-                            validate(value, contracts.ANNOTATION)
-                            contracts.check_reconstruction(value["segments"], text)
-                            requests, grammar_ids = annotation_requests(value, self.catalog, focus, self.words)
-                            fragment = contracts.canonical_annotation(value,
-                                {'title': prose['title'], 'text': text}, self.number, EDITION, bound_plan, focus)
-                            dictionaries.build_assets(fragment, self.run_dir, source_id=source_id,
-                                word_registry={identity: {'id': identity, **entry} for identity, entry in requests.items()},
-                                grammar_registry={identity: {'id': identity} for identity in grammar_ids}, write=False)
+                            validate_chunk(value, text)
                             print(f"annotation chunk {number}: structure passed", flush=True)
                             return value, {"job": chunk_job, "text": text, "digest": digest(value)}
                         except (ValidationError, ValueError, KeyError, IndexError, TypeError) as error:
