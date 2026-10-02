@@ -634,11 +634,11 @@ class KoreanHarness:
         focus_context = {**context, "plan": bound_plan, "approved_words": list(self.words.values()),
                          "story_term_budget": MAX_STORY_TERMS}
         focus = await self.stage("lexical-plan", "Plan lexical identities before writing prose. "
-            "Include the named people who may appear, with their canonical full headword, exact existing ID when available, "
+            "Include named people, places and works that may appear in the reviewed source span, with their canonical full headword, exact existing ID when available, "
             "reviewed short-name aliases and passage-specific role_en. Distinguish the father from the son. "
             f"Allow at most {MAX_STORY_TERMS} essential historical story term, only if needed to express the central conflict. "
             "Do not exempt ordinary difficult vocabulary or optional literary detail. An unlisted ordinary word must receive honest difficulty review; do not assume its grade from catalog absence. "
-            "This is not a catalog of every participant. Unnamed roles such as a visitor or a fortune-teller can be expressed through ordinary vocabulary and sentence descriptions without adding a profile or claiming a story-term exemption. An English role in the source plan does not require an exempt Korean term. Do not create a second identity for a role alias already assigned to another participant; resolve supported discourse references before planning identities. "
+            "This is not a catalog of every participant or descriptive location. Generic roles and locations remain ordinary vocabulary; only genuinely named source entities receive proper-name identities. Unnamed roles such as a visitor or a fortune-teller can be expressed through ordinary vocabulary and sentence descriptions without adding a profile or claiming a story-term exemption. An English role in the source plan does not require an exempt Korean term. Do not create a second identity for a role alias already assigned to another participant; resolve supported discourse references before planning identities. "
             "Prefer everyday wording for secondary descriptions and roles. Story terms may use a stable English ID if absent from NIKL. "
             "Do not generate definitions; those belong to the separate dictionary editor. New IDs must be stable and distinct."
             + payload(**focus_context, nikl_A=[e["headword"] for e in beginner]),

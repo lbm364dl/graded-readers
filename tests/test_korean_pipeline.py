@@ -1238,6 +1238,9 @@ def test_preparation_checkpoint_stops_before_annotation_and_cannot_publish(tmp_p
     async def reviewed_stage(name, prompt, schema, check, context, **kwargs):
         stages.append(name)
         assert context['reviewed_source_context']
+        if name == 'lexical-plan':
+            assert 'named people, places and works' in prompt
+            assert 'Generic roles and locations remain ordinary vocabulary' in prompt
         if name == 'prose':
             assert 'reviewed_source_context' in prompt
             for record in context['reviewed_source_context']:
