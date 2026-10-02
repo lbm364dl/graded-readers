@@ -488,3 +488,21 @@ cover full requested identity coverage, local identity failures without redrafti
 successful siblings, focused review repairs, altered worker definitions, tool use,
 changed repair plans and the actual publication verifier. Legacy completed
 dictionary reviews and small deltas retain their original paths.
+
+TOPIK 6 revealed a source-attested place name, 운봉산, omitted by the pre-prose
+lexical plan. Annotators correctly refused to assign it another person's ID or
+invent a name exemption. The mismatch diagnostic now identifies the exact tap,
+headword, ID and kind. A missing planned name ends that local repair immediately;
+after sibling jobs drain, the pipeline can perform one bounded cached recovery.
+Only completed offline proposals matching current prose chunks supply unverified
+name requests. A source-grounded lexical-plan completion and independent review
+decide whether to add named people or places, preserving all existing entries,
+aliases and roles exactly. Ordinary vocabulary and story terms are not converted
+into new exemptions. Prose and unrelated completed annotation jobs stay cached.
+
+The actual TOPIK 6 coverage completion passed independent review. Regression
+coverage contrasts current prose with stale chunks, completed with failed workers,
+offline with tool-using proposals, missing names with already planned aliases,
+and name-recovery errors with unrelated dictionary errors. Existing roles cannot
+be overwritten and reviewer rejection cannot become lexical approval. No claim
+of final TOPIK 6 annotation or publication approval follows from this plan repair.

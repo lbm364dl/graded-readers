@@ -333,6 +333,72 @@ def test_source_plan_binds_exact_unicode_paragraphs_and_rejects_reordering():
         contracts.bind_plan(plan, '첫 문단\n\n둘째 문단', 10)
 
 
+def test_unplanned_name_recovery_uses_only_completed_exact_prose_proposals(tmp_path):
+    from pipeline.korean_agent_harness import cached_unplanned_names, save
+    def proposal(text, lemma):
+        return {'segments': [{'text': text, 'type': 'word', 'meaning_en': 'on the mountain',
+            'lemma': lemma, 'lexical_kind': 'proper_name', 'lexical_id': 'unverified',
+            'story_importance_en': '', 'form_steps': []}],
+            'grammar_links': [], 'inflected_segment_indices': []}
+    focus = {'entries': [{'id': 'person', 'headword': '길동', 'kind': 'proper_name',
+        'aliases': ['길동'], 'role_en': 'The protagonist.'}]}
+    for number, text, lemma, complete in [(1, '운봉산에서', '운봉산', True),
+        (2, '다른산에서', '다른산', True), (3, '운봉산에서', 'invented', False),
+        (4, '운봉산에서', '길동', True), (5, '운봉산에서', 'tool-name', True)]:
+        path = tmp_path / 'agents' / f'annotation-0-chunk-001-{number}'
+        save(path / 'result.json', proposal(text, lemma))
+        save(path / 'meta.json', {'return_code': 0 if complete else 1})
+        if number == 5:
+            (path / 'events.attempt-01.jsonl').write_text(json.dumps({'item': {'type': 'web_search'}}) + '\n')
+    assert cached_unplanned_names(tmp_path, '운봉산에서', focus, batch_characters=240) == {
+        '운봉산': [{'text': '운봉산에서', 'meaning_en': 'on the mountain'}]}
+
+
+def test_lexical_plan_completion_preserves_existing_identities_and_requires_review(tmp_path):
+    from pipeline.korean_agent_harness import validate_focus_completion
+    previous = {'entries': [{'id': 'reviewed-person', 'headword': '기존인물', 'kind': 'proper_name',
+        'aliases': ['기존인물'], 'role_en': 'Existing reviewed role.'}]}
+    value = copy.deepcopy(previous)
+    value['entries'].append({'id': 'unbong-mountain', 'headword': '운봉산', 'kind': 'proper_name',
+        'aliases': ['운봉산'], 'role_en': 'The source-attested mountain.'})
+    validate_focus_completion(value, previous, {}, {})
+    changed = copy.deepcopy(value)
+    changed['entries'][0]['role_en'] = 'Changed unrelated role.'
+    with pytest.raises(ValueError, match='changed a previously reviewed'):
+        validate_focus_completion(changed, previous, {}, {})
+    class Runner:
+        async def call(self, job, prompt, *args, **kwargs):
+            if '-review-' in job:
+                return {'approved': False, 'issues': ['Verify the source name before approval.']}
+            return value
+    harness = KoreanHarness(tmp_path, 1, runner=Runner())
+    with pytest.raises(ValueError, match='failed review after eight attempts'):
+        asyncio.run(harness.stage('lexical-plan', 'Source-check the missing name.', 'lexical-plan',
+            lambda output: validate_focus_completion(output, previous, {}, {}),
+            {'source': 'Source excerpt', 'prose': {'text': '운봉산에서'}}, cache_prefix='-coverage'))
+
+
+@pytest.mark.parametrize('missing_name', [False, True])
+def test_only_missing_name_errors_trigger_bounded_cached_plan_recovery(tmp_path, monkeypatch, missing_name):
+    from pipeline.korean_agent_harness import MissingPlannedNameError
+    harness = KoreanHarness(tmp_path, 1)
+    calls = []
+    async def run():
+        calls.append('run')
+        if len(calls) == 1:
+            if missing_name: raise MissingPlannedNameError('Source name needs review.')
+            raise ValueError('An unrelated dictionary error.')
+        return {'status': 'reviewed test result'}
+    monkeypatch.setattr(harness, '_run', run)
+    if missing_name:
+        assert asyncio.run(harness.run()) == {'status': 'reviewed test result'}
+        assert len(calls) == 2
+    else:
+        with pytest.raises(ValueError, match='unrelated dictionary error'):
+            asyncio.run(harness.run())
+        assert len(calls) == 1
+
+
 def test_dictionary_delta_reuses_approved_entries_and_allows_only_missing():
     old = {'id': 'one', 'headword': '하나', 'kind': 'word', 'definition_en': 'one'}
     new = {'id': 'two', 'headword': '둘', 'kind': 'word', 'definition_en': 'two'}

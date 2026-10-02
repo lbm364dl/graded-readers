@@ -55,6 +55,10 @@ class MissingLexicalIdentityError(LexicalIdentityError, UnannotatableProseError)
     """An occurrence revealed a headword missed by candidate preparation."""
 
 
+class MissingPlannedNameError(ValueError):
+    """A proposed proper name needs source-grounded lexical planning."""
+
+
 def read(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
@@ -225,12 +229,48 @@ def validate_focus(value: dict, words: dict, catalog: dict, notes: dict | None =
             if candidates and entry["id"] not in {e["id"] for e in candidates}:
                 raise ValueError(f"Use the canonical NIKL identity for story word {entry['headword']}: {candidates}")
 
+
+def cached_unplanned_names(run_dir: Path, text: str, focus: dict, *, batch_characters: int):
+    """Find planning needs in completed proposals for this exact prose only.
+
+    These are unverified requests, never lexical approvals. The source-grounded
+    planning agent and independent reviewer decide whether they are names.
+    """
+    aliases = {alias for entry in focus['entries'] for alias in entry['aliases']}
+    chunks = set(contracts.annotation_chunks(text, batch_characters=batch_characters))
+    requests = {}
+    for path in sorted((run_dir / 'agents').glob('annotation*-chunk-*/result.json')):
+        try:
+            meta = read(path.with_name('meta.json'))
+            if meta.get('return_code') != 0:
+                continue
+            CodexRunner._check_tool_profile(path.parent, 'offline', meta)
+            value = read(path)
+            validate(value, contracts.ANNOTATION)
+            if ''.join(s['text'] for s in value['segments']) not in chunks:
+                continue
+            for segment in value['segments']:
+                if segment['lexical_kind'] == 'proper_name' and segment['lemma'] not in aliases:
+                    occurrence = {'text': segment['text'], 'meaning_en': segment['meaning_en']}
+                    if occurrence not in requests.setdefault(segment['lemma'], []):
+                        requests[segment['lemma']].append(occurrence)
+        except (OSError, ValueError, ValidationError, KeyError, TypeError):
+            continue
+    return requests
+
+
+def validate_focus_completion(value, previous, words, catalog, notes=None):
+    validate_focus(value, words, catalog, notes)
+    current = {entry['id']: entry for entry in value['entries']}
+    if any(current.get(entry['id']) != entry for entry in previous['entries']):
+        raise ValueError('Lexical-plan completion changed a previously reviewed identity or role')
+
 def annotation_requests(value: dict, catalog: dict, focus: dict, words: dict) -> tuple[dict, set]:
     """Use the same exact identity checks for chunks and the assembled chapter."""
     requests, grammar_ids = {}, set()
     profiles = {entry["id"]: entry for entry in focus["entries"]}
     identity_errors, unresolved_headwords, unresolved_occurrences = [], set(), {}
-    for segment in value["segments"]:
+    for segment_index, segment in enumerate(value["segments"]):
         if segment["type"] == "punctuation":
             if any(c.isalnum() for c in segment["text"]):
                 raise ValueError("Korean words cannot hide in punctuation")
@@ -241,7 +281,9 @@ def annotation_requests(value: dict, catalog: dict, focus: dict, words: dict) ->
             profile = profiles.get(identity)
             if profile is None or any(profile[key] != segment[field] for key, field in
                     (("headword", "lemma"), ("kind", "lexical_kind"))):
-                raise ValueError(f"Use exact lexical-plan IDs, headwords and kinds: {focus}. If this is an ordinary listed lexical use rather than a planned name exemption, inspect these exact vocabulary candidates for its sense/POS: {candidates}. Do not invent a new exemption or an ID.")
+                error = MissingPlannedNameError if (kind == 'proper_name' and not candidates
+                    and not any(segment['lemma'] in entry['aliases'] for entry in profiles.values())) else ValueError
+                raise error(f"Lexical-plan mismatch at segment {segment_index}, {segment['text']!r}: proposed headword {segment['lemma']!r}, ID {identity!r}, kind {kind!r}. Use exact lexical-plan IDs, headwords and kinds: {focus}. If this is an ordinary listed lexical use rather than a planned name exemption, inspect these exact vocabulary candidates for its sense/POS: {candidates}. Do not invent a new exemption or an ID. A source-attested name absent from the plan needs independently reviewed lexical-plan completion, not a guessed identity or a prose rewrite.")
         planned_story = [e for e in profiles.values() if e["kind"] == "story_term" and segment["lemma"] in e["aliases"]]
         if kind == "vocabulary" and not candidates and planned_story:
             raise ValueError(f"This is the reviewed story exception, not a NIKL word: {planned_story}")
@@ -457,6 +499,18 @@ class KoreanHarness:
         raise ValueError(f"Korean {name} failed review after eight attempts: {problems}")
 
     async def run(self) -> dict:
+        for attempt in range(2):
+            try:
+                return await self._run()
+            except MissingPlannedNameError:
+                if attempt:
+                    raise
+                # Annotation drains siblings before propagating this failure.
+                # Its completed proposals now supply unverified planning needs;
+                # the next pass reviews them against source without new prose.
+                print('annotation found an unplanned name; reviewing lexical-plan coverage before cached recovery', flush=True)
+
+    async def _run(self) -> dict:
         self.run_dir.mkdir(parents=True, exist_ok=True)
         manifest, _, _ = load_unit(1)
         source_notes = read(ROOT / "books/korean/honggildong" / manifest["notes_file"]) if "notes_file" in manifest else {"notes": []}
@@ -552,6 +606,24 @@ class KoreanHarness:
                     'source_plan': bound_plan, 'lexical_plan': focus, 'prose': prose}
                 save(self.run_dir / 'preparation.json', preparation)
                 return preparation
+            unplanned_names = cached_unplanned_names(self.run_dir, prose['text'], focus,
+                batch_characters=self.annotation_batch_characters)
+            if unplanned_names:
+                previous_focus = focus
+                completion_context = {**focus_context, 'prose': prose,
+                    'previous_lexical_plan': previous_focus, 'unverified_name_requests': unplanned_names}
+                focus = await self.stage('lexical-plan',
+                    'Complete the reviewed lexical plan for source-attested proper names appearing in the approved prose. '
+                    'Include named people and places, not only characters. Preserve every existing entry, ID, alias and role exactly. '
+                    'The unverified requests come from annotation proposals: check the actual source and prose before adding an identity. '
+                    'Do not convert ordinary vocabulary, productive grammar or an incorrect annotation into a name exemption. '
+                    'Add only genuinely named source entities needed here, with stable distinct IDs, canonical headwords, '
+                    'attested aliases and contextual roles. Inspect comparable missing names throughout this prose. '
+                    'Do not rewrite prose or add story terms or dictionary definitions. Return the complete lexical plan. '
+                    + payload(**completion_context), 'lexical-plan',
+                    lambda value: validate_focus_completion(value, previous_focus, self.words, self.catalog, source_notes),
+                    completion_context, cache_prefix=f'-coverage-revision{prose_attempt}')
+                profiles = {entry['id']: entry for entry in focus['entries']}
             required_words, required_grammar = {}, set()
             def check_annotation(value):
                 contracts.check_reconstruction(value["segments"], prose["text"])
@@ -792,6 +864,8 @@ class KoreanHarness:
                             print(f"annotation chunk {number}: structure passed", flush=True)
                             return value, {"job": chunk_job, "text": text, "digest": digest(value)}
                         except (ValidationError, ValueError, KeyError, IndexError, TypeError) as error:
+                            if isinstance(error, MissingPlannedNameError):
+                                raise
                             errors, previous_chunk = [str(error)], value
                             if (self.level > 1 and not researched_identity
                                     and isinstance(error, LexicalIdentityError)
