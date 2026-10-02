@@ -10,6 +10,28 @@ from pipeline.korean_agent_harness import save
 STANDARD_EVIDENCE = research.standard_evidence
 
 
+def test_targeted_research_receives_passage_context_and_binds_it_to_review(tmp_path):
+    registry = tmp_path / 'lexemes.json'
+    passage = '자료를 검증했다.'
+    calls = []
+    class Runner:
+        async def call(self, job, prompt, *args, **kwargs):
+            calls.append(job)
+            assert 'not exhaustive dictionary enrichment' in prompt
+            assert 'do not demand unrelated homonyms' in prompt
+            assert json.loads(prompt.split('\nINPUT:\n', 1)[1])['source_context'] == passage
+            return {'approved': True, 'issues': []} if '-review-' in job else proposal()
+    asyncio.run(research.research(['검증하다'], tmp_path, runner=Runner(),
+        registry=registry, source_context=passage))
+    assert len(calls) == 2
+    assert research.candidates(registry)
+    document = json.loads(registry.read_text())
+    document['reviews'][0]['source_context'] = 'Changed usage context'
+    save(registry, document)
+    with pytest.raises(ValueError, match='source context changed'):
+        research.candidates(registry)
+
+
 @pytest.fixture(autouse=True)
 def offline_primary_fixture(monkeypatch):
     monkeypatch.setattr(research, 'standard_evidence', lambda headword:

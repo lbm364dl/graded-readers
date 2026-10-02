@@ -34,6 +34,12 @@ RESEARCH_POLICY = (
     'Every proposed reference is retrieved for the independent reviewer. A URL or claimed search result alone is not attestation; if the record cannot be read, use another verified primary record or remain unresolved. '
     'Supplied primary_evidence records contain actual direct dictionary content retrieved by the pipeline, not merely search snippets. A readable exact headword/POS/sense record is valid evidence even when your web tool cannot open its public URL; propose its primary identity for the independent exact-record retrieval gate. Do not claim direct retrieval failed or a sense is unattested when that retrieved record text is supplied. The independent reviewer must reject such false unresolved reasons. '
 )
+RESEARCH_SCOPE = ('This is targeted passage lookup, not exhaustive dictionary enrichment. '
+    'Use source_context only as unverified usage context to identify the needed lexeme; direct primary records remain the attestation. '
+    'Preserve distinctions among proposed homonyms and POS, but do not demand unrelated homonyms merely because retrieval found them. '
+    'Cover every requested spelling with the needed attested identity or an honest unresolved outcome. '
+    'Conjugated requests should be unresolved as such, not answered with an unrelated noun homonym. '
+    'Keep reusable definitions independent of the passage. ')
 LEXEME = contracts.obj({
     'id': contracts.NONEMPTY, 'headword': contracts.NONEMPTY,
     'pos': {'type': 'string', 'enum': ['명', '동', '형', '부', '관', '감', '의', '대', '수']},
@@ -192,6 +198,8 @@ def candidates(path=REGISTRY):
         if ('primary_evidence' in record
                 and record.get('primary_evidence_digest') != fingerprint(record['primary_evidence'])):
             raise ValueError('Lexical primary evidence changed after review')
+        if ('source_context' in record and record.get('source_context_digest') != fingerprint(record['source_context'])):
+            raise ValueError('Lexical research source context changed after review')
         if ('occurrence_requests' in record
                 and record.get('occurrence_requests_digest') != fingerprint(record['occurrence_requests'])):
             raise ValueError('Lexical research occurrence scope changed after review')
@@ -230,13 +238,13 @@ def usage_evidence(occurrences, path=REGISTRY, *, related_forms=False):
     return evidence
 
 
-async def research(headwords, run_dir, *, runner=None, registry=REGISTRY, occurrence_requests=None):
+async def research(headwords, run_dir, *, runner=None, registry=REGISTRY, occurrence_requests=None, source_context=None):
     """Bound independent lexical jobs without changing chapter coverage."""
     from pipeline.agent_harness import CodexRunner
     headwords = sorted(set(headwords))
     if len(headwords) <= 8:
         return await _research_batch(headwords, run_dir, runner=runner, registry=registry,
-            occurrence_requests=occurrence_requests)
+            occurrence_requests=occurrence_requests, source_context=source_context)
     runner = runner or CodexRunner(run_dir, 'gpt-6-luna', asyncio.Semaphore(3), timeout=600)
     batches = asyncio.Semaphore(3)
     retrieval_limit = asyncio.Semaphore(3)
@@ -244,7 +252,7 @@ async def research(headwords, run_dir, *, runner=None, registry=REGISTRY, occurr
         async with batches:
             return await _research_batch(words, run_dir, runner=runner, registry=registry,
                 retrieval_limit=retrieval_limit, occurrence_requests={h: occurrence_requests[h]
-                    for h in words if h in occurrence_requests} if occurrence_requests else None)
+                    for h in words if h in occurrence_requests} if occurrence_requests else None, source_context=source_context)
     # Drain siblings before reporting failure: independently approved batches
     # remain reusable and no retry overlaps its predecessor's model jobs.
     results = await asyncio.gather(*(batch(headwords[i:i + 8])
@@ -257,7 +265,7 @@ async def research(headwords, run_dir, *, runner=None, registry=REGISTRY, occurr
         'unresolved': [entry for r in results for entry in r['unresolved']]}
 
 
-async def _research_batch(headwords, run_dir, *, runner=None, registry=REGISTRY, retrieval_limit=None, occurrence_requests=None):
+async def _research_batch(headwords, run_dir, *, runner=None, registry=REGISTRY, retrieval_limit=None, occurrence_requests=None, source_context=None):
     from pipeline.agent_harness import CodexRunner
     from pipeline.korean_agent_harness import payload, read, save
     headwords = sorted(set(headwords))
@@ -296,13 +304,15 @@ async def _research_batch(headwords, run_dir, *, runner=None, registry=REGISTRY,
     catalog = contracts.lexical_catalog()
     known_candidates = {h: catalog.get(h, []) for h in headwords}
     key = fingerprint({'headwords': headwords, 'occurrence_requests': occurrence_requests})[:16] if occurrence_requests else fingerprint(headwords)[:16]
+    if source_context:
+        key = fingerprint({'key': key, 'source_context': source_context})[:16]
     previous, issues = None, []
     for attempt in range(4):
         proposal = await runner.call(f'lexical-research-{key}-{attempt}',
-            RESEARCH_POLICY
+            RESEARCH_POLICY + RESEARCH_SCOPE
             + ('\nThe supplied occurrence_requests are unverified search context, not attestation. Investigate the exact requested sense/POS even when another homonym already has a candidate. Reuse an existing identity only if it covers this lexeme; otherwise verify a distinct primary identity. Keep definitions independent of these passages. ' if occurrence_requests else '')
             + payload(headwords=headwords, primary_evidence=primary_evidence,
-                known_candidates=known_candidates, occurrence_requests=occurrence_requests,
+                known_candidates=known_candidates, occurrence_requests=occurrence_requests, source_context=source_context,
                 previous=previous, issues=issues), schema, 'low', tool_profile='research')
         try:
             check_proposal(proposal, headwords)
@@ -316,7 +326,7 @@ async def _research_batch(headwords, run_dir, *, runner=None, registry=REGISTRY,
             for url in proposal_reference_urls(proposal)))
         reviewed_evidence = [*primary_evidence, {'proposal_records': proposal_records}]
         review = await runner.call(f'lexical-research-review-{key}-{attempt}',
-            RESEARCH_POLICY + '\nINDEPENDENT REVIEW: '
+            RESEARCH_POLICY + RESEARCH_SCOPE + '\nINDEPENDENT REVIEW: '
             'Independently check these researched lexical identities against the supplied primary dictionary evidence. '
             'Check exact dictionary headword, POS, ID/reference correspondence, distinct homonyms, attested meaning and full requested coverage. '
             'Where an attested and unresolved request share a spelling, check that the unresolved reason identifies a different usage or identity without denying the attested lexeme. '
@@ -326,7 +336,7 @@ async def _research_batch(headwords, run_dir, *, runner=None, registry=REGISTRY,
             'This approves lexical evidence only: it assigns no curriculum grade, story exemption or chapter approval. '
             'Output JSON only and do not call tools. '
             + payload(headwords=headwords, primary_evidence=reviewed_evidence,
-                known_candidates=known_candidates, occurrence_requests=occurrence_requests,
+                known_candidates=known_candidates, occurrence_requests=occurrence_requests, source_context=source_context,
                 proposal=proposal), contracts.schema_path('review'), 'low', tool_profile='offline')
         validate(review, contracts.REVIEW)
         if review == {'approved': True, 'issues': []}:
@@ -338,6 +348,9 @@ async def _research_batch(headwords, run_dir, *, runner=None, registry=REGISTRY,
         'review': review, 'review_digest': fingerprint(review),
         'research_policy_digest': fingerprint(RESEARCH_POLICY),
         'primary_evidence': reviewed_evidence, 'primary_evidence_digest': fingerprint(reviewed_evidence)}
+    if source_context:
+        record['source_context'] = source_context
+        record['source_context_digest'] = fingerprint(source_context)
     if occurrence_requests:
         record['occurrence_requests'] = occurrence_requests
         record['occurrence_requests_digest'] = fingerprint(occurrence_requests)

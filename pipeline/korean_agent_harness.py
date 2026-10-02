@@ -716,7 +716,7 @@ class KoreanHarness:
                 missing = proposed_headwords - self.catalog.keys() - excluded
                 if missing:
                     from pipeline.korean_lexical_research import research
-                    researched = await research(missing, self.run_dir, runner=self.runner)
+                    researched = await research(missing, self.run_dir, runner=self.runner, source_context=prose['text'])
                     lexical_research_unresolved = researched.get('unresolved', [])
                     self.catalog = contracts.lexical_catalog()
                 candidate_entries = lexical_candidates(proposed['headwords'], self.catalog)
