@@ -522,6 +522,23 @@ def test_independent_review_rejection_repairs_and_only_approval_completes(tmp_pa
     assert harness.stages['prose']['review_job'] == 'prose-review-1'
 
 
+@pytest.mark.parametrize('plan_approved', [False, True])
+def test_prose_review_reuses_source_interpretation_only_with_plan_approval(tmp_path, plan_approved):
+    value = {'title': '제목', 'text': '길동은 떠났다.', 'length_reason_en': 'A coherent departure.'}
+    class Runner:
+        async def call(self, job, prompt, *args, **kwargs):
+            if '-review-' in job:
+                assert ('Use that approved plan as the factual and coverage baseline' in prompt) == plan_approved
+                if plan_approved:
+                    assert 'concrete exact source evidence and the conflicting planned event' in prompt
+                    assert 'not an automatic shorter chapter or a length quota' in prompt
+                return {'approved': True, 'issues': []}
+            return value
+    harness = KoreanHarness(tmp_path, 1, runner=Runner())
+    assert asyncio.run(harness.stage('prose', 'Source-faithful prose', 'prose', lambda _: None,
+        {'plan': {'events': []}, 'approved_source_plan_review': {'approved': plan_approved}})) == value
+
+
 def test_dictionary_publication_keeps_both_chapters_and_exact_form_routes(tmp_path):
     first = manual_chapter()
     second = copy.deepcopy(first)
@@ -1417,7 +1434,11 @@ def test_curriculum_checkpoint_defers_dictionary_until_shared_entries_are_ready(
         async def call(self, job, *args, **kwargs):
             if job == 'prose-readiness-review-revision0':
                 return {'approved': True, 'issues': []}
-            assert job == 'annotation-lexical-candidates-revision0'
+            assert job in ('annotation-lexical-candidates-revision0', 'annotation-lexical-candidates-triage-revision0')
+            if 'triage' in job:
+                assert 'replace productive phrases' in args[0]
+                assert 'Keep potentially attested whole compounds' in args[0]
+                assert 'not verified identities, senses or grades' in args[0]
             return {'headwords': []}
     harness = KoreanHarness(prepared, 1, runner=CandidateRunner(), level=3, stop_after='curriculum')
     stages = []

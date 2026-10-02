@@ -440,6 +440,16 @@ class KoreanHarness:
             if name == 'curriculum':
                 transmitted_context = {**review_context, 'chapter': curriculum.chapter_view(review_context['chapter'])}
             instructions, task_inputs = review_task(prompt, transmitted_context)
+            if name == 'prose' and review_context.get('approved_source_plan_review', {}).get('approved'):
+                instructions += (
+                    ' The supplied plan and its source interpretation, named identities and stopping point have already passed independent review. '
+                    'Use that approved plan as the factual and coverage baseline. Assess whether this prose faithfully retains its meaningful development '
+                    'and suits the requested level; do not redo the source-planning task or demand every omitted minor detail. '
+                    'Equivalent modern wording and supported shortened references are allowed. '
+                    'Flag a contradiction in the approved plan only with concrete exact source evidence and the conflicting planned event; '
+                    'do not turn uncertain reinterpretations of archaic wording into prose repair instructions. '
+                    'Consider reviewed_source_context when resolving identity and discourse. Missing development needs connected narration, '
+                    'not an automatic shorter chapter or a length quota.')
             transmitted_output = contracts.annotation_view(value) if name == 'annotation' else value
             if transmitted_output is not value:
                 instructions += ' The output is lossless_annotation_rows: use its explicit column lists to read each row. Every source segment retains its original index; nested form_steps use form_step_columns and grammar_links use grammar_link_columns. All meanings, readings, roles and occurrence positions are preserved. Review the complete annotation, not a sample.'
@@ -654,7 +664,7 @@ class KoreanHarness:
         reuse_candidate = annotation_reuse_candidate(self.run_dir)
         for prose_attempt in range(latest_prose_revision(self.run_dir) if not existing else 0, 3):
             prose = await self.stage("prose", prose_prompt + prose_repair, "prose", check_prose,
-                {**context, "plan": bound_plan, "lexical_plan": focus},
+                {**context, "plan": bound_plan, "approved_source_plan_review": self.stages['plan'], "lexical_plan": focus},
                 cache_prefix=f"-revision{prose_attempt}" if prose_attempt else "")
             if existing and prose["text"] != existing["text"]:
                 raise ValueError("Existing Korean prose failed review; explicit prose repair is required")
@@ -709,6 +719,18 @@ class KoreanHarness:
                     'Prefer attested whole-word headwords. For transparent noun compounds lacking a standalone headword, also request the independent component headwords needed for learner-sized taps; do not treat source spacing as proof of a single dictionary lemma. Do not split idioms or names or guess contributions from syllables. '
                     'These are search requests, not authoritative linguistic analysis. Exclude planned names and their title/surname parts, standalone grammatical particles, and conjugated or productive expression forms whose lexical bases can be retrieved instead. Do not rewrite prose or invent words. '
                     + payload(prose=prose, lexical_plan=focus), contracts.schema_path('lexical-candidates'), 'low', tool_profile='offline')
+                validate(proposed, contracts.LEXICAL_CANDIDATES)
+                proposed = await self.runner.call(
+                    f'annotation-lexical-candidates-triage-revision{prose_attempt}',
+                    self.policy + '\nIndependently audit these unverified dictionary search requests against the exact modern Korean prose. '
+                    'Return only dictionary-form lexical headwords needed for annotation. Correct inflected verbs and adjectives to their lexical bases; '
+                    'replace productive phrases and grammatical expression frames with their independently meaningful lexical bases. '
+                    'Exclude named people, places and works, their title components, and grammatical units. '
+                    'Do not turn an inflected adjective into an unrelated noun homonym. Keep potentially attested whole compounds when appropriate; '
+                    'do not split idioms or guess component meanings. These remain search requests, not verified identities, senses or grades. '
+                    'Do not rewrite prose or invent dictionary entries. Return headwords only, with no definitions or approval claims. '
+                    + payload(prose=prose, lexical_plan=focus, unverified_requests=proposed),
+                    contracts.schema_path('lexical-candidates'), 'low', tool_profile='offline')
                 validate(proposed, contracts.LEXICAL_CANDIDATES)
                 proposed_headwords = set(proposed['headwords'])
                 excluded = {entry['headword'] for entry in focus['entries']}
