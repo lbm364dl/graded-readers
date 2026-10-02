@@ -180,3 +180,9 @@ word while form rows retain their own exact transformation lessons. Preserve
 source text and existing taps rather than moving or dropping the negative word.
 
 Offline drafting, annotation and review roles must use only the supplied data. Do not call any tools, including MCP resource inventories or resource templates. If primary research is needed, record the need for the separate research editor; do not invoke research from an offline job.
+
+Lexical-plan review objections receive independent adjudication before repair.
+Preserve approved lexical identities, permit supported homonymous aliases as
+distinct identities, and treat story-term allowances as maxima. Reject invented
+named identities and missing needed names. Both original objections and the
+independent decision remain bound to publication evidence.

@@ -716,11 +716,12 @@ def test_review_rejection_cannot_be_published(tmp_path):
         publication.verify_run(tmp_path)
 
 
+@pytest.mark.parametrize('stage', ['plan', 'lexical-plan'])
 @pytest.mark.parametrize('tamper', [False, True])
-def test_publication_preserves_source_review_adjudication_lineage(tmp_path, tamper):
+def test_publication_preserves_source_review_adjudication_lineage(tmp_path, tamper, stage):
     from pipeline.korean_agent_harness import read, save
     report = make_reviewed_run(tmp_path)
-    primary_job = report['stages']['plan']['review_job']
+    primary_job = report['stages'][stage]['review_job']
     accepted = read(tmp_path / 'agents' / primary_job / 'result.json')
     meta = read(tmp_path / 'agents' / primary_job / 'meta.json')
     adjudication_job = primary_job + '-adjudication'
@@ -728,7 +729,7 @@ def test_publication_preserves_source_review_adjudication_lineage(tmp_path, tamp
     save(tmp_path / 'agents' / adjudication_job / 'meta.json', meta)
     rejected = {'approved': False, 'issues': ['Objection rejected by independent source adjudication']}
     save(tmp_path / 'agents' / primary_job / 'result.json', rejected)
-    report['stages']['plan'].update(review_job=adjudication_job,
+    report['stages'][stage].update(review_job=adjudication_job,
         initial_review_job=primary_job, initial_review_digest=digest(rejected))
     save(tmp_path / 'report.json', report)
     if tamper:
@@ -1268,11 +1269,14 @@ def test_planning_context_distinguishes_first_chapter_from_published_continuatio
         asyncio.run(harness.run())
 
 
+@pytest.mark.parametrize('stage', ['plan', 'lexical-plan'])
 @pytest.mark.parametrize('supported_objection', [False, True])
-def test_source_plan_objections_require_independent_adjudication_before_rewrite(tmp_path, supported_objection):
+def test_source_plan_objections_require_independent_adjudication_before_rewrite(tmp_path, supported_objection, stage):
     from pipeline.korean_agent_harness import save
     proposal = {'title': '제목', 'scope_reason_en': 'Coherent scene',
         'last_source_paragraph_index': 0, 'beats': [{'source_paragraph_index': 0, 'event_en': 'Family setup'}]}
+    if stage == 'lexical-plan':
+        proposal = {'entries': [{'id': 'hong-gildong', 'headword': '홍길동', 'kind': 'proper_name', 'aliases': ['홍길동', '길동'], 'role_en': 'Protagonist'}]}
     rejected = {'approved': False, 'issues': ['Proposed source objection']}
     class Runner:
         def __init__(self): self.jobs = []
@@ -1298,14 +1302,14 @@ def test_source_plan_objections_require_independent_adjudication_before_rewrite(
     harness = KoreanHarness(tmp_path, 1, runner=runner)
     if supported_objection:
         with pytest.raises(ValueError, match='Supported source correction'):
-            asyncio.run(harness.stage('plan', 'Source task', 'plan', lambda _: None, {'source': 'Exact original source'}))
+            asyncio.run(harness.stage(stage, 'Source task', stage, lambda _: None, {'source': 'Exact original source'}))
         assert len([j for j in runner.jobs if j.endswith('-adjudication')]) == 8
     else:
-        assert asyncio.run(harness.stage('plan', 'Source task', 'plan', lambda _: None,
+        assert asyncio.run(harness.stage(stage, 'Source task', stage, lambda _: None,
             {'source': 'Exact original source'})) == proposal
-        assert runner.jobs == ['plan-0', 'plan-review-0', 'plan-review-0-adjudication']
-        assert harness.stages['plan']['initial_review_job'] == 'plan-review-0'
-        assert harness.stages['plan']['review_job'] == 'plan-review-0-adjudication'
+        assert runner.jobs == [f'{stage}-0', f'{stage}-review-0', f'{stage}-review-0-adjudication']
+        assert harness.stages[stage]['initial_review_job'] == f'{stage}-review-0'
+        assert harness.stages[stage]['review_job'] == f'{stage}-review-0-adjudication'
 
 
 def test_annotation_batches_preserve_sentences_separators_and_long_clauses():

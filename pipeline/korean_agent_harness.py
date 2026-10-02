@@ -445,13 +445,13 @@ class KoreanHarness:
                 instructions += ' The output is lossless_annotation_rows: use its explicit column lists to read each row. Every source segment retains its original index; nested form_steps use form_step_columns and grammar_links use grammar_link_columns. All meanings, readings, roles and occurrence positions are preserved. Review the complete annotation, not a sample.'
             return payload(stage=name, task=instructions, task_inputs=task_inputs, context=transmitted_context, output=transmitted_output, **evidence)
         async def adjudicate_plan(review_job, review, value):
-            if name != 'plan' or approved(review):
+            if name not in ('plan', 'lexical-plan') or approved(review):
                 return review_job, review, {}
             primary_job, primary = review_job, review
             review_job += '-adjudication'
             review = await self.runner.call(review_job, self.policy + '\n'
-                'Independently adjudicate the proposed source-planning objections against the exact source and stage task. '
-                'The proposal has already passed JSON schema and local source-index validation. '
+                'Independently adjudicate the proposed planning objections against the exact source, approved identities and stage task. '
+                'The proposal has already passed JSON schema and local stage validation. Approved lexical IDs, headwords and kinds are authoritative; do not change them merely because the source uses a shorter name. New identities are allowed when absent from the registry. A supported name alias can share its spelling with an ordinary word without merging their identities. Historical names mentioned in the planned narration are in scope even if they do not act in the scene. A story-term budget is a maximum, not a requirement to use an exemption. Retain objections to invented named identities or missing needed named people. '
                 'Retain every genuine material error, with a short exact source quotation supporting the correction. '
                 'Discard unsupported source claims, contradictory corrections, terminology-only objections, requests for later-stage fields, '
                 'and demands to include every paragraph or to keep extending a coherent chapter merely because more source remains. '

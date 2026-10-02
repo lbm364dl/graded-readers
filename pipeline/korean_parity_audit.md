@@ -621,3 +621,7 @@ New promotions retain their exact current policy snapshot. Review prompts also
 name the actual TOPIK target explicitly rather than relying on replacing the
 old beginner-only wording. These changes do not rerun unrelated dictionary
 research or change historical content.
+
+### Lexical planning objection adjudication (2026-10-02)
+
+TOPIK 3 exposed a reviewer request to rename the approved hong-gildong identity, which local validation correctly rejected. Lexical planning now independently adjudicates objections before repair, preserving registry identities and supported homonymous aliases while rejecting invented names and omissions. Publication binds both reviews and detects altered original objections. The shared stage and publication tests cover supported versus unsupported objections for both source and lexical planning; 133 pipeline/publication tests passed. Levels 3, 4 and 6 remain in progress; this does not claim completed pilot coverage.

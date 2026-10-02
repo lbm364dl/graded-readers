@@ -122,7 +122,7 @@ def verify_run(run_dir: Path) -> tuple[dict, dict, dict, dict]:
         job = evidence["review_job"]
         if 'initial_review_job' in evidence:
             initial_job = evidence['initial_review_job']
-            if stage != 'plan' or Path(initial_job).name != initial_job or job != initial_job + '-adjudication':
+            if stage not in ('plan', 'lexical-plan') or Path(initial_job).name != initial_job or job != initial_job + '-adjudication':
                 raise ValueError('Invalid Korean source-review adjudication lineage')
             initial = read(run_dir / 'agents' / initial_job / 'result.json')
             initial_meta = read(run_dir / 'agents' / initial_job / 'meta.json')
