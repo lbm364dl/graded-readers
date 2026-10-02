@@ -853,12 +853,20 @@ class KoreanHarness:
                         original_ids = {e['id'] for e in candidate_entries}
                         new_candidates = [e for e in lexical_candidates(requested_headwords, self.catalog)
                                           if e['id'] not in original_ids]
+                        from pipeline.korean_lexical_research import usage_evidence
+                        previous_usages = {}
+                        for segment in (previous_chunk or {}).get('segments', []):
+                            if segment['lexical_kind'] == 'vocabulary':
+                                previous_usages.setdefault(segment['lemma'], []).append(
+                                    {'text': segment['text'], 'meaning_en': segment['meaning_en']})
+                        reviewed_usages = usage_evidence(previous_usages, related_forms=True) if previous_usages else []
                         try:
                             value = await self.runner.call(chunk_job, self.policy + "\n" + annotation_prompt
                                 + "\nThis job annotates ONLY chunk_text, not the full chapter. "
                                 "All segment/link indices start at zero for this chunk. Include trailing spaces/newlines as punctuation. "
                                 + payload(chunk_text=text, previous_chunk=previous_chunk, issues=errors,
                                     **({'newly_reviewed_lexical_candidates': new_candidates} if new_candidates else {}),
+                                    **({'reviewed_lexical_usage_evidence': reviewed_usages} if reviewed_usages else {}),
                                     **({'linguistic_reference': read(LINGUISTIC_REFERENCE)} if errors else {})),
                                 contracts.schema_path("annotation"), "medium", tool_profile="offline")
                         except ValueError as error:

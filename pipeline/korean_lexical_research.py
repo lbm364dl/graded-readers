@@ -207,7 +207,7 @@ def candidates(path=REGISTRY):
         for e in identities.values()]
 
 
-def usage_evidence(occurrences, path=REGISTRY):
+def usage_evidence(occurrences, path=REGISTRY, *, related_forms=False):
     """Reuse reviewed usage investigations without treating them as new lemmas."""
     candidates(path)  # Validate the review, source and scope digests first.
     if not path.exists():
@@ -217,13 +217,16 @@ def usage_evidence(occurrences, path=REGISTRY):
         if record.get('research_policy_digest') != fingerprint(RESEARCH_POLICY):
             continue
         scopes = record.get('occurrence_requests', {})
-        matched = {h for h in scopes if any(o in occurrences.get(h, []) for o in scopes[h])}
+        matched = {h for h in scopes if any(o in occurrences.get(h, []) or
+            (related_forms and any(current['text'] == o['text'] for current in occurrences.get(h, [])))
+            for o in scopes[h])}
         if matched:
             evidence.append({'requested_usages': {h: scopes[h] for h in sorted(matched)},
                 'entries': [e for e in record['proposal']['entries'] if e['headword'] in matched],
                 'editorial_outcomes': [e for e in record['proposal']['unresolved'] if e['headword'] in matched],
                 'review_digest': record['review_digest'],
-                'scope': 'These are independently reviewed lexical investigations, not curriculum grades or learner-facing notes. Check the actual occurrence against their stated coverage; unresolved different usages remain unresolved.'})
+                'scope': ('Related-form research only: matching spelling does not approve the current meaning. Compare the original requested usages and verified outcomes against the current context independently. '
+                          if related_forms else '') + 'These are independently reviewed lexical investigations, not curriculum grades or learner-facing notes. Check the actual occurrence against their stated coverage; unresolved different usages remain unresolved.'})
     return evidence
 
 

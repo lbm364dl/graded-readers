@@ -214,6 +214,12 @@ def test_research_reuse_distinguishes_requested_homonym_from_reviewed_spelling(t
     assert len(runner.calls) == before
     assert research.usage_evidence(scope, registry)[0]['requested_usages'] == scope
     assert research.usage_evidence({'검증하다': [{'text': '검증했다', 'meaning_en': 'different use'}]}, registry) == []
+    related = research.usage_evidence({'검증하다': [{'text': '검증했다', 'meaning_en': 'different use'}]},
+        registry, related_forms=True)
+    assert related[0]['requested_usages'] == scope
+    assert 'matching spelling does not approve the current meaning' in related[0]['scope']
+    assert research.usage_evidence({'검증하다': [{'text': '검증한다', 'meaning_en': 'different use'}]},
+        registry, related_forms=True) == []
     document = json.loads(registry.read_text())
     document['reviews'][-1]['occurrence_requests']['검증하다'][0]['meaning_en'] = 'tampered'
     save(registry, document)

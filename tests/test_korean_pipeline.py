@@ -1272,13 +1272,24 @@ def test_curriculum_checkpoint_defers_dictionary_until_shared_entries_are_ready(
 
 
 @pytest.mark.parametrize('repaired', [False, True])
-def test_partial_review_repair_recovers_new_proposals_not_rejected_data(tmp_path, repaired):
+@pytest.mark.parametrize('reviewed_usage', [False, True])
+def test_partial_review_repair_recovers_new_proposals_not_rejected_data(tmp_path, monkeypatch, repaired, reviewed_usage):
     from pipeline.korean_agent_harness import read, save, normalize_existing
+    from pipeline import korean_lexical_research
     fixture = tmp_path / 'fixture'
     make_reviewed_run(fixture)
     chapter = read(fixture / 'chapter.json')
     raw = normalize_existing(chapter, dictionary._registry(dictionary.WORDS))
     chunks = contracts.slice_annotations(raw, contracts.annotation_chunks(chapter['text']))
+    scoped = {}
+    for segment in chunks[0]['segments']:
+        if segment['lexical_kind'] == 'vocabulary':
+            scoped.setdefault(segment['lemma'], []).append(
+                {'text': segment['text'], 'meaning_en': segment['meaning_en']})
+    evidence = [{'requested_usages': scoped, 'review_digest': 'verified-test-review'}]
+    def reviewed(occurrences, **kwargs):
+        return evidence if reviewed_usage and occurrences == scoped else []
+    monkeypatch.setattr(korean_lexical_research, 'usage_evidence', reviewed)
     run = tmp_path / 'run'
     candidate = copy.deepcopy(chunks[0])
     if repaired:
@@ -1306,7 +1317,12 @@ def test_partial_review_repair_recovers_new_proposals_not_rejected_data(tmp_path
                 number = int(job.split('-chunk-')[1].split('-')[0])
                 value = copy.deepcopy(chunks[number - 1])
                 if job.startswith('annotation-1-'):
+                    inputs = json.loads(args[0].rsplit('\nINPUT:\n', 1)[1])
+                    assert inputs.get('reviewed_lexical_usage_evidence', []) == (evidence if reviewed_usage else [])
                     next(s for s in value['segments'] if s['type'] == 'word')['meaning_en'] = 'improved contextual meaning'
+                else:
+                    inputs = json.loads(args[0].rsplit('\nINPUT:\n', 1)[1])
+                    assert 'reviewed_lexical_usage_evidence' not in inputs
             else:
                 stage = job.rsplit('-', 1)[0]
                 value = read(fixture / 'agents' / stage / 'result.json')
