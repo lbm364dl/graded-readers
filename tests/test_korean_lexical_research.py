@@ -388,3 +388,32 @@ def test_missing_search_retries_once_without_relaxing_capability(tmp_path, monke
         with pytest.raises(ValueError, match='outside'):
             asyncio.run(research.research(['검증하다'], tmp_path, runner=Runner(), registry=tmp_path/'registry.json'))
         assert len(calls) == 1
+
+
+@pytest.mark.parametrize('rejected', [True, False])
+def test_research_resume_uses_rejected_checkpoint_only_as_repair_context(tmp_path, monkeypatch, rejected):
+    monkeypatch.setattr(research, 'standard_evidence', lambda word: {'records': []})
+    key = research.fingerprint(['검증하다'])[:16]
+    proposal_dir = tmp_path / 'agents' / f'lexical-research-{key}-3'
+    review_dir = tmp_path / 'agents' / f'lexical-research-review-{key}-3'
+    proposal_dir.mkdir(parents=True)
+    review_dir.mkdir(parents=True)
+    save(proposal_dir / 'result.json', proposal())
+    save(review_dir / 'result.json', {'approved': not rejected,
+        'issues': ['Repair the unsupported lexical claim'] if rejected else []})
+    calls = []
+    class Runner:
+        async def call(self, job, prompt, *args, **kwargs):
+            calls.append(job)
+            if '-review-' in job:
+                return {'approved': True, 'issues': []}
+            if rejected:
+                assert 'Repair the unsupported lexical claim' in prompt
+            else:
+                assert 'Repair the unsupported lexical claim' not in prompt
+            return proposal()
+    result = asyncio.run(research.research(['검증하다'], tmp_path,
+        runner=Runner(), registry=tmp_path/'registry.json'))
+    assert calls[0] == f'lexical-research-{key}-{4 if rejected else 0}'
+    assert '-review-' in calls[1]  # Every resumed proposal still gets independent review.
+    assert result['status'] == 'reviewed'

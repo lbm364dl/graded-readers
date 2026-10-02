@@ -16,7 +16,7 @@ from urllib.request import Request, urlopen
 from html import unescape
 from http.client import HTTPException
 
-from jsonschema import validate
+from jsonschema import ValidationError, validate
 from pipeline import korean_contracts as contracts
 
 REGISTRY = Path(__file__).resolve().parent.parent / 'data/korean/reviewed-lexemes.json'
@@ -311,7 +311,28 @@ async def _research_batch(headwords, run_dir, *, runner=None, registry=REGISTRY,
     if source_context:
         key = fingerprint({'key': key, 'source_context': source_context})[:16]
     previous, issues = None, []
-    for attempt in range(4):
+    repair_start = 0
+    # Rejected checkpoints are repair context, never approved lexical evidence.
+    # Resume a terminal batch instead of replaying the same four failures.
+    for review_path in (run_dir / 'agents').glob(f'lexical-research-review-{key}-*/result.json'):
+        suffix = review_path.parent.name.removeprefix(f'lexical-research-review-{key}-')
+        if not suffix.isdigit():
+            continue
+        index = int(suffix)
+        proposal_path = run_dir / 'agents' / f'lexical-research-{key}-{index}' / 'result.json'
+        retry_path = proposal_path.parent.with_name(proposal_path.parent.name + '-search-retry') / 'result.json'
+        if retry_path.exists():
+            proposal_path = retry_path
+        try:
+            rejected = read(review_path)
+            validate(rejected, contracts.REVIEW)
+            candidate = read(proposal_path)
+            check_proposal(candidate, headwords)
+        except (ValueError, ValidationError, KeyError, FileNotFoundError):
+            continue
+        if not rejected['approved'] and index >= repair_start:
+            repair_start, previous, issues = index + 1, candidate, rejected['issues']
+    for attempt in range(repair_start, repair_start + 4):
         research_prompt = (RESEARCH_POLICY + RESEARCH_SCOPE
             + ('\nAll requested spellings have supplied direct dictionary records. Edit using only those records; do not call tools. '
                if supplied_records_complete else '\nUse web search to investigate requests lacking supplied direct records. ')
