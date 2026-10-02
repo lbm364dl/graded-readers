@@ -173,7 +173,7 @@
       "id": "하다01/보",
       "headword": "하다",
       "kind": "word",
-      "definition_en": "an auxiliary verb that adds meaning to another verb or adjective: making or allowing an action or bringing about a state; expressing that an action or state is necessary"
+      "definition_en": "An auxiliary verb used after another verb or adjective to express causing or allowing an action or bringing about a state; the necessity of an action or state; or an attempt or intention to act."
     },
     {
       "id": "형01/명",
@@ -2243,6 +2243,112 @@
                 "display_form": "할 수 없었다",
                 "display_meaning_en": "could not say anything",
                 "display_end_segment_index": 865
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "before_entries": [
+        {
+          "id": "하다01/보",
+          "headword": "하다",
+          "kind": "word",
+          "definition_en": "an auxiliary verb that adds meaning to another verb or adjective: making or allowing an action or bringing about a state; expressing that an action or state is necessary"
+        }
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "하다01/보",
+            "headword": "하다",
+            "kind": "word",
+            "definition_en": "An auxiliary verb used after another verb or adjective to express causing or allowing an action or bringing about a state; the necessity of an action or state; or an attempt or intention to act."
+          }
+        ],
+        "references": [
+          {
+            "entry_id": "하다01/보",
+            "url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=62888&nation=eng",
+            "paraphrase_en": "NIKL’s Korean Basic Dictionary identifies 하다² as an auxiliary verb. Sense 1 covers causing an action or state; senses 3 and 5 cover necessity and having no choice in -어야 하다, supporting 살아야 합니까; sense 4 covers attempting or intending an action in -려(고) 하다, supporting 하려고 할. These are functions of the same auxiliary entry."
+          }
+        ]
+      },
+      "proposal_digest": "42f2ca948399fcca46b9b88559643242684ceef61fbec9eb724f2a8ee0150397",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "context_digest": "369320ae1720c1b0644b169368ab9705f8d0ba732d8b34072572857afe86e1c4",
+      "coverage": {
+        "files": {
+          "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json": "c83f4d167f5724a8ba5ce163e2339609f417db5632cb3bf1ca0a96193b66926c",
+          "runs/korean-topik2/chapter-001/agents/annotation-revision2-0/result.json": "a31ff7125d8bf0594a9ac0952fdbe8ac513803ab4653ffb8f62642e9e1e0e139"
+        },
+        "occurrences": [
+          {
+            "file": "runs/korean-topik2/chapter-001/agents/annotation-revision2-0/result.json",
+            "chapter": 1,
+            "segment_index": 748,
+            "entry_id": "하다01/보",
+            "surface": "합니까",
+            "meaning_en": "must I?",
+            "sentence": "저도 사람인데 왜 이렇게 살아야 합니까?",
+            "sentence_start": 1475,
+            "start": 1493,
+            "form_steps": [
+              {
+                "form": "합니까",
+                "reading": "함니까",
+                "label": "Formal polite question",
+                "meaning_en": "must I?",
+                "grammar_entry_ids": [
+                  "formal-question-seumnikka"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 748,
+                "entry_id": "formal-question-seumnikka",
+                "context_en": "-ㅂ니까 ends Gildong's question to his father in a formal polite style.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              }
+            ]
+          },
+          {
+            "file": "runs/korean-topik2/chapter-001/agents/annotation-revision2-0/result.json",
+            "chapter": 1,
+            "segment_index": 814,
+            "entry_id": "하다01/보",
+            "surface": "할",
+            "meaning_en": "would try, modifying the following possibility",
+            "sentence": "그러면 자기 신분으로 할 수 없는 일까지 하려고 할 것 같았다.",
+            "sentence_start": 1594,
+            "start": 1621,
+            "form_steps": [
+              {
+                "form": "할",
+                "reading": "할",
+                "label": "Prospective noun-modifying form of the auxiliary",
+                "meaning_en": "would try, modifying the following possibility",
+                "grammar_entry_ids": [
+                  "prospective-modifier-eul"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 814,
+                "entry_id": "prospective-modifier-eul",
+                "context_en": "The auxiliary's 할 form modifies 것, presenting the attempt as an anticipated possibility.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
               }
             ]
           }

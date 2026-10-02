@@ -1197,3 +1197,48 @@ def test_early_level_screen_repairs_overload_without_replacing_final_review(tmp_
             asyncio.run(harness.check_prose_readiness(prose, 0))
     assert prose == before
     assert harness.stages == {}  # Final occurrence-bound gates remain mandatory.
+
+
+@pytest.mark.parametrize('with_reference', [True, False])
+def test_curriculum_review_receives_only_applicable_primary_lexical_evidence(tmp_path, with_reference):
+    import re
+    from pipeline.korean_curriculum import vocabulary_context_candidates, evaluate_bindings
+    lemma, identity, pos = ('나다', '나다01/동', '동사') if with_reference else ('아이', '아이01/명', '명사')
+    source = next(e for e in vocabulary_context_candidates(lemma)
+        if re.sub(r'\d+$', '', e['source_fields']['어휘']) == lemma and e['source_fields']['품사'] == pos)
+    chapter = {'text': lemma, 'segments': [{'type': 'word', 'text': lemma,
+        'meaning_en': 'reviewed lexical meaning',
+        'lexical': {'kind': 'vocabulary', 'id': identity}}], 'grammar_links': []}
+    bindings = {'level_reason_en': 'A single in-level lexical identity.', 'prose_revision_reason_en': '',
+        'bindings': [{'kind': 'vocabulary', 'entry_id': identity, 'source_ids': [source['id']],
+            'equivalence': 'listed', 'analysis_en': 'The source lexeme and POS match.', 'optional_reason_en': ''}]}
+    class Runner:
+        async def call(self, job, prompt, *args, **kwargs):
+            if job == 'curriculum-0': return bindings
+            assert job == 'curriculum-review-0'
+            assert ('primary_lexical_reference' in prompt) == with_reference
+            if with_reference:
+                assert 'krdict-62210-32' in prompt
+                assert 'not curriculum grades' in prompt
+            return {'approved': True, 'issues': []}
+    harness = KoreanHarness(tmp_path, 1, runner=Runner())
+    result = asyncio.run(harness.stage('curriculum', 'Review lexical and curriculum evidence.',
+        'curriculum', lambda value: evaluate_bindings(chapter, value),
+        {'chapter': chapter, 'word_requests': {identity: {'headword': lemma, 'kind': 'word'}}}))
+    assert result == bindings
+
+
+@pytest.mark.parametrize('namespace', ['krdict', 'stdict'])
+def test_primary_candidate_identity_is_copied_without_legacy_id_guessing(namespace):
+    from pipeline.korean_agent_harness import annotation_requests, LexicalIdentityError
+    identity = f'{namespace}-123/명'
+    raw = {'segments': [{'type': 'word', 'text': '말', 'meaning_en': 'reviewed noun sense',
+        'lemma': '말', 'lexical_kind': 'vocabulary', 'lexical_id': identity,
+        'story_importance_en': '', 'form_steps': []}], 'grammar_links': [], 'inflected_segment_indices': []}
+    catalog = {'말': [{'id': identity, 'headword': '말', 'pos': '명', 'meaning': 'reviewed noun sense', 'grade': None}]}
+    requests, _ = annotation_requests(raw, catalog, {'entries': []}, {})
+    assert requests == {identity: {'headword': '말', 'kind': 'word'}}
+    raw['segments'][0]['lexical_id'] = '말/명'
+    with pytest.raises(LexicalIdentityError, match='Copy the matching candidate ID verbatim') as failure:
+        annotation_requests(raw, catalog, {'entries': []}, {})
+    assert failure.value.headwords == {'말'}

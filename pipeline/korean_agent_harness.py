@@ -241,7 +241,7 @@ def annotation_requests(value: dict, catalog: dict, focus: dict, words: dict) ->
         if kind == "vocabulary" and not candidates:
             raise UnannotatableProseError(f"Ordinary word {segment['lemma']} is absent from the learner lexicon; simplify prose instead of inventing its ID or a story-term exemption")
         if kind == "vocabulary" and identity not in {e["id"] for e in candidates}:
-            identity_errors.append(f"Exact NIKL candidates for {segment['lemma']}: {candidates}")
+            identity_errors.append(f"Exact reviewed lexical candidates for {segment['lemma']}: {candidates}. Copy the matching candidate ID verbatim, including its homonym number or krdict-/stdict- namespace; do not invent an unsuffixed ID.")
             unresolved_headwords.add(segment['lemma'])
         if kind != "grammar":
             known = words.get(identity)
@@ -321,6 +321,12 @@ class KoreanHarness:
 
     async def stage(self, name: str, prompt: str, schema: str, check, review_context: dict,
                     initial: dict | None = None, cache_prefix: str = "", producer=None) -> dict:
+        if name == 'curriculum':
+            references = [entry for entry in read(LEXICAL_REFERENCE)['entries']
+                if entry['entry_id'] in review_context.get('word_requests', {})]
+            if references:
+                review_context = {**review_context, 'primary_lexical_reference': references,
+                    'lexical_reference_scope': 'These primary records establish lexical identities and restricted senses, not curriculum grades. Verify the actual complete meaning; do not grade an idiom by concatenating components. Use the separate curriculum evidence for grades.'}
         if name in ('annotation', 'dictionary', 'sentence-help'):
             review_context = {**review_context, 'linguistic_reference': read(LINGUISTIC_REFERENCE),
                 'lexical_reference': read(LEXICAL_REFERENCE),
@@ -553,6 +559,7 @@ class KoreanHarness:
                 candidate_entries = lexical_candidates(proposed['headwords'], self.catalog)
             annotation_prompt = "Annotate this exact prose in source-aligned sentence chunks. The assembled result must preserve every character and use learner-sized taps. "
             annotation_prompt += "Supply the dictionary headword in lemma, an exact NIKL lexical ID for vocabulary, "
+            annotation_prompt += "or a supplied independently reviewed krdict-/stdict- candidate ID where the teaching catalogs lack that lexeme. Copy candidate IDs verbatim; do not strip homonym numbers, add an unsupported number, or manufacture an unsuffixed identity. "
             annotation_prompt += "approved IDs for existing names/grammar; shortened names keep the approved full-name identity and headword. Do not duplicate an entry for a shortened name. Use stable English IDs for genuinely new grammar functions. "
             annotation_prompt += "Every inflected word needs ordered complete-form transformation steps rooted in an attested lexical word or name, never a grammar identity. Productive adjective-plus-하다 constructions keep their lexical adjective base and link the transformation separately. The dictionary-form base is supplied by lemma and its own UI row: DO NOT repeat it in form_steps. Each step uses the schema field grammar_entry_ids: an array containing EXACTLY ONE grammar ID, with a matching grammar_links record on the same segment. There is no singular grammar_entry_id field. "
             annotation_prompt += "Each stage must have a distinct COMPLETE form. Grammar roles that add no new form belong in grammar_links with complete-phrase display fields, not repeated stages. Do not invent a bare-stem intermediate merely to make forms differ. "
@@ -743,11 +750,14 @@ class KoreanHarness:
                                 async with self.lexical_research_lock:
                                     result = await research(error.headwords, self.run_dir, runner=self.runner)
                                     self.catalog = contracts.lexical_catalog()
-                                researched_identity = bool(result['entries'])
+                                # Another edition may have just approved the
+                                # missing candidate. Reused primary evidence is
+                                # also useful for this worker's final retry.
+                                researched_identity = result['status'] in ('reviewed', 'reused')
                                 try:
                                     validate_chunk(value, text)
                                 except (ValidationError, ValueError, KeyError, IndexError, TypeError) as updated_error:
-                                    errors = [str(updated_error)]
+                                    errors = [str(updated_error), 'Primary lexical research outcome: ' + json.dumps(result, ensure_ascii=False)]
                                 else:
                                     return value, {'job': chunk_job, 'text': text, 'digest': digest(value)}
                     raise ValueError(f"Korean annotation chunk {number} failed reconstruction: {errors}")

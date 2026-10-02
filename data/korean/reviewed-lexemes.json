@@ -89,6 +89,1142 @@
         }
       ],
       "primary_evidence_digest": "6460c28f5b53beeb5ee9a103b38ee53d115fa308fe72b399e55a41aae128b9d8"
+    },
+    {
+      "headwords": [
+        "가을밤",
+        "그러니",
+        "누구나",
+        "버릇없이",
+        "아쉬워하다",
+        "앞으로",
+        "어떻게"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "krdict-16351/명",
+            "headword": "가을밤",
+            "pos": "명",
+            "meaning_en": "An autumn night.",
+            "primary_url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=16351&nation=eng",
+            "evidence_en": "The directly retrieved Basic Dictionary record heads 가을밤, labels it 명사, and defines it as 가을철의 밤. No existing catalog identity was supplied."
+          },
+          {
+            "id": "krdict-58307/부",
+            "headword": "버릇없이",
+            "pos": "부",
+            "meaning_en": "Rudely or impolitely toward an elder.",
+            "primary_url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=58307&nation=eng",
+            "evidence_en": "The directly retrieved Basic Dictionary record heads 버릇없이 and labels it 부사; its definition describes lacking proper manners when dealing with an elder. No existing catalog identity was supplied."
+          },
+          {
+            "id": "stdict-456870/동",
+            "headword": "아쉬워하다",
+            "pos": "동",
+            "meaning_en": "To feel dissatisfied at a lack, or regretful about a loss or parting.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=456870",
+            "evidence_en": "The supplied readable primary snapshot explicitly heads 아쉬워-하다 and labels it 동사. Its two senses cover dissatisfaction when something needed is lacking and lingering regret or sadness. No standalone Basic Dictionary record was verified, and no existing catalog identity was supplied. Live retrieval failed; attestation rests on the supplied record snapshot."
+          }
+        ],
+        "unresolved": [
+          {
+            "headword": "그러니",
+            "reason_en": "No standalone NIKL headword record was verified. The spelling can represent a conjugated form of 그러다 or 그렇다 with -니; those grammatical uses do not warrant a new lexical identity."
+          },
+          {
+            "headword": "누구나",
+            "reason_en": "누구 combined with the particle 나 expresses anyone/everyone. No standalone NIKL headword record was verified; examples under other headwords do not establish a separate lexeme."
+          },
+          {
+            "headword": "앞으로",
+            "reason_en": "앞 combined with the particle 으로 has directional and future-time uses. No standalone NIKL headword record was verified; this grammatical combination does not warrant a new lexical identity."
+          },
+          {
+            "headword": "어떻게",
+            "reason_en": "An adverbial conjugated form of 어떻다 with -게. No standalone NIKL headword record was verified; represent this usage through its lexical base and grammatical ending."
+          }
+        ]
+      },
+      "proposal_digest": "5579b7fbbe5bde84f65a6cdd4276e8b8057e00e974bceeeb17e4b8bb42c81faf",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "f5a2d9c8f3d90c146ad2bd4aa1134d58e89b785c30fc1f051640e1e00c17acde",
+      "primary_evidence": [
+        {
+          "headword_request": "가을밤",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EA%B0%80%EC%9D%84%EB%B0%A4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=3019",
+              "content_sha256": "8b73dff1b746a95b703629789acd9bed52e7bd9129208c26117df38ee69b27d1",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 가을-밤 발음 [가을빰 ] 편집 이력 「명사」 가을철의 밤. ≒ 추소 , 추야 . 달 밝고 서리 찬 가을밤에 귀뚜라미 소리 그윽한데…. ≪이인직, 모란봉≫ 어원 · ＜＜박언＞← +-ㅅ+밤 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "그러니",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EA%B7%B8%EB%9F%AC%EB%8B%88",
+          "records": []
+        },
+        {
+          "headword_request": "누구나",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EB%88%84%EA%B5%AC%EB%82%98",
+          "records": []
+        },
+        {
+          "headword_request": "버릇없이",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EB%B2%84%EB%A6%87%EC%97%86%EC%9D%B4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=144165",
+              "content_sha256": "9a2b441308c11ded66e524f438efb1b159147f8d4b0b5a9b3350d194518d9b0d",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 버릇없-이 발음 [버르덥씨 ] 주표제어 버릇-없다 「부사」 어른이나 남 앞에서 마땅히 지켜야 할 예의가 없이. 어른들에게 버릇없이 굴다. 상전 말을 어디로 듣고 버릇없이 제멋대로 나가 버린단 말이냐. ≪최명희, 혼불≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "아쉬워하다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%95%84%EC%89%AC%EC%9B%8C%ED%95%98%EB%8B%A4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=456870",
+              "content_sha256": "1ecd2c63cc078d62bd483eb7dc41027232f80fe4c95538e9b31a3b43efe6c005",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 아쉬워-하다 발음 [아쉬워하다 ] 활용 아쉬워하여[아쉬워하여 ](아쉬워해[아쉬워해 ]), 아쉬워하니[아쉬워하니 ] 「동사」 【…을】 「1」 필요할 때 모자라거나 없어서 안타깝고 만족스럽지 못하게 여기다. 돈을 아쉬워하다 . 오랫동안 홀로 살았던 노인은 사람의 정을 아쉬워했다 . 「2」 【-기를】 미련이 남아 서운하게 여기다. 우리는 이별을 아쉬워했다 . 사람들은 이번 대회에서 우승을 놓친 것을 못내 아쉬워하고 있다. 그들은 서로 헤어지기를 아쉬워했다 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "앞으로",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%95%9E%EC%9C%BC%EB%A1%9C",
+          "records": []
+        },
+        {
+          "headword_request": "어떻게",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%96%B4%EB%96%BB%EA%B2%8C",
+          "records": []
+        },
+        {
+          "proposal_records": [
+            {
+              "primary_url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=16351&nation=eng",
+              "content_sha256": "9aee0ec09ab2dfa23500c09f2c2130f45ea769ee13dec357f2c5b813be2e4a99",
+              "text": "한국어기초사전 이 누리집은 대한민국 공식 전자정부 누리집입니다. Search by Category Small Window Dictionary Search Advanced Search Delete Delete Phụ âm b c d đ g h k l m n p q r s t v x f j w z Nguyên âm a á à ả ã ạ ă ắ ằ ẳ ẵ ặ â ấ ầ ẩ ẫ ậ o ó ò ỏ õ ọ ô ố ồ ổ ỗ ộ ơ ớ ờ ở ỡ ợ e é è ẻ ẽ ẹ ê ế ề ể ễ ệ u ú ù ủ ũ ụ ư ứ ừ ử ữ ự i í ì ỉ ĩ ị y ý ỳ ỷ ỹ ỵ à â æ À Â Æ ç Ç é è ë ê É È Ë Ê î ï Î Ï ô œ Ô Œ ù û ü Ù Û Ü á Á é É í Í ó Ó ú ü Ú Ü ñ Ñ ¡ ¿ Download 가 가 Print 가을밤 Pronunciation [가을빰 듣기 ] Part of Speech 「명사」 Noun autumn night 가을철의 밤. A night in autumn. 깊어 가는 가을밤 . 상쾌한 가을밤 . 선선한 가을밤 . 시원한 가을밤 . 적막한 가을밤 . 가을밤 이 되면 어디선가 벌레 울음 소리가 들린다. 우리는 선선한 바람을 맞으며 가을밤 거리를 거닐었다. 가: 어머니, 캠핑 가는데 옷 좀 챙겨 주세요. 나: 그래, 가을밤 에는 기온이 많이 떨어지니 긴팔 옷도 같이 챙겨야겠구나. Send opinion Send opinion Security Characters Play audio Refresh Name Title Content Send opinion We are looking forward to receiving your opinions regarding dictionary content. (Although we are not able to reply, we will refer to your opinion for dictionary content development and supplementation.) View Mode Korean + English Korean English My Search History Listening to Korean pronunciation services are partly provided by NAVER Cultural Foundation Corp. Help Translation guideline Copyright Policy Notice Open API Suggestion Basic Korean Dictionary National Institute of Korean Language Move"
+            },
+            {
+              "primary_url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=58307&nation=eng",
+              "content_sha256": "4798fa42bbc1454f467d79a0b1f923dde9dad67fd76b3da8ca48677caf418e5f",
+              "text": "한국어기초사전 이 누리집은 대한민국 공식 전자정부 누리집입니다. Search by Category Small Window Dictionary Search Advanced Search Delete Delete Phụ âm b c d đ g h k l m n p q r s t v x f j w z Nguyên âm a á à ả ã ạ ă ắ ằ ẳ ẵ ặ â ấ ầ ẩ ẫ ậ o ó ò ỏ õ ọ ô ố ồ ổ ỗ ộ ơ ớ ờ ở ỡ ợ e é è ẻ ẽ ẹ ê ế ề ể ễ ệ u ú ù ủ ũ ụ ư ứ ừ ử ữ ự i í ì ỉ ĩ ị y ý ỳ ỷ ỹ ỵ à â æ À Â Æ ç Ç é è ë ê É È Ë Ê î ï Î Ï ô œ Ô Œ ù û ü Ù Û Ü á Á é É í Í ó Ó ú ü Ú Ü ñ Ñ ¡ ¿ Download 가 가 Print 버릇없이 Pronunciation [버르덥씨 듣기 ] 버릇없다 Part of Speech 「부사」 Adverb rudely 어른을 대할 때 예의가 없고 태도가 바르지 못하게. In a rude and impolite manner in front of a senior. 버릇없이 굴다. 버릇없이 말하다. 버릇없이 처신하다. 버릇없이 행동하다. 내 동생은 친척들 앞에서 버릇없이 행동해서 아버지께 혼이 났다. 몇몇 아이들은 선생님께서 말씀하시는 중에 큰 소리로 떠들며 버릇없이 굴었다. 가: 지수가 초등학교에 들어가더니 참 의젓해졌어요. 나: 맞아요. 예전에는 말썽도 많이 피우고 버릇없이 굴었는데 말이에요. Send opinion Send opinion Security Characters Play audio Refresh Name Title Content Send opinion We are looking forward to receiving your opinions regarding dictionary content. (Although we are not able to reply, we will refer to your opinion for dictionary content development and supplementation.) View Mode Korean + English Korean English My Search History Listening to Korean pronunciation services are partly provided by NAVER Cultural Foundation Corp. Help Translation guideline Copyright Policy Notice Open API Suggestion Basic Korean Dictionary National Institute of Korean Language Move"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=456870",
+              "content_sha256": "1ecd2c63cc078d62bd483eb7dc41027232f80fe4c95538e9b31a3b43efe6c005",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 아쉬워-하다 발음 [아쉬워하다 ] 활용 아쉬워하여[아쉬워하여 ](아쉬워해[아쉬워해 ]), 아쉬워하니[아쉬워하니 ] 「동사」 【…을】 「1」 필요할 때 모자라거나 없어서 안타깝고 만족스럽지 못하게 여기다. 돈을 아쉬워하다 . 오랫동안 홀로 살았던 노인은 사람의 정을 아쉬워했다 . 「2」 【-기를】 미련이 남아 서운하게 여기다. 우리는 이별을 아쉬워했다 . 사람들은 이번 대회에서 우승을 놓친 것을 못내 아쉬워하고 있다. 그들은 서로 헤어지기를 아쉬워했다 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "b609f231e96a8e7d0535090c2025654f796e580bff31aa18ccade649a4c91dcb"
+    },
+    {
+      "headwords": [
+        "예"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "krdict-89185/대",
+            "headword": "예",
+            "pos": "대",
+            "meaning_en": "Here; a place close to the speaker.",
+            "primary_url": "https://krdict.korean.go.kr/jpn/dicSearch/SearchView?ParaWordNo=89185&captchaNumber=&comment_user_name=&nation=jpn&nationCode=7&viewTypes=on&wordComment=",
+            "evidence_en": "Retrieved standalone Basic Dictionary record 예³, explicitly labeled 대명사; defines a place close to the speaker and identifies 여기 as its full form. No supplied catalog identity covers this pronoun."
+          },
+          {
+            "id": "krdict-68558/명",
+            "headword": "예",
+            "pos": "명",
+            "meaning_en": "Courtesy; ceremonial observance; etiquette.",
+            "primary_url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=68558",
+            "evidence_en": "Retrieved standalone Basic Dictionary record 예⁶ (禮), explicitly labeled 명사, with senses for proper attitude and manners, ceremonial observance, and etiquette. Distinct from catalog 예08/명 (例)."
+          }
+        ],
+        "unresolved": [
+          {
+            "headword": "예",
+            "reason_en": "The old-times noun is already covered by catalog 예01/명; the affirmative interjection by 예06/감; and the example noun (例) by 예08/명. Do not duplicate these lexemes despite differing dictionary homonym numbers. Additional senses require shared dictionary editorial review."
+          },
+          {
+            "headword": "예",
+            "reason_en": "The letter-name noun for ㅖ appears in Basic Dictionary search results, and supplied Standard snapshot 232549 confirms the exact headword and 명사 POS. However, a readable direct Basic record and its ParaWordNo could not be established; the direct Standard URL also failed retrieval. Leave primary identity unresolved rather than infer an ID or substitute search-results evidence."
+          },
+          {
+            "headword": "예",
+            "reason_en": "Supplied Standard snapshots attest separate lexemes: record 232551, 관형사, meaning six chiefly before 자; record 232822, 감탄사, expressing angry rebuke; record 232826, 명사 (芮), a vocal syllable for specified saenghwang pipes. Their direct records failed retrieval, so independent primary-record verification remains unresolved. These are distinct from the supplied catalog identities."
+          },
+          {
+            "headword": "예",
+            "reason_en": "Supplied Standard records 232825 (芮, a Korean surname) and 232827 (羿, a legendary Chinese hero) describe proper names, excluded from new lexical identities under this request."
+          }
+        ]
+      },
+      "proposal_digest": "255bc7c9ccd156dbe3dc371834ff07e5902a48525f59056796c96482ed1815be",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "f5a2d9c8f3d90c146ad2bd4aa1134d58e89b785c30fc1f051640e1e00c17acde",
+      "primary_evidence": [
+        {
+          "headword_request": "예",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%98%88",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=232549",
+              "content_sha256": "77b6dd03a758278a5b02fa329ddf5091b0fd0a03ced5f7a7fddd626643fecfe0",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 예 2 발음 [예 ] 「명사」 『언어』 한글 자모 ‘ ㅖ ’의 이름. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=232550",
+              "content_sha256": "b3f8cd0966c870bd9206a172047f1c0cb456676ebb24a3a00934f54f3a653480",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 예 3 발음 [예 ] 「참고 어휘」 게 「대명사」 ‘ 여기 ’의 준말. 예가 어디냐? 동사무소는 예서 멀다. 예가 어딘 줄 알고 주둥아리를 함부로 놀리는 거냐? ≪염상섭, 삼대≫ 어원 · ＜이＜석상＞←이+- 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=232551",
+              "content_sha256": "58777c6312cf4b8c863e16bbd41a2fcf30c0072db00bee355645c9e34bbd780e",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 예 4 발음 [예 ] 「관형사」 ((주로 ‘자’ 앞에 쓰여)) 그 수량이 여섯임을 나타내는 말. 예 자 두 치. 어원 · 예＜금삼＞ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 4 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=232822",
+              "content_sha256": "dff53e2b498bd30ff5cc4e57b5e5669b80c5fb53fd89370f65cfdd00caaccbc0",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 예 5 발음 [예 ] 「참고 어휘」 예기 , 예끼 「감탄사」 몹시 나무라거나 화가 났을 때 내는 소리. 예 , 이놈. 예 , 이 나쁜 사람. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 5 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=232823",
+              "content_sha256": "f43fa6bddc9309671abbd03aeb6cd67f0916c4ca3f488ad02c7510ac2cfc08c4",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 예 6 발음 [예ː ] 편집 이력 「감탄사」 「1」 윗사람의 부름에 대답하거나 묻는 말에 긍정하여 대답할 때 쓰는 말. = 네 . “숙제 다 했니?” “ 예 , 다 했어요.” 「2」 윗사람이 부탁하거나 명령하는 말에 동의하여 대답할 때 쓰는 말. = 네 . 예 , 여부가 있겠습니까? 예 , 잘 알겠습니다. 「3」 윗사람의 말을 재우쳐 물을 때 쓰는 말. = 네 . 예 ? 무슨 뜻입니까? 예 ? 무어라 말씀하셨습니까? 「4」 윗사람에게 조르거나 사정할 때 쓰는 말. = 네 . 아빠, 우리 놀러 가요, 예 ? 한 걸음 더 · ‘예’와 ‘네’는 모두 표준어이다. 이는 비슷한 발음을 가진 두 형태가 모두 널리 쓰이는 경우, 두 형태 모두를 표준어로 삼는다는 규정(표준어 사정 원칙 제18항)에 따른 것으로, ‘네’를 원칙으로 하고 ‘예’도 허용하였다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 6 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=232825",
+              "content_sha256": "d8204d997fa4131881bcc8e27813faf4c0d0ecd6c90cc0a05c69665aed607f55",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 예 8 (芮 ) 원어 芮 물가 예 부수 艸/총획 8 한자 발음 [예 ] 「명사」 우리나라 성의 하나. 본관은 의흥(義興) 하나뿐이다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 8 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=232826",
+              "content_sha256": "c82a2baf5c207b066db27119e51ecc53f3902d44a0bf8b6fad140d4a44590055",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 예 9 (芮 ) 원어 芮 물가 예 부수 艸/총획 8 한자 발음 [예 ] 「참고 어휘」 라(羅) , 로(盧) , 루(纍) , 리(里) 「명사」 『음악』 생황(笙簧)에서, 삼자관과 오자관의 구음(口音). 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 9 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=232827",
+              "content_sha256": "3210f9df9904b63f5a82ea74601d7e93a875657d4308413f78bd3a90f5e58b9c",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 예 10 (羿 ) 원어 羿 평할 예 부수 羽/총획 9 한자 발음 [예 ] 「명사」 『문학』 중국 고대의 전설적 영웅. 요(堯)의 신하로, 활을 잘 쏘아 당시 10개의 태양이 함께 떠올라 초목이 말라 죽게 되었을 때 그중 9개를 쏘아 떨어뜨렸다고 한다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 10 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=457889",
+              "content_sha256": "96208cff1154be9dd20742523ba85b06b726c2347cb6fa233942af8e32c1ad46",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 예 7 (例 ) 원어 例 법식 례 법식 예 부수 人/총획 8 한자 발음 [예ː ] 「명사」 「1」 본보기가 될 만한 사물. 전형적인 예 . 예를 보이다. 예를 들어 설명하다. 「2」 ((‘예의’ 꼴로 쓰여)) 이미 잘 알고 있는 바를 가리킬 때 쓰는 말. 그 사람 역시 예의 그 문제로 고민 중이에요. 예의 그 쾌활함은 어디 가고 그는 시무룩한 표정으로 앉아 있었다. 「3」 관례나 의례를 통틀어 이르는 말. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 7 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=462910",
+              "content_sha256": "8c4c7db27a5fb09b014559faaa88a4c48341fa146189969eff4c97e2844faf05",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 예 1 발음 [예ː ] 편집 이력 「명사」 ((주로 ‘예나’, ‘예로부터’ 꼴로 쓰여)) 아주 먼 과거. 꼼꼼한 성격은 예나 지금이나 조금도 달라진 것이 없다. 이 바위에는 예로부터 괴이한 전설이 하나 전해 내려오고 있었다. 사실 예부터 우리는 소문을 무서워하고 사람들의 뒷공론에 신경을 무척 썼던 백성들이다. ≪이어령, 흙 속에 저 바람 속에≫ 어원 · ＜녜＜용가＞ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "proposal_records": [
+            {
+              "primary_url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=68558",
+              "content_sha256": "703233c2cbd8bb6377f1913bf7df18c5c58c16c1e97b511052ee1d6d334c95ae",
+              "text": "한국어기초사전 이 누리집은 대한민국 공식 전자정부 누리집입니다. Search by Category Small Window Dictionary Search Advanced Search Delete Delete Phụ âm b c d đ g h k l m n p q r s t v x f j w z Nguyên âm a á à ả ã ạ ă ắ ằ ẳ ẵ ặ â ấ ầ ẩ ẫ ậ o ó ò ỏ õ ọ ô ố ồ ổ ỗ ộ ơ ớ ờ ở ỡ ợ e é è ẻ ẽ ẹ ê ế ề ể ễ ệ u ú ù ủ ũ ụ ư ứ ừ ử ữ ự i í ì ỉ ĩ ị y ý ỳ ỷ ỹ ỵ à â æ À Â Æ ç Ç é è ë ê É È Ë Ê î ï Î Ï ô œ Ô Œ ù û ü Ù Û Ü á Á é É í Í ó Ó ú ü Ú Ü ñ Ñ ¡ ¿ Download 가 가 Print 예 6 (禮 ) Pronunciation [예 듣기 ] Derivative 예하다 Part of Speech 「명사」 Noun 1 . politeness; courtesy 1 . 사람이 당연히 지켜야 할 바른 마음가짐과 태도. Good mental attitude and manners that a person should keep. 예 가 맞다. 예 가 바르다. 예 가 아니다. 예 가 있다. 예 를 갖추다. 예 를 보존하다. 예 를 어기다. 예 를 지키다. 예 를 차리다. 예 를 아는 청년은 바르게 살려고 노력했다. 학생은 선생님 앞에서 예 를 갖추고 공손하게 대했다. 약속을 지키지 않는 것은 예 에서 벗어나는 일이었다. 가: 할아버지 댁에 도착하면 가장 먼저 예 를 갖추어 인사를 드리거라. 나: 네, 명심할게요. See More 2 . ceremony 2 . 예의와 규범에 따라 행하는 의식. A ritual performed according to certain manners and rules. 예 가 성대하다. 예 가 시작하다. 예 가 화려하다. 예 를 갖추다. 예 를 거행하다. 예 를 벌이다. 예 를 올리다. 예 를 치르다. 예 에 필요하다. 손자는 할머니 제사에 예 를 갖추어 절을 했다. 신랑과 신부가 입장하는 것으로 예 가 시작되었다. 예 로부터 종가집은 복잡한 예 규칙을 지키며 살아갔다. 가: 자, 그러면 지금부터 예 를 거행하도록 하겠습니다. 나: 장내에 계신 모든 분은 자리에서 일어나 주십시오. See More Synonym 예식 3 . etiquette; decorum 3 . 예의로써 지켜야 할 규칙. Rules that should be followed as manners. 예 를 가르치다. 예 를 따르다. 예 를 만들다. 예 를 세우다. 예 를 준수하다. 예 를 지키다. 예 에 어긋나다. 버스에 할아버지가 타셔서 나는 예 를 갖추어 자리를 양보해 드렸다. 엄마는 아이에게 어른이 수저를 들면 밥을 먹는다는 예 를 가르쳤다. 어른이 전화를 끊기 전에 어린 사람이 전화를 끊는 것은 예 가 아니다. 가: 밥 먹을 때도 예 를 지켜야 해요? 나: 물론이지. 우리 집에서 제일 어른이신 할머니께서 먼저 수저를 드신 후 먹어야 한단다. See More Synonym 예법 Send opinion Send opinion Security Characters Play audio Refresh Name Title Content Send opinion We are looking forward to receiving your opinions regarding dictionary content. (Although we are not able to reply, we will refer to your opinion for dictionary content development and supplementation.) View Mode Korean + English Korean English My Search History Listening to Korean pronunciation services are partly provided by NAVER Cultural Foundation Corp. Help Translation guideline Copyright Policy Notice Open API Suggestion Basic Korean Dictionary National Institute of Korean Language Move Original Language Sino-Korean word 禮 예도 례 예도 예 부수 示/총획 18"
+            },
+            {
+              "primary_url": "https://krdict.korean.go.kr/jpn/dicSearch/SearchView?ParaWordNo=89185&captchaNumber=&comment_user_name=&nation=jpn&nationCode=7&viewTypes=on&wordComment=",
+              "content_sha256": "42210d3a5b875d07a38f08e8cd9b6f4418ee4b45bd6444e94d5605d3129f5a0c",
+              "text": "한국어기초사전 이 누리집은 대한민국 공식 전자정부 누리집입니다. カテゴリー別検索 小ウィンドー表示用 検索 条件指定 削除 削除 Phụ âm b c d đ g h k l m n p q r s t v x f j w z Nguyên âm a á à ả ã ạ ă ắ ằ ẳ ẵ ặ â ấ ầ ẩ ẫ ậ o ó ò ỏ õ ọ ô ố ồ ổ ỗ ộ ơ ớ ờ ở ỡ ợ e é è ẻ ẽ ẹ ê ế ề ể ễ ệ u ú ù ủ ũ ụ ư ứ ừ ử ữ ự i í ì ỉ ĩ ị y ý ỳ ỷ ỹ ỵ à â æ À Â Æ ç Ç é è ë ê É È Ë Ê î ï Î Ï ô œ Ô Œ ù û ü Ù Û Ü á Á é É í Í ó Ó ú ü Ú Ü ñ Ñ ¡ ¿ ダウンロード 가 가 印刷 예 3 発音 [예 듣기 ] 品詞 「대명사」 代名詞 ここ 말하는 사람에게 가까운 곳을 가리키는 말. 話し手に近い所をさしていう語。 예 서 좀 기다리시면 제가 얼른 돌아오겠습니다. 예 가 산 중턱이니 앞으로 두 시간은 더 올라가야 정상이다. 가: 너는 예 가 어딘 줄 알고 그렇게 건방지게 구느냐? 나: 아니, 여기가 뭐 얼마나 대단한 곳인데 그럽니까? 元の語 여기 参考語 게 2 ご意見・お問い合わせ ご意見・お問い合わせ セキュリティチェック文字 音声で聞く 文字の変更 お名前 タイトル 本文 ご意見・お問い合わせ 辞典内容に関する皆様からの様々なご意見をお待ちしております。 （お答えはいたしませんが、ご意見は辞典内容の改善と補完のために参考とさせていただきます。） 表示方法の選択 韓国語 + 日本語 韓国語 日本語 検索した単語 韓国語音声サービスの一部はネイバー文化財団により提供されています。 ヘルプ 翻訳指針 著作権ポリシー お知らせ Open API ご意見・お問い合わせ 韓国語基礎辞典 国立国語院 移動"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "c5e863b3f56a1ff5f5627bdd7a443ad380b9856613344c6b4dccbcd3f5fb0b00"
+    },
+    {
+      "headwords": [
+        "다시는"
+      ],
+      "proposal": {
+        "entries": [],
+        "unresolved": [
+          {
+            "headword": "다시는",
+            "reason_en": "No readable standalone dictionary record with the exact headword 다시는 was verified in the NIKL Basic or Standard Korean Dictionary. The Standard Dictionary fallback search page could not be retrieved. Occurrences under other headwords do not establish a separate lexeme. This remains unresolved for lack of standalone evidence, not because catalog absence makes the form incorrect. No existing catalog identities were supplied."
+          }
+        ]
+      },
+      "proposal_digest": "4300956c12540c3d699f4d3c9eb338ff3f90745b73f524545a37c68d2113c9c1",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "f5a2d9c8f3d90c146ad2bd4aa1134d58e89b785c30fc1f051640e1e00c17acde",
+      "primary_evidence": [
+        {
+          "headword_request": "다시는",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EB%8B%A4%EC%8B%9C%EB%8A%94",
+          "records": []
+        },
+        {
+          "proposal_records": []
+        }
+      ],
+      "primary_evidence_digest": "5f1ef99eddb0efe07af158959823e21aa556f016f6d6fe2364f8783f7d31faba"
+    },
+    {
+      "headwords": [
+        "공손히",
+        "그달",
+        "꾸지람",
+        "명령하다",
+        "무안하다",
+        "억울함",
+        "업신여기다",
+        "여종",
+        "열여덟",
+        "요란하다",
+        "천둥소리",
+        "충성",
+        "크게",
+        "탄식하다",
+        "한탄하다"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "krdict-19392/부",
+            "headword": "공손히",
+            "pos": "부",
+            "meaning_en": "Politely and humbly.",
+            "primary_url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=19392&captchaNumber=&comment_user_name=&nation=eng&nationCode=6&viewTypes=on&wordComment=",
+            "evidence_en": "Retrieved Basic Dictionary record explicitly lists 공손히 (恭遜히), 부사, describing courteous and humble speech or behavior."
+          },
+          {
+            "id": "stdict-44374/명",
+            "headword": "그달",
+            "pos": "명",
+            "meaning_en": "The month already mentioned.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=44374",
+            "evidence_en": "Supplied primary snapshot lists 그-달, 명사, meaning the previously mentioned month. No standalone Basic record was verified; live Standard retrieval failed."
+          },
+          {
+            "id": "krdict-36606/명",
+            "headword": "꾸지람",
+            "pos": "명",
+            "meaning_en": "A scolding or reprimand from a superior.",
+            "primary_url": "https://krdict.korean.go.kr/jpn/dicSearch/SearchView?ParaNationCode=7&ParaWordNo=36606&captchaNumber=&commentTitle=&comment_user_name=&divSearch=defViewGlobal&nation=jpn&nationCode=7&viewTypes=on&wordComment=",
+            "evidence_en": "Retrieved Basic Dictionary record lists 꾸지람, 명사, defining words with which a superior rebukes a subordinate's wrongdoing."
+          },
+          {
+            "id": "krdict-55276/동",
+            "headword": "명령하다",
+            "pos": "동",
+            "meaning_en": "To order or command; to issue a computer command.",
+            "primary_url": "https://krdict.korean.go.kr/jpn/dicSearch/SearchView?ParaWordNo=55276&captchaNumber=&comment_user_name=&nation=jpn&nationCode=7&viewTypes=on&wordComment=",
+            "evidence_en": "Retrieved Basic Dictionary record lists 명령하다 (命令하다), 동사, with senses for directing a subordinate and specifying computer operations."
+          },
+          {
+            "id": "stdict-426624/형",
+            "headword": "무안하다",
+            "pos": "형",
+            "meaning_en": "To feel embarrassed or ashamed.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=426624",
+            "evidence_en": "Supplied primary snapshot lists 무안-하다 (無顔하다), 형용사, describing embarrassment or shame that makes facing others difficult. A direct Basic record was not verified; live Standard retrieval failed."
+          },
+          {
+            "id": "stdict-459468/동",
+            "headword": "업신여기다",
+            "pos": "동",
+            "meaning_en": "To look down on or belittle someone.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=459468",
+            "evidence_en": "Supplied primary snapshot lists 업신-여기다, 동사, defining arrogant disregard for others. Basic search results also list the word, but no direct Basic record was readable; live Standard retrieval failed."
+          },
+          {
+            "id": "stdict-229812/명",
+            "headword": "여종",
+            "pos": "명",
+            "meaning_en": "A female slave or bondservant.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=229812",
+            "evidence_en": "Supplied primary snapshot identifies 여-종, homonym 1 (女종), 명사, as a woman living in servitude. No standalone Basic record was verified; live Standard retrieval failed."
+          },
+          {
+            "id": "stdict-458740/명",
+            "headword": "여종",
+            "pos": "명",
+            "meaning_en": "A Buddhist sect other than one's own.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=458740",
+            "evidence_en": "Supplied primary snapshot identifies 여종, homonym 2 (餘宗), 명사, marked Buddhism. This is distinct from 女종; live Standard retrieval failed."
+          },
+          {
+            "id": "krdict-69270/형",
+            "headword": "요란하다",
+            "pos": "형",
+            "meaning_en": "Noisy and disorderly; excessively showy or fuss-filled.",
+            "primary_url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaNationCode=6&ParaWordNo=69270&captchaNumber=&commentTitle=&comment_user_name=&divSearch=defViewGlobal&nation=eng&nationCode=6&viewTypes=on&wordComment=",
+            "evidence_en": "Retrieved Basic Dictionary record lists 요란하다 (搖亂/擾亂하다), 형용사, with senses for noisy disorder and excessive bustle or display."
+          },
+          {
+            "id": "stdict-247809/형",
+            "headword": "요란하다",
+            "pos": "형",
+            "meaning_en": "Chaotic with flames.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=247809",
+            "evidence_en": "Supplied primary snapshot identifies 요란-하다, homonym 2 (燎亂하다), 형용사, meaning disorder caused by burning. Distinct from Basic Dictionary 搖亂/擾亂하다; live Standard retrieval failed."
+          },
+          {
+            "id": "stdict-321672/명",
+            "headword": "천둥소리",
+            "pos": "명",
+            "meaning_en": "The sound of thunder.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=321672",
+            "evidence_en": "Supplied primary snapshot lists 천둥-소리, 명사, defining the sound produced when thunder occurs. Basic examples under other headwords do not establish a standalone entry; live Standard retrieval failed."
+          },
+          {
+            "id": "stdict-331996/명",
+            "headword": "충성",
+            "pos": "명",
+            "meaning_en": "Heartfelt devotion, especially loyalty to a sovereign or country.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=331996",
+            "evidence_en": "Supplied primary snapshot identifies 충성, homonym 1 (忠誠), 명사, with particular reference to sovereign or country. No direct Basic record was verified; live Standard retrieval failed."
+          },
+          {
+            "id": "stdict-331997/명",
+            "headword": "충성",
+            "pos": "명",
+            "meaning_en": "Sincerity or devotion arising from the heart.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=331997",
+            "evidence_en": "Supplied primary snapshot identifies 충성, homonym 2 (衷誠), 명사. The dictionary treats this as a separate lexeme from 忠誠; live Standard retrieval failed."
+          },
+          {
+            "id": "stdict-331998/명",
+            "headword": "충성",
+            "pos": "명",
+            "meaning_en": "The sound of insects.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=331998",
+            "evidence_en": "Supplied primary snapshot identifies 충성, homonym 3 (蟲聲), 명사, defining insect sounds. Distinct from both devotion homonyms; live Standard retrieval failed."
+          },
+          {
+            "id": "stdict-496434/동",
+            "headword": "탄식하다",
+            "pos": "동",
+            "meaning_en": "To consume whole; figuratively, to invade and annex.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=496434",
+            "evidence_en": "Supplied primary snapshot identifies 탄식-하다, homonym 1 (呑食하다), 동사, with literal consumption and figurative annexation senses. Live Standard retrieval failed."
+          },
+          {
+            "id": "stdict-496435/동",
+            "headword": "탄식하다",
+            "pos": "동",
+            "meaning_en": "To sigh in lamentation.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=496435",
+            "evidence_en": "Supplied primary snapshot identifies 탄식-하다, homonym 2 (歎息하다/嘆息하다), 동사, defining sighing in lamentation. A direct Basic record was not verified; live Standard retrieval failed."
+          },
+          {
+            "id": "krdict-83956/동",
+            "headword": "한탄하다",
+            "pos": "동",
+            "meaning_en": "To lament with sighs over injustice, misfortune, or regret.",
+            "primary_url": "https://krdict.korean.go.kr/chn/dicSearch/SearchView?ParaWordNo=83956&nation=chn",
+            "evidence_en": "Retrieved Basic Dictionary record lists 한탄하다 (恨歎/恨嘆하다), 동사, describing sighing in lamentation after upsetting injustice or recognition of one's wrongdoing."
+          }
+        ],
+        "unresolved": [
+          {
+            "headword": "억울함",
+            "reason_en": "No standalone NIKL headword record was verified. This is naturally formed from 억울하다 with nominalizing -ㅁ; its grammatical nominalization does not justify a new dictionary identity."
+          },
+          {
+            "headword": "열여덟",
+            "reason_en": "A natural Korean numeral meaning eighteen, but no standalone Basic or Standard Dictionary record was verified. Occurrences in examples under 스물, 난산하다, and 묘비 are insufficient to assign a primary identity."
+          },
+          {
+            "headword": "크게",
+            "reason_en": "No standalone NIKL headword record was verified. This is the productive adverbial form of 크다 with -게; retain the underlying lexeme and grammatical analysis instead of creating a lemma."
+          }
+        ]
+      },
+      "proposal_digest": "e84118ee867bc92e2f9cf91a1ef292fe34ca762962fde31c5472f44e2cd75cf2",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "f5a2d9c8f3d90c146ad2bd4aa1134d58e89b785c30fc1f051640e1e00c17acde",
+      "primary_evidence": [
+        {
+          "headword_request": "공손히",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EA%B3%B5%EC%86%90%ED%9E%88",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=29532",
+              "content_sha256": "863c09d9843944b18817f3bcdfbaffcacfaeb9e98dd2401f5bb3084e843ab9ad",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 공손-히 (恭遜히 ) 원어 恭 공손할 공 부수 心/총획 10 遜 겸손할 손 부수 辵/총획 14 히 한자 고유어 발음 [공손히 ] 주표제어 공손 3 「부사」 겸손하고 예의 바른 말이나 행동으로. 공손히 대답하다. 주인은 처음에는 퍽 곤혹스러운 기색이더니, 이내 공손히 예를 갖추며 두 대감을 안으로 모셔 들였다. ≪현기영, 변방에 우짖는 새≫ 허여멀겋게 잘생긴 젊은이가 서 있다가 다산의 모습을 보자, 그 자리에 엎드려 공손히 절을 올렸다. ≪한무숙, 만남≫ 「반대말」 불손히(不遜히) 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "그달",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EA%B7%B8%EB%8B%AC",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=44374",
+              "content_sha256": "7d936b2a83b450040584353c4f7a9f849251245d595096c7462a70ecc1ec4dc1",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 그-달 발음 [그달 ] 「명사」 앞에서 이미 이야기한 달. 그들은 3월 초에 처음 만나서 그달 말에 약혼했다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "꾸지람",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EA%BE%B8%EC%A7%80%EB%9E%8C",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=407349",
+              "content_sha256": "fe4c42540f6750206c270b4e10904167334faf6aa96dcb700384557bfd329d0e",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 꾸지람 발음 [꾸지람 ] 부표제어 꾸지람-하다 편집 이력 「명사」 아랫사람의 잘못을 꾸짖는 말. ≒ 꾸중 , 지청구 . 꾸지람을 듣다. 꾸지람이 떨어지다. 날이 환하게 밝자 시아버지는 아들과 며느리를 안방에다 불러 놓고 벼락불이 떨어지는 듯 꾸지람과 호령이 추상같았다. ≪박종화, 임진왜란≫ 나는 아직 한 번도 어머님한테 매를 맞아 보기는커녕 언성 높은 꾸지람을 들어 본 적도 없었다. ≪김원일, 어둠의 축제≫ 더 보기 한 걸음 더 · ‘꾸지람’과 ‘꾸중’과 ‘지청구’는 모두 표준어이다. 이는 한 가지 의미를 나타내는 형태 몇 가지가 널리 쓰이며 표준어 규정에 맞으면, 그 모두를 표준어로 삼는다는 규정(표준어 사정 원칙 제26항)에 따른 것이다. 어원 · ＜지람/지럼＜구지람＜월석＞[←구짇-+-암]/구지럼＜석상＞[←구짇-+-엄] 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "명령하다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EB%AA%85%EB%A0%B9%ED%95%98%EB%8B%A4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=115222",
+              "content_sha256": "0dacbe7cdf830f10622963fad33d2eef160399d3a40e1ba7fc61be35ec5abc49",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 명령-하다 (命令하다 ) 원어 命 목숨 명 부수 口/총획 8 令 명령할 령 명령할 영 부수 人/총획 5 하다 한자 고유어 발음 [명ː녕하다 ] 활용 명령하여[명ː녕하여](명령해[명ː녕해]), 명령하니[명ː녕하니] 주표제어 명령 1 편집 이력 「동사」 【…에/에게 …을】【 …에/에게 -고】【 …에/에게 -도록】 「1」 윗사람이나 상위 조직이 아랫사람이나 하위 조직에 무엇을 하게 하다. ≒ 명하다 . 아버지는 정혼한 여자와 결혼할 것을 명령하셨다 . 삼촌은 손님들 앞에서 얌전히 굴라고 명령했다 . 아내는 나에게 양복을 입도록 명령하듯 말했다. 「2」 군(軍)에서 상급자나 상위 조직이 하급자나 하위 조직에 군사적 행위를 하게 하다. 아무런 적의 움직임이 눈에 띄지를 않자 소대장은 이동을 명령했다 . ≪안정효, 하얀 전쟁≫ 장군은 병사들에게 진군하라고 명령했다 . 참모 총장은 전군(全軍)에 즉시 비상경계에 들어가도록 명령했다 . 우선 연천 장군을 대장군으로 배하여 출동하도록 명령하였소이다 . ≪홍효민, 신라 통일≫ 더 보기 「3」 『정보·통신』 컴퓨터에 시동, 정지, 계속 따위의 동작을 지정하거나, 입출력(入出力) 제어 장치에 실행할 입출력 동작을 지정하다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "무안하다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EB%AC%B4%EC%95%88%ED%95%98%EB%8B%A4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=426624",
+              "content_sha256": "9cbcddab0e68f3cd471dff62f97b370979a05fedf28040a9438fa5e9a0ffd185",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 무안-하다 (無顔하다 ) 원어 無 없을 무 부수 火/총획 12 顔 얼굴 안 부수 頁/총획 18 하다 한자 고유어 발음 [무안하다 ] 활용 무안하여[무안하여 ](무안해[무안해 ]), 무안하니[무안하니 ] 주표제어 무안 2 「형용사」 【…이】【 -기가】 수줍거나 창피하여 볼 낯이 없다. 나는 어제 저지른 실수가 무안하여 사람들 앞에 나설 수가 없었다. 그는 무안할 정도로 나를 빤히 쳐다보았다. 누님은 무안한 기색 하나 없이 생글생글 웃기만 했다. ≪유재용, 누님의 초상≫ 나는 친구에게 또 한 번 부탁을 하기가 무안하여 말도 꺼내지 못했다. 더 보기 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "억울함",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%96%B5%EC%9A%B8%ED%95%A8",
+          "records": []
+        },
+        {
+          "headword_request": "업신여기다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%97%85%EC%8B%A0%EC%97%AC%EA%B8%B0%EB%8B%A4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=459468",
+              "content_sha256": "cad9d0cda4167c6dd30b0f8ab7149687b2f4fe2440f7b21b8b4091b407f1e4ba",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 업신-여기다 발음 [업ː씬녀기다 ] 활용 업신여기어[업ː씬녀기어 /업ː씬녀기여 ](업신여겨[업ː씬녀겨]), 업신여기니[업ː씬녀기니] 「동사」 【…을】 교만한 마음에서 남을 낮추어 보거나 하찮게 여기다. 함부로 남을 업신여기지 마라. 사람을 업신여겨도 분수가 있지! 토호들이 농민들을 업신여겨 함부로 하는 것을 말도 못 하고 구경만 할 따름이었다. ≪문순태, 타오르는 강≫ 할아버지가 시골에서 동네 사람들을 상것들이라고 업신여긴 것보다 엄마는 한술 더 떠서 바닥 상것들이라는 표현을 썼다. ≪박완서, 그 많던 싱아는 누가 다 먹었을까≫ 툭하면 여자니 남자니 가재가 게 편을 드는 것은 다 무어야. 그게 다 여자라고 업신여기는 말씀이지. ≪한용운, 흑풍≫ 더 보기 「비슷한말」 경만하다(輕慢하다) 어원 · ＜업시너기다＜두시-초＞←없-+-이+너기- 관용구/속담 속담 업신여기던 딸이 떡함지 이고 온다 평소에 깔보거나 업신여기던 사람에게서 뜻밖에 도움을 받게 되는 경우를 비유적으로 이르는 말. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "여종",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%97%AC%EC%A2%85",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=229812",
+              "content_sha256": "57a13cbca25ea6044684bfb9ddd3397fcbf1101a705c932ada6b4644b6f922f2",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 여-종 1 (女종 ) 원어 女 계집 녀 계집 여 부수 女/총획 3 종 한자 고유어 발음 [여종 ] 편집 이력 「명사」 종살이를 하는 여자. = 계집종 . 「반대말」 남종(男종) 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=458740",
+              "content_sha256": "308d5452b134fd931a590765606b31e368fa91ce7f568a87abbf607c8c6f7390",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 여종 2 (餘宗 ) 원어 餘 남을 여 부수 食/총획 16 宗 마루 종 부수 宀/총획 8 한자 발음 [여종 ] 편집 이력 「명사」 『불교』 자신의 종파가 아닌 다른 종파. ≒ 여파 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "열여덟",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%97%B4%EC%97%AC%EB%8D%9F",
+          "records": []
+        },
+        {
+          "headword_request": "요란하다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%9A%94%EB%9E%80%ED%95%98%EB%8B%A4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=247809",
+              "content_sha256": "6d46ed7fc2be62b8393124440b8f91bac03bd04656b1d26bf9df194f1a1ac3b2",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 요란-하다 2 (燎亂하다 ) 원어 燎 화톳불 료 화톳불 요 부수 火/총획 16 亂 어지러울 란 어지러울 난 부수 乙/총획 13 하다 한자 고유어 발음 [요란하다 ] 활용 요란하여[요란하여 ](요란해[요란해 ]), 요란하니[요란하니 ] 주표제어 요란 2 「형용사」 불이 붙어 어지럽다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=248066",
+              "content_sha256": "3ebb96c57711ade298de3fa041a513cd5335119e5c13c4915fee278002b4788f",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 요란-하다 1 (搖亂하다/擾亂하다 ) 원어 搖 흔들릴 요 부수 手/총획 13 亂 어지러울 란 어지러울 난 부수 乙/총획 13 하다 한자 고유어 원어 擾 흐려질 요 부수 手/총획 18 亂 어지러울 란 어지러울 난 부수 乙/총획 13 하다 한자 고유어 발음 [요란하다 ] 활용 요란하여[요란하여 ](요란해[요란해 ]), 요란하니[요란하니 ] 주표제어 요란 1 편집 이력 「형용사」 「1」 시끄럽고 떠들썩하다. 요란한 박수 소리. 코를 요란하게 골다. 밖은 초저녁부터 내리던 비가 아직도 북을 치듯이 요란하게 내려 쏟고 있다. ≪홍성원, 육이오≫ 「2」 정도가 지나쳐 어수선하고 야단스럽다. 요란한 몸짓. 시절이 요란하다 . 실속 없는 사람이 겉만 요란하다 . 입맛만 버린 한 사발의 막걸리가 되잖게 냄새만 요란하다 싶었다. ≪조정래, 태백산맥≫ 더 보기 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "천둥소리",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%B2%9C%EB%91%A5%EC%86%8C%EB%A6%AC",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=321672",
+              "content_sha256": "00a6ffba6def08d226f51ea2e85983b4809489f4f3bf66c0343fbaa525599347",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 천둥-소리 발음 [천둥소리 ] 편집 이력 「명사」 천둥이 칠 때 나는 소리. ≒ 뇌성 , 뇌음 , 우렛소리 . 그는 천둥소리에 놀라 깊은 잠에서 깨어났다. 번갯불이 번쩍이며 천둥소리가 머리 위를 굴러갔다. ≪유현종, 들불≫ 그럴 적마다 찔린 산이 지르는 비명과도 같은 천둥소리가 지축을 흔들었다. ≪윤흥길, 장마≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "충성",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%B6%A9%EC%84%B1",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=331996",
+              "content_sha256": "265055a52beb6faefa7836361042760ff872f96e43bc0af4e4ed10ef9ab176fc",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 충성 1 (忠誠 ) 원어 忠 충성 충 부수 心/총획 8 誠 정성 성 부수 言/총획 14 한자 발음 [충성 ] 부표제어 충성-하다 , 충성-되다 「명사」 진정에서 우러나오는 정성. 특히, 임금이나 국가에 대한 것을 이른다. 충성을 다하다. 충성을 맹세하다. 충성을 바치다. 조선 시대에 신하들은 부모에 대한 효도보다 나라에 대한 충성을 더 중요하게 생각했다. 더 보기 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=331997",
+              "content_sha256": "b365c61525e2656a1978367250829895a50d542dd8f077b4e86f323bb9ff6dae",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 충성 2 (衷誠 ) 원어 衷 속옷 충 속마음 충 부수 衣/총획 10 誠 정성 성 부수 言/총획 14 한자 발음 [충성 ] 편집 이력 「명사」 마음속에서 우러나오는 정성. ≒ 성충 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=331998",
+              "content_sha256": "0f2752a89266202495657ec459085a1cbd36eeb959446e697e9c7123b294d529",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 충성 3 (蟲聲 ) 원어 蟲 벌레 충 부수 虫/총획 18 聲 소리 성 부수 耳/총획 17 한자 발음 [충성 ] 「명사」 벌레 소리. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "크게",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%ED%81%AC%EA%B2%8C",
+          "records": []
+        },
+        {
+          "headword_request": "탄식하다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%ED%83%84%EC%8B%9D%ED%95%98%EB%8B%A4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=496434",
+              "content_sha256": "9a7379bdafece516624a1cae28df3b24cb5e5535596dbf2e9df3c245528638d1",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 탄식-하다 1 (呑食하다 ) 원어 呑 삼킬 탄 부수 口/총획 7 食 먹을 식 먹이 사 사람 이름 이 부수 食/총획 9 하다 한자 고유어 발음 [탄ː시카다 ] 활용 탄식하여[탄ː시카여](탄식해[탄ː시캐]), 탄식하니[탄ː시카니] 주표제어 탄식 1 「동사」 【…을】 「1」 통째로 먹다. 「2」 (비유적으로) 쳐들어와 하나로 합치다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=496435",
+              "content_sha256": "f1ea6ac8875367593b452ccced037260931e66e069f331812b58ead87d96ff41",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 탄식-하다 2 (歎息하다/嘆息하다 ) 원어 歎 탄식할 탄 부수 欠/총획 15 息 숨쉴 식 부수 心/총획 10 하다 한자 고유어 원어 嘆 탄식할 탄 부수 口/총획 14 息 숨쉴 식 부수 心/총획 10 하다 한자 고유어 발음 [탄ː시카다 ] 활용 탄식하여[탄ː시카여](탄식해[탄ː시캐]), 탄식하니[탄ː시카니] 주표제어 탄식 2 편집 이력 「동사」 【…을】【 -고】 한탄하여 한숨을 쉬다. 어지러운 세상을 탄식하다 . 그는 밤이 너무나 긴 것을 탄식하며 어서 날이 밝기를 기다리었다. ≪이태준, 까마귀≫ 그는 이젠 다 틀렸다고 탄식했다 . 그는 어떻게 이럴 수가 있느냐고 탄식했다 . 더 보기 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "한탄하다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%ED%95%9C%ED%83%84%ED%95%98%EB%8B%A4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=505720",
+              "content_sha256": "391681767db91fcd3be05df470fe5dd0c485a32f8bf8448e96916e77873637dd",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 한탄-하다 (恨歎하다/恨嘆하다 ) 원어 恨 한할 한 부수 心/총획 9 歎 탄식할 탄 부수 欠/총획 15 하다 한자 고유어 원어 恨 한할 한 부수 心/총획 9 嘆 탄식할 탄 부수 口/총획 14 하다 한자 고유어 발음 [한ː탄하다 ] 활용 한탄하여[한ː탄하여](한탄해[한ː탄해]), 한탄하니[한ː탄하니] 주표제어 한탄 편집 이력 「동사」 【…을】【 -음을】【 -고】 원통하거나 뉘우치는 일이 있을 때 한숨을 쉬며 탄식하다. 자신의 불운을 한탄하다 . 자신의 신세를 한탄하다 . 장군은 휘하에 쓸 만한 군사가 적음을 한탄했다 . 그들은 모이기만 하면 시대를 잘못 만났다고 한탄한다 . 이번 사고로 남편을 잃은 여자는 이젠 누굴 의지하고 살겠느냐고 한탄했다 . 더 보기 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "proposal_records": [
+            {
+              "primary_url": "https://krdict.korean.go.kr/chn/dicSearch/SearchView?ParaWordNo=83956&nation=chn",
+              "content_sha256": "fe502f9e51a8b623459356592cdcd216bd5fbfecb8fca846285b2ef549bbb263",
+              "text": "한국어기초사전 이 누리집은 대한민국 공식 전자정부 누리집입니다. 分类检索 小窗口词典 检索 高级检索 删除 删除 Phụ âm b c d đ g h k l m n p q r s t v x f j w z Nguyên âm a á à ả ã ạ ă ắ ằ ẳ ẵ ặ â ấ ầ ẩ ẫ ậ o ó ò ỏ õ ọ ô ố ồ ổ ỗ ộ ơ ớ ờ ở ỡ ợ e é è ẻ ẽ ẹ ê ế ề ể ễ ệ u ú ù ủ ũ ụ ư ứ ừ ử ữ ự i í ì ỉ ĩ ị y ý ỳ ỷ ỹ ỵ à â æ À Â Æ ç Ç é è ë ê É È Ë Ê î ï Î Ï ô œ Ô Œ ù û ü Ù Û Ü á Á é É í Í ó Ó ú ü Ú Ü ñ Ñ ¡ ¿ 下载 가 가 打印 한탄하다 (恨歎/恨嘆하다 ) 发音 [한ː탄하다 듣기 ] 한탄 词类 「동사」 动词 叹息，哀叹，悲叹，长叹一声 분하고 억울한 일을 당했을 때나 자신의 잘못을 깨달았을 때 한숨을 쉬며 탄식하다. 遭受愤怒、委屈的事情或意识到自己错误的时候叹气。 불운을 한탄하다 . 불행을 한탄하다 . 비운을 한탄하다 . 신세를 한탄하다 . 운명을 한탄하다 . 외로움을 한탄하다 . 아버지는 자신의 가난함을 한탄하며 자책하셨다. 사업에 실패한 형은 자기의 불운한 신세를 한탄하였다 . 가: 할아버지가 살아 계실 때 잘해 드릴 걸. 나: 이미 돌아가셔서 한탄해 봤자 소용없어. 更多 句型 1이 2를 한탄하다 , 1이 2-고 한탄하다 意见反馈 意见反馈 验证码 语音验证码 刷新 姓名 标题 内容 意见反馈 希望大家对词典内容提出各种宝贵意见 （虽然我们不会回复您，但在修改、补充词典时会参考您的意见。） 查看方式 韩国语 + 汉语 韩国语 汉语 查询历史 韩国语发音试听服务，一部分由naver文化财团提供 帮助 翻译指南 版权声明 通知 Open API 意见反馈 韩国语基础词典 韩国国立国语院 跳转 源词 汉字词 恨 한할 한 부수 心/총획 9 歎 탄식할 탄 부수 欠/총획 15 / 恨 한할 한 부수 心/총획 9 嘆 탄식할 탄 부수 口/총획 14 固有词 하다"
+            },
+            {
+              "primary_url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaNationCode=6&ParaWordNo=69270&captchaNumber=&commentTitle=&comment_user_name=&divSearch=defViewGlobal&nation=eng&nationCode=6&viewTypes=on&wordComment=",
+              "content_sha256": "bbe7c72041753f7d94add05eba416d71d0294052eefd97e821dec13ebb6fdef9",
+              "text": "한국어기초사전 이 누리집은 대한민국 공식 전자정부 누리집입니다. Search by Category Small Window Dictionary Search Advanced Search Delete Delete Phụ âm b c d đ g h k l m n p q r s t v x f j w z Nguyên âm a á à ả ã ạ ă ắ ằ ẳ ẵ ặ â ấ ầ ẩ ẫ ậ o ó ò ỏ õ ọ ô ố ồ ổ ỗ ộ ơ ớ ờ ở ỡ ợ e é è ẻ ẽ ẹ ê ế ề ể ễ ệ u ú ù ủ ũ ụ ư ứ ừ ử ữ ự i í ì ỉ ĩ ị y ý ỳ ỷ ỹ ỵ à â æ À Â Æ ç Ç é è ë ê É È Ë Ê î ï Î Ï ô œ Ô Œ ù û ü Ù Û Ü á Á é É í Í ó Ó ú ü Ú Ü ñ Ñ ¡ ¿ Download 가 가 Print 요란하다 (搖亂/擾亂하다 ) Pronunciation [요란하다 듣기 ] Application 요란한[요란한], 요란하여[요란하여](요란해[요란해]), 요란하니[요란하니], 요란합니다[요란함니다] 요란 Part of Speech 「형용사」 Adjective 1 . bustling 1 . 어수선하고 시끄럽다. Disorderly and loud. 요란한 경적. 요란한 소리. 요란하게 짖다. 소리가 요란하다 . 잡음이 요란하다 . 함성이 요란하다 . 응원단은 관객을 향해 요란한 함성을 질렀다. 거리는 춤추고 노래하는 사람들로 요란했다 . 가: 어제 잠을 못 잤어요? 굉장히 피곤해 보이네요. 나: 남편이 계속 요란하게 코를 고는 바람에 시끄러워서 잠을 설쳤어요. See More Sentence 1이 요란하다 2 . bustling 2 . 지나치게 어수선하고 야단스럽다. Being excessively disordered and wild. 요란한 몸짓. 요란한 장식. 요란하게 꾸미다. 요란하게 차리다. 겉이 요란하다 . 말이 요란하다 . 무대가 요란하다 . 요리사는 요란한 칼솜씨를 뽐내며 빠르게 생선을 요리했다. 그 음식점은 광고만 요란하고 맛이 없었다. 가: 이 꽃무늬 벽지는 어때? 화려하고 좋잖아? 나: 아니 나는 그렇게 요란한 거보다는 단순한 게 좋아. See More Sentence 1이 요란하다 Send opinion Send opinion Security Characters Play audio Refresh Name Title Content Send opinion We are looking forward to receiving your opinions regarding dictionary content. (Although we are not able to reply, we will refer to your opinion for dictionary content development and supplementation.) View Mode Korean + English Korean English My Search History Listening to Korean pronunciation services are partly provided by NAVER Cultural Foundation Corp. Help Translation guideline Copyright Policy Notice Open API Suggestion Basic Korean Dictionary National Institute of Korean Language Move Original Language Sino-Korean word 搖 흔들릴 요 부수 手/총획 13 亂 어지러울 란 어지러울 난 부수 乙/총획 13 / 擾 흐려질 요 부수 手/총획 18 亂 어지러울 란 어지러울 난 부수 乙/총획 13 Native word 하다"
+            },
+            {
+              "primary_url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=19392&captchaNumber=&comment_user_name=&nation=eng&nationCode=6&viewTypes=on&wordComment=",
+              "content_sha256": "f8b3f55568ded318e8af6e4e1ee5807a39e70fed118d9e5d42fdf1417dd1c90f",
+              "text": "한국어기초사전 이 누리집은 대한민국 공식 전자정부 누리집입니다. Search by Category Small Window Dictionary Search Advanced Search Delete Delete Phụ âm b c d đ g h k l m n p q r s t v x f j w z Nguyên âm a á à ả ã ạ ă ắ ằ ẳ ẵ ặ â ấ ầ ẩ ẫ ậ o ó ò ỏ õ ọ ô ố ồ ổ ỗ ộ ơ ớ ờ ở ỡ ợ e é è ẻ ẽ ẹ ê ế ề ể ễ ệ u ú ù ủ ũ ụ ư ứ ừ ử ữ ự i í ì ỉ ĩ ị y ý ỳ ỷ ỹ ỵ à â æ À Â Æ ç Ç é è ë ê É È Ë Ê î ï Î Ï ô œ Ô Œ ù û ü Ù Û Ü á Á é É í Í ó Ó ú ü Ú Ü ñ Ñ ¡ ¿ Download 가 가 Print 공손히 (恭遜히 ) Pronunciation [공손히 듣기 ] 공손 Part of Speech 「부사」 Adverb politely; in a civil manner 말이나 행동이 예의가 바르고 겸손하게. Courteously and humbly in speaking or behaving. 공손히 건네다. 공손히 대답하다. 공손히 대하다. 공손히 맞이하다. 공손히 묻다. 공손히 인사하다. 나는 허리를 숙여 선생님께 공손히 인사했다. 나는 자세를 공손히 한 채 할아버지의 말씀을 들었다. 할머니께 물건은 공손히 두 손으로 드려야지. 가: 유민이는 참 예의가 바른 것 같아. 나: 맞아. 항상 웃는 얼굴로 어르신들을 공손히 대하더라. See More Send opinion Send opinion Security Characters Play audio Refresh Name Title Content Send opinion We are looking forward to receiving your opinions regarding dictionary content. (Although we are not able to reply, we will refer to your opinion for dictionary content development and supplementation.) View Mode Korean + English Korean English My Search History Listening to Korean pronunciation services are partly provided by NAVER Cultural Foundation Corp. Help Translation guideline Copyright Policy Notice Open API Suggestion Basic Korean Dictionary National Institute of Korean Language Move Original Language Sino-Korean word 恭 공손할 공 부수 心/총획 10 遜 겸손할 손 부수 辵/총획 14 Native word 히"
+            },
+            {
+              "primary_url": "https://krdict.korean.go.kr/jpn/dicSearch/SearchView?ParaNationCode=7&ParaWordNo=36606&captchaNumber=&commentTitle=&comment_user_name=&divSearch=defViewGlobal&nation=jpn&nationCode=7&viewTypes=on&wordComment=",
+              "content_sha256": "91cb4911d434a14c3102f91e257ae0826ee7e6fb96231733f4a9ebb5fd571ab2",
+              "text": "한국어기초사전 이 누리집은 대한민국 공식 전자정부 누리집입니다. カテゴリー別検索 小ウィンドー表示用 検索 条件指定 削除 削除 Phụ âm b c d đ g h k l m n p q r s t v x f j w z Nguyên âm a á à ả ã ạ ă ắ ằ ẳ ẵ ặ â ấ ầ ẩ ẫ ậ o ó ò ỏ õ ọ ô ố ồ ổ ỗ ộ ơ ớ ờ ở ỡ ợ e é è ẻ ẽ ẹ ê ế ề ể ễ ệ u ú ù ủ ũ ụ ư ứ ừ ử ữ ự i í ì ỉ ĩ ị y ý ỳ ỷ ỹ ỵ à â æ À Â Æ ç Ç é è ë ê É È Ë Ê î ï Î Ï ô œ Ô Œ ù û ü Ù Û Ü á Á é É í Í ó Ó ú ü Ú Ü ñ Ñ ¡ ¿ ダウンロード 가 가 印刷 꾸지람 発音 [꾸지람 듣기 ] 派生語 꾸지람하다 品詞 「명사」 名詞 おしかり【お叱り】 윗사람이 아랫사람의 잘못을 꾸짖는 말. 目上の人が目下の人の過ちを叱る言葉。 부모의 꾸지람 . 선생님의 꾸지람 . 꾸지람 이 떨어지다. 꾸지람 을 내리다. 꾸지람 을 듣다. 꾸지람 을 하다. 유민이는 숙제를 안 해 선생님께 심한 꾸지람 을 들었다. 상사는 출근 첫날부터 지각한 신입 사원에게 꾸지람 을 내렸다. 가: 오늘따라 주눅이 들어 있는 것 같네. 나: 아까 선배들한테 꾸지람 을 들었거든. もっと見る 類義語 꾸중 , 지청구 ご意見・お問い合わせ ご意見・お問い合わせ セキュリティチェック文字 音声で聞く 文字の変更 お名前 タイトル 本文 ご意見・お問い合わせ 辞典内容に関する皆様からの様々なご意見をお待ちしております。 （お答えはいたしませんが、ご意見は辞典内容の改善と補完のために参考とさせていただきます。） 表示方法の選択 韓国語 + 日本語 韓国語 日本語 検索した単語 韓国語音声サービスの一部はネイバー文化財団により提供されています。 ヘルプ 翻訳指針 著作権ポリシー お知らせ Open API ご意見・お問い合わせ 韓国語基礎辞典 国立国語院 移動"
+            },
+            {
+              "primary_url": "https://krdict.korean.go.kr/jpn/dicSearch/SearchView?ParaWordNo=55276&captchaNumber=&comment_user_name=&nation=jpn&nationCode=7&viewTypes=on&wordComment=",
+              "content_sha256": "ecbb061fb51b3d52c1398ef44dc0bdff4fe47008229aa19a7d7b4da826035a87",
+              "text": "한국어기초사전 이 누리집은 대한민국 공식 전자정부 누리집입니다. カテゴリー別検索 小ウィンドー表示用 検索 条件指定 削除 削除 Phụ âm b c d đ g h k l m n p q r s t v x f j w z Nguyên âm a á à ả ã ạ ă ắ ằ ẳ ẵ ặ â ấ ầ ẩ ẫ ậ o ó ò ỏ õ ọ ô ố ồ ổ ỗ ộ ơ ớ ờ ở ỡ ợ e é è ẻ ẽ ẹ ê ế ề ể ễ ệ u ú ù ủ ũ ụ ư ứ ừ ử ữ ự i í ì ỉ ĩ ị y ý ỳ ỷ ỹ ỵ à â æ À Â Æ ç Ç é è ë ê É È Ë Ê î ï Î Ï ô œ Ô Œ ù û ü Ù Û Ü á Á é É í Í ó Ó ú ü Ú Ü ñ Ñ ¡ ¿ ダウンロード 가 가 印刷 명령하다 (命令하다 ) 発音 [명ː녕하다 듣기 ] 명령 品詞 「동사」 動詞 1 . めいれいする【命令する】 1 . 윗사람이 아랫사람에게 무엇을 시키거나 지시하다. 上位の者が下位の者に何かをさせたり指示したりする。 명령하는 말투. 아버지가 명령하다 . 순찰을 명령하다 . 일을 명령하다 . 출동을 명령하다 . 아들에게 아버지는 군대에 가라고 강압적으로 명령했다 . 항상 명령하는 말투를 사용하는 김 과장 때문에 부하 직원들은 불쾌감을 느낀다. 가: 대장님, 화재 발생 신고가 들어왔습니다. 나: 어서 대원들에게 출동하자고 명령해 ! 文型 1이 2에/에게 3을 명령하다, 1이 2에/에게 3-고 명령하다 類義語 명하다 2 . めいれいする【命令する】 2 . 컴퓨터에 시동, 정지, 계속이나 입출력 등의 동작을 지정하다. コンピューターに始動、停止、継続、入出力などの動作を指定する。 시작을 명령하다 . 실행을 명령하다 . 입력을 명령하다 . 정지를 명령하다 . 출력을 명령하다 . 박 대리는 지금까지 입력한 자료의 통계를 내도록 컴퓨터에 명령했다 . 지수는 문서를 인쇄하려고 컴퓨터에 연결된 프린터에 출력을 명령하는 버튼을 클릭했다. 가: 자료 준비는 끝냈고, 다음은 뭐야? 나: 이제 다음 작업의 실행을 명령하면 컴퓨터가 알아서 작업을 할 거야. 文型 1이 2에/에게 3을 명령하다, 1이 2에/에게 3-고 명령하다 ご意見・お問い合わせ ご意見・お問い合わせ セキュリティチェック文字 音声で聞く 文字の変更 お名前 タイトル 本文 ご意見・お問い合わせ 辞典内容に関する皆様からの様々なご意見をお待ちしております。 （お答えはいたしませんが、ご意見は辞典内容の改善と補完のために参考とさせていただきます。） 表示方法の選択 韓国語 + 日本語 韓国語 日本語 検索した単語 韓国語音声サービスの一部はネイバー文化財団により提供されています。 ヘルプ 翻訳指針 著作権ポリシー お知らせ Open API ご意見・お問い合わせ 韓国語基礎辞典 国立国語院 移動 原語 漢字語 命 목숨 명 부수 口/총획 8 令 명령할 령 명령할 영 부수 人/총획 5 固有語 하다"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=229812",
+              "content_sha256": "57a13cbca25ea6044684bfb9ddd3397fcbf1101a705c932ada6b4644b6f922f2",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 여-종 1 (女종 ) 원어 女 계집 녀 계집 여 부수 女/총획 3 종 한자 고유어 발음 [여종 ] 편집 이력 「명사」 종살이를 하는 여자. = 계집종 . 「반대말」 남종(男종) 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=247809",
+              "content_sha256": "6d46ed7fc2be62b8393124440b8f91bac03bd04656b1d26bf9df194f1a1ac3b2",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 요란-하다 2 (燎亂하다 ) 원어 燎 화톳불 료 화톳불 요 부수 火/총획 16 亂 어지러울 란 어지러울 난 부수 乙/총획 13 하다 한자 고유어 발음 [요란하다 ] 활용 요란하여[요란하여 ](요란해[요란해 ]), 요란하니[요란하니 ] 주표제어 요란 2 「형용사」 불이 붙어 어지럽다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=321672",
+              "content_sha256": "00a6ffba6def08d226f51ea2e85983b4809489f4f3bf66c0343fbaa525599347",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 천둥-소리 발음 [천둥소리 ] 편집 이력 「명사」 천둥이 칠 때 나는 소리. ≒ 뇌성 , 뇌음 , 우렛소리 . 그는 천둥소리에 놀라 깊은 잠에서 깨어났다. 번갯불이 번쩍이며 천둥소리가 머리 위를 굴러갔다. ≪유현종, 들불≫ 그럴 적마다 찔린 산이 지르는 비명과도 같은 천둥소리가 지축을 흔들었다. ≪윤흥길, 장마≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=331996",
+              "content_sha256": "265055a52beb6faefa7836361042760ff872f96e43bc0af4e4ed10ef9ab176fc",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 충성 1 (忠誠 ) 원어 忠 충성 충 부수 心/총획 8 誠 정성 성 부수 言/총획 14 한자 발음 [충성 ] 부표제어 충성-하다 , 충성-되다 「명사」 진정에서 우러나오는 정성. 특히, 임금이나 국가에 대한 것을 이른다. 충성을 다하다. 충성을 맹세하다. 충성을 바치다. 조선 시대에 신하들은 부모에 대한 효도보다 나라에 대한 충성을 더 중요하게 생각했다. 더 보기 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=331997",
+              "content_sha256": "b365c61525e2656a1978367250829895a50d542dd8f077b4e86f323bb9ff6dae",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 충성 2 (衷誠 ) 원어 衷 속옷 충 속마음 충 부수 衣/총획 10 誠 정성 성 부수 言/총획 14 한자 발음 [충성 ] 편집 이력 「명사」 마음속에서 우러나오는 정성. ≒ 성충 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=331998",
+              "content_sha256": "0f2752a89266202495657ec459085a1cbd36eeb959446e697e9c7123b294d529",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 충성 3 (蟲聲 ) 원어 蟲 벌레 충 부수 虫/총획 18 聲 소리 성 부수 耳/총획 17 한자 발음 [충성 ] 「명사」 벌레 소리. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=426624",
+              "content_sha256": "9cbcddab0e68f3cd471dff62f97b370979a05fedf28040a9438fa5e9a0ffd185",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 무안-하다 (無顔하다 ) 원어 無 없을 무 부수 火/총획 12 顔 얼굴 안 부수 頁/총획 18 하다 한자 고유어 발음 [무안하다 ] 활용 무안하여[무안하여 ](무안해[무안해 ]), 무안하니[무안하니 ] 주표제어 무안 2 「형용사」 【…이】【 -기가】 수줍거나 창피하여 볼 낯이 없다. 나는 어제 저지른 실수가 무안하여 사람들 앞에 나설 수가 없었다. 그는 무안할 정도로 나를 빤히 쳐다보았다. 누님은 무안한 기색 하나 없이 생글생글 웃기만 했다. ≪유재용, 누님의 초상≫ 나는 친구에게 또 한 번 부탁을 하기가 무안하여 말도 꺼내지 못했다. 더 보기 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=44374",
+              "content_sha256": "7d936b2a83b450040584353c4f7a9f849251245d595096c7462a70ecc1ec4dc1",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 그-달 발음 [그달 ] 「명사」 앞에서 이미 이야기한 달. 그들은 3월 초에 처음 만나서 그달 말에 약혼했다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=458740",
+              "content_sha256": "308d5452b134fd931a590765606b31e368fa91ce7f568a87abbf607c8c6f7390",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 여종 2 (餘宗 ) 원어 餘 남을 여 부수 食/총획 16 宗 마루 종 부수 宀/총획 8 한자 발음 [여종 ] 편집 이력 「명사」 『불교』 자신의 종파가 아닌 다른 종파. ≒ 여파 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=459468",
+              "content_sha256": "cad9d0cda4167c6dd30b0f8ab7149687b2f4fe2440f7b21b8b4091b407f1e4ba",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 업신-여기다 발음 [업ː씬녀기다 ] 활용 업신여기어[업ː씬녀기어 /업ː씬녀기여 ](업신여겨[업ː씬녀겨]), 업신여기니[업ː씬녀기니] 「동사」 【…을】 교만한 마음에서 남을 낮추어 보거나 하찮게 여기다. 함부로 남을 업신여기지 마라. 사람을 업신여겨도 분수가 있지! 토호들이 농민들을 업신여겨 함부로 하는 것을 말도 못 하고 구경만 할 따름이었다. ≪문순태, 타오르는 강≫ 할아버지가 시골에서 동네 사람들을 상것들이라고 업신여긴 것보다 엄마는 한술 더 떠서 바닥 상것들이라는 표현을 썼다. ≪박완서, 그 많던 싱아는 누가 다 먹었을까≫ 툭하면 여자니 남자니 가재가 게 편을 드는 것은 다 무어야. 그게 다 여자라고 업신여기는 말씀이지. ≪한용운, 흑풍≫ 더 보기 「비슷한말」 경만하다(輕慢하다) 어원 · ＜업시너기다＜두시-초＞←없-+-이+너기- 관용구/속담 속담 업신여기던 딸이 떡함지 이고 온다 평소에 깔보거나 업신여기던 사람에게서 뜻밖에 도움을 받게 되는 경우를 비유적으로 이르는 말. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=496434",
+              "content_sha256": "9a7379bdafece516624a1cae28df3b24cb5e5535596dbf2e9df3c245528638d1",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 탄식-하다 1 (呑食하다 ) 원어 呑 삼킬 탄 부수 口/총획 7 食 먹을 식 먹이 사 사람 이름 이 부수 食/총획 9 하다 한자 고유어 발음 [탄ː시카다 ] 활용 탄식하여[탄ː시카여](탄식해[탄ː시캐]), 탄식하니[탄ː시카니] 주표제어 탄식 1 「동사」 【…을】 「1」 통째로 먹다. 「2」 (비유적으로) 쳐들어와 하나로 합치다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=496435",
+              "content_sha256": "f1ea6ac8875367593b452ccced037260931e66e069f331812b58ead87d96ff41",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 탄식-하다 2 (歎息하다/嘆息하다 ) 원어 歎 탄식할 탄 부수 欠/총획 15 息 숨쉴 식 부수 心/총획 10 하다 한자 고유어 원어 嘆 탄식할 탄 부수 口/총획 14 息 숨쉴 식 부수 心/총획 10 하다 한자 고유어 발음 [탄ː시카다 ] 활용 탄식하여[탄ː시카여](탄식해[탄ː시캐]), 탄식하니[탄ː시카니] 주표제어 탄식 2 편집 이력 「동사」 【…을】【 -고】 한탄하여 한숨을 쉬다. 어지러운 세상을 탄식하다 . 그는 밤이 너무나 긴 것을 탄식하며 어서 날이 밝기를 기다리었다. ≪이태준, 까마귀≫ 그는 이젠 다 틀렸다고 탄식했다 . 그는 어떻게 이럴 수가 있느냐고 탄식했다 . 더 보기 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "52f57c0814a4f73d5773196f32378ad9d3ea87009638e99a9b26a8901d11fc3e"
+    },
+    {
+      "headwords": [
+        "공손히",
+        "그달",
+        "꾸지람",
+        "대꾸하다",
+        "명하다",
+        "무안하다",
+        "밀치다",
+        "불평하다",
+        "사람답다",
+        "업신여기다",
+        "열여덟",
+        "원한",
+        "이토록",
+        "일꾼",
+        "첩",
+        "혼인하다"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "krdict-19392/부",
+            "headword": "공손히",
+            "pos": "부",
+            "meaning_en": "Politely and humbly.",
+            "primary_url": "https://krdict.korean.go.kr/vie/dicSearch/SearchView?ParaNationCode=2&ParaWordNo=19392&captchaNumber=&commentTitle=&comment_user_name=&divSearch=defViewGlobal&nation=vie&nationCode=2&viewTypes=on&wordComment=",
+            "evidence_en": "Read direct Basic record 19392: 공손히 (恭遜히), 부사; polite and humble speech or behavior. No existing catalog identity supplied."
+          },
+          {
+            "id": "krdict-36606/명",
+            "headword": "꾸지람",
+            "pos": "명",
+            "meaning_en": "A superior's scolding for a subordinate's wrongdoing.",
+            "primary_url": "https://krdict.korean.go.kr/jpn/dicSearch/SearchView?ParaNationCode=7&ParaWordNo=36606&captchaNumber=&commentTitle=&comment_user_name=&divSearch=defViewGlobal&nation=jpn&nationCode=7&viewTypes=on&wordComment=",
+            "evidence_en": "Read direct Basic record 36606: 꾸지람, 명사; reprimanding words from a superior to a subordinate. No existing catalog identity supplied."
+          },
+          {
+            "id": "krdict-44504/동",
+            "headword": "대꾸하다",
+            "pos": "동",
+            "meaning_en": "To reply to someone's words; give a short answer.",
+            "primary_url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=44504",
+            "evidence_en": "Read direct Basic record 44504: 대꾸하다, 동사; speaking in response or answering briefly. No existing catalog identity supplied."
+          },
+          {
+            "id": "krdict-55465/동",
+            "headword": "명하다",
+            "pos": "동",
+            "meaning_en": "To command; appoint someone to a position or duty.",
+            "primary_url": "https://krdict.korean.go.kr/jpn/dicSearch/SearchView?ParaWordNo=55465&captchaNumber=&comment_user_name=&myViewWord=56922&nation=jpn&nationCode=7&viewTypes=on&wordComment=",
+            "evidence_en": "Read direct Basic record 55465: 명하다² (命하다), 동사; commanding and assigning a position or duty. Distinct from 名하다 and 銘하다. No existing catalog identity supplied."
+          },
+          {
+            "id": "krdict-56659/동",
+            "headword": "밀치다",
+            "pos": "동",
+            "meaning_en": "To push hard; shove.",
+            "primary_url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=56659",
+            "evidence_en": "Read direct Basic record 56659: 밀치다, 동사; pushing forcefully. No existing catalog identity supplied."
+          },
+          {
+            "id": "krdict-69571/명",
+            "headword": "원한",
+            "pos": "명",
+            "meaning_en": "A deep grudge or resentment caused by injustice.",
+            "primary_url": "https://krdict.korean.go.kr/jpn/dicSearch/SearchView?ParaWordNo=69571&nation=jpn",
+            "evidence_en": "Read direct Basic record 69571: 원한 (怨恨), 명사; resentment accumulated after suffering injustice. This attests the noun, not an inflected form of 원하다. No existing catalog identity supplied."
+          },
+          {
+            "id": "krdict-72922/부",
+            "headword": "이토록",
+            "pos": "부",
+            "meaning_en": "To this extent; this much.",
+            "primary_url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=72922&_csrf=db9498c4-9e83-4693-9f3d-45bac8cdd0cd&blockCount=10&currentPage=1&exaType=&mainSearchWord=%EC%9D%B4%ED%86%A0%EB%A1%9D&myViewWord=72922&proverbType=&searchType=W&sort=W&viewType=A&viewTypes=on&wordMatchFlag=N",
+            "evidence_en": "Read direct Basic record 72922: 이토록, 부사; indicating this degree or extent. No existing catalog identity supplied."
+          },
+          {
+            "id": "krdict-72211/명",
+            "headword": "일꾼",
+            "pos": "명",
+            "meaning_en": "A worker, hired laborer, or person responsible for work.",
+            "primary_url": "https://krdict.korean.go.kr/jpn/dicSearch/SearchView?ParaWordNo=72211&blockCount=10&currentPage=1&exaType=&mainSearchWord=%EB%81%9D&nation=jpn&nationCode=7&proverbType=&searchType=E&sort=W&viewType=A&wordMatchFlag=N",
+            "evidence_en": "Read direct Basic record 72211: 일꾼, 명사; paid workers, people entrusted with work, capable workers, and farmhands. No existing catalog identity supplied."
+          },
+          {
+            "id": "krdict-87194/동",
+            "headword": "혼인하다",
+            "pos": "동",
+            "meaning_en": "To marry; become a married couple.",
+            "primary_url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=87194&captchaNumber=&comment_user_name=&myViewWord=62843&nation=eng&nationCode=6&viewTypes=on&wordComment=",
+            "evidence_en": "Read direct Basic record 87194: 혼인하다 (婚姻하다), 동사; becoming a married couple. No existing catalog identity supplied."
+          }
+        ],
+        "unresolved": [
+          {
+            "headword": "그달",
+            "reason_en": "The supplied Standard snapshot attests 그-달, 명사, meaning the previously mentioned month (word_no=44374). Direct retrieval failed, and standalone Basic absence was not established. Primary identity selection remains unresolved."
+          },
+          {
+            "headword": "명하다",
+            "reason_en": "The supplied Standard snapshots separately attest 名하다, 동사, naming (word_no=422096), and 銘하다, 동사, engraving commemorative inscriptions (word_no=116488). Both direct retrievals failed; preferred Basic identities or fallback eligibility remain unverified. These homonyms are separate from the verified 命하다 entry."
+          },
+          {
+            "headword": "무안하다",
+            "reason_en": "The supplied Standard snapshot attests 無顔하다, 형용사, feeling embarrassed or ashamed (word_no=426624). Direct retrieval failed, and Basic absence was not established. Remove the previous Standard primary proposal pending verification of the preferred identity."
+          },
+          {
+            "headword": "불평하다",
+            "reason_en": "The supplied Standard snapshots distinguish 不平하다 as 동사 (dissatisfaction or complaining) and 형용사 (mental unease or illness), word_no=436250, from 不評하다, 형용사 (unfavorable public appraisal), word_no=157476. Direct retrievals failed. Basic searches yielded examples under other headwords without resolving standalone identities or fallback eligibility; no primary is proposed for these scopes."
+          },
+          {
+            "headword": "사람답다",
+            "reason_en": "No standalone Basic or Standard record was verified. Basic record 92145 gives 사람답다 as an example under the productive suffix -답다; this does not establish a separate dictionary identity. The natural formation is not thereby incorrect."
+          },
+          {
+            "headword": "업신여기다",
+            "reason_en": "Basic search results list a standalone 동사, but its direct SearchView record and ParaWordNo could not be verified. The supplied Standard snapshot attests the verb (word_no=459468); direct retrieval failed. Remove the previous Standard primary proposal and leave preferred identity selection unresolved."
+          },
+          {
+            "headword": "열여덟",
+            "reason_en": "A natural compound numeral, but no standalone Basic or Standard record was verified. Examples under 스물 and other headwords do not establish a separate dictionary identity."
+          },
+          {
+            "headword": "첩",
+            "reason_en": "The supplied Standard snapshots attest separate scopes: door boarding, 명사 (328609); plate counter, 의존 명사 (328610); 妾 concubine, 명사, and archaic humble self-reference, 대명사 (489985); medicine-packet counter, 의존 명사 (328893); historical official document, 명사 (328894). Direct retrievals failed, and preferred Basic identities or fallback eligibility remain unverified. No primary is proposed. Record 328611 is an 어근 without an eligible lexical POS; record 328895 has the exact suffix headword -첩, not 첩."
+          }
+        ]
+      },
+      "proposal_digest": "0d19f7d9cac82992b620b994b0bd73c8f4ad98d2109c980a01ad87e0019b2c74",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "f5a2d9c8f3d90c146ad2bd4aa1134d58e89b785c30fc1f051640e1e00c17acde",
+      "primary_evidence": [
+        {
+          "headword_request": "공손히",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EA%B3%B5%EC%86%90%ED%9E%88",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=29532",
+              "content_sha256": "863c09d9843944b18817f3bcdfbaffcacfaeb9e98dd2401f5bb3084e843ab9ad",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 공손-히 (恭遜히 ) 원어 恭 공손할 공 부수 心/총획 10 遜 겸손할 손 부수 辵/총획 14 히 한자 고유어 발음 [공손히 ] 주표제어 공손 3 「부사」 겸손하고 예의 바른 말이나 행동으로. 공손히 대답하다. 주인은 처음에는 퍽 곤혹스러운 기색이더니, 이내 공손히 예를 갖추며 두 대감을 안으로 모셔 들였다. ≪현기영, 변방에 우짖는 새≫ 허여멀겋게 잘생긴 젊은이가 서 있다가 다산의 모습을 보자, 그 자리에 엎드려 공손히 절을 올렸다. ≪한무숙, 만남≫ 「반대말」 불손히(不遜히) 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "그달",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EA%B7%B8%EB%8B%AC",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=44374",
+              "content_sha256": "7d936b2a83b450040584353c4f7a9f849251245d595096c7462a70ecc1ec4dc1",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 그-달 발음 [그달 ] 「명사」 앞에서 이미 이야기한 달. 그들은 3월 초에 처음 만나서 그달 말에 약혼했다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "꾸지람",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EA%BE%B8%EC%A7%80%EB%9E%8C",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=407349",
+              "content_sha256": "fe4c42540f6750206c270b4e10904167334faf6aa96dcb700384557bfd329d0e",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 꾸지람 발음 [꾸지람 ] 부표제어 꾸지람-하다 편집 이력 「명사」 아랫사람의 잘못을 꾸짖는 말. ≒ 꾸중 , 지청구 . 꾸지람을 듣다. 꾸지람이 떨어지다. 날이 환하게 밝자 시아버지는 아들과 며느리를 안방에다 불러 놓고 벼락불이 떨어지는 듯 꾸지람과 호령이 추상같았다. ≪박종화, 임진왜란≫ 나는 아직 한 번도 어머님한테 매를 맞아 보기는커녕 언성 높은 꾸지람을 들어 본 적도 없었다. ≪김원일, 어둠의 축제≫ 더 보기 한 걸음 더 · ‘꾸지람’과 ‘꾸중’과 ‘지청구’는 모두 표준어이다. 이는 한 가지 의미를 나타내는 형태 몇 가지가 널리 쓰이며 표준어 규정에 맞으면, 그 모두를 표준어로 삼는다는 규정(표준어 사정 원칙 제26항)에 따른 것이다. 어원 · ＜지람/지럼＜구지람＜월석＞[←구짇-+-암]/구지럼＜석상＞[←구짇-+-엄] 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "대꾸하다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EB%8C%80%EA%BE%B8%ED%95%98%EB%8B%A4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=411716",
+              "content_sha256": "fc18fe021abd2a42e12a4254d158865f831cd50c9fb77ee68023bff23507327f",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 대꾸-하다 발음 [대ː꾸하다 ] 활용 대꾸하여[대ː꾸하여](대꾸해[대ː꾸해]), 대꾸하니[대ː꾸하니] 주표제어 대꾸 편집 이력 「동사」 【…에/에게 -고】 남의 말을 듣고 그대로 받아들이지 아니하고 그 자리에서 제 의사를 나타내다. = 말대꾸하다 . 그의 실없는 질문에 아무도 무어라고 대꾸하지 않았다. 어른의 말씀에 일일이 대꾸해선 못쓴다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "명하다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EB%AA%85%ED%95%98%EB%8B%A4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=116484",
+              "content_sha256": "5b2944e5cf4b35536aa1d10cb072a3c4c227971659f846396715334ebde65da3",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 명-하다 2 (命하다 ) 원어 命 목숨 명 부수 口/총획 8 하다 한자 고유어 발음 [명ː하다 ] 활용 명하여[명ː하여](명해[명ː해]), 명하니[명ː하니] 주표제어 명 5 편집 이력 「동사」 「1」 【…에/에게 …을】【…에/에게 -고】【…에/에게 -도록】 윗사람이나 상위 조직이 아랫사람이나 하위 조직에 무엇을 하게 하다. = 명령하다 . 소대장은 전 소대에 전진을 명하였다 . 장군은 병사들에게 돌격을 명했다 . 선생님은 학생들에게 뛰어가라고 명하셨다 . 사장은 사원들에게 최선을 다하도록 명하고 해외 시찰을 떠났다. 의사는 그를 세워 놓고 허리를 굽히도록 명하고 다시 쓸어 보고 두드려 보는 것이었다. ≪유항림, 부호≫ 더 보기 「2」 【…을 …으로】 일정한 지위나 임무를 남에게 맡기다. = 임명하다 . 대통령은 그를 수석대표로 명하였다 . ○○○ 경리계장을 1월 1일부로 경리과장으로 명함 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=116488",
+              "content_sha256": "b42af98fa1cd224b9aa8465219d51eeef407f4b0141d377ceacb0be1c24a3695",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 명-하다 3 (銘하다 ) 원어 銘 새길 명 부수 金/총획 14 하다 한자 고유어 발음 [명하다 ] 활용 명하여[명하여](명해[명해]), 명하니[명하니] 주표제어 명 9 「동사」 【…을】 금석(金石), 기물(器物), 비석 따위에 남의 공적을 찬양하는 내용이나 사물의 내력을 새기다. 흔히 한문 문체 형식으로 하는데, 대개 운(韻)을 넣어 넉 자가 한 짝이 되어 구(句)를 이루게 한다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=422096",
+              "content_sha256": "24e0281b850d3fa524fdc6018edc2da8995b8a9f01abee87fcafaf582bbc0db8",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 명-하다 1 (名하다 ) 원어 名 이름 명 부수 口/총획 6 하다 한자 고유어 발음 [명하다 ] 활용 명하여[명하여](명해[명해]), 명하니[명하니] 주표제어 명 2 편집 이력 「동사」 【…을 …으로】【 …을 -고】 사람, 사물, 사건 따위의 대상에 이름을 지어 붙이다. = 명명하다 . 사장은 새 차를 ‘야생마’로 명하자고 제안하였다. 사람들은 그를 홍의 장군이라고 명하였다 . 우리가 그것을 무엇이라고 명하느냐 하는 것은 중요하지 않다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "무안하다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EB%AC%B4%EC%95%88%ED%95%98%EB%8B%A4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=426624",
+              "content_sha256": "9cbcddab0e68f3cd471dff62f97b370979a05fedf28040a9438fa5e9a0ffd185",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 무안-하다 (無顔하다 ) 원어 無 없을 무 부수 火/총획 12 顔 얼굴 안 부수 頁/총획 18 하다 한자 고유어 발음 [무안하다 ] 활용 무안하여[무안하여 ](무안해[무안해 ]), 무안하니[무안하니 ] 주표제어 무안 2 「형용사」 【…이】【 -기가】 수줍거나 창피하여 볼 낯이 없다. 나는 어제 저지른 실수가 무안하여 사람들 앞에 나설 수가 없었다. 그는 무안할 정도로 나를 빤히 쳐다보았다. 누님은 무안한 기색 하나 없이 생글생글 웃기만 했다. ≪유재용, 누님의 초상≫ 나는 친구에게 또 한 번 부탁을 하기가 무안하여 말도 꺼내지 못했다. 더 보기 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "밀치다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EB%B0%80%EC%B9%98%EB%8B%A4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=428488",
+              "content_sha256": "f820892243f12f7ef967ded9e15c2327d9ab1536ed2d685a14c0715a708db9fe",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 밀-치다 발음 [밀ː치다 ] 활용 밀치어[밀ː치어 /밀ː치여 ](밀쳐[밀ː처 ]), 밀치니[밀ː치니] 「동사」 【…을】 힘껏 밀다. 문을 밀치다 . 뒷사람이 밀쳐 넘어졌다. 청년의 핏발 선 눈에 문득 핑그르르 물기가 돌면서, 잡고 있던 아낙의 어깨를 뿌리치듯 밀쳤다 . ≪김성동, 잔월≫ 어원 · ＜밀티다＜계축＞←밀-+-티- 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "불평하다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EB%B6%88%ED%8F%89%ED%95%98%EB%8B%A4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=157476",
+              "content_sha256": "668dcba653ea6c946e2dd8402771a9c9f03979fdba061c56af73b4783b54499b",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 불평-하다 2 (不評하다 ) 원어 不 아닐 불 아닌가 부 부수 一/총획 4 評 품평 평 부수 言/총획 12 하다 한자 고유어 발음 [불평하다 ] 활용 불평하여[불평하여 ](불평해[불평해 ]), 불평하니[불평하니 ] 주표제어 불평 2 「형용사」 사람들이 내리는 평이 좋지 아니하다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=436250",
+              "content_sha256": "b0f10f5f675f2efc0b8b6163b985295b2613a590f80b160a5b1e22915379b998",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 불평-하다 1 (不平하다 ) 원어 不 아닐 불 아닌가 부 부수 一/총획 4 平 평평할 평 편편할 편 부수 干/총획 5 하다 한자 고유어 발음 [불평하다 ] 활용 불평하여[불평하여 ](불평해[불평해 ]), 불평하니[불평하니 ] 주표제어 불평 1 [Ⅰ] 「동사」 【…을】【 -고】 ((‘…을’ 대신에 ‘…에 대하여’가 쓰이기도 한다)) 마음에 들지 아니하여 못마땅하게 여기다. 또는 못마땅한 것을 말이나 행동으로 드러내다. 사람들의 인색함을 불평하다 . 분수를 저버리고 방자한 생활을 했으니 이런 형벌을 받음은 당연한 일이요. 누구를 원망하고 누구를 불평하겠소 ? ≪현기영, 변방에 우짖는 새≫ 피곤한 노역을 불평하거나 섬을 빠져나갈 궁리 같은 건 아무도 하지 않습니다. ≪이청준, 당신들의 천국≫ 숙제가 많다고 불평하다 . 아이들은 왜 그렇게 작은 집으로 이사하냐고 불평했다 . 사람들은 읽을 것은 많은데 그것을 읽을 시간이 적다고 불평하고 있다. 더 보기 [Ⅱ] 「형용사」 【…이】 「1」 마음이 편하지 아니하다. 건강하시던 선생님께서 쓰러지셨다는 소식을 듣고 나니 심사가 어찌나 불평한지 가만히 앉아 있을 수 없었다. 「2」 병으로 몸이 불편하다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "사람답다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%82%AC%EB%9E%8C%EB%8B%B5%EB%8B%A4",
+          "records": []
+        },
+        {
+          "headword_request": "업신여기다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%97%85%EC%8B%A0%EC%97%AC%EA%B8%B0%EB%8B%A4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=459468",
+              "content_sha256": "cad9d0cda4167c6dd30b0f8ab7149687b2f4fe2440f7b21b8b4091b407f1e4ba",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 업신-여기다 발음 [업ː씬녀기다 ] 활용 업신여기어[업ː씬녀기어 /업ː씬녀기여 ](업신여겨[업ː씬녀겨]), 업신여기니[업ː씬녀기니] 「동사」 【…을】 교만한 마음에서 남을 낮추어 보거나 하찮게 여기다. 함부로 남을 업신여기지 마라. 사람을 업신여겨도 분수가 있지! 토호들이 농민들을 업신여겨 함부로 하는 것을 말도 못 하고 구경만 할 따름이었다. ≪문순태, 타오르는 강≫ 할아버지가 시골에서 동네 사람들을 상것들이라고 업신여긴 것보다 엄마는 한술 더 떠서 바닥 상것들이라는 표현을 썼다. ≪박완서, 그 많던 싱아는 누가 다 먹었을까≫ 툭하면 여자니 남자니 가재가 게 편을 드는 것은 다 무어야. 그게 다 여자라고 업신여기는 말씀이지. ≪한용운, 흑풍≫ 더 보기 「비슷한말」 경만하다(輕慢하다) 어원 · ＜업시너기다＜두시-초＞←없-+-이+너기- 관용구/속담 속담 업신여기던 딸이 떡함지 이고 온다 평소에 깔보거나 업신여기던 사람에게서 뜻밖에 도움을 받게 되는 경우를 비유적으로 이르는 말. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "열여덟",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%97%B4%EC%97%AC%EB%8D%9F",
+          "records": []
+        },
+        {
+          "headword_request": "원한",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%9B%90%ED%95%9C",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=465623",
+              "content_sha256": "4c6969f55ec090e6e811b8b96abe50be2eda263ba8915b52484d254e9e65f98b",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 원한 (怨恨 ) 원어 怨 원망할 원 부수 心/총획 9 恨 한할 한 부수 心/총획 9 한자 발음 [원ː한 ] 편집 이력 「명사」 억울하고 원통한 일을 당하여 응어리진 마음. ≒ 구한 , 원 . 원한이 맺히다. 원한을 품다. 스물을 몇 살 넘긴 젊은 왕대비 정순 왕후는 고독과 슬픔과 원한을 씹으며 수정전 깊은 지밀에서 이십여 년을 살아왔던 것이다. ≪한무숙, 만남≫ 너에게만 피맺힌 원한이 있다는 투의 살기 띤 위협에 녀석은 얼굴까지 핼쑥해졌다. ≪이문열, 변경≫ 더 보기 「비슷한말」 한(恨) 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "이토록",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%9D%B4%ED%86%A0%EB%A1%9D",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=470029",
+              "content_sha256": "d5dce4ed2b9869e0d9a4f3c1cfb70874cf3eca120e7bd389dc97c9e8a8d8073c",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 이-토록 발음 [이토록 ] 「참고 어휘」 그토록 , 저토록 「부사」 이러한 정도로까지. 이토록 못난 저를 아껴 주시니 몸 둘 바를 모르겠습니다. 그가 나를 이토록 사랑하는지 몰랐다. 그들이 살고 있음을 이토록 기뻐해 본 적이 이전엔 한 번도 없었던 것 같다. ≪김승옥, 햇빛≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "일꾼",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%9D%BC%EA%BE%BC",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=473591",
+              "content_sha256": "ae9b8816ac721eba7f1679dd626d9f86adbc5845a221529f5c6705a1f5889a36",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 일-꾼 발음 [일ː꾼 ] 편집 이력 「명사」 「1」 삯을 받고 남의 일을 해 주는 사람. 일꾼을 고용하다. 일꾼을 모으다. 「2」 어떤 일을 맡아서 하거나 맡아서 할 사람. 이 나라를 짊어지고 나갈 일꾼 . 해방된 우리 조국은 지금 일꾼을 필요로 합니다. ≪이병주, 지리산≫ 「3」 일의 계획이나 처리를 아주 잘하는 사람. 그는 이 공장에서 최고의 일꾼이다 . 「4」 농가에 딸려서 새경을 받고 일을 해 주는 사람. 마당가에선 품앗이 온 상호네 일꾼 동칠이를 놓고 젊은 패들 장난이 한창이었다. ≪한수산, 유민≫ 한 걸음 더 · ‘일꾼’은 접미사 ‘-꾼/-군’은 ‘-꾼’으로 통일하여 적는다는 규정(한글 맞춤법 제54항)에 따라 ‘ 일군 ’으로 적지 않고 ‘일꾼’으로 적는다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "첩",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%B2%A9",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=328609",
+              "content_sha256": "e1afb5e065d1ba7a2ffb1b5b0c5ee5495e0053d84596b43d686776bb7e84b7f4",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 첩 1 발음 [첩 ] 활용 첩만[첨만 ] 「명사」 드나들지 못하도록 문에 나무를 걸쳐 대고 못을 박아 못 열게 하는 일. 두 권가의 집을 첩을 박아 봉해 버리고…. ≪박종화, 금삼의 피≫ 어원 · ＜텹＜계축＞ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=328610",
+              "content_sha256": "ff5a12abea3a80d1e0f0dcb02a205d9bbf364f9e8bbaacd48ec9aea3b108d1d6",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 첩 2 발음 [첩 ] 활용 첩만[첨만 ] 「의존 명사」 반상기 한 벌에 갖추어진 쟁첩을 세는 단위. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=328611",
+              "content_sha256": "a405b98c26324f6adae5e88f61e96330a32a67ea57824e0503a3050102337b20",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 첩 4 (帖 ) 원어 帖 휘장 첩 체지 체 부수 巾/총획 8 한자 부표제어 첩-하다 ‘ 첩하다 ’의 어근. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 4 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=328893",
+              "content_sha256": "f56ffc2da79d404658d141ddf804100a2cc3da6e823e0537f7cd13d8e7e5b579",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 첩 5 (貼 ) 원어 貼 붙을 첩 부수 貝/총획 12 한자 발음 [첩 ] 활용 첩만[첨만 ] 「참고 어휘」 제(劑) 「의존 명사」 약봉지에 싼 약의 뭉치를 세는 단위. 한약 세 첩 . 이 돈으로 약 첩이나 지어 먹도록 해라. 돌림병에 약 한 첩을 써 보지 못하고 죽인 자식을 거적에 말아서 묻은 동산을…. ≪박경리, 토지≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 5 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=328894",
+              "content_sha256": "4de7e33a4b45dc0fabc094ae7444bc5a20c1f8a382767742f95e4517a9582467",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 첩 6 (牒 ) 원어 牒 편지 첩 부수 片/총획 13 한자 발음 [첩 ] 활용 첩만[첨만 ] 「명사」 예전에 쓰던 공문서의 하나. 글 쓰는 나무 쪽지라는 뜻으로, 작은 대쪽은 ‘첩’, 큰 대쪽은 ‘책(冊)’, 또 얇은 것은 ‘첩’, 두꺼운 것은 ‘독(牘)’이라 구별하였다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 6 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=328895",
+              "content_sha256": "bd286a4771f7fd4c3cc0f41f9bad2f23d86a41bac6eb45544d01db4c1bec9ec7",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 -첩 7 (帖 ) 원어 帖 휘장 첩 체지 체 부수 巾/총획 8 한자 「접사」 ((일부 명사 뒤에 붙어)) ‘묶어 놓은 책’의 뜻을 더하는 접미사. 사진첩 . 서화첩 . 그림첩 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 7 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=489985",
+              "content_sha256": "913c59dca58b703725e8ffc9d654bb357baf308021efe62b337d9e6466c741a3",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 첩 3 (妾 ) 원어 妾 첩 첩 부수 女/총획 8 한자 발음 [첩 ] 활용 첩만[첨만 ] 편집 이력 [Ⅰ] 「명사」 정식 아내 외에 데리고 사는 여자. ≒ 부실 , 소실 , 외부 , 외처 , 측녀 , 측실 , 희첩 . 첩을 두다. 첩을 얻다. 첩을 들이다. 그는 본처가 아이를 갖지 못하자 첩의 소생인 아들을 호적에 올렸다. 정혼한 것을 파혼하고 남의 첩으로 가는 영애를 비웃는 사람도 있었다. ≪한용운, 흑풍≫ 더 보기 「반대말」 본처(本妻) [Ⅱ] 「대명사」 예전에, 결혼한 여자가 윗사람을 상대하여 자기를 낮추어 이르던 일인칭 대명사. 미천한 첩이 그 일을 했사옵니다. 부족한 첩을 책망해 주옵소서. 관용구/속담 속담 첩의 살림은 밑 빠진 독에 물 길어 붓기 첩의 살림에는 돈이 한없이 든다는 말. 속담 첩 정은 삼 년 본처 정은 백 년 아무리 첩에 혹한 사람이라도 그것은 잠시 동안이고 그 본처는 끝내 버리지 않는다는 말. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "혼인하다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%ED%98%BC%EC%9D%B8%ED%95%98%EB%8B%A4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=382133",
+              "content_sha256": "357fb7727466585aca4b937f808d6cdde61056a47ac92ab45976435c7a09347b",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 혼인-하다 (婚姻하다 ) 원어 婚 혼인할 혼 부수 女/총획 11 姻 혼인 인 부수 女/총획 9 하다 한자 고유어 발음 [호닌하다 ] 활용 혼인하여[호닌하여](혼인해[호닌해]), 혼인하니[호닌하니] 주표제어 혼인 편집 이력 「동사」 【(…과)】 ((‘…과’가 나타나지 않을 때는 여럿임을 뜻하는 말이 주어로 온다)) 남자와 여자가 부부가 되다. ≒ 혼가하다 , 혼취하다 . 너도 어느덧 혼인할 나이가 되었구나. 나는 공주를 버리고 또 다른 여자와 혼인할 생각은 없소! ≪박종화, 다정불심≫ 그들은 혼인한 지 몇 날이 못 되어 같이 못 살겠다느니 헤어지자느니 야단법석을 떨었다. 동성동본은 서로 혼인할 수 없다는 것 같은 것은 언제부터 생긴 금기냐? ≪한승원, 해일≫ 더 보기 「비슷한말」 가취하다(嫁娶하다) , 결혼하다(結婚하다) 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "proposal_records": [
+            {
+              "primary_url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=44504",
+              "content_sha256": "364396fdd8ae3a001b64791ea83a8ae7e770f581f566cadcc924855f0b1071a0",
+              "text": "한국어기초사전 이 누리집은 대한민국 공식 전자정부 누리집입니다. Search by Category Small Window Dictionary Search Advanced Search Delete Delete Phụ âm b c d đ g h k l m n p q r s t v x f j w z Nguyên âm a á à ả ã ạ ă ắ ằ ẳ ẵ ặ â ấ ầ ẩ ẫ ậ o ó ò ỏ õ ọ ô ố ồ ổ ỗ ộ ơ ớ ờ ở ỡ ợ e é è ẻ ẽ ẹ ê ế ề ể ễ ệ u ú ù ủ ũ ụ ư ứ ừ ử ữ ự i í ì ỉ ĩ ị y ý ỳ ỷ ỹ ỵ à â æ À Â Æ ç Ç é è ë ê É È Ë Ê î ï Î Ï ô œ Ô Œ ù û ü Ù Û Ü á Á é É í Í ó Ó ú ü Ú Ü ñ Ñ ¡ ¿ Download 가 가 Print 대꾸하다 Pronunciation [대ː꾸하다 듣기 ] 대꾸 Part of Speech 「동사」 Verb reply; answer 남의 말을 듣고 반응하여 말을 하다. 짧게 대답하다. To remark in response to what others say; to give a short answer. 말에 대꾸하다 . 질문에 대꾸하다 . 꼬박꼬박 대꾸하다 . 일일이 대꾸하다 . 퉁명스럽게 대꾸하다 . 나는 남편의 말에 일일이 대꾸하고 싶은 마음이 없었다. 생일 파티에 꼭 오라는 친구의 말에 나는 알겠다고 대충 대꾸했다 . 여자는 하고 싶은 말을 다 늘어놓은 후 남자가 뭐라고 대꾸하기 전에 자리에서 일어섰다. 가: 요즘 우리 아들은 내 질문에 퉁명스럽게 알았다고 대꾸하면서 신경질을 내요. 나: 사춘기 때는 대부분 그렇죠. Sentence 1이 2에/에게 3-고 대꾸하다 Synonym 말대꾸하다 Send opinion Send opinion Security Characters Play audio Refresh Name Title Content Send opinion We are looking forward to receiving your opinions regarding dictionary content. (Although we are not able to reply, we will refer to your opinion for dictionary content development and supplementation.) View Mode Korean + English Korean English My Search History Listening to Korean pronunciation services are partly provided by NAVER Cultural Foundation Corp. Help Translation guideline Copyright Policy Notice Open API Suggestion Basic Korean Dictionary National Institute of Korean Language Move"
+            },
+            {
+              "primary_url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=56659",
+              "content_sha256": "b08fbafd9f331fbb3389ab5564585bd4b74a43c4e7ff54990da1fcef748eaf21",
+              "text": "한국어기초사전 이 누리집은 대한민국 공식 전자정부 누리집입니다. Search by Category Small Window Dictionary Search Advanced Search Delete Delete Phụ âm b c d đ g h k l m n p q r s t v x f j w z Nguyên âm a á à ả ã ạ ă ắ ằ ẳ ẵ ặ â ấ ầ ẩ ẫ ậ o ó ò ỏ õ ọ ô ố ồ ổ ỗ ộ ơ ớ ờ ở ỡ ợ e é è ẻ ẽ ẹ ê ế ề ể ễ ệ u ú ù ủ ũ ụ ư ứ ừ ử ữ ự i í ì ỉ ĩ ị y ý ỳ ỷ ỹ ỵ à â æ À Â Æ ç Ç é è ë ê É È Ë Ê î ï Î Ï ô œ Ô Œ ù û ü Ù Û Ü á Á é É í Í ó Ó ú ü Ú Ü ñ Ñ ¡ ¿ Download 가 가 Print 밀치다 Pronunciation [밀ː치다 듣기 ] Application 밀치어[밀ː치어 듣기 /밀ː치여 듣기 ](밀쳐[밀ː처 듣기 ]), 밀치니[밀ː치니 듣기 ] Part of Speech 「동사」 Verb push; shove; jostle 세게 밀다. To push something hard. 문을 밀치다 . 사람을 밀치다 . 어깨를 밀치다 . 옆으로 밀치다 . 한쪽으로 밀치다 . 지난 대회 우승자가 경기 도중 옆 선수를 고의로 밀쳐 실격을 당했다. 김 과장은 화를 주체하지 못하고 문을 밀치고 회의실 밖으로 나가 버렸다. 소리를 높이며 싸우던 두 사람은 감정이 격해지자 어깨를 밀치며 싸우기 시작했다. 가: 어쩌다가 싸움에 휘말리게 된 거니? 나: 술에 취한 사람이 시비를 걸며 내 몸을 밀치잖아요 . Sentence 1이 2를 밀치다 Send opinion Send opinion Security Characters Play audio Refresh Name Title Content Send opinion We are looking forward to receiving your opinions regarding dictionary content. (Although we are not able to reply, we will refer to your opinion for dictionary content development and supplementation.) View Mode Korean + English Korean English My Search History Listening to Korean pronunciation services are partly provided by NAVER Cultural Foundation Corp. Help Translation guideline Copyright Policy Notice Open API Suggestion Basic Korean Dictionary National Institute of Korean Language Move"
+            },
+            {
+              "primary_url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=72922&_csrf=db9498c4-9e83-4693-9f3d-45bac8cdd0cd&blockCount=10&currentPage=1&exaType=&mainSearchWord=%EC%9D%B4%ED%86%A0%EB%A1%9D&myViewWord=72922&proverbType=&searchType=W&sort=W&viewType=A&viewTypes=on&wordMatchFlag=N",
+              "content_sha256": "6d64a7690c862f4a514b13992efefb244df056a62635405c6700057643337960",
+              "text": "한국어기초사전 이 누리집은 대한민국 공식 전자정부 누리집입니다. Search by Category Small Window Dictionary Search Advanced Search Delete Delete Phụ âm b c d đ g h k l m n p q r s t v x f j w z Nguyên âm a á à ả ã ạ ă ắ ằ ẳ ẵ ặ â ấ ầ ẩ ẫ ậ o ó ò ỏ õ ọ ô ố ồ ổ ỗ ộ ơ ớ ờ ở ỡ ợ e é è ẻ ẽ ẹ ê ế ề ể ễ ệ u ú ù ủ ũ ụ ư ứ ừ ử ữ ự i í ì ỉ ĩ ị y ý ỳ ỷ ỹ ỵ à â æ À Â Æ ç Ç é è ë ê É È Ë Ê î ï Î Ï ô œ Ô Œ ù û ü Ù Û Ü á Á é É í Í ó Ó ú ü Ú Ü ñ Ñ ¡ ¿ Download 가 가 Print 이토록 Pronunciation [이토록 듣기 ] Part of Speech 「부사」 Adverb so much; like this 이런 정도로까지. 또는 이렇게까지. To this extent, or this much. 이토록 다르다. 이토록 예쁘다. 이토록 찬란하다. 이 강은 어쩌면 이토록 아름답게 빛날까. 사람이 어떻게 이토록 변할 수 있는지 알 수가 없다. 이토록 부족한 저를 이 자리에 세워 주셔서 정말 감사합니다. 가: 제가 지금까지 살면서 이토록 기쁜 날은 처음입니다. 나: 수상을 정말 축하합니다. Reference Word 그토록 , 저토록 Send opinion Send opinion Security Characters Play audio Refresh Name Title Content Send opinion We are looking forward to receiving your opinions regarding dictionary content. (Although we are not able to reply, we will refer to your opinion for dictionary content development and supplementation.) View Mode Korean + English Korean English My Search History Listening to Korean pronunciation services are partly provided by NAVER Cultural Foundation Corp. Help Translation guideline Copyright Policy Notice Open API Suggestion Basic Korean Dictionary National Institute of Korean Language Move"
+            },
+            {
+              "primary_url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=87194&captchaNumber=&comment_user_name=&myViewWord=62843&nation=eng&nationCode=6&viewTypes=on&wordComment=",
+              "content_sha256": "5544cc257814c2ab540d564f08ffae0db0d31851719ea6e5f14d1a30a25ffe95",
+              "text": "한국어기초사전 이 누리집은 대한민국 공식 전자정부 누리집입니다. Search by Category Small Window Dictionary Search Advanced Search Delete Delete Phụ âm b c d đ g h k l m n p q r s t v x f j w z Nguyên âm a á à ả ã ạ ă ắ ằ ẳ ẵ ặ â ấ ầ ẩ ẫ ậ o ó ò ỏ õ ọ ô ố ồ ổ ỗ ộ ơ ớ ờ ở ỡ ợ e é è ẻ ẽ ẹ ê ế ề ể ễ ệ u ú ù ủ ũ ụ ư ứ ừ ử ữ ự i í ì ỉ ĩ ị y ý ỳ ỷ ỹ ỵ à â æ À Â Æ ç Ç é è ë ê É È Ë Ê î ï Î Ï ô œ Ô Œ ù û ü Ù Û Ü á Á é É í Í ó Ó ú ü Ú Ü ñ Ñ ¡ ¿ Download 가 가 Print 혼인하다 (婚姻하다 ) Pronunciation [호닌하다 듣기 ] 혼인 Part of Speech 「동사」 Verb marry 남자와 여자가 부부가 되다. For a man and a woman to become a legally married couple. 혼인할 나이. 남녀가 혼인하다 . 어릴 때 혼인하다 . 여인은 혼인한 지 일 년 만에 남편을 사고로 잃었다. 친구는 혼인하고 나더니 마누라 말에 꼼짝도 못 하고 산다. 우리나라는 가까운 핏줄끼리 혼인하는 것을 법으로 막고 있다. 가: 민준이와 유민이는 사이가 너무 좋은 것 같아. 나: 말도 마. 대학교를 졸업하자마자 혼인할 거라고 난리더라. Sentence 1이 (2와) 혼인하다 Sentence Reference '2와' 없으면 1에 복수를 나타내는 말이 온다. Synonym 결혼하다 Send opinion Send opinion Security Characters Play audio Refresh Name Title Content Send opinion We are looking forward to receiving your opinions regarding dictionary content. (Although we are not able to reply, we will refer to your opinion for dictionary content development and supplementation.) View Mode Korean + English Korean English My Search History Listening to Korean pronunciation services are partly provided by NAVER Cultural Foundation Corp. Help Translation guideline Copyright Policy Notice Open API Suggestion Basic Korean Dictionary National Institute of Korean Language Move Original Language Sino-Korean word 婚 혼인할 혼 부수 女/총획 11 姻 혼인 인 부수 女/총획 9 Native word 하다"
+            },
+            {
+              "primary_url": "https://krdict.korean.go.kr/jpn/dicSearch/SearchView?ParaNationCode=7&ParaWordNo=36606&captchaNumber=&commentTitle=&comment_user_name=&divSearch=defViewGlobal&nation=jpn&nationCode=7&viewTypes=on&wordComment=",
+              "content_sha256": "638b128ddf2edfec0af155df4b3e8cf2050110b11288a2a4e2c297f723537c64",
+              "text": "한국어기초사전 이 누리집은 대한민국 공식 전자정부 누리집입니다. カテゴリー別検索 小ウィンドー表示用 検索 条件指定 削除 削除 Phụ âm b c d đ g h k l m n p q r s t v x f j w z Nguyên âm a á à ả ã ạ ă ắ ằ ẳ ẵ ặ â ấ ầ ẩ ẫ ậ o ó ò ỏ õ ọ ô ố ồ ổ ỗ ộ ơ ớ ờ ở ỡ ợ e é è ẻ ẽ ẹ ê ế ề ể ễ ệ u ú ù ủ ũ ụ ư ứ ừ ử ữ ự i í ì ỉ ĩ ị y ý ỳ ỷ ỹ ỵ à â æ À Â Æ ç Ç é è ë ê É È Ë Ê î ï Î Ï ô œ Ô Œ ù û ü Ù Û Ü á Á é É í Í ó Ó ú ü Ú Ü ñ Ñ ¡ ¿ ダウンロード 가 가 印刷 꾸지람 発音 [꾸지람 듣기 ] 派生語 꾸지람하다 品詞 「명사」 名詞 おしかり【お叱り】 윗사람이 아랫사람의 잘못을 꾸짖는 말. 目上の人が目下の人の過ちを叱る言葉。 부모의 꾸지람 . 선생님의 꾸지람 . 꾸지람 이 떨어지다. 꾸지람 을 내리다. 꾸지람 을 듣다. 꾸지람 을 하다. 유민이는 숙제를 안 해 선생님께 심한 꾸지람 을 들었다. 상사는 출근 첫날부터 지각한 신입 사원에게 꾸지람 을 내렸다. 가: 오늘따라 주눅이 들어 있는 것 같네. 나: 아까 선배들한테 꾸지람 을 들었거든. もっと見る 類義語 꾸중 , 지청구 ご意見・お問い合わせ ご意見・お問い合わせ セキュリティチェック文字 音声で聞く 文字の変更 お名前 タイトル 本文 ご意見・お問い合わせ 辞典内容に関する皆様からの様々なご意見をお待ちしております。 （お答えはいたしませんが、ご意見は辞典内容の改善と補完のために参考とさせていただきます。） 表示方法の選択 韓国語 + 日本語 韓国語 日本語 検索した単語 韓国語音声サービスの一部はネイバー文化財団により提供されています。 ヘルプ 翻訳指針 著作権ポリシー お知らせ Open API ご意見・お問い合わせ 韓国語基礎辞典 国立国語院 移動"
+            },
+            {
+              "primary_url": "https://krdict.korean.go.kr/jpn/dicSearch/SearchView?ParaWordNo=55465&captchaNumber=&comment_user_name=&myViewWord=56922&nation=jpn&nationCode=7&viewTypes=on&wordComment=",
+              "content_sha256": "b148c7d71d14ca2eac6b6c0748e2adaf947d47ba26faecebb0ac23e29894051d",
+              "text": "한국어기초사전 이 누리집은 대한민국 공식 전자정부 누리집입니다. カテゴリー別検索 小ウィンドー表示用 検索 条件指定 削除 削除 Phụ âm b c d đ g h k l m n p q r s t v x f j w z Nguyên âm a á à ả ã ạ ă ắ ằ ẳ ẵ ặ â ấ ầ ẩ ẫ ậ o ó ò ỏ õ ọ ô ố ồ ổ ỗ ộ ơ ớ ờ ở ỡ ợ e é è ẻ ẽ ẹ ê ế ề ể ễ ệ u ú ù ủ ũ ụ ư ứ ừ ử ữ ự i í ì ỉ ĩ ị y ý ỳ ỷ ỹ ỵ à â æ À Â Æ ç Ç é è ë ê É È Ë Ê î ï Î Ï ô œ Ô Œ ù û ü Ù Û Ü á Á é É í Í ó Ó ú ü Ú Ü ñ Ñ ¡ ¿ ダウンロード 가 가 印刷 명하다 2 (命하다 ) 発音 [명ː하다 듣기 ] 명 3 品詞 「동사」 動詞 1 . めいずる【命ずる】。めいれいする【命令する】。いいつける【言い付ける】 1 . 윗사람이 아랫사람에게 무엇을 하게 하다. 上位の人が下位の人に対して何かをするように言う。 공격을 명하다 . 돌격을 명하다 . 전진을 명하다 . 철수를 명하다 . 포격을 명하다 . 시정하도록 명하다 . 최선을 다하도록 명하다 . 장군은 병사들에게 성을 에워싸라고 명했다 . 박 부장은 부하 직원들에게 맡은 일에 최선을 다하라고 명했다 . 가: 지난번에 접수된 민원은 처리했습니까? 나: 네, 해당 부처에 시정하도록 명했습니다 . もっと見る 文型 1이 2에/에게 3을 명하다, 1이 2에/에게 3-고 명하다, 1이 2에/에게 3-도록 명하다 類義語 명령하다 2 . めいずる【命ずる】。にんめいする【任命する】。にんずる【任ずる】 2 . 어떤 직위나 임무를 남에게 맡기다. ある職位や任務を他人にまかす。 과장으로 명하다 . 대표로 명하다 . 책임자로 명하다 . 후임으로 명하다 . 위원에 명하다 . 장관에 명하다 . 선생님께서는 민준이를 임시 반장으로 명하셨다 . 교수님은 나를 조교로 명하여 교수님의 일을 돕게 하셨다. 가: 왜 여기에 계신 거죠? 아무나 들어오면 안 되는데요. 나: 사장님께서 저를 이 건물의 관리자로 명하셨습니다 . もっと見る 文型 1이 2를 3에/으로 명하다 類義語 임명하다 , 임하다 1 ご意見・お問い合わせ ご意見・お問い合わせ セキュリティチェック文字 音声で聞く 文字の変更 お名前 タイトル 本文 ご意見・お問い合わせ 辞典内容に関する皆様からの様々なご意見をお待ちしております。 （お答えはいたしませんが、ご意見は辞典内容の改善と補完のために参考とさせていただきます。） 表示方法の選択 韓国語 + 日本語 韓国語 日本語 検索した単語 韓国語音声サービスの一部はネイバー文化財団により提供されています。 ヘルプ 翻訳指針 著作権ポリシー お知らせ Open API ご意見・お問い合わせ 韓国語基礎辞典 国立国語院 移動 原語 漢字語 命 목숨 명 부수 口/총획 8 固有語 하다"
+            },
+            {
+              "primary_url": "https://krdict.korean.go.kr/jpn/dicSearch/SearchView?ParaWordNo=69571&nation=jpn",
+              "content_sha256": "588fc19790721cb91e5d6679cb85b6e9f4ee064295c6ddbf70076f2fbf49f065",
+              "text": "한국어기초사전 이 누리집은 대한민국 공식 전자정부 누리집입니다. カテゴリー別検索 小ウィンドー表示用 検索 条件指定 削除 削除 Phụ âm b c d đ g h k l m n p q r s t v x f j w z Nguyên âm a á à ả ã ạ ă ắ ằ ẳ ẵ ặ â ấ ầ ẩ ẫ ậ o ó ò ỏ õ ọ ô ố ồ ổ ỗ ộ ơ ớ ờ ở ỡ ợ e é è ẻ ẽ ẹ ê ế ề ể ễ ệ u ú ù ủ ũ ụ ư ứ ừ ử ữ ự i í ì ỉ ĩ ị y ý ỳ ỷ ỹ ỵ à â æ À Â Æ ç Ç é è ë ê É È Ë Ê î ï Î Ï ô œ Ô Œ ù û ü Ù Û Ü á Á é É í Í ó Ó ú ü Ú Ü ñ Ñ ¡ ¿ ダウンロード 가 가 印刷 원한 (怨恨 ) 発音 [원ː한 듣기 ] 品詞 「명사」 名詞 えんこん【怨恨】。うらみ【恨み・怨み・憾み】 억울하고 분한 일을 당해서 마음속에 쌓인 한이나 불만. 悔しく腹立たしいことによって、心に積もった怒りや不満。 원한 관계. 원한 이 맺히다. 원한 이 쌓이다. 원한 이 있다. 원한 을 가지다. 원한 을 갚다. 원한 을 사다. 원한 을 풀다. 원한 을 품다. 누명을 쓰고 십 년 동안 감옥에 갇혀 있던 그는 원한 이 뼛속까지 맺혔다. 경찰은 사고를 당한 그와 원한 관계에 있는 사람이 있는지부터 조사했다. 가: 누가 우리 집 창문을 깨부수고 달아났어. 나: 너 혹시 다른 사람에게 원한 을 살 만한 행동한 적 있니? もっと見る 類義語 한 2 ご意見・お問い合わせ ご意見・お問い合わせ セキュリティチェック文字 音声で聞く 文字の変更 お名前 タイトル 本文 ご意見・お問い合わせ 辞典内容に関する皆様からの様々なご意見をお待ちしております。 （お答えはいたしませんが、ご意見は辞典内容の改善と補完のために参考とさせていただきます。） 表示方法の選択 韓国語 + 日本語 韓国語 日本語 検索した単語 韓国語音声サービスの一部はネイバー文化財団により提供されています。 ヘルプ 翻訳指針 著作権ポリシー お知らせ Open API ご意見・お問い合わせ 韓国語基礎辞典 国立国語院 移動 原語 漢字語 怨 원망할 원 부수 心/총획 9 恨 한할 한 부수 心/총획 9"
+            },
+            {
+              "primary_url": "https://krdict.korean.go.kr/jpn/dicSearch/SearchView?ParaWordNo=72211&blockCount=10&currentPage=1&exaType=&mainSearchWord=%EB%81%9D&nation=jpn&nationCode=7&proverbType=&searchType=E&sort=W&viewType=A&wordMatchFlag=N",
+              "content_sha256": "11319f73a2de311f592576f5b2714a665ef91ba3d561edfa9167f056e638d7b7",
+              "text": "한국어기초사전 이 누리집은 대한민국 공식 전자정부 누리집입니다. カテゴリー別検索 小ウィンドー表示用 検索 条件指定 削除 削除 Phụ âm b c d đ g h k l m n p q r s t v x f j w z Nguyên âm a á à ả ã ạ ă ắ ằ ẳ ẵ ặ â ấ ầ ẩ ẫ ậ o ó ò ỏ õ ọ ô ố ồ ổ ỗ ộ ơ ớ ờ ở ỡ ợ e é è ẻ ẽ ẹ ê ế ề ể ễ ệ u ú ù ủ ũ ụ ư ứ ừ ử ữ ự i í ì ỉ ĩ ị y ý ỳ ỷ ỹ ỵ à â æ À Â Æ ç Ç é è ë ê É È Ë Ê î ï Î Ï ô œ Ô Œ ù û ü Ù Û Ü á Á é É í Í ó Ó ú ü Ú Ü ñ Ñ ¡ ¿ ダウンロード 가 가 印刷 일꾼 発音 [일ː꾼 듣기 ] 品詞 「명사」 名詞 1 . ろうどうしゃ【労働者】。にんぷ【人夫】 1 . 돈을 받고 남의 일을 해 주는 사람. 金をもらって仕事をしてやる人。 일꾼 을 고용하다. 일꾼 을 모으다. 일꾼 을 모집하다. 일꾼 을 부르다. 일꾼 으로 들어가다. 농번기가 시작되자 마을에는 여러 지역에서 일꾼 들이 찾아왔다. 우리 회사에서는 회사의 미래를 함께 개척해 나갈 참신하고 유능한 일꾼 을 모집하고 있다. 가: 이번에 새로 시작하는 공사에 새로운 사람을 고용해야 해요. 나: 이번 기회에 경험 많은 일꾼 을 찾으면 좋겠어요. 2 . はたらきて【働き手】。はたらきもの【働き者】 2 . 어떤 일을 맡아서 하는 사람. 또는 어떤 일을 맡아서 할 사람. あることを受け持つ人。また、受け持つ予定の人。 나라의 일꾼 . 일꾼 이 필요하다. 일꾼 을 배출하다. 일꾼 을 찾다. 이번 지방 선거는 지역의 일꾼 을 뽑는 거대한 민주주의의 축제로 볼 수 있다. 장학 재단은 우수한 학생들에게 매년 장학금을 지급해서 차세대 일꾼 을 키우고 있다. 가: 지수는 똑똑하고 성품도 올곧아서 장차 우리 사회의 큰 일꾼 이 될 거야. 나: 맞아. 지수는 나중에 정말 큰일을 해낼 아이야. 3 . はたらきて【働き手】。はたらきもの【働き者】 3 . 일의 계획이나 처리를 아주 잘하는 사람. 仕事の計画や処理が非常に上手な人。 최고의 일꾼 . 중요한 일꾼 . 뛰어난 일꾼 . 남 박사는 우리 연구원에서 최고의 일꾼 이다. 최 과장은 우리 회사에 없어서는 안 될 중요한 일꾼 이다. 가: 주변에 쓸 만한 사람 없나? 나: 말씀만 하십시오. 최고의 일꾼 몇 명을 두고 있습니다. 4 . (対訳語無し) 4 . 농가에 딸려서 돈이나 물건을 받고 일을 해 주는 사람. 農家に付いて、金や物をもらって農作業をしてやる人。 일꾼 을 고용하다. 일꾼 을 쓰다. 일꾼 들은 새참을 먹느라 잠시 일손을 놓았다. 모내기를 끝낸 일꾼 들은 모여 앉아서 점심을 먹고 있었다. 우리는 다음 주에 세 명의 일꾼 을 고용해서 추수를 끝낼 생각이다. 엄마는 농장에서 일하는 일꾼 들을 위해 손수 새참을 만들어 오셨다. 가: 유민 엄마! 벌써 모내기 다 마쳤어? 나: 어디 잘 아는 일꾼 있으면 나 좀 소개해 줘. ご意見・お問い合わせ ご意見・お問い合わせ セキュリティチェック文字 音声で聞く 文字の変更 お名前 タイトル 本文 ご意見・お問い合わせ 辞典内容に関する皆様からの様々なご意見をお待ちしております。 （お答えはいたしませんが、ご意見は辞典内容の改善と補完のために参考とさせていただきます。） 表示方法の選択 韓国語 + 日本語 韓国語 日本語 検索した単語 韓国語音声サービスの一部はネイバー文化財団により提供されています。 ヘルプ 翻訳指針 著作権ポリシー お知らせ Open API ご意見・お問い合わせ 韓国語基礎辞典 国立国語院 移動"
+            },
+            {
+              "primary_url": "https://krdict.korean.go.kr/vie/dicSearch/SearchView?ParaNationCode=2&ParaWordNo=19392&captchaNumber=&commentTitle=&comment_user_name=&divSearch=defViewGlobal&nation=vie&nationCode=2&viewTypes=on&wordComment=",
+              "content_sha256": "114cb53217781032b29b0e9ef8b6c102e20c2768382488e28818fdd43bc1359d",
+              "text": "한국어기초사전 이 누리집은 대한민국 공식 전자정부 누리집입니다. Tìm theo phạm trù Từ điển thu nhỏ Tìm kiếm Tìm kiếm chi tiết Xóa Xóa Phụ âm b c d đ g h k l m n p q r s t v x f j w z Nguyên âm a á à ả ã ạ ă ắ ằ ẳ ẵ ặ â ấ ầ ẩ ẫ ậ o ó ò ỏ õ ọ ô ố ồ ổ ỗ ộ ơ ớ ờ ở ỡ ợ e é è ẻ ẽ ẹ ê ế ề ể ễ ệ u ú ù ủ ũ ụ ư ứ ừ ử ữ ự i í ì ỉ ĩ ị y ý ỳ ỷ ỹ ỵ à â æ À Â Æ ç Ç é è ë ê É È Ë Ê î ï Î Ï ô œ Ô Œ ù û ü Ù Û Ü á Á é É í Í ó Ó ú ü Ú Ü ñ Ñ ¡ ¿ Tải về 가 가 In 공손히 (恭遜히 ) Phát âm [공손히 듣기 ] 공손 Từ loại 「부사」 Phó từ một cách lễ phép và khiêm tốn 말이나 행동이 예의가 바르고 겸손하게. Lời nói hay hành động đúng lễ nghĩa và khiêm tốn. 공손히 건네다. 공손히 대답하다. 공손히 대하다. 공손히 맞이하다. 공손히 묻다. 공손히 인사하다. 나는 허리를 숙여 선생님께 공손히 인사했다. 나는 자세를 공손히 한 채 할아버지의 말씀을 들었다. 할머니께 물건은 공손히 두 손으로 드려야지. 가: 유민이는 참 예의가 바른 것 같아. 나: 맞아. 항상 웃는 얼굴로 어르신들을 공손히 대하더라. Xem thêm Gửi ý kiến Gửi ý kiến Mã xác nhận Nghe bằng âm thanh Sửa mới Tên Tiêu đề Nội dung Gửi ý kiến Mong nhận được nhiều ý kiến đóng góp của quý vị về nội dung từ điển. (Sẽ không có câu trả lời nhưng nội dung mà quý vị gửi sẽ được tham khảo để cải tiến và hoàn thiện nội dung từ điển.) cách xem Tiếng Hàn + Tiếng Việt Tiếng Hàn Tiếng Việt Từ tôi đã tìm kiếm Một phần dịch vụ nghe phát âm tiếng Hàn được hỗ trợ bởi Quỹ Văn hóa Naver Trợ giúp Chiến lược biên dịch Chính sách về bản quyền Thông báo Open API Góp ý Từ điển tiếng Hàn cơ sở Viện Quốc ngữ Quốc gia Hàn Quốc Di chuyển Từ nguyên gốc từ Hán Hàn 恭 공손할 공 부수 心/총획 10 遜 겸손할 손 부수 辵/총획 14 từ thuần Hàn 히"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "a66ea8ea5793fea5829ea8b2da8bd989d0bdd125a9a75eb8e1b4060505413aee"
     }
   ]
 }

@@ -259,3 +259,15 @@ publication gate. Contrasting regressions cover accepted optional load versus
 rejected clear overload; neither changes prose directly or substitutes for final
 review. TOPIK 2's real curriculum rejection prompted this optimization, and its
 prose repair retained 67 unchanged sentence annotations.
+
+Primary-record review follow-up: each proposed supplemental reference is now
+retrieved before the critic checks headword, POS and sense; both reviewer and
+creator receive the same research policy. Registry evidence retains the retrieved
+record text and checksum, preventing URL-only claims from serving as attestation.
+The curriculum critic also receives applicable reviewed lexical references so a
+previously investigated idiom is not needlessly sent back to prose rewriting.
+These establish lexical meaning only; curriculum grades still require their own
+source bindings. The 2017 source row for 아쉽다 labels its POS as 명사 despite
+the adjective-shaped guide 작별이 아쉽다; this catalog discrepancy remains an
+editorial issue, not permission to silently change the pinned dataset or guess a
+POS crosswalk.

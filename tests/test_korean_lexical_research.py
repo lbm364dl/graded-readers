@@ -12,6 +12,8 @@ from pipeline.korean_agent_harness import save
 def offline_primary_fixture(monkeypatch):
     monkeypatch.setattr(research, 'standard_evidence', lambda headword:
         {'headword_request': headword, 'records': []})
+    monkeypatch.setattr(research, 'primary_record_evidence', lambda url:
+        {'primary_url': url, 'text': '검증하다: verified test verb record.'})
 
 
 def proposal():
@@ -64,6 +66,7 @@ def test_research_requires_independent_review_and_reuses_approved_identity(tmp_p
         async def call(self, job, *args, **kwargs):
             self.calls.append((job, kwargs['tool_profile']))
             if '-review-' in job:
+                assert 'verified test verb record' in args[0]
                 return {'approved': True, 'issues': []}
             return proposal()
     runner = Runner()
