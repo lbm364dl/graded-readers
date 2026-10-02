@@ -40,6 +40,7 @@ RESEARCH_SCOPE = ('This is targeted passage lookup, not exhaustive dictionary en
     'Cover every requested spelling with the needed attested identity or an honest unresolved outcome. '
     'Conjugated requests should be unresolved as such, not answered with an unrelated noun homonym. '
     'Keep reusable definitions independent of the passage. '
+    'known_candidates includes exact whitespace-delimited component spellings when present in the supplied catalog. These are existing lexical identities, not attestation of a standalone phrase or its idiomatic meaning. Reuse a supplied identity only for the actual matching component; do not claim a different primary identity is already cataloged unless it is supplied. Do not guess stems from inflected component tokens. '
     'Standard Dictionary display convention: an internal hyphen in a complete headword marks its compound components, not a space or a different spelling. NIKL explains this at https://m.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=216&pageIndex=1&qna_seq=326855. Thus a directly attested 주제-넘다 record can support requested 주제넘다 when its POS and sense match. Keep the requested headword exact in output and preserve the primary ID. Do not remove actual spaces, combine separate words, or treat leading/trailing affix hyphens as standalone-word attestation. ')
 LEXEME = contracts.obj({
     'id': contracts.NONEMPTY, 'headword': contracts.NONEMPTY,
@@ -339,7 +340,8 @@ async def _research_batch(headwords, run_dir, *, runner=None, registry=REGISTRY,
             for record in evidence['records']) for evidence in primary_evidence)
     editor_profile = 'offline' if supplied_records_complete else 'research'
     catalog = contracts.lexical_catalog()
-    known_candidates = {h: catalog.get(h, []) for h in headwords}
+    candidate_spellings = set(headwords) | {token for headword in headwords for token in headword.split()}
+    known_candidates = {h: catalog.get(h, []) for h in sorted(candidate_spellings)}
     key = fingerprint({'headwords': headwords, 'occurrence_requests': occurrence_requests})[:16] if occurrence_requests else fingerprint(headwords)[:16]
     if source_context:
         key = fingerprint({'key': key, 'source_context': source_context})[:16]

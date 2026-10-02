@@ -506,3 +506,22 @@ def test_primary_headword_guard_rejects_component_or_spacing_mismatch_but_not_co
     record.update(display_headword='주제', written_headword='주제')
     with pytest.raises(ValueError, match='component records'):
         research.check_primary_headwords(value, [record])
+
+
+def test_phrase_research_supplies_exact_catalog_components_without_guessing_inflections(tmp_path, monkeypatch):
+    monkeypatch.setattr(research, 'standard_evidence', lambda word: {'records': []})
+    catalog = {'띄다': [{'id': '띄다01/동', 'headword': '띄다', 'pos': '동', 'meaning': '눈에 ~', 'grade': 'C'}],
+        '눈': [{'id': '눈01/명', 'headword': '눈', 'pos': '명', 'meaning': 'eye', 'grade': 'A'}]}
+    monkeypatch.setattr(research.contracts, 'lexical_catalog', lambda: catalog)
+    class Runner:
+        async def call(self, job, prompt, *args, **kwargs):
+            inputs = json.loads(prompt.split('\nINPUT:\n', 1)[1])
+            assert inputs['known_candidates']['띄다'] == catalog['띄다']
+            assert '눈' not in inputs['known_candidates']  # 눈에 is not silently analyzed as 눈.
+            assert inputs['known_candidates']['눈에'] == []
+            assert 'not attestation of a standalone phrase' in prompt
+            if '-review-' in job:
+                return {'approved': True, 'issues': []}
+            return {'entries': [], 'unresolved': [{'headword': '눈에 띄다', 'reason_en': 'A phrase using the supplied lexical component 띄다01/동; not a standalone headword.'}]}
+    result = asyncio.run(research.research(['눈에 띄다'], tmp_path, runner=Runner(), registry=tmp_path/'registry.json'))
+    assert result['entries'] == []
