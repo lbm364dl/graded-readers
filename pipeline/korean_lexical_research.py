@@ -124,6 +124,18 @@ def primary_record_evidence(url):
         return {'primary_url': url, 'retrieval_error': type(error).__name__}
 
 
+def chapter_usage_evidence(chapter, word_requests):
+    """Carry exact reviewed occurrence investigations into later stages."""
+    usages = {}
+    for segment in chapter['segments']:
+        lexical = segment.get('lexical', {})
+        request = word_requests.get(lexical.get('id'))
+        if lexical.get('kind') == 'vocabulary' and request:
+            usages.setdefault(request['headword'], []).append({
+                'text': segment['text'], 'meaning_en': segment['meaning_en']})
+    return usage_evidence(usages)
+
+
 def proposal_reference_urls(proposal):
     """Include primary records cited to explain unresolved usages, too."""
     urls = {entry['primary_url'] for entry in proposal['entries']}

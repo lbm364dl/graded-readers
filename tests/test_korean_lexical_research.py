@@ -282,6 +282,23 @@ def test_unresolved_primary_references_reach_independent_review(tmp_path, monkey
     assert research.candidates(tmp_path / 'lexemes.json') == []
 
 
+def test_later_stages_receive_only_requested_vocabulary_usage_evidence(monkeypatch):
+    calls = []
+    def evidence(usages):
+        calls.append(usages)
+        return [{'reviewed': True}] if usages else []
+    monkeypatch.setattr(research, 'usage_evidence', evidence)
+    chapter = {'segments': [
+        {'text': '검증했다', 'meaning_en': 'verified', 'lexical': {'kind': 'vocabulary', 'id': 'verb'}},
+        {'text': '이름', 'meaning_en': 'name', 'lexical': {'kind': 'proper_name', 'id': 'name'}},
+        {'text': '.', 'type': 'punctuation'}]}
+    requests = {'verb': {'headword': '검증하다'}, 'name': {'headword': '이름'}}
+    assert research.chapter_usage_evidence(chapter, requests) == [{'reviewed': True}]
+    assert calls[-1] == {'검증하다': [{'text': '검증했다', 'meaning_en': 'verified'}]}
+    assert research.chapter_usage_evidence(chapter, {'name': requests['name']}) == []
+    assert calls[-1] == {}
+
+
 def test_primary_attested_word_is_ordinary_unlisted_vocabulary_not_an_exemption(monkeypatch):
     from pipeline.korean_readability import diagnostics
     from pipeline.korean_curriculum import evaluate_bindings

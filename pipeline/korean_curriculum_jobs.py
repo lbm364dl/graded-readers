@@ -59,11 +59,15 @@ def producer(harness, prompt, context, *, batch_size=16):
                 repair_evidence = {'repair_plan_job': selection_job, 'repair_plan_digest': digest(selection)}
 
         async def batch(number, identities):
+            from pipeline.korean_lexical_research import chapter_usage_evidence
             identity_set = set(identities)
             if lineage is not None and not identity_set & selected:
                 record = lineage[number]
                 return read(harness.run_dir / 'agents' / record['job'] / 'result.json'), record
             old_bindings = [b for b in previous['bindings'] if key(b) in identity_set] if previous else []
+            reviewed_usages = chapter_usage_evidence(context['chapter'], {
+                identity: request for identity, request in context['word_requests'].items()
+                if ('vocabulary', identity) in identity_set})
             errors = issues
             for attempt in range(3):
                 batch_job = f'{job}-bindings-{number:03d}-{attempt}'
@@ -72,7 +76,9 @@ def producer(harness, prompt, context, *, batch_size=16):
                     'Use the complete chapter context for meanings and optional grammar rationales. '
                     'Do not return other identities. Preserve previous bindings outside repair_identities exactly. '
                     'This is proposal generation: final whole-chapter computation and independent review remain required. '
+                    + ('Use matching reviewed_lexical_usage_evidence for its stated sense coverage; do not defer that completed investigation again. It supplies no curriculum grade and does not verify a different sense. ' if reviewed_usages else '')
                     + payload(**inputs, requested_identities=identities, repair_identities=sorted(identity_set & selected),
+                        **({'reviewed_lexical_usage_evidence': reviewed_usages} if reviewed_usages else {}),
                         previous_bindings=old_bindings, issues=errors), batch_schema, 'medium', tool_profile='offline')
                 try:
                     validate(value, BATCH)

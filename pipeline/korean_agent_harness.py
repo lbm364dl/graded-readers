@@ -349,6 +349,10 @@ class KoreanHarness:
             evidence = {}
             if name == 'curriculum':
                 evidence = {'computed_curriculum_evaluation': curriculum.evaluate_bindings(review_context['chapter'], value, level=self.level)}
+                from pipeline.korean_lexical_research import chapter_usage_evidence
+                reviewed_usages = chapter_usage_evidence(review_context['chapter'], review_context.get('word_requests', {}))
+                if reviewed_usages:
+                    evidence['reviewed_lexical_usage_evidence'] = reviewed_usages
             if name == 'annotation':
                 from pipeline.korean_lexical_research import usage_evidence
                 usages = {}
