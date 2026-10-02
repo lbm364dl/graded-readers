@@ -1,5 +1,16 @@
 # Korean graded-reader pipeline: Level 1 pilot
 
+## Drafts and source continuation
+
+`previous`, `previous_chunk`, and `previous_bindings` are rejected or retained
+draft proposals supplied for repair. They are never proof of a completed chapter
+or permission to skip their source coverage. Only `previous_chapters` and the
+current source unit establish an earlier published chapter and where this one
+starts. When `previous_chapters` is empty and the unit starts at zero, chapter 1
+begins at the opening of the supplied original narrative. Repair the proposed
+coverage rather than planning the chapter after that proposal. Paragraph indices
+refer to the supplied numbered source, not another draft's stopping point.
+
 The current generation scope is *Hong Gildong*, Level 1, using mapped source
 spans selected by the planning agent from the remaining original narrative. The
 two mapped scenes in `books/korean/honggildong/source.json` are reference examples,

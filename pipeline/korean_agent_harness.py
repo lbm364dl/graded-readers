@@ -559,7 +559,8 @@ class KoreanHarness:
             except (ValueError, KeyError, FileNotFoundError):
                 pass
         report_path.unlink(missing_ok=True)
-        context = {"target_level": self.level, "target_goals": LEVEL_GOALS[self.level], "edition": EDITION, "source": source, "unit": unit,
+        context = {"chapter_number": self.number, "source_start": source_start,
+                   "target_level": self.level, "target_goals": LEVEL_GOALS[self.level], "edition": EDITION, "source": source, "unit": unit,
                    "previous_chapters": previous_text, "source_notes": source_notes}
         plan = await self.stage("plan", f"Choose a coherent next TOPIK {self.level} chapter from the remaining original narrative. Select last_source_paragraph_index as its stopping point: the chapter covers the contiguous source prefix through that paragraph, including justified omissions within it. Stop at a natural narrative boundary; do not cover the entire remaining book by default. There is no fixed source-slice size. "
             "Give a Korean title and select source_paragraph_index from the numbered paragraphs, "

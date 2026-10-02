@@ -1182,6 +1182,38 @@ def test_preparation_checkpoint_stops_before_annotation_and_cannot_publish(tmp_p
     assert KoreanHarness(prepared, 1, runner=object(), level=3).stop_after is None
 
 
+@pytest.mark.parametrize('has_prior_chapter', [False, True])
+def test_planning_context_distinguishes_first_chapter_from_published_continuation(tmp_path, monkeypatch, has_prior_chapter):
+    from pipeline import korean_agent_harness as harness_module
+    from pipeline.korean_sources import load_unit
+    from pipeline.korean_agent_harness import save
+    manifest, _, _ = load_unit(1)
+    original_root = harness_module.ROOT
+    book = tmp_path / 'books/korean/honggildong'
+    book.mkdir(parents=True)
+    for key in ('text_file', 'notes_file'):
+        if key in manifest:
+            (book / manifest[key]).write_bytes((original_root / 'books/korean/honggildong' / manifest[key]).read_bytes())
+    source = (book / manifest['text_file']).read_text().rstrip('\n')
+    end = source.index('\n\n')
+    if has_prior_chapter:
+        save(tmp_path / 'content/korean/honggildong/l3.annotations.json', {'chapters': [{
+            'number': 1, 'text': 'Published chapter', 'source_alignment': {'unit': {'end': end}}}]})
+    harness = KoreanHarness(tmp_path / 'run', 2 if has_prior_chapter else 1, runner=object(), level=3)
+    monkeypatch.setattr(harness_module, 'ROOT', tmp_path)
+    class ContextCaptured(Exception): pass
+    async def inspect(name, prompt, schema, check, context, **kwargs):
+        assert name == 'plan'
+        assert context['chapter_number'] == (2 if has_prior_chapter else 1)
+        assert context['source_start'] == (end + 2 if has_prior_chapter else 0)
+        assert context['previous_chapters'] == ('Published chapter' if has_prior_chapter else '')
+        assert context['source'] == (source[end + 2:] if has_prior_chapter else source)
+        raise ContextCaptured()
+    monkeypatch.setattr(harness, 'stage', inspect)
+    with pytest.raises(ContextCaptured):
+        asyncio.run(harness.run())
+
+
 def test_annotation_batches_preserve_sentences_separators_and_long_clauses():
     text = '첫 문장입니다.\n\n두 번째입니다. 세 번째 문장입니다! 마지막입니다.'
     sentences = contracts.annotation_chunks(text)

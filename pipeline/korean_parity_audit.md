@@ -582,3 +582,11 @@ policy explicitly. Runtime command inspection confirmed Luna/low for the resumed
 TOPIK 3, 4 and 6 workers. Exact-context cache-only evidence may retain its original
 model provenance; changed prompts still miss the cache. A model change alone is
 not evidence that reviewed content needs regeneration.
+
+Luna planning retries exposed a draft/continuation ambiguity: a rejected prior
+plan was treated as a completed chapter, skipping its source prefix. Instructions
+now explicitly distinguish repair proposals from published previous_chapters.
+Planning context includes chapter_number and the authoritative source_start.
+Two regression cases verify the opening chapter against a real published
+continuation, including the exact remaining source text. Chapter length still
+depends on reviewed source coverage and learner difficulty, with no quotas.
