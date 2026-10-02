@@ -55,6 +55,18 @@ def test_attached_punctuation_cannot_hide_grammar_links():
         chunks.decode(value)
 
 
+@pytest.mark.parametrize('anchor,form,expected', [(0, '가는 곳', 2), (2, '가는 곳', None), (2, '곳', 2)])
+def test_phrase_attachment_is_its_start_not_its_grammar_bearing_final_word(anchor, form, expected):
+    segments = [{'text': '가는'}, {'text': ' '}, {'text': '곳'}]
+    before = copy.deepcopy(segments)
+    if expected is None:
+        with pytest.raises(ValueError, match='Preserve tap boundaries'):
+            chunks.endpoint(segments, anchor, form)
+    else:
+        assert chunks.endpoint(segments, anchor, form) == expected
+    assert segments == before
+
+
 def test_raw_chunk_digest_is_required_and_tampering_is_rejected(tmp_path):
     raw = attached(fixture())
     decoded = chunks.decode(raw)

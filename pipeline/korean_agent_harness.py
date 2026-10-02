@@ -982,6 +982,7 @@ class KoreanHarness:
                             value = await self.runner.call(chunk_job, self.policy + "\n" + annotation_prompt
                                 + "\nThis job annotates ONLY chunk_text, not the full chapter. "
                                 "Use segment-anchored-annotation-v1: attach grammar_links and expression_links directly to their first included word segment, and mark each segment is_inflected. Do not output numeric link indices; the pipeline computes anchors and ending indices from the exact complete forms. Include trailing spaces/newlines as punctuation. "
+                                "The attachment marks the START of display_form or expression form, not the word carrying the grammatical ending. For example, with segments 가는, space, 곳, a link displaying 가는 곳 belongs in 가는. A link displaying only 곳 belongs in 곳. If a form begins earlier than the segment containing the link, move the link to that earlier segment; do not shorten its complete form or change source taps to make it fit. "
                                 + payload(chunk_text=text, previous_chunk=previous_chunk, issues=errors,
                                     **({'newly_reviewed_lexical_candidates': new_candidates} if new_candidates else {}),
                                     **({'reviewed_lexical_usage_evidence': reviewed_usages} if reviewed_usages else {}),
