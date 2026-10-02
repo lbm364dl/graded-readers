@@ -401,6 +401,10 @@ def test_research_resume_uses_rejected_checkpoint_only_as_repair_context(tmp_pat
     save(proposal_dir / 'result.json', proposal())
     save(review_dir / 'result.json', {'approved': not rejected,
         'issues': ['Repair the unsupported lexical claim'] if rejected else []})
+    if rejected:
+        adjudicated_dir = review_dir.with_name(review_dir.name + '-adjudication')
+        adjudicated_dir.mkdir()
+        save(adjudicated_dir/'result.json', {'approved': False, 'issues': ['Adjudicated repair requirement']})
     calls = []
     class Runner:
         async def call(self, job, prompt, *args, **kwargs):
@@ -408,7 +412,8 @@ def test_research_resume_uses_rejected_checkpoint_only_as_repair_context(tmp_pat
             if '-review-' in job:
                 return {'approved': True, 'issues': []}
             if rejected:
-                assert 'Repair the unsupported lexical claim' in prompt
+                assert 'Adjudicated repair requirement' in prompt
+                assert 'Repair the unsupported lexical claim' not in prompt
             else:
                 assert 'Repair the unsupported lexical claim' not in prompt
             return proposal()
@@ -447,3 +452,34 @@ def test_research_scope_explains_internal_dictionary_hyphen_without_collapsing_s
             return {'approved': True, 'issues': []} if '-review-' in job else proposal()
     asyncio.run(research.research(['검증하다'], tmp_path, runner=Runner(), registry=tmp_path/'registry.json'))
     assert len(prompts) == 2
+
+
+@pytest.mark.parametrize('material', [False, True])
+def test_lexical_objections_are_adjudicated_without_waiving_material_errors(tmp_path, monkeypatch, material):
+    monkeypatch.setattr(research, 'standard_evidence', lambda word: {'records': []})
+    calls = []
+    class Runner:
+        async def call(self, job, prompt, *args, **kwargs):
+            calls.append(job)
+            if job.endswith('-adjudication'):
+                assert 'Local validation already establishes exact requested-spelling coverage' in prompt
+                assert 'wrong-sense' in prompt
+                return {'approved': not material, 'issues': ['Wrong sense'] if material else []}
+            if '-review-' in job:
+                return {'approved': False, 'issues': ['Proposed objection']}
+            return proposal()
+    registry = tmp_path/'registry.json'
+    if material:
+        with pytest.raises(ValueError, match='Wrong sense'):
+            asyncio.run(research.research(['검증하다'], tmp_path, runner=Runner(), registry=registry))
+        assert not registry.exists()
+        assert len([j for j in calls if j.endswith('-adjudication')]) == 4
+    else:
+        asyncio.run(research.research(['검증하다'], tmp_path, runner=Runner(), registry=registry))
+        assert len(calls) == 3
+        document = json.loads(registry.read_text())
+        assert document['reviews'][0]['initial_review']['issues'] == ['Proposed objection']
+        document['reviews'][0]['initial_review']['issues'] = ['Changed objection']
+        save(registry, document)
+        with pytest.raises(ValueError, match='initial objections'):
+            research.candidates(registry)

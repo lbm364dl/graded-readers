@@ -196,6 +196,10 @@ def candidates(path=REGISTRY):
                 or record['proposal_digest'] != fingerprint(record['proposal'])
                 or record['review_digest'] != fingerprint(record['review'])):
             raise ValueError('Lexical candidates require matching independent review')
+        if ('initial_review' in record
+                and (record.get('initial_review_digest') != fingerprint(record['initial_review'])
+                     or record['initial_review'].get('approved') is not False)):
+            raise ValueError('Lexical research initial objections changed after adjudication')
         if ('primary_evidence' in record
                 and record.get('primary_evidence_digest') != fingerprint(record['primary_evidence'])):
             raise ValueError('Lexical primary evidence changed after review')
@@ -324,6 +328,9 @@ async def _research_batch(headwords, run_dir, *, runner=None, registry=REGISTRY,
         retry_path = proposal_path.parent.with_name(proposal_path.parent.name + '-search-retry') / 'result.json'
         if retry_path.exists():
             proposal_path = retry_path
+        adjudicated_path = review_path.parent.with_name(review_path.parent.name + '-adjudication') / 'result.json'
+        if adjudicated_path.exists():
+            review_path = adjudicated_path
         try:
             rejected = read(review_path)
             validate(rejected, contracts.REVIEW)
@@ -380,6 +387,26 @@ async def _research_batch(headwords, run_dir, *, runner=None, registry=REGISTRY,
                 known_candidates=known_candidates, occurrence_requests=occurrence_requests, source_context=source_context,
                 proposal=proposal), contracts.schema_path('review'), 'low', tool_profile='offline')
         validate(review, contracts.REVIEW)
+        review_lineage = {}
+        if not review['approved']:
+            initial_review = review
+            review = await runner.call(f'lexical-research-review-{key}-{attempt}-adjudication',
+                RESEARCH_POLICY + RESEARCH_SCOPE + '\nINDEPENDENT OBJECTION ADJUDICATION: '
+                'Check only the proposed objections against the supplied proposal and direct primary records. '
+                'Retain material wrong-headword, wrong-POS, wrong-sense, unreadable-record or unsupported existing-identity claims. '
+                'Reject demands for unrelated homonyms, duplicate entries, fabricated standalone phrase lemmas, or guaranteed attestation for every request. '
+                'An honest unresolved outcome is valid when no direct standalone record is supplied; absence is not itself a defect. '
+                'Local validation already establishes exact requested-spelling coverage across entries AND unresolved. '
+                'Keep internal dictionary compound markers distinct from real spacing and affix markers. '
+                'Do not invent new objections. issues must contain only genuine repair requirements, never confirmations or dismissed objections. '
+                'Approve only if no proposed objection establishes a material defect. No tools. '
+                + payload(headwords=headwords, primary_evidence=reviewed_evidence,
+                    known_candidates=known_candidates, occurrence_requests=occurrence_requests,
+                    source_context=source_context, proposal=proposal, proposed_review=initial_review),
+                contracts.schema_path('review'), 'low', tool_profile='offline')
+            validate(review, contracts.REVIEW)
+            review_lineage = {'initial_review': initial_review,
+                'initial_review_digest': fingerprint(initial_review)}
         if review == {'approved': True, 'issues': []}:
             break
         previous, issues = proposal, review['issues']
@@ -388,7 +415,8 @@ async def _research_batch(headwords, run_dir, *, runner=None, registry=REGISTRY,
     record = {'headwords': headwords, 'proposal': proposal, 'proposal_digest': fingerprint(proposal),
         'review': review, 'review_digest': fingerprint(review),
         'research_policy_digest': fingerprint(RESEARCH_POLICY),
-        'primary_evidence': reviewed_evidence, 'primary_evidence_digest': fingerprint(reviewed_evidence)}
+        'primary_evidence': reviewed_evidence, 'primary_evidence_digest': fingerprint(reviewed_evidence),
+        **review_lineage}
     if source_context:
         record['source_context'] = source_context
         record['source_context_digest'] = fingerprint(source_context)
