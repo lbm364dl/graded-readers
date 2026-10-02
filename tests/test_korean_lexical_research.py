@@ -483,3 +483,26 @@ def test_lexical_objections_are_adjudicated_without_waiving_material_errors(tmp_
         save(registry, document)
         with pytest.raises(ValueError, match='initial objections'):
             research.candidates(registry)
+
+
+@pytest.mark.parametrize('display,written', [('주제-넘다', '주제넘다'), ('다음-날', '다음날'), ('다음 날', '다음 날'), ('-하다', '-하다')])
+def test_primary_heading_preserves_spaces_affixes_and_exact_record_identity(display, written):
+    html = f'<li id="word_123"><span class="tit_b">{display}<span class="chi_info_list"></span></span><p>Different example headword</p></li>'
+    fields = research.standard_record_fields(html, 123)
+    assert fields == {'record_word_no': '123', 'display_headword': display, 'written_headword': written}
+    assert research.standard_record_fields(html, 456) == {}
+    assert research.standard_record_fields('<p>다음 날 example only</p>', 123) == {}
+
+
+def test_primary_headword_guard_rejects_component_or_spacing_mismatch_but_not_compound_marker():
+    value = proposal()
+    entry = value['entries'][0]
+    entry['headword'] = '주제넘다'
+    record = {'primary_url': entry['primary_url'], 'display_headword': '주제-넘다', 'written_headword': '주제넘다'}
+    research.check_primary_headwords(value, [record])
+    entry['headword'] = '주제 넘다'
+    with pytest.raises(ValueError, match='Preserve actual spaces'):
+        research.check_primary_headwords(value, [record])
+    record.update(display_headword='주제', written_headword='주제')
+    with pytest.raises(ValueError, match='component records'):
+        research.check_primary_headwords(value, [record])

@@ -74,6 +74,33 @@ def read_primary(request):
                 raise
 
 
+def standard_record_fields(content, number):
+    """Read only the exact record's displayed heading, never an example."""
+    record = re.search(r'<li\b[^>]*\bid=["\']word_' + re.escape(str(number)) + r'["\'][^>]*>(.*?)</li>', content, re.S)
+    if not record:
+        return {}
+    heading = re.search(r'<span\b[^>]*class=["\'][^"\']*\btit_b\b[^"\']*["\'][^>]*>\s*([^<]+)', record.group(1), re.S)
+    if not heading:
+        return {}
+    display = unescape(heading.group(1)).strip()
+    if not display:
+        return {}
+    fields = {'record_word_no': str(number), 'display_headword': display}
+    # NIKL's internal compound marker is not a space. Affix markers stay.
+    if '^' not in display:
+        fields['written_headword'] = re.sub(r'(?<=[가-힣])-(?=[가-힣])', '', display)
+    return fields
+
+
+def check_primary_headwords(proposal, records):
+    exact = {record['primary_url']: record for record in records}
+    for entry in proposal['entries']:
+        record = exact.get(entry['primary_url'], {})
+        headword = record.get('written_headword')
+        if headword is not None and entry['headword'] != headword:
+            raise ValueError(f"Primary record {entry['primary_url']} attests headword {headword!r} (display {record['display_headword']!r}), not requested {entry['headword']!r}. Examples and component records do not attest a different standalone headword; correct the identity or report this request honestly unresolved. Preserve actual spaces.")
+
+
 def standard_evidence(headword):
     """Fetch official dynamic dictionary data that web search cannot extract.
 
@@ -105,7 +132,7 @@ def standard_evidence(headword):
                 content = read_primary(request)
                 records.append({'primary_url': f'https://stdict.korean.go.kr/search/searchView.do?word_no={number}',
                     'content_sha256': hashlib.sha256(content.encode()).hexdigest(),
-                    'text': plain_html(content)})
+                    'text': plain_html(content), **standard_record_fields(content, number)})
                 seen_records.add(number)
         return {'headword_request': headword, 'search_url': search_url, 'records': records}
     except (OSError, UnicodeError, HTTPException) as error:
@@ -126,7 +153,8 @@ def primary_record_evidence(url):
             request = url
         content = read_primary(request)
         return {'primary_url': url, 'content_sha256': hashlib.sha256(content.encode()).hexdigest(),
-            'text': plain_html(content)}
+            'text': plain_html(content),
+            **(standard_record_fields(content, number) if parsed.hostname == 'stdict.korean.go.kr' else {})}
     except (OSError, UnicodeError, HTTPException) as error:
         return {'primary_url': url, 'retrieval_error': type(error).__name__}
 
@@ -371,6 +399,11 @@ async def _research_batch(headwords, run_dir, *, runner=None, registry=REGISTRY,
                 return await asyncio.to_thread(primary_record_evidence, url)
         proposal_records = await asyncio.gather(*(retrieve_record(url)
             for url in proposal_reference_urls(proposal)))
+        try:
+            check_primary_headwords(proposal, proposal_records)
+        except ValueError as error:
+            previous, issues = proposal, [str(error)]
+            continue
         reviewed_evidence = [*primary_evidence, {'proposal_records': proposal_records}]
         review = await runner.call(f'lexical-research-review-{key}-{attempt}',
             RESEARCH_POLICY + RESEARCH_SCOPE + '\nINDEPENDENT REVIEW: '
