@@ -39,7 +39,8 @@ RESEARCH_SCOPE = ('This is targeted passage lookup, not exhaustive dictionary en
     'Preserve distinctions among proposed homonyms and POS, but do not demand unrelated homonyms merely because retrieval found them. '
     'Cover every requested spelling with the needed attested identity or an honest unresolved outcome. '
     'Conjugated requests should be unresolved as such, not answered with an unrelated noun homonym. '
-    'Keep reusable definitions independent of the passage. ')
+    'Keep reusable definitions independent of the passage. '
+    'Standard Dictionary display convention: an internal hyphen in a complete headword marks its compound components, not a space or a different spelling. NIKL explains this at https://m.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=216&pageIndex=1&qna_seq=326855. Thus a directly attested 주제-넘다 record can support requested 주제넘다 when its POS and sense match. Keep the requested headword exact in output and preserve the primary ID. Do not remove actual spaces, combine separate words, or treat leading/trailing affix hyphens as standalone-word attestation. ')
 LEXEME = contracts.obj({
     'id': contracts.NONEMPTY, 'headword': contracts.NONEMPTY,
     'pos': {'type': 'string', 'enum': ['명', '동', '형', '부', '관', '감', '의', '대', '수']},

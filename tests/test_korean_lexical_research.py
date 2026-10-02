@@ -433,3 +433,17 @@ def test_research_review_distinguishes_unresolved_coverage_from_missing_entries(
     assert result['unresolved'][0]['headword'] == '큰'
     with pytest.raises(ValueError, match='Missing'):
         research.check_proposal({'entries': [], 'unresolved': []}, ['큰'])
+
+
+def test_research_scope_explains_internal_dictionary_hyphen_without_collapsing_spacing(tmp_path, monkeypatch):
+    monkeypatch.setattr(research, 'standard_evidence', lambda word: {'records': []})
+    prompts = []
+    class Runner:
+        async def call(self, job, prompt, *args, **kwargs):
+            prompts.append(prompt)
+            assert 'internal hyphen in a complete headword marks its compound components' in prompt
+            assert 'Do not remove actual spaces, combine separate words' in prompt
+            assert 'leading/trailing affix hyphens' in prompt
+            return {'approved': True, 'issues': []} if '-review-' in job else proposal()
+    asyncio.run(research.research(['검증하다'], tmp_path, runner=Runner(), registry=tmp_path/'registry.json'))
+    assert len(prompts) == 2
