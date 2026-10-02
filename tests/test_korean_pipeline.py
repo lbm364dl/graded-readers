@@ -1326,6 +1326,34 @@ def test_nominal_compound_can_use_reviewed_component_taps_without_inventing_a_le
         annotation_requests(whole, catalog, {'entries': []}, {})
 
 
+def test_productive_formation_uses_lexical_noun_base_and_complete_grammar_stages(tmp_path):
+    from pipeline.korean_agent_harness import annotation_requests, MissingLexicalIdentityError
+    raw = {'segments': [{'type': 'word', 'text': '대우받으며', 'lemma': '대우',
+        'lexical_id': 'nikl2017-vocabulary-06233/명사', 'lexical_kind': 'vocabulary',
+        'meaning_en': 'while being treated', 'story_importance_en': '', 'form_steps': [
+            {'form': '대우받다', 'reading': '', 'label': 'Productive passive formation',
+             'meaning_en': 'to be treated', 'grammar_entry_ids': ['passive-noun-batda']},
+            {'form': '대우받으며', 'reading': '', 'label': 'Simultaneous connective',
+             'meaning_en': 'while being treated', 'grammar_entry_ids': ['connective-myeo']}]}],
+        'grammar_links': [{'segment_index': 0, 'entry_id': identity,
+            'context_en': 'Synthetic protocol fixture for the reviewed productive analysis.',
+            'display_form': '', 'display_meaning_en': '', 'display_end_segment_index': -1}
+            for identity in ['passive-noun-batda', 'connective-myeo']],
+        'inflected_segment_indices': [0]}
+    requests, grammar = annotation_requests(raw, contracts.lexical_catalog(), {'entries': []}, {})
+    assert requests == {'nikl2017-vocabulary-06233/명사': {'headword': '대우', 'kind': 'word'}}
+    assert grammar == {'passive-noun-batda', 'connective-myeo'}
+    chapter = contracts.canonical_annotation(raw, {'title': 'fixture', 'text': '대우받으며'},
+        1, sources.EDITION, {'beats': []}, {'entries': []}, level=4)
+    dictionary.build_assets(chapter, tmp_path, write=False,
+        word_registry={identity: {'id': identity, **entry} for identity, entry in requests.items()},
+        grammar_registry={identity: {'id': identity} for identity in grammar})
+    wrong = copy.deepcopy(raw)
+    wrong['segments'][0].update(lemma='대우받다', lexical_id='invented-productive-lemma')
+    with pytest.raises(MissingLexicalIdentityError, match='attested lexical base'):
+        annotation_requests(wrong, contracts.lexical_catalog(), {'entries': []}, {})
+
+
 @pytest.mark.parametrize('tamper', [None, 'binding', 'tool'])
 def test_curriculum_batches_cover_all_identities_and_replay_verified_workers(tmp_path, tamper):
     from pipeline import korean_curriculum_jobs as jobs

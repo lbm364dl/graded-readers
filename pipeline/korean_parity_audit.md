@@ -431,3 +431,13 @@ constructions still need their own full fields. Nothing is deleted automatically
 and validation remains strict. Contrasting regressions check a matching covering
 lesson versus a different lesson that must not receive that deduplication advice.
 The stopped run resumed from its cached plan, prose and completed proposals.
+
+The revised TOPIK 4 run stopped after requesting a separate 대우받다 dictionary
+identity. Its earlier independently approved annotation already used lexical
+대우 with complete productive grammar stages. Missing-identity diagnostics and
+annotation instructions now explicitly permit an attested noun base for such
+grammatical formations, retaining complete meanings and separate transformation
+destinations rather than inventing whole-formation lemmas. A regression exercises
+that existing analysis through canonicalization and asset validation, contrasting
+an invented 대우받다 identity that remains rejected. The stopped run resumed
+from cache; no approved dictionary definitions or source prose were rewritten.
