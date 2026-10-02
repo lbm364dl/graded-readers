@@ -422,7 +422,10 @@ class KoreanHarness:
             if name == 'curriculum':
                 transmitted_context = {**review_context, 'chapter': curriculum.chapter_view(review_context['chapter'])}
             instructions, task_inputs = review_task(prompt, transmitted_context)
-            return payload(stage=name, task=instructions, task_inputs=task_inputs, context=transmitted_context, output=value, **evidence)
+            transmitted_output = contracts.annotation_view(value) if name == 'annotation' else value
+            if transmitted_output is not value:
+                instructions += ' The output is lossless_annotation_rows: use its explicit column lists to read each row. Every source segment retains its original index; nested form_steps use form_step_columns and grammar_links use grammar_link_columns. All meanings, readings, roles and occurrence positions are preserved. Review the complete annotation, not a sample.'
+            return payload(stage=name, task=instructions, task_inputs=task_inputs, context=transmitted_context, output=transmitted_output, **evidence)
         # A completed independent review binds the exact current task/context to
         # its output. Reuse it even if an earlier repair attempt was overwritten.
         resume = None
@@ -907,7 +910,8 @@ class KoreanHarness:
                             'Keep distinct functions, formations and contrasts separate even when their spelling overlaps. '
                             'Existing approved IDs are immutable. Cover every new draft ID; canonical IDs must be an approved ID or one of the supplied draft IDs, self-bound. '
                             'Do not edit source text, meanings, boundaries or definitions. The complete mapped annotation will receive independent review. '
-                            + payload(annotation=combined, new_ids=new_ids, approved_grammar=list(self.grammar.values()),
+                            'Large annotations may use lossless_annotation_rows with explicit segment, form-step and grammar-link column lists. Preserve all original indices and distinguish each contextual function. '
+                            + payload(annotation=contracts.annotation_view(combined), new_ids=new_ids, approved_grammar=list(self.grammar.values()),
                                       previous_bindings=previous_bindings, issues=errors, independent_review_issues=issues),
                             contracts.schema_path('grammar-bindings'), 'medium', tool_profile='offline')
                         try:

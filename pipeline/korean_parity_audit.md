@@ -506,3 +506,18 @@ offline with tool-using proposals, missing names with already planned aliases,
 and name-recovery errors with unrelated dictionary errors. Existing roles cannot
 be overwritten and reviewer rejection cannot become lexical approval. No claim
 of final TOPIK 6 annotation or publication approval follows from this plan repair.
+
+The assembled TOPIK 6 annotation exceeded the model's 1,048,576-character input
+limit during grammar identity coordination. Large annotation inputs now use a
+lossless row format with explicit column names and original segment indices.
+Every lexical field, complete form stage, reading, grammar context, full phrase,
+ending index and inflection audit position is retained. The stored artifacts
+remain unchanged. Both coordination and independent whole-annotation review can
+use this format; smaller inputs keep their existing representation and caches.
+
+The actual approved-prose draft contains 3,477 segments and 174 new grammar
+identities. Its coordination payload decreased from 1,150,133 to 537,697
+characters without sampling or shortening. All 32 completed annotation batches
+were recovered on resume. A regression reconstructs every field and occurrence
+from the packed view, proves no mutation, and contrasts the unchanged small-input
+path. The relevant 120-test suite passed. Final semantic review is still required.

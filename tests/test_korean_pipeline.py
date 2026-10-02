@@ -399,6 +399,24 @@ def test_only_missing_name_errors_trigger_bounded_cached_plan_recovery(tmp_path,
         assert len(calls) == 1
 
 
+def test_large_annotation_agent_view_preserves_every_field_and_occurrence():
+    from pipeline.korean_agent_harness import normalize_existing
+    raw = normalize_existing(manual_chapter(), dictionary._registry(dictionary.WORDS))
+    original = copy.deepcopy(raw)
+    packed = contracts.annotation_view(raw, max_characters=0)
+    restored = {'segments': [], 'grammar_links': [],
+        'inflected_segment_indices': packed['inflected_segment_indices']}
+    for index, row in enumerate(packed['segments']):
+        record = dict(zip(packed['segment_columns'], row))
+        assert record.pop('index') == index
+        record['form_steps'] = [dict(zip(packed['form_step_columns'], step)) for step in record['form_steps']]
+        restored['segments'].append(record)
+    restored['grammar_links'] = [dict(zip(packed['grammar_link_columns'], row)) for row in packed['grammar_links']]
+    assert restored == raw == original
+    assert len(json.dumps(packed, ensure_ascii=False)) < len(json.dumps(raw, ensure_ascii=False))
+    assert contracts.annotation_view(raw, max_characters=10000000) is raw
+
+
 def test_dictionary_delta_reuses_approved_entries_and_allows_only_missing():
     old = {'id': 'one', 'headword': '하나', 'kind': 'word', 'definition_en': 'one'}
     new = {'id': 'two', 'headword': '둘', 'kind': 'word', 'definition_en': 'two'}

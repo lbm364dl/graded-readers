@@ -227,6 +227,30 @@ def annotation_chunks(text: str, *, batch_characters: int = 0) -> list[str]:
     return chunks
 
 
+def annotation_view(value: dict, *, max_characters: int = 800000) -> dict:
+    """Losslessly pack large agent inputs; never trim annotation coverage."""
+    import json
+    if len(json.dumps(value, ensure_ascii=False)) <= max_characters:
+        return value
+    columns = list(WORD_SEGMENT['properties'])
+    step_columns = list(STEP['properties'])
+    link_columns = list(LINK['properties'])
+    rows = []
+    for index, segment in enumerate(value['segments']):
+        row = []
+        for column in columns:
+            if column == 'form_steps':
+                row.append([[step[field] for field in step_columns] for step in segment[column]])
+            else:
+                row.append(segment[column])
+        rows.append([index, *row])
+    return {'format': 'lossless_annotation_rows', 'segment_columns': ['index', *columns],
+        'form_step_columns': step_columns, 'segments': rows,
+        'grammar_link_columns': link_columns,
+        'grammar_links': [[link[column] for column in link_columns] for link in value['grammar_links']],
+        'inflected_segment_indices': value['inflected_segment_indices']}
+
+
 def bind_grammar_identities(value: dict, bindings: dict, approved_ids: set) -> dict:
     """Apply explicitly proposed identities; never infer a pattern from spelling."""
     mapping = {row['draft_id']: row['entry_id'] for row in bindings['bindings']}
