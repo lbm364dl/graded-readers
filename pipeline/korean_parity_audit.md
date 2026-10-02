@@ -571,3 +571,14 @@ outcome was omitted from its inputs. Fresh chunks without occurrence evidence an
 unmatched forms receive no such evidence. No spelling match approves a new sense.
 Four repair regression cases passed,
 contrasting known evidence, absent evidence and already recovered proposals.
+
+## Shared worker configuration
+
+All pipeline execution now uses gpt-6-luna with low reasoning, including
+independent reviewers, lexical research and dictionary revisions. The shared
+CodexRunner enforces the repository policy even for older callers requesting a
+different model or effort. Korean defaults and stage requests also state this
+policy explicitly. Runtime command inspection confirmed Luna/low for the resumed
+TOPIK 3, 4 and 6 workers. Exact-context cache-only evidence may retain its original
+model provenance; changed prompts still miss the cache. A model change alone is
+not evidence that reviewed content needs regeneration.

@@ -2079,7 +2079,30 @@ async def _noop():
 
 
 @pytest.mark.asyncio
-async def test_codex_runner_uses_direct_log_files(monkeypatch, tmp_path):
+@pytest.mark.parametrize('changed_prompt', [False, True])
+async def test_worker_policy_change_retains_exact_cache_only_evidence(tmp_path, changed_prompt):
+    from pipeline.agent_harness import CachedCallUnavailable
+    schema = tmp_path / 'schema.json'
+    schema.write_text('{"type":"object"}')
+    job = tmp_path / 'agents/review'
+    job.mkdir(parents=True)
+    result = {'approved': True, 'issues': []}
+    (job / 'result.json').write_text(json.dumps(result))
+    meta = {'model': 'gpt-6.1-sol', 'effort': 'high', 'return_code': 0,
+        'fingerprint': digest('same context', schema.read_text(), 'gpt-6.1-sol', 'high')}
+    (job / 'meta.json').write_text(json.dumps(meta))
+    runner = CodexRunner(tmp_path, 'gpt-6-luna', asyncio.Semaphore(1))
+    if changed_prompt:
+        with pytest.raises(CachedCallUnavailable):
+            await runner.call('review', 'changed context', schema, 'low', cache_only=True)
+    else:
+        assert await runner.call('review', 'same context', schema, 'low', cache_only=True) == result
+        assert json.loads((job / 'meta.json').read_text()) == meta
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize('requested_effort', ['low', 'high'])
+async def test_codex_runner_uses_direct_log_files(monkeypatch, tmp_path, requested_effort):
     schema = tmp_path / "schema.json"
     schema.write_text('{"type":"object"}')
     observed = {}
@@ -2101,17 +2124,22 @@ async def test_codex_runner_uses_direct_log_files(monkeypatch, tmp_path):
 
     async def fake_exec(*command, **kwargs):
         observed.update(kwargs)
+        observed['command'] = command
         output = command[command.index("-o") + 1]
         __import__("pathlib").Path(output).write_text("{}")
         return FakeProcess()
 
     monkeypatch.setattr(asyncio, "create_subprocess_exec", fake_exec)
     runner = CodexRunner(tmp_path, "model", asyncio.Semaphore(1), 10)
-    assert await runner.call("job", "hello", schema, "low") == {}
+    assert await runner.call("job", "hello", schema, requested_effort) == {}
+    assert observed['command'][observed['command'].index('-m') + 1] == 'gpt-6-luna'
+    assert 'model_reasoning_effort="low"' in observed['command']
     assert observed["stdout"] != asyncio.subprocess.PIPE
     assert observed["stderr"] != asyncio.subprocess.PIPE
     assert observed["start_new_session"] is True
     assert (tmp_path / "agents/job/meta.json").is_file()
+    meta = json.loads((tmp_path / 'agents/job/meta.json').read_text())
+    assert (meta['model'], meta['effort']) == ('gpt-6-luna', 'low')
 
 
 @pytest.mark.asyncio

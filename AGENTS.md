@@ -1,5 +1,13 @@
 # Working on this repository
 
+## Pipeline worker model
+
+All pipeline workers, including research, repairs and independent reviewers,
+must use `gpt-6-luna` with `low` reasoning. Keep this policy in the shared runner;
+do not introduce separate model defaults for a language or a review stage.
+Reuse previously reviewed work rather than regenerating it merely to change
+the worker model.
+
 ## Turn feedback into reusable improvements
 
 Treat examples in user feedback as evidence of a broader issue, not as an

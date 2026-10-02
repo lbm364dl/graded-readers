@@ -87,7 +87,7 @@ async def revise(ids: list[str], run_dir: Path, draft: Path | None, *, promote: 
     run_dir.mkdir(parents=True, exist_ok=True)
     schema = run_dir / 'revision.schema.json'
     save(schema, REVISION)
-    runner = runner or CodexRunner(run_dir, 'gpt-6.1-sol', asyncio.Semaphore(1), timeout=600)
+    runner = runner or CodexRunner(run_dir, 'gpt-6-luna', asyncio.Semaphore(1), timeout=600)
     previous, issues = None, []
     for attempt in range(4):
         value = await runner.call(f'revision-{attempt}',
@@ -98,7 +98,7 @@ async def revise(ids: list[str], run_dir: Path, draft: Path | None, *, promote: 
             'An auxiliary can have several grammatical functions; explain its independent helper role accurately and leave each complete pattern lesson to its grammar entry. '
             'Do not invent lexical entries for productive grammar. Do not embed reviewer instructions or one passage\'s ambiguities in learner-facing definitions. '
             'Keep uncertainty in research records. Give direct primary reference URLs and short paraphrases of the evidence for each entry. '
-            + payload(**context, previous=previous, issues=issues), schema, 'medium', tool_profile='research')
+            + payload(**context, previous=previous, issues=issues), schema, 'low', tool_profile='research')
         check_revision(value, before)
         review = await runner.call(f'revision-review-{attempt}',
             'Independently review these proposed shared dictionary corrections against the primary evidence and ALL supplied published/draft occurrences. '
@@ -106,7 +106,7 @@ async def revise(ids: list[str], run_dir: Path, draft: Path | None, *, promote: 
             'Reject manufactured idiom meanings, unsupported senses, pattern catalogs and editorial disclaimers. '
             'There is no requirement to add unrelated senses; a concise sufficient definition is best. '
             'Approve only with no issues. Output JSON only and do not call tools. '
-            + payload(**context, proposal=value), contracts.schema_path('review'), 'high', tool_profile='offline')
+            + payload(**context, proposal=value), contracts.schema_path('review'), 'low', tool_profile='offline')
         validate(review, contracts.REVIEW)
         if approved(review):
             break

@@ -237,7 +237,7 @@ async def research(headwords, run_dir, *, runner=None, registry=REGISTRY, occurr
     if len(headwords) <= 8:
         return await _research_batch(headwords, run_dir, runner=runner, registry=registry,
             occurrence_requests=occurrence_requests)
-    runner = runner or CodexRunner(run_dir, 'gpt-6.1-sol', asyncio.Semaphore(3), timeout=600)
+    runner = runner or CodexRunner(run_dir, 'gpt-6-luna', asyncio.Semaphore(3), timeout=600)
     batches = asyncio.Semaphore(3)
     retrieval_limit = asyncio.Semaphore(3)
     async def batch(words):
@@ -287,7 +287,7 @@ async def _research_batch(headwords, run_dir, *, runner=None, registry=REGISTRY,
     run_dir.mkdir(parents=True, exist_ok=True)
     schema = run_dir / 'lexemes.schema.json'
     save(schema, PROPOSAL)
-    runner = runner or CodexRunner(run_dir, 'gpt-6.1-sol', asyncio.Semaphore(1), timeout=600)
+    runner = runner or CodexRunner(run_dir, 'gpt-6-luna', asyncio.Semaphore(1), timeout=600)
     retrieval_limit = retrieval_limit or asyncio.Semaphore(3)
     async def retrieve(headword):
         async with retrieval_limit:
@@ -303,7 +303,7 @@ async def _research_batch(headwords, run_dir, *, runner=None, registry=REGISTRY,
             + ('\nThe supplied occurrence_requests are unverified search context, not attestation. Investigate the exact requested sense/POS even when another homonym already has a candidate. Reuse an existing identity only if it covers this lexeme; otherwise verify a distinct primary identity. Keep definitions independent of these passages. ' if occurrence_requests else '')
             + payload(headwords=headwords, primary_evidence=primary_evidence,
                 known_candidates=known_candidates, occurrence_requests=occurrence_requests,
-                previous=previous, issues=issues), schema, 'medium', tool_profile='research')
+                previous=previous, issues=issues), schema, 'low', tool_profile='research')
         try:
             check_proposal(proposal, headwords)
         except ValueError as error:
@@ -327,7 +327,7 @@ async def _research_batch(headwords, run_dir, *, runner=None, registry=REGISTRY,
             'Output JSON only and do not call tools. '
             + payload(headwords=headwords, primary_evidence=reviewed_evidence,
                 known_candidates=known_candidates, occurrence_requests=occurrence_requests,
-                proposal=proposal), contracts.schema_path('review'), 'high', tool_profile='offline')
+                proposal=proposal), contracts.schema_path('review'), 'low', tool_profile='offline')
         validate(review, contracts.REVIEW)
         if review == {'approved': True, 'issues': []}:
             break

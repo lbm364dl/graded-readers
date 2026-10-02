@@ -797,7 +797,8 @@ def test_partial_stage_reuses_actual_cached_review_only_for_matching_context(tmp
     save(tmp_path / 'agents/prose-4/result.json', value)
     save(tmp_path / 'agents/prose-review-4/result.json', {'approved': approved_review,
          'issues': [] if approved_review else ['Concrete wording correction']})
-    save(tmp_path / 'agents/prose-review-4/meta.json', {'return_code': 0, 'fingerprint': fingerprint})
+    save(tmp_path / 'agents/prose-review-4/meta.json', {'return_code': 0, 'fingerprint': fingerprint,
+        'model': 'test-model', 'effort': 'high'})
     save(tmp_path / 'agents/prose-3/result.json', value)
     save(tmp_path / 'agents/prose-review-3/result.json', {'approved': False, 'issues': ['Older stale finding']})
     save(tmp_path / 'agents/prose-review-3/meta.json', {'return_code': 0, 'fingerprint': 'obsolete-context'})

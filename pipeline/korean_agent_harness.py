@@ -329,7 +329,7 @@ def lexical_candidates(headwords: list[str], catalog: dict) -> list[dict]:
 
 
 class KoreanHarness:
-    def __init__(self, run_dir: Path, number: int, runner=None, existing: Path | None = None, model: str = "gpt-6.1-sol", workers: int = 4, level: int = 1, stop_after: str | None = None, annotation_batch_characters: int = 0):
+    def __init__(self, run_dir: Path, number: int, runner=None, existing: Path | None = None, model: str = "gpt-6-luna", workers: int = 4, level: int = 1, stop_after: str | None = None, annotation_batch_characters: int = 0):
         curriculum.entries("grammar", level)
         if stop_after not in (None, 'prose', 'curriculum'):
             raise ValueError('Korean preparation checkpoint must be prose or curriculum')
@@ -370,7 +370,7 @@ class KoreanHarness:
             'If uncertainty needs actual annotation/curriculum bindings, leave that to the final review rather than inventing an objection. '
             'Approval means ready for annotation, not final publication approval. Output JSON only and do not call tools. '
             + payload(target_level=self.level, prose=prose, grammar_catalog=curriculum.prompt_entries('grammar')),
-            contracts.schema_path('review'), 'high', tool_profile='offline')
+            contracts.schema_path('review'), 'low', tool_profile='offline')
         validate(review, contracts.REVIEW)
         if not approved(review):
             raise UnannotatableProseError('Early curriculum screen: ' + '; '.join(review['issues']))
@@ -449,14 +449,14 @@ class KoreanHarness:
                 review_prompt = self.policy + "\n" + self.review_policy + review_payload(value)
                 try:
                     review = await self.runner.call(review_job, review_prompt,
-                        contracts.schema_path("review"), "high", tool_profile="offline", cache_only=True)
+                        contracts.schema_path("review"), "low", tool_profile="offline", cache_only=True)
                 except CachedCallUnavailable:
                     if resume is not None:
                         continue
                     # Re-review the latest structurally valid proposal against
                     # changed context before commissioning another proposal.
                     review = await self.runner.call(review_job, review_prompt,
-                        contracts.schema_path("review"), "high", tool_profile="offline")
+                        contracts.schema_path("review"), "low", tool_profile="offline")
             except UnannotatableProseError:
                 raise
             except (CachedCallUnavailable, ValidationError, ValueError, KeyError, IndexError, TypeError):
@@ -482,7 +482,7 @@ class KoreanHarness:
             else:
                 value = await self.runner.call(
                     job, self.policy + "\n" + prompt + payload(previous=previous, issues=problems),
-                    contracts.schema_path(schema), "medium", tool_profile="offline")
+                    contracts.schema_path(schema), "low", tool_profile="offline")
             try:
                 validate(value, contracts.ANNOTATION if schema == 'annotation' else read(contracts.schema_path(schema)))
                 check(value)
@@ -494,7 +494,7 @@ class KoreanHarness:
             review_job = f"{name}{cache_prefix}-review-{attempt}"
             review = await self.runner.call(review_job, self.policy + "\n" + self.review_policy
                 + review_payload(value),
-                contracts.schema_path("review"), "high", tool_profile="offline")
+                contracts.schema_path("review"), "low", tool_profile="offline")
             if approved(review):
                 self.stages[name] = {"proposal_job": proposal_job, "review_job": review_job,
                     "output_digest": digest(value), "review_digest": digest(review),
@@ -656,7 +656,7 @@ class KoreanHarness:
                     'Return headwords only: no IDs, definitions, levels or claims of approval. Include dictionary forms of inflected verbs and adjectives, nouns, adverbs and other lexical words. '
                     'Prefer attested whole-word headwords. For transparent noun compounds lacking a standalone headword, also request the independent component headwords needed for learner-sized taps; do not treat source spacing as proof of a single dictionary lemma. Do not split idioms or names or guess contributions from syllables. '
                     'These are search requests, not authoritative linguistic analysis. Exclude planned names and their title/surname parts, standalone grammatical particles, and conjugated or productive expression forms whose lexical bases can be retrieved instead. Do not rewrite prose or invent words. '
-                    + payload(prose=prose, lexical_plan=focus), contracts.schema_path('lexical-candidates'), 'medium', tool_profile='offline')
+                    + payload(prose=prose, lexical_plan=focus), contracts.schema_path('lexical-candidates'), 'low', tool_profile='offline')
                 validate(proposed, contracts.LEXICAL_CANDIDATES)
                 proposed_headwords = set(proposed['headwords'])
                 excluded = {entry['headword'] for entry in focus['entries']}
@@ -715,7 +715,7 @@ class KoreanHarness:
                         'Exclude occurrences affected by unresolved annotation-review issues; do not carry a known error forward. '
                         'Keep repeated positions distinct and preserve narrative order. Do not rewrite annotations or infer new word forms. '
                         + payload(old_prose=old_prose, new_prose=prose, unresolved_review=old_review, candidates=candidates),
-                        contracts.schema_path('annotation-reuse-plan'), 'medium', tool_profile='offline')
+                        contracts.schema_path('annotation-reuse-plan'), 'low', tool_profile='offline')
                     validate(reuse_plan, contracts.ANNOTATION_REUSE_PLAN)
                     reused = contracts.reuse_selection(reuse_plan, old_texts, texts)
                     if any(old - 1 not in reusable for old in reused.values()):
@@ -765,7 +765,7 @@ class KoreanHarness:
                             + payload(annotation_index=repair_context, review_issues=issues, chunks=inventory,
                                       approved_word_entry_ids=sorted(self.words),
                                       linguistic_reference=read(LINGUISTIC_REFERENCE)),
-                            contracts.schema_path('annotation-repair-plan'), 'high', tool_profile='offline')
+                            contracts.schema_path('annotation-repair-plan'), 'low', tool_profile='offline')
                         validate(selection, contracts.ANNOTATION_REPAIR_PLAN)
                         if selection.get('prose_revision_reason_en', '').strip():
                             raise UnannotatableProseError(selection['prose_revision_reason_en'])
@@ -868,7 +868,7 @@ class KoreanHarness:
                                     **({'newly_reviewed_lexical_candidates': new_candidates} if new_candidates else {}),
                                     **({'reviewed_lexical_usage_evidence': reviewed_usages} if reviewed_usages else {}),
                                     **({'linguistic_reference': read(LINGUISTIC_REFERENCE)} if errors else {})),
-                                contracts.schema_path("annotation"), "medium", tool_profile="offline")
+                                contracts.schema_path("annotation"), "low", tool_profile="offline")
                         except ValueError as error:
                             # A rejected worker result has no trusted annotation
                             # to inherit. Retry this chunk, preserving siblings.
@@ -925,7 +925,7 @@ class KoreanHarness:
                             'Large annotations may use lossless_annotation_rows with explicit segment, form-step and grammar-link column lists. Preserve all original indices and distinguish each contextual function. '
                             + payload(annotation=contracts.annotation_view(combined), new_ids=new_ids, approved_grammar=list(self.grammar.values()),
                                       previous_bindings=previous_bindings, issues=errors, independent_review_issues=issues),
-                            contracts.schema_path('grammar-bindings'), 'medium', tool_profile='offline')
+                            contracts.schema_path('grammar-bindings'), 'low', tool_profile='offline')
                         try:
                             validate(bindings, contracts.GRAMMAR_BINDINGS)
                             mapped = contracts.bind_grammar_identities(combined, bindings, set(self.grammar))
@@ -1064,7 +1064,7 @@ def main() -> None:
     parser.add_argument("--existing", type=Path)
     parser.add_argument('--stop-after', choices=['prose', 'curriculum'], help='Prepare through the selected review; resume without this flag to finish all publication gates')
     parser.add_argument('--annotation-batch-characters', type=int, default=0, help='Group complete sentences into model jobs; zero preserves one-sentence jobs. Does not limit chapter length.')
-    parser.add_argument("--model", default="gpt-6.1-sol")
+    parser.add_argument("--model", default="gpt-6-luna")
     parser.add_argument('--workers', type=int, default=4, help='Concurrent annotation model jobs (default: 4)')
     args = parser.parse_args()
     report = asyncio.run(KoreanHarness(args.run_dir, args.chapter, existing=args.existing, model=args.model, workers=args.workers, level=args.level, stop_after=args.stop_after, annotation_batch_characters=args.annotation_batch_characters).run())

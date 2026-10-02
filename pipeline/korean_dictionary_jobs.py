@@ -51,7 +51,7 @@ def producer(harness, prompt, context, *, batch_size=24):
                     'including comparable entries. Preserve unrelated definitions. Do not draft entries here. '
                     'Output JSON only; no tools. '
                     + payload(required=required, previous=previous, issues=issues),
-                    repair_schema, 'medium', tool_profile='offline')
+                    repair_schema, 'low', tool_profile='offline')
                 validate(selection, REPAIRS)
                 selected = {(entry['kind'], entry['entry_id']) for entry in selection['entries']}
                 if not selected or not selected <= set(required):
@@ -81,7 +81,7 @@ def producer(harness, prompt, context, *, batch_size=24):
                     + payload(**inputs, repair_identities=sorted(identity_set & selected),
                         previous_entries=list(old_entries.values()), issues=errors,
                         **({'reviewed_lexical_usage_evidence': usages} if usages else {})),
-                    contracts.schema_path('dictionary'), 'medium', tool_profile='offline')
+                    contracts.schema_path('dictionary'), 'low', tool_profile='offline')
                 try:
                     validate_delta(value, word_requests, grammar_requests, {}, {})
                     current = entries(value)

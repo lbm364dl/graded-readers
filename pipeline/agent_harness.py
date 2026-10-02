@@ -510,6 +510,11 @@ class CodexRunner:
     launch_timeout_seconds: float = 60.0
     launch_backoff_seconds: float = 0.25
 
+    def __post_init__(self):
+        # Repository-wide worker policy, including research and independent
+        # review. Legacy callers cannot silently select a costlier model.
+        self.model = "gpt-6-luna"
+
     @staticmethod
     def _completed_timeout_result(
         result_path: Path, events_path: Path, schema_path: Path
@@ -600,6 +605,7 @@ class CodexRunner:
         tool_profile: str | None = None,
         cache_only: bool = False,
     ) -> dict[str, Any]:
+        effort = "low"
         job_dir = self.run_dir / "agents" / job
         job_dir.mkdir(parents=True, exist_ok=True)
         result_path = job_dir / "result.json"
@@ -611,7 +617,14 @@ class CodexRunner:
             fingerprint = digest(fingerprint, tool_profile, 'tool-profile-v1')
         if not refresh and result_path.exists() and meta_path.exists():
             meta = json.loads(meta_path.read_text())
-            if meta.get("fingerprint") == fingerprint and meta.get("return_code") == 0:
+            retained_fingerprint = None
+            if cache_only and meta.get('model') and meta.get('effort'):
+                retained_fingerprint = digest(prompt, schema.read_text(), meta['model'], meta['effort'])
+                if tool_profile is not None:
+                    retained_fingerprint = digest(retained_fingerprint, tool_profile, 'tool-profile-v1')
+            matching = meta.get('fingerprint') == fingerprint or (
+                retained_fingerprint is not None and meta.get('fingerprint') == retained_fingerprint)
+            if matching and meta.get("return_code") == 0:
                 try:
                     self._check_tool_profile(job_dir, tool_profile, meta)
                 except ValueError:
