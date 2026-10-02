@@ -16,10 +16,11 @@ def test_reviewed_context_preserves_exact_source_and_finding():
     assert findings[0]['finding_en']
 
 
+@pytest.mark.parametrize('record_index', range(len(json.loads(REFERENCE.read_text())['records'])))
 @pytest.mark.parametrize('change', ['finding', 'review', 'completion', 'source', 'quotation'])
-def test_unreviewed_or_stale_context_is_rejected(tmp_path, change):
+def test_unreviewed_or_stale_context_is_rejected(tmp_path, change, record_index):
     data = json.loads(REFERENCE.read_text())
-    record = data['records'][0]
+    record = data['records'][record_index]
     if change == 'finding':
         record['draft']['finding_en'] = 'An unsupported replacement'
     elif change == 'review':
