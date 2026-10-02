@@ -1135,6 +1135,36 @@ def test_review_dedup_does_not_confuse_equal_scalar_values_with_equal_roles():
     assert unique == {'target_level': 1, 'pending': []}
 
 
+def test_reference_rows_preserve_all_published_dictionary_knowledge_and_reject_missing_fields():
+    for path in (dictionary.WORDS, dictionary.GRAMMAR):
+        entries = list(dictionary._registry(path).values())
+        before = copy.deepcopy(entries)
+        packed = contracts.reference_view(entries)
+        assert contracts.expand_reference_view(packed) == entries
+        assert len(json.dumps(packed, ensure_ascii=False)) < len(json.dumps(entries, ensure_ascii=False))
+        assert entries == before
+    with pytest.raises(ValueError, match='do not omit'):
+        contracts.reference_view([{'id': 'one', 'definition_en': 'Complete meaning'}, {'id': 'two'}])
+    with pytest.raises(ValueError, match='Invalid lossless'):
+        contracts.expand_reference_view({'format': 'lossless_reference_rows', 'columns': ['id'], 'rows': [['one', 'extra']]})
+
+
+def test_review_dedup_understands_lossless_references_but_keeps_changed_meanings():
+    from pipeline.korean_agent_harness import review_task, payload
+    entries = [{'id': 'one', 'definition_en': 'Original complete meaning'}]
+    packed = contracts.reference_view(entries)
+    _, unique = review_task(payload(words=packed), {'approved_words': entries})
+    assert unique == {}
+    _, unique = review_task(payload(words=packed), {'words': entries})
+    assert unique == {}
+    changed = [{'id': 'one', 'definition_en': 'Different contextual claim'}]
+    _, unique = review_task(payload(words=packed), {'approved_words': changed})
+    assert unique == {'words': packed}
+    empty = contracts.reference_view([])
+    _, unique = review_task(payload(words=empty), {'unrelated_empty_role': []})
+    assert unique == {'words': empty}
+
+
 def test_annotation_resume_recovers_reviewed_assembly_and_preserves_issues(tmp_path):
     from pipeline.korean_agent_harness import annotation_reuse_candidate, normalize_existing, save
     chapter = manual_chapter()

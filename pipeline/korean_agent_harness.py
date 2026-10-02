@@ -178,10 +178,11 @@ def review_task(prompt: str, context: dict) -> tuple[str, dict]:
         if not isinstance(data, dict):
             raise ValueError('Korean task payload must be an object')
         for key, value in data.items():
-            if key not in context and not (isinstance(value, (dict, list)) and value
-                    and any(type(value) is type(existing) and value == existing for existing in context.values())):
+            comparable = contracts.expand_reference_view(value)
+            if key not in context and not (isinstance(comparable, (dict, list)) and comparable
+                    and any(type(comparable) is type(existing) and comparable == existing for existing in context.values())):
                 unique[key] = value
-            elif key in context and (type(value) is not type(context[key]) or value != context[key]):
+            elif key in context and (type(comparable) is not type(context[key]) or comparable != context[key]):
                 unique[key] = value  # Preserve explicitly different task evidence.
         instructions += block[end:]
     return instructions, unique
@@ -801,7 +802,8 @@ class KoreanHarness:
             annotation_prompt += "Meaning_en is the whole observed form. The final form-step meaning must retain the occurrence meaning and contextual tense, including past time inherited by a connective. Intermediate stages explain their own complete forms; the dictionary lemma remains neutral. Labels describe morphology and politeness separately from the complete meaning. "
             annotation_words = [entry for entry in self.words.values()
                 if self.level == 1 or entry['id'] in profiles or entry['headword'] in proposed_headwords]
-            annotation_prompt += payload(prose=prose, reviewed_source_context=reviewed_source_context, words=annotation_words, grammar=list(self.grammar.values()), lexical_plan=focus, nikl_A=[([e["id"], e["meaning"]] if e["meaning"] else e["id"]) for e in beginner] if self.level == 1 else [], lexical_candidates=candidate_entries,
+            annotation_prompt += 'Approved word and grammar references use lossless_reference_rows: the columns array names each field once, and every row contains its corresponding values in that order. All identities, meanings and explanations are unabridged; read each value using its column name. '
+            annotation_prompt += payload(prose=prose, reviewed_source_context=reviewed_source_context, words=contracts.reference_view(annotation_words), grammar=contracts.reference_view(list(self.grammar.values())), lexical_plan=focus, nikl_A=[([e["id"], e["meaning"]] if e["meaning"] else e["id"]) for e in beginner] if self.level == 1 else [], lexical_candidates=candidate_entries,
                 lexical_reference=read(LEXICAL_REFERENCE),
                 lexical_research_unresolved=lexical_research_unresolved,
                 candidate_policy='Search candidates are not approved senses or grades. Select the identity and POS matching the actual occurrence; retain distinct homonyms and do not invent an ID.')

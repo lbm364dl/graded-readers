@@ -236,6 +236,24 @@ def annotation_chunks(text: str, *, batch_characters: int = 0) -> list[str]:
     return chunks
 
 
+def reference_view(entries: list[dict]) -> dict:
+    """Keep every reference value while naming shared fields only once."""
+    columns = list(entries[0]) if entries else []
+    if any(set(entry) != set(columns) for entry in entries):
+        raise ValueError('Reference rows need uniform fields; do not omit differing reference data')
+    return {'format': 'lossless_reference_rows', 'columns': columns,
+            'rows': [[entry[column] for column in columns] for entry in entries]}
+
+
+def expand_reference_view(value):
+    if not isinstance(value, dict) or value.get('format') != 'lossless_reference_rows':
+        return value
+    columns, rows = value['columns'], value['rows']
+    if len(set(columns)) != len(columns) or any(len(row) != len(columns) for row in rows):
+        raise ValueError('Invalid lossless reference columns or rows')
+    return [dict(zip(columns, row)) for row in rows]
+
+
 def annotation_view(value: dict, *, max_characters: int = 800000) -> dict:
     """Losslessly pack large agent inputs; never trim annotation coverage."""
     import json
