@@ -1142,6 +1142,49 @@ def test_partial_review_repair_recovers_new_proposals_not_rejected_data(tmp_path
     assert fresh == ([] if repaired else ['annotation-1-chunk-001-1'])
 
 
+@pytest.mark.parametrize('valid_identity', [True, False])
+def test_annotation_refreshes_stale_catalog_without_accepting_unreviewed_ids(tmp_path, valid_identity):
+    from pipeline.korean_agent_harness import read, save, normalize_existing
+    fixture, run = tmp_path / 'fixture', tmp_path / 'run'
+    make_reviewed_run(fixture)
+    chapter = read(fixture / 'chapter.json')
+    raw = normalize_existing(chapter, dictionary._registry(dictionary.WORDS))
+    chunks = contracts.slice_annotations(raw, contracts.annotation_chunks(chapter['text']))
+    target = next(s for s in raw['segments'] if s['lexical_kind'] == 'vocabulary')
+    class Runner:
+        def __init__(self): self.jobs = []
+        async def call(self, job, prompt, *args, **kwargs):
+            self.jobs.append(job)
+            if '-review-' in job:
+                value = {'approved': True, 'issues': []}
+            elif '-chunk-' in job:
+                number = int(job.split('-chunk-')[1].split('-')[0])
+                if job.endswith('-1') and number == 1:
+                    inputs = json.loads(prompt.rsplit('\nINPUT:\n', 1)[1])
+                    assert target['lexical_id'] in {e['id'] for e in inputs['newly_reviewed_lexical_candidates']}
+                value = copy.deepcopy(chunks[number - 1])
+                if not valid_identity:
+                    for segment in value['segments']:
+                        if segment['lexical_id'] == target['lexical_id']:
+                            segment['lexical_id'] = 'unreviewed-identity'
+            else:
+                value = read(fixture / 'agents' / job.rsplit('-', 1)[0] / 'result.json')
+            save(run / 'agents' / job / 'result.json', value)
+            save(run / 'agents' / job / 'meta.json', {'return_code': 0})
+            return value
+    runner = Runner()
+    harness = KoreanHarness(run, 1, runner=runner)
+    # Simulate a catalog captured before another worker promoted the identity.
+    harness.catalog.pop(target['lemma'])
+    if valid_identity:
+        assert asyncio.run(harness.run())['status'] == 'complete'
+        assert all(j.endswith('-0') for j in runner.jobs if '-chunk-' in j)
+    else:
+        with pytest.raises(ValueError, match='failed reconstruction'):
+            asyncio.run(harness.run())
+        assert not (run / 'report.json').exists()
+
+
 def test_primary_lexical_reference_distinguishes_expression_frame_from_lemma():
     from pipeline.korean_agent_harness import LEXICAL_REFERENCE, read
     note = next(n for n in read(LEXICAL_REFERENCE)['entries'] if n['sense_id'] == 'krdict-62210-32')

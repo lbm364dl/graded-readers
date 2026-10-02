@@ -688,6 +688,10 @@ class KoreanHarness:
                 def validate_chunk(value, text):
                     validate(value, contracts.ANNOTATION)
                     contracts.check_reconstruction(value['segments'], text)
+                    # Other editions can promote reviewed primary identities
+                    # while this chapter runs. Do not reject a current approved
+                    # identity because this harness captured an older catalog.
+                    self.catalog = contracts.lexical_catalog()
                     requests, grammar_ids = annotation_requests(value, self.catalog, focus, self.words)
                     fragment = contracts.canonical_annotation(value,
                         {'title': prose['title'], 'text': text}, self.number, EDITION, bound_plan, focus, level=self.level)
@@ -749,11 +753,19 @@ class KoreanHarness:
                         if repair == repair_start + 3 and not researched_identity:
                             break
                         chunk_job = f"{job}-chunk-{number:03d}-{repair}"
+                        self.catalog = contracts.lexical_catalog()
+                        requested_headwords = proposed_headwords | {
+                            s['lemma'] for s in (previous_chunk or {}).get('segments', [])
+                            if s['lexical_kind'] == 'vocabulary'}
+                        original_ids = {e['id'] for e in candidate_entries}
+                        new_candidates = [e for e in lexical_candidates(requested_headwords, self.catalog)
+                                          if e['id'] not in original_ids]
                         try:
                             value = await self.runner.call(chunk_job, self.policy + "\n" + annotation_prompt
                                 + "\nThis job annotates ONLY chunk_text, not the full chapter. "
                                 "All segment/link indices start at zero for this chunk. Include trailing spaces/newlines as punctuation. "
                                 + payload(chunk_text=text, previous_chunk=previous_chunk, issues=errors,
+                                    **({'newly_reviewed_lexical_candidates': new_candidates} if new_candidates else {}),
                                     **({'linguistic_reference': read(LINGUISTIC_REFERENCE)} if errors else {})),
                                 contracts.schema_path("annotation"), "medium", tool_profile="offline")
                         except ValueError as error:

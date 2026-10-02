@@ -397,3 +397,13 @@ identity remains separate. The new candidate has no inferred curriculum grade;
 its passage binding must still be checked against the six-level source and its
 annotation reviewed. The investigation also excludes -화 suffix records and
 화하다 roots from the standalone noun request.
+
+Parallel primary research can finish after a long-running annotator captures
+its candidate list. TOPIK 5 retried its unresolved calamity tap while the shared
+registry already contained the reviewed identity. Annotation now reloads the
+validated catalog before generating and validating each batch, supplying newly
+available candidates for its requested headwords without repeating the original
+list. End-to-end regressions contrast a stale snapshot that now accepts the
+current reviewed identity with an invented ID that still fails, and verify the
+repair worker receives the current exact IDs. This changes candidate availability,
+not linguistic approval or curriculum grading.

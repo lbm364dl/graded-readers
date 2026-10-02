@@ -6715,6 +6715,130 @@
         ]
       },
       "occurrence_requests_digest": "647fb98863e12da24007cf25bd078f7f5cc9cdf5aab8a5c09f6762d42f254cf9"
+    },
+    {
+      "headwords": [
+        "귀신같다"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "stdict-42639/형",
+            "headword": "귀신같다",
+            "pos": "형",
+            "meaning_en": "Remarkably accurate in action or guessing and exceptionally skillful.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=42639",
+            "evidence_en": "The supplied readable Standard Dictionary snapshot attests 귀신-같다 (鬼神같다), POS 형용사, with this meaning. No existing identity was supplied. Basic Dictionary search results also list the adjective, but its direct record and ParaWordNo could not be verified, so the verified supplied Standard record supports this fallback. The sense concerns extraordinary accuracy or skill; it does not establish a supernatural meaning."
+          }
+        ],
+        "unresolved": []
+      },
+      "proposal_digest": "9060a2efb213f720765469b5f6fad87093bfc3b1b785696bee2c15ada1fb514d",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "f5a2d9c8f3d90c146ad2bd4aa1134d58e89b785c30fc1f051640e1e00c17acde",
+      "primary_evidence": [
+        {
+          "headword_request": "귀신같다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EA%B7%80%EC%8B%A0%EA%B0%99%EB%8B%A4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=42639",
+              "content_sha256": "67f509c2f7d5e3af13d372fb35972c57830ca067de1779507b7b05c4f9e9ea45",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 귀신-같다 (鬼神같다 ) 원어 鬼 귀신 귀 부수 鬼/총획 10 神 귀신 신 부수 示/총획 10 같다 한자 고유어 발음 [귀ː신갇따 ] 활용 귀신같아[귀ː신가타], 귀신같으니[귀ː신가트니] 부표제어 귀신같-이 「형용사」 동작이나 추측이 정확하고 재주가 기막히게 뛰어나다. 귀신같은 솜씨. 그의 귀신같은 노름 솜씨를 알고 있는 사병들은 그와 절대로 노름 같은 것은 하지 않는다. ≪홍성원, 육이오≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "proposal_records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=42639",
+              "content_sha256": "67f509c2f7d5e3af13d372fb35972c57830ca067de1779507b7b05c4f9e9ea45",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 귀신-같다 (鬼神같다 ) 원어 鬼 귀신 귀 부수 鬼/총획 10 神 귀신 신 부수 示/총획 10 같다 한자 고유어 발음 [귀ː신갇따 ] 활용 귀신같아[귀ː신가타], 귀신같으니[귀ː신가트니] 부표제어 귀신같-이 「형용사」 동작이나 추측이 정확하고 재주가 기막히게 뛰어나다. 귀신같은 솜씨. 그의 귀신같은 노름 솜씨를 알고 있는 사병들은 그와 절대로 노름 같은 것은 하지 않는다. ≪홍성원, 육이오≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "79350a9c204743c7a09e621d448f3469f5e685e6114c327e561717def1be6272",
+      "occurrence_requests": {
+        "귀신같다": [
+          {
+            "text": "귀신같습니다",
+            "meaning_en": "are uncanny"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "150940306a061fc4e8b3993a760b448cb20437a82fb7e5b7a43c1ae6343cc58d"
+    },
+    {
+      "headwords": [
+        "대감"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "krdict-42141/명",
+            "headword": "대감",
+            "pos": "명",
+            "meaning_en": "An honorific title for a high-ranking official in the Joseon dynasty.",
+            "primary_url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=42141&nation=eng&nationCode=6",
+            "evidence_en": "The retrieved Basic Dictionary record lists 대감 (大監), POS 명사, and defines it as an honorific for a high-ranking Joseon official. This covers the requested 'His Lordship' usage. No existing catalog identity was supplied."
+          }
+        ],
+        "unresolved": [
+          {
+            "headword": "대감",
+            "reason_en": "The supplied Standard Dictionary snapshot identifies a distinct noun 대감 (大鑑), a one-volume overview of a field, under word_no=80068. Its direct record could not be retrieved for independent verification, and no standalone Basic Dictionary record for this homonym was verified. The 大監 record at word_no=80067 overlaps krdict-42141/명 and does not warrant a duplicate identity."
+          }
+        ]
+      },
+      "proposal_digest": "3f2bc2a01376eb93906d29ffeb59167a5b923f214c7f338a648bc9335edad42b",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "f5a2d9c8f3d90c146ad2bd4aa1134d58e89b785c30fc1f051640e1e00c17acde",
+      "primary_evidence": [
+        {
+          "headword_request": "대감",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EB%8C%80%EA%B0%90",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=80067",
+              "content_sha256": "35062b475f7d0e73441641c729ec770af65d44803b0603e151189f9780241ae0",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 대감 1 (大監 ) 원어 大 큰 대 부수 大/총획 3 監 볼 감 부수 皿/총획 14 한자 발음 [대ː감 ] 「참고 어휘」 소감(少監) 「명사」 「1」 『민속』 무당이 굿할 때에, 집이나 터, 나무, 돌 따위에 붙어 있는 신이나 그 밖의 여러 신을 높여 이르는 말. 「2」 『역사』 신라 때에, 병부·시위부·패강진전 따위에 둔 무관 벼슬. 병부 대감은 아찬 이하, 시위부 대감은 나마 이상 아찬까지, 패강진전 대감은 사지 이상 중아찬까지의 벼슬아치들을 임명하였다. 「3」 『역사』 조선 시대에, 정이품 이상의 벼슬아치를 높여 부르던 말. 벼슬이나 지명 따위에 붙여서 불렀다. 영의정 대감 . 재동 대감 . 운양 대감 . 관용구/속담 속담 대감 말이 죽었다면 먹던 밥을 밀쳐 놓고 가고, 대감이 죽었다면 먹던 밥 다 먹고 간다 대감의 말이 죽으면 대감의 환심을 사기 위하여 소식을 듣는 대로 바로 조문을 가지만 대감이 죽은 후에는 그에게 잘 보일 필요가 없어 먹던 밥을 다 먹고 느긋이 간다는 뜻으로, 권력이 있을 때는 아첨을 하지만 권력이 없어지면 돌아다보지 않는 세상인심을 비유적으로 이르는 말. = 대감 죽은 데는 안 가도 대감 말 죽은 데는 간다 . 속담 대감 죽은 데는 안 가도 대감 말 죽은 데는 간다 대감이 죽은 후에는 그에게 잘 보일 필요가 없으나 대감이 살고 말이 죽으면 대감의 환심을 사기 위하여 조문을 간다는 뜻으로, 권력이 있을 때는 아첨을 하지만 권력이 없어지면 돌아다보지 않는 세상인심을 비유적으로 이르는 말. ≒ 대감 말이 죽었다면 먹던 밥을 밀쳐 놓고 가고, 대감이 죽었다면 먹던 밥 다 먹고 간다 , 정승 말[개/당나귀] 죽은 데는 (문상을) 가도 정승 죽은 데는 (문상을) 안 간다 , 호장 댁네 죽은 데는 가도 호장 죽은 데는 가지 않는다 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=80068",
+              "content_sha256": "d6770c6ca5e753120872dd2e18824199786485cd3075dd72c40c415f171548c9",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 대감 2 (大鑑 ) 원어 大 큰 대 부수 大/총획 3 鑑 거울 감 부수 金/총획 22 한자 발음 [대ː감 ] 「명사」 한 권만으로 관련 분야 전체에 관한 대강의 지식을 얻을 수 있게 엮은 책. 전국 학교 대감 . 지리 대감 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "proposal_records": [
+            {
+              "primary_url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=42141&nation=eng&nationCode=6",
+              "content_sha256": "5f41024465011a108b8f7617b71f187976055d933e399bd0a2d2994e6629ac4b",
+              "text": "한국어기초사전 이 누리집은 대한민국 공식 전자정부 누리집입니다. Search by Category Small Window Dictionary Search Advanced Search Delete Delete Phụ âm b c d đ g h k l m n p q r s t v x f j w z Nguyên âm a á à ả ã ạ ă ắ ằ ẳ ẵ ặ â ấ ầ ẩ ẫ ậ o ó ò ỏ õ ọ ô ố ồ ổ ỗ ộ ơ ớ ờ ở ỡ ợ e é è ẻ ẽ ẹ ê ế ề ể ễ ệ u ú ù ủ ũ ụ ư ứ ừ ử ữ ự i í ì ỉ ĩ ị y ý ỳ ỷ ỹ ỵ à â æ À Â Æ ç Ç é è ë ê É È Ë Ê î ï Î Ï ô œ Ô Œ ù û ü Ù Û Ü á Á é É í Í ó Ó ú ü Ú Ü ñ Ñ ¡ ¿ Download 가 가 Print 대감 (大監 ) Pronunciation [대ː감 듣기 ] Part of Speech 「명사」 Noun His Excellency (높이는 말로) 조선 시대의 높은 벼슬아치. (polite form) A high-ranking public official in the Joseon Dynasty era. 대감 어른. 대감 을 뵙다. 대감 께 아뢰다. 가: 대감 어른, 한양에서 김 대감 과 박 대감 이 오셨습니다. 나: 어서 방으로 모시어라. 가: 무슨 일로 왔느냐? 나: 대감 께 아뢸 말씀이 있사옵니다. 가: 영의정 대감 을 뵙고 싶습니다. 나: 천한 것이 감히 누구를 만나고자 하느냐? Send opinion Send opinion Security Characters Play audio Refresh Name Title Content Send opinion We are looking forward to receiving your opinions regarding dictionary content. (Although we are not able to reply, we will refer to your opinion for dictionary content development and supplementation.) View Mode Korean + English Korean English My Search History Listening to Korean pronunciation services are partly provided by NAVER Cultural Foundation Corp. Help Translation guideline Copyright Policy Notice Open API Suggestion Basic Korean Dictionary National Institute of Korean Language Move Original Language Sino-Korean word 大 큰 대 부수 大/총획 3 監 볼 감 부수 皿/총획 14"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "cbe9cba61f34b60c11d2af1a95ba45c6ccedb9349b65b2be63b1a981c5e23c95",
+      "occurrence_requests": {
+        "대감": [
+          {
+            "text": "대감의",
+            "meaning_en": "His Lordship's"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "93c7b6eeb97e6ba6962dce96f3ae8e1ec64dd74fe950e75bf8e75e0b4cbd42a3"
     }
   ]
 }
