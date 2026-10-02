@@ -4713,6 +4713,683 @@
         }
       ],
       "primary_evidence_digest": "84cc2bbb7f4ce509f6c755cde45ad10945420cfae2b9bdd40a4f76118747753b"
+    },
+    {
+      "headwords": [
+        "통곡하다",
+        "하녀",
+        "한시",
+        "한집",
+        "호통치다",
+        "후세"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "krdict-84176/명",
+            "headword": "하녀",
+            "pos": "명",
+            "meaning_en": "A female domestic servant who does kitchen work or household chores.",
+            "primary_url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=84176&nation=eng",
+            "evidence_en": "The retrieved Basic Dictionary record explicitly lists 하녀 (下女), 「명사」, and defines a woman doing kitchen work or chores in another person's house. No existing identity was supplied."
+          },
+          {
+            "id": "krdict-85561/명",
+            "headword": "한시",
+            "pos": "명",
+            "meaning_en": "The same time; a brief moment.",
+            "primary_url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaNationCode=6&ParaWordNo=85561&captchaNumber=&commentTitle=&comment_user_name=&divSearch=defViewGlobal&nation=eng&nationCode=6&viewTypes=on&wordComment=",
+            "evidence_en": "The retrieved Basic Dictionary record lists 한시, homonym 1 (한時), 「명사」, with separate meanings of the same time and a brief period. This identity does not cover 漢詩 or the book title 韓詩. No existing identity was supplied."
+          },
+          {
+            "id": "krdict-88260/동",
+            "headword": "호통치다",
+            "pos": "동",
+            "meaning_en": "To scold someone loudly or harshly.",
+            "primary_url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=88260",
+            "evidence_en": "The retrieved Basic Dictionary record explicitly lists 호통치다, 「동사」, meaning to scold loudly or harshly. It is a standalone lexical verb. No existing identity was supplied."
+          }
+        ],
+        "unresolved": [
+          {
+            "headword": "통곡하다",
+            "reason_en": "The supplied Standard Dictionary snapshot identifies 통곡하다 as a verb meaning to weep loudly in grief, record 343031, but direct retrieval failed. Basic Dictionary results mentioned it only under other headwords; no readable standalone record was obtained. Verification remains incomplete, not evidence that the word is incorrect."
+          },
+          {
+            "headword": "한시",
+            "reason_en": "The separate 漢詩 noun is supported by supplied Standard Dictionary snapshot 366256, but its direct record could not be retrieved and no readable standalone Basic Dictionary record was obtained. Keep it pending separately from krdict-85561/명. Supplied record 366257 identifies 韓詩 as a particular book title, excluded by the proper-name restriction."
+          },
+          {
+            "headword": "한집",
+            "reason_en": "The supplied Standard Dictionary snapshot identifies 한집 as a noun meaning the same house, its resident family, or the same related family, record 365644. Direct retrieval failed; Basic Dictionary mentions under 일가 do not establish a standalone identity. Pending independent record verification."
+          },
+          {
+            "headword": "후세",
+            "reason_en": "The supplied Standard Dictionary snapshot identifies 후세 (後世) as a noun for later times or generations, also the future life in Buddhism, record 507374. Direct retrieval failed; mentions under other Basic Dictionary headwords are insufficient. Pending independent record verification."
+          }
+        ]
+      },
+      "proposal_digest": "4484e429c0d1248e563214b7125200a9f261445ed12ded668580a299d64037b4",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "f5a2d9c8f3d90c146ad2bd4aa1134d58e89b785c30fc1f051640e1e00c17acde",
+      "primary_evidence": [
+        {
+          "headword_request": "통곡하다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%ED%86%B5%EA%B3%A1%ED%95%98%EB%8B%A4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=343031",
+              "content_sha256": "e3a8b9c46da5be1b8596de3d4efc7279ba64d8d8c815f255ec9216b63a16c882",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 통곡-하다 (痛哭하다/慟哭하다 ) 원어 痛 아플 통 부수 疒/총획 12 哭 울 곡 부수 口/총획 10 하다 한자 고유어 원어 慟 서럽게 울 통 부수 心/총획 14 哭 울 곡 부수 口/총획 10 하다 한자 고유어 발음 [통ː고카다 ] 활용 통곡하여[통ː고카여](통곡해[통ː고캐]), 통곡하니[통ː고카니] 주표제어 통곡 2 편집 이력 「동사」 소리를 높여 슬피 울다. 통곡하는 소리. 어머니의 시신을 붙들고 통곡하다 . 관 모서리에 이마를 비비며 통곡하였다 . ≪심훈, 영원의 미소≫ 「비슷한말」 교연하다(噭然하다) 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "하녀",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%ED%95%98%EB%85%80",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=360601",
+              "content_sha256": "816914ff9127e864575772ac45c8417203b8479d566e4528cec90726af27eeae",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 하녀 (下女 ) 원어 下 아래 하 부수 一/총획 3 女 계집 녀 계집 여 부수 女/총획 3 한자 발음 [하ː녀 ] 편집 이력 「명사」 사삿집이나 여관 따위에 고용되어 부엌일이나 허드렛일을 맡아서 하는 여자 하인. ≒ 하비 . 주인집 딸은 제 또래의 어린 하녀를 데리고 시집을 갔다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "한시",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%ED%95%9C%EC%8B%9C",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=366256",
+              "content_sha256": "7d1ed869f3455b5061488e98381753b690edcd404b25db759515dd8461ed3578",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 한시 2 (漢詩 ) 원어 漢 한나라 한 부수 水/총획 14 詩 시 시 부수 言/총획 13 한자 발음 [한ː시 ] 편집 이력 「명사」 「1」 『문학』 한문으로 이루어진 정형시. 고대 중국에서 이루어진 양식으로, 평측과 각운에 엄격하며, 한 구(句)는 네 자, 다섯 자, 일곱 자로 이루어진다. 고시, 절구, 율시, 배율 따위가 있다. ≒ 시 . 「2」 『문학』 중국 한나라 때의 시. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=366257",
+              "content_sha256": "53731182ed73413df209a96e717e10bd15ccfba176e71446c8baf8724361ad1c",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 한시 3 (韓詩 ) 원어 韓 나라 한 부수 韋/총획 17 詩 시 시 부수 言/총획 13 한자 발음 [한시 ] 「참고 어휘」 노시(魯詩) , 제시(齊詩) 「명사」 『책명』 중국 연나라의 한영이 전하였다고 하는 시경(詩經). 오늘날은 일부분만 전한다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=499896",
+              "content_sha256": "96c0275cddc11d1d787d2aaea7ab16154c5213e572fad5db785ce95ea55bbb64",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 한-시 1 (한時 ) 원어 한 時 때 시 부수 日/총획 10 고유어 한자 발음 [한시 ] 편집 이력 「명사」 「1」 같은 시각. 「2」 잠깐 동안. ≒ 일시 . 한시라도 빨리 이 끔찍한 곳을 떠나고 싶다. 제가 당신을 떠나 한시라도 마음 편하게 지낼 수 있었겠어요? 그는 잠자는 시간을 제외하면 한시도 집에 붙어 있지 않았다. 관용구/속담 관용구 한시(가) 새롭다 「1」 시간이 긴요하여 그 시간이 지나가는 것이 아쉽다. = 하루가 새롭다 . · 농민군들은 모두가 농사일이 한시가 새로웠으므로 오늘 새벽 첫닭이 울자마자 거의가 길을 떠났다.≪송기숙, 녹두 장군≫ 「2」 짧은 시간이 괴롭고 길게 느껴지다. = 하루가 새롭다 . · 그동안만 해도 밤잠을 마음 놓고 자지 못하느라고 신경이 피로한 끝이라, 인제는 한시가 새로운 모양이다.≪염상섭, 모략≫ 「3」 사물의 변화가 두드러지다. = 하루가 새롭다 . 관용구 한시가 급하다 매우 급하다. · 한시가 급한 일. 관용구 한시가 바쁘다 시각을 다툴 만큼 바쁘다. · 한시가 바쁜 판인데 어느 세월에 거기까지 걸어서 가겠느냐? 속담 한시를 참으면 백 날이 편하다 일시적인 화를 참으면 나중의 생활이 편하다는 뜻으로, 격분하더라도 참는 것이 제일이라는 말. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "한집",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%ED%95%9C%EC%A7%91",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=365644",
+              "content_sha256": "c65085c946f12b261314fcee01b696db2198349ab185d6eef441c7198a5d5e7b",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 한-집 발음 [한집 ] 활용 한집만[한짐만 ] 편집 이력 「명사」 「1」 같은 집. 그와 나는 한집에 산다. 「2」 한집에서 사는 가족. = 한집안 . 한집 식구. 「3」 혈연관계가 있는 같은 집안. = 한집안 . 관용구/속담 속담 한집 살아 보고 한배 타 보아야 속을 안다 사람의 마음은 오래 같이 지내면서 역경을 겪어 보아야 알 수 있다는 말. 속담 한집에 감투쟁이 셋이 변(變) 무슨 일에 나서서 주장하는 사람이 많으면 도리어 일이 잘 안된다는 말. 속담 한집에 늙은이가 둘이면 서로 죽으라고 민다 일할 사람이 여러 명이면 서로 미루기 때문에 일이 잘 안된다는 말. 속담 한집에 있어도 시어미 성을 모른다 같이 생활하는 친숙한 사이에서 응당 알고 있어야 할 것을 모르는 경우를 비유적으로 이르는 말. ≒ 머슴살이 삼 년에 주인 성 묻는다 , 십 년을 같이 산 시어미 성도 모른다 , 한집안에 김 별감 성을 모른다 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "호통치다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%ED%98%B8%ED%86%B5%EC%B9%98%EB%8B%A4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=516954",
+              "content_sha256": "cc9ddcb77410f8383c6c985761f603293e145e73ad3bd7e4f1e348c166c2ce0a",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 호통-치다 발음 [호통치다 ] 활용 호통치어[호통치어 /호통치여 ](호통쳐[호통처 ]), 호통치니[호통치니] 「동사」 크게 꾸짖거나 주의를 주다. 굵은 불덩이 같은 눈망울을 굴리며 노스님은 호통치듯 말했다. ≪박경리, 토지≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "후세",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%ED%9B%84%EC%84%B8",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=507374",
+              "content_sha256": "f908bed14c7d56a05efd26ab6ec6b429c413a05daf809bc6c28fce60b63390cd",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 후세 (後世 ) 원어 後 뒤 후 부수 彳/총획 9 世 세대 세 부수 一/총획 5 한자 발음 [후ː세 ] 편집 이력 「명사」 「1」 다음에 오는 세상. 또는 다음 세대의 사람들. ≒ 내엽 . 이름을 후세에 남기다. 자연환경은 후세에게 물려줄 인류의 재산이다. 열녀라고 하여서 정부나 사회에서 그것을 표창하여 주고 특별한 자는 열녀문을 지어서 후세까지 전하게 합니다. ≪한용운, 흑풍≫ 「비슷한말」 뒷뉘 「반대말」 전세(前世) 「2」 『불교』 삼세(三世)의 하나. 죽은 뒤에 다시 태어나 산다는 미래의 세상을 이른다. = 내세 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "proposal_records": [
+            {
+              "primary_url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaNationCode=6&ParaWordNo=85561&captchaNumber=&commentTitle=&comment_user_name=&divSearch=defViewGlobal&nation=eng&nationCode=6&viewTypes=on&wordComment=",
+              "content_sha256": "e142454ef96623afbe9b7aeb48f64752811b3f590077716c1e8884b2961bf59d",
+              "text": "한국어기초사전 이 누리집은 대한민국 공식 전자정부 누리집입니다. Search by Category Small Window Dictionary Search Advanced Search Delete Delete Phụ âm b c d đ g h k l m n p q r s t v x f j w z Nguyên âm a á à ả ã ạ ă ắ ằ ẳ ẵ ặ â ấ ầ ẩ ẫ ậ o ó ò ỏ õ ọ ô ố ồ ổ ỗ ộ ơ ớ ờ ở ỡ ợ e é è ẻ ẽ ẹ ê ế ề ể ễ ệ u ú ù ủ ũ ụ ư ứ ừ ử ữ ự i í ì ỉ ĩ ị y ý ỳ ỷ ỹ ỵ à â æ À Â Æ ç Ç é è ë ê É È Ë Ê î ï Î Ï ô œ Ô Œ ù û ü Ù Û Ü á Á é É í Í ó Ó ú ü Ú Ü ñ Ñ ¡ ¿ Download 가 가 Print 한시 1 (한時 ) Pronunciation [한시 듣기 ] Part of Speech 「명사」 Noun 1 . same time 1 . 같은 시각. The same time. 한시 에 끝나다. 한시 에 시작되다. 한시 에 일어나다. 한시 에 태어나다. 한시 에 함께하다. 우리는 쌍둥이로 같은 날 한시 에 태어났다. 그들은 사고로 인해 한시 에 세상을 떠났다. 알고 보니 우리는 그날 한시 에 같은 장소에 있었다. 가: 시험은 전국에서 같은 시각에 시작하나요? 나: 네, 전국 모든 시험장에서 한시 에 시작되고 끝납니다. 2 . moment 2 . 잠깐의 짧은 시간. A brief period of time. 한시 를 견디지 못하다. 한시 도 눈을 떼지 않다. 한시 도 맘을 놓지 못하다. 한시 라도 떨어지지 못하다. 한시 라도 잊지 못하다. 김 씨는 한시 도 정 씨를 원망해 본 적이 없었다. 아이는 한시 를 참지 못하고 과자에 손을 뻗었다. 소년은 한시 라도 빨리 새로운 기술을 배우고 싶었다. 지수는 한시 라도 빨리 서류를 넘겨주고 이 일에서 손을 털고 싶었다. 가: 회사 업무가 너무 많은 거 같아. 나: 맞아. 나는 회사에 들어온 이후로 한시 도 제대로 쉬어 본 적이 없어. Synonym 일시 1 Send opinion Send opinion Security Characters Play audio Refresh Name Title Content Send opinion We are looking forward to receiving your opinions regarding dictionary content. (Although we are not able to reply, we will refer to your opinion for dictionary content development and supplementation.) Idioms·Proverbs 2 Idiom 한시가 급하다 Even one moment is urgent 매우 급하다. To be very urgent. 의사는 환자의 상태가 한시가 급하다며 환자를 빨리 큰 병원으로 옮겼다. Sentence 1이 한시가 급하다 Idiom 한시가 바쁘다 Even a moment is busy 아주 짧은 시간도 아까울 만큼 바쁘다. To be very busy to such an extent that even a very short moment feels precious. 아이가 걱정되는지 어머니는 일이 끝나자마자 한시가 바쁘게 집으로 돌아갔다. Sentence 1이 한시가 바쁘다 View Mode Korean + English Korean English My Search History Listening to Korean pronunciation services are partly provided by NAVER Cultural Foundation Corp. Help Translation guideline Copyright Policy Notice Open API Suggestion Basic Korean Dictionary National Institute of Korean Language Move Original Language Native word 한 Sino-Korean word 時 때 시 부수 日/총획 10"
+            },
+            {
+              "primary_url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=84176&nation=eng",
+              "content_sha256": "810fb1294bdddc5a0c1948541eada44bf9f25bca4fecf3d288e25db752b4788a",
+              "text": "한국어기초사전 이 누리집은 대한민국 공식 전자정부 누리집입니다. Search by Category Small Window Dictionary Search Advanced Search Delete Delete Phụ âm b c d đ g h k l m n p q r s t v x f j w z Nguyên âm a á à ả ã ạ ă ắ ằ ẳ ẵ ặ â ấ ầ ẩ ẫ ậ o ó ò ỏ õ ọ ô ố ồ ổ ỗ ộ ơ ớ ờ ở ỡ ợ e é è ẻ ẽ ẹ ê ế ề ể ễ ệ u ú ù ủ ũ ụ ư ứ ừ ử ữ ự i í ì ỉ ĩ ị y ý ỳ ỷ ỹ ỵ à â æ À Â Æ ç Ç é è ë ê É È Ë Ê î ï Î Ï ô œ Ô Œ ù û ü Ù Û Ü á Á é É í Í ó Ó ú ü Ú Ü ñ Ñ ¡ ¿ Download 가 가 Print 하녀 (下女 ) Pronunciation [하ː녀 듣기 ] Part of Speech 「명사」 Noun maid; servant 남의 집에서 부엌일이나 허드렛일을 맡아서 하는 여자. A woman working in the kitchen or doing the chores in another's house. 하녀 취급. 하녀 가 시중들다. 하녀 를 고용하다. 하녀 를 두다. 하녀 를 부리다. 하녀 를 시키다. 주인은 하녀 에게 정원 손질도 시켰다. 부부는 자녀를 돌봐 줄 하녀 를 두었다. 그는 저택에서 하녀 를 다섯 명이나 거느리며 호화롭게 살았다. 가: 요즘 회사 생활이 힘들다며? 나: 직장 상사가 개인적인 심부름까지 시키면서 나를 하녀 취급해. See More Send opinion Send opinion Security Characters Play audio Refresh Name Title Content Send opinion We are looking forward to receiving your opinions regarding dictionary content. (Although we are not able to reply, we will refer to your opinion for dictionary content development and supplementation.) View Mode Korean + English Korean English My Search History Listening to Korean pronunciation services are partly provided by NAVER Cultural Foundation Corp. Help Translation guideline Copyright Policy Notice Open API Suggestion Basic Korean Dictionary National Institute of Korean Language Move Original Language Sino-Korean word 下 아래 하 부수 一/총획 3 女 계집 녀 계집 여 부수 女/총획 3"
+            },
+            {
+              "primary_url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=88260",
+              "content_sha256": "aad10a6a4d2ccf73817277354f169050868cf1b8c3724bc12223b47c0d98f03a",
+              "text": "한국어기초사전 이 누리집은 대한민국 공식 전자정부 누리집입니다. Search by Category Small Window Dictionary Search Advanced Search Delete Delete Phụ âm b c d đ g h k l m n p q r s t v x f j w z Nguyên âm a á à ả ã ạ ă ắ ằ ẳ ẵ ặ â ấ ầ ẩ ẫ ậ o ó ò ỏ õ ọ ô ố ồ ổ ỗ ộ ơ ớ ờ ở ỡ ợ e é è ẻ ẽ ẹ ê ế ề ể ễ ệ u ú ù ủ ũ ụ ư ứ ừ ử ữ ự i í ì ỉ ĩ ị y ý ỳ ỷ ỹ ỵ à â æ À Â Æ ç Ç é è ë ê É È Ë Ê î ï Î Ï ô œ Ô Œ ù û ü Ù Û Ü á Á é É í Í ó Ó ú ü Ú Ü ñ Ñ ¡ ¿ Download 가 가 Print 호통치다 Pronunciation [호통치다 듣기 ] Application 호통치어[호통치어 듣기 /호통치여 듣기 ](호통쳐[호통처 듣기 ]), 호통치니 Part of Speech 「동사」 Verb yell; roar; bawl 크게 꾸짖거나 혼을 내다. To shout loudly at someone or scold him/her harshly. 자주 호통치다 . 크게 호통치다 . 한바탕 호통치다 . 아버지는 아이가 나쁜 행동을 할 때마다 호통치며 벌을 주었다. 김 사장이 크게 호통치자 박 대리의 얼굴은 점점 붉게 달아올랐다. 가: 너 이놈의 자식, 또 사고 칠 거면 지금 짐 싸서 나가. 나: 아유, 여보. 너무 호통치지 마세요. 애가 놀라겠어요. Sentence 1이 호통치다 Send opinion Send opinion Security Characters Play audio Refresh Name Title Content Send opinion We are looking forward to receiving your opinions regarding dictionary content. (Although we are not able to reply, we will refer to your opinion for dictionary content development and supplementation.) View Mode Korean + English Korean English My Search History Listening to Korean pronunciation services are partly provided by NAVER Cultural Foundation Corp. Help Translation guideline Copyright Policy Notice Open API Suggestion Basic Korean Dictionary National Institute of Korean Language Move"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "bb4c014625194e83f5433762036a71dc53f540ffe94b318051888b02ce14d9c9"
+    },
+    {
+      "headwords": [
+        "길동은",
+        "어떻게",
+        "억울함",
+        "열여덟",
+        "크게"
+      ],
+      "proposal": {
+        "entries": [],
+        "unresolved": [
+          {
+            "headword": "길동은",
+            "reason_en": "Appears to be the proper name 길동 plus topic particle 은, not a standalone dictionary lemma. No readable exact NIKL headword record was verified; supplied records and catalog candidates are empty."
+          },
+          {
+            "headword": "어떻게",
+            "reason_en": "The ordinary usage is 어떻다 inflected with -게. No readable exact standalone Basic or Standard Dictionary record was verified. Do not create a lemma for the grammatical form; any separately lexicalized usage requires exact-record evidence."
+          },
+          {
+            "headword": "억울함",
+            "reason_en": "Can be formed productively from 억울하다 with nominalizer -ㅁ. No readable exact standalone Basic or Standard Dictionary record was verified, so a separate noun identity remains unconfirmed."
+          },
+          {
+            "headword": "열여덟",
+            "reason_en": "A natural native Korean numeral meaning eighteen. No readable exact standalone Basic or Standard Dictionary record was verified; an example under another headword is insufficient. This evidence limitation does not make the numeral incorrect."
+          },
+          {
+            "headword": "크게",
+            "reason_en": "The ordinary usage is 크다 inflected with -게. No readable exact standalone Basic or Standard Dictionary record was verified. Do not create a lemma for the grammatical form; any separately lexicalized adverb requires exact-record evidence."
+          }
+        ]
+      },
+      "proposal_digest": "8346bfcdb466df851a792eff54ade59180968b35978c5e66a93d117122dc0db6",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "c6a0027d0694ef196c9553b759424d8b6193bc75b157ffd83bda766412ea8f52",
+      "primary_evidence": [
+        {
+          "headword_request": "길동은",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EA%B8%B8%EB%8F%99%EC%9D%80",
+          "records": []
+        },
+        {
+          "headword_request": "어떻게",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%96%B4%EB%96%BB%EA%B2%8C",
+          "records": []
+        },
+        {
+          "headword_request": "억울함",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%96%B5%EC%9A%B8%ED%95%A8",
+          "records": []
+        },
+        {
+          "headword_request": "열여덟",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%97%B4%EC%97%AC%EB%8D%9F",
+          "records": []
+        },
+        {
+          "headword_request": "크게",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%ED%81%AC%EA%B2%8C",
+          "records": []
+        },
+        {
+          "proposal_records": []
+        }
+      ],
+      "primary_evidence_digest": "73190bead47a402a596d1ed7a0b802d3db8c4246a978984f94fc8b396b7b4d3c"
+    },
+    {
+      "headwords": [
+        "정자",
+        "조금이나마",
+        "존경받다",
+        "좌랑",
+        "지난",
+        "지체",
+        "징조",
+        "찬바람"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "stdict-299428/명",
+            "headword": "정자",
+            "pos": "명",
+            "meaning_en": "Another name for a rice-planting song.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299428",
+            "evidence_en": "Supplied primary snapshot explicitly lists 정자, 명사, music term, as another name for 모내기 노래. No preferred Basic Dictionary record verified."
+          },
+          {
+            "id": "stdict-299430/명",
+            "headword": "정자",
+            "pos": "명",
+            "meaning_en": "Cloves: dried flower buds of the clove tree.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299430",
+            "evidence_en": "Supplied primary snapshot lists 정자 (丁子), 명사, and defines dried clove-tree flower buds. Distinct noun homonym; no preferred Basic Dictionary record verified."
+          },
+          {
+            "id": "stdict-299431/명",
+            "headword": "정자",
+            "pos": "명",
+            "meaning_en": "A shape resembling the character 丁.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299431",
+            "evidence_en": "Supplied primary snapshot lists 정자 (丁字), 명사, and explicitly defines a 丁-shaped form. No preferred Basic Dictionary record verified."
+          },
+          {
+            "id": "stdict-299432/명",
+            "headword": "정자",
+            "pos": "명",
+            "meaning_en": "A shape resembling the character 井.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299432",
+            "evidence_en": "Supplied primary snapshot lists 정자 (井字), 명사, and explicitly defines a 井-shaped form. Distinct from 丁字; no preferred Basic Dictionary record verified."
+          },
+          {
+            "id": "stdict-299433/명",
+            "headword": "정자",
+            "pos": "명",
+            "meaning_en": "Midnight; the instant the sun crosses the meridian below the horizon.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299433",
+            "evidence_en": "Supplied primary snapshot lists 정자 (正子), 명사, with midnight and astronomical senses. No preferred Basic Dictionary record verified."
+          },
+          {
+            "id": "stdict-299434/명",
+            "headword": "정자",
+            "pos": "명",
+            "meaning_en": "A ninth-rank official position in Goryeo or Joseon, or its holder.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299434",
+            "evidence_en": "Supplied primary snapshot lists 정자 (正字), 명사, historical term: junior ninth rank in Goryeo and senior ninth rank in Joseon. Separate from the writing-related 正字 homonym."
+          },
+          {
+            "id": "stdict-299435/명",
+            "headword": "정자",
+            "pos": "명",
+            "meaning_en": "Assigning a courtesy name in addition to one's personal name.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299435",
+            "evidence_en": "Supplied primary snapshot lists 정자 (定字), 명사, and defines establishing a 자, a name used apart from the personal name. No preferred Basic Dictionary record verified."
+          },
+          {
+            "id": "stdict-479961/명",
+            "headword": "정자",
+            "pos": "명",
+            "meaning_en": "Neatly written characters; standard, unabbreviated Chinese characters.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=479961",
+            "evidence_en": "Supplied primary snapshot lists 정자 (正字), 명사, with these two writing-related senses. Distinct from historical-office record 299434; no preferred Basic Dictionary record verified."
+          },
+          {
+            "id": "stdict-306416/명",
+            "headword": "좌랑",
+            "pos": "명",
+            "meaning_en": "An official position of senior fifth rank in Goryeo or senior sixth rank in Joseon.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=306416",
+            "evidence_en": "Supplied primary snapshot lists 좌랑 (佐郞), 명사, historical term, and specifies both ranks. Basic Dictionary search yielded no standalone record; failed live retrieval does not invalidate this readable snapshot."
+          },
+          {
+            "id": "stdict-313155/명",
+            "headword": "지난",
+            "pos": "명",
+            "meaning_en": "Procrastination: dragging out and postponing work.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=313155",
+            "evidence_en": "Supplied primary snapshot lists 지난 (持難), 명사, and defines delaying rather than promptly handling work. This noun is separate from 지난 meaning 'past/last'; no preferred Basic Dictionary record verified."
+          },
+          {
+            "id": "stdict-314827/명",
+            "headword": "지체",
+            "pos": "명",
+            "meaning_en": "The social status or standing of a person or family.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=314827",
+            "evidence_en": "Supplied primary snapshot lists 지체, 명사, and explicitly defines social status or position. Distinct from the three Sino-Korean homonyms; no preferred Basic Dictionary record verified."
+          },
+          {
+            "id": "stdict-314828/명",
+            "headword": "지체",
+            "pos": "명",
+            "meaning_en": "The body of the Earth enclosed by its crust.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=314828",
+            "evidence_en": "Supplied primary snapshot lists 지체 (地體), 명사, Earth-science term, with this definition. No preferred Basic Dictionary record verified."
+          },
+          {
+            "id": "stdict-314839/명",
+            "headword": "지체",
+            "pos": "명",
+            "meaning_en": "The limbs and body collectively.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=314839",
+            "evidence_en": "Supplied primary snapshot lists 지체 (肢體), 명사, and defines the arms, legs and body collectively. No preferred Basic Dictionary record verified."
+          },
+          {
+            "id": "stdict-484901/명",
+            "headword": "지체",
+            "pos": "명",
+            "meaning_en": "Delay; unjustified delay in fulfilling an obligation.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=484901",
+            "evidence_en": "Supplied primary snapshot lists 지체 (遲滯), 명사, with general and legal delay senses. Retrieved Basic Dictionary record 77397 is 지체되다, 동사, and cannot establish the noun's preferred identity."
+          },
+          {
+            "id": "stdict-485934/명",
+            "headword": "징조",
+            "pos": "명",
+            "meaning_en": "A sign or indication that something will happen.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=485934",
+            "evidence_en": "Supplied primary snapshot lists 징조 (徵兆), 명사, and defines an indication of an impending event. Basic Dictionary examples under other headwords do not establish a preferred standalone identity."
+          },
+          {
+            "id": "stdict-488473/명",
+            "headword": "찬바람",
+            "pos": "명",
+            "meaning_en": "A figurative chilly, cold or unfriendly feeling or atmosphere.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=488473",
+            "evidence_en": "Supplied primary snapshot displays 찬-바람, 명사; the hyphen marks the compound boundary. Its definition is explicitly figurative and does not attest a literal cold-wind sense. No preferred Basic Dictionary record verified."
+          }
+        ],
+        "unresolved": [
+          {
+            "headword": "정자",
+            "reason_en": "The pavilion lexeme was previously reported as krdict-75888/명. Its direct Basic Dictionary text could not be retrieved in this check, so no duplicate stdict-479973/명 identity is proposed; the supplied Standard snapshot nevertheless clearly attests 정자 (亭子), 명사, meaning pavilion. The sperm homonym still lacks its own readable primary record. Supplied record 299429 lists 정자 (정子), 명사, but only redirects to 성자; its core meaning remains unverified. Basic Dictionary preference for the additional Standard homonyms remains uncertain, while their lexical attestation is established by the supplied snapshots."
+          },
+          {
+            "headword": "조금이나마",
+            "reason_en": "No standalone lexeme verified. Retrieved https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=70312 explicitly lists 이나마, 조사, attached after consonant-final nouns or adverbials, and includes 조금이나마 in an example. This attests grammatical composition, not a separate 조금이나마 lemma. The supplied Standard search contains no records."
+          },
+          {
+            "headword": "존경받다",
+            "reason_en": "No readable standalone Basic or Standard Dictionary record verified. Web search retrieved 존경받다 as an example under 거성, not as its own headword; the supplied Standard search contains no records. This natural formation is not thereby incorrect, but the evidence does not support assigning a primary dictionary identity."
+          },
+          {
+            "headword": "지난",
+            "reason_en": "The 'past/last' usage is an attributive conjugated form of 지나다 and does not share the lexical identity of the attested 持難 noun returned above. Supplied Standard record 313154 identifies 至難 only as a root of 지난하다, without an eligible standalone POS; record 313158 is the proper name Jinan. Neither is proposed as a new lexeme."
+          }
+        ]
+      },
+      "proposal_digest": "95967ec6b23f14b17b2eaa8ad4e848e0d6228285ef0a4fa9ae34143023dc7594",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "f5a2d9c8f3d90c146ad2bd4aa1134d58e89b785c30fc1f051640e1e00c17acde",
+      "primary_evidence": [
+        {
+          "headword_request": "정자",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%A0%95%EC%9E%90",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299428",
+              "content_sha256": "c05b9a3c759cbd7e6f00d8afe48ae686ec9f2c222aa86f7d05c2f37e7ca2e46f",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 1 발음 [정자 ] 「명사」 『음악』 ‘ 모내기 노래 ’의 다른 이름. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299429",
+              "content_sha256": "e869cf8ed3a656a384a69516f31c41c532686d264c2d072957472290115fd159",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 2 (정子 ) 원어 정 子 아들 자 부수 子/총획 3 고유어 한자 「명사」 → 성자 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299430",
+              "content_sha256": "e7abdc1c76c1f50f7ec2bb3e824496516bc475227ef4110e3289453eee5c9d68",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 3 (丁子 ) 원어 丁 고무래 정 부수 一/총획 2 子 아들 자 부수 子/총획 3 한자 발음 [정자 ] 「명사」 정향나무의 꽃봉오리를 따서 말린 것. 향기가 짙고 독특한 맛이 있다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299431",
+              "content_sha256": "9924a693c25f3c580548afee88c6697230a3d05cc3bd428d8a72c9e0f1bfd65e",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 4 (丁字 ) 원어 丁 고무래 정 부수 一/총획 2 字 글자 자 부수 子/총획 6 한자 발음 [정짜 ] 편집 이력 「명사」 ‘丁’ 자처럼 생긴 모양. = 정자형 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 4 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299432",
+              "content_sha256": "747192be47f197ddda04e981289d5f6395eb554e6a4c7a58545f2f788be1fdc2",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 5 (井字 ) 원어 井 우물 정 부수 二/총획 4 字 글자 자 부수 子/총획 6 한자 발음 [정짜 ] 편집 이력 「명사」 ‘井’ 자처럼 생긴 모양. = 정자형 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 5 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299433",
+              "content_sha256": "7050f5d541a72a6aeb81227b5e54345ee3c0dfb3e2a1cf51db1cbdd4a64fd789",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 6 (正子 ) 원어 正 바를 정 부수 止/총획 5 子 아들 자 부수 子/총획 3 한자 발음 [정ː자 ] 편집 이력 「명사」 「1」 자시(子時)의 한가운데. 밤 열두 시를 이른다. = 자정 . 「2」 『천문』 태양이 지평선 아래에서 자오선을 지나는 순간. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 6 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299434",
+              "content_sha256": "abd55aacaf5f57424739112fc606c42f6ca8fd660c7a6695b6b73bf2444770b1",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 8 (正字 ) 원어 正 바를 정 부수 止/총획 5 字 글자 자 부수 子/총획 6 한자 발음 [정ː자 ] 「명사」 「1」 『역사』 고려 시대에, 비서성·전교시에 속한 종구품 벼슬. 또는 그 벼슬에 있던 사람. 「2」 『역사』 조선 시대에, 홍문관·승문원·교서관에 속한 정구품 벼슬. 또는 그 벼슬에 있던 사람. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 8 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299435",
+              "content_sha256": "0914ece5f25a9905bf56b1a505ed623fd6d90fe4f23f660b711fffcb1b84ab99",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 9 (定字 ) 원어 定 정할 정 부수 宀/총획 8 字 글자 자 부수 子/총획 6 한자 발음 [정ː자 ] 부표제어 정자-하다 「명사」 본이름 이외에 부르는 이름인 자(字)를 정함. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 9 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=479961",
+              "content_sha256": "61f51d401392b6a5a9f9c3050a11956c6690ad309078a4f94f4088e2574eb56e",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 7 (正字 ) 원어 正 바를 정 부수 止/총획 5 字 글자 자 부수 子/총획 6 한자 발음 [정ː자 ] 「명사」 「1」 서체가 바르고 또박또박 쓴 글자. 이력서에 정자로 기입하다. 그는 칠판에 자신의 이름을 정자로 써 놓았다. 「2」 한자의 약자(略字)나 속자(俗字), 와자(訛字)가 아닌 본디의 글자. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 7 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=479973",
+              "content_sha256": "48d7fb91023bb268c6c314223e833bb8e4f2a959d88b3b9caeba4a256465c865",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 10 (亭子 ) 원어 亭 정자 정 부수 亠/총획 9 子 아들 자 부수 子/총획 3 한자 발음 [정자 ] 편집 이력 「명사」 경치가 좋은 곳에 놀거나 쉬기 위하여 지은 집. 벽이 없이 기둥과 지붕만 있다. ≒ 사정 , 정각 , 정사 . 정자에 오르다. 사랑채와 안채를 중심하여 사면에 누각과 같은 큰 문들이 있었고, 뜰 안엔 네 개의 정자와 그 정자를 둘러싼 큰 연못이 있었다. ≪정한숙, 고가≫ 다중 매체 Previous Next 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 10 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "조금이나마",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%A1%B0%EA%B8%88%EC%9D%B4%EB%82%98%EB%A7%88",
+          "records": []
+        },
+        {
+          "headword_request": "존경받다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%A1%B4%EA%B2%BD%EB%B0%9B%EB%8B%A4",
+          "records": []
+        },
+        {
+          "headword_request": "좌랑",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%A2%8C%EB%9E%91",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=306416",
+              "content_sha256": "e6479115f1dfa5bc7c821965394a36238850b7d266cd74f1335c1b5760adaeff",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 좌랑 (佐郞 ) 원어 佐 도울 좌 부수 人/총획 7 郞 사나이 랑 사나이 낭 부수 邑/총획 10 한자 발음 [좌ː랑] 「명사」 「1」 『역사』 고려 시대에, 육부(六部)·사사(四司)·육사(六司)·육조 따위에 둔 정오품 벼슬. 공민왕 18년(1369)에 산랑으로 고쳤다. 「2」 『역사』 조선 시대 육조의 정육품 벼슬. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "지난",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%A7%80%EB%82%9C",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=313154",
+              "content_sha256": "ec59fee69c4996177f4d87d0d11d03df32473a0fa09e6996b5474c0e344d9057",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 지난 1 (至難 ) 원어 至 이를 지 부수 至/총획 6 難 어려울 난 부수 隹/총획 19 한자 부표제어 지난-하다 1 ‘ 지난하다 ’의 어근. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=313155",
+              "content_sha256": "2ade0faead15de720f5a97fa35af87ce27b2d692216e2b435c8a0d50db0a30cf",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 지난 2 (持難 ) 원어 持 가질 지 부수 手/총획 9 難 어려울 난 부수 隹/총획 19 한자 발음 [지난] 부표제어 지난-하다 2 「명사」 일을 얼른 처리하지 아니하고 질질 끌며 미루기만 함. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=313158",
+              "content_sha256": "1258f80de16082849d5cb7411c1c4c5fc6dd093569c7bed9a0a35cce5b29f279",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 지난 3 (Jinan[濟南] ) 원어 Jinan[濟南] 편집 이력 「명사」 『지명』 중국 산둥성(山東省)에 있는 도시. 황허강(黃河江) 남쪽 기슭에 있는 교통의 요충지로 상공업이 발달하였다. 역사적으로 중요한 유적지가 많으며, 명승지로 다밍호(大明湖)가 있다. 성도(省都)이다. ≒ 역성 , 역하 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "지체",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%A7%80%EC%B2%B4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=314827",
+              "content_sha256": "b55b096498e1241f9f3dbf0a7eda5f18b452e9d0486f8af16891230621b28e5a",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 지체 1 발음 [지체 ] 편집 이력 「명사」 어떤 집안이나 개인이 사회에서 차지하고 있는 신분이나 지위. ≒ 세벌 . 지체가 높다. 지체가 낮다. 그와 나는 지체가 다르다. 지체가 기울어 색시 쪽에서 마다했다는 소문도 있었다. ≪오정희, 유년의 뜰≫ 나는 그 작자가 동회 서기라는 본래의 지체보다 훨씬 큰 권한을 행사하고 있음을 어렵지 않게 눈치챌 수 있었다. ≪이호철, 소시민≫ 더 보기 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=314828",
+              "content_sha256": "ba9217a65357228eb39b1ed072291fdb6375e017d7fd4d2928ea681b277e11bd",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 지체 2 (地體 ) 원어 地 땅 지 부수 土/총획 6 體 몸 체 부수 骨/총획 23 한자 발음 [지체 ] 「명사」 『지구』 지각으로 둘러싸인 지구의 몸체. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=314839",
+              "content_sha256": "4cad5b9e08610e297821929774efd97a9145c8e025912fff255122a6bd22b3fa",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 지체 3 (肢體 ) 원어 肢 팔다리 지 부수 肉/총획 8 體 몸 체 부수 骨/총획 23 한자 발음 [지체 ] 「명사」 팔다리와 몸을 통틀어 이르는 말. 불상의 지체처럼 우아한 것은 없다. ≪최인훈, 회색인≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=484901",
+              "content_sha256": "cbe01b2fc8dbd4418538070a3d3c72855a5b7ee0881d6c6e7dddbe10b6d8ce19",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 지체 4 (遲滯 ) 원어 遲 더딜 지 부수 辵/총획 16 滯 막힐 체 부수 水/총획 14 한자 발음 [지체 ] 부표제어 지체-되다 , 지체-하다 편집 이력 「명사」 「1」 때를 늦추거나 질질 끎. 잠시도 지체 말고 바로 집으로 돌아가시오. 증서를 우체국으로 가지고 가자 지체 없이 일금 오천 원을 지불해 주던 것이었다. ≪오유권, 대지의 학대≫ 「2」 『법률』 의무 이행을 정당한 이유 없이 지연하는 일. 원리금 상환 지체 . 채무 상환 지체 . 그 계획안에는 채무 변제 지체 시 관리인이 정리 절차 폐지를 신청하도록 하는 조항이 담겼다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 4 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "징조",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%A7%95%EC%A1%B0",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=485934",
+              "content_sha256": "2dbafbd49885cff5d145ce4b0882cec7751185af1565805dd42f7fdd3c132a60",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 징조 (徵兆 ) 원어 徵 부를 징 음률 이름 치 부수 彳/총획 15 兆 조 조 부수 儿/총획 6 한자 발음 [징조 ] 편집 이력 「명사」 어떤 일이 생길 기미. ≒ 전조 , 조징 . 불길한 징조 . 좋은 징조 . 죽음의 징조 . 나라가 망할 징조 . 징조가 나타나다. 징조를 보이다. 쪽빛으로 변한 바다 빛깔은 이제 가을이 멀지 않았다는 징조이다 . 더 보기 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "찬바람",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%B0%AC%EB%B0%94%EB%9E%8C",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=488473",
+              "content_sha256": "4b046f7abcf0bc298ec079e872a1dc24b68dacf9151ae127b8004b865fc5b0ac",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 찬-바람 발음 [찬바람 ] 「명사」 냉랭하고 싸늘한 기운이나 느낌을 비유적으로 이르는 말. 찬바람이 나다. 그녀는 어딘가 모르게 찬바람이 돈다. 물론 아내의 말은 부질없는 노파심에서이지만, 그 이름을 듣자 나는 아무 죄가 없는데도 공연히 등골로 찬바람이 훑고 갔다. ≪김원일, 노을≫ 관용구/속담 관용구 찬바람을 일으키다 차갑고 냉담한 태도를 드러내다. · 그는 찬바람을 일으키며 상대편의 부탁을 거절했다. 관용구 찬바람이 일다 마음이나 분위기가 살벌하여지다. · 그새 또 달라진 거리를, 용이도 바라보며 낯선 고장에 들어선 듯 공연히 찬바람이 이는 마음을 꾹꾹 눌러 지르면서….≪박경리, 토지≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "proposal_records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299428",
+              "content_sha256": "c05b9a3c759cbd7e6f00d8afe48ae686ec9f2c222aa86f7d05c2f37e7ca2e46f",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 1 발음 [정자 ] 「명사」 『음악』 ‘ 모내기 노래 ’의 다른 이름. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299430",
+              "content_sha256": "e7abdc1c76c1f50f7ec2bb3e824496516bc475227ef4110e3289453eee5c9d68",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 3 (丁子 ) 원어 丁 고무래 정 부수 一/총획 2 子 아들 자 부수 子/총획 3 한자 발음 [정자 ] 「명사」 정향나무의 꽃봉오리를 따서 말린 것. 향기가 짙고 독특한 맛이 있다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299431",
+              "content_sha256": "9924a693c25f3c580548afee88c6697230a3d05cc3bd428d8a72c9e0f1bfd65e",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 4 (丁字 ) 원어 丁 고무래 정 부수 一/총획 2 字 글자 자 부수 子/총획 6 한자 발음 [정짜 ] 편집 이력 「명사」 ‘丁’ 자처럼 생긴 모양. = 정자형 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 4 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299432",
+              "content_sha256": "747192be47f197ddda04e981289d5f6395eb554e6a4c7a58545f2f788be1fdc2",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 5 (井字 ) 원어 井 우물 정 부수 二/총획 4 字 글자 자 부수 子/총획 6 한자 발음 [정짜 ] 편집 이력 「명사」 ‘井’ 자처럼 생긴 모양. = 정자형 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 5 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299433",
+              "content_sha256": "7050f5d541a72a6aeb81227b5e54345ee3c0dfb3e2a1cf51db1cbdd4a64fd789",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 6 (正子 ) 원어 正 바를 정 부수 止/총획 5 子 아들 자 부수 子/총획 3 한자 발음 [정ː자 ] 편집 이력 「명사」 「1」 자시(子時)의 한가운데. 밤 열두 시를 이른다. = 자정 . 「2」 『천문』 태양이 지평선 아래에서 자오선을 지나는 순간. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 6 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299434",
+              "content_sha256": "abd55aacaf5f57424739112fc606c42f6ca8fd660c7a6695b6b73bf2444770b1",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 8 (正字 ) 원어 正 바를 정 부수 止/총획 5 字 글자 자 부수 子/총획 6 한자 발음 [정ː자 ] 「명사」 「1」 『역사』 고려 시대에, 비서성·전교시에 속한 종구품 벼슬. 또는 그 벼슬에 있던 사람. 「2」 『역사』 조선 시대에, 홍문관·승문원·교서관에 속한 정구품 벼슬. 또는 그 벼슬에 있던 사람. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 8 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299435",
+              "content_sha256": "0914ece5f25a9905bf56b1a505ed623fd6d90fe4f23f660b711fffcb1b84ab99",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 9 (定字 ) 원어 定 정할 정 부수 宀/총획 8 字 글자 자 부수 子/총획 6 한자 발음 [정ː자 ] 부표제어 정자-하다 「명사」 본이름 이외에 부르는 이름인 자(字)를 정함. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 9 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=306416",
+              "content_sha256": "e6479115f1dfa5bc7c821965394a36238850b7d266cd74f1335c1b5760adaeff",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 좌랑 (佐郞 ) 원어 佐 도울 좌 부수 人/총획 7 郞 사나이 랑 사나이 낭 부수 邑/총획 10 한자 발음 [좌ː랑] 「명사」 「1」 『역사』 고려 시대에, 육부(六部)·사사(四司)·육사(六司)·육조 따위에 둔 정오품 벼슬. 공민왕 18년(1369)에 산랑으로 고쳤다. 「2」 『역사』 조선 시대 육조의 정육품 벼슬. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=313155",
+              "content_sha256": "2ade0faead15de720f5a97fa35af87ce27b2d692216e2b435c8a0d50db0a30cf",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 지난 2 (持難 ) 원어 持 가질 지 부수 手/총획 9 難 어려울 난 부수 隹/총획 19 한자 발음 [지난] 부표제어 지난-하다 2 「명사」 일을 얼른 처리하지 아니하고 질질 끌며 미루기만 함. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=314827",
+              "content_sha256": "b55b096498e1241f9f3dbf0a7eda5f18b452e9d0486f8af16891230621b28e5a",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 지체 1 발음 [지체 ] 편집 이력 「명사」 어떤 집안이나 개인이 사회에서 차지하고 있는 신분이나 지위. ≒ 세벌 . 지체가 높다. 지체가 낮다. 그와 나는 지체가 다르다. 지체가 기울어 색시 쪽에서 마다했다는 소문도 있었다. ≪오정희, 유년의 뜰≫ 나는 그 작자가 동회 서기라는 본래의 지체보다 훨씬 큰 권한을 행사하고 있음을 어렵지 않게 눈치챌 수 있었다. ≪이호철, 소시민≫ 더 보기 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=314828",
+              "content_sha256": "ba9217a65357228eb39b1ed072291fdb6375e017d7fd4d2928ea681b277e11bd",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 지체 2 (地體 ) 원어 地 땅 지 부수 土/총획 6 體 몸 체 부수 骨/총획 23 한자 발음 [지체 ] 「명사」 『지구』 지각으로 둘러싸인 지구의 몸체. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=314839",
+              "content_sha256": "4cad5b9e08610e297821929774efd97a9145c8e025912fff255122a6bd22b3fa",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 지체 3 (肢體 ) 원어 肢 팔다리 지 부수 肉/총획 8 體 몸 체 부수 骨/총획 23 한자 발음 [지체 ] 「명사」 팔다리와 몸을 통틀어 이르는 말. 불상의 지체처럼 우아한 것은 없다. ≪최인훈, 회색인≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=479961",
+              "content_sha256": "61f51d401392b6a5a9f9c3050a11956c6690ad309078a4f94f4088e2574eb56e",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 7 (正字 ) 원어 正 바를 정 부수 止/총획 5 字 글자 자 부수 子/총획 6 한자 발음 [정ː자 ] 「명사」 「1」 서체가 바르고 또박또박 쓴 글자. 이력서에 정자로 기입하다. 그는 칠판에 자신의 이름을 정자로 써 놓았다. 「2」 한자의 약자(略字)나 속자(俗字), 와자(訛字)가 아닌 본디의 글자. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 7 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=484901",
+              "content_sha256": "cbe01b2fc8dbd4418538070a3d3c72855a5b7ee0881d6c6e7dddbe10b6d8ce19",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 지체 4 (遲滯 ) 원어 遲 더딜 지 부수 辵/총획 16 滯 막힐 체 부수 水/총획 14 한자 발음 [지체 ] 부표제어 지체-되다 , 지체-하다 편집 이력 「명사」 「1」 때를 늦추거나 질질 끎. 잠시도 지체 말고 바로 집으로 돌아가시오. 증서를 우체국으로 가지고 가자 지체 없이 일금 오천 원을 지불해 주던 것이었다. ≪오유권, 대지의 학대≫ 「2」 『법률』 의무 이행을 정당한 이유 없이 지연하는 일. 원리금 상환 지체 . 채무 상환 지체 . 그 계획안에는 채무 변제 지체 시 관리인이 정리 절차 폐지를 신청하도록 하는 조항이 담겼다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 4 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=485934",
+              "content_sha256": "2dbafbd49885cff5d145ce4b0882cec7751185af1565805dd42f7fdd3c132a60",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 징조 (徵兆 ) 원어 徵 부를 징 음률 이름 치 부수 彳/총획 15 兆 조 조 부수 儿/총획 6 한자 발음 [징조 ] 편집 이력 「명사」 어떤 일이 생길 기미. ≒ 전조 , 조징 . 불길한 징조 . 좋은 징조 . 죽음의 징조 . 나라가 망할 징조 . 징조가 나타나다. 징조를 보이다. 쪽빛으로 변한 바다 빛깔은 이제 가을이 멀지 않았다는 징조이다 . 더 보기 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=488473",
+              "content_sha256": "4b046f7abcf0bc298ec079e872a1dc24b68dacf9151ae127b8004b865fc5b0ac",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 찬-바람 발음 [찬바람 ] 「명사」 냉랭하고 싸늘한 기운이나 느낌을 비유적으로 이르는 말. 찬바람이 나다. 그녀는 어딘가 모르게 찬바람이 돈다. 물론 아내의 말은 부질없는 노파심에서이지만, 그 이름을 듣자 나는 아무 죄가 없는데도 공연히 등골로 찬바람이 훑고 갔다. ≪김원일, 노을≫ 관용구/속담 관용구 찬바람을 일으키다 차갑고 냉담한 태도를 드러내다. · 그는 찬바람을 일으키며 상대편의 부탁을 거절했다. 관용구 찬바람이 일다 마음이나 분위기가 살벌하여지다. · 그새 또 달라진 거리를, 용이도 바라보며 낯선 고장에 들어선 듯 공연히 찬바람이 이는 마음을 꾹꾹 눌러 지르면서….≪박경리, 토지≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "fb21ba1d0ad802db55359dfff2e0b95caf971eaf3a4ab1334e5bfc9d6aab2e08"
+    },
+    {
+      "headwords": [
+        "사람답다",
+        "앞으로"
+      ],
+      "proposal": {
+        "entries": [],
+        "unresolved": [
+          {
+            "headword": "사람답다",
+            "reason_en": "No readable standalone Basic or Standard Dictionary record was verified. The readable [Basic Dictionary record for -답다](https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=92145&nation=eng) lists 사람답다 as an example of suffix formation, which does not establish a separate dictionary identity. This natural derived word is not thereby incorrect; standalone attestation remains unresolved."
+          },
+          {
+            "headword": "앞으로",
+            "reason_en": "No readable standalone Basic or Standard Dictionary record was verified. The readable [Basic Dictionary record for 앞](https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=88648) identifies 앞 as a noun and illustrates 앞으로 in both spatial and future-time senses. These uses combine 앞 with the particle 으로; examples under 앞 do not attest 앞으로 as a standalone adverb lexeme. Retain grammatical analysis without creating a new primary identity."
+          }
+        ]
+      },
+      "proposal_digest": "796a9172944fa0e9c64d7b64ccb1e8f6a6fd2348317616206eec430bda76b2c3",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "c6a0027d0694ef196c9553b759424d8b6193bc75b157ffd83bda766412ea8f52",
+      "primary_evidence": [
+        {
+          "headword_request": "사람답다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%82%AC%EB%9E%8C%EB%8B%B5%EB%8B%A4",
+          "records": []
+        },
+        {
+          "headword_request": "앞으로",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%95%9E%EC%9C%BC%EB%A1%9C",
+          "records": []
+        },
+        {
+          "proposal_records": []
+        }
+      ],
+      "primary_evidence_digest": "68a8815eb84353cd33bedf5c1cce5ee12f8a65b3224bc75ca116220fc0ff959b"
     }
   ]
 }
