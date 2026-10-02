@@ -1827,3 +1827,25 @@ def test_publication_replays_curriculum_assembly_before_accepting_review(tmp_pat
         save(path, part)
         with pytest.raises(ValueError, match='Curriculum worker changed'):
             publication.verify_run(tmp_path)
+
+
+@pytest.mark.parametrize('first_index', [0, 89])
+def test_plan_review_exposes_actual_retained_coverage_without_assuming_opening(tmp_path, first_index):
+    proposal = {'title': '제목', 'scope_reason_en': 'Connected events',
+        'last_source_paragraph_index': 95, 'beats': [
+            {'source_paragraph_index': first_index, 'event_en': 'First retained event'},
+            {'source_paragraph_index': 95, 'event_en': 'Coherent ending'}]}
+    class Runner:
+        async def call(self, job, prompt, *args, **kwargs):
+            if '-review-' in job:
+                inputs = json.loads(prompt.split('\nINPUT:\n', 1)[1])
+                assert inputs['computed_plan_coverage'] == {
+                    'retained_paragraph_indices': [first_index, 95],
+                    'first_retained_paragraph_index': first_index,
+                    'last_retained_paragraph_index': 95, 'planned_endpoint': 95}
+                assert 'later retained events do not imply earlier beats are omitted' in inputs['task']
+                return {'approved': True, 'issues': []}
+            return proposal
+    harness = KoreanHarness(tmp_path, 6, runner=Runner())
+    assert asyncio.run(harness.stage('plan', 'Plan source', 'plan', lambda _: None,
+        {'chapter_number': 1, 'source_start': 0, 'existing_text': ''})) == proposal

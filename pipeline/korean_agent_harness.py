@@ -411,6 +411,14 @@ class KoreanHarness:
             producer = dictionary_producer(self, prompt, review_context)
         def review_payload(value):
             evidence = {}
+            if name == 'plan':
+                indices = [beat['source_paragraph_index'] for beat in value['beats']]
+                evidence['computed_plan_coverage'] = {
+                    'retained_paragraph_indices': indices,
+                    'first_retained_paragraph_index': min(indices) if indices else None,
+                    'last_retained_paragraph_index': max(indices) if indices else None,
+                    'planned_endpoint': value['last_source_paragraph_index']}
+
             if name == 'curriculum':
                 evidence = {'computed_curriculum_evaluation': curriculum.evaluate_bindings(review_context['chapter'], value, level=self.level)}
             if name in ('curriculum', 'dictionary'):
@@ -440,6 +448,12 @@ class KoreanHarness:
             if name == 'curriculum':
                 transmitted_context = {**review_context, 'chapter': curriculum.chapter_view(review_context['chapter'])}
             instructions, task_inputs = review_task(prompt, transmitted_context)
+            if name == 'plan':
+                instructions += (' Use computed_plan_coverage to verify structural coverage claims against the actual submitted beats. '
+                    'Read the corresponding event before alleging an opening or connective event is absent. '
+                    'Empty existing_text means no prior adaptation is supplied, not that the new chapter must be empty or restricted to a shorter opening. '
+                    'Review the planned chapter from source_start through its proposed endpoint; later retained events do not imply earlier beats are omitted. '
+                    'The endpoint is a planning decision: require a change only for a demonstrated causal gap, incoherent boundary or actual target-level difficulty, not merely because multiple scenes are retained.')
             if name == 'prose' and review_context.get('approved_source_plan_review', {}).get('approved'):
                 instructions += (
                     ' The supplied plan and its source interpretation, named identities and stopping point have already passed independent review. '
