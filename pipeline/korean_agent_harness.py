@@ -569,7 +569,9 @@ class KoreanHarness:
         source_start = previous_chapter['source_alignment']['unit']['end'] + 2 if previous_chapter else 0
         full_source = (ROOT / 'books/korean/honggildong' / manifest['text_file']).read_text(encoding='utf-8').rstrip('\n')
         from pipeline.korean_source_context import load as source_guidance
+        from pipeline.korean_source_context import REFERENCE as source_guidance_path
         reviewed_source_context = source_guidance(full_source)
+        source_context_sha256 = sha(source_guidance_path.read_bytes())
         if source_start >= len(full_source):
             raise ValueError('No Korean source remains for another chapter')
         source = full_source[source_start:]
@@ -1087,6 +1089,7 @@ class KoreanHarness:
             "edition": EDITION, "source_sha256": manifest["text_sha256"], "source_notes_sha256": manifest.get("notes_sha256"), "source_unit": unit,
             "policy_sha256": sha(POLICY.read_bytes()), "stages": self.stages,
             "linguistic_reference_sha256": sha(LINGUISTIC_REFERENCE.read_bytes()),
+            "source_context_sha256": source_context_sha256,
             "previous_chapters_digest": digest(previous_text),
             "existing_input_digest": digest(existing) if existing else None,
             "dictionary_digest": digest({"words": [words[key] for key in sorted(required_words)],

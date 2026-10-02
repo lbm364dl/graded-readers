@@ -741,6 +741,21 @@ def test_publication_preserves_source_review_adjudication_lineage(tmp_path, tamp
 
 
 @pytest.mark.parametrize('tamper', [False, True])
+def test_publication_binds_reviewed_source_guidance(tmp_path, tamper):
+    from pipeline.korean_agent_harness import save
+    report = make_reviewed_run(tmp_path)
+    report['source_context_sha256'] = ('changed' if tamper else
+        publication.sha(publication.SOURCE_CONTEXT_REFERENCE.read_bytes()))
+    save(tmp_path / 'report.json', report)
+    if tamper:
+        with pytest.raises(ValueError, match='source guidance changed'):
+            publication.verify_run(tmp_path)
+    else:
+        *_, evidence = publication.verify_run(tmp_path)
+        assert evidence['source_context_sha256'] == report['source_context_sha256']
+
+
+@pytest.mark.parametrize('tamper', [False, True])
 def test_publication_retains_exact_historical_policy_without_accepting_unknown_versions(tmp_path, monkeypatch, tamper):
     from pipeline.korean_agent_harness import save
     report = make_reviewed_run(tmp_path / 'run')

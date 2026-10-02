@@ -18,6 +18,7 @@ from pipeline.korean_agent_harness import POLICY, LINGUISTIC_REFERENCE, approved
 from pipeline import korean_contracts as contracts
 from pipeline import korean_curriculum as curriculum
 from pipeline.korean_sources import EDITION, ROOT, load_selected_unit, sha
+from pipeline.korean_source_context import REFERENCE as SOURCE_CONTEXT_REFERENCE
 from scripts import generate_app_content_json as app_content
 
 CONTENT = ROOT / "content/korean/honggildong"
@@ -113,6 +114,9 @@ def verify_run(run_dir: Path) -> tuple[dict, dict, dict, dict]:
             or report.get('linguistic_reference_sha256') != sha(LINGUISTIC_REFERENCE.read_bytes())):
         raise ValueError("Korean run coverage or policy is stale")
     reviews = {}
+    if ('source_context_sha256' in report
+            and report['source_context_sha256'] != sha(SOURCE_CONTEXT_REFERENCE.read_bytes())):
+        raise ValueError('Korean reviewed source guidance changed')
     for stage, evidence in report["stages"].items():
         if evidence.get("reused"):
             if stage != "dictionary" or evidence.get("approved") is not True:
@@ -279,6 +283,8 @@ def verify_run(run_dir: Path) -> tuple[dict, dict, dict, dict]:
                 "source_sha256": report["source_sha256"], "source_notes_sha256": report.get("source_notes_sha256"), "policy_sha256": report["policy_sha256"],
                 "linguistic_reference_sha256": report['linguistic_reference_sha256'],
                 "reviews": reviews}
+    if 'source_context_sha256' in report:
+        evidence['source_context_sha256'] = report['source_context_sha256']
     if level > 1:
         evidence.update(target_level=level, level_policy_sha256=report['level_policy_sha256'])
     return chapter, delta, help_data, evidence
@@ -293,6 +299,9 @@ def validate_evidence(chapter: dict, evidence: dict, words: dict, grammar: dict,
     if level > 1 and evidence.get('level_policy_sha256') != sha(LEVEL_POLICY.read_bytes()):
         raise ValueError('Korean level instructions are stale')
     source_check(chapter)
+    if ('source_context_sha256' in evidence
+            and evidence['source_context_sha256'] != sha(SOURCE_CONTEXT_REFERENCE.read_bytes())):
+        raise ValueError('Korean published source guidance changed')
     manifest, _, _ = load_selected_unit(chapter['source_alignment']['unit'])
     if (evidence.get("chapter_digest") != digest(chapter)
             or evidence.get("source_sha256") != manifest["text_sha256"]
