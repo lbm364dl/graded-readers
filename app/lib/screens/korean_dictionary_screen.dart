@@ -5,6 +5,20 @@ import '../models.dart';
 import '../services/korean_dictionary.dart';
 import 'reader_screen.dart';
 
+/// The optional cue belongs to a reviewed passage use, not the generic lesson.
+String koreanGrammarLevelCue(Map<String, dynamic>? use) => use?[
+            'optional_for_level'] ==
+        true
+    ? use!['matched_curriculum_level'] == null
+        ? 'Grammar level not listed · Optional for TOPIK ${use['target_curriculum_level']}'
+        : 'TOPIK ${use['matched_curriculum_level']} grammar · Optional for TOPIK ${use['target_curriculum_level']}'
+    : '';
+
+String _withGrammarLevel(String text, Map<String, dynamic>? use) {
+  final cue = koreanGrammarLevelCue(use);
+  return cue.isEmpty ? text : '$text\n$cue';
+}
+
 class KoreanDictionaryScreen extends StatefulWidget {
   final bool grammar;
   const KoreanDictionaryScreen({super.key, this.grammar = false});
@@ -149,6 +163,9 @@ class KoreanEntryScreen extends StatelessWidget {
           if (!grammar)
             Text(selectedUse!['surface'] as String,
                 style: Theme.of(context).textTheme.titleMedium),
+          if (grammar && koreanGrammarLevelCue(selectedUse).isNotEmpty)
+            Text(koreanGrammarLevelCue(selectedUse),
+                style: Theme.of(context).textTheme.labelMedium),
           Text((grammar ? selectedUse!['context_en'] : selectedUse!['gloss'])
               as String),
         ],
@@ -159,7 +176,7 @@ class KoreanEntryScreen extends StatelessWidget {
           ListTile(
             title: Text(use['sentence'] as String),
             subtitle: Text(grammar
-                ? use['context_en'] as String
+                ? _withGrammarLevel(use['context_en'] as String, use)
                 : '${use['surface']} · ${use['gloss']}'),
             trailing: const Icon(Icons.open_in_new),
             onTap: () => _openSource(context, use),
@@ -239,23 +256,43 @@ class KoreanDictionaryLinks extends StatelessWidget {
                 )),
               ),
             for (final use in grammar)
-              TextButton.icon(
-                icon: const Icon(Icons.account_tree_outlined),
-                label: Text(
-                    'Grammar · ${dictionary.entry(use['entry_id'] as String, isGrammar: true)['title_en']}'),
-                onPressed: () =>
-                    Navigator.of(context).push(MaterialPageRoute<void>(
-                  builder: (_) => KoreanEntryScreen(
-                      dictionary: dictionary,
-                      entry: dictionary.entry(use['entry_id'] as String,
-                          isGrammar: true),
-                      grammar: true,
-                      selectedUse: use),
-                )),
-              ),
+              KoreanGrammarLink(dictionary: dictionary, use: use),
           ]);
         },
       );
+}
+
+/// A reviewed construction keeps its whole meaning even on an uninflected tap.
+class KoreanGrammarLink extends StatelessWidget {
+  final KoreanDictionary dictionary;
+  final Map<String, dynamic> use;
+  const KoreanGrammarLink(
+      {super.key, required this.dictionary, required this.use});
+
+  @override
+  Widget build(BuildContext context) {
+    final entry = dictionary.entry(use['entry_id'] as String, isGrammar: true);
+    void open() => Navigator.of(context).push(MaterialPageRoute<void>(
+        builder: (_) => KoreanEntryScreen(
+            dictionary: dictionary,
+            entry: entry,
+            grammar: true,
+            selectedUse: use)));
+    if (use['display_form'] != null) {
+      return ListTile(
+          dense: true,
+          contentPadding: EdgeInsets.zero,
+          title: Text(use['display_form'] as String),
+          subtitle: Text(_withGrammarLevel(
+              '${use['display_meaning_en']} · ${entry['title_en']}', use)),
+          trailing: const Icon(Icons.chevron_right),
+          onTap: open);
+    }
+    return TextButton.icon(
+        icon: const Icon(Icons.account_tree_outlined),
+        label: Text(_withGrammarLevel('Grammar · ${entry['title_en']}', use)),
+        onPressed: open);
+  }
 }
 
 /// Reviewed complete-form meanings; each stage opens its grammar lesson.
@@ -318,8 +355,10 @@ class KoreanFormChain extends StatelessWidget {
                     dense: true,
                     contentPadding: EdgeInsets.zero,
                     title: Text('→ ${indexed.value.form}'),
-                    subtitle: Text(
-                        '${indexed.value.label} · ${indexed.value.meaningEn}'),
+                    subtitle: Text(_withGrammarLevel(
+                        '${indexed.value.label} · ${indexed.value.meaningEn}',
+                        dictionary.formUse(source, sourceText, segmentIndex,
+                            segment.text, indexed.key, indexed.value))),
                     trailing: dictionary.formUse(
                                 source,
                                 sourceText,
@@ -357,7 +396,8 @@ class KoreanFormChain extends StatelessWidget {
                     dense: true,
                     contentPadding: EdgeInsets.zero,
                     title: Text('→ ${use['display_form']}'),
-                    subtitle: Text(use['display_meaning_en'] as String),
+                    subtitle: Text(_withGrammarLevel(
+                        use['display_meaning_en'] as String, use)),
                     trailing: const Icon(Icons.chevron_right),
                     onTap: () =>
                         Navigator.of(context).push(MaterialPageRoute<void>(

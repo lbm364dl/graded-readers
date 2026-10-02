@@ -24,7 +24,7 @@ GRAMMAR = ROOT / "content/lexicon/korean/l1.grammar.json"
 
 
 @lru_cache(maxsize=1)
-def vocabulary() -> dict[str, str]:
+def vocabulary() -> dict[str, str | None]:
     data = VOCAB_SOURCE.read_bytes()
     if hashlib.sha256(data).hexdigest() != VOCAB_SHA256:
         raise ValueError("Korean vocabulary source hash changed; review the new edition")
@@ -42,6 +42,10 @@ def vocabulary() -> dict[str, str]:
         result[identity] = fields[4]
     if Counter(result.values()) != {"A": 982, "B": 2111, "C": 2872}:
         raise ValueError("Korean vocabulary grade counts changed")
+    from pipeline.korean_curriculum import additional_lexical_candidates
+    heads = {re.sub(r'\d+$', '', identity.rsplit('/', 1)[0]) for identity in result}
+    for entry in additional_lexical_candidates(heads):
+        result[entry['id']] = None  # Never manufacture an old A/B/C grade.
     return result
 
 
@@ -124,12 +128,26 @@ def diagnostics(chapter: dict, *, exception_entries: list | None = None,
 
 def validate_chapter(chapter: dict, **kwargs) -> dict:
     result = diagnostics(chapter, **kwargs)
+    if 'curriculum' in chapter:
+        from pipeline.korean_curriculum import evaluate_bindings
+        evidence = chapter['curriculum']
+        grade = evaluate_bindings(chapter, evidence['bindings'])
+        if grade != evidence['evaluation']:
+            raise ValueError('Korean curriculum evaluation is stale')
+        if not grade['passes']:
+            raise ValueError(f'Korean curriculum Level 1 readability gate failed: {grade}')
+        extra = [identity for identity, count in grade['above_level_vocabulary'].items()
+                 for _ in range(count)]
+        return {**result, 'curriculum': grade, 'passes': grade['passes'],
+                'beginner_vocabulary': result['vocabulary_occurrences'] - len(extra),
+                'above_beginner': extra,
+                'above_beginner_ratio': round(grade['extra_vocabulary_ratio'], 4)}
     if not result["passes"]:
         raise ValueError(f"Korean Level 1 readability gate failed: {result}")
     return result
 
 
-def classify_segment(segment: dict) -> dict:
+def classify_segment(segment: dict, curriculum: dict | None = None) -> dict:
     """Carry the same explicit target/lookup distinction as other readers."""
     if segment["type"] == "punctuation":
         return {"curriculum_status": "not_applicable",
@@ -139,6 +157,14 @@ def classify_segment(segment: dict) -> dict:
     lexical = segment["lexical"]
     kind, identity = lexical["kind"], lexical["id"]
     if kind == "grammar":
+        if curriculum is not None:
+            grade = curriculum['evaluation']['grammar_levels'][identity]
+            target = curriculum['evaluation']['target_level']
+            return {'curriculum_status': 'unlisted' if grade is None else 'above_level' if grade > target else 'in_level',
+                    'matched_curriculum_level': grade,
+                    'learning_focus': 'lookup' if grade is None or grade > target else 'target',
+                    'lookup_reason': 'unlisted_grammar' if grade is None else 'above_level_grammar' if grade > target else '',
+                    'story_role': 'none'}
         return {"curriculum_status": "not_applicable",
                 "matched_curriculum_level": None,
                 "learning_focus": "target", "lookup_reason": "",
@@ -153,9 +179,12 @@ def classify_segment(segment: dict) -> dict:
                 "matched_curriculum_level": None,
                 "learning_focus": "lookup", "lookup_reason": "story_term",
                 "story_role": "story_term"}
-    level = {"A": 1, "B": 2, "C": 3}[vocabulary()[identity]]
-    return {"curriculum_status": "in_level" if level == 1 else "above_level",
+    level = (curriculum['evaluation']['lexical_levels'][identity] if curriculum is not None
+             else {"A": 1, "B": 2, "C": 3}[vocabulary()[identity]])
+    target = curriculum["evaluation"].get("target_level", 1) if curriculum is not None else 1
+    within = level is not None and level <= target
+    return {"curriculum_status": "unlisted" if level is None else "in_level" if within else "above_level",
             "matched_curriculum_level": level,
-            "learning_focus": "target" if level == 1 else "lookup",
-            "lookup_reason": "" if level == 1 else "above_level",
+            "learning_focus": "target" if within else "lookup",
+            "lookup_reason": "unlisted_vocabulary" if level is None else "" if within else "above_level",
             "story_role": "none"}

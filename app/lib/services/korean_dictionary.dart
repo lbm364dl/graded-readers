@@ -53,12 +53,20 @@ class KoreanDictionary {
   List<Map<String, dynamic>> grammarUses(
       String source, String sourceText, int segmentIndex, String surface) {
     if (grammar['sources'][source]?['text'] != sourceText) return [];
-    return (grammar['occurrences'] as List)
-        .cast<Map<String, dynamic>>()
+    final uses = (grammar['occurrences'] as List).cast<Map<String, dynamic>>();
+    // Validate this exact target before exposing a wider reviewed phrase.
+    final attested = [...(words['occurrences'] as List), ...uses].any((use) =>
+        use['source'] == source &&
+        use['segment_index'] == segmentIndex &&
+        use['surface'] == surface);
+    if (!attested) return [];
+    return uses
         .where((use) =>
             use['source'] == source &&
-            use['segment_index'] == segmentIndex &&
-            use['surface'] == surface)
+            (use['segment_index'] == segmentIndex ||
+                (use['display_form'] != null &&
+                    use['segment_index'] <= segmentIndex &&
+                    segmentIndex <= use['display_end_segment_index'])))
         .toList();
   }
 
@@ -80,7 +88,9 @@ class KoreanDictionary {
             step.grammarEntryIds.join('\u0000'));
     if (matches.length != 1 || step.grammarEntryIds.length != 1) return null;
     return grammarUses(source, sourceText, segmentIndex, surface)
-        .where((use) => use['entry_id'] == step.grammarEntryIds.single)
+        .where((use) =>
+            use['segment_index'] == segmentIndex &&
+            use['entry_id'] == step.grammarEntryIds.single)
         .singleOrNull;
   }
 

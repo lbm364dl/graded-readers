@@ -378,6 +378,54 @@
       "title_en": "Together with someone",
       "pattern": "와/과",
       "explanation_en": "Attach 와 after a vowel-ending noun or 과 after a consonant-ending noun to mark a companion or someone participating in an action together: ‘with’. 함께 or 같이 may follow to emphasize doing it together."
+    },
+    {
+      "id": "after-eun-hu-e",
+      "title_en": "After doing something",
+      "pattern": "-(으)ㄴ 후에",
+      "explanation_en": "Use an action verb in its completed-action modifier form followed by 후에 to mean ‘after doing something’. Add -은 after a consonant other than ㄹ, or -ㄴ after a vowel. Drop a stem-final ㄹ before adding -ㄴ. The action before 후에 happens first."
+    },
+    {
+      "id": "auxiliary-connective-go",
+      "title_en": "Linking an action to an auxiliary",
+      "pattern": "-고",
+      "explanation_en": "Attach -고 directly to an action verb stem to link it to an auxiliary such as 있다 or 싶다. The auxiliary completes the meaning of the predicate. In this use, -고 does not join two independent actions with ‘and’."
+    },
+    {
+      "id": "before-gi-jeone",
+      "title_en": "Before doing something",
+      "pattern": "-기 전에",
+      "explanation_en": "Attach -기 전에 to an action verb stem to mean ‘before doing something’. The -기 form presents the action as a noun-like expression, and 전에 places the main event earlier than that action."
+    },
+    {
+      "id": "connective-jiman",
+      "title_en": "Contrasting with but",
+      "pattern": "-지만",
+      "explanation_en": "Attach -지만 to an action or descriptive stem to contrast its clause with the following clause, meaning ‘but’ or ‘although’. With a noun, use -이지만 after a consonant or -지만 after a vowel. A tense marker can come before -지만 when needed."
+    },
+    {
+      "id": "future-eul-geot-ida",
+      "title_en": "Predicting or intending an action",
+      "pattern": "-(으)ㄹ 것이다",
+      "explanation_en": "Use a verb in its -(으)ㄹ modifier form followed by 것이다 to express a prediction or intention, often translated as ‘will’. Add -을 after a consonant other than ㄹ, or -ㄹ after a vowel; a ㄹ-ending stem keeps its ㄹ. The modifier, 것, and 이다 together form the prediction or intention."
+    },
+    {
+      "id": "noun-reason-iraseo",
+      "title_en": "Giving a reason with a noun",
+      "pattern": "(이)라서",
+      "explanation_en": "Attach 이라서 after a consonant-ending noun or 라서 after a vowel-ending noun to give a reason based on an identity or category: ‘because someone or something is a noun’. This is the reason connective form of the copula 이다. The final predicate normally establishes the time of the statement."
+    },
+    {
+      "id": "polite-command-euseyo",
+      "title_en": "Making a polite request or command",
+      "pattern": "-(으)세요",
+      "explanation_en": "Attach -으세요 to an action verb stem ending in a consonant other than ㄹ, or -세요 after a vowel. Drop a stem-final ㄹ before adding -세요. This asks or tells the listener to do something politely; its force can range from a gentle request to a firm instruction."
+    },
+    {
+      "id": "source-eseo",
+      "title_en": "The place or state something comes from",
+      "pattern": "에서",
+      "explanation_en": "Attach 에서 to a noun to mark the starting place or source, meaning ‘from’. It can also mark a state that someone emerges from, such as sleep. The same form follows nouns ending in a consonant or a vowel."
     }
   ]
 }

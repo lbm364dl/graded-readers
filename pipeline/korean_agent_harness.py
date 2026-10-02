@@ -16,6 +16,7 @@ from pipeline import korean_dictionary as dictionaries
 from pipeline.korean_readability import MAX_STORY_TERMS, MAX_NON_BEGINNER_RATIO, VOCAB_SHA256, ROOT, diagnostics
 from pipeline.korean_sources import EDITION, load_unit, load_selected_unit, sha
 from pipeline.korean_sentence_breakdowns import build as validate_breakdowns
+from pipeline import korean_curriculum as curriculum
 
 POLICY = ROOT / "pipeline/korean_agent_instructions.md"
 LINGUISTIC_REFERENCE = ROOT / 'data/korean/linguistic-reference.json'
@@ -77,8 +78,62 @@ def latest_prose_revision(run_dir: Path) -> int:
     return max(candidates)[1] if candidates else 0
 
 
+def annotation_reuse_candidate(run_dir: Path):
+    """Recover assembled annotation evidence after a process restart.
+
+    The reuse agent still checks exact occurrence roles, unresolved issues and
+    distinct positions. Each selected chunk is digest-checked before reuse.
+    """
+    candidates = []
+    for path in (run_dir / 'agents').glob('annotation*/meta.json'):
+        match = re.fullmatch(r'annotation(?:-revision(\d+))?-(\d+)', path.parent.name)
+        if not match:
+            continue
+        try:
+            meta = read(path)
+            if meta.get('return_code') != 0 or meta.get('kind') != 'annotation_assembly':
+                continue
+            value = read(path.parent / 'result.json')
+            validate(value, contracts.ANNOTATION)
+            text = ''.join(record['text'] for record in meta['chunks'])
+            contracts.check_reconstruction(value['segments'], text)
+            prefix, attempt = path.parent.name.rsplit('-', 1)
+            review_path = path.parent.parent / f'{prefix}-review-{attempt}' / 'result.json'
+            review = read(review_path) if review_path.exists() else {'issues': ['No independent annotation review is available.']}
+            review_meta_path = review_path.parent / 'meta.json'
+            reviewed_at = read(review_meta_path).get('ended_at', '') if review_meta_path.exists() else ''
+            key = (approved(review), reviewed_at, int(match[1] or 0), int(match[2]))
+            candidates.append((key, (path.parent.name, {'text': text}, review)))
+        except (OSError, ValueError, KeyError, ValidationError):
+            continue
+    return max(candidates, key=lambda item: item[0])[1] if candidates else None
+
+
 def payload(**values) -> str:
     return "\nINPUT:\n" + json.dumps(values, ensure_ascii=False)
+
+
+def review_task(prompt: str, context: dict) -> tuple[str, dict]:
+    """Send review data once, preserving instructions and unique task inputs.
+
+    Generation prompts embed JSON payloads. Repeating these beside the same
+    review context makes large chapter reviews slower without adding evidence.
+    """
+    blocks = prompt.split('\nINPUT:\n')
+    instructions, unique = blocks[0], {}
+    decoder = json.JSONDecoder()
+    for block in blocks[1:]:
+        data, end = decoder.raw_decode(block)
+        if not isinstance(data, dict):
+            raise ValueError('Korean task payload must be an object')
+        for key, value in data.items():
+            if key not in context and not (isinstance(value, (dict, list)) and value
+                    and any(type(value) is type(existing) and value == existing for existing in context.values())):
+                unique[key] = value
+            elif key in context and (type(value) is not type(context[key]) or value != context[key]):
+                unique[key] = value  # Preserve explicitly different task evidence.
+        instructions += block[end:]
+    return instructions, unique
 
 
 def approved(review: dict) -> bool:
@@ -171,7 +226,7 @@ def annotation_requests(value: dict, catalog: dict, focus: dict, words: dict) ->
             profile = profiles.get(identity)
             if profile is None or any(profile[key] != segment[field] for key, field in
                     (("headword", "lemma"), ("kind", "lexical_kind"))):
-                raise ValueError(f"Use exact lexical-plan IDs, headwords and kinds: {focus}")
+                raise ValueError(f"Use exact lexical-plan IDs, headwords and kinds: {focus}. If this is an ordinary listed lexical use rather than a planned name exemption, inspect these exact vocabulary candidates for its sense/POS: {candidates}. Do not invent a new exemption or an ID.")
         planned_story = [e for e in profiles.values() if e["kind"] == "story_term" and segment["lemma"] in e["aliases"]]
         if kind == "vocabulary" and not candidates and planned_story:
             raise ValueError(f"This is the reviewed story exception, not a NIKL word: {planned_story}")
@@ -212,6 +267,8 @@ class KoreanHarness:
                 'form_reading_policy': 'A reading may be empty or equal the written form, meaning no separate pronunciation note. The app displays only readings differing from the written form. Do not require optional pronunciation notes on every occurrence. Any differing pronunciation supplied must be accurate; written morphology and pronunciation remain distinct.'}
         def review_payload(value):
             evidence = {}
+            if name == 'curriculum':
+                evidence = {'computed_curriculum_evaluation': curriculum.evaluate_bindings(review_context['chapter'], value)}
             if name == 'annotation':
                 ids = {s['lexical_id'] for s in value['segments'] if s['lexical_kind'] == 'vocabulary'}
                 attested = {s[key] for s in value['segments'] if s['lexical_kind'] == 'vocabulary'
@@ -220,12 +277,19 @@ class KoreanHarness:
                     'entries': sorted([entry for candidates in self.catalog.values() for entry in candidates
                                       if entry['id'] in ids or entry['headword'] in attested], key=lambda entry: entry['id']),
                     'max_non_beginner_ratio': MAX_NON_BEGINNER_RATIO,
-                    'policy': 'NIKL A is the beginner baseline. Attested B/C ordinary vocabulary is not an unresolved identity or a story exemption. Assess its actual learner difficulty within the checked budget; accepted occurrences are marked above level. Do not reject an identity merely because it is absent from the A-only list.'}}
-            return payload(stage=name, task=prompt, context=review_context, output=value, **evidence)
+                    'policy': 'The older A/B/C grades are compatibility identity metadata, not target curriculum levels. Do not reject an identity merely because it is absent from A. The separate independently reviewed six-level curriculum stage establishes actual vocabulary and grammar levels. Check occurrence meaning and form analysis here; names and essential story exemptions stay separate from ordinary extra vocabulary.'}}
+            transmitted_context = review_context
+            if name == 'curriculum':
+                transmitted_context = {**review_context, 'chapter': curriculum.chapter_view(review_context['chapter'])}
+            instructions, task_inputs = review_task(prompt, transmitted_context)
+            return payload(stage=name, task=instructions, task_inputs=task_inputs, context=transmitted_context, output=value, **evidence)
         # A completed independent review binds the exact current task/context to
         # its output. Reuse it even if an earlier repair attempt was overwritten.
         resume = None
-        for attempt in reversed(range(6)):
+        cached_attempts = sorted({int(match[1])
+            for path in (self.run_dir / 'agents').glob(f'{name}{cache_prefix}-*/result.json')
+            if (match := re.fullmatch(re.escape(f'{name}{cache_prefix}') + r'-(\d+)', path.parent.name))}, reverse=True)
+        for attempt in cached_attempts:
             job = f"{name}{cache_prefix}-{attempt}"
             review_job = f"{name}{cache_prefix}-review-{attempt}"
             proposal_path = self.run_dir / "agents" / job / "result.json"
@@ -261,7 +325,7 @@ class KoreanHarness:
             print(f"{name}: reused approved output", flush=True)
             return value
         start, problems, previous = resume or (0, [], None)
-        for attempt in range(start, 6):
+        for attempt in range(start, start + 8):
             print(f"{name}: attempt {attempt + 1}", flush=True)
             job = f"{name}{cache_prefix}-{attempt}"
             proposal_job = None if attempt == 0 and initial is not None else job
@@ -292,7 +356,7 @@ class KoreanHarness:
                 print(f"{name}: approved", flush=True)
                 return value
             problems, previous = review["issues"], value
-        raise ValueError(f"Korean {name} failed review after six attempts: {problems}")
+        raise ValueError(f"Korean {name} failed review after eight attempts: {problems}")
 
     async def run(self) -> dict:
         self.run_dir.mkdir(parents=True, exist_ok=True)
@@ -351,6 +415,10 @@ class KoreanHarness:
         _, _, source = load_selected_unit(unit)
         context = {**context, 'source': source, 'unit': unit}
         beginner = [entry for entries in self.catalog.values() for entry in entries if entry["grade"] == "A"]
+        curriculum_context = {'target_level': 1, 'source_sha256': curriculum.SOURCE_SHA256,
+                              'vocabulary': curriculum.prompt_entries('vocabulary', 1),
+                              'grammar': curriculum.prompt_entries('grammar', 1)}
+        context = {**context, 'curriculum': curriculum_context}
         focus_context = {**context, "plan": bound_plan, "approved_words": list(self.words.values()),
                          "story_term_budget": MAX_STORY_TERMS}
         focus = await self.stage("lexical-plan", "Plan lexical identities before writing prose. "
@@ -365,12 +433,12 @@ class KoreanHarness:
         profiles = {e["id"]: e for e in focus["entries"]}
         prose_prompt = "Write a natural modern Korean Level 1 chapter following the reviewed source plan. "
         prose_prompt += "Choose the chapter's length yourself: retain as much meaningful source narrative as can be expressed naturally at this level and stop at a coherent scene boundary. No target, minimum or maximum number of characters, words or sentences. Formal polite narration. "
-        prose_prompt += "Keep the story's injustice without inventing actions or motives. Prefer beginner words from the supplied A list; manage difficult ideas with clear, connected sentences. Do not confuse short individual sentences with a short chapter. Preserve the reviewed narrative development rather than summarizing it away; never pad or repeat facts to make the chapter longer. In length_reason_en explain why this coverage and stopping point suit the level, whether more meaningful source content could be retained, and any necessary omissions. "
+        prose_prompt += "Keep the story's injustice without inventing actions or motives. Use NIKL six-level curriculum Level 1 vocabulary and grammar from the supplied curriculum; the old A band is only a lexical identity catalog, never a Level 1 grade. Manage difficult ideas with clear, connected sentences. Keep Level 1 grammar as the core. A few common higher-level patterns can appear when they improve natural wording or source fidelity; keep their real grades and treat them as optional learning for Level 1. Judge their variety, repetition, complexity and importance to understanding across the whole chapter. Do not simplify natural Korean mechanically merely to eliminate every Level 2 form, and do not let optional labels excuse advanced prose. Productive noun+하다 words require explicit evidence for the noun, 하다 and their actual combined meaning. Do not confuse short individual sentences with a short chapter. Preserve the reviewed narrative development rather than summarizing it away; never pad or repeat facts to make the chapter longer. In length_reason_en explain why this coverage and stopping point suit the level, whether more meaningful source content could be retained, and any necessary omissions. "
         prose_prompt += "Give title without chapter number and prose without headings or explanations."
-        prose_prompt += payload(plan=bound_plan, source=source, beginner_words=[e["headword"] for e in beginner], previous=previous_text, existing_text=existing['text'] if existing else None, reusable_words=[entry["headword"] for entry in self.words.values() if entry["kind"] == "word" or entry["id"] in profiles], lexical_plan=focus)
+        prose_prompt += payload(plan=bound_plan, source=source, curriculum=curriculum_context, previous=previous_text, existing_text=existing['text'] if existing else None, reusable_words=[entry["headword"] for entry in self.words.values() if entry["kind"] == "word" or entry["id"] in profiles], lexical_plan=focus)
         prose_prompt += " Prefer the supplied reusable word headwords when they can express the retained events naturally. Explain status with simple everyday words instead of literary terms. Do not mechanically keep every detail of the source plan. Use ONLY the planned story exemption; all other wording should be ordinary beginner vocabulary. "
         prose_repair = ""
-        reuse_candidate = None
+        reuse_candidate = annotation_reuse_candidate(self.run_dir)
         for prose_attempt in range(latest_prose_revision(self.run_dir) if not existing else 0, 3):
             prose = await self.stage("prose", prose_prompt + prose_repair, "prose", check_prose,
                 {**context, "plan": bound_plan, "lexical_plan": focus},
@@ -389,8 +457,8 @@ class KoreanHarness:
                 exceptions = [{"id": identity, "kind": entry["kind"]} for identity, entry in required_words.items()
                               if entry["kind"] in ("proper_name", "story_term")]
                 difficulty = diagnostics(chapter, exception_entries=exceptions, grammar_ids=required_grammar)
-                if not difficulty["passes"]:
-                    raise UnannotatableProseError(f"Korean Level 1 difficulty requires prose revision: {difficulty}")
+                # The older A/B/C catalog validates lexical identities only.
+                # The reviewed six-level curriculum stage owns difficulty.
                 provisional_words = {identity: {"id": identity, **entry} for identity, entry in required_words.items()}
                 dictionaries.build_assets(chapter, self.run_dir, source_id=source_id,
                     word_registry=provisional_words, grammar_registry={identity: {"id": identity} for identity in required_grammar}, write=False)
@@ -401,8 +469,8 @@ class KoreanHarness:
             annotation_prompt += "Audit every tap for inflection and grammar roles; particles stay attached unless a learner-sized grammar unit warrants a separate tap. "
             annotation_prompt += "Provide grammar_links for all relevant particles/constructions/steps with local context_en. "
             annotation_prompt += "Any grammar link on an inflected tap outside its steps needs the complete source phrase, complete meaning and inclusive ending segment index. "
-            annotation_prompt += "Otherwise display strings are empty and ending index -1. Punctuation fields are empty; steps empty. "
-            annotation_prompt += "Meaning_en is the whole observed form. Keep tense/politeness in labels; do not put a past gloss on the dictionary lemma. "
+            annotation_prompt += "Complete construction rows may also start on an uninflected prefix or particle when it belongs to the phrase, such as a preceding negative word. Include every meaning-bearing part of the construction; never display a positive phrase as the full outcome of a negative occurrence. Anchor its link on the first included word and give the exact ending index, preserving tap boundaries. Otherwise display strings are empty and ending index -1. Punctuation fields are empty; steps empty. "
+            annotation_prompt += "Meaning_en is the whole observed form. The final form-step meaning must retain the occurrence meaning and contextual tense, including past time inherited by a connective. Intermediate stages explain their own complete forms; the dictionary lemma remains neutral. Labels describe morphology and politeness separately from the complete meaning. "
             annotation_prompt += payload(prose=prose, words=list(self.words.values()), grammar=list(self.grammar.values()), lexical_plan=focus, nikl_A=[([e["id"], e["meaning"]] if e["meaning"] else e["id"]) for e in beginner])
             async def produce_annotation(job, issues):
                 texts = contracts.annotation_chunks(prose["text"])
@@ -470,6 +538,10 @@ class KoreanHarness:
                             'If resolving a review issue requires changing the actual prose (for example an unsuitable vocabulary choice), '
                             'set prose_revision_reason_en to the concrete wording issue and return no annotation repairs. '
                             'Otherwise leave that reason empty; grammar-link, identity, pronunciation and technical errors need annotation repair, not new prose. '
+                            'If an approved word definition lacks a legitimate observed sense, put its exact ID in dictionary_revision_entry_ids. '
+                            'That stops annotation for separate shared dictionary editorial review against all published uses and this draft; '
+                            'do not retry this as annotation or hide unapproved sense proposals in learner notes. Leave the array empty if no shared definition correction is needed. '
+
                             'For a general pronunciation issue, identify chunks containing pronunciation notes that differ from their written forms. '
                             'Do not rewrite prose. '
                             + payload(annotation_index=repair_context, review_issues=issues, chunks=inventory,
@@ -478,6 +550,12 @@ class KoreanHarness:
                         validate(selection, contracts.ANNOTATION_REPAIR_PLAN)
                         if selection.get('prose_revision_reason_en', '').strip():
                             raise UnannotatableProseError(selection['prose_revision_reason_en'])
+                        revisions = selection.get('dictionary_revision_entry_ids', [])
+                        if revisions:
+                            if len(set(revisions)) != len(revisions) or not set(revisions) <= self.words.keys():
+                                raise ValueError('Dictionary revision triage must select approved word IDs')
+                            raise ValueError(f'Independent review requires shared dictionary correction for {revisions}. '
+                                f'Use pipeline.korean_dictionary_revision with draft annotation {self.run_dir / "agents" / previous_job / "result.json"}, then resume this cached run.')
                         selected = contracts.repair_selection(selection, len(texts))
                         repair_evidence = {'repair_plan_job': repair_job, 'repair_plan_digest': digest(selection)}
                         print(f'annotation repair: {len(selected)} of {len(texts)} chunks selected', flush=True)
@@ -568,13 +646,37 @@ class KoreanHarness:
                     initial=normalize_existing(existing, self.words) if existing else None,
                     cache_prefix=f"-revision{prose_attempt}" if prose_attempt else "", producer=produce_annotation)
                 chapter = contracts.canonical_annotation(annotation, prose, self.number, EDITION, bound_plan, focus)
+                def check_curriculum(value):
+                    if value.get('prose_revision_reason_en', '').strip():
+                        raise UnannotatableProseError(value['prose_revision_reason_en'])
+                    grade = curriculum.evaluate_bindings(chapter, value)
+                    if not grade['passes']:
+                        raise UnannotatableProseError(f"Six-level curriculum Level 1 requires prose revision: {grade}")
+                candidate_ids = {entry['id'] for request in required_words.values()
+                    for entry in curriculum.vocabulary_context_candidates(request['headword'])}
+                curriculum_review = {'chapter': chapter, 'word_requests': required_words,
+                    'approved_words': [self.words[key] for key in sorted(required_words.keys() & self.words.keys())],
+                    'legacy_identity_evidence': [entry for candidates in self.catalog.values() for entry in candidates if entry['id'] in required_words],
+                    'approved_grammar': [self.grammar[key] for key in sorted(required_grammar & self.grammar.keys())],
+                    'source_sha256': curriculum.SOURCE_SHA256,
+                    'grammar_occurrence_counts': curriculum.grammar_occurrence_counts(chapter),
+                    'vocabulary_candidates': [entry for entry in curriculum.prompt_entries('vocabulary')
+                        if entry['id'] in candidate_ids and entry['level'] != 1]
+                        + curriculum.prompt_entries('vocabulary', 1),
+                    'grammar_catalog': curriculum.prompt_entries('grammar')}
+                bindings = await self.stage('curriculum',
+                    'Curriculum vocabulary grades identify lexical identities and parts of speech, not only the illustrative 길잡이말 phrase. A guide phrase is not an exhaustive sense inventory: an independently verified sense of the same lexeme can share the grade. Aggregated homonym/POS rows include each listed identity even if the single guide illustrates only one; do not merge unrelated homonyms. Grammar meanings remain function-specific: identical spelling does not license a different function. When no honest source match exists, use equivalence unlisted with empty source_ids and explain the catalog gap in analysis_en. Its grade stays null, never guessed or relabeled as Level 2. Unlisted grammar needs optional_reason_en and the same whole-chapter difficulty review as higher-level grammar. Unlisted ordinary vocabulary counts toward the extra-vocabulary budget. Catalog absence alone is not a reason to rewrite natural beginner Korean. Bind EVERY ordinary lexical identity and EVERY linked grammar identity in this chapter to exact source IDs from the supplied six-level NIKL curriculum. Preserve dictionary IDs: source homonym numbers can differ between editions. A spelling match alone is not evidence of equivalent sense or POS. Give one binding per kind and entry_id. Listed means the same lexical identity and POS or grammar function. Productive means a justified compositional formation with ALL required lexical and grammatical sources; never concatenate glosses or treat an idiom as productive. Grammatical means a dependent lexical unit explicitly covered by a source construction, such as 수 in the ability pattern. Source entries can cover related forms of their own construction, but do not use an unrelated simpler pattern to hide a difficult construction. Never assign levels yourself: the validator computes the maximum source grade. Missing source coverage uses honest unlisted status; missing or uncertain meaning needs investigation, not invented mappings. Higher-level grammar is allowed sparingly with its actual source grade: give a specific optional_reason_en for each above-level grammar binding, also required for unlisted grammar, empty for vocabulary and in-level grammar. Explain in level_reason_en whether the complete chapter remains suitable, considering occurrence frequency, variety, complexity and dependence on these patterns. No fixed grammar count or percentage. Optional is outside the learning goals, not dispensable sentence meaning. If it cannot honestly fit the level, set prose_revision_reason_en to concrete prose repairs and the pipeline will revise; otherwise leave it empty. The independent reviewer must reject implausible optional rationales and excessive overall difficulty, rather than reject every higher-level pattern. No bindings for names or planned story terms. Independently verify all senses and roles. Write concise analyses, explaining ambiguity or productive prerequisites when necessary rather than repeating source bookkeeping for every simple match. '
+                    + payload(**{**curriculum_review, 'chapter': curriculum.chapter_view(chapter)}), 'curriculum', check_curriculum, curriculum_review,
+                    cache_prefix=f'-revision{prose_attempt}' if prose_attempt else '')
+                chapter['curriculum'] = {'bindings': bindings,
+                                        'evaluation': curriculum.evaluate_bindings(chapter, bindings)}
             except UnannotatableProseError as error:
                 if existing or prose_attempt == 2:
                     raise
                 print(f"annotation failed; revising generated prose before reannotation: {error}", flush=True)
                 reuse_candidate = None
                 old_prefix = f'annotation-revision{prose_attempt}' if prose_attempt else 'annotation'
-                for attempt in reversed(range(6)):
+                for attempt in reversed(range(8)):
                     old_job = f'{old_prefix}-{attempt}'
                     meta_path = self.run_dir / 'agents' / old_job / 'meta.json'
                     if not meta_path.exists(): continue
@@ -585,7 +687,7 @@ class KoreanHarness:
                     reuse_candidate = (old_job, prose, read(old_review_path) if old_review_path.exists() else {'issues': [str(error)]})
                     break
                 prose_repair = payload(repair_reason=str(error), previous_prose=prose,
-                    instruction="Deliberately revise only the affected unpublished prose to use simpler A-band words and constructions. Preserve the reviewed scene, stopping point, meaningful development and unaffected wording. Do not shorten a chapter merely because annotation failed. Do not evade difficulty gates by inventing lexical identities or reclassifying ordinary words as story terms.")
+                    instruction="Deliberately revise only the affected unpublished prose to use NIKL six-level curriculum Level 1 vocabulary and grammar. Preserve the reviewed scene, stopping point, meaningful development and unaffected wording. Do not shorten a chapter merely because annotation failed. Do not evade difficulty gates by inventing lexical identities or reclassifying ordinary words as story terms.")
                 continue
             break
         missing_words = required_words.keys() - self.words.keys()

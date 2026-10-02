@@ -200,7 +200,7 @@ def test_korean_construction_stage_requires_exact_complete_phrase(tmp_path):
     simple = next(link for link in chapter["grammar_links"]
                   if link["entry_id"] == "object-eul-reul")
     simple["display_form"] = "벼슬을"
-    with pytest.raises(ValueError, match="unexpected Korean construction stage"):
+    with pytest.raises(ValueError, match="lacks complete form"):
         build_assets(chapter, tmp_path)
 
 

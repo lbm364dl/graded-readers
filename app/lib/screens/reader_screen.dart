@@ -2023,6 +2023,12 @@ class _AgentDefinitionSheetState extends State<_AgentDefinitionSheet> {
         return 'Story name · optional for $targetLabel';
       case 'story_term':
         return 'Story vocabulary · optional for $targetLabel';
+      case 'unlisted_grammar':
+        return 'Grammar level not listed · optional for $targetLabel';
+      case 'unlisted_vocabulary':
+        return 'Extra word · level not listed';
+      case 'above_level_grammar':
+        return 'Extra grammar · optional for $targetLabel';
       default:
         return 'Extra vocabulary · optional for $targetLabel';
     }

@@ -572,11 +572,11 @@ class Reader {
         const jlptLabels = {1: 'N5', 2: 'N4', 3: 'N3', 4: 'N2', 5: 'N1'};
         return 'JLPT ${jlptLabels[level] ?? level}';
       case Language.korean:
-        return 'Level $level';
+        return 'TOPIK $level';
     }
   }
 
-  int get maxLevel => language == Language.japanese ? 5 : language == Language.korean ? 1 : 6;
+  int get maxLevel => language == Language.japanese ? 5 : 6;
 }
 
 class Book {

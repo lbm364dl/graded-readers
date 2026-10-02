@@ -173,7 +173,7 @@
       "id": "하다01/보",
       "headword": "하다",
       "kind": "word",
-      "definition_en": "used after -게 to express making or allowing someone to act or something to be a certain way"
+      "definition_en": "an auxiliary verb that adds meaning to another verb or adjective: making or allowing an action or bringing about a state; expressing that an action or state is necessary"
     },
     {
       "id": "형01/명",
@@ -383,7 +383,7 @@
       "id": "되다01/동",
       "headword": "되다",
       "kind": "word",
-      "definition_en": "to become; to reach a state, role, or age"
+      "definition_en": "to become; to reach a state, role, or age; to be acceptable or possible. As a helper verb, it indicates that an action or state comes about, is necessary, is sufficient, or is permitted, depending on the construction."
     },
     {
       "id": "두01/관",
@@ -485,7 +485,7 @@
       "id": "보다01/동",
       "headword": "보다",
       "kind": "word",
-      "definition_en": "to see; to look at; to watch"
+      "definition_en": "to see, look at, or watch; to regard someone or something as a certain kind, or judge them in a certain way"
     },
     {
       "id": "사랑하다/동",
@@ -768,6 +768,819 @@
       "headword": "화",
       "kind": "word",
       "definition_en": "anger; a feeling of being upset or displeased"
+    },
+    {
+      "id": "고맙다01/형",
+      "headword": "고맙다",
+      "kind": "word",
+      "definition_en": "to be grateful or thankful"
+    },
+    {
+      "id": "기쁘다/형",
+      "headword": "기쁘다",
+      "kind": "word",
+      "definition_en": "to be happy; to feel joy"
+    },
+    {
+      "id": "꾸다01/동",
+      "headword": "꾸다",
+      "kind": "word",
+      "definition_en": "to dream during sleep, used with 꿈"
+    },
+    {
+      "id": "꿈01/명",
+      "headword": "꿈",
+      "kind": "word",
+      "definition_en": "a dream during sleep; a hope or ambition for the future"
+    },
+    {
+      "id": "낮다/형",
+      "headword": "낮다",
+      "kind": "word",
+      "definition_en": "to be low in height, level, rank, or status"
+    },
+    {
+      "id": "너무01/부",
+      "headword": "너무",
+      "kind": "word",
+      "definition_en": "too; excessively; also used to mean very or so"
+    },
+    {
+      "id": "넘다01/동",
+      "headword": "넘다",
+      "kind": "word",
+      "definition_en": "to go over or cross a boundary; to exceed a number, amount, or limit"
+    },
+    {
+      "id": "들다04/동",
+      "headword": "들다",
+      "kind": "word",
+      "definition_en": "to lift or hold something; to carry something in one's hand"
+    },
+    {
+      "id": "명03/의",
+      "headword": "명",
+      "kind": "word",
+      "definition_en": "a counting word for people, used after a number"
+    },
+    {
+      "id": "부모님/명",
+      "headword": "부모님",
+      "kind": "word",
+      "definition_en": "parents; a respectful term for one's own or someone else's father and mother"
+    },
+    {
+      "id": "빨리/부",
+      "headword": "빨리",
+      "kind": "word",
+      "definition_en": "quickly; fast; without delay"
+    },
+    {
+      "id": "생활/명",
+      "headword": "생활",
+      "kind": "word",
+      "definition_en": "daily life; the activities and circumstances of living"
+    },
+    {
+      "id": "시간04/명",
+      "headword": "시간",
+      "kind": "word",
+      "definition_en": "time; a period or duration; an hour as a unit of time"
+    },
+    {
+      "id": "신분02/명",
+      "headword": "신분",
+      "kind": "story_term",
+      "definition_en": "social status; a person's recognized position or standing in society"
+    },
+    {
+      "id": "아기01/명",
+      "headword": "아기",
+      "kind": "word",
+      "definition_en": "baby; a very young child"
+    },
+    {
+      "id": "알리다/동",
+      "headword": "알리다",
+      "kind": "word",
+      "definition_en": "to let someone know; to inform; to make something known"
+    },
+    {
+      "id": "여러/관",
+      "headword": "여러",
+      "kind": "word",
+      "definition_en": "several; various; used before a noun"
+    },
+    {
+      "id": "용09/명",
+      "headword": "용",
+      "kind": "word",
+      "definition_en": "dragon; a mythical creature with a long, snake-like body"
+    },
+    {
+      "id": "이름/명",
+      "headword": "이름",
+      "kind": "word",
+      "definition_en": "name; a word used to identify a person or thing"
+    },
+    {
+      "id": "일어나다/동",
+      "headword": "일어나다",
+      "kind": "word",
+      "definition_en": "to wake up; to get up or stand up; to happen or arise"
+    },
+    {
+      "id": "잠01/명",
+      "headword": "잠",
+      "kind": "word",
+      "definition_en": "sleep; the state of sleeping"
+    },
+    {
+      "id": "전08/명",
+      "headword": "전",
+      "kind": "word",
+      "definition_en": "an earlier time; the time before an event or action"
+    },
+    {
+      "id": "지금03/부",
+      "headword": "지금",
+      "kind": "word",
+      "definition_en": "now; at the present moment"
+    },
+    {
+      "id": "지나다/동",
+      "headword": "지나다",
+      "kind": "word",
+      "definition_en": "to pass or go past a place; to elapse, as time does"
+    },
+    {
+      "id": "특별하다/형",
+      "headword": "특별하다",
+      "kind": "word",
+      "definition_en": "to be special; to be different from what is ordinary or usual"
+    },
+    {
+      "id": "한01/관",
+      "headword": "한",
+      "kind": "word",
+      "definition_en": "one, used before a noun or counting word"
+    },
+    {
+      "id": "후08/명",
+      "headword": "후",
+      "kind": "word",
+      "definition_en": "a later time; the time after an event or action"
+    },
+    {
+      "id": "힘들다/형",
+      "headword": "힘들다",
+      "kind": "word",
+      "definition_en": "to be difficult or demanding; to be tired or have a hard time"
+    }
+  ],
+  "revision_reviews": [
+    {
+      "before_entries": [
+        {
+          "id": "보다01/동",
+          "headword": "보다",
+          "kind": "word",
+          "definition_en": "to see; to look at; to watch"
+        },
+        {
+          "id": "하다01/보",
+          "headword": "하다",
+          "kind": "word",
+          "definition_en": "used after -게 to express making or allowing someone to act or something to be a certain way"
+        }
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "보다01/동",
+            "headword": "보다",
+            "kind": "word",
+            "definition_en": "to see, look at, or watch; to regard someone or something as a certain kind, or judge them in a certain way"
+          },
+          {
+            "id": "하다01/보",
+            "headword": "하다",
+            "kind": "word",
+            "definition_en": "an auxiliary verb that adds meaning to another verb or adjective: making or allowing an action or bringing about a state; expressing that an action or state is necessary"
+          }
+        ],
+        "references": [
+          {
+            "entry_id": "보다01/동",
+            "url": "https://krdict.korean.go.kr/m/eng/searchResultView?ParaWordNo=61190&nation=eng",
+            "paraphrase_en": "NIKL’s Basic Korean Dictionary lists 보다¹ as a main verb. Senses 1–2 cover seeing, looking and watching. Sense 30 covers regarding or evaluating, with both object + -으로 and object + -게 frames, supporting 사람으로 보다 and 낮게 보다."
+          },
+          {
+            "entry_id": "하다01/보",
+            "url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=62888&nation=eng",
+            "paraphrase_en": "NIKL’s Basic Korean Dictionary identifies 하다² as an auxiliary verb. Sense 1 describes causing an action or bringing about a state in -게 하다, supporting the retained causative function."
+          },
+          {
+            "entry_id": "하다01/보",
+            "url": "https://www.korean.go.kr/nkview/nklife/2018_4/28_4.pdf",
+            "paraphrase_en": "NIKL’s Standard Korean Dictionary revision record lists necessity as auxiliary 하다 sense 3: in -어야 하다, the preceding action or state is necessary. This supports the obligation use in 해야 했습니다 under the supplied auxiliary identity."
+          }
+        ]
+      },
+      "proposal_digest": "13ea53c5cdd8fab2cff674a4aa971a3b0bf16e872f075e8b37b17770bb8c377c",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "context_digest": "01adb8911413d422db999942cd6b36688c0953fbe5d3d4ffbd7a5eb3bb57a1ba",
+      "coverage": {
+        "files": {
+          "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json": "d5efd6f76a0d3a77a56950135419dd9f2e4746989ac84e218920cd18762a57c5",
+          "runs/korean-topik1/chapter-001/agents/annotation-3/result.json": "96aa2f2158ee8336ec408d6895ae6840eab29f502093632614d916c16604534c"
+        },
+        "occurrences": [
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "segment_index": 111,
+            "entry_id": "보다01/동",
+            "surface": "보고",
+            "meaning_en": "seeing and",
+            "sentence": "홍 판서는 아들을 보고 기분이 아주 좋았습니다.",
+            "sentence_start": 269,
+            "start": 279,
+            "form_steps": [
+              {
+                "form": "보고",
+                "reading": "보고",
+                "label": "Connecting form with -고",
+                "meaning_en": "seeing and",
+                "grammar_entry_ids": [
+                  "connective-go"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 111,
+                "entry_id": "connective-go",
+                "context_en": "-고 connects seeing his son with feeling happy. The final past ending places both in the past."
+              }
+            ]
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "segment_index": 453,
+            "entry_id": "보다01/동",
+            "surface": "보고",
+            "meaning_en": "looking at",
+            "sentence": "홍 판서도 밖에서 달을 보고 있었습니다.",
+            "sentence_start": 956,
+            "start": 969,
+            "form_steps": [
+              {
+                "form": "보고",
+                "reading": "보고",
+                "label": "Connecting form before the progressive auxiliary",
+                "meaning_en": "looking at",
+                "grammar_entry_ids": [
+                  "connective-go"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 453,
+                "entry_id": "connective-go",
+                "context_en": "-고 connects 보다 to the progressive auxiliary 있다, forming an ongoing action here."
+              },
+              {
+                "segment_index": 453,
+                "entry_id": "progressive-go-itda",
+                "context_en": "보고 있었습니다 says that looking was already in progress at this point in the story.",
+                "display_form": "보고 있었습니다",
+                "display_meaning_en": "was looking at",
+                "display_end_segment_index": 455
+              }
+            ]
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "segment_index": 459,
+            "entry_id": "보다01/동",
+            "surface": "보고",
+            "meaning_en": "saw (him) and",
+            "sentence": "길동을 보고 불렀습니다.",
+            "sentence_start": 979,
+            "start": 983,
+            "form_steps": [
+              {
+                "form": "보고",
+                "reading": "보고",
+                "label": "Connecting form",
+                "meaning_en": "see and",
+                "grammar_entry_ids": [
+                  "connective-go"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 459,
+                "entry_id": "connective-go",
+                "context_en": "-고 connects seeing Gildong with calling to him. The past ending on 불렀습니다 places both actions in the past."
+              }
+            ]
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "segment_index": 485,
+            "entry_id": "보다01/동",
+            "surface": "보고",
+            "meaning_en": "looking at it",
+            "sentence": "“달이 좋아서 보고 있었습니다.",
+            "sentence_start": 1029,
+            "start": 1037,
+            "form_steps": [
+              {
+                "form": "보고",
+                "reading": "보고",
+                "label": "Connecting form before the progressive auxiliary",
+                "meaning_en": "looking at it",
+                "grammar_entry_ids": [
+                  "connective-go"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 485,
+                "entry_id": "connective-go",
+                "context_en": "-고 connects 보다 to the auxiliary 있다 here; together they express an ongoing action."
+              },
+              {
+                "segment_index": 485,
+                "entry_id": "progressive-go-itda",
+                "context_en": "보고 있었습니다 describes looking at the moon as an action in progress at that past time.",
+                "display_form": "보고 있었습니다",
+                "display_meaning_en": "was looking at it",
+                "display_end_segment_index": 487
+              }
+            ]
+          },
+          {
+            "file": "runs/korean-topik1/chapter-001/agents/annotation-3/result.json",
+            "chapter": 1,
+            "segment_index": 104,
+            "entry_id": "보다01/동",
+            "surface": "보았습니다",
+            "meaning_en": "saw",
+            "sentence": "꿈에서 용을 보았습니다.",
+            "sentence_start": 245,
+            "start": 252,
+            "form_steps": [
+              {
+                "form": "보았다",
+                "reading": "보았다",
+                "label": "Past",
+                "meaning_en": "saw",
+                "grammar_entry_ids": [
+                  "past-ass-eoss"
+                ]
+              },
+              {
+                "form": "보았습니다",
+                "reading": "보았습니다",
+                "label": "Formal polite statement",
+                "meaning_en": "saw",
+                "grammar_entry_ids": [
+                  "polite-seumnida"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 104,
+                "entry_id": "past-ass-eoss",
+                "context_en": "The past marker places seeing the dragon before the time of narration.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              },
+              {
+                "segment_index": 104,
+                "entry_id": "polite-seumnida",
+                "context_en": "-습니다 presents the past action as a formal polite statement in the narration.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              }
+            ]
+          },
+          {
+            "file": "runs/korean-topik1/chapter-001/agents/annotation-3/result.json",
+            "chapter": 1,
+            "segment_index": 269,
+            "entry_id": "하다01/보",
+            "surface": "했습니다",
+            "meaning_en": "had to (the obligation auxiliary in 'had to do')",
+            "sentence": "춘섬은 홍 판서의 집에서 일을 해야 했습니다.",
+            "sentence_start": 612,
+            "start": 632,
+            "form_steps": [
+              {
+                "form": "했다",
+                "reading": "했다",
+                "label": "Past obligation auxiliary",
+                "meaning_en": "had to (the obligation auxiliary in 해야 했다, 'had to do')",
+                "grammar_entry_ids": [
+                  "past-ass-eoss"
+                ]
+              },
+              {
+                "form": "했습니다",
+                "reading": "했습니다",
+                "label": "Formal polite past obligation auxiliary",
+                "meaning_en": "had to (the obligation auxiliary in 해야 했습니다, 'had to do')",
+                "grammar_entry_ids": [
+                  "polite-seumnida"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 269,
+                "entry_id": "past-ass-eoss",
+                "context_en": "The past marking in 했다 places the obligation expressed by 해야 하다 in the past.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              },
+              {
+                "segment_index": 269,
+                "entry_id": "polite-seumnida",
+                "context_en": "The formal polite ending finishes the statement about what Chunseom had to do.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              }
+            ]
+          },
+          {
+            "file": "runs/korean-topik1/chapter-001/agents/annotation-3/result.json",
+            "chapter": 1,
+            "segment_index": 408,
+            "entry_id": "보다01/동",
+            "surface": "보고",
+            "meaning_en": "looked down on him, and (with 낮게)",
+            "sentence": "그 사람들도 길동을 낮게 보고 나쁘게 대했습니다.",
+            "sentence_start": 885,
+            "start": 899,
+            "form_steps": [
+              {
+                "form": "보고",
+                "reading": "보고",
+                "label": "Connecting form; past time supplied by the final predicate",
+                "meaning_en": "looked down on him, and (with 낮게)",
+                "grammar_entry_ids": [
+                  "connective-go"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 408,
+                "entry_id": "connective-go",
+                "context_en": "낮게 보고 means ‘looked down on him, and’. -고 connects this judgment with treating him badly; the final past predicate supplies past time for both.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              }
+            ]
+          },
+          {
+            "file": "runs/korean-topik1/chapter-001/agents/annotation-3/result.json",
+            "chapter": 1,
+            "segment_index": 553,
+            "entry_id": "보다01/동",
+            "surface": "보고",
+            "meaning_en": "looking at",
+            "sentence": "아버지도 밖에서 달을 보고 있었습니다.",
+            "sentence_start": 1181,
+            "start": 1193,
+            "form_steps": [
+              {
+                "form": "보고",
+                "reading": "보고",
+                "label": "Connective form before the progressive auxiliary",
+                "meaning_en": "looking at",
+                "grammar_entry_ids": [
+                  "auxiliary-connective-go"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 553,
+                "entry_id": "auxiliary-connective-go",
+                "context_en": "-고 connects 보다 to the progressive auxiliary 있다, presenting looking as an ongoing action.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              },
+              {
+                "segment_index": 553,
+                "entry_id": "progressive-go-itda",
+                "context_en": "보고 있었습니다 presents the father's looking at the moon as an action already in progress at that time.",
+                "display_form": "보고 있었습니다",
+                "display_meaning_en": "was looking at",
+                "display_end_segment_index": 555
+              }
+            ]
+          },
+          {
+            "file": "runs/korean-topik1/chapter-001/agents/annotation-3/result.json",
+            "chapter": 1,
+            "segment_index": 561,
+            "entry_id": "보다01/동",
+            "surface": "보고",
+            "meaning_en": "saw him and",
+            "sentence": "아버지는 길동을 보고 불렀습니다.",
+            "sentence_start": 1203,
+            "start": 1212,
+            "form_steps": [
+              {
+                "form": "보고",
+                "reading": "보고",
+                "label": "Connecting form",
+                "meaning_en": "see and",
+                "grammar_entry_ids": [
+                  "connective-go"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 561,
+                "entry_id": "connective-go",
+                "context_en": "보고 connects seeing Gildong with calling to him. The past ending on 불렀습니다 places both actions in the past.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              }
+            ]
+          },
+          {
+            "file": "runs/korean-topik1/chapter-001/agents/annotation-3/result.json",
+            "chapter": 1,
+            "segment_index": 588,
+            "entry_id": "보다01/동",
+            "surface": "보고",
+            "meaning_en": "looking at it",
+            "sentence": "“달을 좋아해서 보고 있었습니다.",
+            "sentence_start": 1258,
+            "start": 1267,
+            "form_steps": [
+              {
+                "form": "보고",
+                "reading": "보고",
+                "label": "Connective linking to an auxiliary",
+                "meaning_en": "looking at it",
+                "grammar_entry_ids": [
+                  "auxiliary-connective-go"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 588,
+                "entry_id": "auxiliary-connective-go",
+                "context_en": "-고 links 보다 to the progressive auxiliary 있다, expressing an ongoing act of looking.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              },
+              {
+                "segment_index": 588,
+                "entry_id": "progressive-go-itda",
+                "context_en": "보고 있었습니다 expresses that Gildong was looking at the moon at that time.",
+                "display_form": "보고 있었습니다",
+                "display_meaning_en": "was looking at it",
+                "display_end_segment_index": 590
+              }
+            ]
+          },
+          {
+            "file": "runs/korean-topik1/chapter-001/agents/annotation-3/result.json",
+            "chapter": 1,
+            "segment_index": 612,
+            "entry_id": "보다01/동",
+            "surface": "보지",
+            "meaning_en": "regard (linked to the following negation)",
+            "sentence": "그런데 왜 사람들은 저를 사람으로 보지 않습니까?",
+            "sentence_start": 1301,
+            "start": 1320,
+            "form_steps": [
+              {
+                "form": "보지",
+                "reading": "보지",
+                "label": "Connective before a negative auxiliary",
+                "meaning_en": "regard (linked to the following negation)",
+                "grammar_entry_ids": [
+                  "negative-connective-ji"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 612,
+                "entry_id": "negative-connective-ji",
+                "context_en": "-지 connects 보다, meaning 'regard' in this occurrence, to the negative auxiliary 않다.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              },
+              {
+                "segment_index": 612,
+                "entry_id": "negative-ji-anhda",
+                "context_en": "보지 않습니까 asks whether people do not regard him in the stated category, 사람으로 ('as a person'). The complete question means 'But why don't people regard me as a person?'",
+                "display_form": "보지 않습니까",
+                "display_meaning_en": "do they not regard?",
+                "display_end_segment_index": 614
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "before_entries": [
+        {
+          "id": "되다01/동",
+          "headword": "되다",
+          "kind": "word",
+          "definition_en": "to become; to reach a state, role, or age"
+        }
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "되다01/동",
+            "headword": "되다",
+            "kind": "word",
+            "definition_en": "to become; to reach a state, role, or age; to be acceptable or possible. As a helper verb, it indicates that an action or state comes about, is necessary, is sufficient, or is permitted, depending on the construction."
+          }
+        ],
+        "references": [
+          {
+            "entry_id": "되다01/동",
+            "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=89858",
+            "paraphrase_en": "NIKL’s Basic Korean Dictionary lists acquiring a role (sense 1), changing into something (2), and reaching a time, state, or age (3). Sense 16 covers reaching a situation through an action or change; senses 19–20 cover acceptability, possibility, and permission."
+          },
+          {
+            "entry_id": "되다01/동",
+            "url": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=216&pageIndex=1&qna_seq=319489",
+            "paraphrase_en": "NIKL reproduces the Standard Korean Language Dictionary’s 되다¹ auxiliary-verb senses II.1–4: an action or state coming about, necessity, an acceptable or sufficient condition, and possibility or permission. This confirms the helper role in 살게 되다 without treating the complete construction as a separate lexical word."
+          }
+        ]
+      },
+      "proposal_digest": "cd7b8b02f36d905a588117320cc54de7635149b842ca7d60bdeb7acef95ab61f",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "context_digest": "6ba2a0ac7890879b76241d53073f92cf668ad1b943b9f863c110dc7d6f7fb7b9",
+      "coverage": {
+        "files": {
+          "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json": "d5efd6f76a0d3a77a56950135419dd9f2e4746989ac84e218920cd18762a57c5",
+          "runs/korean-topik1/chapter-001/agents/annotation-3/result.json": "96aa2f2158ee8336ec408d6895ae6840eab29f502093632614d916c16604534c"
+        },
+        "occurrences": [
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "segment_index": 98,
+            "entry_id": "되다01/동",
+            "surface": "되었습니다",
+            "meaning_en": "came to do so",
+            "sentence": "나중에는 홍 판서와 함께 살게 되었습니다.",
+            "sentence_start": 229,
+            "start": 246,
+            "form_steps": [
+              {
+                "form": "되었다",
+                "reading": "",
+                "label": "Past tense",
+                "meaning_en": "came to do so",
+                "grammar_entry_ids": [
+                  "past-ass-eoss"
+                ]
+              },
+              {
+                "form": "되었습니다",
+                "reading": "",
+                "label": "Formal polite past statement",
+                "meaning_en": "came to do so",
+                "grammar_entry_ids": [
+                  "polite-seumnida"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 98,
+                "entry_id": "past-ass-eoss",
+                "context_en": "-었- places the change in her living situation in the past."
+              },
+              {
+                "segment_index": 98,
+                "entry_id": "polite-seumnida",
+                "context_en": "-습니다 gives the past statement the narrator's formal polite style."
+              }
+            ]
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "segment_index": 140,
+            "entry_id": "되다01/동",
+            "surface": "되었습니다",
+            "meaning_en": "turned (eight years old)",
+            "sentence": "길동은 여덟 살이 되었습니다.",
+            "sentence_start": 336,
+            "start": 346,
+            "form_steps": [
+              {
+                "form": "되었다",
+                "reading": "",
+                "label": "Past statement",
+                "meaning_en": "became; turned",
+                "grammar_entry_ids": [
+                  "past-ass-eoss"
+                ]
+              },
+              {
+                "form": "되었습니다",
+                "reading": "",
+                "label": "Formal polite past statement",
+                "meaning_en": "became; turned",
+                "grammar_entry_ids": [
+                  "polite-seumnida"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 140,
+                "entry_id": "past-ass-eoss",
+                "context_en": "-었- places Gildong’s turning eight in the past."
+              },
+              {
+                "segment_index": 140,
+                "entry_id": "polite-seumnida",
+                "context_en": "-습니다 ends the narrator’s statement in a formal polite style."
+              }
+            ]
+          },
+          {
+            "file": "runs/korean-topik1/chapter-001/agents/annotation-3/result.json",
+            "chapter": 1,
+            "segment_index": 826,
+            "entry_id": "되다01/동",
+            "surface": "됩니다",
+            "meaning_en": "is acceptable",
+            "sentence": "이런 말은 안 됩니다.",
+            "sentence_start": 1753,
+            "start": 1761,
+            "form_steps": [
+              {
+                "form": "됩니다",
+                "reading": "됩니다",
+                "label": "Formal polite statement",
+                "meaning_en": "is acceptable",
+                "grammar_entry_ids": [
+                  "polite-seumnida"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 826,
+                "entry_id": "polite-seumnida",
+                "context_en": "-ㅂ니다 ends 되다 as a formal polite statement. With 안, the predicate means ‘is not allowed’.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              }
+            ]
+          }
+        ]
+      }
     }
   ]
 }

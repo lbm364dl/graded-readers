@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import hashlib
 from pathlib import Path
 
 from pipeline.korean_readability import ROOT
@@ -21,6 +22,25 @@ def _registry(path: Path) -> dict[str, dict]:
     by_id = {entry["id"]: entry for entry in entries}
     if len(by_id) != len(entries):
         raise ValueError(f"duplicate Korean dictionary identity: {path}")
+    latest_revisions = {}
+    for revision in data.get('revision_reviews', []):
+        fingerprint = lambda value: hashlib.sha256(json.dumps(value, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+        if (revision.get('proposal_digest') != fingerprint(revision.get('proposal'))
+                or revision.get('review_digest') != fingerprint(revision.get('review'))
+                or revision.get('review') != {'approved': True, 'issues': []}):
+            raise ValueError('Korean dictionary revision lacks matching independent review')
+        before = {entry['id']: entry for entry in revision['before_entries']}
+        after = {entry['id']: entry for entry in revision['proposal']['entries']}
+        if before.keys() != after.keys():
+            raise ValueError('Korean dictionary revision changes identity coverage')
+        for identity, entry in after.items():
+            if any(entry[key] != before[identity][key] for key in ('id', 'headword', 'kind')):
+                raise ValueError('Korean dictionary revision changes a lexical identity')
+            if identity in latest_revisions and latest_revisions[identity] != before[identity]:
+                raise ValueError('Korean dictionary revision history is discontinuous')
+            latest_revisions[identity] = entry
+    if any(by_id.get(identity) != entry for identity, entry in latest_revisions.items()):
+        raise ValueError('Korean revised definition differs from independent review')
     return by_id
 
 
@@ -89,7 +109,7 @@ def build_assets(chapter: dict, output_dir: Path, *, source_id: str = SOURCE,
                      for grammar_id in step["grammar_entry_ids"]}
         display_keys = {"display_form", "display_meaning_en", "display_end_segment_index"}
         display = {}
-        if segments[index].get("form_steps") and entry_id not in stage_ids:
+        if entry_id not in stage_ids and (segments[index].get("form_steps") or display_keys & link.keys()):
             if not display_keys <= link.keys():
                 raise ValueError(f"Korean construction stage lacks complete form: {link}")
             last = link["display_end_segment_index"]
@@ -101,13 +121,22 @@ def build_assets(chapter: dict, output_dir: Path, *, source_id: str = SOURCE,
         elif display_keys & link.keys():
             raise ValueError(f"unexpected Korean construction stage: {link}")
         sentence, sentence_start = _sentence(source_text, start)
+        grading = {}
+        if 'curriculum' in chapter:
+            evaluation = chapter['curriculum']['evaluation']
+            actual = evaluation['grammar_levels'][entry_id]
+            target = evaluation['target_level']
+            grading = {'matched_curriculum_level': actual,
+                       'target_curriculum_level': target,
+                       'optional_for_level': actual is None or actual > target,
+                       'optional_reason_en': evaluation['optional_grammar_reasons'].get(entry_id, '')}
         grammar_uses.append({
             "id": f"{source_id}#grammar-{index}-{entry_id}", "source": source_id,
             "segment_index": index, "start": start, "end": end,
             "surface": segments[index]["text"], "entry_id": entry_id,
             "context_en": link["context_en"], "sentence": sentence,
             "sentence_start": sentence_start,
-            **display,
+            **display, **grading,
         })
     for index, segment in enumerate(segments):
         if segment["type"] == "word" and segment["lexical"]["kind"] == "grammar":
@@ -150,7 +179,7 @@ def build_assets(chapter: dict, output_dir: Path, *, source_id: str = SOURCE,
         raise ValueError("Korean dictionary entries do not match chapter usage")
     source = {source_id: {
         "reader_id": "honggildong_l1", "chapter": chapter.get("number", 1),
-        "title": chapter["title"], "level": "Level 1", "text": source_text,
+        "title": chapter["title"], "level": "TOPIK 1", "text": source_text,
     }}
     word_asset = {"schema_version": 1, "language": "korean", "sources": source,
                   "entries": list(words.values()), "occurrences": word_uses}

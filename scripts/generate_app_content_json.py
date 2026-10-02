@@ -639,7 +639,7 @@ def load_korean_annotations(
             if kind == "word" and segment["lexical"]["kind"] == "story_term" and not str(segment.get("story_importance_en", "")).strip():
                 raise ValueError(f"Korean story vocabulary lacks importance: {path}")
             published.append({**segment, "pinyin": "", "target_curriculum_level": 1,
-                              **classify_segment(segment)})
+                              **classify_segment(segment, item.get('curriculum'))})
         relative = Path("annotations") / f"korean_{book_id}_{level_key}_{number:03d}.json"
         destination = ASSET_ROOT / relative
         destination.parent.mkdir(parents=True, exist_ok=True)

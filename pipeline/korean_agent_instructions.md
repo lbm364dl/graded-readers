@@ -41,8 +41,37 @@ paragraph at a coherent narrative boundary; do not consume the entire remaining
 book by default. Subsequent chapters start immediately after that reviewed
 paragraph. Publication rejects overlapping or skipped source spans. Original
 source boundaries and adaptation length are separate editorial judgments.
-The NIKL A band is our beginner *vocabulary baseline*, not an official TOPIK
-list. Keep reviewed NIKL homonym number and part of speech in each occurrence's
+Target Level 1 of NIKL's six-level International Standard Curriculum, corrected
+2020-11-17. This is our TOPIK-aligned curriculum baseline, not an exhaustive list
+of words permitted in the exam. The pinned source in
+`data/korean/words/nikl_2017_curriculum_20201117.json` contains both vocabulary and
+grammar grades. Higher levels are cumulative; the target band supplies the core learning goals.
+A few higher-level grammar patterns may appear when natural, common wording or
+faithful storytelling benefits. Keep their actual source grades and mark them
+optional for the target level on their occurrences, not as required learning.
+Explain each exception in optional_reason_en and assess the whole chapter in
+level_reason_en: frequency, variety, complexity, level distance and how much
+understanding depends on them. Repetition of one useful pattern can be easier
+than many unfamiliar patterns. Use editorial judgment, not a fixed count or
+percentage of grammar exceptions. Optional means outside this level's learning
+goals; it does not mean the construction is unnecessary to understand the sentence.
+A label or breakdown alone cannot justify a chapter dominated by advanced grammar.
+If the chapter exceeds the level, set prose_revision_reason_en honestly instead
+of inventing a lower source grade or a justification; the pipeline revises prose.
+Rare reviewed extra vocabulary can use the existing 10% occurrence budget;
+names and the one essential story term remain separate.
+Review every ordinary lexical identity and every linked grammar identity against
+explicit source IDs in the curriculum stage. Preserve existing dictionary IDs:
+homonym numbering differs between editions. Exact spelling is only a candidate,
+not proof of equivalent sense or part of speech. Missing dictionary headwords
+may be productive formations or dependent units covered by a listed construction;
+record all lexical/grammar prerequisites and explain the actual combined meaning.
+Never infer a grade by stripping a suffix, combining English glosses or inventing
+a simpler source mapping. Curriculum vocabulary grades identify lexical identities and parts of speech, not only the illustrative 길잡이말 phrase. A guide phrase is not an exhaustive sense inventory: an independently verified sense of the same lexeme can share the grade. Aggregated homonym/POS rows include each listed identity even if the single guide illustrates only one; do not merge unrelated homonyms. Grammar meanings remain function-specific: identical spelling does not license a different function. When no honest source match exists, use equivalence unlisted with empty source_ids and explain the catalog gap in analysis_en. Its grade stays null, never guessed or relabeled as Level 2. Unlisted grammar needs optional_reason_en and the same whole-chapter difficulty review as higher-level grammar. Unlisted ordinary vocabulary counts toward the extra-vocabulary budget. Catalog absence alone is not a reason to rewrite natural beginner Korean. Unsupported meanings require investigation or simpler
+prose. The independent curriculum reviewer checks the complete chapter, and
+publication recomputes grades from pinned source IDs and verifies review evidence.
+The old 2003 A/B/C data now supplies compatibility lexical identities only.
+Keep reviewed NIKL homonym number and part of speech in each occurrence's
 `lexical.id`, even when its surface is inflected. Do not infer lemma or grammar
 from a Hangul suffix. Particles and endings need contextual explanation where
 they affect comprehension; a productive construction is grammar, not a new
@@ -66,7 +95,7 @@ Approved definitions remain immutable during new-chapter generation. A changed
 sense or uncertain component needs a deliberate editorial task, not a speculative
 new entry or a silently rewritten definition.
 Publish target/lookup metadata from the reviewed lexical identity and the
-versioned NIKL grade. A name is optional story lookup; a non-beginner story
+reviewed six-level curriculum bindings. A name is optional story lookup; a non-beginner story
 term is optional story vocabulary with occurrence-specific importance; an
 ordinary above-level word is extra vocabulary. Do not mark every Korean tap
 as a target, or promote an ordinary beginner word to story vocabulary because
@@ -83,7 +112,7 @@ case that should still pass.
 
 Use `python -m pipeline.korean_agent_harness --chapter 1 --run-dir
 runs/korean-l1/chapter-001` for generation. Each source plan, prose, annotation,
-new dictionary delta and sentence-help selection requires an independent review.
+new dictionary delta, curriculum crosswalk and sentence-help selection requires an independent review.
 Repair source errors in prose before annotating; do not preserve unsupported
 claims merely because a manual pilot already used them. Distinguish the people
 actually named in the source from broader groups, and state family relationships
@@ -106,3 +135,24 @@ Keep the reusable dictionary form and its definition visibly separate from
 the form used in a passage and its contextual gloss. A past or polite gloss
 belongs to the observed form, never to the dictionary headword. Check other
 inflected and particle-attached taps when a learner reports this confusion.
+
+
+Shared word definitions can require editorial correction when new legitimate
+senses appear. Normal generation must not silently broaden approved entries or
+keep retrying an unsupported sense as an annotation problem. The repair planner
+records exact dictionary_revision_entry_ids and stops for the separate
+`pipeline.korean_dictionary_revision` workflow. It researches primary dictionary
+evidence, audits every published Korean level and the new draft, preserves IDs
+and valid earlier meanings, and requires an independent review before changing
+shared definitions. Keep that evidence in revision_reviews, not learner-facing
+notes. Resume the cached run after approval; unrelated annotations and dictionary
+research remain reusable. Do not invent a lexical entry for productive grammar.
+
+Construction scope is independent of inflection. An exact complete phrase can
+start at an uninflected prefix or particle; include meaning-bearing negation.
+Record its whole form, whole meaning and inclusive ending index on the first
+included word. The app exposes this reviewed construction from each covered
+word while form rows retain their own exact transformation lessons. Preserve
+source text and existing taps rather than moving or dropping the negative word.
+
+Offline drafting, annotation and review roles must use only the supplied data. Do not call any tools, including MCP resource inventories or resource templates. If primary research is needed, record the need for the separate research editor; do not invoke research from an offline job.

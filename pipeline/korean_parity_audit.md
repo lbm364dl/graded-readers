@@ -4,12 +4,13 @@ Scope inspected: source/manifests, generation harnesses, dictionary editorial
 jobs, publication validators, form and sentence-help layers, and app services/UI
 for Chinese *Three Kingdoms*, Japanese *I Am a Cat*, and Korean *Hong Gildong*.
 Korean currently publishes only Level 1 chapter 1. This does not claim full
-feature parity or TOPIK calibration.
+feature parity. The new curriculum stage uses a six-level TOPIK-aligned
+teaching baseline; it is not an exhaustive exam specification.
 
 | Layer | Korean implementation | Remaining scope |
 | --- | --- | --- |
 | Source and adaptation | Complete searchable Wikisource/Jikji original pinned to revision 460078, raw/extracted checksums, Unicode paragraph spans, reviewed source notes and lexical identity plan, reviewed source plan and independently reviewed modern prose. The agent selects a contiguous source span and a coherent stopping paragraph from the remaining narrative, with reviewed coverage/omission reasoning. Total chapter length has no numeric quota. The placeholder 某 in the father's name has an edition-specific scholarly reference; it is not treated as a literal personal name. | Source-boundary decisions still require independent review; the two manually mapped scenes are reference examples. Other levels require their own learner policy. The archived 24-sheet scan is a different edition. |
-| Annotation and difficulty | Independently reviewed exact taps, meanings and explicit NIKL identities. Reconstruction, lexical budget and story-term budget gate publication. Unannotatable ordinary words send unpublished prose back for simplification. Sentence length is reported for review rather than mechanically rejected. | NIKL A/B/C is a vocabulary baseline, not TOPIK. Linguistic review judges sentence difficulty and selective help. |
+| Annotation and difficulty | Independently reviewed exact taps, meanings and explicit NIKL identities. Reconstruction, lexical budget and story-term budget gate publication. Unannotatable ordinary words send unpublished prose back for simplification. Sentence length is reported for review rather than mechanically rejected. | The 2017 NIKL curriculum (corrected 2020-11-17) supplies six vocabulary and grammar bands. Explicit independently reviewed sense/POS and construction bindings determine grades; the older A/B/C list only preserves identities. Optional higher-level grammar retains true grades and contextual labels; editorial review judges overall load without a grammar quota. Higher-level generation is not configured yet. |
 | Dictionary editing | Approved reusable entries remain immutable. Only missing word/grammar IDs go to a proposer and independent reviewer. Exact source positions keep repeated uses separate. | No Korean component graph or multi-sense editorial workflow yet. Meaning uncertainty must remain an editorial issue. |
 | Form and construction explanations | Complete-form meanings and separate form labels, exact reviewed per-stage grammar routes; base and transformation rows carry their links without a duplicate list. Wider constructions have exact phrase rows with their full meaning. | No independently editable merged reader-unit layer or Japanese-style merged construction chains. Korean displays annotation taps directly. |
 | Sentence help | Every sentence is inventoried and independently reviewed for selection; selected parts align to taps, while simple sentences remain unselected. | Selection is a reviewed judgment, not an automatic length rule. Korean sentence-help parts currently explain structure in text; grammar lessons open from word/form rows, without inline lesson buttons in the sentence-help parts. |
@@ -89,3 +90,48 @@ chapter metadata/text, generic dictionary versus contextual past meanings,
 linked past grammar, selected sentence help, and ordinary above-level marking.
 The console reported no errors. This length-policy implementation is Korean;
 the older Chinese/Japanese generators still have source-relative length bands.
+
+## TOPIK 1 publication — 2026-10-02
+
+The real run in `runs/korean-topik1/chapter-001` completed all seven independent
+reviews. The published pilot now has 91 sentences, 1,781 characters, 392 word
+taps and 22 selected sentence analyses. All 91 sentences were checked, including
+the simpler sentences deliberately left without analyses. The reviewed source
+scope remains paragraphs 0–16, offsets 0–1,923; its coherent nighttime ending
+and difficulty-based omissions are recorded in the prose planning evidence.
+No chapter-size quota was used.
+
+Every ordinary lexical identity and linked grammar identity has a reviewed
+binding to the pinned six-level curriculum or an explicit unlisted status.
+Extra ordinary vocabulary is 7.37% of occurrences. Optional sourced grammar
+retains grades 2 or 3; unlisted grammar retains null, not an invented grade.
+Per-pattern rationales and the whole-chapter assessment are publication evidence,
+not permanent caveats in the generic dictionary lessons. Higher-level Korean
+generation is not configured yet; this publication is chapter 1 at TOPIK 1.
+
+The complete pilot annotation review repaired contextual tense in final form
+glosses, optional pronunciation errors, and the scope of qualified negative
+phrases. Construction links now cover every included tap, including an
+uninflected opening word, while preserving source text and tap boundaries.
+Three shared dictionary corrections were separately researched and reviewed
+against all published pilot and supplied draft occurrences (14 distinct uses).
+Existing approved entries and unchanged annotation chunks were reused.
+
+Validation: 94 focused Python checks, 360 Flutter tests, Flutter analysis,
+publication replay, and a completed-run rerun without model calls. Release web
+and Android debug builds succeeded. Playwright checked the rebuilt separate
+Chrome preview at 390×844, including a physical word tap, neutral dictionary
+versus past passage forms, a true Level 2 optional grammar link, an unlisted
+grammar link, full qualified negation available from its opening name, and
+selective sentence help. Resume captions use current reader metadata rather
+than an old saved level label. The earlier phone update succeeded with data
+restored; the new chapter's Android build awaits a USB reconnection.
+
+Remaining follow-up: quoted-sentence extraction can attach a closing quotation
+mark to the next example (observed in the `살다` examples) or end an example
+before its closing mark. Repair the shared dictionary/sentence-inventory
+boundaries together and refresh their source-bound help evidence, preserving
+text and taps. This is a punctuation-boundary issue, not a dictionary meaning
+or curriculum-grade correction. The 10,635-word catalog is a grading reference;
+we do not claim an exhaustive reviewed dictionary for every entry or an exact
+list of words permitted on TOPIK exams.

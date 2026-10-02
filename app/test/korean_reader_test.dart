@@ -15,13 +15,128 @@ Future<Map<String, dynamic>> annotation(String source) async =>
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
+  test('Optional grammar retains its true grade and is contextual', () {
+    expect(koreanGrammarLevelCue(null), isEmpty);
+    expect(
+        koreanGrammarLevelCue({
+          'optional_for_level': true,
+          'matched_curriculum_level': null,
+          'target_curriculum_level': 1,
+        }),
+        'Grammar level not listed · Optional for TOPIK 1');
+    expect(
+        koreanGrammarLevelCue({
+          'optional_for_level': false,
+          'matched_curriculum_level': 1,
+          'target_curriculum_level': 1
+        }),
+        isEmpty);
+    expect(
+        koreanGrammarLevelCue({
+          'optional_for_level': true,
+          'matched_curriculum_level': 2,
+          'target_curriculum_level': 1
+        }),
+        'TOPIK 2 grammar · Optional for TOPIK 1');
+  });
+
+  testWidgets(
+      'Selected optional grammar is labeled without changing the lesson',
+      (tester) async {
+    final dictionary = (await tester.runAsync(KoreanDictionary.load))!;
+    final original = (dictionary.grammar['occurrences'] as List).first
+        as Map<String, dynamic>;
+    final entry = dictionary.entry(original['entry_id'], isGrammar: true);
+    final optional = {
+      ...original,
+      'optional_for_level': true,
+      'matched_curriculum_level': 2,
+      'target_curriculum_level': 1
+    };
+    await tester.pumpWidget(MaterialApp(
+        home: KoreanEntryScreen(
+            dictionary: dictionary,
+            entry: entry,
+            grammar: true,
+            selectedUse: optional)));
+    expect(find.text('TOPIK 2 grammar · Optional for TOPIK 1'), findsOneWidget);
+    expect(find.text(entry['explanation_en']), findsOneWidget);
+    await tester.pumpWidget(MaterialApp(
+        home: KoreanEntryScreen(
+            dictionary: dictionary,
+            entry: entry,
+            grammar: true,
+            selectedUse: original)));
+    expect(find.text('TOPIK 2 grammar · Optional for TOPIK 1'), findsNothing);
+  });
+
+  testWidgets('Complete optional phrase is available across its exact scope',
+      (tester) async {
+    final use = <String, dynamic>{
+      'source': 's',
+      'segment_index': 0,
+      'surface': '안',
+      'entry_id': 'possibility',
+      'sentence': '안 들을 수도 있습니다.',
+      'context_en': 'He fears the child might not listen.',
+      'display_form': '안 들을 수도 있습니다',
+      'display_meaning_en': 'might not listen',
+      'display_end_segment_index': 4,
+      'optional_for_level': true,
+      'matched_curriculum_level': 2,
+      'target_curriculum_level': 1
+    };
+    final dictionary = KoreanDictionary({
+      'language': 'korean',
+      'sources': {
+        's': {'text': '안 들을 수도 있습니다.'}
+      },
+      'entries': [],
+      'occurrences': [
+        {'source': 's', 'segment_index': 2, 'surface': '들을'},
+        {'source': 's', 'segment_index': 6, 'surface': '다른'}
+      ]
+    }, {
+      'language': 'korean',
+      'sources': {
+        's': {'text': '안 들을 수도 있습니다.'}
+      },
+      'entries': [
+        {
+          'id': 'possibility',
+          'title_en': 'Possibility',
+          'pattern': '-(으)ㄹ 수도 있다',
+          'explanation_en': 'Something might happen.'
+        }
+      ],
+      'occurrences': [use],
+      'forms': []
+    });
+    expect(dictionary.grammarUses('s', '안 들을 수도 있습니다.', 0, '안'), [use]);
+    expect(dictionary.grammarUses('s', '안 들을 수도 있습니다.', 2, '들을'), [use]);
+    expect(dictionary.grammarUses('s', '안 들을 수도 있습니다.', 6, '다른'), isEmpty);
+    expect(dictionary.grammarUses('s', '안 들을 수도 있습니다.', 2, 'wrong'), isEmpty);
+    expect(dictionary.grammarUses('s', 'changed', 2, '들을'), isEmpty);
+    await tester.pumpWidget(MaterialApp(
+        home: Scaffold(
+            body: KoreanGrammarLink(dictionary: dictionary, use: use))));
+    expect(find.text('안 들을 수도 있습니다'), findsOneWidget);
+    expect(find.textContaining('might not listen'), findsOneWidget);
+    expect(find.textContaining('Optional for TOPIK 1'), findsOneWidget);
+    await tester.tap(find.byType(ListTile));
+    await tester.pumpAndSettle();
+    expect(find.text('Something might happen.'), findsOneWidget);
+    expect(find.text('He fears the child might not listen.'), findsOneWidget);
+  });
+
   test('Korean published chapters reconstruct exactly and have useful taps',
       () async {
     final books = await ContentRepository().loadBooks(Language.korean);
     expect(books, hasLength(1));
     expect(books.single.title, '홍길동전');
     final reader = books.single.levels[1]!;
-    expect(reader.levelLabel, 'Level 1');
+    expect(reader.levelLabel, 'TOPIK 1');
+    expect(reader.maxLevel, 6);
     expect(reader.chapters, hasLength(1));
     for (final chapter in reader.chapters) {
       final data = await annotation(chapter.annotationAsset);

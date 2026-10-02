@@ -371,7 +371,7 @@ class _LevelHeader extends StatelessWidget {
   }
 
   String _levelTag(int level) {
-    if (language == Language.korean) return 'Level $level';
+    if (language == Language.korean) return 'TOPIK $level';
     if (language == Language.japanese) {
       const labels = {1: 'N5', 2: 'N4', 3: 'N3', 4: 'N2', 5: 'N1'};
       return 'JLPT ${labels[level] ?? level}';
@@ -721,7 +721,7 @@ class _ContinueReadingCardState extends State<_ContinueReadingCard>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                '${p.bookTitle} · ${p.levelLabel}',
+                '${r.bookTitle} · ${r.levelLabel}',
                 style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,

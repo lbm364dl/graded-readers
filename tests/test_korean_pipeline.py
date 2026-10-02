@@ -16,6 +16,21 @@ def manual_chapter():
     return json.loads(Path('tests/fixtures/korean_manual_annotations.json').read_text())['chapters'][0]
 
 
+def protocol_curriculum_bindings(chapter):
+    """Synthetic reviewer outputs for cache/replay tests, not linguistic data.
+
+    Real source grading and contrasting grammar cases are tested separately in
+    test_korean_curriculum.py. These tests mock every model review already.
+    """
+    required = {('vocabulary', s['lexical']['id']) for s in chapter['segments']
+                if s.get('lexical', {}).get('kind') == 'vocabulary'}
+    required |= {('grammar', link['entry_id']) for link in chapter['grammar_links']}
+    return {'level_reason_en': 'Synthetic level-review fixture.', 'prose_revision_reason_en': '', 'bindings': [{'kind': kind, 'entry_id': identity,
+        'source_ids': [f'nikl2017-{kind}-00001'], 'equivalence': 'listed',
+        'analysis_en': 'Synthetic curriculum-review protocol fixture.', 'optional_reason_en': ''}
+        for kind, identity in sorted(required)]}
+
+
 def test_chapter_quantity_is_not_a_prose_gate_but_empty_work_is_rejected():
     from jsonschema import validate
     short = {'title': '도착', 'text': '아이가 왔습니다.',
@@ -157,6 +172,11 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
                     {'id': '벼슬/명', 'headword': '벼슬', 'kind': 'story_term', 'aliases': ['벼슬'], 'role_en': 'historical office'}]}
             if job.startswith('prose-'):
                 return {'title': '제목', 'text': revised_text if 'revision1' in job else chapter['text'], 'length_reason_en': 'Test source-scene extent'}
+            if job.startswith('curriculum-'):
+                adopted = revised if 'revision1' in job else raw
+                canonical = {'segments': [dict(s, lexical={'kind': s['lexical_kind'], 'id': s['lexical_id']})
+                    for s in adopted['segments']], 'grammar_links': adopted['grammar_links']}
+                return protocol_curriculum_bindings(canonical)
             if '-chunk-' in job:
                 number, attempt = map(int, job.split('-chunk-')[1].split('-'))
                 if worker_failure and number == 1 and attempt == 0:
@@ -368,6 +388,26 @@ def test_publication_rejects_incomplete_run_before_writing(tmp_path):
         publication.publish(tmp_path)
 
 
+def test_publication_requires_curriculum_review_and_replays_exact_bindings(tmp_path):
+    from pipeline.korean_agent_harness import read, save
+    make_reviewed_run(tmp_path)
+    assert publication.verify_run(tmp_path)[0]['curriculum']['evaluation']['source_sha256']
+    chapter = read(tmp_path / 'chapter.json')
+    chapter['curriculum']['bindings']['bindings'][0]['analysis_en'] = 'Changed after approval'
+    save(tmp_path / 'chapter.json', chapter)
+    report = read(tmp_path / 'report.json')
+    report['artifacts']['chapter.json'] = sources.sha((tmp_path / 'chapter.json').read_bytes())
+    save(tmp_path / 'report.json', report)
+    with pytest.raises(ValueError, match='differs from reviewed proposals'):
+        publication.verify_run(tmp_path)
+    make_reviewed_run(tmp_path)
+    report = read(tmp_path / 'report.json')
+    del report['stages']['curriculum']
+    save(tmp_path / 'report.json', report)
+    with pytest.raises(ValueError, match='coverage or policy is stale'):
+        publication.verify_run(tmp_path)
+
+
 def test_publication_replays_grammar_binding_job_and_rejects_changed_result(tmp_path):
     from pipeline.korean_agent_harness import read, save
     make_reviewed_run(tmp_path)
@@ -436,6 +476,9 @@ def make_reviewed_run(run):
         {'id': 'hong-gildong', 'headword': '홍길동', 'kind': 'proper_name', 'aliases': ['홍길동'], 'role_en': 'central child'},
         {'id': '벼슬/명', 'headword': '벼슬', 'kind': 'story_term', 'aliases': ['벼슬'], 'role_en': 'historical office'}]}
     chapter = contracts.canonical_annotation(annotation, prose, 1, sources.EDITION, bound, focus)
+    from pipeline.korean_curriculum import evaluate_bindings
+    bindings = protocol_curriculum_bindings(chapter)
+    chapter['curriculum'] = {'bindings': bindings, 'evaluation': evaluate_bindings(chapter, bindings)}
     old = json.loads(Path('tests/fixtures/korean_manual_breakdowns.json').read_text())
     rows = []
     for sentence in contracts.sentence_inventory(chapter['text']):
@@ -450,7 +493,8 @@ def make_reviewed_run(run):
               'policy_sha256': sources.sha(POLICY.read_bytes()),
               'linguistic_reference_sha256': sources.sha((sources.ROOT / 'data/korean/linguistic-reference.json').read_bytes()),
               'stages': {}, 'artifacts': {}}
-    for name, value in {'plan': plan, 'lexical-plan': focus, 'prose': prose, 'annotation': annotation, 'sentence-help': help_output}.items():
+    for name, value in {'plan': plan, 'lexical-plan': focus, 'prose': prose, 'annotation': annotation,
+                        'sentence-help': help_output, 'curriculum': bindings}.items():
         review = {'approved': True, 'issues': []}
         save(run / 'agents' / name / 'result.json', value)
         save(run / 'agents' / name / 'meta.json', {'return_code': 0})
@@ -568,7 +612,7 @@ def test_partial_stage_reuses_actual_cached_review_only_for_matching_context(tmp
     value = {'title': '제목', 'text': 'reviewed output', 'length_reason_en': 'Test editorial decision'}
     context = {'source': 'same source'}
     harness = KoreanHarness(tmp_path, 1, runner=CodexRunner(tmp_path, 'test-model', asyncio.Semaphore(1)))
-    prompt = harness.policy + '\n' + REVIEW_POLICY + payload(stage='prose', task='task', context=context, output=value)
+    prompt = harness.policy + '\n' + REVIEW_POLICY + payload(stage='prose', task='task', task_inputs={}, context=context, output=value)
     fingerprint = runner_digest(prompt, contracts.schema_path('review').read_text(), 'test-model', 'high')
     fingerprint = runner_digest(fingerprint, 'offline', 'tool-profile-v1')
     save(tmp_path / 'agents/prose-4/result.json', value)
@@ -628,9 +672,11 @@ def test_lexical_plan_reuses_names_and_only_exempts_essential_nonbeginner_words(
     catalog = contracts.lexical_catalog()
     profile = {'id': 'hong-gildong', 'headword': '홍길동', 'kind': 'proper_name',
                'aliases': ['홍길동', '길동'], 'role_en': 'central child'}
-    servant = {'id': 'servant-hain', 'headword': '하인', 'kind': 'story_term',
+    servant = {'id': catalog['하인'][0]['id'], 'headword': '하인', 'kind': 'story_term',
                'aliases': ['하인'], 'role_en': 'his mother’s status causes the central conflict'}
     validate_focus({'entries': [profile, servant]}, words, catalog)
+    with pytest.raises(ValueError, match='canonical NIKL identity'):
+        validate_focus({'entries': [profile, {**servant, 'id': 'invented-servant'}]}, words, catalog)
     with pytest.raises(ValueError, match='Reuse the approved identity'):
         validate_focus({'entries': [{**profile, 'id': 'duplicate-child'}]}, words, catalog)
     beginner = {'id': '아버지/명', 'headword': '아버지', 'kind': 'story_term',
@@ -647,3 +693,208 @@ def test_source_placeholder_notes_prevent_invented_given_names():
     bad = {**good, 'headword': '홍뫼', 'aliases': ['홍뫼']}
     with pytest.raises(ValueError, match='literal placeholder name'):
         validate_focus({'entries': [bad]}, {}, contracts.lexical_catalog(), notes)
+
+
+@pytest.mark.parametrize('actual', [2, None])
+def test_optional_grammar_metadata_covers_every_occurrence_without_changing_entries(tmp_path, actual):
+    chapter = manual_chapter()
+    bindings = protocol_curriculum_bindings(chapter)
+    advanced = chapter['grammar_links'][0]['entry_id']
+    for binding in bindings['bindings']:
+        if binding['kind'] == 'grammar' and binding['entry_id'] == advanced:
+            binding.update(source_ids=['nikl2017-grammar-00063'] if actual else [],
+                           equivalence='listed' if actual else 'unlisted',
+                           optional_reason_en='A brief common pattern helps this scene; optional learning at Level 1.')
+    from pipeline.korean_curriculum import evaluate_bindings
+    chapter['curriculum'] = {'bindings': bindings,
+                            'evaluation': evaluate_bindings(chapter, bindings)}
+    registry = dictionary._registry(dictionary.GRAMMAR)
+    original = copy.deepcopy(registry)
+    _, asset = dictionary.build_assets(chapter, tmp_path, grammar_registry=registry, write=False)
+    optional = [use for use in asset['occurrences'] if use['entry_id'] == advanced]
+    assert len(optional) == sum(link['entry_id'] == advanced for link in chapter['grammar_links'])
+    assert all(use['optional_for_level'] and use['matched_curriculum_level'] == actual
+               and use['target_curriculum_level'] == 1 for use in optional)
+    assert all(not use['optional_for_level'] and use['matched_curriculum_level'] == 1
+               for use in asset['occurrences'] if use['entry_id'] != advanced)
+    assert registry == original  # A contextual exception does not rewrite a lesson.
+
+
+def test_changed_policy_repairs_latest_cached_draft_after_old_attempt_budget(tmp_path):
+    from pipeline.korean_agent_harness import save
+    draft = {'title': '제목', 'text': '아이가 왔습니다.', 'length_reason_en': 'A coherent brief scene.'}
+    save(tmp_path / 'agents/prose-8/result.json', draft)
+    save(tmp_path / 'agents/prose-review-8/result.json', {'approved': False, 'issues': ['Old policy']})
+    class Runner:
+        def __init__(self): self.jobs = []
+        async def call(self, job, prompt, *args, **kwargs):
+            self.jobs.append(job)
+            if job == 'prose-review-8':
+                return {'approved': False, 'issues': ['A concrete wording repair.']}
+            if job == 'prose-9':
+                assert 'A concrete wording repair.' in prompt
+                return draft
+            if job == 'prose-review-9':
+                return {'approved': True, 'issues': []}
+            raise AssertionError(job)
+    runner = Runner()
+    harness = KoreanHarness(tmp_path, 1, runner=runner)
+    assert asyncio.run(harness.stage('prose', 'Current policy', 'prose', check_prose, {})) == draft
+    assert runner.jobs == ['prose-review-8', 'prose-9', 'prose-review-9']
+
+
+def test_optional_grammar_still_requires_independent_whole_chapter_review(tmp_path):
+    from pipeline.korean_agent_harness import UnannotatableProseError
+    chapter = manual_chapter()
+    bindings = protocol_curriculum_bindings(chapter)
+    for binding in bindings['bindings']:
+        if binding['kind'] == 'grammar':
+            binding.update(source_ids=['nikl2017-grammar-00063'],
+                           optional_reason_en='Synthetic implausible exception for rejection testing.')
+    class Runner:
+        async def call(self, job, prompt, *args, **kwargs):
+            if job == 'curriculum-0': return bindings
+            if job == 'curriculum-review-0':
+                assert 'computed_curriculum_evaluation' in prompt
+                assert 'above_level_grammar_occurrences' in prompt
+                return {'approved': False, 'issues': ['Optional labels do not justify this chapter depending on many advanced constructions. Revise prose.']}
+            if job == 'curriculum-1':
+                assert 'many advanced constructions' in prompt
+                return {**bindings, 'prose_revision_reason_en': 'Simplify the core constructions across the chapter.'}
+            raise AssertionError(job)
+    from pipeline.korean_curriculum import evaluate_bindings
+    def check(value):
+        if value['prose_revision_reason_en']:
+            raise UnannotatableProseError(value['prose_revision_reason_en'])
+        evaluate_bindings(chapter, value)
+    harness = KoreanHarness(tmp_path, 1, runner=Runner())
+    with pytest.raises(UnannotatableProseError, match='Simplify the core'):
+        asyncio.run(harness.stage('curriculum', 'Review the whole chapter honestly.',
+            'curriculum', check, {'chapter': chapter}))
+    assert 'curriculum' not in harness.stages
+
+
+def test_unplanned_name_error_supplies_catalog_evidence_without_creating_exemptions():
+    from pipeline.korean_agent_harness import annotation_requests
+    value = {'segments': [{'text': '조선에', 'type': 'word', 'lemma': '조선',
+        'lexical_id': 'invented-name', 'lexical_kind': 'proper_name'}], 'grammar_links': []}
+    with pytest.raises(ValueError, match='조선05/고'):
+        annotation_requests(value, contracts.lexical_catalog(), {'entries': []}, {})
+    value['segments'][0].update(lexical_id='조선05/고', lexical_kind='vocabulary')
+    requests, _ = annotation_requests(value, contracts.lexical_catalog(), {'entries': []}, {})
+    assert requests['조선05/고']['kind'] == 'word'
+
+
+def test_complete_construction_can_start_at_an_uninflected_prefix(tmp_path):
+    chapter = {'number': 1, 'title': 'Negative phrase', 'text': '안 들었습니다.',
+        'segments': [
+            {'text': '안', 'type': 'word', 'meaning_en': 'not',
+             'lexical': {'id': 'negative-word', 'kind': 'vocabulary'}},
+            {'text': ' ', 'type': 'punctuation', 'meaning_en': ''},
+            {'text': '들었습니다', 'type': 'word', 'meaning_en': 'heard',
+             'lexical': {'id': 'hear-word', 'kind': 'vocabulary'}, 'form_steps': [
+                 {'form': '들었다', 'reading': '', 'label': 'Past', 'meaning_en': 'heard',
+                  'grammar_entry_ids': ['past']},
+                 {'form': '들었습니다', 'reading': '', 'label': 'Formal polite', 'meaning_en': 'heard',
+                  'grammar_entry_ids': ['formal']}]},
+            {'text': '.', 'type': 'punctuation', 'meaning_en': ''}],
+        'grammar_links': [
+            {'segment_index': 0, 'entry_id': 'negation', 'context_en': 'Negates hearing.',
+             'display_form': '안 들었습니다', 'display_meaning_en': 'did not hear', 'display_end_segment_index': 2},
+            {'segment_index': 2, 'entry_id': 'past', 'context_en': 'Past hearing.'},
+            {'segment_index': 2, 'entry_id': 'formal', 'context_en': 'Formal polite statement.'}],
+        'form_audit': {'reviewed': True, 'inflected_segment_indices': [2]}}
+    words = {identity: {'id': identity, 'kind': 'word', 'headword': headword,
+                       'definition_en': meaning} for identity, headword, meaning in
+             [('negative-word', '안', 'not'), ('hear-word', '듣다', 'to hear')]}
+    grammar = {identity: {'id': identity} for identity in ('negation', 'past', 'formal')}
+    _, asset = dictionary.build_assets(chapter, tmp_path, word_registry=words,
+                                      grammar_registry=grammar, write=False)
+    phrase = asset['occurrences'][0]
+    assert phrase['surface'] == '안'  # Tap boundaries stay unchanged.
+    assert phrase['display_form'] == '안 들었습니다'
+    assert phrase['display_meaning_en'] == 'did not hear'
+    # A source mismatch still fails; prefix support is not an unchecked span.
+    chapter['grammar_links'][0]['display_form'] = '들었습니다'
+    with pytest.raises(ValueError, match='construction stage'):
+        dictionary.build_assets(chapter, tmp_path, word_registry=words,
+                                grammar_registry=grammar, write=False)
+
+
+def test_review_payload_keeps_unique_inputs_and_does_not_duplicate_context():
+    from pipeline.korean_agent_harness import review_task, payload
+    prompt = 'Instructions.' + payload(source={'text': 'same source'}, words=['one'], limit=10)
+    prompt += ' End instructions.' + payload(repair='Fix the identified error')
+    instructions, unique = review_task(prompt, {'source': {'text': 'same source'}, 'approved_words': ['one']})
+    assert instructions == 'Instructions. End instructions.'
+    assert unique == {'limit': 10, 'repair': 'Fix the identified error'}
+    # A different source is evidence, even with the same field name.
+    _, unique = review_task(payload(source='different'), {'source': 'original'})
+    assert unique == {'source': 'different'}
+
+
+def test_review_dedup_does_not_confuse_equal_scalar_values_with_equal_roles():
+    from pipeline.korean_agent_harness import review_task, payload
+    _, unique = review_task(payload(target_level=1, pending=[]), {'story_term_budget': 1, 'other': []})
+    assert unique == {'target_level': 1, 'pending': []}
+
+
+def test_annotation_resume_recovers_reviewed_assembly_and_preserves_issues(tmp_path):
+    from pipeline.korean_agent_harness import annotation_reuse_candidate, normalize_existing, save
+    chapter = manual_chapter()
+    value = normalize_existing(chapter, dictionary._registry(dictionary.WORDS))
+    for job, approved, ended in [
+        ('annotation-5', True, '2026-10-02T01:00:00Z'),
+        ('annotation-revision1-0', True, '2026-10-02T02:00:00Z'),
+        ('annotation-revision2-0', False, '2026-10-02T03:00:00Z'),
+    ]:
+        directory = tmp_path / 'agents' / job
+        save(directory / 'result.json', value)
+        save(directory / 'meta.json', {'return_code': 0, 'kind': 'annotation_assembly',
+                                      'chunks': [{'text': chapter['text']}]})
+        prefix, attempt = job.rsplit('-', 1)
+        review = tmp_path / 'agents' / f'{prefix}-review-{attempt}'
+        save(review / 'result.json', {'approved': approved, 'issues': [] if approved else ['Wrong contextual meaning.']})
+        save(review / 'meta.json', {'ended_at': ended})
+    candidate = annotation_reuse_candidate(tmp_path)
+    assert candidate[0] == 'annotation-revision1-0'
+    assert candidate[1]['text'] == chapter['text']
+    # An incomplete chunk job cannot replace full assembled evidence.
+    save(tmp_path / 'agents/annotation-revision2-0-chunk-001-0/meta.json', {'return_code': 0})
+    assert annotation_reuse_candidate(tmp_path)[0] == candidate[0]
+    for job in ('annotation-5', 'annotation-revision1-0'):
+        (tmp_path / 'agents' / job / 'meta.json').unlink()
+    candidate = annotation_reuse_candidate(tmp_path)
+    assert candidate[0] == 'annotation-revision2-0'
+    assert candidate[2]['issues'] == ['Wrong contextual meaning.']
+
+
+def test_semantic_form_repair_preserves_neutral_root_and_other_occurrences(tmp_path):
+    from pipeline.korean_agent_harness import normalize_existing
+    raw = normalize_existing(manual_chapter(), dictionary._registry(dictionary.WORDS))
+    target = next(i for i, s in enumerate(raw['segments'])
+                  if s['text'] == '살았습니다')
+    bad = copy.deepcopy(raw)
+    bad['segments'][target]['form_steps'][-1]['meaning_en'] = 'live'
+    roots = copy.deepcopy(dictionary._registry(dictionary.WORDS))
+    class Runner:
+        async def call(self, job, *args, **kwargs):
+            if job == 'annotation-0':
+                return bad
+            if job == 'annotation-review-0':
+                return {'approved': False, 'issues': ['Final observed form 살았습니다 loses past time.']}
+            if job == 'annotation-1':
+                assert 'loses past time' in args[0]
+                return raw
+            if job == 'annotation-review-1':
+                return {'approved': True, 'issues': []}
+            raise AssertionError(job)
+    harness = KoreanHarness(tmp_path, 1, runner=Runner())
+    result = asyncio.run(harness.stage('annotation', 'Preserve complete contextual meanings.',
+        'annotation', lambda value: contracts.check_reconstruction(
+            value['segments'], manual_chapter()['text']), {'words': list(roots.values())}))
+    assert result == raw
+    assert result['segments'][target]['form_steps'][-1]['meaning_en'] != 'live'
+    assert result['segments'][target]['form_steps'][0] == raw['segments'][target]['form_steps'][0]
+    assert harness.words == roots
+    assert harness.stages['annotation']['review_job'] == 'annotation-review-1'

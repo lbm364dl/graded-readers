@@ -51,10 +51,17 @@ DICTIONARY = obj({"words": {"type": "array", "items": WORD},
                   "grammar": {"type": "array", "items": GRAMMAR}})
 GRAMMAR_BINDINGS = obj({'bindings': {'type': 'array', 'items': obj({
     'draft_id': NONEMPTY, 'entry_id': NONEMPTY})}})
+CURRICULUM_BINDINGS = obj({'level_reason_en': NONEMPTY, 'prose_revision_reason_en': STRING, 'bindings': {'type': 'array', 'items': obj({
+    'entry_id': NONEMPTY, 'kind': {'type': 'string', 'enum': ['vocabulary', 'grammar']},
+    'source_ids': {'type': 'array', 'items': NONEMPTY},
+    'equivalence': {'type': 'string', 'enum': ['listed', 'productive', 'grammatical', 'unlisted']},
+    'analysis_en': NONEMPTY, 'optional_reason_en': STRING})}})
 ANNOTATION_REPAIR_PLAN = obj({'repairs': {'type': 'array', 'items': obj({
     'chunk_index': {'type': 'integer', 'minimum': 1},
     'issues': {'type': 'array', 'minItems': 1, 'items': NONEMPTY}})},
-    'prose_revision_reason_en': STRING})
+    'prose_revision_reason_en': STRING,
+    'dictionary_revision_entry_ids': {'type': 'array', 'items': NONEMPTY}},
+    required=['repairs', 'prose_revision_reason_en'])
 ANNOTATION_REUSE_PLAN = obj({'reused_chunks': {'type': 'array', 'items': obj({
     'old_chunk_index': {'type': 'integer', 'minimum': 1},
     'new_chunk_index': {'type': 'integer', 'minimum': 1}})}})
@@ -72,10 +79,14 @@ def write_schemas() -> None:
     for name, schema in {"review": REVIEW, "plan": PLAN, "prose": PROSE,
                          "annotation": ANNOTATION, "lexical-plan": FOCUS, "dictionary": DICTIONARY,
                          'grammar-bindings': GRAMMAR_BINDINGS,
+                         'curriculum': CURRICULUM_BINDINGS,
                          'annotation-repair-plan': ANNOTATION_REPAIR_PLAN,
                          'annotation-reuse-plan': ANNOTATION_REUSE_PLAN,
                          "breakdowns": BREAKDOWNS}.items():
-        schema_path(name).write_text(json.dumps(schema, ensure_ascii=False, indent=2) + "\n")
+        # Fresh structured outputs require all properties; older retained repair
+        # evidence has no dictionary revision field and remains readable.
+        output_schema = {**schema, "required": list(schema["properties"])}
+        schema_path(name).write_text(json.dumps(output_schema, ensure_ascii=False, indent=2) + "\n")
 
 
 def lexical_catalog() -> dict[str, list[dict]]:
@@ -88,6 +99,9 @@ def lexical_catalog() -> dict[str, list[dict]]:
         headword = re.sub(r"\d+$", "", word)
         result.setdefault(headword, []).append({"id": f"{word}/{pos}",
             "headword": headword, "pos": pos, "meaning": meaning, "grade": grade})
+    from pipeline.korean_curriculum import additional_lexical_candidates
+    for entry in additional_lexical_candidates(set(result)):
+        result.setdefault(entry['headword'], []).append(entry)
     return result
 
 

@@ -6,19 +6,35 @@ The current scope is *Hong Gildong*, Level 1, using the pinned searchable
 Wikisource/Jikji 30-sheet original. The planning agent chooses a contiguous
 source span and a coherent stopping paragraph from the remaining narrative;
 the two mapped reference scenes are not chapter limits. The initial publication
-remains chapter 1. NIKL A is a vocabulary baseline,
-not TOPIK certification.
+remains chapter 1. The baseline is the six-level NIKL International Standard
+Curriculum (2017, corrected 2020-11-17), aligned with TOPIK levels rather than an
+exhaustive exam word list. The earlier A/B/C catalog preserves lexical IDs only.
+Ordinary extra vocabulary retains its source grade and the existing 10% budget.
+A few higher-level grammar patterns may be reviewed as optional learning, with
+true grades, per-pattern rationales and a whole-chapter difficulty assessment.
+Review considers frequency, variety, complexity and narrative need without a
+fixed grammar quota; an unsuitable chapter returns to prose revision.
+Unlisted grammar keeps a null grade and an explicit optional rationale; it is
+never assigned an invented upper level. Unlisted ordinary words count toward
+the extra-vocabulary budget. Vocabulary guide phrases illustrate a lexical
+identity rather than excluding its other independently verified senses; grammar
+source meanings still distinguish functions.
 
 ```sh
 .venv/bin/python -m pipeline.korean_sources
-.venv/bin/python -m pipeline.korean_agent_harness --chapter 1 --run-dir runs/korean-l1/chapter-001
-.venv/bin/python -m pipeline.korean_publication --run-dir runs/korean-l1 --check
-.venv/bin/python -m pipeline.korean_publication --run-dir runs/korean-l1
+.venv/bin/python -m pipeline.korean_agent_harness --chapter 1 --run-dir runs/korean-topik1/chapter-001
+.venv/bin/python -m pipeline.korean_publication --run-dir runs/korean-topik1 --check
+.venv/bin/python -m pipeline.korean_publication --run-dir runs/korean-topik1
 ```
 
 The harness proposes a source plan, reviewed name/story identities, beginner prose,
-exact tap annotations, missing dictionary entries and selective sentence help. Each stage has an
-independent review and up to five repairs after the first attempt.
+exact tap annotations, curriculum bindings, missing dictionary entries and selective sentence help. Each of the seven stages has an
+independent review and up to seven repairs after the first attempt.
+After a restart, the harness recovers saved annotation assemblies and asks the
+reuse agent to approve exact unchanged occurrences, preserving unresolved issues
+and distinct positions. Selected chunk digests must still match. Curriculum
+search includes possible compound prerequisites as candidates; it never grades
+a derived word from spelling alone.
 Chapter length has no numeric quota. Source planning records the coverage and
 omission decisions; prose records why its extent and stopping point suit the
 level. Independent review checks both avoidable compression and padding. The
@@ -54,6 +70,24 @@ are sent to the dictionary editor. The tested default model is `gpt-6.1-sol`; ov
 `--model` when running a different model. Completed-run reuse remains subject to
 content/source/evidence validation. `--existing` adopts a chapter only if its
 prose passes review unchanged; source errors require deliberate regeneration.
+
+When independent review finds an approved word definition does not cover an
+observed legitimate sense, annotation triage records the exact IDs and stops for
+shared editorial review. This is separate from normal immutable entry reuse:
+
+```sh
+.venv/bin/python -m pipeline.korean_dictionary_revision --entry-id 'LEXICAL_ID' --draft-annotation runs/korean-topik1/chapter-001/agents/annotation-N/result.json --run-dir runs/korean-topik1/dictionary-revision
+```
+
+The editor researches primary dictionary evidence, audits all published Korean
+levels plus the draft, and independently reviews corrections before applying
+any shared change. It preserves IDs and existing valid meanings, saves revision
+evidence with the registry, and refuses concurrent registry changes. Resume the
+chapter harness afterward; unaffected annotations remain cached. Editorial
+requirements must not leak into learner-facing occurrence notes.
+Exact construction phrases can begin on an uninflected prefix, including
+negation. Their reviewed scope is available from each covered word, with
+complete meanings and contextual optional-level labels.
 
 Publication validates all accepted consecutive chapter runs in a temporary
 staging directory before replacing Korean content/assets. It preserves shared
