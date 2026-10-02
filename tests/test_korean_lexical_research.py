@@ -417,3 +417,19 @@ def test_research_resume_uses_rejected_checkpoint_only_as_repair_context(tmp_pat
     assert calls[0] == f'lexical-research-{key}-{4 if rejected else 0}'
     assert '-review-' in calls[1]  # Every resumed proposal still gets independent review.
     assert result['status'] == 'reviewed'
+
+
+def test_research_review_distinguishes_unresolved_coverage_from_missing_entries(tmp_path, monkeypatch):
+    monkeypatch.setattr(research, 'standard_evidence', lambda word: {'records': []})
+    class Runner:
+        async def call(self, job, prompt, *args, **kwargs):
+            if '-review-' in job:
+                assert 'Coverage is the union of entries and unresolved' in prompt
+                assert 'Review whether its unresolved reason is justified' in prompt
+                return {'approved': True, 'issues': []}
+            return {'entries': [], 'unresolved': [{'headword': '큰', 'reason_en': 'An inflected adjective form, not a standalone headword.'}]}
+    result = asyncio.run(research.research(['큰'], tmp_path, runner=Runner(), registry=tmp_path/'registry.json'))
+    assert result['entries'] == []
+    assert result['unresolved'][0]['headword'] == '큰'
+    with pytest.raises(ValueError, match='Missing'):
+        research.check_proposal({'entries': [], 'unresolved': []}, ['큰'])
