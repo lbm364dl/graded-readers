@@ -155,11 +155,18 @@ def build_assets(chapter: dict, output_dir: Path, *, source_id: str = SOURCE,
                 raise ValueError(f"Korean grammar tap has no linked lesson: {index}")
     form_audit = chapter.get("form_audit", {})
     inflected = form_audit.get("inflected_segment_indices")
-    if (form_audit.get("reviewed") is not True or not isinstance(inflected, list)
-            or len(set(inflected)) != len(inflected)
-            or set(inflected) != {i for i, segment in enumerate(segments)
-                                       if segment.get("form_steps")}):
+    if form_audit.get('reviewed') is not True or not isinstance(inflected, list):
         raise ValueError("Korean form review is incomplete")
+    if any(type(i) is not int or not 0 <= i < len(segments) for i in inflected):
+        raise ValueError('invalid Korean form-review index')
+    built = {i for i, segment in enumerate(segments) if segment.get('form_steps')}
+    if len(set(inflected)) != len(inflected) or set(inflected) != built:
+        missing_steps = [(i, segments[i]['text']) for i in sorted(set(inflected) - built)]
+        missing_audit = [(i, segments[i]['text']) for i in sorted(built - set(inflected))]
+        raise ValueError(f'Korean form review is incomplete: declared inflected taps without form_steps: {missing_steps}; '
+            f'taps with form_steps missing from inflected_segment_indices: {missing_audit}; '
+            f'duplicate audit indices: {len(inflected) - len(set(inflected))}. '
+            'Review the actual forms; do not omit a real inflection or invent an intermediate stage just to satisfy the audit.')
     form_uses = []
     for index in inflected:
         if not isinstance(index, int) or not 0 <= index < len(segments):

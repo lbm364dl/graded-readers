@@ -188,6 +188,21 @@ def test_korean_form_chains_require_reviewed_complete_stages(tmp_path):
         build_assets(chapter, tmp_path)
 
 
+@pytest.mark.parametrize('missing_steps', [False, True])
+def test_form_audit_reports_exact_tap_and_direction_of_mismatch(tmp_path, missing_steps):
+    chapter = pilot_chapter()
+    if missing_steps:
+        chapter['segments'][7]['form_steps'] = []
+        expected = 'declared inflected taps without form_steps: [(7,'
+    else:
+        chapter['form_audit']['inflected_segment_indices'].remove(7)
+        expected = 'taps with form_steps missing from inflected_segment_indices: [(7,'
+    with pytest.raises(ValueError) as failure:
+        build_assets(chapter, tmp_path, write=False)
+    assert expected in str(failure.value)
+    assert '살았습니다' in str(failure.value)
+
+
 def test_korean_construction_stage_requires_exact_complete_phrase(tmp_path):
     chapter = pilot_chapter()
     _, grammar = build_assets(chapter, tmp_path)

@@ -342,3 +342,10 @@ optional grammar. Publication replays every batch and assessment from completed
 offline worker evidence and rejects altered outputs or forbidden tool use.
 Regression coverage includes complete binding assembly and publication replay,
 with contrasting tampered-content and tool-use failures.
+
+TOPIK 5 exposed another repeated repair: an audit declared an inflected tap but
+provided no stages, while the validator reported only an incomplete review.
+Diagnostics now identify exact indices/surfaces both for declared inflections
+without stages and for stages missing from the audit. They require actual form
+review instead of omitting inflections or inventing intermediate forms. Paired
+regressions cover each mismatch direction; data and tap boundaries are unchanged.
