@@ -938,11 +938,13 @@ class KoreanHarness:
                         if cached:
                             repair_start = max(attempt for attempt, _ in cached) + 1
                         for _, path in sorted(cached, reverse=True):
+                            raw_value, verified_worker = None, False
                             try:
                                 meta = read(path.with_name('meta.json'))
                                 if meta.get('return_code') != 0:
                                     continue
                                 CodexRunner._check_tool_profile(path.parent, 'offline', meta)
+                                verified_worker = True
                                 raw_value = read(path)
                                 from pipeline.korean_annotation_chunks import decode
                                 value = decode(raw_value)
@@ -950,7 +952,19 @@ class KoreanHarness:
                                     continue
                                 # A different partition is not a reusable proposal.
                                 contracts.check_reconstruction(value['segments'], text)
-                            except (ValidationError, ValueError, KeyError, TypeError, FileNotFoundError):
+                            except (ValidationError, ValueError, KeyError, TypeError, FileNotFoundError) as error:
+                                # A rejected span/reconstruction is useful repair
+                                # context, never a reusable approved occurrence.
+                                # Retain only schema-valid, successful offline
+                                # proposals; the next worker creates new evidence.
+                                if verified_worker and isinstance(raw_value, dict) and previous_chunk is None:
+                                    from pipeline.korean_annotation_chunks import validate_worker
+                                    try:
+                                        validate_worker(raw_value)
+                                    except (ValidationError, ValueError, KeyError, TypeError):
+                                        pass
+                                    else:
+                                        errors, previous_chunk = [str(error)], raw_value
                                 continue
                             try:
                                 validate_chunk(value, text)

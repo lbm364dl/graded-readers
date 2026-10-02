@@ -129,7 +129,7 @@ def test_publication_rejects_overlapping_or_skipped_chapter_scopes(tmp_path, mon
             publication.publish(tmp_path)
 
 
-@pytest.mark.parametrize('prose_revision,worker_failure,recover_partial', [(False, False, False), (False, True, False), (True, False, False), ('technical_failure', False, False), (False, 'attached', False), (False, False, True), (False, False, 'rejected_worker')])
+@pytest.mark.parametrize('prose_revision,worker_failure,recover_partial', [(False, False, False), (False, True, False), (True, False, False), ('technical_failure', False, False), (False, 'attached', False), (False, False, True), (False, False, 'rejected_worker'), (False, False, 'invalid_attached')])
 def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_path, prose_revision, worker_failure, recover_partial):
     from pipeline.korean_agent_harness import normalize_existing, save, UnannotatableProseError
     chapter = manual_chapter()
@@ -149,6 +149,12 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
         def __init__(self): self.jobs = []
         async def call(self, job, *args, **kwargs):
             self.jobs.append(job)
+            if recover_partial == 'invalid_attached' and job == 'annotation-0-chunk-001-1':
+                inputs = json.loads(args[0].rsplit('\nINPUT:\n', 1)[1])
+                assert inputs['previous_chunk']['format'] == 'segment-contained-annotation-v2'
+                assert 'exactly one complete source span' in inputs['issues'][0]
+                assert any(link['display_form'] == 'not present in source'
+                           for segment in inputs['previous_chunk']['segments'] for link in segment['grammar_links'])
             if job.endswith('-reuse-plan'):
                 # Reuse planning sees the same complete lossless annotations as
                 # large reviews, even when individual chunks are small.
@@ -206,6 +212,12 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
         # assembly: one valid proposal and one invalid identity to repair.
         bad = copy.deepcopy(chunks[0])
         next(s for s in bad['segments'] if s['lexical_kind'] == 'vocabulary')['lexical_id'] = 'invented'
+        if recover_partial == 'invalid_attached':
+            from tests.test_korean_annotation_chunks import attached
+            bad = attached(chunks[0])
+            link = next(link for segment in bad['segments'] for link in segment['grammar_links'])
+            link['display_form'] = 'not present in source'
+            link['display_meaning_en'] = 'A rejected worker claim'
         for index, value in ((1, bad), (2, chunks[1])):
             job = f'annotation-0-chunk-{index:03d}-0'
             save(tmp_path / 'agents' / job / 'result.json', value)

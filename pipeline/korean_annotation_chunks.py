@@ -85,13 +85,19 @@ def contained_span(segments, anchor, form):
     return matches[0]
 
 
-def decode(value):
+def validate_worker(value):
     if value.get('format') not in FORMATS:
         validate(value, contracts.ANNOTATION)
-        return value
+        return
     schema = deepcopy(SCHEMA)
     schema['properties']['format']['enum'] = sorted(FORMATS)
     validate(value, schema)
+
+
+def decode(value):
+    validate_worker(value)
+    if value.get('format') not in FORMATS:
+        return value
     contained = value['format'] == FORMAT
     segments = value['segments']
     result = {'segments': [], 'grammar_links': [],
