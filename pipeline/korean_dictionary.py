@@ -143,7 +143,10 @@ def build_assets(chapter: dict, output_dir: Path, *, source_id: str = SOURCE,
                 or segments[index]["type"] != "word" or entry_id not in grammar
                 or not str(link.get("context_en", "")).strip()
                 or (index, entry_id) in seen):
-            raise ValueError(f"invalid Korean grammar occurrence: {link}")
+            nearby = ([{'segment_index': i, 'text': segments[i]['text'], 'type': segments[i]['type']}
+                for i in range(max(0, index - 2), min(len(segments), index + 3))]
+                if isinstance(index, int) else [])
+            raise ValueError(f"invalid Korean grammar occurrence: {link}. Anchor indices count every segment, including spaces and punctuation. Nearby indexed segments: {nearby}. Grammar entry exists: {entry_id in grammar}; duplicate anchor/entry: {isinstance(index, int) and (index, entry_id) in seen}. Correct the occurrence anchor from the actual segment list; preserve source text and tap boundaries.")
         seen.add((index, entry_id))
         start, end = positions[index]
         stage_ids = {grammar_id for step in segments[index].get("form_steps", [])

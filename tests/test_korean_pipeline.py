@@ -1868,3 +1868,19 @@ def test_identity_labels_in_headword_fields_need_repair_not_lexical_research(lem
         assert not isinstance(failure.value, MissingLexicalIdentityError)
         assert 'field repair' in str(failure.value)
         assert '염려하다' in str(failure.value)
+
+
+def test_bad_grammar_anchor_reports_actual_indexed_segments_and_preserves_valid_case(tmp_path):
+    chapter = manual_chapter()
+    dictionary.build_assets(chapter, tmp_path, write=False)
+    link = chapter['grammar_links'][0]
+    punctuation_index = next(i for i, segment in enumerate(chapter['segments']) if segment['type'] == 'punctuation')
+    link['segment_index'] = punctuation_index
+    before = copy.deepcopy(chapter)
+    with pytest.raises(ValueError, match='invalid Korean grammar occurrence') as failure:
+        dictionary.build_assets(chapter, tmp_path, write=False)
+    assert 'Nearby indexed segments' in str(failure.value)
+    assert f"'segment_index': {punctuation_index}" in str(failure.value)
+    assert "'type': 'punctuation'" in str(failure.value)
+    assert 'including spaces and punctuation' in str(failure.value)
+    assert chapter == before
