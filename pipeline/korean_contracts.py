@@ -104,6 +104,15 @@ def lexical_catalog() -> dict[str, list[dict]]:
     from pipeline.korean_curriculum import additional_lexical_candidates
     for entry in additional_lexical_candidates(set(result)):
         result.setdefault(entry['headword'], []).append(entry)
+    from pipeline.korean_dictionary import _registry, WORDS
+    for entry in _registry(WORDS).values():
+        if entry['kind'] not in ('word', 'story_term'):
+            continue
+        candidates = result.setdefault(entry['headword'], [])
+        if not any(c['id'] == entry['id'] for c in candidates):
+            candidates.append({'id': entry['id'], 'headword': entry['headword'],
+                'pos': entry['id'].rsplit('/', 1)[-1] if '/' in entry['id'] else '',
+                'meaning': entry['definition_en'], 'grade': None})
     return result
 
 

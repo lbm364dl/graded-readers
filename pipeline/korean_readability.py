@@ -87,9 +87,12 @@ def diagnostics(chapter: dict, *, exception_entries: list | None = None,
         identity = lexical["id"]
         if lexical["kind"] == "vocabulary":
             if identity not in grades:
-                raise ValueError(f"unresolved Korean vocabulary identity: {identity}")
+                from pipeline.korean_dictionary import _registry, WORDS
+                known = _registry(WORDS).get(identity)
+                if known is None or known['kind'] not in ('word', 'story_term'):
+                    raise ValueError(f"unresolved Korean vocabulary identity: {identity}")
             counts["vocabulary"] += 1
-            if grades[identity] != "A":
+            if grades.get(identity) != "A":
                 above.append(identity)
         elif lexical["kind"] == "proper_name":
             if ("proper_name", identity) not in exceptions:

@@ -21,6 +21,7 @@ from pipeline.korean_levels import LEVEL_GOALS, LEVEL_POLICY
 
 POLICY = ROOT / "pipeline/korean_agent_instructions.md"
 LINGUISTIC_REFERENCE = ROOT / 'data/korean/linguistic-reference.json'
+LEXICAL_REFERENCE = ROOT / 'data/korean/lexical-reference.json'
 REVIEW_POLICY = """Independently review the supplied Korean output for an absolute beginner.
 Check exact source evidence, natural modern Korean, learner difficulty, English
 accuracy and all requested coverage. Approve only if issues is empty.
@@ -236,7 +237,11 @@ def annotation_requests(value: dict, catalog: dict, focus: dict, words: dict) ->
         if kind == "vocabulary" and identity not in {e["id"] for e in candidates}:
             identity_errors.append(f"Exact NIKL candidates for {segment['lemma']}: {candidates}")
         if kind != "grammar":
-            request = {"headword": segment["lemma"], "kind": kind.replace("vocabulary", "word")}
+            known = words.get(identity)
+            request_kind = kind.replace('vocabulary', 'word')
+            if known and dictionaries.lexical_kind_matches(known['kind'], kind):
+                request_kind = known['kind']
+            request = {"headword": segment["lemma"], "kind": request_kind}
             if identity in requests and requests[identity] != request:
                 raise ValueError("Korean same identity has different headwords or kinds")
             if identity in words and any(words[identity][key] != request[key] for key in request):
@@ -287,6 +292,7 @@ class KoreanHarness:
                     initial: dict | None = None, cache_prefix: str = "", producer=None) -> dict:
         if name in ('annotation', 'dictionary', 'sentence-help'):
             review_context = {**review_context, 'linguistic_reference': read(LINGUISTIC_REFERENCE),
+                'lexical_reference': read(LEXICAL_REFERENCE),
                 'form_reading_policy': 'A reading may be empty or equal the written form, meaning no separate pronunciation note. The app displays only readings differing from the written form. Do not require optional pronunciation notes on every occurrence. Any differing pronunciation supplied must be accurate; written morphology and pronunciation remain distinct.'}
         def review_payload(value):
             evidence = {}
@@ -508,8 +514,9 @@ class KoreanHarness:
             annotation_prompt = "Annotate this exact prose in source-aligned sentence chunks. The assembled result must preserve every character and use learner-sized taps. "
             annotation_prompt += "Supply the dictionary headword in lemma, an exact NIKL lexical ID for vocabulary, "
             annotation_prompt += "approved IDs for existing names/grammar; shortened names keep the approved full-name identity and headword. Do not duplicate an entry for a shortened name. Use stable English IDs for genuinely new grammar functions. "
-            annotation_prompt += "Every inflected word needs ordered complete-form transformation steps. The dictionary-form base is supplied by lemma and its own UI row: DO NOT repeat it in form_steps. Each step uses the schema field grammar_entry_ids: an array containing EXACTLY ONE grammar ID, with a matching grammar_links record on the same segment. There is no singular grammar_entry_id field. "
+            annotation_prompt += "Every inflected word needs ordered complete-form transformation steps rooted in an attested lexical word or name, never a grammar identity. Productive adjective-plus-하다 constructions keep their lexical adjective base and link the transformation separately. The dictionary-form base is supplied by lemma and its own UI row: DO NOT repeat it in form_steps. Each step uses the schema field grammar_entry_ids: an array containing EXACTLY ONE grammar ID, with a matching grammar_links record on the same segment. There is no singular grammar_entry_id field. "
             annotation_prompt += "Each stage must have a distinct COMPLETE form. Grammar roles that add no new form belong in grammar_links with complete-phrase display fields, not repeated stages. Do not invent a bare-stem intermediate merely to make forms differ. "
+            annotation_prompt += "Attested fixed expressions need explicit lexical destinations and their complete idiomatic meanings. Use the supplied primary lexical references to identify canonical dictionary headwords and restricted senses; an expression frame is not automatically a new lemma. Do not invent grammar entries for lexical expressions or claim unsupported component meanings. "
             annotation_prompt += "Audit every tap for inflection and grammar roles; particles stay attached unless a learner-sized grammar unit warrants a separate tap. "
             annotation_prompt += "Provide grammar_links for all relevant particles/constructions/steps with local context_en. "
             annotation_prompt += "Any grammar link on an inflected tap outside its steps needs the complete source phrase, complete meaning and inclusive ending segment index. "
@@ -518,6 +525,7 @@ class KoreanHarness:
             annotation_words = [entry for entry in self.words.values()
                 if self.level == 1 or entry['id'] in profiles or entry['headword'] in proposed_headwords]
             annotation_prompt += payload(prose=prose, words=annotation_words, grammar=list(self.grammar.values()), lexical_plan=focus, nikl_A=[([e["id"], e["meaning"]] if e["meaning"] else e["id"]) for e in beginner] if self.level == 1 else [], lexical_candidates=candidate_entries,
+                lexical_reference=read(LEXICAL_REFERENCE),
                 candidate_policy='Search candidates are not approved senses or grades. Select the identity and POS matching the actual occurrence; retain distinct homonyms and do not invent an ID.')
             async def produce_annotation(job, issues):
                 texts = contracts.annotation_chunks(prose["text"], batch_characters=self.annotation_batch_characters)
@@ -636,7 +644,8 @@ class KoreanHarness:
                     # completed workers are proposals, not approved annotations.
                     # Recover only locally valid outputs when there are no known
                     # reviewer objections; the whole chapter still gets reviewed.
-                    if not errors and previous_chunk is None:
+                    rejected_digest = digest(previous_chunk) if errors and previous_chunk is not None else None
+                    if not errors or selected is not None:
                         cached = []
                         for path in (self.run_dir / 'agents').glob(f'{job}-chunk-{number:03d}-*/result.json'):
                             suffix = path.parent.name.rsplit('-', 1)[-1]
@@ -651,6 +660,8 @@ class KoreanHarness:
                                     continue
                                 CodexRunner._check_tool_profile(path.parent, 'offline', meta)
                                 value = read(path)
+                                if rejected_digest is not None and digest(value) == rejected_digest:
+                                    continue
                                 # A different partition is not a reusable proposal.
                                 contracts.check_reconstruction(value['segments'], text)
                             except (ValueError, KeyError, TypeError, FileNotFoundError):
@@ -746,6 +757,13 @@ class KoreanHarness:
                     'vocabulary_candidates': [entry for entry in curriculum.prompt_entries('vocabulary')
                         if entry['id'] in candidate_ids or (self.level == 1 and entry['level'] == 1)],
                     'grammar_catalog': curriculum.prompt_entries('grammar')}
+                ordinary_ids = {s['lexical']['id'] for s in chapter['segments']
+                    if s.get('lexical', {}).get('kind') == 'vocabulary'}
+                curriculum_review['word_requests'] = {identity: {
+                    **request, 'dictionary_kind': request['kind'],
+                    'kind': 'word' if identity in ordinary_ids else request['kind']}
+                    for identity, request in required_words.items()}
+                curriculum_review['classification_policy'] = 'Passage lexical.kind determines exemptions. A legacy story_term dictionary tag does not exempt a word used as ordinary vocabulary. Bind all ordinary identities, including approved words missing from the curriculum; their grade remains honestly unlisted.'
                 bindings = await self.stage('curriculum',
                     'Curriculum vocabulary grades identify lexical identities and parts of speech, not only the illustrative 길잡이말 phrase. A guide phrase is not an exhaustive sense inventory: an independently verified sense of the same lexeme can share the grade. Aggregated homonym/POS rows include each listed identity even if the single guide illustrates only one; do not merge unrelated homonyms. Grammar meanings remain function-specific: identical spelling does not license a different function. When no honest source match exists, use equivalence unlisted with empty source_ids and explain the catalog gap in analysis_en. Its grade stays null, never guessed or relabeled as Level 2. Unlisted grammar needs optional_reason_en and the same whole-chapter difficulty review as higher-level grammar. Unlisted ordinary vocabulary counts toward the extra-vocabulary budget. Catalog absence alone is not a reason to rewrite natural beginner Korean. Bind EVERY ordinary lexical identity and EVERY linked grammar identity in this chapter to exact source IDs from the supplied six-level NIKL curriculum. Preserve dictionary IDs: source homonym numbers can differ between editions. A spelling match alone is not evidence of equivalent sense or POS. Give one binding per kind and entry_id. Listed means the same lexical identity and POS or grammar function. Productive means a justified compositional formation with ALL required lexical and grammatical sources; never concatenate glosses or treat an idiom as productive. Grammatical means a dependent lexical unit explicitly covered by a source construction, such as 수 in the ability pattern. Source entries can cover related forms of their own construction, but do not use an unrelated simpler pattern to hide a difficult construction. Never assign levels yourself: the validator computes the maximum source grade. Missing source coverage uses honest unlisted status; missing or uncertain meaning needs investigation, not invented mappings. Higher-level grammar is allowed sparingly with its actual source grade: give a specific optional_reason_en for each above-level grammar binding, also required for unlisted grammar, empty for vocabulary and in-level grammar. Explain in level_reason_en whether the complete chapter remains suitable, considering occurrence frequency, variety, complexity and dependence on these patterns. No fixed grammar count or percentage. Optional is outside the learning goals, not dispensable sentence meaning. If it cannot honestly fit the level, set prose_revision_reason_en to concrete prose repairs and the pipeline will revise; otherwise leave it empty. The independent reviewer must reject implausible optional rationales and excessive overall difficulty, rather than reject every higher-level pattern. No bindings for names or planned story terms. Independently verify all senses and roles. Write concise analyses, explaining ambiguity or productive prerequisites when necessary rather than repeating source bookkeeping for every simple match. '
                     + payload(**{**curriculum_review, 'chapter': curriculum.chapter_view(chapter)}), 'curriculum', check_curriculum, curriculum_review,
@@ -785,6 +803,7 @@ class KoreanHarness:
         if missing_words or missing_grammar:
             dictionary_context = {"word_requests": {key: required_words[key] for key in sorted(missing_words)},
                 "grammar_requests": sorted(missing_grammar), "chapter": chapter,
+                "lexical_reference": read(LEXICAL_REFERENCE),
                 "approved_words": [self.words[key] for key in sorted(required_words.keys() & self.words.keys())],
                 "approved_grammar": [self.grammar[key] for key in sorted(required_grammar & self.grammar.keys())]}
             delta = await self.stage("dictionary", "Write only the requested NEW reusable entries. "

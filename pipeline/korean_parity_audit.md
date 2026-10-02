@@ -213,3 +213,21 @@ that full review remains required. The real TOPIK 2 restart recovered 76 workers
 and repaired the remaining chunk. All six editions now have reviewed prose;
 TOPIK 3–6 are proceeding through annotation and curriculum checkpoints before
 shared dictionary work. TOPIK 2–6 are not yet published.
+
+Generation recovery and lexical classification audit (2026-10-02): completed
+annotation workers can be recovered as proposals after interrupted assembly,
+including post-review repairs. The exact rejected proposal is excluded and the
+assembled chapter still requires independent review. Regression cases contrast
+valid recovery, unchanged rejected output, invalid identities and tool-profile
+violations. Primary Basic Dictionary entry 62210 sense 32 documents the restricted
+scolding use of 나다 in 혼이 나다; annotation and dictionary review receive that
+reference without creating a fictitious expression headword. This evidence is
+not itself approval of a generated entry.
+
+Dictionary word/story tags no longer determine exemptions for ordinary passage
+uses. Approved legacy word entries missing from the baseline can be retrieved
+with an honestly unlisted grade. Occurrence kinds determine grading; stable
+IDs and definitions remain unchanged. A regression contrasts ordinary 벼슬
+(counted as extra, not exempt) with proper-name identity matching. These changes
+were prompted by real TOPIK 2 and 5 generation failures; higher editions still
+require all publication and app checks before they are called complete.

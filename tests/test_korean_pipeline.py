@@ -1092,3 +1092,83 @@ def test_curriculum_checkpoint_defers_dictionary_until_shared_entries_are_ready(
     assert not (prepared / 'report.json').exists()
     with pytest.raises(ValueError, match='No accepted'):
         publication.publish(prepared.parent, promote=False)
+
+
+@pytest.mark.parametrize('repaired', [False, True])
+def test_partial_review_repair_recovers_new_proposals_not_rejected_data(tmp_path, repaired):
+    from pipeline.korean_agent_harness import read, save, normalize_existing
+    fixture = tmp_path / 'fixture'
+    make_reviewed_run(fixture)
+    chapter = read(fixture / 'chapter.json')
+    raw = normalize_existing(chapter, dictionary._registry(dictionary.WORDS))
+    chunks = contracts.slice_annotations(raw, contracts.annotation_chunks(chapter['text']))
+    run = tmp_path / 'run'
+    candidate = copy.deepcopy(chunks[0])
+    if repaired:
+        next(s for s in candidate['segments'] if s['type'] == 'word')['meaning_en'] = 'improved contextual meaning'
+    save(run / 'agents/annotation-1-chunk-001-0/result.json', candidate)
+    save(run / 'agents/annotation-1-chunk-001-0/meta.json', {'return_code': 0})
+    class Runner:
+        def __init__(self): self.jobs = []
+        async def call(self, job, *args, **kwargs):
+            self.jobs.append(job)
+            if job == 'annotation-review-0':
+                value = {'approved': False, 'issues': ['Clarify the first sentence contextual meaning.']}
+            elif '-review-' in job:
+                value = {'approved': True, 'issues': []}
+            elif job.endswith('-repair-plan'):
+                value = {'repairs': [{'chunk_index': 1, 'issues': ['Clarify contextual meaning.']}],
+                    'prose_revision_reason_en': '', 'dictionary_revision_entry_ids': []}
+            elif '-chunk-' in job:
+                number = int(job.split('-chunk-')[1].split('-')[0])
+                value = copy.deepcopy(chunks[number - 1])
+                if job.startswith('annotation-1-'):
+                    next(s for s in value['segments'] if s['type'] == 'word')['meaning_en'] = 'improved contextual meaning'
+            else:
+                stage = job.rsplit('-', 1)[0]
+                value = read(fixture / 'agents' / stage / 'result.json')
+            save(run / 'agents' / job / 'result.json', value)
+            save(run / 'agents' / job / 'meta.json', {'return_code': 0})
+            return value
+    runner = Runner()
+    result = asyncio.run(KoreanHarness(run, 1, runner=runner).run())
+    assert result['status'] == 'complete'
+    assert 'annotation-review-1' in runner.jobs
+    fresh = [j for j in runner.jobs if j.startswith('annotation-1-chunk-001-')]
+    assert fresh == ([] if repaired else ['annotation-1-chunk-001-1'])
+
+
+def test_primary_lexical_reference_distinguishes_expression_frame_from_lemma():
+    from pipeline.korean_agent_harness import LEXICAL_REFERENCE, read
+    note = next(n for n in read(LEXICAL_REFERENCE)['entries'] if n['sense_id'] == 'krdict-62210-32')
+    assert note['headword'] == '나다'
+    assert note['expression'] == '혼이 나다'
+    assert note['meaning_en'] == 'to be scolded'
+    assert note['entry_id'] in {e['id'] for e in contracts.lexical_catalog()[note['headword']]}
+    assert not contracts.lexical_catalog().get(note['expression'])
+    assert note['primary_url'].startswith('https://krdict.korean.go.kr/')
+
+
+def test_story_dictionary_tag_does_not_exempt_an_ordinary_occurrence(tmp_path):
+    from pipeline.korean_agent_harness import annotation_requests
+    from pipeline.korean_readability import diagnostics
+    from pipeline.korean_curriculum import evaluate_bindings
+    words = dictionary._registry(dictionary.WORDS)
+    raw = {'segments': [{'text': '벼슬', 'type': 'word', 'meaning_en': 'official post',
+        'lemma': '벼슬', 'lexical_kind': 'vocabulary', 'lexical_id': '벼슬/명',
+        'story_importance_en': '', 'form_steps': []}], 'grammar_links': [], 'inflected_segment_indices': []}
+    requests, _ = annotation_requests(raw, contracts.lexical_catalog(), {'entries': []}, words)
+    assert requests['벼슬/명']['kind'] == 'story_term'  # Preserve the immutable registry tag.
+    chapter = contracts.canonical_annotation(raw, {'title': 'title', 'text': '벼슬'}, 1,
+        sources.EDITION, {'beats': []}, {'entries': []}, level=5)
+    assert diagnostics(chapter)['story_terms'] == []
+    dictionary.build_assets(chapter, tmp_path, write=False)
+    bindings = {'level_reason_en': 'One ordinary unlisted word.', 'prose_revision_reason_en': '',
+        'bindings': [{'kind': 'vocabulary', 'entry_id': '벼슬/명', 'source_ids': [],
+            'equivalence': 'unlisted', 'analysis_en': 'Approved historical noun absent from the baseline.', 'optional_reason_en': ''}]}
+    grade = evaluate_bindings(chapter, bindings, level=5)
+    assert grade['lexical_levels']['벼슬/명'] is None
+    assert grade['extra_vocabulary_ratio'] == 1
+    assert not grade['passes']  # The dictionary's old tag grants no exemption.
+    assert dictionary.lexical_kind_matches('story_term', 'vocabulary')
+    assert not dictionary.lexical_kind_matches('proper_name', 'vocabulary')

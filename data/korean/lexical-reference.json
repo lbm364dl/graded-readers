@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "entry_id": "나다01/동",
+      "headword": "나다",
+      "kind": "word",
+      "sense_id": "krdict-62210-32",
+      "expression": "혼이 나다",
+      "meaning_en": "to be scolded",
+      "primary_url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=62210&nation=eng",
+      "evidence_en": "Sense 32 of the verb 나다 explicitly gives the scolding meaning and attests the expression 혼이 나다, including past-tense examples.",
+      "analysis_policy": "This is an attested lexical sense and fixed expression, not a productive grammar pattern. Its canonical dictionary headword here is 나다; 혼이 나다 is the expression frame, not a new unattested lemma. A merged expression tap may use this explicitly reviewed lexical destination with the complete idiomatic meaning. Do not manufacture a literal meaning for 혼 from component glosses or merge the distinct headword 혼나다 into this identity. Keep tense in occurrence forms and the standalone definition neutral. Include the fixed expression restriction when explaining this lexical sense. Annotation and dictionary critics must independently verify this scope against the supplied primary evidence."
+    }
+  ]
+}

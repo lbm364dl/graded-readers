@@ -14,6 +14,17 @@ GRAMMAR = ROOT / "content/lexicon/korean/l1.grammar.json"
 SOURCE = "assets/annotations/korean_honggildong_l1_001.json"
 
 
+def lexical_kind_matches(entry_kind: str, occurrence_kind: str) -> bool:
+    """Story vocabulary is a passage role, not a different lexical identity.
+
+    Preserve the historical registry tag while allowing that same ordinary word
+    to appear without an exemption. Proper names and grammar remain distinct.
+    """
+    if entry_kind in ('word', 'story_term'):
+        return occurrence_kind in ('word', 'vocabulary', 'story_term')
+    return entry_kind == occurrence_kind
+
+
 def _registry(path: Path) -> dict[str, dict]:
     data = json.loads(path.read_text(encoding="utf-8"))
     if data.get("reviewed") is not True or not isinstance(data.get("entries"), list):
@@ -78,7 +89,7 @@ def build_assets(chapter: dict, output_dir: Path, *, source_id: str = SOURCE,
                 raise ValueError(f"missing Korean grammar entry: {lexical['id']}")
             continue
         entry = words.get(lexical["id"])
-        if entry is None or entry["kind"] != lexical["kind"].replace("vocabulary", "word"):
+        if entry is None or not lexical_kind_matches(entry['kind'], lexical['kind']):
             raise ValueError(f"missing Korean word entry: {lexical['id']}")
         sentence, sentence_start = _sentence(source_text, start)
         word_uses.append({
@@ -155,7 +166,7 @@ def build_assets(chapter: dict, output_dir: Path, *, source_id: str = SOURCE,
             raise ValueError("invalid Korean form-review index")
         segment = segments[index]
         if segment["type"] != "word" or segment["lexical"]["kind"] == "grammar":
-            raise ValueError("Korean form chain needs an attested lexical base")
+            raise ValueError(f"Korean form chain at segment {index} ({segment['text']!r}) needs an attested lexical base (a word or name), not a grammar identity. Retrieve the actual dictionary-form adjective/verb and link productive transformations separately; do not invent a lexical lemma or hide a missing base with a grammar tap.")
         steps = segment["form_steps"]
         forms = set()
         for step_index, step in enumerate(steps):
