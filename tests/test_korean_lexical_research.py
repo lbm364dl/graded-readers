@@ -22,6 +22,28 @@ def proposal():
         'evidence_en': 'An attested verb in the supplied test dictionary record.'}], 'unresolved': []}
 
 
+@pytest.mark.parametrize('persistent', [False, True])
+def test_primary_http_interruption_is_bounded_and_never_uses_partial_text(monkeypatch, persistent):
+    from http.client import IncompleteRead
+    calls = []
+    class Response:
+        def __enter__(self): return self
+        def __exit__(self, *args): pass
+        def read(self):
+            if persistent or len(calls) == 1:
+                raise IncompleteRead(b'unverified partial dictionary content')
+            return 'verified complete record'.encode()
+    def open_url(request, **kwargs):
+        calls.append(request)
+        return Response()
+    monkeypatch.setattr(research, 'urlopen', open_url)
+    if persistent:
+        with pytest.raises(IncompleteRead): research.read_primary('https://example.test/record')
+    else:
+        assert research.read_primary('https://example.test/record') == 'verified complete record'
+    assert len(calls) == 2
+
+
 @pytest.mark.parametrize('change', ['url', 'identity', 'coverage'])
 def test_researched_identity_requires_primary_record_pos_and_exact_coverage(change):
     value = proposal()

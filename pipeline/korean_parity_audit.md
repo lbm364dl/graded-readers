@@ -309,3 +309,24 @@ distinguish direct supplied record content from a search snippet or a failed web
 tool request. A proposed identity still undergoes exact primary-record retrieval
 and independent review. The evidence regression covers a readable Standard
 snapshot reaching both stages without relying on browser access.
+
+The contextual lexical follow-up approved the missing merit 공, complaining
+불평하다, calming 진정하다 and concubine 첩 identities, alongside separately
+attested homonyms. The shared 가지다 entry also underwent primary research and
+independent editorial review for its pregnancy sense. Coverage included both
+published chapters and the TOPIK 4 draft: one draft occurrence, no published
+occurrences. Its existing meanings remain intact. Both published edition proofs
+still validate; publication refresh propagates the shared definition to assets.
+
+The retained smoke rebuild now uses the complete Korean level map so it preserves
+every enabled published edition instead of rejecting metadata after TOPIK 2 was
+added. It still checks the reviewed beginner pilot. Publication regression
+coverage verifies tap reconstruction for all enabled editions and contrasts a
+single-edition catalog with the real multi-edition catalog; rebuild coverage
+also verifies that no published chapter or annotation asset is dropped.
+
+A real Standard Dictionary response ended mid-transfer during TOPIK 4 research.
+Primary retrieval now retries one HTTP interruption before reporting an explicit
+retrieval error. Previously completed record snapshots remain available, but a
+truncated response is never used as evidence. Contrasting regression cases cover
+recovery on the second request and bounded failure after two interrupted reads.

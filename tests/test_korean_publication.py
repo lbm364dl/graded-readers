@@ -17,16 +17,27 @@ def pilot_chapter():
     return json.loads(source.read_text(encoding="utf-8"))["chapters"][0]
 
 
-def test_korean_pilot_has_reviewed_tap_coverage(tmp_path, monkeypatch):
+@pytest.mark.parametrize('pilot_only', [False, True])
+def test_korean_published_editions_have_reviewed_tap_coverage(tmp_path, monkeypatch, pilot_only):
+    import shutil
+    metadata = json.loads(Path('content/korean/honggildong/metadata.json').read_text())
+    if pilot_only:
+        root = tmp_path / 'content'
+        book = root / 'korean/honggildong'
+        shutil.copytree(Path('content/korean/honggildong'), book)
+        metadata['enabled_levels'] = ['l1']
+        (book / 'metadata.json').write_text(json.dumps(metadata))
+        monkeypatch.setattr(publication, 'CONTENT_ROOT', root)
     monkeypatch.setattr(publication, "ASSET_ROOT", tmp_path)
-    entries = publication.build_language("korean", {"l1": 1})
-    assert len(entries) == 1
-    chapter = entries[0]["chapters"][0]
-    annotation = json.loads((tmp_path / "annotations" /
-        Path(chapter["annotationAsset"]).name).read_text())
-    assert annotation["text"] == chapter["content"]
-    assert "".join(segment["text"] for segment in annotation["segments"]) == chapter["content"]
-    assert any(segment.get("lookup_reason") == "proper_name" for segment in annotation["segments"])
+    entries = publication.build_language("korean", publication.LANGUAGES['korean'][0])
+    assert {f"l{entry['level']}" for entry in entries} == set(metadata['enabled_levels'])
+    for entry in entries:
+        chapter = entry["chapters"][0]
+        annotation = json.loads((tmp_path / "annotations" /
+            Path(chapter["annotationAsset"]).name).read_text())
+        assert annotation["text"] == chapter["content"]
+        assert "".join(segment["text"] for segment in annotation["segments"]) == chapter["content"]
+        assert any(segment.get("lookup_reason") == "proper_name" for segment in annotation["segments"])
 
 
 def test_korean_publication_rejects_unreviewed_or_shifted_segments(tmp_path):
@@ -109,13 +120,15 @@ def test_normal_app_builder_rejects_stale_reviewed_content(tmp_path):
                                             level_key="l1", require_complete=True)
 
 
-def test_korean_publisher_writes_only_first_chapter(tmp_path, monkeypatch):
+def test_korean_publisher_preserves_all_published_first_chapters(tmp_path, monkeypatch):
     monkeypatch.setattr(publication, "ASSET_ROOT", tmp_path)
     result = publish_korean()
     assert result["passes"]
     entries = json.loads((tmp_path / "content_ko.json").read_text(encoding="utf-8"))
-    assert len(entries) == len(entries[0]["chapters"]) == 1
-    assert len(list((tmp_path / "annotations").glob("*.json"))) == 1
+    metadata = json.loads(Path('content/korean/honggildong/metadata.json').read_text())
+    assert {f"l{entry['level']}" for entry in entries} == set(metadata['enabled_levels'])
+    assert all(len(entry['chapters']) == 1 for entry in entries)
+    assert len(list((tmp_path / "annotations").glob("*.json"))) == len(entries)
     words = json.loads((tmp_path / "usage_dictionary_ko.json").read_text())
     grammar = json.loads((tmp_path / "grammar_dictionary_ko.json").read_text())
     assert {entry["id"] for entry in words["entries"]} >= {

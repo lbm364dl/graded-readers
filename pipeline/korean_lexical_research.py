@@ -14,6 +14,7 @@ from pathlib import Path
 from urllib.parse import parse_qs, urlparse, urlencode
 from urllib.request import Request, urlopen
 from html import unescape
+from http.client import HTTPException
 
 from jsonschema import validate
 from pipeline import korean_contracts as contracts
@@ -55,6 +56,17 @@ def plain_html(value):
     return re.sub(r'\s+', ' ', unescape(re.sub(r'<[^>]+>', ' ', value))).strip()
 
 
+def read_primary(request):
+    """Retry one interrupted HTTP response; never use truncated record text."""
+    for attempt in range(2):
+        try:
+            with urlopen(request, timeout=20) as response:
+                return response.read().decode('utf-8')
+        except (OSError, HTTPException):
+            if attempt:
+                raise
+
+
 def standard_evidence(headword):
     """Fetch official dynamic dictionary data that web search cannot extract.
 
@@ -63,23 +75,21 @@ def standard_evidence(headword):
     """
     search_url = 'https://stdict.korean.go.kr/search/searchResult.do?' + urlencode(
         {'pageSize': 20, 'searchKeyword': headword})
+    records = []
     try:
-        with urlopen(search_url, timeout=20) as response:
-            page = response.read().decode('utf-8')
+        page = read_primary(search_url)
         numbers = sorted(set(re.findall(r'href="/search/searchView\.do\?word_no=(\d+)&', page)))
-        records = []
         for number in numbers:
             request = Request('https://stdict.korean.go.kr/search/contentViewOne.do',
                 data=urlencode({'word_no': number}).encode(),
                 headers={'Content-Type': 'application/x-www-form-urlencoded', 'Referer': search_url})
-            with urlopen(request, timeout=20) as response:
-                content = response.read().decode('utf-8')
+            content = read_primary(request)
             records.append({'primary_url': f'https://stdict.korean.go.kr/search/searchView.do?word_no={number}',
                 'content_sha256': hashlib.sha256(content.encode()).hexdigest(),
                 'text': plain_html(content)})
         return {'headword_request': headword, 'search_url': search_url, 'records': records}
-    except (OSError, UnicodeError) as error:
-        return {'headword_request': headword, 'search_url': search_url, 'records': [],
+    except (OSError, UnicodeError, HTTPException) as error:
+        return {'headword_request': headword, 'search_url': search_url, 'records': records,
             'retrieval_error': type(error).__name__}
 
 
@@ -94,11 +104,10 @@ def primary_record_evidence(url):
                 headers={'Content-Type': 'application/x-www-form-urlencoded', 'Referer': url})
         else:
             request = url
-        with urlopen(request, timeout=20) as response:
-            content = response.read().decode('utf-8')
+        content = read_primary(request)
         return {'primary_url': url, 'content_sha256': hashlib.sha256(content.encode()).hexdigest(),
             'text': plain_html(content)}
-    except (OSError, UnicodeError) as error:
+    except (OSError, UnicodeError, HTTPException) as error:
         return {'primary_url': url, 'retrieval_error': type(error).__name__}
 
 

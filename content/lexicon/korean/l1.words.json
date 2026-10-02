@@ -215,7 +215,7 @@
       "id": "가지다/동",
       "headword": "가지다",
       "kind": "word",
-      "definition_en": "to have, possess, or hold something"
+      "definition_en": "to have, possess, or hold something; with a baby or young as the object, to conceive or be pregnant"
     },
     {
       "id": "감사하다05/형",
@@ -2682,6 +2682,98 @@
                 "segment_index": 814,
                 "entry_id": "prospective-modifier-eul",
                 "context_en": "The auxiliary's 할 form modifies 것, presenting the attempt as an anticipated possibility.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "before_entries": [
+        {
+          "id": "가지다/동",
+          "headword": "가지다",
+          "kind": "word",
+          "definition_en": "to have, possess, or hold something"
+        }
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "가지다/동",
+            "headword": "가지다",
+            "kind": "word",
+            "definition_en": "to have, possess, or hold something; with a baby or young as the object, to conceive or be pregnant"
+          }
+        ],
+        "references": [
+          {
+            "entry_id": "가지다/동",
+            "url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=65234&nation=eng",
+            "paraphrase_en": "NIKL’s Korean Basic Dictionary identifies 가지다¹ as a verb. Senses 1–2 cover holding, carrying, and possessing something. Sense 7 covers conceiving or being pregnant, with objects such as 아이, 아기, and 새끼. The supplied 아이를 가졌고 uses this lexical pregnancy sense."
+          }
+        ]
+      },
+      "proposal_digest": "9014770954af884bdfa98d11b854ed9c083334a04ff293b8f57acc35293c7231",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "context_digest": "303e3635658ebb9940d6229a5ad338a02e035daac5ec53081b53e6679fac935b",
+      "coverage": {
+        "files": {
+          "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json": "c83f4d167f5724a8ba5ce163e2339609f417db5632cb3bf1ca0a96193b66926c",
+          "/home/catalin/graded-readers/content/korean/honggildong/l2.annotations.json": "c242968fe992ff8aa9c3d3d6c1ca3374c3adfd49030e9e4419fecb0bd2e2b5f4",
+          "runs/korean-topik4/chapter-001/agents/annotation-0/result.json": "5475b19e49d56dadf7eede48c4024388661b8c8c837de58c7a610c658d2699df"
+        },
+        "occurrences": [
+          {
+            "file": "runs/korean-topik4/chapter-001/agents/annotation-0/result.json",
+            "chapter": 1,
+            "segment_index": 381,
+            "entry_id": "가지다/동",
+            "surface": "가졌고",
+            "meaning_en": "became pregnant, and",
+            "sentence": "춘섬은 그달부터 아이를 가졌고, 열 달 뒤 길동을 낳았다.",
+            "sentence_start": 777,
+            "start": 790,
+            "form_steps": [
+              {
+                "form": "가졌다",
+                "reading": "",
+                "label": "Contracted past form",
+                "meaning_en": "became pregnant",
+                "grammar_entry_ids": [
+                  "past-ass-eoss"
+                ]
+              },
+              {
+                "form": "가졌고",
+                "reading": "",
+                "label": "Past connective",
+                "meaning_en": "became pregnant, and",
+                "grammar_entry_ids": [
+                  "connective-go"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 381,
+                "entry_id": "past-ass-eoss",
+                "context_en": "Places becoming pregnant in the past; 가지다 here concerns pregnancy rather than ownership.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              },
+              {
+                "segment_index": 381,
+                "entry_id": "connective-go",
+                "context_en": "Connects becoming pregnant to the subsequent birth.",
                 "display_form": "",
                 "display_meaning_en": "",
                 "display_end_segment_index": -1
