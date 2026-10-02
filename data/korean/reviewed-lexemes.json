@@ -14389,6 +14389,576 @@
         ]
       },
       "occurrence_requests_digest": "e834a7e34accd951b2fcd266de4e79fb687892d609e2e3a039d0a32a25ddf8d9"
+    },
+    {
+      "headwords": [
+        "그러면서도"
+      ],
+      "proposal": {
+        "entries": [],
+        "unresolved": [
+          {
+            "headword": "그러면서도",
+            "reason_en": "No standalone NIKL dictionary headword was verified. In the supplied context this is a connective form meaning “even while doing so,” so treat it as a grammatical/inflected form, not a dictionary lemma."
+          }
+        ]
+      },
+      "proposal_digest": "d0d472af8e34d0755eb394147be3c0b642afe2898f25f9b65ad0168393a79b73",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "c6a0027d0694ef196c9553b759424d8b6193bc75b157ffd83bda766412ea8f52",
+      "primary_evidence": [
+        {
+          "headword_request": "그러면서도",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EA%B7%B8%EB%9F%AC%EB%A9%B4%EC%84%9C%EB%8F%84",
+          "records": []
+        },
+        {
+          "proposal_records": []
+        }
+      ],
+      "primary_evidence_digest": "c164b304a7deede83b75a9e815dca728975ad729c0e79ac6309c25c7c44e4a05",
+      "occurrence_requests": {
+        "그러면서도": [
+          {
+            "text": "그러면서도",
+            "meaning_en": "even while doing so"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "42c6938470e712c914079b386413a0936264c9c8ddaa15dc8a703c6c3d771697"
+    },
+    {
+      "headwords": [
+        "여한",
+        "운봉산",
+        "큰"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "stdict-229258/명",
+            "headword": "여한",
+            "pos": "명",
+            "meaning_en": "cold weather that lingers after winter",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=229258",
+            "evidence_en": "The supplied direct Standard Dictionary record displays 여한 as a noun (餘寒) and defines it as cold that remains after winter."
+          },
+          {
+            "id": "stdict-459425/명",
+            "headword": "여한",
+            "pos": "명",
+            "meaning_en": "lingering resentment or regret that remains unresolved",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=459425",
+            "evidence_en": "The supplied direct Standard Dictionary record displays 여한 as a noun (餘恨) and defines it as resentment left unresolved; this is a distinct homonym."
+          },
+          {
+            "id": "stdict-229259/명",
+            "headword": "여한",
+            "pos": "명",
+            "meaning_en": "a foolish, dull person",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=229259",
+            "evidence_en": "The supplied direct Standard Dictionary record displays 여한 as a Buddhist noun (驢漢) and defines it as a foolish, dull person; this is a distinct homonym."
+          }
+        ],
+        "unresolved": [
+          {
+            "headword": "운봉산",
+            "reason_en": "The supplied Standard Dictionary search returned no direct records. The passage uses this as a mountain name, so it is a proper name rather than a dictionary lemma."
+          },
+          {
+            "headword": "큰",
+            "reason_en": "This is the inflected attributive form of 크다 in the passage. It is a conjugated form, not a standalone dictionary headword."
+          }
+        ]
+      },
+      "proposal_digest": "26a6e56306949910543cf3bd58a8fbb3f76611ae056dd3540c95db41bb8839f7",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "c6a0027d0694ef196c9553b759424d8b6193bc75b157ffd83bda766412ea8f52",
+      "primary_evidence": [
+        {
+          "headword_request": "여한",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%97%AC%ED%95%9C",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=229258",
+              "content_sha256": "092a2e229e576e2fe5bd77024c02c456e586af80bb79d5a7c9f3f0e389d1d258",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 여한 2 (餘寒 ) 원어 餘 남을 여 부수 食/총획 16 寒 찰 한 부수 宀/총획 12 한자 발음 [여한 ] 「명사」 겨울이 지난 뒤에도 아직 남아 있는 추위. 진달래가 피기 시작한 4월인데도 여한이 가시지 않아 날씨가 쌀쌀하다. 「비슷한말」 잔한(殘寒) 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "229258",
+              "display_headword": "여한",
+              "written_headword": "여한"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=229259",
+              "content_sha256": "bfbf2d8dad38b69f9dfd08631be6e7046ccf678b2f033d6e3d444da701dbf86a",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 여한 3 (驢漢 ) 원어 驢 나귀 려 나귀 여 부수 馬/총획 26 漢 한나라 한 부수 水/총획 14 한자 발음 [여한 ] 「명사」 『불교』 어리석고 둔한 사람. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "229259",
+              "display_headword": "여한",
+              "written_headword": "여한"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=459425",
+              "content_sha256": "4d43d10a77901b5ce241ebf686cd033f61798e5bda9b3518f230168fb200dbc3",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 여한 1 (餘恨 ) 원어 餘 남을 여 부수 食/총획 16 恨 한할 한 부수 心/총획 9 한자 발음 [여한 ] 편집 이력 「명사」 풀지 못하고 남은 원한. ≒ 여감 . 막내가 결혼하는 것까지 보았으니 이제 죽어도 여한이 없다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "459425",
+              "display_headword": "여한",
+              "written_headword": "여한"
+            }
+          ]
+        },
+        {
+          "headword_request": "운봉산",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%9A%B4%EB%B4%89%EC%82%B0",
+          "records": []
+        },
+        {
+          "headword_request": "큰",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%ED%81%B0",
+          "records": []
+        },
+        {
+          "proposal_records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=229258",
+              "content_sha256": "092a2e229e576e2fe5bd77024c02c456e586af80bb79d5a7c9f3f0e389d1d258",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 여한 2 (餘寒 ) 원어 餘 남을 여 부수 食/총획 16 寒 찰 한 부수 宀/총획 12 한자 발음 [여한 ] 「명사」 겨울이 지난 뒤에도 아직 남아 있는 추위. 진달래가 피기 시작한 4월인데도 여한이 가시지 않아 날씨가 쌀쌀하다. 「비슷한말」 잔한(殘寒) 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "229258",
+              "display_headword": "여한",
+              "written_headword": "여한"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=229259",
+              "content_sha256": "bfbf2d8dad38b69f9dfd08631be6e7046ccf678b2f033d6e3d444da701dbf86a",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 여한 3 (驢漢 ) 원어 驢 나귀 려 나귀 여 부수 馬/총획 26 漢 한나라 한 부수 水/총획 14 한자 발음 [여한 ] 「명사」 『불교』 어리석고 둔한 사람. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "229259",
+              "display_headword": "여한",
+              "written_headword": "여한"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=459425",
+              "content_sha256": "4d43d10a77901b5ce241ebf686cd033f61798e5bda9b3518f230168fb200dbc3",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 여한 1 (餘恨 ) 원어 餘 남을 여 부수 食/총획 16 恨 한할 한 부수 心/총획 9 한자 발음 [여한 ] 편집 이력 「명사」 풀지 못하고 남은 원한. ≒ 여감 . 막내가 결혼하는 것까지 보았으니 이제 죽어도 여한이 없다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "459425",
+              "display_headword": "여한",
+              "written_headword": "여한"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "8d83b72754cdd6283d8608f0cabf17940acff6005046777dfdf910e3c1443818",
+      "source_context": "조선 세종 때 홍 판서라는 재상이 살았다. 그는 이름난 집안에서 태어나 젊은 나이에 과거에 급제했고, 뒤에 이조판서가 되었다. 충성과 효심으로 조정에서 이름이 높았다. 그에게는 아들이 둘 있었다. 첫째 인형은 정실부인 유 부인의 아들이고, 둘째 길동은 몸종 춘섬의 아들이었다. 두 형제는 아버지는 같고 어머니는 달랐다.\n\n길동이 태어날 무렵 홍 판서는 꿈을 꾸었다. 천둥과 번개가 크게 울리더니 푸른 용 한 마리가 그에게 달려들었다. 놀라 깬 홍 판서는 그 꿈을 좋은 징조로 여겼다. 귀한 아이가 태어날 것이라고 생각한 그는 유 부인의 방으로 갔다. 홍 판서가 부인에게 가까이 다가가려 하자 유 부인은 손을 뿌리치며 말했다.\n\n“높은 자리에 계신 분이 어찌 젊고 경솔한 사람처럼 그런 행동을 하십니까? 저는 받아들이지 않겠습니다.”\n\n유 부인은 그렇게 말하고 나갔다. 홍 판서는 부인이 자신을 받아 주지 않는다고 한탄하며 바깥으로 나갔다. 마침 춘섬이 차를 가져오자, 그는 춘섬을 억지로 작은 방으로 끌고 가 몸을 범했다. 그 일로 춘섬은 그달에 아이를 가졌고, 열 달 뒤 아들을 낳았다. 홍 판서는 춘섬을 첩으로 삼았다. 아이는 뼈대가 남다르고 영웅다운 기운이 있었다. 홍 판서는 기뻐했지만, 아이가 유 부인에게서 태어나지 않았다는 점은 아쉬워했다. 그 아이가 바로 길동이었다.\n\n길동은 자라면서 매우 영리했다. 여덟 살 때는 하나를 들으면 백 가지를 알 정도였다. 홍 판서는 길동을 더욱 아꼈지만, 길동이 자신을 아버지라 부르거나 인형을 형이라 부르면 꾸짖었다. 그래서 길동은 열 살이 넘도록 아버지와 형을 그렇게 부르지 못했다. 집안의 하인들도 그를 업신여겼다. 길동은 깊은 한을 품고 마음을 가라앉히지 못했다.\n\n가을밤, 달빛은 밝고 바람은 서늘했다. 서당에서 글을 읽던 길동은 책상을 밀어 놓고 탄식했다.\n\n“사람으로 태어나 공자와 맹자처럼 이름을 떨치지 못한다면, 차라리 병법을 익혀 장수가 되어 나라를 위해 공을 세우고 이름을 후세에 남기고 싶다. 그런데 나는 아버지와 형이 있는데도 그렇게 부르지 못한다. 어찌 이리 외롭게 살아야 하는가. 이 어찌 원통하지 않겠는가?”\n\n길동은 뜰로 나가 검술을 익혔다. 마침 달을 구경하던 홍 판서가 그를 보고 불렀다.\n\n“밤이 깊었는데 어찌 자지 않고 있느냐?”\n\n길동은 공손히 대답했다.\n\n“달빛을 좋아해 보고 있었습니다. 하늘은 만물을 내고 사람을 귀하게 여긴다고 합니다. 그런데 저에게는 귀함이 없으니, 어찌 저를 사람이라 하겠습니까?”\n\n홍 판서는 길동의 뜻을 짐작했지만 모르는 척 물었다.\n\n“무슨 말이냐?”\n\n길동은 다시 절하고 말했다.\n\n“제 평생 가장 서러운 일은 아버지의 아들로 태어나 부모님의 깊은 은혜를 입었는데도 아버지를 아버지라 부르지 못하고 형을 형이라 부르지 못하는 것입니다. 어찌 사람답게 살 수 있겠습니까?”\n\n길동은 눈물을 흘려 옷을 적셨다. 홍 판서는 그를 가엾게 여겼지만, 위로하면 길동이 함부로 굴까 염려했다. 그래서 크게 꾸짖었다.\n\n“관리의 집에서 어머니 신분이 낮은 사람의 아들로 태어난 아이가 너뿐이 아니다. 어찌 이처럼 함부로 말하느냐? 다시 이런 말을 하면 내 앞에 오지 못할 것이다.”\n\n길동은 감히 대답하지 못하고 엎드려 울었다. 홍 판서는 물러가라고 했다. 길동은 자기 방으로 돌아와 슬퍼했다. 밤마다 잠을 이루지 못하던 그는 어느 날 어머니 춘섬의 방으로 가서 울며 말했다.\n\n“어머니의 아들로 태어나 은혜를 입었지만, 제 처지는 낮아 마음에 깊은 한이 있습니다. 남에게 업신여김을 받으며 사는 것은 견디기 어렵습니다. 제 마음을 더는 억누르지 못해 어머니 곁을 떠나려 합니다. 저를 걱정하지 마시고 몸을 잘 돌보세요.”\n\n춘섬은 크게 놀랐다.\n\n“너와 같은 처지로 태어난 아이가 너뿐이 아닌데, 어찌 그런 말을 해서 어미 마음을 이토록 아프게 하느냐?”\n\n길동은 옛날 장충의 아들 길산 이야기를 했다. 길산도 어머니의 신분이 낮은 집안에서 태어났지만 열세 살에 어머니와 헤어져 운봉산에 들어가 도를 닦았다. 그는 좋은 이름을 후세에 남겼다. 길동은 자신도 길산을 본받아 세상을 등지고 살려 하니 어머니는 마음을 놓고 훗날을 기다려 달라고 했다. 또 초난의 행동을 보며, 홍 판서의 사랑을 잃을까 두려워 초난이 자신과 어머니를 원수처럼 여기는 것 같다고 했다. 큰 화를 입을까 걱정되니 자신이 떠나는 일을 염려하지 말라고 했다. 춘섬은 아들의 말을 듣고도 슬퍼했다.\n\n초난은 홍 판서가 아끼는 첩이었다. 그녀에게는 아들이 없었지만, 춘섬에게는 길동이 있었고 홍 판서는 길동을 귀하게 여겼다. 초난은 홍 판서가 길동을 아끼는 것을 못마땅하게 여기며 길동을 없앨 계략을 꾸몄다. 그녀는 무녀에게 길동을 없애면 후하게 갚겠다고 말했다. 무녀는 관상녀를 불러 길동의 앞날을 살피게 한 뒤, 관상녀가 본 대로 홍 판서에게 말하면 그가 길동을 없애려 할 것이라고 제안했다. 초난은 기뻐하며 은을 주고 무녀에게 관상녀를 데려오라고 했다.\n\n다음 날 관상녀가 찾아왔다. 홍 판서는 길동을 불러 관상녀에게 얼굴을 보게 했다. 관상녀는 길동이 큰 영웅이 될 상이지만 신분이 부족해 걱정된다고 먼저 말했다. 이어 길동이 자라면 홍씨 집안에 큰 화가 닥쳐 집안이 망할 수 있다고 경고했다. 홍 판서는 놀랐으나 그 말을 비밀로 하라고 당부했다. 그는 관상녀에게 은을 조금 주어 돌려보냈다. 그 뒤 홍 판서는 길동을 별당에 머물게 하고 모든 행동을 엄하게 살폈다. 길동은 서러움을 견디면서 병법과 천문지리를 공부했다. 이를 안 홍 판서는 길동이 함부로 큰일을 벌여 집안에 화를 불러올까 근심했다.\n\n초난은 무녀와 관상녀를 통해 홍 판서의 마음을 흔든 뒤, 큰돈을 들여 자객 특재를 고용했다. 그리고 홍 판서에게 관상녀의 말이 귀신같이 맞았다며, 자신도 놀라고 두렵다고 했다. 길동을 일찍 없애는 편이 낫지 않겠느냐고 권했지만, 홍 판서는 그 일은 자신이 알아서 할 테니 더는 재촉하지 말라고 했다. 그러나 걱정이 커져 밤에 잠을 이루지 못했고, 병까지 들었다. 유 부인과 인형도 크게 근심했다.\n\n초난은 홍 판서의 병이 길동 때문이라고 주장했다. 길동을 죽이면 병도 낫고 집안도 지킬 수 있다고 했다. 유 부인은 부모와 자식의 인연이 깊으니 차마 그럴 수 없다고 말했다. 그러나 초난은 특재에게 큰돈을 주어 밤에 몰래 길동을 해치면 홍 판서가 알게 되더라도 어쩔 수 없을 것이라고 설득했다. 유 부인과 인형은 눈물을 흘리며 함께 말했다.\n\n“차마 하기 어려운 일이지만, 첫째는 나라를 위해서이고 둘째는 홍 판서를 위해서이며 셋째는 집안을 지키기 위해서다. 네 계획대로 하여라.”\n\n초난은 기뻐하며 특재를 다시 불러 계획을 자세히 말하고 그날 밤 일을 하라고 했다. 특재는 밤이 오기를 기다렸다.\n\n그날 밤 길동은 촛불을 밝히고 주역을 살폈다. 그때 까마귀가 세 번 울고 지나갔다. 길동은 밤을 꺼리는 새가 이 시간에 우는 것이 불길하다고 생각했다. 그는 팔괘를 놓아 살펴보다가 크게 놀랐다. 책상을 밀어 놓고 둔갑술을 써서 몸을 숨긴 채 특재의 움직임을 살폈다. 사경이 되자 비수를 든 사람이 천천히 방문을 열고 들어왔다. 길동이 주문을 외우자 갑자기 바람이 일었다. 집이 사라진 듯하고 겹겹이 이어진 산속 풍경이 나타났다. 특재는 놀라 비수를 감추고 피하려 했지만, 길이 끊기고 높은 절벽이 앞을 막아 오도 가도 못했다. 사방을 헤매던 그는 소리를 들었다. 나귀를 탄 작은 아이가 다가오며 피리 불기를 멈추고 특재를 꾸짖었다.\n\n“무슨 일로 나를 죽이려 하느냐? 죄 없는 사람을 해치면 어찌 벌을 피하겠느냐?”\n\n그러자 검은 구름이 일고 큰비가 쏟아졌으며 돌멩이도 날렸다. 특재는 정신을 차리고 살펴보다가 그 아이가 길동임을 알아보았다. 그는 길동의 재주를 신기하게 여겼지만 자신이 상대할 수 있다고 생각해 달려들었다. 특재는 초난이 무녀와 관상녀를 통해 홍 판서와 의논하고 길동을 죽이려 했으며, 자신은 그 일을 맡았다고 말했다. 특재가 칼을 들고 달려들자 길동은 술법으로 그의 칼을 빼앗았다.\n\n“재물을 탐내 사람 죽이는 일을 좋게 여기다니. 너 같은 무도한 자를 죽여 뒤에 닥칠 화를 없애겠다.”\n\n길동은 빼앗은 칼로 특재를 죽였다. 분을 참지 못한 그는 그날 밤 한 여인도 붙잡아 특재의 시신이 있는 방으로 끌고 왔다. 길동은 그 여인에게 초난과 함께 자신을 죽이려 한 까닭을 따져 물었다. 그리고 칼로 그녀를 베었다.\n\n두 사람을 죽인 뒤 길동은 초난까지 죽이려 했다. 그러나 홍 판서가 초난을 아낀다는 사실을 깨닫자 칼을 던졌다. 그는 집을 떠나 숨어 살아야 할지도 모른다고 생각하고, 홍 판서에게 작별 인사를 하러 갔다.\n\n밤이 깊었는데 길동이 창밖에서 서성이는 것을 본 홍 판서는 왜 자지 않고 돌아다니느냐고 물었다. 길동은 집안에 부당하게 행동한 사람이 있어 홍 판서에게 자신을 헐뜯고 죽이려 했다고 말했다. 겨우 목숨은 건졌지만 이제는 홍 판서를 모실 수 없어 작별을 고한다고 했다. 홍 판서는 크게 놀라 무슨 일이냐며 어린 나이에 집을 떠나 어디로 가려 하느냐고 물었다. 길동은 날이 밝으면 홍 판서도 자연히 알게 될 것이라고 했다. 자신은 뜬구름 같은 처지인데, 홍 판서가 이미 버린 아들이 남의 헐뜯음을 어찌 두려워하겠느냐고도 말했다.\n\n홍 판서는 길동의 슬픔을 가엾게 여겨 말했다.\n\n“네가 품은 한을 안다. 오늘부터는 나를 아버지라, 인형을 형이라 불러도 좋다.”\n\n길동은 다시 절을 올렸다. 그는 아버지가 오랜 한을 풀어 주었으니 죽어도 여한이 없다고 말하고, 홍 판서가 오래 살기를 빌었다. 절을 올리고 떠나려 하자 홍 판서는 붙잡지 못하고 몸조심하라고 당부했다.\n\n길동은 춘섬의 방에도 가서 작별을 고했다. 언젠가 다시 어머니를 모실 날이 있을 테니, 그때까지 몸을 잘 돌보라고 했다. 춘섬은 무슨 변고가 있음을 짐작하고 아들의 손을 잡고 울었다. 한집에 살아도 마음껏 가까이 지내지 못해 늘 그리웠는데, 이제 길동을 보내고 어떻게 지내겠느냐며 빨리 돌아오기를 바랐다. 길동은 어머니에게 절한 뒤 문을 나섰다. 산과 구름이 겹겹이 이어졌고, 그는 어디로 갈지 모른 채 길을 떠났다.\n\n한편 초난은 특재의 소식이 없자 사정을 알아보았다. 길동은 사라지고 특재와 한 여인의 시신이 방 안에 있다는 말을 들은 그녀는 크게 놀라 유 부인에게 알렸다. 유 부인은 인형을 불러 이 일을 알렸고, 인형은 초난이 꾸민 일을 홍 판서에게 숨김없이 밝혔다. 홍 판서는 길동이 밤에 슬피 작별 인사를 했던 일을 떠올리고 그제야 까닭을 알았다. 그는 분노해 초난을 내쫓고 두 시신을 몰래 치웠다. 집안사람들에게는 이 일을 입 밖에 내지 말라고 당부했다.",
+      "source_context_digest": "73c984459475b1c3f2f990ca0fc45605c9fd90d94ba33da96575c994ae33e0f7"
+    },
+    {
+      "headwords": [
+        "둔갑술",
+        "따져묻다",
+        "무도하다",
+        "숨김없이",
+        "숨어살다"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "stdict-92381/명",
+            "headword": "둔갑술",
+            "pos": "명",
+            "meaning_en": "A magical art of concealing oneself or transforming into something else.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=92381",
+            "evidence_en": "The supplied direct Standard Dictionary record displays 둔갑-술 as a noun and defines it as a magical art for hiding oneself or changing into another thing."
+          },
+          {
+            "id": "stdict-426051/형",
+            "headword": "무도하다",
+            "pos": "형",
+            "meaning_en": "To be morally outrageous in speech or conduct.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=426051",
+            "evidence_en": "The supplied direct record displays 무도-하다 1 as an adjective and defines behavior or speech that violates human moral duty."
+          },
+          {
+            "id": "stdict-119680/동",
+            "headword": "무도하다",
+            "pos": "동",
+            "meaning_en": "To dance.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=119680",
+            "evidence_en": "The supplied direct record displays 무도-하다 2 as a verb meaning to dance, a distinct homonym from the adjective."
+          },
+          {
+            "id": "stdict-197789/부",
+            "headword": "숨김없이",
+            "pos": "부",
+            "meaning_en": "Without concealing anything; candidly.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=197789",
+            "evidence_en": "The supplied direct Standard Dictionary record displays 숨김없-이 as an adverb, defined as doing or saying something without concealment."
+          }
+        ],
+        "unresolved": [
+          {
+            "headword": "따져묻다",
+            "reason_en": "No direct standalone headword record was supplied or found in the Standard Dictionary search evidence. The passage context alone does not establish a dictionary lexeme."
+          },
+          {
+            "headword": "숨어살다",
+            "reason_en": "No direct standalone headword record was supplied or found in the Standard Dictionary search evidence. The passage context alone does not establish a dictionary lexeme."
+          }
+        ]
+      },
+      "proposal_digest": "252a6cd0bc86ef563a6e97cc20ab7bcddb34af92d480e8e7894b888fd863fa66",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "c6a0027d0694ef196c9553b759424d8b6193bc75b157ffd83bda766412ea8f52",
+      "primary_evidence": [
+        {
+          "headword_request": "둔갑술",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EB%91%94%EA%B0%91%EC%88%A0",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=92381",
+              "content_sha256": "049ac0e5e9115bbb70f5216e441e0abaafdbb9b3877da9643cc8365ff4a9b443",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 둔갑-술 (遁甲術 ) 원어 遁 달아날 둔 부수 辵/총획 13 甲 갑옷 갑 친압할 압 부수 田/총획 5 術 꾀 술 부수 行/총획 11 한자 발음 [둔ː갑쑬] 「참고 어휘」 분신술(分身術) 편집 이력 「명사」 『민속』 마음대로 자기 몸을 감추거나 다른 것으로 변하게 하는 술법(術法). ≒ 기문 둔갑 , 둔갑법 , 둔술 . 그러면 박성삼이가 축지법에 둔갑술까지 써서 방필만이 집에 북새질을 쳤단 말이오? ≪송기숙, 녹두 장군≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "92381",
+              "display_headword": "둔갑-술",
+              "written_headword": "둔갑술"
+            }
+          ]
+        },
+        {
+          "headword_request": "따져묻다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EB%94%B0%EC%A0%B8%EB%AC%BB%EB%8B%A4",
+          "records": []
+        },
+        {
+          "headword_request": "무도하다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EB%AC%B4%EB%8F%84%ED%95%98%EB%8B%A4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=119680",
+              "content_sha256": "ce40780217ae65879379e304c4a254f1ac4ef898c7b681464650d3a5f9a9eab0",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 무도-하다 2 (舞蹈하다 ) 원어 舞 춤출 무 부수 舛/총획 14 蹈 밟을 도 부수 足/총획 17 하다 한자 고유어 발음 [무ː도하다 ] 활용 무도하여[무ː도하여 ](무도해[무ː도해 ]), 무도하니[무ː도하니 ] 주표제어 무도 3 「동사」 춤을 추다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "119680",
+              "display_headword": "무도-하다",
+              "written_headword": "무도하다"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=426051",
+              "content_sha256": "43731d894e49bb485802bbdf7940f894ab16a2fc8b51dcc45cc7ec24fe1f1c0a",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 무도-하다 1 (無道하다 ) 원어 無 없을 무 부수 火/총획 12 道 길 도 부수 辵/총획 13 하다 한자 고유어 발음 [무도하다 ] 활용 무도하여[무도하여 ](무도해[무도해 ]), 무도하니[무도하니 ] 주표제어 무도 2 「형용사」 말이나 행동이 인간으로서 지켜야 할 도리에 어긋나서 막되다. 천하에 무도한 놈. 저 주제꼴에 뭘 믿고 저리 무도하게 구나 싶었지만 내색 않고 반색을 했다. ≪박완서, 미망≫ 「비슷한말」 부도하다(不道하다) 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "426051",
+              "display_headword": "무도-하다",
+              "written_headword": "무도하다"
+            }
+          ]
+        },
+        {
+          "headword_request": "숨김없이",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%88%A8%EA%B9%80%EC%97%86%EC%9D%B4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=197789",
+              "content_sha256": "24b24cf3c9b545191acb640190f33bd157ea83e4bffcbb25c1c55a75e50b376c",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 숨김없-이 발음 [숨기멉씨 ] 주표제어 숨김-없다 「부사」 감추거나 드러내지 않는 일이 없이. 숨김없이 터놓고 말하다. 지금부터 내가 묻는 말에 숨김없이 대답해야 해. ≪이문열, 변경≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "197789",
+              "display_headword": "숨김없-이",
+              "written_headword": "숨김없이"
+            }
+          ]
+        },
+        {
+          "headword_request": "숨어살다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%88%A8%EC%96%B4%EC%82%B4%EB%8B%A4",
+          "records": []
+        },
+        {
+          "proposal_records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=119680",
+              "content_sha256": "ce40780217ae65879379e304c4a254f1ac4ef898c7b681464650d3a5f9a9eab0",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 무도-하다 2 (舞蹈하다 ) 원어 舞 춤출 무 부수 舛/총획 14 蹈 밟을 도 부수 足/총획 17 하다 한자 고유어 발음 [무ː도하다 ] 활용 무도하여[무ː도하여 ](무도해[무ː도해 ]), 무도하니[무ː도하니 ] 주표제어 무도 3 「동사」 춤을 추다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "119680",
+              "display_headword": "무도-하다",
+              "written_headword": "무도하다"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=197789",
+              "content_sha256": "24b24cf3c9b545191acb640190f33bd157ea83e4bffcbb25c1c55a75e50b376c",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 숨김없-이 발음 [숨기멉씨 ] 주표제어 숨김-없다 「부사」 감추거나 드러내지 않는 일이 없이. 숨김없이 터놓고 말하다. 지금부터 내가 묻는 말에 숨김없이 대답해야 해. ≪이문열, 변경≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "197789",
+              "display_headword": "숨김없-이",
+              "written_headword": "숨김없이"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=426051",
+              "content_sha256": "43731d894e49bb485802bbdf7940f894ab16a2fc8b51dcc45cc7ec24fe1f1c0a",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 무도-하다 1 (無道하다 ) 원어 無 없을 무 부수 火/총획 12 道 길 도 부수 辵/총획 13 하다 한자 고유어 발음 [무도하다 ] 활용 무도하여[무도하여 ](무도해[무도해 ]), 무도하니[무도하니 ] 주표제어 무도 2 「형용사」 말이나 행동이 인간으로서 지켜야 할 도리에 어긋나서 막되다. 천하에 무도한 놈. 저 주제꼴에 뭘 믿고 저리 무도하게 구나 싶었지만 내색 않고 반색을 했다. ≪박완서, 미망≫ 「비슷한말」 부도하다(不道하다) 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "426051",
+              "display_headword": "무도-하다",
+              "written_headword": "무도하다"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=92381",
+              "content_sha256": "049ac0e5e9115bbb70f5216e441e0abaafdbb9b3877da9643cc8365ff4a9b443",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 둔갑-술 (遁甲術 ) 원어 遁 달아날 둔 부수 辵/총획 13 甲 갑옷 갑 친압할 압 부수 田/총획 5 術 꾀 술 부수 行/총획 11 한자 발음 [둔ː갑쑬] 「참고 어휘」 분신술(分身術) 편집 이력 「명사」 『민속』 마음대로 자기 몸을 감추거나 다른 것으로 변하게 하는 술법(術法). ≒ 기문 둔갑 , 둔갑법 , 둔술 . 그러면 박성삼이가 축지법에 둔갑술까지 써서 방필만이 집에 북새질을 쳤단 말이오? ≪송기숙, 녹두 장군≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "92381",
+              "display_headword": "둔갑-술",
+              "written_headword": "둔갑술"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "3d29431d113c32d326533b66c1e7152b7fa006e0ae7c80aedd0ba956a16033b5",
+      "initial_review": {
+        "approved": false,
+        "issues": [
+          "The proposal’s lexical entries are supported by readable direct Standard Dictionary records with matching headwords and POS: 둔갑술 (stdict-92381/명), both distinct 무도하다 homonyms (stdict-426051/형 and stdict-119680/동), and 숨김없이 (stdict-197789/부).",
+          "Coverage includes all requested spellings; 따져묻다 and 숨어살다 are reasonably unresolved because the supplied evidence contains no direct standalone headword records. The proposal appropriately does not treat passage context as attestation."
+        ]
+      },
+      "initial_review_digest": "a5adc7a90c9db5ed08bbd1f4d455ec26de11aab571c116954cf0990288f0d0ed",
+      "source_context": "조선 세종 때 홍 판서라는 재상이 살았다. 그는 이름난 집안에서 태어나 젊은 나이에 과거에 급제했고, 뒤에 이조판서가 되었다. 충성과 효심으로 조정에서 이름이 높았다. 그에게는 아들이 둘 있었다. 첫째 인형은 정실부인 유 부인의 아들이고, 둘째 길동은 몸종 춘섬의 아들이었다. 두 형제는 아버지는 같고 어머니는 달랐다.\n\n길동이 태어날 무렵 홍 판서는 꿈을 꾸었다. 천둥과 번개가 크게 울리더니 푸른 용 한 마리가 그에게 달려들었다. 놀라 깬 홍 판서는 그 꿈을 좋은 징조로 여겼다. 귀한 아이가 태어날 것이라고 생각한 그는 유 부인의 방으로 갔다. 홍 판서가 부인에게 가까이 다가가려 하자 유 부인은 손을 뿌리치며 말했다.\n\n“높은 자리에 계신 분이 어찌 젊고 경솔한 사람처럼 그런 행동을 하십니까? 저는 받아들이지 않겠습니다.”\n\n유 부인은 그렇게 말하고 나갔다. 홍 판서는 부인이 자신을 받아 주지 않는다고 한탄하며 바깥으로 나갔다. 마침 춘섬이 차를 가져오자, 그는 춘섬을 억지로 작은 방으로 끌고 가 몸을 범했다. 그 일로 춘섬은 그달에 아이를 가졌고, 열 달 뒤 아들을 낳았다. 홍 판서는 춘섬을 첩으로 삼았다. 아이는 뼈대가 남다르고 영웅다운 기운이 있었다. 홍 판서는 기뻐했지만, 아이가 유 부인에게서 태어나지 않았다는 점은 아쉬워했다. 그 아이가 바로 길동이었다.\n\n길동은 자라면서 매우 영리했다. 여덟 살 때는 하나를 들으면 백 가지를 알 정도였다. 홍 판서는 길동을 더욱 아꼈지만, 길동이 자신을 아버지라 부르거나 인형을 형이라 부르면 꾸짖었다. 그래서 길동은 열 살이 넘도록 아버지와 형을 그렇게 부르지 못했다. 집안의 하인들도 그를 업신여겼다. 길동은 깊은 한을 품고 마음을 가라앉히지 못했다.\n\n가을밤, 달빛은 밝고 바람은 서늘했다. 서당에서 글을 읽던 길동은 책상을 밀어 놓고 탄식했다.\n\n“사람으로 태어나 공자와 맹자처럼 이름을 떨치지 못한다면, 차라리 병법을 익혀 장수가 되어 나라를 위해 공을 세우고 이름을 후세에 남기고 싶다. 그런데 나는 아버지와 형이 있는데도 그렇게 부르지 못한다. 어찌 이리 외롭게 살아야 하는가. 이 어찌 원통하지 않겠는가?”\n\n길동은 뜰로 나가 검술을 익혔다. 마침 달을 구경하던 홍 판서가 그를 보고 불렀다.\n\n“밤이 깊었는데 어찌 자지 않고 있느냐?”\n\n길동은 공손히 대답했다.\n\n“달빛을 좋아해 보고 있었습니다. 하늘은 만물을 내고 사람을 귀하게 여긴다고 합니다. 그런데 저에게는 귀함이 없으니, 어찌 저를 사람이라 하겠습니까?”\n\n홍 판서는 길동의 뜻을 짐작했지만 모르는 척 물었다.\n\n“무슨 말이냐?”\n\n길동은 다시 절하고 말했다.\n\n“제 평생 가장 서러운 일은 아버지의 아들로 태어나 부모님의 깊은 은혜를 입었는데도 아버지를 아버지라 부르지 못하고 형을 형이라 부르지 못하는 것입니다. 어찌 사람답게 살 수 있겠습니까?”\n\n길동은 눈물을 흘려 옷을 적셨다. 홍 판서는 그를 가엾게 여겼지만, 위로하면 길동이 함부로 굴까 염려했다. 그래서 크게 꾸짖었다.\n\n“관리의 집에서 어머니 신분이 낮은 사람의 아들로 태어난 아이가 너뿐이 아니다. 어찌 이처럼 함부로 말하느냐? 다시 이런 말을 하면 내 앞에 오지 못할 것이다.”\n\n길동은 감히 대답하지 못하고 엎드려 울었다. 홍 판서는 물러가라고 했다. 길동은 자기 방으로 돌아와 슬퍼했다. 밤마다 잠을 이루지 못하던 그는 어느 날 어머니 춘섬의 방으로 가서 울며 말했다.\n\n“어머니의 아들로 태어나 은혜를 입었지만, 제 처지는 낮아 마음에 깊은 한이 있습니다. 남에게 업신여김을 받으며 사는 것은 견디기 어렵습니다. 제 마음을 더는 억누르지 못해 어머니 곁을 떠나려 합니다. 저를 걱정하지 마시고 몸을 잘 돌보세요.”\n\n춘섬은 크게 놀랐다.\n\n“너와 같은 처지로 태어난 아이가 너뿐이 아닌데, 어찌 그런 말을 해서 어미 마음을 이토록 아프게 하느냐?”\n\n길동은 옛날 장충의 아들 길산 이야기를 했다. 길산도 어머니의 신분이 낮은 집안에서 태어났지만 열세 살에 어머니와 헤어져 운봉산에 들어가 도를 닦았다. 그는 좋은 이름을 후세에 남겼다. 길동은 자신도 길산을 본받아 세상을 등지고 살려 하니 어머니는 마음을 놓고 훗날을 기다려 달라고 했다. 또 초난의 행동을 보며, 홍 판서의 사랑을 잃을까 두려워 초난이 자신과 어머니를 원수처럼 여기는 것 같다고 했다. 큰 화를 입을까 걱정되니 자신이 떠나는 일을 염려하지 말라고 했다. 춘섬은 아들의 말을 듣고도 슬퍼했다.\n\n초난은 홍 판서가 아끼는 첩이었다. 그녀에게는 아들이 없었지만, 춘섬에게는 길동이 있었고 홍 판서는 길동을 귀하게 여겼다. 초난은 홍 판서가 길동을 아끼는 것을 못마땅하게 여기며 길동을 없앨 계략을 꾸몄다. 그녀는 무녀에게 길동을 없애면 후하게 갚겠다고 말했다. 무녀는 관상녀를 불러 길동의 앞날을 살피게 한 뒤, 관상녀가 본 대로 홍 판서에게 말하면 그가 길동을 없애려 할 것이라고 제안했다. 초난은 기뻐하며 은을 주고 무녀에게 관상녀를 데려오라고 했다.\n\n다음 날 관상녀가 찾아왔다. 홍 판서는 길동을 불러 관상녀에게 얼굴을 보게 했다. 관상녀는 길동이 큰 영웅이 될 상이지만 신분이 부족해 걱정된다고 먼저 말했다. 이어 길동이 자라면 홍씨 집안에 큰 화가 닥쳐 집안이 망할 수 있다고 경고했다. 홍 판서는 놀랐으나 그 말을 비밀로 하라고 당부했다. 그는 관상녀에게 은을 조금 주어 돌려보냈다. 그 뒤 홍 판서는 길동을 별당에 머물게 하고 모든 행동을 엄하게 살폈다. 길동은 서러움을 견디면서 병법과 천문지리를 공부했다. 이를 안 홍 판서는 길동이 함부로 큰일을 벌여 집안에 화를 불러올까 근심했다.\n\n초난은 무녀와 관상녀를 통해 홍 판서의 마음을 흔든 뒤, 큰돈을 들여 자객 특재를 고용했다. 그리고 홍 판서에게 관상녀의 말이 귀신같이 맞았다며, 자신도 놀라고 두렵다고 했다. 길동을 일찍 없애는 편이 낫지 않겠느냐고 권했지만, 홍 판서는 그 일은 자신이 알아서 할 테니 더는 재촉하지 말라고 했다. 그러나 걱정이 커져 밤에 잠을 이루지 못했고, 병까지 들었다. 유 부인과 인형도 크게 근심했다.\n\n초난은 홍 판서의 병이 길동 때문이라고 주장했다. 길동을 죽이면 병도 낫고 집안도 지킬 수 있다고 했다. 유 부인은 부모와 자식의 인연이 깊으니 차마 그럴 수 없다고 말했다. 그러나 초난은 특재에게 큰돈을 주어 밤에 몰래 길동을 해치면 홍 판서가 알게 되더라도 어쩔 수 없을 것이라고 설득했다. 유 부인과 인형은 눈물을 흘리며 함께 말했다.\n\n“차마 하기 어려운 일이지만, 첫째는 나라를 위해서이고 둘째는 홍 판서를 위해서이며 셋째는 집안을 지키기 위해서다. 네 계획대로 하여라.”\n\n초난은 기뻐하며 특재를 다시 불러 계획을 자세히 말하고 그날 밤 일을 하라고 했다. 특재는 밤이 오기를 기다렸다.\n\n그날 밤 길동은 촛불을 밝히고 주역을 살폈다. 그때 까마귀가 세 번 울고 지나갔다. 길동은 밤을 꺼리는 새가 이 시간에 우는 것이 불길하다고 생각했다. 그는 팔괘를 놓아 살펴보다가 크게 놀랐다. 책상을 밀어 놓고 둔갑술을 써서 몸을 숨긴 채 특재의 움직임을 살폈다. 사경이 되자 비수를 든 사람이 천천히 방문을 열고 들어왔다. 길동이 주문을 외우자 갑자기 바람이 일었다. 집이 사라진 듯하고 겹겹이 이어진 산속 풍경이 나타났다. 특재는 놀라 비수를 감추고 피하려 했지만, 길이 끊기고 높은 절벽이 앞을 막아 오도 가도 못했다. 사방을 헤매던 그는 소리를 들었다. 나귀를 탄 작은 아이가 다가오며 피리 불기를 멈추고 특재를 꾸짖었다.\n\n“무슨 일로 나를 죽이려 하느냐? 죄 없는 사람을 해치면 어찌 벌을 피하겠느냐?”\n\n그러자 검은 구름이 일고 큰비가 쏟아졌으며 돌멩이도 날렸다. 특재는 정신을 차리고 살펴보다가 그 아이가 길동임을 알아보았다. 그는 길동의 재주를 신기하게 여겼지만 자신이 상대할 수 있다고 생각해 달려들었다. 특재는 초난이 무녀와 관상녀를 통해 홍 판서와 의논하고 길동을 죽이려 했으며, 자신은 그 일을 맡았다고 말했다. 특재가 칼을 들고 달려들자 길동은 술법으로 그의 칼을 빼앗았다.\n\n“재물을 탐내 사람 죽이는 일을 좋게 여기다니. 너 같은 무도한 자를 죽여 뒤에 닥칠 화를 없애겠다.”\n\n길동은 빼앗은 칼로 특재를 죽였다. 분을 참지 못한 그는 그날 밤 한 여인도 붙잡아 특재의 시신이 있는 방으로 끌고 왔다. 길동은 그 여인에게 초난과 함께 자신을 죽이려 한 까닭을 따져 물었다. 그리고 칼로 그녀를 베었다.\n\n두 사람을 죽인 뒤 길동은 초난까지 죽이려 했다. 그러나 홍 판서가 초난을 아낀다는 사실을 깨닫자 칼을 던졌다. 그는 집을 떠나 숨어 살아야 할지도 모른다고 생각하고, 홍 판서에게 작별 인사를 하러 갔다.\n\n밤이 깊었는데 길동이 창밖에서 서성이는 것을 본 홍 판서는 왜 자지 않고 돌아다니느냐고 물었다. 길동은 집안에 부당하게 행동한 사람이 있어 홍 판서에게 자신을 헐뜯고 죽이려 했다고 말했다. 겨우 목숨은 건졌지만 이제는 홍 판서를 모실 수 없어 작별을 고한다고 했다. 홍 판서는 크게 놀라 무슨 일이냐며 어린 나이에 집을 떠나 어디로 가려 하느냐고 물었다. 길동은 날이 밝으면 홍 판서도 자연히 알게 될 것이라고 했다. 자신은 뜬구름 같은 처지인데, 홍 판서가 이미 버린 아들이 남의 헐뜯음을 어찌 두려워하겠느냐고도 말했다.\n\n홍 판서는 길동의 슬픔을 가엾게 여겨 말했다.\n\n“네가 품은 한을 안다. 오늘부터는 나를 아버지라, 인형을 형이라 불러도 좋다.”\n\n길동은 다시 절을 올렸다. 그는 아버지가 오랜 한을 풀어 주었으니 죽어도 여한이 없다고 말하고, 홍 판서가 오래 살기를 빌었다. 절을 올리고 떠나려 하자 홍 판서는 붙잡지 못하고 몸조심하라고 당부했다.\n\n길동은 춘섬의 방에도 가서 작별을 고했다. 언젠가 다시 어머니를 모실 날이 있을 테니, 그때까지 몸을 잘 돌보라고 했다. 춘섬은 무슨 변고가 있음을 짐작하고 아들의 손을 잡고 울었다. 한집에 살아도 마음껏 가까이 지내지 못해 늘 그리웠는데, 이제 길동을 보내고 어떻게 지내겠느냐며 빨리 돌아오기를 바랐다. 길동은 어머니에게 절한 뒤 문을 나섰다. 산과 구름이 겹겹이 이어졌고, 그는 어디로 갈지 모른 채 길을 떠났다.\n\n한편 초난은 특재의 소식이 없자 사정을 알아보았다. 길동은 사라지고 특재와 한 여인의 시신이 방 안에 있다는 말을 들은 그녀는 크게 놀라 유 부인에게 알렸다. 유 부인은 인형을 불러 이 일을 알렸고, 인형은 초난이 꾸민 일을 홍 판서에게 숨김없이 밝혔다. 홍 판서는 길동이 밤에 슬피 작별 인사를 했던 일을 떠올리고 그제야 까닭을 알았다. 그는 분노해 초난을 내쫓고 두 시신을 몰래 치웠다. 집안사람들에게는 이 일을 입 밖에 내지 말라고 당부했다.",
+      "source_context_digest": "73c984459475b1c3f2f990ca0fc45605c9fd90d94ba33da96575c994ae33e0f7"
+    },
+    {
+      "headwords": [
+        "작별하다"
+      ],
+      "proposal": {
+        "entries": [],
+        "unresolved": [
+          {
+            "headword": "작별하다",
+            "reason_en": "The supplied Standard Korean Dictionary record attests 작별하다 as a verb meaning “to exchange farewells and part.” The matching identity stdict-282056/동 is already in the catalog, so no new primary identity is needed."
+          }
+        ]
+      },
+      "proposal_digest": "91f594faa1480b10d18f486d1f9650fa73d4914e4e56ec71601ba0e9e9d45e01",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "c6a0027d0694ef196c9553b759424d8b6193bc75b157ffd83bda766412ea8f52",
+      "primary_evidence": [
+        {
+          "headword_request": "작별하다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%9E%91%EB%B3%84%ED%95%98%EB%8B%A4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=282056",
+              "content_sha256": "b534fdcded549cc155ca4dad56fc02d44758d8abfd37be62e6da0262cbeb087d",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 작별-하다 (作別하다 ) 원어 作 지을 작 부수 人/총획 7 別 다를 별 부수 刀/총획 7 하다 한자 고유어 발음 [작뼐하다 ] 활용 작별하여[작뼐하여](작별해[작뼐해]), 작별하니[작뼐하니] 주표제어 작별 「동사」 【(…과)】【 …을】 ((‘…과’가 나타나지 않을 때는 여럿임을 뜻하는 말이 주어로 온다)) 인사를 나누고 헤어지다. 급우들과 작별하고 전학을 갔다. 공항에서 식구들과 작별하고 유학을 떠났다. 우리는 기차역에서 작별했다 . 나는 저리로 가네. 우리 여기서 작별하세 . 아사달은 그날 밤 주만을 작별한 뒤에도 차마 떼치기 어려운 듯이 달빛을 밟으며 다보탑과 석가탑의 둘레를 거닐었다. ≪현진건, 무영탑≫ 더 보기 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "282056",
+              "display_headword": "작별-하다",
+              "written_headword": "작별하다"
+            }
+          ]
+        },
+        {
+          "proposal_records": []
+        }
+      ],
+      "primary_evidence_digest": "922472b368d1d0820ed34b07e8f24c5c551c0488d085511c623ca46880063c8e",
+      "occurrence_requests": {
+        "작별하다": [
+          {
+            "text": "작별하러",
+            "meaning_en": "to say farewell"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "eb11059fa7d7d9e810314a89a308e19eeb91d3f632642bbcc04521b6b541d596"
+    },
+    {
+      "headwords": [
+        "천대받다"
+      ],
+      "proposal": {
+        "entries": [],
+        "unresolved": [
+          {
+            "headword": "천대받다",
+            "reason_en": "The requested form is the conjugated passive adjective 천대받는 in the supplied context; it is not an independent dictionary lemma. The Basic Dictionary record attests 천대하다 (verb, “to belittle or look down on; to treat poorly”), not 천대받다. No exact standalone headword record was verified, so no new identity is proposed."
+          }
+        ]
+      },
+      "proposal_digest": "e44873ef8beead5879743e204bc44b65c0059f7cccfbccd882686495488c7eba",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "c6a0027d0694ef196c9553b759424d8b6193bc75b157ffd83bda766412ea8f52",
+      "primary_evidence": [
+        {
+          "headword_request": "천대받다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%B2%9C%EB%8C%80%EB%B0%9B%EB%8B%A4",
+          "records": []
+        },
+        {
+          "proposal_records": []
+        }
+      ],
+      "primary_evidence_digest": "f74b414455b613dba061ae1e9acd579b81b1c5c73525d68d8f3544fbd23caaa3",
+      "initial_review": {
+        "approved": false,
+        "issues": [
+          "The unresolved reason is unsupported: no Basic Dictionary record for 천대하다 is supplied, and the occurrence request is only an unverified context hint. It does not establish that 천대받다 is merely a conjugated form or that it is absent as a standalone lexeme. The unresolved entry may remain only with an honest evidence limitation, such as: no readable exact-headword record was supplied or verified."
+        ]
+      },
+      "initial_review_digest": "520ff3c8bef7d4fdbdabdee5543780d1c5b48a97cf34f36b35cb6f0999d76d5f",
+      "occurrence_requests": {
+        "천대받다": [
+          {
+            "text": "천대받는",
+            "meaning_en": "being treated with contempt"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "d247efeb20919fe2d61277e20980c4253b1109bbc48fec1c696c34cdabcadca0"
+    },
+    {
+      "headwords": [
+        "일러주다",
+        "정돈되다",
+        "환호하다"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "stdict-296131/동",
+            "headword": "정돈되다",
+            "pos": "동",
+            "meaning_en": "to stagnate; to stop making progress",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=296131",
+            "evidence_en": "The supplied direct Standard Dictionary record displays 정돈-되다 1 (written headword 정돈되다), labels it a verb, and defines it as becoming stagnant and unable to make progress."
+          },
+          {
+            "id": "stdict-296134/동",
+            "headword": "정돈되다",
+            "pos": "동",
+            "meaning_en": "to become orderly; to be arranged neatly",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=296134",
+            "evidence_en": "The supplied direct Standard Dictionary record displays 정돈-되다 2 (written headword 정돈되다), labels it a verb, and defines scattered things becoming orderly or being put right."
+          },
+          {
+            "id": "krdict-87074/동",
+            "headword": "환호하다",
+            "pos": "동",
+            "meaning_en": "to shout loudly with joy",
+            "primary_url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=87074",
+            "evidence_en": "The Basic Dictionary record identifies 환호하다 as a verb and defines it as shouting loudly because one is happy. This is distinct from Standard Dictionary 환호-하다 1 (喚呼하다), 'to call out loudly'; the matching joyful-shouting lexeme is preferred from the Basic Dictionary."
+          }
+        ],
+        "unresolved": [
+          {
+            "headword": "일러주다",
+            "reason_en": "The supplied Standard Dictionary search evidence has no direct records, and web search did not retrieve a readable direct Basic or Standard Dictionary headword/POS/sense record. The passage form 일러 주었다 alone does not establish 일러주다 as a standalone dictionary lexeme, so no identity is proposed."
+          }
+        ]
+      },
+      "proposal_digest": "2607c4cd1b0f8a4f20b8018a5d4a2018b6d08d0b2adc5273c15ecdb15fbdc274",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "c6a0027d0694ef196c9553b759424d8b6193bc75b157ffd83bda766412ea8f52",
+      "primary_evidence": [
+        {
+          "headword_request": "일러주다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%9D%BC%EB%9F%AC%EC%A3%BC%EB%8B%A4",
+          "records": []
+        },
+        {
+          "headword_request": "정돈되다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%A0%95%EB%8F%88%EB%90%98%EB%8B%A4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=296131",
+              "content_sha256": "52515eea003ec425e5ded589b10a3abcd043b009b8c8054f0f56fe002988708e",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정돈-되다 1 (停頓되다 ) 원어 停 머무를 정 부수 人/총획 11 頓 조아릴 돈 둔할 둔 흉노왕 이름 돌 부수 頁/총획 13 되다 한자 고유어 발음 [정돈되다 /정돈뒈다 ] 활용 정돈되어[정돈되어/정돈뒈여](정돈돼[정돈돼]), 정돈되니[정돈되니/정돈뒈니] 주표제어 정돈 1 「동사」 침체되어 나아가지 못하다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "296131",
+              "display_headword": "정돈-되다",
+              "written_headword": "정돈되다"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=296134",
+              "content_sha256": "7b9029d90c0b7eddf98bf41f2d291472ac1013cabd15f701a6d202dcdfad0574",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정돈-되다 2 (整頓되다 ) 원어 整 가지런할 정 부수 攴/총획 16 頓 조아릴 돈 둔할 둔 흉노왕 이름 돌 부수 頁/총획 13 되다 한자 고유어 발음 [정ː돈되다 /정ː돈뒈다 ] 활용 정돈되어[정ː돈되어 /정ː돈뒈여 ](정돈돼[정ː돈돼 ]), 정돈되니[정ː돈되니 /정ː돈뒈니 ] 주표제어 정돈 2 「동사」 어지럽게 흩어진 것이 규모 있게 고쳐져 놓이거나 가지런히 바로잡혀 정리되다. 책상이 정돈되다 . 방이 깔끔하게 정돈되다 . 그리 호화스럽다고 할 정도는 아니나 어디로 보든지 훌륭한 상류 가정의 부인실답게 깨끗이 정돈된 방이었다. ≪유진오, 화상보≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "296134",
+              "display_headword": "정돈-되다",
+              "written_headword": "정돈되다"
+            }
+          ]
+        },
+        {
+          "headword_request": "환호하다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%ED%99%98%ED%98%B8%ED%95%98%EB%8B%A4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=382456",
+              "content_sha256": "8699dd0de899159335221c823c443993afcfd2b467f6cf9896234b1c952ea341",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 환호-하다 1 (喚呼하다 ) 원어 喚 부를 환 부수 口/총획 12 呼 부를 호 부수 口/총획 8 하다 한자 고유어 발음 [환ː호하다 ] 활용 환호하여[환ː호하여 ](환호해[환ː호해 ]), 환호하니[환ː호하니 ] 주표제어 환호 1 「동사」 【…을】 소리를 높여 부르다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "382456",
+              "display_headword": "환호-하다",
+              "written_headword": "환호하다"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=382458",
+              "content_sha256": "7a989a7c398de538c78aad43d1f5e131f08b6d3a856c2798c51dfb5ec3066f52",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 환호-하다 2 (煥乎하다 ) 원어 煥 불꽃 환 부수 火/총획 13 乎 어조사 호 부수 丿/총획 5 하다 한자 고유어 발음 [환ː호하다 ] 활용 환호하여[환ː호하여 ](환호해[환ː호해 ]), 환호하니[환ː호하니 ] 주표제어 환호 2 「형용사」 「1」 빛이 나 밝다. 「2」 문장이 훌륭하다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "382458",
+              "display_headword": "환호-하다",
+              "written_headword": "환호하다"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=382461",
+              "content_sha256": "b3fb29b352bbb2a4a87d3322b6e64c3d3cae26432af450ea7e7503ffe80740dc",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 환호-하다 3 (歡呼하다 ) 원어 歡 기뻐할 환 부수 欠/총획 22 呼 부를 호 부수 口/총획 8 하다 한자 고유어 발음 [환호하다 ] 활용 환호하여[환호하여](환호해[환호해]), 환호하니[환호하니] 주표제어 환호 4 「동사」 기뻐서 큰 소리로 부르짖다. 그는 환호하는 시민들에게 손을 흔들어 답하였다. 학급 애들은 갑자기 긴장하고 환호하면서 제각기 자기편을 응원했다. ≪홍성암, 큰물로 가는 큰 고기≫ 죽었다던 전봉준이 살아서 나타나자 전군은 환호했다 . ≪유현종, 들불≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "382461",
+              "display_headword": "환호-하다",
+              "written_headword": "환호하다"
+            }
+          ]
+        },
+        {
+          "proposal_records": [
+            {
+              "primary_url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=87074",
+              "content_sha256": "255ffe162d4a39c8ebf85d8683b936b37e4c008489ea946bb1bb92aa424fcefd",
+              "text": "한국어기초사전 본문바로가기 이 누리집은 대한민국 공식 전자정부 누리집입니다. 범주별 찾기 사전 통계 작은 창 사전 찾기 자세히 찾기 사전 내려받기 가 가 인쇄 환호하다 (歡呼하다 ) 발음 [환호하다 듣기 ] 환호 품사 「동사」 기뻐서 큰 소리로 외치다. 환호하며 반기다. 관중들이 환호하다 . 관객들이 환호하다 . 팬들이 환호하다 . 큰 소리로 환호하다 . 무대에서 가수가 등장하자 팬들이 일제히 환호했다 . 선수들은 환호하는 시민들에게 손을 흔들며 인사했다. 가: 환호하며 반기는 팬들의 모습을 보니 기분이 어떻습니까? 나: 이렇게 저의 팬이 많을지 몰랐는데, 너무 감격스럽습니다. 문형 1이 환호하다 의견 보내기 의견 보내기: 보안 문자, 필명, 제목, 의견으로 구성 보안 문자 음성으로 듣기 새로 고침 필명 제목 의견 의견 보내기 사전 내용에 대한 여러분의 다양한 의견을 기다립니다. (답변은 드리지 않습니다만, 보내주신 내용은 사전 내용 개선과 보완을 위해 참고하겠습니다.) 다른 언어 사전 보기 한국어-러시아어 한국어-몽골어 한국어-베트남어 한국어-스페인어 한국어-아랍어 한국어-영어 한국어-인도네시아어 한국어-일본어 한국어-중국어 한국어-타이어 한국어-프랑스어 내가 살펴본 단어 한국어 발음 듣기 서비스의 일부는 네이버문화재단에서 후원 하였습니다. 사전 내려받기 사전 내려받기 용도를 입력해 주세요. 사전 내려받기: 내려받기 용도으로 구성 내려받기 용도 학습 자료 용도 강의 자료 용도 연구 자료 용도 기타 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 사전 내려받기: 구분, 파일 형식, 필수 항목, 선택 항목, 다국어 대역으로 구성 구분 뜻풀이 단위 표제어 단위 파일 형식 MS 엑셀 HWP 한글 MS 워드 텍스트 XML JSON 필수 항목 어휘, 구분, 품사, 뜻풀이, 용례 선택 항목 전체 고유어 여부 원어 발음 활용 파생어 ☞(가 보라) 어휘 등급 의미 범주 주제 및 상황 범주 전체 참고 검색용 이형태 관련어 의미 참고 다중 매체 정보 문형 문형 참고 부표제어 부표제어 전체 참고 부표제어 관련어 부표제어 의미 참고 부표제어 문형 부표제어 문형 참고 다국어 대역 전체 전자 우편 주소 내려받기 버튼을 누르면 입력하신 전자 우편 주소로 내려받기 경로가 전송됩니다. 요청이 많을 경우, 다소 시간이 소요될 수 있습니다. 전자 우편을 받지 못한 경우에는 스팸 메일함을 확인해 주세요. 내려받기 취소 닫기 주제 및 상황 범주 선택 해제 0 개 선택 주제 및 상황 범주별 찾기: 초급, 중급, 고급으로 구성 초급( ) 중급( ) 고급( ) 인사하기 소개하기(자기소개) 소개하기(가족소개) 개인 정보 교환하기 개인 정보 교환하기 위치 표현하기 교통 이용하기 길찾기 교통 이용하기 지리정보 지리정보 물건 사기 물건 사기 경제∙경영 음식 주문하기 음식 설명하기 식문화 요리 설명하기 요리 설명하기 시간 표현하기 날짜 표현하기 요일 표현하기 날씨와 계절 날씨와 계절 기후 하루 생활 학교생활 학교생활 교육 한국 생활 한국 생활 직업과 진로 직업과 진로 직장 생활 직장 생활 약속하기 전화하기 감사하기 사과하기 여행 여행 여가 생활 주말 및 휴가 주말 및 휴가 취미 취미 가족 행사 가족 행사 가족 행사-명절 건강 건강 보건과 의료 병원 이용하기 약국 이용하기 공공 기관 이용하기(도서관) 공공기관 이용하기 공공 기관 이용하기(우체국) 공공 기관 이용하기(출입국 관리 사무소) 초대와 방문 초대와 방문 집 구하기 집 구하기 주거 생활 집안일 집안일 감정, 기분 표현하기 감정, 기분 표현하기 심리 성격 표현하기 성격 표현하기 복장 표현하기 복장 표현하기 외양 외모 표현하기 외모 표현하기 영화 보기 공연과 감상 대중 문화 대중 매체 컴퓨터와 인터넷 컴퓨터와 인터넷 사건, 사고, 재해 기술하기 사회 문제 환경 문제 환경 문제 사회 제도 문화 비교하기 문화 차이 인간관계 인간관계 한국의 문학 예술 문제 해결하기(분실 및 고장) 실수담 말하기 연애와 결혼 건축 과학과 기술 법 스포츠 언론 언어 언어 역사 정치 종교 철학∙윤리 선택 완료 취소 닫기 원어 한자 歡 기뻐할 환 부수 欠/총획 22 呼 부를 호 부수 口/총획 8 고유어 하다 도움말 저작권 정책 알립니다 개발 지원(Open API) 의견 제시 사전 전체 내려받기 한국어교수학습샘터 한국어학습자말뭉치나눔터 국립국어원 표준국어대사전 우리말샘 한국수어사전 이동"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=296131",
+              "content_sha256": "52515eea003ec425e5ded589b10a3abcd043b009b8c8054f0f56fe002988708e",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정돈-되다 1 (停頓되다 ) 원어 停 머무를 정 부수 人/총획 11 頓 조아릴 돈 둔할 둔 흉노왕 이름 돌 부수 頁/총획 13 되다 한자 고유어 발음 [정돈되다 /정돈뒈다 ] 활용 정돈되어[정돈되어/정돈뒈여](정돈돼[정돈돼]), 정돈되니[정돈되니/정돈뒈니] 주표제어 정돈 1 「동사」 침체되어 나아가지 못하다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "296131",
+              "display_headword": "정돈-되다",
+              "written_headword": "정돈되다"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=296134",
+              "content_sha256": "7b9029d90c0b7eddf98bf41f2d291472ac1013cabd15f701a6d202dcdfad0574",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정돈-되다 2 (整頓되다 ) 원어 整 가지런할 정 부수 攴/총획 16 頓 조아릴 돈 둔할 둔 흉노왕 이름 돌 부수 頁/총획 13 되다 한자 고유어 발음 [정ː돈되다 /정ː돈뒈다 ] 활용 정돈되어[정ː돈되어 /정ː돈뒈여 ](정돈돼[정ː돈돼 ]), 정돈되니[정ː돈되니 /정ː돈뒈니 ] 주표제어 정돈 2 「동사」 어지럽게 흩어진 것이 규모 있게 고쳐져 놓이거나 가지런히 바로잡혀 정리되다. 책상이 정돈되다 . 방이 깔끔하게 정돈되다 . 그리 호화스럽다고 할 정도는 아니나 어디로 보든지 훌륭한 상류 가정의 부인실답게 깨끗이 정돈된 방이었다. ≪유진오, 화상보≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "296134",
+              "display_headword": "정돈-되다",
+              "written_headword": "정돈되다"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "72f06eaf9485ddc762b6c6f609f37e251f304ef40f9e4b02ae15b10b3bcb423a",
+      "source_context": "조선 세종 때 홍 판서라는 벼슬아치가 살았다. 대대로 이름난 집안에서 태어난 그는 젊은 나이에 과거에 급제해 이조 판서가 되었다. 충성과 효성을 함께 갖춘 인물로 조정 안팎에서 이름이 높았다. 그에게는 아들이 둘 있었다. 큰아들 인형은 정실 유 부인의 아들이었고, 작은아들 길동은 하녀 춘섬이 낳았다. 두 사람은 어머니가 다른 형제였다.\n\n길동이 태어날 무렵, 홍 판서는 푸른 용이 자신에게 달려드는 꿈을 꾸었다. 그는 이를 귀한 아들이 태어날 징조로 여겼다. 기쁜 마음에 유 부인의 방으로 들어갔지만, 부인은 그의 체통을 일깨우며 그런 부당한 행동은 따르지 않겠다고 말했다. 홍 판서는 무안하고 화가 났다. 마침 차를 올리러 온 춘섬을 이끌고 곁방으로 들어가 정을 나누었다. 당시 열여덟 살이던 춘섬은 그 뒤 집 밖에 모습을 보이지 않았고, 다른 남자를 맞을 뜻도 없었다. 홍 판서는 그녀를 첩으로 삼았다. 열 달 뒤 춘섬은 길동을 낳았다. 아이의 기골은 범상치 않았다. 홍 판서는 아들을 얻어 기뻐하면서도, 정실에게서 태어나지 않은 점을 아쉬워했다.\n\n길동은 자라며 뛰어난 총명을 보였다. 여덟 살에 하나를 들으면 열을 알 만큼 영리해 아버지의 사랑을 받았다. 하지만 그 사랑이 신분의 벽을 허물지는 못했다. 길동이 홍 판서를 아버지라 부르거나 인형을 형이라 부르면 판서는 그때마다 꾸짖었다. 열 살이 넘도록 길동은 아버지와 형을 감히 그렇게 부르지 못했다. 하인들마저 그를 업신여겼고, 그 멸시는 길동의 가슴에 깊은 한으로 쌓였다.\n\n구월 보름 무렵, 밝은 달 아래서 책을 읽던 길동은 문득 책상을 밀어 놓고 탄식했다.\n\n“사내로 태어나 공자와 맹자를 본받지 못할 바에는 차라리 병법을 익혀 장수가 되고 싶다. 허리에 큰 칼을 차고 동서로 원정을 나가 나라에 큰 공을 세운 뒤, 이름을 후세에 남기는 것이 장부의 뜻이다. 그런데 나는 어찌해 아버지와 형이 있으면서도 아버지라, 형이라 부르지 못하는가. 가슴이 터질 듯하니 어찌 원통하지 않겠는가.”\n\n말을 마친 길동은 뜰로 내려가 검술을 익혔다. 달빛을 구경하던 홍 판서가 그 모습을 보고 물었다.\n\n“밤이 깊도록 자지 않고 어찌 서성거리느냐?”\n\n길동은 달빛을 좋아해 나와 있었다고 답한 뒤 말을 이었다.\n\n“하늘이 만물을 내셨고 사람을 귀하게 여기신다지만, 저에게는 그 귀함이 없습니다. 제가 어찌 사람이라 하겠습니까?”\n\n홍 판서는 뜻을 짐작하면서도 모르는 체 물었다. 길동은 절을 올리고 평생의 서러움을 털어놓았다. 홍 판서에게서 태어나 길러진 은혜가 깊은데도 아버지를 아버지라, 형을 형이라 부를 수 없다는 것이었다. 눈물이 옷을 적셨다. 홍 판서는 측은한 마음이 들었지만, 길동을 위로했다가 그가 주제넘게 굴까 염려해 오히려 꾸짖었다.\n\n“재상 집안에서 첩의 자식으로 태어난 사람이 너뿐이더냐? 어찌 이토록 버릇없이 구느냐. 다시는 그런 말을 입에 올리지 마라.”\n\n길동은 아무 말도 하지 못하고 엎드려 울었다. 홍 판서가 물러가라 하자 방으로 돌아갔지만 슬픔은 가시지 않았다. 밤에도 잠을 이루지 못하던 어느 날, 길동은 어머니 춘섬을 찾아가 자신을 낳아 준 은혜에 감사하면서도 태어난 처지 때문에 깊은 한을 품게 되었다고 말했다. 남에게 멸시받으며 살 수 없어 어머니 곁을 떠나려 한다며, 걱정하지 말고 몸을 돌보시라고 당부했다.\n\n춘섬은 다른 첩의 아들도 같은 고생을 한다며, 왜 떠나 어미의 마음을 아프게 하느냐고 물었다. 길동은 옛날 장충의 아들 길산도 첩의 아들로 태어났지만 열세 살에 어머니를 떠나 운봉산에서 도를 닦고 이름을 후세에 남겼다고 말했다. 자신도 그를 본받아 세상을 벗어나려 한다며 어머니를 안심시켰다.\n\n길동은 집안에 도사린 위험도 어머니에게 알렸다. 곡산 기생 출신으로 홍 판서의 총애를 받던 초난은 아들이 없었다. 춘섬에게서 난 길동을 판서가 늘 귀하게 여기는 일을 마음에 쌓아 두고, 그를 없앨 계책을 꾸미고 있었다. 길동은 초난의 행동을 보아 그녀가 판서의 총애를 잃을까 두려워 자신과 어머니를 원수처럼 여긴다고 짐작했다. 큰 화를 입을까 걱정된다고 말하자, 춘섬은 아들의 말을 듣고 슬퍼했다.\n\n초난은 무당을 불러 길동을 없애면 자신이 편해진다며 보답을 약속했다. 무당은 흥인문 밖에 이름난 관상쟁이가 있으니, 그를 불러 길동의 앞날을 본 것처럼 말하게 하자고 했다. 판서가 그 말을 믿으면 아이를 없애려 들 테니 그때 일을 꾸미면 된다는 계책이었다. 초난은 은 오십 냥을 주어 관상쟁이를 데려오게 했다.\n\n다음 날, 홍 판서는 유 부인과 길동의 남다른 재주를 이야기하며 그가 첩의 아들인 점을 아쉬워하고 있었다. 그때 한 여자가 찾아왔다. 자신이 관상을 본다고 밝히자, 판서는 길동의 앞날이 궁금해 그를 불러 보였다. 관상쟁이는 한참 길동을 살핀 뒤 보기 드문 영웅의 상이라고 했다. 다만 신분이 부족해 염려된다고 덧붙였다. 판서와 부인이 재촉하자, 그녀는 사람들을 물리고 길동이 장차 왕이 될 기상을 지녔으며, 자라면 집안에 큰 화를 가져올 것이라고 말했다.\n\n홍 판서는 충격을 받아 한동안 말이 없었다. 그는 사람의 운명은 피하기 어렵다면서도 그 말을 밖에 내지 말라고 당부하고 관상쟁이를 돌려보냈다. 그 뒤 길동을 산속 별채에 머물게 하고 행동 하나하나를 엄하게 살폈다. 길동은 더욱 서러웠지만 달리 할 수 있는 일이 없어 병법과 천문지리를 공부했다. 판서는 그 사실을 알고, 재주 있는 아이가 분수에 넘는 뜻을 품으면 관상쟁이의 말처럼 될까 크게 염려했다.\n\n초난은 관상쟁이와 무당을 통해 판서의 마음을 흔들었고, 이제 특재라는 자객을 큰돈을 주고 구했다. 그녀는 판서에게 관상쟁이의 예언을 들었으니 길동을 어떻게 처리할지 물었다. 판서는 그 일은 자신이 알아서 할 테니 더는 말하지 말라며 초난을 물리쳤다. 그러나 걱정에 시달려 밤마다 잠들지 못했고 마침내 병이 들었다. 유 부인과 인형이 어찌할 바를 모르자, 초난은 길동을 죽여 없애면 판서의 병도 낫고 집안도 보존할 수 있다고 설득했다.\n\n유 부인은 혈육의 도리가 중하다며 차마 그럴 수 없다고 했다. 초난은 특재에게 돈을 주고 밤에 몰래 들여보내면 판서가 알아도 어쩔 수 없을 것이라며 다시 생각해 보라고 했다. 끝내 유 부인과 인형은 눈물을 흘리면서도 나라와 홍 판서, 집안을 위한 일이라며 계책을 허락했다. 초난은 특재에게 그날 밤 일을 실행하라고 지시했다.\n\n그날 밤, 길동은 원통한 일을 생각하며 잠들지 못한 채 촛불을 켜고 《주역》을 읽었다. 까마귀가 세 번 울고 날아가자 불길한 징조라 여겼다. 괘를 살핀 길동은 몸을 숨기고 움직임을 살폈다. 한밤중 특재가 칼을 들고 천천히 방에 들어왔다. 길동이 주문을 외우자 갑자기 음산한 바람이 일고 집이 사라졌다. 특재는 첩첩산중에 홀로 남았다. 길이 끊기고 사방이 절벽으로 막혀 오도 가도 못하게 된 그 앞에, 나귀를 탄 소년이 나타나 꾸짖었다.\n\n“무슨 일로 나를 죽이려 하느냐? 죄 없는 사람을 해치면 어찌 벌을 피하겠느냐?”\n\n길동이 다시 주문을 외우자 검은 구름이 일고 큰비가 쏟아졌으며 돌이 날렸다. 특재는 정신을 가다듬고 소년이 길동임을 알아보았다. 신기한 재주에 놀랐지만 상대가 되지 못할 리 없다며 달려들었다. 그러면서 초난이 무당과 관상쟁이를 통해 홍 판서와 이 일을 의논하고 길동을 죽이려 했다며, 죽더라도 자신을 원망하지 말라고 털어놓았다.\n\n길동은 분노를 참지 못하고 술법으로 특재의 칼을 빼앗았다. 그는 그 칼을 한 번 휘둘러 특재를 베었다. 분노를 이기지 못한 길동은 이름 없는 여인도 붙잡아 특재가 죽은 방으로 끌고 왔다. “당신이 나와 무슨 원한이 있어 초난과 함께 나를 죽이려 했소?” 하고 따진 뒤, 그녀를 베었다.\n\n두 사람을 죽인 뒤 길동은 하늘을 살폈다. 은하수는 서쪽으로 기울고 달빛은 희미해져, 그의 시름을 더했다. 분노를 참지 못해 초난까지 죽이려 했지만, 홍 판서가 자신을 아껴 온 일을 떠올리고 칼을 내던졌다. 그는 달아나 목숨을 보전하기로 마음먹고 홍 판서의 방으로 가 작별을 고하려 했다. 판서는 창밖의 인기척을 이상하게 여겨 창을 열었고, 길동을 보자 밤이 깊었는데 어찌 자지 않고 서성거리느냐고 물었다.\n\n길동은 집안에 바르지 못한 사람이 있어 홍 판서에게 자신을 헐뜯고 죽이려 했다고 말했다. 겨우 목숨을 건졌지만 더는 판서를 모실 수 없어 떠난다며, 자신의 신세는 뜬구름 같고 버림받은 자식이니 참소를 두려워할 까닭도 없다고 했다.\n\n눈물을 흘려 말을 잇지 못하는 길동을 본 홍 판서는 측은하게 여겼다. 그는 길동의 마음속 한을 짐작한다며, 그날부터 자신을 아버지라 부르고 인형을 형이라 불러도 좋다고 허락했다. 길동은 평생 맺힌 한을 풀어 주었다며 아버지에게 오래 살기를 빌고 작별했다. 판서는 아들을 붙잡지 못하고 무사하기만을 당부했다.\n\n길동은 춘섬에게도 작별을 고했다. 자신이 어머니 곁을 떠나지만 다시 모실 날이 있을 테니 그동안 몸을 돌보시라고 했다. 춘섬은 무슨 일이 있었음을 짐작하고 아들이 떠나는 모습을 보며 통곡했다. 한집에 살면서도 외롭게 지냈는데 이제 갈 곳도 모르는 아들을 보내고 어찌 살겠느냐며, 어서 돌아와 모자가 다시 만나기를 바란다고 했다. 길동은 어머니에게 절을 올리고 문을 나섰다. 겹겹이 이어진 산을 지나며 어디로 갈지 정하지 못한 채 걸었다.\n\n초난은 특재의 소식이 없자 사정을 알아보았다. 길동은 사라졌고, 방에는 특재와 한 여인의 시신이 남아 있었다. 겁에 질린 초난이 유 부인에게 알리자, 부인은 인형을 불러 홍 판서에게 소식을 전했다. 판서는 길동이 밤에 슬피 작별을 고했을 때 이상하게 여겼다며 탄식했다. 인형은 초난의 일을 숨기지 않고 밝혔다. 홍 판서는 더욱 분노해 초난을 내쫓고 시신을 조용히 처리했으며, 하인들에게 일을 밖에 알리지 말라고 당부했다.\n\n길동은 부모와 헤어져 정처 없이 떠돌다 경치가 빼어난 곳에 이르렀다. 큰 바위 아래 닫힌 돌문이 있어 조용히 열고 들어가니, 넓은 들판에 수백 호의 집이 늘어서 있고 사람들이 잔치를 벌이고 있었다. 그곳은 도적들의 소굴이었다. 도적들은 아직 우두머리를 정하지 못했다며 길동에게 큰 돌을 들어 보라고 했다.\n\n길동은 자신이 서울의 홍 판서에게서 첩의 아들로 태어났으며, 집안의 멸시를 피해 떠돌다 이곳에 왔다고 밝혔다. 그는 돌을 들어 수십 걸음을 옮긴 뒤 내려놓았다. 그 돌은 천 근이나 나갔다. 도적들은 그를 으뜸가는 장사라며 하늘이 자신들에게 장군을 보내 주었다고 환호했다. 그들은 길동을 윗자리에 앉혔고, 술을 차례로 돌린 다음 백마를 잡아 함께 맹세하고 약속을 맺었다. 모두가 그 뜻을 받아들여 온종일 즐겼다.\n\n길동은 여러 사람과 함께 몇 달 동안 무예를 익혔다. 훈련이 거듭되자 무리의 군법도 질서 있게 정돈되었다. 어느 날 무리는 합천 해인사를 쳐서 재물을 빼앗자고 제안했다. 절을 공략할 만한 계책이 없어 뜻을 이루지 못했다며 길동의 생각을 물었다. 길동은 자신이 군사를 이끌 테니 각자 지위에 따라 준비하라고 했다.\n\n푸른 도포에 검은 띠를 두른 선비 차림으로 나귀를 탄 길동은 종자 몇 명을 데리고 먼저 해인사로 향했다. 그는 절의 형편을 살핀 뒤, 승려들에게 다음 날 쌀 스무 섬을 보내겠다고 했다. 음식을 제대로 준비하면 자신의 일행도 승려들과 함께 먹겠다는 말에 승려들은 기뻐했다. 소굴로 돌아온 길동은 약속한 쌀을 보내고 무리를 불러 계획을 일러 주었다. 각자 맡은 일을 준비하게 한 뒤, 약속한 날을 기다렸다.\n\n그날 길동은 종자 수십 명을 데리고 해인사에 도착했다. 승려들은 그를 맞아들였다. 길동은 보낸 쌀로 음식이 부족하지 않았느냐고 물었고, 노승은 넉넉했다며 감사했다. 길동은 윗자리에 앉아 승려들을 모두 불러 각자 상을 받게 했다. 먼저 술을 마시고 차례로 돌리자 승려들은 고마워했다.\n\n식사 도중 길동은 몰래 입에 모래를 넣고 큰 소리가 나도록 씹었다. 승려들이 놀라 사과하자, 길동은 일부러 화난 척하며 음식이 이토록 더러운 것은 자신을 모욕하려는 뜻이라고 꾸짖었다. 종자들에게 승려들을 한 줄로 묶어 앉히게 하자, 절 안은 놀라 어쩔 줄 몰랐다. 이윽고 수백 명의 무리가 한꺼번에 달려들어 절의 재물을 제 것처럼 가져갔다. 승려들은 소리쳐 항의할 뿐이었다. 집안의 신분 차별에 맞서 떠난 길동이 이제는 승려들을 속이고 묶은 채 재물을 빼앗고 있었다.\n\n때마침 절의 사환이 이 일을 보고 관가에 알렸다. 합천 원은 관군을 보내 도적들을 잡으라고 명했다. 수백 명의 장교가 뒤쫓기 시작하자, 산 위에 송낙을 쓰고 장삼을 입은 승려 하나가 나타나 도적들이 북쪽 샛길로 갔으니 서둘러 잡으라고 외쳤다. 그 승려는 길동이었다. 관군이 그의 말을 믿고 북쪽 샛길로 달려가는 동안, 길동은 무리를 남쪽 큰길로 보냈다. 자신은 승려 차림으로 홀로 관군을 속였고, 무리는 재물을 챙겨 소굴로 향했다. 날이 저문 뒤에도 도적을 잡지 못한 관군은 빈손으로 돌아갔다. 길동은 무사히 소굴에 돌아왔고, 무리는 이미 재물을 가져와 있었다. 모두가 나와 길동에게 감사했다. 길동은 웃으며 말했다.\n\n“이만한 재주가 없었다면 어찌 여러 사람의 우두머리가 되었겠소.”",
+      "source_context_digest": "b37c4c592be48cbd6a72389534f4a24364119cd1de1b1d6fb599f6555e8bebd3"
     }
   ]
 }
