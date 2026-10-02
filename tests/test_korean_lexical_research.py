@@ -184,6 +184,8 @@ def test_research_reuse_distinguishes_requested_homonym_from_reviewed_spelling(t
     assert asyncio.run(research.research(['검증하다'], tmp_path, runner=runner, registry=registry,
         occurrence_requests=scope))['status'] == 'reused'
     assert len(runner.calls) == before
+    assert research.usage_evidence(scope, registry)[0]['requested_usages'] == scope
+    assert research.usage_evidence({'검증하다': [{'text': '검증했다', 'meaning_en': 'different use'}]}, registry) == []
     document = json.loads(registry.read_text())
     document['reviews'][-1]['occurrence_requests']['검증하다'][0]['meaning_en'] = 'tampered'
     save(registry, document)

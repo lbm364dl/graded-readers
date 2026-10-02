@@ -5390,6 +5390,136 @@
         }
       ],
       "primary_evidence_digest": "68a8815eb84353cd33bedf5c1cce5ee12f8a65b3224bc75ca116220fc0ff959b"
+    },
+    {
+      "headwords": [
+        "그러니",
+        "누구나"
+      ],
+      "proposal": {
+        "entries": [],
+        "unresolved": [
+          {
+            "headword": "그러니",
+            "reason_en": "No readable standalone Basic or Standard Dictionary record with this exact headword and POS was verified. The Basic Dictionary lists 그러니 as an inflected form under 그러다 (verb), not as that record's headword: https://krdict.korean.go.kr/spa/dicSearch/SearchView?ParaWordNo=37062. Conjugated usage does not warrant a new lexical identity; this does not imply the expression is incorrect."
+          },
+          {
+            "headword": "누구나",
+            "reason_en": "A productive combination of 누구 and the auxiliary particle 나, rather than a verified standalone dictionary lexeme. NIKL explicitly analyzes these components in its consultation: https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=261&pageIndex=1&qna_seq=278279. The readable Basic Dictionary record is headed 누구 (pronoun), with 누구나 only in examples: https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=62078&nation=eng&nationCode=6. No exact standalone Basic or Standard Dictionary record was verified; do not create a new identity."
+          }
+        ]
+      },
+      "proposal_digest": "c7d3f6a7ba17eeb9589daa8c3a2b02a9585717303a37ec0325a0c759772b7dea",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "c6a0027d0694ef196c9553b759424d8b6193bc75b157ffd83bda766412ea8f52",
+      "primary_evidence": [
+        {
+          "headword_request": "그러니",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EA%B7%B8%EB%9F%AC%EB%8B%88",
+          "records": []
+        },
+        {
+          "headword_request": "누구나",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EB%88%84%EA%B5%AC%EB%82%98",
+          "records": []
+        },
+        {
+          "proposal_records": []
+        }
+      ],
+      "primary_evidence_digest": "730ab856c30054a2aa50398ab4008c8e6512f13c069c6894c367d7e8eafc288a"
+    },
+    {
+      "headwords": [
+        "그러니"
+      ],
+      "proposal": {
+        "entries": [],
+        "unresolved": [
+          {
+            "headword": "그러니",
+            "reason_en": "No readable standalone NIKL Basic or Standard Dictionary record was verified for the requested meaning ‘so; therefore’. The Basic Dictionary lists 그러니 as an inflected form under [그러다](https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=37062), not as that entry’s headword. The supplied Standard Dictionary evidence contains no records, and its public search page could not be read. Leave unresolved rather than invent a standalone adverb identity; this does not imply the expression is incorrect."
+          }
+        ]
+      },
+      "proposal_digest": "c63fa7fbc1f41b00453b9d69d17fa7c3f1aadb82f3243dcff31e2a73bdc3f602",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "c6a0027d0694ef196c9553b759424d8b6193bc75b157ffd83bda766412ea8f52",
+      "primary_evidence": [
+        {
+          "headword_request": "그러니",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EA%B7%B8%EB%9F%AC%EB%8B%88",
+          "records": []
+        },
+        {
+          "proposal_records": []
+        }
+      ],
+      "primary_evidence_digest": "0505d954373df7053faf9fe9f46f80b4453f4f1cae9126a1ffbbdeca1177a131",
+      "occurrence_requests": {
+        "그러니": [
+          {
+            "text": "그러니",
+            "meaning_en": "so; therefore"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "7ad23fcfdf077654a5e8878e8236962de52494ce838a3f131a3e7d4bd51671ca"
+    },
+    {
+      "headwords": [
+        "가까이하다"
+      ],
+      "proposal": {
+        "entries": [],
+        "unresolved": [
+          {
+            "headword": "가까이하다",
+            "reason_en": "Already covered by existing identity krdict-28056/동. The verified [Basic Dictionary record](https://krdict.korean.go.kr/jpn/dicSearch/SearchView?ParaWordNo=28056&nation=jpn) lists 가까이하다 as 동사: associate closely with someone; like and enjoy something. Sense 1 covers the requested interpersonal usage. 가까이하려 is an inflected form of this verb, not a separate lexeme; no new primary identity is needed."
+          }
+        ]
+      },
+      "proposal_digest": "bf9d9aeddc714626101d605cea486507379236f179c4ff6c92c17ecbe18bfe65",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "c6a0027d0694ef196c9553b759424d8b6193bc75b157ffd83bda766412ea8f52",
+      "primary_evidence": [
+        {
+          "headword_request": "가까이하다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EA%B0%80%EA%B9%8C%EC%9D%B4%ED%95%98%EB%8B%A4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=756",
+              "content_sha256": "bc9fb9d0a7f23efcc432e168bde3acd442e39674f6ca7c5b106b9bd6d90d6b4c",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 가까이-하다 발음 [가까이하다 ] 활용 가까이하여[가까이하여](가까이해[가까이해]), 가까이하니[가까이하니] 주표제어 가까이 편집 이력 「동사」 「1」 【(…과)】【…을】 ((‘…과’가 나타나지 않을 때는 여럿임을 뜻하는 말이 주어로 온다)) 사람과 사람 사이의 관계를 친밀하게 하다. 그는 새로 이사 와 이웃과 가까이하려고 노력했다. 그 두 사람이 서로 가까이한 것은 얼마 되지 않는다. 그런 사기꾼을 가까이하지 마라. 「반대말」 멀리하다 「2」 【…을】 좋아하거나 즐기다. 책을 늘 가까이하여라 . 담배와 술을 가까이하지 마라. 나는 우연한 기회에 문학을 가까이하게 되었다. 「반대말」 멀리하다 어원 · ＜갓가이다＜능엄＞←갓-+-이+- 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "proposal_records": []
+        }
+      ],
+      "primary_evidence_digest": "c12df07e078799b3e0f1c015df920d7424e29d3e4565be84fea243063b306120",
+      "occurrence_requests": {
+        "가까이하다": [
+          {
+            "text": "가까이하려",
+            "meaning_en": "intending to get close to her"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "bade1c0b62ef79850f41698e836b50c500df91c422bc1400d231a88208e872c1"
     }
   ]
 }

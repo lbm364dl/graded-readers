@@ -348,6 +348,12 @@ class KoreanHarness:
             if name == 'curriculum':
                 evidence = {'computed_curriculum_evaluation': curriculum.evaluate_bindings(review_context['chapter'], value, level=self.level)}
             if name == 'annotation':
+                from pipeline.korean_lexical_research import usage_evidence
+                usages = {}
+                for segment in value['segments']:
+                    if segment['lexical_kind'] == 'vocabulary':
+                        usages.setdefault(segment['lemma'], []).append(
+                            {'text': segment['text'], 'meaning_en': segment['meaning_en']})
                 ids = {s['lexical_id'] for s in value['segments'] if s['lexical_kind'] == 'vocabulary'}
                 attested = {s[key] for s in value['segments'] if s['lexical_kind'] == 'vocabulary'
                             for key in ('lemma', 'text')}
@@ -356,6 +362,9 @@ class KoreanHarness:
                                       if entry['id'] in ids or entry['headword'] in attested], key=lambda entry: entry['id']),
                     'max_non_beginner_ratio': MAX_NON_BEGINNER_RATIO,
                     'policy': 'The older A/B/C grades are compatibility identity metadata, not target curriculum levels. Do not reject an identity merely because it is absent from A. The separate independently reviewed six-level curriculum stage establishes actual vocabulary and grammar levels. Check occurrence meaning and form analysis here; names and essential story exemptions stay separate from ordinary extra vocabulary.'}}
+                reviewed_usages = usage_evidence(usages)
+                if reviewed_usages:
+                    evidence['reviewed_lexical_usage_evidence'] = reviewed_usages
             transmitted_context = review_context
             if name == 'curriculum':
                 transmitted_context = {**review_context, 'chapter': curriculum.chapter_view(review_context['chapter'])}

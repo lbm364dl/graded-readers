@@ -349,3 +349,14 @@ Diagnostics now identify exact indices/surfaces both for declared inflections
 without stages and for stages missing from the audit. They require actual form
 review instead of omitting inflections or inventing intermediate forms. Paired
 regressions cover each mismatch direction; data and tap boundaries are unchanged.
+
+A TOPIK 4 reviewer questioned 가까이하다's interpersonal scope. Targeted primary
+research and independent review confirmed coverage by the existing krdict-28056
+verb identity, without proposing a duplicate lemma. Annotation critics now
+receive matching reviewed usage investigations, including outcomes that correctly
+refer an attested usage back to an existing identity. Scope remains explicit:
+different form/meaning requests do not inherit the investigation, unresolved
+other usages stay unresolved, and these records never assign curriculum grades
+or become learner-facing process notes. Empty evidence is omitted to preserve
+unaffected review-cache inputs. Regression checks contrast matching versus
+different usage requests.
