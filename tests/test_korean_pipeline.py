@@ -1276,7 +1276,10 @@ def test_curriculum_batches_cover_all_identities_and_replay_verified_workers(tmp
             assert kwargs['tool_profile'] == 'offline'
             self.calls.append(job)
             inputs = json.loads(prompt.rsplit('\nINPUT:\n', 1)[1])
-            if job.endswith('-assessment'):
+            if job.endswith('-repair-plan'):
+                target = next(iter(bindings))
+                value = {'entries': [{'kind': target[0], 'entry_id': target[1]}]}
+            elif job.endswith('-assessment'):
                 assert set((b['kind'], b['entry_id']) for b in inputs['bindings']) == set(bindings)
                 assert inputs['computed_evaluation']['target_level'] == 3
                 value = {k: original[k] for k in ('level_reason_en', 'prose_revision_reason_en')}
@@ -1306,6 +1309,17 @@ def test_curriculum_batches_cover_all_identities_and_replay_verified_workers(tmp
         save_path.write_text(json.dumps({'type': 'item.completed', 'item': {'type': 'command_execution'}}) + '\n')
         with pytest.raises(ValueError, match='outside its offline role'):
             jobs.replay(run, meta)
+    else:
+        target = next(iter(bindings))
+        bindings[target] = {**bindings[target], 'analysis_en': 'Reviewed focused clarification.'}
+        before = len(runner.calls)
+        repaired = asyncio.run(produce('curriculum-1', ['Clarify the selected binding.']))
+        calls = runner.calls[before:]
+        assert sum('-bindings-' in call for call in calls) == 1
+        assert {(b['kind'], b['entry_id']): b for b in repaired['bindings']} == bindings
+        repaired_meta = read(run / 'agents/curriculum-1/meta.json')
+        assert sum(a == b for a, b in zip(meta['batches'], repaired_meta['batches'])) == len(meta['batches']) - 1
+        assert jobs.replay(run, repaired_meta) == repaired
 
 
 @pytest.mark.parametrize('tampered', [False, True])
