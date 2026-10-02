@@ -6839,6 +6839,569 @@
         ]
       },
       "occurrence_requests_digest": "93c7b6eeb97e6ba6962dce96f3ae8e1ec64dd74fe950e75bf8e75e0b4cbd42a3"
+    },
+    {
+      "headwords": [
+        "자객"
+      ],
+      "proposal": {
+        "entries": [],
+        "unresolved": [
+          {
+            "headword": "자객",
+            "reason_en": "The supplied snapshot attests 자객 (刺客), noun (명사), meaning 'assassin; a person specializing in secretly killing people,' at Standard Dictionary record 269698. However, the direct primary record could not be retrieved and read for independent verification. Web search found no standalone Basic Dictionary record. The previous candidate stdict-269698/명사 therefore remains unverified; this is an evidence limitation, not a judgment that the word is incorrect."
+          }
+        ]
+      },
+      "proposal_digest": "2e1f989278f27d1c3de67a380d8cc6ab7684605b495915ff333e57fc79418fc3",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "f5a2d9c8f3d90c146ad2bd4aa1134d58e89b785c30fc1f051640e1e00c17acde",
+      "primary_evidence": [
+        {
+          "headword_request": "자객",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%9E%90%EA%B0%9D",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=269698",
+              "content_sha256": "65030b9d6b7d078ed229d947c726b4a424d4fd7e4cbca1534d33269ac473cdaf",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 자객 (刺客 ) 원어 刺 찌를 자 칼로 찌를 척 수라 라 수라 나 부수 刀/총획 8 客 손님 객 부수 宀/총획 9 한자 발음 [자ː객 ] 활용 자객만[자ː갱만 ] 「명사」 사람을 몰래 죽이는 일을 전문으로 하는 사람. 자객이 요인을 암살하려 한다는 정보가 입수되었다. 병장은 비수를 품고 모가지를 찾아다닌다는 자객이 사람들의 머릿속에서만 살아 있는 유령임을 알고 있는지도 몰랐다. ≪신상웅, 심야의 정담≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "proposal_records": []
+        }
+      ],
+      "primary_evidence_digest": "8faccbdc57306dfa726dfb8ddecbb0a5ab464fd1f3d753a18d689568e19d913d",
+      "occurrence_requests": {
+        "자객": [
+          {
+            "text": "자객이",
+            "meaning_en": "an assassin"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "91f3b9e58ab9d7113d96502c3e93c0575d5fd830ed9ea2394d13b99aab84f5b2"
+    },
+    {
+      "headwords": [
+        "겹겹이"
+      ],
+      "proposal": {
+        "entries": [],
+        "unresolved": [
+          {
+            "headword": "겹겹이",
+            "reason_en": "The supplied Standard Dictionary snapshot identifies 겹겹-이 as 부사, defined as ‘여러 겹으로’ (in multiple layers), at stdict-392540/부. No standalone Basic Dictionary entry was verified; search matches occurred under other headwords. The direct Standard record https://stdict.korean.go.kr/search/searchView.do?word_no=392540 could not be retrieved and read, so independent primary-record verification remains incomplete. No existing catalog identity was supplied."
+          }
+        ]
+      },
+      "proposal_digest": "eb90200ca88baef386246e542929561da00bacf15bda5e3358c74af1c6a373ad",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "f5a2d9c8f3d90c146ad2bd4aa1134d58e89b785c30fc1f051640e1e00c17acde",
+      "primary_evidence": [
+        {
+          "headword_request": "겹겹이",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EA%B2%B9%EA%B2%B9%EC%9D%B4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=392540",
+              "content_sha256": "eaa26d8c2b54ad45ece5deb6daa04e514487012bf5ed0f468226c0caf65bae96",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 겹겹-이 발음 [겹껴비 ] 「참고 어휘」 누누이(纍纍이) 편집 이력 「부사」 여러 겹으로. 겹겹이 둘러싸다. 겹겹이 옷을 껴입다. 그 지역은 겹겹이 산에 가로막혀 있어 교통이 불편하다. 날씨가 추운 탓인지 목도리로 얼굴을 겹겹이 감싼 사람이 많이 보인다. 더 보기 한 걸음 더 · ‘겹겹이’는 부사의 끝음절이 ‘이’로만 나는 것은 ‘-이’로 적는다는 규정(한글 맞춤법 제51항)에 따라 ‘ 겹겹히 ’로 적지 않고 ‘겹겹이’로 적는다. 어원 · ＜겹겨비＜법화＞←겹+겹+-이 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "proposal_records": []
+        }
+      ],
+      "primary_evidence_digest": "f6b2562150d8fd3245807122ec55a037dce3b6a762052127475f4ae90a7a4baa",
+      "occurrence_requests": {
+        "겹겹이": [
+          {
+            "text": "겹겹이",
+            "meaning_en": "in layer upon layer"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "d3a74fbfcdb020dd513ff59ef4a03f6b72631848dc6a4886d24363cc7a4ae4e0"
+    },
+    {
+      "headwords": [
+        "대감"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "stdict-80068/명",
+            "headword": "대감",
+            "pos": "명",
+            "meaning_en": "A single-volume compendium providing an overview of a field.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=80068",
+            "evidence_en": "The supplied primary HTML snapshot explicitly identifies 대감 (大鑑), homonym 2, as 명사 and defines a book giving general knowledge of an entire field in one volume. This is distinct from the existing 大監 lexeme. No Basic Dictionary record for this homonym was found. Live retrieval of the Standard record failed; attestation relies on the supplied snapshot."
+          }
+        ],
+        "unresolved": [
+          {
+            "headword": "대감",
+            "reason_en": "The requested official-title usage is already covered by krdict-42141/명. Its directly retrieved Basic Dictionary record confirms 대감 (大監), 명사: an honorific for a high-ranking Joseon official (https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=42141&nation=eng&nationCode=6). Do not duplicate it as stdict-80067/명. Additional senses in the supplied Standard snapshot belong in shared dictionary editorial review."
+          }
+        ]
+      },
+      "proposal_digest": "d7280c4cb6a9a8e97cdafb4da07184cbd8ced2ba25a2bdd88a61a8fc168897b1",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "f5a2d9c8f3d90c146ad2bd4aa1134d58e89b785c30fc1f051640e1e00c17acde",
+      "primary_evidence": [
+        {
+          "headword_request": "대감",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EB%8C%80%EA%B0%90",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=80067",
+              "content_sha256": "35062b475f7d0e73441641c729ec770af65d44803b0603e151189f9780241ae0",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 대감 1 (大監 ) 원어 大 큰 대 부수 大/총획 3 監 볼 감 부수 皿/총획 14 한자 발음 [대ː감 ] 「참고 어휘」 소감(少監) 「명사」 「1」 『민속』 무당이 굿할 때에, 집이나 터, 나무, 돌 따위에 붙어 있는 신이나 그 밖의 여러 신을 높여 이르는 말. 「2」 『역사』 신라 때에, 병부·시위부·패강진전 따위에 둔 무관 벼슬. 병부 대감은 아찬 이하, 시위부 대감은 나마 이상 아찬까지, 패강진전 대감은 사지 이상 중아찬까지의 벼슬아치들을 임명하였다. 「3」 『역사』 조선 시대에, 정이품 이상의 벼슬아치를 높여 부르던 말. 벼슬이나 지명 따위에 붙여서 불렀다. 영의정 대감 . 재동 대감 . 운양 대감 . 관용구/속담 속담 대감 말이 죽었다면 먹던 밥을 밀쳐 놓고 가고, 대감이 죽었다면 먹던 밥 다 먹고 간다 대감의 말이 죽으면 대감의 환심을 사기 위하여 소식을 듣는 대로 바로 조문을 가지만 대감이 죽은 후에는 그에게 잘 보일 필요가 없어 먹던 밥을 다 먹고 느긋이 간다는 뜻으로, 권력이 있을 때는 아첨을 하지만 권력이 없어지면 돌아다보지 않는 세상인심을 비유적으로 이르는 말. = 대감 죽은 데는 안 가도 대감 말 죽은 데는 간다 . 속담 대감 죽은 데는 안 가도 대감 말 죽은 데는 간다 대감이 죽은 후에는 그에게 잘 보일 필요가 없으나 대감이 살고 말이 죽으면 대감의 환심을 사기 위하여 조문을 간다는 뜻으로, 권력이 있을 때는 아첨을 하지만 권력이 없어지면 돌아다보지 않는 세상인심을 비유적으로 이르는 말. ≒ 대감 말이 죽었다면 먹던 밥을 밀쳐 놓고 가고, 대감이 죽었다면 먹던 밥 다 먹고 간다 , 정승 말[개/당나귀] 죽은 데는 (문상을) 가도 정승 죽은 데는 (문상을) 안 간다 , 호장 댁네 죽은 데는 가도 호장 죽은 데는 가지 않는다 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=80068",
+              "content_sha256": "d6770c6ca5e753120872dd2e18824199786485cd3075dd72c40c415f171548c9",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 대감 2 (大鑑 ) 원어 大 큰 대 부수 大/총획 3 鑑 거울 감 부수 金/총획 22 한자 발음 [대ː감 ] 「명사」 한 권만으로 관련 분야 전체에 관한 대강의 지식을 얻을 수 있게 엮은 책. 전국 학교 대감 . 지리 대감 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "proposal_records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=80068",
+              "content_sha256": "d6770c6ca5e753120872dd2e18824199786485cd3075dd72c40c415f171548c9",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 대감 2 (大鑑 ) 원어 大 큰 대 부수 大/총획 3 鑑 거울 감 부수 金/총획 22 한자 발음 [대ː감 ] 「명사」 한 권만으로 관련 분야 전체에 관한 대강의 지식을 얻을 수 있게 엮은 책. 전국 학교 대감 . 지리 대감 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "54d8a82db403515bcf23945832d63488ff08402a781b49234f91ae260ee40b5d",
+      "occurrence_requests": {
+        "대감": [
+          {
+            "text": "대감과",
+            "meaning_en": "with the minister"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "4ace492593b0d4bbe53195f59fe9d3c2168d887586b751419c2a0a0942ab352e"
+    },
+    {
+      "headwords": [
+        "은하수"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "stdict-257123/명",
+            "headword": "은하수",
+            "pos": "명",
+            "meaning_en": "the Milky Way",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=257123",
+            "evidence_en": "The supplied primary-record snapshot identifies 은하-수 (銀河水), POS 명사, as an everyday name for 은하 likened to a river. No existing identity was supplied. Basic Dictionary searches found only a synonym mention under 은하, not a standalone 은하수 record. Attestation relies on the supplied snapshot; live retrieval of the Standard Dictionary record failed."
+          }
+        ],
+        "unresolved": []
+      },
+      "proposal_digest": "2085ca5f92a37cc5bb858b57cee583d1cb5d8b883749951e0f42db38286c0d4b",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "f5a2d9c8f3d90c146ad2bd4aa1134d58e89b785c30fc1f051640e1e00c17acde",
+      "primary_evidence": [
+        {
+          "headword_request": "은하수",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%9D%80%ED%95%98%EC%88%98",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=257123",
+              "content_sha256": "0d9ebc69871a5b8a81b96055551deb5d64403396e2fcdd1b82ff111f31f6cd02",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 은하-수 (銀河水 ) 원어 銀 은 은 부수 金/총획 14 河 강물 하 부수 水/총획 8 水 물 수 부수 水/총획 4 한자 발음 [은하수 ] 편집 이력 「명사」 ‘ 은하 ’를 강(江)에 비유하여 일상적으로 이르는 말. ≒ 고하 , 성하 , 성한 , 우한 , 운한 , 은한 , 은황 , 천하 , 천한 , 천황 , 하한 . 은하수를 건너는 조각배. 북두칠성은 앵돌아져 바다 위에 걸리고 은하수는 동서로 빗겨 흘렀다. ≪현기영, 변방에 우짖는 새≫ 달력이 없어도 달을 한 번씩 쳐다보기만 해도 몇 월 며칠이라 하면 틀림이 없고 은하수와 북두칠성의 자리를 보고서도 철을 알아낸다. ≪이무영, 농민≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "proposal_records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=257123",
+              "content_sha256": "0d9ebc69871a5b8a81b96055551deb5d64403396e2fcdd1b82ff111f31f6cd02",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 은하-수 (銀河水 ) 원어 銀 은 은 부수 金/총획 14 河 강물 하 부수 水/총획 8 水 물 수 부수 水/총획 4 한자 발음 [은하수 ] 편집 이력 「명사」 ‘ 은하 ’를 강(江)에 비유하여 일상적으로 이르는 말. ≒ 고하 , 성하 , 성한 , 우한 , 운한 , 은한 , 은황 , 천하 , 천한 , 천황 , 하한 . 은하수를 건너는 조각배. 북두칠성은 앵돌아져 바다 위에 걸리고 은하수는 동서로 빗겨 흘렀다. ≪현기영, 변방에 우짖는 새≫ 달력이 없어도 달을 한 번씩 쳐다보기만 해도 몇 월 며칠이라 하면 틀림이 없고 은하수와 북두칠성의 자리를 보고서도 철을 알아낸다. ≪이무영, 농민≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "5b12366fe35a9cff68b214e52c4c1a97014fad05577de0082a62b892319a6499",
+      "occurrence_requests": {
+        "은하수": [
+          {
+            "text": "은하수는",
+            "meaning_en": "the Milky Way"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "fef1650736df38f6dfda64194635d670bb628bc7d2d17353db774c07aed41b1f"
+    },
+    {
+      "headwords": [
+        "넉넉히",
+        "병법책",
+        "이상히",
+        "정자"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "stdict-65170/부",
+            "headword": "넉넉히",
+            "pos": "부",
+            "meaning_en": "Amply; generously; sufficiently.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=65170",
+            "evidence_en": "Supplied direct Standard Dictionary record lists 넉넉-히 as 부사, with senses covering ample quantity, comfortable means, and sufficient possibility. No standalone Basic Dictionary record was verified."
+          },
+          {
+            "id": "stdict-260372/부",
+            "headword": "이상히",
+            "pos": "부",
+            "meaning_en": "Strangely; unusually; suspiciously.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=260372",
+            "evidence_en": "Supplied direct Standard Dictionary record lists 이상-히 (異常히) as 부사, defining deviation from normality, unusualness, and suspicious or inexplicable qualities. No standalone Basic Dictionary record was verified."
+          },
+          {
+            "id": "krdict-75888/명",
+            "headword": "정자",
+            "pos": "명",
+            "meaning_en": "A pavilion with pillars and a roof, built for rest in a scenic place.",
+            "primary_url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=75888",
+            "evidence_en": "Retrieved direct Basic Dictionary record lists 정자 (亭子), 명사, and defines a wall-less building for recreation or rest. This pavilion homonym is distinct from all supplied existing identities."
+          },
+          {
+            "id": "stdict-299437/명",
+            "headword": "정자",
+            "pos": "명",
+            "meaning_en": "A decorative finial attached atop a traditional hat.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299437",
+            "evidence_en": "Supplied direct Standard Dictionary record lists 정자 (頂子), 명사, as a knob-like hat ornament whose material varied by official rank. This homonym is absent from the supplied identities."
+          },
+          {
+            "id": "stdict-299438/명",
+            "headword": "정자",
+            "pos": "명",
+            "meaning_en": "A minute crystal grain in quartz-bearing igneous rock.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299438",
+            "evidence_en": "Supplied direct Standard Dictionary record lists 정자 (晶子), 명사, with this mineralogical definition. This homonym is absent from the supplied identities."
+          },
+          {
+            "id": "stdict-479974/명",
+            "headword": "정자",
+            "pos": "명",
+            "meaning_en": "A sperm cell; a male reproductive cell.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=479974",
+            "evidence_en": "Supplied direct Standard Dictionary record lists 정자 (精子), 명사, and defines the male reproductive cell. This homonym is absent from the supplied identities; no direct Basic Dictionary equivalent was verified."
+          }
+        ],
+        "unresolved": [
+          {
+            "headword": "병법책",
+            "reason_en": "No readable standalone Basic or Standard Dictionary headword record was verified. The supplied Standard Dictionary search produced no records. Ordinary usage supports its naturalness, but cannot establish the required dictionary identity."
+          },
+          {
+            "headword": "정자",
+            "reason_en": "Already cataloged homonyms are covered by stdict-299428/명, stdict-299430/명, stdict-299431/명, stdict-299432/명, stdict-299433/명, stdict-299434/명, stdict-299435/명, and stdict-479961/명; no duplicate identities are proposed for them."
+          },
+          {
+            "headword": "정자",
+            "reason_en": "The supplied stdict-299429 record for 정子 only redirects to 성자 and provides no independent core definition. It is not proposed as an independently defined lexeme."
+          },
+          {
+            "headword": "정자",
+            "reason_en": "The supplied stdict-299439 record for 程子 denotes the named Chinese scholars Cheng Hao and Cheng Yi. This proper-name usage is excluded from new dictionary lemma proposals."
+          }
+        ]
+      },
+      "proposal_digest": "ac6378a7bff3f07b9155d844eb3b5f9b141f867308b21e924c2e0e2ee7528fe7",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "c6a0027d0694ef196c9553b759424d8b6193bc75b157ffd83bda766412ea8f52",
+      "primary_evidence": [
+        {
+          "headword_request": "넉넉히",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EB%84%89%EB%84%89%ED%9E%88",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=65170",
+              "content_sha256": "6afcf31d14e262573a50a53d350437bae30bc9b5976b5d28981cf7185dcd277a",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 넉넉-히 발음 [넝너키 ] 주표제어 넉넉 「부사」 「1」 크기나 수량 따위가 기준에 차고도 남음이 있게. 학비를 넉넉히 보태 주다. 어머니는 항상 용돈을 넉넉히 주셨다. 손님이 올 것 같아서 밥을 넉넉히 했다. 가며 가며 네 사람이 뜯은 나물이 한 끼 반찬은 넉넉히 되었다. ≪이광수, 흙≫ 이 흉년에 쌀 말깨나 넉넉히 장만해 둔 집이 어디 그리 흔할까. ≪현기영, 변방에 우짖는 새≫ 더 보기 「2」 살림살이가 모자라지 않고 여유가 있게. 그는 경제적으로 넉넉히 자랐다. 남편의 월급만으로는 넉넉히 생활할 수가 없다. 「3」 가능성 따위가 충분하게. 그것만으로도 그들의 생활 정도를 넉넉히 짐작할 일이 아니겠는가. ≪정비석, 비석과 금강산의 대화≫ 아버지가 손만 뻗으면 넉넉히 잡을 만한 거리에 목침이 있고 등잔걸이가 있었다. ≪윤흥길, 장마≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "병법책",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EB%B3%91%EB%B2%95%EC%B1%85",
+          "records": []
+        },
+        {
+          "headword_request": "이상히",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%9D%B4%EC%83%81%ED%9E%88",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=260372",
+              "content_sha256": "f1cab646064ee9e8657327a9035a9539456d3d21ef5f215bd84ae4a81448aef6",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 이상-히 (異常히 ) 원어 異 다를 이 다를 리 부수 田/총획 11 常 항상 상 부수 巾/총획 11 히 한자 고유어 발음 [이ː상히] 주표제어 이상 11 「부사」 「1」 정상적인 상태와 다르게. 「2」 지금까지의 경험이나 지식과는 달리 별나거나 색다르게. 「3」 의심스럽거나 알 수 없는 데가 있게. 이상히 여기다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "headword_request": "정자",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%A0%95%EC%9E%90",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299428",
+              "content_sha256": "c05b9a3c759cbd7e6f00d8afe48ae686ec9f2c222aa86f7d05c2f37e7ca2e46f",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 1 발음 [정자 ] 「명사」 『음악』 ‘ 모내기 노래 ’의 다른 이름. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299429",
+              "content_sha256": "e869cf8ed3a656a384a69516f31c41c532686d264c2d072957472290115fd159",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 2 (정子 ) 원어 정 子 아들 자 부수 子/총획 3 고유어 한자 「명사」 → 성자 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299430",
+              "content_sha256": "e7abdc1c76c1f50f7ec2bb3e824496516bc475227ef4110e3289453eee5c9d68",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 3 (丁子 ) 원어 丁 고무래 정 부수 一/총획 2 子 아들 자 부수 子/총획 3 한자 발음 [정자 ] 「명사」 정향나무의 꽃봉오리를 따서 말린 것. 향기가 짙고 독특한 맛이 있다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299431",
+              "content_sha256": "9924a693c25f3c580548afee88c6697230a3d05cc3bd428d8a72c9e0f1bfd65e",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 4 (丁字 ) 원어 丁 고무래 정 부수 一/총획 2 字 글자 자 부수 子/총획 6 한자 발음 [정짜 ] 편집 이력 「명사」 ‘丁’ 자처럼 생긴 모양. = 정자형 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 4 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299432",
+              "content_sha256": "747192be47f197ddda04e981289d5f6395eb554e6a4c7a58545f2f788be1fdc2",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 5 (井字 ) 원어 井 우물 정 부수 二/총획 4 字 글자 자 부수 子/총획 6 한자 발음 [정짜 ] 편집 이력 「명사」 ‘井’ 자처럼 생긴 모양. = 정자형 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 5 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299433",
+              "content_sha256": "7050f5d541a72a6aeb81227b5e54345ee3c0dfb3e2a1cf51db1cbdd4a64fd789",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 6 (正子 ) 원어 正 바를 정 부수 止/총획 5 子 아들 자 부수 子/총획 3 한자 발음 [정ː자 ] 편집 이력 「명사」 「1」 자시(子時)의 한가운데. 밤 열두 시를 이른다. = 자정 . 「2」 『천문』 태양이 지평선 아래에서 자오선을 지나는 순간. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 6 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299434",
+              "content_sha256": "abd55aacaf5f57424739112fc606c42f6ca8fd660c7a6695b6b73bf2444770b1",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 8 (正字 ) 원어 正 바를 정 부수 止/총획 5 字 글자 자 부수 子/총획 6 한자 발음 [정ː자 ] 「명사」 「1」 『역사』 고려 시대에, 비서성·전교시에 속한 종구품 벼슬. 또는 그 벼슬에 있던 사람. 「2」 『역사』 조선 시대에, 홍문관·승문원·교서관에 속한 정구품 벼슬. 또는 그 벼슬에 있던 사람. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 8 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299435",
+              "content_sha256": "0914ece5f25a9905bf56b1a505ed623fd6d90fe4f23f660b711fffcb1b84ab99",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 9 (定字 ) 원어 定 정할 정 부수 宀/총획 8 字 글자 자 부수 子/총획 6 한자 발음 [정ː자 ] 부표제어 정자-하다 「명사」 본이름 이외에 부르는 이름인 자(字)를 정함. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 9 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=479961",
+              "content_sha256": "61f51d401392b6a5a9f9c3050a11956c6690ad309078a4f94f4088e2574eb56e",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 7 (正字 ) 원어 正 바를 정 부수 止/총획 5 字 글자 자 부수 子/총획 6 한자 발음 [정ː자 ] 「명사」 「1」 서체가 바르고 또박또박 쓴 글자. 이력서에 정자로 기입하다. 그는 칠판에 자신의 이름을 정자로 써 놓았다. 「2」 한자의 약자(略字)나 속자(俗字), 와자(訛字)가 아닌 본디의 글자. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 7 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=479973",
+              "content_sha256": "48d7fb91023bb268c6c314223e833bb8e4f2a959d88b3b9caeba4a256465c865",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 10 (亭子 ) 원어 亭 정자 정 부수 亠/총획 9 子 아들 자 부수 子/총획 3 한자 발음 [정자 ] 편집 이력 「명사」 경치가 좋은 곳에 놀거나 쉬기 위하여 지은 집. 벽이 없이 기둥과 지붕만 있다. ≒ 사정 , 정각 , 정사 . 정자에 오르다. 사랑채와 안채를 중심하여 사면에 누각과 같은 큰 문들이 있었고, 뜰 안엔 네 개의 정자와 그 정자를 둘러싼 큰 연못이 있었다. ≪정한숙, 고가≫ 다중 매체 Previous Next 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 10 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299437",
+              "content_sha256": "d4c11d44bbd7df9e3115681ca7306163c4c8e25348b97c80cc7b0406437da51e",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 11 (頂子 ) 원어 頂 정수리 정 부수 頁/총획 11 子 아들 자 부수 子/총획 3 한자 발음 [정자 ] 편집 이력 「명사」 『공예』 전립 따위의 위에 꼭지처럼 만들어 달던 꾸밈새. 품계(品階)에 따라 금, 은, 옥, 석 따위의 구별이 있었다. = 증자 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 11 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299438",
+              "content_sha256": "85db2d8dc89cea26b63b070de7f3bc5a6f2835294f9ce8827d73034704c1ea7a",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 12 (晶子 ) 원어 晶 밝을 정 부수 日/총획 12 子 아들 자 부수 子/총획 3 한자 발음 [정자 ] 「명사」 『광업』 수정질(水晶質)의 화성암 속에 들어 있는 아주 작은 결정 알갱이. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 12 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299439",
+              "content_sha256": "6502ef5452908fd690cb2f2d7119b75154837cd002ab9a4bcb3598be35256c88",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 13 (程子 ) 원어 程 단위 정 부수 禾/총획 12 子 아들 자 부수 子/총획 3 한자 발음 [정자 ] 편집 이력 「명사」 『인명』 중국 송나라의 유학자 정호(程顥)와 정이(程頥) 형제를 높여 이르는 말. ≒ 이정자 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 13 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=479974",
+              "content_sha256": "78f43ef0f56828e54065b1bb276fcfc32d75b53da64cf358cd244c900861a297",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 14 (精子 ) 원어 精 찧을 정 부수 米/총획 14 子 아들 자 부수 子/총획 3 한자 발음 [정자 ] 편집 이력 「명사」 『생명』 생물의 수컷의 생식 세포. 사람의 경우 길이는 0.05mm가량이고 머리, 목, 꼬리로 이루어져 있으며 운동성이 뛰어나다. 모든 후생동물과 은행나무, 이끼, 고사리류, 소철 따위에서 볼 수 있다. ≒ 정충 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 14 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "proposal_records": [
+            {
+              "primary_url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=75888",
+              "content_sha256": "106c4b90e5d021d5145a23501ffbe4a66dd8bfde936b5bed0de2deb83af0032e",
+              "text": "한국어기초사전 본문바로가기 이 누리집은 대한민국 공식 전자정부 누리집입니다. 범주별 찾기 사전 통계 작은 창 사전 찾기 자세히 찾기 사전 내려받기 가 가 인쇄 정자 2 (亭子 ) 발음 [정자 듣기 ] 품사 「명사」 놀거나 쉬기 위해 경치가 좋은 곳에 지은, 벽이 없이 기둥과 지붕만 있는 집. 정자 밑. 정자 위. 정자 를 세우다. 정자 를 짓다. 정자 에 오르다. 옛 선인들은 골짜기마다 정자 를 짓고 풍류를 즐겼다. 나는 산 중턱에 있는 정자 에 올라 주변 경치를 감상하였다. 가: 아저씨, 정자 에 올라와서 좀 쉬었다 가세요. 나: 그럴까요? 여기 경치가 참 좋네요. 다중 매체 정보 1 정자 의견 보내기 의견 보내기: 보안 문자, 필명, 제목, 의견으로 구성 보안 문자 음성으로 듣기 새로 고침 필명 제목 의견 의견 보내기 사전 내용에 대한 여러분의 다양한 의견을 기다립니다. (답변은 드리지 않습니다만, 보내주신 내용은 사전 내용 개선과 보완을 위해 참고하겠습니다.) 다른 언어 사전 보기 한국어-러시아어 한국어-몽골어 한국어-베트남어 한국어-스페인어 한국어-아랍어 한국어-영어 한국어-인도네시아어 한국어-일본어 한국어-중국어 한국어-타이어 한국어-프랑스어 내가 살펴본 단어 한국어 발음 듣기 서비스의 일부는 네이버문화재단에서 후원 하였습니다. 사전 내려받기 사전 내려받기 용도를 입력해 주세요. 사전 내려받기: 내려받기 용도으로 구성 내려받기 용도 학습 자료 용도 강의 자료 용도 연구 자료 용도 기타 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 사전 내려받기: 구분, 파일 형식, 필수 항목, 선택 항목, 다국어 대역으로 구성 구분 뜻풀이 단위 표제어 단위 파일 형식 MS 엑셀 HWP 한글 MS 워드 텍스트 XML JSON 필수 항목 어휘, 구분, 품사, 뜻풀이, 용례 선택 항목 전체 고유어 여부 원어 발음 활용 파생어 ☞(가 보라) 어휘 등급 의미 범주 주제 및 상황 범주 전체 참고 검색용 이형태 관련어 의미 참고 다중 매체 정보 문형 문형 참고 부표제어 부표제어 전체 참고 부표제어 관련어 부표제어 의미 참고 부표제어 문형 부표제어 문형 참고 다국어 대역 전체 전자 우편 주소 내려받기 버튼을 누르면 입력하신 전자 우편 주소로 내려받기 경로가 전송됩니다. 요청이 많을 경우, 다소 시간이 소요될 수 있습니다. 전자 우편을 받지 못한 경우에는 스팸 메일함을 확인해 주세요. 내려받기 취소 닫기 주제 및 상황 범주 선택 해제 0 개 선택 주제 및 상황 범주별 찾기: 초급, 중급, 고급으로 구성 초급( ) 중급( ) 고급( ) 인사하기 소개하기(자기소개) 소개하기(가족소개) 개인 정보 교환하기 개인 정보 교환하기 위치 표현하기 교통 이용하기 길찾기 교통 이용하기 지리정보 지리정보 물건 사기 물건 사기 경제∙경영 음식 주문하기 음식 설명하기 식문화 요리 설명하기 요리 설명하기 시간 표현하기 날짜 표현하기 요일 표현하기 날씨와 계절 날씨와 계절 기후 하루 생활 학교생활 학교생활 교육 한국 생활 한국 생활 직업과 진로 직업과 진로 직장 생활 직장 생활 약속하기 전화하기 감사하기 사과하기 여행 여행 여가 생활 주말 및 휴가 주말 및 휴가 취미 취미 가족 행사 가족 행사 가족 행사-명절 건강 건강 보건과 의료 병원 이용하기 약국 이용하기 공공 기관 이용하기(도서관) 공공기관 이용하기 공공 기관 이용하기(우체국) 공공 기관 이용하기(출입국 관리 사무소) 초대와 방문 초대와 방문 집 구하기 집 구하기 주거 생활 집안일 집안일 감정, 기분 표현하기 감정, 기분 표현하기 심리 성격 표현하기 성격 표현하기 복장 표현하기 복장 표현하기 외양 외모 표현하기 외모 표현하기 영화 보기 공연과 감상 대중 문화 대중 매체 컴퓨터와 인터넷 컴퓨터와 인터넷 사건, 사고, 재해 기술하기 사회 문제 환경 문제 환경 문제 사회 제도 문화 비교하기 문화 차이 인간관계 인간관계 한국의 문학 예술 문제 해결하기(분실 및 고장) 실수담 말하기 연애와 결혼 건축 과학과 기술 법 스포츠 언론 언어 언어 역사 정치 종교 철학∙윤리 선택 완료 취소 닫기 원어 한자 亭 정자 정 부수 亠/총획 9 子 아들 자 부수 子/총획 3 도움말 저작권 정책 알립니다 개발 지원(Open API) 의견 제시 사전 전체 내려받기 한국어교수학습샘터 한국어학습자말뭉치나눔터 국립국어원 표준국어대사전 우리말샘 한국수어사전 이동"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=260372",
+              "content_sha256": "f1cab646064ee9e8657327a9035a9539456d3d21ef5f215bd84ae4a81448aef6",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 이상-히 (異常히 ) 원어 異 다를 이 다를 리 부수 田/총획 11 常 항상 상 부수 巾/총획 11 히 한자 고유어 발음 [이ː상히] 주표제어 이상 11 「부사」 「1」 정상적인 상태와 다르게. 「2」 지금까지의 경험이나 지식과는 달리 별나거나 색다르게. 「3」 의심스럽거나 알 수 없는 데가 있게. 이상히 여기다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299437",
+              "content_sha256": "d4c11d44bbd7df9e3115681ca7306163c4c8e25348b97c80cc7b0406437da51e",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 11 (頂子 ) 원어 頂 정수리 정 부수 頁/총획 11 子 아들 자 부수 子/총획 3 한자 발음 [정자 ] 편집 이력 「명사」 『공예』 전립 따위의 위에 꼭지처럼 만들어 달던 꾸밈새. 품계(品階)에 따라 금, 은, 옥, 석 따위의 구별이 있었다. = 증자 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 11 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=299438",
+              "content_sha256": "85db2d8dc89cea26b63b070de7f3bc5a6f2835294f9ce8827d73034704c1ea7a",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 12 (晶子 ) 원어 晶 밝을 정 부수 日/총획 12 子 아들 자 부수 子/총획 3 한자 발음 [정자 ] 「명사」 『광업』 수정질(水晶質)의 화성암 속에 들어 있는 아주 작은 결정 알갱이. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 12 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=479974",
+              "content_sha256": "78f43ef0f56828e54065b1bb276fcfc32d75b53da64cf358cd244c900861a297",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정자 14 (精子 ) 원어 精 찧을 정 부수 米/총획 14 子 아들 자 부수 子/총획 3 한자 발음 [정자 ] 편집 이력 「명사」 『생명』 생물의 수컷의 생식 세포. 사람의 경우 길이는 0.05mm가량이고 머리, 목, 꼬리로 이루어져 있으며 운동성이 뛰어나다. 모든 후생동물과 은행나무, 이끼, 고사리류, 소철 따위에서 볼 수 있다. ≒ 정충 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 14 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=65170",
+              "content_sha256": "6afcf31d14e262573a50a53d350437bae30bc9b5976b5d28981cf7185dcd277a",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 넉넉-히 발음 [넝너키 ] 주표제어 넉넉 「부사」 「1」 크기나 수량 따위가 기준에 차고도 남음이 있게. 학비를 넉넉히 보태 주다. 어머니는 항상 용돈을 넉넉히 주셨다. 손님이 올 것 같아서 밥을 넉넉히 했다. 가며 가며 네 사람이 뜯은 나물이 한 끼 반찬은 넉넉히 되었다. ≪이광수, 흙≫ 이 흉년에 쌀 말깨나 넉넉히 장만해 둔 집이 어디 그리 흔할까. ≪현기영, 변방에 우짖는 새≫ 더 보기 「2」 살림살이가 모자라지 않고 여유가 있게. 그는 경제적으로 넉넉히 자랐다. 남편의 월급만으로는 넉넉히 생활할 수가 없다. 「3」 가능성 따위가 충분하게. 그것만으로도 그들의 생활 정도를 넉넉히 짐작할 일이 아니겠는가. ≪정비석, 비석과 금강산의 대화≫ 아버지가 손만 뻗으면 넉넉히 잡을 만한 거리에 목침이 있고 등잔걸이가 있었다. ≪윤흥길, 장마≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "63c45919ea9f003f8539f38e07ec180a9aa06ed7f965a8015d75e8d6ce8c8a61",
+      "occurrence_requests": {
+        "넉넉히": [
+          {
+            "text": "넉넉히",
+            "meaning_en": "generously"
+          }
+        ],
+        "병법책": [
+          {
+            "text": "병법책을",
+            "meaning_en": "books on military strategy"
+          }
+        ],
+        "이상히": [
+          {
+            "text": "이상히",
+            "meaning_en": "as strange"
+          }
+        ],
+        "정자": [
+          {
+            "text": "정자에",
+            "meaning_en": "in a pavilion"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "fa53d7dabbfa611cae1a0289caf140596301214a97808ef2c506f8b97e34da09"
+    },
+    {
+      "headwords": [
+        "대우받다"
+      ],
+      "proposal": {
+        "entries": [],
+        "unresolved": [
+          {
+            "headword": "대우받다",
+            "reason_en": "Natural usage meaning “be treated,” but no readable standalone record with this exact headword and verb POS was verified in either NIKL dictionary. Exact-headword web searches found no NIKL record; direct dictionary searches could not be read, and supplied primary evidence contains no records. Examples under 대우 do not attest 대우받다 as a separate dictionary headword. Leave unresolved pending primary-record verification; this does not imply the word is incorrect."
+          }
+        ]
+      },
+      "proposal_digest": "73e537a40de43a598556788a672d7fac50788315cb972922dc7f25fb69f1fb58",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "c6a0027d0694ef196c9553b759424d8b6193bc75b157ffd83bda766412ea8f52",
+      "primary_evidence": [
+        {
+          "headword_request": "대우받다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EB%8C%80%EC%9A%B0%EB%B0%9B%EB%8B%A4",
+          "records": []
+        },
+        {
+          "proposal_records": []
+        }
+      ],
+      "primary_evidence_digest": "48b4cde1dd3e59622957766bb02b5d735e767ed0f8e0304142ece64696dace8a",
+      "occurrence_requests": {
+        "대우받다": [
+          {
+            "text": "대우받지",
+            "meaning_en": "be treated, linked to the following inability expression"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "0ed6efa9dd9c9c3aa71464e17c965f8f2f2a31f7d01aea1e3af25c7a42b59f14"
+    },
+    {
+      "headwords": [
+        "대감"
+      ],
+      "proposal": {
+        "entries": [],
+        "unresolved": [
+          {
+            "headword": "대감",
+            "reason_en": "The requested honorific noun 대감 (大監), meaning an honorific title for a high-ranking Joseon official, is already covered by the supplied catalog identity krdict-42141/명. The supplied [Standard Dictionary record stdict-80067](https://stdict.korean.go.kr/search/searchView.do?word_no=80067) confirms the exact headword, noun POS, and honorific sense. 대감을 consists of this noun plus the object particle 을; contextual “you, my lord” does not establish a separate pronoun lexeme. The distinct noun 대감 (大鑑), a single-volume compendium surveying a field, is confirmed by the supplied [stdict-80068 record](https://stdict.korean.go.kr/search/searchView.do?word_no=80068) and already cataloged as stdict-80068/명. Live Standard Dictionary retrieval failed; these attestations rely on the supplied primary snapshots. No new identity is warranted."
+          }
+        ]
+      },
+      "proposal_digest": "4ade5ed70af0822504c810d0283eedd1189b5a8f473277292a08c03330d8dbf7",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "f5a2d9c8f3d90c146ad2bd4aa1134d58e89b785c30fc1f051640e1e00c17acde",
+      "primary_evidence": [
+        {
+          "headword_request": "대감",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EB%8C%80%EA%B0%90",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=80067",
+              "content_sha256": "35062b475f7d0e73441641c729ec770af65d44803b0603e151189f9780241ae0",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 대감 1 (大監 ) 원어 大 큰 대 부수 大/총획 3 監 볼 감 부수 皿/총획 14 한자 발음 [대ː감 ] 「참고 어휘」 소감(少監) 「명사」 「1」 『민속』 무당이 굿할 때에, 집이나 터, 나무, 돌 따위에 붙어 있는 신이나 그 밖의 여러 신을 높여 이르는 말. 「2」 『역사』 신라 때에, 병부·시위부·패강진전 따위에 둔 무관 벼슬. 병부 대감은 아찬 이하, 시위부 대감은 나마 이상 아찬까지, 패강진전 대감은 사지 이상 중아찬까지의 벼슬아치들을 임명하였다. 「3」 『역사』 조선 시대에, 정이품 이상의 벼슬아치를 높여 부르던 말. 벼슬이나 지명 따위에 붙여서 불렀다. 영의정 대감 . 재동 대감 . 운양 대감 . 관용구/속담 속담 대감 말이 죽었다면 먹던 밥을 밀쳐 놓고 가고, 대감이 죽었다면 먹던 밥 다 먹고 간다 대감의 말이 죽으면 대감의 환심을 사기 위하여 소식을 듣는 대로 바로 조문을 가지만 대감이 죽은 후에는 그에게 잘 보일 필요가 없어 먹던 밥을 다 먹고 느긋이 간다는 뜻으로, 권력이 있을 때는 아첨을 하지만 권력이 없어지면 돌아다보지 않는 세상인심을 비유적으로 이르는 말. = 대감 죽은 데는 안 가도 대감 말 죽은 데는 간다 . 속담 대감 죽은 데는 안 가도 대감 말 죽은 데는 간다 대감이 죽은 후에는 그에게 잘 보일 필요가 없으나 대감이 살고 말이 죽으면 대감의 환심을 사기 위하여 조문을 간다는 뜻으로, 권력이 있을 때는 아첨을 하지만 권력이 없어지면 돌아다보지 않는 세상인심을 비유적으로 이르는 말. ≒ 대감 말이 죽었다면 먹던 밥을 밀쳐 놓고 가고, 대감이 죽었다면 먹던 밥 다 먹고 간다 , 정승 말[개/당나귀] 죽은 데는 (문상을) 가도 정승 죽은 데는 (문상을) 안 간다 , 호장 댁네 죽은 데는 가도 호장 죽은 데는 가지 않는다 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=80068",
+              "content_sha256": "d6770c6ca5e753120872dd2e18824199786485cd3075dd72c40c415f171548c9",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 대감 2 (大鑑 ) 원어 大 큰 대 부수 大/총획 3 鑑 거울 감 부수 金/총획 22 한자 발음 [대ː감 ] 「명사」 한 권만으로 관련 분야 전체에 관한 대강의 지식을 얻을 수 있게 엮은 책. 전국 학교 대감 . 지리 대감 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "proposal_records": []
+        }
+      ],
+      "primary_evidence_digest": "b525d299db2c8ff81193b9bf3294b397cd50dbefc4bc5a2385768583b9b8b3da",
+      "occurrence_requests": {
+        "대감": [
+          {
+            "text": "대감을",
+            "meaning_en": "you, my lord"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "6ee4e4d9c47146031a8bce50ef9be5dd7870f2752fa6bf141182a4a66bb2b018"
     }
   ]
 }

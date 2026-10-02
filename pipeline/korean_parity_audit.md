@@ -407,3 +407,16 @@ list. End-to-end regressions contrast a stale snapshot that now accepts the
 current reviewed identity with an invented ID that still fails, and verify the
 repair worker receives the current exact IDs. This changes candidate availability,
 not linguistic approval or curriculum grading.
+
+Targeted primary research approved 넉넉히, 이상히 and the pavilion 정자 identity
+(krdict-75888/명), along with separately attested homonyms. 병법책 remained
+unresolved as a standalone dictionary headword. Its military-strategy 병법 and
+책 components already have independently attested identities. Headword planning
+and annotation instructions now distinguish a missing transparent noun compound
+from a missing independent lexeme: an unapproved annotation may choose adjacent
+component taps without adding spaces or rewriting source text. Attested whole
+words remain preferred, idioms retain their combined meanings, and uncertain
+component contributions still require investigation. A regression verifies exact
+병법책을 reconstruction using its reviewed component identities and contrasts
+an invented whole-compound identity that must fail. TOPIK 6 was resumed from its
+cached proposals to load this guidance and the newly reviewed lexical evidence.

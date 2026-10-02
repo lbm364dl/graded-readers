@@ -1305,6 +1305,27 @@ def test_missing_occurrence_headword_requests_research_but_wrong_id_keeps_candid
         assert 'krdict-123/동' in str(failure.value)
 
 
+def test_nominal_compound_can_use_reviewed_component_taps_without_inventing_a_lemma():
+    from pipeline.korean_agent_harness import annotation_requests, MissingLexicalIdentityError
+    catalog = contracts.lexical_catalog()
+    components = [('병법', '병법', 'stdict-435506/명', 'military strategy'),
+                  ('책을', '책', '책01/명', 'books')]
+    raw = {'segments': [{'type': 'word', 'text': text, 'lemma': lemma,
+        'lexical_id': identity, 'lexical_kind': 'vocabulary', 'meaning_en': meaning,
+        'story_importance_en': '', 'form_steps': []} for text, lemma, identity, meaning in components],
+        'grammar_links': [], 'inflected_segment_indices': []}
+    contracts.check_reconstruction(raw['segments'], '병법책을')
+    requests, _ = annotation_requests(raw, catalog, {'entries': []}, {})
+    assert set(requests) == {'stdict-435506/명', '책01/명'}
+    assert {r['headword'] for r in requests.values()} == {'병법', '책'}
+    whole = copy.deepcopy(raw)
+    whole['segments'] = [{**whole['segments'][0], 'text': '병법책을', 'lemma': '병법책',
+                         'lexical_id': 'invented-compound'}]
+    contracts.check_reconstruction(whole['segments'], '병법책을')
+    with pytest.raises(MissingLexicalIdentityError, match='independently attested component'):
+        annotation_requests(whole, catalog, {'entries': []}, {})
+
+
 @pytest.mark.parametrize('tamper', [None, 'binding', 'tool'])
 def test_curriculum_batches_cover_all_identities_and_replay_verified_workers(tmp_path, tamper):
     from pipeline import korean_curriculum_jobs as jobs
