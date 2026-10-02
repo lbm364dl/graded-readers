@@ -271,3 +271,13 @@ source bindings. The 2017 source row for 아쉽다 labels its POS as 명사 desp
 the adjective-shaped guide 작별이 아쉽다; this catalog discrepancy remains an
 editorial issue, not permission to silently change the pinned dataset or guess a
 POS crosswalk.
+
+Annotation throughput follow-up: a headword discovered only during annotation
+now carries an explicit missing-identity error and requests primary research on
+its first failure, rather than spending three identical annotation retries with
+no lexical candidate. Wrong IDs for already supplied candidates remain distinct
+and retain the exact candidate destinations in their repair diagnostics.
+Contrasting regression cases cover both paths. The real TOPIK 5 run exposed this
+gap with 불평하다; completed sibling chunks are preserved on resume. TOPIK 6 was
+also resumed with three concurrent workers instead of one, without changing its
+chunk partition, source coverage, or independent review gates.

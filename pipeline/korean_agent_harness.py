@@ -50,6 +50,10 @@ class LexicalIdentityError(ValueError):
         self.headwords = set(headwords)
 
 
+class MissingLexicalIdentityError(LexicalIdentityError, UnannotatableProseError):
+    """An occurrence revealed a headword missed by candidate preparation."""
+
+
 def read(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
@@ -239,7 +243,9 @@ def annotation_requests(value: dict, catalog: dict, focus: dict, words: dict) ->
         if kind == "vocabulary" and not candidates and planned_story:
             raise ValueError(f"This is the reviewed story exception, not a NIKL word: {planned_story}")
         if kind == "vocabulary" and not candidates:
-            raise UnannotatableProseError(f"Ordinary word {segment['lemma']} is absent from the learner lexicon; simplify prose instead of inventing its ID or a story-term exemption")
+            raise MissingLexicalIdentityError(
+                f"Ordinary word {segment['lemma']} has no supplied lexical identity. Obtain primary dictionary evidence before assigning an ID; do not invent a story-term exemption.",
+                {segment['lemma']})
         if kind == "vocabulary" and identity not in {e["id"] for e in candidates}:
             identity_errors.append(f"Exact reviewed lexical candidates for {segment['lemma']}: {candidates}. Copy the matching candidate ID verbatim, including its homonym number or krdict-/stdict- namespace; do not invent an unsuffixed ID.")
             unresolved_headwords.add(segment['lemma'])
@@ -744,8 +750,10 @@ class KoreanHarness:
                             return value, {"job": chunk_job, "text": text, "digest": digest(value)}
                         except (ValidationError, ValueError, KeyError, IndexError, TypeError) as error:
                             errors, previous_chunk = [str(error)], value
-                            if (self.level > 1 and repair == repair_start + 2
-                                    and isinstance(error, LexicalIdentityError)):
+                            if (self.level > 1 and not researched_identity
+                                    and isinstance(error, LexicalIdentityError)
+                                    and (isinstance(error, MissingLexicalIdentityError)
+                                         or repair == repair_start + 2)):
                                 from pipeline.korean_lexical_research import research
                                 async with self.lexical_research_lock:
                                     result = await research(error.headwords, self.run_dir, runner=self.runner)

@@ -1242,3 +1242,19 @@ def test_primary_candidate_identity_is_copied_without_legacy_id_guessing(namespa
     with pytest.raises(LexicalIdentityError, match='Copy the matching candidate ID verbatim') as failure:
         annotation_requests(raw, catalog, {'entries': []}, {})
     assert failure.value.headwords == {'말'}
+
+
+@pytest.mark.parametrize('has_candidate', [False, True])
+def test_missing_occurrence_headword_requests_research_but_wrong_id_keeps_candidates(has_candidate):
+    from pipeline.korean_agent_harness import annotation_requests, LexicalIdentityError, MissingLexicalIdentityError
+    raw = {'segments': [{'type': 'word', 'text': '불평하다', 'meaning_en': 'complain',
+        'lemma': '불평하다', 'lexical_kind': 'vocabulary', 'lexical_id': 'unverified-id',
+        'story_importance_en': '', 'form_steps': []}], 'grammar_links': [], 'inflected_segment_indices': []}
+    catalog = {'불평하다': [{'id': 'krdict-123/동', 'headword': '불평하다',
+        'pos': '동', 'meaning': 'complain', 'grade': None}]} if has_candidate else {}
+    with pytest.raises(LexicalIdentityError) as failure:
+        annotation_requests(raw, catalog, {'entries': []}, {})
+    assert failure.value.headwords == {'불평하다'}
+    assert isinstance(failure.value, MissingLexicalIdentityError) == (not has_candidate)
+    if has_candidate:
+        assert 'krdict-123/동' in str(failure.value)

@@ -1225,6 +1225,825 @@
         }
       ],
       "primary_evidence_digest": "a66ea8ea5793fea5829ea8b2da8bd989d0bdd125a9a75eb8e1b4060505413aee"
+    },
+    {
+      "headwords": [
+        "기상"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "krdict-38289/명",
+            "headword": "기상",
+            "pos": "명",
+            "meaning_en": "Innate vigorous, resolute spirit, or its outward expression.",
+            "primary_url": "https://krdict.korean.go.kr/jpn/dicSearch/SearchView?ParaWordNo=38289&nation=jpn",
+            "evidence_en": "Direct Basic Dictionary record read: 기상 (氣像), explicitly 명사; definition describes innate strong spirit and its outward manifestation. Distinct from the catalog's weather lexeme."
+          },
+          {
+            "id": "stdict-49841/명",
+            "headword": "기상",
+            "pos": "명",
+            "meaning_en": "An unusual facial appearance.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=49841",
+            "evidence_en": "Supplied primary snapshot explicitly attests 기상 (奇相), 명사, defined as an unusual physiognomy. No standalone Basic Dictionary record located. Live retrieval failed; attestation relies on the supplied snapshot."
+          },
+          {
+            "id": "stdict-49842/명",
+            "headword": "기상",
+            "pos": "명",
+            "meaning_en": "An extraordinary, unpredictable idea.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=49842",
+            "evidence_en": "Supplied primary snapshot explicitly attests 기상 (奇想), 명사, defined as an unusual thought difficult to anticipate. No standalone Basic Dictionary record located. Live retrieval failed; attestation relies on the supplied snapshot."
+          },
+          {
+            "id": "stdict-49843/명",
+            "headword": "기상",
+            "pos": "명",
+            "meaning_en": "A facial expression revealing one's feelings.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=49843",
+            "evidence_en": "Supplied primary snapshot explicitly attests 기상 (氣相), 명사, describing feelings manifested in the face; synonym 기색. No standalone Basic Dictionary record located. Live retrieval failed; attestation relies on the supplied snapshot."
+          },
+          {
+            "id": "stdict-49844/명",
+            "headword": "기상",
+            "pos": "명",
+            "meaning_en": "A gaseous phase with uniform physical and chemical properties.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=49844",
+            "evidence_en": "Supplied primary snapshot explicitly attests 기상 (氣狀), 명사, marked chemistry and equated with 기체상. No standalone Basic Dictionary record located. Live retrieval failed; attestation relies on the supplied snapshot."
+          },
+          {
+            "id": "stdict-50878/명",
+            "headword": "기상",
+            "pos": "명",
+            "meaning_en": "Recording something in a document and submitting it.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=50878",
+            "evidence_en": "Supplied primary snapshot explicitly attests 기상 (記上), 명사, defined as recording and submitting in a document. No standalone Basic Dictionary record located. Live retrieval failed; attestation relies on the supplied snapshot."
+          },
+          {
+            "id": "stdict-51775/명",
+            "headword": "기상",
+            "pos": "명",
+            "meaning_en": "On or inside an aircraft.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=51775",
+            "evidence_en": "Supplied primary snapshot explicitly attests 기상 (機上), 명사, referring to being on or within an airplane. No standalone Basic Dictionary record located. Live retrieval failed; attestation relies on the supplied snapshot."
+          },
+          {
+            "id": "stdict-51776/명",
+            "headword": "기상",
+            "pos": "명",
+            "meaning_en": "Fortune or misfortune bestowed by a deity.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=51776",
+            "evidence_en": "Supplied primary snapshot explicitly attests 기상 (禨祥), 명사, defined as divinely bestowed fortune and misfortune. No standalone Basic Dictionary record located. Live retrieval failed; attestation relies on the supplied snapshot."
+          }
+        ],
+        "unresolved": [
+          {
+            "headword": "기상",
+            "reason_en": "The weather noun 氣象 is already covered by nikl2017-vocabulary-06014/명사, whose supplied example is 기상이 악화되다. Basic Dictionary record 38287 confirms this lexeme: https://krdict.korean.go.kr/tha/dicSearch/SearchView?ParaWordNo=38287&captchaNumber=&comment_user_name=&nation=tha&nationCode=3&viewTypes=on&wordComment=. Do not create a duplicate primary identity."
+          },
+          {
+            "headword": "기상",
+            "reason_en": "The getting-up noun 起牀 is attested as 명사 in the supplied Standard Dictionary snapshot, word_no=51773. The Basic Dictionary's verified 기상하다 record references 기상³, but I could not retrieve and verify that noun's own Basic Dictionary record and stable identity. Because the preferred learner-dictionary identity remains unverified, leave primary-identity selection for editorial review; 기상하다 is a separate headword and cannot substitute."
+          }
+        ]
+      },
+      "proposal_digest": "e4234598fc0f66d1da47d45d36dfde4a3356a2d758a799b208479b8f48dae79f",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "f5a2d9c8f3d90c146ad2bd4aa1134d58e89b785c30fc1f051640e1e00c17acde",
+      "primary_evidence": [
+        {
+          "headword_request": "기상",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EA%B8%B0%EC%83%81",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=406886",
+              "content_sha256": "e759443a5ff3a03a62fa6ca60190dc02919a6a4179b9202e35a0d9315367beca",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 기상 5 (氣象 ) 원어 氣 기운 기 부수 气/총획 10 象 코끼리 상 상아 상 상징 상 형상 상 징조 상 용모 상 상상 상 법제 상 역법 상 본받을 상 부수 豕/총획 12 한자 발음 [기상 ] 「참고 어휘」 수상(水象) , 지상(地象) , 천상(天象) 「명사」 『지구』 대기 중에서 일어나는 물리적인 현상을 통틀어 이르는 말. 바람, 구름, 비, 눈, 더위, 추위 따위를 이른다. 기상 난동. 고산 지역은 하루 중에도 여러 번 날씨가 바뀔 정도로 기상 변화가 심하다. 유달리 추웠던 겨울이 가고 봄이 왔으나 기상은 여전히 변덕스러웠다. ≪한무숙, 만남≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 5 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=49841",
+              "content_sha256": "5d3c487aa2682b706183a136846e199cc22f2880cb7c18354e4e91e450dd0f12",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 기상 1 (奇相 ) 원어 奇 기이할 기 부수 大/총획 8 相 서로 상 부수 目/총획 9 한자 발음 [기상 ] 「명사」 기이한 인상(人相). 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=49842",
+              "content_sha256": "102eaa28fbb25d814327b34e7cab2c79a58b406002a9412c5efa26742c7738e1",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 기상 2 (奇想 ) 원어 奇 기이할 기 부수 大/총획 8 想 생각 상 부수 心/총획 13 한자 발음 [기상 ] 「명사」 좀처럼 짐작할 수 없는 별난 생각. 무엇을 생각할 때의 그 눈은 확실히 보통 사람의 생각이 및지 못하는 기상을 빚어내는 것이었다. ≪한설야, 부역≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=49843",
+              "content_sha256": "36d647b311577334dc66aefae2444231dcee35b11e4c9badc05dc79162c1ac7a",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 기상 3 (氣相 ) 원어 氣 기운 기 부수 气/총획 10 相 서로 상 부수 目/총획 9 한자 발음 [기상 ] 편집 이력 「명사」 마음의 작용으로 얼굴에 드러나는 빛. = 기색 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=49844",
+              "content_sha256": "39a4fff42dcaac124ba4d15b2129c90b5822f079da098768b449b304cf6b4ebd",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 기상 4 (氣狀 ) 원어 氣 기운 기 부수 气/총획 10 狀 형상 상 문서 장 부수 犬/총획 8 한자 발음 [기상 ] 편집 이력 「명사」 『화학』 기체의 어느 부분을 취하여도 물리적으로나 화학적으로 균일한 성질을 가지는 상태. = 기체상 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 4 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=49845",
+              "content_sha256": "85df1c7d7e2f5e4f921d7f322af90e3c1f6f75d958c9fe982ca622d67ad22fc8",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 기상 6 (氣像 ) 원어 氣 기운 기 부수 气/총획 10 像 모양 상 부수 人/총획 14 한자 발음 [기상 ] 편집 이력 「명사」 사람이 타고난 기개나 마음씨. 또는 그것이 겉으로 드러난 모양. ≒ 의기 . 늠름하고 활달한 기상 . 진취적인 기상 . 김 선달은 이런 판에도 활발한 기상을 보인다. ≪이기영, 고향≫ 이순신 장군은 늠름한 기상을 얼굴에 띠고 결연히 명령을 내린다. ≪박종화, 임진왜란≫ 더 보기 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 6 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=50878",
+              "content_sha256": "f6bf71fae73b8f27dd7549acef75bcf4697ed581e75c45d2def43ffb4f2665fb",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 기상 7 (記上 ) 원어 記 기록할 기 부수 言/총획 10 上 위 상 부수 一/총획 3 한자 발음 [기상 ] 부표제어 기상-하다 1 「명사」 문서에 기록하여 올림. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 7 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=51773",
+              "content_sha256": "484c7509934ed8c7f42e7f2c07bf1a1d4ecf8036a31cafaf914b83d10500c68b",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 기상 8 (起牀 ) 원어 起 일어날 기 부수 走/총획 10 牀 평상 상 부수 爿/총획 8 한자 발음 [기상 ] 부표제어 기상-하다 2 편집 이력 「명사」 잠자리에서 일어남. ≒ 기침 . 기상 시간. 아침 기상 후 되는대로 접어 한쪽에 밀어 팽개쳤던 침구들을 지시하는 규격대로 다시 정돈하면서도…. ≪전광용, 태백산맥≫ 「반대말」 취침(就寢) 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 8 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=51775",
+              "content_sha256": "a246610802f62796346a7376e8ad6270c5874823fadc9933eded3252862efde1",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 기상 9 (機上 ) 원어 機 틀 기 부수 木/총획 16 上 위 상 부수 一/총획 3 한자 발음 [기상 ] 「명사」 비행기 위. 또는 비행기 안. 항공 안내양의 말에 의하면 기상에서 보는 서울 시가는 아무리 청명한 날이라도 흙먼지 속에 싸인 것 같다고 했다. ≪오영수, 오지에서 온 편지≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 9 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=51776",
+              "content_sha256": "07f94e4b66f9972b03e7bf9aa9fe1fffea3211836655c048ee07cf300edebdff",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 기상 10 (禨祥 ) 원어 禨 조짐 기 부수 示/총획 17 祥 상서로울 상 부수 示/총획 11 한자 발음 [기상 ] 「명사」 신이 내리는 화복. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 10 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "proposal_records": [
+            {
+              "primary_url": "https://krdict.korean.go.kr/jpn/dicSearch/SearchView?ParaWordNo=38289&nation=jpn",
+              "content_sha256": "dd48941b7266672b1a5a2e6f8f3db64bf9c761d4b90b6cb17c5e60ecf0e05ac0",
+              "text": "한국어기초사전 이 누리집은 대한민국 공식 전자정부 누리집입니다. カテゴリー別検索 小ウィンドー表示用 検索 条件指定 削除 削除 Phụ âm b c d đ g h k l m n p q r s t v x f j w z Nguyên âm a á à ả ã ạ ă ắ ằ ẳ ẵ ặ â ấ ầ ẩ ẫ ậ o ó ò ỏ õ ọ ô ố ồ ổ ỗ ộ ơ ớ ờ ở ỡ ợ e é è ẻ ẽ ẹ ê ế ề ể ễ ệ u ú ù ủ ũ ụ ư ứ ừ ử ữ ự i í ì ỉ ĩ ị y ý ỳ ỷ ỹ ỵ à â æ À Â Æ ç Ç é è ë ê É È Ë Ê î ï Î Ï ô œ Ô Œ ù û ü Ù Û Ü á Á é É í Í ó Ó ú ü Ú Ü ñ Ñ ¡ ¿ ダウンロード 가 가 印刷 기상 2 (氣像 ) 発音 [기상 듣기 ] 品詞 「명사」 名詞 きしょう【気性】。きしつ【気質】 사람이 타고난 씩씩하고 굳센 정신. 또는 그것이 겉으로 드러난 모양. 人の生まれつきのりりしく粘り強い精神。また、それが表に表れた模様。 민족의 기상 . 늠름한 기상 . 씩씩한 기상 . 진취적인 기상 . 기상 이 드높다. 기상 이 뛰어나다. 기상 을 높이다. 그는 몸가짐이 당당해서 씩씩한 기상 이 엿보이는 사람이었다. 호랑이는 예로부터 우리 민족의 드높은 기상 을 상징하는 동물로 여겨졌다. 가: 군인들이 아주 굳세고 씩씩해 보이네요. 나: 네. 표정에도 늠름한 기상 이 나타나 있어요. もっと見る 類義語 의기 ご意見・お問い合わせ ご意見・お問い合わせ セキュリティチェック文字 音声で聞く 文字の変更 お名前 タイトル 本文 ご意見・お問い合わせ 辞典内容に関する皆様からの様々なご意見をお待ちしております。 （お答えはいたしませんが、ご意見は辞典内容の改善と補完のために参考とさせていただきます。） 表示方法の選択 韓国語 + 日本語 韓国語 日本語 検索した単語 韓国語音声サービスの一部はネイバー文化財団により提供されています。 ヘルプ 翻訳指針 著作権ポリシー お知らせ Open API ご意見・お問い合わせ 韓国語基礎辞典 国立国語院 移動 原語 漢字語 氣 기운 기 부수 气/총획 10 像 모양 상 부수 人/총획 14"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=49841",
+              "content_sha256": "5d3c487aa2682b706183a136846e199cc22f2880cb7c18354e4e91e450dd0f12",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 기상 1 (奇相 ) 원어 奇 기이할 기 부수 大/총획 8 相 서로 상 부수 目/총획 9 한자 발음 [기상 ] 「명사」 기이한 인상(人相). 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=49842",
+              "content_sha256": "102eaa28fbb25d814327b34e7cab2c79a58b406002a9412c5efa26742c7738e1",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 기상 2 (奇想 ) 원어 奇 기이할 기 부수 大/총획 8 想 생각 상 부수 心/총획 13 한자 발음 [기상 ] 「명사」 좀처럼 짐작할 수 없는 별난 생각. 무엇을 생각할 때의 그 눈은 확실히 보통 사람의 생각이 및지 못하는 기상을 빚어내는 것이었다. ≪한설야, 부역≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=49843",
+              "content_sha256": "36d647b311577334dc66aefae2444231dcee35b11e4c9badc05dc79162c1ac7a",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 기상 3 (氣相 ) 원어 氣 기운 기 부수 气/총획 10 相 서로 상 부수 目/총획 9 한자 발음 [기상 ] 편집 이력 「명사」 마음의 작용으로 얼굴에 드러나는 빛. = 기색 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=49844",
+              "content_sha256": "39a4fff42dcaac124ba4d15b2129c90b5822f079da098768b449b304cf6b4ebd",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 기상 4 (氣狀 ) 원어 氣 기운 기 부수 气/총획 10 狀 형상 상 문서 장 부수 犬/총획 8 한자 발음 [기상 ] 편집 이력 「명사」 『화학』 기체의 어느 부분을 취하여도 물리적으로나 화학적으로 균일한 성질을 가지는 상태. = 기체상 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 4 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=50878",
+              "content_sha256": "f6bf71fae73b8f27dd7549acef75bcf4697ed581e75c45d2def43ffb4f2665fb",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 기상 7 (記上 ) 원어 記 기록할 기 부수 言/총획 10 上 위 상 부수 一/총획 3 한자 발음 [기상 ] 부표제어 기상-하다 1 「명사」 문서에 기록하여 올림. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 7 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=51775",
+              "content_sha256": "a246610802f62796346a7376e8ad6270c5874823fadc9933eded3252862efde1",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 기상 9 (機上 ) 원어 機 틀 기 부수 木/총획 16 上 위 상 부수 一/총획 3 한자 발음 [기상 ] 「명사」 비행기 위. 또는 비행기 안. 항공 안내양의 말에 의하면 기상에서 보는 서울 시가는 아무리 청명한 날이라도 흙먼지 속에 싸인 것 같다고 했다. ≪오영수, 오지에서 온 편지≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 9 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=51776",
+              "content_sha256": "07f94e4b66f9972b03e7bf9aa9fe1fffea3211836655c048ee07cf300edebdff",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 기상 10 (禨祥 ) 원어 禨 조짐 기 부수 示/총획 17 祥 상서로울 상 부수 示/총획 11 한자 발음 [기상 ] 「명사」 신이 내리는 화복. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 10 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "212a6b55e5b6f5aced363ba84b451a3977dc0842fb1b13f3ce337917515feb06"
+    },
+    {
+      "headwords": [
+        "공"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "krdict-18676/명",
+            "headword": "공",
+            "pos": "명",
+            "meaning_en": "Public affairs; matters concerning a state, society or group.",
+            "primary_url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=18676&nation=eng",
+            "evidence_en": "Retrieved Basic Dictionary record identifies 공 (公), homonym 2, as 명사 and defines affairs related to a nation, society, organization or group."
+          },
+          {
+            "id": "krdict-18686/명",
+            "headword": "공",
+            "pos": "명",
+            "meaning_en": "Zero; the symbol ○; complete emptiness or nothingness.",
+            "primary_url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=18686&nation=eng",
+            "evidence_en": "Retrieved Basic Dictionary record identifies 공 (空), homonym 4, as 명사 and explicitly lists these three senses."
+          },
+          {
+            "id": "stdict-28584/명",
+            "headword": "공",
+            "pos": "명",
+            "meaning_en": "Industry that processes raw materials into useful goods.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=28584",
+            "evidence_en": "Supplied primary snapshot identifies 공 (工), homonym 2, as 명사, synonymous with 공업. The live retrieval attempt failed; attestation rests on the supplied readable snapshot."
+          },
+          {
+            "id": "stdict-28585/명",
+            "headword": "공",
+            "pos": "명",
+            "meaning_en": "The gongcheok notation designation for the pitches 이칙 and 남려.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=28585",
+            "evidence_en": "Supplied primary snapshot identifies 공 (工), homonym 3, as 명사 in music and names these two pitches. The live retrieval attempt failed; attestation rests on the supplied readable snapshot."
+          },
+          {
+            "id": "stdict-28589/명",
+            "headword": "공",
+            "pos": "명",
+            "meaning_en": "Duke; the highest of five ranks of nobility.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=28589",
+            "evidence_en": "Supplied primary snapshot identifies 공 (公), homonym 6, as 명사, synonymous with 공작, including the historical Goryeo title. The live retrieval attempt failed; attestation rests on the supplied readable snapshot."
+          },
+          {
+            "id": "stdict-397991/의",
+            "headword": "공",
+            "pos": "의",
+            "meaning_en": "An honorific title placed after a man's surname or full name.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=397991",
+            "evidence_en": "Supplied primary snapshot identifies 공 (公), homonym 7, section I, as 의존 명사 used chiefly after men's names. The live retrieval attempt failed; attestation rests on the supplied readable snapshot."
+          },
+          {
+            "id": "stdict-397991/대",
+            "headword": "공",
+            "pos": "대",
+            "meaning_en": "An older respectful pronoun for a man: you or he.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=397991",
+            "evidence_en": "Supplied primary snapshot identifies 공 (公), homonym 7, section II, as 대명사 with respectful second- and third-person uses for men. The live retrieval attempt failed; attestation rests on the supplied readable snapshot."
+          },
+          {
+            "id": "stdict-516044/명",
+            "headword": "공",
+            "pos": "명",
+            "meaning_en": "Republic, chiefly following a number designating a republic.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=516044",
+            "evidence_en": "Supplied primary snapshot identifies 공 (共), homonym 10, as 명사 meaning 공화국, chiefly after numbers. The live retrieval attempt failed; attestation rests on the supplied readable snapshot."
+          }
+        ],
+        "unresolved": [
+          {
+            "headword": "공",
+            "reason_en": "The ball noun is already covered by catalog identity 공01/명 (축구~). Basic Dictionary record ParaWordNo=19496 independently confirms that lexeme; no duplicate primary identity is proposed."
+          },
+          {
+            "headword": "공",
+            "reason_en": "For 공 (功), contribution or effort, Basic Dictionary search results show a standalone noun, but its direct SearchView identity and record could not be verified. Supplied Standard record 28591 attests the noun, but the available Basic headword should be resolved before selecting a primary identity."
+          },
+          {
+            "headword": "공",
+            "reason_en": "Supplied Standard records 28588 (公) and 28590 (孔) describe surnames. These proper-name uses are excluded from new dictionary identities under the requested scope."
+          },
+          {
+            "headword": "공",
+            "reason_en": "The Basic Dictionary also lists affixes 공- and -공. Their exact headwords differ from requested 공, so they are not proposed as identities for this spelling."
+          }
+        ]
+      },
+      "proposal_digest": "78a0890e897bbaaa54fe3b7c2bc7c4d3abcd080bfb88f725254549251857ff43",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "f5a2d9c8f3d90c146ad2bd4aa1134d58e89b785c30fc1f051640e1e00c17acde",
+      "primary_evidence": [
+        {
+          "headword_request": "공",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EA%B3%B5",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=28584",
+              "content_sha256": "b8076339e0a0c4f9347e6e3c5b3be8847683d8db955ae8996d4cea62f0d54292",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 공 2 (工 ) 원어 工 장인 공 부수 工/총획 3 한자 발음 [공 ] 편집 이력 「명사」 원료를 인력이나 기계력으로 가공하여 유용한 물자를 만드는 산업. 예전에는 주로 가내 공업이었으나 기계의 발달에 따라 대규모로 되었다. 제조업, 건설업 따위의 제이차 산업을 이르는 말이다. = 공업 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=28585",
+              "content_sha256": "c4ec010fac347f40b5e4870f1e0a6b82a77a8f1d75bb305a66ab131f774c067a",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 공 3 (工 ) 원어 工 장인 공 부수 工/총획 3 한자 발음 [공 ] 「명사」 『음악』 공척보(工尺譜)에서, 이칙(夷則)·남려(南呂) 두 음을 이르는 말. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=28586",
+              "content_sha256": "0a8793bf78f53d5428dc29ae81c21b34a7bb302b3103968c68b087480b5345ad",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 공 4 (公 ) 원어 公 공변될 공 부수 八/총획 4 한자 발음 [공 ] 부표제어 공-적 1 「명사」 여러 사람에 관계되는 국가나 사회의 일. 공직자는 언제나 공과 사를 명확히 구분해야 한다. 「반대말」 사(私) 관용구/속담 속담 공에도 사가 있다 공적인 일에도 개인의 사정을 보아줄 때가 있다는 뜻으로, 어찌 사사로운 일에 남의 사정을 조금도 보아주지 않느냐는 말. 속담 공은 공이고, 사는 사다 공적인 일과 사적인 일은 엄격히 구별하여야 한다는 말. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 4 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=28588",
+              "content_sha256": "ab6a56916727e0d69582706b5dc822fd276f5661738082cc2c486b3b51307d4f",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 공 5 (公 ) 원어 公 공변될 공 부수 八/총획 4 한자 발음 [공 ] 「명사」 우리나라 성(姓)의 하나. 본관은 김포(金浦) 하나뿐이다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 5 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=28589",
+              "content_sha256": "b501200e810ef9b5017df1a439d27399452cecd30ae4e45ee1d3f53b6408afde",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 공 6 (公 ) 원어 公 공변될 공 부수 八/총획 4 한자 발음 [공 ] 편집 이력 「명사」 「1」 다섯 등급으로 나눈 귀족의 작위 가운데 첫째 작위. 후작의 위이다. = 공작 . 윈저 공 . 필립 공 . 「2」 『역사』 고려 공민왕 때에 둔 오등작의 첫째 작위. = 공작 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 6 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=28590",
+              "content_sha256": "6a21f39e710e1ae2a2158f641eff93cea72c6a0eace5ec032a3d6257b2382ec6",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 공 8 (孔 ) 원어 孔 구멍 공 부수 子/총획 4 한자 발음 [공ː ] 「명사」 우리나라 성(姓)의 하나. 본관은 곡부(曲阜), 창원(昌原) 등이 현존한다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 8 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=28591",
+              "content_sha256": "6bce335882ec66423643827c5b899fe37e8d15abbc24f356afabbe0952c21614",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 공 9 (功 ) 원어 功 공 공 부수 力/총획 5 한자 발음 [공 ] 편집 이력 「명사」 「1」 일을 마치거나 목적을 이루는 데 들인 노력과 수고. 또는 일을 마치거나 그 목적을 이룬 결과로서의 공적. = 공로 . 공을 다투다. 전투에서 혁혁한 공을 세우다. 이번 일이 성사된 데는 그의 공이 컸다. 「2」 애써서 들이는 정성과 힘. = 공력 . 공이 들다. 저 방조제를 쌓는 데 우리가 얼마나 많은 공을 들였던가? 그들 부부는 무남독녀 외동딸을 공을 들여 길렀다. 관용구/속담 관용구 공(을) 닦다 어떤 목적을 이루기 위하여 정성을 기울이다. ≒ 공(을) 쌓다 . 관용구 공(을) 쌓다 어떤 목적을 이루기 위하여 정성을 기울이다. = 공(을) 닦다 . · 밑천 안 드는 말로 공을 쌓는 거야 쉽고도 쉬운 일이니까.≪박경리, 토지≫ 속담 공을 원수로 갚는다 감사로써 은혜에 보답해야 할 자리에 도리어 해를 끼침을 이르는 말. = 은혜를 원수로 갚는다 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 9 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=397989",
+              "content_sha256": "994f11a3616d06609e69e2a103ede511c994b6eb1de098b2a79cf76065dee702",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 공 1 발음 [공ː ] 편집 이력 「명사」 「1」 가죽이나 고무, 플라스틱 따위로 둥글게 만들어 던지거나 치거나 차거나 굴릴 수 있도록 만든 운동 기구. 운동 경기나 놀이에 따라 축구공, 야구공, 탁구공, 럭비공, 골프공, 당구공 따위 여러 가지가 있다. 공 모양. 공이 구르다. 공을 굴리다. 공을 던지다. 공을 받다. 공을 잡다. 공을 차다. 공을 튀기다. 공에 맞다. 타자가 친 공이 야구장 밖으로 넘어가는 홈런이 되었다. 아이들이 공을 가지고 놀았다. 공에 바람이 빠져 잘 튀지 않는다. 물개가 공을 코 위에 올려놓고 재주를 부린다. 더 보기 「2」 『수학』 한 점에서 같은 거리에 있는 모든 점으로 이루어진 입체. = 구 . 공의 단면은 원이다. 관용구/속담 관용구 공이 넘어가다 결정권이 상대편이나 다른 곳으로 가다. · 사표 수리 문제는 이미 사장님에게 공이 넘어가서 돌이킬 수 없는 일이 되었다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=397991",
+              "content_sha256": "c29b0619bf6c6c745aa3dfed8f18e4c966d90acd5d1594158e6fddec449f9d49",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 공 7 (公 ) 원어 公 공변될 공 부수 八/총획 4 한자 발음 [공 ] [Ⅰ] 「의존 명사」 ((주로 남자의 성이나 성명 뒤에 쓰여)) 그 사람을 높여 부르거나 이르는 말. 김 공 . 이 공 . 김철수 공 . [Ⅱ] 「대명사」 「1」 ‘당신’, ‘그대’의 뜻으로, 듣는 이가 남자일 때, 그 사람을 높여 이르던 이인칭 대명사. 세월은 가인의 얼굴을 주름으로 덮고 용사의 더운 가슴을 식게 한다더니 바로 공을 두고 이른 말 같소이다. ≪이문열, 황제를 위하여≫ 「2」 말하는 이와 듣는 이가 아닌 남자를 높여 이르던 삼인칭 대명사. 나에게는 아직도 천하를 근심하고 왜적의 발호(跋扈)에 비분강개하시던 공의 목소리가 귓가에 쟁쟁하오만…. ≪이문열, 황제를 위하여≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 7 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=516044",
+              "content_sha256": "bd360a069371150f4e61346503e3559980df9c9e268698faf69e39e3037e3b0b",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 공 10 (共 ) 원어 共 함께 공 부수 八/총획 6 한자 발음 [공 ] 편집 이력 「명사」 ((주로 숫자 뒤에 쓰여)) ‘ 공화국 ’의 뜻을 나타내는 말. 5공 . 6공 초기에 올림픽이 열렸다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 10 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "proposal_records": [
+            {
+              "primary_url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=18676&nation=eng",
+              "content_sha256": "bba69cd01a18f65d0caa94d9a5930cbb19b458b01a089e4f1cdfd22b86f770a2",
+              "text": "한국어기초사전 이 누리집은 대한민국 공식 전자정부 누리집입니다. Search by Category Small Window Dictionary Search Advanced Search Delete Delete Phụ âm b c d đ g h k l m n p q r s t v x f j w z Nguyên âm a á à ả ã ạ ă ắ ằ ẳ ẵ ặ â ấ ầ ẩ ẫ ậ o ó ò ỏ õ ọ ô ố ồ ổ ỗ ộ ơ ớ ờ ở ỡ ợ e é è ẻ ẽ ẹ ê ế ề ể ễ ệ u ú ù ủ ũ ụ ư ứ ừ ử ữ ự i í ì ỉ ĩ ị y ý ỳ ỷ ỹ ỵ à â æ À Â Æ ç Ç é è ë ê É È Ë Ê î ï Î Ï ô œ Ô Œ ù û ü Ù Û Ü á Á é É í Í ó Ó ú ü Ú Ü ñ Ñ ¡ ¿ Download 가 가 Print 공 2 (公 ) Pronunciation [공 듣기 ] Derivative 공적 3 , 공적 1 Part of Speech 「명사」 Noun public affairs; being public 국가나 사회, 단체, 집단과 관련된 일. Something related to a nation, society, organization, group, etc. 공 과 사. 해외 출장에 가족들을 동반한 것은 공 과 사를 구분 못한 것이다. 회사 사장인 아버지는 공 과 사가 명확해 늘 공정하게 일을 처리하신다. 가: 넌 내 친구니까 이번 면접에서 나 꼭 뽑아 줘야 해. 나: 여긴 회사야. 공 과 사는 구분해야지. Reference 주로 '공과 사'로 쓴다. Antonym 사 2 Send opinion Send opinion Security Characters Play audio Refresh Name Title Content Send opinion We are looking forward to receiving your opinions regarding dictionary content. (Although we are not able to reply, we will refer to your opinion for dictionary content development and supplementation.) Idioms·Proverbs 1 Proverbs 공은 공이고, 사는 사다 Public affairs are public, private affairs are private 국가나 사회, 단체, 집단 등에 관한 일과 개인에 관한 일은 엄격하게 구분해야 한다. One should draw a clear line between affairs related to the state, society, organizations or groups as opposed to personal and private ones. 가: 아버지, 이 서류 보시고 결재해 주세요. 나: 공은 공이고, 사는 사다 . 회사에서는 사장님이라고 하거라. View Mode Korean + English Korean English My Search History Listening to Korean pronunciation services are partly provided by NAVER Cultural Foundation Corp. Help Translation guideline Copyright Policy Notice Open API Suggestion Basic Korean Dictionary National Institute of Korean Language Move Original Language Sino-Korean word 公 공변될 공 부수 八/총획 4"
+            },
+            {
+              "primary_url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=18686&nation=eng",
+              "content_sha256": "a87524cf9486bd2f59c850d4f16a9b65c7303d1a7ba381e62daa8056d0cdbde2",
+              "text": "한국어기초사전 이 누리집은 대한민국 공식 전자정부 누리집입니다. Search by Category Small Window Dictionary Search Advanced Search Delete Delete Phụ âm b c d đ g h k l m n p q r s t v x f j w z Nguyên âm a á à ả ã ạ ă ắ ằ ẳ ẵ ặ â ấ ầ ẩ ẫ ậ o ó ò ỏ õ ọ ô ố ồ ổ ỗ ộ ơ ớ ờ ở ỡ ợ e é è ẻ ẽ ẹ ê ế ề ể ễ ệ u ú ù ủ ũ ụ ư ứ ừ ử ữ ự i í ì ỉ ĩ ị y ý ỳ ỷ ỹ ỵ à â æ À Â Æ ç Ç é è ë ê É È Ë Ê î ï Î Ï ô œ Ô Œ ù û ü Ù Û Ü á Á é É í Í ó Ó ú ü Ú Ü ñ Ñ ¡ ¿ Download 가 가 Print 공 4 (空 ) Pronunciation [공 듣기 ] Derivative 공하다 Part of Speech 「명사」 Noun 1 . zero; null 1 . 숫자 영. The number zero. 서울의 지역 번호는 02( 공 이)다. 사람들은 숫자 영을 공 으로 읽기도 한다. 가: 네 핸드폰 번호 010( 공 일 공 )으로 시작하지? 나: 아니, 내 번호는 011( 공 일일)로 시작해. Synonym 영 2 , 제로 2 . an empty circle 2 . 기호 ‘○’의 이름. The name of the sign 'O.' 공 월 공 일. 공 표. ○월 ○일은 공 월 공 일로 읽는다. 부호 'Ο'( 공 )은 분명하지 않거나 밝히지 않으려고 주로 쓴다. 가: 선생님, 이 문제 어떻게 풀어요? 나: 글을 읽고 맞는 곳에 공 표 하세요. 3 . nothingness; null; voidness 3 . 완전히 비어 있는 무의 상태. A state of being void or null. 무와 공 의 경지. 공 인 상태. 공 이 되다. 선생님께서는 태초의 우주를 아무것도 없는 공 의 세계라고 말씀하셨다. 불교에서는 속세의 번뇌를 버리고 불도를 닦아야 공 의 상태가 될 수 있다고 한다. 가: 수양을 얼마나 해야 무와 공 의 경지에 오를 수 있을까? 나: 글쎄, 평생 동안 도를 닦아야 하지 않을까? Antonym 유 2 Send opinion Send opinion Security Characters Play audio Refresh Name Title Content Send opinion We are looking forward to receiving your opinions regarding dictionary content. (Although we are not able to reply, we will refer to your opinion for dictionary content development and supplementation.) View Mode Korean + English Korean English My Search History Listening to Korean pronunciation services are partly provided by NAVER Cultural Foundation Corp. Help Translation guideline Copyright Policy Notice Open API Suggestion Basic Korean Dictionary National Institute of Korean Language Move Original Language Sino-Korean word 空 빌 공 부수 穴/총획 8"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=28584",
+              "content_sha256": "b8076339e0a0c4f9347e6e3c5b3be8847683d8db955ae8996d4cea62f0d54292",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 공 2 (工 ) 원어 工 장인 공 부수 工/총획 3 한자 발음 [공 ] 편집 이력 「명사」 원료를 인력이나 기계력으로 가공하여 유용한 물자를 만드는 산업. 예전에는 주로 가내 공업이었으나 기계의 발달에 따라 대규모로 되었다. 제조업, 건설업 따위의 제이차 산업을 이르는 말이다. = 공업 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=28585",
+              "content_sha256": "c4ec010fac347f40b5e4870f1e0a6b82a77a8f1d75bb305a66ab131f774c067a",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 공 3 (工 ) 원어 工 장인 공 부수 工/총획 3 한자 발음 [공 ] 「명사」 『음악』 공척보(工尺譜)에서, 이칙(夷則)·남려(南呂) 두 음을 이르는 말. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=28589",
+              "content_sha256": "b501200e810ef9b5017df1a439d27399452cecd30ae4e45ee1d3f53b6408afde",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 공 6 (公 ) 원어 公 공변될 공 부수 八/총획 4 한자 발음 [공 ] 편집 이력 「명사」 「1」 다섯 등급으로 나눈 귀족의 작위 가운데 첫째 작위. 후작의 위이다. = 공작 . 윈저 공 . 필립 공 . 「2」 『역사』 고려 공민왕 때에 둔 오등작의 첫째 작위. = 공작 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 6 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=397991",
+              "content_sha256": "c29b0619bf6c6c745aa3dfed8f18e4c966d90acd5d1594158e6fddec449f9d49",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 공 7 (公 ) 원어 公 공변될 공 부수 八/총획 4 한자 발음 [공 ] [Ⅰ] 「의존 명사」 ((주로 남자의 성이나 성명 뒤에 쓰여)) 그 사람을 높여 부르거나 이르는 말. 김 공 . 이 공 . 김철수 공 . [Ⅱ] 「대명사」 「1」 ‘당신’, ‘그대’의 뜻으로, 듣는 이가 남자일 때, 그 사람을 높여 이르던 이인칭 대명사. 세월은 가인의 얼굴을 주름으로 덮고 용사의 더운 가슴을 식게 한다더니 바로 공을 두고 이른 말 같소이다. ≪이문열, 황제를 위하여≫ 「2」 말하는 이와 듣는 이가 아닌 남자를 높여 이르던 삼인칭 대명사. 나에게는 아직도 천하를 근심하고 왜적의 발호(跋扈)에 비분강개하시던 공의 목소리가 귓가에 쟁쟁하오만…. ≪이문열, 황제를 위하여≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 7 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=516044",
+              "content_sha256": "bd360a069371150f4e61346503e3559980df9c9e268698faf69e39e3037e3b0b",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 공 10 (共 ) 원어 共 함께 공 부수 八/총획 6 한자 발음 [공 ] 편집 이력 「명사」 ((주로 숫자 뒤에 쓰여)) ‘ 공화국 ’의 뜻을 나타내는 말. 5공 . 6공 초기에 올림픽이 열렸다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 10 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "aae6a4a359d41b935e1c07446e57b733135980129428ff7ef8f013424e9b2d08"
+    },
+    {
+      "headwords": [
+        "진정하다"
+      ],
+      "proposal": {
+        "entries": [],
+        "unresolved": [
+          {
+            "headword": "진정하다",
+            "reason_en": "The adjective 眞正하다 ('true; sincere') is already covered by nikl2017-vocabulary-05333/형용사. The directly retrieved [Basic Dictionary record 76331](https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=76331&nation=eng) explicitly displays 진정하다 (眞正하다), 「형용사」, and the definition 거짓이 없고 올바르다. Do not duplicate this existing lexeme."
+          },
+          {
+            "headword": "진정하다",
+            "reason_en": "The supplied Standard Dictionary snapshots attest four distinct 동사 homonyms: 陳情하다 ('state circumstances; petition', word_no=312753), 進呈하다 ('voluntarily present an item', 313036), 鎭定하다 ('suppress opposing forces', 485079), and 鎭靜하다 ('calm turmoil, emotion or pain', 313043). Retrieval of all four direct Standard records failed. Basic Dictionary searches yielded 陳情하다, but no readable direct verb record with a verified ParaWordNo was obtained. These verbs remain unresolved under the independent retrieval requirement; this does not imply that they are incorrect words."
+          }
+        ]
+      },
+      "proposal_digest": "68f3b0fba87d65575dae074d9b81a46290db1a88c0151e494b9f1bbec4ad826f",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "f5a2d9c8f3d90c146ad2bd4aa1134d58e89b785c30fc1f051640e1e00c17acde",
+      "primary_evidence": [
+        {
+          "headword_request": "진정하다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%A7%84%EC%A0%95%ED%95%98%EB%8B%A4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=312753",
+              "content_sha256": "c402b3ffb0795f0164e68382e57ed9b5c92b92c56d32752fa13f685c6ba8fdbf",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 진정-하다 2 (陳情하다 ) 원어 陳 늘어놓을 진 부수 阜/총획 11 情 뜻 정 부수 心/총획 11 하다 한자 고유어 발음 [진ː정하다 ] 활용 진정하여[진ː정하여 ](진정해[진ː정해 ]), 진정하니[진ː정하니 ] 주표제어 진정 8 「동사」 【…에/에게 …을】【 …에/에게 -고】 실정이나 사정을 진술하다. 상급 기관에 무고한 사람을 풀어 줄 것을 진정했다 . 수재민들은 정부에 대책을 세워 달라고 진정했다 . 면에다 양식 배급을 주도록 말해 달라고 진정하러들 온 것이었다. ≪이태준, 해방 전후≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=313036",
+              "content_sha256": "c1a04d7bcd40631e630a3f914cdcc5e0e5838af8befa7346d69d484191aad829",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 진정-하다 3 (進呈하다 ) 원어 進 나아갈 진 선물 신 부수 辵/총획 12 呈 드릴 정 부수 口/총획 7 하다 한자 고유어 발음 [진ː정하다 ] 활용 진정하여[진ː정하여 ](진정해[진ː정해 ]), 진정하니[진ː정하니 ] 주표제어 진정 9 편집 이력 「동사」 【…에/에게 …을】 물건을 자진해서 드리다. ≒ 정진하다 . 결혼식에 화환을 진정하다 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=313043",
+              "content_sha256": "c84a965540821cc241927d80fd5e9b2eef939f9d87dec48766966b620a296da2",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 진정-하다 5 (鎭靜하다 ) 원어 鎭 누를 진 메울 전 부수 金/총획 18 靜 고요할 정 부수 靑/총획 16 하다 한자 고유어 발음 [진ː정하다 ] 활용 진정하여[진ː정하여 ](진정해[진ː정해 ]), 진정하니[진ː정하니 ] 주표제어 진정 15 「동사」 【…을】 「1」 몹시 소란스럽고 어지러운 일을 가라앉히다. 사태를 진정하다 . 들끓는 여론을 진정하다 . 「2」 격앙된 감정이나 아픔 따위를 가라앉히다. 슬픔을 진정하다 . 그녀는 두근거리는 가슴을 진정하려고 애썼다. 유명한 선사의 설법을 들으면 칼로 에는 듯한 괴로운 마음을 진정할 수가 있을까 해서 선사를 청한 것이었다. ≪한용운, 흑풍≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 5 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=485079",
+              "content_sha256": "c2d6c9102ab62f9fd148f8fed9f21c28d77b75f7516a56460819ebded408528a",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 진정-하다 4 (鎭定하다 ) 원어 鎭 누를 진 메울 전 부수 金/총획 18 定 정할 정 부수 宀/총획 8 하다 한자 고유어 발음 [진ː정하다 ] 활용 진정하여[진ː정하여 ](진정해[진ː정해 ]), 진정하니[진ː정하니 ] 주표제어 진정 14 「동사」 【…을】 반대하는 세력이나 기세를 억눌러 안정되게 하다. 반란을 진정하다 . 국내의 민란을 진정하고 안녕을 보지함에 필요한 병비 및 경찰 제도를 확립하라. ≪유현종, 들불≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 4 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=485562",
+              "content_sha256": "4a012ae851c583c66dc2b2cc94154170a0638e32f9ba4bbe5ff65b53b1e200f1",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 진정-하다 1 (眞正하다 ) 원어 眞 참 진 부수 目/총획 10 正 바를 정 부수 止/총획 5 하다 한자 고유어 발음 [진정하다 ] 주표제어 진정 3 편집 이력 「형용사」 ((주로 ‘진정한’ 꼴로 쓰여)) 참되고 올바르다. 진정한 친구. 진정한 민주주의. 진정한 애국자. 진정한 자유를 얻고 싶다. 그녀는 나를 진정한 대화 상대로 취급하고 있지 않는 것이었다. ≪윤후명, 별보다 멀리≫ 자기 몫을 일용할 양식까지도 털어서 도둑맞은 이웃에게 아낌없이 주는 게 진정한 이웃 사랑인 것이다. ≪황석영, 어둠의 자식들≫ 더 보기 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "proposal_records": []
+        }
+      ],
+      "primary_evidence_digest": "157e4e47c761cd0e7534616dc897489dc07f542b5091351ae166ea08a947dc20"
+    },
+    {
+      "headwords": [
+        "모자"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "krdict-55580/명",
+            "headword": "모자",
+            "pos": "명",
+            "meaning_en": "mother and son",
+            "primary_url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=55580",
+            "evidence_en": "Previously verified direct Basic Dictionary record: 모자, 母子, 명사; definition 어머니와 아들. Live rereading failed in this run; the supplied previous verification is retained."
+          },
+          {
+            "id": "stdict-425737/명",
+            "headword": "모자",
+            "pos": "명",
+            "meaning_en": "an individual letter in a phonemic writing system",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=425737",
+            "evidence_en": "Supplied direct-record snapshot confirms 모자, 母字, 명사, linguistics, and this meaning. No matching Basic Dictionary headword found. Live retrieval failed; evidence is the supplied snapshot."
+          },
+          {
+            "id": "stdict-119013/명",
+            "headword": "모자",
+            "pos": "명",
+            "meaning_en": "mother and elder sister",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=119013",
+            "evidence_en": "Supplied direct-record snapshot confirms 모자, 母姊, 명사, meaning mother and elder sister collectively. No matching Basic Dictionary headword found. Live retrieval failed; evidence is the supplied snapshot."
+          },
+          {
+            "id": "stdict-119014/명",
+            "headword": "모자",
+            "pos": "명",
+            "meaning_en": "a mother's love",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=119014",
+            "evidence_en": "Supplied direct-record snapshot confirms 모자, 母慈, 명사; definition 어머니의 사랑. No matching Basic Dictionary headword found. Live retrieval failed; evidence is the supplied snapshot."
+          },
+          {
+            "id": "stdict-425738/명",
+            "headword": "모자",
+            "pos": "명",
+            "meaning_en": "a humble thatched house; cogon grass",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=425738",
+            "evidence_en": "Supplied direct-record snapshot confirms 모자, 茅茨, 명사, with both senses in one record. No matching Basic Dictionary headword found. Live retrieval failed; evidence is the supplied snapshot."
+          },
+          {
+            "id": "stdict-119015/명",
+            "headword": "모자",
+            "pos": "명",
+            "meaning_en": "the pupil of the eye",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=119015",
+            "evidence_en": "Supplied direct-record snapshot confirms 모자, 眸子, 명사, defining the eye's central opening that admits light. No matching Basic Dictionary headword found. Live retrieval failed; evidence is the supplied snapshot."
+          },
+          {
+            "id": "stdict-118721/명",
+            "headword": "모자",
+            "pos": "명",
+            "meaning_en": "a capping move in Go, placed above an opponent's stone near the edge with one empty point between them",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=118721",
+            "evidence_en": "Supplied direct-record snapshot confirms 모자, 帽子, 명사, Go terminology. Its definition 위로 한 칸 걸러 놓는 수 specifies an intervening empty point. This is a distinct homonym from headwear. No matching Basic Dictionary headword found. Live retrieval failed; evidence is the supplied snapshot."
+          }
+        ],
+        "unresolved": [
+          {
+            "headword": "모자",
+            "reason_en": "The ordinary hat noun is already covered by catalog identity 모자08/명 (meaning 帽子); do not duplicate it as krdict-69297/명. A retrieved Basic Dictionary direct-record search result confirms 모자, 帽子, 명사, meaning headwear. Catalog numbering does not establish a Standard Dictionary mapping: Standard homonym 8 is the distinct Go term. The gat-crown sense in supplied Standard record 425739 belongs in shared dictionary editorial review of the existing headwear lexeme."
+          }
+        ]
+      },
+      "proposal_digest": "94fae2749737a09780219fe4287bb475a8c255562cb7383fe2fbf98ae6929ba1",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "f5a2d9c8f3d90c146ad2bd4aa1134d58e89b785c30fc1f051640e1e00c17acde",
+      "primary_evidence": [
+        {
+          "headword_request": "모자",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EB%AA%A8%EC%9E%90",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=118721",
+              "content_sha256": "1d4e9f45ac643c5c6c0cd9f8d1243dc9d6752e7356166e027b868bc2093dc7b2",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 모자 8 (帽子 ) 원어 帽 모자 모 부수 巾/총획 12 子 아들 자 부수 子/총획 3 한자 발음 [모자 ] 「참고 어휘」 모착(帽着) 편집 이력 「명사」 『체육』 바둑에서, 변에 놓인 상대편의 돌을 누르기 위하여 위로 한 칸 걸러 놓는 수. 상대편 집의 수를 줄이거나 공격하는 수단으로 보통 중반전에 쓴다. 중앙에서 백이 모자를 씌우며 상변에 흩어진 다섯 점을 공격했다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 8 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=119012",
+              "content_sha256": "4103dba8450e810eb8032e8a27d6f99d5cf40d88fc3476b0c474bcdc67845bb8",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 모자 1 (母子 ) 원어 母 어머니 모 부수 毋/총획 5 子 아들 자 부수 子/총획 3 한자 발음 [모ː자 ] 「참고 어휘」 부녀(父女) 편집 이력 「명사」 어머니와 아들을 아울러 이르는 말. ≒ 자모 . 오랜만에 만난 모자는 밤 깊은 줄도 모르고 이야기를 나누었다. 「비슷한말」 어이아들 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=119013",
+              "content_sha256": "bb09c374489f334936c28f8c1872396988f05ef10fa034e752d0de5efe01c458",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 모자 3 (母姊 ) 원어 母 어머니 모 부수 毋/총획 5 姊 누이 자 윗누이 자 부수 女/총획 8 한자 발음 [모ː자 ] 「참고 어휘」 부형(父兄) 「명사」 어머니와 누나를 아울러 이르는 말. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=119014",
+              "content_sha256": "f12f67bc7ff0924900596c7ae47be1916b53cc8c760119157b3547369ccfff2c",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 모자 4 (母慈 ) 원어 母 어머니 모 부수 毋/총획 5 慈 사랑할 자 부수 心/총획 14 한자 발음 [모ː자 ] 「명사」 어머니의 사랑. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 4 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=119015",
+              "content_sha256": "6d2e81eff8c14dd4027b1b3752b5bb3d6effbcb3fb270d9f7849204dd24b18f4",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 모자 6 (眸子 ) 원어 眸 눈동자 모 부수 目/총획 11 子 아들 자 부수 子/총획 3 한자 발음 [모자 ] 편집 이력 「명사」 눈알의 한가운데에 있는, 빛이 들어가는 부분. 검게 보이며, 빛의 세기에 따라 그 주위를 둘러싸고 있는 홍채로 크기가 조절된다. = 눈동자 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 6 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=425737",
+              "content_sha256": "a6ca4412d2503e0d17ec48fed535a82bee0f608b3f5687550e02fbb1630b687b",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 모자 2 (母字 ) 원어 母 어머니 모 부수 毋/총획 5 字 글자 자 부수 子/총획 6 한자 발음 [모ː짜 ] 편집 이력 「명사」 『언어』 음소 문자 체계에 쓰이는 낱낱의 글자. = 자모 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=425738",
+              "content_sha256": "be060c3e7df9c8fa1d6d8acbadaca8fc01d3969c85e95bd6dcf5b3b7de958d42",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 모자 5 (茅茨 ) 원어 茅 띠 모 부수 艸/총획 9 茨 납가새 자 부수 艸/총획 10 한자 발음 [모자 ] 편집 이력 「명사」 「1」 띠나 이엉 따위로 지붕을 인 초라한 집. = 모옥 . 「2」 『식물』 볏과의 여러해살이풀. 줄기는 높이가 30~80cm이고 원뿔형으로 똑바로 서 있으며, 잎은 뿌리에서 뭉쳐난다. 5~6월에 이삭 모양의 흰색 또는 흑자색 꽃이 가지 끝이나 줄기 끝에 수상(穗狀) 화서로 핀다. 삘기라고 하는 어린 꽃이삭은 단맛이 있어 식용하고 뿌리는 모근(茅根)이라 하여 약용한다. 들이나 길가에 무더기로 나는데 아시아, 아프리카 등지에 널리 분포한다. = 띠 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 5 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=425739",
+              "content_sha256": "ba06c8a103e6fcc2f810524a799e872cc17cfd8159b098408feea1b0d7e81b69",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 모자 7 (帽子 ) 원어 帽 모자 모 부수 巾/총획 12 子 아들 자 부수 子/총획 3 한자 발음 [모자 ] 편집 이력 「명사」 「1」 머리에 쓰는 물건의 하나. 예의를 차리거나 추위, 더위, 먼지 따위를 막기 위한 것이다. 제복을 입고 모자를 쓴 군인. 모자를 쓴 사람이 모자 밑으로 손가락을 집어넣어 머리를 긁적거리면서 여자 쪽으로 조금 다가앉는다. ≪서정인, 강≫ 하얀 모자 아래로 겨울 아침의 맵짠 바람을 안은 머리카락이 구름처럼 날린다. ≪최인훈, 구운몽≫ 「2」 갓양태 위로 우뚝 솟은 원통 모양의 부분. = 갓모자 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 7 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "proposal_records": [
+            {
+              "primary_url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=55580",
+              "content_sha256": "fae71059d6ae5b7424f579f257e2273391c4dd08968a974c838eaef68962ca61",
+              "text": "한국어기초사전 본문바로가기 이 누리집은 대한민국 공식 전자정부 누리집입니다. 범주별 찾기 사전 통계 작은 창 사전 찾기 자세히 찾기 사전 내려받기 가 가 인쇄 모자 1 (母子 ) 발음 [모ː자 듣기 ] 품사 「명사」 어머니와 아들. 사이좋은 모자 . 모자 사이. 모자 상봉. 모자 가 닮다. 승규는 어머니와 항상 같이 다닐 정도로 모자 사이가 좋다. 어머니가 안 계신 민준은 다른 모자 들의 행복한 모습을 부러워하였다. 가: 아들이 지수 씨랑 많이 닮았네요! 나: 네. 우리 모자 는 닮았다는 말을 자주 들어요. 참고어 부녀 1 의견 보내기 의견 보내기: 보안 문자, 필명, 제목, 의견으로 구성 보안 문자 음성으로 듣기 새로 고침 필명 제목 의견 의견 보내기 사전 내용에 대한 여러분의 다양한 의견을 기다립니다. (답변은 드리지 않습니다만, 보내주신 내용은 사전 내용 개선과 보완을 위해 참고하겠습니다.) 다른 언어 사전 보기 한국어-러시아어 한국어-몽골어 한국어-베트남어 한국어-스페인어 한국어-아랍어 한국어-영어 한국어-인도네시아어 한국어-일본어 한국어-중국어 한국어-타이어 한국어-프랑스어 내가 살펴본 단어 한국어 발음 듣기 서비스의 일부는 네이버문화재단에서 후원 하였습니다. 사전 내려받기 사전 내려받기 용도를 입력해 주세요. 사전 내려받기: 내려받기 용도으로 구성 내려받기 용도 학습 자료 용도 강의 자료 용도 연구 자료 용도 기타 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 사전 내려받기: 구분, 파일 형식, 필수 항목, 선택 항목, 다국어 대역으로 구성 구분 뜻풀이 단위 표제어 단위 파일 형식 MS 엑셀 HWP 한글 MS 워드 텍스트 XML JSON 필수 항목 어휘, 구분, 품사, 뜻풀이, 용례 선택 항목 전체 고유어 여부 원어 발음 활용 파생어 ☞(가 보라) 어휘 등급 의미 범주 주제 및 상황 범주 전체 참고 검색용 이형태 관련어 의미 참고 다중 매체 정보 문형 문형 참고 부표제어 부표제어 전체 참고 부표제어 관련어 부표제어 의미 참고 부표제어 문형 부표제어 문형 참고 다국어 대역 전체 전자 우편 주소 내려받기 버튼을 누르면 입력하신 전자 우편 주소로 내려받기 경로가 전송됩니다. 요청이 많을 경우, 다소 시간이 소요될 수 있습니다. 전자 우편을 받지 못한 경우에는 스팸 메일함을 확인해 주세요. 내려받기 취소 닫기 주제 및 상황 범주 선택 해제 0 개 선택 주제 및 상황 범주별 찾기: 초급, 중급, 고급으로 구성 초급( ) 중급( ) 고급( ) 인사하기 소개하기(자기소개) 소개하기(가족소개) 개인 정보 교환하기 개인 정보 교환하기 위치 표현하기 교통 이용하기 길찾기 교통 이용하기 지리정보 지리정보 물건 사기 물건 사기 경제∙경영 음식 주문하기 음식 설명하기 식문화 요리 설명하기 요리 설명하기 시간 표현하기 날짜 표현하기 요일 표현하기 날씨와 계절 날씨와 계절 기후 하루 생활 학교생활 학교생활 교육 한국 생활 한국 생활 직업과 진로 직업과 진로 직장 생활 직장 생활 약속하기 전화하기 감사하기 사과하기 여행 여행 여가 생활 주말 및 휴가 주말 및 휴가 취미 취미 가족 행사 가족 행사 가족 행사-명절 건강 건강 보건과 의료 병원 이용하기 약국 이용하기 공공 기관 이용하기(도서관) 공공기관 이용하기 공공 기관 이용하기(우체국) 공공 기관 이용하기(출입국 관리 사무소) 초대와 방문 초대와 방문 집 구하기 집 구하기 주거 생활 집안일 집안일 감정, 기분 표현하기 감정, 기분 표현하기 심리 성격 표현하기 성격 표현하기 복장 표현하기 복장 표현하기 외양 외모 표현하기 외모 표현하기 영화 보기 공연과 감상 대중 문화 대중 매체 컴퓨터와 인터넷 컴퓨터와 인터넷 사건, 사고, 재해 기술하기 사회 문제 환경 문제 환경 문제 사회 제도 문화 비교하기 문화 차이 인간관계 인간관계 한국의 문학 예술 문제 해결하기(분실 및 고장) 실수담 말하기 연애와 결혼 건축 과학과 기술 법 스포츠 언론 언어 언어 역사 정치 종교 철학∙윤리 선택 완료 취소 닫기 원어 한자 母 어머니 모 부수 毋/총획 5 子 아들 자 부수 子/총획 3 도움말 저작권 정책 알립니다 개발 지원(Open API) 의견 제시 사전 전체 내려받기 한국어교수학습샘터 한국어학습자말뭉치나눔터 국립국어원 표준국어대사전 우리말샘 한국수어사전 이동"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=118721",
+              "content_sha256": "1d4e9f45ac643c5c6c0cd9f8d1243dc9d6752e7356166e027b868bc2093dc7b2",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 모자 8 (帽子 ) 원어 帽 모자 모 부수 巾/총획 12 子 아들 자 부수 子/총획 3 한자 발음 [모자 ] 「참고 어휘」 모착(帽着) 편집 이력 「명사」 『체육』 바둑에서, 변에 놓인 상대편의 돌을 누르기 위하여 위로 한 칸 걸러 놓는 수. 상대편 집의 수를 줄이거나 공격하는 수단으로 보통 중반전에 쓴다. 중앙에서 백이 모자를 씌우며 상변에 흩어진 다섯 점을 공격했다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 8 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=119013",
+              "content_sha256": "bb09c374489f334936c28f8c1872396988f05ef10fa034e752d0de5efe01c458",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 모자 3 (母姊 ) 원어 母 어머니 모 부수 毋/총획 5 姊 누이 자 윗누이 자 부수 女/총획 8 한자 발음 [모ː자 ] 「참고 어휘」 부형(父兄) 「명사」 어머니와 누나를 아울러 이르는 말. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=119014",
+              "content_sha256": "f12f67bc7ff0924900596c7ae47be1916b53cc8c760119157b3547369ccfff2c",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 모자 4 (母慈 ) 원어 母 어머니 모 부수 毋/총획 5 慈 사랑할 자 부수 心/총획 14 한자 발음 [모ː자 ] 「명사」 어머니의 사랑. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 4 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=119015",
+              "content_sha256": "6d2e81eff8c14dd4027b1b3752b5bb3d6effbcb3fb270d9f7849204dd24b18f4",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 모자 6 (眸子 ) 원어 眸 눈동자 모 부수 目/총획 11 子 아들 자 부수 子/총획 3 한자 발음 [모자 ] 편집 이력 「명사」 눈알의 한가운데에 있는, 빛이 들어가는 부분. 검게 보이며, 빛의 세기에 따라 그 주위를 둘러싸고 있는 홍채로 크기가 조절된다. = 눈동자 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 6 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=425737",
+              "content_sha256": "a6ca4412d2503e0d17ec48fed535a82bee0f608b3f5687550e02fbb1630b687b",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 모자 2 (母字 ) 원어 母 어머니 모 부수 毋/총획 5 字 글자 자 부수 子/총획 6 한자 발음 [모ː짜 ] 편집 이력 「명사」 『언어』 음소 문자 체계에 쓰이는 낱낱의 글자. = 자모 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=425738",
+              "content_sha256": "be060c3e7df9c8fa1d6d8acbadaca8fc01d3969c85e95bd6dcf5b3b7de958d42",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 모자 5 (茅茨 ) 원어 茅 띠 모 부수 艸/총획 9 茨 납가새 자 부수 艸/총획 10 한자 발음 [모자 ] 편집 이력 「명사」 「1」 띠나 이엉 따위로 지붕을 인 초라한 집. = 모옥 . 「2」 『식물』 볏과의 여러해살이풀. 줄기는 높이가 30~80cm이고 원뿔형으로 똑바로 서 있으며, 잎은 뿌리에서 뭉쳐난다. 5~6월에 이삭 모양의 흰색 또는 흑자색 꽃이 가지 끝이나 줄기 끝에 수상(穗狀) 화서로 핀다. 삘기라고 하는 어린 꽃이삭은 단맛이 있어 식용하고 뿌리는 모근(茅根)이라 하여 약용한다. 들이나 길가에 무더기로 나는데 아시아, 아프리카 등지에 널리 분포한다. = 띠 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 5 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "2c1f4d8b39793acc39c7a7fba510de9e0be13d08cc351dd47d62c922bccd1db4"
+    },
+    {
+      "headwords": [
+        "조정"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "stdict-292758/명",
+            "headword": "조정",
+            "pos": "명",
+            "meaning_en": "Going forth on a punitive military expedition.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=292758",
+            "evidence_en": "Supplied readable Standard Dictionary snapshot identifies 조정 (徂征), 「명사」, defined as 가서 정벌함. No matching standalone Basic Dictionary record was located. Live retrieval failed; attestation rests on the supplied snapshot."
+          },
+          {
+            "id": "stdict-484711/명",
+            "headword": "조정",
+            "pos": "명",
+            "meaning_en": "Positing existence or a proposition; a philosophical thesis.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=484711",
+            "evidence_en": "Supplied readable Standard Dictionary snapshot identifies 조정 (措定), 「명사」, with philosophical senses of affirming existence, asserting a proposition without inference, and proposing an initial thesis. No matching Basic Dictionary record was located. Live retrieval failed; attestation rests on the supplied snapshot."
+          },
+          {
+            "id": "stdict-292767/명",
+            "headword": "조정",
+            "pos": "명",
+            "meaning_en": "A boat used for hook-and-line fishing.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=292767",
+            "evidence_en": "Supplied readable Standard Dictionary snapshot identifies 조정 (釣艇), 「명사」, as a boat used for fishing with hooks and lines, synonymous with 낚싯배. No matching Basic Dictionary record was located. Live retrieval failed; attestation rests on the supplied snapshot."
+          },
+          {
+            "id": "stdict-292768/명",
+            "headword": "조정",
+            "pos": "명",
+            "meaning_en": "The royal court as a place or governing institution.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=292768",
+            "evidence_en": "Supplied readable Standard Dictionary snapshot identifies 조정 (朝廷), 「명사」, as the place or institution where a monarch discusses or conducts state affairs with officials. No matching Basic Dictionary record was located. Live retrieval failed; attestation rests on the supplied snapshot."
+          },
+          {
+            "id": "stdict-292769/명",
+            "headword": "조정",
+            "pos": "명",
+            "meaning_en": "The politics or administration of the royal court.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=292769",
+            "evidence_en": "Supplied readable Standard Dictionary snapshot identifies 조정 (朝政), 「명사」, defined as 조정(朝廷)의 정치. This is distinct from the royal-court institution. No matching Basic Dictionary record was located. Live retrieval failed; attestation rests on the supplied snapshot."
+          },
+          {
+            "id": "stdict-292770/명",
+            "headword": "조정",
+            "pos": "명",
+            "meaning_en": "Competitive rowing; a rowing racing boat.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=292770",
+            "evidence_en": "Supplied readable Standard Dictionary snapshot identifies 조정 (漕艇), 「명사」, with sports senses for a rowing race over a fixed distance and the racing boat. No matching Basic Dictionary record was located. Live retrieval failed; attestation rests on the supplied snapshot."
+          },
+          {
+            "id": "stdict-480367/명",
+            "headword": "조정",
+            "pos": "명",
+            "meaning_en": "Making something certain and firm through investigation.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=480367",
+            "evidence_en": "Supplied readable Standard Dictionary snapshot identifies 조정 (調定), 「명사」, defined as 조사하여 확실하고 견고하게 함. No matching Basic Dictionary record was located. Live retrieval failed; attestation rests on the supplied snapshot."
+          },
+          {
+            "id": "krdict-91886/명",
+            "headword": "조정",
+            "pos": "명",
+            "meaning_en": "Mediation to help disputing parties reconcile or reach agreement.",
+            "primary_url": "https://krdict.korean.go.kr/vie/dicSearch/SearchView?ParaWordNo=91886&captchaNumber=&comment_user_name=&nation=vie&nationCode=2&viewTypes=on&wordComment=",
+            "evidence_en": "Retrieved readable Basic Dictionary record identifies 조정 (調停), 「명사」, and defines intervention between disputing parties to secure reconciliation or a negotiated agreement. This homonym is distinct from cataloged 調整."
+          },
+          {
+            "id": "stdict-293062/명",
+            "headword": "조정",
+            "pos": "명",
+            "meaning_en": "A coffered ceiling with seaweed designs painted on its panels.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=293062",
+            "evidence_en": "Supplied readable Standard Dictionary snapshot identifies 조정 (藻井), 「명사」, as an architectural coffered ceiling with seaweed patterns on its panels. No matching Basic Dictionary record was located. Live retrieval failed; attestation rests on the supplied snapshot."
+          }
+        ],
+        "unresolved": [
+          {
+            "headword": "조정",
+            "reason_en": "조정 (調整), noun, is already covered by supplied catalog identity 조정09/명; no duplicate identity is proposed. The direct Basic Dictionary record at https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=24599&captchaNumber=&comment_user_name=&nation=eng&nationCode=6&viewTypes=on&wordComment= was retrieved and read: it identifies 조정 (調整), 「명사」, as adjustment to a standard or circumstances. This supplies the previously missing attestation. Additional senses of this lexeme belong in shared dictionary editorial review."
+          }
+        ]
+      },
+      "proposal_digest": "3d548316a408cdf0ff5a94dd9682611780f4e08a5d709a7e40878b58370e5f88",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "f5a2d9c8f3d90c146ad2bd4aa1134d58e89b785c30fc1f051640e1e00c17acde",
+      "primary_evidence": [
+        {
+          "headword_request": "조정",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%A1%B0%EC%A0%95",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=292758",
+              "content_sha256": "9afd08e08321cbf484726dd6360c6beae6279a8a070c42b63094e9ac90a6a88f",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 조정 1 (徂征 ) 원어 徂 갈 조 부수 彳/총획 8 征 칠 정 부수 彳/총획 8 한자 발음 [조정 ] 부표제어 조정-하다 1 「명사」 가서 정벌함. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=292767",
+              "content_sha256": "de7bb475471a1043809defe3a91caa9df79ee09df89e1cbe798f27d4b3a87d99",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 조정 3 (釣艇 ) 원어 釣 낚시 조 부수 金/총획 11 艇 거룻배 정 부수 舟/총획 13 한자 발음 [조ː정 ] 편집 이력 「명사」 『수산업』 낚시로 고기잡이하는 데 쓰는 배. = 낚싯배 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=292768",
+              "content_sha256": "fea742d1feba1e1507659b698af2214171c36ba62e1c1eaddf4e5fc36a35100e",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 조정 4 (朝廷 ) 원어 朝 아침 조 부수 月/총획 12 廷 조정 정 부수 廴/총획 7 한자 발음 [조정 ] 편집 이력 「명사」 임금이 나라의 정치를 신하들과 의논하거나 집행하는 곳. 또는 그런 기구. ≒ 궁부 , 정하 , 조가 , 조단 , 조당 , 조저 . 조정의 신하들이 광해군을 몰아 내쫓고, 인조반정을 성취한 후에…. ≪이희승, 소경의 잠꼬대≫ 관용구/속담 속담 조정 공론 사흘 못 간다 조정의 공론이 사흘 만에 달라진다는 뜻으로, 착수한 일이 자주 변경됨을 비유적으로 이르는 말. = 고려공사 사흘[삼 일] . 속담 조정엔 막여작(莫如爵)이요 향당엔 막여치(莫如齒)라 조정에서는 벼슬의 등급을 중히 여기고 향당에서는 나이의 차례를 중히 여김을 이르는 말. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 4 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=292769",
+              "content_sha256": "c1475ba4c68614710cfce071f0e1226a0ac9b382b7defb061b6abad57ea957e8",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 조정 5 (朝政 ) 원어 朝 아침 조 부수 月/총획 12 政 정사 정 부수 攴/총획 9 한자 발음 [조정 ] 편집 이력 「명사」 조정(朝廷)의 정치. 사간원은 왕에게 조정의 옳고 그름을 간언하는 기관이었다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 5 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=292770",
+              "content_sha256": "f29a21889c07282ad2937555dff26ccf3f93f8108c4a49158068a34ab2ff195f",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 조정 6 (漕艇 ) 원어 漕 배로 실어나를 조 부수 水/총획 14 艇 거룻배 정 부수 舟/총획 13 한자 발음 [조정 ] 부표제어 조정-하다 3 「참고 어휘」 경도(競渡) 편집 이력 「명사」 「1」 『체육』 정해진 거리에서 보트를 저어 스피드를 겨루는 경기. 혼자서 젓는 싱글 스컬에서 8명이 젓는 에이트까지 9종목이 있는데, 올림픽에서 남자는 2,000미터, 여자는 1,000미터 코스에서 실시한다. ≒ 경정 , 경조 , 경주 . 「2」 『체육』 배의 어느 한 부분에도 고정되지 않은 노를 앞에서 뒤로 저으면서 몰아가는 경기용 배. 선수는 배가 나가는 쪽을 마주 향하여 자리 잡고 배를 몬다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 6 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=293060",
+              "content_sha256": "f5f7067bcb5144699dd98d43875e06379225e78ac7859c5685d28c300bf02ac3",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 조정 9 (調整 ) 원어 調 고를 조 아침 주 부수 言/총획 15 整 가지런할 정 부수 攴/총획 16 한자 발음 [조정 ] 부표제어 조정-하다 6 , 조정-되다 2 편집 이력 「명사」 「1」 어떤 기준이나 실정에 맞게 정돈함. 선거구 조정 . 시내버스 노선의 조정 . 판매 가격 조정을 요구하다. 공공요금의 조정을 위한 회의를 소집했다. 더 보기 「2」 『역사』 날 따위를 만들 때 잔손질로 매만지는 일. = 다듬기 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 9 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=293062",
+              "content_sha256": "69686fda50852a10e9a0526a87b11d0465b3c16009c5af17d86a2bb90e5c33ab",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 조정 10 (藻井 ) 원어 藻 마름 조 부수 艸/총획 20 井 우물 정 부수 二/총획 4 한자 발음 [조정 ] 「명사」 『건설』 반자널에 해초 무늬를 그린 소란 반자. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 10 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=480367",
+              "content_sha256": "b48d484744db4aff3f279448e0cda38151d858a6da7a4d98194abc919fe6901c",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 조정 7 (調定 ) 원어 調 고를 조 아침 주 부수 言/총획 15 定 정할 정 부수 宀/총획 8 한자 발음 [조정 ] 부표제어 조정-하다 4 「명사」 조사하여 확실하고 견고하게 함. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 7 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=480584",
+              "content_sha256": "5f829d16ebb892e10aaf2b720f6bdb4246bbb03f03e13cac11ab183ab0a89b69",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 조정 8 (調停 ) 원어 調 고를 조 아침 주 부수 言/총획 15 停 머무를 정 부수 人/총획 11 한자 발음 [조정 ] 부표제어 조정-하다 5 「참고 어휘」 중재(仲裁) 편집 이력 「명사」 「1」 분쟁을 중간에서 화해하게 하거나 서로 타협점을 찾아 합의하도록 함. ≒ 조제 . 의견 조정 . 실무자 간의 이견 조정을 위한 회의가 열렸다. 문제를 해결하기 위해 이해 당사자들이 직접 조정에 나섰다. 「2」 『법률』 분쟁을 해결하기 위하여 법원이 당사자 사이에 끼어들어 쌍방의 양보를 통한 합의를 이끌어 냄으로써 화해시키는 일. 법원의 조정을 거치다. 이혼 소송을 제기하기 전에 가정 법원에 조정을 신청한다. 당시 그 기업은 세금 소송을 벌이다 법원 조정에 따라 법인세를 납부했다. 「3」 『사회 일반』 노동 쟁의가 해결되지 않았을 때에 노동 위원회에서 선출한 조정 위원이 노사 쌍방의 의견을 듣고 조정안을 작성·제시하여 쟁의가 해결되도록 노력하는 일. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 8 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=484711",
+              "content_sha256": "2fce9f3b7957f54ed2fff63f71176ca7953e3a5e71591107c577d6284ba02f1b",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 조정 2 (措定 ) 원어 措 둘 조 섞을 착 부수 手/총획 11 定 정할 정 부수 宀/총획 8 한자 발음 [조정 ] 부표제어 조정-하다 2 , 조정-되다 1 「명사」 「1」 『철학』 존재를 긍정하거나 내용을 명백히 규정하는 일. 또는 그런 사고방식. 일반적으로 ‘A가 있다.’, ‘S는 P이다.’라는 방식을 취한다. 「2」 『철학』 명제를 자명한 것 또는 임의의 가정으로서 직접적으로 추리에 의하지 않고 긍정하여 주장하는 일. 「3」 『철학』 논점에 관하여 반론을 예상하고 그에 앞서 주장하는 의견이나 학설. 이율배반에서 최초의 명제나 변증법 논리에서 제1항에 해당하는 명제 따위가 있다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "proposal_records": [
+            {
+              "primary_url": "https://krdict.korean.go.kr/vie/dicSearch/SearchView?ParaWordNo=91886&captchaNumber=&comment_user_name=&nation=vie&nationCode=2&viewTypes=on&wordComment=",
+              "content_sha256": "596c35069c7db8231f9a2a5714cec7a0bea693679731d986e34e8b6bfb39a62c",
+              "text": "한국어기초사전 이 누리집은 대한민국 공식 전자정부 누리집입니다. Tìm theo phạm trù Từ điển thu nhỏ Tìm kiếm Tìm kiếm chi tiết Xóa Xóa Phụ âm b c d đ g h k l m n p q r s t v x f j w z Nguyên âm a á à ả ã ạ ă ắ ằ ẳ ẵ ặ â ấ ầ ẩ ẫ ậ o ó ò ỏ õ ọ ô ố ồ ổ ỗ ộ ơ ớ ờ ở ỡ ợ e é è ẻ ẽ ẹ ê ế ề ể ễ ệ u ú ù ủ ũ ụ ư ứ ừ ử ữ ự i í ì ỉ ĩ ị y ý ỳ ỷ ỹ ỵ à â æ À Â Æ ç Ç é è ë ê É È Ë Ê î ï Î Ï ô œ Ô Œ ù û ü Ù Û Ü á Á é É í Í ó Ó ú ü Ú Ü ñ Ñ ¡ ¿ Tải về 가 가 In 조정 2 (調停 ) Phát âm [조정 듣기 ] Từ phái sinh 조정하다 1 Từ loại 「명사」 Danh từ sự điều đình 다툼이 있는 사이에 끼어서 서로 화해하게 하거나 타협하여 합의하게 함. Việc chen vào giữa nơi đang có tranh cãi, làm cho thỏa hiệp và thương lượng hoặc làm cho hòa giải với nhau. 분쟁 조정 . 의견 조정 . 조정 기간. 조정 이 이어지다. 조정 을 거치다. 조정 을 하다. 조정 에 나서다. 회사와 노조 사이의 분쟁 조정 을 위해 위원회가 열렸다. 조정 기간 동안 법원은 당사자들에게 조금씩 양보할 것을 요구했다. 가: 생각이 모두 달라서 합의점을 찾기가 쉽지 않습니다. 나: 내가 직접 조정 에 나서야겠다. Xem thêm Từ tham khảo 중재 Gửi ý kiến Gửi ý kiến Mã xác nhận Nghe bằng âm thanh Sửa mới Tên Tiêu đề Nội dung Gửi ý kiến Mong nhận được nhiều ý kiến đóng góp của quý vị về nội dung từ điển. (Sẽ không có câu trả lời nhưng nội dung mà quý vị gửi sẽ được tham khảo để cải tiến và hoàn thiện nội dung từ điển.) cách xem Tiếng Hàn + Tiếng Việt Tiếng Hàn Tiếng Việt Từ tôi đã tìm kiếm Một phần dịch vụ nghe phát âm tiếng Hàn được hỗ trợ bởi Quỹ Văn hóa Naver Trợ giúp Chiến lược biên dịch Chính sách về bản quyền Thông báo Open API Góp ý Từ điển tiếng Hàn cơ sở Viện Quốc ngữ Quốc gia Hàn Quốc Di chuyển Từ nguyên gốc từ Hán Hàn 調 고를 조 아침 주 부수 言/총획 15 停 머무를 정 부수 人/총획 11"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=292758",
+              "content_sha256": "9afd08e08321cbf484726dd6360c6beae6279a8a070c42b63094e9ac90a6a88f",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 조정 1 (徂征 ) 원어 徂 갈 조 부수 彳/총획 8 征 칠 정 부수 彳/총획 8 한자 발음 [조정 ] 부표제어 조정-하다 1 「명사」 가서 정벌함. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=292767",
+              "content_sha256": "de7bb475471a1043809defe3a91caa9df79ee09df89e1cbe798f27d4b3a87d99",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 조정 3 (釣艇 ) 원어 釣 낚시 조 부수 金/총획 11 艇 거룻배 정 부수 舟/총획 13 한자 발음 [조ː정 ] 편집 이력 「명사」 『수산업』 낚시로 고기잡이하는 데 쓰는 배. = 낚싯배 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=292768",
+              "content_sha256": "fea742d1feba1e1507659b698af2214171c36ba62e1c1eaddf4e5fc36a35100e",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 조정 4 (朝廷 ) 원어 朝 아침 조 부수 月/총획 12 廷 조정 정 부수 廴/총획 7 한자 발음 [조정 ] 편집 이력 「명사」 임금이 나라의 정치를 신하들과 의논하거나 집행하는 곳. 또는 그런 기구. ≒ 궁부 , 정하 , 조가 , 조단 , 조당 , 조저 . 조정의 신하들이 광해군을 몰아 내쫓고, 인조반정을 성취한 후에…. ≪이희승, 소경의 잠꼬대≫ 관용구/속담 속담 조정 공론 사흘 못 간다 조정의 공론이 사흘 만에 달라진다는 뜻으로, 착수한 일이 자주 변경됨을 비유적으로 이르는 말. = 고려공사 사흘[삼 일] . 속담 조정엔 막여작(莫如爵)이요 향당엔 막여치(莫如齒)라 조정에서는 벼슬의 등급을 중히 여기고 향당에서는 나이의 차례를 중히 여김을 이르는 말. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 4 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=292769",
+              "content_sha256": "c1475ba4c68614710cfce071f0e1226a0ac9b382b7defb061b6abad57ea957e8",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 조정 5 (朝政 ) 원어 朝 아침 조 부수 月/총획 12 政 정사 정 부수 攴/총획 9 한자 발음 [조정 ] 편집 이력 「명사」 조정(朝廷)의 정치. 사간원은 왕에게 조정의 옳고 그름을 간언하는 기관이었다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 5 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=292770",
+              "content_sha256": "f29a21889c07282ad2937555dff26ccf3f93f8108c4a49158068a34ab2ff195f",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 조정 6 (漕艇 ) 원어 漕 배로 실어나를 조 부수 水/총획 14 艇 거룻배 정 부수 舟/총획 13 한자 발음 [조정 ] 부표제어 조정-하다 3 「참고 어휘」 경도(競渡) 편집 이력 「명사」 「1」 『체육』 정해진 거리에서 보트를 저어 스피드를 겨루는 경기. 혼자서 젓는 싱글 스컬에서 8명이 젓는 에이트까지 9종목이 있는데, 올림픽에서 남자는 2,000미터, 여자는 1,000미터 코스에서 실시한다. ≒ 경정 , 경조 , 경주 . 「2」 『체육』 배의 어느 한 부분에도 고정되지 않은 노를 앞에서 뒤로 저으면서 몰아가는 경기용 배. 선수는 배가 나가는 쪽을 마주 향하여 자리 잡고 배를 몬다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 6 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=293062",
+              "content_sha256": "69686fda50852a10e9a0526a87b11d0465b3c16009c5af17d86a2bb90e5c33ab",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 조정 10 (藻井 ) 원어 藻 마름 조 부수 艸/총획 20 井 우물 정 부수 二/총획 4 한자 발음 [조정 ] 「명사」 『건설』 반자널에 해초 무늬를 그린 소란 반자. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 10 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=480367",
+              "content_sha256": "b48d484744db4aff3f279448e0cda38151d858a6da7a4d98194abc919fe6901c",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 조정 7 (調定 ) 원어 調 고를 조 아침 주 부수 言/총획 15 定 정할 정 부수 宀/총획 8 한자 발음 [조정 ] 부표제어 조정-하다 4 「명사」 조사하여 확실하고 견고하게 함. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 7 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=484711",
+              "content_sha256": "2fce9f3b7957f54ed2fff63f71176ca7953e3a5e71591107c577d6284ba02f1b",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 조정 2 (措定 ) 원어 措 둘 조 섞을 착 부수 手/총획 11 定 정할 정 부수 宀/총획 8 한자 발음 [조정 ] 부표제어 조정-하다 2 , 조정-되다 1 「명사」 「1」 『철학』 존재를 긍정하거나 내용을 명백히 규정하는 일. 또는 그런 사고방식. 일반적으로 ‘A가 있다.’, ‘S는 P이다.’라는 방식을 취한다. 「2」 『철학』 명제를 자명한 것 또는 임의의 가정으로서 직접적으로 추리에 의하지 않고 긍정하여 주장하는 일. 「3」 『철학』 논점에 관하여 반론을 예상하고 그에 앞서 주장하는 의견이나 학설. 이율배반에서 최초의 명제나 변증법 논리에서 제1항에 해당하는 명제 따위가 있다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "acdeec6acbb2668004af1182814212c7abd83fd850e8848167b2e453f2158e10"
     }
   ]
 }
