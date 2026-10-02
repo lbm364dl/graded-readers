@@ -647,8 +647,8 @@ class KoreanHarness:
         prose_prompt = f"Write a natural modern Korean TOPIK {self.level} chapter following the reviewed source plan. {LEVEL_GOALS[self.level]} "
         prose_prompt += "Choose the chapter's length yourself: retain as much meaningful source narrative as can be expressed naturally at this level and stop at a coherent scene boundary. No target, minimum or maximum number of characters, words or sentences. " + ("Formal polite narration. " if self.level == 1 else "Use a consistent natural modern written narrative register suitable for this level. ")
         prose_prompt += f"Keep the story's injustice without inventing actions or motives. Use NIKL six-level curriculum Level {self.level} and lower vocabulary and grammar, guided by the supplied curriculum; the old A band is only a lexical identity catalog, never a Level 1 grade. Manage difficult ideas with clear, connected sentences. Use grammar appropriate to TOPIK {self.level} as the core. A few common higher-level patterns can appear when they improve natural wording or source fidelity; keep their real grades and treat them as optional learning for TOPIK {self.level}. Judge their variety, repetition, complexity and importance to understanding across the whole chapter. Do not simplify natural Korean mechanically merely to eliminate every above-target form, and do not let optional labels excuse advanced prose. Productive noun+하다 words require explicit evidence for the noun, 하다 and their actual combined meaning. Do not confuse short individual sentences with a short chapter. Preserve the reviewed narrative development rather than summarizing it away; never pad or repeat facts to make the chapter longer. In length_reason_en explain why this coverage and stopping point suit the level, whether more meaningful source content could be retained, and any necessary omissions. "
-        prose_prompt += "Give title without chapter number and prose without headings or explanations."
-        prose_prompt += payload(plan=bound_plan, source=source, curriculum=curriculum_context, previous=previous_text, existing_text=existing['text'] if existing else None, reusable_words=[entry["headword"] for entry in self.words.values() if entry["kind"] == "word" or entry["id"] in profiles], lexical_plan=focus)
+        prose_prompt += "Give title without chapter number and prose without headings or explanations. Use reviewed_source_context only to resolve source interpretation and identities; it does not add events to the reviewed chapter scope."
+        prose_prompt += payload(plan=bound_plan, source=source, reviewed_source_context=reviewed_source_context, curriculum=curriculum_context, previous=previous_text, existing_text=existing['text'] if existing else None, reusable_words=[entry["headword"] for entry in self.words.values() if entry["kind"] == "word" or entry["id"] in profiles], lexical_plan=focus)
         prose_prompt += " Prefer the supplied reusable word headwords when they can express the retained events naturally. Explain status with wording suitable to this target, preserving its source meaning. Do not mechanically keep every detail of the source plan. Use ONLY the planned story exemption; all other wording should be ordinary vocabulary appropriate to the target level. "
         prose_repair = ""
         reuse_candidate = annotation_reuse_candidate(self.run_dir)
@@ -737,7 +737,7 @@ class KoreanHarness:
             annotation_prompt += "Meaning_en is the whole observed form. The final form-step meaning must retain the occurrence meaning and contextual tense, including past time inherited by a connective. Intermediate stages explain their own complete forms; the dictionary lemma remains neutral. Labels describe morphology and politeness separately from the complete meaning. "
             annotation_words = [entry for entry in self.words.values()
                 if self.level == 1 or entry['id'] in profiles or entry['headword'] in proposed_headwords]
-            annotation_prompt += payload(prose=prose, words=annotation_words, grammar=list(self.grammar.values()), lexical_plan=focus, nikl_A=[([e["id"], e["meaning"]] if e["meaning"] else e["id"]) for e in beginner] if self.level == 1 else [], lexical_candidates=candidate_entries,
+            annotation_prompt += payload(prose=prose, reviewed_source_context=reviewed_source_context, words=annotation_words, grammar=list(self.grammar.values()), lexical_plan=focus, nikl_A=[([e["id"], e["meaning"]] if e["meaning"] else e["id"]) for e in beginner] if self.level == 1 else [], lexical_candidates=candidate_entries,
                 lexical_reference=read(LEXICAL_REFERENCE),
                 lexical_research_unresolved=lexical_research_unresolved,
                 candidate_policy='Search candidates are not approved senses or grades. Select the identity and POS matching the actual occurrence; retain distinct homonyms and do not invent an ID.')
@@ -998,7 +998,8 @@ class KoreanHarness:
             try:
                 await self.check_prose_readiness(prose, prose_attempt)
                 annotation = await self.stage("annotation", annotation_prompt, "annotation", check_annotation,
-                    {"prose": prose, "approved_words": list(self.words.values()), "approved_grammar": list(self.grammar.values()), "lexical_plan": focus},
+                    {"prose": prose, "reviewed_source_context": reviewed_source_context,
+                     "approved_words": list(self.words.values()), "approved_grammar": list(self.grammar.values()), "lexical_plan": focus},
                     initial=normalize_existing(existing, self.words) if existing else None,
                     cache_prefix=f"-revision{prose_attempt}" if prose_attempt else "", producer=produce_annotation)
                 chapter = contracts.canonical_annotation(annotation, prose, self.number, EDITION, bound_plan, focus, level=self.level)

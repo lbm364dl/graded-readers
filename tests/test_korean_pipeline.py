@@ -1237,6 +1237,12 @@ def test_preparation_checkpoint_stops_before_annotation_and_cannot_publish(tmp_p
 
     async def reviewed_stage(name, prompt, schema, check, context, **kwargs):
         stages.append(name)
+        assert context['reviewed_source_context']
+        if name == 'prose':
+            assert 'reviewed_source_context' in prompt
+            for record in context['reviewed_source_context']:
+                assert record['finding_en'] in prompt
+            assert 'it does not add events' in prompt
         value = read(fixture / 'agents' / name / 'result.json')
         check(value)
         harness.stages[name] = {'approved': True}
@@ -1412,6 +1418,10 @@ def test_curriculum_checkpoint_defers_dictionary_until_shared_entries_are_ready(
     stages = []
     async def reviewed_stage(name, prompt, schema, check, context, **kwargs):
         stages.append(name)
+        if name == 'annotation':
+            assert 'reviewed_source_context' in prompt
+            for record in context['reviewed_source_context']:
+                assert record['finding_en'] in prompt
         value = read(fixture / 'agents' / name / 'result.json')
         check(value)
         harness.stages[name] = {'approved': True}
