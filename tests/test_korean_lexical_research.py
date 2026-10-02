@@ -88,6 +88,32 @@ def test_standard_dictionary_fallback_keeps_its_own_identity_namespace():
         research.check_proposal(value, ['검증하다'])
 
 
+def test_direct_standard_snapshot_reaches_creator_and_exact_record_reviewer(tmp_path, monkeypatch):
+    url = 'https://stdict.korean.go.kr/search/searchView.do?word_no=123'
+    record = {'primary_url': url, 'text': '검증하다: directly retrieved verb definition.'}
+    monkeypatch.setattr(research, 'standard_evidence', lambda word:
+        {'headword_request': word, 'records': [record]})
+    retrieved = []
+    def retrieve(reference):
+        retrieved.append(reference)
+        return record
+    monkeypatch.setattr(research, 'primary_record_evidence', retrieve)
+    class Runner:
+        async def call(self, job, *args, **kwargs):
+            assert 'directly retrieved verb definition' in args[0]
+            if '-review-' in job:
+                assert kwargs['tool_profile'] == 'offline'
+                assert 'proposal_records' in args[0]
+                return {'approved': True, 'issues': []}
+            value = proposal()
+            value['entries'][0].update(id='stdict-123/동', primary_url=url)
+            return value
+    result = asyncio.run(research.research(['검증하다'], tmp_path, runner=Runner(),
+        registry=tmp_path / 'registry.json'))
+    assert result['entries'] == ['stdict-123/동']
+    assert retrieved == [url]
+
+
 def test_research_requires_independent_review_and_reuses_approved_identity(tmp_path):
     registry = tmp_path / 'lexemes.json'
     class Runner:

@@ -300,3 +300,12 @@ spelling alone. Scope digests detect changed research context. Contrasting
 regressions verify that a different usage triggers research/review while the same
 reviewed request reuses its evidence. No candidate gloss becomes attestation,
 curriculum grade, or passage-specific dictionary definition.
+
+Primary-retrieval follow-up: the usage researcher reported four entries unresolved
+because its browser could not open their public Standard Dictionary URLs, despite
+supplied readable direct-content snapshots. Direct retrieval verified records
+28591, 436250, 313043 and 489985 again. Creator and critic instructions now
+distinguish direct supplied record content from a search snippet or a failed web
+tool request. A proposed identity still undergoes exact primary-record retrieval
+and independent review. The evidence regression covers a readable Standard
+snapshot reaching both stages without relying on browser access.
