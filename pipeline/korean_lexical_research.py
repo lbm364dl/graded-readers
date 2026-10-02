@@ -139,6 +139,9 @@ def candidates(path=REGISTRY):
         if ('primary_evidence' in record
                 and record.get('primary_evidence_digest') != fingerprint(record['primary_evidence'])):
             raise ValueError('Lexical primary evidence changed after review')
+        if ('occurrence_requests' in record
+                and record.get('occurrence_requests_digest') != fingerprint(record['occurrence_requests'])):
+            raise ValueError('Lexical research occurrence scope changed after review')
         for entry in record['proposal']['entries']:
             before = identities.get(entry['id'])
             if before and any(before[k] != entry[k] for k in ('headword', 'pos')):
@@ -149,19 +152,21 @@ def candidates(path=REGISTRY):
         for e in identities.values()]
 
 
-async def research(headwords, run_dir, *, runner=None, registry=REGISTRY):
+async def research(headwords, run_dir, *, runner=None, registry=REGISTRY, occurrence_requests=None):
     """Bound independent lexical jobs without changing chapter coverage."""
     from pipeline.agent_harness import CodexRunner
     headwords = sorted(set(headwords))
     if len(headwords) <= 8:
-        return await _research_batch(headwords, run_dir, runner=runner, registry=registry)
+        return await _research_batch(headwords, run_dir, runner=runner, registry=registry,
+            occurrence_requests=occurrence_requests)
     runner = runner or CodexRunner(run_dir, 'gpt-6.1-sol', asyncio.Semaphore(3), timeout=600)
     batches = asyncio.Semaphore(3)
     retrieval_limit = asyncio.Semaphore(3)
     async def batch(words):
         async with batches:
             return await _research_batch(words, run_dir, runner=runner, registry=registry,
-                retrieval_limit=retrieval_limit)
+                retrieval_limit=retrieval_limit, occurrence_requests={h: occurrence_requests[h]
+                    for h in words if h in occurrence_requests} if occurrence_requests else None)
     # Drain siblings before reporting failure: independently approved batches
     # remain reusable and no retry overlaps its predecessor's model jobs.
     results = await asyncio.gather(*(batch(headwords[i:i + 8])
@@ -174,18 +179,28 @@ async def research(headwords, run_dir, *, runner=None, registry=REGISTRY):
         'unresolved': [entry for r in results for entry in r['unresolved']]}
 
 
-async def _research_batch(headwords, run_dir, *, runner=None, registry=REGISTRY, retrieval_limit=None):
+async def _research_batch(headwords, run_dir, *, runner=None, registry=REGISTRY, retrieval_limit=None, occurrence_requests=None):
     from pipeline.agent_harness import CodexRunner
     from pipeline.korean_agent_harness import payload, read, save
     headwords = sorted(set(headwords))
     requested = set(headwords)
-    existing = {e['headword'] for e in candidates(registry)}
+    occurrence_requests = {h: occurrence_requests[h] for h in headwords
+        if h in occurrence_requests} if occurrence_requests else {}
+    reviewed_candidates = candidates(registry)
+    existing = set() if occurrence_requests else {e['headword'] for e in reviewed_candidates}
     unresolved = []
     if registry.exists():
         for record in read(registry)['reviews']:
             if record.get('research_policy_digest') == fingerprint(RESEARCH_POLICY):
-                unresolved.extend(record['proposal']['unresolved'])
-    unresolved = [e for e in unresolved if e['headword'] in requested and e['headword'] not in existing]
+                if occurrence_requests:
+                    matched = {h for h in requested if h in occurrence_requests
+                        and record.get('occurrence_requests', {}).get(h) == occurrence_requests[h]}
+                    existing.update(matched)
+                    unresolved.extend(e for e in record['proposal']['unresolved'] if e['headword'] in matched)
+                else:
+                    unresolved.extend(record['proposal']['unresolved'])
+    unresolved = [e for e in unresolved if e['headword'] in requested
+        and (occurrence_requests or e['headword'] not in existing)]
     existing.update(e['headword'] for e in unresolved)
     headwords = [h for h in headwords if h not in existing]
     if not headwords:
@@ -201,13 +216,15 @@ async def _research_batch(headwords, run_dir, *, runner=None, registry=REGISTRY,
     primary_evidence = await asyncio.gather(*(retrieve(h) for h in headwords))
     catalog = contracts.lexical_catalog()
     known_candidates = {h: catalog.get(h, []) for h in headwords}
-    key = fingerprint(headwords)[:16]
+    key = fingerprint({'headwords': headwords, 'occurrence_requests': occurrence_requests})[:16] if occurrence_requests else fingerprint(headwords)[:16]
     previous, issues = None, []
     for attempt in range(4):
         proposal = await runner.call(f'lexical-research-{key}-{attempt}',
             RESEARCH_POLICY
+            + ('\nThe supplied occurrence_requests are unverified search context, not attestation. Investigate the exact requested sense/POS even when another homonym already has a candidate. Reuse an existing identity only if it covers this lexeme; otherwise verify a distinct primary identity. Keep definitions independent of these passages. ' if occurrence_requests else '')
             + payload(headwords=headwords, primary_evidence=primary_evidence,
-                known_candidates=known_candidates, previous=previous, issues=issues), schema, 'medium', tool_profile='research')
+                known_candidates=known_candidates, occurrence_requests=occurrence_requests,
+                previous=previous, issues=issues), schema, 'medium', tool_profile='research')
         try:
             check_proposal(proposal, headwords)
         except ValueError as error:
@@ -224,12 +241,14 @@ async def _research_batch(headwords, run_dir, *, runner=None, registry=REGISTRY,
             'Independently check these researched lexical identities against the supplied primary dictionary evidence. '
             'Check exact dictionary headword, POS, ID/reference correspondence, distinct homonyms, attested meaning and full requested coverage. '
             'Where an attested and unresolved request share a spelling, check that the unresolved reason identifies a different usage or identity without denying the attested lexeme. '
+            'If occurrence_requests are supplied, check coverage of their actual sense/POS, not merely another homonym with the same spelling. These requests are unverified contextual hints, so correct mistaken analyses rather than accepting their glosses as evidence. '
             'Reject invented productive-pattern lemmas and unsupported senses. Unresolved requests are allowed when justified. '
             'Every proposed lexical entry must be supported by its actual retrieved proposal_records text, not just a URL or a researcher claim. Reject unreadable or mismatched records and specify the exact problem. '
             'This approves lexical evidence only: it assigns no curriculum grade, story exemption or chapter approval. '
             'Output JSON only and do not call tools. '
             + payload(headwords=headwords, primary_evidence=reviewed_evidence,
-                known_candidates=known_candidates, proposal=proposal), contracts.schema_path('review'), 'high', tool_profile='offline')
+                known_candidates=known_candidates, occurrence_requests=occurrence_requests,
+                proposal=proposal), contracts.schema_path('review'), 'high', tool_profile='offline')
         validate(review, contracts.REVIEW)
         if review == {'approved': True, 'issues': []}:
             break
@@ -240,6 +259,9 @@ async def _research_batch(headwords, run_dir, *, runner=None, registry=REGISTRY,
         'review': review, 'review_digest': fingerprint(review),
         'research_policy_digest': fingerprint(RESEARCH_POLICY),
         'primary_evidence': reviewed_evidence, 'primary_evidence_digest': fingerprint(reviewed_evidence)}
+    if occurrence_requests:
+        record['occurrence_requests'] = occurrence_requests
+        record['occurrence_requests_digest'] = fingerprint(occurrence_requests)
     # Serialize promotion across concurrently running editions.
     import fcntl
     registry.parent.mkdir(parents=True, exist_ok=True)

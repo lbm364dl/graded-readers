@@ -45,9 +45,10 @@ class UnannotatableProseError(ValueError):
 
 
 class LexicalIdentityError(ValueError):
-    def __init__(self, message, headwords):
+    def __init__(self, message, headwords, occurrences=None):
         super().__init__(message)
         self.headwords = set(headwords)
+        self.occurrences = occurrences or {}
 
 
 class MissingLexicalIdentityError(LexicalIdentityError, UnannotatableProseError):
@@ -226,7 +227,7 @@ def annotation_requests(value: dict, catalog: dict, focus: dict, words: dict) ->
     """Use the same exact identity checks for chunks and the assembled chapter."""
     requests, grammar_ids = {}, set()
     profiles = {entry["id"]: entry for entry in focus["entries"]}
-    identity_errors, unresolved_headwords = [], set()
+    identity_errors, unresolved_headwords, unresolved_occurrences = [], set(), {}
     for segment in value["segments"]:
         if segment["type"] == "punctuation":
             if any(c.isalnum() for c in segment["text"]):
@@ -245,10 +246,12 @@ def annotation_requests(value: dict, catalog: dict, focus: dict, words: dict) ->
         if kind == "vocabulary" and not candidates:
             raise MissingLexicalIdentityError(
                 f"Ordinary word {segment['lemma']} has no supplied lexical identity. Obtain primary dictionary evidence before assigning an ID; do not invent a story-term exemption.",
-                {segment['lemma']})
+                {segment['lemma']}, {segment['lemma']: [{'text': segment['text'], 'meaning_en': segment['meaning_en']}]})
         if kind == "vocabulary" and identity not in {e["id"] for e in candidates}:
             identity_errors.append(f"Exact reviewed lexical candidates for {segment['lemma']}: {candidates}. Copy the matching candidate ID verbatim, including its homonym number or krdict-/stdict- namespace; do not invent an unsuffixed ID.")
             unresolved_headwords.add(segment['lemma'])
+            unresolved_occurrences.setdefault(segment['lemma'], []).append(
+                {'text': segment['text'], 'meaning_en': segment['meaning_en']})
         if kind != "grammar":
             known = words.get(identity)
             request_kind = kind.replace('vocabulary', 'word')
@@ -263,7 +266,7 @@ def annotation_requests(value: dict, catalog: dict, focus: dict, words: dict) ->
         else:
             grammar_ids.add(identity)
     if identity_errors:
-        raise LexicalIdentityError("; ".join(identity_errors), unresolved_headwords)
+        raise LexicalIdentityError("; ".join(identity_errors), unresolved_headwords, unresolved_occurrences)
     grammar_ids.update(link["entry_id"] for link in value["grammar_links"])
     return requests, grammar_ids
 
@@ -756,7 +759,8 @@ class KoreanHarness:
                                          or repair == repair_start + 2)):
                                 from pipeline.korean_lexical_research import research
                                 async with self.lexical_research_lock:
-                                    result = await research(error.headwords, self.run_dir, runner=self.runner)
+                                    result = await research(error.headwords, self.run_dir, runner=self.runner,
+                                        occurrence_requests=error.occurrences)
                                     self.catalog = contracts.lexical_catalog()
                                 # Another edition may have just approved the
                                 # missing candidate. Reused primary evidence is

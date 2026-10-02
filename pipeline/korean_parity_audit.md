@@ -289,3 +289,14 @@ same creator/primary-record/independent-review gates; approved batches promote
 separately and are reusable if another fails. All sibling jobs finish before a
 failure propagates, preventing overlapping retries. Regression coverage verifies
 complete request coverage, bounded concurrency, and sibling draining on failure.
+
+Homonym coverage follow-up: supplemental research previously treated any reviewed
+candidate for a spelling as sufficient. Actual advanced runs exposed absent
+merit/service 공 and calming 진정하다 beside unrelated reviewed homonyms. Failed
+annotation identities now carry their observed form and contextual meaning as
+unverified search requests. Research and independent review must check this
+requested usage; reuse binds the exact reviewed occurrence scope rather than
+spelling alone. Scope digests detect changed research context. Contrasting
+regressions verify that a different usage triggers research/review while the same
+reviewed request reuses its evidence. No candidate gloss becomes attestation,
+curriculum grade, or passage-specific dictionary definition.

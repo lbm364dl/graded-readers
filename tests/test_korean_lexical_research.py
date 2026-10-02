@@ -116,6 +116,33 @@ def test_research_requires_independent_review_and_reuses_approved_identity(tmp_p
         research.candidates(registry)
 
 
+def test_research_reuse_distinguishes_requested_homonym_from_reviewed_spelling(tmp_path):
+    registry = tmp_path / 'lexemes.json'
+    class Runner:
+        def __init__(self): self.calls = []
+        async def call(self, job, *args, **kwargs):
+            self.calls.append(job)
+            if '-review-' in job:
+                return {'approved': True, 'issues': []}
+            return proposal()
+    runner = Runner()
+    asyncio.run(research.research(['검증하다'], tmp_path, runner=runner, registry=registry))
+    scope = {'검증하다': [{'text': '검증했다', 'meaning_en': 'a newly requested use'}]}
+    before = len(runner.calls)
+    asyncio.run(research.research(['검증하다'], tmp_path, runner=runner, registry=registry,
+        occurrence_requests=scope))
+    assert len(runner.calls) == before + 2  # Spelling alone did not bypass research/review.
+    before = len(runner.calls)
+    assert asyncio.run(research.research(['검증하다'], tmp_path, runner=runner, registry=registry,
+        occurrence_requests=scope))['status'] == 'reused'
+    assert len(runner.calls) == before
+    document = json.loads(registry.read_text())
+    document['reviews'][-1]['occurrence_requests']['검증하다'][0]['meaning_en'] = 'tampered'
+    save(registry, document)
+    with pytest.raises(ValueError, match='occurrence scope changed'):
+        research.candidates(registry)
+
+
 def test_rejected_research_is_repaired_before_promotion(tmp_path):
     class Runner:
         async def call(self, job, *args, **kwargs):
