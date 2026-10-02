@@ -14,7 +14,7 @@ from pipeline.agent_harness import CodexRunner
 from pipeline import korean_dictionary as dictionary
 from pipeline import korean_readability as readability
 from pipeline import korean_sentence_breakdowns as sentence_help
-from pipeline.korean_agent_harness import POLICY, LINGUISTIC_REFERENCE, approved, digest, read, save, normalize_existing
+from pipeline.korean_agent_harness import POLICY, LINGUISTIC_REFERENCE, approved, digest, read, save, normalize_existing, read_annotation_chunk
 from pipeline import korean_contracts as contracts
 from pipeline import korean_curriculum as curriculum
 from pipeline.korean_sources import EDITION, ROOT, load_selected_unit, sha
@@ -199,7 +199,7 @@ def verify_run(run_dir: Path) -> tuple[dict, dict, dict, dict]:
                     chunk_job = chunk["job"]
                     if Path(chunk_job).name != chunk_job:
                         raise ValueError("invalid Korean chunk job")
-                    chunk_value = read(run_dir / "agents" / chunk_job / "result.json")
+                    chunk_value = read_annotation_chunk(run_dir / "agents" / chunk_job / "result.json", chunk)
                     chunk_meta = read(run_dir / "agents" / chunk_job / "meta.json")
                     if digest(chunk_value) != chunk["digest"] or chunk_meta.get("return_code") != 0:
                         raise ValueError("Korean annotation chunk changed after review")

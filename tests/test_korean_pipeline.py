@@ -129,7 +129,7 @@ def test_publication_rejects_overlapping_or_skipped_chapter_scopes(tmp_path, mon
             publication.publish(tmp_path)
 
 
-@pytest.mark.parametrize('prose_revision,worker_failure,recover_partial', [(False, False, False), (False, True, False), (True, False, False), ('technical_failure', False, False), (False, False, True), (False, False, 'rejected_worker')])
+@pytest.mark.parametrize('prose_revision,worker_failure,recover_partial', [(False, False, False), (False, True, False), (True, False, False), ('technical_failure', False, False), (False, 'attached', False), (False, False, True), (False, False, 'rejected_worker')])
 def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_path, prose_revision, worker_failure, recover_partial):
     from pipeline.korean_agent_harness import normalize_existing, save, UnannotatableProseError
     chapter = manual_chapter()
@@ -184,11 +184,16 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
                 return protocol_curriculum_bindings(canonical)
             if '-chunk-' in job:
                 number, attempt = map(int, job.split('-chunk-')[1].split('-'))
-                if worker_failure and number == 1 and attempt == 0:
+                if worker_failure is True and number == 1 and attempt == 0:
                     raise ValueError('Worker used tools outside its offline role')
                 value = copy.deepcopy((revised_chunks if 'revision1' in job else chunks)[number - 1])
                 if not prose_revision and number == 1 and attempt == 0:
                     next(s for s in value['segments'] if s['lexical_kind'] == 'vocabulary')['lexical_id'] = 'invented'
+                if worker_failure == 'attached':
+                    from tests.test_korean_annotation_chunks import attached
+                    value = attached(value)
+                    save(tmp_path/'agents'/job/'result.json', value)
+                    save(tmp_path/'agents'/job/'meta.json', {'return_code': 0})
                 return value
             if job.startswith('sentence-help-'):
                 return {'sentences': [{**row, 'selected': False, 'reason_en': 'Synthetic selection fixture',
@@ -1884,3 +1889,41 @@ def test_bad_grammar_anchor_reports_actual_indexed_segments_and_preserves_valid_
     assert "'type': 'punctuation'" in str(failure.value)
     assert 'including spaces and punctuation' in str(failure.value)
     assert chapter == before
+
+
+def test_publication_replays_segment_attached_chunks_and_rejects_raw_tampering(tmp_path):
+    from tests.test_korean_annotation_chunks import attached
+    from pipeline.korean_annotation_chunks import decode
+    from pipeline.korean_agent_harness import read, save, normalize_existing, annotation_chunk_record
+    make_reviewed_run(tmp_path, level=4)
+    chapter = read(tmp_path/'chapter.json')
+    raw = normalize_existing(chapter, dictionary._registry(dictionary.WORDS))
+    worker = attached(raw)
+    decoded = decode(worker)
+    assert decoded == raw
+    job = 'annotation-chunk-001-0'
+    save(tmp_path/'agents'/job/'result.json', worker)
+    save(tmp_path/'agents'/job/'meta.json', {'return_code': 0})
+    save(tmp_path/'agents/annotation/meta.json', {'return_code': 0, 'kind': 'annotation_assembly',
+        'batch_characters': len(chapter['text']),
+        'chunks': [annotation_chunk_record(job, chapter['text'], decoded, worker)]})
+    assert publication.verify_run(tmp_path)[0] == chapter
+    worker['segments'][0]['meaning_en'] += ' altered'
+    save(tmp_path/'agents'/job/'result.json', worker)
+    with pytest.raises(ValueError, match='attached chunk changed'):
+        publication.verify_run(tmp_path)
+
+
+@pytest.mark.parametrize('has_guidance', [False, True])
+def test_source_review_uses_approved_interpretations_only_when_supplied(tmp_path, has_guidance):
+    proposal = {'title': '제목', 'text': '길동은 집을 떠났다.', 'length_reason_en': 'Coherent departure'}
+    class Runner:
+        async def call(self, job, prompt, *args, **kwargs):
+            if '-review-' in job:
+                inputs = json.loads(prompt.split('\nINPUT:\n', 1)[1])
+                assert ('authoritative interpretation for those passages' in inputs['task']) == has_guidance
+                return {'approved': True, 'issues': []}
+            return proposal
+    context = {'reviewed_source_context': [{'finding_en': 'Reviewed source interpretation'}] if has_guidance else []}
+    harness = KoreanHarness(tmp_path, 3, runner=Runner())
+    assert asyncio.run(harness.stage('prose', 'Write reviewed scene', 'prose', lambda _: None, context)) == proposal

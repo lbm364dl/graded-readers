@@ -82,8 +82,9 @@ def schema_path(name: str) -> Path:
 
 
 def write_schemas() -> None:
+    from pipeline.korean_annotation_chunks import SCHEMA as CHUNK_ANNOTATION
     for name, schema in {"review": REVIEW, "plan": PLAN, "prose": PROSE,
-                         "annotation": ANNOTATION, "lexical-plan": FOCUS, "dictionary": DICTIONARY,
+                         "annotation": ANNOTATION, "chunk-annotation": CHUNK_ANNOTATION, "lexical-plan": FOCUS, "dictionary": DICTIONARY,
                          'grammar-bindings': GRAMMAR_BINDINGS,
                          'lexical-candidates': LEXICAL_CANDIDATES,
                          'curriculum': CURRICULUM_BINDINGS,

@@ -83,6 +83,22 @@ def digest(value) -> str:
     return sha(json.dumps(value, ensure_ascii=False, sort_keys=True).encode())
 
 
+def read_annotation_chunk(path: Path, record=None):
+    from pipeline.korean_annotation_chunks import FORMAT, decode
+    raw = read(path)
+    if record is not None and raw.get('format') == FORMAT and record.get('raw_digest') != digest(raw):
+        raise ValueError('Korean attached chunk changed after review')
+    return decode(raw)
+
+
+def annotation_chunk_record(job, text, value, raw=None):
+    from pipeline.korean_annotation_chunks import FORMAT
+    record = {'job': job, 'text': text, 'digest': digest(value)}
+    if raw is not None and raw.get('format') == FORMAT:
+        record['raw_digest'] = digest(raw)
+    return record
+
+
 def save(path: Path, value) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     temp = path.with_suffix(path.suffix + ".tmp")
@@ -461,6 +477,11 @@ class KoreanHarness:
                     'Empty existing_text means no prior adaptation is supplied, not that the new chapter must be empty or restricted to a shorter opening. '
                     'Review the planned chapter from source_start through its proposed endpoint; later retained events do not imply earlier beats are omitted. '
                     'The endpoint is a planning decision: require a change only for a demonstrated causal gap, incoherent boundary or actual target-level difficulty, not merely because multiple scenes are retained.')
+            if review_context.get('reviewed_source_context'):
+                instructions += (' The supplied reviewed_source_context findings have independent approval bound to exact original-source quotations. '
+                    'Use their resolved chronology, discourse and participant continuity as authoritative interpretation for those passages. '
+                    'Do not reopen the same archaic wording and reject a rendering that follows an approved finding. '
+                    'Judge whether the proposal follows that finding and the reviewed scope; do not invent a conflicting interpretation or add its unsupported correction to issues.')
             if name == 'prose' and review_context.get('approved_source_plan_review', {}).get('approved'):
                 instructions += (
                     ' The supplied plan and its source interpretation, named identities and stopping point have already passed independent review. '
@@ -770,13 +791,13 @@ class KoreanHarness:
             annotation_prompt += "Every inflected word needs ordered complete-form transformation steps rooted in an attested lexical word or name, never a grammar identity. Productive adjective-plus-하다 constructions keep their lexical adjective base and link the transformation separately. The dictionary-form base is supplied by lemma and its own UI row: DO NOT repeat it in form_steps. Each step uses the schema field grammar_entry_ids: an array containing EXACTLY ONE grammar ID, with a matching grammar_links record on the same segment. There is no singular grammar_entry_id field. "
             annotation_prompt += "Each stage must have a distinct COMPLETE form. Grammar roles that add no new form belong in grammar_links with complete-phrase display fields, not repeated stages. Do not invent a bare-stem intermediate merely to make forms differ. "
             annotation_prompt += "Attested fixed expressions need explicit lexical destinations and their complete idiomatic meanings. Use the supplied primary lexical references to identify canonical dictionary headwords and restricted senses; an expression frame is not automatically a new lemma. Do not invent grammar entries for lexical expressions or claim unsupported component meanings. "
-            annotation_prompt += "For a multiword lexical expression, preserve its component tap boundaries and supply expression_links with the exact source form, complete meaning, contextual role, inclusive segment indices and the attested word entry_id of a lexical component within the span. This is a lexical destination, never a grammar_links record or an invented standalone expression lemma. Use separately verified component senses; uncertainty belongs in editorial research, not learner-facing notes. "
+            annotation_prompt += "For a multiword lexical expression, preserve its component tap boundaries and supply expression_links with the exact source form, complete meaning, contextual role and the attested word entry_id of a lexical component within the span. This is a lexical destination, never a grammar_links record or an invented standalone expression lemma. Use separately verified component senses; uncertainty belongs in editorial research, not learner-facing notes. "
             annotation_prompt += "Prefer the attested whole-word identity. A transparent noun compound without a standalone dictionary headword may use adjacent taps rooted in independently attested component words, preserving the original spelling and spacing exactly. Choosing or correcting unapproved tap segmentation here is annotation work, not a prose rewrite. Explain only supported component contributions and retain the combined contextual meaning in the sentence analysis; never manufacture an idiom's meaning from its components. "
             annotation_prompt += "When a productive grammatical formation has no independent word identity, root its chain in an attested lexical base and link ordered complete forms to their actual grammar transformations, rather than requesting a dictionary entry for the entire formation. A noun can be that lexical base. Reuse comparable reviewed analyses where their function matches; a shared suffix alone does not establish that function. "
             annotation_prompt += "Audit every tap for inflection and grammar roles; particles stay attached unless a learner-sized grammar unit warrants a separate tap. "
             annotation_prompt += "Provide grammar_links for all relevant particles/constructions/steps with local context_en. "
-            annotation_prompt += "Any grammar link on an inflected tap outside its steps needs the complete source phrase, complete meaning and inclusive ending segment index. "
-            annotation_prompt += "Complete construction rows may also start on an uninflected prefix or particle when it belongs to the phrase, such as a preceding negative word. Include every meaning-bearing part of the construction; never display a positive phrase as the full outcome of a negative occurrence. Anchor its link on the first included word and give the exact ending index, preserving tap boundaries. Otherwise display strings are empty and ending index -1. Punctuation fields are empty; steps empty. "
+            annotation_prompt += "Any grammar link on an inflected tap outside its steps needs the complete source phrase and complete meaning, attached to its first included segment. "
+            annotation_prompt += "Complete construction rows may also start on an uninflected prefix or particle when it belongs to the phrase, such as a preceding negative word. Include every meaning-bearing part of the construction; never display a positive phrase as the full outcome of a negative occurrence. Attach its link to the first included word and give the exact complete source form, preserving tap boundaries. The pipeline derives the ending index. Otherwise display strings are empty. Punctuation fields are empty; steps empty. "
             annotation_prompt += "Meaning_en is the whole observed form. The final form-step meaning must retain the occurrence meaning and contextual tense, including past time inherited by a connective. Intermediate stages explain their own complete forms; the dictionary lemma remains neutral. Labels describe morphology and politeness separately from the complete meaning. "
             annotation_words = [entry for entry in self.words.values()
                 if self.level == 1 or entry['id'] in profiles or entry['headword'] in proposed_headwords]
@@ -797,7 +818,7 @@ class KoreanHarness:
                     reusable = set()
                     for i, record in enumerate(old_meta['chunks']):
                         path = self.run_dir / 'agents' / record['job'] / 'result.json'
-                        if path.exists() and digest(read(path)) == record['digest']:
+                        if path.exists() and digest(read_annotation_chunk(path, record)) == record['digest']:
                             reusable.add(i)
                     candidates = [{'old_chunk_index': i + 1, 'new_chunk_index': j + 1,
                                    'text': text, 'annotation': contracts.annotation_view(old_values[i], max_characters=0)}
@@ -890,13 +911,13 @@ class KoreanHarness:
                 async def chunk(number, text):
                     if number in reused:
                         record = old_lineage[reused[number] - 1]
-                        value = read(self.run_dir / 'agents' / record['job'] / 'result.json')
+                        value = read_annotation_chunk(self.run_dir / 'agents' / record['job'] / 'result.json', record)
                         if digest(value) != record['digest']:
                             raise ValueError('Korean reusable annotation occurrence changed')
                         return value, record
                     if selected is not None and number not in selected:
                         record = old_lineage[number - 1]
-                        value = read(self.run_dir / 'agents' / record['job'] / 'result.json')
+                        value = read_annotation_chunk(self.run_dir / 'agents' / record['job'] / 'result.json', record)
                         if digest(value) != record['digest']:
                             raise ValueError('Korean retained annotation chunk changed')
                         return value, record
@@ -922,17 +943,19 @@ class KoreanHarness:
                                 if meta.get('return_code') != 0:
                                     continue
                                 CodexRunner._check_tool_profile(path.parent, 'offline', meta)
-                                value = read(path)
+                                raw_value = read(path)
+                                from pipeline.korean_annotation_chunks import decode
+                                value = decode(raw_value)
                                 if rejected_digest is not None and digest(value) == rejected_digest:
                                     continue
                                 # A different partition is not a reusable proposal.
                                 contracts.check_reconstruction(value['segments'], text)
-                            except (ValueError, KeyError, TypeError, FileNotFoundError):
+                            except (ValidationError, ValueError, KeyError, TypeError, FileNotFoundError):
                                 continue
                             try:
                                 validate_chunk(value, text)
                                 print(f'annotation chunk {number}: recovered completed proposal', flush=True)
-                                return value, {'job': path.parent.name, 'text': text, 'digest': digest(value)}
+                                return value, annotation_chunk_record(path.parent.name, text, value, raw_value)
                             except (ValidationError, ValueError, KeyError, IndexError, TypeError) as error:
                                 if previous_chunk is None:
                                     errors, previous_chunk = [str(error)], value
@@ -958,21 +981,24 @@ class KoreanHarness:
                         try:
                             value = await self.runner.call(chunk_job, self.policy + "\n" + annotation_prompt
                                 + "\nThis job annotates ONLY chunk_text, not the full chapter. "
-                                "All segment/link indices start at zero for this chunk. Include trailing spaces/newlines as punctuation. "
+                                "Use segment-anchored-annotation-v1: attach grammar_links and expression_links directly to their first included word segment, and mark each segment is_inflected. Do not output numeric link indices; the pipeline computes anchors and ending indices from the exact complete forms. Include trailing spaces/newlines as punctuation. "
                                 + payload(chunk_text=text, previous_chunk=previous_chunk, issues=errors,
                                     **({'newly_reviewed_lexical_candidates': new_candidates} if new_candidates else {}),
                                     **({'reviewed_lexical_usage_evidence': reviewed_usages} if reviewed_usages else {}),
                                     **({'linguistic_reference': read(LINGUISTIC_REFERENCE)} if errors else {})),
-                                contracts.schema_path("annotation"), "low", tool_profile="offline")
+                                contracts.schema_path("chunk-annotation"), "low", tool_profile="offline")
                         except ValueError as error:
                             # A rejected worker result has no trusted annotation
                             # to inherit. Retry this chunk, preserving siblings.
                             errors = [str(error), 'Use only the supplied data. Do not call any tools, including resource listing.']
                             continue
                         try:
+                            raw_value = value
+                            from pipeline.korean_annotation_chunks import decode
+                            value = decode(raw_value)
                             validate_chunk(value, text)
                             print(f"annotation chunk {number}: structure passed", flush=True)
-                            return value, {"job": chunk_job, "text": text, "digest": digest(value)}
+                            return value, annotation_chunk_record(chunk_job, text, value, raw_value)
                         except (ValidationError, ValueError, KeyError, IndexError, TypeError) as error:
                             if isinstance(error, MissingPlannedNameError):
                                 raise
@@ -995,7 +1021,7 @@ class KoreanHarness:
                                 except (ValidationError, ValueError, KeyError, IndexError, TypeError) as updated_error:
                                     errors = [str(updated_error), 'Primary lexical research outcome: ' + json.dumps(result, ensure_ascii=False)]
                                 else:
-                                    return value, {'job': chunk_job, 'text': text, 'digest': digest(value)}
+                                    return value, annotation_chunk_record(chunk_job, text, value, raw_value)
                     raise ValueError(f"Korean annotation chunk {number} failed reconstruction: {errors}")
                 results = await asyncio.gather(*(chunk(i + 1, text) for i, text in enumerate(texts)), return_exceptions=True)
                 for result in results:
