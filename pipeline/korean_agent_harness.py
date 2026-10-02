@@ -45,6 +45,11 @@ do not reject it for missing those later-stage fields. For a source objection,
 cite the exact numbered source paragraph and a short original quotation that
 supports the correction. Read the full relevant passage and supplied source
 notes; do not assert a detail is absent when it is explicitly present. Distinguish
+a paragraph's event from its discourse context: adjacent source paragraphs may
+establish the speaker, participant identity, pronoun reference or shortened title.
+Do not require each paragraph to reintroduce a participant already established
+by the surrounding passage. Still reject invented identities and events assigned
+to a paragraph where they do not occur. Distinguish
 a rejected draft supplied as previous from published previous_chapters. The
 chapter_number and source_start fields establish whether this is the opening or
 a continuation; a source_start of zero with no prior chapters means chapter 1.
@@ -599,7 +604,7 @@ class KoreanHarness:
         plan = await self.stage("plan", f"Choose a coherent next TOPIK {self.level} chapter from the remaining original narrative. Select last_source_paragraph_index as its stopping point: the chapter covers the contiguous source prefix through that paragraph, including justified omissions within it. Stop at a natural narrative boundary; do not cover the entire remaining book by default. There is no fixed source-slice size. "
             "Give a Korean title and select source_paragraph_index from the numbered paragraphs, "
             "with the event supported by that paragraph in English. Do not copy or reconstruct old Hangul. "
-            "Selected paragraphs must support ALL details of their events, in source order without duplicates. "
+            "Anchor each event to the paragraph where it occurs, in source order without duplicates. Read surrounding source paragraphs to resolve established speakers, participants, pronouns and shortened titles; an event's paragraph need not repeat an already established name. Do not invent participants or assign an event to an unrelated paragraph. "
             "Judge how much meaningful narrative can be retained through natural wording appropriate to the requested target. There is no paragraph quota or total-length target. Preserve causality, character relationships, understandable actions and development; do not collapse a scene into a bare summary when its events can be expressed at this level. Omit or simplify details only when they add unnecessary learner difficulty or distract from the coherent scene. In scope_reason_en explain retained coverage, significant omissions, level tradeoffs and the natural stopping point. Do not pad with repetition or invent events. If existing_text is supplied, plan ONLY its retained events; "
             "do not request omitted side stories, births or scenes."
             + payload(**plan_context, existing_text=existing["text"] if existing else ""), "plan",

@@ -19,6 +19,11 @@ chapter merely because more source remains. Retain both review decisions and
 their provenance for publication verification; adjudication is not permission to
 ignore a genuine error or to approve because retries are expensive.
 
+Source beats anchor events to where they occur. Use surrounding source context
+to resolve speakers, participant identities, pronouns and shortened titles; an
+individual paragraph need not repeat a name already established nearby. Keep
+this distinct from inventing an identity or moving an event to another paragraph.
+
 The current generation scope is *Hong Gildong*, Level 1, using mapped source
 spans selected by the planning agent from the remaining original narrative. The
 two mapped scenes in `books/korean/honggildong/source.json` are reference examples,
