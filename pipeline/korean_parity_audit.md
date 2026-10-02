@@ -163,3 +163,18 @@ per-edition app tap labels. All 102 focused Python checks pass, and the existing
 real TOPIK 1 run passes publication replay. The real TOPIK 2 run has approved
 source and lexical plans; its chapter draft is under independent prose review.
 This support does not establish that TOPIK 2–6 chapters are already published.
+
+
+Generation scheduling follow-up: `--stop-after prose` provides a reviewed
+preparation checkpoint distinct from a publishable run. Preparations for TOPIK
+3–6 can proceed while TOPIK 2 annotations finish; final runs resume with the
+current approved dictionary registry. Opt-in complete-sentence batching reduces
+repeated annotation calls without changing chapter scope, source text, sentence
+help decisions or tap reconstruction. Its recorded partition is independently
+replayed by publication, and the zero default preserves existing run evidence.
+Regression coverage includes a nonpublishable preparation, preserved separators,
+an intact sentence exceeding the job budget, and rejection of a changed assembly
+partition. Validation: 105 focused Python tests passed; TOPIK 1 publication replay
+still passes. Actual TOPIK 3 and 5 plans independently chose source paragraphs
+0–23 (20 beats), beyond TOPIK 2's paragraphs 0–16 (14 beats), through narrative
+judgment rather than forced increasing lengths. Their prose reviews are underway.

@@ -962,3 +962,70 @@ def test_publication_preserves_other_editions_and_merges_exact_source_routes(tmp
     assert result['level'] == 2
     assert observed['checked']
     assert (publication.CONTENT / 'l1.annotations.json').read_bytes() == before
+
+
+def test_preparation_checkpoint_stops_before_annotation_and_cannot_publish(tmp_path, monkeypatch):
+    from pipeline.korean_agent_harness import read
+    fixture = tmp_path / 'fixture'
+    make_reviewed_run(fixture, level=3)
+    prepared = tmp_path / 'prepared' / 'chapter-001'
+    harness = KoreanHarness(prepared, 1, runner=object(), level=3, stop_after='prose')
+    stages = []
+
+    async def reviewed_stage(name, prompt, schema, check, context, **kwargs):
+        stages.append(name)
+        value = read(fixture / 'agents' / name / 'result.json')
+        check(value)
+        harness.stages[name] = {'approved': True}
+        return value
+
+    monkeypatch.setattr(harness, 'stage', reviewed_stage)
+    result = asyncio.run(harness.run())
+    assert stages == ['plan', 'lexical-plan', 'prose']
+    assert result['status'] == 'prepared'
+    assert result['target_level'] == 3
+    assert read(prepared / 'preparation.json')['prose']['text']
+    assert not (prepared / 'report.json').exists()
+    with pytest.raises(ValueError, match='No accepted'):
+        publication.publish(prepared.parent, promote=False)
+    assert KoreanHarness(prepared, 1, runner=object(), level=3).stop_after is None
+
+
+def test_annotation_batches_preserve_sentences_separators_and_long_clauses():
+    text = '첫 문장입니다.\n\n두 번째입니다. 세 번째 문장입니다! 마지막입니다.'
+    sentences = contracts.annotation_chunks(text)
+    batches = contracts.annotation_chunks(text, batch_characters=len(sentences[0] + sentences[1]))
+    assert len(batches) < len(sentences)
+    assert ''.join(batches) == text
+    assert batches[0] == sentences[0] + sentences[1]
+    positions = {0}
+    for sentence in sentences:
+        positions.add(max(positions) + len(sentence))
+    offset = 0
+    for batch in batches:
+        offset += len(batch)
+        assert offset in positions
+    # The budget controls job grouping, never truncates or splits a sentence.
+    assert contracts.annotation_chunks(text, batch_characters=1) == sentences
+    with pytest.raises(ValueError, match='nonnegative'):
+        contracts.annotation_chunks(text, batch_characters=-1)
+
+
+def test_batched_assembly_is_replayed_and_rejects_a_changed_partition_policy(tmp_path):
+    from pipeline.korean_agent_harness import read, save, normalize_existing
+    report = make_reviewed_run(tmp_path, level=4)
+    chapter = read(tmp_path / 'chapter.json')
+    raw = normalize_existing(chapter, dictionary._registry(dictionary.WORDS))
+    job = 'annotation'
+    chunk = job + '-chunk-001-0'
+    save(tmp_path / 'agents' / chunk / 'result.json', raw)
+    save(tmp_path / 'agents' / chunk / 'meta.json', {'return_code': 0})
+    assembly = {'return_code': 0, 'kind': 'annotation_assembly',
+        'batch_characters': len(chapter['text']),
+        'chunks': [{'job': chunk, 'text': chapter['text'], 'digest': digest(raw)}]}
+    save(tmp_path / 'agents' / job / 'meta.json', assembly)
+    publication.verify_run(tmp_path)
+    assembly['batch_characters'] = 1
+    save(tmp_path / 'agents' / job / 'meta.json', assembly)
+    with pytest.raises(ValueError, match='chunks do not match'):
+        publication.verify_run(tmp_path)

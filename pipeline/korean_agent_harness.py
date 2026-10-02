@@ -251,9 +251,15 @@ def annotation_requests(value: dict, catalog: dict, focus: dict, words: dict) ->
 
 
 class KoreanHarness:
-    def __init__(self, run_dir: Path, number: int, runner=None, existing: Path | None = None, model: str = "gpt-6.1-sol", workers: int = 4, level: int = 1):
+    def __init__(self, run_dir: Path, number: int, runner=None, existing: Path | None = None, model: str = "gpt-6.1-sol", workers: int = 4, level: int = 1, stop_after: str | None = None, annotation_batch_characters: int = 0):
         curriculum.entries("grammar", level)
+        if stop_after not in (None, 'prose'):
+            raise ValueError('Korean preparation checkpoint must be prose')
         self.level = level
+        self.stop_after = stop_after
+        if type(annotation_batch_characters) is not int or annotation_batch_characters < 0:
+            raise ValueError('Korean annotation batch budget must be nonnegative')
+        self.annotation_batch_characters = annotation_batch_characters
         self.run_dir, self.number, self.existing = run_dir, number, existing
         if workers < 1:
             raise ValueError('Korean pipeline workers must be positive')
@@ -455,6 +461,12 @@ class KoreanHarness:
                 cache_prefix=f"-revision{prose_attempt}" if prose_attempt else "")
             if existing and prose["text"] != existing["text"]:
                 raise ValueError("Existing Korean prose failed review; explicit prose repair is required")
+            if self.stop_after == 'prose':
+                preparation = {'status': 'prepared', 'number': self.number,
+                    'target_level': self.level, 'stages': self.stages,
+                    'source_plan': bound_plan, 'lexical_plan': focus, 'prose': prose}
+                save(self.run_dir / 'preparation.json', preparation)
+                return preparation
             required_words, required_grammar = {}, set()
             def check_annotation(value):
                 contracts.check_reconstruction(value["segments"], prose["text"])
@@ -483,7 +495,7 @@ class KoreanHarness:
             annotation_prompt += "Meaning_en is the whole observed form. The final form-step meaning must retain the occurrence meaning and contextual tense, including past time inherited by a connective. Intermediate stages explain their own complete forms; the dictionary lemma remains neutral. Labels describe morphology and politeness separately from the complete meaning. "
             annotation_prompt += payload(prose=prose, words=list(self.words.values()), grammar=list(self.grammar.values()), lexical_plan=focus, nikl_A=[([e["id"], e["meaning"]] if e["meaning"] else e["id"]) for e in beginner])
             async def produce_annotation(job, issues):
-                texts = contracts.annotation_chunks(prose["text"])
+                texts = contracts.annotation_chunks(prose["text"], batch_characters=self.annotation_batch_characters)
                 selected, previous_chunks, old_lineage, repair_evidence = None, None, None, {}
                 reused = {}
                 if not issues and reuse_candidate is not None:
@@ -619,6 +631,8 @@ class KoreanHarness:
                 values, lineage = zip(*results)
                 combined = contracts.combine_annotations(list(values), texts)
                 assembly = {'return_code': 0, 'kind': 'annotation_assembly', 'chunks': list(lineage), **repair_evidence}
+                if self.annotation_batch_characters:
+                    assembly['batch_characters'] = self.annotation_batch_characters
                 new_ids = sorted({link['entry_id'] for link in combined['grammar_links']} - self.grammar.keys())
                 if new_ids:
                     errors, previous_bindings = [], None
@@ -764,10 +778,12 @@ def main() -> None:
     parser.add_argument("--chapter", type=int, required=True)
     parser.add_argument("--run-dir", type=Path, required=True)
     parser.add_argument("--existing", type=Path)
+    parser.add_argument('--stop-after', choices=['prose'], help='Prepare reviewed prose; resume without this flag to finish all publication gates')
+    parser.add_argument('--annotation-batch-characters', type=int, default=0, help='Group complete sentences into model jobs; zero preserves one-sentence jobs. Does not limit chapter length.')
     parser.add_argument("--model", default="gpt-6.1-sol")
     parser.add_argument('--workers', type=int, default=4, help='Concurrent annotation model jobs (default: 4)')
     args = parser.parse_args()
-    report = asyncio.run(KoreanHarness(args.run_dir, args.chapter, existing=args.existing, model=args.model, workers=args.workers, level=args.level).run())
+    report = asyncio.run(KoreanHarness(args.run_dir, args.chapter, existing=args.existing, model=args.model, workers=args.workers, level=args.level, stop_after=args.stop_after, annotation_batch_characters=args.annotation_batch_characters).run())
     print(json.dumps({"status": report["status"], "chapter": report["number"], "stages": list(report["stages"])}))
 
 

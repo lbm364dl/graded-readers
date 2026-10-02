@@ -189,10 +189,28 @@ def canonical_annotation(value: dict, prose: dict, number: int, edition: str, pl
     return result
 
 
-def annotation_chunks(text: str) -> list[str]:
+def annotation_chunks(text: str, *, batch_characters: int = 0) -> list[str]:
+    """Group complete adjacent sentences for model jobs, never shorten prose.
+
+    A sentence longer than the job budget remains intact. Zero preserves the
+    original one-sentence partition and its existing publication evidence.
+    """
+    if type(batch_characters) is not int or batch_characters < 0:
+        raise ValueError('Korean annotation batch budget must be nonnegative')
     inventory = sentence_inventory(text)
     starts = [0] + [row["start"] for row in inventory[1:]] + [len(text)]
-    return [text[start:end] for start, end in zip(starts, starts[1:])]
+    sentences = [text[start:end] for start, end in zip(starts, starts[1:])]
+    if not batch_characters:
+        return sentences
+    chunks, pending = [], ''
+    for sentence in sentences:
+        if pending and len(pending) + len(sentence) > batch_characters:
+            chunks.append(pending)
+            pending = ''
+        pending += sentence
+    if pending:
+        chunks.append(pending)
+    return chunks
 
 
 def bind_grammar_identities(value: dict, bindings: dict, approved_ids: set) -> dict:

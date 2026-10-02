@@ -42,6 +42,20 @@ The approved dictionary registry remains shared under its historical `l1.*`
 filenames. Publication preserves other editions and combines all published
 source routes in the app dictionary and sentence-help assets.
 
+Use `--stop-after prose` to prepare an edition through independent source,
+lexical-plan and prose reviews while another edition finishes annotation. This
+writes `preparation.json`, not a publication report. Resume without that flag;
+the normal cache verifies reusable reviews, and annotation reads the then-current
+shared dictionary. A prepared draft cannot pass publication.
+
+`--annotation-batch-characters 240` groups adjacent complete sentences into
+model jobs to reduce repeated calls. This controls job size, never chapter length:
+an overlong sentence stays intact, and every character and separator is preserved.
+The default zero keeps one-sentence jobs, including existing run evidence.
+Assembly records the grouping budget; publication replays the exact partition.
+Repairs select affected groups and retain unaffected ones through the same
+digest-checked assembly mechanism.
+
 The harness proposes a source plan, reviewed name/story identities, target-level prose,
 exact tap annotations, curriculum bindings, missing dictionary entries and selective sentence help. Each of the seven stages has an
 independent review and up to seven repairs after the first attempt.

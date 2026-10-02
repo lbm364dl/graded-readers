@@ -173,7 +173,7 @@ def verify_run(run_dir: Path) -> tuple[dict, dict, dict, dict]:
     annotation_job = report["stages"]["annotation"].get("proposal_job")
     if annotation_job:
         assembly = read(run_dir / "agents" / annotation_job / "meta.json")
-        if assembly.get("kind") == "annotation_assembly" and [c["text"] for c in assembly["chunks"]] != contracts.annotation_chunks(prose["text"]):
+        if assembly.get("kind") == "annotation_assembly" and [c["text"] for c in assembly["chunks"]] != contracts.annotation_chunks(prose["text"], batch_characters=assembly.get('batch_characters', 0)):
             raise ValueError("Korean annotation chunks do not match reviewed prose")
     words = {**dictionary._registry(dictionary.WORDS), **{e["id"]: e for e in delta["words"]}}
     annotation = outputs.get("annotation")
