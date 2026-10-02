@@ -568,6 +568,8 @@ class KoreanHarness:
             raise ValueError('The preceding Korean chapter needs a reviewed source stopping point')
         source_start = previous_chapter['source_alignment']['unit']['end'] + 2 if previous_chapter else 0
         full_source = (ROOT / 'books/korean/honggildong' / manifest['text_file']).read_text(encoding='utf-8').rstrip('\n')
+        from pipeline.korean_source_context import load as source_guidance
+        reviewed_source_context = source_guidance(full_source)
         if source_start >= len(full_source):
             raise ValueError('No Korean source remains for another chapter')
         source = full_source[source_start:]
@@ -598,7 +600,8 @@ class KoreanHarness:
         report_path.unlink(missing_ok=True)
         context = {"chapter_number": self.number, "source_start": source_start,
                    "target_level": self.level, "target_goals": LEVEL_GOALS[self.level], "edition": EDITION, "source": source, "unit": unit,
-                   "previous_chapters": previous_text, "source_notes": source_notes}
+                   "previous_chapters": previous_text, "source_notes": source_notes,
+                   "reviewed_source_context": reviewed_source_context}
         plan_context = {**context, 'source': {'sha256': sha(source.encode())},
             'paragraphs': [{"index": i, "text": p} for i, p in enumerate(source.split("\n\n"))]}
         plan = await self.stage("plan", f"Choose a coherent next TOPIK {self.level} chapter from the remaining original narrative. Select last_source_paragraph_index as its stopping point: the chapter covers the contiguous source prefix through that paragraph, including justified omissions within it. Stop at a natural narrative boundary; do not cover the entire remaining book by default. There is no fixed source-slice size. "

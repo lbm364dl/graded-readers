@@ -503,7 +503,7 @@ def test_independent_review_rejection_repairs_and_only_approval_completes(tmp_pa
             self.jobs = []
         async def call(self, job, prompt, *args, **kwargs):
             self.jobs.append(job)
-            if job == 'prose-review-0':
+            if job in ('prose-review-0', 'prose-review-0-adjudication'):
                 return {'approved': False, 'issues': ['Unsupported people group']}
             if '-review-' in job:
                 assert 'Unsupported people group' in prompt or job.endswith('1')
@@ -513,7 +513,7 @@ def test_independent_review_rejection_repairs_and_only_approval_completes(tmp_pa
     harness = KoreanHarness(tmp_path, 1, runner=runner)
     result = asyncio.run(harness.stage('prose', 'task', 'prose', lambda _: None, {}))
     assert result['text'] == 'fixed'
-    assert runner.jobs == ['prose-0', 'prose-review-0', 'prose-1', 'prose-review-1']
+    assert runner.jobs == ['prose-0', 'prose-review-0', 'prose-review-0-adjudication', 'prose-1', 'prose-review-1']
     assert harness.stages['prose']['review_job'] == 'prose-review-1'
 
 
@@ -855,6 +855,8 @@ def test_partial_stage_reuses_actual_cached_review_only_for_matching_context(tmp
     original = harness.runner.call
     async def cache_only(job, *args, **kwargs):
         if not kwargs.get('cache_only'):
+            if not approved_review and job == 'prose-review-4-adjudication':
+                return {'approved': False, 'issues': ['Concrete wording correction']}
             if not approved_review and job == 'prose-5':
                 assert 'Concrete wording correction' in args[0]
                 return value
@@ -969,7 +971,7 @@ def test_changed_policy_repairs_latest_cached_draft_after_old_attempt_budget(tmp
         def __init__(self): self.jobs = []
         async def call(self, job, prompt, *args, **kwargs):
             self.jobs.append(job)
-            if job == 'prose-review-8':
+            if job in ('prose-review-8', 'prose-review-8-adjudication'):
                 return {'approved': False, 'issues': ['A concrete wording repair.']}
             if job == 'prose-9':
                 assert 'A concrete wording repair.' in prompt
@@ -980,7 +982,7 @@ def test_changed_policy_repairs_latest_cached_draft_after_old_attempt_budget(tmp
     runner = Runner()
     harness = KoreanHarness(tmp_path, 1, runner=runner)
     assert asyncio.run(harness.stage('prose', 'Current policy', 'prose', check_prose, {})) == draft
-    assert runner.jobs == ['prose-review-8', 'prose-9', 'prose-review-9']
+    assert runner.jobs == ['prose-review-8', 'prose-review-8-adjudication', 'prose-9', 'prose-review-9']
 
 
 def test_optional_grammar_still_requires_independent_whole_chapter_review(tmp_path):
