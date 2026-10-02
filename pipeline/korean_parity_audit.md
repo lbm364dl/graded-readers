@@ -390,3 +390,10 @@ and retains completed primary snapshots if a later page fails. Regressions
 contrast a single-page response, a later-page homonym with a duplicate earlier
 record, and an interrupted later page. Research still requires exact-record
 retrieval and independent lexical review; pagination supplies candidates only.
+
+With both result pages retrieved, independent primary research approved
+stdict-379255/명 for 화 (禍), calamity or misfortune. The existing 화06/명 anger
+identity remains separate. The new candidate has no inferred curriculum grade;
+its passage binding must still be checked against the six-level source and its
+annotation reviewed. The investigation also excludes -화 suffix records and
+화하다 roots from the standalone noun request.

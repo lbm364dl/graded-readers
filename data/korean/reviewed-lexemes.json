@@ -6362,6 +6362,359 @@
         ]
       },
       "occurrence_requests_digest": "19c86c2f631f4f1b3057609d9efb9e103b38a6eac52f3dad861e4f47109f249a"
+    },
+    {
+      "headwords": [
+        "이상히"
+      ],
+      "proposal": {
+        "entries": [],
+        "unresolved": [
+          {
+            "headword": "이상히",
+            "reason_en": "The supplied snapshot attests 이상-히 (異常히), POS 부사, meaning unusually, strangely or suspiciously. However, the direct Standard Dictionary record https://stdict.korean.go.kr/search/searchView.do?word_no=260372 could not be retrieved readably, so stdict-260372/부사 remains unverified for independent review. The retrieved Basic Dictionary record https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=71168&nation=eng has headword 이상, POS 명사, and merely lists 이상히 as a derivative; it cannot supply an identity for this adverb. No standalone Basic record was found. This is an evidence limitation, not a judgment that 이상히 is incorrect."
+          }
+        ]
+      },
+      "proposal_digest": "af1bfca3fc0fde032a972ffc17359bc0e3056635d32fe3de7ab2e080743705cc",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "f5a2d9c8f3d90c146ad2bd4aa1134d58e89b785c30fc1f051640e1e00c17acde",
+      "primary_evidence": [
+        {
+          "headword_request": "이상히",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%9D%B4%EC%83%81%ED%9E%88",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=260372",
+              "content_sha256": "f1cab646064ee9e8657327a9035a9539456d3d21ef5f215bd84ae4a81448aef6",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 이상-히 (異常히 ) 원어 異 다를 이 다를 리 부수 田/총획 11 常 항상 상 부수 巾/총획 11 히 한자 고유어 발음 [이ː상히] 주표제어 이상 11 「부사」 「1」 정상적인 상태와 다르게. 「2」 지금까지의 경험이나 지식과는 달리 별나거나 색다르게. 「3」 의심스럽거나 알 수 없는 데가 있게. 이상히 여기다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "proposal_records": []
+        }
+      ],
+      "primary_evidence_digest": "57abc64f36138bbe45b277630152e51c18e09bdb2c7ab5d545b085e1595b74d4",
+      "occurrence_requests": {
+        "이상히": [
+          {
+            "text": "이상히",
+            "meaning_en": "as strange"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "e477cbd61a82a1d2e90bb8ea9fb109bd51bd72089983f57526c63056d6062149"
+    },
+    {
+      "headwords": [
+        "누설하다"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "stdict-409498/동",
+            "headword": "누설하다",
+            "pos": "동",
+            "meaning_en": "To leak or release gas or liquid; to disclose a secret or let it become known.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=409498",
+            "evidence_en": "The supplied primary-record snapshot identifies 누설-하다 (漏泄하다/漏洩하다) as 동사 and gives both physical leakage and secret disclosure senses. This lexeme covers the requested meaning 'disclose'. No existing identity was supplied. Basic Dictionary searches yielded examples under other headwords, without a verified standalone record. Live retrieval of the Standard Dictionary record failed; attestation relies on the supplied snapshot."
+          },
+          {
+            "id": "stdict-70914/동",
+            "headword": "누설하다",
+            "pos": "동",
+            "meaning_en": "To explain or speak in detail.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=70914",
+            "evidence_en": "The supplied primary-record snapshot identifies the distinct homonym 누설-하다 (縷說하다) as 동사, defined as 자세히 말하다. This is separate from the disclosure lexeme. No existing identity was supplied. Live retrieval failed; attestation relies on the supplied snapshot."
+          }
+        ],
+        "unresolved": []
+      },
+      "proposal_digest": "7fe253e8b9d501962a3ff2502861bc1a3c08494d9e11fed9fc3132f3e79087f6",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "f5a2d9c8f3d90c146ad2bd4aa1134d58e89b785c30fc1f051640e1e00c17acde",
+      "primary_evidence": [
+        {
+          "headword_request": "누설하다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EB%88%84%EC%84%A4%ED%95%98%EB%8B%A4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=409498",
+              "content_sha256": "bc854916f73ca21bf5615fc805554ce28b034701f1a9897d07c54083d9075ee1",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 누설-하다 1 (漏泄하다/漏洩하다 ) 원어 漏 샐 루 샐 누 부수 水/총획 14 泄 샐 설 흩어질 예 부수 水/총획 8 하다 한자 고유어 원어 漏 샐 루 샐 누 부수 水/총획 14 洩 훨훨 날 예 흘러나올 설 부수 水/총획 9 하다 한자 고유어 발음 [누ː설하다 ] 활용 누설하여[누ː설하여](누설해[누ː설해]), 누설하니[누ː설하니] 주표제어 누설 2 「비슷한말」 누출하다(漏出하다) 편집 이력 「동사」 【…을 …에/에게】【 …을 …으로】 「1」 기체나 액체 따위가 밖으로 새어 나가다. 또는 그렇게 하다. 유독 물질을 상류에 누설한 범인이 경찰에 잡혔다. 폐수를 몰래 하천으로 누설한 업주들이 구속되었다. 「2」 비밀이 새어 나가다. 또는 그렇게 하다. ≒ 노설하다 , 설루하다 . 그가 비밀을 다른 경쟁 회사에 누설하였다니 믿을 수 없는 일이다. 사장은 직원들이 회사 기밀을 외부로 누설하지 못하도록 하는 방안을 찾고 있다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=70914",
+              "content_sha256": "71697f28de5c58c9413c8b2fbf15d2b0fa3bda90fd3bfdc8a9a3b588fcb46ba7",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 누설-하다 2 (縷說하다 ) 원어 縷 실 루 실 누 부수 糸/총획 17 說 말씀 설 달랠 세 기뻐할 열 벗을 탈 부수 言/총획 14 하다 한자 고유어 발음 [누ː설하다 ] 활용 누설하여[누ː설하여](누설해[누ː설해]), 누설하니[누ː설하니] 주표제어 누설 3 편집 이력 「동사」 【…을】 자세히 말하다. = 누언하다 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "proposal_records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=409498",
+              "content_sha256": "bc854916f73ca21bf5615fc805554ce28b034701f1a9897d07c54083d9075ee1",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 누설-하다 1 (漏泄하다/漏洩하다 ) 원어 漏 샐 루 샐 누 부수 水/총획 14 泄 샐 설 흩어질 예 부수 水/총획 8 하다 한자 고유어 원어 漏 샐 루 샐 누 부수 水/총획 14 洩 훨훨 날 예 흘러나올 설 부수 水/총획 9 하다 한자 고유어 발음 [누ː설하다 ] 활용 누설하여[누ː설하여](누설해[누ː설해]), 누설하니[누ː설하니] 주표제어 누설 2 「비슷한말」 누출하다(漏出하다) 편집 이력 「동사」 【…을 …에/에게】【 …을 …으로】 「1」 기체나 액체 따위가 밖으로 새어 나가다. 또는 그렇게 하다. 유독 물질을 상류에 누설한 범인이 경찰에 잡혔다. 폐수를 몰래 하천으로 누설한 업주들이 구속되었다. 「2」 비밀이 새어 나가다. 또는 그렇게 하다. ≒ 노설하다 , 설루하다 . 그가 비밀을 다른 경쟁 회사에 누설하였다니 믿을 수 없는 일이다. 사장은 직원들이 회사 기밀을 외부로 누설하지 못하도록 하는 방안을 찾고 있다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=70914",
+              "content_sha256": "71697f28de5c58c9413c8b2fbf15d2b0fa3bda90fd3bfdc8a9a3b588fcb46ba7",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 누설-하다 2 (縷說하다 ) 원어 縷 실 루 실 누 부수 糸/총획 17 說 말씀 설 달랠 세 기뻐할 열 벗을 탈 부수 言/총획 14 하다 한자 고유어 발음 [누ː설하다 ] 활용 누설하여[누ː설하여](누설해[누ː설해]), 누설하니[누ː설하니] 주표제어 누설 3 편집 이력 「동사」 【…을】 자세히 말하다. = 누언하다 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "e8b9eaeaaf463888cbf8c4b1d3e14c99f1ff2df4bae226ae5ab1403499be5aec",
+      "occurrence_requests": {
+        "누설하다": [
+          {
+            "text": "누설하지",
+            "meaning_en": "disclose"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "4237b63fe25a24ddec255491bbfdabdd8a7697a88394d5abd8c93bef00f3f0e8"
+    },
+    {
+      "headwords": [
+        "화"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "stdict-379255/명",
+            "headword": "화",
+            "pos": "명",
+            "meaning_en": "Calamity; misfortune.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=379255",
+            "evidence_en": "Supplied direct Standard Dictionary content identifies 화 (禍), 명사, defined as 모든 재앙과 액화. It attests the requested misfortune lexeme, distinct from existing anger identity 화06/명. No exact standalone Basic Dictionary record for this homonym was verified."
+          },
+          {
+            "id": "stdict-379254/명",
+            "headword": "화",
+            "pos": "명",
+            "meaning_en": "Picture; painting (literary term).",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=379254",
+            "evidence_en": "Supplied direct Standard Dictionary content identifies 화 (畫), 명사, as a literary term for 그림. This standalone noun is absent from the supplied catalog identities and distinct from suffix -화. No exact standalone Basic Dictionary record for this homonym was verified."
+          }
+        ],
+        "unresolved": [
+          {
+            "headword": "화",
+            "reason_en": "The anger noun is already covered by 화06/명. Supplied Standard Dictionary record stdict-379247 identifies 화 (火), 명사, as anger. Directly retrieved Basic Dictionary record https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=74134 also explicitly identifies 화 (火), 명사, defined as 몹시 못마땅하거나 노여워하는 감정. No duplicate identity is proposed."
+          },
+          {
+            "headword": "화",
+            "reason_en": "Supplied direct noun records are already covered by stdict-373899/명 (nature’s nurturing action), stdict-379248/명 (Tuesday abbreviation), stdict-379249/명 (harmony; obsolete mathematical sum), stdict-507241/명 (fire heat; traditional fire element), and stdict-507242/명 (thirteen-pipe ritual instrument). No duplicate identities are proposed."
+          },
+          {
+            "headword": "화",
+            "reason_en": "Standard records 374953, 373900, 379251, and 379253 identify roots of 화하다 without a standalone lexical POS. Record 508187 identifies a surname, excluded as a proper name. Records 379257, 507381, and 518467 identify the exact headword -화, POS 접사, rather than requested 화; they cannot establish a standalone lexeme for this request."
+          }
+        ]
+      },
+      "proposal_digest": "1e9fcf3a603c24ce92e40f737a0ccd283f940878c40cea06fb6502b26da0970a",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "c6a0027d0694ef196c9553b759424d8b6193bc75b157ffd83bda766412ea8f52",
+      "primary_evidence": [
+        {
+          "headword_request": "화",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%ED%99%94",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=373899",
+              "content_sha256": "3c01d6b2a5d45665e0e77eedba02e95bddc5306f66a8587bfe81eb303173d42b",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 화 2 (化 ) 원어 化 될 화 부수 匕/총획 4 한자 발음 [화ː ] 「명사」 천지자연이 만물을 생육(生育)하는 작용. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=373900",
+              "content_sha256": "076791159b8f11c8d587896a7a91bda2a9db2637e922130645a85652cadb064a",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 화 4 (化 ) 원어 化 될 화 부수 匕/총획 4 한자 부표제어 화-하다 2 ‘ 화하다 ’의 어근. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 4 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=374953",
+              "content_sha256": "11d801decf7676ab3f1648d600f0bf62ae62eeca4ea27f443ae446c5fdded663",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 화 1 부표제어 화-하다 1 ‘ 화하다 ’의 어근. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=379247",
+              "content_sha256": "b41e472771c870608f850e7ad9b99d9939157888d1491e313dac734d7eed9492",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 화 5 (火 ) 원어 火 불 화 부수 火/총획 4 한자 발음 [화ː ] 「명사」 몹시 못마땅하거나 언짢아서 나는 성. 화가 치밀다. 화를 내다. 화를 돋우다. 화를 풀다. 화가 나서 어쩔 줄을 모르다. 더 보기 관용구/속담 관용구 화가 동하다 참고 참던 성난 기운이 더는 억제되지 아니하여 사람으로 하여금 격한 발언이나 행동을 하게 하다. · 물건을 잃고 속상한 판에도 이 천재적으로 우열을 가리고 사람의 속을 쿡쿡 쑤셔 대는 민기에 종혁은 살짝 화가 동했다 .≪이정환, 샛강≫ 관용구 화가 뜨다 노여워 분이 치밀어 오르다. · 노 첨지는 아들의 병과 딸의 횡액으로 해서 화가 떴다 .≪홍명희, 임꺽정≫ 관용구 화가 머리끝까지 나다[치밀다] 극도로 화가 나다. · 밤을 새우고 들어온 나를 보자 아버지는 화가 머리끝까지 나서 소리를 지르셨다. · 화가 머리끝까지 치민 삼석이는 부지중에 조선말로 욕을 퍼붓는다.≪박경리, 토지≫ 관용구 화를 끓이다 화를 시원하게 풀지 못하고 혼자 끙끙거리다. ≒ 심화를 끓이다 . · 오래 화를 끓이면 병이 된다. · 그렇게 화를 끓인다고 해결되겠니? 나가서 바람이나 쐬고 오렴. 속담 화가 홀아비 동심(動心)하듯 화가 불끈 일어나는 모양을 비유적으로 이르는 말. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 5 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=379248",
+              "content_sha256": "b8694720871336bd483fb3b23a3b398ba08384d6913f0facfebbe4bfc6b457ec",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 화 6 (火 ) 원어 火 불 화 부수 火/총획 4 한자 발음 [화 ] 편집 이력 「명사」 ((주로 요일을 열거할 때 쓰여)) ‘ 화요일 ’을 이르는 말. 강습은 월, 수, 금과 화 , 목으로 나누어 진행된다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 6 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=379249",
+              "content_sha256": "fd37ce4d581ab65cfb97ff16ef269cd8d0d5417c06255df98a1ce864fdfab43f",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 화 8 (和 ) 원어 和 화목할 화 부수 口/총획 8 한자 발음 [화 ] 부표제어 화-하다 3 「명사」 「1」 서로 뜻이 맞아 사이좋은 상태. 「2」 『수학』 ‘ 합 ’의 전 용어. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 8 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=379251",
+              "content_sha256": "fa64794d0da979b04ca6bfe61dbad3c5931bb73263a05d4401c72f6187a1c10f",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 화 10 (和 ) 원어 和 화목할 화 부수 口/총획 8 한자 부표제어 화-하다 4 ‘ 화하다 ’의 어근. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 10 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=507241",
+              "content_sha256": "8b95adb1077f3a95ec47c342964f72aa250b26bece4f21249bf95212c082c61a",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 화 7 (火 ) 원어 火 불 화 부수 火/총획 4 한자 발음 [화ː ] 편집 이력 「명사」 「1」 불에서 느껴지는 뜨거운 기운. = 불기운 . 「2」 『민속』 오행(五行)의 하나. 방위로는 남쪽, 계절로는 여름, 빛깔로는 적색을 가리킨다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 7 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=507242",
+              "content_sha256": "43b1c44b50c27d3e426e30022b80fd3bbc379e9f2960c2ad1f05972cf11dc07f",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 화 9 (和 ) 원어 和 화목할 화 부수 口/총획 8 한자 발음 [화 ] 「명사」 『음악』 아악에 쓰이는 관악기의 하나. 모양이 생황과 같이 생겼으며 열세 개의 관으로 되어 있다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 9 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=508187",
+              "content_sha256": "ab76b92e90fc8ee09ad3ec5ac9c46121c8ccd1efbffa53c0d49f50f580f855bf",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 화 3 (化 ) 원어 化 될 화 부수 匕/총획 4 한자 발음 [화ː ] 「명사」 우리나라 성(姓)의 하나. 본관은 진양(晉陽), 나주(羅州) 등이 현존한다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=379253",
+              "content_sha256": "01c6db72dd9cbd1631fe197f4739ec6ebc0db60a53a8469e467c1b13370453a5",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 화 11 (和 ) 원어 和 화목할 화 부수 口/총획 8 한자 부표제어 화-하다 5 ‘ 화하다 ’의 어근. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 11 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=379254",
+              "content_sha256": "407143d6718f736e6ac4740e3ef9415a112872db571a5bf001109ab2545a1086",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 화 12 (畫 ) 원어 畫 그림 화 가를 획 부수 田/총획 12 한자 발음 [화ː ] 「참고 어휘」 -화(畫) 「명사」 ‘ 그림 ’을 문어적으로 이르는 말. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 12 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=379255",
+              "content_sha256": "35da1a708b24af4e7cd135f253d11e2e326f32eadede3c897c0ad179eba4bccb",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 화 13 (禍 ) 원어 禍 재앙 화 부수 示/총획 14 한자 발음 [화ː ] 「명사」 모든 재앙과 액화. 화를 당하다. 화를 면하다. 화를 입다. 화를 부르다. ‘하늘이 만든 화는 가히 피할 수가 있지만 스스로 부른 화는 피할 길이 없다.’란 말도 있습니다. ≪이문열, 황제를 위하여≫ 더 보기 관용구/속담 속담 화가 복(이) 된다 처음에 재앙으로 여겼던 것이 원인이 되어 뒤에 다행스러운 결과를 가져오는 수도 있다는 말. 속담 화는 홀로 다니지 않는다 한 가지 불행에 뒤이어 다른 불행을 만나게 됨을 이르는 말. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 13 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=379257",
+              "content_sha256": "67cb2838c067899febfb4433a6469092e16852835f4625981a9c6f08d547bc1b",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 -화 14 (化 ) 원어 化 될 화 부수 匕/총획 4 한자 「접사」 ((일부 명사 뒤에 붙어)) ‘그렇게 만들거나 됨’의 뜻을 더하는 접미사. 기계화 . 대중화 . 도시화 . 자동화 . 전문화 . 더 보기 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 14 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=507381",
+              "content_sha256": "ae171ac5b75253f69121fa6ddcd3d742c16140c95f135e1e7b9cf84a54e9542f",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 -화 15 (畫 ) 원어 畫 그림 화 가를 획 부수 田/총획 12 한자 「참고 어휘」 화(畫) 「접사」 ((일부 명사 뒤에 붙어)) ‘그림’의 뜻을 더하는 접미사. 동양화 . 수채화 . 정물화 . 풍경화 . 더 보기 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 15 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=518467",
+              "content_sha256": "f975871b36fe9e57f5d1df7d558a08200cfa06f8f22337f049d53ad254cc8a43",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 -화 16 (靴 ) 원어 靴 신 화 부수 革/총획 13 한자 「접사」 ((일부 명사 뒤에 붙어)) ‘ 신발 ’의 뜻을 더하는 접미사. 숙녀화 . 신사화 . 등산화 . 운동화 . 러닝화 . 조깅화 . 더 보기 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 16 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "proposal_records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=379254",
+              "content_sha256": "407143d6718f736e6ac4740e3ef9415a112872db571a5bf001109ab2545a1086",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 화 12 (畫 ) 원어 畫 그림 화 가를 획 부수 田/총획 12 한자 발음 [화ː ] 「참고 어휘」 -화(畫) 「명사」 ‘ 그림 ’을 문어적으로 이르는 말. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 12 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=379255",
+              "content_sha256": "35da1a708b24af4e7cd135f253d11e2e326f32eadede3c897c0ad179eba4bccb",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 화 13 (禍 ) 원어 禍 재앙 화 부수 示/총획 14 한자 발음 [화ː ] 「명사」 모든 재앙과 액화. 화를 당하다. 화를 면하다. 화를 입다. 화를 부르다. ‘하늘이 만든 화는 가히 피할 수가 있지만 스스로 부른 화는 피할 길이 없다.’란 말도 있습니다. ≪이문열, 황제를 위하여≫ 더 보기 관용구/속담 속담 화가 복(이) 된다 처음에 재앙으로 여겼던 것이 원인이 되어 뒤에 다행스러운 결과를 가져오는 수도 있다는 말. 속담 화는 홀로 다니지 않는다 한 가지 불행에 뒤이어 다른 불행을 만나게 됨을 이르는 말. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 13 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "175a4cbed1524560aa2c54ae75ea49a92d0c24b6fb43066d4f55a5e9ce80a5c8",
+      "occurrence_requests": {
+        "화": [
+          {
+            "text": "화를",
+            "meaning_en": "harm; misfortune"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "a9809ab36990709aca3b8c9955134b6a307a39c05d25c910bdaace3fdc50fd74"
+    },
+    {
+      "headwords": [
+        "대우받다"
+      ],
+      "proposal": {
+        "entries": [],
+        "unresolved": [
+          {
+            "headword": "대우받다",
+            "reason_en": "No readable standalone NIKL Basic or Standard Dictionary record with an exact headword, POS, and stable record ID was verified. Targeted searches found no qualifying NIKL record; both dictionary search pages failed to load, and the supplied evidence contains no records. This does not establish that the natural word is incorrect or absent from those dictionaries."
+          }
+        ]
+      },
+      "proposal_digest": "7da23bc74af88bfc1f64d2530b168048f6e1271e5ba261912bbb11e93c33dbef",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "c6a0027d0694ef196c9553b759424d8b6193bc75b157ffd83bda766412ea8f52",
+      "primary_evidence": [
+        {
+          "headword_request": "대우받다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EB%8C%80%EC%9A%B0%EB%B0%9B%EB%8B%A4",
+          "records": []
+        },
+        {
+          "proposal_records": []
+        }
+      ],
+      "primary_evidence_digest": "48b4cde1dd3e59622957766bb02b5d735e767ed0f8e0304142ece64696dace8a"
+    },
+    {
+      "headwords": [
+        "병법책"
+      ],
+      "proposal": {
+        "entries": [],
+        "unresolved": [
+          {
+            "headword": "병법책",
+            "reason_en": "No readable standalone NIKL Basic or Standard Dictionary record was verified. Targeted web searches found no primary headword record, and direct dictionary searches were inaccessible. Ordinary usage does not establish a dictionary identity; this remains unverified, not judged incorrect."
+          }
+        ]
+      },
+      "proposal_digest": "cfd4d06466285de408393d5581f5f68ed66247a959d535aa146a10595ec2d986",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "f5a2d9c8f3d90c146ad2bd4aa1134d58e89b785c30fc1f051640e1e00c17acde",
+      "primary_evidence": [
+        {
+          "headword_request": "병법책",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EB%B3%91%EB%B2%95%EC%B1%85",
+          "records": []
+        },
+        {
+          "proposal_records": []
+        }
+      ],
+      "primary_evidence_digest": "41cc4658168393f5124193994bbb9cb76a645a15665ba4aeac69bed7c10460aa",
+      "occurrence_requests": {
+        "병법책": [
+          {
+            "text": "병법책을",
+            "meaning_en": "books on military strategy"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "647fb98863e12da24007cf25bd078f7f5cc9cdf5aab8a5c09f6762d42f254cf9"
     }
   ]
 }
