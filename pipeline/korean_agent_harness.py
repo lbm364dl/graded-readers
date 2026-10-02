@@ -573,15 +573,16 @@ class KoreanHarness:
         context = {"chapter_number": self.number, "source_start": source_start,
                    "target_level": self.level, "target_goals": LEVEL_GOALS[self.level], "edition": EDITION, "source": source, "unit": unit,
                    "previous_chapters": previous_text, "source_notes": source_notes}
+        plan_context = {**context, 'source': {'sha256': sha(source.encode())},
+            'paragraphs': [{"index": i, "text": p} for i, p in enumerate(source.split("\n\n"))]}
         plan = await self.stage("plan", f"Choose a coherent next TOPIK {self.level} chapter from the remaining original narrative. Select last_source_paragraph_index as its stopping point: the chapter covers the contiguous source prefix through that paragraph, including justified omissions within it. Stop at a natural narrative boundary; do not cover the entire remaining book by default. There is no fixed source-slice size. "
             "Give a Korean title and select source_paragraph_index from the numbered paragraphs, "
             "with the event supported by that paragraph in English. Do not copy or reconstruct old Hangul. "
             "Selected paragraphs must support ALL details of their events, in source order without duplicates. "
             "Judge how much meaningful narrative can be retained through natural wording appropriate to the requested target. There is no paragraph quota or total-length target. Preserve causality, character relationships, understandable actions and development; do not collapse a scene into a bare summary when its events can be expressed at this level. Omit or simplify details only when they add unnecessary learner difficulty or distract from the coherent scene. In scope_reason_en explain retained coverage, significant omissions, level tradeoffs and the natural stopping point. Do not pad with repetition or invent events. If existing_text is supplied, plan ONLY its retained events; "
             "do not request omitted side stories, births or scenes."
-            + payload(**context, paragraphs=[{"index": i, "text": p} for i, p in enumerate(source.split("\n\n"))],
-                      existing_text=existing["text"] if existing else ""), "plan",
-            lambda value: contracts.bind_plan(value, source, unit["start"]), context)
+            + payload(**plan_context, existing_text=existing["text"] if existing else ""), "plan",
+            lambda value: contracts.bind_plan(value, source, unit["start"]), plan_context)
         bound_plan = contracts.bind_plan(plan, source, unit["start"])
         unit = {'number': self.number, **bound_plan['scope'], 'label': plan['title']}
         _, _, source = load_selected_unit(unit)

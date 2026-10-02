@@ -1207,7 +1207,12 @@ def test_planning_context_distinguishes_first_chapter_from_published_continuatio
         assert context['chapter_number'] == (2 if has_prior_chapter else 1)
         assert context['source_start'] == (end + 2 if has_prior_chapter else 0)
         assert context['previous_chapters'] == ('Published chapter' if has_prior_chapter else '')
-        assert context['source'] == (source[end + 2:] if has_prior_chapter else source)
+        remaining = source[end + 2:] if has_prior_chapter else source
+        assert '\n\n'.join(row['text'] for row in context['paragraphs']) == remaining
+        assert [row['index'] for row in context['paragraphs']] == list(range(len(remaining.split('\n\n'))))
+        assert context['source'] == {'sha256': harness_module.sha(remaining.encode())}
+        instructions, unique = harness_module.review_task(prompt, context)
+        assert 'paragraphs' not in unique  # Review gets the source only once.
         raise ContextCaptured()
     monkeypatch.setattr(harness, 'stage', inspect)
     with pytest.raises(ContextCaptured):

@@ -590,3 +590,11 @@ Planning context includes chapter_number and the authoritative source_start.
 Two regression cases verify the opening chapter against a real published
 continuation, including the exact remaining source text. Chapter length still
 depends on reviewed source coverage and learner difficulty, with no quotas.
+
+Source planning previously transmitted both the entire raw original and its
+numbered paragraphs. It now sends the numbered paragraphs once, plus the source
+hash and authoritative offsets. Review-task deduplication removes the same
+paragraph array from duplicate task inputs. The first-chapter and continuation
+tests reconstruct the exact original from every retained paragraph, verify its
+hash, and prove the review receives one copy. Later stages still receive their
+selected source normally; no narrative is sampled or truncated.
