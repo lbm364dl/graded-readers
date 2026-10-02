@@ -301,6 +301,10 @@ async def _research_batch(headwords, run_dir, *, runner=None, registry=REGISTRY,
         async with retrieval_limit:
             return await asyncio.to_thread(standard_evidence, headword)
     primary_evidence = await asyncio.gather(*(retrieve(h) for h in headwords))
+    supplied_records_complete = all(
+        evidence.get('records') and all(record.get('text', '').strip()
+            for record in evidence['records']) for evidence in primary_evidence)
+    editor_profile = 'offline' if supplied_records_complete else 'research'
     catalog = contracts.lexical_catalog()
     known_candidates = {h: catalog.get(h, []) for h in headwords}
     key = fingerprint({'headwords': headwords, 'occurrence_requests': occurrence_requests})[:16] if occurrence_requests else fingerprint(headwords)[:16]
@@ -310,10 +314,12 @@ async def _research_batch(headwords, run_dir, *, runner=None, registry=REGISTRY,
     for attempt in range(4):
         proposal = await runner.call(f'lexical-research-{key}-{attempt}',
             RESEARCH_POLICY + RESEARCH_SCOPE
+            + ('\nAll requested spellings have supplied direct dictionary records. Edit using only those records; do not call tools. '
+               if supplied_records_complete else '\nUse web search to investigate requests lacking supplied direct records. ')
             + ('\nThe supplied occurrence_requests are unverified search context, not attestation. Investigate the exact requested sense/POS even when another homonym already has a candidate. Reuse an existing identity only if it covers this lexeme; otherwise verify a distinct primary identity. Keep definitions independent of these passages. ' if occurrence_requests else '')
             + payload(headwords=headwords, primary_evidence=primary_evidence,
                 known_candidates=known_candidates, occurrence_requests=occurrence_requests, source_context=source_context,
-                previous=previous, issues=issues), schema, 'low', tool_profile='research')
+                previous=previous, issues=issues), schema, 'low', tool_profile=editor_profile)
         try:
             check_proposal(proposal, headwords)
         except ValueError as error:

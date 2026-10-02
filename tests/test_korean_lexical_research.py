@@ -10,6 +10,24 @@ from pipeline.korean_agent_harness import save
 STANDARD_EVIDENCE = research.standard_evidence
 
 
+@pytest.mark.parametrize('complete', [False, True])
+def test_supplied_primary_records_avoid_redundant_research_tools(tmp_path, monkeypatch, complete):
+    monkeypatch.setattr(research, 'standard_evidence', lambda headword: {
+        'headword_request': headword,
+        'records': [{'text': '검증하다: verified direct dictionary content.'}] if complete else []})
+    profiles = []
+    class Runner:
+        async def call(self, job, prompt, *args, **kwargs):
+            profiles.append(kwargs['tool_profile'])
+            if complete:
+                assert 'do not call tools' in prompt
+            return {'approved': True, 'issues': []} if '-review-' in job else proposal()
+    registry = tmp_path / 'lexemes.json'
+    asyncio.run(research.research(['검증하다'], tmp_path, runner=Runner(), registry=registry))
+    assert profiles == ['offline' if complete else 'research', 'offline']
+    assert research.candidates(registry)
+
+
 def test_targeted_research_receives_passage_context_and_binds_it_to_review(tmp_path):
     registry = tmp_path / 'lexemes.json'
     passage = '자료를 검증했다.'
