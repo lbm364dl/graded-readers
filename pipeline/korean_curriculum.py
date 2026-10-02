@@ -115,6 +115,12 @@ def grammar_occurrence_counts(chapter: dict) -> dict[str, int]:
     return dict(Counter(identity for _, identity in positions))
 
 
+def required_bindings(chapter: dict) -> set[tuple[str, str]]:
+    result = {(s['lexical']['kind'], s['lexical']['id']) for s in chapter['segments']
+              if s.get('lexical', {}).get('kind') in ('vocabulary', 'grammar')}
+    return result | {('grammar', link['entry_id']) for link in chapter['grammar_links']}
+
+
 def evaluate_bindings(chapter: dict, bindings: dict, *, level: int = 1,
                       max_extra_ratio: float = 0.10) -> dict:
     """Fail closed on missing evidence; never compute a grade from a suffix.
@@ -133,11 +139,7 @@ def evaluate_bindings(chapter: dict, bindings: dict, *, level: int = 1,
     optional = {}
     source = {e["id"]: e for kind in ("vocabulary", "grammar") for e in entries(kind)}
     source_kinds = {e['id']: kind for kind in ('vocabulary', 'grammar') for e in entries(kind)}
-    required = {("vocabulary", s["lexical"]["id"]) for s in chapter["segments"]
-                if s.get("lexical", {}).get("kind") == "vocabulary"}
-    required |= {("grammar", link["entry_id"]) for link in chapter["grammar_links"]}
-    required |= {('grammar', s['lexical']['id']) for s in chapter['segments']
-                 if s.get('lexical', {}).get('kind') == 'grammar'}
+    required = required_bindings(chapter)
     graded = {}
     for binding in bindings["bindings"]:
         key = binding["kind"], binding["entry_id"]

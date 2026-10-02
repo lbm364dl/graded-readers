@@ -330,3 +330,15 @@ Primary retrieval now retries one HTTP interruption before reporting an explicit
 retrieval error. Previously completed record snapshots remain available, but a
 truncated response is never used as evidence. Contrasting regression cases cover
 recovery on the second request and bounded failure after two interrupted reads.
+
+TOPIK 3's complete curriculum proposal exceeded the ten-minute model limit on
+both attempts. Larger higher-edition binding requests now use sixteen-identity
+offline jobs under the existing worker concurrency, followed by a whole-chapter
+assessment and the same independent curriculum review. Local computation still
+requires every ordinary vocabulary and grammar identity, including standalone
+grammar taps. A model repair plan selects affected identities so unchanged
+binding batches remain reusable. This budgets model jobs, not chapter length or
+optional grammar. Publication replays every batch and assessment from completed
+offline worker evidence and rejects altered outputs or forbidden tool use.
+Regression coverage includes complete binding assembly and publication replay,
+with contrasting tampered-content and tool-use failures.

@@ -1258,3 +1258,78 @@ def test_missing_occurrence_headword_requests_research_but_wrong_id_keeps_candid
     assert isinstance(failure.value, MissingLexicalIdentityError) == (not has_candidate)
     if has_candidate:
         assert 'krdict-123/동' in str(failure.value)
+
+
+@pytest.mark.parametrize('tamper', [None, 'binding', 'tool'])
+def test_curriculum_batches_cover_all_identities_and_replay_verified_workers(tmp_path, tamper):
+    from pipeline import korean_curriculum_jobs as jobs
+    from pipeline.korean_agent_harness import read, save
+    fixture = tmp_path / 'fixture'
+    make_reviewed_run(fixture, level=3)
+    chapter = read(fixture / 'chapter.json')
+    original = read(fixture / 'agents/curriculum/result.json')
+    bindings = {(b['kind'], b['entry_id']): b for b in original['bindings']}
+    run = tmp_path / 'batched'
+    class Runner:
+        def __init__(self): self.calls = []
+        async def call(self, job, prompt, *args, **kwargs):
+            assert kwargs['tool_profile'] == 'offline'
+            self.calls.append(job)
+            inputs = json.loads(prompt.rsplit('\nINPUT:\n', 1)[1])
+            if job.endswith('-assessment'):
+                assert set((b['kind'], b['entry_id']) for b in inputs['bindings']) == set(bindings)
+                assert inputs['computed_evaluation']['target_level'] == 3
+                value = {k: original[k] for k in ('level_reason_en', 'prose_revision_reason_en')}
+            else:
+                value = {'bindings': [bindings[tuple(k)] for k in inputs['requested_identities']]}
+            save(run / 'agents' / job / 'result.json', value)
+            save(run / 'agents' / job / 'meta.json', {'return_code': 0})
+            return value
+    runner = Runner()
+    harness = KoreanHarness(run, 1, runner=runner, level=3)
+    context = {'chapter': chapter, 'word_requests': {}, 'target_goals': 'Reviewed Level 3 fixture.'}
+    produce = jobs.producer(harness, 'Bind exact identities.', context, batch_size=2)
+    value = asyncio.run(produce('curriculum-0', []))
+    assert {(b['kind'], b['entry_id']): b for b in value['bindings']} == bindings
+    meta = read(run / 'agents/curriculum-0/meta.json')
+    assert len(meta['batches']) > 1
+    assert jobs.replay(run, meta) == value
+    batch_job = meta['batches'][0]['job']
+    if tamper == 'binding':
+        changed = read(run / 'agents' / batch_job / 'result.json')
+        changed['bindings'][0]['analysis_en'] = 'Changed after review'
+        save(run / 'agents' / batch_job / 'result.json', changed)
+        with pytest.raises(ValueError, match='changed after review'):
+            jobs.replay(run, meta)
+    elif tamper == 'tool':
+        save_path = run / 'agents' / batch_job / 'events.attempt-01.jsonl'
+        save_path.write_text(json.dumps({'type': 'item.completed', 'item': {'type': 'command_execution'}}) + '\n')
+        with pytest.raises(ValueError, match='outside its offline role'):
+            jobs.replay(run, meta)
+
+
+@pytest.mark.parametrize('tampered', [False, True])
+def test_publication_replays_curriculum_assembly_before_accepting_review(tmp_path, tampered):
+    from pipeline.korean_agent_harness import read, save
+    make_reviewed_run(tmp_path, level=3)
+    value = read(tmp_path / 'agents/curriculum/result.json')
+    records = []
+    for number, binding in enumerate(value['bindings']):
+        job = f'curriculum-bindings-{number}'
+        part = {'bindings': [binding]}
+        save(tmp_path / 'agents' / job / 'result.json', part)
+        save(tmp_path / 'agents' / job / 'meta.json', {'return_code': 0})
+        records.append({'job': job, 'digest': digest(part)})
+    summary = {k: value[k] for k in ('level_reason_en', 'prose_revision_reason_en')}
+    save(tmp_path / 'agents/curriculum-assessment/result.json', summary)
+    save(tmp_path / 'agents/curriculum-assessment/meta.json', {'return_code': 0})
+    save(tmp_path / 'agents/curriculum/meta.json', {'return_code': 0, 'kind': 'curriculum_assembly',
+        'batches': records, 'assessment_job': 'curriculum-assessment', 'assessment_digest': digest(summary)})
+    publication.verify_run(tmp_path)
+    if tampered:
+        path = tmp_path / 'agents' / records[0]['job'] / 'result.json'
+        part = read(path)
+        part['bindings'][0]['analysis_en'] = 'Changed after independent review'
+        save(path, part)
+        with pytest.raises(ValueError, match='Curriculum worker changed'):
+            publication.verify_run(tmp_path)

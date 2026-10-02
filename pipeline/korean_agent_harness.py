@@ -336,6 +336,9 @@ class KoreanHarness:
             if references:
                 review_context = {**review_context, 'primary_lexical_reference': references,
                     'lexical_reference_scope': 'These primary records establish lexical identities and restricted senses, not curriculum grades. Verify the actual complete meaning; do not grade an idiom by concatenating components. Use the separate curriculum evidence for grades.'}
+            if self.level > 1 and producer is None and len(curriculum.required_bindings(review_context['chapter'])) > 32:
+                from pipeline.korean_curriculum_jobs import producer as curriculum_producer
+                producer = curriculum_producer(self, prompt, review_context)
         if name in ('annotation', 'dictionary', 'sentence-help'):
             review_context = {**review_context, 'linguistic_reference': read(LINGUISTIC_REFERENCE),
                 'lexical_reference': read(LEXICAL_REFERENCE),

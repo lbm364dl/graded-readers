@@ -89,6 +89,12 @@ def verify_run(run_dir: Path) -> tuple[dict, dict, dict, dict]:
                 raise ValueError("Korean proposal process did not complete")
             CodexRunner._check_tool_profile(run_dir / "agents" / proposal_job, "offline", proposal_meta)
             proposal = read(run_dir / "agents" / proposal_job / "result.json")
+            if proposal_meta.get('kind') == 'curriculum_assembly':
+                if stage != 'curriculum':
+                    raise ValueError('Curriculum assembly used for another stage')
+                from pipeline.korean_curriculum_jobs import replay
+                if replay(run_dir, proposal_meta) != proposal:
+                    raise ValueError('Assembled curriculum differs from reviewed workers')
             if proposal_meta.get("kind") == "annotation_assembly":
                 if stage != "annotation":
                     raise ValueError("Only Korean annotation may assemble source chunks")
