@@ -232,6 +232,24 @@ def test_korean_construction_stage_requires_exact_complete_phrase(tmp_path):
         build_assets(chapter, tmp_path)
 
 
+@pytest.mark.parametrize('same_lesson', [True, False])
+def test_missing_construction_fields_identify_only_matching_covering_rows(tmp_path, same_lesson):
+    chapter = pilot_chapter()
+    phrase = next(link for link in chapter['grammar_links'] if link['entry_id'] == 'ability-eul-su-eopda')
+    ending = phrase['display_end_segment_index']
+    chapter['grammar_links'].append({'segment_index': ending,
+        'entry_id': phrase['entry_id'] if same_lesson else 'object-eul-reul',
+        'context_en': 'Synthetic diagnostic fixture for an incomplete extra link.'})
+    with pytest.raises(ValueError, match='lacks complete form') as error:
+        build_assets(chapter, tmp_path, write=False)
+    message = str(error.value)
+    assert f'segment {ending}' in message
+    assert ('already cover this tap' in message) == same_lesson
+    if same_lesson:
+        assert phrase['display_form'] in message
+        assert 'remove the redundant ending link' in message
+
+
 def test_korean_sentence_breakdowns_are_selective_and_source_bound(tmp_path):
     data = json.loads(Path("tests/fixtures/korean_manual_breakdowns.json").read_text())
     result = build_breakdowns(pilot_chapter(), tmp_path, data=data)

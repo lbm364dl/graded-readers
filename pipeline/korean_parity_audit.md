@@ -420,3 +420,14 @@ component contributions still require investigation. A regression verifies exact
 병법책을 reconstruction using its reviewed component identities and contrasts
 an invented whole-compound identity that must fail. TOPIK 6 was resumed from its
 cached proposals to load this guidance and the newly reviewed lexical evidence.
+
+The revised TOPIK 3 annotation stopped on an incomplete extra ability link at
+an inflected phrase ending, although the same complete construction was already
+anchored earlier in the sentence. The validator now identifies the exact tap and
+reports source-aligned complete rows for the same grammar identity covering that
+position. It asks the annotator to retain the original phrase and remove a
+redundant ending link only when they represent the same construction; distinct
+constructions still need their own full fields. Nothing is deleted automatically
+and validation remains strict. Contrasting regressions check a matching covering
+lesson versus a different lesson that must not receive that deduplication advice.
+The stopped run resumed from its cached plan, prose and completed proposals.

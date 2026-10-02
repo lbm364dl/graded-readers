@@ -122,7 +122,19 @@ def build_assets(chapter: dict, output_dir: Path, *, source_id: str = SOURCE,
         display = {}
         if entry_id not in stage_ids and (segments[index].get("form_steps") or display_keys & link.keys()):
             if not display_keys <= link.keys():
-                raise ValueError(f"Korean construction stage lacks complete form: {link}")
+                covering = []
+                for other in links:
+                    first, last = other.get('segment_index'), other.get('display_end_segment_index')
+                    if (other is not link and other.get('entry_id') == entry_id
+                            and type(first) is int and type(last) is int
+                            and 0 <= first <= index <= last < len(segments)
+                            and str(other.get('display_meaning_en', '')).strip()
+                            and other.get('display_form') == source_text[positions[first][0]:positions[last][1]]):
+                        covering.append({key: other[key] for key in
+                            ('segment_index', 'display_end_segment_index', 'display_form', 'display_meaning_en')})
+                advice = (' Existing source-aligned rows for this same lesson already cover this tap: '
+                    + str(covering) + '. If this is the same construction, retain its original complete row and remove the redundant ending link; do not omit a distinct construction.') if covering else ''
+                raise ValueError(f"Korean construction stage lacks complete form at segment {index} ({segments[index]['text']}): {link}. Supply its complete source phrase, whole meaning and inclusive ending index.{advice}")
             last = link["display_end_segment_index"]
             if (not isinstance(last, int) or not index <= last < len(segments)
                     or not str(link["display_meaning_en"]).strip()
