@@ -426,6 +426,162 @@
       "title_en": "The place or state something comes from",
       "pattern": "에서",
       "explanation_en": "Attach 에서 to a noun to mark the starting place or source, meaning ‘from’. It can also mark a state that someone emerges from, such as sleep. The same form follows nouns ending in a consonant or a vowel."
+    },
+    {
+      "id": "adverbial-connective-a-eo",
+      "title_en": "Linking a predicate to describe an action",
+      "pattern": "-아/어",
+      "explanation_en": "The connective -아/어 can make a predicate describe a following action, with its precise meaning supplied by the predicate. Use -아 when the stem's final vowel is ㅏ or ㅗ and -어 otherwise; 하다 becomes 해. In 위하여, commonly contracted to 위해, this form expresses ‘for the sake of’."
+    },
+    {
+      "id": "basis-capacity-euro-ro",
+      "title_en": "The basis or circumstances for an action",
+      "pattern": "(으)로",
+      "explanation_en": "Attach 으로 after a noun ending in a consonant other than ㄹ, or 로 after a vowel or ㄹ. This use presents a status, qualification, ability, or circumstance as the basis for what someone can do, often meaning ‘with’ or ‘given’."
+    },
+    {
+      "id": "cause-e",
+      "title_en": "Marking a cause",
+      "pattern": "에",
+      "explanation_en": "Attach 에 to a noun naming something that causes a state or reaction. Depending on the predicate, English may use ‘from’, ‘because of’, or ‘at’. The form is the same after consonants and vowels."
+    },
+    {
+      "id": "connective-daga",
+      "title_en": "An action interrupted by another",
+      "pattern": "-다가",
+      "explanation_en": "Attach -다가 directly to an action verb stem to show that an action underway is interrupted or changes into another action. The two clauses normally concern the same person. The final predicate can supply the time for the connected actions."
+    },
+    {
+      "id": "inclusive-kkaji",
+      "title_en": "Including even an unexpected item",
+      "pattern": "까지",
+      "explanation_en": "Attach 까지 to a noun to emphasize that something extends even to that person or thing, often beyond what is expected. It has the same form after consonants and vowels. This use expresses emphatic inclusion rather than an endpoint."
+    },
+    {
+      "id": "informal-copula-iya-ya",
+      "title_en": "Informally saying what something is",
+      "pattern": "이야/야",
+      "explanation_en": "Attach 이야 after a consonant-ending noun or 야 after a vowel-ending noun to identify what someone or something is in familiar, non-polite speech. Question intonation turns the same form into a question."
+    },
+    {
+      "id": "informal-question-a-eo",
+      "title_en": "Asking a familiar question",
+      "pattern": "-아/어?",
+      "explanation_en": "Use sentence-final -아/어 with question intonation to ask a familiar, non-polite question. Add -아 when the stem's final vowel is ㅏ or ㅗ and -어 otherwise; 하다 becomes 해. Contractions and irregular stem changes apply. This style suits close relationships or speech to someone younger."
+    },
+    {
+      "id": "intention-euryeogo",
+      "title_en": "Connecting an intended action",
+      "pattern": "-(으)려고",
+      "explanation_en": "Attach -으려고 after an action stem ending in a consonant other than ㄹ, or -려고 after a vowel or ㄹ. The intended action becomes the purpose or intention behind the following action, often meaning ‘in order to’ or ‘with the intention of’."
+    },
+    {
+      "id": "intention-euryeogo-hada",
+      "title_en": "Intending or trying to do something",
+      "pattern": "-(으)려고 하다",
+      "explanation_en": "Follow an action verb in -(으)려고 form with the auxiliary 하다 to express an intention or an attempt to act. Use -으려고 after a consonant other than ㄹ and -려고 after a vowel or ㄹ. The construction describes a plan or attempt without asserting that the action is completed."
+    },
+    {
+      "id": "maintained-state-go-itda",
+      "title_en": "A continuing state",
+      "pattern": "-고 있다",
+      "explanation_en": "Attach -고 있다 to verbs that express knowledge or an action whose state is maintained. The construction describes that state as continuing, rather than necessarily showing an action in progress. With 알다, 알고 있다 means ‘know’ or ‘be aware of’."
+    },
+    {
+      "id": "manner-euro-ro",
+      "title_en": "The manner of an action",
+      "pattern": "(으)로",
+      "explanation_en": "Attach 으로 after a noun ending in a consonant other than ㄹ, or 로 after a vowel or ㄹ, to describe how an action is performed. The noun names a manner, tone, or style, often translated with ‘in’ or ‘with’."
+    },
+    {
+      "id": "necessity-a-eoya-hada",
+      "title_en": "Having to do something",
+      "pattern": "-아/어야 하다",
+      "explanation_en": "Connect an action or descriptive predicate to 하다 with -아/어야 to express necessity: ‘must’ or ‘have to’. Use -아야 when the stem's final vowel is ㅏ or ㅗ and -어야 otherwise; 하다 becomes 해야. Contractions and irregular stem changes apply."
+    },
+    {
+      "id": "necessity-connective-a-eoya",
+      "title_en": "Linking a predicate to necessity",
+      "pattern": "-아/어야",
+      "explanation_en": "Before the auxiliary 하다, -아/어야 links an action or state to an expression of necessity. Use -아야 when the stem's final vowel is ㅏ or ㅗ and -어야 otherwise; 하다 becomes 해야. The following auxiliary completes the meaning ‘must’ or ‘have to’."
+    },
+    {
+      "id": "nominalizer-neun-geot",
+      "title_en": "Naming an action or activity",
+      "pattern": "-는 것",
+      "explanation_en": "Attach -는 to an action verb stem and follow it with 것 to refer to doing that action as a thing or activity. Drop a stem-final ㄹ before -는. The resulting expression can take noun particles and serve as a subject or object. It can name a contemplated activity without stating that it actually happens."
+    },
+    {
+      "id": "noun-exclusion-malgo",
+      "title_en": "Someone or something else",
+      "pattern": "noun + 말고",
+      "explanation_en": "Place 말고 after a noun to exclude it when naming an alternative: ‘other than’ or ‘instead of’. With 도, 말고도 means ‘besides’ or ‘in addition to’, indicating that other people or things are included as well."
+    },
+    {
+      "id": "noun-reason-ttaemune",
+      "title_en": "Because of something",
+      "pattern": "noun + 때문에",
+      "explanation_en": "Place 때문에 after a noun to give it as the cause or reason for the following situation, meaning ‘because of’. The noun may include modifiers or a possessive phrase. The construction does not require a subject or object particle on that noun."
+    },
+    {
+      "id": "polite-confirmation-ji-yo",
+      "title_en": "Politely inviting agreement",
+      "pattern": "-지요",
+      "explanation_en": "Attach -지요 to an action or descriptive stem to present something as shared knowledge or invite the listener's agreement. It can correspond to an English tag such as ‘isn't it?’ even when written as a statement. After a noun, use -이지요; -지요 commonly contracts to -죠."
+    },
+    {
+      "id": "polite-yo",
+      "title_en": "Adding politeness for the listener",
+      "pattern": "요",
+      "explanation_en": "Attach 요 to an ending or expression that permits it to make the utterance polite toward the listener. It adds respect without changing the basic question or statement meaning. It can also follow a noun phrase used as a short reply."
+    },
+    {
+      "id": "prohibitive-ji-malda",
+      "title_en": "Telling someone not to do something",
+      "pattern": "-지 말다",
+      "explanation_en": "Attach -지 directly to an action verb stem and follow it with 말다 to prohibit that action. The construction means ‘do not do’ the action. 말다 carries the command ending appropriate to the way the listener is addressed."
+    },
+    {
+      "id": "purpose-eul-reul-wihae",
+      "title_en": "For someone or something",
+      "pattern": "을/를 위해",
+      "explanation_en": "After a noun, use 을 위해 if it ends in a consonant or 를 위해 if it ends in a vowel. This identifies the person, cause, or goal an action serves, meaning ‘for’ or ‘for the sake of’. 위해 is the contracted form of 위하여."
+    },
+    {
+      "id": "reason-gi-ttaemunida",
+      "title_en": "Explaining why something is so",
+      "pattern": "-기 때문이다",
+      "explanation_en": "Attach -기 때문이다 to an action or descriptive stem to state the reason for a situation, meaning ‘it is because’. The -기 clause names the reason, and 때문이다 makes it the predicate of the explanation. After a noun, use -이기 때문이다."
+    },
+    {
+      "id": "sequence-a-eoseo",
+      "title_en": "Doing one thing and then another",
+      "pattern": "-아/어서",
+      "explanation_en": "Use -아/어서 to connect an earlier action closely to what follows, often meaning ‘and then’ or ‘after doing’. Use -아서 when the stem's final vowel is ㅏ or ㅗ and -어서 otherwise; 하다 becomes 해서. The final predicate normally supplies the time for both actions. Context distinguishes this sequence from the same form's reason-giving use."
+    },
+    {
+      "id": "simultaneous-myeonseo",
+      "title_en": "Doing two things at the same time",
+      "pattern": "-(으)면서",
+      "explanation_en": "Attach -으면서 after an action stem ending in a consonant other than ㄹ, or -면서 after a vowel or ㄹ, to connect actions happening at the same time. The actions normally have the same subject. The final predicate can supply the time for both."
+    },
+    {
+      "id": "subject-honorific-si",
+      "title_en": "Showing respect for the subject",
+      "pattern": "-(으)시-",
+      "explanation_en": "Insert -으시- after a predicate stem ending in a consonant other than ㄹ, or -시- after a vowel. Drop a stem-final ㄹ before -시-. This marks respect for the person who performs the action or has the described state; it is distinct from politeness toward the listener. The predicate's ending follows this marker."
+    },
+    {
+      "id": "wish-eumyeon-joketda",
+      "title_en": "Hoping for a situation",
+      "pattern": "-(으)면 좋겠다",
+      "explanation_en": "Follow a conditional clause with 좋겠다 to express a wish or hope, meaning ‘I hope’ or ‘it would be nice if’. Use -으면 after a stem ending in a consonant other than ㄹ, or -면 after a vowel or ㄹ. For a noun predicate, use -이면 after a consonant or -면 after a vowel."
+    },
+    {
+      "id": "wish-get",
+      "title_en": "Expressing a desired outcome",
+      "pattern": "-겠-",
+      "explanation_en": "Insert -겠- between a predicate stem and its ending to present a state or outcome as desired or welcome. In 좋겠다, it gives the meaning ‘would be nice’, expressing a wish rather than asserting that something is already good. Context determines this wish-related use of -겠-."
     }
   ]
 }

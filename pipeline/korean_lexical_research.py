@@ -150,6 +150,31 @@ def candidates(path=REGISTRY):
 
 
 async def research(headwords, run_dir, *, runner=None, registry=REGISTRY):
+    """Bound independent lexical jobs without changing chapter coverage."""
+    from pipeline.agent_harness import CodexRunner
+    headwords = sorted(set(headwords))
+    if len(headwords) <= 8:
+        return await _research_batch(headwords, run_dir, runner=runner, registry=registry)
+    runner = runner or CodexRunner(run_dir, 'gpt-6.1-sol', asyncio.Semaphore(3), timeout=600)
+    batches = asyncio.Semaphore(3)
+    retrieval_limit = asyncio.Semaphore(3)
+    async def batch(words):
+        async with batches:
+            return await _research_batch(words, run_dir, runner=runner, registry=registry,
+                retrieval_limit=retrieval_limit)
+    # Drain siblings before reporting failure: independently approved batches
+    # remain reusable and no retry overlaps its predecessor's model jobs.
+    results = await asyncio.gather(*(batch(headwords[i:i + 8])
+        for i in range(0, len(headwords), 8)), return_exceptions=True)
+    for result in results:
+        if isinstance(result, BaseException):
+            raise result
+    return {'status': 'reviewed' if any(r['status'] == 'reviewed' for r in results) else 'reused',
+        'entries': sorted({entry for r in results for entry in r['entries']}),
+        'unresolved': [entry for r in results for entry in r['unresolved']]}
+
+
+async def _research_batch(headwords, run_dir, *, runner=None, registry=REGISTRY, retrieval_limit=None):
     from pipeline.agent_harness import CodexRunner
     from pipeline.korean_agent_harness import payload, read, save
     headwords = sorted(set(headwords))
@@ -169,7 +194,7 @@ async def research(headwords, run_dir, *, runner=None, registry=REGISTRY):
     schema = run_dir / 'lexemes.schema.json'
     save(schema, PROPOSAL)
     runner = runner or CodexRunner(run_dir, 'gpt-6.1-sol', asyncio.Semaphore(1), timeout=600)
-    retrieval_limit = asyncio.Semaphore(3)
+    retrieval_limit = retrieval_limit or asyncio.Semaphore(3)
     async def retrieve(headword):
         async with retrieval_limit:
             return await asyncio.to_thread(standard_evidence, headword)

@@ -49,6 +49,35 @@ def test_uncertain_expression_can_remain_unresolved_without_fake_lemma():
         research.check_proposal(mixed, ['검증하다'])
 
 
+@pytest.mark.parametrize('failing', [False, True])
+def test_large_lexical_research_batches_preserve_coverage_and_drain_siblings(tmp_path, monkeypatch, failing):
+    words = [f'word-{i:02}' for i in range(25)]
+    started, finished = [], []
+    active, peak = 0, 0
+    async def batch(headwords, *args, **kwargs):
+        nonlocal active, peak
+        started.append(list(headwords))
+        active += 1
+        peak = max(peak, active)
+        await asyncio.sleep(0.01)
+        active -= 1
+        finished.extend(headwords)
+        if failing and words[0] in headwords:
+            raise ValueError('Independent review rejected this batch')
+        return {'status': 'reviewed', 'entries': list(headwords), 'unresolved': []}
+    monkeypatch.setattr(research, '_research_batch', batch)
+    operation = research.research(words, tmp_path, runner=object(), registry=tmp_path / 'registry.json')
+    if failing:
+        with pytest.raises(ValueError, match='Independent review rejected'):
+            asyncio.run(operation)
+    else:
+        assert asyncio.run(operation)['entries'] == words
+    assert sorted(finished) == words
+    assert sorted(w for group in started for w in group) == words
+    assert all(len(group) <= 8 for group in started)
+    assert peak == 3
+
+
 def test_standard_dictionary_fallback_keeps_its_own_identity_namespace():
     value = proposal()
     value['entries'][0].update(id='stdict-123/동',

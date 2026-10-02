@@ -281,3 +281,11 @@ Contrasting regression cases cover both paths. The real TOPIK 5 run exposed this
 gap with 불평하다; completed sibling chunks are preserved on resume. TOPIK 6 was
 also resumed with three concurrent workers instead of one, without changing its
 chunk partition, source coverage, or independent review gates.
+
+Large supplemental lexical requests are split into eight-headword model jobs,
+with at most three batches and three primary HTTP requests running concurrently.
+This is a research job budget, not a prose or source quota. Every batch keeps the
+same creator/primary-record/independent-review gates; approved batches promote
+separately and are reusable if another fails. All sibling jobs finish before a
+failure propagates, preventing overlapping retries. Regression coverage verifies
+complete request coverage, bounded concurrency, and sibling draining on failure.
