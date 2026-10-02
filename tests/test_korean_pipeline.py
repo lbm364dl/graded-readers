@@ -1246,6 +1246,8 @@ def test_preparation_checkpoint_stops_before_annotation_and_cannot_publish(tmp_p
             for record in context['reviewed_source_context']:
                 assert record['finding_en'] in prompt
             assert 'it does not add events' in prompt
+            assert 'it does not need a story exemption' in prompt
+            assert 'curriculum stage measures the budget' in prompt
         value = read(fixture / 'agents' / name / 'result.json')
         check(value)
         harness.stages[name] = {'approved': True}

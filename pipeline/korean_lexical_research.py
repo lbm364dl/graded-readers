@@ -335,6 +335,7 @@ async def _research_batch(headwords, run_dir, *, runner=None, registry=REGISTRY,
             RESEARCH_POLICY + RESEARCH_SCOPE + '\nINDEPENDENT REVIEW: '
             'Independently check these researched lexical identities against the supplied primary dictionary evidence. '
             'Check exact dictionary headword, POS, ID/reference correspondence, distinct homonyms, attested meaning and full requested coverage. '
+            'The proposal already passed the schema and local ID/URL/POS checks: 동, 형 and 명 are canonical POS values, not missing confirmations. Check that the primary record supports that POS. A concise faithful gloss may use equivalent English wording; reject material sense differences, not mere synonym choices. '
             'Where an attested and unresolved request share a spelling, check that the unresolved reason identifies a different usage or identity without denying the attested lexeme. '
             'If occurrence_requests are supplied, check coverage of their actual sense/POS, not merely another homonym with the same spelling. These requests are unverified contextual hints, so correct mistaken analyses rather than accepting their glosses as evidence. '
             'Reject invented productive-pattern lemmas and unsupported senses. Unresolved requests are allowed when justified. '
