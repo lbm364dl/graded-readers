@@ -84,3 +84,31 @@ def test_only_independently_reviewed_revision_can_promote_and_replay(tmp_path, m
     save(dictionary.WORDS, data)
     with pytest.raises(ValueError, match='differs from independent review'):
         dictionary._registry(dictionary.WORDS)
+
+
+def test_publication_reuses_reviewed_predecessor_without_restoring_it(tmp_path, monkeypatch):
+    from pipeline import korean_publication as publication
+    monkeypatch.setattr(dictionary, 'WORDS', tmp_path / 'words.json')
+    old, new = entry(), proposal()['entries'][0]
+    review = {'approved': True, 'issues': []}
+    record = {'before_entries': [old], 'proposal': proposal(),
+              'proposal_digest': digest(proposal()), 'review': review, 'review_digest': digest(review)}
+    save(dictionary.WORDS, {'reviewed': True, 'entries': [new], 'revision_reviews': [record]})
+    words, grammar = {old['id']: new}, {'lesson': {'id': 'lesson', 'definition_en': 'unchanged'}}
+    chapter = {'segments': [{'type': 'word', 'lexical': {'id': old['id'], 'kind': 'word'}}],
+               'grammar_links': [{'entry_id': 'lesson'}]}
+    original_digest = digest(publication.relevant_entries(chapter, {old['id']: old}, grammar))
+    assert publication.dictionary_digest_matches(chapter, original_digest, words, grammar)
+    publication.merge_dictionary_delta(words, grammar, {'words': [old], 'grammar': []})
+    assert words[old['id']] == new
+    assert not publication.dictionary_digest_matches(chapter, 'arbitrary', words, grammar)
+    changed_grammar = {'lesson': {**grammar['lesson'], 'definition_en': 'unreviewed'}}
+    assert not publication.dictionary_digest_matches(chapter, original_digest, words, changed_grammar)
+    with pytest.raises(ValueError, match='overwrites'):
+        publication.merge_dictionary_delta(words, grammar,
+            {'words': [{**old, 'definition_en': 'not in the reviewed history'}], 'grammar': []})
+    bad = json.loads(dictionary.WORDS.read_text())
+    bad['revision_reviews'][0]['review']['approved'] = False
+    save(dictionary.WORDS, bad)
+    with pytest.raises(ValueError, match='independent review'):
+        publication.dictionary_digest_matches(chapter, original_digest, words, grammar)

@@ -360,3 +360,15 @@ other usages stay unresolved, and these records never assign curriculum grades
 or become learner-facing process notes. Empty evidence is omitted to preserve
 unaffected review-cache inputs. Regression checks contrast matching versus
 different usage requests.
+
+The next shared editorial review covered future-time 앞, relational 가까이 and
+habitual auxiliary 하다 across both published editions and all three supplied
+TOPIK 3–5 drafts (31 distinct occurrences). Primary references and the independent
+approval are stored with the shared dictionary revision; existing senses and IDs
+are preserved. Republishing exposed an older-run conflict: accepted dictionary
+deltas still contained the original definitions. Publication now replays validated
+editorial history, recognizes those exact reviewed predecessors, and keeps their
+approved successors. Historical dictionary proof digests remain valid only when
+they match a verified registry version; grammar changes, arbitrary definitions,
+and tampered revision approvals remain rejected. Regression coverage checks both
+reuse and these contrasting failures. No chapter prose or tap boundaries changed.

@@ -32,6 +32,44 @@ def relevant_entries(chapter: dict, words: dict, grammar: dict) -> dict:
             "grammar": [grammar[key] for key in sorted(grammar_ids)]}
 
 
+def reviewed_word_versions(words: dict):
+    """Replay verified editorial history without accepting arbitrary old definitions."""
+    current = dictionary._registry(dictionary.WORDS)
+    history = read(dictionary.WORDS).get('revision_reviews', [])
+    version = dict(words)
+    yield version.copy()
+    for record in reversed(history):
+        before = {entry['id']: entry for entry in record['before_entries']}
+        for after in record['proposal']['entries']:
+            identity = after['id']
+            if identity not in version:
+                continue
+            if words[identity] != current[identity]:
+                raise ValueError('Korean publication changed a reviewed dictionary revision')
+            if version[identity] != after:
+                raise ValueError('Korean dictionary revision replay is discontinuous')
+            version[identity] = before[identity]
+        yield version.copy()
+
+
+def dictionary_digest_matches(chapter: dict, expected: str, words: dict, grammar: dict) -> bool:
+    if expected == digest(relevant_entries(chapter, words, grammar)):
+        return True
+    return any(expected == digest(relevant_entries(chapter, prior, grammar))
+               for prior in reviewed_word_versions(words))
+
+
+def merge_dictionary_delta(words: dict, grammar: dict, delta: dict) -> None:
+    for kind, registry in (('words', words), ('grammar', grammar)):
+        for entry in delta[kind]:
+            if entry['id'] in registry and registry[entry['id']] != entry:
+                if kind == 'words' and any(prior.get(entry['id']) == entry
+                        for prior in reviewed_word_versions(words)):
+                    continue  # Keep the reviewed successor; never restore the old definition.
+                raise ValueError('Korean run overwrites an approved dictionary entry')
+            registry[entry['id']] = entry
+
+
 def source_check(chapter: dict) -> None:
     alignment = chapter["source_alignment"]
     if not isinstance(alignment.get('unit'), dict):
@@ -234,7 +272,7 @@ def validate_evidence(chapter: dict, evidence: dict, words: dict, grammar: dict,
             or evidence.get("source_notes_sha256") != manifest.get("notes_sha256")
             or evidence.get("policy_sha256") != sha(POLICY.read_bytes())
             or evidence.get('linguistic_reference_sha256') != sha(LINGUISTIC_REFERENCE.read_bytes())
-            or evidence.get("dictionary_digest") != digest(relevant_entries(chapter, words, grammar))
+            or not dictionary_digest_matches(chapter, evidence.get("dictionary_digest"), words, grammar)
             or evidence.get("breakdowns_digest") != digest(breakdowns)):
         raise ValueError("Korean publication evidence is stale")
     if set(evidence["reviews"]) != {"plan", "lexical-plan", "prose", "annotation", "dictionary", "sentence-help", "curriculum"}:
@@ -248,7 +286,7 @@ def validate_evidence(chapter: dict, evidence: dict, words: dict, grammar: dict,
         raise ValueError('Korean curriculum bindings differ from independent review')
     for name, review in evidence["reviews"].items():
         if review.get("reused"):
-            if name != "dictionary" or review["registry_digest"] != evidence["dictionary_digest"]:
+            if name != "dictionary" or not dictionary_digest_matches(chapter, review["registry_digest"], words, grammar):
                 raise ValueError("Korean approved dictionary reuse is stale")
         elif not approved(review.get("review", {})):
             raise ValueError("Korean publication has an unapproved review")
@@ -293,11 +331,7 @@ def publish(run_root: Path, *, promote: bool = True) -> dict:
         next_start = unit['end'] + 2
     words, grammar = dictionary._registry(dictionary.WORDS), dictionary._registry(dictionary.GRAMMAR)
     for _, delta, _, _ in accepted:
-        for registry, entries in ((words, delta["words"]), (grammar, delta["grammar"])):
-            for entry in entries:
-                if entry["id"] in registry and registry[entry["id"]] != entry:
-                    raise ValueError("Korean run overwrites an approved dictionary entry")
-                registry[entry["id"]] = entry
+        merge_dictionary_delta(words, grammar, delta)
     breakdowns = [b for _, _, help_data, _ in accepted for b in help_data["breakdowns"]]
     evidence = []
     for chapter, _, help_data, proof in accepted:

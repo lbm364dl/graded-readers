@@ -5520,6 +5520,563 @@
         ]
       },
       "occurrence_requests_digest": "bade1c0b62ef79850f41698e836b50c500df91c422bc1400d231a88208e872c1"
+    },
+    {
+      "headwords": [
+        "이조"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "stdict-268081/명",
+            "headword": "이조",
+            "pos": "명",
+            "meaning_en": "Two founding patriarchs or ancestors; the second patriarch.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=268081",
+            "evidence_en": "Supplied primary-record snapshot explicitly identifies 이조 (二祖), 명사, with these two senses. Live retrieval failed; attestation rests on the supplied snapshot."
+          },
+          {
+            "id": "stdict-268082/명",
+            "headword": "이조",
+            "pos": "명",
+            "meaning_en": "Interest on borrowed money; the interest portion or charge.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=268082",
+            "evidence_en": "Supplied primary-record snapshot explicitly identifies 이조 (利條), 명사, and equates its senses with 이자조 and 이자. Live retrieval failed; attestation rests on the supplied snapshot."
+          },
+          {
+            "id": "stdict-268084/명",
+            "headword": "이조",
+            "pos": "명",
+            "meaning_en": "Pears and jujubes collectively; figuratively, publishing printed books or pictures.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=268084",
+            "evidence_en": "Supplied primary-record snapshot explicitly identifies 이조 (梨棗), 명사, with the collective fruit sense and figurative publishing sense. Live retrieval failed; attestation rests on the supplied snapshot."
+          },
+          {
+            "id": "stdict-268085/명",
+            "headword": "이조",
+            "pos": "명",
+            "meaning_en": "A foreign royal court or foreign country.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=268085",
+            "evidence_en": "Supplied primary-record snapshot explicitly identifies 이조 (異朝), 명사, with these two senses. Live retrieval failed; attestation rests on the supplied snapshot."
+          },
+          {
+            "id": "stdict-268350/명",
+            "headword": "이조",
+            "pos": "명",
+            "meaning_en": "Musical transposition: shifting an entire composition into another key.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=268350",
+            "evidence_en": "Supplied primary-record snapshot explicitly identifies 이조 (移調), 명사, 음악, synonymous with 조옮김. Live retrieval failed; attestation rests on the supplied snapshot."
+          },
+          {
+            "id": "stdict-268352/명",
+            "headword": "이조",
+            "pos": "명",
+            "meaning_en": "Accession to the throne following a ceremony.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=268352",
+            "evidence_en": "Supplied primary-record snapshot explicitly identifies 이조 (履祚), 명사, synonymous with 즉위. Live retrieval failed; attestation rests on the supplied snapshot."
+          },
+          {
+            "id": "stdict-268354/명",
+            "headword": "이조",
+            "pos": "명",
+            "meaning_en": "Detuning: an electrical tuned circuit being away from its tuning point.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=268354",
+            "evidence_en": "Supplied primary-record snapshot explicitly identifies 이조 (離調), 명사, 물리, with this circuit sense. Live retrieval failed; attestation rests on the supplied snapshot."
+          },
+          {
+            "id": "stdict-470217/명",
+            "headword": "이조",
+            "pos": "명",
+            "meaning_en": "The Ministry of Personnel, responsible for civil officials’ appointments and related administration in Goryeo and Joseon.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=470217",
+            "evidence_en": "Supplied primary-record snapshot explicitly identifies 이조 (吏曹), 명사, 역사, with separate Goryeo and Joseon senses. It supports the requested Ministry of Personnel meaning. No existing identity was supplied and no standalone Basic Dictionary record was located. Live retrieval failed; attestation rests on the supplied snapshot."
+          }
+        ],
+        "unresolved": [
+          {
+            "headword": "이조",
+            "reason_en": "The supplied records stdict-268083/명 and stdict-470218/명 identify 李朝 as names of the Korean Joseon dynasty and Vietnamese Lý dynasty respectively. Excluded under the instruction against creating lemmas for proper names. Basic Dictionary searches did not locate a standalone 이조 record, but direct search access failed, so learner-dictionary absence is not conclusively established."
+          }
+        ]
+      },
+      "proposal_digest": "d1a1b5653233e3d7aff0a21ef2047f6705fea6767b626b398443afaf70eb9f40",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "f5a2d9c8f3d90c146ad2bd4aa1134d58e89b785c30fc1f051640e1e00c17acde",
+      "primary_evidence": [
+        {
+          "headword_request": "이조",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%9D%B4%EC%A1%B0",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=268081",
+              "content_sha256": "91a44ecb1abc1c2c4e3f04503982765e230e12a785bc55905548206240bf51f9",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 이조 1 (二祖 ) 원어 二 두 이 부수 二/총획 2 祖 할아비 조 부수 示/총획 10 한자 발음 [이ː조 ] 「명사」 「1」 두 사람의 조(祖). 특히 중국에서는 한나라의 ‘고조’와 ‘세조’를 이른다. 「2」 둘째 번의 조. 특히 불교 선종(禪宗)의 제이 조인 ‘ 혜가 ’를 이르는 경우가 많다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=268082",
+              "content_sha256": "74c403ed06e42e9e43ca1eb50416b1c9d788eb2b29a9792e8cba87231b751492",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 이조 3 (利條 ) 원어 利 이로울 리 이로울 이 부수 刀/총획 7 條 가지 조 부수 木/총획 11 한자 발음 [이ː쪼 ] 편집 이력 「명사」 「1」 이자의 부분. 또는 이자의 명목. = 이자조 . 「2」 남에게 돈을 빌려 쓴 대가로 치르는 일정한 비율의 돈. = 이자 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=268083",
+              "content_sha256": "0cfd4ad521faaa27529af20cc87a5d2c1c695ab81f37e30ca45886d4db4a6404",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 이조 4 (李朝 ) 원어 李 오얏 리 오얏 이 부수 木/총획 7 朝 아침 조 부수 月/총획 12 한자 발음 [이ː조 ] 「명사」 『역사』 ‘ 이씨 조선 ’을 줄여 이르는 말. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 4 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=268084",
+              "content_sha256": "d497e70736645dbba9af1dd0ca2ad9e3e0ffc9ba24021fd31ef50b914bdc7dd3",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 이조 6 (梨棗 ) 원어 梨 배나무 리 배나무 이 부수 木/총획 11 棗 대추나무 조 부수 木/총획 12 한자 발음 [이조 ] 「명사」 「1」 배와 대추를 아울러 이르는 말. 「2」 책이나 그림 따위를 인쇄하여 세상에 내보냄을 비유적으로 이르는 말. 판목으로는 배나무와 대추나무가 제일 좋은 데서 유래한다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 6 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=268085",
+              "content_sha256": "72be3ad89eeb02dee8545b3cb12c67d8699cfe59b31c956ae13b8a4c173e6d4f",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 이조 7 (異朝 ) 원어 異 다를 이 다를 리 부수 田/총획 11 朝 아침 조 부수 月/총획 12 한자 발음 [이ː조 ] 편집 이력 「명사」 「1」 외국의 조정(朝廷). 「2」 자기 나라가 아닌 다른 나라. = 외국 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 7 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=268350",
+              "content_sha256": "63245b1048df4bf6df31614634822fe511b1ec664897f5f5fcec482af37a96ca",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 이조 8 (移調 ) 원어 移 옮길 이 부수 禾/총획 11 調 고를 조 아침 주 부수 言/총획 15 한자 발음 [이조 ] 부표제어 이조-하다 1 편집 이력 「명사」 『음악』 악곡 전체를 다른 조로 바꿈. 전체를 높은 음정 또는 낮은 음정으로 옮기는 것으로, 조옮김 악기의 경우 필수적이며, 노래할 때 각자의 음역에 맞추기 위하여 쓰이기도 한다. = 조옮김 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 8 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=268352",
+              "content_sha256": "7aad1e4c6b84f9b4565465f88d8b8ca1c606dc98b3b7a84ced293935cd5392c6",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 이조 9 (履祚 ) 원어 履 신 리 신 이 부수 尸/총획 15 祚 복 조 부수 示/총획 10 한자 발음 [이ː조 ] 부표제어 이조-하다 2 편집 이력 「명사」 임금이 될 사람이 예식을 치른 뒤 임금의 자리에 오름. = 즉위 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 9 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=268354",
+              "content_sha256": "e67e5c6f0a117377900ebc44701c0f99b6e808b737e09f21b0b2e25887b53afe",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 이조 10 (離調 ) 원어 離 떠날 리 떠날 이 부수 隹/총획 19 調 고를 조 아침 주 부수 言/총획 15 한자 발음 [이ː조 ] 편집 이력 「명사」 『물리』 전기 동조 회로가 동조점(同調點)에서 벗어난 상태. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 10 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=470217",
+              "content_sha256": "22a145da41c8ee7b4cc1a44849caf2277b8a92f6b7588087413fa267adec5525",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 이조 2 (吏曹 ) 원어 吏 벼슬아치 리 벼슬아치 이 부수 口/총획 6 曹 무리 조 부수 曰/총획 11 한자 발음 [이ː조 ] 편집 이력 「명사」 「1」 『역사』 고려 시대에, 육조(六曹) 가운데 문관의 선임(選任)과 훈봉(勳封)에 관한 일을 맡아보던 관아. 공양왕 원년(1389)에 전리사를 고친 것이다. 「2」 『역사』 조선 시대에, 육조 가운데 문관의 선임과 훈봉, 관원의 성적 고사(考査), 포폄(褒貶)에 관한 일을 맡아보던 관아. ≒ 문부 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=470218",
+              "content_sha256": "891697e3b5c12ed8ccbf02526dcea239bcfc7a26ee5d11088f83447a8f330f6e",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 이조 5 (李朝 ) 원어 李 오얏 리 오얏 이 부수 木/총획 7 朝 아침 조 부수 月/총획 12 한자 발음 [이ː조 ] 편집 이력 「명사」 『역사』 베트남의 왕조. 10세기 중엽 중국으로부터 독립한 뒤 세워졌으며, 1009년부터 1225년까지 존속하였다. 시조는 이공온(李公蘊), 수도는 승룡(昇龍), 곧 지금의 하노이이며, 베트남 최초의 지속적인 왕조로서 대월(大越)이라 이름하였다. ≒ 이씨 안남 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 5 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "proposal_records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=268081",
+              "content_sha256": "91a44ecb1abc1c2c4e3f04503982765e230e12a785bc55905548206240bf51f9",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 이조 1 (二祖 ) 원어 二 두 이 부수 二/총획 2 祖 할아비 조 부수 示/총획 10 한자 발음 [이ː조 ] 「명사」 「1」 두 사람의 조(祖). 특히 중국에서는 한나라의 ‘고조’와 ‘세조’를 이른다. 「2」 둘째 번의 조. 특히 불교 선종(禪宗)의 제이 조인 ‘ 혜가 ’를 이르는 경우가 많다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=268082",
+              "content_sha256": "74c403ed06e42e9e43ca1eb50416b1c9d788eb2b29a9792e8cba87231b751492",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 이조 3 (利條 ) 원어 利 이로울 리 이로울 이 부수 刀/총획 7 條 가지 조 부수 木/총획 11 한자 발음 [이ː쪼 ] 편집 이력 「명사」 「1」 이자의 부분. 또는 이자의 명목. = 이자조 . 「2」 남에게 돈을 빌려 쓴 대가로 치르는 일정한 비율의 돈. = 이자 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=268084",
+              "content_sha256": "d497e70736645dbba9af1dd0ca2ad9e3e0ffc9ba24021fd31ef50b914bdc7dd3",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 이조 6 (梨棗 ) 원어 梨 배나무 리 배나무 이 부수 木/총획 11 棗 대추나무 조 부수 木/총획 12 한자 발음 [이조 ] 「명사」 「1」 배와 대추를 아울러 이르는 말. 「2」 책이나 그림 따위를 인쇄하여 세상에 내보냄을 비유적으로 이르는 말. 판목으로는 배나무와 대추나무가 제일 좋은 데서 유래한다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 6 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=268085",
+              "content_sha256": "72be3ad89eeb02dee8545b3cb12c67d8699cfe59b31c956ae13b8a4c173e6d4f",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 이조 7 (異朝 ) 원어 異 다를 이 다를 리 부수 田/총획 11 朝 아침 조 부수 月/총획 12 한자 발음 [이ː조 ] 편집 이력 「명사」 「1」 외국의 조정(朝廷). 「2」 자기 나라가 아닌 다른 나라. = 외국 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 7 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=268350",
+              "content_sha256": "63245b1048df4bf6df31614634822fe511b1ec664897f5f5fcec482af37a96ca",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 이조 8 (移調 ) 원어 移 옮길 이 부수 禾/총획 11 調 고를 조 아침 주 부수 言/총획 15 한자 발음 [이조 ] 부표제어 이조-하다 1 편집 이력 「명사」 『음악』 악곡 전체를 다른 조로 바꿈. 전체를 높은 음정 또는 낮은 음정으로 옮기는 것으로, 조옮김 악기의 경우 필수적이며, 노래할 때 각자의 음역에 맞추기 위하여 쓰이기도 한다. = 조옮김 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 8 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=268352",
+              "content_sha256": "7aad1e4c6b84f9b4565465f88d8b8ca1c606dc98b3b7a84ced293935cd5392c6",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 이조 9 (履祚 ) 원어 履 신 리 신 이 부수 尸/총획 15 祚 복 조 부수 示/총획 10 한자 발음 [이ː조 ] 부표제어 이조-하다 2 편집 이력 「명사」 임금이 될 사람이 예식을 치른 뒤 임금의 자리에 오름. = 즉위 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 9 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=268354",
+              "content_sha256": "e67e5c6f0a117377900ebc44701c0f99b6e808b737e09f21b0b2e25887b53afe",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 이조 10 (離調 ) 원어 離 떠날 리 떠날 이 부수 隹/총획 19 調 고를 조 아침 주 부수 言/총획 15 한자 발음 [이ː조 ] 편집 이력 「명사」 『물리』 전기 동조 회로가 동조점(同調點)에서 벗어난 상태. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 10 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=470217",
+              "content_sha256": "22a145da41c8ee7b4cc1a44849caf2277b8a92f6b7588087413fa267adec5525",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 이조 2 (吏曹 ) 원어 吏 벼슬아치 리 벼슬아치 이 부수 口/총획 6 曹 무리 조 부수 曰/총획 11 한자 발음 [이ː조 ] 편집 이력 「명사」 「1」 『역사』 고려 시대에, 육조(六曹) 가운데 문관의 선임(選任)과 훈봉(勳封)에 관한 일을 맡아보던 관아. 공양왕 원년(1389)에 전리사를 고친 것이다. 「2」 『역사』 조선 시대에, 육조 가운데 문관의 선임과 훈봉, 관원의 성적 고사(考査), 포폄(褒貶)에 관한 일을 맡아보던 관아. ≒ 문부 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "e9e09bd707d0428c36ba4469b505dd997096aa0f3f1f63be7468dc7b142be8f3",
+      "occurrence_requests": {
+        "이조": [
+          {
+            "text": "이조",
+            "meaning_en": "the Ministry of Personnel"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "ccbd5f481b908ce8da4fdb1b702d2521d1d783615403f4f6f807a9133f06bc14"
+    },
+    {
+      "headwords": [
+        "정색하다"
+      ],
+      "proposal": {
+        "entries": [],
+        "unresolved": [
+          {
+            "headword": "정색하다",
+            "reason_en": "The supplied Standard Dictionary snapshots attest two distinct verbs: 正色하다 ‘put on a stern expression’ (word_no=483994), matching the requested usage, and 呈色하다 ‘show a color’ (word_no=301121). However, neither direct record could be retrieved and read independently. Search also suggested a Basic Dictionary entry for the facial-expression verb, but no readable direct SearchView record was obtained. Primary identity verification remains unresolved; this does not imply that the word is incorrect. No existing catalog identity was supplied."
+          }
+        ]
+      },
+      "proposal_digest": "241e81b346da831dca683a380c804151df317b7e2226bd534e4c2f51465d630e",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "f5a2d9c8f3d90c146ad2bd4aa1134d58e89b785c30fc1f051640e1e00c17acde",
+      "primary_evidence": [
+        {
+          "headword_request": "정색하다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%A0%95%EC%83%89%ED%95%98%EB%8B%A4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=301121",
+              "content_sha256": "ee55254860f7c97688ae8b9510cc7f4dcca6c35a736d1fe4c9437bf4b0cc49a3",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정색-하다 2 (呈色하다 ) 원어 呈 드릴 정 부수 口/총획 7 色 빛 색 부수 色/총획 6 하다 한자 고유어 발음 [정새카다 ] 활용 정색하여[정새카여](정색해[정새캐]), 정색하니[정새카니] 주표제어 정색 3 「동사」 빛깔을 나타내다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=483994",
+              "content_sha256": "d0b675a08cbee65653d0ab76bcd5c9f2423624a1210dc3ea6340d55a31bb2e63",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정색-하다 1 (正色하다 ) 원어 正 바를 정 부수 止/총획 5 色 빛 색 부수 色/총획 6 하다 한자 고유어 발음 [정ː새카다 ] 활용 정색하여[정ː새카여](정색해[정ː새캐]), 정색하니[정ː새카니] 주표제어 정색 1 편집 이력 「동사」 얼굴에 엄정한 빛을 나타내다. ≒ 정안하다 . 정색하는 표정. 그는 지금까지의 유쾌한 장난기에서 돌변해서 정색하고 다부지게 말했다. ≪박완서, 오만과 몽상≫ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "proposal_records": []
+        }
+      ],
+      "primary_evidence_digest": "9e2aaa50ec4c5817ed2f6e7e2a7248c3c6c2636339c8d1bb76643afb7d2e785b",
+      "occurrence_requests": {
+        "정색하다": [
+          {
+            "text": "정색했다",
+            "meaning_en": "put on a stern expression"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "716b85c040eafb7884c32567b29e8019070b67f1dd38a517c73d568718584ad5"
+    },
+    {
+      "headwords": [
+        "골격"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "stdict-397130/명",
+            "headword": "골격",
+            "pos": "명",
+            "meaning_en": "Skeleton or bodily framework; the basic framework or outline of something.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=397130",
+            "evidence_en": "The supplied readable Standard Dictionary snapshot for word_no=397130 attests the exact headword 골격 (骨格/骨骼), POS 명사. Sense 1 describes the bones forming and supporting an animal's body; examples 골격이 좋다 and 골격이 크다 support physical-build usage. Sense 2 describes a basic framework or outline. No existing catalog identity was supplied. Basic Dictionary search listings show this noun, but its direct record could not be verified; the supplied Standard record provides primary attestation."
+          }
+        ],
+        "unresolved": []
+      },
+      "proposal_digest": "f3d039c5d8d9e25ab0633a848ec4f55c29634247788678162dd7db58f1956297",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "f5a2d9c8f3d90c146ad2bd4aa1134d58e89b785c30fc1f051640e1e00c17acde",
+      "primary_evidence": [
+        {
+          "headword_request": "골격",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EA%B3%A8%EA%B2%A9",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=397130",
+              "content_sha256": "2d8f93434b59205128eac2f297350c479c3cbb62c5df6117ef8b8566a309ffdb",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 골격 (骨格/骨骼 ) 원어 骨 뼈 골 부수 骨/총획 10 格 격식 격 그칠 각 부수 木/총획 10 한자 원어 骨 뼈 골 부수 骨/총획 10 骼 마른뼈 격 부수 骨/총획 16 한자 발음 [골격 ] 활용 골격만[골경만 ] 편집 이력 「명사」 「1」 『의학』 동물의 체형(體型)을 이루고 몸을 지탱하는 뼈. 골격을 갖추다. 골격이 좋다. 골격이 크다. 코가 덩실하게 크고 눈이 부리부리한 대형의 골격으로 러시아인의 피가 섞이지 않았나 싶은 인상을 풍겼다. ≪이병주, 지리산≫ 더 보기 다중 매체 골격 Previous Next 「2」 어떤 사물이나 일에서 계획의 기본이 되는 틀이나 줄거리. 기본 골격 . 골격을 짜다. 골격을 이루다. 골격으로 삼다. 건물의 골격이 하나하나 이루어져 간다. 그 집은 나무로 짠 골격 위에 천막을 얹어 만든 것이었다. 더 보기 관용구/속담 관용구 골격이 서다 어떤 일을 형성할 때 기본 줄거리와 틀이 이루어지다. · 그 일을 추진하기 위한 골격이 서 있냐? 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "proposal_records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=397130",
+              "content_sha256": "2d8f93434b59205128eac2f297350c479c3cbb62c5df6117ef8b8566a309ffdb",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 골격 (骨格/骨骼 ) 원어 骨 뼈 골 부수 骨/총획 10 格 격식 격 그칠 각 부수 木/총획 10 한자 원어 骨 뼈 골 부수 骨/총획 10 骼 마른뼈 격 부수 骨/총획 16 한자 발음 [골격 ] 활용 골격만[골경만 ] 편집 이력 「명사」 「1」 『의학』 동물의 체형(體型)을 이루고 몸을 지탱하는 뼈. 골격을 갖추다. 골격이 좋다. 골격이 크다. 코가 덩실하게 크고 눈이 부리부리한 대형의 골격으로 러시아인의 피가 섞이지 않았나 싶은 인상을 풍겼다. ≪이병주, 지리산≫ 더 보기 다중 매체 골격 Previous Next 「2」 어떤 사물이나 일에서 계획의 기본이 되는 틀이나 줄거리. 기본 골격 . 골격을 짜다. 골격을 이루다. 골격으로 삼다. 건물의 골격이 하나하나 이루어져 간다. 그 집은 나무로 짠 골격 위에 천막을 얹어 만든 것이었다. 더 보기 관용구/속담 관용구 골격이 서다 어떤 일을 형성할 때 기본 줄거리와 틀이 이루어지다. · 그 일을 추진하기 위한 골격이 서 있냐? 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "6b9ca2648c86d23483026c7f0b218e859bb598581d468a242be69d83d7406855",
+      "occurrence_requests": {
+        "골격": [
+          {
+            "text": "골격과",
+            "meaning_en": "physical build and"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "18c4d4a81e21932a576745993cd8180a1b00505639f64493f6721bc281f57790"
+    },
+    {
+      "headwords": [
+        "정실"
+      ],
+      "proposal": {
+        "entries": [],
+        "unresolved": [
+          {
+            "headword": "정실",
+            "reason_en": "The supplied Standard Dictionary snapshot for word_no=294326 identifies 정실 (正室), noun, meaning 'principal wife' and 'main building of a house', covering the requested wife sense. However, its direct record could not be retrieved and read, and no readable Basic Dictionary record was verified. All other supplied Standard Dictionary records also failed retrieval. No primary identity is proposed under the required verification rule. The supplied 正實, 貞實 and 精實 records describe roots of 정실하다, not standalone nouns or adjectives. No existing catalog identities were supplied."
+          }
+        ]
+      },
+      "proposal_digest": "4683315a6798dce62c8df08373c6a11b026fa5b2b62bea8dd7cbc68c132e31c4",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "f5a2d9c8f3d90c146ad2bd4aa1134d58e89b785c30fc1f051640e1e00c17acde",
+      "primary_evidence": [
+        {
+          "headword_request": "정실",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%A0%95%EC%8B%A4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=294326",
+              "content_sha256": "b997a5f2f5e5a971617e975dad937818c4bd5c4b971a6df4b6a60a309c105e87",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정실 1 (正室 ) 원어 正 바를 정 부수 止/총획 5 室 집 실 부수 宀/총획 9 한자 발음 [정ː실 ] 편집 이력 「명사」 「1」 ‘ 본처 ’를 달리 이르는 말. 원래 본처가 주로 거처하는 공간을 뜻하는 말에서 유래한다. ≒ 본실 , 적실 . 정실로 들어앉다. 조상의 위패를 모시고 제사를 올리는 제각 앞에 살림집을 지었으면 의당 정실을 들어앉혀야지 소실들을 끌어들여 별장을 삼고 주색잡기나 즐기니 조상들이 벌을 안 내릴 리 있느냐…. ≪조정래, 태백산맥≫ 「반대말」 소실(小室) 「2」 집의 몸채. 별당 정실 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=294327",
+              "content_sha256": "708163c76365b5b2e128e8a30f9384685d7aa5bfc78708be25b102a985681ca8",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정실 2 (正實 ) 원어 正 바를 정 부수 止/총획 5 實 열매 실 부수 宀/총획 14 한자 부표제어 정실-히 1 , 정실-하다 1 ‘ 정실하다 ’의 어근. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=294663",
+              "content_sha256": "b320c8da52a4c723c7e3e445f9f5ade48ab8ee2322c434a537b160d042d4ffff",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정실 6 (淨室 ) 원어 淨 깨끗할 정 부수 水/총획 11 室 집 실 부수 宀/총획 9 한자 발음 [정실 ] 「명사」 제사에 참여하는 사람이 몸과 마음을 깨끗이 하고 부정을 멀리하기 위하여 묵는 방. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 6 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=294664",
+              "content_sha256": "6c011e41c8e9a175038c2d26f1c11ef61988bce6ca562eab8a7a3c1af3ca0794",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정실 7 (精實 ) 원어 精 찧을 정 부수 米/총획 14 實 열매 실 부수 宀/총획 14 한자 부표제어 정실-히 3 , 정실-하다 3 ‘ 정실하다 ’의 어근. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 7 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=294930",
+              "content_sha256": "d8209b75ffa869e75e2789a3117042503b182c5ab8989e51d87bc85900c5c2a6",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정실 4 (庭實 ) 원어 庭 뜰 정 부수 广/총획 10 實 열매 실 부수 宀/총획 14 한자 발음 [정실 ] 「명사」 제후들이 바친 공물이 천자(天子)의 뜰에 가득 참. 또는 그렇게 찬 공물. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 4 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=294931",
+              "content_sha256": "6b7b72be421301a510ce5ad89e08daf6f8b748868bac881d016d06e928ce8e2b",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정실 5 (情實 ) 원어 情 뜻 정 부수 心/총획 11 實 열매 실 부수 宀/총획 14 한자 발음 [정실 ] 「명사」 「1」 사사로운 정이나 관계에 이끌리는 일. 정실 인사. 정실에 얽매이다. 관리의 임명은 정실이 아니라 재능에 따라 해야 한다. 「2」 실제의 사실. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 5 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=477093",
+              "content_sha256": "de6cf6686e79c8c788689c8932b0fea1ba936fa7a68c1b703ad360a9d2ef9ecc",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 정실 3 (貞實 ) 원어 貞 곧을 정 부수 貝/총획 9 實 열매 실 부수 宀/총획 14 한자 부표제어 정실-히 2 , 정실-하다 2 ‘ 정실하다 ’의 어근. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "proposal_records": []
+        }
+      ],
+      "primary_evidence_digest": "c3f61f92b3e4125a494eafd8aef6506b7ddd236bbec2b0001f750e163a40ca1e",
+      "occurrence_requests": {
+        "정실": [
+          {
+            "text": "정실이",
+            "meaning_en": "the principal wife"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "d45af19da970815db0019781d32fd18c2ac53c8e72b396856480967af4e1bc4b"
+    },
+    {
+      "headwords": [
+        "병법"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "stdict-435506/명",
+            "headword": "병법",
+            "pos": "명",
+            "meaning_en": "Military strategy and tactics; methods of commanding troops and waging war.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=435506",
+            "evidence_en": "The supplied direct-record snapshot identifies 병법¹ (兵法), 「명사」, military domain, and defines it as “군사를 지휘하여 전쟁하는 방법.” No existing catalog identity was supplied. Basic Dictionary search lists this lexeme, but its standalone record could not be verified; the supplied Standard Dictionary record supports this fallback identity. Live retrieval failed, so attestation relies on the supplied snapshot."
+          },
+          {
+            "id": "stdict-146552/명",
+            "headword": "병법",
+            "pos": "명",
+            "meaning_en": "The title of a Buddhist ritual officiant.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=146552",
+            "evidence_en": "The supplied direct-record snapshot identifies 병법² (秉法), 「명사」, Buddhist domain, and defines it as “불전(佛前)에서 예식을 집행하는 사람의 직명.” This is a distinct lexical homonym of military 병법 (兵法). No existing catalog identity was supplied. Live retrieval failed, so attestation relies on the supplied snapshot."
+          }
+        ],
+        "unresolved": []
+      },
+      "proposal_digest": "51d1a76382b31cb210f8382497ecb813ff1e1628702fcbe6f94f168abcc96f32",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "f5a2d9c8f3d90c146ad2bd4aa1134d58e89b785c30fc1f051640e1e00c17acde",
+      "primary_evidence": [
+        {
+          "headword_request": "병법",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EB%B3%91%EB%B2%95",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=146552",
+              "content_sha256": "bd70d3f9ed00ded82b5bf3f2404f69c2296b1905e565fe246ab57c6edf28abc9",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 병법 2 (秉法 ) 원어 秉 잡을 병 부수 禾/총획 8 法 법도 법 부수 水/총획 8 한자 발음 [병ː법] 활용 병법만[병ː범만] 「명사」 『불교』 불전(佛前)에서 예식을 집행하는 사람의 직명. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=435506",
+              "content_sha256": "f50212f30049a643aa57696d0d6ce712499bf47d254c416822a8c2013d1efc54",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 병법 1 (兵法 ) 원어 兵 군사 병 부수 八/총획 7 法 법도 법 부수 水/총획 8 한자 발음 [병뻡 ] 활용 병법만[병뻠만 ] 편집 이력 「명사」 『군사』 군사를 지휘하여 전쟁하는 방법. ≒ 도략 . 병법에 능한 장수. 그 싸움에서 적에게 참패를 당한 것은 싸움을 지휘했던 장수가 병법에 밝지 못한 때문이었다. 「비슷한말」 전술(戰術) 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "proposal_records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=146552",
+              "content_sha256": "bd70d3f9ed00ded82b5bf3f2404f69c2296b1905e565fe246ab57c6edf28abc9",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 병법 2 (秉法 ) 원어 秉 잡을 병 부수 禾/총획 8 法 법도 법 부수 水/총획 8 한자 발음 [병ː법] 활용 병법만[병ː범만] 「명사」 『불교』 불전(佛前)에서 예식을 집행하는 사람의 직명. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=435506",
+              "content_sha256": "f50212f30049a643aa57696d0d6ce712499bf47d254c416822a8c2013d1efc54",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 병법 1 (兵法 ) 원어 兵 군사 병 부수 八/총획 7 法 법도 법 부수 水/총획 8 한자 발음 [병뻡 ] 활용 병법만[병뻠만 ] 편집 이력 「명사」 『군사』 군사를 지휘하여 전쟁하는 방법. ≒ 도략 . 병법에 능한 장수. 그 싸움에서 적에게 참패를 당한 것은 싸움을 지휘했던 장수가 병법에 밝지 못한 때문이었다. 「비슷한말」 전술(戰術) 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "87680de60f99dc95eb5bd4717b22a75fc2543432286ccd2bf7c504349b60b11b",
+      "occurrence_requests": {
+        "병법": [
+          {
+            "text": "병법을",
+            "meaning_en": "military strategy"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "93db8934d806fc59de99d306e60238ae5576c3e0647b0b7283cf2a5bcc3d630c"
+    },
+    {
+      "headwords": [
+        "방자하다"
+      ],
+      "proposal": {
+        "entries": [],
+        "unresolved": [
+          {
+            "headword": "방자하다",
+            "reason_en": "The supplied Standard Dictionary snapshots attest three distinct lexemes: word_no=136796, 형용사 (放恣하다), ‘insolent; unrestrained’; word_no=135913, 동사, ‘curse someone through prayers to spirits or sorcery’; and word_no=136798, 동사 (放資하다), ‘invest capital, time or effort for profit.’ The adjective matches the requested insolent meaning. However, repeated retrieval attempts could not read any direct Standard Dictionary record. Secondary search evidence also suggests a Basic Dictionary adjective entry, but its direct record and ParaWordNo could not be verified. Under the required retrievable-primary-record rule, no identity is proposed. No existing catalog identities were supplied."
+          }
+        ]
+      },
+      "proposal_digest": "c287d465ed602277e0bd2db537f1c3c72cd659c2ef925b05d341f103f66158d3",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "f5a2d9c8f3d90c146ad2bd4aa1134d58e89b785c30fc1f051640e1e00c17acde",
+      "primary_evidence": [
+        {
+          "headword_request": "방자하다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EB%B0%A9%EC%9E%90%ED%95%98%EB%8B%A4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=135913",
+              "content_sha256": "351781848d037155019fc17c8fc2196309de6285e64c3ef3a9f4ddda5abc4730",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 방자-하다 1 발음 [방자하다 ] 활용 방자하여[방자하여](방자해[방자해]), 방자하니[방자하니] 주표제어 방자 1 편집 이력 「동사」 【…을】 남이 못되거나 재앙을 받도록 귀신에게 빌어 저주하거나 그런 방술을 하다. ≒ 방자질하다 , 자일하다 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=136796",
+              "content_sha256": "670837e0d695e1e063b082eeaab252ad719f5a1df4c93b053664de00108b3d4f",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 방자-하다 2 (放恣하다 ) 원어 放 놓을 방 부수 攴/총획 8 恣 방자할 자 부수 心/총획 10 하다 한자 고유어 발음 [방ː자하다 ] 활용 방자하여[방ː자하여 ](방자해[방ː자해 ]), 방자하니[방ː자하니 ] 주표제어 방자 3 편집 이력 「형용사」 「1」 어려워하거나 조심스러워하는 태도가 없이 무례하고 건방지다. ≒ 자방하다 . 방자한 태도. 어른 앞에서 방자하게 굴지 마라. 방자한 발설을 거침없이, 목숨을 걸고 뱉어 낸 곽무출이는 오히려 자세조차 흩뜨리지 않고 태연자약하다. ≪유현종, 들불≫ 대장이 부하에게 말하는 공석에서 그따위로 무엄하고 방자하게 말대답하는 것을 어떻게 용서하란 말이냐. ≪홍명희, 임꺽정≫ 더 보기 「2」 제멋대로 거리낌없이 노는 태도가 있다. 나라에 큰 죄를 지어 이 섬에 유배 온 중죄인이 죄인 된 분수를 저버리고 방자한 생활을 했으니 이런 형벌을 받음은 마땅한 일이오. ≪현기영, 변방에 우짖는 새≫ 모두모두 빨리 취하고 싶어서 웃고 떠들며 방자하게 마셔 대고 있었다. ≪박영한, 머나먼 송바강≫ 「비슷한말」 방약무인하다(傍若無人하다) 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=136798",
+              "content_sha256": "4a0256cb46ce649b77b77040227d8ab31da960200fc7fba920337f46b643c615",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 방자-하다 3 (放資하다 ) 원어 放 놓을 방 부수 攴/총획 8 資 재물 자 부수 貝/총획 13 하다 한자 고유어 발음 [방ː자하다 ] 활용 방자하여[방ː자하여 ](방자해[방ː자해 ]), 방자하니[방ː자하니 ] 주표제어 방자 4 편집 이력 「동사」 『경제』 이익을 얻기 위하여 어떤 일이나 사업에 자본을 대거나 시간이나 정성을 쏟다. = 투자하다 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "proposal_records": []
+        }
+      ],
+      "primary_evidence_digest": "567a149835285234c197bbfe9684ec4c35f0fd5d93e867fe0e80cb8d12c0ba70",
+      "occurrence_requests": {
+        "방자하다": [
+          {
+            "text": "방자하냐",
+            "meaning_en": "are you insolent"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "d273b2acf7aa90d568fbad9277a2dde54b183d71899e4858bbd0ed9e17f9e30b"
+    },
+    {
+      "headwords": [
+        "열셋"
+      ],
+      "proposal": {
+        "entries": [],
+        "unresolved": [
+          {
+            "headword": "열셋",
+            "reason_en": "No readable standalone Basic or Standard Dictionary record with this exact headword and POS was verified; dictionary search pages could not be read. This does not make the natural numeral meaning 'thirteen' incorrect. NIKL discusses 열셋 in its numeral-pronunciation guidance and explains that combinations of different numerical units are not single dictionary words ([NIKL guidance](https://www.korean.go.kr/nkview/nknews/200408/73_5.html)). That discussion and the supplied occurrence 열세 do not establish a standalone dictionary identity."
+          }
+        ]
+      },
+      "proposal_digest": "60ec75d791131e01ec9ce7034ce5a50c4f15939f4cf890e4e229a1d7bea49eac",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "f5a2d9c8f3d90c146ad2bd4aa1134d58e89b785c30fc1f051640e1e00c17acde",
+      "primary_evidence": [
+        {
+          "headword_request": "열셋",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%97%B4%EC%85%8B",
+          "records": []
+        },
+        {
+          "proposal_records": []
+        }
+      ],
+      "primary_evidence_digest": "b72ec537986714d697a34a359d33f60c2bec27fcedcd68731936b2ec7bf3b823",
+      "occurrence_requests": {
+        "열셋": [
+          {
+            "text": "열세",
+            "meaning_en": "thirteen"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "d9d660b1a41b2f27ec4857100326498f78150a451bb8a7a6d66025c31eaf8c64"
     }
   ]
 }

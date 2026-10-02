@@ -173,7 +173,7 @@
       "id": "하다01/보",
       "headword": "하다",
       "kind": "word",
-      "definition_en": "An auxiliary verb used after another verb or adjective to express causing or allowing an action or bringing about a state; the necessity of an action or state; or an attempt or intention to act."
+      "definition_en": "An auxiliary verb that combines with a preceding verb or adjective to express causing or allowing an action or state, necessity, or an attempt or intention. It can also affirm or emphasize an action, or indicate that an action or situation happens repeatedly or habitually."
     },
     {
       "id": "형01/명",
@@ -563,7 +563,7 @@
       "id": "앞/명",
       "headword": "앞",
       "kind": "word",
-      "definition_en": "the front; the space in front of someone or something"
+      "definition_en": "The front or the space in front of someone or something, including someone's presence; also the time ahead or the future."
     },
     {
       "id": "어느01/관",
@@ -947,7 +947,7 @@
       "id": "가까이/부",
       "headword": "가까이",
       "kind": "word",
-      "definition_en": "near; close by; at a short distance"
+      "definition_en": "Near or at a short distance; also closely or intimately, in a friendly or close relationship."
     },
     {
       "id": "가다01/동",
@@ -2774,6 +2774,970 @@
                 "segment_index": 381,
                 "entry_id": "connective-go",
                 "context_en": "Connects becoming pregnant to the subsequent birth.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "before_entries": [
+        {
+          "id": "앞/명",
+          "headword": "앞",
+          "kind": "word",
+          "definition_en": "the front; the space in front of someone or something"
+        },
+        {
+          "id": "가까이/부",
+          "headword": "가까이",
+          "kind": "word",
+          "definition_en": "near; close by; at a short distance"
+        },
+        {
+          "id": "하다01/보",
+          "headword": "하다",
+          "kind": "word",
+          "definition_en": "An auxiliary verb used after another verb or adjective to express causing or allowing an action or bringing about a state; the necessity of an action or state; or an attempt or intention to act."
+        }
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "앞/명",
+            "headword": "앞",
+            "kind": "word",
+            "definition_en": "The front or the space in front of someone or something, including someone's presence; also the time ahead or the future."
+          },
+          {
+            "id": "가까이/부",
+            "headword": "가까이",
+            "kind": "word",
+            "definition_en": "Near or at a short distance; also closely or intimately, in a friendly or close relationship."
+          },
+          {
+            "id": "하다01/보",
+            "headword": "하다",
+            "kind": "word",
+            "definition_en": "An auxiliary verb that combines with a preceding verb or adjective to express causing or allowing an action or state, necessity, or an attempt or intention. It can also affirm or emphasize an action, or indicate that an action or situation happens repeatedly or habitually."
+          }
+        ],
+        "references": [
+          {
+            "entry_id": "앞/명",
+            "url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=88648&nation=eng&nationCode=6",
+            "paraphrase_en": "NIKL lists 앞 as a noun. Sense 1 concerns the direction or place in front; the supplied uses before a person fit this spatial meaning. Sense 4 concerns future time and includes 앞으로 examples, supporting the time-ahead uses."
+          },
+          {
+            "entry_id": "가까이/부",
+            "url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=62494&nation=eng",
+            "paraphrase_en": "NIKL's 가까이² is an adverb: sense 1 expresses a short physical distance, while sense 3 expresses friendly or intimate relations and explicitly includes 가까이 지내다. These support the supplied spatial and relational uses; the latter does not independently specify sexual intimacy."
+          },
+          {
+            "entry_id": "하다01/보",
+            "url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=62888&nation=eng",
+            "paraphrase_en": "NIKL's 하다² is an auxiliary verb. Sense 1 supports causation with -게; senses 3 and 5 support necessity with -어야; sense 4 supports attempts and intentions with -려(고); sense 8 supports repeated or habitual actions with -고는 or -곤. These functions belong to the same auxiliary identity."
+          },
+          {
+            "entry_id": "하다01/보",
+            "url": "https://www.korean.go.kr/front/mcfaq/mcfaqView.do?mcfaq_seq=8841&mn_id=62&pageIndex=30",
+            "paraphrase_en": "NIKL confirms that auxiliary 하다 can affirm or emphasize a preceding action. It distinguishes this auxiliary-verb role after verbs from the auxiliary-adjective role after adjectives."
+          },
+          {
+            "entry_id": "하다01/보",
+            "url": "https://www.korean.go.kr/nkview/nklife/2018_4/28_4.pdf",
+            "paraphrase_en": "NIKL's discussion reproduces the dictionary's auxiliary-verb affirmation and emphasis sense, including -기만 하다. This supports the helper role in 울기만 했다; the restriction to crying comes from the complete construction, including 만."
+          }
+        ]
+      },
+      "proposal_digest": "171a11d0effea6dd3e0822bd44d77470d0ad10e29dd53f2057b6d04b6360888f",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "context_digest": "f4645021baaf8f41ed974fb4590998502f602533ee5d855ee34e51424fed5740",
+      "coverage": {
+        "files": {
+          "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json": "c83f4d167f5724a8ba5ce163e2339609f417db5632cb3bf1ca0a96193b66926c",
+          "/home/catalin/graded-readers/content/korean/honggildong/l2.annotations.json": "c242968fe992ff8aa9c3d3d6c1ca3374c3adfd49030e9e4419fecb0bd2e2b5f4",
+          "/tmp/korean-dictionary-revision-drafts.json": "920c48af91037aafa01cc69025032aa6a3a6f8d53cd6e732879a0629883ae870"
+        },
+        "occurrences": [
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "segment_index": 637,
+            "entry_id": "앞/명",
+            "surface": "앞에서",
+            "meaning_en": "in front of",
+            "sentence": "”\n길동은 아버지 앞에서 다시 말했습니다.",
+            "sentence_start": 1380,
+            "start": 1390,
+            "form_steps": [],
+            "grammar_links": [
+              {
+                "segment_index": 637,
+                "entry_id": "action-location-eseo",
+                "context_en": "에서 marks where Gildong spoke: in front of his father. 아버지 앞 means the space in front of his father."
+              }
+            ]
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "segment_index": 664,
+            "entry_id": "앞/명",
+            "surface": "앞에",
+            "meaning_en": "in front of me",
+            "sentence": "제 아버지가 앞에 있습니다.",
+            "sentence_start": 1437,
+            "start": 1444,
+            "form_steps": [],
+            "grammar_links": [
+              {
+                "segment_index": 664,
+                "entry_id": "location-e",
+                "context_en": "에 marks 앞 as the location where the father is: in front of the speaker."
+              }
+            ]
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l2.annotations.json",
+            "chapter": 1,
+            "segment_index": 583,
+            "entry_id": "가까이/부",
+            "surface": "가까이",
+            "meaning_en": "close to him",
+            "sentence": "그는 길동을 보고 가까이 불렀다.",
+            "sentence_start": 1165,
+            "start": 1175,
+            "form_steps": [],
+            "grammar_links": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l2.annotations.json",
+            "chapter": 1,
+            "segment_index": 672,
+            "entry_id": "앞/명",
+            "surface": "앞에서",
+            "meaning_en": "in front of",
+            "sentence": "”\n\n길동은 아버지 앞에서 다시 절을 하고 말했다.",
+            "sentence_start": 1344,
+            "start": 1355,
+            "form_steps": [],
+            "grammar_links": [
+              {
+                "segment_index": 672,
+                "entry_id": "action-location-eseo",
+                "context_en": "에서 marks where Gildong bowed and spoke. 아버지 앞에서 means ‘in front of his father.’"
+              }
+            ]
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l2.annotations.json",
+            "chapter": 1,
+            "segment_index": 748,
+            "entry_id": "하다01/보",
+            "surface": "합니까",
+            "meaning_en": "must I?",
+            "sentence": "저도 사람인데 왜 이렇게 살아야 합니까?",
+            "sentence_start": 1475,
+            "start": 1493,
+            "form_steps": [
+              {
+                "form": "합니까",
+                "reading": "함니까",
+                "label": "Formal polite question",
+                "meaning_en": "must I?",
+                "grammar_entry_ids": [
+                  "formal-question-seumnikka"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 748,
+                "entry_id": "formal-question-seumnikka",
+                "context_en": "-ㅂ니까 ends Gildong's question to his father in a formal polite style."
+              }
+            ]
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l2.annotations.json",
+            "chapter": 1,
+            "segment_index": 814,
+            "entry_id": "하다01/보",
+            "surface": "할",
+            "meaning_en": "would try, modifying the following possibility",
+            "sentence": "그러면 자기 신분으로 할 수 없는 일까지 하려고 할 것 같았다.",
+            "sentence_start": 1594,
+            "start": 1621,
+            "form_steps": [
+              {
+                "form": "할",
+                "reading": "할",
+                "label": "Prospective noun-modifying form of the auxiliary",
+                "meaning_en": "would try, modifying the following possibility",
+                "grammar_entry_ids": [
+                  "prospective-modifier-eul"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 814,
+                "entry_id": "prospective-modifier-eul",
+                "context_en": "The auxiliary's 할 form modifies 것, presenting the attempt as an anticipated possibility."
+              }
+            ]
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l2.annotations.json",
+            "chapter": 1,
+            "segment_index": 887,
+            "entry_id": "앞/명",
+            "surface": "앞에",
+            "meaning_en": "before me; into my presence",
+            "sentence": "또 이런 말을 하면 내 앞에 오지 못할 것이다.",
+            "sentence_start": 1726,
+            "start": 1739,
+            "form_steps": [],
+            "grammar_links": [
+              {
+                "segment_index": 887,
+                "entry_id": "location-e",
+                "context_en": "에 marks 앞 as the destination of coming: before Minister Hong, or into his presence."
+              }
+            ]
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l2.annotations.json",
+            "chapter": 1,
+            "segment_index": 913,
+            "entry_id": "앞/명",
+            "surface": "앞에",
+            "meaning_en": "in front of",
+            "sentence": "그저 아버지 앞에 몸을 숙이고 울었다.",
+            "sentence_start": 1774,
+            "start": 1781,
+            "form_steps": [],
+            "grammar_links": [
+              {
+                "segment_index": 913,
+                "entry_id": "location-e",
+                "context_en": "에 marks the position where Gildong bent down and cried. 아버지 앞에 means ‘in front of his father’."
+              }
+            ]
+          },
+          {
+            "file": "/tmp/korean-dictionary-revision-drafts.json",
+            "chapter": 1,
+            "segment_index": 165,
+            "entry_id": "가까이/부",
+            "surface": "가까이",
+            "meaning_en": "closely; intimately",
+            "sentence": "’\n\n홍 판서는 유 부인의 방으로 가서 부인과 가까이 지내려고 했다.",
+            "sentence_start": 299,
+            "start": 325,
+            "form_steps": [],
+            "grammar_links": [
+              {
+                "segment_index": 165,
+                "entry_id": "intention-euryeogo-hada",
+                "context_en": "가까이 belongs to the intended action: he sought intimacy with his wife, rather than merely intending to reside somewhere.",
+                "display_form": "가까이 지내려고 했다",
+                "display_meaning_en": "intended to be intimate with her",
+                "display_end_segment_index": 169
+              }
+            ]
+          },
+          {
+            "file": "/tmp/korean-dictionary-revision-drafts.json",
+            "chapter": 1,
+            "segment_index": 169,
+            "entry_id": "하다01/보",
+            "surface": "했다",
+            "meaning_en": "intended to; completes the past intention",
+            "sentence": "’\n\n홍 판서는 유 부인의 방으로 가서 부인과 가까이 지내려고 했다.",
+            "sentence_start": 299,
+            "start": 334,
+            "form_steps": [
+              {
+                "form": "했다",
+                "reading": "",
+                "label": "Past plain auxiliary",
+                "meaning_en": "intended to; completes the past intention",
+                "grammar_entry_ids": [
+                  "past-ass-eoss"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 169,
+                "entry_id": "past-ass-eoss",
+                "context_en": "The auxiliary places the intention in the past.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              },
+              {
+                "segment_index": 169,
+                "entry_id": "plain-declarative-da",
+                "context_en": "The intention is reported in plain written narration.",
+                "display_form": "했다",
+                "display_meaning_en": "intended to; completes the past intention",
+                "display_end_segment_index": 169
+              }
+            ]
+          },
+          {
+            "file": "/tmp/korean-dictionary-revision-drafts.json",
+            "chapter": 1,
+            "segment_index": 659,
+            "entry_id": "가까이/부",
+            "surface": "가까이",
+            "meaning_en": "closer; near him",
+            "sentence": "그는 길동을 발견하고 가까이 불렀다.",
+            "sentence_start": 1301,
+            "start": 1313,
+            "form_steps": [],
+            "grammar_links": []
+          },
+          {
+            "file": "/tmp/korean-dictionary-revision-drafts.json",
+            "chapter": 1,
+            "segment_index": 839,
+            "entry_id": "앞/명",
+            "surface": "앞으로",
+            "meaning_en": "in the future",
+            "sentence": "그러나 길동의 마음을 달래 주면 앞으로 길동이 예의를 지키지 않을까 걱정했다.",
+            "sentence_start": 1664,
+            "start": 1682,
+            "form_steps": [],
+            "grammar_links": [
+              {
+                "segment_index": 839,
+                "entry_id": "temporal-euro-ro",
+                "context_en": "Extends the directional expression to the time ahead: “in the future”.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              }
+            ]
+          },
+          {
+            "file": "/tmp/korean-dictionary-revision-drafts.json",
+            "chapter": 1,
+            "segment_index": 905,
+            "entry_id": "앞/명",
+            "surface": "앞에",
+            "meaning_en": "into my presence",
+            "sentence": "다시 이런 말을 하면 내 앞에 오지 못하게 하겠다.",
+            "sentence_start": 1798,
+            "start": 1812,
+            "form_steps": [
+              {
+                "form": "앞에",
+                "reading": "아페",
+                "label": "Destination marker",
+                "meaning_en": "into my presence",
+                "grammar_entry_ids": [
+                  "location-e"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 905,
+                "entry_id": "location-e",
+                "context_en": "Marks the father's presence as the destination.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              }
+            ]
+          },
+          {
+            "file": "/tmp/korean-dictionary-revision-drafts.json",
+            "chapter": 1,
+            "segment_index": 911,
+            "entry_id": "하다01/보",
+            "surface": "하겠다",
+            "meaning_en": "I will make it so",
+            "sentence": "다시 이런 말을 하면 내 앞에 오지 못하게 하겠다.",
+            "sentence_start": 1798,
+            "start": 1822,
+            "form_steps": [
+              {
+                "form": "하겠다",
+                "reading": "하겓따",
+                "label": "Intention with -겠-; complete plain form",
+                "meaning_en": "I will make it so",
+                "grammar_entry_ids": [
+                  "intention-get"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 911,
+                "entry_id": "intention-get",
+                "context_en": "Expresses the father's intention.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              },
+              {
+                "segment_index": 911,
+                "entry_id": "plain-declarative-da",
+                "context_en": "The plain ending closes the threat; it adds no new form beyond the complete intention stage.",
+                "display_form": "하겠다",
+                "display_meaning_en": "I will make it so",
+                "display_end_segment_index": 911
+              }
+            ]
+          },
+          {
+            "file": "/tmp/korean-dictionary-revision-drafts.json",
+            "chapter": 1,
+            "segment_index": 931,
+            "entry_id": "하다01/보",
+            "surface": "했다",
+            "meaning_en": "did so",
+            "sentence": "”\n\n길동은 아무 대답도 하지 못하고 몸을 낮춘 채 울기만 했다.",
+            "sentence_start": 1826,
+            "start": 1859,
+            "form_steps": [
+              {
+                "form": "했다",
+                "reading": "핻따",
+                "label": "Past time; complete plain form",
+                "meaning_en": "did so",
+                "grammar_entry_ids": [
+                  "past-ass-eoss"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 931,
+                "entry_id": "past-ass-eoss",
+                "context_en": "Places the crying in the past.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              },
+              {
+                "segment_index": 931,
+                "entry_id": "plain-declarative-da",
+                "context_en": "The plain ending closes the narration; it adds no new form beyond the complete past stage.",
+                "display_form": "했다",
+                "display_meaning_en": "did so",
+                "display_end_segment_index": 931
+              }
+            ]
+          },
+          {
+            "file": "/tmp/korean-dictionary-revision-drafts.json",
+            "chapter": 1,
+            "segment_index": 1052,
+            "entry_id": "하다01/보",
+            "surface": "합니다",
+            "meaning_en": "intend to do so",
+            "sentence": "더는 참을 수 없어서 어머니 곁을 떠나려고 합니다.",
+            "sentence_start": 2083,
+            "start": 2107,
+            "form_steps": [
+              {
+                "form": "합니다",
+                "reading": "합니다",
+                "label": "Formal polite statement",
+                "meaning_en": "intend to do so",
+                "grammar_entry_ids": [
+                  "polite-seumnida"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 1052,
+                "entry_id": "polite-seumnida",
+                "context_en": "The intention is stated respectfully to his mother.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              }
+            ]
+          },
+          {
+            "file": "/tmp/korean-dictionary-revision-drafts.json",
+            "chapter": 1,
+            "segment_index": 1106,
+            "entry_id": "하다01/보",
+            "surface": "하느냐",
+            "meaning_en": "do you make it so?",
+            "sentence": "그런데 집을 떠나겠다니, 왜 어머니 마음을 이렇게 아프게 하느냐?",
+            "sentence_start": 2190,
+            "start": 2222,
+            "form_steps": [
+              {
+                "form": "하느냐",
+                "reading": "하느냐",
+                "label": "Plain direct question",
+                "meaning_en": "do you make it so?",
+                "grammar_entry_ids": [
+                  "plain-question-nya"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 1106,
+                "entry_id": "plain-question-nya",
+                "context_en": "느냐 gives the mother's question a direct, reproachful tone.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              }
+            ]
+          },
+          {
+            "file": "/tmp/korean-dictionary-revision-drafts.json",
+            "chapter": 1,
+            "segment_index": 1120,
+            "entry_id": "앞/명",
+            "surface": "앞으로의",
+            "meaning_en": "of the time ahead",
+            "sentence": "“마음을 놓고 앞으로의 일을 기다려 주세요.",
+            "sentence_start": 2248,
+            "start": 2256,
+            "form_steps": [],
+            "grammar_links": [
+              {
+                "segment_index": 1120,
+                "entry_id": "temporal-euro-ro",
+                "context_en": "으로 extends 앞 to the time ahead: 앞으로 refers to the future.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              },
+              {
+                "segment_index": 1120,
+                "entry_id": "possessive-ui",
+                "context_en": "의 connects the time ahead with the events that lie ahead.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              }
+            ]
+          },
+          {
+            "file": "/tmp/korean-dictionary-revision-drafts.json",
+            "chapter": 1,
+            "segment_index": 218,
+            "entry_id": "하다01/보",
+            "surface": "했다",
+            "meaning_en": "tried to do so",
+            "sentence": "부인이 일어나 맞이하자, 그는 기쁜 얼굴로 부인의 손을 잡고 가까이하려 했다.",
+            "sentence_start": 417,
+            "start": 457,
+            "form_steps": [
+              {
+                "form": "했다",
+                "reading": "핻따",
+                "label": "Past form; contraction",
+                "meaning_en": "tried to do so",
+                "grammar_entry_ids": [
+                  "past-ass-eoss"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 218,
+                "entry_id": "past-ass-eoss",
+                "context_en": "His attempt occurred in the past.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              },
+              {
+                "segment_index": 218,
+                "entry_id": "plain-declarative-da",
+                "context_en": "Ends the clause in plain narrative style.",
+                "display_form": "했다",
+                "display_meaning_en": "tried to do so",
+                "display_end_segment_index": 218
+              }
+            ]
+          },
+          {
+            "file": "/tmp/korean-dictionary-revision-drafts.json",
+            "chapter": 1,
+            "segment_index": 511,
+            "entry_id": "하다01/보",
+            "surface": "할",
+            "meaning_en": "tried to do so",
+            "sentence": "그렇게 부르려고 할 때마다 꾸지람을 들었다.",
+            "sentence_start": 1048,
+            "start": 1057,
+            "form_steps": [
+              {
+                "form": "할",
+                "reading": "할",
+                "label": "Prospective noun modifier; inherited past time",
+                "meaning_en": "tried to do so",
+                "grammar_entry_ids": [
+                  "prospective-modifier-eul"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 511,
+                "entry_id": "prospective-modifier-eul",
+                "context_en": "할 modifies 때; the final past predicate places the repeated attempts in the past.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              }
+            ]
+          },
+          {
+            "file": "/tmp/korean-dictionary-revision-drafts.json",
+            "chapter": 1,
+            "segment_index": 997,
+            "entry_id": "앞/명",
+            "surface": "앞에",
+            "meaning_en": "in front",
+            "sentence": "다시 이런 말을 하면 내 앞에 있는 것조차 허락하지 않겠다.",
+            "sentence_start": 1983,
+            "start": 1997,
+            "form_steps": [],
+            "grammar_links": [
+              {
+                "segment_index": 997,
+                "entry_id": "location-e",
+                "context_en": "에 marks the location in front of the father.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              }
+            ]
+          },
+          {
+            "file": "/tmp/korean-dictionary-revision-drafts.json",
+            "chapter": 1,
+            "segment_index": 1165,
+            "entry_id": "하다01/보",
+            "surface": "합니다",
+            "meaning_en": "I intend to do so",
+            "sentence": "이제 어머니 곁을 떠나려고 합니다.",
+            "sentence_start": 2335,
+            "start": 2350,
+            "form_steps": [
+              {
+                "form": "합니다",
+                "reading": "합니다",
+                "label": "Formal polite statement",
+                "meaning_en": "I intend to do so",
+                "grammar_entry_ids": [
+                  "polite-seumnida"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 1165,
+                "entry_id": "polite-seumnida",
+                "context_en": "Concludes the intention construction in formal respectful speech.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              }
+            ]
+          },
+          {
+            "file": "/tmp/korean-dictionary-revision-drafts.json",
+            "chapter": 1,
+            "segment_index": 1228,
+            "entry_id": "하다01/보",
+            "surface": "하느냐",
+            "meaning_en": "are you making it so?",
+            "sentence": "어찌 그런 생각을 해서 이 어미의 마음을 아프게 하느냐?",
+            "sentence_start": 2445,
+            "start": 2472,
+            "form_steps": [
+              {
+                "form": "하느냐",
+                "reading": "",
+                "label": "Plain question",
+                "meaning_en": "are you making it so?",
+                "grammar_entry_ids": [
+                  "plain-question-nya"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 1228,
+                "entry_id": "plain-question-nya",
+                "context_en": "The mother's direct question expresses hurt and reproach.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              }
+            ]
+          },
+          {
+            "file": "/tmp/korean-dictionary-revision-drafts.json",
+            "chapter": 1,
+            "segment_index": 190,
+            "entry_id": "하다01/보",
+            "surface": "했다",
+            "meaning_en": "tried to do so",
+            "sentence": "부인이 일어나 맞이하자, 홍 판서는 반가운 마음에 손을 잡으며 가까이하려 했다.",
+            "sentence_start": 371,
+            "start": 412,
+            "form_steps": [
+              {
+                "form": "했다",
+                "reading": "핻따",
+                "label": "Past plain statement; 하였다 contracts to 했다",
+                "meaning_en": "tried to do so",
+                "grammar_entry_ids": [
+                  "past-ass-eoss"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 190,
+                "entry_id": "past-ass-eoss",
+                "context_en": "Places his attempt in the narrated past.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              },
+              {
+                "segment_index": 190,
+                "entry_id": "plain-declarative-da",
+                "context_en": "Ends the auxiliary predicate in plain narration.",
+                "display_form": "했다",
+                "display_meaning_en": "tried to do so",
+                "display_end_segment_index": 190
+              }
+            ]
+          },
+          {
+            "file": "/tmp/korean-dictionary-revision-drafts.json",
+            "chapter": 1,
+            "segment_index": 666,
+            "entry_id": "하다01/보",
+            "surface": "하니",
+            "meaning_en": "because I must",
+            "sentence": "이렇게 외롭게 살아야 하니 가슴이 터질 것만 같다.",
+            "sentence_start": 1364,
+            "start": 1376,
+            "form_steps": [
+              {
+                "form": "하니",
+                "reading": "",
+                "label": "Reason connective",
+                "meaning_en": "because I must",
+                "grammar_entry_ids": [
+                  "reason-euni"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 666,
+                "entry_id": "reason-euni",
+                "context_en": "Gives his forced loneliness as the reason for his distress.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              }
+            ]
+          },
+          {
+            "file": "/tmp/korean-dictionary-revision-drafts.json",
+            "chapter": 1,
+            "segment_index": 874,
+            "entry_id": "앞/명",
+            "surface": "앞에서조차",
+            "meaning_en": "even in front of them",
+            "sentence": "제 가족 앞에서조차 그러지 못하는데, 어찌 사람답게 산다고 할 수 있겠습니까?",
+            "sentence_start": 1786,
+            "start": 1791,
+            "form_steps": [],
+            "grammar_links": [
+              {
+                "segment_index": 874,
+                "entry_id": "action-location-eseo",
+                "context_en": "에서 marks the setting in which he cannot use the familial addresses: in front of his family.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              },
+              {
+                "segment_index": 874,
+                "entry_id": "even-jocha",
+                "context_en": "조차 emphasizes that even the intimate setting of his own family does not allow these addresses.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              }
+            ]
+          },
+          {
+            "file": "/tmp/korean-dictionary-revision-drafts.json",
+            "chapter": 1,
+            "segment_index": 998,
+            "entry_id": "앞/명",
+            "surface": "앞에",
+            "meaning_en": "in front of",
+            "sentence": "다시 이런 말을 하면 내 앞에 나타나는 것도 허락하지 않겠다.",
+            "sentence_start": 2008,
+            "start": 2022,
+            "form_steps": [],
+            "grammar_links": [
+              {
+                "segment_index": 998,
+                "entry_id": "location-e",
+                "context_en": "Marks where Gildong would appear: before his father.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              }
+            ]
+          },
+          {
+            "file": "/tmp/korean-dictionary-revision-drafts.json",
+            "chapter": 1,
+            "segment_index": 1076,
+            "entry_id": "하다01/보",
+            "surface": "했다",
+            "meaning_en": "used to do so",
+            "sentence": "그러나 이 일로 마음을 진정하지 못해 밤마다 잠을 이루지 못하곤 했다.",
+            "sentence_start": 2150,
+            "start": 2186,
+            "form_steps": [
+              {
+                "form": "했다",
+                "reading": "핻따",
+                "label": "Past form",
+                "meaning_en": "used to do so",
+                "grammar_entry_ids": [
+                  "past-ass-eoss"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 1076,
+                "entry_id": "past-ass-eoss",
+                "context_en": "Places the recurring situation in the past.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              },
+              {
+                "segment_index": 1076,
+                "entry_id": "plain-declarative-da",
+                "context_en": "Closes the narrated habitual predicate in plain style.",
+                "display_form": "했다",
+                "display_meaning_en": "used to do so",
+                "display_end_segment_index": 1076
+              }
+            ]
+          },
+          {
+            "file": "/tmp/korean-dictionary-revision-drafts.json",
+            "chapter": 1,
+            "segment_index": 1168,
+            "entry_id": "하다01/보",
+            "surface": "합니다",
+            "meaning_en": "intend to do so",
+            "sentence": "마음속에 쌓인 한을 억누를 수 없어 이제 어머니 곁을 떠나려 합니다.",
+            "sentence_start": 2328,
+            "start": 2362,
+            "form_steps": [
+              {
+                "form": "합니다",
+                "reading": "함니다",
+                "label": "Formal polite statement",
+                "meaning_en": "intend to do so",
+                "grammar_entry_ids": [
+                  "polite-seumnida"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 1168,
+                "entry_id": "polite-seumnida",
+                "context_en": "States his intention respectfully to his mother.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              }
+            ]
+          },
+          {
+            "file": "/tmp/korean-dictionary-revision-drafts.json",
+            "chapter": 1,
+            "segment_index": 1242,
+            "entry_id": "하다01/보",
+            "surface": "합니다",
+            "meaning_en": "I intend to [find my own path]",
+            "sentence": "“저는 이곳을 떠나 제 길을 찾으려 합니다.",
+            "sentence_start": 2491,
+            "start": 2511,
+            "form_steps": [
+              {
+                "form": "합니다",
+                "reading": "",
+                "label": "Formal polite statement",
+                "meaning_en": "I intend to [find my own path]",
+                "grammar_entry_ids": [
+                  "polite-seumnida"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 1242,
+                "entry_id": "polite-seumnida",
+                "context_en": "Gildong states his intention in formal polite speech to his mother.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              }
+            ]
+          },
+          {
+            "file": "/tmp/korean-dictionary-revision-drafts.json",
+            "chapter": 1,
+            "segment_index": 1250,
+            "entry_id": "앞/명",
+            "surface": "앞으로",
+            "meaning_en": "from now on; in the future",
+            "sentence": "마음 놓으시고 제가 앞으로 어떻게 살아가는지 지켜봐 주십시오.",
+            "sentence_start": 2516,
+            "start": 2527,
+            "form_steps": [],
+            "grammar_links": [
+              {
+                "segment_index": 1250,
+                "entry_id": "temporal-continuation-euro-ro",
+                "context_en": "앞으로 gives a temporal direction: from now on, rather than physical movement forward.",
                 "display_form": "",
                 "display_meaning_en": "",
                 "display_end_segment_index": -1
