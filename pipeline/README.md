@@ -47,6 +47,9 @@ lexical-plan and prose reviews while another edition finishes annotation. This
 writes `preparation.json`, not a publication report. Resume without that flag;
 the normal cache verifies reusable reviews, and annotation reads the then-current
 shared dictionary. A prepared draft cannot pass publication.
+`--stop-after curriculum` also completes annotation and curriculum review while
+deferring dictionary editing and sentence help. This lets editions share newly
+approved dictionary entries before final completion; resume without the flag.
 
 `--annotation-batch-characters 240` groups adjacent complete sentences into
 model jobs to reduce repeated calls. This controls job size, never chapter length:
@@ -55,6 +58,16 @@ The default zero keeps one-sentence jobs, including existing run evidence.
 Assembly records the grouping budget; publication replays the exact partition.
 Repairs select affected groups and retain unaffected ones through the same
 digest-checked assembly mechanism.
+
+Before annotating higher editions, a lightweight proposal lists headwords from
+the actual prose. Exact lookup retrieves all matching legacy/source identities
+and POS candidates, without assigning grades or approving meanings. The
+annotator selects actual uses and the independent annotation/curriculum reviews
+verify them. Higher editions receive these candidates rather than the entire
+beginner identity list; matching approved definitions and planned names are
+reused. Distinct complete-form stages are required. A grammatical role that
+does not change the form stays in a complete-phrase grammar link, rather than
+duplicating a stage or inventing an incomplete stem.
 
 The harness proposes a source plan, reviewed name/story identities, target-level prose,
 exact tap annotations, curriculum bindings, missing dictionary entries and selective sentence help. Each of the seven stages has an

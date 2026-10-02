@@ -250,11 +250,21 @@ def annotation_requests(value: dict, catalog: dict, focus: dict, words: dict) ->
     return requests, grammar_ids
 
 
+def lexical_candidates(headwords: list[str], catalog: dict) -> list[dict]:
+    """Retrieve exact identities, retaining ambiguous readings/POS as candidates.
+
+    Agent-proposed headwords are search requests, never attestation or grades.
+    The normal annotation and curriculum reviews establish their actual uses.
+    """
+    return [{key: entry[key] for key in ('id', 'headword', 'pos', 'meaning')}
+            for headword in sorted(set(headwords)) for entry in catalog.get(headword, [])]
+
+
 class KoreanHarness:
     def __init__(self, run_dir: Path, number: int, runner=None, existing: Path | None = None, model: str = "gpt-6.1-sol", workers: int = 4, level: int = 1, stop_after: str | None = None, annotation_batch_characters: int = 0):
         curriculum.entries("grammar", level)
-        if stop_after not in (None, 'prose'):
-            raise ValueError('Korean preparation checkpoint must be prose')
+        if stop_after not in (None, 'prose', 'curriculum'):
+            raise ValueError('Korean preparation checkpoint must be prose or curriculum')
         self.level = level
         self.stop_after = stop_after
         if type(annotation_batch_characters) is not int or annotation_batch_characters < 0:
@@ -484,16 +494,31 @@ class KoreanHarness:
                 provisional_words = {identity: {"id": identity, **entry} for identity, entry in required_words.items()}
                 dictionaries.build_assets(chapter, self.run_dir, source_id=source_id,
                     word_registry=provisional_words, grammar_registry={identity: {"id": identity} for identity in required_grammar}, write=False)
+            candidate_entries = []
+            proposed_headwords = set()
+            if self.level > 1:
+                proposed = await self.runner.call(f'annotation-lexical-candidates-revision{prose_attempt}',
+                    self.policy + '\nPropose dictionary headwords occurring in this exact prose so the next annotator can retrieve existing lexical identities. '
+                    'Return headwords only: no IDs, definitions, levels or claims of approval. Include dictionary forms of inflected verbs and adjectives, nouns, adverbs and other lexical words. '
+                    'These are search requests, not authoritative linguistic analysis. Do not rewrite prose or invent words. '
+                    + payload(prose=prose), contracts.schema_path('lexical-candidates'), 'medium', tool_profile='offline')
+                validate(proposed, contracts.LEXICAL_CANDIDATES)
+                proposed_headwords = set(proposed['headwords'])
+                candidate_entries = lexical_candidates(proposed['headwords'], self.catalog)
             annotation_prompt = "Annotate this exact prose in source-aligned sentence chunks. The assembled result must preserve every character and use learner-sized taps. "
             annotation_prompt += "Supply the dictionary headword in lemma, an exact NIKL lexical ID for vocabulary, "
             annotation_prompt += "approved IDs for existing names/grammar; shortened names keep the approved full-name identity and headword. Do not duplicate an entry for a shortened name. Use stable English IDs for genuinely new grammar functions. "
             annotation_prompt += "Every inflected word needs ordered complete-form transformation steps. The dictionary-form base is supplied by lemma and its own UI row: DO NOT repeat it in form_steps. Each step uses the schema field grammar_entry_ids: an array containing EXACTLY ONE grammar ID, with a matching grammar_links record on the same segment. There is no singular grammar_entry_id field. "
+            annotation_prompt += "Each stage must have a distinct COMPLETE form. Grammar roles that add no new form belong in grammar_links with complete-phrase display fields, not repeated stages. Do not invent a bare-stem intermediate merely to make forms differ. "
             annotation_prompt += "Audit every tap for inflection and grammar roles; particles stay attached unless a learner-sized grammar unit warrants a separate tap. "
             annotation_prompt += "Provide grammar_links for all relevant particles/constructions/steps with local context_en. "
             annotation_prompt += "Any grammar link on an inflected tap outside its steps needs the complete source phrase, complete meaning and inclusive ending segment index. "
             annotation_prompt += "Complete construction rows may also start on an uninflected prefix or particle when it belongs to the phrase, such as a preceding negative word. Include every meaning-bearing part of the construction; never display a positive phrase as the full outcome of a negative occurrence. Anchor its link on the first included word and give the exact ending index, preserving tap boundaries. Otherwise display strings are empty and ending index -1. Punctuation fields are empty; steps empty. "
             annotation_prompt += "Meaning_en is the whole observed form. The final form-step meaning must retain the occurrence meaning and contextual tense, including past time inherited by a connective. Intermediate stages explain their own complete forms; the dictionary lemma remains neutral. Labels describe morphology and politeness separately from the complete meaning. "
-            annotation_prompt += payload(prose=prose, words=list(self.words.values()), grammar=list(self.grammar.values()), lexical_plan=focus, nikl_A=[([e["id"], e["meaning"]] if e["meaning"] else e["id"]) for e in beginner])
+            annotation_words = [entry for entry in self.words.values()
+                if self.level == 1 or entry['id'] in profiles or entry['headword'] in proposed_headwords]
+            annotation_prompt += payload(prose=prose, words=annotation_words, grammar=list(self.grammar.values()), lexical_plan=focus, nikl_A=[([e["id"], e["meaning"]] if e["meaning"] else e["id"]) for e in beginner] if self.level == 1 else [], lexical_candidates=candidate_entries,
+                candidate_policy='Search candidates are not approved senses or grades. Select the identity and POS matching the actual occurrence; retain distinct homonyms and do not invent an ID.')
             async def produce_annotation(job, issues):
                 texts = contracts.annotation_chunks(prose["text"], batch_characters=self.annotation_batch_characters)
                 selected, previous_chunks, old_lineage, repair_evidence = None, None, None, {}
@@ -715,6 +740,13 @@ class KoreanHarness:
             break
         missing_words = required_words.keys() - self.words.keys()
         missing_grammar = required_grammar - self.grammar.keys()
+        if self.stop_after == 'curriculum':
+            preparation = {'status': 'prepared', 'number': self.number,
+                'target_level': self.level, 'checkpoint': 'curriculum',
+                'stages': self.stages, 'source_plan': bound_plan,
+                'lexical_plan': focus, 'prose': prose, 'chapter': chapter}
+            save(self.run_dir / 'preparation.json', preparation)
+            return preparation
         delta = {"words": [], "grammar": []}
         if missing_words or missing_grammar:
             dictionary_context = {"word_requests": {key: required_words[key] for key in sorted(missing_words)},
@@ -778,7 +810,7 @@ def main() -> None:
     parser.add_argument("--chapter", type=int, required=True)
     parser.add_argument("--run-dir", type=Path, required=True)
     parser.add_argument("--existing", type=Path)
-    parser.add_argument('--stop-after', choices=['prose'], help='Prepare reviewed prose; resume without this flag to finish all publication gates')
+    parser.add_argument('--stop-after', choices=['prose', 'curriculum'], help='Prepare through the selected review; resume without this flag to finish all publication gates')
     parser.add_argument('--annotation-batch-characters', type=int, default=0, help='Group complete sentences into model jobs; zero preserves one-sentence jobs. Does not limit chapter length.')
     parser.add_argument("--model", default="gpt-6.1-sol")
     parser.add_argument('--workers', type=int, default=4, help='Concurrent annotation model jobs (default: 4)')

@@ -43,6 +43,7 @@ FOCUS_ENTRY = obj({"id": NONEMPTY, "headword": NONEMPTY,
     "aliases": {"type": "array", "minItems": 1, "items": NONEMPTY}, "role_en": NONEMPTY})
 FOCUS = obj({"entries": {"type": "array", "items": FOCUS_ENTRY}})
 PROSE = obj({"title": NONEMPTY, "text": NONEMPTY, "length_reason_en": NONEMPTY})
+LEXICAL_CANDIDATES = obj({'headwords': {'type': 'array', 'items': NONEMPTY}})
 WORD = obj({"id": STRING, "headword": STRING,
             "kind": {"type": "string", "enum": ["word", "proper_name", "story_term"]},
             "definition_en": STRING})
@@ -79,6 +80,7 @@ def write_schemas() -> None:
     for name, schema in {"review": REVIEW, "plan": PLAN, "prose": PROSE,
                          "annotation": ANNOTATION, "lexical-plan": FOCUS, "dictionary": DICTIONARY,
                          'grammar-bindings': GRAMMAR_BINDINGS,
+                         'lexical-candidates': LEXICAL_CANDIDATES,
                          'curriculum': CURRICULUM_BINDINGS,
                          'annotation-repair-plan': ANNOTATION_REPAIR_PLAN,
                          'annotation-reuse-plan': ANNOTATION_REUSE_PLAN,

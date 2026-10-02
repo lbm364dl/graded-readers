@@ -178,3 +178,22 @@ partition. Validation: 105 focused Python tests passed; TOPIK 1 publication repl
 still passes. Actual TOPIK 3 and 5 plans independently chose source paragraphs
 0–23 (20 beats), beyond TOPIK 2's paragraphs 0–16 (14 beats), through narrative
 judgment rather than forced increasing lengths. Their prose reviews are underway.
+
+
+Actual annotation retry findings: completed TOPIK 2 worker outputs exposed wrong
+legacy IDs for non-A words and repeated complete forms under separate grammar
+labels. Higher-edition annotation now retrieves exact identities for proposed
+headwords before annotating, preserving alternative homonyms/POS and omitting
+legacy grades. Headword proposals are untrusted search requests, not definitions
+or approved mappings. The existing annotation and curriculum gates still check
+actual occurrences. The higher-edition prompt avoids resending the full A list
+and supplies relevant approved words. Duplicate-form validation now reports the
+actual error and asks for a complete-phrase grammar link instead of a repeated
+stage; it explicitly forbids manufacturing a bare stem. This preserves the
+validity rules for existing content. Regression coverage contrasts valid chains
+with repeated forms and checks homonyms/POS survive candidate retrieval without
+a claimed grade. The new curriculum checkpoint permits reviewed annotations and
+bindings to wait for shared dictionary publication; it cannot itself publish.
+Validation: 108 focused Python tests and complete TOPIK 1 publication replay pass.
+Real TOPIK 3 and 5 runs reused their approved plans and prose and are progressing
+through annotation/curriculum reviews; TOPIK 4 prose is prepared.

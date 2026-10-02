@@ -1029,3 +1029,51 @@ def test_batched_assembly_is_replayed_and_rejects_a_changed_partition_policy(tmp
     save(tmp_path / 'agents' / job / 'meta.json', assembly)
     with pytest.raises(ValueError, match='chunks do not match'):
         publication.verify_run(tmp_path)
+
+
+def test_lexical_search_candidates_preserve_homonyms_without_claiming_grades():
+    from pipeline.korean_agent_harness import lexical_candidates
+    candidates = lexical_candidates(['쉬다', '쉬다', 'not a dictionary headword'], contracts.lexical_catalog())
+    assert {row['id'] for row in candidates} == {'쉬다03/동', '쉬다04/동'}
+    assert len(candidates) == 2
+    assert all(set(row) == {'id', 'headword', 'pos', 'meaning'} for row in candidates)
+    raw = contracts.lexical_catalog()['자기']
+    assert {row['pos'] for row in lexical_candidates(['자기'], {'자기': raw})} == {'대', '명'}
+
+
+def test_repeated_complete_forms_report_the_real_error_without_inventing_stems(tmp_path):
+    chapter = manual_chapter()
+    dictionary.build_assets(chapter, tmp_path, write=False)
+    steps = chapter['segments'][7]['form_steps']
+    steps.append(copy.deepcopy(steps[-1]))
+    with pytest.raises(ValueError, match='distinct complete form.*not a repeated stage.*bare-stem'):
+        dictionary.build_assets(chapter, tmp_path, write=False)
+    steps.pop()
+    dictionary.build_assets(chapter, tmp_path, write=False)
+
+
+def test_curriculum_checkpoint_defers_dictionary_until_shared_entries_are_ready(tmp_path, monkeypatch):
+    from pipeline.korean_agent_harness import read
+    fixture = tmp_path / 'fixture'
+    make_reviewed_run(fixture, level=3)
+    prepared = tmp_path / 'prepared' / 'chapter-001'
+    class CandidateRunner:
+        async def call(self, job, *args, **kwargs):
+            assert job == 'annotation-lexical-candidates-revision0'
+            return {'headwords': []}
+    harness = KoreanHarness(prepared, 1, runner=CandidateRunner(), level=3, stop_after='curriculum')
+    stages = []
+    async def reviewed_stage(name, prompt, schema, check, context, **kwargs):
+        stages.append(name)
+        value = read(fixture / 'agents' / name / 'result.json')
+        check(value)
+        harness.stages[name] = {'approved': True}
+        return value
+    monkeypatch.setattr(harness, 'stage', reviewed_stage)
+    result = asyncio.run(harness.run())
+    assert stages == ['plan', 'lexical-plan', 'prose', 'annotation', 'curriculum']
+    assert result['checkpoint'] == 'curriculum'
+    assert result['chapter']['curriculum']['evaluation']['target_level'] == 3
+    assert not (prepared / 'report.json').exists()
+    with pytest.raises(ValueError, match='No accepted'):
+        publication.publish(prepared.parent, promote=False)

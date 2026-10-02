@@ -159,11 +159,13 @@ def build_assets(chapter: dict, output_dir: Path, *, source_id: str = SOURCE,
         steps = segment["form_steps"]
         forms = set()
         for step_index, step in enumerate(steps):
+            if step.get('form') in forms:
+                raise ValueError(f"Duplicate Korean complete-form transformation at segment index {index}, step {step_index}: {step['form']!r}. Each stage must have a distinct complete form. A grammar role that adds no new form belongs in a linked complete-phrase occurrence, not a repeated stage. Do not manufacture a bare-stem stage to make the forms differ.")
             if (set(step) != {"form", "reading", "label", "meaning_en",
                              "grammar_entry_ids"}
                     or not all(str(step[key]).strip() for key in
                                ("form", "label", "meaning_en"))
-                    or step["form"] in forms or len(step["grammar_entry_ids"]) != 1
+                    or len(step["grammar_entry_ids"]) != 1
                     or any((index, entry_id) not in seen
                            for entry_id in step["grammar_entry_ids"])):
                 raise ValueError(f"Invalid Korean complete-form transformation at segment index {index} ({segment['text']!r}), step {step_index}: {step}. Steps need exactly one grammar ID linked on the same segment. The lexical dictionary-form base is already shown separately; do not include a duplicate base step with no grammar ID.")
