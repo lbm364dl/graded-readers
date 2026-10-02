@@ -142,6 +142,8 @@ def candidates(path=REGISTRY):
         if ('occurrence_requests' in record
                 and record.get('occurrence_requests_digest') != fingerprint(record['occurrence_requests'])):
             raise ValueError('Lexical research occurrence scope changed after review')
+        if not set(record.get('occurrence_requests', {})) <= set(record['headwords']):
+            raise ValueError('Lexical research scope exceeds reviewed headword coverage')
         for entry in record['proposal']['entries']:
             before = identities.get(entry['id'])
             if before and any(before[k] != entry[k] for k in ('headword', 'pos')):
@@ -193,7 +195,7 @@ async def _research_batch(headwords, run_dir, *, runner=None, registry=REGISTRY,
         for record in read(registry)['reviews']:
             if record.get('research_policy_digest') == fingerprint(RESEARCH_POLICY):
                 if occurrence_requests:
-                    matched = {h for h in requested if h in occurrence_requests
+                    matched = {h for h in requested if h in record['headwords'] and h in occurrence_requests
                         and record.get('occurrence_requests', {}).get(h) == occurrence_requests[h]}
                     existing.update(matched)
                     unresolved.extend(e for e in record['proposal']['unresolved'] if e['headword'] in matched)
@@ -205,6 +207,7 @@ async def _research_batch(headwords, run_dir, *, runner=None, registry=REGISTRY,
     headwords = [h for h in headwords if h not in existing]
     if not headwords:
         return {'status': 'reused', 'entries': [], 'unresolved': unresolved}
+    occurrence_requests = {h: occurrence_requests[h] for h in headwords if h in occurrence_requests}
     run_dir.mkdir(parents=True, exist_ok=True)
     schema = run_dir / 'lexemes.schema.json'
     save(schema, PROPOSAL)

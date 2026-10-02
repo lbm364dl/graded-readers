@@ -143,6 +143,33 @@ def test_research_reuse_distinguishes_requested_homonym_from_reviewed_spelling(t
         research.candidates(registry)
 
 
+def test_mixed_scope_reuse_records_only_newly_reviewed_headwords(tmp_path):
+    registry = tmp_path / 'lexemes.json'
+    class Runner:
+        async def call(self, job, *args, **kwargs):
+            if '-review-' in job:
+                return {'approved': True, 'issues': []}
+            inputs = json.loads(args[0].rsplit('\nINPUT:\n', 1)[1])
+            result = {'entries': [], 'unresolved': []}
+            for headword in inputs['headwords']:
+                entry = proposal()['entries'][0]
+                number = 123 if headword == '검증하다' else 124
+                entry.update(headword=headword, id=f'krdict-{number}/동',
+                    primary_url=f'https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo={number}')
+                result['entries'].append(entry)
+            return result
+    runner = Runner()
+    scopes = {h: [{'text': h, 'meaning_en': 'requested use'}] for h in ['검증하다', '확인하다']}
+    asyncio.run(research.research(['검증하다'], tmp_path, runner=runner, registry=registry,
+        occurrence_requests=scopes))
+    asyncio.run(research.research(scopes, tmp_path, runner=runner, registry=registry,
+        occurrence_requests=scopes))
+    last = json.loads(registry.read_text())['reviews'][-1]
+    assert last['headwords'] == ['확인하다']
+    assert set(last['occurrence_requests']) == {'확인하다'}
+    assert len(research.candidates(registry)) == 2
+
+
 def test_rejected_research_is_repaired_before_promotion(tmp_path):
     class Runner:
         async def call(self, job, *args, **kwargs):
