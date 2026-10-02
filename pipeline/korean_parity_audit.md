@@ -598,3 +598,26 @@ paragraph array from duplicate task inputs. The first-chapter and continuation
 tests reconstruct the exact original from every retained paragraph, verify its
 hash, and prove the review receives one copy. Later stages still receive their
 selected source normally; no narrative is sampled or truncated.
+
+Repeated source-plan reviews supplied contradictory participant identities,
+rejected faithful paraphrases as nonliteral, requested lexical-plan fields in the
+source-plan contract and demanded extension merely because more source remained.
+Plan objections now receive a separate independent adjudication against the same
+complete source and stage task before another proposal is commissioned. Genuine
+errors remain rejection grounds; unsupported objections do not force rewrites.
+Both primary and adjudicated decisions are retained with digests and offline
+worker provenance. Publication validates their lineage and rejects changed
+primary objections. Regression cases distinguish unsupported objections from
+material corrections and intact publication evidence from tampered evidence.
+
+Instruction wording changes exposed a separate provenance problem: already
+reviewed published chapters were rejected solely because the current generation
+instructions had changed. The original approved policy is retained as an exact
+SHA-256-named snapshot recovered from version control, matching all three
+published editions' evidence. Publication can verify that historical policy;
+unknown versions and altered snapshots fail. Source, chapter, dictionary,
+breakdown, curriculum and independent-review evidence checks remain mandatory.
+New promotions retain their exact current policy snapshot. Review prompts also
+name the actual TOPIK target explicitly rather than relying on replacing the
+old beginner-only wording. These changes do not rerun unrelated dictionary
+research or change historical content.

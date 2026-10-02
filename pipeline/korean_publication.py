@@ -22,6 +22,16 @@ from scripts import generate_app_content_json as app_content
 
 CONTENT = ROOT / "content/korean/honggildong"
 LEXICON = ROOT / "content/lexicon/korean"
+POLICY_HISTORY = ROOT / 'pipeline/policy-history/korean'
+
+
+def policy_digest_matches(expected: str) -> bool:
+    if expected == sha(POLICY.read_bytes()):
+        return True
+    if not isinstance(expected, str) or len(expected) != 64 or any(c not in '0123456789abcdef' for c in expected):
+        return False
+    snapshot = POLICY_HISTORY / (expected + '.md')
+    return snapshot.is_file() and sha(snapshot.read_bytes()) == expected
 
 
 def relevant_entries(chapter: dict, words: dict, grammar: dict) -> dict:
@@ -99,7 +109,7 @@ def verify_run(run_dir: Path) -> tuple[dict, dict, dict, dict]:
         if Path(name).name != name or sha((run_dir / name).read_bytes()) != expected:
             raise ValueError("Korean reviewed run artifact changed")
     required = {"plan", "lexical-plan", "prose", "annotation", "dictionary", "sentence-help", "curriculum"}
-    if (set(report["stages"]) != required or report["policy_sha256"] != sha(POLICY.read_bytes())
+    if (set(report["stages"]) != required or not policy_digest_matches(report["policy_sha256"])
             or report.get('linguistic_reference_sha256') != sha(LINGUISTIC_REFERENCE.read_bytes())):
         raise ValueError("Korean run coverage or policy is stale")
     reviews = {}
@@ -110,6 +120,16 @@ def verify_run(run_dir: Path) -> tuple[dict, dict, dict, dict]:
             reviews[stage] = evidence
             continue
         job = evidence["review_job"]
+        if 'initial_review_job' in evidence:
+            initial_job = evidence['initial_review_job']
+            if stage != 'plan' or Path(initial_job).name != initial_job or job != initial_job + '-adjudication':
+                raise ValueError('Invalid Korean source-review adjudication lineage')
+            initial = read(run_dir / 'agents' / initial_job / 'result.json')
+            initial_meta = read(run_dir / 'agents' / initial_job / 'meta.json')
+            validate(initial, contracts.REVIEW)
+            if initial['approved'] or not initial['issues'] or digest(initial) != evidence['initial_review_digest'] or initial_meta.get('return_code') != 0:
+                raise ValueError('Korean initial source review changed after adjudication')
+            CodexRunner._check_tool_profile(run_dir / 'agents' / initial_job, 'offline', initial_meta)
         if Path(job).name != job:
             raise ValueError("invalid Korean review job")
         review = read(run_dir / "agents" / job / "result.json")
@@ -277,7 +297,7 @@ def validate_evidence(chapter: dict, evidence: dict, words: dict, grammar: dict,
     if (evidence.get("chapter_digest") != digest(chapter)
             or evidence.get("source_sha256") != manifest["text_sha256"]
             or evidence.get("source_notes_sha256") != manifest.get("notes_sha256")
-            or evidence.get("policy_sha256") != sha(POLICY.read_bytes())
+            or not policy_digest_matches(evidence.get("policy_sha256"))
             or evidence.get('linguistic_reference_sha256') != sha(LINGUISTIC_REFERENCE.read_bytes())
             or not dictionary_digest_matches(chapter, evidence.get("dictionary_digest"), words, grammar)
             or evidence.get("breakdowns_digest") != digest(breakdowns)):
@@ -322,6 +342,13 @@ def publish(run_root: Path, *, promote: bool = True) -> dict:
     if not runs:
         raise ValueError("No accepted Korean chapter runs")
     accepted = [verify_run(report.parent) for report in runs]
+    if promote:
+        policy_bytes = POLICY.read_bytes()
+        POLICY_HISTORY.mkdir(parents=True, exist_ok=True)
+        snapshot = POLICY_HISTORY / (sha(policy_bytes) + '.md')
+        if snapshot.exists() and snapshot.read_bytes() != policy_bytes:
+            raise ValueError('Korean policy snapshot changed')
+        snapshot.write_bytes(policy_bytes)
     chapters = [item[0] for item in accepted]
     from pipeline.korean_levels import target_level
     level = target_level(chapters[0])

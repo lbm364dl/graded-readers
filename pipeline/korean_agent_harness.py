@@ -354,10 +354,9 @@ class KoreanHarness:
             raise ValueError('Korean pipeline workers must be positive')
         self.runner = runner or CodexRunner(run_dir, model, asyncio.Semaphore(workers), timeout=600)
         self.policy = POLICY.read_text(encoding="utf-8")
-        self.review_policy = REVIEW_POLICY
+        self.review_policy = REVIEW_POLICY.replace('for its requested TOPIK learner level', f'for a TOPIK {level} learner')
         if level > 1:
             self.policy += "\n" + LEVEL_POLICY.read_text(encoding="utf-8") + f"\nRUN TARGET: TOPIK {level}. {LEVEL_GOALS[level]}\n"
-            self.review_policy = REVIEW_POLICY.replace("for an absolute beginner", f"for a TOPIK {level} learner")
         self.stages = {}
         self.words, self.grammar = dictionaries._registry(dictionaries.WORDS), dictionaries._registry(dictionaries.GRAMMAR)
         self.catalog = contracts.lexical_catalog()
@@ -440,6 +439,26 @@ class KoreanHarness:
             if transmitted_output is not value:
                 instructions += ' The output is lossless_annotation_rows: use its explicit column lists to read each row. Every source segment retains its original index; nested form_steps use form_step_columns and grammar_links use grammar_link_columns. All meanings, readings, roles and occurrence positions are preserved. Review the complete annotation, not a sample.'
             return payload(stage=name, task=instructions, task_inputs=task_inputs, context=transmitted_context, output=transmitted_output, **evidence)
+        async def adjudicate_plan(review_job, review, value):
+            if name != 'plan' or approved(review):
+                return review_job, review, {}
+            primary_job, primary = review_job, review
+            review_job += '-adjudication'
+            review = await self.runner.call(review_job, self.policy + '\n'
+                'Independently adjudicate the proposed source-planning objections against the exact source and stage task. '
+                'The proposal has already passed JSON schema and local source-index validation. '
+                'Retain every genuine material error, with a short exact source quotation supporting the correction. '
+                'Discard unsupported source claims, contradictory corrections, terminology-only objections, requests for later-stage fields, '
+                'and demands to include every paragraph or to keep extending a coherent chapter merely because more source remains. '
+                'Faithful English paraphrases need not reproduce the source literally. Account for justified learner-level omissions. '
+                'Do not rewrite the proposal, invent new objections, or approve because a retry is expensive. '
+                'issues is an executable repair list, not a discussion of the objections. '
+                'Omit dismissed objections entirely: never put statements such as "this objection is unsupported" in issues. '
+                'Approve only if none of the proposed objections establishes a real defect. Otherwise return the supported defects as issues. '
+                + payload(**json.loads(review_payload(value).split('\nINPUT:\n', 1)[1]), proposed_review=primary),
+                contracts.schema_path('review'), 'low', tool_profile='offline')
+            validate(review, contracts.REVIEW)
+            return review_job, review, {'initial_review_job': primary_job, 'initial_review_digest': digest(primary)}
         # A completed independent review binds the exact current task/context to
         # its output. Reuse it even if an earlier repair attempt was overwritten.
         resume = None
@@ -472,13 +491,14 @@ class KoreanHarness:
                 raise
             except (CachedCallUnavailable, ValidationError, ValueError, KeyError, IndexError, TypeError):
                 continue
+            review_job, review, adjudication = await adjudicate_plan(review_job, review, value)
             if not approved(review):
                 if resume is None:
                     resume = (attempt + 1, review['issues'], value)
                 continue
             self.stages[name] = {"proposal_job": job, "review_job": review_job,
                 "output_digest": digest(value), "review_digest": digest(review),
-                "context_digest": digest(review_context), "approved": True}
+                "context_digest": digest(review_context), "approved": True, **adjudication}
             print(f"{name}: reused approved output", flush=True)
             return value
         start, problems, previous = resume or (0, [], None)
@@ -506,10 +526,11 @@ class KoreanHarness:
             review = await self.runner.call(review_job, self.policy + "\n" + self.review_policy
                 + review_payload(value),
                 contracts.schema_path("review"), "low", tool_profile="offline")
+            review_job, review, adjudication = await adjudicate_plan(review_job, review, value)
             if approved(review):
                 self.stages[name] = {"proposal_job": proposal_job, "review_job": review_job,
                     "output_digest": digest(value), "review_digest": digest(review),
-                    "context_digest": digest(review_context), "approved": True}
+                    "context_digest": digest(review_context), "approved": True, **adjudication}
                 print(f"{name}: approved", flush=True)
                 return value
             problems, previous = review["issues"], value

@@ -716,6 +716,55 @@ def test_review_rejection_cannot_be_published(tmp_path):
         publication.verify_run(tmp_path)
 
 
+@pytest.mark.parametrize('tamper', [False, True])
+def test_publication_preserves_source_review_adjudication_lineage(tmp_path, tamper):
+    from pipeline.korean_agent_harness import read, save
+    report = make_reviewed_run(tmp_path)
+    primary_job = report['stages']['plan']['review_job']
+    accepted = read(tmp_path / 'agents' / primary_job / 'result.json')
+    meta = read(tmp_path / 'agents' / primary_job / 'meta.json')
+    adjudication_job = primary_job + '-adjudication'
+    save(tmp_path / 'agents' / adjudication_job / 'result.json', accepted)
+    save(tmp_path / 'agents' / adjudication_job / 'meta.json', meta)
+    rejected = {'approved': False, 'issues': ['Objection rejected by independent source adjudication']}
+    save(tmp_path / 'agents' / primary_job / 'result.json', rejected)
+    report['stages']['plan'].update(review_job=adjudication_job,
+        initial_review_job=primary_job, initial_review_digest=digest(rejected))
+    save(tmp_path / 'report.json', report)
+    if tamper:
+        save(tmp_path / 'agents' / primary_job / 'result.json', {'approved': False, 'issues': ['Changed claim']})
+        with pytest.raises(ValueError, match='initial source review changed'):
+            publication.verify_run(tmp_path)
+    else:
+        publication.verify_run(tmp_path)
+
+
+@pytest.mark.parametrize('tamper', [False, True])
+def test_publication_retains_exact_historical_policy_without_accepting_unknown_versions(tmp_path, monkeypatch, tamper):
+    from pipeline.korean_agent_harness import save
+    report = make_reviewed_run(tmp_path / 'run')
+    policy = publication.POLICY.read_bytes()
+    history = tmp_path / 'policy-history'
+    history.mkdir()
+    snapshot = history / (report['policy_sha256'] + '.md')
+    snapshot.write_bytes(policy + b' changed' if tamper else policy)
+    current = tmp_path / 'current.md'
+    current.write_bytes(policy + b'\nFuture generation instructions\n')
+    monkeypatch.setattr(publication, 'POLICY', current)
+    monkeypatch.setattr(publication, 'POLICY_HISTORY', history)
+    assert not publication.policy_digest_matches('0' * 64)
+    assert not publication.policy_digest_matches('../untrusted')
+    if tamper:
+        with pytest.raises(ValueError, match='policy is stale'):
+            publication.verify_run(tmp_path / 'run')
+    else:
+        publication.verify_run(tmp_path / 'run')
+        report['policy_sha256'] = '0' * 64
+        save(tmp_path / 'run/report.json', report)
+        with pytest.raises(ValueError, match='policy is stale'):
+            publication.verify_run(tmp_path / 'run')
+
+
 @pytest.mark.parametrize('changed', [False, True])
 def test_publication_binds_reviewed_linguistic_reference(tmp_path, monkeypatch, changed):
     make_reviewed_run(tmp_path)
@@ -791,7 +840,7 @@ def test_partial_stage_reuses_actual_cached_review_only_for_matching_context(tmp
     value = {'title': '제목', 'text': 'reviewed output', 'length_reason_en': 'Test editorial decision'}
     context = {'source': 'same source'}
     harness = KoreanHarness(tmp_path, 1, runner=CodexRunner(tmp_path, 'test-model', asyncio.Semaphore(1)))
-    prompt = harness.policy + '\n' + REVIEW_POLICY + payload(stage='prose', task='task', task_inputs={}, context=context, output=value)
+    prompt = harness.policy + '\n' + harness.review_policy + payload(stage='prose', task='task', task_inputs={}, context=context, output=value)
     fingerprint = runner_digest(prompt, contracts.schema_path('review').read_text(), 'test-model', 'high')
     fingerprint = runner_digest(fingerprint, 'offline', 'tool-profile-v1')
     save(tmp_path / 'agents/prose-4/result.json', value)
@@ -1217,6 +1266,46 @@ def test_planning_context_distinguishes_first_chapter_from_published_continuatio
     monkeypatch.setattr(harness, 'stage', inspect)
     with pytest.raises(ContextCaptured):
         asyncio.run(harness.run())
+
+
+@pytest.mark.parametrize('supported_objection', [False, True])
+def test_source_plan_objections_require_independent_adjudication_before_rewrite(tmp_path, supported_objection):
+    from pipeline.korean_agent_harness import save
+    proposal = {'title': '제목', 'scope_reason_en': 'Coherent scene',
+        'last_source_paragraph_index': 0, 'beats': [{'source_paragraph_index': 0, 'event_en': 'Family setup'}]}
+    rejected = {'approved': False, 'issues': ['Proposed source objection']}
+    class Runner:
+        def __init__(self): self.jobs = []
+        async def call(self, job, prompt, *args, **kwargs):
+            self.jobs.append(job)
+            if job.endswith('-adjudication'):
+                inputs = json.loads(prompt.split('\nINPUT:\n', 1)[1])
+                assert inputs['output'] == proposal
+                assert inputs['proposed_review'] == rejected
+                assert inputs['context']['source'] == 'Exact original source'
+                result = {'approved': not supported_objection,
+                    'issues': ['Supported source correction'] if supported_objection else []}
+            elif '-review-' in job:
+                result = rejected
+            else:
+                if len(self.jobs) > 1:
+                    assert 'Supported source correction' in prompt
+                result = proposal
+            save(tmp_path / 'agents' / job / 'result.json', result)
+            save(tmp_path / 'agents' / job / 'meta.json', {'return_code': 0})
+            return result
+    runner = Runner()
+    harness = KoreanHarness(tmp_path, 1, runner=runner)
+    if supported_objection:
+        with pytest.raises(ValueError, match='Supported source correction'):
+            asyncio.run(harness.stage('plan', 'Source task', 'plan', lambda _: None, {'source': 'Exact original source'}))
+        assert len([j for j in runner.jobs if j.endswith('-adjudication')]) == 8
+    else:
+        assert asyncio.run(harness.stage('plan', 'Source task', 'plan', lambda _: None,
+            {'source': 'Exact original source'})) == proposal
+        assert runner.jobs == ['plan-0', 'plan-review-0', 'plan-review-0-adjudication']
+        assert harness.stages['plan']['initial_review_job'] == 'plan-review-0'
+        assert harness.stages['plan']['review_job'] == 'plan-review-0-adjudication'
 
 
 def test_annotation_batches_preserve_sentences_separators_and_long_clauses():
