@@ -22,7 +22,7 @@ from pipeline.korean_levels import LEVEL_GOALS, LEVEL_POLICY
 POLICY = ROOT / "pipeline/korean_agent_instructions.md"
 LINGUISTIC_REFERENCE = ROOT / 'data/korean/linguistic-reference.json'
 LEXICAL_REFERENCE = ROOT / 'data/korean/lexical-reference.json'
-REVIEW_POLICY = """Independently review the supplied Korean output for an absolute beginner.
+REVIEW_POLICY = """Independently review the supplied Korean output for its requested TOPIK learner level.
 Check exact source evidence, natural modern Korean, learner difficulty, English
 accuracy and all requested coverage. Approve only if issues is empty.
 For source planning and prose, assess narrative coverage, meaningful omissions
