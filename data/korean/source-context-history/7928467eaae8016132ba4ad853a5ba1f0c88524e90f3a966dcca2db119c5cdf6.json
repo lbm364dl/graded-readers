@@ -95,66 +95,6 @@
         "approved": true,
         "issues": []
       }
-    },
-    {
-      "draft": {
-        "source_sha256": "aa19f1e6c76a736a17d81706a4f8b3f772d0107898d3b6aceb92b6429670f7d7",
-        "paragraphs": [
-          {
-            "index": 0,
-            "text": "화셜 됴션국 셰종됴 시졀의 ᄒᆞᆫ ᄌᆡ샹이 이시니 셩은 홍이오 명은 뫼라. ᄃᆡᄃᆡ 명문거죡으로 쇼년 등과ᄒᆞ여 벼ᄉᆞᆯ이 니죠판셔의 니르ᄆᆡ, 물망이 됴야의 읏듬이오, 츙효 겸비ᄒᆞ기로 일홈이 일국의 진동ᄒᆞ더라. 일즉 두 아들을 두어시니, 일ᄌᆞᄂᆞᆫ 일홈이 인형이니 뎡실 뉴시 쇼ᄉᆡᆼ이오, 일ᄌᆞᄂᆞᆫ 일홈이 길동이니 시비 츈셤의 쇼ᄉᆡᆼ이라."
-          },
-          {
-            "index": 22,
-            "text": "“녯날 장츙의 ᄋᆞ들 길산은 쳔ᄉᆡᆼ이로되 십삼 셰의 그 어미를 니별ᄒᆞ고 운봉산의 드러가 도를 닷가 아롬다온 일흠을 후셰의 유젼ᄒᆞ여시니, 쇼ᄌᆡ 그를 효측ᄒᆞ여 셰샹을 버셔나려ᄒᆞ오니, 모친은 안심허샤 후일을 기다리쇼셔. 건간 곡산모의 ᄒᆡᆼᄉᆡᆨ을 보니 샹공의 춍을 닐흘가 ᄒᆞ여 우리 모ᄌᆞ를 원슈갓치 아ᄂᆞᆫ지라. 큰 화을 닙을가 ᄒᆞ옵ᄂᆞ니 모친은 쇼ᄌᆞ 나가믈 념여치 마르쇼셔.”"
-          },
-          {
-            "index": 24,
-            "text": "원ᄂᆡ 곡산모ᄂᆞᆫ 본ᄃᆡ 곡산 기ᄉᆡᆼ으로 샹공의 춍쳡이 되어시니 일홈은 쵸난이라. 가쟝 교만 방ᄌᆞᄒᆞ여 졔 심즁의 불합ᄒᆞ면 공긔 ᄎᆞᆷ쇼ᄒᆞ니, 이러무로 가즁 폐단이 무슈ᄒᆞᆫ 즁, 져ᄂᆞᆫ ᄋᆞ들이 업고 츈셤은 길동을 나아 샹공이 ᄆᆡ양 귀히 녁이물 심즁의 앙양ᄒᆞ여 업시ᄒᆞ물 도모ᄒᆞ더니, 일일은 흉계를 ᄉᆡᆼ각ᄒᆞ고 무녀를 쳥ᄒᆞ여 왈,"
-          },
-          {
-            "index": 48,
-            "text": "ᄒᆞ고 물리치나, 심ᄉᆡ ᄌᆞ연 산난ᄒᆞ여 밤이면 ᄌᆞᆷ을 닐우지 못ᄒᆞ고 인ᄒᆞ여 병이 된지라. 부인과 좌랑 인형이 크게 근심ᄒᆞ여 아모리 헐 쥴 모로더니, 쵸난이 겻ᄒᆡ 뫼셔다가 고왈,"
-          },
-          {
-            "index": 55,
-            "text": "“이ᄂᆞᆫ ᄎᆞᆷ아 못헐 ᄇᆡ로ᄃᆡ, 쳣ᄌᆡᄂᆞᆫ 나라을 위ᄒᆞ미오, 둘ᄌᆡᄂᆞᆫ 샹공을 위ᄒᆞ미오, 솃ᄎᆡᄂᆞᆫ 문호를 보죤ᄒᆞ미라. 너의 계교ᄃᆡ로 ᄒᆡᆼ혀라.”"
-          },
-          {
-            "index": 88,
-            "text": "좌랑이 감히 은휘치 못ᄒᆞ여 쵸난의 실ᄉᆞ를 고ᄒᆞᆫᄃᆡ, 공이 더옥 분노ᄒᆞ여 일변 쵸난을 ᄂᆡ치고 가마니 그 시쳬를 업시ᄒᆞ며 노복을 불너 이런 말을 ᄂᆡ지 말나 당부ᄒᆞ더라."
-          }
-        ],
-        "finding_en": "Paragraph 48 explicitly identifies 좌랑 인형; the later 좌랑 in paragraph 88 refers to that established named person, Inhyeong. Do not reject this continuity merely because paragraph 88 repeats only the title. Paragraph 0 gives Inhyeong and Gildong the same father but different mothers, supporting their half-brother relationship even when the narration calls them brothers. Paragraph 22 reports Gildong inferring from Chonan's conduct that she fears losing Hong's favor and treats him and his mother as enemies. A modern paraphrase can retain that fear as Gildong's stated inference; do not claim the source lacks it, and do not turn the inference into a narrator-certified motive."
-      },
-      "prompt": "Independently review the proposed reusable source finding against every supplied exact paragraph. This is source interpretation evidence, not learner-facing dictionary prose. Approve only when all claims are supported. Reject any mistaken identification or unsupported role continuity with the exact source quote. No tools.\nINPUT:\n{\"source_sha256\": \"aa19f1e6c76a736a17d81706a4f8b3f772d0107898d3b6aceb92b6429670f7d7\", \"paragraphs\": [{\"index\": 0, \"text\": \"화셜 됴션국 셰종됴 시졀의 ᄒᆞᆫ ᄌᆡ샹이 이시니 셩은 홍이오 명은 뫼라. ᄃᆡᄃᆡ 명문거죡으로 쇼년 등과ᄒᆞ여 벼ᄉᆞᆯ이 니죠판셔의 니르ᄆᆡ, 물망이 됴야의 읏듬이오, 츙효 겸비ᄒᆞ기로 일홈이 일국의 진동ᄒᆞ더라. 일즉 두 아들을 두어시니, 일ᄌᆞᄂᆞᆫ 일홈이 인형이니 뎡실 뉴시 쇼ᄉᆡᆼ이오, 일ᄌᆞᄂᆞᆫ 일홈이 길동이니 시비 츈셤의 쇼ᄉᆡᆼ이라.\"}, {\"index\": 22, \"text\": \"“녯날 장츙의 ᄋᆞ들 길산은 쳔ᄉᆡᆼ이로되 십삼 셰의 그 어미를 니별ᄒᆞ고 운봉산의 드러가 도를 닷가 아롬다온 일흠을 후셰의 유젼ᄒᆞ여시니, 쇼ᄌᆡ 그를 효측ᄒᆞ여 셰샹을 버셔나려ᄒᆞ오니, 모친은 안심허샤 후일을 기다리쇼셔. 건간 곡산모의 ᄒᆡᆼᄉᆡᆨ을 보니 샹공의 춍을 닐흘가 ᄒᆞ여 우리 모ᄌᆞ를 원슈갓치 아ᄂᆞᆫ지라. 큰 화을 닙을가 ᄒᆞ옵ᄂᆞ니 모친은 쇼ᄌᆞ 나가믈 념여치 마르쇼셔.”\"}, {\"index\": 24, \"text\": \"원ᄂᆡ 곡산모ᄂᆞᆫ 본ᄃᆡ 곡산 기ᄉᆡᆼ으로 샹공의 춍쳡이 되어시니 일홈은 쵸난이라. 가쟝 교만 방ᄌᆞᄒᆞ여 졔 심즁의 불합ᄒᆞ면 공긔 ᄎᆞᆷ쇼ᄒᆞ니, 이러무로 가즁 폐단이 무슈ᄒᆞᆫ 즁, 져ᄂᆞᆫ ᄋᆞ들이 업고 츈셤은 길동을 나아 샹공이 ᄆᆡ양 귀히 녁이물 심즁의 앙양ᄒᆞ여 업시ᄒᆞ물 도모ᄒᆞ더니, 일일은 흉계를 ᄉᆡᆼ각ᄒᆞ고 무녀를 쳥ᄒᆞ여 왈,\"}, {\"index\": 48, \"text\": \"ᄒᆞ고 물리치나, 심ᄉᆡ ᄌᆞ연 산난ᄒᆞ여 밤이면 ᄌᆞᆷ을 닐우지 못ᄒᆞ고 인ᄒᆞ여 병이 된지라. 부인과 좌랑 인형이 크게 근심ᄒᆞ여 아모리 헐 쥴 모로더니, 쵸난이 겻ᄒᆡ 뫼셔다가 고왈,\"}, {\"index\": 55, \"text\": \"“이ᄂᆞᆫ ᄎᆞᆷ아 못헐 ᄇᆡ로ᄃᆡ, 쳣ᄌᆡᄂᆞᆫ 나라을 위ᄒᆞ미오, 둘ᄌᆡᄂᆞᆫ 샹공을 위ᄒᆞ미오, 솃ᄎᆡᄂᆞᆫ 문호를 보죤ᄒᆞ미라. 너의 계교ᄃᆡ로 ᄒᆡᆼ혀라.”\"}, {\"index\": 88, \"text\": \"좌랑이 감히 은휘치 못ᄒᆞ여 쵸난의 실ᄉᆞ를 고ᄒᆞᆫᄃᆡ, 공이 더옥 분노ᄒᆞ여 일변 쵸난을 ᄂᆡ치고 가마니 그 시쳬를 업시ᄒᆞ며 노복을 불너 이런 말을 ᄂᆡ지 말나 당부ᄒᆞ더라.\"}], \"finding_en\": \"Paragraph 48 explicitly identifies 좌랑 인형; the later 좌랑 in paragraph 88 refers to that established named person, Inhyeong. Do not reject this continuity merely because paragraph 88 repeats only the title. Paragraph 0 gives Inhyeong and Gildong the same father but different mothers, supporting their half-brother relationship even when the narration calls them brothers. Paragraph 22 reports Gildong inferring from Chonan's conduct that she fears losing Hong's favor and treats him and his mother as enemies. A modern paraphrase can retain that fear as Gildong's stated inference; do not claim the source lacks it, and do not turn the inference into a narrator-certified motive.\"}",
-      "schema": "{\n  \"type\": \"object\",\n  \"additionalProperties\": false,\n  \"properties\": {\n    \"approved\": {\n      \"type\": \"boolean\"\n    },\n    \"issues\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"string\"\n      }\n    }\n  },\n  \"required\": [\n    \"approved\",\n    \"issues\"\n  ]\n}\n",
-      "meta": {
-        "job": "source-context-review",
-        "model": "gpt-6-luna",
-        "effort": "low",
-        "fingerprint": "57510540c101cacc0992b48dc6eb2694f66b0c4b3ff9df94e7071850187a1249",
-        "started_at": "2026-10-02T18:13:57.869531+00:00",
-        "ended_at": "2026-10-02T18:14:06.405608+00:00",
-        "return_code": 0,
-        "attempt_count": 1,
-        "attempts": [
-          {
-            "attempt": 1,
-            "started_at": "2026-10-02T18:13:57.869554+00:00",
-            "ended_at": "2026-10-02T18:14:06.405367+00:00",
-            "return_code": 0,
-            "throttled": false,
-            "events": "events.attempt-01.jsonl",
-            "stderr": "stderr.attempt-01.log"
-          }
-        ],
-        "tool_profile": "offline"
-      },
-      "review": {
-        "approved": true,
-        "issues": []
-      }
     }
   ]
 }

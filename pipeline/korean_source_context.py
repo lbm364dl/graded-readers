@@ -7,6 +7,16 @@ from jsonschema import validate
 from pipeline.agent_harness import digest
 
 REFERENCE = Path(__file__).resolve().parents[1] / 'data/korean/source-context.json'
+HISTORY = REFERENCE.parent / 'source-context-history'
+
+
+def matches(expected):
+    if expected == hashlib.sha256(REFERENCE.read_bytes()).hexdigest():
+        return True
+    if not isinstance(expected, str) or len(expected) != 64 or any(c not in '0123456789abcdef' for c in expected):
+        return False
+    snapshot = HISTORY / (expected + '.json')
+    return snapshot.is_file() and hashlib.sha256(snapshot.read_bytes()).hexdigest() == expected
 
 
 def load(source, path=REFERENCE):

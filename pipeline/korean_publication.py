@@ -19,6 +19,7 @@ from pipeline import korean_contracts as contracts
 from pipeline import korean_curriculum as curriculum
 from pipeline.korean_sources import EDITION, ROOT, load_selected_unit, sha
 from pipeline.korean_source_context import REFERENCE as SOURCE_CONTEXT_REFERENCE
+from pipeline.korean_source_context import matches as source_context_matches
 from scripts import generate_app_content_json as app_content
 
 CONTENT = ROOT / "content/korean/honggildong"
@@ -115,7 +116,7 @@ def verify_run(run_dir: Path) -> tuple[dict, dict, dict, dict]:
         raise ValueError("Korean run coverage or policy is stale")
     reviews = {}
     if ('source_context_sha256' in report
-            and report['source_context_sha256'] != sha(SOURCE_CONTEXT_REFERENCE.read_bytes())):
+            and not source_context_matches(report['source_context_sha256'])):
         raise ValueError('Korean reviewed source guidance changed')
     for stage, evidence in report["stages"].items():
         if evidence.get("reused"):
@@ -300,7 +301,7 @@ def validate_evidence(chapter: dict, evidence: dict, words: dict, grammar: dict,
         raise ValueError('Korean level instructions are stale')
     source_check(chapter)
     if ('source_context_sha256' in evidence
-            and evidence['source_context_sha256'] != sha(SOURCE_CONTEXT_REFERENCE.read_bytes())):
+            and not source_context_matches(evidence['source_context_sha256'])):
         raise ValueError('Korean published source guidance changed')
     manifest, _, _ = load_selected_unit(chapter['source_alignment']['unit'])
     if (evidence.get("chapter_digest") != digest(chapter)
