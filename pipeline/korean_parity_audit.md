@@ -563,7 +563,9 @@ batches require fresh work because of review findings; final approval is pending
 Annotation repairs now receive independently reviewed usage investigations for
 their previous exact forms, retaining the original requested meanings and an
 explicit related-form warning requiring independent contextual assessment. Whole
-reviewers and curriculum stages still require exact form-and-meaning matches.
+annotation reviewers receive the same research context and must independently
+assess its applicability. Curriculum stages still require exact form-and-meaning
+matches.
 This avoids asking a repair worker to resolve an investigation whose approved
 outcome was omitted from its inputs. Fresh chunks without occurrence evidence and
 unmatched forms receive no such evidence. No spelling match approves a new sense.

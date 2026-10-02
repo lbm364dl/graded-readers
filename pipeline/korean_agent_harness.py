@@ -418,7 +418,7 @@ class KoreanHarness:
                                       if entry['id'] in ids or entry['headword'] in attested], key=lambda entry: entry['id']),
                     'max_non_beginner_ratio': MAX_NON_BEGINNER_RATIO,
                     'policy': 'The older A/B/C grades are compatibility identity metadata, not target curriculum levels. Do not reject an identity merely because it is absent from A. The separate independently reviewed six-level curriculum stage establishes actual vocabulary and grammar levels. Check occurrence meaning and form analysis here; names and essential story exemptions stay separate from ordinary extra vocabulary.'}}
-                reviewed_usages = usage_evidence(usages)
+                reviewed_usages = usage_evidence(usages, related_forms=True)
                 if reviewed_usages:
                     evidence['reviewed_lexical_usage_evidence'] = reviewed_usages
             transmitted_context = review_context
