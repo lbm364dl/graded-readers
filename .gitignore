@@ -12,6 +12,7 @@ output/*.html
 venv/
 runs/
 content/lexicon/*.lock
+data/korean/reviewed-lexemes.lock
 content/lexicon/japanese/*.lock
 content/lexicon/japanese/.link-batches/
 content/lexicon/japanese/pending-component-links.json

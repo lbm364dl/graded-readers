@@ -44,6 +44,12 @@ class UnannotatableProseError(ValueError):
     """An ordinary prose word is absent from the pinned learner lexicon."""
 
 
+class LexicalIdentityError(ValueError):
+    def __init__(self, message, headwords):
+        super().__init__(message)
+        self.headwords = set(headwords)
+
+
 def read(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
@@ -216,7 +222,7 @@ def annotation_requests(value: dict, catalog: dict, focus: dict, words: dict) ->
     """Use the same exact identity checks for chunks and the assembled chapter."""
     requests, grammar_ids = {}, set()
     profiles = {entry["id"]: entry for entry in focus["entries"]}
-    identity_errors = []
+    identity_errors, unresolved_headwords = [], set()
     for segment in value["segments"]:
         if segment["type"] == "punctuation":
             if any(c.isalnum() for c in segment["text"]):
@@ -236,6 +242,7 @@ def annotation_requests(value: dict, catalog: dict, focus: dict, words: dict) ->
             raise UnannotatableProseError(f"Ordinary word {segment['lemma']} is absent from the learner lexicon; simplify prose instead of inventing its ID or a story-term exemption")
         if kind == "vocabulary" and identity not in {e["id"] for e in candidates}:
             identity_errors.append(f"Exact NIKL candidates for {segment['lemma']}: {candidates}")
+            unresolved_headwords.add(segment['lemma'])
         if kind != "grammar":
             known = words.get(identity)
             request_kind = kind.replace('vocabulary', 'word')
@@ -250,7 +257,7 @@ def annotation_requests(value: dict, catalog: dict, focus: dict, words: dict) ->
         else:
             grammar_ids.add(identity)
     if identity_errors:
-        raise ValueError("; ".join(identity_errors))
+        raise LexicalIdentityError("; ".join(identity_errors), unresolved_headwords)
     grammar_ids.update(link["entry_id"] for link in value["grammar_links"])
     return requests, grammar_ids
 
@@ -287,6 +294,30 @@ class KoreanHarness:
         self.stages = {}
         self.words, self.grammar = dictionaries._registry(dictionaries.WORDS), dictionaries._registry(dictionaries.GRAMMAR)
         self.catalog = contracts.lexical_catalog()
+        self.lexical_research_lock = asyncio.Lock()
+
+    async def check_prose_readiness(self, prose, revision):
+        """Screen obvious level mismatch before costly detailed annotation.
+
+        This is a repair gate, not publication evidence or a substitute for the
+        final occurrence-bound curriculum review.
+        """
+        if self.level == 1:
+            return  # The original pilot keeps its existing review/cache path.
+        review = await self.runner.call(f'prose-readiness-review-revision{revision}',
+            self.policy + '\nIndependently screen this prose for clear overall mismatch with the requested TOPIK level before detailed annotation. '
+            'Use the supplied six-level grammar curriculum as evidence of function and likely difficulty, not a spelling whitelist. '
+            'A few useful higher-level patterns are allowed; judge their frequency, variety, complexity and importance across the whole chapter. '
+            'Unlisted patterns are not automatically advanced. Do not reject ordinary topic marking or other clearly accessible language merely because a catalog function is narrower. '
+            'Do not require every above-level form to be removed, impose a numeric grammar quota, shorten the chapter, or invent precise bindings. '
+            'Reject only clear excessive overall difficulty, with exact affected phrases and focused repairs preserving source meaning and unaffected text. '
+            'If uncertainty needs actual annotation/curriculum bindings, leave that to the final review rather than inventing an objection. '
+            'Approval means ready for annotation, not final publication approval. Output JSON only and do not call tools. '
+            + payload(target_level=self.level, prose=prose, grammar_catalog=curriculum.prompt_entries('grammar')),
+            contracts.schema_path('review'), 'high', tool_profile='offline')
+        validate(review, contracts.REVIEW)
+        if not approved(review):
+            raise UnannotatableProseError('Early curriculum screen: ' + '; '.join(review['issues']))
 
     async def stage(self, name: str, prompt: str, schema: str, check, review_context: dict,
                     initial: dict | None = None, cache_prefix: str = "", producer=None) -> dict:
@@ -501,15 +532,24 @@ class KoreanHarness:
                 dictionaries.build_assets(chapter, self.run_dir, source_id=source_id,
                     word_registry=provisional_words, grammar_registry={identity: {"id": identity} for identity in required_grammar}, write=False)
             candidate_entries = []
+            lexical_research_unresolved = []
             proposed_headwords = set()
             if self.level > 1:
                 proposed = await self.runner.call(f'annotation-lexical-candidates-revision{prose_attempt}',
                     self.policy + '\nPropose dictionary headwords occurring in this exact prose so the next annotator can retrieve existing lexical identities. '
                     'Return headwords only: no IDs, definitions, levels or claims of approval. Include dictionary forms of inflected verbs and adjectives, nouns, adverbs and other lexical words. '
-                    'These are search requests, not authoritative linguistic analysis. Do not rewrite prose or invent words. '
-                    + payload(prose=prose), contracts.schema_path('lexical-candidates'), 'medium', tool_profile='offline')
+                    'These are search requests, not authoritative linguistic analysis. Exclude planned names and their title/surname parts, standalone grammatical particles, and conjugated or productive expression forms whose lexical bases can be retrieved instead. Do not rewrite prose or invent words. '
+                    + payload(prose=prose, lexical_plan=focus), contracts.schema_path('lexical-candidates'), 'medium', tool_profile='offline')
                 validate(proposed, contracts.LEXICAL_CANDIDATES)
                 proposed_headwords = set(proposed['headwords'])
+                excluded = {entry['headword'] for entry in focus['entries']}
+                excluded.update(alias for entry in focus['entries'] for alias in entry['aliases'])
+                missing = proposed_headwords - self.catalog.keys() - excluded
+                if missing:
+                    from pipeline.korean_lexical_research import research
+                    researched = await research(missing, self.run_dir, runner=self.runner)
+                    lexical_research_unresolved = researched.get('unresolved', [])
+                    self.catalog = contracts.lexical_catalog()
                 candidate_entries = lexical_candidates(proposed['headwords'], self.catalog)
             annotation_prompt = "Annotate this exact prose in source-aligned sentence chunks. The assembled result must preserve every character and use learner-sized taps. "
             annotation_prompt += "Supply the dictionary headword in lemma, an exact NIKL lexical ID for vocabulary, "
@@ -526,6 +566,7 @@ class KoreanHarness:
                 if self.level == 1 or entry['id'] in profiles or entry['headword'] in proposed_headwords]
             annotation_prompt += payload(prose=prose, words=annotation_words, grammar=list(self.grammar.values()), lexical_plan=focus, nikl_A=[([e["id"], e["meaning"]] if e["meaning"] else e["id"]) for e in beginner] if self.level == 1 else [], lexical_candidates=candidate_entries,
                 lexical_reference=read(LEXICAL_REFERENCE),
+                lexical_research_unresolved=lexical_research_unresolved,
                 candidate_policy='Search candidates are not approved senses or grades. Select the identity and POS matching the actual occurrence; retain distinct homonyms and do not invent an ID.')
             async def produce_annotation(job, issues):
                 texts = contracts.annotation_chunks(prose["text"], batch_characters=self.annotation_batch_characters)
@@ -673,7 +714,10 @@ class KoreanHarness:
                             except (ValidationError, ValueError, KeyError, IndexError, TypeError) as error:
                                 if previous_chunk is None:
                                     errors, previous_chunk = [str(error)], value
-                    for repair in range(repair_start, repair_start + 3):
+                    researched_identity = False
+                    for repair in range(repair_start, repair_start + 4):
+                        if repair == repair_start + 3 and not researched_identity:
+                            break
                         chunk_job = f"{job}-chunk-{number:03d}-{repair}"
                         try:
                             value = await self.runner.call(chunk_job, self.policy + "\n" + annotation_prompt
@@ -693,6 +737,19 @@ class KoreanHarness:
                             return value, {"job": chunk_job, "text": text, "digest": digest(value)}
                         except (ValidationError, ValueError, KeyError, IndexError, TypeError) as error:
                             errors, previous_chunk = [str(error)], value
+                            if (self.level > 1 and repair == repair_start + 2
+                                    and isinstance(error, LexicalIdentityError)):
+                                from pipeline.korean_lexical_research import research
+                                async with self.lexical_research_lock:
+                                    result = await research(error.headwords, self.run_dir, runner=self.runner)
+                                    self.catalog = contracts.lexical_catalog()
+                                researched_identity = bool(result['entries'])
+                                try:
+                                    validate_chunk(value, text)
+                                except (ValidationError, ValueError, KeyError, IndexError, TypeError) as updated_error:
+                                    errors = [str(updated_error)]
+                                else:
+                                    return value, {'job': chunk_job, 'text': text, 'digest': digest(value)}
                     raise ValueError(f"Korean annotation chunk {number} failed reconstruction: {errors}")
                 results = await asyncio.gather(*(chunk(i + 1, text) for i, text in enumerate(texts)), return_exceptions=True)
                 for result in results:
@@ -735,6 +792,7 @@ class KoreanHarness:
                 save(self.run_dir / "agents" / job / "meta.json", assembly)
                 return combined
             try:
+                await self.check_prose_readiness(prose, prose_attempt)
                 annotation = await self.stage("annotation", annotation_prompt, "annotation", check_annotation,
                     {"prose": prose, "approved_words": list(self.words.values()), "approved_grammar": list(self.grammar.values()), "lexical_plan": focus},
                     initial=normalize_existing(existing, self.words) if existing else None,

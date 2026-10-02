@@ -47,7 +47,7 @@
       "id": "하다01/동",
       "headword": "하다",
       "kind": "word",
-      "definition_en": "to do; to hold or carry out an activity or role"
+      "definition_en": "to do or carry out an action or activity; to hold a position or perform a role; to speak or say something, including quoting or reporting speech"
     },
     {
       "id": "사람/명",
@@ -1576,6 +1576,673 @@
                 "display_form": "",
                 "display_meaning_en": "",
                 "display_end_segment_index": -1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "before_entries": [
+        {
+          "id": "하다01/동",
+          "headword": "하다",
+          "kind": "word",
+          "definition_en": "to do; to hold or carry out an activity or role"
+        }
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "하다01/동",
+            "headword": "하다",
+            "kind": "word",
+            "definition_en": "to do or carry out an action or activity; to hold a position or perform a role; to speak or say something, including quoting or reporting speech"
+          }
+        ],
+        "references": [
+          {
+            "entry_id": "하다01/동",
+            "url": "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=73277",
+            "paraphrase_en": "NIKL’s Korean Basic Dictionary identifies 하다¹ as a verb. Sense 1 covers performing actions and activities, explicitly including 일을 하다 and 말을 하다; senses 6–7 cover jobs, positions and roles. Sense 22 covers saying something after quoted or reported content, supporting the speaking role in 귀하다고 하지요."
+          }
+        ]
+      },
+      "proposal_digest": "e8fa4deb2f05be54c5024398ba0b1ddb3d8f7099c2675dd0fa19b8778d3141ec",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "context_digest": "790e9de204b3619045c157e0ef86d47bc125dcbe4d9989c771ee46cfd3f02476",
+      "coverage": {
+        "files": {
+          "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json": "64584c0644e4470564888e411cb765dbe55d36050b25854a73c1871dcab6936e",
+          "runs/korean-topik2/chapter-001/agents/annotation-4/result.json": "f4c3aea07a804b7a932b70e2bda8c7429f450379fbd77fca92c348dfa0a2fb71"
+        },
+        "occurrences": [
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "segment_index": 12,
+            "entry_id": "하다01/동",
+            "surface": "했습니다",
+            "meaning_en": "did",
+            "sentence": "홍 판서는 나라의 일을 했습니다.",
+            "sentence_start": 17,
+            "start": 30,
+            "form_steps": [
+              {
+                "form": "했다",
+                "reading": "했다",
+                "label": "Past",
+                "meaning_en": "did",
+                "grammar_entry_ids": [
+                  "past-ass-eoss"
+                ]
+              },
+              {
+                "form": "했습니다",
+                "reading": "했습니다",
+                "label": "Formal polite past statement",
+                "meaning_en": "did",
+                "grammar_entry_ids": [
+                  "polite-seumnida"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 12,
+                "entry_id": "past-ass-eoss",
+                "context_en": "The past marker in 했습니다 places his work before the time of narration. 하다 becomes 했다."
+              },
+              {
+                "segment_index": 12,
+                "entry_id": "polite-seumnida",
+                "context_en": "했습니다 ends the statement in the narration's formal polite style."
+              }
+            ]
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "segment_index": 63,
+            "entry_id": "하다01/동",
+            "surface": "했습니다",
+            "meaning_en": "did",
+            "sentence": "춘섬은 홍 판서의 집에서 일을 했습니다.",
+            "sentence_start": 144,
+            "start": 161,
+            "form_steps": [
+              {
+                "form": "했다",
+                "reading": "했다",
+                "label": "Past",
+                "meaning_en": "did",
+                "grammar_entry_ids": [
+                  "past-ass-eoss"
+                ]
+              },
+              {
+                "form": "했습니다",
+                "reading": "했습니다",
+                "label": "Formal polite statement",
+                "meaning_en": "did",
+                "grammar_entry_ids": [
+                  "polite-seumnida"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 63,
+                "entry_id": "past-ass-eoss",
+                "context_en": "하다 takes the past form 했-, showing that Chunseom did this work in the past."
+              },
+              {
+                "segment_index": 63,
+                "entry_id": "polite-seumnida",
+                "context_en": "-습니다 finishes the past statement in the formal polite style used by the narrator."
+              }
+            ]
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "segment_index": 397,
+            "entry_id": "하다01/동",
+            "surface": "했습니다",
+            "meaning_en": "did",
+            "sentence": "집에서 여러 사람이 일을 했습니다.",
+            "sentence_start": 886,
+            "start": 900,
+            "form_steps": [
+              {
+                "form": "했다",
+                "reading": "했다",
+                "label": "Past",
+                "meaning_en": "did",
+                "grammar_entry_ids": [
+                  "past-ass-eoss"
+                ]
+              },
+              {
+                "form": "했습니다",
+                "reading": "했습니다",
+                "label": "Formal polite statement",
+                "meaning_en": "did",
+                "grammar_entry_ids": [
+                  "polite-seumnida"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 397,
+                "entry_id": "past-ass-eoss",
+                "context_en": "하다 becomes 했다 with past marking, placing the work before the time of narration."
+              },
+              {
+                "segment_index": 397,
+                "entry_id": "polite-seumnida",
+                "context_en": "했습니다 ends the past statement in the formal polite style used by the narrator."
+              }
+            ]
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "segment_index": 548,
+            "entry_id": "하다01/동",
+            "surface": "했습니다",
+            "meaning_en": "did (the practice)",
+            "sentence": "칼을 들고 연습을 했습니다.",
+            "sentence_start": 1191,
+            "start": 1201,
+            "form_steps": [
+              {
+                "form": "했다",
+                "reading": "했다",
+                "label": "Past",
+                "meaning_en": "did (the practice)",
+                "grammar_entry_ids": [
+                  "past-ass-eoss"
+                ]
+              },
+              {
+                "form": "했습니다",
+                "reading": "했습니다",
+                "label": "Formal polite past statement",
+                "meaning_en": "did (the practice)",
+                "grammar_entry_ids": [
+                  "polite-seumnida"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 548,
+                "entry_id": "past-ass-eoss",
+                "context_en": "하다 becomes 했다, placing the practice in the past."
+              },
+              {
+                "segment_index": 548,
+                "entry_id": "polite-seumnida",
+                "context_en": "했습니다 presents the past action as a formal polite statement."
+              }
+            ]
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "segment_index": 725,
+            "entry_id": "하다01/동",
+            "surface": "하면",
+            "meaning_en": "if I say",
+            "sentence": "‘지금 길동에게 좋은 말을 하면 나중에 길동이 내 말을 안 들을까?",
+            "sentence_start": 1551,
+            "start": 1566,
+            "form_steps": [
+              {
+                "form": "하면",
+                "reading": "하면",
+                "label": "Conditional",
+                "meaning_en": "if I say",
+                "grammar_entry_ids": [
+                  "conditional-eumyeon"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 725,
+                "entry_id": "conditional-eumyeon",
+                "context_en": "Introduces the father's imagined condition: if he says kind words to Gildong now."
+              }
+            ]
+          },
+          {
+            "file": "runs/korean-topik2/chapter-001/agents/annotation-4/result.json",
+            "chapter": 1,
+            "segment_index": 17,
+            "entry_id": "하다01/동",
+            "surface": "하는",
+            "meaning_en": "who did",
+            "sentence": "홍 판서는 나라의 중요한 일을 하는 사람이었다.",
+            "sentence_start": 20,
+            "start": 37,
+            "form_steps": [
+              {
+                "form": "하는",
+                "reading": "하는",
+                "label": "Action noun modifier",
+                "meaning_en": "who did",
+                "grammar_entry_ids": [
+                  "present-action-modifier-neun"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 17,
+                "entry_id": "present-action-modifier-neun",
+                "context_en": "하는 modifies 사람: a person who did the country's important work. The activity is habitual relative to the past narration, rather than a completed action preceding it.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              }
+            ]
+          },
+          {
+            "file": "runs/korean-topik2/chapter-001/agents/annotation-4/result.json",
+            "chapter": 1,
+            "segment_index": 468,
+            "entry_id": "하다01/동",
+            "surface": "하고",
+            "meaning_en": "do (linked to wanting)",
+            "sentence": "“나는 나라를 위해 큰일을 하고 싶다.",
+            "sentence_start": 936,
+            "start": 951,
+            "form_steps": [
+              {
+                "form": "하고",
+                "reading": "하고",
+                "label": "-고 connective before an auxiliary",
+                "meaning_en": "do (linked to wanting)",
+                "grammar_entry_ids": [
+                  "auxiliary-connective-go"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 468,
+                "entry_id": "auxiliary-connective-go",
+                "context_en": "-고 links 하다 to the desire auxiliary 싶다; it does not mean ‘and’ here.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              },
+              {
+                "segment_index": 468,
+                "entry_id": "desire-go-sipda",
+                "context_en": "하고 싶다 expresses the speaker's own wish to do great deeds for his country.",
+                "display_form": "하고 싶다",
+                "display_meaning_en": "want to do",
+                "display_end_segment_index": 470
+              }
+            ]
+          },
+          {
+            "file": "runs/korean-topik2/chapter-001/agents/annotation-4/result.json",
+            "chapter": 1,
+            "segment_index": 541,
+            "entry_id": "하다01/동",
+            "surface": "했다",
+            "meaning_en": "did",
+            "sentence": "그리고 마당에서 칼을 쓰는 연습을 했다.",
+            "sentence_start": 1072,
+            "start": 1091,
+            "form_steps": [
+              {
+                "form": "했다",
+                "reading": "했다",
+                "label": "Past form in plain narration",
+                "meaning_en": "did",
+                "grammar_entry_ids": [
+                  "past-ass-eoss"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 541,
+                "entry_id": "past-ass-eoss",
+                "context_en": "했다 is the contracted past form of 하다 and places the practice in the past.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              },
+              {
+                "segment_index": 541,
+                "entry_id": "plain-declarative-da",
+                "context_en": "The final 다 ends the past statement in the chapter's plain narrative register.",
+                "display_form": "했다",
+                "display_meaning_en": "did",
+                "display_end_segment_index": 541
+              }
+            ]
+          },
+          {
+            "file": "runs/korean-topik2/chapter-001/agents/annotation-4/result.json",
+            "chapter": 1,
+            "segment_index": 604,
+            "entry_id": "하다01/동",
+            "surface": "하지요",
+            "meaning_en": "people say, don't they?",
+            "sentence": "그런데 사람은 모두 귀하다고 하지요.",
+            "sentence_start": 1203,
+            "start": 1219,
+            "form_steps": [
+              {
+                "form": "하지요",
+                "reading": "하지요",
+                "label": "Polite statement seeking agreement",
+                "meaning_en": "people say, don't they?",
+                "grammar_entry_ids": [
+                  "polite-confirmation-jiyo"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 604,
+                "entry_id": "polite-confirmation-jiyo",
+                "context_en": "-지요 politely appeals to something the listener is expected to agree with. Gildong invokes the familiar claim that all people are valuable.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              }
+            ]
+          },
+          {
+            "file": "runs/korean-topik2/chapter-001/agents/annotation-4/result.json",
+            "chapter": 1,
+            "segment_index": 628,
+            "entry_id": "하다01/동",
+            "surface": "하는지",
+            "meaning_en": "was saying",
+            "sentence": "”\n\n홍 판서는 길동이 무슨 말을 하는지 알았다.",
+            "sentence_start": 1246,
+            "start": 1265,
+            "form_steps": [
+              {
+                "form": "하는지",
+                "reading": "하는지",
+                "label": "Embedded-question ending -는지",
+                "meaning_en": "was saying",
+                "grammar_entry_ids": [
+                  "embedded-question-neunji"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 628,
+                "entry_id": "embedded-question-neunji",
+                "context_en": "-는지 embeds 'what Gildong was saying' as what Minister Hong understood. The speaking is concurrent with his past understanding.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              }
+            ]
+          },
+          {
+            "file": "runs/korean-topik2/chapter-001/agents/annotation-4/result.json",
+            "chapter": 1,
+            "segment_index": 660,
+            "entry_id": "하다01/동",
+            "surface": "하고",
+            "meaning_en": "bowed and",
+            "sentence": "”\n\n길동은 아버지 앞에서 다시 절을 하고 말했다.",
+            "sentence_start": 1308,
+            "start": 1329,
+            "form_steps": [
+              {
+                "form": "하고",
+                "reading": "하고",
+                "label": "Connecting actions with -고; past time inherited from 말했다",
+                "meaning_en": "bowed and",
+                "grammar_entry_ids": [
+                  "connective-go"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 660,
+                "entry_id": "connective-go",
+                "context_en": "하고 connects bowing to speaking. The past ending in 말했다 places both actions in the past.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              }
+            ]
+          },
+          {
+            "file": "runs/korean-topik2/chapter-001/agents/annotation-4/result.json",
+            "chapter": 1,
+            "segment_index": 755,
+            "entry_id": "하다01/동",
+            "surface": "해",
+            "meaning_en": "say, linked to doing so for someone",
+            "sentence": "그러나 따뜻한 말을 해 주면 길동이 자기 신분에 맞지 않는 일을 할까 봐 걱정했다.",
+            "sentence_start": 1505,
+            "start": 1516,
+            "form_steps": [
+              {
+                "form": "해",
+                "reading": "해",
+                "label": "Contracted auxiliary-linking form",
+                "meaning_en": "say, linked to doing so for someone",
+                "grammar_entry_ids": [
+                  "connective-a-eo"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 755,
+                "entry_id": "connective-a-eo",
+                "context_en": "해 links saying the words to the benefactive auxiliary 주다.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              },
+              {
+                "segment_index": 755,
+                "entry_id": "benefactive-a-eo-juda",
+                "context_en": "Presents speaking as something done for Gildong; the conditional ending makes this hypothetical.",
+                "display_form": "해 주면",
+                "display_meaning_en": "if he said them for him",
+                "display_end_segment_index": 757
+              }
+            ]
+          },
+          {
+            "file": "runs/korean-topik2/chapter-001/agents/annotation-4/result.json",
+            "chapter": 1,
+            "segment_index": 771,
+            "entry_id": "하다01/동",
+            "surface": "할까",
+            "meaning_en": "might do",
+            "sentence": "그러나 따뜻한 말을 해 주면 길동이 자기 신분에 맞지 않는 일을 할까 봐 걱정했다.",
+            "sentence_start": 1505,
+            "start": 1541,
+            "form_steps": [
+              {
+                "form": "할까",
+                "reading": "할까",
+                "label": "Ending presenting an uncertain possibility",
+                "meaning_en": "might do",
+                "grammar_entry_ids": [
+                  "tentative-question-eul-kka"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 771,
+                "entry_id": "tentative-question-eul-kka",
+                "context_en": "Presents Gildong's doing those things as an uncertain possibility within the apprehension construction.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              }
+            ]
+          },
+          {
+            "file": "runs/korean-topik2/chapter-001/agents/annotation-4/result.json",
+            "chapter": 1,
+            "segment_index": 822,
+            "entry_id": "하다01/동",
+            "surface": "하느냐",
+            "meaning_en": "do you say?",
+            "sentence": "왜 네 신분에 맞지 않는 말을 하느냐?",
+            "sentence_start": 1610,
+            "start": 1627,
+            "form_steps": [
+              {
+                "form": "하느냐",
+                "reading": "하느냐",
+                "label": "Plain direct question",
+                "meaning_en": "do you say?",
+                "grammar_entry_ids": [
+                  "plain-question-nya"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 822,
+                "entry_id": "plain-question-nya",
+                "context_en": "-느냐 ends Minister Hong's stern, non-polite question to his son.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              }
+            ]
+          },
+          {
+            "file": "runs/korean-topik2/chapter-001/agents/annotation-4/result.json",
+            "chapter": 1,
+            "segment_index": 830,
+            "entry_id": "하다01/동",
+            "surface": "하지",
+            "meaning_en": "say (linked to the following prohibition)",
+            "sentence": "다시는 이런 말을 하지 마라.",
+            "sentence_start": 1632,
+            "start": 1642,
+            "form_steps": [
+              {
+                "form": "하지",
+                "reading": "하지",
+                "label": "Negative auxiliary connective -지",
+                "meaning_en": "say (linked to the following prohibition)",
+                "grammar_entry_ids": [
+                  "negative-connective-ji"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 830,
+                "entry_id": "negative-connective-ji",
+                "context_en": "하지 connects 말하다's equivalent 말 하다 (‘say words’) to the negative auxiliary 말다, forming a prohibition.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              },
+              {
+                "segment_index": 830,
+                "entry_id": "prohibitive-ji-malda",
+                "context_en": "하지 마라 is Minister Hong's direct command forbidding Gildong from saying such things.",
+                "display_form": "하지 마라",
+                "display_meaning_en": "do not say",
+                "display_end_segment_index": 832
+              }
+            ]
+          },
+          {
+            "file": "runs/korean-topik2/chapter-001/agents/annotation-4/result.json",
+            "chapter": 1,
+            "segment_index": 841,
+            "entry_id": "하다01/동",
+            "surface": "하면",
+            "meaning_en": "if you say",
+            "sentence": "또 이런 말을 하면 내 앞에 오지 못할 것이다.",
+            "sentence_start": 1649,
+            "start": 1657,
+            "form_steps": [
+              {
+                "form": "하면",
+                "reading": "하면",
+                "label": "Conditional connective",
+                "meaning_en": "if you say",
+                "grammar_entry_ids": [
+                  "conditional-eumyeon"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 841,
+                "entry_id": "conditional-eumyeon",
+                "context_en": "하면 introduces the condition: if Gildong says such words again. Here 말을 하다 means to say words.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              }
+            ]
+          },
+          {
+            "file": "runs/korean-topik2/chapter-001/agents/annotation-4/result.json",
+            "chapter": 1,
+            "segment_index": 861,
+            "entry_id": "하다01/동",
+            "surface": "할",
+            "meaning_en": "say, in the following expression of possibility",
+            "sentence": "”\n\n길동은 아무 말도 할 수 없었다.",
+            "sentence_start": 1675,
+            "start": 1688,
+            "form_steps": [
+              {
+                "form": "할",
+                "reading": "할",
+                "label": "Prospective noun-modifying form",
+                "meaning_en": "say, considered as a possible action",
+                "grammar_entry_ids": [
+                  "prospective-modifier-eul"
+                ]
+              }
+            ],
+            "grammar_links": [
+              {
+                "segment_index": 861,
+                "entry_id": "prospective-modifier-eul",
+                "context_en": "할 modifies the dependent noun 수; 말을 하다 means to speak or say something here.",
+                "display_form": "",
+                "display_meaning_en": "",
+                "display_end_segment_index": -1
+              },
+              {
+                "segment_index": 861,
+                "entry_id": "ability-eul-su-eopda",
+                "context_en": "The complete negative possibility construction says that speaking was impossible for Gildong.",
+                "display_form": "할 수 없었다",
+                "display_meaning_en": "could not say anything",
+                "display_end_segment_index": 865
               }
             ]
           }

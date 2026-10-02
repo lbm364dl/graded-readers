@@ -11,10 +11,10 @@ teaching baseline; it is not an exhaustive exam specification.
 | --- | --- | --- |
 | Source and adaptation | Complete searchable Wikisource/Jikji original pinned to revision 460078, raw/extracted checksums, Unicode paragraph spans, reviewed source notes and lexical identity plan, reviewed source plan and independently reviewed modern prose. The agent selects a contiguous source span and a coherent stopping paragraph from the remaining narrative, with reviewed coverage/omission reasoning. Total chapter length has no numeric quota. The placeholder 某 in the father's name has an edition-specific scholarly reference; it is not treated as a literal personal name. | Source-boundary decisions still require independent review; the two manually mapped scenes are reference examples. Other levels require their own learner policy. The archived 24-sheet scan is a different edition. |
 | Annotation and difficulty | Independently reviewed exact taps, meanings and explicit NIKL identities. Reconstruction, lexical budget and story-term budget gate publication. Unannotatable ordinary words send unpublished prose back for simplification. Sentence length is reported for review rather than mechanically rejected. | The 2017 NIKL curriculum (corrected 2020-11-17) supplies six vocabulary and grammar bands. Explicit independently reviewed sense/POS and construction bindings determine grades; the older A/B/C list only preserves identities. Optional higher-level grammar retains true grades and contextual labels; editorial review judges overall load without a grammar quota. Generation and target-bound review support TOPIK 1–6; only TOPIK 1 is published so far. |
-| Dictionary editing | Approved reusable entries remain immutable. Only missing word/grammar IDs go to a proposer and independent reviewer. Exact source positions keep repeated uses separate. | No Korean component graph or multi-sense editorial workflow yet. Meaning uncertainty must remain an editorial issue. |
+| Dictionary editing | Approved reusable entries remain immutable. Only missing word/grammar IDs go to a proposer and independent reviewer. Exact source positions keep repeated uses separate. | Shared sense corrections have a separate primary-evidence workflow auditing all published and supplied draft occurrences. No Korean component graph yet; uncertainty remains an editorial issue. |
 | Form and construction explanations | Complete-form meanings and separate form labels, exact reviewed per-stage grammar routes; base and transformation rows carry their links without a duplicate list. Wider constructions have exact phrase rows with their full meaning. | No independently editable merged reader-unit layer or Japanese-style merged construction chains. Korean displays annotation taps directly. |
 | Sentence help | Every sentence is inventoried and independently reviewed for selection; selected parts align to taps, while simple sentences remain unselected. | Selection is a reviewed judgment, not an automatic length rule. Korean sentence-help parts currently explain structure in text; grammar lessons open from word/form rows, without inline lesson buttons in the sentence-help parts. |
-| Publication and reuse | Fingerprinted runner cache and completed-run cache; staged validation before promotion; cumulative dictionaries/help; retained review evidence rejects changed source/content/definitions/help in normal app builds. | Current publisher explicitly supports Hong Gildong Level 1. Other books/levels need their own source/scope configuration. |
+| Publication and reuse | Fingerprinted runner cache and completed-run cache; staged validation before promotion; cumulative dictionaries/help; retained review evidence rejects changed source/content/definitions/help in normal app builds. | The publisher supports Hong Gildong TOPIK 1–6 and preserves existing editions while merging dictionary/help assets. Other books need their own source/scope configuration. |
 | App | Word and grammar browsers, focus/lookup cues, contextual examples, separate dictionary/observed forms, stage links and optional sentence analyses. Stale stage meanings, labels or source text disable their routes. | Current UI does not expose a component/meaning-guide graph or merged Korean taps. |
 
 Regression coverage includes source tampering, exact paragraph binding,
@@ -231,3 +231,31 @@ IDs and definitions remain unchanged. A regression contrasts ordinary 벼슬
 (counted as extra, not exempt) with proper-name identity matching. These changes
 were prompted by real TOPIK 2 and 5 generation failures; higher editions still
 require all publication and app checks before they are called complete.
+
+Higher-level lexical coverage: missing catalog headwords go through primary
+Basic Dictionary research, with Standard Dictionary fallback, and independent
+review before becoming supplemental
+candidates. Their stable IDs derive from the dictionary record and POS; distinct
+lexemes stay distinct. Productive expressions and uncertain headwords remain
+unresolved rather than receiving fabricated entries. Verified catalog additions
+have no assumed curriculum grade and no story exemption. Dictionary definitions,
+actual passage use and curriculum correspondence still require their normal
+reviews. Regression coverage checks primary URL/ID correspondence, full request
+coverage, unresolved patterns, rejection/repair, reuse and tamper detection,
+plus an ordinary unlisted occurrence contrasted with an unchecked identity.
+
+The Standard Dictionary's dynamically loaded record text is retrieved from its
+official search and content endpoints, with record numbers taken from search
+results and snapshot fingerprints preserved for review. Supplemental identities
+use their dictionary's own namespace. Existing lexical identities are compared
+before adding a distinct homonym/POS; productive patterns stay grammatical.
+A bounded research fallback also investigates repeated unresolved annotation
+identities without replacing approved lexical identities.
+
+An early prose grammar screen now detects clear target-level overload before
+detailed annotation. It permits a few useful higher patterns and does not equate
+unlisted with advanced. Exact occurrence-bound curriculum review remains the
+publication gate. Contrasting regressions cover accepted optional load versus
+rejected clear overload; neither changes prose directly or substitutes for final
+review. TOPIK 2's real curriculum rejection prompted this optimization, and its
+prose repair retained 67 unchanged sentence annotations.

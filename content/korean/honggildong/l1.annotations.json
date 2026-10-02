@@ -10534,7 +10534,7 @@
       },
       "curriculum": {
         "bindings": {
-          "level_reason_en": "The chapter remains suitable for supported Level 1 reading. Short statements, familiar family vocabulary, past narration and Level 1 possibility, desire and negation constructions carry most of the story. The Level 3 quotation particle repeats in the same concrete frame about calling someone ‘Father’ or ‘older brother’. Understanding the central restriction depends on this pattern, so its occurrences need contextual support. Level 2 modifiers mostly appear in short noun phrases or within familiar Level 1 constructions. The single conditional adds a modest demand in the father's private thought. The unlisted prediction, adverbial formation and plural marker have limited scope; short negation is natural beginner wording despite the catalog gap. These exceptions do not dominate the chapter or require varied advanced clause structures. Ordinary above-level vocabulary still requires the publication occurrence-budget check; names and the planned 신분 exemption remain separate.",
+          "level_reason_en": "The chapter remains suitable for supported Level 1 reading. Short clauses, familiar family vocabulary, past narration and listed Level 1 possibility, desire and negation constructions carry most of the story. Topic 은/는 occurs frequently, including ordinary narrative topics as well as contrasts. The supplied catalog explicitly grades only its contrast function; the shared topic entry therefore remains unlisted rather than extending that grade to unsupported functions. This frequent beginner construction is essential to understanding who each statement concerns, but its repeated, explicit noun topics add little syntactic complexity. The Level 3 quotation particle is also essential to the central restriction, but its nine occurrences repeat two concrete family titles with 부르다. Level 2 modifiers mostly form short noun phrases or occur inside listed Level 1 constructions. One conditional introduces the father's imagined consequence. Unlisted prediction, manner formation and plurality have limited scope; short negation is natural beginner wording despite the catalog gap. Together these exceptions require contextual support without making the chapter depend on varied advanced clause structures. Publication must still verify the ordinary extra-vocabulary occurrence budget; names and the planned 신분 exemption remain separate.",
           "prose_revision_reason_en": "",
           "bindings": [
             {
@@ -10584,7 +10584,7 @@
                 "nikl2017-vocabulary-00709"
               ],
               "equivalence": "listed",
-              "analysis_en": "Doing or carrying out an activity.",
+              "analysis_en": "Doing activities and saying words are approved senses of this verb.",
               "optional_reason_en": ""
             },
             {
@@ -11528,7 +11528,7 @@
                 "nikl2017-vocabulary-00574"
               ],
               "equivalence": "listed",
-              "analysis_en": "Humble first-person 저, including possessive 제; the demonstrative 저 is a different identity.",
+              "analysis_en": "Humble first-person 저, including possessive 제; demonstrative 저 is a different identity.",
               "optional_reason_en": ""
             },
             {
@@ -11735,12 +11735,10 @@
             {
               "entry_id": "topic-eun-neun",
               "kind": "grammar",
-              "source_ids": [
-                "nikl2017-grammar-00005"
-              ],
-              "equivalence": "listed",
-              "analysis_en": "Topic and contrast marking with 은/는; the family comparisons foreground contrast.",
-              "optional_reason_en": ""
+              "source_ids": [],
+              "equivalence": "unlisted",
+              "analysis_en": "This entry covers both ordinary topic introduction and contrast. The contrast at segments 70/74 matches the explicit 대조 function of nikl2017-grammar-00005. Ordinary narrative topics at segments 91 and 699 do not establish that function. No supplied row explicitly covers general topic marking. With one binding for this shared entry, partial contrast coverage cannot justify a listed grade for all its occurrences; the binding remains unlisted.",
+              "optional_reason_en": "Its 56 occurrences repeatedly identify explicit people, relationships or feelings as the subject matter of short statements, sometimes with contrast. These functions are necessary for comprehension, but the recurring noun-plus-particle frame is natural beginner Korean and adds little clause complexity. Mark it outside the catalog-backed target goals without treating catalog absence as evidence of advanced difficulty."
             },
             {
               "entry_id": "possessive-ui",
@@ -12001,7 +11999,7 @@
                 "nikl2017-grammar-00026"
               ],
               "equivalence": "listed",
-              "analysis_en": "낮아서 gives low social status as the reason the workers regarded Gildong as inferior. It matches the reason connective -아/어서; the final predicate supplies past time.",
+              "analysis_en": "낮아서 gives low social status as the reason the workers regarded Gildong as inferior. It matches reason -아/어서; the final predicate supplies past time.",
               "optional_reason_en": ""
             },
             {
@@ -12267,7 +12265,7 @@
             "subject-i-ga": 1,
             "past-ass-eoss": 1,
             "polite-seumnida": 1,
-            "topic-eun-neun": 1,
+            "topic-eun-neun": null,
             "possessive-ui": 1,
             "object-eul-reul": 1,
             "possessor-ege": 1,
@@ -12332,6 +12330,7 @@
             "conditional-eumyeon": 2
           },
           "optional_grammar_reasons": {
+            "topic-eun-neun": "Its 56 occurrences repeatedly identify explicit people, relationships or feelings as the subject matter of short statements, sometimes with contrast. These functions are necessary for comprehension, but the recurring noun-plus-particle frame is natural beginner Korean and adds little clause complexity. Mark it outside the catalog-backed target goals without treating catalog absence as evidence of advanced difficulty.",
             "nominalizer-gi": "Its sole occurrence is 태어나기 inside Level 1 -기 전에. Understanding the complete time phrase does not require general nominalization mastery.",
             "past-action-modifier-n": "The sole 일어난 occurrence forms the Level 1 phrase 일어난 후에, with a concrete completed action immediately followed by its time noun.",
             "modifier-eun": "Four occurrences form short noun phrases about a special child, similar standing or situation, and kind words. They preserve natural wording while most descriptions remain simple predicates.",
@@ -12344,6 +12343,7 @@
             "conditional-eumyeon": "One private thought uses 하면 to express the father's imagined consequence. The clauses use familiar vocabulary; this isolated conditional preserves his motivation without repeatedly demanding conditional reasoning."
           },
           "unlisted_grammar": [
+            "topic-eun-neun",
             "future-eul-geot-ida",
             "plural-deul",
             "adverbial-ge",
@@ -12351,21 +12351,22 @@
           ],
           "above_level_grammar_occurrences": {
             "prospective-modifier-eul": 10,
-            "quotation-rago": 9,
-            "past-action-modifier-n": 1,
             "modifier-eun": 4,
+            "past-action-modifier-n": 1,
+            "quotation-rago": 9,
             "conditional-eumyeon": 1,
             "nominalizer-gi": 1
           },
           "optional_grammar_occurrences": {
             "prospective-modifier-eul": 10,
-            "quotation-rago": 9,
+            "topic-eun-neun": 56,
+            "adverbial-ge": 1,
+            "modifier-eun": 4,
             "future-eul-geot-ida": 1,
-            "plural-deul": 2,
             "past-action-modifier-n": 1,
             "short-negation-an": 3,
-            "modifier-eun": 4,
-            "adverbial-ge": 1,
+            "plural-deul": 2,
+            "quotation-rago": 9,
             "conditional-eumyeon": 1,
             "nominalizer-gi": 1
           },

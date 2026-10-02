@@ -3,7 +3,7 @@
   "chapters": [
     {
       "number": 1,
-      "chapter_digest": "1490c6533e3cf20a1f327773b4679a837a63a46cb78549287dce84ae87f85377",
+      "chapter_digest": "569f6fbd034f2fde2f9a78bf56ee95e447d4030b18e0d3a32fd9a7fbf6ce745b",
       "source_sha256": "310f0d76f9a9c614d4cf920e9b3303e30473649c7d22e79169165e7d4b88d197",
       "source_notes_sha256": "5e088f495a768b4f654c61973edfc03825e4cad076d356a19e9f9efa3c68180b",
       "policy_sha256": "f6443ffef9aaeb16eed49e6b2ba9d8bbb0e40af36ca9a51e2b007b7d614a9244",
@@ -14,7 +14,7 @@
           "review_job": "plan-review-0",
           "output_digest": "f8f9134ffb6ef9b0f67bf9fb5f01614ec49a0dda8a87b6746c0451a336bc4f12",
           "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
-          "context_digest": "43daa03cdf3a7649a2b8c07b4287a7006c7aef8a7693ab0855ec0c54ef2fbbc1",
+          "context_digest": "0f8ef8a27c802bef0be1f92457bd180962b3b670535ee1ad61ead13ba2069e82",
           "approved": true,
           "review": {
             "approved": true,
@@ -22,14 +22,14 @@
           },
           "model": "gpt-6.1-sol",
           "effort": "high",
-          "input_fingerprint": "0e05623b9add490678e12ae5d858f37e29d9511ab68351dc4b1e6ad152c9424b"
+          "input_fingerprint": "2bd239db114439a6cf9a95e1fa4a588e17ad78b2bbb0e6df20ff6db8395c0e7a"
         },
         "lexical-plan": {
           "proposal_job": "lexical-plan-2",
           "review_job": "lexical-plan-review-2",
           "output_digest": "a0eb0a05fdb97fb12a0d297371f3b577283c64bc066a85f92f8d4231435e2802",
           "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
-          "context_digest": "42568cc1eb6dc89c0cc47e9a28b035e9d4474eced3472078604f175e4665c5ec",
+          "context_digest": "98cf83532f8f9b9969a0835e3e38f7391b4bbee4bd090cc4c6a584a976770ef5",
           "approved": true,
           "review": {
             "approved": true,
@@ -37,14 +37,14 @@
           },
           "model": "gpt-6.1-sol",
           "effort": "high",
-          "input_fingerprint": "38b0febb07e2d3a4235cea67aaeb1b97caebc424af1eeccdc75f09d1073e4c42"
+          "input_fingerprint": "863c1a171d5d58a64619b8fa7f4b9552a03d569d23911a067c6cd23920b1438b"
         },
         "prose": {
           "proposal_job": "prose-revision2-3",
           "review_job": "prose-revision2-review-3",
           "output_digest": "dbf3d4ab224b6f764749660de9234f823f16d2d134bbb3276ef11dbc35bbe00d",
           "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
-          "context_digest": "fe136323ed96e44b54c502c779a0853d0605796c34bdc2a8403f6824589392d8",
+          "context_digest": "21ee343d7906e077ec61f1829614bb0816a1407d84541eb61c8557bb5056531d",
           "approved": true,
           "review": {
             "approved": true,
@@ -52,14 +52,14 @@
           },
           "model": "gpt-6.1-sol",
           "effort": "high",
-          "input_fingerprint": "dd596a75375d4dec05e567ab2449d597631788c0761ed76b88222a0abaa2bff4"
+          "input_fingerprint": "07f57c0566f305dc0bbfe8a8be4aab406aab0aab7a617b76a2e2ed41fa95f542"
         },
         "annotation": {
           "proposal_job": "annotation-revision2-3",
           "review_job": "annotation-revision2-review-3",
           "output_digest": "3927a1ef375ac36090c99f2e453e09330bf177ded0a25a6ee7af046ba8cfe979",
           "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
-          "context_digest": "9b995df80e83601f425217a1ea1f73d1d1ce3756326bdfdefec2c0c50b167d3a",
+          "context_digest": "96da3b0488f037e03a6df885b5240c78fe5f9cbc58922ac9e5c04fbc47a0e852",
           "approved": true,
           "review": {
             "approved": true,
@@ -67,14 +67,14 @@
           },
           "model": "gpt-6.1-sol",
           "effort": "high",
-          "input_fingerprint": "27288afea1ea58ed5d66eb33b4c995d86ac36fe2fc59e4c004812aefcadd0e30"
+          "input_fingerprint": "b53064067174ecc84a7170f67997d85f6adce1919aeb00c531c2d766d64bb42b"
         },
         "curriculum": {
-          "proposal_job": "curriculum-revision2-2",
-          "review_job": "curriculum-revision2-review-2",
-          "output_digest": "1691c171c969bd81fb15f3a10dd70f168fc4d3e810677ee8b12c9ef45a37715e",
+          "proposal_job": "curriculum-revision2-3",
+          "review_job": "curriculum-revision2-review-3",
+          "output_digest": "19660b6d08f6bd6272c7915c0c49b5d3fb6a87e62a450bc1c8032d54c7d6025a",
           "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
-          "context_digest": "607865e2a6ceb825e59aac6f916954967073fd7dbac42a4e9908702d2738c31a",
+          "context_digest": "97c19caedc98417fb22d0db810b09ed2a69d437728e50336ffef9bb9abfaae55",
           "approved": true,
           "review": {
             "approved": true,
@@ -82,29 +82,19 @@
           },
           "model": "gpt-6.1-sol",
           "effort": "high",
-          "input_fingerprint": "f027a025a7b511687e8f3389042e81b9bf3caaa8a6d8780e2a3d2b820368c177"
+          "input_fingerprint": "5c381bcb4356882f990ee74ca5eea2e5e2eee2ef1d69610827ad5991566a53a8"
         },
         "dictionary": {
-          "proposal_job": "dictionary-0",
-          "review_job": "dictionary-review-0",
-          "output_digest": "3b31df9b32c82ed390e78b47739917d78dffbf1860acb711fa1ee5c9e7936c03",
-          "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
-          "context_digest": "dc49fbfc93f984704568a58678e87413b8f6d103ad97ead87de05e78319dff71",
           "approved": true,
-          "review": {
-            "approved": true,
-            "issues": []
-          },
-          "model": "gpt-6.1-sol",
-          "effort": "high",
-          "input_fingerprint": "0616b391c1ddab4a2d072cd3210a80acc8c2f2e2f3afdabee262e0cec44ca4c3"
+          "reused": true,
+          "registry_digest": "4ef3a752a0d1c912fc7ab394cd665a4bc1fd4bba29871e3bb9648620b88b29d4"
         },
         "sentence-help": {
           "proposal_job": "sentence-help-0",
           "review_job": "sentence-help-review-0",
           "output_digest": "d3fabce3b56d4dfe79d984a6f436a89113fb4c3bf452e186b3083d66d699d532",
           "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
-          "context_digest": "ded8ef44967b67beb2607ca51e0a1672b916a246f58bbfba3d1f9dceb105a159",
+          "context_digest": "b36facfeed3cb0a00583f648f275aee25190eaa52f82bde0f7629923b1ad9db7",
           "approved": true,
           "review": {
             "approved": true,
@@ -112,10 +102,10 @@
           },
           "model": "gpt-6.1-sol",
           "effort": "high",
-          "input_fingerprint": "4c094bc9d04b21fea7e2b2a921515e9f230f04f3c1dc5e89e13abcccde9cb2d5"
+          "input_fingerprint": "ed0ee2456b9e33ef16f8865d2215d93a202a5adcbbd401c0aa827811ea82f4c9"
         }
       },
-      "dictionary_digest": "2924bc57f59792ebe9d1cc4b180c548c4243ca3360a885b56fa4f84c4f4e3985",
+      "dictionary_digest": "4ef3a752a0d1c912fc7ab394cd665a4bc1fd4bba29871e3bb9648620b88b29d4",
       "breakdowns_digest": "4285cf348a45d2033ac3b2392e7b0f676b605d52e91e7b23af3eef66680ffe23"
     }
   ]

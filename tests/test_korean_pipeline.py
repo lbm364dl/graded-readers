@@ -1074,6 +1074,8 @@ def test_curriculum_checkpoint_defers_dictionary_until_shared_entries_are_ready(
     prepared = tmp_path / 'prepared' / 'chapter-001'
     class CandidateRunner:
         async def call(self, job, *args, **kwargs):
+            if job == 'prose-readiness-review-revision0':
+                return {'approved': True, 'issues': []}
             assert job == 'annotation-lexical-candidates-revision0'
             return {'headwords': []}
     harness = KoreanHarness(prepared, 1, runner=CandidateRunner(), level=3, stop_after='curriculum')
@@ -1172,3 +1174,26 @@ def test_story_dictionary_tag_does_not_exempt_an_ordinary_occurrence(tmp_path):
     assert not grade['passes']  # The dictionary's old tag grants no exemption.
     assert dictionary.lexical_kind_matches('story_term', 'vocabulary')
     assert not dictionary.lexical_kind_matches('proper_name', 'vocabulary')
+
+
+@pytest.mark.parametrize('accepted', [True, False])
+def test_early_level_screen_repairs_overload_without_replacing_final_review(tmp_path, accepted):
+    from pipeline.korean_agent_harness import UnannotatableProseError
+    prose = {'title': 'title', 'text': 'source-aligned prose'}
+    before = copy.deepcopy(prose)
+    class Runner:
+        async def call(self, job, prompt, *args, **kwargs):
+            assert job == 'prose-readiness-review-revision0'
+            assert 'not final publication approval' in prompt
+            assert 'few useful higher-level patterns are allowed' in prompt
+            assert 'Unlisted patterns are not automatically advanced' in prompt
+            assert kwargs['tool_profile'] == 'offline'
+            return {'approved': accepted, 'issues': [] if accepted else ['Simplify this essential advanced construction.']}
+    harness = KoreanHarness(tmp_path, 1, runner=Runner(), level=2)
+    if accepted:
+        asyncio.run(harness.check_prose_readiness(prose, 0))
+    else:
+        with pytest.raises(UnannotatableProseError, match='Early curriculum screen'):
+            asyncio.run(harness.check_prose_readiness(prose, 0))
+    assert prose == before
+    assert harness.stages == {}  # Final occurrence-bound gates remain mandatory.

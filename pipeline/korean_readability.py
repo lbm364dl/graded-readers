@@ -89,7 +89,9 @@ def diagnostics(chapter: dict, *, exception_entries: list | None = None,
             if identity not in grades:
                 from pipeline.korean_dictionary import _registry, WORDS
                 known = _registry(WORDS).get(identity)
-                if known is None or known['kind'] not in ('word', 'story_term'):
+                from pipeline.korean_lexical_research import candidates
+                attested = {e['id'] for e in candidates()}
+                if (known is None or known['kind'] not in ('word', 'story_term')) and identity not in attested:
                     raise ValueError(f"unresolved Korean vocabulary identity: {identity}")
             counts["vocabulary"] += 1
             if grades.get(identity) != "A":

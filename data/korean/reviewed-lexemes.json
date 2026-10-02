@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "reviews": [
+    {
+      "headwords": [
+        "가까이하다",
+        "충성하다"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "krdict-28056/동",
+            "headword": "가까이하다",
+            "pos": "동",
+            "meaning_en": "Associate closely with someone; be fond of and regularly enjoy something.",
+            "primary_url": "https://krdict.korean.go.kr/jpn/dicSearch/SearchView?ParaWordNo=28056&nation=jpn",
+            "evidence_en": "The direct NIKL record lists 가까이하다 as 동사, with two senses: maintaining friendly relations and keeping something nearby to enjoy it. [NIKL record](https://krdict.korean.go.kr/jpn/dicSearch/SearchView?ParaWordNo=28056&nation=jpn)."
+          }
+        ],
+        "unresolved": [
+          {
+            "headword": "충성하다",
+            "reason_en": "NIKL attests its use in 황제에게 충성하다, but I could not verify a standalone headword record or ParaWordNo. Usage evidence alone cannot establish the required dictionary identity; this does not mean the word is incorrect. [NIKL usage evidence](https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=87763)."
+          }
+        ]
+      },
+      "proposal_digest": "7c69cdf6da5ef33a31e0c6e725c483ca23fb0c91a407b97992574b03fa6fda85",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec"
+    },
+    {
+      "headwords": [
+        "충성하다"
+      ],
+      "proposal": {
+        "entries": [],
+        "unresolved": [
+          {
+            "headword": "충성하다",
+            "reason_en": "Could not verify a standalone NIKL Basic or Standard Dictionary record with a direct URL and stable entry ID. Basic Dictionary examples attest its use under other headwords, but that evidence does not meet the requested standard. This is an evidence limitation, not a judgment that the word is incorrect."
+          }
+        ]
+      },
+      "proposal_digest": "ec382a32a5efc09b59f460394de27034be0aabcff782385f1a6fdcf90595397a",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec"
+    },
+    {
+      "headwords": [
+        "충성하다"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "stdict-488756/동",
+            "headword": "충성하다",
+            "pos": "동",
+            "meaning_en": "To devote oneself with heartfelt loyalty.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=488756",
+            "evidence_en": "The supplied Standard Dictionary snapshot identifies 충성-하다 (忠誠하다) as 동사 and defines it as 진정에서 우러나오는 정성을 바치다. Web searches found no standalone Basic Dictionary record; occurrences under other headwords were excluded. The live Standard record could not be retrieved, so verification relies on the supplied snapshot."
+          }
+        ],
+        "unresolved": []
+      },
+      "proposal_digest": "0cf40a5200b990d41e76c8cc0f30fa034f1e772150baee6749f252c9c48d4e4f",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "156ed661ad3968db5f08bb8412bbebf85f772ae08dad53c629b5349ede20ed28",
+      "primary_evidence": [
+        {
+          "headword_request": "충성하다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%B6%A9%EC%84%B1%ED%95%98%EB%8B%A4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=488756",
+              "content_sha256": "0d0cf7dd9d990297e16a57fe92b6b783e3fd71bb10d6e43aefbf145f78f4bdfe",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 충성-하다 (忠誠하다 ) 원어 忠 충성 충 부수 心/총획 8 誠 정성 성 부수 言/총획 14 하다 한자 고유어 발음 [충성하다 ] 활용 충성하여[충성하여 ](충성해[충성해 ]), 충성하니[충성하니 ] 주표제어 충성 1 「동사」 【…에/에게】 진정에서 우러나오는 정성을 바치다. 나라에 충성하다 . 조국에 충성하다 . 주인에게 충성하다 . 그는 몸과 마음을 바쳐 국가에 충성한 사람이다. 부모를 공경하고, 임금에게 충성하고 , 웃어른을 존경하고, 예의와 신의를 중히 여긴다는 것이 유교의 대강의 골자요. ≪홍성원, 육이오≫ 더 보기 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "6460c28f5b53beeb5ee9a103b38ee53d115fa308fe72b399e55a41aae128b9d8"
+    }
+  ]
+}
