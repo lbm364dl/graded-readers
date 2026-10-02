@@ -135,3 +135,15 @@ text and taps. This is a punctuation-boundary issue, not a dictionary meaning
 or curriculum-grade correction. The 10,635-word catalog is a grading reference;
 we do not claim an exhaustive reviewed dictionary for every entry or an exact
 list of words permitted on TOPIK exams.
+
+Optional-grammar follow-up: the existing producer and reviewer instructions
+permit useful above-level grammar with its actual grade, an occurrence-specific
+optional rationale, and an honest whole-chapter difficulty assessment. No grammar
+quota was added. Frequency evaluation now uses the reviewer's shared inventory,
+including standalone grammar taps while deduplicating overlapping layers at one
+source position. A regression checks this case and the contrasting higher target
+where the same pattern becomes in-level and no longer optional. All published
+Korean coverage (one chapter, ten optional grammar identities) was recomputed;
+its stored evaluations remain correct and need no content repair. Validation:
+81 curriculum/pipeline/publication Python tests and eight Korean reader Flutter
+tests passed, including contextual optional labels and neutral generic lessons.

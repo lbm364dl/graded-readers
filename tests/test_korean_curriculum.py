@@ -200,3 +200,24 @@ def test_grammar_counts_keep_distinct_positions_and_deduplicate_layers():
     chapter['segments'].append({'type': 'word', 'lexical': {
         'kind': 'grammar', 'id': 'past-ass-eoss'}})
     assert curriculum.grammar_occurrence_counts(chapter) == {'past-ass-eoss': 2}
+
+
+def test_optional_load_includes_standalone_grammar_and_changes_with_target():
+    chapter, bindings = sample(63)
+    bindings['bindings'][1]['optional_reason_en'] = 'One useful modifier, explained in context.'
+    chapter['grammar_links'].append(dict(chapter['grammar_links'][0]))
+    # A second source position has only a grammar tap, without a duplicate link.
+    chapter['segments'].append({'type': 'word', 'lexical': {
+        'kind': 'grammar', 'id': 'past-ass-eoss'}})
+    grade = curriculum.evaluate_bindings(chapter, bindings, level=1)
+    assert grade['passes']
+    assert grade['grammar_levels']['past-ass-eoss'] == 2
+    assert grade['optional_grammar_occurrences'] == {'past-ass-eoss': 2}
+    assert grade['above_level_grammar_occurrences'] == {'past-ass-eoss': 2}
+
+    bindings['bindings'][1]['optional_reason_en'] = ''
+    grade = curriculum.evaluate_bindings(chapter, bindings, level=2)
+    assert grade['passes']
+    assert grade['grammar_levels']['past-ass-eoss'] == 2
+    assert grade['optional_grammar_occurrences'] == {}
+    assert grade['above_level_grammar_occurrences'] == {}

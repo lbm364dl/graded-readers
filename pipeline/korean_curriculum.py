@@ -189,10 +189,10 @@ def evaluate_bindings(chapter: dict, bindings: dict, *, level: int = 1,
              if graded["vocabulary", identity] is None or graded["vocabulary", identity] > level}
     grammar = {identity: grade for (kind, identity), grade in graded.items()
                if kind == "grammar" and grade is not None and grade > level}
-    # Count distinct linked occurrences, preserving separate source positions.
-    grammar_counts = Counter(identity for _, identity in {
-        (link['segment_index'], link['entry_id']) for link in chapter['grammar_links']
-        if link['entry_id'] in optional})
+    # Use the same source-position inventory supplied to the reviewer, including
+    # standalone grammar taps and deduplicating overlapping annotation layers.
+    grammar_counts = {identity: count for identity, count in
+                      grammar_occurrence_counts(chapter).items() if identity in optional}
     ratio = sum(extra.values()) / sum(occurrences.values()) if occurrences else 0
     return {"level_system": catalog()["level_system"], "source_sha256": SOURCE_SHA256,
             "target_level": level, "lexical_levels": {identity: grade for (kind, identity), grade in graded.items() if kind == "vocabulary"},
