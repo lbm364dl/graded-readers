@@ -364,3 +364,27 @@ def test_primary_attested_word_is_ordinary_unlisted_vocabulary_not_an_exemption(
     chapter['segments'][0]['lexical']['id'] = 'unchecked/동'
     with pytest.raises(ValueError, match='unresolved Korean vocabulary identity'):
         diagnostics(chapter)
+
+
+@pytest.mark.parametrize('error', ['Research worker did not actually use web search', 'Worker used tools outside its research role: shell'])
+def test_missing_search_retries_once_without_relaxing_capability(tmp_path, monkeypatch, error):
+    monkeypatch.setattr(research, 'standard_evidence', lambda word: {'records': []})
+    calls = []
+    class Runner:
+        async def call(self, job, prompt, *args, **kwargs):
+            calls.append((job, kwargs['tool_profile']))
+            if len(calls) == 1:
+                raise ValueError(error)
+            if '-review-' in job:
+                return {'approved': True, 'issues': []}
+            assert job.endswith('-search-retry')
+            assert 'Call web search before returning' in prompt
+            return proposal()
+    if error.startswith('Research worker'):
+        result = asyncio.run(research.research(['검증하다'], tmp_path, runner=Runner(), registry=tmp_path/'registry.json'))
+        assert result['status'] == 'reviewed'
+        assert [profile for _, profile in calls] == ['research', 'research', 'offline']
+    else:
+        with pytest.raises(ValueError, match='outside'):
+            asyncio.run(research.research(['검증하다'], tmp_path, runner=Runner(), registry=tmp_path/'registry.json'))
+        assert len(calls) == 1

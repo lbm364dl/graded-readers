@@ -312,14 +312,26 @@ async def _research_batch(headwords, run_dir, *, runner=None, registry=REGISTRY,
         key = fingerprint({'key': key, 'source_context': source_context})[:16]
     previous, issues = None, []
     for attempt in range(4):
-        proposal = await runner.call(f'lexical-research-{key}-{attempt}',
-            RESEARCH_POLICY + RESEARCH_SCOPE
+        research_prompt = (RESEARCH_POLICY + RESEARCH_SCOPE
             + ('\nAll requested spellings have supplied direct dictionary records. Edit using only those records; do not call tools. '
                if supplied_records_complete else '\nUse web search to investigate requests lacking supplied direct records. ')
             + ('\nThe supplied occurrence_requests are unverified search context, not attestation. Investigate the exact requested sense/POS even when another homonym already has a candidate. Reuse an existing identity only if it covers this lexeme; otherwise verify a distinct primary identity. Keep definitions independent of these passages. ' if occurrence_requests else '')
             + payload(headwords=headwords, primary_evidence=primary_evidence,
                 known_candidates=known_candidates, occurrence_requests=occurrence_requests, source_context=source_context,
-                previous=previous, issues=issues), schema, 'low', tool_profile=editor_profile)
+                previous=previous, issues=issues))
+        try:
+            proposal = await runner.call(f'lexical-research-{key}-{attempt}',
+                research_prompt, schema, 'low', tool_profile=editor_profile)
+        except ValueError as error:
+            if editor_profile != 'research' or str(error) != 'Research worker did not actually use web search':
+                raise
+            # A capability failure is not a lexical proposal or review. Retry once
+            # with explicit correction; retain the runner's tool-use gate.
+            proposal = await runner.call(f'lexical-research-{key}-{attempt}-search-retry',
+                research_prompt + '\nYour previous invocation failed the required web-search capability check. '
+                'Call web search before returning: investigate at least one requested spelling with missing direct records. '
+                'Do not claim a search happened unless you actually used the tool. Keep uncertain requests unresolved.',
+                schema, 'low', tool_profile='research')
         try:
             check_proposal(proposal, headwords)
         except ValueError as error:
