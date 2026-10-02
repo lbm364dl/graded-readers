@@ -6134,6 +6134,234 @@
         ]
       },
       "occurrence_requests_digest": "da1fd7aa3916d5d53804d2c8c0bdfdca4d513e6b1b2ce134835e644c8064dea7"
+    },
+    {
+      "headwords": [
+        "총애"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "stdict-489500/명",
+            "headword": "총애",
+            "pos": "명",
+            "meaning_en": "special affection and favor",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=489500",
+            "evidence_en": "The supplied readable primary snapshot of Standard Dictionary record 489500 explicitly identifies 총애 (寵愛) as 명사 and defines it as 남달리 귀여워하고 사랑함. No existing catalog identity was supplied. Basic Dictionary searching did not verify a standalone noun entry. The Standard Dictionary URL was requested, but live retrieval failed; attestation rests on the supplied primary snapshot."
+          }
+        ],
+        "unresolved": []
+      },
+      "proposal_digest": "c3ba2e189801c85cbeaae83ea12ff75bda073b0e616f7d653c9f02fe21d2bae6",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "f5a2d9c8f3d90c146ad2bd4aa1134d58e89b785c30fc1f051640e1e00c17acde",
+      "primary_evidence": [
+        {
+          "headword_request": "총애",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%B4%9D%EC%95%A0",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=489500",
+              "content_sha256": "e4d0b5a4e4b95fca8585d7c5f6543ca9fa33e124e489574460db26126371d959",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 총애 (寵愛 ) 원어 寵 괼 총 부수 宀/총획 19 愛 사랑 애 부수 心/총획 13 한자 발음 [총ː애 ] 부표제어 총애-하다 편집 이력 「명사」 「1」 남달리 귀여워하고 사랑함. ≒ 애총 , 애행 , 총 . 무조건적인 총애 . 선생님의 총애 . 총애가 깊다. 그의 잘못된 행동으로 왕의 총애가 식어 그는 결국 재상에서 파면되었다. 왕의 총애가 예전만 못했다. 그는 식견이 넓고 세상을 보는 눈이 날카로워 총애를 받았다. 시간이 흐르면 총애가 미움으로 바뀌기도 한다. 당하관에서 일약 당상 승지로 발탁됐다는 것은 국왕의 총애가 그만큼 극진함을 뜻하는 일이었다. ≪서기원, 조선백자 마리아상≫ 더 보기 「비슷한말」 특애(特愛) 「2」 『가톨릭』 하느님의 사랑. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "proposal_records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=489500",
+              "content_sha256": "e4d0b5a4e4b95fca8585d7c5f6543ca9fa33e124e489574460db26126371d959",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 총애 (寵愛 ) 원어 寵 괼 총 부수 宀/총획 19 愛 사랑 애 부수 心/총획 13 한자 발음 [총ː애 ] 부표제어 총애-하다 편집 이력 「명사」 「1」 남달리 귀여워하고 사랑함. ≒ 애총 , 애행 , 총 . 무조건적인 총애 . 선생님의 총애 . 총애가 깊다. 그의 잘못된 행동으로 왕의 총애가 식어 그는 결국 재상에서 파면되었다. 왕의 총애가 예전만 못했다. 그는 식견이 넓고 세상을 보는 눈이 날카로워 총애를 받았다. 시간이 흐르면 총애가 미움으로 바뀌기도 한다. 당하관에서 일약 당상 승지로 발탁됐다는 것은 국왕의 총애가 그만큼 극진함을 뜻하는 일이었다. ≪서기원, 조선백자 마리아상≫ 더 보기 「비슷한말」 특애(特愛) 「2」 『가톨릭』 하느님의 사랑. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "225dfd38a3ac7aa7b100f51141010804649ed21b060eb8f19d6f8f69bb2f8c5a",
+      "occurrence_requests": {
+        "총애": [
+          {
+            "text": "총애를",
+            "meaning_en": "favor and affection"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "98b3b279ebda12f1029ed1aaf0897a43a5c98863f2cc3148e949905da2fa5623"
+    },
+    {
+      "headwords": [
+        "화"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "stdict-373899/명",
+            "headword": "화",
+            "pos": "명",
+            "meaning_en": "Nature’s action of bringing forth and nurturing all things.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=373899",
+            "evidence_en": "Supplied direct Standard Dictionary record identifies 화 (化), homonym 2, as 명사 and defines nature’s generative and nurturing action."
+          },
+          {
+            "id": "stdict-379248/명",
+            "headword": "화",
+            "pos": "명",
+            "meaning_en": "Tuesday, abbreviated when listing weekdays.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=379248",
+            "evidence_en": "Supplied direct Standard Dictionary record identifies 화 (火), homonym 6, as 명사 meaning 화요일, chiefly in weekday lists. A direct Basic Dictionary record for this homonym was not retrieved."
+          },
+          {
+            "id": "stdict-379249/명",
+            "headword": "화",
+            "pos": "명",
+            "meaning_en": "Harmony; an obsolete mathematical term for a sum.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=379249",
+            "evidence_en": "Supplied direct Standard Dictionary record identifies 화 (和), homonym 8, as 명사, with senses for harmonious relations and the former mathematical term 합."
+          },
+          {
+            "id": "stdict-507241/명",
+            "headword": "화",
+            "pos": "명",
+            "meaning_en": "Heat from fire; fire as one of the five traditional elements.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=507241",
+            "evidence_en": "Supplied direct Standard Dictionary record identifies 화 (火), homonym 7, as 명사 and gives both fire heat and the traditional five-element sense."
+          },
+          {
+            "id": "stdict-507242/명",
+            "headword": "화",
+            "pos": "명",
+            "meaning_en": "A thirteen-pipe wind instrument used in Korean court ritual music.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=507242",
+            "evidence_en": "Supplied direct Standard Dictionary record identifies 화 (和), homonym 9, as 명사: an 아악 wind instrument resembling 생황, with thirteen pipes."
+          }
+        ],
+        "unresolved": [
+          {
+            "headword": "화",
+            "reason_en": "The anger noun is already covered by existing identity 화06/명. Direct Basic Dictionary record krdict-74134/명 (https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=74134) verifies 화 (火), 명사, meaning strong displeasure or anger. Do not duplicate it."
+          },
+          {
+            "headword": "화",
+            "reason_en": "The requested harm or misfortune usage concerns the separate noun 화 (禍), not the existing anger identity 화06/명. No readable direct Basic or Standard Dictionary record for this homonym was obtained, and none is supplied. Examples under other headwords and secondary definitions cannot establish the required primary identity; this does not imply the word is incorrect."
+          },
+          {
+            "headword": "화",
+            "reason_en": "Supplied Standard records 374953, 373900 and 379251 identify 화 only as roots of 화하다, without a standalone POS. They cannot be proposed as independent lexemes with the required POS."
+          },
+          {
+            "headword": "화",
+            "reason_en": "Supplied Standard record 508187 attests 화 (化) as a Korean surname. Excluded under the instruction against creating proper-name lemmas."
+          }
+        ]
+      },
+      "proposal_digest": "6ce59210f173b3bda514fd1da569ca46b2e2596304c7dc86b5ef4ba5a539e8d6",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "c6a0027d0694ef196c9553b759424d8b6193bc75b157ffd83bda766412ea8f52",
+      "primary_evidence": [
+        {
+          "headword_request": "화",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%ED%99%94",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=373899",
+              "content_sha256": "3c01d6b2a5d45665e0e77eedba02e95bddc5306f66a8587bfe81eb303173d42b",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 화 2 (化 ) 원어 化 될 화 부수 匕/총획 4 한자 발음 [화ː ] 「명사」 천지자연이 만물을 생육(生育)하는 작용. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=373900",
+              "content_sha256": "076791159b8f11c8d587896a7a91bda2a9db2637e922130645a85652cadb064a",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 화 4 (化 ) 원어 化 될 화 부수 匕/총획 4 한자 부표제어 화-하다 2 ‘ 화하다 ’의 어근. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 4 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=374953",
+              "content_sha256": "11d801decf7676ab3f1648d600f0bf62ae62eeca4ea27f443ae446c5fdded663",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 화 1 부표제어 화-하다 1 ‘ 화하다 ’의 어근. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=379247",
+              "content_sha256": "b41e472771c870608f850e7ad9b99d9939157888d1491e313dac734d7eed9492",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 화 5 (火 ) 원어 火 불 화 부수 火/총획 4 한자 발음 [화ː ] 「명사」 몹시 못마땅하거나 언짢아서 나는 성. 화가 치밀다. 화를 내다. 화를 돋우다. 화를 풀다. 화가 나서 어쩔 줄을 모르다. 더 보기 관용구/속담 관용구 화가 동하다 참고 참던 성난 기운이 더는 억제되지 아니하여 사람으로 하여금 격한 발언이나 행동을 하게 하다. · 물건을 잃고 속상한 판에도 이 천재적으로 우열을 가리고 사람의 속을 쿡쿡 쑤셔 대는 민기에 종혁은 살짝 화가 동했다 .≪이정환, 샛강≫ 관용구 화가 뜨다 노여워 분이 치밀어 오르다. · 노 첨지는 아들의 병과 딸의 횡액으로 해서 화가 떴다 .≪홍명희, 임꺽정≫ 관용구 화가 머리끝까지 나다[치밀다] 극도로 화가 나다. · 밤을 새우고 들어온 나를 보자 아버지는 화가 머리끝까지 나서 소리를 지르셨다. · 화가 머리끝까지 치민 삼석이는 부지중에 조선말로 욕을 퍼붓는다.≪박경리, 토지≫ 관용구 화를 끓이다 화를 시원하게 풀지 못하고 혼자 끙끙거리다. ≒ 심화를 끓이다 . · 오래 화를 끓이면 병이 된다. · 그렇게 화를 끓인다고 해결되겠니? 나가서 바람이나 쐬고 오렴. 속담 화가 홀아비 동심(動心)하듯 화가 불끈 일어나는 모양을 비유적으로 이르는 말. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 5 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=379248",
+              "content_sha256": "b8694720871336bd483fb3b23a3b398ba08384d6913f0facfebbe4bfc6b457ec",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 화 6 (火 ) 원어 火 불 화 부수 火/총획 4 한자 발음 [화 ] 편집 이력 「명사」 ((주로 요일을 열거할 때 쓰여)) ‘ 화요일 ’을 이르는 말. 강습은 월, 수, 금과 화 , 목으로 나누어 진행된다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 6 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=379249",
+              "content_sha256": "fd37ce4d581ab65cfb97ff16ef269cd8d0d5417c06255df98a1ce864fdfab43f",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 화 8 (和 ) 원어 和 화목할 화 부수 口/총획 8 한자 발음 [화 ] 부표제어 화-하다 3 「명사」 「1」 서로 뜻이 맞아 사이좋은 상태. 「2」 『수학』 ‘ 합 ’의 전 용어. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 8 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=379251",
+              "content_sha256": "fa64794d0da979b04ca6bfe61dbad3c5931bb73263a05d4401c72f6187a1c10f",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 화 10 (和 ) 원어 和 화목할 화 부수 口/총획 8 한자 부표제어 화-하다 4 ‘ 화하다 ’의 어근. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 10 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=507241",
+              "content_sha256": "8b95adb1077f3a95ec47c342964f72aa250b26bece4f21249bf95212c082c61a",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 화 7 (火 ) 원어 火 불 화 부수 火/총획 4 한자 발음 [화ː ] 편집 이력 「명사」 「1」 불에서 느껴지는 뜨거운 기운. = 불기운 . 「2」 『민속』 오행(五行)의 하나. 방위로는 남쪽, 계절로는 여름, 빛깔로는 적색을 가리킨다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 7 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=507242",
+              "content_sha256": "43b1c44b50c27d3e426e30022b80fd3bbc379e9f2960c2ad1f05972cf11dc07f",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 화 9 (和 ) 원어 和 화목할 화 부수 口/총획 8 한자 발음 [화 ] 「명사」 『음악』 아악에 쓰이는 관악기의 하나. 모양이 생황과 같이 생겼으며 열세 개의 관으로 되어 있다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 9 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=508187",
+              "content_sha256": "ab76b92e90fc8ee09ad3ec5ac9c46121c8ccd1efbffa53c0d49f50f580f855bf",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 화 3 (化 ) 원어 化 될 화 부수 匕/총획 4 한자 발음 [화ː ] 「명사」 우리나라 성(姓)의 하나. 본관은 진양(晉陽), 나주(羅州) 등이 현존한다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "proposal_records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=373899",
+              "content_sha256": "3c01d6b2a5d45665e0e77eedba02e95bddc5306f66a8587bfe81eb303173d42b",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 화 2 (化 ) 원어 化 될 화 부수 匕/총획 4 한자 발음 [화ː ] 「명사」 천지자연이 만물을 생육(生育)하는 작용. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=379248",
+              "content_sha256": "b8694720871336bd483fb3b23a3b398ba08384d6913f0facfebbe4bfc6b457ec",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 화 6 (火 ) 원어 火 불 화 부수 火/총획 4 한자 발음 [화 ] 편집 이력 「명사」 ((주로 요일을 열거할 때 쓰여)) ‘ 화요일 ’을 이르는 말. 강습은 월, 수, 금과 화 , 목으로 나누어 진행된다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 6 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=379249",
+              "content_sha256": "fd37ce4d581ab65cfb97ff16ef269cd8d0d5417c06255df98a1ce864fdfab43f",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 화 8 (和 ) 원어 和 화목할 화 부수 口/총획 8 한자 발음 [화 ] 부표제어 화-하다 3 「명사」 「1」 서로 뜻이 맞아 사이좋은 상태. 「2」 『수학』 ‘ 합 ’의 전 용어. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 8 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=507241",
+              "content_sha256": "8b95adb1077f3a95ec47c342964f72aa250b26bece4f21249bf95212c082c61a",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 화 7 (火 ) 원어 火 불 화 부수 火/총획 4 한자 발음 [화ː ] 편집 이력 「명사」 「1」 불에서 느껴지는 뜨거운 기운. = 불기운 . 「2」 『민속』 오행(五行)의 하나. 방위로는 남쪽, 계절로는 여름, 빛깔로는 적색을 가리킨다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 7 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=507242",
+              "content_sha256": "43b1c44b50c27d3e426e30022b80fd3bbc379e9f2960c2ad1f05972cf11dc07f",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 화 9 (和 ) 원어 和 화목할 화 부수 口/총획 8 한자 발음 [화 ] 「명사」 『음악』 아악에 쓰이는 관악기의 하나. 모양이 생황과 같이 생겼으며 열세 개의 관으로 되어 있다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 9 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "16d3813cfbc8a451c2f02d0935cd26907aff989a75cd26f0ac61cab79e0aea9e",
+      "occurrence_requests": {
+        "화": [
+          {
+            "text": "화를",
+            "meaning_en": "harm or misfortune in 큰 화를 입을까"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "19c86c2f631f4f1b3057609d9efb9e103b38a6eac52f3dad861e4f47109f249a"
     }
   ]
 }

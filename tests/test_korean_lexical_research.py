@@ -7,6 +7,8 @@ import pytest
 from pipeline import korean_lexical_research as research
 from pipeline.korean_agent_harness import save
 
+STANDARD_EVIDENCE = research.standard_evidence
+
 
 @pytest.fixture(autouse=True)
 def offline_primary_fixture(monkeypatch):
@@ -42,6 +44,32 @@ def test_primary_http_interruption_is_bounded_and_never_uses_partial_text(monkey
     else:
         assert research.read_primary('https://example.test/record') == 'verified complete record'
     assert len(calls) == 2
+
+
+@pytest.mark.parametrize('mode', ['single', 'paged', 'interrupted'])
+def test_standard_retrieval_follows_real_pagination_and_keeps_completed_records(monkeypatch, mode):
+    from urllib.parse import parse_qs, urlparse
+    from http.client import IncompleteRead
+    calls = []
+    def fetch(request):
+        if isinstance(request, str):
+            page = int(parse_qs(urlparse(request).query).get('pageIndex', ['1'])[0])
+            calls.append(('page', page))
+            if page == 2 and mode == 'interrupted':
+                raise IncompleteRead(b'partial next page')
+            links = '<a onclick="fnSearch(2);return false;">2</a>' if mode != 'single' else ''
+            numbers = ['1'] if page == 1 else ['1', '2']
+            return links + ''.join(f'<a href="/search/searchView.do?word_no={n}&searchKeywordTo=3">word</a>' for n in numbers)
+        number = parse_qs(request.data.decode())['word_no'][0]
+        calls.append(('record', number))
+        return f'<p>Verified record {number}</p>'
+    monkeypatch.setattr(research, 'read_primary', fetch)
+    result = STANDARD_EVIDENCE('a homonym')
+    assert [r['text'] for r in result['records']] == (
+        ['Verified record 1', 'Verified record 2'] if mode == 'paged' else ['Verified record 1'])
+    assert calls.count(('record', '1')) == 1
+    assert calls.count(('page', 2)) == (0 if mode == 'single' else 1)
+    assert ('retrieval_error' in result) == (mode == 'interrupted')
 
 
 @pytest.mark.parametrize('change', ['url', 'identity', 'coverage'])

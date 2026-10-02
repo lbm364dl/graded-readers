@@ -77,16 +77,29 @@ def standard_evidence(headword):
         {'pageSize': 20, 'searchKeyword': headword})
     records = []
     try:
-        page = read_primary(search_url)
-        numbers = sorted(set(re.findall(r'href="/search/searchView\.do\?word_no=(\d+)&', page)))
-        for number in numbers:
-            request = Request('https://stdict.korean.go.kr/search/contentViewOne.do',
-                data=urlencode({'word_no': number}).encode(),
-                headers={'Content-Type': 'application/x-www-form-urlencoded', 'Referer': search_url})
-            content = read_primary(request)
-            records.append({'primary_url': f'https://stdict.korean.go.kr/search/searchView.do?word_no={number}',
-                'content_sha256': hashlib.sha256(content.encode()).hexdigest(),
-                'text': plain_html(content)})
+        pending, visited, seen_records = {1}, set(), set()
+        while pending:
+            page_number = min(pending)
+            pending.remove(page_number)
+            visited.add(page_number)
+            page_url = search_url if page_number == 1 else search_url + '&' + urlencode({'pageIndex': page_number})
+            page = read_primary(page_url)
+            # The public site can ignore requested pageSize. Follow its actual
+            # pagination rather than treating the first page as the full result.
+            pending.update(int(n) for n in re.findall(r'fnSearch\((\d+)\);return false', page)
+                           if int(n) not in visited)
+            numbers = sorted(set(re.findall(r'href="/search/searchView\.do\?word_no=(\d+)&', page)))
+            for number in numbers:
+                if number in seen_records:
+                    continue
+                request = Request('https://stdict.korean.go.kr/search/contentViewOne.do',
+                    data=urlencode({'word_no': number}).encode(),
+                    headers={'Content-Type': 'application/x-www-form-urlencoded', 'Referer': page_url})
+                content = read_primary(request)
+                records.append({'primary_url': f'https://stdict.korean.go.kr/search/searchView.do?word_no={number}',
+                    'content_sha256': hashlib.sha256(content.encode()).hexdigest(),
+                    'text': plain_html(content)})
+                seen_records.add(number)
         return {'headword_request': headword, 'search_url': search_url, 'records': records}
     except (OSError, UnicodeError, HTTPException) as error:
         return {'headword_request': headword, 'search_url': search_url, 'records': records,

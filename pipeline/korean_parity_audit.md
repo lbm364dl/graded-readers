@@ -381,3 +381,12 @@ the exact prior prose when invoked during repair, and retains its review issues
 for the reuse agent. Regression coverage includes an assembly at attempt ten
 and contrasts a different prose text that must not be reused. No active worker
 was restarted merely to load this cache improvement.
+
+Contextual research for TOPIK 5's harm/misfortune 화 exposed incomplete Standard
+Dictionary retrieval: its public GET search returned ten results despite a
+requested pageSize of twenty, and the needed homonym was on page two. Retrieval
+now follows the actual pagination links, deduplicates record IDs across pages,
+and retains completed primary snapshots if a later page fails. Regressions
+contrast a single-page response, a later-page homonym with a duplicate earlier
+record, and an interrupted later page. Research still requires exact-record
+retrieval and independent lexical review; pagination supplies candidates only.
