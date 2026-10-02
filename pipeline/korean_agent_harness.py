@@ -91,7 +91,7 @@ def latest_prose_revision(run_dir: Path) -> int:
     return max(candidates)[1] if candidates else 0
 
 
-def annotation_reuse_candidate(run_dir: Path):
+def annotation_reuse_candidate(run_dir: Path, *, text: str | None = None):
     """Recover assembled annotation evidence after a process restart.
 
     The reuse agent still checks exact occurrence roles, unresolved issues and
@@ -108,15 +108,17 @@ def annotation_reuse_candidate(run_dir: Path):
                 continue
             value = read(path.parent / 'result.json')
             validate(value, contracts.ANNOTATION)
-            text = ''.join(record['text'] for record in meta['chunks'])
-            contracts.check_reconstruction(value['segments'], text)
+            assembled_text = ''.join(record['text'] for record in meta['chunks'])
+            if text is not None and assembled_text != text:
+                continue
+            contracts.check_reconstruction(value['segments'], assembled_text)
             prefix, attempt = path.parent.name.rsplit('-', 1)
             review_path = path.parent.parent / f'{prefix}-review-{attempt}' / 'result.json'
             review = read(review_path) if review_path.exists() else {'issues': ['No independent annotation review is available.']}
             review_meta_path = review_path.parent / 'meta.json'
             reviewed_at = read(review_meta_path).get('ended_at', '') if review_meta_path.exists() else ''
             key = (approved(review), reviewed_at, int(match[1] or 0), int(match[2]))
-            candidates.append((key, (path.parent.name, {'text': text}, review)))
+            candidates.append((key, (path.parent.name, {'text': assembled_text}, review)))
         except (OSError, ValueError, KeyError, ValidationError):
             continue
     return max(candidates, key=lambda item: item[0])[1] if candidates else None
@@ -866,18 +868,7 @@ class KoreanHarness:
                 if existing or prose_attempt == 2:
                     raise
                 print(f"annotation failed; revising generated prose before reannotation: {error}", flush=True)
-                reuse_candidate = None
-                old_prefix = f'annotation-revision{prose_attempt}' if prose_attempt else 'annotation'
-                for attempt in reversed(range(8)):
-                    old_job = f'{old_prefix}-{attempt}'
-                    meta_path = self.run_dir / 'agents' / old_job / 'meta.json'
-                    if not meta_path.exists(): continue
-                    old_meta = read(meta_path)
-                    if old_meta.get('kind') != 'annotation_assembly' or ''.join(c['text'] for c in old_meta['chunks']) != prose['text']:
-                        continue
-                    old_review_path = self.run_dir / 'agents' / f'{old_prefix}-review-{attempt}' / 'result.json'
-                    reuse_candidate = (old_job, prose, read(old_review_path) if old_review_path.exists() else {'issues': [str(error)]})
-                    break
+                reuse_candidate = annotation_reuse_candidate(self.run_dir, text=prose['text'])
                 prose_repair = payload(repair_reason=str(error), previous_prose=prose,
                     instruction=f"Deliberately revise only the affected unpublished prose to use NIKL six-level curriculum Level {self.level} and lower vocabulary and grammar. Preserve the reviewed scene, stopping point, meaningful development and unaffected wording. Do not shorten a chapter merely because annotation failed. Do not evade difficulty gates by inventing lexical identities or reclassifying ordinary words as story terms.")
                 continue

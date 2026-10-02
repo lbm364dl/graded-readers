@@ -6077,6 +6077,63 @@
         ]
       },
       "occurrence_requests_digest": "d9d660b1a41b2f27ec4857100326498f78150a451bb8a7a6d66025c31eaf8c64"
+    },
+    {
+      "headwords": [
+        "도사리다"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "stdict-415684/동",
+            "headword": "도사리다",
+            "pos": "동",
+            "meaning_en": "To lurk or lie in wait; to remain hidden within.",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=415684",
+            "evidence_en": "The supplied primary-record snapshot identifies 도사리다 as 동사. Senses 2「2」–「3」 describe something impending being concealed within something else and remaining motionless somewhere while awaiting an opportunity. No existing identity was supplied. Basic Dictionary searches found examples under other headwords but no standalone entry. The Standard Dictionary URL was requested, but live retrieval failed; attestation rests on the supplied readable snapshot."
+          }
+        ],
+        "unresolved": []
+      },
+      "proposal_digest": "376b02b5879cceaaa834c110afb4263e863c5074e4a79e3375cae6c9e51683cb",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "f5a2d9c8f3d90c146ad2bd4aa1134d58e89b785c30fc1f051640e1e00c17acde",
+      "primary_evidence": [
+        {
+          "headword_request": "도사리다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EB%8F%84%EC%82%AC%EB%A6%AC%EB%8B%A4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=415684",
+              "content_sha256": "bf6204aaa141a898148ea73cc67028fb879710d0aef6c52ee54f8a42cf790af4",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 도사리다 발음 [도사리다 ] 활용 도사리어[도사리어 /도사리여 ](도사려[도사려]), 도사리니[도사리니] 편집 이력 「동사」 1 【…을】 「1」 두 다리를 꼬부려 각각 한쪽 발을 다른 한쪽 무릎 아래에 괴고 앉다. 다리를 도사리고 앉다. 도사렸던 무릎을 얼른 곧추세우고 뒤나 보려는 사람처럼 쪼그렸다. ≪이태준, 복덕방≫ 「2」 팔다리를 함께 모으고 몸을 웅크리다. 그녀는 몸을 잔뜩 도사리고 앉아서 불안한 표정으로 주변을 둘러보았다. 「3」 긴 물건을 빙빙 돌려서 둥그렇게 포개어 감다. 독사가 몸을 도사리고 있다. 그 방 속에 수백 년 묵은 거대한 지네 한 마리가 도사리고 있는 것 같은 환각이 홍이 머릿속을 지나갔다. ≪박경리, 토지≫ 「4」 마음을 죄어 다잡다. 마음을 도사려 먹다. 그녀는 자꾸 약해지는 마음을 모질게 도사리면서 지난 이틀간 시어머니와 어렵게 본 결정을 전했다. ≪이문열, 영웅 시대≫ 「비슷한말」 도스르다 「5」 감각 기관을 긴장시켜 온 신경을 한데 모으다. 눈을 도사리다 . 귀를 도사리고 엿듣다. 「6」 일이나 말의 뒤끝을 조심하여 감추다. 그는 자신이 없는지 말꼬리를 도사렸다 . 2 【…에】 「1」 마음이나 생각 따위가 깊숙이 자리 잡다. 가슴속에 증오심이 도사리다 . 그것은 내 속에 도사리고 있는 작은 악마의 손뼉 치는 소리이기도 했다. ≪박완서, 도시의 흉년≫ 「2」 장차 일어날 일의 기미가 다른 사물 속에 숨어 있다. 아직도 세계 곳곳에는 평화와 안정을 위협하는 요인들이 도사리고 있는 듯한 느낌이 들었다. 그가 친절히 굴 때는 어떤 음모가 도사리고 있는 경우가 많다. 「3」 어떤 곳에 자리 잡고서 기회를 엿보며 꼼짝 않고 있다. 숲속 어딘가에 복병이 도사리고 있다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        },
+        {
+          "proposal_records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=415684",
+              "content_sha256": "bf6204aaa141a898148ea73cc67028fb879710d0aef6c52ee54f8a42cf790af4",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 도사리다 발음 [도사리다 ] 활용 도사리어[도사리어 /도사리여 ](도사려[도사려]), 도사리니[도사리니] 편집 이력 「동사」 1 【…을】 「1」 두 다리를 꼬부려 각각 한쪽 발을 다른 한쪽 무릎 아래에 괴고 앉다. 다리를 도사리고 앉다. 도사렸던 무릎을 얼른 곧추세우고 뒤나 보려는 사람처럼 쪼그렸다. ≪이태준, 복덕방≫ 「2」 팔다리를 함께 모으고 몸을 웅크리다. 그녀는 몸을 잔뜩 도사리고 앉아서 불안한 표정으로 주변을 둘러보았다. 「3」 긴 물건을 빙빙 돌려서 둥그렇게 포개어 감다. 독사가 몸을 도사리고 있다. 그 방 속에 수백 년 묵은 거대한 지네 한 마리가 도사리고 있는 것 같은 환각이 홍이 머릿속을 지나갔다. ≪박경리, 토지≫ 「4」 마음을 죄어 다잡다. 마음을 도사려 먹다. 그녀는 자꾸 약해지는 마음을 모질게 도사리면서 지난 이틀간 시어머니와 어렵게 본 결정을 전했다. ≪이문열, 영웅 시대≫ 「비슷한말」 도스르다 「5」 감각 기관을 긴장시켜 온 신경을 한데 모으다. 눈을 도사리다 . 귀를 도사리고 엿듣다. 「6」 일이나 말의 뒤끝을 조심하여 감추다. 그는 자신이 없는지 말꼬리를 도사렸다 . 2 【…에】 「1」 마음이나 생각 따위가 깊숙이 자리 잡다. 가슴속에 증오심이 도사리다 . 그것은 내 속에 도사리고 있는 작은 악마의 손뼉 치는 소리이기도 했다. ≪박완서, 도시의 흉년≫ 「2」 장차 일어날 일의 기미가 다른 사물 속에 숨어 있다. 아직도 세계 곳곳에는 평화와 안정을 위협하는 요인들이 도사리고 있는 듯한 느낌이 들었다. 그가 친절히 굴 때는 어떤 음모가 도사리고 있는 경우가 많다. 「3」 어떤 곳에 자리 잡고서 기회를 엿보며 꼼짝 않고 있다. 숲속 어딘가에 복병이 도사리고 있다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "89542ec97f6b3a065807516a05d3aa9bfd08d98c04262d73b6240d27228c7c57",
+      "occurrence_requests": {
+        "도사리다": [
+          {
+            "text": "도사린",
+            "meaning_en": "that lurked"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "da1fd7aa3916d5d53804d2c8c0bdfdca4d513e6b1b2ce134835e644c8064dea7"
     }
   ]
 }

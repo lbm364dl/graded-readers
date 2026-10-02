@@ -372,3 +372,12 @@ approved successors. Historical dictionary proof digests remain valid only when
 they match a verified registry version; grammar changes, arbitrary definitions,
 and tampered revision approvals remain rejected. Regression coverage checks both
 reuse and these contrasting failures. No chapter prose or tap boundaries changed.
+
+The TOPIK 4 curriculum pass detected an extra-vocabulary ratio of 10.9%, above
+the existing 10% gate, and initiated source-preserving prose repair. Checking
+that repair path exposed a stale eight-attempt search limit for reusable
+annotation assemblies. Recovery now searches every completed assembly, requires
+the exact prior prose when invoked during repair, and retains its review issues
+for the reuse agent. Regression coverage includes an assembly at attempt ten
+and contrasts a different prose text that must not be reused. No active worker
+was restarted merely to load this cache improvement.

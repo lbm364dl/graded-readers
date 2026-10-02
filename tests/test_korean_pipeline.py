@@ -864,7 +864,7 @@ def test_annotation_resume_recovers_reviewed_assembly_and_preserves_issues(tmp_p
     for job, approved, ended in [
         ('annotation-5', True, '2026-10-02T01:00:00Z'),
         ('annotation-revision1-0', True, '2026-10-02T02:00:00Z'),
-        ('annotation-revision2-0', False, '2026-10-02T03:00:00Z'),
+        ('annotation-revision2-10', False, '2026-10-02T03:00:00Z'),
     ]:
         directory = tmp_path / 'agents' / job
         save(directory / 'result.json', value)
@@ -883,8 +883,10 @@ def test_annotation_resume_recovers_reviewed_assembly_and_preserves_issues(tmp_p
     for job in ('annotation-5', 'annotation-revision1-0'):
         (tmp_path / 'agents' / job / 'meta.json').unlink()
     candidate = annotation_reuse_candidate(tmp_path)
-    assert candidate[0] == 'annotation-revision2-0'
+    assert candidate[0] == 'annotation-revision2-10'
     assert candidate[2]['issues'] == ['Wrong contextual meaning.']
+    assert annotation_reuse_candidate(tmp_path, text=chapter['text'])[0] == candidate[0]
+    assert annotation_reuse_candidate(tmp_path, text=chapter['text'] + ' Changed.') is None
 
 
 def test_semantic_form_repair_preserves_neutral_root_and_other_occurrences(tmp_path):
