@@ -48,6 +48,9 @@ class DashboardStateTests(unittest.TestCase):
             processes = _processes()
         self.assertEqual([(p["pid"], p["process_state"]) for p in processes],
                          [(123, "suspended"), (124, "running")])
+        self.assertEqual(processes[0]['elapsed_seconds'], 100)
+        self.assertEqual(processes[0]['argv'], ['codex', 'exec', '-o', '/tmp/receipt.json', '-'])
+        self.assertIn('pipeline.korean_agent_harness', processes[1]['argv'])
 
     def test_chapter_number_comes_from_explicit_run_evidence(self) -> None:
         run = self.run_dir()

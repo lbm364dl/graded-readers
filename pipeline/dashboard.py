@@ -98,7 +98,7 @@ def _processes() -> list[dict[str, Any]]:
         if not match:
             continue
         try:
-            argv = shlex.split(match.group(3))
+            argv = shlex.split(match.group(4))
         except ValueError:
             continue
         if not argv:
