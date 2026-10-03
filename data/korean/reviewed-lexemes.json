@@ -17849,6 +17849,230 @@
         ]
       },
       "occurrence_requests_digest": "31a664537eb75838b2a9e44ee10bef17f68d77e34e5e6869ec030c3be9d51836"
+    },
+    {
+      "headwords": [
+        "모의하다"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "stdict-425829/동",
+            "headword": "모의하다",
+            "pos": "동",
+            "meaning_en": "to plan and discuss something together; (law) to plan a crime jointly",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=425829",
+            "evidence_en": "The Standard Korean Dictionary record displays the headword 모의-하다 and identifies it as a verb. It defines sense 1 as planning and discussing something, and sense 2 as two or more people jointly planning a crime and discussing how to carry it out."
+          }
+        ],
+        "unresolved": []
+      },
+      "proposal_digest": "d5a89576082a87ef8cce401be3926a05ee73a1966d0a4eafa82f9e7899e13fab",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "c6a0027d0694ef196c9553b759424d8b6193bc75b157ffd83bda766412ea8f52",
+      "primary_evidence": [
+        {
+          "headword_request": "모의하다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EB%AA%A8%EC%9D%98%ED%95%98%EB%8B%A4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=119335",
+              "content_sha256": "367ccdb67e8badfdb03dd82b737ef8f06f28aed6993ce0553bc02e12bbaf7b9b",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 모의-하다 2 (模擬하다/摸擬하다 ) 원어 模 법 모 부수 木/총획 15 擬 헤아릴 의 부수 手/총획 17 하다 한자 고유어 원어 摸 본뜰 모 부수 手/총획 14 擬 헤아릴 의 부수 手/총획 17 하다 한자 고유어 발음 [모의하다 /모이하다 ] 활용 모의하여[모의하여 /모이하여 ](모의해[모의해 /모이해 ]), 모의하니[모의하니 /모이하니 ] 주표제어 모의 4 편집 이력 「동사」 【…을】 실제의 것을 흉내 내어 그대로 해 보다. 이 놀이는 굿에서 사용할 신성한 제물을 마련하는 과정을 모의한 것이다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "119335",
+              "display_headword": "모의-하다",
+              "written_headword": "모의하다"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=425829",
+              "content_sha256": "3dd257e4e87a17300df7372507480304fe0450d06b1b3ef5e900ade2e1dde7ad",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 모의-하다 3 (謀議하다 ) 원어 謀 꾀할 모 부수 言/총획 16 議 의논할 의 부수 言/총획 20 하다 한자 고유어 발음 [모의하다 /모이하다 ] 활용 모의하여[모의하여 /모이하여 ](모의해[모의해 /모이해 ]), 모의하니[모의하니 /모이하니 ] 주표제어 모의 5 「동사」 【(…과) …을】【 (…과) -기로】 ((‘…과’가 나타나지 않을 때는 여럿임을 뜻하는 말이 주어로 온다)) 「1」 어떤 일을 꾀하고 의논하다. 동생은 부모 몰래 바닷가로 여행할 것을 친구와 은밀히 모의했다 . 반 아이들은 새로 오신 선생님을 골탕 먹일 방법을 모의하며 시시덕거렸다. 삼촌은 친구들과 함께 답답한 도시를 한동안 벗어나기로 모의하고 무작정 길을 떠났다. 두 아들은 아주 오래전부터 아버지가 과거에 팔았던 땅을 다시 사기로 모의하고 착실히 준비해 왔다. 더 보기 「2」 『법률』 두 사람 이상이 함께 범죄를 계획하고 그 실행 방법을 의논하다. 불만 세력과 반란을 모의하다 . 청부 폭력배들이 살인을 모의하다 . 그는 외국의 범죄자들과 위조지폐를 발행하기로 모의했다 . 그들은 처음에 은행을 털기로 모의했었다 . 더 보기 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "425829",
+              "display_headword": "모의-하다",
+              "written_headword": "모의하다"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=510453",
+              "content_sha256": "05eedd4cbe62d338063ef37980bef5e0d4157b7a05cbb91ac47dddfd3ac7727c",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 모의-하다 1 (冒擬하다 ) 원어 冒 무릅쓸 모 선우 이름 묵 부수 冂/총획 9 擬 헤아릴 의 부수 手/총획 17 하다 한자 고유어 발음 [모ː의하다 /모ː이하다 ] 활용 모의하여[모ː의하여/모ː이하여](모의해[모ː의해/모ː이해]), 모의하니[모ː의하니/모ː이하니] 주표제어 모의 3 「동사」 관원 임용에서 일정한 절차를 밟지 않고 함부로 추천하다. 함부로 의망(擬望)한다는 뜻에서 나온 말이다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "510453",
+              "display_headword": "모의-하다",
+              "written_headword": "모의하다"
+            }
+          ]
+        },
+        {
+          "proposal_records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=425829",
+              "content_sha256": "3dd257e4e87a17300df7372507480304fe0450d06b1b3ef5e900ade2e1dde7ad",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 모의-하다 3 (謀議하다 ) 원어 謀 꾀할 모 부수 言/총획 16 議 의논할 의 부수 言/총획 20 하다 한자 고유어 발음 [모의하다 /모이하다 ] 활용 모의하여[모의하여 /모이하여 ](모의해[모의해 /모이해 ]), 모의하니[모의하니 /모이하니 ] 주표제어 모의 5 「동사」 【(…과) …을】【 (…과) -기로】 ((‘…과’가 나타나지 않을 때는 여럿임을 뜻하는 말이 주어로 온다)) 「1」 어떤 일을 꾀하고 의논하다. 동생은 부모 몰래 바닷가로 여행할 것을 친구와 은밀히 모의했다 . 반 아이들은 새로 오신 선생님을 골탕 먹일 방법을 모의하며 시시덕거렸다. 삼촌은 친구들과 함께 답답한 도시를 한동안 벗어나기로 모의하고 무작정 길을 떠났다. 두 아들은 아주 오래전부터 아버지가 과거에 팔았던 땅을 다시 사기로 모의하고 착실히 준비해 왔다. 더 보기 「2」 『법률』 두 사람 이상이 함께 범죄를 계획하고 그 실행 방법을 의논하다. 불만 세력과 반란을 모의하다 . 청부 폭력배들이 살인을 모의하다 . 그는 외국의 범죄자들과 위조지폐를 발행하기로 모의했다 . 그들은 처음에 은행을 털기로 모의했었다 . 더 보기 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "425829",
+              "display_headword": "모의-하다",
+              "written_headword": "모의하다"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "44ef0b3df28169ae977e1cef59ed79c1a36e20f296bf9779bbb95d8f1e9632d6",
+      "occurrence_requests": {
+        "모의하다": [
+          {
+            "text": "모의한",
+            "meaning_en": "conspired"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "3b4cfbae08d5491380536c43e6030245f421cfcd6b49729a28dab01da60a9984"
+    },
+    {
+      "headwords": [
+        "편"
+      ],
+      "proposal": {
+        "entries": [],
+        "unresolved": [
+          {
+            "headword": "편",
+            "reason_en": "The supplied Standard Dictionary records attest several distinct lexemes under 편, but none matches the requested usage “편이” meaning “option.” The existing catalog identities cover 편 as a direction/side (편04/의), a means or opportunity (편05/의), and a book or film counter/section (편09/의); none establishes an option sense. The supplied context does not clarify the intended lexeme, so no new identity is proposed."
+          }
+        ]
+      },
+      "proposal_digest": "33d0a8d7e083e2828076e5e0ffa4f076068a6759df1d68f0045482a7a9f354c3",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "c6a0027d0694ef196c9553b759424d8b6193bc75b157ffd83bda766412ea8f52",
+      "primary_evidence": [
+        {
+          "headword_request": "편",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%ED%8E%B8",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=354806",
+              "content_sha256": "1e484b2c774a0efc601e8c5e692dc9273ef10995418ae3320c1dd2b5601dcc2d",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 편 6 (便/偏 ) 원어 便 편할 편 오줌 변 부수 人/총획 9 한자 원어 偏 치우칠 편 부수 人/총획 11 한자 발음 [편 ] 편집 이력 「의존 명사」 상대하는 두 편 가운데, 어느 한 편을 이르는 말. = 편짝 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 6 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "354806",
+              "display_headword": "편",
+              "written_headword": "편"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=354807",
+              "content_sha256": "156f396ec7c76f3a6b377a1d446c43da0b2f162aa62f04eeef415a23c020a8b0",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 편 7 (便 ) 원어 便 편할 편 오줌 변 부수 人/총획 9 한자 부표제어 편-히 , 편-하다 ‘ 편하다 ’의 어근. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 7 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "354807",
+              "display_headword": "편",
+              "written_headword": "편"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=354817",
+              "content_sha256": "d936734e51ec1123a257062ea4b4a1e0c6d7b6171b2b7ee6c79cf10ee059d2eb",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 편 1 발음 [편 ] 편집 이력 「명사」 「1」 ‘ 떡 ’을 점잖게 이르는 말. 「2」 떡살로 눌러 모나거나 둥글게 만든 떡. 쑥 따위를 넣거나 여러 가지 색으로 물들이기도 한다. = 절편 . 관용구/속담 속담 편보다 떡이 낫다 같은 종류의 물건이지만 한쪽이 다른 한쪽보다 낫게 생각되는 경우에 이르는 말. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "354817",
+              "display_headword": "편",
+              "written_headword": "편"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=354818",
+              "content_sha256": "f82341533ef0bdc3fede2f47c9b2cd02c8f5a48052d332cd8880f7f12ce781ac",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 편 2 (片 ) 원어 片 조각 편 부수 片/총획 4 한자 발음 [편 ] 「명사」 우리나라 성(姓)의 하나. 본관은 절강(浙江), 경주(慶州), 나주(羅州) 등 10여 본이 현존한다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "354818",
+              "display_headword": "편",
+              "written_headword": "편"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=354819",
+              "content_sha256": "4cb6b67c4ddf021a358364506039032ab9669c8d7c045ca9834de7a3911e2aca",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 편 5 (便 ) 원어 便 편할 편 오줌 변 부수 人/총획 9 한자 발음 [편 ] 「의존 명사」 사람이 오고 가거나 물건을 부쳐 보내는 데 이용하는 기회나 수단. 그가 오는 편에 편지를 가져왔다. 기차 편으로 시골에 내려갔다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 5 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "354819",
+              "display_headword": "편",
+              "written_headword": "편"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=355109",
+              "content_sha256": "168d2e8d822fafd43aa46dd6e4bf720e9106a597fa1ae08c74ddda9b5822a4ca",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 편 8 (扁 ) 원어 扁 작을 편 현판 변 부수 戶/총획 9 한자 발음 [편 ] 「명사」 우리나라 성(姓)의 하나. 본관은 희천(熙川) 하나뿐이다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 8 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "355109",
+              "display_headword": "편",
+              "written_headword": "편"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=355110",
+              "content_sha256": "2a43594157476ef3ed846531498f3418350cfb825e87cb0e8ceaf67a8c89c1c1",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 편 9 (篇 ) 원어 篇 책 편 부수 竹/총획 15 한자 발음 [편 ] 「의존 명사」 「1」 형식이나 내용, 성질 따위가 다른 글을 구별하여 나타내는 말. 기초 편 . 수필 편 . 소설 편 . 「2」 책이나 영화, 시 따위를 세는 단위. 시 한 편 . 그는 평생 동안 수필을 500편이나 썼다. 그 작가는 단편 소설 열 편과 중편 소설 한 편을 썼다. 방학 동안 소설을 다섯 편 읽었다. 이번 휴가 때 그와 영화 한 편을 보려고 한다. 더 보기 「3」 책의 내용을 일정한 단락으로 크게 나눈 한 부분을 나타내는 말. 제5편 . 제1편 제2장. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 9 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "355110",
+              "display_headword": "편",
+              "written_headword": "편"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=498682",
+              "content_sha256": "9a3d79d0618d89d136aa0b58238551a8ecd802b181185bfdb61bc655313e0708",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 편 3 (片 ) 원어 片 조각 편 부수 片/총획 4 한자 발음 [편 ] 「참고 어휘」 편거리(片거리) 「명사」 「1」 작은 조각의 물건. 또는 저울에 달아 파는 인삼의 낱개. 편을 썰다. 편이 크다. 「2」 ((수량을 나타내는 말 뒤에 쓰여)) 저울에 달아 파는 인삼의 낱개를 세는 단위. 인삼 열 편 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "498682",
+              "display_headword": "편",
+              "written_headword": "편"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=498683",
+              "content_sha256": "95d362ec11179afb079223d14a7461556fef80a9725cc9021f207a1d7f822088",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 편 4 (便 ) 원어 便 편할 편 오줌 변 부수 人/총획 9 한자 발음 [편 ] 편집 이력 [Ⅰ] 「명사」 여러 패로 나누었을 때 그 하나하나의 쪽. 편을 가르다. 약자의 편에 서다. 우리 편 이겨라. 지지하는 편과 반대하는 편으로 갈라졌다. 더 보기 [Ⅱ] 「의존 명사」 「1」 방향을 가리키는 말. = 쪽 . 바람이 부는 편으로 돌아서다. 「2」 서로 갈라지거나 맞서는 것 하나를 가리키는 말. = 쪽 . 지는 편에서 밥을 사기로 했다. 「3」 ((주로 ‘-은/는 편이다’ 구성으로 쓰여)) 대체로 어떤 부류에 속함을 나타내는 말. 사고가 뜸한 편이다 . 아직은 여유가 좀 있는 편이다 . 그는 공부를 잘하는 편이다 . 한 걸음 더 · ‘편’과 ‘쪽’은 모두 표준어이다. 이는 한 가지 의미를 나타내는 형태 몇 가지가 널리 쓰이며 표준어 규정에 맞으면, 그 모두를 표준어로 삼는다는 규정(표준어 사정 원칙 제26항)에 따른 것이다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 4 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "498683",
+              "display_headword": "편",
+              "written_headword": "편"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=499917",
+              "content_sha256": "833d8ebd3ce88e372843bd9b4dd296e1041943ad5c09a01957e344233a55be00",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 편 10 (編 ) 원어 編 엮을 편 땋을 변 부수 糸/총획 15 한자 발음 [편 ] 「명사」 『음악』 국악 가곡 곡조의 하나. 대체로 잔가락이 없고, 음정의 높낮이가 심하게 나타나며 여러 박자가 섞여 있다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 10 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "499917",
+              "display_headword": "편",
+              "written_headword": "편"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=355111",
+              "content_sha256": "a367fdf71e2dd9492739974edb9dfa1cf773cb081d0ac1c5e5c58b1bf6a6e212",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 편 11 (編 ) 원어 編 엮을 편 땋을 변 부수 糸/총획 15 한자 발음 [편 ] 「명사」 사람이나 단체 이름 아래에서, ‘ 편찬 ’의 뜻을 나타내는 말. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 11 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "355111",
+              "display_headword": "편",
+              "written_headword": "편"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=355112",
+              "content_sha256": "159ed1b699b7da30a95201f6d2e494b81fe9d836149b1ffc5d652649075654b2",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 편 12 (鞭 ) 원어 鞭 채찍 편 부수 革/총획 18 한자 발음 [편 ] 편집 이력 「명사」 『역사』 쇠로 도리깨처럼 만든 병장기(兵仗器). 포졸이 순라를 돌 때 가지고 다녔다. = 쇠도리깨 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 12 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "355112",
+              "display_headword": "편",
+              "written_headword": "편"
+            }
+          ]
+        },
+        {
+          "proposal_records": []
+        }
+      ],
+      "primary_evidence_digest": "594122eb88248d2d4d9fdde7d5a00e0ce3d660998a9ca9bdbda02ed991b053ad",
+      "initial_review": {
+        "approved": false,
+        "issues": [
+          "The unresolved reason treats “option” as unattested, but the supplied Standard Dictionary record for 편 4 (word_no 498683) attests the dependent-noun sense for one side among alternatives or opponents (「서로 갈라지거나 맞서는 것 하나」), which fits “편이” in the contextual gloss “option.” Existing identity 편04/의 already covers this lexeme, so do not add a duplicate; revise the unresolved outcome to report that identity, or classify the usage as covered."
+        ]
+      },
+      "initial_review_digest": "c9111eb0c42b0515f3dcd6b08b92ddbc578ca9e8d1384fbc88adb63a5d802e27",
+      "occurrence_requests": {
+        "편": [
+          {
+            "text": "편이",
+            "meaning_en": "option"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "014fac7116af853ac602e8a8bea08f18915044473218125def4593f9ce0a8cd6"
     }
   ]
 }
