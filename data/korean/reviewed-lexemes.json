@@ -17485,6 +17485,296 @@
         ]
       },
       "occurrence_requests_digest": "07b134100faba086267595251be6dbfd76598f42b7bb8e046b8f95a512b77203"
+    },
+    {
+      "headwords": [
+        "귀신같이"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "stdict-42640/부",
+            "headword": "귀신같이",
+            "pos": "부",
+            "meaning_en": "with uncanny accuracy; remarkably skillfully",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=42640",
+            "evidence_en": "The Standard Korean Dictionary record has the adverb 귀신같-이, linked to 귀신-같다, and defines it as doing or guessing something with striking accuracy or skill."
+          }
+        ],
+        "unresolved": []
+      },
+      "proposal_digest": "57d772159b8c4826c518322f95daa84edbf17c849aa81e3fafede63bce30cb65",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "c6a0027d0694ef196c9553b759424d8b6193bc75b157ffd83bda766412ea8f52",
+      "primary_evidence": [
+        {
+          "headword_request": "귀신같이",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EA%B7%80%EC%8B%A0%EA%B0%99%EC%9D%B4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=42640",
+              "content_sha256": "c6fdf642a5082dddf24f449779be1854bc80ec7ff4ad6dc464893a4083a0151f",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 귀신같-이 (鬼神같이 ) 원어 鬼 귀신 귀 부수 鬼/총획 10 神 귀신 신 부수 示/총획 10 같이 한자 고유어 발음 [귀ː신가치 ] 주표제어 귀신-같다 「부사」 동작이나 추측이 정확하고 재주가 기막힐 정도로 뛰어나게. 그녀는 남편의 거짓말을 귀신같이 알아챘다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "42640",
+              "display_headword": "귀신같-이",
+              "written_headword": "귀신같이"
+            }
+          ]
+        },
+        {
+          "proposal_records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=42640",
+              "content_sha256": "c6fdf642a5082dddf24f449779be1854bc80ec7ff4ad6dc464893a4083a0151f",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 귀신같-이 (鬼神같이 ) 원어 鬼 귀신 귀 부수 鬼/총획 10 神 귀신 신 부수 示/총획 10 같이 한자 고유어 발음 [귀ː신가치 ] 주표제어 귀신-같다 「부사」 동작이나 추측이 정확하고 재주가 기막힐 정도로 뛰어나게. 그녀는 남편의 거짓말을 귀신같이 알아챘다. 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "42640",
+              "display_headword": "귀신같-이",
+              "written_headword": "귀신같이"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "b564fc603f1ef8e8b6c04dc499b45c0b6dc05ee80c7e5945be0f9ec415b3967a",
+      "occurrence_requests": {
+        "귀신같이": [
+          {
+            "text": "귀신같이",
+            "meaning_en": "uncannily; with uncanny accuracy"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "7d5a5126067f4a25a9551b7174c2dc5f9f0fd41ae1bd3ea027d0d7e48b76e38f"
+    },
+    {
+      "headwords": [
+        "맞아들이다"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "stdict-113095/동",
+            "headword": "맞아들이다",
+            "pos": "동",
+            "meaning_en": "to welcome someone inside; to receive someone into the family as a member",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=113095",
+            "evidence_en": "The Standard Korean Dictionary record displays 맞아-들이다 as a verb. It defines senses for ushering an arriving person inside and accepting someone into the family with proper respect."
+          }
+        ],
+        "unresolved": []
+      },
+      "proposal_digest": "cf580528021bcf4feca3d7a3bf4dc0b80616801ac965a63531edf730db5c59e6",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "c6a0027d0694ef196c9553b759424d8b6193bc75b157ffd83bda766412ea8f52",
+      "primary_evidence": [
+        {
+          "headword_request": "맞아들이다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EB%A7%9E%EC%95%84%EB%93%A4%EC%9D%B4%EB%8B%A4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=113095",
+              "content_sha256": "fc1cda7bea006e5a55d45b134c94a8e53d97f1285e0e8dd99041d3e7561d8f1c",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 맞아-들이다 발음 [마자드리다 ] 활용 맞아들이어[마자드리어 /마자드리여 ](맞아들여[마자드려 ]), 맞아들이니[마자드리니 ] 「동사」 「1」 【…을】 오는 사람을 맞아 안으로 인도하다. 손님을 맞아들이다 . 주인 노파는 십여 명의 사환들을 이끌고 홍 통사를 맞아들인다 . ≪박종화, 임진왜란≫ 「2」 【…을 …으로】 예의를 갖추어 가족의 일원으로 받아들이다. 친구의 여동생을 아내로 맞아들이다 . 그를 사위로 맞아들이다 . 어원 · ＜마자드리다＜두시-초＞←맞-+-아+들-+-이- 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "113095",
+              "display_headword": "맞아-들이다",
+              "written_headword": "맞아들이다"
+            }
+          ]
+        },
+        {
+          "proposal_records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=113095",
+              "content_sha256": "fc1cda7bea006e5a55d45b134c94a8e53d97f1285e0e8dd99041d3e7561d8f1c",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 맞아-들이다 발음 [마자드리다 ] 활용 맞아들이어[마자드리어 /마자드리여 ](맞아들여[마자드려 ]), 맞아들이니[마자드리니 ] 「동사」 「1」 【…을】 오는 사람을 맞아 안으로 인도하다. 손님을 맞아들이다 . 주인 노파는 십여 명의 사환들을 이끌고 홍 통사를 맞아들인다 . ≪박종화, 임진왜란≫ 「2」 【…을 …으로】 예의를 갖추어 가족의 일원으로 받아들이다. 친구의 여동생을 아내로 맞아들이다 . 그를 사위로 맞아들이다 . 어원 · ＜마자드리다＜두시-초＞←맞-+-아+들-+-이- 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 0 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "113095",
+              "display_headword": "맞아-들이다",
+              "written_headword": "맞아들이다"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "bfbea4cac53738ff23a3b552bc436efdb7aeffefa6a9845c66a9ee5b2ac641d7",
+      "occurrence_requests": {
+        "맞아들이다": [
+          {
+            "text": "맞아들였다",
+            "meaning_en": "welcomed him"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "771997e0a22bb2d1519d5ac2caadbdcd67e1f44c85b1b0bd9c08d973cfe18796"
+    },
+    {
+      "headwords": [
+        "열여덟"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "krdict-93505/수",
+            "headword": "열여덟",
+            "pos": "수",
+            "meaning_en": "the number eighteen",
+            "primary_url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=93505",
+            "evidence_en": "The Basic Dictionary record for 스물 (ParaWordNo 93505) gives the numeral meaning “twenty” and includes 열여덟 in its counting example (“열여덟, 열아홉, 스물…”). However, this is only an example under 스물, not a standalone 열여덟 record, so it does not establish the requested headword as a direct entry."
+          }
+        ],
+        "unresolved": [
+          {
+            "headword": "열여덟",
+            "reason_en": "The supplied Standard Dictionary search returned no direct record, and the located Basic Dictionary result is for 스물, with 열여덟 only in an example. A direct record for the exact headword and POS was not verified, so no primary identity can be proposed."
+          }
+        ]
+      },
+      "proposal_digest": "b36cce9dd80e4952e5386d1ca499db71274360bcbe40255c85d8673b85cc5dba",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "c6a0027d0694ef196c9553b759424d8b6193bc75b157ffd83bda766412ea8f52",
+      "primary_evidence": [
+        {
+          "headword_request": "열여덟",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EC%97%B4%EC%97%AC%EB%8D%9F",
+          "records": []
+        },
+        {
+          "proposal_records": [
+            {
+              "primary_url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=93505",
+              "content_sha256": "73f2dddf3f15a19241d80e4f4d4634a751d66fd5acab9fb32762225e41ef8db0",
+              "text": "한국어기초사전 이 누리집은 대한민국 공식 전자정부 누리집입니다. Search by Category Small Window Dictionary Search Advanced Search Delete Delete Phụ âm b c d đ g h k l m n p q r s t v x f j w z Nguyên âm a á à ả ã ạ ă ắ ằ ẳ ẵ ặ â ấ ầ ẩ ẫ ậ o ó ò ỏ õ ọ ô ố ồ ổ ỗ ộ ơ ớ ờ ở ỡ ợ e é è ẻ ẽ ẹ ê ế ề ể ễ ệ u ú ù ủ ũ ụ ư ứ ừ ử ữ ự i í ì ỉ ĩ ị y ý ỳ ỷ ỹ ỵ à â æ À Â Æ ç Ç é è ë ê É È Ë Ê î ï Î Ï ô œ Ô Œ ù û ü Ù Û Ü á Á é É í Í ó Ó ú ü Ú Ü ñ Ñ ¡ ¿ Download 가 가 Print 스물 Pronunciation [스물 듣기 ] Part of Speech 「수사」 Numeral twenty 열의 두 배가 되는 수. The number that is the product of two times ten. 사과 스물 과 배 열. 스물 이 된 나이. 학생이 스물 이다. 그녀의 나이는 이제 갓 스물 로 꿈과 희망도 한창 많을 때이다. 김 선생님은 학생 스물 을 데리고 학교 근처에 버려진 쓰레기를 주웠다. 가: 열여덟, 열아홉, 스물 , 스물 하나... 나: 아까부터 뭘 그렇게 세고 있니? Reference Word 이십 1 Send opinion Send opinion Security Characters Play audio Refresh Name Title Content Send opinion We are looking forward to receiving your opinions regarding dictionary content. (Although we are not able to reply, we will refer to your opinion for dictionary content development and supplementation.) View Mode Korean + English Korean English My Search History Listening to Korean pronunciation services are partly provided by NAVER Cultural Foundation Corp. Help Translation guideline Copyright Policy Notice Open API Suggestion Basic Korean Dictionary National Institute of Korean Language Move"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "80b2b628291b3c2d82ba0b0886c1d621da773c5fa091652552a8b934c1f1d6ba",
+      "occurrence_requests": {
+        "열여덟": [
+          {
+            "text": "열여덟",
+            "meaning_en": "eighteen"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "7ec30d7f5a5bfcae3deed44adaf80987edd8341b8bf1c41fcd0f4166171ab94d"
+    },
+    {
+      "headwords": [
+        "말다"
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "stdict-111115/동",
+            "headword": "말다",
+            "pos": "동",
+            "meaning_en": "to put rice or noodles into water or broth and loosen them",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=111115",
+            "evidence_en": "Direct Standard Dictionary record for 말다 2, verb: to put rice or noodles into water or broth and loosen them; this distinct homonym is absent from the supplied catalog identities."
+          },
+          {
+            "id": "stdict-111261/명",
+            "headword": "말다",
+            "pos": "명",
+            "meaning_en": "powdered tea made from dried young tea leaves",
+            "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=111261",
+            "evidence_en": "Direct Standard Dictionary record for 말다 4 (末茶), noun: tea made by drying and grinding young tea leaves; this noun homonym is absent from the supplied catalog identities."
+          }
+        ],
+        "unresolved": [
+          {
+            "headword": "말다",
+            "reason_en": "The rolling or wrapping verb is already covered by supplied catalog identity 말다01/동. The prohibitive auxiliary use in occurrence 말라고 is an inflected grammatical use, covered by supplied identity 말다03/보. The separate verb sense meaning “to stop or refrain” is covered by supplied identity 말다03/동. No duplicate primary identities are proposed."
+          }
+        ]
+      },
+      "proposal_digest": "9c5f507d8d9ae9967e9bc991b113879487bb3800756dd644c77ab0a863f83285",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "c6a0027d0694ef196c9553b759424d8b6193bc75b157ffd83bda766412ea8f52",
+      "primary_evidence": [
+        {
+          "headword_request": "말다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EB%A7%90%EB%8B%A4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=111115",
+              "content_sha256": "c0395557642ee3aeca5b47673f95914bc9395be3af3ec8ef6ba997386508cba3",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 말다 2 발음 [말다 ] 활용 말아[마라 ], 마니[마니 ], 마오[마오] 편집 이력 「동사」 【…을】【 …을 …에】 밥이나 국수 따위를 물이나 국물에 넣어서 풀다. 국수를 말다 . 대개 새벽에 해장국을 말아 주고 다시 우리들 또래에게 아침을 팔고 나서 점심때까지는 한산한 시간인 것이다. ≪황석영, 어둠의 자식들≫ 밥을 국에 말다 . 봉춘네는 뜨거운 숭늉에 밥을 말아서 한 대접하고 김치보시기를 내밀었다. ≪박경리, 토지≫ 더 보기 다중 매체 Previous Next 어원 · ＜다＜구방＞ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "111115",
+              "display_headword": "말다",
+              "written_headword": "말다"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=111261",
+              "content_sha256": "600897f69706a3355c636429b7dd42216d969b5868b1827db0f11f416dac4551",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 말다 4 (末茶 ) 원어 末 끝 말 부수 木/총획 5 茶 차 다 차 차 부수 艸/총획 10 한자 발음 [말따 ] 편집 이력 「명사」 차나무의 애순을 말려 가루로 만든 차. = 가루차 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 4 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "111261",
+              "display_headword": "말다",
+              "written_headword": "말다"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=420109",
+              "content_sha256": "7a50648e730146fd1437fa0441eca404d428d49889f1459d8461b7fffcd00618",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 말다 1 발음 [말다 ] 활용 말아[마라 ], 마니[마니 ], 마오[마오] 편집 이력 「동사」 「1」 【…을】 넓적한 물건을 돌돌 감아 원통형으로 겹치게 하다. 멍석을 말다 . 침구를 말아 구석에 밀어 놓다. 「2」 【…을 …에】【…을 …으로】 종이나 김 따위의 얇고 넓적한 물건에 내용물을 넣고 돌돌 감아 싸다. 돈뭉치를 신문지에 말다 . 웅보가 죽은 서천이의 시체를 거적에 말아 안고 유달산으로 올라가고 있는데 어느 틈엔가 염주근이 삽과 괭이를 들고 따라왔다. ≪문순태, 타오르는 강≫ 옆에 섰던 두원이가 종이에 담배를 말아 침을 묻히며 돌아보았다. ≪하근찬, 야호≫ 종세는 골목길에 서서 훔쳐 가지고 온 엽연초를 종이로 말아 피웠다. ≪최인호, 지구인≫ 더 보기 다중 매체 말다 Previous Next 어원 · ＜다＜월석＞ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "420109",
+              "display_headword": "말다",
+              "written_headword": "말다"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=426667",
+              "content_sha256": "e6516d7a11fef145372159fa1fac70dde529046db67fe56f13965ce9e7bda560",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 말다 3 발음 [말ː다 ] 활용 말아[마라 ], 마니[마ː니 ], 마오[마ː오 ] 편집 이력 [Ⅰ] 「동사」 「1」 【…을】 어떤 일이나 행동을 하지 않거나 그만두다. 저만 믿고 걱정 마세요 . 내 염려는 말고 나가세요. ≪송기숙, 암태도≫ 「2」 ((‘-거나 말거나’, ‘-거니 말거니’, ‘-으나 마나’, ‘-든지 말든지’, ‘-을까 말까’ 따위와 같은 구성으로 쓰여)) 앞말이 나타내는 행동이나 상태를 부정하는 뜻을 나타내는 말. 쳐다보거나 말거나 수군거리거나 말거나 , 그녀의 태도는 당당하고 의젓했다. 강 교수는 우리를 향해 재삼 못을 박아 자신의 결의가 얼마나 굳은가를 강조했다. 그러거니 말거니 , 우리는 숫제 멍청한 척하고 눌러 버티었다. ≪윤흥길, 제식 훈련 변천 약사≫ 배 선생한테 묻고 싶은 게 한둘이 아니었지만 물으나 마나 대답이 뻔할 것 같아서 그는 입을 다물고 물러날 채비를 했다. ≪윤흥길, 묵시의 바다≫ 일어설까 말까 망설이는데 애가 잠을 깼다. ≪오유권, 대지의 학대≫ 앞 돛은 넓이가 손바닥만 해서 있으나 마나 하게 보였다. ≪송기숙, 녹두 장군≫ 그녀가 만기 같은 남정네를 만나는 것은 평생에 몇 번 있을까 말까 한 기대하기 어려운 확률이었다. ≪백한이, 비목≫ 더 보기 「3」 ((‘말고’ 꼴로 명사의 단독형과 함께 쓰여)) 앞의 대상을 제외하거나 부정하는 뜻을 나타내는 말. 너 말고 네 친구. 이것 말고 저것을 주시오. [Ⅱ] 「보조 동사」 「1」 ((동사 뒤에서 ‘-지 말다’ 구성으로 쓰여)) 앞말이 뜻하는 행동을 하지 못하게 함을 나타내는 말. 이곳에서 수영하지 마시오 . 밥을 남기지 마시기 바랍니다. 휴지를 함부로 버리지 마라 . 「2」 ((동사 ‘-고(야) 말다’ 구성으로 쓰여)) 앞말이 뜻하는 행동이 끝내 실현됨을 나타내는 말. 일을 이루어 낸 데 대하여 긍정적인 생각 또는 부정적이고 아쉬운 느낌이 있음을 나타낸다. 새로운 기계 발명에 성공하고야 말겠다 . 그와 나는 마주 보고 웃고 말았다 . 기차가 떠나 버리고야 말았다 . 최선을 다해서 좋은 성적을 얻고 말겠다 . 더 보기 한 걸음 더 · 명령형 어미 ‘-아’, ‘-아라’, ‘-아요’ 따위가 결합할 때는 어간 끝의 ‘ㄹ’이 탈락하기도 하고 탈락하지 않기도 한다. 어원 · 말다＜용가＞ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "426667",
+              "display_headword": "말다",
+              "written_headword": "말다"
+            }
+          ]
+        },
+        {
+          "proposal_records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=111115",
+              "content_sha256": "c0395557642ee3aeca5b47673f95914bc9395be3af3ec8ef6ba997386508cba3",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 말다 2 발음 [말다 ] 활용 말아[마라 ], 마니[마니 ], 마오[마오] 편집 이력 「동사」 【…을】【 …을 …에】 밥이나 국수 따위를 물이나 국물에 넣어서 풀다. 국수를 말다 . 대개 새벽에 해장국을 말아 주고 다시 우리들 또래에게 아침을 팔고 나서 점심때까지는 한산한 시간인 것이다. ≪황석영, 어둠의 자식들≫ 밥을 국에 말다 . 봉춘네는 뜨거운 숭늉에 밥을 말아서 한 대접하고 김치보시기를 내밀었다. ≪박경리, 토지≫ 더 보기 다중 매체 Previous Next 어원 · ＜다＜구방＞ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "111115",
+              "display_headword": "말다",
+              "written_headword": "말다"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=111261",
+              "content_sha256": "600897f69706a3355c636429b7dd42216d969b5868b1827db0f11f416dac4551",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 말다 4 (末茶 ) 원어 末 끝 말 부수 木/총획 5 茶 차 다 차 차 부수 艸/총획 10 한자 발음 [말따 ] 편집 이력 「명사」 차나무의 애순을 말려 가루로 만든 차. = 가루차 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 4 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "111261",
+              "display_headword": "말다",
+              "written_headword": "말다"
+            }
+          ]
+        }
+      ],
+      "primary_evidence_digest": "8c5f92f07be28df3b0698ff2aac30b7184f9e6329e42fd6883be913a07f3ac6c",
+      "occurrence_requests": {
+        "말다": [
+          {
+            "text": "말라고",
+            "meaning_en": "not to do so"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "b1e598fa08308db77c9cb100c9fecfde2b6134c2e421b1086e0e6f6322b3a1ba"
     }
   ]
 }
