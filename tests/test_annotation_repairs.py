@@ -177,6 +177,111 @@ async def test_shared_repair_prompt_routes_ending_tap_construction_without_gramm
         assert scoped_runner.calls[0][4]["workspace_context"]["construction_occurrence_contract"] == \
             _construction_occurrence_contract(representation)
         assert "do not use the ending's grammar identity as the lexical root" in scoped_runner.calls[0][1]
+        assert "sole support for a direct grammar link" in scoped_runner.calls[0][1]
+        assert "Include that affected occurrence row in the SAME issue's plan" in scoped_runner.calls[0][1]
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize("has_complete_overlay", [False, True])
+async def test_removing_sole_form_step_plans_its_direct_link_dependency(tmp_path, has_complete_overlay):
+    """The Korean gate rejects an orphaned direct link and accepts scoped closure."""
+    from pipeline import korean_contracts, korean_dictionary
+    from pipeline.korean_agent_harness import validate_annotation_chunk
+
+    segments = [
+        {"text": "홍길동", "type": "word", "meaning_en": "Hong Gildong", "lemma": "홍길동",
+         "lexical_kind": "proper_name", "lexical_id": "hong-gildong", "story_importance_en": "",
+         "form_steps": []},
+        {"text": "은", "type": "word", "meaning_en": "topic marker", "lemma": "은",
+         "lexical_kind": "grammar", "lexical_id": "topic-eun-neun", "story_importance_en": "",
+         "form_steps": []},
+        {"text": " ", "type": "punctuation", "meaning_en": "", "lemma": "",
+         "lexical_kind": "", "lexical_id": "", "story_importance_en": "", "form_steps": []},
+        {"text": "아들이었다", "type": "word", "meaning_en": "was a son", "lemma": "아들",
+         "lexical_kind": "vocabulary", "lexical_id": "아들/명", "story_importance_en": "",
+         "form_steps": [
+             {"form": "아들이다", "reading": "아들+이다", "label": "copula",
+              "meaning_en": "is a son", "grammar_entry_ids": ["copula-ida"]},
+             {"form": "아들이었다", "reading": "아들+이었+다", "label": "past copula",
+              "meaning_en": "was a son", "grammar_entry_ids": ["past-copula-ieot"]},
+         ]},
+        {"text": ".", "type": "punctuation", "meaning_en": "", "lemma": "",
+         "lexical_kind": "", "lexical_id": "", "story_importance_en": "", "form_steps": []},
+    ]
+    direct = {"segment_index": 3, "entry_id": "copula-ida",
+        "context_en": "The copula connects the noun to its identity.", "display_form": "", "display_meaning_en": "",
+        "display_end_segment_index": -1}
+    topic = {"segment_index": 1, "entry_id": "topic-eun-neun",
+        "context_en": "Sets up Hong Gildong as the topic.", "display_form": "",
+        "display_meaning_en": "", "display_end_segment_index": -1}
+    past = {"segment_index": 3, "entry_id": "past-copula-ieot",
+        "context_en": "Marks the copular state as past.", "display_form": "",
+        "display_meaning_en": "", "display_end_segment_index": -1}
+    overlay = {"segment_index": 0, "entry_id": "copula-ida",
+        "context_en": "The copula links the name to the predicate.",
+        "display_form": "홍길동은 아들이었다", "display_meaning_en": "Hong Gildong was a son",
+        "display_end_segment_index": 3}
+    candidate = {"segments": segments, "grammar_links": [topic, direct, past] +
+        ([overlay] if has_complete_overlay else []),
+        "inflected_segment_indices": [3], "expression_links": []}
+    original_text = "".join(row["text"] for row in segments)
+    gate_args = {
+        "words": korean_dictionary._registry(korean_dictionary.WORDS),
+        "catalog": korean_contracts.lexical_catalog(),
+        "focus": {"entries": [{"id": "hong-gildong", "headword": "홍길동",
+            "kind": "proper_name", "aliases": ["홍길동"], "role_en": "central character"}]},
+        "title": "Fixture", "number": 1, "plan": {"beats": []}, "level": 4,
+        "run_dir": tmp_path, "source_id": "korean-direct-link-dependency",
+    }
+
+    def real_gate(value):
+        assert "".join(row["text"] for row in value["segments"]) == original_text
+        validate_annotation_chunk(value, original_text, **gate_args)
+
+    real_gate(candidate)
+
+    remove_stage = _target("remove_row", "/segments/3/form_steps/0")
+    remove_direct = _target("remove_row", "/grammar_links/1")
+    append_overlay = _target("append_row", "/grammar_links")
+    targets = [remove_stage, remove_direct] + ([] if has_complete_overlay else [append_overlay])
+
+    # Removing the stage alone leaves its direct lesson unsupported; the real
+    # Korean candidate gate must reject that candidate before any repair plan is applied.
+    orphaned = apply_edits(candidate, {"base_digest": candidate_digest(candidate), "edits": [
+        {"op": "remove_row", "path": remove_stage["path"]}]},
+        allowed_targets=[remove_stage], representation="korean-flat")
+    with pytest.raises(ValueError, match="Korean construction stage lacks complete form at segment 3"):
+        real_gate(orphaned)
+
+    edits = [{"op": "remove_row", "path": remove_stage["path"]},
+             {"op": "remove_row", "path": remove_direct["path"]}]
+    if not has_complete_overlay:
+        edits.append({"op": "append_row", "path": append_overlay["path"], "value": overlay})
+    runner = PlannedRunner(tmp_path, _plan(targets), {
+        "base_digest": candidate_digest(candidate), "edits": edits})
+    assert runner.plan["issues"][0]["targets"] == targets
+
+    def check_dependency(value):
+        if value["segments"][3]["form_steps"] != segments[3]["form_steps"][1:]:
+            raise ValueError("unrelated complete stages were not preserved")
+        if any(row["segment_index"] == 3 and row["entry_id"] == "copula-ida"
+               for row in value["grammar_links"]):
+            raise ValueError("unsupported direct grammar link was left behind")
+        expected = [topic, past, overlay]
+        if value["grammar_links"] != expected:
+            raise ValueError("the full overlay dependency was lost or duplicated")
+
+    result = await repair_annotation(Harness(tmp_path, runner), "close-form-link-dependency",
+        candidate, [{"problem": "The prefinal form step must be omitted; retain the supported honorific analysis."}],
+        representation="korean-flat", language="ko", validate_candidate=lambda value: (
+            check_dependency(value), real_gate(value)))
+    assert result["status"] == "applied"
+    allowed_targets = runner.calls[1][4]["workspace_context"]["allowed_targets"]
+    assert (append_overlay not in allowed_targets) is has_complete_overlay
+    prompt = runner.calls[0][1]
+    assert "If that step is the sole support for a direct grammar link" in prompt
+    assert "remove the unsupported direct row and append a corrected source-exact complete overlay" in prompt
+    assert "remove it only when another retained complete occurrence already explains" in prompt
 
 
 def test_saved_korean_name_plus_predication_pattern_passes_actual_gate_but_grammar_root_fails(tmp_path):
