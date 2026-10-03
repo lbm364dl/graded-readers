@@ -1452,6 +1452,9 @@ def test_source_plan_objections_require_independent_adjudication_before_rewrite(
                 assert inputs['context']['source'] == 'Exact original source'
                 result = {'approved': not supported_objection,
                     'issues': ['Supported source correction'] if supported_objection else []}
+            elif job.endswith('-patch'):
+                assert 'Supported source correction' in prompt
+                result = {'title': proposal['title'], 'length_reason_en': proposal['length_reason_en'], 'edits': []}
             elif '-review-' in job:
                 result = rejected
             else:
