@@ -488,8 +488,19 @@ REVIEW FINDINGS:\n{notes}"""
         ]
         if not material:
             return {"status": "no_material_omissions"}
-        target = int(manifest.get("target_chars", cjk_count(accepted)))
-        low, high = int(target * .7), int(target * 1.3)
+        requested_target = manifest.get("target_chars")
+        # New manifests explicitly record whether the CLI requested fixed
+        # size. Older pilot manifests stored derived defaults in target_chars;
+        # absence of the explicit flag is not evidence of a user quota.
+        fixed_size_requested = manifest.get("fixed_size_requested") is True
+        target = (
+            int(requested_target)
+            if fixed_size_requested and isinstance(requested_target, int)
+            and requested_target > 0 else None
+        )
+        fixed_size_requested = target is not None
+        low, high = ((int(target * .7), int(target * 1.3))
+                     if target is not None else (None, None))
         active_low, active_high = low, high
         arrays = ("material_omissions", "unsupported_additions", "distortions", "language_problems")
         candidate = accepted
@@ -504,7 +515,7 @@ REVIEW FINDINGS:\n{notes}"""
             # into semicolon-separated telegram prose.  Earlier bounds and
             # prompt bytes remain unchanged so all established caches survive.
             active_low, active_high = low, high
-            if round_no >= 6 and manifest["level"] == "hsk1":
+            if target is not None and round_no >= 6 and manifest["level"] == "hsk1":
                 active_high = int(target * 1.7)
             suffix = "" if round_no == 1 else f"_round_{round_no:02d}"
             if round_no == 1:
@@ -516,9 +527,7 @@ complete ACCEPTED CHAPTER using the exact ORIGINAL CHAPTER. Correct every
 confirmed material omission or factual/causal/identity/language finding listed
 below. Preserve all already-correct facts,
 event order, point of view, naturalness, and the reading level {manifest['level'].upper()}.
-Do not restore merely ornamental details or invent anything. Keep length close
-to the accepted compact chapter and within 70%-130% of target {target} Chinese
-characters. Return the complete repaired chapter in `text`.
+Do not restore merely ornamental details or invent anything. {f"Keep length close to the accepted chapter and within {active_low}-{active_high} Chinese characters because the user explicitly requested a fixed size of {target}." if fixed_size_requested else "Choose a natural length from confirmed source coverage, learner level, and narrative coherence; do not pad or compress to meet a number."} Return the complete repaired chapter in `text`.
 
 ORIGINAL CHAPTER:\n{source}\n\nACCEPTED CHAPTER:\n{accepted}\n\nMATERIAL FINDINGS:
 {json.dumps(material, ensure_ascii=False, indent=2)}"""
@@ -528,8 +537,7 @@ complete CURRENT CANDIDATE using the exact ORIGINAL CHAPTER. Correct every
 confirmed material omission or factual/causal/identity/language finding listed
 below. Preserve all already-correct facts, event order, point of view,
 naturalness, and the reading level {manifest['level'].upper()}. Do not restore
-merely ornamental details or invent anything. Keep length close to the accepted
-compact chapter and within 70%-130% of target {target} Chinese characters.
+merely ornamental details or invent anything. {f"Keep length within {active_low}-{active_high} Chinese characters to honor the explicitly requested fixed size {target}." if fixed_size_requested else "Choose a natural length from confirmed source coverage, learner level, and narrative coherence; do not pad or compress to meet a number."}
 Return the complete repaired chapter in `text`.
 
 ORIGINAL CHAPTER:\n{source}\n\nCURRENT CANDIDATE:\n{candidate}\n\nREQUIRED CORRECTIONS:
@@ -540,10 +548,7 @@ complete CURRENT CANDIDATE using the exact ORIGINAL CHAPTER. Correct every
 confirmed material omission or factual/causal/identity/language finding listed
 below. Preserve all already-correct facts, event order, point of view,
 naturalness, and the reading level {manifest['level'].upper()}. Do not restore
-merely ornamental details or invent anything. Use the extra compact-summary
-room to write natural complete sentences; keep the complete text within
-{active_low}-{active_high} Chinese characters. Return the complete repaired
-chapter in `text`.
+merely ornamental details or invent anything. {f"Use the extra compact-summary room to write natural complete sentences while keeping the complete text within {active_low}-{active_high} Chinese characters." if fixed_size_requested else "Choose a natural length from confirmed source coverage, learner level, and narrative coherence; do not pad or compress to meet a number."} Return the complete repaired chapter in `text`.
 
 ORIGINAL CHAPTER:\n{source}\n\nCURRENT CANDIDATE:\n{candidate}\n\nREQUIRED CORRECTIONS:
 {json.dumps(required, ensure_ascii=False, indent=2)}"""
@@ -585,7 +590,7 @@ ORIGINAL CHAPTER:\n{source}\n\nREPAIRED CHAPTER:\n{candidate}\n\nREQUIRED CORREC
                 self.args.review_effort, refresh=self.args.refresh,
             )
             count = cjk_count(candidate)
-            if active_low <= count <= active_high:
+            if fixed_size_requested and active_low <= count <= active_high:
                 # Models frequently repeat a stale qualitative length complaint
                 # from REQUIRED CORRECTIONS even after the deterministic count
                 # satisfies the active (possibly expanded HSK1) range.  The
@@ -610,7 +615,7 @@ ORIGINAL CHAPTER:\n{source}\n\nREPAIRED CHAPTER:\n{candidate}\n\nREQUIRED CORREC
                 review.get("verdict") == "pass"
                 and min(review.get("source_fidelity", 0), review.get("naturalness", 0), review.get("readability", 0)) >= 8
                 and all(not review.get(key) for key in arrays)
-                and active_low <= count <= active_high
+                and (active_low is None or active_low <= count <= active_high)
             )
             attempts.append({
                 "round": round_no, "candidate_cjk": count,
@@ -623,7 +628,7 @@ ORIGINAL CHAPTER:\n{source}\n\nREPAIRED CHAPTER:\n{candidate}\n\nREQUIRED CORREC
                  "required_fix": str(finding)}
                 for key in arrays for finding in review.get(key, [])
             ]
-            if count < active_low or count > active_high:
+            if active_low is not None and (count < active_low or count > active_high):
                 required.append({
                     "field": "length", "finding_note": f"candidate has {count} CJK",
                     "required_fix": (
@@ -641,7 +646,9 @@ ORIGINAL CHAPTER:\n{source}\n\nREPAIRED CHAPTER:\n{candidate}\n\nREQUIRED CORREC
         result = {
             "status": "complete" if passed else "blocked", "source_run": str(run_dir),
             "level": manifest["level"], "target_chars": target, "candidate_cjk": count,
-            "required_range": [active_low, active_high], "material_findings": material,
+            "required_range": ([active_low, active_high] if active_low is not None else None),
+            "fixed_size_requested": fixed_size_requested,
+            "material_findings": material,
             "material_omissions": material, "review": review,
             "repair_rounds": attempts,
         }

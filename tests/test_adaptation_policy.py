@@ -2,7 +2,6 @@ import pytest
 
 from pipeline.adaptation_policy import (
     policy_for,
-    target_chars_for_source_length,
     target_length_bounds,
 )
 
@@ -12,7 +11,7 @@ def test_lower_levels_allow_broad_omission():
         policy = policy_for(level)
         assert policy.audit_source_omissions is False
         assert "omit" in policy.scope.lower()
-    assert policy_for("hsk1").max_target_chars < policy_for("hsk3").max_target_chars
+    assert policy_for("hsk1").scope != policy_for("hsk3").scope
 
 
 def test_higher_levels_keep_source_omission_audit():
@@ -32,25 +31,10 @@ def test_unknown_level_fails_closed():
         policy_for("hsk0")
 
 
-def test_source_relative_targets_follow_nonlinear_ladder():
-    assert [
-        target_chars_for_source_length(851, f"hsk{level}")
-        for level in range(1, 7)
-    ] == [300, 600, 851, 723, 808, 851]
-
-
-def test_full_chapter_beginner_targets_match_editorial_ladder():
-    assert [
-        target_chars_for_source_length(3860, f"hsk{level}")
-        for level in range(1, 4)
-    ] == [386, 772, 1544]
-
-
-def test_long_sources_are_abridged_with_level_specific_caps():
-    assert [
-        target_chars_for_source_length(20_000, f"hsk{level}")
-        for level in range(1, 7)
-    ] == [450, 900, 1800, 7000, 9000, 12000]
+def test_default_adaptation_policy_contains_no_size_quota_fields():
+    policy = policy_for("hsk4")
+    assert not hasattr(policy, "min_target_chars")
+    assert not hasattr(policy, "max_target_chars")
 
 
 def test_length_bounds_are_tighter_after_hsk1():

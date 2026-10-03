@@ -160,11 +160,10 @@ def test_audit_rejects_missing_chapter(tmp_path):
         audit_runs([run_dir], source_dir, ["hsk1", "hsk2"], expected_chapters=2)
 
 
-def test_audit_rejects_non_increasing_per_chapter_length(tmp_path):
+def test_audit_reports_length_order_without_rejecting_a_natural_shorter_level(tmp_path):
     source_dir, run_dir = _fixture(tmp_path, lengths=(3, 2))
-
-    with pytest.raises(PublicationError, match="strictly increasing length"):
-        audit_runs([run_dir], source_dir, ["hsk1", "hsk2"], expected_chapters=2)
+    report = audit_runs([run_dir], source_dir, ["hsk1", "hsk2"], expected_chapters=2)
+    assert report["length_order_observation"]["strictly_increasing_per_chapter_and_total"] is False
 
 
 def test_audit_rejects_source_hash_mismatch(tmp_path):

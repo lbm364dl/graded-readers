@@ -27,7 +27,6 @@ from pipeline.chinese_translation_policy import CHINESE_TRANSLATION_POLICY
 
 from pipeline.adaptation_policy import (
     policy_for,
-    target_chars_for_source_length,
     target_length_bounds,
 )
 from pipeline.chinese_readability import (
@@ -45,10 +44,6 @@ from pipeline.validate_text import load_charset, validate_characters
 ROOT = Path(__file__).resolve().parent.parent
 SCHEMAS = Path(__file__).resolve().parent / "schemas"
 DEFAULT_RUNS = ROOT / "runs" / "graded-readers"
-DEFAULT_LEVEL_TARGETS = {
-    "hsk1": 220, "hsk2": 300, "hsk3": 500,
-    "hsk4": 750, "hsk5": 1050, "hsk6": 1450,
-}
 _T2S = OpenCC("t2s")
 _GRAMMAR_CANDIDATE_KEY = re.compile(r"^[a-z][a-z0-9_.-]*$")
 
@@ -336,44 +331,9 @@ def normalize_review_score_scale(review: dict[str, Any]) -> dict[str, Any]:
 
 
 def length_violations(runs: list[dict[str, Any]], levels: list[str]) -> list[dict[str, Any]]:
-    """Return adjacent-level violations for every source with complete results."""
-    order = {level: index for index, level in enumerate(levels)}
-    by_source: dict[str, list[dict[str, Any]]] = {}
-    for item in runs:
-        if item.get("status") == "complete" and "chapter_cjk" in item:
-            by_source.setdefault(item["source"], []).append(item)
-    problems = []
-    for source, items in by_source.items():
-        items.sort(key=lambda item: order[item["level"]])
-        for lower, upper in zip(items, items[1:]):
-            source_path = Path(source)
-            if source_path.is_file():
-                source_cjk = cjk_count(source_path.read_text(encoding="utf-8"))
-                expected = target_chars_for_source_length(
-                    source_cjk, upper["level"]
-                )
-                minimum, maximum = target_length_bounds(
-                    expected, upper["level"]
-                )
-                violates = not minimum <= upper["chapter_cjk"] <= maximum
-            else:
-                # Compatibility for synthetic reports without a real source;
-                # production reports always have source-relative evidence.
-                expected = minimum = maximum = None
-                violates = lower["chapter_cjk"] >= upper["chapter_cjk"]
-            if violates:
-                problem = {
-                    "source": source, "lower_level": lower["level"],
-                    "lower_cjk": lower["chapter_cjk"],
-                    "upper_level": upper["level"], "upper_cjk": upper["chapter_cjk"],
-                }
-                if expected is not None:
-                    problem.update({
-                        "expected_cjk": expected, "minimum_cjk": minimum,
-                        "maximum_cjk": maximum, "source_relative": True,
-                    })
-                problems.append(problem)
-    return problems
+    """Compatibility hook; chapter length is no longer a cross-level invariant."""
+    del runs, levels
+    return []
 
 
 def utc_now() -> str:
@@ -1172,24 +1132,27 @@ class ChapterHarness:
         }
 
     @property
-    def target_chars(self) -> int:
-        if getattr(self.args, "target_chars", None):
-            return self.args.target_chars
-        if hasattr(self, "source"):
-            return target_chars_for_source_length(
-                cjk_count(self.source), self.args.level
-            )
-        return DEFAULT_LEVEL_TARGETS.get(self.args.level, 5000)
+    def target_chars(self) -> int | None:
+        """Return a size only when the caller explicitly requested one."""
+        return getattr(self.args, "target_chars", None)
+
+    @property
+    def fixed_size_requested(self) -> bool:
+        return self.target_chars is not None
 
     @property
     def scene_count(self) -> int:
         """Keep compact original chapters coherent; split only very long outputs."""
         if hasattr(self, "active_scene_count"):
             return self.active_scene_count
+        if self.target_chars is None:
+            return getattr(self, "active_scene_count", 1)
         return max(1, min(12, round(self.target_chars / 1500)))
 
     def scene_length_bounds(self, target: int) -> tuple[int, int]:
         """Keep HSK1 substance without forcing readability-damaging padding."""
+        if not self.fixed_size_requested:
+            return (0, 0)
         return target_length_bounds(target, self.args.level)
 
     @property
@@ -1398,6 +1361,7 @@ class ChapterHarness:
             "annotation_chunk_target": self.annotation_chunk_target,
             "annotation_chunk_maximum": self.annotation_chunk_maximum,
             "target_chars": self.target_chars,
+            "fixed_size_requested": self.fixed_size_requested,
             "editorial_plan": (
                 str(self.editorial_plan_path) if self.editorial_plan_path else None
             ),
@@ -1414,21 +1378,27 @@ class ChapterHarness:
         beginner_selection = ""
         if self.args.level == "hsk1":
             beginner_selection = """
-HSK1 selection rule: choose one clear chronological thread with at most five
-required events. Prefer the actions needed to introduce and motivate the main
-characters. Do not turn every source event, office, battle, or minor name into
-a required event; a beginner retelling is allowed to leave them out."""
+HSK1 selection rule: choose a clear chronological thread with the actions
+needed to introduce and motivate the main characters. Do not inventory every
+source event, office, battle, or minor name; omit material that adds difficulty
+without helping the coherent beginner retelling."""
+        size_instruction = (
+            f"The user explicitly requested a fixed adaptation size of {self.target_chars} Chinese characters. "
+            "Plan scene targets that sum to that requested size; do not use padding or omit necessary source meaning to meet it."
+            if self.fixed_size_requested else
+            "Choose the retained coverage and natural stopping point from source events, coherence, and learner level. "
+            "Do not set a character, word, sentence, paragraph-count, or scene-count quota. Explain the length decision in length_reason_en."
+        )
         prompt = f"""Return only JSON matching the supplied schema.
-Read the complete original Chinese chapter and divide it into exactly
-{self.scene_count} consecutive adaptation scene(s).
+Read the complete original Chinese chapter and divide it into the number of
+consecutive adaptation scenes needed to represent the selected source coverage.
 Every source_start_quote must be an exact, unique substring
 of ORIGINAL. Scenes must cover the source in order. Capture every important
 event and causal link selected for a coherent level-appropriate retelling.
 Editorial scope: {policy.scope}
 Fidelity rule: {policy.fidelity}
 {beginner_selection}
-Target lengths should sum to approximately
-{self.target_chars} Chinese characters.
+{size_instruction}
 
 ORIGINAL:\n{self.source}"""
         outline = await self.runner.call(
@@ -1436,26 +1406,16 @@ ORIGINAL:\n{self.source}"""
             self.args.review_effort, refresh=self.args.refresh,
         )
         scenes = outline["scenes"]
-        if self.scene_count == 1 and len(scenes) != 1:
-            scenes = [{
-                "id": "scene_01",
-                "title": outline["chapter_title"],
-                "source_start_quote": scenes[0]["source_start_quote"],
-                "required_events": [
-                    event for item in scenes for event in item["required_events"]
-                ],
-                "target_chars": self.target_chars,
-            }]
-            outline["scenes"] = scenes
-        if len(scenes) != self.scene_count:
-            raise ValueError(
-                f"outline returned {len(scenes)} scenes; expected {self.scene_count}"
-            )
-        # Numeric targets are orchestration policy, never model authority. This
-        # also prevents plausible schema-valid slips such as 105 instead of 1050.
-        base, remainder = divmod(self.target_chars, len(scenes))
-        for index, scene in enumerate(scenes):
-            scene["target_chars"] = base + (1 if index < remainder else 0)
+        self.active_scene_count = len(scenes)
+        if not str(outline.get("length_reason_en", "")).strip():
+            raise ValueError("outline must explain its retained coverage and length decision")
+        if self.fixed_size_requested:
+            base, remainder = divmod(self.target_chars, len(scenes))
+            for index, scene in enumerate(scenes):
+                scene["target_chars"] = base + (1 if index < remainder else 0)
+        else:
+            for scene in scenes:
+                scene["target_chars"] = 0
         starts: list[int] = []
         search_from = 0
         for index, scene in enumerate(scenes, 1):
@@ -1521,7 +1481,9 @@ ORIGINAL:\n{self.source}"""
                     raise ValueError(f"unknown canonical scene: {scene_id}")
                 required_events.extend(canonical[scene_id]["required_events"])
             required_events.extend(scene.get("required_events", []))
-            if index == len(raw_scenes):
+            if not self.fixed_size_requested:
+                target = 0
+            elif index == len(raw_scenes):
                 target = self.target_chars - assigned
             else:
                 target = round(self.target_chars * weight / total_weight)
@@ -1549,13 +1511,17 @@ ORIGINAL:\n{self.source}"""
                 if index + 1 < len(scenes) else len(self.source)
             )
             raw_beats = raw_scenes[index].get("recovery_beats")
-            if raw_beats:
+            if raw_beats and self.fixed_size_requested:
                 scene["recovery_beats"] = materialize_recovery_beats(
                     self.source, scene, raw_beats
                 )
         self.active_scene_count = len(scenes)
         outline = {
             "chapter_title": plan["chapter_title"],
+            "length_reason_en": (
+                str(level_plan.get("coverage_note", "")).strip()
+                or "The source-anchored editorial plan selects the retained scenes; independent review will assess natural coverage and stopping point at this level."
+            ),
             "scenes": scenes,
             "editorial_plan": str(self.editorial_plan_path),
             "coverage_note": level_plan.get("coverage_note", ""),
@@ -1667,30 +1633,34 @@ SOURCE:
             "for exhaustive coverage."
         )
         paragraph_guidance = (
+            f"Break paragraphs naturally at changes of speaker, action, time, "
+            "or scene. Do not add headings or repeat the chapter title. Keep "
+            f"each paragraph at or below {scene.get('max_paragraph_cjk', 250)} Chinese characters."
+            if not self.fixed_size_requested else
             f"Write {scene.get('min_paragraphs', 1)}-"
-            f"{scene.get('max_paragraphs', 6)} real paragraphs separated by "
-            "blank lines. Break paragraphs at changes of speaker, action, time, "
-            "or scene. Do not add headings or repeat the chapter title. "
-            f"Keep each paragraph at or below "
-            f"{scene.get('max_paragraph_cjk', 250)} Chinese characters."
+            f"{scene.get('max_paragraphs', 6)} paragraphs, separated by blank lines; "
+            f"no paragraph may exceed {scene.get('max_paragraph_cjk', 250)} Chinese characters."
         )
-        minimum_chars, maximum_chars = self.scene_length_bounds(
-            scene["target_chars"]
-        )
-        length_guidance = (
-            f"The hard mechanical range is {minimum_chars}-{maximum_chars} "
-            "Chinese characters. A shorter synopsis will be rejected. Use "
-            "source-grounded motivations, character details, dialogue, and "
-            "causal transitions within the selected events until the passage "
-            "reaches the range; never pad with repetition or invented facts."
-        )
+        if self.fixed_size_requested:
+            minimum_chars, maximum_chars = self.scene_length_bounds(scene["target_chars"])
+            length_guidance = (
+                f"The user-requested hard range is {minimum_chars}-{maximum_chars} "
+                "Chinese characters. Meet it only while preserving accurate source meaning."
+            )
+            target_guidance = f"Target about {scene['target_chars']} Chinese characters."
+        else:
+            length_guidance = (
+                "There is no character or total-length target. Preserve the selected "
+                "meaningful narrative naturally for this learner level; do not pad or compress needlessly."
+            )
+            target_guidance = ""
         prompt = f"""Return only JSON matching the supplied schema, with the
 adapted scene in `text`. Adapt the verbatim ORIGINAL into natural, engaging
 modern Chinese for an annotated {self.args.level.upper()} literary reader.
 Write only simplified Chinese, even though ORIGINAL uses traditional Chinese.
 {event_scope} {policy.scope} {policy.fidelity}
 {source_coverage_guidance}
-Target about {scene['target_chars']} Chinese characters. {length_guidance}
+{target_guidance} {length_guidance}
 Core grammar should be
 comfortable at {self.args.level.upper()}. {policy.language}
 For HSK2 and above, use a natural, useful amount of vocabulary introduced in
@@ -1789,10 +1759,14 @@ PRIOR REJECTED TRAPS FROM THIS SAME RUN:
 Do not assume these remain present, but explicitly check that none has been
 reintroduced. If the same defect appears again, report it and return revise.
 """
+        length_review_guidance = (
+            f"The user explicitly requested {scene['target_chars']} characters for this scene. Assess the length in length_reason_en after source accuracy and natural level-appropriate expression."
+            if self.fixed_size_requested else
+            "Assess whether the amount of narrative naturally fits the retained source coverage and requested learner level. Explain in length_reason_en why this length and stopping point are suitable, whether meaningful source content was compressed or omitted, and whether more retained detail would help. Do not request changes merely to meet an unstated size target."
+        )
         prompt = f"""Return only JSON matching the supplied schema. Compare
-ADAPTATION directly against VERBATIM ORIGINAL and the requested compact target.
-The target for this scene is {scene['target_chars']} Chinese characters; keep
-the result within roughly {self.scene_length_guidance} of that target.
+ADAPTATION directly against VERBATIM ORIGINAL and the reviewed editorial scope.
+{length_review_guidance}
 Editorial scope: {policy.scope}
 Fidelity rule: {policy.fidelity}
 {event_scope}
@@ -1820,12 +1794,15 @@ REQUIRED EVENTS:\n{events}\n\nORIGINAL:\n{original}\n\nADAPTATION:\n{adaptation}
             self.args.review_effort, refresh=self.args.refresh,
         )
         result = normalize_review_score_scale(result)
+        if not str(result.get("length_reason_en", "")).strip():
+            raise ValueError("independent prose review must explain its length assessment")
         length = cjk_count(adaptation)
         low, high = self.scene_length_bounds(scene["target_chars"])
-        in_range = low <= length <= high
+        in_range = not self.fixed_size_requested or low <= length <= high
         # Length is measured exactly below. Never let a model-authored length
         # claim conflict with the deterministic direction given to repairs.
-        result = discard_incorrect_length_findings(result)
+        if self.fixed_size_requested and in_range:
+            result = discard_incorrect_length_findings(result)
         result = apply_compact_review_policy(result)
         if any(
             result.get(key) for key in (
@@ -1847,7 +1824,7 @@ REQUIRED EVENTS:\n{events}\n\nORIGINAL:\n{original}\n\nADAPTATION:\n{adaptation}
             result.setdefault("language_problems", []).append(
                 "review scores must each be at least 8/10"
             )
-        if not in_range:
+        if self.fixed_size_requested and not in_range:
             result = dict(result)
             result["verdict"] = "revise"
             result.setdefault("language_problems", []).append(
@@ -1947,8 +1924,8 @@ REQUIRED EVENTS:\n{events}\n\nORIGINAL:\n{original}\n\nADAPTATION:\n{adaptation}
             validate_paragraph_structure(
                 adaptation,
                 self.args.level,
-                min_paragraphs=scene["min_paragraphs"],
-                max_paragraphs=scene["max_paragraphs"],
+                min_paragraphs=scene["min_paragraphs"] if self.fixed_size_requested else 0,
+                max_paragraphs=scene["max_paragraphs"] if self.fixed_size_requested else 10_000,
                 max_paragraph_cjk=scene["max_paragraph_cjk"],
             )
             if "min_paragraphs" in scene else None
@@ -2007,16 +1984,20 @@ REQUIRED EVENTS:\n{events}\n\nORIGINAL:\n{original}\n\nADAPTATION:\n{adaptation}
         )
         events = "\n".join(f"- {event}" for event in scene.get("required_events", []))
         paragraph_guidance = (
+            f"Break paragraphs naturally at changes of speaker, action, time, or scene; "
+            f"keep each paragraph at or below {scene.get('max_paragraph_cjk', 250)} Chinese characters."
+            if not self.fixed_size_requested else
             f"Keep {scene.get('min_paragraphs', 1)}-"
             f"{scene.get('max_paragraphs', 6)} semantic paragraphs, separated "
             f"by blank lines, with no paragraph over "
             f"{scene.get('max_paragraph_cjk', 250)} Chinese characters."
         )
-        minimum_chars, maximum_chars = self.scene_length_bounds(
-            scene["target_chars"]
-        )
-        recovery_strategy = scene_repair_strategy(
-            adaptation, review, minimum_chars, maximum_chars
+        minimum_chars, maximum_chars = self.scene_length_bounds(scene["target_chars"])
+        recovery_strategy = (
+            scene_repair_strategy(adaptation, review, minimum_chars, maximum_chars)
+            if self.fixed_size_requested else
+            "RECOVERY MODE: localized prose repair. Preserve unaffected wording and source meaning; "
+            "change only what the cited review finding requires. Keep the selected coverage natural for the requested learner level; do not pad or compress to reach a count."
         )
         prior_section = "" if not prior_findings else f"""
 PREVIOUS FAILURES FROM THIS SAME RUN:
@@ -2041,10 +2022,7 @@ band that the passage does not pass as a lower-level reader.
 Prefer this cumulative character set wherever
 natural: {charset_hint}
 {beginner_guidance}
-Keep the revised scene within roughly {self.scene_length_guidance} of the
-original target of {scene['target_chars']} Chinese characters. It must contain
-{minimum_chars}-{maximum_chars} Chinese characters; expand with accurate
-source details inside the selected events when it is short.
+{(f"Keep within the user-requested {minimum_chars}-{maximum_chars} character range." if self.fixed_size_requested else "There is no numeric length target; judge the repaired passage by source coverage, coherence, and learner-level naturalness.")}
 {prior_section}
 
 REQUIRED EVENTS (preserve all of them and do not restore optional outside
@@ -2075,9 +2053,14 @@ episodes):\n{events}\n\nORIGINAL:\n{original}\n\nADAPTATION:\n{adaptation}\n\nRE
             events = "\n".join(
                 f"- {event}" for event in beat.get("required_events", [])
             )
-            target = int(beat["target_chars"])
-            low = max(1, round(target * 0.90))
-            high = max(low, round(target * 1.10))
+            target = int(beat.get("target_chars", 0))
+            low = max(1, round(target * 0.90)) if self.fixed_size_requested else 0
+            high = max(low, round(target * 1.10)) if self.fixed_size_requested else 0
+            beat_length = (
+                f"Target {target} Chinese characters and stay within {low}-{high}."
+                if self.fixed_size_requested else
+                "Use enough source-grounded detail for the selected beat to read naturally; no numeric length target."
+            )
             prompt = f"""Return only JSON matching the supplied schema, with this
 internal source beat in `text`. This is beat {index} of a larger scene that has
 repeatedly failed review when rewritten all at once. Adapt VERBATIM ORIGINAL in
@@ -2089,8 +2072,7 @@ Core grammar should be comfortable at {self.args.level.upper()}.
 {self.target_band_vocabulary_guidance}
 {self.focus_vocabulary_guidance}
 {self.prose_shape_guidance}
-Write exactly {beat['paragraphs']} natural paragraph(s), separated by blank
-lines. Target {target} Chinese characters and stay within {low}-{high}.
+Break paragraphs naturally. {beat_length}
 Expand only with accurate details, motivations, and causal links from this
 exact source beat. These defects were found in the rejected whole scene; avoid
 them when relevant to this beat:
@@ -2128,14 +2110,15 @@ REQUIRED EVENTS:\n{events}\n\nVERBATIM ORIGINAL:\n{original}"""
         )
         events = "\n".join(f"- {event}" for event in scene.get("required_events", []))
         paragraph_guidance = (
+            f"Break paragraphs naturally at changes of speaker, action, time, or scene; "
+            f"keep each paragraph at or below {scene.get('max_paragraph_cjk', 250)} Chinese characters."
+            if not self.fixed_size_requested else
             f"Write {scene.get('min_paragraphs', 1)}-"
             f"{scene.get('max_paragraphs', 6)} semantic paragraphs separated "
             f"by blank lines, with no paragraph over "
             f"{scene.get('max_paragraph_cjk', 250)} Chinese characters."
         )
-        minimum_chars, maximum_chars = self.scene_length_bounds(
-            scene["target_chars"]
-        )
+        minimum_chars, maximum_chars = self.scene_length_bounds(scene["target_chars"])
         history = json.dumps(
             [
                 {"text": item["text"], "review": item["review"]}
@@ -2163,10 +2146,7 @@ Prefer this cumulative character set:
 {charset_hint}
 {beginner_guidance}
 Preserve every REQUIRED EVENT and omit optional outside episodes. Do not invent
-facts. Target about {scene['target_chars']} Chinese characters and stay within
-roughly {self.scene_length_guidance} of that compact target. The exact accepted
-range is {minimum_chars}-{maximum_chars}; a shorter synopsis fails. Develop
-accurate details, dialogue, motivations, and transitions from ORIGINAL.
+facts. {(f"The user requested {scene['target_chars']} characters; target {minimum_chars}-{maximum_chars} if that remains natural and source-faithful." if self.fixed_size_requested else "Choose a natural length from meaningful source coverage, learner level, and a coherent stopping point. Do not pad or compress to meet a number.")} Develop accurate details, dialogue, motivations, and transitions from ORIGINAL.
 
 REQUIRED EVENTS:\n{events}\n\nORIGINAL:\n{original}\n\nFAILED ATTEMPTS AND REVIEWS:\n{history}"""
         result = await self.runner.call(
@@ -2212,10 +2192,12 @@ REQUIRED EVENTS:\n{events}\n\nORIGINAL:\n{original}\n\nFAILED ATTEMPTS AND REVIE
                 {"stage": "fresh_rewrite", "text": adapted["text"], "review": review}
             )
         if review["verdict"] != "pass":
-            minimum_chars, maximum_chars = self.scene_length_bounds(
-                scene["target_chars"]
-            )
-            best = best_scene_attempt(attempts, minimum_chars, maximum_chars)
+            if self.fixed_size_requested:
+                minimum_chars, maximum_chars = self.scene_length_bounds(scene["target_chars"])
+                best = best_scene_attempt(attempts, minimum_chars, maximum_chars)
+            else:
+                best = next((item for item in reversed(attempts)
+                             if item["review"].get("verdict") == "pass"), attempts[-1])
             adapted = {"text": best["text"]}
             review = best["review"]
         result = {
@@ -3453,8 +3435,10 @@ GRAMMAR OVERLAYS (existing exact offset objects):
                 scene_path.write_text(
                     json.dumps(result, ensure_ascii=False, indent=2) + "\n"
                 )
-            distributed_length_acceptances = accept_distributed_scene_lengths(
-                results, chapter, self.args.level, self.target_chars
+            distributed_length_acceptances = (
+                accept_distributed_scene_lengths(
+                    results, chapter, self.args.level, self.target_chars
+                ) if self.fixed_size_requested else []
             )
             verdicts = {
                 r["scene"]["id"]: r["review"]["verdict"] for r in results
@@ -3739,12 +3723,10 @@ async def promote_reviewed_book_candidates(
 ) -> dict[str, Any]:
     """Independently review one selected candidate for every planned scene."""
     scenes = outline["scenes"]
-    attach_editorial_recovery_beats(
-        harness.source,
-        outline,
-        harness.editorial_plan_path,
-        harness.args.level,
-    )
+    if harness.fixed_size_requested:
+        attach_editorial_recovery_beats(
+            harness.source, outline, harness.editorial_plan_path, harness.args.level,
+        )
     harness.active_scene_count = len(scenes)
     specifications: dict[str, str] = {}
     for raw in args.candidate:
@@ -3820,6 +3802,8 @@ async def promote_reviewed_book_candidates(
                 "review": review,
             })
         if (
+            harness.fixed_size_requested
+            and
             review["verdict"] != "pass"
             and getattr(args, "recover_with_source_beats", False)
             and scene.get("recovery_beats")
@@ -3868,10 +3852,12 @@ async def promote_reviewed_book_candidates(
                     "review": review,
                 })
         if review["verdict"] != "pass":
-            minimum_chars, maximum_chars = harness.scene_length_bounds(
-                scene["target_chars"]
-            )
-            best = best_scene_attempt(attempts, minimum_chars, maximum_chars)
+            if harness.fixed_size_requested:
+                minimum_chars, maximum_chars = harness.scene_length_bounds(scene["target_chars"])
+                best = best_scene_attempt(attempts, minimum_chars, maximum_chars)
+            else:
+                best = next((item for item in reversed(attempts)
+                             if item["review"].get("verdict") == "pass"), attempts[-1])
             candidate = best["text"]
             review = best["review"]
         results.append({
@@ -3929,8 +3915,10 @@ async def promote_reviewed_book_candidates(
         results[index]["resolved"] = False
         results[index]["attempts"][-1]["review"] = review
 
-    distributed_length_acceptances = accept_distributed_scene_lengths(
-        results, chapter, harness.args.level, harness.target_chars
+    distributed_length_acceptances = (
+        accept_distributed_scene_lengths(
+            results, chapter, harness.args.level, harness.target_chars
+        ) if harness.fixed_size_requested else []
     )
     verdicts = {
         item["scene"]["id"]: item["review"]["verdict"] for item in results
@@ -3992,6 +3980,17 @@ async def promote_reviewed_book_candidates(
     return report
 
 
+def fixed_size_target_from_manifest(manifest: dict[str, Any]) -> int | None:
+    """Return only a target with explicit fixed-size provenance."""
+    target = manifest.get("target_chars")
+    if (
+        manifest.get("fixed_size_requested") is True
+        and isinstance(target, int) and not isinstance(target, bool) and target > 0
+    ):
+        return target
+    return None
+
+
 async def promote_reviewed_candidate(args: argparse.Namespace) -> dict[str, Any]:
     """Independently re-review and promote a selected one-scene candidate.
 
@@ -3999,7 +3998,8 @@ async def promote_reviewed_candidate(args: argparse.Namespace) -> dict[str, Any]
     attempt.  This command lets an operator select that draft (including a
     mechanical punctuation-only correction) without pretending the original
     run passed.  Promotion remains fail-closed: the same independent semantic,
-    level, length, and prose-shape gates run again against the source.
+    level, explicit-size (when requested), and prose-shape gates run again
+    against the source.
     """
     run_dir = Path(args.run_dir).resolve()
     manifest_path = run_dir / "manifest.json"
@@ -4013,7 +4013,7 @@ async def promote_reviewed_candidate(args: argparse.Namespace) -> dict[str, Any]
     args.level = str(manifest["level"])
     args.run_id = run_dir.name
     args.runs_dir = str(run_dir.parent)
-    args.target_chars = int(manifest["target_chars"])
+    args.target_chars = fixed_size_target_from_manifest(manifest)
     args.editorial_plan = manifest.get("editorial_plan")
     harness = ChapterHarness(args)
     harness.focus_vocabulary = focus
@@ -4347,10 +4347,8 @@ class BookHarness:
         chapter_args = copy.copy(self.args)
         chapter_args.command, chapter_args.source = "run", str(source_path)
         chapter_args.level, chapter_args.run_id = level, run_id
-        chapter_args.target_chars = target_chars or (
-            self.args.target_chars or target_chars_for_source_length(
-                cjk_count(source_path.read_text(encoding="utf-8")), level
-            )
+        chapter_args.target_chars = (
+            target_chars if target_chars is not None else self.args.target_chars
         )
         last_error = ""
         async with self.chapter_semaphore:
@@ -4409,44 +4407,6 @@ class BookHarness:
         for task in asyncio.as_completed(tasks):
             results.append(await task)
             self.write_report("running", results)
-        # Length is a publication invariant, not a manual-review request. Re-run
-        # only the deficient upper-level chapter with a stronger target; changed
-        # prompt fingerprints invalidate affected generation jobs while unrelated
-        # chapters remain cached.
-        for _ in range(self.args.length_repair_rounds):
-            violations = length_violations(results, self.args.levels)
-            if not violations:
-                break
-            for problem in violations:
-                current = next(
-                    item for item in results
-                    if (item["source"], item["level"]) ==
-                    (problem["source"], problem["upper_level"])
-                )
-                if problem.get("source_relative"):
-                    target = max(
-                        problem["expected_cjk"],
-                        problem["minimum_cjk"],
-                    )
-                else:
-                    target = max(
-                        DEFAULT_LEVEL_TARGETS.get(
-                            problem["upper_level"], 5000
-                        ),
-                        problem["lower_cjk"]
-                        + max(50, problem["lower_cjk"] // 10),
-                        int(current.get("target_chars", 0) * 1.25),
-                    )
-                repaired = await self.run_one(
-                    problem["source"], problem["upper_level"], target
-                )
-                for index, item in enumerate(results):
-                    if (item["source"], item["level"]) == (
-                        problem["source"], problem["upper_level"]
-                    ):
-                        results[index] = repaired
-                        break
-                self.write_report("running", results)
         statuses = {item["status"] for item in results}
         violations = length_violations(results, self.args.levels)
         final_state = (

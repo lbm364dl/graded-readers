@@ -7,7 +7,7 @@ from types import SimpleNamespace
 import pytest
 
 from pipeline.japanese_agent_harness import (
-    CHAPTER_TARGETS, DEFAULT_JLPT_TARGETS, JLPT_LEVELS,
+    JLPT_LEVELS,
     JAPANESE_ANNOTATION_CHUNK_MAXIMUMS, JAPANESE_ANNOTATION_CHUNK_POLICY,
     JAPANESE_ANNOTATION_CHUNK_TARGETS,
     JapaneseBookHarness, JapaneseChapterHarness,
@@ -29,7 +29,6 @@ from pipeline.japanese_agent_harness import (
     overlong_japanese_sentences, resolve_source_boundary,
     split_japanese_annotation_chunks, strip_duplicate_source_header,
     strip_inline_japanese_readings,
-    target_for_source,
 )
 from pipeline.japanese_readability import (
     level_diagnostics, matched_level, preflight_level_diagnostics,
@@ -1546,21 +1545,19 @@ def test_bare_adjective_change_is_grammar_not_idiom():
     )
 
 
-def test_jlpt_defaults_and_book_totals_increase_strictly():
-    defaults = [DEFAULT_JLPT_TARGETS[level] for level in JLPT_LEVELS]
-    totals = [sum(CHAPTER_TARGETS[level]) for level in JLPT_LEVELS]
-    assert defaults == sorted(defaults) and len(defaults) == len(set(defaults))
-    assert totals == [3950, 7775, 17600, 72000, 105000]
-    assert all(
-        CHAPTER_TARGETS[lower][chapter] < CHAPTER_TARGETS[upper][chapter]
-        for lower, upper in zip(JLPT_LEVELS, JLPT_LEVELS[1:])
-        for chapter in range(11)
-    )
+def test_japanese_levels_do_not_imply_fixed_chapter_targets():
+    for level in JLPT_LEVELS:
+        harness = object.__new__(JapaneseChapterHarness)
+        harness.args = Namespace(level=level, target_chars=None)
+        assert harness.target_chars is None
+        assert not harness.fixed_size_requested
 
 
-def test_target_for_known_chapter_and_generic_source():
-    assert target_for_source("chapter_02.txt", "n1") == 11200
-    assert target_for_source("preface.txt", "n1") == DEFAULT_JLPT_TARGETS["n1"]
+def test_explicit_japanese_target_enables_fixed_size_mode():
+    harness = object.__new__(JapaneseChapterHarness)
+    harness.args = Namespace(level="n3", target_chars=1200)
+    assert harness.target_chars == 1200
+    assert harness.fixed_size_requested
 
 
 def test_japanese_count_includes_kana_and_kanji_not_punctuation_or_latin():
@@ -1817,15 +1814,15 @@ def test_reuses_only_source_identical_passing_scene_evidence(tmp_path):
     assert harness.reusable_scene({**scene, "source_end": 11}) is None
 
 
-def test_large_chapter_target_splits_under_japanese_scene_limit(tmp_path):
+def test_large_source_does_not_imply_an_automatic_chapter_size(tmp_path):
     source = tmp_path / "chapter_11.txt"
     source.write_text("原文", encoding="utf-8")
     harness = object.__new__(JapaneseChapterHarness)
     harness.args = Namespace(level="n1", target_chars=None)
     harness.source_path = source
     harness.source = source.read_text(encoding="utf-8")
-    assert harness.target_chars == 11850
-    assert harness.scene_count == 7
+    assert harness.target_chars is None
+    assert harness.scene_count == 1
 
 
 def test_clean_vocabulary_rescue_may_use_soft_local_floor():
@@ -1845,14 +1842,39 @@ def test_clean_vocabulary_rescue_may_use_soft_local_floor():
     assert accepted["language_problems"] == []
 
 
+@pytest.mark.asyncio
+@pytest.mark.parametrize("target, expected", [(None, "pass"), (100, "revise")])
+async def test_only_explicit_japanese_size_request_enables_numeric_scene_gate(target, expected):
+    class Runner:
+        async def call(self, *args, **kwargs):
+            return {
+                "source_fidelity": 9, "naturalness": 9, "readability": 9,
+                "omissions": [], "unsupported_additions": [], "distortions": [],
+                "language_problems": [], "verdict": "pass",
+                "length_reason_en": "This complete short event is a natural stopping point for N4.",
+            }
+
+    text = "猫が来た。"
+    harness = object.__new__(JapaneseChapterHarness)
+    harness.args = Namespace(
+        level="n4", target_chars=target, review_effort="low", refresh=False,
+    )
+    harness.source, harness.runner = text, Runner()
+    result = await harness.review_scene({
+        "id": "scene_01", "source_start": 0, "source_end": len(text),
+        "target_chars": target or 0, "required_events": [],
+    }, text)
+    assert result["verdict"] == expected
+
+
 def test_long_source_forces_event_units_even_for_short_n5_output(tmp_path):
     source = tmp_path / "chapter_02.txt"
     source.write_text("猫" * 46322, encoding="utf-8")
     harness = object.__new__(JapaneseChapterHarness)
     harness.args = Namespace(level="n5", target_chars=None)
     harness.source_path, harness.source = source, source.read_text()
-    assert harness.target_chars == 400
-    assert harness.scene_count == 10
+    assert harness.target_chars is None
+    assert harness.scene_count == 1
 
 
 class CapturingRunner:
@@ -4653,6 +4675,7 @@ class OutlineRunner:
             return {"verdict": "pass", "issues": []}
         return {
             "chapter_title": "一",
+            "length_reason_en": "The chosen source coverage forms a coherent short scene for N5.",
             "scenes": [{
                 "id": "scene_01", "title": "猫", "source_start_quote": "同じ境界",
                 "required_events": ["猫がいる", "猫が家に来る"], "target_chars": 12,
@@ -4671,7 +4694,7 @@ async def test_outline_accepts_repeated_boundary_and_overrides_target(tmp_path):
     harness.run_dir.mkdir()
     outline = await harness.outline()
     assert outline["scenes"][0]["source_start"] == 0
-    assert outline["scenes"][0]["target_chars"] == 350
+    assert outline["scenes"][0]["target_chars"] == 0
 
 
 def test_outline_keeps_source_chunks_but_allocates_output_only_to_selected_spans(tmp_path):
@@ -4693,7 +4716,7 @@ def test_outline_keeps_source_chunks_but_allocates_output_only_to_selected_spans
             {"source_start_quote": "第三場面", "required_events": ["猫が家に住む"], "target_chars": 1, "title": "三"},
         ],
     })
-    assert [scene["target_chars"] for scene in outline["scenes"]] == [201, 0, 200]
+    assert [scene["target_chars"] for scene in outline["scenes"]] == [200, 0, 201]
     assert [scene["id"] for scene in harness.adaptation_scenes(outline)] == [
         "scene_01", "scene_03",
     ]
@@ -4732,6 +4755,7 @@ class ChapterReviewRunner:
             "source_fidelity": 9, "naturalness": 9, "readability": 9,
             "omissions": [], "unsupported_additions": [], "distortions": [],
             "language_problems": [], "verdict": "pass",
+            "length_reason_en": "The retained events form a coherent scene at the requested level.",
         }
 
 
@@ -4760,6 +4784,7 @@ async def test_scene_review_pass_with_material_finding_forces_repair():
                 "omissions": [], "unsupported_additions": [],
                 "distortions": ["右目を両目に変えている"],
                 "language_problems": [], "verdict": "pass",
+                "length_reason_en": "The retained source content and stopping point are suitable.",
             }
 
     harness = object.__new__(JapaneseChapterHarness)
@@ -4795,6 +4820,7 @@ async def test_post_fresh_repair_is_single_issue_scoped_final_step(tmp_path):
                     "「赤十字総会で上京し」は不自然。"
                 ],
                 "verdict": "pass" if passed else "revise",
+                "length_reason_en": "The scene retains a coherent amount of source material for N4.",
             }
 
     harness = object.__new__(JapaneseChapterHarness)
@@ -4832,6 +4858,7 @@ class ChapterHealRunner:
             "omissions": [] if self.final_verdict == "pass" else ["犬を省略"],
             "unsupported_additions": [], "distortions": [],
             "language_problems": [], "verdict": self.final_verdict,
+            "length_reason_en": "The requested fixed size was considered against source coverage.",
         }
 
 
@@ -4872,7 +4899,7 @@ async def test_chapter_heal_is_issue_scoped_resumable_and_independently_reviewed
     assert "魚を食べる出来事" in repair_prompt
     assert "原文では猫が家に来て魚を食べた" in repair_prompt
     assert "preserve all other wording" in repair_prompt
-    assert "complete-chapter range of 7-12" in repair_prompt
+    assert "explicit user-requested 7-12 Japanese character range" in repair_prompt
     assert attempts[0]["repair_job"] == "chapter/repair_01"
 
 
@@ -5060,6 +5087,18 @@ async def test_book_run_skips_only_verified_completed_artifact(tmp_path, monkeyp
     assert result["status"] == "complete"
     assert result["cached"] is True
     assert result["attempts"] == 0
+
+
+def test_book_reuses_explicit_size_only_with_explicit_manifest_provenance(tmp_path):
+    source = write_completed_book_artifact(tmp_path)
+    harness = JapaneseBookHarness(book_harness_args(tmp_path))
+    run_id = "book/chapter_01-n5"
+    assert harness.completed_run(source, "n5", run_id, 350) is None
+    manifest_path = tmp_path / "runs" / run_id / "manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    manifest["fixed_size_requested"] = True
+    manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+    assert harness.completed_run(source, "n5", run_id, 350)["status"] == "complete"
 
 
 @pytest.mark.asyncio

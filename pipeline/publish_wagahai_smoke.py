@@ -152,8 +152,7 @@ def publish_smoke(
         for level in levels
     }
     lengths = [chapters[level]["characters"] for level in levels]
-    if lengths != sorted(lengths) or len(lengths) != len(set(lengths)):
-        raise PublicationError("N5-through-N1 lengths must increase strictly")
+    lengths_increase = lengths == sorted(lengths) and len(lengths) == len(set(lengths))
 
     metadata = {
         "id": "wagahai",
@@ -234,8 +233,11 @@ def publish_smoke(
             "source_grounded_reviews_passed": True,
             "annotations_reconstruct_text": True,
             "annotations_reviewed": True,
-            "lengths_increase_n5_to_n1": True,
             "legacy_japanese_content_excluded": True,
+        },
+        "length_order_observation": {
+            "lengths_increase_n5_to_n1": lengths_increase,
+            "characters_by_level": dict(zip(levels, lengths)),
         },
     }
     _atomic_text(

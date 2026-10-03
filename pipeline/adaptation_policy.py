@@ -14,9 +14,6 @@ class AdaptationPolicy:
     continuity: str
     audit_source_omissions: bool
     max_above_level_ratio: float
-    source_retention_ratio: float
-    min_target_chars: int
-    max_target_chars: int
     min_target_band_unique: int
 
 
@@ -27,7 +24,7 @@ _POLICIES = {
         "Use very short sentences and overwhelmingly HSK1 words and characters. Keep only indispensable names; explain ideas with common concrete words.",
         "Preserve the broad outcome and do not contradict the story. Coverage of source events is not a goal.",
         "Judge only whether the simplified story makes sense from one adapted chapter to the next.",
-        False, 0.15, 0.10, 300, 450, 0,
+        False, 0.15, 0,
     ),
     "hsk2": AdaptationPolicy(
         "hsk2",
@@ -35,7 +32,7 @@ _POLICIES = {
         "Use short direct sentences and overwhelmingly HSK1-HSK2 language. Keep specialized historical vocabulary only when indispensable.",
         "Preserve major characters, outcomes, and basic causality; detailed correspondence with the source is not required.",
         "Judge the adapted narrative's own causal and character continuity, allowing large source omissions.",
-        False, 0.18, 0.20, 600, 900, 12,
+        False, 0.18, 12,
     ),
     "hsk3": AdaptationPolicy(
         "hsk3",
@@ -43,7 +40,7 @@ _POLICIES = {
         "Use clear modern Chinese centered on HSK1-HSK3 language. Paraphrase literary, military, bureaucratic, and historical terminology.",
         "Preserve the broad arc, major outcomes, identities, and motivations; exhaustive event coverage is not required.",
         "Judge internal narrative continuity first; source details matter only when the adaptation explicitly uses them.",
-        False, 0.20, 0.40, 1200, 1800, 16,
+        False, 0.20, 16,
     ),
     "hsk4": AdaptationPolicy(
         "hsk4",
@@ -51,7 +48,7 @@ _POLICIES = {
         "Use natural modern HSK4-centered Chinese; limit specialized terms to those needed by the story.",
         "Preserve major events and outcomes, but allow substantial compression.",
         "Check both internal continuity and major source-grounded handoffs.",
-        True, 0.25, 0.85, 520, 7000, 20,
+        True, 0.25, 20,
     ),
     "hsk5": AdaptationPolicy(
         "hsk5",
@@ -59,7 +56,7 @@ _POLICIES = {
         "Use natural modern HSK5-centered Chinese with selective historical vocabulary.",
         "Remain close to consequential source content while allowing abridgment.",
         "Check internal continuity and consequential source-grounded handoffs.",
-        True, 0.25, 0.95, 680, 9000, 24,
+        True, 0.25, 24,
     ),
     "hsk6": AdaptationPolicy(
         "hsk6",
@@ -67,7 +64,7 @@ _POLICIES = {
         "Use rich natural modern Chinese suitable for HSK6 readers.",
         "Remain substantially faithful to events, motivations, identities, and chronology.",
         "Check internal continuity and detailed source-grounded handoffs.",
-        True, 0.30, 1.00, 820, 12000, 28,
+        True, 0.30, 28,
     ),
 }
 
@@ -79,20 +76,8 @@ def policy_for(level: str) -> AdaptationPolicy:
         raise ValueError(f"unsupported adaptation level: {level}") from exc
 
 
-def target_chars_for_source_length(source_cjk: int, level: str) -> int:
-    """Return the nonlinear abridgment target for one source chapter."""
-    if source_cjk < 1:
-        raise ValueError("source chapter must contain Chinese characters")
-    policy = policy_for(level)
-    desired = max(
-        policy.min_target_chars,
-        round(source_cjk * policy.source_retention_ratio),
-    )
-    return min(source_cjk, policy.max_target_chars, desired)
-
-
 def target_length_bounds(target: int, level: str) -> tuple[int, int]:
-    """Allow natural variation while keeping source-relative growth real."""
+    """Bounds for an explicitly user-requested fixed size."""
     if target < 1:
         raise ValueError("target must be positive")
     lower_ratio, upper_ratio = (

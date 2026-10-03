@@ -79,7 +79,7 @@ def test_chapter_one_publisher_requires_and_writes_all_jlpt_levels(
     report = publisher.publish_smoke(run_parent, source_dir, content_dir)
 
     assert tuple(report["levels"]) == ("n5", "n4", "n3", "n2", "n1")
-    assert report["invariants"]["lengths_increase_n5_to_n1"] is True
+    assert report["length_order_observation"]["lengths_increase_n5_to_n1"] is True
     for level in publisher.LEVELS:
         assert (content_dir / f"{level}.md").is_file()
         assert (content_dir / f"{level}.annotations.json").is_file()

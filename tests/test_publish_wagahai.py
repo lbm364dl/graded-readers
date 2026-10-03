@@ -115,10 +115,10 @@ def test_rejects_missing_run(tmp_path):
         audit_runs([runs], sources, ["n5", "n4"], expected_chapters=2)
 
 
-def test_rejects_non_increasing_chapter(tmp_path):
+def test_reports_non_increasing_chapter_as_diagnostic_only(tmp_path):
     sources, runs = _fixture(tmp_path, lengths=(3, 2))
-    with pytest.raises(PublicationError, match="strictly increasing length"):
-        audit_runs([runs], sources, ["n5", "n4"], expected_chapters=2)
+    report = audit_runs([runs], sources, ["n5", "n4"], expected_chapters=2)
+    assert report["length_order_observation"]["strictly_increasing_per_chapter_and_total"] is False
 
 
 def test_rejects_provenance_hash_mismatch(tmp_path):

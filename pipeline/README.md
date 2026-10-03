@@ -714,8 +714,9 @@ Chinese and source fidelity; above-level literary vocabulary is expected to be
 made accessible through exhaustive annotations.
 
 The Japanese publisher follows the same pragmatic policy. Publication requires
-the complete 11 chapter × N5–N1 matrix, with strictly increasing length for
-every chapter and the whole book. Passing reviews may not retain unresolved
+the complete 11 chapter × N5–N1 matrix. Length order is recorded for review but
+does not gate acceptance; natural stopping points may make a higher-level
+retelling shorter. Passing reviews may not retain unresolved
 material additions, distortions, or language defects. JLPT vocabulary coverage
 is recorded as a diagnostic only; particles, auxiliaries, names, and a small
 story-term allowlist are excluded, and no blanket percentage rejects otherwise
@@ -869,8 +870,8 @@ Run directories are named `chapter_01-n5` through `chapter_11-n1`. The gate
 verifies the source manifest and every chapter SHA-256, accepted generation,
 every scene review and the final whole-chapter review, exact canonical
 `surface` segment reconstruction, offset-based grammar-overlay spans, annotation
-review status, and strictly increasing Japanese-script length for every chapter
-and whole level from N5 through N1. It retains optional grammar overlays and
+review status. Length order appears in the diagnostic report and does not gate
+publication. It retains optional grammar overlays and
 writes `nN_wagahai.md`, `nN_wagahai_annotations.json`, and
 `publication-audit.json` under `output/japanese/wagahai`. Use `--audit-only` to
 check readiness without writing, or add `--allow-missing-annotations` to that
@@ -895,13 +896,11 @@ python3 -m pipeline.agent_harness book \
 Each chapter-level combination keeps the same fingerprinted job cache as a
 single run. A process restart or chapter retry therefore reuses valid work and
 executes only missing or failed jobs. `book-report.json` is rewritten after
-each chapter completes, records isolated failures, and refuses a `complete`
-status unless every chapter passes and each source's CJK length increases
-strictly across the requested levels. A violation automatically re-runs only
-the deficient upper-level chapter with a raised target (bounded by
-`--length-repair-rounds`). Default targets are 220, 300, 500, 750,
-1050, and 1450 CJK characters for HSK1 through HSK6; override one-off runs with
-`--target-chars`. Scene review, scoped repair, fresh-rewrite escalation, and
+each chapter completes and records isolated failures. Each level chooses a
+natural length from retained source coverage, learner level, coherence, and a
+reviewer rationale; a shorter higher level is allowed when those checks support
+it. Use `--target-chars` only when the user explicitly requests a fixed size;
+that mode applies the corresponding numeric bounds. Scene review, scoped repair, fresh-rewrite escalation, and
 exact annotation reconstruction remain mandatory inside every chapter. Use
 `--chapter-retries` to control automatic recovery from transient failures.
 

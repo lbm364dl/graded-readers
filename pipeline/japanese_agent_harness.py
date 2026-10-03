@@ -67,10 +67,6 @@ def japanese_semantic_repair_grammar_knowledge(registry: dict[str, Any] | None =
     }
 
 
-# Per source chapter. The strict increase is both prompted and audited.
-DEFAULT_JLPT_TARGETS = {
-    "n5": 350, "n4": 700, "n3": 1600, "n2": 6550, "n1": 9550,
-}
 JLPT_LEVELS = ["n5", "n4", "n3", "n2", "n1"]
 JAPANESE_ANNOTATION_CHUNK_POLICY = (
     "sentence-safe-v29-connected-manner-connective-evidential-forms"
@@ -85,13 +81,6 @@ JAPANESE_ANNOTATION_CHUNK_TARGETS = {
 }
 JAPANESE_ANNOTATION_CHUNK_MAXIMUMS = {
     "n5": 45, "n4": 60, "n3": 100, "n2": 125, "n1": 145,
-}
-CHAPTER_TARGETS = {
-    "n5": [350, 400, 375, 325, 325, 325, 350, 375, 350, 375, 400],
-    "n4": [700, 800, 750, 625, 625, 650, 675, 700, 675, 750, 825],
-    "n3": [1600, 1800, 1700, 1400, 1400, 1450, 1500, 1600, 1550, 1700, 1900],
-    "n2": [4800, 7700, 7100, 5950, 5950, 6100, 6300, 6550, 6400, 7100, 8050],
-    "n1": [6950, 11200, 10350, 8700, 8650, 8900, 9150, 9550, 9350, 10350, 11850],
 }
 
 JLPT_ADAPTATION_SCOPE = {
@@ -158,12 +147,6 @@ def jlpt_narrative_guidance(level: str) -> str:
         "subjects whose action becomes ambiguous after simplification."
     )
 
-JLPT_EVENT_BUDGET = {
-    "n5": (2, 3), "n4": (4, 6), "n3": (8, 12),
-    "n2": (14, 22), "n1": (20, 32),
-}
-JLPT_SELECTED_SCENE_LIMIT = {"n5": 2, "n4": 4, "n3": 6, "n2": 8, "n1": 10}
-JLPT_EVENTS_PER_SCENE = {"n5": 2, "n4": 2, "n3": 3, "n2": 4, "n1": 5}
 JLPT_MAX_SENTENCE_CHARS = {"n5": 30, "n4": 48, "n3": 72, "n2": 100, "n1": 140}
 
 
@@ -874,13 +857,6 @@ def apply_reader_useful_annotation_review_policy(
     value["issues"] = blocking
     value["verdict"] = "revise" if blocking else "pass"
     return value
-
-
-def target_for_source(source: str | Path, level: str) -> int:
-    match = re.fullmatch(r"chapter_(\d{2})", Path(source).stem)
-    if match and 1 <= int(match.group(1)) <= 11:
-        return CHAPTER_TARGETS[level][int(match.group(1)) - 1]
-    return DEFAULT_JLPT_TARGETS[level]
 
 
 def japanese_char_count(text: str) -> int:
@@ -3024,20 +3000,16 @@ class JapaneseChapterHarness(ChapterHarness):
     """Japanese prompt specialization; orchestration and healing stay shared."""
 
     @property
-    def target_chars(self) -> int:
-        return self.args.target_chars or target_for_source(self.source_path, self.args.level)
+    def target_chars(self) -> int | None:
+        return getattr(self.args, "target_chars", None)
+
+    @property
+    def fixed_size_requested(self) -> bool:
+        return self.target_chars is not None
 
     @property
     def scene_count(self) -> int:
-        output_units = (self.target_chars + 1799) // 1800
-        # Long originals need enough independent event ledgers even at N5,
-        # where output length alone would otherwise collapse 45k source
-        # characters into one or two scenes.
-        # A long original is deliberately processed as several compact source
-        # units even when the beginner adaptation is short. This makes missed
-        # events and morphology easier to diagnose and repair locally.
-        source_units = (len(self.source) + 2499) // 2500
-        return max(1, min(10, max(output_units, source_units)))
+        return max(1, len(getattr(self, "active_scenes", [])))
 
     def scene_length_bounds(self, target: int) -> tuple[int, int]:
         # Selective lower-level ledgers make balanced source spans possible;
@@ -3045,11 +3017,15 @@ class JapaneseChapterHarness(ChapterHarness):
         # an unnaturally identical size.  The assembled chapter has its own
         # stricter level-specific gate, so a dense closing scene may be somewhat
         # longer while shorter neighbouring scenes compensate for it.
+        if not self.fixed_size_requested:
+            return (0, 0)
         upper_ratio = 1.30 if self.args.level == "n5" else 1.50
         return int(target * 0.70), int(target * upper_ratio)
 
     def chapter_length_bounds(self) -> tuple[int, int]:
-        """Use the same compact beginner bands as the Chinese editions."""
+        """Return hard bounds only for an explicit user-requested size."""
+        if not self.fixed_size_requested:
+            return (0, 0)
         lower_ratio, upper_ratio = (
             (0.70, 1.17) if self.args.level == "n5" else (0.85, 1.15)
         )
@@ -3129,10 +3105,6 @@ class JapaneseChapterHarness(ChapterHarness):
         scenes = outline.get("scenes")
         if not isinstance(scenes, list) or not scenes:
             raise ValueError("Japanese scene outline has no scenes")
-        if len(scenes) != self.scene_count:
-            raise ValueError(
-                f"outline returned {len(scenes)} scenes; expected {self.scene_count}"
-            )
         starts, search_from = [], 0
         for index, scene in enumerate(scenes, 1):
             scene["id"] = f"scene_{index:02d}"
@@ -3150,42 +3122,40 @@ class JapaneseChapterHarness(ChapterHarness):
             scene["source_end"] = (
                 starts[index + 1] if index + 1 < len(starts) else len(self.source)
             )
+        self.active_scenes = list(scenes)
         return outline
 
     def finalize_outline(self, outline: dict[str, Any]) -> dict[str, Any]:
-        """Bind source spans and enforce the level-specific selective ledger."""
+        """Bind exact source spans and allocate only an explicitly requested size."""
         outline = self.bind_outline_source(outline)
         scenes = outline["scenes"]
         selected = [scene for scene in scenes if scene.get("required_events")]
-        event_count = sum(len(scene["required_events"]) for scene in selected)
-        minimum_events, maximum_events = JLPT_EVENT_BUDGET[self.args.level]
-        if not minimum_events <= event_count <= maximum_events:
-            raise ValueError(
-                f"outline retained {event_count} events; expected "
-                f"{minimum_events}-{maximum_events} chapter-wide"
-            )
-        scene_limit = JLPT_SELECTED_SCENE_LIMIT[self.args.level]
-        if len(selected) > scene_limit:
-            raise ValueError(
-                f"outline retained {len(selected)} source scenes; maximum is {scene_limit}"
-            )
-        if any(
-            len(scene["required_events"]) > JLPT_EVENTS_PER_SCENE[self.args.level]
-            for scene in selected
-        ):
-            raise ValueError("outline exceeded the per-selected-scene event limit")
-        # Length follows retained narrative weight, not the number of source
-        # containers. Equal per-scene allocation made a one-event scene pad
-        # itself with optional objects while starving a two-event causal scene.
-        base, remainder = divmod(self.target_chars, event_count)
+        if not selected:
+            raise ValueError("outline must retain source material for a coherent adaptation")
+        weights = [len(scene["required_events"]) for scene in selected]
+        if not any(weights):
+            weights = [max(1, scene["source_end"] - scene["source_start"]) for scene in scenes]
+        total_weight = sum(weights)
+        assigned = 0
+        target_index = 0
         for scene in scenes:
-            if scene.get("required_events"):
-                units = len(scene["required_events"])
-                extra = min(units, remainder)
-                scene["target_chars"] = base * units + extra
-                remainder -= extra
+            scene["target_chars"] = 0
+            if not self.fixed_size_requested or not scene.get("required_events"):
+                continue
+            weight = weights[target_index]
+            target_index += 1
+            if target_index == len(weights):
+                target = self.target_chars - assigned
             else:
-                scene["target_chars"] = 0
+                target = round(self.target_chars * weight / total_weight)
+                assigned += target
+            scene["target_chars"] = target
+        outline.setdefault(
+            "length_reason_en",
+            "The source map sets the retained scene coverage; prose review will assess the natural length, level suitability, and stopping point.",
+        )
+        if not str(outline.get("length_reason_en", "")).strip():
+            raise ValueError("outline must explain retained source coverage and its length decision")
         return outline
 
     @staticmethod
@@ -3201,7 +3171,6 @@ class JapaneseChapterHarness(ChapterHarness):
             "source_text": self.source[scene["source_start"]:scene["source_end"]],
             "required_events": scene["required_events"],
         } for scene in outline["scenes"]]
-        minimum_events, maximum_events = JLPT_EVENT_BUDGET[self.args.level]
         prompt = f"""Return only JSON matching the supplied schema. Audit this
 Japanese source scene map before adaptation. Every required event assigned to a
 scene must be explicitly supported inside that scene's SOURCE_TEXT, not earlier
@@ -3211,12 +3180,12 @@ intentionally selective under this {self.args.level.upper()} editorial scope:
 {JLPT_ADAPTATION_SCOPE[self.args.level]}
 Do not demand omitted source details or exhaustive coverage. Identify only
 events assigned outside their source span, wrong order, duplicate coverage, or
-a selective ledger that no longer forms a coherent chapter arc. Pass only if
+a retained selection that no longer forms a coherent chapter arc. Pass only if
 every retained event belongs to its exact span. Empty required_events means the
-source span is intentionally omitted and is valid. The complete chapter ledger
-must retain {minimum_events}-{maximum_events} events across no more than
-{JLPT_SELECTED_SCENE_LIMIT[self.args.level]} source scenes; do not demand an
-event from every source scene.
+source span is intentionally omitted and is valid. Assess the selection against
+the planned length rationale in the outline: it should preserve meaningful
+coverage that can be expressed naturally at this learner level and stop at a
+coherent point. Do not apply event-count, selected-scene-count, or length quotas.
 Check concrete nouns and locations literally: a nearby synonym that changes a
 source fact (for example 笹原 into 草原) is a distortion, not simplification.
 
@@ -3246,6 +3215,7 @@ SCENE SPANS:
         for index, scene in enumerate(outline["scenes"]):
             scene["required_events"] = selected[index]["required_events"]
             scene["target_chars"] = 0
+        outline["length_reason_en"] = str(ledger.get("length_reason_en", "")).strip()
         return self.finalize_outline(outline)
 
     async def outline_from_source_map(self, path: Path) -> dict[str, Any]:
@@ -3260,15 +3230,13 @@ SCENE SPANS:
             "id": scene["id"], "title": scene["title"],
             "source_text": self.source[scene["source_start"]:scene["source_end"]],
         } for scene in bound["scenes"]]
-        minimum_events, maximum_events = JLPT_EVENT_BUDGET[self.args.level]
         base_prompt = f"""Return only JSON matching the supplied schema. The
 SOURCE MAP below is fixed and already grounded in the original chapter. Return
-every scene ID exactly once in the same order. Select only
-{minimum_events}-{maximum_events} chapter-wide REQUIRED EVENTS across no more
-than {JLPT_SELECTED_SCENE_LIMIT[self.args.level]} scenes and no more than
-{JLPT_EVENTS_PER_SCENE[self.args.level]} events in any selected scene. Use an
-empty array for every omitted source span. The result is a selective story
-spine, not an episode inventory. Apply this editorial scope:
+every scene ID exactly once in the same order. Use required_events to record
+source-grounded coverage needed for a coherent learner-level retelling, and an
+empty array for source spans that should be omitted. Do not apply an event or
+scene count. Explain selected coverage, omissions, level tradeoffs, and natural
+stopping point in length_reason_en. Apply this editorial scope:
 {JLPT_ADAPTATION_SCOPE[self.args.level]}
 
 Every event must be explicitly supported inside its own source_text. Preserve
@@ -3344,26 +3312,22 @@ SOURCE MAP:
         )
         if source_map_path.is_file():
             return await self.outline_from_source_map(source_map_path)
-        minimum_events, maximum_events = JLPT_EVENT_BUDGET[self.args.level]
         prompt = f"""Return only JSON matching the supplied schema.
-Read the complete verbatim ORIGINAL Japanese chapter and divide it into exactly
-{self.scene_count} consecutive adaptation scene(s). Each source_start_quote
+Read the complete verbatim ORIGINAL Japanese chapter and divide it into as many
+consecutive source scenes as needed for clear source ownership. Each source_start_quote
 must be an exact, unique substring at the start of a natural paragraph or
-episode. These are SOURCE-MAP spans, not output quotas. Use an empty
-required_events array for spans that the graded retelling should omit. Across
-the whole chapter select only {minimum_events}-{maximum_events} events in no
-more than {JLPT_SELECTED_SCENE_LIMIT[self.args.level]} source spans, with at
-most {JLPT_EVENTS_PER_SCENE[self.args.level]} events in a selected span, under this
-level-specific editorial scope:
+episode. These are source-ownership spans. Use an empty required_events array
+for spans that need not appear in the retelling. Select coherent source coverage
+that is natural at the learner level, and explain retained coverage, omissions,
+level tradeoffs, and natural stopping point in length_reason_en. Do not set
+event-count, scene-count, or numeric length quotas. Apply this editorial scope:
 {JLPT_ADAPTATION_SCOPE[self.args.level]}
 Across the few retained events, keep a coherent beginning, development, and ending.
 Do not add a token event to every scene: especially at N5 and N4, most source
 material is intentionally absent from the adaptation.
-Crucially, assign an event only to the scene whose source begins at this quote
-and ends at the next scene's quote; never put an earlier episode into a later
-scene. Keep source spans reasonably balanced while respecting episode
-boundaries. The target_chars values must sum to about {self.target_chars}
-Japanese characters.
+Assign an event only to the scene whose source begins at this quote and ends at
+the next scene's quote; never put an earlier episode into a later scene. Respect
+episode boundaries. {f'The user explicitly requested {self.target_chars} Japanese characters; distribute optional scene target metadata accordingly.' if self.fixed_size_requested else 'Set target_chars to 0; no output size is prescribed.'}
 
 ORIGINAL:\n{self.source}"""
         outline = await self.runner.call(
@@ -3387,8 +3351,8 @@ ORIGINAL:\n{self.source}"""
                     + "\n\nThe proposed outline failed exact deterministic boundary "
                       "resolution. Return the complete corrected outline. Copy "
                       "every source_start_quote verbatim from ORIGINAL, keep it "
-                      "short and unique, preserve source order, and retain the "
-                      "selective event budget.\n\nERROR:\n"
+                      "short and unique, preserve source order, and retain "
+                      "coherent learner-level coverage.\n\nERROR:\n"
                     + str(exc)
                     + "\n\nINVALID OUTLINE:\n"
                     + json.dumps(outline, ensure_ascii=False, indent=2),
@@ -3409,11 +3373,10 @@ ORIGINAL:\n{self.source}"""
             repair_prompt = f"""Return only JSON matching the supplied schema.
 Repair the Japanese scene outline according to REVIEW. Every
 source_start_quote must remain an exact unique substring at a paragraph or
-episode boundary in ORIGINAL. Return exactly {self.scene_count} scenes in
-source order. Empty required_events is the normal representation of an omitted
-source span. Retain only {minimum_events}-{maximum_events} chapter-wide events
-across no more than {JLPT_SELECTED_SCENE_LIMIT[self.args.level]} spans and no
-more than {JLPT_EVENTS_PER_SCENE[self.args.level]} events per selected span.
+episode boundary in ORIGINAL. Return source spans in order. Empty required_events
+is the normal representation of an omitted source span. Do not apply event-count
+or scene-count quotas. Update length_reason_en to explain coverage, level
+tradeoffs, omissions, and natural stopping point.
 Apply this selective editorial scope:
 {JLPT_ADAPTATION_SCOPE[self.args.level]}
 Ensure every retained event is supported between its scene quote and the next
@@ -3467,6 +3430,11 @@ ORIGINAL:
         orthography = jlpt_orthography_guidance(self.args.level)
         narrative = jlpt_narrative_guidance(self.args.level)
         low, high = self.scene_length_bounds(scene["target_chars"])
+        size_guidance = (
+            f"The user explicitly requested this scene size; keep the text within {low}-{high} Japanese letters if natural and source-faithful."
+            if self.fixed_size_requested else
+            "Choose a natural length from retained source meaning, learner level, and a coherent scene boundary. Do not pad or compress to meet a character count."
+        )
         prompt = f"""Return only JSON matching the supplied schema, putting the
 adapted scene in `text`. Rewrite VERBATIM ORIGINAL as natural, engaging modern
 Japanese for an annotated {self.args.level.upper()} literary reader. Keep core
@@ -3477,12 +3445,11 @@ vocabulary below. Prefer a clear level word or short paraphrase whenever it can
 express the same fact. Above-level vocabulary is limited to proper names and a
 few indispensable, recurring literary/cultural/story terms; annotation is not
 permission to fill each sentence with exceptions. Preserve essential events,
-causes, motivations, names, numbers, tone, and order. Intentional compression
-is expected. Do not invent facts or translate into another language. Use normal
-Japanese orthography. Preserve the source narrator's chosen first-person form;
-do not silently replace it with 私 or 僕. Do not pad with optional source details
-merely to approach the target. The mechanical length requirement is {low}-{high}
-Japanese letters; do not exceed it.
+causes, motivations, names, numbers, tone, and order. Compression is expected
+when it preserves selected coverage. Do not invent facts or translate into
+another language. Use normal Japanese orthography. Preserve the source
+narrator's chosen first-person form; do not silently replace it with 私 or 僕.
+{size_guidance}
 
 ORTHOGRAPHY POLICY:
 {orthography}
@@ -3516,10 +3483,16 @@ REQUIRED EVENTS:\n{events}\n\nVERBATIM ORIGINAL:\n{original}"""
             f"- {event}" for event in scene.get("required_events", [])
         )
         upper_percent = 130 if self.args.level == "n5" else 150
+        low, high = self.scene_length_bounds(scene["target_chars"])
+        size_guidance = (
+            f"The user explicitly requested {scene['target_chars']} Japanese characters for this scene (review range {low}-{high}). Explain in length_reason_en how it fits source coverage and level suitability."
+            if self.fixed_size_requested else
+            "Assess whether length reflects meaningful source coverage, learner level, and a coherent stopping point. Explain in length_reason_en what is retained or omitted and why this amount is suitable. Do not request padding or needless compression to meet a count."
+        )
         prompt = f"""Return only JSON matching the supplied schema. Independently
-compare ADAPTATION with VERBATIM ORIGINAL. This is a compact {self.args.level.upper()}
-Japanese graded reader, so condensation and paraphrase are intended. Target
-{scene['target_chars']} Japanese characters, roughly 70%-{upper_percent}%. Identify only
+compare ADAPTATION with VERBATIM ORIGINAL. This is a {self.args.level.upper()}
+Japanese graded reader, so judge condensation by source meaning and learner suitability.
+{size_guidance} Identify only
 material omissions, unsupported additions, factual or causal distortions,
 unnatural Japanese, and language clearly unsuitable for the requested level.
 Only REQUIRED EVENTS are mandated. Under this editorial scope, do not report
@@ -3557,14 +3530,15 @@ VERBATIM ORIGINAL:\n{original}\n\nADAPTATION:\n{adaptation}"""
             f"{scene['id']}/{suffix}", prompt, SCHEMAS / "source-review.schema.json",
             self.args.review_effort, refresh=self.args.refresh,
         )
+        if not str(result.get("length_reason_en", "")).strip():
+            raise ValueError("independent prose review must explain its length assessment")
         length = japanese_char_count(adaptation)
-        low, high = self.scene_length_bounds(scene["target_chars"])
-        in_range = low <= length <= high
-        if in_range:
+        in_range = not self.fixed_size_requested or low <= length <= high
+        if self.fixed_size_requested and in_range:
             result = discard_incorrect_length_findings(result)
         result = apply_compact_review_policy(result)
         problems = []
-        if not in_range:
+        if self.fixed_size_requested and not in_range:
             problems.append(
             f"mechanical unit length gate: {length} Japanese letters, required {low}-{high}"
             )
@@ -3604,12 +3578,16 @@ VERBATIM ORIGINAL:\n{original}\n\nADAPTATION:\n{adaptation}"""
         vocabulary = vocabulary_prompt_reference(self.args.level)
         narrative = jlpt_narrative_guidance(self.args.level)
         low, high = self.scene_length_bounds(scene["target_chars"])
+        size_guidance = (
+            f"The explicit user request requires {low}-{high} Japanese letters if natural and source-faithful."
+            if self.fixed_size_requested else
+            "No numeric size is requested; retain meaningful source coverage naturally at this level and do not pad or compress to meet a count."
+        )
         prompt = f"""Return only JSON matching the supplied schema, with revised
 Japanese in `text`. Repair ADAPTATION according to the independent REVIEW and
 VERBATIM ORIGINAL. Change only what findings require. Preserve good prose,
 event order, compactness, and {self.args.level.upper()}-readable core language.
-Correct distortions and unnatural Japanese without inventing facts. The result
-must contain {low}-{high} Japanese letters. Simplify ordinary vocabulary using
+Correct distortions and unnatural Japanese without inventing facts. {size_guidance} Simplify ordinary vocabulary using
 the cumulative working list; do not restore intentionally omitted source detail.
 
 WORKING {self.args.level.upper()}-AND-BELOW VOCABULARY:
@@ -3643,6 +3621,11 @@ VERBATIM ORIGINAL:\n{original}\n\nADAPTATION:\n{adaptation}\n\nREVIEW:\n{json.du
             }
             for scene in self.adaptation_scenes(outline)
         ]
+        size_guidance = (
+            f"The user explicitly requested {self.target_chars} Japanese characters for the chapter. Explain in length_reason_en whether that size still allows accurate, natural learner-level coverage."
+            if self.fixed_size_requested else
+            "Explain in length_reason_en whether the chapter's amount of narrative is justified by retained source coverage, learner level, and its stopping point. Identify meaningful compression or omissions if they harm coherence or level suitability; do not impose a numeric target."
+        )
         prompt = f"""Return only JSON matching the supplied schema. Perform a
 fresh whole-chapter audit of ADAPTATION against the complete VERBATIM ORIGINAL
 and REQUIRED EVENT LEDGER. Scene-level reviews have already run; focus on
@@ -3652,6 +3635,7 @@ assembly. Natural compression is expected, but every ledger event must remain
 recognizable. The ledger is intentionally selective under this scope; do not
 report unlisted source details as omissions:
 {JLPT_ADAPTATION_SCOPE[self.args.level]}
+{size_guidance}
 Set pass only when source_fidelity, naturalness, and readability
 are at least 8 and there are no material omissions or distortions.
 Finding arrays must contain problems only. Never place a successful check or
@@ -3681,10 +3665,12 @@ ADAPTATION:
             f"chapter/{stage}", prompt, SCHEMAS / "source-review.schema.json",
             self.args.review_effort, refresh=self.args.refresh,
         )
+        if not str(result.get("length_reason_en", "")).strip():
+            raise ValueError("independent chapter review must explain its length assessment")
         result = apply_compact_review_policy(result)
         count = japanese_char_count(chapter)
         low, high = self.chapter_length_bounds()
-        if not low <= count <= high:
+        if self.fixed_size_requested and not low <= count <= high:
             result = dict(result)
             result["verdict"] = "revise"
             result.setdefault("language_problems", []).append(
@@ -3719,17 +3705,7 @@ ADAPTATION:
                 f"mechanical beginner-prose gate: {problem}"
                 for problem in beginner_problems
             )
-        paragraph_problems = japanese_paragraph_structure_issues(
-            chapter, len(self.adaptation_scenes(outline))
-        )
-        if paragraph_problems:
-            result = dict(result)
-            result["verdict"] = "revise"
-            result.setdefault("language_problems", []).extend(
-                f"mechanical paragraph-structure gate: {problem}"
-                for problem in paragraph_problems
-            )
-        elif material_review_findings([result]):
+        if material_review_findings([result]):
             result = dict(result)
             result["verdict"] = "revise"
             result["harness_decision"] = "rejected_material_findings"
@@ -3752,14 +3728,18 @@ ADAPTATION:
         vocabulary = vocabulary_prompt_reference(self.args.level)
         narrative = jlpt_narrative_guidance(self.args.level)
         low, high = self.chapter_length_bounds()
+        size_guidance = (
+            f"Respect the explicit user-requested {low}-{high} Japanese character range when correcting REVIEW."
+            if self.fixed_size_requested else
+            "There is no numeric length target. Make only the review-required edits and preserve natural coverage and the coherent stopping point."
+        )
         prompt = f"""Return only JSON matching the supplied schema, with the
 complete corrected Japanese chapter in `text`. This is an ISSUE-SCOPED repair
 of an adaptation whose individual scenes already passed independent review.
 Fix every concrete finding in REVIEW, but preserve all other wording, paragraph
 order, transitions, and scene-reviewed text verbatim. Do not broadly rewrite,
 summarize, embellish, or add facts. Use VERBATIM ORIGINAL only to restore or
-correct what REVIEW identifies. Keep the {self.args.level.upper()} target and
-stay within the strict complete-chapter range of {low}-{high} Japanese characters.
+correct what REVIEW identifies. {size_guidance}
 
 WORKING {self.args.level.upper()}-AND-BELOW VOCABULARY:
 {vocabulary}
@@ -3839,6 +3819,11 @@ from the learner vocabulary merely to make the chapter more source-like."""
         vocabulary = vocabulary_prompt_reference(self.args.level)
         narrative = jlpt_narrative_guidance(self.args.level)
         low, high = self.chapter_length_bounds()
+        size_guidance = (
+            f"Respect the explicit user-requested chapter range of {low}-{high} Japanese letters."
+            if self.fixed_size_requested else
+            "Do not change total length to meet a number; preserve natural source coverage and the coherent stopping point while simplifying vocabulary."
+        )
         ledger = [
             {"scene": scene["id"], "required_events": scene["required_events"]}
             for scene in self.adaptation_scenes(outline)
@@ -3851,8 +3836,7 @@ ordinary words and any surrounding grammar needed for naturalness using the
 cumulative learner vocabulary. Keep every required event, identity, cause,
 order, narrator voice, and quotation meaning. Do not add source detail or pad.
 Recurring reviewed story terms may remain; the diagnostic already excluded
-them. Prefer short active sentences and familiar paraphrases. Stay within
-{low}-{high} Japanese letters.
+them. Prefer short active sentences and familiar paraphrases. {size_guidance}
 
 Preserve the existing blank-line paragraph boundaries exactly: each paragraph
 is one independently source-reviewed scene. Do not merge two scene paragraphs
@@ -3979,6 +3963,11 @@ CURRENT CHAPTER:
         orthography = jlpt_orthography_guidance(self.args.level)
         narrative = jlpt_narrative_guidance(self.args.level)
         low, high = self.scene_length_bounds(scene["target_chars"])
+        size_guidance = (
+            f"The user explicitly requested {low}-{high} Japanese letters for this scene."
+            if self.fixed_size_requested else
+            "Choose the amount of source-grounded narrative that fits the learner level and a coherent scene; do not pad or compress to meet a number."
+        )
         history = json.dumps(
             [{"text": item["text"], "review": item["review"]} for item in attempts],
             ensure_ascii=False, indent=2,
@@ -3988,8 +3977,8 @@ Japanese adaptation in `text`. Start again from VERBATIM ORIGINAL because prior
 attempts failed review; use their history only as traps to avoid. Write natural
 modern Japanese for an annotated {self.args.level.upper()} reader. Preserve all
 REQUIRED EVENTS and their order, but do not restore other intentionally omitted
-source details. Do not invent facts. The result must contain {low}-{high}
-Japanese letters and overwhelmingly use the cumulative working vocabulary.
+source details. Do not invent facts. {size_guidance} Overwhelmingly use the
+cumulative working vocabulary.
 
 ORTHOGRAPHY POLICY:
 {orthography}
@@ -4023,13 +4012,17 @@ VERBATIM ORIGINAL:\n{original}\n\nFAILED HISTORY:\n{history}"""
         original = self.source[scene["source_start"]:scene["source_end"]]
         vocabulary = vocabulary_prompt_reference(self.args.level)
         low, high = self.scene_length_bounds(scene["target_chars"])
+        size_guidance = (
+            f"Stay within the explicit requested range of {low}-{high} Japanese letters."
+            if self.fixed_size_requested else
+            "There is no numeric size requirement. Make only the required corrections while preserving natural source coverage and learner-level readability."
+        )
         prompt = f"""Return only JSON matching the supplied schema, with the
 complete corrected Japanese scene in `text`. The fresh source-grounded rewrite
 below has only the concrete issues listed by its independent REVIEW. Fix those
 issues only. Preserve every other word, event, and paragraph verbatim; do not
-rewrite or embellish. Stay within 70%-130% of {scene['target_chars']} Japanese
-characters and retain {self.args.level.upper()} readability. The mechanical
-requirement is {low}-{high} Japanese letters. Use the cumulative working list
+rewrite or embellish. {size_guidance} Retain {self.args.level.upper()} readability.
+Use the cumulative working list
 for ordinary vocabulary and do not restore intentionally omitted source detail.
 
 WORKING {self.args.level.upper()}-AND-BELOW VOCABULARY:
@@ -4101,10 +4094,15 @@ OVERLONG CANDIDATE:
         original = self.source[scene["source_start"]:scene["source_end"]]
         vocabulary = vocabulary_prompt_reference(self.args.level)
         low, high = self.scene_length_bounds(scene["target_chars"])
+        size_guidance = (
+            f"Write {low}-{high} Japanese letters for the explicit user request."
+            if self.fixed_size_requested else
+            "Use only changes needed to resolve review findings, keeping natural source coverage; no numeric length target applies."
+        )
         traps = self.prior_review_traps(attempts)
         prompt = f"""Return only JSON matching the supplied schema. Write a new,
-plain {self.args.level.upper()} scene of {low}-{high} Japanese letters from the
-REQUIRED EVENTS. The previous drafts repeatedly failed on optional details.
+natural {self.args.level.upper()} scene from the REQUIRED EVENTS. {size_guidance}
+The previous drafts repeatedly failed on optional details.
 Do not preserve their wording. Omit every quotation, literary turn of phrase,
 exact object, description, example, or secondary fact not necessary to state
 the ledger. Keep only source-supported facts needed for a coherent connection
@@ -4139,13 +4137,17 @@ VERBATIM ORIGINAL:
         original = self.source[scene["source_start"]:scene["source_end"]]
         vocabulary = vocabulary_prompt_reference(self.args.level)
         low, high = self.scene_length_bounds(scene["target_chars"])
+        size_guidance = (
+            f"Keep the result within {low}-{high} Japanese letters for the explicit user request."
+            if self.fixed_size_requested else
+            "There is no numeric length target. Preserve natural source coverage and correct only the review findings."
+        )
         prompt = f"""Return only JSON matching the supplied schema. Correct the
 complete LEDGER RETELLING according to every concrete REVIEW finding. Preserve
 all unaffected simple sentences. Do not restore optional source episodes,
 quotations, objects, or descriptions. Keep causality, speakers, and subjects
-exactly source-grounded and retain every REQUIRED EVENT. The complete result
-must contain {low}-{high} Japanese letters and overwhelmingly use the working
-vocabulary.
+exactly source-grounded and retain every REQUIRED EVENT. {size_guidance}
+Overwhelmingly use the working vocabulary.
 
 WORKING VOCABULARY:
 {vocabulary}
@@ -4206,6 +4208,8 @@ REVIEW:
                 break
         low, high = self.scene_length_bounds(scene["target_chars"])
         if (
+            self.fixed_size_requested
+            and
             result["review"]["verdict"] != "pass"
             and not low <= japanese_char_count(result["text"]) <= high
         ):
@@ -4257,7 +4261,12 @@ REVIEW:
                     "review": review,
                 })
         if result["review"]["verdict"] != "pass":
-            best = best_scene_attempt(result["attempts"], low, high)
+            if self.fixed_size_requested:
+                best = best_scene_attempt(result["attempts"], low, high)
+            else:
+                best = next((item for item in reversed(result["attempts"])
+                             if item["review"].get("verdict") == "pass"),
+                            result["attempts"][-1])
             result["text"], result["review"] = best["text"], best["review"]
         result["resolved"] = result["review"]["verdict"] == "pass"
         scene_path = self.run_dir / "scenes" / f"{scene['id']}.json"
@@ -4283,7 +4292,7 @@ REVIEW:
         ):
             return None
         low, high = self.scene_length_bounds(scene["target_chars"])
-        if not low <= japanese_char_count(str(result.get("text", ""))) <= high:
+        if self.fixed_size_requested and not low <= japanese_char_count(str(result.get("text", ""))) <= high:
             return None
         destination = self.run_dir / "scenes" / f"{scene['id']}.json"
         destination.parent.mkdir(parents=True, exist_ok=True)
@@ -7319,6 +7328,11 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
         original = self.source[scene["source_start"]:scene["source_end"]]
         vocabulary = vocabulary_prompt_reference(self.args.level)
         low, high = self.scene_length_bounds(scene["target_chars"])
+        size_guidance = (
+            f"Keep {low}-{high} Japanese letters."
+            if self.fixed_size_requested else
+            "Preserve the source-coverage decision and stop naturally; there is no numeric length target."
+        )
         planned = getattr(self, "story_vocabulary_plan", {"terms": []})["terms"]
         repair_instruction = (
             "\nThis is an issue-scoped repair. Change only the concrete PRIOR "
@@ -7337,8 +7351,8 @@ descriptions, or generic wording. Once that minimum is safely met, preserve
 useful source-specific vocabulary rather than flattening every item in the
 diagnostic list. A reviewed story term or proper name may remain. Do not swap
 one unlisted synonym for another. Aim below 10% exceptional content words to
-leave a safety margin under publication.
-Keep {low}-{high} Japanese letters. Return the complete scene, not a patch.
+leave a safety margin under publication. {size_guidance} Return the complete
+scene, not a patch.
 {repair_instruction}
 
 WORKING VOCABULARY:
@@ -7392,7 +7406,9 @@ PRIOR REVIEW FINDINGS:
         length = japanese_char_count(text)
         soft_low = int(scene["target_chars"] * 0.65)
         _, high = self.scene_length_bounds(scene["target_chars"])
-        if not substantive and soft_low <= length <= high:
+        if not substantive and (
+            not self.fixed_size_requested or soft_low <= length <= high
+        ):
             value["language_problems"] = problems
             value["verdict"] = "pass"
             value["harness_decision"] = (
@@ -7653,7 +7669,7 @@ PRIOR REVIEW FINDINGS:
 
 class JapaneseBookHarness(BookHarness):
     def completed_run(
-        self, source_path: Path, level: str, run_id: str, target_chars: int
+        self, source_path: Path, level: str, run_id: str, target_chars: int | None
     ) -> dict[str, Any] | None:
         """Return a verified completed run, otherwise require a real rerun."""
         run_dir = Path(self.args.runs_dir).resolve() / run_id
@@ -7672,7 +7688,17 @@ class JapaneseBookHarness(BookHarness):
             return None
         if manifest.get("source") != str(source_path):
             return None
-        if manifest.get("level") != level or manifest.get("target_chars") != target_chars:
+        if manifest.get("level") != level:
+            return None
+        recorded_target = manifest.get("target_chars")
+        recorded_fixed = manifest.get("fixed_size_requested")
+        if target_chars is None:
+            # Older completed pilots stored a default target as if it were a
+            # user request. Reuse them unless the manifest explicitly records
+            # that a fixed size was requested.
+            if recorded_fixed is True:
+                return None
+        elif recorded_target != target_chars or recorded_fixed is not True:
             return None
         if not self.args.skip_annotations and not reader_path.is_file():
             return None
@@ -7692,7 +7718,9 @@ class JapaneseBookHarness(BookHarness):
         chapter_args = copy.copy(self.args)
         chapter_args.command, chapter_args.source = "run", str(source_path)
         chapter_args.level, chapter_args.run_id = level, run_id
-        chapter_args.target_chars = target_chars or self.args.target_chars or target_for_source(source_path, level)
+        chapter_args.target_chars = (
+            target_chars if target_chars is not None else self.args.target_chars
+        )
         completed = self.completed_run(source_path, level, run_id, chapter_args.target_chars)
         if completed is not None:
             return completed
@@ -7737,20 +7765,6 @@ class JapaneseBookHarness(BookHarness):
         for task in asyncio.as_completed(tasks):
             results.append(await task)
             self.write_report("running", results)
-        for _ in range(self.args.length_repair_rounds):
-            violations = length_violations(results, self.args.levels)
-            if not violations:
-                break
-            for problem in violations:
-                current = next(x for x in results if (x["source"], x["level"]) == (problem["source"], problem["upper_level"]))
-                target = max(
-                    target_for_source(problem["source"], problem["upper_level"]),
-                    problem["lower_cjk"] + max(100, problem["lower_cjk"] // 10),
-                    int(current.get("target_chars", 0) * 1.25),
-                )
-                replacement = await self.run_one(problem["source"], problem["upper_level"], target)
-                results = [replacement if (x["source"], x["level"]) == (problem["source"], problem["upper_level"]) else x for x in results]
-                self.write_report("running", results)
         violations = length_violations(results, self.args.levels)
         final = "complete" if {x["status"] for x in results} == {"complete"} and not violations else "blocked"
         self.write_report(final, results, violations)

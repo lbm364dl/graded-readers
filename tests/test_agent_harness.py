@@ -11,7 +11,6 @@ from pipeline.agent_harness import (
     ChapterHarness,
     DEFAULT_CHINESE_ANNOTATION_CHUNK_MAXIMUM,
     DEFAULT_CHINESE_ANNOTATION_CHUNK_TARGET,
-    DEFAULT_LEVEL_TARGETS,
     BookHarness,
     CodexRunner,
     apply_compact_review_policy,
@@ -21,6 +20,7 @@ from pipeline.agent_harness import (
     chinese_semantic_repair_grammar_knowledge,
     digest,
     gather_all_or_raise,
+    fixed_size_target_from_manifest,
     length_violations,
     load_promotion_candidate,
     materialize_recovery_beats,
@@ -453,7 +453,7 @@ class FakeSourceReviewRunner:
 
     async def call(self, job, prompt, schema, effort, **kwargs):
         self.calls.append((job, prompt, schema.name, effort))
-        return dict(self.review)
+        return {"length_reason_en": "The selected coverage and stopping point fit this learner level.", **self.review}
 
 
 def annotation_harness(runner, max_repairs=2):
@@ -616,9 +616,32 @@ async def test_hsk1_pass_with_explicit_language_problem_is_forced_to_revise():
     result = await harness.review_scene(scene, text)
 
     assert result["verdict"] == "revise"
-    assert result["harness_decision"] == (
-        "rejected_review_with_explicit_findings"
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize("target, expected", [(None, "pass"), (100, "revise")])
+async def test_only_explicit_chinese_size_request_enables_numeric_scene_gate(target, expected, monkeypatch):
+    monkeypatch.setattr(
+        "pipeline.agent_harness.validate_level_distinctiveness",
+        lambda *args, **kwargs: {"passes": True},
     )
+    text = "刘备走了。"
+    harness = object.__new__(ChapterHarness)
+    harness.args = Namespace(
+        level="hsk6", target_chars=target, review_effort="low", refresh=False,
+    )
+    harness.source = text
+    harness.runner = FakeSourceReviewRunner({
+        "source_fidelity": 9, "naturalness": 9, "readability": 9,
+        "omissions": [], "unsupported_additions": [], "distortions": [],
+        "language_problems": [], "verdict": "pass",
+        "length_reason_en": "This complete short event is a natural stopping point for HSK6.",
+    })
+    result = await harness.review_scene({
+        "id": "scene_01", "source_start": 0, "source_end": len(text),
+        "target_chars": target or 0,
+    }, text)
+    assert result["verdict"] == expected
 
 
 def test_blocked_rerun_removes_stale_accepted_chapter_and_reader(tmp_path):
@@ -2013,20 +2036,12 @@ async def test_annotation_audit_does_not_claim_reviewed_for_last_revise(tmp_path
         _audit_chapter(run_dir, source, "hsk4", 1, True)
 
 
-def test_level_targets_increase_strictly():
-    values = [DEFAULT_LEVEL_TARGETS[f"hsk{i}"] for i in range(1, 7)]
-    assert values == sorted(values)
-    assert len(values) == len(set(values))
-
-
-@pytest.mark.parametrize("level, scenes", [
-    ("hsk1", 1), ("hsk2", 1), ("hsk3", 1),
-    ("hsk4", 1), ("hsk5", 1), ("hsk6", 1),
-])
-def test_scene_count_scales_to_short_chapter_targets(level, scenes):
+@pytest.mark.parametrize("level", ["hsk1", "hsk3", "hsk6"])
+def test_automatic_scene_count_is_not_derived_from_a_length_target(level):
     harness = object.__new__(ChapterHarness)
     harness.args = Namespace(level=level, target_chars=None)
-    assert harness.scene_count == scenes
+    assert harness.target_chars is None
+    assert harness.scene_count == 1
 
 
 @pytest.mark.asyncio
@@ -2037,6 +2052,7 @@ async def test_single_scene_outline_does_not_require_exact_first_anchor(tmp_path
     harness.run_dir = tmp_path
     harness.runner = FakeOutlineRunner({
         "chapter_title": "闞澤密獻詐書",
+        "length_reason_en": "One connected source episode supports this scope for HSK4.",
         "scenes": [{
             "id": "scene_01",
             "title": "闞澤",
@@ -2052,17 +2068,26 @@ async def test_single_scene_outline_does_not_require_exact_first_anchor(tmp_path
     assert outline["scenes"][0]["source_end"] == len(harness.source)
 
 
-def test_length_audit_groups_chapters_and_flags_non_increase():
+def test_cross_level_length_comparison_is_not_an_automatic_gate():
     runs = [
         {"source": "/a", "level": "hsk4", "status": "complete", "chapter_cjk": 800},
         {"source": "/b", "level": "hsk4", "status": "complete", "chapter_cjk": 700},
         {"source": "/a", "level": "hsk5", "status": "complete", "chapter_cjk": 800},
         {"source": "/b", "level": "hsk5", "status": "complete", "chapter_cjk": 900},
     ]
-    assert length_violations(runs, ["hsk4", "hsk5"]) == [{
-        "source": "/a", "lower_level": "hsk4", "lower_cjk": 800,
-        "upper_level": "hsk5", "upper_cjk": 800,
-    }]
+    assert length_violations(runs, ["hsk4", "hsk5"]) == []
+
+
+def test_promotion_uses_fixed_size_only_with_explicit_manifest_evidence():
+    assert fixed_size_target_from_manifest({
+        "target_chars": 750,
+    }) is None
+    assert fixed_size_target_from_manifest({
+        "target_chars": 750, "fixed_size_requested": False,
+    }) is None
+    assert fixed_size_target_from_manifest({
+        "target_chars": 750, "fixed_size_requested": True,
+    }) == 750
 
 
 def test_book_parser_has_global_and_chapter_concurrency():
@@ -2077,7 +2102,7 @@ def test_book_parser_has_global_and_chapter_concurrency():
 
 
 @pytest.mark.asyncio
-async def test_book_automatically_reruns_upper_level_for_length(monkeypatch):
+async def test_book_does_not_rerun_naturally_shorter_higher_level(monkeypatch):
     harness = object.__new__(BookHarness)
     harness.args = Namespace(
         source=["chapter.txt"], levels=["hsk4", "hsk5"],
@@ -2097,12 +2122,11 @@ async def test_book_automatically_reruns_upper_level_for_length(monkeypatch):
     monkeypatch.setattr(harness, "run_one", fake_run_one)
     result = await harness.run()
     assert result["status"] == "complete"
-    assert calls[-1][0] == "hsk5"
-    assert calls[-1][1] > 800
+    assert calls == [("hsk4", None), ("hsk5", None)]
 
 
 @pytest.mark.asyncio
-async def test_length_repair_target_grows_when_first_rerun_still_undershoots(monkeypatch):
+async def test_book_accepts_naturally_shorter_higher_level_output(monkeypatch):
     harness = object.__new__(BookHarness)
     harness.args = Namespace(
         source=["chapter.txt"], levels=["hsk4", "hsk5"],
@@ -2113,22 +2137,17 @@ async def test_length_repair_target_grows_when_first_rerun_still_undershoots(mon
 
     async def fake_run_one(source, level, target_chars=None):
         calls.append((level, target_chars))
-        if level == "hsk4":
-            length = 1000
-        else:
-            length = 900 if target_chars is None else 950
+        length = 1000 if level == "hsk4" else 650
         return {
             "source": str(__import__("pathlib").Path(source).resolve()),
             "level": level, "status": "complete", "chapter_cjk": length,
-            "target_chars": target_chars or DEFAULT_LEVEL_TARGETS[level],
+            "target_chars": target_chars,
         }
 
     monkeypatch.setattr(harness, "run_one", fake_run_one)
     result = await harness.run()
-    repair_targets = [target for level, target in calls if level == "hsk5" and target]
-    assert len(repair_targets) == 2
-    assert repair_targets[1] > repair_targets[0]
-    assert result["status"] == "blocked"
+    assert calls == [("hsk4", None), ("hsk5", None)]
+    assert result["status"] == "complete"
 
 
 @pytest.mark.asyncio

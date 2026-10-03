@@ -1,9 +1,11 @@
 import json
 from pathlib import Path
+import sys
 
 from pipeline.sanguoyanyi_finalizer import (
     LEVELS, active_generation_processes, heal_lengths,
-    invalidate_annotations, length_violations, preflight, recover_incomplete,
+    invalidate_annotations, length_diagnostics, length_violations,
+    main, preflight, recover_incomplete,
 )
 
 
@@ -127,22 +129,41 @@ def test_recovery_targets_only_missing_or_blocked_keys(tmp_path):
     assert all("--skip-annotations" in command for command in commands)
 
 
-def test_six_level_per_chapter_length_audit(tmp_path):
+def test_shorter_higher_level_remains_valid_when_preflight_accepts_each_level(tmp_path):
     counts = {"hsk1": 1, "hsk2": 2, "hsk3": 5,
               "hsk4": 4, "hsk5": 6, "hsk6": 7}
     low, high, _, _ = _matrix(tmp_path, counts)
-    failures = length_violations([low, high], expected_chapters=2)
-    assert [(item["chapter"], item["lower"], item["upper"]) for item in failures] == [
-        (1, "hsk3", "hsk4"), (2, "hsk3", "hsk4")]
+    assert preflight([low, high], expected_chapters=2)["status"] == "complete"
+    assert length_violations([low, high], expected_chapters=2) == []
+    report = length_diagnostics([low, high], expected_chapters=2)
+    assert report["status"] == "complete"
+    assert report["length_order_observation"]["strictly_increasing_per_chapter_and_total"] is False
+    assert report["length_order_observation"]["irregularities"]
 
 
-def test_six_level_length_audit_rejects_equal_adjacent_levels(tmp_path):
+def test_length_diagnostics_fail_closed_when_run_artifacts_are_missing(tmp_path):
+    low, high = tmp_path / "low", tmp_path / "high"
+    low.mkdir(); high.mkdir()
+    report = length_diagnostics([low, high], expected_chapters=1)
+    assert report["status"] == "blocked"
+    assert report["preflight"]["missing"]
+
+
+def test_length_cli_returns_failure_for_missing_artifacts(tmp_path, monkeypatch):
+    low, high = tmp_path / "low", tmp_path / "high"
+    low.mkdir(); high.mkdir()
+    monkeypatch.setattr(sys, "argv", [
+        "sanguoyanyi_finalizer", "length", "--run-dir", str(low),
+        "--run-dir", str(high), "--expected-chapters", "1",
+    ])
+    assert main() == 2
+
+
+def test_equal_or_shorter_adjacent_levels_are_not_length_failures(tmp_path):
     counts = {"hsk1": 1, "hsk2": 2, "hsk3": 3,
               "hsk4": 4, "hsk5": 6, "hsk6": 6}
     low, high, _, _ = _matrix(tmp_path, counts)
-    failures = length_violations([low, high], expected_chapters=2)
-    assert [(item["chapter"], item["lower"], item["upper"])
-            for item in failures] == [(1, "hsk5", "hsk6"), (2, "hsk5", "hsk6")]
+    assert length_violations([low, high], expected_chapters=2) == []
 
 
 def test_changed_prose_invalidates_and_preserves_annotation_backups(tmp_path):
@@ -164,53 +185,34 @@ def _json_read(path: Path):
     return json.loads(path.read_text())
 
 
-def test_healing_refreshes_only_deficient_upper_and_invalidates_reader(tmp_path):
+def test_legacy_heal_option_does_not_rewrite_reviewed_output(tmp_path):
     counts = {"hsk1": 1, "hsk2": 2, "hsk3": 5,
               "hsk4": 4, "hsk5": 200, "hsk6": 300}
     low, high, sources, roots = _matrix(tmp_path, counts)
     target_run = high / "chapter_001-hsk4"
     _json(target_run / "reader.json", {"text": "stale"})
 
+    before = target_run.joinpath("chapter.txt").read_bytes()
     def runner(command):
-        source = Path(command[command.index("--source") + 1])
-        run = high / f"{source.stem}-hsk4"
-        (run / "chapter.txt").write_text("人" * 8 + "。\n", encoding="utf-8")
-        report = _json_read(run / "report.json"); report["chapter_cjk"] = 8; _json(run / "report.json", report)
-        return 0
+        raise AssertionError(f"automatic size healing must not run: {command}")
 
     records = heal_lengths([low, high], roots, sources, expected_chapters=2,
                            max_rounds=2, runner=runner)
-    assert len(records) == 2
-    assert all(record["upper"] == "hsk4" for record in records)
-    assert not (target_run / "reader.json").exists()
-    assert (target_run / "reader.before-length-heal.json").exists()
-    assert (target_run / "chapter.before-length-heal.txt").read_text() == "人" * 4 + "。\n"
-    assert (target_run / "report.before-length-heal.json").exists()
+    assert records == []
+    assert target_run.joinpath("chapter.txt").read_bytes() == before
+    assert (target_run / "reader.json").is_file()
 
 
-def test_healing_target_minimum_accepted_length_clears_lower_level(tmp_path):
+def test_healing_does_not_invent_user_fixed_target_from_level_order(tmp_path):
     counts = {"hsk1": 1, "hsk2": 2, "hsk3": 100,
               "hsk4": 99, "hsk5": 300, "hsk6": 400}
     low, high, sources, roots = _matrix(tmp_path, counts)
-    targets = []
-
     def runner(command):
-        target = int(command[command.index("--target-chars") + 1])
-        targets.append(target)
-        source = Path(command[command.index("--source") + 1])
-        run = high / f"{source.stem}-hsk4"
-        # Exercise the exact lower edge allowed by ChapterHarness.
-        length = int(target * 0.7)
-        (run / "chapter.txt").write_text(_prose(length), encoding="utf-8")
-        report = _json_read(run / "report.json")
-        report["chapter_cjk"] = length
-        _json(run / "report.json", report)
-        return 0
+        raise AssertionError(f"automatic size healing must not run: {command}")
 
-    heal_lengths([low, high], roots, sources, expected_chapters=2,
-                 max_rounds=2, runner=runner)
-    assert targets
-    assert all(int(target * 0.7) > 100 for target in targets)
+    records = heal_lengths([low, high], roots, sources, expected_chapters=2,
+                           max_rounds=2, runner=runner)
+    assert records == []
 
 
 def test_detects_live_harness_targeting_run_root(tmp_path):
@@ -257,30 +259,27 @@ def test_shell_writes_dedicated_success_marker_only_after_publication():
     assert marker > script.index("published successfully", publisher)
 
 
-def test_shell_rechecks_continuity_after_last_length_rewrite():
+def test_shell_rechecks_continuity_after_last_omission_promotion():
     script = (Path(__file__).parents[1] / "pipeline/finalize_sanguoyanyi.sh").read_text()
-    healing = script.index("pipeline.sanguoyanyi_finalizer length")
-    final_continuity = script.index("post-length continuity verification")
+    post_omission = script.index("post-generation omission audit")
+    final_continuity = script.index("post-omission continuity verification")
     annotations = script.index("refreshing only missing or stale annotations")
-    assert healing < final_continuity < annotations
+    assert post_omission < final_continuity < annotations
+    assert "--heal" not in script
     verification = script[final_continuity:annotations]
     assert verification.count(" 0 & continuity_pids") == 6
     assert "exit 2" in verification
 
 
-def test_shell_reaudits_omissions_after_length_healing_and_rechecks_length():
+def test_shell_audits_omissions_and_does_not_rewrite_for_length_order():
     script = (Path(__file__).parents[1] / "pipeline/finalize_sanguoyanyi.sh").read_text()
-    healing = script.index("pipeline.sanguoyanyi_finalizer length")
-    post_omission = script.index("post-length omission audit", healing)
-    read_only_length = script.index("post-omission read-only monotonic", post_omission)
-    final_continuity = script.index("post-length continuity verification", read_only_length)
+    post_omission = script.index("post-generation omission audit")
+    final_continuity = script.index("post-omission continuity verification", post_omission)
     annotations = script.index("refreshing only missing or stale annotations")
-    assert healing < post_omission < read_only_length < final_continuity < annotations
-    omission_block = script[post_omission:read_only_length]
+    assert post_omission < final_continuity < annotations
+    omission_block = script[post_omission:final_continuity]
     assert "--promote-passed --refresh" in omission_block
-    length_block = script[read_only_length:final_continuity]
-    assert "--heal" not in length_block
-    assert "exit 2" in length_block
+    assert "strict six-level" not in script
 
 
 def test_japanese_handoff_requires_marker_and_fails_closed():

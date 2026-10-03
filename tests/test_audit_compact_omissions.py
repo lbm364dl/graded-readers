@@ -19,14 +19,15 @@ def write_json(path: Path, value: dict) -> None:
     path.write_text(json.dumps(value, ensure_ascii=False), encoding="utf-8")
 
 
-def make_run(tmp_path: Path, *, decision=True, omissions=None) -> Path:
+def make_run(tmp_path: Path, *, decision=True, omissions=None, target_chars=None) -> Path:
     tmp_path.mkdir(parents=True, exist_ok=True)
     source = tmp_path / "chapter_01.txt"
     source.write_text("刘备先遇见关羽。三人后来结义。", encoding="utf-8")
     run = tmp_path / "run"
     write_json(run / "manifest.json", {
         "source": str(source), "source_sha256": digest(source.read_text()),
-        "level": "hsk4", "target_chars": 20, "status": "complete",
+        "level": "hsk4", "target_chars": target_chars,
+        "fixed_size_requested": target_chars is not None, "status": "complete",
     })
     write_json(run / "report.json", {
         "status": "complete", "chapter_cjk": 7, "scenes": 1,
@@ -414,7 +415,7 @@ async def test_material_omission_repairs_and_reviews_separate_candidate(tmp_path
 
 @pytest.mark.asyncio
 async def test_mechanical_in_range_count_discards_stale_length_only_review(tmp_path):
-    run = make_run(tmp_path, omissions=["三人结义被省略"])
+    run = make_run(tmp_path, omissions=["三人结义被省略"], target_chars=20)
 
     class LengthOnlyRunner(FakeRunner):
         async def call(self, job, prompt, schema, effort, **kwargs):
@@ -440,6 +441,31 @@ async def test_mechanical_in_range_count_discards_stale_length_only_review(tmp_p
     assert result["review"]["verdict"] == "pass"
     assert result["review"]["reviewer_verdict"] == "revise"
     assert result["review"]["language_problems"] == []
+
+
+@pytest.mark.asyncio
+async def test_automatic_omission_repair_has_no_numeric_size_band(tmp_path):
+    run = make_run(tmp_path, omissions=["三人结义被省略"])
+
+    class CapturingRunner(FakeRunner):
+        async def call(self, job, prompt, schema, effort, **kwargs):
+            if job.endswith("/chapter_repair"):
+                self.repair_prompt = prompt
+            return await super().call(job, prompt, schema, effort, **kwargs)
+
+    classification = {"assessments": [{
+        "omission_note": "三人结义被省略", "classification": "material",
+        "reason": "relationship", "required_fix": "restore the oath",
+    }]}
+    auditor = OmissionAuditor(args(tmp_path))
+    auditor.runner = CapturingRunner(classification)
+    report = await auditor.run([run])
+    repair = report["chapter_results"][0]
+    assert repair["status"] == "complete"
+    assert repair["fixed_size_requested"] is False
+    assert repair["required_range"] is None
+    assert "do not pad or compress to meet a number" in auditor.runner.repair_prompt
+    assert "70%-130%" not in auditor.runner.repair_prompt
 
 
 @pytest.mark.asyncio

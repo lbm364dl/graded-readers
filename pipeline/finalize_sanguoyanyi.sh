@@ -120,57 +120,32 @@ if (( continuity_failed )); then
   exit 2
 fi
 
-note "healing strict per-chapter HSK1<HSK2<...<HSK6 prose lengths"
-if ! python3 -m pipeline.sanguoyanyi_finalizer length \
-    --run-dir "$low_run" --run-dir "$high_run" "${level_roots[@]}" \
-    --expected-chapters 120 --heal --max-rounds 6 \
-    --report "$log_dir/length-healing.json" >>"$log_dir/length-healing.log" 2>&1; then
-  note "six-level monotonic length healing remained blocked"
-  exit 2
-fi
-
-# Healing is a fresh source-grounded generation. A scene reviewer may pass
-# while still recording an omission for later materiality judgment, so the
-# pre-healing omission audit cannot certify the new prose. Re-run it after the
-# final broad rewrite and permit only independently reviewed promotions.
+# A scene reviewer may pass while still recording an omission for later
+# materiality judgment. Audit accepted prose directly; do not rewrite it to
+# enforce a cross-level size order.
 post_length_omission_ok=0
 for attempt in 1 2 3; do
-  note "post-length omission audit attempt $attempt"
+  note "post-generation omission audit attempt $attempt"
   if python3 -m pipeline.audit_compact_omissions \
       --run-dir "$low_run" --run-dir "$high_run" \
       --output-dir "$audit_run" --concurrency 9 \
       --classify-effort low --repair-effort low --review-effort low \
       --max-repair-rounds 7 \
       --promote-passed --refresh \
-      >>"$log_dir/post-length-omission.log" 2>&1; then
+      >>"$log_dir/post-omission.log" 2>&1; then
     post_length_omission_ok=1
     break
   fi
 done
 if (( ! post_length_omission_ok )); then
-  note "post-length omission audit remained blocked"
+  note "post-generation omission audit remained blocked"
   exit 2
 fi
 
-# An omission repair aims to retain length, but publication requires strict
-# per-chapter monotonicity, not an approximation. Fail closed here rather than
-# launching another rewrite that would invalidate the just-completed audit.
-note "post-omission read-only monotonic length verification"
-if ! python3 -m pipeline.sanguoyanyi_finalizer length \
-    --run-dir "$low_run" --run-dir "$high_run" \
-    --expected-chapters 120 \
-    --report "$log_dir/post-omission-length.json" \
-    >>"$log_dir/length-healing.log" 2>&1; then
-  note "post-omission repairs broke strict six-level lengths"
-  exit 2
-fi
-
-# Length healing performs a fresh source-grounded rewrite. Even a good rewrite
-# (and the subsequent omission repair) can alter a handoff already checked
-# above, so continuity must be proven again after the last prose mutation. This
-# final pass is read-only/fail-closed:
+# Omission promotion can alter a handoff checked above, so continuity must be
+# proven again after the last prose mutation. This final pass is read-only/fail-closed:
 # annotations and publication never start if any new edge is questionable.
-note "post-length continuity verification: no further prose mutation allowed"
+note "post-omission continuity verification: no further prose mutation allowed"
 continuity_pids=()
 run_continuity hsk1 "$low_run" 2 0 & continuity_pids+=("$!")
 run_continuity hsk2 "$low_run" 2 0 & continuity_pids+=("$!")
@@ -183,7 +158,7 @@ for child_pid in "${continuity_pids[@]}"; do
   wait "$child_pid" || continuity_failed=1
 done
 if (( continuity_failed )); then
-  note "post-length continuity verification failed"
+  note "post-omission continuity verification failed"
   exit 2
 fi
 
