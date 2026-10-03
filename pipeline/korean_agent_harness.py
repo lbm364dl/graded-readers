@@ -368,6 +368,19 @@ def lexical_candidates(headwords: list[str], catalog: dict) -> list[dict]:
             for headword in sorted(set(headwords)) for entry in catalog.get(headword, [])]
 
 
+def validate_annotation_chunk(value, text, *, words, catalog, focus, title,
+                              number, plan, level, run_dir, source_id):
+    """The same complete chunk gate for worker self-checks and the harness."""
+    validate(value, contracts.ANNOTATION)
+    contracts.check_reconstruction(value['segments'], text)
+    requests, grammar_ids = annotation_requests(value, catalog, focus, words)
+    fragment = contracts.canonical_annotation(value, {'title': title, 'text': text},
+        number, EDITION, plan, focus, level=level)
+    dictionaries.build_assets(fragment, run_dir, source_id=source_id,
+        word_registry={identity: {'id': identity, **entry} for identity, entry in requests.items()},
+        grammar_registry={identity: {'id': identity} for identity in grammar_ids}, write=False)
+
+
 class KoreanHarness:
     def __init__(self, run_dir: Path, number: int, runner=None, existing: Path | None = None, model: str = "gpt-6-luna", workers: int = 4, level: int = 1, stop_after: str | None = None, annotation_batch_characters: int = 0):
         curriculum.entries("grammar", level)
@@ -912,18 +925,13 @@ class KoreanHarness:
                         repair_evidence = {'repair_plan_job': repair_job, 'repair_plan_digest': digest(selection)}
                         print(f'annotation repair: {len(selected)} of {len(texts)} chunks selected', flush=True)
                 def validate_chunk(value, text):
-                    validate(value, contracts.ANNOTATION)
-                    contracts.check_reconstruction(value['segments'], text)
                     # Other editions can promote reviewed primary identities
                     # while this chapter runs. Do not reject a current approved
                     # identity because this harness captured an older catalog.
                     self.catalog = contracts.lexical_catalog()
-                    requests, grammar_ids = annotation_requests(value, self.catalog, focus, self.words)
-                    fragment = contracts.canonical_annotation(value,
-                        {'title': prose['title'], 'text': text}, self.number, EDITION, bound_plan, focus, level=self.level)
-                    dictionaries.build_assets(fragment, self.run_dir, source_id=source_id,
-                        word_registry={identity: {'id': identity, **entry} for identity, entry in requests.items()},
-                        grammar_registry={identity: {'id': identity} for identity in grammar_ids}, write=False)
+                    validate_annotation_chunk(value, text, words=self.words, catalog=self.catalog,
+                        focus=focus, title=prose['title'], number=self.number, plan=bound_plan,
+                        level=self.level, run_dir=self.run_dir, source_id=source_id)
 
                 async def chunk(number, text):
                     if number in reused:
@@ -1019,11 +1027,17 @@ class KoreanHarness:
                                     **({'newly_reviewed_lexical_candidates': new_candidates} if new_candidates else {}),
                                     **({'reviewed_lexical_usage_evidence': reviewed_usages} if reviewed_usages else {}),
                                     **({'linguistic_reference': read(LINGUISTIC_REFERENCE)} if errors else {})),
-                                contracts.schema_path("chunk-annotation-v4"), "low", tool_profile="offline")
+                                contracts.schema_path("chunk-annotation-v4"), "low", tool_profile="offline",
+                                workspace_context={'annotation_validation': {
+                                    'language': 'ko', 'chunk_text': text, 'focus': focus,
+                                    'title': prose['title'], 'number': self.number, 'plan': bound_plan,
+                                    'level': self.level, 'source_id': source_id}})
                         except ValueError as error:
+                            if isinstance(error, MissingPlannedNameError):
+                                raise
                             # A rejected worker result has no trusted annotation
                             # to inherit. Retry this chunk, preserving siblings.
-                            errors = [str(error), 'Use only the supplied data. Do not call any tools, including resource listing.']
+                            errors = [str(error), 'Inspect the task inputs and use the supplied validation command to repair this draft before submitting it.']
                             continue
                         try:
                             raw_value = value

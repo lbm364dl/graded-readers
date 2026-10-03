@@ -78,6 +78,8 @@ def test_submission_uses_exact_validated_file_and_detects_later_changes(tmp_path
         CodexRunner._check_tool_profile(tmp_path, 'offline', meta)
     with pytest.raises(ValueError, match='must be in'):
         submit(workspace, {'candidate_path':'../result.json'})
+    with pytest.raises(ValueError, match='does not exist'):
+        submit(workspace, {'candidate_path':'missing.json'})
 
 
 @pytest.mark.asyncio
@@ -103,3 +105,25 @@ async def test_enabling_tools_reuses_exact_legacy_offline_cache(tmp_path, monkey
     (job/'events.attempt-01.jsonl').write_text(json.dumps({'type':'item.completed', 'item':{'type':'command_execution'}}))
     with pytest.raises(CachedCallUnavailable):
         await runner.call('old-job', 'same task', schema, 'low', tool_profile='offline', cache_only=True)
+
+
+def test_korean_local_check_uses_full_identity_and_dictionary_gate(tmp_path):
+    from pipeline.korean_annotation_chunks import SPAN_LINK_SCHEMA, SPAN_LINK_FORMAT
+    value = {'format':SPAN_LINK_FORMAT, 'segments':[{
+        'type':'word', 'meaning_en':'person', 'lemma':'사람', 'lexical_kind':'vocabulary',
+        'lexical_id':'사람/명', 'story_importance_en':'', 'form_steps':[], 'is_inflected':False,
+        'grammar_links':[], 'expression_links':[], 'source_start':0, 'source_end':2}]}
+    context = {'annotation_validation': {'language':'ko', 'chunk_text':'사람',
+        'focus':{'entries':[]}, 'title':'Test', 'number':1, 'plan':{'beats':[]},
+        'level':3, 'source_id':'test.json'}}
+    build(tmp_path, 'Annotate the given source.', SPAN_LINK_SCHEMA, context=context)
+    candidate = tmp_path/'candidate.json';candidate.write_text(json.dumps(value))
+    assert check(tmp_path, candidate) == value
+    value['segments'][0]['lemma'] = '사람/명'
+    candidate.write_text(json.dumps(value))
+    with pytest.raises(ValueError, match='Headword field contains'):
+        check(tmp_path, candidate)
+    # Submission retains the proposal so the pipeline's typed error routing
+    # can request research/plan repair; it does not claim stage approval.
+    from pipeline.worker_workspace import submit
+    assert submit(tmp_path, {'candidate_path':'candidate.json'})[0] == value

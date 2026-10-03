@@ -81,7 +81,7 @@ def build(path, prompt, schema, *, context=None):
     put_json('INDEX.json', inventory)
     put_json('schema.json', schema)
     put_json('receipt.schema.json', RECEIPT_SCHEMA)
-    put_json('validation-context.json', [{k: v[k] for k in ('chunk_text', 'language', 'surfaces', 'annotation') if k in v} for v in contexts if isinstance(v, dict)])
+    put_json('validation-context.json', [{k: v[k] for k in ('chunk_text', 'language', 'surfaces', 'annotation', 'annotation_validation') if k in v} for v in contexts if isinstance(v, dict)])
     command = 'cd ' + shlex.quote(str(ROOT)) + ' && ' + shlex.quote(str(ROOT / '.venv/bin/python')) + ' -m pipeline.worker_workspace validate --workspace ' + shlex.quote(str(path.resolve())) + ' --candidate ' + shlex.quote(str(path.resolve() / 'candidate.json'))
     put('README.txt', 'Read TASK.txt and INDEX.json. Repository root: ' + str(ROOT) + '. Repository paths in the task are relative to that root; input/reference paths in INDEX.json are relative to this workspace. Inspect relevant data and full reference entries as needed. Use your tools freely to investigate and verify. Save candidate.json and check it with:\n' + command + '\nThe local check is feedback, not independent publication approval. Submit only {"candidate_path":"candidate.json"}; do not reproduce the file contents.\n')
     manifest = {'version': VERSION, 'files': files}
@@ -105,6 +105,17 @@ def check(path, candidate):
     value = json.loads(candidate.read_text())
     validate(value, json.loads((path / 'schema.json').read_text()))
     for context in json.loads((path / 'validation-context.json').read_text()):
+        if context.get('annotation_validation', {}).get('language') == 'ko':
+            from pipeline.korean_agent_harness import validate_annotation_chunk
+            from pipeline.korean_annotation_chunks import decode
+            from pipeline import korean_contracts, korean_dictionary
+            args = dict(context['annotation_validation'])
+            args.pop('language')
+            text = args.pop('chunk_text')
+            validate_annotation_chunk(decode(value, source_text=text), text,
+                words=korean_dictionary._registry(korean_dictionary.WORDS),
+                catalog=korean_contracts.lexical_catalog(), run_dir=path, **args)
+            continue
         if context.get('language') == 'zh-fixed':
             from pipeline.fixed_boundary_annotation import validate_result
             validate_result(context['chunk_text'], context['surfaces'], value)
@@ -140,7 +151,16 @@ def submit(path, receipt):
     candidate = (path / receipt['candidate_path']).resolve()
     if not candidate.is_relative_to(path.resolve()):
         raise ValueError('Submitted candidate must be in its worker workspace')
-    value = check(path, candidate)
+    if not candidate.is_file():
+        raise ValueError(f'Submitted candidate file does not exist: {receipt["candidate_path"]!r}. '
+                         'Write the JSON file in the task workspace, validate it, then submit its relative path.')
+    # The worker can run the complete stage gate through `check`. Submission
+    # preserves a schema-valid proposal; the owning harness runs its gate and
+    # routes typed failures to the appropriate research/repair workflow.
+    # Treating a missing lexical identity as a generic runner failure would
+    # bypass that workflow and repeat an impossible annotation repair.
+    value = json.loads(candidate.read_text())
+    validate(value, json.loads((path / 'schema.json').read_text()))
     return value, {'artifact_path': str(candidate.relative_to(path.resolve())),
                    'artifact_digest': hash_bytes(candidate.read_bytes())}
 

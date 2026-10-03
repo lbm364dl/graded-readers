@@ -791,3 +791,24 @@ retained in `pipeline/benchmarks/luna-effort-20261003.json`. No effort change is
 justified by this sample. The user accepts this latency if end-to-end generation
 is reliable; prioritize independently reviewed publication over further latency
 micro-optimization.
+
+### Local checks match the owning annotation gate
+
+Real tool-enabled proposals exposed checks that still ran only after submission:
+lexical headword/ID mismatches, missing grammar lessons, incomplete display fields
+and invalid form chains. Korean workers now receive the exact annotation gate
+context and can run the shared `validate_annotation_chunk` used by the harness,
+including asset-construction validation without writing assets. Chinese/Japanese
+workers already invoke their owning annotation contract checks through the same
+workspace command; Chinese fixed-surface and patch modes also use their existing
+validators. This is local feedback, not independent language/source/curriculum
+approval.
+
+Artifact submission validates the schema and preserves the exact proposal. The
+owning pipeline still runs its full gate and routes typed failures to research,
+lexical-plan completion or repairs. Rejecting all such failures inside the generic
+runner would incorrectly turn a missing reviewed identity into repeated annotation
+retries. Missing submitted files now give actionable repair feedback. Regression
+coverage includes a source-aligned, schema-valid Korean proposal with a wrong
+headword/ID field, contrasted with the valid identity; the full repair/reuse
+integration remains passing (16 focused cases).
