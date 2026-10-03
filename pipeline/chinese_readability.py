@@ -660,9 +660,14 @@ def validate_level_distinctiveness(
     *,
     allowed_words: set[str] | frozenset[str] | None = None,
     lower_level_max_above_ratio: float | None = None,
-    min_target_band_unique: int = 0,
 ) -> dict[str, Any]:
-    """Prove that prose uses its target band rather than the lower one."""
+
+    """Return nonblocking lexical-level diagnostics for independent review.
+
+    A short source passage may naturally use few or no words unique to the
+    requested HSK band.  These counts and the lower-level comparison help an
+    editor assess suitability; they are not minimum vocabulary quotas.
+    """
     normalized_level = level.lower()
     number = _level_number(normalized_level)
     allowed = expand_allowed_word_surfaces(
@@ -670,14 +675,11 @@ def validate_level_distinctiveness(
     )
     if number == 1:
         return {
-            "passes": True,
-            "enforced": False,
             "level": normalized_level,
             "lower_level": None,
             "lower_level_lexical_pass": None,
             "target_band_tokens": 0,
             "target_band_unique": 0,
-            "min_target_band_unique": 0,
             "target_band_words": [],
         }
 
@@ -695,11 +697,7 @@ def validate_level_distinctiveness(
         allowed_words=allowed,
         max_above_level_word_ratio=lower_level_max_above_ratio,
     )
-    lower_rejected_lexically = not lower["lexical_pass"]
-    unique_pass = len(band_words) >= min_target_band_unique
     return {
-        "passes": lower_rejected_lexically and unique_pass,
-        "enforced": True,
         "level": normalized_level,
         "lower_level": lower_level,
         "lower_level_lexical_pass": lower["lexical_pass"],
@@ -707,7 +705,6 @@ def validate_level_distinctiveness(
         "lower_level_above_word_percent": lower["above_level_word_percent"],
         "target_band_tokens": len(band_tokens),
         "target_band_unique": len(band_words),
-        "min_target_band_unique": min_target_band_unique,
         "target_band_words": band_words,
         "lower_level_evidence": lower,
     }

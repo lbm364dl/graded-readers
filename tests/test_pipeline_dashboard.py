@@ -127,6 +127,44 @@ class DashboardStateTests(unittest.TestCase):
         self.assertEqual(len(active_jobs), 1)
         self.assertEqual(active_jobs[0]['job'], workers[0]['job'])
 
+    def test_runtime_receipt_paths_match_job_metadata_and_preserve_nested_names(self) -> None:
+        run = self.run_dir()
+        now = datetime.now(timezone.utc).isoformat()
+        jobs = [
+            ("annotation-0-chunk-007-current", run / "agents/annotation-0-chunk-007-current"),
+            ("annotations/chunk_0002/semantic_patch", run / "agents/annotations/chunk_0002/semantic_patch"),
+            ("runtime", run / "agents/runtime"),
+        ]
+        processes = []
+        for index, (job, job_path) in enumerate(jobs, start=1):
+            write_json(job_path / "meta.json", {
+                "job": job, "started_at": now, "return_code": None,
+            })
+            processes.append({"pid": 600 + index, "elapsed_seconds": 40 + index,
+                              "cwd": self.root, "argv": ["codex", "exec", "--json", "-o",
+                              str(job_path / "runtime/receipt.json" if job != "runtime"
+                                  else job_path / "receipt.json"), "-"]})
+
+        with patch("pipeline.dashboard._processes", return_value=processes):
+            row = self.chapter_row(run)
+        active = [job for job in row["recent_jobs"] if job["state"] == "running"]
+        self.assertEqual({job["job"] for job in active}, {job for job, _ in jobs})
+        self.assertEqual(len([p for p in row["active_processes"] if p["process_type"] == "worker"]), 3)
+        self.assertEqual(row["display"]["workers"], 3)
+
+    def test_archived_rejected_review_is_not_counted_as_a_current_attempt(self) -> None:
+        run = self.run_dir()
+        archived = run / "agents/history/source-mutation-123/annotation-review-rejected"
+        write_json(archived / "meta.json", {
+            "job": "annotation-review-rejected", "started_at": "2026-10-02T10:00:00+00:00",
+            "ended_at": "2026-10-02T10:01:00+00:00", "return_code": 0,
+        })
+        write_json(archived / "result.json", {"approved": False, "issues": ["archived finding"]})
+        row = self.chapter_row(run)
+        self.assertEqual(row["rejected_review_attempts"], 0)
+        self.assertIsNone(row["latest_rejected_review"])
+        self.assertFalse(any("history" in job["job"] for job in row["recent_jobs"]))
+
     def test_suspended_jobs_stay_separate_from_live_sibling_and_saved_rejection(self) -> None:
         run = self.run_dir()
         now = datetime.now(timezone.utc).isoformat()

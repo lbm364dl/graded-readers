@@ -215,26 +215,27 @@ def test_punctuated_reviewed_quote_exempts_only_its_exact_han_clauses():
     assert result["lexical_pass"] is True
 
 
-def test_distinctiveness_rejects_padded_lower_level_prose():
+def test_short_low_difficulty_target_keeps_lower_level_signal_without_a_word_floor():
     result = validate_level_distinctiveness(
-        "我今天看书。我明天也看书。我们都是好朋友。",
-        "hsk2",
-        lower_level_max_above_ratio=0.15,
-        min_target_band_unique=3,
+        "刘备走了。", "hsk6",
+        lower_level_max_above_ratio=0.25,
     )
 
-    assert result["passes"] is False
     assert result["lower_level_lexical_pass"] is True
+    assert result["target_band_unique"] == 0
+    assert result["target_band_words"] == []
+    assert "passes" not in result
+    assert "min_target_band_unique" not in result
 
 
-def test_distinctiveness_accepts_real_target_band_vocabulary():
+def test_target_band_inventory_counts_remain_diagnostic_only():
     result = validate_level_distinctiveness(
         "这里一直下雪，天气不太好，不过大家一定会来。" * 3,
         "hsk2",
         lower_level_max_above_ratio=0.15,
-        min_target_band_unique=3,
     )
 
-    assert result["passes"] is True
     assert result["lower_level_lexical_pass"] is False
-    assert result["target_band_unique"] >= 3
+    assert result["target_band_unique"] > 0
+    assert len(result["target_band_words"]) == result["target_band_unique"]
+    assert "passes" not in result

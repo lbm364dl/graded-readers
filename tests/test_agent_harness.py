@@ -34,6 +34,7 @@ from pipeline.agent_harness import (
     split_chinese_annotation_chunks,
     status,
 )
+from pipeline.chinese_readability import words_at_level
 
 
 def test_chinese_repair_marks_candidate_keys_provisional_without_fake_catalog():
@@ -620,11 +621,7 @@ async def test_hsk1_pass_with_explicit_language_problem_is_forced_to_revise():
 
 @pytest.mark.asyncio
 @pytest.mark.parametrize("target, expected", [(None, "pass"), (100, "revise")])
-async def test_only_explicit_chinese_size_request_enables_numeric_scene_gate(target, expected, monkeypatch):
-    monkeypatch.setattr(
-        "pipeline.agent_harness.validate_level_distinctiveness",
-        lambda *args, **kwargs: {"passes": True},
-    )
+async def test_short_natural_chinese_scene_has_no_band_floor_but_keeps_explicit_size_gate(target, expected):
     text = "刘备走了。"
     harness = object.__new__(ChapterHarness)
     harness.args = Namespace(
@@ -642,6 +639,39 @@ async def test_only_explicit_chinese_size_request_enables_numeric_scene_gate(tar
         "target_chars": target or 0,
     }, text)
     assert result["verdict"] == expected
+    assert result["level_diagnostics"]["lower_level_lexical_pass"] is True
+    assert result["level_diagnostics"]["target_band_unique"] == 0
+    assert "do not require" in harness.runner.calls[-1][1]
+    guidance = harness.target_band_vocabulary_guidance
+    assert "not a minimum or coverage quota" in guidance
+    assert "Use at least" not in guidance
+    assert sorted(words_at_level("hsk6"))[0] in guidance
+
+
+@pytest.mark.asyncio
+async def test_independent_review_still_rejects_a_genuinely_too_elementary_scene():
+    text = "刘备走了。"
+    harness = object.__new__(ChapterHarness)
+    harness.args = Namespace(
+        level="hsk6", target_chars=None, review_effort="low", refresh=False,
+    )
+    harness.source = text
+    harness.runner = FakeSourceReviewRunner({
+        "source_fidelity": 9, "naturalness": 9, "readability": 9,
+        "omissions": [], "unsupported_additions": [], "distortions": [],
+        "language_problems": ["This narration is too elementary for HSK6."],
+        "verdict": "pass",
+    })
+
+    result = await harness.review_scene({
+        "id": "scene_01", "source_start": 0, "source_end": len(text),
+        "target_chars": 0,
+    }, text)
+
+    assert result["verdict"] == "revise"
+    assert result["level_diagnostics"]["lower_level_lexical_pass"] is True
+    assert result["harness_decision"] == "rejected_review_with_explicit_findings"
+    assert any("too elementary" in finding for finding in result["language_problems"])
 
 
 def test_blocked_rerun_removes_stale_accepted_chapter_and_reader(tmp_path):

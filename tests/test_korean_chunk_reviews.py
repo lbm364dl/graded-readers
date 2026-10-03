@@ -87,6 +87,8 @@ def test_korean_review_prompt_compares_complete_copula_then_past_stages(tmp_path
     assert '아들이다' in prompt and 'is a son' in prompt
     assert '아들이었다' in prompt and 'was a son' in prompt
     assert 'It can take past and polite endings' in prompt
+    assert 'A label such as “honorific” or “past” does not make a prefinal stem or bound inflection complete' in prompt
+    assert 'complete citation-form intermediate followed by an observed past connective can be valid' in prompt
 
     wrong_meaning = copy.deepcopy(annotation)
     wrong_meaning['segments'][0]['form_steps'][1]['meaning_en'] = 'is a son'
@@ -103,6 +105,30 @@ def test_korean_review_prompt_compares_complete_copula_then_past_stages(tmp_path
     wrong_prompt = runner.prompts[-1]
     assert 'copula-ida' in wrong_prompt
     assert 'a wrong or missing past link' in wrong_prompt
+
+
+def test_form_chain_review_proof_tracks_current_completeness_guidance_and_can_only_be_reseeded(tmp_path):
+    from pipeline.korean_chunk_reviews import StaleFormReviewGuidanceError
+
+    annotation = {'segments': [{'text': '갔다', 'form_steps': [
+        {'form': '갔다', 'reading': '가-+-았-+-다', 'label': 'past',
+         'meaning_en': 'went', 'grammar_entry_ids': ['past-ass-eoss']}]}]}
+    context = {'chapter_text': '갔다', 'source_start': 0}
+    args, _, evidence = run_review(tmp_path, annotation=annotation, text='갔다', context=context)
+    assert evidence['form_review_guidance_digest']
+    assert verify(tmp_path, args, evidence)['approved']
+
+    stale = dict(evidence)
+    stale.pop('form_review_guidance_digest')
+    with pytest.raises(StaleFormReviewGuidanceError, match='predates the current complete-stage guidance'):
+        verify(tmp_path, args, stale)
+    # Stale local approval can supply the exact candidate for fresh review only;
+    # all review, input and artifact digests remain mandatory.
+    assert verify_review(tmp_path, stale, annotation=annotation, text='갔다',
+        chapter_text='갔다', source_start=0, allow_stale_form_guidance=True)['approved']
+    with pytest.raises(ValueError, match='mismatched'):
+        verify_review(tmp_path, {**stale, 'review_digest': '0' * 64}, annotation=annotation,
+            text='갔다', chapter_text='갔다', source_start=0, allow_stale_form_guidance=True)
 
 
 def test_rejected_local_review_cannot_approve_publication(tmp_path):

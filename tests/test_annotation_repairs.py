@@ -110,6 +110,118 @@ def test_representation_structure_contract_uses_korean_step_schema_without_affec
         validate(step, korean_contracts.STEP)
 
 
+def test_construction_occurrence_contract_is_representation_scoped_and_keeps_endings_separate():
+    from pipeline.annotation_repairs import _construction_occurrence_contract
+
+    for representation, list_path, anchor in [
+        ("chinese-annotation", "/grammar_overlays", "start Unicode offset"),
+        ("japanese-annotation", "/grammar_overlays", "start Unicode offset"),
+        ("korean-flat", "/grammar_links", "segment_index of first included lexical/name tap"),
+        ("korean-v4", "grammar_links within the anchor segment", "source_start of first included lexical/name tap"),
+    ]:
+        contract = _construction_occurrence_contract(representation)
+        assert contract["occurrence_list"] == list_path
+        assert contract["anchor"] == anchor
+        assert "retain" in contract["ending_link"]
+    assert _construction_occurrence_contract("unknown") is None
+
+
+@pytest.mark.asyncio
+async def test_shared_repair_prompt_routes_ending_tap_construction_without_grammar_root(tmp_path):
+    from pipeline.annotation_repairs import _construction_occurrence_contract
+
+    candidate = _candidate()
+    target = _target("append_row", "/grammar_overlays")
+    plan = _plan((target,))
+    patch = {"base_digest": candidate_digest(candidate), "edits": [
+        {"op": "append_row", "path": "/grammar_overlays", "value": {
+            "start": 0, "end": 2, "text": "她走", "grammar_candidate_key": "verb-aux",
+            "pattern": "verb + auxiliary", "meaning_en": "she walks along"}}]}
+    runner = PlannedRunner(tmp_path, plan, patch)
+    result = await repair_annotation(Harness(tmp_path, runner), "construction-contract", candidate,
+        [{"problem": "A supported complete construction spans the lexical tap and ending."}],
+        representation="chinese-annotation", language="zh", validate_candidate=lambda _: None)
+    assert result["status"] == "applied"
+    context = runner.calls[0][4]["workspace_context"]
+    assert context["construction_occurrence_contract"] == _construction_occurrence_contract("chinese-annotation")
+    prompt = runner.calls[0][1]
+    assert "do not use the ending's grammar identity as the lexical root" in prompt
+    assert "noun/name + predication and lexical-verb + auxiliary" in prompt
+    assert "preserve every tap and the direct ending lesson" in prompt
+    assert "do not add a copula-ID exception" in prompt
+
+    # The same general instructions reach Japanese and both Korean representations;
+    # the structure descriptor remains representation-specific rather than importing
+    # Korean cardinality into Chinese/Japanese.
+    scoped_candidates = {
+        "japanese-annotation": {"segments": [{"surface": "彼", "meaning_en": "he", "form_steps": []}],
+            "grammar_overlays": []},
+        "korean-flat": {"segments": [{"text": "그", "meaning_en": "he", "form_steps": []}],
+            "grammar_links": [], "inflected_segment_indices": [], "expression_links": []},
+        "korean-v4": {"format": "source-span-links-annotation-v4", "segments": [
+            {"source_start": 0, "source_end": 1, "meaning_en": "he", "form_steps": [],
+             "grammar_links": [], "expression_links": []}]},
+    }
+    for index, representation in enumerate(("japanese-annotation", "korean-flat", "korean-v4")):
+        scoped_candidate = scoped_candidates[representation]
+        meaning_target = _target("set_field", "/segments/0/meaning_en")
+        scoped_runner = PlannedRunner(tmp_path / str(index), _plan((meaning_target,)), {
+            "base_digest": candidate_digest(scoped_candidate), "edits": [
+                {"op": "set_field", "path": meaning_target["path"], "value": "updated meaning"}]})
+        scoped_result = await repair_annotation(
+            Harness(tmp_path / str(index), scoped_runner), f"scope-{index}", scoped_candidate,
+            [{"problem": "Correct the occurrence gloss."}], representation=representation,
+            language={"japanese-annotation": "ja", "korean-flat": "ko", "korean-v4": "ko"}[representation],
+            validate_candidate=lambda _: None)
+        assert scoped_result["status"] == "applied"
+        assert scoped_runner.calls[0][4]["workspace_context"]["construction_occurrence_contract"] == \
+            _construction_occurrence_contract(representation)
+        assert "do not use the ending's grammar identity as the lexical root" in scoped_runner.calls[0][1]
+
+
+def test_saved_korean_name_plus_predication_pattern_passes_actual_gate_but_grammar_root_fails(tmp_path):
+    """Regression for K4's source-exact 길동이었다 name/predicate construction."""
+    from pipeline import korean_contracts, korean_dictionary
+    from pipeline.korean_agent_harness import validate_annotation_chunk
+
+    candidate = {
+        "segments": [
+            {"text": "길동", "type": "word", "meaning_en": "Gildong", "lemma": "홍길동",
+             "lexical_kind": "proper_name", "lexical_id": "hong-gildong",
+             "story_importance_en": "", "form_steps": []},
+            {"text": "이었다", "type": "word", "meaning_en": "was", "lemma": "이다",
+             "lexical_kind": "grammar", "lexical_id": "copula-ida",
+             "story_importance_en": "", "form_steps": []},
+        ],
+        "grammar_links": [
+            {"segment_index": 0, "entry_id": "past-ass-eoss", "context_en": "past predicate",
+             "display_form": "길동이었다", "display_meaning_en": "was Gildong",
+             "display_end_segment_index": 1},
+            {"segment_index": 1, "entry_id": "copula-ida", "context_en": "direct copular lesson",
+             "display_form": "", "display_meaning_en": "", "display_end_segment_index": -1},
+        ],
+        "inflected_segment_indices": [], "expression_links": [],
+    }
+    gate_args = {
+        "words": korean_dictionary._registry(korean_dictionary.WORDS),
+        "catalog": korean_contracts.lexical_catalog(),
+        "focus": {"entries": [{"id": "hong-gildong", "headword": "홍길동",
+            "kind": "proper_name", "aliases": ["홍길동", "길동"], "role_en": "central child"}]},
+        "title": "Fixture", "number": 1, "plan": {"beats": []}, "level": 4,
+        "run_dir": tmp_path, "source_id": "k4-repair-fixture",
+    }
+    validate_annotation_chunk(candidate, "길동이었다", **gate_args)
+
+    grammar_root = json.loads(json.dumps(candidate, ensure_ascii=False))
+    grammar_root["segments"][1]["form_steps"] = [{
+        "form": "이었다", "reading": "이-+-었-+-다", "label": "past predicate",
+        "meaning_en": "was", "grammar_entry_ids": ["copula-ida"],
+    }]
+    grammar_root["inflected_segment_indices"] = [1]
+    with pytest.raises(ValueError, match="needs an attested lexical base.*not a grammar identity"):
+        validate_annotation_chunk(grammar_root, "길동이었다", **gate_args)
+
+
 @pytest.mark.asyncio
 async def test_korean_repair_plan_receives_exact_per_step_identity_cardinality(tmp_path):
     candidate = {"segments": [{"text": "가요", "type": "word", "meaning_en": "go",

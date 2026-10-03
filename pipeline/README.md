@@ -709,9 +709,11 @@ draft is retained as `chapter-candidate.txt`, never as the accepted chapter.
 Tune recovery with `--max-repairs`, `--repair-effort`, `--final-effort`, or
 disable the final from-scratch pass with `--no-fresh-rewrite`.
 
-The HSK coverage tools remain diagnostic. The harness prioritizes natural
-Chinese and source fidelity; above-level literary vocabulary is expected to be
-made accessible through exhaustive annotations.
+The exact HSK word inventory is a reference for natural vocabulary choices,
+not a minimum-coverage quota. A short source scene may use few or no words
+unique to the requested band; do not add or replace prose merely to raise that
+count. Learner-level suitability remains subject to the independent source
+review and the separate readability and sentence/clause checks.
 
 The Japanese publisher follows the same pragmatic policy. Publication requires
 the complete 11 chapter × N5–N1 matrix. Length order is recorded for review but
@@ -1091,3 +1093,24 @@ Updated glossaries:
 - output/xiyouji/glossary.txt — added 齐天大圣, 菩提老祖
 - output/liaozhai/glossary.txt — added 燕赤霞, 陈氏, 兰若寺, 拂尘, 乞丐, 葬
 - output/sanguoyanyi/glossary.txt — added 涿郡, 涿县, 讨伐, 黄巾, 朝廷, 誓, 祭, 皇帝, 皇室
+
+
+Tool-enabled workers use the shared CodexRunner in all three language pipelines
+and the maintenance triage lane. Linux Landlock confines file-content writes to
+the job workspace and runtime scratch. Codex keeps its existing configuration
+and authentication locations readable; its state databases and logs use scratch,
+and its existing installation identity is the only permitted external runtime
+file. The null output device remains usable. Unsupported enforcement fails the
+launch rather than falling back to unrestricted repository writes.
+
+The coordinator owns shared source, schemas, validators, dictionaries and run
+records. Workers retain tools, research, repository reads and local validation.
+When a worker finds a validator defect, it saves a reproducer and proposed fix
+in its workspace for separate maintenance review. It must not edit shared code
+to make its candidate pass. Historical file-change events that altered repository
+files outside the job are rejected when considering reusable submissions.
+
+This is filesystem content-write containment, not a full isolation boundary:
+network and read access remain available, and Landlock does not restrict chmod.
+Finished worker logs are retained by the coordinator; saved drafts still require
+exact-artifact, linguistic review and publication checks.

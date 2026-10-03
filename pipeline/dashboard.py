@@ -252,7 +252,17 @@ def _worker_processes(run_dir: Path, root: Path, processes: list[dict[str, Any]]
                 or any(not re.fullmatch(r"[A-Za-z0-9_.-]{1,120}", part) or part in {".", ".."}
                        for part in relative.parts)):
             continue
-        job = "/".join(relative.parts[:-1])
+        job_parts = relative.parts[:-1]
+        # Workspace-profile Codex output is written under the exact per-job
+        # runtime directory. Strip that one protocol component so it matches
+        # the coordinator's job metadata. A legacy/nested job literally named
+        # "runtime" still maps correctly because it has no parent component.
+        if (relative.parts[-1] == "receipt.json" and len(job_parts) >= 2
+                and job_parts[-1] == "runtime"):
+            job_parts = job_parts[:-1]
+        if not job_parts:
+            continue
+        job = "/".join(job_parts)
         candidate_match = {"pid": process["pid"], "elapsed_seconds": process["elapsed_seconds"],
                            "process_state": process.get("process_state", "running"),
                            "role": "worker", "job": job, "stage": _stage_for_job(job),
@@ -359,6 +369,10 @@ class Dashboard:
                 try:
                     relative_job = meta_path.parent.relative_to(agents)
                 except ValueError:
+                    continue
+                # Archived quarantined attempts are evidence, not current jobs
+                # or additional review attempts in the live run summary.
+                if "history" in relative_job.parts:
                     continue
                 if (len(relative_job.parts) > 9 or any(
                         not re.fullmatch(r"[A-Za-z0-9_.-]{1,120}", part) or part in {".", ".."}

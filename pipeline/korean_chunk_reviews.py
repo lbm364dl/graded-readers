@@ -47,6 +47,22 @@ approved=false and a concrete issue. Do not rewrite any output yourself.
 '''
 
 
+class StaleFormReviewGuidanceError(ValueError):
+    """The candidate's form-chain review predates the current shared guidance."""
+
+
+def _has_form_steps(annotation):
+    if not isinstance(annotation, dict):
+        return False
+    return any(isinstance(segment, dict) and segment.get('form_steps')
+               for segment in annotation.get('segments', []))
+
+
+def _form_guidance_digest():
+    from pipeline.korean_agent_harness import digest
+    return digest(FORM_STAGE_EVIDENCE_GUIDANCE)
+
+
 async def review_chunk(runner, run_dir, *, annotation, text, context, policy):
     from pipeline.korean_agent_harness import digest, payload, save
     inputs = {'annotation': annotation, 'text': text, 'context': context}
@@ -59,10 +75,12 @@ async def review_chunk(runner, run_dir, *, annotation, text, context, policy):
     if review['prose_revision_reason_en'] and (review['approved'] or not review['issues']):
         raise ValueError('Korean chunk prose revision must be an explicit rejected review')
     save(run_dir / 'agents' / job / 'review-input.json', inputs)
-    return review, {'job': job, 'input_digest': digest(inputs), 'review_digest': digest(review)}
+    return review, {'job': job, 'input_digest': digest(inputs), 'review_digest': digest(review),
+                    'form_review_guidance_digest': _form_guidance_digest()}
 
 
-def verify_review(run_dir, evidence, *, annotation, text, chapter_text, source_start, expected_context=None):
+def verify_review(run_dir, evidence, *, annotation, text, chapter_text, source_start,
+                  expected_context=None, allow_stale_form_guidance=False):
     from pipeline.agent_harness import CodexRunner
     from pipeline.korean_agent_harness import approved, digest, read
     job = evidence['job']
@@ -81,6 +99,11 @@ def verify_review(run_dir, evidence, *, annotation, text, chapter_text, source_s
         raise ValueError('Korean chunk independent review is stale, rejected or mismatched')
     if any(inputs['context'].get(k) != v for k, v in (expected_context or {}).items()):
         raise ValueError('Korean chunk review planning context changed')
+    if (_has_form_steps(annotation)
+            and evidence.get('form_review_guidance_digest') != _form_guidance_digest()
+            and not allow_stale_form_guidance):
+        raise StaleFormReviewGuidanceError(
+            'Korean form-chain review predates the current complete-stage guidance')
     CodexRunner._check_tool_profile(root, 'offline', meta)
     if meta.get('workspace_digest'):
         workspace = root / 'workspace'
@@ -91,7 +114,8 @@ def verify_review(run_dir, evidence, *, annotation, text, chapter_text, source_s
     return review
 
 
-def verify_assembly_reviews(run_dir, meta, *, expected_context=None):
+def verify_assembly_reviews(run_dir, meta, *, expected_context=None,
+                            allow_stale_form_guidance=False):
     from pipeline.korean_agent_harness import read_annotation_chunk
     records = meta['chunks']
     if meta.get('chunk_reviews_version') != 1 or len(meta.get('chunk_reviews', [])) != len(records):
@@ -103,7 +127,8 @@ def verify_assembly_reviews(run_dir, meta, *, expected_context=None):
             raise ValueError('Invalid Korean chunk proposal job')
         value = read_annotation_chunk(run_dir / 'agents' / record['job'] / 'result.json', record)
         verify_review(run_dir, proof, annotation=value, text=record['text'],
-            chapter_text=chapter_text, source_start=start, expected_context=expected_context)
+            chapter_text=chapter_text, source_start=start, expected_context=expected_context,
+            allow_stale_form_guidance=allow_stale_form_guidance)
         start += len(record['text'])
 
 

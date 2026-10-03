@@ -10,7 +10,6 @@ from dataclasses import dataclass
 from datetime import datetime, timezone
 import hashlib
 import json
-import math
 import os
 from pathlib import Path
 import re
@@ -571,6 +570,8 @@ class CodexRunner:
 
     @staticmethod
     def _check_tool_profile(job_dir: Path, profile: str | None, meta: dict) -> None:
+        from pipeline.worker_runtime import reject_repository_mutations
+        reject_repository_mutations(job_dir, ROOT)
         if meta.get('kind') == 'annotation_patch_assembly':
             if meta.get('return_code') != 0 or meta.get('status') != 'applied':
                 raise ValueError('Only an applied annotation patch assembly can be reused')
@@ -833,8 +834,9 @@ class CodexRunner:
     ) -> dict[str, Any]:
         from pipeline.worker_workspace import VERSION
         effort = self.benchmark_effort or "low"
-        job_dir = self.run_dir / "agents" / job
-        job_dir.mkdir(parents=True, exist_ok=True)
+        from pipeline.worker_runtime import safe_job_directory
+        from pipeline.worker_paths import checked_directory
+        job_dir = safe_job_directory(self.run_dir, job)
         result_path = job_dir / "result.json"
         meta_path = job_dir / "meta.json"
         fingerprint = digest(prompt, schema.read_text(), self.model, effort)
@@ -883,8 +885,9 @@ class CodexRunner:
         worker_result_path, worker_schema = result_path, schema
         original_prompt = prompt
         if tool_profile == 'workspace':
-            worker_cwd = (job_dir / 'workspace').resolve()
-            worker_result_path = job_dir / 'receipt.json'
+            worker_cwd = checked_directory(job_dir / 'workspace', create=True)
+            checked_directory(job_dir / 'runtime', create=True)
+            worker_result_path = job_dir / 'runtime' / 'receipt.json'
             worker_schema = worker_cwd / 'receipt.schema.json'
         def consume_result(receipt):
             if tool_profile != 'workspace':
@@ -898,8 +901,8 @@ class CodexRunner:
             "codex", "exec", "--json", "--ephemeral",
             "-s", "danger-full-access" if tool_profile == 'workspace' else "read-only",
             "-m", self.model, "-c", f'model_reasoning_effort="{effort}"',
-            "-C", str(worker_cwd), "--output-schema", str(worker_schema.resolve()),
-            "-o", str(worker_result_path.resolve()), "-",
+            "-C", str(worker_cwd), "--output-schema", str(worker_schema.absolute()),
+            "-o", str(worker_result_path.absolute()), "-",
         ]
         if tool_profile == 'workspace':
             command[2:2] = ['-c', 'web_search="live"', '-c', 'sandbox_workspace_write.network_access=true']
@@ -933,22 +936,35 @@ class CodexRunner:
                     # recoverable instead of being mass-unlinked.
                     if tool_profile == 'workspace':
                         from pipeline.worker_workspace import build
+                        from pipeline.worker_runtime import preserve_prior_source_mutation
+                        preserve_prior_source_mutation(job_dir, ROOT)
                         prompt, workspace_digest = build(worker_cwd, original_prompt, json.loads(schema.read_text()),
                             context=workspace_context, submission_repair=submission_repair)
                         workspace_meta.update(tool_profile='workspace', workspace_digest=workspace_digest)
                     result_path.unlink(missing_ok=True)
                     worker_result_path.unlink(missing_ok=True)
+                    launch_command, launch_env = command, None
+                    runtime = job_dir / 'runtime'
+                    if tool_profile == 'workspace':
+                        from pipeline.worker_runtime import confined_launch
+                        # The receipt is outside immutable workspace inputs but
+                        # still inside the explicitly writable runtime root.
+                        launch_command, launch_env = confined_launch(
+                            command, repository=ROOT, workspace=worker_cwd,
+                            runtime=runtime, events=events_path, stderr=stderr_path)
+                        workspace_meta['filesystem_policy'] = 'landlock-write-scope-v1'
                     with events_path.open("wb") as stdout, stderr_path.open("wb") as stderr:
                         try:
                             async with asyncio.timeout(
                                 min(self.launch_timeout_seconds, float(self.timeout))
                             ):
                                 proc = await asyncio.create_subprocess_exec(
-                                    *command,
+                                    *launch_command,
                                     stdin=asyncio.subprocess.PIPE,
                                     stdout=stdout,
                                     stderr=stderr,
                                     start_new_session=True,
+                                    env=launch_env,
                                 )
                         except TimeoutError:
                             proc = None
@@ -965,12 +981,18 @@ class CodexRunner:
                                 await asyncio.wait_for(proc.stdin.drain(), self.timeout)
                                 proc.stdin.close()
                                 await asyncio.wait_for(proc.wait(), self.timeout)
+                                if tool_profile == 'workspace':
+                                    from pipeline.worker_runtime import retain_logs
+                                    retain_logs(runtime, events_path, stderr_path)
                             except TimeoutError:
                                 try:
                                     os.killpg(proc.pid, signal.SIGKILL)
                                 except ProcessLookupError:
                                     pass
                                 await proc.wait()
+                                if tool_profile == 'workspace':
+                                    from pipeline.worker_runtime import retain_logs
+                                    retain_logs(runtime, events_path, stderr_path)
                                 attempt = {
                                     "attempt": attempt_number,
                                     "started_at": attempt_started,
@@ -1175,23 +1197,16 @@ class ChapterHarness:
         return min(1.0, maximum + 0.10)
 
     @property
-    def scene_min_target_band_unique(self) -> int:
-        policy = policy_for(self.args.level)
-        if policy.min_target_band_unique == 0:
-            return 0
-        return max(3, math.ceil(policy.min_target_band_unique / self.scene_count))
-
-    @property
     def target_band_vocabulary_guidance(self) -> str:
-        """Give Luna the same exact band inventory used by the gate."""
+        """Provide an exact level inventory as a reference, never a quota."""
         if self.args.level == "hsk1":
             return ""
         inventory = "、".join(sorted(words_at_level(self.args.level)))
         return (
-            f"Use at least {self.scene_min_target_band_unique} distinct words "
-            f"from the exact {self.args.level.upper()} band naturally in this "
-            "scene. Do not force irrelevant words or list them mechanically. "
-            "The deterministic inventory is:\n" + inventory
+            f"Reference inventory for natural, useful {self.args.level.upper()}-band "
+            "word choices when the source meaning calls for them. This is not a "
+            "minimum or coverage quota: do not add unrelated facts, pad, or replace "
+            "natural wording just to demonstrate inventory items.\n" + inventory
         )
 
     @property
@@ -1663,9 +1678,8 @@ Write only simplified Chinese, even though ORIGINAL uses traditional Chinese.
 {target_guidance} {length_guidance}
 Core grammar should be
 comfortable at {self.args.level.upper()}. {policy.language}
-For HSK2 and above, use a natural, useful amount of vocabulary introduced in
-this exact HSK band. The result must not read like a lower-level adaptation
-made longer with padding.
+Use vocabulary natural to the requested level and source meaning. Do not make
+the adaptation longer or less accurate to demonstrate a vocabulary inventory.
 {self.target_band_vocabulary_guidance}
 Use annotations for the small number of indispensable names and story terms,
 not as permission to make the surrounding prose advanced. Do not invent facts
@@ -1780,6 +1794,12 @@ additions, factual/causal distortions, awkward Chinese, and readability issues.
 The adaptation must use simplified Chinese consistently; any traditional-only
 characters or mixed simplified/traditional prose requires verdict=revise.
 {source_review_acceptance_guidance}
+Judge whether the language suits the requested learner level from the actual
+passage and source demands. A short or lexically simple source scene may
+naturally contain few or no words unique to the target HSK band; do not require
+a minimum count or request vocabulary additions only to demonstrate band
+coverage. If the wording is genuinely too elementary or otherwise unsuitable,
+identify that as a substantive language problem.
 Use the schema's 0-10 score scale, where 9 means excellent, not 0.9. For HSK1,
 actively reject stilted word-list substitutions, missing causal explanations,
 vague referents, or phrases a native speaker would not naturally say, even if
@@ -1886,40 +1906,16 @@ REQUIRED EVENTS:\n{events}\n\nORIGINAL:\n{original}\n\nADAPTATION:\n{adaptation}
             result["harness_decision"] = (
                 "rejected_by_mechanical_level_word_sentence_gate"
             )
-        distinctiveness = validate_level_distinctiveness(
+        level_diagnostics = validate_level_distinctiveness(
             adaptation,
             self.args.level,
             allowed_words=self.focus_vocabulary_words,
             lower_level_max_above_ratio=(
                 lower_level_qualification_ratio(self.args.level)
             ),
-            min_target_band_unique=self.scene_min_target_band_unique,
         )
-        if not distinctiveness["passes"]:
-            result = dict(result)
-            result["verdict"] = "revise"
-            problems = []
-            if distinctiveness["lower_level_lexical_pass"] is True:
-                problems.append(
-                    f"the prose still passes "
-                    f"{distinctiveness['lower_level'].upper()} vocabulary limits"
-                )
-            if (
-                distinctiveness["target_band_unique"]
-                < distinctiveness["min_target_band_unique"]
-            ):
-                problems.append(
-                    f"only {distinctiveness['target_band_unique']} distinct "
-                    f"{self.args.level.upper()}-band words; require at least "
-                    f"{distinctiveness['min_target_band_unique']}"
-                )
-            result.setdefault("language_problems", []).append(
-                f"mechanical {self.args.level.upper()} distinctiveness gate: "
-                + "; ".join(problems)
-            )
-            result["harness_decision"] = (
-                "rejected_by_mechanical_level_distinctiveness_gate"
-            )
+        result = dict(result)
+        result["level_diagnostics"] = level_diagnostics
         paragraph_structure = (
             validate_paragraph_structure(
                 adaptation,
@@ -1976,7 +1972,11 @@ REQUIRED EVENTS:\n{events}\n\nORIGINAL:\n{original}\n\nADAPTATION:\n{adaptation}
         prior_findings: list[str] | None = None,
     ) -> dict[str, Any]:
         original = self.source[scene["source_start"] : scene["source_end"]]
-        findings = json.dumps(review, ensure_ascii=False, indent=2)
+        findings = json.dumps(
+            {key: value for key, value in review.items() if key != "level_diagnostics"},
+            ensure_ascii=False,
+            indent=2,
+        )
         policy = policy_for(self.args.level)
         charset_hint = "".join(sorted(self.readability_charset))
         beginner_guidance = (
@@ -2013,8 +2013,8 @@ omitted source events. Remove unsupported additions, correct distortions, fix
 listed language problems, and use only simplified Chinese. The deterministic
 gate permits at most {policy.max_above_level_ratio:.0%} above-level characters
 and word tokens after the reviewed focus-vocabulary exemptions.
-For HSK2 and above, also preserve enough natural vocabulary from this exact HSK
-band that the passage does not pass as a lower-level reader.
+Use vocabulary that fits the requested level and retained source meaning; do not
+rewrite or add content merely to demonstrate level-band vocabulary coverage.
 {self.target_band_vocabulary_guidance}
 {self.focus_vocabulary_guidance}
 {self.prose_shape_guidance}
@@ -2136,8 +2136,8 @@ restore every source fact, name, number, or event. Write natural modern Chinese
 for an {self.args.level.upper()} reader. Use only simplified Chinese. The
 deterministic gate permits at most {policy.max_above_level_ratio:.0%} above-level
 characters and word tokens after the reviewed focus-vocabulary exemptions.
-For HSK2 and above, also preserve enough natural vocabulary from this exact HSK
-band that the passage does not pass as a lower-level reader.
+Use vocabulary that fits the requested level and retained source meaning; do not
+rewrite or add content merely to demonstrate level-band vocabulary coverage.
 {self.target_band_vocabulary_guidance}
 {self.focus_vocabulary_guidance}
 {self.prose_shape_guidance}

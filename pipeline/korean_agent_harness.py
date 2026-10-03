@@ -208,7 +208,8 @@ def annotation_reuse_candidate(run_dir: Path, *, text: str | None = None):
                         continue
                     from pipeline.korean_chunk_reviews import verify_review
                     verify_review(run_dir, proof, annotation=annotation, text=chunk_text,
-                        chapter_text=old_text, source_start=sum(map(len, old_texts[:index])))
+                        chapter_text=old_text, source_start=sum(map(len, old_texts[:index])),
+                        allow_stale_form_guidance=True)
                     validate(annotation, contracts.ANNOTATION)
                     review_inputs = read(run_dir / 'agents' / proof['job'] / 'review-input.json')
                     valid.append({'source_chunk_index': index, 'record': record,
@@ -1010,6 +1011,7 @@ class KoreanHarness:
                     old_job, old_prose, old_review = reuse_candidate
                     old_meta = read(self.run_dir / 'agents' / old_job / 'meta.json')
                     partial = bool(old_review.get('partial_checkpoint'))
+                    local_reviews_verified = False
                     if partial:
                         rows = old_review['chunks']
                         old_lineage = [row['record'] for row in rows]
@@ -1028,26 +1030,49 @@ class KoreanHarness:
                             path = self.run_dir / 'agents' / record['job'] / 'result.json'
                             if path.exists() and digest(read_annotation_chunk(path, record)) == record['digest']:
                                 reusable.add(i)
-                    candidates = [{'old_chunk_index': i + 1, 'old_source_chunk_index': source_positions[i] + 1,
-                                   'new_chunk_index': j + 1, 'text': text,
-                                   'annotation': contracts.annotation_view(old_values[i], max_characters=0)}
-                                  for j, text in enumerate(texts) for i, old_text in enumerate(old_texts)
-                                  if i in reusable and old_text == text]
-                    reuse_job = f'{job}-reuse-plan'
-                    reuse_plan = await self.runner.call(reuse_job, self.policy + '\n'
-                        'Select reusable exact sentence occurrences after a deliberate prose revision. '
-                        'Use only candidate old/new pairs whose text and contextual roles/meanings remain valid. '
-                        'Exclude occurrences affected by unresolved annotation-review issues; do not carry a known error forward. '
-                        'Keep repeated positions distinct and preserve narrative order. Do not rewrite annotations or infer new word forms. '
-                        + payload(old_prose=old_prose, new_prose=prose,
-                                  unresolved_review=old_review, candidates=candidates),
-                        contracts.schema_path('annotation-reuse-plan'), 'low', tool_profile='offline')
-                    validate(reuse_plan, contracts.ANNOTATION_REUSE_PLAN)
-                    reused = contracts.reuse_selection(reuse_plan, old_texts, texts)
-                    if any(old - 1 not in reusable for old in reused.values()):
-                        raise ValueError('Korean reuse selected unavailable annotation evidence')
-                    repair_evidence.update(reuse_plan_job=reuse_job, reuse_plan_digest=digest(reuse_plan), reuse_source_job=old_job)
-                    print(f'annotation reuse after prose revision: {len(reused)} of {len(texts)} chunks', flush=True)
+                        local_reviews_verified = old_review.get('approved') is True
+                        if old_meta.get('chunk_reviews_version') == 1:
+                            try:
+                                from pipeline.korean_chunk_reviews import verify_assembly_reviews
+                                verify_assembly_reviews(self.run_dir, old_meta,
+                                    allow_stale_form_guidance=True)
+                            except (OSError, ValueError, KeyError, IndexError, TypeError, ValidationError):
+                                local_reviews_verified = False
+                    unchanged_reviewed_source = (
+                        old_prose.get('text') == prose.get('text')
+                        and old_texts == texts
+                        and (partial or local_reviews_verified)
+                        and reusable == set(range(len(texts))))
+                    if unchanged_reviewed_source:
+                        # Preserve exact candidate bytes when the source chunking
+                        # did not change. reviewed_chunk below still obtains a new
+                        # local review under current instructions before assembly.
+                        reused = {index + 1: index + 1 for index in range(len(texts))}
+                        repair_evidence.update(reuse_source_job=old_job,
+                            reuse_strategy='same_text_same_chunking_fresh_local_review',
+                            reuse_candidate_digest=digest(old_value if not partial else old_values))
+                        print(f'annotation reuse: retaining {len(reused)} unchanged source chunks for fresh review', flush=True)
+                    else:
+                        candidates = [{'old_chunk_index': i + 1, 'old_source_chunk_index': source_positions[i] + 1,
+                                       'new_chunk_index': j + 1, 'text': text,
+                                       'annotation': contracts.annotation_view(old_values[i], max_characters=0)}
+                                      for j, text in enumerate(texts) for i, old_text in enumerate(old_texts)
+                                      if i in reusable and old_text == text]
+                        reuse_job = f'{job}-reuse-plan'
+                        reuse_plan = await self.runner.call(reuse_job, self.policy + '\n'
+                            'Select reusable exact sentence occurrences after a deliberate prose revision. '
+                            'Use only candidate old/new pairs whose text and contextual roles/meanings remain valid. '
+                            'Exclude occurrences affected by unresolved annotation-review issues; do not carry a known error forward. '
+                            'Keep repeated positions distinct and preserve narrative order. Do not rewrite annotations or infer new word forms. '
+                            + payload(old_prose=old_prose, new_prose=prose,
+                                      unresolved_review=old_review, candidates=candidates),
+                            contracts.schema_path('annotation-reuse-plan'), 'low', tool_profile='offline')
+                        validate(reuse_plan, contracts.ANNOTATION_REUSE_PLAN)
+                        reused = contracts.reuse_selection(reuse_plan, old_texts, texts)
+                        if any(old - 1 not in reusable for old in reused.values()):
+                            raise ValueError('Korean reuse selected unavailable annotation evidence')
+                        repair_evidence.update(reuse_plan_job=reuse_job, reuse_plan_digest=digest(reuse_plan), reuse_source_job=old_job)
+                        print(f'annotation reuse after prose revision: {len(reused)} of {len(texts)} chunks', flush=True)
                 prefix, attempt = job.rsplit('-', 1)
                 previous_job = f'{prefix}-{int(attempt) - 1}'
                 if issues and int(attempt) > 0 and (self.run_dir / 'agents' / previous_job / 'meta.json').exists():

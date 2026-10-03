@@ -7,6 +7,7 @@ from pathlib import Path
 import re
 import shlex
 from jsonschema import ValidationError, validate
+from pipeline.worker_paths import atomic_write_managed, checked_directory
 
 VERSION = 'worker-workspace-v2'
 RECEIPT_SCHEMA = {'type': 'object', 'properties': {'candidate_path': {'type': 'string', 'minLength': 1}},
@@ -74,7 +75,7 @@ def _remove_obsolete_managed_inputs(path, previous_manifest, current_files):
 
 
 def build(path, prompt, schema, *, context=None, submission_repair=None):
-    path.mkdir(parents=True, exist_ok=True)
+    path = checked_directory(Path(path).absolute(), create=True)
     previous_manifest = None
     previous_manifest_path = path / 'manifest.json'
     if previous_manifest_path.is_file() and not previous_manifest_path.is_symlink():
@@ -84,12 +85,11 @@ def build(path, prompt, schema, *, context=None, submission_repair=None):
             previous_manifest = None
     files = {}
     def put(name, content):
-        target = path / name
-        target.parent.mkdir(parents=True, exist_ok=True)
         if isinstance(content, bytes):
-            target.write_bytes(content)
+            encoded = content
         else:
-            target.write_text(content, encoding='utf-8')
+            encoded = content.encode('utf-8')
+        target = atomic_write_managed(path, name, encoded)
         files[name] = hash_bytes(target.read_bytes())
     def put_json(name, value):
         put(name, json.dumps(value, ensure_ascii=False, indent=2) + '\n')
@@ -147,7 +147,7 @@ def build(path, prompt, schema, *, context=None, submission_repair=None):
                               ('Do not call any tools, including resource listing.', ''),
                               ('No tools.', ''), ('no tools.', '')):
         instruction = instruction.replace(obsolete, current)
-    instruction += '\n\nCURRENT WORKER POLICY: Tools are enabled. Earlier offline/no-tools clauses are obsolete and superseded. Use file inspection, scripts, local validation, web research and other available tools when useful. Preserve authoritative inputs; write drafts and scratch files in this workspace. New research is evidence for review, not permission to invent approved IDs or bypass publication checks. Write the requested JSON to candidate.json. Run the supplied validation command, inspect its output, and correct every reported error before submitting. Your final response is only {"candidate_path":"candidate.json"}; the runner consumes your actual file. This submission rule supersedes earlier instructions to repeat the full JSON in the final response.\n'
+    instruction += '\n\nCURRENT WORKER POLICY: Tools are enabled. Earlier offline/no-tools clauses are obsolete and superseded. Use file inspection, scripts, local validation, web research and other available tools when useful. Preserve authoritative inputs; write drafts and scratch files in this workspace. New research is evidence for review, not permission to invent approved IDs or bypass publication checks. Repository source, validators, schemas, tests, approved dictionaries and run records are coordinator-owned. Do not edit them or change their permissions to make a draft pass. If validation exposes a pipeline defect, retain an exact reproducer and proposed fix in this workspace for the maintenance lane; do not apply it to shared files. Keep all draft and scratch changes inside this workspace. Write the requested JSON to candidate.json. Run the supplied validation command, inspect its output, and correct every reported error before submitting. Your final response is only {"candidate_path":"candidate.json"}; the runner consumes your actual file. This submission rule supersedes earlier instructions to repeat the full JSON in the final response.\n'
     if submission_repair is not None:
         rejected_bytes = submission_repair.get('artifact_bytes')
         rejected_name = 'rejected-candidate-attempt-01.json' if rejected_bytes is not None else None
@@ -175,7 +175,7 @@ def build(path, prompt, schema, *, context=None, submission_repair=None):
     put('README.txt', 'Read TASK.txt and INDEX.json. Repository root: ' + str(ROOT) + '. Repository paths in the task are relative to that root; input/reference paths in INDEX.json are relative to this workspace. Inspect relevant data and full reference entries as needed. Use your tools freely to investigate and verify. Save candidate.json and check it with:\n' + command + '\nThe local check is feedback, not independent publication approval. Submit only {"candidate_path":"candidate.json"}; do not reproduce the file contents.\n')
     _remove_obsolete_managed_inputs(path, previous_manifest, files)
     manifest = {'version': VERSION, 'files': files}
-    (path / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
+    atomic_write_managed(path, 'manifest.json', (json.dumps(manifest, indent=2) + '\n').encode('utf-8'))
     return ('Your task and organized inputs are in this working directory. Read README.txt, TASK.txt and INDEX.json. '
             'Use tools to inspect references, investigate and test your work. Write candidate.json matching schema.json; return only {"candidate_path":"candidate.json"}.\n'), hash_bytes((path / 'manifest.json').read_bytes())
 

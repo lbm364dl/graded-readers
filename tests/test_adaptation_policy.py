@@ -31,10 +31,11 @@ def test_unknown_level_fails_closed():
         policy_for("hsk0")
 
 
-def test_default_adaptation_policy_contains_no_size_quota_fields():
+def test_default_adaptation_policy_contains_no_size_or_band_count_quotas():
     policy = policy_for("hsk4")
     assert not hasattr(policy, "min_target_chars")
     assert not hasattr(policy, "max_target_chars")
+    assert not hasattr(policy, "min_target_band_unique")
 
 
 def test_length_bounds_are_tighter_after_hsk1():

@@ -110,6 +110,50 @@ def test_rebuilding_workspace_preserves_changed_and_unsafe_old_manifest_targets(
     assert outside.read_text(encoding='utf-8') == 'preserve outside file'
 
 
+def test_workspace_build_rejects_symlinked_input_directory_before_writing(tmp_path):
+    workspace = tmp_path / 'workspace'
+    workspace.mkdir()
+    outside = tmp_path / 'outside'
+    outside.mkdir()
+    sentinel = outside / 'sentinel.json'
+    sentinel.write_text('keep me', encoding='utf-8')
+    (workspace / 'inputs').symlink_to(outside, target_is_directory=True)
+    prompt = 'Task\nINPUT:\n' + json.dumps({'candidate': {'segments': []}})
+
+    with pytest.raises(ValueError, match='symlink'):
+        build(workspace, prompt, {'type': 'object'})
+
+    assert sentinel.read_text(encoding='utf-8') == 'keep me'
+    assert list(outside.iterdir()) == [sentinel]
+
+
+@pytest.mark.parametrize('alias_kind', ['symlink', 'hardlink'])
+def test_workspace_regeneration_replaces_managed_leaf_alias_without_touching_target(
+    tmp_path, alias_kind
+):
+    import os
+
+    workspace = tmp_path / 'workspace'
+    prompt = 'Task\nINPUT:\n' + json.dumps({'candidate': {'segments': []}})
+    build(workspace, prompt, {'type': 'object'})
+    manifest = json.loads((workspace / 'manifest.json').read_text(encoding='utf-8'))
+    managed_name = next(name for name in manifest['files'] if name.startswith('inputs/'))
+    managed_path = workspace / managed_name
+    target = tmp_path / f'{alias_kind}-target.json'
+    target.write_text('preserve alias target', encoding='utf-8')
+    managed_path.unlink()
+    if alias_kind == 'symlink':
+        managed_path.symlink_to(target)
+    else:
+        os.link(target, managed_path)
+
+    build(workspace, prompt, {'type': 'object'})
+
+    assert target.read_text(encoding='utf-8') == 'preserve alias target'
+    assert managed_path.is_file() and not managed_path.is_symlink()
+    assert json.loads(managed_path.read_text(encoding='utf-8')) == {'segments': []}
+
+
 def test_plain_task_and_schema_validation(tmp_path):
     _, signature = build(tmp_path, 'Inspect the supplied repository.', {'type':'object', 'required':['ok']})
     verify(tmp_path, signature)

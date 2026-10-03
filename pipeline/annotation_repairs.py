@@ -74,6 +74,7 @@ PATCH_SCHEMA: dict[str, Any] = {
 DEPENDENCY_CLOSURE_GUIDANCE = """For each issue, inspect semantic dependencies through the exact observed tap surface before choosing targets. If changing a lemma, lexical identity, or form analysis for an inflected/derived surface, include only the dependent semantic field/list operations needed to keep its complete chain valid through that exact surface, with matching grammar links/overlays and the representation's form-audit membership when those fields exist. Removing an incorrect step or link is not sufficient when the remaining chain then fails to explain the observed surface; add or replace the supported semantic rows needed for the corrected analysis. Do not alter source/tap text, boundaries, or ranges. Contrast: a wrong occurrence gloss on an already-valid chain should target only that meaning field; a changed lemma/identity for an inflected surface may also require corrected ordered stages and their linked lessons. Inspect the supplied grammar knowledge and identity policy: reuse an exact approved entry when it fits; use a provisional/draft identity only when the language policy explicitly permits it, and leave it subject to the normal independent review. Never present a draft as approved, and never invent a lexical ID or lesson to complete the chain."""
 REPRESENTATION_STRUCTURE_GUIDANCE = """Use `representation_structure_contract` from INPUT when it is present, together with the candidate gate and supplied language schema. Respect every declared item cardinality exactly. If a grammar-identity array is constrained to one identity per form step, never put several identities on one step: represent separate ordered transformations as separate complete-form steps only when the exact surface, references, and candidate gate support those stages. A step's meaning describes its complete form; keep politeness/form information separate, and never create a bare-stem stage just to satisfy cardinality. If an existing step and a linked lesson describe different transformations, do not replace that step's identity alone; plan the supported dependent stage and matching link edits required by the gate. If the contract is absent, follow the current language's schema and policy without importing another language's cardinality. Do not invent stages or meanings to satisfy a guessed rule."""
 SOURCE_TAP_PROJECTION_GUIDANCE = """Keep primary source/tap fields unchanged: segment text/surface, source offsets, and all primary tap boundaries. Do not mutate source-projected fields of a grammar occurrence row in place (for example grammar-link segment/range indices and display_form, or grammar-overlay start/end and text/surface/component spans). An empty Korean grammar-link display_form with display_end_segment_index -1 is a direct lesson link; do not turn it into a displayed source span in place. A grounded correction may instead remove an incorrect grammar occurrence row and append a corrected row at the same semantic-list path, with its complete span and any component spans exactly supported by unchanged source segments and the representation contract. This is a semantic overlay replacement, not source resegmentation; retain all unaffected rows and rerun the complete candidate gate. Do not invent a construction or its meaning. Use boundary_change_needed only when primary source text, tap surface/boundaries, or source segmentation itself must change, or when the required overlay cannot be expressed safely by allowed semantic row operations."""
+ENDING_TAP_CONSTRUCTION_GUIDANCE = """When a grammatical ending is tapped separately from an adjacent lexical word or name, do not use the ending's grammar identity as the lexical root of a word-form chain. Keep the direct ending lesson linked to its ending tap. If the reviewed analysis requires a complete construction spanning the lexical/name tap and ending, represent that construction as a source-exact grammar occurrence anchored at the first included lexical/name tap, using the representation-specific `construction_occurrence_contract` in INPUT; preserve every tap and the direct ending lesson. This applies to supported noun/name + predication and lexical-verb + auxiliary constructions across distinct lesson identities. Use only the supplied attested lexical identity and independently supported grammar identities; do not add a copula-ID exception or invent a word/lesson. Contrast: a valid full-span occurrence may include the ending tap while the direct ending lesson remains on that ending; using a grammar-kind tap as a lexical form-chain root is invalid. The complete displayed form must exactly match the included source span and its complete meaning must be supported by the source and lessons."""
 
 
 def _representation_structure_contract(representation: str) -> dict[str, Any] | None:
@@ -93,6 +94,43 @@ def _representation_structure_contract(representation: str) -> dict[str, Any] | 
         "max_items": maximum,
         "meaning": "The constraint applies within each form step, not across the ordered form-step chain.",
     }
+
+
+def _construction_occurrence_contract(representation: str) -> dict[str, Any] | None:
+    """Describe source-grounded grammar occurrence placement for each schema."""
+    contracts = {
+        "chinese-fixed": {
+            "occurrence_list": "/grammar_overlays", "anchor": "start Unicode offset",
+            "end": "exclusive end Unicode offset", "surface": "text",
+            "source_basis": "exact source text span; offsets are source offsets",
+            "ending_link": "retain any direct ending/particle annotation on its own tap",
+        },
+        "chinese-annotation": {
+            "occurrence_list": "/grammar_overlays", "anchor": "start Unicode offset",
+            "end": "exclusive end Unicode offset", "surface": "text",
+            "source_basis": "exact source text span; offsets are source offsets",
+            "ending_link": "retain any direct ending/particle annotation on its own tap",
+        },
+        "japanese-annotation": {
+            "occurrence_list": "/grammar_overlays", "anchor": "start Unicode offset",
+            "end": "exclusive end Unicode offset", "surface": "surface",
+            "source_basis": "exact source text span; overlay component spans are relative to that surface",
+            "ending_link": "retain the lexical/name segment and the ending/auxiliary segment as separate taps",
+        },
+        "korean-flat": {
+            "occurrence_list": "/grammar_links", "anchor": "segment_index of first included lexical/name tap",
+            "end": "inclusive display_end_segment_index", "surface": "display_form",
+            "source_basis": "concatenation of exact unchanged source taps from anchor through end",
+            "ending_link": "retain a direct lesson link on its ending tap with empty display fields and end index -1",
+        },
+        "korean-v4": {
+            "occurrence_list": "grammar_links within the anchor segment", "anchor": "source_start of first included lexical/name tap",
+            "end": "exclusive source_end of the complete construction", "surface": "source-exact display form",
+            "source_basis": "exact unchanged source offsets across included taps",
+            "ending_link": "retain the direct ending lesson on its own tap with source offsets (-1, -1)",
+        },
+    }
+    return contracts.get(representation)
 
 
 def digest(value: Any) -> str:
@@ -232,7 +270,9 @@ async def repair_annotation(
                       "representation": representation, "candidate": candidate,
                       "issues": issues,
                       "representation_structure_contract":
-                          _representation_structure_contract(representation)}
+                          _representation_structure_contract(representation),
+                      "construction_occurrence_contract":
+                          _construction_occurrence_contract(representation)}
     plan_context = {**shared_context,
                     "annotation_plan_validation": {"issue_count": len(issues),
                         "target_contract_version": 1}}
@@ -241,6 +281,8 @@ async def repair_annotation(
 {DEPENDENCY_CLOSURE_GUIDANCE}
 
 {REPRESENTATION_STRUCTURE_GUIDANCE}
+
+{ENDING_TAP_CONSTRUCTION_GUIDANCE}
 
 {SOURCE_TAP_PROJECTION_GUIDANCE}
 
@@ -288,6 +330,8 @@ INPUT:
     patch_prompt = f"""Return JSON matching the supplied semantic-patch schema. Repair only the supplied prior candidate. Return exactly `base_digest` and `edits`; never return a replacement candidate. Use only the exact op/path pairs in ALLOWED_TARGETS, and make each edit resolve its mapped review issue. Apply every planned target with an effective value/list change; an enclosing `replace_row` or `replace_list` counts only when the exact planned descendant value changes. One append edit cannot satisfy two issue rows that each plan an append. Do not submit an empty or partial patch. Preserve all unedited data and all primary source/tap surfaces, boundaries, and source ranges. The only permitted change to a derived grammar-occurrence span is the planned remove+append replacement of its row with a complete span grounded in unchanged source; never mutate projected span fields in place. `append_row` uses the exact list path named by the plan, without a row-index suffix; `remove_row` uses one existing numeric row path. Use an explicit append/remove operation only when the repair plan names that exact list operation. The local caller applies the patch and runs the full deterministic language gate; independent review still follows.
 
 {SOURCE_TAP_PROJECTION_GUIDANCE}
+
+{ENDING_TAP_CONSTRUCTION_GUIDANCE}
 
 INPUT:
 {json.dumps(patch_context, ensure_ascii=False, indent=2)}"""
@@ -358,6 +402,8 @@ INPUT:
 
 {REPRESENTATION_STRUCTURE_GUIDANCE}
 
+{ENDING_TAP_CONSTRUCTION_GUIDANCE}
+
 {SOURCE_TAP_PROJECTION_GUIDANCE}
 
 Use only compatible operations: scalar fields use `set_field`, arrays use `replace_list`, existing object rows use `replace_row`, and existing list paths use `append_row` (the path is the list itself, never a guessed numeric suffix). `remove_row` names an existing numeric row.
@@ -420,6 +466,8 @@ INPUT:
         replan_patch_prompt = f"""Return JSON matching the supplied semantic-patch schema. This is the one and only replan after a reproduced derived-candidate gate rejection. Apply edits to the exact ORIGINAL base candidate (base digest below), not to the rejected patch. The rejected patch and diagnostic are included as evidence. Use only the exact op/path pairs in ALLOWED_TARGETS. Effectively apply every planned target; an enclosing row/list replacement only covers a target when its exact descendant value changes, and repeated append targets need repeated append edits. Do not submit an empty or partial patch. Preserve all primary source/tap surfaces, boundaries, source ranges, and every unedited field. The only permitted change to a derived grammar-occurrence span is the planned remove+append replacement of its row with a complete span grounded in unchanged source; never mutate projected span fields in place. `append_row` uses the exact list path named by the plan, without a row-index suffix; `remove_row` uses one existing numeric row path. The caller applies this patch to the original base, runs the same complete deterministic candidate gate, and then obtains independent review; a successful gate is not approval.
 
 {SOURCE_TAP_PROJECTION_GUIDANCE}
+
+{ENDING_TAP_CONSTRUCTION_GUIDANCE}
 
 INPUT:
 {json.dumps(replan_patch_context, ensure_ascii=False, indent=2)}"""

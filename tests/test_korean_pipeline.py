@@ -1545,8 +1545,11 @@ def test_partial_annotation_checkpoint_reuses_only_verified_successful_positions
     text, texts = '가가가가', ['가', '가', '가', '가']
     annotation = {'segments': [{'text': '가', 'type': 'word', 'meaning_en': 'go',
         'lemma': '가다', 'lexical_kind': 'vocabulary', 'lexical_id': 'fixture/ga-da',
-        'story_importance_en': '', 'form_steps': []}], 'grammar_links': [],
-        'inflected_segment_indices': [], 'expression_links': []}
+        'story_importance_en': '', 'form_steps': [{'form': '가', 'reading': '가',
+            'label': 'fixture stage', 'meaning_en': 'go', 'grammar_entry_ids': ['fixture-go']}]}],
+        'grammar_links': [{'segment_index': 0, 'entry_id': 'fixture-go', 'context_en': 'fixture link',
+            'display_form': '', 'display_meaning_en': '', 'display_end_segment_index': -1}],
+        'inflected_segment_indices': [0], 'expression_links': []}
     successes = []
     for index in (0, 2, 3):
         chunk_job = f'annotation-attempt-chunk-{index + 1:03d}-0'
@@ -1579,8 +1582,15 @@ def test_partial_annotation_checkpoint_reuses_only_verified_successful_positions
     candidate = annotation_reuse_candidate(tmp_path, text=text)
     assert [row['source_chunk_index'] for row in candidate[2]['chunks']] == [2, 3]
     # One stale local-review digest rejects only that occurrence; the valid
-    # repeated source position remains independently reusable.
+    # repeated source position remains independently reusable. A stale form
+    # guidance proof is different: preserve the candidate for a new review.
     checkpoint = tmp_path / 'agents' / job / 'meta.json'
+    meta['chunk_reviews'][1].pop('form_review_guidance_digest')
+    save(checkpoint, meta)
+    candidate = annotation_reuse_candidate(tmp_path, text=text)
+    assert [row['source_chunk_index'] for row in candidate[2]['chunks']] == [2, 3]
+    # Other tampering remains a hard rejection, even when stale guidance can be
+    # ignored for candidate reseeding.
     meta['chunk_reviews'][1]['review_digest'] = '0' * 64
     save(checkpoint, meta)
     candidate = annotation_reuse_candidate(tmp_path, text=text)
