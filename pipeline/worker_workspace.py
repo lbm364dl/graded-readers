@@ -34,8 +34,54 @@ def hash_bytes(value):
     return hashlib.sha256(value).hexdigest()
 
 
+def _remove_obsolete_managed_inputs(path, previous_manifest, current_files):
+    """Remove only unchanged, obsolete input assets named by the old manifest."""
+    if path.is_symlink() or not isinstance(previous_manifest, dict):
+        return
+    old_files = previous_manifest.get('files')
+    if not isinstance(old_files, dict):
+        return
+    root = path.resolve()
+    for name, expected_hash in old_files.items():
+        if (not isinstance(name, str) or name in current_files
+                or not name.startswith(('inputs/', 'references/'))
+                or '\\' in name or not isinstance(expected_hash, str)
+                or re.fullmatch(r'[0-9a-f]{64}', expected_hash) is None):
+            continue
+        parts = name.split('/')
+        if len(parts) < 2 or any(part in {'', '.', '..'} for part in parts):
+            continue
+        target = path.joinpath(*parts)
+        current = path
+        unsafe = False
+        for part in parts:
+            current = current / part
+            if current.is_symlink():
+                unsafe = True
+                break
+        if unsafe or not target.is_file():
+            continue
+        try:
+            resolved = target.resolve(strict=True)
+            if not resolved.is_relative_to(root):
+                continue
+            if hash_bytes(target.read_bytes()) != expected_hash:
+                continue
+            target.unlink()
+        except (OSError, RuntimeError):
+            # A changed or inaccessible workspace asset is user evidence.
+            continue
+
+
 def build(path, prompt, schema, *, context=None, submission_repair=None):
     path.mkdir(parents=True, exist_ok=True)
+    previous_manifest = None
+    previous_manifest_path = path / 'manifest.json'
+    if previous_manifest_path.is_file() and not previous_manifest_path.is_symlink():
+        try:
+            previous_manifest = json.loads(previous_manifest_path.read_text(encoding='utf-8'))
+        except (OSError, UnicodeError, json.JSONDecodeError):
+            previous_manifest = None
     files = {}
     def put(name, content):
         target = path / name
@@ -48,6 +94,7 @@ def build(path, prompt, schema, *, context=None, submission_repair=None):
     def put_json(name, value):
         put(name, json.dumps(value, ensure_ascii=False, indent=2) + '\n')
     instructions, inventory, contexts = [], [], []
+    seen_input_blocks = set()
     pieces = prompt.split('\nINPUT:\n')
     if context is not None:
         pieces.append(json.dumps(context, ensure_ascii=False))
@@ -60,6 +107,11 @@ def build(path, prompt, schema, *, context=None, submission_repair=None):
             instructions.append('\nINPUT:\n' + piece)
             continue
         instructions.append(stripped[end:])
+        identity = json.dumps(value, ensure_ascii=False, sort_keys=True,
+                              separators=(',', ':'), allow_nan=False)
+        if identity in seen_input_blocks:
+            continue
+        seen_input_blocks.add(identity)
         contexts.append(value)
         fields = value if isinstance(value, dict) else {'value': value}
         for index, (key, item) in enumerate(fields.items()):
@@ -118,9 +170,10 @@ def build(path, prompt, schema, *, context=None, submission_repair=None):
     put_json('INDEX.json', inventory)
     put_json('schema.json', schema)
     put_json('receipt.schema.json', RECEIPT_SCHEMA)
-    put_json('validation-context.json', [{k: v[k] for k in ('chunk_text', 'language', 'surfaces', 'annotation', 'annotation_validation', 'annotation_patch_validation') if k in v} for v in contexts if isinstance(v, dict)])
+    put_json('validation-context.json', [{k: v[k] for k in ('chunk_text', 'language', 'surfaces', 'annotation', 'annotation_validation', 'annotation_patch_validation', 'annotation_plan_validation') if k in v} for v in contexts if isinstance(v, dict)])
     command = 'cd ' + shlex.quote(str(ROOT)) + ' && ' + shlex.quote(str(ROOT / '.venv/bin/python')) + ' -m pipeline.worker_workspace validate --workspace ' + shlex.quote(str(path.resolve())) + ' --candidate ' + shlex.quote(str(path.resolve() / 'candidate.json'))
     put('README.txt', 'Read TASK.txt and INDEX.json. Repository root: ' + str(ROOT) + '. Repository paths in the task are relative to that root; input/reference paths in INDEX.json are relative to this workspace. Inspect relevant data and full reference entries as needed. Use your tools freely to investigate and verify. Save candidate.json and check it with:\n' + command + '\nThe local check is feedback, not independent publication approval. Submit only {"candidate_path":"candidate.json"}; do not reproduce the file contents.\n')
+    _remove_obsolete_managed_inputs(path, previous_manifest, files)
     manifest = {'version': VERSION, 'files': files}
     (path / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
     return ('Your task and organized inputs are in this working directory. Read README.txt, TASK.txt and INDEX.json. '
@@ -142,6 +195,11 @@ def check(path, candidate):
     value = json.loads(candidate.read_text())
     validate(value, json.loads((path / 'schema.json').read_text()))
     for context in json.loads((path / 'validation-context.json').read_text()):
+        plan_context = context.get('annotation_plan_validation')
+        if plan_context is not None:
+            from pipeline.annotation_repairs import _validate_plan
+            _validate_plan(value, plan_context['issue_count'])
+            continue
         patch_context = context.get('annotation_patch_validation')
         if patch_context is not None:
             _check_annotation_patch(path, value, patch_context)
@@ -286,15 +344,23 @@ def submit(path, receipt):
     except ValidationError as error:
         raise CandidateSubmissionError(_schema_diagnostic(error), artifact_path=artifact_path,
             artifact_bytes=candidate_bytes, category='schema_rejection') from error
-    if any(context.get('annotation_patch_validation') is not None
-           for context in json.loads((path / 'validation-context.json').read_text(encoding='utf-8'))):
+    validation_contexts = json.loads((path / 'validation-context.json').read_text(encoding='utf-8'))
+    plan_validation = next((context['annotation_plan_validation']
+                            for context in validation_contexts
+                            if context.get('annotation_plan_validation') is not None), None)
+    patch_validation = any(context.get('annotation_patch_validation') is not None
+                           for context in validation_contexts)
+    if plan_validation is not None or patch_validation:
         try:
             check(path, candidate)
         except (ValidationError, ValueError, KeyError, TypeError, IndexError) as error:
             raise CandidateSubmissionError(
+                f'Submitted annotation plan failed issue coverage validation: {error}'
+                if plan_validation is not None else
                 f'Submitted annotation patch failed derived-candidate validation: {error}',
                 artifact_path=artifact_path, artifact_bytes=candidate_bytes,
-                category='derived_annotation_rejection') from error
+                category='plan_contract_rejection' if plan_validation is not None else
+                         'derived_annotation_rejection') from error
     return value, {'artifact_path': str(candidate.relative_to(path.resolve())),
                    'artifact_digest': hash_bytes(candidate_bytes)}
 

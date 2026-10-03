@@ -29,6 +29,87 @@ def test_workspace_rejects_lossy_reference_rows(tmp_path):
         build(tmp_path, prompt, {})
 
 
+def test_workspace_deduplicates_identical_input_blocks_but_keeps_distinct_blocks(tmp_path):
+    repeated = {'issues': ['first', 'second'], 'candidate': {'segments': []}}
+    different = {'issues': ['first', 'changed'], 'candidate': {'segments': []}}
+    prompt = ('Plan the repairs.\nINPUT:\n' + json.dumps(repeated, ensure_ascii=False)
+              + '\nKeep this intervening direction.\nINPUT:\n'
+              + json.dumps(different, ensure_ascii=False)
+              + '\nKeep this trailing direction.\nINPUT:\n'
+              + json.dumps(repeated, ensure_ascii=False))
+    _, signature = build(tmp_path, prompt, {'type': 'object'}, context=repeated)
+
+    inventory = json.loads((tmp_path / 'INDEX.json').read_text())
+    # The repeated first/third prompt blocks and appended workspace context are
+    # one input; the distinct second block stays independently represented.
+    assert len(inventory) == 4  # issues + candidate for each of two distinct blocks
+    assert {entry['input_block'] for entry in inventory} == {1, 2}
+    task = (tmp_path / 'TASK.txt').read_text()
+    assert 'Keep this intervening direction.' in task
+    assert 'Keep this trailing direction.' in task
+    verify(tmp_path, signature)
+
+
+def _reference_block(identity, surface):
+    return {'chunk_text': surface, 'references': {
+        'format': 'lossless_reference_rows', 'columns': ['id', 'headword'],
+        'rows': [[identity, surface]]}}
+
+
+def test_rebuilding_workspace_removes_only_obsolete_unchanged_managed_inputs(tmp_path):
+    first, second = _reference_block('first/id', '첫'), _reference_block('second/id', '둘')
+    prompt = ('Repair.\nINPUT:\n' + json.dumps(first, ensure_ascii=False)
+              + '\nNext chunk.\nINPUT:\n' + json.dumps(second, ensure_ascii=False))
+    build(tmp_path, prompt, {'type': 'object'})
+    old = json.loads((tmp_path / 'manifest.json').read_text())['files']
+    obsolete = [name for name in old if name.startswith(('inputs/02-', 'references/02-'))]
+    assert obsolete and all((tmp_path / name).exists() for name in obsolete)
+
+    scratch = tmp_path / 'inputs' / 'manual-notes.json'
+    scratch.write_text('{"keep":true}', encoding='utf-8')
+    candidate = tmp_path / 'candidate.json'
+    candidate.write_bytes(b'{"candidate":true}')
+    rejected = tmp_path / 'rejected-candidate-attempt-01.json'
+    rejected.write_bytes(b'{invalid}')
+    one_block_prompt = 'Repair.\nINPUT:\n' + json.dumps(first, ensure_ascii=False)
+    _, signature = build(tmp_path, one_block_prompt, {'type': 'object'}, context=first)
+
+    assert all(not (tmp_path / name).exists() for name in obsolete)
+    assert scratch.read_text(encoding='utf-8') == '{"keep":true}'
+    assert candidate.read_bytes() == b'{"candidate":true}'
+    assert rejected.read_bytes() == b'{invalid}'
+    assert {entry['input_block'] for entry in json.loads((tmp_path / 'INDEX.json').read_text())} == {1}
+    verify(tmp_path, signature)
+
+
+def test_rebuilding_workspace_preserves_changed_and_unsafe_old_manifest_targets(tmp_path):
+    from pipeline.worker_workspace import hash_bytes
+
+    first, second = _reference_block('first/id', '첫'), _reference_block('second/id', '둘')
+    prompt = ('Repair.\nINPUT:\n' + json.dumps(first, ensure_ascii=False)
+              + '\nNext chunk.\nINPUT:\n' + json.dumps(second, ensure_ascii=False))
+    build(tmp_path, prompt, {'type': 'object'})
+    manifest_path = tmp_path / 'manifest.json'
+    old = json.loads(manifest_path.read_text())
+    changed = next(name for name in old['files'] if name.startswith('inputs/02-'))
+    changed_path = tmp_path / changed
+    changed_path.write_text('user edited this managed input', encoding='utf-8')
+
+    outside = tmp_path.parent / (tmp_path.name + '-outside.json')
+    outside.write_text('preserve outside file', encoding='utf-8')
+    unsafe_link = tmp_path / 'inputs' / 'unsafe-link.json'
+    unsafe_link.symlink_to(outside)
+    old['files']['inputs/../../' + outside.name] = hash_bytes(outside.read_bytes())
+    old['files']['inputs/unsafe-link.json'] = hash_bytes(outside.read_bytes())
+    manifest_path.write_text(json.dumps(old), encoding='utf-8')
+
+    build(tmp_path, 'Repair.\nINPUT:\n' + json.dumps(first, ensure_ascii=False), {'type': 'object'})
+
+    assert changed_path.read_text(encoding='utf-8') == 'user edited this managed input'
+    assert unsafe_link.is_symlink()
+    assert outside.read_text(encoding='utf-8') == 'preserve outside file'
+
+
 def test_plain_task_and_schema_validation(tmp_path):
     _, signature = build(tmp_path, 'Inspect the supplied repository.', {'type':'object', 'required':['ok']})
     verify(tmp_path, signature)
@@ -168,6 +249,64 @@ def _fake_workspace_codex(monkeypatch, outcomes):
 
     monkeypatch.setattr(asyncio, 'create_subprocess_exec', fake_exec)
     return launches
+
+
+def _plan(*indexes):
+    return {'issues': [{'issue_index': index, 'reason': f'Issue {index}',
+        'targets': [{'op': 'set_field', 'path': f'/segments/{index}/meaning_en'}],
+        'boundary_change_needed': False, 'boundary_reason': ''} for index in indexes]}
+
+
+@pytest.mark.parametrize('invalid', [_plan(0, 0, 2), _plan(0, 2), _plan(1, 0, 2)])
+@pytest.mark.asyncio
+async def test_codex_runner_repairs_schema_valid_but_incomplete_annotation_plan_once(
+    tmp_path, monkeypatch, invalid,
+):
+    import asyncio
+    from pipeline.agent_harness import CodexRunner
+    from pipeline.annotation_repairs import PLAN_SCHEMA
+
+    corrected = _plan(0, 1, 2)
+    shared_context = {'issues': [{'id': i} for i in range(3)],
+        'candidate': {'segments': []}, 'chunk_text': 'abc',
+        'annotation_plan_validation': {'issue_count': 3}}
+    prompt = 'Plan one repair per issue.\nINPUT:\n' + json.dumps(shared_context)
+    launches = _fake_workspace_codex(monkeypatch, [invalid, corrected])
+    schema = tmp_path / 'plan-schema.json'
+    schema.write_text(json.dumps(PLAN_SCHEMA), encoding='utf-8')
+    runner = CodexRunner(tmp_path, 'gpt-6-luna', asyncio.Semaphore(1))
+
+    assert await runner.call('annotation-plan', prompt, schema, 'low',
+        workspace_context=shared_context) == corrected
+    assert len(launches) == 2
+    retry_workspace = launches[1]['workspace']
+    rejection = json.loads((retry_workspace / 'submission-rejection.json').read_text())
+    assert rejection['category'] == 'plan_contract_rejection'
+    assert 'exactly once' in rejection['diagnostic']
+    assert json.loads((retry_workspace / 'rejected-candidate-attempt-01.json').read_text()) == invalid
+    validation = json.loads((retry_workspace / 'validation-context.json').read_text())
+    assert len(validation) == 1
+    assert validation[0]['annotation_plan_validation'] == {'issue_count': 3}
+
+
+@pytest.mark.asyncio
+async def test_correct_annotation_plan_passes_without_correction(tmp_path, monkeypatch):
+    import asyncio
+    from pipeline.agent_harness import CodexRunner
+    from pipeline.annotation_repairs import PLAN_SCHEMA
+
+    correct = _plan(0, 1)
+    context = {'issues': [{'id': 0}, {'id': 1}],
+        'annotation_plan_validation': {'issue_count': 2}}
+    prompt = 'Plan one repair per issue.\nINPUT:\n' + json.dumps(context)
+    launches = _fake_workspace_codex(monkeypatch, [correct])
+    schema = tmp_path / 'plan-schema.json'
+    schema.write_text(json.dumps(PLAN_SCHEMA), encoding='utf-8')
+    runner = CodexRunner(tmp_path, 'gpt-6-luna', asyncio.Semaphore(1))
+
+    assert await runner.call('valid-annotation-plan', prompt, schema, 'low',
+        workspace_context=context) == correct
+    assert len(launches) == 1
 
 
 @pytest.mark.asyncio

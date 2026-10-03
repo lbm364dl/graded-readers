@@ -110,6 +110,8 @@ async def test_issue_planned_patch_is_validated_persisted_and_replayed(tmp_path)
     assert result["evidence"]["plan_digest"]
     assert result["evidence"]["patch_digest"]
     assert runner.calls[1][4]["workspace_context"]["annotation_patch_validation"]["representation"] == "chinese-annotation"
+    assert runner.calls[0][4]['workspace_context']['annotation_plan_validation'] == {'issue_count': 2}
+    assert 'annotation_plan_validation' not in runner.calls[1][4]['workspace_context']
     replayed = replay_annotation_repair(
         tmp_path, result["evidence"]["assembly_job"], validate_candidate=validate_candidate,
     )

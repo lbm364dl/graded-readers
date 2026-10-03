@@ -5,6 +5,11 @@
 Chinese, Japanese and Korean use the same tool-enabled worker workspaces and
 bounded chunk scheduler. Workers inspect organized inputs, write their candidate
 file and run local validation. The runner consumes that exact artifact. A
+workspace stores identical input blocks only once; distinct contexts and task
+instructions remain intact. Repair plans must map every supplied finding to
+exactly one ordered issue row, with multiple targets in that row when needed.
+Workers receive that check locally before submission rather than failing later
+after an otherwise schema-valid plan has been cached. A
 schema, file or scoped-patch submission rejection receives one correction with
 the precise diagnostic and preserved rejected bytes when available. A second
 rejection stops that chunk; capacity and timeout recovery follow separate rules.

@@ -172,18 +172,22 @@ async def repair_annotation(
     shared_context = {**(context or {}), "language": language,
                       "representation": representation, "candidate": candidate,
                       "issues": issues}
+    plan_context = {**shared_context,
+                    "annotation_plan_validation": {"issue_count": len(issues)}}
     plan_prompt = f"""Return JSON matching the supplied repair-plan schema. Build a narrow diagnosis plan for every supplied independent review issue. `issue_index` must cover each input issue exactly once, in order. For each issue, give a concrete reason and exact JSON-pointer target(s) using only supported operations. The plan is diagnosis, never approval. Prefer a semantic field or explicit semantic-list row operation over changing a complete annotation.
+
+The issues array contains exactly {len(issues)} findings. Use exactly the indices {list(range(len(issues)))} in that order, one row per array item. An item can describe several defects: put all its necessary targets in that same row. Do not split subpoints into additional issue indices or count repeated references as new findings. Run the supplied local validation command; it checks this mapping as well as the JSON schema.
 
 If resolving an issue requires changing source text, a primary tap surface, an existing source range/index, or the segmentation, mark `boundary_change_needed: true`, give `boundary_reason`, and provide no targets for that issue. Never route such a change through semantic targets. Otherwise set it false and leave boundary_reason empty. Scope each target to the smallest existing semantic field or list row needed. Do not target unrelated rows. The caller will check these targets against a representation-specific source/tap contract.
 
 INPUT:
-{json.dumps(shared_context, ensure_ascii=False, indent=2)}"""
+{json.dumps(plan_context, ensure_ascii=False, indent=2)}"""
     harness_args = getattr(harness, "args", None)
     selected_effort = effort or getattr(harness_args, "annotation_repair_effort", "low")
     selected_refresh = (refresh if refresh is not None else
                         getattr(harness_args, "refresh", False))
     plan = await harness.runner.call(plan_job, plan_prompt, plan_schema_path, selected_effort,
-        refresh=selected_refresh, workspace_context=shared_context)
+        refresh=selected_refresh, workspace_context=plan_context)
     validate(plan, PLAN_SCHEMA)
     _validate_plan(plan, len(issues))
     base_digest = candidate_digest(candidate)
