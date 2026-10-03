@@ -689,3 +689,7 @@ TOPIK 6 chunk 1 omitted the source space between adjacent word segments while di
 ### Reconstruction diagnosis: omitted text after changed whitespace
 
 TOPIK 3 chunk 1 omitted a complete sentence at a whitespace boundary. The previous diagnostic incorrectly suggested replacing whitespace alone. The shared validator now gives that specific suggestion only when the following source and output text agree; otherwise it explicitly requires restoring omitted or changed source text too. Exact reconstruction remains mandatory and proposals are never rewritten by this check. Regression coverage distinguishes whitespace-only damage, omitted text after whitespace, and changed words (3 reconstruction tests pass). Live jobs retain their loaded code until normal resume; improved generation remains unproven.
+
+### Exact reconstruction differences for repairs
+
+A recent TOPIK 3 chunk 3 inserted a comma and omitted another. Reconstruction diagnostics now list up to five exact source/output edits after the first mismatching position, retaining the matching prefix to avoid misleading alignment of repeated sentences. The agent prompt directs repairs to restore segment text from chunk_text, never edit approved prose. This is diagnostic only: no source or proposal is rewritten, and all existing strict gates remain. Four reconstruction tests pass, including omitted text, extra punctuation, unchanged proposals and exact-source acceptance. This does not establish successful generation or publication of levels 3, 4 or 6.

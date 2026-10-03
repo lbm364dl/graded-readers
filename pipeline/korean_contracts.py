@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+from difflib import SequenceMatcher
 import re
 from pathlib import Path
 
@@ -177,6 +178,13 @@ def check_reconstruction(segments: list[dict], text: str) -> None:
             else:
                 detail = ("The text following this whitespace also differs; a whitespace replacement alone "
                           "will not repair it. Restore omitted or changed source text as well as its exact whitespace. ")
+        edits = [f"output[{offset+i}:{offset+j}]={reconstructed[offset+i:offset+j]!r} "
+                 f"must become source[{offset+a}:{offset+b}]={text[offset+a:offset+b]!r}"
+                 for tag, i, j, a, b in SequenceMatcher(None, reconstructed[offset:], text[offset:], autojunk=False).get_opcodes()
+                 if tag != 'equal']
+        detail += "Exact text differences (source is authoritative): " + "; ".join(edits[:5]) + ". "
+        if len(edits) > 5:
+            detail += f"{len(edits) - 5} further differences remain; compare the complete chunk_text. "
         raise ValueError(f"Korean annotation reconstruction differs at Unicode offset {offset}: "
                          f"expected {text[offset:offset + 30]!r}, got {reconstructed[offset:offset + 30]!r}. "
                          + detail +

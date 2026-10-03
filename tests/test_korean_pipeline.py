@@ -911,6 +911,18 @@ def test_reconstruction_distinguishes_changed_paragraph_whitespace_from_changed_
     contracts.check_reconstruction([{'text': '문장.'}, {'text': ' '}, {'text': '다음 문장.'}], '문장. 다음 문장.')
 
 
+def test_reconstruction_reports_exact_missing_and_extra_source_text_without_mutation():
+    segments = [{'text': '문장. 다음 문장.'}]
+    with pytest.raises(ValueError) as error:
+        contracts.check_reconstruction(segments, '문장. 빠진 문장. 다음 문장.')
+    assert "must become source[4:11]='빠진 문장. '" in str(error.value)
+    assert segments == [{'text': '문장. 다음 문장.'}]
+    with pytest.raises(ValueError) as error:
+        contracts.check_reconstruction([{'text': '문장, 다음 문장.'}], '문장 다음 문장.')
+    assert "output[2:3]=',' must become source[2:2]=''" in str(error.value)
+    contracts.check_reconstruction([{'text': '문장 다음 문장.'}], '문장 다음 문장.')
+
+
 def test_dictionary_rejects_same_length_unattested_surface(tmp_path):
     chapter = manual_chapter()
     chapter['segments'][0]['text'] = '다른말'
