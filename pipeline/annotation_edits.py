@@ -374,6 +374,9 @@ def uncovered_issue_targets(
     A changed enclosing object/list replacement can cover a planned scalar or
     row replacement when the exact descendant value changed. Canonical appends
     are counted per issue, so repeated targets to one list need distinct rows.
+    Repeated findings that name the same removal path share that one base-row
+    action; removals at distinct base indices remain separate even when their
+    row payloads are identical.
     This proves declared scope was exercised; it does not decide whether a
     linguistic finding was correct. Use :func:`validate_issue_target_coverage`
     when a missing target should reject a patch submission.
@@ -384,6 +387,7 @@ def uncovered_issue_targets(
             append_counts[edit["path"]] = append_counts.get(edit["path"], 0) + 1
     append_claims: dict[str, int] = {}
     remove_claims: dict[tuple[str, str], int] = {}
+    removal_target_results: dict[tuple[str, str], bool] = {}
     unresolved: list[dict[str, Any]] = []
 
     for issue in plan.get("issues", []):
@@ -406,16 +410,21 @@ def uncovered_issue_targets(
             if matching:
                 if op == "remove_row":
                     parts = _pointer_parts(path)
-                    base_row = _resolve(before, parts)
-                    base_rows = _resolve(before, parts[:-1])
-                    final_rows = _value_at_or_missing(after, _pointer(parts[:-1]))
-                    row_key = (_pointer(parts[:-1]), candidate_digest(base_row))
-                    required = remove_claims.get(row_key, 0) + 1
-                    if isinstance(final_rows, list):
-                        base_count = sum(row == base_row for row in base_rows)
-                        final_count = sum(row == base_row for row in final_rows)
-                        effective = base_count - final_count >= required
-                    remove_claims[row_key] = required
+                    target_key = (_pointer(parts[:-1]), str(int(parts[-1])))
+                    if target_key in removal_target_results:
+                        effective = removal_target_results[target_key]
+                    else:
+                        base_row = _resolve(before, parts)
+                        base_rows = _resolve(before, parts[:-1])
+                        final_rows = _value_at_or_missing(after, _pointer(parts[:-1]))
+                        row_key = (_pointer(parts[:-1]), candidate_digest(base_row))
+                        required = remove_claims.get(row_key, 0) + 1
+                        if isinstance(final_rows, list):
+                            base_count = sum(row == base_row for row in base_rows)
+                            final_count = sum(row == base_row for row in final_rows)
+                            effective = base_count - final_count >= required
+                        remove_claims[row_key] = required
+                        removal_target_results[target_key] = effective
                 else:
                     old = _value_at_or_missing(before, path)
                     new = matching[0].get("value", _MISSING)

@@ -550,3 +550,49 @@ def test_remove_reappend_of_same_base_row_does_not_count_as_effective_removal():
                                         representation="korean-flat")
     assert [item["issue_index"] for item in uncovered] == [0]
     assert uncovered[0]["target"] == targets[0]
+
+
+def test_duplicate_issues_for_same_removal_share_one_edit_but_distinct_equal_rows_do_not():
+    candidate = _korean_flat()
+    row = {"segment_index": 2, "entry_id": "same", "context_en": "same",
+        "display_form": "달", "display_meaning_en": "months", "display_end_segment_index": 2}
+    candidate["grammar_links"] = [row, row]
+    one_edit = patch_for(candidate, {"op": "remove_row", "path": "/grammar_links/0"})
+    one_result = apply_edits(candidate, one_edit,
+        allowed_targets=[{"op": "remove_row", "path": "/grammar_links/0"}],
+        representation="korean-flat")
+
+    duplicate_claims = {"issues": [
+        {"issue_index": 0, "targets": [{"op": "remove_row", "path": "/grammar_links/0"}],
+         "boundary_change_needed": False},
+        {"issue_index": 1, "targets": [{"op": "remove_row", "path": "/grammar_links/0"}],
+         "boundary_change_needed": False}]}
+    assert uncovered_issue_targets(candidate, one_result, one_edit["edits"], duplicate_claims,
+                                   representation="korean-flat") == []
+
+    distinct_claims = {"issues": [
+        {"issue_index": 0, "targets": [{"op": "remove_row", "path": "/grammar_links/0"}],
+         "boundary_change_needed": False},
+        {"issue_index": 1, "targets": [{"op": "remove_row", "path": "/grammar_links/1"}],
+         "boundary_change_needed": False}]}
+    unresolved = uncovered_issue_targets(candidate, one_result, one_edit["edits"], distinct_claims,
+                                         representation="korean-flat")
+    assert [item["issue_index"] for item in unresolved] == [1]
+
+    append_target = {"op": "append_row", "path": "/grammar_links"}
+    duplicate_then_reappend = {"issues": [
+        *distinct_claims["issues"],
+        {"issue_index": 2, "targets": [append_target], "boundary_change_needed": False}]}
+    canceled = patch_for(candidate,
+        {"op": "remove_row", "path": "/grammar_links/0"},
+        {"op": "remove_row", "path": "/grammar_links/1"},
+        {"op": "append_row", "path": "/grammar_links", "value": row})
+    canceled_result = apply_edits(candidate, canceled, allowed_targets=[
+        {"op": "remove_row", "path": "/grammar_links/0"},
+        {"op": "remove_row", "path": "/grammar_links/1"}, append_target],
+        representation="korean-flat")
+    assert canceled_result["grammar_links"] == [row]
+    unresolved = uncovered_issue_targets(candidate, canceled_result, canceled["edits"],
+                                         duplicate_then_reappend, representation="korean-flat")
+    assert [(item["issue_index"], item["target"]) for item in unresolved] == [
+        (1, {"op": "remove_row", "path": "/grammar_links/1"})]
