@@ -39,6 +39,22 @@ def test_attached_links_preserve_complete_reviewed_annotation_and_legacy_format(
     assert chunks.decode(legacy) == raw
 
 
+def test_source_reconstruction_precedes_link_errors_without_changing_proposal():
+    value = attached(fixture())
+    source = ''.join(s['text'] for s in value['segments'])
+    word = next(s for s in value['segments'] if s['type'] == 'word')
+    word['grammar_links'] = [{'entry_id': 'subject-i-ga', 'context_en': 'Test',
+                             'display_form': 'unattested form', 'display_meaning_en': 'Test'}]
+    before = copy.deepcopy(value)
+    with pytest.raises(ValueError, match='reconstruction differs'):
+        chunks.decode(value, source_text=source + ' ')
+    assert value == before
+    with pytest.raises(ValueError, match='complete source span'):
+        chunks.decode(value, source_text=source)
+    word['grammar_links'] = []
+    assert chunks.decode(value, source_text=source) == chunks.decode(value)
+
+
 @pytest.mark.parametrize('form,expected', [('가는 ', 1), ('가는 곳', 2), ('가', None), ('가는 곳으로', None)])
 def test_complete_forms_resolve_only_exact_existing_tap_boundaries(form, expected):
     segments = [{'text': '가는'}, {'text': ' '}, {'text': '곳'}]

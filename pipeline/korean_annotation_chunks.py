@@ -94,8 +94,10 @@ def validate_worker(value):
     validate(value, schema)
 
 
-def decode(value):
+def decode(value, *, source_text=None):
     validate_worker(value)
+    if source_text is not None:
+        contracts.check_reconstruction(value['segments'], source_text)
     if value.get('format') not in FORMATS:
         return value
     contained = value['format'] == FORMAT

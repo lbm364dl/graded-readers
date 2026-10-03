@@ -949,7 +949,7 @@ class KoreanHarness:
                                 verified_worker = True
                                 raw_value = read(path)
                                 from pipeline.korean_annotation_chunks import decode
-                                value = decode(raw_value)
+                                value = decode(raw_value, source_text=text)
                                 if rejected_digest is not None and digest(value) == rejected_digest:
                                     continue
                                 # A different partition is not a reusable proposal.
@@ -1012,7 +1012,7 @@ class KoreanHarness:
                         try:
                             raw_value = value
                             from pipeline.korean_annotation_chunks import decode
-                            value = decode(raw_value)
+                            value = decode(raw_value, source_text=text)
                             validate_chunk(value, text)
                             print(f"annotation chunk {number}: structure passed", flush=True)
                             return value, annotation_chunk_record(chunk_job, text, value, raw_value)
