@@ -117,8 +117,9 @@ an independent review. Publication replays chunk assembly and those bindings and
 checks the underlying completed model jobs. It uses the existing
 Codex runner's fingerprinted job cache; an unchanged completed run returns
 without model calls. Existing entries are immutable and only missing identities
-are sent to the dictionary editor. The tested default model is `gpt-6.1-sol`; override it with
-`--model` when running a different model. Completed-run reuse remains subject to
+are sent to the dictionary editor. All pipeline generation, repair and independent
+review workers use the shared `gpt-6-luna` default with `low` reasoning, as required
+by `AGENTS.md`. Completed-run reuse remains subject to
 content/source/evidence validation. `--existing` adopts a chapter only if its
 prose passes review unchanged; source errors require deliberate regeneration.
 

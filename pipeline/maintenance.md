@@ -48,6 +48,30 @@ jobs. `github-state.json` supplies issue numbers to the dashboard. The loop neve
 closes an issue or merges a PR. Link a tested correction from a PR and close its
 issue only after independent review and affected-output verification.
 
+## Local progress dashboard
+
+```sh
+.venv/bin/python -m pipeline.dashboard \
+  --maintenance-dir runs/maintenance/20261003 \
+  --run-dir runs/graded-readers/sanguoyanyi-ch1-full-hsk456-v8/chapter_001-hsk4 \
+  --run-dir runs/graded-readers/wagahai-ch1-agent-smoke-n5-construction-v8
+```
+
+Open <http://localhost:8771/>. All six Korean chapter-1 runs are included by
+default; repeat `--run-dir` to add other runs. The loopback-only page refreshes
+every five seconds and cannot change runs or approve content. It shows ready
+chapters, actual live workers, and stopped or unpublished work in plain language.
+Pipeline follow-up is work for the maintainer, not a request for user intervention.
+Run paths, process IDs, rejected review attempts and diagnosis proposals stay
+under the collapsed technical details. Open disclosures survive refreshes.
+
+Korean readiness observes the public file, enabled metadata and matching chapter
+review digest; complete private reports are listed separately. The dashboard
+does not replay linguistic review or replace publication checks. Chinese and
+Japanese currently show selected run history and live activity; their publication
+state is explicitly unchecked. Maintenance proposals, tested corrections and
+fixes verified on new output are separate counts.
+
 ## First verified mechanisms
 
 The Korean missing-lesson cluster exposed a contract ambiguity. Phrase coverage

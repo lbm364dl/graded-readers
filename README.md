@@ -1,6 +1,6 @@
 # Graded Readers — Chinese, Japanese & Korean
 
-Classical literature simplified for language learners. Chinese texts graded by HSK level (1–6), Japanese texts graded by JLPT level (N5–N1). Korean has an opening TOPIK 1 pilot, using NIKL’s six-level vocabulary and grammar curriculum as a TOPIK-aligned baseline.
+Classical literature simplified for language learners. Chinese texts graded by HSK level (1–6), Japanese texts graded by JLPT level (N5–N1). Korean chapter 1 is published at TOPIK 1, 2 and 5, using NIKL’s six-level vocabulary and grammar curriculum as a TOPIK-aligned baseline.
 
 Each book is retold at multiple difficulty levels using progressively richer vocabulary, so a beginner and an advanced learner can both enjoy the same stories. Every reader follows a **95/5 vocabulary constraint**: at least 95% of word tokens come from the target level or below.
 
@@ -58,7 +58,9 @@ Each book is retold at multiple difficulty levels using progressively richer voc
 
 ### Korean (pilot)
 
-The opening of **홍길동전 (The Tale of Hong Gildong)** is available as a modern-Korean TOPIK 1 pilot with contextual tap glosses, reusable word/grammar dictionaries, linked complete-form explanations and selective sentence breakdowns. The generation pipeline uses a [pinned searchable Wikisource/Jikji original](https://ko.wikisource.org/w/index.php?title=홍길동전_(30장_경판본)&oldid=460078), with independent stage reviews, explicit vocabulary/grammar curriculum bindings and incremental dictionary reuse. A few reviewed higher-level grammar patterns can appear as optional learning, retaining their actual grades. Curriculum bands guide teaching and are not exhaustive exam word lists. See [source provenance](books/korean/README.md) and [pipeline commands](pipeline/README.md). Only the first level and first chapter are currently published; higher-level generation remains to be configured.
+The opening of **홍길동전 (The Tale of Hong Gildong)** is available at TOPIK 1, 2 and 5 with contextual tap glosses, reusable word/grammar dictionaries, linked complete-form explanations and selective sentence breakdowns. The generation pipeline uses a [pinned searchable Wikisource/Jikji original](https://ko.wikisource.org/w/index.php?title=홍길동전_(30장_경판본)&oldid=460078), with independent stage reviews, explicit vocabulary/grammar curriculum bindings and incremental dictionary reuse. A few reviewed higher-level grammar patterns can appear as optional learning, retaining their actual grades. Curriculum bands guide teaching and are not exhaustive exam word lists. See [source provenance](books/korean/README.md) and [pipeline commands](pipeline/README.md). TOPIK 3, 4 and 6 remain unfinished and require their own approvals before publication.
+
+The [local pipeline dashboard](pipeline/maintenance.md#local-progress-dashboard) shows chapter readiness, live work and pipeline follow-up, with technical details available separately.
 
 ## Mobile App
 
