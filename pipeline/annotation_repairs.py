@@ -21,6 +21,8 @@ from pipeline.annotation_edits import (
     ImmutableFieldError,
     apply_edits,
     candidate_digest,
+    validate_target_contract,
+    validate_issue_target_coverage,
 )
 
 
@@ -69,6 +71,7 @@ PATCH_SCHEMA: dict[str, Any] = {
 }
 
 DEPENDENCY_CLOSURE_GUIDANCE = """For each issue, inspect semantic dependencies through the exact observed tap surface before choosing targets. If changing a lemma, lexical identity, or form analysis for an inflected/derived surface, include only the dependent semantic field/list operations needed to keep its complete chain valid through that exact surface, with matching grammar links/overlays and the representation's form-audit membership when those fields exist. Removing an incorrect step or link is not sufficient when the remaining chain then fails to explain the observed surface; add or replace the supported semantic rows needed for the corrected analysis. Do not alter source/tap text, boundaries, or ranges. Contrast: a wrong occurrence gloss on an already-valid chain should target only that meaning field; a changed lemma/identity for an inflected surface may also require corrected ordered stages and their linked lessons. Never invent an identity or lesson to complete the chain."""
+SOURCE_TAP_PROJECTION_GUIDANCE = """Keep every source/tap projection field unchanged, including segment text/surface, source offsets, grammar-link segment/range indices, and grammar-link display_form. An empty grammar-link display_form with display_end_segment_index -1 is a direct lesson link; do not turn it into a displayed source span in a semantic patch. If the correction requires changing any protected source/tap projection, mark boundary_change_needed and route it to the separate boundary-capable repair path."""
 
 
 def digest(value: Any) -> str:
@@ -134,7 +137,8 @@ def _schemas(run_dir: Path) -> tuple[Path, Path]:
     return plan_path, patch_path
 
 
-def _validate_plan(plan: Any, issue_count: int) -> None:
+def _validate_plan(plan: Any, issue_count: int, candidate: Any = None,
+                   representation: str | None = None) -> None:
     validate(plan, PLAN_SCHEMA)
     rows = plan["issues"]
     indexes = [row["issue_index"] for row in rows]
@@ -146,6 +150,8 @@ def _validate_plan(plan: Any, issue_count: int) -> None:
                 raise ValueError("boundary-needed plan rows require a reason and no semantic targets")
         elif not row["targets"] or row["boundary_reason"].strip():
             raise ValueError("semantic plan rows need targets and an empty boundary reason")
+    if candidate is not None and representation is not None:
+        validate_target_contract(candidate, _targets(plan), representation=representation)
 
 
 def _targets(plan: dict[str, Any]) -> list[dict[str, str]]:
@@ -161,6 +167,7 @@ def _targets(plan: dict[str, Any]) -> list[dict[str, str]]:
 
 
 def _save_assembly(run_dir: Path, assembly_job: str, meta: dict[str, Any], result: Any) -> None:
+    meta.setdefault("target_contract_version", 1)
     directory = _safe_job_path(run_dir, assembly_job)
     _write_json(directory / "result.json", result)
     _write_json(directory / "meta.json", meta)
@@ -204,10 +211,15 @@ async def repair_annotation(
                       "representation": representation, "candidate": candidate,
                       "issues": issues}
     plan_context = {**shared_context,
-                    "annotation_plan_validation": {"issue_count": len(issues)}}
+                    "annotation_plan_validation": {"issue_count": len(issues),
+                        "target_contract_version": 1}}
     plan_prompt = f"""Return JSON matching the supplied repair-plan schema. Build a narrow diagnosis plan for every supplied independent review issue. `issue_index` must cover each input issue exactly once, in order. For each issue, give a concrete reason and exact JSON-pointer target(s) using only supported operations. The plan is diagnosis, never approval. Prefer a semantic field or explicit semantic-list row operation over changing a complete annotation.
 
 {DEPENDENCY_CLOSURE_GUIDANCE}
+
+{SOURCE_TAP_PROJECTION_GUIDANCE}
+
+Use the operation/path contract exactly: `set_field` is only for an existing JSON scalar; use `replace_list` for an existing semantic array (including Korean form-step `grammar_entry_ids`), and `replace_row` for an existing object row. `append_row` targets the list path itself (for example `/grammar_links` or `/segments/4/form_steps`); the patch must use that exact path and an object value. `remove_row` targets one existing numeric row path. Never add a guessed numeric suffix to `append_row`.
 
 The issues array contains exactly {len(issues)} findings. Use exactly the indices {list(range(len(issues)))} in that order, one row per array item. An item can describe several defects: put all its necessary targets in that same row. Do not split subpoints into additional issue indices or count repeated references as new findings. Run the supplied local validation command; it checks this mapping as well as the JSON schema.
 
@@ -222,7 +234,7 @@ INPUT:
     plan = await harness.runner.call(plan_job, plan_prompt, plan_schema_path, selected_effort,
         refresh=selected_refresh, workspace_context=plan_context)
     validate(plan, PLAN_SCHEMA)
-    _validate_plan(plan, len(issues))
+    _validate_plan(plan, len(issues), candidate, representation)
     base_digest = candidate_digest(candidate)
     issue_digest = digest(issues)
     plan_digest = digest(plan)
@@ -243,11 +255,14 @@ INPUT:
     allowed = _targets(plan)
     patch_validation = {**(context or {}), "base_candidate": candidate,
         "representation": representation, "allowed_targets": allowed,
-        "language": language, "issues": issues}
+        "language": language, "issues": issues, "repair_plan": plan,
+        "target_contract_version": 1}
     patch_context = {**shared_context, "repair_plan": plan,
                      "allowed_targets": allowed, "base_digest": base_digest,
                      "annotation_patch_validation": patch_validation}
-    patch_prompt = f"""Return JSON matching the supplied semantic-patch schema. Repair only the supplied prior candidate. Return exactly `base_digest` and `edits`; never return a replacement candidate. Use only the exact op/path pairs in ALLOWED_TARGETS, and make each edit resolve its mapped review issue. Preserve all unedited data. Do not change source text, tap surfaces, segmentation, or existing source/tap ranges. Use an explicit append/remove operation only when the repair plan names that exact list operation. The local caller applies the patch and runs the full deterministic language gate; independent review still follows.
+    patch_prompt = f"""Return JSON matching the supplied semantic-patch schema. Repair only the supplied prior candidate. Return exactly `base_digest` and `edits`; never return a replacement candidate. Use only the exact op/path pairs in ALLOWED_TARGETS, and make each edit resolve its mapped review issue. Apply every planned target with an effective value/list change; an enclosing `replace_row` or `replace_list` counts only when the exact planned descendant value changes. One append edit cannot satisfy two issue rows that each plan an append. Do not submit an empty or partial patch. Preserve all unedited data. Do not change source text, tap surfaces, segmentation, or existing source/tap ranges. `append_row` uses the exact list path named by the plan, without a row-index suffix; `remove_row` uses one existing numeric row path. Use an explicit append/remove operation only when the repair plan names that exact list operation. The local caller applies the patch and runs the full deterministic language gate; independent review still follows.
+
+{SOURCE_TAP_PROJECTION_GUIDANCE}
 
 INPUT:
 {json.dumps(patch_context, ensure_ascii=False, indent=2)}"""
@@ -310,10 +325,15 @@ INPUT:
         replan_plan_job, replan_patch_job = f"{replan_job}_plan", f"{replan_job}_patch"
         replan_plan_context = {**shared_context, "issues": replan_issues,
             "repair_history": first_attempt,
-            "annotation_plan_validation": {"issue_count": len(replan_issues)}}
+            "annotation_plan_validation": {"issue_count": len(replan_issues),
+                "target_contract_version": 1}}
         replan_plan_prompt = f"""Return JSON matching the supplied repair-plan schema. This is the single bounded replan after the first semantic patch and the shared runner's bounded submission correction both failed the deterministic derived-candidate gate. Re-diagnose the supplied original review findings together with the exact gate diagnostic. You may change the diagnosis/targets, but do not change the immutable base candidate. The replan is not approval; the caller will run the same full deterministic gate and independent review.
 
 {DEPENDENCY_CLOSURE_GUIDANCE}
+
+{SOURCE_TAP_PROJECTION_GUIDANCE}
+
+Use only compatible operations: scalar fields use `set_field`, arrays use `replace_list`, existing object rows use `replace_row`, and existing list paths use `append_row` (the path is the list itself, never a guessed numeric suffix). `remove_row` names an existing numeric row.
 
 Cover exactly {len(replan_issues)} issue indices in order: {list(range(len(replan_issues)))}. If the gate failure cannot be addressed with semantic fields while preserving exact source/tap surfaces and ranges, mark the relevant finding boundary_change_needed and explain why. Do not retry on timeouts, malformed/schema-invalid patches, or source/tap violations; this path is available only for the recorded derived-candidate rejection.
 
@@ -340,7 +360,7 @@ INPUT:
                     "evidence": _evidence_result(run_dir, assembly_job, meta),
                     "plan": plan, "patch_error": str(replan_error)}
         validate(replan_plan, PLAN_SCHEMA)
-        _validate_plan(replan_plan, len(replan_issues))
+        _validate_plan(replan_plan, len(replan_issues), candidate, representation)
         replan_plan_digest = digest(replan_plan)
         if any(row["boundary_change_needed"] for row in replan_plan["issues"]):
             meta = {"return_code": 0, "kind": "annotation_patch_assembly",
@@ -364,12 +384,15 @@ INPUT:
         replan_allowed = _targets(replan_plan)
         replan_patch_validation = {**(context or {}), "base_candidate": candidate,
             "representation": representation, "allowed_targets": replan_allowed,
-            "language": language, "issues": replan_issues}
+            "language": language, "issues": replan_issues, "repair_plan": replan_plan,
+            "target_contract_version": 1}
         replan_patch_context = {**shared_context, "issues": replan_issues,
             "repair_plan": replan_plan, "allowed_targets": replan_allowed,
             "base_digest": base_digest, "repair_history": first_attempt,
             "annotation_patch_validation": replan_patch_validation}
-        replan_patch_prompt = f"""Return JSON matching the supplied semantic-patch schema. This is the one and only replan after a reproduced derived-candidate gate rejection. Apply edits to the exact ORIGINAL base candidate (base digest below), not to the rejected patch. The rejected patch and diagnostic are included as evidence. Use only the exact op/path pairs in ALLOWED_TARGETS. Preserve every source/tap surface, boundary, range, and every unedited field. The caller applies this patch to the original base, runs the same complete deterministic candidate gate, and then obtains independent review; a successful gate is not approval.
+        replan_patch_prompt = f"""Return JSON matching the supplied semantic-patch schema. This is the one and only replan after a reproduced derived-candidate gate rejection. Apply edits to the exact ORIGINAL base candidate (base digest below), not to the rejected patch. The rejected patch and diagnostic are included as evidence. Use only the exact op/path pairs in ALLOWED_TARGETS. Effectively apply every planned target; an enclosing row/list replacement only covers a target when its exact descendant value changes, and repeated append targets need repeated append edits. Do not submit an empty or partial patch. Preserve every source/tap surface, boundary, range, and every unedited field. `append_row` uses the exact list path named by the plan, without a row-index suffix; `remove_row` uses one existing numeric row path. The caller applies this patch to the original base, runs the same complete deterministic candidate gate, and then obtains independent review; a successful gate is not approval.
+
+{SOURCE_TAP_PROJECTION_GUIDANCE}
 
 INPUT:
 {json.dumps(replan_patch_context, ensure_ascii=False, indent=2)}"""
@@ -407,6 +430,8 @@ INPUT:
     try:
         updated = apply_edits(candidate, patch, allowed_targets=allowed,
                               representation=representation)
+        validate_issue_target_coverage(candidate, updated, patch["edits"], plan,
+                                       representation=representation)
     except (BoundaryChangeNotSupported, ImmutableFieldError) as exc:
         # Keep the rejected patch artifact for diagnosis. This result is a typed
         # routing signal; no boundary change is applied.
@@ -533,10 +558,17 @@ def replay_annotation_repair(
         except (UnicodeError, json.JSONDecodeError) as exc:
             raise ValueError("final rejected artifact is not valid patch JSON") from exc
         first_plan = child(replan["first_plan_job"], replan["first_plan_digest"])
+        # Historical accepted plans predate target feasibility validation.
+        # Replay the exact actual patch below; an unused stale allowlist item
+        # must not invalidate an already accepted assembly.
         _validate_plan(first_plan, len(meta["issues"]))
         try:
             failed_candidate = apply_edits(base, replan["failed_patch"],
                 allowed_targets=_targets(first_plan), representation=meta["representation"])
+            if meta.get("target_contract_version", 0) >= 1:
+                validate_issue_target_coverage(base, failed_candidate,
+                    replan["failed_patch"]["edits"], first_plan,
+                    representation=meta["representation"])
         except (AnnotationEditError, ValidationError, TypeError, ValueError) as exc:
             raise ValueError("stored rejected semantic patch cannot be replayed against its exact base") from exc
         if (failed_candidate != replan.get("failed_candidate")
@@ -571,6 +603,9 @@ def replay_annotation_repair(
         try:
             updated = apply_edits(base, final_patch, allowed_targets=_targets(replanned),
                                   representation=meta["representation"])
+            if meta.get("target_contract_version", 0) >= 1:
+                validate_issue_target_coverage(base, updated, final_patch["edits"], replanned,
+                                               representation=meta["representation"])
         except (BoundaryChangeNotSupported, ImmutableFieldError) as exc:
             if meta.get("status") != "boundary_change_needed" or str(exc) != meta.get("boundary_error"):
                 raise ValueError("replayed replan boundary diagnostic differs") from exc
@@ -617,6 +652,9 @@ def replay_annotation_repair(
             try:
                 updated = apply_edits(base, patch, allowed_targets=_targets(plan),
                                       representation=meta["representation"])
+                if meta.get("target_contract_version", 0) >= 1:
+                    validate_issue_target_coverage(base, updated, patch["edits"], plan,
+                                                   representation=meta["representation"])
             except (BoundaryChangeNotSupported, ImmutableFieldError) as exc:
                 if meta.get("status") != "boundary_change_needed" or str(exc) != meta.get("boundary_error"):
                     raise ValueError("replayed boundary diagnostic differs from stored evidence") from exc
@@ -644,6 +682,9 @@ def replay_annotation_repair(
     allowed = _targets(plan)
     updated = apply_edits(base, patch, allowed_targets=allowed,
                           representation=meta["representation"])
+    if meta.get("target_contract_version", 0) >= 1:
+        validate_issue_target_coverage(base, updated, patch["edits"], plan,
+                                       representation=meta["representation"])
     validate_candidate(updated)
     if candidate_digest(updated) != meta.get("result_digest") or updated != stored:
         raise ValueError("replayed annotation semantic patch differs from its stored result")

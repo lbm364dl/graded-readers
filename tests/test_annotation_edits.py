@@ -5,12 +5,15 @@ import pytest
 from pipeline.annotation_edits import (
     BoundaryChangeNotSupported,
     EditConflictError,
+    EditCoverageError,
     EditScopeError,
     ImmutableFieldError,
     InvalidEditError,
     StaleCandidateError,
     apply_edits,
     candidate_digest,
+    validate_target_contract,
+    validate_issue_target_coverage,
 )
 
 
@@ -190,6 +193,86 @@ def test_semantic_lesson_rows_can_be_appended_or_removed_without_moving_existing
     assert trimmed["segments"] == candidate["segments"]
 
 
+def test_append_row_uses_the_planned_list_path_and_keeps_legacy_indexed_targets():
+    candidate = _korean_flat()
+    original_links = deepcopy(candidate["grammar_links"])
+    appended = {"segment_index": 0, "entry_id": "topic-eun-neun", "context_en": "topic particle",
+                "display_form": "", "display_meaning_en": "", "display_end_segment_index": -1}
+    changed = apply_edits(candidate, patch_for(candidate, {
+        "op": "append_row", "path": "/grammar_links", "value": appended,
+    }), allowed_targets=[{"op": "append_row", "path": "/grammar_links"}],
+        representation="korean-flat")
+    assert changed["grammar_links"] == original_links + [appended]
+    assert changed["segments"] == candidate["segments"]
+    assert changed["inflected_segment_indices"] == candidate["inflected_segment_indices"]
+
+    # Old cached plans may explicitly name the numeric append index; retain it.
+    legacy = {"segment_index": 0, "entry_id": "subject-i-ga", "context_en": "subject particle",
+              "display_form": "", "display_meaning_en": "", "display_end_segment_index": -1}
+    replay = apply_edits(changed, patch_for(changed, {
+        "op": "append_row", "path": "/grammar_links/2", "value": legacy,
+    }), allowed_targets=[{"op": "append_row", "path": "/grammar_links/2"}],
+        representation="korean-flat")
+    assert replay["grammar_links"] == original_links + [appended, legacy]
+
+
+def test_multiple_planned_appends_to_one_link_list_preserve_existing_rows_and_order():
+    candidate = _korean_flat()
+    existing = deepcopy(candidate["grammar_links"])
+    first = {"segment_index": 0, "entry_id": "topic-eun-neun", "context_en": "topic",
+             "display_form": "", "display_meaning_en": "", "display_end_segment_index": -1}
+    second = {"segment_index": 2, "entry_id": "object-eul-reul", "context_en": "object",
+              "display_form": "", "display_meaning_en": "", "display_end_segment_index": -1}
+    path = "/grammar_links"
+    updated = apply_edits(candidate, patch_for(candidate,
+        {"op": "append_row", "path": path, "value": first},
+        {"op": "append_row", "path": path, "value": second}),
+        allowed_targets=[{"op": "append_row", "path": path}], representation="korean-flat")
+    assert updated["grammar_links"] == existing + [first, second]
+    assert updated["segments"] == candidate["segments"]
+
+
+@pytest.mark.parametrize("representation,candidate,path,row", [
+    ("chinese-fixed", _chinese(), "/grammar_overlays", {
+        "start": 0, "end": 1, "text": "她", "grammar_candidate_key": "topic",
+        "pattern": "topic", "meaning_en": "topic marker"}),
+    ("japanese-annotation", _japanese_candidate(), "/segments/1/form_steps", {
+        "form": "歩いて", "reading": "あるいて", "label": "te-form", "meaning_en": "walk and"}),
+])
+def test_plan_list_path_append_works_for_chinese_and_japanese(representation, candidate, path, row):
+    changed = apply_edits(candidate, patch_for(candidate, {
+        "op": "append_row", "path": path, "value": row,
+    }), allowed_targets=[{"op": "append_row", "path": path}], representation=representation)
+    assert changed != candidate
+    if representation == "chinese-fixed":
+        assert changed["grammar_overlays"][:-1] == candidate["grammar_overlays"]
+        assert changed["grammar_overlays"][-1] == row
+        assert [part["text"] for part in changed["segments"]] == [part["text"] for part in candidate["segments"]]
+    else:
+        assert changed["segments"][1]["form_steps"][:-1] == candidate["segments"][1]["form_steps"]
+        assert changed["segments"][1]["form_steps"][-1] == row
+        assert changed["segments"][1]["surface"] == candidate["segments"][1]["surface"]
+
+
+def test_nested_korean_grammar_id_array_requires_replace_list_and_protected_scalar_is_rejected_early():
+    candidate = _korean_flat()
+    identity_path = "/segments/0/form_steps/0/grammar_entry_ids"
+    validate_target_contract(candidate, [{"op": "replace_list", "path": identity_path}],
+                              representation="korean-flat")
+    with pytest.raises(InvalidEditError, match="use replace_list"):
+        validate_target_contract(candidate, [{"op": "set_field", "path": identity_path}],
+                                  representation="korean-flat")
+    with pytest.raises(InvalidEditError, match="append_row target must name a supported semantic list"):
+        validate_target_contract(candidate, [{"op": "append_row", "path": identity_path}],
+                                  representation="korean-flat")
+    with pytest.raises(ImmutableFieldError, match="protected source/tap data"):
+        validate_target_contract(candidate, [{"op": "set_field", "path": "/segments/0/text"}],
+                                  representation="korean-flat")
+    with pytest.raises(InvalidEditError, match="path does not exist"):
+        validate_target_contract(candidate, [{"op": "replace_list", "path": "/segments/99/form_steps"}],
+                                  representation="korean-flat")
+
+
 def test_v4_nested_link_addition_preserves_source_ranges_and_form_step_form_remains_derived():
     candidate = _korean_v4()
     link = {"entry_id": "question", "context_en": "question ending", "display_meaning_en": "question",
@@ -286,3 +369,103 @@ def test_bad_paths_operations_and_representation_are_rejected():
     with pytest.raises(InvalidEditError):
         apply_edits(candidate, patch_for(candidate, {"op": "set_field", "path": "/segments/0/text", "value": "x"}),
                     allowed_targets=[{"op": "set_field", "path": "/segments/0/text"}], representation="unknown")
+
+
+def test_declared_issue_targets_must_change_and_enclosing_row_replacement_can_cover():
+    candidate = {"segments": [
+        {"text": "她", "type": "word", "pinyin": "tā", "meaning_en": "old"},
+        {"text": "走", "type": "word", "pinyin": "zǒu", "meaning_en": "walk"}],
+        "grammar_overlays": []}
+    plan = {"issues": [
+        {"issue_index": 0, "targets": [{"op": "set_field", "path": "/segments/0/meaning_en"}],
+         "boundary_change_needed": False},
+        {"issue_index": 1, "targets": [{"op": "set_field", "path": "/segments/0/pinyin"}],
+         "boundary_change_needed": False}]}
+    empty = patch_for(candidate)
+    unchanged = apply_edits(candidate, empty, allowed_targets=[], representation="chinese-annotation")
+    with pytest.raises(EditCoverageError, match="meaning_en"):
+        validate_issue_target_coverage(candidate, unchanged, empty["edits"], plan,
+                                       representation="chinese-annotation")
+
+    only_meaning = patch_for(candidate, {
+        "op": "set_field", "path": "/segments/0/meaning_en", "value": "she"})
+    partially_changed = apply_edits(candidate, only_meaning,
+        allowed_targets=plan["issues"][0]["targets"], representation="chinese-annotation")
+    with pytest.raises(EditCoverageError, match="pinyin"):
+        validate_issue_target_coverage(candidate, partially_changed, only_meaning["edits"], plan,
+                                       representation="chinese-annotation")
+
+    replacement = patch_for(candidate, {"op": "replace_row", "path": "/segments/0", "value": {
+        **candidate["segments"][0], "meaning_en": "she", "pinyin": "tā (she)"}})
+    replaced = apply_edits(candidate, replacement,
+        allowed_targets=[{"op": "replace_row", "path": "/segments/0"}],
+        representation="chinese-annotation")
+    validate_issue_target_coverage(candidate, replaced, replacement["edits"], plan,
+                                   representation="chinese-annotation")
+    assert replaced["segments"][1] == candidate["segments"][1]
+    assert replaced["segments"][0]["text"] == candidate["segments"][0]["text"]
+
+
+def test_duplicate_append_issue_targets_require_distinct_rows_and_keep_existing_order():
+    candidate = {"segments": [{"text": "她"}], "grammar_overlays": [],
+        "grammar_links": [{"segment_index": 0, "display_end_segment_index": 0,
+            "display_form": "她", "pattern": "old", "start": 0}],
+        "inflected_segment_indices": []}
+    plan = {"issues": [
+        {"issue_index": 0, "targets": [{"op": "append_row", "path": "/grammar_links"}],
+         "boundary_change_needed": False},
+        {"issue_index": 1, "targets": [{"op": "append_row", "path": "/grammar_links"}],
+         "boundary_change_needed": False}]}
+    one = patch_for(candidate, {"op": "append_row", "path": "/grammar_links",
+        "value": {"segment_index": 0, "display_end_segment_index": 0,
+                  "display_form": "她", "pattern": "new-a"}})
+    one_result = apply_edits(candidate, one, allowed_targets=plan["issues"][0]["targets"],
+                             representation="korean-flat")
+    with pytest.raises(EditCoverageError, match="issue 1"):
+        validate_issue_target_coverage(candidate, one_result, one["edits"], plan,
+                                       representation="korean-flat")
+
+    two = patch_for(candidate,
+        {"op": "append_row", "path": "/grammar_links", "value": {
+            "segment_index": 0, "display_end_segment_index": 0, "display_form": "她", "pattern": "new-a"}},
+        {"op": "append_row", "path": "/grammar_links", "value": {
+            "segment_index": 0, "display_end_segment_index": 0, "display_form": "她", "pattern": "new-b"}})
+    two_result = apply_edits(candidate, two, allowed_targets=plan["issues"][0]["targets"],
+                             representation="korean-flat")
+    validate_issue_target_coverage(candidate, two_result, two["edits"], plan,
+                                   representation="korean-flat")
+    assert two_result["grammar_links"][:1] == candidate["grammar_links"]
+    assert [row["pattern"] for row in two_result["grammar_links"][1:]] == ["new-a", "new-b"]
+
+
+def test_multiple_base_indexed_row_removals_preserve_untargeted_rows_and_reject_overlap():
+    candidate = _korean_flat()
+    first = {"segment_index": 0, "entry_id": "first", "context_en": "first",
+        "display_form": "열", "display_meaning_en": "first", "display_end_segment_index": 0}
+    middle = {"segment_index": 2, "entry_id": "keep", "context_en": "keep",
+        "display_form": "달", "display_meaning_en": "months", "display_end_segment_index": 2}
+    last = {"segment_index": 4, "entry_id": "last", "context_en": "last",
+        "display_form": "뒤", "display_meaning_en": "later", "display_end_segment_index": 4}
+    candidate["grammar_links"] = [first, middle, last]
+    targets = [{"op": "remove_row", "path": "/grammar_links/0"},
+               {"op": "remove_row", "path": "/grammar_links/2"}]
+    plan = {"issues": [
+        {"issue_index": 0, "targets": [targets[0]], "boundary_change_needed": False},
+        {"issue_index": 1, "targets": [targets[1]], "boundary_change_needed": False}]}
+    patch = patch_for(candidate,
+        {"op": "remove_row", "path": "/grammar_links/0"},
+        {"op": "remove_row", "path": "/grammar_links/2"})
+    changed = apply_edits(candidate, patch, allowed_targets=targets, representation="korean-flat")
+    validate_issue_target_coverage(candidate, changed, patch["edits"], plan,
+                                   representation="korean-flat")
+    assert changed["grammar_links"] == [middle]
+    assert changed["grammar_links"][0]["segment_index"] == 2
+    assert changed["segments"] == candidate["segments"]
+
+    conflicting = patch_for(candidate,
+        {"op": "remove_row", "path": "/grammar_links/0"},
+        {"op": "set_field", "path": "/grammar_links/0/context_en", "value": "overlap"})
+    with pytest.raises(EditConflictError):
+        apply_edits(candidate, conflicting, allowed_targets=[
+            targets[0], {"op": "set_field", "path": "/grammar_links/0/context_en"}],
+            representation="korean-flat")

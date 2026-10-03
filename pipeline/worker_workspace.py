@@ -194,11 +194,24 @@ def verify(path, expected):
 def check(path, candidate):
     value = json.loads(candidate.read_text())
     validate(value, json.loads((path / 'schema.json').read_text()))
-    for context in json.loads((path / 'validation-context.json').read_text()):
+    validation_contexts = json.loads((path / 'validation-context.json').read_text())
+    input_values = {}
+    index_path = path / 'INDEX.json'
+    if index_path.exists():
+        for row in json.loads(index_path.read_text(encoding='utf-8')):
+            input_values[row['field']] = json.loads((path / row['path']).read_text(encoding='utf-8'))
+    for context in validation_contexts:
         plan_context = context.get('annotation_plan_validation')
         if plan_context is not None:
             from pipeline.annotation_repairs import _validate_plan
-            _validate_plan(value, plan_context['issue_count'])
+            if plan_context.get('target_contract_version') == 1:
+                _validate_plan(value, plan_context['issue_count'],
+                               context.get('candidate', input_values.get('candidate')),
+                               context.get('representation', input_values.get('representation')))
+            else:
+                # Preserve replayability for workspace plans created before
+                # operation/path feasibility was checked at submission time.
+                _validate_plan(value, plan_context['issue_count'])
             continue
         patch_context = context.get('annotation_patch_validation')
         if patch_context is not None:
@@ -247,10 +260,13 @@ def check(path, candidate):
 
 def _check_annotation_patch(workspace, patch, context):
     """Apply a scoped semantic patch and validate its derived annotation."""
-    from pipeline.annotation_edits import apply_edits
+    from pipeline.annotation_edits import apply_edits, validate_issue_target_coverage
 
     derived = apply_edits(context['base_candidate'], patch,
         allowed_targets=context['allowed_targets'], representation=context['representation'])
+    if context.get('target_contract_version') == 1:
+        validate_issue_target_coverage(context['base_candidate'], derived, patch['edits'],
+            context['repair_plan'], representation=context['representation'])
     language = context['language']
     chunk_text = context.get('chunk_text')
     if not isinstance(chunk_text, str):
@@ -355,9 +371,9 @@ def submit(path, receipt):
             check(path, candidate)
         except (ValidationError, ValueError, KeyError, TypeError, IndexError) as error:
             from pipeline.annotation_edits import AnnotationEditError
-            category = ('annotation_patch_contract_rejection'
+            category = ('plan_contract_rejection' if plan_validation is not None else
+                        'annotation_patch_contract_rejection'
                         if isinstance(error, AnnotationEditError) else
-                        'plan_contract_rejection' if plan_validation is not None else
                         'derived_annotation_rejection')
             raise CandidateSubmissionError(
                 f'Submitted annotation plan failed issue coverage validation: {error}'

@@ -40,6 +40,10 @@ class EditConflictError(AnnotationEditError):
     """Edits duplicate, overlap, or structurally conflict at a target."""
 
 
+class EditCoverageError(AnnotationEditError):
+    """A planned issue target did not produce an effective candidate change."""
+
+
 class InvalidEditError(AnnotationEditError):
     """The patch, representation, or target path is malformed."""
 
@@ -243,15 +247,186 @@ def _pattern_matches(pattern: tuple[str, ...], actual: tuple[str, ...]) -> bool:
 
 def _mutable_list_path(representation: str, parts: tuple[str, ...]) -> bool:
     patterns = {
-        "chinese-fixed": ( ("grammar_overlays",), ),
-        "chinese-annotation": ( ("grammar_overlays",), ),
+        "chinese-fixed": (("grammar_overlays",),),
+        "chinese-annotation": (("grammar_overlays",),),
         "japanese-annotation": (("segments", "*", "form_steps"), ("grammar_overlays",)),
         "korean-flat": (("segments", "*", "form_steps"), ("grammar_links",),
                         ("expression_links",), ("inflected_segment_indices",)),
         "korean-v4": (("segments", "*", "form_steps"), ("segments", "*", "grammar_links"),
                       ("segments", "*", "expression_links")),
     }
+    # Korean form-stage grammar identities are semantic lists. Replacing that
+    # list is supported; scalar set_field must never replace it wholesale.
+    if representation in {"korean-flat", "korean-v4"}:
+        patterns[representation] += (("segments", "*", "form_steps", "*", "grammar_entry_ids"),)
     return any(_pattern_matches(pattern, parts) for pattern in patterns[representation])
+
+
+def _object_row_list_path(representation: str, parts: tuple[str, ...]) -> bool:
+    """Whether append/remove row operations can preserve this list's row type."""
+    patterns = {
+        "chinese-fixed": (("grammar_overlays",),),
+        "chinese-annotation": (("grammar_overlays",),),
+        "japanese-annotation": (("segments", "*", "form_steps"), ("grammar_overlays",)),
+        "korean-flat": (("segments", "*", "form_steps"), ("grammar_links",),
+                        ("expression_links",)),
+        "korean-v4": (("segments", "*", "form_steps"), ("segments", "*", "grammar_links"),
+                      ("segments", "*", "expression_links")),
+    }
+    return any(_pattern_matches(pattern, parts) for pattern in patterns[representation])
+
+
+def validate_target_contract(
+    candidate: Any,
+    targets: Iterable[dict[str, str]],
+    *,
+    representation: str,
+) -> None:
+    """Check operation/path compatibility against the exact repair base.
+
+    This runs on the plan before a patch job is launched. It catches invalid
+    operation choices (such as ``set_field`` on an array) without granting any
+    new target scope or changing protected source/tap projections.
+    """
+    protected = _projection(candidate, representation)
+    for target in targets:
+        if (not isinstance(target, dict) or set(target) != {"op", "path"}
+                or target.get("op") not in _OPERATIONS):
+            raise InvalidEditError(f"invalid planned semantic target: {target!r}")
+        operation, path = target["op"], target["path"]
+        parts = _pointer_parts(path)
+        if operation == "set_field":
+            parent, key = _resolve_parent(candidate, parts)
+            if not isinstance(parent, dict) or key not in parent:
+                raise InvalidEditError(f"set_field target must be an existing object field: {path}")
+            if not _is_json_scalar(parent[key]):
+                suggestion = "replace_list" if isinstance(parent[key], list) else "replace_row"
+                raise InvalidEditError(
+                    f"set_field target is not a scalar field: {path}; use {suggestion} for this value")
+            if path in protected:
+                raise ImmutableFieldError(f"planned scalar target is protected source/tap data: {path}")
+        elif operation == "replace_row":
+            parent, key = _resolve_parent(candidate, parts)
+            if (not isinstance(parent, list) or not key.isdigit() or int(key) >= len(parent)
+                    or not isinstance(parent[int(key)], dict)):
+                raise InvalidEditError(f"replace_row target must be an existing object row: {path}")
+        elif operation == "replace_list":
+            if not _mutable_list_path(representation, parts):
+                raise InvalidEditError(f"replace_list is not supported at planned path: {path}")
+            try:
+                current = _resolve(candidate, parts)
+            except InvalidEditError:
+                parent, key = _resolve_parent(candidate, parts)
+                if not (representation == "korean-flat" and key == "form_steps"
+                        and isinstance(parent, dict) and key not in parent):
+                    raise
+            else:
+                if not isinstance(current, list):
+                    raise InvalidEditError(f"replace_list target is not an array: {path}")
+        elif operation == "append_row":
+            # Canonical form targets the list path itself, matching the plan.
+            # Preserve support for older indexed append paths in cached plans.
+            if _object_row_list_path(representation, parts):
+                try:
+                    current = _resolve(candidate, parts)
+                except InvalidEditError:
+                    parent, key = _resolve_parent(candidate, parts)
+                    if not (representation == "korean-flat" and key == "form_steps"
+                            and isinstance(parent, dict) and key not in parent):
+                        raise
+                else:
+                    if not isinstance(current, list):
+                        raise InvalidEditError(f"append_row target is not an array: {path}")
+            elif parts and _object_row_list_path(representation, parts[:-1]):
+                parent = _resolve(candidate, parts[:-1])
+                if not isinstance(parent, list) or not parts[-1].isdigit() or int(parts[-1]) != len(parent):
+                    raise InvalidEditError(f"legacy indexed append must target the current list end: {path}")
+            else:
+                raise InvalidEditError(f"append_row target must name a supported semantic list: {path}")
+        else:  # remove_row always names an existing indexed row.
+            if not parts or not _object_row_list_path(representation, parts[:-1]):
+                raise InvalidEditError(f"remove_row is not supported at planned path: {path}")
+            parent = _resolve(candidate, parts[:-1])
+            if not isinstance(parent, list) or not parts[-1].isdigit() or int(parts[-1]) >= len(parent):
+                raise InvalidEditError(f"remove_row target must be an existing list row: {path}")
+
+
+_MISSING = object()
+
+
+def _value_at_or_missing(value: Any, path: str) -> Any:
+    try:
+        return _resolve(value, _pointer_parts(path))
+    except InvalidEditError:
+        return _MISSING
+
+
+def validate_issue_target_coverage(
+    before: Any,
+    after: Any,
+    edits: list[dict[str, Any]],
+    plan: dict[str, Any],
+    *,
+    representation: str,
+) -> None:
+    """Require every planned target to make an effective semantic change.
+
+    A changed enclosing object/list replacement can cover a planned scalar or
+    row replacement when the exact descendant value changed. Canonical appends
+    are counted per issue, so repeated targets to one list need distinct rows.
+    This proves declared scope was exercised; it does not decide whether a
+    linguistic finding was correct.
+    """
+    append_counts: dict[str, int] = {}
+    for edit in edits:
+        if edit.get("op") == "append_row":
+            append_counts[edit["path"]] = append_counts.get(edit["path"], 0) + 1
+    append_claims: dict[str, int] = {}
+
+    for issue in plan.get("issues", []):
+        if issue.get("boundary_change_needed"):
+            continue
+        for target in issue.get("targets", []):
+            op, path = target["op"], target["path"]
+            if op == "append_row":
+                claim_count = append_claims.get(path, 0) + 1
+                if append_counts.get(path, 0) < claim_count:
+                    raise EditCoverageError(
+                        f"planned append target was not applied for issue {issue['issue_index']}: {path}"
+                    )
+                append_claims[path] = claim_count
+                continue
+
+            matching = [edit for edit in edits
+                        if edit.get("op") == op and edit.get("path") == path]
+            effective = False
+            if matching:
+                if op == "remove_row":
+                    effective = True  # apply_edits already checked exact existing-row removal.
+                else:
+                    old = _value_at_or_missing(before, path)
+                    new = _value_at_or_missing(after, path)
+                    effective = old is _MISSING or new is _MISSING or old != new
+
+            # A whole-row/list replacement is equivalent only when it changes
+            # the exact descendant field named by the plan.
+            if not effective and op in {"set_field", "replace_row"}:
+                target_parts = _pointer_parts(path)
+                for edit in edits:
+                    if edit.get("op") not in {"replace_row", "replace_list"}:
+                        continue
+                    edit_parts = _pointer_parts(edit["path"])
+                    if not _is_prefix(edit_parts, target_parts) or edit_parts == target_parts:
+                        continue
+                    old = _value_at_or_missing(before, path)
+                    new = _value_at_or_missing(after, path)
+                    if old is not _MISSING and new is not _MISSING and old != new:
+                        effective = True
+                        break
+            if not effective:
+                raise EditCoverageError(
+                    f"planned target had no effective patch change for issue {issue['issue_index']}: {op} {path}"
+                )
 
 
 def _is_json_scalar(value: Any) -> bool:
@@ -325,36 +500,72 @@ def apply_edits(
             if (current_list is not None and not isinstance(current_list, list)) or not isinstance(edit["value"], list):
                 raise InvalidEditError(f"replace_list requires a semantic list target and list value: {path}")
         else:
-            if not parts or not _mutable_list_path(representation, parts[:-1]):
-                raise InvalidEditError(f"{operation} is not allowed for this representation path: {path}")
-            parent_parts, index = parts[:-1], parts[-1]
-            parent = _resolve(candidate, parent_parts)
-            if not isinstance(parent, list) or not index.isdigit():
-                raise InvalidEditError(f"{operation} target must be an indexed semantic list row: {path}")
-            row_index = int(index)
             if operation == "append_row":
-                if row_index != len(parent) or not isinstance(edit["value"], dict):
-                    raise InvalidEditError(f"append_row index must equal list length and value must be object: {path}")
-            elif row_index >= len(parent):
-                raise InvalidEditError(f"remove_row target must be an existing list row: {path}")
+                if not isinstance(edit["value"], dict):
+                    raise InvalidEditError(f"append_row value must be an object: {path}")
+                if _object_row_list_path(representation, parts):
+                    try:
+                        parent = _resolve(candidate, parts)
+                    except InvalidEditError:
+                        parent_obj, key = _resolve_parent(candidate, parts)
+                        if not (representation == "korean-flat" and key == "form_steps"
+                                and isinstance(parent_obj, dict) and key not in parent_obj):
+                            raise
+                        parent = []
+                    if not isinstance(parent, list):
+                        raise InvalidEditError(f"append_row target must be a semantic list: {path}")
+                elif parts and _object_row_list_path(representation, parts[:-1]):
+                    parent = _resolve(candidate, parts[:-1])
+                    if not isinstance(parent, list) or not parts[-1].isdigit() or int(parts[-1]) != len(parent):
+                        raise InvalidEditError(f"legacy indexed append must target the current list end: {path}")
+                else:
+                    raise InvalidEditError(f"append_row is not allowed for this representation path: {path}")
+            else:
+                if not parts or not _object_row_list_path(representation, parts[:-1]):
+                    raise InvalidEditError(f"{operation} is not allowed for this representation path: {path}")
+                parent = _resolve(candidate, parts[:-1])
+                if not isinstance(parent, list) or not parts[-1].isdigit():
+                    raise InvalidEditError(f"{operation} target must be an indexed semantic list row: {path}")
+                if int(parts[-1]) >= len(parent):
+                    raise InvalidEditError(f"remove_row target must be an existing list row: {path}")
         parsed.append((edit, parts))
 
     # Structural operations on a list cannot share that list with any other
     # edit: array indices in those paths would otherwise be ambiguous.
     for i, (edit, parts) in enumerate(parsed):
         for other, other_parts in parsed[i + 1:]:
-            edit_list = parts[:-1] if edit["op"] in {"append_row", "remove_row"} else None
-            other_list = other_parts[:-1] if other["op"] in {"append_row", "remove_row"} else None
-            if edit["path"] == other["path"] or (
+            same_canonical_append_list = (
+                edit["op"] == other["op"] == "append_row"
+                and _object_row_list_path(representation, parts)
+                and _object_row_list_path(representation, other_parts)
+                and parts == other_parts
+            )
+            distinct_base_index_removals = (
+                edit["op"] == other["op"] == "remove_row"
+                and parts[:-1] == other_parts[:-1]
+                and parts[-1] != other_parts[-1]
+            )
+            edit_list = ((parts if _object_row_list_path(representation, parts) else parts[:-1])
+                         if edit["op"] == "append_row" else
+                         parts[:-1] if edit["op"] == "remove_row" else None)
+            other_list = ((other_parts if _object_row_list_path(representation, other_parts) else other_parts[:-1])
+                          if other["op"] == "append_row" else
+                          other_parts[:-1] if other["op"] == "remove_row" else None)
+            if (not same_canonical_append_list and not distinct_base_index_removals
+                    and edit["path"] == other["path"]) or (
+                not same_canonical_append_list and not distinct_base_index_removals and
                 edit_list is not None and _is_prefix(edit_list, other_parts)
             ) or (
+                not same_canonical_append_list and not distinct_base_index_removals and
                 other_list is not None and _is_prefix(other_list, parts)
             ):
                 raise EditConflictError(f"conflicting edits are not allowed: {edit['path']} and {other['path']}")
-            if _is_prefix(parts, other_parts) or _is_prefix(other_parts, parts):
+            if not same_canonical_append_list and not distinct_base_index_removals and (
+                    _is_prefix(parts, other_parts) or _is_prefix(other_parts, parts)):
                 raise EditConflictError(f"overlapping edits are not allowed: {edit['path']} and {other['path']}")
 
     result = deepcopy(candidate)
+    removed_base_indexes: dict[tuple[str, ...], set[int]] = {}
     for edit, parts in parsed:
         before_result = deepcopy(result)
         before_projection = _projection(result, representation)
@@ -369,18 +580,34 @@ def apply_edits(
             parent, key = _resolve_parent(result, parts)
             parent[key] = deepcopy(edit["value"])
         else:
-            parent = _resolve(result, parts[:-1])
-            index = int(parts[-1])
             if operation == "append_row":
+                if _object_row_list_path(representation, parts):
+                    try:
+                        parent = _resolve(result, parts)
+                    except InvalidEditError:
+                        parent_obj, key = _resolve_parent(result, parts)
+                        parent = parent_obj.setdefault(key, [])
+                    list_parts = parts
+                    index = len(parent)
+                else:
+                    parent = _resolve(result, parts[:-1])
+                    index = int(parts[-1])
+                    list_parts = parts[:-1]
+                before_list = deepcopy(parent)
                 parent.append(deepcopy(edit["value"]))
             else:
+                parent = _resolve(result, parts[:-1])
+                base_index = int(parts[-1])
+                prior_removed = removed_base_indexes.setdefault(parts[:-1], set())
+                index = base_index - sum(1 for removed in prior_removed if removed < base_index)
+                list_parts = parts[:-1]
+                before_list = deepcopy(parent)
                 del parent[index]
+                prior_removed.add(base_index)
         after_projection = _projection(result, representation)
         if operation in {"append_row", "remove_row"}:
-            list_parts = parts[:-1]
-            old_list = _resolve(before_result, list_parts)
+            old_list = before_list
             new_list = _resolve(result, list_parts)
-            index = int(parts[-1])
             if operation == "append_row":
                 expected = old_list + [deepcopy(edit["value"])]
             else:

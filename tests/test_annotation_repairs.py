@@ -3,8 +3,8 @@ import hashlib
 
 import pytest
 
-from pipeline.annotation_edits import apply_edits, candidate_digest
-from pipeline.annotation_repairs import repair_annotation, replay_annotation_repair
+from pipeline.annotation_edits import ImmutableFieldError, apply_edits, candidate_digest
+from pipeline.annotation_repairs import digest, repair_annotation, replay_annotation_repair
 from pipeline.agent_harness import ChapterHarness
 from pipeline.japanese_agent_harness import JapaneseChapterHarness
 from argparse import Namespace
@@ -112,7 +112,8 @@ async def test_issue_planned_patch_is_validated_persisted_and_replayed(tmp_path)
     assert result["evidence"]["plan_digest"]
     assert result["evidence"]["patch_digest"]
     assert runner.calls[1][4]["workspace_context"]["annotation_patch_validation"]["representation"] == "chinese-annotation"
-    assert runner.calls[0][4]['workspace_context']['annotation_plan_validation'] == {'issue_count': 2}
+    assert runner.calls[0][4]['workspace_context']['annotation_plan_validation'] == {
+        'issue_count': 2, 'target_contract_version': 1}
     assert 'annotation_plan_validation' not in runner.calls[1][4]['workspace_context']
     assert "a wrong occurrence gloss on an already-valid chain should target only that meaning field" in runner.calls[0][1]
     assert "a changed lemma/identity for an inflected surface may also require corrected ordered stages" in runner.calls[0][1]
@@ -188,15 +189,12 @@ async def test_attempted_source_surface_edit_returns_boundary_outcome_and_replay
         "base_digest": candidate_digest(candidate),
         "edits": [{"op": "set_field", "path": target["path"], "value": "他"}],
     })
-    result = await repair_annotation(
-        Harness(tmp_path, runner), "repair", candidate, [{"problem": "meaning"}],
-        representation="chinese-annotation", language="zh", validate_candidate=lambda _: None,
-    )
-    assert result["status"] == "boundary_change_needed"
-    assert result["candidate"] == candidate
-    replayed = replay_annotation_repair(tmp_path, "repair_assembly", validate_candidate=lambda _: None)
-    assert replayed["status"] == "boundary_change_needed"
-    assert replayed["candidate"] == candidate
+    with pytest.raises(ImmutableFieldError, match="protected source/tap data"):
+        await repair_annotation(
+            Harness(tmp_path, runner), "repair", candidate, [{"problem": "meaning"}],
+            representation="chinese-annotation", language="zh", validate_candidate=lambda _: None,
+        )
+    assert [call[0] for call in runner.calls] == ["repair_plan"]
 
 
 @pytest.mark.asyncio
@@ -307,6 +305,34 @@ async def test_profile_check_replays_only_applied_assembly_with_completed_child_
     patch_result.write_text(json.dumps({"base_digest": "0" * 64, "edits": []}), encoding="utf-8")
     with pytest.raises(ValueError, match="Worker submitted artifact changed"):
         CodexRunner._check_tool_profile(assembly_dir, None, meta)
+
+
+@pytest.mark.asyncio
+async def test_legacy_applied_plan_with_unused_invalid_target_still_replays_actual_patch(tmp_path):
+    candidate = _candidate()
+    plan = _plan((_target("set_field", "/segments/1/meaning_en"),))
+    patch = {"base_digest": candidate_digest(candidate), "edits": [
+        {"op": "set_field", "path": "/segments/1/meaning_en", "value": "go"}]}
+    runner = PlannedRunner(tmp_path, plan, patch)
+    result = await repair_annotation(Harness(tmp_path, runner), "legacy", candidate,
+        [{"problem": "meaning"}], representation="chinese-annotation", language="zh",
+        validate_candidate=lambda _value: None)
+    # Simulate a previously accepted plan from before target feasibility
+    # checks. The extra stale array target is unused by the stored patch.
+    plan_path = tmp_path / "agents" / "legacy_plan" / "result.json"
+    historical_plan = json.loads(plan_path.read_text(encoding="utf-8"))
+    historical_plan["issues"][0]["targets"].append(
+        _target("set_field", "/segments/0/form_steps"))
+    plan_path.write_text(json.dumps(historical_plan), encoding="utf-8")
+    assembly_path = tmp_path / "agents" / "legacy_assembly" / "meta.json"
+    meta = json.loads(assembly_path.read_text(encoding="utf-8"))
+    meta["plan_digest"] = digest(historical_plan)
+    meta["target_contract_version"] = 0
+    assembly_path.write_text(json.dumps(meta), encoding="utf-8")
+
+    replayed = replay_annotation_repair(tmp_path, "legacy_assembly", validate_candidate=lambda _: None)
+    assert replayed["candidate"] == result["candidate"]
+    assert replayed["candidate"]["segments"][1]["meaning_en"] == "go"
 
 
 @pytest.mark.asyncio

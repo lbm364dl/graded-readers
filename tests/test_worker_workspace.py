@@ -209,6 +209,76 @@ def test_annotation_patch_submission_applies_and_validates_derived_candidate(tmp
     assert caught.value.category == 'derived_annotation_rejection'
 
 
+def test_patch_submission_rejects_omitted_planned_issue_target(tmp_path, monkeypatch):
+    from pipeline.annotation_edits import candidate_digest
+    from pipeline.annotation_repairs import PATCH_SCHEMA
+    from pipeline.worker_workspace import CandidateSubmissionError, submit
+    from pipeline.agent_harness import ChapterHarness
+
+    monkeypatch.setattr(ChapterHarness, 'annotation_contract_issues', staticmethod(lambda _text, _value: []))
+    base = {'segments': [
+        {'text': '她', 'type': 'word', 'pinyin': 'tā', 'meaning_en': 'old'},
+        {'text': '走', 'type': 'word', 'pinyin': 'zǒu', 'meaning_en': 'walk'},
+    ], 'grammar_overlays': []}
+    issue_targets = [
+        {'op': 'set_field', 'path': '/segments/0/meaning_en'},
+        {'op': 'set_field', 'path': '/segments/0/pinyin'},
+    ]
+    plan = {'issues': [
+        {'issue_index': 0, 'targets': [issue_targets[0]], 'boundary_change_needed': False},
+        {'issue_index': 1, 'targets': [issue_targets[1]], 'boundary_change_needed': False},
+    ]}
+    patch_context = {'chunk_text': '她走', 'language': 'zh', 'annotation_patch_validation': {
+        'base_candidate': base, 'representation': 'chinese-annotation',
+        'allowed_targets': issue_targets, 'language': 'zh', 'chunk_text': '她走',
+        'repair_plan': plan, 'target_contract_version': 1}}
+    workspace = tmp_path / 'coverage-workspace'
+    build(workspace, 'Apply each scoped issue.', PATCH_SCHEMA, context=patch_context)
+    candidate = workspace / 'candidate.json'
+    incomplete = {'base_digest': candidate_digest(base), 'edits': [
+        {'op': 'set_field', 'path': issue_targets[0]['path'], 'value': 'she'}]}
+    candidate.write_text(json.dumps(incomplete), encoding='utf-8')
+    with pytest.raises(CandidateSubmissionError, match='planned target had no effective patch change') as caught:
+        submit(workspace, {'candidate_path': 'candidate.json'})
+    assert caught.value.category == 'annotation_patch_contract_rejection'
+
+    complete = {'base_digest': candidate_digest(base), 'edits': [
+        {'op': 'set_field', 'path': issue_targets[0]['path'], 'value': 'she'},
+        {'op': 'set_field', 'path': issue_targets[1]['path'], 'value': 'tā (she)'},]}
+    candidate.write_text(json.dumps(complete), encoding='utf-8')
+    returned, _ = submit(workspace, {'candidate_path': 'candidate.json'})
+    assert returned == complete
+
+
+def test_plan_operation_mismatch_is_rejected_before_patch_and_corrected_by_resubmission(tmp_path):
+    from pipeline.annotation_repairs import PLAN_SCHEMA
+    from pipeline.worker_workspace import CandidateSubmissionError, submit
+
+    base = {'segments': [{'text': '은혜에', 'form_steps': [
+        {'form': '은혜에', 'grammar_entry_ids': ['location-e']}]}],
+        'grammar_links': [], 'expression_links': [], 'inflected_segment_indices': [0]}
+    context = {'candidate': base, 'representation': 'korean-flat',
+        'annotation_plan_validation': {'issue_count': 1, 'target_contract_version': 1}}
+    workspace = tmp_path / 'plan-workspace'
+    build(workspace, 'Plan a scoped correction.', PLAN_SCHEMA, context=context)
+    target_path = '/segments/0/form_steps/0/grammar_entry_ids'
+    invalid = {'issues': [{'issue_index': 0, 'reason': 'Remove the unsupported identity.',
+        'targets': [{'op': 'set_field', 'path': target_path}],
+        'boundary_change_needed': False, 'boundary_reason': ''}]}
+    candidate_path = workspace / 'candidate.json'
+    candidate_path.write_text(json.dumps(invalid), encoding='utf-8')
+    with pytest.raises(CandidateSubmissionError, match='use replace_list') as rejected:
+        submit(workspace, {'candidate_path': 'candidate.json'})
+    assert rejected.value.category == 'plan_contract_rejection'
+
+    corrected = {'issues': [{'issue_index': 0, 'reason': 'Replace the grammar identity array.',
+        'targets': [{'op': 'replace_list', 'path': target_path}],
+        'boundary_change_needed': False, 'boundary_reason': ''}]}
+    candidate_path.write_text(json.dumps(corrected), encoding='utf-8')
+    returned, _ = submit(workspace, {'candidate_path': 'candidate.json'})
+    assert returned == corrected
+
+
 def _word_schema():
     return {'type': 'object', 'required': ['segments'], 'properties': {'segments': {
         'type': 'array', 'items': {'anyOf': [
