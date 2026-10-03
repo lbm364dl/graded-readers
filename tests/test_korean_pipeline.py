@@ -904,6 +904,10 @@ def test_reconstruction_distinguishes_changed_paragraph_whitespace_from_changed_
     with pytest.raises(ValueError) as error:
         contracts.check_reconstruction([{'text': '문장. 다른 문장.'}], '문장. 다음 문장.')
     assert 'Replace the output whitespace' not in str(error.value)
+    with pytest.raises(ValueError) as error:
+        contracts.check_reconstruction([{'text': '문장.\n\n다음 문장.'}], '문장. 빠진 문장.\n\n다음 문장.')
+    assert 'whitespace replacement alone' in str(error.value)
+    assert 'Replace the output whitespace' not in str(error.value)
     contracts.check_reconstruction([{'text': '문장.'}, {'text': ' '}, {'text': '다음 문장.'}], '문장. 다음 문장.')
 
 

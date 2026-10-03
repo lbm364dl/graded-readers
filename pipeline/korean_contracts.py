@@ -170,9 +170,13 @@ def check_reconstruction(segments: list[dict], text: str) -> None:
                 expected_end += 1
             while actual_end < len(reconstructed) and reconstructed[actual_end].isspace():
                 actual_end += 1
-            detail = (f"Replace the output whitespace {reconstructed[offset:actual_end]!r} "
-                      f"at this offset with the exact source whitespace {text[offset:expected_end]!r}. "
-                      "The source controls paragraph boundaries, even when the previous proposal formats them differently. ")
+            if text[expected_end:expected_end + 30] == reconstructed[actual_end:actual_end + 30]:
+                detail = (f"Replace the output whitespace {reconstructed[offset:actual_end]!r} "
+                          f"at this offset with the exact source whitespace {text[offset:expected_end]!r}. "
+                          "The source controls paragraph boundaries, even when the previous proposal formats them differently. ")
+            else:
+                detail = ("The text following this whitespace also differs; a whitespace replacement alone "
+                          "will not repair it. Restore omitted or changed source text as well as its exact whitespace. ")
         raise ValueError(f"Korean annotation reconstruction differs at Unicode offset {offset}: "
                          f"expected {text[offset:offset + 30]!r}, got {reconstructed[offset:offset + 30]!r}. "
                          + detail +
