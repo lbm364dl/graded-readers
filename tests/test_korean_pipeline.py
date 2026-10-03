@@ -9,11 +9,29 @@ from pipeline import korean_contracts as contracts
 from pipeline import korean_dictionary as dictionary
 from pipeline import korean_publication as publication
 from pipeline import korean_sources as sources
-from pipeline.korean_agent_harness import KoreanHarness, check_prose, digest, validate_delta
+from pipeline.korean_agent_harness import (
+    KoreanHarness, check_prose, digest, korean_semantic_repair_grammar_knowledge,
+    validate_delta,
+)
 
 
 def manual_chapter():
     return json.loads(Path('tests/fixtures/korean_manual_annotations.json').read_text())['chapters'][0]
+
+
+def test_korean_semantic_repair_receives_complete_catalog_and_scoped_draft_policy():
+    catalog = {
+        'used': {'id': 'used', 'title_en': 'Used lesson'},
+        'alternate': {'id': 'alternate', 'title_en': 'Alternate reviewed lesson'},
+    }
+    knowledge = korean_semantic_repair_grammar_knowledge(catalog, {'used'})
+    assert knowledge['catalog_status'] == 'reviewed'
+    assert knowledge['entry_ids_used_in_base'] == ['used']
+    assert {entry['id'] for entry in knowledge['approved_entries']} == {'used', 'alternate'}
+    assert 'DRAFT' in knowledge['identity_policy']
+    assert 'not an approved lesson' in knowledge['identity_policy']
+    assert 'independent grammar-dictionary review' in knowledge['identity_policy']
+    assert 'lexical identities' in knowledge['identity_policy']
 
 
 def protocol_curriculum_bindings(chapter):
@@ -130,7 +148,7 @@ def test_publication_rejects_overlapping_or_skipped_chapter_scopes(tmp_path, mon
 
 
 @pytest.mark.parametrize('prose_revision,worker_failure,recover_partial', [(False, False, False), (False, True, False), (False, 'submission_rejected', False), (True, False, False), ('technical_failure', False, False), (False, 'attached', False), (False, False, True), (False, False, 'rejected_worker'), (False, False, 'invalid_attached')])
-def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_path, prose_revision, worker_failure, recover_partial, local_review_repair=False, draft_lesson=False):
+def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_path, prose_revision, worker_failure, recover_partial, local_review_repair=False, draft_lesson=False, incomplete_cached_repair=False, complete_cached_repair=False):
     from pipeline.korean_agent_harness import normalize_existing, save, UnannotatableProseError
     chapter = manual_chapter()
     if draft_lesson:
@@ -156,6 +174,8 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
         def __init__(self):
             self.jobs = []
             self.local_rejected = False
+            self.incomplete_cached_repair = incomplete_cached_repair
+            self.reviewed_cached_repair = False
         async def call(self, job, *args, **kwargs):
             self.jobs.append(job)
             semantic_job = '-chunk-' in job and job.endswith(('_plan', '_patch'))
@@ -179,18 +199,32 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
             if semantic_job:
                 from pipeline.annotation_edits import candidate_digest
                 context = kwargs['workspace_context']
+                if incomplete_cached_repair or local_review_repair:
+                    knowledge = context['grammar_knowledge']
+                    base_candidate = context.get('annotation_patch_validation', {}).get(
+                        'base_candidate', context['candidate'])
+                    used_ids = {link['entry_id'] for link in base_candidate['grammar_links']}
+                    known_ids = {entry['id'] for entry in knowledge['approved_entries']}
+                    assert knowledge['catalog_status'] == 'reviewed'
+                    assert known_ids > used_ids
+                    assert 'DRAFT' in knowledge['identity_policy']
+                    assert 'independent grammar-dictionary review' in knowledge['identity_policy']
                 if local_review_repair:
                     assert context['source_start'] == 0
                 if job.endswith('_plan'):
                     value = {'issues': [{'issue_index': i, 'reason': 'Clarify the occurrence gloss.',
-                        'targets': [{'op': 'set_field', 'path': '/segments/0/meaning_en'}],
+                        'targets': [{'op': 'set_field', 'path': f'/segments/{(0, 2)[i] if self.incomplete_cached_repair else 0}/meaning_en'}],
                         'boundary_change_needed': False, 'boundary_reason': ''}
                         for i in range(len(context['issues']))]}
                 else:
                     base = context['annotation_patch_validation']['base_candidate']
-                    value = {'base_digest': candidate_digest(base), 'edits': [{'op': 'set_field',
-                        'path': '/segments/0/meaning_en',
-                        'value': base['segments'][0]['meaning_en'] + ' (clarified)'}]}
+                    edits = []
+                    for i in range(len(context['issues'])):
+                        segment_index = (0, 2)[i] if self.incomplete_cached_repair else 0
+                        edits.append({'op': 'set_field',
+                            'path': f'/segments/{segment_index}/meaning_en',
+                            'value': base['segments'][segment_index]['meaning_en'] + ' (clarified)'})
+                    value = {'base_digest': candidate_digest(base), 'edits': edits}
             else:
                 value = await self.respond(job)
             if job.startswith('annotation-local-review-') and draft_lesson:
@@ -210,6 +244,13 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
                     save(tmp_path / 'agents/annotation-0-chunk-001-9/meta.json', {'return_code': 1})
                     value = {'approved': False, 'issues': ['Clarify the contextual meaning in the first chunk.'],
                              'prose_revision_reason_en': ''}
+            if job.startswith('annotation-local-review-') and (incomplete_cached_repair or complete_cached_repair):
+                inputs = kwargs['workspace_context']['chunk_review_input']
+                if inputs['context']['source_start'] == 0:
+                    self.reviewed_cached_repair = inputs['annotation']['segments'][0]['meaning_en'].endswith('(clarified)')
+                    if incomplete_cached_repair:
+                        self.reviewed_cached_repair = (self.reviewed_cached_repair
+                            and inputs['annotation']['segments'][2]['meaning_en'].endswith('(clarified)'))
             if job.endswith('-patch'):
                 from difflib import SequenceMatcher
                 inputs = json.loads(args[0].rsplit('\nINPUT:\n', 1)[1])
@@ -294,6 +335,51 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
                 return {'words': [], 'grammar': [entry]}
             raise AssertionError(job)
     runner = Runner()
+    if incomplete_cached_repair or complete_cached_repair:
+        # Simulate a v0 APPLIED assembly whose planned meaning target was a
+        # no-op, alongside the cached candidate a prior clean review accepted.
+        from pipeline.annotation_repairs import candidate_digest, digest as repair_digest
+        assembly_job = 'annotation-0-chunk-001-0_assembly'
+        plan_job, patch_job = assembly_job[:-len('_assembly')] + '_plan', assembly_job[:-len('_assembly')] + '_patch'
+        issue = {'problem': 'meaning', 'explanation': 'Clarify the occurrence gloss.'}
+        plan = {'issues': [{'issue_index': 0, 'reason': 'Clarify occurrence meaning.',
+            'targets': [{'op': 'set_field', 'path': '/segments/0/meaning_en'}],
+            'boundary_change_needed': False, 'boundary_reason': ''}]}
+        base = chunks[0]
+        updated = copy.deepcopy(base)
+        if complete_cached_repair:
+            updated['segments'][0]['meaning_en'] += ' (clarified)'
+        patch = {'base_digest': candidate_digest(base), 'edits': [{
+            'op': 'set_field', 'path': '/segments/0/meaning_en',
+            'value': updated['segments'][0]['meaning_en'],
+        }]}
+        from pipeline.annotation_repairs import PLAN_SCHEMA, PATCH_SCHEMA
+        from pipeline.worker_workspace import build
+        def save_workspace_job(job, schema, context, result):
+            directory = tmp_path / 'agents' / job
+            _, workspace_digest = build(directory / 'workspace', 'Synthetic historical repair evidence.',
+                schema, context=context)
+            save(directory / 'result.json', result)
+            save(directory / 'workspace' / 'candidate.json', result)
+            save(directory / 'meta.json', {'return_code': 0, 'tool_profile': 'workspace',
+                'workspace_digest': workspace_digest})
+        save_workspace_job(plan_job, PLAN_SCHEMA,
+            {'annotation_plan_validation': {'issue_count': 1}}, plan)
+        save_workspace_job(patch_job, PATCH_SCHEMA,
+            {'annotation_patch_validation': {
+                'base_candidate': base, 'representation': 'korean-flat',
+                'allowed_targets': plan['issues'][0]['targets'],
+                'repair_plan': plan, 'issues': [issue], 'language': 'ko',
+            }}, patch)
+        save(tmp_path / 'agents' / assembly_job / 'result.json', updated)
+        save(tmp_path / 'agents' / assembly_job / 'meta.json', {
+            'return_code': 0, 'kind': 'annotation_patch_assembly', 'status': 'applied',
+            'representation': 'korean-flat', 'base': base,
+            'base_digest': candidate_digest(base), 'issues': [issue],
+            'issue_digest': repair_digest([issue]), 'plan_job': plan_job,
+            'plan_digest': repair_digest(plan), 'patch_job': patch_job,
+            'patch_digest': repair_digest(patch), 'result_digest': candidate_digest(updated),
+        })
     if recover_partial:
         # An earlier process completed workers but never saved the parent
         # assembly: one valid proposal and one invalid identity to repair.
@@ -331,12 +417,20 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
         return
     assert asyncio.run(KoreanHarness(tmp_path, 1, runner=runner).run())['status'] == 'complete'
     jobs = [job for job in runner.jobs if '-chunk-' in job and not job.endswith(('_plan', '_patch'))]
-    assert jobs.count('annotation-0-chunk-001-0') == (0 if recover_partial else 1)
-    assert jobs.count('annotation-0-chunk-001-1') == (0 if prose_revision else 1)
+    if incomplete_cached_repair or complete_cached_repair:
+        assert runner.reviewed_cached_repair
+    assert jobs.count('annotation-0-chunk-001-0') == (0 if recover_partial or incomplete_cached_repair or complete_cached_repair else 1)
+    assert jobs.count('annotation-0-chunk-001-1') == (0 if prose_revision or incomplete_cached_repair or complete_cached_repair else 1)
     assert all(jobs.count(f'annotation-0-chunk-{i:03d}-0') == (0 if recover_partial and i == 2 else 1) for i in range(2, len(chunks) + 1))
-    assert len(jobs) == len(chunks) + (-1 if recover_partial else 1) + (1 if recover_partial == 'rejected_worker' else 0)
+    expected_worker_calls = (len(chunks) - 1 if incomplete_cached_repair or complete_cached_repair else
+        len(chunks) + (-1 if recover_partial else 1) +
+        (1 if recover_partial == 'rejected_worker' else 0))
+    assert len(jobs) == expected_worker_calls
     semantic_jobs = [job for job in runner.jobs if '-chunk-' in job and job.endswith(('_plan', '_patch'))]
-    assert len(semantic_jobs) == (2 if local_review_repair else 0)
+    assert len(semantic_jobs) == (2 if local_review_repair or incomplete_cached_repair else 0)
+    if incomplete_cached_repair:
+        assert 'annotation-0-chunk-001-1_plan' in runner.jobs
+        assert 'annotation-0-chunk-001-1_patch' in runner.jobs
     if recover_partial:
         assert 'annotation-review-0' in runner.jobs  # Recovery is never approval.
         if recover_partial == 'rejected_worker':
@@ -370,6 +464,16 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
 def test_local_review_repairs_only_rejected_chunk_before_chapter_review(tmp_path):
     test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(
         tmp_path, False, False, False, local_review_repair=True)
+
+
+def test_incomplete_cached_semantic_repair_is_fixed_before_cached_clean_review(tmp_path):
+    test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(
+        tmp_path, False, False, False, incomplete_cached_repair=True)
+
+
+def test_complete_legacy_semantic_repair_reuses_candidate_without_extra_repair(tmp_path):
+    test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(
+        tmp_path, False, False, False, complete_cached_repair=True)
 
 
 def test_draft_function_occurrence_review_retains_later_dictionary_gate(tmp_path):

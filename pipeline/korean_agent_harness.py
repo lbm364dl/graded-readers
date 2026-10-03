@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import asyncio
+import copy as copy_module
 import hashlib
 import json
 import re
@@ -487,6 +488,26 @@ def lexical_candidates(headwords: list[str], catalog: dict) -> list[dict]:
     """
     return [{key: entry[key] for key in ('id', 'headword', 'pos', 'meaning')}
             for headword in sorted(set(headwords)) for entry in catalog.get(headword, [])]
+
+
+def korean_semantic_repair_grammar_knowledge(grammar: dict, used_ids: set[str]) -> dict:
+    """Keep the full reviewed catalog available during scoped semantic repair."""
+    return {
+        "catalog_status": "reviewed",
+        "catalog_source": "content/lexicon/korean/l1.grammar.json",
+        "approved_entries": list(grammar.values()),
+        "entry_ids_used_in_base": sorted(used_ids),
+        "identity_policy": (
+            "First choose an existing approved entry only when its independent lesson "
+            "covers this occurrence's function. If none fits, propose a distinct stable "
+            "DRAFT grammar-function identity only when supported by the exact Korean "
+            "form, context, and reliable evidence. A draft is not an approved lesson: "
+            "it remains subject to the existing chapter identity-coordination and "
+            "independent grammar-dictionary review before approval or publication. "
+            "Never invent lexical identities, infer a function from a suffix alone, "
+            "or bypass research/review gates."
+        ),
+    }
 
 
 def validate_annotation_chunk(value, text, *, words, catalog, focus, title,
@@ -1192,7 +1213,18 @@ class KoreanHarness:
                         if errors and previous_chunk is not None:
                             from pipeline.korean_annotation_chunks import decode
                             try:
-                                semantic_base = decode(previous_chunk, source_text=text)
+                                # Shared semantic-repair assemblies store the
+                                # verified Korean flat candidate directly;
+                                # ordinary worker proposals use a versioned
+                                # chunk encoding and still need decode().
+                                if (isinstance(previous_chunk, dict)
+                                        and previous_chunk.get('format') is None
+                                        and isinstance(previous_chunk.get('segments'), list)
+                                        and all('lexical_kind' in segment
+                                                for segment in previous_chunk['segments'])):
+                                    semantic_base = copy_module.deepcopy(previous_chunk)
+                                else:
+                                    semantic_base = decode(previous_chunk, source_text=text)
                                 validate_chunk(semantic_base, text)
                             except (ValidationError, ValueError, KeyError, IndexError, TypeError):
                                 semantic_base = None
@@ -1210,6 +1242,8 @@ class KoreanHarness:
                                     'reviewed_source_context': reviewed_source_context,
                                     'approved_words': [v for k, v in self.words.items() if k in word_ids],
                                     'approved_grammar': [v for k, v in self.grammar.items() if k in grammar_ids],
+                                    'grammar_knowledge': korean_semantic_repair_grammar_knowledge(
+                                        self.grammar, grammar_ids),
                                     'lexical_candidates': [entry for entries in self.catalog.values()
                                         for entry in entries if entry['id'] in word_ids],
                                     'reviewed_lexical_usage_evidence': reviewed_usages,
@@ -1286,8 +1320,36 @@ class KoreanHarness:
                 async def reviewed_chunk(index, text):
                     from pipeline.korean_chunk_reviews import review_chunk
                     local_issues, local_previous = None, None
-                    for review_attempt in range(4):
+                    # A historically APPLIED semantic assembly can still have
+                    # left one or more original findings untouched. Inspect it
+                    # before consulting a cached independent approval. Recover
+                    # only the verified derived candidate and retry the exact
+                    # unresolved findings under a fresh scoped job identity.
+                    from pipeline.annotation_repairs import inspect_applied_repair_coverage
+                    for coverage_attempt in range(4):
                         value, record = await chunk(index + 1, text, local_issues, local_previous)
+                        incomplete = inspect_applied_repair_coverage(
+                            self.run_dir, record.get('job', ''))
+                        if incomplete is None:
+                            break
+                        if (incomplete.get('status') != 'incomplete'
+                                or not isinstance(incomplete.get('candidate'), dict)
+                                or digest(incomplete['candidate']) != digest(value)):
+                            raise ValueError('Korean cached semantic repair coverage could not be verified')
+                        if coverage_attempt == 3:
+                            raise ValueError('Korean semantic repair remained incomplete after bounded recovery')
+                        local_previous = incomplete['candidate']
+                        local_issues = [row['issue'] for row in incomplete['unresolved_issues']]
+                        local_issues.append({
+                            'problem': 'incomplete_semantic_repair',
+                            'explanation': incomplete['diagnostic'],
+                            'uncovered_targets': [target
+                                for row in incomplete['unresolved_issues']
+                                for target in row.get('uncovered_targets', [])],
+                        })
+                    for review_attempt in range(4):
+                        if review_attempt:
+                            value, record = await chunk(index + 1, text, local_issues, local_previous)
                         word_ids = {s['lexical_id'] for s in value['segments']}
                         grammar_ids = {link['entry_id'] for link in value['grammar_links']}
                         context = {'chapter_text': prose['text'], 'source_start': sum(map(len, texts[:index])),

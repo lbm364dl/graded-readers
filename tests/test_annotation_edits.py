@@ -14,6 +14,7 @@ from pipeline.annotation_edits import (
     candidate_digest,
     validate_target_contract,
     validate_issue_target_coverage,
+    uncovered_issue_targets,
 )
 
 
@@ -448,19 +449,32 @@ def test_multiple_base_indexed_row_removals_preserve_untargeted_rows_and_reject_
         "display_form": "뒤", "display_meaning_en": "later", "display_end_segment_index": 4}
     candidate["grammar_links"] = [first, middle, last]
     targets = [{"op": "remove_row", "path": "/grammar_links/0"},
-               {"op": "remove_row", "path": "/grammar_links/2"}]
+               {"op": "remove_row", "path": "/grammar_links/2"},
+               {"op": "set_field", "path": "/grammar_links/1/context_en"}]
     plan = {"issues": [
         {"issue_index": 0, "targets": [targets[0]], "boundary_change_needed": False},
-        {"issue_index": 1, "targets": [targets[1]], "boundary_change_needed": False}]}
+        {"issue_index": 1, "targets": [targets[1]], "boundary_change_needed": False},
+        {"issue_index": 2, "targets": [targets[2]], "boundary_change_needed": False}]}
     patch = patch_for(candidate,
         {"op": "remove_row", "path": "/grammar_links/0"},
-        {"op": "remove_row", "path": "/grammar_links/2"})
+        {"op": "remove_row", "path": "/grammar_links/2"},
+        {"op": "set_field", "path": "/grammar_links/1/context_en", "value": "corrected"})
     changed = apply_edits(candidate, patch, allowed_targets=targets, representation="korean-flat")
     validate_issue_target_coverage(candidate, changed, patch["edits"], plan,
                                    representation="korean-flat")
-    assert changed["grammar_links"] == [middle]
+    assert changed["grammar_links"] == [{**middle, "context_en": "corrected"}]
     assert changed["grammar_links"][0]["segment_index"] == 2
     assert changed["segments"] == candidate["segments"]
+
+    no_op_patch = patch_for(candidate,
+        {"op": "remove_row", "path": "/grammar_links/0"},
+        {"op": "remove_row", "path": "/grammar_links/2"},
+        {"op": "set_field", "path": "/grammar_links/1/context_en", "value": middle["context_en"]})
+    no_op = apply_edits(candidate, no_op_patch, allowed_targets=targets,
+                        representation="korean-flat")
+    uncovered = uncovered_issue_targets(candidate, no_op, no_op_patch["edits"], plan,
+                                        representation="korean-flat")
+    assert [item["issue_index"] for item in uncovered] == [2]
 
     conflicting = patch_for(candidate,
         {"op": "remove_row", "path": "/grammar_links/0"},
@@ -469,3 +483,70 @@ def test_multiple_base_indexed_row_removals_preserve_untargeted_rows_and_reject_
         apply_edits(candidate, conflicting, allowed_targets=[
             targets[0], {"op": "set_field", "path": "/grammar_links/0/context_en"}],
             representation="korean-flat")
+
+
+def test_canonical_append_can_follow_base_indexed_removal_on_same_list_only():
+    candidate = _korean_flat()
+    first = {"segment_index": 0, "entry_id": "first", "context_en": "first",
+        "display_form": "열", "display_meaning_en": "first", "display_end_segment_index": 0}
+    removed = {"segment_index": 2, "entry_id": "stale", "context_en": "wrong",
+        "display_form": "달", "display_meaning_en": "stale", "display_end_segment_index": 2}
+    last = {"segment_index": 4, "entry_id": "last", "context_en": "last",
+        "display_form": "뒤", "display_meaning_en": "later", "display_end_segment_index": 4}
+    addition = {"segment_index": 4, "entry_id": "new", "context_en": "new context",
+        "display_form": "뒤", "display_meaning_en": "new meaning", "display_end_segment_index": 4}
+    candidate["grammar_links"] = [first, removed, last]
+    targets = [{"op": "remove_row", "path": "/grammar_links/1"},
+               {"op": "append_row", "path": "/grammar_links"}]
+    plan = {"issues": [
+        {"issue_index": 0, "targets": [targets[0]], "boundary_change_needed": False},
+        {"issue_index": 1, "targets": [targets[1]], "boundary_change_needed": False}]}
+    patch = patch_for(candidate,
+        {"op": "append_row", "path": "/grammar_links", "value": addition},
+        {"op": "remove_row", "path": "/grammar_links/1"})
+    changed = apply_edits(candidate, patch, allowed_targets=targets, representation="korean-flat")
+    validate_issue_target_coverage(candidate, changed, patch["edits"], plan,
+                                   representation="korean-flat")
+    assert changed["grammar_links"] == [first, last, addition]
+    assert changed["segments"] == candidate["segments"]
+
+    legacy_append = patch_for(candidate,
+        {"op": "append_row", "path": "/grammar_links/3", "value": addition},
+        {"op": "remove_row", "path": "/grammar_links/1"})
+    with pytest.raises(EditConflictError):
+        apply_edits(candidate, legacy_append,
+            allowed_targets=[{"op": "append_row", "path": "/grammar_links/3"}, targets[0]],
+            representation="korean-flat")
+
+    whole_list = patch_for(candidate,
+        {"op": "replace_list", "path": "/grammar_links", "value": [first, last, addition]},
+        {"op": "remove_row", "path": "/grammar_links/1"})
+    with pytest.raises(EditConflictError):
+        apply_edits(candidate, whole_list,
+            allowed_targets=[{"op": "replace_list", "path": "/grammar_links"}, targets[0]],
+            representation="korean-flat")
+
+
+def test_remove_reappend_of_same_base_row_does_not_count_as_effective_removal():
+    candidate = _korean_flat()
+    row = {"segment_index": 4, "entry_id": "same", "context_en": "same",
+        "display_form": "뒤", "display_meaning_en": "later", "display_end_segment_index": 4}
+    candidate["grammar_links"] = [row]
+    targets = [{"op": "remove_row", "path": "/grammar_links/0"},
+               {"op": "append_row", "path": "/grammar_links"},
+               {"op": "set_field", "path": "/segments/0/meaning_en"}]
+    plan = {"issues": [
+        {"issue_index": 0, "targets": [targets[0]], "boundary_change_needed": False},
+        {"issue_index": 1, "targets": [targets[1]], "boundary_change_needed": False},
+        {"issue_index": 2, "targets": [targets[2]], "boundary_change_needed": False}]}
+    patch = patch_for(candidate,
+        {"op": "remove_row", "path": "/grammar_links/0"},
+        {"op": "append_row", "path": "/grammar_links", "value": row},
+        {"op": "set_field", "path": "/segments/0/meaning_en", "value": "changed elsewhere"})
+    changed = apply_edits(candidate, patch, allowed_targets=targets, representation="korean-flat")
+    assert changed["grammar_links"] == [row]
+    assert changed["segments"][0]["meaning_en"] == "changed elsewhere"
+    uncovered = uncovered_issue_targets(candidate, changed, patch["edits"], plan,
+                                        representation="korean-flat")
+    assert [item["issue_index"] for item in uncovered] == [0]
+    assert uncovered[0]["target"] == targets[0]

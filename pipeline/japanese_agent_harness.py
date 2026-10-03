@@ -37,6 +37,36 @@ from pipeline.japanese_readability import (
 from pipeline.japanese_dictionary_links import candidate_for_lemma, dictionary_link_issue
 
 
+def japanese_semantic_repair_grammar_knowledge(registry: dict[str, Any] | None = None) -> dict[str, Any]:
+    """Load the independently reviewed canonical Japanese grammar inventory."""
+    from pipeline import japanese_grammar_dictionary
+
+    if registry is None:
+        registry = japanese_grammar_dictionary.words.read(
+            japanese_grammar_dictionary.REGISTRY, {}
+        )
+    data = registry.get("data") if isinstance(registry, dict) else None
+    valid = (
+        isinstance(data, dict)
+        and isinstance(data.get("entries"), list)
+        and registry.get("reviewed") is True
+        and registry.get("review_digest") == japanese_grammar_dictionary.decision_digest(data)
+    )
+    return {
+        "catalog_status": "reviewed" if valid else "unavailable_or_unreviewed",
+        "catalog_source": str(japanese_grammar_dictionary.REGISTRY.relative_to(
+            japanese_grammar_dictionary.ROOT
+        )),
+        "approved_entries": data["entries"] if valid else [],
+        "identity_policy": (
+            "Reuse an approved entry only when its lesson covers the reviewed function. "
+            "If no supplied lesson fits, use a distinct evidence-supported provisional "
+            "grammar candidate key for downstream independent dictionary review; do not "
+            "present it as approved. Do not infer function from kana shape alone."
+        ),
+    }
+
+
 # Per source chapter. The strict increase is both prompted and audited.
 DEFAULT_JLPT_TARGETS = {
     "n5": 350, "n4": 700, "n3": 1600, "n2": 6550, "n1": 9550,
@@ -5625,7 +5655,8 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                 findings.get("issues", []),
                 representation="japanese-annotation",
                 language="ja",
-                context={"chunk_text": chunk},
+                context={"chunk_text": chunk,
+                         "grammar_knowledge": japanese_semantic_repair_grammar_knowledge()},
                 validate_candidate=validate_semantic_candidate,
                 refresh=self.refresh_annotation_chunk(index),
             )

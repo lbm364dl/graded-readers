@@ -361,27 +361,30 @@ def _value_at_or_missing(value: Any, path: str) -> Any:
         return _MISSING
 
 
-def validate_issue_target_coverage(
+def uncovered_issue_targets(
     before: Any,
     after: Any,
     edits: list[dict[str, Any]],
     plan: dict[str, Any],
     *,
     representation: str,
-) -> None:
-    """Require every planned target to make an effective semantic change.
+) -> list[dict[str, Any]]:
+    """Return planned targets which had no effective change in the result.
 
     A changed enclosing object/list replacement can cover a planned scalar or
     row replacement when the exact descendant value changed. Canonical appends
     are counted per issue, so repeated targets to one list need distinct rows.
     This proves declared scope was exercised; it does not decide whether a
-    linguistic finding was correct.
+    linguistic finding was correct. Use :func:`validate_issue_target_coverage`
+    when a missing target should reject a patch submission.
     """
     append_counts: dict[str, int] = {}
     for edit in edits:
         if edit.get("op") == "append_row":
             append_counts[edit["path"]] = append_counts.get(edit["path"], 0) + 1
     append_claims: dict[str, int] = {}
+    remove_claims: dict[tuple[str, str], int] = {}
+    unresolved: list[dict[str, Any]] = []
 
     for issue in plan.get("issues", []):
         if issue.get("boundary_change_needed"):
@@ -391,9 +394,9 @@ def validate_issue_target_coverage(
             if op == "append_row":
                 claim_count = append_claims.get(path, 0) + 1
                 if append_counts.get(path, 0) < claim_count:
-                    raise EditCoverageError(
-                        f"planned append target was not applied for issue {issue['issue_index']}: {path}"
-                    )
+                    unresolved.append({"issue_index": issue["issue_index"],
+                        "target": {"op": op, "path": path},
+                        "diagnostic": f"planned append target was not applied for issue {issue['issue_index']}: {path}"})
                 append_claims[path] = claim_count
                 continue
 
@@ -402,11 +405,21 @@ def validate_issue_target_coverage(
             effective = False
             if matching:
                 if op == "remove_row":
-                    effective = True  # apply_edits already checked exact existing-row removal.
+                    parts = _pointer_parts(path)
+                    base_row = _resolve(before, parts)
+                    base_rows = _resolve(before, parts[:-1])
+                    final_rows = _value_at_or_missing(after, _pointer(parts[:-1]))
+                    row_key = (_pointer(parts[:-1]), candidate_digest(base_row))
+                    required = remove_claims.get(row_key, 0) + 1
+                    if isinstance(final_rows, list):
+                        base_count = sum(row == base_row for row in base_rows)
+                        final_count = sum(row == base_row for row in final_rows)
+                        effective = base_count - final_count >= required
+                    remove_claims[row_key] = required
                 else:
                     old = _value_at_or_missing(before, path)
-                    new = _value_at_or_missing(after, path)
-                    effective = old is _MISSING or new is _MISSING or old != new
+                    new = matching[0].get("value", _MISSING)
+                    effective = old is not _MISSING and new is not _MISSING and old != new
 
             # A whole-row/list replacement is equivalent only when it changes
             # the exact descendant field named by the plan.
@@ -419,14 +432,34 @@ def validate_issue_target_coverage(
                     if not _is_prefix(edit_parts, target_parts) or edit_parts == target_parts:
                         continue
                     old = _value_at_or_missing(before, path)
-                    new = _value_at_or_missing(after, path)
+                    suffix = target_parts[len(edit_parts):]
+                    try:
+                        new = _resolve(edit["value"], suffix)
+                    except InvalidEditError:
+                        new = _MISSING
                     if old is not _MISSING and new is not _MISSING and old != new:
                         effective = True
                         break
             if not effective:
-                raise EditCoverageError(
-                    f"planned target had no effective patch change for issue {issue['issue_index']}: {op} {path}"
-                )
+                unresolved.append({"issue_index": issue["issue_index"],
+                    "target": {"op": op, "path": path},
+                    "diagnostic": f"planned target had no effective patch change for issue {issue['issue_index']}: {op} {path}"})
+    return unresolved
+
+
+def validate_issue_target_coverage(
+    before: Any,
+    after: Any,
+    edits: list[dict[str, Any]],
+    plan: dict[str, Any],
+    *,
+    representation: str,
+) -> None:
+    """Reject a patch when any planned target has no effective change."""
+    unresolved = uncovered_issue_targets(before, after, edits, plan,
+                                         representation=representation)
+    if unresolved:
+        raise EditCoverageError(unresolved[0]["diagnostic"])
 
 
 def _is_json_scalar(value: Any) -> bool:
@@ -530,8 +563,9 @@ def apply_edits(
                     raise InvalidEditError(f"remove_row target must be an existing list row: {path}")
         parsed.append((edit, parts))
 
-    # Structural operations on a list cannot share that list with any other
-    # edit: array indices in those paths would otherwise be ambiguous.
+    # Structural row operations use indices from the immutable base. A removal
+    # can coexist with semantic edits to other original rows in that list; edits
+    # to the row being removed and whole-list operations remain ambiguous.
     for i, (edit, parts) in enumerate(parsed):
         for other, other_parts in parsed[i + 1:]:
             same_canonical_append_list = (
@@ -545,28 +579,57 @@ def apply_edits(
                 and parts[:-1] == other_parts[:-1]
                 and parts[-1] != other_parts[-1]
             )
+            def removal_with_other_row(removal, removal_parts, other_edit, other_path):
+                if (removal.get("op") == "remove_row"
+                        and other_edit.get("op") == "append_row"
+                        and other_path == removal_parts[:-1]
+                        and _object_row_list_path(representation, other_path)):
+                    return True
+                if removal.get("op") != "remove_row" or other_edit.get("op") not in {
+                        "set_field", "replace_row", "replace_list"}:
+                    return False
+                list_parts = removal_parts[:-1]
+                return (len(other_path) > len(list_parts)
+                        and other_path[:len(list_parts)] == list_parts
+                        and other_path[len(list_parts)].isdigit()
+                        and other_path[len(list_parts)] != removal_parts[-1])
+
+            safe_mixed_removal = (
+                removal_with_other_row(edit, parts, other, other_parts)
+                or removal_with_other_row(other, other_parts, edit, parts)
+            )
+            compatible_structural_pair = distinct_base_index_removals or safe_mixed_removal
             edit_list = ((parts if _object_row_list_path(representation, parts) else parts[:-1])
                          if edit["op"] == "append_row" else
                          parts[:-1] if edit["op"] == "remove_row" else None)
             other_list = ((other_parts if _object_row_list_path(representation, other_parts) else other_parts[:-1])
                           if other["op"] == "append_row" else
                           other_parts[:-1] if other["op"] == "remove_row" else None)
-            if (not same_canonical_append_list and not distinct_base_index_removals
+            if (not same_canonical_append_list and not compatible_structural_pair
                     and edit["path"] == other["path"]) or (
-                not same_canonical_append_list and not distinct_base_index_removals and
+                not same_canonical_append_list and not compatible_structural_pair and
                 edit_list is not None and _is_prefix(edit_list, other_parts)
             ) or (
-                not same_canonical_append_list and not distinct_base_index_removals and
+                not same_canonical_append_list and not compatible_structural_pair and
                 other_list is not None and _is_prefix(other_list, parts)
             ):
                 raise EditConflictError(f"conflicting edits are not allowed: {edit['path']} and {other['path']}")
-            if not same_canonical_append_list and not distinct_base_index_removals and (
+            if not same_canonical_append_list and not compatible_structural_pair and (
                     _is_prefix(parts, other_parts) or _is_prefix(other_parts, parts)):
                 raise EditConflictError(f"overlapping edits are not allowed: {edit['path']} and {other['path']}")
 
     result = deepcopy(candidate)
     removed_base_indexes: dict[tuple[str, ...], set[int]] = {}
-    for edit, parts in parsed:
+    def application_key(row):
+        edit, parts = row
+        if edit["op"] == "remove_row":
+            return (1, _pointer(parts[:-1]), -int(parts[-1]))
+        if edit["op"] == "append_row":
+            return (2, _pointer(parts if _object_row_list_path(representation, parts) else parts[:-1]), 0)
+        return (0, "", 0)
+
+    parsed = sorted(enumerate(parsed), key=lambda row: (*application_key(row[1]), row[0]))
+    for _, (edit, parts) in parsed:
         before_result = deepcopy(result)
         before_projection = _projection(result, representation)
         operation = edit["op"]

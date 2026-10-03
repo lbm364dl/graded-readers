@@ -12,6 +12,7 @@ from pipeline.japanese_agent_harness import (
     JAPANESE_ANNOTATION_CHUNK_TARGETS,
     JapaneseBookHarness, JapaneseChapterHarness,
     apply_reader_useful_annotation_review_policy, clear_unavailable_dictionary_links,
+    japanese_semantic_repair_grammar_knowledge,
     japanese_char_count,
     japanese_beginner_prose_issues,
     japanese_learner_segmentation_issues,
@@ -35,6 +36,84 @@ from pipeline.japanese_readability import (
 )
 from pipeline.japanese_agent_harness import japanese_segment_issue
 from pipeline.agent_harness import digest
+
+
+def test_japanese_semantic_repair_sees_alternate_reviewed_lesson_and_keeps_draft_provisional():
+    from pipeline.usage_dictionary import decision_digest
+
+    data = {"entries": [
+        {"id": "ja-grammar-used", "title": "Used", "explanation": "Used lesson."},
+        {"id": "ja-grammar-alternate", "title": "Alternate", "explanation": "Independent alternate lesson."},
+    ], "assignments": []}
+    registry = {"reviewed": True, "review_digest": decision_digest(data), "data": data}
+    knowledge = japanese_semantic_repair_grammar_knowledge(registry)
+    assert knowledge["catalog_status"] == "reviewed"
+    assert {entry["id"] for entry in knowledge["approved_entries"]} == {
+        "ja-grammar-used", "ja-grammar-alternate",
+    }
+    assert "provisional" in knowledge["identity_policy"]
+    assert "do not present it as approved" in knowledge["identity_policy"]
+
+
+def test_japanese_semantic_repair_does_not_expose_unreviewed_grammar_as_approved():
+    knowledge = japanese_semantic_repair_grammar_knowledge({
+        "reviewed": False, "review_digest": "stale", "data": {"entries": [{"id": "draft"}]},
+    })
+    assert knowledge["catalog_status"] == "unavailable_or_unreviewed"
+    assert knowledge["approved_entries"] == []
+
+
+@pytest.mark.asyncio
+async def test_japanese_semantic_repair_caller_passes_alternate_reviewed_entry(tmp_path, monkeypatch):
+    from pipeline import annotation_repairs, japanese_grammar_dictionary
+
+    candidate = {"segments": [{
+        "surface": "猫", "type": "word", "lemma": "猫",
+        "surface_kana": "ねこ", "lemma_kana": "ねこ",
+        "part_of_speech": "noun", "conjugation_form": "non-inflecting",
+        "meaning_en": "cat", "grammar_candidate_key": "",
+        "dictionary_key": "", "dictionary_definition_en": "",
+        "form_steps": [], "story_role": "none", "story_importance_en": "",
+    }], "grammar_overlays": []}
+    captured = {}
+
+    class Harness(JapaneseChapterHarness):
+        async def annotation_candidate(self, index, chunk, **kwargs):
+            return candidate
+
+        async def review_annotation(self, index, chunk, annotation, stage):
+            return ({"verdict": "revise", "issues": [{"problem": "grammar", "explanation": "Check available lessons."}]}
+                    if stage == "initial" else {"verdict": "pass", "issues": []})
+
+        def annotation_reconstructs(self, chunk, annotation):
+            return True
+
+        def annotation_contract_issues(self, chunk, annotation):
+            return []
+
+        def prepare_planned_annotation(self, chunk, annotation):
+            return annotation
+
+    async def fake_repair(harness, job, base, issues, **kwargs):
+        captured.update(kwargs["context"])
+        return {"status": "applied", "candidate": base, "evidence": {"assembly_job": job}}
+
+    monkeypatch.setattr(annotation_repairs, "repair_annotation", fake_repair)
+    harness = object.__new__(Harness)
+    harness.args = Namespace(level="n5", annotation_chunk=None, annotation_chunk_maximum=None,
+        max_annotation_repairs=1, annotation_repair_effort="low", annotation_final_effort="low",
+        refresh=False, annotation_chunk_indices=None)
+    harness.run_dir = tmp_path
+    harness.story_vocabulary_plan = {"terms": []}
+    result = await harness.annotate_chunk(0, "猫")
+    assert result["resolved"] is True
+    knowledge = captured["grammar_knowledge"]
+    registry = japanese_grammar_dictionary.words.read(japanese_grammar_dictionary.REGISTRY)
+    expected = registry["data"]["entries"]
+    assert knowledge["catalog_status"] == "reviewed"
+    assert knowledge["approved_entries"] == expected
+    assert any(entry["id"] not in {s["grammar_candidate_key"] for s in candidate["segments"]}
+               for entry in knowledge["approved_entries"])
 
 
 def test_beginner_orthography_modernizes_lexical_nai_but_advanced_can_preserve_it():

@@ -18,6 +18,7 @@ from pipeline.agent_harness import (
     accept_distributed_scene_lengths,
     best_scene_attempt,
     discard_incorrect_length_findings,
+    chinese_semantic_repair_grammar_knowledge,
     digest,
     gather_all_or_raise,
     length_violations,
@@ -33,6 +34,60 @@ from pipeline.agent_harness import (
     split_chinese_annotation_chunks,
     status,
 )
+
+
+def test_chinese_repair_marks_candidate_keys_provisional_without_fake_catalog():
+    knowledge = chinese_semantic_repair_grammar_knowledge({
+        "grammar_overlays": [
+            {"grammar_candidate_key": "directional-complement"},
+            {"grammar_candidate_key": "directional-complement"},
+        ]
+    })
+    assert knowledge["catalog_status"] == "provisional_keys_only"
+    assert knowledge["approved_entries"] == []
+    assert knowledge["candidate_keys_in_base"] == ["directional-complement"]
+    assert "not approved" in knowledge["identity_policy"]
+
+
+@pytest.mark.asyncio
+async def test_chinese_semantic_repair_caller_passes_provisional_grammar_reference(tmp_path, monkeypatch):
+    from pipeline import annotation_repairs
+
+    candidate = {"segments": [{"text": "猫", "type": "word", "pinyin": "māo", "meaning_en": "cat"}],
+                 "grammar_overlays": []}
+    captured = {}
+
+    class Harness(ChapterHarness):
+        async def annotation_candidate(self, index, chunk, **kwargs):
+            return candidate
+
+        async def review_annotation(self, index, chunk, annotation, stage):
+            return ({"verdict": "revise", "issues": [{"problem": "meaning", "explanation": "Check gloss."}]}
+                    if stage == "initial" else {"verdict": "pass", "issues": []})
+
+        def annotation_reconstructs(self, chunk, annotation):
+            return True
+
+        def annotation_contract_issues(self, chunk, annotation):
+            return []
+
+        def prepare_annotation_candidate(self, chunk, annotation):
+            return annotation
+
+    async def fake_repair(harness, job, base, issues, **kwargs):
+        captured.update(kwargs["context"])
+        return {"status": "applied", "candidate": base, "evidence": {"assembly_job": job}}
+
+    monkeypatch.setattr(annotation_repairs, "repair_annotation", fake_repair)
+    harness = object.__new__(Harness)
+    harness.args = Namespace(max_annotation_repairs=1, refresh=False,
+                             annotation_repair_effort="low")
+    harness.run_dir = tmp_path
+    result = await harness.annotate_chunk(0, "猫")
+    assert result["resolved"] is True
+    assert captured["grammar_knowledge"]["catalog_status"] == "provisional_keys_only"
+    assert captured["grammar_knowledge"]["approved_entries"] == []
+    assert captured["grammar_knowledge"]["candidate_keys_in_base"] == []
 
 
 @pytest.mark.asyncio

@@ -21,6 +21,7 @@ from pipeline.annotation_edits import (
     ImmutableFieldError,
     apply_edits,
     candidate_digest,
+    uncovered_issue_targets,
     validate_target_contract,
     validate_issue_target_coverage,
 )
@@ -70,7 +71,7 @@ PATCH_SCHEMA: dict[str, Any] = {
     },
 }
 
-DEPENDENCY_CLOSURE_GUIDANCE = """For each issue, inspect semantic dependencies through the exact observed tap surface before choosing targets. If changing a lemma, lexical identity, or form analysis for an inflected/derived surface, include only the dependent semantic field/list operations needed to keep its complete chain valid through that exact surface, with matching grammar links/overlays and the representation's form-audit membership when those fields exist. Removing an incorrect step or link is not sufficient when the remaining chain then fails to explain the observed surface; add or replace the supported semantic rows needed for the corrected analysis. Do not alter source/tap text, boundaries, or ranges. Contrast: a wrong occurrence gloss on an already-valid chain should target only that meaning field; a changed lemma/identity for an inflected surface may also require corrected ordered stages and their linked lessons. Never invent an identity or lesson to complete the chain."""
+DEPENDENCY_CLOSURE_GUIDANCE = """For each issue, inspect semantic dependencies through the exact observed tap surface before choosing targets. If changing a lemma, lexical identity, or form analysis for an inflected/derived surface, include only the dependent semantic field/list operations needed to keep its complete chain valid through that exact surface, with matching grammar links/overlays and the representation's form-audit membership when those fields exist. Removing an incorrect step or link is not sufficient when the remaining chain then fails to explain the observed surface; add or replace the supported semantic rows needed for the corrected analysis. Do not alter source/tap text, boundaries, or ranges. Contrast: a wrong occurrence gloss on an already-valid chain should target only that meaning field; a changed lemma/identity for an inflected surface may also require corrected ordered stages and their linked lessons. Inspect the supplied grammar knowledge and identity policy: reuse an exact approved entry when it fits; use a provisional/draft identity only when the language policy explicitly permits it, and leave it subject to the normal independent review. Never present a draft as approved, and never invent a lexical ID or lesson to complete the chain."""
 SOURCE_TAP_PROJECTION_GUIDANCE = """Keep every source/tap projection field unchanged, including segment text/surface, source offsets, grammar-link segment/range indices, and grammar-link display_form. An empty grammar-link display_form with display_end_segment_index -1 is a direct lesson link; do not turn it into a displayed source span in a semantic patch. If the correction requires changing any protected source/tap projection, mark boundary_change_needed and route it to the separate boundary-capable repair path."""
 
 
@@ -690,3 +691,78 @@ def replay_annotation_repair(
         raise ValueError("replayed annotation semantic patch differs from its stored result")
     return {"status": "applied", "candidate": updated,
             "evidence": _evidence_result(run_dir, assembly_job, meta), "plan": plan}
+
+
+def inspect_applied_repair_coverage(
+    run_dir: Path,
+    assembly_job: str,
+) -> dict[str, Any] | None:
+    """Inspect a verified applied repair for original findings it did not cover.
+
+    Returns ``None`` for non-applied or fully covered assemblies. For an
+    incomplete historical assembly, returns its integrity-verified derived
+    candidate and the exact original review issues whose declared plan targets
+    were not effectively changed. A caller can then replan those issues against
+    that candidate without regenerating the whole annotation. This is structural
+    coverage evidence, not a linguistic adjudication or an approval decision.
+    """
+    run_dir = Path(run_dir)
+    assembly_dir = _safe_job_path(run_dir, assembly_job)
+    meta = _read_json(assembly_dir / "meta.json")
+    if (meta.get("kind") != "annotation_patch_assembly"
+            or meta.get("return_code") != 0 or meta.get("status") != "applied"):
+        return None
+
+    # Standard replay verifies base/issue/child digests, exact edit application,
+    # protected source/tap projections, and stored-result equality. Current
+    # versioned assemblies also recheck coverage there; historical assemblies
+    # omit that post-hoc requirement so this function can identify their gaps.
+    replayed = replay_annotation_repair(
+        run_dir, assembly_job, validate_candidate=lambda _candidate: None)
+    if replayed.get("status") != "applied":
+        return None
+
+    original_issues = meta.get("issues")
+    if not isinstance(original_issues, list):
+        raise ValueError("applied annotation repair has no original issue list")
+    plan = replayed["plan"]
+    plan_rows = plan.get("issues", [])
+    if meta.get("replan") is not None:
+        lineage_issues = meta["replan"].get("issues")
+        if (not isinstance(lineage_issues, list)
+                or lineage_issues[:len(original_issues)] != original_issues):
+            raise ValueError("replan lineage does not preserve exact original review issues")
+    original_plan = {"issues": [row for row in plan_rows
+                                if row.get("issue_index", len(original_issues)) < len(original_issues)]}
+    if [row.get("issue_index") for row in original_plan["issues"]] != list(range(len(original_issues))):
+        raise ValueError("applied repair plan does not map every original issue exactly once")
+    if any(row.get("boundary_change_needed") for row in original_plan["issues"]):
+        raise ValueError("applied repair plan still marks an original issue as requiring boundary changes")
+
+    patch_job = meta.get("patch_job")
+    patch_path = _safe_job_path(run_dir, patch_job) / "result.json"
+    patch = _read_json(patch_path)
+    if digest(patch) != meta.get("patch_digest"):
+        raise ValueError("applied repair patch changed after verified replay")
+    unresolved = uncovered_issue_targets(meta["base"], replayed["candidate"],
+        patch.get("edits", []), original_plan, representation=meta["representation"])
+    if not unresolved:
+        return None
+
+    by_index: dict[int, list[dict[str, Any]]] = {}
+    for item in unresolved:
+        by_index.setdefault(item["issue_index"], []).append(item)
+    rows_by_index = {row["issue_index"]: row for row in original_plan["issues"]}
+    unresolved_issues = [{
+        "issue_index": index,
+        "issue": deepcopy(original_issues[index]),
+        "plan_reason": rows_by_index[index]["reason"],
+        "uncovered_targets": [
+            {**item["target"], "diagnostic": item["diagnostic"]}
+            for item in by_index[index]
+        ],
+    } for index in sorted(by_index)]
+    details = "; ".join(item["diagnostic"] for item in unresolved)
+    return {"status": "incomplete", "assembly_job": assembly_job,
+        "candidate": replayed["candidate"], "unresolved_issues": unresolved_issues,
+        "diagnostic": f"Historical applied annotation repair left planned targets uncovered: {details}"}

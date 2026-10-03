@@ -3,8 +3,10 @@ import hashlib
 
 import pytest
 
-from pipeline.annotation_edits import ImmutableFieldError, apply_edits, candidate_digest
-from pipeline.annotation_repairs import digest, repair_annotation, replay_annotation_repair
+from pipeline.annotation_edits import EditCoverageError, ImmutableFieldError, apply_edits, candidate_digest
+from pipeline.annotation_repairs import (
+    digest, inspect_applied_repair_coverage, repair_annotation, replay_annotation_repair,
+)
 from pipeline.agent_harness import ChapterHarness
 from pipeline.japanese_agent_harness import JapaneseChapterHarness
 from argparse import Namespace
@@ -138,6 +140,7 @@ async def test_boundary_plan_is_explicit_and_does_not_run_or_apply_patch(tmp_pat
     assert [call[0] for call in runner.calls] == ["repair_plan"]
     replayed = replay_annotation_repair(tmp_path, "repair_assembly", validate_candidate=lambda _: None)
     assert replayed["status"] == "boundary_change_needed"
+    assert inspect_applied_repair_coverage(tmp_path, "repair_assembly") is None
     assert replayed["candidate"] == candidate
 
 
@@ -333,6 +336,71 @@ async def test_legacy_applied_plan_with_unused_invalid_target_still_replays_actu
     replayed = replay_annotation_repair(tmp_path, "legacy_assembly", validate_candidate=lambda _: None)
     assert replayed["candidate"] == result["candidate"]
     assert replayed["candidate"]["segments"][1]["meaning_en"] == "go"
+    coverage = inspect_applied_repair_coverage(tmp_path, "legacy_assembly")
+    assert coverage is not None
+    assert coverage["candidate"] == result["candidate"]
+    assert coverage["unresolved_issues"][0]["issue"] == {"problem": "meaning"}
+    assert coverage["unresolved_issues"][0]["uncovered_targets"] == [{
+        "op": "set_field", "path": "/segments/0/form_steps",
+        "diagnostic": "planned target had no effective patch change for issue 0: set_field /segments/0/form_steps"}]
+
+
+@pytest.mark.asyncio
+async def test_historical_assembly_inspection_routes_omitted_valid_removal_and_ignores_complete_repair(tmp_path):
+    candidate = {"segments": [{"text": "가", "meaning_en": "old", "form_steps": []}],
+        "grammar_links": [{"segment_index": 0, "display_end_segment_index": 0,
+            "display_form": "가", "entry_id": "wrong", "context_en": "stale"}],
+        "expression_links": [], "inflected_segment_indices": []}
+    issue = {"problem": "Replace the inappropriate grammar occurrence."}
+    plan = _plan((_target("set_field", "/segments/0/meaning_en"),
+                  _target("remove_row", "/grammar_links/0")))
+    targets = [*plan["issues"][0]["targets"]]
+
+    async def create_legacy(name, *, remove):
+        edits = [{"op": "set_field", "path": "/segments/0/meaning_en", "value": "revised"}]
+        if remove:
+            edits.append({"op": "remove_row", "path": "/grammar_links/0"})
+        patch = {"base_digest": candidate_digest(candidate), "edits": edits}
+        runner = PlannedRunner(tmp_path, plan, patch)
+        result = await repair_annotation(Harness(tmp_path, runner), name, candidate, [issue],
+            representation="korean-flat", language="ko", validate_candidate=lambda _value: None)
+        assembly_dir = tmp_path / "agents" / f"{name}_assembly"
+        meta_path, result_path = assembly_dir / "meta.json", assembly_dir / "result.json"
+        meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        if not remove:
+            # Recreate the actual legacy artifact: it was historically marked
+            # applied despite omitting the diagnosed row removal.
+            applied = apply_edits(candidate, patch, allowed_targets=targets,
+                                  representation="korean-flat")
+            meta["status"] = "applied"
+            meta["result_digest"] = candidate_digest(applied)
+            meta.pop("patch_error", None)
+            result_path.write_text(json.dumps(applied, ensure_ascii=False), encoding="utf-8")
+        meta.pop("target_contract_version", None)
+        meta_path.write_text(json.dumps(meta, ensure_ascii=False), encoding="utf-8")
+        return result
+
+    await create_legacy("omitted-link-removal", remove=False)
+    incomplete = inspect_applied_repair_coverage(tmp_path, "omitted-link-removal_assembly")
+    assert incomplete is not None
+    assert incomplete["candidate"]["segments"][0]["meaning_en"] == "revised"
+    assert incomplete["candidate"]["grammar_links"][0]["entry_id"] == "wrong"
+    assert incomplete["unresolved_issues"] == [{
+        "issue_index": 0, "issue": issue,
+        "plan_reason": "issue 0 semantic target",
+        "uncovered_targets": [{"op": "remove_row", "path": "/grammar_links/0",
+            "diagnostic": "planned target had no effective patch change for issue 0: remove_row /grammar_links/0"}]}]
+    meta_path = tmp_path / "agents" / "omitted-link-removal_assembly" / "meta.json"
+    current_meta = json.loads(meta_path.read_text(encoding="utf-8"))
+    current_meta["target_contract_version"] = 1
+    meta_path.write_text(json.dumps(current_meta), encoding="utf-8")
+    with pytest.raises(EditCoverageError, match="remove_row /grammar_links/0"):
+        inspect_applied_repair_coverage(tmp_path, "omitted-link-removal_assembly")
+    current_meta.pop("target_contract_version")
+    meta_path.write_text(json.dumps(current_meta), encoding="utf-8")
+
+    await create_legacy("complete-link-removal", remove=True)
+    assert inspect_applied_repair_coverage(tmp_path, "complete-link-removal_assembly") is None
 
 
 @pytest.mark.asyncio
@@ -471,6 +539,10 @@ async def test_one_derived_gate_replan_uses_original_base_and_replays_lineage(tm
     assert result["candidate"]["segments"][0]["meaning_en"] == "corrected"
     assert candidate["segments"][0]["meaning_en"] == "she"
     assert len(runner.calls) == 4
+    for plan_call in (runner.calls[0], runner.calls[2]):
+        assert "Inspect the supplied grammar knowledge and identity policy" in plan_call[1]
+        assert "reuse an exact approved entry when it fits" in plan_call[1]
+        assert "never invent a lexical ID or lesson" in plan_call[1]
     assert "exact ORIGINAL base candidate" in runner.calls[3][1]
     assert runner.calls[3][2]["workspace_context"]["base_digest"] == candidate_digest(candidate)
     replayed = replay_annotation_repair(tmp_path, "repair_assembly", validate_candidate=gate)

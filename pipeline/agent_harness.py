@@ -51,6 +51,32 @@ DEFAULT_LEVEL_TARGETS = {
 }
 _T2S = OpenCC("t2s")
 _GRAMMAR_CANDIDATE_KEY = re.compile(r"^[a-z][a-z0-9_.-]*$")
+
+
+def chinese_semantic_repair_grammar_knowledge(annotation: dict[str, Any]) -> dict[str, Any]:
+    """Describe Chinese grammar identity availability without implying approval.
+
+    Chinese annotations use provisional clustering keys and have no canonical
+    reviewed grammar registry for this pipeline to load.
+    """
+    keys = sorted({
+        str(overlay.get("grammar_candidate_key", ""))
+        for overlay in annotation.get("grammar_overlays", [])
+        if isinstance(overlay, dict) and overlay.get("grammar_candidate_key")
+    })
+    return {
+        "catalog_status": "provisional_keys_only",
+        "catalog_source": None,
+        "approved_entries": [],
+        "candidate_keys_in_base": keys,
+        "identity_policy": (
+            "Chinese grammar_candidate_key values are provisional clustering hints, "
+            "not approved lesson identities. Correct or introduce a distinct "
+            "evidence-supported provisional key only when the reviewed function "
+            "requires it; downstream grammar unification and review determine "
+            "canonical lesson identities. Do not infer a function from spelling alone."
+        ),
+    }
 CHINESE_PINYIN_POLICY = """PINYIN POLICY: For learner-facing Standard Mandarin,
 represent natural pronunciation in ordinary, unstressed connected speech.
 Infer each syllable's pronunciation from its grammatical role and local context,
@@ -2553,7 +2579,8 @@ GRAMMAR OVERLAYS (existing exact offset objects):
                         review["issues"],
                         representation="chinese-annotation",
                         language="zh",
-                        context={"chunk_text": chunk},
+                        context={"chunk_text": chunk,
+                                 "grammar_knowledge": chinese_semantic_repair_grammar_knowledge(result)},
                         validate_candidate=validate_semantic_candidate,
                         refresh=self.args.refresh,
                     )
