@@ -18727,6 +18727,47 @@
         ]
       },
       "occurrence_requests_digest": "2566038cdd1990cbf0c93ad74b284bdb3655de11bb71108542426debeccdb3cb"
+    },
+    {
+      "headwords": [
+        "그러자"
+      ],
+      "proposal": {
+        "entries": [],
+        "unresolved": [
+          {
+            "headword": "그러자",
+            "reason_en": "The supplied usage “then” is a connective use of 그러다 + -자, not a standalone dictionary lexeme. No exact standalone headword with its own POS and sense was verified; leave this occurrence unresolved rather than creating a lemma."
+          }
+        ]
+      },
+      "proposal_digest": "1cd78473cdfa9989354c19f570567e07ffce7c4e2483e41680d2c753cb78c8b1",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "c6a0027d0694ef196c9553b759424d8b6193bc75b157ffd83bda766412ea8f52",
+      "primary_evidence": [
+        {
+          "headword_request": "그러자",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EA%B7%B8%EB%9F%AC%EC%9E%90",
+          "records": []
+        },
+        {
+          "proposal_records": []
+        }
+      ],
+      "primary_evidence_digest": "353f96da17777ac746f643aadfa3ddeafc065c9baf665278ff563e2a8727b4de",
+      "occurrence_requests": {
+        "그러자": [
+          {
+            "text": "그러자",
+            "meaning_en": "then"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "86103b7324353e4bbb5dd9b23cd723e6116fbbe82871c11667a4f5431883fb4b"
     }
   ]
 }
