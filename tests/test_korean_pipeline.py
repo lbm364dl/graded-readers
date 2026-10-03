@@ -894,6 +894,19 @@ def test_reconstruction_reports_exact_missing_tail_and_distinguishes_extra_tail(
     contracts.check_reconstruction([{'text': '꿈을 꾸었다'}, {'text': '. \n'}], '꿈을 꾸었다. \n')
 
 
+def test_reconstruction_distinguishes_changed_paragraph_whitespace_from_changed_words():
+    segments = [{'text': '문장.\n\n다음 문장.'}]
+    with pytest.raises(ValueError) as error:
+        contracts.check_reconstruction(segments, '문장. 다음 문장.')
+    assert "output whitespace '\\n\\n'" in str(error.value)
+    assert "source whitespace ' '" in str(error.value)
+    assert segments == [{'text': '문장.\n\n다음 문장.'}]
+    with pytest.raises(ValueError) as error:
+        contracts.check_reconstruction([{'text': '문장. 다른 문장.'}], '문장. 다음 문장.')
+    assert 'Replace the output whitespace' not in str(error.value)
+    contracts.check_reconstruction([{'text': '문장.'}, {'text': ' '}, {'text': '다음 문장.'}], '문장. 다음 문장.')
+
+
 def test_dictionary_rejects_same_length_unattested_surface(tmp_path):
     chapter = manual_chapter()
     chapter['segments'][0]['text'] = '다른말'

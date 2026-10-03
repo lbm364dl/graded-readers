@@ -164,6 +164,15 @@ def check_reconstruction(segments: list[dict], text: str) -> None:
         elif reconstructed.startswith(text):
             detail = (f"The output contains extra trailing text "
                       f"{reconstructed[len(text):]!r}; remove it. ")
+        elif offset < len(text) and offset < len(reconstructed) and text[offset].isspace() and reconstructed[offset].isspace():
+            expected_end, actual_end = offset, offset
+            while expected_end < len(text) and text[expected_end].isspace():
+                expected_end += 1
+            while actual_end < len(reconstructed) and reconstructed[actual_end].isspace():
+                actual_end += 1
+            detail = (f"Replace the output whitespace {reconstructed[offset:actual_end]!r} "
+                      f"at this offset with the exact source whitespace {text[offset:expected_end]!r}. "
+                      "The source controls paragraph boundaries, even when the previous proposal formats them differently. ")
         raise ValueError(f"Korean annotation reconstruction differs at Unicode offset {offset}: "
                          f"expected {text[offset:offset + 30]!r}, got {reconstructed[offset:offset + 30]!r}. "
                          + detail +
