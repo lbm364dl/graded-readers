@@ -149,6 +149,10 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
         def __init__(self): self.jobs = []
         async def call(self, job, *args, **kwargs):
             self.jobs.append(job)
+            if '-chunk-' in job:
+                inputs = json.loads(args[0].rsplit('\nINPUT:\n', 1)[1])
+                assert ''.join(inputs['source_copy_runs']) == inputs['chunk_text']
+                assert 'not learner tap segmentation' in args[0]
             if recover_partial == 'invalid_attached' and job == 'annotation-0-chunk-001-1':
                 inputs = json.loads(args[0].rsplit('\nINPUT:\n', 1)[1])
                 assert inputs['previous_chunk']['format'] == 'segment-contained-annotation-v2'

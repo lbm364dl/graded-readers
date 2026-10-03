@@ -693,3 +693,7 @@ TOPIK 3 chunk 1 omitted a complete sentence at a whitespace boundary. The previo
 ### Exact reconstruction differences for repairs
 
 A recent TOPIK 3 chunk 3 inserted a comma and omitted another. Reconstruction diagnostics now list up to five exact source/output edits after the first mismatching position, retaining the matching prefix to avoid misleading alignment of repeated sentences. The agent prompt directs repairs to restore segment text from chunk_text, never edit approved prose. This is diagnostic only: no source or proposal is rewritten, and all existing strict gates remain. Four reconstruction tests pass, including omitted text, extra punctuation, unchanged proposals and exact-source acceptance. This does not establish successful generation or publication of levels 3, 4 or 6.
+
+### Source copying aid for annotation workers
+
+TOPIK 6 chunk 1 repeatedly omitted spaces despite exact chunk_text and diagnostics. Fresh worker inputs now include lossless alternating whitespace/non-whitespace source_copy_runs. Shared instructions explicitly distinguish these copying units from learner tap boundaries: workers retain linguistic segmentation responsibility and must preserve all source text and punctuation. This changes no proposal, approved prose, tap boundaries, dictionary identities or approval gates. Chunk-repair integration coverage checks that this source aid reconstructs the exact chunk across fresh work, repairs and cache recovery. Generation benefit remains unproven; live workers adopt this only on normal resume.
