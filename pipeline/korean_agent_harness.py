@@ -1110,8 +1110,8 @@ class KoreanHarness:
                             path.parent.name.removeprefix(attempt_prefix))
                         return int(match[1]) if match else None
                     if local_issues is not None:
-                        attempts = [number for p in (self.run_dir / 'agents').glob(f'{attempt_prefix}*/result.json')
-                            if (number := attempt_number(p)) is not None]
+                        attempts = [attempt for p in (self.run_dir / 'agents').glob(f'{attempt_prefix}*/result.json')
+                            if (attempt := attempt_number(p)) is not None]
                         repair_start = max(attempts, default=-1) + 1
                     # A process may stop before writing the parent assembly. Its
                     # completed workers are proposals, not approved annotations.

@@ -179,6 +179,8 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
             if semantic_job:
                 from pipeline.annotation_edits import candidate_digest
                 context = kwargs['workspace_context']
+                if local_review_repair:
+                    assert context['source_start'] == 0
                 if job.endswith('_plan'):
                     value = {'issues': [{'issue_index': i, 'reason': 'Clarify the occurrence gloss.',
                         'targets': [{'op': 'set_field', 'path': '/segments/0/meaning_en'}],
@@ -201,6 +203,11 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
                 inputs = kwargs['workspace_context']['chunk_review_input']
                 if inputs['context']['source_start'] == 0 and not self.local_rejected:
                     self.local_rejected = True
+                    # The historical attempt counter differs from the chunk
+                    # number. It must never rebind that chunk's identity or
+                    # source position during scoped repair scheduling.
+                    save(tmp_path / 'agents/annotation-0-chunk-001-9/result.json', {})
+                    save(tmp_path / 'agents/annotation-0-chunk-001-9/meta.json', {'return_code': 1})
                     value = {'approved': False, 'issues': ['Clarify the contextual meaning in the first chunk.'],
                              'prose_revision_reason_en': ''}
             if job.endswith('-patch'):
@@ -351,8 +358,8 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
     if local_review_repair:
         assert runner.local_rejected
         assert 'annotation-0-chunk-001-2' not in jobs
-        assert semantic_jobs == ['annotation-0-chunk-001-2_plan', 'annotation-0-chunk-001-2_patch']
-        assert meta['chunks'][0]['job'] == 'annotation-0-chunk-001-2_assembly'
+        assert semantic_jobs == ['annotation-0-chunk-001-10_plan', 'annotation-0-chunk-001-10_patch']
+        assert meta['chunks'][0]['job'] == 'annotation-0-chunk-001-10_assembly'
     if draft_lesson:
         assert 'dictionary-0' in runner.jobs and 'dictionary-review-0' in runner.jobs
         delta = read(tmp_path / 'dictionary-delta.json')
