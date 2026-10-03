@@ -5,6 +5,7 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 import threading
+import time
 import unittest
 from http.server import ThreadingHTTPServer
 from urllib.error import HTTPError
@@ -76,6 +77,7 @@ class DashboardStateTests(unittest.TestCase):
         self.assertEqual(live["active_processes"][0]["process_type"], "coordinator")
         self.assertFalse(any(job["state"] == "running" for job in live["recent_jobs"]))
         with patch("pipeline.dashboard._processes", return_value=[]):
+            dashboard._snapshot_cached_at = 0
             stale = next(row for row in dashboard.snapshot()["chapters"] if row["id"] == "runs/korean-topik3/chapter-001")
         self.assertIn("incomplete or unknown", stale["state"])
         self.assertEqual(stale["active_processes"], [])
@@ -168,6 +170,43 @@ class DashboardStateTests(unittest.TestCase):
         self.assertIsNone(row["latest_rejected_review"])
         self.assertFalse(any("history" in job["job"] for job in row["recent_jobs"]))
 
+    def test_job_scan_keeps_nested_jobs_but_prunes_payload_and_quarantine_trees(self) -> None:
+        run = self.run_dir("runs/chinese-hsk4/chapter-001")
+        stamp = "2026-10-03T09:00:00+00:00"
+        nested = run / "agents/annotations/chunk_0004/semantic_patch"
+        write_json(nested / "meta.json", {
+            "job": "semantic_patch", "started_at": stamp, "ended_at": stamp, "return_code": 0,
+        })
+        write_json(nested / "result.json", {"ok": True})
+        # Payload trees can be very large; metadata-shaped files inside them
+        # are not coordinator jobs and must not be traversed or surfaced.
+        for payload in ("workspace", "runtime", "inputs", "references", "logs", "cache", "tmp", "state"):
+            root = run / "agents/annotation-current" if payload == "runtime" else run / "agents"
+            write_json(root / payload / "stale-review" / "meta.json", {
+                "job": "must-not-appear", "started_at": stamp, "ended_at": stamp, "return_code": 0,
+            })
+        write_json(run / "agents/history/old-review/meta.json", {
+            "job": "archived", "started_at": stamp, "ended_at": stamp, "return_code": 0,
+        })
+        # A reserved word can still be a real job name at the namespace root;
+        # inside another job, the same directory name is only payload.
+        write_json(run / "agents/runtime/meta.json", {
+            "job": "runtime", "started_at": stamp, "ended_at": stamp, "return_code": 0,
+        })
+        write_json(run / "agents/annotation-current/meta.json", {
+            "job": "annotation-current", "started_at": stamp, "ended_at": stamp, "return_code": 0,
+        })
+        write_json(run / "agents/annotation-current/runtime/stale-review/meta.json", {
+            "job": "must-not-appear", "started_at": stamp, "ended_at": stamp, "return_code": 0,
+        })
+
+        row = self.chapter_row(run)
+        jobs = {job["job"] for job in row["recent_jobs"]}
+        self.assertIn("annotations/chunk_0004/semantic_patch", jobs)
+        self.assertIn("runtime", jobs)
+        self.assertFalse(any("must-not-appear" in job for job in jobs))
+        self.assertFalse(any("history" in job for job in jobs))
+
     def test_suspended_jobs_stay_separate_from_live_sibling_and_saved_rejection(self) -> None:
         run = self.run_dir()
         now = datetime.now(timezone.utc).isoformat()
@@ -203,6 +242,7 @@ class DashboardStateTests(unittest.TestCase):
         live_worker = {"pid": 402, "elapsed_seconds": 45, "process_state": "running", "cwd": self.root,
                        "argv": ["codex", "exec", "-o", str(live_job / "receipt.json"), "-"]}
         with patch("pipeline.dashboard._processes", return_value=[coordinator, paused_worker, live_worker]):
+            dashboard._snapshot_cached_at = 0
             mixed = next(row for row in dashboard.snapshot()["chapters"]
                          if row["id"] == "runs/korean-topik3/chapter-001")
         self.assertTrue(mixed["state"].startswith("Running"))
@@ -406,10 +446,34 @@ class DashboardStateTests(unittest.TestCase):
 
         live = dict(suspended, pid=802, process_state="running")
         with patch("pipeline.dashboard._processes", return_value=[suspended, live]):
+            dashboard._snapshot_cached_at = 0
             state = dashboard.snapshot()["maintenance"]
         self.assertEqual(state["state"], "Running")
         self.assertEqual(state["running_process_count"], 1)
         self.assertEqual(state["suspended_process_count"], 1)
+
+    def test_overlapping_snapshots_share_one_process_scan(self) -> None:
+        dashboard = Dashboard(self.root, [], self.root / "runs/maintenance/20261003")
+        barrier = threading.Barrier(3)
+        calls = []
+
+        def fake_processes():
+            calls.append(1)
+            time.sleep(0.1)
+            return []
+
+        with patch("pipeline.dashboard._processes", side_effect=fake_processes):
+            results = []
+            threads = [threading.Thread(target=lambda: (barrier.wait(), results.append(dashboard.snapshot())))
+                       for _ in range(2)]
+            for thread in threads:
+                thread.start()
+            barrier.wait()
+            for thread in threads:
+                thread.join(timeout=2)
+        self.assertEqual(len(calls), 1)
+        self.assertEqual(len(results), 2)
+        self.assertIs(results[0], results[1])
 
 
 class DashboardHTTPTests(unittest.TestCase):

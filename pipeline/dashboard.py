@@ -17,6 +17,7 @@ from pathlib import Path
 import re
 import shlex
 import subprocess
+import threading
 import time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import Any
@@ -26,6 +27,11 @@ from urllib.parse import urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 HTML_PATH = Path(__file__).with_name("dashboard.html")
 MAX_JSON_BYTES = 8 * 1024 * 1024
+SNAPSHOT_CACHE_SECONDS = 4.0
+# These are worker payload/runtime trees, not job namespaces. They may contain
+# thousands of generated files and must not be walked to find job metadata.
+_AGENT_PAYLOAD_DIRS = frozenset({"workspace", "workspaces", "runtime", "inputs", "references",
+                                "logs", "tmp", "cache", "state"})
 
 
 def _json(path: Path, *, max_bytes: int = MAX_JSON_BYTES) -> Any | None:
@@ -328,6 +334,9 @@ class Dashboard:
         maint = Path(maintenance_dir) if maintenance_dir else self.root / "runs/maintenance/20261003"
         self.maintenance_dir = (self.root / maint).resolve() if not maint.is_absolute() else maint.resolve()
         self._file_cache: dict[str, tuple[int, int, Any]] = {}
+        self._snapshot_lock = threading.Lock()
+        self._snapshot_cache: dict[str, Any] | None = None
+        self._snapshot_cached_at = 0.0
         self._origin_repository = self._read_origin_repository()
 
     def _read_origin_repository(self) -> str | None:
@@ -364,8 +373,39 @@ class Dashboard:
         worker_by_job = {item["job"]: item for item in workers}
         agents = run_dir / "agents"
         try:
-            metas = agents.rglob("meta.json")
-            for meta_path in metas:
+            # Agent workspaces can be gigabytes and contain many deeply nested
+            # files. Metadata is stored at job roots; walk only the job
+            # namespace, pruning known payload trees before descending.
+            for current, dirnames, filenames in os.walk(agents, topdown=True, followlinks=False):
+                current_path = Path(current)
+                try:
+                    relative_dir = current_path.relative_to(agents)
+                except ValueError:
+                    dirnames[:] = []
+                    continue
+                if len(relative_dir.parts) >= 9:
+                    dirnames[:] = []
+                else:
+                    kept_dirs = []
+                    for name in dirnames:
+                        if (not re.fullmatch(r"[A-Za-z0-9_.-]{1,120}", name)
+                                or name in {".", "..", "history"}):
+                            continue
+                        child = current_path / name
+                        # Reserved scratch names are still valid job names at
+                        # namespace nodes when they contain their own meta.
+                        # Once inside a coordinator job, these names always
+                        # identify payload subtrees and can be pruned safely.
+                        child_is_job = (child / "meta.json").is_file()
+                        at_namespace = (not relative_dir.parts
+                                       or relative_dir.parts[0] == "annotations" and "meta.json" not in filenames)
+                        if name in _AGENT_PAYLOAD_DIRS and (not at_namespace or not child_is_job):
+                            continue
+                        kept_dirs.append(name)
+                    dirnames[:] = kept_dirs
+                if "meta.json" not in filenames:
+                    continue
+                meta_path = current_path / "meta.json"
                 try:
                     relative_job = meta_path.parent.relative_to(agents)
                 except ValueError:
@@ -814,14 +854,34 @@ class Dashboard:
         return rows
 
     def snapshot(self) -> dict[str, Any]:
-        processes = _processes()
-        chapters = [self._chapter(path, processes) for path in self.run_dirs]
-        return {"generated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-                "refresh_seconds": 5, "chapters": chapters, "maintenance": self._maintenance(processes),
-                "definitions": {"published": "Observed public chapter file plus enabled metadata and chapter review record.",
-                                "locally_reviewed": "Run report is complete, all recorded artifact hashes match, and stage approvals are recorded.",
-                                "draft": "Artifacts are absent or the complete local review evidence is not verified.",
-                                "rejected_reviews": "Count of persisted review result artifacts with approved=false; these are review attempts, not chunks."}}
+        now = time.monotonic()
+        cached = self._snapshot_cache
+        if cached is not None and now - self._snapshot_cached_at < SNAPSHOT_CACHE_SECONDS:
+            return cached
+        # Browser refreshes can overlap while a large run tree is being read.
+        # Let those requests reuse the last complete snapshot instead of
+        # launching duplicate recursive scans.
+        if not self._snapshot_lock.acquire(blocking=False):
+            if cached is not None:
+                return cached
+            self._snapshot_lock.acquire()
+        try:
+            now = time.monotonic()
+            if self._snapshot_cache is not None and now - self._snapshot_cached_at < SNAPSHOT_CACHE_SECONDS:
+                return self._snapshot_cache
+            processes = _processes()
+            chapters = [self._chapter(path, processes) for path in self.run_dirs]
+            snapshot = {"generated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+                        "refresh_seconds": 5, "chapters": chapters, "maintenance": self._maintenance(processes),
+                        "definitions": {"published": "Observed public chapter file plus enabled metadata and chapter review record.",
+                                        "locally_reviewed": "Run report is complete, all recorded artifact hashes match, and stage approvals are recorded.",
+                                        "draft": "Artifacts are absent or the complete local review evidence is not verified.",
+                                        "rejected_reviews": "Count of persisted review result artifacts with approved=false; these are review attempts, not chunks."}}
+            self._snapshot_cache = snapshot
+            self._snapshot_cached_at = time.monotonic()
+            return snapshot
+        finally:
+            self._snapshot_lock.release()
 
 
 def make_handler(dashboard: Dashboard):
