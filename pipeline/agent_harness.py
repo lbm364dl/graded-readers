@@ -510,6 +510,7 @@ class CodexRunner:
     launch_timeout_seconds: float = 60.0
     launch_backoff_seconds: float = 0.25
     benchmark_effort: str | None = None
+    legacy_tool_restrictions: bool = False
 
     def __post_init__(self):
         # Repository-wide worker policy, including research and independent
@@ -581,6 +582,14 @@ class CodexRunner:
 
     @staticmethod
     def _check_tool_profile(job_dir: Path, profile: str | None, meta: dict) -> None:
+        if meta.get('tool_profile') == 'workspace':
+            from pipeline.worker_workspace import verify, submit
+            verify(job_dir / 'workspace', meta['workspace_digest'])
+            if 'artifact_path' in meta:
+                value, artifact = submit(job_dir / 'workspace', {'candidate_path': meta['artifact_path']})
+                if artifact['artifact_digest'] != meta['artifact_digest'] or value != json.loads((job_dir / 'result.json').read_text()):
+                    raise ValueError('Worker submitted artifact changed')
+            return
         if profile is None:
             return
         events = job_dir / f"events.attempt-{meta.get('attempt_count', 1):02d}.jsonl"
@@ -607,29 +616,45 @@ class CodexRunner:
         refresh: bool = False,
         tool_profile: str | None = None,
         cache_only: bool = False,
+        workspace_context: dict[str, Any] | None = None,
     ) -> dict[str, Any]:
+        from pipeline.worker_workspace import VERSION
         effort = self.benchmark_effort or "low"
         job_dir = self.run_dir / "agents" / job
         job_dir.mkdir(parents=True, exist_ok=True)
         result_path = job_dir / "result.json"
         meta_path = job_dir / "meta.json"
         fingerprint = digest(prompt, schema.read_text(), self.model, effort)
-        if tool_profile not in (None, 'offline', 'research'):
+        if tool_profile not in (None, 'offline', 'research', 'workspace'):
             raise ValueError('Unknown worker tool profile')
+        requested_profile = tool_profile
+        if not self.legacy_tool_restrictions:
+            tool_profile = 'workspace'
         if tool_profile is not None:
             fingerprint = digest(fingerprint, tool_profile, 'tool-profile-v1')
+        if tool_profile == 'workspace':
+            fingerprint = digest(fingerprint, VERSION)
+            if workspace_context is not None:
+                fingerprint = digest(fingerprint, json.dumps(workspace_context, sort_keys=True))
         if not refresh and result_path.exists() and meta_path.exists():
             meta = json.loads(meta_path.read_text())
             retained_fingerprint = None
-            if cache_only and meta.get('model') and meta.get('effort'):
+            legacy_compatible = (tool_profile == 'workspace' and meta.get('tool_profile') != 'workspace'
+                                 and meta.get('model') == self.model and meta.get('effort') == effort)
+            if (cache_only or legacy_compatible) and meta.get('model') and meta.get('effort'):
                 retained_fingerprint = digest(prompt, schema.read_text(), meta['model'], meta['effort'])
-                if tool_profile is not None:
-                    retained_fingerprint = digest(retained_fingerprint, tool_profile, 'tool-profile-v1')
+                if meta.get('tool_profile') == 'workspace':
+                    retained_fingerprint = digest(retained_fingerprint, 'workspace', 'tool-profile-v1')
+                    retained_fingerprint = digest(retained_fingerprint, VERSION)
+                    if workspace_context is not None:
+                        retained_fingerprint = digest(retained_fingerprint, json.dumps(workspace_context, sort_keys=True))
+                elif requested_profile is not None:
+                    retained_fingerprint = digest(retained_fingerprint, requested_profile, 'tool-profile-v1')
             matching = meta.get('fingerprint') == fingerprint or (
                 retained_fingerprint is not None and meta.get('fingerprint') == retained_fingerprint)
             if matching and meta.get("return_code") == 0:
                 try:
-                    self._check_tool_profile(job_dir, tool_profile, meta)
+                    self._check_tool_profile(job_dir, requested_profile if legacy_compatible else tool_profile, meta)
                 except ValueError:
                     # A capability violation is not a reusable successful result.
                     # Cache-only probes must miss; normal retries rerun this job.
@@ -640,20 +665,39 @@ class CodexRunner:
         if cache_only:
             raise CachedCallUnavailable(job)
 
+        workspace_meta = {}
+        worker_cwd = ROOT
+        worker_result_path, worker_schema = result_path, schema
+        original_prompt = prompt
+        if tool_profile == 'workspace':
+            worker_cwd = (job_dir / 'workspace').resolve()
+            worker_result_path = job_dir / 'receipt.json'
+            worker_schema = worker_cwd / 'receipt.schema.json'
+        def consume_result(receipt):
+            if tool_profile != 'workspace':
+                return receipt
+            from pipeline.worker_workspace import submit
+            value, artifact = submit(worker_cwd, receipt)
+            workspace_meta.update(artifact)
+            result_path.write_text(json.dumps(value, ensure_ascii=False) + '\n')
+            return value
         command = [
-            "codex", "exec", "--json", "--ephemeral", "--ignore-user-config",
-            "-s", "read-only",
+            "codex", "exec", "--json", "--ephemeral",
+            "-s", "danger-full-access" if tool_profile == 'workspace' else "read-only",
             "-m", self.model, "-c", f'model_reasoning_effort="{effort}"',
-            "-C", str(ROOT), "--output-schema", str(schema),
-            "-o", str(result_path), "-",
+            "-C", str(worker_cwd), "--output-schema", str(worker_schema.resolve()),
+            "-o", str(worker_result_path.resolve()), "-",
         ]
-        if tool_profile is not None:
+        if tool_profile == 'workspace':
+            command[2:2] = ['-c', 'web_search="live"', '-c', 'sandbox_workspace_write.network_access=true']
+        elif tool_profile is not None:
             # Explicit role capabilities; never enable shell/network execution.
             config = [f'web_search="{"live" if tool_profile == "research" else "disabled"}"',
                       'features.shell_tool=false', 'features.unified_exec=false',
                       'tools.view_image=false', 'features.multi_agent=false',
                       'mcp_servers={}']
             command[2:2] = [arg for value in config for arg in ('-c', value)]
+            command.insert(2, '--ignore-user-config')
         started = utc_now()
         attempts: list[dict[str, Any]] = []
         process_timeout_retries = 0
@@ -674,7 +718,12 @@ class CodexRunner:
                     # Delete it only after this job owns a launch permit; if a
                     # sibling aborts the parent, never-started jobs remain
                     # recoverable instead of being mass-unlinked.
+                    if tool_profile == 'workspace':
+                        from pipeline.worker_workspace import build
+                        prompt, workspace_digest = build(worker_cwd, original_prompt, json.loads(schema.read_text()), context=workspace_context)
+                        workspace_meta.update(tool_profile='workspace', workspace_digest=workspace_digest)
                     result_path.unlink(missing_ok=True)
+                    worker_result_path.unlink(missing_ok=True)
                     with events_path.open("wb") as stdout, stderr_path.open("wb") as stderr:
                         try:
                             async with asyncio.timeout(
@@ -724,9 +773,10 @@ class CodexRunner:
                                 stdout.flush()
                                 stderr.flush()
                                 recovered = self._completed_timeout_result(
-                                    result_path, events_path, schema
+                                    worker_result_path, events_path, worker_schema
                                 )
                                 if recovered is not None:
+                                    recovered = consume_result(recovered)
                                     attempt["recovered_completed_result"] = True
                                     (job_dir / "attempts.json").write_text(
                                         json.dumps(attempts, ensure_ascii=False, indent=2) + "\n"
@@ -737,10 +787,12 @@ class CodexRunner:
                                         "ended_at": utc_now(), "return_code": 0,
                                         "recovered_after_process_timeout": True,
                                         "attempt_count": len(attempts), "attempts": attempts,
+                                        **workspace_meta,
                                     }
                                     meta_path.write_text(
                                         json.dumps(meta, ensure_ascii=False, indent=2) + "\n"
                                     )
+                                    self._check_tool_profile(job_dir, tool_profile, meta)
                                     return recovered
                                 (job_dir / "attempts.json").write_text(
                                     json.dumps(attempts, ensure_ascii=False, indent=2) + "\n"
@@ -826,7 +878,17 @@ class CodexRunner:
         }
         if tool_profile is not None:
             meta['tool_profile'] = tool_profile
+        meta.update(workspace_meta)
         meta_path.write_text(json.dumps(meta, ensure_ascii=False, indent=2) + "\n")
+        if proc.returncode == 0 and worker_result_path.exists():
+            try:
+                consume_result(json.loads(worker_result_path.read_text()))
+            except Exception as error:
+                meta.update(return_code=1, submission_error=str(error))
+                meta_path.write_text(json.dumps(meta, ensure_ascii=False, indent=2) + "\n")
+                raise
+            meta.update(workspace_meta)
+            meta_path.write_text(json.dumps(meta, ensure_ascii=False, indent=2) + "\n")
         if proc.returncode != 0 or not result_path.exists():
             raise RuntimeError(f"agent failed: {job} (exit {proc.returncode})")
         self._check_tool_profile(job_dir, tool_profile, meta)
@@ -1969,6 +2031,7 @@ TEXT:\n{chunk}{repair_context}"""
             f"annotations/chunk_{index:04d}/{stage}", prompt,
             SCHEMAS / "annotation.schema.json", effort or self.args.annotation_effort,
             refresh=self.args.refresh,
+            workspace_context={'chunk_text': chunk, 'language': 'zh'},
         )
 
     async def review_annotation(
@@ -2287,6 +2350,7 @@ GRAMMAR OVERLAYS (existing exact offset objects):
             f"{prompt_for(chunk, surfaces, self.args.level)}",
             SCHEMA, effort,
             refresh=self.args.refresh,
+            workspace_context={'chunk_text': chunk, 'language': 'zh-fixed', 'surfaces': surfaces},
         )
         return validate_result(chunk, surfaces, raw)
 
@@ -2307,6 +2371,7 @@ GRAMMAR OVERLAYS (existing exact offset objects):
             f"{self.annotation_chunk_cache_tag}\n"
             f"{correction_prompt(chunk, annotation, findings)}", CORRECTION_SCHEMA,
             effort or self.args.annotation_repair_effort, refresh=self.args.refresh,
+            workspace_context={'chunk_text': chunk, 'language': 'zh-patch', 'annotation': annotation},
         )
         correction, scope_evidence = review_scoped_correction(
             chunk, annotation, raw_correction, findings

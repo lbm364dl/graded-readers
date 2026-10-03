@@ -1799,6 +1799,7 @@ async def test_japanese_annotation_requests_reading_and_dictionary_segmentation(
     result = await harness.annotation_candidate(0, "猫")
     prompt = harness.runner.call_args[0][1]
     schema = harness.runner.call_args[0][2]
+    assert harness.runner.call_args[1]['workspace_context'] == {'chunk_text': '猫', 'language': 'ja'}
     assert result["segments"][0]["surface_kana"] == "ねこ"
     assert "learner-sized tap targets" in prompt
     assert "ありました is ONE word segment" in prompt

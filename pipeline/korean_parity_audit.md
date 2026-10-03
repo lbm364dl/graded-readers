@@ -737,3 +737,46 @@ links, preserved input, raw evidence tampering, cached legacy repairs and
 publication replay. This prevents specific structural errors; it does not establish
 linguistic correctness of an agent's chosen range or meaning. Existing active
 processes keep their loaded protocol until a deliberate rollout/resume.
+
+### Shared tool-enabled worker workspaces and file submission (2026-10-03)
+
+The no-tools experiment failed both saved cases at all three Luna efforts.
+Average elapsed time was 201.5 seconds at low, 206.3 at medium and 266.1 at high
+(two cases per setting, one attempt per case). This small diagnostic does not
+establish general model quality or a winning effort setting. Production remains
+Luna low. Full measurements and frozen cases are under
+`runs/korean-effort-smoke-20261003/`.
+
+Per user instruction, all languages now use the shared `CodexRunner` workspace
+mode by default, including callers that historically requested `offline` or
+`research`. File/command/web/configured tools are enabled. Task inputs are saved
+with an index; Korean lossless word/grammar reference rows are expanded into
+complete individually readable records without merging homonyms or dropping
+fields. Chinese and Japanese workers can inspect their repository dictionaries,
+and annotation calls provide exact source context to the local validator.
+Chinese fixed-boundary proposals and patches use their existing validators too.
+Workers may investigate, write drafts and validate locally before submission.
+
+A real tool-enabled medium run wrote a candidate that passed source, links and
+lexical identity checks, then introduced a punctuation error while repeating the
+JSON in its final response. The shared runner now consumes the exact submitted
+file through a small path receipt, verifies its schema and applicable local
+checks, and preserves input/artifact hashes for replay. Independent linguistic
+reviews and publication gates still apply. Legacy approved caches remain reusable
+under their actual historical policy; new tool use is no longer rejected as an
+annotation defect. An explicit legacy flag exists only for controlled comparison.
+
+The host cannot create the nested workspace sandbox (`bwrap` UID-map permission
+failure). Tool-enabled workers use the host's existing unrestricted execution
+permissions with a distinct task directory. The failed environment attempt is
+excluded from model comparisons. Successful subsequent command/file use is
+recorded in worker JSONL logs. The final file-submission smokes are separate from
+the original no-tools and duplicated-output experiments.
+
+Regression coverage includes shared runner launch/retry/cache behavior, retaining
+old cache evidence without relabeling it, complete indexed reference records,
+Chinese/Japanese source validation, candidate schema rejection, exact artifact
+submission and later tampering. The broad shared/Chinese/Japanese suite passed
+444 tests before the final fixed-boundary additions; the subsequent focused
+shared/Chinese coverage passed 43 tests. No new Korean chapter is claimed
+published by these infrastructure checks.

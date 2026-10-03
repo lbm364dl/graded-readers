@@ -82,3 +82,11 @@ Changing UI wording is not a reason to rerun unrelated dictionary research.
 Verify both pipeline data and app behavior when a change crosses that boundary.
 If updating the preview, rebuild it and verify the actual user-facing window;
 do not assume that a refresh applied.
+
+Pipeline workers should have tools and organized, inspectable inputs. Let them
+read references, research, write drafts and run validation before submission;
+do not disable tools merely to enforce a JSON response. Consume the exact
+validated artifact instead of making a worker reproduce it in its final message.
+Keep independent review and publication checks. Apply improvements to shared
+worker infrastructure and inspect Chinese, Japanese and Korean equivalents.
+Optimize for reliable completed work, not minimum prompt tokens in isolation.

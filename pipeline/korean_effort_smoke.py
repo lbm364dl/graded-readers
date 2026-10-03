@@ -38,7 +38,7 @@ def check_result(value, case):
     return value
 
 
-async def run(cases_path, output):
+async def run(cases_path, output, *, workspace=False, efforts=None):
     cases = json.loads(cases_path.read_text())
     output.mkdir(parents=True, exist_ok=True)
     frozen = output / 'cases.json'
@@ -55,10 +55,12 @@ async def run(cases_path, output):
         save(schema, case['schema'])
         runner = CodexRunner(output, 'gpt-6-luna', semaphore, timeout=1200,
             max_throttle_retries=0, max_launch_retries=0,
-            max_process_timeout_retries=0, benchmark_effort=effort)
+            max_process_timeout_retries=0, benchmark_effort=effort,
+            legacy_tool_restrictions=not workspace)
         job = f'{name}-{effort}'
         result = {'case': name, 'effort': effort, 'case_digest': digest(case),
-                  'passed_structure_and_identity': False, 'linguistic_review': 'not_performed'}
+                  'passed_structure_and_identity': False, 'linguistic_review': 'not_performed',
+                  'tools': 'workspace' if workspace else 'legacy_offline'}
         try:
             value = await runner.call(job, case['prompt'], schema, effort, tool_profile='offline')
             check_result(value, case)
@@ -77,9 +79,9 @@ async def run(cases_path, output):
         save(output / 'summary.json', sorted(results, key=lambda r:(r['case'],r['effort'])))
         print(json.dumps(result, ensure_ascii=False), flush=True)
     # Rotate order across cases to reduce systematic queue/cache-order advantage.
-    efforts = ['low', 'medium', 'high']
+    efforts = efforts or ['low', 'medium', 'high']
     for index, case in enumerate(cases):
-        order = efforts[index % 3:] + efforts[:index % 3]
+        order = efforts[index % len(efforts):] + efforts[:index % len(efforts)]
         await asyncio.gather(*(one(case, effort) for effort in order))
 
 
@@ -87,8 +89,10 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--cases', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--workspace', action='store_true', help='Enable tools and organized input files')
+    parser.add_argument('--efforts', nargs='+', choices=['low', 'medium', 'high'])
     args = parser.parse_args()
-    asyncio.run(run(args.cases, args.output))
+    asyncio.run(run(args.cases, args.output, workspace=args.workspace, efforts=args.efforts))
 
 
 if __name__ == '__main__':

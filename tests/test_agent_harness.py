@@ -2127,7 +2127,8 @@ async def test_codex_runner_uses_direct_log_files(monkeypatch, tmp_path, request
         observed.update(kwargs)
         observed['command'] = command
         output = command[command.index("-o") + 1]
-        __import__("pathlib").Path(output).write_text("{}")
+        Path(command[command.index("-C") + 1], "candidate.json").write_text("{}")
+        Path(output).write_text('{"candidate_path":"candidate.json"}')
         return FakeProcess()
 
     monkeypatch.setattr(asyncio, "create_subprocess_exec", fake_exec)
@@ -2139,6 +2140,8 @@ async def test_codex_runner_uses_direct_log_files(monkeypatch, tmp_path, request
     assert observed["stdout"] != asyncio.subprocess.PIPE
     assert observed["stderr"] != asyncio.subprocess.PIPE
     assert observed["start_new_session"] is True
+    assert not any('shell_tool=false' in part or 'mcp_servers={}' in part for part in observed['command'])
+    assert observed['command'][observed['command'].index('-C') + 1] == str(tmp_path / 'agents/job/workspace')
     assert (tmp_path / "agents/job/meta.json").is_file()
     meta = json.loads((tmp_path / 'agents/job/meta.json').read_text())
     assert (meta['model'], meta['effort']) == ('gpt-6-luna', benchmark_effort or 'low')
@@ -2173,7 +2176,7 @@ async def test_codex_runner_launch_timeout_retries_once_then_succeeds(monkeypatc
     monkeypatch.setattr("pipeline.agent_harness.asyncio.sleep", lambda *_: _noop())
     semaphore = asyncio.Semaphore(1)
     runner = CodexRunner(tmp_path, "model", semaphore, 10,
-                         launch_timeout_seconds=0.01, launch_backoff_seconds=0)
+                         launch_timeout_seconds=0.01, launch_backoff_seconds=0, legacy_tool_restrictions=True)
     assert await runner.call("job", "hello", schema, "low") == {}
     attempts = json.loads((tmp_path / "agents/job/attempts.json").read_text())
     assert launches == 2 and attempts[0]["launch_timeout"] is True
@@ -2193,7 +2196,7 @@ async def test_codex_runner_permanent_launch_timeout_fails_closed(monkeypatch, t
     monkeypatch.setattr("pipeline.agent_harness.asyncio.sleep", lambda *_: _noop())
     semaphore = asyncio.Semaphore(1)
     runner = CodexRunner(tmp_path, "model", semaphore, 10,
-                         launch_timeout_seconds=0.01, launch_backoff_seconds=0)
+                         launch_timeout_seconds=0.01, launch_backoff_seconds=0, legacy_tool_restrictions=True)
     with pytest.raises(RuntimeError, match="launch timed out"):
         await runner.call("job", "hello", schema, "low")
     job = tmp_path / "agents/job"
@@ -2239,7 +2242,7 @@ async def test_codex_runner_cache_fingerprint_invalidates_changed_boundary_promp
         return FakeProcess()
 
     monkeypatch.setattr(asyncio, "create_subprocess_exec", fake_exec)
-    runner = CodexRunner(tmp_path, "model", asyncio.Semaphore(1), 10)
+    runner = CodexRunner(tmp_path, "model", asyncio.Semaphore(1), 10, legacy_tool_restrictions=True)
     await runner.call("same-job", "proposal boundaries: [1]", schema, "low")
     first = json.loads((tmp_path / "agents/same-job/meta.json").read_text())["fingerprint"]
     await runner.call("same-job", "proposal boundaries: [1]", schema, "low")
@@ -2315,7 +2318,7 @@ async def test_codex_runner_retries_explicit_429_without_holding_semaphore(
     runner = CodexRunner(
         tmp_path, "model", semaphore, 10,
         max_throttle_retries=2, throttle_backoff_seconds=0.25,
-    )
+     legacy_tool_restrictions=True)
     assert await runner.call("job", "hello", schema, "low") == {"ok": True}
     assert len(launches) == 2
     assert sleeps == [0.25]
@@ -2367,7 +2370,7 @@ async def test_codex_runner_bounds_repeated_throttle_retries(monkeypatch, tmp_pa
     runner = CodexRunner(
         tmp_path, "model", asyncio.Semaphore(1), 10,
         max_throttle_retries=2, throttle_backoff_seconds=1,
-    )
+     legacy_tool_restrictions=True)
     with pytest.raises(RuntimeError, match="agent failed"):
         await runner.call("job", "hello", schema, "low")
     assert len(launches) == 3
@@ -2404,7 +2407,7 @@ async def test_codex_runner_does_not_retry_non_throttle_failure(monkeypatch, tmp
         return FakeProcess()
 
     monkeypatch.setattr(asyncio, "create_subprocess_exec", fake_exec)
-    runner = CodexRunner(tmp_path, "model", asyncio.Semaphore(1), 10)
+    runner = CodexRunner(tmp_path, "model", asyncio.Semaphore(1), 10, legacy_tool_restrictions=True)
     with pytest.raises(RuntimeError, match="agent failed"):
         await runner.call("job", "hello", schema, "low")
     assert len(launches) == 1
@@ -2451,7 +2454,7 @@ async def test_codex_runner_timeout_kills_process_group_and_retries_once(
         "pipeline.agent_harness.os.killpg",
         lambda pid, sig: killed.append((pid, sig)),
     )
-    runner = CodexRunner(tmp_path, "model", asyncio.Semaphore(1), 10)
+    runner = CodexRunner(tmp_path, "model", asyncio.Semaphore(1), 10, legacy_tool_restrictions=True)
     with pytest.raises(RuntimeError, match="agent timed out"):
         await runner.call("job", "hello", schema, "low")
     assert len(launches) == 2
@@ -2509,7 +2512,7 @@ async def test_codex_runner_process_timeout_retry_can_succeed(monkeypatch, tmp_p
         "pipeline.agent_harness.os.killpg",
         lambda pid, sig: killed.append((pid, sig)),
     )
-    runner = CodexRunner(tmp_path, "model", asyncio.Semaphore(1), 10)
+    runner = CodexRunner(tmp_path, "model", asyncio.Semaphore(1), 10, legacy_tool_restrictions=True)
     assert await runner.call("job", "hello", schema, "low") == {"ok": True}
     assert len(launches) == 2
     assert killed == [(13579, __import__("signal").SIGKILL)]
@@ -2557,7 +2560,7 @@ async def test_codex_runner_stdin_drain_timeout_uses_process_retry(monkeypatch, 
         "pipeline.agent_harness.os.killpg",
         lambda pid, sig: killed.append((pid, sig)),
     )
-    runner = CodexRunner(tmp_path, "model", asyncio.Semaphore(1), 0.01)
+    runner = CodexRunner(tmp_path, "model", asyncio.Semaphore(1), 0.01, legacy_tool_restrictions=True)
     assert await runner.call("job", "hello", schema, "low") == {"ok": True}
     assert len(launches) == 2
     assert killed == [(97531, __import__("signal").SIGKILL)]
@@ -2620,7 +2623,7 @@ async def test_codex_runner_recovers_schema_valid_result_when_wrapper_times_out(
         "pipeline.agent_harness.os.killpg",
         lambda pid, sig: killed.append((pid, sig)),
     )
-    runner = CodexRunner(tmp_path, "model", asyncio.Semaphore(1), 10)
+    runner = CodexRunner(tmp_path, "model", asyncio.Semaphore(1), 10, legacy_tool_restrictions=True)
     assert await runner.call("job", "hello", schema, "low") == {"ok": True}
     assert len(launches) == 1
     assert killed == [(86420, __import__("signal").SIGKILL)]

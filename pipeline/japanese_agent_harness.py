@@ -4872,6 +4872,7 @@ TEXT:\n{chunk}"""
             SCHEMAS / "japanese-annotation.schema.json",
             effort or self.args.annotation_effort,
             refresh=self.refresh_annotation_chunk(index),
+            workspace_context={'chunk_text': chunk, 'language': 'ja'},
         )
 
     async def review_annotation(self, index: int, chunk: str, annotation: dict[str, Any], stage: str) -> dict[str, Any]:
