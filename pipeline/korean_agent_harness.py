@@ -415,7 +415,8 @@ class KoreanHarness:
             raise UnannotatableProseError('Early curriculum screen: ' + '; '.join(review['issues']))
 
     async def stage(self, name: str, prompt: str, schema: str, check, review_context: dict,
-                    initial: dict | None = None, cache_prefix: str = "", producer=None) -> dict:
+                    initial: dict | None = None, cache_prefix: str = "", producer=None,
+                    repair_base=None, repair_issues=None) -> dict:
         if name == 'curriculum':
             references = [entry for entry in read(LEXICAL_REFERENCE)['entries']
                 if entry['entry_id'] in review_context.get('word_requests', {})]
@@ -532,6 +533,11 @@ class KoreanHarness:
                 continue
             value = read(proposal_path)
             try:
+                proposal_meta = read(proposal_path.with_name('meta.json')) if proposal_path.with_name('meta.json').exists() else {}
+                if proposal_meta.get('kind') == 'prose_patch_assembly':
+                    from pipeline.korean_prose_patches import replay
+                    if name != 'prose' or replay(self.run_dir, proposal_meta) != value:
+                        raise ValueError('Cached prose differs from its recorded patches')
                 validate(value, contracts.ANNOTATION if schema == 'annotation' else read(contracts.schema_path(schema)))
                 check(value)
                 review_prompt = self.policy + "\n" + self.review_policy + review_payload(value)
@@ -559,7 +565,7 @@ class KoreanHarness:
                 "context_digest": digest(review_context), "approved": True, **adjudication}
             print(f"{name}: reused approved output", flush=True)
             return value
-        start, problems, previous = resume or (0, [], None)
+        start, problems, previous = resume or (0, repair_issues or [], repair_base)
         for attempt in range(start, start + 8):
             print(f"{name}: attempt {attempt + 1}", flush=True)
             job = f"{name}{cache_prefix}-{attempt}"
@@ -568,6 +574,13 @@ class KoreanHarness:
                 value = initial
             elif producer is not None:
                 value = await producer(job, problems)
+            elif schema == 'prose' and previous is not None:
+                from pipeline.korean_prose_patches import produce
+                try:
+                    value = await produce(self, job, previous, prompt, problems)
+                except (ValidationError, ValueError, KeyError, TypeError) as error:
+                    problems = [str(error), *problems]
+                    continue
             else:
                 repair_scope = (
                     '\nRepair the supplied previous draft only where the issues require changes. '
@@ -704,11 +717,13 @@ class KoreanHarness:
         prose_prompt += payload(plan=bound_plan, source=source, reviewed_source_context=reviewed_source_context, curriculum=curriculum_context, previous=previous_text, existing_text=existing['text'] if existing else None, reusable_words=[entry["headword"] for entry in self.words.values() if entry["kind"] == "word" or entry["id"] in profiles], lexical_plan=focus)
         prose_prompt += " Prefer the supplied reusable word headwords when they can express the retained events naturally. Explain status with wording suitable to this target, preserving its source meaning. Do not mechanically keep every detail of the source plan. Only the planned historical story term receives a story exemption. Ordinary higher-level or unlisted vocabulary may occur sparingly within the separate curriculum extra-vocabulary budget, with honest identities and grades; it does not need a story exemption. Do not reject an ordinary word solely because it is outside the supplied beginner core. Review its contribution and overall difficulty; the curriculum stage measures the budget. "
         prose_repair = ""
+        prose_repair_base, prose_repair_issues = None, []
         reuse_candidate = annotation_reuse_candidate(self.run_dir)
         for prose_attempt in range(latest_prose_revision(self.run_dir) if not existing else 0, 3):
             prose = await self.stage("prose", prose_prompt + prose_repair, "prose", check_prose,
                 {**context, "plan": bound_plan, "approved_source_plan_review": self.stages['plan'], "lexical_plan": focus},
-                cache_prefix=f"-revision{prose_attempt}" if prose_attempt else "")
+                cache_prefix=f"-revision{prose_attempt}" if prose_attempt else "",
+                repair_base=prose_repair_base, repair_issues=prose_repair_issues)
             if existing and prose["text"] != existing["text"]:
                 raise ValueError("Existing Korean prose failed review; explicit prose repair is required")
             if self.stop_after == 'prose':
@@ -1125,6 +1140,7 @@ class KoreanHarness:
                     raise
                 print(f"annotation failed; revising generated prose before reannotation: {error}", flush=True)
                 reuse_candidate = annotation_reuse_candidate(self.run_dir, text=prose['text'])
+                prose_repair_base, prose_repair_issues = prose, [str(error)]
                 prose_repair = payload(repair_reason=str(error), previous_prose=prose,
                     instruction=f"Deliberately revise only the affected unpublished prose to use NIKL six-level curriculum Level {self.level} and lower vocabulary and grammar. Preserve the reviewed scene, stopping point, meaningful development and unaffected wording. Do not shorten a chapter merely because annotation failed. Do not evade difficulty gates by inventing lexical identities or reclassifying ordinary words as story terms.")
                 continue

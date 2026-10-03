@@ -152,6 +152,12 @@ def verify_run(run_dir: Path) -> tuple[dict, dict, dict, dict]:
                 raise ValueError("Korean proposal process did not complete")
             CodexRunner._check_tool_profile(run_dir / "agents" / proposal_job, "offline", proposal_meta)
             proposal = read(run_dir / "agents" / proposal_job / "result.json")
+            if proposal_meta.get('kind') == 'prose_patch_assembly':
+                if stage != 'prose':
+                    raise ValueError('Prose patch assembly used for another stage')
+                from pipeline.korean_prose_patches import replay
+                if replay(run_dir, proposal_meta) != proposal:
+                    raise ValueError('Repaired Korean prose differs from its recorded patches')
             if proposal_meta.get('kind') == 'dictionary_assembly':
                 if stage != 'dictionary':
                     raise ValueError('Dictionary assembly used for another stage')

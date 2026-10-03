@@ -167,6 +167,17 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
                 assert 'segment_columns' in args[0]
                 assert 'grammar_link_columns' in args[0]
             value = await self.respond(job)
+            if job.endswith('-patch'):
+                from difflib import SequenceMatcher
+                inputs = json.loads(args[0].rsplit('\nINPUT:\n', 1)[1])
+                source = inputs['previous']['text']
+                target = value['text']
+                value = {key: value[key] for key in ('title', 'length_reason_en')}
+                value['edits'] = [{'source_start': a, 'source_end': b,
+                    'original_text': source[a:b], 'replacement_text': target[c:d],
+                    'reason_en': 'Apply the deliberately reviewed fixture revision.'}
+                    for tag, a, b, c, d in SequenceMatcher(None, source, target, autojunk=False).get_opcodes()
+                    if tag != 'equal']
             if '-chunk-' in job and 'format' not in value:
                 from tests.test_korean_annotation_chunks import source_spans
                 value = source_spans(value)
@@ -2024,3 +2035,36 @@ def test_source_review_uses_approved_interpretations_only_when_supplied(tmp_path
     context = {'reviewed_source_context': [{'finding_en': 'Reviewed source interpretation'}] if has_guidance else []}
     harness = KoreanHarness(tmp_path, 3, runner=Runner())
     assert asyncio.run(harness.stage('prose', 'Write reviewed scene', 'prose', lambda _: None, context)) == proposal
+
+
+@pytest.mark.parametrize('tamper', [None, 'base', 'patch', 'assembly'])
+def test_publication_replays_targeted_prose_patches(tmp_path, tamper):
+    from pipeline.korean_agent_harness import read, save, digest
+    make_reviewed_run(tmp_path, level=4)
+    report = read(tmp_path/'report.json')
+    job = report['stages']['prose']['proposal_job']
+    output = read(tmp_path/'agents'/job/'result.json')
+    base = {**output, 'text': 'unsupported. ' + output['text']}
+    patch_job = job + '-patch'
+    patch = {'title': output['title'], 'length_reason_en': output['length_reason_en'],
+        'edits': [{'source_start': 0, 'source_end': len('unsupported. '),
+            'original_text': 'unsupported. ', 'replacement_text': '',
+            'reason_en': 'Remove unsupported material.'}]}
+    save(tmp_path/'agents'/patch_job/'result.json', patch)
+    save(tmp_path/'agents'/patch_job/'meta.json', {'return_code': 0})
+    meta = {'return_code': 0, 'kind': 'prose_patch_assembly', 'base': base,
+        'base_digest': digest(base), 'patch_job': patch_job, 'patch_digest': digest(patch)}
+    save(tmp_path/'agents'/job/'meta.json', meta)
+    assert publication.verify_run(tmp_path)[0] == read(tmp_path/'chapter.json')
+    if tamper == 'base':
+        meta['base']['text'] += ' changed'
+        save(tmp_path/'agents'/job/'meta.json', meta)
+    elif tamper == 'patch':
+        patch['edits'][0]['replacement_text'] = 'changed'
+        save(tmp_path/'agents'/patch_job/'result.json', patch)
+    elif tamper == 'assembly':
+        output['text'] += ' changed'
+        save(tmp_path/'agents'/job/'result.json', output)
+    if tamper:
+        with pytest.raises(ValueError):
+            publication.verify_run(tmp_path)
