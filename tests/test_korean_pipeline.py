@@ -593,7 +593,9 @@ def test_source_plan_binds_exact_unicode_paragraphs_and_rejects_reordering():
         contracts.bind_plan(plan, '첫 문단\n\n둘째 문단', 10)
 
 
-def test_unplanned_name_recovery_uses_only_completed_exact_prose_proposals(tmp_path):
+def test_unplanned_name_recovery_uses_only_completed_exact_prose_proposals(tmp_path, monkeypatch):
+    import pipeline.korean_agent_harness as korean_harness
+    from jsonschema import Draft202012Validator
     from pipeline.korean_agent_harness import cached_unplanned_names, save
     def proposal(text, lemma):
         return {'segments': [{'text': text, 'type': 'word', 'meaning_en': 'on the mountain',
@@ -604,14 +606,25 @@ def test_unplanned_name_recovery_uses_only_completed_exact_prose_proposals(tmp_p
         'aliases': ['길동'], 'role_en': 'The protagonist.'}]}
     for number, text, lemma, complete in [(1, '운봉산에서', '운봉산', True),
         (2, '다른산에서', '다른산', True), (3, '운봉산에서', 'invented', False),
-        (4, '운봉산에서', '길동', True), (5, '운봉산에서', 'tool-name', True)]:
+        (4, '운봉산에서', '길동', True), (5, '운봉산에서', 'tool-name', True),
+        (6, '운봉산에서', 'invalid-schema-name', True)]:
         path = tmp_path / 'agents' / f'annotation-0-chunk-001-{number}'
-        save(path / 'result.json', proposal(text, lemma))
+        value = proposal(text, lemma)
+        if number == 6:
+            value.pop('grammar_links')  # A successful worker status never bypasses schema validation.
+        save(path / 'result.json', value)
         save(path / 'meta.json', {'return_code': 0 if complete else 1})
         if number == 5:
             (path / 'events.attempt-01.jsonl').write_text(json.dumps({'item': {'type': 'web_search'}}) + '\n')
+
+    validator = korean_harness.CACHED_ANNOTATION_VALIDATOR
+    def unexpected_compile(*_args, **_kwargs):
+        raise AssertionError('cached scan rechecked the schema for an individual result')
+    monkeypatch.setattr(Draft202012Validator, 'check_schema', classmethod(unexpected_compile))
+    monkeypatch.setattr(korean_harness, 'validate', unexpected_compile)
     assert cached_unplanned_names(tmp_path, '운봉산에서', focus, batch_characters=240) == {
         '운봉산': [{'text': '운봉산에서', 'meaning_en': 'on the mountain'}]}
+    assert korean_harness.CACHED_ANNOTATION_VALIDATOR is validator
 
 
 def test_lexical_plan_completion_preserves_existing_identities_and_requires_review(tmp_path):

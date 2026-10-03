@@ -217,6 +217,90 @@ def test_append_row_uses_the_planned_list_path_and_keeps_legacy_indexed_targets(
     assert replay["grammar_links"] == original_links + [appended, legacy]
 
 
+@pytest.mark.parametrize(
+    "representation,candidate,list_path,field_path,field,value_field",
+    [
+        ("chinese-fixed", _chinese(), "/grammar_overlays", "/grammar_overlays/0/meaning_en",
+         "meaning_en", "completes the action"),
+        ("japanese-annotation", _japanese_candidate(), "/grammar_overlays",
+         "/grammar_overlays/0/meaning_en", "meaning_en", "walked in the past"),
+        ("korean-flat", _korean_flat(), "/grammar_links", "/grammar_links/0/context_en",
+         "context_en", "Sets the later time"),
+        ("korean-v4", _korean_v4(), "/segments/0/grammar_links",
+         "/segments/0/grammar_links/0/context_en", "context_en", "Marks polite speech"),
+    ],
+)
+def test_canonical_append_can_coexist_with_edits_to_existing_base_rows(
+    representation, candidate, list_path, field_path, field, value_field
+):
+    before = deepcopy(candidate)
+    list_parts = list_path.strip("/").split("/")
+    original_list = before
+    for part in list_parts:
+        original_list = original_list[int(part)] if isinstance(original_list, list) else original_list[part]
+    appended = deepcopy(original_list[0])
+    appended[field] = value_field
+    targets = [
+        {"op": "set_field", "path": field_path},
+        {"op": "append_row", "path": list_path},
+    ]
+    updated = apply_edits(candidate, patch_for(candidate,
+        {"op": "set_field", "path": field_path, "value": value_field},
+        {"op": "append_row", "path": list_path, "value": appended}),
+        allowed_targets=targets, representation=representation)
+
+    assert candidate == before
+    result_list = updated
+    for part in list_parts:
+        result_list = result_list[int(part)] if isinstance(result_list, list) else result_list[part]
+    assert len(result_list) == len(original_list) + 1
+    # The original base row receives its planned edit; other base rows stay intact.
+    original_index = int(field_path.strip("/").split("/")[len(list_parts)])
+    expected_base_rows = deepcopy(original_list)
+    expected_base_rows[original_index][field] = value_field
+    assert result_list[:-1] == expected_base_rows
+    assert result_list[-1] == appended
+    assert result_list[original_index][field] == value_field
+    if representation in {"chinese-fixed", "chinese-annotation"}:
+        assert [row["text"] for row in updated["segments"]] == [row["text"] for row in before["segments"]]
+    elif representation == "japanese-annotation":
+        assert [row["surface"] for row in updated["segments"]] == [row["surface"] for row in before["segments"]]
+    elif representation == "korean-flat":
+        assert [row["text"] for row in updated["segments"]] == [row["text"] for row in before["segments"]]
+    else:
+        assert [(row["source_start"], row["source_end"]) for row in updated["segments"]] == [
+            (row["source_start"], row["source_end"]) for row in before["segments"]]
+
+
+def test_mixed_append_does_not_allow_source_projection_mutation_or_ambiguous_targets():
+    candidate = _korean_flat()
+    appended = {"segment_index": 0, "entry_id": "topic-eun-neun", "context_en": "topic",
+                "display_form": "", "display_meaning_en": "", "display_end_segment_index": -1}
+    protected = {"op": "set_field", "path": "/grammar_links/0/display_form", "value": "달"}
+    add = {"op": "append_row", "path": "/grammar_links", "value": appended}
+    with pytest.raises(ImmutableFieldError):
+        apply_edits(candidate, patch_for(candidate, protected, add), allowed_targets=[
+            {"op": "set_field", "path": protected["path"]},
+            {"op": "append_row", "path": "/grammar_links"},
+        ], representation="korean-flat")
+
+    whole_list = {"op": "replace_list", "path": "/grammar_links", "value": deepcopy(candidate["grammar_links"])}
+    with pytest.raises(EditConflictError):
+        apply_edits(candidate, patch_for(candidate, whole_list, add), allowed_targets=[
+            {"op": "replace_list", "path": "/grammar_links"},
+            {"op": "append_row", "path": "/grammar_links"},
+        ], representation="korean-flat")
+
+    # A legacy numeric append target is deliberately not treated as the canonical list operation.
+    field_edit = {"op": "set_field", "path": "/grammar_links/0/context_en", "value": "after"}
+    legacy_add = {"op": "append_row", "path": "/grammar_links/1", "value": appended}
+    with pytest.raises(EditConflictError):
+        apply_edits(candidate, patch_for(candidate, field_edit, legacy_add), allowed_targets=[
+            {"op": "set_field", "path": field_edit["path"]},
+            {"op": "append_row", "path": "/grammar_links/1"},
+        ], representation="korean-flat")
+
+
 def test_multiple_planned_appends_to_one_link_list_preserve_existing_rows_and_order():
     candidate = _korean_flat()
     existing = deepcopy(candidate["grammar_links"])

@@ -9,7 +9,7 @@ import json
 import re
 from pathlib import Path
 
-from jsonschema import ValidationError, validate
+from jsonschema import Draft202012Validator, ValidationError, validate
 
 from pipeline.agent_harness import CachedCallUnavailable, CodexRunner
 from pipeline import korean_contracts as contracts
@@ -20,6 +20,11 @@ from pipeline.korean_sentence_breakdowns import build as validate_breakdowns
 from pipeline import korean_curriculum as curriculum
 from pipeline.korean_levels import LEVEL_GOALS, LEVEL_POLICY
 from pipeline.worker_workspace import CandidateSubmissionError
+
+# The resume-only proper-name scan may inspect thousands of historical chunk
+# proposals. Check the fixed schema once and reuse its validator per artifact.
+Draft202012Validator.check_schema(contracts.ANNOTATION)
+CACHED_ANNOTATION_VALIDATOR = Draft202012Validator(contracts.ANNOTATION)
 
 POLICY = ROOT / "pipeline/korean_agent_instructions.md"
 LINGUISTIC_REFERENCE = ROOT / 'data/korean/linguistic-reference.json'
@@ -404,7 +409,7 @@ def cached_unplanned_names(run_dir: Path, text: str, focus: dict, *, batch_chara
                 continue
             CodexRunner._check_tool_profile(path.parent, 'offline', meta)
             value = read(path)
-            validate(value, contracts.ANNOTATION)
+            CACHED_ANNOTATION_VALIDATOR.validate(value)
             if ''.join(s['text'] for s in value['segments']) not in chunks:
                 continue
             for segment in value['segments']:

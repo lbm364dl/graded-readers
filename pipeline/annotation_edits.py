@@ -607,7 +607,28 @@ def apply_edits(
                 removal_with_other_row(edit, parts, other, other_parts)
                 or removal_with_other_row(other, other_parts, edit, parts)
             )
-            compatible_structural_pair = distinct_base_index_removals or safe_mixed_removal
+            def append_with_base_row(append_edit, append_parts, other_edit, other_path):
+                """A canonical append leaves all existing base-row indexes stable."""
+                if (append_edit.get("op") != "append_row"
+                        or not _object_row_list_path(representation, append_parts)
+                        or other_edit.get("op") not in {"set_field", "replace_row"}
+                        or len(other_path) <= len(append_parts)
+                        or other_path[:len(append_parts)] != append_parts
+                        or not other_path[len(append_parts)].isdigit()):
+                    return False
+                try:
+                    base_rows = _resolve(candidate, append_parts)
+                except InvalidEditError:
+                    return False
+                return int(other_path[len(append_parts)]) < len(base_rows)
+
+            safe_mixed_append = (
+                append_with_base_row(edit, parts, other, other_parts)
+                or append_with_base_row(other, other_parts, edit, parts)
+            )
+            compatible_structural_pair = (
+                distinct_base_index_removals or safe_mixed_removal or safe_mixed_append
+            )
             edit_list = ((parts if _object_row_list_path(representation, parts) else parts[:-1])
                          if edit["op"] == "append_row" else
                          parts[:-1] if edit["op"] == "remove_row" else None)
