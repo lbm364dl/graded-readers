@@ -354,13 +354,17 @@ def submit(path, receipt):
         try:
             check(path, candidate)
         except (ValidationError, ValueError, KeyError, TypeError, IndexError) as error:
+            from pipeline.annotation_edits import AnnotationEditError
+            category = ('annotation_patch_contract_rejection'
+                        if isinstance(error, AnnotationEditError) else
+                        'plan_contract_rejection' if plan_validation is not None else
+                        'derived_annotation_rejection')
             raise CandidateSubmissionError(
                 f'Submitted annotation plan failed issue coverage validation: {error}'
                 if plan_validation is not None else
                 f'Submitted annotation patch failed derived-candidate validation: {error}',
                 artifact_path=artifact_path, artifact_bytes=candidate_bytes,
-                category='plan_contract_rejection' if plan_validation is not None else
-                         'derived_annotation_rejection') from error
+                category=category) from error
     return value, {'artifact_path': str(candidate.relative_to(path.resolve())),
                    'artifact_digest': hash_bytes(candidate_bytes)}
 

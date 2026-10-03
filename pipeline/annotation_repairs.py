@@ -1,4 +1,4 @@
-"""Issue-planned semantic repairs for Chinese and Japanese annotations.
+"""Issue-planned semantic repairs for language annotations.
 
 This layer does not approve edits. It records the review findings, a narrow
 per-finding edit plan, the exact patch, and the derived candidate; the owning
@@ -68,6 +68,8 @@ PATCH_SCHEMA: dict[str, Any] = {
     },
 }
 
+DEPENDENCY_CLOSURE_GUIDANCE = """For each issue, inspect semantic dependencies through the exact observed tap surface before choosing targets. If changing a lemma, lexical identity, or form analysis for an inflected/derived surface, include only the dependent semantic field/list operations needed to keep its complete chain valid through that exact surface, with matching grammar links/overlays and the representation's form-audit membership when those fields exist. Removing an incorrect step or link is not sufficient when the remaining chain then fails to explain the observed surface; add or replace the supported semantic rows needed for the corrected analysis. Do not alter source/tap text, boundaries, or ranges. Contrast: a wrong occurrence gloss on an already-valid chain should target only that meaning field; a changed lemma/identity for an inflected surface may also require corrected ordered stages and their linked lessons. Never invent an identity or lesson to complete the chain."""
+
 
 def digest(value: Any) -> str:
     return hashlib.sha256(json.dumps(value, ensure_ascii=False, sort_keys=True,
@@ -83,6 +85,35 @@ def _write_json(path: Path, value: Any) -> None:
 
 def _read_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _exhausted_derived_submission(run_dir: Path, patch_job: str, error: Exception) -> dict[str, Any] | None:
+    """Return a final corrected patch only for two exhausted derived-gate rejections."""
+    from pipeline.worker_workspace import CandidateSubmissionError
+
+    if not isinstance(error, CandidateSubmissionError) or error.category != "bounded_repair_rejected":
+        return None
+    try:
+        recovery = _read_json(_safe_job_path(run_dir, patch_job) / "submission-recovery.json")
+    except (OSError, ValueError, KeyError, TypeError):
+        return None
+    initial = recovery.get("initial_rejection", {})
+    final = recovery.get("repair_rejection", {})
+    raw = error.artifact_bytes
+    if (recovery.get("status") != "rejected"
+            or initial.get("category") != "derived_annotation_rejection"
+            or final.get("category") != "derived_annotation_rejection"
+            or not isinstance(raw, bytes)
+            or hashlib.sha256(raw).hexdigest() != final.get("artifact_sha256")):
+        return None
+    try:
+        patch = json.loads(raw)
+        validate(patch, PATCH_SCHEMA)
+    except (UnicodeError, json.JSONDecodeError, ValidationError, TypeError, ValueError):
+        return None
+    return {"patch": patch, "recovery": recovery,
+            "runner_diagnostic": final.get("diagnostic", ""),
+            "artifact_sha256": hashlib.sha256(raw).hexdigest()}
 
 
 def _safe_job_path(run_dir: Path, job: str) -> Path:
@@ -176,6 +207,8 @@ async def repair_annotation(
                     "annotation_plan_validation": {"issue_count": len(issues)}}
     plan_prompt = f"""Return JSON matching the supplied repair-plan schema. Build a narrow diagnosis plan for every supplied independent review issue. `issue_index` must cover each input issue exactly once, in order. For each issue, give a concrete reason and exact JSON-pointer target(s) using only supported operations. The plan is diagnosis, never approval. Prefer a semantic field or explicit semantic-list row operation over changing a complete annotation.
 
+{DEPENDENCY_CLOSURE_GUIDANCE}
+
 The issues array contains exactly {len(issues)} findings. Use exactly the indices {list(range(len(issues)))} in that order, one row per array item. An item can describe several defects: put all its necessary targets in that same row. Do not split subpoints into additional issue indices or count repeated references as new findings. Run the supplied local validation command; it checks this mapping as well as the JSON schema.
 
 If resolving an issue requires changing source text, a primary tap surface, an existing source range/index, or the segmentation, mark `boundary_change_needed: true`, give `boundary_reason`, and provide no targets for that issue. Never route such a change through semantic targets. Otherwise set it false and leave boundary_reason empty. Scope each target to the smallest existing semantic field or list row needed. Do not target unrelated rows. The caller will check these targets against a representation-specific source/tap contract.
@@ -218,8 +251,158 @@ INPUT:
 
 INPUT:
 {json.dumps(patch_context, ensure_ascii=False, indent=2)}"""
-    patch = await harness.runner.call(patch_job, patch_prompt, patch_schema_path, selected_effort,
-        refresh=selected_refresh, workspace_context=patch_context)
+    replan_lineage = None
+    try:
+        patch = await harness.runner.call(patch_job, patch_prompt, patch_schema_path, selected_effort,
+            refresh=selected_refresh, workspace_context=patch_context)
+    except Exception as runner_error:
+        exhausted = _exhausted_derived_submission(run_dir, patch_job, runner_error)
+        if exhausted is None:
+            raise
+
+        # One bounded replan is allowed only after the shared runner's own
+        # correction also fails the derived-candidate gate.  It still edits
+        # the immutable original base and must pass the same independent gate.
+        failed_patch = exhausted["patch"]
+        try:
+            failed_candidate = apply_edits(candidate, failed_patch, allowed_targets=allowed,
+                                           representation=representation)
+        except AnnotationEditError:
+            # A recorded gate rejection that cannot be reproduced as an
+            # in-scope patch is not eligible for a semantic replan.
+            raise runner_error
+        try:
+            validate_candidate(failed_candidate)
+        except (ValueError, TypeError, KeyError, IndexError, ValidationError) as gate_error:
+            marker = "Submitted annotation patch failed derived-candidate validation: "
+            recorded = exhausted["runner_diagnostic"]
+            expected = recorded.rsplit(marker, 1)[-1] if marker in recorded else None
+            if expected is None or expected != str(gate_error):
+                # A current registry/catalog may have changed since the worker
+                # rejection. Do not launch a replan unless this exact gate
+                # failure is reproduced now against the recorded base.
+                raise runner_error
+            reproduced_gate_diagnostic = str(gate_error)
+        else:
+            # The old gate outcome may have healed as evidence/catalogs changed.
+            # Keep the historical failure, but do not spend a replan on it.
+            raise runner_error
+        failed_patch_digest = digest(failed_patch)
+        first_attempt = {
+            "first_plan_job": plan_job, "first_plan_digest": plan_digest,
+            "first_patch_job": patch_job, "first_patch_digest": failed_patch_digest,
+            "failed_patch": deepcopy(failed_patch),
+            "failed_candidate": deepcopy(failed_candidate),
+            "failed_candidate_digest": candidate_digest(failed_candidate),
+            "runner_recovery": exhausted["recovery"],
+            "runner_diagnostic": exhausted["runner_diagnostic"],
+            "reproduced_gate_diagnostic": reproduced_gate_diagnostic,
+            "failed_artifact_sha256": exhausted["artifact_sha256"],
+        }
+        replan_issues = [*deepcopy(issues), {
+            "problem": "derived_annotation_rejection",
+            "explanation": exhausted["runner_diagnostic"],
+            "failed_patch": failed_patch,
+            "failed_patch_digest": failed_patch_digest,
+            "action": "Revise the repair diagnosis/targets so the resulting full candidate passes the same deterministic annotation gate.",
+        }]
+        replan_job = f"{job}_replan"
+        replan_plan_job, replan_patch_job = f"{replan_job}_plan", f"{replan_job}_patch"
+        replan_plan_context = {**shared_context, "issues": replan_issues,
+            "repair_history": first_attempt,
+            "annotation_plan_validation": {"issue_count": len(replan_issues)}}
+        replan_plan_prompt = f"""Return JSON matching the supplied repair-plan schema. This is the single bounded replan after the first semantic patch and the shared runner's bounded submission correction both failed the deterministic derived-candidate gate. Re-diagnose the supplied original review findings together with the exact gate diagnostic. You may change the diagnosis/targets, but do not change the immutable base candidate. The replan is not approval; the caller will run the same full deterministic gate and independent review.
+
+{DEPENDENCY_CLOSURE_GUIDANCE}
+
+Cover exactly {len(replan_issues)} issue indices in order: {list(range(len(replan_issues)))}. If the gate failure cannot be addressed with semantic fields while preserving exact source/tap surfaces and ranges, mark the relevant finding boundary_change_needed and explain why. Do not retry on timeouts, malformed/schema-invalid patches, or source/tap violations; this path is available only for the recorded derived-candidate rejection.
+
+INPUT:
+{json.dumps(replan_plan_context, ensure_ascii=False, indent=2)}"""
+        try:
+            replan_plan = await harness.runner.call(replan_plan_job, replan_plan_prompt,
+                plan_schema_path, selected_effort, refresh=selected_refresh,
+                workspace_context=replan_plan_context)
+        except Exception as replan_error:
+            meta = {"return_code": 0, "kind": "annotation_patch_assembly",
+                "status": "patch_rejected", "representation": representation,
+                "base": deepcopy(candidate), "base_digest": base_digest,
+                "issues": deepcopy(issues), "issue_digest": issue_digest,
+                "plan_job": plan_job, "plan_digest": plan_digest,
+                "patch_job": patch_job, "patch_digest": failed_patch_digest,
+                "replan": {**first_attempt, "issues": replan_issues,
+                    "issue_digest": digest(replan_issues),
+                    "replan_plan_job": None, "replan_plan_error": str(replan_error),
+                    "replan_patch_job": None},
+                "patch_error": str(replan_error), "result_digest": base_digest}
+            _save_assembly(run_dir, assembly_job, meta, deepcopy(candidate))
+            return {"status": "patch_rejected", "candidate": deepcopy(candidate),
+                    "evidence": _evidence_result(run_dir, assembly_job, meta),
+                    "plan": plan, "patch_error": str(replan_error)}
+        validate(replan_plan, PLAN_SCHEMA)
+        _validate_plan(replan_plan, len(replan_issues))
+        replan_plan_digest = digest(replan_plan)
+        if any(row["boundary_change_needed"] for row in replan_plan["issues"]):
+            meta = {"return_code": 0, "kind": "annotation_patch_assembly",
+                "status": "boundary_change_needed", "representation": representation,
+                "base": deepcopy(candidate), "base_digest": base_digest,
+                "issues": deepcopy(issues), "issue_digest": issue_digest,
+                "plan_job": plan_job, "plan_digest": plan_digest,
+                "patch_job": patch_job, "patch_digest": failed_patch_digest,
+                "replan": {**first_attempt, "issues": replan_issues,
+                    "issue_digest": digest(replan_issues),
+                    "replan_plan_job": replan_plan_job, "replan_plan_digest": replan_plan_digest,
+                    "replan_patch_job": None, "replan_patch_digest": None},
+                "boundary_issues": [row["issue_index"] for row in replan_plan["issues"]
+                                    if row["boundary_change_needed"]],
+                "result_digest": base_digest}
+            _save_assembly(run_dir, assembly_job, meta, deepcopy(candidate))
+            return {"status": "boundary_change_needed", "candidate": deepcopy(candidate),
+                    "evidence": _evidence_result(run_dir, assembly_job, meta),
+                    "plan": replan_plan}
+
+        replan_allowed = _targets(replan_plan)
+        replan_patch_validation = {**(context or {}), "base_candidate": candidate,
+            "representation": representation, "allowed_targets": replan_allowed,
+            "language": language, "issues": replan_issues}
+        replan_patch_context = {**shared_context, "issues": replan_issues,
+            "repair_plan": replan_plan, "allowed_targets": replan_allowed,
+            "base_digest": base_digest, "repair_history": first_attempt,
+            "annotation_patch_validation": replan_patch_validation}
+        replan_patch_prompt = f"""Return JSON matching the supplied semantic-patch schema. This is the one and only replan after a reproduced derived-candidate gate rejection. Apply edits to the exact ORIGINAL base candidate (base digest below), not to the rejected patch. The rejected patch and diagnostic are included as evidence. Use only the exact op/path pairs in ALLOWED_TARGETS. Preserve every source/tap surface, boundary, range, and every unedited field. The caller applies this patch to the original base, runs the same complete deterministic candidate gate, and then obtains independent review; a successful gate is not approval.
+
+INPUT:
+{json.dumps(replan_patch_context, ensure_ascii=False, indent=2)}"""
+        try:
+            patch = await harness.runner.call(replan_patch_job, replan_patch_prompt,
+                patch_schema_path, selected_effort, refresh=selected_refresh,
+                workspace_context=replan_patch_context)
+        except Exception as replan_error:
+            meta = {"return_code": 0, "kind": "annotation_patch_assembly",
+                "status": "patch_rejected", "representation": representation,
+                "base": deepcopy(candidate), "base_digest": base_digest,
+                "issues": deepcopy(issues), "issue_digest": issue_digest,
+                "plan_job": plan_job, "plan_digest": plan_digest,
+                "patch_job": patch_job, "patch_digest": failed_patch_digest,
+                "replan": {**first_attempt, "issues": replan_issues,
+                    "issue_digest": digest(replan_issues),
+                    "replan_plan_job": replan_plan_job, "replan_plan_digest": replan_plan_digest,
+                    "replan_patch_attempt_job": replan_patch_job,
+                    "replan_patch_job": None, "patch_error": str(replan_error)},
+                "patch_error": str(replan_error), "result_digest": base_digest}
+            _save_assembly(run_dir, assembly_job, meta, deepcopy(candidate))
+            return {"status": "patch_rejected", "candidate": deepcopy(candidate),
+                    "evidence": _evidence_result(run_dir, assembly_job, meta),
+                    "plan": replan_plan, "patch_error": str(replan_error)}
+        validate(patch, PATCH_SCHEMA)
+        # These variables now identify the final accepted/rejected child pair;
+        # the first pair remains fully recorded in `replan_lineage`.
+        plan, plan_job, plan_digest = replan_plan, replan_plan_job, replan_plan_digest
+        allowed, patch_job = replan_allowed, replan_patch_job
+        replan_lineage = {**first_attempt, "issues": replan_issues,
+            "issue_digest": digest(replan_issues), "replan_plan_job": replan_plan_job,
+            "replan_plan_digest": replan_plan_digest, "replan_patch_job": replan_patch_job,
+            "replan_patch_digest": digest(patch)}
     validate(patch, PATCH_SCHEMA)
     try:
         updated = apply_edits(candidate, patch, allowed_targets=allowed,
@@ -234,6 +417,8 @@ INPUT:
             "plan_job": plan_job, "plan_digest": plan_digest,
             "patch_job": patch_job, "patch_digest": digest(patch),
             "boundary_error": str(exc), "result_digest": base_digest}
+        if replan_lineage is not None:
+            meta["replan"] = replan_lineage
         _save_assembly(run_dir, assembly_job, meta, deepcopy(candidate))
         return {"status": "boundary_change_needed", "candidate": deepcopy(candidate),
                 "evidence": _evidence_result(run_dir, assembly_job, meta), "plan": plan,
@@ -246,6 +431,8 @@ INPUT:
             "plan_job": plan_job, "plan_digest": plan_digest,
             "patch_job": patch_job, "patch_digest": digest(patch),
             "patch_error": str(exc), "result_digest": base_digest}
+        if replan_lineage is not None:
+            meta["replan"] = replan_lineage
         _save_assembly(run_dir, assembly_job, meta, deepcopy(candidate))
         return {"status": "patch_rejected", "candidate": deepcopy(candidate),
                 "evidence": _evidence_result(run_dir, assembly_job, meta), "plan": plan,
@@ -260,6 +447,8 @@ INPUT:
             "plan_job": plan_job, "plan_digest": plan_digest,
             "patch_job": patch_job, "patch_digest": digest(patch),
             "validation_error": str(exc), "result_digest": base_digest}
+        if replan_lineage is not None:
+            meta["replan"] = replan_lineage
         _save_assembly(run_dir, assembly_job, meta, deepcopy(candidate))
         return {"status": "patch_rejected", "candidate": deepcopy(candidate),
                 "evidence": _evidence_result(run_dir, assembly_job, meta), "plan": plan,
@@ -271,6 +460,8 @@ INPUT:
         "plan_job": plan_job, "plan_digest": plan_digest,
         "patch_job": patch_job, "patch_digest": digest(patch),
         "result_digest": candidate_digest(updated)}
+    if replan_lineage is not None:
+        meta["replan"] = replan_lineage
     _save_assembly(run_dir, assembly_job, meta, updated)
     return {"status": "applied", "candidate": updated,
             "evidence": _evidence_result(run_dir, assembly_job, meta), "plan": plan}
@@ -297,6 +488,124 @@ def replay_annotation_repair(
         if child_meta.get("return_code") != 0 or digest(value) != expected_digest:
             raise ValueError(f"annotation repair child evidence changed: {job}")
         return value
+
+    replan = meta.get("replan")
+    if replan is not None:
+        if (not isinstance(replan, dict)
+                or digest(replan.get("issues")) != replan.get("issue_digest")
+                or not isinstance(replan.get("failed_patch"), dict)
+                or digest(replan["failed_patch"]) != replan.get("first_patch_digest")):
+            raise ValueError("annotation replan lineage is incomplete or changed")
+        recovery = _read_json(_safe_job_path(run_dir, replan["first_patch_job"]) /
+                              "submission-recovery.json")
+        initial, final = recovery.get("initial_rejection", {}), recovery.get("repair_rejection", {})
+        if (recovery.get("status") != "rejected"
+                or initial.get("category") != "derived_annotation_rejection"
+                or final.get("category") != "derived_annotation_rejection"
+                or final.get("artifact_sha256") != replan.get("failed_artifact_sha256")
+                or replan["failed_patch"].get("base_digest") != meta.get("base_digest")):
+            raise ValueError("stored first-attempt derived-gate rejection evidence changed")
+        first_workspace = _safe_job_path(run_dir, replan["first_patch_job"]) / "workspace"
+        rejection_record = _read_json(first_workspace / "submission-rejection.json")
+        if rejection_record != initial:
+            raise ValueError("initial rejected-patch record differs from bounded-correction evidence")
+        initial_candidate = first_workspace / "candidate.json"
+        initial_copy = first_workspace / "rejected-candidate-attempt-01.json"
+        for artifact in (initial_candidate, initial_copy):
+            if (artifact.is_symlink() or not artifact.resolve(strict=True).is_relative_to(first_workspace.resolve())
+                    or hashlib.sha256(artifact.read_bytes()).hexdigest() != initial.get("artifact_sha256")):
+                raise ValueError("initial rejected patch bytes differ from bounded-correction evidence")
+        repair_workspace = _safe_job_path(run_dir, recovery["job"]) / "workspace"
+        final_relative = Path(final.get("artifact_path", ""))
+        if (not final_relative.parts or final_relative.is_absolute()
+                or any(part in {"", ".", ".."} for part in final_relative.parts)):
+            raise ValueError("final rejected patch has an unsafe artifact path")
+        final_artifact = repair_workspace.joinpath(*final_relative.parts)
+        if (final_artifact.is_symlink()
+                or not final_artifact.resolve(strict=True).is_relative_to(repair_workspace.resolve())):
+            raise ValueError("final rejected patch artifact escaped its correction workspace")
+        final_bytes = final_artifact.read_bytes()
+        if hashlib.sha256(final_bytes).hexdigest() != final.get("artifact_sha256"):
+            raise ValueError("final rejected patch bytes differ from bounded-correction evidence")
+        try:
+            if json.loads(final_bytes) != replan["failed_patch"]:
+                raise ValueError("final rejected artifact differs from recorded failed patch")
+        except (UnicodeError, json.JSONDecodeError) as exc:
+            raise ValueError("final rejected artifact is not valid patch JSON") from exc
+        first_plan = child(replan["first_plan_job"], replan["first_plan_digest"])
+        _validate_plan(first_plan, len(meta["issues"]))
+        try:
+            failed_candidate = apply_edits(base, replan["failed_patch"],
+                allowed_targets=_targets(first_plan), representation=meta["representation"])
+        except (AnnotationEditError, ValidationError, TypeError, ValueError) as exc:
+            raise ValueError("stored rejected semantic patch cannot be replayed against its exact base") from exc
+        if (failed_candidate != replan.get("failed_candidate")
+                or candidate_digest(failed_candidate) != replan.get("failed_candidate_digest")):
+            raise ValueError("stored first-attempt derived candidate differs from exact patch replay")
+        # The first rejection was revalidated against the then-current gate
+        # immediately before launching the replan. Do not run that historical
+        # candidate through a potentially refreshed lexical catalog during
+        # cache replay; the runner's hash-bound workspace/recovery records
+        # preserve that prior diagnostic. The final candidate below is always
+        # checked against the current full deterministic gate.
+        if not replan.get("replan_plan_job"):
+            if meta.get("status") != "patch_rejected" or candidate_digest(stored) != meta.get("base_digest"):
+                raise ValueError("failed replan planning metadata changed the immutable-base outcome")
+            return {"status": "patch_rejected", "candidate": stored,
+                    "evidence": _evidence_result(run_dir, assembly_job, meta), "plan": first_plan,
+                    "patch_error": replan.get("replan_plan_error")}
+        replanned = child(replan["replan_plan_job"], replan["replan_plan_digest"])
+        _validate_plan(replanned, len(replan["issues"]))
+        if meta.get("status") == "boundary_change_needed" and not replan.get("replan_patch_job"):
+            if candidate_digest(stored) != meta.get("base_digest"):
+                raise ValueError("boundary replan modified the immutable base")
+            return {"status": meta["status"], "candidate": stored,
+                    "evidence": _evidence_result(run_dir, assembly_job, meta), "plan": replanned}
+        if not replan.get("replan_patch_job"):
+            if meta.get("status") != "patch_rejected" or candidate_digest(stored) != meta.get("base_digest"):
+                raise ValueError("terminal replan outcome changed the immutable base")
+            return {"status": "patch_rejected", "candidate": stored,
+                    "evidence": _evidence_result(run_dir, assembly_job, meta), "plan": replanned,
+                    "patch_error": replan.get("patch_error")}
+        final_patch = child(replan["replan_patch_job"], replan["replan_patch_digest"])
+        try:
+            updated = apply_edits(base, final_patch, allowed_targets=_targets(replanned),
+                                  representation=meta["representation"])
+        except (BoundaryChangeNotSupported, ImmutableFieldError) as exc:
+            if meta.get("status") != "boundary_change_needed" or str(exc) != meta.get("boundary_error"):
+                raise ValueError("replayed replan boundary diagnostic differs") from exc
+            if candidate_digest(stored) != meta.get("base_digest"):
+                raise ValueError("boundary-rejected replan changed its immutable base")
+            return {"status": "boundary_change_needed", "candidate": stored,
+                    "evidence": _evidence_result(run_dir, assembly_job, meta), "plan": replanned,
+                    "boundary_error": str(exc)}
+        except AnnotationEditError as exc:
+            if meta.get("status") != "patch_rejected" or str(exc) != meta.get("patch_error"):
+                raise ValueError("replayed replan scope diagnostic differs") from exc
+            if candidate_digest(stored) != meta.get("base_digest"):
+                raise ValueError("scope-rejected replan changed its immutable base")
+            return {"status": "patch_rejected", "candidate": stored,
+                    "evidence": _evidence_result(run_dir, assembly_job, meta), "plan": replanned,
+                    "patch_error": str(exc)}
+        if meta.get("status") == "patch_rejected":
+            if candidate_digest(stored) != meta.get("base_digest"):
+                raise ValueError("rejected replanned annotation modified the immutable base")
+            try:
+                validate_candidate(updated)
+            except (ValueError, TypeError, KeyError, IndexError, ValidationError) as exc:
+                if str(exc) != meta.get("validation_error"):
+                    raise ValueError("replayed terminal replan diagnostic differs") from exc
+            else:
+                if meta.get("validation_error"):
+                    raise ValueError("terminal replan now passes its deterministic gate")
+            return {"status": "patch_rejected", "candidate": stored,
+                    "evidence": _evidence_result(run_dir, assembly_job, meta), "plan": replanned,
+                    "validation_error": meta.get("validation_error")}
+        validate_candidate(updated)
+        if candidate_digest(updated) != meta.get("result_digest") or updated != stored:
+            raise ValueError("replayed replanned annotation differs from its stored result")
+        return {"status": "applied", "candidate": updated,
+                "evidence": _evidence_result(run_dir, assembly_job, meta), "plan": replanned}
 
     plan = child(meta["plan_job"], meta["plan_digest"])
     _validate_plan(plan, len(meta["issues"]))

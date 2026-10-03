@@ -163,7 +163,7 @@ def test_submission_uses_exact_validated_file_and_detects_later_changes(tmp_path
         submit(workspace, {'candidate_path':'missing.json'})
 
 
-def test_annotation_patch_submission_applies_and_validates_derived_candidate(tmp_path):
+def test_annotation_patch_submission_applies_and_validates_derived_candidate(tmp_path, monkeypatch):
     from pipeline.annotation_edits import candidate_digest
     from pipeline.annotation_repairs import PATCH_SCHEMA
     from pipeline.worker_workspace import CandidateSubmissionError, submit
@@ -192,8 +192,21 @@ def test_annotation_patch_submission_applies_and_validates_derived_candidate(tmp
     boundary_patch = {'base_digest': candidate_digest(base), 'edits': [
         {'op': 'set_field', 'path': '/segments/1/text', 'value': '行'}]}
     (workspace / 'candidate.json').write_text(json.dumps(boundary_patch), encoding='utf-8')
-    with pytest.raises(CandidateSubmissionError, match='protected source surface'):
+    with pytest.raises(CandidateSubmissionError, match='protected source surface') as caught:
         submit(workspace, {'candidate_path': 'candidate.json'})
+    assert caught.value.category == 'annotation_patch_contract_rejection'
+
+    # A valid in-scope edit that fails only the downstream language gate stays
+    # eligible for the single semantic replan path.
+    from pipeline.agent_harness import ChapterHarness
+    monkeypatch.setattr(ChapterHarness, 'annotation_contract_issues',
+        staticmethod(lambda _text, _candidate: ['dependent form row is missing']))
+    semantic_patch = {'base_digest': candidate_digest(base), 'edits': [
+        {'op': 'set_field', 'path': '/segments/1/meaning_en', 'value': 'go'}]}
+    (workspace / 'candidate.json').write_text(json.dumps(semantic_patch), encoding='utf-8')
+    with pytest.raises(CandidateSubmissionError, match='dependent form row is missing') as caught:
+        submit(workspace, {'candidate_path': 'candidate.json'})
+    assert caught.value.category == 'derived_annotation_rejection'
 
 
 def _word_schema():

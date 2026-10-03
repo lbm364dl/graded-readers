@@ -643,6 +643,69 @@ class CodexRunner:
                 checked_path(Path(child_job) / 'workspace')
                 CodexRunner._check_tool_profile(child_dir, 'workspace', child_meta)
 
+            replan = meta.get('replan')
+            if replan is not None:
+                # The first patch was rejected by the derived-candidate gate,
+                # so it has no successful runner result. Verify its recorded
+                # workspace and exact bounded-correction evidence separately.
+                for field in ('first_plan_job', 'first_patch_job'):
+                    child_job = replan.get(field)
+                    child_dir = checked_path(child_job)
+                    child_meta_path = checked_path(Path(child_job) / 'meta.json')
+                    child_meta = json.loads(child_meta_path.read_text(encoding='utf-8'))
+                    failed_job = field == 'first_patch_job'
+                    if (child_meta.get('tool_profile') != 'workspace'
+                            or (child_meta.get('return_code') == 0 if failed_job else
+                                child_meta.get('return_code') != 0)):
+                        raise ValueError(f'Annotation replan child is not a workspace job: {child_job}')
+                    checked_path(Path(child_job) / 'workspace')
+                    CodexRunner._check_tool_profile(child_dir, 'workspace', child_meta)
+                first_patch_dir = checked_path(replan['first_patch_job'])
+                recovery_path = checked_path(Path(replan['first_patch_job']) / 'submission-recovery.json')
+                recovery = json.loads(recovery_path.read_text(encoding='utf-8'))
+                if recovery != replan.get('runner_recovery'):
+                    raise ValueError('Annotation replan submission-recovery evidence changed')
+                initial = recovery.get('initial_rejection', {})
+                final = recovery.get('repair_rejection', {})
+                if (recovery.get('status') != 'rejected'
+                        or initial.get('category') != 'derived_annotation_rejection'
+                        or final.get('category') != 'derived_annotation_rejection'
+                        or final.get('artifact_sha256') != replan.get('failed_artifact_sha256')):
+                    raise ValueError('Annotation replan lacks exhausted derived-gate evidence')
+                initial_record_path = checked_path(Path(replan['first_patch_job']) / 'workspace' /
+                                                   'submission-rejection.json')
+                if json.loads(initial_record_path.read_text(encoding='utf-8')) != initial:
+                    raise ValueError('Initial patch rejection record differs from recovery evidence')
+                rejected_initial = checked_path(Path(replan['first_patch_job']) / 'workspace' /
+                                                'rejected-candidate-attempt-01.json')
+                if hashlib.sha256(rejected_initial.read_bytes()).hexdigest() != initial.get('artifact_sha256'):
+                    raise ValueError('Initial rejected annotation patch artifact changed')
+                first_candidate = checked_path(Path(replan['first_patch_job']) / 'workspace' / 'candidate.json')
+                if hashlib.sha256(first_candidate.read_bytes()).hexdigest() != initial.get('artifact_sha256'):
+                    raise ValueError('First annotation patch candidate differs from rejection evidence')
+                repair_job = recovery.get('job')
+                repair_dir = checked_path(repair_job)
+                repair_meta_path = checked_path(Path(repair_job) / 'meta.json')
+                repair_meta = json.loads(repair_meta_path.read_text(encoding='utf-8'))
+                if (repair_meta.get('tool_profile') != 'workspace'
+                        or repair_meta.get('return_code') == 0):
+                    raise ValueError('Bounded submission correction is not a workspace job')
+                checked_path(Path(repair_job) / 'workspace')
+                CodexRunner._check_tool_profile(repair_dir, 'workspace', repair_meta)
+                final_artifact = final.get('artifact_path')
+                if not isinstance(final_artifact, str):
+                    raise ValueError('Final rejected patch has no recorded artifact path')
+                artifact_path = checked_path(Path(repair_job) / 'workspace' / final_artifact)
+                final_bytes = artifact_path.read_bytes()
+                if hashlib.sha256(final_bytes).hexdigest() != final.get('artifact_sha256'):
+                    raise ValueError('Final rejected annotation patch artifact changed')
+                try:
+                    final_patch = json.loads(final_bytes)
+                except (UnicodeError, json.JSONDecodeError) as exc:
+                    raise ValueError('Final rejected annotation patch artifact is not valid JSON') from exc
+                if final_patch != replan.get('failed_patch'):
+                    raise ValueError('Final rejected artifact differs from the recorded failed patch')
+
             from pipeline.annotation_repairs import replay_annotation_repair
             from pipeline.annotation_edits import candidate_digest
             replayed = replay_annotation_repair(

@@ -1,14 +1,16 @@
 import json
+import hashlib
 
 import pytest
 
-from pipeline.annotation_edits import candidate_digest
+from pipeline.annotation_edits import apply_edits, candidate_digest
 from pipeline.annotation_repairs import repair_annotation, replay_annotation_repair
 from pipeline.agent_harness import ChapterHarness
 from pipeline.japanese_agent_harness import JapaneseChapterHarness
 from argparse import Namespace
 from pipeline.agent_harness import CodexRunner
 from pipeline.worker_workspace import build, check, submit
+from pipeline.worker_workspace import CandidateSubmissionError
 
 
 def _candidate():
@@ -112,6 +114,8 @@ async def test_issue_planned_patch_is_validated_persisted_and_replayed(tmp_path)
     assert runner.calls[1][4]["workspace_context"]["annotation_patch_validation"]["representation"] == "chinese-annotation"
     assert runner.calls[0][4]['workspace_context']['annotation_plan_validation'] == {'issue_count': 2}
     assert 'annotation_plan_validation' not in runner.calls[1][4]['workspace_context']
+    assert "a wrong occurrence gloss on an already-valid chain should target only that meaning field" in runner.calls[0][1]
+    assert "a changed lemma/identity for an inflected surface may also require corrected ordered stages" in runner.calls[0][1]
     replayed = replay_annotation_repair(
         tmp_path, result["evidence"]["assembly_job"], validate_candidate=validate_candidate,
     )
@@ -359,4 +363,287 @@ async def test_profile_check_rejects_symlinked_patch_child(tmp_path):
     child_dir.rename(outside)
     child_dir.symlink_to(outside, target_is_directory=True)
     with pytest.raises(ValueError, match="symlink"):
+        CodexRunner._check_tool_profile(assembly_dir, None, meta)
+
+
+class ReplanningRunner:
+    """Runner fixture with one exhausted, derived-gate submission correction."""
+    def __init__(self, run_dir, candidate, *, terminal=False, failure_category="derived_annotation_rejection"):
+        self.run_dir = run_dir
+        self.candidate = candidate
+        self.terminal = terminal
+        self.failure_category = failure_category
+        self.calls = []
+
+    async def call(self, job, prompt, schema, effort, **kwargs):
+        self.calls.append((job, prompt, kwargs))
+        if "_replan_plan" in job:
+            n = len(kwargs["workspace_context"]["issues"])
+            value = {"issues": [{"issue_index": index, "reason": "Repair the diagnosed gate dependency.",
+                "targets": [_target("set_field", "/segments/0/meaning_en")],
+                "boundary_change_needed": False, "boundary_reason": ""}
+                for index in range(n)]}
+        elif job.endswith("_plan"):
+            value = _plan((_target("set_field", "/segments/0/meaning_en"),))
+        elif job.endswith("_patch") and "_replan_" not in job:
+            value = {"base_digest": candidate_digest(self.candidate),
+                     "edits": [{"op": "set_field", "path": "/segments/0/meaning_en",
+                                "value": "bad-first-patch"}]}
+            raw = (json.dumps(value, ensure_ascii=False) + "\n").encode()
+            correction = "repairs/chunk/submission-correction"
+            correction_dir = self.run_dir / "agents" / correction
+            (correction_dir / "workspace").mkdir(parents=True, exist_ok=True)
+            (correction_dir / "workspace" / "candidate.json").write_bytes(raw)
+            (correction_dir / "meta.json").write_text(json.dumps({"return_code": 1,
+                "tool_profile": "workspace", "workspace_digest": "fixture"}), encoding="utf-8")
+            recovery = {"status": "rejected", "job": correction,
+                "initial_rejection": {"category": self.failure_category,
+                    "artifact_sha256": hashlib.sha256(raw).hexdigest(),
+                    "diagnostic": "first derived gate failure"},
+                "repair_rejection": {"category": self.failure_category,
+                    "artifact_path": "candidate.json",
+                    "artifact_sha256": hashlib.sha256(raw).hexdigest(),
+                    "diagnostic": "Submitted annotation patch failed derived-candidate validation: " +
+                        ("dependent semantic row still invalid" if self.terminal else
+                         "complete candidate gate: required dependent form analysis missing")}}
+            original_dir = self.run_dir / "agents" / job
+            original_dir.mkdir(parents=True, exist_ok=True)
+            (original_dir / "submission-recovery.json").write_text(
+                json.dumps(recovery), encoding="utf-8")
+            (original_dir / "workspace").mkdir(exist_ok=True)
+            (original_dir / "workspace" / "submission-rejection.json").write_text(
+                json.dumps(recovery["initial_rejection"]), encoding="utf-8")
+            (original_dir / "workspace" / "rejected-candidate-attempt-01.json").write_bytes(raw)
+            (original_dir / "workspace" / "candidate.json").write_bytes(raw)
+            raise CandidateSubmissionError("bounded correction rejected",
+                artifact_path="candidate.json", artifact_bytes=raw,
+                category="bounded_repair_rejected")
+        else:
+            value = {"base_digest": candidate_digest(self.candidate),
+                "edits": [{"op": "set_field", "path": "/segments/0/meaning_en",
+                           "value": "bad-second-patch" if self.terminal else "corrected"}]}
+        # Minimal child artifact evidence for deterministic assembly replay.
+        directory = self.run_dir / "agents" / job
+        directory.mkdir(parents=True, exist_ok=True)
+        (directory / "result.json").write_text(json.dumps(value), encoding="utf-8")
+        (directory / "meta.json").write_text(json.dumps({"return_code": 0}), encoding="utf-8")
+        return value
+
+
+@pytest.mark.asyncio
+async def test_one_derived_gate_replan_uses_original_base_and_replays_lineage(tmp_path):
+    candidate = _candidate()
+    runner = ReplanningRunner(tmp_path, candidate)
+    def gate(value):
+        if value["segments"][0]["meaning_en"].startswith("bad-"):
+            raise ValueError("complete candidate gate: required dependent form analysis missing")
+
+    result = await repair_annotation(Harness(tmp_path, runner), "repair", candidate,
+        [{"problem": "meaning", "explanation": "Correct the meaning."}],
+        representation="chinese-annotation", language="zh", validate_candidate=gate)
+    assert result["status"] == "applied"
+    assert result["candidate"]["segments"][0]["meaning_en"] == "corrected"
+    assert candidate["segments"][0]["meaning_en"] == "she"
+    assert len(runner.calls) == 4
+    assert "exact ORIGINAL base candidate" in runner.calls[3][1]
+    assert runner.calls[3][2]["workspace_context"]["base_digest"] == candidate_digest(candidate)
+    replayed = replay_annotation_repair(tmp_path, "repair_assembly", validate_candidate=gate)
+    assert replayed["candidate"] == result["candidate"]
+    meta = json.loads((tmp_path / "agents" / "repair_assembly" / "meta.json").read_text())
+    assert meta["replan"]["failed_patch"]["edits"][0]["value"] == "bad-first-patch"
+    assert meta["replan"]["reproduced_gate_diagnostic"] == \
+        "complete candidate gate: required dependent form analysis missing"
+    assert meta["replan"]["replan_patch_job"].endswith("_replan_patch")
+
+
+@pytest.mark.asyncio
+async def test_replan_exhaustion_is_terminal_and_never_starts_a_third_attempt(tmp_path):
+    candidate = _candidate()
+    runner = ReplanningRunner(tmp_path, candidate, terminal=True)
+    def gate(value):
+        if value["segments"][0]["meaning_en"].startswith("bad-"):
+            raise ValueError("dependent semantic row still invalid")
+
+    result = await repair_annotation(Harness(tmp_path, runner), "repair", candidate,
+        [{"problem": "meaning"}], representation="chinese-annotation", language="zh",
+        validate_candidate=gate)
+    assert result["status"] == "patch_rejected"
+    assert result["candidate"] == candidate
+    assert len(runner.calls) == 4
+    replayed = replay_annotation_repair(tmp_path, "repair_assembly", validate_candidate=gate)
+    assert replayed["status"] == "patch_rejected"
+    assert replayed["candidate"] == candidate
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize("failure_category", ["schema_rejection", "capacity_timeout"])
+async def test_non_derived_submission_failure_does_not_replan(tmp_path, failure_category):
+    candidate = _candidate()
+    runner = ReplanningRunner(tmp_path, candidate, failure_category=failure_category)
+    with pytest.raises(CandidateSubmissionError, match="bounded correction rejected"):
+        await repair_annotation(Harness(tmp_path, runner), "repair", candidate,
+            [{"problem": "meaning"}], representation="chinese-annotation", language="zh",
+            validate_candidate=lambda _: None)
+    assert len(runner.calls) == 2
+
+
+@pytest.mark.asyncio
+async def test_source_and_target_contract_failure_does_not_replan(tmp_path):
+    candidate = _candidate()
+    runner = ReplanningRunner(tmp_path, candidate,
+        failure_category="annotation_patch_contract_rejection")
+    with pytest.raises(CandidateSubmissionError, match="bounded correction rejected"):
+        await repair_annotation(Harness(tmp_path, runner), "repair", candidate,
+            [{"problem": "meaning"}], representation="chinese-annotation", language="zh",
+            validate_candidate=lambda _: None)
+    assert len(runner.calls) == 2
+
+
+def test_lemma_identity_repair_keeps_dependent_form_chain_while_gloss_patch_stays_narrow():
+    base = {"segments": [{"text": "좋아해", "lemma": "좋다", "lexical_id": "ko:좋다",
+        "meaning_en": "likes", "form_steps": [{"form": "좋아해", "meaning_en": "likes",
+            "grammar_id": "ko-descriptive-aeo-hada"}]}],
+        "grammar_links": [{"segment_index": 0, "display_end_segment_index": 0,
+            "display_form": "좋아해", "grammar_id": "ko-aeo"}],
+        "expression_links": [], "inflected_segment_indices": [0]}
+    gate = lambda value: (value["segments"][0]["lemma"] == "좋아하다" and
+        bool(value["segments"][0]["form_steps"]) and
+        value["segments"][0]["form_steps"][-1]["form"] == value["segments"][0]["text"] and
+        value["segments"][0]["form_steps"][-1]["grammar_id"] == "ko-aeo")
+    identity_patch = {"base_digest": candidate_digest(base), "edits": [
+        {"op": "set_field", "path": "/segments/0/lemma", "value": "좋아하다"},
+        {"op": "replace_list", "path": "/segments/0/form_steps", "value": [
+            {"form": "좋아해", "meaning_en": "likes", "grammar_id": "ko-aeo"}]}]}
+    identity_allowed = [{"op": "set_field", "path": "/segments/0/lemma"},
+        {"op": "replace_list", "path": "/segments/0/form_steps"}]
+    repaired = apply_edits(base, identity_patch, allowed_targets=identity_allowed,
+                           representation="korean-flat")
+    assert gate(repaired)
+    assert repaired["segments"][0]["text"] == "좋아해"
+    assert repaired["grammar_links"] == base["grammar_links"]
+    assert repaired["inflected_segment_indices"] == [0]
+
+    missing_dependency = {"base_digest": candidate_digest(base), "edits": [
+        {"op": "set_field", "path": "/segments/0/lemma", "value": "좋아하다"}]}
+    incomplete = apply_edits(base, missing_dependency,
+        allowed_targets=[{"op": "set_field", "path": "/segments/0/lemma"}],
+        representation="korean-flat")
+    assert not gate(incomplete)
+    valid_base = json.loads(json.dumps(base, ensure_ascii=False))
+    valid_base["segments"][0]["lemma"] = "좋아하다"
+    valid_base["segments"][0]["form_steps"][0]["grammar_id"] = "ko-aeo"
+    gloss_only = {"base_digest": candidate_digest(valid_base), "edits": [
+        {"op": "set_field", "path": "/segments/0/meaning_en", "value": "likes this"}]}
+    gloss_allowed = [{"op": "set_field", "path": "/segments/0/meaning_en"}]
+    gloss = apply_edits(valid_base, gloss_only, allowed_targets=gloss_allowed,
+                        representation="korean-flat")
+    assert gate(gloss)
+    assert gloss["segments"][0]["form_steps"] == valid_base["segments"][0]["form_steps"]
+
+
+@pytest.mark.asyncio
+async def test_applied_replan_profile_replays_real_workspace_lineage(tmp_path, monkeypatch):
+    from pipeline.agent_harness import ChapterHarness
+
+    candidate = _candidate()
+    gate_message = "semantic gate: dependent form analysis is missing"
+    monkeypatch.setattr(ChapterHarness, "annotation_contract_issues", staticmethod(
+        lambda _text, value: [gate_message] if value["segments"][0]["meaning_en"] == "bad-first-patch" else []))
+
+    class WorkspaceReplanningRunner:
+        def __init__(self):
+            self.run_dir = tmp_path
+            self.calls = []
+
+        async def _workspace_result(self, job, prompt, schema, context, value):
+            job_dir = tmp_path / "agents" / job
+            workspace = job_dir / "workspace"
+            _, workspace_digest = build(workspace, prompt,
+                json.loads(schema.read_text(encoding="utf-8")), context=context)
+            (workspace / "candidate.json").write_text(json.dumps(value, ensure_ascii=False) + "\n",
+                                                        encoding="utf-8")
+            return job_dir, workspace, workspace_digest
+
+        async def call(self, job, prompt, schema, effort, **kwargs):
+            self.calls.append(job)
+            context = kwargs["workspace_context"]
+            if "_replan_plan" in job:
+                values = _plan(*[(_target("set_field", "/segments/0/meaning_en"),)
+                                 for _ in context["issues"]])
+            elif job.endswith("_plan"):
+                values = _plan((_target("set_field", "/segments/0/meaning_en"),))
+            elif "_replan_patch" in job:
+                values = {"base_digest": candidate_digest(candidate), "edits": [
+                    {"op": "set_field", "path": "/segments/0/meaning_en", "value": "corrected"}]}
+            else:
+                values = {"base_digest": candidate_digest(candidate), "edits": [
+                    {"op": "set_field", "path": "/segments/0/meaning_en", "value": "bad-first-patch"}]}
+            job_dir, workspace, workspace_digest = await self._workspace_result(
+                job, prompt, schema, context, values)
+            if job.endswith("_patch") and "_replan_patch" not in job:
+                try:
+                    submit(workspace, {"candidate_path": "candidate.json"})
+                except CandidateSubmissionError as first:
+                    # Model the real runner's one workspace correction attempt.
+                    correction_job = f"{job}-submission-correction-fixture"
+                    repair_dir, repair_workspace, repair_digest = await self._workspace_result(
+                        correction_job, prompt, schema, context, values)
+                    try:
+                        submit(repair_workspace, {"candidate_path": "candidate.json"})
+                    except CandidateSubmissionError as final:
+                        first_record, final_record = first.record(), final.record()
+                    else:
+                        raise AssertionError("fixture correction unexpectedly passed")
+                    first_bytes = (workspace / "candidate.json").read_bytes()
+                    (workspace / "submission-rejection.json").write_text(
+                        json.dumps(first_record, ensure_ascii=False), encoding="utf-8")
+                    (workspace / "rejected-candidate-attempt-01.json").write_bytes(first_bytes)
+                    (job_dir / "submission-recovery.json").write_text(json.dumps({
+                        "status": "rejected", "job": correction_job,
+                        "initial_rejection": first_record, "repair_rejection": final_record,
+                    }, ensure_ascii=False), encoding="utf-8")
+                    (job_dir / "result.json").write_text("{}", encoding="utf-8")
+                    (job_dir / "meta.json").write_text(json.dumps({"return_code": 1,
+                        "tool_profile": "workspace", "workspace_digest": workspace_digest}), encoding="utf-8")
+                    (repair_dir / "result.json").write_text("{}", encoding="utf-8")
+                    (repair_dir / "meta.json").write_text(json.dumps({"return_code": 1,
+                        "tool_profile": "workspace", "workspace_digest": repair_digest}), encoding="utf-8")
+                    raise CandidateSubmissionError("bounded correction rejected",
+                        artifact_path="candidate.json", artifact_bytes=first_bytes,
+                        category="bounded_repair_rejected")
+            else:
+                returned, artifact = submit(workspace, {"candidate_path": "candidate.json"})
+                (job_dir / "result.json").write_text(json.dumps(returned, ensure_ascii=False) + "\n",
+                                                      encoding="utf-8")
+                (job_dir / "meta.json").write_text(json.dumps({"return_code": 0,
+                    "tool_profile": "workspace", "workspace_digest": workspace_digest,
+                    **artifact}), encoding="utf-8")
+                return returned
+
+    runner = WorkspaceReplanningRunner()
+    def gate(value):
+        if value["segments"][0]["meaning_en"] == "bad-first-patch":
+            raise ValueError(json.dumps([gate_message], ensure_ascii=False))
+    result = await repair_annotation(Harness(tmp_path, runner), "repair", candidate,
+        [{"problem": "meaning"}], representation="chinese-annotation", language="zh",
+        context={"chunk_text": "她走"}, validate_candidate=gate)
+    assert result["status"] == "applied"
+    assembly_dir = tmp_path / "agents" / "repair_assembly"
+    meta = json.loads((assembly_dir / "meta.json").read_text(encoding="utf-8"))
+    CodexRunner._check_tool_profile(assembly_dir, None, meta)
+    # Cache replay does not re-run the historical failure through a possibly
+    # changed catalog, but it still applies the current gate to the final edit.
+    assert replay_annotation_repair(tmp_path, "repair_assembly",
+        validate_candidate=lambda _value: None)["status"] == "applied"
+    with pytest.raises(ValueError, match="new final gate failure"):
+        replay_annotation_repair(tmp_path, "repair_assembly", validate_candidate=lambda value:
+            (_ for _ in ()).throw(ValueError("new final gate failure"))
+            if value["segments"][0]["meaning_en"] == "corrected" else None)
+
+    # The raw final rejected bytes are hash-bound to the decoded failed patch.
+    recovery_path = tmp_path / "agents" / meta["replan"]["first_patch_job"] / "submission-recovery.json"
+    recovery = json.loads(recovery_path.read_text(encoding="utf-8"))
+    artifact = tmp_path / "agents" / recovery["job"] / "workspace" / "candidate.json"
+    artifact.write_text(json.dumps({"base_digest": "f" * 64, "edits": []}), encoding="utf-8")
+    with pytest.raises(ValueError, match="Final rejected annotation patch artifact changed"):
         CodexRunner._check_tool_profile(assembly_dir, None, meta)
