@@ -17775,6 +17775,80 @@
         ]
       },
       "occurrence_requests_digest": "b1e598fa08308db77c9cb100c9fecfde2b6134c2e421b1086e0e6f6322b3a1ba"
+    },
+    {
+      "headwords": [
+        "말다"
+      ],
+      "proposal": {
+        "entries": [],
+        "unresolved": [
+          {
+            "headword": "말다",
+            "reason_en": "The occurrence form 말라며 is conjugated. In the supplied context it means “telling her not to say anything more,” a use of 말다 meaning “stop; refrain,” already covered by catalog identity 말다03/동. The supplied Standard Dictionary records also attest other senses, but these are not the requested occurrence lexeme and do not justify adding identities for this lookup."
+          }
+        ]
+      },
+      "proposal_digest": "2a5bbfa79db1fd3f95e4d355b462539fdff0ccaf1d0ed1117867eb8431295e2a",
+      "review": {
+        "approved": true,
+        "issues": []
+      },
+      "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+      "research_policy_digest": "c6a0027d0694ef196c9553b759424d8b6193bc75b157ffd83bda766412ea8f52",
+      "primary_evidence": [
+        {
+          "headword_request": "말다",
+          "search_url": "https://stdict.korean.go.kr/search/searchResult.do?pageSize=20&searchKeyword=%EB%A7%90%EB%8B%A4",
+          "records": [
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=111115",
+              "content_sha256": "c0395557642ee3aeca5b47673f95914bc9395be3af3ec8ef6ba997386508cba3",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 말다 2 발음 [말다 ] 활용 말아[마라 ], 마니[마니 ], 마오[마오] 편집 이력 「동사」 【…을】【 …을 …에】 밥이나 국수 따위를 물이나 국물에 넣어서 풀다. 국수를 말다 . 대개 새벽에 해장국을 말아 주고 다시 우리들 또래에게 아침을 팔고 나서 점심때까지는 한산한 시간인 것이다. ≪황석영, 어둠의 자식들≫ 밥을 국에 말다 . 봉춘네는 뜨거운 숭늉에 밥을 말아서 한 대접하고 김치보시기를 내밀었다. ≪박경리, 토지≫ 더 보기 다중 매체 Previous Next 어원 · ＜다＜구방＞ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 2 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "111115",
+              "display_headword": "말다",
+              "written_headword": "말다"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=111261",
+              "content_sha256": "600897f69706a3355c636429b7dd42216d969b5868b1827db0f11f416dac4551",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 말다 4 (末茶 ) 원어 末 끝 말 부수 木/총획 5 茶 차 다 차 차 부수 艸/총획 10 한자 발음 [말따 ] 편집 이력 「명사」 차나무의 애순을 말려 가루로 만든 차. = 가루차 . 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 4 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "111261",
+              "display_headword": "말다",
+              "written_headword": "말다"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=420109",
+              "content_sha256": "7a50648e730146fd1437fa0441eca404d428d49889f1459d8461b7fffcd00618",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 말다 1 발음 [말다 ] 활용 말아[마라 ], 마니[마니 ], 마오[마오] 편집 이력 「동사」 「1」 【…을】 넓적한 물건을 돌돌 감아 원통형으로 겹치게 하다. 멍석을 말다 . 침구를 말아 구석에 밀어 놓다. 「2」 【…을 …에】【…을 …으로】 종이나 김 따위의 얇고 넓적한 물건에 내용물을 넣고 돌돌 감아 싸다. 돈뭉치를 신문지에 말다 . 웅보가 죽은 서천이의 시체를 거적에 말아 안고 유달산으로 올라가고 있는데 어느 틈엔가 염주근이 삽과 괭이를 들고 따라왔다. ≪문순태, 타오르는 강≫ 옆에 섰던 두원이가 종이에 담배를 말아 침을 묻히며 돌아보았다. ≪하근찬, 야호≫ 종세는 골목길에 서서 훔쳐 가지고 온 엽연초를 종이로 말아 피웠다. ≪최인호, 지구인≫ 더 보기 다중 매체 말다 Previous Next 어원 · ＜다＜월석＞ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 1 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "420109",
+              "display_headword": "말다",
+              "written_headword": "말다"
+            },
+            {
+              "primary_url": "https://stdict.korean.go.kr/search/searchView.do?word_no=426667",
+              "content_sha256": "e6516d7a11fef145372159fa1fac70dde529046db67fe56f13965ce9e7bda560",
+              "text": "사전 내려받기 목록으로 보기 내용으로 보기 말다 3 발음 [말ː다 ] 활용 말아[마라 ], 마니[마ː니 ], 마오[마ː오 ] 편집 이력 [Ⅰ] 「동사」 「1」 【…을】 어떤 일이나 행동을 하지 않거나 그만두다. 저만 믿고 걱정 마세요 . 내 염려는 말고 나가세요. ≪송기숙, 암태도≫ 「2」 ((‘-거나 말거나’, ‘-거니 말거니’, ‘-으나 마나’, ‘-든지 말든지’, ‘-을까 말까’ 따위와 같은 구성으로 쓰여)) 앞말이 나타내는 행동이나 상태를 부정하는 뜻을 나타내는 말. 쳐다보거나 말거나 수군거리거나 말거나 , 그녀의 태도는 당당하고 의젓했다. 강 교수는 우리를 향해 재삼 못을 박아 자신의 결의가 얼마나 굳은가를 강조했다. 그러거니 말거니 , 우리는 숫제 멍청한 척하고 눌러 버티었다. ≪윤흥길, 제식 훈련 변천 약사≫ 배 선생한테 묻고 싶은 게 한둘이 아니었지만 물으나 마나 대답이 뻔할 것 같아서 그는 입을 다물고 물러날 채비를 했다. ≪윤흥길, 묵시의 바다≫ 일어설까 말까 망설이는데 애가 잠을 깼다. ≪오유권, 대지의 학대≫ 앞 돛은 넓이가 손바닥만 해서 있으나 마나 하게 보였다. ≪송기숙, 녹두 장군≫ 그녀가 만기 같은 남정네를 만나는 것은 평생에 몇 번 있을까 말까 한 기대하기 어려운 확률이었다. ≪백한이, 비목≫ 더 보기 「3」 ((‘말고’ 꼴로 명사의 단독형과 함께 쓰여)) 앞의 대상을 제외하거나 부정하는 뜻을 나타내는 말. 너 말고 네 친구. 이것 말고 저것을 주시오. [Ⅱ] 「보조 동사」 「1」 ((동사 뒤에서 ‘-지 말다’ 구성으로 쓰여)) 앞말이 뜻하는 행동을 하지 못하게 함을 나타내는 말. 이곳에서 수영하지 마시오 . 밥을 남기지 마시기 바랍니다. 휴지를 함부로 버리지 마라 . 「2」 ((동사 ‘-고(야) 말다’ 구성으로 쓰여)) 앞말이 뜻하는 행동이 끝내 실현됨을 나타내는 말. 일을 이루어 낸 데 대하여 긍정적인 생각 또는 부정적이고 아쉬운 느낌이 있음을 나타낸다. 새로운 기계 발명에 성공하고야 말겠다 . 그와 나는 마주 보고 웃고 말았다 . 기차가 떠나 버리고야 말았다 . 최선을 다해서 좋은 성적을 얻고 말겠다 . 더 보기 한 걸음 더 · 명령형 어미 ‘-아’, ‘-아라’, ‘-아요’ 따위가 결합할 때는 어간 끝의 ‘ㄹ’이 탈락하기도 하고 탈락하지 않기도 한다. 어원 · 말다＜용가＞ 뜻풀이와 용례 등의 정보를 보완하시려면 우리말샘 에서 직접 편집에 참여해 주십시오. 동형어 선택 3 사전 내려받기 내려받을 파일 형식 및 사전 항목을 선택해 주세요. 내려받기 파일 형식 필수 항목 어휘, 품사, 뜻풀이, 용례 선택 항목 * 내려받기 버튼을 누르면 내려받기 창이 뜹니다. * 파일 내려받기 창이 뜨면 저장 버튼을 눌러 저장하십시오. 내려받기 취소",
+              "record_word_no": "426667",
+              "display_headword": "말다",
+              "written_headword": "말다"
+            }
+          ]
+        },
+        {
+          "proposal_records": []
+        }
+      ],
+      "primary_evidence_digest": "2070cc2d2fcb32a6bc89c602968ea8f4c253b602553b4cd7948b25a03731ab8c",
+      "occurrence_requests": {
+        "말다": [
+          {
+            "text": "말라며",
+            "meaning_en": "telling her not to say anything more"
+          }
+        ]
+      },
+      "occurrence_requests_digest": "31a664537eb75838b2a9e44ee10bef17f68d77e34e5e6869ec030c3be9d51836"
     }
   ]
 }
