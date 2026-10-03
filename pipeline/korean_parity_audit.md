@@ -780,3 +780,14 @@ submission and later tampering. The broad shared/Chinese/Japanese suite passed
 444 tests before the final fixed-boundary additions; the subsequent focused
 shared/Chinese coverage passed 43 tests. No new Korean chapter is claimed
 published by these infrastructure checks.
+
+File-submission follow-up on the same 231-character case: low passed structural
+and lexical-identity checks in 538.8 seconds; high passed in 516.9 seconds; medium
+returned an invalid construction span in 129.3 seconds. These are one-off smokes,
+not a success-rate estimate. Neither passing candidate is independently approved
+linguistic content: inspection still found incomplete-form stages and contextual
+meaning/tense issues that the language review must resolve. Measurements are
+retained in `pipeline/benchmarks/luna-effort-20261003.json`. No effort change is
+justified by this sample. The user accepts this latency if end-to-end generation
+is reliable; prioritize independently reviewed publication over further latency
+micro-optimization.
