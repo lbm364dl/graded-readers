@@ -4,7 +4,10 @@ from pathlib import Path
 from jsonschema import validate
 
 from pipeline import korean_contracts as contracts
-from pipeline.annotation_review_guidance import FORM_STAGE_EVIDENCE_GUIDANCE
+from pipeline.annotation_review_guidance import (
+    FORM_STAGE_COMPATIBLE_REVIEW_DIGESTS,
+    FORM_STAGE_EVIDENCE_GUIDANCE,
+)
 
 INSTRUCTIONS = FORM_STAGE_EVIDENCE_GUIDANCE + '\n' + '''Review only the supplied Korean annotation chunk independently.
 Read chapter_text and the source plan for surrounding narrative context, but report
@@ -99,8 +102,10 @@ def verify_review(run_dir, evidence, *, annotation, text, chapter_text, source_s
         raise ValueError('Korean chunk independent review is stale, rejected or mismatched')
     if any(inputs['context'].get(k) != v for k, v in (expected_context or {}).items()):
         raise ValueError('Korean chunk review planning context changed')
+    accepted_form_guidance_digests = (FORM_STAGE_COMPATIBLE_REVIEW_DIGESTS |
+                                       {_form_guidance_digest()})
     if (_has_form_steps(annotation)
-            and evidence.get('form_review_guidance_digest') != _form_guidance_digest()
+            and evidence.get('form_review_guidance_digest') not in accepted_form_guidance_digests
             and not allow_stale_form_guidance):
         raise StaleFormReviewGuidanceError(
             'Korean form-chain review predates the current complete-stage guidance')

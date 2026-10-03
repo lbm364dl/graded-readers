@@ -9,3 +9,11 @@ FORM_STAGE_COMPLETENESS_GUIDANCE = """Check that every displayed intermediate st
 Judge the scope of each meaning field. A complete predicate stage may use a complete valency-frame gloss such as “regards [X] as [Y]”; do not require the whole sentence's subject, object, and complement to be repeated in every stage meaning. Keep a modifier's own prospective or attributive contribution distinct from the meaning of a larger construction formed with its dependent noun and predicate; do not assign the whole construction's modality to the modifier alone. When passive, result-state, completion, or English past-versus-past-perfect readings are at issue, cite the linked lesson and source timeline that make the submitted meaning incompatible. Do not reject a defensible translation merely because another natural English rendering is also possible. Contrast: “be raised” can describe a passive citation form while “raised” describes a completed modifier; a bare prefinal stem still remains incomplete even when its English gloss looks plausible. Do not turn these checks into mandatory contextual paraphrases or optional-stage requirements."""
 
 FORM_STAGE_EVIDENCE_GUIDANCE += "\n\n" + FORM_STAGE_COMPLETENESS_GUIDANCE
+
+# This exact earlier digest already included the complete-stage / prefinal-stem
+# criteria. It predates only the later clarification about meaning scope. Keep
+# compatibility explicit and narrow so approved reviews need not be repeated
+# for that clarification; pre-completeness guidance remains stale.
+FORM_STAGE_COMPATIBLE_REVIEW_DIGESTS = frozenset({
+    '4f0ac6c6d35d8f450482f608436a9fa57cab7822c0ebf96758f56fe5f9e96a3d',
+})

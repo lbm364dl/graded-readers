@@ -131,6 +131,46 @@ def test_form_chain_review_proof_tracks_current_completeness_guidance_and_can_on
             text='갔다', chapter_text='갔다', source_start=0, allow_stale_form_guidance=True)
 
 
+def test_prior_complete_form_guidance_is_compatible_but_other_or_changed_proofs_are_not(tmp_path):
+    from pipeline.annotation_review_guidance import FORM_STAGE_COMPATIBLE_REVIEW_DIGESTS
+    from pipeline.korean_chunk_reviews import StaleFormReviewGuidanceError
+
+    annotation = {'segments': [{'text': '갔다', 'form_steps': [
+        {'form': '갔다', 'reading': '가-+-았-+-다', 'label': 'past',
+         'meaning_en': 'went', 'grammar_entry_ids': ['past-ass-eoss']}]}]}
+    context = {'chapter_text': '갔다', 'source_start': 0}
+    args, _, evidence = run_review(tmp_path, annotation=annotation, text='갔다', context=context)
+    assert len(FORM_STAGE_COMPATIBLE_REVIEW_DIGESTS) == 1
+    prior_complete_digest = next(iter(FORM_STAGE_COMPATIBLE_REVIEW_DIGESTS))
+
+    # The accepted prior digest had the same complete-form/stem rule. All exact
+    # reviewed-content and workspace bindings still apply.
+    compatible = {**evidence, 'form_review_guidance_digest': prior_complete_digest}
+    assert verify(tmp_path, args, compatible)['approved']
+    with pytest.raises(ValueError, match='mismatched'):
+        verify(tmp_path, {**args, 'text': '가다'}, compatible)
+
+    # A pre-completeness / missing / arbitrary digest never enters the narrow
+    # compatibility window and cannot be used to retain an approval.
+    for stale_digest in ('0' * 64, None):
+        stale = dict(evidence)
+        if stale_digest is None:
+            stale.pop('form_review_guidance_digest')
+        else:
+            stale['form_review_guidance_digest'] = stale_digest
+        with pytest.raises(StaleFormReviewGuidanceError):
+            verify(tmp_path, args, stale)
+
+    rejected_runner = Runner(tmp_path, {'approved': False, 'issues': ['Incomplete form stage'],
+                                        'prose_revision_reason_en': ''})
+    _, _, rejected_evidence = run_review(tmp_path, rejected_runner, annotation=annotation,
+        text='갔다', context=context)
+    rejected_compatible = {**rejected_evidence,
+                           'form_review_guidance_digest': prior_complete_digest}
+    with pytest.raises(ValueError, match='stale, rejected or mismatched'):
+        verify(tmp_path, args, rejected_compatible)
+
+
 def test_rejected_local_review_cannot_approve_publication(tmp_path):
     runner = Runner(tmp_path, {'approved': False, 'issues': ['Wrong tense at segment 0'],
                                'prose_revision_reason_en': ''})
