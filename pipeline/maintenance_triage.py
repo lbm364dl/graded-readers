@@ -9,6 +9,7 @@ from pathlib import Path
 import re
 
 from jsonschema import validate
+from jsonschema.exceptions import ValidationError
 
 from pipeline.agent_harness import CodexRunner
 
@@ -76,7 +77,7 @@ def check_proposal(value, cluster):
     if not finding['diagnosis'].strip() or not finding['evidence_paths']:
         raise ValueError('Maintenance diagnosis requires inspectable evidence')
     artifacts = {str(Path(row['artifact_path']).resolve()) for row in cluster['evidence']}
-    cited = {str((ROOT / path).resolve()) for path in finding['evidence_paths']}
+    cited = {_incident_artifact_identity(path) for path in finding['evidence_paths']}
     if not artifacts.intersection(cited):
         raise ValueError('Maintenance diagnosis must cite an actual incident artifact')
     if finding['status'] == 'proposed_fix' and (
@@ -93,6 +94,19 @@ def check_proposal(value, cluster):
         if not finding['verification'].strip() or not code or not tests:
             raise ValueError('An already-addressed hypothesis needs current code, test evidence and verification')
     return finding
+
+
+def _incident_artifact_identity(path):
+    """Resolve a citation to its exact artifact, allowing only a line suffix."""
+    normalized = re.sub(r':\d+(?:-\d+)?$', '', str(path))
+    supplied = Path(normalized)
+    return str((supplied if supplied.is_absolute() else ROOT / supplied).resolve())
+
+
+def _evidence_threshold(previous):
+    # A failed repair is held until evidence doubles from that failed attempt;
+    # otherwise every polling cycle would rerun an identical cached failure.
+    return previous.get('attempted_distinct_jobs', previous['distinct_jobs'])
 
 
 async def run(report_path, output, *, limit=3, runner=None):
@@ -112,24 +126,65 @@ async def run(report_path, output, *, limit=3, runner=None):
         # Diagnose a symptom once, then revisit only after evidence doubles.
         # The original exact evidence stays in its content-addressed job.
         previous = state['clusters'].get(cluster['id'])
-        if previous and cluster['distinct_jobs'] < 2 * previous['distinct_jobs']:
+        if previous and cluster['distinct_jobs'] < 2 * _evidence_threshold(previous):
             continue
         if handled >= limit:
             break
-        inputs = {'repository_root': str(ROOT), 'run_dirs': report['run_dirs'], 'cluster': cluster,
-                  'previous_diagnosis': previous.get('finding') if previous else None}
-        job = 'maintenance-triage-' + fingerprint({'policy': POLICY, 'inputs': inputs})
-        value = await runner.call(job, POLICY + '\nINPUT:\n' + json.dumps(inputs, ensure_ascii=False),
-                                  schema_path, 'low', tool_profile='workspace')
-        finding = check_proposal(value, cluster)
-        record = {'job': job, 'distinct_jobs': cluster['distinct_jobs'], 'finding': finding,
-                  'input_digest': fingerprint(inputs), 'output_digest': fingerprint(value)}
+        base_inputs = {'repository_root': str(ROOT), 'run_dirs': report['run_dirs'], 'cluster': cluster,
+                       'previous_diagnosis': previous.get('finding') if previous else None}
+        rejected = list(previous.get('rejected_attempts', [])) if previous else []
+        feedback = None
+        accepted = None
+        final_job = None
+        final_inputs = None
+        final_value = None
+        # One bounded repair attempt. Include the exact local validation error
+        # in the new content-addressed job so CodexRunner cannot replay the
+        # identical invalid result from cache.
+        for attempt in range(2):
+            inputs = dict(base_inputs)
+            if feedback is not None:
+                inputs['validation_feedback'] = feedback
+            job = 'maintenance-triage-' + fingerprint({'policy': POLICY, 'inputs': inputs})
+            value = await runner.call(job, POLICY + '\nINPUT:\n' + json.dumps(inputs, ensure_ascii=False),
+                                      schema_path, 'low', tool_profile='workspace')
+            try:
+                accepted = check_proposal(value, cluster)
+            except (ValueError, ValidationError) as error:
+                feedback = str(error)
+                rejected.append({'job': job, 'distinct_jobs': cluster['distinct_jobs'],
+                                 'finding': value.get('findings', []) if isinstance(value, dict) else None,
+                                 'validation_error': feedback, 'input_digest': fingerprint(inputs),
+                                 'output_digest': fingerprint(value)})
+                final_job, final_inputs, final_value = job, inputs, value
+                continue
+            final_job, final_inputs, final_value = job, inputs, value
+            break
+        if accepted is None:
+            # Keep rejected model output inspectable, but outside `finding` so
+            # GitHub and dashboard consumers cannot count it as a diagnosis.
+            record = dict(previous or {})
+            attempt_record = {'job': final_job, 'distinct_jobs': cluster['distinct_jobs'],
+                              'input_digest': fingerprint(final_inputs),
+                              'output_digest': fingerprint(final_value)}
+            if 'finding' not in record:
+                record.update(attempt_record)
+            record.update({'attempted_distinct_jobs': cluster['distinct_jobs'],
+                           'rejected_attempts': rejected,
+                           'last_validation_error': feedback,
+                           'last_rejected_attempt': attempt_record})
+        else:
+            record = {'job': final_job, 'distinct_jobs': cluster['distinct_jobs'],
+                      'attempted_distinct_jobs': cluster['distinct_jobs'], 'finding': accepted,
+                      'rejected_attempts': rejected,
+                      'input_digest': fingerprint(final_inputs), 'output_digest': fingerprint(final_value)}
+            findings.append(record)
         state['clusters'][cluster['id']] = record
         save(state_path, state)
-        findings.append(record)
         handled += 1
     summary = {'schema_version': 1, 'report': str(report_path), 'new_diagnoses': findings,
-               'known_clusters': len(state['clusters']), 'root_cause_status': 'unverified',
+               'known_clusters': sum('finding' in row for row in state['clusters'].values()),
+               'attempted_clusters': len(state['clusters']), 'root_cause_status': 'unverified',
                'implementation_status': 'proposals_require_verified_fixes'}
     save(output / 'summary.json', summary)
     return summary

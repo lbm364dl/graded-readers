@@ -39,6 +39,14 @@ it does not close an issue or approve content. The worker's no-mutation rule is
 an instruction, not an operating-system read-only sandbox. Tools remain enabled;
 this lane does not automatically apply or promote its proposed code changes.
 
+An invalid diagnosis receives one correction attempt with the exact local
+validation error. Rejected proposals and their artifact digests remain separate
+from accepted findings. If correction still fails, the cluster waits for doubled
+evidence while other clusters proceed; repeated polling must not replay one bad
+proposal forever. A failed refresh preserves the previous accepted finding and
+its original job/digests. A citation's line suffix is permitted only when its
+underlying file is the exact recorded incident artifact.
+
 GitHub synchronization requires an explicit repository. It publishes conservative
 counts and repository-relative artifact references, never raw transcripts,
 prompts or unverified model diagnoses. A stable cluster marker deduplicates open
