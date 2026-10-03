@@ -13,8 +13,18 @@ def test_shared_review_guidance_checks_stage_completeness_and_keeps_a_valid_cont
     assert "complete citation-form intermediate followed by an observed past connective can be valid" in FORM_STAGE_COMPLETENESS_GUIDANCE
     assert "a prefinal stem mislabeled as a complete past/honorific stage is not" in FORM_STAGE_COMPLETENESS_GUIDANCE
     assert "language-specific string heuristic" in FORM_STAGE_COMPLETENESS_GUIDANCE
+    assert "a bare prefinal stem still remains incomplete even when its English gloss looks plausible" in FORM_STAGE_COMPLETENESS_GUIDANCE
     assert FORM_STAGE_COMPLETENESS_GUIDANCE in FORM_STAGE_EVIDENCE_GUIDANCE
     assert FORM_STAGE_COMPLETENESS_GUIDANCE in KOREAN_CHUNK_REVIEW_INSTRUCTIONS
+
+
+def test_shared_review_guidance_respects_predicate_modifier_and_translation_scope():
+    assert "complete valency-frame gloss such as “regards [X] as [Y]”" in FORM_STAGE_COMPLETENESS_GUIDANCE
+    assert "do not require the whole sentence's subject, object, and complement" in FORM_STAGE_COMPLETENESS_GUIDANCE
+    assert "Keep a modifier's own prospective or attributive contribution distinct" in FORM_STAGE_COMPLETENESS_GUIDANCE
+    assert "do not assign the whole construction's modality to the modifier alone" in FORM_STAGE_COMPLETENESS_GUIDANCE
+    assert "cite the linked lesson and source timeline" in FORM_STAGE_COMPLETENESS_GUIDANCE
+    assert "another natural English rendering is also possible" in FORM_STAGE_COMPLETENESS_GUIDANCE
 
 
 def test_chinese_and_japanese_review_callers_include_the_shared_guidance():
