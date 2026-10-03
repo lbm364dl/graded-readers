@@ -2570,8 +2570,9 @@ async def test_codex_runner_stdin_drain_timeout_uses_process_retry(monkeypatch, 
 
 
 @pytest.mark.asyncio
+@pytest.mark.parametrize('legacy_tools', [False, True])
 async def test_codex_runner_recovers_schema_valid_result_when_wrapper_times_out(
-    monkeypatch, tmp_path
+    monkeypatch, tmp_path, legacy_tools
 ):
     schema = tmp_path / "schema.json"
     schema.write_text(
@@ -2599,10 +2600,14 @@ async def test_codex_runner_recovers_schema_valid_result_when_wrapper_times_out(
     async def fake_exec(*command, **kwargs):
         launches.append(command)
         output = Path(command[command.index("-o") + 1])
-        output.write_text('{"ok":true}')
+        message_text = '{"ok":true}'
+        if not legacy_tools:
+            Path(command[command.index('-C') + 1], 'candidate.json').write_text(message_text)
+            message_text = '{"candidate_path":"candidate.json"}'
+        output.write_text(message_text)
         message = {
             "type": "item.completed",
-            "item": {"type": "agent_message", "text": '{"ok":true}'},
+            "item": {"type": "agent_message", "text": message_text},
         }
         kwargs["stdout"].write((json.dumps(message) + "\n").encode())
         return FakeProcess()
@@ -2623,7 +2628,7 @@ async def test_codex_runner_recovers_schema_valid_result_when_wrapper_times_out(
         "pipeline.agent_harness.os.killpg",
         lambda pid, sig: killed.append((pid, sig)),
     )
-    runner = CodexRunner(tmp_path, "model", asyncio.Semaphore(1), 10, legacy_tool_restrictions=True)
+    runner = CodexRunner(tmp_path, "model", asyncio.Semaphore(1), 10, legacy_tool_restrictions=legacy_tools)
     assert await runner.call("job", "hello", schema, "low") == {"ok": True}
     assert len(launches) == 1
     assert killed == [(86420, __import__("signal").SIGKILL)]
