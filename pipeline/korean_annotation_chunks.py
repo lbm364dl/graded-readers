@@ -78,7 +78,7 @@ def materialize_spans(value, source_text):
         starts, ends = {a for a, _ in boundaries}, {b for _, b in boundaries}
         for index, segment in enumerate(result['segments']):
             for field, surface in [('grammar_links', 'display_form'), ('expression_links', 'form')]:
-                for link in segment[field]:
+                for link_index, link in enumerate(segment[field]):
                     start, end = link.pop('source_start'), link.pop('source_end')
                     if field == 'grammar_links' and (start, end) == (-1, -1):
                         link[surface] = ''
@@ -86,8 +86,17 @@ def materialize_spans(value, source_text):
                     anchor_start, anchor_end = boundaries[index]
                     if (start not in starts or end not in ends or end <= start
                             or not start <= anchor_start < anchor_end <= end):
-                        raise ValueError('Korean link source range must align with complete tap boundaries '
-                                         'and contain its attached word; use (-1, -1) only for grammar form steps')
+                        nearby = [{'segment_index': i, 'source_start': a, 'source_end': b,
+                                   'text': source_text[a:b]}
+                                  for i, (a, b) in enumerate(boundaries)
+                                  if abs(i - index) <= 2 or a <= start < b or a < end <= b]
+                        raise ValueError(f'Korean {field}[{link_index}] at segment {index} '
+                                         f'({segment["text"]!r}), entry {link.get("entry_id")!r}, '
+                                         f'source range [{start}:{end}] must align with complete tap boundaries '
+                                         f'and contain its attached word [{anchor_start}:{anchor_end}]; '
+                                         'use (-1, -1) only for grammar form steps. '
+                                         f'Indexed source boundaries: {nearby}. Correct this link from the '
+                                         'source; do not change unrelated taps or guess a replacement range.')
                     link[surface] = source_text[start:end]
     result['format'] = FORMAT
     validate_worker(result)

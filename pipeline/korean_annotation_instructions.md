@@ -12,3 +12,6 @@ aligned with full tap boundaries and containing their attached word. Never copy
 or paraphrase these surfaces. Grammar links already explained by a form step
 use (-1, -1) and an empty display meaning; other construction and expression
 links need an explicit source range and its complete contextual meaning.
+When validation identifies a link and indexed source boundaries, repair that
+specific occurrence using the source and rerun validation. Preserve unrelated
+tap boundaries and links; an error is not permission to guess a new range.

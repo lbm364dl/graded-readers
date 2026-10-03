@@ -812,3 +812,19 @@ retries. Missing submitted files now give actionable repair feedback. Regression
 coverage includes a source-aligned, schema-valid Korean proposal with a wrong
 headword/ID field, contrasted with the valid identity; the full repair/reuse
 integration remains passing (16 focused cases).
+
+### 2026-10-03: actionable construction-range diagnostics
+
+Live full-check annotation workers exposed a vague v4 link-boundary error: it
+reported neither the offending link nor its attachment. The Korean decoder now
+reports the link array/index, entry ID, source range, attached segment/range and
+nearby indexed boundaries. Instructions require repairing that occurrence while
+preserving unrelated taps. Regression coverage checks invalid mid-tap, misplaced
+and sentinel ranges; the contrasting valid complete-form/form-step roundtrip
+still preserves the proposal exactly (35 decoder tests passed). This changes
+error guidance only, not acceptance criteria or source text. Chinese contract
+errors already identify the overlay surface and offending TEXT slice; Japanese
+contract errors identify the overlay surface, and reconstruction errors include
+the mismatch offset. Neither uses the Korean v4 attached-link representation.
+Current workers continue running; local validator subprocesses load this improved
+diagnostic without discarding completed proposals or restarting the runs.

@@ -84,8 +84,13 @@ def test_source_link_ranges_reject_mid_tap_elsewhere_and_invalid_sentinels(range
     value = source_span_links(raw)
     link = next(link for segment in value['segments'] for link in segment['grammar_links'])
     link.update(source_start=range_[0], source_end=range_[1])
-    with pytest.raises(ValueError, match='complete tap boundaries'):
+    with pytest.raises(ValueError, match='complete tap boundaries') as error:
         chunks.decode(value, source_text=source)
+    message = str(error.value)
+    assert 'grammar_links[0] at segment' in message
+    assert f'source range [{range_[0]}:{range_[1]}]' in message
+    assert 'Indexed source boundaries:' in message
+    assert 'source_start' in message and 'source_end' in message
 
 
 def test_source_spans_preserve_full_annotation_links_and_proposal():
