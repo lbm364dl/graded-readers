@@ -82,6 +82,215 @@ def test_submission_uses_exact_validated_file_and_detects_later_changes(tmp_path
         submit(workspace, {'candidate_path':'missing.json'})
 
 
+def test_annotation_patch_submission_applies_and_validates_derived_candidate(tmp_path):
+    from pipeline.annotation_edits import candidate_digest
+    from pipeline.annotation_repairs import PATCH_SCHEMA
+    from pipeline.worker_workspace import CandidateSubmissionError, submit
+
+    base = {'segments': [
+        {'text': '她', 'type': 'word', 'pinyin': 'tā', 'meaning_en': 'she'},
+        {'text': '走', 'type': 'word', 'pinyin': 'zǒu', 'meaning_en': 'walk'},
+    ], 'grammar_overlays': []}
+    allowed = [{'op': 'set_field', 'path': '/segments/1/meaning_en'},
+               {'op': 'set_field', 'path': '/segments/1/text'}]
+    patch_context = {'chunk_text': '她走', 'language': 'zh', 'annotation_patch_validation': {
+        'base_candidate': base, 'representation': 'chinese-annotation',
+        'allowed_targets': allowed, 'language': 'zh', 'issues': [], 'chunk_text': '她走'}}
+    workspace = tmp_path / 'patch-workspace'
+    build(workspace, 'Apply this semantic patch.', PATCH_SCHEMA, context=patch_context)
+    validation_context = json.loads((workspace / 'validation-context.json').read_text())
+    assert validation_context[0]['annotation_patch_validation']['base_candidate'] == base
+
+    patch = {'base_digest': candidate_digest(base), 'edits': [
+        {'op': 'set_field', 'path': '/segments/1/meaning_en', 'value': 'go'}]}
+    (workspace / 'candidate.json').write_text(json.dumps(patch), encoding='utf-8')
+    returned, _ = submit(workspace, {'candidate_path': 'candidate.json'})
+    assert returned == patch
+    assert 'approved' not in returned  # Local derived validation does not replace independent review.
+
+    boundary_patch = {'base_digest': candidate_digest(base), 'edits': [
+        {'op': 'set_field', 'path': '/segments/1/text', 'value': '行'}]}
+    (workspace / 'candidate.json').write_text(json.dumps(boundary_patch), encoding='utf-8')
+    with pytest.raises(CandidateSubmissionError, match='protected source surface'):
+        submit(workspace, {'candidate_path': 'candidate.json'})
+
+
+def _word_schema():
+    return {'type': 'object', 'required': ['segments'], 'properties': {'segments': {
+        'type': 'array', 'items': {'anyOf': [
+            {'type': 'object', 'properties': {
+                'type': {'enum': ['word']}, 'lemma': {'type': 'string'},
+                'is_inflected': {'type': 'boolean'}, 'expression_links': {'type': 'array'}},
+             'required': ['type', 'lemma', 'is_inflected', 'expression_links']},
+            {'type': 'object', 'properties': {
+                'type': {'enum': ['punctuation']}, 'lemma': {'enum': ['']}},
+             'required': ['type', 'lemma']},
+        ]}}}}
+
+
+def _word_candidate(*, complete):
+    segment = {'type': 'word', 'lemma': '안팎'}
+    if complete:
+        segment.update(is_inflected=False, expression_links=[])
+    return {'segments': [segment]}
+
+
+def _fake_workspace_codex(monkeypatch, outcomes):
+    import asyncio
+    from pathlib import Path
+
+    launches = []
+
+    class FakeStdin:
+        def write(self, value):
+            launches[-1]['prompt'] = value.decode('utf-8')
+        async def drain(self): pass
+        def close(self): pass
+
+    class FakeProcess:
+        pid = 123456
+        returncode = 0
+        def __init__(self): self.stdin = FakeStdin()
+        async def wait(self): return 0
+
+    async def fake_exec(*command, **kwargs):
+        workspace = Path(command[command.index('-C') + 1])
+        attempt = len(launches)
+        launches.append({'workspace': workspace})
+        if outcomes[attempt] is not None:
+            if isinstance(outcomes[attempt], bytes):
+                (workspace / 'candidate.json').write_bytes(outcomes[attempt])
+            else:
+                (workspace / 'candidate.json').write_text(json.dumps(outcomes[attempt]), encoding='utf-8')
+        Path(command[command.index('-o') + 1]).write_text(
+            '{"candidate_path":"candidate.json"}', encoding='utf-8')
+        return FakeProcess()
+
+    monkeypatch.setattr(asyncio, 'create_subprocess_exec', fake_exec)
+    return launches
+
+
+@pytest.mark.asyncio
+async def test_codex_runner_repairs_one_schema_rejected_candidate_and_caches_final_artifact(tmp_path, monkeypatch):
+    import asyncio
+    from pipeline.agent_harness import CodexRunner
+
+    invalid, corrected = _word_candidate(complete=False), _word_candidate(complete=True)
+    launches = _fake_workspace_codex(monkeypatch, [invalid, corrected])
+    schema = tmp_path / 'schema.json'
+    schema.write_text(json.dumps(_word_schema()), encoding='utf-8')
+    runner = CodexRunner(tmp_path, 'gpt-6-luna', asyncio.Semaphore(1))
+
+    assert await runner.call('candidate', 'Annotate the source.', schema, 'low') == corrected
+    assert len(launches) == 2
+    retry_workspace = launches[1]['workspace']
+    retry_task = (retry_workspace / 'TASK.txt').read_text(encoding='utf-8')
+    retry_error = json.loads((retry_workspace / 'submission-rejection.json').read_text())
+    assert "'is_inflected' is a required property" in retry_error['diagnostic']
+    assert "'expression_links' is a required property" in retry_error['diagnostic']
+    assert "lemma' is not one of ['']" not in retry_error['diagnostic']
+    assert 'independent review and publication gates remain required' in retry_task
+    assert json.loads((retry_workspace / 'rejected-candidate-attempt-01.json').read_text()) == invalid
+
+    job = tmp_path / 'agents/candidate'
+    assert json.loads((job / 'workspace/rejected-candidate-attempt-01.json').read_text()) == invalid
+    meta = json.loads((job / 'meta.json').read_text())
+    assert meta['return_code'] == 0 and meta['recovered_after_submission_rejection'] is True
+    assert meta['submission_repair']['status'] == 'repaired'
+    assert json.loads((job / 'result.json').read_text()) == corrected
+    # The original fingerprint now replays the final exact artifact without another launch.
+    assert await runner.call('candidate', 'Annotate the source.', schema, 'low') == corrected
+    assert len(launches) == 2
+
+
+@pytest.mark.asyncio
+async def test_codex_runner_accepts_valid_first_candidate_without_repair(tmp_path, monkeypatch):
+    import asyncio
+    from pipeline.agent_harness import CodexRunner
+
+    valid = _word_candidate(complete=True)
+    launches = _fake_workspace_codex(monkeypatch, [valid])
+    schema = tmp_path / 'schema.json'
+    schema.write_text(json.dumps(_word_schema()), encoding='utf-8')
+    runner = CodexRunner(tmp_path, 'gpt-6-luna', asyncio.Semaphore(1))
+
+    assert await runner.call('valid', 'Annotate the source.', schema, 'low') == valid
+    assert len(launches) == 1
+    meta = json.loads((tmp_path / 'agents/valid/meta.json').read_text())
+    assert meta['return_code'] == 0
+    assert 'submission_repair' not in meta
+
+
+@pytest.mark.asyncio
+async def test_codex_runner_repairs_missing_candidate_file_once(tmp_path, monkeypatch):
+    import asyncio
+    from pipeline.agent_harness import CodexRunner
+
+    valid = _word_candidate(complete=True)
+    launches = _fake_workspace_codex(monkeypatch, [None, valid])
+    schema = tmp_path / 'schema.json'
+    schema.write_text(json.dumps(_word_schema()), encoding='utf-8')
+    runner = CodexRunner(tmp_path, 'gpt-6-luna', asyncio.Semaphore(1))
+
+    assert await runner.call('missing-file', 'Annotate the source.', schema, 'low') == valid
+    assert len(launches) == 2
+    retry = launches[1]['workspace']
+    record = json.loads((retry / 'submission-rejection.json').read_text())
+    assert record['category'] == 'missing_candidate'
+    assert record['artifact_path'] == 'candidate.json'
+    assert 'does not exist' in record['diagnostic']
+    assert not (retry / 'rejected-candidate-attempt-01.json').exists()
+
+
+@pytest.mark.asyncio
+async def test_codex_runner_preserves_malformed_candidate_bytes_for_one_repair(tmp_path, monkeypatch):
+    import asyncio
+    from pipeline.agent_harness import CodexRunner
+
+    malformed = b'{"segments": [\xff}'
+    valid = _word_candidate(complete=True)
+    launches = _fake_workspace_codex(monkeypatch, [malformed, valid])
+    schema = tmp_path / 'schema.json'
+    schema.write_text(json.dumps(_word_schema()), encoding='utf-8')
+    runner = CodexRunner(tmp_path, 'gpt-6-luna', asyncio.Semaphore(1))
+
+    assert await runner.call('malformed-file', 'Annotate the source.', schema, 'low') == valid
+    assert len(launches) == 2
+    job = tmp_path / 'agents/malformed-file'
+    retry = launches[1]['workspace']
+    assert (job / 'workspace/rejected-candidate-attempt-01.json').read_bytes() == malformed
+    assert (retry / 'rejected-candidate-attempt-01.json').read_bytes() == malformed
+    record = json.loads((retry / 'submission-rejection.json').read_text())
+    assert record['category'] == 'unreadable_candidate'
+    assert record['artifact_sha256']
+    assert 'Could not parse submitted candidate' in record['diagnostic']
+
+
+@pytest.mark.asyncio
+async def test_codex_runner_keeps_persistent_schema_rejection_after_one_repair(tmp_path, monkeypatch):
+    import asyncio
+    from pipeline.agent_harness import CodexRunner
+    from pipeline.worker_workspace import CandidateSubmissionError
+
+    invalid = _word_candidate(complete=False)
+    launches = _fake_workspace_codex(monkeypatch, [invalid, invalid])
+    schema = tmp_path / 'schema.json'
+    schema.write_text(json.dumps(_word_schema()), encoding='utf-8')
+    runner = CodexRunner(tmp_path, 'gpt-6-luna', asyncio.Semaphore(1))
+
+    with pytest.raises(CandidateSubmissionError, match='bounded correction rejected'):
+        await runner.call('persistent', 'Annotate the source.', schema, 'low')
+    assert len(launches) == 2
+    job = tmp_path / 'agents/persistent'
+    meta = json.loads((job / 'meta.json').read_text())
+    assert meta['return_code'] == 1
+    recovery = json.loads((job / 'submission-recovery.json').read_text())
+    assert recovery['status'] == 'rejected'
+    assert 'finding' not in meta
+    retry_workspace = launches[1]['workspace']
+    assert json.loads((retry_workspace / 'rejected-candidate-attempt-01.json').read_text()) == invalid
+
+
 @pytest.mark.asyncio
 async def test_enabling_tools_reuses_exact_legacy_offline_cache(tmp_path, monkeypatch):
     import asyncio

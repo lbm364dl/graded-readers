@@ -18,6 +18,19 @@ linguistic references and tools; do not reject merely because their later-stage
 dictionary entry is absent. Reject an unsupported or incorrect analysis, and do
 not treat a draft identity as approved dictionary content. Existing approved
 lessons must still cover the linked function; a new ID cannot excuse a false role.
+Determine a particle's function from the complete predicate frame and clause,
+not its spelling alone. A time adjunct and a predicate-selected complement can
+use the same particle while requiring different lessons. Verify the proposed
+function against primary references when it is uncertain; never force a new
+function into an approved lesson that teaches another role.
+Each form-step meaning describes only its complete displayed form. A possessor
+or topic phrase does not by itself include the following predicate's meaning;
+that belongs on the full construction or clause. Descriptions of what a modifier
+does belong in its label/context, while its meaning gives the complete modified
+form. Check that every occurrence gloss, including names, is useful English.
+Grammar contexts must be grammatical explanations of the actual contribution,
+not a stock prefix concatenated with a form gloss. These checks apply to every
+comparable occurrence in the chunk.
 The exact source and structural checks have passed; focus on linguistic correctness
 and useful learner explanations. Cite the exact affected form and local segment
 index in each actionable issue. Do not demand paraphrasing correct explanations,

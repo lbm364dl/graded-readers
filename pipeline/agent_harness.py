@@ -584,6 +584,75 @@ class CodexRunner:
 
     @staticmethod
     def _check_tool_profile(job_dir: Path, profile: str | None, meta: dict) -> None:
+        if meta.get('kind') == 'annotation_patch_assembly':
+            if meta.get('return_code') != 0 or meta.get('status') != 'applied':
+                raise ValueError('Only an applied annotation patch assembly can be reused')
+
+            raw_job_dir = Path(job_dir)
+            if '..' in raw_job_dir.parts:
+                raise ValueError('Annotation patch assembly path contains traversal')
+            if not raw_job_dir.is_absolute():
+                raw_job_dir = Path.cwd() / raw_job_dir
+            agent_root = next((parent for parent in raw_job_dir.parents
+                               if parent.name == 'agents'), None)
+            if agent_root is None:
+                raise ValueError('Annotation patch assembly is outside a run agents directory')
+            run_dir = agent_root.parent
+            relative_assembly = raw_job_dir.relative_to(agent_root)
+            if not relative_assembly.parts or any(part in {'', '.', '..'} for part in relative_assembly.parts):
+                raise ValueError('Invalid annotation patch assembly path')
+            agent_root_real = agent_root.resolve()
+
+            def checked_path(relative: str | Path) -> Path:
+                if not isinstance(relative, (str, Path)):
+                    raise ValueError(f'Invalid annotation patch evidence path: {relative!r}')
+                relative_path = Path(relative)
+                parts = relative_path.parts if isinstance(relative, Path) else relative.split('/')
+                if (not parts or relative_path.is_absolute()
+                        or any(part in {'', '.', '..'} for part in parts)):
+                    raise ValueError(f'Invalid annotation patch evidence path: {relative!r}')
+                target = agent_root.joinpath(*parts)
+                current = agent_root
+                if current.is_symlink():
+                    raise ValueError('Annotation patch evidence agents root is a symlink')
+                for part in parts:
+                    current = current / part
+                    if current.is_symlink():
+                        raise ValueError(f'Annotation patch evidence uses a symlink: {current}')
+                resolved = target.resolve(strict=True)
+                if not resolved.is_relative_to(agent_root_real):
+                    raise ValueError('Annotation patch evidence path escaped the run agents directory')
+                return target
+
+            assembly_dir = checked_path(relative_assembly)
+            actual_meta_path = checked_path(relative_assembly / 'meta.json')
+            actual_result_path = checked_path(relative_assembly / 'result.json')
+            actual_meta = json.loads(actual_meta_path.read_text(encoding='utf-8'))
+            if actual_meta != meta:
+                raise ValueError('Annotation patch assembly metadata changed after it was loaded')
+
+            for field in ('plan_job', 'patch_job'):
+                child_job = meta.get(field)
+                child_dir = checked_path(child_job)
+                child_meta_path = checked_path(Path(child_job) / 'meta.json')
+                checked_path(Path(child_job) / 'result.json')
+                child_meta = json.loads(child_meta_path.read_text(encoding='utf-8'))
+                if child_meta.get('return_code') != 0 or child_meta.get('tool_profile') != 'workspace':
+                    raise ValueError(f'Annotation patch child is not a completed workspace job: {child_job}')
+                checked_path(Path(child_job) / 'workspace')
+                CodexRunner._check_tool_profile(child_dir, 'workspace', child_meta)
+
+            from pipeline.annotation_repairs import replay_annotation_repair
+            from pipeline.annotation_edits import candidate_digest
+            replayed = replay_annotation_repair(
+                run_dir, relative_assembly.as_posix(), validate_candidate=lambda _value: None,
+            )
+            stored = json.loads(actual_result_path.read_text(encoding='utf-8'))
+            if (replayed.get('status') != 'applied'
+                    or replayed.get('candidate') != stored
+                    or candidate_digest(stored) != meta.get('result_digest')):
+                raise ValueError('Annotation patch assembly failed exact evidence replay')
+            return
         if meta.get('tool_profile') == 'workspace':
             from pipeline.worker_workspace import verify, submit
             verify(job_dir / 'workspace', meta['workspace_digest'])
@@ -619,6 +688,98 @@ class CodexRunner:
         tool_profile: str | None = None,
         cache_only: bool = False,
         workspace_context: dict[str, Any] | None = None,
+    ) -> dict[str, Any]:
+        """Run one worker, with one bounded correction for rejected submissions."""
+        from pipeline.worker_workspace import CandidateSubmissionError
+
+        try:
+            return await self._call_once(job, prompt, schema, effort, refresh=refresh,
+                tool_profile=tool_profile, cache_only=cache_only,
+                workspace_context=workspace_context)
+        except CandidateSubmissionError as rejected:
+            effective_profile = tool_profile
+            if not self.legacy_tool_restrictions:
+                effective_profile = 'workspace'
+            if effective_profile != 'workspace':
+                raise
+            initial_rejection = rejected
+
+        record = initial_rejection.record()
+        rejected_bytes = initial_rejection.artifact_bytes
+        original_dir = self.run_dir / 'agents' / job
+        workspace = original_dir / 'workspace'
+        workspace.mkdir(parents=True, exist_ok=True)
+        if rejected_bytes is not None:
+            (workspace / 'rejected-candidate-attempt-01.json').write_bytes(rejected_bytes)
+        (workspace / 'submission-rejection.json').write_text(
+            json.dumps(record, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+
+        repair_identity = digest(job, json.dumps(record, ensure_ascii=False, sort_keys=True))[:16]
+        repair_job = f'{job}-submission-repair-{repair_identity}'
+        submission_repair = {'record': record, 'artifact_bytes': rejected_bytes}
+        try:
+            value = await self._call_once(repair_job, prompt, schema, effort,
+                refresh=refresh, tool_profile=tool_profile, cache_only=cache_only,
+                workspace_context=workspace_context, submission_repair=submission_repair)
+        except CandidateSubmissionError as repair_rejected:
+            recovery = {'status': 'rejected', 'job': repair_job,
+                        'initial_rejection': record,
+                        'repair_rejection': repair_rejected.record()}
+            (original_dir / 'submission-recovery.json').write_text(
+                json.dumps(recovery, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+            meta_path = original_dir / 'meta.json'
+            if meta_path.exists():
+                meta = json.loads(meta_path.read_text(encoding='utf-8'))
+                meta['submission_repair'] = recovery
+                meta_path.write_text(json.dumps(meta, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+            raise CandidateSubmissionError(
+                f'Initial worker submission rejected: {initial_rejection}; bounded correction rejected: {repair_rejected}',
+                artifact_path=repair_rejected.artifact_path,
+                artifact_bytes=repair_rejected.artifact_bytes,
+                category='bounded_repair_rejected') from repair_rejected
+
+        repair_dir = self.run_dir / 'agents' / repair_job
+        repair_workspace = repair_dir / 'workspace'
+        repair_meta = json.loads((repair_dir / 'meta.json').read_text(encoding='utf-8'))
+        source = (repair_workspace / repair_meta['artifact_path']).resolve()
+        if not source.is_relative_to(repair_workspace.resolve()):
+            raise ValueError('Repaired worker artifact escaped its workspace')
+        accepted_bytes = source.read_bytes()
+        # Keep the original job's inputs and fingerprint while promoting the
+        # exact repaired artifact into its untracked output slot. The rejected
+        # bytes remain preserved beside it for diagnosis.
+        accepted_path = workspace / 'candidate.json'
+        accepted_path.write_bytes(accepted_bytes)
+        result_path = original_dir / 'result.json'
+        result_path.write_text(json.dumps(value, ensure_ascii=False) + '\n', encoding='utf-8')
+        recovery = {'status': 'repaired', 'job': repair_job,
+                    'initial_rejection': record,
+                    'accepted_artifact': str(source.relative_to(self.run_dir)),
+                    'accepted_artifact_sha256': hashlib.sha256(accepted_bytes).hexdigest()}
+        (original_dir / 'submission-recovery.json').write_text(
+            json.dumps(recovery, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+        meta_path = original_dir / 'meta.json'
+        meta = json.loads(meta_path.read_text(encoding='utf-8'))
+        meta.update(return_code=0, artifact_path='candidate.json',
+                    artifact_digest=hashlib.sha256(accepted_bytes).hexdigest(),
+                    recovered_after_submission_rejection=True,
+                    submission_repair=recovery)
+        meta_path.write_text(json.dumps(meta, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+        self._check_tool_profile(original_dir, 'workspace', meta)
+        return value
+
+    async def _call_once(
+        self,
+        job: str,
+        prompt: str,
+        schema: Path,
+        effort: str,
+        *,
+        refresh: bool = False,
+        tool_profile: str | None = None,
+        cache_only: bool = False,
+        workspace_context: dict[str, Any] | None = None,
+        submission_repair: dict[str, Any] | None = None,
     ) -> dict[str, Any]:
         from pipeline.worker_workspace import VERSION
         effort = self.benchmark_effort or "low"
@@ -722,7 +883,8 @@ class CodexRunner:
                     # recoverable instead of being mass-unlinked.
                     if tool_profile == 'workspace':
                         from pipeline.worker_workspace import build
-                        prompt, workspace_digest = build(worker_cwd, original_prompt, json.loads(schema.read_text()), context=workspace_context)
+                        prompt, workspace_digest = build(worker_cwd, original_prompt, json.loads(schema.read_text()),
+                            context=workspace_context, submission_repair=submission_repair)
                         workspace_meta.update(tool_profile='workspace', workspace_digest=workspace_digest)
                     result_path.unlink(missing_ok=True)
                     worker_result_path.unlink(missing_ok=True)
@@ -2293,19 +2455,71 @@ GRAMMAR OVERLAYS (existing exact offset objects):
                     "verdict": "revise",
                     "issues": self.annotation_contract_issues(chunk, result),
                 }
-            attempts.append({"stage": "initial" if attempt == 0 else f"repair_{attempt:02d}",
-                             "annotation": result, "review": review})
+            attempt_record = {
+                "stage": "initial" if attempt == 0 else f"repair_{attempt:02d}",
+                "annotation": result, "review": review,
+            }
             if review["verdict"] == "pass":
+                attempts.append(attempt_record)
                 return {"segments": result["segments"],
                         "grammar_overlays": result["grammar_overlays"],
                         "attempts": attempts, "resolved": True}
             if attempt < self.args.max_annotation_repairs:
-                result = self.prepare_annotation_candidate(
-                    chunk, await self.annotation_candidate(
-                        index, chunk, stage=f"repair_{attempt + 1:02d}", prior=result,
-                        findings=review, effort=self.args.annotation_repair_effort,
+                if not getattr(self, "run_dir", None) or not review.get("issues"):
+                    semantic = None
+                else:
+                    from pipeline.annotation_repairs import repair_annotation
+
+                    schema = json.loads((SCHEMAS / "annotation.schema.json").read_text())
+
+                    def validate_semantic_candidate(candidate: dict[str, Any]) -> None:
+                        errors = list(Draft202012Validator(schema).iter_errors(candidate))
+                        if errors:
+                            raise ValueError(f"Chinese annotation patch violates its schema: {errors[0].message}")
+                        contract = self.annotation_contract_issues(chunk, candidate)
+                        if contract:
+                            raise ValueError(f"Chinese annotation patch failed local checks: {contract}")
+
+                    semantic = await repair_annotation(
+                        self,
+                        f"annotations/chunk_{index:04d}/semantic_repair_{attempt + 1:02d}",
+                        result,
+                        review["issues"],
+                        representation="chinese-annotation",
+                        language="zh",
+                        context={"chunk_text": chunk},
+                        validate_candidate=validate_semantic_candidate,
+                        refresh=self.args.refresh,
                     )
-                )
+                if semantic is not None:
+                    attempt_record["semantic_repair"] = {
+                        "status": semantic["status"], **semantic["evidence"],
+                    }
+                if semantic is not None and semantic["status"] == "applied":
+                    result = semantic["candidate"]
+                elif semantic is not None and semantic["status"] == "boundary_change_needed":
+                    # Source/tap changes stay on the pre-existing complete
+                    # candidate path. Constrained fixed-boundary corrections
+                    # remain in their independent lossless correction flow.
+                    result = self.prepare_annotation_candidate(
+                        chunk, await self.annotation_candidate(
+                            index, chunk, stage=f"repair_{attempt + 1:02d}", prior=result,
+                            findings=review, effort=self.args.annotation_repair_effort,
+                        )
+                    )
+                elif semantic is None:
+                    result = self.prepare_annotation_candidate(
+                        chunk, await self.annotation_candidate(
+                            index, chunk, stage=f"repair_{attempt + 1:02d}", prior=result,
+                            findings=review, effort=self.args.annotation_repair_effort,
+                        )
+                    )
+                else:
+                    raise ValueError(
+                        "Chinese semantic annotation patch was rejected: "
+                        f"{semantic.get('patch_error') or semantic.get('validation_error')}"
+                    )
+            attempts.append(attempt_record)
 
         # A fresh low-effort attempt uses a new prompt/cache key instead of
         # repeatedly patching a bad segmentation.

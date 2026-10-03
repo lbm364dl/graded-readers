@@ -1,5 +1,33 @@
 # Graded Reader Pipeline
 
+## Shared worker repairs
+
+Chinese, Japanese and Korean use the same tool-enabled worker workspaces and
+bounded chunk scheduler. Workers inspect organized inputs, write their candidate
+file and run local validation. The runner consumes that exact artifact. A
+schema, file or scoped-patch submission rejection receives one correction with
+the precise diagnostic and preserved rejected bytes when available. A second
+rejection stops that chunk; capacity and timeout recovery follow separate rules.
+Successful submission never substitutes for independent review.
+
+For a structurally valid annotation with semantic review findings,
+`annotation_repairs.py` asks an agent to identify exact field or row targets for
+every finding. `annotation_edits.py` applies only those targets to the matching
+base digest, preserving source text and tap ranges. The complete derived
+annotation passes its language-specific checks and independent review again.
+Assembly evidence retains the base, findings, plan, patch and result digests;
+recovery verifies the child artifacts and replays the edits. Stale or out-of-scope
+patches cannot trigger a whole-candidate rewrite. A needed tap-boundary change
+is reported explicitly to the existing boundary-capable producer. Chinese's
+existing fixed-boundary correction path remains in place.
+
+Korean batch failures retain independently reviewed successful chunks in an
+incomplete checkpoint. When multiple chunks require prose changes, all explicit
+prose findings go to the targeted prose editor together; unrelated annotation
+errors remain separate. Reuse after prose changes requires exact positions and
+a fresh check against the new chapter context. A checkpoint is never a completed
+chapter or publication approval.
+
 ## Korean TOPIK 1–6 pipeline
 
 The generation scope is *Hong Gildong*, TOPIK 1–6, using the pinned searchable
@@ -92,7 +120,8 @@ Annotation
 proposals use sentence chunks with exact reconstruction checks.
 Each chunk validates exact lexical identities and form routes locally, then
 passes independent occurrence review before that worker slot takes another chunk.
-Repairs resend the failed chunk while retaining valid siblings. Proposed new
+Semantic repairs edit only reviewed targets in the failed chunk while retaining
+valid siblings. Proposed new
 grammar functions are reviewed as occurrences; their reusable lessons still need
 chapter-wide identity coordination and independent dictionary review.
 Four annotation jobs run concurrently by default (`--workers` changes this).

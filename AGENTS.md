@@ -90,6 +90,13 @@ validated artifact instead of making a worker reproduce it in its final message.
 Keep independent review and publication checks. Apply improvements to shared
 worker infrastructure and inspect Chinese, Japanese and Korean equivalents.
 Optimize for reliable completed work, not minimum prompt tokens in isolation.
+When valid annotations need semantic corrections, use the shared issue-planned
+edit protocol with exact targets and base digests. Preserve source text and tap
+ranges, retain replayable evidence and independently review the derived result.
+Route a required boundary change explicitly; a stale or out-of-scope patch is
+not permission to regenerate unaffected annotations. Preserve reviewed sibling
+chunks when a batch fails, and collect all explicit prose objections before
+targeted prose revision.
 
 Chinese, Japanese and Korean annotation pipelines must share the bounded chunk
 lifecycle scheduler in `pipeline/chunk_scheduler.py`. Each generation, local

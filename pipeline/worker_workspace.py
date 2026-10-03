@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 import re
 import shlex
-from jsonschema import validate
+from jsonschema import ValidationError, validate
 
 VERSION = 'worker-workspace-v2'
 RECEIPT_SCHEMA = {'type': 'object', 'properties': {'candidate_path': {'type': 'string', 'minLength': 1}},
@@ -14,17 +14,36 @@ RECEIPT_SCHEMA = {'type': 'object', 'properties': {'candidate_path': {'type': 's
 ROOT = Path(__file__).resolve().parents[1]
 
 
+class CandidateSubmissionError(ValueError):
+    """A worker candidate was rejected by local submission validation."""
+
+    def __init__(self, message, *, artifact_path=None, artifact_bytes=None,
+                 category='candidate_submission'):
+        super().__init__(message)
+        self.artifact_path = artifact_path
+        self.artifact_bytes = artifact_bytes
+        self.category = category
+
+    def record(self):
+        return {'category': self.category, 'artifact_path': self.artifact_path,
+                'diagnostic': str(self),
+                'artifact_sha256': hash_bytes(self.artifact_bytes) if self.artifact_bytes is not None else None}
+
+
 def hash_bytes(value):
     return hashlib.sha256(value).hexdigest()
 
 
-def build(path, prompt, schema, *, context=None):
+def build(path, prompt, schema, *, context=None, submission_repair=None):
     path.mkdir(parents=True, exist_ok=True)
     files = {}
     def put(name, content):
         target = path / name
         target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_text(content, encoding='utf-8')
+        if isinstance(content, bytes):
+            target.write_bytes(content)
+        else:
+            target.write_text(content, encoding='utf-8')
         files[name] = hash_bytes(target.read_bytes())
     def put_json(name, value):
         put(name, json.dumps(value, ensure_ascii=False, indent=2) + '\n')
@@ -77,11 +96,29 @@ def build(path, prompt, schema, *, context=None):
                               ('No tools.', ''), ('no tools.', '')):
         instruction = instruction.replace(obsolete, current)
     instruction += '\n\nCURRENT WORKER POLICY: Tools are enabled. Earlier offline/no-tools clauses are obsolete and superseded. Use file inspection, scripts, local validation, web research and other available tools when useful. Preserve authoritative inputs; write drafts and scratch files in this workspace. New research is evidence for review, not permission to invent approved IDs or bypass publication checks. Write the requested JSON to candidate.json. Run the supplied validation command, inspect its output, and correct every reported error before submitting. Your final response is only {"candidate_path":"candidate.json"}; the runner consumes your actual file. This submission rule supersedes earlier instructions to repeat the full JSON in the final response.\n'
+    if submission_repair is not None:
+        rejected_bytes = submission_repair.get('artifact_bytes')
+        rejected_name = 'rejected-candidate-attempt-01.json' if rejected_bytes is not None else None
+        if rejected_name:
+            put(rejected_name, rejected_bytes)
+        put_json('submission-rejection.json', submission_repair['record'])
+        prior_note = (f'inspect {rejected_name} as the exact prior artifact. '
+                      if rejected_name else
+                      'the prior candidate file was unavailable, so follow the file diagnostic. ')
+        instruction += (
+            '\n\nSUBMISSION REPAIR: The immediately preceding candidate was rejected by the '
+            'local submission gate. Read submission-rejection.json for the exact diagnostic '
+            'and ' + prior_note + 'Correct only the '
+            'reported schema, file, or scoped patch validation errors; preserve source text, '
+            'tap boundaries and all unimplicated content. Re-run the supplied local validation '
+            'command before returning a new candidate. A successful submission is still only '
+            'a validated proposal; independent review and publication gates remain required.\n'
+        )
     put('TASK.txt', instruction)
     put_json('INDEX.json', inventory)
     put_json('schema.json', schema)
     put_json('receipt.schema.json', RECEIPT_SCHEMA)
-    put_json('validation-context.json', [{k: v[k] for k in ('chunk_text', 'language', 'surfaces', 'annotation', 'annotation_validation') if k in v} for v in contexts if isinstance(v, dict)])
+    put_json('validation-context.json', [{k: v[k] for k in ('chunk_text', 'language', 'surfaces', 'annotation', 'annotation_validation', 'annotation_patch_validation') if k in v} for v in contexts if isinstance(v, dict)])
     command = 'cd ' + shlex.quote(str(ROOT)) + ' && ' + shlex.quote(str(ROOT / '.venv/bin/python')) + ' -m pipeline.worker_workspace validate --workspace ' + shlex.quote(str(path.resolve())) + ' --candidate ' + shlex.quote(str(path.resolve() / 'candidate.json'))
     put('README.txt', 'Read TASK.txt and INDEX.json. Repository root: ' + str(ROOT) + '. Repository paths in the task are relative to that root; input/reference paths in INDEX.json are relative to this workspace. Inspect relevant data and full reference entries as needed. Use your tools freely to investigate and verify. Save candidate.json and check it with:\n' + command + '\nThe local check is feedback, not independent publication approval. Submit only {"candidate_path":"candidate.json"}; do not reproduce the file contents.\n')
     manifest = {'version': VERSION, 'files': files}
@@ -105,6 +142,10 @@ def check(path, candidate):
     value = json.loads(candidate.read_text())
     validate(value, json.loads((path / 'schema.json').read_text()))
     for context in json.loads((path / 'validation-context.json').read_text()):
+        patch_context = context.get('annotation_patch_validation')
+        if patch_context is not None:
+            _check_annotation_patch(path, value, patch_context)
+            continue
         if context.get('annotation_validation', {}).get('language') == 'ko':
             from pipeline.korean_agent_harness import validate_annotation_chunk
             from pipeline.korean_annotation_chunks import decode
@@ -146,23 +187,116 @@ def check(path, candidate):
     return value
 
 
+def _check_annotation_patch(workspace, patch, context):
+    """Apply a scoped semantic patch and validate its derived annotation."""
+    from pipeline.annotation_edits import apply_edits
+
+    derived = apply_edits(context['base_candidate'], patch,
+        allowed_targets=context['allowed_targets'], representation=context['representation'])
+    language = context['language']
+    chunk_text = context.get('chunk_text')
+    if not isinstance(chunk_text, str):
+        raise ValueError('Annotation patch validation requires authoritative chunk_text')
+    if language == 'ko':
+        from pipeline import korean_contracts, korean_dictionary
+        from pipeline.korean_agent_harness import validate_annotation_chunk
+
+        validate(derived, korean_contracts.ANNOTATION)
+        gate = dict(context['candidate_gate'])
+        validate_annotation_chunk(derived, chunk_text,
+            words=korean_dictionary._registry(korean_dictionary.WORDS),
+            catalog=korean_contracts.lexical_catalog(), run_dir=workspace, **gate)
+        return
+    if language == 'zh':
+        from pipeline.agent_harness import ChapterHarness
+
+        schema = json.loads((ROOT / 'pipeline/schemas/annotation.schema.json').read_text(encoding='utf-8'))
+        validate(derived, schema)
+        issues = ChapterHarness.annotation_contract_issues(chunk_text, derived)
+    elif language == 'ja':
+        from pipeline.japanese_agent_harness import JapaneseChapterHarness
+
+        schema = json.loads((ROOT / 'pipeline/schemas/japanese-annotation.schema.json').read_text(encoding='utf-8'))
+        validate(derived, schema)
+        issues = JapaneseChapterHarness.annotation_contract_issues(chunk_text, derived)
+    else:
+        raise ValueError(f'Unsupported annotation patch language: {language!r}')
+    if issues:
+        raise ValueError(json.dumps(issues, ensure_ascii=False))
+
+
+def _schema_diagnostic(error):
+    """Report the matching anyOf branch's problem, not a misleading sibling."""
+    while error.parent is not None and error.parent.validator != 'anyOf':
+        error = error.parent
+    if error.parent is not None and error.parent.validator == 'anyOf':
+        error = error.parent
+    path = '.'.join(str(part) for part in error.absolute_path) or '<root>'
+    branches = (error.schema.get('anyOf') if error.validator == 'anyOf' and isinstance(error.schema, dict)
+                else error.schema)
+    if error.validator == 'anyOf' and isinstance(error.instance, dict) and isinstance(branches, list):
+        actual_type = error.instance.get('type')
+        selected = next((index for index, branch in enumerate(branches)
+                         if actual_type in branch.get('properties', {}).get('type', {}).get('enum', [])), None)
+        if selected is not None:
+            prefix = list(error.absolute_schema_path) + [selected]
+            details = [child.message for child in error.context
+                       if list(child.absolute_schema_path)[:len(prefix)] == prefix]
+            if details:
+                return (f'Candidate at {path} with type {actual_type!r} fails its matching '
+                        f'schema branch: ' + '; '.join(details))
+    return f'Candidate schema validation failed at {path}: {error.message}'
+
+
 def submit(path, receipt):
-    validate(receipt, RECEIPT_SCHEMA)
-    candidate = (path / receipt['candidate_path']).resolve()
+    try:
+        validate(receipt, RECEIPT_SCHEMA)
+    except ValidationError as error:
+        raise CandidateSubmissionError(
+            f'Invalid submission receipt: {_schema_diagnostic(error)}',
+            category='invalid_receipt') from error
+    artifact_path = receipt['candidate_path']
+    candidate = (path / artifact_path).resolve()
     if not candidate.is_relative_to(path.resolve()):
-        raise ValueError('Submitted candidate must be in its worker workspace')
+        raise CandidateSubmissionError('Submitted candidate must be in its worker workspace',
+            artifact_path=artifact_path, category='unsafe_candidate_path')
     if not candidate.is_file():
-        raise ValueError(f'Submitted candidate file does not exist: {receipt["candidate_path"]!r}. '
-                         'Write the JSON file in the task workspace, validate it, then submit its relative path.')
-    # The worker can run the complete stage gate through `check`. Submission
-    # preserves a schema-valid proposal; the owning harness runs its gate and
-    # routes typed failures to the appropriate research/repair workflow.
-    # Treating a missing lexical identity as a generic runner failure would
-    # bypass that workflow and repeat an impossible annotation repair.
-    value = json.loads(candidate.read_text())
-    validate(value, json.loads((path / 'schema.json').read_text()))
+        raise CandidateSubmissionError(f'Submitted candidate file does not exist: {artifact_path!r}. '
+            'Write the JSON file in the task workspace, validate it, then submit its relative path.',
+            artifact_path=artifact_path, category='missing_candidate')
+    # Ordinary schema-valid proposals remain proposals; only explicit semantic
+    # patch contexts also validate the derived annotation before returning the
+    # patch. This preserves later independent review and publication gates.
+    try:
+        candidate_bytes = candidate.read_bytes()
+    except OSError as error:
+        raise CandidateSubmissionError(
+            f'Could not read submitted candidate {artifact_path!r}: {error}',
+            artifact_path=artifact_path, category='unreadable_candidate') from error
+    try:
+        value = json.loads(candidate_bytes)
+    except (UnicodeError, json.JSONDecodeError) as error:
+        raise CandidateSubmissionError(
+            f'Could not parse submitted candidate {artifact_path!r}: {error}',
+            artifact_path=artifact_path, artifact_bytes=candidate_bytes,
+            category='unreadable_candidate') from error
+    try:
+        schema = json.loads((path / 'schema.json').read_text(encoding='utf-8'))
+        validate(value, schema)
+    except ValidationError as error:
+        raise CandidateSubmissionError(_schema_diagnostic(error), artifact_path=artifact_path,
+            artifact_bytes=candidate_bytes, category='schema_rejection') from error
+    if any(context.get('annotation_patch_validation') is not None
+           for context in json.loads((path / 'validation-context.json').read_text(encoding='utf-8'))):
+        try:
+            check(path, candidate)
+        except (ValidationError, ValueError, KeyError, TypeError, IndexError) as error:
+            raise CandidateSubmissionError(
+                f'Submitted annotation patch failed derived-candidate validation: {error}',
+                artifact_path=artifact_path, artifact_bytes=candidate_bytes,
+                category='derived_annotation_rejection') from error
     return value, {'artifact_path': str(candidate.relative_to(path.resolve())),
-                   'artifact_digest': hash_bytes(candidate.read_bytes())}
+                   'artifact_digest': hash_bytes(candidate_bytes)}
 
 
 def main():

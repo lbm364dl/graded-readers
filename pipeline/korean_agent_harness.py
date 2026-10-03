@@ -18,6 +18,7 @@ from pipeline.korean_sources import EDITION, load_unit, load_selected_unit, sha
 from pipeline.korean_sentence_breakdowns import build as validate_breakdowns
 from pipeline import korean_curriculum as curriculum
 from pipeline.korean_levels import LEVEL_GOALS, LEVEL_POLICY
+from pipeline.worker_workspace import CandidateSubmissionError
 
 POLICY = ROOT / "pipeline/korean_agent_instructions.md"
 LINGUISTIC_REFERENCE = ROOT / 'data/korean/linguistic-reference.json'
@@ -58,6 +59,10 @@ a continuation; a source_start of zero with no prior chapters means chapter 1.
 
 class UnannotatableProseError(ValueError):
     """An ordinary prose word is absent from the pinned learner lexicon."""
+
+    # Surface actionable prose blockers ahead of ordinary chunk-repair errors;
+    # the scheduler keeps all sibling failures and successful results attached.
+    chunk_failure_priority = 100
 
 
 class LexicalIdentityError(ValueError):
@@ -157,7 +162,123 @@ def annotation_reuse_candidate(run_dir: Path, *, text: str | None = None):
             candidates.append((key, (path.parent.name, {'text': assembled_text}, review)))
         except (OSError, ValueError, KeyError, ValidationError):
             continue
+    # An incomplete checkpoint is never an annotation assembly. It is eligible
+    # only as a source of independently reviewed exact occurrences for a new
+    # reuse plan; each occurrence is reviewed again in the new context.
+    for path in (run_dir / 'agents').glob('annotation-partial-checkpoint-*/meta.json'):
+        try:
+            meta = read(path)
+            old_text = meta.get('chapter_text')
+            old_texts = meta.get('chunk_texts')
+            if (meta.get('kind') != 'annotation_partial_checkpoint'
+                    or meta.get('complete') is not False
+                    or meta.get('status') != 'incomplete'
+                    or not isinstance(old_text, str)
+                    or not isinstance(old_texts, list)
+                    or ''.join(old_texts) != old_text
+                    or (text is not None and old_text != text)):
+                continue
+            valid = []
+            for compact_index, record in enumerate(meta.get('chunks', [])):
+                try:
+                    positions = meta.get('chunk_source_positions', [])
+                    proofs = meta.get('chunk_reviews', [])
+                    index = positions[compact_index] if compact_index < len(positions) else None
+                    proof = proofs[compact_index] if compact_index < len(proofs) else None
+                    if (not isinstance(index, int) or index < 0
+                            or not isinstance(proof, dict)
+                            or not 0 <= index < len(old_texts)):
+                        continue
+                    chunk_text = old_texts[index]
+                    if record.get('text') != chunk_text:
+                        continue
+                    chunk_path = run_dir / 'agents' / record.get('job', '') / 'result.json'
+                    chunk_meta = read(chunk_path.with_name('meta.json'))
+                    if chunk_meta.get('return_code') != 0:
+                        continue
+                    CodexRunner._check_tool_profile(chunk_path.parent, 'offline', chunk_meta)
+                    annotation = read_annotation_chunk(chunk_path, record)
+                    if digest(annotation) != record.get('digest'):
+                        continue
+                    from pipeline.korean_chunk_reviews import verify_review
+                    verify_review(run_dir, proof, annotation=annotation, text=chunk_text,
+                        chapter_text=old_text, source_start=sum(map(len, old_texts[:index])))
+                    validate(annotation, contracts.ANNOTATION)
+                    review_inputs = read(run_dir / 'agents' / proof['job'] / 'review-input.json')
+                    valid.append({'source_chunk_index': index, 'record': record,
+                                  'review': proof, 'review_context': review_inputs['context'],
+                                  'annotation': annotation})
+                except (OSError, ValueError, KeyError, IndexError, TypeError, ValidationError):
+                    # One stale/corrupt sibling must not discard independently
+                    # verifiable occurrences from the same incomplete batch.
+                    continue
+            if not valid:
+                continue
+            key = (False, '', path.stat().st_mtime_ns, 0)
+            candidates.append((key, (path.parent.name, {'text': old_text}, {
+                'partial_checkpoint': True, 'chunks': valid,
+                'unresolved_failures': meta.get('unresolved_failures', []),
+                'context': {'kind': meta['kind'], 'source_job': meta.get('source_job')}})))
+        except (OSError, ValueError, KeyError, TypeError, ValidationError):
+            continue
     return max(candidates, key=lambda item: item[0])[1] if candidates else None
+
+
+def save_partial_annotation_checkpoint(run_dir: Path, *, source_job: str,
+                                       chapter_text: str, chunk_texts: list[str],
+                                       error: Exception):
+    """Persist only successful, independently reviewed chunks from a drained batch."""
+    from pipeline.chunk_scheduler import ChunkSuccess, ChunkFailure
+    successes = getattr(error, 'chunk_batch_successes', ())
+    failures = getattr(error, 'chunk_batch_failures', ())
+    chunks, reviews, positions = [], [], []
+    for item in successes:
+        if not isinstance(item, ChunkSuccess) or not isinstance(item.value, tuple) or len(item.value) != 3:
+            continue
+        annotation, record, proof = item.value
+        index = item.index
+        if not isinstance(annotation, dict) or not isinstance(record, dict) or not isinstance(proof, dict):
+            continue
+        if not (0 <= index < len(chunk_texts)) or record.get('text') != chunk_texts[index]:
+            continue
+        if digest(annotation) != record.get('digest'):
+            continue
+        chunks.append(record)
+        reviews.append(proof)
+        positions.append(index)
+    # Keep failure diagnostics local. They are included in the reuse plan as
+    # unresolved context, but cannot be mistaken for successful chunk records.
+    unresolved = [{'index': item.index, 'error_type': type(item.error).__name__,
+                   'diagnostic': str(item.error)} for item in failures
+                  if isinstance(item, ChunkFailure)]
+    if not chunks:
+        return None
+    identity = digest({'source_job': source_job, 'chapter_text': chapter_text,
+                       'chunks': chunks, 'unresolved': unresolved})[:16]
+    job = f'annotation-partial-checkpoint-{identity}'
+    save(run_dir / 'agents' / job / 'meta.json', {
+        'kind': 'annotation_partial_checkpoint', 'status': 'incomplete',
+        'complete': False, 'source_job': source_job, 'chapter_text': chapter_text,
+        'chunk_texts': chunk_texts, 'chunks': chunks,
+        'chunk_source_positions': positions, 'chunk_reviews': reviews,
+        'unresolved_failures': unresolved,
+    })
+    return job
+
+
+def prose_objections(error: Exception) -> list[str]:
+    """Return only typed prose blockers drained from this scheduler batch."""
+    from pipeline.chunk_scheduler import ChunkFailure
+    failures = getattr(error, 'chunk_batch_failures', ())
+    found = [(item.index, str(item.error)) for item in failures
+             if isinstance(item, ChunkFailure) and isinstance(item.error, UnannotatableProseError)]
+    if not found and isinstance(error, UnannotatableProseError):
+        found = [(0, str(error))]
+    result = []
+    for _, issue in sorted(found):
+        if issue and issue not in result:
+            result.append(issue)
+    return result
 
 
 def payload(**values) -> str:
@@ -862,16 +983,28 @@ class KoreanHarness:
                 if not issues and reuse_candidate is not None:
                     old_job, old_prose, old_review = reuse_candidate
                     old_meta = read(self.run_dir / 'agents' / old_job / 'meta.json')
-                    old_texts = [record['text'] for record in old_meta['chunks']]
-                    old_value = read(self.run_dir / 'agents' / old_job / 'result.json')
-                    old_values = contracts.slice_annotations(old_value, old_texts)
-                    reusable = set()
-                    for i, record in enumerate(old_meta['chunks']):
-                        path = self.run_dir / 'agents' / record['job'] / 'result.json'
-                        if path.exists() and digest(read_annotation_chunk(path, record)) == record['digest']:
-                            reusable.add(i)
-                    candidates = [{'old_chunk_index': i + 1, 'new_chunk_index': j + 1,
-                                   'text': text, 'annotation': contracts.annotation_view(old_values[i], max_characters=0)}
+                    partial = bool(old_review.get('partial_checkpoint'))
+                    if partial:
+                        rows = old_review['chunks']
+                        old_lineage = [row['record'] for row in rows]
+                        old_texts = [record['text'] for record in old_lineage]
+                        old_values = [row['annotation'] for row in rows]
+                        source_positions = [row['source_chunk_index'] for row in rows]
+                        reusable = set(range(len(rows)))
+                    else:
+                        old_texts = [record['text'] for record in old_meta['chunks']]
+                        old_value = read(self.run_dir / 'agents' / old_job / 'result.json')
+                        old_values = contracts.slice_annotations(old_value, old_texts)
+                        old_lineage = old_meta['chunks']
+                        source_positions = list(range(len(old_texts)))
+                        reusable = set()
+                        for i, record in enumerate(old_meta['chunks']):
+                            path = self.run_dir / 'agents' / record['job'] / 'result.json'
+                            if path.exists() and digest(read_annotation_chunk(path, record)) == record['digest']:
+                                reusable.add(i)
+                    candidates = [{'old_chunk_index': i + 1, 'old_source_chunk_index': source_positions[i] + 1,
+                                   'new_chunk_index': j + 1, 'text': text,
+                                   'annotation': contracts.annotation_view(old_values[i], max_characters=0)}
                                   for j, text in enumerate(texts) for i, old_text in enumerate(old_texts)
                                   if i in reusable and old_text == text]
                     reuse_job = f'{job}-reuse-plan'
@@ -880,13 +1013,13 @@ class KoreanHarness:
                         'Use only candidate old/new pairs whose text and contextual roles/meanings remain valid. '
                         'Exclude occurrences affected by unresolved annotation-review issues; do not carry a known error forward. '
                         'Keep repeated positions distinct and preserve narrative order. Do not rewrite annotations or infer new word forms. '
-                        + payload(old_prose=old_prose, new_prose=prose, unresolved_review=old_review, candidates=candidates),
+                        + payload(old_prose=old_prose, new_prose=prose,
+                                  unresolved_review=old_review, candidates=candidates),
                         contracts.schema_path('annotation-reuse-plan'), 'low', tool_profile='offline')
                     validate(reuse_plan, contracts.ANNOTATION_REUSE_PLAN)
                     reused = contracts.reuse_selection(reuse_plan, old_texts, texts)
                     if any(old - 1 not in reusable for old in reused.values()):
                         raise ValueError('Korean reuse selected unavailable annotation evidence')
-                    old_lineage = old_meta['chunks']
                     repair_evidence.update(reuse_plan_job=reuse_job, reuse_plan_digest=digest(reuse_plan), reuse_source_job=old_job)
                     print(f'annotation reuse after prose revision: {len(reused)} of {len(texts)} chunks', flush=True)
                 prefix, attempt = job.rsplit('-', 1)
@@ -971,10 +1104,14 @@ class KoreanHarness:
                     if local_issues is not None:
                         errors, previous_chunk = local_issues, local_previous
                     repair_start = 0
+                    attempt_prefix = f'{job}-chunk-{number:03d}-'
+                    def attempt_number(path):
+                        match = re.fullmatch(r'(\d+)(?:_(?:plan|patch|assembly))?',
+                            path.parent.name.removeprefix(attempt_prefix))
+                        return int(match[1]) if match else None
                     if local_issues is not None:
-                        attempts = [int(p.parent.name.rsplit('-', 1)[-1])
-                            for p in (self.run_dir / 'agents').glob(f'{job}-chunk-{number:03d}-*/result.json')
-                            if p.parent.name.rsplit('-', 1)[-1].isdigit()]
+                        attempts = [number for p in (self.run_dir / 'agents').glob(f'{attempt_prefix}*/result.json')
+                            if (number := attempt_number(p)) is not None]
                         repair_start = max(attempts, default=-1) + 1
                     # A process may stop before writing the parent assembly. Its
                     # completed workers are proposals, not approved annotations.
@@ -983,10 +1120,11 @@ class KoreanHarness:
                     rejected_digest = digest(previous_chunk) if errors and previous_chunk is not None else None
                     if local_issues is None and (not errors or selected is not None):
                         cached = []
-                        for path in (self.run_dir / 'agents').glob(f'{job}-chunk-{number:03d}-*/result.json'):
-                            suffix = path.parent.name.rsplit('-', 1)[-1]
-                            if suffix.isdigit():
-                                cached.append((int(suffix), path))
+                        for path in (self.run_dir / 'agents').glob(f'{attempt_prefix}*/result.json'):
+                            attempt = attempt_number(path)
+                            suffix = path.parent.name.removeprefix(attempt_prefix)
+                            if attempt is not None and (suffix.isdigit() or suffix.endswith('_assembly')):
+                                cached.append((attempt, path))
                         if cached:
                             repair_start = max(attempt for attempt, _ in cached) + 1
                         for _, path in sorted(cached, reverse=True):
@@ -994,6 +1132,8 @@ class KoreanHarness:
                             try:
                                 meta = read(path.with_name('meta.json'))
                                 if meta.get('return_code') != 0:
+                                    continue
+                                if meta.get('kind') == 'annotation_patch_assembly' and meta.get('status') != 'applied':
                                     continue
                                 CodexRunner._check_tool_profile(path.parent, 'offline', meta)
                                 verified_worker = True
@@ -1044,6 +1184,48 @@ class KoreanHarness:
                                 previous_usages.setdefault(segment['lemma'], []).append(
                                     {'text': segment['text'], 'meaning_en': segment['meaning_en']})
                         reviewed_usages = usage_evidence(previous_usages, related_forms=True) if previous_usages else []
+                        # A structurally sound annotation rejected by linguistic
+                        # review needs scoped semantic edits, not regenerated taps.
+                        # Invalid initial proposals still use the source-span
+                        # producer below to establish a valid repair base.
+                        semantic_base = None
+                        if errors and previous_chunk is not None:
+                            from pipeline.korean_annotation_chunks import decode
+                            try:
+                                semantic_base = decode(previous_chunk, source_text=text)
+                                validate_chunk(semantic_base, text)
+                            except (ValidationError, ValueError, KeyError, IndexError, TypeError):
+                                semantic_base = None
+                        if semantic_base is not None:
+                            from pipeline.annotation_repairs import repair_annotation
+                            word_ids = {s['lexical_id'] for s in semantic_base['segments']}
+                            grammar_ids = {link['entry_id'] for link in semantic_base['grammar_links']}
+                            repaired = await repair_annotation(self, chunk_job, semantic_base, errors,
+                                representation='korean-flat', language='ko',
+                                context={'chunk_text': text, 'chapter_text': prose['text'],
+                                    'source_start': sum(map(len, texts[:number - 1])),
+                                    'candidate_gate': {'focus': focus, 'title': prose['title'],
+                                        'number': self.number, 'plan': bound_plan,
+                                        'level': self.level, 'source_id': source_id},
+                                    'reviewed_source_context': reviewed_source_context,
+                                    'approved_words': [v for k, v in self.words.items() if k in word_ids],
+                                    'approved_grammar': [v for k, v in self.grammar.items() if k in grammar_ids],
+                                    'lexical_candidates': [entry for entries in self.catalog.values()
+                                        for entry in entries if entry['id'] in word_ids],
+                                    'reviewed_lexical_usage_evidence': reviewed_usages,
+                                    'linguistic_reference': read(LINGUISTIC_REFERENCE),
+                                    'lexical_reference': read(LEXICAL_REFERENCE)},
+                                validate_candidate=lambda rebuilt: validate_chunk(rebuilt, text))
+                            if repaired['status'] == 'applied':
+                                value = repaired['candidate']
+                                print(f'annotation chunk {number}: scoped semantic repair passed structure', flush=True)
+                                return value, annotation_chunk_record(repaired['evidence']['assembly_job'], text, value)
+                            if repaired['status'] == 'patch_rejected':
+                                errors = [*errors, 'Scoped patch rejected: ' + str(
+                                    repaired.get('patch_error') or repaired.get('validation_error'))]
+                                continue
+                            errors = [*errors, 'The repair plan requires changed tap boundaries: ' +
+                                json.dumps(repaired['plan'], ensure_ascii=False)]
                         try:
                             value = await self.runner.call(chunk_job, self.policy + "\n" + annotation_prompt
                                 + "\n" + (ROOT / "pipeline/korean_annotation_instructions.md").read_text(encoding="utf-8")
@@ -1059,6 +1241,10 @@ class KoreanHarness:
                                     'language': 'ko', 'chunk_text': text, 'focus': focus,
                                     'title': prose['title'], 'number': self.number, 'plan': bound_plan,
                                     'level': self.level, 'source_id': source_id}})
+                        except CandidateSubmissionError:
+                            # The shared runner already offered its one precise
+                            # correction; do not repeat that pair in this loop.
+                            raise
                         except ValueError as error:
                             if isinstance(error, MissingPlannedNameError):
                                 raise
@@ -1125,7 +1311,12 @@ class KoreanHarness:
                         local_issues, local_previous = review['issues'], value
                     raise ValueError(f'Korean annotation chunk {index + 1} failed independent review: {local_issues}')
                 from pipeline.chunk_scheduler import map_chunks
-                results = await map_chunks(texts, reviewed_chunk, self.workers)
+                try:
+                    results = await map_chunks(texts, reviewed_chunk, self.workers)
+                except Exception as error:
+                    save_partial_annotation_checkpoint(self.run_dir, source_job=job,
+                        chapter_text=prose['text'], chunk_texts=texts, error=error)
+                    raise
                 values, lineage, chunk_reviews = zip(*results)
                 combined = contracts.combine_annotations(list(values), texts)
                 assembly = {'return_code': 0, 'kind': 'annotation_assembly', 'chunks': list(lineage),
@@ -1203,12 +1394,14 @@ class KoreanHarness:
                 chapter['curriculum'] = {'bindings': bindings,
                                         'evaluation': curriculum.evaluate_bindings(chapter, bindings, level=self.level)}
             except UnannotatableProseError as error:
+                objections = prose_objections(error)
                 if existing or prose_attempt == 2:
                     raise
-                print(f"annotation failed; revising generated prose before reannotation: {error}", flush=True)
+                issue_text = '\n'.join(objections) if objections else str(error)
+                print(f"annotation failed; revising generated prose before reannotation: {issue_text}", flush=True)
                 reuse_candidate = annotation_reuse_candidate(self.run_dir, text=prose['text'])
-                prose_repair_base, prose_repair_issues = prose, [str(error)]
-                prose_repair = payload(repair_reason=str(error), previous_prose=prose,
+                prose_repair_base, prose_repair_issues = prose, objections or [str(error)]
+                prose_repair = payload(repair_reason=issue_text, previous_prose=prose,
                     instruction=f"Deliberately revise only the affected unpublished prose to use NIKL six-level curriculum Level {self.level} and lower vocabulary and grammar. Preserve the reviewed scene, stopping point, meaningful development and unaffected wording. Do not shorten a chapter merely because annotation failed. Do not evade difficulty gates by inventing lexical identities or reclassifying ordinary words as story terms.")
                 continue
             break

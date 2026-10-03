@@ -129,7 +129,7 @@ def test_publication_rejects_overlapping_or_skipped_chapter_scopes(tmp_path, mon
             publication.publish(tmp_path)
 
 
-@pytest.mark.parametrize('prose_revision,worker_failure,recover_partial', [(False, False, False), (False, True, False), (True, False, False), ('technical_failure', False, False), (False, 'attached', False), (False, False, True), (False, False, 'rejected_worker'), (False, False, 'invalid_attached')])
+@pytest.mark.parametrize('prose_revision,worker_failure,recover_partial', [(False, False, False), (False, True, False), (False, 'submission_rejected', False), (True, False, False), ('technical_failure', False, False), (False, 'attached', False), (False, False, True), (False, False, 'rejected_worker'), (False, False, 'invalid_attached')])
 def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_path, prose_revision, worker_failure, recover_partial, local_review_repair=False, draft_lesson=False):
     from pipeline.korean_agent_harness import normalize_existing, save, UnannotatableProseError
     chapter = manual_chapter()
@@ -158,7 +158,8 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
             self.local_rejected = False
         async def call(self, job, *args, **kwargs):
             self.jobs.append(job)
-            if '-chunk-' in job:
+            semantic_job = '-chunk-' in job and job.endswith(('_plan', '_patch'))
+            if '-chunk-' in job and not semantic_job:
                 inputs = json.loads(args[0].rsplit('\nINPUT:\n', 1)[1])
                 assert ''.join(inputs['source_copy_runs']) == inputs['chunk_text']
                 assert 'choose learner tap boundaries yourself' in args[0]
@@ -175,7 +176,21 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
                 # large reviews, even when individual chunks are small.
                 assert 'segment_columns' in args[0]
                 assert 'grammar_link_columns' in args[0]
-            value = await self.respond(job)
+            if semantic_job:
+                from pipeline.annotation_edits import candidate_digest
+                context = kwargs['workspace_context']
+                if job.endswith('_plan'):
+                    value = {'issues': [{'issue_index': i, 'reason': 'Clarify the occurrence gloss.',
+                        'targets': [{'op': 'set_field', 'path': '/segments/0/meaning_en'}],
+                        'boundary_change_needed': False, 'boundary_reason': ''}
+                        for i in range(len(context['issues']))]}
+                else:
+                    base = context['annotation_patch_validation']['base_candidate']
+                    value = {'base_digest': candidate_digest(base), 'edits': [{'op': 'set_field',
+                        'path': '/segments/0/meaning_en',
+                        'value': base['segments'][0]['meaning_en'] + ' (clarified)'}]}
+            else:
+                value = await self.respond(job)
             if job.startswith('annotation-local-review-') and draft_lesson:
                 context = kwargs['workspace_context']['chunk_review_input']['context']
                 if context['source_start'] == 0:
@@ -199,11 +214,22 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
                     'reason_en': 'Apply the deliberately reviewed fixture revision.'}
                     for tag, a, b, c, d in SequenceMatcher(None, source, target, autojunk=False).get_opcodes()
                     if tag != 'equal']
-            if '-chunk-' in job and 'format' not in value:
+            if '-chunk-' in job and not semantic_job and 'format' not in value:
                 from tests.test_korean_annotation_chunks import source_span_links
                 value = source_span_links(value)
             save(tmp_path / 'agents' / job / 'result.json', value)
-            save(tmp_path / 'agents' / job / 'meta.json', {'return_code': 0})
+            if semantic_job:
+                from pipeline.worker_workspace import build
+                directory = tmp_path / 'agents' / job
+                _, workspace_digest = build(directory / 'workspace', args[0],
+                    json.loads(args[1].read_text()), context=kwargs['workspace_context'])
+                save(directory / 'workspace' / 'candidate.json', value)
+                from pipeline.worker_workspace import submit
+                _, artifact = submit(directory / 'workspace', {'candidate_path': 'candidate.json'})
+                save(directory / 'meta.json', {'return_code': 0, 'tool_profile': 'workspace',
+                    'workspace_digest': workspace_digest, **artifact})
+            else:
+                save(tmp_path / 'agents' / job / 'meta.json', {'return_code': 0})
             return value
         async def respond(self, job):
             if job.startswith('annotation-local-review-'):
@@ -237,6 +263,9 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
                 number, attempt = map(int, job.split('-chunk-')[1].split('-'))
                 if worker_failure is True and number == 1 and attempt == 0:
                     raise ValueError('Worker used tools outside its offline role')
+                if worker_failure == 'submission_rejected' and number == 1 and attempt == 0:
+                    from pipeline.worker_workspace import CandidateSubmissionError
+                    raise CandidateSubmissionError('Bounded schema correction rejected')
                 value = copy.deepcopy((revised_chunks if 'revision1' in job else chunks)[number - 1])
                 if local_review_repair and number == 1 and attempt >= 2:
                     value['segments'][0]['meaning_en'] += ' (clarified)'
@@ -280,12 +309,27 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
             asyncio.run(KoreanHarness(tmp_path, 1, runner=runner).run())
         assert not any('prose-revision' in job for job in runner.jobs)
         return
+    if worker_failure == 'submission_rejected':
+        from pipeline.worker_workspace import CandidateSubmissionError
+        with pytest.raises(CandidateSubmissionError, match='Bounded schema correction rejected'):
+            asyncio.run(KoreanHarness(tmp_path, 1, runner=runner).run())
+        assert runner.jobs.count('annotation-0-chunk-001-0') == 1
+        assert 'annotation-0-chunk-001-1' not in runner.jobs
+        checkpoints = list((tmp_path / 'agents').glob('annotation-partial-checkpoint-*/meta.json'))
+        assert len(checkpoints) == 1
+        checkpoint = json.loads(checkpoints[0].read_text())
+        assert checkpoint['source_job'] == 'annotation-0'
+        assert checkpoint['chunk_source_positions'] == list(range(1, len(chunks)))
+        assert checkpoint['complete'] is False
+        return
     assert asyncio.run(KoreanHarness(tmp_path, 1, runner=runner).run())['status'] == 'complete'
-    jobs = [job for job in runner.jobs if '-chunk-' in job]
+    jobs = [job for job in runner.jobs if '-chunk-' in job and not job.endswith(('_plan', '_patch'))]
     assert jobs.count('annotation-0-chunk-001-0') == (0 if recover_partial else 1)
     assert jobs.count('annotation-0-chunk-001-1') == (0 if prose_revision else 1)
     assert all(jobs.count(f'annotation-0-chunk-{i:03d}-0') == (0 if recover_partial and i == 2 else 1) for i in range(2, len(chunks) + 1))
-    assert len(jobs) == len(chunks) + (-1 if recover_partial else 1) + (1 if recover_partial == 'rejected_worker' else 0) + int(local_review_repair)
+    assert len(jobs) == len(chunks) + (-1 if recover_partial else 1) + (1 if recover_partial == 'rejected_worker' else 0)
+    semantic_jobs = [job for job in runner.jobs if '-chunk-' in job and job.endswith(('_plan', '_patch'))]
+    assert len(semantic_jobs) == (2 if local_review_repair else 0)
     if recover_partial:
         assert 'annotation-review-0' in runner.jobs  # Recovery is never approval.
         if recover_partial == 'rejected_worker':
@@ -306,7 +350,9 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
         offset += len(record['text'])
     if local_review_repair:
         assert runner.local_rejected
-        assert jobs.count('annotation-0-chunk-001-2') == 1
+        assert 'annotation-0-chunk-001-2' not in jobs
+        assert semantic_jobs == ['annotation-0-chunk-001-2_plan', 'annotation-0-chunk-001-2_patch']
+        assert meta['chunks'][0]['job'] == 'annotation-0-chunk-001-2_assembly'
     if draft_lesson:
         assert 'dictionary-0' in runner.jobs and 'dictionary-review-0' in runner.jobs
         delta = read(tmp_path / 'dictionary-delta.json')
@@ -1336,6 +1382,87 @@ def test_annotation_resume_recovers_reviewed_assembly_and_preserves_issues(tmp_p
     assert annotation_reuse_candidate(tmp_path, text=chapter['text'] + ' Changed.') is None
 
 
+def test_drained_annotation_batch_routes_only_typed_prose_objections():
+    from pipeline.chunk_scheduler import ChunkFailure
+    from pipeline.korean_agent_harness import UnannotatableProseError, prose_objections
+    error = UnannotatableProseError('first prose objection')
+    error.chunk_batch_failures = (
+        ChunkFailure(0, ValueError('ordinary annotation repair failed')),
+        ChunkFailure(1, error),
+        ChunkFailure(2, UnannotatableProseError('second prose objection')),
+    )
+    assert prose_objections(error) == ['first prose objection', 'second prose objection']
+    ordinary = ValueError('annotation only')
+    ordinary.chunk_batch_failures = (ChunkFailure(0, ordinary),)
+    assert prose_objections(ordinary) == []
+
+
+@pytest.mark.parametrize('prose_failure', [False, True])
+def test_partial_annotation_checkpoint_reuses_only_verified_successful_positions(tmp_path, prose_failure):
+    from pipeline.chunk_scheduler import ChunkFailure, ChunkSuccess
+    from pipeline.korean_agent_harness import (
+        UnannotatableProseError, annotation_reuse_candidate,
+        annotation_chunk_record, save, save_partial_annotation_checkpoint,
+    )
+    from pipeline.korean_chunk_reviews import review_chunk
+
+    class Runner:
+        async def call(self, job, prompt, schema, effort, **kwargs):
+            from pipeline.worker_workspace import build
+            root = tmp_path / 'agents' / job
+            _, workspace_digest = build(root / 'workspace', prompt, json.loads(schema.read_text()),
+                                        context=kwargs['workspace_context'])
+            result = {'approved': True, 'issues': [], 'prose_revision_reason_en': ''}
+            save(root / 'result.json', result)
+            save(root / 'meta.json', {'return_code': 0, 'tool_profile': 'workspace',
+                                      'workspace_digest': workspace_digest})
+            return result
+
+    text, texts = '가가가가', ['가', '가', '가', '가']
+    annotation = {'segments': [{'text': '가', 'type': 'word', 'meaning_en': 'go',
+        'lemma': '가다', 'lexical_kind': 'vocabulary', 'lexical_id': 'fixture/ga-da',
+        'story_importance_en': '', 'form_steps': []}], 'grammar_links': [],
+        'inflected_segment_indices': [], 'expression_links': []}
+    successes = []
+    for index in (0, 2, 3):
+        chunk_job = f'annotation-attempt-chunk-{index + 1:03d}-0'
+        record = annotation_chunk_record(chunk_job, '가', annotation)
+        save(tmp_path / 'agents' / chunk_job / 'result.json', annotation)
+        save(tmp_path / 'agents' / chunk_job / 'meta.json',
+             {'return_code': 0, 'tool_profile': 'offline'})
+        context = {'chapter_text': text, 'source_start': index}
+        _, proof = asyncio.run(review_chunk(Runner(), tmp_path, annotation=annotation,
+            text='가', context=context, policy='Reviewed fixture.'))
+        successes.append(ChunkSuccess(index, (annotation, record, proof)))
+    error = UnannotatableProseError('prose must be revised') if prose_failure else ValueError('annotation failed')
+    error.chunk_batch_successes = tuple(successes)
+    error.chunk_batch_failures = (ChunkFailure(1, ValueError('known failed annotation')),)
+    job = save_partial_annotation_checkpoint(tmp_path, source_job='annotation-attempt',
+        chapter_text=text, chunk_texts=texts, error=error)
+    assert job
+    meta = json.loads((tmp_path / 'agents' / job / 'meta.json').read_text())
+    assert meta['status'] == 'incomplete' and meta['complete'] is False
+    assert [row['text'] for row in meta['chunks']] == ['가', '가', '가']
+    assert meta['chunk_source_positions'] == [0, 2, 3]
+    assert meta['unresolved_failures'][0]['index'] == 1
+    candidate = annotation_reuse_candidate(tmp_path, text=text)
+    assert candidate[0] == job
+    assert [row['source_chunk_index'] for row in candidate[2]['chunks']] == [0, 2, 3]
+    assert candidate[2]['unresolved_failures'][0]['diagnostic'] == 'known failed annotation'
+    # A changed source artifact invalidates that occurrence; the sibling remains reusable.
+    save(tmp_path / 'agents' / successes[0].value[1]['job'] / 'result.json',
+         {**annotation, 'segments': [{**annotation['segments'][0], 'meaning_en': 'changed'}]})
+    candidate = annotation_reuse_candidate(tmp_path, text=text)
+    assert [row['source_chunk_index'] for row in candidate[2]['chunks']] == [2, 3]
+    # One stale local-review digest rejects only that occurrence; the valid
+    # repeated source position remains independently reusable.
+    checkpoint = tmp_path / 'agents' / job / 'meta.json'
+    meta['chunk_reviews'][1]['review_digest'] = '0' * 64
+    save(checkpoint, meta)
+    candidate = annotation_reuse_candidate(tmp_path, text=text)
+    assert [row['source_chunk_index'] for row in candidate[2]['chunks']] == [3]
+
+
 def test_semantic_form_repair_preserves_neutral_root_and_other_occurrences(tmp_path):
     from pipeline.korean_agent_harness import normalize_existing
     raw = normalize_existing(manual_chapter(), dictionary._registry(dictionary.WORDS))
@@ -1695,6 +1822,19 @@ def test_partial_review_repair_recovers_new_proposals_not_rejected_data(tmp_path
                 assert 'Only IDs in approved_word_entry_ids' in args[0]
                 value = {'repairs': [{'chunk_index': 1, 'issues': ['Clarify contextual meaning.']}],
                     'prose_revision_reason_en': '', 'dictionary_revision_entry_ids': []}
+            elif '-chunk-' in job and job.endswith(('_plan', '_patch')):
+                from pipeline.annotation_edits import candidate_digest
+                context = kwargs['workspace_context']
+                assert context['reviewed_lexical_usage_evidence'] == (evidence if reviewed_usage else [])
+                if job.endswith('_plan'):
+                    value = {'issues': [{'issue_index': i, 'reason': 'Clarify the occurrence gloss.',
+                        'targets': [{'op': 'set_field', 'path': '/segments/0/meaning_en'}],
+                        'boundary_change_needed': False, 'boundary_reason': ''}
+                        for i in range(len(context['issues']))]}
+                else:
+                    base = context['annotation_patch_validation']['base_candidate']
+                    value = {'base_digest': candidate_digest(base), 'edits': [{'op': 'set_field',
+                        'path': '/segments/0/meaning_en', 'value': 'improved contextual meaning'}]}
             elif '-chunk-' in job:
                 number = int(job.split('-chunk-')[1].split('-')[0])
                 value = copy.deepcopy(chunks[number - 1])
@@ -1709,14 +1849,24 @@ def test_partial_review_repair_recovers_new_proposals_not_rejected_data(tmp_path
                 stage = job.rsplit('-', 1)[0]
                 value = read(fixture / 'agents' / stage / 'result.json')
             save(run / 'agents' / job / 'result.json', value)
-            save(run / 'agents' / job / 'meta.json', {'return_code': 0})
+            if '-chunk-' in job and job.endswith(('_plan', '_patch')):
+                from pipeline.worker_workspace import build, submit
+                directory = run / 'agents' / job
+                _, workspace_digest = build(directory / 'workspace', args[0],
+                    json.loads(args[1].read_text()), context=kwargs['workspace_context'])
+                save(directory / 'workspace' / 'candidate.json', value)
+                _, artifact = submit(directory / 'workspace', {'candidate_path': 'candidate.json'})
+                save(directory / 'meta.json', {'return_code': 0, 'tool_profile': 'workspace',
+                    'workspace_digest': workspace_digest, **artifact})
+            else:
+                save(run / 'agents' / job / 'meta.json', {'return_code': 0})
             return value
     runner = Runner()
     result = asyncio.run(KoreanHarness(run, 1, runner=runner).run())
     assert result['status'] == 'complete'
     assert 'annotation-review-1' in runner.jobs
     fresh = [j for j in runner.jobs if j.startswith('annotation-1-chunk-001-')]
-    assert fresh == ([] if repaired else ['annotation-1-chunk-001-1'])
+    assert fresh == ([] if repaired else ['annotation-1-chunk-001-1_plan', 'annotation-1-chunk-001-1_patch'])
 
 
 @pytest.mark.parametrize('valid_identity', [True, False])

@@ -5587,24 +5587,75 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                     issues.append(normalized)
             return {"verdict": "revise" if issues else "pass", "issues": issues}
 
-        for attempt in range(self.args.max_annotation_repairs + 1):
-            stage = "initial" if attempt == 0 else f"repair_{attempt:02d}"
-            findings = await review(stage)
-            attempts.append({"stage": stage, "annotation": result, "review": findings})
-            if findings["verdict"] == "pass":
-                return accept(result, attempts)
-            if attempt < self.args.max_annotation_repairs:
-                result = self.prepare_planned_annotation(
-                    chunk,
-                    await self.annotation_candidate(
-                        index,
-                        chunk,
-                        stage=f"repair_{attempt + 1:02d}",
-                        prior=result,
-                        findings=findings,
+        async def semantic_or_boundary_repair(
+            base: dict[str, Any], findings: dict[str, Any], stage: str,
+        ) -> tuple[dict[str, Any], dict[str, Any]]:
+            if not getattr(self, "run_dir", None) or not findings.get("issues"):
+                regenerated = self.prepare_planned_annotation(
+                    chunk, await self.annotation_candidate(
+                        index, chunk, stage=stage, prior=base, findings=findings,
                         effort=self.args.annotation_repair_effort,
                     ),
                 )
+                return regenerated, {"status": "legacy_whole_candidate_repair"}
+            from jsonschema import Draft202012Validator
+            from pipeline.annotation_repairs import repair_annotation
+
+            schema = json.loads((SCHEMAS / "japanese-annotation.schema.json").read_text())
+
+            def validate_semantic_candidate(candidate: dict[str, Any]) -> None:
+                errors = list(Draft202012Validator(schema).iter_errors(candidate))
+                if errors:
+                    raise ValueError(f"Japanese annotation patch violates its schema: {errors[0].message}")
+                if not self.annotation_surfaces_reconstruct(chunk, candidate):
+                    raise ValueError("Japanese semantic annotation patch changed source reconstruction")
+                contract = self.annotation_contract_issues(chunk, candidate)
+                if contract:
+                    raise ValueError(f"Japanese annotation patch failed local checks: {contract}")
+
+            semantic = await repair_annotation(
+                self,
+                f"annotations/chunk_{index:04d}/{stage}_semantic",
+                base,
+                findings.get("issues", []),
+                representation="japanese-annotation",
+                language="ja",
+                context={"chunk_text": chunk},
+                validate_candidate=validate_semantic_candidate,
+                refresh=self.refresh_annotation_chunk(index),
+            )
+            evidence = {"status": semantic["status"], **semantic["evidence"]}
+            if semantic["status"] == "applied":
+                return semantic["candidate"], evidence
+            if semantic["status"] != "boundary_change_needed":
+                raise ValueError(
+                    "Japanese semantic annotation patch was rejected: "
+                    f"{semantic.get('patch_error') or semantic.get('validation_error')}"
+                )
+            # The existing whole-candidate route remains available when a
+            # review genuinely requires source segmentation or a source span
+            # change. It receives the unchanged, still-reviewed base.
+            regenerated = self.prepare_planned_annotation(
+                chunk, await self.annotation_candidate(
+                    index, chunk, stage=stage, prior=base, findings=findings,
+                    effort=self.args.annotation_repair_effort,
+                ),
+            )
+            return regenerated, evidence
+
+        for attempt in range(self.args.max_annotation_repairs + 1):
+            stage = "initial" if attempt == 0 else f"repair_{attempt:02d}"
+            findings = await review(stage)
+            attempt_record = {"stage": stage, "annotation": result, "review": findings}
+            if findings["verdict"] == "pass":
+                attempts.append(attempt_record)
+                return accept(result, attempts)
+            if attempt < self.args.max_annotation_repairs:
+                result, evidence = await semantic_or_boundary_repair(
+                    result, findings, f"repair_{attempt + 1:02d}",
+                )
+                attempt_record["semantic_repair"] = evidence
+            attempts.append(attempt_record)
 
         fresh_candidate = self.prepare_planned_annotation(
             chunk,
@@ -5644,16 +5695,8 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
 
         for tail in range(1, self.args.max_annotation_fresh_repairs + 1):
             stage = f"fresh_repair_{tail:02d}"
-            candidate = self.prepare_planned_annotation(
-                chunk,
-                await self.annotation_candidate(
-                    index,
-                    chunk,
-                    stage=stage,
-                    prior=result,
-                    findings=findings,
-                    effort=self.args.annotation_repair_effort,
-                ),
+            candidate, repair_evidence = await semantic_or_boundary_repair(
+                result, findings, stage,
             )
             if (
                 self.annotation_surfaces_reconstruct(chunk, result)
@@ -5662,6 +5705,7 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                 attempts.append({
                     "stage": f"{stage}_contract_rejected",
                     "annotation": candidate,
+                    "semantic_repair": repair_evidence,
                     "review": {
                         "verdict": "revise",
                         "issues": self.annotation_contract_issues(
@@ -5672,7 +5716,8 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                 continue
             result = candidate
             findings = await review(stage)
-            attempts.append({"stage": stage, "annotation": result, "review": findings})
+            attempts.append({"stage": stage, "annotation": result, "review": findings,
+                             "semantic_repair": repair_evidence})
             if findings["verdict"] == "pass":
                 return accept(result, attempts)
         # A tiny bounded adjudication set is intentionally separate from the
@@ -5680,19 +5725,12 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
         # satisfy both the deterministic contract and an independent review.
         for adjudication in range(1, self.args.max_annotation_adjudications + 1):
             stage = f"adjudicated_final_{adjudication:02d}"
-            result = self.prepare_planned_annotation(
-                chunk,
-                await self.annotation_candidate(
-                    index,
-                    chunk,
-                    stage=stage,
-                    prior=result,
-                    findings=findings,
-                    effort=self.args.annotation_repair_effort,
-                ),
+            result, repair_evidence = await semantic_or_boundary_repair(
+                result, findings, stage,
             )
             findings = await review(stage)
-            attempts.append({"stage": stage, "annotation": result, "review": findings})
+            attempts.append({"stage": stage, "annotation": result, "review": findings,
+                             "semantic_repair": repair_evidence})
             if findings["verdict"] == "pass":
                 return accept(result, attempts)
         raise ValueError(

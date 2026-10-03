@@ -24,3 +24,19 @@ distinct lessons sharing a tap and the same lesson at distinct source positions.
 When validation identifies a link and indexed source boundaries, repair that
 specific occurrence using the source and rerun validation. Preserve unrelated
 tap boundaries and links; an error is not permission to guess a new range.
+
+Determine a particle's role from the complete predicate frame and clause meaning.
+Identical particles can mark time/place adjuncts or a predicate-selected complement;
+an approved lesson for one role does not automatically cover another. Reuse the
+exact matching function or propose a focused new grammar identity for review.
+Research uncertain roles using primary references instead of copying a reviewer's
+suggested lesson without checking it.
+
+Keep each complete-form meaning within that form's scope. A possessor/topic phrase
+has its phrase meaning; the following predicate belongs in the full construction's
+meaning. A modifier's form meaning is its complete adjectival/modifying meaning,
+with its grammatical role stated separately in the label or context. Word glosses,
+including proper names, must help an English-reading learner. Write grammar context
+notes as natural explanations of the actual function. Do not build them by joining
+a stock English prefix to a gloss, and do not infer a linguistic explanation from
+English words alone. Inspect comparable occurrences when repairing a repeated flaw.
