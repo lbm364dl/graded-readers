@@ -5,7 +5,8 @@ import pytest
 
 from pipeline.annotation_edits import EditCoverageError, ImmutableFieldError, apply_edits, candidate_digest
 from pipeline.annotation_repairs import (
-    digest, inspect_applied_repair_coverage, repair_annotation, replay_annotation_repair,
+    _representation_structure_contract, digest, inspect_applied_repair_coverage,
+    repair_annotation, replay_annotation_repair,
 )
 from pipeline.agent_harness import ChapterHarness
 from pipeline.japanese_agent_harness import JapaneseChapterHarness
@@ -84,6 +85,123 @@ def _target(op, path):
     return {"op": op, "path": path}
 
 
+def test_representation_structure_contract_uses_korean_step_schema_without_affecting_chinese_or_japanese():
+    from jsonschema import ValidationError, validate
+    from pipeline import korean_contracts
+
+    flat = _representation_structure_contract("korean-flat")
+    v4 = _representation_structure_contract("korean-v4")
+    assert flat["min_items"] == flat["max_items"] == 1
+    assert v4 == flat
+    assert _representation_structure_contract("chinese-annotation") is None
+    assert _representation_structure_contract("japanese-annotation") is None
+
+    multiform_step = {"form": "가셨다", "reading": "가시- + -었- + -다", "label": "past",
+        "meaning_en": "went", "grammar_entry_ids": ["honorific", "past"]}
+    with pytest.raises(ValidationError):
+        validate(multiform_step, korean_contracts.STEP)
+    ordered_steps = [
+        {"form": "가시다", "reading": "가- + -시- + -다", "label": "subject honorific",
+         "meaning_en": "go", "grammar_entry_ids": ["honorific"]},
+        {"form": "가셨다", "reading": "가시- + -었- + -다", "label": "past",
+         "meaning_en": "went", "grammar_entry_ids": ["past"]},
+    ]
+    for step in ordered_steps:
+        validate(step, korean_contracts.STEP)
+
+
+@pytest.mark.asyncio
+async def test_korean_repair_plan_receives_exact_per_step_identity_cardinality(tmp_path):
+    candidate = {"segments": [{"text": "가요", "type": "word", "meaning_en": "go",
+        "lemma": "가다", "lexical_kind": "vocabulary", "lexical_id": "가다01/동",
+        "story_importance_en": "", "form_steps": [{"form": "가요", "reading": "가요",
+            "label": "polite", "meaning_en": "go politely", "grammar_entry_ids": ["old"]}]}],
+        "grammar_links": [], "inflected_segment_indices": [0], "expression_links": []}
+    path = "/segments/0/form_steps/0/grammar_entry_ids"
+    plan = _plan((_target("replace_list", path),))
+    patch = {"base_digest": candidate_digest(candidate), "edits": [
+        {"op": "replace_list", "path": path, "value": ["polite-yo"]}]}
+    runner = PlannedRunner(tmp_path, plan, patch)
+    result = await repair_annotation(Harness(tmp_path, runner), "korean-step-contract", candidate,
+        [{"problem": "Use one lesson identity for this form stage."}],
+        representation="korean-flat", language="ko", validate_candidate=lambda _value: None)
+    assert result["status"] == "applied"
+    workspace_context = runner.calls[0][4]["workspace_context"]
+    assert workspace_context["representation_structure_contract"] == {
+        "source": "pipeline.korean_contracts.STEP",
+        "path": "/segments/*/form_steps/*/grammar_entry_ids",
+        "min_items": 1, "max_items": 1,
+        "meaning": "The constraint applies within each form step, not across the ordered form-step chain.",
+    }
+    assert "never put several identities on one step" in runner.calls[0][1]
+    assert "separate ordered transformations as separate complete-form steps" in runner.calls[0][1]
+
+
+@pytest.mark.asyncio
+async def test_source_grounded_grammar_overlay_can_be_replaced_without_changing_primary_taps(tmp_path):
+    from pipeline.annotation_edits import ImmutableFieldError
+
+    candidate = {
+        "segments": [
+            {"text": "걱정하지", "type": "word", "meaning_en": "worry", "lemma": "걱정하다",
+             "lexical_kind": "vocabulary", "lexical_id": "걱정하다01/동", "story_importance_en": "",
+             "form_steps": []},
+            {"text": " ", "type": "punctuation", "meaning_en": "", "lemma": "", "lexical_kind": "",
+             "lexical_id": "", "story_importance_en": "", "form_steps": []},
+            {"text": "마시고", "type": "word", "meaning_en": "please do not worry, and", "lemma": "말다",
+             "lexical_kind": "vocabulary", "lexical_id": "말다03/보", "story_importance_en": "",
+             "form_steps": []},
+        ],
+        "grammar_links": [{"segment_index": 2, "entry_id": "prohibition", "context_en": "prohibition",
+            "display_form": "", "display_meaning_en": "", "display_end_segment_index": -1}],
+        "inflected_segment_indices": [], "expression_links": [],
+    }
+    original_segments = json.loads(json.dumps(candidate["segments"], ensure_ascii=False))
+    old_target = _target("remove_row", "/grammar_links/0")
+    new_target = _target("append_row", "/grammar_links")
+    full_span = {"segment_index": 0, "entry_id": "prohibition", "context_en": "negative request",
+        "display_form": "걱정하지 마시고", "display_meaning_en": "please do not worry",
+        "display_end_segment_index": 2}
+    runner = PlannedRunner(tmp_path, _plan((old_target, new_target)), {
+        "base_digest": candidate_digest(candidate),
+        "edits": [{"op": "remove_row", "path": old_target["path"]},
+                  {"op": "append_row", "path": new_target["path"], "value": full_span}],
+    })
+
+    def validate_overlay(value):
+        if (value["segments"] != original_segments or value["grammar_links"] != [full_span]
+                or "".join(row["text"] for row in value["segments"]) != "걱정하지 마시고"):
+            raise ValueError("the expected full-span construction overlay was not preserved")
+
+    result = await repair_annotation(Harness(tmp_path, runner), "korean-overlay-span", candidate,
+        [{"problem": "Replace the direct lesson link with the supported full construction occurrence."}],
+        representation="korean-flat", language="ko", validate_candidate=validate_overlay)
+    assert result["status"] == "applied"
+    assert "semantic overlay replacement, not source resegmentation" in runner.calls[0][1]
+    assert "primary source range/index" in runner.calls[0][1]
+    assert "grammar-overlay start/end and text/surface/component spans" in runner.calls[0][1]
+    # This fixture verifies shared edit/replay plumbing only; it does not approve
+    # the illustrative English wording. Real language validation remains caller-owned.
+
+    wrong_span = {**full_span, "segment_index": 2, "display_form": "마시고"}
+    wrong_runner = PlannedRunner(tmp_path / "wrong-span", _plan((old_target, new_target)), {
+        "base_digest": candidate_digest(candidate),
+        "edits": [{"op": "remove_row", "path": old_target["path"]},
+                  {"op": "append_row", "path": new_target["path"], "value": wrong_span}],
+    })
+    rejected = await repair_annotation(Harness(tmp_path / "wrong-span", wrong_runner), "korean-overlay-span",
+        candidate, [{"problem": "The construction must cover the complete supported source span."}],
+        representation="korean-flat", language="ko", validate_candidate=validate_overlay)
+    assert rejected["status"] == "patch_rejected"
+    assert rejected["candidate"] == candidate
+
+    with pytest.raises(ImmutableFieldError):
+        apply_edits(candidate, {"base_digest": candidate_digest(candidate), "edits": [
+            {"op": "set_field", "path": "/grammar_links/0/display_form", "value": "걱정하지 마시고"}]},
+            allowed_targets=[_target("set_field", "/grammar_links/0/display_form")],
+            representation="korean-flat")
+
+
 @pytest.mark.asyncio
 async def test_issue_planned_patch_is_validated_persisted_and_replayed(tmp_path):
     candidate = _candidate()
@@ -119,6 +237,9 @@ async def test_issue_planned_patch_is_validated_persisted_and_replayed(tmp_path)
     assert 'annotation_plan_validation' not in runner.calls[1][4]['workspace_context']
     assert "a wrong occurrence gloss on an already-valid chain should target only that meaning field" in runner.calls[0][1]
     assert "a changed lemma/identity for an inflected surface may also require corrected ordered stages" in runner.calls[0][1]
+    assert runner.calls[0][4]["workspace_context"]["representation_structure_contract"] is None
+    assert "without importing another language's cardinality" in runner.calls[0][1]
+    assert "grammar-overlay start/end and text/surface/component spans" in runner.calls[0][1]
     replayed = replay_annotation_repair(
         tmp_path, result["evidence"]["assembly_job"], validate_candidate=validate_candidate,
     )

@@ -72,7 +72,27 @@ PATCH_SCHEMA: dict[str, Any] = {
 }
 
 DEPENDENCY_CLOSURE_GUIDANCE = """For each issue, inspect semantic dependencies through the exact observed tap surface before choosing targets. If changing a lemma, lexical identity, or form analysis for an inflected/derived surface, include only the dependent semantic field/list operations needed to keep its complete chain valid through that exact surface, with matching grammar links/overlays and the representation's form-audit membership when those fields exist. Removing an incorrect step or link is not sufficient when the remaining chain then fails to explain the observed surface; add or replace the supported semantic rows needed for the corrected analysis. Do not alter source/tap text, boundaries, or ranges. Contrast: a wrong occurrence gloss on an already-valid chain should target only that meaning field; a changed lemma/identity for an inflected surface may also require corrected ordered stages and their linked lessons. Inspect the supplied grammar knowledge and identity policy: reuse an exact approved entry when it fits; use a provisional/draft identity only when the language policy explicitly permits it, and leave it subject to the normal independent review. Never present a draft as approved, and never invent a lexical ID or lesson to complete the chain."""
-SOURCE_TAP_PROJECTION_GUIDANCE = """Keep every source/tap projection field unchanged, including segment text/surface, source offsets, grammar-link segment/range indices, and grammar-link display_form. An empty grammar-link display_form with display_end_segment_index -1 is a direct lesson link; do not turn it into a displayed source span in a semantic patch. If the correction requires changing any protected source/tap projection, mark boundary_change_needed and route it to the separate boundary-capable repair path."""
+REPRESENTATION_STRUCTURE_GUIDANCE = """Use `representation_structure_contract` from INPUT when it is present, together with the candidate gate and supplied language schema. Respect every declared item cardinality exactly. If a grammar-identity array is constrained to one identity per form step, never put several identities on one step: represent separate ordered transformations as separate complete-form steps only when the exact surface, references, and candidate gate support those stages. A step's meaning describes its complete form; keep politeness/form information separate, and never create a bare-stem stage just to satisfy cardinality. If an existing step and a linked lesson describe different transformations, do not replace that step's identity alone; plan the supported dependent stage and matching link edits required by the gate. If the contract is absent, follow the current language's schema and policy without importing another language's cardinality. Do not invent stages or meanings to satisfy a guessed rule."""
+SOURCE_TAP_PROJECTION_GUIDANCE = """Keep primary source/tap fields unchanged: segment text/surface, source offsets, and all primary tap boundaries. Do not mutate source-projected fields of a grammar occurrence row in place (for example grammar-link segment/range indices and display_form, or grammar-overlay start/end and text/surface/component spans). An empty Korean grammar-link display_form with display_end_segment_index -1 is a direct lesson link; do not turn it into a displayed source span in place. A grounded correction may instead remove an incorrect grammar occurrence row and append a corrected row at the same semantic-list path, with its complete span and any component spans exactly supported by unchanged source segments and the representation contract. This is a semantic overlay replacement, not source resegmentation; retain all unaffected rows and rerun the complete candidate gate. Do not invent a construction or its meaning. Use boundary_change_needed only when primary source text, tap surface/boundaries, or source segmentation itself must change, or when the required overlay cannot be expressed safely by allowed semantic row operations."""
+
+
+def _representation_structure_contract(representation: str) -> dict[str, Any] | None:
+    """Expose only structural limits declared by the selected annotation contract."""
+    if representation not in {"korean-flat", "korean-v4"}:
+        return None
+    from pipeline import korean_contracts
+
+    identities = korean_contracts.STEP["properties"]["grammar_entry_ids"]
+    minimum, maximum = identities.get("minItems"), identities.get("maxItems")
+    if minimum is None and maximum is None:
+        return None
+    return {
+        "source": "pipeline.korean_contracts.STEP",
+        "path": "/segments/*/form_steps/*/grammar_entry_ids",
+        "min_items": minimum,
+        "max_items": maximum,
+        "meaning": "The constraint applies within each form step, not across the ordered form-step chain.",
+    }
 
 
 def digest(value: Any) -> str:
@@ -210,7 +230,9 @@ async def repair_annotation(
     plan_job, patch_job, assembly_job = f"{job}_plan", f"{job}_patch", f"{job}_assembly"
     shared_context = {**(context or {}), "language": language,
                       "representation": representation, "candidate": candidate,
-                      "issues": issues}
+                      "issues": issues,
+                      "representation_structure_contract":
+                          _representation_structure_contract(representation)}
     plan_context = {**shared_context,
                     "annotation_plan_validation": {"issue_count": len(issues),
                         "target_contract_version": 1}}
@@ -218,13 +240,15 @@ async def repair_annotation(
 
 {DEPENDENCY_CLOSURE_GUIDANCE}
 
+{REPRESENTATION_STRUCTURE_GUIDANCE}
+
 {SOURCE_TAP_PROJECTION_GUIDANCE}
 
 Use the operation/path contract exactly: `set_field` is only for an existing JSON scalar; use `replace_list` for an existing semantic array (including Korean form-step `grammar_entry_ids`), and `replace_row` for an existing object row. `append_row` targets the list path itself (for example `/grammar_links` or `/segments/4/form_steps`); the patch must use that exact path and an object value. `remove_row` targets one existing numeric row path. Never add a guessed numeric suffix to `append_row`.
 
 The issues array contains exactly {len(issues)} findings. Use exactly the indices {list(range(len(issues)))} in that order, one row per array item. An item can describe several defects: put all its necessary targets in that same row. Do not split subpoints into additional issue indices or count repeated references as new findings. Run the supplied local validation command; it checks this mapping as well as the JSON schema.
 
-If resolving an issue requires changing source text, a primary tap surface, an existing source range/index, or the segmentation, mark `boundary_change_needed: true`, give `boundary_reason`, and provide no targets for that issue. Never route such a change through semantic targets. Otherwise set it false and leave boundary_reason empty. Scope each target to the smallest existing semantic field or list row needed. Do not target unrelated rows. The caller will check these targets against a representation-specific source/tap contract.
+If resolving an issue requires changing source text, a primary tap surface, a primary source range/index, or the segmentation, mark `boundary_change_needed: true`, give `boundary_reason`, and provide no targets for that issue. Never route such a change through semantic targets. Replacing a wrong derived grammar-occurrence row with a source-grounded full-span row is allowed only through the explicit remove/append semantic-list operations described above; it does not change primary taps. Otherwise set boundary_change_needed false and leave boundary_reason empty. Scope each target to the smallest existing semantic field or list row needed. Do not target unrelated rows. The caller will check these targets against a representation-specific source/tap contract.
 
 INPUT:
 {json.dumps(plan_context, ensure_ascii=False, indent=2)}"""
@@ -261,7 +285,7 @@ INPUT:
     patch_context = {**shared_context, "repair_plan": plan,
                      "allowed_targets": allowed, "base_digest": base_digest,
                      "annotation_patch_validation": patch_validation}
-    patch_prompt = f"""Return JSON matching the supplied semantic-patch schema. Repair only the supplied prior candidate. Return exactly `base_digest` and `edits`; never return a replacement candidate. Use only the exact op/path pairs in ALLOWED_TARGETS, and make each edit resolve its mapped review issue. Apply every planned target with an effective value/list change; an enclosing `replace_row` or `replace_list` counts only when the exact planned descendant value changes. One append edit cannot satisfy two issue rows that each plan an append. Do not submit an empty or partial patch. Preserve all unedited data. Do not change source text, tap surfaces, segmentation, or existing source/tap ranges. `append_row` uses the exact list path named by the plan, without a row-index suffix; `remove_row` uses one existing numeric row path. Use an explicit append/remove operation only when the repair plan names that exact list operation. The local caller applies the patch and runs the full deterministic language gate; independent review still follows.
+    patch_prompt = f"""Return JSON matching the supplied semantic-patch schema. Repair only the supplied prior candidate. Return exactly `base_digest` and `edits`; never return a replacement candidate. Use only the exact op/path pairs in ALLOWED_TARGETS, and make each edit resolve its mapped review issue. Apply every planned target with an effective value/list change; an enclosing `replace_row` or `replace_list` counts only when the exact planned descendant value changes. One append edit cannot satisfy two issue rows that each plan an append. Do not submit an empty or partial patch. Preserve all unedited data and all primary source/tap surfaces, boundaries, and source ranges. The only permitted change to a derived grammar-occurrence span is the planned remove+append replacement of its row with a complete span grounded in unchanged source; never mutate projected span fields in place. `append_row` uses the exact list path named by the plan, without a row-index suffix; `remove_row` uses one existing numeric row path. Use an explicit append/remove operation only when the repair plan names that exact list operation. The local caller applies the patch and runs the full deterministic language gate; independent review still follows.
 
 {SOURCE_TAP_PROJECTION_GUIDANCE}
 
@@ -332,6 +356,8 @@ INPUT:
 
 {DEPENDENCY_CLOSURE_GUIDANCE}
 
+{REPRESENTATION_STRUCTURE_GUIDANCE}
+
 {SOURCE_TAP_PROJECTION_GUIDANCE}
 
 Use only compatible operations: scalar fields use `set_field`, arrays use `replace_list`, existing object rows use `replace_row`, and existing list paths use `append_row` (the path is the list itself, never a guessed numeric suffix). `remove_row` names an existing numeric row.
@@ -391,7 +417,7 @@ INPUT:
             "repair_plan": replan_plan, "allowed_targets": replan_allowed,
             "base_digest": base_digest, "repair_history": first_attempt,
             "annotation_patch_validation": replan_patch_validation}
-        replan_patch_prompt = f"""Return JSON matching the supplied semantic-patch schema. This is the one and only replan after a reproduced derived-candidate gate rejection. Apply edits to the exact ORIGINAL base candidate (base digest below), not to the rejected patch. The rejected patch and diagnostic are included as evidence. Use only the exact op/path pairs in ALLOWED_TARGETS. Effectively apply every planned target; an enclosing row/list replacement only covers a target when its exact descendant value changes, and repeated append targets need repeated append edits. Do not submit an empty or partial patch. Preserve every source/tap surface, boundary, range, and every unedited field. `append_row` uses the exact list path named by the plan, without a row-index suffix; `remove_row` uses one existing numeric row path. The caller applies this patch to the original base, runs the same complete deterministic candidate gate, and then obtains independent review; a successful gate is not approval.
+        replan_patch_prompt = f"""Return JSON matching the supplied semantic-patch schema. This is the one and only replan after a reproduced derived-candidate gate rejection. Apply edits to the exact ORIGINAL base candidate (base digest below), not to the rejected patch. The rejected patch and diagnostic are included as evidence. Use only the exact op/path pairs in ALLOWED_TARGETS. Effectively apply every planned target; an enclosing row/list replacement only covers a target when its exact descendant value changes, and repeated append targets need repeated append edits. Do not submit an empty or partial patch. Preserve all primary source/tap surfaces, boundaries, source ranges, and every unedited field. The only permitted change to a derived grammar-occurrence span is the planned remove+append replacement of its row with a complete span grounded in unchanged source; never mutate projected span fields in place. `append_row` uses the exact list path named by the plan, without a row-index suffix; `remove_row` uses one existing numeric row path. The caller applies this patch to the original base, runs the same complete deterministic candidate gate, and then obtains independent review; a successful gate is not approval.
 
 {SOURCE_TAP_PROJECTION_GUIDANCE}
 
