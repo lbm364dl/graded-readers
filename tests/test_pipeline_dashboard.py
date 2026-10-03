@@ -11,7 +11,7 @@ from urllib.error import HTTPError
 from urllib.request import urlopen
 from unittest.mock import patch
 
-from pipeline.dashboard import Dashboard, _infer_run, make_handler
+from pipeline.dashboard import Dashboard, _infer_run, _processes, make_handler
 
 
 def write_json(path: Path, value: object) -> None:
@@ -39,6 +39,15 @@ class DashboardStateTests(unittest.TestCase):
         relative = run.resolve().relative_to(self.root.resolve()).as_posix()
         snapshot = self.dashboard(run, maintenance).snapshot()
         return next(row for row in snapshot["chapters"] if row["id"] == relative)
+
+    def test_process_reader_classifies_job_control_stop_and_ignores_zombies(self) -> None:
+        from types import SimpleNamespace
+        rows = "123 Tsl 100 codex exec -o /tmp/receipt.json -\n124 S 20 python -m pipeline.korean_agent_harness\n125 Z 9 codex exec -o /tmp/dead.json -\n"
+        with patch("pipeline.dashboard.subprocess.run", return_value=SimpleNamespace(stdout=rows, returncode=0)), \
+             patch("pipeline.dashboard.os.readlink", return_value=str(self.root)):
+            processes = _processes()
+        self.assertEqual([(p["pid"], p["process_state"]) for p in processes],
+                         [(123, "suspended"), (124, "running")])
 
     def test_chapter_number_comes_from_explicit_run_evidence(self) -> None:
         run = self.run_dir()
@@ -117,6 +126,51 @@ class DashboardStateTests(unittest.TestCase):
         active_jobs = [job for job in row['recent_jobs'] if job['submission_state'] == 'running']
         self.assertEqual(len(active_jobs), 1)
         self.assertEqual(active_jobs[0]['job'], workers[0]['job'])
+
+    def test_suspended_jobs_stay_separate_from_live_sibling_and_saved_rejection(self) -> None:
+        run = self.run_dir()
+        now = datetime.now(timezone.utc).isoformat()
+        failed_review = run / "agents/annotation-review-prior"
+        write_json(failed_review / "meta.json", {
+            "job": "annotation-review-prior", "started_at": "2026-10-02T09:00:00+00:00",
+            "ended_at": "2026-10-02T09:02:00+00:00", "return_code": 0,
+        })
+        write_json(failed_review / "result.json", {"approved": False, "issues": ["needs correction"]})
+        paused_job = run / "agents/annotation-0-chunk-001-paused"
+        write_json(paused_job / "meta.json", {"job": paused_job.name, "started_at": now, "return_code": None})
+        paused_worker = {"pid": 401, "elapsed_seconds": 300, "process_state": "suspended", "cwd": self.root,
+                         "argv": ["codex", "exec", "-o", str(paused_job / "receipt.json"), "-"]}
+        coordinator = {"pid": 400, "elapsed_seconds": 360, "process_state": "suspended", "cwd": self.root,
+                       "argv": [".venv/bin/python", "-m", "pipeline.korean_agent_harness", "--run-dir", str(run)]}
+        dashboard = self.dashboard(run)
+        with patch("pipeline.dashboard._processes", return_value=[coordinator, paused_worker]):
+            paused = next(row for row in dashboard.snapshot()["chapters"]
+                          if row["id"] == "runs/korean-topik3/chapter-001")
+        self.assertTrue(paused["state"].startswith("Suspended"))
+        self.assertEqual(paused["display"]["status"], "Paused")
+        self.assertEqual(paused["display"]["workers"], 0)
+        self.assertEqual(paused["display"]["suspended_workers"], 1)
+        self.assertEqual(paused["running_process_count"], 0)
+        self.assertEqual(paused["suspended_process_count"], 2)
+        paused_row = next(job for job in paused["recent_jobs"] if job["job"] == paused_job.name)
+        self.assertEqual(paused_row["state"], "suspended")
+        self.assertEqual(paused["rejected_review_attempts"], 1)
+        self.assertEqual(paused["latest_rejected_review"]["job"], "annotation-review-prior")
+
+        live_job = run / "agents/annotation-0-chunk-002-live"
+        write_json(live_job / "meta.json", {"job": live_job.name, "started_at": now, "return_code": None})
+        live_worker = {"pid": 402, "elapsed_seconds": 45, "process_state": "running", "cwd": self.root,
+                       "argv": ["codex", "exec", "-o", str(live_job / "receipt.json"), "-"]}
+        with patch("pipeline.dashboard._processes", return_value=[coordinator, paused_worker, live_worker]):
+            mixed = next(row for row in dashboard.snapshot()["chapters"]
+                         if row["id"] == "runs/korean-topik3/chapter-001")
+        self.assertTrue(mixed["state"].startswith("Running"))
+        self.assertEqual(mixed["display"]["status"], "Working")
+        self.assertEqual(mixed["display"]["workers"], 1)
+        self.assertEqual(mixed["display"]["suspended_workers"], 1)
+        self.assertEqual(mixed["running_process_count"], 1)
+        self.assertEqual(mixed["suspended_process_count"], 2)
+        self.assertEqual(mixed["rejected_review_attempts"], 1)
 
     def test_plain_progress_distinguishes_saved_text_publication_and_live_help(self) -> None:
         row = {'language': 'Korean', 'level': 'TOPIK 3', 'active_processes': [],
@@ -293,6 +347,28 @@ class DashboardStateTests(unittest.TestCase):
         self.assertEqual(result["github"]["issue2"]["number"], 2)
         self.assertEqual(result["github"]["pr1"]["url"], "https://github.com/owner/repo/pull/1")
         self.assertEqual(result["recurrent"][0]["attempts"], 12)
+
+    def test_suspended_maintenance_is_not_reported_as_running(self) -> None:
+        run = self.run_dir()
+        maint = self.root / "runs/maintenance/20261003"
+        dashboard = self.dashboard(run, maint)
+        suspended = {"pid": 801, "elapsed_seconds": 120, "process_state": "suspended",
+                     "cwd": self.root,
+                     "argv": [".venv/bin/python", "-m", "pipeline.maintenance_loop",
+                              "--output", str(maint)]}
+        with patch("pipeline.dashboard._processes", return_value=[suspended]):
+            state = dashboard.snapshot()["maintenance"]
+        self.assertTrue(state["state"].startswith("Suspended"))
+        self.assertEqual(state["running_process_count"], 0)
+        self.assertEqual(state["suspended_process_count"], 1)
+        self.assertEqual(state["active_processes"][0]["process_state"], "suspended")
+
+        live = dict(suspended, pid=802, process_state="running")
+        with patch("pipeline.dashboard._processes", return_value=[suspended, live]):
+            state = dashboard.snapshot()["maintenance"]
+        self.assertEqual(state["state"], "Running")
+        self.assertEqual(state["running_process_count"], 1)
+        self.assertEqual(state["suspended_process_count"], 1)
 
 
 class DashboardHTTPTests(unittest.TestCase):

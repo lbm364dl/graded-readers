@@ -88,13 +88,13 @@ def _infer_run(path: Path, root: Path) -> tuple[str, str, int | None]:
 def _processes() -> list[dict[str, Any]]:
     """Read process evidence. Keep argv private; return only extracted fields."""
     try:
-        result = subprocess.run(["ps", "-eo", "pid=,etimes=,args="], capture_output=True,
+        result = subprocess.run(["ps", "-eo", "pid=,stat=,etimes=,args="], capture_output=True,
                                 text=True, check=False, timeout=2)
     except (OSError, subprocess.SubprocessError):
         return []
     found: list[dict[str, Any]] = []
     for line in result.stdout.splitlines():
-        match = re.match(r"\s*(\d+)\s+(\d+)\s+(.*)$", line)
+        match = re.match(r"\s*(\d+)\s+(\S+)\s+(\d+)\s+(.*)$", line)
         if not match:
             continue
         try:
@@ -104,11 +104,18 @@ def _processes() -> list[dict[str, Any]]:
         if not argv:
             continue
         pid = int(match.group(1))
+        proc_stat = match.group(2)
+        # A SIGSTOP/SIGTSTP process still exists in /proc and ps, but cannot
+        # make progress. Zombies have exited and must not look live either.
+        proc_state = "suspended" if proc_stat[:1] in {"T", "t"} else "running"
+        if proc_stat[:1] == "Z":
+            continue
         try:
             cwd = Path(os.readlink(f"/proc/{pid}/cwd"))
         except OSError:
             cwd = None
-        found.append({"pid": pid, "elapsed_seconds": int(match.group(2)), "argv": argv, "cwd": cwd})
+        found.append({"pid": pid, "elapsed_seconds": int(match.group(3)), "argv": argv,
+                      "cwd": cwd, "process_state": proc_state, "proc_stat": proc_stat})
     return found
 
 
@@ -247,13 +254,17 @@ def _worker_processes(run_dir: Path, root: Path, processes: list[dict[str, Any]]
             continue
         job = "/".join(relative.parts[:-1])
         candidate_match = {"pid": process["pid"], "elapsed_seconds": process["elapsed_seconds"],
+                           "process_state": process.get("process_state", "running"),
                            "role": "worker", "job": job, "stage": _stage_for_job(job),
                            "started_epoch": time.time() - process["elapsed_seconds"]}
         # A CLI wrapper and its native child can both advertise the same output
         # file. Count that one model task once and retain its earliest start.
         key = str(resolved)
         previous = matches.get(key)
-        if previous is None or candidate_match["elapsed_seconds"] > previous["elapsed_seconds"]:
+        if (previous is None
+                or (previous["process_state"] == "suspended" and candidate_match["process_state"] == "running")
+                or (previous["process_state"] == candidate_match["process_state"]
+                    and candidate_match["elapsed_seconds"] > previous["elapsed_seconds"])):
             matches[key] = candidate_match
     return list(matches.values())
 
@@ -284,6 +295,7 @@ def _matching_processes(path: Path, root: Path, processes: list[dict[str, Any]])
         else:
             role = "maintenance loop"
         matches.append({"pid": process["pid"], "elapsed_seconds": process["elapsed_seconds"],
+                        "process_state": process.get("process_state", "running"),
                         "role": role, "started_epoch": time.time() - process["elapsed_seconds"]})
     return matches
 
@@ -359,7 +371,8 @@ class Dashboard:
                 started = _iso_epoch(meta.get("started_at"))
                 ended = _iso_epoch(meta.get("ended_at"))
                 rc = meta.get("return_code")
-                active = name in worker_by_job
+                active_worker = worker_by_job.get(name)
+                active = active_worker is not None
                 result = None
                 if "review" in name.lower():
                     result_path = meta_path.parent / "result.json"
@@ -378,11 +391,12 @@ class Dashboard:
                     review_state, issue_count, review_issues = None, 0, []
                 if active or ended is not None:
                     stage = _stage_for_job(name)
-                    process_state = "running" if active else ("succeeded" if rc == 0 else "failed" if rc is not None else "unknown")
+                    process_state = (active_worker.get("process_state", "running") if active
+                                     else ("succeeded" if rc == 0 else "failed" if rc is not None else "unknown"))
                     jobs.append({"job": name, "stage": stage,
                                  "state": process_state, "process_state": process_state, "review_state": review_state,
                                  "review_issue_count": issue_count, "review_issues": review_issues,
-                                 "submission_state": "running" if active else "submitted" if rc == 0 else "process failed" if rc is not None else "unknown",
+                                 "submission_state": ("running" if process_state == "running" else "suspended") if active else "submitted" if rc == 0 else "process failed" if rc is not None else "unknown",
                                  "part": _job_part(name),
                                  "elapsed_seconds": worker_by_job.get(name, {}).get("elapsed_seconds") if active else None,
                                  "started_at": meta.get("started_at") if isinstance(meta.get("started_at"), str) else None,
@@ -395,9 +409,10 @@ class Dashboard:
                 continue
             from datetime import datetime, timezone
             started_at = datetime.fromtimestamp(worker["started_epoch"], timezone.utc).isoformat()
-            jobs.append({"job": worker["job"], "stage": worker["stage"], "state": "running", "process_state": "running",
+            process_state = worker.get("process_state", "running")
+            jobs.append({"job": worker["job"], "stage": worker["stage"], "state": process_state, "process_state": process_state,
                          "review_state": None, "review_issue_count": 0, "review_issues": [],
-                         "submission_state": "running", "part": _job_part(worker["job"]),
+                         "submission_state": process_state, "part": _job_part(worker["job"]),
                          "elapsed_seconds": worker["elapsed_seconds"],
                          "started_at": started_at, "ended_at": None})
         jobs.sort(key=lambda row: _iso_epoch(row.get("ended_at") or row.get("started_at")) or 0, reverse=True)
@@ -466,15 +481,21 @@ class Dashboard:
         publication, local = self._publication(language, number, run_dir)
         jobs, rejected, latest_rejected = self._job_summaries(run_dir, workers)
         terminal_failure = _terminal_failure(run_dir)
-        if coordinators or workers:
+        running_processes = [item for item in [*coordinators, *workers]
+                             if item.get("process_state", "running") == "running"]
+        suspended_processes = [item for item in [*coordinators, *workers]
+                               if item.get("process_state") == "suspended"]
+        if running_processes:
             state = "running"
             current = "stage unknown"
             active_jobs = [job for job in jobs if job["state"] == "running"]
             if active_jobs:
                 current = ", ".join(sorted({job["stage"] for job in active_jobs}))
-            elif coordinators:
+            elif any(item.get("process_state", "running") == "running" for item in coordinators):
                 current = "harness running; current substage not recorded"
             state = f"Running · {current}"
+        elif suspended_processes:
+            state = "Suspended · no agents working"
         elif isinstance(report, dict) and report.get("status") == "complete" and (run_dir / "chapter.json").is_file():
             state = "Complete report · recorded approvals and artifact hashes match" if local.startswith("Complete report") else "Report says complete · review or artifact integrity unverified"
         elif isinstance(prep, dict) and prep.get("status") == "prepared":
@@ -492,11 +513,14 @@ class Dashboard:
         for process in live:
             details.append({"role": process["role"], "process_type": process["process_type"],
                             "job": process.get("job"), "pid": process["pid"],
+                            "process_state": process.get("process_state", "running"),
                             "stage": process.get("stage"), "part": _job_part(process.get("job") or ""),
                             "elapsed_seconds": process["elapsed_seconds"]})
         row = {"id": relative, "path": relative, "language": language, "level": level, "level_number": number,
                 "chapter_number": chapter_number,
                 "state": state, "publication": publication, "local_status": local, "active_processes": details,
+                "running_process_count": len(running_processes),
+                "suspended_process_count": len(suspended_processes),
                 "rejected_review_attempts": rejected, "latest_rejected_review": latest_rejected,
                 "terminal_failure": terminal_failure, "recent_jobs": jobs,
                 "artifact_notes": self._artifact_notes(run_dir, report, prep)}
@@ -506,9 +530,13 @@ class Dashboard:
     @staticmethod
     def _plain_progress(row, report, prep):
         """Explain the evidence in terms of reader work, not worker artifacts."""
-        workers = [p for p in row['active_processes'] if p['process_type'] == 'worker']
+        workers = [p for p in row['active_processes']
+                   if p['process_type'] == 'worker' and p.get('process_state', 'running') == 'running']
+        suspended_workers = [p for p in row['active_processes']
+                             if p['process_type'] == 'worker' and p.get('process_state') == 'suspended']
         adding_help = any(_stage_for_job(p.get('job') or '').startswith('annotation') for p in workers)
-        live = bool(row['active_processes'])
+        live = any(p.get('process_state', 'running') == 'running' for p in row['active_processes'])
+        suspended = any(p.get('process_state') == 'suspended' for p in row['active_processes'])
         evidence = report if isinstance(report, dict) and report.get('status') == 'complete' else prep
         stages = evidence.get('stages', {}) if isinstance(evidence, dict) else {}
         passed = lambda name: isinstance(stages.get(name), dict) and stages[name].get('approved') is True
@@ -527,6 +555,9 @@ class Dashboard:
                            else 'The story and learner-level text are being prepared.')
             if not workers:
                 explanation += ' The pipeline is preparing its next step.'
+        elif suspended:
+            status, step = 'Paused', 'Paused before approval'
+            explanation = ('The chapter process is suspended; no agents are working now. Saved submissions and review attempts remain in the history below. This pause does not mean you need to approve the chapter.')
         elif reviewed:
             status, step, explanation = 'Needs attention', 'Ready for publication', 'The chapter checks are complete. Publication is still pending.'
         elif row.get('terminal_failure'):
@@ -557,7 +588,10 @@ class Dashboard:
                  {'label': 'Final checks', 'state': 'done' if reviewed or published else 'working' if live and help_ready else 'waiting'},
                  {'label': 'Ready', 'state': 'done' if published else 'waiting'}]
         return {'title': row['level'], 'status': status, 'step': step, 'explanation': explanation,
-                'workers': len(workers), 'activity': [{'label': label, 'count': count} for label, count in activity.items()],
+                'workers': len(workers), 'suspended_workers': len(suspended_workers),
+                'running_processes': row.get('running_process_count', 0),
+                'suspended_processes': row.get('suspended_process_count', 0),
+                'activity': [{'label': label, 'count': count} for label, count in activity.items()],
                 'steps': steps}
 
     def _artifact_notes(self, run_dir: Path, report: Any, prep: Any) -> list[str]:
@@ -578,7 +612,9 @@ class Dashboard:
         triage = self._cached_json(base / "triage/triage-state.json")
         github = self._cached_json(base / "github-state.json")
         verified_fixes = self._cached_json(base / "verified-fixes.json")
-        live = _matching_processes(base, self.root, processes)
+        all_processes = _matching_processes(base, self.root, processes)
+        live = [item for item in all_processes if item.get("process_state", "running") == "running"]
+        suspended = [item for item in all_processes if item.get("process_state") == "suspended"]
         clusters = report.get("clusters", []) if isinstance(report, dict) else []
         findings: dict[str, dict[str, Any]] = {}
         if isinstance(triage, dict) and isinstance(triage.get("clusters"), dict):
@@ -611,8 +647,12 @@ class Dashboard:
         incident_jobs = {job for cluster in clusters if isinstance(cluster, dict)
                          for job in cluster.get('jobs', []) if isinstance(job, str)}
         github_state_label = self._github_state_label(github, github_status, status)
-        return {"path": _relative(base, self.root), "state": "Running" if live else "Stopped / no verified live process",
-                "active_processes": [{"pid": item["pid"], "elapsed_seconds": item["elapsed_seconds"]} for item in live],
+        return {"path": _relative(base, self.root),
+                "state": "Running" if live else "Suspended · no maintenance work is executing" if suspended else "Stopped / no verified live process",
+                "running_process_count": len(live), "suspended_process_count": len(suspended),
+                "active_processes": [{"pid": item["pid"], "process_state": item.get("process_state", "running"),
+                                      "elapsed_seconds": item["elapsed_seconds"]}
+                                     for item in [*live, *suspended]],
                 "phase": status.get("phase") if isinstance(status, dict) else None,
                 "updated_at": status.get("updated_at") if isinstance(status, dict) else None,
                 "incidents": incidents_count if isinstance(incidents_count, int) else None,
