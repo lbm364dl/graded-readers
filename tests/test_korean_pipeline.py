@@ -130,9 +130,16 @@ def test_publication_rejects_overlapping_or_skipped_chapter_scopes(tmp_path, mon
 
 
 @pytest.mark.parametrize('prose_revision,worker_failure,recover_partial', [(False, False, False), (False, True, False), (True, False, False), ('technical_failure', False, False), (False, 'attached', False), (False, False, True), (False, False, 'rejected_worker'), (False, False, 'invalid_attached')])
-def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_path, prose_revision, worker_failure, recover_partial, local_review_repair=False):
+def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_path, prose_revision, worker_failure, recover_partial, local_review_repair=False, draft_lesson=False):
     from pipeline.korean_agent_harness import normalize_existing, save, UnannotatableProseError
     chapter = manual_chapter()
+    if draft_lesson:
+        # Synthetic identity exercises the stage protocol, not a new linguistic
+        # lesson. Local occurrence approval cannot replace dictionary approval.
+        chapter['segments'][3]['lexical']['id'] = 'draft-naming-function'
+        for link in chapter['grammar_links']:
+            if link['entry_id'] == 'naming-iran':
+                link['entry_id'] = 'draft-naming-function'
     raw = normalize_existing(chapter, dictionary._registry(dictionary.WORDS))
     texts = contracts.annotation_chunks(chapter['text'])
     chunks = contracts.slice_annotations(raw, texts)
@@ -169,6 +176,12 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
                 assert 'segment_columns' in args[0]
                 assert 'grammar_link_columns' in args[0]
             value = await self.respond(job)
+            if job.startswith('annotation-local-review-') and draft_lesson:
+                context = kwargs['workspace_context']['chunk_review_input']['context']
+                if context['source_start'] == 0:
+                    assert context['draft_grammar_ids'] == ['draft-naming-function']
+                    assert all(row['id'] != 'draft-naming-function' for row in context['approved_grammar'])
+                    assert context['approved_grammar']  # Existing lessons remain inspectable.
             if job.startswith('annotation-local-review-') and local_review_repair:
                 inputs = kwargs['workspace_context']['chunk_review_input']
                 if inputs['context']['source_start'] == 0 and not self.local_rejected:
@@ -195,6 +208,8 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
         async def respond(self, job):
             if job.startswith('annotation-local-review-'):
                 return {'approved': True, 'issues': [], 'prose_revision_reason_en': ''}
+            if draft_lesson and '-grammar-bindings-' in job:
+                return {'bindings': [{'draft_id': 'draft-naming-function', 'entry_id': 'draft-naming-function'}]}
             if prose_revision and job == 'annotation-review-0':
                 return {'approved': False, 'issues': ['First sentence needs deliberate prose review.']}
             if prose_revision and job == 'annotation-1-repair-plan':
@@ -237,6 +252,10 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
                 return {'sentences': [{**row, 'selected': False, 'reason_en': 'Synthetic selection fixture',
                                       'translation_en': '', 'parts': []}
                                      for row in contracts.sentence_inventory(revised_text if prose_revision else chapter['text'])]}
+            if draft_lesson and job.startswith('dictionary-'):
+                entry = copy.deepcopy(dictionary._registry(dictionary.GRAMMAR)['naming-iran'])
+                entry['id'] = 'draft-naming-function'
+                return {'words': [], 'grammar': [entry]}
             raise AssertionError(job)
     runner = Runner()
     if recover_partial:
@@ -288,11 +307,21 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
     if local_review_repair:
         assert runner.local_rejected
         assert jobs.count('annotation-0-chunk-001-2') == 1
+    if draft_lesson:
+        assert 'dictionary-0' in runner.jobs and 'dictionary-review-0' in runner.jobs
+        delta = read(tmp_path / 'dictionary-delta.json')
+        assert {entry['id'] for entry in delta['grammar']} == {'draft-naming-function'}
+        assert report['stages']['dictionary']['approved'] is True
 
 
 def test_local_review_repairs_only_rejected_chunk_before_chapter_review(tmp_path):
     test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(
         tmp_path, False, False, False, local_review_repair=True)
+
+
+def test_draft_function_occurrence_review_retains_later_dictionary_gate(tmp_path):
+    test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(
+        tmp_path, False, False, False, draft_lesson=True)
 
 
 def test_form_reading_can_show_pronunciation_but_form_must_match_tap(tmp_path):

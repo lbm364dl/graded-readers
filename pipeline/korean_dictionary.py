@@ -194,10 +194,18 @@ def build_assets(chapter: dict, output_dir: Path, *, source_id: str = SOURCE,
             "sentence_start": sentence_start,
             **display, **grading,
         })
-    for index, segment in enumerate(segments):
-        if segment["type"] == "word" and segment["lexical"]["kind"] == "grammar":
-            if (index, segment["lexical"]["id"]) not in seen:
-                raise ValueError(f"Korean grammar tap has no linked lesson: {index}")
+    missing_lessons = [{'segment_index': index, 'text': segment['text'],
+                        'entry_id': segment['lexical']['id']}
+        for index, segment in enumerate(segments)
+        if segment['type'] == 'word' and segment['lexical']['kind'] == 'grammar'
+        and (index, segment['lexical']['id']) not in seen]
+    if missing_lessons:
+        raise ValueError(f"Korean grammar tap has no linked lesson: {missing_lessons}. "
+            'Each grammar-kind tap needs its own grammar_links occurrence with that exact '
+            'segment_index and entry_id. A complete phrase link beginning on another tap '
+            'does not supply this direct lesson. In source-span format, attach the direct '
+            'lesson to this tap with (-1, -1) and an empty display meaning; retain any '
+            'distinct complete phrase occurrence. Preserve source text and tap boundaries.')
     form_audit = chapter.get("form_audit", {})
     inflected = form_audit.get("inflected_segment_indices")
     if form_audit.get('reviewed') is not True or not isinstance(inflected, list):

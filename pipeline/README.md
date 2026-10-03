@@ -5,8 +5,8 @@
 The generation scope is *Hong Gildong*, TOPIK 1–6, using the pinned searchable
 Wikisource/Jikji 30-sheet original. The planning agent chooses a contiguous
 source span and a coherent stopping paragraph from the remaining narrative;
-the two mapped reference scenes are not chapter limits. The initial publication
-currently contains chapter 1 at TOPIK 1; other editions require their own real
+the two mapped reference scenes are not chapter limits. Publication currently
+contains chapter 1 at TOPIK 1, 2 and 5; other editions require their own real
 generation and independent reviews before publication. The baseline is the six-level NIKL International Standard
 Curriculum (2017, corrected 2020-11-17), aligned with TOPIK levels rather than an
 exhaustive exam word list. The earlier A/B/C catalog preserves lexical IDs only.
@@ -90,8 +90,11 @@ source spans are adaptation divisions, not original chapters. Publication
 requires successive chapters to start immediately after the preceding span.
 Annotation
 proposals use sentence chunks with exact reconstruction checks.
-Each chunk also validates exact lexical identities and form routes locally,
-so a repair resends the failed chunk rather than all otherwise valid sentences.
+Each chunk validates exact lexical identities and form routes locally, then
+passes independent occurrence review before that worker slot takes another chunk.
+Repairs resend the failed chunk while retaining valid siblings. Proposed new
+grammar functions are reviewed as occurrences; their reusable lessons still need
+chapter-wide identity coordination and independent dictionary review.
 Four annotation jobs run concurrently by default (`--workers` changes this).
 An independent review failure is mapped to affected sentence chunks before
 repair; unrelated chunks retain their original model evidence. After a prose

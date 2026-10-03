@@ -99,3 +99,14 @@ linguistic contracts and final chapter/publication checks. When changing a share
 workflow, inspect all three callers and test their integration; do not assume a
 feature exists in another language. Cached approvals must bind exact output and
 relevant context, including distinct source positions.
+
+Keep recurring pipeline problems in the shared maintenance lane. Count distinct
+jobs and retain exact evidence; a successful process exit or an approval with
+outstanding issues does not resolve a failed review. Verify proposed causes and
+reviewer objections against actual artifacts and comparable language paths.
+Use one GitHub issue per recurring pattern and link tested fixes from a PR;
+preserve human investigation notes and never publish raw worker transcripts.
+Diagnosis is a proposal. An issue is resolved only after a reproducer, contrasting
+regression, independent review and affected-output verification support that claim.
+Do not restart live chapters just to collect evidence or promote a proposal.
+Keep dashboard counts explicit about attempts, drafts, reviews and publication.

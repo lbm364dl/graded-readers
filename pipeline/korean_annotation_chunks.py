@@ -94,7 +94,7 @@ def materialize_spans(value, source_text):
                                          f'({segment["text"]!r}), entry {link.get("entry_id")!r}, '
                                          f'source range [{start}:{end}] must align with complete tap boundaries '
                                          f'and contain its attached word [{anchor_start}:{anchor_end}]; '
-                                         'use (-1, -1) only for grammar form steps. '
+                                         'use (-1, -1) for direct grammar-tap lessons or grammar form steps. '
                                          f'Indexed source boundaries: {nearby}. Correct this link from the '
                                          'source; do not change unrelated taps or guess a replacement range.')
                     link[surface] = source_text[start:end]

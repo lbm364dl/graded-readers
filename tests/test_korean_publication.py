@@ -154,6 +154,29 @@ def test_korean_dictionary_rejects_stale_or_missing_grammar_links(tmp_path):
         build_assets(chapter, tmp_path)
 
 
+@pytest.mark.parametrize('direct_lesson', [False, True])
+def test_complete_phrase_does_not_replace_grammar_taps_own_lesson(tmp_path, direct_lesson):
+    chapter = pilot_chapter()
+    chapter['grammar_links'].append({'segment_index': 2, 'entry_id': 'naming-iran',
+        'context_en': 'The complete phrase introduces the name.',
+        'display_form': ''.join(s['text'] for s in chapter['segments'][2:4]),
+        'display_end_segment_index': 3, 'display_meaning_en': 'called Hong Gildong'})
+    if not direct_lesson:
+        chapter['grammar_links'] = [link for link in chapter['grammar_links']
+                                   if link['segment_index'] != 3]
+        with pytest.raises(ValueError, match='grammar tap has no linked lesson') as error:
+            build_assets(chapter, tmp_path, write=False)
+        assert "'segment_index': 3" in str(error.value)
+        assert chapter['segments'][3]['text'] in str(error.value)
+        assert 'naming-iran' in str(error.value)
+    else:
+        _, grammar = build_assets(chapter, tmp_path, write=False)
+        uses = [use for use in grammar['occurrences'] if use['entry_id'] == 'naming-iran']
+        assert {use['segment_index'] for use in uses} == {2, 3}
+        assert len({use['id'] for use in uses}) == 2
+    assert not list(tmp_path.iterdir())
+
+
 def test_korean_dictionary_keeps_repeated_word_positions_distinct(tmp_path):
     words, grammar = build_assets(pilot_chapter(), tmp_path)
     father = [use for use in words["occurrences"] if use["entry_id"] == "아버지/명"]

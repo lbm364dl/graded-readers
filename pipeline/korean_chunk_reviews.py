@@ -11,6 +11,13 @@ concrete defects only in this chunk. Check every occurrence, lexical sense, gram
 function, complete-form meaning, inflection chain, and English explanation. Check
 that linked approved lessons actually explain the occurrence. Do not invent lexical
 entries for productive grammar or infer idiom meanings from component glosses.
+context.draft_grammar_ids explicitly identifies proposed new functions awaiting
+chapter-wide identity coordination and independently reviewed dictionary lessons.
+For these IDs, verify the actual formation, role and complete meaning using the
+linguistic references and tools; do not reject merely because their later-stage
+dictionary entry is absent. Reject an unsupported or incorrect analysis, and do
+not treat a draft identity as approved dictionary content. Existing approved
+lessons must still cover the linked function; a new ID cannot excuse a false role.
 The exact source and structural checks have passed; focus on linguistic correctness
 and useful learner explanations. Cite the exact affected form and local segment
 index in each actionable issue. Do not demand paraphrasing correct explanations,

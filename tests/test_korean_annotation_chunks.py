@@ -77,6 +77,32 @@ def test_source_link_ranges_preserve_complete_forms_and_grammar_steps():
     assert value == before
 
 
+@pytest.mark.parametrize('same_identity', [True, False])
+def test_phrase_and_form_step_collision_is_not_hidden_by_worker_attachment(tmp_path, same_identity):
+    from pipeline import korean_contracts as contracts
+    from pipeline.korean_dictionary import build_assets, GRAMMAR
+    raw = fixture()
+    source = ''.join(segment['text'] for segment in raw['segments'])
+    worker = source_span_links(raw)
+    tap = worker['segments'][7]
+    identity = 'past-ass-eoss' if same_identity else 'synthetic-complete-clause'
+    tap['grammar_links'].append({'entry_id': identity, 'context_en': 'Synthetic complete occurrence.',
+        'source_start': tap['source_start'], 'source_end': tap['source_end'],
+        'display_meaning_en': 'lived'})
+    decoded = chunks.decode(worker, source_text=source)
+    chapter = contracts.canonical_annotation(decoded, {'text': source, 'title': 'Fixture'},
+        1, 'fixture', {'beats': []})
+    registry = {**_registry(GRAMMAR), 'synthetic-complete-clause': {'id': 'synthetic-complete-clause'}}
+    if same_identity:
+        with pytest.raises(ValueError, match='duplicate anchor/entry: True'):
+            build_assets(chapter, tmp_path, grammar_registry=registry, write=False)
+    else:
+        _, grammar = build_assets(chapter, tmp_path, grammar_registry=registry, write=False)
+        assert {row['entry_id'] for row in grammar['occurrences'] if row['segment_index'] == 7} >= {
+            'past-ass-eoss', 'polite-seumnida', 'synthetic-complete-clause'}
+    assert not list(tmp_path.iterdir())
+
+
 @pytest.mark.parametrize('range_', [(1, 2), (0, 1), (-1, 1), (999, 1000)])
 def test_source_link_ranges_reject_mid_tap_elsewhere_and_invalid_sentinels(range_):
     raw = fixture()
