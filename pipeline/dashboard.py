@@ -131,6 +131,12 @@ def _output_result_path(argv: list[str]) -> str | None:
 
 def _stage_for_job(name: str) -> str:
     normalized = name.lower().replace("_", "-")
+    if normalized.startswith("annotations/"):
+        if "semantic-patch" in normalized or "repair" in normalized:
+            return "annotation semantic patch"
+        if "review" in normalized:
+            return "annotation review"
+        return "annotation work"
     canonical = ("sentence-help", "lexical-plan", "annotation", "dictionary", "curriculum", "prose", "plan")
     base = next((stage for stage in canonical if normalized.startswith(stage)), normalized.split("-", 1)[0])
     if "review" in normalized:
@@ -171,10 +177,53 @@ def _safe_text(value: Any, limit: int) -> str | None:
     return clean[:limit] if clean else None
 
 
+def _terminal_failure(run_dir: Path) -> dict[str, str] | None:
+    """Interpret only allowlisted categories from a completed traceback.
+
+    The log and free-form exception message never leave the backend. Prepared
+    checkpoints without a recognized terminal failure remain idle.
+    """
+    path = run_dir / "resume-detached.log"
+    try:
+        with path.open("rb") as handle:
+            handle.seek(max(0, path.stat().st_size - 65536))
+            tail = handle.read(65536).decode("utf-8", errors="replace")
+    except OSError:
+        return None
+    marker = "Traceback (most recent call last):"
+    if marker not in tail:
+        return None
+    traceback = tail[tail.rfind(marker):]
+    final_line = next((line.strip() for line in reversed(traceback.splitlines()) if line.strip()), "")
+    final_categories = (
+        (r"^ValueError: Korean annotation chunk \d+ failed independent review:",
+         "Independent review did not approve an annotation chunk"),
+        (r"^ValueError: Korean annotation chunk \d+ failed reconstruction:",
+         "Annotation chunk failed reconstruction checks"),
+    )
+    for pattern, category in final_categories:
+        if re.match(pattern, final_line):
+            return {"category": category, "evidence": "resume-detached.log traceback"}
+    # jsonschema's ValidationError is followed by its structured validator
+    # name and instance path; require those markers so arbitrary exception text
+    # that happens to contain a class name cannot create a failure status.
+    if (re.search(r"(?:^|\n)jsonschema\.exceptions\.ValidationError:", traceback)
+            and "\nFailed validating " in traceback
+            and "\nOn instance" in traceback):
+        return {"category": "Worker output failed schema validation",
+                "evidence": "resume-detached.log traceback"}
+    return None
+
+
+def _job_part(name: str) -> str | None:
+    match = re.search(r"(?:^|[-_/])(?:chunk|part)[-_]?0*(\d+)(?:[-_/]|$)", name, re.IGNORECASE)
+    return f"chunk {int(match.group(1))}" if match else None
+
+
 def _worker_processes(run_dir: Path, root: Path, processes: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """Prove live workers by their explicit result output path, not job-file timing."""
+    """Prove and deduplicate live workers by explicit result output path."""
     agents_root = (run_dir / "agents").resolve()
-    matches = []
+    matches: dict[str, dict[str, Any]] = {}
     for process in processes:
         argv = process.get("argv", [])
         if not argv or Path(argv[0]).name != "codex":
@@ -191,13 +240,22 @@ def _worker_processes(run_dir: Path, root: Path, processes: list[dict[str, Any]]
             relative = resolved.relative_to(agents_root)
         except (OSError, ValueError):
             continue
-        if len(relative.parts) != 2 or relative.parts[-1] not in {"result.json", "receipt.json"}:
+        if (len(relative.parts) < 2 or len(relative.parts) > 10
+                or relative.parts[-1] not in {"result.json", "receipt.json"}
+                or any(not re.fullmatch(r"[A-Za-z0-9_.-]{1,120}", part) or part in {".", ".."}
+                       for part in relative.parts)):
             continue
-        job = relative.parts[0]
-        matches.append({"pid": process["pid"], "elapsed_seconds": process["elapsed_seconds"],
-                        "role": "worker", "job": job, "stage": _stage_for_job(job),
-                        "started_epoch": time.time() - process["elapsed_seconds"]})
-    return matches
+        job = "/".join(relative.parts[:-1])
+        candidate_match = {"pid": process["pid"], "elapsed_seconds": process["elapsed_seconds"],
+                           "role": "worker", "job": job, "stage": _stage_for_job(job),
+                           "started_epoch": time.time() - process["elapsed_seconds"]}
+        # A CLI wrapper and its native child can both advertise the same output
+        # file. Count that one model task once and retain its earliest start.
+        key = str(resolved)
+        previous = matches.get(key)
+        if previous is None or candidate_match["elapsed_seconds"] > previous["elapsed_seconds"]:
+            matches[key] = candidate_match
+    return list(matches.values())
 
 
 def _matching_processes(path: Path, root: Path, processes: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -277,18 +335,27 @@ class Dashboard:
         except OSError:
             return None
 
-    def _job_summaries(self, run_dir: Path, workers: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], int]:
+    def _job_summaries(self, run_dir: Path, workers: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], int, dict[str, Any] | None]:
         jobs: list[dict[str, Any]] = []
         rejected_attempts = 0
+        rejected_rows: list[dict[str, Any]] = []
         worker_by_job = {item["job"]: item for item in workers}
         agents = run_dir / "agents"
         try:
-            metas = agents.glob("*/meta.json")
+            metas = agents.rglob("meta.json")
             for meta_path in metas:
+                try:
+                    relative_job = meta_path.parent.relative_to(agents)
+                except ValueError:
+                    continue
+                if (len(relative_job.parts) > 9 or any(
+                        not re.fullmatch(r"[A-Za-z0-9_.-]{1,120}", part) or part in {".", ".."}
+                        for part in relative_job.parts)):
+                    continue
                 meta = self._cached_json(meta_path, 512 * 1024)
                 if not isinstance(meta, dict):
                     continue
-                name = meta_path.parent.name[:120]
+                name = "/".join(relative_job.parts)[:240]
                 started = _iso_epoch(meta.get("started_at"))
                 ended = _iso_epoch(meta.get("ended_at"))
                 rc = meta.get("return_code")
@@ -301,6 +368,10 @@ class Dashboard:
                         review_state, issue_count, review_issues = _review_summary(result)
                         if review_state == "rejected":
                             rejected_attempts += 1
+                            rejected_rows.append({"job": name, "stage": _stage_for_job(name),
+                                "review_state": review_state, "review_issue_count": issue_count,
+                                "review_issues": review_issues,
+                                "ended_at": meta.get("ended_at") if isinstance(meta.get("ended_at"), str) else None})
                     else:
                         review_state, issue_count, review_issues = None, 0, []
                 else:
@@ -311,6 +382,9 @@ class Dashboard:
                     jobs.append({"job": name, "stage": stage,
                                  "state": process_state, "process_state": process_state, "review_state": review_state,
                                  "review_issue_count": issue_count, "review_issues": review_issues,
+                                 "submission_state": "running" if active else "submitted" if rc == 0 else "process failed" if rc is not None else "unknown",
+                                 "part": _job_part(name),
+                                 "elapsed_seconds": worker_by_job.get(name, {}).get("elapsed_seconds") if active else None,
                                  "started_at": meta.get("started_at") if isinstance(meta.get("started_at"), str) else None,
                                  "ended_at": meta.get("ended_at") if isinstance(meta.get("ended_at"), str) else None})
         except OSError:
@@ -323,9 +397,12 @@ class Dashboard:
             started_at = datetime.fromtimestamp(worker["started_epoch"], timezone.utc).isoformat()
             jobs.append({"job": worker["job"], "stage": worker["stage"], "state": "running", "process_state": "running",
                          "review_state": None, "review_issue_count": 0, "review_issues": [],
+                         "submission_state": "running", "part": _job_part(worker["job"]),
+                         "elapsed_seconds": worker["elapsed_seconds"],
                          "started_at": started_at, "ended_at": None})
         jobs.sort(key=lambda row: _iso_epoch(row.get("ended_at") or row.get("started_at")) or 0, reverse=True)
-        return jobs[:12], rejected_attempts
+        rejected_rows.sort(key=lambda row: _iso_epoch(row.get("ended_at")) or 0, reverse=True)
+        return jobs[:12], rejected_attempts, rejected_rows[0] if rejected_rows else None
 
     def _publication(self, language: str, number: int | None, run_dir: Path) -> tuple[str, str | None]:
         report = self._cached_json(run_dir / "report.json")
@@ -387,7 +464,8 @@ class Dashboard:
         report = self._cached_json(run_dir / "report.json")
         prep = self._cached_json(run_dir / "preparation.json")
         publication, local = self._publication(language, number, run_dir)
-        jobs, rejected = self._job_summaries(run_dir, workers)
+        jobs, rejected, latest_rejected = self._job_summaries(run_dir, workers)
+        terminal_failure = _terminal_failure(run_dir)
         if coordinators or workers:
             state = "running"
             current = "stage unknown"
@@ -408,14 +486,19 @@ class Dashboard:
         else:
             state = "Run directory absent"
         relative = _relative(run_dir, self.root)
+        chapter_number = next((value.get('number') for value in (report, prep)
+            if isinstance(value, dict) and type(value.get('number')) is int and value['number'] > 0), None)
         details = []
         for process in live:
             details.append({"role": process["role"], "process_type": process["process_type"],
                             "job": process.get("job"), "pid": process["pid"],
+                            "stage": process.get("stage"), "part": _job_part(process.get("job") or ""),
                             "elapsed_seconds": process["elapsed_seconds"]})
         row = {"id": relative, "path": relative, "language": language, "level": level, "level_number": number,
+                "chapter_number": chapter_number,
                 "state": state, "publication": publication, "local_status": local, "active_processes": details,
-                "rejected_review_attempts": rejected, "recent_jobs": jobs,
+                "rejected_review_attempts": rejected, "latest_rejected_review": latest_rejected,
+                "terminal_failure": terminal_failure, "recent_jobs": jobs,
                 "artifact_notes": self._artifact_notes(run_dir, report, prep)}
         row['display'] = self._plain_progress(row, report, prep)
         return row
@@ -435,8 +518,6 @@ class Dashboard:
         published = row['publication'].startswith('Published')
         if published:
             status, step, explanation = 'Ready', 'Available to read', 'Chapter 1 is published.'
-        elif reviewed:
-            status, step, explanation = 'Needs attention', 'Ready for publication', 'The chapter checks are complete. Publication is still pending.'
         elif live:
             status = 'Working'
             step = 'Running final checks' if help_ready else 'Adding word and grammar help' if text_ready or adding_help else 'Writing the chapter'
@@ -446,8 +527,13 @@ class Dashboard:
                            else 'The story and learner-level text are being prepared.')
             if not workers:
                 explanation += ' The pipeline is preparing its next step.'
+        elif reviewed:
+            status, step, explanation = 'Needs attention', 'Ready for publication', 'The chapter checks are complete. Publication is still pending.'
+        elif row.get('terminal_failure'):
+            status, step = 'Checks failed', 'Checks failed'
+            explanation = f"The last run stopped because checks failed: {row['terminal_failure']['category']}. No chapter agents are running."
         elif row['language'] == 'Korean' and text_ready:
-            status, step, explanation = 'Needs attention', 'Annotation checks unfinished', 'The text is written, but this run has stopped before approval. Saved work is retained.'
+            status, step, explanation = 'Waiting for checks', 'Waiting for checks', 'The text is written, but no terminal failure or live chapter process is recorded.'
         elif row['state'] == 'Run directory absent':
             status, step, explanation = 'Unknown', 'No run found', 'No chapter run has been recorded yet.'
         else:
@@ -467,7 +553,7 @@ class Dashboard:
                 label = 'Preparing chapter material'
             activity[label] = activity.get(label, 0) + 1
         steps = [{'label': 'Text', 'state': 'done' if text_ready or published else 'working' if live else 'waiting'},
-                 {'label': 'Word & grammar help', 'state': 'done' if help_ready or published else 'working' if live and text_ready else 'attention' if status == 'Needs attention' and not reviewed else 'waiting'},
+                 {'label': 'Word & grammar help', 'state': 'done' if help_ready or published else 'working' if live and text_ready else 'attention' if status == 'Checks failed' else 'waiting'},
                  {'label': 'Final checks', 'state': 'done' if reviewed or published else 'working' if live and help_ready else 'waiting'},
                  {'label': 'Ready', 'state': 'done' if published else 'waiting'}]
         return {'title': row['level'], 'status': status, 'step': step, 'explanation': explanation,

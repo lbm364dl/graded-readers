@@ -70,8 +70,12 @@ default; repeat `--run-dir` to add other runs. The loopback-only page refreshes
 every five seconds and cannot change runs or approve content. It shows ready
 chapters, actual live workers, and stopped or unpublished work in plain language.
 Pipeline follow-up is work for the maintainer, not a request for user intervention.
-Run paths, process IDs, rejected review attempts and diagnosis proposals stay
-under the collapsed technical details. Open disclosures survive refreshes.
+Click a chapter card to see its live agents, their tasks and elapsed time, the
+latest failed check, and saved submission/review history. Pipeline coordinators
+are separate from AI workers; submitted output is separate from reviewer
+approval. Stopped checks do not require your approval. The selected chapter,
+expanded findings and dialog scroll position survive refreshes. Run paths and
+maintenance diagnosis proposals remain under the collapsed technical details.
 
 Korean readiness observes the public file, enabled metadata and matching chapter
 review digest; complete private reports are listed separately. The dashboard

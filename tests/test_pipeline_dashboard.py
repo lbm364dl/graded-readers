@@ -40,6 +40,13 @@ class DashboardStateTests(unittest.TestCase):
         snapshot = self.dashboard(run, maintenance).snapshot()
         return next(row for row in snapshot["chapters"] if row["id"] == relative)
 
+    def test_chapter_number_comes_from_explicit_run_evidence(self) -> None:
+        run = self.run_dir()
+        write_json(run / 'preparation.json', {'status': 'prepared', 'number': 7})
+        self.assertEqual(self.chapter_row(run)['chapter_number'], 7)
+        write_json(run / 'preparation.json', {'status': 'prepared', 'number': True})
+        self.assertIsNone(self.chapter_row(run)['chapter_number'])
+
     def test_live_process_requires_exact_run_path_and_old_incomplete_job_is_not_active(self) -> None:
         run = self.run_dir()
         write_json(run / "agents/annotation-0/meta.json", {
@@ -72,7 +79,7 @@ class DashboardStateTests(unittest.TestCase):
             ".venv/bin/python", "-m", "pipeline.korean_agent_harness", "--run-dir", str(run),
         ]}
         worker = {"pid": 222, "elapsed_seconds": 35, "cwd": self.root, "argv": [
-            "codex", "exec", "--json", "-o", str(run / "agents/annotation-0-chunk-current/receipt.json"), "-",
+            "codex", "exec", "--json", "-o", str(run / "agents/annotation-0-chunk-001-current/receipt.json"), "-",
         ]}
         unrelated = {"pid": 333, "elapsed_seconds": 15, "cwd": self.root, "argv": [
             "codex", "exec", "-o", str(self.root / "elsewhere/agents/annotation-x/result.json"), "-",
@@ -82,11 +89,34 @@ class DashboardStateTests(unittest.TestCase):
         self.assertEqual(sum(p["process_type"] == "coordinator" for p in row["active_processes"]), 1)
         self.assertEqual(sum(p["process_type"] == "worker" for p in row["active_processes"]), 1)
         running = [job for job in row["recent_jobs"] if job["state"] == "running"]
-        self.assertEqual([job["job"] for job in running], ["annotation-0-chunk-current"])
+        self.assertEqual([job["job"] for job in running], ["annotation-0-chunk-001-current"])
         self.assertEqual(running[0]["stage"], "annotation generation")
+        self.assertEqual(running[0]["part"], "chunk 1")
+        self.assertEqual(running[0]["elapsed_seconds"], 35)
         self.assertEqual(row['display']['status'], 'Working')
         self.assertEqual(row['display']['step'], 'Adding word and grammar help')
         self.assertEqual(row['display']['workers'], 1)
+
+    def test_nested_semantic_worker_is_deduplicated_by_output_artifact(self) -> None:
+        run = self.run_dir('runs/chinese-hsk4/chapter-1')
+        job_path = run / 'agents/annotations/chunk_0001/semantic_patch'
+        write_json(job_path / 'meta.json', {'started_at': '2026-10-03T09:00:00+00:00', 'return_code': None})
+        output = str(job_path / 'receipt.json')
+        wrapper = {'pid': 501, 'elapsed_seconds': 50, 'cwd': self.root,
+                   'argv': ['codex', 'exec', '--json', '-o', output, '-']}
+        native_child = {'pid': 502, 'elapsed_seconds': 43, 'cwd': self.root,
+                        'argv': ['codex', 'exec', '--json', '-o', output, '-']}
+        with patch('pipeline.dashboard._processes', return_value=[wrapper, native_child]):
+            row = self.chapter_row(run)
+        workers = [process for process in row['active_processes'] if process['process_type'] == 'worker']
+        self.assertEqual(len(workers), 1)
+        self.assertEqual(workers[0]['job'], 'annotations/chunk_0001/semantic_patch')
+        self.assertEqual(workers[0]['stage'], 'annotation semantic patch')
+        self.assertEqual(workers[0]['part'], 'chunk 1')
+        self.assertEqual(workers[0]['elapsed_seconds'], 50)
+        active_jobs = [job for job in row['recent_jobs'] if job['submission_state'] == 'running']
+        self.assertEqual(len(active_jobs), 1)
+        self.assertEqual(active_jobs[0]['job'], workers[0]['job'])
 
     def test_plain_progress_distinguishes_saved_text_publication_and_live_help(self) -> None:
         row = {'language': 'Korean', 'level': 'TOPIK 3', 'active_processes': [],
@@ -94,8 +124,8 @@ class DashboardStateTests(unittest.TestCase):
                'state': 'Prepared; downstream chapter status unknown'}
         prep = {'stages': {'prose': {'approved': True}}}
         waiting = Dashboard._plain_progress(row, None, prep)
-        self.assertEqual(waiting['status'], 'Needs attention')
-        self.assertEqual([stage['state'] for stage in waiting['steps']], ['done', 'attention', 'waiting', 'waiting'])
+        self.assertEqual(waiting['status'], 'Waiting for checks')
+        self.assertEqual([stage['state'] for stage in waiting['steps']], ['done', 'waiting', 'waiting', 'waiting'])
         self.assertEqual(waiting['workers'], 0)
         live = dict(row, active_processes=[{'process_type': 'worker', 'job': 'annotation-local-review-synthetic'}])
         working = Dashboard._plain_progress(live, None, prep)
@@ -104,6 +134,57 @@ class DashboardStateTests(unittest.TestCase):
         ready = Dashboard._plain_progress(dict(row, publication='Published'), None, prep)
         self.assertEqual(ready['status'], 'Ready')
         self.assertTrue(all(stage['state'] == 'done' for stage in ready['steps']))
+
+    def test_terminal_failure_checkpoint_and_resumed_worker_states_are_distinct(self) -> None:
+        run = self.run_dir()
+        prep = {'status': 'prepared', 'stages': {'prose': {'approved': True}}}
+        write_json(run / 'preparation.json', prep)
+        baseline = self.chapter_row(run)
+        self.assertEqual(baseline['display']['status'], 'Waiting for checks')
+        log = ('Traceback (most recent call last):\n'
+               '  File "pipeline/korean_agent_harness.py", line 1, in run\n'
+               'ValueError: Korean annotation chunk 1 failed independent review: SECRET-RAW-FINDING\n')
+        (run / 'resume-detached.log').write_text(log, encoding='utf-8')
+        failed = self.chapter_row(run)
+        self.assertEqual(failed['display']['status'], 'Checks failed')
+        self.assertEqual(failed['terminal_failure']['category'], 'Independent review did not approve an annotation chunk')
+        self.assertNotIn('SECRET-RAW-FINDING', json.dumps(failed))
+        live_process = {'pid': 51, 'elapsed_seconds': 20, 'cwd': self.root, 'argv': [
+            '.venv/bin/python', '-m', 'pipeline.korean_agent_harness', '--run-dir', str(run),
+        ]}
+        with patch('pipeline.dashboard._processes', return_value=[live_process]):
+            resumed = self.chapter_row(run)
+        self.assertEqual(resumed['display']['status'], 'Working')
+        published = dict(failed, publication='Published')
+        ready = Dashboard._plain_progress(published, None, prep)
+        self.assertEqual(ready['status'], 'Ready')
+
+    def test_terminal_validation_failure_has_conservative_category(self) -> None:
+        run = self.run_dir()
+        (run / 'resume-detached.log').write_text(
+            'Traceback (most recent call last):\njsonschema.exceptions.ValidationError: secret content\n'
+            "Failed validating 'enum' in schema\nOn instance['lemma']:\n  secret content\n",
+            encoding='utf-8')
+        row = self.chapter_row(run)
+        self.assertEqual(row['terminal_failure']['category'], 'Worker output failed schema validation')
+        self.assertNotIn('secret content', json.dumps(row))
+
+    def test_latest_rejected_check_survives_recent_job_truncation(self) -> None:
+        run = self.run_dir()
+        write_json(run / 'agents/annotation-review-old/meta.json', {
+            'started_at': '2026-10-03T08:00:00+00:00', 'ended_at': '2026-10-03T08:01:00+00:00', 'return_code': 0,
+        })
+        write_json(run / 'agents/annotation-review-old/result.json', {'approved': False, 'issues': ['Finding to inspect']})
+        for index in range(13):
+            job = run / 'agents' / f'annotation-{index}'
+            stamp = f'2026-10-03T09:{index:02d}:00+00:00'
+            write_json(job / 'meta.json', {'started_at': stamp, 'ended_at': stamp, 'return_code': 0})
+            write_json(job / 'result.json', {'submitted': True})
+        row = self.chapter_row(run)
+        self.assertEqual(len(row['recent_jobs']), 12)
+        self.assertNotIn('annotation-review-old', [job['job'] for job in row['recent_jobs']])
+        self.assertEqual(row['latest_rejected_review']['job'], 'annotation-review-old')
+        self.assertEqual(row['latest_rejected_review']['review_issues'], ['Finding to inspect'])
 
     def test_schema_job_success_does_not_erase_rejected_review_attempt(self) -> None:
         run = self.run_dir()
@@ -126,6 +207,7 @@ class DashboardStateTests(unittest.TestCase):
         self.assertEqual(row["rejected_review_attempts"], 2)
         jobs = {job["job"]: job for job in row["recent_jobs"]}
         self.assertEqual(jobs["annotation-review-2"]["process_state"], "succeeded")
+        self.assertEqual(jobs["annotation-review-2"]["submission_state"], "submitted")
         self.assertEqual(jobs["annotation-review-2"]["review_state"], "rejected")
         self.assertEqual(jobs["annotation-review-2"]["review_issue_count"], 1)
         self.assertEqual(jobs["annotation-review-2"]["review_issues"], ["example"])
@@ -235,7 +317,14 @@ class DashboardHTTPTests(unittest.TestCase):
         with urlopen(self.base + "/") as response:
             self.assertEqual(response.status, 200)
             self.assertIn('text/html', response.headers['Content-Type'])
-            self.assertIn(b'<main', response.read())
+            html = response.read()
+            self.assertIn(b'<main', html)
+            self.assertIn(b'<dialog id="chapter-dialog"', html)
+            self.assertIn(b"card.setAttribute('role','button')", html)
+            self.assertIn(b"dialog.showModal()", html)
+            self.assertIn(b"event.key==='Enter'||event.key===' '", html)
+            self.assertIn(b"renderChapterDialog()", html)
+            self.assertIn(b"scrollTop=shell.scrollTop", html)
         with urlopen(self.base + "/api/state") as response:
             raw = response.read()
             payload = json.loads(raw)
