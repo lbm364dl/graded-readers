@@ -7,7 +7,8 @@ from pipeline import korean_contracts as contracts
 
 LEGACY_FORMAT = 'segment-anchored-annotation-v1'
 FORMAT = 'segment-contained-annotation-v2'
-FORMATS = {LEGACY_FORMAT, FORMAT}
+SPAN_FORMAT = 'source-span-annotation-v3'
+FORMATS = {LEGACY_FORMAT, FORMAT, SPAN_FORMAT}
 GRAMMAR_LINK = contracts.obj({key: value for key, value in contracts.LINK['properties'].items()
     if key not in ('segment_index', 'display_end_segment_index')})
 EXPRESSION_LINK = contracts.obj({key: value for key, value in contracts.EXPRESSION_LINK['properties'].items()
@@ -35,6 +36,34 @@ SCHEMA = contracts.obj({
 })
 LEGACY_SCHEMA = deepcopy(SCHEMA)
 LEGACY_SCHEMA['properties']['format']['enum'] = [LEGACY_FORMAT]
+SPAN_SCHEMA = deepcopy(SCHEMA)
+SPAN_SCHEMA['properties']['format']['enum'] = [SPAN_FORMAT]
+for schema in SPAN_SCHEMA['properties']['segments']['items']['anyOf']:
+    del schema['properties']['text']
+    schema['required'].remove('text')
+    for key in ('source_start', 'source_end'):
+        schema['properties'][key] = {'type': 'integer', 'minimum': 0}
+        schema['required'].append(key)
+
+
+def materialize_spans(value, source_text):
+    """Decode an explicit, gapless partition of immutable Unicode source text."""
+    if source_text is None:
+        raise ValueError('Korean source-span annotation requires its authoritative source_text')
+    result = deepcopy(value)
+    cursor = 0
+    for index, segment in enumerate(result['segments']):
+        start, end = segment.pop('source_start'), segment.pop('source_end')
+        if start != cursor or end <= start or end > len(source_text):
+            raise ValueError(f'Korean source span {index} [{start}:{end}] must start at {cursor}, '
+                             f'be nonempty, and end within source length {len(source_text)}')
+        segment['text'] = source_text[start:end]
+        cursor = end
+    if cursor != len(source_text):
+        raise ValueError(f'Korean source spans end at {cursor}; must cover all {len(source_text)} Unicode characters')
+    result['format'] = FORMAT
+    validate_worker(result)
+    return result
 
 
 def endpoint(segments, start, form):
@@ -86,16 +115,21 @@ def contained_span(segments, anchor, form):
 
 
 def validate_worker(value):
+    if value.get('format') == SPAN_FORMAT:
+        validate(value, SPAN_SCHEMA)
+        return
     if value.get('format') not in FORMATS:
         validate(value, contracts.ANNOTATION)
         return
     schema = deepcopy(SCHEMA)
-    schema['properties']['format']['enum'] = sorted(FORMATS)
+    schema['properties']['format']['enum'] = [LEGACY_FORMAT, FORMAT]
     validate(value, schema)
 
 
 def decode(value, *, source_text=None):
     validate_worker(value)
+    if value.get('format') == SPAN_FORMAT:
+        value = materialize_spans(value, source_text)
     if source_text is not None:
         contracts.check_reconstruction(value['segments'], source_text)
     if value.get('format') not in FORMATS:

@@ -39,6 +39,51 @@ def test_attached_links_preserve_complete_reviewed_annotation_and_legacy_format(
     assert chunks.decode(legacy) == raw
 
 
+def source_spans(raw):
+    value = attached(raw)
+    value['format'] = chunks.SPAN_FORMAT
+    cursor = 0
+    for segment in value['segments']:
+        text = segment.pop('text')
+        segment.update(source_start=cursor, source_end=cursor + len(text))
+        cursor += len(text)
+    return value
+
+
+def test_source_spans_preserve_full_annotation_links_and_proposal():
+    raw = fixture()
+    source = ''.join(s['text'] for s in raw['segments'])
+    value = source_spans(raw)
+    before = copy.deepcopy(value)
+    assert chunks.decode(value, source_text=source) == raw
+    assert value == before
+    with pytest.raises(ValueError, match='authoritative source_text'):
+        chunks.decode(value)
+
+
+@pytest.mark.parametrize('damage', ['gap', 'overlap', 'empty', 'overflow', 'tail', 'copied_text'])
+def test_source_spans_reject_incomplete_or_ambiguous_source_partitions(damage):
+    raw = fixture()
+    source = ''.join(s['text'] for s in raw['segments'])
+    value = source_spans(raw)
+    if damage == 'gap':
+        value['segments'][1]['source_start'] += 1
+    elif damage == 'overlap':
+        value['segments'][1]['source_start'] -= 1
+    elif damage == 'empty':
+        value['segments'][0]['source_end'] = 0
+    elif damage == 'overflow':
+        value['segments'][-1]['source_end'] += 1
+    elif damage == 'tail':
+        value['segments'].pop()
+    else:
+        value['segments'][0]['text'] = 'rewritten source'
+    before = copy.deepcopy(value)
+    with pytest.raises((ValueError, ValidationError)):
+        chunks.decode(value, source_text=source)
+    assert value == before
+
+
 def test_source_reconstruction_precedes_link_errors_without_changing_proposal():
     value = attached(fixture())
     source = ''.join(s['text'] for s in value['segments'])
@@ -144,14 +189,16 @@ def test_v2_replays_contained_links_but_v1_keeps_its_strict_anchor_contract():
         chunks.decode(value)
 
 
-@pytest.mark.parametrize('format_name', [chunks.LEGACY_FORMAT, chunks.FORMAT])
+@pytest.mark.parametrize('format_name', [chunks.LEGACY_FORMAT, chunks.FORMAT, chunks.SPAN_FORMAT])
 def test_raw_chunk_digest_is_required_and_tampering_is_rejected(tmp_path, format_name):
-    raw = attached(fixture())
+    base = fixture()
+    source = ''.join(s['text'] for s in base['segments'])
+    raw = source_spans(base) if format_name == chunks.SPAN_FORMAT else attached(base)
     raw['format'] = format_name
-    decoded = chunks.decode(raw)
+    decoded = chunks.decode(raw, source_text=source)
     path = tmp_path/'result.json'
     save(path, raw)
-    record = annotation_chunk_record('chunk', 'source', decoded, raw)
+    record = annotation_chunk_record('chunk', source, decoded, raw)
     assert read_annotation_chunk(path, record) == decoded
     with pytest.raises(ValueError, match='changed after review'):
         read_annotation_chunk(path, {key: item for key, item in record.items() if key != 'raw_digest'})

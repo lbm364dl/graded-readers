@@ -84,11 +84,11 @@ def digest(value) -> str:
 
 
 def read_annotation_chunk(path: Path, record=None):
-    from pipeline.korean_annotation_chunks import FORMATS, decode
+    from pipeline.korean_annotation_chunks import FORMATS, SPAN_FORMAT, decode
     raw = read(path)
     if record is not None and raw.get('format') in FORMATS and record.get('raw_digest') != digest(raw):
         raise ValueError('Korean attached chunk changed after review')
-    return decode(raw)
+    return decode(raw, source_text=record.get('text') if record and raw.get('format') == SPAN_FORMAT else None)
 
 
 def annotation_chunk_record(job, text, value, raw=None):
@@ -990,20 +990,20 @@ class KoreanHarness:
                         from pipeline.korean_lexical_research import usage_evidence
                         previous_usages = {}
                         for segment in (previous_chunk or {}).get('segments', []):
-                            if segment['lexical_kind'] == 'vocabulary':
+                            if segment['lexical_kind'] == 'vocabulary' and 'text' in segment:
                                 previous_usages.setdefault(segment['lemma'], []).append(
                                     {'text': segment['text'], 'meaning_en': segment['meaning_en']})
                         reviewed_usages = usage_evidence(previous_usages, related_forms=True) if previous_usages else []
                         try:
                             value = await self.runner.call(chunk_job, self.policy + "\n" + annotation_prompt
                                 + "\nThis job annotates ONLY chunk_text, not the full chapter. "
-                                "Use segment-contained-annotation-v2: attach grammar_links and expression_links to a word INCLUDED in their exact complete source form, and mark each segment is_inflected. This worker-format rule supersedes the general first-segment attachment instruction: the attachment may be the grammatical ending or the first word. The pipeline derives the unique exact complete-form span containing that segment and publishes its first/last indices. Do not output numeric link indices. Include trailing spaces/newlines as punctuation. source_copy_runs lists the exact alternating non-whitespace and whitespace strings from chunk_text. It is a copying aid, not learner tap segmentation: you may split non-whitespace runs into reviewed lexical and grammatical taps, but preserve their complete text, punctuation and every whitespace run in order. Copy all whitespace from chunk_text exactly; previous_chunk is a rejected proposal when issues are supplied, not authority for paragraph boundaries. When reconstruction issues include exact text differences, use them to restore chunk_text in segment text; never revise the approved prose or treat punctuation as editorial choice. "
+                                "Use source-span-annotation-v3: each segment supplies source_start and source_end Unicode offsets into chunk_text, never a text field. Spans must be nonempty, contiguous in source order, begin at 0 and cover ALL characters through len(chunk_text), including every space and punctuation mark. source_characters gives each character with its start and end offset; choose learner tap boundaries yourself. The pipeline slices the immutable source exactly; do not reproduce or rewrite it. Attach grammar_links and expression_links to a word INCLUDED in their exact complete source form, and mark each segment is_inflected. This worker-format rule supersedes the general first-segment attachment instruction: the attachment may be the grammatical ending or the first word. The pipeline derives the unique exact complete-form span containing that segment and publishes its first/last indices. Do not output numeric link indices. Include whitespace and punctuation in punctuation spans. previous_chunk is rejected repair context, never source authority. Use chunk_text and source_characters for all offsets. "
                                 "For example, with segments 가는, space, 곳, a construction displaying 가는 곳 may be attached to 가는 or 곳; one displaying only 곳 must be attached to 곳. Preserve the complete source form and tap boundaries. A form-step lesson stays attached to its step's segment with EMPTY display strings; its complete-form meaning is already in the step. Other construction links need their complete source phrase and meaning. "
-                                + payload(chunk_text=text, source_copy_runs=re.findall(r'\s+|\S+', text), previous_chunk=previous_chunk, issues=errors,
+                                + payload(chunk_text=text, source_characters=[[i, i + 1, c] for i, c in enumerate(text)], source_copy_runs=re.findall(r'\s+|\S+', text), previous_chunk=previous_chunk, issues=errors,
                                     **({'newly_reviewed_lexical_candidates': new_candidates} if new_candidates else {}),
                                     **({'reviewed_lexical_usage_evidence': reviewed_usages} if reviewed_usages else {}),
                                     **({'linguistic_reference': read(LINGUISTIC_REFERENCE)} if errors else {})),
-                                contracts.schema_path("chunk-annotation-v2"), "low", tool_profile="offline")
+                                contracts.schema_path("chunk-annotation-v3"), "low", tool_profile="offline")
                         except ValueError as error:
                             # A rejected worker result has no trusted annotation
                             # to inherit. Retry this chunk, preserving siblings.
