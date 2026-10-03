@@ -534,6 +534,38 @@ def main(argv: Sequence[str] | None = None) -> int:
             opened_logs.remove(err_fd)
         os.set_inheritable(1, True)
         os.set_inheritable(2, True)
+        # A coordinator-owned SQLite template can be copied into this job's
+        # private runtime only after Landlock is active. This keeps cache
+        # setup from broadening the wrapper's write authority and leaves the
+        # immutable template outside every writable root.
+        runtime_roots = [root for root in roots if root.name == "runtime"]
+        if len(runtime_roots) == 1:
+            runtime_root = runtime_roots[0]
+            workspace_root = runtime_root.parent / "workspace"
+            if workspace_root in roots:
+                try:
+                    if str(repo) not in sys.path:
+                        sys.path.insert(0, str(repo))
+                    from pipeline.worker_state_cache import (
+                        prepare_runtime_state,
+                        write_setup_receipt,
+                    )
+                    receipt = prepare_runtime_state(str(repo), str(runtime_root), args.command)
+                    if receipt is not None:
+                        write_setup_receipt(str(runtime_root), receipt)
+                except Exception:
+                    # A cache miss or failure must fall back to Codex's normal
+                    # isolated fresh-state backfill. Do not expose paths or
+                    # helper diagnostics to worker stderr.
+                    try:
+                        from pipeline.worker_state_cache import write_setup_receipt
+                        write_setup_receipt(str(runtime_root), {
+                            "format_version": 1,
+                            "status": "skipped",
+                            "reason": "cache-setup-failed",
+                        })
+                    except Exception:
+                        pass
         os.execvpe(args.command[0], args.command, os.environ.copy())
     except LandlockError as exc:
         # Messages are fixed, sanitized policy diagnostics; don't print child
