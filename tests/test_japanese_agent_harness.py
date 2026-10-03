@@ -2360,7 +2360,58 @@ async def test_annotation_review_defines_canonical_overlay_head_and_editor_remit
         if job.endswith("_boundary_review")
     )
     assert "surface 生まれたか correctly has head 生まれるか" in general
+    assert "A non-past intermediate can correctly precede an explicit past transformation" in general
+    assert "a final past stage still glossed as present" in general
     assert "Do not review `grammar_overlays`" in boundary
+    assert "A non-past intermediate can correctly precede an explicit past transformation" in boundary
+
+
+@pytest.mark.asyncio
+async def test_annotation_review_prompt_checks_present_intermediate_before_past():
+    class PromptRunner:
+        def __init__(self):
+            self.prompts = []
+
+        async def call(self, job, prompt, *args, **kwargs):
+            self.prompts.append((job, prompt))
+            return {"verdict": "pass", "issues": []}
+
+    harness = object.__new__(JapaneseChapterHarness)
+    harness.args = Namespace(annotation_review_effort="low", refresh=False)
+    harness.runner = PromptRunner()
+    annotation = {
+        "segments": [{
+            "surface": "息子だった", "type": "word", "lemma": "息子",
+            "surface_kana": "むすこだった", "lemma_kana": "むすこ",
+            "conjugation_form": "past copula", "dictionary_key": "",
+            "dictionary_definition_en": "", "form_steps": [
+                {"form": "息子だ", "reading": "むすこだ", "label": "copula",
+                 "meaning_en": "is a son"},
+                {"form": "息子だった", "reading": "むすこだった",
+                 "label": "past copula", "meaning_en": "was a son"},
+            ],
+        }],
+        "grammar_overlays": [],
+    }
+    assert await harness.review_annotation(0, "息子だった", annotation, "review") == {
+        "verdict": "pass", "issues": [],
+    }
+    general = next(prompt for job, prompt in harness.runner.prompts
+                   if job.endswith("_review") and not job.endswith("_boundary_review"))
+    assert '"form": "息子だ"' in general and '"meaning_en": "is a son"' in general
+    assert '"form": "息子だった"' in general and '"meaning_en": "was a son"' in general
+    assert "a past final surface whose chain stops at the non-past form" in general
+
+    wrong = copy.deepcopy(annotation)
+    wrong["segments"][0]["form_steps"][1]["meaning_en"] = "is a son"
+    await harness.review_annotation(0, "息子だった", wrong, "wrong-final-meaning")
+    wrong_general = next(
+        prompt for job, prompt in harness.runner.prompts
+        if job.endswith("_review") and not job.endswith("_boundary_review")
+        and "wrong-final-meaning" in job
+    )
+    assert '"meaning_en": "is a son"' in wrong_general
+    assert "a final past stage still glossed as present" in wrong_general
 
 
 @pytest.mark.asyncio

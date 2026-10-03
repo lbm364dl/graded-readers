@@ -443,6 +443,10 @@ async def test_annotation_generation_and_review_enforce_neutral_directional_lai(
     assert all(CHINESE_PINYIN_POLICY in prompt for prompt in prompts)
     assert all("fàn shànglai" in prompt and "zǒu jìnqu" in prompt
                for prompt in prompts)
+    review_prompt = runner.calls[-1][3]
+    assert "A non-past intermediate can correctly precede an explicit past transformation" in review_prompt
+    assert "a past final surface whose chain stops at the non-past form" in review_prompt
+    assert "Do not report a defect by restating a correct submitted field" in review_prompt
 
 
 class FakeConstrainedRunner:

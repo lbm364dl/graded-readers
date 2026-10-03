@@ -13,11 +13,13 @@ class Runner:
     def __init__(self, root, review=None):
         self.root = root
         self.calls = []
+        self.prompts = []
         self.review = review or {'approved': True, 'issues': [], 'prose_revision_reason_en': ''}
 
     async def call(self, job, prompt, schema, effort, **kwargs):
         assert effort == 'low'
         self.calls.append(job)
+        self.prompts.append(prompt)
         root = self.root / 'agents' / job
         _, manifest = build(root / 'workspace', prompt, json.loads(schema.read_text()),
                             context=kwargs['workspace_context'])
@@ -56,6 +58,51 @@ def test_review_binds_exact_occurrence_context_and_preserves_duplicate_positions
         altered = {**args, **changes}
         with pytest.raises(ValueError, match='stale, rejected or mismatched'):
             verify(tmp_path, altered, evidence)
+
+
+def test_korean_review_prompt_compares_complete_copula_then_past_stages(tmp_path):
+    annotation = {'segments': [{
+        'text': '아들이었다', 'type': 'word', 'meaning_en': 'was a son',
+        'lemma': '아들', 'lexical_kind': 'vocabulary', 'lexical_id': '아들/명',
+        'form_steps': [
+            {'form': '아들이다', 'label': 'Copula', 'meaning_en': 'is a son',
+             'grammar_entry_ids': ['copula-ida']},
+            {'form': '아들이었다', 'label': 'Past copula', 'meaning_en': 'was a son',
+             'grammar_entry_ids': ['past-ass-eoss']},
+        ],
+    }]}
+    context = {'chapter_text': '그는 아들이었다.', 'source_start': 3,
+        'approved_grammar': [
+            {'id': 'copula-ida', 'title_en': 'Is or was', 'pattern': '이다',
+             'explanation_en': 'Connects a noun to what someone or something is. It can take past and polite endings.'},
+            {'id': 'past-ass-eoss', 'title_en': 'Past time', 'pattern': '-았/었-',
+             'explanation_en': 'Places the action or state before now.'},
+        ]}
+    runner = Runner(tmp_path)
+    run_review(tmp_path, runner, annotation=annotation, text='아들이었다.', context=context)
+    prompt = runner.prompts[-1]
+    assert 'A non-past intermediate can correctly precede an explicit past transformation' in prompt
+    assert 'a final past stage still glossed as present' in prompt
+    assert 'Do not report a defect by restating a correct submitted field' in prompt
+    assert '아들이다' in prompt and 'is a son' in prompt
+    assert '아들이었다' in prompt and 'was a son' in prompt
+    assert 'It can take past and polite endings' in prompt
+
+    wrong_meaning = copy.deepcopy(annotation)
+    wrong_meaning['segments'][0]['form_steps'][1]['meaning_en'] = 'is a son'
+    run_review(tmp_path, runner, annotation=wrong_meaning, text='아들이었다.', context=context)
+    wrong_meaning_prompt = runner.prompts[-1]
+    assert '"meaning_en": "is a son"' in wrong_meaning_prompt
+    assert 'a final past stage still glossed as present' in wrong_meaning_prompt
+
+    # A wrong link remains actionable: the same instruction explicitly tells
+    # the reviewer to report a mismatched past lesson instead of overlooking it.
+    wrong_link = copy.deepcopy(annotation)
+    wrong_link['segments'][0]['form_steps'][1]['grammar_entry_ids'] = ['copula-ida']
+    run_review(tmp_path, runner, annotation=wrong_link, text='아들이었다.', context=context)
+    wrong_prompt = runner.prompts[-1]
+    assert 'copula-ida' in wrong_prompt
+    assert 'a wrong or missing past link' in wrong_prompt
 
 
 def test_rejected_local_review_cannot_approve_publication(tmp_path):

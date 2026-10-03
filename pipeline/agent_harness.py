@@ -19,6 +19,7 @@ import sys
 from typing import Any
 
 from pipeline.chunk_scheduler import map_chunks
+from pipeline.annotation_review_guidance import FORM_STAGE_EVIDENCE_GUIDANCE
 
 from jsonschema import Draft202012Validator
 from opencc import OpenCC
@@ -2277,6 +2278,8 @@ Identify the specific occurrence: repeated surface text must use the offsets of
 the occurrence that is actually wrong. Self-check TEXT[start:end] == segment_text.
 Do not use tools, a shell, Python, search, or external sources. Copy issue offsets
 directly from the supplied segment/overlay rows and verify them against TEXT.
+
+{FORM_STAGE_EVIDENCE_GUIDANCE}
 
 TEXT:
 {chunk}

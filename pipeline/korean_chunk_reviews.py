@@ -4,8 +4,9 @@ from pathlib import Path
 from jsonschema import validate
 
 from pipeline import korean_contracts as contracts
+from pipeline.annotation_review_guidance import FORM_STAGE_EVIDENCE_GUIDANCE
 
-INSTRUCTIONS = '''Review only the supplied Korean annotation chunk independently.
+INSTRUCTIONS = FORM_STAGE_EVIDENCE_GUIDANCE + '\n' + '''Review only the supplied Korean annotation chunk independently.
 Read chapter_text and the source plan for surrounding narrative context, but report
 concrete defects only in this chunk. Check every occurrence, lexical sense, grammar
 function, complete-form meaning, inflection chain, and English explanation. Check

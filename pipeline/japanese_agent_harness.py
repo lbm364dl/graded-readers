@@ -21,6 +21,7 @@ from pipeline.agent_harness import (
     status, utc_now,
 )
 from pipeline.chunk_scheduler import map_chunks
+from pipeline.annotation_review_guidance import FORM_STAGE_EVIDENCE_GUIDANCE
 from pipeline.japanese_readability import (
     GRAMMAR_BASELINE_LEMMAS,
     MAX_ABOVE_LEVEL_RATIO,
@@ -5073,6 +5074,8 @@ Zero overlays is valid. Overlay offsets and surfaces
 must be exact. List
 every concrete learner-harming issue and pass only if none remains.
 
+{FORM_STAGE_EVIDENCE_GUIDANCE}
+
 REVIEWED CHAPTER STORY-VOCABULARY PLAN:
 {json.dumps(story_plan, ensure_ascii=False, indent=2)}
 
@@ -5087,6 +5090,8 @@ Do not review `grammar_overlays`, their `head_lemma`, their components, or their
 offsets in this specialized pass. In particular, do not demand that an overlay
 head copy an inflected surface. The general annotation reviewer owns overlay
 semantics; your remit here is the primary `segments` array.
+
+{FORM_STAGE_EVIDENCE_GUIDANCE}
 
 Also audit the full derivation, not only the final label. Every inflected
 lexical or construction-sized grammar segment needs ordered `form_steps` ending in its exact surface and
