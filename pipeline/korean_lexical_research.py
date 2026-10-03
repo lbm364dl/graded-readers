@@ -17,6 +17,7 @@ from html import unescape
 from http.client import HTTPException
 
 from jsonschema import ValidationError, validate
+from jsonschema.validators import validator_for
 from pipeline import korean_contracts as contracts
 
 REGISTRY = Path(__file__).resolve().parent.parent / 'data/korean/reviewed-lexemes.json'
@@ -53,6 +54,12 @@ PROPOSAL = contracts.obj({
     'unresolved': {'type': 'array', 'items': contracts.obj({
         'headword': contracts.NONEMPTY, 'reason_en': contracts.NONEMPTY})},
 })
+# This schema is a module constant and check_proposal runs for every retained
+# lexical review. Match jsonschema.validate's validator selection/check_schema
+# once, then reuse the compiled validator while preserving per-record checks.
+_PROPOSAL_VALIDATOR_CLASS = validator_for(PROPOSAL)
+_PROPOSAL_VALIDATOR_CLASS.check_schema(PROPOSAL)
+_PROPOSAL_VALIDATOR = _PROPOSAL_VALIDATOR_CLASS(PROPOSAL)
 
 
 def fingerprint(value):
@@ -191,7 +198,7 @@ def proposal_reference_urls(proposal):
 
 
 def check_proposal(value, headwords):
-    validate(value, PROPOSAL)
+    _PROPOSAL_VALIDATOR.validate(value)
     represented = {e['headword'] for e in value['entries']} | {e['headword'] for e in value['unresolved']}
     if represented != set(headwords):
         raise ValueError(f'Lexical research must account for exactly the requested headwords. Missing: {sorted(set(headwords) - represented)}; unexpected: {sorted(represented - set(headwords))}. Keep headword strings exact; explain homonyms and unresolved roles in the evidence/reason fields.')

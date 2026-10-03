@@ -3,6 +3,7 @@ import copy
 import json
 
 import pytest
+from jsonschema import ValidationError
 
 from pipeline import korean_lexical_research as research
 from pipeline.korean_agent_harness import save
@@ -123,6 +124,17 @@ def test_researched_identity_requires_primary_record_pos_and_exact_coverage(chan
     else:
         value['entries'][0]['headword'] = 'unrequested'
     with pytest.raises(ValueError):
+        research.check_proposal(value, ['검증하다'])
+
+
+@pytest.mark.parametrize('change', ['invalid_pos', 'extra_property'])
+def test_compiled_proposal_validator_keeps_schema_rejections(change):
+    value = proposal()
+    if change == 'invalid_pos':
+        value['entries'][0]['pos'] = 'noun'
+    else:
+        value['entries'][0]['unreviewed_grade'] = 1
+    with pytest.raises(ValidationError):
         research.check_proposal(value, ['검증하다'])
 
 
