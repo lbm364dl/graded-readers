@@ -50,6 +50,44 @@ def source_spans(raw):
     return value
 
 
+def source_span_links(raw):
+    attached_value = attached(raw)
+    value = source_spans(raw)
+    value['format'] = chunks.SPAN_LINK_FORMAT
+    for index, segment in enumerate(value['segments']):
+        for field, surface in [('grammar_links', 'display_form'), ('expression_links', 'form')]:
+            for link in segment[field]:
+                form = link.pop(surface)
+                if not form:
+                    start, end = -1, -1
+                else:
+                    first, last = chunks.contained_span(attached_value['segments'], index, form)
+                    start = value['segments'][first]['source_start']
+                    end = value['segments'][last]['source_end']
+                link.update(source_start=start, source_end=end)
+    return value
+
+
+def test_source_link_ranges_preserve_complete_forms_and_grammar_steps():
+    raw = fixture()
+    source = ''.join(s['text'] for s in raw['segments'])
+    value = source_span_links(raw)
+    before = copy.deepcopy(value)
+    assert chunks.decode(value, source_text=source) == raw
+    assert value == before
+
+
+@pytest.mark.parametrize('range_', [(1, 2), (0, 1), (-1, 1), (999, 1000)])
+def test_source_link_ranges_reject_mid_tap_elsewhere_and_invalid_sentinels(range_):
+    raw = fixture()
+    source = ''.join(s['text'] for s in raw['segments'])
+    value = source_span_links(raw)
+    link = next(link for segment in value['segments'] for link in segment['grammar_links'])
+    link.update(source_start=range_[0], source_end=range_[1])
+    with pytest.raises(ValueError, match='complete tap boundaries'):
+        chunks.decode(value, source_text=source)
+
+
 def test_source_spans_preserve_full_annotation_links_and_proposal():
     raw = fixture()
     source = ''.join(s['text'] for s in raw['segments'])
@@ -189,11 +227,11 @@ def test_v2_replays_contained_links_but_v1_keeps_its_strict_anchor_contract():
         chunks.decode(value)
 
 
-@pytest.mark.parametrize('format_name', [chunks.LEGACY_FORMAT, chunks.FORMAT, chunks.SPAN_FORMAT])
+@pytest.mark.parametrize('format_name', [chunks.LEGACY_FORMAT, chunks.FORMAT, chunks.SPAN_FORMAT, chunks.SPAN_LINK_FORMAT])
 def test_raw_chunk_digest_is_required_and_tampering_is_rejected(tmp_path, format_name):
     base = fixture()
     source = ''.join(s['text'] for s in base['segments'])
-    raw = source_spans(base) if format_name == chunks.SPAN_FORMAT else attached(base)
+    raw = source_span_links(base) if format_name == chunks.SPAN_LINK_FORMAT else source_spans(base) if format_name == chunks.SPAN_FORMAT else attached(base)
     raw['format'] = format_name
     decoded = chunks.decode(raw, source_text=source)
     path = tmp_path/'result.json'

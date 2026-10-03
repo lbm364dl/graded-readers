@@ -2102,7 +2102,8 @@ async def test_worker_policy_change_retains_exact_cache_only_evidence(tmp_path, 
 
 @pytest.mark.asyncio
 @pytest.mark.parametrize('requested_effort', ['low', 'high'])
-async def test_codex_runner_uses_direct_log_files(monkeypatch, tmp_path, requested_effort):
+@pytest.mark.parametrize('benchmark_effort', [None, 'low', 'medium', 'high'])
+async def test_codex_runner_uses_direct_log_files(monkeypatch, tmp_path, requested_effort, benchmark_effort):
     schema = tmp_path / "schema.json"
     schema.write_text('{"type":"object"}')
     observed = {}
@@ -2130,16 +2131,17 @@ async def test_codex_runner_uses_direct_log_files(monkeypatch, tmp_path, request
         return FakeProcess()
 
     monkeypatch.setattr(asyncio, "create_subprocess_exec", fake_exec)
-    runner = CodexRunner(tmp_path, "model", asyncio.Semaphore(1), 10)
+    runner = CodexRunner(tmp_path, "model", asyncio.Semaphore(1), 10, benchmark_effort=benchmark_effort)
     assert await runner.call("job", "hello", schema, requested_effort) == {}
     assert observed['command'][observed['command'].index('-m') + 1] == 'gpt-6-luna'
-    assert 'model_reasoning_effort="low"' in observed['command']
+    effective_effort = benchmark_effort or 'low'
+    assert f'model_reasoning_effort="{effective_effort}"' in observed['command']
     assert observed["stdout"] != asyncio.subprocess.PIPE
     assert observed["stderr"] != asyncio.subprocess.PIPE
     assert observed["start_new_session"] is True
     assert (tmp_path / "agents/job/meta.json").is_file()
     meta = json.loads((tmp_path / 'agents/job/meta.json').read_text())
-    assert (meta['model'], meta['effort']) == ('gpt-6-luna', 'low')
+    assert (meta['model'], meta['effort']) == ('gpt-6-luna', benchmark_effort or 'low')
 
 
 @pytest.mark.asyncio

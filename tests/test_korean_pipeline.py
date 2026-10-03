@@ -154,7 +154,7 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
                 assert ''.join(inputs['source_copy_runs']) == inputs['chunk_text']
                 assert 'choose learner tap boundaries yourself' in args[0]
                 assert inputs['source_characters'] == [[i, i + 1, c] for i, c in enumerate(inputs['chunk_text'])]
-                assert args[1] == contracts.schema_path('chunk-annotation-v3')
+                assert args[1] == contracts.schema_path('chunk-annotation-v4')
             if recover_partial == 'invalid_attached' and job == 'annotation-0-chunk-001-1':
                 inputs = json.loads(args[0].rsplit('\nINPUT:\n', 1)[1])
                 assert inputs['previous_chunk']['format'] == 'segment-contained-annotation-v2'
@@ -179,8 +179,8 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
                     for tag, a, b, c, d in SequenceMatcher(None, source, target, autojunk=False).get_opcodes()
                     if tag != 'equal']
             if '-chunk-' in job and 'format' not in value:
-                from tests.test_korean_annotation_chunks import source_spans
-                value = source_spans(value)
+                from tests.test_korean_annotation_chunks import source_span_links
+                value = source_span_links(value)
             save(tmp_path / 'agents' / job / 'result.json', value)
             save(tmp_path / 'agents' / job / 'meta.json', {'return_code': 0})
             return value
@@ -2000,15 +2000,15 @@ def test_bad_grammar_anchor_reports_actual_indexed_segments_and_preserves_valid_
     assert chapter == before
 
 
-@pytest.mark.parametrize('format_name', ['segment-anchored-annotation-v1', 'segment-contained-annotation-v2', 'source-span-annotation-v3'])
+@pytest.mark.parametrize('format_name', ['segment-anchored-annotation-v1', 'segment-contained-annotation-v2', 'source-span-annotation-v3', 'source-span-links-annotation-v4'])
 def test_publication_replays_segment_attached_chunks_and_rejects_raw_tampering(tmp_path, format_name):
-    from tests.test_korean_annotation_chunks import attached, source_spans
+    from tests.test_korean_annotation_chunks import attached, source_spans, source_span_links
     from pipeline.korean_annotation_chunks import decode
     from pipeline.korean_agent_harness import read, save, normalize_existing, annotation_chunk_record
     make_reviewed_run(tmp_path, level=4)
     chapter = read(tmp_path/'chapter.json')
     raw = normalize_existing(chapter, dictionary._registry(dictionary.WORDS))
-    worker = source_spans(raw) if format_name == 'source-span-annotation-v3' else attached(raw)
+    worker = source_span_links(raw) if format_name == 'source-span-links-annotation-v4' else source_spans(raw) if format_name == 'source-span-annotation-v3' else attached(raw)
     worker['format'] = format_name
     decoded = decode(worker, source_text=chapter['text'])
     assert decoded == raw

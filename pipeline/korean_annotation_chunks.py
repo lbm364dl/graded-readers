@@ -8,7 +8,8 @@ from pipeline import korean_contracts as contracts
 LEGACY_FORMAT = 'segment-anchored-annotation-v1'
 FORMAT = 'segment-contained-annotation-v2'
 SPAN_FORMAT = 'source-span-annotation-v3'
-FORMATS = {LEGACY_FORMAT, FORMAT, SPAN_FORMAT}
+SPAN_LINK_FORMAT = 'source-span-links-annotation-v4'
+FORMATS = {LEGACY_FORMAT, FORMAT, SPAN_FORMAT, SPAN_LINK_FORMAT}
 GRAMMAR_LINK = contracts.obj({key: value for key, value in contracts.LINK['properties'].items()
     if key not in ('segment_index', 'display_end_segment_index')})
 EXPRESSION_LINK = contracts.obj({key: value for key, value in contracts.EXPRESSION_LINK['properties'].items()
@@ -44,6 +45,17 @@ for schema in SPAN_SCHEMA['properties']['segments']['items']['anyOf']:
     for key in ('source_start', 'source_end'):
         schema['properties'][key] = {'type': 'integer', 'minimum': 0}
         schema['required'].append(key)
+SPAN_LINK_SCHEMA = deepcopy(SPAN_SCHEMA)
+SPAN_LINK_SCHEMA['properties']['format']['enum'] = [SPAN_LINK_FORMAT]
+for schema in SPAN_LINK_SCHEMA['properties']['segments']['items']['anyOf']:
+    for field, surface in [('grammar_links', 'display_form'), ('expression_links', 'form')]:
+        link = deepcopy(schema['properties'][field]['items'])
+        schema['properties'][field]['items'] = link
+        del link['properties'][surface]
+        link['required'].remove(surface)
+        for key in ('source_start', 'source_end'):
+            link['properties'][key] = {'type': 'integer', 'minimum': -1 if field == 'grammar_links' else 0}
+            link['required'].append(key)
 
 
 def materialize_spans(value, source_text):
@@ -51,16 +63,32 @@ def materialize_spans(value, source_text):
     if source_text is None:
         raise ValueError('Korean source-span annotation requires its authoritative source_text')
     result = deepcopy(value)
-    cursor = 0
+    cursor, boundaries = 0, []
     for index, segment in enumerate(result['segments']):
         start, end = segment.pop('source_start'), segment.pop('source_end')
         if start != cursor or end <= start or end > len(source_text):
             raise ValueError(f'Korean source span {index} [{start}:{end}] must start at {cursor}, '
                              f'be nonempty, and end within source length {len(source_text)}')
         segment['text'] = source_text[start:end]
+        boundaries.append((start, end))
         cursor = end
     if cursor != len(source_text):
         raise ValueError(f'Korean source spans end at {cursor}; must cover all {len(source_text)} Unicode characters')
+    if value['format'] == SPAN_LINK_FORMAT:
+        starts, ends = {a for a, _ in boundaries}, {b for _, b in boundaries}
+        for index, segment in enumerate(result['segments']):
+            for field, surface in [('grammar_links', 'display_form'), ('expression_links', 'form')]:
+                for link in segment[field]:
+                    start, end = link.pop('source_start'), link.pop('source_end')
+                    if field == 'grammar_links' and (start, end) == (-1, -1):
+                        link[surface] = ''
+                        continue
+                    anchor_start, anchor_end = boundaries[index]
+                    if (start not in starts or end not in ends or end <= start
+                            or not start <= anchor_start < anchor_end <= end):
+                        raise ValueError('Korean link source range must align with complete tap boundaries '
+                                         'and contain its attached word; use (-1, -1) only for grammar form steps')
+                    link[surface] = source_text[start:end]
     result['format'] = FORMAT
     validate_worker(result)
     return result
@@ -115,8 +143,8 @@ def contained_span(segments, anchor, form):
 
 
 def validate_worker(value):
-    if value.get('format') == SPAN_FORMAT:
-        validate(value, SPAN_SCHEMA)
+    if value.get('format') in (SPAN_FORMAT, SPAN_LINK_FORMAT):
+        validate(value, SPAN_LINK_SCHEMA if value['format'] == SPAN_LINK_FORMAT else SPAN_SCHEMA)
         return
     if value.get('format') not in FORMATS:
         validate(value, contracts.ANNOTATION)
@@ -128,7 +156,7 @@ def validate_worker(value):
 
 def decode(value, *, source_text=None):
     validate_worker(value)
-    if value.get('format') == SPAN_FORMAT:
+    if value.get('format') in (SPAN_FORMAT, SPAN_LINK_FORMAT):
         value = materialize_spans(value, source_text)
     if source_text is not None:
         contracts.check_reconstruction(value['segments'], source_text)

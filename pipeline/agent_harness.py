@@ -509,11 +509,14 @@ class CodexRunner:
     max_process_timeout_retries: int = 1
     launch_timeout_seconds: float = 60.0
     launch_backoff_seconds: float = 0.25
+    benchmark_effort: str | None = None
 
     def __post_init__(self):
         # Repository-wide worker policy, including research and independent
         # review. Legacy callers cannot silently select a costlier model.
         self.model = "gpt-6-luna"
+        if self.benchmark_effort not in (None, "low", "medium", "high"):
+            raise ValueError("Benchmark effort must be low, medium or high")
 
     @staticmethod
     def _completed_timeout_result(
@@ -605,7 +608,7 @@ class CodexRunner:
         tool_profile: str | None = None,
         cache_only: bool = False,
     ) -> dict[str, Any]:
-        effort = "low"
+        effort = self.benchmark_effort or "low"
         job_dir = self.run_dir / "agents" / job
         job_dir.mkdir(parents=True, exist_ok=True)
         result_path = job_dir / "result.json"

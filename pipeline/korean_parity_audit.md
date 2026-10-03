@@ -705,3 +705,35 @@ Repeated short-chunk source omissions persisted despite copying aids and exact d
 ### Targeted prose repairs with publication replay
 
 Prose review history exposed repeated new source errors during whole-output repairs: invented exchanges, wrong chronology or identities, and changed narrative scope. Fresh rejected prose and annotation/curriculum-triggered prose repairs now request explicit ordered replacements against the previous draft. Each edit binds an exact Unicode span and original_text, with a reason; insertion and deletion are explicit, while untouched text is retained exactly. Nearby morphology may be included when a vocabulary substitution requires it. Full source, coherence and level review still evaluates the resulting chapter; no edit is automatically approved. Patch worker and base digests are retained, and publication replays the repair before accepting the independently reviewed output. Legacy full-prose jobs remain readable. Tests cover preserved text, insertion/deletion, stale/overlapping/out-of-range edits, the rejected-draft repair stage, and publication tampering. Annotation reuse after prose revision is checked separately. Live-run generation success remains unproven. Annotation-specific instructions were moved out of the global policy to avoid invalidating unrelated planning/prose caches solely for a protocol change.
+
+### Controlled reasoning-effort smoke (2026-10-03)
+
+Production remains `gpt-6-luna` low. `CodexRunner.benchmark_effort` is an explicit,
+validated opt-in for isolated low/medium/high comparisons; ordinary callers still
+cannot change effort by passing a different call argument. The effort is included
+in the existing cache fingerprint and execution metadata. Tests cover both the
+production constraint and each benchmark override.
+
+`python -m pipeline.korean_effort_smoke --cases CASES.json --output NEW_RUN_DIR`
+freezes identical prompts, schemas, source, catalog and lexical-plan snapshots,
+then runs each case at all three efforts without automatic retries. It reports
+elapsed time, usage and exact source/link/lexical-identity validation. It does not
+claim independent linguistic approval or provide publication evidence. Completed
+calls are cached; different inputs require a new output directory. The initial
+smoke uses two saved TOPIK 3 v3 failures (231 and 226 characters), selected before
+seeing benchmark results. Its frozen inputs deliberately retain v3 while the
+next annotation protocol is improved separately.
+
+### Source ranges for complete links (2026-10-03)
+
+Fresh v4 chunks express complete grammar/expression surfaces as source ranges,
+just as v3 already does for segment text. This addresses recurring dictionary-form
+paraphrases and attachment/surface mismatches across TOPIK 3 failures. The decoder
+requires full tap boundaries and inclusion of the attached word; it never guesses
+a surface, reanchors an occurrence or changes prose. Form-step grammar uses the
+explicit (-1, -1) sentinel. Older reviewed worker formats remain replayable.
+Regression coverage includes exact round trips, incorrect/partial/out-of-range
+links, preserved input, raw evidence tampering, cached legacy repairs and
+publication replay. This prevents specific structural errors; it does not establish
+linguistic correctness of an agent's chosen range or meaning. Existing active
+processes keep their loaded protocol until a deliberate rollout/resume.
