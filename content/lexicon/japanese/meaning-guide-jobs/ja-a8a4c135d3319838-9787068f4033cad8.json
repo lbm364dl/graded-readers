@@ -1,0 +1,32 @@
+{
+  "id": "ja-a8a4c135d3319838-9787068f4033cad8",
+  "entry_id": "ja-a8a4c135d3319838",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a8a4c135d3319838",
+      "headword": "下女",
+      "reading": "げじょ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-a8a4c135d3319838-1",
+          "definition": "a female domestic servant; maidservant"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "最初に会ったのは、おさんという下女だった。",
+        "gloss": "maidservant",
+        "sense_id": "ja-a8a4c135d3319838-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e3790cfe10d4297d7b4931cd7bd600927a25683cf3ab6b0a3b9d01b5b5816c06"
+}

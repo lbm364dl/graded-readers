@@ -1,0 +1,31 @@
+{
+  "id": "zh-e99a6717b691-1-69a86f9e47d4b164",
+  "entry_id": "zh-e99a6717b691-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e99a6717b691-1",
+      "headword": "处理",
+      "kind": "word",
+      "reading": "chǔlǐ",
+      "senses": [
+        {
+          "id": "zh-e99a6717b691-1-s1",
+          "definition": "handle; deal with"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备连忙拉住他：“这件事应当由朝廷处理，你不能冲动。",
+        "gloss": "handle",
+        "sense_id": "zh-e99a6717b691-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ad18e29bbf9df562c61fb51e94a324fbffae1b95b82b14e92696975383ef4c3c"
+}

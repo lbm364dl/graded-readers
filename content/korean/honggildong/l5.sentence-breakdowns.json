@@ -1,0 +1,1160 @@
+{
+  "schema_version": 1,
+  "reviewed": true,
+  "breakdowns": [
+    {
+      "source": "assets/annotations/korean_honggildong_l5_001.json",
+      "start": 543,
+      "sentence": "아내가 자신의 뜻을 이해하지 못한다고 여기며 불평하던 중, 마침 춘섬이 차를 가져왔다.",
+      "translation_en": "While he was complaining, thinking that his wife could not understand his intentions, Chunseom happened to bring tea.",
+      "parts": [
+        {
+          "text": "아내가 자신의 뜻을 이해하지 못한다고",
+          "explanation_en": "The content of Minister Hong's belief: that his wife could not understand his intentions. 자신의 refers to Minister Hong here."
+        },
+        {
+          "text": " 여기며 불평하던 중,",
+          "explanation_en": "He was complaining while holding that belief. -던 중 establishes an activity already underway."
+        },
+        {
+          "text": " 마침 춘섬이 차를 가져왔다.",
+          "explanation_en": "Chunseom's arrival with tea occurs during that ongoing activity."
+        }
+      ]
+    },
+    {
+      "source": "assets/annotations/korean_honggildong_l5_001.json",
+      "start": 810,
+      "sentence": "홍 판서는 기뻐하면서도 그 아이가 유 부인에게서 태어나지 않은 것을 아쉬워했다.",
+      "translation_en": "Although Minister Hong was delighted, he regretted that the child had not been born to Lady Yu.",
+      "parts": [
+        {
+          "text": "홍 판서는 기뻐하면서도",
+          "explanation_en": "Minister Hong's delight coexists with the contrasting regret; -면서도 means although or even while."
+        },
+        {
+          "text": " 그 아이가 유 부인에게서 태어나지 않은 것을",
+          "explanation_en": "The nominalized fact that the child was not born to Lady Yu is what he regrets. The negation concerns the child's maternal origin."
+        },
+        {
+          "text": " 아쉬워했다.",
+          "explanation_en": "Reports his regret in the past, without canceling his delight."
+        }
+      ]
+    },
+    {
+      "source": "assets/annotations/korean_honggildong_l5_001.json",
+      "start": 973,
+      "sentence": "어머니가 신분이 낮은 집안 일꾼이었다는 이유로, 길동은 아버지를 ‘아버지’라 부르거나 형 인형을 ‘형’이라 부를 때마다 꾸지람을 들었다.",
+      "translation_en": "Because his mother had been a household worker of low social standing, Gildong was scolded whenever he called his father “Father” or his older brother Inhyeong “Older Brother.”",
+      "parts": [
+        {
+          "text": "어머니가 신분이 낮은 집안 일꾼이었다는 이유로,",
+          "explanation_en": "The whole proposition about his mother's former position supplies the grounds for the restriction. -이었다는 modifies 이유 rather than reporting a named speaker."
+        },
+        {
+          "text": " 길동은 아버지를 ‘아버지’라 부르거나",
+          "explanation_en": "The first recurring trigger is addressing his father as “Father.” -거나 links it to the alternative trigger that follows."
+        },
+        {
+          "text": " 형 인형을 ‘형’이라 부를 때마다",
+          "explanation_en": "The other trigger is addressing Inhyeong as “Older Brother.” 때마다 applies to these repeated occasions of familial address."
+        },
+        {
+          "text": " 꾸지람을 들었다.",
+          "explanation_en": "The consequence on each occasion: he received a scolding. This expression means being scolded."
+        }
+      ]
+    },
+    {
+      "source": "assets/annotations/korean_honggildong_l5_001.json",
+      "start": 1272,
+      "sentence": "나라를 위해 큰 공을 세우고 오래도록 이름을 남긴다면 얼마나 보람 있겠는가.",
+      "translation_en": "How fulfilling it would be to accomplish great deeds for the country and leave a name that endured for years to come.",
+      "parts": [
+        {
+          "text": "나라를 위해 큰 공을 세우고",
+          "explanation_en": "The first imagined achievement is accomplishing meritorious deeds for the country. -고 coordinates it with leaving a lasting name."
+        },
+        {
+          "text": " 오래도록 이름을 남긴다면",
+          "explanation_en": "The conditional imagines leaving an enduring reputation; it frames the coordinated achievements as hypothetical."
+        },
+        {
+          "text": " 얼마나 보람 있겠는가.",
+          "explanation_en": "A reflective rhetorical question expressing how fulfilling that imagined outcome would be. -겠- conveys conjecture, rather than resolve."
+        }
+      ]
+    },
+    {
+      "source": "assets/annotations/korean_honggildong_l5_001.json",
+      "start": 1364,
+      "sentence": "이렇게 외롭게 살아야 하니 가슴이 터질 것만 같다.”",
+      "translation_en": "Having to live in such loneliness makes me feel as though my heart will burst.",
+      "parts": [
+        {
+          "text": "이렇게 외롭게 살아야 하니",
+          "explanation_en": "Having to live in loneliness is presented as the cause of his distress. -아야 하다 expresses necessity, and -니 supplies the causal connection."
+        },
+        {
+          "text": " 가슴이 터질 것만 같다.”",
+          "explanation_en": "An intensified impression of overwhelming anguish. 것만 같다 means it feels as though his heart will burst; 만 strengthens the impression rather than restricting it to “only.”"
+        }
+      ]
+    },
+    {
+      "source": "assets/annotations/korean_honggildong_l5_001.json",
+      "start": 1563,
+      "sentence": "저는 그런 귀한 대접을 받지 못하니, 어찌 저를 사람이라 할 수 있겠습니까?”",
+      "translation_en": "Since I cannot receive such dignified treatment, how could you call me a human being?",
+      "parts": [
+        {
+          "text": "저는 그런 귀한 대접을 받지 못하니,",
+          "explanation_en": "His inability to receive treatment befitting a valued human being supplies the grounds for the question."
+        },
+        {
+          "text": " 어찌 저를 사람이라",
+          "explanation_en": "어찌 introduces the rhetorical challenge. 사람이라 marks “a human being” as the designation applied to him."
+        },
+        {
+          "text": " 할 수 있겠습니까?”",
+          "explanation_en": "Questions whether applying that designation is possible under these circumstances. -겠- makes the possibility hypothetical, while the ending remains respectful."
+        }
+      ]
+    },
+    {
+      "source": "assets/annotations/korean_honggildong_l5_001.json",
+      "start": 1786,
+      "sentence": "제 가족 앞에서조차 그러지 못하는데, 어찌 사람답게 산다고 할 수 있겠습니까?”",
+      "translation_en": "If I cannot even do that in front of my own family, how could I say that I live with human dignity?",
+      "parts": [
+        {
+          "text": "제 가족 앞에서조차 그러지 못하는데,",
+          "explanation_en": "He cannot use those familial titles even before his own family. 그러지 refers back to the preceding addresses; -는데 sets this inability as the background for his challenge."
+        },
+        {
+          "text": " 어찌 사람답게 산다고",
+          "explanation_en": "The quoted claim is that he lives with dignity befitting a human being. 사람답게 expresses human dignity in this context."
+        },
+        {
+          "text": " 할 수 있겠습니까?”",
+          "explanation_en": "A respectful rhetorical question challenging whether he could possibly make that claim. 하다 means say here, and -겠- frames hypothetical possibility."
+        }
+      ]
+    },
+    {
+      "source": "assets/annotations/korean_honggildong_l5_001.json",
+      "start": 1867,
+      "sentence": "그러나 그 마음을 달래 주었다가는 길동이 제 신분을 잊고 함부로 행동할까 두려웠다.",
+      "translation_en": "However, he feared that if he soothed Gildong's feelings, Gildong might forget his social standing and act without restraint.",
+      "parts": [
+        {
+          "text": "그러나 그 마음을 달래 주었다가는",
+          "explanation_en": "Supposes offering comfort and introduces a feared consequence. -었다가는 does not assert that he actually comforted Gildong."
+        },
+        {
+          "text": " 길동이 제 신분을 잊고",
+          "explanation_en": "The first part of the feared outcome: Gildong might disregard his own social status. 제 refers reflexively to Gildong."
+        },
+        {
+          "text": " 함부로 행동할까",
+          "explanation_en": "The coordinated feared action is behaving without restraint; -ㄹ까 expresses an uncertain possibility."
+        },
+        {
+          "text": " 두려웠다.",
+          "explanation_en": "Minister Hong feared that possibility. The final predicate reports his actual past fear, in contrast to the hypothetical actions."
+        }
+      ]
+    },
+    {
+      "source": "assets/annotations/korean_honggildong_l5_001.json",
+      "start": 1938,
+      "sentence": "“높은 벼슬을 하는 집안에서 신분 낮은 여자의 아들로 태어난 사람이 너뿐인 줄 아느냐?",
+      "translation_en": "Do you think you are the only person born to a woman of low social standing in a high-ranking official's household?",
+      "parts": [
+        {
+          "text": "“높은 벼슬을 하는 집안에서",
+          "explanation_en": "Establishes the household of origin: a family holding high official posts."
+        },
+        {
+          "text": " 신분 낮은 여자의 아들로 태어난 사람이",
+          "explanation_en": "Describes the people under discussion as sons born to women of low social status."
+        },
+        {
+          "text": " 너뿐인 줄 아느냐?",
+          "explanation_en": "Challenges the belief that Gildong is the only such person. -인 줄 알다 concerns taking a proposition to be true, rather than knowing how to do something."
+        }
+      ]
+    },
+    {
+      "source": "assets/annotations/korean_honggildong_l5_001.json",
+      "start": 2075,
+      "sentence": "홍 판서가 물러가라고 명하자 자기 방으로 돌아왔지만, 슬픔은 좀처럼 가시지 않았다.",
+      "translation_en": "When Minister Hong ordered him to go away, Gildong returned to his room, but his sorrow would not readily subside.",
+      "parts": [
+        {
+          "text": "홍 판서가 물러가라고 명하자",
+          "explanation_en": "Minister Hong gives a reported command to withdraw; -자 introduces Gildong's immediate response."
+        },
+        {
+          "text": " 자기 방으로 돌아왔지만,",
+          "explanation_en": "The omitted subject is Gildong, who returns to his own room. -지만 introduces the contrast that follows."
+        },
+        {
+          "text": " 슬픔은 좀처럼 가시지 않았다.",
+          "explanation_en": "His sorrow did not readily subside. 좀처럼 works with the negation to emphasize its persistence."
+        }
+      ]
+    },
+    {
+      "source": "assets/annotations/korean_honggildong_l5_001.json",
+      "start": 2150,
+      "sentence": "그러나 이 일로 마음을 진정하지 못해 밤마다 잠을 이루지 못하곤 했다.",
+      "translation_en": "But because he could not calm his feelings after this incident, he would lie awake night after night.",
+      "parts": [
+        {
+          "text": "그러나 이 일로 마음을 진정하지 못해",
+          "explanation_en": "The incident leaves him unable to settle his emotions; -해 connects this inability to its consequence."
+        },
+        {
+          "text": " 밤마다",
+          "explanation_en": "Establishes recurrence every night."
+        },
+        {
+          "text": " 잠을 이루지 못하곤 했다.",
+          "explanation_en": "The habitual construction applies to the complete inability to sleep. 잠을 이루다 means get sleep, and -곤 했다 describes a recurring past situation."
+        }
+      ]
+    },
+    {
+      "source": "assets/annotations/korean_honggildong_l5_001.json",
+      "start": 2274,
+      "sentence": "하지만 신분이 낮다는 이유로 남에게 업신여김을 받으며 살아가는 것은 더 이상 견디기 어렵습니다.",
+      "translation_en": "But I can no longer endure living with other people's contempt simply because my social standing is low.",
+      "parts": [
+        {
+          "text": "하지만 신분이 낮다는 이유로",
+          "explanation_en": "The proposition that his social standing is low supplies the stated grounds for the contempt; -다는 modifies 이유."
+        },
+        {
+          "text": " 남에게 업신여김을 받으며",
+          "explanation_en": "He receives contemptuous treatment from other people. The nominalized verb 업신여김 denotes the treatment, and -며 makes it accompany his life."
+        },
+        {
+          "text": " 살아가는 것은",
+          "explanation_en": "Living under that treatment becomes the topic evaluated by the following predicate."
+        },
+        {
+          "text": " 더 이상 견디기 어렵습니다.",
+          "explanation_en": "He finds continuing to endure that life difficult. In this context, the whole statement conveys that he can no longer bear it."
+        }
+      ]
+    },
+    {
+      "source": "assets/annotations/korean_honggildong_l5_001.json",
+      "start": 2328,
+      "sentence": "마음속에 쌓인 한을 억누를 수 없어 이제 어머니 곁을 떠나려 합니다.",
+      "translation_en": "Unable to suppress the sorrow and resentment that have built up in my heart, I now intend to leave your side.",
+      "parts": [
+        {
+          "text": "마음속에 쌓인 한을",
+          "explanation_en": "The object is the deep unresolved sorrow and resentment accumulated in his heart."
+        },
+        {
+          "text": " 억누를 수 없어",
+          "explanation_en": "His inability to suppress those feelings supplies the reason for his decision."
+        },
+        {
+          "text": " 이제 어머니 곁을 떠나려 합니다.",
+          "explanation_en": "He respectfully states an intention to leave his mother's side; this does not report that he has already departed."
+        }
+      ]
+    },
+    {
+      "source": "assets/annotations/korean_honggildong_l5_001.json",
+      "start": 2580,
+      "sentence": "“요즘 홍 판서께서 아끼시는 다른 첩의 태도를 보니, 그분의 사랑을 잃을까 두려워 저와 어머니를 원수처럼 여기는 듯합니다.",
+      "translation_en": "Judging from the attitude of the other concubine Minister Hong cherishes these days, she seems to regard Mother and me as enemies because she fears losing his affection.",
+      "parts": [
+        {
+          "text": "“요즘 홍 판서께서 아끼시는 다른 첩의 태도를 보니,",
+          "explanation_en": "Gildong's observation of the favored concubine's attitude supplies the evidence for his inference. Minister Hong is the subject of 아끼시는."
+        },
+        {
+          "text": " 그분의 사랑을 잃을까 두려워",
+          "explanation_en": "The concubine fears losing Minister Hong's affection. 그분 refers respectfully to Minister Hong, while the omitted experiencer of fear is the concubine."
+        },
+        {
+          "text": " 저와 어머니를 원수처럼 여기는 듯합니다.",
+          "explanation_en": "Gildong infers that she regards him and his mother as enemies. 듯합니다 presents this hostility as an apparent situation, rather than certain knowledge of her thoughts."
+        }
+      ]
+    }
+  ],
+  "audits": {
+    "1": [
+      {
+        "start": 0,
+        "sentence": "조선 세종 때, 대대로 이름난 집안 출신인 홍 판서가 살았다.",
+        "selected": false,
+        "reason_en": "The introductory noun modifiers are readily followed at TOPIK 5.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 35,
+        "sentence": "그는 젊은 나이에 과거 시험에 합격한 뒤 높은 벼슬에 올랐다.",
+        "selected": false,
+        "reason_en": "A familiar after-construction clearly orders the two events.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 70,
+        "sentence": "나라에 충성하고 부모에게 효도하는 사람으로 알려져 조정 안팎에서 존경을 받았다.",
+        "selected": false,
+        "reason_en": "The coordinated qualities and resulting respect form a clear narrative sequence for TOPIK 5.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 115,
+        "sentence": "그에게는 두 아들이 있었다.",
+        "selected": false,
+        "reason_en": "A simple possessive existential statement.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 131,
+        "sentence": "아내인 유 부인에게서 태어난 아들은 홍인형이었고, 집안에서 일하던 춘섬에게서 태어난 아들은 홍길동이었다.",
+        "selected": false,
+        "reason_en": "Parallel clauses explicitly distinguish the two sons and their mothers; their modifiers are familiar at this level.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 191,
+        "sentence": "길동이 태어나기 전, 홍 판서는 이상한 꿈을 꾸었다.",
+        "selected": false,
+        "reason_en": "The familiar before-construction introduces a simple main event.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 221,
+        "sentence": "갑자기 천둥이 크게 울리더니 푸른 용이 수염을 세우고 그를 향해 달려들었다.",
+        "selected": false,
+        "reason_en": "The observed sequence and coordinated dragon actions are clear at TOPIK 5.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 264,
+        "sentence": "놀라서 눈을 뜨고 보니 꿈이었다.",
+        "selected": false,
+        "reason_en": "The short discovery sequence is understandable with the existing contextual gloss for 보니.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 283,
+        "sentence": "그러나 홍 판서는 두려워하기는커녕 크게 기뻐했다.",
+        "selected": false,
+        "reason_en": "One familiar contrary-expectation construction directly contrasts fear with delight.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 312,
+        "sentence": "‘용이 나오는 꿈을 꾸었으니, 분명 귀한 자식을 얻겠구나.’",
+        "selected": false,
+        "reason_en": "A clear reason clause supports a single prediction and realization.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 347,
+        "sentence": "그는 곧 유 부인이 있는 방으로 들어갔다.",
+        "selected": false,
+        "reason_en": "A simple movement event with a familiar locative modifier.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 371,
+        "sentence": "부인이 일어나 맞이하자, 홍 판서는 반가운 마음에 손을 잡으며 가까이하려 했다.",
+        "selected": false,
+        "reason_en": "The welcome, emotional cause, accompanying action and attempted intimacy remain in a clear chronological frame at TOPIK 5.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 416,
+        "sentence": "하지만 유 부인은 표정을 굳히고 말했다.",
+        "selected": false,
+        "reason_en": "Two straightforward coordinated actions.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 440,
+        "sentence": "“높은 지위에 계신 분이 어찌 경솔한 젊은이처럼 행동하십니까?",
+        "selected": false,
+        "reason_en": "The comparison and honorific rhetorical question are clear at this level.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 475,
+        "sentence": "저는 따르지 않겠습니다.”",
+        "selected": false,
+        "reason_en": "A simple formal refusal using familiar negation and intention.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 491,
+        "sentence": "유 부인은 그의 손을 뿌리치고 나갔다.",
+        "selected": false,
+        "reason_en": "A straightforward sequence of two actions.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 513,
+        "sentence": "홍 판서는 무안한 데다가 화까지 나서 밖으로 나왔다.",
+        "selected": false,
+        "reason_en": "The additive feeling and causal action are familiar TOPIK 5 relations; word glosses cover the emotional vocabulary.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 543,
+        "sentence": "아내가 자신의 뜻을 이해하지 못한다고 여기며 불평하던 중, 마침 춘섬이 차를 가져왔다.",
+        "selected": true,
+        "reason_en": "Help separates the embedded belief from the ongoing complaint and the event interrupting it.",
+        "translation_en": "While he was complaining, thinking that his wife could not understand his intentions, Chunseom happened to bring tea.",
+        "parts": [
+          {
+            "text": "아내가 자신의 뜻을 이해하지 못한다고",
+            "explanation_en": "The content of Minister Hong's belief: that his wife could not understand his intentions. 자신의 refers to Minister Hong here."
+          },
+          {
+            "text": " 여기며 불평하던 중,",
+            "explanation_en": "He was complaining while holding that belief. -던 중 establishes an activity already underway."
+          },
+          {
+            "text": " 마침 춘섬이 차를 가져왔다.",
+            "explanation_en": "Chunseom's arrival with tea occurs during that ongoing activity."
+          }
+        ]
+      },
+      {
+        "start": 592,
+        "sentence": "그는 주위가 조용한 것을 보고 춘섬을 작은 방으로 데려가 관계를 맺었다.",
+        "selected": false,
+        "reason_en": "The nominalized observation and subsequent actions form a clear sequence; the intimate meaning is supplied by the word glosses.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 634,
+        "sentence": "당시 춘섬은 열여덟 살이었다.",
+        "selected": false,
+        "reason_en": "A simple statement of age in the past.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 651,
+        "sentence": "그 뒤로 춘섬은 다른 사람과 혼인할 생각 없이 지냈다.",
+        "selected": false,
+        "reason_en": "The intention modifier and 없이 describe one straightforward continuing situation.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 682,
+        "sentence": "홍 판서는 이를 기특하게 여겨 춘섬을 첩으로 삼았다.",
+        "selected": false,
+        "reason_en": "His assessment directly leads to assigning Chunseom a role; lexical glosses provide the historical vocabulary.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 712,
+        "sentence": "정식 아내인 유 부인 외에 춘섬과도 부부 관계를 맺은 것이다.",
+        "selected": false,
+        "reason_en": "A single explanatory statement makes the additional relationship explicit.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 747,
+        "sentence": "춘섬은 그달부터 아이를 가졌고, 열 달 뒤 아들을 낳았다.",
+        "selected": false,
+        "reason_en": "Explicit time expressions clearly order pregnancy and birth.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 780,
+        "sentence": "아이는 몸과 생김새부터 남달라 큰 인물이 될 듯했다.",
+        "selected": false,
+        "reason_en": "The child's appearance supports one clearly marked impression about his future.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 810,
+        "sentence": "홍 판서는 기뻐하면서도 그 아이가 유 부인에게서 태어나지 않은 것을 아쉬워했다.",
+        "selected": true,
+        "reason_en": "The concession encloses a negative birth proposition that is the object of regret; help clarifies the coexistence of the two feelings.",
+        "translation_en": "Although Minister Hong was delighted, he regretted that the child had not been born to Lady Yu.",
+        "parts": [
+          {
+            "text": "홍 판서는 기뻐하면서도",
+            "explanation_en": "Minister Hong's delight coexists with the contrasting regret; -면서도 means although or even while."
+          },
+          {
+            "text": " 그 아이가 유 부인에게서 태어나지 않은 것을",
+            "explanation_en": "The nominalized fact that the child was not born to Lady Yu is what he regrets. The negation concerns the child's maternal origin."
+          },
+          {
+            "text": " 아쉬워했다.",
+            "explanation_en": "Reports his regret in the past, without canceling his delight."
+          }
+        ]
+      },
+      {
+        "start": 856,
+        "sentence": "길동은 자라면서 뛰어난 재능을 보였다.",
+        "selected": false,
+        "reason_en": "A familiar simultaneous connective joins growth with displaying talent.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 878,
+        "sentence": "여덟 살 무렵에는 하나를 들으면 여러 가지를 깨달을 만큼 영리했다.",
+        "selected": false,
+        "reason_en": "The recurring condition and degree construction are familiar at TOPIK 5 and express one clear assessment.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 916,
+        "sentence": "홍 판서도 그런 길동을 더욱 사랑했다.",
+        "selected": false,
+        "reason_en": "A simple statement of increased affection.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 938,
+        "sentence": "그러나 아버지의 사랑이 길동의 신분까지 바꾸어 주지는 못했다.",
+        "selected": false,
+        "reason_en": "The single negative benefactive predicate is supported by an existing complete-phrase gloss.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 973,
+        "sentence": "어머니가 신분이 낮은 집안 일꾼이었다는 이유로, 길동은 아버지를 ‘아버지’라 부르거나 형 인형을 ‘형’이라 부를 때마다 꾸지람을 들었다.",
+        "selected": true,
+        "reason_en": "The Level 6 proposition modifier, two alternative forms of address and recurring consequence benefit from clause grouping.",
+        "translation_en": "Because his mother had been a household worker of low social standing, Gildong was scolded whenever he called his father “Father” or his older brother Inhyeong “Older Brother.”",
+        "parts": [
+          {
+            "text": "어머니가 신분이 낮은 집안 일꾼이었다는 이유로,",
+            "explanation_en": "The whole proposition about his mother's former position supplies the grounds for the restriction. -이었다는 modifies 이유 rather than reporting a named speaker."
+          },
+          {
+            "text": " 길동은 아버지를 ‘아버지’라 부르거나",
+            "explanation_en": "The first recurring trigger is addressing his father as “Father.” -거나 links it to the alternative trigger that follows."
+          },
+          {
+            "text": " 형 인형을 ‘형’이라 부를 때마다",
+            "explanation_en": "The other trigger is addressing Inhyeong as “Older Brother.” 때마다 applies to these repeated occasions of familial address."
+          },
+          {
+            "text": " 꾸지람을 들었다.",
+            "explanation_en": "The consequence on each occasion: he received a scolding. This expression means being scolded."
+          }
+        ]
+      },
+      {
+        "start": 1051,
+        "sentence": "열 살이 넘어서도 길동은 그 두 말을 마음 놓고 입에 올릴 수 없었다.",
+        "selected": false,
+        "reason_en": "One concessive time frame and one inability predicate suffice; existing phrase help explains uttering the titles without anxiety.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1091,
+        "sentence": "집안에서 일하는 사람들조차 그를 업신여겼다.",
+        "selected": false,
+        "reason_en": "A simple statement with emphatic even; the lexical gloss explains contempt.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1116,
+        "sentence": "그때마다 깊은 원한이 쌓여 마음을 가라앉히기 어려웠다.",
+        "selected": false,
+        "reason_en": "The cause and resulting difficulty are explicit and familiar; the harder emotional vocabulary has tap glosses.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1148,
+        "sentence": "어느 가을밤, 밝은 달이 뜨고 서늘한 바람이 불었다.",
+        "selected": false,
+        "reason_en": "Two simply coordinated descriptions of the setting.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1178,
+        "sentence": "글을 읽던 길동은 문득 책상을 밀쳐 놓고 한숨을 쉬었다.",
+        "selected": false,
+        "reason_en": "The retrospective modifier and resultative action form an ordinary narrative sequence at this level.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1211,
+        "sentence": "“세상에 태어났으니 학문으로 큰 뜻을 이루고 싶다.",
+        "selected": false,
+        "reason_en": "A clear premise leads to a familiar expression of desire.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1240,
+        "sentence": "그것이 어렵다면 군사를 이끄는 법을 배워 장수가 되겠다.",
+        "selected": false,
+        "reason_en": "A straightforward hypothetical alternative with a method phrase and stated resolve.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1272,
+        "sentence": "나라를 위해 큰 공을 세우고 오래도록 이름을 남긴다면 얼마나 보람 있겠는가.",
+        "selected": true,
+        "reason_en": "Help groups the coordinated hypothetical achievements and explains the reflective rhetorical conclusion.",
+        "translation_en": "How fulfilling it would be to accomplish great deeds for the country and leave a name that endured for years to come.",
+        "parts": [
+          {
+            "text": "나라를 위해 큰 공을 세우고",
+            "explanation_en": "The first imagined achievement is accomplishing meritorious deeds for the country. -고 coordinates it with leaving a lasting name."
+          },
+          {
+            "text": " 오래도록 이름을 남긴다면",
+            "explanation_en": "The conditional imagines leaving an enduring reputation; it frames the coordinated achievements as hypothetical."
+          },
+          {
+            "text": " 얼마나 보람 있겠는가.",
+            "explanation_en": "A reflective rhetorical question expressing how fulfilling that imagined outcome would be. -겠- conveys conjecture, rather than resolve."
+          }
+        ]
+      },
+      {
+        "start": 1315,
+        "sentence": "그런데 나는 아버지와 형이 있는데도 아버지를 아버지라, 형을 형이라 부르지 못하는구나.",
+        "selected": false,
+        "reason_en": "The familiar concession contrasts having relatives with being unable to use their titles; preceding narration has already made the parallel addresses explicit.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1364,
+        "sentence": "이렇게 외롭게 살아야 하니 가슴이 터질 것만 같다.”",
+        "selected": true,
+        "reason_en": "Help connects imposed necessity to an intensified figurative impression, avoiding a literal interpretation of the emotional expression.",
+        "translation_en": "Having to live in such loneliness makes me feel as though my heart will burst.",
+        "parts": [
+          {
+            "text": "이렇게 외롭게 살아야 하니",
+            "explanation_en": "Having to live in loneliness is presented as the cause of his distress. -아야 하다 expresses necessity, and -니 supplies the causal connection."
+          },
+          {
+            "text": " 가슴이 터질 것만 같다.”",
+            "explanation_en": "An intensified impression of overwhelming anguish. 것만 같다 means it feels as though his heart will burst; 만 strengthens the impression rather than restricting it to “only.”"
+          }
+        ]
+      },
+      {
+        "start": 1395,
+        "sentence": "말을 마친 길동은 뜰로 내려가 칼 쓰는 법을 연습했다.",
+        "selected": false,
+        "reason_en": "Completed speech precedes movement and practice in a clear sequence; the method phrase has existing help.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1426,
+        "sentence": "마침 달빛을 구경하던 홍 판서가 그를 발견하고 불렀다.",
+        "selected": false,
+        "reason_en": "One retrospective modifier establishes the father's activity before two simple actions.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1458,
+        "sentence": "“무슨 일이 있기에 밤이 깊도록 잠을 자지 않느냐?”",
+        "selected": false,
+        "reason_en": "The reason question and temporal limit are readily connected at TOPIK 5; the direct question ending has contextual help.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1489,
+        "sentence": "길동은 공손히 대답했다.",
+        "selected": false,
+        "reason_en": "A simple reporting clause.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1504,
+        "sentence": "“달빛이 좋아 나와 있었습니다.",
+        "selected": false,
+        "reason_en": "A short reason clause leads to a familiar continuing result-state predicate.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1522,
+        "sentence": "그런데 하늘이 만든 많은 것 가운데 사람이 가장 귀하다고 하지 않습니까?",
+        "selected": false,
+        "reason_en": "A familiar reported belief ends in a confirmation-seeking negative question; the relative clause is straightforward.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1563,
+        "sentence": "저는 그런 귀한 대접을 받지 못하니, 어찌 저를 사람이라 할 수 있겠습니까?”",
+        "selected": true,
+        "reason_en": "Help connects denied treatment to the rhetorical challenge, distinguishing quoted designation from hypothetical possibility.",
+        "translation_en": "Since I cannot receive such dignified treatment, how could you call me a human being?",
+        "parts": [
+          {
+            "text": "저는 그런 귀한 대접을 받지 못하니,",
+            "explanation_en": "His inability to receive treatment befitting a valued human being supplies the grounds for the question."
+          },
+          {
+            "text": " 어찌 저를 사람이라",
+            "explanation_en": "어찌 introduces the rhetorical challenge. 사람이라 marks “a human being” as the designation applied to him."
+          },
+          {
+            "text": " 할 수 있겠습니까?”",
+            "explanation_en": "Questions whether applying that designation is possible under these circumstances. -겠- makes the possibility hypothetical, while the ending remains respectful."
+          }
+        ]
+      },
+      {
+        "start": 1608,
+        "sentence": "홍 판서는 길동이 무엇을 말하려는지 짐작했다.",
+        "selected": false,
+        "reason_en": "One embedded question supplies the intended message inferred by the father; the local intention modifier has form help.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1634,
+        "sentence": "그럼에도 일부러 모르는 척하며 나무라듯 물었다.",
+        "selected": false,
+        "reason_en": "The concession, deliberate pretense and scolding manner are compact and accessible at TOPIK 5.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1662,
+        "sentence": "“그게 무슨 말이냐?”",
+        "selected": false,
+        "reason_en": "A short direct question with clear interrogative wording.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1676,
+        "sentence": "길동은 다시 절을 하고 말했다.",
+        "selected": false,
+        "reason_en": "Two simple coordinated actions.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1695,
+        "sentence": "“저를 낳고 길러 주신 부모님의 은혜는 깊습니다.",
+        "selected": false,
+        "reason_en": "The coordinated completed actions clearly modify parents; familiar honorific and benefactive forms require no additional breakdown.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1723,
+        "sentence": "하지만 제게는 늘 서러운 일이 있습니다.",
+        "selected": false,
+        "reason_en": "A simple statement of an enduring sorrowful experience.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1746,
+        "sentence": "제 아버지를 아버지라 부르지 못하고, 제 형을 형이라 부르지 못합니다.",
+        "selected": false,
+        "reason_en": "Parallel familiar inability clauses repeat the established restriction explicitly.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1786,
+        "sentence": "제 가족 앞에서조차 그러지 못하는데, 어찌 사람답게 산다고 할 수 있겠습니까?”",
+        "selected": true,
+        "reason_en": "Help resolves the reference of 그러지 and connects emphatic background, human dignity, quoted claim and rhetorical possibility.",
+        "translation_en": "If I cannot even do that in front of my own family, how could I say that I live with human dignity?",
+        "parts": [
+          {
+            "text": "제 가족 앞에서조차 그러지 못하는데,",
+            "explanation_en": "He cannot use those familial titles even before his own family. 그러지 refers back to the preceding addresses; -는데 sets this inability as the background for his challenge."
+          },
+          {
+            "text": " 어찌 사람답게 산다고",
+            "explanation_en": "The quoted claim is that he lives with dignity befitting a human being. 사람답게 expresses human dignity in this context."
+          },
+          {
+            "text": " 할 수 있겠습니까?”",
+            "explanation_en": "A respectful rhetorical question challenging whether he could possibly make that claim. 하다 means say here, and -겠- frames hypothetical possibility."
+          }
+        ]
+      },
+      {
+        "start": 1832,
+        "sentence": "길동의 눈물이 흘러 옷을 적셨다.",
+        "selected": false,
+        "reason_en": "A simple action and immediate result.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1851,
+        "sentence": "홍 판서도 아들이 가엾었다.",
+        "selected": false,
+        "reason_en": "A short emotional assessment; the tap gloss clarifies the father's pity.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1867,
+        "sentence": "그러나 그 마음을 달래 주었다가는 길동이 제 신분을 잊고 함부로 행동할까 두려웠다.",
+        "selected": true,
+        "reason_en": "The adverse hypothetical condition and embedded feared possibility require distinguishing imagined comfort from an actual past event.",
+        "translation_en": "However, he feared that if he soothed Gildong's feelings, Gildong might forget his social standing and act without restraint.",
+        "parts": [
+          {
+            "text": "그러나 그 마음을 달래 주었다가는",
+            "explanation_en": "Supposes offering comfort and introduces a feared consequence. -었다가는 does not assert that he actually comforted Gildong."
+          },
+          {
+            "text": " 길동이 제 신분을 잊고",
+            "explanation_en": "The first part of the feared outcome: Gildong might disregard his own social status. 제 refers reflexively to Gildong."
+          },
+          {
+            "text": " 함부로 행동할까",
+            "explanation_en": "The coordinated feared action is behaving without restraint; -ㄹ까 expresses an uncertain possibility."
+          },
+          {
+            "text": " 두려웠다.",
+            "explanation_en": "Minister Hong feared that possibility. The final predicate reports his actual past fear, in contrast to the hypothetical actions."
+          }
+        ]
+      },
+      {
+        "start": 1914,
+        "sentence": "그는 위로하는 대신 큰 소리로 꾸짖었다.",
+        "selected": false,
+        "reason_en": "A familiar substitution construction directly contrasts comfort with scolding.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 1938,
+        "sentence": "“높은 벼슬을 하는 집안에서 신분 낮은 여자의 아들로 태어난 사람이 너뿐인 줄 아느냐?",
+        "selected": true,
+        "reason_en": "Help separates the layered description of the group from the challenged belief that Gildong alone belongs to it.",
+        "translation_en": "Do you think you are the only person born to a woman of low social standing in a high-ranking official's household?",
+        "parts": [
+          {
+            "text": "“높은 벼슬을 하는 집안에서",
+            "explanation_en": "Establishes the household of origin: a family holding high official posts."
+          },
+          {
+            "text": " 신분 낮은 여자의 아들로 태어난 사람이",
+            "explanation_en": "Describes the people under discussion as sons born to women of low social status."
+          },
+          {
+            "text": " 너뿐인 줄 아느냐?",
+            "explanation_en": "Challenges the belief that Gildong is the only such person. -인 줄 알다 concerns taking a proposition to be true, rather than knowing how to do something."
+          }
+        ]
+      },
+      {
+        "start": 1987,
+        "sentence": "그런데 어찌 이토록 건방지게 구느냐?",
+        "selected": false,
+        "reason_en": "A single accusatory question; tap glosses cover the less familiar vocabulary.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 2008,
+        "sentence": "다시 이런 말을 하면 내 앞에 나타나는 것도 허락하지 않겠다.”",
+        "selected": false,
+        "reason_en": "An explicit condition leads to one threat; the nominalized action and emphatic 도 are familiar at this level.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 2045,
+        "sentence": "길동은 감히 대꾸하지 못한 채 엎드려 눈물만 흘렸다.",
+        "selected": false,
+        "reason_en": "The maintained-state construction and following actions are within TOPIK 5; existing phrase help retains the inability.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 2075,
+        "sentence": "홍 판서가 물러가라고 명하자 자기 방으로 돌아왔지만, 슬픔은 좀처럼 가시지 않았다.",
+        "selected": true,
+        "reason_en": "Help makes the subject change after the reported command explicit and connects the return with the contrasting persistence of sorrow.",
+        "translation_en": "When Minister Hong ordered him to go away, Gildong returned to his room, but his sorrow would not readily subside.",
+        "parts": [
+          {
+            "text": "홍 판서가 물러가라고 명하자",
+            "explanation_en": "Minister Hong gives a reported command to withdraw; -자 introduces Gildong's immediate response."
+          },
+          {
+            "text": " 자기 방으로 돌아왔지만,",
+            "explanation_en": "The omitted subject is Gildong, who returns to his own room. -지만 introduces the contrast that follows."
+          },
+          {
+            "text": " 슬픔은 좀처럼 가시지 않았다.",
+            "explanation_en": "His sorrow did not readily subside. 좀처럼 works with the negation to emphasize its persistence."
+          }
+        ]
+      },
+      {
+        "start": 2123,
+        "sentence": "길동은 본래 재주가 뛰어날뿐더러 마음도 넓었다.",
+        "selected": false,
+        "reason_en": "One target-level additive connective joins two clear qualities; the figurative generosity sense has a tap gloss.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 2150,
+        "sentence": "그러나 이 일로 마음을 진정하지 못해 밤마다 잠을 이루지 못하곤 했다.",
+        "selected": true,
+        "reason_en": "Help distinguishes the causal inability to calm himself from the recurring negative sleep predicate.",
+        "translation_en": "But because he could not calm his feelings after this incident, he would lie awake night after night.",
+        "parts": [
+          {
+            "text": "그러나 이 일로 마음을 진정하지 못해",
+            "explanation_en": "The incident leaves him unable to settle his emotions; -해 connects this inability to its consequence."
+          },
+          {
+            "text": " 밤마다",
+            "explanation_en": "Establishes recurrence every night."
+          },
+          {
+            "text": " 잠을 이루지 못하곤 했다.",
+            "explanation_en": "The habitual construction applies to the complete inability to sleep. 잠을 이루다 means get sleep, and -곤 했다 describes a recurring past situation."
+          }
+        ]
+      },
+      {
+        "start": 2190,
+        "sentence": "그러던 어느 날, 어머니 춘섬의 방을 찾아가 울며 말했다.",
+        "selected": false,
+        "reason_en": "A familiar narrative transition introduces visiting his mother and speaking while crying.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 2224,
+        "sentence": "“어머니와 제가 모자로 만난 인연은 깊습니다.",
+        "selected": false,
+        "reason_en": "A single relational modifier describes their bond; the tap gloss distinguishes mother-and-son 모자 from its homonyms.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 2250,
+        "sentence": "저를 길러 주신 은혜도 잊을 수 없습니다.",
+        "selected": false,
+        "reason_en": "A familiar completed benefactive modifier leads to a simple inability statement.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 2274,
+        "sentence": "하지만 신분이 낮다는 이유로 남에게 업신여김을 받으며 살아가는 것은 더 이상 견디기 어렵습니다.",
+        "selected": true,
+        "reason_en": "The Level 6 proposition modifier combines with nominalized contemptuous treatment, simultaneous living and an evaluation of endurance.",
+        "translation_en": "But I can no longer endure living with other people's contempt simply because my social standing is low.",
+        "parts": [
+          {
+            "text": "하지만 신분이 낮다는 이유로",
+            "explanation_en": "The proposition that his social standing is low supplies the stated grounds for the contempt; -다는 modifies 이유."
+          },
+          {
+            "text": " 남에게 업신여김을 받으며",
+            "explanation_en": "He receives contemptuous treatment from other people. The nominalized verb 업신여김 denotes the treatment, and -며 makes it accompany his life."
+          },
+          {
+            "text": " 살아가는 것은",
+            "explanation_en": "Living under that treatment becomes the topic evaluated by the following predicate."
+          },
+          {
+            "text": " 더 이상 견디기 어렵습니다.",
+            "explanation_en": "He finds continuing to endure that life difficult. In this context, the whole statement conveys that he can no longer bear it."
+          }
+        ]
+      },
+      {
+        "start": 2328,
+        "sentence": "마음속에 쌓인 한을 억누를 수 없어 이제 어머니 곁을 떠나려 합니다.",
+        "selected": true,
+        "reason_en": "Help connects accumulated emotional suffering, inability as a cause and a departure that remains an intention.",
+        "translation_en": "Unable to suppress the sorrow and resentment that have built up in my heart, I now intend to leave your side.",
+        "parts": [
+          {
+            "text": "마음속에 쌓인 한을",
+            "explanation_en": "The object is the deep unresolved sorrow and resentment accumulated in his heart."
+          },
+          {
+            "text": " 억누를 수 없어",
+            "explanation_en": "His inability to suppress those feelings supplies the reason for his decision."
+          },
+          {
+            "text": " 이제 어머니 곁을 떠나려 합니다.",
+            "explanation_en": "He respectfully states an intention to leave his mother's side; this does not report that he has already departed."
+          }
+        ]
+      },
+      {
+        "start": 2367,
+        "sentence": "저를 걱정하지 마시고 몸을 잘 돌보십시오.”",
+        "selected": false,
+        "reason_en": "Two familiar respectful requests are connected directly: do not worry, and care for your health.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 2393,
+        "sentence": "춘섬은 깜짝 놀라 아들을 말렸다.",
+        "selected": false,
+        "reason_en": "A short sequence of surprise and attempted dissuasion.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 2413,
+        "sentence": "“너와 같은 처지에 있는 사람이 너뿐이냐?",
+        "selected": false,
+        "reason_en": "The familiar situation modifier and exclusive rhetorical question are readily followed at this level.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 2437,
+        "sentence": "어찌 그렇게 좁은 마음을 먹고 어미의 가슴을 태우느냐?”",
+        "selected": false,
+        "reason_en": "The question coordinates two figurative actions whose idiomatic meanings are already explicit in the tap glosses.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 2470,
+        "sentence": "그러나 길동의 뜻은 바뀌지 않았다.",
+        "selected": false,
+        "reason_en": "A simple negative statement about his unchanged resolve.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 2491,
+        "sentence": "“저는 이곳을 떠나 제 길을 찾으려 합니다.",
+        "selected": false,
+        "reason_en": "A clear sequential action belongs to one stated intention; the figurative path sense has a tap gloss.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 2516,
+        "sentence": "마음 놓으시고 제가 앞으로 어떻게 살아가는지 지켜봐 주십시오.”",
+        "selected": false,
+        "reason_en": "The familiar coordinated requests contain one manageable embedded question; idiomatic and benefactive meanings have existing help.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 2553,
+        "sentence": "길동은 이어 집안에서 느낀 위험을 이야기했다.",
+        "selected": false,
+        "reason_en": "A simple reporting clause with one completed-action modifier.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 2580,
+        "sentence": "“요즘 홍 판서께서 아끼시는 다른 첩의 태도를 보니, 그분의 사랑을 잃을까 두려워 저와 어머니를 원수처럼 여기는 듯합니다.",
+        "selected": true,
+        "reason_en": "The observation frame contains multiple referents, a feared loss motivating hostility and a final inference; help prevents subject and pronoun confusion.",
+        "translation_en": "Judging from the attitude of the other concubine Minister Hong cherishes these days, she seems to regard Mother and me as enemies because she fears losing his affection.",
+        "parts": [
+          {
+            "text": "“요즘 홍 판서께서 아끼시는 다른 첩의 태도를 보니,",
+            "explanation_en": "Gildong's observation of the favored concubine's attitude supplies the evidence for his inference. Minister Hong is the subject of 아끼시는."
+          },
+          {
+            "text": " 그분의 사랑을 잃을까 두려워",
+            "explanation_en": "The concubine fears losing Minister Hong's affection. 그분 refers respectfully to Minister Hong, while the omitted experiencer of fear is the concubine."
+          },
+          {
+            "text": " 저와 어머니를 원수처럼 여기는 듯합니다.",
+            "explanation_en": "Gildong infers that she regards him and his mother as enemies. 듯합니다 presents this hostility as an apparent situation, rather than certain knowledge of her thoughts."
+          }
+        ]
+      },
+      {
+        "start": 2649,
+        "sentence": "이러다가는 저희가 큰 화를 입을까 걱정됩니다.",
+        "selected": false,
+        "reason_en": "The warning condition and feared possibility are short and familiar at TOPIK 5; the calamity sense has a tap gloss.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 2675,
+        "sentence": "그러니 제가 나가는 일을 너무 염려하지 마십시오.”",
+        "selected": false,
+        "reason_en": "A clear consequence connector leads to a familiar respectful prohibition concerning his departure.",
+        "translation_en": "",
+        "parts": []
+      },
+      {
+        "start": 2705,
+        "sentence": "아들의 말을 들은 춘섬도 슬픔을 떨칠 수 없었다.",
+        "selected": false,
+        "reason_en": "One completed-action modifier precedes a straightforward inability predicate; the harder verb has a useful tap gloss.",
+        "translation_en": "",
+        "parts": []
+      }
+    ]
+  }
+}

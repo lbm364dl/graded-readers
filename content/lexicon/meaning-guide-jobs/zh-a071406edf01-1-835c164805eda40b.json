@@ -1,0 +1,31 @@
+{
+  "id": "zh-a071406edf01-1-835c164805eda40b",
+  "entry_id": "zh-a071406edf01-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a071406edf01-1",
+      "headword": "定",
+      "kind": "word",
+      "reading": "dìng",
+      "senses": [
+        {
+          "id": "zh-a071406edf01-1-s1",
+          "definition": "to set; establish"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他在县城四座城门放下十多根五颜六色的木棒，并定下严格的禁令。",
+        "gloss": "to establish",
+        "sense_id": "zh-a071406edf01-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e497cc3c9c9d2d34b16c69d56d9bdcb33f157933938994312a27d7d46c7e2e26"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-f844bc6f4c75-1-376a4f5ae0c0fabc",
+  "entry_id": "zh-f844bc6f4c75-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f844bc6f4c75-1",
+      "headword": "调兵",
+      "kind": "construction",
+      "reading": "diàobīng",
+      "senses": [
+        {
+          "id": "zh-f844bc6f4c75-1-s1",
+          "definition": "to mobilize or deploy troops"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇帝命何进调兵捉住马元义，将他斩首，又把封谞等人关进牢里。",
+        "gloss": "mobilize troops",
+        "sense_id": "zh-f844bc6f4c75-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "388d8bd6849aa64f0dc7582d1fd555dd11a62e54455f2e1ff417ad439fedb3ce"
+}

@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_008-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1575,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略董旻、董璜等董氏亲族的具体封爵，略去了董卓势力扩张的一项细节，但不影响主线。",
+      "classification": "material",
+      "reason": "具体封爵和董旻、董璜的职权体现了董卓对朝廷与禁军的控制及其势力扩张，属于重要政治背景和人物刻画，不能仅因不影响主线而视为可压缩。",
+      "required_fix": "补回董旻被封左将军鄠侯、董璜被封侍中并总领禁军等具体信息。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略董旻、董璜等董氏亲族的具体封爵，略去了董卓势力扩张的一项细节，但不影响主线。",
+      "classification": "material",
+      "reason": "具体封爵和董旻、董璜的职权体现了董卓对朝廷与禁军的控制及其势力扩张，属于重要政治背景和人物刻画，不能仅因不影响主线而视为可压缩。",
+      "required_fix": "补回董旻被封左将军鄠侯、董璜被封侍中并总领禁军等具体信息。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": []
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1575,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "passed": true
+    }
+  ]
+}

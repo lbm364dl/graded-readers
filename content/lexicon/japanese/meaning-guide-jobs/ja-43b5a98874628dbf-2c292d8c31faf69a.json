@@ -1,0 +1,32 @@
+{
+  "id": "ja-43b5a98874628dbf-2c292d8c31faf69a",
+  "entry_id": "ja-43b5a98874628dbf",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-43b5a98874628dbf",
+      "headword": "まい",
+      "reading": "まい",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-43b5a98874628dbf-1",
+          "definition": "A classical auxiliary attached to a verb's dictionary form to express an intention not to do something."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩はその時から、決して鼠をとるまいと決心した。",
+        "gloss": "will not; never intend to",
+        "sense_id": "ja-43b5a98874628dbf-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "97a4b9988f73d7ac8e5db9411053cf1d56dd7a47d0bacd3e07afb55479306a42"
+}

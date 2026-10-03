@@ -1,0 +1,71 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_104-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 1123,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "删去了廖立、李严闻孔明死后的反应及相关诗赞。",
+      "classification": "material",
+      "reason": "这段内容包含李严因孔明去世而病亡这一事件及其原因，也呈现廖立、李严的重要反应与人物处境；相关诗赞虽可压缩，但与事件性内容一并删去，不能仅视为装饰性省略。",
+      "required_fix": "补回廖立、李严闻孔明死后的反应、李严病亡及其原因，并恢复相关诗赞。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "删去了廖立、李严闻孔明死后的反应及相关诗赞。",
+      "classification": "material",
+      "reason": "这段内容包含李严因孔明去世而病亡这一事件及其原因，也呈现廖立、李严的重要反应与人物处境；相关诗赞虽可压缩，但与事件性内容一并删去，不能仅视为装饰性省略。",
+      "required_fix": "补回廖立、李严闻孔明死后的反应、李严病亡及其原因，并恢复相关诗赞。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1104,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [
+          "杜工部和白乐天在诸葛亮去世后所作的两首诗赞被删去；这未完全落实要求恢复相关诗赞。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 1123,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

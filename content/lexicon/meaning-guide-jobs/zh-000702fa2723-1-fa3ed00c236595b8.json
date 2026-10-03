@@ -1,0 +1,31 @@
+{
+  "id": "zh-000702fa2723-1-fa3ed00c236595b8",
+  "entry_id": "zh-000702fa2723-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-000702fa2723-1",
+      "headword": "骗",
+      "kind": "word",
+      "reading": "piàn",
+      "senses": [
+        {
+          "id": "zh-000702fa2723-1-s1",
+          "definition": "to deceive or trick someone"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹操便假装中风，骗过父亲，后来依旧放荡。",
+        "gloss": "to deceive",
+        "sense_id": "zh-000702fa2723-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7d3a6621b2f0f237ec02a0a08f2121179498f3c23e491d13340aaf9e088a2596"
+}

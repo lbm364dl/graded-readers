@@ -1,0 +1,32 @@
+{
+  "id": "ja-ab9baaa9ce5df70e-babd596dd01b82e3",
+  "entry_id": "ja-ab9baaa9ce5df70e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ab9baaa9ce5df70e",
+      "headword": "音がする",
+      "reading": "おとがする",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-ab9baaa9ce5df70e-1",
+          "definition": "for there to be a sound; to make a sound"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "目が回り、胸が悪くなったと思ったとき、どさりと音がして、目から火が出た。",
+        "gloss": "make a sound; there is a sound",
+        "sense_id": "ja-ab9baaa9ce5df70e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3ecb458cf77c238c206c2d120b99b4d1be6be768b845b4d97b146eb725e7fd7a"
+}

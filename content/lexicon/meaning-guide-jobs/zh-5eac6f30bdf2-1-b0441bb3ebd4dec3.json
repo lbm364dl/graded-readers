@@ -1,0 +1,31 @@
+{
+  "id": "zh-5eac6f30bdf2-1-b0441bb3ebd4dec3",
+  "entry_id": "zh-5eac6f30bdf2-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5eac6f30bdf2-1",
+      "headword": "好主意",
+      "kind": "word",
+      "reading": "hǎo zhǔyi",
+      "senses": [
+        {
+          "id": "zh-5eac6f30bdf2-1-s1",
+          "definition": "good idea"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备对关羽、张飞说：“我们人少，只有想个好主意，才能取胜。",
+        "gloss": "good idea",
+        "sense_id": "zh-5eac6f30bdf2-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "50fe5f9632500c0feac3b3a699da0405f99f00d266f574d212f6f7c85d8c624f"
+}

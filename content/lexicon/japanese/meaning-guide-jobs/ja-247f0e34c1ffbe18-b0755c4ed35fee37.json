@@ -1,0 +1,32 @@
+{
+  "id": "ja-247f0e34c1ffbe18-b0755c4ed35fee37",
+  "entry_id": "ja-247f0e34c1ffbe18",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-247f0e34c1ffbe18",
+      "headword": "どれほど",
+      "reading": "どれほど",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-247f0e34c1ffbe18-1",
+          "definition": "how much; to what extent"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "今まで名前さえ付けてもらえないことからも、吾輩がどれほど大切にされなかったか分かる。",
+        "gloss": "how much; to what extent",
+        "sense_id": "ja-247f0e34c1ffbe18-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "28a5e532580528e1bacd66f766ff3d59deccee885968d656f604072305563c55"
+}

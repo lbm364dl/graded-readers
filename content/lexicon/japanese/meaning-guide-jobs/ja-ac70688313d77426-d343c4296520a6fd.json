@@ -1,0 +1,32 @@
+{
+  "id": "ja-ac70688313d77426-d343c4296520a6fd",
+  "entry_id": "ja-ac70688313d77426",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ac70688313d77426",
+      "headword": "気の毒",
+      "reading": "きのどく",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-ac70688313d77426-1",
+          "definition": "pitiful; deserving sympathy"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "しかし、主人が熱心に筆を動かしているので、気の毒だと思い、じっとしていた。",
+        "gloss": "pitiful; feeling sorry for someone",
+        "sense_id": "ja-ac70688313d77426-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5d882cca2b1d24ca6432e4f5d2c2c80292937a6a2919df3b970dfa7c9d689f8d"
+}

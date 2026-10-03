@@ -1,0 +1,175 @@
+{
+  "scope": "Two frozen Korean annotation repair failures; exploratory smoke, not linguistic approval.",
+  "baseline_no_tools": [
+    {
+      "case": "construction-links",
+      "effort": "high",
+      "case_digest": "daa442bd2ffe05470a89c5493649bf04fd2bad0462e1fb00620d2d38537b3237",
+      "passed_structure_and_identity": false,
+      "linguistic_review": "not_performed",
+      "error": "ValueError: Korean complete link form '형을 형이라 부르지 못하고' needs exactly one complete source span containing attached segment 37 ('부르지'); found []. Preserve tap boundaries and the actual source form; attach the link within the intended occurrence. Do not use a dictionary-form paraphrase.",
+      "actual_effort": "high",
+      "seconds": 277.212428,
+      "attempt_count": 1,
+      "usage": {
+        "input_tokens": 64391,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 13896,
+        "reasoning_output_tokens": 3949
+      }
+    },
+    {
+      "case": "construction-links",
+      "effort": "low",
+      "case_digest": "daa442bd2ffe05470a89c5493649bf04fd2bad0462e1fb00620d2d38537b3237",
+      "passed_structure_and_identity": false,
+      "linguistic_review": "not_performed",
+      "error": "ValueError: Korean words cannot hide in punctuation",
+      "actual_effort": "low",
+      "seconds": 197.05713,
+      "attempt_count": 1,
+      "usage": {
+        "input_tokens": 64391,
+        "cached_input_tokens": 8960,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 10005,
+        "reasoning_output_tokens": 0
+      }
+    },
+    {
+      "case": "construction-links",
+      "effort": "medium",
+      "case_digest": "daa442bd2ffe05470a89c5493649bf04fd2bad0462e1fb00620d2d38537b3237",
+      "passed_structure_and_identity": false,
+      "linguistic_review": "not_performed",
+      "error": "ValueError: Korean complete link form '아버지의 아들' needs exactly one complete source span containing attached segment 11 ('아버지의'); found []. Preserve tap boundaries and the actual source form; attach the link within the intended occurrence. Do not use a dictionary-form paraphrase.",
+      "actual_effort": "medium",
+      "seconds": 209.751042,
+      "attempt_count": 1,
+      "usage": {
+        "input_tokens": 64391,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 10707,
+        "reasoning_output_tokens": 350
+      }
+    },
+    {
+      "case": "source-spans",
+      "effort": "high",
+      "case_digest": "f97151f578a9ed9d4c3f92ae88cdcf852be73b6fb37b4d43301eaa47e11ed9fc",
+      "passed_structure_and_identity": false,
+      "linguistic_review": "not_performed",
+      "error": "ValueError: Korean complete link form '사람으로 태어나' needs exactly one complete source span containing attached segment 16 ('람으로'); found []. Preserve tap boundaries and the actual source form; attach the link within the intended occurrence. Do not use a dictionary-form paraphrase.",
+      "actual_effort": "high",
+      "seconds": 255.043961,
+      "attempt_count": 1,
+      "usage": {
+        "input_tokens": 68240,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 13350,
+        "reasoning_output_tokens": 2669
+      }
+    },
+    {
+      "case": "source-spans",
+      "effort": "low",
+      "case_digest": "f97151f578a9ed9d4c3f92ae88cdcf852be73b6fb37b4d43301eaa47e11ed9fc",
+      "passed_structure_and_identity": false,
+      "linguistic_review": "not_performed",
+      "error": "ValueError: Korean source span 16 [32:33] must start at 33, be nonempty, and end within source length 231",
+      "actual_effort": "low",
+      "seconds": 206.003888,
+      "attempt_count": 1,
+      "usage": {
+        "input_tokens": 68240,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 10670,
+        "reasoning_output_tokens": 0
+      }
+    },
+    {
+      "case": "source-spans",
+      "effort": "medium",
+      "case_digest": "f97151f578a9ed9d4c3f92ae88cdcf852be73b6fb37b4d43301eaa47e11ed9fc",
+      "passed_structure_and_identity": false,
+      "linguistic_review": "not_performed",
+      "error": "ValueError: Korean source span 17 [33:38] must start at 38, be nonempty, and end within source length 231",
+      "actual_effort": "medium",
+      "seconds": 202.850685,
+      "attempt_count": 1,
+      "usage": {
+        "input_tokens": 68240,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 10515,
+        "reasoning_output_tokens": 767
+      }
+    }
+  ],
+  "file_submission_single_case": [
+    {
+      "case": "source-spans",
+      "effort": "low",
+      "case_digest": "f97151f578a9ed9d4c3f92ae88cdcf852be73b6fb37b4d43301eaa47e11ed9fc",
+      "passed_structure_and_identity": true,
+      "linguistic_review": "not_performed",
+      "tools": "workspace",
+      "actual_effort": "low",
+      "seconds": 538.781751,
+      "attempt_count": 1,
+      "usage": {
+        "input_tokens": 1213446,
+        "cached_input_tokens": 1138176,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 14456,
+        "reasoning_output_tokens": 8575
+      }
+    },
+    {
+      "case": "source-spans",
+      "effort": "high",
+      "case_digest": "f97151f578a9ed9d4c3f92ae88cdcf852be73b6fb37b4d43301eaa47e11ed9fc",
+      "passed_structure_and_identity": true,
+      "linguistic_review": "not_performed",
+      "tools": "workspace",
+      "actual_effort": "high",
+      "seconds": 516.853316,
+      "attempt_count": 1,
+      "usage": {
+        "input_tokens": 1643818,
+        "cached_input_tokens": 1529088,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 19093,
+        "reasoning_output_tokens": 12951
+      }
+    },
+    {
+      "case": "source-spans",
+      "effort": "medium",
+      "case_digest": "f97151f578a9ed9d4c3f92ae88cdcf852be73b6fb37b4d43301eaa47e11ed9fc",
+      "passed_structure_and_identity": false,
+      "linguistic_review": "not_performed",
+      "tools": "workspace",
+      "error": "ValueError: Korean complete link form '공자와 맹자' needs exactly one complete source span containing attached segment 20 ('공자와'); found []. Preserve tap boundaries and the actual source form; attach the link within the intended occurrence. Do not use a dictionary-form paraphrase.",
+      "actual_effort": "medium",
+      "seconds": 129.304746,
+      "attempt_count": 1,
+      "usage": {
+        "input_tokens": 481330,
+        "cached_input_tokens": 424960,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4626,
+        "reasoning_output_tokens": 1754
+      }
+    }
+  ],
+  "excluded_experiments": [
+    "with-tools: nested sandbox could not start",
+    "with-tools-working-host: discovered valid candidate corrupted by repeated final JSON; stopped obsolete protocol"
+  ],
+  "conclusion": "No production effort change. Low and high passed structural/identity checks on one file-submission case; medium failed. Both passing candidates still need linguistic review. Too few cases to establish a reliable effort winner."
+}

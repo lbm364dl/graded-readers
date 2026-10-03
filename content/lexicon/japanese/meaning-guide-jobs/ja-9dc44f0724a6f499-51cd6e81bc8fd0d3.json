@@ -1,0 +1,81 @@
+{
+  "id": "ja-9dc44f0724a6f499-51cd6e81bc8fd0d3",
+  "entry_id": "ja-9dc44f0724a6f499",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-9dc44f0724a6f499",
+      "headword": "持つ",
+      "reading": "もつ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-9dc44f0724a6f499-1",
+          "definition": "to hold, carry, or take something"
+        },
+        {
+          "id": "ja-9dc44f0724a6f499-2",
+          "definition": "to have or possess something"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "猫がとった鼠を、人間が取り上げて交番へ持って行く。",
+        "gloss": "take there; carry away",
+        "sense_id": "ja-9dc44f0724a6f499-1"
+      },
+      {
+        "sentence": "吾輩が鼠をとったことはないと言うと、黒は、人間が猫のとった鼠を取り上げて交番へ持って行き、五銭をもらうという話をした。",
+        "gloss": "carrying away to",
+        "sense_id": "ja-9dc44f0724a6f499-1"
+      },
+      {
+        "sentence": "ところが、その家の書生が三日目に子猫を四匹とも裏の池へ持って行き、捨てて来たそうだ。",
+        "gloss": "carried/took away",
+        "sense_id": "ja-9dc44f0724a6f499-1"
+      },
+      {
+        "sentence": "我々猫の間では、目刺しの頭でも、ぼらのへそでも、最初に見つけた者が食べる権利を持つ。",
+        "gloss": "has; possesses",
+        "sense_id": "ja-9dc44f0724a6f499-2"
+      },
+      {
+        "sentence": "吾輩がこの家に来て一月ほど後の、ある給料日に、主人は大きな包みを持って帰って来た。",
+        "gloss": "carry and",
+        "sense_id": "ja-9dc44f0724a6f499-1"
+      },
+      {
+        "sentence": "主人が「自分で筆を持つと、絵は実に難しい」と言うと、友人は、室内の想像だけでは絵はかけない、自然そのものを見て写生すべきだと教えた。",
+        "gloss": "hold; take up",
+        "sense_id": "ja-9dc44f0724a6f499-1"
+      },
+      {
+        "sentence": "さらに黒は、鼠をとると、人間がそれを取り上げて交番へ持って行き、誰がとったか分からないので、そのたびに五銭をもらう、と言った。",
+        "gloss": "take it there",
+        "sense_id": "ja-9dc44f0724a6f499-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-9dc44f0724a6f499",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "持つ (もつ) means to hold or carry something. With movement, it means to take it along.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "0970367e0200fba0848f04941851dbbf3e4058d930f098b1d5db2d853734d43c",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e8189f03ac552b246b59fd0f5924b44a0c0fc69f78b2f92fa8ea9684885327ac"
+}

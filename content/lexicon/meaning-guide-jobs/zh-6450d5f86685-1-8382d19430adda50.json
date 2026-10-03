@@ -1,0 +1,36 @@
+{
+  "id": "zh-6450d5f86685-1-8382d19430adda50",
+  "entry_id": "zh-6450d5f86685-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6450d5f86685-1",
+      "headword": "明日",
+      "kind": "word",
+      "reading": "míngrì",
+      "senses": [
+        {
+          "id": "zh-6450d5f86685-1-s1",
+          "definition": "the next day; tomorrow"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "明日，三人在园中祭告天地，结为兄弟，同心协力救民，然后才能图大事。",
+        "gloss": "tomorrow",
+        "sense_id": "zh-6450d5f86685-1-s1"
+      },
+      {
+        "sentence": "明日我们在园中祭告天地，结为兄弟，同心协力救民。",
+        "gloss": "tomorrow",
+        "sense_id": "zh-6450d5f86685-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e03f87d0e8779bcceb28d2ee6750e8d1cb7e4e10085eb2d68707d84c61b2bdc2"
+}

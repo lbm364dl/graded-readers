@@ -1,0 +1,31 @@
+{
+  "id": "zh-2ef0e66b8259-1-16e1a051c17b3f69",
+  "entry_id": "zh-2ef0e66b8259-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2ef0e66b8259-1",
+      "headword": "联络",
+      "kind": "word",
+      "reading": "liánluò",
+      "senses": [
+        {
+          "id": "zh-2ef0e66b8259-1-s1",
+          "definition": "to contact or communicate with someone, especially to coordinate an action"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "卢植让刘备带本部人马，再带一千官军到颍川，联络皇甫嵩、朱隽，约好时间一起进攻。",
+        "gloss": "contact",
+        "sense_id": "zh-2ef0e66b8259-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d1e8aabf091eb011c99c79ffa7aedeeb05274fe5aeb11a144b376b117d82bd97"
+}

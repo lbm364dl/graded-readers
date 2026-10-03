@@ -1,0 +1,106 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_032-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 680,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了曹操与袁谭结盟、许婚及袁谭暗送将军印等情节。",
+      "classification": "material",
+      "reason": "这些情节改变了曹操与袁谭的政治关系、袁谭的动机以及曹操后来提防并谋除袁谭的原因。",
+      "required_fix": "补写曹操与袁谭结盟、许婚，以及袁谭暗送将军印、曹操因此产生杀意的情节。"
+    },
+    {
+      "omission_note": "省略了曹操修筑粮道、吕旷吕翔献印揭露袁谭图谋等重要铺垫。",
+      "classification": "material",
+      "reason": "粮道建设推动了曹操进攻冀州的军事行动；吕旷、吕翔献印揭露袁谭图谋，是曹操转而防范袁谭并为后续冲突埋下的重要原因。",
+      "required_fix": "补写曹操修筑粮道，以及吕旷、吕翔献印揭露袁谭图谋的经过。"
+    },
+    {
+      "omission_note": "省略了审配家属被杀、审荣献门的具体经过，以及曹操入城前的劝降军令。",
+      "classification": "material",
+      "reason": "原文被杀的是辛毗家属而非审配家属；这段惨剧直接促成审荣献出西门，曹操入城前的军令也解释了攻城后的处置方式，均影响后续事件和人物动机。",
+      "required_fix": "更正为审配杀害辛毗家属，并补写审荣献门及曹操下令保护袁氏老小、免除投降军民死罪的情节。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“袁氏至此覆亡”表述过度；此时袁尚尚未被擒，袁氏势力并未完全覆亡。",
+      "classification": "material",
+      "reason": "原文此处只写袁氏家属遭难且曹丕欲杀妇人，袁尚仍在逃，不能概括为袁氏势力已经完全覆亡。",
+      "required_fix": "将“袁氏至此覆亡”改为“袁氏一家至此遭受惨祸，后事待续”或同等表述，保留袁尚尚未被擒、袁氏势力尚未完全覆亡的状态。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“袁尚封袁谭为车骑将军”不够准确，原文是袁尚转述袁绍遗命并加封袁谭。",
+      "classification": "material",
+      "reason": "该表述把任命者明确归为袁尚，改变了原文中袁绍遗命授予袁谭车骑将军、袁尚转述并执行的任命关系。",
+      "required_fix": "改为“袁尚依袁绍遗命拥立自己为主，并加封袁谭为车骑将军”或同等准确表述。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了曹操与袁谭结盟、许婚及袁谭暗送将军印等情节。",
+      "classification": "material",
+      "reason": "这些情节改变了曹操与袁谭的政治关系、袁谭的动机以及曹操后来提防并谋除袁谭的原因。",
+      "required_fix": "补写曹操与袁谭结盟、许婚，以及袁谭暗送将军印、曹操因此产生杀意的情节。"
+    },
+    {
+      "omission_note": "省略了曹操修筑粮道、吕旷吕翔献印揭露袁谭图谋等重要铺垫。",
+      "classification": "material",
+      "reason": "粮道建设推动了曹操进攻冀州的军事行动；吕旷、吕翔献印揭露袁谭图谋，是曹操转而防范袁谭并为后续冲突埋下的重要原因。",
+      "required_fix": "补写曹操修筑粮道，以及吕旷、吕翔献印揭露袁谭图谋的经过。"
+    },
+    {
+      "omission_note": "省略了审配家属被杀、审荣献门的具体经过，以及曹操入城前的劝降军令。",
+      "classification": "material",
+      "reason": "原文被杀的是辛毗家属而非审配家属；这段惨剧直接促成审荣献出西门，曹操入城前的军令也解释了攻城后的处置方式，均影响后续事件和人物动机。",
+      "required_fix": "更正为审配杀害辛毗家属，并补写审荣献门及曹操下令保护袁氏老小、免除投降军民死罪的情节。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“袁氏至此覆亡”表述过度；此时袁尚尚未被擒，袁氏势力并未完全覆亡。",
+      "classification": "material",
+      "reason": "原文此处只写袁氏家属遭难且曹丕欲杀妇人，袁尚仍在逃，不能概括为袁氏势力已经完全覆亡。",
+      "required_fix": "将“袁氏至此覆亡”改为“袁氏一家至此遭受惨祸，后事待续”或同等表述，保留袁尚尚未被擒、袁氏势力尚未完全覆亡的状态。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“袁尚封袁谭为车骑将军”不够准确，原文是袁尚转述袁绍遗命并加封袁谭。",
+      "classification": "material",
+      "reason": "该表述把任命者明确归为袁尚，改变了原文中袁绍遗命授予袁谭车骑将军、袁尚转述并执行的任命关系。",
+      "required_fix": "改为“袁尚依袁绍遗命拥立自己为主，并加封袁谭为车骑将军”或同等准确表述。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 680,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

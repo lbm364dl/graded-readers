@@ -1,0 +1,36 @@
+{
+  "id": "zh-c59d1cda9865-1-6dfaed53031cc56e",
+  "entry_id": "zh-c59d1cda9865-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c59d1cda9865-1",
+      "headword": "太守",
+      "kind": "word",
+      "reading": "tàishǒu",
+      "senses": [
+        {
+          "id": "zh-c59d1cda9865-1-s1",
+          "definition": "local governor"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "第二天，青州太守派人送来求援消息，说黄巾军围住了城，城里的人十分不安。",
+        "gloss": "governor",
+        "sense_id": "zh-c59d1cda9865-1-s1"
+      },
+      {
+        "sentence": "第二天，青州太守龚景来信求救，说黄巾军围城，城快守不住了。",
+        "gloss": "provincial governor",
+        "sense_id": "zh-c59d1cda9865-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "885f1a80b6d5840351a86abf775d88faf3f8973b70754e81a143018868fe3ffa"
+}

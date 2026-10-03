@@ -1,0 +1,66 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_083-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 182,
+  "required_range": [
+    98,
+    182
+  ],
+  "material_findings": [
+    {
+      "omission_note": "未明确说明刘备因吴军坚守、天气炎热而移营山林的战略背景及陆逊诱敌的意图。",
+      "classification": "material",
+      "reason": "这省略了刘备移营的直接原因，以及陆逊坚守不出的战略意图，削弱了双方行动的因果关系，并影响后续战局的连贯理解。",
+      "required_fix": "补充吴军坚守不出、天气炎热导致蜀军缺水，以及陆逊意在诱使蜀军移入山林后伺机用计的背景。"
+    },
+    {
+      "omission_note": "省略了糜芳、傅士仁因军心不稳而杀马忠投降的具体动机。",
+      "classification": "material",
+      "reason": "军心不稳是糜芳、傅士仁杀马忠并投降蜀军的关键动机；省略后，该事件的因果链和人物行为依据不完整。",
+      "required_fix": "补充二人听闻士卒怨恨并计划杀害他们、担心性命难保，遂决定杀马忠献首投降的动机。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "未明确说明刘备因吴军坚守、天气炎热而移营山林的战略背景及陆逊诱敌的意图。",
+      "classification": "material",
+      "reason": "这省略了刘备移营的直接原因，以及陆逊坚守不出的战略意图，削弱了双方行动的因果关系，并影响后续战局的连贯理解。",
+      "required_fix": "补充吴军坚守不出、天气炎热导致蜀军缺水，以及陆逊意在诱使蜀军移入山林后伺机用计的背景。"
+    },
+    {
+      "omission_note": "省略了糜芳、傅士仁因军心不稳而杀马忠投降的具体动机。",
+      "classification": "material",
+      "reason": "军心不稳是糜芳、傅士仁杀马忠并投降蜀军的关键动机；省略后，该事件的因果链和人物行为依据不完整。",
+      "required_fix": "补充二人听闻士卒怨恨并计划杀害他们、担心性命难保，遂决定杀马忠献首投降的动机。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 182,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

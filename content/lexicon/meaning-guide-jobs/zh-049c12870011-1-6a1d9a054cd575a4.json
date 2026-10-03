@@ -1,0 +1,31 @@
+{
+  "id": "zh-049c12870011-1-6a1d9a054cd575a4",
+  "entry_id": "zh-049c12870011-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-049c12870011-1",
+      "headword": "变",
+      "kind": "word",
+      "reading": "biàn",
+      "senses": [
+        {
+          "id": "zh-049c12870011-1-s1",
+          "definition": "change; become different"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "蔡邕上书直言，认为雌鸡变雄，是妇人和宦官干预朝政造成的。",
+        "gloss": "to become",
+        "sense_id": "zh-049c12870011-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8a18f2b3e6f02fa580aeb0d269c64651c6cd844ae6c9fa4afec7b0616a51c2b0"
+}

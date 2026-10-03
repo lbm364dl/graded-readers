@@ -1,0 +1,32 @@
+{
+  "id": "ja-9ff607168ba02b6c-18069964ce3af3ce",
+  "entry_id": "ja-9ff607168ba02b6c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9ff607168ba02b6c",
+      "headword": "失う",
+      "reading": "うしなう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-9ff607168ba02b6c-1",
+          "definition": "to lose; to no longer have something"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "元気も体格も失った黒は、最後に「いたちと魚屋の天秤棒には、もうこりごりだ」と言った。",
+        "gloss": "lost",
+        "sense_id": "ja-9ff607168ba02b6c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d3ce79f312908592b2a0a339bb5986e7f55cb630c7bdf59390c898c722dbffb4"
+}

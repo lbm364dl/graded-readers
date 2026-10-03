@@ -1,0 +1,87 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_058-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 595,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了曹操渡河时许褚夹舵撑船、砍断攀船士兵以及马超沿河射击等紧张细节。",
+      "classification": "material",
+      "reason": "这些细节具体解释了许褚如何在追兵和翻船危机中保护曹操并成功渡河，也强化了许褚勇力过人的重要 characterization；仅保留拖船和挡箭会削弱救援过程的因果与人物刻画。",
+      "required_fix": "补入许褚夹舵撑船、砍断攀船士兵以及马超沿河射箭的关键动作。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“马腾、黄奎和二弟”并列为被曹操杀害者，表述容易造成黄奎是马超亲属的误解；原文中黄奎是与马腾谋反的同谋。",
+      "classification": "material",
+      "reason": "这会造成黄奎与马超的亲属关系错误，属于身份关系误解。",
+      "required_fix": "改为明确表述：马腾与黄奎谋杀曹操事泄被斩，马超的二弟也遇害；黄奎是马腾的同谋，并非马超亲属。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了曹操渡河时许褚夹舵撑船、砍断攀船士兵以及马超沿河射击等紧张细节。",
+      "classification": "material",
+      "reason": "这些细节具体解释了许褚如何在追兵和翻船危机中保护曹操并成功渡河，也强化了许褚勇力过人的重要 characterization；仅保留拖船和挡箭会削弱救援过程的因果与人物刻画。",
+      "required_fix": "补入许褚夹舵撑船、砍断攀船士兵以及马超沿河射箭的关键动作。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“马腾、黄奎和二弟”并列为被曹操杀害者，表述容易造成黄奎是马超亲属的误解；原文中黄奎是与马腾谋反的同谋。",
+      "classification": "material",
+      "reason": "这会造成黄奎与马超的亲属关系错误，属于身份关系误解。",
+      "required_fix": "改为明确表述：马腾与黄奎谋杀曹操事泄被斩，马超的二弟也遇害；黄奎是马腾的同谋，并非马超亲属。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 728,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 7.5,
+        "readability": 8.5,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "“砍断攀船士兵”将原文许褚砍断攀船者之手的动作表达为仿佛砍断士兵本身，动作对象不准确。"
+        ],
+        "language_problems": [
+          "“砍断攀船士兵”搭配不自然且语义含混，宜改为“挥刀砍断攀船者的手”。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 595,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-65ecddc02a5f-1-1e669d74cda874a8",
+  "entry_id": "zh-65ecddc02a5f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-65ecddc02a5f-1",
+      "headword": "威名",
+      "kind": "word",
+      "reading": "wēimíng",
+      "senses": [
+        {
+          "id": "zh-65ecddc02a5f-1-s1",
+          "definition": "prestige; reputation for power or authority"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "于是，城内城外的人都不敢犯法，曹操也获得了很大的威名。",
+        "gloss": "prestige",
+        "sense_id": "zh-65ecddc02a5f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "699bf5b77d41146b3eafa02825e91c5891e3db0886085e3d6d778c2df0a0b967"
+}

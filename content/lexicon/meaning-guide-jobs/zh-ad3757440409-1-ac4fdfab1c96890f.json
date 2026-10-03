@@ -1,0 +1,95 @@
+{
+  "id": "zh-ad3757440409-1-ac4fdfab1c96890f",
+  "entry_id": "zh-ad3757440409-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ad3757440409-1",
+      "headword": "让",
+      "kind": "word",
+      "reading": "ràng",
+      "senses": [
+        {
+          "id": "zh-ad3757440409-1-s1",
+          "definition": "to have or tell someone to do something"
+        },
+        {
+          "id": "zh-ad3757440409-1-s2",
+          "definition": "to make someone or something become or be in a certain state"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘焉让邹靖带刘备、关羽、张飞和五百人出发。",
+        "gloss": "order",
+        "sense_id": "zh-ad3757440409-1-s1"
+      },
+      {
+        "sentence": "”刘焉让邹靖带五千人同行。",
+        "gloss": "have",
+        "sense_id": "zh-ad3757440409-1-s1"
+      },
+      {
+        "sentence": "刘备让关羽带一千人到山左，张飞带一千人到山右，在那里埋伏，以鸣金为号。",
+        "gloss": "have",
+        "sense_id": "zh-ad3757440409-1-s1"
+      },
+      {
+        "sentence": "他们让人准备草把，悄悄安排在四周。",
+        "gloss": "have",
+        "sense_id": "zh-ad3757440409-1-s1"
+      },
+      {
+        "sentence": "皇甫嵩判断张梁、张宝很可能回广宗找张角，便让刘备回去帮助卢植。",
+        "gloss": "have",
+        "sense_id": "zh-ad3757440409-1-s1"
+      },
+      {
+        "sentence": "朝廷把我押回京城，又让董卓来接替我。",
+        "gloss": "have",
+        "sense_id": "zh-ad3757440409-1-s1"
+      },
+      {
+        "sentence": "他让人传播“苍天已死，黄天当立”和“岁在甲子，天下大吉”，还用白土在家门上写“甲子”。",
+        "gloss": "to have someone do",
+        "sense_id": "zh-ad3757440409-1-s1"
+      },
+      {
+        "sentence": "刘备说自己是汉室宗亲，想打败作乱的黄巾军，让百姓平安，只是力气不够。",
+        "gloss": "let; make",
+        "sense_id": "zh-ad3757440409-1-s2"
+      },
+      {
+        "sentence": "刘焉让邹靖带刘备、张飞、关羽三人，领五百人前去迎敌。",
+        "gloss": "to have someone do something",
+        "sense_id": "zh-ad3757440409-1-s1"
+      },
+      {
+        "sentence": "”他让关羽带一千人埋伏在山左，张飞带一千人埋伏在山右，听到信号就出来帮助。",
+        "gloss": "to have someone do something",
+        "sense_id": "zh-ad3757440409-1-s1"
+      },
+      {
+        "sentence": "卢植很高兴，让他留下听命。",
+        "gloss": "let; have",
+        "sense_id": "zh-ad3757440409-1-s1"
+      },
+      {
+        "sentence": "卢植让刘备带本部人马，再带一千官军到颍川，联络皇甫嵩、朱隽，约好时间一起进攻。",
+        "gloss": "have; let",
+        "sense_id": "zh-ad3757440409-1-s1"
+      },
+      {
+        "sentence": "皇甫嵩说张梁、张宝会去广宗投靠张角，于是让刘备连夜前往。",
+        "gloss": "to let",
+        "sense_id": "zh-ad3757440409-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bc9ea864453c2ed11a15aa168c51640cf7afba1874aeddfefa25cf99cd616901"
+}

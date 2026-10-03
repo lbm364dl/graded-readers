@@ -1,0 +1,31 @@
+{
+  "id": "zh-c6132e8c79a7-1-2ad29c4b267da425",
+  "entry_id": "zh-c6132e8c79a7-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c6132e8c79a7-1",
+      "headword": "残兵",
+      "kind": "word",
+      "reading": "cánbīng",
+      "senses": [
+        {
+          "id": "zh-c6132e8c79a7-1-s1",
+          "definition": "remaining soldiers or troops"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "战到天明，张梁、张宝带残兵逃走。",
+        "gloss": "remaining troops",
+        "sense_id": "zh-c6132e8c79a7-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7a890ca13754d68ed391e0954c8c888b2a1bb880b1982a5490d30a0316038315"
+}

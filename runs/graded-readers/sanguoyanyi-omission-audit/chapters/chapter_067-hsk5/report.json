@@ -1,0 +1,80 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_067-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 945,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了曹操任命汉中各郡太守、都尉及犒赏士卒等治理安排。",
+      "classification": "material",
+      "reason": "这是汉中平定后的具体治理与军队安置结果，属于事件收束信息，并非单纯氛围、重复或装饰性描写。",
+      "required_fix": "补充曹操分设各郡太守、置都尉并大赏士卒的安排。"
+    },
+    {
+      "omission_note": "省略了张鲁投降前阎圃劝阻出战、张鲁不听的细节。",
+      "classification": "material",
+      "reason": "该细节交代了张鲁出城决战的决策过程和人物性格，也影响其随后败退投降的因果衔接。",
+      "required_fix": "补充阎圃劝阻张鲁出战而张鲁拒不听从。"
+    },
+    {
+      "field": "language_problems",
+      "finding_note": "“凌统所领三百余人全部被杀死，他身负重伤”可能造成凌统本人也被杀死的短暂歧义，宜改为“凌统所领三百余骑尽被杀死，凌统身负重伤”。",
+      "classification": "material",
+      "reason": "“他”指代可能使读者短暂误解凌统也被杀死，影响对凌统逃生这一关键结果的理解。",
+      "required_fix": "改为“凌统所领三百余骑尽被杀死，凌统身负重伤”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了曹操任命汉中各郡太守、都尉及犒赏士卒等治理安排。",
+      "classification": "material",
+      "reason": "这是汉中平定后的具体治理与军队安置结果，属于事件收束信息，并非单纯氛围、重复或装饰性描写。",
+      "required_fix": "补充曹操分设各郡太守、置都尉并大赏士卒的安排。"
+    },
+    {
+      "omission_note": "省略了张鲁投降前阎圃劝阻出战、张鲁不听的细节。",
+      "classification": "material",
+      "reason": "该细节交代了张鲁出城决战的决策过程和人物性格，也影响其随后败退投降的因果衔接。",
+      "required_fix": "补充阎圃劝阻张鲁出战而张鲁拒不听从。"
+    },
+    {
+      "field": "language_problems",
+      "finding_note": "“凌统所领三百余人全部被杀死，他身负重伤”可能造成凌统本人也被杀死的短暂歧义，宜改为“凌统所领三百余骑尽被杀死，凌统身负重伤”。",
+      "classification": "material",
+      "reason": "“他”指代可能使读者短暂误解凌统也被杀死，影响对凌统逃生这一关键结果的理解。",
+      "required_fix": "改为“凌统所领三百余骑尽被杀死，凌统身负重伤”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 945,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

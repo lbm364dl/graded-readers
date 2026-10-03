@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff4fa-4c83-76a2-a0e5-5623a2c1d33f"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"text\":\"黄巾军的管亥带着很多人，把北海城围住了。孔融在城里很着急。以前，孔融常给太史慈的母亲米和钱，帮助她过日子。太史慈知道后，决定去救孔融。他一个人骑马，冲过黄巾军，来到城下。孔融马上让人开门。太史慈进城后说：“我去找刘备，请他来帮忙。”孔融写了一封信交给他。太史慈又一个人骑马冲出城，连夜去找刘备。刘备看完信，马上和关羽、张飞带三千人去北海。管亥带人来挡路。关羽和管亥打了几十回合，一刀杀了管亥。太史慈和张飞也冲进敌人中间。孔融从城里带人出来。城里城外一起打，黄巾军大败，北海终于得救了。\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":44264,"cached_input_tokens":8960,"cache_write_input_tokens":0,"output_tokens":760,"reasoning_output_tokens":516}}

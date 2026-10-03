@@ -1,0 +1,31 @@
+{
+  "id": "zh-bd45721714ec-1-a41f6ce4b54c77ea",
+  "entry_id": "zh-bd45721714ec-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-bd45721714ec-1",
+      "headword": "发动",
+      "kind": "word",
+      "reading": "fādòng",
+      "senses": [
+        {
+          "id": "zh-bd45721714ec-1-s1",
+          "definition": "launch or set in motion an organized action or undertaking"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "后来他和张宝、张梁一起，发动黄巾起事。",
+        "gloss": "launch",
+        "sense_id": "zh-bd45721714ec-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4af6566995f5f6cb1645c61b5051138235161c51900e279f8f8a154a0cb43509"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-651fcab412011f97-7bbccba6e878b16d",
+  "entry_id": "ja-651fcab412011f97",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-651fcab412011f97",
+      "headword": "未だ",
+      "reading": "まだ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-651fcab412011f97-1",
+          "definition": "still; yet; not yet"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は、「とろうと思っているが、まだ一匹もとっていない」と正直に答えた。",
+        "gloss": "still; yet",
+        "sense_id": "ja-651fcab412011f97-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bdd27475d26992d86e19defaf7e4b85714b0f7aba9e49945830dc1741c5bd891"
+}

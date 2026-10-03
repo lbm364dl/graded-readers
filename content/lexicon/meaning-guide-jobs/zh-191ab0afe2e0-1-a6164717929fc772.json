@@ -1,0 +1,31 @@
+{
+  "id": "zh-191ab0afe2e0-1-a6164717929fc772",
+  "entry_id": "zh-191ab0afe2e0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-191ab0afe2e0-1",
+      "headword": "冲来",
+      "kind": "construction",
+      "reading": "chōng lái",
+      "senses": [
+        {
+          "id": "zh-191ab0afe2e0-1-s1",
+          "definition": "to rush toward the speaker or a contextually relevant point"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "程远志挥刀冲来，关羽纵马迎上，一刀将他斩成两段。",
+        "gloss": "charge over",
+        "sense_id": "zh-191ab0afe2e0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "81365aee6757fd7913314730e2270bdee03477a62874674af53963e0b20f755f"
+}

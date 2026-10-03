@@ -1,0 +1,36 @@
+{
+  "id": "zh-2c79561da2b0-1-5870fe935a1824f2",
+  "entry_id": "zh-2c79561da2b0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2c79561da2b0-1",
+      "headword": "村店",
+      "kind": "word",
+      "reading": "cūndiàn",
+      "senses": [
+        {
+          "id": "zh-2c79561da2b0-1-s1",
+          "definition": "a shop or inn in a village"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备听后十分高兴，两人便到村店中饮酒。",
+        "gloss": "village tavern",
+        "sense_id": "zh-2c79561da2b0-1-s1"
+      },
+      {
+        "sentence": "”刘备十分高兴，便和他进村店饮酒。",
+        "gloss": "village inn",
+        "sense_id": "zh-2c79561da2b0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1acbadcb8f71a00bc9750d2494015640208917b59f7334cd6fdaab8158031152"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-b6c13b1604b6131c-c5d58d06b8366260",
+  "entry_id": "ja-b6c13b1604b6131c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-b6c13b1604b6131c",
+      "headword": "潜り込む",
+      "reading": "もぐりこむ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-b6c13b1604b6131c-1",
+          "definition": "to slip or squeeze into a place, often secretly"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "竹垣の崩れた穴から、とある邸内にもぐり込んだ。",
+        "gloss": "slipped into; snuck inside",
+        "sense_id": "ja-b6c13b1604b6131c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "faa6fbcb1d08f7c87140bf4b454bec190aed7f9f576bb0b59faf900df16a1a25"
+}

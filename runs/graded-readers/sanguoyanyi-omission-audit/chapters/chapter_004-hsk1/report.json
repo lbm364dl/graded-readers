@@ -1,0 +1,80 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_004-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 179,
+  "required_range": [
+    98,
+    182
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了陈宫决定杀曹操的关键心理转折，但以“陈宫知其狠毒”略作概括。",
+      "classification": "material",
+      "reason": "原文具体展现陈宫因目睹曹操滥杀而由追随转为怀疑，并决定刺杀曹操；这构成关键心理转折和重要人物刻画。",
+      "required_fix": "补写陈宫对曹操狠毒本性的震惊、后悔与决定趁夜杀他的心理过程。"
+    },
+    {
+      "omission_note": "未交代董卓强征并重用蔡邕的胁迫过程。",
+      "classification": "material",
+      "reason": "原文写蔡邕拒召后，董卓以灭族相威胁，蔡邕因恐惧被迫入朝；省略后会丢失其任用的原因及董卓的胁迫性格。",
+      "required_fix": "补写蔡邕拒召、董卓威胁灭族、蔡邕被迫赴命，以及董卓因此重用他的过程。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“说服陈宫放行”略显因果失真，陈宫是因敬佩曹操忠义而主动释放并弃官相从。",
+      "classification": "material",
+      "reason": "将陈宫因敬佩曹操忠义而主动释放、弃官相从，误写成曹操说服其放行，改变了释放的关键因果动机。",
+      "required_fix": "改为“陈宫因敬佩曹操忠义而释放曹操，并弃官相从”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了陈宫决定杀曹操的关键心理转折，但以“陈宫知其狠毒”略作概括。",
+      "classification": "material",
+      "reason": "原文具体展现陈宫因目睹曹操滥杀而由追随转为怀疑，并决定刺杀曹操；这构成关键心理转折和重要人物刻画。",
+      "required_fix": "补写陈宫对曹操狠毒本性的震惊、后悔与决定趁夜杀他的心理过程。"
+    },
+    {
+      "omission_note": "未交代董卓强征并重用蔡邕的胁迫过程。",
+      "classification": "material",
+      "reason": "原文写蔡邕拒召后，董卓以灭族相威胁，蔡邕因恐惧被迫入朝；省略后会丢失其任用的原因及董卓的胁迫性格。",
+      "required_fix": "补写蔡邕拒召、董卓威胁灭族、蔡邕被迫赴命，以及董卓因此重用他的过程。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“说服陈宫放行”略显因果失真，陈宫是因敬佩曹操忠义而主动释放并弃官相从。",
+      "classification": "material",
+      "reason": "将陈宫因敬佩曹操忠义而主动释放、弃官相从，误写成曹操说服其放行，改变了释放的关键因果动机。",
+      "required_fix": "改为“陈宫因敬佩曹操忠义而释放曹操，并弃官相从”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 8.7,
+    "naturalness": 8.4,
+    "readability": 8.3,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 179,
+      "review": {
+        "source_fidelity": 8.7,
+        "naturalness": 8.4,
+        "readability": 8.3,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

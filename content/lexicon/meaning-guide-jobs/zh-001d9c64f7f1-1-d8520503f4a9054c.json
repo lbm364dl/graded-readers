@@ -1,0 +1,41 @@
+{
+  "id": "zh-001d9c64f7f1-1-d8520503f4a9054c",
+  "entry_id": "zh-001d9c64f7f1-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-001d9c64f7f1-1",
+      "headword": "座",
+      "kind": "word",
+      "reading": "zuò",
+      "senses": [
+        {
+          "id": "zh-001d9c64f7f1-1-s1",
+          "definition": "measure word used for buildings and other substantial structures"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞家后面有一座桃园，花开得正好。",
+        "gloss": "measure word for buildings",
+        "sense_id": "zh-001d9c64f7f1-1-s1"
+      },
+      {
+        "sentence": "张飞说，庄后有一座桃园，桃花开得正盛。",
+        "gloss": "measure word for buildings or mountains",
+        "sense_id": "zh-001d9c64f7f1-1-s1"
+      },
+      {
+        "sentence": "他在县城四座城门放下十多根五颜六色的木棒，并定下严格的禁令。",
+        "gloss": "classifier for buildings or gates",
+        "sense_id": "zh-001d9c64f7f1-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e563974f835bdbec661f28294c5c04638bdbf0a66245f48321ab23d64edc5389"
+}

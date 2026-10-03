@@ -1,0 +1,46 @@
+{
+  "id": "zh-deb0a0cc3b0b-1-e2cfdacb3663c60d",
+  "entry_id": "zh-deb0a0cc3b0b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-deb0a0cc3b0b-1",
+      "headword": "作战",
+      "kind": "word",
+      "reading": "zuòzhàn",
+      "senses": [
+        {
+          "id": "zh-deb0a0cc3b0b-1-s1",
+          "definition": "fight; engage in battle"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "卢植、皇甫嵩、朱隽各自带兵，分三路前往作战。",
+        "gloss": "fight",
+        "sense_id": "zh-deb0a0cc3b0b-1-s1"
+      },
+      {
+        "sentence": "他便诬陷我不肯作战。",
+        "gloss": "fight",
+        "sense_id": "zh-deb0a0cc3b0b-1-s1"
+      },
+      {
+        "sentence": "刘备之前跟卢植学习，听说老师正在广宗和黄巾军作战，便想去帮助他。",
+        "gloss": "fight; engage in combat",
+        "sense_id": "zh-deb0a0cc3b0b-1-s1"
+      },
+      {
+        "sentence": "他因此怀恨，诬陷我不作战。",
+        "gloss": "to fight; engage in battle",
+        "sense_id": "zh-deb0a0cc3b0b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f6d0e462b8e64782b8db46d8bda1a0c314899c54ea6b71f5739b27530f23b1d8"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-a61c524a55ad-1-689caa6773467b00",
+  "entry_id": "zh-a61c524a55ad-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a61c524a55ad-1",
+      "headword": "反击",
+      "kind": "word",
+      "reading": "fǎnjī",
+      "senses": [
+        {
+          "id": "zh-a61c524a55ad-1-s1",
+          "definition": "counterattack; attack in response to an attack"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军追过山岭时，刘备军中发出信号，两边伏兵立即杀出，刘备也转身反击。",
+        "gloss": "to counterattack",
+        "sense_id": "zh-a61c524a55ad-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "87f48567ed5d366f6bed9b13b6dfb7ff81979d90b525fe732bbd7da44ffdbc1d"
+}

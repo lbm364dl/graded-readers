@@ -1,0 +1,31 @@
+{
+  "id": "zh-f940899fce01-1-6df90dd962c3e355",
+  "entry_id": "zh-f940899fce01-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f940899fce01-1",
+      "headword": "迎上",
+      "kind": "construction",
+      "reading": "yíngshàng",
+      "senses": [
+        {
+          "id": "zh-f940899fce01-1-s1",
+          "definition": "to move forward to meet or confront someone"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "程远志挥刀冲向张飞，关羽骑马迎上。",
+        "gloss": "move up to meet",
+        "sense_id": "zh-f940899fce01-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "eacf52ff5207113a0c11c62c729c67d5792aa6195817fd5e55e2d2893b301284"
+}

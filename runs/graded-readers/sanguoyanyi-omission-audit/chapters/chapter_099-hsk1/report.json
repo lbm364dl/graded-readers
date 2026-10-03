@@ -1,0 +1,167 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_099-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 181,
+  "required_range": [
+    98,
+    238
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "“张苞坠涧伤头，送回成都养病，病死”略显因果过强：原文只先写坠涧受伤，后来孔明收到张苞身死的消息，未明确说明直接因伤病死。",
+      "classification": "material",
+      "reason": "“病死”明确添加了原文未确认的死亡原因，将先受伤、后传来身死的叙述改成了直接因伤病死亡，属于因果关系失真。",
+      "required_fix": "改为“张苞坠涧伤头，送回成都养病，后来孔明得知张苞身死”，不要明确说明其因伤病而死。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "“张苞坠涧伤头，送回成都养病，病死”略显因果过强：原文只先写坠涧受伤，后来孔明收到张苞身死的消息，未明确说明直接因伤病死。",
+      "classification": "material",
+      "reason": "“病死”明确添加了原文未确认的死亡原因，将先受伤、后传来身死的叙述改成了直接因伤病死亡，属于因果关系失真。",
+      "required_fix": "改为“张苞坠涧伤头，送回成都养病，后来孔明得知张苞身死”，不要明确说明其因伤病而死。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": []
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 180,
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "“孔明取城”将攻取武都、阴平的具体行动归于孔明；原文明确写王平攻破阴平、姜维攻破武都。"
+        ],
+        "language_problems": [],
+        "verdict": "revise",
+        "omissions": []
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 188,
+      "review": {
+        "source_fidelity": 7,
+        "naturalness": 7,
+        "readability": 8,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "“派千兵守陈仓故道、大军屯汉中”在句中被归于曹真、司马懿；原文这是孔明的部署，守道者为王平、张嶷。"
+        ],
+        "language_problems": [
+          "“料大雨”表述生硬且主语不明。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 188,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 8,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [
+          "全文约188个中文字符，超过要求的98—182字上限。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 4,
+      "candidate_cjk": 178,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 7.5,
+        "readability": 8.5,
+        "material_omissions": [
+          "未交代孔明回成都养病并日渐痊可，导致后续再次统军伐魏的时间衔接略缺。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "“悲病退汉中”压缩并略混淆了孔明病后回汉中、随后回成都养病的顺序。"
+        ],
+        "language_problems": [
+          "“悲病退汉中”表达不够自然。"
+        ],
+        "verdict": "revise",
+        "omissions": []
+      },
+      "passed": false
+    },
+    {
+      "round": 5,
+      "candidate_cjk": 183,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": false
+    },
+    {
+      "round": 6,
+      "candidate_cjk": 182,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 8,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [
+          "文本含183个汉字，超过要求的182字上限1字。"
+        ],
+        "verdict": "revise",
+        "omissions": []
+      },
+      "passed": false
+    },
+    {
+      "round": 7,
+      "candidate_cjk": 181,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "passed": true
+    }
+  ]
+}

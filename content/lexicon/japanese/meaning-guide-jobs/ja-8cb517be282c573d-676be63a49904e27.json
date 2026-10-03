@@ -1,0 +1,32 @@
+{
+  "id": "ja-8cb517be282c573d-676be63a49904e27",
+  "entry_id": "ja-8cb517be282c573d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-8cb517be282c573d",
+      "headword": "冗談",
+      "reading": "じょうだん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-8cb517be282c573d-1",
+          "definition": "joke; jest"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩には、この男が、こんな冗談を言って人を担ぐことを楽しんでいるように思われた。",
+        "gloss": "joke",
+        "sense_id": "ja-8cb517be282c573d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "de140de4558412e88895a3e6fe8ca5769d228cf3696259b1c10e70336674ec06"
+}

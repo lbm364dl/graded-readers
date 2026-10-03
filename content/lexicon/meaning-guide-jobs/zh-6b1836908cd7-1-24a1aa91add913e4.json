@@ -1,0 +1,31 @@
+{
+  "id": "zh-6b1836908cd7-1-24a1aa91add913e4",
+  "entry_id": "zh-6b1836908cd7-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6b1836908cd7-1",
+      "headword": "黄旗",
+      "kind": "word",
+      "reading": "huángqí",
+      "senses": [
+        {
+          "id": "zh-6b1836908cd7-1-s1",
+          "definition": "yellow flag"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角一面私造黄旗，约好起事日期，一面派弟子送信，却被告密。",
+        "gloss": "yellow flag",
+        "sense_id": "zh-6b1836908cd7-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8acaa068c65801e5be4abb88b956f438eb8b7d4e92b641821ae1dc47271f1415"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-64eaa984e1be-1-f42c4809fa4c8c78",
+  "entry_id": "zh-64eaa984e1be-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-64eaa984e1be-1",
+      "headword": "巨鹿郡",
+      "kind": "name",
+      "reading": "Jùlù Jùn",
+      "senses": [
+        {
+          "id": "zh-64eaa984e1be-1-s1",
+          "definition": "the name of a commandery"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "巨鹿郡有兄弟三人：张角、张宝、张梁。",
+        "gloss": "Julu Commandery",
+        "sense_id": "zh-64eaa984e1be-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a42e9c20769002b98628ea4b77c2ddece01192f8521934ae4dab77c2075d1cad"
+}

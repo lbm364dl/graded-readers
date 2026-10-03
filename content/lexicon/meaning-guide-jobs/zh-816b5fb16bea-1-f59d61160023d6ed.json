@@ -1,0 +1,36 @@
+{
+  "id": "zh-816b5fb16bea-1-f59d61160023d6ed",
+  "entry_id": "zh-816b5fb16bea-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-816b5fb16bea-1",
+      "headword": "改姓",
+      "kind": "word",
+      "reading": "gǎixìng",
+      "senses": [
+        {
+          "id": "zh-816b5fb16bea-1-s1",
+          "definition": "change one's surname"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他的父亲曹嵩原先姓夏侯，因成为宦官曹腾的养子，才改姓曹。",
+        "gloss": "to change one's surname",
+        "sense_id": "zh-816b5fb16bea-1-s1"
+      },
+      {
+        "sentence": "他是沛国谯郡人，父亲曹嵩原本姓夏侯，因是中常侍曹腾的养子，才改姓曹。",
+        "gloss": "to change one's surname",
+        "sense_id": "zh-816b5fb16bea-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e508020c1879bc477972f797c7eb5abdef929f2c308dbe853efc34a6c22709f0"
+}

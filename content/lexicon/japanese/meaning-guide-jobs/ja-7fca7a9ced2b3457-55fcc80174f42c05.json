@@ -1,0 +1,32 @@
+{
+  "id": "ja-7fca7a9ced2b3457-55fcc80174f42c05",
+  "entry_id": "ja-7fca7a9ced2b3457",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-7fca7a9ced2b3457",
+      "headword": "足を悪くする",
+      "reading": "あしをわるくする",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-7fca7a9ced2b3457-1",
+          "definition": "to injure or impair one's leg or foot"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "その後、黒は足を悪くし、毛の色も悪くなり、目には目やにがたまった。",
+        "gloss": "injured his leg",
+        "sense_id": "ja-7fca7a9ced2b3457-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "95d836e9c15b147a03ddd8ed7685b61d6bc6ceec622ad68abbc7f54be2ecd0e5"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-bbee1294b5e1-1-4b74fa3c048ea101",
+  "entry_id": "zh-bbee1294b5e1-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-bbee1294b5e1-1",
+      "headword": "自有公论",
+      "kind": "expression",
+      "reading": "zì yǒu gōnglùn",
+      "senses": [
+        {
+          "id": "zh-bbee1294b5e1-1-s1",
+          "definition": "there will be a fair judgment or public assessment in due course"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备急忙阻止他：“朝廷自有公论，你不能冲动。",
+        "gloss": "justice will take its course",
+        "sense_id": "zh-bbee1294b5e1-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8eb669075cd97a733bc5a7879cda1badd4ffd84b1d2782404887f4f949b942bf"
+}

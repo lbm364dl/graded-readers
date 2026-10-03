@@ -1,0 +1,51 @@
+{
+  "id": "zh-8fa02ce7cc62-1-d096b13b5118125d",
+  "entry_id": "zh-8fa02ce7cc62-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8fa02ce7cc62-1",
+      "headword": "回去",
+      "kind": "construction",
+      "reading": "huíqu",
+      "senses": [
+        {
+          "id": "zh-8fa02ce7cc62-1-s1",
+          "definition": "go or come back to a place away from the speaker or reference point"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”于是邹靖带兵回去，刘备、关羽、张飞带五百人前往卢植那里。",
+        "gloss": "return",
+        "sense_id": "zh-8fa02ce7cc62-1-s1"
+      },
+      {
+        "sentence": "皇甫嵩判断张梁、张宝很可能回广宗找张角，便让刘备回去帮助卢植。",
+        "gloss": "go back",
+        "sense_id": "zh-8fa02ce7cc62-1-s1"
+      },
+      {
+        "sentence": "刘备回去的路上，看见一辆车，车里关着的人正是卢植。",
+        "gloss": "go back",
+        "sense_id": "zh-8fa02ce7cc62-1-s1"
+      },
+      {
+        "sentence": "”他转身就要回去。",
+        "gloss": "go back",
+        "sense_id": "zh-8fa02ce7cc62-1-s1"
+      },
+      {
+        "sentence": "刘备带兵回去，半路遇见护送囚车的军队，车里是卢植。",
+        "gloss": "to return; go back",
+        "sense_id": "zh-8fa02ce7cc62-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "51a5af0e8312e11bd67c0ecb3f0dd3d38368eb7257a344aa797e5bbc3a31e54c"
+}

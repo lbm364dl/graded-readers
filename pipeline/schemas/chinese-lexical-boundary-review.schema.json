@@ -1,0 +1,24 @@
+{
+  "type": "object", "additionalProperties": false,
+  "required": ["revisions"],
+  "properties": {
+    "revisions": {"type": "array", "items": {
+      "type": "object", "additionalProperties": false,
+      "required": ["first_segment", "last_segment", "text", "reason", "grammar_explanation_en", "segments"],
+      "properties": {
+        "first_segment": {"type": "integer"}, "last_segment": {"type": "integer"},
+        "text": {"type": "string"}, "reason": {"type": "string"},
+        "grammar_explanation_en": {"type": "string"},
+        "segments": {"type": "array", "minItems": 1, "items": {
+          "type": "object", "additionalProperties": false,
+          "required": ["text", "type", "pinyin", "meaning_en"],
+          "properties": {
+            "text": {"type": "string"},
+            "type": {"type": "string", "enum": ["word", "name", "particle", "idiom"]},
+            "pinyin": {"type": "string"}, "meaning_en": {"type": "string"}
+          }
+        }}
+      }
+    }}
+  }
+}

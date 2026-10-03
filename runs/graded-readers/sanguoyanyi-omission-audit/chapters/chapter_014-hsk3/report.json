@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_014-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 548,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了迁都途中曹操与徐晃交战、满宠夜间劝降徐晃的具体经过，但保留了主要因果链。",
+      "classification": "material",
+      "reason": "省略内容包含徐晃投降的具体动机、满宠与徐晃的关系，以及徐晃坚持不弑主的重要性格刻画；接受场景将其动机简化为看清杨奉、韩暹不能成事，造成了原因和人物刻画的变化。",
+      "required_fix": "补充曹操与徐晃交战、曹操改用计策招降，以及满宠夜间劝说徐晃、徐晃因不愿弑主而投降的关键经过。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了迁都途中曹操与徐晃交战、满宠夜间劝降徐晃的具体经过，但保留了主要因果链。",
+      "classification": "material",
+      "reason": "省略内容包含徐晃投降的具体动机、满宠与徐晃的关系，以及徐晃坚持不弑主的重要性格刻画；接受场景将其动机简化为看清杨奉、韩暹不能成事，造成了原因和人物刻画的变化。",
+      "required_fix": "补充曹操与徐晃交战、曹操改用计策招降，以及满宠夜间劝说徐晃、徐晃因不愿弑主而投降的关键经过。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 548,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

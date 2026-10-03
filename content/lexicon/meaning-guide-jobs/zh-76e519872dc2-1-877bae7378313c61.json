@@ -1,0 +1,31 @@
+{
+  "id": "zh-76e519872dc2-1-877bae7378313c61",
+  "entry_id": "zh-76e519872dc2-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-76e519872dc2-1",
+      "headword": "之前",
+      "kind": "word",
+      "reading": "zhīqián",
+      "senses": [
+        {
+          "id": "zh-76e519872dc2-1-s1",
+          "definition": "before; earlier than a point in time"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备之前跟卢植学习，听说老师正在广宗和黄巾军作战，便想去帮助他。",
+        "gloss": "before",
+        "sense_id": "zh-76e519872dc2-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9ec5aac0136626be3ee30b4d900f50bf4d336930292d59f09c2d7c88842e83ad"
+}

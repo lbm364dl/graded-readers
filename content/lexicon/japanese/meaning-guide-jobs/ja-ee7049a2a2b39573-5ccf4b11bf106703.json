@@ -1,0 +1,32 @@
+{
+  "id": "ja-ee7049a2a2b39573-5ccf4b11bf106703",
+  "entry_id": "ja-ee7049a2a2b39573",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ee7049a2a2b39573",
+      "headword": "ひねる",
+      "reading": "ひねる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-ee7049a2a2b39573-1",
+          "definition": "to twist or turn something by rotating it"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人は鼻の下の黒い毛をひねりながら、吾輩の顔をしばらく見ていた。",
+        "gloss": "while twisting",
+        "sense_id": "ja-ee7049a2a2b39573-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f17177bf93cb1267728a6c6881a9fd35bebab638b0057786339a4785962731a4"
+}

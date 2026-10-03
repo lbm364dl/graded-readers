@@ -1,0 +1,32 @@
+{
+  "id": "ja-4d863545e4292aea-5b3cf8ae64f6bda1",
+  "entry_id": "ja-4d863545e4292aea",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-4d863545e4292aea",
+      "headword": "いつの間にか",
+      "reading": "いつのまにか",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-4d863545e4292aea-1",
+          "definition": "without one noticing; before one realizes it"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "明るく暖かい方へ進むと、いつの間にか家の中にいた。",
+        "gloss": "before I knew it; somehow",
+        "sense_id": "ja-4d863545e4292aea-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ad3878acc124edd01b82256cd3d4fc07ea66ecef997733cc586de6f9c4bc9e37"
+}

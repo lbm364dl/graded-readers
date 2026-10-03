@@ -1,0 +1,31 @@
+{
+  "id": "zh-3860ba1683e6-1-6142de04676cc639",
+  "entry_id": "zh-3860ba1683e6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-3860ba1683e6-1",
+      "headword": "上山",
+      "kind": "construction",
+      "reading": "shàngshān",
+      "senses": [
+        {
+          "id": "zh-3860ba1683e6-1-s1",
+          "definition": "to go up a mountain"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人上山，看见汉军已经失败，黄巾军从四面赶来，旗上写着“天公将军”。",
+        "gloss": "climb the mountain",
+        "sense_id": "zh-3860ba1683e6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "edb268d46e2947ea1c3c70a9d2e9013272c5cb1c670b491079134a336d63a53f"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "zh-8c20b136f335-1-624099acca70c20a",
+  "entry_id": "zh-8c20b136f335-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8c20b136f335-1",
+      "headword": "不祥",
+      "kind": "word",
+      "reading": "bùxiáng",
+      "senses": [
+        {
+          "id": "zh-8c20b136f335-1-s1",
+          "definition": "inauspicious; ominous"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "汉朝末年，朝廷很乱，灾害和不祥的事不断发生。",
+        "gloss": "ominous",
+        "sense_id": "zh-8c20b136f335-1-s1"
+      },
+      {
+        "sentence": "种种不祥接连发生。",
+        "gloss": "ominous",
+        "sense_id": "zh-8c20b136f335-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0457951954dee9c4e75ed1a4a446ed1484fd88b546c5f08ea46e66decaeaaf67"
+}

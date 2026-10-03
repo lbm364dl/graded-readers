@@ -1,0 +1,68 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_019-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 525,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了玄德投曹后曹操出兵徐州、陈登具体设计诱骗吕布的部分细节。",
+      "classification": "material",
+      "reason": "虽保留了曹操进攻徐州、陈登诱骗吕布及曹仁袭取小沛的概括，但省略了陈登具体欺骗、调动陈宫并导致吕布失守徐州的关键因果与行动过程。",
+      "required_fix": "补充曹操进兵徐州的推进，以及陈登如何以假消息、内应和火号诱使陈宫弃关、导致吕布失城的关键过程。"
+    },
+    {
+      "omission_note": "省略了袁术拒绝立即出兵、郝萌被擒及曹操严令各营防守等情节。",
+      "classification": "material",
+      "reason": "袁术要求先送女儿才出兵解释了援军未到；郝萌被擒及曹操下令严防直接影响后续吕布亲自护送女儿却无法突围的行动和结果。",
+      "required_fix": "补充袁术提出先婚后援、郝萌护送途中被张飞擒获，以及曹操因此命令各营严密防守的情节。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了玄德投曹后曹操出兵徐州、陈登具体设计诱骗吕布的部分细节。",
+      "classification": "material",
+      "reason": "虽保留了曹操进攻徐州、陈登诱骗吕布及曹仁袭取小沛的概括，但省略了陈登具体欺骗、调动陈宫并导致吕布失守徐州的关键因果与行动过程。",
+      "required_fix": "补充曹操进兵徐州的推进，以及陈登如何以假消息、内应和火号诱使陈宫弃关、导致吕布失城的关键过程。"
+    },
+    {
+      "omission_note": "省略了袁术拒绝立即出兵、郝萌被擒及曹操严令各营防守等情节。",
+      "classification": "material",
+      "reason": "袁术要求先送女儿才出兵解释了援军未到；郝萌被擒及曹操下令严防直接影响后续吕布亲自护送女儿却无法突围的行动和结果。",
+      "required_fix": "补充袁术提出先婚后援、郝萌护送途中被张飞擒获，以及曹操因此命令各营严密防守的情节。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": []
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 525,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-3c659f5514a2-1-20e59059b8ed4e4d",
+  "entry_id": "zh-3c659f5514a2-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-3c659f5514a2-1",
+      "headword": "家族",
+      "kind": "word",
+      "reading": "jiāzú",
+      "senses": [
+        {
+          "id": "zh-3c659f5514a2-1-s1",
+          "definition": "family lineage; clan"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "邹靖再引他们拜见刘焉，刘备说明家族来历，刘焉认他为侄子。",
+        "gloss": "family lineage",
+        "sense_id": "zh-3c659f5514a2-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "67d6f910f20c6d06b05c3907b47ee9e911b04bbe86df9f5763384e337ee91c93"
+}

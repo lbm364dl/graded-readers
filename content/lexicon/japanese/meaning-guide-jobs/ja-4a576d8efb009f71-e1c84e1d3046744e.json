@@ -1,0 +1,61 @@
+{
+  "id": "ja-4a576d8efb009f71-e1c84e1d3046744e",
+  "entry_id": "ja-4a576d8efb009f71",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-4a576d8efb009f71",
+      "headword": "そうだ",
+      "reading": "そうだ",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-4a576d8efb009f71-1",
+          "definition": "it is said that; apparently (hearsay)"
+        },
+        {
+          "id": "ja-4a576d8efb009f71-2",
+          "definition": "to seem; to look as if"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "後で聞くとその人間は書生で、猫をつかまえて煮て食べることもあるそうだ。",
+        "gloss": "it is said that; apparently",
+        "sense_id": "ja-4a576d8efb009f71-1"
+      },
+      {
+        "sentence": "ところが、その家の書生が三日目に子猫を四匹とも裏の池へ持って行き、捨てて来たそうだ。",
+        "gloss": "it is said; apparently",
+        "sense_id": "ja-4a576d8efb009f71-1"
+      },
+      {
+        "sentence": "そして、自分は三、四十匹はとった、鼬にはひどい目にあった、と得意そうに話した。",
+        "gloss": "seemingly; as though",
+        "sense_id": "ja-4a576d8efb009f71-2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-4a576d8efb009f71",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "grammatical",
+    "explanation_en": "そうだ follows a complete clause and marks its content as something heard or reported. English may render it as “I hear that,” “reportedly,” or sometimes “apparently”; it does not mean that something merely looks likely.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "abb674dc4b43ddbf1beb1210dcdcede213711bd95ebc47b8436392909a9323eb",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2650527cb18e3b602f0a952a08105a6519d01d13dd47cbd97245c05b6bbf1e5c"
+}

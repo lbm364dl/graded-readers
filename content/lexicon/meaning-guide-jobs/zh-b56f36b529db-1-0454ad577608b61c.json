@@ -1,0 +1,216 @@
+{
+  "id": "zh-b56f36b529db-1-0454ad577608b61c",
+  "entry_id": "zh-b56f36b529db-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-b56f36b529db-1",
+      "headword": "到",
+      "kind": "word",
+      "reading": "dào",
+      "senses": [
+        {
+          "id": "zh-b56f36b529db-1-s1",
+          "definition": "reach; succeed in perceiving (with a verb such as 看)"
+        },
+        {
+          "id": "zh-b56f36b529db-1-s2",
+          "definition": "arrive at; go to"
+        },
+        {
+          "id": "zh-b56f36b529db-1-s3",
+          "definition": "extend or continue up to a point or endpoint"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备看到了招兵的告示。",
+        "gloss": "perceive",
+        "sense_id": "zh-b56f36b529db-1-s1"
+      },
+      {
+        "sentence": "三人一起到张飞家。",
+        "gloss": "go to",
+        "sense_id": "zh-b56f36b529db-1-s2"
+      },
+      {
+        "sentence": "榜文到了涿县。",
+        "gloss": "arrive at",
+        "sense_id": "zh-b56f36b529db-1-s2"
+      },
+      {
+        "sentence": "三人发现彼此都有救民的志向，于是一起到张飞家中。",
+        "gloss": "go to",
+        "sense_id": "zh-b56f36b529db-1-s2"
+      },
+      {
+        "sentence": "刘备让关羽带一千人到山左，张飞带一千人到山右，在那里埋伏，以鸣金为号。",
+        "gloss": "to",
+        "sense_id": "zh-b56f36b529db-1-s2"
+      },
+      {
+        "sentence": "到了颍川，刘备听说皇甫嵩、朱隽正在和黄巾军交战。",
+        "gloss": "arrive at",
+        "sense_id": "zh-b56f36b529db-1-s2"
+      },
+      {
+        "sentence": "故事到这里留下了悬念。",
+        "gloss": "up to",
+        "sense_id": "zh-b56f36b529db-1-s3"
+      },
+      {
+        "sentence": "五百多名弟子到各地传道，信徒逐渐增多。",
+        "gloss": "to go",
+        "sense_id": "zh-b56f36b529db-1-s2"
+      },
+      {
+        "sentence": "之后，刘备、关羽、张飞一起到张飞庄上商议大事，三人也因共同志向相识。",
+        "gloss": "to go to; arrive at",
+        "sense_id": "zh-b56f36b529db-1-s2"
+      },
+      {
+        "sentence": "三人到了大兴山下，和敌军相遇。",
+        "gloss": "to arrive at",
+        "sense_id": "zh-b56f36b529db-1-s2"
+      },
+      {
+        "sentence": "救军到了，敌人分兵迎战。",
+        "gloss": "arrive",
+        "sense_id": "zh-b56f36b529db-1-s2"
+      },
+      {
+        "sentence": "卢植让刘备带本部人马，再带一千官军到颍川，联络皇甫嵩、朱隽，约好时间一起进攻。",
+        "gloss": "reach",
+        "sense_id": "zh-b56f36b529db-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-b56f36b529db-1",
+    "claim_ids": [
+      "c1",
+      "c2",
+      "c3",
+      "c4"
+    ],
+    "structure": "grammatical",
+    "explanation_en": "As a verb, 到 means to reach or go to a destination. After 看, as in 看到, it marks seeing as achieved: the action reaches the result of perceiving something. This result use is compatible with an extension from reaching a spatial endpoint to reaching an action’s result, though the cited study presents that as a history of broader constructions, not a proven derivation of modern 看到.",
+    "caveat_en": "The historical study proposes a development from locative patterns for resultative constructions with perception verbs, but does not establish the precise history of 看到.",
+    "parts": [
+      {
+        "text": "到",
+        "contribution_en": "As a verb, contributes movement toward or arrival at a destination; after 看, marks that seeing reaches its result.",
+        "claim_ids": [
+          "c1",
+          "c2"
+        ]
+      }
+    ],
+    "input_fingerprint": "43f435f0db1d402f6c3e988b97f8020bc97b3ef14c70fc5e3aa08a20747058c4",
+    "research": {
+      "entry_id": "zh-b56f36b529db-1",
+      "status": "partial",
+      "sources": [
+        {
+          "id": "s1",
+          "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=7667&la=0&powerMode=0",
+          "title": "到 — Ministry of Education, Dictionary of Frequently-Used Mandarin Words (國語辭典簡編本)",
+          "accessed_at": "2026-09-26",
+          "summary_en": "Lists 到 as meaning to reach or arrive, to go toward or visit, and, when placed after a verb, to indicate the action's result."
+        },
+        {
+          "id": "s2",
+          "url": "https://journal.kci.go.kr/clsyn/archive/articlePdf?artiId=ART001835243",
+          "title": "‘到’表结果义的‘V到X’句型历史演变研究",
+          "accessed_at": "2026-09-26",
+          "summary_en": "This study classifies 看 among modern perception verbs that occur in resultative V-到-X constructions. It proposes distinct histories for resultative constructions: a broad result use of 到 without an expressed locative complement is argued to be common by the Han period, while the resultative pattern with thought, perception, and speech verbs is traced to locative V-到-X patterns around the Song period. Its examples and analysis support a proposed constructional history, not a demonstrated derivation for every modern 看-到 phrase."
+        }
+      ],
+      "claims": [
+        {
+          "id": "c1",
+          "text_en": "In 到张飞家, 到 contributes movement toward a destination: the dictionary lists both “reach/arrive” and “go toward; go.”",
+          "source_ids": [
+            "s1"
+          ]
+        },
+        {
+          "id": "c2",
+          "text_en": "In 看到, 到 follows 看 and indicates the result of that action. The dictionary describes this postverbal use as marking an action's result, and the historical study includes 看 among perception verbs used in resultative V-到-X patterns. This supports describing 到 as marking achieved perception in this example; 了 is not part of that contribution.",
+          "source_ids": [
+            "s1",
+            "s2"
+          ]
+        },
+        {
+          "id": "c3",
+          "text_en": "The historical study proposes that 到's broad result use developed from spatial endpoint uses when a location complement was absent; it argues that this bare result use was common by the Han period. The study notes that early examples without an expressed location can allow both a literal-arrival reading and a result reading, so these examples do not by themselves establish a single unambiguous historical derivation.",
+          "source_ids": [
+            "s2"
+          ]
+        },
+        {
+          "id": "c4",
+          "text_en": "For the resultative pattern with thought, perception, and speech verbs, including 看, the study proposes development from locative V-到-X patterns around the Song period. Its examples include older constructions with abstract locative phrases. This supports a proposed history for the broader construction class, but does not establish the precise path by which the modern word 看到 developed.",
+          "source_ids": [
+            "s2"
+          ]
+        }
+      ],
+      "searches": [
+        {
+          "query": "(direct open)",
+          "opened_urls": [
+            "https://dict.concised.moe.edu.tw/dictView.jsp?ID=7667&la=0&powerMode=0",
+            "https://journal.kci.go.kr/clsyn/archive/articlePdf?artiId=ART001835243",
+            "https://cnki.istiz.org.cn/kcms/detail/detail.aspx?dbcode=CJFD&dbname=CJFD2003&filename=CQYZ200301030"
+          ]
+        },
+        {
+          "query": "到 表结果义 看到 历史演变 先秦 汉代 V到X 研究 到 result complement",
+          "opened_urls": [
+            "https://dict.concised.moe.edu.tw/dictView.jsp?ID=7667&la=0&powerMode=0"
+          ]
+        },
+        {
+          "query": "现代汉语八百词 到 结果补语 看见 得到 到达",
+          "opened_urls": [
+            "https://d20uo2axdbh83k.cloudfront.net/20140529/9dcd09e223d76aa56c5653369f422025.pdf"
+          ]
+        },
+        {
+          "query": "\"看到\" \"到d\" 结果义 汉代 先秦 论文",
+          "opened_urls": [
+            "https://journal.kci.go.kr/clsyn/archive/articlePdf?artiId=ART001835243"
+          ]
+        },
+        {
+          "query": "\"处所义‘V+到a+X’向结果义‘Vd2\" 抽象处所 宋代",
+          "opened_urls": [
+            "https://journal.kci.go.kr/clsyn/archive/articlePdf?artiId=ART001835243"
+          ]
+        },
+        {
+          "query": "\"感知\" \"Vd2\" \"到\" \"V+到a+X\" 历史",
+          "opened_urls": [
+            "https://journal.kci.go.kr/clsyn/archive/articlePdf?artiId=ART001835243"
+          ]
+        }
+      ],
+      "gaps": [
+        "The cited historical study proposes a development for the broader perception-verb V-到-X class, but the evidence opened here does not establish the exact historical derivation of modern 看到."
+      ]
+    },
+    "revision": 2,
+    "editorial_policy": 3,
+    "evidence_status": "partial",
+    "fulfilled_requests": [
+      "a73bbdcebaa4d7a25673b1d59c869e70466140dc24ade80a6ce5d366ef578c87"
+    ]
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "83a3358a091a93e290fd56f863eae8177a693679fc27044d190c0222fbdf6ba5"
+}

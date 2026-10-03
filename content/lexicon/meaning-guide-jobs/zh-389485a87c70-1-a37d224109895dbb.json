@@ -1,0 +1,31 @@
+{
+  "id": "zh-389485a87c70-1-a37d224109895dbb",
+  "entry_id": "zh-389485a87c70-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-389485a87c70-1",
+      "headword": "人数",
+      "kind": "word",
+      "reading": "rénshù",
+      "senses": [
+        {
+          "id": "zh-389485a87c70-1-s1",
+          "definition": "number of people"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军人数很多，官军害怕，常常后退。",
+        "gloss": "number of people",
+        "sense_id": "zh-389485a87c70-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1ca3f97ff86ad7ffbe16669d76e97a6ab6479e34a1721d363bc5d442838d17eb"
+}

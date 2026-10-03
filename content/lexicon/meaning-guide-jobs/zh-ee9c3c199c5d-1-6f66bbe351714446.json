@@ -1,0 +1,31 @@
+{
+  "id": "zh-ee9c3c199c5d-1-6f66bbe351714446",
+  "entry_id": "zh-ee9c3c199c5d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ee9c3c199c5d-1",
+      "headword": "压制",
+      "kind": "word",
+      "reading": "yāzhì",
+      "senses": [
+        {
+          "id": "zh-ee9c3c199c5d-1-s1",
+          "definition": "suppress; restrain by force or authority"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "桓帝在位时，压制正直贤能的人，却特别信任宦官。",
+        "gloss": "to suppress",
+        "sense_id": "zh-ee9c3c199c5d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3b142d6ed5329dc8befb9bd3a52352fffb314a600eb19384901b8cd5a5b166f1"
+}

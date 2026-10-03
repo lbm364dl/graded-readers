@@ -1,0 +1,31 @@
+{
+  "id": "zh-fc651d3c3ad5-1-49bf31ae7ea1c61f",
+  "entry_id": "zh-fc651d3c3ad5-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-fc651d3c3ad5-1",
+      "headword": "立",
+      "kind": "word",
+      "reading": "lì",
+      "senses": [
+        {
+          "id": "zh-fc651d3c3ad5-1-s1",
+          "definition": "to establish or set up"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他让人传播“苍天已死，黄天当立”和“岁在甲子，天下大吉”，还用白土在家门上写“甲子”。",
+        "gloss": "to stand",
+        "sense_id": "zh-fc651d3c3ad5-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f7a81e1c93ea23ae47b69a8737cc6ec7c210e03b12853760e44ba200a84a26fc"
+}

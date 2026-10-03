@@ -1,0 +1,31 @@
+{
+  "id": "zh-dd30687a4300-1-e8c03f6be1d43486",
+  "entry_id": "zh-dd30687a4300-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-dd30687a4300-1",
+      "headword": "下来",
+      "kind": "construction",
+      "reading": "xiàlai",
+      "senses": [
+        {
+          "id": "zh-dd30687a4300-1-s1",
+          "definition": "to continue or persist into a resulting state"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "董卓能不能活下来，故事留下了悬念。",
+        "gloss": "continuation into a resulting state",
+        "sense_id": "zh-dd30687a4300-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b07650abcb8196e449fb0b5b995b9bae330824a39fed0f9497436598d36d804b"
+}

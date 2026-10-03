@@ -1,0 +1,32 @@
+{
+  "id": "ja-6c054292ef39fe73-d9cbd12b34bbac0e",
+  "entry_id": "ja-6c054292ef39fe73",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-6c054292ef39fe73",
+      "headword": "目を覚ます",
+      "reading": "めをさます",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-6c054292ef39fe73-1",
+          "definition": "to wake up; to regain consciousness"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "だが一人が目を覚ますと、「猫が来た」と泣き出し、主人が飛び出してくる。",
+        "gloss": "wake up",
+        "sense_id": "ja-6c054292ef39fe73-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "86ad812a0b277d383dee56fdd6dbe46d1d600718b951a89ec18058843fb84da9"
+}

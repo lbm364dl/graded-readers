@@ -1,0 +1,32 @@
+{
+  "id": "ja-5c91a97661f1fcfe-5eed39c1671789ed",
+  "entry_id": "ja-5c91a97661f1fcfe",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5c91a97661f1fcfe",
+      "headword": "回り始める",
+      "reading": "まわりはじめる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-5c91a97661f1fcfe-1",
+          "definition": "to begin going or moving around"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "声も出せないので、食物のある所まで歩く決心をし、池を左に見ながら、ゆっくり回り始めた。",
+        "gloss": "began to go around",
+        "sense_id": "ja-5c91a97661f1fcfe-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5812758bbfafcfa1ad3c423f17cc6a59f2593ace5101c902fe62949e292461e9"
+}

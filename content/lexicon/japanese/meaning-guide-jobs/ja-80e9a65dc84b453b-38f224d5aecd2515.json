@@ -1,0 +1,32 @@
+{
+  "id": "ja-80e9a65dc84b453b-38f224d5aecd2515",
+  "entry_id": "ja-80e9a65dc84b453b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-80e9a65dc84b453b",
+      "headword": "なのか",
+      "reading": "なのか",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-80e9a65dc84b453b-1",
+          "definition": "forms an embedded question meaning “whether something is” or a question like “is it that…?”"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は動かずにいたが、絵は妙な色で、目もなく、目の見えない猫なのか、寝ている猫なのか分からない。",
+        "gloss": "whether it is; is it that",
+        "sense_id": "ja-80e9a65dc84b453b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f5503ae619909fe0fe5c4528335719256fdd174b2656a9ffc16b7750fa72df30"
+}

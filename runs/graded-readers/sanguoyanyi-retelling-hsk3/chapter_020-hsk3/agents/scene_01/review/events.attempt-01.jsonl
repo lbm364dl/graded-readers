@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff387-7069-7fc2-afc6-880660536445"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.88,\"naturalness\":0.9,\"readability\":0.9,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"“马超夜袭时中了埋伏，但他和许褚脱衣大战许久”将夜袭受伏与后来许褚裸衣斗马超两段事件合并，造成时间顺序和因果关系失真；原文只有许褚脱去盔甲赤体迎战，马超并未脱衣。\"],\"language_problems\":[],\"verdict\":\"revise\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":31757,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":1314,"reasoning_output_tokens":1176}}

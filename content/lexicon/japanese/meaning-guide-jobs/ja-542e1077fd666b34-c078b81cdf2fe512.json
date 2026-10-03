@@ -1,0 +1,32 @@
+{
+  "id": "ja-542e1077fd666b34-c078b81cdf2fe512",
+  "entry_id": "ja-542e1077fd666b34",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-542e1077fd666b34",
+      "headword": "左",
+      "reading": "ひだり",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-542e1077fd666b34-1",
+          "definition": "Left side; the direction opposite right."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は池を左に見ながら、ゆっくり歩き、人の家へ入りました。",
+        "gloss": "left side",
+        "sense_id": "ja-542e1077fd666b34-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3f065556edbdd30b69d9ac2e83dcf77d4a2221c5f77156098bf2e781e165c438"
+}

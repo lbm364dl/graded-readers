@@ -1,0 +1,31 @@
+{
+  "id": "zh-369547e35776-1-9083358d9cc7d139",
+  "entry_id": "zh-369547e35776-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-369547e35776-1",
+      "headword": "大乱",
+      "kind": "word",
+      "reading": "dàluàn",
+      "senses": [
+        {
+          "id": "zh-369547e35776-1-s1",
+          "definition": "to fall into disorder; become chaotic"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军大乱，退了五十多里。",
+        "gloss": "fall into chaos",
+        "sense_id": "zh-369547e35776-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a2ecca74f70f41b89c49c2e2d73d1a66f4e0a2f256a97162194949f21d76f503"
+}

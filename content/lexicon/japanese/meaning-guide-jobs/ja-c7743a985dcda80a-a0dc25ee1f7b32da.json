@@ -1,0 +1,32 @@
+{
+  "id": "ja-c7743a985dcda80a-a0dc25ee1f7b32da",
+  "entry_id": "ja-c7743a985dcda80a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-c7743a985dcda80a",
+      "headword": "ようやく",
+      "reading": "ようやく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-c7743a985dcda80a-1",
+          "definition": "finally; at last"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "これが人間の飲むたばこという物だと、ようやくこの頃知った。",
+        "gloss": "finally; at last",
+        "sense_id": "ja-c7743a985dcda80a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7972583bbc9fdd30dd9c5ac85e1da786bd071cd496ce40284ba3bc958b08d58d"
+}

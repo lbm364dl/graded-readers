@@ -1,0 +1,31 @@
+{
+  "id": "zh-fb9ab5bac0bf-1-bd33f80c7eba118a",
+  "entry_id": "zh-fb9ab5bac0bf-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-fb9ab5bac0bf-1",
+      "headword": "草鞋",
+      "kind": "word",
+      "reading": "cǎoxié",
+      "senses": [
+        {
+          "id": "zh-fb9ab5bac0bf-1-s1",
+          "definition": "sandals made from plant material such as straw"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备家里很穷，靠卖草鞋、织席生活。",
+        "gloss": "straw sandals",
+        "sense_id": "zh-fb9ab5bac0bf-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "13563843362ed926eb5a9f566c6e089f0a13eda5645fc3c1f68392c36da205a8"
+}

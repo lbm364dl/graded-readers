@@ -1,0 +1,32 @@
+{
+  "id": "ja-e5b4b2fff93b0543-21f377d399f4c32a",
+  "entry_id": "ja-e5b4b2fff93b0543",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e5b4b2fff93b0543",
+      "headword": "立ち去る",
+      "reading": "たちさる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e5b4b2fff93b0543-1",
+          "definition": "To leave or walk away from a place."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が、家なら教師の方が大きいようだと言うと、黒は「家が大きくても腹の足しにはならない」と怒り、乱暴に立ち去った。",
+        "gloss": "left; walked away",
+        "sense_id": "ja-e5b4b2fff93b0543-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a3be3a378d15db1e26b232812626165778fa2e64f0a027a9fa67765b90fb55c8"
+}

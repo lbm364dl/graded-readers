@@ -1,0 +1,21 @@
+{
+  "job": "annotations/chunk_0004/initial",
+  "model": "gpt-5.6-luna",
+  "effort": "low",
+  "fingerprint": "47f578da8e6a9d22d766f79834ab58b809e8db92cd7b706bae2b030fe7f8f6d7",
+  "started_at": "2026-08-07T09:07:15.827321+00:00",
+  "ended_at": "2026-08-07T10:10:51.041085+00:00",
+  "return_code": 0,
+  "attempt_count": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-08-07T09:07:15.827327+00:00",
+      "ended_at": "2026-08-07T10:10:51.040918+00:00",
+      "return_code": 0,
+      "throttled": false,
+      "events": "events.attempt-01.jsonl",
+      "stderr": "stderr.attempt-01.log"
+    }
+  ]
+}

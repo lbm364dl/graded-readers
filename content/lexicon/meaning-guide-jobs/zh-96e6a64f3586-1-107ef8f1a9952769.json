@@ -1,0 +1,31 @@
+{
+  "id": "zh-96e6a64f3586-1-107ef8f1a9952769",
+  "entry_id": "zh-96e6a64f3586-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-96e6a64f3586-1",
+      "headword": "索",
+      "kind": "word",
+      "reading": "suǒ",
+      "senses": [
+        {
+          "id": "zh-96e6a64f3586-1-s1",
+          "definition": "to demand or request something from someone"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "宦官左丰奉命查看军情，企图向卢植索要行贿的钱。",
+        "gloss": "to demand; solicit",
+        "sense_id": "zh-96e6a64f3586-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4aa335c16aa49d8851b9359c3e22c23b65454176d4fb4eb36f685fa83efc2c42"
+}

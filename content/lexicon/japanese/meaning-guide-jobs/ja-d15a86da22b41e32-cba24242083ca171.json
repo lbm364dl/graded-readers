@@ -1,0 +1,32 @@
+{
+  "id": "ja-d15a86da22b41e32-cba24242083ca171",
+  "entry_id": "ja-d15a86da22b41e32",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d15a86da22b41e32",
+      "headword": "使う",
+      "reading": "つかう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d15a86da22b41e32-1",
+          "definition": "to use; make use of"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人は人を罵る時、いつもこの言葉しか使わない。",
+        "gloss": "does not use",
+        "sense_id": "ja-d15a86da22b41e32-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "531ca2022cab1999b410d28762b715eb876c09bd444d9600b0ed80c01f442c37"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-acf32e480bb8-1-1dbfac4c99bf3ace",
+  "entry_id": "zh-acf32e480bb8-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-acf32e480bb8-1",
+      "headword": "为何",
+      "kind": "word",
+      "reading": "wèihé",
+      "senses": [
+        {
+          "id": "zh-acf32e480bb8-1-s1",
+          "definition": "why; for what reason"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞想了解刘备为何叹气。",
+        "gloss": "why",
+        "sense_id": "zh-acf32e480bb8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "751e1a3bccd8df8776d26c637583d24414abcf49b252a4a26cde5ba9595d382b"
+}

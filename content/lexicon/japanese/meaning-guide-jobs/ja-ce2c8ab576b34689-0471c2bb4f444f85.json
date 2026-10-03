@@ -1,0 +1,32 @@
+{
+  "id": "ja-ce2c8ab576b34689-0471c2bb4f444f85",
+  "entry_id": "ja-ce2c8ab576b34689",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ce2c8ab576b34689",
+      "headword": "雑誌",
+      "reading": "ざっし",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-ce2c8ab576b34689-1",
+          "definition": "magazine"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "俳句を作って雑誌へ送り、新しい詩を書き、間違いの多い英文を書いた。",
+        "gloss": "magazine",
+        "sense_id": "ja-ce2c8ab576b34689-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fded5a098163e14ef0ecc42178d2eb1a26d1955c5614da117c5ba0915cf30472"
+}

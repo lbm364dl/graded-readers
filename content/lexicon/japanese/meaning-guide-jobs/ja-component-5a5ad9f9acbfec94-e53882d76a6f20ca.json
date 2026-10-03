@@ -1,0 +1,26 @@
+{
+  "id": "ja-component-5a5ad9f9acbfec94-e53882d76a6f20ca",
+  "entry_id": "ja-component-5a5ad9f9acbfec94",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-component-5a5ad9f9acbfec94",
+      "headword": "去る",
+      "reading": "さる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-component-5a5ad9f9acbfec94-1",
+          "definition": "To leave or go away from a place."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "59a3aaa613c727a5f17d94d67fb4a2091d75a0e541a084067ab3db78ba987c7d"
+}

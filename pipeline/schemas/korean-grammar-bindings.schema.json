@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "bindings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "draft_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "entry_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "draft_id",
+          "entry_id"
+        ]
+      }
+    }
+  },
+  "required": [
+    "bindings"
+  ]
+}

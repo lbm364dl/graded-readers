@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_010-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 457,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了陈宫离开曹操后投奔张邈，以及陶谦向曹操解释张闿罪行等细节。",
+      "classification": "material",
+      "reason": "陈宫投奔张邈是人物去向和关系发展的明确事件，可能影响后续章节；陶谦解释张闿罪行虽已由概述间接表达，但应保留其为自身辩解、强调责任归属的动机。",
+      "required_fix": "补充陈宫离开曹操后投奔陈留太守张邈，并补充陶谦向曹操说明张闿杀害曹嵩一家是张闓个人罪行、与陶谦无关。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了陈宫离开曹操后投奔张邈，以及陶谦向曹操解释张闿罪行等细节。",
+      "classification": "material",
+      "reason": "陈宫投奔张邈是人物去向和关系发展的明确事件，可能影响后续章节；陶谦解释张闿罪行虽已由概述间接表达，但应保留其为自身辩解、强调责任归属的动机。",
+      "required_fix": "补充陈宫离开曹操后投奔陈留太守张邈，并补充陶谦向曹操说明张闿杀害曹嵩一家是张闓个人罪行、与陶谦无关。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 457,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

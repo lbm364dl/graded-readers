@@ -1,0 +1,32 @@
+{
+  "id": "ja-dd6c237065a1f87a-45076ae5c67b9501",
+  "entry_id": "ja-dd6c237065a1f87a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-dd6c237065a1f87a",
+      "headword": "おれ",
+      "reading": "おれ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-dd6c237065a1f87a-1",
+          "definition": "I; me; an informal masculine first-person pronoun"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "名前はまだない」と答えると、彼は「おれは車屋の黒だ」と名乗った。",
+        "gloss": "I; me, masculine informal",
+        "sense_id": "ja-dd6c237065a1f87a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1c02fd2f74499217109f1e28efc433b0bb3170f9fe4e19b1f20c3920e2376d3b"
+}

@@ -1,0 +1,78 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_078-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 764,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "原文由叙述者以袁谭、袁尚作比，并非群臣直接评论。",
+      "classification": "material",
+      "reason": "接受场景将叙述者诗中的比较错误归给了群臣，改变了发言主体。",
+      "required_fix": "改为由叙述者以袁谭、袁尚相争作比，不要说成群臣直接评论。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "原文由叙述者以袁谭、袁尚作比，并非群臣直接评论。",
+      "classification": "material",
+      "reason": "接受场景将叙述者诗中的比较错误归给了群臣，改变了发言主体。",
+      "required_fix": "改为由叙述者以袁谭、袁尚相争作比，不要说成群臣直接评论。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8.5,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": []
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 664,
+      "review": {
+        "source_fidelity": 7.8,
+        "naturalness": 8.8,
+        "readability": 9.0,
+        "material_omissions": [
+          "删去了孙权上书诱使曹操称帝、并承诺出兵刘备后投降的关键内容，也未呈现曹操对此的拒绝，削弱了政治动机与人物刻画。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "将原文中曹丕出城十里迎接并护送父灵入城，改写为曹丕扶父灵到邺，改变了行动主体和事件过程。"
+        ],
+        "language_problems": [],
+        "verdict": "revise",
+        "omissions": []
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 764,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8.5,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "zh-component-c0a15fe5498654db-671803424a3db6c3",
+  "entry_id": "zh-component-c0a15fe5498654db",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-component-c0a15fe5498654db",
+      "headword": "不同",
+      "reading": "bù tóng",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-c0a15fe5498654db-s1",
+          "definition": "different; not the same"
+        }
+      ]
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "209beaf44782116b8d3171f72709a9012d6e821fd0781ba95ea9ce40589b93d5"
+}

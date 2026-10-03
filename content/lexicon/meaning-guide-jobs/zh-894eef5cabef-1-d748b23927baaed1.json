@@ -1,0 +1,31 @@
+{
+  "id": "zh-894eef5cabef-1-d748b23927baaed1",
+  "entry_id": "zh-894eef5cabef-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-894eef5cabef-1",
+      "headword": "器用",
+      "kind": "word",
+      "reading": "qìyòng",
+      "senses": [
+        {
+          "id": "zh-894eef5cabef-1-s1",
+          "definition": "utensils, implements, or equipment"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "这些金银和铁也用来置办器用。",
+        "gloss": "equipment",
+        "sense_id": "zh-894eef5cabef-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f89b246beb79c7000f40bb1bf8dcd5b4c0b5183db30efefad49023b9e1b1e0d3"
+}

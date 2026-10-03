@@ -1,0 +1,31 @@
+{
+  "id": "zh-b4dcb3305a16-1-25cc48475f644ad1",
+  "entry_id": "zh-b4dcb3305a16-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b4dcb3305a16-1",
+      "headword": "们",
+      "kind": "particle",
+      "reading": "men",
+      "senses": [
+        {
+          "id": "zh-b4dcb3305a16-1-s1",
+          "definition": "plural marker used with people or personal pronouns"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备小时候常和孩子们在树下玩，说自己将来要做大事。",
+        "gloss": "plural marker",
+        "sense_id": "zh-b4dcb3305a16-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5c24adb02318e40f6c92984b024257ab74ddfa9e9cca5e8f7de39f5be703471a"
+}

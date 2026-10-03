@@ -1,0 +1,31 @@
+{
+  "id": "zh-500324a96020-1-c75580a7f56aeeb0",
+  "entry_id": "zh-500324a96020-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-500324a96020-1",
+      "headword": "缠",
+      "kind": "word",
+      "reading": "chán",
+      "senses": [
+        {
+          "id": "zh-500324a96020-1-s1",
+          "definition": "to wrap or wind around something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "敌军都披着头发，额头缠着黄巾。",
+        "gloss": "to wrap around",
+        "sense_id": "zh-500324a96020-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6ee7117cbf6ddace93c7134b93984eceaf72e5b6332f09d7a78bc4990f22d65e"
+}

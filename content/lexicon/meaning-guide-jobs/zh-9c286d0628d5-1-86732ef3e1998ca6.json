@@ -1,0 +1,31 @@
+{
+  "id": "zh-9c286d0628d5-1-86732ef3e1998ca6",
+  "entry_id": "zh-9c286d0628d5-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9c286d0628d5-1",
+      "headword": "结营",
+      "kind": "word",
+      "reading": "jiéyíng",
+      "senses": [
+        {
+          "id": "zh-9c286d0628d5-1-s1",
+          "definition": "to set up a camp"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇甫嵩、朱隽正率兵抵抗黄巾军，黄巾军战败，退入长社，依草结营。",
+        "gloss": "to establish a camp",
+        "sense_id": "zh-9c286d0628d5-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d2dfa6ac643daca80543a217dc2233768c726c7857a309905bb159f44d034968"
+}

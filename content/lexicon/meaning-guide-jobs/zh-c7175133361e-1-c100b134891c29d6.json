@@ -1,0 +1,31 @@
+{
+  "id": "zh-c7175133361e-1-c100b134891c29d6",
+  "entry_id": "zh-c7175133361e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c7175133361e-1",
+      "headword": "天意",
+      "kind": "word",
+      "reading": "tiānyì",
+      "senses": [
+        {
+          "id": "zh-c7175133361e-1-s1",
+          "definition": "the will or intent of Heaven"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他和张宝、张梁号召众人顺从天意，以求太平。",
+        "gloss": "the will of Heaven",
+        "sense_id": "zh-c7175133361e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "06d1a17eef95145bdf8f39a23bdf80fc2d7f378c02db9e6f08ffe15870144014"
+}

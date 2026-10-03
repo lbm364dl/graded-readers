@@ -1,0 +1,31 @@
+{
+  "id": "zh-d7b6472b1124-1-1d3f9aff3c3724d3",
+  "entry_id": "zh-d7b6472b1124-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d7b6472b1124-1",
+      "headword": "知道",
+      "kind": "word",
+      "reading": "zhīdào",
+      "senses": [
+        {
+          "id": "zh-d7b6472b1124-1-s1",
+          "definition": "to know; be aware of"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角知道事情暴露，马上起兵，自称天公将军；张宝称地公将军，张梁称人公将军。",
+        "gloss": "to know",
+        "sense_id": "zh-d7b6472b1124-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b23944ad71ccece9dbb8b23a12a7ee8921ee21173f14561ea3f5974d0b7c2a92"
+}

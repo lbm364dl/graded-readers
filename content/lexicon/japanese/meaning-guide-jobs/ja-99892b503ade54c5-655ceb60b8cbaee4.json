@@ -1,0 +1,32 @@
+{
+  "id": "ja-99892b503ade54c5-655ceb60b8cbaee4",
+  "entry_id": "ja-99892b503ade54c5",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-99892b503ade54c5",
+      "headword": "一生懸命",
+      "reading": "いっしょうけんめい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-99892b503ade54c5-1",
+          "definition": "with great effort; earnestly"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "それでも始めると、胃が弱いのに一生懸命だった。",
+        "gloss": "was wholehearted; worked very hard",
+        "sense_id": "ja-99892b503ade54c5-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "01e2a2ce9992fe0b83117a55ab5489b9ed1e9c57c4c6ef4b5fc5346a43ab6d40"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-6999ae7f5dd0-1-4f6888866f703155",
+  "entry_id": "zh-6999ae7f5dd0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6999ae7f5dd0-1",
+      "headword": "常事",
+      "kind": "word",
+      "reading": "chángshì",
+      "senses": [
+        {
+          "id": "zh-6999ae7f5dd0-1-s1",
+          "definition": "a usual or commonplace occurrence"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "朝代分合本是常事，但祸乱大约从桓帝、灵帝时开始。",
+        "gloss": "common occurrence",
+        "sense_id": "zh-6999ae7f5dd0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "608d8b617b169010106cfa7630f6176d67a4e2cf5b7b706cc028d6acb703323a"
+}

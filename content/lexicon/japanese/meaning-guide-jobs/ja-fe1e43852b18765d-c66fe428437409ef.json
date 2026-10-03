@@ -1,0 +1,32 @@
+{
+  "id": "ja-fe1e43852b18765d-c66fe428437409ef",
+  "entry_id": "ja-fe1e43852b18765d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-fe1e43852b18765d",
+      "headword": "ことさえある",
+      "reading": "ことさえある",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-fe1e43852b18765d-1",
+          "definition": "there are even occasions when; something can even happen"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "読みかけの本の上に、よだれをたらしていることさえある。",
+        "gloss": "there are even occasions when",
+        "sense_id": "ja-fe1e43852b18765d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3705ea5d5a51127e2067df4bbe6485ca53813ad67d1d03281be30a76426ba2b8"
+}

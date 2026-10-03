@@ -1,0 +1,32 @@
+{
+  "id": "ja-8e1ebe879d69c370-aed913a1fd6ba95d",
+  "entry_id": "ja-8e1ebe879d69c370",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-8e1ebe879d69c370",
+      "headword": "茶色",
+      "reading": "ちゃいろ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-8e1ebe879d69c370-1",
+          "definition": "brown; brown color"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ところが主人の絵は、黄色でも黒でも灰色でも茶色でもなく、何とも説明できない色だった。",
+        "gloss": "brown",
+        "sense_id": "ja-8e1ebe879d69c370-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "73071b5e13359728a24754362d6727a040a5fdbf5ff2ee06b3f5399cc187275f"
+}

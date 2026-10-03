@@ -1,0 +1,1 @@
+{"verdict":"revise","issues":[{"segment_text":"で","problem":"wrong_type","explanation":"In 「貧乏で臆病な性格」, this is the continuative form of the copula, connecting 「貧乏」 and 「臆病な性格」; it is not a causal case particle meaning “because of.”","suggested_fix":"Set type to \"auxiliary\", lemma to \"だ\", and meaning_en to \"being; and\"."}]}

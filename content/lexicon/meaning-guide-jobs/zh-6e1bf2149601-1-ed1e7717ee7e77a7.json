@@ -1,0 +1,31 @@
+{
+  "id": "zh-6e1bf2149601-1-ed1e7717ee7e77a7",
+  "entry_id": "zh-6e1bf2149601-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6e1bf2149601-1",
+      "headword": "高墙",
+      "kind": "word",
+      "reading": "gāoqiáng",
+      "senses": [
+        {
+          "id": "zh-6e1bf2149601-1-s1",
+          "definition": "high wall"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "左丰怀恨回报，诬告卢植筑高墙却不作战，使军心懈怠。",
+        "gloss": "high walls",
+        "sense_id": "zh-6e1bf2149601-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "55fbbca739fc51a2ca13f5bc60ebf5dde392abfe629321c35555d07164c54ebb"
+}

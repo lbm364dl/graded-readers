@@ -1,0 +1,37 @@
+{
+  "id": "ja-2aa8a65fc78c1194-03d1b7e8f41e1c6c",
+  "entry_id": "ja-2aa8a65fc78c1194",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-2aa8a65fc78c1194",
+      "headword": "筆",
+      "reading": "ふで",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-2aa8a65fc78c1194-1",
+          "definition": "a writing or painting brush"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人が「自分で筆を持つと、絵は実に難しい」と言うと、友人は、室内の想像だけでは絵はかけない、自然そのものを見て写生すべきだと教えた。",
+        "gloss": "brush",
+        "sense_id": "ja-2aa8a65fc78c1194-1"
+      },
+      {
+        "sentence": "主人は書斎から出て来て、吾輩の後ろで熱心に筆を動かしていた。",
+        "gloss": "brush",
+        "sense_id": "ja-2aa8a65fc78c1194-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a6956b078e59701017679de0d2aa218dcb5f2ec2a1f3b03fbe503b47335a8971"
+}

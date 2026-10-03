@@ -1,0 +1,46 @@
+{
+  "verified": true,
+  "levels": [
+    "n5",
+    "n4",
+    "n3",
+    "n2",
+    "n1"
+  ],
+  "coverage": {
+    "assets/annotations/japanese_wagahai_n5_001.json": {
+      "level": "N5",
+      "words": 95,
+      "grammar": 91,
+      "form_steps": 33
+    },
+    "assets/annotations/japanese_wagahai_n4_001.json": {
+      "level": "N4",
+      "words": 417,
+      "grammar": 398,
+      "form_steps": 104
+    },
+    "assets/annotations/japanese_wagahai_n3_001.json": {
+      "level": "N3",
+      "words": 836,
+      "grammar": 786,
+      "form_steps": 197
+    },
+    "assets/annotations/japanese_wagahai_n2_001.json": {
+      "level": "N2",
+      "words": 2042,
+      "grammar": 1909,
+      "form_steps": 500
+    },
+    "assets/annotations/japanese_wagahai_n1_001.json": {
+      "level": "N1",
+      "words": 2852,
+      "grammar": 2702,
+      "form_steps": 719
+    }
+  },
+  "word_entries": 1313,
+  "grammar_entries": 244,
+  "word_asset_digest": "3c9102aa0252458edb841c393b8ce8f89880208ab056a9deb02e4b134439e5c5",
+  "grammar_asset_digest": "8fd47dd961237982ea60bb72243b9a6f077b02b7d38dbe1874d196d75dba0370"
+}

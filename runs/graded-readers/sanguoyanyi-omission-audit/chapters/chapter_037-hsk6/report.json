@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_037-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1143,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "遗漏曹操派人送礼并亲自祭奠徐母的情节。",
+      "classification": "material",
+      "reason": "这是曹操在徐母死后的具体行动，补充了主要人物的反应和曹操的政治性安抚，属于重要人物行为而非单纯装饰性细节。",
+      "required_fix": "补写曹操遣人携礼吊问并亲自前往祭奠徐母的情节。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "遗漏曹操派人送礼并亲自祭奠徐母的情节。",
+      "classification": "material",
+      "reason": "这是曹操在徐母死后的具体行动，补充了主要人物的反应和曹操的政治性安抚，属于重要人物行为而非单纯装饰性细节。",
+      "required_fix": "补写曹操遣人携礼吊问并亲自前往祭奠徐母的情节。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1143,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

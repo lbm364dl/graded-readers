@@ -1,0 +1,36 @@
+{
+  "id": "zh-e92fbeede0fd-1-d860c378c610268e",
+  "entry_id": "zh-e92fbeede0fd-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e92fbeede0fd-1",
+      "headword": "四方",
+      "kind": "word",
+      "reading": "sìfāng",
+      "senses": [
+        {
+          "id": "zh-e92fbeede0fd-1-s1",
+          "definition": "the four directions; all around or in all directions"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他有五百多名弟子，云游四方，都能书符念咒。",
+        "gloss": "all directions",
+        "sense_id": "zh-e92fbeede0fd-1-s1"
+      },
+      {
+        "sentence": "四方百姓裹着黄巾跟随他们，人数有四五十万。",
+        "gloss": "all directions; everywhere",
+        "sense_id": "zh-e92fbeede0fd-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f316b834658cc1ae2d5be160e1eb41484441f1f3ca7108b3d36ccd9f65e3a16b"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-6751535f4842-1-5c1e3a726276a809",
+  "entry_id": "zh-6751535f4842-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6751535f4842-1",
+      "headword": "不已",
+      "kind": "word",
+      "reading": "bù yǐ",
+      "senses": [
+        {
+          "id": "zh-6751535f4842-1-s1",
+          "definition": "to an extreme degree; without letting up"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞听完愤怒不已，要杀押送卢植的士兵救人。",
+        "gloss": "endlessly",
+        "sense_id": "zh-6751535f4842-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b17f908d482e721e389a1ce6cb6424beffc6fc479b49287cab94b085d41364e5"
+}

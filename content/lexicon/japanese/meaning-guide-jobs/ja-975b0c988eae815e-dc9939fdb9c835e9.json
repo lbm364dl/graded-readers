@@ -1,0 +1,32 @@
+{
+  "id": "ja-975b0c988eae815e-dc9939fdb9c835e9",
+  "entry_id": "ja-975b0c988eae815e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-975b0c988eae815e",
+      "headword": "知己になる",
+      "reading": "ちきになる",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-975b0c988eae815e-1",
+          "definition": "to become acquainted with someone"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "話し方は乱暴だったが、吾輩は黒と知己になった。",
+        "gloss": "became acquainted with N",
+        "sense_id": "ja-975b0c988eae815e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9d915625b1a61dff095dcc782a39c4e049e6135780a8294ea551374e7d650813"
+}

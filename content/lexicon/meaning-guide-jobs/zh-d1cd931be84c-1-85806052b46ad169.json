@@ -1,0 +1,41 @@
+{
+  "id": "zh-d1cd931be84c-1-85806052b46ad169",
+  "entry_id": "zh-d1cd931be84c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d1cd931be84c-1",
+      "headword": "信任",
+      "kind": "word",
+      "reading": "xìnrèn",
+      "senses": [
+        {
+          "id": "zh-d1cd931be84c-1-s1",
+          "definition": "trust; place confidence in"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "宦官掌权，皇帝信任他们。",
+        "gloss": "trust",
+        "sense_id": "zh-d1cd931be84c-1-s1"
+      },
+      {
+        "sentence": "桓帝在位时，压制正直贤能的人，却特别信任宦官。",
+        "gloss": "to trust",
+        "sense_id": "zh-d1cd931be84c-1-s1"
+      },
+      {
+        "sentence": "皇帝信任张让，叫他“阿父”，朝政逐渐败坏，天下人心想要作乱，盗贼纷纷起来。",
+        "gloss": "to trust",
+        "sense_id": "zh-d1cd931be84c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "baf4fa57d7bff5f7feadb6378999a043f0e007983372ad75a7feb28dbfbf03b0"
+}

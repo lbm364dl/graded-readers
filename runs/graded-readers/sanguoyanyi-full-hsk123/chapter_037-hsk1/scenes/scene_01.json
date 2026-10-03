@@ -1,0 +1,60 @@
+{
+  "scene": {
+    "id": "scene_01",
+    "title": "徐母殉節與玄德三顧草廬",
+    "source_start_quote": "卻說徐庶趲程赴許昌",
+    "required_events": [
+      "徐庶被曹操以母書誘回許昌，徐母怒斥其棄明投暗後自縊身亡；徐庶葬母守墓，不受曹操所賜。",
+      "司馬徽揭破曹操毒計，盛讚諸葛亮才比姜子牙、張良，玄德遂往隆中求見。",
+      "玄德先後遇崔州平、石廣元、孟公威及諸葛均、黃承彥，兩次冒雪訪孔明皆未遇，留下書信表明匡扶漢室之志。",
+      "新春玄德齋戒選日，準備第三次拜訪孔明，關張因屢訪不遇而勸阻。"
+    ],
+    "target_chars": 140,
+    "source_start": 0,
+    "source_end": 4800
+  },
+  "text": "曹操伪造母书诱徐庶回许昌；徐母怒斥他弃明投暗，继而自缢。徐庶葬母守墓，不受曹操所赐。司马徽揭破毒计，赞诸葛亮才比姜子牙、张良，玄德遂往隆中求见。玄德先后遇崔州平、石广元、孟公威、诸葛均、黄承彦，两次访孔明均未遇，第二次冒雪而往，留书表明匡扶汉室之志。新春玄德斋戒择日，准备第三访，关羽、张飞因屡访不遇而劝阻。",
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "attempts": [
+    {
+      "stage": "adapt",
+      "text": "曹操伪造母书诱徐庶回许昌；徐母怒斥他弃明投暗，继而自缢。徐庶葬母守墓，不受曹操所赐。司马徽揭破毒计，赞诸葛亮才比姜子牙、张良，玄德遂往隆中求见。玄德先后遇崔州平、石广元、孟公威、诸葛均、黄承彦，两次冒雪访孔明不遇，留书表明匡扶汉室之志。新春玄德斋戒择日，准备第三访，关羽、张飞因屡访不遇而劝阻。",
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 8,
+        "readability": 8,
+        "omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "“两次冒雪访孔明不遇”不准确：两次拜访中只有第二次是在风雪中，第一次并非冒雪。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      }
+    },
+    {
+      "stage": "repair_01",
+      "text": "曹操伪造母书诱徐庶回许昌；徐母怒斥他弃明投暗，继而自缢。徐庶葬母守墓，不受曹操所赐。司马徽揭破毒计，赞诸葛亮才比姜子牙、张良，玄德遂往隆中求见。玄德先后遇崔州平、石广元、孟公威、诸葛均、黄承彦，两次访孔明均未遇，第二次冒雪而往，留书表明匡扶汉室之志。新春玄德斋戒择日，准备第三访，关羽、张飞因屡访不遇而劝阻。",
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      }
+    }
+  ],
+  "resolved": true
+}

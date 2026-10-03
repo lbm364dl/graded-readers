@@ -1,0 +1,53 @@
+{
+  "status": "blocked",
+  "scenes": 2,
+  "japanese_chars": 1419,
+  "chapter_cjk": 1419,
+  "scene_verdicts": {
+    "scene_01": "pass",
+    "scene_02": "pass"
+  },
+  "chapter_review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "chapter_review_initial": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "chapter_repair_attempts": [],
+  "chapter_review_verdict": "pass",
+  "materiality_audit": {
+    "reviewed": true,
+    "unresolved_material_findings": [
+      {
+        "category": "unsupported_additions",
+        "finding": "黒が『病で』弱ったという原因は原文に明記されていない。",
+        "classification": "material"
+      },
+      {
+        "category": "distortions",
+        "finding": "原文では黒が鼠を交番へ持って行くたびに五銭を受け取るが、『一匹五銭』とすると鼠一匹ごとの報酬にも読める。",
+        "classification": "material"
+      }
+    ],
+    "policy": "literary/story vocabulary is diagnostic, not a hard failure"
+  },
+  "scene_attempts": {
+    "scene_01": 3,
+    "scene_02": 2
+  },
+  "unresolved_scenes": []
+}

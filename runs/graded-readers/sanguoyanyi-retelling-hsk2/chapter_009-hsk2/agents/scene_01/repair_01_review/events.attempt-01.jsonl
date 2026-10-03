@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff328-b113-7103-9f7f-5fb4f729904e"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.86,\"naturalness\":0.84,\"readability\":0.86,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"将伪造徐母书信并诱使徐庶回许都归因于曹操，原文中具体伪造书信的是程昱。\"],\"language_problems\":[\"“刘表家里的人”表述较模糊，可直接说明是蔡瑁和蔡夫人。\",\"“曹丕接袁熙的老婆进了曹家”较口语化，表达不够自然。\"],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":31051,"cached_input_tokens":8960,"cache_write_input_tokens":0,"output_tokens":1152,"reasoning_output_tokens":1002}}

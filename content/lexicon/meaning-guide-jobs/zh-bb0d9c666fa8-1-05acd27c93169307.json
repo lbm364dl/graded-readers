@@ -1,0 +1,31 @@
+{
+  "id": "zh-bb0d9c666fa8-1-05acd27c93169307",
+  "entry_id": "zh-bb0d9c666fa8-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-bb0d9c666fa8-1",
+      "headword": "几",
+      "kind": "word",
+      "reading": "jǐ",
+      "senses": [
+        {
+          "id": "zh-bb0d9c666fa8-1-s1",
+          "definition": "several; a small number more than two"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "没过几天，有人报告：黄巾军将领程远志率领五万兵马来犯涿郡。",
+        "gloss": "several",
+        "sense_id": "zh-bb0d9c666fa8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1374f950fbcd0ce594ef6687ea8177b11954ebe66aa418e0a88f9c588dcba98e"
+}

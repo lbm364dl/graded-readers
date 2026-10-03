@@ -1,0 +1,32 @@
+{
+  "id": "ja-d6091992f710eaa2-19723b4348c06d84",
+  "entry_id": "ja-d6091992f710eaa2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d6091992f710eaa2",
+      "headword": "照らす",
+      "reading": "てらす",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d6091992f710eaa2-1",
+          "definition": "to illuminate; to shine light on"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "太陽の光が黒い毛を照らし、毛の間から火が出るように輝いている。",
+        "gloss": "illuminating",
+        "sense_id": "ja-d6091992f710eaa2-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "15926a3f45857db0a111ea606dd92645ff230f86755ca5ccd4a7248ec14e6064"
+}

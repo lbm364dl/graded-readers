@@ -1,0 +1,31 @@
+{
+  "id": "zh-6d51cfc81953-1-27c746655119d6cf",
+  "entry_id": "zh-6d51cfc81953-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6d51cfc81953-1",
+      "headword": "更衣",
+      "kind": "word",
+      "reading": "gēngyī",
+      "senses": [
+        {
+          "id": "zh-6d51cfc81953-1-s1",
+          "definition": "change clothes"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "灵帝看完奏章叹气，因而起身更衣。",
+        "gloss": "change clothes",
+        "sense_id": "zh-6d51cfc81953-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0357698aba4b4cb2c1aba41ceaeb0c9eaf059ed4a016b18a3afd6afce83ed2a4"
+}

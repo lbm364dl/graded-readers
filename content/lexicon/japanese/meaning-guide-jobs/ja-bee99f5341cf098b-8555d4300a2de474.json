@@ -1,0 +1,32 @@
+{
+  "id": "ja-bee99f5341cf098b-8555d4300a2de474",
+  "entry_id": "ja-bee99f5341cf098b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-bee99f5341cf098b",
+      "headword": "負けずに",
+      "reading": "まけずに",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-bee99f5341cf098b-1",
+          "definition": "The negative ずに pattern means “without doing” the verb; 負けずに means “without losing” or “without being outdone.”"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩も負けずに、「そういう君は誰だ」と聞いた。",
+        "gloss": "without losing; without being outdone",
+        "sense_id": "ja-bee99f5341cf098b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3e18290af5649e61350d7723cb350c5f037b8bdf7b59a3dccb051efa4bd83d86"
+}

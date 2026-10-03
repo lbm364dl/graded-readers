@@ -1,0 +1,31 @@
+{
+  "id": "zh-cc0dc791ff9c-1-bd62622ca4d44ab1",
+  "entry_id": "zh-cc0dc791ff9c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-cc0dc791ff9c-1",
+      "headword": "说话",
+      "kind": "word",
+      "reading": "shuōhuà",
+      "senses": [
+        {
+          "id": "zh-cc0dc791ff9c-1-s1",
+          "definition": "to speak or talk"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备不太爱读书，性情宽和，平时少说话，喜怒不露在脸上。",
+        "gloss": "to speak; talk",
+        "sense_id": "zh-cc0dc791ff9c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9a7cc8919f44c197bca2b2ef9fcab1939c045add60c27f5dbd6bc2ea31f98c8e"
+}

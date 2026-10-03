@@ -1,0 +1,32 @@
+{
+  "id": "ja-1a6e214e766228d5-a371c65a36d456bc",
+  "entry_id": "ja-1a6e214e766228d5",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-1a6e214e766228d5",
+      "headword": "目やに",
+      "reading": "めやに",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-1a6e214e766228d5-1",
+          "definition": "eye discharge; matter from the eyes"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "その後、黒は足を悪くし、毛の色も悪くなり、目には目やにがたまった。",
+        "gloss": "eye discharge",
+        "sense_id": "ja-1a6e214e766228d5-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3832d0a5c428715f3255718e82d07195c315b82c95ea8b899cb6e3894bd8d711"
+}

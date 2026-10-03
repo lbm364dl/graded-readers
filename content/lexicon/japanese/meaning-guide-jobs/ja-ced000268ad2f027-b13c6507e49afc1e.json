@@ -1,0 +1,32 @@
+{
+  "id": "ja-ced000268ad2f027-b13c6507e49afc1e",
+  "entry_id": "ja-ced000268ad2f027",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ced000268ad2f027",
+      "headword": "です",
+      "reading": "です",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-ced000268ad2f027-1",
+          "definition": "Polite copula used to state or identify something."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は猫です。",
+        "gloss": "is; am (polite)",
+        "sense_id": "ja-ced000268ad2f027-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ccf0418d5a19cd8ee51d935f5f661df7a1d56f298dd6b9a24a2f3cc256131502"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-b30e856c936f-1-e1df1a0d4fe901da",
+  "entry_id": "zh-b30e856c936f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b30e856c936f-1",
+      "headword": "帐篷",
+      "kind": "word",
+      "reading": "zhàngpeng",
+      "senses": [
+        {
+          "id": "zh-b30e856c936f-1-s1",
+          "definition": "a tent"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”说完，他提刀走向董卓的帐篷。",
+        "gloss": "tent",
+        "sense_id": "zh-b30e856c936f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9f6668a7d7dec76b08e58ffba0865e85adc2a66a4f092e74b05e3baec3856db4"
+}

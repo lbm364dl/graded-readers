@@ -1,0 +1,32 @@
+{
+  "id": "ja-b3d597841108ab2a-7199fa78e9657488",
+  "entry_id": "ja-b3d597841108ab2a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-b3d597841108ab2a",
+      "headword": "姿を消す",
+      "reading": "すがたをけす",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-b3d597841108ab2a-1",
+          "definition": "to disappear; to vanish"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "たくさんいた兄弟も一匹も見えず、母親まで姿を消していた。",
+        "gloss": "had disappeared; had vanished",
+        "sense_id": "ja-b3d597841108ab2a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0603901d1563f41c7391e65e1f13cdb7519b05b18a66cd441e817b0687def66b"
+}

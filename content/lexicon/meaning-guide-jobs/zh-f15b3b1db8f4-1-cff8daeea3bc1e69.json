@@ -1,0 +1,31 @@
+{
+  "id": "zh-f15b3b1db8f4-1-cff8daeea3bc1e69",
+  "entry_id": "zh-f15b3b1db8f4-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f15b3b1db8f4-1",
+      "headword": "交朋友",
+      "kind": "construction",
+      "reading": "jiāo péngyou",
+      "senses": [
+        {
+          "id": "zh-f15b3b1db8f4-1-s1",
+          "definition": "make friends; befriend"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他也愿意和有志的人交朋友。",
+        "gloss": "make friends",
+        "sense_id": "zh-f15b3b1db8f4-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "839537fcf5737a1dc5dbe7bdddfa028b5f409bb772a1b955fc4f342893ad551f"
+}

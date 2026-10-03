@@ -1,0 +1,32 @@
+{
+  "id": "ja-436cec520d4ebc91-ade1e7131e2fb69e",
+  "entry_id": "ja-436cec520d4ebc91",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-436cec520d4ebc91",
+      "headword": "そのもの",
+      "reading": "そのもの",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-436cec520d4ebc91-1",
+          "definition": "itself; the thing in question, emphasized as being exactly that"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人が「自分で筆を持つと、絵は実に難しい」と言うと、友人は、室内の想像だけでは絵はかけない、自然そのものを見て写生すべきだと教えた。",
+        "gloss": "itself",
+        "sense_id": "ja-436cec520d4ebc91-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d07acc79e350601ab351267714d796dbcdd1518461fdf44872336f83600280f8"
+}

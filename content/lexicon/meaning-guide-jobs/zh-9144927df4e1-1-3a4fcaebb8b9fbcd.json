@@ -1,0 +1,31 @@
+{
+  "id": "zh-9144927df4e1-1-3a4fcaebb8b9fbcd",
+  "entry_id": "zh-9144927df4e1-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9144927df4e1-1",
+      "headword": "无礼",
+      "kind": "word",
+      "reading": "wúlǐ",
+      "senses": [
+        {
+          "id": "zh-9144927df4e1-1-s1",
+          "definition": "rude; discourteous"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备离开后，张飞非常生气：“我们冒着危险救他，他竟然这样无礼！",
+        "gloss": "rude",
+        "sense_id": "zh-9144927df4e1-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2fceeb38a65f7c26d04074130b9bce113369caba5a6d1073a1e70719af68f255"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "zh-a397a1ebc005-1-e39baaf8c57300ff",
+  "entry_id": "zh-a397a1ebc005-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a397a1ebc005-1",
+      "headword": "因",
+      "kind": "word",
+      "reading": "yīn",
+      "senses": [
+        {
+          "id": "zh-a397a1ebc005-1-s1",
+          "definition": "because of; due to"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他当时因无力报国，只能长声叹气。",
+        "gloss": "because",
+        "sense_id": "zh-a397a1ebc005-1-s1"
+      },
+      {
+        "sentence": "那人叫关羽，曾因杀了当地一个仗势欺人的人，逃难了五六年。",
+        "gloss": "because of",
+        "sense_id": "zh-a397a1ebc005-1-s1"
+      },
+      {
+        "sentence": "之后，刘备、关羽、张飞一起到张飞庄上商议大事，三人也因共同志向相识。",
+        "gloss": "because; due to",
+        "sense_id": "zh-a397a1ebc005-1-s1"
+      },
+      {
+        "sentence": "原来是中山大商张世平、苏双，他们每年往北贩马，最近因盗贼出现而返回。",
+        "gloss": "because",
+        "sense_id": "zh-a397a1ebc005-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ab8b0f93f1b25458d49a14275304850b1aac5b97f93902724cde6fe5c4683dcb"
+}

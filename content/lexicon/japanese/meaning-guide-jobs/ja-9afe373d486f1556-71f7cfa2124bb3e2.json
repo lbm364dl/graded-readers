@@ -1,0 +1,32 @@
+{
+  "id": "ja-9afe373d486f1556-71f7cfa2124bb3e2",
+  "entry_id": "ja-9afe373d486f1556",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9afe373d486f1556",
+      "headword": "何匹",
+      "reading": "なんびき",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-9afe373d486f1556-1",
+          "definition": "how many small animals; interrogative quantity with the counter 匹"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "「おめえ、鼠を何匹とったことがある」\n",
+        "gloss": "how many animals",
+        "sense_id": "ja-9afe373d486f1556-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f807941e399144b2531227d1296a4e0b3c857d8a0216808a49110497a6072eb4"
+}

@@ -1,0 +1,85 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_116-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1411,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "略去了姜维突围后伪立旗号、撤后军救甘松等若干战术细节。",
+      "classification": "material",
+      "reason": "伪立旗号并撤后军是姜维在邓艾追击下成功救援甘松的重要战术行动，省略后削弱了该段行动的因果和过程。",
+      "required_fix": "补回姜维伪立旗号牵制邓艾、撤后军星夜救援甘松的关键战术细节。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "原文中荀恺一箭射卢逊落马，并未明确写死；改为“射死卢逊”属于轻微事实扩大。",
+      "classification": "material",
+      "reason": "将卢逊被射落马改成死亡，改变了原文明确记载的事件结果。",
+      "required_fix": "将“射死卢逊”改为“射卢逊落马”，原文未明确卢逊死亡。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "略去了姜维突围后伪立旗号、撤后军救甘松等若干战术细节。",
+      "classification": "material",
+      "reason": "伪立旗号并撤后军是姜维在邓艾追击下成功救援甘松的重要战术行动，省略后削弱了该段行动的因果和过程。",
+      "required_fix": "补回姜维伪立旗号牵制邓艾、撤后军星夜救援甘松的关键战术细节。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "原文中荀恺一箭射卢逊落马，并未明确写死；改为“射死卢逊”属于轻微事实扩大。",
+      "classification": "material",
+      "reason": "将卢逊被射落马改成死亡，改变了原文明确记载的事件结果。",
+      "required_fix": "将“射死卢逊”改为“射卢逊落马”，原文未明确卢逊死亡。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1394,
+      "review": {
+        "source_fidelity": 8.4,
+        "naturalness": 8.8,
+        "readability": 9.1,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "原文说魏军逃回阳平关时无人马阵亡，但有士兵跌伤面目并丢失头盔；改写为“竟无人受伤”否定了原文明确记载的受伤情况。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 1411,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

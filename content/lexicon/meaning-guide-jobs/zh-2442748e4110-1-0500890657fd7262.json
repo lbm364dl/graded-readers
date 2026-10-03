@@ -1,0 +1,89 @@
+{
+  "id": "zh-2442748e4110-1-0500890657fd7262",
+  "entry_id": "zh-2442748e4110-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2442748e4110-1",
+      "headword": "把",
+      "kind": "particle",
+      "reading": "bǎ",
+      "senses": [
+        {
+          "id": "zh-2442748e4110-1-s1",
+          "definition": "marks the object of an action that is handled or affected by it"
+        },
+        {
+          "id": "zh-2442748e4110-1-s2",
+          "definition": "classifier for a handled object or one with a handful-like shape"
+        },
+        {
+          "id": "zh-2442748e4110-1-s3",
+          "definition": "classifier for a long-handled object"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "卢植见到他们很高兴，把他们留下。",
+        "gloss": "object marker",
+        "sense_id": "zh-2442748e4110-1-s1"
+      },
+      {
+        "sentence": "他把卢植的话告诉皇甫嵩。",
+        "gloss": "object marker",
+        "sense_id": "zh-2442748e4110-1-s1"
+      },
+      {
+        "sentence": "朝廷把我押回京城，又让董卓来接替我。",
+        "gloss": "object marker",
+        "sense_id": "zh-2442748e4110-1-s1"
+      },
+      {
+        "sentence": "三人立刻冲上去，把黄巾军打退，救下董卓。",
+        "gloss": "object marker",
+        "sense_id": "zh-2442748e4110-1-s1"
+      },
+      {
+        "sentence": "曹节偷看奏章后，立即告诉身边的人，于是宦官借别的事陷害蔡邕，皇帝把他放归田里。",
+        "gloss": "把: marks the object affected by the action",
+        "sense_id": "zh-2442748e4110-1-s1"
+      },
+      {
+        "sentence": "老人把天书三卷交给他，名为太平要术，并警告他不可生异心。",
+        "gloss": "disposal marker",
+        "sense_id": "zh-2442748e4110-1-s1"
+      },
+      {
+        "sentence": "朝廷立即派兵抓住马元义并杀了他，又把封谞等人关进监狱。",
+        "gloss": "disposal-construction marker",
+        "sense_id": "zh-2442748e4110-1-s1"
+      },
+      {
+        "sentence": "家旁有一棵大桑树，远远看去，像一把车盖。",
+        "gloss": "classifier for objects with handles or shape like a handful",
+        "sense_id": "zh-2442748e4110-1-s2"
+      },
+      {
+        "sentence": "皇甫嵩、朱隽商量后，决定火攻，命士兵各带一把草，暗中埋下伏兵。",
+        "gloss": "classifier for long-handled objects",
+        "sense_id": "zh-2442748e4110-1-s3"
+      },
+      {
+        "sentence": "一次，有人夜里带刀走路，曹操把他抓住，按禁令用木棒责罚。",
+        "gloss": "marks the object",
+        "sense_id": "zh-2442748e4110-1-s1"
+      },
+      {
+        "sentence": "三人救下董卓，把他带回营中。",
+        "gloss": "把 construction marker",
+        "sense_id": "zh-2442748e4110-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8be68c9d715f16168c47a19755d89a23f3b73d5ba6b66f377e7ed49a3cbaacb5"
+}

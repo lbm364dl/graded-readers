@@ -1,0 +1,32 @@
+{
+  "id": "ja-1db2a14b3a403a95-99a011e65f5e950b",
+  "entry_id": "ja-1db2a14b3a403a95",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-1db2a14b3a403a95",
+      "headword": "なければならない",
+      "reading": "なければならない",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-1db2a14b3a403a95-1",
+          "definition": "must; have to; it is necessary to"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そして、「猫族が親子の愛を守り、美しい家族の生活をするには、人間と戦い、彼らを滅ぼさなければならない」と言った。",
+        "gloss": "must destroy them",
+        "sense_id": "ja-1db2a14b3a403a95-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "dc8cd8ad303ecbab8fd22d0e823dfea8cbff8232c580af5e9b4c39b2e73f4fac"
+}

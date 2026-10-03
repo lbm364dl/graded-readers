@@ -1,0 +1,106 @@
+{
+  "id": "ja-9d608655bfef3dcf-d85f2080fa0fc264",
+  "entry_id": "ja-9d608655bfef3dcf",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-9d608655bfef3dcf",
+      "headword": "こと",
+      "reading": "こと",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-9d608655bfef3dcf-1",
+          "definition": "nominalizer that turns a clause or verb phrase into a noun phrase referring to a fact, event, or matter"
+        },
+        {
+          "id": "ja-9d608655bfef3dcf-2",
+          "definition": "A matter, fact, event, or act; what is said or done."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "暗くてぬれている所で、ニャーニャー鳴いていたことだけは覚えている。",
+        "gloss": "fact; matter",
+        "sense_id": "ja-9d608655bfef3dcf-1"
+      },
+      {
+        "sentence": "ただ、薄暗くてじめじめした場所で、ニャーニャー泣いていたことだけは覚えている。",
+        "gloss": "the fact that",
+        "sense_id": "ja-9d608655bfef3dcf-1"
+      },
+      {
+        "sentence": "掌の上で少し落ち着き、書生の顔を見たことが、人間というものの見始めだったのだろう。",
+        "gloss": "the fact that",
+        "sense_id": "ja-9d608655bfef3dcf-1"
+      },
+      {
+        "sentence": "吾輩の主人は教師だが、吾輩と顔を合わせることはめったにない。",
+        "gloss": "matter; fact; act",
+        "sense_id": "ja-9d608655bfef3dcf-2"
+      },
+      {
+        "sentence": "ただ、その時、吾輩は薄暗くてじめじめした所で、ニャーニャー泣いていたことだけは覚えている。",
+        "gloss": "the fact or event of; nominalizes the preceding clause",
+        "sense_id": "ja-9d608655bfef3dcf-1"
+      },
+      {
+        "sentence": "何でも、薄暗くてじめじめした所で、ニャーニャー泣いていたことだけは、はっきり覚えている。",
+        "gloss": "the fact or event of; nominalizes the preceding clause",
+        "sense_id": "ja-9d608655bfef3dcf-1"
+      },
+      {
+        "sentence": "吾輩の主人は、吾輩と顔を合わせることがほとんどない。",
+        "gloss": "act; matter",
+        "sense_id": "ja-9d608655bfef3dcf-2"
+      },
+      {
+        "sentence": "どれほど大切にされなかったかは、今まで名前さえつけてもらえないことでも分かる。",
+        "gloss": "the fact or event of; nominalizes the preceding clause",
+        "sense_id": "ja-9d608655bfef3dcf-1"
+      },
+      {
+        "sentence": "吾輩には、白君の言うことも、どれももっともな議論に思われた。",
+        "gloss": "matter; what was said",
+        "sense_id": "ja-9d608655bfef3dcf-2"
+      },
+      {
+        "sentence": "力が強いことを頼みにして、猫が正当に食べられる物まで奪い、平気な顔をしているのである。",
+        "gloss": "fact; matter",
+        "sense_id": "ja-9d608655bfef3dcf-2"
+      },
+      {
+        "sentence": "「どうせそんなことだろう。",
+        "gloss": "matter; thing",
+        "sense_id": "ja-9d608655bfef3dcf-2"
+      },
+      {
+        "sentence": "吾輩には、この男が、こんな冗談を言って人を担ぐことを楽しんでいるように思われた。",
+        "gloss": "act; matter",
+        "sense_id": "ja-9d608655bfef3dcf-2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-9d608655bfef3dcf",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "grammatical",
+    "explanation_en": "こと follows a clause or verb phrase and lets it function as a noun phrase: 走ること means “running” or “the act of running.” The nominalized content can be referred to as a fact, event, or matter.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "8ccc97dabf330972600e26ce15102e0081dc2411e23f2e6606aaa483b7f97767",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ecb0f888ed0908ed583da37d403e6cfd4051c385b4de2e8c09496d548218bdff"
+}

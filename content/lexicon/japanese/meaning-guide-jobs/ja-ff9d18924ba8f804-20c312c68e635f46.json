@@ -1,0 +1,32 @@
+{
+  "id": "ja-ff9d18924ba8f804-20c312c68e635f46",
+  "entry_id": "ja-ff9d18924ba8f804",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ff9d18924ba8f804",
+      "headword": "痛い",
+      "reading": "いたい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-ff9d18924ba8f804-1",
+          "definition": "painful; hurting"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "とても明るい所で、痛いので出てみると、吾輩はわらの上から笹原へ捨てられていた。",
+        "gloss": "painful; hurting",
+        "sense_id": "ja-ff9d18924ba8f804-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8df83e2a71f33518af00028e8ef79fdc725071fcdd0268d6622e76704a4b6de4"
+}

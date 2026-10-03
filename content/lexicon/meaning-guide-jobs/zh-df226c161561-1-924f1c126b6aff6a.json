@@ -1,0 +1,31 @@
+{
+  "id": "zh-df226c161561-1-924f1c126b6aff6a",
+  "entry_id": "zh-df226c161561-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-df226c161561-1",
+      "headword": "披着",
+      "kind": "construction",
+      "reading": "pīzhe",
+      "senses": [
+        {
+          "id": "zh-df226c161561-1-s1",
+          "definition": "to wear something draped over the body"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军披着头发，额上围着黄巾。",
+        "gloss": "wear draped over",
+        "sense_id": "zh-df226c161561-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "08ab115aa6abd7c3e95ea3c0a1da7b1818266db26eb4dd931555b12213a85866"
+}

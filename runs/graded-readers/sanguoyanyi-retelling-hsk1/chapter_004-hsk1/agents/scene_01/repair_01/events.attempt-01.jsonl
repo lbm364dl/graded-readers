@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff2f1-73bb-7e60-926a-4df64939ef4f"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"text\":\"袁术叫纪灵带人去打小沛。刘备手下的人很少，没有别的办法，只能写下几句话，请吕布来帮忙。吕布想：“袁术要是打下小沛，早晚也会来打我。”所以他带着人去帮刘备。纪灵不肯收手，张飞听后很生气，马上要出手。吕布说：“大家不要动手，请天来作主。”他拿出画戟，放在大门外，从军中到大门外有一百五十步。吕布又取来弓箭，说：“我用箭打中戟上的小枝，你们今天就不再动手；要是打不中，你们再打。”纪灵心想这太难了，可还是点头同意。吕布用力开弓，箭飞出去，正好打中那根小枝。帐里帐外的人都叫好。两边都按刚才的话做，带着人回去。小沛没有被打下来。\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":39813,"cached_input_tokens":8960,"cache_write_input_tokens":0,"output_tokens":4613,"reasoning_output_tokens":4360}}

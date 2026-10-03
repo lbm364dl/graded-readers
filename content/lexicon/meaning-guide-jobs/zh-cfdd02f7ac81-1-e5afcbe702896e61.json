@@ -1,0 +1,31 @@
+{
+  "id": "zh-cfdd02f7ac81-1-e5afcbe702896e61",
+  "entry_id": "zh-cfdd02f7ac81-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-cfdd02f7ac81-1",
+      "headword": "游玩",
+      "kind": "word",
+      "reading": "yóuwán",
+      "senses": [
+        {
+          "id": "zh-cfdd02f7ac81-1-s1",
+          "definition": "to engage in leisure activities for enjoyment"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹操小时候喜欢游玩和歌舞，也有机变，常常不受约束。",
+        "gloss": "to play",
+        "sense_id": "zh-cfdd02f7ac81-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3734477486debcf6caad2822fc58ea262cb5ebbb988edb0527a1a582631f7ff8"
+}

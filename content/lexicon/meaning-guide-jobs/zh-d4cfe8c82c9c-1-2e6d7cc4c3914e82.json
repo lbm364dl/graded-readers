@@ -1,0 +1,31 @@
+{
+  "id": "zh-d4cfe8c82c9c-1-2e6d7cc4c3914e82",
+  "entry_id": "zh-d4cfe8c82c9c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d4cfe8c82c9c-1",
+      "headword": "火",
+      "kind": "word",
+      "reading": "huǒ",
+      "senses": [
+        {
+          "id": "zh-d4cfe8c82c9c-1-s1",
+          "definition": "fire"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "二更后，伏兵一齐放火，两人各带军队攻入营中。",
+        "gloss": "fire",
+        "sense_id": "zh-d4cfe8c82c9c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b300e84131f261daecb9f3618df0cc66217840e1800d7c8fd4eddb01b3167eb4"
+}

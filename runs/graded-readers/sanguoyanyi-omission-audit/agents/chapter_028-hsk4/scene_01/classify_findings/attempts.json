@@ -1,0 +1,11 @@
+[
+  {
+    "attempt": 1,
+    "started_at": "2026-08-07T10:21:53.439791+00:00",
+    "ended_at": "2026-08-07T10:25:39.736934+00:00",
+    "return_code": 0,
+    "throttled": false,
+    "events": "events.attempt-01.jsonl",
+    "stderr": "stderr.attempt-01.log"
+  }
+]

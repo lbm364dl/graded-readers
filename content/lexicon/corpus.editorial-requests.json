@@ -1,0 +1,29 @@
+[
+  {
+    "entry_id": "zh-a4a6cbbffeb8-1",
+    "reason": "Focused decomposition correction after independent audit: 与众 is a preposition+noun phrase here, not a reusable lexical unit. Split it into its characters while retaining 不同 as a word. Use structured parts 与|众|不同, with precise contributions. Preserve the whole-word meaning and all senses. Do not invent standalone dictionary words from convenient halves of an expression. Do not introduce historical claims or rewrite unrelated explanations.",
+    "id": "edit-b0761967918572cb"
+  },
+  {
+    "entry_id": "zh-7bc6b161927f-1",
+    "reason": "Focused decomposition correction after independent audit: 五颜 and 六色 are convenient halves of this paired expression, not independently established lexical units. Split them into characters with their specific contributions. Use structured parts 五|颜|六|色, with precise contributions. Preserve the whole-word meaning and all senses. Do not invent standalone dictionary words from convenient halves of an expression. Do not introduce historical claims or rewrite unrelated explanations.",
+    "id": "edit-ac10904b4a0b715a"
+  },
+  {
+    "entry_id": "zh-5009a9af0c0c-1",
+    "reason": "Focused decomposition correction after independent audit: 呼风 and 唤雨 are paired halves of the expression rather than independently reusable lexical units. Split them into characters to show the actions and their objects. Use structured parts 呼|风|唤|雨, with precise contributions. Preserve the whole-word meaning and all senses. Do not invent standalone dictionary words from convenient halves of an expression. Do not introduce historical claims or rewrite unrelated explanations.",
+    "id": "edit-791c7b5321834a43"
+  },
+  {
+    "entry_id": "zh-ceb2ef53d70e-1",
+    "reason": "Explain the supported character contributions in 校尉, not merely that it is a conventional military title. Verify the relevant xiào reading and military meaning of 校 and the officer meaning of 尉 using reliable lexical sources. Show structured 校|尉 parts if supported, while distinguishing this learner explanation from an unproven historical derivation or an exact equivalence to a modern military rank. Preserve the approved identity and definition.",
+    "force_research": true,
+    "id": "edit-91ed28d80f0bae84"
+  },
+  {"entry_id":"zh-3ec82ab67c8d-1","id":"hsk2-reader-juji-nuances","reason":"The learner finds that saying 聚 and 集 both mean gather does not help. Explain supported differences in their usual uses and their overlap within 聚集 in plain concrete English. Do not invent a two-step process or a precise contrast. Existing research is in previous_guide: investigate only the missing contribution question, not the entire word history. Record any remaining meaningful gap as investigation_questions with component and question.","force_research":true},
+  {"entry_id":"zh-9819d260756e-1","id":"hsk2-reader-dangshi-concrete","reuse_reviewed_evidence":true,"reason":"Explain 当 in 当时 more concretely and intuitively than 'contextually identified time'. Explain the at/during contribution and how the whole points to the time being discussed. Preserve supported limits; no new historical account, unrelated senses or source-story narration. Use existing approved evidence where helpful."},
+  {"entry_id":"zh-2f4106afcd28-1","id":"hsk2-reader-liuxing-xing","reason":"Investigate and explain the contribution of 行 in 流行 for spreading/becoming widespread, instead of simply saying it has no clearly separable role. Use the existing dossier as a starting point; verify the missing relationship, without inventing a derivation or separate steps. Include concrete investigation_questions for any remaining contribution gap.","force_research":true},
+  {"entry_id":"zh-34241e377625-1","id":"hsk2-reader-xiangxin-xiang","reason":"Investigate and explain the contribution of 相 in 相信 in intuitive learner terms. Do not mechanically gloss it as mutual or imply that believing someone requires reciprocal belief. Distinguish supported modern function from historical development. Use existing research as a starting point; include concrete investigation_questions for remaining gaps.","force_research":true},
+  {"entry_id":"zh-1df1ae654a19-1","id":"hsk2-reader-xuduo-xu","reason":"Make 许多 intuitive without falsely treating 许 as an independently productive degree adverb. Use the existing research on quantity-denoting forms to explain any supported bridge; distinguish a scholarly historical proposal from an established derivation. Do not equate our incomplete evidence with unknowability. Record unresolved component questions internally in investigation_questions.","force_research":true},
+  {"entry_id":"zh-3ec82ab67c8d-1","id":"hsk2-reader-juji-usage-ranges","reuse_reviewed_evidence":true,"reason":"The reviewed guide still only repeats that both characters mean gathering. Use the CURRENT approved dossier c2 to give the learner a concrete orientation to their broader usage ranges: 聚 can describe assembling/meeting and also piling up/accumulating; 集 describes bringing dispersed things together. Distinguish these standalone usage ranges from the shared gathering contribution within 聚集. Explicitly avoid implying that accumulation is required in 聚集 or that its characters express two separate steps. Include these supported usage clues in the structured part contributions too, not just generic gather/gather. This is a clarification using existing verified evidence, not a new research request; retain internal questions for precise in-compound nuances that remain open."}
+]

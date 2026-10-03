@@ -1,0 +1,66 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_005-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 151,
+  "required_range": [
+    98,
+    182
+  ],
+  "material_findings": [
+    {
+      "omission_note": "未提曹操筹建义军、诸侯分兵及孙坚断粮等细节",
+      "classification": "material",
+      "reason": "孙坚断粮是其军败于华雄的重要原因，诸侯分兵交战也构成虎牢关战事的关键进程；遗漏后削弱了事件因果和战局衔接。",
+      "required_fix": "补充曹操筹建义军、诸侯分兵迎敌，以及袁术拒发粮草导致孙坚断粮军乱的情节。"
+    },
+    {
+      "omission_note": "未提华雄副将胡轸被程普击杀、祖茂战死等关键战事",
+      "classification": "material",
+      "reason": "胡轸被杀和祖茂战死都是孙坚攻关及败退过程中的重要事件，涉及战果、伤亡与孙坚败退的具体经过。",
+      "required_fix": "补充程普刺杀胡轸，以及祖茂为掩护孙坚而被华雄斩杀的情节。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "未提曹操筹建义军、诸侯分兵及孙坚断粮等细节",
+      "classification": "material",
+      "reason": "孙坚断粮是其军败于华雄的重要原因，诸侯分兵交战也构成虎牢关战事的关键进程；遗漏后削弱了事件因果和战局衔接。",
+      "required_fix": "补充曹操筹建义军、诸侯分兵迎敌，以及袁术拒发粮草导致孙坚断粮军乱的情节。"
+    },
+    {
+      "omission_note": "未提华雄副将胡轸被程普击杀、祖茂战死等关键战事",
+      "classification": "material",
+      "reason": "胡轸被杀和祖茂战死都是孙坚攻关及败退过程中的重要事件，涉及战果、伤亡与孙坚败退的具体经过。",
+      "required_fix": "补充程普刺杀胡轸，以及祖茂为掩护孙坚而被华雄斩杀的情节。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 151,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

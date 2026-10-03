@@ -1,0 +1,31 @@
+{
+  "id": "zh-1e5e3499cac0-1-b788374358ca46af",
+  "entry_id": "zh-1e5e3499cac0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1e5e3499cac0-1",
+      "headword": "逃难",
+      "kind": "word",
+      "reading": "táonàn",
+      "senses": [
+        {
+          "id": "zh-1e5e3499cac0-1-s1",
+          "definition": "to flee from danger or hardship"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "那人叫关羽，曾因杀了当地一个仗势欺人的人，逃难了五六年。",
+        "gloss": "flee trouble; escape hardship",
+        "sense_id": "zh-1e5e3499cac0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ecb2dbccc00560e6e96306d4c6582b45d702177e98e949ef4a64ba68586e0096"
+}

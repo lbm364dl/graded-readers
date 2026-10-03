@@ -1,0 +1,31 @@
+{
+  "id": "zh-34241e377625-1-58a98326762205d1",
+  "entry_id": "zh-34241e377625-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-34241e377625-1",
+      "headword": "相信",
+      "kind": "word",
+      "reading": "xiāngxìn",
+      "senses": [
+        {
+          "id": "zh-34241e377625-1-s1",
+          "definition": "to believe or trust someone or something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "当时疫病流行，很多人相信张角。",
+        "gloss": "believe in",
+        "sense_id": "zh-34241e377625-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "45d23b2cd2c628418348c592abc3807efa2bd46deaf173ce998c9b92670e9b31"
+}

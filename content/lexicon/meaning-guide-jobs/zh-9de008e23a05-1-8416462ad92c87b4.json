@@ -1,0 +1,41 @@
+{
+  "id": "zh-9de008e23a05-1-8416462ad92c87b4",
+  "entry_id": "zh-9de008e23a05-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9de008e23a05-1",
+      "headword": "不断",
+      "kind": "word",
+      "reading": "búduàn",
+      "senses": [
+        {
+          "id": "zh-9de008e23a05-1-s1",
+          "definition": "continuously; without stopping"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "汉朝末年，朝廷很乱，灾害和不祥的事不断发生。",
+        "gloss": "continuously",
+        "sense_id": "zh-9de008e23a05-1-s1"
+      },
+      {
+        "sentence": "跟随他的人不断增加，他便和两个弟弟商量起事。",
+        "gloss": "continuously",
+        "sense_id": "zh-9de008e23a05-1-s1"
+      },
+      {
+        "sentence": "他想为国家出力，救百姓，只是没有力量，看着榜文不断叹气。",
+        "gloss": "continuously",
+        "sense_id": "zh-9de008e23a05-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9b784cbd588e7c62218bedf57a3e25f454846fb70b70d4c5a4dc23fa5e5ed348"
+}

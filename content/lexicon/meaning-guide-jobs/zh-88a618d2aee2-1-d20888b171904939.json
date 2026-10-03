@@ -1,0 +1,36 @@
+{
+  "id": "zh-88a618d2aee2-1-d20888b171904939",
+  "entry_id": "zh-88a618d2aee2-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-88a618d2aee2-1",
+      "headword": "气势",
+      "kind": "word",
+      "reading": "qìshì",
+      "senses": [
+        {
+          "id": "zh-88a618d2aee2-1-s1",
+          "definition": "imposing presence or forceful bearing"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他身材高大，头大眼圆，胡子很长，声音像雷一样响，气势惊人。",
+        "gloss": "bearing; manner",
+        "sense_id": "zh-88a618d2aee2-1-s1"
+      },
+      {
+        "sentence": "刘备回头看那人，只见他身长八尺，豹头环眼，燕颔虎须，声音如巨雷，气势如奔马。",
+        "gloss": "bearing; imposing manner",
+        "sense_id": "zh-88a618d2aee2-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8fe192fd4bc0ef243133432aa0777115932e686ede78b7b6805cae0df9cbb333"
+}

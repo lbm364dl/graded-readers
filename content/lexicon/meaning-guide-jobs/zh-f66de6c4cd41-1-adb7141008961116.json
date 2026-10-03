@@ -1,0 +1,45 @@
+{
+  "id": "zh-f66de6c4cd41-1-adb7141008961116",
+  "entry_id": "zh-f66de6c4cd41-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f66de6c4cd41-1",
+      "headword": "走",
+      "kind": "word",
+      "reading": "zǒu",
+      "senses": [
+        {
+          "id": "zh-f66de6c4cd41-1-s1",
+          "definition": "to go or leave, often with an implied direction away"
+        },
+        {
+          "id": "zh-f66de6c4cd41-1-s2",
+          "definition": "to be carried or swept away"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "卢植被押走后，关羽建议先回涿郡，刘备同意了。",
+        "gloss": "away; directional complement",
+        "sense_id": "zh-f66de6c4cd41-1-s1"
+      },
+      {
+        "sentence": "建宁四年二月，洛阳地震，海水泛滥，沿海居民被大浪卷走。",
+        "gloss": "away",
+        "sense_id": "zh-f66de6c4cd41-1-s2"
+      },
+      {
+        "sentence": "”刘备同意了，三人向北走。",
+        "gloss": "go",
+        "sense_id": "zh-f66de6c4cd41-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cbdc61413f2d26f02d0e4619089898f1950576055b9f7f7b5ae9915f4dd3110a"
+}

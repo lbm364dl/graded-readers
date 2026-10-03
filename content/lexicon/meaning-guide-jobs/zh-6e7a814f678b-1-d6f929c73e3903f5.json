@@ -1,0 +1,31 @@
+{
+  "id": "zh-6e7a814f678b-1-d6f929c73e3903f5",
+  "entry_id": "zh-6e7a814f678b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6e7a814f678b-1",
+      "headword": "读书",
+      "kind": "word",
+      "reading": "dúshū",
+      "senses": [
+        {
+          "id": "zh-6e7a814f678b-1-s1",
+          "definition": "to read or study"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备不太专心读书，性情宽和，话不多，喜怒很少露在脸上。",
+        "gloss": "to study",
+        "sense_id": "zh-6e7a814f678b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "28f1ccbc647127fa1c99381de5c4dabadacbf417993544c43f3f241ecd4c5df2"
+}

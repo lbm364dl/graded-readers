@@ -1,0 +1,31 @@
+{
+  "id": "zh-f41d0c9bcf31-1-ad629574812ad861",
+  "entry_id": "zh-f41d0c9bcf31-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f41d0c9bcf31-1",
+      "headword": "走漏",
+      "kind": "word",
+      "reading": "zǒulòu",
+      "senses": [
+        {
+          "id": "zh-f41d0c9bcf31-1-s1",
+          "definition": "for information to leak or become known unintentionally"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "可是，他们没有严格保密，消息很快走漏，二人反而因此被害。",
+        "gloss": "to leak",
+        "sense_id": "zh-f41d0c9bcf31-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "47eb13e6a32b7c5f1e1439713a515f0e3667969f17cebeb19ba53d2c1e29ff74"
+}

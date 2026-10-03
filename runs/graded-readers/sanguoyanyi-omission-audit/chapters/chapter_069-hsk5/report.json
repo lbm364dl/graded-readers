@@ -1,0 +1,81 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_069-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 1025,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了管辂拒绝任职时的具体面相依据及部分官爵、军政细节。",
+      "classification": "material",
+      "reason": "面相依据解释了管辂拒绝官职的具体动机，并构成其重要人物刻画；官爵与军政细节虽多可压缩，但该动机信息不应完全缺失。",
+      "required_fix": "补充管辂以额无主骨、眼无守睛、鼻无梁柱、脚无天根、背无三甲、腹无三壬为由，说明自己只能治鬼、不能治生人，因此拒绝任职；酌情补回被省略的关键官爵任命细节。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了管辂拒绝任职时的具体面相依据及部分官爵、军政细节。",
+      "classification": "material",
+      "reason": "面相依据解释了管辂拒绝官职的具体动机，并构成其重要人物刻画；官爵与军政细节虽多可压缩，但该动机信息不应完全缺失。",
+      "required_fix": "补充管辂以额无主骨、眼无守睛、鼻无梁柱、脚无天根、背无三甲、腹无三壬为由，说明自己只能治鬼、不能治生人，因此拒绝任职；酌情补回被省略的关键官爵任命细节。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": []
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 827,
+      "review": {
+        "source_fidelity": 7.8,
+        "naturalness": 7.5,
+        "readability": 8.3,
+        "material_omissions": [
+          "省略了王必与金袆交厚这一关键关系，弱化了金袆能够接近并利用王必的情节因果。",
+          "省略了曹操因王必是早年相随、忠勤可靠之人而信任并任用他的关键动机。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "将钟繇任相国、华歆任御史大夫及爵制改革提前到元宵政变之前；原文这些任命和制度变化发生在平定政变之后。",
+          "将吉邈、吉穆原本从城外杀入、放火为号并截住城内救军的行动概括为“放火接应”，弱化了其具体军事作用。"
+        ],
+        "language_problems": [
+          "“惊倒成病”搭配不自然，混淆了惊倒在地与后来染病两件事。",
+          "“射复认出”疑为“射覆认出”的错字或病句。"
+        ],
+        "verdict": "revise",
+        "omissions": []
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 1025,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "passed": true
+    }
+  ]
+}

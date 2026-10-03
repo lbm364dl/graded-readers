@@ -1,0 +1,31 @@
+{
+  "id": "zh-24bbf4bfb586-1-07f4e666c969448d",
+  "entry_id": "zh-24bbf4bfb586-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-24bbf4bfb586-1",
+      "headword": "押车",
+      "kind": "construction",
+      "reading": "yā chē",
+      "senses": [
+        {
+          "id": "zh-24bbf4bfb586-1-s1",
+          "definition": "to escort a vehicle or its cargo"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”张飞听完十分生气，要杀押车的人，救下老师。",
+        "gloss": "escort the carriage",
+        "sense_id": "zh-24bbf4bfb586-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "118014a6623ef20717ffa9e6f5cac2c6e7939711bfdfd15a81242f97af088744"
+}

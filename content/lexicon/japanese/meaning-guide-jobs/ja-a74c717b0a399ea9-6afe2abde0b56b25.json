@@ -1,0 +1,32 @@
+{
+  "id": "ja-a74c717b0a399ea9-6afe2abde0b56b25",
+  "entry_id": "ja-a74c717b0a399ea9",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a74c717b0a399ea9",
+      "headword": "光",
+      "reading": "ひかり",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-a74c717b0a399ea9-1",
+          "definition": "light"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "太陽の光を受けた毛は、黒い中から火が出るように光っていた。",
+        "gloss": "light",
+        "sense_id": "ja-a74c717b0a399ea9-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cd60e4cbc19050fbc52e74e42abc534a33374e4fb9c96f17cc96092e18d9ee50"
+}

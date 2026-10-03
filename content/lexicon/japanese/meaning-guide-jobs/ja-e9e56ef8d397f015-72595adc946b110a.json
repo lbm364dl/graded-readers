@@ -1,0 +1,61 @@
+{
+  "id": "ja-e9e56ef8d397f015-72595adc946b110a",
+  "entry_id": "ja-e9e56ef8d397f015",
+  "reason": "requested",
+  "item": {
+    "entry": {
+      "id": "ja-e9e56ef8d397f015",
+      "headword": "この",
+      "reading": "この",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e9e56ef8d397f015-1",
+          "definition": "This; referring to something near the speaker or currently in focus."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩はこの家に住むことにしました。",
+        "gloss": "this",
+        "sense_id": "ja-e9e56ef8d397f015-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-e9e56ef8d397f015",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "この is a demonstrative determiner used before a noun to point to something near the speaker or salient in the current context. The noun that follows identifies what “this” refers to, as in この本.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "この",
+        "contribution_en": "Points to something near the speaker or salient in context; it modifies the noun that follows.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "d03e9d6a480e55394465826881c53672e2e7d71cfa1584ea4d020b783222513d",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [
+    {
+      "id": "ja-audit-request-8fcb64083b8280e5",
+      "reason": "The part gloss restates the explanation's general meaning and modifier function without adding a distinct point. Requested change: Keep the explanation of この as a determiner that points to something near the speaker or salient in context; remove the redundant whole-expression part gloss.",
+      "entry_id": "ja-e9e56ef8d397f015",
+      "force_research": false,
+      "reuse_reviewed_evidence": true
+    }
+  ],
+  "status": "reviewed",
+  "result_digest": "57e29ff5408de53987bcdca7dc9af18dbb8836693e94f9c3d8b89a77244818ab"
+}

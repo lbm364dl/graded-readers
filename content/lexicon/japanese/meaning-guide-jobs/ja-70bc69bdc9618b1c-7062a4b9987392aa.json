@@ -1,0 +1,37 @@
+{
+  "id": "ja-70bc69bdc9618b1c-7062a4b9987392aa",
+  "entry_id": "ja-70bc69bdc9618b1c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-70bc69bdc9618b1c",
+      "headword": "黄色",
+      "reading": "きいろ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-70bc69bdc9618b1c-1",
+          "definition": "the color yellow"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "胃が弱く、皮膚は淡い黄色で、弾力のない不活発な様子を見せている。",
+        "gloss": "yellow",
+        "sense_id": "ja-70bc69bdc9618b1c-1"
+      },
+      {
+        "sentence": "ところが主人の絵は、黄色でも黒でも灰色でも茶色でもなく、何とも説明できない色だった。",
+        "gloss": "yellow",
+        "sense_id": "ja-70bc69bdc9618b1c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "671e3e5f6f34ac895f7c2139e0b9927ec8ef8776374e5f02cf8bcf3a6470819c"
+}

@@ -1,0 +1,94 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_049-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 494,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了七星坛的具体布置、祭风过程及周瑜各路兵马的具体分工。",
+      "classification": "material",
+      "reason": "具体祭风过程包含孔明连续登坛、暂未起风及三更突起东南风的关键时间与因果；周瑜各路兵马的分工也构成后续协同进攻的战术基础，不能完全视为装饰性细节。",
+      "required_fix": "补充七星坛的核心布置与祭风过程，尤其是一日三次登坛无风、三更东南风骤起；概述六路兵马及其主要进攻方向和任务。"
+    },
+    {
+      "omission_note": "刘备一方糜竺、糜芳、刘封、刘琦等人的部署被概括或省略。",
+      "classification": "material",
+      "reason": "这些部署交代了刘备军对败军、器械及武昌岸口的拦截安排，完善了赤壁战后的包围与追击体系；省略后，刘备一方的协同部署和相关人物行动不完整。",
+      "required_fix": "补充刘琦驻守武昌岸口、擒截逃兵，以及糜竺、糜芳、刘封驾船沿江剿擒败军并夺取器械的安排。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“周瑜因为苦等不到东南风，急病卧床”把周瑜的病明确解释为等风所致，原文未明说，且该病带有试探诸葛亮的成分。",
+      "classification": "material",
+      "reason": "这增加了周瑜因苦等东南风而发病的明确因果，改变了原文中周瑜突然病倒并借病试探孔明的情节理解。",
+      "required_fix": "改为周瑜突然病倒，鲁肃请孔明诊治；不要明确说周瑜因苦等东南风而发病。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“关羽和诸将伏击曹操退路”弱化了关羽单独负责华容道、并立下军令状这一关键情节。",
+      "classification": "material",
+      "reason": "这将关羽单独奉命把守华容道并立军令状的关键部署泛化为与诸将共同伏击，削弱了后续关羽是否放走曹操及承担军法责任的因果基础。",
+      "required_fix": "明确写出赵云守乌林小路、张飞守彝陵，关羽单独奉命伏击华容道，并立下军令状。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了七星坛的具体布置、祭风过程及周瑜各路兵马的具体分工。",
+      "classification": "material",
+      "reason": "具体祭风过程包含孔明连续登坛、暂未起风及三更突起东南风的关键时间与因果；周瑜各路兵马的分工也构成后续协同进攻的战术基础，不能完全视为装饰性细节。",
+      "required_fix": "补充七星坛的核心布置与祭风过程，尤其是一日三次登坛无风、三更东南风骤起；概述六路兵马及其主要进攻方向和任务。"
+    },
+    {
+      "omission_note": "刘备一方糜竺、糜芳、刘封、刘琦等人的部署被概括或省略。",
+      "classification": "material",
+      "reason": "这些部署交代了刘备军对败军、器械及武昌岸口的拦截安排，完善了赤壁战后的包围与追击体系；省略后，刘备一方的协同部署和相关人物行动不完整。",
+      "required_fix": "补充刘琦驻守武昌岸口、擒截逃兵，以及糜竺、糜芳、刘封驾船沿江剿擒败军并夺取器械的安排。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“周瑜因为苦等不到东南风，急病卧床”把周瑜的病明确解释为等风所致，原文未明说，且该病带有试探诸葛亮的成分。",
+      "classification": "material",
+      "reason": "这增加了周瑜因苦等东南风而发病的明确因果，改变了原文中周瑜突然病倒并借病试探孔明的情节理解。",
+      "required_fix": "改为周瑜突然病倒，鲁肃请孔明诊治；不要明确说周瑜因苦等东南风而发病。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“关羽和诸将伏击曹操退路”弱化了关羽单独负责华容道、并立下军令状这一关键情节。",
+      "classification": "material",
+      "reason": "这将关羽单独奉命把守华容道并立军令状的关键部署泛化为与诸将共同伏击，削弱了后续关羽是否放走曹操及承担军法责任的因果基础。",
+      "required_fix": "明确写出赵云守乌林小路、张飞守彝陵，关羽单独奉命伏击华容道，并立下军令状。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 494,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_085-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 949,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "称刘禅为“年幼”，原文只说“孱弱”，未明确其年幼。",
+      "classification": "material",
+      "reason": "“年幼”是原文未支持的具体年龄事实，超出“孱弱”的含义。",
+      "required_fix": "将“年幼”改为“孱弱”，不要补充原文未明确的年龄信息。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“李严写假信给孟达”不够准确：原文是伪造一封“只做李严亲笔”的信，并非李严亲自写信。",
+      "classification": "material",
+      "reason": "改变了伪造书信的实际行为主体，将诸葛亮安排伪造并仿李严笔迹误写为李严亲自写信。",
+      "required_fix": "改为“诸葛亮伪造一封仿李严亲笔的信，送给孟达”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "称刘禅为“年幼”，原文只说“孱弱”，未明确其年幼。",
+      "classification": "material",
+      "reason": "“年幼”是原文未支持的具体年龄事实，超出“孱弱”的含义。",
+      "required_fix": "将“年幼”改为“孱弱”，不要补充原文未明确的年龄信息。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“李严写假信给孟达”不够准确：原文是伪造一封“只做李严亲笔”的信，并非李严亲自写信。",
+      "classification": "material",
+      "reason": "改变了伪造书信的实际行为主体，将诸葛亮安排伪造并仿李严笔迹误写为李严亲自写信。",
+      "required_fix": "改为“诸葛亮伪造一封仿李严亲笔的信，送给孟达”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 949,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

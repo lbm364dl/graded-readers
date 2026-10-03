@@ -1,0 +1,66 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_019-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 158,
+  "required_range": [
+    98,
+    182
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了关羽、张飞与玄德重聚，以及刘备家属被寻回等情节。",
+      "classification": "material",
+      "reason": "关羽、张飞与玄德重聚是重要关系事件，刘备家属获救也完成了前文的关键后果，省略会削弱后续叙事衔接。",
+      "required_fix": "补写关羽、张飞与玄德重聚，以及糜竺告知刘备家属无恙并被寻回的情节。"
+    },
+    {
+      "omission_note": "省略了曹操取得徐州后与玄德分兵部署的过程。",
+      "classification": "material",
+      "reason": "分兵部署交代了刘备为何前往淮南径路、曹操为何独自攻下邳，是从夺取徐州到围攻下邳的重要战略因果和时间衔接。",
+      "required_fix": "补写曹操取得徐州后任命刘备防守淮南径路、自己率军攻打下邳的部署过程。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了关羽、张飞与玄德重聚，以及刘备家属被寻回等情节。",
+      "classification": "material",
+      "reason": "关羽、张飞与玄德重聚是重要关系事件，刘备家属获救也完成了前文的关键后果，省略会削弱后续叙事衔接。",
+      "required_fix": "补写关羽、张飞与玄德重聚，以及糜竺告知刘备家属无恙并被寻回的情节。"
+    },
+    {
+      "omission_note": "省略了曹操取得徐州后与玄德分兵部署的过程。",
+      "classification": "material",
+      "reason": "分兵部署交代了刘备为何前往淮南径路、曹操为何独自攻下邳，是从夺取徐州到围攻下邳的重要战略因果和时间衔接。",
+      "required_fix": "补写曹操取得徐州后任命刘备防守淮南径路、自己率军攻打下邳的部署过程。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 158,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-e3648052675f897d-53fee32127b30628",
+  "entry_id": "ja-e3648052675f897d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e3648052675f897d",
+      "headword": "邪魔",
+      "reading": "じゃま",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e3648052675f897d-1",
+          "definition": "obstruction; hindrance; interference"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そして、もう写生の邪魔をしたのだから仕方がないと思い、裏へ行って用を足そうと、ゆっくり歩き出した。",
+        "gloss": "disturbance; interference",
+        "sense_id": "ja-e3648052675f897d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c2a27ae3e0fcf7b951fbb367db317e86646da034dd03add53d57f711bbb10b02"
+}

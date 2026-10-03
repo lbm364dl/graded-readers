@@ -1,0 +1,58 @@
+import pytest
+
+from pipeline.adaptation_policy import (
+    policy_for,
+    target_chars_for_source_length,
+    target_length_bounds,
+)
+
+
+def test_lower_levels_allow_broad_omission():
+    for level in ("hsk1", "hsk2", "hsk3"):
+        policy = policy_for(level)
+        assert policy.audit_source_omissions is False
+        assert "omit" in policy.scope.lower()
+    assert policy_for("hsk1").max_target_chars < policy_for("hsk3").max_target_chars
+
+
+def test_higher_levels_keep_source_omission_audit():
+    for level in ("hsk4", "hsk5", "hsk6"):
+        assert policy_for(level).audit_source_omissions is True
+
+
+def test_word_budgets_are_strict_for_beginners_and_allow_literary_layer_later():
+    assert [
+        policy_for(f"hsk{level}").max_above_level_ratio
+        for level in range(1, 7)
+    ] == [0.15, 0.18, 0.20, 0.25, 0.25, 0.30]
+
+
+def test_unknown_level_fails_closed():
+    with pytest.raises(ValueError, match="unsupported adaptation level"):
+        policy_for("hsk0")
+
+
+def test_source_relative_targets_follow_nonlinear_ladder():
+    assert [
+        target_chars_for_source_length(851, f"hsk{level}")
+        for level in range(1, 7)
+    ] == [300, 600, 851, 723, 808, 851]
+
+
+def test_full_chapter_beginner_targets_match_editorial_ladder():
+    assert [
+        target_chars_for_source_length(3860, f"hsk{level}")
+        for level in range(1, 4)
+    ] == [386, 772, 1544]
+
+
+def test_long_sources_are_abridged_with_level_specific_caps():
+    assert [
+        target_chars_for_source_length(20_000, f"hsk{level}")
+        for level in range(1, 7)
+    ] == [450, 900, 1800, 7000, 9000, 12000]
+
+
+def test_length_bounds_are_tighter_after_hsk1():
+    assert target_length_bounds(1000, "hsk1") == (700, 1170)
+    assert target_length_bounds(1000, "hsk4") == (850, 1150)

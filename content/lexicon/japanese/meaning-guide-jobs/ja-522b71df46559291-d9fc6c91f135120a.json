@@ -1,0 +1,32 @@
+{
+  "id": "ja-522b71df46559291-d9fc6c91f135120a",
+  "entry_id": "ja-522b71df46559291",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-522b71df46559291",
+      "headword": "ために",
+      "reading": "ために",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-522b71df46559291-1",
+          "definition": "because of; due to"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩の家の主人が、その我儘のために失敗した話をしよう。",
+        "gloss": "because of; due to",
+        "sense_id": "ja-522b71df46559291-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5f15615ba35236914fcee2ca734487d007de7e126037912dad6348efffe0f315"
+}

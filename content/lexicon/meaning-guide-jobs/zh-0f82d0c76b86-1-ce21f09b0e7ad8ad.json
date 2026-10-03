@@ -1,0 +1,31 @@
+{
+  "id": "zh-0f82d0c76b86-1-ce21f09b0e7ad8ad",
+  "entry_id": "zh-0f82d0c76b86-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-0f82d0c76b86-1",
+      "headword": "惨重",
+      "kind": "word",
+      "reading": "cǎnzhòng",
+      "senses": [
+        {
+          "id": "zh-0f82d0c76b86-1-s1",
+          "definition": "severe; heavy (of losses or damage)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "龚景率民兵出城助战，黄巾军死伤惨重，最终解开了青州之围。",
+        "gloss": "severe",
+        "sense_id": "zh-0f82d0c76b86-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0d78c5c679f33f09bca52c9a9720ed664e68171ab6c87643c91efe6ba2c9c1a0"
+}

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff315-a0cb-7f90-a5f8-d2742b7291ef"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.94,\"naturalness\":0.95,\"readability\":0.96,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"关羽并非真正进城，而是夜间假扮曹军到城门诱出车胄后将其斩杀；改写为“带人进城”略有失真。\"],\"language_problems\":[\"“有五个月身子的董承妹妹”略显口语化，但不影响理解。\"],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":32369,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":642,"reasoning_output_tokens":516}}

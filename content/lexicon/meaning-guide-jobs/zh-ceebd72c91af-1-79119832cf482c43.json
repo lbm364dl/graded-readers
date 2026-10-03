@@ -1,0 +1,36 @@
+{
+  "id": "zh-ceebd72c91af-1-79119832cf482c43",
+  "entry_id": "zh-ceebd72c91af-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ceebd72c91af-1",
+      "headword": "长社",
+      "kind": "name",
+      "reading": "Chángshè",
+      "senses": [
+        {
+          "id": "zh-ceebd72c91af-1-s1",
+          "definition": "a place name"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军退到长社，靠着草地扎营。",
+        "gloss": "Changshe",
+        "sense_id": "zh-ceebd72c91af-1-s1"
+      },
+      {
+        "sentence": "黄巾军战事不利，退入长社，用草扎营。",
+        "gloss": "Changshe",
+        "sense_id": "zh-ceebd72c91af-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "38b981f2610dba3fea1e56736a2e4e5b9a75ebd5296881b935103ea5d4a6379f"
+}

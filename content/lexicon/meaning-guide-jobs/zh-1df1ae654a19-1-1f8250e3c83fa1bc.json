@@ -1,0 +1,197 @@
+{
+  "id": "zh-1df1ae654a19-1-1f8250e3c83fa1bc",
+  "entry_id": "zh-1df1ae654a19-1",
+  "reason": "requested",
+  "item": {
+    "entry": {
+      "id": "zh-1df1ae654a19-1",
+      "headword": "许多",
+      "kind": "word",
+      "reading": "xǔduō",
+      "senses": [
+        {
+          "id": "zh-1df1ae654a19-1-s1",
+          "definition": "many; a large number of"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "许多百姓跟着他们，天下变得很乱。",
+        "gloss": "many",
+        "sense_id": "zh-1df1ae654a19-1-s1"
+      },
+      {
+        "sentence": "之后雷雨和冰雹下到半夜，许多房屋被毁。",
+        "gloss": "many",
+        "sense_id": "zh-1df1ae654a19-1-s1"
+      },
+      {
+        "sentence": "程远志被杀后，黄巾军纷纷逃走，刘备带兵追赶，许多人投降。",
+        "gloss": "many; a lot of",
+        "sense_id": "zh-1df1ae654a19-1-s1"
+      },
+      {
+        "sentence": "这一战中，曹操杀死一万多人，夺得旗子、战鼓和许多马匹。",
+        "gloss": "many",
+        "sense_id": "zh-1df1ae654a19-1-s1"
+      },
+      {
+        "sentence": "接着，大雷、大雨和冰雹一起落下，直到半夜才停止，许多房屋被毁。",
+        "gloss": "many",
+        "sense_id": "zh-1df1ae654a19-1-s1"
+      },
+      {
+        "sentence": "信徒不停增多，张角也从中聚集了许多百姓。",
+        "gloss": "many",
+        "sense_id": "zh-1df1ae654a19-1-s1"
+      },
+      {
+        "sentence": "他杀死许多人，夺得许多旗帜、战鼓和马匹。",
+        "gloss": "many",
+        "sense_id": "zh-1df1ae654a19-1-s1"
+      },
+      {
+        "sentence": "忽然雷雨夹着冰雹，下到半夜才停，许多房屋被毁。",
+        "gloss": "many",
+        "sense_id": "zh-1df1ae654a19-1-s1"
+      },
+      {
+        "sentence": "恰好张梁、张宝已经败退，曹操截住他们，斩首万余级，夺得许多旗帜、金鼓和马匹。",
+        "gloss": "many",
+        "sense_id": "zh-1df1ae654a19-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-1df1ae654a19-1",
+    "claim_ids": [
+      "c1",
+      "c2"
+    ],
+    "structure": "lexicalized",
+    "explanation_en": "许多 means “many” or “a large number of.” It is used as a whole quantity word; 多 suggests numerousness, but 许 does not add a reliably separate degree meaning.",
+    "caveat_en": "Treat 许多 as a whole rather than reading 许 as an independent intensifier meaning “very.”",
+    "parts": [],
+    "research": {
+      "entry_id": "zh-1df1ae654a19-1",
+      "status": "partial",
+      "sources": [
+        {
+          "id": "s1",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=111469&la=0&powerMode=0",
+          "title": "教育部《重編國語辭典修訂本》：許多",
+          "accessed_at": "2026-09-26",
+          "summary_en": "Defines 許多 as 很多, lists 很多 and 很少 as synonyms/antonyms, and gives examples referring to groups of people. It supports the supplied general quantity sense but does not analyze the contributions of 許 and 多 separately."
+        },
+        {
+          "id": "s2",
+          "url": "https://www.cie.sdu.edu.cn/__local/D/03/0B/708AA8B5706A4DD1E558D22ABD9_C678C167_E794B.pdf?e=.pdf",
+          "title": "“许+形”式短语与词汇研究",
+          "accessed_at": "2026-09-26",
+          "summary_en": "This study says modern 许多 means 很多 or 非常多 and is a lexical whole whose 许 cannot simply be analyzed as a degree adverb modifying 多. It proposes that older 许+adjective forms developed from 如许+adjective constructions meaning roughly 'such/this much + adjective', and that emphatic uses grew in particular sentence patterns. It cites older examples, including 如许多 and 许多, but its proposed historical development does not independently prove the derivation of the modern quantity word."
+        },
+        {
+          "id": "s3",
+          "url": "https://dylc.cbpt.cnki.net/portal/journal/portal/client/paper/b25cd812da5ec51c521c26ba5acdc83d",
+          "title": "韵律构词与问数词“许多”的形成",
+          "accessed_at": "2026-09-26",
+          "summary_en": "Feng He distinguishes the Ming–Qing interrogative 许多 ('how many/how much') from quantity-denoting 许多. The abstract proposes that the interrogative form arose from 几许+多 through deletion of 几. In a note, the author says ordinary quantity 许多 became common from the Qing period, cites examples, and refers to a separate 2014 study for the proposed antecedents 尔许多 or 如许多. This page supports the distinction and reports the scholarly proposal, but does not provide the full text of that separate study."
+        },
+        {
+          "id": "s4",
+          "url": "https://zdic.net/hans/%E8%AE%B8%E5%A4%9A",
+          "title": "汉典：许多",
+          "accessed_at": "2026-09-26",
+          "summary_en": "Lists quantity-denoting 许多, interrogative 许多, and an emphatic large-quantity or degree use separately, with historical examples. This is useful for identifying distinct senses; the entry does not establish how the target sense developed."
+        }
+      ],
+      "claims": [
+        {
+          "id": "c1",
+          "text_en": "For the supplied sense, 许多 as a whole means 'many' or 'a large number of'; the Ministry of Education dictionary equates it with 很多 and illustrates it with people. The definition and example do not identify a narrower kind of quantity.",
+          "source_ids": [
+            "s1"
+          ]
+        },
+        {
+          "id": "c2",
+          "text_en": "For present-day quantity 许多, the specialist study treats the expression as a lexical whole and cautions against assigning 许 the independent synchronic function of a degree adverb such as 很 or 非常. On this evidence, 许 need not be given a separate modern contribution distinct from 多.",
+          "source_ids": [
+            "s2"
+          ]
+        },
+        {
+          "id": "c3",
+          "text_en": "A specialist historical account proposes that 许+adjective forms developed from constructions such as 如许+多, with 如许 conveying a demonstrative quantity or degree ('such/this much'). The study cites older examples and argues for continuity, but that analysis is a proposed historical path; the material opened here does not independently establish every step as the derivation of the modern quantity word 许多.",
+          "source_ids": [
+            "s2",
+            "s3"
+          ]
+        },
+        {
+          "id": "c4",
+          "text_en": "The spelling 许多 also occurs as an interrogative meaning 'how many/how much'. Feng He distinguishes that use from the supplied declarative quantity sense and proposes 几许+多 as the interrogative use's source. That proposed account concerns the interrogative sense, not the origin of target-sense 许多.",
+          "source_ids": [
+            "s3",
+            "s4"
+          ]
+        }
+      ],
+      "searches": [
+        {
+          "query": "许多 词汇化 许 多 语义 许+形 短语 研究",
+          "opened_urls": [
+            "https://dylc.cbpt.cnki.net/portal/journal/portal/client/paper/b25cd812da5ec51c521c26ba5acdc83d",
+            "https://www.cie.sdu.edu.cn/__local/D/03/0B/708AA8B5706A4DD1E558D22ABD9_C678C167_E794B.pdf?e=.pdf",
+            "https://dict.revised.moe.edu.tw/search.jsp?la=0&md=3&page=2&powerMode=0&qCol=1&qMd=0&word=%E5%A4%9A"
+          ]
+        },
+        {
+          "query": "韵律构词与问数词“许多”的形成 冯赫",
+          "opened_urls": [
+            "https://dylc.cbpt.cnki.net/portal/journal/portal/client/paper/b25cd812da5ec51c521c26ba5acdc83d"
+          ]
+        },
+        {
+          "query": "“许+形”式短语与词汇研究 作者",
+          "opened_urls": [
+            "https://www.cie.sdu.edu.cn/__local/D/03/0B/708AA8B5706A4DD1E558D22ABD9_C678C167_E794B.pdf"
+          ]
+        },
+        {
+          "query": "(direct open)",
+          "opened_urls": [
+            "https://dict.revised.moe.edu.tw/dictView.jsp?ID=111469&la=0&powerMode=0",
+            "https://www.cie.sdu.edu.cn/__local/D/03/0B/708AA8B5706A4DD1E558D22ABD9_C678C167_E794B.pdf?e=.pdf",
+            "https://dylc.cbpt.cnki.net/portal/journal/portal/client/paper/b25cd812da5ec51c521c26ba5acdc83d",
+            "https://zdic.net/hans/%E8%AE%B8%E5%A4%9A"
+          ]
+        }
+      ],
+      "gaps": [
+        "The opened evidence supports a synchronic whole-word analysis and a scholarly proposal connecting older 如许/尔许 constructions with later 许+adjective forms. It does not provide the full 2014 study cited for that proposal or enough independently inspected primary attestations to verify the exact historical derivation of modern quantity 许多."
+      ]
+    },
+    "input_fingerprint": "d17295922b3812984324e86cb3af0ebc56a448bb22c742c5a539d6a89e8426b6",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "partial",
+    "editorial_route": "researched",
+    "research_questions": [
+      "In present-day 许多, does 许 make a useful contribution distinct from 多 (for example, a sense of quantity or abundance), or is the word best treated as a conventional whole? What evidence supports that analysis?"
+    ],
+    "fulfilled_requests": []
+  },
+  "requests": [
+    {
+      "entry_id": "zh-1df1ae654a19-1",
+      "id": "hsk2-reader-xuduo-xu",
+      "reason": "Make 许多 intuitive without falsely treating 许 as an independently productive degree adverb. Use the existing research on quantity-denoting forms to explain any supported bridge; distinguish a scholarly historical proposal from an established derivation. Do not equate our incomplete evidence with unknowability. Record unresolved component questions internally in investigation_questions.",
+      "force_research": true
+    }
+  ],
+  "status": "reviewed",
+  "result_digest": "07f71ee64602c0933bcc60739747fe542a0648c912508ce981b5da00915a25bd"
+}

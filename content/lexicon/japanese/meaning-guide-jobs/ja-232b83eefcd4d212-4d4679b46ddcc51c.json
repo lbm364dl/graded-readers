@@ -1,0 +1,32 @@
+{
+  "id": "ja-232b83eefcd4d212-4d4679b46ddcc51c",
+  "entry_id": "ja-232b83eefcd4d212",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-232b83eefcd4d212",
+      "headword": "騒々しい",
+      "reading": "そうぞうしい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-232b83eefcd4d212-1",
+          "definition": "noisy; clamorous; loud and disorderly"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "最後につまみ出されようとした時、この家の主人が「騒々しい。",
+        "gloss": "noisy; clamorous",
+        "sense_id": "ja-232b83eefcd4d212-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0811df096c8423ccaab1b4753f2513b3c98ea4c771f14208c489c40e455468a2"
+}

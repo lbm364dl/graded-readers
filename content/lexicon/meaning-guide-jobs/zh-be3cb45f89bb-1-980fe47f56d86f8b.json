@@ -1,0 +1,31 @@
+{
+  "id": "zh-be3cb45f89bb-1-980fe47f56d86f8b",
+  "entry_id": "zh-be3cb45f89bb-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-be3cb45f89bb-1",
+      "headword": "不满",
+      "kind": "word",
+      "reading": "bùmǎn",
+      "senses": [
+        {
+          "id": "zh-be3cb45f89bb-1-s1",
+          "definition": "dissatisfied; discontented"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞又气又不满，拿刀要杀董卓。",
+        "gloss": "dissatisfied",
+        "sense_id": "zh-be3cb45f89bb-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e61ef2263327a1ed1acc16317fa0ce5256cf4ab7bbd00c80006dcb3d0aa8047a"
+}

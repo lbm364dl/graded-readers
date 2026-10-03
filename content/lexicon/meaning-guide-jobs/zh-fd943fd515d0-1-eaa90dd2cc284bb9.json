@@ -1,0 +1,31 @@
+{
+  "id": "zh-fd943fd515d0-1-eaa90dd2cc284bb9",
+  "entry_id": "zh-fd943fd515d0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-fd943fd515d0-1",
+      "headword": "孝顺",
+      "kind": "word",
+      "reading": "xiàoshùn",
+      "senses": [
+        {
+          "id": "zh-fd943fd515d0-1-s1",
+          "definition": "to treat one's parents with filial devotion"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他很早失去父亲，依靠手艺养家，也一直孝顺母亲。",
+        "gloss": "to be filial",
+        "sense_id": "zh-fd943fd515d0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0413137e46c07be407a5b63f97988f54e29be3ef5d7a960ad037190b9952d06e"
+}

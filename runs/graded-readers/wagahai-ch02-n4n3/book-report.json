@@ -1,0 +1,20 @@
+{
+  "book_run_id": "wagahai-ch02-n4n3",
+  "status": "running",
+  "updated_at": "2026-08-06T17:20:25.995917+00:00",
+  "global_agent_concurrency": 2,
+  "chapter_concurrency": 2,
+  "runs": [
+    {
+      "source": "/home/usuario/hsk-graded-readers/books/japanese/wagahai_wa_neko_de_aru/chapter_02.txt",
+      "level": "n4",
+      "run_id": "wagahai-ch02-n4n3/chapter_02-n4",
+      "status": "complete",
+      "chapter_cjk": 2845,
+      "japanese_chars": 2845,
+      "target_chars": 3200,
+      "attempts": 1
+    }
+  ],
+  "length_violations": []
+}

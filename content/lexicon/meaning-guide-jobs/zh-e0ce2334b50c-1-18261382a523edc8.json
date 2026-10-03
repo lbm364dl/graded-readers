@@ -1,0 +1,31 @@
+{
+  "id": "zh-e0ce2334b50c-1-18261382a523edc8",
+  "entry_id": "zh-e0ce2334b50c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e0ce2334b50c-1",
+      "headword": "面",
+      "kind": "word",
+      "reading": "miàn",
+      "senses": [
+        {
+          "id": "zh-e0ce2334b50c-1-s1",
+          "definition": "front; forward side"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹操的军马都打着红旗，从前面截住黄巾军的去路。",
+        "gloss": "side; direction",
+        "sense_id": "zh-e0ce2334b50c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3a35aeac11c1ffa25eddd7401f2e046ee840ee969c010f2839ac881fdecbb50d"
+}

@@ -1,0 +1,42 @@
+{
+  "id": "ja-e3bfc7d9d3d48c57-ba223f92d43af63a",
+  "entry_id": "ja-e3bfc7d9d3d48c57",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e3bfc7d9d3d48c57",
+      "headword": "ほど",
+      "reading": "ほど",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-e3bfc7d9d3d48c57-1",
+          "definition": "about; approximately"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が家に来て一月ほどたった給料日に、主人は水彩絵具と毛筆とワットマンという紙を買い、今日から絵をかくと決めた。",
+        "gloss": "about; approximately",
+        "sense_id": "ja-e3bfc7d9d3d48c57-1"
+      },
+      {
+        "sentence": "吾輩の家の裏には、十坪ほどの茶園がある。",
+        "gloss": "about; approximately",
+        "sense_id": "ja-e3bfc7d9d3d48c57-1"
+      },
+      {
+        "sentence": "黒の主人はそのお金で一円五十銭ほど得たのに、黒にはろくな食べ物を与えなかったという。",
+        "gloss": "about; approximately",
+        "sense_id": "ja-e3bfc7d9d3d48c57-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c98ec9b8890202879700595aa42162726ca0dc38d6ed9bf400784201aed75f6c"
+}

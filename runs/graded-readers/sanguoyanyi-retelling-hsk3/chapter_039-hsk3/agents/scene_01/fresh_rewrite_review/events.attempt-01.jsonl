@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff434-b279-7180-8626-0afc69f637d8"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.96,\"naturalness\":0.98,\"readability\":0.98,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"“姜维救退司马望，夜里又被两面夹击”略显因果含混；原文是姜维抵达后杀退司马望，随后邓艾夜袭、司马望出兵，形成夹攻。\",\"“带三十万兵攻洮阳”可理解为姜维统率三十万出兵，但具体攻城先锋为夏侯霸，表述略有简化。\"],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":26950,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":155,"reasoning_output_tokens":0}}

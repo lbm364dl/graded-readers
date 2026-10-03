@@ -1,0 +1,31 @@
+{
+  "id": "zh-109c3c1f43ae-1-16dea72b15c624ee",
+  "entry_id": "zh-109c3c1f43ae-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-109c3c1f43ae-1",
+      "headword": "原",
+      "kind": "word",
+      "reading": "yuán",
+      "senses": [
+        {
+          "id": "zh-109c3c1f43ae-1-s1",
+          "definition": "originally; at first"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角原是没有考中的读书人。",
+        "gloss": "originally",
+        "sense_id": "zh-109c3c1f43ae-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6eb59fb3f3fab935d97fed8a0cbc83d7e0fc0f68d5159b53ca8822ff92c6832b"
+}

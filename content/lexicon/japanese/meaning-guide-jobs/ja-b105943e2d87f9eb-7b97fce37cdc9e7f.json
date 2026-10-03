@@ -1,0 +1,47 @@
+{
+  "id": "ja-b105943e2d87f9eb-7b97fce37cdc9e7f",
+  "entry_id": "ja-b105943e2d87f9eb",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-b105943e2d87f9eb",
+      "headword": "ようだ",
+      "reading": "ようだ",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-b105943e2d87f9eb-1",
+          "definition": "Expresses resemblance or appearance: to be like or as if; with a clause, to seem or appear to be the case."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ただ、書生の手のひらに乗せられて、すっと上へ持ち上げられた時、何だかふわふわするような感じがしただけだった。",
+        "gloss": "like; seeming",
+        "sense_id": "ja-b105943e2d87f9eb-1"
+      },
+      {
+        "sentence": "主人は胃が弱く、顔の色も黄色く、元気がないように見える。",
+        "gloss": "as if; seemingly",
+        "sense_id": "ja-b105943e2d87f9eb-1"
+      },
+      {
+        "sentence": "太陽の光を受けた毛は、黒い中から火が出るように光っていた。",
+        "gloss": "as if; in such a way that",
+        "sense_id": "ja-b105943e2d87f9eb-1"
+      },
+      {
+        "sentence": "食べ物には困っていないようだった。",
+        "gloss": "it seemed that; apparently",
+        "sense_id": "ja-b105943e2d87f9eb-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "26355ab4f540bb2791a9a4c50c340f11cded8143454cc952b8bb8eef741d49dd"
+}

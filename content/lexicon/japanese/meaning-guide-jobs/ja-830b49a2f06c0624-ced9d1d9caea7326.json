@@ -1,0 +1,37 @@
+{
+  "id": "ja-830b49a2f06c0624-ced9d1d9caea7326",
+  "entry_id": "ja-830b49a2f06c0624",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-830b49a2f06c0624",
+      "headword": "覚える",
+      "reading": "おぼえる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-830b49a2f06c0624-1",
+          "definition": "to remember; retain in memory"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "暗くてぬれている所で、ニャーニャー鳴いていたことだけは覚えている。",
+        "gloss": "remember; retain in memory",
+        "sense_id": "ja-830b49a2f06c0624-1"
+      },
+      {
+        "sentence": "大きな音がして落ち、目から火が出たところまでは覚えている。",
+        "gloss": "remember; have in memory",
+        "sense_id": "ja-830b49a2f06c0624-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9bad5d02a124ebc42afb9b0002b8a62c3e5d647a0c1ccddddaa2ae35af85d5d0"
+}

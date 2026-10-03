@@ -1,0 +1,31 @@
+{
+  "id": "zh-de8f37143458-1-9b2399f546cefdb9",
+  "entry_id": "zh-de8f37143458-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-de8f37143458-1",
+      "headword": "帮忙",
+      "kind": "word",
+      "reading": "bāngmáng",
+      "senses": [
+        {
+          "id": "zh-de8f37143458-1-s1",
+          "definition": "to help; to give assistance"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "青州城里的人也出来帮忙，青州之围终于解开。",
+        "gloss": "help",
+        "sense_id": "zh-de8f37143458-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9d2f2656acdff133bb288c3e10d079e26ab513fac9687a685977af540f1599db"
+}

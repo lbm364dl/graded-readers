@@ -1,0 +1,32 @@
+{
+  "id": "ja-fdd59e58d7f1e352-a70d596336ebe5c2",
+  "entry_id": "ja-fdd59e58d7f1e352",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-fdd59e58d7f1e352",
+      "headword": "見るなり",
+      "reading": "みるなり",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-fdd59e58d7f1e352-1",
+          "definition": "as soon as someone sees something; immediately upon seeing"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "おさんは吾輩を見るなり、首をつかんで表へ投げ出した。",
+        "gloss": "as soon as she saw",
+        "sense_id": "ja-fdd59e58d7f1e352-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "10ae9915bda62bd09e8c70f1cc151e6d9d5a05899b5c3cd45ae6532a37e06fd1"
+}

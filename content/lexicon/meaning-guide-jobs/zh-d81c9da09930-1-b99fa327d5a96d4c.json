@@ -1,0 +1,31 @@
+{
+  "id": "zh-d81c9da09930-1-b99fa327d5a96d4c",
+  "entry_id": "zh-d81c9da09930-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d81c9da09930-1",
+      "headword": "赶来",
+      "kind": "construction",
+      "reading": "gǎnlai",
+      "senses": [
+        {
+          "id": "zh-d81c9da09930-1-s1",
+          "definition": "to come in a hurry"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人上山，看见汉军已经失败，黄巾军从四面赶来，旗上写着“天公将军”。",
+        "gloss": "come rushing",
+        "sense_id": "zh-d81c9da09930-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "680c2c60ae41527cc011b6dcb8e0fda3cccbd828c0365840d586434002f22c01"
+}

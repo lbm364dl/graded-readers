@@ -1,0 +1,37 @@
+{
+  "id": "ja-d389da65ce8cf843-7dfa7a8711fb3c79",
+  "entry_id": "ja-d389da65ce8cf843",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d389da65ce8cf843",
+      "headword": "隣",
+      "reading": "となり",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d389da65ce8cf843-1",
+          "definition": "the place next to something; a neighboring place or next door"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "すると胃の弱い主人が必ず目を覚まし、隣の部屋から飛び出して来る。",
+        "gloss": "next door; neighboring",
+        "sense_id": "ja-d389da65ce8cf843-1"
+      },
+      {
+        "sentence": "　隣の三毛君は、人間は所有権ということを理解していないと怒っている。",
+        "gloss": "neighboring; next door",
+        "sense_id": "ja-d389da65ce8cf843-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e17f3504901b98b08a0783640e90b0d118b48928873dec18a3befd46ffdb396a"
+}

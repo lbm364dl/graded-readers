@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff2f7-3dab-7783-8f10-15fa2cc3c5d6"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.96,\"naturalness\":0.98,\"readability\":0.98,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"“董卓和吕布从此翻脸”略显绝对，原文中二人当时发生冲突，之后董卓曾暂时安抚吕布。\"],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":32920,"cached_input_tokens":8960,"cache_write_input_tokens":0,"output_tokens":615,"reasoning_output_tokens":516}}

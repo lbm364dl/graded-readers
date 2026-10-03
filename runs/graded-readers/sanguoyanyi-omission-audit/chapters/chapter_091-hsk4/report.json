@@ -1,0 +1,83 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_091-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 706,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "omission_note": "略去曹真提出安邑擒司马懿的具体计策及华歆主张罢免司马懿的过程。",
+      "classification": "material",
+      "reason": "这些内容构成曹叡试探司马懿及最终削职归乡的关键过程和直接原因；接受场景虽保留结果，却省略了重要因果链。",
+      "required_fix": "补回曹真提出安邑设局擒拿司马懿的计策，以及华歆建议罢免司马懿、曹叡据此执行的过程。"
+    },
+    {
+      "omission_note": "略去《出师表》中要求失败治罪、分派内政责任等细节。",
+      "classification": "material",
+      "reason": "自请北伐失败治罪体现孔明的责任承诺和重要性格，内政责任的具体托付也构成出师安排的重要内容，并非单纯装饰性细节。",
+      "required_fix": "补入孔明请求北伐无效则治罪、并将内政得失及相关责任托付给攸之、褘、允等人的内容。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "略去曹真提出安邑擒司马懿的具体计策及华歆主张罢免司马懿的过程。",
+      "classification": "material",
+      "reason": "这些内容构成曹叡试探司马懿及最终削职归乡的关键过程和直接原因；接受场景虽保留结果，却省略了重要因果链。",
+      "required_fix": "补回曹真提出安邑设局擒拿司马懿的计策，以及华歆建议罢免司马懿、曹叡据此执行的过程。"
+    },
+    {
+      "omission_note": "略去《出师表》中要求失败治罪、分派内政责任等细节。",
+      "classification": "material",
+      "reason": "自请北伐失败治罪体现孔明的责任承诺和重要性格，内政责任的具体托付也构成出师安排的重要内容，并非单纯装饰性细节。",
+      "required_fix": "补入孔明请求北伐无效则治罪、并将内政得失及相关责任托付给攸之、褘、允等人的内容。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 671,
+      "review": {
+        "source_fidelity": 8.4,
+        "naturalness": 7.7,
+        "readability": 8.3,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [
+          "“曹丕临终托曹叡给曹真、陈群、司马懿、曹休”句式不自然且语义不清，应改为“曹丕临终嘱托曹真、陈群、司马懿、曹休辅佐曹叡”。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 706,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

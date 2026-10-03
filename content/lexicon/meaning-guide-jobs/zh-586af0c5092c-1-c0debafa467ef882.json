@@ -1,0 +1,80 @@
+{
+  "id": "zh-586af0c5092c-1-c0debafa467ef882",
+  "entry_id": "zh-586af0c5092c-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-586af0c5092c-1",
+      "headword": "死",
+      "kind": "word",
+      "reading": "sǐ",
+      "senses": [
+        {
+          "id": "zh-586af0c5092c-1-s1",
+          "definition": "to die; be dead"
+        },
+        {
+          "id": "zh-586af0c5092c-1-s2",
+          "definition": "to the death; desperately"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "桓帝死后，窦武和陈蕃共辅佐新皇帝。",
+        "gloss": "to die",
+        "sense_id": "zh-586af0c5092c-1-s1"
+      },
+      {
+        "sentence": "他又让人传出“苍天已死，黄天当立”和“岁在甲子，天下大吉”的话，叫百姓在家门上写“甲子”。",
+        "gloss": "to die; be dead",
+        "sense_id": "zh-586af0c5092c-1-s1"
+      },
+      {
+        "sentence": "不求同年同月同日生，但愿同年同月同日死。",
+        "gloss": "to die",
+        "sense_id": "zh-586af0c5092c-1-s1"
+      },
+      {
+        "sentence": "桓帝死后，灵帝即位，大将军窦武、太傅陈蕃一同辅佐他。",
+        "gloss": "to die",
+        "sense_id": "zh-586af0c5092c-1-s1"
+      },
+      {
+        "sentence": "程远志亲眼看见邓茂被张飞杀死，便挥刀直取张飞。",
+        "gloss": "to death",
+        "sense_id": "zh-586af0c5092c-1-s1"
+      },
+      {
+        "sentence": "张梁、张宝死战脱身，曹操随即带兵追击。",
+        "gloss": "to die",
+        "sense_id": "zh-586af0c5092c-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-586af0c5092c-1",
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "死 means “to die” or “be dead”: it describes dying or being in the state of no longer being alive.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "死",
+        "contribution_en": "Means “to die” or “be dead.”",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "3d4c64c6c7d856d6c916fc73a9631812c12d03b10a00ad47d1ceff43dbe9028c",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "95dba9aaec8d1d24bbb7a17a07c0f657056683b8f67953a69336c4fbf703e382"
+}

@@ -1,0 +1,153 @@
+[
+  {
+    "id": "n5-pilot-wagahai-components",
+    "entry_id": "ja-d718a760ae947926",
+    "reason": "The initial guide gives only the definition and register of 吾輩. Explain the useful contributions of 吾 and 輩 and their relationship to the conventional first-person meaning; distinguish supported modern analysis from any historical claim. Do not hide the missing component explanation behind a lexicalized label.",
+    "force_research": true
+  },
+  {
+    "id": "n5-pilot-namae-structured-parts",
+    "entry_id": "ja-c8ab2130c2e0f754",
+    "reason": "The reviewed explanation explicitly discusses 名 and the unresolved contribution of 前 but leaves parts empty. Represent these discussed spelling components as structured parts with supported contributions and the honest limit on 前, without inventing a historical or modern role. Keep the useful explanation and internal investigation question; do not merely concatenate unrelated character definitions.",
+    "reuse_reviewed_evidence": true
+  },
+  {
+    "id": "n5-pilot-namae-sense-coverage",
+    "entry_id": "ja-c8ab2130c2e0f754",
+    "reason": "Keep the reusable explanation within the supplied name/designation sense coverage. The latest prose lists additional reputation and formal/outward-designation senses from historical dictionaries, which are not covered senses in this pilot. Do not claim these other senses are impossible; simply omit that unnecessary expansion. Preserve the structured 名 and 前 parts and honest investigation question. Do not copy a component's other senses into the whole word.",
+    "reuse_reviewed_evidence": true
+  },
+  {
+    "id": "ja-audit-request-06e13a4ec1c1f22a",
+    "reason": "The modern pronoun definition is useful, but the explanation adds a usage chronology and extended component etymology that do not help identify the modern word. Requested change: Shorten the usage chronology and repeated uncertainty. Retain the useful 吾/輩 spelling-to-meaning bridge, structured character parts and an honest concise distinction from historical derivation; do not reduce the explanation to just a definition. Reuse reviewed evidence.",
+    "entry_id": "ja-d718a760ae947926",
+    "force_research": false,
+    "reuse_reviewed_evidence": true
+  },
+  {
+    "id": "ja-audit-request-eea9e67d92952ebc",
+    "reason": "The historical etymology caveat is unrelated to learning the modern question word. Requested change: Retain the modern meaning and its コ・ソ・ア・ド relationship; remove the etymological caveat.",
+    "entry_id": "ja-24764b8641a14e66",
+    "force_research": false,
+    "reuse_reviewed_evidence": true
+  },
+  {
+    "id": "ja-audit-request-b069366a119c7620",
+    "reason": "The classical form and stem analysis are irrelevant to recognizing the modern adjective. Requested change: Explain 暗い as “dark” or “lacking light”; remove the stem and classical-form sentence.",
+    "entry_id": "ja-4c58f7c026c84f39",
+    "force_research": false,
+    "reuse_reviewed_evidence": true
+  },
+  {
+    "id": "ja-audit-request-183c0a7fb8598a1c",
+    "reason": "The explanation repeats the definition and then denies a component split, adding no useful lexical information. Requested change: Define 所 concisely as “place; location”; remove the sentence about how its sense divides.",
+    "entry_id": "ja-cb4ad54ba33d9c57",
+    "force_research": false,
+    "reuse_reviewed_evidence": true
+  },
+  {
+    "id": "ja-audit-request-7932431dec03d362",
+    "reason": "The caveat about repeated kana not being separate semantic parts corrects an unstated misconception. Requested change: Remove the caveat; retain the useful description of the conventional cat-call word and its use with verbs.",
+    "entry_id": "ja-81694b70f5f0de3d",
+    "force_research": false,
+    "reuse_reviewed_evidence": true
+  },
+  {
+    "id": "ja-audit-request-eb4379a7b89b4518",
+    "reason": "Calling 泣く a simple verb and explaining that it is not divided into parts does not clarify its lexical meaning. Requested change: Define 泣く directly as “to cry; weep” and remove the simplicity and breakdown commentary.",
+    "entry_id": "ja-c077953bae1b6adf",
+    "force_research": false,
+    "reuse_reviewed_evidence": true
+  },
+  {
+    "id": "ja-audit-request-05e828bc295e4d3d",
+    "reason": "The part gloss repeats the definition, and その時 is a passage-adjacent example displayed separately. Requested change: Remove the redundant whole-word part gloss. Preserve the independent time/occasion meaning; a minimal generic illustration such as その時 is allowed if useful and is not inherently passage-bound.",
+    "entry_id": "ja-e19f0f73b64bf4fd",
+    "force_research": false,
+    "reuse_reviewed_evidence": true
+  },
+  {
+    "id": "ja-audit-request-9e7c1a1809c4d02d",
+    "reason": "The part gloss restates the whole expression's meaning without adding a distinct explanation. Requested change: Keep the explanation of 初めて and its general usage; remove the redundant whole-expression part gloss.",
+    "entry_id": "ja-f7af53d24c1c67fc",
+    "force_research": false,
+    "reuse_reviewed_evidence": true
+  },
+  {
+    "id": "ja-audit-request-6aee7017e7d1353d",
+    "reason": "The explanation defines 手 twice and adds unnecessary whole-word commentary. Requested change: Use one concise definition such as “hand; the body part at the end of the arm,” removing the redundant sentence and part gloss.",
+    "entry_id": "ja-bcb1db6cacd2ce60",
+    "force_research": false,
+    "reuse_reviewed_evidence": true
+  },
+  {
+    "id": "ja-audit-request-cb579c5d495a93ee",
+    "reason": "The entry defines 目 and then adds an unnecessary claim that it has no meaningful smaller parts. Requested change: Keep “eye; organ of sight” and remove the breakdown claim.",
+    "entry_id": "ja-5cb35b105de32650",
+    "force_research": false,
+    "reuse_reviewed_evidence": true
+  },
+  {
+    "id": "ja-audit-request-dc626debd9cc427a",
+    "reason": "The main explanation and part gloss repeat the same meaning of 中. Requested change: Keep one concise explanation of 中 meaning “inside; within,” including the broader extension only once.",
+    "entry_id": "ja-251db285792ab022",
+    "force_research": false,
+    "reuse_reviewed_evidence": true
+  },
+  {
+    "id": "ja-audit-request-e7c01dac8e5198f8",
+    "reason": "The component description can read as a generative rule for covering siblings of any gender, obscuring that this is the conventional meaning of the whole word. Requested change: Retain the intuitive 兄 (older brother) + 弟 (younger brother) explanation and structured parts. Explain that the conventional WHOLE can cover siblings of any gender; do not imply that 弟 itself contributes sisters. Do not reduce the entry to just a definition.",
+    "entry_id": "ja-6fa7df4bd5e6b657",
+    "force_research": false,
+    "reuse_reviewed_evidence": true
+  },
+  {
+    "id": "ja-audit-request-6c4030f71f538172",
+    "reason": "The meaning is stated in the explanation and repeated in the part gloss, alongside unnecessary whole-word commentary. Requested change: Define 母 as “mother,” optionally retaining the useful own-mother usage note; remove the redundant part gloss and simplicity claim.",
+    "entry_id": "ja-11936d3d1c1c16e9",
+    "force_research": false,
+    "reuse_reviewed_evidence": true
+  },
+  {
+    "id": "ja-audit-request-29d6d6d864804d9f",
+    "reason": "The direct definition of いる is followed by an unnecessary negative claim about having no smaller meaningful parts. Requested change: Keep the direct meaning “to exist; be present (of living things)” and remove the breakdown claim.",
+    "entry_id": "ja-a3df6964e71cf418",
+    "force_research": false,
+    "reuse_reviewed_evidence": true
+  },
+  {
+    "id": "ja-audit-request-cce1bf0b8e9bfb80",
+    "reason": "The explanation repeats the adverb's meaning and adds an unnecessary claim about kana parts. Requested change: Use one concise definition such as “slowly; without haste”; remove the repetition and part commentary.",
+    "entry_id": "ja-62a8bf5f7a727257",
+    "force_research": false,
+    "reuse_reviewed_evidence": true
+  },
+  {
+    "id": "ja-audit-request-be71dcec535f459a",
+    "reason": "The origin label and claim that the writing need not be divided into parts do not help explain the lexical meaning. Requested change: Define 歩く directly as “to walk; move on foot” and remove the origin and breakdown commentary.",
+    "entry_id": "ja-e04c28f2bedecfee",
+    "force_research": false,
+    "reuse_reviewed_evidence": true
+  },
+  {
+    "id": "ja-audit-request-927500a0563439b2",
+    "reason": "The final sentence repeats that 入る is understood as a whole rather than divided into parts. Requested change: Retain the useful movement-from-outside-to-inside distinction and remove the breakdown claim.",
+    "entry_id": "ja-1eb517229b171abf",
+    "force_research": false,
+    "reuse_reviewed_evidence": true
+  },
+  {
+    "id": "ja-audit-request-d86be2741ccfea7f",
+    "reason": "The part gloss repeats the explanation's complete definition of 出す without adding a separate lexical distinction. Requested change: Keep the general explanation of causing something to move outward; remove the redundant whole-verb part gloss.",
+    "entry_id": "ja-7b670af0f888ff63",
+    "force_research": false,
+    "reuse_reviewed_evidence": true
+  },
+  {
+    "id": "ja-audit-request-8fcb64083b8280e5",
+    "reason": "The part gloss restates the explanation's general meaning and modifier function without adding a distinct point. Requested change: Keep the explanation of この as a determiner that points to something near the speaker or salient in context; remove the redundant whole-expression part gloss.",
+    "entry_id": "ja-e9e56ef8d397f015",
+    "force_research": false,
+    "reuse_reviewed_evidence": true
+  }
+]

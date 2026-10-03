@@ -1,0 +1,37 @@
+{
+  "id": "ja-066bacba4096a98c-750002b1132c0779",
+  "entry_id": "ja-066bacba4096a98c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-066bacba4096a98c",
+      "headword": "でも",
+      "reading": "でも",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-066bacba4096a98c-1",
+          "definition": "Adds an inclusive or emphatic sense such as “even” or “any” to a phrase."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "後で聞いた話では、その人間は書生といい、人間の中でも特に悪い者だったらしい。",
+        "gloss": "even among",
+        "sense_id": "ja-066bacba4096a98c-1"
+      },
+      {
+        "sentence": "主人は俳句、新しい詩、英語、弓、歌、バイオリンなど、何にでも手を出すが、どれも上手にならない。",
+        "gloss": "even; anything at all",
+        "sense_id": "ja-066bacba4096a98c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "76d2d0afd2fd020abd0b2c32cf3f525ad05bd45a55da81ed8b80f0b0bfb4e82b"
+}

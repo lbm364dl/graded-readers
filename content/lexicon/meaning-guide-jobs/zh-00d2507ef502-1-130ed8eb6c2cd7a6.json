@@ -1,0 +1,31 @@
+{
+  "id": "zh-00d2507ef502-1-130ed8eb6c2cd7a6",
+  "entry_id": "zh-00d2507ef502-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-00d2507ef502-1",
+      "headword": "一万余",
+      "kind": "word",
+      "reading": "yíwànyú",
+      "senses": [
+        {
+          "id": "zh-00d2507ef502-1-s1",
+          "definition": "more than ten thousand"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "大方有一万余人，小方也有六七千人。",
+        "gloss": "more than ten thousand",
+        "sense_id": "zh-00d2507ef502-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "aba8a930865a9149dbe6dbfb4c5375e91910b9fa76fcf0d66a26edd2dd043f60"
+}

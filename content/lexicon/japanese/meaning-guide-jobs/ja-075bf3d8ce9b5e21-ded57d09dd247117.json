@@ -1,0 +1,32 @@
+{
+  "id": "ja-075bf3d8ce9b5e21-ded57d09dd247117",
+  "entry_id": "ja-075bf3d8ce9b5e21",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-075bf3d8ce9b5e21",
+      "headword": "怒鳴る",
+      "reading": "どなる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-075bf3d8ce9b5e21-1",
+          "definition": "shout or yell angrily"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が大きくあくびをして裏へ行こうとすると、主人は「この馬鹿野郎」と怒鳴った。",
+        "gloss": "shouted angrily",
+        "sense_id": "ja-075bf3d8ce9b5e21-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b0def2077ce16c2fa796dcd3df9d97c4a211b7b3133bfc4e22d098ca14c6a667"
+}

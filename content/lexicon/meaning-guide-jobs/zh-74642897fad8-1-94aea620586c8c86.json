@@ -1,0 +1,51 @@
+{
+  "id": "zh-74642897fad8-1-94aea620586c8c86",
+  "entry_id": "zh-74642897fad8-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-74642897fad8-1",
+      "headword": "告诉",
+      "kind": "word",
+      "reading": "gàosu",
+      "senses": [
+        {
+          "id": "zh-74642897fad8-1-s1",
+          "definition": "tell; convey information to someone"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备请他坐下，告诉他自己的愿望。",
+        "gloss": "tell",
+        "sense_id": "zh-74642897fad8-1-s1"
+      },
+      {
+        "sentence": "你带人去看看那里的情况，回来告诉我。",
+        "gloss": "tell",
+        "sense_id": "zh-74642897fad8-1-s1"
+      },
+      {
+        "sentence": "他把卢植的话告诉皇甫嵩。",
+        "gloss": "tell",
+        "sense_id": "zh-74642897fad8-1-s1"
+      },
+      {
+        "sentence": "曹节偷看奏章后，立即告诉身边的人，于是宦官借别的事陷害蔡邕，皇帝把他放归田里。",
+        "gloss": "tell; inform",
+        "sense_id": "zh-74642897fad8-1-s1"
+      },
+      {
+        "sentence": "刘备告诉关羽自己的志向，关羽听后很兴奋。",
+        "gloss": "to tell; inform",
+        "sense_id": "zh-74642897fad8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "28ecbf2265312095e9a23c0d427307c6e3a40c4782454801e6c1ab533a67765e"
+}

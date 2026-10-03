@@ -1,0 +1,31 @@
+{
+  "id": "zh-57c0a22d6381-1-54b0ff48097335e9",
+  "entry_id": "zh-57c0a22d6381-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-57c0a22d6381-1",
+      "headword": "当作",
+      "kind": "construction",
+      "reading": "dàngzuò",
+      "senses": [
+        {
+          "id": "zh-57c0a22d6381-1-s1",
+          "definition": "regard or use something as something else"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备小时候常和乡中孩子在树下玩，对他们说：“我将来要当天子，就把这棵树当作车盖。",
+        "gloss": "treat as; use as",
+        "sense_id": "zh-57c0a22d6381-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "465acb15cfd352cad2b28901dedac5815b8b4c7da804e5c8763cf70e3930a6f3"
+}

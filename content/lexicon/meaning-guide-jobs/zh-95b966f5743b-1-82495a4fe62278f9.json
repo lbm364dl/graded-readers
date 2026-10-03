@@ -1,0 +1,41 @@
+{
+  "id": "zh-95b966f5743b-1-82495a4fe62278f9",
+  "entry_id": "zh-95b966f5743b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-95b966f5743b-1",
+      "headword": "多名",
+      "kind": "construction",
+      "reading": "duōmíng",
+      "senses": [
+        {
+          "id": "zh-95b966f5743b-1-s1",
+          "definition": "more than the stated number of people"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "五百多名弟子到各地传道，信徒逐渐增多。",
+        "gloss": "more than five hundred people",
+        "sense_id": "zh-95b966f5743b-1-s1"
+      },
+      {
+        "sentence": "祭礼后，他们杀牛摆酒，聚集三百多名乡勇，在桃园中痛快喝酒。",
+        "gloss": "more than [number of] people",
+        "sense_id": "zh-95b966f5743b-1-s1"
+      },
+      {
+        "sentence": "他们又聚集五百多名乡勇，去见邹靖。",
+        "gloss": "more than [number of] people",
+        "sense_id": "zh-95b966f5743b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e9332c598634f2d4466b630dd5cb54c517704b306cfc8834501eb6ae6929eff9"
+}

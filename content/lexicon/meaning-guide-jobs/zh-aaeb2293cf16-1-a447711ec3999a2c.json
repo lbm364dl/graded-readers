@@ -1,0 +1,61 @@
+{
+  "id": "zh-aaeb2293cf16-1-a447711ec3999a2c",
+  "entry_id": "zh-aaeb2293cf16-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-aaeb2293cf16-1",
+      "headword": "宦官",
+      "kind": "word",
+      "reading": "huànguān",
+      "senses": [
+        {
+          "id": "zh-aaeb2293cf16-1-s1",
+          "definition": "eunuch"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "宦官掌权，皇帝信任他们。",
+        "gloss": "eunuchs",
+        "sense_id": "zh-aaeb2293cf16-1-s1"
+      },
+      {
+        "sentence": "桓帝在位时，压制正直贤能的人，却特别信任宦官。",
+        "gloss": "court eunuch",
+        "sense_id": "zh-aaeb2293cf16-1-s1"
+      },
+      {
+        "sentence": "宦官曹节等人掌握权力，常常干涉朝廷的事。",
+        "gloss": "court eunuch",
+        "sense_id": "zh-aaeb2293cf16-1-s1"
+      },
+      {
+        "sentence": "窦武、陈蕃于是商量除掉宦官，想改变这种局面。",
+        "gloss": "court eunuchs",
+        "sense_id": "zh-aaeb2293cf16-1-s1"
+      },
+      {
+        "sentence": "这个结果导致宦官从此更加专横，做事也更不受限制，朝廷中的正直之士更加危险。",
+        "gloss": "court eunuchs",
+        "sense_id": "zh-aaeb2293cf16-1-s1"
+      },
+      {
+        "sentence": "皇帝下诏询问多种灾异的原因，蔡邕上书，认为这是妇人与宦官干政导致的，言辞十分直接。",
+        "gloss": "court eunuch",
+        "sense_id": "zh-aaeb2293cf16-1-s1"
+      },
+      {
+        "sentence": "曹节偷看奏章后，立即告诉身边的人，于是宦官借别的事陷害蔡邕，皇帝把他放归田里。",
+        "gloss": "court eunuchs",
+        "sense_id": "zh-aaeb2293cf16-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ad8e3414d4a3667d79e9e8b54e8fecca5bbca1ea63363d42c40852d0c6ee4b49"
+}

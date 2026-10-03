@@ -1,0 +1,31 @@
+{
+  "id": "zh-2c21e7515a1a-1-7546699761a437fa",
+  "entry_id": "zh-2c21e7515a1a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2c21e7515a1a-1",
+      "headword": "研习",
+      "kind": "word",
+      "reading": "yánxí",
+      "senses": [
+        {
+          "id": "zh-2c21e7515a1a-1-s1",
+          "definition": "to study and practice"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角日夜研习，渐渐学会呼风唤雨，自称太平道人。",
+        "gloss": "study; practice",
+        "sense_id": "zh-2c21e7515a1a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "501d89e2e79a97c411d24cc756f1b73bb94f25315bf86f75d9fcd1125ca5e31c"
+}

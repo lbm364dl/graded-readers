@@ -1,0 +1,31 @@
+{
+  "id": "zh-bf55fac9c5cf-1-950b9bce3c738181",
+  "entry_id": "zh-bf55fac9c5cf-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-bf55fac9c5cf-1",
+      "headword": "鞋",
+      "kind": "word",
+      "reading": "xié",
+      "senses": [
+        {
+          "id": "zh-bf55fac9c5cf-1-s1",
+          "definition": "shoe; footwear"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他住在涿县，平时卖鞋和草席。",
+        "gloss": "shoes",
+        "sense_id": "zh-bf55fac9c5cf-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e1ba577e041ce4cb56ff082d10c1f2266b6dc56c8eb032a81bead71fc8405f75"
+}

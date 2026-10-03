@@ -1,0 +1,32 @@
+{
+  "id": "ja-135f2099403a7f5f-8104ec0f542bf35c",
+  "entry_id": "ja-135f2099403a7f5f",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-135f2099403a7f5f",
+      "headword": "寒さ",
+      "reading": "さむさ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-135f2099403a7f5f-1",
+          "definition": "coldness"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "すぐに暗くなり、腹は減り、寒さは増し、雨まで降ってきた。",
+        "gloss": "coldness",
+        "sense_id": "ja-135f2099403a7f5f-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "158ed4ccbb8bc89292fa625f71495aef6fb5a94de8abca9565e8b359d6a9a9eb"
+}

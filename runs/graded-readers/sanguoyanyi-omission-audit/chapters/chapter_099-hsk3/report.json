@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_099-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 455,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了魏军撤退时曹真、司马懿担心蜀军追击并安排断后的细节。",
+      "classification": "material",
+      "reason": "这补充了魏军撤退时的关键动机与战术安排，说明他们为何担心追击并如何保障撤退；接受场景虽提到后军断后，但遗漏了担忧追击及预设断后部署的因果细节。",
+      "required_fix": "补充曹真、司马懿担心孔明追击，先设伏军断后，再将前后军调换、缓慢撤退的安排。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了魏军撤退时曹真、司马懿担心蜀军追击并安排断后的细节。",
+      "classification": "material",
+      "reason": "这补充了魏军撤退时的关键动机与战术安排，说明他们为何担心追击并如何保障撤退；接受场景虽提到后军断后，但遗漏了担忧追击及预设断后部署的因果细节。",
+      "required_fix": "补充曹真、司马懿担心孔明追击，先设伏军断后，再将前后军调换、缓慢撤退的安排。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 455,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

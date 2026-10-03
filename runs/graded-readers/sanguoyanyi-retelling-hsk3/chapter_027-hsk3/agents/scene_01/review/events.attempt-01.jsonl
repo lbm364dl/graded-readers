@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff3bd-d596-7003-8d0e-30476b3c9ac8"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.94,\"naturalness\":0.96,\"readability\":0.97,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"“曹植不服”略显笼统，原文主要写他未奔丧、饮酒失礼并触怒曹丕。\"],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":25897,"cached_input_tokens":8960,"cache_write_input_tokens":0,"output_tokens":504,"reasoning_output_tokens":411}}

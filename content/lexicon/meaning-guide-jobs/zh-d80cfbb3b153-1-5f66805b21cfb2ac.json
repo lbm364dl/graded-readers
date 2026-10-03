@@ -1,0 +1,45 @@
+{
+  "id": "zh-d80cfbb3b153-1-5f66805b21cfb2ac",
+  "entry_id": "zh-d80cfbb3b153-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d80cfbb3b153-1",
+      "headword": "奉",
+      "kind": "word",
+      "reading": "fèng",
+      "senses": [
+        {
+          "id": "zh-d80cfbb3b153-1-s1",
+          "definition": "to revere; to honor"
+        },
+        {
+          "id": "zh-d80cfbb3b153-1-s2",
+          "definition": "to receive or act under (an order or command)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "八州百姓多奉张角的名号。",
+        "gloss": "to revere; to honor",
+        "sense_id": "zh-d80cfbb3b153-1-s1"
+      },
+      {
+        "sentence": "刘备奉命带兵返回，途中遇到一队汉军，正押送一辆囚车。",
+        "gloss": "to receive",
+        "sense_id": "zh-d80cfbb3b153-1-s2"
+      },
+      {
+        "sentence": "宦官左丰奉命查看军情，企图向卢植索要行贿的钱。",
+        "gloss": "to receive; to act under",
+        "sense_id": "zh-d80cfbb3b153-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7a8293d362bea7de01886922929cb2b9168f78fd0ae3e2f3c15e16c9708d2e3d"
+}

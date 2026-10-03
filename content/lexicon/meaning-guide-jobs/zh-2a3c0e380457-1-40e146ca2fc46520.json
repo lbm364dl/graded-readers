@@ -1,0 +1,31 @@
+{
+  "id": "zh-2a3c0e380457-1-40e146ca2fc46520",
+  "entry_id": "zh-2a3c0e380457-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2a3c0e380457-1",
+      "headword": "从中",
+      "kind": "word",
+      "reading": "cóngzhōng",
+      "senses": [
+        {
+          "id": "zh-2a3c0e380457-1-s1",
+          "definition": "from among; in or from the midst of something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "信徒不停增多，张角也从中聚集了许多百姓。",
+        "gloss": "from among them",
+        "sense_id": "zh-2a3c0e380457-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "259376baa063e45db669ddaf865cb66d6a22ce189f5c26dcb577a9ece5c66edb"
+}

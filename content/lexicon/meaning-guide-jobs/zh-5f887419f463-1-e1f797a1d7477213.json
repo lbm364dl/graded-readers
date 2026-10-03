@@ -1,0 +1,36 @@
+{
+  "id": "zh-5f887419f463-1-e1f797a1d7477213",
+  "entry_id": "zh-5f887419f463-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5f887419f463-1",
+      "headword": "孩子",
+      "kind": "word",
+      "reading": "háizi",
+      "senses": [
+        {
+          "id": "zh-5f887419f463-1-s1",
+          "definition": "child; children"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备小时候常和孩子们在树下玩，说自己将来要做大事。",
+        "gloss": "children",
+        "sense_id": "zh-5f887419f463-1-s1"
+      },
+      {
+        "sentence": "叔父觉得这孩子与众不同，常常帮助他。",
+        "gloss": "child",
+        "sense_id": "zh-5f887419f463-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bb36641029f2112860ca935f9d43c9bc139cc1ce2d78ec74a19d072a7190f86b"
+}

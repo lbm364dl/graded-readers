@@ -1,0 +1,31 @@
+{
+  "id": "zh-d3f9d203b978-1-2995f89be5e62654",
+  "entry_id": "zh-d3f9d203b978-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d3f9d203b978-1",
+      "headword": "高祖",
+      "kind": "name",
+      "reading": "Gāozǔ",
+      "senses": [
+        {
+          "id": "zh-d3f9d203b978-1-s1",
+          "definition": "Emperor Gaozu, a person's title"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "汉朝自高祖斩白蛇起义，一统天下；后来光武中兴，传到献帝，终于分为三国。",
+        "gloss": "Emperor Gaozu",
+        "sense_id": "zh-d3f9d203b978-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8767b72a4497aaf8cd1f36488a4614959624bca6f8d8139a6e7c17efa66ca981"
+}

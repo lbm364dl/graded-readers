@@ -1,0 +1,32 @@
+{
+  "id": "ja-54ea39a82090d67c-274a003f7f3b956c",
+  "entry_id": "ja-54ea39a82090d67c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-54ea39a82090d67c",
+      "headword": "隙",
+      "reading": "すき",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-54ea39a82090d67c-1",
+          "definition": "an opening; a moment of inattention"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "だが、寒さと空腹には勝てず、隙を見て台所へ這い上がった。",
+        "gloss": "opening; chance",
+        "sense_id": "ja-54ea39a82090d67c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8c0dbbf136c1c9cf66c41dfaecf944420763a81af9794a0da5ab989e4e1c6c12"
+}

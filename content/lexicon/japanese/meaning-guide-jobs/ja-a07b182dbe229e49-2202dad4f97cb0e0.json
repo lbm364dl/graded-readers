@@ -1,0 +1,32 @@
+{
+  "id": "ja-a07b182dbe229e49-2202dad4f97cb0e0",
+  "entry_id": "ja-a07b182dbe229e49",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a07b182dbe229e49",
+      "headword": "先",
+      "reading": "さき",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-a07b182dbe229e49-1",
+          "definition": "what lies ahead; the future"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "少し人間より強い者が現れて懲らしめてやらなくては、この先どこまで増長するか分からない。",
+        "gloss": "from here on; ahead",
+        "sense_id": "ja-a07b182dbe229e49-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a0bf35024c1b3bad802ba84cfb8493eb5530b1083d434c774e991105745bc39b"
+}

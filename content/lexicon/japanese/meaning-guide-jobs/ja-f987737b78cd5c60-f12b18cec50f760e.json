@@ -1,0 +1,61 @@
+{
+  "id": "ja-f987737b78cd5c60-f12b18cec50f760e",
+  "entry_id": "ja-f987737b78cd5c60",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-f987737b78cd5c60",
+      "headword": "たいへん",
+      "reading": "たいへん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-f987737b78cd5c60-1",
+          "definition": "very; extremely"
+        },
+        {
+          "id": "ja-f987737b78cd5c60-2",
+          "definition": "great; considerable; tremendous"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "黒は乱暴で、体は吾輩の二倍もあり、たいへん強そうだった。",
+        "gloss": "very; extremely",
+        "sense_id": "ja-f987737b78cd5c60-1"
+      },
+      {
+        "sentence": "この間も、畳で爪を磨いただけなのに、奥さんがたいへん怒り、それから座敷へ入れなくなった。",
+        "gloss": "very; greatly",
+        "sense_id": "ja-f987737b78cd5c60-1"
+      },
+      {
+        "sentence": "家の者は、主人をたいへんな勉強家だと思っているし、本人もそう見せている。",
+        "gloss": "terrible; tremendous",
+        "sense_id": "ja-f987737b78cd5c60-2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-f987737b78cd5c60",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "たいへん means “very” or “extremely.” It is used before an adjective or other expression to emphasize its degree, as in たいへん強い, “very strong.”",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "b82c57c3abbad93f39782d4871f87a9bd6189df66c2933759c8d62457fb178bf",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "54f0e725f4de7b0bb575e7fc00c6f14bd46cc0832022581008ac57a052675b9a"
+}

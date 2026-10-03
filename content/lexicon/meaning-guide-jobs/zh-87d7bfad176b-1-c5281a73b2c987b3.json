@@ -1,0 +1,31 @@
+{
+  "id": "zh-87d7bfad176b-1-c5281a73b2c987b3",
+  "entry_id": "zh-87d7bfad176b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-87d7bfad176b-1",
+      "headword": "吉利",
+      "kind": "name",
+      "reading": "Jí Lì",
+      "senses": [
+        {
+          "id": "zh-87d7bfad176b-1-s1",
+          "definition": "a personal name, 吉利"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "为首的是曹操，字孟德，小字阿瞒，又名吉利。",
+        "gloss": "Jili",
+        "sense_id": "zh-87d7bfad176b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "50d656e28d01641cb60a5bdf350e0a0eec7227df0796b0b69de5518cfdfe84d7"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "zh-9bc2ebe0cb79-1-eae2b8dee0f806e7",
+  "entry_id": "zh-9bc2ebe0cb79-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9bc2ebe0cb79-1",
+      "headword": "才能",
+      "kind": "word",
+      "reading": "cáinéng",
+      "senses": [
+        {
+          "id": "zh-9bc2ebe0cb79-1-s1",
+          "definition": "only then can; not until then is it possible to"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备对关羽、张飞说：“我们人少，只有想个好主意，才能取胜。",
+        "gloss": "only then can",
+        "sense_id": "zh-9bc2ebe0cb79-1-s1"
+      },
+      {
+        "sentence": "刘备对关羽、张飞说：“敌人多，我们人少，必须用特别的办法才能取胜。",
+        "gloss": "only then can",
+        "sense_id": "zh-9bc2ebe0cb79-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "590dabbfc57cdc83c22f64b514f15b385ec57c94adc98d7468574d3857d949b9"
+}

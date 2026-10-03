@@ -1,0 +1,37 @@
+{
+  "id": "ja-0778bb60bfad3968-de2e8a99d50c2ef3",
+  "entry_id": "ja-0778bb60bfad3968",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-0778bb60bfad3968",
+      "headword": "驚く",
+      "reading": "おどろく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-0778bb60bfad3968-1",
+          "definition": "to be surprised; to be startled"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "人の庭へ入りながら、これほど平気で眠れるものかと、吾輩はその大胆さに驚いた。",
+        "gloss": "was surprised",
+        "sense_id": "ja-0778bb60bfad3968-1"
+      },
+      {
+        "sentence": "主人は驚いて、「もし相手が本当に読んでいたら、どうするつもりだ」と聞いた。",
+        "gloss": "was startled and",
+        "sense_id": "ja-0778bb60bfad3968-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9584b885bf6b8c99e5a6ce76093d5ea1005c21ae2ea6ed50c90994da3589407d"
+}

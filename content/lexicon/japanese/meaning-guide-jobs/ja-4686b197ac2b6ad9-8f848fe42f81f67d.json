@@ -1,0 +1,37 @@
+{
+  "id": "ja-4686b197ac2b6ad9-8f848fe42f81f67d",
+  "entry_id": "ja-4686b197ac2b6ad9",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-4686b197ac2b6ad9",
+      "headword": "頭",
+      "reading": "あたま",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-4686b197ac2b6ad9-1",
+          "definition": "head"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "自分の気分しだいで、吾輩を逆さにしたり、頭に袋をかぶせたり、外へ投げ出したり、へっついの中へ押し込んだりする。",
+        "gloss": "head",
+        "sense_id": "ja-4686b197ac2b6ad9-1"
+      },
+      {
+        "sentence": "我々猫の間では、目刺しの頭でも、ぼらのへそでも、最初に見つけた者が食べる権利を持つ。",
+        "gloss": "head",
+        "sense_id": "ja-4686b197ac2b6ad9-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4a91f43d6b6c269324f443bc78c9b9eb847ea1a64e91d254f4949fba36b394c3"
+}

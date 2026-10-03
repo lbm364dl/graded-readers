@@ -1,0 +1,32 @@
+{
+  "id": "ja-1eb826a630b85eed-7d3ab59eadebc9cf",
+  "entry_id": "ja-1eb826a630b85eed",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-1eb826a630b85eed",
+      "headword": "神経質",
+      "reading": "しんけいしつ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-1eb826a630b85eed-1",
+          "definition": "nervous; sensitive; easily bothered"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "すると神経質で胃の弱い主人が、必ず目を覚まし、隣の部屋から飛び出してくる。",
+        "gloss": "being nervous and",
+        "sense_id": "ja-1eb826a630b85eed-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bd7be2b4370563a737efc4d4ce2fd8d1608d645a7f7b3d4dc2d439aea38ba05a"
+}

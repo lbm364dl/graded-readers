@@ -1,0 +1,31 @@
+{
+  "id": "zh-fdb214573bb6-1-015c7bd8f04ab54e",
+  "entry_id": "zh-fdb214573bb6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-fdb214573bb6-1",
+      "headword": "甲子",
+      "kind": "word",
+      "reading": "jiǎzǐ",
+      "senses": [
+        {
+          "id": "zh-fdb214573bb6-1-s1",
+          "definition": "the sexagenary cycle designation used to mark a year"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他让人传播“苍天已死，黄天当立”和“岁在甲子，天下大吉”，还用白土在家门上写“甲子”。",
+        "gloss": "Jiazi year",
+        "sense_id": "zh-fdb214573bb6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c09da7d9b0a450fe913471b5d85e2b9587ad15bc3d555bdde14124bbbac10d76"
+}

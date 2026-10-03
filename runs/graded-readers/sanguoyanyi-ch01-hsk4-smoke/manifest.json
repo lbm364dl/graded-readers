@@ -1,0 +1,15 @@
+{
+  "run_id": "sanguoyanyi-ch01-hsk4-smoke",
+  "status": "complete",
+  "source": "/home/usuario/hsk-graded-readers/books/chinese/sanguoyanyi_ch1.txt",
+  "source_sha256": "a5c4b6d68a0c9ceda19ff27759a1ef3473089c90f76bfaf72ab8ca676ddb1ab4",
+  "level": "hsk4",
+  "model": "gpt-5.6-luna",
+  "adapt_effort": "xhigh",
+  "review_effort": "medium",
+  "repair_effort": "xhigh",
+  "final_effort": "max",
+  "max_repairs": 3,
+  "fresh_rewrite": true,
+  "updated_at": "2026-08-06T15:29:39.258379+00:00"
+}

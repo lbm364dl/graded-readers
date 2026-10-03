@@ -1,0 +1,31 @@
+{
+  "id": "zh-f88182fcd575-1-398bb5474125a9e0",
+  "entry_id": "zh-f88182fcd575-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f88182fcd575-1",
+      "headword": "进入",
+      "kind": "word",
+      "reading": "jìnrù",
+      "senses": [
+        {
+          "id": "zh-f88182fcd575-1-s1",
+          "definition": "to enter; go into a place or area"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军追来，进入山中。",
+        "gloss": "enter",
+        "sense_id": "zh-f88182fcd575-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "aa45d96a57e0de2e59afed960f7a5200f473b4155b848712540ebace8bb1ac66"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-123818f1b0ac5073-b1a7a0dd849538d3",
+  "entry_id": "ja-123818f1b0ac5073",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-123818f1b0ac5073",
+      "headword": "中身",
+      "reading": "なかみ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-123818f1b0ac5073-1",
+          "definition": "the contents or material inside something"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "中身は水彩絵具と毛筆と、ワットマンという紙だった。",
+        "gloss": "contents; materials",
+        "sense_id": "ja-123818f1b0ac5073-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cc83222edcc445a544683b96439b0319a2337623b3891eba2ed180215fbd2f11"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-fdea04aaf3e2aae5-5175d1a60a09fddd",
+  "entry_id": "ja-fdea04aaf3e2aae5",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-fdea04aaf3e2aae5",
+      "headword": "椽側",
+      "reading": "えんがわ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-fdea04aaf3e2aae5-1",
+          "definition": "a wooden veranda or corridor along the side of a traditional Japanese house"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "その日、吾輩はいつものように椽側で気持ちよく昼寝をしていた。",
+        "gloss": "veranda; wooden corridor",
+        "sense_id": "ja-fdea04aaf3e2aae5-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bffd37484bbeb3723692fc39ebec8e77e301fc0fa3b562cd3903f17b5059c07e"
+}

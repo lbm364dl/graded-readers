@@ -1,0 +1,32 @@
+{
+  "id": "ja-bf74ca6a5b8affb7-63c2503d97d1e8ee",
+  "entry_id": "ja-bf74ca6a5b8affb7",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-bf74ca6a5b8affb7",
+      "headword": "そこで",
+      "reading": "そこで",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-bf74ca6a5b8affb7-1",
+          "definition": "thereupon; so; as a result"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そこで初めて人間を見た。",
+        "gloss": "thereupon; so",
+        "sense_id": "ja-bf74ca6a5b8affb7-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "819486c8c043341dd7bfd338489ffd56fcff58f3865663501867668ad18318e2"
+}

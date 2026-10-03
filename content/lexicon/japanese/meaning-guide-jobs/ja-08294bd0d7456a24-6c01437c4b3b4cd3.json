@@ -1,0 +1,32 @@
+{
+  "id": "ja-08294bd0d7456a24-6c01437c4b3b4cd3",
+  "entry_id": "ja-08294bd0d7456a24",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-08294bd0d7456a24",
+      "headword": "顔",
+      "reading": "かお",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-08294bd0d7456a24-1",
+          "definition": "face"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "手の上に乗せられ、顔を見ると、毛のない顔は薬缶のようで、顔の真ん中の出た所の穴から時々煙を吹いた。",
+        "gloss": "face",
+        "sense_id": "ja-08294bd0d7456a24-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4a4e0d4cb1a3617b36f14b2434fd4713f8cbd9e56b474021b2d2cf3d010fa769"
+}

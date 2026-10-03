@@ -1,0 +1,83 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_047-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 480,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了阚泽受曹操试探、辩论并最终使曹操道歉的若干细节，但不影响主线理解。",
+      "classification": "material",
+      "reason": "虽保留了辩论导致曹操相信诈降的主线，但省略了曹操试探、险些处斩以及认错致歉这一完整转折和关键人物反应。",
+      "required_fix": "补回曹操对阚泽的试探、几轮辩论、下令处斩又召回，以及曹操认错致歉后改信投降的过程。"
+    },
+    {
+      "omission_note": "省略了庞统提出连环计后劝降江东豪杰的具体承诺细节。",
+      "classification": "material",
+      "reason": "省略了庞统承诺孤立并擒获周瑜、削弱刘备，以及曹操许诺封赏、庞统表明救民动机等内容，削弱了人物动机、劝说依据和重要 characterization。",
+      "required_fix": "补充庞统关于劝降江东豪杰、孤立擒获周瑜并使刘备失去作用的具体承诺，以及曹操的封赏承诺和庞统救民的动机。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了阚泽受曹操试探、辩论并最终使曹操道歉的若干细节，但不影响主线理解。",
+      "classification": "material",
+      "reason": "虽保留了辩论导致曹操相信诈降的主线，但省略了曹操试探、险些处斩以及认错致歉这一完整转折和关键人物反应。",
+      "required_fix": "补回曹操对阚泽的试探、几轮辩论、下令处斩又召回，以及曹操认错致歉后改信投降的过程。"
+    },
+    {
+      "omission_note": "省略了庞统提出连环计后劝降江东豪杰的具体承诺细节。",
+      "classification": "material",
+      "reason": "省略了庞统承诺孤立并擒获周瑜、削弱刘备，以及曹操许诺封赏、庞统表明救民动机等内容，削弱了人物动机、劝说依据和重要 characterization。",
+      "required_fix": "补充庞统关于劝降江东豪杰、孤立擒获周瑜并使刘备失去作用的具体承诺，以及曹操的封赏承诺和庞统救民的动机。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 463,
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [
+          "省略了曹操收到密报、确认黄盖受刑消息后更加相信诈降，并要求阚泽回江东传递消息的依据；也省略了阚泽起初以已离开江东为由推辞、最终答应返回的过程，削弱了该行动的因果和动机。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 480,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

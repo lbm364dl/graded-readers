@@ -1,0 +1,31 @@
+{
+  "id": "zh-279e8b357360-1-3e2647feb17f5666",
+  "entry_id": "zh-279e8b357360-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-279e8b357360-1",
+      "headword": "没",
+      "kind": "word",
+      "reading": "méi",
+      "senses": [
+        {
+          "id": "zh-279e8b357360-1-s1",
+          "definition": "not"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角原是没考中的秀才，进山采药时遇到老人。",
+        "gloss": "not",
+        "sense_id": "zh-279e8b357360-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c21f446a190baa3ce70dbceb21a0026d749c7d961da7def5d22f9e8f73d6c622"
+}

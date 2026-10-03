@@ -1,0 +1,31 @@
+{
+  "id": "zh-0f80c1e77b64-1-45de1320fc50d59c",
+  "entry_id": "zh-0f80c1e77b64-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-0f80c1e77b64-1",
+      "headword": "伏兵",
+      "kind": "word",
+      "reading": "fúbīng",
+      "senses": [
+        {
+          "id": "zh-0f80c1e77b64-1-s1",
+          "definition": "concealed troops waiting to attack"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备想出伏兵的办法。",
+        "gloss": "ambush troops",
+        "sense_id": "zh-0f80c1e77b64-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9899501fd37700b36e296f01d3bb08c63250a2f908191a5d6b60b1412aae8598"
+}

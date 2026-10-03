@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "reused_chunks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "old_chunk_index": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "new_chunk_index": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "required": [
+          "old_chunk_index",
+          "new_chunk_index"
+        ]
+      }
+    }
+  },
+  "required": [
+    "reused_chunks"
+  ]
+}

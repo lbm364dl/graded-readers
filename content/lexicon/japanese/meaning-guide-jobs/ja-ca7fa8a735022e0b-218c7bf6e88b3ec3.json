@@ -1,0 +1,32 @@
+{
+  "id": "ja-ca7fa8a735022e0b-218c7bf6e88b3ec3",
+  "entry_id": "ja-ca7fa8a735022e0b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ca7fa8a735022e0b",
+      "headword": "気がつく",
+      "reading": "きがつく",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-ca7fa8a735022e0b-1",
+          "definition": "to notice or become aware of something"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "気がつくと、書生も母親も兄弟もいない。",
+        "gloss": "notice; realize",
+        "sense_id": "ja-ca7fa8a735022e0b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "faeda979777bf551c09973300f79340257c843f09eeff6ed1adc215b4772e933"
+}

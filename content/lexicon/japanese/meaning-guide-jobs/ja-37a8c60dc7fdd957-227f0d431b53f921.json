@@ -1,0 +1,32 @@
+{
+  "id": "ja-37a8c60dc7fdd957-227f0d431b53f921",
+  "entry_id": "ja-37a8c60dc7fdd957",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-37a8c60dc7fdd957",
+      "headword": "お母さん",
+      "reading": "おかあさん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-37a8c60dc7fdd957-1",
+          "definition": "mother; mom"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "見ると、書生も兄弟もお母さんもいない。",
+        "gloss": "mother",
+        "sense_id": "ja-37a8c60dc7fdd957-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fd08ed356a956967f622f0473540a0fb62da5cbb22ae7e9adfe8f8f30707f6bc"
+}

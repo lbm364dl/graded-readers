@@ -1,0 +1,31 @@
+{
+  "id": "zh-de96c1fa6272-1-e87d6b01dd83c761",
+  "entry_id": "zh-de96c1fa6272-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-de96c1fa6272-1",
+      "headword": "不受",
+      "kind": "word",
+      "reading": "búshòu",
+      "senses": [
+        {
+          "id": "zh-de96c1fa6272-1-s1",
+          "definition": "not be subject to; not be affected or constrained by"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "这个结果导致宦官从此更加专横，做事也更不受限制，朝廷中的正直之士更加危险。",
+        "gloss": "not be subject to",
+        "sense_id": "zh-de96c1fa6272-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "78801ae4513a64ed414404cda812ff58ca16324fc3cfd8f2dfdc11541bf68e04"
+}

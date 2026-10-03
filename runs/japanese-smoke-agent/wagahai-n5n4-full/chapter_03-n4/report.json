@@ -1,0 +1,35 @@
+{
+  "status": "complete",
+  "scenes": 5,
+  "japanese_chars": 2721,
+  "chapter_cjk": 2721,
+  "scene_verdicts": {
+    "scene_01": "pass",
+    "scene_02": "pass",
+    "scene_03": "pass",
+    "scene_04": "pass",
+    "scene_05": "pass"
+  },
+  "chapter_review": {
+    "source_fidelity": 9.2,
+    "naturalness": 9.1,
+    "readability": 9.2,
+    "omissions": [
+      "寒月が演説開始前に水を一杯飲む場面が省略されている。",
+      "寒月の歴史説明に含まれる一部の古代・近代の具体例が圧縮されているが、主要な演説の流れは保持されている。"
+    ],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "chapter_review_verdict": "pass",
+  "scene_attempts": {
+    "scene_01": 2,
+    "scene_02": 2,
+    "scene_03": 3,
+    "scene_04": 1,
+    "scene_05": 1
+  },
+  "unresolved_scenes": []
+}

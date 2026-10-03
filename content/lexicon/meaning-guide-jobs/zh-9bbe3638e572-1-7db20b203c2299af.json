@@ -1,0 +1,31 @@
+{
+  "id": "zh-9bbe3638e572-1-7db20b203c2299af",
+  "entry_id": "zh-9bbe3638e572-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9bbe3638e572-1",
+      "headword": "不住",
+      "kind": "construction",
+      "reading": "bùzhù",
+      "senses": [
+        {
+          "id": "zh-9bbe3638e572-1-s1",
+          "definition": "unable to withstand or keep up; unable to continue"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "第二天，青州太守龚景来信求救，说黄巾军围城，城快守不住了。",
+        "gloss": "be unable to withstand",
+        "sense_id": "zh-9bbe3638e572-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "761599b80fd8dcfbb0b20d1ef1cc4c1e95a3a22e906f261c42d96231ccb71e6e"
+}

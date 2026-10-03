@@ -1,0 +1,32 @@
+{
+  "id": "ja-e936ca6a5b55119e-974933a2134e3fbd",
+  "entry_id": "ja-e936ca6a5b55119e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e936ca6a5b55119e",
+      "headword": "たくさん",
+      "reading": "たくさん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e936ca6a5b55119e-1",
+          "definition": "many; a lot"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "その後、猫にはたくさん会ったが、こんな変な顔には一度も会わなかった。",
+        "gloss": "many; a lot",
+        "sense_id": "ja-e936ca6a5b55119e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e834814ea2af1f9a13df8da7eff1975d33b3615e0ea7ad9af1ecc03a4d8c0830"
+}

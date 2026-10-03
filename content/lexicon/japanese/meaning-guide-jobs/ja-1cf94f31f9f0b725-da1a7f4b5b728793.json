@@ -1,0 +1,32 @@
+{
+  "id": "ja-1cf94f31f9f0b725-da1a7f4b5b728793",
+  "entry_id": "ja-1cf94f31f9f0b725",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-1cf94f31f9f0b725",
+      "headword": "涙",
+      "reading": "なみだ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-1cf94f31f9f0b725-1",
+          "definition": "tears"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "白君は涙を流しながら、その一部始終を話した。",
+        "gloss": "tears",
+        "sense_id": "ja-1cf94f31f9f0b725-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0d9d2f542f90556ae4b54bb09ffd428dc71d32edef1b0dbd6aa623a69fa3bbf4"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-a998cef8c95d-1-a9efe5ab4573045a",
+  "entry_id": "zh-a998cef8c95d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a998cef8c95d-1",
+      "headword": "斩白蛇",
+      "kind": "construction",
+      "reading": "zhǎn bái shé",
+      "senses": [
+        {
+          "id": "zh-a998cef8c95d-1-s1",
+          "definition": "slay the White Serpent"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "汉朝自高祖斩白蛇起义，一统天下；后来光武中兴，传到献帝，终于分为三国。",
+        "gloss": "slay the White Serpent",
+        "sense_id": "zh-a998cef8c95d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b5e10de3ba524e5a589a8121cd6a399db5aa121b1322c205299f95fe526e7038"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-1f4afe5755dc-1-bab73a0a3b063164",
+  "entry_id": "zh-1f4afe5755dc-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1f4afe5755dc-1",
+      "headword": "追来",
+      "kind": "construction",
+      "reading": "zhuīlai",
+      "senses": [
+        {
+          "id": "zh-1f4afe5755dc-1-s1",
+          "definition": "to chase and come toward the speaker or a reference point"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军追来，进入山中。",
+        "gloss": "chase after",
+        "sense_id": "zh-1f4afe5755dc-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6a77741e3c9dff8879b2c22973931450260f7ac15bb148e6bcb6d0acf9dbd874"
+}

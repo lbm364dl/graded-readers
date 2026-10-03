@@ -1,0 +1,32 @@
+{
+  "id": "ja-2eaca97e1d1b99f0-35338f5cae376c12",
+  "entry_id": "ja-2eaca97e1d1b99f0",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-2eaca97e1d1b99f0",
+      "headword": "ものすごい",
+      "reading": "ものすごい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-2eaca97e1d1b99f0-1",
+          "definition": "tremendous; astounding; very great in degree or intensity"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ところが、やがて書生はものすごい速さで吾輩を運び始めた。",
+        "gloss": "tremendous; astounding",
+        "sense_id": "ja-2eaca97e1d1b99f0-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5c4a0eb36285e45f68ab8adca7266ee1c0a472a6f419393bc8c0abf9f5927d83"
+}

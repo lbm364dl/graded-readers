@@ -1,0 +1,32 @@
+{
+  "id": "ja-1b17481007fa2cc7-f052a1b292fa729f",
+  "entry_id": "ja-1b17481007fa2cc7",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-1b17481007fa2cc7",
+      "headword": "毎晩",
+      "reading": "まいばん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-1b17481007fa2cc7-1",
+          "definition": "every night"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "これが毎晩の生活である。",
+        "gloss": "every night",
+        "sense_id": "ja-1b17481007fa2cc7-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e07f4379e454cddc830025b6c2d22fd864dbf72bac9996009822756fe927213d"
+}

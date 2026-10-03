@@ -1,0 +1,121 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_082-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 877,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了诸葛瑾与刘备关于大义、荆州轻重的辩论，以及孙权对诸葛瑾的信任和张昭的误判。",
+      "classification": "material",
+      "reason": "省略了刘备拒绝议和的思想交锋，以及孙权与诸葛瑾之间的重要信任关系和张昭的判断失误，削弱了关键人物的动机与 characterization。",
+      "required_fix": "补回诸葛瑾与刘备关于大义、荆州轻重的辩论，并交代孙权对诸葛瑾的信任及张昭的误判。"
+    },
+    {
+      "omission_note": "省略了刘备军队从夷道推进、孙权感叹无人分忧等过渡细节。",
+      "classification": "material",
+      "reason": "孙权感叹周瑜、鲁肃、吕蒙相继去世且无人分忧，既是重要人物刻画，也解释了孙桓在危急时主动请战及被任用的背景。",
+      "required_fix": "补回刘备军队的具体推进过程，以及孙权感叹无人分忧、追忆周瑜鲁肃吕蒙的内容。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了诸葛瑾与刘备关于大义、荆州轻重的辩论，以及孙权对诸葛瑾的信任和张昭的误判。",
+      "classification": "material",
+      "reason": "省略了刘备拒绝议和的思想交锋，以及孙权与诸葛瑾之间的重要信任关系和张昭的判断失误，削弱了关键人物的动机与 characterization。",
+      "required_fix": "补回诸葛瑾与刘备关于大义、荆州轻重的辩论，并交代孙权对诸葛瑾的信任及张昭的误判。"
+    },
+    {
+      "omission_note": "省略了刘备军队从夷道推进、孙权感叹无人分忧等过渡细节。",
+      "classification": "material",
+      "reason": "孙权感叹周瑜、鲁肃、吕蒙相继去世且无人分忧，既是重要人物刻画，也解释了孙桓在危急时主动请战及被任用的背景。",
+      "required_fix": "补回刘备军队的具体推进过程，以及孙权感叹无人分忧、追忆周瑜鲁肃吕蒙的内容。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 941,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 7.5,
+        "readability": 8.5,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "将孙桓在第二次交战后“退守彝陵”置于夜袭之前；原文中他先在宜都营寨，夜袭失败后才逃入彝陵，造成明确的时间线矛盾。",
+          "原文“如臣之辈，车载斗量”指像赵咨这样的人很多，修订本写成“像他这样的人”，指代不明，可能误指孙权，改变了原意。"
+        ],
+        "language_problems": [
+          "“中原和两都关系天下大义”搭配生硬，表达不自然。",
+          "“像他这样的人”指代含混，影响语义准确性和可读性。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 917,
+      "review": {
+        "source_fidelity": 8.2,
+        "naturalness": 8.8,
+        "readability": 9.0,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "原文中孙桓只率二万五千兵驻守宜都，五万兵是孙权调集的水陆总兵力；修订本写成孙桓率五万兵驻守宜都，扩大了其直接统率的兵力。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 915,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "原文邢贞感叹的是江东将相不会长久居人之下，修订本将其改写为孙权个人不会长久居人下，范围有所缩窄。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 4,
+      "candidate_cjk": 877,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

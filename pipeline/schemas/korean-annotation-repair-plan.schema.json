@@ -1,0 +1,46 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "repairs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "chunk_index": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "issues": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "required": [
+          "chunk_index",
+          "issues"
+        ]
+      }
+    },
+    "prose_revision_reason_en": {
+      "type": "string"
+    },
+    "dictionary_revision_entry_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "required": [
+    "repairs",
+    "prose_revision_reason_en",
+    "dictionary_revision_entry_ids"
+  ]
+}

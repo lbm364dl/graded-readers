@@ -1,0 +1,31 @@
+{
+  "id": "zh-1039f37e70b7-1-5b1dace63cb3d788",
+  "entry_id": "zh-1039f37e70b7-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1039f37e70b7-1",
+      "headword": "母至孝",
+      "kind": "expression",
+      "reading": "mǔ zhì xiào",
+      "senses": [
+        {
+          "id": "zh-1039f37e70b7-1-s1",
+          "definition": "to be extremely filial toward one's mother"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备幼年丧父，侍母至孝，家贫，靠卖草鞋、织席生活。",
+        "gloss": "devotedly filial to his mother",
+        "sense_id": "zh-1039f37e70b7-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "82da5964b1fe61ed0f6205fc902ad3dcbbf5f3a38ea81a19f01388061019c46c"
+}

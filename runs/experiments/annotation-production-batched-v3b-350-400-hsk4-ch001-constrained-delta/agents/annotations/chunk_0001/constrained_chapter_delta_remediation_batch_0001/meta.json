@@ -1,0 +1,21 @@
+{
+  "job": "annotations/chunk_0001/constrained_chapter_delta_remediation_batch_0001",
+  "model": "gpt-5.6-luna",
+  "effort": "high",
+  "fingerprint": "92df863955080492a86688444639888c6d628a27afbb9e39b239a9c3c123a460",
+  "started_at": "2026-08-07T04:15:12.248511+00:00",
+  "ended_at": "2026-08-07T04:15:26.570767+00:00",
+  "return_code": 0,
+  "attempt_count": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-08-07T04:15:12.248534+00:00",
+      "ended_at": "2026-08-07T04:15:26.570603+00:00",
+      "return_code": 0,
+      "throttled": false,
+      "events": "events.attempt-01.jsonl",
+      "stderr": "stderr.attempt-01.log"
+    }
+  ]
+}

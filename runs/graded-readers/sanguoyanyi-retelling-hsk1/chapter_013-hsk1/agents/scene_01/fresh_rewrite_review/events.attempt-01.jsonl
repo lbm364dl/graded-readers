@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff4f8-eeb2-7bb1-8a8e-21d88fe4cedd"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.98,\"naturalness\":0.95,\"readability\":0.96,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[],\"language_problems\":[\"“船向水中走”表达不够自然，建议改为“船驶向江中”或“船顺流而下”。\"],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":41051,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":468,"reasoning_output_tokens":378}}

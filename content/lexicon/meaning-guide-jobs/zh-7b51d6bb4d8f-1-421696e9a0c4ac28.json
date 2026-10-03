@@ -1,0 +1,36 @@
+{
+  "id": "zh-7b51d6bb4d8f-1-421696e9a0c4ac28",
+  "entry_id": "zh-7b51d6bb4d8f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7b51d6bb4d8f-1",
+      "headword": "斩",
+      "kind": "word",
+      "reading": "zhǎn",
+      "senses": [
+        {
+          "id": "zh-7b51d6bb4d8f-1-s1",
+          "definition": "kill by cutting off the head"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "程远志又来打张飞，关羽马上赶到，一刀斩了程远志。",
+        "gloss": "behead",
+        "sense_id": "zh-7b51d6bb4d8f-1-s1"
+      },
+      {
+        "sentence": "程远志来不及防备，被关羽斩成两段。",
+        "gloss": "cut; behead",
+        "sense_id": "zh-7b51d6bb4d8f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "347b32d740c0122f6c9a94310c12d842d62aa2ee2b336ca7f2ad0fb2d3b9cc4f"
+}

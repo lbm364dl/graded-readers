@@ -1,0 +1,32 @@
+{
+  "id": "ja-d7ddc95c603b29a0-24751f4ce7423b46",
+  "entry_id": "ja-d7ddc95c603b29a0",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d7ddc95c603b29a0",
+      "headword": "食後",
+      "reading": "しょくご",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d7ddc95c603b29a0-1",
+          "definition": "the time after a meal; after a meal"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "食後に薬を飲み、書物を広げる。",
+        "gloss": "after the meal",
+        "sense_id": "ja-d7ddc95c603b29a0-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e140f580e288d8e319e4077a98fa54bacd9dd83eab1a18ee2e855fa4c3f41e5e"
+}

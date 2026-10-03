@@ -1,0 +1,31 @@
+{
+  "id": "zh-796b8679e482-1-d9ad4f431310c2d5",
+  "entry_id": "zh-796b8679e482-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-796b8679e482-1",
+      "headword": "起兵",
+      "kind": "word",
+      "reading": "qǐbīng",
+      "senses": [
+        {
+          "id": "zh-796b8679e482-1-s1",
+          "definition": "to raise an army; to take up arms"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角知道事情暴露，马上起兵，自称天公将军；张宝称地公将军，张梁称人公将军。",
+        "gloss": "to raise an army",
+        "sense_id": "zh-796b8679e482-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5cd26cc709572af6aa47c929e1780179c80cd6ed391d85d2bbd7099cfd7a1bff"
+}

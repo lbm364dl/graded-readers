@@ -1,0 +1,32 @@
+{
+  "id": "ja-f7262cf1a98195aa-352bae3c3b365014",
+  "entry_id": "ja-f7262cf1a98195aa",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-f7262cf1a98195aa",
+      "headword": "前",
+      "reading": "まえ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-f7262cf1a98195aa-1",
+          "definition": "before; previously"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そこは前までと違ってひどく明るかった。",
+        "gloss": "before; previously",
+        "sense_id": "ja-f7262cf1a98195aa-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8f2f4d7cebfe243b77a2a1632ef1541aec9644f0b0573bf81339295b1f0be8b7"
+}

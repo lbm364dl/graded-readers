@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff4fe-b01f-7490-908b-0bb6323b672d"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.9,\"naturalness\":0.82,\"readability\":0.84,\"omissions\":[],\"unsupported_additions\":[\"“吴船停下”比原文的“张飞截住”更具体，但不影响主线。\"],\"distortions\":[\"“她不答”省略并弱化了孙夫人与赵云争辩的回应，但未改变结果。\"],\"language_problems\":[\"“马上上马”语意重复。\",\"“赵云拿住阿斗”不够自然，可改为“赵云抱住阿斗”。\"],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":41001,"cached_input_tokens":8960,"cache_write_input_tokens":0,"output_tokens":614,"reasoning_output_tokens":470}}

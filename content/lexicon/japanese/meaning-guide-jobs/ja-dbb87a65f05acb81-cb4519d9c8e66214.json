@@ -1,0 +1,32 @@
+{
+  "id": "ja-dbb87a65f05acb81-cb4519d9c8e66214",
+  "entry_id": "ja-dbb87a65f05acb81",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-dbb87a65f05acb81",
+      "headword": "さんま",
+      "reading": "さんま",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-dbb87a65f05acb81-1",
+          "definition": "Pacific saury"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "後で、おさんのさんまを盗んでその仕返しをしてやると、ようやく気持ちが落ち着いた。",
+        "gloss": "Pacific saury",
+        "sense_id": "ja-dbb87a65f05acb81-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3161d899c6c6f74480074ec8ec31d5c2eb29252e463137606f5aa7b2d0b315d8"
+}

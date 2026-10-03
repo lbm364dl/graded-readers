@@ -1,0 +1,32 @@
+{
+  "id": "ja-86d5809bc282b548-ba376726440544e8",
+  "entry_id": "ja-86d5809bc282b548",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-86d5809bc282b548",
+      "headword": "次",
+      "reading": "つぎ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-86d5809bc282b548-1",
+          "definition": "the next one; what follows in sequence or time"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "次の日、主人は縁側で昼寝する吾輩を写生し始めた。",
+        "gloss": "next",
+        "sense_id": "ja-86d5809bc282b548-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "58f5167c554b0e0b56d3c506c6d0189152a3254796d1389531d088c85f65547e"
+}

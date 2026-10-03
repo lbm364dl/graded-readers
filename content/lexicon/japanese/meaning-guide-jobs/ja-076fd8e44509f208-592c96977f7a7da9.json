@@ -1,0 +1,37 @@
+{
+  "id": "ja-076fd8e44509f208-592c96977f7a7da9",
+  "entry_id": "ja-076fd8e44509f208",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-076fd8e44509f208",
+      "headword": "色",
+      "reading": "いろ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-076fd8e44509f208-1",
+          "definition": "color; a visual hue or shade"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は動かずにいたが、絵は妙な色で、目もなく、目の見えない猫なのか、寝ている猫なのか分からない。",
+        "gloss": "color",
+        "sense_id": "ja-076fd8e44509f208-1"
+      },
+      {
+        "sentence": "その後、黒は足を悪くし、毛の色も悪くなり、目には目やにがたまった。",
+        "gloss": "color",
+        "sense_id": "ja-076fd8e44509f208-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ddfbb94224e377b27463762686230bdac13f0287a5c0bf50461466f665e61f7d"
+}

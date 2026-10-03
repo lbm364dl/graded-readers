@@ -1,0 +1,76 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_047-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 287,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "“阚泽和黄盖回到东吴，又在甘宁处设局”容易让人理解为黄盖也参与了甘宁处的设局；原文是阚泽独自前往甘宁寨，与甘宁共同试探蔡中、蔡和。",
+      "classification": "material",
+      "reason": "原文明确是阚泽独自前往甘宁寨，与甘宁共同试探蔡中、蔡和；将黄盖列为设局参与者改变了该事件的行动者。",
+      "required_fix": "改为“阚泽回到东吴，又独自前往甘宁处设局”，或明确说明阚泽独自前往甘宁寨，与甘宁共同试探蔡中、蔡和。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "“阚泽和黄盖回到东吴，又在甘宁处设局”容易让人理解为黄盖也参与了甘宁处的设局；原文是阚泽独自前往甘宁寨，与甘宁共同试探蔡中、蔡和。",
+      "classification": "material",
+      "reason": "原文明确是阚泽独自前往甘宁寨，与甘宁共同试探蔡中、蔡和；将黄盖列为设局参与者改变了该事件的行动者。",
+      "required_fix": "改为“阚泽回到东吴，又独自前往甘宁处设局”，或明确说明阚泽独自前往甘宁寨，与甘宁共同试探蔡中、蔡和。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 263,
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [
+          "未说明庞统索取榜文是为了保全自己的宗族，这一请求的直接动机被遗漏。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "“叫他遇见庞统”暗示周瑜安排蒋干与庞统相遇；原文是蒋干被送到庵中后自行寻访，偶然找到庞统。",
+          "“替曹操安民”偏移了原文中庞统以救万民为名、实际请求榜文保全宗族的动机。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 287,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

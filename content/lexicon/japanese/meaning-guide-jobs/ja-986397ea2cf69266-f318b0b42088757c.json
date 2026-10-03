@@ -1,0 +1,32 @@
+{
+  "id": "ja-986397ea2cf69266-f318b0b42088757c",
+  "entry_id": "ja-986397ea2cf69266",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-986397ea2cf69266",
+      "headword": "だが",
+      "reading": "だが",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-986397ea2cf69266-1",
+          "definition": "but; however"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "だが一人が目を覚ますと、「猫が来た」と泣き出し、主人が飛び出してくる。",
+        "gloss": "but; however",
+        "sense_id": "ja-986397ea2cf69266-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c3aa6ffa2977f2e08233e21b5f9878142ef65ea3be22a26b125901f5f936517e"
+}

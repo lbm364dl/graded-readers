@@ -1,0 +1,32 @@
+{
+  "id": "ja-6290b8fcf725b759-b660adb589e9eb34",
+  "entry_id": "ja-6290b8fcf725b759",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-6290b8fcf725b759",
+      "headword": "涎",
+      "reading": "よだれ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-6290b8fcf725b759-1",
+          "definition": "saliva; drool"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩がそっと書斎をのぞくと、主人は昼寝をしていたり、読みかけの本に涎をたらしていたりする。",
+        "gloss": "drool; saliva",
+        "sense_id": "ja-6290b8fcf725b759-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ac072a7355c7330833fd38962f5ea8008718146123aef2bc7448b89b30018f6d"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-e90a015fc7eca7be-578d6124ca876e10",
+  "entry_id": "ja-e90a015fc7eca7be",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e90a015fc7eca7be",
+      "headword": "変わる",
+      "reading": "かわる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e90a015fc7eca7be-1",
+          "definition": "to change; to become different"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "その後、吾輩は猫にもかなり出会ったが、こんな変わった顔をしたものには、一度も出会わなかった。",
+        "gloss": "unusual; strange",
+        "sense_id": "ja-e90a015fc7eca7be-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a864674755946e2908ce4d6068027ba6d31d7c089dd89da39f1eb195a6ea959d"
+}

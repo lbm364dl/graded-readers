@@ -1,0 +1,32 @@
+{
+  "id": "ja-265820d2d0903f6a-1717ba738c4a4775",
+  "entry_id": "ja-265820d2d0903f6a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-265820d2d0903f6a",
+      "headword": "付き合う",
+      "reading": "つきあう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-265820d2d0903f6a-1",
+          "definition": "to associate or socialize with someone"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "車屋の猫だけに力は強いが、教育がないので、あまり誰も付き合わないらしい。",
+        "gloss": "do not associate with",
+        "sense_id": "ja-265820d2d0903f6a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a29471f2b794cf1653c82c0f7651aa2e5957e6cbc16c5a6179ba569880a40af7"
+}

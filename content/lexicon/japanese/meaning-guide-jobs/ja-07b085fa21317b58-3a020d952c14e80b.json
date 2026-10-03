@@ -1,0 +1,32 @@
+{
+  "id": "ja-07b085fa21317b58-3a020d952c14e80b",
+  "entry_id": "ja-07b085fa21317b58",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-07b085fa21317b58",
+      "headword": "暖かい",
+      "reading": "あたたかい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-07b085fa21317b58-1",
+          "definition": "warm"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ある暖かい日の午後、昼ごはんの後で寝てから、吾輩は茶園を歩いた。",
+        "gloss": "warm",
+        "sense_id": "ja-07b085fa21317b58-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "65b66eca12ad7316be4626bbc131a63a77dfc93e799863f3c5f2c273c1f6a771"
+}

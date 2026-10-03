@@ -1,0 +1,32 @@
+{
+  "id": "ja-9d608655bfef3dcf-a46302af9151b44c",
+  "entry_id": "ja-9d608655bfef3dcf",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9d608655bfef3dcf",
+      "headword": "こと",
+      "reading": "こと",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-9d608655bfef3dcf-1",
+          "definition": "nominalizer that turns a clause or verb phrase into a noun phrase referring to a fact, event, or matter"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "暗くてぬれている所で、ニャーニャー鳴いていたことだけは覚えている。",
+        "gloss": "fact; matter",
+        "sense_id": "ja-9d608655bfef3dcf-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "91bf45bede1313195df38f30d49e07a65c13cce9fca6720e6b61af0b253c1b5e"
+}

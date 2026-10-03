@@ -1,0 +1,32 @@
+{
+  "id": "ja-b1327e7a7a2c6a7a-6b6b3c96678b5d72",
+  "entry_id": "ja-b1327e7a7a2c6a7a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-b1327e7a7a2c6a7a",
+      "headword": "ことがある",
+      "reading": "ことがある",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-b1327e7a7a2c6a7a-1",
+          "definition": "to have done something before; to have the experience of doing something"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "何度も会ううち、黒は鼠を三、四十匹とったことがあると自慢した。",
+        "gloss": "have the experience of; have once",
+        "sense_id": "ja-b1327e7a7a2c6a7a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "167e01c7db4496a1dc005c93652c7fae0a31444132487f70d4cd057eb2a43277"
+}

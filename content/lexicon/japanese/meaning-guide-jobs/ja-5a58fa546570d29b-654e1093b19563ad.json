@@ -1,0 +1,32 @@
+{
+  "id": "ja-5a58fa546570d29b-654e1093b19563ad",
+  "entry_id": "ja-5a58fa546570d29b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5a58fa546570d29b",
+      "headword": "ことはあるまい",
+      "reading": "ことはあるまい",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-5a58fa546570d29b-1",
+          "definition": "expresses a confident negative expectation: something is unlikely to happen or be the case"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "人間も、いつまでも栄えることはあるまい。",
+        "gloss": "there is no way that; surely not",
+        "sense_id": "ja-5a58fa546570d29b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "de99859d4e7509747b094e084e0b36a4cba078b91a19f43d61d8f32661927f71"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-e83b222fbc23a1ff-b0688a935b707feb",
+  "entry_id": "ja-e83b222fbc23a1ff",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e83b222fbc23a1ff",
+      "headword": "黒猫",
+      "reading": "くろねこ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e83b222fbc23a1ff-1",
+          "definition": "a black cat"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ある小春の穏やかな日、昼寝のあとでそこへ行くと、杉垣のそばで大きな黒猫が気持ちよさそうに寝ていた。",
+        "gloss": "black cat",
+        "sense_id": "ja-e83b222fbc23a1ff-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6bcb4afe384762dc2c39399f996db226b4513e1206c3fd677bb603cf5054b2ad"
+}

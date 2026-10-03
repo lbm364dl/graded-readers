@@ -1,0 +1,36 @@
+{
+  "id": "zh-dfa4383807fb-1-9e6300ee50679cea",
+  "entry_id": "zh-dfa4383807fb-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-dfa4383807fb-1",
+      "headword": "屠",
+      "kind": "word",
+      "reading": "tú",
+      "senses": [
+        {
+          "id": "zh-dfa4383807fb-1-s1",
+          "definition": "to slaughter animals for food"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞说自己姓张，名飞，字翼德，世居涿郡，家有庄田，平日卖酒屠猪，一向喜欢结交天下豪杰。",
+        "gloss": "to slaughter",
+        "sense_id": "zh-dfa4383807fb-1-s1"
+      },
+      {
+        "sentence": "那人回答：“我姓张，名飞，字翼德，世居涿郡，颇有庄田，卖酒屠猪，专好结交天下豪杰。",
+        "gloss": "to slaughter",
+        "sense_id": "zh-dfa4383807fb-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "174b54d18f39dbe05e908839b6bd70300ae34787d53cdada09932ca5c87e95e6"
+}

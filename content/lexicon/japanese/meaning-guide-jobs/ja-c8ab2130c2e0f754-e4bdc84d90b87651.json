@@ -1,0 +1,184 @@
+{
+  "id": "ja-c8ab2130c2e0f754-e4bdc84d90b87651",
+  "entry_id": "ja-c8ab2130c2e0f754",
+  "reason": "requested",
+  "item": {
+    "entry": {
+      "id": "ja-c8ab2130c2e0f754",
+      "headword": "名前",
+      "reading": "なまえ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-c8ab2130c2e0f754-1",
+          "definition": "Name."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "名前はまだありません。",
+        "gloss": "name",
+        "sense_id": "ja-c8ab2130c2e0f754-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-c8ab2130c2e0f754",
+    "investigation_questions": [
+      {
+        "component": "前",
+        "question": "Is there historical evidence establishing what 前 contributed when 名前 was formed?"
+      }
+    ],
+    "claim_ids": [
+      "c1",
+      "c2"
+    ],
+    "structure": "lexicalized",
+    "explanation_en": "名前 is the ordinary Japanese word for a name or designation, including a formal or outward designation. 名 has long been used for “name” or “designation,” but that alone does not establish what 前 contributes within 名前.",
+    "caveat_en": "",
+    "parts": [],
+    "research": {
+      "entry_id": "ja-c8ab2130c2e0f754",
+      "status": "partial",
+      "sources": [
+        {
+          "id": "s1",
+          "url": "https://kotobank.jp/word/%E5%90%8D%E5%89%8D-22836",
+          "title": "名前（なまえ）— コトバンク／精選版 日本国語大辞典",
+          "accessed_at": "2026-09-27",
+          "summary_en": "The dictionary gives cited examples for 名前 from 1720 (表向きの名目, an outward or formal designation), 1731 (a person's name), 1886 (reputation or honor), and 1889 (a name for a thing or matter). These dates mark examples cited by this dictionary, not the word's coinage."
+        },
+        {
+          "id": "s2",
+          "url": "https://kotobank.jp/word/%E5%90%8D-586865",
+          "title": "名（な）— コトバンク／精選版 日本国語大辞典",
+          "accessed_at": "2026-09-27",
+          "summary_en": "The entry records 名（な） meaning a name or designation in examples cited from the Kojiki (712), Tosa Nikki (c. 935), and Man’yōshū (late 8th century). This establishes older use of 名, but not the historical formation of 名前."
+        },
+        {
+          "id": "s3",
+          "url": "https://www2.ninjal.ac.jp/dictionaries/IPALBN/pdf_dir/%E3%81%BE%E3%81%88.pdf",
+          "title": "IPAL: 文法辞典 — まえ（前）／National Institute for Japanese Language and Linguistics",
+          "accessed_at": "2026-09-27",
+          "summary_en": "This NINJAL resource describes senses of まえ and lists some compounds or formations involving it. It does not list 名前 in the relevant formation examples or establish that 前 contributed a particular meaning when 名前 formed."
+        },
+        {
+          "id": "s4",
+          "url": "https://gogen-yurai.jp/namae/",
+          "title": "名前／なまえ — 語源由来辞典",
+          "accessed_at": "2026-09-27",
+          "summary_en": "This popular etymology page says 名 has long been used with the meaning ‘name’; the opened page gives no account of 前's historical role."
+        },
+        {
+          "id": "s5",
+          "url": "https://kotobank.jp/word/%E5%89%8D-544359",
+          "title": "前（まえ）— コトバンク／精選版 日本国語大辞典",
+          "accessed_at": "2026-09-27",
+          "summary_en": "The entry documents a historical construction of the form Xの前 attached to a woman's name to express respect, citing 千手の前 in Heike monogatari (early 13th century). It also lists modern suffix uses for 前, with examples such as 男前 and 腕前. These separate uses do not by themselves establish the historical function of 前 in 名前."
+        },
+        {
+          "id": "s6",
+          "url": "https://etymology-encyclopedia.com/namae/",
+          "title": "なまえ〖名前〗の語源・由来 — 語源辞典オンライン",
+          "accessed_at": "2026-09-27",
+          "summary_en": "This secondary etymology page repeats the dictionary's early citations and reports that an honorific explanation for 前 is difficult to establish decisively. It nevertheless proposes that some kind of element was added to 名; that proposal is not substantiated by historical evidence on the opened page."
+        }
+      ],
+      "claims": [
+        {
+          "id": "c1",
+          "text_en": "精選版 日本国語大辞典 cites 名前 in 1720 with the sense ‘formal or outward designation’ and in 1731 for a person's name. These are the earliest examples cited in this entry, not proof of when the word was formed.",
+          "source_ids": [
+            "s1"
+          ]
+        },
+        {
+          "id": "c2",
+          "text_en": "The same dictionary records 名（な） meaning ‘name’ or ‘designation’ in examples from much earlier texts, including the Kojiki (712) and Man’yōshū (late 8th century). This shows that 名 predates the cited examples of 名前, but does not prove that 名前 was formed directly from 名 plus 前.",
+          "source_ids": [
+            "s1",
+            "s2"
+          ]
+        },
+        {
+          "id": "c3",
+          "text_en": "Japanese dictionaries attest a respectful use of 前 in the construction Xの前 after a woman's name, with a Heike monogatari example, and also describe other suffix uses of 前. The evidence concerns those constructions and does not establish that this respectful use, or the ordinary meaning ‘front/before,’ supplied 前's contribution in 名前.",
+          "source_ids": [
+            "s5"
+          ]
+        },
+        {
+          "id": "c4",
+          "text_en": "The opened NINJAL IPAL resource catalogs senses and some formations involving まえ, but its relevant examples do not identify 名前 as a formation or explain its history. It therefore does not support the proposed dossier's claim that NINJAL analyzes 前 as a compound element specifically in 名前.",
+          "source_ids": [
+            "s3"
+          ]
+        },
+        {
+          "id": "c5",
+          "text_en": "A secondary etymology page discusses an honorific explanation for 前 but acknowledges that the specific role is difficult to determine. Its proposal that some element was added to 名 is not supported there by a historical derivation or direct attestation of the formation.",
+          "source_ids": [
+            "s6"
+          ]
+        }
+      ],
+      "searches": [
+        {
+          "query": "名前 なまえ 日本語 語源 日本国語大辞典 前 形成",
+          "opened_urls": []
+        },
+        {
+          "query": "名前 なまえ 語源 名 前 日本語 歴史 辞書",
+          "opened_urls": [
+            "https://etymology-encyclopedia.com/namae/"
+          ]
+        },
+        {
+          "query": "名前 語源 「前」 接尾語 辞典 日本語",
+          "opened_urls": []
+        },
+        {
+          "query": "\"名前\" \"日本語源大辞典\" なまえ 前",
+          "opened_urls": []
+        },
+        {
+          "query": "(direct open)",
+          "opened_urls": [
+            "https://kotobank.jp/word/%E5%90%8D%E5%89%8D-22836",
+            "https://kotobank.jp/word/%E5%90%8D-586865",
+            "https://www2.ninjal.ac.jp/dictionaries/IPALBN/pdf_dir/%E3%81%BE%E3%81%88.pdf",
+            "https://gogen-yurai.jp/namae/",
+            "https://japanese.stackexchange.com/questions/13282/does-the-word-%E5%90%8D%E5%89%8D-have-English-roots",
+            "https://yurai-world.com/word/437/",
+            "https://kotobank.jp/word/%E5%89%8D-544359"
+          ]
+        }
+      ],
+      "gaps": [
+        "No opened reputable historical or scholarly source establishes how the native form 名前 was formed or whether 前 contributed meaning at formation. Older examples of 名 and separate respectful or suffix uses of 前 do not establish that derivation.",
+        "The directly opened Japanese Language Stack Exchange page returned an internal access error, so its proposed explanation was not independently assessed from the page and is not used as evidence."
+      ]
+    },
+    "input_fingerprint": "3deb3c52c394a50032de8ee623fc222107564f7448f30d0da9b62e27b37f2683",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "partial",
+    "editorial_route": "cached_research",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [
+    {
+      "id": "n5-pilot-namae-structured-parts",
+      "entry_id": "ja-c8ab2130c2e0f754",
+      "reason": "The reviewed explanation explicitly discusses 名 and the unresolved contribution of 前 but leaves parts empty. Represent these discussed spelling components as structured parts with supported contributions and the honest limit on 前, without inventing a historical or modern role. Keep the useful explanation and internal investigation question; do not merely concatenate unrelated character definitions.",
+      "reuse_reviewed_evidence": true
+    }
+  ],
+  "status": "reviewed",
+  "result_digest": "ce14929f679a36b2ca936dc5ce639ed528ae2253f1f3a22576ea71d64dae23b0"
+}

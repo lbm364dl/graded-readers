@@ -1,0 +1,37 @@
+{
+  "id": "ja-a10203c49ed241a2-301030e0c1459b6f",
+  "entry_id": "ja-a10203c49ed241a2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a10203c49ed241a2",
+      "headword": "そんなに",
+      "reading": "そんなに",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-a10203c49ed241a2-1",
+          "definition": "To such a degree or extent; so much."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "鼠をたくさん食べるから、そんなに太って毛つやもよいのだろう」と言うと、黒は急にため息をついた。",
+        "gloss": "so; that much",
+        "sense_id": "ja-a10203c49ed241a2-1"
+      },
+      {
+        "sentence": "君がそんなに真面目に信じるとは思わなかった」\n",
+        "gloss": "so; to that extent",
+        "sense_id": "ja-a10203c49ed241a2-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e916b56439a82e3bd6eca8b2fbc2f597be9f2c8fa266676c2f39076d7a1454d0"
+}

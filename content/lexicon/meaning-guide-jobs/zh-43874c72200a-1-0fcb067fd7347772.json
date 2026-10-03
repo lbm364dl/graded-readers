@@ -1,0 +1,31 @@
+{
+  "id": "zh-43874c72200a-1-0fcb067fd7347772",
+  "entry_id": "zh-43874c72200a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-43874c72200a-1",
+      "headword": "两队",
+      "kind": "word",
+      "reading": "liǎngduì",
+      "senses": [
+        {
+          "id": "zh-43874c72200a-1-s1",
+          "definition": "two teams or groups"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "两队人在山下相遇，刘备叫黄巾军投降。",
+        "gloss": "two forces",
+        "sense_id": "zh-43874c72200a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "60decc3f2221061daec5195e9127ada92341a5daef3682ff83a138b98fda0f08"
+}

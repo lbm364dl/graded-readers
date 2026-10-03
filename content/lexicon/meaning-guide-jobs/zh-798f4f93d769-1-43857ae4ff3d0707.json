@@ -1,0 +1,31 @@
+{
+  "id": "zh-798f4f93d769-1-43857ae4ff3d0707",
+  "entry_id": "zh-798f4f93d769-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-798f4f93d769-1",
+      "headword": "显出",
+      "kind": "construction",
+      "reading": "xiǎnchū",
+      "senses": [
+        {
+          "id": "zh-798f4f93d769-1-s1",
+          "definition": "show; make apparent"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "于是，三人取得了第一次胜利，初战便显出力量。",
+        "gloss": "show; reveal",
+        "sense_id": "zh-798f4f93d769-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "263d0b9d9efac0b3a4a69f65ee2f8675516bc67f2ea66e3dacdbd5e3cebd4d0a"
+}

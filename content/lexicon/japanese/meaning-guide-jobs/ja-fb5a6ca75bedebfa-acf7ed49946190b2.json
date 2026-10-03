@@ -1,0 +1,32 @@
+{
+  "id": "ja-fb5a6ca75bedebfa-acf7ed49946190b2",
+  "entry_id": "ja-fb5a6ca75bedebfa",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-fb5a6ca75bedebfa",
+      "headword": "かく",
+      "reading": "かく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-fb5a6ca75bedebfa-1",
+          "definition": "to scratch; to make a snoring sound"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が近づいても気にしないように、大きないびきをかいている。",
+        "gloss": "is snoring",
+        "sense_id": "ja-fb5a6ca75bedebfa-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4f83c4232a81f1c8869d8057cadb8678291ab1acc7df63f9acc391bbd7ddec8e"
+}

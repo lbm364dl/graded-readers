@@ -1,0 +1,37 @@
+{
+  "id": "ja-89d04faea346e455-55707a8ded69778f",
+  "entry_id": "ja-89d04faea346e455",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-89d04faea346e455",
+      "headword": "よる",
+      "reading": "よる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-89d04faea346e455-1",
+          "definition": "to depend on; be based on; be according to"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "しかも、あとで聞いたところによると、その人間は書生で、人間の中でも一番凶悪な種族だったらしい。",
+        "gloss": "depend on; be based on",
+        "sense_id": "ja-89d04faea346e455-1"
+      },
+      {
+        "sentence": "三毛君によれば、人間は所有権というものを理解していない。",
+        "gloss": "according to",
+        "sense_id": "ja-89d04faea346e455-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "71ffe198bda8ac16b91db596cb26e925980c728589178ee1e0d60826d25739a9"
+}

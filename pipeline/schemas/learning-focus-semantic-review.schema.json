@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["verdict", "focus_exceptions", "metadata_corrections"],
+  "properties": {
+    "verdict": {"type": "string", "enum": ["pass", "revisions"]},
+    "focus_exceptions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["segment_index", "surface", "issue", "explanation_en"],
+        "properties": {
+          "segment_index": {"type": "integer", "minimum": 0},
+          "surface": {"type": "string", "minLength": 1},
+          "issue": {
+            "type": "string",
+            "enum": [
+              "contextual_sense",
+              "nontransparent_decomposition",
+              "misleading_boundary"
+            ]
+          },
+          "explanation_en": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "metadata_corrections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "segment_index",
+          "surface",
+          "correct_type",
+          "correct_pinyin",
+          "correct_meaning_en",
+          "explanation_en"
+        ],
+        "properties": {
+          "segment_index": {"type": "integer", "minimum": 0},
+          "surface": {"type": "string", "minLength": 1},
+          "correct_type": {
+            "type": "string",
+            "enum": ["word", "particle", "name", "idiom"]
+          },
+          "correct_pinyin": {"type": "string", "minLength": 1},
+          "correct_meaning_en": {"type": "string", "minLength": 1},
+          "explanation_en": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}

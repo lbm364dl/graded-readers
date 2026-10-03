@@ -1,0 +1,36 @@
+{
+  "id": "zh-007b9d6b92cf-1-0e1065894f102013",
+  "entry_id": "zh-007b9d6b92cf-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-007b9d6b92cf-1",
+      "headword": "将领",
+      "kind": "word",
+      "reading": "jiànglǐng",
+      "senses": [
+        {
+          "id": "zh-007b9d6b92cf-1-s1",
+          "definition": "a military commander"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "不久，有人报告：黄巾军将领程远志率五万人，企图来犯涿郡。",
+        "gloss": "general",
+        "sense_id": "zh-007b9d6b92cf-1-s1"
+      },
+      {
+        "sentence": "没过几天，有人报告：黄巾军将领程远志率领五万兵马来犯涿郡。",
+        "gloss": "a military commander",
+        "sense_id": "zh-007b9d6b92cf-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "72b80be7e63d033a2230cba4745171ed8f88cf061411fa9561ef19afa1eeac69"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-a70a4587c393-1-605228a8e0627803",
+  "entry_id": "zh-a70a4587c393-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a70a4587c393-1",
+      "headword": "根据",
+      "kind": "word",
+      "reading": "gēnjù",
+      "senses": [
+        {
+          "id": "zh-a70a4587c393-1-s1",
+          "definition": "on the basis of; according to"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备根据旗号判断来军是张角，便带兵冲杀。",
+        "gloss": "based on",
+        "sense_id": "zh-a70a4587c393-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "311b2028f276c0b04502ba98d9a54073d16836c3dfdb2757cdbc455692ee6144"
+}

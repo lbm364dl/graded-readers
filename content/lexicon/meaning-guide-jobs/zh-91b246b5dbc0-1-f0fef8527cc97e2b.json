@@ -1,0 +1,36 @@
+{
+  "id": "zh-91b246b5dbc0-1-f0fef8527cc97e2b",
+  "entry_id": "zh-91b246b5dbc0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-91b246b5dbc0-1",
+      "headword": "草",
+      "kind": "word",
+      "reading": "cǎo",
+      "senses": [
+        {
+          "id": "zh-91b246b5dbc0-1-s1",
+          "definition": "grass or similar plant material, including dried stalks used for practical purposes"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军战事不利，退入长社，用草扎营。",
+        "gloss": "straw",
+        "sense_id": "zh-91b246b5dbc0-1-s1"
+      },
+      {
+        "sentence": "皇甫嵩、朱隽商量后，决定火攻，命士兵各带一把草，暗中埋下伏兵。",
+        "gloss": "straw",
+        "sense_id": "zh-91b246b5dbc0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "61e31bc0d3d1a837b8de8b7db315876a8a6086ae5c0e632c04d85ad64c5dabdd"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-e2f6b6e2eb2a-1-ff0101f363113d06",
+  "entry_id": "zh-e2f6b6e2eb2a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e2f6b6e2eb2a-1",
+      "headword": "声势浩大",
+      "kind": "expression",
+      "reading": "shēngshì hàodà",
+      "senses": [
+        {
+          "id": "zh-e2f6b6e2eb2a-1-s1",
+          "definition": "having impressive force and momentum"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军声势浩大，官军见到他们便溃逃。",
+        "gloss": "imposing in force and momentum",
+        "sense_id": "zh-e2f6b6e2eb2a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "26147d7b0fc7d9ca43976e6d0c97f349169bc25f174d1f63283114cb822e8e16"
+}

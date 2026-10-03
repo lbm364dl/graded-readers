@@ -1,0 +1,32 @@
+{
+  "id": "ja-2c3459671921e176-b75dc9fce1a7b7c9",
+  "entry_id": "ja-2c3459671921e176",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-2c3459671921e176",
+      "headword": "泥溝",
+      "reading": "どぶ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-2c3459671921e176-1",
+          "definition": "a ditch or drain, especially one containing muddy or foul water"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "亭主が縁の下へ入った時、大きな鼬が飛び出し、黒が泥溝へ追い込んだ。",
+        "gloss": "muddy ditch; drain",
+        "sense_id": "ja-2c3459671921e176-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "dd2c189546964e57b69ff89bdea08dd75fdb9bf5220069dff1c29f673eb6d64d"
+}

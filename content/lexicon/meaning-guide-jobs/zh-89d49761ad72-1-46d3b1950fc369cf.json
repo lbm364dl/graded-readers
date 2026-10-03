@@ -1,0 +1,31 @@
+{
+  "id": "zh-89d49761ad72-1-46d3b1950fc369cf",
+  "entry_id": "zh-89d49761ad72-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-89d49761ad72-1",
+      "headword": "桥玄",
+      "kind": "name",
+      "reading": "Qiáo Xuán",
+      "senses": [
+        {
+          "id": "zh-89d49761ad72-1-s1",
+          "definition": "Qiao Xuan"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "桥玄曾对曹操说，天下将乱，能安定天下的人，仿佛就是他。",
+        "gloss": "Qiao Xuan",
+        "sense_id": "zh-89d49761ad72-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a46626553f67fcaf468c84801c8059882ddd188820002a888d18dc6c5acb000a"
+}

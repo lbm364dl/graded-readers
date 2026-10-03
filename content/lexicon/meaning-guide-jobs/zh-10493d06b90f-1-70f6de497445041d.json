@@ -1,0 +1,31 @@
+{
+  "id": "zh-10493d06b90f-1-70f6de497445041d",
+  "entry_id": "zh-10493d06b90f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-10493d06b90f-1",
+      "headword": "发现",
+      "kind": "word",
+      "reading": "fāxiàn",
+      "senses": [
+        {
+          "id": "zh-10493d06b90f-1-s1",
+          "definition": "discover; find out or become aware of"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人带人赶到青州，发现敌人很多。",
+        "gloss": "discover",
+        "sense_id": "zh-10493d06b90f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a4eb1963dd95322d80612bff4d9b9910f02b2c73ca339ce1c73cb6d151f5083c"
+}

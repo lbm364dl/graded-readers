@@ -1,0 +1,31 @@
+{
+  "id": "zh-5df0e3c5b3a2-1-7330a1bf760b62b6",
+  "entry_id": "zh-5df0e3c5b3a2-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5df0e3c5b3a2-1",
+      "headword": "豪杰",
+      "kind": "word",
+      "reading": "háojié",
+      "senses": [
+        {
+          "id": "zh-5df0e3c5b3a2-1-s1",
+          "definition": "a person of outstanding ability or character"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "大汉叫张飞，住在涿郡，有田，卖酒杀猪，也喜爱结交豪杰。",
+        "gloss": "heroes",
+        "sense_id": "zh-5df0e3c5b3a2-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9d04602b710f1d9492f254cdcca73b875896ce14d92922d095c91db8f6b5f1e1"
+}

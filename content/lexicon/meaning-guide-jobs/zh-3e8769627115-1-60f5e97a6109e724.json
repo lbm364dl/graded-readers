@@ -1,0 +1,31 @@
+{
+  "id": "zh-3e8769627115-1-60f5e97a6109e724",
+  "entry_id": "zh-3e8769627115-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-3e8769627115-1",
+      "headword": "贩马",
+      "kind": "word",
+      "reading": "fànmǎ",
+      "senses": [
+        {
+          "id": "zh-3e8769627115-1-s1",
+          "definition": "to trade in horses"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "原来是中山大商张世平、苏双，他们每年往北贩马，最近因盗贼出现而返回。",
+        "gloss": "trade horses",
+        "sense_id": "zh-3e8769627115-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e4b958801b16f50b91d81b540ca10eb01d8586df496b11e572733b54689e0138"
+}

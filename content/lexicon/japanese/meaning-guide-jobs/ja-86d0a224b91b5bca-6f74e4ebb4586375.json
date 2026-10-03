@@ -1,0 +1,32 @@
+{
+  "id": "ja-86d0a224b91b5bca-6f74e4ebb4586375",
+  "entry_id": "ja-86d0a224b91b5bca",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-86d0a224b91b5bca",
+      "headword": "教育",
+      "reading": "きょういく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-86d0a224b91b5bca-1",
+          "definition": "education; training"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "車屋の猫だけに力は強いが、教育がないので、あまり誰も付き合わないらしい。",
+        "gloss": "education",
+        "sense_id": "ja-86d0a224b91b5bca-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "69bc03b47bea30b2d4a4b017a662cd4b7963aa1ea25b2a70362a31e0f3f08378"
+}

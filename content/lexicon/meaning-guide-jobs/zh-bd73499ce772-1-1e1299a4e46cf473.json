@@ -1,0 +1,31 @@
+{
+  "id": "zh-bd73499ce772-1-1e1299a4e46cf473",
+  "entry_id": "zh-bd73499ce772-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-bd73499ce772-1",
+      "headword": "支",
+      "kind": "word",
+      "reading": "zhī",
+      "senses": [
+        {
+          "id": "zh-bd73499ce772-1-s1",
+          "definition": "classifier for a branch or line of a family."
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘胜的儿子刘贞曾被封为涿鹿亭侯，后来因未按规定缴纳酬金而失侯，这一支便留在涿县。",
+        "gloss": "classifier for branches or groups",
+        "sense_id": "zh-bd73499ce772-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "10e7aa384a31cc38a0a392660eb19092cbfd27b1cbb825ab9789111225f74122"
+}

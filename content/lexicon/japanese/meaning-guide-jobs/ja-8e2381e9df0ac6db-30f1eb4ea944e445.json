@@ -1,0 +1,32 @@
+{
+  "id": "ja-8e2381e9df0ac6db-30f1eb4ea944e445",
+  "entry_id": "ja-8e2381e9df0ac6db",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-8e2381e9df0ac6db",
+      "headword": "痩せる",
+      "reading": "やせる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-8e2381e9df0ac6db-1",
+          "definition": "to become thin; to lose weight"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が教師の家だと言うと、「ずいぶん痩せているな」と笑った。",
+        "gloss": "be thin; be skinny",
+        "sense_id": "ja-8e2381e9df0ac6db-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c2f7ae4d43f37d1a7a0fb726e60d33c63cb13522d7bdc530c4a4df22f206aaa1"
+}

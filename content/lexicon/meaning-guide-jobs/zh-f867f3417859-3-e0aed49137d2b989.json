@@ -1,0 +1,31 @@
+{
+  "id": "zh-f867f3417859-3-e0aed49137d2b989",
+  "entry_id": "zh-f867f3417859-3",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f867f3417859-3",
+      "headword": "好",
+      "kind": "word",
+      "reading": "hào",
+      "senses": [
+        {
+          "id": "zh-f867f3417859-3-s1",
+          "definition": "to like"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "那人回答：“我姓张，名飞，字翼德，世居涿郡，颇有庄田，卖酒屠猪，专好结交天下豪杰。",
+        "gloss": "to like",
+        "sense_id": "zh-f867f3417859-3-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ddd445aef54a30d5b800a876199aee9994889a474e08cd4a8ada9eaf3af4d64a"
+}

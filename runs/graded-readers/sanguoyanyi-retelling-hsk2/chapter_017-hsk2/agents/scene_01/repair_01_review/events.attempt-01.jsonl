@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff33b-9e95-7200-bb6b-b6bd9e52c7b4"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.91,\"naturalness\":0.96,\"readability\":0.95,\"omissions\":[],\"unsupported_additions\":[\"“刘备却愿意让他做大将”并非使者明确承诺，原文只是称赞刘备仁德并劝马超归降。\"],\"distortions\":[\"“诸葛亮看出张鲁和马超彼此不信”略显简化；原文是张鲁听信杨松的谗言，逐渐怀疑马超。\"],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":35776,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":804,"reasoning_output_tokens":664}}

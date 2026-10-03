@@ -1,0 +1,31 @@
+{
+  "id": "zh-2f9d9872e5f9-1-963c8d5f6a21c3d8",
+  "entry_id": "zh-2f9d9872e5f9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2f9d9872e5f9-1",
+      "headword": "就",
+      "kind": "particle",
+      "reading": "jiù",
+      "senses": [
+        {
+          "id": "zh-2f9d9872e5f9-1-s1",
+          "definition": "then; already, indicating that something happens or is true from an early or specified time"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备家里很穷，从小就有大志。",
+        "gloss": "already",
+        "sense_id": "zh-2f9d9872e5f9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "dc139a1f6d67e42dc0151ca7922f847bb5ddeaff9513d1142deac447fb01b585"
+}

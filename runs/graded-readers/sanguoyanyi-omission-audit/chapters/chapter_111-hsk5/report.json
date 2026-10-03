@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_111-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 1090,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "将樊建和夏侯霸合并为共同劝止姜维；原文只有樊建劝止，夏侯霸是提醒邓艾谋略深远、魏军已有防备。",
+      "classification": "material",
+      "reason": "这把夏侯霸错误地写成了劝止姜维的人，改变了人物发言和劝谏事件的归属；原文中只有樊建劝止，夏侯霸是在姜维列出取胜理由后提醒邓艾已有防备。",
+      "required_fix": "改为樊建单独劝止姜维；随后保留姜维列出五胜并决定出兵，夏侯霸再提醒邓艾谋略深远且魏军已有准备。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "将樊建和夏侯霸合并为共同劝止姜维；原文只有樊建劝止，夏侯霸是提醒邓艾谋略深远、魏军已有防备。",
+      "classification": "material",
+      "reason": "这把夏侯霸错误地写成了劝止姜维的人，改变了人物发言和劝谏事件的归属；原文中只有樊建劝止，夏侯霸是在姜维列出取胜理由后提醒邓艾已有防备。",
+      "required_fix": "改为樊建单独劝止姜维；随后保留姜维列出五胜并决定出兵，夏侯霸再提醒邓艾谋略深远且魏军已有准备。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1090,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

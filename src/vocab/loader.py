@@ -1,12 +1,12 @@
 import csv
 from functools import lru_cache
-from src.config import DATA_DIR, LEVELS, LEVEL_FILE_KEYS
+from src.config import CHINESE_DATA_DIR, LEVELS, LEVEL_FILE_KEYS
 from src.vocab.models import Word, Character, HskLevel
 
 
 def load_words(level: int) -> list[Word]:
     key = LEVEL_FILE_KEYS[level]
-    path = DATA_DIR / "words" / f"{key}_words.csv"
+    path = CHINESE_DATA_DIR / "words" / f"{key}_words.csv"
     words = []
     with open(path, encoding="utf-8") as f:
         reader = csv.DictReader(f)
@@ -23,7 +23,7 @@ def load_words(level: int) -> list[Word]:
 
 def load_characters(level: int) -> list[Character]:
     key = LEVEL_FILE_KEYS[level]
-    path = DATA_DIR / "characters" / f"{key}_chars.csv"
+    path = CHINESE_DATA_DIR / "characters" / f"{key}_chars.csv"
     chars = []
     with open(path, encoding="utf-8") as f:
         reader = csv.DictReader(f)

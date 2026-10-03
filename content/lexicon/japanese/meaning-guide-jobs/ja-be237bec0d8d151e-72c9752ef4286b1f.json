@@ -1,0 +1,32 @@
+{
+  "id": "ja-be237bec0d8d151e-72c9752ef4286b1f",
+  "entry_id": "ja-be237bec0d8d151e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-be237bec0d8d151e",
+      "headword": "とき",
+      "reading": "とき",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-be237bec0d8d151e-1",
+          "definition": "time; occasion; when"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "目が回り、胸が悪くなったと思ったとき、どさりと音がして、目から火が出た。",
+        "gloss": "when; at the time",
+        "sense_id": "ja-be237bec0d8d151e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e4379b826ede9acdecfdefb5a316c9ad990b52cc1e85fd011bf2a2ab1af547e4"
+}

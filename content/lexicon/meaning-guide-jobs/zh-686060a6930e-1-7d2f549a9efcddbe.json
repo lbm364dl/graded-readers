@@ -1,0 +1,31 @@
+{
+  "id": "zh-686060a6930e-1-7d2f549a9efcddbe",
+  "entry_id": "zh-686060a6930e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-686060a6930e-1",
+      "headword": "巨鹿",
+      "kind": "name",
+      "reading": "Jùlù",
+      "senses": [
+        {
+          "id": "zh-686060a6930e-1-s1",
+          "definition": "Julu, a place name"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "巨鹿有三兄弟：张角、张宝、张梁。",
+        "gloss": "Julu",
+        "sense_id": "zh-686060a6930e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1c76ae46f474a7c8161767982fdc8825dbb2a78e9e5b7a248e824c92ed22f48f"
+}

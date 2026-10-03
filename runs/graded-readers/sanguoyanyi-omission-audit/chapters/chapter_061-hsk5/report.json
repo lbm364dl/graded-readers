@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_061-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 880,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "略去了濡须交战期间数次互有胜负等部分战况细节。",
+      "classification": "material",
+      "reason": "原场景明确写出双方持续交战数场且互有胜负，省略后削弱了战事进展与曹操最终退兵的过程信息。",
+      "required_fix": "补充双方在濡须相持一个多月期间数次交战、互有胜负的战况。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "略去了濡须交战期间数次互有胜负等部分战况细节。",
+      "classification": "material",
+      "reason": "原场景明确写出双方持续交战数场且互有胜负，省略后削弱了战事进展与曹操最终退兵的过程信息。",
+      "required_fix": "补充双方在濡须相持一个多月期间数次交战、互有胜负的战况。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": []
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 880,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "passed": true
+    }
+  ]
+}

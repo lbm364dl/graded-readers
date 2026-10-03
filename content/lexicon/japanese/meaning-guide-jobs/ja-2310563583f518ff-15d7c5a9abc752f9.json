@@ -1,0 +1,32 @@
+{
+  "id": "ja-2310563583f518ff-15d7c5a9abc752f9",
+  "entry_id": "ja-2310563583f518ff",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-2310563583f518ff",
+      "headword": "大切にする",
+      "reading": "たいせつにする",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-2310563583f518ff-1",
+          "definition": "to value; to treat as important"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "今まで名前さえ付けてもらえないことからも、吾輩がどれほど大切にされなかったか分かる。",
+        "gloss": "was not valued; was not treated as important",
+        "sense_id": "ja-2310563583f518ff-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e2741f390e2862d069014bac471b49899ed7bda1b893ec21f798318c61a465f0"
+}

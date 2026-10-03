@@ -1,0 +1,31 @@
+{
+  "id": "zh-8bfb276bc652-1-9d93fe7a1a76b554",
+  "entry_id": "zh-8bfb276bc652-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8bfb276bc652-1",
+      "headword": "厉",
+      "kind": "word",
+      "reading": "lì",
+      "senses": [
+        {
+          "id": "zh-8bfb276bc652-1-s1",
+          "definition": "sharp or forceful in manner or sound"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "忽然有人厉声问：“大丈夫不与国家出力，为何长叹？",
+        "gloss": "sharp; stern",
+        "sense_id": "zh-8bfb276bc652-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fcaa27499923c8e72a613caa611a95e61ff2f5f7fa010487d09d579d1897905e"
+}

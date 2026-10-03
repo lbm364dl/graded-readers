@@ -1,0 +1,32 @@
+{
+  "id": "ja-0673c18135037ba5-0edd586f79429169",
+  "entry_id": "ja-0673c18135037ba5",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-0673c18135037ba5",
+      "headword": "そのころ",
+      "reading": "そのころ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-0673c18135037ba5-1",
+          "definition": "at that time; around then"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "しかし、そのころの吾輩には、何という考えもなかったから、特に恐ろしいとも思わなかった。",
+        "gloss": "at that time; around then",
+        "sense_id": "ja-0673c18135037ba5-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "da9814d4e79fd5fc8e951208f3f0d223186611493a4936d5e51fa8b396d2a194"
+}

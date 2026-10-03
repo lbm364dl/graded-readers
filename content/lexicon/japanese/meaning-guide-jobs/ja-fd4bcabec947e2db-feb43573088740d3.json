@@ -1,0 +1,32 @@
+{
+  "id": "ja-fd4bcabec947e2db-feb43573088740d3",
+  "entry_id": "ja-fd4bcabec947e2db",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-fd4bcabec947e2db",
+      "headword": "怒り",
+      "reading": "いかり",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-fd4bcabec947e2db-1",
+          "definition": "anger; a strong feeling of displeasure"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "すると主人は、失望と怒りの混じった声で、座敷から「この馬鹿野郎」と怒鳴った。",
+        "gloss": "anger",
+        "sense_id": "ja-fd4bcabec947e2db-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3ccfde3f2b086bd3b0b1e5c11429605bfe75bb34dec4d7859931c08ab90cdce6"
+}

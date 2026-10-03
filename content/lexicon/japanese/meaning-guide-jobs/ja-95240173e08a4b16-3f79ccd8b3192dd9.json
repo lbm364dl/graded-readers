@@ -1,0 +1,32 @@
+{
+  "id": "ja-95240173e08a4b16-3f79ccd8b3192dd9",
+  "entry_id": "ja-95240173e08a4b16",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-95240173e08a4b16",
+      "headword": "美学",
+      "reading": "びがく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-95240173e08a4b16-1",
+          "definition": "aesthetics; the study or philosophy of beauty"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ある日、美学を勉強している友人が来た。",
+        "gloss": "aesthetics",
+        "sense_id": "ja-95240173e08a4b16-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c3af4677cdc27617f071a7dbd20a1380c6c3b1531e8f3ee691456d8b5186a115"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-c97a89151c98-1-be0ea6cd45b89259",
+  "entry_id": "zh-c97a89151c98-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c97a89151c98-1",
+      "headword": "歇下",
+      "kind": "construction",
+      "reading": "xiēxia",
+      "senses": [
+        {
+          "id": "zh-c97a89151c98-1-s1",
+          "definition": "stop and rest"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "正饮之间，一个大汉推车到店门口歇下，入店便叫酒保倒酒，说要赶进城投军。",
+        "gloss": "to stop and rest",
+        "sense_id": "zh-c97a89151c98-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9ceba216a13f86eb700dc7e28bc453a56897b2c0327417a4f7cb1a69c44ff0d4"
+}

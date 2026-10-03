@@ -1,0 +1,69 @@
+{
+  "id": "ja-d718a760ae947926-77b933ef53eea7f1",
+  "entry_id": "ja-d718a760ae947926",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d718a760ae947926",
+      "headword": "吾輩",
+      "reading": "わがはい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d718a760ae947926-1",
+          "definition": "I; a formal, literary first-person pronoun, traditionally masculine."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は猫です。",
+        "gloss": "I; this speaker (old-fashioned male narrator)",
+        "sense_id": "ja-d718a760ae947926-1"
+      },
+      {
+        "sentence": "男の人の手の上で、吾輩の目が回りました。",
+        "gloss": "I; the narrator",
+        "sense_id": "ja-d718a760ae947926-1"
+      },
+      {
+        "sentence": "吾輩は笹原の中へ捨てられました。",
+        "gloss": "I; the narrator",
+        "sense_id": "ja-d718a760ae947926-1"
+      },
+      {
+        "sentence": "吾輩は池を左に見ながら、ゆっくり歩き、人の家へ入りました。",
+        "gloss": "I; the speaker",
+        "sense_id": "ja-d718a760ae947926-1"
+      },
+      {
+        "sentence": "女の人は吾輩を何度も外へ出しましたが、吾輩は台所へ入りました。",
+        "gloss": "I; this narrator",
+        "sense_id": "ja-d718a760ae947926-1"
+      },
+      {
+        "sentence": "主人は吾輩を見て、「家の中に置いてやれ」と言いました。",
+        "gloss": "I; me (literary, masculine)",
+        "sense_id": "ja-d718a760ae947926-1"
+      },
+      {
+        "sentence": "吾輩はこの家に住むことにしました。",
+        "gloss": "I; this speaker",
+        "sense_id": "ja-d718a760ae947926-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [
+    {
+      "id": "n5-pilot-wagahai-components",
+      "entry_id": "ja-d718a760ae947926",
+      "reason": "The initial guide gives only the definition and register of 吾輩. Explain the useful contributions of 吾 and 輩 and their relationship to the conventional first-person meaning; distinguish supported modern analysis from any historical claim. Do not hide the missing component explanation behind a lexicalized label.",
+      "force_research": true
+    }
+  ],
+  "status": "reviewed",
+  "result_digest": "3aac5f052442825335cbc82c567495c67bc6d5a9b84d2adb2480c75c2d673550"
+}

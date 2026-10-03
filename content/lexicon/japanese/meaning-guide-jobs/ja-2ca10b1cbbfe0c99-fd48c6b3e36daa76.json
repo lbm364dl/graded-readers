@@ -1,0 +1,32 @@
+{
+  "id": "ja-2ca10b1cbbfe0c99-fd48c6b3e36daa76",
+  "entry_id": "ja-2ca10b1cbbfe0c99",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-2ca10b1cbbfe0c99",
+      "headword": "生涯",
+      "reading": "しょうがい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-2ca10b1cbbfe0c99-1",
+          "definition": "a lifetime; one's whole life"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "この教師の家で、生涯、無名の猫として終わるつもりである。",
+        "gloss": "for one’s whole life",
+        "sense_id": "ja-2ca10b1cbbfe0c99-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8eb34871b3df6ec74b6a24f2a6ea3ada8d19c283c210e7d04d123b4345fcd74e"
+}

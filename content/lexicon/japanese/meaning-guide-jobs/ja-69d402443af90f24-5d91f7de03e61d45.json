@@ -1,0 +1,32 @@
+{
+  "id": "ja-69d402443af90f24-5d91f7de03e61d45",
+  "entry_id": "ja-69d402443af90f24",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-69d402443af90f24",
+      "headword": "さらに",
+      "reading": "さらに",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-69d402443af90f24-1",
+          "definition": "furthermore; additionally"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "さらに黒は、鼠をとると、人間がそれを取り上げて交番へ持って行き、誰がとったか分からないので、そのたびに五銭をもらう、と言った。",
+        "gloss": "furthermore; additionally",
+        "sense_id": "ja-69d402443af90f24-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1ee168d6c4725ee4588269efb42272b1299fba5f02ce61ffb440048d127898e1"
+}

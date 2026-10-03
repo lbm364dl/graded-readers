@@ -1,0 +1,119 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_029-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 180,
+  "required_range": [
+    98,
+    182
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略曹操与孙策结亲、孙策谋袭许都等背景事件",
+      "classification": "material",
+      "reason": "结亲涉及曹操与孙策的政治关系，谋袭许都体现孙策不满曹操及其后续对抗动机，均非可有可无的背景。",
+      "required_fix": "补回曹操与孙策结亲及孙策因不满曹操而谋袭许都的情节。"
+    },
+    {
+      "omission_note": "省略孙策多次见于吉鬼影、毁观焚观等具体情节",
+      "classification": "material",
+      "reason": "毁观焚观是孙策受鬼影困扰、病势恶化过程中的实际事件，也刻画其执迷、暴烈的性格，不能仅视为气氛或重复描写。",
+      "required_fix": "补回孙策在府中、玉清观及毁观焚观过程中多次见于吉鬼影并逐步病重的关键情节。"
+    },
+    {
+      "omission_note": "省略孙策临终对诸弟、乔夫人及周瑜的嘱托",
+      "classification": "material",
+      "reason": "这些遗嘱涉及宗族安危、乔夫人的安排以及请周瑜辅佐孙权，属于临终托付和重要人物关系，影响后续继承与辅政脉络。",
+      "required_fix": "补回孙策对诸弟、乔夫人及周瑜的具体临终嘱托。"
+    },
+    {
+      "omission_note": "省略孙权任用诸葛瑾、顾雍的具体经过及职责",
+      "classification": "material",
+      "reason": "诸葛瑾劝孙权处理袁绍关系并促成拒盟，顾雍则被任为丞并行太守事；省略其任用经过和职责会削弱政策转折及江东政务安排的因果。",
+      "required_fix": "补回孙权任用诸葛瑾、采纳其对袁绍的建议，以及任顾雍为丞、行太守事的经过与职责。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略曹操与孙策结亲、孙策谋袭许都等背景事件",
+      "classification": "material",
+      "reason": "结亲涉及曹操与孙策的政治关系，谋袭许都体现孙策不满曹操及其后续对抗动机，均非可有可无的背景。",
+      "required_fix": "补回曹操与孙策结亲及孙策因不满曹操而谋袭许都的情节。"
+    },
+    {
+      "omission_note": "省略孙策多次见于吉鬼影、毁观焚观等具体情节",
+      "classification": "material",
+      "reason": "毁观焚观是孙策受鬼影困扰、病势恶化过程中的实际事件，也刻画其执迷、暴烈的性格，不能仅视为气氛或重复描写。",
+      "required_fix": "补回孙策在府中、玉清观及毁观焚观过程中多次见于吉鬼影并逐步病重的关键情节。"
+    },
+    {
+      "omission_note": "省略孙策临终对诸弟、乔夫人及周瑜的嘱托",
+      "classification": "material",
+      "reason": "这些遗嘱涉及宗族安危、乔夫人的安排以及请周瑜辅佐孙权，属于临终托付和重要人物关系，影响后续继承与辅政脉络。",
+      "required_fix": "补回孙策对诸弟、乔夫人及周瑜的具体临终嘱托。"
+    },
+    {
+      "omission_note": "省略孙权任用诸葛瑾、顾雍的具体经过及职责",
+      "classification": "material",
+      "reason": "诸葛瑾劝孙权处理袁绍关系并促成拒盟，顾雍则被任为丞并行太守事；省略其任用经过和职责会削弱政策转折及江东政务安排的因果。",
+      "required_fix": "补回孙权任用诸葛瑾、采纳其对袁绍的建议，以及任顾雍为丞、行太守事的经过与职责。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8,
+    "readability": 8,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": [],
+    "reviewer_verdict": "revise",
+    "harness_decision": "accepted_after_deterministic_length_verification"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 185,
+      "review": {
+        "source_fidelity": 7.2,
+        "naturalness": 7.4,
+        "readability": 8.0,
+        "material_omissions": [
+          "未说明曹操拒绝孙策求任大司马是其怀恨并谋袭许都的原因。",
+          "未保留孙策要求诸弟铲除宗族异心者、不得将叛逆骨肉葬入祖坟，以及请乔夫人让妹妹转告周瑜的具体嘱托。",
+          "鲁肃的战略建议省略了先除黄祖、进伐刘表、据守长江及最终图天下等关键内容。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "“曹操嫁女孙匡”将原文曹仁之女误写成曹操之女。"
+        ],
+        "language_problems": [
+          "“策恨曹操谋袭许都”句法歧义，未明确表达“孙策恨曹操，谋袭许都”，也未交代怀恨原因。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 180,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 8,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": [],
+        "reviewer_verdict": "revise",
+        "harness_decision": "accepted_after_deterministic_length_verification"
+      },
+      "passed": true
+    }
+  ]
+}

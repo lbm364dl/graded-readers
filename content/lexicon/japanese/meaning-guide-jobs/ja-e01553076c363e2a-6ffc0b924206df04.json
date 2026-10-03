@@ -1,0 +1,32 @@
+{
+  "id": "ja-e01553076c363e2a-6ffc0b924206df04",
+  "entry_id": "ja-e01553076c363e2a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e01553076c363e2a",
+      "headword": "一度も",
+      "reading": "いちども",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e01553076c363e2a-1",
+          "definition": "not even once; never (used with a negative predicate)"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "その後、猫にはたくさん会ったが、こんな変な顔には一度も会わなかった。",
+        "gloss": "not even once",
+        "sense_id": "ja-e01553076c363e2a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "08265d061627efdf50c7b6fb3f40869950300f4d3a09500b0c41b939f03263b0"
+}

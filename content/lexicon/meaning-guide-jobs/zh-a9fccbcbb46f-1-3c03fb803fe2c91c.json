@@ -1,0 +1,31 @@
+{
+  "id": "zh-a9fccbcbb46f-1-3c03fb803fe2c91c",
+  "entry_id": "zh-a9fccbcbb46f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a9fccbcbb46f-1",
+      "headword": "谢过",
+      "kind": "word",
+      "reading": "xièguò",
+      "senses": [
+        {
+          "id": "zh-a9fccbcbb46f-1-s1",
+          "definition": "to thank someone"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人谢过商人，打造兵器，配上铠甲，又聚集五百多名乡勇，前去报到。",
+        "gloss": "thank",
+        "sense_id": "zh-a9fccbcbb46f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b293092e480c6042c0ebe8bb517b49a0fcc3cc23d68babd75652cc36959a9bb2"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-4e7746f32a853f73-a2acd59c4ad95ef1",
+  "entry_id": "ja-4e7746f32a853f73",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-4e7746f32a853f73",
+      "headword": "頼みにする",
+      "reading": "たのみにする",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-4e7746f32a853f73-1",
+          "definition": "to rely on; to count on"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "力が強いことを頼みにして、猫が正当に食べられる物まで奪い、平気な顔をしているのである。",
+        "gloss": "relying on",
+        "sense_id": "ja-4e7746f32a853f73-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "436d56ed361a250c72000979f9db79b94bbe0f4d37650f3d5638bfd2a66869d5"
+}

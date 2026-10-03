@@ -1,0 +1,31 @@
+{
+  "id": "zh-1955b265d568-1-99b4796937d435e4",
+  "entry_id": "zh-1955b265d568-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1955b265d568-1",
+      "headword": "邀请",
+      "kind": "word",
+      "reading": "yāoqǐng",
+      "senses": [
+        {
+          "id": "zh-1955b265d568-1-s1",
+          "definition": "to invite"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备邀请他同坐，仔细询问姓名。",
+        "gloss": "to invite",
+        "sense_id": "zh-1955b265d568-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "085cad77dba920a241df985191f4b81842e631a055d143fa5df2d18cae4d0a61"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-faccee36af213e75-c4632de7c5d55b11",
+  "entry_id": "ja-faccee36af213e75",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-faccee36af213e75",
+      "headword": "勧める",
+      "reading": "すすめる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-faccee36af213e75-1",
+          "definition": "to recommend; to advise"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "友人に勧められたため、まず吾輩を写生することにしたらしい。",
+        "gloss": "was recommended",
+        "sense_id": "ja-faccee36af213e75-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b4268cb1b6409864515d81d7b16c6721d230a58b17c85331f35395a36eb51503"
+}

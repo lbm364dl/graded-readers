@@ -1,0 +1,31 @@
+{
+  "id": "zh-871ca1c6ca2f-1-a3d7201a6cd4c105",
+  "entry_id": "zh-871ca1c6ca2f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-871ca1c6ca2f-1",
+      "headword": "城中",
+      "kind": "word",
+      "reading": "chéngzhōng",
+      "senses": [
+        {
+          "id": "zh-871ca1c6ca2f-1-s1",
+          "definition": "in the city"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刚到任，他就在城中四门设置十多根五色棒。",
+        "gloss": "in the city",
+        "sense_id": "zh-871ca1c6ca2f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "897531d35e36d06f06706eacdf67ee0ef38e317bb741d9199a66c0658861481a"
+}

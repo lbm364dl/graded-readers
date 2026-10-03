@@ -1,0 +1,31 @@
+{
+  "id": "zh-6e55fb9d8a3d-1-41a03c0708377f7f",
+  "entry_id": "zh-6e55fb9d8a3d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6e55fb9d8a3d-1",
+      "headword": "给",
+      "kind": "word",
+      "reading": "gěi",
+      "senses": [
+        {
+          "id": "zh-6e55fb9d8a3d-1-s1",
+          "definition": "for; to, indicating a recipient or beneficiary"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角给百姓治病，聚集了很多人。",
+        "gloss": "for",
+        "sense_id": "zh-6e55fb9d8a3d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6ed12117f0e61f6f990a89a913bccc6fbb274afa6390973ca95f9d86d58d43cc"
+}

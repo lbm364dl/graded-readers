@@ -1,0 +1,32 @@
+{
+  "id": "ja-b0e73ed863f7b104-3715b616e21dddd0",
+  "entry_id": "ja-b0e73ed863f7b104",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-b0e73ed863f7b104",
+      "headword": "用を足す",
+      "reading": "ようをたす",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-b0e73ed863f7b104-1",
+          "definition": "to relieve oneself; attend to one's bodily needs"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そして、もう写生の邪魔をしたのだから仕方がないと思い、裏へ行って用を足そうと、ゆっくり歩き出した。",
+        "gloss": "intend to relieve oneself",
+        "sense_id": "ja-b0e73ed863f7b104-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d804533a2825796d3e7cf20c97631f52d70fd231b789952b634572f1d08c5808"
+}

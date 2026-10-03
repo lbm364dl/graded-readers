@@ -1,0 +1,32 @@
+{
+  "id": "ja-b6ead8966f22f439-7e6491c6155a9056",
+  "entry_id": "ja-b6ead8966f22f439",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-b6ead8966f22f439",
+      "headword": "思う",
+      "reading": "おもう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-b6ead8966f22f439-1",
+          "definition": "To think; to feel."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "鼠をとるより、寝ている方がよいと思った。",
+        "gloss": "thought",
+        "sense_id": "ja-b6ead8966f22f439-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2932cc9e3b03c8a691783f733de74fd94489bc5f1e9814a62812e3a74320cd51"
+}

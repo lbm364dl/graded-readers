@@ -1,0 +1,32 @@
+{
+  "id": "ja-8ee043c63467ab74-1f4adedf52e0a6c4",
+  "entry_id": "ja-8ee043c63467ab74",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-8ee043c63467ab74",
+      "headword": "気分が悪い",
+      "reading": "きぶんがわるい",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-8ee043c63467ab74-1",
+          "definition": "to feel unwell or sick"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "子供が騒ぐ時や、つまらなくて気分が悪い時、吾輩はここへ来て休む。",
+        "gloss": "feel sick; feel unwell",
+        "sense_id": "ja-8ee043c63467ab74-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ce8a836ffb876f846463bbd5820b6fc72760672b78418f5679dde2ea45a800a3"
+}

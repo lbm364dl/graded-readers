@@ -1,0 +1,32 @@
+{
+  "id": "ja-826b75db207d3d14-2589f9ba4e43bcf6",
+  "entry_id": "ja-826b75db207d3d14",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-826b75db207d3d14",
+      "headword": "五度",
+      "reading": "ごど",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-826b75db207d3d14-1",
+          "definition": "five times; on five occasions"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "これを四、五度も繰り返した。",
+        "gloss": "five times",
+        "sense_id": "ja-826b75db207d3d14-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4a17548588212c1e89f095e92a8ace4a8e8235e083a06945c8699a5d9a099bab"
+}

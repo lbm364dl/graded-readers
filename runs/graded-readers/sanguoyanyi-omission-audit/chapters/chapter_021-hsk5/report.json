@@ -1,0 +1,66 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_021-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 838,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了董承等六位盟誓者的具体姓名，以及刘备要求继续寻找三人的细节。",
+      "classification": "material",
+      "reason": "六位盟誓者的名单明确交代了联盟成员身份，而继续寻找三人体现了扩大密谋联盟的计划，属于重要政治关系与后续行动信息。",
+      "required_fix": "补充义状中六位盟誓者的具体姓名，并明确刘备要求再寻找三人、共聚十义且须谨慎保密。"
+    },
+    {
+      "omission_note": "省略了许褚追赶刘备后曹操最终决定不再追击的部分因由和过程细节。",
+      "classification": "material",
+      "reason": "许褚回报、程昱和郭嘉判断刘备已有异心，以及曹操因朱灵、路昭在军中而决定暂不追击，构成曹操停止追捕的关键过程和因果。",
+      "required_fix": "补充许褚回营复命、程昱与郭嘉劝曹操追击，以及曹操因朱灵、路昭仍在刘备军中而决定不再追赶的过程。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了董承等六位盟誓者的具体姓名，以及刘备要求继续寻找三人的细节。",
+      "classification": "material",
+      "reason": "六位盟誓者的名单明确交代了联盟成员身份，而继续寻找三人体现了扩大密谋联盟的计划，属于重要政治关系与后续行动信息。",
+      "required_fix": "补充义状中六位盟誓者的具体姓名，并明确刘备要求再寻找三人、共聚十义且须谨慎保密。"
+    },
+    {
+      "omission_note": "省略了许褚追赶刘备后曹操最终决定不再追击的部分因由和过程细节。",
+      "classification": "material",
+      "reason": "许褚回报、程昱和郭嘉判断刘备已有异心，以及曹操因朱灵、路昭在军中而决定暂不追击，构成曹操停止追捕的关键过程和因果。",
+      "required_fix": "补充许褚回营复命、程昱与郭嘉劝曹操追击，以及曹操因朱灵、路昭仍在刘备军中而决定不再追赶的过程。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 838,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

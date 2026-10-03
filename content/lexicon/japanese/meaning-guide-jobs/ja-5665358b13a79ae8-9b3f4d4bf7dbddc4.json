@@ -1,0 +1,32 @@
+{
+  "id": "ja-5665358b13a79ae8-9b3f4d4bf7dbddc4",
+  "entry_id": "ja-5665358b13a79ae8",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5665358b13a79ae8",
+      "headword": "偉い",
+      "reading": "えらい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-5665358b13a79ae8-1",
+          "definition": "superior in status or importance; great"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が「車屋と教師では、どちらが偉いか」と尋ねると、黒は「車屋の方が強いに決まっている。",
+        "gloss": "superior; important",
+        "sense_id": "ja-5665358b13a79ae8-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "146b08aed415c9ffa2738d7fe5ae8120f5c78ec050299bfe690a697d5ec6cae7"
+}

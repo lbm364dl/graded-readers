@@ -1,0 +1,32 @@
+{
+  "id": "ja-b42f0676df67f47e-2bade24da70be01f",
+  "entry_id": "ja-b42f0676df67f47e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-b42f0676df67f47e",
+      "headword": "体つき",
+      "reading": "からだつき",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-b42f0676df67f47e-1",
+          "definition": "physique; build"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "何より元気を失い、体つきも悪くなった。",
+        "gloss": "physique; build",
+        "sense_id": "ja-b42f0676df67f47e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "55939bc27d1e679d465a05cd6364294a9de4447ffa5da9312614d61fbdc2142b"
+}

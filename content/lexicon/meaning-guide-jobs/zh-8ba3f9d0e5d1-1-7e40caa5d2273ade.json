@@ -1,0 +1,31 @@
+{
+  "id": "zh-8ba3f9d0e5d1-1-7e40caa5d2273ade",
+  "entry_id": "zh-8ba3f9d0e5d1-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8ba3f9d0e5d1-1",
+      "headword": "披甲",
+      "kind": "construction",
+      "reading": "pījiǎ",
+      "senses": [
+        {
+          "id": "zh-8ba3f9d0e5d1-1-s1",
+          "definition": "to put on armor"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "二人各引兵攻打营寨，火焰冲天，黄巾军惊慌逃散，来不及上马，也来不及披甲。",
+        "gloss": "to put on armor",
+        "sense_id": "zh-8ba3f9d0e5d1-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1966bd50d68f3e43681f7d443af7160a0dadedefb9195d50f9029c9b45e52ac4"
+}

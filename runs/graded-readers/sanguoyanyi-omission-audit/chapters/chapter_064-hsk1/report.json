@@ -1,0 +1,129 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_064-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 181,
+  "required_range": [
+    98,
+    182
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了刘备军在雒城的多次交战及吴兰、雷同投降等细节",
+      "classification": "material",
+      "reason": "这些内容包含刘备军与张任部将的关键交战及吴兰、雷同投降这一实际事件，省略后削弱了雒城战事的完整因果链。",
+      "required_fix": "补充刘备军在雒城的主要交战过程，以及吴兰、雷同战败投降。"
+    },
+    {
+      "omission_note": "省略了张任被斩后葬于金雁桥、刘瑰被张翼杀死并开城投降等细节",
+      "classification": "material",
+      "reason": "刘瑰被杀并开城直接促成雒城陷落，张任葬于金雁桥则体现刘备对其忠烈的处理，均涉及重要事件和人物结局。",
+      "required_fix": "补充张任葬于金雁桥，以及张翼杀刘瑰、开城投降的经过。"
+    },
+    {
+      "omission_note": "省略了郑度焚毁粮草、坚壁清野的建议及刘璋拒绝",
+      "classification": "material",
+      "reason": "这是刘璋面对刘备进攻时的重要战略选择，既交代了郑度的应对方案，也体现刘璋拒绝牺牲百姓、坚持保民的动机和性格。",
+      "required_fix": "补充郑度提出焚毁粮草、坚壁清野的计策，以及刘璋以保全民众为由拒绝。"
+    },
+    {
+      "omission_note": "省略了杨阜、姜叙等人起兵反马超的具体过程和家属遇害细节",
+      "classification": "material",
+      "reason": "起兵过程构成马超败亡的主要因果链，家属遇害又解释了历城屠杀及各方仇恨，省略后会显著削弱人物动机和事件背景。",
+      "required_fix": "补充杨阜、姜叙、尹奉、赵昂等人谋划起兵、夹击马超，以及相关家属遇害的关键经过。"
+    },
+    {
+      "omission_note": "省略了马超投奔张鲁后张鲁原拟招婿、杨柏反对等细节",
+      "classification": "material",
+      "reason": "张鲁招婿计划及杨柏反对造成马超与杨柏之间的敌意，并推动后续张鲁阵营内部的关系和行动，属于重要关系与动机信息。",
+      "required_fix": "补充张鲁原拟招马超为婿、杨柏劝阻，以及由此引发的马超对杨柏不满。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了刘备军在雒城的多次交战及吴兰、雷同投降等细节",
+      "classification": "material",
+      "reason": "这些内容包含刘备军与张任部将的关键交战及吴兰、雷同投降这一实际事件，省略后削弱了雒城战事的完整因果链。",
+      "required_fix": "补充刘备军在雒城的主要交战过程，以及吴兰、雷同战败投降。"
+    },
+    {
+      "omission_note": "省略了张任被斩后葬于金雁桥、刘瑰被张翼杀死并开城投降等细节",
+      "classification": "material",
+      "reason": "刘瑰被杀并开城直接促成雒城陷落，张任葬于金雁桥则体现刘备对其忠烈的处理，均涉及重要事件和人物结局。",
+      "required_fix": "补充张任葬于金雁桥，以及张翼杀刘瑰、开城投降的经过。"
+    },
+    {
+      "omission_note": "省略了郑度焚毁粮草、坚壁清野的建议及刘璋拒绝",
+      "classification": "material",
+      "reason": "这是刘璋面对刘备进攻时的重要战略选择，既交代了郑度的应对方案，也体现刘璋拒绝牺牲百姓、坚持保民的动机和性格。",
+      "required_fix": "补充郑度提出焚毁粮草、坚壁清野的计策，以及刘璋以保全民众为由拒绝。"
+    },
+    {
+      "omission_note": "省略了杨阜、姜叙等人起兵反马超的具体过程和家属遇害细节",
+      "classification": "material",
+      "reason": "起兵过程构成马超败亡的主要因果链，家属遇害又解释了历城屠杀及各方仇恨，省略后会显著削弱人物动机和事件背景。",
+      "required_fix": "补充杨阜、姜叙、尹奉、赵昂等人谋划起兵、夹击马超，以及相关家属遇害的关键经过。"
+    },
+    {
+      "omission_note": "省略了马超投奔张鲁后张鲁原拟招婿、杨柏反对等细节",
+      "classification": "material",
+      "reason": "张鲁招婿计划及杨柏反对造成马超与杨柏之间的敌意，并推动后续张鲁阵营内部的关系和行动，属于重要关系与动机信息。",
+      "required_fix": "补充张鲁原拟招马超为婿、杨柏劝阻，以及由此引发的马超对杨柏不满。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8,
+    "readability": 8,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": []
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 181,
+      "review": {
+        "source_fidelity": 6,
+        "naturalness": 6,
+        "readability": 7,
+        "material_omissions": [
+          "未交代杨阜因葬妻返乡后劝姜叙等谋划起兵、家属支持报仇，也漏掉梁宽、赵衢在冀城杀死马超妻儿及亲属这一关键事件。"
+        ],
+        "unsupported_additions": [
+          "“鲁出兵”提前断言张鲁已出兵；原文只写有人请命出兵擒刘备，尚未实际出兵。"
+        ],
+        "distortions": [
+          "“吴兰、雷同败降，追备”误写了二将的行动顺序和追击对象；原文是二将夹攻黄忠、魏延，后被刘备、张飞截住归路，才投降。",
+          "“鲁出兵”将原文结尾的出兵请求改成了已经出兵，改变了结尾的悬念和时间顺序。"
+        ],
+        "language_problems": [
+          "“吴兰、雷同败降，追备，张飞、严颜救”语义断裂且前后矛盾，难以判断谁追谁、谁被救。"
+        ],
+        "verdict": "revise",
+        "omissions": []
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 181,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 8,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_075-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 760,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略孙权最初考虑徐州及吕蒙说明取荆州更有利的论证。",
+      "classification": "material",
+      "reason": "这段论证交代了孙权改取荆州的战略动机，并说明荆州对控制长江及后续袭取的意义；省略后战略选择的原因明显减弱。",
+      "required_fix": "补入孙权原欲取徐州，以及吕蒙说明徐州不利守、应先取荆州以全据长江的论证。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略孙权最初考虑徐州及吕蒙说明取荆州更有利的论证。",
+      "classification": "material",
+      "reason": "这段论证交代了孙权改取荆州的战略动机，并说明荆州对控制长江及后续袭取的意义；省略后战略选择的原因明显减弱。",
+      "required_fix": "补入孙权原欲取徐州，以及吕蒙说明徐州不利守、应先取荆州以全据长江的论证。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 760,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

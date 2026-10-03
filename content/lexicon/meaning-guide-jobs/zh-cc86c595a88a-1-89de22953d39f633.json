@@ -1,0 +1,31 @@
+{
+  "id": "zh-cc86c595a88a-1-89de22953d39f633",
+  "entry_id": "zh-cc86c595a88a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-cc86c595a88a-1",
+      "headword": "马上",
+      "kind": "word",
+      "reading": "mǎshàng",
+      "senses": [
+        {
+          "id": "zh-cc86c595a88a-1-s1",
+          "definition": "on horseback"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞举矛刺中邓茂，他从马上掉下。",
+        "gloss": "on horseback",
+        "sense_id": "zh-cc86c595a88a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b373fc997054ccf91f9d1895227f6a315ecfa96a83cb13f8bb95261f7aceb52e"
+}

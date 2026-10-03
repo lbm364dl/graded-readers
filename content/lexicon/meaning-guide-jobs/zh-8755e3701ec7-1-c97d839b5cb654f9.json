@@ -1,0 +1,31 @@
+{
+  "id": "zh-8755e3701ec7-1-c97d839b5cb654f9",
+  "entry_id": "zh-8755e3701ec7-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8755e3701ec7-1",
+      "headword": "飞进",
+      "kind": "construction",
+      "reading": "fēi jìn",
+      "senses": [
+        {
+          "id": "zh-8755e3701ec7-1-s1",
+          "definition": "to fly into"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "后来雌鸡变成雄鸡，黑气飞进温德殿，玉堂出现彩虹，五原山岸也崩裂。",
+        "gloss": "to fly into",
+        "sense_id": "zh-8755e3701ec7-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4a2cb210006548d41ff50dd202d11207498584522c36930ca08b1ae13deeb941"
+}

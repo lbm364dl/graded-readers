@@ -1,0 +1,31 @@
+{
+  "id": "zh-2f4106afcd28-1-53f612f4965e7db7",
+  "entry_id": "zh-2f4106afcd28-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2f4106afcd28-1",
+      "headword": "流行",
+      "kind": "word",
+      "reading": "liúxíng",
+      "senses": [
+        {
+          "id": "zh-2f4106afcd28-1-s1",
+          "definition": "to be widespread or prevalent"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "当时疫病流行，很多人相信张角。",
+        "gloss": "spread",
+        "sense_id": "zh-2f4106afcd28-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "494fd15e45f6b3b901dfcfe8a98f3fe25b67ffa5c7a8f5885d130fc1bca72909"
+}

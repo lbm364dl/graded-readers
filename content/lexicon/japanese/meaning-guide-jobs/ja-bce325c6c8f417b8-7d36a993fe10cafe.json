@@ -1,0 +1,32 @@
+{
+  "id": "ja-bce325c6c8f417b8-7d36a993fe10cafe",
+  "entry_id": "ja-bce325c6c8f417b8",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-bce325c6c8f417b8",
+      "headword": "もらう",
+      "reading": "もらう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-bce325c6c8f417b8-1",
+          "definition": "to receive; to get something from someone"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "誰がとったか分からないので、お金をもらうのだという。",
+        "gloss": "receive; get",
+        "sense_id": "ja-bce325c6c8f417b8-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fe3ae774206bfeba7353760e15adcbfe55263b43ae603dc7c374d47aa1cb3aea"
+}

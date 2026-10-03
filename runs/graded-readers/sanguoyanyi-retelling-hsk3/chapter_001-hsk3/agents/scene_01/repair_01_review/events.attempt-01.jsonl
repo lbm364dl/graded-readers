@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff2fa-97b7-7272-bb3e-632950ca85b1"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.92,\"naturalness\":0.95,\"readability\":0.96,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"“张角和两个弟弟借百姓的不满起兵，建立黄巾军”略显因果简化；原文中张角先以宗教组织和预谋起事，后因事泄被迫提前起兵。\",\"“后来，他们又帮朱隽打败黄巾余党”省略了刘备劝朱雋诱敌出城等关键策略，但不影响主线。\",\"“后来两人被官兵找到，送回京城”将皇帝和陈留王被崔毅收留、闵贡寻回并护送还都的过程概括为官兵找到，属于轻微事实压缩。\",\"“董卓带大军来到京城，路上遇到皇帝的车队”董卓是在洛阳附近遇到护送皇帝回京的队伍，表述略显董卓主动进京途中偶遇，但总体事件关系正确。\"],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":29624,"cached_input_tokens":8960,"cache_write_input_tokens":0,"output_tokens":264,"reasoning_output_tokens":0}}

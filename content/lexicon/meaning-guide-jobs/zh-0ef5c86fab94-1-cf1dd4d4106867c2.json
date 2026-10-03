@@ -1,0 +1,31 @@
+{
+  "id": "zh-0ef5c86fab94-1-cf1dd4d4106867c2",
+  "entry_id": "zh-0ef5c86fab94-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-0ef5c86fab94-1",
+      "headword": "可以",
+      "kind": "word",
+      "reading": "kěyǐ",
+      "senses": [
+        {
+          "id": "zh-0ef5c86fab94-1-s1",
+          "definition": "can; be able to; may"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "关羽认为卢植既已被捕，三人又没有官职可以依靠，不如回涿郡。",
+        "gloss": "can",
+        "sense_id": "zh-0ef5c86fab94-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "79b426c4a3e51b558fa76c9f142f5365bc86a9a312c502c1dde4c69e2e29c4a2"
+}

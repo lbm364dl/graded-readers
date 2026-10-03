@@ -1,0 +1,151 @@
+{
+  "id": "ja-200aba458d195418-6685f298117779ba",
+  "entry_id": "ja-200aba458d195418",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-200aba458d195418",
+      "headword": "その",
+      "reading": "その",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-200aba458d195418-1",
+          "definition": "That; referring to something mentioned or understood from context."
+        },
+        {
+          "id": "ja-200aba458d195418-2",
+          "definition": "In repeated expressions such as その日その日, indicates each successive item or occasion."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "その時、初めて人を見ました。",
+        "gloss": "that; that particular",
+        "sense_id": "ja-200aba458d195418-1"
+      },
+      {
+        "sentence": "後で聞くとその人間は書生で、猫をつかまえて煮て食べることもあるそうだ。",
+        "gloss": "that; the aforementioned",
+        "sense_id": "ja-200aba458d195418-1"
+      },
+      {
+        "sentence": "吾輩はその話を聞き、決して鼠をとるまいと決めた。",
+        "gloss": "that",
+        "sense_id": "ja-200aba458d195418-1"
+      },
+      {
+        "sentence": "後で聞いた話では、その人間は書生といい、人間の中でも特に悪い者だったらしい。",
+        "gloss": "that particular",
+        "sense_id": "ja-200aba458d195418-1"
+      },
+      {
+        "sentence": "しかし、その時の吾輩には何も考えがなく、怖いとも思わなかった。",
+        "gloss": "that; the aforementioned",
+        "sense_id": "ja-200aba458d195418-1"
+      },
+      {
+        "sentence": "顔の真ん中から何かがひどく突き出ていて、その穴の中から時々ぷうぷうと煙を吹いた。",
+        "gloss": "that; its",
+        "sense_id": "ja-200aba458d195418-1"
+      },
+      {
+        "sentence": "黒の主人はそのお金で一円五十銭ほど得たのに、黒にはろくな食べ物を与えなかったという。",
+        "gloss": "that; the aforementioned",
+        "sense_id": "ja-200aba458d195418-1"
+      },
+      {
+        "sentence": "吾輩はその時から、決して鼠をとるまいと決心した。",
+        "gloss": "that",
+        "sense_id": "ja-200aba458d195418-1"
+      },
+      {
+        "sentence": "ただ、その時、吾輩は薄暗くてじめじめした所で、ニャーニャー泣いていたことだけは覚えている。",
+        "gloss": "that",
+        "sense_id": "ja-200aba458d195418-1"
+      },
+      {
+        "sentence": "けれど、その時の吾輩にはそんな考えはなく、別に怖いとも思わなかった。",
+        "gloss": "that; those",
+        "sense_id": "ja-200aba458d195418-1"
+      },
+      {
+        "sentence": "その時に「妙なものだ」と思った気持ちは、今でも残っている。",
+        "gloss": "that",
+        "sense_id": "ja-200aba458d195418-1"
+      },
+      {
+        "sentence": "そして、その穴の中から時々、ぷうぷうと煙を吹く。",
+        "gloss": "that; the aforementioned",
+        "sense_id": "ja-200aba458d195418-1"
+      },
+      {
+        "sentence": "ところが、その家の書生が三日目に子猫を四匹とも裏の池へ持って行き、捨てて来たそうだ。",
+        "gloss": "that; the aforementioned",
+        "sense_id": "ja-200aba458d195418-1"
+      },
+      {
+        "sentence": "白君は涙を流しながら、その一部始終を話した。",
+        "gloss": "that; the aforementioned",
+        "sense_id": "ja-200aba458d195418-1"
+      },
+      {
+        "sentence": "吾輩は、その考えももっともだと思う。",
+        "gloss": "that; the aforementioned",
+        "sense_id": "ja-200aba458d195418-1"
+      },
+      {
+        "sentence": "吾輩はただ、その日その日を何とか過ごせればよいと思っている。",
+        "gloss": "that; each",
+        "sense_id": "ja-200aba458d195418-2"
+      },
+      {
+        "sentence": "吾輩の家の主人が、その我儘で失敗した話をしよう。",
+        "gloss": "that",
+        "sense_id": "ja-200aba458d195418-1"
+      },
+      {
+        "sentence": "その日、吾輩はいつものように椽側で気持ちよく昼寝をしていた。",
+        "gloss": "that; the aforementioned",
+        "sense_id": "ja-200aba458d195418-1"
+      },
+      {
+        "sentence": "茶の木の根を一つ一つ嗅ぎながら西側の杉の垣根へ行くと、枯れた菊を押し倒し、その上で大きな猫が眠っていた。",
+        "gloss": "that",
+        "sense_id": "ja-200aba458d195418-1"
+      },
+      {
+        "sentence": "その目は琥珀より美しかった。",
+        "gloss": "that; its",
+        "sense_id": "ja-200aba458d195418-1"
+      },
+      {
+        "sentence": "吾輩はその話を聞いて、この時から決して鼠をとるまいと決心した。",
+        "gloss": "that",
+        "sense_id": "ja-200aba458d195418-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-200aba458d195418",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "その is a demonstrative that comes before a noun to identify something already mentioned or understood from context. It means “that” or “that particular.”",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "a14a0630be0fa69a8b012001c259b554c626a100e655ba327fc373e8888c0c11",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "268a26aae07b32d464f4f8319a8d99f4f99c813b1c14d93b42c7e79d8df32564"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-b3ab908cef23-1-9508abdcb64ab879",
+  "entry_id": "zh-b3ab908cef23-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b3ab908cef23-1",
+      "headword": "回来",
+      "kind": "construction",
+      "reading": "huílai",
+      "senses": [
+        {
+          "id": "zh-b3ab908cef23-1-s1",
+          "definition": "come back to the speaker or reference point"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "你带人去看看那里的情况，回来告诉我。",
+        "gloss": "come back",
+        "sense_id": "zh-b3ab908cef23-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6bd877fc745f3441f829ccba360d24b92f16f60d8cef61f95a19059fd98856c6"
+}

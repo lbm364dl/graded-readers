@@ -1,0 +1,32 @@
+{
+  "id": "ja-e3434fe9c1930497-4adde780c6bbba7f",
+  "entry_id": "ja-e3434fe9c1930497",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e3434fe9c1930497",
+      "headword": "動き始める",
+      "reading": "うごきはじめる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e3434fe9c1930497-1",
+          "definition": "to begin moving"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "この書生の手の上で休んでいると、急に速く動き始めた。",
+        "gloss": "started moving",
+        "sense_id": "ja-e3434fe9c1930497-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8c5abc50f92d41975a1d310a0269c6c1e33d8805e950b3d8f23514d6c24764cb"
+}

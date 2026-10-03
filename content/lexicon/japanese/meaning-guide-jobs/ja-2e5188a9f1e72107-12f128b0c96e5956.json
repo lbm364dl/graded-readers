@@ -1,0 +1,37 @@
+{
+  "id": "ja-2e5188a9f1e72107-12f128b0c96e5956",
+  "entry_id": "ja-2e5188a9f1e72107",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-2e5188a9f1e72107",
+      "headword": "灰色",
+      "reading": "はいいろ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-2e5188a9f1e72107-1",
+          "definition": "gray; gray color"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は黄を含んだ淡い灰色で、黒い斑がある。",
+        "gloss": "gray color",
+        "sense_id": "ja-2e5188a9f1e72107-1"
+      },
+      {
+        "sentence": "ところが主人の絵は、黄色でも黒でも灰色でも茶色でもなく、何とも説明できない色だった。",
+        "gloss": "gray",
+        "sense_id": "ja-2e5188a9f1e72107-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2f3a58dcb6425ff25a62acbb642524fffe7cd64b71b269b28c127726012c5fa7"
+}

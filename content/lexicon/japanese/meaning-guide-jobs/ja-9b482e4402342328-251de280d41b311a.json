@@ -1,0 +1,37 @@
+{
+  "id": "ja-9b482e4402342328-251de280d41b311a",
+  "entry_id": "ja-9b482e4402342328",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9b482e4402342328",
+      "headword": "亭主",
+      "reading": "ていしゅ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-9b482e4402342328-1",
+          "definition": "a husband; the master or head of a household"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "亭主が縁の下へ入った時、大きな鼬が飛び出し、黒が泥溝へ追い込んだ。",
+        "gloss": "the husband; the master of the house",
+        "sense_id": "ja-9b482e4402342328-1"
+      },
+      {
+        "sentence": "亭主はおれのおかげで一円五十銭ほどもうけているくせに、ろくな物も食わせねえ。",
+        "gloss": "husband; master of the household",
+        "sense_id": "ja-9b482e4402342328-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a30f7e7b7e1b87bda5f8f6fb80d06c1fe4f96e1eb3d4158de742068ccec23fa4"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-df3d58c7d84b-1-b6ea5c58f2349c7f",
+  "entry_id": "zh-df3d58c7d84b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-df3d58c7d84b-1",
+      "headword": "设置",
+      "kind": "word",
+      "reading": "shèzhì",
+      "senses": [
+        {
+          "id": "zh-df3d58c7d84b-1-s1",
+          "definition": "to install or place something in a specified location"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刚到任，他就在城中四门设置十多根五色棒。",
+        "gloss": "to set up",
+        "sense_id": "zh-df3d58c7d84b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "031d083e5992ed6ea2019aa25e520e733ff6e353ff2980a07340e9f11a1940f9"
+}

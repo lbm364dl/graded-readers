@@ -1,0 +1,82 @@
+{
+  "id": "ja-6ca656f292329817-66d5c3a373b48b4b",
+  "entry_id": "ja-6ca656f292329817",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-6ca656f292329817",
+      "headword": "悪くなる",
+      "reading": "わるくなる",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-6ca656f292329817-1",
+          "definition": "to become bad or worse"
+        },
+        {
+          "id": "ja-6ca656f292329817-2",
+          "definition": "for a person's physical condition to become unwell"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "すると、速く動き出し、目が変になって気分も悪くなった。",
+        "gloss": "became bad; felt ill",
+        "sense_id": "ja-6ca656f292329817-2"
+      },
+      {
+        "sentence": "目が回り、胸が悪くなったと思ったとき、どさりと音がして、目から火が出た。",
+        "gloss": "became sick; felt ill",
+        "sense_id": "ja-6ca656f292329817-2"
+      },
+      {
+        "sentence": "その後、黒は足を悪くし、毛の色も悪くなり、目には目やにがたまった。",
+        "gloss": "became worse",
+        "sense_id": "ja-6ca656f292329817-1"
+      },
+      {
+        "sentence": "ところが、しばらくすると、書生が急に速く動き始めたのか、吾輩だけが動いたのか分からないまま、目が回り、胸が悪くなった。",
+        "gloss": "became sick; felt nauseated",
+        "sense_id": "ja-6ca656f292329817-2"
+      },
+      {
+        "sentence": "何より元気を失い、体つきも悪くなった。",
+        "gloss": "became worse",
+        "sense_id": "ja-6ca656f292329817-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-6ca656f292329817",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "grammatical",
+    "explanation_en": "悪くなる means “to become bad” or “to get worse.” 悪く is the form of 悪い (“bad”) used before なる (“become”), describing the state that results.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "悪く",
+        "contribution_en": "The form of 悪い (“bad”) used before なる to describe the resulting state.",
+        "claim_ids": []
+      },
+      {
+        "text": "なる",
+        "contribution_en": "“Become”; indicates a change into the described state.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "9628e19d81a67cb7f99470e1a9a6a0c91d8702a1bd0ece9843b28688556457eb",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7ab8b287c0fe87ab6ecb2eb2c7c5090bbd8a129f8e1bb1ff10d074240a14c7e3"
+}

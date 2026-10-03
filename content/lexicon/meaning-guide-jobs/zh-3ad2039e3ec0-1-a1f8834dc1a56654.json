@@ -1,0 +1,61 @@
+{
+  "id": "zh-3ad2039e3ec0-1-a1f8834dc1a56654",
+  "entry_id": "zh-3ad2039e3ec0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-3ad2039e3ec0-1",
+      "headword": "皇帝",
+      "kind": "word",
+      "reading": "huángdì",
+      "senses": [
+        {
+          "id": "zh-3ad2039e3ec0-1-s1",
+          "definition": "emperor"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "宦官掌权，皇帝信任他们。",
+        "gloss": "emperor",
+        "sense_id": "zh-3ad2039e3ec0-1-s1"
+      },
+      {
+        "sentence": "桓帝死后，窦武和陈蕃共辅佐新皇帝。",
+        "gloss": "emperor",
+        "sense_id": "zh-3ad2039e3ec0-1-s1"
+      },
+      {
+        "sentence": "建宁二年四月十五日，皇帝在宫中坐下。",
+        "gloss": "emperor",
+        "sense_id": "zh-3ad2039e3ec0-1-s1"
+      },
+      {
+        "sentence": "皇帝受惊，百官立即纷纷躲开。",
+        "gloss": "emperor",
+        "sense_id": "zh-3ad2039e3ec0-1-s1"
+      },
+      {
+        "sentence": "皇帝下诏询问多种灾异的原因，蔡邕上书，认为这是妇人与宦官干政导致的，言辞十分直接。",
+        "gloss": "emperor",
+        "sense_id": "zh-3ad2039e3ec0-1-s1"
+      },
+      {
+        "sentence": "曹节偷看奏章后，立即告诉身边的人，于是宦官借别的事陷害蔡邕，皇帝把他放归田里。",
+        "gloss": "emperor",
+        "sense_id": "zh-3ad2039e3ec0-1-s1"
+      },
+      {
+        "sentence": "皇帝信任张让，叫他“阿父”，朝政逐渐败坏，天下人心想要作乱，盗贼纷纷起来。",
+        "gloss": "emperor",
+        "sense_id": "zh-3ad2039e3ec0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "403bd9b83d9d4d0490c23853ad63a1b4593eedafffc0a86260af5ebcf3748776"
+}

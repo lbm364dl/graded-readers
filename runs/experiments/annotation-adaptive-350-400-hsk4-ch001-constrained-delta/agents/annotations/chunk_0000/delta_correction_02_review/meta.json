@@ -1,0 +1,21 @@
+{
+  "job": "annotations/chunk_0000/delta_correction_02_review",
+  "model": "gpt-5.6-luna",
+  "effort": "medium",
+  "fingerprint": "74aaa07351378bf5b5934e052ff6bb6a3333b98d892ddab5eaa78a2146926d6a",
+  "started_at": "2026-08-07T02:18:01.697334+00:00",
+  "ended_at": "2026-08-07T02:20:01.366667+00:00",
+  "return_code": 0,
+  "attempt_count": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-08-07T02:18:01.697383+00:00",
+      "ended_at": "2026-08-07T02:20:01.366238+00:00",
+      "return_code": 0,
+      "throttled": false,
+      "events": "events.attempt-01.jsonl",
+      "stderr": "stderr.attempt-01.log"
+    }
+  ]
+}

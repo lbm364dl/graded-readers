@@ -1,0 +1,65 @@
+{
+  "scene": {
+    "id": "scene_08",
+    "title": "劉備登場與招軍榜文",
+    "source_start_quote": "且說張角一軍，前犯幽州界分",
+    "required_events": [
+      "黃巾軍進犯幽州，太守劉焉聽從鄒靖建議，張榜招募義兵。",
+      "榜文傳到涿縣，引出漢室宗親劉備，字玄德。",
+      "交代劉備的身世、相貌與性情：中山靖王之後，父親早亡，幼年事母至孝，家貧靠販屨織蓆度日。",
+      "樓桑村的大桑樹被相者視為貴人將出的祥兆；劉備幼時曾說要乘樹冠般的車做天子，叔父劉元起因此看重並資助他。",
+      "劉備曾游學，師事鄭玄、盧植，與公孫瓚交友；二十八歲看到招軍榜文，因報國無力而長嘆。"
+    ],
+    "target_chars": 500,
+    "source_start": 1292,
+    "source_end": 1409
+  },
+  "text": "话说张角率领的黄巾军，正向幽州边界进犯。幽州太守刘焉，是江夏竟陵人，也是汉鲁恭王的后代。听说贼兵即将到来，他马上召来校尉邹靖商议。邹靖说：“敌军人数很多，我军却很少，大人应该赶快招募士兵，准备迎战。”刘焉认为他说得有道理，立刻张贴榜文，招募义兵。榜文传到涿县，便引出了涿县中的一个英雄。",
+  "review": {
+    "source_fidelity": 9.5,
+    "naturalness": 9.5,
+    "readability": 9.5,
+    "omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "attempts": [
+    {
+      "stage": "adapt",
+      "text": "话说张角率领的黄巾军，正向幽州边界进犯。幽州太守刘焉，是江夏竟陵人，也是汉鲁恭王的后代。听说贼兵即将到来，他马上召来校尉邹靖商议。邹靖说：“敌军人数很多，我军却很少，大人应该赶快招募士兵，准备迎战。”刘焉认为他说得有道理，立刻张贴榜文，招募保卫国家的义兵。榜文一路传到涿县，也因此引出了一个英雄：汉室宗亲刘备，字玄德。\n\n刘备是中山靖王刘胜的后代。父亲早年去世，他小时候侍奉母亲十分孝顺。家里贫穷，他只好靠卖草鞋、织草席来生活。刘备身材高大，耳朵垂到肩旁，双手长得过膝，脸色白净，嘴唇红润；他性情宽厚，待人仁慈，心中却一直有远大的志向。\n\n涿县楼桑村有一棵特别高大的桑树，树冠远远看去，像车盖一样。相面的人经过那里，认为这是贵人即将出现的吉兆。刘备年幼时，曾指着大桑树说：“将来我若做了天子，就要乘坐像这树冠一样的车。”叔父刘元起听后，觉得他不是普通孩子，便更加看重他，还常常出钱帮助他。后来，刘备曾外出游学，拜郑玄、卢植为师，并和公孙瓒交朋友。二十八岁那年，他看见招募义兵的榜文，想到自己有报国的心，却没有力量实现，便站在榜前长长地叹了一口气。",
+      "review": {
+        "source_fidelity": 4,
+        "naturalness": 9,
+        "readability": 9,
+        "omissions": [],
+        "unsupported_additions": [
+          "The adaptation adds Liu Bei’s biography, appearance, family background, ambitions, the giant mulberry tree story, teachers, friendship with Gongsun Zan, and his reaction at age twenty-eight; none of this appears in the verbatim original.",
+          "It identifies the hero as Liu Bei, courtesy name Xuande, which is not stated in the original."
+        ],
+        "distortions": [
+          "“招募保卫国家的义兵” adds a national-defense purpose not explicit in “招募义兵,” though the core meaning is broadly preserved.",
+          "“也因此引出了一个英雄” makes the causal relation more explicit than the original “乃引出,” but this is a minor stylistic expansion."
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      }
+    },
+    {
+      "stage": "repair_01",
+      "text": "话说张角率领的黄巾军，正向幽州边界进犯。幽州太守刘焉，是江夏竟陵人，也是汉鲁恭王的后代。听说贼兵即将到来，他马上召来校尉邹靖商议。邹靖说：“敌军人数很多，我军却很少，大人应该赶快招募士兵，准备迎战。”刘焉认为他说得有道理，立刻张贴榜文，招募义兵。榜文传到涿县，便引出了涿县中的一个英雄。",
+      "review": {
+        "source_fidelity": 9.5,
+        "naturalness": 9.5,
+        "readability": 9.5,
+        "omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      }
+    }
+  ],
+  "resolved": true
+}

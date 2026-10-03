@@ -1,0 +1,100 @@
+{
+  "id": "zh-c6d764df544b-1-51758f3d6fd30b5e",
+  "entry_id": "zh-c6d764df544b-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-c6d764df544b-1",
+      "headword": "打",
+      "kind": "word",
+      "reading": "dǎ",
+      "senses": [
+        {
+          "id": "zh-c6d764df544b-1-s1",
+          "definition": "to fight or attack"
+        },
+        {
+          "id": "zh-c6d764df544b-1-s2",
+          "definition": "to carry or hold (a flag)."
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备想去打黄巾军。",
+        "gloss": "fight",
+        "sense_id": "zh-c6d764df544b-1-s1"
+      },
+      {
+        "sentence": "大家一起去打黄巾军。",
+        "gloss": "fight",
+        "sense_id": "zh-c6d764df544b-1-s1"
+      },
+      {
+        "sentence": "程远志又来打张飞。",
+        "gloss": "fight",
+        "sense_id": "zh-c6d764df544b-1-s1"
+      },
+      {
+        "sentence": "第二天，刘备带人向前打。",
+        "gloss": "fight",
+        "sense_id": "zh-c6d764df544b-1-s1"
+      },
+      {
+        "sentence": "打了一会儿，他假装后退。",
+        "gloss": "fight",
+        "sense_id": "zh-c6d764df544b-1-s1"
+      },
+      {
+        "sentence": "不久，程远志带五万人来打涿郡。",
+        "gloss": "attack",
+        "sense_id": "zh-c6d764df544b-1-s1"
+      },
+      {
+        "sentence": "程远志又来打张飞，关羽马上赶到，一刀斩了程远志。",
+        "gloss": "attack",
+        "sense_id": "zh-c6d764df544b-1-s1"
+      },
+      {
+        "sentence": "第二天，刘备带人上前，打了一会儿便假装退走。",
+        "gloss": "fight",
+        "sense_id": "zh-c6d764df544b-1-s1"
+      },
+      {
+        "sentence": "他率领打着红旗的军队追上来，挡住了黄巾军的路。",
+        "gloss": "hold",
+        "sense_id": "zh-c6d764df544b-1-s2"
+      },
+      {
+        "sentence": "刘备兵少，打不过，只好退到三十里外安营。",
+        "gloss": "fight",
+        "sense_id": "zh-c6d764df544b-1-s1"
+      },
+      {
+        "sentence": "曹操的军马都打着红旗，从前面截住黄巾军的去路。",
+        "gloss": "to carry; hold",
+        "sense_id": "zh-c6d764df544b-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-c6d764df544b-1",
+    "structure": "single_component",
+    "explanation_en": "打 means to fight or attack when used of conflict with an opponent. The word names the action; its precise form depends on context.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "打",
+        "contribution_en": "Names the action of fighting or attacking."
+      }
+    ],
+    "input_fingerprint": "7db7028104d5c8710f0575c4c8f9de5b3ffa6e8d65279b29ea33c3a48449f3aa",
+    "revision": 1,
+    "editorial_policy": 2,
+    "evidence_status": "legacy_unresearched"
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "40876e91e142f4b9d6a8417e184565766dc0dff877bb18bd642b85fd380e1331"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-xia-zhao-9b397a87ecf0f15e",
+  "entry_id": "zh-expression-xia-zhao",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-xia-zhao",
+      "headword": "下诏",
+      "reading": "xià zhào",
+      "base_entry_id": "zh-13c12b064b63-1",
+      "components": [
+        {
+          "entry_id": "zh-13c12b064b63-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-ee3d9d774d2b-1",
+          "role": "object"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-xia-zhao-s1",
+          "definition": "issue an imperial edict"
+        }
+      ],
+      "kind": "construction"
+    },
+    "examples": [
+      {
+        "sentence": "皇帝下诏询问多种灾异的原因，蔡邕上书，认为这是妇人与宦官干政导致的，言辞十分直接。",
+        "gloss": "issue an imperial edict",
+        "sense_id": "zh-expression-xia-zhao-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "下",
+        "role": "verb"
+      },
+      {
+        "headword": "诏",
+        "role": "object"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9a2ea75794ca66323ae4d885129bced877f73633666b2a3035e13cb44d81a965"
+}

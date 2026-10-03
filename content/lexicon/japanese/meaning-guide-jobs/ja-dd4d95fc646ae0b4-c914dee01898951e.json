@@ -1,0 +1,32 @@
+{
+  "id": "ja-dd4d95fc646ae0b4-c914dee01898951e",
+  "entry_id": "ja-dd4d95fc646ae0b4",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-dd4d95fc646ae0b4",
+      "headword": "不平を言う",
+      "reading": "ふへいをいう",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-dd4d95fc646ae0b4-1",
+          "definition": "to complain; to voice a complaint"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "友達が来るたびに、あれこれ不平を言っている。",
+        "gloss": "is complaining; keeps voicing complaints",
+        "sense_id": "ja-dd4d95fc646ae0b4-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "59bd673a528905dde7f454932d468efec14ab5dd6f53493dd5ac905d529fbee8"
+}

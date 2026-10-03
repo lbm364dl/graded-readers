@@ -1,0 +1,31 @@
+{
+  "id": "zh-6fe2f6bae202-1-84cf3d86ab4b8ead",
+  "entry_id": "zh-6fe2f6bae202-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6fe2f6bae202-1",
+      "headword": "末年",
+      "kind": "word",
+      "reading": "mònián",
+      "senses": [
+        {
+          "id": "zh-6fe2f6bae202-1-s1",
+          "definition": "final years (of a period or dynasty)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "汉朝末年，朝廷很乱，灾害和不祥的事不断发生。",
+        "gloss": "late years",
+        "sense_id": "zh-6fe2f6bae202-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "20ccff71821806b28b3ec39a29ec26342cd8a943a27a5b5573b346852391f02f"
+}

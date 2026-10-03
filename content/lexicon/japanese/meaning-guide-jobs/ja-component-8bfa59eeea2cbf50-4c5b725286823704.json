@@ -1,0 +1,26 @@
+{
+  "id": "ja-component-8bfa59eeea2cbf50-4c5b725286823704",
+  "entry_id": "ja-component-8bfa59eeea2cbf50",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-component-8bfa59eeea2cbf50",
+      "headword": "足す",
+      "reading": "たす",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-component-8bfa59eeea2cbf50-1",
+          "definition": "To add; to make up or fulfill a required amount or need."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3aa0343eee8b2af388dd33cc773d798269437dc3b9d6775ab3947346976bd1d6"
+}

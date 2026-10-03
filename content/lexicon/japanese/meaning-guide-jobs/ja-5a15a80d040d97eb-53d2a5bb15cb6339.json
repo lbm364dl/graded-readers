@@ -1,0 +1,37 @@
+{
+  "id": "ja-5a15a80d040d97eb-53d2a5bb15cb6339",
+  "entry_id": "ja-5a15a80d040d97eb",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5a15a80d040d97eb",
+      "headword": "乱暴",
+      "reading": "らんぼう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-5a15a80d040d97eb-1",
+          "definition": "rough; violent"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "最初に会ったおさんは乱暴で、吾輩の頸筋をつかみ、台所から何度も外へ投げ出した。",
+        "gloss": "rough and violent",
+        "sense_id": "ja-5a15a80d040d97eb-1"
+      },
+      {
+        "sentence": "黒は乱暴で、体は吾輩の二倍もあり、たいへん強そうだった。",
+        "gloss": "rough and violent",
+        "sense_id": "ja-5a15a80d040d97eb-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "610c0e64ef4e2134046f158359af15e1626b442d82f6e16028e852f72aba65fd"
+}

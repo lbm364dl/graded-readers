@@ -1,0 +1,31 @@
+{
+  "id": "zh-92344f05413b-1-b49c440da27c9107",
+  "entry_id": "zh-92344f05413b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-92344f05413b-1",
+      "headword": "在家门上",
+      "kind": "construction",
+      "reading": "zài jiāmén shàng",
+      "senses": [
+        {
+          "id": "zh-92344f05413b-1-s1",
+          "definition": "on the household gate"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他让人传播“苍天已死，黄天当立”和“岁在甲子，天下大吉”，还用白土在家门上写“甲子”。",
+        "gloss": "on the household gate",
+        "sense_id": "zh-92344f05413b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f1fe2ca6da41b3f1488cd01aa565ada4c6299ed9768fcd066ff550b5f238754e"
+}

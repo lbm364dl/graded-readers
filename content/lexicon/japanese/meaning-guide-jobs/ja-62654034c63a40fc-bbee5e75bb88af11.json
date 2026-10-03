@@ -1,0 +1,37 @@
+{
+  "id": "ja-62654034c63a40fc-bbee5e75bb88af11",
+  "entry_id": "ja-62654034c63a40fc",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-62654034c63a40fc",
+      "headword": "体",
+      "reading": "からだ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-62654034c63a40fc-1",
+          "definition": "the body; a person's or animal's physical condition"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "黒は乱暴で、体は吾輩の二倍もあり、たいへん強そうだった。",
+        "gloss": "body",
+        "sense_id": "ja-62654034c63a40fc-1"
+      },
+      {
+        "sentence": "「人間は、体のよい泥棒だ」と黒は怒った。",
+        "gloss": "body; physical condition",
+        "sense_id": "ja-62654034c63a40fc-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "873fc835192b74d4ece5c65ea2cb30954fb3a086be5a714239618fc4205c1217"
+}

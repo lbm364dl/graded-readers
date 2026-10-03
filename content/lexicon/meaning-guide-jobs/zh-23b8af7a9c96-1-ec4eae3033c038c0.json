@@ -1,0 +1,31 @@
+{
+  "id": "zh-23b8af7a9c96-1-ec4eae3033c038c0",
+  "entry_id": "zh-23b8af7a9c96-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-23b8af7a9c96-1",
+      "headword": "一贯",
+      "kind": "word",
+      "reading": "yīguàn",
+      "senses": [
+        {
+          "id": "zh-23b8af7a9c96-1-s1",
+          "definition": "consistently; as a continuing practice"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "桓帝禁锢善类，一贯崇信宦官。",
+        "gloss": "consistently",
+        "sense_id": "zh-23b8af7a9c96-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8560338a1dad544aa20162a20258f53e36906f4f7c9c1e19e1a2b575e329a1ab"
+}

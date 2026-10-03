@@ -1,0 +1,31 @@
+{
+  "id": "zh-8b74b02cdf63-1-b524629174b72bd4",
+  "entry_id": "zh-8b74b02cdf63-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8b74b02cdf63-1",
+      "headword": "高冈",
+      "kind": "word",
+      "reading": "gāogāng",
+      "senses": [
+        {
+          "id": "zh-8b74b02cdf63-1-s1",
+          "definition": "high hill"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人登上高冈远望，只见汉军大败，黄巾军从后面漫山而来。",
+        "gloss": "high hill",
+        "sense_id": "zh-8b74b02cdf63-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ede22d291f9cd76ce6abad4c17a75c94587995e210256f57d98236dd574aacd8"
+}

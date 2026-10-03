@@ -1,0 +1,32 @@
+{
+  "id": "ja-c521f7685ad38562-e46f6af1c2c86a1e",
+  "entry_id": "ja-c521f7685ad38562",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-c521f7685ad38562",
+      "headword": "くせに",
+      "reading": "くせに",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-c521f7685ad38562-1",
+          "definition": "despite; although, often with a sense of reproach or criticism"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "それでも始めると、胃が弱いくせに一生懸命になる。",
+        "gloss": "despite; although",
+        "sense_id": "ja-c521f7685ad38562-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f00d9992bb33f828b51be21350bd04c43070bb9f5071b9b946684c28e9ef8b3c"
+}

@@ -1,0 +1,47 @@
+{
+  "id": "ja-509dded8bf8b50d0-3eff0b53772fb696",
+  "entry_id": "ja-509dded8bf8b50d0",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-509dded8bf8b50d0",
+      "headword": "声",
+      "reading": "こえ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-509dded8bf8b50d0-1",
+          "definition": "a voice or sound produced by a person or animal"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "泣けば書生が迎えに来るかもしれないと思い、「ニャー、ニャー」と声を出してみたが、誰も来なかった。",
+        "gloss": "voice",
+        "sense_id": "ja-509dded8bf8b50d0-1"
+      },
+      {
+        "sentence": "声も出せないので、食物のある所まで歩く決心をし、池を左に見ながら、ゆっくり回り始めた。",
+        "gloss": "voice",
+        "sense_id": "ja-509dded8bf8b50d0-1"
+      },
+      {
+        "sentence": "すると主人は、失望と怒りの混じった声で、座敷から「この馬鹿野郎」と怒鳴った。",
+        "gloss": "voice",
+        "sense_id": "ja-509dded8bf8b50d0-1"
+      },
+      {
+        "sentence": "声には犬も怖がるほどの力があったので、吾輩は少し怖かったが、「吾輩は猫である。",
+        "gloss": "voice",
+        "sense_id": "ja-509dded8bf8b50d0-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "500f1b121a0b70b1b0aeb123bbcc54d8e69a852be362ae14858e5da536fff1a0"
+}

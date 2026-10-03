@@ -1,0 +1,55 @@
+{
+  "id": "ja-62a8bf5f7a727257-f54f4951ad586b75",
+  "entry_id": "ja-62a8bf5f7a727257",
+  "reason": "requested",
+  "item": {
+    "entry": {
+      "id": "ja-62a8bf5f7a727257",
+      "headword": "ゆっくり",
+      "reading": "ゆっくり",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-62a8bf5f7a727257-1",
+          "definition": "Slowly; without haste."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は池を左に見ながら、ゆっくり歩き、人の家へ入りました。",
+        "gloss": "slowly",
+        "sense_id": "ja-62a8bf5f7a727257-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-62a8bf5f7a727257",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "ゆっくり means doing something slowly and without haste. It is one adverbial word; its kana are not separate meaning-bearing parts.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "32bb31c9288208ca655b96b69cb8a9f93125620453cb291c42d18554ce1e2b98",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [
+    {
+      "id": "ja-audit-request-cce1bf0b8e9bfb80",
+      "reason": "The explanation repeats the adverb's meaning and adds an unnecessary claim about kana parts. Requested change: Use one concise definition such as “slowly; without haste”; remove the repetition and part commentary.",
+      "entry_id": "ja-62a8bf5f7a727257",
+      "force_research": false,
+      "reuse_reviewed_evidence": true
+    }
+  ],
+  "status": "reviewed",
+  "result_digest": "9478f76f906b8e8fcf9761c7fe7181dfc145ae152f26240f1b0949de863b9605"
+}

@@ -1,0 +1,41 @@
+{
+  "id": "zh-2de164d9671b-1-71ce4bd1d244fb6c",
+  "entry_id": "zh-2de164d9671b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2de164d9671b-1",
+      "headword": "称",
+      "kind": "word",
+      "reading": "chēng",
+      "senses": [
+        {
+          "id": "zh-2de164d9671b-1-s1",
+          "definition": "to call or designate by a name or title"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "大方有一万多人，小方有六七千人，各方首领都称将军。",
+        "gloss": "to call",
+        "sense_id": "zh-2de164d9671b-1-s1"
+      },
+      {
+        "sentence": "张角知道事情暴露，马上起兵，自称天公将军；张宝称地公将军，张梁称人公将军。",
+        "gloss": "to call oneself",
+        "sense_id": "zh-2de164d9671b-1-s1"
+      },
+      {
+        "sentence": "张角知道事情暴露，马上起兵，自称天公将军；张宝称地公将军，张梁称人公将军。",
+        "gloss": "to call",
+        "sense_id": "zh-2de164d9671b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3177d991f4e994f7fb78044075d9a34d9b939e2cfe4c837a1a44cadca3747bf7"
+}

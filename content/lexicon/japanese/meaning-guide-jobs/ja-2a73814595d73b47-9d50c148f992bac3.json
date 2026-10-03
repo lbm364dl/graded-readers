@@ -1,0 +1,90 @@
+{
+  "id": "ja-2a73814595d73b47-9d50c148f992bac3",
+  "entry_id": "ja-2a73814595d73b47",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-2a73814595d73b47",
+      "headword": "何",
+      "reading": "なに",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-2a73814595d73b47-1",
+          "definition": "what; which thing"
+        },
+        {
+          "id": "ja-2a73814595d73b47-2",
+          "definition": "anything; whatever"
+        },
+        {
+          "id": "ja-2a73814595d73b47-3",
+          "definition": "how many; what number"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "「君は何だ」と言った。",
+        "gloss": "what",
+        "sense_id": "ja-2a73814595d73b47-1"
+      },
+      {
+        "sentence": "主人は俳句、新しい詩、英語、弓、歌、バイオリンなど、何にでも手を出すが、どれも上手にならない。",
+        "gloss": "what; anything",
+        "sense_id": "ja-2a73814595d73b47-2"
+      },
+      {
+        "sentence": "吾輩が近づくと、彼は丸い目を開け、「お前は何だ」と言った。",
+        "gloss": "what",
+        "sense_id": "ja-2a73814595d73b47-1"
+      },
+      {
+        "sentence": "そこまでは覚えているが、その後は何が起きたのか、いくら考えても分からない。",
+        "gloss": "what",
+        "sense_id": "ja-2a73814595d73b47-1"
+      },
+      {
+        "sentence": "主人は、特に人より優れた力があるわけではないのに、何にでも手を出したがる男だ。",
+        "gloss": "anything; whatever",
+        "sense_id": "ja-2a73814595d73b47-2"
+      },
+      {
+        "sentence": "しかし、出来上がった絵を見ても、何をかいたのか誰にも分からなかった。",
+        "gloss": "what",
+        "sense_id": "ja-2a73814595d73b47-1"
+      },
+      {
+        "sentence": "猫は吾輩を見つめ、「お前はいったい何だ」と言った。",
+        "gloss": "what",
+        "sense_id": "ja-2a73814595d73b47-1"
+      },
+      {
+        "sentence": "ある日、暖かい茶園で一緒に寝転びながら、黒は吾輩に「今まで鼠を何匹とったことがある」と聞いた。",
+        "gloss": "how many",
+        "sense_id": "ja-2a73814595d73b47-3"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-2a73814595d73b47",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "何（なに）asks which thing is meant, giving “what” or “which thing.” In expressions such as 何でも and 何にでも, it can refer broadly to any thing, giving “anything” or “whatever.”",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "e1d49a199126cceb7c4031fd3c47eceb4a1760abe092615658ccca889ecd042b",
+    "revision": 2,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f4c304f899745ef16d7256525920aa9d719b4b640d49e5b44c4068f7079ead37"
+}

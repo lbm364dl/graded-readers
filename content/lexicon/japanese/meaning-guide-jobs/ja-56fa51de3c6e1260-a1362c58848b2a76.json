@@ -1,0 +1,32 @@
+{
+  "id": "ja-56fa51de3c6e1260-a1362c58848b2a76",
+  "entry_id": "ja-56fa51de3c6e1260",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-56fa51de3c6e1260",
+      "headword": "細君",
+      "reading": "さいくん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-56fa51de3c6e1260-1",
+          "definition": "wife"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "畳で爪を研いだ時など、細君はひどく怒り、その後は座敷へ入りにくくなった。",
+        "gloss": "wife",
+        "sense_id": "ja-56fa51de3c6e1260-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "105d057a9467a18f30cd8713dd0822674ea797e4be5dc93eaa9802c024400977"
+}

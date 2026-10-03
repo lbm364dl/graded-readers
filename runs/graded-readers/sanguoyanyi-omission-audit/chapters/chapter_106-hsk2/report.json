@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_106-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 265,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "omission_note": "略去曹睿见毛皇后索命、刘放孙资排除曹宇并推荐曹爽等细节。",
+      "classification": "material",
+      "reason": "这些内容交代曹睿病重的具体诱因，并说明曹爽取代曹宇成为辅政人选的政治原因，直接影响后续辅政格局与曹爽掌权。",
+      "required_fix": "补入曹睿因毛皇后索命而病重、刘放孙资排除曹宇并推荐曹爽担任辅政人选的情节。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "略去曹睿见毛皇后索命、刘放孙资排除曹宇并推荐曹爽等细节。",
+      "classification": "material",
+      "reason": "这些内容交代曹睿病重的具体诱因，并说明曹爽取代曹宇成为辅政人选的政治原因，直接影响后续辅政格局与曹爽掌权。",
+      "required_fix": "补入曹睿因毛皇后索命而病重、刘放孙资排除曹宇并推荐曹爽担任辅政人选的情节。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 8.5,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 265,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-b7fc681861fb-1-81f096db7fe6f4ee",
+  "entry_id": "zh-b7fc681861fb-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b7fc681861fb-1",
+      "headword": "这样",
+      "kind": "word",
+      "reading": "zhèyàng",
+      "senses": [
+        {
+          "id": "zh-b7fc681861fb-1-s1",
+          "definition": "in this way; like this"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备连忙劝他，说不能这样做。",
+        "gloss": "do this",
+        "sense_id": "zh-b7fc681861fb-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "429c35402d81edd150a12e6e62d136796d6e6618923d8339a24784b36b8f9662"
+}

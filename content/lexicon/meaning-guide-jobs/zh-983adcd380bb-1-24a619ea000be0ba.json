@@ -1,0 +1,36 @@
+{
+  "id": "zh-983adcd380bb-1-24a619ea000be0ba",
+  "entry_id": "zh-983adcd380bb-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-983adcd380bb-1",
+      "headword": "分出",
+      "kind": "construction",
+      "reading": "fēnchū",
+      "senses": [
+        {
+          "id": "zh-983adcd380bb-1-s1",
+          "definition": "determine or distinguish a result, such as which side wins"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "当时张角有十五万黄巾军，卢植有五万兵马，双方在广宗相持，尚未分出胜负。",
+        "gloss": "to determine",
+        "sense_id": "zh-983adcd380bb-1-s1"
+      },
+      {
+        "sentence": "当时张角有十五万黄巾军，卢植有五万兵，双方在广宗相拒，尚未分出胜负。",
+        "gloss": "to determine; distinguish",
+        "sense_id": "zh-983adcd380bb-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "39c2a4ac4f8c5f46bd75ab972a32b2f325276ff803abdaf62522541538830c5e"
+}

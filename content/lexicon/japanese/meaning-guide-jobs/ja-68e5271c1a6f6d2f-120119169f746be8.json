@@ -1,0 +1,32 @@
+{
+  "id": "ja-68e5271c1a6f6d2f-120119169f746be8",
+  "entry_id": "ja-68e5271c1a6f6d2f",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-68e5271c1a6f6d2f",
+      "headword": "毛筆",
+      "reading": "もうひつ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-68e5271c1a6f6d2f-1",
+          "definition": "a brush for writing or painting"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が家に来て一月ほどたった給料日に、主人は水彩絵具と毛筆とワットマンという紙を買い、今日から絵をかくと決めた。",
+        "gloss": "brush for writing or painting",
+        "sense_id": "ja-68e5271c1a6f6d2f-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e7f3944a3ea34a936a0b109fee09dbb3a93f03b78eee2a37fad469f8d7b9fd46"
+}

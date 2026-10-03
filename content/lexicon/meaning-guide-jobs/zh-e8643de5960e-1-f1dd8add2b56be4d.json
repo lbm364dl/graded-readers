@@ -1,0 +1,31 @@
+{
+  "id": "zh-e8643de5960e-1-f1dd8add2b56be4d",
+  "entry_id": "zh-e8643de5960e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e8643de5960e-1",
+      "headword": "社会",
+      "kind": "word",
+      "reading": "shèhuì",
+      "senses": [
+        {
+          "id": "zh-e8643de5960e-1-s1",
+          "definition": "society"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "各地盗贼纷纷出现，社会更加不安。",
+        "gloss": "society",
+        "sense_id": "zh-e8643de5960e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "46d0e3334ecff7736f8f222ba7fe1ee6d502909c0a16df63ac1b3c2de40cc593"
+}

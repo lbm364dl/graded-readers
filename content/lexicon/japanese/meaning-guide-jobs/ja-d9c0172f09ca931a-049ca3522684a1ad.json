@@ -1,0 +1,32 @@
+{
+  "id": "ja-d9c0172f09ca931a-049ca3522684a1ad",
+  "entry_id": "ja-d9c0172f09ca931a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d9c0172f09ca931a",
+      "headword": "動き出す",
+      "reading": "うごきだす",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d9c0172f09ca931a-1",
+          "definition": "to start moving; begin to move"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "すると、速く動き出し、目が変になって気分も悪くなった。",
+        "gloss": "began moving",
+        "sense_id": "ja-d9c0172f09ca931a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cfdbe85bfa323c07cdb54b9a113e1e58beb8a5e659bdc54d97307300c26f7224"
+}

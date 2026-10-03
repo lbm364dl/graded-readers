@@ -1,0 +1,249 @@
+{
+  "id": "zh-975f35218ed8-1-7852e6493a342a08",
+  "entry_id": "zh-975f35218ed8-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-975f35218ed8-1",
+      "headword": "要",
+      "kind": "word",
+      "reading": "yào",
+      "senses": [
+        {
+          "id": "zh-975f35218ed8-1-s1",
+          "definition": "to want or intend to do something"
+        },
+        {
+          "id": "zh-975f35218ed8-1-s2",
+          "definition": "will or be going to; indicates an intended or expected future action"
+        },
+        {
+          "id": "zh-975f35218ed8-1-s3",
+          "definition": "must; indicates that something is required or inevitable"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他说：“我要进城投军。",
+        "gloss": "want to",
+        "sense_id": "zh-975f35218ed8-1-s1"
+      },
+      {
+        "sentence": "张飞很生气，要杀护送卢植的人。",
+        "gloss": "want to",
+        "sense_id": "zh-975f35218ed8-1-s1"
+      },
+      {
+        "sentence": "张飞又气又不满，拿刀要杀董卓。",
+        "gloss": "intend to",
+        "sense_id": "zh-975f35218ed8-1-s1"
+      },
+      {
+        "sentence": "他要进城投军，前来报名。",
+        "gloss": "intend to",
+        "sense_id": "zh-975f35218ed8-1-s1"
+      },
+      {
+        "sentence": "”张飞听完十分生气，要杀押车的人，救下老师。",
+        "gloss": "want to",
+        "sense_id": "zh-975f35218ed8-1-s1"
+      },
+      {
+        "sentence": "我一定要杀了董卓！",
+        "gloss": "want to",
+        "sense_id": "zh-975f35218ed8-1-s1"
+      },
+      {
+        "sentence": "”他转身就要回去。",
+        "gloss": "be about to",
+        "sense_id": "zh-975f35218ed8-1-s1"
+      },
+      {
+        "sentence": "刘备小时候常和孩子们在树下玩，说自己将来要做大事。",
+        "gloss": "will; be going to",
+        "sense_id": "zh-975f35218ed8-1-s2"
+      },
+      {
+        "sentence": "他进来要酒，说要赶进城投军。",
+        "gloss": "want",
+        "sense_id": "zh-975f35218ed8-1-s1"
+      },
+      {
+        "sentence": "他进来要酒，说要赶进城投军。",
+        "gloss": "be going to",
+        "sense_id": "zh-975f35218ed8-1-s2"
+      },
+      {
+        "sentence": "有人违反禁令，不管地位高低，都要受到处罚。",
+        "gloss": "must",
+        "sense_id": "zh-975f35218ed8-1-s3"
+      },
+      {
+        "sentence": "张飞听后大怒，要杀押送卢植的士兵。",
+        "gloss": "want to",
+        "sense_id": "zh-975f35218ed8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-975f35218ed8-1",
+    "claim_ids": [
+      "c1",
+      "c2",
+      "c3"
+    ],
+    "structure": "single_component",
+    "explanation_en": "Before an action phrase, 要 marks the subject’s desire or intention to do that action. Whether it sounds more like wanting or intending depends on context; 要 alone does not specify how firmly settled the intention is.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "要",
+        "contribution_en": "Marks the subject’s desire or intention to perform the following action.",
+        "claim_ids": [
+          "c1",
+          "c3"
+        ]
+      }
+    ],
+    "research": {
+      "entry_id": "zh-975f35218ed8-1",
+      "status": "partial",
+      "sources": [
+        {
+          "id": "s1",
+          "url": "https://dict.cucldk.com/?w=%E8%A6%81",
+          "title": "现代汉语词典（第七版）",
+          "accessed_at": "2026-09-26",
+          "summary_en": "The yào entry labels the target construction as an auxiliary expressing the will to do something and gives 他要学游泳. It lists this separately from wanting to obtain or keep something, needing or having to do something, and imminent-future 要."
+        },
+        {
+          "id": "s2",
+          "url": "https://zdic.net/hans/%E8%A6%81",
+          "title": "要 yāo、yào - 汉典",
+          "accessed_at": "2026-09-26",
+          "summary_en": "The entry separately lists yào ‘wish/want to’ and yào ‘be going to,’ among other senses. Its Shuowen section reports the graph’s older association with the waist/body; that graph history alone does not establish the origin of the modern volitional use."
+        },
+        {
+          "id": "s3",
+          "url": "https://dokumen.pub/newest-trends-in-the-study-of-grammaticalization-and-lexicalization-in-chinese-9783110253009-9783110252996.html",
+          "title": "The semantic historical development of modal verbs of volition in Chinese",
+          "accessed_at": "2026-09-26",
+          "summary_en": "In this chapter, Alain Peyraube and Li Ming describe modern 要 as expressing intention/want and propose a historical path from request/ask to want, with older examples. They also caution that the history of modal auxiliaries is complex and early uses are not always clear. This is a scholarly proposed development, not by itself proof that every current volitional use derives by that path."
+        },
+        {
+          "id": "s4",
+          "url": "https://z-n-huang.github.io/files/HuangVanDoorenMendes2021%20Mandarin%20want.pdf",
+          "title": "“Wanting” the future: The case of future yao",
+          "accessed_at": "2026-09-26",
+          "summary_en": "Huang, van Dooren, and Mendes distinguish modern desire, deontic/teleological, and future uses. They report that desire 要 is attested later than the request/demand and deontic uses, by the Tang period, while the origin of non-desire future 要 is debated: it may derive from desire 要 or deontic/teleological 要."
+        },
+        {
+          "id": "s5",
+          "url": "https://www.degruyterbrill.com/document/doi/10.1515/9783110253009.149/html",
+          "title": "The semantic historical development of modal verbs of volition in Chinese",
+          "accessed_at": "2026-09-26",
+          "summary_en": "The publisher page identifies the chapter’s authors as Alain Peyraube and Li Ming and places it in Newest Trends in the Study of Grammaticalization and Lexicalization in Chinese (2012), pp. 149–168. The chapter content is restricted on this page; historical claims here are supported by the opened chapter text at s3."
+        }
+      ],
+      "claims": [
+        {
+          "id": "c1",
+          "text_en": "In the target use, 要 precedes an action phrase and marks the subject’s will or intention to do that action. The dictionary gives an auxiliary example and distinguishes this use from wanting an object and from imminent-future 要.",
+          "source_ids": [
+            "s1"
+          ]
+        },
+        {
+          "id": "c2",
+          "text_en": "The supplied examples fit the shared volitional contribution: the characters want or intend to enlist or kill someone. Their contexts do not require a finer distinction between a wish and a settled intention, or establish a particular degree of commitment.",
+          "source_ids": [
+            "s1",
+            "s3"
+          ]
+        },
+        {
+          "id": "c3",
+          "text_en": "The word has no linked subcomponents in the supplied entry. Although the source reports a historical graph association with the waist/body, this does not explain the present volitional meaning; no meaningful written part can be assigned a separate contribution to that meaning from the opened evidence.",
+          "source_ids": [
+            "s2"
+          ]
+        },
+        {
+          "id": "c4",
+          "text_en": "Peyraube and Li propose a historical development from request/ask uses of 要 toward ‘want’; their chapter gives examples for these uses. This is evidence for a scholarly derivational account, but the older senses and examples do not alone prove the full derivation of the present-day volitional auxiliary.",
+          "source_ids": [
+            "s3"
+          ]
+        },
+        {
+          "id": "c5",
+          "text_en": "Historical work distinguishes the desire use from the deontic/teleological and future uses. For future 要, one study reports disagreement over whether it developed from desire or from deontic/teleological 要; that debate does not settle every detail of the history of the modern desire/intention use.",
+          "source_ids": [
+            "s4"
+          ]
+        }
+      ],
+      "searches": [
+        {
+          "query": "(direct open)",
+          "opened_urls": [
+            "https://dict.cucldk.com/?w=%E8%A6%81",
+            "https://zdic.net/hans/%E8%A6%81",
+            "https://www.kci.go.kr/kciportal/landing/article.kci?arti_id=ART002359281",
+            "https://fh.pku.edu.cn/docs/2018-11/20181108193713608488.pdf",
+            "https://www.uv.es/confucio/revista19/files/assets/common/downloads/publication.pdf",
+            "https://www.degruyterbrill.com/document/doi/10.1515/9783110253009.149/html",
+            "https://z-n-huang.github.io/files/HuangVanDoorenMendes2021%20Mandarin%20want.pdf"
+          ]
+        },
+        {
+          "query": "要 yào 意愿 动词 词源 语法化 想要 历史 汉语",
+          "opened_urls": [
+            "https://www.kci.go.kr/kciportal/landing/article.kci?arti_id=ART002359281",
+            "https://fh.pku.edu.cn/docs/2018-11/20181108193713608488.pdf",
+            "https://www.cambridge.org/core/journals/canadian-journal-of-linguistics-revue-canadienne-de-linguistique/article/no-unidirectionality-textual-yao-in-mandarin-as-contentful-and-procedural/698D0CAEFE8EF856A55CDCCF33A6E165",
+            "https://www.researchgate.net/publication/368818005_Wanting_the_Future_The_Case_of_Future_Yao",
+            "https://dokumen.pub/newest-trends-in-the-study-of-grammaticalization-and-lexicalization-in-chinese-9783110253009-9783110252996.html",
+            "https://z-n-huang.github.io/files/HuangVanDoorenMendes2021%20Mandarin%20want.pdf"
+          ]
+        },
+        {
+          "query": "古汉语 要 希望 想 要义 历史 语法化 意愿动词",
+          "opened_urls": [
+            "https://www.kci.go.kr/kciportal/landing/article.kci?arti_id=ART002359281",
+            "https://www.fh.pku.edu.cn/docs/2018-11/20181108193713608488.pdf"
+          ]
+        },
+        {
+          "query": "要 yào volitional verb historical development Chinese desire request invite",
+          "opened_urls": [
+            "https://www.cambridge.org/core/journals/canadian-journal-of-linguistics-revue-canadienne-de-linguistique/article/no-unidirectionality-textual-yao-in-mandarin-as-contentful-and-procedural/698D0CAEFE8EF856A55CDCCF33A6E165",
+            "https://www.researchgate.net/publication/368818005_Wanting_the_Future_The_Case_of_Future_Yao",
+            "https://www.degruyterbrill.com/document/doi/10.1515/9783110253009.149/html"
+          ]
+        },
+        {
+          "query": "Alain Peyraube Li Ming \"The semantic historical development\" modal verbs volition Chinese",
+          "opened_urls": [
+            "https://www.degruyterbrill.com/document/doi/10.1515/9783110253009.149/html"
+          ]
+        }
+      ],
+      "gaps": [
+        "The modern target sense is directly supported, but the exact historical path from older 要 senses into all present-day desire/intention contexts remains incompletely established by the opened sources. In particular, the evidence for older request/ask uses and the proposed development toward ‘want’ does not by itself prove a continuous derivation for the target auxiliary."
+      ]
+    },
+    "input_fingerprint": "a5201ba8db9337c13766d1c4de62522be02c7d714764d94766fa91e69a7f483d",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "partial",
+    "editorial_route": "cached_research",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "18dc9f35f7c5a6dc12ce1bbe2b1e66e769ea780ec4df41a44e18bdfe8e9226a7"
+}

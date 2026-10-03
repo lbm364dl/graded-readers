@@ -1,0 +1,31 @@
+{
+  "id": "zh-31caa4ab75cd-1-1de3e21cc3fe8035",
+  "entry_id": "zh-31caa4ab75cd-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-31caa4ab75cd-1",
+      "headword": "一面",
+      "kind": "word",
+      "reading": "yímiàn",
+      "senses": [
+        {
+          "id": "zh-31caa4ab75cd-1-s1",
+          "definition": "while doing one thing, also do another; on the one hand"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角一面私造黄旗，约好起事日期，一面派弟子送信，却被告密。",
+        "gloss": "on the one hand",
+        "sense_id": "zh-31caa4ab75cd-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7abddb47b8958b50870c1f904f0948fddeafc60a4c019c1d58cfe542602bc988"
+}

@@ -1,0 +1,41 @@
+{
+  "id": "zh-cbe999c9d065-1-01a989b5bb635713",
+  "entry_id": "zh-cbe999c9d065-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-cbe999c9d065-1",
+      "headword": "听见",
+      "kind": "construction",
+      "reading": "tīngjiàn",
+      "senses": [
+        {
+          "id": "zh-cbe999c9d065-1-s1",
+          "definition": "hear; perceive by hearing"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞听见后说：“大丈夫不能只叹气！",
+        "gloss": "hear",
+        "sense_id": "zh-cbe999c9d065-1-s1"
+      },
+      {
+        "sentence": "刘备带着关羽、张飞赶到颍川时，只听见喊杀声，也看见火光照亮天空。",
+        "gloss": "to hear",
+        "sense_id": "zh-cbe999c9d065-1-s1"
+      },
+      {
+        "sentence": "不到两天，他们听见山后喊声很大。",
+        "gloss": "hear",
+        "sense_id": "zh-cbe999c9d065-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fb3f7f6b8822fc917b9f9edbcc80d0b6e13a9334bc6883c6c9ca8b44b23a077d"
+}

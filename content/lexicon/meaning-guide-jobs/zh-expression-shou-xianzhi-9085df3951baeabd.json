@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-shou-xianzhi-9085df3951baeabd",
+  "entry_id": "zh-expression-shou-xianzhi",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-shou-xianzhi",
+      "headword": "不受限制",
+      "reading": "bù shòu xiànzhì",
+      "kind": "construction",
+      "base_entry_id": "zh-de96c1fa6272-1",
+      "components": [
+        {
+          "entry_id": "zh-de96c1fa6272-1",
+          "role": "negated predicate"
+        },
+        {
+          "entry_id": "zh-688f892378ee-1",
+          "role": "restriction"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-shou-xianzhi-s1",
+          "definition": "not be subject to restrictions; be unconstrained"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "这个结果导致宦官从此更加专横，做事也更不受限制，朝廷中的正直之士更加危险。",
+        "gloss": "not be subject to restrictions; be unconstrained",
+        "sense_id": "zh-expression-shou-xianzhi-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "不受",
+        "role": "negated predicate"
+      },
+      {
+        "headword": "限制",
+        "role": "restriction"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4e6f0960602bd0621822be4607f64f54a09c9abf813348bd6f6784fa2cd1c892"
+}

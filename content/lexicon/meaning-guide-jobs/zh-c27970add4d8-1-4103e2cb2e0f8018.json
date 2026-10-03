@@ -1,0 +1,31 @@
+{
+  "id": "zh-c27970add4d8-1-4103e2cb2e0f8018",
+  "entry_id": "zh-c27970add4d8-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c27970add4d8-1",
+      "headword": "朝政",
+      "kind": "word",
+      "reading": "cháozhèng",
+      "senses": [
+        {
+          "id": "zh-c27970add4d8-1-s1",
+          "definition": "government affairs; affairs of the court"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇帝信任张让，叫他“阿父”，朝政逐渐败坏，天下人心想要作乱，盗贼纷纷起来。",
+        "gloss": "court affairs",
+        "sense_id": "zh-c27970add4d8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7f9ba1b819516dd3389a3f42c128d12e6fef53b944475ceccb36b9fff00566c4"
+}

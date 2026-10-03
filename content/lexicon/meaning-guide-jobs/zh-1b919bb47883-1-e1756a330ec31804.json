@@ -1,0 +1,31 @@
+{
+  "id": "zh-1b919bb47883-1-e1756a330ec31804",
+  "entry_id": "zh-1b919bb47883-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1b919bb47883-1",
+      "headword": "为什么",
+      "kind": "word",
+      "reading": "wèishénme",
+      "senses": [
+        {
+          "id": "zh-1b919bb47883-1-s1",
+          "definition": "why; for what reason"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞问他为什么。",
+        "gloss": "why",
+        "sense_id": "zh-1b919bb47883-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "25623009c70574288371c569806fc5667f5cf8d37a5a44a4420ae489837d9eb0"
+}

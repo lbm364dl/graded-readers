@@ -1,0 +1,31 @@
+{
+  "id": "zh-f7778934807d-1-ed6a57fed55f2f2e",
+  "entry_id": "zh-f7778934807d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f7778934807d-1",
+      "headword": "过",
+      "kind": "word",
+      "reading": "guò",
+      "senses": [
+        {
+          "id": "zh-f7778934807d-1-s1",
+          "definition": "to pass; to go over"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刚过山岭，刘备鸣金发出信号，两边的人一起冲下。",
+        "gloss": "pass",
+        "sense_id": "zh-f7778934807d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0f3223cb45504a75f177e015dd7b0ff009548a6d9570906d63f39691475b362d"
+}

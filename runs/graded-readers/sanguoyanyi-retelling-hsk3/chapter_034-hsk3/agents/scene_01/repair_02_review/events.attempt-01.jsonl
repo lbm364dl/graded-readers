@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff3f7-042a-7010-b4db-f76deca60022"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.91,\"naturalness\":0.91,\"readability\":0.9,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"“车上坐着假诸葛亮”容易误解为几辆车上全是假孔明；原文是三辆车中一辆由孔明亲自乘坐，另外两辆为姜维、马岱、魏延等护送的疑兵。\",\"“司马懿又派人假装要跟随蜀军”表述不准，原文是魏将郑文诈降蜀军，再诱使司马懿劫营。\"],\"language_problems\":[\"“掌管食物的官员”指代过于含糊，可明确为负责粮草的李严。\",\"“食物没有准备好”较口语化且不够准确，宜改为“粮草没有准备好”。\"],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":31491,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":1362,"reasoning_output_tokens":1142}}

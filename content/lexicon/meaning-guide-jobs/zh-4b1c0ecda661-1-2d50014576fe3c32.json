@@ -1,0 +1,31 @@
+{
+  "id": "zh-4b1c0ecda661-1-2d50014576fe3c32",
+  "entry_id": "zh-4b1c0ecda661-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4b1c0ecda661-1",
+      "headword": "这件事",
+      "kind": "word",
+      "reading": "zhèjiànshì",
+      "senses": [
+        {
+          "id": "zh-4b1c0ecda661-1-s1",
+          "definition": "this matter; this issue"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备连忙拉住他：“这件事应当由朝廷处理，你不能冲动。",
+        "gloss": "this matter",
+        "sense_id": "zh-4b1c0ecda661-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c2f53d4a3312a12bbcd7fddd77089845a14379e928ea14e19026fc147d6027af"
+}

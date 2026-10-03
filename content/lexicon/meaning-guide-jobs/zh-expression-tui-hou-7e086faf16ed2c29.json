@@ -1,0 +1,56 @@
+{
+  "id": "zh-expression-tui-hou-7e086faf16ed2c29",
+  "entry_id": "zh-expression-tui-hou",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-tui-hou",
+      "headword": "退后",
+      "reading": "tuìhòu",
+      "kind": "expression",
+      "base_entry_id": "zh-abc3da5e6b37-1",
+      "components": [
+        {
+          "entry_id": "zh-abc3da5e6b37-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-60be66d61586-1",
+          "role": "directional complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-tui-hou-s1",
+          "definition": "move or retreat toward the back"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备兵少，只好退后三十里扎营。",
+        "gloss": "move or retreat toward the back",
+        "sense_id": "zh-expression-tui-hou-s1"
+      },
+      {
+        "sentence": "刘备兵少，只得退后三十里下寨。",
+        "gloss": "move or retreat toward the back",
+        "sense_id": "zh-expression-tui-hou-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "退",
+        "role": "verb"
+      },
+      {
+        "headword": "后",
+        "role": "directional complement"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f589b46f1d7db9963c5d9ddf6b7ec9d11d8145a9473bdfc049db703b04ad5150"
+}

@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_111-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 495,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“双方大战仍在继续”超出原文：原文只写诸葛诞率军迎战，尚未交代战斗结果。",
+      "classification": "material",
+      "reason": "“双方大战仍在继续”新增了战斗已经持续的事实，改变了原文仅写双方交战、尚未说明胜负和后续的叙述状态。",
+      "required_fix": "改为“诸葛诞率军迎战司马昭，胜负未分，且看下文分解”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“双方大战仍在继续”超出原文：原文只写诸葛诞率军迎战，尚未交代战斗结果。",
+      "classification": "material",
+      "reason": "“双方大战仍在继续”新增了战斗已经持续的事实，改变了原文仅写双方交战、尚未说明胜负和后续的叙述状态。",
+      "required_fix": "改为“诸葛诞率军迎战司马昭，胜负未分，且看下文分解”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 495,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

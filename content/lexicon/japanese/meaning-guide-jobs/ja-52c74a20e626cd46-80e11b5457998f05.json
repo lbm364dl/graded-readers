@@ -1,0 +1,32 @@
+{
+  "id": "ja-52c74a20e626cd46-80e11b5457998f05",
+  "entry_id": "ja-52c74a20e626cd46",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-52c74a20e626cd46",
+      "headword": "何",
+      "reading": "なん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-52c74a20e626cd46-1",
+          "definition": "what; which thing"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "何だ」と言って出て来た。",
+        "gloss": "what",
+        "sense_id": "ja-52c74a20e626cd46-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "17727af3f279d9318cfd3babbd54ac1b253610c13070950a31e2aa2a0577b401"
+}

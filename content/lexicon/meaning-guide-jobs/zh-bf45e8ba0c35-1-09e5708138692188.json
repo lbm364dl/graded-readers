@@ -1,0 +1,31 @@
+{
+  "id": "zh-bf45e8ba0c35-1-09e5708138692188",
+  "entry_id": "zh-bf45e8ba0c35-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-bf45e8ba0c35-1",
+      "headword": "梁上",
+      "kind": "construction",
+      "reading": "liángshàng",
+      "senses": [
+        {
+          "id": "zh-bf45e8ba0c35-1-s1",
+          "definition": "on a beam"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "殿角忽起狂风，一条大青蛇从梁上飞下，盘在椅上。",
+        "gloss": "on the beam",
+        "sense_id": "zh-bf45e8ba0c35-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f756710d12e9a95b03f8f1b52f95989510aa33db64ac81407b3173632b0a8e44"
+}

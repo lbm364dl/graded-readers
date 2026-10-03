@@ -1,0 +1,31 @@
+{
+  "id": "zh-1dec4357b72e-1-c57493f0f674aec1",
+  "entry_id": "zh-1dec4357b72e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1dec4357b72e-1",
+      "headword": "装作",
+      "kind": "construction",
+      "reading": "zhuāngzuò",
+      "senses": [
+        {
+          "id": "zh-1dec4357b72e-1-s1",
+          "definition": "to pretend to be or do something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹嵩责备他后，他装作中风，骗过了父亲。",
+        "gloss": "to pretend",
+        "sense_id": "zh-1dec4357b72e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9b78dcada41afb2213879913128a68996e936260bb044ce9943feb127f14ab4c"
+}

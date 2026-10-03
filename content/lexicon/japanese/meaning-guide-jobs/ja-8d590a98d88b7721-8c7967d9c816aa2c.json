@@ -1,0 +1,32 @@
+{
+  "id": "ja-8d590a98d88b7721-8c7967d9c816aa2c",
+  "entry_id": "ja-8d590a98d88b7721",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-8d590a98d88b7721",
+      "headword": "追い払う",
+      "reading": "おいはらう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-8d590a98d88b7721-1",
+          "definition": "to drive away; to chase off"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "どこへ行っても追い払われ、相手にしてくれる者はいなかった。",
+        "gloss": "being driven away",
+        "sense_id": "ja-8d590a98d88b7721-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "556cdb7eab9451b9a10146f08c835f0616b4c854edd671d6410c896e96100c0b"
+}

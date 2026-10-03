@@ -1,0 +1,31 @@
+{
+  "id": "zh-108be1223bd8-1-1c8668ffa982d6f7",
+  "entry_id": "zh-108be1223bd8-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-108be1223bd8-1",
+      "headword": "攻",
+      "kind": "word",
+      "reading": "gōng",
+      "senses": [
+        {
+          "id": "zh-108be1223bd8-1-s1",
+          "definition": "attack"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军的程远志带人来攻涿郡。",
+        "gloss": "attack",
+        "sense_id": "zh-108be1223bd8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6b6d2c4a28b01550d211abca6808f4065e8de664c492bfeda07332af98c94a3c"
+}

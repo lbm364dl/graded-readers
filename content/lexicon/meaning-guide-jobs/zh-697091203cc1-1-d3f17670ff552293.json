@@ -1,0 +1,31 @@
+{
+  "id": "zh-697091203cc1-1-d3f17670ff552293",
+  "entry_id": "zh-697091203cc1-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-697091203cc1-1",
+      "headword": "六月初一",
+      "kind": "word",
+      "reading": "liùyuè chūyī",
+      "senses": [
+        {
+          "id": "zh-697091203cc1-1-s1",
+          "definition": "the first day of the sixth month"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "光和元年，母鸡变成公鸡；六月初一，黑气飞入宫中。",
+        "gloss": "the first day of the sixth month",
+        "sense_id": "zh-697091203cc1-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c3ee695a3eb076726bf3c056525e6c8d0e563843569e7720cf5fb7f88fd2a5a2"
+}

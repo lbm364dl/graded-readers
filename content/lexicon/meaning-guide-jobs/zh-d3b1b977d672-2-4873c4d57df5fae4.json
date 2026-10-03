@@ -1,0 +1,31 @@
+{
+  "id": "zh-d3b1b977d672-2-4873c4d57df5fae4",
+  "entry_id": "zh-d3b1b977d672-2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d3b1b977d672-2",
+      "headword": "倒",
+      "kind": "word",
+      "reading": "dào",
+      "senses": [
+        {
+          "id": "zh-d3b1b977d672-2-s1",
+          "definition": "pour; serve a liquid from a container"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "正饮之间，一个大汉推车到店门口歇下，入店便叫酒保倒酒，说要赶进城投军。",
+        "gloss": "to pour",
+        "sense_id": "zh-d3b1b977d672-2-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f829427b454205982f188326cd077f2241ebab99dfca34e7c26027e2b7a2901b"
+}

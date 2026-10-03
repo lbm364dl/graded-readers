@@ -1,0 +1,37 @@
+{
+  "status": "complete",
+  "generated_at": "2026-08-31T09:40:03.002955+00:00",
+  "book": "wagahai",
+  "scope": "chapter_01_all_jlpt_levels",
+  "source_manifest": "/home/catalin/graded-readers/books/japanese/wagahai_wa_neko_de_aru/manifest.json",
+  "levels": {
+    "n5": {
+      "characters": 195,
+      "run": "/home/catalin/graded-readers/runs/graded-readers/wagahai-ch1-agent-smoke-n5-construction-v8"
+    },
+    "n4": {
+      "characters": 804,
+      "run": "/home/catalin/graded-readers/runs/graded-readers/wagahai-ch1-agent-smoke-n4-learner-v1/smoke/chapter_01-n4"
+    },
+    "n3": {
+      "characters": 1698,
+      "run": "/home/catalin/graded-readers/runs/graded-readers/wagahai-ch1-agent-smoke-n3-learner-v2/smoke/chapter_01-n3"
+    },
+    "n2": {
+      "characters": 4318,
+      "run": "/home/catalin/graded-readers/runs/graded-readers/wagahai-ch1-agent-smoke-n2-v2/smoke/chapter_01-n2"
+    },
+    "n1": {
+      "characters": 6085,
+      "run": "/home/catalin/graded-readers/runs/graded-readers/wagahai-ch1-agent-smoke-n1-v2/smoke/chapter_01-n1"
+    }
+  },
+  "invariants": {
+    "source_provenance_verified": true,
+    "source_grounded_reviews_passed": true,
+    "annotations_reconstruct_text": true,
+    "annotations_reviewed": true,
+    "lengths_increase_n5_to_n1": true,
+    "legacy_japanese_content_excluded": true
+  }
+}

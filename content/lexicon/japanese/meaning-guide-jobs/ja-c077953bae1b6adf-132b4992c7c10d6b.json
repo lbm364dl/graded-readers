@@ -1,0 +1,32 @@
+{
+  "id": "ja-c077953bae1b6adf-132b4992c7c10d6b",
+  "entry_id": "ja-c077953bae1b6adf",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-c077953bae1b6adf",
+      "headword": "泣く",
+      "reading": "なく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-c077953bae1b6adf-1",
+          "definition": "To cry or weep."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "暗い所でニャーニャー泣いていました。",
+        "gloss": "was crying",
+        "sense_id": "ja-c077953bae1b6adf-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6a1fdf3b544b8d44fa599253bbccff2195178af54b8fa319f7268dcb2aac6e69"
+}

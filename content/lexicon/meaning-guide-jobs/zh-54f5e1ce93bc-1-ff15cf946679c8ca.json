@@ -1,0 +1,31 @@
+{
+  "id": "zh-54f5e1ce93bc-1-ff15cf946679c8ca",
+  "entry_id": "zh-54f5e1ce93bc-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-54f5e1ce93bc-1",
+      "headword": "念咒",
+      "kind": "construction",
+      "reading": "niànzhòu",
+      "senses": [
+        {
+          "id": "zh-54f5e1ce93bc-1-s1",
+          "definition": "recite spells or incantations"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他有五百多名弟子，云游四方，都能书符念咒。",
+        "gloss": "chant spells",
+        "sense_id": "zh-54f5e1ce93bc-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "202d310fea617e863e707e6e616862a76c516466e341a7f9a29e420a20d71461"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-a6e26b73e6cf-1-e1538ab3e8965707",
+  "entry_id": "zh-a6e26b73e6cf-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a6e26b73e6cf-1",
+      "headword": "大兴山",
+      "kind": "name",
+      "reading": "Dàxīngshān",
+      "senses": [
+        {
+          "id": "zh-a6e26b73e6cf-1-s1",
+          "definition": "Daxing Mountain"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人到了大兴山下，和敌军相遇。",
+        "gloss": "Daxing Mountain",
+        "sense_id": "zh-a6e26b73e6cf-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "59407743dce5d94638fa7f08ae103fd82b8a547d21eb52627aa4cd2b32ad3634"
+}

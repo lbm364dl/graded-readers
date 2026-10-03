@@ -1,0 +1,31 @@
+{
+  "id": "zh-a781b76ad955-1-671d83735994fe80",
+  "entry_id": "zh-a781b76ad955-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a781b76ad955-1",
+      "headword": "杀死",
+      "kind": "construction",
+      "reading": "shāsǐ",
+      "senses": [
+        {
+          "id": "zh-a781b76ad955-1-s1",
+          "definition": "kill; cause to die"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "这一战中，曹操杀死一万多人，夺得旗子、战鼓和许多马匹。",
+        "gloss": "to kill",
+        "sense_id": "zh-a781b76ad955-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e42f67fb4e9bd2fb75d6419cda57b15cee73468b40e5e361c4e5e46696d6cb73"
+}

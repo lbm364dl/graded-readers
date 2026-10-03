@@ -1,0 +1,32 @@
+{
+  "id": "ja-a49c388f2b9b28bc-c50f1741a6d7daae",
+  "entry_id": "ja-a49c388f2b9b28bc",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a49c388f2b9b28bc",
+      "headword": "毛つや",
+      "reading": "けつや",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-a49c388f2b9b28bc-1",
+          "definition": "The sheen or glossy appearance of an animal’s coat or hair."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "鼠をたくさん食べるから、そんなに太って毛つやもよいのだろう」と言うと、黒は急にため息をついた。",
+        "gloss": "coat gloss; hair sheen",
+        "sense_id": "ja-a49c388f2b9b28bc-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e8e3e327c11ebf1b6b8823bd41815197749a886370d1a944c5b4fd4b36d26ec8"
+}

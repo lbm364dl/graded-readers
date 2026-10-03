@@ -1,0 +1,21 @@
+{
+  "job": "annotations/chapter_delta/batch_0002/missing_completion",
+  "model": "gpt-5.6-luna",
+  "effort": "medium",
+  "fingerprint": "e95165c6021e2fb4a4b67cae522b29781fb94823f822a72df5b30c05229f2bf4",
+  "started_at": "2026-08-07T03:43:06.184984+00:00",
+  "ended_at": "2026-08-07T03:43:47.585784+00:00",
+  "return_code": 0,
+  "attempt_count": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-08-07T03:43:06.185010+00:00",
+      "ended_at": "2026-08-07T03:43:47.585692+00:00",
+      "return_code": 0,
+      "throttled": false,
+      "events": "events.attempt-01.jsonl",
+      "stderr": "stderr.attempt-01.log"
+    }
+  ]
+}

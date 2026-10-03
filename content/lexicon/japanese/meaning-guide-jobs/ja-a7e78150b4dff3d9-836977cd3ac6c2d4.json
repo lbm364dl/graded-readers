@@ -1,0 +1,32 @@
+{
+  "id": "ja-a7e78150b4dff3d9-836977cd3ac6c2d4",
+  "entry_id": "ja-a7e78150b4dff3d9",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a7e78150b4dff3d9",
+      "headword": "筋向かい",
+      "reading": "すじむかい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-a7e78150b4dff3d9-1",
+          "definition": "the opposite side across a street or narrow way"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "筋向かいに住む白君は、吾輩が尊敬する猫である。",
+        "gloss": "opposite across the street",
+        "sense_id": "ja-a7e78150b4dff3d9-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "630bc84dbd56d82e3635c390ac8b2d7dd92dfcda1a50381718bd221e56c5e763"
+}

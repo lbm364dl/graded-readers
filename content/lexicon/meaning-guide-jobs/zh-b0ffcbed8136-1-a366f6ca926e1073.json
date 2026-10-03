@@ -1,0 +1,31 @@
+{
+  "id": "zh-b0ffcbed8136-1-a366f6ca926e1073",
+  "entry_id": "zh-b0ffcbed8136-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b0ffcbed8136-1",
+      "headword": "这天",
+      "kind": "word",
+      "reading": "zhètiān",
+      "senses": [
+        {
+          "id": "zh-b0ffcbed8136-1-s1",
+          "definition": "this day; that day in the narrative"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "这天，他见到榜文，想到自己没有力量为国家出力，不能报国，不禁长叹。",
+        "gloss": "that day",
+        "sense_id": "zh-b0ffcbed8136-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "180ab8698f3867bd17ca22299a670eaebeb48d4cae136713edc1f40231710ba8"
+}

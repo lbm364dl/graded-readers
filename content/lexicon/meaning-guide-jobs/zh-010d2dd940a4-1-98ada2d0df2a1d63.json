@@ -1,0 +1,31 @@
+{
+  "id": "zh-010d2dd940a4-1-98ada2d0df2a1d63",
+  "entry_id": "zh-010d2dd940a4-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-010d2dd940a4-1",
+      "headword": "队",
+      "kind": "word",
+      "reading": "duì",
+      "senses": [
+        {
+          "id": "zh-010d2dd940a4-1-s1",
+          "definition": "a group or body of people organized or considered together"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备奉命带兵返回，途中遇到一队汉军，正押送一辆囚车。",
+        "gloss": "group",
+        "sense_id": "zh-010d2dd940a4-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1cdf0b9a5a7634dd2fc01f5f12950a99c63df9e6c6762ac6283ac42dd502d39c"
+}

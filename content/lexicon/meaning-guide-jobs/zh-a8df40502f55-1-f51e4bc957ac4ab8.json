@@ -1,0 +1,31 @@
+{
+  "id": "zh-a8df40502f55-1-f51e4bc957ac4ab8",
+  "entry_id": "zh-a8df40502f55-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a8df40502f55-1",
+      "headword": "数",
+      "kind": "word",
+      "reading": "shǔ",
+      "senses": [
+        {
+          "id": "zh-a8df40502f55-1-s1",
+          "definition": "count; enumerate"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备率军追赶，投降者不计其数，大胜而回。",
+        "gloss": "to count",
+        "sense_id": "zh-a8df40502f55-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5adb07966cda7852a0cea61ab37ca4e868d4e89a65f5942555a3dce7507e8517"
+}

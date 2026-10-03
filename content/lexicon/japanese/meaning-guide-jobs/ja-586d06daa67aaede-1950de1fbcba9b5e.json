@@ -1,0 +1,32 @@
+{
+  "id": "ja-586d06daa67aaede-1950de1fbcba9b5e",
+  "entry_id": "ja-586d06daa67aaede",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-586d06daa67aaede",
+      "headword": "ようにする",
+      "reading": "ようにする",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-586d06daa67aaede-1",
+          "definition": "to make a point of doing something; to try or make an effort to do something"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "仕方がないので、吾輩を家に入れてくれた主人のそばに、できるだけいるようにした。",
+        "gloss": "made it a practice to; tried to",
+        "sense_id": "ja-586d06daa67aaede-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ff02855f4bc8390340625282bf404ddf01118126e794a6fdc3da85a7e258c954"
+}

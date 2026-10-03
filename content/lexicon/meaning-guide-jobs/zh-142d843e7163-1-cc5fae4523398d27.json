@@ -1,0 +1,31 @@
+{
+  "id": "zh-142d843e7163-1-cc5fae4523398d27",
+  "entry_id": "zh-142d843e7163-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-142d843e7163-1",
+      "headword": "当",
+      "kind": "word",
+      "reading": "dāng",
+      "senses": [
+        {
+          "id": "zh-142d843e7163-1-s1",
+          "definition": "should; be destined or expected to"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他让人传播“苍天已死，黄天当立”和“岁在甲子，天下大吉”，还用白土在家门上写“甲子”。",
+        "gloss": "should; will",
+        "sense_id": "zh-142d843e7163-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "895d2a803ba24bfe7194955dfd3ae42afeedb5be11969fde7ea39c444ec7e5e3"
+}

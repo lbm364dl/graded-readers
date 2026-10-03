@@ -1,0 +1,1683 @@
+{
+  "schema_version": 2,
+  "policy_version": 3,
+  "reviewed": true,
+  "model": "gpt-6-luna",
+  "proposal_effort": "low",
+  "review_effort": "high",
+  "guides": [
+    {
+      "entry_id": "zh-0c45484446da-1",
+      "structure": "compositional",
+      "explanation_en": "大 means great in size or importance, and 事 means a matter or undertaking. Together, 大事 is a matter of great importance or scale—an important undertaking.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "大",
+          "contribution_en": "great in scale or importance"
+        },
+        {
+          "text": "事",
+          "contribution_en": "a matter or undertaking"
+        }
+      ],
+      "input_fingerprint": "7b0e54f4df170256ac10418472a0665a0f628d31b2bd6c22c5c09b5c60f53db1",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-0cc659a9f57c-1",
+      "structure": "lexicalized",
+      "explanation_en": "国家 is the conventional word for a country or nation understood as a political community. 国 points to the country or polity; 家’s contribution to the whole is not fully predictable from its usual sense of “home” or “household.”",
+      "caveat_en": "Do not interpret 国家 as a literal “country-household”; it functions as a conventional word for a nation or country.",
+      "parts": [
+        {
+          "text": "国",
+          "contribution_en": "the country or political realm"
+        },
+        {
+          "text": "家",
+          "contribution_en": "part of the conventional word; its usual sense of “home” or “household” does not fully explain the whole"
+        }
+      ],
+      "input_fingerprint": "26b2d2a736b777258654f951abf4f47cfa681cb73a5f3db2682e148c52363f8d",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-0eb863c78da3-1",
+      "structure": "single_component",
+      "explanation_en": "钱 names money: value used for payment and exchange. It refers to money as a whole, with no meaningful smaller part to explain in this word.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "钱",
+          "contribution_en": "Names money or monetary value."
+        }
+      ],
+      "input_fingerprint": "eb6ed31c30c94868c2989c530d959c00627e6c6d141e64de18136619a4d488bf",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-10518f8f0abf-1",
+      "structure": "grammatical",
+      "explanation_en": "他们 combines the third-person pronoun 他 with 们, which marks a group of people. It means “they” or “them”; the sentence determines its grammatical role, and the group can be mixed-gender.",
+      "caveat_en": "In writing, 她们 is commonly used for a group of women; both forms are pronounced tāmen.",
+      "parts": [
+        {
+          "text": "他",
+          "contribution_en": "The third-person pronoun base."
+        },
+        {
+          "text": "们",
+          "contribution_en": "Marks the pronoun as referring to a group."
+        }
+      ],
+      "input_fingerprint": "84fe8efef468271f84a326646906bf9afa338638c49c006ee0026a707007467d",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-12404a0b6381-1",
+      "structure": "grammatical",
+      "explanation_en": "在 marks a place as the location where an action happens. It links the action to where it takes place, like “at” or “in” in English.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "6466b3eec09147bd3f465eda0d180c8bcfd9b069995dd16572a4da95188bc413",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-144027b96a6d-1",
+      "structure": "compositional",
+      "explanation_en": "喝酒 means to drink alcohol. 喝 names the action, and 酒 identifies what is drunk.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "喝",
+          "contribution_en": "The action of drinking."
+        },
+        {
+          "text": "酒",
+          "contribution_en": "Alcoholic drink, the object of the drinking."
+        }
+      ],
+      "input_fingerprint": "c07c9037beaf4e729e0548085a70b282a2f952387c39f7cb1fef75c03d974f7a",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-16b54b7ab3b5-1",
+      "structure": "lexicalized",
+      "explanation_en": "大家 is the conventional word for everyone or everybody in a group. 家 can suggest a household or group of people, but the whole meaning is established and cannot be worked out precisely as “big household.”",
+      "caveat_en": "The everyday meaning “everyone” is conventional; the parts do not define exactly which people are included.",
+      "parts": [
+        {
+          "text": "大",
+          "contribution_en": "part of the established word; it does not simply mean “big” in this expression"
+        },
+        {
+          "text": "家",
+          "contribution_en": "can suggest a household or group, but does not independently mean “everyone”"
+        }
+      ],
+      "input_fingerprint": "62c4e571a80990e6e8a2b17b5aab467a254dcddb1658c104ae3a12ad073e5981",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-1940119f0571-1",
+      "structure": "single_component",
+      "explanation_en": "After a number, 多 indicates that the amount exceeds that number. With a count, it means “more than” the stated amount.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "cb209fbbd9d46104303ce1cec7869f2c23ad0f0af72a5cb64f4bae70dd9c3dd8",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-1bc709b8bf6c-1",
+      "structure": "single_component",
+      "explanation_en": "还 adds something to what has already been mentioned, signaling that it too is included or happens in addition. It modifies the statement rather than naming the added item.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "还",
+          "contribution_en": "Signals that something is also included or happens in addition."
+        }
+      ],
+      "input_fingerprint": "cffe2ad0ec1824a8fb93814d3ac90f92c7858b1ac428157618d5939c01d177a9",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-1d9ed569515d-1",
+      "structure": "single_component",
+      "explanation_en": "事 refers broadly to a matter, affair, or undertaking—something that happens or is dealt with. By itself, it does not say what the matter involves.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "7b8319f7ad90b67ad49975f60eec7d8243892c69fd364eb7a267a40d9bb88212",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-1f2eb2608d23-1",
+      "structure": "single_component",
+      "explanation_en": "听 means “hear” or “listen to”: it can refer to perceiving sound or attending to what someone says. It is a single word, not a combination of smaller words.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "0854e62d2bb1c932fa482e0cc074c9338070225e5005c1f28dafddef6dc6ef67",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-220ac6c5a360-1",
+      "structure": "lexicalized",
+      "explanation_en": "一起 means that people or things act or occur together, as part of the same activity or situation. The word functions as a whole; its conventional meaning is not reliably derived by adding the separate meanings of 一 and 起.",
+      "caveat_en": "Do not read 起 here as independently meaning “together”; the word’s ordinary meaning is lexicalized.",
+      "parts": [],
+      "input_fingerprint": "013e04058e0de33f5e4f64cedee6fb316232f1f496d3b4d9ca46181a0672f635",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-29a7956f3cda-1",
+      "structure": "compositional",
+      "explanation_en": "送来 combines sending or delivering something with 来, which directs the movement toward the relevant destination. The result is that the item is sent or brought to that place.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "送",
+          "contribution_en": "Describes sending or delivering something."
+        },
+        {
+          "text": "来",
+          "contribution_en": "Directs the movement toward the relevant destination."
+        }
+      ],
+      "input_fingerprint": "e8f2b8eb2953141cf000432a5eb9571b3322afd6991e5797296fef155301079c",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-2f2fdde73aa0-1",
+      "structure": "compositional",
+      "explanation_en": "村里 means within the area of a village. 村 names the village, and 里 locates something inside or within it; the phrase can refer to the village's interior or its local area.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "村",
+          "contribution_en": "village"
+        },
+        {
+          "text": "里",
+          "contribution_en": "inside or within an area"
+        }
+      ],
+      "input_fingerprint": "fc56046687c359b683dacdb7d8da28315ef4f78b08c219828795fb6d4c75acd4",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-30d4711445a2-1",
+      "structure": "grammatical",
+      "explanation_en": "坐 means to sit, and 下 adds the change into a seated position. Together, 坐下 means to sit down or take a seat.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "坐",
+          "contribution_en": "to sit"
+        },
+        {
+          "text": "下",
+          "contribution_en": "marks the change into the seated position"
+        }
+      ],
+      "input_fingerprint": "92310adc8b4fd9299d9f1475fdb5532f196ea07b7be6f4bbf4d6ec9d9b58028c",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-347ef701cee3-1",
+      "structure": "compositional",
+      "explanation_en": "找来 means to find people and bring them toward a relevant place or person. 找 supplies the act of locating them; 来 adds movement toward a reference point, so the phrase describes finding them and getting them there.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "找",
+          "contribution_en": "locate the people being sought"
+        },
+        {
+          "text": "来",
+          "contribution_en": "add movement toward a relevant reference point"
+        }
+      ],
+      "input_fingerprint": "10e6dd7bf0ff5599e44952908fdce4083582c4ea8d3de6fb63eadd04ccda53f9",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-38ca4a9c76b1-1",
+      "structure": "lexicalized",
+      "explanation_en": "可是 is a conventional linking word meaning “but” or “however.” It signals that what follows contrasts with or qualifies what came before.",
+      "caveat_en": "The contrast meaning belongs to 可是 as a whole; the separate meanings of 可 and 是 do not explain it.",
+      "parts": [],
+      "input_fingerprint": "d3d976b33902353a94824390782ff493f98ea871f000c17e1dcb5974f954533c",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-391aa9b897c3-1",
+      "structure": "single_component",
+      "explanation_en": "剑 means “sword,” a bladed weapon. It is a single word and is not usefully divided into smaller meaningful parts.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "d9da88ce052f83a72d66fbf0ea8c5fb3f20a1a7f678e766e8c55efa7fc82defd",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-39eae64cfc41-1",
+      "structure": "single_component",
+      "explanation_en": "When said of a flower, 开 means to open into bloom. It describes flowering, rather than simply being open.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "开",
+          "contribution_en": "Means to bloom when said of a flower."
+        }
+      ],
+      "input_fingerprint": "f1eec7819911a66b8128b2725d3ba8ce18eced974f696544089f8ba22d4f64b6",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-3a116815bc9d-1",
+      "structure": "single_component",
+      "explanation_en": "个 is a general classifier used when counting people or things. It supplies a counting unit without specifying a special shape or category.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "d5eab532d7a97c3f4b7264b9b06b884224fdb195fea1d6dda3a88c94252579fe",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-3d7114281f5b-1",
+      "structure": "single_component",
+      "explanation_en": "和 links coordinated nouns, meaning “and.” It connects the nouns as items in the same phrase and is not usefully divided into smaller meaningful parts.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "da8100dc6447be3ec1281d770ecf7c9ff9710990316fb85d525396d8d126cf59",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-428cf29b5093-1",
+      "structure": "single_component",
+      "explanation_en": "拜 is a verb for carrying out a formal rite or ritual act. What follows can identify the rite's focus or participants.",
+      "caveat_en": "拜 is a single verb here; its ritual meaning is not built from smaller meaningful parts.",
+      "parts": [
+        {
+          "text": "拜",
+          "contribution_en": "perform a formal rite or ritual act"
+        }
+      ],
+      "input_fingerprint": "e87e8d19fb6ef2c46e844ae6294065d5089174080febfb93087d3332a1af7e9a",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-435ea07255f6-1",
+      "structure": "compositional",
+      "explanation_en": "二哥 is a kinship term for the second elder brother in a sibling order. 二 gives the position, and 哥 means an older brother.",
+      "caveat_en": "The position is understood relative to the family or sibling group; the term is not necessarily a personal name.",
+      "parts": [
+        {
+          "text": "二",
+          "contribution_en": "the second position in sibling order"
+        },
+        {
+          "text": "哥",
+          "contribution_en": "older brother"
+        }
+      ],
+      "input_fingerprint": "3179bb0ecca6e6d5d3598de18d9b08745724fabe76e3d79d14486c063818974b",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-4628c0e06f4b-1",
+      "structure": "single_component",
+      "explanation_en": "问 describes putting a question to someone, typically to seek information or an answer. The character names the act of asking as a whole.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "问",
+          "contribution_en": "Describes putting a question to someone."
+        }
+      ],
+      "input_fingerprint": "00b1a4c7aa829dd8786f0fd57bc59ae597cb1e9b7c3e3620e789820f9dabceff",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-467d6a749e06-1",
+      "structure": "compositional",
+      "explanation_en": "这里 combines 这, “this,” with 里, which contributes the sense of a place or location. Together they point to the place being referred to: “here” or “this place.”",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "这",
+          "contribution_en": "Points to the place being referred to."
+        },
+        {
+          "text": "里",
+          "contribution_en": "Contributes the location or place."
+        }
+      ],
+      "input_fingerprint": "12eae52413228075e1f88cafea0d57f3218b9cbb7ce863edb5dfc1aa043a0d0e",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-4b5dd661e44a-1",
+      "structure": "compositional",
+      "explanation_en": "招兵 means to recruit soldiers. 招 describes calling for or enlisting people, and 兵 names the soldiers being recruited.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "招",
+          "contribution_en": "call for or enlist people"
+        },
+        {
+          "text": "兵",
+          "contribution_en": "soldiers, the people being recruited"
+        }
+      ],
+      "input_fingerprint": "4465c8439f116986f44488e14225d3ef7db199151dbc615c48696b48be94e220",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-4b97cac39000-1",
+      "structure": "proper_name",
+      "explanation_en": "关羽 is the personal name Guan Yu, used to identify a particular person.",
+      "caveat_en": "The characters function together as a name; their separate meanings do not explain the person's identity or the name's origin.",
+      "parts": [],
+      "input_fingerprint": "35cd98083de4aa58b2460475d9268202c94e1782e1398a3ed8e337a1a21b874d",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-4d66edb39272-1",
+      "structure": "compositional",
+      "explanation_en": "乡勇 refers to locally based fighters, often a local militia. 乡 locates them in a local or rural community, while 勇 refers to the men as fighters; together they name a group of local armed men.",
+      "caveat_en": "勇 contributes to the conventional label for the fighters; it does not mean that each person’s bravery is being asserted.",
+      "parts": [
+        {
+          "text": "乡",
+          "contribution_en": "a local or rural community"
+        },
+        {
+          "text": "勇",
+          "contribution_en": "men regarded as fighters"
+        }
+      ],
+      "input_fingerprint": "27b7e80ffb814d2dda1c62fe0088ff34d3508461f71e59065e9096ff3e178fb5",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-50f5d65d5729-1",
+      "structure": "single_component",
+      "explanation_en": "人 means a human being, either one person or people collectively. The word itself does not specify identity or number.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "人",
+          "contribution_en": "A human being or human beings collectively."
+        }
+      ],
+      "input_fingerprint": "323ced378e8d453dbba73105e54c96119decb572dc0026e436477586400b87ae",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-53bc2e4b6b6f-1",
+      "structure": "compositional",
+      "explanation_en": "大 marks the eldest or senior position among brothers, and 哥 means brother. Together, 大哥 refers to an eldest brother or a senior brother.",
+      "caveat_en": "As a form of address, 大哥 can refer to a senior brother without identifying someone’s eldest biological brother.",
+      "parts": [
+        {
+          "text": "大",
+          "contribution_en": "marks the eldest or senior position"
+        },
+        {
+          "text": "哥",
+          "contribution_en": "brother"
+        }
+      ],
+      "input_fingerprint": "5184f92544035565dff54b81b2b7e09eddcd04ba0457daddb4a62aecb72a8372",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-5485be609ca8-1",
+      "structure": "compositional",
+      "explanation_en": "同一 means “the same” or “one and the same.” 同 marks sameness, while 一 presents what is shared as one and the same thing or identity.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "同",
+          "contribution_en": "Same or shared."
+        },
+        {
+          "text": "一",
+          "contribution_en": "One, framing what is shared as a single thing or identity."
+        }
+      ],
+      "input_fingerprint": "052f5c09483d79f55fb8f76bdfa0f3ed50a3d5c2495edf75eefdd0d6d2c18e5b",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-5de6194e186a-1",
+      "structure": "compositional",
+      "explanation_en": "第二天 means the second day in an ordered sequence, commonly the day after a point of reference. 第 marks an ordinal, 二 supplies “two,” and 天 means “day.”",
+      "caveat_en": "Which day counts as the second depends on the sequence or reference point.",
+      "parts": [
+        {
+          "text": "第",
+          "contribution_en": "marks an ordinal number"
+        },
+        {
+          "text": "二",
+          "contribution_en": "two; second in the sequence"
+        },
+        {
+          "text": "天",
+          "contribution_en": "day"
+        }
+      ],
+      "input_fingerprint": "9ec3755a1921eb6362451e9d438e5f6ee78f95f333fc0a13911d536c52c69d64",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-5e431916de87-1",
+      "structure": "compositional",
+      "explanation_en": "天 means heaven or sky, and 地 means earth or ground. Together, 天地 names heaven and earth as a whole, which may be invoked as witnesses in a traditional oath or wedding rite.",
+      "caveat_en": "The ritual use comes from the practice of invoking heaven and earth; 天地 itself does not mean “wedding.”",
+      "parts": [
+        {
+          "text": "天",
+          "contribution_en": "heaven or sky"
+        },
+        {
+          "text": "地",
+          "contribution_en": "earth or ground"
+        }
+      ],
+      "input_fingerprint": "97b82267973afae325281e8ff810cabb4e4b21cff848b481a6feb6308f106c1b",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-5ee8091a38ee-1",
+      "structure": "lexicalized",
+      "explanation_en": "怎么 is an interrogative asking about the manner or nature of a situation. Depending on what is being asked, it can mean “how?” or “what?”",
+      "caveat_en": "It functions as a conventional whole; the individual characters do not give a dependable breakdown of its interrogative meaning.",
+      "parts": [],
+      "input_fingerprint": "28915fafff4c071362d3637738bc293687f4ab83f59aa62625bc456e37e2b184",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-5fcaf1452472-1",
+      "structure": "compositional",
+      "explanation_en": "高兴 means feeling happy or pleased. 高 adds an elevated, positive quality to 兴, which contributes the sense of mood or spirits; together they describe a cheerful state of mind.",
+      "caveat_en": "The word conventionally means happy or pleased; it does not imply literal height or a particular cause for the feeling.",
+      "parts": [
+        {
+          "text": "高",
+          "contribution_en": "Adds an elevated, positive quality."
+        },
+        {
+          "text": "兴",
+          "contribution_en": "Contributes the sense of mood or spirits."
+        }
+      ],
+      "input_fingerprint": "1fdc9701b5a2615384dfb890d20cc7529ed0ec04c79d5bd9b33ddb499cde4891",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-5ff5a4de18dc-1",
+      "structure": "lexicalized",
+      "explanation_en": "后来 is a conventional time word meaning “later” or “afterward” in a sequence. 后 points to what is after; together the word locates a subsequent time.",
+      "caveat_en": "来 is not a literal act of coming in this time expression.",
+      "parts": [
+        {
+          "text": "后",
+          "contribution_en": "After or subsequent in a sequence."
+        },
+        {
+          "text": "来",
+          "contribution_en": "Part of the conventional expression for a later point in time; it does not describe physical movement."
+        }
+      ],
+      "input_fingerprint": "b844f28ce92549508525bf4c7151b6ba8da3fcf6e5622e54ac89c1b0bec34498",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-61f43315f98a-1",
+      "structure": "single_component",
+      "explanation_en": "看 can mean directing one's eyes toward something, or perceiving it as a result. The surrounding wording makes clear whether the focus is on looking or on seeing and noticing.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "看",
+          "contribution_en": "look at; see or notice"
+        }
+      ],
+      "input_fingerprint": "2c83915c9126c6bd8900a91bf5a9b215652bcd588d28b2775108c65d9d796517",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-658605835bfc-1",
+      "structure": "single_component",
+      "explanation_en": "也 adds a person, thing, or point to what is already included: it means that this one is included as well, or that the same statement applies too.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "b445f1e1e214fc4dc73ec363295894119554ba507c88757f2c43104cef02f3b4",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-6d8229118caa-1",
+      "structure": "single_component",
+      "explanation_en": "来 means to come toward a speaker or another reference point. With an action, it can also assign that action to someone as the person who will do it or take a turn doing it.",
+      "caveat_en": "The motion meaning and the action-taking function are distinct uses of this same word.",
+      "parts": [
+        {
+          "text": "来",
+          "contribution_en": "come toward a reference point; with an action, take it on or take a turn doing it"
+        }
+      ],
+      "input_fingerprint": "384e273293e3d19b57364590d3aa605051386f3d73922991aa9b6fceacd23151",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-71b1ed11149d-1",
+      "structure": "single_component",
+      "explanation_en": "After a verb, 得 introduces a complement that describes the action or its degree. The phrase after 得 supplies that description, such as how an action is carried out or how it appears.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "得",
+          "contribution_en": "Links a verb to a following descriptive or degree complement."
+        }
+      ],
+      "input_fingerprint": "8ed9574a26893023fc516769c362c8781d53aefad57d615ba08ef3862431d29c",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-7675cc0d27a7-1",
+      "structure": "compositional",
+      "explanation_en": "叹气 means “sigh.” 叹 describes sighing or lamenting, and 气 refers to breath, so together they name the breath released in a sigh.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "叹",
+          "contribution_en": "Sighing or lamenting."
+        },
+        {
+          "text": "气",
+          "contribution_en": "Breath, as part of the act of sighing."
+        }
+      ],
+      "input_fingerprint": "5778d96a9258434307733290995bb20c4377e18fe245bded11d404408c0c6de7",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-76ef66d72761-1",
+      "structure": "compositional",
+      "explanation_en": "告示 is a notice or public announcement. 告 contributes telling or informing, and 示 contributes showing or making something known; together they refer to information made known to others.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "告",
+          "contribution_en": "Telling or informing."
+        },
+        {
+          "text": "示",
+          "contribution_en": "Showing or making something known."
+        }
+      ],
+      "input_fingerprint": "8568aae55cb444b71c9f5046dc2186a4b47a7abd51ab19919b5f16aca4aa71f9",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-7c0025557708-1",
+      "structure": "single_component",
+      "explanation_en": "件 is a classifier that counts a matter or event as one item, as in 一件事, “one matter.”",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "件",
+          "contribution_en": "Classifies a matter or event as a countable item."
+        }
+      ],
+      "input_fingerprint": "3ac4c05f7d2e75c5071abbab4997e6b8c5839314cda76cc362682982883490fe",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-7c848f5005f0-1",
+      "structure": "compositional",
+      "explanation_en": "五十 means fifty: 五 counts five groups, and 十 supplies the unit of ten. Together they form five tens.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "五",
+          "contribution_en": "five groups"
+        },
+        {
+          "text": "十",
+          "contribution_en": "the unit of ten"
+        }
+      ],
+      "input_fingerprint": "ca328b42c5a88b84471d369d981f1e3db1458685fcd8f3efde79d320956cc0fe",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-7e92752bff47-1",
+      "structure": "single_component",
+      "explanation_en": "推 means to push something by applying force so that it moves. The movement may be away from the person pushing or onward in a direction.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "推",
+          "contribution_en": "apply force to move something by pushing"
+        }
+      ],
+      "input_fingerprint": "67528ff54bdf709c229d867fc4308a5940db92223f18e4302444aab356cde596",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-7eabb36ba1ab-1",
+      "structure": "single_component",
+      "explanation_en": "都 applies a statement to every member of a group. It gathers the people or things under discussion as a whole and indicates that none are left out.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "都",
+          "contribution_en": "Marks the statement as applying to every member of the group."
+        }
+      ],
+      "input_fingerprint": "f3b8452a0a044823d35545f4c284d0217b81d4d98b411373b9a7215e676c4022",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-83385d2edafe-1",
+      "structure": "single_component",
+      "explanation_en": "两 gives the quantity two, commonly before a classifier or noun to count people or things.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "1c1c834d4bd4f3ada40c733c3b5dfe3ea8a5d6c1819e62f1becbfcbec27162eb",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-83a8fd743b82-1",
+      "structure": "single_component",
+      "explanation_en": "进 describes movement into a place or space. The movement reaches the inside, rather than stopping at an approach toward it.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "进",
+          "contribution_en": "Describes movement into a place or space."
+        }
+      ],
+      "input_fingerprint": "b4035bcbff30f549a6bbfa595ce38bfea5449c939d797ec1ae76bb7aff62bb6a",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-85a55ed48d6f-1",
+      "structure": "compositional",
+      "explanation_en": "三人 means a group of three people. 三 gives the number, and 人 identifies the members being counted; context can make the group specific.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "三",
+          "contribution_en": "the number three"
+        },
+        {
+          "text": "人",
+          "contribution_en": "person or people being counted"
+        }
+      ],
+      "input_fingerprint": "d4dc5440f49d7758f1e6d869e23b5bc9afe62d7cf079196ef694e5e8b5afe0ae",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-8638f50c3f2a-1",
+      "structure": "grammatical",
+      "explanation_en": "穿上 means to put clothing or armor on so that it ends up being worn. 穿 supplies the action of putting on, and 上 marks the resulting state of having it on.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "穿",
+          "contribution_en": "put on clothing or armor"
+        },
+        {
+          "text": "上",
+          "contribution_en": "marks the result: the item is on and being worn"
+        }
+      ],
+      "input_fingerprint": "bddf65664f6222ac47345e00b99bb3cbef494ec65f571ed17272008fb8213c53",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-88d5840fab77-1",
+      "structure": "single_component",
+      "explanation_en": "请 means to ask or invite someone to do something, often politely. The requested action can be framed as a request or as an invitation, depending on context.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "请",
+          "contribution_en": "ask or invite someone to do something, often politely"
+        }
+      ],
+      "input_fingerprint": "80bd83a1cfdc71cabe162199798a976ab8ca98ad84485f78966370660a8efa72",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-891a4dad9f63-1",
+      "structure": "compositional",
+      "explanation_en": "打仗 means to fight a war or go to battle. 打 is the fighting action, and 仗 is the battle or war being fought, so together they refer to engaging in warfare.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "打",
+          "contribution_en": "The action of fighting."
+        },
+        {
+          "text": "仗",
+          "contribution_en": "The battle or war that is fought."
+        }
+      ],
+      "input_fingerprint": "3786ddc6d1f9766662c82ecb38025ea18bbf54c760a0bbecca1ca075beee01f9",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-8a8796bbdf69-1",
+      "structure": "compositional",
+      "explanation_en": "桃园 is a garden or orchard where peach trees grow. 桃 identifies the kind of trees, and 园 names the cultivated place they grow in.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "桃",
+          "contribution_en": "peach; identifies the trees grown there"
+        },
+        {
+          "text": "园",
+          "contribution_en": "garden or orchard; the place where they grow"
+        }
+      ],
+      "input_fingerprint": "0f9e2e85c6699badfd4cd3cc1da1a7c1011115aa31485b69ccf1c2626d0e612d",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-8af2350cfd65-1",
+      "structure": "single_component",
+      "explanation_en": "的 links a describing phrase to the noun it modifies, marking what kind of thing it is or which thing is meant. The phrase before 的 supplies the description; 的 connects it to the noun.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "的",
+          "contribution_en": "links a modifier or describing phrase to the noun it describes"
+        }
+      ],
+      "input_fingerprint": "5ada8f09dbb9e2e05eb267112d36f2037c2fc2af0a83f442125203c4ea88a8b1",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-8b7b91e0001c-1",
+      "structure": "single_component",
+      "explanation_en": "他 is a third-person pronoun, commonly translated as “he” or “him” in writing. Its role as subject or object comes from the sentence; in speech, tā does not distinguish gender.",
+      "caveat_en": "Written Chinese commonly uses 他 for a male person; 她 is the usual written form for a woman. The spoken pronouns have the same pronunciation.",
+      "parts": [
+        {
+          "text": "他",
+          "contribution_en": "A third-person pronoun referring to a person."
+        }
+      ],
+      "input_fingerprint": "46195b71373735165d5b2e0c5a1429505aca982439ce3cc72247d4865500e35c",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-8dd49b2272ea-1",
+      "structure": "compositional",
+      "explanation_en": "客 means guest or visitor, and 人 means person. Together, 客人 means a person who visits or is received as a guest.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "客",
+          "contribution_en": "guest or visitor"
+        },
+        {
+          "text": "人",
+          "contribution_en": "person"
+        }
+      ],
+      "input_fingerprint": "8c55b46f102de89199f6ae6fb15838764cb5df47f265813d2cf9ed971452f510",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-8f615d2ef879-1",
+      "structure": "single_component",
+      "explanation_en": "铁 names the metal iron. It refers to the material as a whole, with no meaningful smaller part to explain in this word.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "铁",
+          "contribution_en": "Names the metal iron."
+        }
+      ],
+      "input_fingerprint": "6a8ff975cff194419d01ca56ec3378b5793f403ed21c35bc2c6518a570145577",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-90ce0f66f094-1",
+      "structure": "single_component",
+      "explanation_en": "有 can present something as possessed by or available to someone, or as existing in a place or situation. With a number or group, it can also describe ending up with that amount.",
+      "caveat_en": "The subject and context determine whether 有 expresses possession, existence, or a resulting amount.",
+      "parts": [
+        {
+          "text": "有",
+          "contribution_en": "express possession, existence, or having a resulting amount"
+        }
+      ],
+      "input_fingerprint": "23cbb610e3d6446ae4c4e614ba17a72377d2c0d3232578338ab391ff8c853e5d",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-9172f60d7869-1",
+      "structure": "overlapping",
+      "explanation_en": "盔甲 means armor worn for protection. 盔 refers especially to a helmet, while 甲 refers to armor; together they name protective gear broadly rather than requiring both a helmet and body armor.",
+      "caveat_en": "The parts evoke types of protective gear, but the word does not specify a particular set or design of armor.",
+      "parts": [
+        {
+          "text": "盔",
+          "contribution_en": "helmet; evokes protective headgear"
+        },
+        {
+          "text": "甲",
+          "contribution_en": "armor; evokes protective covering"
+        }
+      ],
+      "input_fingerprint": "cf27e94d106c4348280425ebe27b49f60a6d11e73890eab83425388c301b4ef8",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-94f5404441e8-1",
+      "structure": "single_component",
+      "explanation_en": "做 broadly means to do or carry something out. With something to be produced as its object, it means “make”; with a role or relationship, it can mean “become” or “take on” that role.",
+      "caveat_en": "The meaning depends on what follows: 做 does not mean “become” with every kind of object.",
+      "parts": [
+        {
+          "text": "做",
+          "contribution_en": "A verb for carrying out an action; with the right object, producing something or taking on a role."
+        }
+      ],
+      "input_fingerprint": "5c2e33f5aefa0b37ef70b04cd25c591f7524a9598d322010f9e77f94fb0190c7",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-95264f699dc4-1",
+      "structure": "proper_name",
+      "explanation_en": "张飞 is the personal name Zhang Fei, a character in Romance of the Three Kingdoms. The characters function together as a name, rather than describing the person through their ordinary meanings.",
+      "caveat_en": "The name's characters do not by themselves explain its origin or the person who bears it.",
+      "parts": [
+        {
+          "text": "张飞",
+          "contribution_en": "The complete personal name, read Zhang Fei."
+        }
+      ],
+      "input_fingerprint": "413a61b93c2b0388febd818554df5e86bf43dfcd99b5e8985341c8187ed39757",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-99ae21ea6c39-1",
+      "structure": "single_component",
+      "explanation_en": "去 means “go” or “go to.” Before an action, it can describe going somewhere to do that action, as in going to help.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "3fab92a9ebf9b6ba1475ac18aa24e507e699d11fb1b475062ecaed92abfac2da",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-9e5bf0d2d993-1",
+      "structure": "single_component",
+      "explanation_en": "着, pronounced zhe, marks an action or state as continuing, often while another event occurs. It presents the action or state as ongoing rather than as a completed event.",
+      "caveat_en": "This explanation covers 着 pronounced zhe as an aspect particle; the character also has other readings and uses.",
+      "parts": [
+        {
+          "text": "着",
+          "contribution_en": "marks an ongoing action or state"
+        }
+      ],
+      "input_fingerprint": "52ecf3dd7e880460e434216eaa3aa7aeff5225e398c53c8c68d42b5d60ceb633",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-a04846d365f8-1",
+      "structure": "compositional",
+      "explanation_en": "五百 means five hundred: 五 counts five groups, and 百 supplies the unit of one hundred. Together they form five hundreds.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "五",
+          "contribution_en": "five groups"
+        },
+        {
+          "text": "百",
+          "contribution_en": "the unit of one hundred"
+        }
+      ],
+      "input_fingerprint": "666699a3f22d00fe2c0cf05f01fa4ed9393c5d8e5cdf8e8f9e53bdf918fbec9b",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-a0c7716669b5-1",
+      "structure": "single_component",
+      "explanation_en": "你 is the second-person pronoun for the person being addressed. It can mean “you” as subject or object, and context can allow it to address more than one person.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "你",
+          "contribution_en": "The second-person pronoun for the addressee."
+        }
+      ],
+      "input_fingerprint": "9776b2e16626f4c2861bf5525366f9589fd46f761daa40deeed3e5b80ddbc459",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-a25ee73c98d1-1",
+      "structure": "single_component",
+      "explanation_en": "马 is the ordinary word for a horse. It is a single meaningful unit, not a word made from smaller parts.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "马",
+          "contribution_en": "Names the animal, a horse."
+        }
+      ],
+      "input_fingerprint": "56a5919512ea9e4ceb42b065530beb9d4745078fd3cd6b149e0c73c870b62d1c",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-a2f7e42081a8-1",
+      "structure": "lexicalized",
+      "explanation_en": "所以 connects a reason or preceding circumstance to its consequence, meaning “so” or “therefore.” It works as a connective with this meaning as a whole.",
+      "caveat_en": "The characters do not transparently explain this connective meaning, so it is best learned as a whole word.",
+      "parts": [],
+      "input_fingerprint": "1dd5c1e66fe7d85e27f2b230b555e19f4818112d58aab02d3851eea92312fc51",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-aaded36a8302-1",
+      "structure": "single_component",
+      "explanation_en": "店 means a shop or store, a place where goods or services are offered for sale.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "dad53fcc060de7f1c3de554d3262754388108ec815f46f46cbca96e1b68da4fc",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-ab4e9e51133f-1",
+      "structure": "compositional",
+      "explanation_en": "救人 means to rescue or save people from danger or harm. 救 names the act of helping someone out of danger, and 人 identifies who is being helped.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "救",
+          "contribution_en": "rescue or save from danger or harm"
+        },
+        {
+          "text": "人",
+          "contribution_en": "people who receive the rescue"
+        }
+      ],
+      "input_fingerprint": "ef1e193902ee0b28ca8c293e8c6eec1c3b3b4ded900eecb1a682b62d9df7f145",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-af344ece36cd-1",
+      "structure": "compositional",
+      "explanation_en": "两人 means two people considered as a group. 两 gives the number, and 人 tells what is being counted; the phrase can refer to a particular pair when context identifies them.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "两",
+          "contribution_en": "the number two"
+        },
+        {
+          "text": "人",
+          "contribution_en": "person or people being counted"
+        }
+      ],
+      "input_fingerprint": "a66d6bc5ee57c1378602fa6dfb02cfc9fdbb232ebc746d64306b25a147cdabd7",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-b1d841b978fb-1",
+      "structure": "lexicalized",
+      "explanation_en": "明天 means tomorrow, the day after today. 天 contributes “day,” while 明 has a conventional temporal sense of the coming or next day in this expression.",
+      "caveat_en": "The meaning “tomorrow” is conventional; 明 does not mean “bright” in this word.",
+      "parts": [
+        {
+          "text": "明",
+          "contribution_en": "the coming or next day in this time expression"
+        },
+        {
+          "text": "天",
+          "contribution_en": "day"
+        }
+      ],
+      "input_fingerprint": "192905b72cd0b561c0f61472c6ee240fa1ae24b079bba47d24ae68a26b43728a",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-b1f8107ec816-1",
+      "structure": "single_component",
+      "explanation_en": "车 names a wheeled vehicle; in this sense, it is a cart used to carry people or goods. The word refers to the vehicle as a whole.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "车",
+          "contribution_en": "Names a wheeled vehicle, including a cart."
+        }
+      ],
+      "input_fingerprint": "b29182c404975a4594e6c29993d9c9806c4e77a2c11565801115049387e37fa1",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-b2dd27e84f07-1",
+      "structure": "grammatical",
+      "explanation_en": "了 can present an action as completed or viewed as a whole. It can also mark a resulting, changed, or newly reached state, including a state that has newly come into existence. The surrounding construction determines which reading applies.",
+      "caveat_en": "了 does not always mean simply “finished”; its aspectual and state-marking uses depend on the sentence.",
+      "parts": [],
+      "input_fingerprint": "93418c4747f7d88ff0e9a8542dc4b95d98ed169867d160697457aaf3bbf2c240",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-b5141d3d19e9-1",
+      "structure": "single_component",
+      "explanation_en": "是 links a subject with an identity or category, saying that the subject is or counts as what follows. It expresses a relation rather than an action.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "是",
+          "contribution_en": "link a subject to an identity or classification"
+        }
+      ],
+      "input_fingerprint": "08a4f69d8e613865af93aff99f39fa83e4ac58cb4651968732ca7338696e172a",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-b56f36b529db-1",
+      "structure": "grammatical",
+      "explanation_en": "到 means to reach or arrive at a place. After a verb such as 看, it marks reaching the result of that action: 看到了 means that the seeing succeeded, or that someone saw something.",
+      "caveat_en": "The result-complement use depends on a preceding verb; 到 also functions as a verb meaning to reach or arrive.",
+      "parts": [
+        {
+          "text": "到",
+          "contribution_en": "Reaching a destination or result; after a verb, marks that the action reaches its result."
+        }
+      ],
+      "input_fingerprint": "43f435f0db1d402f6c3e988b97f8020bc97b3ef14c70fc5e3aa08a20747058c4",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-b70bb4acc048-1",
+      "structure": "single_component",
+      "explanation_en": "我 is the first-person pronoun for the speaker, corresponding to “I” as a subject and “me” as an object.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "我",
+          "contribution_en": "Refers to the speaker."
+        }
+      ],
+      "input_fingerprint": "5d077bf08b11769e6c32ae80d99ad3b2d6a57639ed9904cc5f0d557a1559b5f8",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-b972b33e0f9b-1",
+      "structure": "compositional",
+      "explanation_en": "兵器 means weapons or arms. 兵 supplies the association with armed conflict, while 器 contributes the sense of implements; together they refer to implements used as weapons.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "兵",
+          "contribution_en": "The association with armed conflict or military use."
+        },
+        {
+          "text": "器",
+          "contribution_en": "An implement or piece of equipment."
+        }
+      ],
+      "input_fingerprint": "81ed7d31ed74f43ddc9f13c11303604e77edf1c254fea96196d0e362e76d5748",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-bab67370c50a-1",
+      "structure": "overlapping",
+      "explanation_en": "旁边 refers to the area beside a person or thing. 旁 and 边 both contribute the idea of a side or edge, combining into the conventional word for a nearby side area.",
+      "caveat_en": "The two parts overlap in meaning; they do not mark sharply distinct zones.",
+      "parts": [
+        {
+          "text": "旁",
+          "contribution_en": "a side position"
+        },
+        {
+          "text": "边",
+          "contribution_en": "a side or edge, reinforcing the spatial sense"
+        }
+      ],
+      "input_fingerprint": "9c472de750e68434e6f010d9d8c98a697bce65fbede019263217dfbe81c04db2",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-bcacb40df81b-1",
+      "structure": "grammatical",
+      "explanation_en": "我们 means “we” or “us”: 我 refers to the speaker, and 们 marks the pronoun as plural, including other people with the speaker. Whether the listener is included depends on context.",
+      "caveat_en": "们 marks plurality with pronouns and some people words; it is not a general plural ending for all nouns.",
+      "parts": [
+        {
+          "text": "我",
+          "contribution_en": "Refers to the speaker."
+        },
+        {
+          "text": "们",
+          "contribution_en": "Marks the pronoun as referring to a group."
+        }
+      ],
+      "input_fingerprint": "d6238763a647d737184b5ba779468022edce3e42894b480cdcc32f744acc9fd9",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-c1d8e67ad198-1",
+      "structure": "compositional",
+      "explanation_en": "来到 means to come to and reach a place or person. 来 gives movement toward a reference point, and 到 marks reaching the endpoint, making arrival explicit.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "来",
+          "contribution_en": "move toward a reference point"
+        },
+        {
+          "text": "到",
+          "contribution_en": "reach the endpoint"
+        }
+      ],
+      "input_fingerprint": "15e62ea4f56ac0da9d20d845895b8c6eb54b4e98cd776ffd7785ff2bfdd5185b",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-c6d764df544b-1",
+      "structure": "single_component",
+      "explanation_en": "打 means to fight or attack when used of conflict with an opponent. The word names the action; its precise form depends on context.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "打",
+          "contribution_en": "Names the action of fighting or attacking."
+        }
+      ],
+      "input_fingerprint": "7db7028104d5c8710f0575c4c8f9de5b3ffa6e8d65279b29ea33c3a48449f3aa",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-c8ae97be80f3-1",
+      "structure": "single_component",
+      "explanation_en": "家 means home or household: the place where someone lives and the people associated with it.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "09a824d49626c976c71b1f7f94929affa403c03125143b28e39b4ca8b5aa6b1e",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-cbd97c3d21e3-1",
+      "structure": "single_component",
+      "explanation_en": "匹 is a measure word used for counting horses. It classifies the number as a count of horses; the number and the noun identify how many there are.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "939f01d3614ff73a30c583626a9eaea297497c47eaeccbacb2c14c2f3de89239",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-ccca74461399-1",
+      "structure": "single_component",
+      "explanation_en": "说 means to express something in speech, whether by saying a brief statement or speaking at greater length. The word alone does not specify how much is said.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "说",
+          "contribution_en": "say or speak"
+        }
+      ],
+      "input_fingerprint": "c75858551d1796a486dd0f28ec007c64c28e7c1f4f3d35aa9160ca9c64b83f36",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-cf0af76ceb03-1",
+      "structure": "grammatical",
+      "explanation_en": "弟弟 is the conventional word for a younger brother, younger than a relevant person such as the speaker. The repeated form makes a single kinship term; it does not refer to two brothers.",
+      "caveat_en": "The younger-than relationship depends on the person being compared with.",
+      "parts": [
+        {
+          "text": "弟",
+          "contribution_en": "Contributes the kinship meaning of younger brother."
+        },
+        {
+          "text": "弟",
+          "contribution_en": "Repeats the kinship element in the conventional form; it does not add another sibling."
+        }
+      ],
+      "input_fingerprint": "810f9a3d9bad7a1c63865b2e6f934f67ef8f987ecefb67bc61844024a2a8a071",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-daf7b56cd3ae-1",
+      "structure": "proper_name",
+      "explanation_en": "刘备 is the personal name Liu Bei, used to identify a historical figure.",
+      "caveat_en": "The characters function together as a name; their separate meanings do not explain the person's identity or the name's origin.",
+      "parts": [],
+      "input_fingerprint": "6dd7b012d7f91ac73c232dcfa17c7f79d1e510009e1078893d5e8db8cddec79f",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-dc7ff4a08894-1",
+      "structure": "compositional",
+      "explanation_en": "长矛 combines 长, “long,” with 矛, “spear.” 长 describes the spear as extended in length, giving the conventional term for a long spear.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "长",
+          "contribution_en": "Describes the spear as long."
+        },
+        {
+          "text": "矛",
+          "contribution_en": "Names a spear."
+        }
+      ],
+      "input_fingerprint": "f47980edb8422b5bbd5a380531be3fb777d8ebf586a6463c563051c94cefeeab",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-de73e9045636-1",
+      "structure": "single_component",
+      "explanation_en": "With the reading nàn, 难 names serious trouble, hardship, or a difficult situation. It refers to the situation itself, rather than describing a task as difficult.",
+      "caveat_en": "This noun sense is read nàn; the same character is also read nán in other words meaning “difficult.”",
+      "parts": [
+        {
+          "text": "难",
+          "contribution_en": "Names trouble, hardship, or a difficult situation."
+        }
+      ],
+      "input_fingerprint": "da1582337816bdaea3f5435f82c03ad789835069f8af0a68e45d97fc50710bcf",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-df0d25193874-1",
+      "structure": "single_component",
+      "explanation_en": "想 expresses wanting or intending to do something. With an action following it, that action is presented as something the subject has in mind and wants to undertake.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "想",
+          "contribution_en": "Expresses wanting or intending the action that follows."
+        }
+      ],
+      "input_fingerprint": "228bac1c85e437b630c8055508a0995a99d19666d692f41d8ee4be93631a4ce9",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-e3178a5ba109-1",
+      "structure": "compositional",
+      "explanation_en": "这时 combines a demonstrative, 这, with 时, “time.” It points to a particular time already identifiable in the conversation, so it can mean “at this time” or “then.”",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "这",
+          "contribution_en": "Points to the particular time being referred to."
+        },
+        {
+          "text": "时",
+          "contribution_en": "Provides the time or moment being pointed to."
+        }
+      ],
+      "input_fingerprint": "70b1607a0891c95ef9498c32d8c2767f1b8df2a17975b66e369154ef39b388a4",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-e59f6d90dead-1",
+      "structure": "compositional",
+      "explanation_en": "后面 means the position or area behind something. 后 places it at the rear, and 面 contributes the sense of a side or area.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "后",
+          "contribution_en": "Behind or at the rear."
+        },
+        {
+          "text": "面",
+          "contribution_en": "Side or area; together, the rear side or position."
+        }
+      ],
+      "input_fingerprint": "77ee3bb203e3be70ab399d87fb2be14e085ca25c4d3907951ce7ed51a78a2c62",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-expression-kandao",
+      "structure": "grammatical",
+      "explanation_en": "看到 combines looking with an achieved result: 到 marks that the looking reaches visual perception. The expression therefore means to see or notice something, rather than merely to direct one's eyes toward it.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "看",
+          "contribution_en": "look toward something"
+        },
+        {
+          "text": "到",
+          "contribution_en": "marks the achieved result: the looking reaches perception"
+        }
+      ],
+      "input_fingerprint": "b04d546c33d1517949fd9d27dde3dc93e39f16ff60655f6cb88213b2f02181ca",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-f127804b9227-1",
+      "structure": "grammatical",
+      "explanation_en": "没有 expresses that something is absent: a person does not have it, or it does not exist. 没 negates 有, which supplies the sense of having or existing.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "没",
+          "contribution_en": "negates the having or existence expressed by 有"
+        },
+        {
+          "text": "有",
+          "contribution_en": "have; exist or be present"
+        }
+      ],
+      "input_fingerprint": "2d3a5ab0e46ed0f3f0ad20d945df471da916bb07cbbe6b37a9d56c6dfeedd2c6",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-f2aedcbd1c74-1",
+      "structure": "compositional",
+      "explanation_en": "好 means good or pleasing, and 看 means to look at or see. Together, 好看 describes something that is pleasing to look at, hence good-looking or visually attractive.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "好",
+          "contribution_en": "good or pleasing"
+        },
+        {
+          "text": "看",
+          "contribution_en": "looking at or seeing; sets the visual aspect"
+        }
+      ],
+      "input_fingerprint": "95686485f4d6cf902478ea5ecda119845253f9b648881394462f312418c1f316",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-f2b91797ea3a-1",
+      "structure": "single_component",
+      "explanation_en": "很 intensifies an adjective, raising the stated degree of a quality. It is often translated as “very” or “quite.”",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "很",
+          "contribution_en": "Raises the degree of the adjective that follows."
+        }
+      ],
+      "input_fingerprint": "3a3fbe2b6530f13503e74ff24e974b16b92c1b900a1369d30c236b09d63e9732",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-f5c627b7d0bf-1",
+      "structure": "compositional",
+      "explanation_en": "桃花 means the blossoms of a peach tree. 桃 identifies the tree, and 花 names its flowers.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "桃",
+          "contribution_en": "peach; identifies the tree"
+        },
+        {
+          "text": "花",
+          "contribution_en": "flower or blossom"
+        }
+      ],
+      "input_fingerprint": "1b794098bddeaab01dcddc8006e93283f8c20932d18abc85e6f15c7424fad2ce",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-f6c71210522b-1",
+      "structure": "overlapping",
+      "explanation_en": "兄弟 literally refers to brothers, with 兄 naming an older brother and 弟 a younger brother. The pair can also refer to men joined by a brother-like bond, including sworn brothers.",
+      "caveat_en": "The word can name actual brothers or a brother-like relationship; it does not by itself specify which relationship is intended.",
+      "parts": [
+        {
+          "text": "兄",
+          "contribution_en": "An older brother."
+        },
+        {
+          "text": "弟",
+          "contribution_en": "A younger brother."
+        }
+      ],
+      "input_fingerprint": "5abe432c9e136db44ef8ede3dcac04115a2e84042ee607745b84e3ad0152e0f6",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-f7bff9ed8550-1",
+      "structure": "single_component",
+      "explanation_en": "刀 means a knife or blade, a cutting implement that can also serve as a weapon.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "刀",
+          "contribution_en": "A knife or blade."
+        }
+      ],
+      "input_fingerprint": "4e5b8d74c8e7e5f9d5fc7c07bcd7d59c3e1bcd728a1c33819189d16b8b6dd828",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    },
+    {
+      "entry_id": "zh-f7f61df3241a-1",
+      "structure": "proper_name",
+      "explanation_en": "黄巾军 is the proper name of the Yellow Turban army. 黄巾 provides its identifying “Yellow Turban” label, and 军 identifies the group as an army.",
+      "caveat_en": "The wording identifies the named group but does not explain the name's origin.",
+      "parts": [
+        {
+          "text": "黄巾",
+          "contribution_en": "Provides the “Yellow Turban” identifying label in the name."
+        },
+        {
+          "text": "军",
+          "contribution_en": "Identifies the named group as an army."
+        }
+      ],
+      "input_fingerprint": "fde0f634e102fa7d639b8fd4705f6d221f3a8fcc9b4d9603efcdf344e46087ef",
+      "revision": 1,
+      "editorial_policy": 2,
+      "evidence_status": "legacy_unresearched"
+    }
+  ],
+  "review_digest": "35ebd98261837259d57dbc327923344040c026a154a9f66d1d1a1dc6edccfac6"
+}

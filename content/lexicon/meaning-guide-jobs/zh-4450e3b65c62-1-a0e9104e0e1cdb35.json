@@ -1,0 +1,31 @@
+{
+  "id": "zh-4450e3b65c62-1-a0e9104e0e1cdb35",
+  "entry_id": "zh-4450e3b65c62-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4450e3b65c62-1",
+      "headword": "只得",
+      "kind": "word",
+      "reading": "zhǐdé",
+      "senses": [
+        {
+          "id": "zh-4450e3b65c62-1-s1",
+          "definition": "have no choice but to; be obliged to"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备只得返回广宗。",
+        "gloss": "to have no choice but to",
+        "sense_id": "zh-4450e3b65c62-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f2163cffddb0b0c331d2b6f2fc37e74e25952541d9a42a38f4c8d2a841dc90e4"
+}

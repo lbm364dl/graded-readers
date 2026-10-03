@@ -1,0 +1,31 @@
+{
+  "id": "zh-5af230014e97-1-581d3167bd728933",
+  "entry_id": "zh-5af230014e97-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5af230014e97-1",
+      "headword": "快要",
+      "kind": "construction",
+      "reading": "kuàiyào",
+      "senses": [
+        {
+          "id": "zh-5af230014e97-1-s1",
+          "definition": "be about to; be on the verge of"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他下马询问，卢植说：“我围攻张角，快要取胜。",
+        "gloss": "be about to; nearly",
+        "sense_id": "zh-5af230014e97-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2041a4171abedd690873ab3475f8c5a2c751530df3587558a52d222ace7d3d91"
+}

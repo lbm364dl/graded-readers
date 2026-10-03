@@ -1,0 +1,31 @@
+{
+  "id": "zh-27fc859b0573-1-23b6a75854c979c0",
+  "entry_id": "zh-27fc859b0573-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-27fc859b0573-1",
+      "headword": "许劭",
+      "kind": "name",
+      "reading": "Xǔ Shào",
+      "senses": [
+        {
+          "id": "zh-27fc859b0573-1-s1",
+          "definition": "Xu Shao, a person's name"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "许劭起初不肯回答，后来才说，他是太平时的能臣，乱世中的奸雄。",
+        "gloss": "Xu Shao",
+        "sense_id": "zh-27fc859b0573-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b19ca672d79f4ce0bde8e3db3254bd15a1bc73af170850810e277feccc852537"
+}

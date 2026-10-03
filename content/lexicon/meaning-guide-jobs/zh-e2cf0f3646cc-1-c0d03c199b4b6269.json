@@ -1,0 +1,31 @@
+{
+  "id": "zh-e2cf0f3646cc-1-c0d03c199b4b6269",
+  "entry_id": "zh-e2cf0f3646cc-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e2cf0f3646cc-1",
+      "headword": "有志",
+      "kind": "word",
+      "reading": "yǒuzhì",
+      "senses": [
+        {
+          "id": "zh-e2cf0f3646cc-1-s1",
+          "definition": "ambitious; having aspirations"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他也愿意和有志的人交朋友。",
+        "gloss": "ambitious",
+        "sense_id": "zh-e2cf0f3646cc-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3d9bea39c06d703336ceb30741167415507696f8dd5601c2ce888fd2b975b0a5"
+}

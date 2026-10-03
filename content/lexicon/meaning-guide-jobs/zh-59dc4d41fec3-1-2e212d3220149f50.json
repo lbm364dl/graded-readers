@@ -1,0 +1,61 @@
+{
+  "id": "zh-59dc4d41fec3-1-2e212d3220149f50",
+  "entry_id": "zh-59dc4d41fec3-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-59dc4d41fec3-1",
+      "headword": "颍川",
+      "kind": "name",
+      "reading": "Yǐngchuān",
+      "senses": [
+        {
+          "id": "zh-59dc4d41fec3-1-s1",
+          "definition": "Yingchuan"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "后来卢植说：“张梁、张宝正在颍川。",
+        "gloss": "Yingchuan",
+        "sense_id": "zh-59dc4d41fec3-1-s1"
+      },
+      {
+        "sentence": "到了颍川，刘备听说皇甫嵩、朱隽正在和黄巾军交战。",
+        "gloss": "Yingchuan",
+        "sense_id": "zh-59dc4d41fec3-1-s1"
+      },
+      {
+        "sentence": "刘备赶到颍川时，火攻已经结束。",
+        "gloss": "Yingchuan",
+        "sense_id": "zh-59dc4d41fec3-1-s1"
+      },
+      {
+        "sentence": "卢植让刘备带本部人马，再带一千官军到颍川，联络皇甫嵩、朱隽，约好时间一起进攻。",
+        "gloss": "Yingchuan",
+        "sense_id": "zh-59dc4d41fec3-1-s1"
+      },
+      {
+        "sentence": "刘备领命，连夜赶到颍川。",
+        "gloss": "Yingchuan",
+        "sense_id": "zh-59dc4d41fec3-1-s1"
+      },
+      {
+        "sentence": "黄巾军起兵后，曹操带着五千名士兵赶到颍川。",
+        "gloss": "Yingchuan",
+        "sense_id": "zh-59dc4d41fec3-1-s1"
+      },
+      {
+        "sentence": "刘备带着关羽、张飞赶到颍川时，只听见喊杀声，也看见火光照亮天空。",
+        "gloss": "Yingchuan",
+        "sense_id": "zh-59dc4d41fec3-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4cbfc56e8a482812ccab2180a141551e5a454121f5903eb48a213062fd1da284"
+}

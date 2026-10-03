@@ -1,0 +1,62 @@
+{
+  "id": "zh-5009a9af0c0c-1-52aa3d5aeef2f64c",
+  "entry_id": "zh-5009a9af0c0c-1",
+  "reason": "requested",
+  "item": {
+    "entry": {
+      "id": "zh-5009a9af0c0c-1",
+      "headword": "呼风唤雨",
+      "kind": "expression",
+      "reading": "hūfēng huànyǔ",
+      "senses": [
+        {
+          "id": "zh-5009a9af0c0c-1-s1",
+          "definition": "bring about wind and rain through supernatural or magical power"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角日夜学习，学会呼风唤雨，自称太平道人。",
+        "gloss": "to summon wind and rain",
+        "sense_id": "zh-5009a9af0c0c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-5009a9af0c0c-1",
+    "claim_ids": [],
+    "structure": "compositional",
+    "explanation_en": "呼风唤雨 means to bring about wind and rain through supernatural or magical power: 呼风 and 唤雨 pair two ways of summoning with the weather they summon.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "呼风",
+        "contribution_en": "呼 means call or summon, and 风 is wind.",
+        "claim_ids": []
+      },
+      {
+        "text": "唤雨",
+        "contribution_en": "唤 means summon, and 雨 is rain.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "d97a55205e87191e18ddade0da679d9273591d279d0f619960335f2afd83506d",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [
+    {
+      "entry_id": "zh-5009a9af0c0c-1",
+      "reason": "Focused decomposition correction after independent audit: 呼风 and 唤雨 are paired halves of the expression rather than independently reusable lexical units. Split them into characters to show the actions and their objects. Use structured parts 呼|风|唤|雨, with precise contributions. Preserve the whole-word meaning and all senses. Do not invent standalone dictionary words from convenient halves of an expression. Do not introduce historical claims or rewrite unrelated explanations.",
+      "id": "edit-791c7b5321834a43"
+    }
+  ],
+  "status": "reviewed",
+  "result_digest": "e3d302d1dc25c8f2d3bfd3cfff621d437c4a87759b7e07d15ea51a93e17a5934"
+}

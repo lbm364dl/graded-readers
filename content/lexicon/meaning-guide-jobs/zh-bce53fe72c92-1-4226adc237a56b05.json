@@ -1,0 +1,31 @@
+{
+  "id": "zh-bce53fe72c92-1-4226adc237a56b05",
+  "entry_id": "zh-bce53fe72c92-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-bce53fe72c92-1",
+      "headword": "增加",
+      "kind": "word",
+      "reading": "zēngjiā",
+      "senses": [
+        {
+          "id": "zh-bce53fe72c92-1-s1",
+          "definition": "increase; grow in number or amount"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "跟随他的人不断增加，他便和两个弟弟商量起事。",
+        "gloss": "increase",
+        "sense_id": "zh-bce53fe72c92-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c7c5b245fc2e85c7942dd22a28ecae55db40bafbc53143f64d30462f570fa0d9"
+}

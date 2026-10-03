@@ -1,0 +1,41 @@
+{
+  "id": "zh-c42635621cd7-1-fdb23095c18f82a7",
+  "entry_id": "zh-c42635621cd7-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c42635621cd7-1",
+      "headword": "官军",
+      "kind": "word",
+      "reading": "guānjūn",
+      "senses": [
+        {
+          "id": "zh-c42635621cd7-1-s1",
+          "definition": "government troops"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军人数很多，官军害怕，常常后退。",
+        "gloss": "government troops",
+        "sense_id": "zh-c42635621cd7-1-s1"
+      },
+      {
+        "sentence": "黄巾军声势浩大，官军见到他们便溃逃。",
+        "gloss": "government troops",
+        "sense_id": "zh-c42635621cd7-1-s1"
+      },
+      {
+        "sentence": "卢植让刘备带本部人马，再带一千官军到颍川，联络皇甫嵩、朱隽，约好时间一起进攻。",
+        "gloss": "government troops",
+        "sense_id": "zh-c42635621cd7-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ff2997a9600bd3422cbc7caba9d43dba17784ed11a67ee7c3a1bdf3ddb9543b6"
+}

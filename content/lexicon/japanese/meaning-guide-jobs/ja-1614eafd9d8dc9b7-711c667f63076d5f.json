@@ -1,0 +1,32 @@
+{
+  "id": "ja-1614eafd9d8dc9b7-711c667f63076d5f",
+  "entry_id": "ja-1614eafd9d8dc9b7",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-1614eafd9d8dc9b7",
+      "headword": "気持ちよい",
+      "reading": "きもちよい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-1614eafd9d8dc9b7-1",
+          "definition": "pleasant; comfortable; agreeable"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "この書生の手の上で、吾輩はしばらく気持ちよく座っていた。",
+        "gloss": "comfortably; pleasantly",
+        "sense_id": "ja-1614eafd9d8dc9b7-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7c9a627b781ca25b444fb42a9fbdfb71afad9156d7db072fb121ef57ee0e3656"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-a37a7950ae6127df-86ad1508582832de",
+  "entry_id": "ja-a37a7950ae6127df",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a37a7950ae6127df",
+      "headword": "玉",
+      "reading": "たま",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-a37a7950ae6127df-1",
+          "definition": "jewel; bead"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "先日、白君自身が玉のような子猫を四匹産んだ。",
+        "gloss": "jewel; bead",
+        "sense_id": "ja-a37a7950ae6127df-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a74e84a650d8ffd963fd454bc216becb434829604d52f229fd847cd0906b6460"
+}

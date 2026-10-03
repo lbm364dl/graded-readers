@@ -1,0 +1,31 @@
+{
+  "id": "zh-f029d9cb4a76-1-1567d0e7191a3200",
+  "entry_id": "zh-f029d9cb4a76-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f029d9cb4a76-1",
+      "headword": "原因",
+      "kind": "word",
+      "reading": "yuányīn",
+      "senses": [
+        {
+          "id": "zh-f029d9cb4a76-1-s1",
+          "definition": "cause; reason"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇帝下诏询问多种灾异的原因，蔡邕上书，认为这是妇人与宦官干政导致的，言辞十分直接。",
+        "gloss": "cause",
+        "sense_id": "zh-f029d9cb4a76-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e17d8ff795333145096135516fd6130b49fb2d07acae1817e43d71c85f73aed7"
+}

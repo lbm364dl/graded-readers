@@ -1,0 +1,32 @@
+{
+  "id": "ja-6c9ecc12b9bc538f-d891c329d35eed79",
+  "entry_id": "ja-6c9ecc12b9bc538f",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-6c9ecc12b9bc538f",
+      "headword": "これほど",
+      "reading": "これほど",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-6c9ecc12b9bc538f-1",
+          "definition": "to this extent; this much; so much"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "人の庭へ入りながら、これほど平気で眠れるものかと、吾輩はその大胆さに驚いた。",
+        "gloss": "to this extent; so much",
+        "sense_id": "ja-6c9ecc12b9bc538f-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d04a55857b2dcf8047e670780c79b267f908860f6ce6db14e53210b1bace821c"
+}

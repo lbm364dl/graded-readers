@@ -1,0 +1,68 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_101-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 614,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了张郃追击前司马懿与魏平的兵力部署及劝阻过程。",
+      "classification": "material",
+      "reason": "这些内容交代了张郃为何能够追击、司马懿的谨慎判断及张郃坚持出战的动机和性格，使后续中计更具因果基础。",
+      "required_fix": "补入司马懿安排张郃率五千兵先行、魏平率二万兵随后、自己率三千兵接应，并写明司马懿劝阻张郃而张郃坚持追击。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“三辆仿车从不同方向出现”表述不够准确：三辆车中只有孔明所乘的一辆是真车，另两辆由姜维、马岱、魏延等护送，用于迷惑魏军。",
+      "classification": "material",
+      "reason": "将孔明所乘的真车一并称为仿车，造成关键身份与诱敌安排的误解。",
+      "required_fix": "改为“三辆车从不同方向出现”，并说明其中一辆由孔明乘坐，另两辆由姜维、马岱、魏延等护送，用于迷惑魏军。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了张郃追击前司马懿与魏平的兵力部署及劝阻过程。",
+      "classification": "material",
+      "reason": "这些内容交代了张郃为何能够追击、司马懿的谨慎判断及张郃坚持出战的动机和性格，使后续中计更具因果基础。",
+      "required_fix": "补入司马懿安排张郃率五千兵先行、魏平率二万兵随后、自己率三千兵接应，并写明司马懿劝阻张郃而张郃坚持追击。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“三辆仿车从不同方向出现”表述不够准确：三辆车中只有孔明所乘的一辆是真车，另两辆由姜维、马岱、魏延等护送，用于迷惑魏军。",
+      "classification": "material",
+      "reason": "将孔明所乘的真车一并称为仿车，造成关键身份与诱敌安排的误解。",
+      "required_fix": "改为“三辆车从不同方向出现”，并说明其中一辆由孔明乘坐，另两辆由姜维、马岱、魏延等护送，用于迷惑魏军。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 614,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

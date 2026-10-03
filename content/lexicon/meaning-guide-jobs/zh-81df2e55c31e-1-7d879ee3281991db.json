@@ -1,0 +1,31 @@
+{
+  "id": "zh-81df2e55c31e-1-7d879ee3281991db",
+  "entry_id": "zh-81df2e55c31e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-81df2e55c31e-1",
+      "headword": "借此",
+      "kind": "word",
+      "reading": "jiècǐ",
+      "senses": [
+        {
+          "id": "zh-81df2e55c31e-1-s1",
+          "definition": "by means of this; using this as a way to"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角给人治病，借此聚集百姓。",
+        "gloss": "by this means",
+        "sense_id": "zh-81df2e55c31e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "920b6b2ec29b0aec96c70e6f27898288a694e3d748d49a15b7e6686866cbd484"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-42aa17c43ce9-1-c8cce6c00d7ec049",
+  "entry_id": "zh-42aa17c43ce9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-42aa17c43ce9-1",
+      "headword": "投军",
+      "kind": "word",
+      "reading": "tóujūn",
+      "senses": [
+        {
+          "id": "zh-42aa17c43ce9-1-s1",
+          "definition": "to join the army"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他说：“我要进城投军。",
+        "gloss": "join the army",
+        "sense_id": "zh-42aa17c43ce9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c04f286d5c134107a6051247e61edf24c485bca180a3558dd9c6b15e84309b9b"
+}

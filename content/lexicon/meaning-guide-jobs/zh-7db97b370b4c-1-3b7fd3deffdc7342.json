@@ -1,0 +1,31 @@
+{
+  "id": "zh-7db97b370b4c-1-3b7fd3deffdc7342",
+  "entry_id": "zh-7db97b370b4c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7db97b370b4c-1",
+      "headword": "辅佐",
+      "kind": "word",
+      "reading": "fǔzuǒ",
+      "senses": [
+        {
+          "id": "zh-7db97b370b4c-1-s1",
+          "definition": "to assist; to help govern"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "桓帝死后，窦武和陈蕃共辅佐新皇帝。",
+        "gloss": "to assist",
+        "sense_id": "zh-7db97b370b4c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "318aa23bc0892dfcf9b1249c134f8b7ac865ce761e9ab6f311252f752b55a000"
+}

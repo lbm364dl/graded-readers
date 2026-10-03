@@ -1,0 +1,31 @@
+{
+  "id": "zh-bb7ef73495dd-1-eee4d8d1b7a7f6b0",
+  "entry_id": "zh-bb7ef73495dd-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-bb7ef73495dd-1",
+      "headword": "结果",
+      "kind": "word",
+      "reading": "jiéguǒ",
+      "senses": [
+        {
+          "id": "zh-bb7ef73495dd-1-s1",
+          "definition": "result; outcome"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "这个结果导致宦官从此更加专横，做事也更不受限制，朝廷中的正直之士更加危险。",
+        "gloss": "result",
+        "sense_id": "zh-bb7ef73495dd-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7e2868c1bfedf82b9119461d2b375667fbb0fe5434c5209293e23aacd1a9a5b5"
+}

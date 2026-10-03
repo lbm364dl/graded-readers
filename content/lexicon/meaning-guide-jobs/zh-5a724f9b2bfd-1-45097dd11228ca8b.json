@@ -1,0 +1,41 @@
+{
+  "id": "zh-5a724f9b2bfd-1-45097dd11228ca8b",
+  "entry_id": "zh-5a724f9b2bfd-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5a724f9b2bfd-1",
+      "headword": "辆",
+      "kind": "word",
+      "reading": "liàng",
+      "senses": [
+        {
+          "id": "zh-5a724f9b2bfd-1-s1",
+          "definition": "classifier for vehicles"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "正饮酒时，一个大汉推着一辆车来到店门前休息，进门便叫酒保斟酒，说要赶进城投军。",
+        "gloss": "measure word for vehicles",
+        "sense_id": "zh-5a724f9b2bfd-1-s1"
+      },
+      {
+        "sentence": "刘备奉命率领军队返回，半路看见军马护送一辆囚车，车中正是卢植。",
+        "gloss": "classifier for vehicles",
+        "sense_id": "zh-5a724f9b2bfd-1-s1"
+      },
+      {
+        "sentence": "刘备奉命带兵返回，途中遇到一队汉军，正押送一辆囚车。",
+        "gloss": "classifier for vehicles",
+        "sense_id": "zh-5a724f9b2bfd-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c28cd7380ca012d9ccf2baa691f34b5aa61dedce41e358e0bdb126954a8fe953"
+}

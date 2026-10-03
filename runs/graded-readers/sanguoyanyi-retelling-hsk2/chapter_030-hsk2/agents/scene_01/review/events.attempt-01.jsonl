@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff3ad-df6f-7843-beac-84ed24525867"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.93,\"naturalness\":0.97,\"readability\":0.96,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"“打败魏军”表述过于笼统，原文是姜维击败魏军一部，并未击退魏军整体。\"],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":33835,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":781,"reasoning_output_tokens":688}}

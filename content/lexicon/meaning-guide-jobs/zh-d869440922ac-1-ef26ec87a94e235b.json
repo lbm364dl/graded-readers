@@ -1,0 +1,31 @@
+{
+  "id": "zh-d869440922ac-1-ef26ec87a94e235b",
+  "entry_id": "zh-d869440922ac-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d869440922ac-1",
+      "headword": "信徒",
+      "kind": "word",
+      "reading": "xìntú",
+      "senses": [
+        {
+          "id": "zh-d869440922ac-1-s1",
+          "definition": "follower; believer"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "五百多名弟子到各地传道，信徒逐渐增多。",
+        "gloss": "believers",
+        "sense_id": "zh-d869440922ac-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a400c7b8f29ce1820979938872b70d3c3bf68d168ebdbe455657e9a610438a02"
+}

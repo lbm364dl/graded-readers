@@ -1,0 +1,31 @@
+{
+  "id": "zh-f86cafe779eb-1-0a363404f1c0498b",
+  "entry_id": "zh-f86cafe779eb-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f86cafe779eb-1",
+      "headword": "散",
+      "kind": "word",
+      "reading": "sàn",
+      "senses": [
+        {
+          "id": "zh-f86cafe779eb-1-s1",
+          "definition": "scatter; disperse"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军惊慌，马来不及装鞍，人来不及穿甲，四散逃跑。",
+        "gloss": "to scatter; flee",
+        "sense_id": "zh-f86cafe779eb-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7264bbc046711bc634faa364eedbb0b0167da0895401fb825a0fe9ff0c473227"
+}

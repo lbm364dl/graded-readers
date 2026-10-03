@@ -1,0 +1,36 @@
+{
+  "id": "zh-b98f087cf9e1-1-9d4b6fe2821aa21a",
+  "entry_id": "zh-b98f087cf9e1-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b98f087cf9e1-1",
+      "headword": "五色",
+      "kind": "word",
+      "reading": "wǔsè",
+      "senses": [
+        {
+          "id": "zh-b98f087cf9e1-1-s1",
+          "definition": "five-colored; of five colors"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "一名宦官的叔父夜间提刀行走，也被曹操抓住，用五色棒责打。",
+        "gloss": "five-colored",
+        "sense_id": "zh-b98f087cf9e1-1-s1"
+      },
+      {
+        "sentence": "刚到任，他就在城中四门设置十多根五色棒。",
+        "gloss": "five-colored",
+        "sense_id": "zh-b98f087cf9e1-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0c12b2009f6b5d8d88c5dd4dfac0f5d462c9dd1f47458c0553334918d8d719ce"
+}

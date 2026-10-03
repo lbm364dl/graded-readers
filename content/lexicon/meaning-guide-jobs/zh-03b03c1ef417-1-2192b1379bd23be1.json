@@ -1,0 +1,31 @@
+{
+  "id": "zh-03b03c1ef417-1-2192b1379bd23be1",
+  "entry_id": "zh-03b03c1ef417-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-03b03c1ef417-1",
+      "headword": "洛阳",
+      "kind": "name",
+      "reading": "Luòyáng",
+      "senses": [
+        {
+          "id": "zh-03b03c1ef417-1-s1",
+          "definition": "Luoyang"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "建宁四年二月，洛阳地震，海水泛滥，沿海居民被大浪卷走。",
+        "gloss": "Luoyang",
+        "sense_id": "zh-03b03c1ef417-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fd690e4fa5a14595a42b28defd761bc636c0c9d62f085761f7ba4633a7e6eb08"
+}

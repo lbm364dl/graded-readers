@@ -1,0 +1,31 @@
+{
+  "id": "zh-5f916af93041-1-c48e5900a6c168ed",
+  "entry_id": "zh-5f916af93041-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5f916af93041-1",
+      "headword": "彩虹",
+      "kind": "word",
+      "reading": "cǎihóng",
+      "senses": [
+        {
+          "id": "zh-5f916af93041-1-s1",
+          "definition": "rainbow"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "秋七月又见彩虹，山岸裂开。",
+        "gloss": "rainbow",
+        "sense_id": "zh-5f916af93041-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "dca449da058d3247dad4c87870749686cac4b771fb2339a247b1afb2f3b30143"
+}

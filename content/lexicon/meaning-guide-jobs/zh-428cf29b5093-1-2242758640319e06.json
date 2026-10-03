@@ -1,0 +1,60 @@
+{
+  "id": "zh-428cf29b5093-1-2242758640319e06",
+  "entry_id": "zh-428cf29b5093-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-428cf29b5093-1",
+      "headword": "拜",
+      "kind": "word",
+      "reading": "bài",
+      "senses": [
+        {
+          "id": "zh-428cf29b5093-1-s1",
+          "definition": "perform a formal rite"
+        },
+        {
+          "id": "zh-428cf29b5093-1-s2",
+          "definition": "to become someone's student; take someone as one's teacher"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞说：“明天我们在这里拜天地。",
+        "gloss": "perform a ceremony",
+        "sense_id": "zh-428cf29b5093-1-s1"
+      },
+      {
+        "sentence": "第二天，三人在桃园拜天地。",
+        "gloss": "perform a ceremony",
+        "sense_id": "zh-428cf29b5093-1-s1"
+      },
+      {
+        "sentence": "刘备说：“我曾拜卢植为师，听说老师在广宗与张角交战，想前去帮助他。",
+        "gloss": "be a student of",
+        "sense_id": "zh-428cf29b5093-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-428cf29b5093-1",
+    "structure": "single_component",
+    "explanation_en": "拜 is a verb for carrying out a formal rite or ritual act. What follows can identify the rite's focus or participants.",
+    "caveat_en": "拜 is a single verb here; its ritual meaning is not built from smaller meaningful parts.",
+    "parts": [
+      {
+        "text": "拜",
+        "contribution_en": "perform a formal rite or ritual act"
+      }
+    ],
+    "input_fingerprint": "e87e8d19fb6ef2c46e844ae6294065d5089174080febfb93087d3332a1af7e9a",
+    "revision": 1,
+    "editorial_policy": 2,
+    "evidence_status": "legacy_unresearched"
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a391bc704ee94de1dbd4dbea068c3e189cfa07410cbeec56ba64a0b552c66c91"
+}

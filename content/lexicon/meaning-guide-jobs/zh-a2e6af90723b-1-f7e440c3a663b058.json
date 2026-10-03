@@ -1,0 +1,31 @@
+{
+  "id": "zh-a2e6af90723b-1-f7e440c3a663b058",
+  "entry_id": "zh-a2e6af90723b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a2e6af90723b-1",
+      "headword": "发愁",
+      "kind": "word",
+      "reading": "fā chóu",
+      "senses": [
+        {
+          "id": "zh-a2e6af90723b-1-s1",
+          "definition": "feel worried or troubled"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "第二天整理兵器，却因没有马匹而发愁。",
+        "gloss": "worry",
+        "sense_id": "zh-a2e6af90723b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "91c8ddd60627334102c5d8385fcb96a687133ca0401b0232fbc70c6fe87fc9ff"
+}

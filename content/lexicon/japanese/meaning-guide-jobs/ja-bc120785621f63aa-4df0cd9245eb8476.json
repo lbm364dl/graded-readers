@@ -1,0 +1,32 @@
+{
+  "id": "ja-bc120785621f63aa-4df0cd9245eb8476",
+  "entry_id": "ja-bc120785621f63aa",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-bc120785621f63aa",
+      "headword": "ものか",
+      "reading": "ものか",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-bc120785621f63aa-1",
+          "definition": "A rhetorical question expressing disbelief or incredulity, roughly “could that really be?”"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "人の庭へ入りながら、これほど平気で眠れるものかと、吾輩はその大胆さに驚いた。",
+        "gloss": "could one really...?; rhetorical disbelief",
+        "sense_id": "ja-bc120785621f63aa-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2d5805c9e5ab52757e9c2eb3643fd07e9e54d1afd30abfc55a4fe52ef418b2c4"
+}

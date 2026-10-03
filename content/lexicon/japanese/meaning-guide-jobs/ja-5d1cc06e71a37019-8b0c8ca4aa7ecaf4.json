@@ -1,0 +1,32 @@
+{
+  "id": "ja-5d1cc06e71a37019-8b0c8ca4aa7ecaf4",
+  "entry_id": "ja-5d1cc06e71a37019",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5d1cc06e71a37019",
+      "headword": "火",
+      "reading": "ひ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-5d1cc06e71a37019-1",
+          "definition": "fire"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "目が回り、胸が悪くなったと思ったとき、どさりと音がして、目から火が出た。",
+        "gloss": "fire",
+        "sense_id": "ja-5d1cc06e71a37019-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c87bc673d8b1526823c6296820f6119287102f4ea7342d45054df2797cb02154"
+}

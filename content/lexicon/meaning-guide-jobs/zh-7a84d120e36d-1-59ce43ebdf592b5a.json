@@ -1,0 +1,31 @@
+{
+  "id": "zh-7a84d120e36d-1-59ce43ebdf592b5a",
+  "entry_id": "zh-7a84d120e36d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7a84d120e36d-1",
+      "headword": "一部分",
+      "kind": "word",
+      "reading": "yí bùfen",
+      "senses": [
+        {
+          "id": "zh-7a84d120e36d-1-s1",
+          "definition": "a portion; part of a whole"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "关羽和张飞各带一部分人，藏在山的两边。",
+        "gloss": "a portion",
+        "sense_id": "zh-7a84d120e36d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "40af6622178efdbf69dbc1c84839b732e81deeba8881ee0ae5f925773070fb6e"
+}

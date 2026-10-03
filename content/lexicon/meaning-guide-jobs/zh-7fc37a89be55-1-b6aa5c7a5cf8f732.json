@@ -1,0 +1,36 @@
+{
+  "id": "zh-7fc37a89be55-1-b6aa5c7a5cf8f732",
+  "entry_id": "zh-7fc37a89be55-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7fc37a89be55-1",
+      "headword": "封谞",
+      "kind": "name",
+      "reading": "Fēng Xū",
+      "senses": [
+        {
+          "id": "zh-7fc37a89be55-1-s1",
+          "definition": "Feng Xu, a person's name"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角暗中送金钱，联系朝中的封谞，准备做内应。",
+        "gloss": "Feng Xu",
+        "sense_id": "zh-7fc37a89be55-1-s1"
+      },
+      {
+        "sentence": "朝廷立即派兵抓住马元义并杀了他，又把封谞等人关进监狱。",
+        "gloss": "Feng Xu",
+        "sense_id": "zh-7fc37a89be55-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4fbb4196c3398c2d2038b3fde6fadf7ac774991b99796775683aa2d76a2229aa"
+}

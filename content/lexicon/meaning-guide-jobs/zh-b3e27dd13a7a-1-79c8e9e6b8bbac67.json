@@ -1,0 +1,31 @@
+{
+  "id": "zh-b3e27dd13a7a-1-79c8e9e6b8bbac67",
+  "entry_id": "zh-b3e27dd13a7a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b3e27dd13a7a-1",
+      "headword": "自",
+      "kind": "word",
+      "reading": "zì",
+      "senses": [
+        {
+          "id": "zh-b3e27dd13a7a-1-s1",
+          "definition": "from; beginning at or originating in"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "汉朝自高祖斩白蛇起义，一统天下；后来光武中兴，传到献帝，终于分为三国。",
+        "gloss": "from",
+        "sense_id": "zh-b3e27dd13a7a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e8085edff77b2628a2728cc69bfe31d761216dfbae906a2440b377a9a00c6177"
+}

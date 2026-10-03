@@ -1,0 +1,31 @@
+{
+  "id": "zh-d7c9a7320853-1-9b7220f8a7c59677",
+  "entry_id": "zh-d7c9a7320853-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d7c9a7320853-1",
+      "headword": "同日",
+      "kind": "word",
+      "reading": "tóngrì",
+      "senses": [
+        {
+          "id": "zh-d7c9a7320853-1-s1",
+          "definition": "the same day"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "不求同年同月同日生，但愿同年同月同日死。",
+        "gloss": "the same day",
+        "sense_id": "zh-d7c9a7320853-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f9fbc002901f936d3b2e25509a66ab20d8bfec6b88a1397ea4ed9001ed27a9b7"
+}

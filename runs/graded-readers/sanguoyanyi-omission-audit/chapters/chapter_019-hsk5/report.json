@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_019-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 846,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了陈珪父子设计陈登诈取徐州、陈珪被杀的具体过程。",
+      "classification": "material",
+      "reason": "陈珪父子的谋划及陈珪被杀构成徐州易手的重要因果，并影响相关人物的身份与结局。",
+      "required_fix": "补充陈珪授意陈登设局、陈登诱使陈宫弃关，以及陈珪被糜竺杀死的关键过程。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了陈珪父子设计陈登诈取徐州、陈珪被杀的具体过程。",
+      "classification": "material",
+      "reason": "陈珪父子的谋划及陈珪被杀构成徐州易手的重要因果，并影响相关人物的身份与结局。",
+      "required_fix": "补充陈珪授意陈登设局、陈登诱使陈宫弃关，以及陈珪被糜竺杀死的关键过程。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 846,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

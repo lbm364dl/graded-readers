@@ -1,0 +1,183 @@
+{
+  "id": "zh-expression-bai-tiandi-80612467da8a29eb",
+  "entry_id": "zh-expression-bai-tiandi",
+  "reason": "requested",
+  "item": {
+    "entry": {
+      "id": "zh-expression-bai-tiandi",
+      "headword": "拜天地",
+      "reading": "bài tiāndì",
+      "base_entry_id": "zh-428cf29b5093-1",
+      "components": [
+        {
+          "entry_id": "zh-428cf29b5093-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-5e431916de87-1",
+          "role": "object of the rite"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-bai-tiandi-s1",
+          "definition": "perform a rite before Heaven and Earth"
+        }
+      ],
+      "kind": "construction"
+    },
+    "examples": [
+      {
+        "sentence": "第二天，三人在桃园拜天地。",
+        "gloss": "perform a rite before Heaven and Earth",
+        "sense_id": "zh-expression-bai-tiandi-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "拜",
+        "role": "verb"
+      },
+      {
+        "headword": "天地",
+        "role": "object of the rite"
+      }
+    ]
+  },
+  "previous": {
+    "entry_id": "zh-expression-bai-tiandi",
+    "claim_ids": [
+      "c1",
+      "c2",
+      "c3"
+    ],
+    "structure": "compositional",
+    "explanation_en": "拜天地 combines worshipful bowing with its object, 天地, the spirits of Heaven and Earth. As a conventional wedding term, it names the couple’s rite of kneeling and bowing before those spirits. It is also recorded as a name for the couple’s post-wedding greeting to their parents.",
+    "caveat_en": "The parts identify the bow and its object, but do not specify the full wedding protocol. The parent-greeting is a separate recorded usage.",
+    "parts": [
+      {
+        "text": "拜",
+        "contribution_en": "The verb for bowing in worship.",
+        "claim_ids": [
+          "c1",
+          "c2"
+        ]
+      },
+      {
+        "text": "天地",
+        "contribution_en": "The object of worship: the spirits of Heaven and Earth in the rite.",
+        "claim_ids": [
+          "c1"
+        ]
+      }
+    ],
+    "input_fingerprint": "cf7268b9a35576df436ed20a743c30c94dffce5a4b6572fbf0b65dff9412ee7f",
+    "research": {
+      "entry_id": "zh-expression-bai-tiandi",
+      "status": "partial",
+      "sources": [
+        {
+          "id": "s1",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=14573&q=1&word=%E6%8B%9C",
+          "title": "〈拜天地〉— 教育部《重編國語辭典修訂本》",
+          "accessed_at": "2026-09-26",
+          "summary_en": "Defines 拜天地 as a rite in an old-style wedding in which the newlyweds kneel and bow in a ceremonial hall. It cites examples from 初刻拍案驚奇 and 儒林外史 and gives 拜堂 as another name."
+        },
+        {
+          "id": "s2",
+          "url": "https://kotobank.jp/zhjaword/%E6%8B%9C%E5%A0%82",
+          "title": "拜堂（中国語）の日本語訳、読み方は — コトバンク 中日辞典 第3版",
+          "accessed_at": "2026-09-26",
+          "summary_en": "Defines 拜堂 as a wedding rite in which the couple worships the spirits of Heaven and Earth before bowing to one another. It also records a post-wedding greeting to the parents as another usage and says both usages may be called 拜天地."
+        },
+        {
+          "id": "s3",
+          "url": "https://www.scribd.com/document/1007107793/%E5%82%B3%E7%B5%B1%E5%A9%9A%E7%A6%AE-%E6%8B%9C%E5%A0%82-%E7%A6%AE%E5%84%80%E8%80%83%E8%BF%B0-%E7%94%B0%E7%90%9B",
+          "title": "傳統婚禮「拜堂」禮儀考述 — 田琛",
+          "accessed_at": "2026-09-26",
+          "summary_en": "The article surveys changing wedding rites and interpretations of 拜堂. It describes the 事林廣記 passage as a sequence of separate bows, including bows to 天神地祇, household deities, ancestors, parents and kin. It discusses 拜堂’s history, but does not establish the derivation or exact history of 拜天地 as a fixed expression."
+        },
+        {
+          "id": "s4",
+          "url": "https://zh.wikisource.org/wiki/%E4%BA%8B%E6%9E%97%E5%BB%A3%E8%A8%98/%E5%89%8D%E9%9B%86/%E5%8D%B710",
+          "title": "事林廣記/前集/卷10 — 維基文庫",
+          "accessed_at": "2026-09-26",
+          "summary_en": "The text’s wedding instructions direct the newlyweds to bow first to 天神地祇 and other deities, then ancestors, then parents and relatives. This attests a ritual sequence and its objects; it does not itself show that 拜天地 was already a fixed name for the whole rite."
+        }
+      ],
+      "claims": [
+        {
+          "id": "c1",
+          "text_en": "The expression is compositionally transparent in the documented rite: 拜 names worshipful bowing, and 天地 names its object. The Chinese-Japanese dictionary specifies the object as the spirits of Heaven and Earth.",
+          "source_ids": [
+            "s1",
+            "s2",
+            "s4"
+          ]
+        },
+        {
+          "id": "c2",
+          "text_en": "The Ministry of Education dictionary records 拜天地 for a wedding rite in which the newlyweds kneel and bow, and cites literary examples using the expression for that rite.",
+          "source_ids": [
+            "s1"
+          ]
+        },
+        {
+          "id": "c3",
+          "text_en": "The Chinese-Japanese dictionary also records 拜天地 as a name for the newlyweds’ post-wedding greeting to their parents. This is a separate recorded usage; the dictionary describes worship of Heaven-and-Earth spirits in the initial wedding rite.",
+          "source_ids": [
+            "s2"
+          ]
+        },
+        {
+          "id": "c4",
+          "text_en": "The 事林廣記 passage directs the couple to bow to 天神地祇 among several other objects. The research article dates the relevant material to the late Southern Song, while the quoted edition is identified as a Yuan Zhishun-era printing. This supports an account of wedding bows, not a precise date or pathway by which 拜天地 became a fixed name for the rite.",
+          "source_ids": [
+            "s3",
+            "s4"
+          ]
+        }
+      ],
+      "searches": [
+        {
+          "query": "拜天地 婚礼 拜堂 事林广记 宋代 礼俗 研究",
+          "opened_urls": []
+        },
+        {
+          "query": "\"拜天地\" 词源 词义 历史 唐代 婚礼",
+          "opened_urls": []
+        },
+        {
+          "query": "\"拜天地\" 最早 记载 宋代 婚俗 研究 词",
+          "opened_urls": []
+        },
+        {
+          "query": "(direct open)",
+          "opened_urls": [
+            "https://dict.revised.moe.edu.tw/dictView.jsp?ID=14573&q=1&word=%E6%8B%9C",
+            "https://kotobank.jp/zhjaword/%E6%8B%9C%E5%A0%82",
+            "https://www.scribd.com/document/1007107793/%E5%82%B3%E7%B5%B1%E5%A9%9A%E7%A6%AE-%E6%8B%9C%E5%A0%82-%E7%A6%AE%E5%84%80%E8%80%83%E8%BF%B0-%E7%94%B0%E7%90%9B",
+            "https://zh.wikisource.org/wiki/%E4%BA%8B%E6%9E%97%E5%BB%A3%E8%A8%98/%E5%89%8D%E9%9B%86/%E5%8D%B710"
+          ]
+        }
+      ],
+      "gaps": [
+        "The opened sources explain the modern parts and document wedding-rite uses, but do not establish the exact chronology or pathway by which 拜天地 became a fixed label for the rite.",
+        "The historical article’s dating of the 事林廣記 material to the late Southern Song and its citation of a Yuan Zhishun-era edition refer to different dating questions; the opened evidence does not resolve the text’s transmission chronology."
+      ]
+    },
+    "revision": 1,
+    "editorial_policy": 3,
+    "evidence_status": "partial",
+    "fulfilled_requests": []
+  },
+  "requests": [
+    {
+      "entry_id": "zh-expression-bai-tiandi",
+      "reason": "The guide substitutes conventional wedding usages for the supplied broader ritual sense (perform a rite before Heaven and Earth). Research and explain the actual target sense, including non-marital ritual/oath usage attested by the occurrence. Keep the explanation reusable, do not retell the story, and omit unrelated wedding/parent-greeting senses. Do not imply this entry necessarily describes marriage. If evidence for the broader use remains limited, state that limitation without replacing the sense.",
+      "id": "edit-a1728707ee0be890"
+    }
+  ],
+  "status": "reviewed",
+  "result_digest": "2a15cabfd32903bd1aba213e69f924eaf3bbacd6cb49e0df3265429147f81ac9"
+}

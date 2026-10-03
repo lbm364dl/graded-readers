@@ -1,0 +1,32 @@
+{
+  "id": "ja-32ac877f9e3bf182-09d10287ccd554b9",
+  "entry_id": "ja-32ac877f9e3bf182",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-32ac877f9e3bf182",
+      "headword": "小さい",
+      "reading": "ちいさい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-32ac877f9e3bf182-1",
+          "definition": "small; little"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩の家の裏には、小さな茶園がある。",
+        "gloss": "small; little",
+        "sense_id": "ja-32ac877f9e3bf182-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cc534c0a41418baa338ccf44925957ee7e8b19ba411a215d76451e013d549576"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-ji-ba-ce72d4e26ab2fed7",
+  "entry_id": "zh-expression-ji-ba",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-ji-ba",
+      "headword": "祭罢",
+      "reading": "jì bà",
+      "kind": "expression",
+      "base_entry_id": "zh-bc6c87ab5010-1",
+      "components": [
+        {
+          "entry_id": "zh-bc6c87ab5010-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-b9636f5a2067-1",
+          "role": "completion complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-ji-ba-s1",
+          "definition": "finish making ritual offerings"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "祭罢天地，三人杀牛设酒，聚集乡勇三百多人，在桃园中痛饮。",
+        "gloss": "finish making ritual offerings",
+        "sense_id": "zh-expression-ji-ba-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "祭",
+        "role": "verb"
+      },
+      {
+        "headword": "罢",
+        "role": "completion complement"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "654bdc4fdb376d2a48ec27b34abf18d78314bc6a5b3f63c59ce437e038157481"
+}

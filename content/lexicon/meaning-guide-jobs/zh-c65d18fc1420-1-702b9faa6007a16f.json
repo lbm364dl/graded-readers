@@ -1,0 +1,31 @@
+{
+  "id": "zh-c65d18fc1420-1-702b9faa6007a16f",
+  "entry_id": "zh-c65d18fc1420-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c65d18fc1420-1",
+      "headword": "左丰",
+      "kind": "name",
+      "reading": "Zuǒ Fēng",
+      "senses": [
+        {
+          "id": "zh-c65d18fc1420-1-s1",
+          "definition": "a personal name"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "左丰来查看军情，向我索要贿赂。",
+        "gloss": "Zuo Feng",
+        "sense_id": "zh-c65d18fc1420-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "55ff8ee4c448d7409402c0f5da03a02f28e0697b8f3a1b1f1485043ae445d385"
+}

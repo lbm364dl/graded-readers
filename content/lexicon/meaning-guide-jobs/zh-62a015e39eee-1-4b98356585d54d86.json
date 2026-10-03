@@ -1,0 +1,31 @@
+{
+  "id": "zh-62a015e39eee-1-4b98356585d54d86",
+  "entry_id": "zh-62a015e39eee-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-62a015e39eee-1",
+      "headword": "老仙",
+      "kind": "name",
+      "reading": "lǎoxiān",
+      "senses": [
+        {
+          "id": "zh-62a015e39eee-1-s1",
+          "definition": "Nanhua Laoxian, a named immortal figure"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "进山采药时，他遇到南华老仙。",
+        "gloss": "immortal elder",
+        "sense_id": "zh-62a015e39eee-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "57508fffb928b177f11ba0fde6bf84c4834c61109bf7c0b30774d7f41d7ea128"
+}

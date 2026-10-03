@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-ding-xia-86f4702153b0fdd1",
+  "entry_id": "zh-expression-ding-xia",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-ding-xia",
+      "headword": "定下",
+      "reading": "dìngxia",
+      "base_entry_id": "zh-a071406edf01-1",
+      "components": [
+        {
+          "entry_id": "zh-a071406edf01-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-13c12b064b63-1",
+          "role": "result complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-ding-xia-s1",
+          "definition": "set or establish something"
+        }
+      ],
+      "kind": "construction"
+    },
+    "examples": [
+      {
+        "sentence": "他在县城四座城门放下十多根五颜六色的木棒，并定下严格的禁令。",
+        "gloss": "set or establish something",
+        "sense_id": "zh-expression-ding-xia-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "定",
+        "role": "verb"
+      },
+      {
+        "headword": "下",
+        "role": "result complement"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6c5413c95ab11ce2899a45bec6854981115462b9d25e43e498afa936b8a11767"
+}

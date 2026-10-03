@@ -1,0 +1,41 @@
+{
+  "id": "zh-0e16543ac983-1-670f7ea8086cf33a",
+  "entry_id": "zh-0e16543ac983-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-0e16543ac983-1",
+      "headword": "青州",
+      "kind": "name",
+      "reading": "Qīngzhōu",
+      "senses": [
+        {
+          "id": "zh-0e16543ac983-1-s1",
+          "definition": "Qingzhou"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "不久，青州被黄巾军围住。",
+        "gloss": "Qingzhou",
+        "sense_id": "zh-0e16543ac983-1-s1"
+      },
+      {
+        "sentence": "三人带人赶到青州，发现敌人很多。",
+        "gloss": "Qingzhou",
+        "sense_id": "zh-0e16543ac983-1-s1"
+      },
+      {
+        "sentence": "三路夹攻，黄巾军大败，青州也安全了。",
+        "gloss": "Qingzhou",
+        "sense_id": "zh-0e16543ac983-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a21827c6372db49666b794505b1975bcd4d557106329f4005f3e334bef9e69c9"
+}

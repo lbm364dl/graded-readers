@@ -1,0 +1,41 @@
+{
+  "id": "zh-82da216d2077-1-2ddd3f09f6ceeed6",
+  "entry_id": "zh-82da216d2077-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-82da216d2077-1",
+      "headword": "孝廉",
+      "kind": "word",
+      "reading": "xiàolián",
+      "senses": [
+        {
+          "id": "zh-82da216d2077-1-s1",
+          "definition": "xiao-lian (a recommendation category)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹操二十岁时被举为孝廉，后来做了洛阳北都尉。",
+        "gloss": "xiao-lian (a recommendation category)",
+        "sense_id": "zh-82da216d2077-1-s1"
+      },
+      {
+        "sentence": "祖父刘雄，父亲刘弘；刘弘曾举孝廉，也做过官，后来早亡。",
+        "gloss": "filial and incorrupt candidate",
+        "sense_id": "zh-82da216d2077-1-s1"
+      },
+      {
+        "sentence": "曹操二十岁时举孝廉，做了郎官，后来任洛阳北都尉。",
+        "gloss": "filial and incorrupt; a Han official recommendation",
+        "sense_id": "zh-82da216d2077-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "45287352d6f5f1aad9ad152cc31786c24b08233c88dd56a5f6279a2aa4eb56a3"
+}

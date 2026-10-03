@@ -1,0 +1,31 @@
+{
+  "id": "zh-f43d1e91f4b4-1-573930616534b9ee",
+  "entry_id": "zh-f43d1e91f4b4-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f43d1e91f4b4-1",
+      "headword": "狂风",
+      "kind": "word",
+      "reading": "kuángfēng",
+      "senses": [
+        {
+          "id": "zh-f43d1e91f4b4-1-s1",
+          "definition": "a violent wind"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "殿角忽起狂风，一条大青蛇从梁上飞下，盘在椅上。",
+        "gloss": "violent wind",
+        "sense_id": "zh-f43d1e91f4b4-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "668f667fc10b8c88f54161c432d4add95aada9a65f46e3175d03b112d38e84b8"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "zh-c315e8df31c9-1-c50cee7ab59c6d6e",
+  "entry_id": "zh-c315e8df31c9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c315e8df31c9-1",
+      "headword": "约定",
+      "kind": "word",
+      "reading": "yuēdìng",
+      "senses": [
+        {
+          "id": "zh-c315e8df31c9-1-s1",
+          "definition": "to agree on or arrange something in advance"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他们私造黄旗，约定日期。",
+        "gloss": "to agree on",
+        "sense_id": "zh-c315e8df31c9-1-s1"
+      },
+      {
+        "sentence": "卢植让刘备带本部人马，再领一千官军前往颍川，联络皇甫嵩、朱俊，打探消息，并约定日期共同剿捕。",
+        "gloss": "to agree on",
+        "sense_id": "zh-c315e8df31c9-1-s1"
+      },
+      {
+        "sentence": "三人于是私造黄旗，约定起事日期。",
+        "gloss": "agree on; arrange",
+        "sense_id": "zh-c315e8df31c9-1-s1"
+      },
+      {
+        "sentence": "关羽带一千人伏在山左，张飞带一千人伏在山右，约定以鸣金为号，一齐出动。",
+        "gloss": "agree on",
+        "sense_id": "zh-c315e8df31c9-1-s1"
+      },
+      {
+        "sentence": "卢植让刘备带本部人马，又给他一千官军，前去颍川打探消息，并联络皇甫嵩、朱隽，约定日期剿捕。",
+        "gloss": "to agree on; arrange",
+        "sense_id": "zh-c315e8df31c9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2df04761e6e8641c07f1eea14c55b16e7de161ca0357b36a51a4e0b033a7ef9f"
+}

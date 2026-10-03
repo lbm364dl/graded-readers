@@ -1,0 +1,31 @@
+{
+  "id": "zh-c6163d7d8dfc-1-a14cd1714bd24fa4",
+  "entry_id": "zh-c6163d7d8dfc-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c6163d7d8dfc-1",
+      "headword": "传开",
+      "kind": "construction",
+      "reading": "chuánkāi",
+      "senses": [
+        {
+          "id": "zh-c6163d7d8dfc-1-s1",
+          "definition": "spread and become widely known"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他不避有权势的人，城内外的人从此都不敢再犯禁令，曹操的威名传开。",
+        "gloss": "spread",
+        "sense_id": "zh-c6163d7d8dfc-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5eaa1b65d0694032dd85b901a7a21418387bd077efa98bfb811bf43f86de1476"
+}

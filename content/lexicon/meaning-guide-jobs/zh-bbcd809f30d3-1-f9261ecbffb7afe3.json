@@ -1,0 +1,253 @@
+{
+  "id": "zh-bbcd809f30d3-1-f9261ecbffb7afe3",
+  "entry_id": "zh-bbcd809f30d3-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-bbcd809f30d3-1",
+      "headword": "杀",
+      "kind": "word",
+      "reading": "shā",
+      "senses": [
+        {
+          "id": "zh-bbcd809f30d3-1-s1",
+          "definition": "kill"
+        },
+        {
+          "id": "zh-bbcd809f30d3-1-s2",
+          "definition": "fighting or killing"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "关羽挥刀杀了程远志。",
+        "gloss": "kill",
+        "sense_id": "zh-bbcd809f30d3-1-s1"
+      },
+      {
+        "sentence": "张飞很生气，要杀护送卢植的人。",
+        "gloss": "kill",
+        "sense_id": "zh-bbcd809f30d3-1-s1"
+      },
+      {
+        "sentence": "张飞又气又不满，拿刀要杀董卓。",
+        "gloss": "kill",
+        "sense_id": "zh-bbcd809f30d3-1-s1"
+      },
+      {
+        "sentence": "”张飞听完十分生气，要杀押车的人，救下老师。",
+        "gloss": "kill",
+        "sense_id": "zh-bbcd809f30d3-1-s1"
+      },
+      {
+        "sentence": "我一定要杀了董卓！",
+        "gloss": "kill",
+        "sense_id": "zh-bbcd809f30d3-1-s1"
+      },
+      {
+        "sentence": "朝廷立即派兵抓住马元义并杀了他，又把封谞等人关进监狱。",
+        "gloss": "to kill",
+        "sense_id": "zh-bbcd809f30d3-1-s1"
+      },
+      {
+        "sentence": "大汉叫张飞，住在涿郡，有田，卖酒杀猪，也喜爱结交豪杰。",
+        "gloss": "kill",
+        "sense_id": "zh-bbcd809f30d3-1-s1"
+      },
+      {
+        "sentence": "那人叫关羽，曾因杀了当地一个仗势欺人的人，逃难了五六年。",
+        "gloss": "kill",
+        "sense_id": "zh-bbcd809f30d3-1-s1"
+      },
+      {
+        "sentence": "程远志被杀后，黄巾军纷纷逃走，刘备带兵追赶，许多人投降。",
+        "gloss": "kill",
+        "sense_id": "zh-bbcd809f30d3-1-s1"
+      },
+      {
+        "sentence": "刘备带着关羽、张飞赶到颍川时，只听见喊杀声，也看见火光照亮天空。",
+        "gloss": "to kill",
+        "sense_id": "zh-bbcd809f30d3-1-s1"
+      },
+      {
+        "sentence": "张飞听后大怒，要杀押送卢植的士兵。",
+        "gloss": "kill",
+        "sense_id": "zh-bbcd809f30d3-1-s1"
+      },
+      {
+        "sentence": "朝廷抓住马元义，杀了他，又把封谞等人关进牢里。",
+        "gloss": "to kill",
+        "sense_id": "zh-bbcd809f30d3-1-s1"
+      },
+      {
+        "sentence": "关羽因杀了一个仗势欺人的人，逃走五六年。",
+        "gloss": "to kill",
+        "sense_id": "zh-bbcd809f30d3-1-s1"
+      },
+      {
+        "sentence": "祭罢天地，三人杀牛设酒，聚集乡勇三百多人，在桃园中痛饮。",
+        "gloss": "to kill",
+        "sense_id": "zh-bbcd809f30d3-1-s1"
+      },
+      {
+        "sentence": "张飞听完大怒，要杀押送卢植的军人。",
+        "gloss": "to kill",
+        "sense_id": "zh-bbcd809f30d3-1-s1"
+      },
+      {
+        "sentence": "刘备离开后，张飞气得不得了，提刀要闯进帐中杀董卓。",
+        "gloss": "to kill",
+        "sense_id": "zh-bbcd809f30d3-1-s1"
+      },
+      {
+        "sentence": "因杀了仗势欺人的豪强，在外逃难五六年。",
+        "gloss": "to kill",
+        "sense_id": "zh-bbcd809f30d3-1-s1"
+      },
+      {
+        "sentence": "祭礼后，他们杀牛设酒，聚集三百多名乡勇，在桃园痛饮。",
+        "gloss": "to kill",
+        "sense_id": "zh-bbcd809f30d3-1-s1"
+      },
+      {
+        "sentence": "程远志亲眼看见邓茂被张飞杀死，便挥刀直取张飞。",
+        "gloss": "to kill",
+        "sense_id": "zh-bbcd809f30d3-1-s1"
+      },
+      {
+        "sentence": "刘备带着关羽、张飞赶到颍川时，听见喊杀声，又看见仿佛冲天的火光。",
+        "gloss": "to kill",
+        "sense_id": "zh-bbcd809f30d3-1-s2"
+      },
+      {
+        "sentence": "张飞听完愤怒不已，要杀押送卢植的士兵救人。",
+        "gloss": "kill",
+        "sense_id": "zh-bbcd809f30d3-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-bbcd809f30d3-1",
+    "claim_ids": [
+      "c1"
+    ],
+    "structure": "single_component",
+    "explanation_en": "杀 is a verb meaning to cause someone or an animal to die. By itself, it does not specify the motive or method.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "杀",
+        "contribution_en": "The complete verb meaning “kill.”",
+        "claim_ids": [
+          "c1"
+        ]
+      }
+    ],
+    "research": {
+      "entry_id": "zh-bbcd809f30d3-1",
+      "status": "partial",
+      "sources": [
+        {
+          "id": "s1",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E6%AE%BA",
+          "title": "漢語多功能字庫: 殺",
+          "accessed_at": "2026-09-26",
+          "summary_en": "The CUHK character database records 殺 as meaning killing in bronze inscriptions and classical examples. It reports differing scholarly interpretations of an oracle-bone form proposed as an ancestor: Chen Jian identifies it as an early form of 殺 with a killing sense, while Liu Yun proposes that it meant striking. It also records other uses, including decline or withering, fighting, and degree intensification."
+        },
+        {
+          "id": "s2",
+          "url": "https://www.shuowen.org/view/1968",
+          "title": "說文解字「殺」 - 「說文解字」在線查詢",
+          "accessed_at": "2026-09-26",
+          "summary_en": "The page gives the Shuowen entry 殺：戮也。从殳，杀聲 and reproduces Duan Yucai’s note. The entry records an analysis of the graph’s components and a gloss equating 殺 with 戮; it does not establish how the modern word’s meaning developed."
+        },
+        {
+          "id": "s3",
+          "url": "https://zdic.net/hans/%E6%AE%BA",
+          "title": "殺 shā - 汉典",
+          "accessed_at": "2026-09-26",
+          "summary_en": "The dictionary defines the relevant sense as causing a person or animal to lose life and gives classical examples. It lists distinct senses such as fighting, withering, and postverbal degree intensification. Its detailed graph-origin account differs in emphasis from the CUHK database’s presentation of competing proposals."
+        }
+      ],
+      "claims": [
+        {
+          "id": "c1",
+          "text_en": "In the supplied examples, 杀 is a verb meaning to kill: it describes intended or completed killing of people. The wording does not specify a legal status, motive, or method except where a sentence explicitly mentions a weapon.",
+          "source_ids": [
+            "s1",
+            "s3"
+          ]
+        },
+        {
+          "id": "c2",
+          "text_en": "The Shuowen entry glosses 殺 as 戮 and records the analysis 从殳、杀聲. This is an account of the traditional graph structure; it does not show that the modern verb is compositionally built from independently meaningful word parts.",
+          "source_ids": [
+            "s2"
+          ]
+        },
+        {
+          "id": "c3",
+          "text_en": "The CUHK database reports competing interpretations of an oracle-bone form proposed as an early form of 殺: one identifies it as an ancestor with a killing sense, while another assigns it the sense ‘strike.’ The database describes the bronze form as adding 人 to a simplified version of that earlier form and identifies its meaning as killing. These proposals concern character history and do not by themselves establish a derivation of the modern word’s meaning from the parts of simplified 杀.",
+          "source_ids": [
+            "s1"
+          ]
+        },
+        {
+          "id": "c4",
+          "text_en": "The sources record other uses of 殺, including fighting, withering or decline, and degree intensification. Those uses are distinct from the direct ‘kill’ sense in the supplied examples.",
+          "source_ids": [
+            "s1",
+            "s3"
+          ]
+        },
+        {
+          "id": "c5",
+          "text_en": "The graph-history accounts are not fully aligned: the CUHK page reports competing interpretations of the early form, whereas 汉典’s detailed explanation presents a killing interpretation for an oracle-bone form. The opened sources do not resolve that disagreement or establish a complete historical derivation of the modern word.",
+          "source_ids": [
+            "s1",
+            "s3"
+          ]
+        }
+      ],
+      "searches": [
+        {
+          "query": "site:humanum.arts.cuhk.edu.hk/Lexis/lexi-mf 殺",
+          "opened_urls": [
+            "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E6%AE%BA"
+          ]
+        },
+        {
+          "query": "杀 汉语大词典 杀死 说文 戮也",
+          "opened_urls": []
+        },
+        {
+          "query": "杀 词源 甲骨文 殺 字源 CUHK",
+          "opened_urls": []
+        },
+        {
+          "query": "(direct open)",
+          "opened_urls": [
+            "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E6%AE%BA",
+            "https://www.shuowen.org/view/1968",
+            "https://zdic.net/hans/%E6%AE%BA"
+          ]
+        }
+      ],
+      "gaps": [
+        "The modern ‘kill’ sense is supported, but the opened references do not settle the competing interpretations of the proposed early oracle-bone form or demonstrate a continuous derivation from that form to the modern word."
+      ]
+    },
+    "input_fingerprint": "e47e9688d0fc181181893d53856929606e066f598267853e9fc5d9c0b3f895c3",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "partial",
+    "editorial_route": "cached_research",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7b5158668188967a75e7fe387fbd391a9075347a05bf58fd4a12c8f94f2b6c00"
+}

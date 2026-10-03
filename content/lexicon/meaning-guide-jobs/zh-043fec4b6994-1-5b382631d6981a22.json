@@ -1,0 +1,31 @@
+{
+  "id": "zh-043fec4b6994-1-5b382631d6981a22",
+  "entry_id": "zh-043fec4b6994-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-043fec4b6994-1",
+      "headword": "侍",
+      "kind": "word",
+      "reading": "shì",
+      "senses": [
+        {
+          "id": "zh-043fec4b6994-1-s1",
+          "definition": "attend and care for someone; serve"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备幼年丧父，侍母至孝，家贫，靠卖草鞋、织席生活。",
+        "gloss": "to serve",
+        "sense_id": "zh-043fec4b6994-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8106a2bb6dedb59aa75b3118e21de86e12088aaae8c7547b06332ab3794bc672"
+}

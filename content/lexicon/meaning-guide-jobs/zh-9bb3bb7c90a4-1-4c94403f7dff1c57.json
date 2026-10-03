@@ -1,0 +1,31 @@
+{
+  "id": "zh-9bb3bb7c90a4-1-4c94403f7dff1c57",
+  "entry_id": "zh-9bb3bb7c90a4-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9bb3bb7c90a4-1",
+      "headword": "直取",
+      "kind": "construction",
+      "reading": "zhíqǔ",
+      "senses": [
+        {
+          "id": "zh-9bb3bb7c90a4-1-s1",
+          "definition": "to go straight for; attack directly"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "程远志亲眼看见邓茂被张飞杀死，便挥刀直取张飞。",
+        "gloss": "to go straight for",
+        "sense_id": "zh-9bb3bb7c90a4-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f4c55e45f0c37df272b892045d71e4a2e98cc0423841689110f8190a0759e65b"
+}

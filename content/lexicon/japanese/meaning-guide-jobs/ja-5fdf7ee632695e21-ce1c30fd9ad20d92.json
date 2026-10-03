@@ -1,0 +1,32 @@
+{
+  "id": "ja-5fdf7ee632695e21-ce1c30fd9ad20d92",
+  "entry_id": "ja-5fdf7ee632695e21",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5fdf7ee632695e21",
+      "headword": "休む",
+      "reading": "やすむ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-5fdf7ee632695e21-1",
+          "definition": "rest; take a break"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "子供が騒ぐ時や、つまらなくて気分が悪い時、吾輩はここへ来て休む。",
+        "gloss": "rest",
+        "sense_id": "ja-5fdf7ee632695e21-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "341bc256e552a5146c512a8ee3a5698c76efd0fc385ec961716cf96679bfbe88"
+}

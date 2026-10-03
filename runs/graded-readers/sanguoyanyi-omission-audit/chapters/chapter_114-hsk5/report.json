@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_114-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 838,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略成济临刑前指认贾充传达司马昭命令的情节。",
+      "classification": "material",
+      "reason": "This supplies direct attribution of the regicide command and reinforces司马昭’s cover-up and responsibility, affecting causation and important characterization.",
+      "required_fix": "Add成济临刑前指认贾充传达司马昭命令，以及司马昭下令割舌灭口的情节。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略成济临刑前指认贾充传达司马昭命令的情节。",
+      "classification": "material",
+      "reason": "This supplies direct attribution of the regicide command and reinforces司马昭’s cover-up and responsibility, affecting causation and important characterization.",
+      "required_fix": "Add成济临刑前指认贾充传达司马昭命令，以及司马昭下令割舌灭口的情节。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 838,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

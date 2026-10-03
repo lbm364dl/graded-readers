@@ -1,0 +1,31 @@
+{
+  "id": "zh-f857ab1f0999-1-63f17f2a097993cc",
+  "entry_id": "zh-f857ab1f0999-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f857ab1f0999-1",
+      "headword": "翻身",
+      "kind": "word",
+      "reading": "fānshēn",
+      "senses": [
+        {
+          "id": "zh-f857ab1f0999-1-s1",
+          "definition": "to turn over; to turn the body around"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞挺起长矛，刺中邓茂的心口，邓茂翻身落马。",
+        "gloss": "turn over",
+        "sense_id": "zh-f857ab1f0999-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6282b6f4112552611f0212c9d65cbf4f9d5144d8c3b6f838c38c2b7588bc9eb4"
+}

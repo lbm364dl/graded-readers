@@ -1,0 +1,31 @@
+{
+  "id": "zh-f92332a0eeab-1-a78a80ce6865a7cf",
+  "entry_id": "zh-f92332a0eeab-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f92332a0eeab-1",
+      "headword": "不计",
+      "kind": "word",
+      "reading": "bùjì",
+      "senses": [
+        {
+          "id": "zh-f92332a0eeab-1-s1",
+          "definition": "not count; not reckon"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备率军追赶，投降者不计其数，大胜而回。",
+        "gloss": "too many to count",
+        "sense_id": "zh-f92332a0eeab-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d493a415ba5e300c2ba7c72247b3b2cf2651ccd38f0dbe441f5a3cf79b36c79e"
+}

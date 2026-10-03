@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff52e-8b35-7fa2-9bf0-7725dfbd5c97"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.94,\"naturalness\":0.93,\"readability\":0.95,\"omissions\":[],\"unsupported_additions\":[\"“车走时，路边一直有声音”表述模糊，原文具体是伏兵擂鼓。\"],\"distortions\":[],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":41794,"cached_input_tokens":8960,"cache_write_input_tokens":0,"output_tokens":603,"reasoning_output_tokens":516}}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-9496f9368e7f7994-734acf493b45acef",
+  "entry_id": "ja-9496f9368e7f7994",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9496f9368e7f7994",
+      "headword": "少しも",
+      "reading": "すこしも",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-9496f9368e7f7994-1",
+          "definition": "not at all; not even a little (used with a negative)"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "台所の板の間で他の者が震えていても、彼らは少しも気にしない。",
+        "gloss": "not even a little; at all",
+        "sense_id": "ja-9496f9368e7f7994-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d225791a60eb8218d268e658e2ecf20680e183f1c52f8c28763d0429b712a72e"
+}

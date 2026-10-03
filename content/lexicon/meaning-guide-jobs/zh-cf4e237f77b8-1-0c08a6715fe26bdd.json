@@ -1,0 +1,36 @@
+{
+  "id": "zh-cf4e237f77b8-1-0c08a6715fe26bdd",
+  "entry_id": "zh-cf4e237f77b8-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-cf4e237f77b8-1",
+      "headword": "依旧",
+      "kind": "word",
+      "reading": "yījiù",
+      "senses": [
+        {
+          "id": "zh-cf4e237f77b8-1-s1",
+          "definition": "remain as before; still"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇帝依旧信任张让，还称他为“阿父”。",
+        "gloss": "still",
+        "sense_id": "zh-cf4e237f77b8-1-s1"
+      },
+      {
+        "sentence": "曹操便假装中风，骗过父亲，后来依旧放荡。",
+        "gloss": "still; as before",
+        "sense_id": "zh-cf4e237f77b8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9bd958db894057ac8669b67ef5dccd1b66782841d92f0d81f149e49cad1f0003"
+}

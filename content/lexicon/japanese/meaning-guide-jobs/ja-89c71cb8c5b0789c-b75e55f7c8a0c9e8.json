@@ -1,0 +1,32 @@
+{
+  "id": "ja-89c71cb8c5b0789c-b75e55f7c8a0c9e8",
+  "entry_id": "ja-89c71cb8c5b0789c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-89c71cb8c5b0789c",
+      "headword": "感じる",
+      "reading": "かんじる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-89c71cb8c5b0789c-1",
+          "definition": "to feel; to sense; to perceive"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "様子がおかしいと思い、ゆっくり這い出すと、体に強い痛みを感じた。",
+        "gloss": "felt",
+        "sense_id": "ja-89c71cb8c5b0789c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "138958a621b0e2e843dd5ffca48c7846208b19334aa78a3943c53767c70d1685"
+}

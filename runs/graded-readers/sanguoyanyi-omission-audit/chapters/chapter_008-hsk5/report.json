@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_008-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 805,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了王允与貂蝉密谋时的部分誓言和风险交代。",
+      "classification": "material",
+      "reason": "貂蝉的誓言以及王允关于泄密将遭灭门的交代，强化了人物决心、承担的风险和计谋的 stakes，属于重要动机与 characterization 信息。",
+      "required_fix": "补回貂蝉承诺即使万死也不背弃大义，以及王允说明计谋泄露将导致灭门等关键誓言和风险交代。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了王允与貂蝉密谋时的部分誓言和风险交代。",
+      "classification": "material",
+      "reason": "貂蝉的誓言以及王允关于泄密将遭灭门的交代，强化了人物决心、承担的风险和计谋的 stakes，属于重要动机与 characterization 信息。",
+      "required_fix": "补回貂蝉承诺即使万死也不背弃大义，以及王允说明计谋泄露将导致灭门等关键誓言和风险交代。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 805,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

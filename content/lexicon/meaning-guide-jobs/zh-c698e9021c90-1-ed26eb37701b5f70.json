@@ -1,0 +1,31 @@
+{
+  "id": "zh-c698e9021c90-1-ed26eb37701b5f70",
+  "entry_id": "zh-c698e9021c90-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c698e9021c90-1",
+      "headword": "桑村",
+      "kind": "name",
+      "reading": "Sāng cūn",
+      "senses": [
+        {
+          "id": "zh-c698e9021c90-1-s1",
+          "definition": "Sang Village"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "家住楼桑村，村东南有一棵大桑树，高五丈多，树冠仿佛车盖。",
+        "gloss": "Sang Village",
+        "sense_id": "zh-c698e9021c90-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3825af7962d66787a4a340412e1441d8d76acf2e3809d1d41b6775445613a20e"
+}

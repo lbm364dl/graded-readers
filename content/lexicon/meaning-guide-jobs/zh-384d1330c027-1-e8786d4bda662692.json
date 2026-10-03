@@ -1,0 +1,31 @@
+{
+  "id": "zh-384d1330c027-1-e8786d4bda662692",
+  "entry_id": "zh-384d1330c027-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-384d1330c027-1",
+      "headword": "平时",
+      "kind": "word",
+      "reading": "píngshí",
+      "senses": [
+        {
+          "id": "zh-384d1330c027-1-s1",
+          "definition": "usually; in ordinary or non-special circumstances"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他住在涿县，平时卖鞋和草席。",
+        "gloss": "usually",
+        "sense_id": "zh-384d1330c027-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3ecb972416aaecddc3c5c5d86979ee1ae7d86a712ce08cc8a4613099f7f0c603"
+}

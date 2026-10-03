@@ -1,0 +1,32 @@
+{
+  "id": "ja-c8ab2130c2e0f754-ebac2ce8b0d101dd",
+  "entry_id": "ja-c8ab2130c2e0f754",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-c8ab2130c2e0f754",
+      "headword": "名前",
+      "reading": "なまえ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-c8ab2130c2e0f754-1",
+          "definition": "Name."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "名前はまだありません。",
+        "gloss": "name",
+        "sense_id": "ja-c8ab2130c2e0f754-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "490f337f685eb566c2939b2b493349de3bf0e72fada0bfcab83301549d4d9f13"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-781fa27755d1-1-649bae043d62aa7d",
+  "entry_id": "zh-781fa27755d1-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-781fa27755d1-1",
+      "headword": "奔",
+      "kind": "word",
+      "reading": "bēn",
+      "senses": [
+        {
+          "id": "zh-781fa27755d1-1-s1",
+          "definition": "to run; running"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备回头看那人，只见他身长八尺，豹头环眼，燕颔虎须，声音如巨雷，气势如奔马。",
+        "gloss": "running",
+        "sense_id": "zh-781fa27755d1-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "096318a34cf6f304dd3a513eb3720faa6defe5acf0b2b6e3b5527b924e9b136b"
+}

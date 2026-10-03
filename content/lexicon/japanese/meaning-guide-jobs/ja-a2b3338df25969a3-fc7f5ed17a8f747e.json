@@ -1,0 +1,32 @@
+{
+  "id": "ja-a2b3338df25969a3-fc7f5ed17a8f747e",
+  "entry_id": "ja-a2b3338df25969a3",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a2b3338df25969a3",
+      "headword": "逆立てる",
+      "reading": "さかだてる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-a2b3338df25969a3-1",
+          "definition": "To make something, especially hair or fur, stand on end; to bristle."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "黒は背中の毛を逆立てて怒った。",
+        "gloss": "bristling its fur",
+        "sense_id": "ja-a2b3338df25969a3-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a3d934cdc2dcf3a98bbbcd9dc2aeb4b160253ccf76d7c647df0d4251cfcf7832"
+}

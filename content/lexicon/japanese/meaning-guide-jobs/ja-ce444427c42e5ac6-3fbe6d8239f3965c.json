@@ -1,0 +1,32 @@
+{
+  "id": "ja-ce444427c42e5ac6-3fbe6d8239f3965c",
+  "entry_id": "ja-ce444427c42e5ac6",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ce444427c42e5ac6",
+      "headword": "猫",
+      "reading": "ねこ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-ce444427c42e5ac6-1",
+          "definition": "Cat."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は猫です。",
+        "gloss": "cat",
+        "sense_id": "ja-ce444427c42e5ac6-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3b181d2d0a486af2b9c9f83b6a395778267c0eff624b3e6d217cbf273e82602b"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-5b53c38126702781-6c11183fd1898fad",
+  "entry_id": "ja-5b53c38126702781",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5b53c38126702781",
+      "headword": "露",
+      "reading": "つゆ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-5b53c38126702781-1",
+          "definition": "dew"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そして、絵をかくなら自然そのものを写すべきだ、空には星、地には露、池には金魚、枯れ木には鳥がいる、自然全体が大きな絵なのだ、と語った。",
+        "gloss": "dew",
+        "sense_id": "ja-5b53c38126702781-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "16b3757ea9ee975deec0255ff7a9d364b3e62abc73a1141ef6c74d6ad171e929"
+}

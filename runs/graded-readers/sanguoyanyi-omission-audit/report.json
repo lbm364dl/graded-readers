@@ -1,0 +1,4073 @@
+{
+  "status": "complete",
+  "updated_at": "2026-08-07T11:09:31.761141+00:00",
+  "risky_scenes": 176,
+  "chapters_audited": 176,
+  "chapter_results": [
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_011-hsk1",
+      "level": "hsk1",
+      "target_chars": 140,
+      "candidate_cjk": 176,
+      "required_range": [
+        98,
+        182
+      ],
+      "material_findings": [
+        {
+          "omission_note": "省略陈登、田楷援军抵达和与曹军对峙。",
+          "classification": "material",
+          "reason": "田楷援军抵达并与孔融形成对峙态势，直接解释曹操分兵、暂不攻城的战局变化，属于重要事件和战术因果。",
+          "required_fix": "补入陈登带回田楷援军、孔融与田楷依山下寨，以及曹操因两路援军到来而分兵对峙的情节。"
+        },
+        {
+          "omission_note": "省略刘备写信劝曹操退兵，以及曹操因吕布袭兖州而退兵的因果细节。",
+          "classification": "material",
+          "reason": "书信劝退、曹操的反应及郭嘉建议构成刘备与曹操之间的外交互动；吕布袭取兖州则是曹操退兵的直接原因，省略会削弱退兵的完整因果链。",
+          "required_fix": "补入刘备致书劝曹操先顾国难、曹操 initially 拒绝后因吕布袭破兖州而采纳郭嘉建议退兵的过程。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "omission_note": "省略陈登、田楷援军抵达和与曹军对峙。",
+          "classification": "material",
+          "reason": "田楷援军抵达并与孔融形成对峙态势，直接解释曹操分兵、暂不攻城的战局变化，属于重要事件和战术因果。",
+          "required_fix": "补入陈登带回田楷援军、孔融与田楷依山下寨，以及曹操因两路援军到来而分兵对峙的情节。"
+        },
+        {
+          "omission_note": "省略刘备写信劝曹操退兵，以及曹操因吕布袭兖州而退兵的因果细节。",
+          "classification": "material",
+          "reason": "书信劝退、曹操的反应及郭嘉建议构成刘备与曹操之间的外交互动；吕布袭取兖州则是曹操退兵的直接原因，省略会削弱退兵的完整因果链。",
+          "required_fix": "补入刘备致书劝曹操先顾国难、曹操 initially 拒绝后因吕布袭破兖州而采纳郭嘉建议退兵的过程。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 8.0,
+        "readability": 8.5,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 176,
+          "review": {
+            "source_fidelity": 5,
+            "naturalness": 7,
+            "readability": 7,
+            "material_omissions": [
+              "省略孔融劝刘备共同救援徐州、刘备承诺借兵后必至的动机与承诺，导致刘备前往徐州的因果链不完整。"
+            ],
+            "unsupported_additions": [],
+            "distortions": [
+              "将赵云写成参与关北海之战；原文中赵云是在刘备离开北海后才借兵随行救援徐州。",
+              "将太史慈持孔融书突围的目的写成请刘备救徐州；原文中太史慈首先是请刘备救援北海，之后糜竺才说明徐州求救。",
+              "“操听郭嘉退兵”略混淆因果：曹操退兵的直接原因是吕布袭破兖州，郭嘉只是建议借机退军卖刘备人情。"
+            ],
+            "language_problems": [
+              "“献计请孔融、陈登求田楷援徐州”结构略有歧义，容易理解为请孔融和陈登共同求田楷。"
+            ],
+            "verdict": "revise",
+            "omissions": []
+          },
+          "passed": false
+        },
+        {
+          "round": 2,
+          "candidate_cjk": 178,
+          "review": {
+            "source_fidelity": 7,
+            "naturalness": 8,
+            "readability": 7,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [
+              "“夜袭西寨被围”按语法将夜袭者理解为吕布，但原文是曹操夜袭西寨，随后被吕布军包围。",
+              "“陈登带田楷到”说成陈登亲自带来田楷，原文只是陈登回报田楷已领兵来救。"
+            ],
+            "language_problems": [
+              "“夜袭西寨被围”主语承接错误且造成关键情节歧义。"
+            ],
+            "verdict": "revise",
+            "omissions": []
+          },
+          "passed": false
+        },
+        {
+          "round": 3,
+          "candidate_cjk": 158,
+          "review": {
+            "source_fidelity": 7,
+            "naturalness": 7,
+            "readability": 7,
+            "material_omissions": [
+              "未交代张闿杀曹嵩导致曹操进攻徐州、陶谦求援的起因，削弱了主要冲突的因果关系。",
+              "未交代孔融接受求援后先拟致书曹操、遭管亥围城，以及孔融劝刘备救徐州的过程和动机。",
+              "遗漏吕布在濮阳先击败曹操的关键战斗；这也是曹操随后夜袭西寨的重要动因。",
+              "遗漏曹操夺下西寨后遭高顺、吕布及多路将领接连围攻的过程，典韦救主的因果桥梁不完整。"
+            ],
+            "unsupported_additions": [],
+            "distortions": [
+              "“答应借兵必到”把刘备“借得军或借不得军都必亲至”的承诺，缩成了借到兵后必到，改变了原意。",
+              "“刘备关张斩管亥”将斩杀管亥的功劳归给刘备、关羽、张飞；原文是关羽单独斩杀管亥，太史慈和张飞随后冲阵。"
+            ],
+            "language_problems": [
+              "“答应借兵必到”表达生硬且有歧义，无法清楚传达刘备无论借兵与否都会前往的承诺。",
+              "“刘备关张斩管亥”并列关系和施事者不清，容易误解为三人共同斩杀管亥。"
+            ],
+            "verdict": "revise",
+            "omissions": []
+          },
+          "passed": false
+        },
+        {
+          "round": 4,
+          "candidate_cjk": 182,
+          "review": {
+            "source_fidelity": 8,
+            "naturalness": 7,
+            "readability": 7,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [
+              "“备张飞败于禁入城”缺少标点且结构歧义，容易理解为刘备、张飞被于禁击败后入城；应明确为“刘备和张飞击败于禁，进入徐州城”。"
+            ],
+            "verdict": "revise",
+            "omissions": []
+          },
+          "passed": false
+        },
+        {
+          "round": 5,
+          "candidate_cjk": 176,
+          "review": {
+            "source_fidelity": 8.5,
+            "naturalness": 8.0,
+            "readability": 8.5,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_011-hsk1",
+        "candidate_sha256": "de98f2e2bcda1438f39fe14f22d8bb4f085e6974a3c0986f67f0832a5f4269c3",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_011-hsk1/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_017-hsk2",
+      "level": "hsk2",
+      "target_chars": 300,
+      "candidate_cjk": 327,
+      "required_range": [
+        210,
+        390
+      ],
+      "material_findings": [
+        {
+          "omission_note": "省略了袁术杀金尚、任命纪灵等次要情节。",
+          "classification": "material",
+          "reason": "这省略了袁术处死拒命官员及任命纪灵统领后援的具体事件，涉及袁术的统治行为和后续军事调度，不能仅视为气氛或重复描写。",
+          "required_fix": "补充袁术因金尚不从而杀之，并任命纪灵为七路都救应使。"
+        },
+        {
+          "omission_note": "省略了曹操攻城时斩退避将领、荀彧劝止渡淮等细节。",
+          "classification": "material",
+          "reason": "斩杀畏战将领体现曹操严厉整军的重要性格特征；荀彧劝止渡淮则交代了攻破寿春后暂缓追击袁术的决策过程和时间顺序。",
+          "required_fix": "补充曹操斩杀临阵退避的裨将，以及荀彧以荒旱缺粮为由劝曹操暂回许都、待来春再征袁术。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "omission_note": "省略了袁术杀金尚、任命纪灵等次要情节。",
+          "classification": "material",
+          "reason": "这省略了袁术处死拒命官员及任命纪灵统领后援的具体事件，涉及袁术的统治行为和后续军事调度，不能仅视为气氛或重复描写。",
+          "required_fix": "补充袁术因金尚不从而杀之，并任命纪灵为七路都救应使。"
+        },
+        {
+          "omission_note": "省略了曹操攻城时斩退避将领、荀彧劝止渡淮等细节。",
+          "classification": "material",
+          "reason": "斩杀畏战将领体现曹操严厉整军的重要性格特征；荀彧劝止渡淮则交代了攻破寿春后暂缓追击袁术的决策过程和时间顺序。",
+          "required_fix": "补充曹操斩杀临阵退避的裨将，以及荀彧以荒旱缺粮为由劝曹操暂回许都、待来春再征袁术。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 327,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_017-hsk2",
+        "candidate_sha256": "f44686d82dd836942d0b33ac4cf2b675d2374baf4254f75ba29b813e5c60a47c",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_017-hsk2/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_019-hsk3",
+      "level": "hsk3",
+      "target_chars": 500,
+      "candidate_cjk": 525,
+      "required_range": [
+        350,
+        650
+      ],
+      "material_findings": [
+        {
+          "omission_note": "省略了玄德投曹后曹操出兵徐州、陈登具体设计诱骗吕布的部分细节。",
+          "classification": "material",
+          "reason": "虽保留了曹操进攻徐州、陈登诱骗吕布及曹仁袭取小沛的概括，但省略了陈登具体欺骗、调动陈宫并导致吕布失守徐州的关键因果与行动过程。",
+          "required_fix": "补充曹操进兵徐州的推进，以及陈登如何以假消息、内应和火号诱使陈宫弃关、导致吕布失城的关键过程。"
+        },
+        {
+          "omission_note": "省略了袁术拒绝立即出兵、郝萌被擒及曹操严令各营防守等情节。",
+          "classification": "material",
+          "reason": "袁术要求先送女儿才出兵解释了援军未到；郝萌被擒及曹操下令严防直接影响后续吕布亲自护送女儿却无法突围的行动和结果。",
+          "required_fix": "补充袁术提出先婚后援、郝萌护送途中被张飞擒获，以及曹操因此命令各营严密防守的情节。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "omission_note": "省略了玄德投曹后曹操出兵徐州、陈登具体设计诱骗吕布的部分细节。",
+          "classification": "material",
+          "reason": "虽保留了曹操进攻徐州、陈登诱骗吕布及曹仁袭取小沛的概括，但省略了陈登具体欺骗、调动陈宫并导致吕布失守徐州的关键因果与行动过程。",
+          "required_fix": "补充曹操进兵徐州的推进，以及陈登如何以假消息、内应和火号诱使陈宫弃关、导致吕布失城的关键过程。"
+        },
+        {
+          "omission_note": "省略了袁术拒绝立即出兵、郝萌被擒及曹操严令各营防守等情节。",
+          "classification": "material",
+          "reason": "袁术要求先送女儿才出兵解释了援军未到；郝萌被擒及曹操下令严防直接影响后续吕布亲自护送女儿却无法突围的行动和结果。",
+          "required_fix": "补充袁术提出先婚后援、郝萌护送途中被张飞擒获，以及曹操因此命令各营严密防守的情节。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 525,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_019-hsk3",
+        "candidate_sha256": "763d7f30a8e9c5bd60cf972d7bf2adf58bd2be7a6d66571a7463da5360240702",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_019-hsk3/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_020-hsk1",
+      "level": "hsk1",
+      "target_chars": 140,
+      "candidate_cjk": 176,
+      "required_range": [
+        98,
+        182
+      ],
+      "material_findings": [
+        {
+          "omission_note": "略去献帝与董承接触、曹操盘查衣带等过程",
+          "classification": "material",
+          "reason": "献帝向董承转交血诏以及曹操盘查衣带、 conspiracy nearly exposed 的过程构成密诏传递的关键因果和危机，略去后董承如何取得密诏及行动为何未败露不够完整。",
+          "required_fix": "补写献帝在功臣阁借赐袍带玉带传递血诏、曹操拦截盘查并最终归还衣带的关键过程。"
+        },
+        {
+          "omission_note": "略去结盟时众人立誓及马腾提出刘备人选的具体铺垫",
+          "classification": "material",
+          "reason": "众人歃血立誓明确了联盟的正式成立与承诺，马腾识别刘备宗族身份并提出邀其参与则交代了推荐刘备的动机；接受场景虽保留结盟和建议结果，但缺少关键铺垫。",
+          "required_fix": "补写众人立义状、歃血发誓的过程，并交代马腾查阅刘氏宗族后提出邀请刘备的理由。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "omission_note": "略去献帝与董承接触、曹操盘查衣带等过程",
+          "classification": "material",
+          "reason": "献帝向董承转交血诏以及曹操盘查衣带、 conspiracy nearly exposed 的过程构成密诏传递的关键因果和危机，略去后董承如何取得密诏及行动为何未败露不够完整。",
+          "required_fix": "补写献帝在功臣阁借赐袍带玉带传递血诏、曹操拦截盘查并最终归还衣带的关键过程。"
+        },
+        {
+          "omission_note": "略去结盟时众人立誓及马腾提出刘备人选的具体铺垫",
+          "classification": "material",
+          "reason": "众人歃血立誓明确了联盟的正式成立与承诺，马腾识别刘备宗族身份并提出邀其参与则交代了推荐刘备的动机；接受场景虽保留结盟和建议结果，但缺少关键铺垫。",
+          "required_fix": "补写众人立义状、歃血发誓的过程，并交代马腾查阅刘氏宗族后提出邀请刘备的理由。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 176,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 8,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_020-hsk1",
+        "candidate_sha256": "3d8eee7b6a36be1392950a1ae5154cc334515291fa9dd0191e8633c204d7579b",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_020-hsk1/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_025-hsk2",
+      "level": "hsk2",
+      "target_chars": 300,
+      "candidate_cjk": 300,
+      "required_range": [
+        210,
+        390
+      ],
+      "material_findings": [
+        {
+          "field": "distortions",
+          "finding_note": "“关羽把礼物给二夫人”表述容易让人误解为连赤兔马也送给了二夫人；原文只是将美女、金帛等物送入内宅，赤兔马由关羽自己使用。",
+          "classification": "material",
+          "reason": "该表述可能改变赤兔马的归属这一具体事实；原文中赤兔马由关羽自己使用，并成为其日后寻找刘备的重要条件。",
+          "required_fix": "改为“曹操送美女、金帛和赤兔马；关羽把美女、金帛等物送入内宅给二夫人，赤兔马由自己使用”。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "field": "distortions",
+          "finding_note": "“关羽把礼物给二夫人”表述容易让人误解为连赤兔马也送给了二夫人；原文只是将美女、金帛等物送入内宅，赤兔马由关羽自己使用。",
+          "classification": "material",
+          "reason": "该表述可能改变赤兔马的归属这一具体事实；原文中赤兔马由关羽自己使用，并成为其日后寻找刘备的重要条件。",
+          "required_fix": "改为“曹操送美女、金帛和赤兔马；关羽把美女、金帛等物送入内宅给二夫人，赤兔马由自己使用”。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 300,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_025-hsk2",
+        "candidate_sha256": "ab9a06856f14b5e671309e4cb0a00c6818cc945bf4c37e7ceabccf12f5db9159",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_025-hsk2/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_027-hsk1",
+      "level": "hsk1",
+      "target_chars": 140,
+      "candidate_cjk": 152,
+      "required_range": [
+        98,
+        182
+      ],
+      "material_findings": [
+        {
+          "field": "language_problems",
+          "finding_note": "“胡班因父亲书信相救”略有歧义，容易理解为胡班被书信救助，改为“胡班读父亲书信后出手相救”更清楚。",
+          "classification": "material",
+          "reason": "该表述可能将原文中胡班读信后主动救助关羽，误解为胡班被父亲书信救助，造成施事者和因果方向的实质性歧义。",
+          "required_fix": "改为“胡班读父亲书信后出手相救”更清楚。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "field": "language_problems",
+          "finding_note": "“胡班因父亲书信相救”略有歧义，容易理解为胡班被书信救助，改为“胡班读父亲书信后出手相救”更清楚。",
+          "classification": "material",
+          "reason": "该表述可能将原文中胡班读信后主动救助关羽，误解为胡班被父亲书信救助，造成施事者和因果方向的实质性歧义。",
+          "required_fix": "改为“胡班读父亲书信后出手相救”更清楚。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 152,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_027-hsk1",
+        "candidate_sha256": "7b9930626d146fe6c0fce14b16bfabc6f7f364e65dc9f50bd5e013bf9c329e00",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_027-hsk1/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_030-hsk3",
+      "level": "hsk3",
+      "target_chars": 500,
+      "candidate_cjk": 465,
+      "required_range": [
+        350,
+        650
+      ],
+      "material_findings": [
+        {
+          "omission_note": "略去了曹操夜袭乌巢前的具体防守部署、沮授观天象劝阻袁绍等细节，但不影响主线理解。",
+          "classification": "material",
+          "reason": "沮授观天象并劝阻袁绍体现其重要的忠谏形象，也进一步刻画袁绍拒绝正确建议的关键性格；这些内容虽不改变战役主线，却属于重要 characterization，而非单纯氛围或装饰性细节。",
+          "required_fix": "补充曹操夜袭前安排荀攸、贾诩、曹洪守寨及诸将分兵设伏的部署，并写明沮授观天象后警告乌巢有失、袁绍拒不采纳。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "omission_note": "略去了曹操夜袭乌巢前的具体防守部署、沮授观天象劝阻袁绍等细节，但不影响主线理解。",
+          "classification": "material",
+          "reason": "沮授观天象并劝阻袁绍体现其重要的忠谏形象，也进一步刻画袁绍拒绝正确建议的关键性格；这些内容虽不改变战役主线，却属于重要 characterization，而非单纯氛围或装饰性细节。",
+          "required_fix": "补充曹操夜袭前安排荀攸、贾诩、曹洪守寨及诸将分兵设伏的部署，并写明沮授观天象后警告乌巢有失、袁绍拒不采纳。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 465,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_030-hsk3",
+        "candidate_sha256": "35ddadfb19e58779d39bb1bbaf5c2f92badfc00d5661c40380bbd83695ff4eea",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_030-hsk3/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_041-hsk3",
+      "level": "hsk3",
+      "target_chars": 500,
+      "candidate_cjk": 462,
+      "required_range": [
+        350,
+        650
+      ],
+      "material_findings": [
+        {
+          "field": "distortions",
+          "finding_note": "“战退张郃”略显不准：原文中赵云与张郃交战后夺路而走，张郃因坐骑跃出土坑而惊退，并非被赵云正面击退。",
+          "classification": "material",
+          "reason": "“战退张郃”改变了交战结果及张郃退却的原因；原文是赵云夺路而走，坐骑跃出土坑后张郃受惊退去。",
+          "required_fix": "将“战退张郃”改为“与张郃交战后夺路而走，因坐骑跃出土坑惊退张郃”。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "field": "distortions",
+          "finding_note": "“战退张郃”略显不准：原文中赵云与张郃交战后夺路而走，张郃因坐骑跃出土坑而惊退，并非被赵云正面击退。",
+          "classification": "material",
+          "reason": "“战退张郃”改变了交战结果及张郃退却的原因；原文是赵云夺路而走，坐骑跃出土坑后张郃受惊退去。",
+          "required_fix": "将“战退张郃”改为“与张郃交战后夺路而走，因坐骑跃出土坑惊退张郃”。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 462,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_041-hsk3",
+        "candidate_sha256": "907db662d3de7bcccfbdd34f5af4e41516d01845cf1218659ca79c9222dd8130",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_041-hsk3/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_048-hsk2",
+      "level": "hsk2",
+      "target_chars": 300,
+      "candidate_cjk": 320,
+      "required_range": [
+        210,
+        390
+      ],
+      "material_findings": [
+        {
+          "omission_note": "省略了臧霸随徐庶同行、曹操命其星夜赶往散关等细节。",
+          "classification": "material",
+          "reason": "省略了曹操指定臧霸同行及连夜出发这一具体行动，改变了徐庶脱身事件中的参与者身份和行动安排。",
+          "required_fix": "补充曹操命臧霸为先锋、与徐庶率三千兵星夜前往散关。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "omission_note": "省略了臧霸随徐庶同行、曹操命其星夜赶往散关等细节。",
+          "classification": "material",
+          "reason": "省略了曹操指定臧霸同行及连夜出发这一具体行动，改变了徐庶脱身事件中的参与者身份和行动安排。",
+          "required_fix": "补充曹操命臧霸为先锋、与徐庶率三千兵星夜前往散关。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 320,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_048-hsk2",
+        "candidate_sha256": "0f6328cd82091e9cd46a56ce86e8aeda70fec5e747022f0c1cd5cea986a851f4",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_048-hsk2/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_052-hsk1",
+      "level": "hsk1",
+      "target_chars": 140,
+      "candidate_cjk": 179,
+      "required_range": [
+        98,
+        182
+      ],
+      "material_findings": [
+        {
+          "omission_note": "省略了取零陵后刘备安抚军民及赵云、张飞争取任务的细节。",
+          "classification": "material",
+          "reason": "赵云、张飞争取任务体现二人的重要性格和关系，并解释赵云抽签领兵取桂阳及张飞随后请求取武陵的动机；刘备安抚军民虽较次要，但与该关键过渡一并遗漏，削弱了后续情节的连贯性。",
+          "required_fix": "补回刘备入城安抚军民、赏劳三军，以及赵云与张飞争取出兵、拈鬮决定由赵云领三千兵取桂阳的关键过程。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "omission_note": "省略了取零陵后刘备安抚军民及赵云、张飞争取任务的细节。",
+          "classification": "material",
+          "reason": "赵云、张飞争取任务体现二人的重要性格和关系，并解释赵云抽签领兵取桂阳及张飞随后请求取武陵的动机；刘备安抚军民虽较次要，但与该关键过渡一并遗漏，削弱了后续情节的连贯性。",
+          "required_fix": "补回刘备入城安抚军民、赏劳三军，以及赵云与张飞争取出兵、拈鬮决定由赵云领三千兵取桂阳的关键过程。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 175,
+          "review": {
+            "source_fidelity": 7.8,
+            "naturalness": 8.3,
+            "readability": 8.5,
+            "material_omissions": [
+              "省略了趙範投降後與趙雲結為兄弟的關係（以及同姓同鄉等背景），削弱了趙雲拒絕娶樊氏及後續識破趙範陰謀的動機與連貫性。"
+            ],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "revise",
+            "omissions": []
+          },
+          "passed": false
+        },
+        {
+          "round": 2,
+          "candidate_cjk": 179,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_052-hsk1",
+        "candidate_sha256": "acbbf4743fcd12856fb1ce182411cef063be7de82cfebb84947e9c881e438d81",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_052-hsk1/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_053-hsk1",
+      "level": "hsk1",
+      "target_chars": 140,
+      "candidate_cjk": 159,
+      "required_range": [
+        98,
+        182
+      ],
+      "material_findings": [
+        {
+          "field": "distortions",
+          "finding_note": "“火攻刺杀计”略不准确，原文是以火为号制造混乱并伺机刺杀张辽，并非直接火攻。",
+          "classification": "material",
+          "reason": "“火攻”将原文以火为号、制造混乱后刺杀张辽的计策表述成直接火攻，改变了行动方式和因果机制。",
+          "required_fix": "将“火攻刺杀计”改为“以火为号制造混乱并伺机刺杀张辽的计策”。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "field": "distortions",
+          "finding_note": "“火攻刺杀计”略不准确，原文是以火为号制造混乱并伺机刺杀张辽，并非直接火攻。",
+          "classification": "material",
+          "reason": "“火攻”将原文以火为号、制造混乱后刺杀张辽的计策表述成直接火攻，改变了行动方式和因果机制。",
+          "required_fix": "将“火攻刺杀计”改为“以火为号制造混乱并伺机刺杀张辽的计策”。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 159,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_053-hsk1",
+        "candidate_sha256": "e33ccfd845ac509ec16147e5e7a203c1c14904a4ddf1bcda2533887124c4ca1f",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_053-hsk1/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_058-hsk3",
+      "level": "hsk3",
+      "target_chars": 500,
+      "candidate_cjk": 427,
+      "required_range": [
+        350,
+        650
+      ],
+      "material_findings": [
+        {
+          "omission_note": "省略了徐晃、朱灵袭击河西的具体部署及曹洪准备船筏等细节，但不影响主线 retelling。",
+          "classification": "material",
+          "reason": "徐晃、朱灵伏击河西是曹操截断西凉军退路的重要战略部署，曹洪准备船筏则直接铺垫曹操渡渭河；省略后还掩盖了蒲阪津作为船筏地点与伏击地点的区别，影响事件因果和地点脉络。",
+          "required_fix": "补回曹操命徐晃、朱灵率四千兵袭击河西并伏于山谷，以及命曹洪在蒲阪津准备船筏的具体部署；明确徐晃、朱灵并非伏于蒲阪津。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "omission_note": "省略了徐晃、朱灵袭击河西的具体部署及曹洪准备船筏等细节，但不影响主线 retelling。",
+          "classification": "material",
+          "reason": "徐晃、朱灵伏击河西是曹操截断西凉军退路的重要战略部署，曹洪准备船筏则直接铺垫曹操渡渭河；省略后还掩盖了蒲阪津作为船筏地点与伏击地点的区别，影响事件因果和地点脉络。",
+          "required_fix": "补回曹操命徐晃、朱灵率四千兵袭击河西并伏于山谷，以及命曹洪在蒲阪津准备船筏的具体部署；明确徐晃、朱灵并非伏于蒲阪津。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 8,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 427,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 8,
+            "readability": 8,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_058-hsk3",
+        "candidate_sha256": "7b0cd5a28d385e66bc9c4472e398e50a455508e2f7ca5693dc036bd336e7353b",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_058-hsk3/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_064-hsk1",
+      "level": "hsk1",
+      "target_chars": 140,
+      "candidate_cjk": 181,
+      "required_range": [
+        98,
+        182
+      ],
+      "material_findings": [
+        {
+          "omission_note": "省略了刘备军在雒城的多次交战及吴兰、雷同投降等细节",
+          "classification": "material",
+          "reason": "这些内容包含刘备军与张任部将的关键交战及吴兰、雷同投降这一实际事件，省略后削弱了雒城战事的完整因果链。",
+          "required_fix": "补充刘备军在雒城的主要交战过程，以及吴兰、雷同战败投降。"
+        },
+        {
+          "omission_note": "省略了张任被斩后葬于金雁桥、刘瑰被张翼杀死并开城投降等细节",
+          "classification": "material",
+          "reason": "刘瑰被杀并开城直接促成雒城陷落，张任葬于金雁桥则体现刘备对其忠烈的处理，均涉及重要事件和人物结局。",
+          "required_fix": "补充张任葬于金雁桥，以及张翼杀刘瑰、开城投降的经过。"
+        },
+        {
+          "omission_note": "省略了郑度焚毁粮草、坚壁清野的建议及刘璋拒绝",
+          "classification": "material",
+          "reason": "这是刘璋面对刘备进攻时的重要战略选择，既交代了郑度的应对方案，也体现刘璋拒绝牺牲百姓、坚持保民的动机和性格。",
+          "required_fix": "补充郑度提出焚毁粮草、坚壁清野的计策，以及刘璋以保全民众为由拒绝。"
+        },
+        {
+          "omission_note": "省略了杨阜、姜叙等人起兵反马超的具体过程和家属遇害细节",
+          "classification": "material",
+          "reason": "起兵过程构成马超败亡的主要因果链，家属遇害又解释了历城屠杀及各方仇恨，省略后会显著削弱人物动机和事件背景。",
+          "required_fix": "补充杨阜、姜叙、尹奉、赵昂等人谋划起兵、夹击马超，以及相关家属遇害的关键经过。"
+        },
+        {
+          "omission_note": "省略了马超投奔张鲁后张鲁原拟招婿、杨柏反对等细节",
+          "classification": "material",
+          "reason": "张鲁招婿计划及杨柏反对造成马超与杨柏之间的敌意，并推动后续张鲁阵营内部的关系和行动，属于重要关系与动机信息。",
+          "required_fix": "补充张鲁原拟招马超为婿、杨柏劝阻，以及由此引发的马超对杨柏不满。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "omission_note": "省略了刘备军在雒城的多次交战及吴兰、雷同投降等细节",
+          "classification": "material",
+          "reason": "这些内容包含刘备军与张任部将的关键交战及吴兰、雷同投降这一实际事件，省略后削弱了雒城战事的完整因果链。",
+          "required_fix": "补充刘备军在雒城的主要交战过程，以及吴兰、雷同战败投降。"
+        },
+        {
+          "omission_note": "省略了张任被斩后葬于金雁桥、刘瑰被张翼杀死并开城投降等细节",
+          "classification": "material",
+          "reason": "刘瑰被杀并开城直接促成雒城陷落，张任葬于金雁桥则体现刘备对其忠烈的处理，均涉及重要事件和人物结局。",
+          "required_fix": "补充张任葬于金雁桥，以及张翼杀刘瑰、开城投降的经过。"
+        },
+        {
+          "omission_note": "省略了郑度焚毁粮草、坚壁清野的建议及刘璋拒绝",
+          "classification": "material",
+          "reason": "这是刘璋面对刘备进攻时的重要战略选择，既交代了郑度的应对方案，也体现刘璋拒绝牺牲百姓、坚持保民的动机和性格。",
+          "required_fix": "补充郑度提出焚毁粮草、坚壁清野的计策，以及刘璋以保全民众为由拒绝。"
+        },
+        {
+          "omission_note": "省略了杨阜、姜叙等人起兵反马超的具体过程和家属遇害细节",
+          "classification": "material",
+          "reason": "起兵过程构成马超败亡的主要因果链，家属遇害又解释了历城屠杀及各方仇恨，省略后会显著削弱人物动机和事件背景。",
+          "required_fix": "补充杨阜、姜叙、尹奉、赵昂等人谋划起兵、夹击马超，以及相关家属遇害的关键经过。"
+        },
+        {
+          "omission_note": "省略了马超投奔张鲁后张鲁原拟招婿、杨柏反对等细节",
+          "classification": "material",
+          "reason": "张鲁招婿计划及杨柏反对造成马超与杨柏之间的敌意，并推动后续张鲁阵营内部的关系和行动，属于重要关系与动机信息。",
+          "required_fix": "补充张鲁原拟招马超为婿、杨柏劝阻，以及由此引发的马超对杨柏不满。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 8,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 181,
+          "review": {
+            "source_fidelity": 6,
+            "naturalness": 6,
+            "readability": 7,
+            "material_omissions": [
+              "未交代杨阜因葬妻返乡后劝姜叙等谋划起兵、家属支持报仇，也漏掉梁宽、赵衢在冀城杀死马超妻儿及亲属这一关键事件。"
+            ],
+            "unsupported_additions": [
+              "“鲁出兵”提前断言张鲁已出兵；原文只写有人请命出兵擒刘备，尚未实际出兵。"
+            ],
+            "distortions": [
+              "“吴兰、雷同败降，追备”误写了二将的行动顺序和追击对象；原文是二将夹攻黄忠、魏延，后被刘备、张飞截住归路，才投降。",
+              "“鲁出兵”将原文结尾的出兵请求改成了已经出兵，改变了结尾的悬念和时间顺序。"
+            ],
+            "language_problems": [
+              "“吴兰、雷同败降，追备，张飞、严颜救”语义断裂且前后矛盾，难以判断谁追谁、谁被救。"
+            ],
+            "verdict": "revise",
+            "omissions": []
+          },
+          "passed": false
+        },
+        {
+          "round": 2,
+          "candidate_cjk": 181,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 8,
+            "readability": 8,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_064-hsk1",
+        "candidate_sha256": "9608c9a11740fd229d18569306d052a1f2d391727dcccbbc83b2ab3076159baf",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_064-hsk1/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_069-hsk2",
+      "level": "hsk2",
+      "target_chars": 300,
+      "candidate_cjk": 245,
+      "required_range": [
+        210,
+        390
+      ],
+      "material_findings": [
+        {
+          "field": "unsupported_additions",
+          "finding_note": "“失败的伏笔已经留下”是对张郃结局的推断，原文此处尚未交代胜负。",
+          "classification": "material",
+          "reason": "原文只写张郃请战并待下文分解，未暗示其必然失败；该表述提前推断了未交代的战果。",
+          "required_fix": "删去“失败的伏笔已经留下”，改为“张郃带兵攻打巴西，胜负待下文分解”。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "field": "unsupported_additions",
+          "finding_note": "“失败的伏笔已经留下”是对张郃结局的推断，原文此处尚未交代胜负。",
+          "classification": "material",
+          "reason": "原文只写张郃请战并待下文分解，未暗示其必然失败；该表述提前推断了未交代的战果。",
+          "required_fix": "删去“失败的伏笔已经留下”，改为“张郃带兵攻打巴西，胜负待下文分解”。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 245,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_069-hsk2",
+        "candidate_sha256": "341c8f2ac8bdc2deef2017a44faccb36b13428b0e8ef3291d156ede27b064791",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_069-hsk2/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_073-hsk1",
+      "level": "hsk1",
+      "target_chars": 140,
+      "candidate_cjk": 152,
+      "required_range": [
+        98,
+        182
+      ],
+      "material_findings": [
+        {
+          "omission_note": "省略了汉中王正式受封、官职封赏及上表许都等细节。",
+          "classification": "material",
+          "reason": "正式受封、官职任命和上表许都是刘备进位及政权组织的重要事件，确立了人物身份、权力结构和后续政治行动。",
+          "required_fix": "补充沔阳正式受封汉中王、主要官职封赏及上表许都的情节。"
+        },
+        {
+          "omission_note": "省略了孙权与曹操具体谋划夹击荆州的过程。",
+          "classification": "material",
+          "reason": "具体谋划交代了曹操、孙权协同取荆州的动机、分工与因果链，是后续荆州危机和曹仁救援情节的关键背景。",
+          "required_fix": "补充司马懿提出的夹击计策、孙权拒婚后决定取荆州，以及曹仁陆路进攻、东吴水路接应的安排。"
+        },
+        {
+          "omission_note": "省略了关羽受封前将军、假节钺等关键背景。",
+          "classification": "material",
+          "reason": "前将军、假节钺及都督荆襄九郡明确了关羽的军事权限和攻打樊城的合法依据，属于推动后续行动的重要背景。",
+          "required_fix": "补充汉中王授关羽前将军、假节钺并都督荆襄九郡事的受命情节。"
+        },
+        {
+          "omission_note": "省略了襄阳战役中的诱敌、伏击及夏侯存、翟元被斩等具体战果。",
+          "classification": "material",
+          "reason": "诱敌伏击构成襄阳取胜的核心战术过程，夏侯存、翟元被斩是战役的重要战果；删去后虽保留结果，却遗漏了实质性战斗事件和关羽军队的关键表现。",
+          "required_fix": "补充关羽诱敌退兵、关平与廖化伏击曹军，以及夏侯存、翟元分别被斩的战斗过程。"
+        },
+        {
+          "field": "distortions",
+          "finding_note": "“让他另选先锋”不够准确，原文是于禁请求先锋，曹操向众将询问后有人自告奋勇。",
+          "classification": "material",
+          "reason": "该表述改变了事件中的行动者和过程：原文是于禁请求先锋，曹操询问众将后由一人自告奋勇，并非曹操让于禁另行挑选。",
+          "required_fix": "改为“曹操命于禁出兵；于禁请求一名先锋，曹操询问众将后有人自告奋勇。”"
+        }
+      ],
+      "material_omissions": [
+        {
+          "omission_note": "省略了汉中王正式受封、官职封赏及上表许都等细节。",
+          "classification": "material",
+          "reason": "正式受封、官职任命和上表许都是刘备进位及政权组织的重要事件，确立了人物身份、权力结构和后续政治行动。",
+          "required_fix": "补充沔阳正式受封汉中王、主要官职封赏及上表许都的情节。"
+        },
+        {
+          "omission_note": "省略了孙权与曹操具体谋划夹击荆州的过程。",
+          "classification": "material",
+          "reason": "具体谋划交代了曹操、孙权协同取荆州的动机、分工与因果链，是后续荆州危机和曹仁救援情节的关键背景。",
+          "required_fix": "补充司马懿提出的夹击计策、孙权拒婚后决定取荆州，以及曹仁陆路进攻、东吴水路接应的安排。"
+        },
+        {
+          "omission_note": "省略了关羽受封前将军、假节钺等关键背景。",
+          "classification": "material",
+          "reason": "前将军、假节钺及都督荆襄九郡明确了关羽的军事权限和攻打樊城的合法依据，属于推动后续行动的重要背景。",
+          "required_fix": "补充汉中王授关羽前将军、假节钺并都督荆襄九郡事的受命情节。"
+        },
+        {
+          "omission_note": "省略了襄阳战役中的诱敌、伏击及夏侯存、翟元被斩等具体战果。",
+          "classification": "material",
+          "reason": "诱敌伏击构成襄阳取胜的核心战术过程，夏侯存、翟元被斩是战役的重要战果；删去后虽保留结果，却遗漏了实质性战斗事件和关羽军队的关键表现。",
+          "required_fix": "补充关羽诱敌退兵、关平与廖化伏击曹军，以及夏侯存、翟元分别被斩的战斗过程。"
+        },
+        {
+          "field": "distortions",
+          "finding_note": "“让他另选先锋”不够准确，原文是于禁请求先锋，曹操向众将询问后有人自告奋勇。",
+          "classification": "material",
+          "reason": "该表述改变了事件中的行动者和过程：原文是于禁请求先锋，曹操询问众将后由一人自告奋勇，并非曹操让于禁另行挑选。",
+          "required_fix": "改为“曹操命于禁出兵；于禁请求一名先锋，曹操询问众将后有人自告奋勇。”"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 176,
+          "review": {
+            "source_fidelity": 7.5,
+            "naturalness": 7.5,
+            "readability": 8,
+            "material_omissions": [
+              "未交代王甫提醒糜芳、傅士仁可能不尽力，以及关羽拒绝改用忠直的赵累，这一防务隐患和关羽轻视劝告的情节关系到后续荆州失守的因果与伏笔。"
+            ],
+            "unsupported_additions": [],
+            "distortions": [
+              "“孙权使人求亲被拒，遂取荆州”把孙权决定谋取荆州写成了已经取下荆州；原文此时只是决定与曹操夹击，尚未攻取。"
+            ],
+            "language_problems": [
+              "“曹操退斜谷”搭配不自然，应为“曹操退至斜谷”；“潘浚守”缺少守卫对象，表意略有歧义。"
+            ],
+            "verdict": "revise",
+            "omissions": []
+          },
+          "passed": false
+        },
+        {
+          "round": 2,
+          "candidate_cjk": 152,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_073-hsk1",
+        "candidate_sha256": "223a11952082cd71eaf1d98615763d14708de6d06211d84470ca91a9a305beeb",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_073-hsk1/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_073-hsk2",
+      "level": "hsk2",
+      "target_chars": 300,
+      "candidate_cjk": 318,
+      "required_range": [
+        210,
+        390
+      ],
+      "material_findings": [
+        {
+          "field": "unsupported_additions",
+          "finding_note": "将“被魏延射了一箭”明确表述为“射伤”，原文未明言伤势。",
+          "classification": "material",
+          "reason": "“射伤”增加了原文未明确说明的受伤事实，属于真实的无依据事实添加。",
+          "required_fix": "将“射伤”改为“被魏延射了一箭”或“遭魏延射了一箭”，不明确断言曹操受伤。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "field": "unsupported_additions",
+          "finding_note": "将“被魏延射了一箭”明确表述为“射伤”，原文未明言伤势。",
+          "classification": "material",
+          "reason": "“射伤”增加了原文未明确说明的受伤事实，属于真实的无依据事实添加。",
+          "required_fix": "将“射伤”改为“被魏延射了一箭”或“遭魏延射了一箭”，不明确断言曹操受伤。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 357,
+          "review": {
+            "source_fidelity": 8,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [
+              "“傅士仁、糜芳分别镇守南郡和公安”按通常语序将二人职位对应写反；原文是糜芳守南郡、傅士仁守公安。"
+            ],
+            "language_problems": [],
+            "verdict": "revise",
+            "omissions": []
+          },
+          "passed": false
+        },
+        {
+          "round": 2,
+          "candidate_cjk": 318,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_073-hsk2",
+        "candidate_sha256": "122cc24ea3ca0743805843aa985665607817e2265fd0ebf798c7827f210120d7",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_073-hsk2/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_080-hsk2",
+      "level": "hsk2",
+      "target_chars": 300,
+      "candidate_cjk": 290,
+      "required_range": [
+        210,
+        390
+      ],
+      "material_findings": [
+        {
+          "omission_note": "略去曹丕两次受诏后具体上表、再降诏的过程及部分官员封赏细节，但不影响主线理解。",
+          "classification": "material",
+          "reason": "两次上表、再降诏及相关劝议交代了曹丕避免篡位之名的动机，并构成最终修筑受禅台的因果过程；官员封赏细节虽可压缩，但该 omission note 同时涵盖了这一重要动机与因果链。",
+          "required_fix": "补回曹丕第一次接受建议后上表谦辞、献帝再降诏、曹丕担忧篡窃之名，以及贾诩提出修筑受禅台的具体过程；官员封赏细节可继续概述。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "omission_note": "略去曹丕两次受诏后具体上表、再降诏的过程及部分官员封赏细节，但不影响主线理解。",
+          "classification": "material",
+          "reason": "两次上表、再降诏及相关劝议交代了曹丕避免篡位之名的动机，并构成最终修筑受禅台的因果过程；官员封赏细节虽可压缩，但该 omission note 同时涵盖了这一重要动机与因果链。",
+          "required_fix": "补回曹丕第一次接受建议后上表谦辞、献帝再降诏、曹丕担忧篡窃之名，以及贾诩提出修筑受禅台的具体过程；官员封赏细节可继续概述。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 290,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_080-hsk2",
+        "candidate_sha256": "a54d33fe78d52fa56ec98fd9c2bebaeac12588f10cb794b88fca17f1051a04cb",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_080-hsk2/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_097-hsk3",
+      "level": "hsk3",
+      "target_chars": 500,
+      "candidate_cjk": 480,
+      "required_range": [
+        350,
+        650
+      ],
+      "material_findings": [
+        {
+          "field": "distortions",
+          "finding_note": "“曹真败退”略显绝对，原文只写曹真得知费耀战败后与郭淮商议退兵，并上表求援。",
+          "classification": "material",
+          "reason": "“败退”将原文中商议退兵、上表求援的计划和请求误写成已经实际退兵，改变了事件状态。",
+          "required_fix": "改为“曹真得知费耀战败后，与郭淮商议退兵，并上表向魏主求援”。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "field": "distortions",
+          "finding_note": "“曹真败退”略显绝对，原文只写曹真得知费耀战败后与郭淮商议退兵，并上表求援。",
+          "classification": "material",
+          "reason": "“败退”将原文中商议退兵、上表求援的计划和请求误写成已经实际退兵，改变了事件状态。",
+          "required_fix": "改为“曹真得知费耀战败后，与郭淮商议退兵，并上表向魏主求援”。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 480,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_097-hsk3",
+        "candidate_sha256": "a3da70718dbf80af927e7631af5cd17d503dfb2706c33425dfccd24f2611d64e",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_097-hsk3/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_099-hsk2",
+      "level": "hsk2",
+      "target_chars": 300,
+      "candidate_cjk": 294,
+      "required_range": [
+        210,
+        390
+      ],
+      "material_findings": [
+        {
+          "omission_note": "省略了王平、张翼分别伏击魏军及锦囊具体指示的过程",
+          "classification": "material",
+          "reason": "这些战术部署直接解释了姜维、廖化袭击魏营及魏军溃败的原因，属于关键因果和战斗过程，不只是细节压缩。",
+          "required_fix": "补回王平、张翼分别截击前后队，以及锦囊指示姜维、廖化在魏军围攻时分兵袭击司马懿大营、迫使其退兵的具体过程。"
+        },
+        {
+          "omission_note": "省略了魏军撤退后曹真、司马懿在陈仓受雨困扰并上疏劝退的部分细节",
+          "classification": "material",
+          "reason": "陈仓受雨造成军队困顿，以及劝退奏疏促成魏主下诏召回，是魏军撤退的重要原因和因果链，不能仅作为非必要细节省略。",
+          "required_fix": "补回曹真、司马懿在陈仓遭连日暴雨、军需和士卒困苦的情节，并交代王肃等上疏陈述不宜深入、劝魏主召回大军的过程。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "omission_note": "省略了王平、张翼分别伏击魏军及锦囊具体指示的过程",
+          "classification": "material",
+          "reason": "这些战术部署直接解释了姜维、廖化袭击魏营及魏军溃败的原因，属于关键因果和战斗过程，不只是细节压缩。",
+          "required_fix": "补回王平、张翼分别截击前后队，以及锦囊指示姜维、廖化在魏军围攻时分兵袭击司马懿大营、迫使其退兵的具体过程。"
+        },
+        {
+          "omission_note": "省略了魏军撤退后曹真、司马懿在陈仓受雨困扰并上疏劝退的部分细节",
+          "classification": "material",
+          "reason": "陈仓受雨造成军队困顿，以及劝退奏疏促成魏主下诏召回，是魏军撤退的重要原因和因果链，不能仅作为非必要细节省略。",
+          "required_fix": "补回曹真、司马懿在陈仓遭连日暴雨、军需和士卒困苦的情节，并交代王肃等上疏陈述不宜深入、劝魏主召回大军的过程。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 342,
+          "review": {
+            "source_fidelity": 8,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [
+              "“粮草尽湿”超出原文；原文是军器尽湿、马无草料且粮运困难。"
+            ],
+            "distortions": [
+              "“带兵回朝”暗示司马懿率全军撤回，原文实际是留下诸将守寨和守隘口，仅司马懿班师回朝。"
+            ],
+            "language_problems": [],
+            "verdict": "revise",
+            "omissions": []
+          },
+          "passed": false
+        },
+        {
+          "round": 2,
+          "candidate_cjk": 286,
+          "review": {
+            "source_fidelity": 7.5,
+            "naturalness": 8.5,
+            "readability": 9,
+            "material_omissions": [
+              "未交代孔明将大军屯于汉中后本人回成都养病，影响人物行止与后续时间线衔接。"
+            ],
+            "unsupported_additions": [],
+            "distortions": [
+              "“暗回汉中养病”将原文中“大军屯于汉中、孔明本人回成都养病”合并为孔明在汉中养病，改变了养病地点。"
+            ],
+            "language_problems": [],
+            "verdict": "revise",
+            "omissions": []
+          },
+          "passed": false
+        },
+        {
+          "round": 3,
+          "candidate_cjk": 295,
+          "review": {
+            "source_fidelity": 8.5,
+            "naturalness": 7.5,
+            "readability": 8,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [
+              "“王平、张翼分别挡住张郃、戴陵和司马懿”中“分别”对应三个对象但只有两名将领，且歪曲了原文中王平阻挡张郃、戴陵，张翼抵挡司马懿的分工。"
+            ],
+            "language_problems": [
+              "“王平、张翼分别挡住张郃、戴陵和司马懿”语法关系不清，无法自然、准确地表达两军分工。"
+            ],
+            "verdict": "revise",
+            "omissions": []
+          },
+          "passed": false
+        },
+        {
+          "round": 4,
+          "candidate_cjk": 294,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_099-hsk2",
+        "candidate_sha256": "478d6bbd55b4aed040a10466a1b39223bce7d9f8126f21e4e169e220f461b156",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_099-hsk2/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_101-hsk3",
+      "level": "hsk3",
+      "target_chars": 500,
+      "candidate_cjk": 539,
+      "required_range": [
+        350,
+        650
+      ],
+      "material_findings": [
+        {
+          "omission_note": "省略了孔明与司马懿在上邽的多次神车诱敌过程及司马懿三日闭城不出的细节",
+          "classification": "material",
+          "reason": "这些细节构成孔明欺敌、司马懿误判退守的核心战术过程，并交代了魏军暂时失去行动能力。",
+          "required_fix": "补充多辆神车反复诱敌、司马懿误认神兵并退入上邽，及三日不敢出城的过程。"
+        },
+        {
+          "omission_note": "省略了魏军在鹵城战败后调集雍、凉援军的具体过程",
+          "classification": "material",
+          "reason": "郭淮提出袭击剑阁、调集援军的计划，以及孙礼率援军到达，构成后续援军突袭和蜀军应对的因果链。",
+          "required_fix": "补充郭淮建议调雍、凉兵袭剑阁断粮，司马懿发檄调兵及孙礼率援军抵达的过程。"
+        },
+        {
+          "omission_note": "省略了张郃追击途中魏延、关兴反复诱敌及孔明在木门道现身嘲讽魏军的细节",
+          "classification": "material",
+          "reason": "反复诱敌直接导致张郃深入木门道并中伏，也体现了孔明设伏的具体步骤；孔明现身嘲讽则是战后关键收束。",
+          "required_fix": "补充魏延、关兴轮番诈败引诱张郃，以及孔明在木门道现身宣告并嘲讽魏军的情节。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "omission_note": "省略了孔明与司马懿在上邽的多次神车诱敌过程及司马懿三日闭城不出的细节",
+          "classification": "material",
+          "reason": "这些细节构成孔明欺敌、司马懿误判退守的核心战术过程，并交代了魏军暂时失去行动能力。",
+          "required_fix": "补充多辆神车反复诱敌、司马懿误认神兵并退入上邽，及三日不敢出城的过程。"
+        },
+        {
+          "omission_note": "省略了魏军在鹵城战败后调集雍、凉援军的具体过程",
+          "classification": "material",
+          "reason": "郭淮提出袭击剑阁、调集援军的计划，以及孙礼率援军到达，构成后续援军突袭和蜀军应对的因果链。",
+          "required_fix": "补充郭淮建议调雍、凉兵袭剑阁断粮，司马懿发檄调兵及孙礼率援军抵达的过程。"
+        },
+        {
+          "omission_note": "省略了张郃追击途中魏延、关兴反复诱敌及孔明在木门道现身嘲讽魏军的细节",
+          "classification": "material",
+          "reason": "反复诱敌直接导致张郃深入木门道并中伏，也体现了孔明设伏的具体步骤；孔明现身嘲讽则是战后关键收束。",
+          "required_fix": "补充魏延、关兴轮番诈败引诱张郃，以及孔明在木门道现身宣告并嘲讽魏军的情节。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 495,
+          "review": {
+            "source_fidelity": 7.2,
+            "naturalness": 8.5,
+            "readability": 8.4,
+            "material_omissions": [
+              "未交代孔明严守百日换班军令、拒绝因敌情留下换班兵，以及士卒因感恩自愿留下、以逸待劳主动击败疲惫雍凉军的关键因果与人物刻画。",
+              "未清楚保留鹵城首次夜袭战败后司马懿、郭淮退守并因此提出调集援军的独立事件。"
+            ],
+            "unsupported_additions": [],
+            "distortions": [
+              "将鹵城首次夜袭与孙礼率雍凉援军到达后的后续战斗合并为“夜袭卤城，大败援军”；原文中首次夜袭先于援军调集，援军后来是在蜀军换班士卒自愿留下后被击败。"
+            ],
+            "language_problems": [],
+            "verdict": "revise",
+            "omissions": []
+          },
+          "passed": false
+        },
+        {
+          "round": 2,
+          "candidate_cjk": 539,
+          "review": {
+            "source_fidelity": 8.5,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_101-hsk3",
+        "candidate_sha256": "0f8ebc64550f62384a326cf8dbda4c3699cff28492df2e4b8101ec3b3b20626d",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_101-hsk3/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_118-hsk1",
+      "level": "hsk1",
+      "target_chars": 140,
+      "candidate_cjk": 181,
+      "required_range": [
+        98,
+        182
+      ],
+      "material_findings": [
+        {
+          "omission_note": "省略了邓艾焚烧舆榇等细节，以及姜维假降后与钟会结盟的具体过程。",
+          "classification": "material",
+          "reason": "邓艾焚烧舆榇虽属细节，但姜维假降后与钟会结盟的具体过程涉及关键关系与后续谋划，影响后文对姜维复汉动机及钟会收艾行动的理解。",
+          "required_fix": "补充邓艾焚烧舆榇的情节，并交代姜维假降、与钟会结盟及谋划复汉的关键过程。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "omission_note": "省略了邓艾焚烧舆榇等细节，以及姜维假降后与钟会结盟的具体过程。",
+          "classification": "material",
+          "reason": "邓艾焚烧舆榇虽属细节，但姜维假降后与钟会结盟的具体过程涉及关键关系与后续谋划，影响后文对姜维复汉动机及钟会收艾行动的理解。",
+          "required_fix": "补充邓艾焚烧舆榇的情节，并交代姜维假降、与钟会结盟及谋划复汉的关键过程。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 8.2,
+        "readability": 8.3,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 179,
+          "review": {
+            "source_fidelity": 7.5,
+            "naturalness": 8.5,
+            "readability": 8.5,
+            "material_omissions": [
+              "司马昭命钟会收邓艾后亲自御驾西征，这一行动承接后文细作报告其已到长安，修复稿未交代。",
+              "邓艾受诏后以将在外君命有所不受等理由再上书，坚持自行处置，导致司马昭进一步疑忌；这一关键因果被省略。",
+              "邓艾先被封为太尉，修复稿未交代，削弱了钟会因邓艾功高位尊而谋除之的动机。"
+            ],
+            "unsupported_additions": [],
+            "distortions": [
+              "原文是贾充领兵入斜谷、司马昭亲自御驾亲征；“遣贾充亲征”误将亲征者写成贾充，并混淆了两路行动。"
+            ],
+            "language_problems": [],
+            "verdict": "revise",
+            "omissions": []
+          },
+          "passed": false
+        },
+        {
+          "round": 2,
+          "candidate_cjk": 181,
+          "review": {
+            "source_fidelity": 8.5,
+            "naturalness": 8.2,
+            "readability": 8.3,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_118-hsk1",
+        "candidate_sha256": "db06f69fcbfb928372d63f91e1f84f4922b16d962053471b45493fea2186d281",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_118-hsk1/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_001-hsk4",
+      "level": "hsk4",
+      "target_chars": 750,
+      "candidate_cjk": 852,
+      "required_range": [
+        525,
+        975
+      ],
+      "material_findings": [
+        {
+          "omission_note": "删去了刘备与张飞、关羽相识时的大部分外貌和背景细节，以及桃园结义誓词中的“同年同月同日死”等具体内容，但不影响主线复述。",
+          "classification": "material",
+          "reason": "外貌可压缩，但关羽杀人避祸等背景涉及其投军动机，誓词中的共同赴死也强化了三人的关系性质，属于重要关系与动机信息。",
+          "required_fix": "补回关羽投军的背景动机，并说明结义誓词包含共同赴死的约定。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "omission_note": "删去了刘备与张飞、关羽相识时的大部分外貌和背景细节，以及桃园结义誓词中的“同年同月同日死”等具体内容，但不影响主线复述。",
+          "classification": "material",
+          "reason": "外貌可压缩，但关羽杀人避祸等背景涉及其投军动机，誓词中的共同赴死也强化了三人的关系性质，属于重要关系与动机信息。",
+          "required_fix": "补回关羽投军的背景动机，并说明结义誓词包含共同赴死的约定。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 852,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_001-hsk4",
+        "candidate_sha256": "1d09265ed623d137f118781be5ac9ce3987eed0b6a29a7240774e0e01d8f2ec2",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_001-hsk4/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_004-hsk4",
+      "level": "hsk4",
+      "target_chars": 750,
+      "candidate_cjk": 660,
+      "required_range": [
+        525,
+        975
+      ],
+      "material_findings": [
+        {
+          "field": "unsupported_additions",
+          "finding_note": "直接称少帝为“刘辩”，原文此处未明确写出姓名。",
+          "classification": "material",
+          "reason": "原文始终称其为“少帝”，未明确写出“刘辩”这一姓名；这是未经本场景支持的具体身份名称添加。",
+          "required_fix": "删除“刘辩”，改为仅称“少帝”。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "field": "unsupported_additions",
+          "finding_note": "直接称少帝为“刘辩”，原文此处未明确写出姓名。",
+          "classification": "material",
+          "reason": "原文始终称其为“少帝”，未明确写出“刘辩”这一姓名；这是未经本场景支持的具体身份名称添加。",
+          "required_fix": "删除“刘辩”，改为仅称“少帝”。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 648,
+          "review": {
+            "source_fidelity": 7.5,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [
+              "将原文仅称为“陈留王协”的人物扩写为“刘协”，原文未在本章明确给出其姓氏。"
+            ],
+            "distortions": [
+              "“逼少帝和何太后交出玺绶”将原文中仅少帝被解去璽綬、何太后被命去服候敕的不同处置合并并改写为二人共同交出玺绶。"
+            ],
+            "language_problems": [],
+            "verdict": "revise",
+            "omissions": []
+          },
+          "passed": false
+        },
+        {
+          "round": 2,
+          "candidate_cjk": 660,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_004-hsk4",
+        "candidate_sha256": "37cd93ea2c88e71617ce18b23307d900af8d98edc4c10b032a8d470f6c9a81e6",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_004-hsk4/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_004-hsk5",
+      "level": "hsk5",
+      "target_chars": 1050,
+      "candidate_cjk": 783,
+      "required_range": [
+        735,
+        1365
+      ],
+      "material_findings": [
+        {
+          "omission_note": "省略了董卓在阳城焚烧人头并将妇女财物分给军士的细节。",
+          "classification": "material",
+          "reason": "这是阳城暴行的重要具体行动，进一步体现董卓的残暴和对军队的纵容；原文虽保留了屠杀、掠夺和悬挂人头，但遗漏了这两项具体行为。",
+          "required_fix": "补充董卓在城门下焚烧人头，并将掠来的妇女和财物分给军士的情节。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "omission_note": "省略了董卓在阳城焚烧人头并将妇女财物分给军士的细节。",
+          "classification": "material",
+          "reason": "这是阳城暴行的重要具体行动，进一步体现董卓的残暴和对军队的纵容；原文虽保留了屠杀、掠夺和悬挂人头，但遗漏了这两项具体行为。",
+          "required_fix": "补充董卓在城门下焚烧人头，并将掠来的妇女和财物分给军士的情节。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 783,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_004-hsk5",
+        "candidate_sha256": "dc005faa3e933337ce24da6c6a512fc0b3a72e93f291088342d4a16046d2be0d",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_004-hsk5/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_006-hsk4",
+      "level": "hsk4",
+      "target_chars": 750,
+      "candidate_cjk": 758,
+      "required_range": [
+        525,
+        975
+      ],
+      "material_findings": [
+        {
+          "omission_note": "略去曹操提出的具体分兵战略及其对诸侯的详细批评。",
+          "classification": "material",
+          "reason": "这些内容具体说明曹操判断形势的依据、作战主张及其离开盟军的动机，也体现其重要的军事谋略与性格；接受场景只保留了概括性的斥责。",
+          "required_fix": "补回曹操提出的分兵部署、各路军队的任务，以及他对诸侯不进军的具体批评。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "omission_note": "略去曹操提出的具体分兵战略及其对诸侯的详细批评。",
+          "classification": "material",
+          "reason": "这些内容具体说明曹操判断形势的依据、作战主张及其离开盟军的动机，也体现其重要的军事谋略与性格；接受场景只保留了概括性的斥责。",
+          "required_fix": "补回曹操提出的分兵部署、各路军队的任务，以及他对诸侯不进军的具体批评。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 758,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_006-hsk4",
+        "candidate_sha256": "56db64ab65698fd5c0dee31bbecdcce54942564b648801a42e0cc43c6747f941",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_006-hsk4/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_008-hsk6",
+      "level": "hsk6",
+      "target_chars": 1450,
+      "candidate_cjk": 1575,
+      "required_range": [
+        1014,
+        1885
+      ],
+      "material_findings": [
+        {
+          "omission_note": "省略董旻、董璜等董氏亲族的具体封爵，略去了董卓势力扩张的一项细节，但不影响主线。",
+          "classification": "material",
+          "reason": "具体封爵和董旻、董璜的职权体现了董卓对朝廷与禁军的控制及其势力扩张，属于重要政治背景和人物刻画，不能仅因不影响主线而视为可压缩。",
+          "required_fix": "补回董旻被封左将军鄠侯、董璜被封侍中并总领禁军等具体信息。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "omission_note": "省略董旻、董璜等董氏亲族的具体封爵，略去了董卓势力扩张的一项细节，但不影响主线。",
+          "classification": "material",
+          "reason": "具体封爵和董旻、董璜的职权体现了董卓对朝廷与禁军的控制及其势力扩张，属于重要政治背景和人物刻画，不能仅因不影响主线而视为可压缩。",
+          "required_fix": "补回董旻被封左将军鄠侯、董璜被封侍中并总领禁军等具体信息。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 1575,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_008-hsk6",
+        "candidate_sha256": "27d3fd77593b247610ae483cbaf41436e5d3f5e899b71827cadad7729074ada6",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_008-hsk6/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_025-hsk6",
+      "level": "hsk6",
+      "target_chars": 1450,
+      "candidate_cjk": 1171,
+      "required_range": [
+        1014,
+        1885
+      ],
+      "material_findings": [
+        {
+          "omission_note": "省略了曹操试图安排关羽与二夫人同室、关羽秉烛户外守夜的关键细节。",
+          "classification": "material",
+          "reason": "该段体现关羽严守礼法、维护与刘备家眷关系的关键性格，也直接促成曹操更加敬服，属于重要人物塑造。",
+          "required_fix": "补入曹操安排关羽与二夫人同室，以及关羽秉烛立于户外通宵守夜的情节，并保留曹操因此更加敬服的反应。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "omission_note": "省略了曹操试图安排关羽与二夫人同室、关羽秉烛户外守夜的关键细节。",
+          "classification": "material",
+          "reason": "该段体现关羽严守礼法、维护与刘备家眷关系的关键性格，也直接促成曹操更加敬服，属于重要人物塑造。",
+          "required_fix": "补入曹操安排关羽与二夫人同室，以及关羽秉烛立于户外通宵守夜的情节，并保留曹操因此更加敬服的反应。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 1329,
+          "review": {
+            "source_fidelity": 8.5,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [
+              "将曹操攻下下邳后举火迷惑关羽说成“制造下邳失守的假象”，但下邳确已被曹操攻占，并非假象。"
+            ],
+            "language_problems": [],
+            "verdict": "revise",
+            "omissions": []
+          },
+          "passed": false
+        },
+        {
+          "round": 2,
+          "candidate_cjk": 1146,
+          "review": {
+            "source_fidelity": 7,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [
+              "“关羽误以为城失”错误地暗示下邳失守只是误会；原文中曹操确已攻入并占领下邳，举火只是为了迷惑关羽。"
+            ],
+            "language_problems": [],
+            "verdict": "revise",
+            "omissions": []
+          },
+          "passed": false
+        },
+        {
+          "round": 3,
+          "candidate_cjk": 1149,
+          "review": {
+            "source_fidelity": 8.8,
+            "naturalness": 9.0,
+            "readability": 9.0,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [
+              "原文是甘夫人一人梦见刘备陷入土坑，再与糜夫人谈论并一同哭泣；修复稿写成“二夫人梦见”，将梦境归于两位夫人，改变了原文事实。"
+            ],
+            "language_problems": [],
+            "verdict": "revise",
+            "omissions": []
+          },
+          "passed": false
+        },
+        {
+          "round": 4,
+          "candidate_cjk": 1162,
+          "review": {
+            "source_fidelity": 7.5,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [
+              "将原文中由甘夫人独自梦见刘备陷入土坑，改写为“甘夫人梦见……二人一同哭泣”虽语句随后有所区分，但标题性表述“甘夫人梦见”本身未明确错误；然而修复稿开头说“甘夫人梦见”并未构成将梦归于二夫人。"
+            ],
+            "language_problems": [],
+            "verdict": "revise",
+            "omissions": []
+          },
+          "passed": false
+        },
+        {
+          "round": 5,
+          "candidate_cjk": 1164,
+          "review": {
+            "source_fidelity": 8.5,
+            "naturalness": 8,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [
+              "“还许昌途中”表达不自然，宜改为“回许昌途中”或“在返回许昌途中”。"
+            ],
+            "verdict": "revise",
+            "omissions": []
+          },
+          "passed": false
+        },
+        {
+          "round": 6,
+          "candidate_cjk": 1171,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_025-hsk6",
+        "candidate_sha256": "de2f13b0dd9526f1a250f109f0be64c00b1f2d0a34065c9b64e9014fff78c0b4",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_025-hsk6/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_050-hsk6",
+      "level": "hsk6",
+      "target_chars": 1450,
+      "candidate_cjk": 1230,
+      "required_range": [
+        1014,
+        1885
+      ],
+      "material_findings": [
+        {
+          "omission_note": "略去部分行军细节，如张飞追赶、曹操下令斩杀哭军等具体过程，但核心事件仍在。",
+          "classification": "material",
+          "reason": "张飞持续追赶强化了曹操败逃的过程，而曹操下令斩杀哭军体现其在惨败行军中的重要冷酷性格；这些并非纯粹装饰性描写。",
+          "required_fix": "补回张飞从后追赶及曹操因军士哭号而下令再哭者立斩的具体情节。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "omission_note": "略去部分行军细节，如张飞追赶、曹操下令斩杀哭军等具体过程，但核心事件仍在。",
+          "classification": "material",
+          "reason": "张飞持续追赶强化了曹操败逃的过程，而曹操下令斩杀哭军体现其在惨败行军中的重要冷酷性格；这些并非纯粹装饰性描写。",
+          "required_fix": "补回张飞从后追赶及曹操因军士哭号而下令再哭者立斩的具体情节。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 1230,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_050-hsk6",
+        "candidate_sha256": "0a2af3c55e0ff56e56862342f229bc516300fb6dedf4c01e16d9bcc4abbeff9b",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_050-hsk6/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_061-hsk5",
+      "level": "hsk5",
+      "target_chars": 1050,
+      "candidate_cjk": 880,
+      "required_range": [
+        735,
+        1365
+      ],
+      "material_findings": [
+        {
+          "omission_note": "略去了濡须交战期间数次互有胜负等部分战况细节。",
+          "classification": "material",
+          "reason": "原场景明确写出双方持续交战数场且互有胜负，省略后削弱了战事进展与曹操最终退兵的过程信息。",
+          "required_fix": "补充双方在濡须相持一个多月期间数次交战、互有胜负的战况。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "omission_note": "略去了濡须交战期间数次互有胜负等部分战况细节。",
+          "classification": "material",
+          "reason": "原场景明确写出双方持续交战数场且互有胜负，省略后削弱了战事进展与曹操最终退兵的过程信息。",
+          "required_fix": "补充双方在濡须相持一个多月期间数次交战、互有胜负的战况。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 880,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_061-hsk5",
+        "candidate_sha256": "a00518ec817297df0e64f180d98d63b2bba1db9404ab4af8e73c9e98b1de04fa",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_061-hsk5/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_062-hsk6",
+      "level": "hsk6",
+      "target_chars": 1450,
+      "candidate_cjk": 1111,
+      "required_range": [
+        1014,
+        1885
+      ],
+      "material_findings": [
+        {
+          "field": "distortions",
+          "finding_note": "“一箭射杀邓贤”明确归因于黄忠，原文只写弓响后邓贤落马，随后说明黄忠救魏延并杀邓贤，未直接说明箭的发射者。",
+          "classification": "material",
+          "reason": "明确把击落邓贤的箭归于黄忠，改变了原文未确定的具体行动者，属于演员归因错误。",
+          "required_fix": "改为“弓弦响后邓贤落马，黄忠随后赶到，救下魏延并杀了邓贤”，不要明确说黄忠射杀邓贤。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "field": "distortions",
+          "finding_note": "“一箭射杀邓贤”明确归因于黄忠，原文只写弓响后邓贤落马，随后说明黄忠救魏延并杀邓贤，未直接说明箭的发射者。",
+          "classification": "material",
+          "reason": "明确把击落邓贤的箭归于黄忠，改变了原文未确定的具体行动者，属于演员归因错误。",
+          "required_fix": "改为“弓弦响后邓贤落马，黄忠随后赶到，救下魏延并杀了邓贤”，不要明确说黄忠射杀邓贤。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 1044,
+          "review": {
+            "source_fidelity": 7.5,
+            "naturalness": 8,
+            "readability": 9,
+            "material_omissions": [
+              "省略了刘备认为张鲁自守、不敢犯境的判断，削弱了他后来得知张鲁与孙权联络并威胁葭萌关时的意外与因果铺垫。"
+            ],
+            "unsupported_additions": [
+              "将冷苞、邓贤各率一万兵写成确定事实，原文只说分兵二万给二人。"
+            ],
+            "distortions": [
+              "将孙权最终图谋概括为“夺取西川”，原文未明确如此，语境更指向借机夺取荆州。",
+              "将原文许诺的“重赏”改成“重用”，改变了奖赏性质。"
+            ],
+            "language_problems": [
+              "“刘备披甲设法将二人擒下”搭配生硬且过程含混，宜直接写明命人擒拿或设伏擒获。"
+            ],
+            "verdict": "revise",
+            "omissions": []
+          },
+          "passed": false
+        },
+        {
+          "round": 2,
+          "candidate_cjk": 1111,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_062-hsk6",
+        "candidate_sha256": "42cd1750c381a04ded87835fe3420127f338ad4c51d1566398e3a2daf2aefd1e",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_062-hsk6/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_068-hsk4",
+      "level": "hsk4",
+      "target_chars": 750,
+      "candidate_cjk": 687,
+      "required_range": [
+        525,
+        975
+      ],
+      "material_findings": [
+        {
+          "omission_note": "省略了孙权与曹操相持后撤军的具体条件和部分魏王礼制细节，但不影响主线复述。",
+          "classification": "material",
+          "reason": "虽保留了议和、岁贡、撤军及受封魏王等主线，但未明确孙权先撤军、曹操随后班师的议和条件；魏王礼制细节则属可压缩内容。",
+          "required_fix": "补明孙权先撤人马、曹操随后班师的具体议和条件；可酌情补充曹操受魏王爵位时采用天子车服等礼制细节。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "omission_note": "省略了孙权与曹操相持后撤军的具体条件和部分魏王礼制细节，但不影响主线复述。",
+          "classification": "material",
+          "reason": "虽保留了议和、岁贡、撤军及受封魏王等主线，但未明确孙权先撤军、曹操随后班师的议和条件；魏王礼制细节则属可压缩内容。",
+          "required_fix": "补明孙权先撤人马、曹操随后班师的具体议和条件；可酌情补充曹操受魏王爵位时采用天子车服等礼制细节。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 687,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_068-hsk4",
+        "candidate_sha256": "7f1e200e677b538593487f6c9b5ed40f9d955d4a49802f366903f394fe9f3d53",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_068-hsk4/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_069-hsk5",
+      "level": "hsk5",
+      "target_chars": 1050,
+      "candidate_cjk": 1025,
+      "required_range": [
+        735,
+        1365
+      ],
+      "material_findings": [
+        {
+          "omission_note": "省略了管辂拒绝任职时的具体面相依据及部分官爵、军政细节。",
+          "classification": "material",
+          "reason": "面相依据解释了管辂拒绝官职的具体动机，并构成其重要人物刻画；官爵与军政细节虽多可压缩，但该动机信息不应完全缺失。",
+          "required_fix": "补充管辂以额无主骨、眼无守睛、鼻无梁柱、脚无天根、背无三甲、腹无三壬为由，说明自己只能治鬼、不能治生人，因此拒绝任职；酌情补回被省略的关键官爵任命细节。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "omission_note": "省略了管辂拒绝任职时的具体面相依据及部分官爵、军政细节。",
+          "classification": "material",
+          "reason": "面相依据解释了管辂拒绝官职的具体动机，并构成其重要人物刻画；官爵与军政细节虽多可压缩，但该动机信息不应完全缺失。",
+          "required_fix": "补充管辂以额无主骨、眼无守睛、鼻无梁柱、脚无天根、背无三甲、腹无三壬为由，说明自己只能治鬼、不能治生人，因此拒绝任职；酌情补回被省略的关键官爵任命细节。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 827,
+          "review": {
+            "source_fidelity": 7.8,
+            "naturalness": 7.5,
+            "readability": 8.3,
+            "material_omissions": [
+              "省略了王必与金袆交厚这一关键关系，弱化了金袆能够接近并利用王必的情节因果。",
+              "省略了曹操因王必是早年相随、忠勤可靠之人而信任并任用他的关键动机。"
+            ],
+            "unsupported_additions": [],
+            "distortions": [
+              "将钟繇任相国、华歆任御史大夫及爵制改革提前到元宵政变之前；原文这些任命和制度变化发生在平定政变之后。",
+              "将吉邈、吉穆原本从城外杀入、放火为号并截住城内救军的行动概括为“放火接应”，弱化了其具体军事作用。"
+            ],
+            "language_problems": [
+              "“惊倒成病”搭配不自然，混淆了惊倒在地与后来染病两件事。",
+              "“射复认出”疑为“射覆认出”的错字或病句。"
+            ],
+            "verdict": "revise",
+            "omissions": []
+          },
+          "passed": false
+        },
+        {
+          "round": 2,
+          "candidate_cjk": 1025,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 8,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_069-hsk5",
+        "candidate_sha256": "34ac6a4a413fdfa3fff63d8f066eb17adf7b64e7c60adc236d078df2b1cf7b2d",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_069-hsk5/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_070-hsk5",
+      "level": "hsk5",
+      "target_chars": 1050,
+      "candidate_cjk": 803,
+      "required_range": [
+        735,
+        1365
+      ],
+      "material_findings": [
+        {
+          "omission_note": "省略了张郃在瓦口关设伏、诱杀雷同后，张飞与魏延具体商议并实施将计就计的部分细节，但主线事件仍完整。",
+          "classification": "material",
+          "reason": "这些细节交代了张飞识破伏兵、制定反制方案及利用柴草车和火攻困敌的具体因果，虽主线结果保留，仍涉及战术动机与取胜机制。",
+          "required_fix": "补充张飞与魏延商议将计就计的内容，并明确张飞诱敌、魏延从后截击、柴草车堵路及放火封困敌军的执行过程。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "omission_note": "省略了张郃在瓦口关设伏、诱杀雷同后，张飞与魏延具体商议并实施将计就计的部分细节，但主线事件仍完整。",
+          "classification": "material",
+          "reason": "这些细节交代了张飞识破伏兵、制定反制方案及利用柴草车和火攻困敌的具体因果，虽主线结果保留，仍涉及战术动机与取胜机制。",
+          "required_fix": "补充张飞与魏延商议将计就计的内容，并明确张飞诱敌、魏延从后截击、柴草车堵路及放火封困敌军的执行过程。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 791,
+          "review": {
+            "source_fidelity": 8.5,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [
+              "开篇将雷同说成“从后出击”，颠倒了原文中雷同从前方杀出、张飞从后掩杀的夹击方位。"
+            ],
+            "language_problems": [],
+            "verdict": "revise",
+            "omissions": []
+          },
+          "passed": false
+        },
+        {
+          "round": 2,
+          "candidate_cjk": 803,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_070-hsk5",
+        "candidate_sha256": "d6eff95500c26b4985d77a7d43cd345836bc3946947eac54b48953594252f25f",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_070-hsk5/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_071-hsk5",
+      "level": "hsk5",
+      "target_chars": 1050,
+      "candidate_cjk": 860,
+      "required_range": [
+        735,
+        1365
+      ],
+      "material_findings": [
+        {
+          "field": "distortions",
+          "finding_note": "“黄忠受夏侯渊闭守不出的刺激”将原文中孔明激黄忠出战的意图改成了黄忠主动受刺激，因果关系略有偏差。",
+          "classification": "material",
+          "reason": "原文明确是孔明认为需要用言语激将黄忠，并安排法正相助；改写将因果主体和动机改成黄忠主动受到刺激，属于真实的因果关系偏移。",
+          "required_fix": "改为“孔明看出需要激黄忠出战，便命法正随他出战”或明确表述为孔明激将黄忠。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "field": "distortions",
+          "finding_note": "“黄忠受夏侯渊闭守不出的刺激”将原文中孔明激黄忠出战的意图改成了黄忠主动受刺激，因果关系略有偏差。",
+          "classification": "material",
+          "reason": "原文明确是孔明认为需要用言语激将黄忠，并安排法正相助；改写将因果主体和动机改成黄忠主动受到刺激，属于真实的因果关系偏移。",
+          "required_fix": "改为“孔明看出需要激黄忠出战，便命法正随他出战”或明确表述为孔明激将黄忠。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 840,
+          "review": {
+            "source_fidelity": 7.5,
+            "naturalness": 8.5,
+            "readability": 8.5,
+            "material_omissions": [
+              "省略了孔明说明曹军因粮草不足而暂不进兵、烧毁粮草可挫败曹军锐气的战略动机。"
+            ],
+            "unsupported_additions": [],
+            "distortions": [
+              "“黄忠乘胜攻取定军山”将原文中黄忠前往争夺但未明确夺取、随后由刘封和孟达夺下定军山的结果改成了黄忠已经攻取，造成夺取者和事件顺序的事实偏差。"
+            ],
+            "language_problems": [],
+            "verdict": "revise",
+            "omissions": []
+          },
+          "passed": false
+        },
+        {
+          "round": 2,
+          "candidate_cjk": 868,
+          "review": {
+            "source_fidelity": 7.5,
+            "naturalness": 8.5,
+            "readability": 8.5,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [
+              "原文是黄忠率军夜袭夺取定军山西侧的对山，修复稿写成“法正……夜袭夺取”，错误改变了夺山者。",
+              "原文由在山顶的法正举白旗、红旗发号，修复稿的表述容易理解为黄忠举白旗示弱，改变了战术执行者。"
+            ],
+            "language_problems": [
+              "“另派严颜前往巴西阆中守隘，替张飞、魏延前来攻取汉中”语序和指代略显含混。"
+            ],
+            "verdict": "revise",
+            "omissions": []
+          },
+          "passed": false
+        },
+        {
+          "round": 3,
+          "candidate_cjk": 834,
+          "review": {
+            "source_fidelity": 8,
+            "naturalness": 8.5,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [
+              "“随后刘封、孟达夺下定军山”颠倒了原文时序：原文中二人在赵云截击张郃之前已经夺取定军山。"
+            ],
+            "language_problems": [],
+            "verdict": "revise",
+            "omissions": []
+          },
+          "passed": false
+        },
+        {
+          "round": 4,
+          "candidate_cjk": 834,
+          "review": {
+            "source_fidelity": 7.5,
+            "naturalness": 8.8,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [
+              "将黄忠写成“攻取定军山”，原文只是进攻定军山，最终由刘封、孟达夺取。",
+              "“刘封、孟达已先夺下定军山”造成时序和行动关系失真；他们是在黄忠进攻、张郃败退并被赵云截击后才被说明已夺山。"
+            ],
+            "language_problems": [],
+            "verdict": "revise",
+            "omissions": []
+          },
+          "passed": false
+        },
+        {
+          "round": 5,
+          "candidate_cjk": 860,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_071-hsk5",
+        "candidate_sha256": "24a19fe5cc9d1514dfc886ac478201c8f2cb831b806a5ae532f48278962f7118",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_071-hsk5/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_074-hsk4",
+      "level": "hsk4",
+      "target_chars": 750,
+      "candidate_cjk": 598,
+      "required_range": [
+        525,
+        975
+      ],
+      "material_findings": [
+        {
+          "omission_note": "略去庞德连续十余日搦战、于禁刻意将其置于不利位置等过程细节。",
+          "classification": "material",
+          "reason": "虽然接受场景概括了连续挑战和七军驻扎低洼山谷，但没有充分呈现于禁为阻止庞德立功而有意限制其行动的动机与部署，这涉及人物动机及后续战局因果。",
+          "required_fix": "补充庞德搦战十余日无人应战，以及于禁借曹操戒旨推诿，并将庞德置于谷后、截断大路以阻止其进兵的情节。"
+        },
+        {
+          "field": "unsupported_additions",
+          "finding_note": "“襄江决堤”原文只写连日暴雨、江水暴涨并形成洪水，未明确写襄江决堤。",
+          "classification": "material",
+          "reason": "“襄江决堤”增加了原文未明确支持的具体洪水成因。",
+          "required_fix": "改为“暴雨之后，襄江水势暴涨，洪水淹没七军”。"
+        },
+        {
+          "field": "unsupported_additions",
+          "finding_note": "将于禁拒绝出兵同时明确归因于嫉妒庞德，原文主要写他以曹操戒旨为由推诿，嫉妒在此前鸣金收兵时明确出现。",
+          "classification": "material",
+          "reason": "这改变了于禁拒绝出兵的明确动机，造成因果归因偏差。",
+          "required_fix": "改为“于禁以曹操的戒令为由，不肯出兵”；不要将嫉妒庞德作为此处的明确原因。"
+        },
+        {
+          "field": "distortions",
+          "finding_note": "“七军全部覆没”表述过于绝对，原文虽称七军多死于水中，但会水者后来投降，并非全军皆死。",
+          "classification": "material",
+          "reason": "“全部覆没”错误概括了七军结局，遗漏了会水者投降这一相反结果。",
+          "required_fix": "改为“七军死伤惨重、四处逃散，许多人溺亡，会水者投降，七军最终覆败”。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "omission_note": "略去庞德连续十余日搦战、于禁刻意将其置于不利位置等过程细节。",
+          "classification": "material",
+          "reason": "虽然接受场景概括了连续挑战和七军驻扎低洼山谷，但没有充分呈现于禁为阻止庞德立功而有意限制其行动的动机与部署，这涉及人物动机及后续战局因果。",
+          "required_fix": "补充庞德搦战十余日无人应战，以及于禁借曹操戒旨推诿，并将庞德置于谷后、截断大路以阻止其进兵的情节。"
+        },
+        {
+          "field": "unsupported_additions",
+          "finding_note": "“襄江决堤”原文只写连日暴雨、江水暴涨并形成洪水，未明确写襄江决堤。",
+          "classification": "material",
+          "reason": "“襄江决堤”增加了原文未明确支持的具体洪水成因。",
+          "required_fix": "改为“暴雨之后，襄江水势暴涨，洪水淹没七军”。"
+        },
+        {
+          "field": "unsupported_additions",
+          "finding_note": "将于禁拒绝出兵同时明确归因于嫉妒庞德，原文主要写他以曹操戒旨为由推诿，嫉妒在此前鸣金收兵时明确出现。",
+          "classification": "material",
+          "reason": "这改变了于禁拒绝出兵的明确动机，造成因果归因偏差。",
+          "required_fix": "改为“于禁以曹操的戒令为由，不肯出兵”；不要将嫉妒庞德作为此处的明确原因。"
+        },
+        {
+          "field": "distortions",
+          "finding_note": "“七军全部覆没”表述过于绝对，原文虽称七军多死于水中，但会水者后来投降，并非全军皆死。",
+          "classification": "material",
+          "reason": "“全部覆没”错误概括了七军结局，遗漏了会水者投降这一相反结果。",
+          "required_fix": "改为“七军死伤惨重、四处逃散，许多人溺亡，会水者投降，七军最终覆败”。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 8,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 598,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 8,
+            "readability": 8,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_074-hsk4",
+        "candidate_sha256": "f0a14acd3eca8b1b6991342095516f86fbea21b8b05601c03d07a819f479ff10",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_074-hsk4/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_078-hsk4",
+      "level": "hsk4",
+      "target_chars": 750,
+      "candidate_cjk": 764,
+      "required_range": [
+        525,
+        975
+      ],
+      "material_findings": [
+        {
+          "field": "distortions",
+          "finding_note": "原文由叙述者以袁谭、袁尚作比，并非群臣直接评论。",
+          "classification": "material",
+          "reason": "接受场景将叙述者诗中的比较错误归给了群臣，改变了发言主体。",
+          "required_fix": "改为由叙述者以袁谭、袁尚相争作比，不要说成群臣直接评论。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "field": "distortions",
+          "finding_note": "原文由叙述者以袁谭、袁尚作比，并非群臣直接评论。",
+          "classification": "material",
+          "reason": "接受场景将叙述者诗中的比较错误归给了群臣，改变了发言主体。",
+          "required_fix": "改为由叙述者以袁谭、袁尚相争作比，不要说成群臣直接评论。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8.5,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 664,
+          "review": {
+            "source_fidelity": 7.8,
+            "naturalness": 8.8,
+            "readability": 9.0,
+            "material_omissions": [
+              "删去了孙权上书诱使曹操称帝、并承诺出兵刘备后投降的关键内容，也未呈现曹操对此的拒绝，削弱了政治动机与人物刻画。"
+            ],
+            "unsupported_additions": [],
+            "distortions": [
+              "将原文中曹丕出城十里迎接并护送父灵入城，改写为曹丕扶父灵到邺，改变了行动主体和事件过程。"
+            ],
+            "language_problems": [],
+            "verdict": "revise",
+            "omissions": []
+          },
+          "passed": false
+        },
+        {
+          "round": 2,
+          "candidate_cjk": 764,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 8.5,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_078-hsk4",
+        "candidate_sha256": "caaa417a5593e3ae548120dfedd741beb8f7d5123a085324aa20138ae648df99",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_078-hsk4/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_089-hsk6",
+      "level": "hsk6",
+      "target_chars": 1450,
+      "candidate_cjk": 1171,
+      "required_range": [
+        1014,
+        1885
+      ],
+      "material_findings": [
+        {
+          "omission_note": "省略了马援庙祷告内容、山神自称身份及万安隐者拒绝功名等细节。",
+          "classification": "material",
+          "reason": "这些内容补足了孔明平蛮及复兴汉室的动机、山神显灵的来由，以及孟节拒绝功名的重要品格刻画；接受场景虽保留了事件梗概，但缺少了这些关键因果和人物信息。",
+          "required_fix": "补入孔明祈求平蛮复汉的祷告、山神说明奉马援之命前来指引，以及孟节拒绝受封为王和不慕富贵的表态。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "omission_note": "省略了马援庙祷告内容、山神自称身份及万安隐者拒绝功名等细节。",
+          "classification": "material",
+          "reason": "这些内容补足了孔明平蛮及复兴汉室的动机、山神显灵的来由，以及孟节拒绝功名的重要品格刻画；接受场景虽保留了事件梗概，但缺少了这些关键因果和人物信息。",
+          "required_fix": "补入孔明祈求平蛮复汉的祷告、山神说明奉马援之命前来指引，以及孟节拒绝受封为王和不慕富贵的表态。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 1533,
+          "review": {
+            "source_fidelity": 7.5,
+            "naturalness": 8.5,
+            "readability": 8.5,
+            "material_omissions": [
+              "原文中马岱拆桥移至下游并从河边杀出、封锁孟获退路的关键伏击步骤未保留。"
+            ],
+            "unsupported_additions": [
+              "将王平、马忠补写为首轮伏击并出兵追击，原文未如此描写。"
+            ],
+            "distortions": [
+              "首轮伏击明确出击者是赵云、马岱、魏延，修复稿改成赵云、魏延、王平、马忠，漏掉并替换了马岱的战术作用。",
+              "将张翼写成留守空寨点灯，原文是撤军后负责断孟获后路。",
+              "原文为西北小路，修复稿改写为西路，方向信息不准确。"
+            ],
+            "language_problems": [],
+            "verdict": "revise",
+            "omissions": []
+          },
+          "passed": false
+        },
+        {
+          "round": 2,
+          "candidate_cjk": 1162,
+          "review": {
+            "source_fidelity": 8.4,
+            "naturalness": 8.2,
+            "readability": 9.0,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [
+              "将张翼写成在空寨点灯并负责断后；原文仅命其负责断孟获后路，寨中灯火由撤军安排。",
+              "将杨锋兄弟子侄受孔明活命之恩概括为族人，关系范围被泛化。"
+            ],
+            "language_problems": [
+              "“蠮姑”用字错误，原文为“蛮姑”。"
+            ],
+            "verdict": "revise",
+            "omissions": []
+          },
+          "passed": false
+        },
+        {
+          "round": 3,
+          "candidate_cjk": 1171,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 8,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_089-hsk6",
+        "candidate_sha256": "9484afef5eb3e6c6c65097f3b2a7d6c3e0d07b79128fec0b7817a48c76669846",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_089-hsk6/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_104-hsk6",
+      "level": "hsk6",
+      "target_chars": 1450,
+      "candidate_cjk": 1425,
+      "required_range": [
+        1014,
+        1885
+      ],
+      "material_findings": [
+        {
+          "omission_note": "省略了司马懿最终返回洛阳面君等次要情节。",
+          "classification": "material",
+          "reason": "The omission removes the final stage of Sima Yi’s movement and his return to Luoyang to see the emperor, changing the scene’s chronology and endpoint.",
+          "required_fix": "补充司马懿分调众将把守隘口后，返回洛阳面君。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "omission_note": "省略了司马懿最终返回洛阳面君等次要情节。",
+          "classification": "material",
+          "reason": "The omission removes the final stage of Sima Yi’s movement and his return to Luoyang to see the emperor, changing the scene’s chronology and endpoint.",
+          "required_fix": "补充司马懿分调众将把守隘口后，返回洛阳面君。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 1425,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_104-hsk6",
+        "candidate_sha256": "138861b0ba4329d1d0a3866921b0a1aeae906da48b5886f9054bc76de0acc36b",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_104-hsk6/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "complete",
+      "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_117-hsk5",
+      "level": "hsk5",
+      "target_chars": 1050,
+      "candidate_cjk": 988,
+      "required_range": [
+        735,
+        1365
+      ],
+      "material_findings": [
+        {
+          "omission_note": "省略了董厥向姜维哭诉黄皓乱政、钟会与邓艾会面及相关交锋细节。",
+          "classification": "material",
+          "reason": "董厥对黄皓乱政的控诉交代了蜀内部政治失序这一动因；钟会与邓艾的交锋也塑造了邓艾受轻视后决定冒险取成都的关键动机。",
+          "required_fix": "补充董厥控诉黄皓乱政及钟会、邓艾会面中的主要交锋和由此形成的邓艾动机。"
+        }
+      ],
+      "material_omissions": [
+        {
+          "omission_note": "省略了董厥向姜维哭诉黄皓乱政、钟会与邓艾会面及相关交锋细节。",
+          "classification": "material",
+          "reason": "董厥对黄皓乱政的控诉交代了蜀内部政治失序这一动因；钟会与邓艾的交锋也塑造了邓艾受轻视后决定冒险取成都的关键动机。",
+          "required_fix": "补充董厥控诉黄皓乱政及钟会、邓艾会面中的主要交锋和由此形成的邓艾动机。"
+        }
+      ],
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "repair_rounds": [
+        {
+          "round": 1,
+          "candidate_cjk": 988,
+          "review": {
+            "source_fidelity": 9,
+            "naturalness": 9,
+            "readability": 9,
+            "material_omissions": [],
+            "unsupported_additions": [],
+            "distortions": [],
+            "language_problems": [],
+            "verdict": "pass",
+            "omissions": []
+          },
+          "passed": true
+        }
+      ],
+      "promotion": {
+        "status": "promoted",
+        "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_117-hsk5",
+        "candidate_sha256": "a4da3772371ce13559960372da4201f1a45d05e778ec3bfd8f2a17aaa7cc1b67",
+        "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_117-hsk5/chapter.before-omission-repair.txt",
+        "annotations_invalidated": [],
+        "annotation_rerun_required": true
+      }
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    },
+    {
+      "status": "no_material_omissions"
+    }
+  ],
+  "promotion_requested": true,
+  "promotions": [
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_011-hsk1",
+      "candidate_sha256": "de98f2e2bcda1438f39fe14f22d8bb4f085e6974a3c0986f67f0832a5f4269c3",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_011-hsk1/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_017-hsk2",
+      "candidate_sha256": "f44686d82dd836942d0b33ac4cf2b675d2374baf4254f75ba29b813e5c60a47c",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_017-hsk2/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_019-hsk3",
+      "candidate_sha256": "763d7f30a8e9c5bd60cf972d7bf2adf58bd2be7a6d66571a7463da5360240702",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_019-hsk3/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_020-hsk1",
+      "candidate_sha256": "3d8eee7b6a36be1392950a1ae5154cc334515291fa9dd0191e8633c204d7579b",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_020-hsk1/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_025-hsk2",
+      "candidate_sha256": "ab9a06856f14b5e671309e4cb0a00c6818cc945bf4c37e7ceabccf12f5db9159",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_025-hsk2/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_027-hsk1",
+      "candidate_sha256": "7b9930626d146fe6c0fce14b16bfabc6f7f364e65dc9f50bd5e013bf9c329e00",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_027-hsk1/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_030-hsk3",
+      "candidate_sha256": "35ddadfb19e58779d39bb1bbaf5c2f92badfc00d5661c40380bbd83695ff4eea",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_030-hsk3/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_041-hsk3",
+      "candidate_sha256": "907db662d3de7bcccfbdd34f5af4e41516d01845cf1218659ca79c9222dd8130",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_041-hsk3/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_048-hsk2",
+      "candidate_sha256": "0f6328cd82091e9cd46a56ce86e8aeda70fec5e747022f0c1cd5cea986a851f4",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_048-hsk2/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_052-hsk1",
+      "candidate_sha256": "acbbf4743fcd12856fb1ce182411cef063be7de82cfebb84947e9c881e438d81",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_052-hsk1/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_053-hsk1",
+      "candidate_sha256": "e33ccfd845ac509ec16147e5e7a203c1c14904a4ddf1bcda2533887124c4ca1f",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_053-hsk1/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_058-hsk3",
+      "candidate_sha256": "7b0cd5a28d385e66bc9c4472e398e50a455508e2f7ca5693dc036bd336e7353b",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_058-hsk3/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_064-hsk1",
+      "candidate_sha256": "9608c9a11740fd229d18569306d052a1f2d391727dcccbbc83b2ab3076159baf",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_064-hsk1/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_069-hsk2",
+      "candidate_sha256": "341c8f2ac8bdc2deef2017a44faccb36b13428b0e8ef3291d156ede27b064791",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_069-hsk2/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_073-hsk1",
+      "candidate_sha256": "223a11952082cd71eaf1d98615763d14708de6d06211d84470ca91a9a305beeb",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_073-hsk1/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_073-hsk2",
+      "candidate_sha256": "122cc24ea3ca0743805843aa985665607817e2265fd0ebf798c7827f210120d7",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_073-hsk2/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_080-hsk2",
+      "candidate_sha256": "a54d33fe78d52fa56ec98fd9c2bebaeac12588f10cb794b88fca17f1051a04cb",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_080-hsk2/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_097-hsk3",
+      "candidate_sha256": "a3da70718dbf80af927e7631af5cd17d503dfb2706c33425dfccd24f2611d64e",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_097-hsk3/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_099-hsk2",
+      "candidate_sha256": "478d6bbd55b4aed040a10466a1b39223bce7d9f8126f21e4e169e220f461b156",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_099-hsk2/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_101-hsk3",
+      "candidate_sha256": "0f8ebc64550f62384a326cf8dbda4c3699cff28492df2e4b8101ec3b3b20626d",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_101-hsk3/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_118-hsk1",
+      "candidate_sha256": "db06f69fcbfb928372d63f91e1f84f4922b16d962053471b45493fea2186d281",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_118-hsk1/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_001-hsk4",
+      "candidate_sha256": "1d09265ed623d137f118781be5ac9ce3987eed0b6a29a7240774e0e01d8f2ec2",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_001-hsk4/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_004-hsk4",
+      "candidate_sha256": "37cd93ea2c88e71617ce18b23307d900af8d98edc4c10b032a8d470f6c9a81e6",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_004-hsk4/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_004-hsk5",
+      "candidate_sha256": "dc005faa3e933337ce24da6c6a512fc0b3a72e93f291088342d4a16046d2be0d",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_004-hsk5/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_006-hsk4",
+      "candidate_sha256": "56db64ab65698fd5c0dee31bbecdcce54942564b648801a42e0cc43c6747f941",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_006-hsk4/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_008-hsk6",
+      "candidate_sha256": "27d3fd77593b247610ae483cbaf41436e5d3f5e899b71827cadad7729074ada6",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_008-hsk6/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_025-hsk6",
+      "candidate_sha256": "de2f13b0dd9526f1a250f109f0be64c00b1f2d0a34065c9b64e9014fff78c0b4",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_025-hsk6/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_050-hsk6",
+      "candidate_sha256": "0a2af3c55e0ff56e56862342f229bc516300fb6dedf4c01e16d9bcc4abbeff9b",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_050-hsk6/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_061-hsk5",
+      "candidate_sha256": "a00518ec817297df0e64f180d98d63b2bba1db9404ab4af8e73c9e98b1de04fa",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_061-hsk5/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_062-hsk6",
+      "candidate_sha256": "42cd1750c381a04ded87835fe3420127f338ad4c51d1566398e3a2daf2aefd1e",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_062-hsk6/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_068-hsk4",
+      "candidate_sha256": "7f1e200e677b538593487f6c9b5ed40f9d955d4a49802f366903f394fe9f3d53",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_068-hsk4/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_069-hsk5",
+      "candidate_sha256": "34ac6a4a413fdfa3fff63d8f066eb17adf7b64e7c60adc236d078df2b1cf7b2d",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_069-hsk5/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_070-hsk5",
+      "candidate_sha256": "d6eff95500c26b4985d77a7d43cd345836bc3946947eac54b48953594252f25f",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_070-hsk5/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_071-hsk5",
+      "candidate_sha256": "24a19fe5cc9d1514dfc886ac478201c8f2cb831b806a5ae532f48278962f7118",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_071-hsk5/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_074-hsk4",
+      "candidate_sha256": "f0a14acd3eca8b1b6991342095516f86fbea21b8b05601c03d07a819f479ff10",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_074-hsk4/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_078-hsk4",
+      "candidate_sha256": "caaa417a5593e3ae548120dfedd741beb8f7d5123a085324aa20138ae648df99",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_078-hsk4/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_089-hsk6",
+      "candidate_sha256": "9484afef5eb3e6c6c65097f3b2a7d6c3e0d07b79128fec0b7817a48c76669846",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_089-hsk6/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_104-hsk6",
+      "candidate_sha256": "138861b0ba4329d1d0a3866921b0a1aeae906da48b5886f9054bc76de0acc36b",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_104-hsk6/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    },
+    {
+      "status": "promoted",
+      "run_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_117-hsk5",
+      "candidate_sha256": "a4da3772371ce13559960372da4201f1a45d05e778ec3bfd8f2a17aaa7cc1b67",
+      "backup": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_117-hsk5/chapter.before-omission-repair.txt",
+      "annotations_invalidated": [],
+      "annotation_rerun_required": true
+    }
+  ]
+}

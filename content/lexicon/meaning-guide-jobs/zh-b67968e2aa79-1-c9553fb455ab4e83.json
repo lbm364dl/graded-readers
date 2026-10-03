@@ -1,0 +1,31 @@
+{
+  "id": "zh-b67968e2aa79-1-c9553fb455ab4e83",
+  "entry_id": "zh-b67968e2aa79-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b67968e2aa79-1",
+      "headword": "赶到",
+      "kind": "construction",
+      "reading": "gǎndào",
+      "senses": [
+        {
+          "id": "zh-b67968e2aa79-1-s1",
+          "definition": "to hurry or arrive at a place"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人带人赶到青州，发现敌人很多。",
+        "gloss": "hurry to",
+        "sense_id": "zh-b67968e2aa79-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c0d67d065b3a873dd7f36fd5dea034d1a6de15bab4921c532d6147a9bfab96dc"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-1f57bea696c1-1-79da9b63c5f291e5",
+  "entry_id": "zh-1f57bea696c1-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1f57bea696c1-1",
+      "headword": "飞入",
+      "kind": "construction",
+      "reading": "fēi rù",
+      "senses": [
+        {
+          "id": "zh-1f57bea696c1-1-s1",
+          "definition": "to fly into; to enter by flying"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "光和元年，母鸡变成公鸡；六月初一，黑气飞入宫中。",
+        "gloss": "fly into",
+        "sense_id": "zh-1f57bea696c1-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bd271d750ec4004c10c3031978f7dbd68f5d7976ac532736c046712dd72773ba"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-7edf659eaa38-1-70f0e10339c7d49b",
+  "entry_id": "zh-7edf659eaa38-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7edf659eaa38-1",
+      "headword": "进山",
+      "kind": "construction",
+      "reading": "jìnshān",
+      "senses": [
+        {
+          "id": "zh-7edf659eaa38-1-s1",
+          "definition": "to go into the mountains"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "进山采药时，他遇到南华老仙。",
+        "gloss": "to enter the mountains",
+        "sense_id": "zh-7edf659eaa38-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "507f0d34ca2f98adaf0fa2e84dfad104a48e62ef1bcc8315ee81442a682106f8"
+}

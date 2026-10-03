@@ -1,0 +1,32 @@
+{
+  "id": "ja-9ede352f72e47972-8b21f8c7ceaee941",
+  "entry_id": "ja-9ede352f72e47972",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9ede352f72e47972",
+      "headword": "女の人",
+      "reading": "おんなのひと",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-9ede352f72e47972-1",
+          "definition": "Woman; adult female person."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "女の人は吾輩を何度も外へ出しましたが、吾輩は台所へ入りました。",
+        "gloss": "woman",
+        "sense_id": "ja-9ede352f72e47972-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "23c2744cbce6060e47bfdaf05f8a1f0f10f025e6ed417b663c6654c407f0f2ea"
+}

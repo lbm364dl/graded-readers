@@ -1,0 +1,32 @@
+{
+  "id": "ja-cbcdfe2476156d63-4be0b24d0a2a357c",
+  "entry_id": "ja-cbcdfe2476156d63",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-cbcdfe2476156d63",
+      "headword": "考えるようになる",
+      "reading": "かんがえるようになる",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-cbcdfe2476156d63-1",
+          "definition": "to come to think or feel; to begin to regard something in a particular way"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は人間と一緒に暮らし、彼らを見れば見るほど、彼らは我儘なものだと考えるようになった。",
+        "gloss": "came to think",
+        "sense_id": "ja-cbcdfe2476156d63-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7d296adc43a288f237bfabfdf57f2072e2eef172e81c46d93aab2ce35af1ab70"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-898ac192cae4-1-ddccf8c1fc8ec0d4",
+  "entry_id": "zh-898ac192cae4-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-898ac192cae4-1",
+      "headword": "朝廷",
+      "kind": "word",
+      "reading": "cháotíng",
+      "senses": [
+        {
+          "id": "zh-898ac192cae4-1-s1",
+          "definition": "imperial court; central government"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "朝廷命各地招兵，抵抗黄巾军。",
+        "gloss": "imperial court",
+        "sense_id": "zh-898ac192cae4-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "44ad34fd4e76cfb05787b8ffa3a5b0485dedaa3abbfc2b916ee44921048308d3"
+}

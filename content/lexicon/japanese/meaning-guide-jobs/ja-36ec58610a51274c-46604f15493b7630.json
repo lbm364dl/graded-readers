@@ -1,0 +1,32 @@
+{
+  "id": "ja-36ec58610a51274c-46604f15493b7630",
+  "entry_id": "ja-36ec58610a51274c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-36ec58610a51274c",
+      "headword": "分かる",
+      "reading": "わかる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-36ec58610a51274c-1",
+          "definition": "To understand, know, or be able to tell."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "どこで生まれたか分かりません。",
+        "gloss": "do not know; cannot tell",
+        "sense_id": "ja-36ec58610a51274c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2201d52c1aa602700c54248f4ab5d5c612e9b60b362488b10e6d40e04d20c3c8"
+}

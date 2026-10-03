@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_082-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 285,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "omission_note": "未交代孙权派赵咨出使魏国的直接目的，是请求曹丕袭击汉中以牵制蜀军。",
+      "classification": "material",
+      "reason": "这省略了赵咨出使的具体战略目的和孙权应对蜀军的关键动机，影响事件因果链。",
+      "required_fix": "补充孙权派赵咨出使魏国，请求曹丕袭击汉中以牵制蜀军。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "未交代孙权派赵咨出使魏国的直接目的，是请求曹丕袭击汉中以牵制蜀军。",
+      "classification": "material",
+      "reason": "这省略了赵咨出使的具体战略目的和孙权应对蜀军的关键动机，影响事件因果链。",
+      "required_fix": "补充孙权派赵咨出使魏国，请求曹丕袭击汉中以牵制蜀军。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 285,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

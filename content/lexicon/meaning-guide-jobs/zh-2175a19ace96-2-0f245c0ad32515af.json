@@ -1,0 +1,31 @@
+{
+  "id": "zh-2175a19ace96-2-0f245c0ad32515af",
+  "entry_id": "zh-2175a19ace96-2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2175a19ace96-2",
+      "headword": "混",
+      "kind": "word",
+      "reading": "hùn",
+      "senses": [
+        {
+          "id": "zh-2175a19ace96-2-s1",
+          "definition": "to fight in close combat"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "救军抵达后，黄巾军分兵，双方立刻混战。",
+        "gloss": "to engage in; become mixed up in",
+        "sense_id": "zh-2175a19ace96-2-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bf1bb67075b82a1f57c58fd523d42bc0bb0478e90cf3d66f7e74d559e5af34a0"
+}

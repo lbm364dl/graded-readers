@@ -1,0 +1,36 @@
+{
+  "id": "zh-092efa616bd1-1-f9d2af2fa0424674",
+  "entry_id": "zh-092efa616bd1-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-092efa616bd1-1",
+      "headword": "云长",
+      "kind": "name",
+      "reading": "Yún Cháng",
+      "senses": [
+        {
+          "id": "zh-092efa616bd1-1-s1",
+          "definition": "Guan Yu's courtesy name"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "那人姓关，名羽，字寿长，后来改字云长，是河东解良人。",
+        "gloss": "Yun Chang",
+        "sense_id": "zh-092efa616bd1-1-s1"
+      },
+      {
+        "sentence": "那人说：“我姓关，名羽，字寿长，后改字云长，是河东解良人。",
+        "gloss": "Yun Chang",
+        "sense_id": "zh-092efa616bd1-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3415a7bc3a5ed78ededfad60976e2a4197ba778b90d4b8140e56104ac15b1ee9"
+}

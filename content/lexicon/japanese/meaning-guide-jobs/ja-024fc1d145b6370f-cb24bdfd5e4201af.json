@@ -1,0 +1,32 @@
+{
+  "id": "ja-024fc1d145b6370f-cb24bdfd5e4201af",
+  "entry_id": "ja-024fc1d145b6370f",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-024fc1d145b6370f",
+      "headword": "写生し始める",
+      "reading": "しゃせいしはじめる",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-024fc1d145b6370f-1",
+          "definition": "to begin sketching from life"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "次の日、主人は縁側で昼寝する吾輩を写生し始めた。",
+        "gloss": "began sketching from life",
+        "sense_id": "ja-024fc1d145b6370f-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e6ebb85f78ffdf512e723a817395f961b61713857fcda2973e3ea8d0745028e2"
+}

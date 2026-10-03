@@ -1,0 +1,31 @@
+{
+  "id": "zh-e3df8b7e7b0a-1-bdfdbcd455b93389",
+  "entry_id": "zh-e3df8b7e7b0a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e3df8b7e7b0a-1",
+      "headword": "转述",
+      "kind": "word",
+      "reading": "zhuǎnshù",
+      "senses": [
+        {
+          "id": "zh-e3df8b7e7b0a-1-s1",
+          "definition": "to report or relay what someone has said"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备见到皇甫嵩、朱俊，转述卢植的意思。",
+        "gloss": "to relay",
+        "sense_id": "zh-e3df8b7e7b0a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d06f603ca1b3238442662b8c4add0e5b1b3c60cbf154094c416854f7c96d050f"
+}

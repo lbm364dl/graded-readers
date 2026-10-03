@@ -1,0 +1,32 @@
+{
+  "id": "ja-59272227f3be9c81-975e80646027b6d7",
+  "entry_id": "ja-59272227f3be9c81",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-59272227f3be9c81",
+      "headword": "伸ばす",
+      "reading": "のばす",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-59272227f3be9c81-1",
+          "definition": "to stretch out; extend"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は足を前へ伸ばし、首を低くして、大きな欠伸をした。",
+        "gloss": "stretching out",
+        "sense_id": "ja-59272227f3be9c81-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e0a2deb9b401ce35453fca0a4113ccc85eff57415ec8073828641d32ea837e05"
+}

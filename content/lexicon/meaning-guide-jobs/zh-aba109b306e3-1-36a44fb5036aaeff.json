@@ -1,0 +1,31 @@
+{
+  "id": "zh-aba109b306e3-1-36a44fb5036aaeff",
+  "entry_id": "zh-aba109b306e3-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-aba109b306e3-1",
+      "headword": "杀出",
+      "kind": "construction",
+      "reading": "shā chū",
+      "senses": [
+        {
+          "id": "zh-aba109b306e3-1-s1",
+          "definition": "emerge attacking; rush out to attack"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军追过山岭时，刘备军中发出信号，两边伏兵立即杀出，刘备也转身反击。",
+        "gloss": "to attack by coming out",
+        "sense_id": "zh-aba109b306e3-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3cf649fee1efa693957c9c7f074a25f3876a637c35f31b5decf1b948f2b582bb"
+}

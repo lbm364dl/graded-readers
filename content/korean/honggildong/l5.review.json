@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "chapters": [
+    {
+      "number": 1,
+      "chapter_digest": "dd43664016a622a99a4388237379c060e69ddcf25908919e840e8d3e475e3b3e",
+      "source_sha256": "310f0d76f9a9c614d4cf920e9b3303e30473649c7d22e79169165e7d4b88d197",
+      "source_notes_sha256": "5e088f495a768b4f654c61973edfc03825e4cad076d356a19e9f9efa3c68180b",
+      "policy_sha256": "f6443ffef9aaeb16eed49e6b2ba9d8bbb0e40af36ca9a51e2b007b7d614a9244",
+      "linguistic_reference_sha256": "88dcef0d7423a09c65046d1d7d62a3333b199a7c2574027a29f0ef77515fa0aa",
+      "reviews": {
+        "plan": {
+          "proposal_job": "plan-0",
+          "review_job": "plan-review-0",
+          "output_digest": "260277006b7e33a38662b6fc469d73375a40720119601b751aaefb4948481440",
+          "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+          "context_digest": "4fd11fba7cb850a44fc6b61164d4505458a9c2c32ca5aa3a9a0edb248cafbe47",
+          "approved": true,
+          "review": {
+            "approved": true,
+            "issues": []
+          },
+          "model": "gpt-6.1-sol",
+          "effort": "high",
+          "input_fingerprint": "8385139cbad8137e72b6bf3e104394d4244bbac788ba46a294d29a06ead5353b"
+        },
+        "lexical-plan": {
+          "proposal_job": "lexical-plan-1",
+          "review_job": "lexical-plan-review-1",
+          "output_digest": "7932fb9c09356e80b600b5ea0df0a0f9f9b0a8670e6f299d523c2fcd8f64e57a",
+          "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+          "context_digest": "30eda3e00d851b7dfd9ad9ed8ea43f88cee6754d85ca69808d4b788899bf9d58",
+          "approved": true,
+          "review": {
+            "approved": true,
+            "issues": []
+          },
+          "model": "gpt-6.1-sol",
+          "effort": "high",
+          "input_fingerprint": "d11f4369a0d32c4c3f851f4cb6b832d8e579e17d8a03e2987d0ced7dd18ffc44"
+        },
+        "prose": {
+          "proposal_job": "prose-1",
+          "review_job": "prose-review-1",
+          "output_digest": "9b7eb758bcd4cd94a2212f93e0ea49314940fb4c8cbd5a295164d1c02927316b",
+          "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+          "context_digest": "708076ffe65827373638163434aed1eca8982ee14190364a30ee000581d8683e",
+          "approved": true,
+          "review": {
+            "approved": true,
+            "issues": []
+          },
+          "model": "gpt-6.1-sol",
+          "effort": "high",
+          "input_fingerprint": "e5e81ad2fa79f704bb17cd91af783f4fbd1b93eced30470fcb3cd2c90ba4bc31"
+        },
+        "annotation": {
+          "proposal_job": "annotation-8",
+          "review_job": "annotation-review-8",
+          "output_digest": "bf7f7949161c5fc9ab54d4d6274f14c0c6fc1ba1bf6702e98118e44072072604",
+          "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+          "context_digest": "3766c893d8bdef5489de1b5633c6bbd503cf1757a7a9146e9d4b30fa83d8ac8b",
+          "approved": true,
+          "review": {
+            "approved": true,
+            "issues": []
+          },
+          "model": "gpt-6.1-sol",
+          "effort": "high",
+          "input_fingerprint": "06c1bed73967be9595a65dd91785d59b281a6b760737085e97e590ce3d39aa81"
+        },
+        "curriculum": {
+          "proposal_job": "curriculum-0",
+          "review_job": "curriculum-review-0",
+          "output_digest": "222cd82a2657b090ac8dd87f4978ac68efedfd7601728379b6ef6e3d688ac442",
+          "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+          "context_digest": "d24b3646a4ac0668aa490050f57aa5a5e67ec8ca093758bd96999f8c695f1827",
+          "approved": true,
+          "review": {
+            "approved": true,
+            "issues": []
+          },
+          "model": "gpt-6.1-sol",
+          "effort": "high",
+          "input_fingerprint": "c7e6b0f1590b332d1bc809678988fa466d62f26544889fc8d77ba3b042abeb22"
+        },
+        "dictionary": {
+          "proposal_job": "dictionary-2",
+          "review_job": "dictionary-review-2",
+          "output_digest": "72e74b31eb3c6f7812024df8e9e8a7df7c7d68aee32a7f6d90ffebae7050ee29",
+          "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+          "context_digest": "8be86f2b5d9eb9709350f7dbe0b164a2d36777d6cfa93bb6aa593ac6d0d9e763",
+          "approved": true,
+          "review": {
+            "approved": true,
+            "issues": []
+          },
+          "model": "gpt-6.1-sol",
+          "effort": "high",
+          "input_fingerprint": "afc11c1bbaaf0c40fe33dd7ed714165d362037318257c1639974c441c79d4149"
+        },
+        "sentence-help": {
+          "proposal_job": "sentence-help-0",
+          "review_job": "sentence-help-review-0",
+          "output_digest": "1791c918750004c896677fc4966249a0ecb629c98d59f9ade003a3845bfdc1f4",
+          "review_digest": "6e530013ec05287fd6c9442ebd8af6d1c07669b85177af98869b7380aecb44ec",
+          "context_digest": "91c4b99fe67ba2477c43c7185c63e73fa843e8be0f615368af77aa92e99962ed",
+          "approved": true,
+          "review": {
+            "approved": true,
+            "issues": []
+          },
+          "model": "gpt-6.1-sol",
+          "effort": "high",
+          "input_fingerprint": "cf9ac0305dea88c412f91886ad91fbb94479bfb6cb0e0940c8821eaf7cffcec9"
+        }
+      },
+      "target_level": 5,
+      "level_policy_sha256": "226faf9c83741f4332c2f8f50d55b1fbd0350b7f9b6020350403672e33e5bbea",
+      "dictionary_digest": "089f963060cdaab4fac2e2ddcc2d5e80a6d07485f030e3b2be9f35dc470fef01",
+      "breakdowns_digest": "ebcd5469a388ee35f032708af8e9944b852fde6e62e204563071709083a5f52e"
+    }
+  ]
+}

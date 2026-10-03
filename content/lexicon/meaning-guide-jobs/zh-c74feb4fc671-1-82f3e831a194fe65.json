@@ -1,0 +1,36 @@
+{
+  "id": "zh-c74feb4fc671-1-82f3e831a194fe65",
+  "entry_id": "zh-c74feb4fc671-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c74feb4fc671-1",
+      "headword": "干预",
+      "kind": "word",
+      "reading": "gānyù",
+      "senses": [
+        {
+          "id": "zh-c74feb4fc671-1-s1",
+          "definition": "to interfere in"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "宦官弄权，干预朝政，也迫害直言的官员，天下人心很不安。",
+        "gloss": "to interfere in",
+        "sense_id": "zh-c74feb4fc671-1-s1"
+      },
+      {
+        "sentence": "蔡邕上书直言，认为雌鸡变雄，是妇人和宦官干预朝政造成的。",
+        "gloss": "to interfere in",
+        "sense_id": "zh-c74feb4fc671-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ea1dfc44254e670e256a83171cd828e5f364fb8ef8f113ff185b4fa8285cf932"
+}

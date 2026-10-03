@@ -1,0 +1,31 @@
+{
+  "id": "zh-1462a7d8531e-1-e810485c54259d27",
+  "entry_id": "zh-1462a7d8531e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1462a7d8531e-1",
+      "headword": "地方",
+      "kind": "word",
+      "reading": "dìfāng",
+      "senses": [
+        {
+          "id": "zh-1462a7d8531e-1-s1",
+          "definition": "area; region"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "幽州兵少，刘焉听从邹靖的建议，马上发布招军榜，招募人员保卫地方。",
+        "gloss": "the region",
+        "sense_id": "zh-1462a7d8531e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "933750689885fff1b59b46dd7809b5517fb7b44611acc49050b1ed329c627fc7"
+}

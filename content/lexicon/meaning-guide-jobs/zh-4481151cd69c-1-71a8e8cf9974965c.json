@@ -1,0 +1,31 @@
+{
+  "id": "zh-4481151cd69c-1-71a8e8cf9974965c",
+  "entry_id": "zh-4481151cd69c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4481151cd69c-1",
+      "headword": "马鞍",
+      "kind": "word",
+      "reading": "mǎ'ān",
+      "senses": [
+        {
+          "id": "zh-4481151cd69c-1-s1",
+          "definition": "saddle"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "火光照亮天空，黄巾军来不及披上铠甲，也来不及给马装好马鞍，只好四处逃跑。",
+        "gloss": "saddles",
+        "sense_id": "zh-4481151cd69c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5c38ba7af9221bf71c5fb019837ab73bacd3cfb3afea788f5e45bc39b2ee27fe"
+}

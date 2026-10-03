@@ -1,0 +1,31 @@
+{
+  "id": "zh-6d6b99f0c60d-1-55e7a2e933c405b3",
+  "entry_id": "zh-6d6b99f0c60d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6d6b99f0c60d-1",
+      "headword": "到来",
+      "kind": "word",
+      "reading": "dàolái",
+      "senses": [
+        {
+          "id": "zh-6d6b99f0c60d-1-s1",
+          "definition": "arrive; come"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军见救兵到来，马上迎战。",
+        "gloss": "to arrive",
+        "sense_id": "zh-6d6b99f0c60d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "77deba09515db476d3a7c771a63b2c3ff8774260409e9e2dca3baa4633341a68"
+}

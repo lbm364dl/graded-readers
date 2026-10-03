@@ -1,0 +1,32 @@
+{
+  "id": "ja-dfe2b633139e04e3-89ce378d206571c2",
+  "entry_id": "ja-dfe2b633139e04e3",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-dfe2b633139e04e3",
+      "headword": "歩き出す",
+      "reading": "あるきだす",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-dfe2b633139e04e3-1",
+          "definition": "to start walking; begin to walk"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そして、もう写生の邪魔をしたのだから仕方がないと思い、裏へ行って用を足そうと、ゆっくり歩き出した。",
+        "gloss": "started walking",
+        "sense_id": "ja-dfe2b633139e04e3-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b6cba315517df6f07b58e925a2ee78239d1fbc6e38d128507826a49f59ecfaa8"
+}

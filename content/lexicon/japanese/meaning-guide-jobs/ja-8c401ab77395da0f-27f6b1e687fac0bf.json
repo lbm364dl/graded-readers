@@ -1,0 +1,32 @@
+{
+  "id": "ja-8c401ab77395da0f-27f6b1e687fac0bf",
+  "entry_id": "ja-8c401ab77395da0f",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-8c401ab77395da0f",
+      "headword": "お前",
+      "reading": "おまえ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-8c401ab77395da0f-1",
+          "definition": "you"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が近づくと、彼は丸い目を開け、「お前は何だ」と言った。",
+        "gloss": "you",
+        "sense_id": "ja-8c401ab77395da0f-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2dc65f6fedded52b7e04a557c7e5f7e157a87bdaa963c50e18a349d26208a489"
+}

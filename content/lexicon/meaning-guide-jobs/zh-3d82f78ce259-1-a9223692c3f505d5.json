@@ -1,0 +1,31 @@
+{
+  "id": "zh-3d82f78ce259-1-a9223692c3f505d5",
+  "entry_id": "zh-3d82f78ce259-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-3d82f78ce259-1",
+      "headword": "酬金",
+      "kind": "word",
+      "reading": "chóujīn",
+      "senses": [
+        {
+          "id": "zh-3d82f78ce259-1-s1",
+          "definition": "payment; money owed or paid as a fee"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘胜的儿子刘贞曾被封为涿鹿亭侯，后来因未按规定缴纳酬金而失侯，这一支便留在涿县。",
+        "gloss": "remuneration",
+        "sense_id": "zh-3d82f78ce259-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "61d007c937c4df05696be69143a4d6fe45b2ff5ef9ec0ece4866a5343ff2958c"
+}

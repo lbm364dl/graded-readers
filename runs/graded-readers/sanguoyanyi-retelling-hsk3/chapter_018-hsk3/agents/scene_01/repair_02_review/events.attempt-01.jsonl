@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff37f-bff9-74b3-8071-4792977413f8"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.86,\"naturalness\":0.93,\"readability\":0.92,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"将马良提出“先取南方四郡、以为根本”的策略归给了伊籍，原文是伊籍推荐马良，马良提出具体策略。\"],\"language_problems\":[],\"verdict\":\"revise\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":27912,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":1014,"reasoning_output_tokens":913}}

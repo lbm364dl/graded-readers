@@ -1,0 +1,32 @@
+{
+  "id": "ja-cba292696cdfe3e3-4eeb565c1fd285b5",
+  "entry_id": "ja-cba292696cdfe3e3",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-cba292696cdfe3e3",
+      "headword": "尊敬する",
+      "reading": "そんけいする",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-cba292696cdfe3e3-1",
+          "definition": "to respect; to hold in esteem"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "　吾輩が尊敬している、筋向の白君は、会うたびに「人間ほど愛情のないものはない」と言う。",
+        "gloss": "respects; holds in esteem",
+        "sense_id": "ja-cba292696cdfe3e3-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "14c4ab2f4b602341e0371c8deba24370c3ccaa3400aab8aba891702b8ae4b751"
+}

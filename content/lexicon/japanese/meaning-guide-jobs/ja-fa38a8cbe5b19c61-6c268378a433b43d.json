@@ -1,0 +1,32 @@
+{
+  "id": "ja-fa38a8cbe5b19c61-6c268378a433b43d",
+  "entry_id": "ja-fa38a8cbe5b19c61",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-fa38a8cbe5b19c61",
+      "headword": "後ろ",
+      "reading": "うしろ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-fa38a8cbe5b19c61-1",
+          "definition": "the back or area behind something"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人は書斎から出て来て、吾輩の後ろで熱心に筆を動かしていた。",
+        "gloss": "behind; back",
+        "sense_id": "ja-fa38a8cbe5b19c61-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "883c96bed4b6955ccb092119decdd57a736566d4c2697da8fae64f88de7671b6"
+}

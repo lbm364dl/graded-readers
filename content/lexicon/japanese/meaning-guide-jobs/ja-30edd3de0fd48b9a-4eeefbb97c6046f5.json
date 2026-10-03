@@ -1,0 +1,50 @@
+{
+  "id": "ja-30edd3de0fd48b9a-4eeefbb97c6046f5",
+  "entry_id": "ja-30edd3de0fd48b9a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-30edd3de0fd48b9a",
+      "headword": "大変",
+      "reading": "たいへん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-30edd3de0fd48b9a-1",
+          "definition": "very; greatly"
+        },
+        {
+          "id": "ja-30edd3de0fd48b9a-2",
+          "definition": "very; considerable"
+        },
+        {
+          "id": "ja-30edd3de0fd48b9a-3",
+          "definition": "serious; difficult; troublesome"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "どうも苦しくなって、吾輩はたいへん困った。",
+        "gloss": "very; greatly",
+        "sense_id": "ja-30edd3de0fd48b9a-1"
+      },
+      {
+        "sentence": "家の者は、主人を大変な勉強家だと思っているし、本人もそう見せている。",
+        "gloss": "very; extremely",
+        "sense_id": "ja-30edd3de0fd48b9a-2"
+      },
+      {
+        "sentence": "だが、一人が目を覚ますと大変だ。",
+        "gloss": "it is a serious problem",
+        "sense_id": "ja-30edd3de0fd48b9a-3"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f9219e0c42c2476584e139f8d8bf4917369f619d8a1943d667f86f7b6ca5b60b"
+}

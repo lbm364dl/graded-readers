@@ -1,0 +1,31 @@
+{
+  "id": "zh-1a355b4e87a0-1-9365e3c40c5ad408",
+  "entry_id": "zh-1a355b4e87a0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1a355b4e87a0-1",
+      "headword": "前去",
+      "kind": "construction",
+      "reading": "qiánqù",
+      "senses": [
+        {
+          "id": "zh-1a355b4e87a0-1-s1",
+          "definition": "go to a place or destination"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人谢过商人，打造兵器，配上铠甲，又聚集五百多名乡勇，前去报到。",
+        "gloss": "go forward",
+        "sense_id": "zh-1a355b4e87a0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "524ab04ee18da3da7ecb35d5eb68f85096514df0db1fe842f7c92b796f679590"
+}

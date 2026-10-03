@@ -1,0 +1,32 @@
+{
+  "id": "ja-9dc44f0724a6f499-4bb829d7c016432d",
+  "entry_id": "ja-9dc44f0724a6f499",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9dc44f0724a6f499",
+      "headword": "持つ",
+      "reading": "もつ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-9dc44f0724a6f499-1",
+          "definition": "to hold, carry, or take something"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "猫がとった鼠を、人間が取り上げて交番へ持って行く。",
+        "gloss": "take there; carry away",
+        "sense_id": "ja-9dc44f0724a6f499-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "df270e75c7f676d2b13127d8d66ea28c46c8d04323a301392a9ae5fa2aa78ba8"
+}

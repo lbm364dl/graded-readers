@@ -1,0 +1,32 @@
+{
+  "id": "ja-8cf3a28742639752-0af845ce7518308e",
+  "entry_id": "ja-8cf3a28742639752",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-8cf3a28742639752",
+      "headword": "着く",
+      "reading": "つく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-8cf3a28742639752-1",
+          "definition": "to arrive at; to reach"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "やがて人間の家らしい所へ着き、竹垣の穴から中へ入った。",
+        "gloss": "arrived at; reached",
+        "sense_id": "ja-8cf3a28742639752-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1846839680bbc524ab3ce0cc01243ae3871585960aa3ac3e3400421c0f6bf23e"
+}

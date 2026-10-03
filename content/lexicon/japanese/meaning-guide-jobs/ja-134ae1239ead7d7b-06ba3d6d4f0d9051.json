@@ -1,0 +1,32 @@
+{
+  "id": "ja-134ae1239ead7d7b-06ba3d6d4f0d9051",
+  "entry_id": "ja-134ae1239ead7d7b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-134ae1239ead7d7b",
+      "headword": "俳句",
+      "reading": "はいく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-134ae1239ead7d7b-1",
+          "definition": "haiku; a short traditional Japanese poem"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人は俳句、新しい詩、英語、弓、歌、バイオリンなど、何にでも手を出すが、どれも上手にならない。",
+        "gloss": "haiku",
+        "sense_id": "ja-134ae1239ead7d7b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "680646d809f877afef4c0001a7cce62a55f4bd95b7c8bb9b246dbeaf837a0240"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-5f97d1a9a547-1-2b8195318da1ed2c",
+  "entry_id": "zh-5f97d1a9a547-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5f97d1a9a547-1",
+      "headword": "同行",
+      "kind": "word",
+      "reading": "tóngxíng",
+      "senses": [
+        {
+          "id": "zh-5f97d1a9a547-1-s1",
+          "definition": "go or travel together with someone"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”刘焉让邹靖带五千人同行。",
+        "gloss": "travel together",
+        "sense_id": "zh-5f97d1a9a547-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a3d595439bfe06e027677933b384b856f49bd5879934cdac3160467e830f1d89"
+}

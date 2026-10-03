@@ -1,0 +1,37 @@
+{
+  "id": "ja-4f9482d64b25ddd9-75a326d4de9f1637",
+  "entry_id": "ja-4f9482d64b25ddd9",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-4f9482d64b25ddd9",
+      "headword": "よだれ",
+      "reading": "よだれ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-4f9482d64b25ddd9-1",
+          "definition": "drool; saliva"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "読みかけの本の上に、よだれをたらしていることさえある。",
+        "gloss": "drool",
+        "sense_id": "ja-4f9482d64b25ddd9-1"
+      },
+      {
+        "sentence": "しかし二、三ページ読むと眠くなり、本の上によだれをたらす。",
+        "gloss": "drool; saliva",
+        "sense_id": "ja-4f9482d64b25ddd9-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "44ad2ee882a8c146f8cce7a9441d1d12ae36fe56feaabfd9254b7b780f99bd1c"
+}

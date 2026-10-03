@@ -1,0 +1,61 @@
+{
+  "id": "ja-f7af53d24c1c67fc-38860c9867e46d67",
+  "entry_id": "ja-f7af53d24c1c67fc",
+  "reason": "requested",
+  "item": {
+    "entry": {
+      "id": "ja-f7af53d24c1c67fc",
+      "headword": "初めて",
+      "reading": "はじめて",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-f7af53d24c1c67fc-1",
+          "definition": "For the first time."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "その時、初めて人を見ました。",
+        "gloss": "for the first time",
+        "sense_id": "ja-f7af53d24c1c67fc-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-f7af53d24c1c67fc",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "初めて (はじめて) marks an event or experience as occurring on the first occasion. It commonly modifies a verb or clause and can also appear in phrases such as 初めての経験.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "初めて",
+        "contribution_en": "The expression as a whole marks something as happening or being experienced for the first time.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "88ed1289b8e280b69bf43aa8580ea7c74875d2697a407e1da189588151e394e2",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [
+    {
+      "id": "ja-audit-request-9e7c1a1809c4d02d",
+      "reason": "The part gloss restates the whole expression's meaning without adding a distinct explanation. Requested change: Keep the explanation of 初めて and its general usage; remove the redundant whole-expression part gloss.",
+      "entry_id": "ja-f7af53d24c1c67fc",
+      "force_research": false,
+      "reuse_reviewed_evidence": true
+    }
+  ],
+  "status": "reviewed",
+  "result_digest": "2ae6999a7241ed27896e9bea6f3922ed1dec4456f29c33daffac78e5ca11dd9f"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "zh-9dea2d989fd7-1-e8d255c5b7e4071a",
+  "entry_id": "zh-9dea2d989fd7-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9dea2d989fd7-1",
+      "headword": "发生",
+      "kind": "word",
+      "reading": "fāshēng",
+      "senses": [
+        {
+          "id": "zh-9dea2d989fd7-1-s1",
+          "definition": "happen; take place"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "汉朝末年，朝廷很乱，灾害和不祥的事不断发生。",
+        "gloss": "occur",
+        "sense_id": "zh-9dea2d989fd7-1-s1"
+      },
+      {
+        "sentence": "种种不祥接连发生。",
+        "gloss": "happen; occur",
+        "sense_id": "zh-9dea2d989fd7-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4a29a9d1ba8c4d406596f9c1357e8907e255409edb55be2fdc3eef70367ce6a7"
+}

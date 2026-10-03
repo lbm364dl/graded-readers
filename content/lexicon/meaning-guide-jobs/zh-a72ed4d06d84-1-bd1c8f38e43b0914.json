@@ -1,0 +1,31 @@
+{
+  "id": "zh-a72ed4d06d84-1-bd1c8f38e43b0914",
+  "entry_id": "zh-a72ed4d06d84-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a72ed4d06d84-1",
+      "headword": "交给",
+      "kind": "construction",
+      "reading": "jiāogěi",
+      "senses": [
+        {
+          "id": "zh-a72ed4d06d84-1-s1",
+          "definition": "to hand or give something to someone"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "老人把天书三卷交给他，名为太平要术，并警告他不可生异心。",
+        "gloss": "to hand over to",
+        "sense_id": "zh-a72ed4d06d84-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fac070abdae9e3a3c7c32fbc7d3d8e9d9183c39b87dd806c15d1d58102db542b"
+}

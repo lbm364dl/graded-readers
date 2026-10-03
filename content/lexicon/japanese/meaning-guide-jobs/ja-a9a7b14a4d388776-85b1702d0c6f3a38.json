@@ -1,0 +1,32 @@
+{
+  "id": "ja-a9a7b14a4d388776-85b1702d0c6f3a38",
+  "entry_id": "ja-a9a7b14a4d388776",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a9a7b14a4d388776",
+      "headword": "見始め",
+      "reading": "みはじめ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-a9a7b14a4d388776-1",
+          "definition": "beginning of seeing; start of looking"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "掌の上で少し落ち着き、書生の顔を見たことが、人間というものの見始めだったのだろう。",
+        "gloss": "beginning of seeing",
+        "sense_id": "ja-a9a7b14a4d388776-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bb550178d66d5a564dda3028b3d73bfd3dfa0ef0a6d476148826c65ea0002117"
+}

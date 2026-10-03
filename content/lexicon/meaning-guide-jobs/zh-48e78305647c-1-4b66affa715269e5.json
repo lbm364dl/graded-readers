@@ -1,0 +1,36 @@
+{
+  "id": "zh-48e78305647c-1-4b66affa715269e5",
+  "entry_id": "zh-48e78305647c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-48e78305647c-1",
+      "headword": "建宁",
+      "kind": "name",
+      "reading": "Jiànníng",
+      "senses": [
+        {
+          "id": "zh-48e78305647c-1-s1",
+          "definition": "Jianing, a historical era name"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "建宁二年四月十五日，皇帝在宫中坐下。",
+        "gloss": "Jianing era",
+        "sense_id": "zh-48e78305647c-1-s1"
+      },
+      {
+        "sentence": "建宁四年二月，洛阳地震，海水泛滥，沿海居民被大浪卷走。",
+        "gloss": "Jianing era",
+        "sense_id": "zh-48e78305647c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c4fda8aed35ee5cae0f2caa6461cb8183dce16d053df4567faa026160fde2376"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-377755f1b484-1-864c7b22cebf64ef",
+  "entry_id": "zh-377755f1b484-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-377755f1b484-1",
+      "headword": "言辞",
+      "kind": "word",
+      "reading": "yáncí",
+      "senses": [
+        {
+          "id": "zh-377755f1b484-1-s1",
+          "definition": "words or remarks used to express something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇帝下诏询问多种灾异的原因，蔡邕上书，认为这是妇人与宦官干政导致的，言辞十分直接。",
+        "gloss": "wording; remarks",
+        "sense_id": "zh-377755f1b484-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a101826f328ad3edb9771fcc1f3ace535f9a69dfec23a2d0e30e30e0f390227a"
+}

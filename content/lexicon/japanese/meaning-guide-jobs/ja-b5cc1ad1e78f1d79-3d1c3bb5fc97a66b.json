@@ -1,0 +1,32 @@
+{
+  "id": "ja-b5cc1ad1e78f1d79-3d1c3bb5fc97a66b",
+  "entry_id": "ja-b5cc1ad1e78f1d79",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-b5cc1ad1e78f1d79",
+      "headword": "交番",
+      "reading": "こうばん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-b5cc1ad1e78f1d79-1",
+          "definition": "a neighborhood police box or small police station"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "猫がとった鼠を、人間が取り上げて交番へ持って行く。",
+        "gloss": "police box",
+        "sense_id": "ja-b5cc1ad1e78f1d79-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ac0fcecd270485c40ab388d5557d3a3a0146d305b7042fc8d0f1c0f0333b9f55"
+}

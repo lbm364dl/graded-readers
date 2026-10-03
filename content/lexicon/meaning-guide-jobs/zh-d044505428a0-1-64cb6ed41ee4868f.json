@@ -1,0 +1,31 @@
+{
+  "id": "zh-d044505428a0-1-64cb6ed41ee4868f",
+  "entry_id": "zh-d044505428a0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d044505428a0-1",
+      "headword": "因而",
+      "kind": "word",
+      "reading": "yīn'ér",
+      "senses": [
+        {
+          "id": "zh-d044505428a0-1-s1",
+          "definition": "therefore; as a result"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "灵帝看完奏章叹气，因而起身更衣。",
+        "gloss": "therefore",
+        "sense_id": "zh-d044505428a0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "637b4b8a2c7e89d25cd97a350bc82a3bbadb1650b63e1a9db6c0295e5bbc1469"
+}

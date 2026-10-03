@@ -1,0 +1,41 @@
+{
+  "id": "zh-220b3dd2c93f-1-de2135d533145d60",
+  "entry_id": "zh-220b3dd2c93f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-220b3dd2c93f-1",
+      "headword": "城里",
+      "kind": "word",
+      "reading": "chénglǐ",
+      "senses": [
+        {
+          "id": "zh-220b3dd2c93f-1-s1",
+          "definition": "inside the city"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "第二天，青州太守派人送来求援消息，说黄巾军围住了城，城里的人十分不安。",
+        "gloss": "inside the city",
+        "sense_id": "zh-220b3dd2c93f-1-s1"
+      },
+      {
+        "sentence": "青州城里的人也出来帮忙，青州之围终于解开。",
+        "gloss": "inside the city",
+        "sense_id": "zh-220b3dd2c93f-1-s1"
+      },
+      {
+        "sentence": "曹操以前做官时，也很重视城里的规矩。",
+        "gloss": "in the city",
+        "sense_id": "zh-220b3dd2c93f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e73a24935fb3840a58d8c4b6e06198422bfcd2882ec8959aad16cd647f0ea9c5"
+}

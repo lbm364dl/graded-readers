@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_076-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 985,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了刘封、孟达拒绝出兵的部分背景铺陈。",
+      "classification": "material",
+      "reason": "原场景中孟达说明关羽曾反对刘封继承汉中王之位并建议将其远置上庸，这揭示了二人的重要关系和刘封、孟达拒绝救援的真实动机；接受场景仅保留山城初附、人心未稳的表面理由，遗漏会削弱后续人物行为的因果和 characterization。",
+      "required_fix": "补充孟达关于关羽反对刘封继承、建议将刘封安置上庸以杜后患的说明，并交代刘封因此对是否救援的顾虑。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了刘封、孟达拒绝出兵的部分背景铺陈。",
+      "classification": "material",
+      "reason": "原场景中孟达说明关羽曾反对刘封继承汉中王之位并建议将其远置上庸，这揭示了二人的重要关系和刘封、孟达拒绝救援的真实动机；接受场景仅保留山城初附、人心未稳的表面理由，遗漏会削弱后续人物行为的因果和 characterization。",
+      "required_fix": "补充孟达关于关羽反对刘封继承、建议将刘封安置上庸以杜后患的说明，并交代刘封因此对是否救援的顾虑。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 985,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

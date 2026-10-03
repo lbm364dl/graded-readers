@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_060-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 180,
+  "required_range": [
+    98,
+    182
+  ],
+  "material_findings": [
+    {
+      "omission_note": "张松在荆州受赵云、关羽和刘备礼遇的过程被压缩。",
+      "classification": "material",
+      "reason": "这段礼遇过程具体展现刘备及其部下的仁厚待客，并直接促成张松决定劝刘备取西川、献图和安排内应；压缩后削弱了这一动机与关系转折。",
+      "required_fix": "补回赵云迎接款待、关羽设宴接待、刘备携孔明和庞统亲迎，以及连续宴饮三日并设宴送行的关键过程。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "张松在荆州受赵云、关羽和刘备礼遇的过程被压缩。",
+      "classification": "material",
+      "reason": "这段礼遇过程具体展现刘备及其部下的仁厚待客，并直接促成张松决定劝刘备取西川、献图和安排内应；压缩后削弱了这一动机与关系转折。",
+      "required_fix": "补回赵云迎接款待、关羽设宴接待、刘备携孔明和庞统亲迎，以及连续宴饮三日并设宴送行的关键过程。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 180,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

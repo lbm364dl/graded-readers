@@ -1,0 +1,31 @@
+{
+  "id": "zh-a984c284d908-1-9037e140b7d40807",
+  "entry_id": "zh-a984c284d908-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a984c284d908-1",
+      "headword": "镔铁",
+      "kind": "word",
+      "reading": "bīntiě",
+      "senses": [
+        {
+          "id": "zh-a984c284d908-1-s1",
+          "definition": "a kind of patterned steel"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "二人听后很高兴，赠送良马五十匹、金银五百两和镔铁一千斤。",
+        "gloss": "patterned steel",
+        "sense_id": "zh-a984c284d908-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "544930ee207143f9c0c84e84e2e6d8ea74ba2af7eaf63ce3973bda6901a701f6"
+}

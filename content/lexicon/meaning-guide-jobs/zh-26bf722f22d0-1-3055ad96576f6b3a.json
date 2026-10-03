@@ -1,0 +1,36 @@
+{
+  "id": "zh-26bf722f22d0-1-3055ad96576f6b3a",
+  "entry_id": "zh-26bf722f22d0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-26bf722f22d0-1",
+      "headword": "设",
+      "kind": "word",
+      "reading": "shè",
+      "senses": [
+        {
+          "id": "zh-26bf722f22d0-1-s1",
+          "definition": "to set up or arrange"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "祭罢天地，三人杀牛设酒，聚集乡勇三百多人，在桃园中痛饮。",
+        "gloss": "to set up",
+        "sense_id": "zh-26bf722f22d0-1-s1"
+      },
+      {
+        "sentence": "祭礼后，他们杀牛设酒，聚集三百多名乡勇，在桃园痛饮。",
+        "gloss": "set out",
+        "sense_id": "zh-26bf722f22d0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cbd72bcb92d7e7e700cf27d9b40d9bff122365ef6f656907bba1ea3a0e813d72"
+}

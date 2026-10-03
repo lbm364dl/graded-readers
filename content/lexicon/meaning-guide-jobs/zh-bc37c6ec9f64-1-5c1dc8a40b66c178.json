@@ -1,0 +1,36 @@
+{
+  "id": "zh-bc37c6ec9f64-1-5c1dc8a40b66c178",
+  "entry_id": "zh-bc37c6ec9f64-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-bc37c6ec9f64-1",
+      "headword": "大风",
+      "kind": "word",
+      "reading": "dàfēng",
+      "senses": [
+        {
+          "id": "zh-bc37c6ec9f64-1-s1",
+          "definition": "strong wind"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "大风、雷雨、冰雹毁坏房屋，地震和海水泛上来，百姓生活很难。",
+        "gloss": "strong winds",
+        "sense_id": "zh-bc37c6ec9f64-1-s1"
+      },
+      {
+        "sentence": "夜里大风忽然刮起。",
+        "gloss": "strong wind",
+        "sense_id": "zh-bc37c6ec9f64-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bd14627478a0c0e17e2091c0a95046e19e6d533632db1e39dc6e698e556647de"
+}

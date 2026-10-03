@@ -1,0 +1,31 @@
+{
+  "id": "zh-e62503dbd763-1-9c60506c81fa82fd",
+  "entry_id": "zh-e62503dbd763-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e62503dbd763-1",
+      "headword": "公鸡",
+      "kind": "word",
+      "reading": "gōngjī",
+      "senses": [
+        {
+          "id": "zh-e62503dbd763-1-s1",
+          "definition": "rooster; male chicken"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "光和元年，母鸡变成公鸡；六月初一，黑气飞入宫中。",
+        "gloss": "rooster",
+        "sense_id": "zh-e62503dbd763-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "68e0497f06d947dcc6cd22e563c46a03c13ed08180e760060e6710158c9caa35"
+}

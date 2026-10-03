@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_120-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 300,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“群臣和将士冲入宫中杀死岑昏”中加入了“将士”，原文主要写群臣一齐拥入宫中。",
+      "classification": "material",
+      "reason": "“将士”是原文未支持的新增行动者，改变了杀死岑昏这一事件的参与者范围。",
+      "required_fix": "删除“和将士”，改为“群臣冲入宫中杀死岑昏”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“群臣和将士冲入宫中杀死岑昏”中加入了“将士”，原文主要写群臣一齐拥入宫中。",
+      "classification": "material",
+      "reason": "“将士”是原文未支持的新增行动者，改变了杀死岑昏这一事件的参与者范围。",
+      "required_fix": "删除“和将士”，改为“群臣冲入宫中杀死岑昏”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 300,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

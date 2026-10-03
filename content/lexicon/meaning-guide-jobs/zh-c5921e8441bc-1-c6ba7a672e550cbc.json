@@ -1,0 +1,31 @@
+{
+  "id": "zh-c5921e8441bc-1-c6ba7a672e550cbc",
+  "entry_id": "zh-c5921e8441bc-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c5921e8441bc-1",
+      "headword": "生",
+      "kind": "word",
+      "reading": "shēng",
+      "senses": [
+        {
+          "id": "zh-c5921e8441bc-1-s1",
+          "definition": "to develop or give rise to"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "老人把天书三卷交给他，名为太平要术，并警告他不可生异心。",
+        "gloss": "develop",
+        "sense_id": "zh-c5921e8441bc-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a5144909c73f74757a102829034f815e6161cc9f633bb8765250cbf7ade2864a"
+}

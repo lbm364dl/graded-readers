@@ -1,0 +1,32 @@
+{
+  "id": "ja-4bd4a576e572b273-04f8b925f9d9a967",
+  "entry_id": "ja-4bd4a576e572b273",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-4bd4a576e572b273",
+      "headword": "いつまでも",
+      "reading": "いつまでも",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-4bd4a576e572b273-1",
+          "definition": "forever; indefinitely"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "人間も、いつまでも栄えることはあるまい。",
+        "gloss": "forever; indefinitely",
+        "sense_id": "ja-4bd4a576e572b273-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "91b4168dfcbc84de87c9a2d0af4d0ed84f8421ec8aa49919c0f5db8f7280ae3d"
+}

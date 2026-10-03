@@ -1,0 +1,32 @@
+{
+  "id": "ja-643ae91a05ca3a41-6c409053feec662e",
+  "entry_id": "ja-643ae91a05ca3a41",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-643ae91a05ca3a41",
+      "headword": "弓",
+      "reading": "ゆみ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-643ae91a05ca3a41-1",
+          "definition": "bow; a curved weapon used to shoot arrows"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人は俳句、新しい詩、英語、弓、歌、バイオリンなど、何にでも手を出すが、どれも上手にならない。",
+        "gloss": "bow",
+        "sense_id": "ja-643ae91a05ca3a41-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4240e4f7b1f4075fa2c4a392e3c4b282edf1ab8962f964fce9bbb53f80fb541a"
+}

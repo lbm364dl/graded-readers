@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff54e-2ef5-7560-94a8-2bfa52ee8550"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.93,\"naturalness\":0.96,\"readability\":0.95,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"将姜维在祁山设置虚假旗号与陈泰、邓艾在狄道一带设置假鼓火号合并为“邓艾的假旗、假鼓之计”，略混淆了两次不同的计策及其执行者。\"],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":26445,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":1156,"reasoning_output_tokens":1034}}

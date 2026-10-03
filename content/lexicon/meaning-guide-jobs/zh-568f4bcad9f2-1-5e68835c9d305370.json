@@ -1,0 +1,31 @@
+{
+  "id": "zh-568f4bcad9f2-1-5e68835c9d305370",
+  "entry_id": "zh-568f4bcad9f2-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-568f4bcad9f2-1",
+      "headword": "诬陷",
+      "kind": "word",
+      "reading": "wūxiàn",
+      "senses": [
+        {
+          "id": "zh-568f4bcad9f2-1-s1",
+          "definition": "to falsely accuse or frame someone"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "卢植因为拒绝行贿，被人诬陷，押回京城。",
+        "gloss": "frame",
+        "sense_id": "zh-568f4bcad9f2-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "63691158ce90010c54deceb65cb40f273eca69e5ffb4e196db67c588186fa91f"
+}

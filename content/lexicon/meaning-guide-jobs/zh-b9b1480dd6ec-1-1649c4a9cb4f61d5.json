@@ -1,0 +1,31 @@
+{
+  "id": "zh-b9b1480dd6ec-1-1649c4a9cb4f61d5",
+  "entry_id": "zh-b9b1480dd6ec-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b9b1480dd6ec-1",
+      "headword": "好友",
+      "kind": "word",
+      "reading": "hǎoyǒu",
+      "senses": [
+        {
+          "id": "zh-b9b1480dd6ec-1-s1",
+          "definition": "close friend"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他十五岁时曾外出学习，也交了几个好友。",
+        "gloss": "good friend",
+        "sense_id": "zh-b9b1480dd6ec-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "78fce2519b94cb34a2bcae480a2935211885d11ab2d428574e3cc6e82b0adce5"
+}

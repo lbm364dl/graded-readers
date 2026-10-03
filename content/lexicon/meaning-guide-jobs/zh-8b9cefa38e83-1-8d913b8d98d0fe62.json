@@ -1,0 +1,31 @@
+{
+  "id": "zh-8b9cefa38e83-1-8d913b8d98d0fe62",
+  "entry_id": "zh-8b9cefa38e83-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8b9cefa38e83-1",
+      "headword": "可",
+      "kind": "word",
+      "reading": "kě",
+      "senses": [
+        {
+          "id": "zh-8b9cefa38e83-1-s1",
+          "definition": "can; be able or available to be used for an action"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "来日收拾军器时，他们却没有马匹可乘。",
+        "gloss": "can; be available to",
+        "sense_id": "zh-8b9cefa38e83-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f728cac7a9d5e691935c5615b5f1ccb69440524bb6c95f6bd3993ac1a089ab7f"
+}

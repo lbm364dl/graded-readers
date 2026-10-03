@@ -1,0 +1,32 @@
+{
+  "id": "ja-2e50bb89333ee945-3241a4fc24c11cfe",
+  "entry_id": "ja-2e50bb89333ee945",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-2e50bb89333ee945",
+      "headword": "西",
+      "reading": "にし",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-2e50bb89333ee945-1",
+          "definition": "west; the direction opposite east"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "西の垣のそばへ行くと、大きな黒い猫が枯菊の上で寝ていた。",
+        "gloss": "west",
+        "sense_id": "ja-2e50bb89333ee945-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9ec875b1c2e50e55a6900894b845573d0dfddea1ece65105ff796a9cc7093188"
+}

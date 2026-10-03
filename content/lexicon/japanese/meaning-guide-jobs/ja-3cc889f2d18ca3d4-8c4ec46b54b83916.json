@@ -1,0 +1,32 @@
+{
+  "id": "ja-3cc889f2d18ca3d4-8c4ec46b54b83916",
+  "entry_id": "ja-3cc889f2d18ca3d4",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-3cc889f2d18ca3d4",
+      "headword": "好き",
+      "reading": "すき",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-3cc889f2d18ca3d4-1",
+          "definition": "liking or fondness for someone or something; fond of"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人が好きだからというわけではない。",
+        "gloss": "fond of; liking",
+        "sense_id": "ja-3cc889f2d18ca3d4-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "87d9c543ec4050af7c20690651e5bf4eb0bc6438d203336d48c66d3cda817223"
+}

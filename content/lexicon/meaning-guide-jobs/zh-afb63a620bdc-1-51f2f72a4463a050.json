@@ -1,0 +1,31 @@
+{
+  "id": "zh-afb63a620bdc-1-51f2f72a4463a050",
+  "entry_id": "zh-afb63a620bdc-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-afb63a620bdc-1",
+      "headword": "安全",
+      "kind": "word",
+      "reading": "ānquán",
+      "senses": [
+        {
+          "id": "zh-afb63a620bdc-1-s1",
+          "definition": "safe; free from danger or harm"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三路夹攻，黄巾军大败，青州也安全了。",
+        "gloss": "safe",
+        "sense_id": "zh-afb63a620bdc-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "057945a2b6282cd61a2b1355b80bb340d3d185cafdc67555dad04911c4cadd79"
+}

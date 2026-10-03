@@ -1,0 +1,26 @@
+{
+  "id": "ja-component-4a376919546c4b91-6b66271016fcc7fc",
+  "entry_id": "ja-component-4a376919546c4b91",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-component-4a376919546c4b91",
+      "headword": "こと",
+      "reading": "こと",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-component-4a376919546c4b91-1",
+          "definition": "Thing; matter. Also nominalizes an action or clause."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d2473f4bf4631cb7a126a97943a3acbd2ce1da88024bac6d023fa65456c6dd10"
+}

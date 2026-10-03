@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-you-xue-3da36a1974afc10d",
+  "entry_id": "zh-expression-you-xue",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-you-xue",
+      "headword": "游学",
+      "reading": "yóuxué",
+      "kind": "expression",
+      "base_entry_id": "zh-251e86cb3ace-1",
+      "components": [
+        {
+          "entry_id": "zh-251e86cb3ace-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-8a6949a38384-1",
+          "role": "study"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-you-xue-s1",
+          "definition": "travel while studying"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "十五岁时，母亲让他外出游学，他曾师从郑玄、卢植，也与公孙瓒等人为友。",
+        "gloss": "travel while studying",
+        "sense_id": "zh-expression-you-xue-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "游",
+        "role": "verb"
+      },
+      {
+        "headword": "学",
+        "role": "study"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c72650bf34efbadc7a38a22c0eebb8ccd56afcb5815d9d54befd002c8f44cf4a"
+}

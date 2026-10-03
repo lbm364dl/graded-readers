@@ -1,0 +1,31 @@
+{
+  "id": "zh-b9ac9480719e-1-956442fcd4cbbb27",
+  "entry_id": "zh-b9ac9480719e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b9ac9480719e-1",
+      "headword": "冠",
+      "kind": "word",
+      "reading": "guān",
+      "senses": [
+        {
+          "id": "zh-b9ac9480719e-1-s1",
+          "definition": "the upper branching part of a tree"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "家住楼桑村，村东南有一棵大桑树，高五丈多，树冠仿佛车盖。",
+        "gloss": "crown; canopy",
+        "sense_id": "zh-b9ac9480719e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f18f108ff32ea47597deeef67f6352c0e294200f1bd890a497da41a03f9311ac"
+}

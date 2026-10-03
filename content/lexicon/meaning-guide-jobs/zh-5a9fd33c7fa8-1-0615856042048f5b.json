@@ -1,0 +1,31 @@
+{
+  "id": "zh-5a9fd33c7fa8-1-0615856042048f5b",
+  "entry_id": "zh-5a9fd33c7fa8-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5a9fd33c7fa8-1",
+      "headword": "座椅",
+      "kind": "word",
+      "reading": "zuòyǐ",
+      "senses": [
+        {
+          "id": "zh-5a9fd33c7fa8-1-s1",
+          "definition": "seat or chair"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "殿角忽然刮起狂风，一条大青蛇从房梁上飞下来，盘在座椅上。",
+        "gloss": "seat",
+        "sense_id": "zh-5a9fd33c7fa8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "994a973e967078953b0cb3f99bafec15321c9e97ac861749fe859c1ff4d86c5c"
+}

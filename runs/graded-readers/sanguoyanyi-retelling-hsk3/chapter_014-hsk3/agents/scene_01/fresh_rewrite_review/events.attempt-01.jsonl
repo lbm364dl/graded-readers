@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff375-3856-7083-bedc-6ef8ad971d6a"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.96,\"naturalness\":0.91,\"readability\":0.87,\"omissions\":[],\"unsupported_additions\":[\"“徐庶暗告刘备”中的“暗告”暗示秘密传话，原文只是当面说明情况。\"],\"distortions\":[\"“曹操因夏侯惇中火计败回”主语和因果关系含混，容易误解为曹操本人因中计败回。\"],\"language_problems\":[\"全文明显超过750字目标的约70%-130%范围上限，压缩度不足。\",\"部分信息连续堆叠，人物、军队和地点转换较快，影响紧凑叙事的清晰度。\"],\"verdict\":\"revise\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":28052,"cached_input_tokens":8960,"cache_write_input_tokens":0,"output_tokens":1213,"reasoning_output_tokens":1034}}

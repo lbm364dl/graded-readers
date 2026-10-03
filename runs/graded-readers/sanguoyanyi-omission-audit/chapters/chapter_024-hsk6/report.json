@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_024-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1147,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将献帝说“不知”解释为“故意说不知”，原文未明确说明是故意欺骗。",
+      "classification": "material",
+      "reason": "这把原文中献帝自称“实不知”的表述改成了明确有意欺骗，新增了与原文措辞相反的心理意图。",
+      "required_fix": "将“献帝故意说不知”改为“献帝说自己实不知”或“献帝表示不知道”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将献帝说“不知”解释为“故意说不知”，原文未明确说明是故意欺骗。",
+      "classification": "material",
+      "reason": "这把原文中献帝自称“实不知”的表述改成了明确有意欺骗，新增了与原文措辞相反的心理意图。",
+      "required_fix": "将“献帝故意说不知”改为“献帝说自己实不知”或“献帝表示不知道”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1147,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

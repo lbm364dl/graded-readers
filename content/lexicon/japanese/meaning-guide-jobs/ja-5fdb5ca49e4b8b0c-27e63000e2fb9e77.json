@@ -1,0 +1,56 @@
+{
+  "id": "ja-5fdb5ca49e4b8b0c-27e63000e2fb9e77",
+  "entry_id": "ja-5fdb5ca49e4b8b0c",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-5fdb5ca49e4b8b0c",
+      "headword": "三",
+      "reading": "さん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-5fdb5ca49e4b8b0c-1",
+          "definition": "three"
+        },
+        {
+          "id": "ja-5fdb5ca49e4b8b0c-2",
+          "definition": "In a range such as 三、四十, the shortened first part 三 stands for thirty."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "何度も会ううち、黒は鼠を三、四十匹とったことがあると自慢した。",
+        "gloss": "three (shortened first part of the range)",
+        "sense_id": "ja-5fdb5ca49e4b8b0c-1"
+      },
+      {
+        "sentence": "そして、自分は三、四十匹はとった、鼬にはひどい目にあった、と得意そうに話した。",
+        "gloss": "thirty (shortened first part of the range)",
+        "sense_id": "ja-5fdb5ca49e4b8b0c-2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-5fdb5ca49e4b8b0c",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "三 means the number three and is read さん in common counting. Its value stays the same when it is used as part of a number or range.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "7b6100e83b00f5849650a726a9fe3e7b5154088dbbf8f2e0ccd29bc13ac81d7a",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4342b4221ece7d09e417030ca694dd176dd03a347f1e4c152ad6287438b3d3c0"
+}

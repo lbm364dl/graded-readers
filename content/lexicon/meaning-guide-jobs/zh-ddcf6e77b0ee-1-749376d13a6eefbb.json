@@ -1,0 +1,31 @@
+{
+  "id": "zh-ddcf6e77b0ee-1-749376d13a6eefbb",
+  "entry_id": "zh-ddcf6e77b0ee-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ddcf6e77b0ee-1",
+      "headword": "准备",
+      "kind": "word",
+      "reading": "zhǔnbèi",
+      "senses": [
+        {
+          "id": "zh-ddcf6e77b0ee-1-s1",
+          "definition": "prepare; get ready"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "准备一起做大事。",
+        "gloss": "prepare",
+        "sense_id": "zh-ddcf6e77b0ee-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7c114b611cc8fe36a72e1d846b5411a0bc1e91e7b9aa9af19d0287810f7ade91"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-c358a2d6a088-1-f92b5bbd5870ce83",
+  "entry_id": "zh-c358a2d6a088-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c358a2d6a088-1",
+      "headword": "代替",
+      "kind": "word",
+      "reading": "dàitì",
+      "senses": [
+        {
+          "id": "zh-c358a2d6a088-1-s1",
+          "definition": "to replace; to take someone's place"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "朝廷于是派董卓代替我，并押我回京问罪。",
+        "gloss": "replace",
+        "sense_id": "zh-c358a2d6a088-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fbfc98011d59a8b22b5a69f5299c2a99d3a26100c0c3035996b29a5a8d1c5128"
+}

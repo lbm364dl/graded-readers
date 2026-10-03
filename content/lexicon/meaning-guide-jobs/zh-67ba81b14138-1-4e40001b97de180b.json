@@ -1,0 +1,36 @@
+{
+  "id": "zh-67ba81b14138-1-4e40001b97de180b",
+  "entry_id": "zh-67ba81b14138-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-67ba81b14138-1",
+      "headword": "照亮",
+      "kind": "word",
+      "reading": "zhàoliàng",
+      "senses": [
+        {
+          "id": "zh-67ba81b14138-1-s1",
+          "definition": "to light up"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "火光照亮天空，黄巾军来不及披上铠甲，也来不及给马装好马鞍，只好四处逃跑。",
+        "gloss": "illuminate",
+        "sense_id": "zh-67ba81b14138-1-s1"
+      },
+      {
+        "sentence": "刘备带着关羽、张飞赶到颍川时，只听见喊杀声，也看见火光照亮天空。",
+        "gloss": "to illuminate",
+        "sense_id": "zh-67ba81b14138-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b48115dc9e9c366877ea733f43da22419169b0d8d162b37845d977b8b675f8d5"
+}

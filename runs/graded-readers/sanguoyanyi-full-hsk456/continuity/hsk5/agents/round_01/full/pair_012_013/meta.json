@@ -1,0 +1,21 @@
+{
+  "job": "round_01/full/pair_012_013",
+  "model": "gpt-5.6-luna",
+  "effort": "low",
+  "fingerprint": "39bcb748596b96ecbf1210bfda0624165d965bb752a458b93219f4f05b9e7c5f",
+  "started_at": "2026-08-26T21:05:42.917221+00:00",
+  "ended_at": "2026-08-26T21:09:22.997171+00:00",
+  "return_code": 0,
+  "attempt_count": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-08-26T21:05:42.917252+00:00",
+      "ended_at": "2026-08-26T21:09:22.996640+00:00",
+      "return_code": 0,
+      "throttled": false,
+      "events": "events.attempt-01.jsonl",
+      "stderr": "stderr.attempt-01.log"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-81350e76837ea8fd-1bd249b9b5d96129",
+  "entry_id": "ja-81350e76837ea8fd",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-81350e76837ea8fd",
+      "headword": "生活",
+      "reading": "せいかつ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-81350e76837ea8fd-1",
+          "definition": "life; the way a person lives day to day"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "これが毎晩の生活である。",
+        "gloss": "daily life",
+        "sense_id": "ja-81350e76837ea8fd-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "23b67f8fa7d4e8aa22e0c8d18422e912314a1d94151eddb91649979b1aab6042"
+}

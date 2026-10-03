@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff323-845e-7573-bb54-f1bb609ba365"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"text\":\"街亭失守后，孔明退到西城。身边只有很少的士兵和几个文官，司马懿却带着大军来了。孔明知道，自己不能和魏军打。他想了一个很险的办法：把城里的旗子都收起来，打开四个城门，让士兵穿上百姓的衣服，在街上慢慢扫地。自己坐在城楼上，身边只有两个小孩，一个拿剑，一个拿扇。孔明不说话，只低头弹琴。魏军到了城外，看见城里没有人跑，也没有人守门，心里很怕。司马懿想：孔明平时做事很小心，今天却把城门全打开，一定有很多士兵藏在里面。他不敢进城，马上叫大军退走。魏军走远后，孔明才放下琴，带着士兵向汉中走去。大家这才知道，这个办法虽然很险，却救了蜀军。\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":41826,"cached_input_tokens":8960,"cache_write_input_tokens":0,"output_tokens":1216,"reasoning_output_tokens":972}}

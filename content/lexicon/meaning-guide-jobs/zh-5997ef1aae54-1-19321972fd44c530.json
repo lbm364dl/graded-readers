@@ -1,0 +1,31 @@
+{
+  "id": "zh-5997ef1aae54-1-19321972fd44c530",
+  "entry_id": "zh-5997ef1aae54-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5997ef1aae54-1",
+      "headword": "惊讶",
+      "kind": "word",
+      "reading": "jīngyà",
+      "senses": [
+        {
+          "id": "zh-5997ef1aae54-1-s1",
+          "definition": "to be surprised; surprised"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "叔父刘元起听后很惊讶，认为他非同常人，因他家贫，常常资助他。",
+        "gloss": "surprised",
+        "sense_id": "zh-5997ef1aae54-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d1773bf5a02e4ebe4b3292dd5774250f7584c7345e538a4e1f9a83c7e6e00c7b"
+}

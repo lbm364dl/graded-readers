@@ -1,0 +1,101 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_012-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1270,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "“典韦与壮士交手，两日从辰时战到黄昏”略混淆原文：首日由辰时战至午时，稍歇后再次交战至黄昏，并非连续两日均从辰时战起。",
+      "classification": "material",
+      "reason": "这改变了交战的时间顺序和持续方式，属于实质性的时间线失真。",
+      "required_fix": "改为：首日典韦与壮士从辰时战至午时，稍歇后又交战至黄昏；次日曹操令典韦诈败并设伏擒获壮士。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "“典韦与壮士交手，两日从辰时战到黄昏”略混淆原文：首日由辰时战至午时，稍歇后再次交战至黄昏，并非连续两日均从辰时战起。",
+      "classification": "material",
+      "reason": "这改变了交战的时间顺序和持续方式，属于实质性的时间线失真。",
+      "required_fix": "改为：首日典韦与壮士从辰时战至午时，稍歇后又交战至黄昏；次日曹操令典韦诈败并设伏擒获壮士。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1322,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 7.5,
+        "readability": 8.5,
+        "material_omissions": [
+          "许褚设伏擒获一段省略了设坑后的再次出战及百余骑诱敌落坑的明确次日时序。",
+          "定陶战前省略曹操割济郡熟麦充军粮。",
+          "省略吕布首次接近曹操营寨、因见林木茂盛疑有伏兵而退回的事件，削弱了曹操随后设疑兵的因果。"
+        ],
+        "unsupported_additions": [
+          "将吕虔射薛兰概括为“射死”，原文仅明确说射落马下。"
+        ],
+        "distortions": [
+          "“郭嘉献计”错误归属了诈死诱敌之计；原文是曹操提出，郭嘉称善。",
+          "定陶设伏部分将吕布先接近并退回、曹操得知后设疑兵的顺序压缩并略有重排。"
+        ],
+        "language_problems": [
+          "“借田氏家僮千百”搭配生硬且语义不清。",
+          "“田氏愿在内应”不合自然汉语，应为“田氏愿作内应”。",
+          "“城上插写着‘义’的白旗”表达别扭，应为“城上插着写有‘义’字的白旗”。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 1467,
+      "review": {
+        "source_fidelity": 9.2,
+        "naturalness": 7.8,
+        "readability": 9.1,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [
+          "“刘晔提醒陈宫多计”对象关系不清且搭配不自然，应改为“刘晔提醒曹操陈宫多计”或“刘晔提醒曹操提防陈宫多计”。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 1270,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

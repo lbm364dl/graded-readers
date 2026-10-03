@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff3f1-fcca-7682-aa1e-eaf99a84b240"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.89,\"naturalness\":0.9,\"readability\":0.89,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"“让士兵轮流出战”将按期轮换驻军误说成轮流作战，含义略有偏差。\"],\"language_problems\":[\"篇幅明显超过750字目标的130%上限。\",\"“多挖炉灶”表述不够准确自然，宜改为“增灶”或“多设灶”。\"],\"verdict\":\"revise\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":31450,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":1498,"reasoning_output_tokens":1361}}

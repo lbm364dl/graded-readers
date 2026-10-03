@@ -1,0 +1,94 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_066-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 734,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了伏完建议联络内外忠臣的具体过程，以及华歆、管宁交往的插叙和相关诗赞。",
+      "classification": "material",
+      "reason": "华歆、管宁的交往插叙体现华歆的重要品格，并深化华歆后来捕拿伏后的行为动机与评价；这属于重要人物刻画。",
+      "required_fix": "补入华歆、管宁交往及割席分坐等插叙，说明华歆的品格反差和相关诗赞。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了伏完建议联络内外忠臣的具体过程，以及华歆、管宁交往的插叙和相关诗赞。",
+      "classification": "material",
+      "reason": "华歆、管宁的交往插叙体现华歆的重要品格，并深化华歆后来捕拿伏后的行为动机与评价；这属于重要人物刻画。",
+      "required_fix": "补入华歆、管宁交往及割席分坐等插叙，说明华歆的品格反差和相关诗赞。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9.2,
+    "naturalness": 8.8,
+    "readability": 9.2,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 629,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 8.0,
+        "readability": 8.5,
+        "material_omissions": [
+          "省略了曹操欲自立为王、将要篡位这一直接引发献帝与伏后谋划反抗的动机，前文仅提到群臣议立魏王，未明确呈现其篡位威胁。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "原文只是报告曹操起三十万大军，随后才写曹操将要南征；改文称“曹操率三十万南下”，将军队已在南下的时间状态提前了。"
+        ],
+        "language_problems": [
+          "“鲁肃在陆口设宴索州”中的“索州”表达不自然且含义不完整，应为“索荆州”或“索取荆州”。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 726,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 8.5,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "“交州”误写为荆州，改变了孙权要求刘备交割的核心地点。",
+          "曹操入宫时询问的是如何处置孙权、刘备，而非单纯质问献帝为何不助自己。",
+          "将伏完等宗族被处决置于郗虑收皇后玺绶之前，压缩并打乱了原文的关键时间顺序。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 734,
+      "review": {
+        "source_fidelity": 9.2,
+        "naturalness": 8.8,
+        "readability": 9.2,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-ab4817ba360d0b2e-3905721f5af5efdc",
+  "entry_id": "ja-ab4817ba360d0b2e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ab4817ba360d0b2e",
+      "headword": "五銭",
+      "reading": "ごせん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-ab4817ba360d0b2e-1",
+          "definition": "five sen, a former Japanese monetary unit"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が鼠をとったことはないと言うと、黒は、人間が猫のとった鼠を取り上げて交番へ持って行き、五銭をもらうという話をした。",
+        "gloss": "five sen",
+        "sense_id": "ja-ab4817ba360d0b2e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4872f19d7bd0bc1f16b07e36ab988b4038346869dc460a70667694e4169dfaf5"
+}

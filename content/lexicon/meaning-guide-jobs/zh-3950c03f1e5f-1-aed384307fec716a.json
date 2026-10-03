@@ -1,0 +1,31 @@
+{
+  "id": "zh-3950c03f1e5f-1-aed384307fec716a",
+  "entry_id": "zh-3950c03f1e5f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-3950c03f1e5f-1",
+      "headword": "敌众我寡",
+      "kind": "expression",
+      "reading": "dí zhòng wǒ guǎ",
+      "senses": [
+        {
+          "id": "zh-3950c03f1e5f-1-s1",
+          "definition": "the enemy outnumbers us"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他对关羽、张飞说，敌众我寡，必须用伏兵应对。",
+        "gloss": "the enemy is numerous and we are few",
+        "sense_id": "zh-3950c03f1e5f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "90180b47fc2bbc0eab248039b9c73b64e8761c8fd6a346d48ed1a0972d8976d2"
+}

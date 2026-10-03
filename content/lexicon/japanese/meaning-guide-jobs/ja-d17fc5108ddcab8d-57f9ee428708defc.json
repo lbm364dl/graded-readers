@@ -1,0 +1,32 @@
+{
+  "id": "ja-d17fc5108ddcab8d-57f9ee428708defc",
+  "entry_id": "ja-d17fc5108ddcab8d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d17fc5108ddcab8d",
+      "headword": "金縁眼鏡",
+      "reading": "きんぶちめがね",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d17fc5108ddcab8d-1",
+          "definition": "glasses with gold-colored rims"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ある日、金縁眼鏡の美学者が訪ねて来た。",
+        "gloss": "gold-rimmed glasses",
+        "sense_id": "ja-d17fc5108ddcab8d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e8d83f143ba5f8a154301fc78ab09251f093a446a67eb7b1ba9ba99598ef6f4e"
+}

@@ -1,0 +1,117 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_032-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1382,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了曹操渡济河、疏通白沟粮道及与袁谭结亲、封赏吕旷吕翔等情节。",
+      "classification": "material",
+      "reason": "这些情节解释了曹军后续进攻的粮道安排、袁谭留在平原的原因，以及吕旷吕翔后来归曹并参与截断袁尚粮道的身份和关系。",
+      "required_fix": "补入曹操疏通白沟粮道、令袁谭暂居平原、以女许配袁谭并封赏吕旷吕翔的情节。"
+    },
+    {
+      "omission_note": "省略了袁谭暗送将军印、曹操因此决意除掉袁谭的关键伏笔。",
+      "classification": "material",
+      "reason": "这是曹操后来产生杀袁谭之心的重要动机和伏笔，缺失会削弱后续袁谭命运及曹操态度的因果连贯性。",
+      "required_fix": "补入郭图建议暗送将军印、袁谭照办、吕旷吕翔将印交给曹操，以及曹操因此决定除掉袁谭的情节。"
+    },
+    {
+      "omission_note": "省略了尹楷、沮鹄败亡后曹军推进至冀州的部分过程，以及审荣为审配之侄、与辛毗交好的关系说明。",
+      "classification": "material",
+      "reason": "前半虽属推进过程，但后半交代审荣与审配、辛毗的关系及其因辛毗家属被杀而献门的动机；省略后会使开门投降的原因不连贯。",
+      "required_fix": "补入曹军击败尹楷、沮鹄后进逼冀州的过渡，并说明审荣是审配之侄、素与辛毗交好，因其家属被杀而怀恨献门。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了曹操渡济河、疏通白沟粮道及与袁谭结亲、封赏吕旷吕翔等情节。",
+      "classification": "material",
+      "reason": "这些情节解释了曹军后续进攻的粮道安排、袁谭留在平原的原因，以及吕旷吕翔后来归曹并参与截断袁尚粮道的身份和关系。",
+      "required_fix": "补入曹操疏通白沟粮道、令袁谭暂居平原、以女许配袁谭并封赏吕旷吕翔的情节。"
+    },
+    {
+      "omission_note": "省略了袁谭暗送将军印、曹操因此决意除掉袁谭的关键伏笔。",
+      "classification": "material",
+      "reason": "这是曹操后来产生杀袁谭之心的重要动机和伏笔，缺失会削弱后续袁谭命运及曹操态度的因果连贯性。",
+      "required_fix": "补入郭图建议暗送将军印、袁谭照办、吕旷吕翔将印交给曹操，以及曹操因此决定除掉袁谭的情节。"
+    },
+    {
+      "omission_note": "省略了尹楷、沮鹄败亡后曹军推进至冀州的部分过程，以及审荣为审配之侄、与辛毗交好的关系说明。",
+      "classification": "material",
+      "reason": "前半虽属推进过程，但后半交代审荣与审配、辛毗的关系及其因辛毗家属被杀而献门的动机；省略后会使开门投降的原因不连贯。",
+      "required_fix": "补入曹军击败尹楷、沮鹄后进逼冀州的过渡，并说明审荣是审配之侄、素与辛毗交好，因其家属被杀而怀恨献门。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1247,
+      "review": {
+        "source_fidelity": 7.2,
+        "naturalness": 8.3,
+        "readability": 8.6,
+        "material_omissions": [
+          "遗漏曹操疏通白沟粮道的安排，削弱后续进攻冀州的粮道因果。",
+          "省略曹丕十八岁、天子气祥兆及文武才艺等关键背景，削弱其人物塑造和后文伏笔。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "将审配建议“借曹操之力以除之”误写为除掉郭图；原文所指主要是袁谭，且郭图随后仍继续参与谋划。",
+          "袁谭与曹操结亲、吕旷吕翔受封及袁谭暂居平原的情节被置于陈琳获赦、冀州已陷之后，颠倒了原文中先结亲封赏、再暗送将军印并展开冀州战事的时间顺序。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 1401,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 8.5,
+        "readability": 8.5,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "许攸被置于地道战之后，并被写成引发攻打尹楷、沮鹄；原文许攸到来在此前，所献主要是决漳河灌城之计。",
+          "袁谭在第一次收到援军前被写成欲杀逢纪；原文此时只是责骂，直到袁尚拒绝再次发兵后才斩逢纪。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 1382,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

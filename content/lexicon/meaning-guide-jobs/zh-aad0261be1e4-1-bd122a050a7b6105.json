@@ -1,0 +1,31 @@
+{
+  "id": "zh-aad0261be1e4-1-bd122a050a7b6105",
+  "entry_id": "zh-aad0261be1e4-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-aad0261be1e4-1",
+      "headword": "假装",
+      "kind": "word",
+      "reading": "jiǎzhuāng",
+      "senses": [
+        {
+          "id": "zh-aad0261be1e4-1-s1",
+          "definition": "pretend; feign"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "打了一会儿，他假装后退。",
+        "gloss": "pretend",
+        "sense_id": "zh-aad0261be1e4-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "61529161effc6791c5a272acf9f87cf19a896d4fabbd56cd9b51e02cc1378809"
+}

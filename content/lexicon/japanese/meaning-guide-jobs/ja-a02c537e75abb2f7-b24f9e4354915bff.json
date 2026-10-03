@@ -1,0 +1,42 @@
+{
+  "id": "ja-a02c537e75abb2f7-b24f9e4354915bff",
+  "entry_id": "ja-a02c537e75abb2f7",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a02c537e75abb2f7",
+      "headword": "で",
+      "reading": "で",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-a02c537e75abb2f7-1",
+          "definition": "Marks the place where an action or event occurs."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "どこで生まれたか分かりません。",
+        "gloss": "in; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "暗い所でニャーニャー泣いていました。",
+        "gloss": "in; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "男の人の手の上で、吾輩の目が回りました。",
+        "gloss": "at; on",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3244f69397776b1ccc76bfdb7444b297c3b242bc035b0d16f1e2b6553026b627"
+}

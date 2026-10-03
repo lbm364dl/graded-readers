@@ -1,0 +1,59 @@
+{
+  "id": "zh-expression-jie-zai-yiqi-60724b89cecfe628",
+  "entry_id": "zh-expression-jie-zai-yiqi",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-jie-zai-yiqi",
+      "headword": "结在一起",
+      "reading": "jié zài yìqǐ",
+      "kind": "construction",
+      "base_entry_id": "zh-615cfe117306-1",
+      "components": [
+        {
+          "entry_id": "zh-615cfe117306-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-12404a0b6381-1",
+          "role": "locative link"
+        },
+        {
+          "entry_id": "zh-220ac6c5a360-1",
+          "role": "resulting state"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-jie-zai-yiqi-s1",
+          "definition": "join together; form a group"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张让等十名宦官结在一起作恶，被称为“十常侍”。",
+        "gloss": "join together; form a group",
+        "sense_id": "zh-expression-jie-zai-yiqi-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "结",
+        "role": "verb"
+      },
+      {
+        "headword": "在",
+        "role": "locative link"
+      },
+      {
+        "headword": "一起",
+        "role": "resulting state"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "996dff510855e0b054193d7475b49026eb78f47a22d76ea19dd56fcfde28cf59"
+}

@@ -1,0 +1,83 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_082-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 153,
+  "required_range": [
+    98,
+    182
+  ],
+  "material_findings": [
+    {
+      "omission_note": "诸葛瑾还提出归还降将、重修盟好并共同讨伐曹丕，适配未提及。",
+      "classification": "material",
+      "reason": "这些是诸葛瑾求和方案的重要条款，补充了孙权求和的具体内容及共同对魏作战的战略动机。",
+      "required_fix": "补充诸葛瑾愿归还降将、重修吴蜀盟好，并与刘备共同讨伐曹丕的提议。"
+    },
+    {
+      "omission_note": "未说明黄忠因刘备失言而单独出征，刘备担心其有失才派关兴、张苞相助。",
+      "classification": "material",
+      "reason": "省略了黄忠出征的直接原因、刘备的担忧以及派遣关兴和张苞的动机，削弱了后续行动的因果关系和人物刻画。",
+      "required_fix": "补充刘备失言称老将无用，黄忠为证明自己而出征；刘备担心其有失，遂派关兴、张苞前往相助。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "诸葛瑾还提出归还降将、重修盟好并共同讨伐曹丕，适配未提及。",
+      "classification": "material",
+      "reason": "这些是诸葛瑾求和方案的重要条款，补充了孙权求和的具体内容及共同对魏作战的战略动机。",
+      "required_fix": "补充诸葛瑾愿归还降将、重修吴蜀盟好，并与刘备共同讨伐曹丕的提议。"
+    },
+    {
+      "omission_note": "未说明黄忠因刘备失言而单独出征，刘备担心其有失才派关兴、张苞相助。",
+      "classification": "material",
+      "reason": "省略了黄忠出征的直接原因、刘备的担忧以及派遣关兴和张苞的动机，削弱了后续行动的因果关系和人物刻画。",
+      "required_fix": "补充刘备失言称老将无用，黄忠为证明自己而出征；刘备担心其有失，遂派关兴、张苞前往相助。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 156,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 8,
+        "readability": 8.5,
+        "material_omissions": [],
+        "unsupported_additions": [
+          "“蜀军大振”并非原文明确内容；原文只写关兴、张苞屡立大功，刘备因此派他们助黄忠。"
+        ],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 153,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

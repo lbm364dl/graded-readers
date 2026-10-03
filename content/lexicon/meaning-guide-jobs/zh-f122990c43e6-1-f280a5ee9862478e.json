@@ -1,0 +1,31 @@
+{
+  "id": "zh-f122990c43e6-1-f280a5ee9862478e",
+  "entry_id": "zh-f122990c43e6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f122990c43e6-1",
+      "headword": "符水",
+      "kind": "word",
+      "reading": "fúshuǐ",
+      "senses": [
+        {
+          "id": "zh-f122990c43e6-1-s1",
+          "definition": "water prepared or used with a talisman, believed to have healing power"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "中平元年，疫病流行，他用符水给百姓治病，自称大贤良师。",
+        "gloss": "talisman water",
+        "sense_id": "zh-f122990c43e6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "679cc5e6fedf2f3e7f769fc5b14ce2c2f444c3b090282713fb7eb8147cb6b769"
+}

@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_090-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1147,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了三江城攻取前的毒箭细节，以及木鹿大王所率部众的部分形貌描写。",
+      "classification": "material",
+      "reason": "毒箭是蜀军最初攻城失利并随后改变策略的重要原因；木鹿部众的形貌虽可压缩，但该 note 包含这一关键因果信息。",
+      "required_fix": "补回毒箭能使中箭者皮肉溃烂、蜀将因此无法攻城的细节；部众形貌描写可继续适度压缩。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了三江城攻取前的毒箭细节，以及木鹿大王所率部众的部分形貌描写。",
+      "classification": "material",
+      "reason": "毒箭是蜀军最初攻城失利并随后改变策略的重要原因；木鹿部众的形貌虽可压缩，但该 note 包含这一关键因果信息。",
+      "required_fix": "补回毒箭能使中箭者皮肉溃烂、蜀将因此无法攻城的细节；部众形貌描写可继续适度压缩。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9.2,
+    "naturalness": 9.0,
+    "readability": 9.3,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1147,
+      "review": {
+        "source_fidelity": 9.2,
+        "naturalness": 9.0,
+        "readability": 9.3,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

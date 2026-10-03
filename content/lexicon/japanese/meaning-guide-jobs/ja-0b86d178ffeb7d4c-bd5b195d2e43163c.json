@@ -1,0 +1,61 @@
+{
+  "id": "ja-0b86d178ffeb7d4c-bd5b195d2e43163c",
+  "entry_id": "ja-0b86d178ffeb7d4c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-0b86d178ffeb7d4c",
+      "headword": "力",
+      "reading": "ちから",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-0b86d178ffeb7d4c-1",
+          "definition": "physical strength; force or power"
+        },
+        {
+          "id": "ja-0b86d178ffeb7d4c-2",
+          "definition": "ability or power to do something"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "相手がこの決まりを守らなければ、力で取り返してもよい。",
+        "gloss": "force",
+        "sense_id": "ja-0b86d178ffeb7d4c-1"
+      },
+      {
+        "sentence": "ところが人間は、吾輩たちが見つけたごちそうを、いつも力で奪って平気な顔をしている。",
+        "gloss": "force; strength",
+        "sense_id": "ja-0b86d178ffeb7d4c-1"
+      },
+      {
+        "sentence": "主人は、特に人より優れた力があるわけではないのに、何にでも手を出したがる男だ。",
+        "gloss": "ability; power",
+        "sense_id": "ja-0b86d178ffeb7d4c-2"
+      },
+      {
+        "sentence": "人間は自分の力を信じすぎて、すぐ増長する。",
+        "gloss": "strength; power",
+        "sense_id": "ja-0b86d178ffeb7d4c-2"
+      },
+      {
+        "sentence": "声には犬も怖がるほどの力があったので、吾輩は少し怖かったが、「吾輩は猫である。",
+        "gloss": "power; force",
+        "sense_id": "ja-0b86d178ffeb7d4c-1"
+      },
+      {
+        "sentence": "車屋の猫だけに力は強いが、教育がないので、あまり誰も付き合わないらしい。",
+        "gloss": "strength",
+        "sense_id": "ja-0b86d178ffeb7d4c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e77d93c5ddca94066fcaf6abda5a7f15a91a08b652172de292e92d0d515a9083"
+}

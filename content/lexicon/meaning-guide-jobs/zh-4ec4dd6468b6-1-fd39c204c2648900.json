@@ -1,0 +1,36 @@
+{
+  "id": "zh-4ec4dd6468b6-1-fd39c204c2648900",
+  "entry_id": "zh-4ec4dd6468b6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4ec4dd6468b6-1",
+      "headword": "变雄",
+      "kind": "construction",
+      "reading": "biànxióng",
+      "senses": [
+        {
+          "id": "zh-4ec4dd6468b6-1-s1",
+          "definition": "become male"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "议郎蔡邕上疏直言，说雌鸡变雄等灾异，是妇寺干政造成的。",
+        "gloss": "become male",
+        "sense_id": "zh-4ec4dd6468b6-1-s1"
+      },
+      {
+        "sentence": "蔡邕上书直言，认为雌鸡变雄，是妇人和宦官干预朝政造成的。",
+        "gloss": "become male",
+        "sense_id": "zh-4ec4dd6468b6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "44d72489e199e7650b824e0fe473cf9e2ff989f9117385b193c3940c211db1e6"
+}

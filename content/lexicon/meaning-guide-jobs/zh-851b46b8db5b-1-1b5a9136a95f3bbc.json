@@ -1,0 +1,31 @@
+{
+  "id": "zh-851b46b8db5b-1-1b5a9136a95f3bbc",
+  "entry_id": "zh-851b46b8db5b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-851b46b8db5b-1",
+      "headword": "剩下",
+      "kind": "word",
+      "reading": "shèng xià",
+      "senses": [
+        {
+          "id": "zh-851b46b8db5b-1-s1",
+          "definition": "remain; be left after others are gone, used, or removed"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张梁、张宝只好带着剩下的人拼命逃走。",
+        "gloss": "remaining",
+        "sense_id": "zh-851b46b8db5b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "94f2ca89970267f2da631a807f9992eb8c0f1ab683a4a370997ac16730428284"
+}

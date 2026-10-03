@@ -1,0 +1,37 @@
+{
+  "id": "ja-22a7cf937b270af1-805c1dc050d90f9b",
+  "entry_id": "ja-22a7cf937b270af1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-22a7cf937b270af1",
+      "headword": "大切",
+      "reading": "たいせつ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-22a7cf937b270af1-1",
+          "definition": "important; valuable; precious"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "どれほど大切にされなかったかは、今まで名前さえつけてもらえないことでも分かる。",
+        "gloss": "was not valued; was not treated as important",
+        "sense_id": "ja-22a7cf937b270af1-1"
+      },
+      {
+        "sentence": "主人が写生の大切さを語り、アンドレア・デル・サルトの話まで持ち出すと、美学者は笑って言った。",
+        "gloss": "importance",
+        "sense_id": "ja-22a7cf937b270af1-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fc8d2a2a0c11b12d42bfae8fc9e12aa11945960996652dd39c33596022c6d712"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-b91cc11a7726-1-337eb71886a6f32e",
+  "entry_id": "zh-b91cc11a7726-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b91cc11a7726-1",
+      "headword": "败走",
+      "kind": "word",
+      "reading": "bàizǒu",
+      "senses": [
+        {
+          "id": "zh-b91cc11a7726-1-s1",
+          "definition": "to flee or retreat after being defeated"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角刚打败董卓，黄巾军遇到三人攻击，立刻大乱，败走五十余里。",
+        "gloss": "to flee after defeat",
+        "sense_id": "zh-b91cc11a7726-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "055db61cd5cb2b8afd91a5a81eb46f633c032c3b02f170d2560c77c1185183d1"
+}

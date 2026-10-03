@@ -1,0 +1,37 @@
+{
+  "id": "ja-4d8fc0672e184883-6af66981f2e7358c",
+  "entry_id": "ja-4d8fc0672e184883",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-4d8fc0672e184883",
+      "headword": "近所",
+      "reading": "きんじょ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-4d8fc0672e184883-1",
+          "definition": "nearby area; neighborhood"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "便所で謡を歌うので、近所の人から「後架先生」と呼ばれても、気にせず同じ歌を繰り返していた。",
+        "gloss": "neighborhood",
+        "sense_id": "ja-4d8fc0672e184883-1"
+      },
+      {
+        "sentence": "黒は近所で有名な乱暴な猫だった。",
+        "gloss": "neighborhood",
+        "sense_id": "ja-4d8fc0672e184883-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d6376251887a3bdd74b1c5a832c50edf2dc09722cd349309976364f9c8b1c05a"
+}

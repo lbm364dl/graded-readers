@@ -1,0 +1,31 @@
+{
+  "id": "zh-be65bd5518ae-1-b900e2df3c3c7e59",
+  "entry_id": "zh-be65bd5518ae-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-be65bd5518ae-1",
+      "headword": "风",
+      "kind": "word",
+      "reading": "fēng",
+      "senses": [
+        {
+          "id": "zh-be65bd5518ae-1-s1",
+          "definition": "wind"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "夜里风突然变大，士兵同时放火。",
+        "gloss": "wind",
+        "sense_id": "zh-be65bd5518ae-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ae6e577f45fb7ef7d0f8c0efd96bc024419dad74830bb3abfb64b0c223bce42a"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-41cd731e6700c632-249e494a3ada06fe",
+  "entry_id": "ja-41cd731e6700c632",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-41cd731e6700c632",
+      "headword": "飯",
+      "reading": "めし",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-41cd731e6700c632-1",
+          "definition": "a meal; food"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "飯を食べた後で薬を飲み、書物を開く。",
+        "gloss": "meal",
+        "sense_id": "ja-41cd731e6700c632-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0155b8a606824dd384293ce7329b2f1824f67b0dcab029b2b83cbfe4bc672052"
+}

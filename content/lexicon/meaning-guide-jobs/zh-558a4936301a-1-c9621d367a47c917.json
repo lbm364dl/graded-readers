@@ -1,0 +1,36 @@
+{
+  "id": "zh-558a4936301a-1-c9621d367a47c917",
+  "entry_id": "zh-558a4936301a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-558a4936301a-1",
+      "headword": "但愿",
+      "kind": "word",
+      "reading": "dànyuàn",
+      "senses": [
+        {
+          "id": "zh-558a4936301a-1-s1",
+          "definition": "wish; hope that"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "不求同年同月同日生，但愿同年同月同日死。",
+        "gloss": "but may it be that",
+        "sense_id": "zh-558a4936301a-1-s1"
+      },
+      {
+        "sentence": "不求同年同月同日生，但愿同年同月同日死。",
+        "gloss": "provided that; hopefully",
+        "sense_id": "zh-558a4936301a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d3b8b8e34c875adebcab62abd939f35cdf432cf1b5beeeb82777e3842352ec0c"
+}

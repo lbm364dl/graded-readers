@@ -1,0 +1,32 @@
+{
+  "id": "ja-691e2b27a082a21d-898405b1f64b516f",
+  "entry_id": "ja-691e2b27a082a21d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-691e2b27a082a21d",
+      "headword": "失敗",
+      "reading": "しっぱい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-691e2b27a082a21d-1",
+          "definition": "failure; a mistake or unsuccessful result"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "わがままな主人の失敗を一つ話そう。",
+        "gloss": "failure; mistake",
+        "sense_id": "ja-691e2b27a082a21d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "de4f87acaa703f76bead973e84dfa592e26abcefcd49d7a44d0f107f98e2a5ea"
+}

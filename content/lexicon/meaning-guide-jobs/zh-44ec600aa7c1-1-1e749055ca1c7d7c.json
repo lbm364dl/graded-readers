@@ -1,0 +1,31 @@
+{
+  "id": "zh-44ec600aa7c1-1-1e749055ca1c7d7c",
+  "entry_id": "zh-44ec600aa7c1-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-44ec600aa7c1-1",
+      "headword": "人公",
+      "kind": "name",
+      "reading": "réngōng",
+      "senses": [
+        {
+          "id": "zh-44ec600aa7c1-1-s1",
+          "definition": "a title, Human General, used for Zhang Liang"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角知道事情暴露，马上起兵，自称天公将军；张宝称地公将军，张梁称人公将军。",
+        "gloss": "Human General, Zhang Liang’s military title",
+        "sense_id": "zh-44ec600aa7c1-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "06e2718e4ce85d9b4db5ecda4ddc309cb86e25a5e5c52335fabe12f87065f498"
+}

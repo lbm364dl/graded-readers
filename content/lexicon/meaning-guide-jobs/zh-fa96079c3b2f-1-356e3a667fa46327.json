@@ -1,0 +1,41 @@
+{
+  "id": "zh-fa96079c3b2f-1-356e3a667fa46327",
+  "entry_id": "zh-fa96079c3b2f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-fa96079c3b2f-1",
+      "headword": "前往",
+      "kind": "word",
+      "reading": "qiánwǎng",
+      "senses": [
+        {
+          "id": "zh-fa96079c3b2f-1-s1",
+          "definition": "go to a place or destination"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "卢植、皇甫嵩、朱隽各自带兵，分三路前往作战。",
+        "gloss": "go toward",
+        "sense_id": "zh-fa96079c3b2f-1-s1"
+      },
+      {
+        "sentence": "”于是邹靖带兵回去，刘备、关羽、张飞带五百人前往卢植那里。",
+        "gloss": "go to",
+        "sense_id": "zh-fa96079c3b2f-1-s1"
+      },
+      {
+        "sentence": "皇甫嵩说张梁、张宝会去广宗投靠张角，于是让刘备连夜前往。",
+        "gloss": "to head for",
+        "sense_id": "zh-fa96079c3b2f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2fa3f1e12ff5e2fab6fe13f0dfc883de191dd61dc0dba476e5b13c7f72f3ef36"
+}

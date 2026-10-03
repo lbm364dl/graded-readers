@@ -1,0 +1,31 @@
+{
+  "id": "zh-86b296ab68b6-1-167323d154517075",
+  "entry_id": "zh-86b296ab68b6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-86b296ab68b6-1",
+      "headword": "余",
+      "kind": "particle",
+      "reading": "yú",
+      "senses": [
+        {
+          "id": "zh-86b296ab68b6-1-s1",
+          "definition": "more than; in excess of a stated number"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "恰好张梁、张宝已经败退，曹操截住他们，斩首万余级，夺得许多旗帜、金鼓和马匹。",
+        "gloss": "more than",
+        "sense_id": "zh-86b296ab68b6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8a104473abfba76dc4748bb8b727f31f6b0fd1a6dd206f65b2a20086ccaacebf"
+}

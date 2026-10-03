@@ -1,0 +1,32 @@
+{
+  "id": "ja-dba4f21c5304fd7f-05b88618957b750a",
+  "entry_id": "ja-dba4f21c5304fd7f",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-dba4f21c5304fd7f",
+      "headword": "バイオリン",
+      "reading": "ばいおりん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-dba4f21c5304fd7f-1",
+          "definition": "violin"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人は俳句、新しい詩、英語、弓、歌、バイオリンなど、何にでも手を出すが、どれも上手にならない。",
+        "gloss": "violin",
+        "sense_id": "ja-dba4f21c5304fd7f-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4966eea1f53e31653853563fd6c8f36ed9a60c6ec200527b55b9178a8b69b606"
+}

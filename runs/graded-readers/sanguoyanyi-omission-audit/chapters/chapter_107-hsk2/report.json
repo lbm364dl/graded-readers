@@ -1,0 +1,118 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_107-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 334,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了曹爽犹豫投降、司马懿以借粮进一步麻痹他的过程细节。",
+      "classification": "material",
+      "reason": "这解释了曹爽为何放弃抵抗并放松警惕，直接影响其投降及后续被诛杀的因果链。",
+      "required_fix": "补充曹爽反复犹豫、拒绝桓范建议，以及司马懿送粮使其误信不会受害的过程。"
+    },
+    {
+      "omission_note": "省略了司马懿赦免辛敞、鲁芝、杨综的具体理由，以及夏侯令女的抗婚细节。",
+      "classification": "material",
+      "reason": "这些内容体现司马懿对忠义行为的判断，并构成夏侯令女守义这一重要人物刻画；删去后人物动机和价值判断明显缺失。",
+      "required_fix": "补充辛敞、鲁芝、杨综因各为其主而获赦复职的理由，以及夏侯令女拒绝改嫁、断耳断鼻守节的关键细节。"
+    },
+    {
+      "omission_note": "省略了姜维采用夏侯霸建议，转攻牛头山以解麴山之围的因果过程。",
+      "classification": "material",
+      "reason": "这是姜维改变作战方向的直接动机，也是麴山之围与牛头山战事之间的核心因果连接。",
+      "required_fix": "补充羌兵未到、麴山二城将陷，夏侯霸提出袭击空虚雍州后方，以及姜维据此转攻牛头山的过程。"
+    },
+    {
+      "omission_note": "省略了郭淮取洮水、陈泰分兵及姜维突围折损大半的具体战况。",
+      "classification": "material",
+      "reason": "这些战术行动直接造成姜维粮道被断、蜀军败退并损失大半，是战役结果和后续退入阳平关的关键原因。",
+      "required_fix": "补充郭淮断洮水粮道、陈泰分兵围击，以及姜维苦战突围、蜀军折损大半的战况。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“持诏逃出”容易让人误解为桓范持有真实诏书，原文是借太后名义伪称有诏。",
+      "classification": "material",
+      "reason": "原文只写桓范拿竹版假称有太后诏令，并非持有真实诏书；这改变了其出城行为的事实性质。",
+      "required_fix": "改为“桓范假称有太后诏令，骗开城门逃出”。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“联络羌人”表述为既成事实，原文只是计划派使者与羌人结盟，且羌兵后来未及时到达。",
+      "classification": "material",
+      "reason": "原文仅有结盟计划，羌兵并未及时到达；将其写成既成事实会弱化姜维延误及转攻牛头山的因果。",
+      "required_fix": "改为“计划派使者与羌人结盟，但羌兵未及时到达”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了曹爽犹豫投降、司马懿以借粮进一步麻痹他的过程细节。",
+      "classification": "material",
+      "reason": "这解释了曹爽为何放弃抵抗并放松警惕，直接影响其投降及后续被诛杀的因果链。",
+      "required_fix": "补充曹爽反复犹豫、拒绝桓范建议，以及司马懿送粮使其误信不会受害的过程。"
+    },
+    {
+      "omission_note": "省略了司马懿赦免辛敞、鲁芝、杨综的具体理由，以及夏侯令女的抗婚细节。",
+      "classification": "material",
+      "reason": "这些内容体现司马懿对忠义行为的判断，并构成夏侯令女守义这一重要人物刻画；删去后人物动机和价值判断明显缺失。",
+      "required_fix": "补充辛敞、鲁芝、杨综因各为其主而获赦复职的理由，以及夏侯令女拒绝改嫁、断耳断鼻守节的关键细节。"
+    },
+    {
+      "omission_note": "省略了姜维采用夏侯霸建议，转攻牛头山以解麴山之围的因果过程。",
+      "classification": "material",
+      "reason": "这是姜维改变作战方向的直接动机，也是麴山之围与牛头山战事之间的核心因果连接。",
+      "required_fix": "补充羌兵未到、麴山二城将陷，夏侯霸提出袭击空虚雍州后方，以及姜维据此转攻牛头山的过程。"
+    },
+    {
+      "omission_note": "省略了郭淮取洮水、陈泰分兵及姜维突围折损大半的具体战况。",
+      "classification": "material",
+      "reason": "这些战术行动直接造成姜维粮道被断、蜀军败退并损失大半，是战役结果和后续退入阳平关的关键原因。",
+      "required_fix": "补充郭淮断洮水粮道、陈泰分兵围击，以及姜维苦战突围、蜀军折损大半的战况。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“持诏逃出”容易让人误解为桓范持有真实诏书，原文是借太后名义伪称有诏。",
+      "classification": "material",
+      "reason": "原文只写桓范拿竹版假称有太后诏令，并非持有真实诏书；这改变了其出城行为的事实性质。",
+      "required_fix": "改为“桓范假称有太后诏令，骗开城门逃出”。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“联络羌人”表述为既成事实，原文只是计划派使者与羌人结盟，且羌兵后来未及时到达。",
+      "classification": "material",
+      "reason": "原文仅有结盟计划，羌兵并未及时到达；将其写成既成事实会弱化姜维延误及转攻牛头山的因果。",
+      "required_fix": "改为“计划派使者与羌人结盟，但羌兵未及时到达”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 334,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

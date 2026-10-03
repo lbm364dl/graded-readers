@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff516-ac64-73b2-9f80-a5bb54d5c023"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.96,\"naturalness\":0.97,\"readability\":0.97,\"omissions\":[],\"unsupported_additions\":[\"“人人都能过好日子”比原文“南方已定、百姓感戴”略有泛化。\"],\"distortions\":[],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":42607,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":469,"reasoning_output_tokens":381}}

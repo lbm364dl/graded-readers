@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-chu-zhen-1d0054547093ef2d",
+  "entry_id": "zh-expression-chu-zhen",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-chu-zhen",
+      "headword": "出阵",
+      "reading": "chūzhèn",
+      "base_entry_id": "zh-4d5f7e15c8a5-1",
+      "components": [
+        {
+          "entry_id": "zh-4d5f7e15c8a5-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-60f1963be453-1",
+          "role": "place or formation"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-chu-zhen-s1",
+          "definition": "go out to the battle line"
+        }
+      ],
+      "kind": "construction"
+    },
+    "examples": [
+      {
+        "sentence": "刘备骑马出阵，关羽在左，张飞在右。",
+        "gloss": "go out to the battle line",
+        "sense_id": "zh-expression-chu-zhen-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "出",
+        "role": "verb"
+      },
+      {
+        "headword": "阵",
+        "role": "place or formation"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9a52bfbac53ecaa28459a38ac9f0b26453766b5d187ae0b7463620c9b03a20b3"
+}

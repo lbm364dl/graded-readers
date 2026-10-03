@@ -1,0 +1,32 @@
+{
+  "id": "ja-837a602c7c6a5171-dde10e95d1113d0b",
+  "entry_id": "ja-837a602c7c6a5171",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-837a602c7c6a5171",
+      "headword": "跛になる",
+      "reading": "びっこになる",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-837a602c7c6a5171-1",
+          "definition": "to become lame"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "その後、車屋の黒は跛になった。",
+        "gloss": "became lame",
+        "sense_id": "ja-837a602c7c6a5171-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f13f7a97373e6a59bff2712ce52e1a8c99a2bbb2b55a9b187eca5d2bbca06304"
+}

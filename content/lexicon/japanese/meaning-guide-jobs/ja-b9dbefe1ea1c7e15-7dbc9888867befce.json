@@ -1,0 +1,32 @@
+{
+  "id": "ja-b9dbefe1ea1c7e15-7dbc9888867befce",
+  "entry_id": "ja-b9dbefe1ea1c7e15",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-b9dbefe1ea1c7e15",
+      "headword": "時々",
+      "reading": "ときどき",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-b9dbefe1ea1c7e15-1",
+          "definition": "sometimes; occasionally"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "手の上に乗せられ、顔を見ると、毛のない顔は薬缶のようで、顔の真ん中の出た所の穴から時々煙を吹いた。",
+        "gloss": "sometimes",
+        "sense_id": "ja-b9dbefe1ea1c7e15-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cf941527d4f633c3c9724b8afbc1f8b6df3393e7b250e1f05ac0902c9775dc89"
+}

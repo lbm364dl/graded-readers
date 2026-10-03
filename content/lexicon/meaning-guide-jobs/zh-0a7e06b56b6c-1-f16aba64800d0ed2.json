@@ -1,0 +1,31 @@
+{
+  "id": "zh-0a7e06b56b6c-1-f16aba64800d0ed2",
+  "entry_id": "zh-0a7e06b56b6c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-0a7e06b56b6c-1",
+      "headword": "得知",
+      "kind": "word",
+      "reading": "dézhī",
+      "senses": [
+        {
+          "id": "zh-0a7e06b56b6c-1-s1",
+          "definition": "to learn or find out something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角得知事情败露，立刻连夜起兵，发动黄巾起事。",
+        "gloss": "learn; find out",
+        "sense_id": "zh-0a7e06b56b6c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d2451e0b99d8379c9aa5ec0addd1965885363bb9ecb2314f7fca9b1b67a1be99"
+}

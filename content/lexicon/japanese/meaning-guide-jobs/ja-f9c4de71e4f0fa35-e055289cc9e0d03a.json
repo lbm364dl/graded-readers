@@ -1,0 +1,32 @@
+{
+  "id": "ja-f9c4de71e4f0fa35-e055289cc9e0d03a",
+  "entry_id": "ja-f9c4de71e4f0fa35",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-f9c4de71e4f0fa35",
+      "headword": "たつ",
+      "reading": "たつ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-f9c4de71e4f0fa35-1",
+          "definition": "to pass; to elapse"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩がこの家に住み始めて一月ほどたった、ある月給日のことだった。",
+        "gloss": "passed; elapsed",
+        "sense_id": "ja-f9c4de71e4f0fa35-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6f24b861c1eea91290cfddc1a7c459942a04de124cc21256e9434acc27378eec"
+}

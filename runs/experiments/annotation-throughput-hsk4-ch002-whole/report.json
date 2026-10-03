@@ -1,0 +1,11 @@
+{
+  "status": "complete",
+  "started_at": "2026-08-06T23:57:55.550654+00:00",
+  "completed_at": "2026-08-07T00:02:05.628633+00:00",
+  "chunks": 1,
+  "model_calls": 1,
+  "segments": 506,
+  "max_segment_characters": 4,
+  "reconstructs": true,
+  "reader": "/home/usuario/hsk-graded-readers/runs/experiments/annotation-throughput-hsk4-ch002-whole/reader.json"
+}

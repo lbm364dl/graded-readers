@@ -1,0 +1,32 @@
+{
+  "id": "ja-cf865c16d3367a12-844b3518c921989e",
+  "entry_id": "ja-cf865c16d3367a12",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-cf865c16d3367a12",
+      "headword": "のようだ",
+      "reading": "のようだ",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-cf865c16d3367a12-1",
+          "definition": "to be like; to resemble"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "手の上に乗せられ、顔を見ると、毛のない顔は薬缶のようで、顔の真ん中の出た所の穴から時々煙を吹いた。",
+        "gloss": "being like; resembling",
+        "sense_id": "ja-cf865c16d3367a12-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "00912dae172f1ae7b23247a2540cc3daa3a96d3f52fbe2e937e02bda2713f813"
+}

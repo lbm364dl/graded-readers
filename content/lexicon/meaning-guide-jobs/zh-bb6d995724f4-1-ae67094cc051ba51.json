@@ -1,0 +1,31 @@
+{
+  "id": "zh-bb6d995724f4-1-ae67094cc051ba51",
+  "entry_id": "zh-bb6d995724f4-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-bb6d995724f4-1",
+      "headword": "管理",
+      "kind": "word",
+      "reading": "guǎnlǐ",
+      "senses": [
+        {
+          "id": "zh-bb6d995724f4-1-s1",
+          "definition": "to manage or be responsible for overseeing something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "大方有一万多人，小方有六七千人，各方都有人管理。",
+        "gloss": "to manage",
+        "sense_id": "zh-bb6d995724f4-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "50743820279610c558c034376f883603cce63193cced27fb285546751c729448"
+}

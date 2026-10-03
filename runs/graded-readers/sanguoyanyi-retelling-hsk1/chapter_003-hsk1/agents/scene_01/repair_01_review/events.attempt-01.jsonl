@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff4fb-3fdb-7440-95a7-7b72e873d9c4"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.98,\"naturalness\":0.97,\"readability\":0.98,\"omissions\":[],\"unsupported_additions\":[\"将“粟帛”概括为“米和钱”，其中“钱”并非原文信息。\"],\"distortions\":[],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":44245,"cached_input_tokens":43776,"cache_write_input_tokens":0,"output_tokens":459,"reasoning_output_tokens":374}}

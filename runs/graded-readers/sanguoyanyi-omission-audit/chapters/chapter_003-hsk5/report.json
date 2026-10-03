@@ -1,0 +1,111 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_003-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 1019,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "删去了曹操关于何进必将导致天下大乱的判断。",
+      "classification": "material",
+      "reason": "这是曹操对何进的关键政治判断，体现其洞察力与对何进的明确否定，属于重要 characterization。",
+      "required_fix": "补回曹操退下后所说的“乱天下者，必进也”。"
+    },
+    {
+      "omission_note": "删去了曹操救火、请何太后暂摄政事及派兵追寻少帝的具体行动。",
+      "classification": "material",
+      "reason": "这些行动交代了宫变后的权力安排、救灾处置和搜寻少帝的直接推动者，涉及后续皇帝获救与政局发展的因果链。",
+      "required_fix": "补写曹操扑灭宫火、请何太后暂摄大事，并派兵追袭张让等人、寻找少帝的行动。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "删去了曹操关于何进必将导致天下大乱的判断。",
+      "classification": "material",
+      "reason": "这是曹操对何进的关键政治判断，体现其洞察力与对何进的明确否定，属于重要 characterization。",
+      "required_fix": "补回曹操退下后所说的“乱天下者，必进也”。"
+    },
+    {
+      "omission_note": "删去了曹操救火、请何太后暂摄政事及派兵追寻少帝的具体行动。",
+      "classification": "material",
+      "reason": "这些行动交代了宫变后的权力安排、救灾处置和搜寻少帝的直接推动者，涉及后续皇帝获救与政局发展的因果链。",
+      "required_fix": "补写曹操扑灭宫火、请何太后暂摄大事，并派兵追袭张让等人、寻找少帝的行动。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 8.5,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 924,
+      "review": {
+        "source_fidelity": 7.2,
+        "naturalness": 7.8,
+        "readability": 8.4,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "原文中郑泰、卢植是劝何进提防董卓，修复稿却写成“警告董卓如豺狼”，误改了劝谏对象。",
+          "修复稿把董卓暂避吕布与卢植斥责废立的顺序倒置；原文中卢植先斥责，董卓随后才因见吕布而暂避。",
+          "原文写宦官及其家属尽皆诛绝，修复稿改为“大多被杀”，弱化了屠杀范围。"
+        ],
+        "language_problems": [
+          "“警告董卓如豺狼”搭配和语义不自然，应改为“警告何进董卓如豺狼”或类似表达。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 905,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [
+          "省略崔毅梦见两轮红日、看见草堆红光后发现皇帝与陈留王的关键情节，削弱了二人被发现的因果链。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "郑泰、卢植劝谏何进的时间顺序被提前到何进派人迎董卓之后，原文中他们是在何进收到董卓表章后、派人迎接之前劝谏的。",
+          "原文是袁术领兵布列宫门外，袁绍、曹操护送何进；修复稿写成袁术同时守门并护送何进，误改了人物职责。",
+          "“五更来到崔毅庄”将原文中二人先在庄外草堆旁被发现的过程改成主动到达庄中。"
+        ],
+        "language_problems": [
+          "“命袁术守在青琐门外并护送何进入宫”主语和动作关系不自然且造成语义误解。",
+          "“警告袁绍、王允董卓必有异心”缺少“说”或标点，表达略显生硬。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 1019,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

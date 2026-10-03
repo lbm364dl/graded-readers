@@ -1,0 +1,37 @@
+{
+  "id": "ja-3f6c388026567ab7-fe7c8dd0a05db392",
+  "entry_id": "ja-3f6c388026567ab7",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-3f6c388026567ab7",
+      "headword": "事",
+      "reading": "こと",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-3f6c388026567ab7-1",
+          "definition": "a matter or affair; an event or occasion"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そこまでは覚えているが、その後のことは、いくら思い出そうとしても分からない。",
+        "gloss": "matter; events",
+        "sense_id": "ja-3f6c388026567ab7-1"
+      },
+      {
+        "sentence": "吾輩がこの家に住み始めて一月ほどたった、ある月給日のことだった。",
+        "gloss": "matter; occasion",
+        "sense_id": "ja-3f6c388026567ab7-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "06942ec56b53dcdd57a37ddaca0bd790864e4d5e13278adf78235d90a0114972"
+}

@@ -1,0 +1,80 @@
+{
+  "id": "zh-7b51d6bb4d8f-1-39d790edced6fcec",
+  "entry_id": "zh-7b51d6bb4d8f-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-7b51d6bb4d8f-1",
+      "headword": "斩",
+      "kind": "word",
+      "reading": "zhǎn",
+      "senses": [
+        {
+          "id": "zh-7b51d6bb4d8f-1-s1",
+          "definition": "kill by cutting off the head"
+        },
+        {
+          "id": "zh-7b51d6bb4d8f-1-s2",
+          "definition": "cut with a blade"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "程远志又来打张飞，关羽马上赶到，一刀斩了程远志。",
+        "gloss": "behead",
+        "sense_id": "zh-7b51d6bb4d8f-1-s1"
+      },
+      {
+        "sentence": "程远志来不及防备，被关羽斩成两段。",
+        "gloss": "cut; behead",
+        "sense_id": "zh-7b51d6bb4d8f-1-s1"
+      },
+      {
+        "sentence": "程远志挥刀冲来，关羽纵马迎上，一刀将他斩成两段。",
+        "gloss": "to behead; cut down",
+        "sense_id": "zh-7b51d6bb4d8f-1-s2"
+      },
+      {
+        "sentence": "程远志被斩后，黄巾军有的逃走，有的投降。",
+        "gloss": "be beheaded",
+        "sense_id": "zh-7b51d6bb4d8f-1-s1"
+      },
+      {
+        "sentence": "关羽骑马迎战，挥刀将程远志斩成两段。",
+        "gloss": "to behead",
+        "sense_id": "zh-7b51d6bb4d8f-1-s2"
+      },
+      {
+        "sentence": "程远志被斩后，黄巾军纷纷逃走。",
+        "gloss": "to behead",
+        "sense_id": "zh-7b51d6bb4d8f-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-7b51d6bb4d8f-1",
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "斩 is a verb meaning to kill by cutting off the head.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "斩",
+        "contribution_en": "The verb means to kill by cutting off the head.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "1aff338a923e2ef0af95ae60bc79d0bf5692ab186a6f9b6f27df047dd2e70b37",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "857d5d0663343aa1d2fd9d2ba3c4cd91fb5fda1796be0c55d08950680cc4d8db"
+}

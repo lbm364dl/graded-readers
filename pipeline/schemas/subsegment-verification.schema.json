@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["verdict", "items", "notes"],
+  "properties": {
+    "verdict": {"type": "string", "enum": ["pass", "revised"]},
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "segment_index",
+          "surface",
+          "composition_en",
+          "subsegments"
+        ],
+        "properties": {
+          "segment_index": {"type": "integer", "minimum": 0},
+          "surface": {"type": "string", "minLength": 2},
+          "composition_en": {"type": "string", "minLength": 1},
+          "subsegments": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["start", "end", "text", "meaning_en"],
+              "properties": {
+                "start": {"type": "integer", "minimum": 0},
+                "end": {"type": "integer", "minimum": 1},
+                "text": {"type": "string", "minLength": 1},
+                "meaning_en": {"type": "string", "minLength": 1}
+              }
+            }
+          }
+        }
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1}
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-50b8d7c663a3-1-7b0086768069008b",
+  "entry_id": "zh-50b8d7c663a3-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-50b8d7c663a3-1",
+      "headword": "军心",
+      "kind": "word",
+      "reading": "jūnxīn",
+      "senses": [
+        {
+          "id": "zh-50b8d7c663a3-1-s1",
+          "definition": "the morale or state of mind of an army's members"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "左丰怀恨回报，诬告卢植筑高墙却不作战，使军心懈怠。",
+        "gloss": "troop morale",
+        "sense_id": "zh-50b8d7c663a3-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9a53894a3260bda207d66ea62a696111b2b6845a5193c05883fac336ef855cf9"
+}

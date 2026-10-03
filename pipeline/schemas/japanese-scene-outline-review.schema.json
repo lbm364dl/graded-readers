@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["verdict", "issues"],
+  "properties": {
+    "verdict": {"type": "string", "enum": ["pass", "revise"]},
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["scene_id", "problem", "explanation", "suggested_fix"],
+        "properties": {
+          "scene_id": {"type": "string"},
+          "problem": {"type": "string", "enum": ["boundary", "event_outside_span", "missing_event", "wrong_order", "duplication"]},
+          "explanation": {"type": "string"},
+          "suggested_fix": {"type": "string"}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,338 @@
+{
+  "id": "ja-bae4d3e398702f7b-6a0e3902faec1693",
+  "entry_id": "ja-bae4d3e398702f7b",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-bae4d3e398702f7b",
+      "headword": "と",
+      "reading": "と",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-bae4d3e398702f7b-1",
+          "definition": "Marks quoted speech or thought."
+        },
+        {
+          "id": "ja-bae4d3e398702f7b-2",
+          "definition": "Follows a verb or clause to mark an immediate or predictable result, or an occurrence upon which another event follows; when, whenever, or if."
+        },
+        {
+          "id": "ja-bae4d3e398702f7b-3",
+          "definition": "Marks a person or thing accompanying or participating with another; with."
+        },
+        {
+          "id": "ja-bae4d3e398702f7b-4",
+          "definition": "Connects nouns or phrases in a list; and."
+        },
+        {
+          "id": "ja-bae4d3e398702f7b-5",
+          "definition": "Marks a sound or manner of action, or indicates comparison; with, as, compared with."
+        },
+        {
+          "id": "ja-bae4d3e398702f7b-6",
+          "definition": "Follows a clause to indicate the time at which something happens; when."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人は吾輩を見て、「家の中に置いてやれ」と言いました。",
+        "gloss": "quoting the preceding words",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      },
+      {
+        "sentence": "後で聞くとその人間は書生で、猫をつかまえて煮て食べることもあるそうだ。",
+        "gloss": "when; upon",
+        "sense_id": "ja-bae4d3e398702f7b-2"
+      },
+      {
+        "sentence": "手の上に乗せられ、顔を見ると、毛のない顔は薬缶のようで、顔の真ん中の出た所の穴から時々煙を吹いた。",
+        "gloss": "when; upon",
+        "sense_id": "ja-bae4d3e398702f7b-2"
+      },
+      {
+        "sentence": "後で、それがたばこだと知った。",
+        "gloss": "quoting marker",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      },
+      {
+        "sentence": "見ると、書生も兄弟もお母さんもいない。",
+        "gloss": "when; upon",
+        "sense_id": "ja-bae4d3e398702f7b-2"
+      },
+      {
+        "sentence": "とても明るい所で、痛いので出てみると、吾輩はわらの上から笹原へ捨てられていた。",
+        "gloss": "when; upon",
+        "sense_id": "ja-bae4d3e398702f7b-2"
+      },
+      {
+        "sentence": "笹原を出ると池があり、鳴いて書生を呼んだが、誰も来なかった。",
+        "gloss": "when; upon",
+        "sense_id": "ja-bae4d3e398702f7b-2"
+      },
+      {
+        "sentence": "主人は吾輩を見て、「では、家の内に置いてやれ」と言った。",
+        "gloss": "quoting the command",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      },
+      {
+        "sentence": "西の垣のそばへ行くと、大きな黒い猫が枯菊の上で寝ていた。",
+        "gloss": "when; upon",
+        "sense_id": "ja-bae4d3e398702f7b-2"
+      },
+      {
+        "sentence": "風で葉が二枚落ちると、黒は丸い目を開いた。",
+        "gloss": "when; if; upon",
+        "sense_id": "ja-bae4d3e398702f7b-2"
+      },
+      {
+        "sentence": "「君は何だ」と言った。",
+        "gloss": "quotative marker",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      },
+      {
+        "sentence": "名前はまだない」と答えた。",
+        "gloss": "quoting the statement",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      },
+      {
+        "sentence": "黒は「車屋の黒だ」と言った。",
+        "gloss": "quoting",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      },
+      {
+        "sentence": "吾輩はその後、黒と何回も会い、話をするようになった。",
+        "gloss": "with",
+        "sense_id": "ja-bae4d3e398702f7b-3"
+      },
+      {
+        "sentence": "黒は「人間は、格好のよい泥棒だ」と怒った。",
+        "gloss": "quoting",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      },
+      {
+        "sentence": "吾輩はその話を聞き、決して鼠をとるまいと決めた。",
+        "gloss": "quoting the thought or decision",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      },
+      {
+        "sentence": "鼠をとるより、寝ている方がよいと思った。",
+        "gloss": "marks quoted thought",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      },
+      {
+        "sentence": "しかし、その時の吾輩には何も考えがなく、怖いとも思わなかった。",
+        "gloss": "quotative marker",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      },
+      {
+        "sentence": "顔の真ん中から何かがひどく突き出ていて、その穴の中から時々ぷうぷうと煙を吹いた。",
+        "gloss": "with; making the sound",
+        "sense_id": "ja-bae4d3e398702f7b-5"
+      },
+      {
+        "sentence": "この書生の手の上で休んでいると、急に速く動き始めた。",
+        "gloss": "when; whenever",
+        "sense_id": "ja-bae4d3e398702f7b-2"
+      },
+      {
+        "sentence": "目が回り、胸が悪くなったと思ったとき、どさりと音がして、目から火が出た。",
+        "gloss": "quotative marker",
+        "sense_id": "ja-bae4d3e398702f7b-6"
+      },
+      {
+        "sentence": "目が回り、胸が悪くなったと思ったとき、どさりと音がして、目から火が出た。",
+        "gloss": "sound-quoting particle",
+        "sense_id": "ja-bae4d3e398702f7b-5"
+      },
+      {
+        "sentence": "気がつくと、書生も母親も兄弟もいない。",
+        "gloss": "when; upon",
+        "sense_id": "ja-bae4d3e398702f7b-2"
+      },
+      {
+        "sentence": "そこは前までと違ってひどく明るかった。",
+        "gloss": "with; compared with",
+        "sense_id": "ja-bae4d3e398702f7b-5"
+      },
+      {
+        "sentence": "痛みにたえながら外へ出ると、大きな池があった。",
+        "gloss": "when; upon",
+        "sense_id": "ja-bae4d3e398702f7b-2"
+      },
+      {
+        "sentence": "鳴けば書生が来るかと思い、「ニャー、ニャー」と鳴いたが、誰も来ない。",
+        "gloss": "quoting the sound",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      },
+      {
+        "sentence": "明るく暖かい方へ進むと、いつの間にか家の中にいた。",
+        "gloss": "when; upon",
+        "sense_id": "ja-bae4d3e398702f7b-2"
+      },
+      {
+        "sentence": "最後に主人が来て、吾輩を見ながら「そんなら内へ置いてやれ」と言った。",
+        "gloss": "quotative marker",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      },
+      {
+        "sentence": "おさんは不満そうだったが、吾輩はこの家を自分の住家と決めた。",
+        "gloss": "as; calling it",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      },
+      {
+        "sentence": "吾輩の主人は教師だが、吾輩と顔を合わせることはめったにない。",
+        "gloss": "with",
+        "sense_id": "ja-bae4d3e398702f7b-3"
+      },
+      {
+        "sentence": "学校から帰ると、ほとんど一日中、書斎にこもっている。",
+        "gloss": "when; upon",
+        "sense_id": "ja-bae4d3e398702f7b-2"
+      },
+      {
+        "sentence": "家のものは勉強家だと思っているが、実際はそうでもない。",
+        "gloss": "quotative marker",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      },
+      {
+        "sentence": "吾輩がそっと書斎をのぞくと、主人は昼寝をしていたり、読みかけの本に涎をたらしていたりする。",
+        "gloss": "when; upon",
+        "sense_id": "ja-bae4d3e398702f7b-2"
+      },
+      {
+        "sentence": "二、三ページ読むと眠くなる。",
+        "gloss": "when; whenever",
+        "sense_id": "ja-bae4d3e398702f7b-2"
+      },
+      {
+        "sentence": "夜は五つと三つの子供の寝床へもぐり込み、二人の間で一緒に寝る。",
+        "gloss": "and",
+        "sense_id": "ja-bae4d3e398702f7b-4"
+      },
+      {
+        "sentence": "だが一人が目を覚ますと、「猫が来た」と泣き出し、主人が飛び出してくる。",
+        "gloss": "when; once",
+        "sense_id": "ja-bae4d3e398702f7b-2"
+      },
+      {
+        "sentence": "だが一人が目を覚ますと、「猫が来た」と泣き出し、主人が飛び出してくる。",
+        "gloss": "quoting the words “the cat came”",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      },
+      {
+        "sentence": "それでも始めると、胃が弱いのに一生懸命だった。",
+        "gloss": "when; if; upon",
+        "sense_id": "ja-bae4d3e398702f7b-2"
+      },
+      {
+        "sentence": "吾輩が家に来て一月ほどたった給料日に、主人は水彩絵具と毛筆とワットマンという紙を買い、今日から絵をかくと決めた。",
+        "gloss": "and",
+        "sense_id": "ja-bae4d3e398702f7b-4"
+      },
+      {
+        "sentence": "吾輩が家に来て一月ほどたった給料日に、主人は水彩絵具と毛筆とワットマンという紙を買い、今日から絵をかくと決めた。",
+        "gloss": "quoting the planned action",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      },
+      {
+        "sentence": "吾輩が大きくあくびをして裏へ行こうとすると、主人は「この馬鹿野郎」と怒鳴った。",
+        "gloss": "quoting marker",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      },
+      {
+        "sentence": "吾輩は、今までじっとしていた者の気持ちも知らず、ひどいものだと思った。",
+        "gloss": "that",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      },
+      {
+        "sentence": "ある小春の穏やかな日、昼寝のあとでそこへ行くと、杉垣のそばで大きな黒猫が気持ちよさそうに寝ていた。",
+        "gloss": "when; upon",
+        "sense_id": "ja-bae4d3e398702f7b-2"
+      },
+      {
+        "sentence": "吾輩が近づくと、彼は丸い目を開け、「お前は何だ」と言った。",
+        "gloss": "when; upon",
+        "sense_id": "ja-bae4d3e398702f7b-2"
+      },
+      {
+        "sentence": "吾輩が近づくと、彼は丸い目を開け、「お前は何だ」と言った。",
+        "gloss": "quoting marker",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      },
+      {
+        "sentence": "名前はまだない」と答えると、彼は「おれは車屋の黒だ」と名乗った。",
+        "gloss": "quoting the preceding words",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      },
+      {
+        "sentence": "名前はまだない」と答えると、彼は「おれは車屋の黒だ」と名乗った。",
+        "gloss": "when; upon",
+        "sense_id": "ja-bae4d3e398702f7b-2"
+      },
+      {
+        "sentence": "何度も会ううち、黒は鼠を三、四十匹とったことがあると自慢した。",
+        "gloss": "quotative marker",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      },
+      {
+        "sentence": "吾輩が鼠をとったことはないと言うと、黒は、人間が猫のとった鼠を取り上げて交番へ持って行き、五銭をもらうという話をした。",
+        "gloss": "quotative marker",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      },
+      {
+        "sentence": "吾輩が鼠をとったことはないと言うと、黒は、人間が猫のとった鼠を取り上げて交番へ持って行き、五銭をもらうという話をした。",
+        "gloss": "when; upon saying",
+        "sense_id": "ja-bae4d3e398702f7b-2"
+      },
+      {
+        "sentence": "「人間は、体のよい泥棒だ」と黒は怒った。",
+        "gloss": "quoting the preceding words",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      },
+      {
+        "sentence": "吾輩はその時から、決して鼠をとるまいと決心した。",
+        "gloss": "quotative marker",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      },
+      {
+        "sentence": "元気も体格も失った黒は、最後に「いたちと魚屋の天秤棒には、もうこりごりだ」と言った。",
+        "gloss": "and",
+        "sense_id": "ja-bae4d3e398702f7b-4"
+      },
+      {
+        "sentence": "元気も体格も失った黒は、最後に「いたちと魚屋の天秤棒には、もうこりごりだ」と言った。",
+        "gloss": "quotative marker",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-bae4d3e398702f7b",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "grammatical",
+    "explanation_en": "After quoted words or a clause, と marks that content as what someone says, thinks, or decides. After a clause, it can present what follows as a natural or regular result, or as something that happens when the preceding event occurs. After a person or thing, it marks a companion or participant, meaning “with.”",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "と",
+        "contribution_en": "A particle that marks quoted content, a clause leading to a natural or regular result, or a companion or participant, depending on what it follows.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "af57650ecbbfbebff28cde477f1d54de8448dc53f741e9bb8c5b69fbb998a2e6",
+    "revision": 2,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b5a56de89cf57659857ff14baac1c50554849100aa1f81e4af0a6f7fc5d681f3"
+}

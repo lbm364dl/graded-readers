@@ -1,0 +1,32 @@
+{
+  "id": "ja-0998dad08225c7ac-e2f4062498947ff9",
+  "entry_id": "ja-0998dad08225c7ac",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-0998dad08225c7ac",
+      "headword": "ぜ",
+      "reading": "ぜ",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-0998dad08225c7ac-1",
+          "definition": "A sentence-final particle that adds emphatic, often masculine or rough, assertion."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "人間てものは、体裁のよい泥棒だぜ」\n",
+        "gloss": "emphatic masculine sentence ending",
+        "sense_id": "ja-0998dad08225c7ac-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8f2bbacd66426e1480098046624d12710077acf972d76d48ed0ce375dbc5850d"
+}

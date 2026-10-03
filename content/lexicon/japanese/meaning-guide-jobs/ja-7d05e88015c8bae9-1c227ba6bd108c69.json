@@ -1,0 +1,32 @@
+{
+  "id": "ja-7d05e88015c8bae9-1c227ba6bd108c69",
+  "entry_id": "ja-7d05e88015c8bae9",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-7d05e88015c8bae9",
+      "headword": "尻尾",
+      "reading": "しっぽ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-7d05e88015c8bae9-1",
+          "definition": "tail"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "小供は幼稚園へ通い、帰ると歌を歌い、時々吾輩の尻尾を持ち上げる。",
+        "gloss": "tail",
+        "sense_id": "ja-7d05e88015c8bae9-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "39def35260075de3256ae3e54011b1cca23918c1d402e4eedc38987ed42b895a"
+}

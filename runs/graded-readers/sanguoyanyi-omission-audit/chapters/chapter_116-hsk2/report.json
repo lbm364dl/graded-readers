@@ -1,0 +1,94 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_116-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 304,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了司马昭关于蜀人和魏军不会支持钟会叛变的判断。",
+      "classification": "material",
+      "reason": "这段判断说明司马昭为何不担心钟会日后叛变，并构成其支持伐蜀策略的重要政治与军事依据，属于关键动机和战略信息。",
+      "required_fix": "补充司马昭关于蜀人不会协助钟会、魏军获胜后会思归且不会随钟会反叛的判断。"
+    },
+    {
+      "omission_note": "略去姜维在沓中与王颀、牵弘、邓艾、杨欣等多路交战的具体过程。",
+      "classification": "material",
+      "reason": "这些交战及其结果交代了姜维如何遭到多路夹击、甘松失守并最终被魏军包围，影响后续退守、诱走诸葛绪和夺取阴平桥的因果与战局变化。",
+      "required_fix": "补充姜维击败王颀、追击牵弘、与邓艾交战、得知杨欣焚毁甘松后撤军救援并遭围困的关键过程。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“三人认定剑阁不可失”将廖化个人提出的建议改成三人的共同判断。",
+      "classification": "material",
+      "reason": "原文只有廖化提出退守剑阁并说明剑阁失守即绝路，姜维采纳，张翼未作此共同判断，改变了建议提出者和决策归属。",
+      "required_fix": "改为廖化建议退守剑阁并指出剑阁不可失，姜维听从；不要写成三人的共同判断。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“依蹇卦部署诸军”容易使人误解为邓艾完全依据卦象部署军队；原文只是借梦解释战果与难以返回。",
+      "classification": "material",
+      "reason": "原文中邵缓以蹇卦解释邓艾的梦，预言克蜀但难以返回；邓艾随后依据军情分路部署，并非完全依卦象用兵，现表述造成了部署依据的因果误读。",
+      "required_fix": "改为邓艾梦见山上有水，邵缓以蹇卦解释为克蜀却难返；邓艾随后按军情分路截击姜维。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了司马昭关于蜀人和魏军不会支持钟会叛变的判断。",
+      "classification": "material",
+      "reason": "这段判断说明司马昭为何不担心钟会日后叛变，并构成其支持伐蜀策略的重要政治与军事依据，属于关键动机和战略信息。",
+      "required_fix": "补充司马昭关于蜀人不会协助钟会、魏军获胜后会思归且不会随钟会反叛的判断。"
+    },
+    {
+      "omission_note": "略去姜维在沓中与王颀、牵弘、邓艾、杨欣等多路交战的具体过程。",
+      "classification": "material",
+      "reason": "这些交战及其结果交代了姜维如何遭到多路夹击、甘松失守并最终被魏军包围，影响后续退守、诱走诸葛绪和夺取阴平桥的因果与战局变化。",
+      "required_fix": "补充姜维击败王颀、追击牵弘、与邓艾交战、得知杨欣焚毁甘松后撤军救援并遭围困的关键过程。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“三人认定剑阁不可失”将廖化个人提出的建议改成三人的共同判断。",
+      "classification": "material",
+      "reason": "原文只有廖化提出退守剑阁并说明剑阁失守即绝路，姜维采纳，张翼未作此共同判断，改变了建议提出者和决策归属。",
+      "required_fix": "改为廖化建议退守剑阁并指出剑阁不可失，姜维听从；不要写成三人的共同判断。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“依蹇卦部署诸军”容易使人误解为邓艾完全依据卦象部署军队；原文只是借梦解释战果与难以返回。",
+      "classification": "material",
+      "reason": "原文中邵缓以蹇卦解释邓艾的梦，预言克蜀但难以返回；邓艾随后依据军情分路部署，并非完全依卦象用兵，现表述造成了部署依据的因果误读。",
+      "required_fix": "改为邓艾梦见山上有水，邵缓以蹇卦解释为克蜀却难返；邓艾随后按军情分路截击姜维。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 304,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

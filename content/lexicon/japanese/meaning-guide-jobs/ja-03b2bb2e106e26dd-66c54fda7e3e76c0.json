@@ -1,0 +1,37 @@
+{
+  "id": "ja-03b2bb2e106e26dd-66c54fda7e3e76c0",
+  "entry_id": "ja-03b2bb2e106e26dd",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-03b2bb2e106e26dd",
+      "headword": "本",
+      "reading": "ほん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-03b2bb2e106e26dd-1",
+          "definition": "a book"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩がそっと書斎をのぞくと、主人は昼寝をしていたり、読みかけの本に涎をたらしていたりする。",
+        "gloss": "book",
+        "sense_id": "ja-03b2bb2e106e26dd-1"
+      },
+      {
+        "sentence": "大飯を食べ、本を開く。",
+        "gloss": "book",
+        "sense_id": "ja-03b2bb2e106e26dd-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ca407ec568128404a3250f7c780aa3582bea80ec2b33d44a97cab1ba8ed87394"
+}

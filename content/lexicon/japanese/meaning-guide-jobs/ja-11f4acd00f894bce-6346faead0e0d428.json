@@ -1,0 +1,37 @@
+{
+  "id": "ja-11f4acd00f894bce-6346faead0e0d428",
+  "entry_id": "ja-11f4acd00f894bce",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-11f4acd00f894bce",
+      "headword": "四疋",
+      "reading": "よんひき",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-11f4acd00f894bce-1",
+          "definition": "four animals (using the traditional counter 疋)"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "先日、白君の家で玉のような子猫が四疋生まれた。",
+        "gloss": "four animals",
+        "sense_id": "ja-11f4acd00f894bce-1"
+      },
+      {
+        "sentence": "ところが、その家の書生は三日目に四疋とも裏の池へ持って行き、棄てて来たという。",
+        "gloss": "four animals",
+        "sense_id": "ja-11f4acd00f894bce-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bf3ea42b1ddae86688496d3eab666cc95519436ca05cd502dc4ba14717c89a16"
+}

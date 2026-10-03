@@ -1,0 +1,31 @@
+{
+  "id": "zh-a2994428b101-1-67f7655572ff4530",
+  "entry_id": "zh-a2994428b101-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a2994428b101-1",
+      "headword": "进城",
+      "kind": "construction",
+      "reading": "jìnchéng",
+      "senses": [
+        {
+          "id": "zh-a2994428b101-1-s1",
+          "definition": "to go into a city"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他说：“我要进城投军。",
+        "gloss": "enter the city",
+        "sense_id": "zh-a2994428b101-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "dc5ec150d8f088afe501e2972b3ee1e20897fff758fafeb666256ae8d2bfdc33"
+}

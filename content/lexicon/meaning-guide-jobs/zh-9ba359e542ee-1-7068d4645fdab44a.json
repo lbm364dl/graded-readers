@@ -1,0 +1,31 @@
+{
+  "id": "zh-9ba359e542ee-1-7068d4645fdab44a",
+  "entry_id": "zh-9ba359e542ee-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9ba359e542ee-1",
+      "headword": "不行",
+      "kind": "word",
+      "reading": "bùxíng",
+      "senses": [
+        {
+          "id": "zh-9ba359e542ee-1-s1",
+          "definition": "not perform; not carry out"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”董卓听后轻视他们，连礼也不行。",
+        "gloss": "not perform; not offer",
+        "sense_id": "zh-9ba359e542ee-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f35ca03966dbc1850b120f67e6979a2cc1533b551b4a0c5d01cd6f64d82ced3d"
+}

@@ -1,0 +1,91 @@
+{
+  "id": "ja-a02c537e75abb2f7-97f7dddd68dbd609",
+  "entry_id": "ja-a02c537e75abb2f7",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-a02c537e75abb2f7",
+      "headword": "で",
+      "reading": "で",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-a02c537e75abb2f7-1",
+          "definition": "Marks the place where an action or event occurs."
+        },
+        {
+          "id": "ja-a02c537e75abb2f7-2",
+          "definition": "Marks the means or cause by which an event occurs."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "どこで生まれたか分かりません。",
+        "gloss": "in; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "暗い所でニャーニャー泣いていました。",
+        "gloss": "in; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "男の人の手の上で、吾輩の目が回りました。",
+        "gloss": "at; on",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "どこで生まれたか分からない。",
+        "gloss": "in; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "暗くてぬれている所で、ニャーニャー鳴いていたことだけは覚えている。",
+        "gloss": "in; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "この書生の手の上で、吾輩はしばらく気持ちよく座っていた。",
+        "gloss": "at; on",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "とても明るい所で、痛いので出てみると、吾輩はわらの上から笹原へ捨てられていた。",
+        "gloss": "in; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "西の垣のそばへ行くと、大きな黒い猫が枯菊の上で寝ていた。",
+        "gloss": "at; on",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "風で葉が二枚落ちると、黒は丸い目を開いた。",
+        "gloss": "due to; by",
+        "sense_id": "ja-a02c537e75abb2f7-2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-a02c537e75abb2f7",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "grammatical",
+    "explanation_en": "The particle で marks where an action or event takes place. The location may be a place or surface, and English often uses “at,” “in,” or “on” depending on context.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "bee70bae107ee2ebcc6c9cc454ce4cd77cfe72013d81608b021a5201c5d13354",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0c6a97794650082d04e7c3a3347c0cd3825262a74c262007ba3440ea2cf06a94"
+}

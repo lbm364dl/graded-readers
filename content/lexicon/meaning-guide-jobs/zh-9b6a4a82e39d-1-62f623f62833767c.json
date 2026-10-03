@@ -1,0 +1,31 @@
+{
+  "id": "zh-9b6a4a82e39d-1-62f623f62833767c",
+  "entry_id": "zh-9b6a4a82e39d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9b6a4a82e39d-1",
+      "headword": "来自",
+      "kind": "word",
+      "reading": "láizì",
+      "senses": [
+        {
+          "id": "zh-9b6a4a82e39d-1-s1",
+          "definition": "come from; originate in"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "原来客人是来自中山的大商人张世平和苏双。",
+        "gloss": "come from",
+        "sense_id": "zh-9b6a4a82e39d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "633f831deeb12caa5cf846945000bde7dbea22b6ddbf59f29654635a5b1ec6d5"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-19e2ff35d6ed-1-0731b750843177c1",
+  "entry_id": "zh-19e2ff35d6ed-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-19e2ff35d6ed-1",
+      "headword": "次之",
+      "kind": "construction",
+      "reading": "cì zhī",
+      "senses": [
+        {
+          "id": "zh-19e2ff35d6ed-1-s1",
+          "definition": "rank next after someone or something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "誓毕，刘备为兄，关羽次之，张飞为弟。",
+        "gloss": "the next in rank",
+        "sense_id": "zh-19e2ff35d6ed-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7e8857ff17f9af762fdb3691654c501c8191a6976bef636f80b4388c1ee3498f"
+}

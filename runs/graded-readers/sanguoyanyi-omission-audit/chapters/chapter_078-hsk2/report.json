@@ -1,0 +1,92 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_078-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 331,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "omission_note": "跃龙潭梨树、建始殿及曹操见梨树神的关键情节被省略。",
+      "classification": "material",
+      "reason": "这段情节构成曹操遭遇超自然征兆并患病的重要因果与发展过程，省略后相关事件的顺序和病因铺垫不完整。",
+      "required_fix": "补回建始殿取材、梨树不可伐、曹操砍树见血及梦见梨树神索命的情节。"
+    },
+    {
+      "omission_note": "孙权劝进、曹操封孙权为骠骑将军等情节被省略。",
+      "classification": "material",
+      "reason": "这是曹魏与东吴之间的重要政治事件，包含孙权称臣及曹操授官的具体行动，省略会改变该阶段的政治发展信息。",
+      "required_fix": "补回孙权上书劝曹操称帝、曹操拒绝称帝并封孙权为骠骑将军南昌侯及荆州牧的情节。"
+    },
+    {
+      "omission_note": "曹操梦见三马同槽及司马氏将兴的伏笔被省略。",
+      "classification": "material",
+      "reason": "该梦及后人的解释明确埋下司马氏将取代曹魏的政治伏笔，对后续历史发展具有重要信息价值。",
+      "required_fix": "补回曹操梦见三马同槽、贾诩曲解梦意以及诗中指出司马氏已植晋根的伏笔。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“曹丕回邺治丧”略显不准确，原文是曹操灵柩运往邺郡，曹丕出城迎接并主持后续继位。",
+      "classification": "material",
+      "reason": "将曹丕迎接运抵邺郡的灵柩误写成曹丕返回邺郡，改变了人物行动和事件地点关系。",
+      "required_fix": "应改为曹操灵柩运往邺郡，曹丕出城迎接并主持后续治丧、继位事宜，而非曹丕回邺治丧。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "跃龙潭梨树、建始殿及曹操见梨树神的关键情节被省略。",
+      "classification": "material",
+      "reason": "这段情节构成曹操遭遇超自然征兆并患病的重要因果与发展过程，省略后相关事件的顺序和病因铺垫不完整。",
+      "required_fix": "补回建始殿取材、梨树不可伐、曹操砍树见血及梦见梨树神索命的情节。"
+    },
+    {
+      "omission_note": "孙权劝进、曹操封孙权为骠骑将军等情节被省略。",
+      "classification": "material",
+      "reason": "这是曹魏与东吴之间的重要政治事件，包含孙权称臣及曹操授官的具体行动，省略会改变该阶段的政治发展信息。",
+      "required_fix": "补回孙权上书劝曹操称帝、曹操拒绝称帝并封孙权为骠骑将军南昌侯及荆州牧的情节。"
+    },
+    {
+      "omission_note": "曹操梦见三马同槽及司马氏将兴的伏笔被省略。",
+      "classification": "material",
+      "reason": "该梦及后人的解释明确埋下司马氏将取代曹魏的政治伏笔，对后续历史发展具有重要信息价值。",
+      "required_fix": "补回曹操梦见三马同槽、贾诩曲解梦意以及诗中指出司马氏已植晋根的伏笔。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“曹丕回邺治丧”略显不准确，原文是曹操灵柩运往邺郡，曹丕出城迎接并主持后续继位。",
+      "classification": "material",
+      "reason": "将曹丕迎接运抵邺郡的灵柩误写成曹丕返回邺郡，改变了人物行动和事件地点关系。",
+      "required_fix": "应改为曹操灵柩运往邺郡，曹丕出城迎接并主持后续治丧、继位事宜，而非曹丕回邺治丧。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 8.5,
+    "naturalness": 8.5,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 331,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 8.5,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

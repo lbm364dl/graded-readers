@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_088-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 339,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了董荼那、阿会喃等人因受孔明恩惠而倒戈的具体过程及孟获杀害二人的情节。",
+      "classification": "material",
+      "reason": "这省略了关键人物因受恩而倒戈的动机与关系变化，以及孟获杀害二人的重要事件，影响后续情节理解。",
+      "required_fix": "补充董荼那等人因感念孔明恩惠而倒戈、捉拿孟获，以及孟获诱杀董荼那和阿会喃的过程。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了董荼那、阿会喃等人因受孔明恩惠而倒戈的具体过程及孟获杀害二人的情节。",
+      "classification": "material",
+      "reason": "这省略了关键人物因受恩而倒戈的动机与关系变化，以及孟获杀害二人的重要事件，影响后续情节理解。",
+      "required_fix": "补充董荼那等人因感念孔明恩惠而倒戈、捉拿孟获，以及孟获诱杀董荼那和阿会喃的过程。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 339,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

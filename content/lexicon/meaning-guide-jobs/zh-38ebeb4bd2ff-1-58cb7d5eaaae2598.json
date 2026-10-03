@@ -1,0 +1,36 @@
+{
+  "id": "zh-38ebeb4bd2ff-1-58cb7d5eaaae2598",
+  "entry_id": "zh-38ebeb4bd2ff-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-38ebeb4bd2ff-1",
+      "headword": "冲下",
+      "kind": "construction",
+      "reading": "chōngxia",
+      "senses": [
+        {
+          "id": "zh-38ebeb4bd2ff-1-s1",
+          "definition": "charge downward"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刚过山岭，刘备鸣金发出信号，两边的人一起冲下。",
+        "gloss": "charge down",
+        "sense_id": "zh-38ebeb4bd2ff-1-s1"
+      },
+      {
+        "sentence": "刘备认出是张角，马上带关羽、张飞冲下山。",
+        "gloss": "charge downward",
+        "sense_id": "zh-38ebeb4bd2ff-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a0876dfab7be2bd93c952994535091aa5c865de25bf2bae667fe4f0071575ccd"
+}

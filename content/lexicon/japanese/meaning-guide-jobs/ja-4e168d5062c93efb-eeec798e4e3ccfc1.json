@@ -1,0 +1,226 @@
+{
+  "id": "ja-4e168d5062c93efb-eeec798e4e3ccfc1",
+  "entry_id": "ja-4e168d5062c93efb",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-4e168d5062c93efb",
+      "headword": "に",
+      "reading": "に",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-4e168d5062c93efb-1",
+          "definition": "Marks a location, position, or destination; in, at, or into."
+        },
+        {
+          "id": "ja-4e168d5062c93efb-2",
+          "definition": "Marks the agent in a passive construction; by."
+        },
+        {
+          "id": "ja-4e168d5062c93efb-3",
+          "definition": "Marks the order or point in time at which something happens; finally, last."
+        },
+        {
+          "id": "ja-4e168d5062c93efb-4",
+          "definition": "Marks the person or thing toward which an action, feeling, or quality is directed, or the recipient or beneficiary; to, for, with."
+        },
+        {
+          "id": "ja-4e168d5062c93efb-5",
+          "definition": "Marks a resulting state or manner; as, in the state of, together."
+        },
+        {
+          "id": "ja-4e168d5062c93efb-6",
+          "definition": "Marks a point in time or sequence; at, on, or first."
+        },
+        {
+          "id": "ja-4e168d5062c93efb-7",
+          "definition": "Marks a cause, basis, or object of a feeling or response; at, by, with, or from."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は池を左に見ながら、ゆっくり歩き、人の家へ入りました。",
+        "gloss": "with; in the position of",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "主人は吾輩を見て、「家の中に置いてやれ」と言いました。",
+        "gloss": "into; in",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "吾輩はこの家に住むことにしました。",
+        "gloss": "in; at",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "手の上に乗せられ、顔を見ると、毛のない顔は薬缶のようで、顔の真ん中の出た所の穴から時々煙を吹いた。",
+        "gloss": "onto; on",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "女の人に台所から外へ何回も投げられたが、吾輩はまた入った。",
+        "gloss": "by",
+        "sense_id": "ja-4e168d5062c93efb-2"
+      },
+      {
+        "sentence": "最後に主人が来た。",
+        "gloss": "at; in",
+        "sense_id": "ja-4e168d5062c93efb-3"
+      },
+      {
+        "sentence": "主人は吾輩を見て、「では、家の内に置いてやれ」と言った。",
+        "gloss": "in; into",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "それで吾輩は、この家に住むことにしたのである。",
+        "gloss": "in; at",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "吾輩の家の裏には、小さな茶園がある。",
+        "gloss": "in; at",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "しかし、その時の吾輩には何も考えがなく、怖いとも思わなかった。",
+        "gloss": "for; to",
+        "sense_id": "ja-4e168d5062c93efb-4"
+      },
+      {
+        "sentence": "ただ、書生の掌の上に乗せられ、ふわりと持ち上げられた感じが残っている。",
+        "gloss": "on; onto",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "その後、猫にはたくさん会ったが、こんな変な顔には一度も会わなかった。",
+        "gloss": "to; with",
+        "sense_id": "ja-4e168d5062c93efb-4"
+      },
+      {
+        "sentence": "その後、猫にはたくさん会ったが、こんな変な顔には一度も会わなかった。",
+        "gloss": "with; to",
+        "sense_id": "ja-4e168d5062c93efb-4"
+      },
+      {
+        "sentence": "痛みにたえながら外へ出ると、大きな池があった。",
+        "gloss": "with; while experiencing",
+        "sense_id": "ja-4e168d5062c93efb-7"
+      },
+      {
+        "sentence": "日が暮れ、腹が減り、寒くなったので、食べ物を求めて池を左に見ながら歩いた。",
+        "gloss": "in; with",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "明るく暖かい方へ進むと、いつの間にか家の中にいた。",
+        "gloss": "in; at",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "最初に会ったおさんは乱暴で、吾輩の頸筋をつかみ、台所から何度も外へ投げ出した。",
+        "gloss": "at; when",
+        "sense_id": "ja-4e168d5062c93efb-6"
+      },
+      {
+        "sentence": "最後に主人が来て、吾輩を見ながら「そんなら内へ置いてやれ」と言った。",
+        "gloss": "at; finally",
+        "sense_id": "ja-4e168d5062c93efb-3"
+      },
+      {
+        "sentence": "学校から帰ると、ほとんど一日中、書斎にこもっている。",
+        "gloss": "in; at",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "吾輩がそっと書斎をのぞくと、主人は昼寝をしていたり、読みかけの本に涎をたらしていたりする。",
+        "gloss": "onto; against",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "吾輩はこの家で、主人以外のものには不人望だった。",
+        "gloss": "to; toward",
+        "sense_id": "ja-4e168d5062c93efb-4"
+      },
+      {
+        "sentence": "仕方なく主人のそばで暮らし、朝は膝、昼は背中に乗った。",
+        "gloss": "onto; on",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "夜は五つと三つの子供の寝床へもぐり込み、二人の間で一緒に寝る。",
+        "gloss": "together; in the state of",
+        "sense_id": "ja-4e168d5062c93efb-5"
+      },
+      {
+        "sentence": "主人は俳句、新しい詩、英語、弓、歌、バイオリンなど、何にでも手を出すが、どれも上手にならない。",
+        "gloss": "to; toward",
+        "sense_id": "ja-4e168d5062c93efb-4"
+      },
+      {
+        "sentence": "吾輩が家に来て一月ほどたった給料日に、主人は水彩絵具と毛筆とワットマンという紙を買い、今日から絵をかくと決めた。",
+        "gloss": "to; at",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "吾輩が家に来て一月ほどたった給料日に、主人は水彩絵具と毛筆とワットマンという紙を買い、今日から絵をかくと決めた。",
+        "gloss": "on; at",
+        "sense_id": "ja-4e168d5062c93efb-6"
+      },
+      {
+        "sentence": "しかし主人の熱心さには感心した。",
+        "gloss": "by; at (what one is impressed by)",
+        "sense_id": "ja-4e168d5062c93efb-7"
+      },
+      {
+        "sentence": "吾輩の家の裏には、十坪ほどの茶園がある。",
+        "gloss": "in; at",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "黒の主人はそのお金で一円五十銭ほど得たのに、黒にはろくな食べ物を与えなかったという。",
+        "gloss": "to; for",
+        "sense_id": "ja-4e168d5062c93efb-4"
+      },
+      {
+        "sentence": "その後、黒は足を悪くし、毛の色も悪くなり、目には目やにがたまった。",
+        "gloss": "in; on",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "元気も体格も失った黒は、最後に「いたちと魚屋の天秤棒には、もうこりごりだ」と言った。",
+        "gloss": "at; on",
+        "sense_id": "ja-4e168d5062c93efb-3"
+      },
+      {
+        "sentence": "元気も体格も失った黒は、最後に「いたちと魚屋の天秤棒には、もうこりごりだ」と言った。",
+        "gloss": "with; from",
+        "sense_id": "ja-4e168d5062c93efb-7"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-4e168d5062c93efb",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "grammatical",
+    "explanation_en": "に marks a point related to an event or state: where something exists, where an action or placement occurs, or the destination of movement. With a passive verb, it marks the agent whose action is received. In time and order expressions, it marks when something happens or its place in a sequence, as in 最後に (“finally; at the end”).",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "516fb962f529c4fcc099afa18ae0153a64b967dc4898e0d843f67d52469ab405",
+    "revision": 2,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b03c13e2c697616a3292dfdec8caeb1ac7c7c90bf56b10d730874868086fb372"
+}

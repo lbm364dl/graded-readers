@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff51a-de11-7e72-8350-2be4a374d9e6"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.96,\"naturalness\":0.9,\"readability\":0.92,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[],\"language_problems\":[\"“吃的”较口语化，连续使用时略显粗糙，可改为“粮草”。\"],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":30761,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":1118,"reasoning_output_tokens":1034}}

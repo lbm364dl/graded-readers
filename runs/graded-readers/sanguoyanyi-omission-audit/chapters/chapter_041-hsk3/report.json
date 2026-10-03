@@ -1,0 +1,58 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_041-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 462,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "“战退张郃”略显不准：原文中赵云与张郃交战后夺路而走，张郃因坐骑跃出土坑而惊退，并非被赵云正面击退。",
+      "classification": "material",
+      "reason": "“战退张郃”改变了交战结果及张郃退却的原因；原文是赵云夺路而走，坐骑跃出土坑后张郃受惊退去。",
+      "required_fix": "将“战退张郃”改为“与张郃交战后夺路而走，因坐骑跃出土坑惊退张郃”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "“战退张郃”略显不准：原文中赵云与张郃交战后夺路而走，张郃因坐骑跃出土坑而惊退，并非被赵云正面击退。",
+      "classification": "material",
+      "reason": "“战退张郃”改变了交战结果及张郃退却的原因；原文是赵云夺路而走，坐骑跃出土坑后张郃受惊退去。",
+      "required_fix": "将“战退张郃”改为“与张郃交战后夺路而走，因坐骑跃出土坑惊退张郃”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": []
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 462,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-6cefe963f6ec1b7b-681622398819c59b",
+  "entry_id": "ja-6cefe963f6ec1b7b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-6cefe963f6ec1b7b",
+      "headword": "もっとも",
+      "reading": "もっとも",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-6cefe963f6ec1b7b-1",
+          "definition": "reasonable; quite right"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は、その考えももっともだと思う。",
+        "gloss": "reasonable; quite right",
+        "sense_id": "ja-6cefe963f6ec1b7b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7c014b0689c97ccdd1ff7c407d995d54af63f425b6c20dabb7fae39c56114274"
+}

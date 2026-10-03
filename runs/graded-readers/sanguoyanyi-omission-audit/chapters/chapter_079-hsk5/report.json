@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_079-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 989,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了彭羕与马超相互试探的部分对话及密使被捕的经过。",
+      "classification": "material",
+      "reason": "密使被捕解释了马超得知彭羕图谋并前去试探的原因；省略后削弱了马超掌握情报、诱使彭羕吐露反叛计划的因果链。",
+      "required_fix": "补回彭羕派密使送信、密使被马超巡军擒获，以及马超假称怀怨并诱使彭羕说出内外响应计划的关键经过。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了彭羕与马超相互试探的部分对话及密使被捕的经过。",
+      "classification": "material",
+      "reason": "密使被捕解释了马超得知彭羕图谋并前去试探的原因；省略后削弱了马超掌握情报、诱使彭羕吐露反叛计划的因果链。",
+      "required_fix": "补回彭羕派密使送信、密使被马超巡军擒获，以及马超假称怀怨并诱使彭羕说出内外响应计划的关键经过。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 8.7,
+    "naturalness": 8.8,
+    "readability": 9.2,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 989,
+      "review": {
+        "source_fidelity": 8.7,
+        "naturalness": 8.8,
+        "readability": 9.2,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

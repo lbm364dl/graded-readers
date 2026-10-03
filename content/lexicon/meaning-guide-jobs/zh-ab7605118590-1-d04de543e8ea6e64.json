@@ -1,0 +1,41 @@
+{
+  "id": "zh-ab7605118590-1-d04de543e8ea6e64",
+  "entry_id": "zh-ab7605118590-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ab7605118590-1",
+      "headword": "追赶",
+      "kind": "word",
+      "reading": "zhuīgǎn",
+      "senses": [
+        {
+          "id": "zh-ab7605118590-1-s1",
+          "definition": "to pursue or chase someone or something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "两天后，他们看见董卓带领的汉军被张角打败，黄巾军正在追赶董卓。",
+        "gloss": "pursue",
+        "sense_id": "zh-ab7605118590-1-s1"
+      },
+      {
+        "sentence": "程远志被杀后，黄巾军纷纷逃走，刘备带兵追赶，许多人投降。",
+        "gloss": "to pursue",
+        "sense_id": "zh-ab7605118590-1-s1"
+      },
+      {
+        "sentence": "张角刚打败董卓，正追赶汉军，却遇到三人攻击。",
+        "gloss": "pursue",
+        "sense_id": "zh-ab7605118590-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f523b41c56fb07da0b1002343b88437d4f84b6d5e0527725fbebc5982e4ce6b8"
+}

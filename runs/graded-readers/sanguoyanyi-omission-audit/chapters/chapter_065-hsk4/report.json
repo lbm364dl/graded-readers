@@ -1,0 +1,94 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_065-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 579,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了魏延被马岱射伤及张飞救援的细节。",
+      "classification": "material",
+      "reason": "這是戰鬥中的具體受傷與救援事件，改變了該段戰事經過。",
+      "required_fix": "补充魏延被马岱射中左臂、张飞下关救援魏延的情节。"
+    },
+    {
+      "omission_note": "省略了刘璋投降前谯周观星劝降、许靖先行出降等情节。",
+      "classification": "material",
+      "reason": "譙周的勸降影響劉璋接受投降的動機，許靖先行出降則是投降前的重要時間順序與局勢變化。",
+      "required_fix": "补充谯周以观星和童谣劝刘璋顺天投降，以及许靖先行出城投降的情节。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“孙干”应为“孙乾”，将人名中的“乾”误写成了“干”。",
+      "classification": "material",
+      "reason": "“孙干”是对人物姓名的错误书写，构成身份/人名错误。",
+      "required_fix": "将“孙干”改为“孙乾”。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“刘备军逼近成都”概括略不精确，原文是益州败兵回报后，马超、马岱到成都城下劝降。",
+      "classification": "material",
+      "reason": "将到成都城下劝降的行动者误写成刘备军，改变了关键人物和事件主体。",
+      "required_fix": "将“刘备军逼近成都”改为“马超、马岱到成都城下劝降”，并保留其已归降刘备后劝刘璋投降的情节。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了魏延被马岱射伤及张飞救援的细节。",
+      "classification": "material",
+      "reason": "這是戰鬥中的具體受傷與救援事件，改變了該段戰事經過。",
+      "required_fix": "补充魏延被马岱射中左臂、张飞下关救援魏延的情节。"
+    },
+    {
+      "omission_note": "省略了刘璋投降前谯周观星劝降、许靖先行出降等情节。",
+      "classification": "material",
+      "reason": "譙周的勸降影響劉璋接受投降的動機，許靖先行出降則是投降前的重要時間順序與局勢變化。",
+      "required_fix": "补充谯周以观星和童谣劝刘璋顺天投降，以及许靖先行出城投降的情节。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“孙干”应为“孙乾”，将人名中的“乾”误写成了“干”。",
+      "classification": "material",
+      "reason": "“孙干”是对人物姓名的错误书写，构成身份/人名错误。",
+      "required_fix": "将“孙干”改为“孙乾”。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“刘备军逼近成都”概括略不精确，原文是益州败兵回报后，马超、马岱到成都城下劝降。",
+      "classification": "material",
+      "reason": "将到成都城下劝降的行动者误写成刘备军，改变了关键人物和事件主体。",
+      "required_fix": "将“刘备军逼近成都”改为“马超、马岱到成都城下劝降”，并保留其已归降刘备后劝刘璋投降的情节。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 579,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

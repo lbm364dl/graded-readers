@@ -1,0 +1,32 @@
+{
+  "id": "ja-c1a8f23bf169bbb2-e2161b593e6c3b79",
+  "entry_id": "ja-c1a8f23bf169bbb2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-c1a8f23bf169bbb2",
+      "headword": "池",
+      "reading": "いけ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-c1a8f23bf169bbb2-1",
+          "definition": "Pond."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は池を左に見ながら、ゆっくり歩き、人の家へ入りました。",
+        "gloss": "pond",
+        "sense_id": "ja-c1a8f23bf169bbb2-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8252b2ee2ff327ccc0fffcf7b5a33dd2fedcafd0b36cefe5ab57d25a8edb5d9a"
+}

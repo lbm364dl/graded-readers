@@ -1,0 +1,32 @@
+{
+  "id": "ja-6bbb103c9fe8cdec-b4cfcee3dac3eb92",
+  "entry_id": "ja-6bbb103c9fe8cdec",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-6bbb103c9fe8cdec",
+      "headword": "いやに",
+      "reading": "いやに",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-6bbb103c9fe8cdec-1",
+          "definition": "remarkably; unusually"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "いやにやせてるじゃねえか」\n",
+        "gloss": "remarkably; unusually",
+        "sense_id": "ja-6bbb103c9fe8cdec-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0e13be53065eaa0b4345a0649f00912e3b2b5fd6ba9b08fc5ac0d153643ffc99"
+}

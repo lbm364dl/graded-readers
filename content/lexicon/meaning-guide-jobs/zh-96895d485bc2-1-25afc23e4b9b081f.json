@@ -1,0 +1,55 @@
+{
+  "id": "zh-96895d485bc2-1-25afc23e4b9b081f",
+  "entry_id": "zh-96895d485bc2-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-96895d485bc2-1",
+      "headword": "企图",
+      "kind": "word",
+      "reading": "qǐtú",
+      "senses": [
+        {
+          "id": "zh-96895d485bc2-1-s1",
+          "definition": "try or plan to do something"
+        },
+        {
+          "id": "zh-96895d485bc2-1-s2",
+          "definition": "purpose; intention"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "宦官曹节等人掌权，窦武、陈蕃企图除掉他们，却因事情没有保密而被害。",
+        "gloss": "to attempt",
+        "sense_id": "zh-96895d485bc2-1-s1"
+      },
+      {
+        "sentence": "张角派马元义带着金帛，暗中结交宦官封谞，企图让他在朝中作内应。",
+        "gloss": "attempt; plan",
+        "sense_id": "zh-96895d485bc2-1-s1"
+      },
+      {
+        "sentence": "刘备请他们喝酒，说明自己讨贼安民的企图。",
+        "gloss": "aim; intention",
+        "sense_id": "zh-96895d485bc2-1-s2"
+      },
+      {
+        "sentence": "不久，有人报告：黄巾军将领程远志率五万人，企图来犯涿郡。",
+        "gloss": "to attempt",
+        "sense_id": "zh-96895d485bc2-1-s1"
+      },
+      {
+        "sentence": "宦官左丰奉命查看军情，企图向卢植索要行贿的钱。",
+        "gloss": "to attempt; seek to",
+        "sense_id": "zh-96895d485bc2-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "84388ba28dfc6d26bb33ad8c32e578fa2dd995a5ab9894825a167fd45b034221"
+}

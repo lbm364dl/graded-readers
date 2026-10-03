@@ -1,0 +1,32 @@
+{
+  "id": "ja-e25d43f889dac1b3-20bccc3100435f8d",
+  "entry_id": "ja-e25d43f889dac1b3",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e25d43f889dac1b3",
+      "headword": "誰にも",
+      "reading": "だれにも",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-e25d43f889dac1b3-1",
+          "definition": "no one; nobody, used with a negative predicate"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "だが、出来上がった絵を見ても、何をかいたのか誰にも分からない。",
+        "gloss": "no one",
+        "sense_id": "ja-e25d43f889dac1b3-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a05ab4a32041ce8b13eb5f5e38b86493fa6858ddcc74f50885ef9fbc088e6cd1"
+}

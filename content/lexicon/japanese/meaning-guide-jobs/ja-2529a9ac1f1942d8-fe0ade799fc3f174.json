@@ -1,0 +1,32 @@
+{
+  "id": "ja-2529a9ac1f1942d8-fe0ade799fc3f174",
+  "entry_id": "ja-2529a9ac1f1942d8",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-2529a9ac1f1942d8",
+      "headword": "つかむ",
+      "reading": "つかむ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-2529a9ac1f1942d8-1",
+          "definition": "to grasp, grab, or seize something"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "おさんは吾輩を見るなり、首をつかんで表へ投げ出した。",
+        "gloss": "grabbing and",
+        "sense_id": "ja-2529a9ac1f1942d8-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "be81449506b26a4efb75623ba61e23300a4d7e7ecae3afb07eb9a9f06ce8b08b"
+}

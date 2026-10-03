@@ -1,0 +1,31 @@
+{
+  "id": "zh-5b50d9c96664-1-efece56dfac46869",
+  "entry_id": "zh-5b50d9c96664-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5b50d9c96664-1",
+      "headword": "远大",
+      "kind": "word",
+      "reading": "yuǎndà",
+      "senses": [
+        {
+          "id": "zh-5b50d9c96664-1-s1",
+          "definition": "far-reaching; ambitious"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备虽然贫穷，却有远大志向。",
+        "gloss": "lofty",
+        "sense_id": "zh-5b50d9c96664-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "956732f3b0dc6a0d8e931379bec8a118f87dc8ef45c91ba293eef17354a9d6b0"
+}

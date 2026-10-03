@@ -1,0 +1,31 @@
+{
+  "id": "zh-b0a1eab5f902-1-05c992118b501cdf",
+  "entry_id": "zh-b0a1eab5f902-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b0a1eab5f902-1",
+      "headword": "花",
+      "kind": "word",
+      "reading": "huā",
+      "senses": [
+        {
+          "id": "zh-b0a1eab5f902-1-s1",
+          "definition": "a flower; flowers"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞家后面有一座桃园，花开得正好。",
+        "gloss": "flowers",
+        "sense_id": "zh-b0a1eab5f902-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6b7f7d8ba6a7883300ba34dac5a248c37039bd376f0651627ef5ddf4a906325c"
+}

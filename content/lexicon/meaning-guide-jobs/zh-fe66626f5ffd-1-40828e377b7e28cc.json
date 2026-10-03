@@ -1,0 +1,31 @@
+{
+  "id": "zh-fe66626f5ffd-1-40828e377b7e28cc",
+  "entry_id": "zh-fe66626f5ffd-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-fe66626f5ffd-1",
+      "headword": "送给",
+      "kind": "construction",
+      "reading": "sònggěi",
+      "senses": [
+        {
+          "id": "zh-fe66626f5ffd-1-s1",
+          "definition": "to give or send something to someone"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "我说军粮还不够，哪里有钱送给他？",
+        "gloss": "to give; send to",
+        "sense_id": "zh-fe66626f5ffd-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ca1d05b42ff134ed78bf64e4b6da471365a4c2627ca57fde602904283ceb7477"
+}

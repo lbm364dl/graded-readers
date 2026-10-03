@@ -1,0 +1,32 @@
+{
+  "id": "ja-5f14dc4ccbd0aa48-27d862e27fbc5ef2",
+  "entry_id": "ja-5f14dc4ccbd0aa48",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5f14dc4ccbd0aa48",
+      "headword": "そうでもない",
+      "reading": "そうでもない",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-5f14dc4ccbd0aa48-1",
+          "definition": "to be not really so; to be not particularly the case"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "家のものは勉強家だと思っているが、実際はそうでもない。",
+        "gloss": "not really so; not particularly",
+        "sense_id": "ja-5f14dc4ccbd0aa48-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4a6e1d22e3c8da53b64c474baae12fedd10158df754893bc8d820e5076d9cffd"
+}

@@ -1,0 +1,61 @@
+{
+  "id": "ja-148ad60462a2f84b-b6e63594eb6e8067",
+  "entry_id": "ja-148ad60462a2f84b",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-148ad60462a2f84b",
+      "headword": "後",
+      "reading": "あと",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-148ad60462a2f84b-1",
+          "definition": "a later time; what comes after something"
+        },
+        {
+          "id": "ja-148ad60462a2f84b-2",
+          "definition": "the space or position behind someone or something"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩がこの家に来て一月ほど後の、ある給料日に、主人は大きな包みを持って帰って来た。",
+        "gloss": "after; later",
+        "sense_id": "ja-148ad60462a2f84b-1"
+      },
+      {
+        "sentence": "後から考えると、その時にはもう家の中へ入っていたのである。",
+        "gloss": "afterward; later",
+        "sense_id": "ja-148ad60462a2f84b-1"
+      },
+      {
+        "sentence": "黒は、自分はどこへ行っても食べ物に困らないと言い、吾輩も後について来れば一月もしないうちに太れると自慢した。",
+        "gloss": "behind; after",
+        "sense_id": "ja-148ad60462a2f84b-2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-148ad60462a2f84b",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "後（あと）means a later time or the point that follows something in a sequence. It can mark when something happens relative to an earlier time or event.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "a30e25143be36bf5086aafc5842653ed4be8344c0d7353203734256869b8cd23",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c7a7193195b0fbcb2194704be20ac726c1ab9fa7c99ff49993f9e73777887856"
+}

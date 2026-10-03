@@ -1,0 +1,31 @@
+{
+  "id": "zh-f9a7f5c9db5c-1-bb70506167c2ea33",
+  "entry_id": "zh-f9a7f5c9db5c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f9a7f5c9db5c-1",
+      "headword": "来军",
+      "kind": "word",
+      "reading": "láijūn",
+      "senses": [
+        {
+          "id": "zh-f9a7f5c9db5c-1-s1",
+          "definition": "an approaching army"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备根据旗号判断来军是张角，便带兵冲杀。",
+        "gloss": "approaching army",
+        "sense_id": "zh-f9a7f5c9db5c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ed09f8618df90ae1d53174a2f2dd6efdd9bcac3c3cecfc4e487c10e77621d9bf"
+}

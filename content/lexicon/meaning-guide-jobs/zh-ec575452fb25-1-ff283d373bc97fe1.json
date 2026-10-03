@@ -1,0 +1,41 @@
+{
+  "id": "zh-ec575452fb25-1-ff283d373bc97fe1",
+  "entry_id": "zh-ec575452fb25-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ec575452fb25-1",
+      "headword": "汉军",
+      "kind": "word",
+      "reading": "Hànjūn",
+      "senses": [
+        {
+          "id": "zh-ec575452fb25-1-s1",
+          "definition": "the Han army"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "两天后，他们看见董卓带领的汉军被张角打败，黄巾军正在追赶董卓。",
+        "gloss": "Han army",
+        "sense_id": "zh-ec575452fb25-1-s1"
+      },
+      {
+        "sentence": "三人上山，看见汉军已经失败，黄巾军从四面赶来，旗上写着“天公将军”。",
+        "gloss": "Han army",
+        "sense_id": "zh-ec575452fb25-1-s1"
+      },
+      {
+        "sentence": "张角刚打败董卓，正追赶汉军，却遇到三人攻击。",
+        "gloss": "Han army",
+        "sense_id": "zh-ec575452fb25-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fe17c3be8a924b0c3e7dce5dd97a4147d3e5ba06099c04b4a2beff37ef0fdcf4"
+}

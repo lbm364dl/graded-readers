@@ -1,0 +1,111 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_041-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1300,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了张飞在上游与刘备、孔明会合的明确交代。",
+      "classification": "material",
+      "reason": "原文明确写出张飞赶来并与刘备、孔明会合；接受场景未交代这一会合，造成事件与行动衔接的缺失。",
+      "required_fix": "补充张飞赶到并与刘备、孔明会合，三人一同沿河前往上游。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了张飞在上游与刘备、孔明会合的明确交代。",
+      "classification": "material",
+      "reason": "原文明确写出张飞赶来并与刘备、孔明会合；接受场景未交代这一会合，造成事件与行动衔接的缺失。",
+      "required_fix": "补充张飞赶到并与刘备、孔明会合，三人一同沿河前往上游。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9.5,
+    "naturalness": 9.0,
+    "readability": 9.5,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1275,
+      "review": {
+        "source_fidelity": 7.8,
+        "naturalness": 8.0,
+        "readability": 8.8,
+        "material_omissions": [
+          "省略曹操大军已屯樊城、收拾船筏并即日渡江追来的侦报，削弱了众将劝刘备弃民以及军情紧迫的直接因果。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "将蔡瑁、张允报告荆州军马钱粮并受封水军都督写成发生在“曹操安定襄阳后”；原文中此事发生在曹操进驻襄阳之前，时间顺序被颠倒。"
+        ],
+        "language_problems": [
+          "“派曹洪向曹操报败”搭配生硬，宜改为“派曹洪向曹操报告战败的消息”。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 1373,
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [
+          "省略曹操承诺表奏刘琮永为荆州之主，以及刘琮不愿赴青州、对此任命再三推辞的情节，削弱了刘琮拜迎曹操及后来遭到欺骗和追杀的动机与因果。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "“曹操搜寻孔明妻小，却发现他们早已被送到三江内藏起”不符原文：曹操只是搜寻而不得知去向，孔明妻小已被转移至三江内是叙述者补充说明，并非曹操发现。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 1294,
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "“曹操渡江召刘琮”将原文中曹操派人渡江召见刘琮，误写成曹操本人渡江，导致行动主体和地点关系失真。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 4,
+      "candidate_cjk": 1300,
+      "review": {
+        "source_fidelity": 9.5,
+        "naturalness": 9.0,
+        "readability": 9.5,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

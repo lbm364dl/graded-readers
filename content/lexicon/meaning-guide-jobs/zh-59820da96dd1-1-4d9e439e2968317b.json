@@ -1,0 +1,31 @@
+{
+  "id": "zh-59820da96dd1-1-4d9e439e2968317b",
+  "entry_id": "zh-59820da96dd1-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-59820da96dd1-1",
+      "headword": "封为",
+      "kind": "construction",
+      "reading": "fēngwéi",
+      "senses": [
+        {
+          "id": "zh-59820da96dd1-1-s1",
+          "definition": "to confer a title or rank on someone as"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘胜的儿子刘贞曾被封为涿鹿亭侯，后来因未按规定缴纳酬金而失侯，这一支便留在涿县。",
+        "gloss": "to be enfeoffed as",
+        "sense_id": "zh-59820da96dd1-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "48629ed97788324a17972e36d1548798c65bde804bd83e09c7642498f1c4f8a4"
+}

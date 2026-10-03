@@ -1,0 +1,32 @@
+{
+  "id": "ja-bae4d3e398702f7b-02c9701ae512abae",
+  "entry_id": "ja-bae4d3e398702f7b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-bae4d3e398702f7b",
+      "headword": "と",
+      "reading": "と",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-bae4d3e398702f7b-1",
+          "definition": "Marks quoted speech or thought."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人は吾輩を見て、「家の中に置いてやれ」と言いました。",
+        "gloss": "quoting the preceding words",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cc7c348935f28e08907d0a8291088a1e0bb3e02a7fef4f4d5b8ac53c926ce59d"
+}

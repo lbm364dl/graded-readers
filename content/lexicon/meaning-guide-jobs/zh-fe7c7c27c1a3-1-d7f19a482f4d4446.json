@@ -1,0 +1,31 @@
+{
+  "id": "zh-fe7c7c27c1a3-1-d7f19a482f4d4446",
+  "entry_id": "zh-fe7c7c27c1a3-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-fe7c7c27c1a3-1",
+      "headword": "多丈",
+      "kind": "construction",
+      "reading": "duō zhàng",
+      "senses": [
+        {
+          "id": "zh-fe7c7c27c1a3-1-s1",
+          "definition": "more than a stated number of zhang in length"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黑气有十多丈长。",
+        "gloss": "more than ten zhang",
+        "sense_id": "zh-fe7c7c27c1a3-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "09a84b8814f6e03954ba49589219e5350641cbd1828c08e8e769ebd465c2d05b"
+}

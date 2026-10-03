@@ -1,0 +1,31 @@
+{
+  "id": "zh-4247f1a43b82-1-d7a3dc9766062eb1",
+  "entry_id": "zh-4247f1a43b82-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4247f1a43b82-1",
+      "headword": "坐",
+      "kind": "word",
+      "reading": "zuò",
+      "senses": [
+        {
+          "id": "zh-4247f1a43b82-1-s1",
+          "definition": "sit"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备请他同坐，问他的姓名。",
+        "gloss": "sit",
+        "sense_id": "zh-4247f1a43b82-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "01546ae03c2465fc40dc56a9632336b5482380bbaefc6c068860d3281375e988"
+}

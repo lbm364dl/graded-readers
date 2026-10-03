@@ -1,0 +1,32 @@
+{
+  "id": "ja-a6bd7b9372edf0eb-e76ee77657c5997d",
+  "entry_id": "ja-a6bd7b9372edf0eb",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a6bd7b9372edf0eb",
+      "headword": "腹が減る",
+      "reading": "はらがへる",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-a6bd7b9372edf0eb-1",
+          "definition": "to be hungry; to feel hunger"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "腹が減り、寒くなったので、食べ物を求めて池のそばを歩いた。",
+        "gloss": "became hungry; with an empty stomach",
+        "sense_id": "ja-a6bd7b9372edf0eb-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e936d94af9c66e927eae5ba6582f4edc1f948ac30b41b1b3eddda35a81bd3bb0"
+}

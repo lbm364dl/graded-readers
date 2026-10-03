@@ -1,0 +1,32 @@
+{
+  "id": "ja-11936d3d1c1c16e9-671a37b29438c369",
+  "entry_id": "ja-11936d3d1c1c16e9",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-11936d3d1c1c16e9",
+      "headword": "母",
+      "reading": "はは",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-11936d3d1c1c16e9-1",
+          "definition": "Mother."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "兄弟も母もいません。",
+        "gloss": "mother",
+        "sense_id": "ja-11936d3d1c1c16e9-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6509a2339b1f033731104d97e47444d5b988e4675fbbf8a3a6aa196d11a06c92"
+}

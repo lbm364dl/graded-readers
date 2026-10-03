@@ -1,0 +1,81 @@
+{
+  "id": "zh-b33cf8e29901-1-85d033b6fb5658c8",
+  "entry_id": "zh-b33cf8e29901-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b33cf8e29901-1",
+      "headword": "便",
+      "kind": "word",
+      "reading": "biàn",
+      "senses": [
+        {
+          "id": "zh-b33cf8e29901-1-s1",
+          "definition": "then; thereupon"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "跟随他的人不断增加，他便和两个弟弟商量起事。",
+        "gloss": "then",
+        "sense_id": "zh-b33cf8e29901-1-s1"
+      },
+      {
+        "sentence": "刘备很高兴，便和他一起喝酒。",
+        "gloss": "then",
+        "sense_id": "zh-b33cf8e29901-1-s1"
+      },
+      {
+        "sentence": "第二天，刘备带人上前，打了一会儿便假装退走。",
+        "gloss": "then",
+        "sense_id": "zh-b33cf8e29901-1-s1"
+      },
+      {
+        "sentence": "皇甫嵩判断张梁、张宝很可能回广宗找张角，便让刘备回去帮助卢植。",
+        "gloss": "then",
+        "sense_id": "zh-b33cf8e29901-1-s1"
+      },
+      {
+        "sentence": "他便诬陷我不肯作战。",
+        "gloss": "then",
+        "sense_id": "zh-b33cf8e29901-1-s1"
+      },
+      {
+        "sentence": "”董卓听后便轻视他们，连礼貌也没有。",
+        "gloss": "then",
+        "sense_id": "zh-b33cf8e29901-1-s1"
+      },
+      {
+        "sentence": "黄巾军声势浩大，官军见到他们便溃逃。",
+        "gloss": "then",
+        "sense_id": "zh-b33cf8e29901-1-s1"
+      },
+      {
+        "sentence": "如今听说这里招军破贼，便来投军。",
+        "gloss": "then; thereupon",
+        "sense_id": "zh-b33cf8e29901-1-s1"
+      },
+      {
+        "sentence": "于是，三人取得了第一次胜利，初战便显出力量。",
+        "gloss": "then; thus",
+        "sense_id": "zh-b33cf8e29901-1-s1"
+      },
+      {
+        "sentence": "刘备之前跟卢植学习，听说老师正在广宗和黄巾军作战，便想去帮助他。",
+        "gloss": "then; consequently",
+        "sense_id": "zh-b33cf8e29901-1-s1"
+      },
+      {
+        "sentence": "曹操见过皇甫嵩和朱隽，便带兵继续追击张梁、张宝。",
+        "gloss": "then",
+        "sense_id": "zh-b33cf8e29901-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fde18abc1d9d0ef2c0906829526d4a532b04881240c949aa3d8944d44565518e"
+}

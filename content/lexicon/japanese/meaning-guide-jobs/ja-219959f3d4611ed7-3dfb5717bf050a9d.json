@@ -1,0 +1,37 @@
+{
+  "id": "ja-219959f3d4611ed7-3dfb5717bf050a9d",
+  "entry_id": "ja-219959f3d4611ed7",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-219959f3d4611ed7",
+      "headword": "なら",
+      "reading": "なら",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-219959f3d4611ed7-1",
+          "definition": "conditional particle indicating that something holds if or when the stated condition is met"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "人間に生まれたなら、教師になるのが一番よい。",
+        "gloss": "if; when",
+        "sense_id": "ja-219959f3d4611ed7-1"
+      },
+      {
+        "sentence": "こんなに寝ていても仕事が続くなら、猫にだって出来ないことはない、と。",
+        "gloss": "if; provided that",
+        "sense_id": "ja-219959f3d4611ed7-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5a7be077cfc02f8b94f7d71295740c73ef45230988a77bd4fc0d989bfcd2c3a4"
+}

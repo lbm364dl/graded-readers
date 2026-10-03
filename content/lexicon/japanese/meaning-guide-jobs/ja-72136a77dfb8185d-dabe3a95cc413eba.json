@@ -1,0 +1,32 @@
+{
+  "id": "ja-72136a77dfb8185d-dabe3a95cc413eba",
+  "entry_id": "ja-72136a77dfb8185d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-72136a77dfb8185d",
+      "headword": "黄",
+      "reading": "き",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-72136a77dfb8185d-1",
+          "definition": "yellow; yellow color"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は黄を含んだ淡い灰色で、黒い斑がある。",
+        "gloss": "yellow; yellow color",
+        "sense_id": "ja-72136a77dfb8185d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a4cd9f1b29decf97788acbb82b9ebd8090d305b5744e8f6d1e6c18cbddad3edc"
+}

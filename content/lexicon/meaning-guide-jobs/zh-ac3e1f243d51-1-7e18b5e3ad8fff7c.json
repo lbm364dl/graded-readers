@@ -1,0 +1,31 @@
+{
+  "id": "zh-ac3e1f243d51-1-7e18b5e3ad8fff7c",
+  "entry_id": "zh-ac3e1f243d51-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ac3e1f243d51-1",
+      "headword": "叔父",
+      "kind": "word",
+      "reading": "shūfù",
+      "senses": [
+        {
+          "id": "zh-ac3e1f243d51-1-s1",
+          "definition": "father's younger brother; paternal uncle"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "叔父觉得这孩子与众不同，常常帮助他。",
+        "gloss": "paternal uncle",
+        "sense_id": "zh-ac3e1f243d51-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "20292f39b54fe91916ec3603ba229aafcf36ff3c37331fa9482ea0ab405a576b"
+}

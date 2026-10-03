@@ -1,0 +1,31 @@
+{
+  "id": "zh-91c4573e582b-1-f1644461bd5a1357",
+  "entry_id": "zh-91c4573e582b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-91c4573e582b-1",
+      "headword": "不露",
+      "kind": "word",
+      "reading": "bù lù",
+      "senses": [
+        {
+          "id": "zh-91c4573e582b-1-s1",
+          "definition": "not show or reveal"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备不太爱读书，性情宽和，平时少说话，喜怒不露在脸上。",
+        "gloss": "not reveal",
+        "sense_id": "zh-91c4573e582b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ebf1238fc84560425a95e0a2dbd6a76eeaddf7db03aa6dbaea6dd715a3413964"
+}

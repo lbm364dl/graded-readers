@@ -1,0 +1,75 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_026-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 788,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“追兵已经将近”在原文中尚未发生，原文只写蔡阳请求出兵追捕。",
+      "classification": "material",
+      "reason": "“追兵已经将近” adds an unsupported state and advances the chronology; the original only states that 蔡阳请求率兵追捕关羽.",
+      "required_fix": "将“而追兵已经将近”改为“蔡阳请求率三千铁骑追捕关羽”或删除该句。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“追兵已经将近”在原文中尚未发生，原文只写蔡阳请求出兵追捕。",
+      "classification": "material",
+      "reason": "“追兵已经将近” adds an unsupported state and advances the chronology; the original only states that 蔡阳请求率兵追捕关羽.",
+      "required_fix": "将“而追兵已经将近”改为“蔡阳请求率三千铁骑追捕关羽”或删除该句。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 732,
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [
+          "“袁绍派陈震送来刘备的书信”增加了原文未明确的袁绍派遣关系。"
+        ],
+        "distortions": [
+          "“张辽、徐晃……被他射退”错误地将徐晃退却归因于文丑射箭；原文中徐晃因文丑后军赶到、判断敌不过而退。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 788,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-5a3e5b040e053178-bbc1478b345fd155",
+  "entry_id": "ja-5a3e5b040e053178",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5a3e5b040e053178",
+      "headword": "そう",
+      "reading": "そう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-5a3e5b040e053178-1",
+          "definition": "so; in that manner"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "家の者は、主人を大変な勉強家だと思っているし、本人もそう見せている。",
+        "gloss": "so; that way",
+        "sense_id": "ja-5a3e5b040e053178-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0585a84d48bee7abd2f95789d2801d80c64cf4cac389930ec1303b98f5de6b73"
+}

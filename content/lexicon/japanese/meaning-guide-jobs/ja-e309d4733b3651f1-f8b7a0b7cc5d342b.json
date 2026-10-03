@@ -1,0 +1,32 @@
+{
+  "id": "ja-e309d4733b3651f1-f8b7a0b7cc5d342b",
+  "entry_id": "ja-e309d4733b3651f1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e309d4733b3651f1",
+      "headword": "二百匹",
+      "reading": "にひゃっぴき",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e309d4733b3651f1-1",
+          "definition": "two hundred small animals, counted with 匹"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "鼬にはひどい目に遭ったが、鼠なら百匹でも二百匹でも相手になるという。",
+        "gloss": "two hundred small animals",
+        "sense_id": "ja-e309d4733b3651f1-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "997c84916cf53eb736ee3c1b2dc7ddf1bf6dfa77aaf6287a525db7737cee26c3"
+}

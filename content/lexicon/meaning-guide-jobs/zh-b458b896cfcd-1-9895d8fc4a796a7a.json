@@ -1,0 +1,31 @@
+{
+  "id": "zh-b458b896cfcd-1-9895d8fc4a796a7a",
+  "entry_id": "zh-b458b896cfcd-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b458b896cfcd-1",
+      "headword": "考中",
+      "kind": "word",
+      "reading": "kǎo zhòng",
+      "senses": [
+        {
+          "id": "zh-b458b896cfcd-1-s1",
+          "definition": "to pass an examination"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角原是没有考中的读书人。",
+        "gloss": "to pass an examination",
+        "sense_id": "zh-b458b896cfcd-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e62ef4e0e543dcf734c790a3dd128fc8b4561b78cde130baf0118097d4cb307e"
+}

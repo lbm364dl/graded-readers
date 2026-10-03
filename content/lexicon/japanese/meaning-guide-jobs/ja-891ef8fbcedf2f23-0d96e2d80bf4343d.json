@@ -1,0 +1,32 @@
+{
+  "id": "ja-891ef8fbcedf2f23-0d96e2d80bf4343d",
+  "entry_id": "ja-891ef8fbcedf2f23",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-891ef8fbcedf2f23",
+      "headword": "どれ",
+      "reading": "どれ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-891ef8fbcedf2f23-1",
+          "definition": "which one among several"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人は俳句、新しい詩、英語、弓、歌、バイオリンなど、何にでも手を出すが、どれも上手にならない。",
+        "gloss": "which one",
+        "sense_id": "ja-891ef8fbcedf2f23-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7484568c4f6207cf7464ef3841284ea08c95028e8539b2572dfa347430ca2a35"
+}

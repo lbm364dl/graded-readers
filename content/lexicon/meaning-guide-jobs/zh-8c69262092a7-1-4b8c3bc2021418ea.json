@@ -1,0 +1,31 @@
+{
+  "id": "zh-8c69262092a7-1-4b8c3bc2021418ea",
+  "entry_id": "zh-8c69262092a7-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8c69262092a7-1",
+      "headword": "步兵",
+      "kind": "word",
+      "reading": "bùbīng",
+      "senses": [
+        {
+          "id": "zh-8c69262092a7-1-s1",
+          "definition": "infantry; foot soldiers"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾起义后，他被任命为骑都尉，带领五千名骑兵和步兵赶到颍川。",
+        "gloss": "infantry",
+        "sense_id": "zh-8c69262092a7-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5ccf99ac44beaca93ca0457e0f08b9de1d8cf00ae01c2186b99e85ac1c5a988b"
+}

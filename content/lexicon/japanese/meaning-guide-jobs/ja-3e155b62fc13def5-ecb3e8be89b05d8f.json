@@ -1,0 +1,63 @@
+{
+  "id": "ja-3e155b62fc13def5-ecb3e8be89b05d8f",
+  "entry_id": "ja-3e155b62fc13def5",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-3e155b62fc13def5",
+      "headword": "そのくせ",
+      "reading": "そのくせ",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-3e155b62fc13def5-1",
+          "definition": "despite that; and yet"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そのくせ、食事はたくさん食べる。",
+        "gloss": "despite that; and yet",
+        "sense_id": "ja-3e155b62fc13def5-1"
+      },
+      {
+        "sentence": "そのくせ飯はたくさん食べる。",
+        "gloss": "despite that; and yet",
+        "sense_id": "ja-3e155b62fc13def5-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-3e155b62fc13def5",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "compositional",
+    "explanation_en": "その points back to a previously stated fact or situation, and くせ here gives the contrast a “despite that” sense. Together, そのくせ links the situation to something that seems inconsistent with it, often with a mildly critical or reproachful tone.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "その",
+        "contribution_en": "Points back to a previously stated fact or situation.",
+        "claim_ids": []
+      },
+      {
+        "text": "くせ",
+        "contribution_en": "Here contributes the sense “despite that”; it makes the following point contrast with the situation just mentioned.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "4b8809617545bff7d17f763cd304496358bdca20dabe454461a4a0309497c0e0",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e0571823de5b102e5506a7d26d7954211e45938ca4bb0259a86f3a58ec828ea0"
+}

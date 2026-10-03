@@ -1,0 +1,32 @@
+{
+  "id": "ja-2b0a5f8c0936eac4-5af1918d26eb59ee",
+  "entry_id": "ja-2b0a5f8c0936eac4",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-2b0a5f8c0936eac4",
+      "headword": "節",
+      "reading": "ふし",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-2b0a5f8c0936eac4-1",
+          "definition": "tune; melodic phrase"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "便所で謡を歌い、近所の人から「後架先生」と呼ばれても平気で、同じ節を何度も繰り返していた。",
+        "gloss": "melodic phrase",
+        "sense_id": "ja-2b0a5f8c0936eac4-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "500eb7dcad7db51090446188fb4e2bb6823a664f6ae316359c3377192f5958fe"
+}

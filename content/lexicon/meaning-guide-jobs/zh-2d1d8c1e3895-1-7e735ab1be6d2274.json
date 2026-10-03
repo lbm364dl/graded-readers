@@ -1,0 +1,31 @@
+{
+  "id": "zh-2d1d8c1e3895-1-7e735ab1be6d2274",
+  "entry_id": "zh-2d1d8c1e3895-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2d1d8c1e3895-1",
+      "headword": "后退",
+      "kind": "word",
+      "reading": "hòutuì",
+      "senses": [
+        {
+          "id": "zh-2d1d8c1e3895-1-s1",
+          "definition": "move backward; retreat"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "打了一会儿，他假装后退。",
+        "gloss": "retreat",
+        "sense_id": "zh-2d1d8c1e3895-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cb01286efc50d31ae29e56ee7502a5c4b9fe0b31ff9c521b3f151c469f40f75f"
+}

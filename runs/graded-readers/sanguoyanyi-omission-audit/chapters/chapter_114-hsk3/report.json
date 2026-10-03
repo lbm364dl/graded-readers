@@ -1,0 +1,82 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_114-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 462,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "omission_note": "未提及司马昭得知《潜龙诗》后因担忧曹髦效法曹芳而决定除掉天子的具体缘由。",
+      "classification": "material",
+      "reason": "接受场景虽概括司马昭因《潜龙诗》感到受威胁并决定除掉天子，但遗漏了他担心曹髦效法曹芳这一明确动机，影响对其决策原因的理解。",
+      "required_fix": "补充司马昭认为曹髦可能效法曹芳，因而担心其将来危害自己，决定先下手除掉天子。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“曹髦拒绝司马昭逼他加封晋公、接受九锡的要求”不准确：曹髦起初低头不答，受司马昭逼迫后实际上表示服从。",
+      "classification": "material",
+      "reason": "将曹髦最终表示服从改写为拒绝，改变了关键行为和现场情节。",
+      "required_fix": "改为：曹髦起初低头不答，受司马昭逼迫后表示服从加封晋公、接受九锡的要求。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "将最初把君臣不和消息报给司马昭归于邓艾，原文是党均回报，邓艾与司马望分析后由党均入洛阳报告。",
+      "classification": "material",
+      "reason": "把报告消息的具体人物从党均错换成邓艾，属于错误的行为主体归属。",
+      "required_fix": "改为：党均回到祁山寨报告君臣不和，邓艾与司马望分析后，命党均入洛阳向司马昭报告。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "未提及司马昭得知《潜龙诗》后因担忧曹髦效法曹芳而决定除掉天子的具体缘由。",
+      "classification": "material",
+      "reason": "接受场景虽概括司马昭因《潜龙诗》感到受威胁并决定除掉天子，但遗漏了他担心曹髦效法曹芳这一明确动机，影响对其决策原因的理解。",
+      "required_fix": "补充司马昭认为曹髦可能效法曹芳，因而担心其将来危害自己，决定先下手除掉天子。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“曹髦拒绝司马昭逼他加封晋公、接受九锡的要求”不准确：曹髦起初低头不答，受司马昭逼迫后实际上表示服从。",
+      "classification": "material",
+      "reason": "将曹髦最终表示服从改写为拒绝，改变了关键行为和现场情节。",
+      "required_fix": "改为：曹髦起初低头不答，受司马昭逼迫后表示服从加封晋公、接受九锡的要求。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "将最初把君臣不和消息报给司马昭归于邓艾，原文是党均回报，邓艾与司马望分析后由党均入洛阳报告。",
+      "classification": "material",
+      "reason": "把报告消息的具体人物从党均错换成邓艾，属于错误的行为主体归属。",
+      "required_fix": "改为：党均回到祁山寨报告君臣不和，邓艾与司马望分析后，命党均入洛阳向司马昭报告。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 8.8,
+    "naturalness": 8.4,
+    "readability": 9.0,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 462,
+      "review": {
+        "source_fidelity": 8.8,
+        "naturalness": 8.4,
+        "readability": 9.0,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

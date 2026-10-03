@@ -1,0 +1,21 @@
+{
+  "job": "annotations/chunk_0004/constrained_chapter_delta_correction_batch_0004",
+  "model": "gpt-5.6-luna",
+  "effort": "medium",
+  "fingerprint": "a3e53d3f8b0f53c535b3f9dd3b1baf51efaee2d16acf919be808c7820e5f7c21",
+  "started_at": "2026-08-07T04:12:59.604497+00:00",
+  "ended_at": "2026-08-07T04:13:20.287001+00:00",
+  "return_code": 0,
+  "attempt_count": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-08-07T04:12:59.604520+00:00",
+      "ended_at": "2026-08-07T04:13:20.286837+00:00",
+      "return_code": 0,
+      "throttled": false,
+      "events": "events.attempt-01.jsonl",
+      "stderr": "stderr.attempt-01.log"
+    }
+  ]
+}

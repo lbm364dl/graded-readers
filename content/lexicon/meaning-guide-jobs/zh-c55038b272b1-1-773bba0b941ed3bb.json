@@ -1,0 +1,65 @@
+{
+  "id": "zh-c55038b272b1-1-773bba0b941ed3bb",
+  "entry_id": "zh-c55038b272b1-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c55038b272b1-1",
+      "headword": "字",
+      "kind": "word",
+      "reading": "zì",
+      "senses": [
+        {
+          "id": "zh-c55038b272b1-1-s1",
+          "definition": "courtesy name"
+        },
+        {
+          "id": "zh-c55038b272b1-1-s2",
+          "definition": "written character; graph"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞说自己姓张，名飞，字翼德，世居涿郡，家有庄田，平日卖酒屠猪，一向喜欢结交天下豪杰。",
+        "gloss": "courtesy name",
+        "sense_id": "zh-c55038b272b1-1-s1"
+      },
+      {
+        "sentence": "那人姓关，名羽，字寿长，后来改字云长，是河东解良人。",
+        "gloss": "courtesy name",
+        "sense_id": "zh-c55038b272b1-1-s1"
+      },
+      {
+        "sentence": "张角让手下向百姓传话，说旧的天下已经衰弱，新的天下将要出现，还叫人用白土在家门上写下“甲子”二字。",
+        "gloss": "character",
+        "sense_id": "zh-c55038b272b1-1-s2"
+      },
+      {
+        "sentence": "刘备是中山靖王刘胜之后，字玄德。",
+        "gloss": "style name",
+        "sense_id": "zh-c55038b272b1-1-s1"
+      },
+      {
+        "sentence": "那人回答：“我姓张，名飞，字翼德，世居涿郡，颇有庄田，卖酒屠猪，专好结交天下豪杰。",
+        "gloss": "style name",
+        "sense_id": "zh-c55038b272b1-1-s1"
+      },
+      {
+        "sentence": "那人说：“我姓关，名羽，字寿长，后改字云长，是河东解良人。",
+        "gloss": "style name",
+        "sense_id": "zh-c55038b272b1-1-s1"
+      },
+      {
+        "sentence": "为首的是曹操，字孟德，小字阿瞒，又名吉利。",
+        "gloss": "style name",
+        "sense_id": "zh-c55038b272b1-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "84bcb6c640f6152870660679f2ccb25a9e1675fdf165b84d187a336d3e3b4610"
+}

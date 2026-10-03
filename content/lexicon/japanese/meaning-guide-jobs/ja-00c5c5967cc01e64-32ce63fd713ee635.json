@@ -1,0 +1,32 @@
+{
+  "id": "ja-00c5c5967cc01e64-32ce63fd713ee635",
+  "entry_id": "ja-00c5c5967cc01e64",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-00c5c5967cc01e64",
+      "headword": "過ごす",
+      "reading": "すごす",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-00c5c5967cc01e64-1",
+          "definition": "to spend or pass time; to get through a period of time"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩はただ、その日その日を何とか過ごせればよいと思っている。",
+        "gloss": "if I can get through it",
+        "sense_id": "ja-00c5c5967cc01e64-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f5f6217c2c1a28c5244fd0a68c44e7dca6612b721e1de766799e9cd72a72ff4f"
+}

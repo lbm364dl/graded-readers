@@ -1,0 +1,32 @@
+{
+  "id": "ja-d9f4f22f96bebf33-79c665c5860cbbdb",
+  "entry_id": "ja-d9f4f22f96bebf33",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d9f4f22f96bebf33",
+      "headword": "主張する",
+      "reading": "しゅちょうする",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d9f4f22f96bebf33-1",
+          "definition": "to assert; to maintain a position or claim"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そして、猫が親子の愛を守り、家族として生きるには、人間と戦うべきだと主張した。",
+        "gloss": "argued; asserted",
+        "sense_id": "ja-d9f4f22f96bebf33-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1e20302cd8ab2a708680bd1c3dec819d832d74ebc4dfa1afb667b63b67c88f1f"
+}

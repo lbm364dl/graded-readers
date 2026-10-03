@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff352-1d12-7cb0-a308-5f5293b6e285"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.94,\"naturalness\":0.9,\"readability\":0.84,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"将袁谭暗送将军印与曹操取消婚约、攻破南皮直接连成因果，省略了袁谭拒绝曹操召见这一关键转折。\"],\"language_problems\":[\"篇幅明显超过750字目标的约130%上限，压缩度不足。\"],\"verdict\":\"revise\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":29836,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":1401,"reasoning_output_tokens":1275}}

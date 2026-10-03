@@ -1,0 +1,32 @@
+{
+  "id": "ja-4f5f12530c59c47e-42d06a447b8c1cb1",
+  "entry_id": "ja-4f5f12530c59c47e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-4f5f12530c59c47e",
+      "headword": "何だか",
+      "reading": "なんだか",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-4f5f12530c59c47e-1",
+          "definition": "somehow; for some reason, with the reason or feeling unspecified"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ただ、書生の手のひらに乗せられて、すっと上へ持ち上げられた時、何だかふわふわするような感じがしただけだった。",
+        "gloss": "somehow; for some reason",
+        "sense_id": "ja-4f5f12530c59c47e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0221a51e8caf5b83a2a93cbf191d33d896a0c9a645a27ddb382d1a5a92a45f7f"
+}

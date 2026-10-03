@@ -1,0 +1,31 @@
+{
+  "id": "zh-893354ab1272-1-f4fe1706dd2952a5",
+  "entry_id": "zh-893354ab1272-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-893354ab1272-1",
+      "headword": "抵达",
+      "kind": "word",
+      "reading": "dǐdá",
+      "senses": [
+        {
+          "id": "zh-893354ab1272-1-s1",
+          "definition": "to arrive at or reach a place"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "救军抵达后，黄巾军分兵，双方立刻混战。",
+        "gloss": "to arrive",
+        "sense_id": "zh-893354ab1272-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "93a7b9df7a83ed579865319bf461a00f2a2fd64efd7a5fff9b2e74bc74b0d7d2"
+}

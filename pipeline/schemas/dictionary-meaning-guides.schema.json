@@ -1,0 +1,20 @@
+{
+  "type": "object", "additionalProperties": false, "required": ["guides"],
+  "properties": {"guides": {"type": "array", "items": {
+    "type": "object", "additionalProperties": false,
+    "required": ["entry_id", "structure", "explanation_en", "parts", "caveat_en", "claim_ids", "investigation_questions"],
+    "properties": {
+      "entry_id": {"type": "string"},
+      "investigation_questions": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["component", "question"], "properties": {"component": {"type": "string"}, "question": {"type": "string", "minLength": 1}}}},
+      "claim_ids": {"type": "array", "items": {"type": "string"}},
+      "structure": {"type": "string", "enum": ["compositional", "grammatical", "overlapping", "lexicalized", "single_component", "proper_name"]},
+      "explanation_en": {"type": "string"}, "caveat_en": {"type": "string"},
+      "parts": {"type": "array", "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["text", "contribution_en", "claim_ids"],
+        "properties": {"text": {"type": "string"}, "contribution_en": {"type": "string"},
+          "claim_ids": {"type": "array", "items": {"type": "string"}}}
+      }}
+    }
+  }}}
+}

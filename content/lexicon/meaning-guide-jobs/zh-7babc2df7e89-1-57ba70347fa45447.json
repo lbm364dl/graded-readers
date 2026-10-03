@@ -1,0 +1,31 @@
+{
+  "id": "zh-7babc2df7e89-1-57ba70347fa45447",
+  "entry_id": "zh-7babc2df7e89-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7babc2df7e89-1",
+      "headword": "大汉",
+      "kind": "word",
+      "reading": "dàhàn",
+      "senses": [
+        {
+          "id": "zh-7babc2df7e89-1-s1",
+          "definition": "a large, powerful man"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "不一会儿，一个大汉推车来到店里。",
+        "gloss": "big man",
+        "sense_id": "zh-7babc2df7e89-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "808d7ad2473b3571bab6fab7639cbe125e22e5dde024f83db3ee6552f665ec7f"
+}

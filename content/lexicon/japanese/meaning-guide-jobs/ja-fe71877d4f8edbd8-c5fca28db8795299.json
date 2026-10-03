@@ -1,0 +1,32 @@
+{
+  "id": "ja-fe71877d4f8edbd8-c5fca28db8795299",
+  "entry_id": "ja-fe71877d4f8edbd8",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-fe71877d4f8edbd8",
+      "headword": "渡る",
+      "reading": "わたる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-fe71877d4f8edbd8-1",
+          "definition": "to cross; to pass over or across"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そのうち風が池の上を静かに渡り、日が暮れ始めた。",
+        "gloss": "crosses over",
+        "sense_id": "ja-fe71877d4f8edbd8-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5773a3fb780b1e30215a11adb19ce5ab83a121e292d1c82506e28f374959e872"
+}

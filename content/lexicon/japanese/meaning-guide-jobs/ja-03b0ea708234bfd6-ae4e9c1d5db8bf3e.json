@@ -1,0 +1,32 @@
+{
+  "id": "ja-03b0ea708234bfd6-ae4e9c1d5db8bf3e",
+  "entry_id": "ja-03b0ea708234bfd6",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-03b0ea708234bfd6",
+      "headword": "住む",
+      "reading": "すむ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-03b0ea708234bfd6-1",
+          "definition": "To live; reside in a place."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩はこの家に住むことにしました。",
+        "gloss": "live; reside",
+        "sense_id": "ja-03b0ea708234bfd6-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3afef849d249fd6eab1a3e3e1753eba54d09ba7164341dc16ab65bce995a6440"
+}

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff52e-9d99-7b33-92db-26ed75f3baf4"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.93,\"naturalness\":0.94,\"readability\":0.93,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"“孙权让吕蒙假称有病”将吕蒙主动诈病的行为说成了孙权授意，因果关系略有偏差。\"],\"language_problems\":[\"“关羽改用诱退之计”中的“改用”缺少前文对应，表达略显突兀。\"],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":27029,"cached_input_tokens":8960,"cache_write_input_tokens":0,"output_tokens":1431,"reasoning_output_tokens":1307}}

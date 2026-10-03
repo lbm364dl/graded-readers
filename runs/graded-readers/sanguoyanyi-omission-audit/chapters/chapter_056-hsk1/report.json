@@ -1,0 +1,92 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_056-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 178,
+  "required_range": [
+    98,
+    182
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略铜雀台宴会的具体射箭过程及曹操自辩等细节，但不影响主线复述。",
+      "classification": "material",
+      "reason": "射箭过程可压缩，但曹操自辩集中体现其自我定位、权力动机及保留兵权的理由，属于重要 characterization，不能仅视为非必要细节。",
+      "required_fix": "补入曹操自辩的核心内容：其否认篡逆之心，说明功业、权重及不敢解兵柄的原因。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略铜雀台宴会的具体射箭过程及曹操自辩等细节，但不影响主线复述。",
+      "classification": "material",
+      "reason": "射箭过程可压缩，但曹操自辩集中体现其自我定位、权力动机及保留兵权的理由，属于重要 characterization，不能仅视为非必要细节。",
+      "required_fix": "补入曹操自辩的核心内容：其否认篡逆之心，说明功业、权重及不敢解兵柄的原因。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": []
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 188,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 181,
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 7,
+        "readability": 8,
+        "material_omissions": [
+          "鲁肃第一次奉命索取荆州并被孔明以玄德痛哭拖延，周瑜因此改谋假取西川；这是关键的前因和对周瑜的一次挫败。",
+          "曹操任命周瑜、程普是程昱提出的挑动孙刘相争之计，修复稿未交代这一关键动机。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [
+          "“恐被人所害危国”表达不自然，宜改为“恐被人所害，国家也会危亡”。"
+        ],
+        "verdict": "revise",
+        "omissions": []
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 178,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "passed": true
+    }
+  ]
+}

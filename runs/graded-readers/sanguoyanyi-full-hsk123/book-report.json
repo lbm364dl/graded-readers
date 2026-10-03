@@ -1,0 +1,37 @@
+{
+  "book_run_id": "sanguoyanyi-full-hsk123",
+  "status": "complete",
+  "updated_at": "2026-08-07T04:21:34.131249+00:00",
+  "global_agent_concurrency": 3,
+  "chapter_concurrency": 3,
+  "runs": [
+    {
+      "source": "/home/usuario/hsk-graded-readers/books/chinese/sanguoyanyi/chapter_086.txt",
+      "level": "hsk2",
+      "run_id": "sanguoyanyi-full-hsk123/chapter_086-hsk2",
+      "status": "complete",
+      "chapter_cjk": 351,
+      "target_chars": 300,
+      "attempts": 2
+    },
+    {
+      "source": "/home/usuario/hsk-graded-readers/books/chinese/sanguoyanyi/chapter_031.txt",
+      "level": "hsk2",
+      "run_id": "sanguoyanyi-full-hsk123/chapter_031-hsk2",
+      "status": "complete",
+      "chapter_cjk": 281,
+      "target_chars": 300,
+      "attempts": 2
+    },
+    {
+      "source": "/home/usuario/hsk-graded-readers/books/chinese/sanguoyanyi/chapter_028.txt",
+      "level": "hsk2",
+      "run_id": "sanguoyanyi-full-hsk123/chapter_028-hsk2",
+      "status": "complete",
+      "chapter_cjk": 305,
+      "target_chars": 300,
+      "attempts": 2
+    }
+  ],
+  "length_violations": []
+}

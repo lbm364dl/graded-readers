@@ -1,0 +1,2189 @@
+{
+  "schema_version": 1,
+  "changes": [
+    {
+      "level": "hsk4",
+      "chapter": 1,
+      "previous_segment_index": 1393,
+      "previous_surface": "快守",
+      "corrected_surfaces": [
+        "快",
+        "守"
+      ],
+      "reason": "快 is an independent imminence adverb; 守 is the verb in the potential-complement predicate 守不住. The previous gloss incorrectly attributed the following complement's meaning to 快守.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "unchanged_usage_links_migrated": 1753,
+      "approved_headwords_preserved": 859,
+      "new_usage_links_require_review": true,
+      "tap_unit": {
+        "text": "守不住",
+        "first_segment": 1394,
+        "last_segment": 1395,
+        "review_model": "gpt-6-luna",
+        "review_effort": "high"
+      },
+      "migration_evidence": "runs/hsk4-boundary-correction",
+      "backups": "runs/hsk4-boundary-correction/*.before.json"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 973,
+      "previous_surface": "名备",
+      "corrected_surfaces": [
+        "名",
+        "备"
+      ],
+      "reason": "Independent high-effort review: naming predicate plus personal given name, not a lexical compound.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "migration_evidence": "runs/hsk56-naming-boundary-migration",
+      "review_evidence": "runs/hsk56-naming-boundary-review/agents/review/result.json"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 1069,
+      "previous_surface": "名羽",
+      "corrected_surfaces": [
+        "名",
+        "羽"
+      ],
+      "reason": "Independent high-effort review: naming predicate plus personal given name, not a lexical compound.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "migration_evidence": "runs/hsk56-naming-boundary-migration",
+      "review_evidence": "runs/hsk56-naming-boundary-review/agents/review/result.json"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 1118,
+      "previous_surface": "名备",
+      "corrected_surfaces": [
+        "名",
+        "备"
+      ],
+      "reason": "Independent high-effort review: naming predicate plus personal given name, not a lexical compound.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "migration_evidence": "runs/hsk56-naming-boundary-migration",
+      "review_evidence": "runs/hsk56-naming-boundary-review/agents/review/result.json"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 15,
+      "previous_last_segment": 16,
+      "previous_surface": "弄权",
+      "previous_surfaces": [
+        "弄",
+        "权"
+      ],
+      "corrected_surfaces": [
+        "弄权"
+      ],
+      "reason": "弄权 is a compound verb meaning to wield or manipulate power.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 72,
+      "previous_last_segment": 73,
+      "previous_surface": "想除掉",
+      "previous_surfaces": [
+        "想除",
+        "掉"
+      ],
+      "corrected_surfaces": [
+        "想",
+        "除掉"
+      ],
+      "reason": "想 is a modal verb, while 除掉 is the verb with its result complement.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 118,
+      "previous_last_segment": 118,
+      "previous_surface": "飞下来",
+      "previous_surfaces": [
+        "飞下来"
+      ],
+      "corrected_surfaces": [
+        "飞下来"
+      ],
+      "reason": "The unstressed directional complement 来 is normally pronounced with neutral tone in this context.",
+      "text_changed": false,
+      "segmentation_changed": false,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 193,
+      "previous_last_segment": 194,
+      "previous_surface": "卷走",
+      "previous_surfaces": [
+        "卷",
+        "走"
+      ],
+      "corrected_surfaces": [
+        "卷走"
+      ],
+      "reason": "卷走 is a compound verb meaning to carry or sweep away; 走 functions as its result complement here.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 197,
+      "previous_last_segment": 198,
+      "previous_surface": "雌鸡",
+      "previous_surfaces": [
+        "雌",
+        "鸡"
+      ],
+      "corrected_surfaces": [
+        "雌鸡"
+      ],
+      "reason": "雌鸡 is a compound noun meaning a female chicken.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 210,
+      "previous_last_segment": 211,
+      "previous_surface": "五原",
+      "previous_surfaces": [
+        "五",
+        "原"
+      ],
+      "corrected_surfaces": [
+        "五原"
+      ],
+      "reason": "五原 is a place name in this context, so the characters form a complete name.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 229,
+      "previous_last_segment": 229,
+      "previous_surface": "群臣",
+      "previous_surfaces": [
+        "群臣"
+      ],
+      "corrected_surfaces": [
+        "群臣"
+      ],
+      "reason": "The existing English gloss contains an accidental Chinese repetition; 群臣 means the assembled court ministers.",
+      "text_changed": false,
+      "segmentation_changed": false,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 235,
+      "previous_last_segment": 236,
+      "previous_surface": "上书",
+      "previous_surfaces": [
+        "上",
+        "书"
+      ],
+      "corrected_surfaces": [
+        "上书"
+      ],
+      "reason": "上书 is a compound verb meaning to submit a written memorial.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 338,
+      "previous_last_segment": 339,
+      "previous_surface": "没考中",
+      "previous_surfaces": [
+        "没考",
+        "中"
+      ],
+      "corrected_surfaces": [
+        "没",
+        "考中"
+      ],
+      "reason": "没 negates 考中, the verb meaning to pass an examination.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 394,
+      "previous_last_segment": 396,
+      "previous_surface": "大贤良师",
+      "previous_surfaces": [
+        "大",
+        "贤良",
+        "师"
+      ],
+      "corrected_surfaces": [
+        "大贤良师"
+      ],
+      "reason": "大贤良师 is a complete established title and should be kept together as one designation.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 401,
+      "previous_last_segment": 401,
+      "previous_surface": "多名",
+      "previous_surfaces": [
+        "多名"
+      ],
+      "corrected_surfaces": [
+        "多",
+        "名"
+      ],
+      "reason": "In 五百多名弟子, 多 marks an approximate excess after the number and 名 is a classifier for people.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 408,
+      "previous_last_segment": 408,
+      "previous_surface": "能书符",
+      "previous_surfaces": [
+        "能书符"
+      ],
+      "corrected_surfaces": [
+        "能",
+        "书符"
+      ],
+      "reason": "能 is a modal verb, and 书符 is the following verb phrase.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 572,
+      "previous_last_segment": 573,
+      "previous_surface": "起事",
+      "previous_surfaces": [
+        "起",
+        "事"
+      ],
+      "corrected_surfaces": [
+        "起事"
+      ],
+      "reason": "起事 is a conventional compound meaning to rise in revolt or launch an uprising.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 660,
+      "previous_last_segment": 660,
+      "previous_surface": "兵少",
+      "previous_surfaces": [
+        "兵少"
+      ],
+      "corrected_surfaces": [
+        "兵",
+        "少"
+      ],
+      "reason": "The segment combines the subject 兵 with the predicate 少.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 691,
+      "previous_last_segment": 691,
+      "previous_surface": "家境贫寒",
+      "previous_surfaces": [
+        "家境贫寒"
+      ],
+      "corrected_surfaces": [
+        "家境",
+        "贫寒"
+      ],
+      "reason": "The segment combines the subject 家境 with the predicate 贫寒.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 806,
+      "previous_last_segment": 807,
+      "previous_surface": "常和乡中",
+      "previous_surfaces": [
+        "常和乡",
+        "中"
+      ],
+      "corrected_surfaces": [
+        "常",
+        "和",
+        "乡中"
+      ],
+      "reason": "常和乡 is not a coherent word. The context supports 常和乡中孩子: 常 and 和 are separate words, while 乡中 means in the village.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 884,
+      "previous_last_segment": 885,
+      "previous_surface": "大丈夫",
+      "previous_surfaces": [
+        "大",
+        "丈夫"
+      ],
+      "corrected_surfaces": [
+        "大丈夫"
+      ],
+      "reason": "大丈夫 is a conventional lexical expression meaning a man of mettle.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 909,
+      "previous_last_segment": 909,
+      "previous_surface": "走来",
+      "previous_surfaces": [
+        "走来"
+      ],
+      "corrected_surfaces": [
+        "走来"
+      ],
+      "reason": "来 is an unstressed directional complement here and normally has neutral tone in connected speech.",
+      "text_changed": false,
+      "segmentation_changed": false,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 917,
+      "previous_last_segment": 917,
+      "previous_surface": "大眼",
+      "previous_surfaces": [
+        "大眼"
+      ],
+      "corrected_surfaces": [
+        "大",
+        "眼"
+      ],
+      "reason": "In 头大眼圆, 大 and 圆 are predicates of 头 and 眼 respectively, so 大眼 should be split.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 1044,
+      "previous_last_segment": 1045,
+      "previous_surface": "酒保",
+      "previous_surfaces": [
+        "酒",
+        "保"
+      ],
+      "corrected_surfaces": [
+        "酒保"
+      ],
+      "reason": "酒保 is a conventional word for someone who serves drinks.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 1053,
+      "previous_last_segment": 1054,
+      "previous_surface": "投军",
+      "previous_surfaces": [
+        "投",
+        "军"
+      ],
+      "corrected_surfaces": [
+        "投军"
+      ],
+      "reason": "投军 is a conventional verb meaning to enlist in the army.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 1083,
+      "previous_last_segment": 1083,
+      "previous_surface": "解良人",
+      "previous_surfaces": [
+        "解良人"
+      ],
+      "corrected_surfaces": [
+        "解良",
+        "人"
+      ],
+      "reason": "解良 is used as a place name here, followed by 人 meaning a person from that place.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 1112,
+      "previous_last_segment": 1113,
+      "previous_surface": "投军",
+      "previous_surfaces": [
+        "投",
+        "军"
+      ],
+      "corrected_surfaces": [
+        "投军"
+      ],
+      "reason": "投军 is a conventional verb meaning to enlist in the army.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 1189,
+      "previous_last_segment": 1190,
+      "previous_surface": "人备好",
+      "previous_surfaces": [
+        "人备",
+        "好"
+      ],
+      "corrected_surfaces": [
+        "人",
+        "备好"
+      ],
+      "reason": "人 is the subject in 三人备好祭礼, and 备好 is the predicate.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 1251,
+      "previous_last_segment": 1252,
+      "previous_surface": "关羽",
+      "previous_surfaces": [
+        "关",
+        "羽"
+      ],
+      "corrected_surfaces": [
+        "关羽"
+      ],
+      "reason": "The two fragments form the character’s complete name.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 1376,
+      "previous_last_segment": 1377,
+      "previous_surface": "关羽",
+      "previous_surfaces": [
+        "关",
+        "羽"
+      ],
+      "corrected_surfaces": [
+        "关羽"
+      ],
+      "reason": "The two fragments form the character’s complete name.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 1379,
+      "previous_last_segment": 1381,
+      "previous_surface": "青龙偃月刀",
+      "previous_surfaces": [
+        "青龙",
+        "偃月",
+        "刀"
+      ],
+      "corrected_surfaces": [
+        "青龙偃月刀"
+      ],
+      "reason": "These fragments together name the weapon.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 1385,
+      "previous_last_segment": 1386,
+      "previous_surface": "冷艳锯",
+      "previous_surfaces": [
+        "冷艳",
+        "锯"
+      ],
+      "corrected_surfaces": [
+        "冷艳锯"
+      ],
+      "reason": "After 名, these characters together give the weapon’s alternate name.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 1450,
+      "previous_last_segment": 1450,
+      "previous_surface": "刘焉命",
+      "previous_surfaces": [
+        "刘焉命"
+      ],
+      "corrected_surfaces": [
+        "刘焉",
+        "命"
+      ],
+      "reason": "The fused entry contains a proper name followed by an independent verb.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 1476,
+      "previous_last_segment": 1478,
+      "previous_surface": "大兴山",
+      "previous_surfaces": [
+        "大",
+        "兴",
+        "山"
+      ],
+      "corrected_surfaces": [
+        "大兴山"
+      ],
+      "reason": "The context supports 大兴山 as a complete mountain name.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 1541,
+      "previous_last_segment": 1543,
+      "previous_surface": "张飞挺丈八蛇矛",
+      "previous_surfaces": [
+        "张飞挺",
+        "丈八蛇",
+        "矛"
+      ],
+      "corrected_surfaces": [
+        "张飞",
+        "挺",
+        "丈八蛇矛"
+      ],
+      "reason": "The fused entry combines a name and predicate, while the following fragments complete the weapon name.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 1560,
+      "previous_last_segment": 1561,
+      "previous_surface": "关羽",
+      "previous_surfaces": [
+        "关",
+        "羽"
+      ],
+      "corrected_surfaces": [
+        "关羽"
+      ],
+      "reason": "The two fragments form the character’s complete name.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 1624,
+      "previous_last_segment": 1625,
+      "previous_surface": "太守",
+      "previous_surfaces": [
+        "太",
+        "守"
+      ],
+      "corrected_surfaces": [
+        "太守"
+      ],
+      "reason": "These characters form the official title 太守.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 1662,
+      "previous_last_segment": 1662,
+      "previous_surface": "刘焉命",
+      "previous_surfaces": [
+        "刘焉命"
+      ],
+      "corrected_surfaces": [
+        "刘焉",
+        "命"
+      ],
+      "reason": "刘焉 is a complete personal name, and 命 is the independent verb introducing the order.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 1672,
+      "previous_last_segment": 1673,
+      "previous_surface": "关羽",
+      "previous_surfaces": [
+        "关",
+        "羽"
+      ],
+      "corrected_surfaces": [
+        "关羽"
+      ],
+      "reason": "关羽 is one complete two-character personal name.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 1689,
+      "previous_last_segment": 1689,
+      "previous_surface": "刘备兵",
+      "previous_surfaces": [
+        "刘备兵"
+      ],
+      "corrected_surfaces": [
+        "刘备",
+        "兵"
+      ],
+      "reason": "刘备 is a complete personal name, followed by the noun 兵.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 1708,
+      "previous_last_segment": 1709,
+      "previous_surface": "关羽",
+      "previous_surfaces": [
+        "关",
+        "羽"
+      ],
+      "corrected_surfaces": [
+        "关羽"
+      ],
+      "reason": "关羽 is one complete two-character personal name.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 1717,
+      "previous_last_segment": 1717,
+      "previous_surface": "我少",
+      "previous_surfaces": [
+        "我少"
+      ],
+      "corrected_surfaces": [
+        "我",
+        "少"
+      ],
+      "reason": "我少 is a subject followed by its predicate, not a single word.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 1731,
+      "previous_last_segment": 1732,
+      "previous_surface": "关羽",
+      "previous_surfaces": [
+        "关",
+        "羽"
+      ],
+      "corrected_surfaces": [
+        "关羽"
+      ],
+      "reason": "关羽 is one complete two-character personal name.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 1858,
+      "previous_last_segment": 1859,
+      "previous_surface": "关羽",
+      "previous_surfaces": [
+        "关",
+        "羽"
+      ],
+      "corrected_surfaces": [
+        "关羽"
+      ],
+      "reason": "关羽 is one complete two-character personal name.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 1879,
+      "previous_last_segment": 1880,
+      "previous_surface": "来意",
+      "previous_surfaces": [
+        "来",
+        "意"
+      ],
+      "corrected_surfaces": [
+        "来意"
+      ],
+      "reason": "来意 is a conventional compound noun meaning the purpose for coming.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 1972,
+      "previous_last_segment": 1973,
+      "previous_surface": "长社",
+      "previous_surfaces": [
+        "长",
+        "社"
+      ],
+      "corrected_surfaces": [
+        "长社"
+      ],
+      "reason": "长社 is a place name and should be treated as a complete name.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 1984,
+      "previous_last_segment": 1985,
+      "previous_surface": "伏兵",
+      "previous_surfaces": [
+        "伏",
+        "兵"
+      ],
+      "corrected_surfaces": [
+        "伏兵"
+      ],
+      "reason": "伏兵 is a compound meaning troops lying in ambush.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 2039,
+      "previous_last_segment": 2040,
+      "previous_surface": "养子",
+      "previous_surfaces": [
+        "养",
+        "子"
+      ],
+      "corrected_surfaces": [
+        "养子"
+      ],
+      "reason": "养子 is a compound noun meaning an adopted son in this context.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 2070,
+      "previous_last_segment": 2071,
+      "previous_surface": "无度",
+      "previous_surfaces": [
+        "无",
+        "度"
+      ],
+      "corrected_surfaces": [
+        "无度"
+      ],
+      "reason": "无度 is a compound meaning “without restraint,” and fits the phrase 游荡无度.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 2114,
+      "previous_last_segment": 2115,
+      "previous_surface": "孝廉",
+      "previous_surfaces": [
+        "孝",
+        "廉"
+      ],
+      "corrected_surfaces": [
+        "孝廉"
+      ],
+      "reason": "孝廉 is a conventional recommendation category in this context, so it should be kept as one term.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 2243,
+      "previous_last_segment": 2243,
+      "previous_surface": "出去",
+      "previous_surfaces": [
+        "出去"
+      ],
+      "corrected_surfaces": [
+        "出去"
+      ],
+      "reason": "In 逃了出去, 去 is an unstressed directional complement and is normally neutral-toned in connected speech.",
+      "text_changed": false,
+      "segmentation_changed": false,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 2390,
+      "previous_last_segment": 2391,
+      "previous_surface": "查问",
+      "previous_surfaces": [
+        "查",
+        "问"
+      ],
+      "corrected_surfaces": [
+        "查问"
+      ],
+      "reason": "查问 functions as a compound meaning “to investigate; to inquire” in 来查问军情.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 45,
+      "previous_last_segment": 45,
+      "previous_surface": "从桓帝",
+      "previous_surfaces": [
+        "从桓帝"
+      ],
+      "corrected_surfaces": [
+        "从",
+        "桓帝"
+      ],
+      "reason": "Separate the preposition 从 from the complete era-name reference 桓帝.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 196,
+      "previous_last_segment": 197,
+      "previous_surface": "光和",
+      "previous_surfaces": [
+        "光",
+        "和"
+      ],
+      "corrected_surfaces": [
+        "光和"
+      ],
+      "reason": "光和 is the complete era name here.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 249,
+      "previous_last_segment": 249,
+      "previous_surface": "雌鸡变雄",
+      "previous_surfaces": [
+        "雌鸡变雄"
+      ],
+      "corrected_surfaces": [
+        "雌鸡",
+        "变雄"
+      ],
+      "reason": "Separate the subject 雌鸡 from the predicate 变雄, while keeping the predicate together.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 304,
+      "previous_last_segment": 305,
+      "previous_surface": "段珪",
+      "previous_surfaces": [
+        "段",
+        "珪"
+      ],
+      "corrected_surfaces": [
+        "段珪"
+      ],
+      "reason": "These characters form one complete personal name.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 311,
+      "previous_last_segment": 312,
+      "previous_surface": "蹇硕",
+      "previous_surfaces": [
+        "蹇",
+        "硕"
+      ],
+      "corrected_surfaces": [
+        "蹇硕"
+      ],
+      "reason": "These characters form one complete personal name.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 365,
+      "previous_last_segment": 365,
+      "previous_surface": "原是",
+      "previous_surfaces": [
+        "原是"
+      ],
+      "corrected_surfaces": [
+        "原",
+        "是"
+      ],
+      "reason": "原 is an adverb modifying the copula 是, so they are separate words.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 394,
+      "previous_last_segment": 394,
+      "previous_surface": "若心生",
+      "previous_surfaces": [
+        "若心生"
+      ],
+      "corrected_surfaces": [
+        "若",
+        "心生"
+      ],
+      "reason": "Separate the conditional marker 若 from the predicate 心生, keeping the predicate together.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 554,
+      "previous_last_segment": 555,
+      "previous_surface": "朝中作",
+      "previous_surfaces": [
+        "朝",
+        "中作"
+      ],
+      "corrected_surfaces": [
+        "朝中",
+        "作"
+      ],
+      "reason": "朝中 forms the location phrase “in court,” followed by 作内应 (“act as an inside accomplice”).",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 686,
+      "previous_last_segment": 688,
+      "previous_surface": "何进上奏",
+      "previous_surfaces": [
+        "何",
+        "进上",
+        "奏"
+      ],
+      "corrected_surfaces": [
+        "何进",
+        "上奏"
+      ],
+      "reason": "何进 is the complete personal name, followed by the verb 上奏.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 719,
+      "previous_last_segment": 720,
+      "previous_surface": "太守",
+      "previous_surfaces": [
+        "太",
+        "守"
+      ],
+      "corrected_surfaces": [
+        "太守"
+      ],
+      "reason": "太守 is a conventional title for a commandery governor.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 724,
+      "previous_last_segment": 724,
+      "previous_surface": "竟陵",
+      "previous_surfaces": [
+        "竟陵"
+      ],
+      "corrected_surfaces": [
+        "竟陵"
+      ],
+      "reason": "竟陵 is a place name here, parallel to 江夏, and should be labeled as a name.",
+      "text_changed": false,
+      "segmentation_changed": false,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 802,
+      "previous_last_segment": 802,
+      "previous_surface": "刘贞曾",
+      "previous_surfaces": [
+        "刘贞曾"
+      ],
+      "corrected_surfaces": [
+        "刘贞",
+        "曾"
+      ],
+      "reason": "刘贞 is the complete personal name, followed by 曾, the adverb meaning “once.”",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 833,
+      "previous_last_segment": 833,
+      "previous_surface": "刘弘曾",
+      "previous_surfaces": [
+        "刘弘曾"
+      ],
+      "corrected_surfaces": [
+        "刘弘",
+        "曾"
+      ],
+      "reason": "Split the complete personal name from 曾, which modifies the following verb 举.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 970,
+      "previous_last_segment": 972,
+      "previous_surface": "等人为友",
+      "previous_surfaces": [
+        "等",
+        "人为",
+        "友"
+      ],
+      "corrected_surfaces": [
+        "等人",
+        "为友"
+      ],
+      "reason": "等人 means “and others,” while 为友 is the predicate “be friends with.”",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 1000,
+      "previous_last_segment": 1001,
+      "previous_surface": "出力",
+      "previous_surfaces": [
+        "出",
+        "力"
+      ],
+      "corrected_surfaces": [
+        "出力"
+      ],
+      "reason": "出力 is a conventional verb meaning to exert or contribute effort.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 1018,
+      "previous_last_segment": 1019,
+      "previous_surface": "出力",
+      "previous_surfaces": [
+        "出",
+        "力"
+      ],
+      "corrected_surfaces": [
+        "出力"
+      ],
+      "reason": "出力 is a conventional verb meaning to exert or contribute effort.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 1241,
+      "previous_last_segment": 1242,
+      "previous_surface": "逃难",
+      "previous_surfaces": [
+        "逃",
+        "难"
+      ],
+      "corrected_surfaces": [
+        "逃难"
+      ],
+      "reason": "逃难 is a conventional verb meaning to flee from danger or hardship.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 1355,
+      "previous_last_segment": 1356,
+      "previous_surface": "同月",
+      "previous_surfaces": [
+        "同",
+        "月"
+      ],
+      "corrected_surfaces": [
+        "同月"
+      ],
+      "reason": "同月 is a conventional temporal expression meaning the same month, parallel to 同年 and 同日 in this pledge.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 1357,
+      "previous_last_segment": 1358,
+      "previous_surface": "同日",
+      "previous_surfaces": [
+        "同",
+        "日"
+      ],
+      "corrected_surfaces": [
+        "同日"
+      ],
+      "reason": "同日 is a conventional temporal expression meaning the same day, parallel to 同年 and 同月 in this pledge.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 1439,
+      "previous_last_segment": 1439,
+      "previous_surface": "北贩马",
+      "previous_surfaces": [
+        "北贩马"
+      ],
+      "corrected_surfaces": [
+        "北",
+        "贩马"
+      ],
+      "reason": "往北 gives the direction, and 贩马 is the separate predicate “sell horses.”",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 1447,
+      "previous_last_segment": 1447,
+      "previous_surface": "回来",
+      "previous_surfaces": [
+        "回来"
+      ],
+      "corrected_surfaces": [
+        "回来"
+      ],
+      "reason": "In this directional use, unstressed 来 is normally pronounced with neutral tone.",
+      "text_changed": false,
+      "segmentation_changed": false,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 1505,
+      "previous_last_segment": 1507,
+      "previous_surface": "青龙偃月刀",
+      "previous_surfaces": [
+        "青龙",
+        "偃月",
+        "刀"
+      ],
+      "corrected_surfaces": [
+        "青龙偃月刀"
+      ],
+      "reason": "These fragments form the complete name used for the weapon in the list.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 1509,
+      "previous_last_segment": 1510,
+      "previous_surface": "丈八点钢矛",
+      "previous_surfaces": [
+        "丈八点",
+        "钢矛"
+      ],
+      "corrected_surfaces": [
+        "丈八点钢矛"
+      ],
+      "reason": "The fragments together form the weapon label 丈八点钢矛.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 1512,
+      "previous_last_segment": 1514,
+      "previous_surface": "青龙偃月刀",
+      "previous_surfaces": [
+        "青龙",
+        "偃月",
+        "刀"
+      ],
+      "corrected_surfaces": [
+        "青龙偃月刀"
+      ],
+      "reason": "These fragments form the complete name used for the weapon in the list.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 1574,
+      "previous_last_segment": 1574,
+      "previous_surface": "刘焉命",
+      "previous_surfaces": [
+        "刘焉命"
+      ],
+      "corrected_surfaces": [
+        "刘焉",
+        "命"
+      ],
+      "reason": "The segment fuses the proper name 刘焉 with the following verb 命.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 1594,
+      "previous_last_segment": 1595,
+      "previous_surface": "等人",
+      "previous_surfaces": [
+        "等",
+        "人"
+      ],
+      "corrected_surfaces": [
+        "等人"
+      ],
+      "reason": "In 刘备等人, 等人 means “and others.”",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 1626,
+      "previous_last_segment": 1627,
+      "previous_surface": "出阵",
+      "previous_surfaces": [
+        "出",
+        "阵"
+      ],
+      "corrected_surfaces": [
+        "出阵"
+      ],
+      "reason": "出阵 is a complete verb meaning to go into battle.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 1949,
+      "previous_last_segment": 1949,
+      "previous_surface": "卢植为",
+      "previous_surfaces": [
+        "卢植为"
+      ],
+      "corrected_surfaces": [
+        "卢植",
+        "为"
+      ],
+      "reason": "The complete name 卢植 is followed by the predicate 为 in 拜卢植为师.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 1967,
+      "previous_last_segment": 1967,
+      "previous_surface": "邹靖引",
+      "previous_surfaces": [
+        "邹靖引"
+      ],
+      "corrected_surfaces": [
+        "邹靖",
+        "引"
+      ],
+      "reason": "The complete name 邹靖 is followed by the independent verb 引.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 2012,
+      "previous_last_segment": 2012,
+      "previous_surface": "卢植有",
+      "previous_surfaces": [
+        "卢植有"
+      ],
+      "corrected_surfaces": [
+        "卢植",
+        "有"
+      ],
+      "reason": "The complete name 卢植 is followed by the independent verb 有.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 2101,
+      "previous_last_segment": 2102,
+      "previous_surface": "伏兵",
+      "previous_surfaces": [
+        "伏",
+        "兵"
+      ],
+      "corrected_surfaces": [
+        "伏兵"
+      ],
+      "reason": "伏兵 is a compound meaning troops lying in ambush; splitting it leaves 伏 with an incomplete gloss.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 2177,
+      "previous_last_segment": 2177,
+      "previous_surface": "吉利",
+      "previous_surfaces": [
+        "吉利"
+      ],
+      "corrected_surfaces": [
+        "吉利"
+      ],
+      "reason": "After 又名, 吉利 is given as a personal name.",
+      "text_changed": false,
+      "segmentation_changed": false,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 2181,
+      "previous_last_segment": 2182,
+      "previous_surface": "沛国谯郡",
+      "previous_surfaces": [
+        "沛",
+        "国谯郡"
+      ],
+      "corrected_surfaces": [
+        "沛国谯郡"
+      ],
+      "reason": "In 沛国谯郡人, these characters form the complete place designation before 人.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 2256,
+      "previous_last_segment": 2257,
+      "previous_surface": "桥玄曾",
+      "previous_surfaces": [
+        "桥",
+        "玄曾"
+      ],
+      "corrected_surfaces": [
+        "桥玄",
+        "曾"
+      ],
+      "reason": "桥玄 is the personal name, followed by the separate adverb 曾.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 2285,
+      "previous_last_segment": 2285,
+      "previous_surface": "的必",
+      "previous_surfaces": [
+        "的必"
+      ],
+      "corrected_surfaces": [
+        "的",
+        "必"
+      ],
+      "reason": "的 and 必 have separate grammatical functions here: 的 nominalizes 安定天下, and 必 expresses necessity.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 2303,
+      "previous_last_segment": 2304,
+      "previous_surface": "能臣",
+      "previous_surfaces": [
+        "能",
+        "臣"
+      ],
+      "corrected_surfaces": [
+        "能臣"
+      ],
+      "reason": "能臣 is a compound meaning a capable minister; 能 and 臣 do not function as separate words here.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 2358,
+      "previous_last_segment": 2359,
+      "previous_surface": "蹇硕",
+      "previous_surfaces": [
+        "蹇",
+        "硕"
+      ],
+      "corrected_surfaces": [
+        "蹇硕"
+      ],
+      "reason": "蹇硕 is one personal name, not a surname followed by a separate word.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 2418,
+      "previous_last_segment": 2419,
+      "previous_surface": "斩首",
+      "previous_surfaces": [
+        "斩",
+        "首"
+      ],
+      "corrected_surfaces": [
+        "斩首"
+      ],
+      "reason": "斩首 is a compound verb meaning to behead.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 2559,
+      "previous_last_segment": 2559,
+      "previous_surface": "张角",
+      "previous_surfaces": [
+        "张角"
+      ],
+      "corrected_surfaces": [
+        "张角"
+      ],
+      "reason": "Update the pinyin to the standard Mandarin pronunciation of 张角; retain the conventional English name rendering.",
+      "text_changed": false,
+      "segmentation_changed": false,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 2570,
+      "previous_last_segment": 2571,
+      "previous_surface": "左丰",
+      "previous_surfaces": [
+        "左",
+        "丰"
+      ],
+      "corrected_surfaces": [
+        "左丰"
+      ],
+      "reason": "左丰 is a complete personal name here, so the two name fragments should be combined.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 2598,
+      "previous_last_segment": 2599,
+      "previous_surface": "左丰",
+      "previous_surfaces": [
+        "左",
+        "丰"
+      ],
+      "corrected_surfaces": [
+        "左丰"
+      ],
+      "reason": "左丰 is a complete personal name here, so the two name fragments should be combined.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-lexical-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-reviewed-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 450,
+      "previous_last_segment": 450,
+      "previous_surface": "已死",
+      "previous_surfaces": [
+        "已死"
+      ],
+      "corrected_surfaces": [
+        "已",
+        "死"
+      ],
+      "reason": "已 modifies 死; this is a grammatical phrase, not an established lexical word.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-residual-boundary-review/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-residual-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 469,
+      "previous_last_segment": 469,
+      "previous_surface": "在家门上",
+      "previous_surfaces": [
+        "在家门上"
+      ],
+      "corrected_surfaces": [
+        "在",
+        "家门",
+        "上"
+      ],
+      "reason": "Split the locative phrase into 在 + 家门 + 上; the whole sequence is not a reusable lexical word.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-residual-boundary-review/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-residual-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 477,
+      "previous_last_segment": 477,
+      "previous_surface": "多奉",
+      "previous_surfaces": [
+        "多奉"
+      ],
+      "corrected_surfaces": [
+        "多",
+        "奉"
+      ],
+      "reason": "Split 多 + 奉: 多 modifies the verb 奉 in this sentence rather than forming a lexical word with it.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-residual-boundary-review/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-residual-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 487,
+      "previous_last_segment": 487,
+      "previous_surface": "已顺",
+      "previous_surfaces": [
+        "已顺"
+      ],
+      "corrected_surfaces": [
+        "已",
+        "顺"
+      ],
+      "reason": "已 modifies 顺; the two form a phrase rather than an established lexical word.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-residual-boundary-review/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-residual-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 2112,
+      "previous_last_segment": 2112,
+      "previous_surface": "多根",
+      "previous_surfaces": [
+        "多根"
+      ],
+      "corrected_surfaces": [
+        "多",
+        "根"
+      ],
+      "reason": "Split 多 + 根: the context uses 多 for an excess quantity and 根 as the classifier for the sticks.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-residual-boundary-review/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-residual-boundary-migration"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "previous_segment_index": 2297,
+      "previous_last_segment": 2297,
+      "previous_surface": "已尽",
+      "previous_surfaces": [
+        "已尽"
+      ],
+      "corrected_surfaces": [
+        "已",
+        "尽"
+      ],
+      "reason": "已 modifies 尽; this is a grammatical phrase, not an established lexical word.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-residual-boundary-review/hsk5.reviewed.json",
+      "migration_evidence": "runs/hsk56-residual-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 1813,
+      "previous_last_segment": 1813,
+      "previous_surface": "刘备兵",
+      "previous_surfaces": [
+        "刘备兵"
+      ],
+      "corrected_surfaces": [
+        "刘备",
+        "兵"
+      ],
+      "reason": "Split the personal name 刘备 from the noun 兵; together they mean Liu Bei’s troops in this context.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk56-residual-boundary-review/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk56-residual-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 1822,
+      "previous_last_segment": 1823,
+      "previous_surface": "下寨",
+      "previous_surfaces": [
+        "下",
+        "寨"
+      ],
+      "corrected_surfaces": [
+        "下寨"
+      ],
+      "reason": "下寨 is a conventional compound meaning “to set up camp,” so the occurrence should be linked as a whole.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk6-sense-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk6-sense-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 432,
+      "previous_last_segment": 432,
+      "previous_surface": "为人",
+      "previous_surfaces": [
+        "为人"
+      ],
+      "corrected_surfaces": [
+        "为",
+        "人"
+      ],
+      "reason": "为 is the preposition “for”; 人 is its referential object and should remain separate.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk6-sense-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk6-sense-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 18,
+      "previous_last_segment": 19,
+      "previous_surface": "起义",
+      "previous_surfaces": [
+        "起",
+        "义"
+      ],
+      "corrected_surfaces": [
+        "起义"
+      ],
+      "reason": "起义 is the lexical unit meaning “to rise in rebellion” in this context; 义 is not a standalone occurrence meaning “righteous cause.”",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk6-sense-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk6-sense-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 604,
+      "previous_last_segment": 604,
+      "previous_surface": "信给",
+      "previous_surfaces": [
+        "信给"
+      ],
+      "corrected_surfaces": [
+        "信",
+        "给"
+      ],
+      "reason": "信 is the object of 送, while 给 introduces the recipient; they are separate units.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk6-sense-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk6-sense-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 1330,
+      "previous_last_segment": 1330,
+      "previous_surface": "再拜",
+      "previous_surfaces": [
+        "再拜"
+      ],
+      "corrected_surfaces": [
+        "再拜"
+      ],
+      "reason": "No boundary revision: 再拜 is a conventional expression meaning “bow twice,” preserved as a complete compound.",
+      "text_changed": false,
+      "segmentation_changed": false,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk6-sense-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk6-sense-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 2621,
+      "previous_last_segment": 2622,
+      "previous_surface": "听完",
+      "previous_surfaces": [
+        "听",
+        "完"
+      ],
+      "corrected_surfaces": [
+        "听完"
+      ],
+      "reason": "听完 is the verb-resultative unit in this occurrence and should be linked as a whole, not as 听 alone.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk6-sense-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk6-sense-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 1753,
+      "previous_last_segment": 1754,
+      "previous_surface": "太守",
+      "previous_surfaces": [
+        "太",
+        "守"
+      ],
+      "corrected_surfaces": [
+        "太守"
+      ],
+      "reason": "太守 is the complete conventional title meaning “governor”; 守 alone is not the title.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk6-sense-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk6-sense-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 452,
+      "previous_last_segment": 452,
+      "previous_surface": "都会",
+      "previous_surfaces": [
+        "都会"
+      ],
+      "corrected_surfaces": [
+        "都",
+        "会"
+      ],
+      "reason": "In this context 都会 is an ordinary adverb-plus-modal clause, so it should be split into its constituent words.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk6-sense-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk6-sense-boundary-migration"
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "previous_segment_index": 1921,
+      "previous_last_segment": 1921,
+      "previous_surface": "之围",
+      "previous_surfaces": [
+        "之围"
+      ],
+      "corrected_surfaces": [
+        "之",
+        "围"
+      ],
+      "reason": "Split the token into the genitive particle 之 and the noun 围.",
+      "text_changed": false,
+      "segmentation_changed": true,
+      "new_usage_links_require_review": true,
+      "review_evidence": "runs/hsk6-sense-boundary-editor/hsk6.reviewed.json",
+      "migration_evidence": "runs/hsk6-sense-boundary-migration"
+    }
+  ]
+}

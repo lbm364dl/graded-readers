@@ -1,0 +1,31 @@
+{
+  "id": "zh-3708e5cc16f9-1-7d9df639c355d4ee",
+  "entry_id": "zh-3708e5cc16f9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-3708e5cc16f9-1",
+      "headword": "二年",
+      "kind": "word",
+      "reading": "èr nián",
+      "senses": [
+        {
+          "id": "zh-3708e5cc16f9-1-s1",
+          "definition": "two years; year two in a sequence"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "建宁二年四月十五日，灵帝登上温德殿，刚坐下，殿角忽然刮起狂风。",
+        "gloss": "second year",
+        "sense_id": "zh-3708e5cc16f9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "014127ade096de3196e4506d80cf178919e5e6675c9e3a601adc870f9ea23102"
+}

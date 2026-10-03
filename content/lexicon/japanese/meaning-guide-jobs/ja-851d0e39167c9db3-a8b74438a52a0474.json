@@ -1,0 +1,32 @@
+{
+  "id": "ja-851d0e39167c9db3-a8b74438a52a0474",
+  "entry_id": "ja-851d0e39167c9db3",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-851d0e39167c9db3",
+      "headword": "嫌う",
+      "reading": "きらう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-851d0e39167c9db3-1",
+          "definition": "to dislike; to hate"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩がこの家に住み始めたころは、主人以外の家の者には、ひどく嫌われていた。",
+        "gloss": "was disliked; was hated",
+        "sense_id": "ja-851d0e39167c9db3-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "95ff941d5697040812ca4c8d061c2d1e9b42a9dab9b0670c2abb319cf39c547d"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-f867f3417859-1-737f5cefea9c4d99",
+  "entry_id": "zh-f867f3417859-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f867f3417859-1",
+      "headword": "好",
+      "kind": "word",
+      "reading": "hǎo",
+      "senses": [
+        {
+          "id": "zh-f867f3417859-1-s1",
+          "definition": "good; of high quality"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "二人了解后很高兴，赠送五十匹好马、金银五百两和铁一千斤，帮助三人打造兵器。",
+        "gloss": "fine",
+        "sense_id": "zh-f867f3417859-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fdffde221b7cbad55f44e7f0c14a4308938028994f8254306826715b408c886b"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-ac25974264f49e46-1139b5f391972619",
+  "entry_id": "ja-ac25974264f49e46",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ac25974264f49e46",
+      "headword": "というより",
+      "reading": "というより",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-ac25974264f49e46-1",
+          "definition": "rather than saying or describing something; rather than"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人が好きだからというより、ほかに頼れる相手がいなかったのである。",
+        "gloss": "rather than saying; rather than",
+        "sense_id": "ja-ac25974264f49e46-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1b974cc1b1ca98b70227a0e8b4fc97d5277000b8b28051f59cb5c59d15833760"
+}

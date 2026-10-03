@@ -1,0 +1,31 @@
+{
+  "id": "zh-1bcb9ac4af59-1-2cffd429b0d89255",
+  "entry_id": "zh-1bcb9ac4af59-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1bcb9ac4af59-1",
+      "headword": "誓毕",
+      "kind": "construction",
+      "reading": "shìbì",
+      "senses": [
+        {
+          "id": "zh-1bcb9ac4af59-1-s1",
+          "definition": "after the oath is completed"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "誓毕，刘备为兄，关羽次之，张飞为弟。",
+        "gloss": "after completing the oath",
+        "sense_id": "zh-1bcb9ac4af59-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "df33a62b4b0f3a3557a964fd7700377ab6a7efab3ed7649a2655bca6a4444d89"
+}

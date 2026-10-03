@@ -1,0 +1,31 @@
+{
+  "id": "zh-60219b55fe11-1-9e7f779c75f919ba",
+  "entry_id": "zh-60219b55fe11-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-60219b55fe11-1",
+      "headword": "迎战",
+      "kind": "word",
+      "reading": "yíngzhàn",
+      "senses": [
+        {
+          "id": "zh-60219b55fe11-1-s1",
+          "definition": "to meet an opponent in battle"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "救军到了，敌人分兵迎战。",
+        "gloss": "meet the enemy in battle",
+        "sense_id": "zh-60219b55fe11-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "df7b90c4b944566f4c6e3663f43eccf48affd2155878c7cbbc30067da99dc8ce"
+}

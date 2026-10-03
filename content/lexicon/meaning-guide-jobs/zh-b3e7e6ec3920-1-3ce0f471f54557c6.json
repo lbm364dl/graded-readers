@@ -1,0 +1,31 @@
+{
+  "id": "zh-b3e7e6ec3920-1-3ce0f471f54557c6",
+  "entry_id": "zh-b3e7e6ec3920-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b3e7e6ec3920-1",
+      "headword": "天下",
+      "kind": "word",
+      "reading": "tiānxià",
+      "senses": [
+        {
+          "id": "zh-b3e7e6ec3920-1-s1",
+          "definition": "the world or realm under heaven"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "许多百姓跟着他们，天下变得很乱。",
+        "gloss": "the realm",
+        "sense_id": "zh-b3e7e6ec3920-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a086e7a37f0bc8293a3c1381cdab66f359cfad5d245b628efd4f268c4fc92a4e"
+}

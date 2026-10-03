@@ -1,0 +1,31 @@
+{
+  "id": "zh-71da8c2ee37e-1-c85482e4afa33e65",
+  "entry_id": "zh-71da8c2ee37e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-71da8c2ee37e-1",
+      "headword": "收拾",
+      "kind": "word",
+      "reading": "shōushi",
+      "senses": [
+        {
+          "id": "zh-71da8c2ee37e-1-s1",
+          "definition": "prepare or get ready"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "来日收拾军器时，他们却没有马匹可乘。",
+        "gloss": "to organize; prepare",
+        "sense_id": "zh-71da8c2ee37e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "146260e8f569b7f81858465ef1a58b846adf9ef7455a59bbdfc7fbf236ba2ff8"
+}

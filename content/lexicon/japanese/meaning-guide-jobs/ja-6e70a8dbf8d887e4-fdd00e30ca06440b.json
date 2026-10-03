@@ -1,0 +1,32 @@
+{
+  "id": "ja-6e70a8dbf8d887e4-fdd00e30ca06440b",
+  "entry_id": "ja-6e70a8dbf8d887e4",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-6e70a8dbf8d887e4",
+      "headword": "今でも",
+      "reading": "いまでも",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-6e70a8dbf8d887e4-1",
+          "definition": "even now; still"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "その時に「妙なものだ」と思った気持ちは、今でも残っている。",
+        "gloss": "even now; still",
+        "sense_id": "ja-6e70a8dbf8d887e4-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9fb71cf4c1d617d5d979357034adcf84d640dfb260d48570e3d8c2d5021f788e"
+}

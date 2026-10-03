@@ -1,0 +1,860 @@
+{
+  "schema_version": 2,
+  "policy_version": 5,
+  "reviewed": true,
+  "model": "gpt-6-luna",
+  "proposal_effort": "low",
+  "review_effort": "high",
+  "guides": [
+    {
+      "entry_id": "ja-004f506f32fc0b84",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "腹の足しになる means to help satisfy hunger. 腹 refers to the stomach in its role in eating, and 足し is something added to help; the phrase describes something that serves as an addition to a meal. It is often used negatively as 腹の足しにならない, meaning something does little or nothing to satisfy hunger.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "腹",
+          "contribution_en": "Stomach, referring here to eating and hunger.",
+          "claim_ids": []
+        },
+        {
+          "text": "の",
+          "contribution_en": "Links 腹 to 足し, marking the addition as for the stomach.",
+          "claim_ids": []
+        },
+        {
+          "text": "足し",
+          "contribution_en": "An addition or supplement that provides some help.",
+          "claim_ids": []
+        },
+        {
+          "text": "に",
+          "contribution_en": "Marks the role or result that something serves as.",
+          "claim_ids": []
+        },
+        {
+          "text": "なる",
+          "contribution_en": "Means “become” or “serve as”; with に, says something serves as an addition for the stomach.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "4ea1a363bb7961c5a9de5843a386d46f268e92fe0bd60f6cb9b862eda57de1d4",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-17a14609bd5e9ae4",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "ひどい目に遭う means to undergo a terrible experience. 目 here refers to an experience or fate, and 遭う means to encounter or undergo an event, often an unwelcome one.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "ひどい",
+          "contribution_en": "terrible; describes the experience as severe or unpleasant",
+          "claim_ids": []
+        },
+        {
+          "text": "目",
+          "contribution_en": "the experience or fate someone undergoes",
+          "claim_ids": []
+        },
+        {
+          "text": "に",
+          "contribution_en": "marks the experience as what someone encounters",
+          "claim_ids": []
+        },
+        {
+          "text": "あう",
+          "contribution_en": "遭う: to encounter or undergo an event, often an unwelcome one",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "62edd8e9ffe4c7a4ca23cba4d8ee6cc5c3527bed4202dac0c77bf2438aa5b145",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-6c794d788a7ee69b",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "骨と皮ばかり portrays someone as reduced to bones and skin: と joins 骨 (“bones”) and 皮 (“skin”), while ばかり means “nothing but.” The stark image of having virtually no flesh gives the expression its conventional meaning “extremely thin.”",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "骨",
+          "contribution_en": "bones",
+          "claim_ids": []
+        },
+        {
+          "text": "と",
+          "contribution_en": "joins 骨 and 皮",
+          "claim_ids": []
+        },
+        {
+          "text": "皮",
+          "contribution_en": "skin",
+          "claim_ids": []
+        },
+        {
+          "text": "ばかり",
+          "contribution_en": "nothing but; only",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "8062a56721134b420aa52b239f9fcd0a81aba452174c5f819c17e7983b3f12ec",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-72fc412c0ebeb6d4",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "grammatical",
+      "explanation_en": "物になる describes something becoming a real or worthwhile thing: an effort or plan produces a substantial result, or amounts to something. になる marks becoming or reaching a state, while 物 gives that state the sense of something substantial.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "物",
+          "contribution_en": "something substantial or worthwhile",
+          "claim_ids": []
+        },
+        {
+          "text": "に",
+          "contribution_en": "marks the state that something becomes",
+          "claim_ids": []
+        },
+        {
+          "text": "なる",
+          "contribution_en": "to become or come to be",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "3a101a2657553275974acc2e5a65306bacd4b5c40f28290aa9a9f81ba8a67c5d",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-81e4f56987c10f0e",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "顔 means “face,” を marks it as what is brought together, and 合わせる means “bring together.” The phrase evokes bringing one person’s face together with another’s, and conventionally means to meet face-to-face.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "顔",
+          "contribution_en": "face",
+          "claim_ids": []
+        },
+        {
+          "text": "を",
+          "contribution_en": "marks 顔 as what is brought together",
+          "claim_ids": []
+        },
+        {
+          "text": "合わせる",
+          "contribution_en": "bring together",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "b2c75417ba6fd7d57b082ad6046aa27113c24d15d79ac5cf7121c86f224677ef",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-8ee043c63467ab74",
+      "investigation_questions": [
+        {
+          "component": "分",
+          "question": "Does 分 have a distinct, reliably established contribution to modern 気分 beyond its broad association with state, degree, or manner?"
+        }
+      ],
+      "claim_ids": [
+        "c2"
+      ],
+      "structure": "compositional",
+      "explanation_en": "気分 means a person’s mind-body state or feeling. 悪い describes that state as bad; together, 気分が悪い is a usual way to say someone feels physically unwell.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "気分",
+          "contribution_en": "A person’s mind-body state or feeling. 分 has a broad state-like association, though its distinct contribution within 気分 is not established.",
+          "claim_ids": [
+            "c1",
+            "c2"
+          ]
+        },
+        {
+          "text": "が",
+          "contribution_en": "Marks 気分 as the subject described by 悪い.",
+          "claim_ids": []
+        },
+        {
+          "text": "悪い",
+          "contribution_en": "Describes the state as bad; with 気分, the expression can mean feeling physically unwell.",
+          "claim_ids": [
+            "c2"
+          ]
+        }
+      ],
+      "research": {
+        "entry_id": "ja-8ee043c63467ab74",
+        "status": "partial",
+        "sources": [
+          {
+            "id": "s1",
+            "url": "https://kotobank.jp/word/%E6%B0%97%E5%88%86-51511",
+            "title": "気分（キブン）とは？ 意味や使い方 - コトバンク",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The opened page aggregates several reference works. Digital Daijisen describes 気分 as a somewhat vague mind-body state lasting for a period and gives a bodily-condition sub-sense, including 船酔いで気分が悪くなる. The Seisenban Nihon Kokugo Daijiten separately lists senses including feeling/state and being unwell or ill, with cited historical examples. These are word-level definitions and attestations; they do not explain 分's independent contribution or establish the compound's derivation."
+          },
+          {
+            "id": "s2",
+            "url": "https://www.kanjipedia.jp/kanji/0006175200",
+            "title": "分 | 漢字一字 | 漢字ペディア",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The opened entry lists a character sense of 分 as the state, degree, or manner of things and includes 気分 among its examples. This supports a possible broad semantic association, but the entry does not analyze 分's contribution within 気分 or give a word-specific etymology."
+          },
+          {
+            "id": "s3",
+            "url": "https://www.collinsdictionary.com/dictionary/japanese-english/%E6%B0%97%E5%88%86%E3%81%8C%E6%82%AA%E3%81%84",
+            "title": "English Translation of “気分が悪い” | Collins Japanese-English Dictionary",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The opened entry translates 気分が悪い as awful or lousy and gives examples whose English explanations mean feeling ill. It supports the expression's unwell reading, but offers no component analysis."
+          }
+        ],
+        "claims": [
+          {
+            "id": "c1",
+            "text_en": "A Japanese character dictionary lists one sense of 分 as 'state, degree, or manner' and gives 気分 as an example. This supports a broad state-like association for the character in this compound, but does not demonstrate that modern speakers assign 分 a distinct, independently recoverable contribution in 気分, much less a specific 'sick/unwell' meaning.",
+            "source_ids": [
+              "s2"
+            ]
+          },
+          {
+            "id": "c2",
+            "text_en": "Dictionaries define 気分 at the word level as a mind-body state or feeling; one modern sub-sense concerns feelings arising from bodily condition. 気分が悪い can therefore mean feeling physically unwell without requiring a separate gloss for 分.",
+            "source_ids": [
+              "s1",
+              "s3"
+            ]
+          },
+          {
+            "id": "c3",
+            "text_en": "The Seisenban Nihon Kokugo Daijiten records a separate sense of 気分 meaning being unwell or ill and cites a 1229 吾妻鏡 example. This is evidence for historical use of the whole word, not for a historical derivation from the isolated character sense of 分.",
+            "source_ids": [
+              "s1"
+            ]
+          }
+        ],
+        "searches": [
+          {
+            "query": "(direct open)",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E6%B0%97%E5%88%86-51511",
+              "https://www.kanjipedia.jp/kanji/0006175200",
+              "https://www.collinsdictionary.com/dictionary/japanese-english/%E6%B0%97%E5%88%86%E3%81%8C%E6%82%AA%E3%81%84",
+              "https://hiroshima.repo.nii.ac.jp/record/2022409/files/kokubungakukou_130_12.pdf",
+              "https://dictionary.goo.ne.jp/word/%E6%B0%97%E5%88%86/"
+            ]
+          },
+          {
+            "query": "気分 意味 分 国語辞典 気分が悪い",
+            "opened_urls": [
+              "https://www.kanjipedia.jp/kanji/0006175200",
+              "https://www.collinsdictionary.com/dictionary/japanese-english/%E6%B0%97%E5%88%86%E3%81%8C%E6%82%AA%E3%81%84"
+            ]
+          },
+          {
+            "query": "気分 語源 分 日本語 語源辞典",
+            "opened_urls": [
+              "https://hiroshima.repo.nii.ac.jp/record/2022409/files/kokubungakukou_130_12.pdf"
+            ]
+          },
+          {
+            "query": "気分 気分が悪い 吾妻鏡 1229 精選版 日本国語大辞典",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E6%B0%97%E5%88%86-51511"
+            ]
+          }
+        ],
+        "gaps": [
+          "No opened source establishes whether 分 makes a distinct modern semantic contribution beyond its broad dictionary association with state, degree, or manner.",
+          "No opened source establishes a proven historical derivation of 気分 from the meanings of its individual characters.",
+          "The Hiroshima repository PDF and goo dictionary page returned internal errors when opened, so their search results were not used as evidence."
+        ]
+      },
+      "input_fingerprint": "91dd50b8402361c0ba9bdbb1ca58a1ef178775ed2ee896773e5ed055403abc7c",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "partial",
+      "editorial_route": "researched",
+      "research_questions": [
+        "What contribution, if any, does 分 make to the modern meaning of 気分 beyond its role in the established word?"
+      ],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-975b0c988eae815e",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "知己 is someone who knows you well, often a close acquaintance or confidant. In 知己になる, に marks the relationship one enters and なる means “become,” so the expression means to become acquainted with someone.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "知",
+          "contribution_en": "contributes the idea of knowing",
+          "claim_ids": []
+        },
+        {
+          "text": "己",
+          "contribution_en": "means oneself; with 知, it suggests someone who knows you",
+          "claim_ids": []
+        },
+        {
+          "text": "に",
+          "contribution_en": "marks the relationship one enters",
+          "claim_ids": []
+        },
+        {
+          "text": "なる",
+          "contribution_en": "to become",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "842b4e1ebe08f8e6a759bcd12c18ec5a32fe3e5f8040d245732b237ef2529aba",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-a6bd7b9372edf0eb",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "grammatical",
+      "explanation_en": "腹が減る presents the belly or stomach as something that 減る, or decreases: が marks 腹 as the subject, and 減る means “become less.” The phrase pictures the belly as getting emptier and conventionally means “to get hungry” or “to feel hungry.”",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "腹",
+          "contribution_en": "the belly or stomach that is described as decreasing",
+          "claim_ids": []
+        },
+        {
+          "text": "が",
+          "contribution_en": "marks 腹 as the subject of 減る",
+          "claim_ids": []
+        },
+        {
+          "text": "減る",
+          "contribution_en": "means “decrease” or “become less”; with 腹, it gives the image of a belly getting emptier",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "98e07f54f4dc4e54f64933e13cd71b243813d9addac403011dd6e49b975924df",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-ab9baaa9ce5df70e",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "grammatical",
+      "explanation_en": "音がする says that a sound occurs or is made; it can also describe a sound that someone hears. 音 names the sound, が marks it as the subject, and する makes its occurrence the event being reported without naming its source.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "音",
+          "contribution_en": "names the sound that occurs or is heard",
+          "claim_ids": []
+        },
+        {
+          "text": "がする",
+          "contribution_en": "が marks 音 as the subject, and する says that the sound occurs or is made",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "6198828f06fb40654efd9648a005defd4721f3deed1e18d2538070e9eb7dc2fc",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-b64ccc36298aec03",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "日が暮れる means that the day draws to a close and evening falls. 日 names the day or daylight, and 暮れる says that it comes to an end as it grows dark; が marks 日 as the subject.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "日",
+          "contribution_en": "The day or daylight that is drawing to a close.",
+          "claim_ids": []
+        },
+        {
+          "text": "が",
+          "contribution_en": "Marks 日 as the subject.",
+          "claim_ids": []
+        },
+        {
+          "text": "暮れる",
+          "contribution_en": "For the day to draw to a close as it grows dark.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "d23829632ce31b4847305c917aaeb535649a8df0725f44f45e63bbe1d2526430",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-c26dc935eb05b039",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "grammatical",
+      "explanation_en": "平気 combines 平’s sense of evenness with 気 as one’s feelings or disposition, giving the sense of being unruffled or unaffected. In 平気な顔をする, that untroubled state is shown as a face or expression; な links 平気 to 顔, を marks that expression with する, and している presents the manner as continuing or characteristic.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "平",
+          "contribution_en": "Evenness or steadiness.",
+          "claim_ids": []
+        },
+        {
+          "text": "気",
+          "contribution_en": "One’s feelings or disposition; with 平, it gives the sense of being unruffled or unaffected.",
+          "claim_ids": []
+        },
+        {
+          "text": "な",
+          "contribution_en": "Links 平気 to the noun 顔, describing the kind of expression.",
+          "claim_ids": []
+        },
+        {
+          "text": "顔",
+          "contribution_en": "The face or expression that shows the untroubled manner.",
+          "claim_ids": []
+        },
+        {
+          "text": "を",
+          "contribution_en": "Marks the expression as what is presented with する.",
+          "claim_ids": []
+        },
+        {
+          "text": "している",
+          "contribution_en": "Presents showing that expression as continuing or characteristic.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "0f9200038c711921739210db10000b633277181882feb581bca1588c934a9785",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-c7ebe5b995bf6fe2",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "grammatical",
+      "explanation_en": "気配 means a subtle indication or feeling that someone or something is present. が marks 気配 as the subject, and する forms a common expression for a sensed impression: 気配がする means that a sign of presence is felt, usually indirectly rather than through direct sight.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "気配",
+          "contribution_en": "a subtle indication or feeling that someone or something is present",
+          "claim_ids": []
+        },
+        {
+          "text": "が",
+          "contribution_en": "marks 気配 as the subject of する",
+          "claim_ids": []
+        },
+        {
+          "text": "する",
+          "contribution_en": "with a sensed impression, expresses that it is present or felt",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "6a3c67530bfe7175d2cb6c3c79140cfba0eed6a90023579a29657f9d36add072",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-ccef940dc92e4944",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "grammatical",
+      "explanation_en": "目が回る is a conventional expression for feeling dizzy: it pictures the eyes or what one sees as spinning. が marks 目 as what 回る describes.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "目",
+          "contribution_en": "Eyes, pictured as spinning.",
+          "claim_ids": []
+        },
+        {
+          "text": "が",
+          "contribution_en": "Marks 目 as the subject of 回る.",
+          "claim_ids": []
+        },
+        {
+          "text": "回る",
+          "contribution_en": "To turn or spin; here it supplies the image behind the expression for dizziness.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "01a14d56df21feb7dd271176c3a5a768fd44724211843a7c8d1e0bd34e03292d",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-e724ad9076f016f8",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "grammatical",
+      "explanation_en": "欲を言えばきりがない means that there is no end to what one might want: once you start saying what you want, you can always want more. 欲を言えば sets up “if one speaks of one’s desires,” and きりがない expresses that there is no end or limit.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "欲",
+          "contribution_en": "desire; what one wants",
+          "claim_ids": []
+        },
+        {
+          "text": "を",
+          "contribution_en": "marks 欲 as what is spoken of",
+          "claim_ids": []
+        },
+        {
+          "text": "言えば",
+          "contribution_en": "the conditional form of 言う, “if one speaks of”",
+          "claim_ids": []
+        },
+        {
+          "text": "きり",
+          "contribution_en": "end or limit",
+          "claim_ids": []
+        },
+        {
+          "text": "が",
+          "contribution_en": "marks きり as what does not exist",
+          "claim_ids": []
+        },
+        {
+          "text": "ない",
+          "contribution_en": "negates existence; with きりが, gives “there is no end”",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "03224cf7dee3f05597e1bc4015c91d71bcb216d3c524143b8c2a44326b7d02d6",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-ef6e2c1fc0b5a63b",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "grammatical",
+      "explanation_en": "胸が悪くなる describes the chest becoming unwell and conventionally means to start feeling nauseated or ill. が marks 胸 as the thing undergoing the change, and 悪くなる means “become unwell.”",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "胸",
+          "contribution_en": "Chest, the body area named as becoming unwell in this expression.",
+          "claim_ids": []
+        },
+        {
+          "text": "が",
+          "contribution_en": "Marks 胸 as what undergoes the change.",
+          "claim_ids": []
+        },
+        {
+          "text": "悪くなる",
+          "contribution_en": "Become unwell; with 胸, this conventionally describes starting to feel nauseated or ill.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "b24dda220d8a71fd07ce67522abba66a166bbee8d37e73506e90194e5369872a",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-f794299ded1fa671",
+      "investigation_questions": [
+        {
+          "component": "気持ち",
+          "question": "Can a reliable modern source establish what 気 and 持ち each contribute within 気持ち?"
+        },
+        {
+          "component": "落ち着く",
+          "question": "Can a reliable modern source establish independent contributions of 落ちる and 着く to 落ち着く in its calmness sense?"
+        }
+      ],
+      "claim_ids": [
+        "c1",
+        "c6"
+      ],
+      "structure": "grammatical",
+      "explanation_en": "気持ち means one's feelings or state of mind, and 落ち着く means to become calm or stable as disturbance subsides. In 気持ちが落ち着く, が marks the feelings as what becomes calm: one's feelings settle.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "気持ち",
+          "contribution_en": "one's feelings or state of mind",
+          "claim_ids": [
+            "c1"
+          ]
+        },
+        {
+          "text": "が",
+          "contribution_en": "marks 気持ち as what becomes calm",
+          "claim_ids": []
+        },
+        {
+          "text": "落ち着く",
+          "contribution_en": "become calm or stable as disturbance subsides",
+          "claim_ids": [
+            "c6"
+          ]
+        }
+      ],
+      "research": {
+        "entry_id": "ja-f794299ded1fa671",
+        "status": "partial",
+        "sources": [
+          {
+            "id": "s1",
+            "url": "https://kotobank.jp/word/%E6%B0%97%E6%8C%81-475897",
+            "title": "気持(キモチ)とは？ 意味や使い方 - コトバンク（デジタル大辞泉・精選版 日本国語大辞典）",
+            "accessed_at": "2026-09-28",
+            "summary_en": "The entries define 気持ち as feelings, thoughts, or a state of mind, and describe its historical usage and relation to 心持. They do not assign separate modern meanings to 気 and 持ち within this word."
+          },
+          {
+            "id": "s2",
+            "url": "https://kotobank.jp/word/%E6%B0%97-49796",
+            "title": "気(キ)とは？ 意味や使い方 - コトバンク（デジタル大辞泉ほか）",
+            "accessed_at": "2026-09-28",
+            "summary_en": "The Digital Daijisen entry includes 気 senses such as mental activity in response to things, mood, and feeling. It does not analyze 気持ち as a compound."
+          },
+          {
+            "id": "s3",
+            "url": "https://kotobank.jp/word/%E6%8C%81%E3%81%A4-645807",
+            "title": "持つ(モツ)とは？ 意味や使い方 - コトバンク（デジタル大辞泉）",
+            "accessed_at": "2026-09-28",
+            "summary_en": "The entry includes a sense of 持つ as holding something in one's mind, with examples such as having worries or a dream. It does not establish this as the contribution of 持ち in 気持ち."
+          },
+          {
+            "id": "s4",
+            "url": "https://www2.ninjal.ac.jp/vvlexicon/about.html",
+            "title": "複合動詞レキシコン｜このサイトについて - 国立国語研究所",
+            "accessed_at": "2026-09-28",
+            "summary_en": "The lexicon describes a category for forms perceived by contemporary speakers as fixed single words rather than two-verb compounds, and gives 落ち着く with 気分 as an example. This supports caution about treating the calmness sense as transparently compositional."
+          },
+          {
+            "id": "s5",
+            "url": "https://www.jlogos.com/d001/704912230.html",
+            "title": "『落ち着く』の意味と定義 - 福武国語辞典（JLogos）",
+            "accessed_at": "2026-09-28",
+            "summary_en": "The entry defines 落ち着く as becoming calm when change, disturbance, or confusion subsides, and includes a sense of judging matters calmly."
+          },
+          {
+            "id": "s6",
+            "url": "https://kotobank.jp/word/%E8%90%BD%E3%81%A1%E3%82%8B-188408",
+            "title": "落ちる(オチル)とは？ 意味や使い方 - コトバンク（デジタル大辞泉）",
+            "accessed_at": "2026-09-28",
+            "summary_en": "The entry gives a basic standalone sense of 落ちる as moving downward naturally or suddenly. This does not establish a contribution to the calmness sense of 落ち着く."
+          },
+          {
+            "id": "s7",
+            "url": "https://kotobank.jp/word/%E4%BB%98%E3%81%8F-571285",
+            "title": "付く(ツク)とは？ 意味や使い方 - コトバンク（デジタル大辞泉）",
+            "accessed_at": "2026-09-28",
+            "summary_en": "The entry includes 着く senses of reaching a destination or position. These standalone senses do not establish a contribution to the calmness sense of 落ち着く."
+          },
+          {
+            "id": "s8",
+            "url": "https://www2.ninjal.ac.jp/dictionaries/IPALBV/pdf_dir/%E3%81%8A%E3%81%A1%E3%81%A4%E3%81%8F.pdf",
+            "title": "IPAL動詞辞書「おちつく」項目 - 国立国語研究所",
+            "accessed_at": "2026-09-28",
+            "summary_en": "The entry defines one sense of 落ち着く as something becoming stable and quiet, and provides 気分が落ち着いた as an example. It records a whole-word sense without analyzing separate contributions from 落ちる and 着く."
+          }
+        ],
+        "claims": [
+          {
+            "id": "c1",
+            "text_en": "Modern Japanese dictionaries define 気持ち as feelings or thoughts held toward something, a resulting state of mind, or one's mental stance. These are whole-word definitions, not a component-by-component analysis.",
+            "source_ids": [
+              "s1"
+            ]
+          },
+          {
+            "id": "c2",
+            "text_en": "A modern dictionary lists 気 senses including mental activity in response to things, mood, and feeling. These senses make a mental-state association for 気 relevant to 気持ち, but do not prove a specific contribution within that word.",
+            "source_ids": [
+              "s2",
+              "s1"
+            ]
+          },
+          {
+            "id": "c3",
+            "text_en": "持つ can mean holding something in one's mind, such as worries or a dream. This supports a possible modern association with having or holding a feeling, but does not show that this is the specific contribution of 持ち in 気持ち.",
+            "source_ids": [
+              "s3",
+              "s1"
+            ]
+          },
+          {
+            "id": "c4",
+            "text_en": "The dictionary history for 気持ち records its textual use and later overlap with 心持. Those historical notes attest usage and semantic development; they do not establish a derivation from separately identified component meanings.",
+            "source_ids": [
+              "s1"
+            ]
+          },
+          {
+            "id": "c5",
+            "text_en": "The National Institute for Japanese Language and Linguistics describes forms perceived by contemporary speakers as fixed single words rather than two-verb compounds, giving 落ち着く with 気分 as an example. This cautions against treating the calmness sense as a transparent sum of 落ちる and 着く.",
+            "source_ids": [
+              "s4"
+            ]
+          },
+          {
+            "id": "c6",
+            "text_en": "Whole-word dictionary entries define 落ち着く as becoming stable, quiet, or calm when disturbance subsides; an NINJAL entry gives 気分が落ち着いた as an example. This supports the supplied sense.",
+            "source_ids": [
+              "s5",
+              "s8"
+            ]
+          },
+          {
+            "id": "c7",
+            "text_en": "As standalone verbs, 落ちる includes moving downward, and 着く includes reaching a destination or position. These meanings do not, by themselves, show how either verb contributes to the calmness sense of 落ち着く.",
+            "source_ids": [
+              "s6",
+              "s7",
+              "s4"
+            ]
+          }
+        ],
+        "searches": [
+          {
+            "query": "気持ち 語源 気 持ち 国語辞典 気持 意味",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E6%B0%97%E6%8C%81-475897",
+              "https://kotobank.jp/word/%E6%B0%97-49796",
+              "https://kotobank.jp/word/%E6%8C%81%E3%81%A4-645807"
+            ]
+          },
+          {
+            "query": "落ち着く 落ちる 着く 複合動詞 意味 語構成",
+            "opened_urls": [
+              "https://www2.ninjal.ac.jp/vvlexicon/about.html",
+              "https://www.jlogos.com/d001/704912230.html",
+              "https://kotobank.jp/word/%E8%90%BD%E3%81%A1%E3%82%8B-188408",
+              "https://kotobank.jp/word/%E4%BB%98%E3%81%8F-571285",
+              "https://www2.ninjal.ac.jp/dictionaries/IPALBV/pdf_dir/%E3%81%8A%E3%81%A1%E3%81%A4%E3%81%8F.pdf"
+            ]
+          },
+          {
+            "query": "「気持ち」 語源 気 持ち 語構成 日本語",
+            "opened_urls": []
+          },
+          {
+            "query": "「落ち着く」 語源 落ちる 着く 意味 日本語辞典",
+            "opened_urls": []
+          },
+          {
+            "query": "落ち着く 複合動詞 一語化 気分が 落ち着く NINJAL",
+            "opened_urls": []
+          },
+          {
+            "query": "(direct open)",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E6%B0%97%E6%8C%81-475897",
+              "https://kotobank.jp/word/%E6%B0%97-49796",
+              "https://kotobank.jp/word/%E6%8C%81%E3%81%A4-645807",
+              "https://www2.ninjal.ac.jp/vvlexicon/about.html",
+              "https://www.jlogos.com/d001/704912230.html",
+              "https://kotobank.jp/word/%E8%90%BD%E3%81%A1%E3%82%8B-188408",
+              "https://kotobank.jp/word/%E4%BB%98%E3%81%8F-571285",
+              "https://www2.ninjal.ac.jp/dictionaries/IPALBV/pdf_dir/%E3%81%8A%E3%81%A1%E3%81%A4%E3%81%8F.pdf"
+            ]
+          }
+        ],
+        "gaps": [
+          "No opened source directly establishes the modern component contributions of 気 and 持ち within 気持ち; interpretations such as 気 = mental state and 持ち = holding remain cautious associations, not demonstrated word analysis.",
+          "No opened source establishes independent contributions of 落ちる and 着く to the calmness sense of 落ち着く. The sources support the whole-word sense and standalone component senses, while NINJAL describes the 気分 use as fixed as one word."
+        ]
+      },
+      "input_fingerprint": "138204fb131d47120a903934fd628bd3778996b06e1b77b5722089da6bd92487",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "partial",
+      "editorial_route": "researched",
+      "research_questions": [
+        "In 気持ち, what do 気 and 持ち each contribute to the modern meaning “feelings; state of mind”?",
+        "In 落ち着く, how do 落ちる and 着く contribute to the modern meanings “settle” and “become calm”?"
+      ],
+      "fulfilled_requests": []
+    }
+  ],
+  "review_digest": "801889bc3b166b0f23bedd31a03d13f66013afacf3e1711b5a6d66916bc28362"
+}

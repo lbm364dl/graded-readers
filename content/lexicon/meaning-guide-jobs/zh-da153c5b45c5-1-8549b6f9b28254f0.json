@@ -1,0 +1,61 @@
+{
+  "id": "zh-da153c5b45c5-1-8549b6f9b28254f0",
+  "entry_id": "zh-da153c5b45c5-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-da153c5b45c5-1",
+      "headword": "却",
+      "kind": "word",
+      "reading": "què",
+      "senses": [
+        {
+          "id": "zh-da153c5b45c5-1-s1",
+          "definition": "yet; however, marking a contrast with what precedes"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "走出帐外，张飞气得握紧刀，大声说：“我们拼命救他，他却这样对待我们！",
+        "gloss": "yet",
+        "sense_id": "zh-da153c5b45c5-1-s1"
+      },
+      {
+        "sentence": "桓帝在位时，压制正直贤能的人，却特别信任宦官。",
+        "gloss": "but",
+        "sense_id": "zh-da153c5b45c5-1-s1"
+      },
+      {
+        "sentence": "张角一面私造黄旗，约好起事日期，一面派弟子送信，却被告密。",
+        "gloss": "but; yet",
+        "sense_id": "zh-da153c5b45c5-1-s1"
+      },
+      {
+        "sentence": "刘备虽然贫穷，却有远大志向。",
+        "gloss": "but",
+        "sense_id": "zh-da153c5b45c5-1-s1"
+      },
+      {
+        "sentence": "他们准备兵器时，却没有马匹。",
+        "gloss": "but",
+        "sense_id": "zh-da153c5b45c5-1-s1"
+      },
+      {
+        "sentence": "他急忙带兵赶去，却发现黄巾军已经败散，战事已经结束。",
+        "gloss": "but",
+        "sense_id": "zh-da153c5b45c5-1-s1"
+      },
+      {
+        "sentence": "张角刚打败董卓，正追赶汉军，却遇到三人攻击。",
+        "gloss": "but",
+        "sense_id": "zh-da153c5b45c5-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4d5491e81d67f5985f97a82d3cbe85f9eb2932334ee8e696840ad88d760787a5"
+}

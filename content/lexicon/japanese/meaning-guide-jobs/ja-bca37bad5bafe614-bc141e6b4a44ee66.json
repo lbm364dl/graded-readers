@@ -1,0 +1,32 @@
+{
+  "id": "ja-bca37bad5bafe614-bc141e6b4a44ee66",
+  "entry_id": "ja-bca37bad5bafe614",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-bca37bad5bafe614",
+      "headword": "水彩画",
+      "reading": "すいさいが",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-bca37bad5bafe614-1",
+          "definition": "watercolor painting"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ところで、主人の水彩画の腕は相変わらずだった。",
+        "gloss": "watercolor painting",
+        "sense_id": "ja-bca37bad5bafe614-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d457fdb9ebf59086094ca27beefeb209b6e66b32085a1471840b649a463e790a"
+}

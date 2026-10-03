@@ -1,0 +1,32 @@
+{
+  "id": "ja-947e7a29610fad8a-f830a0619cef1eae",
+  "entry_id": "ja-947e7a29610fad8a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-947e7a29610fad8a",
+      "headword": "三つ",
+      "reading": "みっつ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-947e7a29610fad8a-1",
+          "definition": "three; a group of three or the age of three"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "夜は五つと三つの子供の寝床へもぐり込み、二人の間で一緒に寝る。",
+        "gloss": "three (years old)",
+        "sense_id": "ja-947e7a29610fad8a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cd49173a534b226edc91685750531af6ad27de9b6b723e7ea8e7549cfbcfedcd"
+}

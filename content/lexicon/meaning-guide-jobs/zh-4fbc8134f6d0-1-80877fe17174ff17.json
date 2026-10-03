@@ -1,0 +1,31 @@
+{
+  "id": "zh-4fbc8134f6d0-1-80877fe17174ff17",
+  "entry_id": "zh-4fbc8134f6d0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4fbc8134f6d0-1",
+      "headword": "旧",
+      "kind": "word",
+      "reading": "jiù",
+      "senses": [
+        {
+          "id": "zh-4fbc8134f6d0-1-s1",
+          "definition": "old; former"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角让手下向百姓传话，说旧的天下已经衰弱，新的天下将要出现，还叫人用白土在家门上写下“甲子”二字。",
+        "gloss": "old; former",
+        "sense_id": "zh-4fbc8134f6d0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3f6780fee112c2e60a1e3dc7ac913644b2906b9717488c56ed245d280f380940"
+}

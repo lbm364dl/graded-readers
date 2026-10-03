@@ -1,0 +1,32 @@
+{
+  "id": "ja-99b5280a3d9ed9ba-6a4dfe80b542564e",
+  "entry_id": "ja-99b5280a3d9ed9ba",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-99b5280a3d9ed9ba",
+      "headword": "ずいぶん",
+      "reading": "ずいぶん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-99b5280a3d9ed9ba-1",
+          "definition": "quite; considerably"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "教師というものは、ずいぶん楽な仕事だ。",
+        "gloss": "quite; considerably",
+        "sense_id": "ja-99b5280a3d9ed9ba-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "35548e1fd2883c042e513ab54dc608817b208c8cc7aee3a730d5cc80aaa604f5"
+}

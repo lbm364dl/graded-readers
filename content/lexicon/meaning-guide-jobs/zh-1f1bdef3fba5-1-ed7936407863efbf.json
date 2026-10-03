@@ -1,0 +1,31 @@
+{
+  "id": "zh-1f1bdef3fba5-1-ed7936407863efbf",
+  "entry_id": "zh-1f1bdef3fba5-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1f1bdef3fba5-1",
+      "headword": "有的",
+      "kind": "word",
+      "reading": "yǒude",
+      "senses": [
+        {
+          "id": "zh-1f1bdef3fba5-1-s1",
+          "definition": "some; some of a group"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "程远志被斩后，黄巾军有的逃走，有的投降。",
+        "gloss": "some",
+        "sense_id": "zh-1f1bdef3fba5-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5daca244b9749fdbf11c6611c6b659049952d604ec2233bd712071bc35010a9f"
+}

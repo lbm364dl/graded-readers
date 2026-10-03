@@ -1,0 +1,32 @@
+{
+  "id": "ja-ef6e2c1fc0b5a63b-24bbb9dfcfe2a090",
+  "entry_id": "ja-ef6e2c1fc0b5a63b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ef6e2c1fc0b5a63b",
+      "headword": "胸が悪くなる",
+      "reading": "むねがわるくなる",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-ef6e2c1fc0b5a63b-1",
+          "definition": "to feel sick to one's stomach; to feel ill"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "目が回り、胸が悪くなったと思ったとき、どさりと音がして、目から火が出た。",
+        "gloss": "become sick to one's stomach; feel ill",
+        "sense_id": "ja-ef6e2c1fc0b5a63b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ca81ae329e5b918d57ef28e4f7f93dd52ce43bb2856773a05c8149cc50d986b8"
+}

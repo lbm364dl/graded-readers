@@ -1,0 +1,31 @@
+{
+  "id": "zh-e52a18dab706-1-d0a7f230e0bde3c5",
+  "entry_id": "zh-e52a18dab706-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e52a18dab706-1",
+      "headword": "三路夹攻",
+      "kind": "construction",
+      "reading": "sānlù jiāgōng",
+      "senses": [
+        {
+          "id": "zh-e52a18dab706-1-s1",
+          "definition": "to attack from three directions together"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三路夹攻，黄巾军大败。",
+        "gloss": "attack from three directions",
+        "sense_id": "zh-e52a18dab706-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3e274998ac7b3b8ec81afde0c0acbfedb7f8f50254eedff148b98e5c5a65b7d3"
+}

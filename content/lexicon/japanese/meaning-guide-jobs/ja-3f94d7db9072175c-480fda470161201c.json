@@ -1,0 +1,32 @@
+{
+  "id": "ja-3f94d7db9072175c-480fda470161201c",
+  "entry_id": "ja-3f94d7db9072175c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-3f94d7db9072175c",
+      "headword": "それ以来",
+      "reading": "それいらい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-3f94d7db9072175c-1",
+          "definition": "From that time onward; since then."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "しかし最後に強い臭いを出され、それ以来、鼬を見るだけで胸が悪くなるという。",
+        "gloss": "since then",
+        "sense_id": "ja-3f94d7db9072175c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "86e6cdc634fec4509389264de7ea6307ad976889784934d9b2ed3707e156ac60"
+}

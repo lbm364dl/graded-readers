@@ -1,0 +1,31 @@
+{
+  "id": "zh-731973a8c47a-1-dd150265d99a88ec",
+  "entry_id": "zh-731973a8c47a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-731973a8c47a-1",
+      "headword": "就要",
+      "kind": "construction",
+      "reading": "jiùyào",
+      "senses": [
+        {
+          "id": "zh-731973a8c47a-1-s1",
+          "definition": "will then have to; is then to"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他们发誓，虽是异姓，既已结为兄弟，就要同心救民。",
+        "gloss": "must; are to",
+        "sense_id": "zh-731973a8c47a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c25be881077d2a35b58a576a582dcc312f7299eeafaa5c2edb346ffb7026dd48"
+}

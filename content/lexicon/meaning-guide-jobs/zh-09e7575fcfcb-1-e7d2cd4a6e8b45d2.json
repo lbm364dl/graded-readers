@@ -1,0 +1,31 @@
+{
+  "id": "zh-09e7575fcfcb-1-e7d2cd4a6e8b45d2",
+  "entry_id": "zh-09e7575fcfcb-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-09e7575fcfcb-1",
+      "headword": "意",
+      "kind": "word",
+      "reading": "yì",
+      "senses": [
+        {
+          "id": "zh-09e7575fcfcb-1-s1",
+          "definition": "intention; purpose"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备见到卢植，说明来意。",
+        "gloss": "intention",
+        "sense_id": "zh-09e7575fcfcb-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ea94b0d9d1f6045daff2a7bc33e6251d3021bf6745466939eb6bd94632c64705"
+}

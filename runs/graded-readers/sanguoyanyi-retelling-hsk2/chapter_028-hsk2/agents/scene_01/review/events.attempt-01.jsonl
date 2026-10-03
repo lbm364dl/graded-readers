@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff55c-0152-7f20-9ebb-471783ea6da9"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.86,\"naturalness\":0.88,\"readability\":0.9,\"omissions\":[],\"unsupported_additions\":[\"将郭淮单独表述为使用假投降救出司马昭，原文实际由陈泰诈降羌人、郭淮配合完成。\"],\"distortions\":[\"“姜维先让徐质以为蜀军正在运粮”因果表述不准，原文是司马昭获报后派徐质断粮，姜维以此设伏。\",\"“邓艾坚守城池”不够准确，原文是司马望守长城，邓艾在城外据渭水设营并等待援军。\"],\"language_problems\":[\"“毌丘俭”中的“毌”应为人名中的“毋”，建议改为“毋丘俭”。\"],\"verdict\":\"revise\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":30591,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":1035,"reasoning_output_tokens":817}}

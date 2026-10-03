@@ -1,0 +1,37 @@
+{
+  "id": "ja-0bc44ce9f794a385-0a4ef59646032069",
+  "entry_id": "ja-0bc44ce9f794a385",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-0bc44ce9f794a385",
+      "headword": "たびに",
+      "reading": "たびに",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-0bc44ce9f794a385-1",
+          "definition": "each time that something happens; whenever"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "友達が来るたびに、主人は仕事の不平をいろいろ言っている。",
+        "gloss": "whenever; every time",
+        "sense_id": "ja-0bc44ce9f794a385-1"
+      },
+      {
+        "sentence": "　吾輩が尊敬している、筋向の白君は、会うたびに「人間ほど愛情のないものはない」と言う。",
+        "gloss": "every time",
+        "sense_id": "ja-0bc44ce9f794a385-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5ef944c6a6386ced8d45d64b70345412bb154a042abb509c991c44c3a3d155de"
+}

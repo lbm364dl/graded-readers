@@ -1,0 +1,32 @@
+{
+  "id": "ja-942800c6bc5075e8-4510b2960ff5af3f",
+  "entry_id": "ja-942800c6bc5075e8",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-942800c6bc5075e8",
+      "headword": "それに",
+      "reading": "それに",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-942800c6bc5075e8-1",
+          "definition": "in addition; besides that"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "中身は水彩絵具と毛筆、それにワットマンという紙だった。",
+        "gloss": "in addition; besides that",
+        "sense_id": "ja-942800c6bc5075e8-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "eb5db4c10d1e8facd9e0d954d2e1c16436f36f47156d73d5a80127efa4908950"
+}

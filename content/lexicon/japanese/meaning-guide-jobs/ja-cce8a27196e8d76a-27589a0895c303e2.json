@@ -1,0 +1,32 @@
+{
+  "id": "ja-cce8a27196e8d76a-27589a0895c303e2",
+  "entry_id": "ja-cce8a27196e8d76a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-cce8a27196e8d76a",
+      "headword": "退屈",
+      "reading": "たいくつ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-cce8a27196e8d76a-1",
+          "definition": "boredom; bored"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "家の子供が騒いで昼寝ができない時や、退屈で気分が悪い時、吾輩はここへ来て休むことにしている。",
+        "gloss": "bored and",
+        "sense_id": "ja-cce8a27196e8d76a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "63e2a166049e151c5a94c592f962dd604965ec6fb5e00d553f742e2bff9e4746"
+}

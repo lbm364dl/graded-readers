@@ -1,0 +1,32 @@
+{
+  "id": "ja-ccef940dc92e4944-f2e0ff2848aa4197",
+  "entry_id": "ja-ccef940dc92e4944",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ccef940dc92e4944",
+      "headword": "目が回る",
+      "reading": "めがまわる",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-ccef940dc92e4944-1",
+          "definition": "to feel dizzy"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "男の人の手の上で、吾輩の目が回りました。",
+        "gloss": "to feel dizzy",
+        "sense_id": "ja-ccef940dc92e4944-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6f0df55db8442e2f0b3830b95d01c97049e567afaea7e68d14a8a7c9871a766c"
+}

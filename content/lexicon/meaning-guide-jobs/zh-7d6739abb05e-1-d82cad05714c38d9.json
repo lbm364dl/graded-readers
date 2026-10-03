@@ -1,0 +1,31 @@
+{
+  "id": "zh-7d6739abb05e-1-d82cad05714c38d9",
+  "entry_id": "zh-7d6739abb05e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7d6739abb05e-1",
+      "headword": "玩",
+      "kind": "word",
+      "reading": "wán",
+      "senses": [
+        {
+          "id": "zh-7d6739abb05e-1-s1",
+          "definition": "to play"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备小时候常和孩子们在树下玩，说自己将来要做大事。",
+        "gloss": "to play",
+        "sense_id": "zh-7d6739abb05e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "828693225ecefb36a87d31df97ba7ebf4936c95e05a30f22e73d4e2124ba9edd"
+}

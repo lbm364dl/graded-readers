@@ -1,0 +1,38 @@
+{
+  "status": "complete",
+  "scenes": 14,
+  "chapter_cjk": 5379,
+  "scene_verdicts": {
+    "scene_01": "pass",
+    "scene_02": "pass",
+    "scene_03": "pass",
+    "scene_04": "pass",
+    "scene_05": "pass",
+    "scene_06": "pass",
+    "scene_07": "pass",
+    "scene_08": "pass",
+    "scene_09": "pass",
+    "scene_10": "pass",
+    "scene_11": "pass",
+    "scene_12": "pass",
+    "scene_13": "pass",
+    "scene_14": "pass"
+  },
+  "scene_attempts": {
+    "scene_01": 2,
+    "scene_02": 2,
+    "scene_03": 1,
+    "scene_04": 2,
+    "scene_05": 1,
+    "scene_06": 2,
+    "scene_07": 1,
+    "scene_08": 2,
+    "scene_09": 2,
+    "scene_10": 2,
+    "scene_11": 1,
+    "scene_12": 2,
+    "scene_13": 2,
+    "scene_14": 2
+  },
+  "unresolved_scenes": []
+}

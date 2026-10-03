@@ -1,0 +1,32 @@
+{
+  "id": "ja-9820c04969878962-fa812dbfb2ee25e2",
+  "entry_id": "ja-9820c04969878962",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9820c04969878962",
+      "headword": "しかも",
+      "reading": "しかも",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-9820c04969878962-1",
+          "definition": "moreover; besides; used to add information, often with an emphatic or surprising effect"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "しかも、あとで聞いた話では、それは書生という、人間の中でも一番乱暴な種類の人だった。",
+        "gloss": "moreover; besides",
+        "sense_id": "ja-9820c04969878962-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e64c4a0d6eaee94fa339f38495255de5d0e70718ce9e27eff8d6aa5188ad90bc"
+}

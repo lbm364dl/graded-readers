@@ -1,0 +1,61 @@
+{
+  "id": "zh-b56f36b529db-1-54ae36bb2d219e62",
+  "entry_id": "zh-b56f36b529db-1",
+  "reason": "requested",
+  "item": {
+    "entry": {
+      "id": "zh-b56f36b529db-1",
+      "headword": "到",
+      "kind": "word",
+      "reading": "dào",
+      "senses": [
+        {
+          "id": "zh-b56f36b529db-1-s1",
+          "definition": "reach; succeed in perceiving (with a verb such as 看)"
+        },
+        {
+          "id": "zh-b56f36b529db-1-s2",
+          "definition": "arrive at; go to"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备看到了招兵的告示。",
+        "gloss": "perceive",
+        "sense_id": "zh-b56f36b529db-1-s1"
+      },
+      {
+        "sentence": "三人一起到张飞家。",
+        "gloss": "go to",
+        "sense_id": "zh-b56f36b529db-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-b56f36b529db-1",
+    "structure": "grammatical",
+    "explanation_en": "到 means to reach or arrive at a place. After a verb such as 看, it marks reaching the result of that action: 看到了 means that the seeing succeeded, or that someone saw something.",
+    "caveat_en": "The result-complement use depends on a preceding verb; 到 also functions as a verb meaning to reach or arrive.",
+    "parts": [
+      {
+        "text": "到",
+        "contribution_en": "Reaching a destination or result; after a verb, marks that the action reaches its result."
+      }
+    ],
+    "input_fingerprint": "43f435f0db1d402f6c3e988b97f8020bc97b3ef14c70fc5e3aa08a20747058c4",
+    "revision": 1,
+    "editorial_policy": 2,
+    "evidence_status": "legacy_unresearched"
+  },
+  "requests": [
+    {
+      "entry_id": "zh-b56f36b529db-1",
+      "reason": "Use the minimal canonical illustration 看到, without 了. Explain what 到 contributes as a result complement without importing aspectual or sentence material from a corpus occurrence. Do not attribute the role of an omitted particle to 到.",
+      "id": "edit-156ccc28de647de2"
+    }
+  ],
+  "status": "reviewed",
+  "result_digest": "7d6ac07536900e59b8d845d4232f919ac773ab7b34c077e0408ddf9c1d01da2e"
+}

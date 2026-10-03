@@ -1,0 +1,31 @@
+{
+  "id": "zh-97347f3dfdcb-1-3a73e41d2b04e525",
+  "entry_id": "zh-97347f3dfdcb-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-97347f3dfdcb-1",
+      "headword": "为弟",
+      "kind": "construction",
+      "reading": "wéi dì",
+      "senses": [
+        {
+          "id": "zh-97347f3dfdcb-1-s1",
+          "definition": "to be the younger brother"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备为兄，关羽第二，张飞为弟。",
+        "gloss": "be the younger brother",
+        "sense_id": "zh-97347f3dfdcb-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "32e09f590c9729f31596f9e97f0a2b0c0f238dc1028694119a1edf4be3c47236"
+}

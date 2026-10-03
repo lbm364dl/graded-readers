@@ -1,0 +1,31 @@
+{
+  "id": "zh-11ec4fd275ad-1-7c071db152c4fc3b",
+  "entry_id": "zh-11ec4fd275ad-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-11ec4fd275ad-1",
+      "headword": "以为",
+      "kind": "word",
+      "reading": "yǐwéi",
+      "senses": [
+        {
+          "id": "zh-11ec4fd275ad-1-s1",
+          "definition": "to think; to believe"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军以为自己占了优势，连忙追来。",
+        "gloss": "think",
+        "sense_id": "zh-11ec4fd275ad-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3a81293581a34c4cdaf579400212819cb4c5e547788e49a45bc8f532c5d24dc9"
+}

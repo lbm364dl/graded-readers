@@ -1,0 +1,36 @@
+{
+  "id": "zh-77ff1611668f-1-efbd3be1f5767de2",
+  "entry_id": "zh-77ff1611668f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-77ff1611668f-1",
+      "headword": "逃散",
+      "kind": "word",
+      "reading": "táosàn",
+      "senses": [
+        {
+          "id": "zh-77ff1611668f-1-s1",
+          "definition": "to flee in different directions"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "夜里大风忽起，官军一齐点火并攻入营寨，黄巾军惊慌逃散。",
+        "gloss": "to flee in disorder",
+        "sense_id": "zh-77ff1611668f-1-s1"
+      },
+      {
+        "sentence": "二人各引兵攻打营寨，火焰冲天，黄巾军惊慌逃散，来不及上马，也来不及披甲。",
+        "gloss": "to scatter in flight",
+        "sense_id": "zh-77ff1611668f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cc2e47d1092edc9363403d6c27c6fd063b1e4618dc86b147098cab3894e1a2f2"
+}

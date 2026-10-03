@@ -1,0 +1,31 @@
+{
+  "id": "zh-33e3580c0931-1-b331f5f8ec853f63",
+  "entry_id": "zh-33e3580c0931-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-33e3580c0931-1",
+      "headword": "甲",
+      "kind": "word",
+      "reading": "jiǎ",
+      "senses": [
+        {
+          "id": "zh-33e3580c0931-1-s1",
+          "definition": "armor"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军惊慌，马来不及装鞍，人来不及穿甲，四散逃跑。",
+        "gloss": "armor",
+        "sense_id": "zh-33e3580c0931-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5368c33ae65eedc62218ba7d484318e0e94549517a5bd5fc224a5b170ef75513"
+}

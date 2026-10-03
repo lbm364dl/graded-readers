@@ -1,0 +1,46 @@
+{
+  "id": "zh-e7865140d257-1-aaa9c057dac49db7",
+  "entry_id": "zh-e7865140d257-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e7865140d257-1",
+      "headword": "志向",
+      "kind": "word",
+      "reading": "zhìxiàng",
+      "senses": [
+        {
+          "id": "zh-e7865140d257-1-s1",
+          "definition": "an aim or aspiration"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人发现彼此都有救民的志向，于是一起到张飞家中。",
+        "gloss": "aspiration",
+        "sense_id": "zh-e7865140d257-1-s1"
+      },
+      {
+        "sentence": "刘备虽然贫穷，却有远大志向。",
+        "gloss": "ambition",
+        "sense_id": "zh-e7865140d257-1-s1"
+      },
+      {
+        "sentence": "刘备告诉关羽自己的志向，关羽听后很兴奋。",
+        "gloss": "ambition; aspiration",
+        "sense_id": "zh-e7865140d257-1-s1"
+      },
+      {
+        "sentence": "之后，刘备、关羽、张飞一起到张飞庄上商议大事，三人也因共同志向相识。",
+        "gloss": "ambition; aspiration",
+        "sense_id": "zh-e7865140d257-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8b032296b343f47fb6659fc63bac3987d7490d98026741532c951dd546248bb1"
+}

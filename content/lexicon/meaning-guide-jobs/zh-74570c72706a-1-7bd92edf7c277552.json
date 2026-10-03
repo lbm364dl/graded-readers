@@ -1,0 +1,41 @@
+{
+  "id": "zh-74570c72706a-1-7bd92edf7c277552",
+  "entry_id": "zh-74570c72706a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-74570c72706a-1",
+      "headword": "对",
+      "kind": "word",
+      "reading": "duì",
+      "senses": [
+        {
+          "id": "zh-74570c72706a-1-s1",
+          "definition": "to; toward, marking the person addressed or spoken to"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备对关羽、张飞说：“我们人少，只有想个好主意，才能取胜。",
+        "gloss": "to",
+        "sense_id": "zh-74570c72706a-1-s1"
+      },
+      {
+        "sentence": "他对邹靖说：“我曾经跟卢植学习，现在愿意去帮助他。",
+        "gloss": "to",
+        "sense_id": "zh-74570c72706a-1-s1"
+      },
+      {
+        "sentence": "刘备对关羽、张飞说：“敌人多，我们人少，必须用特别的办法才能取胜。",
+        "gloss": "to; toward",
+        "sense_id": "zh-74570c72706a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6048b3757f542b4b56ec11b6e9e7113ddd19c6a5b2f1d46aef8b5ae04ea1491b"
+}

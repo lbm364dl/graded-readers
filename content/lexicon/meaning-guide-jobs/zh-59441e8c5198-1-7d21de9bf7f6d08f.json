@@ -1,0 +1,31 @@
+{
+  "id": "zh-59441e8c5198-1-7d21de9bf7f6d08f",
+  "entry_id": "zh-59441e8c5198-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-59441e8c5198-1",
+      "headword": "十余丈",
+      "kind": "word",
+      "reading": "shí yú zhàng",
+      "senses": [
+        {
+          "id": "zh-59441e8c5198-1-s1",
+          "definition": "more than ten zhang"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "六月初一，十余丈的黑气飞入温德殿。",
+        "gloss": "over ten zhang",
+        "sense_id": "zh-59441e8c5198-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4e91588ce49632d239a1c60068eb290680831fc1546ba90647027b8f9d5c3689"
+}

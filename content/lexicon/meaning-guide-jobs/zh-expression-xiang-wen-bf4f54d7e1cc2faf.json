@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-xiang-wen-bf4f54d7e1cc2faf",
+  "entry_id": "zh-expression-xiang-wen",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-xiang-wen",
+      "headword": "相问",
+      "reading": "xiāngwèn",
+      "kind": "expression",
+      "base_entry_id": "zh-89bf5aeae158-1",
+      "components": [
+        {
+          "entry_id": "zh-89bf5aeae158-1",
+          "role": "reciprocal adverb"
+        },
+        {
+          "entry_id": "zh-4628c0e06f4b-1",
+          "role": "verb"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-xiang-wen-s1",
+          "definition": "ask one another"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刚才见你看招军榜叹气，所以前来相问。",
+        "gloss": "ask one another",
+        "sense_id": "zh-expression-xiang-wen-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "相",
+        "role": "reciprocal adverb"
+      },
+      {
+        "headword": "问",
+        "role": "verb"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9d374037a256e5ab45b23355698403344eac7233aa4e61403002b88cd268315d"
+}

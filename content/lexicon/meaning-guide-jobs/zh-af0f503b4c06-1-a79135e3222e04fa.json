@@ -1,0 +1,31 @@
+{
+  "id": "zh-af0f503b4c06-1-a79135e3222e04fa",
+  "entry_id": "zh-af0f503b4c06-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-af0f503b4c06-1",
+      "headword": "专横",
+      "kind": "word",
+      "reading": "zhuānhèng",
+      "senses": [
+        {
+          "id": "zh-af0f503b4c06-1-s1",
+          "definition": "domineering; arbitrary in exercising power"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "这个结果导致宦官从此更加专横，做事也更不受限制，朝廷中的正直之士更加危险。",
+        "gloss": "tyrannical",
+        "sense_id": "zh-af0f503b4c06-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "dce2820a700cdc86eb0d68fac62d2c7012edf852148dc66cef3d71b9ca979434"
+}

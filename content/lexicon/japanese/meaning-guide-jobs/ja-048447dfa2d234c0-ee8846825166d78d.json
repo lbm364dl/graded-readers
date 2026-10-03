@@ -1,0 +1,32 @@
+{
+  "id": "ja-048447dfa2d234c0-ee8846825166d78d",
+  "entry_id": "ja-048447dfa2d234c0",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-048447dfa2d234c0",
+      "headword": "泥棒",
+      "reading": "どろぼう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-048447dfa2d234c0-1",
+          "definition": "A thief."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "黒は「人間は、格好のよい泥棒だ」と怒った。",
+        "gloss": "thief",
+        "sense_id": "ja-048447dfa2d234c0-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b6fb3cdf1d9d890eb04a1573755b13bbf206916ce51fd683e723c30fb87528b0"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-c756ed7c401b-1-f6082da39fbccf4c",
+  "entry_id": "zh-c756ed7c401b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c756ed7c401b-1",
+      "headword": "故意",
+      "kind": "word",
+      "reading": "gùyì",
+      "senses": [
+        {
+          "id": "zh-c756ed7c401b-1-s1",
+          "definition": "deliberately; intentionally"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "第二天，刘备和邹靖带兵向前进攻，随后故意退走。",
+        "gloss": "deliberately",
+        "sense_id": "zh-c756ed7c401b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3cca783e6ea8189d789b18605573bccf49ba9a4d47dda483c7be426491dedfd9"
+}

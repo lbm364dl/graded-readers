@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff441-ca24-7410-a12a-5ddabd81fb59"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.92,\"naturalness\":0.9,\"readability\":0.92,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"“姜维和钟会一起上书”不够准确：原文是姜维建议钟会上表弹劾邓艾，姜维本人并未与钟会联名上书。\"],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":29019,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":896,"reasoning_output_tokens":793}}

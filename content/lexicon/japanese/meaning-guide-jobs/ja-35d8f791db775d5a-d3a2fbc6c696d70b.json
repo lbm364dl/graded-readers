@@ -1,0 +1,32 @@
+{
+  "id": "ja-35d8f791db775d5a-d3a2fbc6c696d70b",
+  "entry_id": "ja-35d8f791db775d5a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-35d8f791db775d5a",
+      "headword": "近く",
+      "reading": "ちかく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-35d8f791db775d5a-1",
+          "definition": "nearby place; vicinity"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "仕方がないので、吾輩を家に入れてくれた主人の近くに、出来るだけいることにした。",
+        "gloss": "vicinity; nearby",
+        "sense_id": "ja-35d8f791db775d5a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8752f154a1e5771692e14e6eafc5c15739edbfea46b7ae429691e0d2ba728c87"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-34abadb84d065e8f-8408277d38c91c7a",
+  "entry_id": "ja-34abadb84d065e8f",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-34abadb84d065e8f",
+      "headword": "だけなのに",
+      "reading": "だけなのに",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-34abadb84d065e8f-1",
+          "definition": "only ... even though; despite doing only"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "この間も、畳で爪を磨いただけなのに、奥さんがたいへん怒り、それから座敷へ入れなくなった。",
+        "gloss": "even though it was only",
+        "sense_id": "ja-34abadb84d065e8f-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6e8cabe8ea6874ea2e9822eff6f04d808c262b0417a748df062bb5ba37879abf"
+}

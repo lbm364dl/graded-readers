@@ -1,0 +1,32 @@
+{
+  "id": "ja-e8f720244bbc3c1f-7cc61e745ce8aebe",
+  "entry_id": "ja-e8f720244bbc3c1f",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e8f720244bbc3c1f",
+      "headword": "一本",
+      "reading": "いっぽん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e8f720244bbc3c1f-1",
+          "definition": "one long, cylindrical object; one unit counted with the counter 本"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "茶の木の根を一本ずつ嗅ぎながら杉垣の近くまで来ると、枯菊を押し倒して、大きな猫が長々と眠っていた。",
+        "gloss": "one long cylindrical object",
+        "sense_id": "ja-e8f720244bbc3c1f-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "78d8aa2e4769273572298e7a4506719ca32c89b279814c2b919dc1c90d7cc1fb"
+}

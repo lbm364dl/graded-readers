@@ -1,0 +1,31 @@
+{
+  "id": "zh-711a0e3f3fe9-1-637cb433ea8aebcc",
+  "entry_id": "zh-711a0e3f3fe9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-711a0e3f3fe9-1",
+      "headword": "亭",
+      "kind": "word",
+      "reading": "tíng",
+      "senses": [
+        {
+          "id": "zh-711a0e3f3fe9-1-s1",
+          "definition": "a pavilion"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘胜的儿子刘贞曾被封为涿鹿亭侯，后来因未按规定缴纳酬金而失侯，这一支便留在涿县。",
+        "gloss": "pavilion",
+        "sense_id": "zh-711a0e3f3fe9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fa63630f98defdfbb7b8adc08acef5934742b25229cdc3bdeed80f687f5665bf"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-181d72de0862-1-28e1f226564d5733",
+  "entry_id": "zh-181d72de0862-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-181d72de0862-1",
+      "headword": "带回",
+      "kind": "construction",
+      "reading": "dài huí",
+      "senses": [
+        {
+          "id": "zh-181d72de0862-1-s1",
+          "definition": "to take or bring someone or something back to a place"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人救下董卓，把他带回营中。",
+        "gloss": "bring back",
+        "sense_id": "zh-181d72de0862-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a411ee1e9534ee6bb7aa5f7873a0c27d26ebc69cc03baf8326ce33b52532f536"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "zh-component-ce37d7c117bc2e4a-76115e6059545cec",
+  "entry_id": "zh-component-ce37d7c117bc2e4a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-component-ce37d7c117bc2e4a",
+      "headword": "十万",
+      "reading": "shí wàn",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-ce37d7c117bc2e4a-s1",
+          "definition": "one hundred thousand"
+        }
+      ]
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9d9742bb88d918bae881c7c3ea9d293723794d56f3ab365d0e5e1e2b16749849"
+}

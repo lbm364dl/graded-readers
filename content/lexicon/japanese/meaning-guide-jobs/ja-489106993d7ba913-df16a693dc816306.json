@@ -1,0 +1,32 @@
+{
+  "id": "ja-489106993d7ba913-df16a693dc816306",
+  "entry_id": "ja-489106993d7ba913",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-489106993d7ba913",
+      "headword": "勉強する",
+      "reading": "べんきょうする",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-489106993d7ba913-1",
+          "definition": "to study; to learn through study"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ある日、美学を勉強している友人が来た。",
+        "gloss": "is studying",
+        "sense_id": "ja-489106993d7ba913-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "af6c77e7643a31d370aa0f7a4107e3225ba5ca919bfc59de665b5e9ea2ef99cf"
+}

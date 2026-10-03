@@ -1,0 +1,41 @@
+{
+  "id": "zh-9a5d41c11c6b-1-b945d0dc6a84411f",
+  "entry_id": "zh-9a5d41c11c6b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9a5d41c11c6b-1",
+      "headword": "铠甲",
+      "kind": "word",
+      "reading": "kǎijiǎ",
+      "senses": [
+        {
+          "id": "zh-9a5d41c11c6b-1-s1",
+          "definition": "armor"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人谢过商人，打造兵器，配上铠甲，又聚集五百多名乡勇，前去报到。",
+        "gloss": "armor",
+        "sense_id": "zh-9a5d41c11c6b-1-s1"
+      },
+      {
+        "sentence": "火光照亮天空，黄巾军来不及披上铠甲，也来不及给马装好马鞍，只好四处逃跑。",
+        "gloss": "armor",
+        "sense_id": "zh-9a5d41c11c6b-1-s1"
+      },
+      {
+        "sentence": "于是，刘备请工匠打造双股剑，关羽打造青龙偃月刀，重八十二斤，张飞打造丈八点钢矛，并各自准备全身铠甲。",
+        "gloss": "armor",
+        "sense_id": "zh-9a5d41c11c6b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f65cc1a5040dc03ed975e0f6b8505f4dac83170893c1b7a28a4af7b72e007e45"
+}

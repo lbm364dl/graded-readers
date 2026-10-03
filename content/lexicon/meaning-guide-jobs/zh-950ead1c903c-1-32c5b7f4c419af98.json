@@ -1,0 +1,36 @@
+{
+  "id": "zh-950ead1c903c-1-32c5b7f4c419af98",
+  "entry_id": "zh-950ead1c903c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-950ead1c903c-1",
+      "headword": "听候",
+      "kind": "word",
+      "reading": "tīnghòu",
+      "senses": [
+        {
+          "id": "zh-950ead1c903c-1-s1",
+          "definition": "wait for further instructions or orders"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "卢植很高兴，让他留在帐前听候调遣。",
+        "gloss": "to await orders",
+        "sense_id": "zh-950ead1c903c-1-s1"
+      },
+      {
+        "sentence": "卢植很高兴，留下他听候调遣。",
+        "gloss": "await",
+        "sense_id": "zh-950ead1c903c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "32c605af1c0eadce51cf80f01ec39cb15785aab9a426f7749678fa98878b6065"
+}

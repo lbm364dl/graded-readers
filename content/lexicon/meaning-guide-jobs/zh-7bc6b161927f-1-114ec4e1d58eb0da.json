@@ -1,0 +1,31 @@
+{
+  "id": "zh-7bc6b161927f-1-114ec4e1d58eb0da",
+  "entry_id": "zh-7bc6b161927f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7bc6b161927f-1",
+      "headword": "五颜六色",
+      "kind": "expression",
+      "reading": "wǔyán-liùsè",
+      "senses": [
+        {
+          "id": "zh-7bc6b161927f-1-s1",
+          "definition": "multicolored; having many different colors"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他在县城四座城门放下十多根五颜六色的木棒，并定下严格的禁令。",
+        "gloss": "multicolored",
+        "sense_id": "zh-7bc6b161927f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cb3e4940e1f19b8d6f65bfa7e6538ad335c5bcbb35c9cdf8750acee11db70184"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-f4dca09bddf5-1-3562b7663f3038a4",
+  "entry_id": "zh-f4dca09bddf5-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f4dca09bddf5-1",
+      "headword": "同年",
+      "kind": "word",
+      "reading": "tóngnián",
+      "senses": [
+        {
+          "id": "zh-f4dca09bddf5-1-s1",
+          "definition": "the same year"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "不求同年同月同日生，但愿同年同月同日死。",
+        "gloss": "the same year",
+        "sense_id": "zh-f4dca09bddf5-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9f8c524ccb2557fc840412f0b9c202d447804ed6baca135fc9a399db6cc6a6b2"
+}

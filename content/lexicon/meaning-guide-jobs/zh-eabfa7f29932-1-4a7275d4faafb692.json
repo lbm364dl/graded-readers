@@ -1,0 +1,31 @@
+{
+  "id": "zh-eabfa7f29932-1-4a7275d4faafb692",
+  "entry_id": "zh-eabfa7f29932-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-eabfa7f29932-1",
+      "headword": "冷艳锯",
+      "kind": "name",
+      "reading": "Lěngyàn Jù",
+      "senses": [
+        {
+          "id": "zh-eabfa7f29932-1-s1",
+          "definition": "Cold Radiance Saw (alternate weapon name)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备命良匠打造双股剑，关羽造青龙偃月刀，又名冷艳锯，重八十二斤；张飞造丈八点钢矛。",
+        "gloss": "Cold Radiance Saw (alternate weapon name)",
+        "sense_id": "zh-eabfa7f29932-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ff6d11b256f28f62ea74f016cab5039b109bb54a53af1aab1001612f62f48f93"
+}

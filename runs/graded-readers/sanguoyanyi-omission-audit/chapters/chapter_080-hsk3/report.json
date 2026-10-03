@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_080-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 407,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将曹丕迁往洛阳表述为“迁都洛阳”，原文只说他从许昌前往洛阳并大建宫室。",
+      "classification": "material",
+      "reason": "“迁都洛阳”明确增加了迁都这一原文没有的事实；原文仅记载曹丕因疑许昌宫室多妖而前往洛阳并大建宫室。",
+      "required_fix": "将“迁都洛阳”改为“从许昌前往洛阳并大建宫室”或“迁往洛阳大建宫室”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将曹丕迁往洛阳表述为“迁都洛阳”，原文只说他从许昌前往洛阳并大建宫室。",
+      "classification": "material",
+      "reason": "“迁都洛阳”明确增加了迁都这一原文没有的事实；原文仅记载曹丕因疑许昌宫室多妖而前往洛阳并大建宫室。",
+      "required_fix": "将“迁都洛阳”改为“从许昌前往洛阳并大建宫室”或“迁往洛阳大建宫室”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 407,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

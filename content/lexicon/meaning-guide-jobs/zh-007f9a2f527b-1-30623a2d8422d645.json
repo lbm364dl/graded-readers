@@ -1,0 +1,31 @@
+{
+  "id": "zh-007f9a2f527b-1-30623a2d8422d645",
+  "entry_id": "zh-007f9a2f527b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-007f9a2f527b-1",
+      "headword": "受惊",
+      "kind": "word",
+      "reading": "shòujīng",
+      "senses": [
+        {
+          "id": "zh-007f9a2f527b-1-s1",
+          "definition": "be startled or frightened"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇帝受惊，百官立即纷纷躲开。",
+        "gloss": "to be startled",
+        "sense_id": "zh-007f9a2f527b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e0705b87c2461176009d4501bac7f48f5ac5285b0ab0535cc84c05b0e803af6c"
+}

@@ -1,0 +1,75 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_005-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1305,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了十七路诸侯的具体姓名、官职及部分人物背景。",
+      "classification": "material",
+      "reason": "完整名单和官职本身可压缩，但其中部分背景涉及夏侯惇与曹操的宗族关系及人物性格，属于重要身份、关系和人物信息。",
+      "required_fix": "补回十七路诸侯的姓名与官职，并恢复具有叙事作用的人物背景，尤其是夏侯惇、夏侯渊与曹操的宗族关系及夏侯惇的经历。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了十七路诸侯的具体姓名、官职及部分人物背景。",
+      "classification": "material",
+      "reason": "完整名单和官职本身可压缩，但其中部分背景涉及夏侯惇与曹操的宗族关系及人物性格，属于重要身份、关系和人物信息。",
+      "required_fix": "补回十七路诸侯的姓名与官职，并恢复具有叙事作用的人物背景，尤其是夏侯惇、夏侯渊与曹操的宗族关系及夏侯惇的经历。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1298,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [
+          "省略袁绍“四世三公”、门多故吏的身份背景，削弱了众人推举他为盟主的因果依据。",
+          "省略刘备为平原县令及公孙瓒昔日保举他的经历，削弱了两人的关系背景，也使袁术后来以“一县令手下小卒”羞辱三人的依据不够完整。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "将原文中李催、郭汜率五万兵把守汜水关、董卓亲率十五万兵驻守虎牢关，概括成董卓“亲率二十万兵分守”两关，混淆了兵力分配和统帅关系。",
+          "将李肃策划的后路袭击与华雄正面进攻、军士放火的夜袭，概括成“华雄火攻孙坚营寨”，改变了战术行动的发起者和过程。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 1305,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

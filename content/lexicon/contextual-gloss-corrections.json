@@ -1,0 +1,249 @@
+{
+  "reviewed": true,
+  "reason": "酒 does not identify a beverage subtype; the approved shared sense is drink alcohol.",
+  "changes": [
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "segment_index": 957,
+      "surface": "酒",
+      "previous": "wine; liquor",
+      "corrected": "alcohol; alcoholic drink",
+      "previous_segment_index": 955
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "segment_index": 1021,
+      "surface": "饮酒",
+      "previous": "to drink wine",
+      "corrected": "to drink alcohol",
+      "previous_segment_index": 1018
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "segment_index": 1026,
+      "surface": "饮酒",
+      "previous": "drink wine",
+      "corrected": "drink alcohol",
+      "previous_segment_index": 1023
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "segment_index": 1046,
+      "surface": "酒",
+      "previous": "wine",
+      "corrected": "alcohol",
+      "previous_segment_index": 1043,
+      "superseded_by_boundary_review": "runs/hsk56-lexical-boundary-editor/hsk5.reviewed.json",
+      "current_surface": "酒保",
+      "current_gloss": "drink server; bartender"
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "segment_index": 1048,
+      "surface": "酒",
+      "previous": "wine",
+      "corrected": "alcohol",
+      "previous_segment_index": 1046
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "segment_index": 1268,
+      "surface": "酒",
+      "previous": "wine",
+      "corrected": "alcohol",
+      "previous_segment_index": 1267
+    },
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "segment_index": 1338,
+      "surface": "酒",
+      "previous": "wine",
+      "corrected": "alcohol",
+      "previous_segment_index": 1337
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "segment_index": 1083,
+      "surface": "酒",
+      "previous": "wine",
+      "corrected": "alcohol",
+      "previous_segment_index": 1083
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "segment_index": 1166,
+      "surface": "饮酒",
+      "previous": "to drink wine",
+      "corrected": "to drink alcohol",
+      "previous_segment_index": 1165
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "segment_index": 1186,
+      "surface": "酒保",
+      "previous": "wine-shop keeper",
+      "corrected": "tavern keeper",
+      "previous_segment_index": 1185
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "segment_index": 1188,
+      "surface": "酒",
+      "previous": "wine",
+      "corrected": "alcohol",
+      "previous_segment_index": 1187
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "segment_index": 1378,
+      "surface": "酒",
+      "previous": "wine",
+      "corrected": "alcohol",
+      "previous_segment_index": 1380
+    },
+    {
+      "level": "hsk6",
+      "chapter": 1,
+      "segment_index": 1450,
+      "surface": "喝酒",
+      "previous": "drink wine",
+      "corrected": "drink alcohol",
+      "previous_segment_index": 1451
+    },
+    {
+      "level": "hsk1",
+      "chapter": 1,
+      "segment_index": 90,
+      "surface": "喝酒",
+      "previous": "drink wine",
+      "corrected": "drink alcohol"
+    },
+    {
+      "level": "hsk1",
+      "chapter": 1,
+      "segment_index": 208,
+      "surface": "喝酒",
+      "previous": "drink wine",
+      "corrected": "drink alcohol"
+    },
+    {
+      "level": "hsk2",
+      "chapter": 1,
+      "segment_index": 238,
+      "surface": "喝酒",
+      "previous": "drink wine",
+      "corrected": "drink alcohol"
+    },
+    {
+      "level": "hsk2",
+      "chapter": 1,
+      "segment_index": 531,
+      "surface": "下来",
+      "previous": "remain alive; survive",
+      "corrected": "continuation into a resulting state",
+      "previous_pinyin": "xiàlái",
+      "corrected_pinyin": "xiàlai",
+      "reason": "Use the independently reviewed component meaning and the reviewed whole-unit contextual pronunciation."
+    },
+    {
+      "level": "hsk4",
+      "chapter": 1,
+      "segment_index": 823,
+      "surface": "酒",
+      "previous": "wine",
+      "corrected": "alcohol"
+    },
+    {
+      "level": "hsk4",
+      "chapter": 1,
+      "segment_index": 890,
+      "surface": "酒",
+      "previous": "wine",
+      "corrected": "alcohol"
+    },
+    {
+      "level": "hsk4",
+      "chapter": 1,
+      "segment_index": 894,
+      "surface": "喝酒",
+      "previous": "drinking wine",
+      "corrected": "drinking alcohol"
+    },
+    {
+      "level": "hsk4",
+      "chapter": 1,
+      "segment_index": 907,
+      "surface": "酒",
+      "previous": "wine",
+      "corrected": "alcohol"
+    },
+    {
+      "level": "hsk4",
+      "chapter": 1,
+      "segment_index": 1062,
+      "surface": "摆酒",
+      "previous": "to set out wine",
+      "corrected": "to set out alcoholic drinks"
+    },
+    {
+      "level": "hsk4",
+      "chapter": 1,
+      "segment_index": 1073,
+      "surface": "喝酒",
+      "previous": "to drink wine",
+      "corrected": "to drink alcohol"
+    },
+    {
+      "level": "hsk4",
+      "chapter": 1,
+      "segment_index": 1129,
+      "surface": "喝酒",
+      "previous": "to drink wine",
+      "corrected": "to drink alcohol"
+    },
+    {
+      "level": "hsk3",
+      "chapter": 1,
+      "segment_index": 26,
+      "surface": "泛上来",
+      "previous_pinyin": "fàn shànglái",
+      "corrected_pinyin": "fàn shànglai",
+      "reason": "Use the ordinary unstressed complement pronunciation specified by the shared pinyin policy."
+    },
+    {
+      "level": "hsk4",
+      "chapter": 1,
+      "segment_index": 2303,
+      "surface": "下来",
+      "previous": "to remain alive; to survive",
+      "corrected": "continuation into a resulting state",
+      "previous_pinyin": "xiàlái",
+      "corrected_pinyin": "xiàlai",
+      "reason": "Reuse the reviewed HSK2 component analysis of 活下来; survival belongs to the full predicate, not the complement alone."
+    }
+  ],
+  "grammar_overlay_changes": [
+    {
+      "level": "hsk5",
+      "chapter": 1,
+      "pattern": "动词+宾语+动词+宾语",
+      "previous": "the three men killed an ox and set out wine",
+      "corrected": "the three men killed an ox and set out alcoholic drinks",
+      "reason": "摆酒 does not identify the beverage subtype."
+    }
+  ],
+  "segmentation_changed": false,
+  "sense_assignments_changed": false
+}

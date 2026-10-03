@@ -1,0 +1,36 @@
+{
+  "id": "zh-8226ca02ff36-1-2ca5757fd4afa94d",
+  "entry_id": "zh-8226ca02ff36-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8226ca02ff36-1",
+      "headword": "攻击",
+      "kind": "word",
+      "reading": "gōngjī",
+      "senses": [
+        {
+          "id": "zh-8226ca02ff36-1-s1",
+          "definition": "attack; make an attack"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "那时张梁、张宝已经败退，曹操率军拦住他们，立即发动攻击。",
+        "gloss": "to attack",
+        "sense_id": "zh-8226ca02ff36-1-s1"
+      },
+      {
+        "sentence": "张角刚打败董卓，正追赶汉军，却遇到三人攻击。",
+        "gloss": "attack",
+        "sense_id": "zh-8226ca02ff36-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "20f7e99f28cf80c363ecc8cdfaa5d0de6706dc2fb6a56a5cb44d218b6751c3ac"
+}

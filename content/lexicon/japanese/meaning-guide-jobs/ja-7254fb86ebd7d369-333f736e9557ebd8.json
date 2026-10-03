@@ -1,0 +1,32 @@
+{
+  "id": "ja-7254fb86ebd7d369-333f736e9557ebd8",
+  "entry_id": "ja-7254fb86ebd7d369",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-7254fb86ebd7d369",
+      "headword": "だんだん",
+      "reading": "だんだん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-7254fb86ebd7d369-1",
+          "definition": "gradually; little by little"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "つやのあった毛はだんだん色があせて抜け、きれいだった目には目やにがたまった。",
+        "gloss": "gradually",
+        "sense_id": "ja-7254fb86ebd7d369-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "db114f406815c020d65d9fbeef5b8ad27c92ac89025231fcc7721c4fbe9022de"
+}

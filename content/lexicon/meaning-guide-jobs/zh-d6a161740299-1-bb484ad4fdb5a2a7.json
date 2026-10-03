@@ -1,0 +1,31 @@
+{
+  "id": "zh-d6a161740299-1-bb484ad4fdb5a2a7",
+  "entry_id": "zh-d6a161740299-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d6a161740299-1",
+      "headword": "八十二",
+      "kind": "word",
+      "reading": "bāshí'èr",
+      "senses": [
+        {
+          "id": "zh-d6a161740299-1-s1",
+          "definition": "eighty-two"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "于是，刘备请工匠打造双股剑，关羽打造青龙偃月刀，重八十二斤，张飞打造丈八点钢矛，并各自准备全身铠甲。",
+        "gloss": "eighty-two",
+        "sense_id": "zh-d6a161740299-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7d400f07e5d01c33417ae03929413ef0d67a0327ab61b376770153980ae4be74"
+}

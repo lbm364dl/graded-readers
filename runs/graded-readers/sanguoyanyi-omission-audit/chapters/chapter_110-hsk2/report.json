@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_110-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 300,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "称司马师已经实施了抚恤淮南将士家属的计策，原文只写王肃提出此建议，未明确叙述其落实。",
+      "classification": "material",
+      "reason": "这是原文未明确支持的具体事实，增加了司马师已落实抚恤计策的行动。",
+      "required_fix": "改为仅表述王肃提出抚恤淮南将士家属的建议；司马师明确落实的是截断退路。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "称司马师已经实施了抚恤淮南将士家属的计策，原文只写王肃提出此建议，未明确叙述其落实。",
+      "classification": "material",
+      "reason": "这是原文未明确支持的具体事实，增加了司马师已落实抚恤计策的行动。",
+      "required_fix": "改为仅表述王肃提出抚恤淮南将士家属的建议；司马师明确落实的是截断退路。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9.5,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 300,
+      "review": {
+        "source_fidelity": 9.5,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-b6311967cf73376e-2bb3fc7c8b6f2cef",
+  "entry_id": "ja-b6311967cf73376e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-b6311967cf73376e",
+      "headword": "勤勉",
+      "reading": "きんべん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-b6311967cf73376e-1",
+          "definition": "diligent; industrious"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "だが、実際はそれほど勤勉ではない。",
+        "gloss": "not diligent; not industrious",
+        "sense_id": "ja-b6311967cf73376e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8bc1dc4a97f21a153647a01a365e0b6edd60a4cb01a91a80857807b55f3458d8"
+}

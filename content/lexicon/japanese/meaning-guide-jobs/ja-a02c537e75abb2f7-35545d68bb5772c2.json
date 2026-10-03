@@ -1,0 +1,541 @@
+{
+  "id": "ja-a02c537e75abb2f7-35545d68bb5772c2",
+  "entry_id": "ja-a02c537e75abb2f7",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-a02c537e75abb2f7",
+      "headword": "で",
+      "reading": "で",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-a02c537e75abb2f7-1",
+          "definition": "Marks the place where an action or event occurs."
+        },
+        {
+          "id": "ja-a02c537e75abb2f7-2",
+          "definition": "Marks the means or cause by which an event occurs."
+        },
+        {
+          "id": "ja-a02c537e75abb2f7-3",
+          "definition": "Marks the time or occasion at which an action occurs."
+        },
+        {
+          "id": "ja-a02c537e75abb2f7-4",
+          "definition": "Marks a role or capacity, or a group or range in which something applies."
+        },
+        {
+          "id": "ja-a02c537e75abb2f7-5",
+          "definition": "In でも, marks a circumstance as included even in the stated case."
+        },
+        {
+          "id": "ja-a02c537e75abb2f7-6",
+          "definition": "In expressions such as 話では, marks the source or basis for what is stated."
+        },
+        {
+          "id": "ja-a02c537e75abb2f7-7",
+          "definition": "Connects a noun or な-adjective predicate to what follows, in forms such as 書生で or 平気で."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "どこで生まれたか分かりません。",
+        "gloss": "in; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "暗い所でニャーニャー泣いていました。",
+        "gloss": "in; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "男の人の手の上で、吾輩の目が回りました。",
+        "gloss": "at; on",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "どこで生まれたか分からない。",
+        "gloss": "in; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "暗くてぬれている所で、ニャーニャー鳴いていたことだけは覚えている。",
+        "gloss": "in; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "この書生の手の上で、吾輩はしばらく気持ちよく座っていた。",
+        "gloss": "at; on",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "とても明るい所で、痛いので出てみると、吾輩はわらの上から笹原へ捨てられていた。",
+        "gloss": "in; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "西の垣のそばへ行くと、大きな黒い猫が枯菊の上で寝ていた。",
+        "gloss": "at; on",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "風で葉が二枚落ちると、黒は丸い目を開いた。",
+        "gloss": "due to; by",
+        "sense_id": "ja-a02c537e75abb2f7-2"
+      },
+      {
+        "sentence": "吾輩はどこで生まれたのか、まったく分からない。",
+        "gloss": "at; in",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "ただ、薄暗くてじめじめした場所で、ニャーニャー泣いていたことだけは覚えている。",
+        "gloss": "in; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "後で聞いた話では、その人間は書生といい、人間の中でも特に悪い者だったらしい。",
+        "gloss": "in; by; with",
+        "sense_id": "ja-a02c537e75abb2f7-3"
+      },
+      {
+        "sentence": "掌の上で少し落ち着き、書生の顔を見たことが、人間というものの見始めだったのだろう。",
+        "gloss": "in; on",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "この書生の手の上で休んでいると、急に速く動き始めた。",
+        "gloss": "on; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "吾輩はこの家で、主人以外のものには不人望だった。",
+        "gloss": "in; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "仕方なく主人のそばで暮らし、朝は膝、昼は背中に乗った。",
+        "gloss": "at; in",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "夜は五つと三つの子供の寝床へもぐり込み、二人の間で一緒に寝る。",
+        "gloss": "in; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "先日などは、物差しで尻をひどくたたかれた。",
+        "gloss": "with; by means of",
+        "sense_id": "ja-a02c537e75abb2f7-2"
+      },
+      {
+        "sentence": "次の日、主人は縁側で昼寝する吾輩を写生し始めた。",
+        "gloss": "at; in",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "ある小春の穏やかな日、昼寝のあとでそこへ行くと、杉垣のそばで大きな黒猫が気持ちよさそうに寝ていた。",
+        "gloss": "at; in",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "黒の主人はそのお金で一円五十銭ほど得たのに、黒にはろくな食べ物を与えなかったという。",
+        "gloss": "with; using",
+        "sense_id": "ja-a02c537e75abb2f7-2"
+      },
+      {
+        "sentence": "どこで生まれたのか、自分でもまったく見当がつかない。",
+        "gloss": "in; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "どこで生まれたのか、自分でもまったく見当がつかない。",
+        "gloss": "by oneself; on one's own",
+        "sense_id": "ja-a02c537e75abb2f7-2"
+      },
+      {
+        "sentence": "ただ、その時、吾輩は薄暗くてじめじめした所で、ニャーニャー泣いていたことだけは覚えている。",
+        "gloss": "in; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "吾輩がここで初めて見たのは人間だった。",
+        "gloss": "at; in",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "しかも、あとで聞いた話では、それは書生という、人間の中でも一番乱暴な種類の人だった。",
+        "gloss": "in; according to",
+        "sense_id": "ja-a02c537e75abb2f7-6"
+      },
+      {
+        "sentence": "手のひらの上で少し落ち着いてから、吾輩は書生の顔を見た。",
+        "gloss": "at; on",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "まず、毛でおおわれているはずの顔が、つるつるしていて、まるで薬缶のようだった。",
+        "gloss": "by; with",
+        "sense_id": "ja-a02c537e75abb2f7-2"
+      },
+      {
+        "sentence": "この書生の手のひらの上で、吾輩はしばらく気持ちよく座っていた。",
+        "gloss": "on; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "この穴がなければ、吾輩は道ばたで餓死していたかもしれない。",
+        "gloss": "at; on",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "その後、朝は飯櫃の上、夜は炬燵の上、天気のよい昼は椽側で寝るようになった。",
+        "gloss": "at; on",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "小供は五つと三つの二人で、一つの寝床に入る。",
+        "gloss": "with; consisting of",
+        "sense_id": "ja-a02c537e75abb2f7-4"
+      },
+      {
+        "sentence": "小さい方は特に乱暴で、「猫が来た」と夜中でも大声で泣き出す。",
+        "gloss": "even at; in",
+        "sense_id": "ja-a02c537e75abb2f7-5"
+      },
+      {
+        "sentence": "小さい方は特に乱暴で、「猫が来た」と夜中でも大声で泣き出す。",
+        "gloss": "with; in",
+        "sense_id": "ja-a02c537e75abb2f7-2"
+      },
+      {
+        "sentence": "先日は、物差しで吾輩の尻をひどくたたかれた。",
+        "gloss": "with; by means of",
+        "sense_id": "ja-a02c537e75abb2f7-2"
+      },
+      {
+        "sentence": "特に、時々吾輩と同じ布団で寝る子供は、ひどいものである。",
+        "gloss": "in; on",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "自分の気分しだいで、吾輩を逆さにしたり、頭に袋をかぶせたり、外へ投げ出したり、へっついの中へ押し込んだりする。",
+        "gloss": "according to",
+        "sense_id": "ja-a02c537e75abb2f7-2"
+      },
+      {
+        "sentence": "そのうえ、吾輩が少しでも手を出すと、家の者全員で追いかけ、いじめる。",
+        "gloss": "by; with",
+        "sense_id": "ja-a02c537e75abb2f7-2"
+      },
+      {
+        "sentence": "この間も、畳で爪を磨いただけなのに、奥さんがたいへん怒り、それから座敷へ入れなくなった。",
+        "gloss": "at; on",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "台所の板の間で他の者が震えていても、彼らは少しも気にしない。",
+        "gloss": "in; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "我々猫の間では、目刺しの頭でも、ぼらのへそでも、最初に見つけた者が食べる権利を持つ。",
+        "gloss": "in; among",
+        "sense_id": "ja-a02c537e75abb2f7-4"
+      },
+      {
+        "sentence": "我々猫の間では、目刺しの頭でも、ぼらのへそでも、最初に見つけた者が食べる権利を持つ。",
+        "gloss": "with; even with",
+        "sense_id": "ja-a02c537e75abb2f7-5"
+      },
+      {
+        "sentence": "相手がこの決まりを守らなければ、力で取り返してもよい。",
+        "gloss": "by means of",
+        "sense_id": "ja-a02c537e75abb2f7-2"
+      },
+      {
+        "sentence": "ところが人間は、吾輩たちが見つけたごちそうを、いつも力で奪って平気な顔をしている。",
+        "gloss": "by means of",
+        "sense_id": "ja-a02c537e75abb2f7-2"
+      },
+      {
+        "sentence": "吾輩の家の主人が、その我儘で失敗した話をしよう。",
+        "gloss": "because of; due to",
+        "sense_id": "ja-a02c537e75abb2f7-2"
+      },
+      {
+        "sentence": "便所で謡を歌うので、近所の人から「後架先生」と呼ばれても、気にせず同じ歌を繰り返していた。",
+        "gloss": "in; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "翌日から主人は、しばらく毎日、書斎で昼寝もせず絵ばかりかいた。",
+        "gloss": "in; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "主人が「自分で筆を持つと、絵は実に難しい」と言うと、友人は、室内の想像だけでは絵はかけない、自然そのものを見て写生すべきだと教えた。",
+        "gloss": "by oneself; with",
+        "sense_id": "ja-a02c537e75abb2f7-2"
+      },
+      {
+        "sentence": "主人が「自分で筆を持つと、絵は実に難しい」と言うと、友人は、室内の想像だけでは絵はかけない、自然そのものを見て写生すべきだと教えた。",
+        "gloss": "by; with",
+        "sense_id": "ja-a02c537e75abb2f7-2"
+      },
+      {
+        "sentence": "その日、吾輩はいつものように椽側で気持ちよく昼寝をしていた。",
+        "gloss": "at; in",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "主人は書斎から出て来て、吾輩の後ろで熱心に筆を動かしていた。",
+        "gloss": "at; in",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "すると主人は、失望と怒りの混じった声で、座敷から「この馬鹿野郎」と怒鳴った。",
+        "gloss": "in; with",
+        "sense_id": "ja-a02c537e75abb2f7-2"
+      },
+      {
+        "sentence": "茶の木の根を一つ一つ嗅ぎながら西側の杉の垣根へ行くと、枯れた菊を押し倒し、その上で大きな猫が眠っていた。",
+        "gloss": "on; in",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "風で葉が二、三枚落ちると、猫は突然、丸い目を開いた。",
+        "gloss": "by; due to",
+        "sense_id": "ja-a02c537e75abb2f7-2"
+      },
+      {
+        "sentence": "黒は近所で有名な乱暴な猫だった。",
+        "gloss": "in; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "吾輩が「車屋と教師では、どちらが偉いか」と尋ねると、黒は「車屋の方が強いに決まっている。",
+        "gloss": "in the role of; as",
+        "sense_id": "ja-a02c537e75abb2f7-4"
+      },
+      {
+        "sentence": "ある日、暖かい茶園で一緒に寝転びながら、黒は吾輩に「今まで鼠を何匹とったことがある」と聞いた。",
+        "gloss": "in; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "吾輩が「とろうと思ったが、まだ一匹もとっていない」と答えると、黒は大声で笑った。",
+        "gloss": "with; in",
+        "sense_id": "ja-a02c537e75abb2f7-2"
+      },
+      {
+        "sentence": "最後に茶園で会った時、吾輩が「どうした」と聞くと、黒は「鼬の最後っ屁と、肴屋の天秤棒には、もうこりごりだ」と答えた。",
+        "gloss": "at; in",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "吾輩がどこで生まれたのか、今となってはまったく見当がつかない。",
+        "gloss": "at; in",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "何でも、薄暗くてじめじめした所で、ニャーニャー泣いていたことだけは、はっきり覚えている。",
+        "gloss": "in; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "しかも、あとで聞いたところによると、その人間は書生で、人間の中でも一番凶悪な種族だったらしい。",
+        "gloss": "among; in",
+        "sense_id": "ja-a02c537e75abb2f7-7"
+      },
+      {
+        "sentence": "掌の上で少し落ち着いてから、吾輩は書生の顔を見た。",
+        "gloss": "at; on",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "第一、毛で飾られているはずの顔が、つるつるしていて、まるで薬缶のようである。",
+        "gloss": "with; by means of",
+        "sense_id": "ja-a02c537e75abb2f7-2"
+      },
+      {
+        "sentence": "この書生の手のひらの上で、吾輩はしばらく気持ちよく座っていた。",
+        "gloss": "in; on; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "ところが、やがて書生はものすごい速さで吾輩を運び始めた。",
+        "gloss": "at; with",
+        "sense_id": "ja-a02c537e75abb2f7-2"
+      },
+      {
+        "sentence": "どれほど大切にされなかったかは、今まで名前さえつけてもらえないことでも分かる。",
+        "gloss": "by; through",
+        "sense_id": "ja-a02c537e75abb2f7-2"
+      },
+      {
+        "sentence": "その後、いろいろ経験して、朝は飯櫃の上、夜は炬燵の上、天気のよい昼は縁側で寝るようになった。",
+        "gloss": "at; on",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "小供は五つと三つで、夜になると二人で一つの床に入る。",
+        "gloss": "together; by means of",
+        "sense_id": "ja-a02c537e75abb2f7-7"
+      },
+      {
+        "sentence": "特に小さい方が、猫が来たと夜中でも大声で泣き出す。",
+        "gloss": "with; in (a manner)",
+        "sense_id": "ja-a02c537e75abb2f7-2"
+      },
+      {
+        "sentence": "先日などは、物差しで吾輩の尻をひどくたたかれた。",
+        "gloss": "using; by means of",
+        "sense_id": "ja-a02c537e75abb2f7-2"
+      },
+      {
+        "sentence": "吾輩が少しでも手を出すと、家内総がかりで追い回される。",
+        "gloss": "by; with",
+        "sense_id": "ja-a02c537e75abb2f7-2"
+      },
+      {
+        "sentence": "畳で爪を研いだ時など、細君はひどく怒り、その後は座敷へ入りにくくなった。",
+        "gloss": "at; by means of",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "先日、白君の家で玉のような子猫が四疋生まれた。",
+        "gloss": "at; in",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "隣の三毛君も、また別の理由で人間に憤慨している。",
+        "gloss": "because of; due to",
+        "sense_id": "ja-a02c537e75abb2f7-2"
+      },
+      {
+        "sentence": "猫の仲間では、目刺の頭でも、ぼらのへそでも、最初に見付けた者が食べる権利を持つ。",
+        "gloss": "among; in",
+        "sense_id": "ja-a02c537e75abb2f7-4"
+      },
+      {
+        "sentence": "猫の仲間では、目刺の頭でも、ぼらのへそでも、最初に見付けた者が食べる権利を持つ。",
+        "gloss": "even with; even in the case of",
+        "sense_id": "ja-a02c537e75abb2f7-5"
+      },
+      {
+        "sentence": "「我儘」という言葉で思い出した。",
+        "gloss": "with; by means of",
+        "sense_id": "ja-a02c537e75abb2f7-2"
+      },
+      {
+        "sentence": "便所で謡を歌い、近所の人から「後架先生」と呼ばれても平気で、同じ節を何度も繰り返していた。",
+        "gloss": "in; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "便所で謡を歌い、近所の人から「後架先生」と呼ばれても平気で、同じ節を何度も繰り返していた。",
+        "gloss": "and; being",
+        "sense_id": "ja-a02c537e75abb2f7-7"
+      },
+      {
+        "sentence": "翌日からしばらく、主人は毎日書斎で絵ばかりかいた。",
+        "gloss": "in; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "主人が「人の絵を見ると簡単そうなのに、自分で筆を持つと実に難しい」と言うと、友人は、最初から上手にはかけない、室内の想像だけでは絵にならない、と説明した。",
+        "gloss": "by; with",
+        "sense_id": "ja-a02c537e75abb2f7-2"
+      },
+      {
+        "sentence": "主人が「人の絵を見ると簡単そうなのに、自分で筆を持つと実に難しい」と言うと、友人は、最初から上手にはかけない、室内の想像だけでは絵にならない、と説明した。",
+        "gloss": "with; by means of",
+        "sense_id": "ja-a02c537e75abb2f7-2"
+      },
+      {
+        "sentence": "その翌日、吾輩はいつものように椽側で気持ちよく昼寝をしていた。",
+        "gloss": "at; on",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "すると主人が書斎から出て来て、吾輩の後ろで何かを始めた。",
+        "gloss": "at; in",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "すると主人は、失望と怒りの混じった声で、「この馬鹿野郎」と怒鳴った。",
+        "gloss": "with; in",
+        "sense_id": "ja-a02c537e75abb2f7-2"
+      },
+      {
+        "sentence": "吾輩が夢中で見つめていると、黒は突然、真ん丸い目を開いた。",
+        "gloss": "in the state of; with",
+        "sense_id": "ja-a02c537e75abb2f7-2"
+      },
+      {
+        "sentence": "車屋の黒は、この近所で知らない者のない乱暴な猫だった。",
+        "gloss": "in; within",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "「車屋と教師では、どちらが偉いだろう」\n",
+        "gloss": "in the comparison of",
+        "sense_id": "ja-a02c537e75abb2f7-4"
+      },
+      {
+        "sentence": "ある日、暖かい茶畠で寝転びながら話していると、黒が尋ねた。",
+        "gloss": "in; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "鼬にはひどい目に遭ったが、鼠なら百匹でも二百匹でも相手になるという。",
+        "gloss": "even with",
+        "sense_id": "ja-a02c537e75abb2f7-5"
+      },
+      {
+        "sentence": "交番では誰がとったか分からねえから、そのたびに五銭くれる。",
+        "gloss": "at; in",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "亭主はおれのおかげで一円五十銭ほどもうけているくせに、ろくな物も食わせねえ。",
+        "gloss": "by; through",
+        "sense_id": "ja-a02c537e75abb2f7-2"
+      },
+      {
+        "sentence": "茶園で会った最後の日、吾輩が具合を尋ねると、黒は「鼬の最後っ屁と、肴屋の天秤棒には、もうこりごりだ」と答えた。",
+        "gloss": "at; in",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "この教師の家で、生涯、無名の猫として終わるつもりである。",
+        "gloss": "at; in",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-a02c537e75abb2f7",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "grammatical",
+    "explanation_en": "The particle で marks the setting or basis for an action or statement: where or when something happens, what means or cause is involved, or the role or group within which something applies. The phrase before で supplies that setting or basis. In でも, も adds the sense of “even”; in 話では, で marks the report as the basis for what follows, while は presents it as the topic or frame.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "008a6aa397b1de7ecb998fea7f5c7b443aa7e6fdc3cc9fc192d6c7ee302b48f1",
+    "revision": 4,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b2b73d44bfe45b8e56a1ac2d2ba41da5f0a9f972e4b01973d1212880310dcb6e"
+}

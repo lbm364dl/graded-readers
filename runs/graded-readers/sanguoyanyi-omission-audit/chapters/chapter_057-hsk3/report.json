@@ -1,0 +1,85 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_057-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 467,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了周瑜灵柩回葬、孙权在蕪湖迎祭等细节。",
+      "classification": "material",
+      "reason": "这不仅是仪式描写，还省略了周瑜灵柩回葬的具体地点与孙权亲自迎祭这一事件；接受场景仅概括厚葬，缺少完整的善后行动。",
+      "required_fix": "补充周瑜灵柩运至蕪湖、孙权迎接并哭祭，随后命其厚葬于本乡的情节。"
+    },
+    {
+      "omission_note": "省略了马腾的身世、与马超及马岱商议赴许昌的背景。",
+      "classification": "material",
+      "reason": "马腾的身世、忠诚背景以及与马超、马岱的商议交代了其赴许昌的动机、战略安排和人物关系，影响对后续刺杀与覆灭情节的理解。",
+      "required_fix": "补充马腾的家世经历、与董承衣带诏及刘备的关联，以及马腾、马超、马岱商议赴许昌和分兵部署的背景。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了周瑜灵柩回葬、孙权在蕪湖迎祭等细节。",
+      "classification": "material",
+      "reason": "这不仅是仪式描写，还省略了周瑜灵柩回葬的具体地点与孙权亲自迎祭这一事件；接受场景仅概括厚葬，缺少完整的善后行动。",
+      "required_fix": "补充周瑜灵柩运至蕪湖、孙权迎接并哭祭，随后命其厚葬于本乡的情节。"
+    },
+    {
+      "omission_note": "省略了马腾的身世、与马超及马岱商议赴许昌的背景。",
+      "classification": "material",
+      "reason": "马腾的身世、忠诚背景以及与马超、马岱的商议交代了其赴许昌的动机、战略安排和人物关系，影响对后续刺杀与覆灭情节的理解。",
+      "required_fix": "补充马腾的家世经历、与董承衣带诏及刘备的关联，以及马腾、马超、马岱商议赴许昌和分兵部署的背景。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 8.7,
+    "naturalness": 9.0,
+    "readability": 9.2,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 575,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 8.5,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [
+          "将马腾概括为“出生于羌地”，原文只明确其父与羌人杂处并娶羌女为妻。"
+        ],
+        "distortions": [
+          "“两人并非真有仇怨”弱化并改写了孔明与周瑜之间确有竞争和隔阂的关系；原文只是众将认为世传两人不睦并非全然属实。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 467,
+      "review": {
+        "source_fidelity": 8.7,
+        "naturalness": 9.0,
+        "readability": 9.2,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

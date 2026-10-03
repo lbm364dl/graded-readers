@@ -1,0 +1,126 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_013-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 153,
+  "required_range": [
+    98,
+    182
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了郭汜劫掠宫嬪、李傕断绝饮食等具体情节，但不影响主线复述。",
+      "classification": "material",
+      "reason": "这些细节不仅是装饰：郭汜劫掠宫嬪体现其对宫廷的具体暴行，李傕断绝天子饮食则体现其残暴并加重献帝受困、受辱的处境，属于重要 characterization 和情节信息。",
+      "required_fix": "补述郭汜劫掠宫嬪，以及李傕断绝宫中饮食、以腐肉朽粮供给天子的情节。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了郭汜劫掠宫嬪、李傕断绝饮食等具体情节，但不影响主线复述。",
+      "classification": "material",
+      "reason": "这些细节不仅是装饰：郭汜劫掠宫嬪体现其对宫廷的具体暴行，李傕断绝天子饮食则体现其残暴并加重献帝受困、受辱的处境，属于重要 characterization 和情节信息。",
+      "required_fix": "补述郭汜劫掠宫嬪，以及李傕断绝宫中饮食、以腐肉朽粮供给天子的情节。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 8,
+    "naturalness": 8,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 184,
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 7,
+        "readability": 8,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "“残害宫室百官”表述不准确且不自然：原文是郭汜劫掠宫嫔并焚烧宫殿、监禁公卿；并非“残害宫室”，百官也主要是被监禁而非被残害。"
+        ],
+        "language_problems": [
+          "“残害宫室”搭配不当，建议改为“焚烧宫殿、监禁百官”。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 177,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [
+          "正文含184个CJK字符，超过要求的98–182字符上限。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 182,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [
+          "正文仍超过要求的98–182个CJK字符上限，未完成长度修正。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 4,
+      "candidate_cjk": 143,
+      "review": {
+        "source_fidelity": 8.2,
+        "naturalness": 7.8,
+        "readability": 8.7,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "“杨奉带徐晃、董承救驾到弘农”混淆了时序：徐晃先随杨奉救驾，董承随后来援。"
+        ],
+        "language_problems": [
+          "“断粮只给腐肉坏粮”搭配生硬，建议改为“不给正常粮食，只给腐肉和坏粮”。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 5,
+      "candidate_cjk": 153,
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

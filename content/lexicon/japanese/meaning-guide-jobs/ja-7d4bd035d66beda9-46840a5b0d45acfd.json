@@ -1,0 +1,37 @@
+{
+  "id": "ja-7d4bd035d66beda9-46840a5b0d45acfd",
+  "entry_id": "ja-7d4bd035d66beda9",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-7d4bd035d66beda9",
+      "headword": "美しい",
+      "reading": "うつくしい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-7d4bd035d66beda9-1",
+          "definition": "beautiful"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そして、「猫族が親子の愛を守り、美しい家族の生活をするには、人間と戦い、彼らを滅ぼさなければならない」と言った。",
+        "gloss": "beautiful",
+        "sense_id": "ja-7d4bd035d66beda9-1"
+      },
+      {
+        "sentence": "その目は琥珀より美しかった。",
+        "gloss": "was beautiful",
+        "sense_id": "ja-7d4bd035d66beda9-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0cb3c0fc196a8b0c747944c722dfdb80fc0e7c2fb1f8a076678b16b702654a0f"
+}

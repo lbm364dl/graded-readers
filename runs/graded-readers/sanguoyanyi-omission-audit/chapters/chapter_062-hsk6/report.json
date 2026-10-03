@@ -1,0 +1,83 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_062-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1111,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "“一箭射杀邓贤”明确归因于黄忠，原文只写弓响后邓贤落马，随后说明黄忠救魏延并杀邓贤，未直接说明箭的发射者。",
+      "classification": "material",
+      "reason": "明确把击落邓贤的箭归于黄忠，改变了原文未确定的具体行动者，属于演员归因错误。",
+      "required_fix": "改为“弓弦响后邓贤落马，黄忠随后赶到，救下魏延并杀了邓贤”，不要明确说黄忠射杀邓贤。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "“一箭射杀邓贤”明确归因于黄忠，原文只写弓响后邓贤落马，随后说明黄忠救魏延并杀邓贤，未直接说明箭的发射者。",
+      "classification": "material",
+      "reason": "明确把击落邓贤的箭归于黄忠，改变了原文未确定的具体行动者，属于演员归因错误。",
+      "required_fix": "改为“弓弦响后邓贤落马，黄忠随后赶到，救下魏延并杀了邓贤”，不要明确说黄忠射杀邓贤。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": []
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1044,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [
+          "省略了刘备认为张鲁自守、不敢犯境的判断，削弱了他后来得知张鲁与孙权联络并威胁葭萌关时的意外与因果铺垫。"
+        ],
+        "unsupported_additions": [
+          "将冷苞、邓贤各率一万兵写成确定事实，原文只说分兵二万给二人。"
+        ],
+        "distortions": [
+          "将孙权最终图谋概括为“夺取西川”，原文未明确如此，语境更指向借机夺取荆州。",
+          "将原文许诺的“重赏”改成“重用”，改变了奖赏性质。"
+        ],
+        "language_problems": [
+          "“刘备披甲设法将二人擒下”搭配生硬且过程含混，宜直接写明命人擒拿或设伏擒获。"
+        ],
+        "verdict": "revise",
+        "omissions": []
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 1111,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "passed": true
+    }
+  ]
+}

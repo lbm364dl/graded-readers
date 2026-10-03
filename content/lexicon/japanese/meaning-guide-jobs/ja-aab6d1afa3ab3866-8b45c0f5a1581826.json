@@ -1,0 +1,32 @@
+{
+  "id": "ja-aab6d1afa3ab3866-8b45c0f5a1581826",
+  "entry_id": "ja-aab6d1afa3ab3866",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-aab6d1afa3ab3866",
+      "headword": "馬鹿にする",
+      "reading": "ばかにする",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-aab6d1afa3ab3866-1",
+          "definition": "to make fun of; to ridicule; to look down on"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "猫は吾輩を馬鹿にし、「どこに住んでいる」と聞いた。",
+        "gloss": "make fun of; look down on",
+        "sense_id": "ja-aab6d1afa3ab3866-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ccabed9d46793af5cd21e8692d293b829a2478459510626d7c3afe0663f7432a"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-e63f3f19c1371a84-e13884cb0d82e936",
+  "entry_id": "ja-e63f3f19c1371a84",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e63f3f19c1371a84",
+      "headword": "極める",
+      "reading": "きわめる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e63f3f19c1371a84-1",
+          "definition": "to determine; to settle on"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そこで吾輩は、この家を自分の住家と極めたのである。",
+        "gloss": "settled on; determined",
+        "sense_id": "ja-e63f3f19c1371a84-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7b85b7209c5fd5dcc7c433f71861c0fa4b077b26b6d1f4589cdcc5992d10014b"
+}

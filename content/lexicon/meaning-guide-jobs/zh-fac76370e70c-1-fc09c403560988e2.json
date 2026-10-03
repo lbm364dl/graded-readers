@@ -1,0 +1,31 @@
+{
+  "id": "zh-fac76370e70c-1-fc09c403560988e2",
+  "entry_id": "zh-fac76370e70c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-fac76370e70c-1",
+      "headword": "望风而靡",
+      "kind": "expression",
+      "reading": "wàngfēngérmí",
+      "senses": [
+        {
+          "id": "zh-fac76370e70c-1-s1",
+          "definition": "collapse or give way at the first sign of an opposing force"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "百姓裹着黄巾前来投奔，黄巾军很快有四五十万人，声势浩大，官军望风而靡。",
+        "gloss": "to collapse at the first sign of the enemy",
+        "sense_id": "zh-fac76370e70c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "91587b056b3f63b77a3acc11a12b40d12655da0633c0e59017f0c6636b65cc0c"
+}

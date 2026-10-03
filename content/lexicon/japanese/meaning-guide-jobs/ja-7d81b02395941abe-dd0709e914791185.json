@@ -1,0 +1,32 @@
+{
+  "id": "ja-7d81b02395941abe-dd0709e914791185",
+  "entry_id": "ja-7d81b02395941abe",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-7d81b02395941abe",
+      "headword": "そのまま",
+      "reading": "そのまま",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-7d81b02395941abe-1",
+          "definition": "as it is; in the same state or condition"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "人間をそのままにしておけば、猫の生活はいつまでも安心できない、というのである。",
+        "gloss": "as it is",
+        "sense_id": "ja-7d81b02395941abe-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "744bc59fea8c98ae9d4bc5add50a05fcb4078cdd29d0fb351c7054813a754c0a"
+}

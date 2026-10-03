@@ -1,0 +1,31 @@
+{
+  "id": "zh-0da5fabcb550-1-0ec1e89400f870dc",
+  "entry_id": "zh-0da5fabcb550-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-0da5fabcb550-1",
+      "headword": "店门",
+      "kind": "word",
+      "reading": "diànmén",
+      "senses": [
+        {
+          "id": "zh-0da5fabcb550-1-s1",
+          "definition": "shop entrance or doorway"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "正饮酒时，一个大汉推着一辆车来到店门前休息，进门便叫酒保斟酒，说要赶进城投军。",
+        "gloss": "shop door",
+        "sense_id": "zh-0da5fabcb550-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b7c06e88985630f403c672682aa3eac5b317b3c58f0039954c5f3bda263465a8"
+}

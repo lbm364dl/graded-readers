@@ -1,0 +1,31 @@
+{
+  "id": "zh-c73cd6744dbc-1-590b3f09ade204a3",
+  "entry_id": "zh-c73cd6744dbc-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c73cd6744dbc-1",
+      "headword": "妇寺",
+      "kind": "word",
+      "reading": "fùsì",
+      "senses": [
+        {
+          "id": "zh-c73cd6744dbc-1-s1",
+          "definition": "women and eunuchs"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "议郎蔡邕上疏直言，说雌鸡变雄等灾异，是妇寺干政造成的。",
+        "gloss": "women and eunuchs",
+        "sense_id": "zh-c73cd6744dbc-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0edb79e5093074f77857dc7af63669cc8146a707a042296a59926720da7c2e57"
+}

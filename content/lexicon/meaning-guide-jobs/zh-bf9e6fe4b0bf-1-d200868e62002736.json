@@ -1,0 +1,31 @@
+{
+  "id": "zh-bf9e6fe4b0bf-1-d200868e62002736",
+  "entry_id": "zh-bf9e6fe4b0bf-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-bf9e6fe4b0bf-1",
+      "headword": "起初",
+      "kind": "word",
+      "reading": "qǐchū",
+      "senses": [
+        {
+          "id": "zh-bf9e6fe4b0bf-1-s1",
+          "definition": "at first; initially"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "许劭起初不肯回答，后来才说，他是太平时的能臣，乱世中的奸雄。",
+        "gloss": "at first",
+        "sense_id": "zh-bf9e6fe4b0bf-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a533fa67a7bde4f1f6858bfe711272a7ee2b33f000c5fb45aabaff73a7713d27"
+}

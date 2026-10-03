@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_054-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 836,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "原文中贾华奉命是在国太不喜时擒下刘备，改写为“擒杀”，将擒拿与后续可能处死的意图合并，程度略有加重。",
+      "classification": "material",
+      "reason": "“擒杀”将原文仅擒拿刘备的预定行动改成擒拿并杀害，改变了计划中的具体处置结果。",
+      "required_fix": "将“擒杀”改为“擒下”或“拿下”，即国太不喜时将刘备擒拿。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "原文中贾华奉命是在国太不喜时擒下刘备，改写为“擒杀”，将擒拿与后续可能处死的意图合并，程度略有加重。",
+      "classification": "material",
+      "reason": "“擒杀”将原文仅擒拿刘备的预定行动改成擒拿并杀害，改变了计划中的具体处置结果。",
+      "required_fix": "将“擒杀”改为“擒下”或“拿下”，即国太不喜时将刘备擒拿。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 836,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

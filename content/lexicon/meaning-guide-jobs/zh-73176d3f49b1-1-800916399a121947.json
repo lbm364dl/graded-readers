@@ -1,0 +1,31 @@
+{
+  "id": "zh-73176d3f49b1-1-800916399a121947",
+  "entry_id": "zh-73176d3f49b1-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-73176d3f49b1-1",
+      "headword": "特意",
+      "kind": "word",
+      "reading": "tèyì",
+      "senses": [
+        {
+          "id": "zh-73176d3f49b1-1-s1",
+          "definition": "deliberately; specially, with a particular purpose in mind"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "如今听说这里招军破贼，特意前来投军。",
+        "gloss": " специально; deliberately",
+        "sense_id": "zh-73176d3f49b1-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5c283ff1769473c0cbe18c34e489ef3da742ba289806cc186eeead7c48c0e5aa"
+}

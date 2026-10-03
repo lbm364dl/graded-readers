@@ -1,0 +1,41 @@
+{
+  "id": "zh-6679614a9671-1-ec7b0159ddd95f19",
+  "entry_id": "zh-6679614a9671-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6679614a9671-1",
+      "headword": "唐州",
+      "kind": "name",
+      "reading": "Táng Zhōu",
+      "senses": [
+        {
+          "id": "zh-6679614a9671-1-s1",
+          "definition": "Tang Zhou, a person's name"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角又让弟子唐州送信，唐州却到朝廷告发。",
+        "gloss": "Tang Zhou",
+        "sense_id": "zh-6679614a9671-1-s1"
+      },
+      {
+        "sentence": "他们又派弟子唐州送信给封谞。",
+        "gloss": "Tangzhou",
+        "sense_id": "zh-6679614a9671-1-s1"
+      },
+      {
+        "sentence": "不料唐州直接到朝廷告发此事。",
+        "gloss": "Tangzhou",
+        "sense_id": "zh-6679614a9671-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8a372400ab21ce875825d857deada4b7bc319d1c4e917092c08c76f630b82c06"
+}

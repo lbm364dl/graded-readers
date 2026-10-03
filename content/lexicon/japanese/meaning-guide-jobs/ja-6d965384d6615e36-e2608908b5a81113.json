@@ -1,0 +1,32 @@
+{
+  "id": "ja-6d965384d6615e36-e2608908b5a81113",
+  "entry_id": "ja-6d965384d6615e36",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-6d965384d6615e36",
+      "headword": "親子",
+      "reading": "おやこ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-6d965384d6615e36-1",
+          "definition": "parent and child"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そして、「猫族が親子の愛を守り、美しい家族の生活をするには、人間と戦い、彼らを滅ぼさなければならない」と言った。",
+        "gloss": "parent and child",
+        "sense_id": "ja-6d965384d6615e36-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7b44e8c5b0e5b2667864d819790e57af2679fa4ca1a292c5d1900c1d8c7e58bc"
+}

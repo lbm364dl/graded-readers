@@ -1,0 +1,32 @@
+{
+  "id": "ja-86732943a7013e63-da77faa2cbe703e1",
+  "entry_id": "ja-86732943a7013e63",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-86732943a7013e63",
+      "headword": "我々",
+      "reading": "われわれ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-86732943a7013e63-1",
+          "definition": "we; us"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "我々猫の間では、目刺しの頭でも、ぼらのへそでも、最初に見つけた者が食べる権利を持つ。",
+        "gloss": "we; us",
+        "sense_id": "ja-86732943a7013e63-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f4952f41eb6d7e0cb4c069de4695433e8b9ff672772f8d3518455349191e2a8b"
+}

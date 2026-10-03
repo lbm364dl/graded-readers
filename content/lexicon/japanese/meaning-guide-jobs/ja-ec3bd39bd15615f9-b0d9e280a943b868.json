@@ -1,0 +1,32 @@
+{
+  "id": "ja-ec3bd39bd15615f9-b0d9e280a943b868",
+  "entry_id": "ja-ec3bd39bd15615f9",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ec3bd39bd15615f9",
+      "headword": "お金",
+      "reading": "おかね",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-ec3bd39bd15615f9-1",
+          "definition": "money"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "誰がとったか分からないので、お金をもらうのだという。",
+        "gloss": "money",
+        "sense_id": "ja-ec3bd39bd15615f9-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "613fa9054b5b0d30a264a46799e444465b56d355c7084bb868f169f67311fb7a"
+}

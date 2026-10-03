@@ -1,0 +1,31 @@
+{
+  "id": "zh-09254c836d35-1-5101cce650d8b592",
+  "entry_id": "zh-09254c836d35-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-09254c836d35-1",
+      "headword": "途中",
+      "kind": "word",
+      "reading": "túzhōng",
+      "senses": [
+        {
+          "id": "zh-09254c836d35-1-s1",
+          "definition": "along the way; while traveling from one place to another"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备奉命带兵返回，途中遇到一队汉军，正押送一辆囚车。",
+        "gloss": "on the way",
+        "sense_id": "zh-09254c836d35-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c56fc95477a35e553fe36d2634cbd29c587580ee99e22696123292cab2cece63"
+}

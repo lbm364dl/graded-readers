@@ -1,0 +1,42 @@
+{
+  "id": "ja-a1c4e2b589a9c591-9e485a43df221f81",
+  "entry_id": "ja-a1c4e2b589a9c591",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a1c4e2b589a9c591",
+      "headword": "手のひら",
+      "reading": "てのひら",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-a1c4e2b589a9c591-1",
+          "definition": "the palm of the hand"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ただ、書生の手のひらに乗せられて、すっと上へ持ち上げられた時、何だかふわふわするような感じがしただけだった。",
+        "gloss": "palm of the hand",
+        "sense_id": "ja-a1c4e2b589a9c591-1"
+      },
+      {
+        "sentence": "手のひらの上で少し落ち着いてから、吾輩は書生の顔を見た。",
+        "gloss": "palm of the hand",
+        "sense_id": "ja-a1c4e2b589a9c591-1"
+      },
+      {
+        "sentence": "この書生の手のひらの上で、吾輩はしばらく気持ちよく座っていた。",
+        "gloss": "palm of the hand",
+        "sense_id": "ja-a1c4e2b589a9c591-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d5bd96f4d9244615f871655eb1f2b1c03fd61d06084e2edbd9c77a2ce00d25f4"
+}

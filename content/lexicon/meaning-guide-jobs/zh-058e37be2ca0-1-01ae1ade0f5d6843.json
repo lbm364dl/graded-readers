@@ -1,0 +1,31 @@
+{
+  "id": "zh-058e37be2ca0-1-01ae1ade0f5d6843",
+  "entry_id": "zh-058e37be2ca0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-058e37be2ca0-1",
+      "headword": "奔走",
+      "kind": "word",
+      "reading": "bēnzǒu",
+      "senses": [
+        {
+          "id": "zh-058e37be2ca0-1-s1",
+          "definition": "to run about; move around hurriedly"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "灵帝惊倒，左右急忙救他入宫，百官奔走躲避。",
+        "gloss": "to run about",
+        "sense_id": "zh-058e37be2ca0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0df96f86d33caaee20d5a8986690766f174f3636a82d648b7094f3a9d70a0440"
+}

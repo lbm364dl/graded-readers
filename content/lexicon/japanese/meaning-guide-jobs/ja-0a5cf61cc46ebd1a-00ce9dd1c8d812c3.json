@@ -1,0 +1,32 @@
+{
+  "id": "ja-0a5cf61cc46ebd1a-00ce9dd1c8d812c3",
+  "entry_id": "ja-0a5cf61cc46ebd1a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-0a5cf61cc46ebd1a",
+      "headword": "寒くなる",
+      "reading": "さむくなる",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-0a5cf61cc46ebd1a-1",
+          "definition": "to become cold"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "腹が減り、寒くなったので、食べ物を求めて池のそばを歩いた。",
+        "gloss": "became cold",
+        "sense_id": "ja-0a5cf61cc46ebd1a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7f16f4b3b227055127cb768a91917f13bd6f57197f7bfcb492ec5652c7e5d6ef"
+}

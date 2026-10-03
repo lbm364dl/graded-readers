@@ -1,0 +1,37 @@
+{
+  "id": "ja-69bca44c707cdf61-d021e50a6dcbd384",
+  "entry_id": "ja-69bca44c707cdf61",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-69bca44c707cdf61",
+      "headword": "物",
+      "reading": "もの",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-69bca44c707cdf61-1",
+          "definition": "a person or thing; people associated with a household"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "家のものは勉強家だと思っているが、実際はそうでもない。",
+        "gloss": "people; members of the household",
+        "sense_id": "ja-69bca44c707cdf61-1"
+      },
+      {
+        "sentence": "吾輩はこの家で、主人以外のものには不人望だった。",
+        "gloss": "people; things",
+        "sense_id": "ja-69bca44c707cdf61-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8e0cac86e8937a83f4bb5c4c13e42815d1b0cf8333834d746488c0329df9bba1"
+}

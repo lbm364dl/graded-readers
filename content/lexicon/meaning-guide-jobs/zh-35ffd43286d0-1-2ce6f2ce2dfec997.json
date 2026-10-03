@@ -1,0 +1,31 @@
+{
+  "id": "zh-35ffd43286d0-1-2ce6f2ce2dfec997",
+  "entry_id": "zh-35ffd43286d0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-35ffd43286d0-1",
+      "headword": "很快",
+      "kind": "word",
+      "reading": "hěnkuài",
+      "senses": [
+        {
+          "id": "zh-35ffd43286d0-1-s1",
+          "definition": "quickly; in a short time"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”三人于是发动黄巾起事，百姓纷纷跟随，黄巾军很快壮大。",
+        "gloss": "quickly",
+        "sense_id": "zh-35ffd43286d0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a2027b931019b76e8a2787b86c8d5be5b10094e59add11d0a635b300ab43e7e3"
+}

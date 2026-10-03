@@ -1,0 +1,31 @@
+{
+  "id": "zh-0152a1a50e1c-1-11ab13b827cffc75",
+  "entry_id": "zh-0152a1a50e1c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-0152a1a50e1c-1",
+      "headword": "再拜",
+      "kind": "word",
+      "reading": "zàibài",
+      "senses": [
+        {
+          "id": "zh-0152a1a50e1c-1-s1",
+          "definition": "to bow again; to make another bow"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人备好祭品，烧香行礼，再拜后发誓。",
+        "gloss": "to bow twice",
+        "sense_id": "zh-0152a1a50e1c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b2e17b0caa53e768e5597f52f4ffa73ff432697c8b9e677c4c72e2d0442ed802"
+}

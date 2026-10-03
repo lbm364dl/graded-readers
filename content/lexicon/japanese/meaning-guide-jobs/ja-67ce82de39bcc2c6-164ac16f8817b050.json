@@ -1,0 +1,32 @@
+{
+  "id": "ja-67ce82de39bcc2c6-164ac16f8817b050",
+  "entry_id": "ja-67ce82de39bcc2c6",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-67ce82de39bcc2c6",
+      "headword": "考える",
+      "reading": "かんがえる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-67ce82de39bcc2c6-1",
+          "definition": "to think; to consider"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は何も考えないで、怖くなかった。",
+        "gloss": "without thinking",
+        "sense_id": "ja-67ce82de39bcc2c6-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "79f467dad98aa631bfc8ff140b70ae2084a023b84d54ee75c6be870bae47c932"
+}

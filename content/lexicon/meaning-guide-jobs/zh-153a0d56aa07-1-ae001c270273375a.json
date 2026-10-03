@@ -1,0 +1,31 @@
+{
+  "id": "zh-153a0d56aa07-1-ae001c270273375a",
+  "entry_id": "zh-153a0d56aa07-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-153a0d56aa07-1",
+      "headword": "小字",
+      "kind": "word",
+      "reading": "xiǎozì",
+      "senses": [
+        {
+          "id": "zh-153a0d56aa07-1-s1",
+          "definition": "a childhood name, an informal name used when someone was young"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "为首的是曹操，字孟德，小字阿瞒，又名吉利。",
+        "gloss": "childhood name",
+        "sense_id": "zh-153a0d56aa07-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c5183183ee20a89b5b5e7fa8fcd781270f28c1e59fcb37a7140a5c3602c0721e"
+}

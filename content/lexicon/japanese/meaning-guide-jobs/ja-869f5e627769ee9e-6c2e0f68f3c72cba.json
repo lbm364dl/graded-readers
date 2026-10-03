@@ -1,0 +1,32 @@
+{
+  "id": "ja-869f5e627769ee9e-6c2e0f68f3c72cba",
+  "entry_id": "ja-869f5e627769ee9e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-869f5e627769ee9e",
+      "headword": "月給日",
+      "reading": "げっきゅうび",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-869f5e627769ee9e-1",
+          "definition": "payday"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩がこの家に住み始めて一月ほどたった、ある月給日のことだった。",
+        "gloss": "payday",
+        "sense_id": "ja-869f5e627769ee9e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "892c9221984735d3c6537bf925a16afe787985eef19ed5ce1882a61ebb614864"
+}

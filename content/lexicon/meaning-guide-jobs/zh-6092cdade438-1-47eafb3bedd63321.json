@@ -1,0 +1,31 @@
+{
+  "id": "zh-6092cdade438-1-47eafb3bedd63321",
+  "entry_id": "zh-6092cdade438-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6092cdade438-1",
+      "headword": "四五十",
+      "kind": "word",
+      "reading": "sìwǔshí",
+      "senses": [
+        {
+          "id": "zh-6092cdade438-1-s1",
+          "definition": "approximately forty or fifty"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "百姓裹着黄巾前来投奔，黄巾军很快有四五十万人，声势浩大，官军望风而靡。",
+        "gloss": "forty or fifty",
+        "sense_id": "zh-6092cdade438-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "72ebb3295714065e1cb3eae765b3c1f48e9933b256b7e43b6d41faa50897389b"
+}

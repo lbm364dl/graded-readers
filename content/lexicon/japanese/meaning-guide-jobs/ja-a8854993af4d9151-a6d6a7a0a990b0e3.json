@@ -1,0 +1,32 @@
+{
+  "id": "ja-a8854993af4d9151-a6d6a7a0a990b0e3",
+  "entry_id": "ja-a8854993af4d9151",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a8854993af4d9151",
+      "headword": "こりごりだ",
+      "reading": "こりごりだ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-a8854993af4d9151-1",
+          "definition": "to be thoroughly fed up with; to have had enough of something, especially after an unpleasant experience"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "元気も体格も失った黒は、最後に「いたちと魚屋の天秤棒には、もうこりごりだ」と言った。",
+        "gloss": "be completely fed up with",
+        "sense_id": "ja-a8854993af4d9151-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "21d5d185ac2c8cc2dbf9188fe2664977324049ad5f60a2ef00ddb7c0cb6d1a2e"
+}

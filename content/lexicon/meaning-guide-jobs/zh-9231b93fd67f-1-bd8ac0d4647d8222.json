@@ -1,0 +1,31 @@
+{
+  "id": "zh-9231b93fd67f-1-bd8ac0d4647d8222",
+  "entry_id": "zh-9231b93fd67f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9231b93fd67f-1",
+      "headword": "儿子",
+      "kind": "word",
+      "reading": "érzi",
+      "senses": [
+        {
+          "id": "zh-9231b93fd67f-1-s1",
+          "definition": "son"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘胜的儿子刘贞曾被封为涿鹿亭侯，后来因未按规定缴纳酬金而失侯，这一支便留在涿县。",
+        "gloss": "son",
+        "sense_id": "zh-9231b93fd67f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0b23ed6264bfea20b1eeea419cd569b0f9f0e28750f0263786a02389a59ba7f0"
+}

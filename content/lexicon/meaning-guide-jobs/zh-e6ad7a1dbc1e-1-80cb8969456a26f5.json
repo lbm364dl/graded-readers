@@ -1,0 +1,31 @@
+{
+  "id": "zh-e6ad7a1dbc1e-1-80cb8969456a26f5",
+  "entry_id": "zh-e6ad7a1dbc1e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e6ad7a1dbc1e-1",
+      "headword": "以后",
+      "kind": "word",
+      "reading": "yǐhòu",
+      "senses": [
+        {
+          "id": "zh-e6ad7a1dbc1e-1-s1",
+          "definition": "afterward; from then on"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "以后，刘备去找卢植。",
+        "gloss": "afterward",
+        "sense_id": "zh-e6ad7a1dbc1e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9e8c758c48a20f7f2c1d8c34aee5f31742ccd33d9ef74e904b1b5c152ea4ae30"
+}

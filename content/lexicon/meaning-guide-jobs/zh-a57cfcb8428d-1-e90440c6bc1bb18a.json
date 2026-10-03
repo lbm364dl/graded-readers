@@ -1,0 +1,56 @@
+{
+  "id": "zh-a57cfcb8428d-1-e90440c6bc1bb18a",
+  "entry_id": "zh-a57cfcb8428d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a57cfcb8428d-1",
+      "headword": "帮助",
+      "kind": "word",
+      "reading": "bāngzhù",
+      "senses": [
+        {
+          "id": "zh-a57cfcb8428d-1-s1",
+          "definition": "to help or assist"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他对邹靖说：“我曾经跟卢植学习，现在愿意去帮助他。",
+        "gloss": "help",
+        "sense_id": "zh-a57cfcb8428d-1-s1"
+      },
+      {
+        "sentence": "皇甫嵩判断张梁、张宝很可能回广宗找张角，便让刘备回去帮助卢植。",
+        "gloss": "help",
+        "sense_id": "zh-a57cfcb8428d-1-s1"
+      },
+      {
+        "sentence": "叔父觉得这孩子与众不同，常常帮助他。",
+        "gloss": "to help",
+        "sense_id": "zh-a57cfcb8428d-1-s1"
+      },
+      {
+        "sentence": "二人了解后很高兴，赠送五十匹好马、金银五百两和铁一千斤，帮助三人打造兵器。",
+        "gloss": "to help",
+        "sense_id": "zh-a57cfcb8428d-1-s1"
+      },
+      {
+        "sentence": "”他让关羽带一千人埋伏在山左，张飞带一千人埋伏在山右，听到信号就出来帮助。",
+        "gloss": "to help",
+        "sense_id": "zh-a57cfcb8428d-1-s1"
+      },
+      {
+        "sentence": "刘备之前跟卢植学习，听说老师正在广宗和黄巾军作战，便想去帮助他。",
+        "gloss": "help",
+        "sense_id": "zh-a57cfcb8428d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5dd38008b16e9f971a2f89679665b721c9a42e04a4c6c1a7b376ddc1fe868f94"
+}

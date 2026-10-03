@@ -1,0 +1,36 @@
+{
+  "id": "zh-c9b72d88ee34-1-4cf7c74e3cdc712f",
+  "entry_id": "zh-c9b72d88ee34-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c9b72d88ee34-1",
+      "headword": "寿长",
+      "kind": "name",
+      "reading": "Shòu Cháng",
+      "senses": [
+        {
+          "id": "zh-c9b72d88ee34-1-s1",
+          "definition": "Shou Chang, a courtesy name"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "那人姓关，名羽，字寿长，后来改字云长，是河东解良人。",
+        "gloss": "Shou Chang",
+        "sense_id": "zh-c9b72d88ee34-1-s1"
+      },
+      {
+        "sentence": "那人说：“我姓关，名羽，字寿长，后改字云长，是河东解良人。",
+        "gloss": "Shou Chang",
+        "sense_id": "zh-c9b72d88ee34-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3beab19b8e0435147de8c27fbb94a28d0b8da0a1cc13d00198efb8034be3e611"
+}

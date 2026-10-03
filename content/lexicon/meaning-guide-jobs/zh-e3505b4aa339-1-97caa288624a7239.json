@@ -1,0 +1,31 @@
+{
+  "id": "zh-e3505b4aa339-1-97caa288624a7239",
+  "entry_id": "zh-e3505b4aa339-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e3505b4aa339-1",
+      "headword": "太傅",
+      "kind": "word",
+      "reading": "tàifù",
+      "senses": [
+        {
+          "id": "zh-e3505b4aa339-1-s1",
+          "definition": "Grand Tutor, a high-ranking official title"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "桓帝死后，灵帝即位，大将军窦武、太傅陈蕃一同辅佐他。",
+        "gloss": "Grand Tutor",
+        "sense_id": "zh-e3505b4aa339-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "65f37707b5ea97761eb6b4abb6836f1160a184cea4ba74b3fe3a7ad4fada55c9"
+}

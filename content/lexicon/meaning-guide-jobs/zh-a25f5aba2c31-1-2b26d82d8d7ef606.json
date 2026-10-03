@@ -1,0 +1,31 @@
+{
+  "id": "zh-a25f5aba2c31-1-2b26d82d8d7ef606",
+  "entry_id": "zh-a25f5aba2c31-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a25f5aba2c31-1",
+      "headword": "犯法",
+      "kind": "word",
+      "reading": "fànfǎ",
+      "senses": [
+        {
+          "id": "zh-a25f5aba2c31-1-s1",
+          "definition": "to break the law"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "于是，城内城外的人都不敢犯法，曹操也获得了很大的威名。",
+        "gloss": "to break the law",
+        "sense_id": "zh-a25f5aba2c31-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "22ea0d4602bd2c16e604f4f6eae013427f220eb358464614b033963ec5f15d2c"
+}

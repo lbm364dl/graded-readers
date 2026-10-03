@@ -1,0 +1,31 @@
+{
+  "id": "zh-6e6bc0e3272e-1-ebac90f5d95bcbb6",
+  "entry_id": "zh-6e6bc0e3272e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6e6bc0e3272e-1",
+      "headword": "交战",
+      "kind": "word",
+      "reading": "jiāozhàn",
+      "senses": [
+        {
+          "id": "zh-6e6bc0e3272e-1-s1",
+          "definition": "engage in battle"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "到了颍川，刘备听说皇甫嵩、朱隽正在和黄巾军交战。",
+        "gloss": "fight",
+        "sense_id": "zh-6e6bc0e3272e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4483948f9c5069bda773c6bc264364f60fa8131408520c5a892863e714e768cc"
+}

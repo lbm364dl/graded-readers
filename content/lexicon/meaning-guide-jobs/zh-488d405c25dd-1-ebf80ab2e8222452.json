@@ -1,0 +1,31 @@
+{
+  "id": "zh-488d405c25dd-1-ebf80ab2e8222452",
+  "entry_id": "zh-488d405c25dd-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-488d405c25dd-1",
+      "headword": "拿出",
+      "kind": "construction",
+      "reading": "náchū",
+      "senses": [
+        {
+          "id": "zh-488d405c25dd-1-s1",
+          "definition": "to take out; bring something forth"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞愿意拿出钱财，招募乡勇，和刘备一起做大事。",
+        "gloss": "to take out; provide",
+        "sense_id": "zh-488d405c25dd-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "16f02c164bcbde1d5b22fd42798efea9f2bf82ab0d693d9cbcc9b1939c597597"
+}

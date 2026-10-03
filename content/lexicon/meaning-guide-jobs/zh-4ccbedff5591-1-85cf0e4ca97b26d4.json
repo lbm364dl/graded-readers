@@ -1,0 +1,31 @@
+{
+  "id": "zh-4ccbedff5591-1-85cf0e4ca97b26d4",
+  "entry_id": "zh-4ccbedff5591-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4ccbedff5591-1",
+      "headword": "实在",
+      "kind": "word",
+      "reading": "shízài",
+      "senses": [
+        {
+          "id": "zh-4ccbedff5591-1-s1",
+          "definition": "really; indeed"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他对两个弟弟说，最难得到的就是民心，如今民心已经归顺，若不趁势夺取天下，实在可惜。",
+        "gloss": "really; indeed",
+        "sense_id": "zh-4ccbedff5591-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "67eff767984dfd49729100532a603bc3bd9f3e9a0ca520f275659ea7cd9226d8"
+}

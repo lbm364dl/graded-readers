@@ -1,0 +1,31 @@
+{
+  "id": "zh-c97142705b80-1-0284337892d3f9d9",
+  "entry_id": "zh-c97142705b80-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c97142705b80-1",
+      "headword": "民兵",
+      "kind": "word",
+      "reading": "mínbīng",
+      "senses": [
+        {
+          "id": "zh-c97142705b80-1-s1",
+          "definition": "local militia; civilian troops"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "龚景率民兵出城助战，黄巾军死伤惨重，最终解开了青州之围。",
+        "gloss": "militia",
+        "sense_id": "zh-c97142705b80-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f000dbd9925f93555af2fe947b501d892762b97b9094cbb596fa9bbaeb101563"
+}

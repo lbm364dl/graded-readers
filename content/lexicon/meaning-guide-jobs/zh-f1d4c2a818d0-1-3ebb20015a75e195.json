@@ -1,0 +1,31 @@
+{
+  "id": "zh-f1d4c2a818d0-1-3ebb20015a75e195",
+  "entry_id": "zh-f1d4c2a818d0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f1d4c2a818d0-1",
+      "headword": "军士",
+      "kind": "word",
+      "reading": "jūnshì",
+      "senses": [
+        {
+          "id": "zh-f1d4c2a818d0-1-s1",
+          "definition": "a soldier; a member of the military"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘焉亲自迎接他们，并奖赏军士。",
+        "gloss": "soldiers",
+        "sense_id": "zh-f1d4c2a818d0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "845b47f0c94b1d23a69b49bbe04f4bb71fca3d5c9d2147e9337abc73a04397c3"
+}

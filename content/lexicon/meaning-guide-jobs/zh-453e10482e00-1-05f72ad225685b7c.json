@@ -1,0 +1,31 @@
+{
+  "id": "zh-453e10482e00-1-05f72ad225685b7c",
+  "entry_id": "zh-453e10482e00-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-453e10482e00-1",
+      "headword": "陷害",
+      "kind": "word",
+      "reading": "xiànhài",
+      "senses": [
+        {
+          "id": "zh-453e10482e00-1-s1",
+          "definition": "to frame; to cause someone to be wrongly accused or harmed"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹节偷看奏章后，立即告诉身边的人，于是宦官借别的事陷害蔡邕，皇帝把他放归田里。",
+        "gloss": "frame; entrap",
+        "sense_id": "zh-453e10482e00-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "54b4036c5fa9ebcfdadec1a002092ef2ea8112ef2282e38d64943ab4fe36f9e6"
+}

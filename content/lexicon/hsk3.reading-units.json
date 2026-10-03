@@ -1,0 +1,219 @@
+{
+  "schema_version": 1,
+  "policy_version": 3,
+  "source_fingerprint": "658174c7f6f56fee4818255fc841f72ed78838c5bd49dcf177b4784419fdc56d",
+  "reviewed": true,
+  "model": "gpt-6-luna",
+  "proposal_effort": "low",
+  "review_effort": "high",
+  "chapters": {
+    "1": [
+      {
+        "first_segment": 200,
+        "last_segment": 201,
+        "text": "到了",
+        "pinyin": "dàole",
+        "meaning_en": "arrived",
+        "explanation_en": "到 is the arrival predicate; the attached 了 marks the arrival as a completed event. The subject and destination remain outside this unit."
+      },
+      {
+        "first_segment": 234,
+        "last_segment": 235,
+        "text": "看着",
+        "pinyin": "kànzhe",
+        "meaning_en": "keep looking",
+        "explanation_en": "看 is “look,” and the attached durative 着 presents the looking as ongoing. The object stays separate."
+      },
+      {
+        "first_segment": 287,
+        "last_segment": 288,
+        "text": "推着",
+        "pinyin": "tuīzhe",
+        "meaning_en": "be pushing",
+        "explanation_en": "推 means “push”; attached 着 marks the action as ongoing while the cart remains a separate object."
+      },
+      {
+        "first_segment": 342,
+        "last_segment": 344,
+        "text": "开得正好",
+        "pinyin": "kāi de zhènghǎo",
+        "meaning_en": "bloom just right",
+        "explanation_en": "开 means “bloom”; 得 links it to 正好, which describes the degree or manner of the blooming."
+      },
+      {
+        "first_segment": 354,
+        "last_segment": 355,
+        "text": "结为兄弟",
+        "pinyin": "jiéwéi xiōngdì",
+        "meaning_en": "become brothers",
+        "explanation_en": "结 means “form,” and 为 introduces the resulting status 兄弟. Together they describe entering that relationship, rather than merely tying or forming an unspecified object."
+      },
+      {
+        "first_segment": 384,
+        "last_segment": 385,
+        "text": "带着",
+        "pinyin": "dàizhe",
+        "meaning_en": "bring along",
+        "explanation_en": "带 means “bring” or “take”; attached 着 presents the group of horses as accompanying what the merchant brings. The horses remain separate."
+      },
+      {
+        "first_segment": 499,
+        "last_segment": 500,
+        "text": "斩了",
+        "pinyin": "zhǎn le",
+        "meaning_en": "cut down",
+        "explanation_en": "斩 means “cut down”; attached 了 marks the action as completed. The person acted on remains separate."
+      },
+      {
+        "first_segment": 515,
+        "last_segment": 516,
+        "text": "取得了",
+        "pinyin": "qǔdé le",
+        "meaning_en": "achieved",
+        "explanation_en": "取得 means “obtain” or “achieve”; attached 了 marks this achievement as a completed event. The victory remains separate."
+      },
+      {
+        "first_segment": 537,
+        "last_segment": 538,
+        "text": "围住了",
+        "pinyin": "wéizhù le",
+        "meaning_en": "surrounded",
+        "explanation_en": "围 means “surround,” and resultative 住 conveys the enclosing result; attached 了 marks the event as completed. The city remains separate."
+      },
+      {
+        "first_segment": 635,
+        "last_segment": 636,
+        "text": "打了",
+        "pinyin": "dǎ le",
+        "meaning_en": "fought",
+        "explanation_en": "打 means “fight”; attached 了 marks the bounded action before the separate duration phrase 一会儿."
+      },
+      {
+        "first_segment": 645,
+        "last_segment": 646,
+        "text": "占了",
+        "pinyin": "zhàn le",
+        "meaning_en": "gained",
+        "explanation_en": "占 means “gain” or “occupy”; attached 了 marks the change as having occurred. The advantage remains separate."
+      },
+      {
+        "first_segment": 774,
+        "last_segment": 775,
+        "text": "到了",
+        "pinyin": "dàole",
+        "meaning_en": "arrived",
+        "explanation_en": "到 is the arrival predicate; the attached 了 marks arrival as a completed event. The destination remains separate."
+      },
+      {
+        "first_segment": 792,
+        "last_segment": 793,
+        "text": "靠着",
+        "pinyin": "kàozhe",
+        "meaning_en": "be situated beside",
+        "explanation_en": "靠 means “be beside” or “lean against”; attached 着 presents the resulting position as continuing. The location stays separate."
+      },
+      {
+        "first_segment": 856,
+        "last_segment": 857,
+        "text": "打着",
+        "pinyin": "dǎzhe",
+        "meaning_en": "be carrying or holding",
+        "explanation_en": "打 means “hold” here; attached 着 presents that as a continuing state. 打着红旗 describes the army, with 红旗 as the separate object and 的 linking the description to 军队。 The context supports carrying or holding flags, without specifying how they are held aloft or displayed."
+      },
+      {
+        "first_segment": 863,
+        "last_segment": 864,
+        "text": "挡住了",
+        "pinyin": "dǎngzhù le",
+        "meaning_en": "blocked",
+        "explanation_en": "挡 means “block,” and resultative 住 conveys that the way is obstructed; attached 了 marks the result as achieved. The route remains separate."
+      },
+      {
+        "first_segment": 873,
+        "last_segment": 874,
+        "text": "带着",
+        "pinyin": "dàizhe",
+        "meaning_en": "take along",
+        "explanation_en": "带 means “take” or “bring”; attached 着 presents the people as accompanying the group as they flee. 剩下的人 is the separate object of 带着."
+      },
+      {
+        "first_segment": 934,
+        "last_segment": 935,
+        "text": "关着",
+        "pinyin": "guānzhe",
+        "meaning_en": "be confined",
+        "explanation_en": "关 means “confine”; attached durative 着 describes the person’s ongoing confined state. 的 and 人 remain outside the unit."
+      },
+      {
+        "first_segment": 987,
+        "last_segment": 988,
+        "text": "听完",
+        "pinyin": "tīngwán",
+        "meaning_en": "finish listening",
+        "explanation_en": "听 means “listen,” and resultative 完 marks the listening as completed."
+      },
+      {
+        "first_segment": 998,
+        "last_segment": 999,
+        "text": "救下",
+        "pinyin": "jiùxià",
+        "meaning_en": "rescue successfully",
+        "explanation_en": "救 means “save”; resultative 下 presents the person as successfully saved or secured. The person remains separate."
+      },
+      {
+        "first_segment": 1023,
+        "last_segment": 1024,
+        "text": "押走",
+        "pinyin": "yāzǒu",
+        "meaning_en": "take away under escort",
+        "explanation_en": "押 means “escort under guard,” and directional 走 adds movement away. 后, which marks what follows, stays separate."
+      },
+      {
+        "first_segment": 1034,
+        "last_segment": 1035,
+        "text": "同意了",
+        "pinyin": "tóngyì le",
+        "meaning_en": "agreed",
+        "explanation_en": "同意 means “agree”; attached 了 marks the agreement as an event that occurred."
+      },
+      {
+        "first_segment": 1057,
+        "last_segment": 1058,
+        "text": "冲上去",
+        "pinyin": "chōng shàngqu",
+        "meaning_en": "rush forward",
+        "explanation_en": "冲 means “rush”; directional 上去 adds movement upward and away from the reference point. In this unstressed directional use, 去 is neutral tone."
+      },
+      {
+        "first_segment": 1064,
+        "last_segment": 1065,
+        "text": "救下",
+        "pinyin": "jiùxià",
+        "meaning_en": "rescue successfully",
+        "explanation_en": "救 means “save”; resultative 下 presents the person as successfully saved or secured. The person remains separate."
+      },
+      {
+        "first_segment": 1124,
+        "last_segment": 1125,
+        "text": "杀了",
+        "pinyin": "shā le",
+        "meaning_en": "kill",
+        "explanation_en": "杀 means “kill”; attached 了 presents the killing as carried through to completion in this stated intention. The person remains separate."
+      },
+      {
+        "first_segment": 1138,
+        "last_segment": 1139,
+        "text": "留下了",
+        "pinyin": "liúxià le",
+        "meaning_en": "left behind",
+        "explanation_en": "留 means “leave,” and resultative 下 conveys what remains; attached 了 marks the result as established. The suspense remains separate."
+      }
+    ]
+  },
+  "review_digest": "adbc34fc9f763786cecfd4bff8f8ee3f9e1da0d7a6d58b8ca5595920357c08a9",
+  "coverage_review": {
+    "model": "gpt-6-luna",
+    "effort": "high",
+    "previous_digest": "74f9aae3f29f66c714511eb1b7775f7579aca8df6ed17ecf39550a84a507143d"
+  }
+}

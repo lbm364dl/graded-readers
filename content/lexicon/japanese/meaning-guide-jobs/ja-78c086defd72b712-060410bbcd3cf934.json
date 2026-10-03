@@ -1,0 +1,32 @@
+{
+  "id": "ja-78c086defd72b712-060410bbcd3cf934",
+  "entry_id": "ja-78c086defd72b712",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-78c086defd72b712",
+      "headword": "広くはない",
+      "reading": "ひろくはない",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-78c086defd72b712-1",
+          "definition": "not wide; not spacious"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "広くはないが、日がよく入り、静かで気持ちのよい所だ。",
+        "gloss": "not wide or spacious",
+        "sense_id": "ja-78c086defd72b712-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "77450232d69dcf29631a2f7b597bc09e4252573f18fc80dc8e282cad7fb0c739"
+}

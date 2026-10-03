@@ -1,0 +1,41 @@
+{
+  "id": "zh-6890688d673c-1-52039cfeea5a8e4c",
+  "entry_id": "zh-6890688d673c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6890688d673c-1",
+      "headword": "双方",
+      "kind": "word",
+      "reading": "shuāngfāng",
+      "senses": [
+        {
+          "id": "zh-6890688d673c-1-s1",
+          "definition": "both sides in a contest or interaction"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "当时张角有十五万黄巾军，卢植有五万兵马，双方在广宗相持，尚未分出胜负。",
+        "gloss": "both sides",
+        "sense_id": "zh-6890688d673c-1-s1"
+      },
+      {
+        "sentence": "救军抵达后，黄巾军分兵，双方立刻混战。",
+        "gloss": "both sides",
+        "sense_id": "zh-6890688d673c-1-s1"
+      },
+      {
+        "sentence": "当时张角有十五万黄巾军，卢植有五万兵，双方在广宗相拒，尚未分出胜负。",
+        "gloss": "both sides",
+        "sense_id": "zh-6890688d673c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0fb2a06392e6bdfe95bc176a0d50189206ec9ce897717d0fa267efc66a04ab0b"
+}

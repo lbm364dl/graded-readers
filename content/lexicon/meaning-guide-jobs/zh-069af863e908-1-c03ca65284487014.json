@@ -1,0 +1,31 @@
+{
+  "id": "zh-069af863e908-1-c03ca65284487014",
+  "entry_id": "zh-069af863e908-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-069af863e908-1",
+      "headword": "父亲",
+      "kind": "word",
+      "reading": "fùqīn",
+      "senses": [
+        {
+          "id": "zh-069af863e908-1-s1",
+          "definition": "father"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他很早失去父亲，依靠手艺养家，也一直孝顺母亲。",
+        "gloss": "father",
+        "sense_id": "zh-069af863e908-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "897eb90ca30d97442254052d05c109f5fc6fe85303b62ef2183bc162328a7d84"
+}

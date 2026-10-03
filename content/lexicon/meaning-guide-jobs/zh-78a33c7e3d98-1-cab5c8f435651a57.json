@@ -1,0 +1,46 @@
+{
+  "id": "zh-78a33c7e3d98-1-cab5c8f435651a57",
+  "entry_id": "zh-78a33c7e3d98-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-78a33c7e3d98-1",
+      "headword": "来不及",
+      "kind": "construction",
+      "reading": "lái bu jí",
+      "senses": [
+        {
+          "id": "zh-78a33c7e3d98-1-s1",
+          "definition": "to be too late to do something; not have enough time to"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "火光照亮天空，黄巾军来不及披上铠甲，也来不及给马装好马鞍，只好四处逃跑。",
+        "gloss": "not have time to",
+        "sense_id": "zh-78a33c7e3d98-1-s1"
+      },
+      {
+        "sentence": "程远志来不及防备，被关羽斩成两段。",
+        "gloss": "not have time to",
+        "sense_id": "zh-78a33c7e3d98-1-s1"
+      },
+      {
+        "sentence": "黄巾军惊慌，马来不及装鞍，人来不及穿甲，四散逃跑。",
+        "gloss": "not have enough time",
+        "sense_id": "zh-78a33c7e3d98-1-s1"
+      },
+      {
+        "sentence": "黄巾军惊慌，马来不及装鞍，人来不及穿甲，四散逃跑。",
+        "gloss": "not have enough time to",
+        "sense_id": "zh-78a33c7e3d98-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3afbc5fb7964d9404369e5baf9c94ac38dedddfd8a05a209b9bcbf5a05698d98"
+}

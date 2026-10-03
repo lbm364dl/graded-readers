@@ -1,0 +1,31 @@
+{
+  "id": "zh-fc227df4fc94-1-f1e3b5d8d0e2fba0",
+  "entry_id": "zh-fc227df4fc94-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-fc227df4fc94-1",
+      "headword": "万",
+      "kind": "word",
+      "reading": "wàn",
+      "senses": [
+        {
+          "id": "zh-fc227df4fc94-1-s1",
+          "definition": "ten thousand"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角有十五万军队，卢植有五万人，两边在广宗相持。",
+        "gloss": "ten thousand",
+        "sense_id": "zh-fc227df4fc94-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b51b0d3ec10dde218caf9b929ab4c4da90da5456a50306a67cd691cba3ee4dcb"
+}

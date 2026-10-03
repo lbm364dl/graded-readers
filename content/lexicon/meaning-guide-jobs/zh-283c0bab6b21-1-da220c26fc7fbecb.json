@@ -1,0 +1,31 @@
+{
+  "id": "zh-283c0bab6b21-1-da220c26fc7fbecb",
+  "entry_id": "zh-283c0bab6b21-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-283c0bab6b21-1",
+      "headword": "败",
+      "kind": "word",
+      "reading": "bài",
+      "senses": [
+        {
+          "id": "zh-283c0bab6b21-1-s1",
+          "definition": "to be defeated"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三路夹击，黄巾军大败。",
+        "gloss": "to be defeated",
+        "sense_id": "zh-283c0bab6b21-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4ee3c94b05206b127916d3ffd8ffa88b4825512adb48174cc7764a5a92924f52"
+}

@@ -1,0 +1,47 @@
+{
+  "id": "ja-41101cfc8d1ebbb0-410887bfefea59c0",
+  "entry_id": "ja-41101cfc8d1ebbb0",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-41101cfc8d1ebbb0",
+      "headword": "白君",
+      "reading": "しろくん",
+      "kind": "name",
+      "senses": [
+        {
+          "id": "ja-41101cfc8d1ebbb0-1",
+          "definition": "Shiro, a cat's name"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "　吾輩が尊敬している、筋向の白君は、会うたびに「人間ほど愛情のないものはない」と言う。",
+        "gloss": "Shiro",
+        "sense_id": "ja-41101cfc8d1ebbb0-1"
+      },
+      {
+        "sentence": "先日、白君自身が玉のような子猫を四匹産んだ。",
+        "gloss": "Shiro-kun",
+        "sense_id": "ja-41101cfc8d1ebbb0-1"
+      },
+      {
+        "sentence": "白君は涙を流しながら、その一部始終を話した。",
+        "gloss": "Shiro-kun",
+        "sense_id": "ja-41101cfc8d1ebbb0-1"
+      },
+      {
+        "sentence": "　白君は軍人の家に、三毛君は弁護士の家に、吾輩は先生の家に住んでいる。",
+        "gloss": "Shiro, a cat's name",
+        "sense_id": "ja-41101cfc8d1ebbb0-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "48f7dbfafcf58c07896cdb51709ed615cd37f9b38b99890aa9c6904f1dacd128"
+}

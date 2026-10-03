@@ -1,0 +1,32 @@
+{
+  "id": "ja-d6350ffee6d5169a-ec057bdfe4efc7cd",
+  "entry_id": "ja-d6350ffee6d5169a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d6350ffee6d5169a",
+      "headword": "盗む",
+      "reading": "ぬすむ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d6350ffee6d5169a-1",
+          "definition": "to steal; take something without permission"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "後で、おさんのさんまを盗んでその仕返しをしてやると、ようやく気持ちが落ち着いた。",
+        "gloss": "stealing and",
+        "sense_id": "ja-d6350ffee6d5169a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "130dec70158edcd972612c01aad666e5cfac8160bf89ae88351008115f020850"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-96b0adf580e0-1-eedf8aa762866213",
+  "entry_id": "zh-96b0adf580e0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-96b0adf580e0-1",
+      "headword": "五十多里",
+      "kind": "word",
+      "reading": "wǔshí duō lǐ",
+      "senses": [
+        {
+          "id": "zh-96b0adf580e0-1-s1",
+          "definition": "more than fifty li (a traditional Chinese unit of distance)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军大乱，退了五十多里。",
+        "gloss": "more than fifty li",
+        "sense_id": "zh-96b0adf580e0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1e67e938c866b4caa095bb549fa109bbd70321ccdb98e1a217854e199a51c670"
+}

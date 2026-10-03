@@ -1,0 +1,95 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_021-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1328,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了曹操与车胄之间传令、车胄请陈登商议并采纳设伏方案的具体过程，陈登为何知晓内情的因果略显跳跃。",
+      "classification": "material",
+      "reason": "这些过程补足了曹操下令、车胄实施阴谋及陈登得知内情并及时通报刘备的因果链，关系到后续情节的连贯性。",
+      "required_fix": "补写曹操传令车胄、车胄请陈登商议并采纳设伏，以及陈登因此得知阴谋的过程。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了曹操与车胄之间传令、车胄请陈登商议并采纳设伏方案的具体过程，陈登为何知晓内情的因果略显跳跃。",
+      "classification": "material",
+      "reason": "这些过程补足了曹操下令、车胄实施阴谋及陈登得知内情并及时通报刘备的因果链，关系到后续情节的连贯性。",
+      "required_fix": "补写曹操传令车胄、车胄请陈登商议并采纳设伏，以及陈登因此得知阴谋的过程。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 976,
+      "review": {
+        "source_fidelity": 8.4,
+        "naturalness": 8.7,
+        "readability": 9.0,
+        "material_omissions": [],
+        "unsupported_additions": [
+          "结尾新增“刘备能否守住徐州”的悬念，原文只问陈登将说出何计。"
+        ],
+        "distortions": [
+          "“懊悔入城”容易理解为刘备后悔进入城中，原文是“懊悔不已，遂入徐州”，表达的是懊悔之后进入徐州。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 1290,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 8.5,
+        "readability": 8.5,
+        "material_omissions": [
+          "未明确说明公孙瓒已死，弱化了刘备追念其荐举之恩的背景。",
+          "遗漏刘备担心赵云下落的情节，损失了人物关系与情感动机。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "车胄设伏一段写成“陈登建议刘备回城时让军士伏在瓮城边”，误将计策执行者和受计对象写成刘备；原文是陈登建议车胄设伏杀害刘备。"
+        ],
+        "language_problems": [
+          "全文约976字，低于要求的1014至1885字范围。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 1328,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

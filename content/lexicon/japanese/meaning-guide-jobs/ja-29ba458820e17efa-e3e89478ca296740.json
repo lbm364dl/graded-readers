@@ -1,0 +1,32 @@
+{
+  "id": "ja-29ba458820e17efa-e3e89478ca296740",
+  "entry_id": "ja-29ba458820e17efa",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-29ba458820e17efa",
+      "headword": "のか",
+      "reading": "のか",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-29ba458820e17efa-1",
+          "definition": "Marks an embedded question or uncertainty, often translated as “whether” or as an indirect question."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩はどこで生まれたのか、まったく分からない。",
+        "gloss": "whether; where ... was born",
+        "sense_id": "ja-29ba458820e17efa-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f263c441baf27b5862011281153ecacbeabc554cd26fa5fa441e6e3a07eb4fcc"
+}

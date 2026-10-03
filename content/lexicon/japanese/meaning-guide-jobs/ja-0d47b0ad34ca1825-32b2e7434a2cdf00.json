@@ -1,0 +1,32 @@
+{
+  "id": "ja-0d47b0ad34ca1825-32b2e7434a2cdf00",
+  "entry_id": "ja-0d47b0ad34ca1825",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-0d47b0ad34ca1825",
+      "headword": "昼",
+      "reading": "ひる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-0d47b0ad34ca1825-1",
+          "definition": "daytime; noon"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "仕方なく主人のそばで暮らし、朝は膝、昼は背中に乗った。",
+        "gloss": "daytime; noon",
+        "sense_id": "ja-0d47b0ad34ca1825-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a2c82407356e377358f74e613cfd116518d762c50c818707210767c5b97c94d5"
+}

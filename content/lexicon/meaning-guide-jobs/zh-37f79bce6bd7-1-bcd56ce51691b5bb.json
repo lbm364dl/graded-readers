@@ -1,0 +1,36 @@
+{
+  "id": "zh-37f79bce6bd7-1-bcd56ce51691b5bb",
+  "entry_id": "zh-37f79bce6bd7-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-37f79bce6bd7-1",
+      "headword": "听到",
+      "kind": "construction",
+      "reading": "tīngdào",
+      "senses": [
+        {
+          "id": "zh-37f79bce6bd7-1-s1",
+          "definition": "hear; perceive by hearing"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "幽州兵少，刘焉听到消息后，请邹靖商量办法。",
+        "gloss": "to hear",
+        "sense_id": "zh-37f79bce6bd7-1-s1"
+      },
+      {
+        "sentence": "”他让关羽带一千人埋伏在山左，张飞带一千人埋伏在山右，听到信号就出来帮助。",
+        "gloss": "to hear",
+        "sense_id": "zh-37f79bce6bd7-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "588edf47c4786a214da3d5eb2ad5d49ba4786f452a993c3387ac89d8a273ce7c"
+}

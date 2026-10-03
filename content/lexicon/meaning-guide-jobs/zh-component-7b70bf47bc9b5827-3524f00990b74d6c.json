@@ -1,0 +1,26 @@
+{
+  "id": "zh-component-7b70bf47bc9b5827-3524f00990b74d6c",
+  "entry_id": "zh-component-7b70bf47bc9b5827",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-component-7b70bf47bc9b5827",
+      "headword": "三十六",
+      "reading": "sān shí liù",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-7b70bf47bc9b5827-s1",
+          "definition": "the number thirty-six"
+        }
+      ]
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ec6977ed90276cde385b221e9c1079941ab7f2b0f79ad46ccf4054248386ba18"
+}

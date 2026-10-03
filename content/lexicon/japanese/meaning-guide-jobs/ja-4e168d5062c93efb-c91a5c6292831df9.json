@@ -1,0 +1,523 @@
+{
+  "id": "ja-4e168d5062c93efb-c91a5c6292831df9",
+  "entry_id": "ja-4e168d5062c93efb",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-4e168d5062c93efb",
+      "headword": "に",
+      "reading": "に",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-4e168d5062c93efb-1",
+          "definition": "Marks a location, position, or destination; in, at, or into."
+        },
+        {
+          "id": "ja-4e168d5062c93efb-2",
+          "definition": "Marks the agent in a passive construction; by."
+        },
+        {
+          "id": "ja-4e168d5062c93efb-3",
+          "definition": "Marks the order or point in time at which something happens; finally, last."
+        },
+        {
+          "id": "ja-4e168d5062c93efb-4",
+          "definition": "Marks the person or thing toward which an action, feeling, or quality is directed, or the recipient or beneficiary; to, for, with."
+        },
+        {
+          "id": "ja-4e168d5062c93efb-5",
+          "definition": "Marks a resulting state or manner; as, in the state of, together."
+        },
+        {
+          "id": "ja-4e168d5062c93efb-6",
+          "definition": "Marks a point in time or sequence; at, on, or first."
+        },
+        {
+          "id": "ja-4e168d5062c93efb-7",
+          "definition": "Marks a cause, basis, or object of a feeling or response; at, by, with, or from."
+        },
+        {
+          "id": "ja-4e168d5062c93efb-8",
+          "definition": "Marks a purpose or intended action; for, to."
+        },
+        {
+          "id": "ja-4e168d5062c93efb-9",
+          "definition": "Indicates an extent, limit, or range; other than, besides."
+        },
+        {
+          "id": "ja-4e168d5062c93efb-10",
+          "definition": "With なる, marks a change or result; into, becoming."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は池を左に見ながら、ゆっくり歩き、人の家へ入りました。",
+        "gloss": "with; in the position of",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "主人は吾輩を見て、「家の中に置いてやれ」と言いました。",
+        "gloss": "into; in",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "吾輩はこの家に住むことにしました。",
+        "gloss": "in; at",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "手の上に乗せられ、顔を見ると、毛のない顔は薬缶のようで、顔の真ん中の出た所の穴から時々煙を吹いた。",
+        "gloss": "onto; on",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "女の人に台所から外へ何回も投げられたが、吾輩はまた入った。",
+        "gloss": "by",
+        "sense_id": "ja-4e168d5062c93efb-2"
+      },
+      {
+        "sentence": "最後に主人が来た。",
+        "gloss": "at; in",
+        "sense_id": "ja-4e168d5062c93efb-3"
+      },
+      {
+        "sentence": "主人は吾輩を見て、「では、家の内に置いてやれ」と言った。",
+        "gloss": "in; into",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "それで吾輩は、この家に住むことにしたのである。",
+        "gloss": "in; at",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "吾輩の家の裏には、小さな茶園がある。",
+        "gloss": "in; at",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "しかし、その時の吾輩には何も考えがなく、怖いとも思わなかった。",
+        "gloss": "for; to",
+        "sense_id": "ja-4e168d5062c93efb-4"
+      },
+      {
+        "sentence": "ただ、書生の掌の上に乗せられ、ふわりと持ち上げられた感じが残っている。",
+        "gloss": "on; onto",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "その後、猫にはたくさん会ったが、こんな変な顔には一度も会わなかった。",
+        "gloss": "to; with",
+        "sense_id": "ja-4e168d5062c93efb-4"
+      },
+      {
+        "sentence": "その後、猫にはたくさん会ったが、こんな変な顔には一度も会わなかった。",
+        "gloss": "with; to",
+        "sense_id": "ja-4e168d5062c93efb-4"
+      },
+      {
+        "sentence": "痛みにたえながら外へ出ると、大きな池があった。",
+        "gloss": "with; while experiencing",
+        "sense_id": "ja-4e168d5062c93efb-7"
+      },
+      {
+        "sentence": "日が暮れ、腹が減り、寒くなったので、食べ物を求めて池を左に見ながら歩いた。",
+        "gloss": "in; with",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "明るく暖かい方へ進むと、いつの間にか家の中にいた。",
+        "gloss": "in; at",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "最初に会ったおさんは乱暴で、吾輩の頸筋をつかみ、台所から何度も外へ投げ出した。",
+        "gloss": "at; when",
+        "sense_id": "ja-4e168d5062c93efb-6"
+      },
+      {
+        "sentence": "最後に主人が来て、吾輩を見ながら「そんなら内へ置いてやれ」と言った。",
+        "gloss": "at; finally",
+        "sense_id": "ja-4e168d5062c93efb-3"
+      },
+      {
+        "sentence": "学校から帰ると、ほとんど一日中、書斎にこもっている。",
+        "gloss": "in; at",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "吾輩がそっと書斎をのぞくと、主人は昼寝をしていたり、読みかけの本に涎をたらしていたりする。",
+        "gloss": "onto; against",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "吾輩はこの家で、主人以外のものには不人望だった。",
+        "gloss": "to; toward",
+        "sense_id": "ja-4e168d5062c93efb-4"
+      },
+      {
+        "sentence": "仕方なく主人のそばで暮らし、朝は膝、昼は背中に乗った。",
+        "gloss": "onto; on",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "夜は五つと三つの子供の寝床へもぐり込み、二人の間で一緒に寝る。",
+        "gloss": "together; in the state of",
+        "sense_id": "ja-4e168d5062c93efb-5"
+      },
+      {
+        "sentence": "主人は俳句、新しい詩、英語、弓、歌、バイオリンなど、何にでも手を出すが、どれも上手にならない。",
+        "gloss": "to; toward",
+        "sense_id": "ja-4e168d5062c93efb-4"
+      },
+      {
+        "sentence": "吾輩が家に来て一月ほどたった給料日に、主人は水彩絵具と毛筆とワットマンという紙を買い、今日から絵をかくと決めた。",
+        "gloss": "to; at",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "吾輩が家に来て一月ほどたった給料日に、主人は水彩絵具と毛筆とワットマンという紙を買い、今日から絵をかくと決めた。",
+        "gloss": "on; at",
+        "sense_id": "ja-4e168d5062c93efb-6"
+      },
+      {
+        "sentence": "しかし主人の熱心さには感心した。",
+        "gloss": "by; at (what one is impressed by)",
+        "sense_id": "ja-4e168d5062c93efb-7"
+      },
+      {
+        "sentence": "吾輩の家の裏には、十坪ほどの茶園がある。",
+        "gloss": "in; at",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "黒の主人はそのお金で一円五十銭ほど得たのに、黒にはろくな食べ物を与えなかったという。",
+        "gloss": "to; for",
+        "sense_id": "ja-4e168d5062c93efb-4"
+      },
+      {
+        "sentence": "その後、黒は足を悪くし、毛の色も悪くなり、目には目やにがたまった。",
+        "gloss": "in; on",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "元気も体格も失った黒は、最後に「いたちと魚屋の天秤棒には、もうこりごりだ」と言った。",
+        "gloss": "at; on",
+        "sense_id": "ja-4e168d5062c93efb-3"
+      },
+      {
+        "sentence": "元気も体格も失った黒は、最後に「いたちと魚屋の天秤棒には、もうこりごりだ」と言った。",
+        "gloss": "with; from",
+        "sense_id": "ja-4e168d5062c93efb-7"
+      },
+      {
+        "sentence": "けれど、その時の吾輩にはそんな考えはなく、別に怖いとも思わなかった。",
+        "gloss": "for; to",
+        "sense_id": "ja-4e168d5062c93efb-9"
+      },
+      {
+        "sentence": "ただ、書生の手のひらに乗せられて、すっと上へ持ち上げられた時、何だかふわふわするような感じがしただけだった。",
+        "gloss": "onto; in",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "その時に「妙なものだ」と思った気持ちは、今でも残っている。",
+        "gloss": "at; in",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "その後、吾輩はほかの猫にもたくさん会ったが、こんな変な顔には一度も出会わなかった。",
+        "gloss": "to; with",
+        "sense_id": "ja-4e168d5062c93efb-4"
+      },
+      {
+        "sentence": "その後、吾輩はほかの猫にもたくさん会ったが、こんな変な顔には一度も出会わなかった。",
+        "gloss": "to; toward",
+        "sense_id": "ja-4e168d5062c93efb-4"
+      },
+      {
+        "sentence": "やっと笹原を出ると、向こうに大きな池があった。",
+        "gloss": "location marker",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "吾輩は池の前に座り、どうすればよいか考えた。",
+        "gloss": "at; in front of",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "泣けば書生が迎えに来るかもしれないと思い、「ニャー、ニャー」と声を出してみたが、誰も来なかった。",
+        "gloss": "for the purpose of",
+        "sense_id": "ja-4e168d5062c93efb-8"
+      },
+      {
+        "sentence": "声も出せないので、食物のある所まで歩く決心をし、池を左に見ながら、ゆっくり回り始めた。",
+        "gloss": "with; in the direction of",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "苦しかったが、我慢して進むと、人間の気配がする所に出た。",
+        "gloss": "to; at",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "竹垣の崩れた穴から、とある邸内にもぐり込んだ。",
+        "gloss": "into; in",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "最初に会ったのは、おさんという下女だった。",
+        "gloss": "at; on; marking the time",
+        "sense_id": "ja-4e168d5062c93efb-6"
+      },
+      {
+        "sentence": "だが、寒さと空腹には勝てず、隙を見て台所へ這い上がった。",
+        "gloss": "against; to",
+        "sense_id": "ja-4e168d5062c93efb-7"
+      },
+      {
+        "sentence": "そして、「そんなら、家の内に置いてやれ」と言った。",
+        "gloss": "into; in",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "学校から帰ると、書斎に入ったまま、ほとんど出て来ない。",
+        "gloss": "in; into",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "読みかけの本の上に、よだれをたらしていることさえある。",
+        "gloss": "on; at",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "しかし二、三ページ読むと眠くなり、本の上によだれをたらす。",
+        "gloss": "on; in",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "人間に生まれたなら、教師になるのが一番よい。",
+        "gloss": "as; in the state of being",
+        "sense_id": "ja-4e168d5062c93efb-5"
+      },
+      {
+        "sentence": "人間に生まれたなら、教師になるのが一番よい。",
+        "gloss": "into; to",
+        "sense_id": "ja-4e168d5062c93efb-10"
+      },
+      {
+        "sentence": "こんなに寝ていても仕事が続くなら、猫にだって出来ないことはない、と。",
+        "gloss": "to; for",
+        "sense_id": "ja-4e168d5062c93efb-4"
+      },
+      {
+        "sentence": "ところが主人に言わせると、教師ほどつらい仕事はないらしい。",
+        "gloss": "by; according to",
+        "sense_id": "ja-4e168d5062c93efb-7"
+      },
+      {
+        "sentence": "吾輩がこの家に住み始めたころは、主人以外の家の者には、ひどく嫌われていた。",
+        "gloss": "in; at",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "吾輩がこの家に住み始めたころは、主人以外の家の者には、ひどく嫌われていた。",
+        "gloss": "by",
+        "sense_id": "ja-4e168d5062c93efb-2"
+      },
+      {
+        "sentence": "どこへ行っても追い払われ、相手にしてくれる者はいなかった。",
+        "gloss": "as; with",
+        "sense_id": "ja-4e168d5062c93efb-4"
+      },
+      {
+        "sentence": "仕方がないので、吾輩を家に入れてくれた主人の近くに、出来るだけいることにした。",
+        "gloss": "into; to",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "仕方がないので、吾輩を家に入れてくれた主人の近くに、出来るだけいることにした。",
+        "gloss": "near; by",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "朝、主人が新聞を読むときは、必ず膝の上に乗る。",
+        "gloss": "onto; on",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "ほかに吾輩の世話をする者がいなかったからである。",
+        "gloss": "in; at; for",
+        "sense_id": "ja-4e168d5062c93efb-9"
+      },
+      {
+        "sentence": "しかし、夜になると、家の小供の寝床へもぐり込み、いっしょに寝るのが一番気持ちよい。",
+        "gloss": "at; when",
+        "sense_id": "ja-4e168d5062c93efb-6"
+      },
+      {
+        "sentence": "しかし、夜になると、家の小供の寝床へもぐり込み、いっしょに寝るのが一番気持ちよい。",
+        "gloss": "together; in",
+        "sense_id": "ja-4e168d5062c93efb-5"
+      },
+      {
+        "sentence": "小供は五つと三つの二人で、一つの寝床に入る。",
+        "gloss": "into; in",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "吾輩は二人の間に少し空いた場所を見つけ、どうにか入り込む。",
+        "gloss": "in; at",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "吾輩は人間と一緒に暮らし、彼らを見れば見るほど、彼らは我儘なものだと考えるようになった。",
+        "gloss": "in the manner of; with",
+        "sense_id": "ja-4e168d5062c93efb-5"
+      },
+      {
+        "sentence": "自分の気分しだいで、吾輩を逆さにしたり、頭に袋をかぶせたり、外へ投げ出したり、へっついの中へ押し込んだりする。",
+        "gloss": "on; onto",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "ところが、その家の書生が三日目に子猫を四匹とも裏の池へ持って行き、捨てて来たそうだ。",
+        "gloss": "on; at",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "そして、「猫族が親子の愛を守り、美しい家族の生活をするには、人間と戦い、彼らを滅ぼさなければならない」と言った。",
+        "gloss": "purpose marker",
+        "sense_id": "ja-4e168d5062c93efb-8"
+      },
+      {
+        "sentence": "我々猫の間では、目刺しの頭でも、ぼらのへそでも、最初に見つけた者が食べる権利を持つ。",
+        "gloss": "at; in",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "　白君は軍人の家に、三毛君は弁護士の家に、吾輩は先生の家に住んでいる。",
+        "gloss": "in; at",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "主人は、特に人より優れた力があるわけではないのに、何にでも手を出したがる男だ。",
+        "gloss": "into; toward",
+        "sense_id": "ja-4e168d5062c93efb-4"
+      },
+      {
+        "sentence": "弓に熱中したり、謡を習ったり、バイオリンを鳴らしたりもしたが、どれも上手くならなかった。",
+        "gloss": "with; in",
+        "sense_id": "ja-4e168d5062c93efb-7"
+      },
+      {
+        "sentence": "それでも始めると、胃が弱いくせに一生懸命になる。",
+        "gloss": "into; becoming",
+        "sense_id": "ja-4e168d5062c93efb-10"
+      },
+      {
+        "sentence": "吾輩がこの家に来て一月ほど後の、ある給料日に、主人は大きな包みを持って帰って来た。",
+        "gloss": "to; at",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "吾輩がこの家に来て一月ほど後の、ある給料日に、主人は大きな包みを持って帰って来た。",
+        "gloss": "on; at",
+        "sense_id": "ja-4e168d5062c93efb-6"
+      },
+      {
+        "sentence": "声には犬も怖がるほどの力があったので、吾輩は少し怖かったが、「吾輩は猫である。",
+        "gloss": "in; with respect to",
+        "sense_id": "ja-4e168d5062c93efb-7"
+      },
+      {
+        "sentence": "猫は吾輩を馬鹿にし、「どこに住んでいる」と聞いた。",
+        "gloss": "in; at",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "食べ物には困っていないようだった。",
+        "gloss": "with regard to; concerning",
+        "sense_id": "ja-4e168d5062c93efb-7"
+      },
+      {
+        "sentence": "話し方は乱暴だったが、吾輩は黒と知己になった。",
+        "gloss": "into; becoming",
+        "sense_id": "ja-4e168d5062c93efb-10"
+      },
+      {
+        "sentence": "その後、吾輩は何度も黒に会った。",
+        "gloss": "with",
+        "sense_id": "ja-4e168d5062c93efb-4"
+      },
+      {
+        "sentence": "ある日、暖かい茶園で一緒に寝転びながら、黒は吾輩に「今まで鼠を何匹とったことがある」と聞いた。",
+        "gloss": "with; together with",
+        "sense_id": "ja-4e168d5062c93efb-4"
+      },
+      {
+        "sentence": "ある日、暖かい茶園で一緒に寝転びながら、黒は吾輩に「今まで鼠を何匹とったことがある」と聞いた。",
+        "gloss": "to",
+        "sense_id": "ja-4e168d5062c93efb-4"
+      },
+      {
+        "sentence": "そして、自分は三、四十匹はとった、鼬にはひどい目にあった、と得意そうに話した。",
+        "gloss": "by; from",
+        "sense_id": "ja-4e168d5062c93efb-7"
+      },
+      {
+        "sentence": "そして、自分は三、四十匹はとった、鼬にはひどい目にあった、と得意そうに話した。",
+        "gloss": "in; to",
+        "sense_id": "ja-4e168d5062c93efb-7"
+      },
+      {
+        "sentence": "黒の子分になって食べ物を探すこともしなかった。",
+        "gloss": "into; becoming",
+        "sense_id": "ja-4e168d5062c93efb-10"
+      },
+      {
+        "sentence": "しかし車屋の黒は、その後、跛になった。",
+        "gloss": "into; becoming",
+        "sense_id": "ja-4e168d5062c93efb-10"
+      },
+      {
+        "sentence": "つやのあった毛はだんだん色があせて抜け、きれいだった目には目やにがたまった。",
+        "gloss": "in; on",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "最後に茶園で会った時、吾輩が「どうした」と聞くと、黒は「鼬の最後っ屁と、肴屋の天秤棒には、もうこりごりだ」と答えた。",
+        "gloss": "at; in",
+        "sense_id": "ja-4e168d5062c93efb-3"
+      },
+      {
+        "sentence": "最後に茶園で会った時、吾輩が「どうした」と聞くと、黒は「鼬の最後っ屁と、肴屋の天秤棒には、もうこりごりだ」と答えた。",
+        "gloss": "from; by",
+        "sense_id": "ja-4e168d5062c93efb-7"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-4e168d5062c93efb",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "grammatical",
+    "explanation_en": "に marks a point associated with an event or state. That point can be a place or destination, a time or position in a sequence, a recipient or target, the agent in a passive sentence, or the cause or object of a response. It can also mark the state or manner an action results in, as in 静かになる (“become quiet”) or 一緒に (“together”); the exact relation and English translation depend on the construction.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "c1d8054102715b0b03354f141472bb04e9adf8a76170e496f8bc363a4eacddd8",
+    "revision": 3,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c9efd6958eaa4aa62273bbe6cb1414ad5b7b1d6bc4121003b4cd10fa76ab6799"
+}

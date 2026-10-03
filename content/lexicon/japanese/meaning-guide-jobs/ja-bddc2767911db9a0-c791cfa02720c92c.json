@@ -1,0 +1,37 @@
+{
+  "id": "ja-bddc2767911db9a0-c791cfa02720c92c",
+  "entry_id": "ja-bddc2767911db9a0",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-bddc2767911db9a0",
+      "headword": "落ちる",
+      "reading": "おちる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-bddc2767911db9a0-1",
+          "definition": "to fall; drop"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "大きな音がして落ち、目から火が出たところまでは覚えている。",
+        "gloss": "fall",
+        "sense_id": "ja-bddc2767911db9a0-1"
+      },
+      {
+        "sentence": "風で葉が二枚落ちると、黒は丸い目を開いた。",
+        "gloss": "fall",
+        "sense_id": "ja-bddc2767911db9a0-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1c973c8aca932ca261b76109b5d096e26b61301ff8bf324d5cb7a8033dca7f5b"
+}

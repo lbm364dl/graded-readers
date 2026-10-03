@@ -1,0 +1,31 @@
+{
+  "id": "zh-38c4f131b89f-1-23c3fafeae7495ec",
+  "entry_id": "zh-38c4f131b89f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-38c4f131b89f-1",
+      "headword": "大方",
+      "kind": "word",
+      "reading": "dàfāng",
+      "senses": [
+        {
+          "id": "zh-38c4f131b89f-1-s1",
+          "definition": "large division or group"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "大方有一万多人，小方有六七千人，各方首领都称将军。",
+        "gloss": "large division",
+        "sense_id": "zh-38c4f131b89f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "07aa5e2e900fa993a3ea1ef313f4b862fa1da4ec764cfda7f9b39eb4edbfc537"
+}

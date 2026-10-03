@@ -1,0 +1,32 @@
+{
+  "id": "ja-5f5019e722853c7a-a0cce7277cde03aa",
+  "entry_id": "ja-5f5019e722853c7a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5f5019e722853c7a",
+      "headword": "持ち出す",
+      "reading": "もちだす",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-5f5019e722853c7a-1",
+          "definition": "to bring out; to raise or introduce a topic"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人が写生の大切さを語り、アンドレア・デル・サルトの話まで持ち出すと、美学者は笑って言った。",
+        "gloss": "bring up; introduce",
+        "sense_id": "ja-5f5019e722853c7a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "935a08818748cfa85e09a9e9b8221cdc73fb1f152468719f1b341ee7910a112c"
+}

@@ -1,0 +1,37 @@
+{
+  "id": "ja-f367a70d5a4ec1fa-f99160f052236de5",
+  "entry_id": "ja-f367a70d5a4ec1fa",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-f367a70d5a4ec1fa",
+      "headword": "下",
+      "reading": "した",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-f367a70d5a4ec1fa-1",
+          "definition": "the lower side or area beneath something; below"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人は鼻の下の黒い毛をひねりながら、吾輩の顔をしばらく見ていた。",
+        "gloss": "under; beneath",
+        "sense_id": "ja-f367a70d5a4ec1fa-1"
+      },
+      {
+        "sentence": "亭主が縁の下へ入った時、大きな鼬が飛び出し、黒が泥溝へ追い込んだ。",
+        "gloss": "underneath",
+        "sense_id": "ja-f367a70d5a4ec1fa-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "064bd9761fabc67dca9cee3d5d827651beb13b94b77afb086a5e7b70cf180ab2"
+}

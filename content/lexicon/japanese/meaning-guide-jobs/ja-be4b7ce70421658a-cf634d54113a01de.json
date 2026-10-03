@@ -1,0 +1,32 @@
+{
+  "id": "ja-be4b7ce70421658a-cf634d54113a01de",
+  "entry_id": "ja-be4b7ce70421658a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-be4b7ce70421658a",
+      "headword": "決まり",
+      "reading": "きまり",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-be4b7ce70421658a-1",
+          "definition": "a rule; an established arrangement"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "相手がこの決まりを守らなければ、力で取り返してもよい。",
+        "gloss": "rule; arrangement",
+        "sense_id": "ja-be4b7ce70421658a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "da7ac57427e07bfa4647c2d52d351b9ac6e05a18f80a74f474d13a6488bc276e"
+}

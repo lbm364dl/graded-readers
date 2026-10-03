@@ -1,0 +1,62 @@
+{
+  "id": "zh-7bc6b161927f-1-62ac73cb9527bef5",
+  "entry_id": "zh-7bc6b161927f-1",
+  "reason": "requested",
+  "item": {
+    "entry": {
+      "id": "zh-7bc6b161927f-1",
+      "headword": "五颜六色",
+      "kind": "expression",
+      "reading": "wǔyán-liùsè",
+      "senses": [
+        {
+          "id": "zh-7bc6b161927f-1-s1",
+          "definition": "multicolored; having many different colors"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他在县城四座城门放下十多根五颜六色的木棒，并定下严格的禁令。",
+        "gloss": "multicolored",
+        "sense_id": "zh-7bc6b161927f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-7bc6b161927f-1",
+    "claim_ids": [],
+    "structure": "compositional",
+    "explanation_en": "五颜六色 describes something as multicolored. The paired numbers suggest many varied colors, rather than a literal count of five plus six.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "五颜",
+        "contribution_en": "五 means “five”; 颜 here refers to color or appearance, starting one of the paired number-and-color phrases.",
+        "claim_ids": []
+      },
+      {
+        "text": "六色",
+        "contribution_en": "六 means “six” and 色 means “color.” Paired with 五颜, it reinforces the sense of many different colors.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "cee7953fc5e0711c13837e58fd053b8d716a5d1562cd4d5fd8bd27dabc32aa34",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [
+    {
+      "entry_id": "zh-7bc6b161927f-1",
+      "reason": "Focused decomposition correction after independent audit: 五颜 and 六色 are convenient halves of this paired expression, not independently established lexical units. Split them into characters with their specific contributions. Use structured parts 五|颜|六|色, with precise contributions. Preserve the whole-word meaning and all senses. Do not invent standalone dictionary words from convenient halves of an expression. Do not introduce historical claims or rewrite unrelated explanations.",
+      "id": "edit-ac10904b4a0b715a"
+    }
+  ],
+  "status": "reviewed",
+  "result_digest": "172ef3bf502c4ff012626a5ff56b5d7ff15ce792acdf9e1dac661690600a7a7d"
+}

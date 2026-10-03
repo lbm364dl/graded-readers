@@ -1,0 +1,31 @@
+{
+  "id": "zh-f1c9fb52fcfb-1-7c7a684bdcf3c649",
+  "entry_id": "zh-f1c9fb52fcfb-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f1c9fb52fcfb-1",
+      "headword": "棵",
+      "kind": "word",
+      "reading": "kē",
+      "senses": [
+        {
+          "id": "zh-f1c9fb52fcfb-1-s1",
+          "definition": "classifier for trees and other plants"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "家旁有一棵大桑树，远远看去，像一把车盖。",
+        "gloss": "classifier for trees and plants",
+        "sense_id": "zh-f1c9fb52fcfb-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d708cc8c17341faf435a9f1f7fb48890220adade2008e8941218b9a0b42e4ad4"
+}

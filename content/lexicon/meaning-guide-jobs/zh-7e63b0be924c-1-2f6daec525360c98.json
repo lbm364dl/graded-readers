@@ -1,0 +1,31 @@
+{
+  "id": "zh-7e63b0be924c-1-2f6daec525360c98",
+  "entry_id": "zh-7e63b0be924c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7e63b0be924c-1",
+      "headword": "此",
+      "kind": "word",
+      "reading": "cǐ",
+      "senses": [
+        {
+          "id": "zh-7e63b0be924c-1-s1",
+          "definition": "this; this one"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇天后土，实鉴此心；背义忘恩，天人共戮。",
+        "gloss": "this",
+        "sense_id": "zh-7e63b0be924c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b47d133a7a6000c5e4b03d2fe1a9cbc6ff33acfa84c5697b21f1e0c90ac5e20e"
+}

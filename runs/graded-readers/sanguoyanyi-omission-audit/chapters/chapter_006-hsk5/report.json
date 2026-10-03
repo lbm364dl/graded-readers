@@ -1,0 +1,78 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_006-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 1090,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了曹操提出的具体追击部署",
+      "classification": "material",
+      "reason": "具体部署体现曹操的战略判断与重要军事安排，不只是可删的修辞或旁枝细节。",
+      "required_fix": "补充曹操建议袁绍据孟津、诸侯固守成皋并控制轘轅、大谷等险要，以及袁术率南阳军入武关震慑三辅的部署。"
+    },
+    {
+      "omission_note": "省略了刘备被任命为平原相等部分后续细节",
+      "classification": "material",
+      "reason": "刘备被任命为平原相改变其官职与后续身份，是重要的关系、身份和叙事衔接信息。",
+      "required_fix": "补充公孙瓒到平原后任命刘备为平原相，并交代公孙瓒离开守地养军的安排。"
+    },
+    {
+      "omission_note": "省略了刘表伏击孙坚的具体交战过程",
+      "classification": "material",
+      "reason": "该段包含黄盖击退蔡瑁、刘表亲自交涉并退兵、孙坚追击后中伏等连续事件；虽保留了结果，仍删去了实质性的战斗与因果过程。",
+      "required_fix": "补充黄盖与蔡瑁交战并将其击退、孙坚乘势前进，刘表率军交涉后退兵，孙坚追击而遭两山伏兵包围的完整过程。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了曹操提出的具体追击部署",
+      "classification": "material",
+      "reason": "具体部署体现曹操的战略判断与重要军事安排，不只是可删的修辞或旁枝细节。",
+      "required_fix": "补充曹操建议袁绍据孟津、诸侯固守成皋并控制轘轅、大谷等险要，以及袁术率南阳军入武关震慑三辅的部署。"
+    },
+    {
+      "omission_note": "省略了刘备被任命为平原相等部分后续细节",
+      "classification": "material",
+      "reason": "刘备被任命为平原相改变其官职与后续身份，是重要的关系、身份和叙事衔接信息。",
+      "required_fix": "补充公孙瓒到平原后任命刘备为平原相，并交代公孙瓒离开守地养军的安排。"
+    },
+    {
+      "omission_note": "省略了刘表伏击孙坚的具体交战过程",
+      "classification": "material",
+      "reason": "该段包含黄盖击退蔡瑁、刘表亲自交涉并退兵、孙坚追击后中伏等连续事件；虽保留了结果，仍删去了实质性的战斗与因果过程。",
+      "required_fix": "补充黄盖与蔡瑁交战并将其击退、孙坚乘势前进，刘表率军交涉后退兵，孙坚追击而遭两山伏兵包围的完整过程。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1090,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

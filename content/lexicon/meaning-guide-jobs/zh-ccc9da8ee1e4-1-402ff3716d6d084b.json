@@ -1,0 +1,31 @@
+{
+  "id": "zh-ccc9da8ee1e4-1-402ff3716d6d084b",
+  "entry_id": "zh-ccc9da8ee1e4-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ccc9da8ee1e4-1",
+      "headword": "马步军",
+      "kind": "word",
+      "reading": "mǎbùjūn",
+      "senses": [
+        {
+          "id": "zh-ccc9da8ee1e4-1-s1",
+          "definition": "troops comprising cavalry and infantry"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾起义时，曹操率领五千名马步军到颍川助战。",
+        "gloss": "cavalry and infantry",
+        "sense_id": "zh-ccc9da8ee1e4-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c58474a4f4837c994c1ff98d929ff10e8574f7d45b9204603a597814f543dc9b"
+}

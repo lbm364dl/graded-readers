@@ -1,0 +1,59 @@
+{
+  "id": "zh-1aa9c4170bdd-1-5983945d697ae46a",
+  "entry_id": "zh-1aa9c4170bdd-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1aa9c4170bdd-1",
+      "headword": "位",
+      "kind": "word",
+      "reading": "wèi",
+      "senses": [
+        {
+          "id": "zh-1aa9c4170bdd-1-s1",
+          "definition": "position; post"
+        },
+        {
+          "id": "zh-1aa9c4170bdd-1-s2",
+          "definition": "polite classifier for people"
+        },
+        {
+          "id": "zh-1aa9c4170bdd-1-s3",
+          "definition": "a ruler's throne or position"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "灵帝即位后，窦武和陈蕃一起辅佐他。",
+        "gloss": "position",
+        "sense_id": "zh-1aa9c4170bdd-1-s1"
+      },
+      {
+        "sentence": "有人来报，两位客人带着伙伴，赶着一群马来到庄上。",
+        "gloss": "classifier for people",
+        "sense_id": "zh-1aa9c4170bdd-1-s2"
+      },
+      {
+        "sentence": "桓帝死后，灵帝即位，大将军窦武、太傅陈蕃一同辅佐他。",
+        "gloss": "the throne",
+        "sense_id": "zh-1aa9c4170bdd-1-s3"
+      },
+      {
+        "sentence": "张角原是落榜秀才，进山采药时遇到一位老人。",
+        "gloss": "classifier for people",
+        "sense_id": "zh-1aa9c4170bdd-1-s2"
+      },
+      {
+        "sentence": "这时有人来报，两位客人带着随从，赶着一群马到了庄上。",
+        "gloss": "classifier for people",
+        "sense_id": "zh-1aa9c4170bdd-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "dbc2b1e53309b80efd680231361a9767b405fbc6c5ff5f038dcbbf01ad2c7b97"
+}

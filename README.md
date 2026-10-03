@@ -1,6 +1,6 @@
-# Graded Readers — Chinese & Japanese
+# Graded Readers — Chinese, Japanese & Korean
 
-Classical literature simplified for language learners. Chinese texts graded by HSK level (1–6), Japanese texts graded by JLPT level (N5–N1).
+Classical literature simplified for language learners. Chinese texts graded by HSK level (1–6), Japanese texts graded by JLPT level (N5–N1). Korean chapter 1 is published at TOPIK 1, 2 and 5, using NIKL’s six-level vocabulary and grammar curriculum as a TOPIK-aligned baseline.
 
 Each book is retold at multiple difficulty levels using progressively richer vocabulary, so a beginner and an advanced learner can both enjoy the same stories. Every reader follows a **95/5 vocabulary constraint**: at least 95% of word tokens come from the target level or below.
 
@@ -56,13 +56,19 @@ Each book is retold at multiple difficulty levels using progressively richer voc
 
 **97 readers, 800 chapters, 660K characters** of graded Japanese text.
 
+### Korean (pilot)
+
+The opening of **홍길동전 (The Tale of Hong Gildong)** is available at TOPIK 1, 2 and 5 with contextual tap glosses, reusable word/grammar dictionaries, linked complete-form explanations and selective sentence breakdowns. The generation pipeline uses a [pinned searchable Wikisource/Jikji original](https://ko.wikisource.org/w/index.php?title=홍길동전_(30장_경판본)&oldid=460078), with independent stage reviews, explicit vocabulary/grammar curriculum bindings and incremental dictionary reuse. A few reviewed higher-level grammar patterns can appear as optional learning, retaining their actual grades. Curriculum bands guide teaching and are not exhaustive exam word lists. See [source provenance](books/korean/README.md) and [pipeline commands](pipeline/README.md). TOPIK 3, 4 and 6 remain unfinished and require their own approvals before publication.
+
+The [local pipeline dashboard](pipeline/maintenance.md#local-progress-dashboard) shows chapter readiness, live work and pipeline follow-up, with technical details available separately.
+
 ## Mobile App
 
 A Flutter app for Android and iOS with an interactive reading experience.
 
 ### Reading
 
-- **Dual language** — toggle between Chinese and Japanese, preference remembered
+- **Language switcher** — toggle between Chinese, Japanese, and the Korean pilot; preference remembered
 - **Word segmentation** — CJK text automatically split into tappable words
 - **Japanese deinflection** — conjugated verbs (masu, te-form, volitional, conditional, てしまう, irregular する/来る, etc.) map back to dictionary form
 - **Conjugation breakdown** — shows intermediate forms between inflected and dictionary form for educational purposes
@@ -107,15 +113,18 @@ Or download a prebuilt APK from [Releases](https://github.com/lbm364dl/hsk-grade
 ```
 ├── app/                    Flutter mobile app
 │   ├── lib/                Dart source
-│   ├── assets/             Bundled content + dictionaries + etymology (JSON)
+│   ├── assets/             Bundled content + indexed offline lexicon
 │   └── test/               Dart tests (270+ tests)
 ├── books/                  Chinese source texts (Project Gutenberg)
+├── content/                Canonical app-visible graded-reader library
+│   ├── chinese/            Currently only 三国演义 at HSK 1–6
+│   └── japanese/           Clean placeholder for future Japanese books
 ├── data/words/             HSK 3.0 vocabulary CSVs (levels 1–7+)
 ├── jlpt/                   Japanese content pipeline
 │   ├── data/words/         JLPT vocabulary CSVs (N5–N1)
 │   └── output/             Generated JLPT graded readers
-├── output/                 Generated HSK graded readers
-├── readers/                Standalone short readers (HSK 1–6)
+├── output/                 Legacy generated HSK material (not app-visible)
+├── readers/                Legacy standalone readers (not app-visible)
 ├── src/                    Python library
 │   ├── abridger/           PDF/EPUB/TXT parser and book abridger
 │   ├── generator/          95/5 constraint validator
@@ -128,12 +137,27 @@ Or download a prebuilt APK from [Releases](https://github.com/lbm364dl/hsk-grade
 
 | File | Size | Contents |
 |------|------|----------|
-| content.json | 3.9 MB | Chinese graded readers (90 readers, 1,113 chapters) |
-| content_ja.json | 2.0 MB | Japanese graded readers (97 readers, 800 chapters) |
-| dictionary.json | 2.6 MB | Chinese dictionary (pinyin, HSK level, definitions) |
-| dictionary_ja.json | 1.4 MB | Japanese dictionary (readings, JLPT level, definitions) |
-| etymology.json | 12.9 MB | Character etymology (27,500+ entries with decomposition, series, notes) |
-| glyphs.json | 11.5 MB | Historical character SVGs (1,565 characters, oracle/bronze/seal) |
+| content.json | generated | Canonical Chinese pilot (currently 三国演义 chapter 1 at HSK 1–3 only) |
+| content_ja.json | generated | Canonical Japanese library (currently empty) |
+| annotations/ | generated | Lazy-loaded, reviewed agent segmentation, pinyin, meanings, and grammar overlays |
+| lexicon.sqlite3 | generated | Indexed Chinese/Japanese definitions, character etymology, and historical glyph SVGs |
+| lexicon_manifest.json | generated | Content hash and entry counts used for safe one-time native installation |
+| sqlite3.wasm | 732 KB | Official SQLite runtime used by the browser build |
+
+Only files beneath `content/` are allowed into the app reader catalog. Rebuild
+both language assets with `python3 scripts/generate_app_content_json.py`. The
+strict build requires reviewed annotation sidecars for every visible chapter;
+missing annotations never fall back to legacy click explanations.
+
+The JSON dictionary, etymology, and glyph files are build inputs rather than
+runtime assets. After changing any of them, rebuild the indexed database with
+`python3 scripts/build_lexicon_database.py`. Native apps copy the versioned
+database once and then query individual rows; they keep only the compact word
+inventory required by the segmenter in memory.
+
+The current HSK1 preview intentionally contains only the newly regenerated
+chapter 1. The previous 120-chapter HSK1 draft failed the word/sentence
+readability gate and is not app-visible while the v2 set is regenerated.
 
 ## Proficiency Levels
 

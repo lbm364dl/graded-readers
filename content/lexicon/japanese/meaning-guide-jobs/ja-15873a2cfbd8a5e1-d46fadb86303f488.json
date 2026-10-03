@@ -1,0 +1,32 @@
+{
+  "id": "ja-15873a2cfbd8a5e1-d46fadb86303f488",
+  "entry_id": "ja-15873a2cfbd8a5e1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-15873a2cfbd8a5e1",
+      "headword": "膝",
+      "reading": "ひざ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-15873a2cfbd8a5e1-1",
+          "definition": "knee; lap"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "仕方なく主人のそばで暮らし、朝は膝、昼は背中に乗った。",
+        "gloss": "knee; lap",
+        "sense_id": "ja-15873a2cfbd8a5e1-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b28acdc270c874d7d857470dc21c514b7a814783fbf6569627fdb5a07eb9d58f"
+}

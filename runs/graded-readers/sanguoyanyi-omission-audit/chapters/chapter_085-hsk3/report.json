@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_085-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 480,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了朱桓佯作空城、诱敌出击的具体战术及曹丕退兵后认识到误判的细节。",
+      "classification": "material",
+      "reason": "朱桓的诱敌战术解释了吴军击败曹仁的关键原因；曹丕承认误判也补充了其决策失误的重要刻画。",
+      "required_fix": "补充朱桓佯作空城、诱常雕出击并斩杀之的战术，以及曹丕退兵后承认未听劝告、导致失败的反应。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了朱桓佯作空城、诱敌出击的具体战术及曹丕退兵后认识到误判的细节。",
+      "classification": "material",
+      "reason": "朱桓的诱敌战术解释了吴军击败曹仁的关键原因；曹丕承认误判也补充了其决策失误的重要刻画。",
+      "required_fix": "补充朱桓佯作空城、诱常雕出击并斩杀之的战术，以及曹丕退兵后承认未听劝告、导致失败的反应。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 8.5,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 480,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

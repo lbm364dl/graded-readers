@@ -1,0 +1,40 @@
+{
+  "id": "zh-3f3ed24bab3f-1-32505f2ac9ba7ec0",
+  "entry_id": "zh-3f3ed24bab3f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-3f3ed24bab3f-1",
+      "headword": "起",
+      "kind": "word",
+      "reading": "qǐ",
+      "senses": [
+        {
+          "id": "zh-3f3ed24bab3f-1-s1",
+          "definition": "to begin; to start"
+        },
+        {
+          "id": "zh-3f3ed24bab3f-1-s2",
+          "definition": "to rise; to launch"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "夜里大风忽然刮起。",
+        "gloss": "begin to; rise",
+        "sense_id": "zh-3f3ed24bab3f-1-s1"
+      },
+      {
+        "sentence": "黄巾军起兵后，曹操带着五千名士兵赶到颍川。",
+        "gloss": "to rise; launch",
+        "sense_id": "zh-3f3ed24bab3f-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5c35739e37cf7853baafd590158792ba81020b96287a140f983544ae8b8bd118"
+}

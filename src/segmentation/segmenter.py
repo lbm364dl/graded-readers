@@ -1,5 +1,5 @@
 import jieba
-from src.config import ALL_PUNCTUATION, DATA_DIR, LEVEL_FILE_KEYS
+from src.config import ALL_PUNCTUATION, CHINESE_DATA_DIR, LEVEL_FILE_KEYS
 import csv
 
 
@@ -18,7 +18,7 @@ class ChineseSegmenter:
         """Load HSK word lists into jieba for better segmentation accuracy."""
         all_hsk_words = set()
         for level, key in LEVEL_FILE_KEYS.items():
-            path = DATA_DIR / "words" / f"{key}_words.csv"
+            path = CHINESE_DATA_DIR / "words" / f"{key}_words.csv"
             if path.exists():
                 with open(path, encoding="utf-8") as f:
                     reader = csv.DictReader(f)

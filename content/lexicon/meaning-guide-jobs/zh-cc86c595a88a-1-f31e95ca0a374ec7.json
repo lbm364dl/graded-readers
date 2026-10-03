@@ -1,0 +1,100 @@
+{
+  "id": "zh-cc86c595a88a-1-f31e95ca0a374ec7",
+  "entry_id": "zh-cc86c595a88a-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-cc86c595a88a-1",
+      "headword": "马上",
+      "kind": "word",
+      "reading": "mǎshàng",
+      "senses": [
+        {
+          "id": "zh-cc86c595a88a-1-s1",
+          "definition": "on horseback"
+        },
+        {
+          "id": "zh-cc86c595a88a-1-s2",
+          "definition": "immediately; at once"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞举矛刺中邓茂，他从马上掉下。",
+        "gloss": "on horseback",
+        "sense_id": "zh-cc86c595a88a-1-s1"
+      },
+      {
+        "sentence": "幽州兵少，刘焉听从邹靖的建议，马上发布招军榜，招募人员保卫地方。",
+        "gloss": "immediately",
+        "sense_id": "zh-cc86c595a88a-1-s2"
+      },
+      {
+        "sentence": "程远志又来打张飞，关羽马上赶到，一刀斩了程远志。",
+        "gloss": "immediately",
+        "sense_id": "zh-cc86c595a88a-1-s2"
+      },
+      {
+        "sentence": "黄巾军马上逃走，很多人放下武器投降。",
+        "gloss": "immediately",
+        "sense_id": "zh-cc86c595a88a-1-s2"
+      },
+      {
+        "sentence": "刘备主动说：“我们应当马上去救他们。",
+        "gloss": "immediately",
+        "sense_id": "zh-cc86c595a88a-1-s2"
+      },
+      {
+        "sentence": "”刘备马上接受这个任务。",
+        "gloss": "immediately",
+        "sense_id": "zh-cc86c595a88a-1-s2"
+      },
+      {
+        "sentence": "张角知道事情暴露，马上起兵，自称天公将军；张宝称地公将军，张梁称人公将军。",
+        "gloss": "immediately",
+        "sense_id": "zh-cc86c595a88a-1-s2"
+      },
+      {
+        "sentence": "邹靖建议马上发布招军榜，招募乡勇。",
+        "gloss": "immediately",
+        "sense_id": "zh-cc86c595a88a-1-s2"
+      },
+      {
+        "sentence": "刘备认出是张角，马上带关羽、张飞冲下山。",
+        "gloss": "immediately",
+        "sense_id": "zh-cc86c595a88a-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-cc86c595a88a-1",
+    "claim_ids": [],
+    "structure": "compositional",
+    "explanation_en": "马上 means being on a horse, or on horseback.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "马",
+        "contribution_en": "horse",
+        "claim_ids": []
+      },
+      {
+        "text": "上",
+        "contribution_en": "on or atop; with 马, places someone on a horse",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "55d0fdcc2c540b777eb81ca81e6a5d4f373260aa3da1628f29d583790737ff46",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "41490ae62e7ef4d1d32c82d5df238e8b1e63025d7e5d282780f0f6cda7f8e023"
+}

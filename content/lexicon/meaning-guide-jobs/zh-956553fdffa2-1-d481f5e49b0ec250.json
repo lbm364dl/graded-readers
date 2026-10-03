@@ -1,0 +1,31 @@
+{
+  "id": "zh-956553fdffa2-1-d481f5e49b0ec250",
+  "entry_id": "zh-956553fdffa2-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-956553fdffa2-1",
+      "headword": "初次",
+      "kind": "word",
+      "reading": "chūcì",
+      "senses": [
+        {
+          "id": "zh-956553fdffa2-1-s1",
+          "definition": "for the first time"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人取得第一次胜利，也初次展现了自己的威力。",
+        "gloss": "for the first time",
+        "sense_id": "zh-956553fdffa2-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d84df46921b7e1ae3f456e17ee512408fba834d3f9b290f51b3fdb7dd3f45698"
+}

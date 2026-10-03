@@ -1,0 +1,31 @@
+{
+  "id": "zh-09680c3fbe7a-1-af22f167098ae802",
+  "entry_id": "zh-09680c3fbe7a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-09680c3fbe7a-1",
+      "headword": "以",
+      "kind": "word",
+      "reading": "yǐ",
+      "senses": [
+        {
+          "id": "zh-09680c3fbe7a-1-s1",
+          "definition": "by means of; using"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备让关羽带一千人到山左，张飞带一千人到山右，在那里埋伏，以鸣金为号。",
+        "gloss": "using",
+        "sense_id": "zh-09680c3fbe7a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "077668afe6215dc049c240c1a5bb9d30fb93ae1ddc2cfe64cb6ecba6575571f8"
+}

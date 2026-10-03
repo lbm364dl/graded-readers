@@ -1,0 +1,37 @@
+{
+  "id": "ja-3b5375642f8af890-7c6bac28d623f0b0",
+  "entry_id": "ja-3b5375642f8af890",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-3b5375642f8af890",
+      "headword": "言葉",
+      "reading": "ことば",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-3b5375642f8af890-1",
+          "definition": "a word; an expression"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "「我儘」という言葉で思い出した。",
+        "gloss": "word; expression",
+        "sense_id": "ja-3b5375642f8af890-1"
+      },
+      {
+        "sentence": "主人は人を罵る時、いつもこの言葉しか使わない。",
+        "gloss": "word; expression",
+        "sense_id": "ja-3b5375642f8af890-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ea41a616c58d82498d05de058fd277e885a8e7a12b8b1f4f0aab38bfa1d22f08"
+}

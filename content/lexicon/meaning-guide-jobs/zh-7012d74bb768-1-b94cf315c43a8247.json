@@ -1,0 +1,31 @@
+{
+  "id": "zh-7012d74bb768-1-b94cf315c43a8247",
+  "entry_id": "zh-7012d74bb768-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7012d74bb768-1",
+      "headword": "暴露",
+      "kind": "word",
+      "reading": "bàolù",
+      "senses": [
+        {
+          "id": "zh-7012d74bb768-1-s1",
+          "definition": "become known or visible, especially something concealed"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角知道事情暴露，马上起兵，自称天公将军；张宝称地公将军，张梁称人公将军。",
+        "gloss": "to be exposed",
+        "sense_id": "zh-7012d74bb768-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c3777bb8b346db63749152256db3eaed4ec940df445a187d5e86d8241d1f474d"
+}

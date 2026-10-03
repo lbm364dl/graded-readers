@@ -1,0 +1,31 @@
+{
+  "id": "zh-a38b67e752dd-1-c32d466fc3b88b7d",
+  "entry_id": "zh-a38b67e752dd-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a38b67e752dd-1",
+      "headword": "败坏",
+      "kind": "word",
+      "reading": "bàihuài",
+      "senses": [
+        {
+          "id": "zh-a38b67e752dd-1-s1",
+          "definition": "to deteriorate or become corrupt"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇帝信任张让，叫他“阿父”，朝政逐渐败坏，天下人心想要作乱，盗贼纷纷起来。",
+        "gloss": "to deteriorate; to corrupt",
+        "sense_id": "zh-a38b67e752dd-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d2cb56f50bfe2f600c2a3601f56742b4abe8d863fe6d4991d1f70dbc84c6dcc3"
+}

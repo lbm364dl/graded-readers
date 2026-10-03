@@ -1,0 +1,2888 @@
+{
+  "entries": [
+    {
+      "id": "zh-expression-ji-ba",
+      "headword": "祭罢",
+      "reading": "jì bà",
+      "kind": "expression",
+      "base_entry_id": "zh-bc6c87ab5010-1",
+      "components": [
+        {
+          "entry_id": "zh-bc6c87ab5010-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-b9636f5a2067-1",
+          "role": "completion complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-ji-ba-s1",
+          "definition": "finish making ritual offerings"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-tui-hou",
+      "headword": "退后",
+      "reading": "tuìhòu",
+      "kind": "expression",
+      "base_entry_id": "zh-abc3da5e6b37-1",
+      "components": [
+        {
+          "entry_id": "zh-abc3da5e6b37-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-60be66d61586-1",
+          "role": "directional complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-tui-hou-s1",
+          "definition": "move or retreat toward the back"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-chu-bing",
+      "headword": "出兵",
+      "reading": "chūbīng",
+      "kind": "expression",
+      "base_entry_id": "zh-4d5f7e15c8a5-1",
+      "components": [
+        {
+          "entry_id": "zh-4d5f7e15c8a5-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-5b43c02074fc-1",
+          "role": "troops"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-chu-bing-s1",
+          "definition": "send out or deploy troops"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-gan-lu",
+      "headword": "赶路",
+      "reading": "gǎnlù",
+      "kind": "expression",
+      "base_entry_id": "zh-94beea58b8a8-1",
+      "components": [
+        {
+          "entry_id": "zh-94beea58b8a8-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-09c7804e4ff8-1",
+          "role": "journey"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-gan-lu-s1",
+          "definition": "hurry along on a journey"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-kandao",
+      "headword": "看到",
+      "reading": "kàndào",
+      "base_entry_id": "zh-61f43315f98a-1",
+      "components": [
+        {
+          "entry_id": "zh-61f43315f98a-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-b56f36b529db-1",
+          "role": "result complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-kandao-s1",
+          "definition": "see; notice"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-you-nan",
+      "headword": "有难",
+      "reading": "yǒu nàn",
+      "base_entry_id": "zh-90ce0f66f094-1",
+      "components": [
+        {
+          "entry_id": "zh-90ce0f66f094-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-de73e9045636-1",
+          "role": "abstract noun"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-you-nan-s1",
+          "definition": "be in trouble; face calamity"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-zuo-xiongdi",
+      "headword": "做兄弟",
+      "reading": "zuò xiōngdì",
+      "base_entry_id": "zh-94f5404441e8-1",
+      "components": [
+        {
+          "entry_id": "zh-94f5404441e8-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-f6c71210522b-1",
+          "role": "relationship"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-zuo-xiongdi-s1",
+          "definition": "become brothers; form a brotherhood"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-bai-tiandi",
+      "headword": "拜天地",
+      "reading": "bài tiāndì",
+      "base_entry_id": "zh-428cf29b5093-1",
+      "components": [
+        {
+          "entry_id": "zh-428cf29b5093-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-5e431916de87-1",
+          "role": "object of the rite"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-bai-tiandi-s1",
+          "definition": "perform a rite before Heaven and Earth"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-jie-wei-xiongdi",
+      "headword": "结为兄弟",
+      "reading": "jiéwéi xiōngdì",
+      "base_entry_id": "zh-fe68dc39caa3-1",
+      "components": [
+        {
+          "entry_id": "zh-fe68dc39caa3-1",
+          "role": "verb construction"
+        },
+        {
+          "entry_id": "zh-f6c71210522b-1",
+          "role": "resulting relationship"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-jie-wei-xiongdi-s1",
+          "definition": "become brothers; form a brotherhood"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-huo-xialai",
+      "headword": "活下来",
+      "reading": "huó xiàlai",
+      "base_entry_id": "zh-84cbd30181dc-1",
+      "components": [
+        {
+          "entry_id": "zh-84cbd30181dc-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-dd30687a4300-1",
+          "role": "result complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-huo-xialai-s1",
+          "definition": "survive; remain alive"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-ting-wan",
+      "headword": "听完",
+      "reading": "tīngwán",
+      "kind": "expression",
+      "base_entry_id": "zh-1f2eb2608d23-1",
+      "components": [
+        {
+          "entry_id": "zh-1f2eb2608d23-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-28e0bba69ee9-1",
+          "role": "completion complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-ting-wan-s1",
+          "definition": "finish hearing or listening to something"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-ya-zou",
+      "headword": "押走",
+      "reading": "yāzǒu",
+      "base_entry_id": "zh-f2854627cacf-1",
+      "components": [
+        {
+          "entry_id": "zh-f2854627cacf-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-f66de6c4cd41-1",
+          "role": "directional complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-ya-zou-s1",
+          "definition": "take someone away under guard"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-chong-shangqu",
+      "headword": "冲上去",
+      "reading": "chōng shàngqu",
+      "base_entry_id": "zh-c7d1e85e396e-1",
+      "components": [
+        {
+          "entry_id": "zh-c7d1e85e396e-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-bd86a28aa0ff-1",
+          "role": "directional complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-chong-shangqu-s1",
+          "definition": "rush forward to a position"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-juan-zou",
+      "headword": "卷走",
+      "reading": "juǎnzǒu",
+      "base_entry_id": "zh-ef4b231493a1-1",
+      "components": [
+        {
+          "entry_id": "zh-ef4b231493a1-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-f66de6c4cd41-1",
+          "role": "directional complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-juan-zou-s1",
+          "definition": "sweep or carry away"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-guanghe",
+      "headword": "光和",
+      "reading": "Guānghé",
+      "kind": "name",
+      "base_entry_id": "zh-bf728630db0b-1",
+      "components": [
+        {
+          "entry_id": "zh-bf728630db0b-1",
+          "role": "name element"
+        },
+        {
+          "entry_id": "zh-3d7114281f5b-2",
+          "role": "name element"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-guanghe-s1",
+          "definition": "the Guanghe reign-era name"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-xia-zhao",
+      "headword": "下诏",
+      "reading": "xià zhào",
+      "base_entry_id": "zh-13c12b064b63-1",
+      "components": [
+        {
+          "entry_id": "zh-13c12b064b63-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-ee3d9d774d2b-1",
+          "role": "object"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-xia-zhao-s1",
+          "definition": "issue an imperial edict"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-zuo-neiying",
+      "headword": "做内应",
+      "reading": "zuò nèiyìng",
+      "base_entry_id": "zh-94f5404441e8-1",
+      "components": [
+        {
+          "entry_id": "zh-94f5404441e8-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-964ae2bad1bc-1",
+          "role": "role"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-zuo-neiying-s1",
+          "definition": "act as an inside agent"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-yue-hao",
+      "headword": "约好",
+      "reading": "yuēhǎo",
+      "base_entry_id": "zh-5890c084b931-1",
+      "components": [
+        {
+          "entry_id": "zh-5890c084b931-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-f867f3417859-2",
+          "role": "result complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-yue-hao-s1",
+          "definition": "arrange or agree on something in advance"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-guo-shang",
+      "headword": "裹上",
+      "reading": "guǒshàng",
+      "base_entry_id": "zh-72a4807c7807-1",
+      "components": [
+        {
+          "entry_id": "zh-72a4807c7807-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-db5ba671d244-1",
+          "role": "result complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-guo-shang-s1",
+          "definition": "wrap or attach a covering onto something"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-kan-qu",
+      "headword": "看去",
+      "reading": "kànqu",
+      "base_entry_id": "zh-61f43315f98a-1",
+      "components": [
+        {
+          "entry_id": "zh-61f43315f98a-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-99ae21ea6c39-1",
+          "role": "viewpoint complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-kan-qu-s1",
+          "definition": "when viewed; appear from a viewpoint"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-gan-jin",
+      "headword": "赶进",
+      "reading": "gǎnjìn",
+      "base_entry_id": "zh-94beea58b8a8-1",
+      "components": [
+        {
+          "entry_id": "zh-94beea58b8a8-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-83a8fd743b82-1",
+          "role": "directional complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-gan-jin-s1",
+          "definition": "hurry into a place"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-bei-hao",
+      "headword": "备好",
+      "reading": "bèihǎo",
+      "base_entry_id": "zh-b977f966967a-1",
+      "components": [
+        {
+          "entry_id": "zh-b977f966967a-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-f867f3417859-2",
+          "role": "result complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-bei-hao-s1",
+          "definition": "prepare something and have it ready"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-chu-zhen",
+      "headword": "出阵",
+      "reading": "chūzhèn",
+      "base_entry_id": "zh-4d5f7e15c8a5-1",
+      "components": [
+        {
+          "entry_id": "zh-4d5f7e15c8a5-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-60f1963be453-1",
+          "role": "place or formation"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-chu-zhen-s1",
+          "definition": "go out to the battle line"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-shou-bu-zhu",
+      "headword": "守不住",
+      "reading": "shǒu bu zhù",
+      "base_entry_id": "zh-3e99b40c4d39-1",
+      "components": [
+        {
+          "entry_id": "zh-3e99b40c4d39-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-9bbe3638e572-1",
+          "role": "potential complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-shou-bu-zhu-s1",
+          "definition": "be unable to hold or defend something"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-ting-ming",
+      "headword": "听命",
+      "reading": "tīngmìng",
+      "base_entry_id": "zh-1f2eb2608d23-1",
+      "components": [
+        {
+          "entry_id": "zh-1f2eb2608d23-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-42abb81858b5-1",
+          "role": "orders"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-ting-ming-s1",
+          "definition": "heed or obey orders"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-gua-qi",
+      "headword": "刮起",
+      "reading": "guāqǐ",
+      "base_entry_id": "zh-49f3ab54d5fa-1",
+      "components": [
+        {
+          "entry_id": "zh-49f3ab54d5fa-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-3f3ed24bab3f-1",
+          "role": "onset complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-gua-qi-s1",
+          "definition": "begin to blow, said of wind"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-gong-ru",
+      "headword": "攻入",
+      "reading": "gōngrù",
+      "base_entry_id": "zh-108be1223bd8-1",
+      "components": [
+        {
+          "entry_id": "zh-108be1223bd8-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-c404effc1720-1",
+          "role": "directional complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-gong-ru-s1",
+          "definition": "attack and enter a place"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-ding-xia",
+      "headword": "定下",
+      "reading": "dìngxia",
+      "base_entry_id": "zh-a071406edf01-1",
+      "components": [
+        {
+          "entry_id": "zh-a071406edf01-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-13c12b064b63-1",
+          "role": "result complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-ding-xia-s1",
+          "definition": "set or establish something"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-shoudao-chufa",
+      "headword": "受到处罚",
+      "reading": "shòudào chǔfá",
+      "base_entry_id": "zh-48d3e75b9ee5-1",
+      "components": [
+        {
+          "entry_id": "zh-48d3e75b9ee5-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-48c488d2292f-1",
+          "role": "treatment received"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-shoudao-chufa-s1",
+          "definition": "undergo punishment"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-gan-qu",
+      "headword": "赶去",
+      "reading": "gǎnqù",
+      "base_entry_id": "zh-94beea58b8a8-1",
+      "components": [
+        {
+          "entry_id": "zh-94beea58b8a8-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-99ae21ea6c39-1",
+          "role": "directional complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-gan-qu-s1",
+          "definition": "hurry off or hurry to a destination"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-shou-xianzhi",
+      "headword": "不受限制",
+      "reading": "bù shòu xiànzhì",
+      "kind": "construction",
+      "base_entry_id": "zh-de96c1fa6272-1",
+      "components": [
+        {
+          "entry_id": "zh-de96c1fa6272-1",
+          "role": "negated predicate"
+        },
+        {
+          "entry_id": "zh-688f892378ee-1",
+          "role": "restriction"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-shou-xianzhi-s1",
+          "definition": "not be subject to restrictions; be unconstrained"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-guan-qi-lai",
+      "headword": "关起来",
+      "reading": "guān qǐlai",
+      "kind": "expression",
+      "base_entry_id": "zh-5d0ae622f61f-1",
+      "components": [
+        {
+          "entry_id": "zh-5d0ae622f61f-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-b8a694b2df6d-1",
+          "role": "result complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-guan-qi-lai-s1",
+          "definition": "confine; shut someone in"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-ji-wei",
+      "headword": "即位",
+      "reading": "jíwèi",
+      "kind": "expression",
+      "base_entry_id": "zh-7acc85882aa0-1",
+      "components": [
+        {
+          "entry_id": "zh-7acc85882aa0-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-1aa9c4170bdd-1",
+          "role": "object"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-ji-wei-s1",
+          "definition": "assume a ruler's throne or position"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-jie-zai-yiqi",
+      "headword": "结在一起",
+      "reading": "jié zài yìqǐ",
+      "kind": "construction",
+      "base_entry_id": "zh-615cfe117306-1",
+      "components": [
+        {
+          "entry_id": "zh-615cfe117306-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-12404a0b6381-1",
+          "role": "locative link"
+        },
+        {
+          "entry_id": "zh-220ac6c5a360-1",
+          "role": "resulting state"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-jie-zai-yiqi-s1",
+          "definition": "join together; form a group"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-zuo-guan",
+      "headword": "做官",
+      "reading": "zuòguān",
+      "kind": "expression",
+      "base_entry_id": "zh-94f5404441e8-1",
+      "components": [
+        {
+          "entry_id": "zh-94f5404441e8-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-43a5b4e8d37e-1",
+          "role": "role"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-zuo-guan-s1",
+          "definition": "serve as an official"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-zhan-cheng",
+      "headword": "斩成",
+      "reading": "zhǎnchéng",
+      "base_entry_id": "zh-7b51d6bb4d8f-1",
+      "components": [
+        {
+          "entry_id": "zh-7b51d6bb4d8f-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-55466f4976ec-1",
+          "role": "result complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-zhan-cheng-s1",
+          "definition": "cut something into a resulting form"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-chong-qu",
+      "headword": "冲去",
+      "reading": "chōngqu",
+      "kind": "expression",
+      "base_entry_id": "zh-c7d1e85e396e-1",
+      "components": [
+        {
+          "entry_id": "zh-c7d1e85e396e-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-99ae21ea6c39-1",
+          "role": "directional complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-chong-qu-s1",
+          "definition": "charge off; rush away"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-jing-dao",
+      "headword": "惊倒",
+      "reading": "jīngdǎo",
+      "kind": "expression",
+      "base_entry_id": "zh-8691c36844e6-1",
+      "components": [
+        {
+          "entry_id": "zh-8691c36844e6-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-d3b1b977d672-1",
+          "role": "result complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-jing-dao-s1",
+          "definition": "be startled and fall over"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-you-xue",
+      "headword": "游学",
+      "reading": "yóuxué",
+      "kind": "expression",
+      "base_entry_id": "zh-251e86cb3ace-1",
+      "components": [
+        {
+          "entry_id": "zh-251e86cb3ace-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-8a6949a38384-1",
+          "role": "study"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-you-xue-s1",
+          "definition": "travel while studying"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-ting-hou",
+      "headword": "听后",
+      "reading": "tīnghòu",
+      "kind": "expression",
+      "base_entry_id": "zh-1f2eb2608d23-1",
+      "components": [
+        {
+          "entry_id": "zh-1f2eb2608d23-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-60be66d61586-1",
+          "role": "temporal complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-ting-hou-s1",
+          "definition": "after hearing or listening"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-xiang-wen",
+      "headword": "相问",
+      "reading": "xiāngwèn",
+      "kind": "expression",
+      "base_entry_id": "zh-89bf5aeae158-1",
+      "components": [
+        {
+          "entry_id": "zh-89bf5aeae158-1",
+          "role": "reciprocal adverb"
+        },
+        {
+          "entry_id": "zh-4628c0e06f4b-1",
+          "role": "verb"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-xiang-wen-s1",
+          "definition": "ask one another"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-zuo-neiying-zuo",
+      "headword": "作内应",
+      "reading": "zuò nèiyìng",
+      "kind": "expression",
+      "base_entry_id": "zh-7ff9df9923a8-1",
+      "components": [
+        {
+          "entry_id": "zh-7ff9df9923a8-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-964ae2bad1bc-1",
+          "role": "role"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-zuo-neiying-zuo-s1",
+          "definition": "act as an inside agent"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-hun-zhan",
+      "headword": "混战",
+      "reading": "hùnzhàn",
+      "kind": "expression",
+      "base_entry_id": "zh-2175a19ace96-2",
+      "components": [
+        {
+          "entry_id": "zh-2175a19ace96-2",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-b168bb302db0-1",
+          "role": "combat"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-hun-zhan-s1",
+          "definition": "fight in a confused mêlée"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-xiang-ju",
+      "headword": "相拒",
+      "reading": "xiāngjù",
+      "kind": "expression",
+      "base_entry_id": "zh-89bf5aeae158-1",
+      "components": [
+        {
+          "entry_id": "zh-89bf5aeae158-1",
+          "role": "reciprocal adverb"
+        },
+        {
+          "entry_id": "zh-830a2850e8e4-1",
+          "role": "verb"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-xiang-ju-s1",
+          "definition": "resist one another"
+        }
+      ]
+    },
+    {
+      "id": "zh-expression-bu-ji-qi-shu",
+      "headword": "不计其数",
+      "reading": "bújìqíshù",
+      "kind": "expression",
+      "base_entry_id": "zh-f92332a0eeab-1",
+      "components": [
+        {
+          "entry_id": "zh-f92332a0eeab-1",
+          "role": "predicate"
+        },
+        {
+          "entry_id": "zh-9626329d6ccf-1",
+          "role": "possessive element"
+        },
+        {
+          "entry_id": "zh-a8df40502f55-1",
+          "role": "number"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-bu-ji-qi-shu-s1",
+          "definition": "too many to count"
+        }
+      ]
+    }
+  ],
+  "bindings": [
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk1_001.json#cd13eaecc0d9:1:unit-3",
+      "entry_id": "zh-expression-kandao",
+      "sense_id": "zh-expression-kandao-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk1_001.json#cd13eaecc0d9:25:unit-26",
+      "entry_id": "zh-61f43315f98a-1",
+      "sense_id": "zh-61f43315f98a-1-s2",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk1_001.json#cd13eaecc0d9:49:unit-50",
+      "entry_id": "zh-expression-you-nan",
+      "sense_id": "zh-expression-you-nan-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk1_001.json#cd13eaecc0d9:80:unit-81",
+      "entry_id": "zh-1f2eb2608d23-1",
+      "sense_id": "zh-1f2eb2608d23-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk1_001.json#cd13eaecc0d9:95:unit-96",
+      "entry_id": "zh-7e92752bff47-1",
+      "sense_id": "zh-7e92752bff47-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk1_001.json#cd13eaecc0d9:98:unit-99",
+      "entry_id": "zh-6d8229118caa-1",
+      "sense_id": "zh-6d8229118caa-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk1_001.json#cd13eaecc0d9:127:unit-128",
+      "entry_id": "zh-1f2eb2608d23-1",
+      "sense_id": "zh-1f2eb2608d23-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk1_001.json#cd13eaecc0d9:153:unit-156",
+      "entry_id": "zh-39eae64cfc41-1",
+      "sense_id": "zh-39eae64cfc41-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk1_001.json#cd13eaecc0d9:170:unit-171",
+      "entry_id": "zh-expression-zuo-xiongdi",
+      "sense_id": "zh-expression-zuo-xiongdi-s1",
+      "canonical_start": 0,
+      "canonical_end": 3
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk1_001.json#cd13eaecc0d9:184:unit-185",
+      "entry_id": "zh-expression-bai-tiandi",
+      "sense_id": "zh-expression-bai-tiandi-s1",
+      "canonical_start": 0,
+      "canonical_end": 3
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk1_001.json#cd13eaecc0d9:257:unit-258",
+      "entry_id": "zh-90ce0f66f094-1",
+      "sense_id": "zh-90ce0f66f094-1-s3",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:5:unit-6",
+      "entry_id": "zh-3ec82ab67c8d-1",
+      "sense_id": "zh-3ec82ab67c8d-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:210:unit-213",
+      "entry_id": "zh-f77d7d6fdcad-1",
+      "sense_id": "zh-f77d7d6fdcad-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:225:unit-226",
+      "entry_id": "zh-expression-jie-wei-xiongdi",
+      "sense_id": "zh-expression-jie-wei-xiongdi-s1",
+      "canonical_start": 0,
+      "canonical_end": 4
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:344:unit-345",
+      "entry_id": "zh-bbcd809f30d3-1",
+      "sense_id": "zh-bbcd809f30d3-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:409:unit-410",
+      "entry_id": "zh-c6d764df544b-1",
+      "sense_id": "zh-c6d764df544b-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:499:unit-500",
+      "entry_id": "zh-90ce0f66f094-1",
+      "sense_id": "zh-90ce0f66f094-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:515:unit-518",
+      "entry_id": "zh-e71ce5deab51-1",
+      "sense_id": "zh-e71ce5deab51-1-s2",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:530:unit-531",
+      "entry_id": "zh-expression-huo-xialai",
+      "sense_id": "zh-expression-huo-xialai-s1",
+      "canonical_start": 0,
+      "canonical_end": 3
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:534:unit-535",
+      "entry_id": "zh-b2cae9cd92ac-1",
+      "sense_id": "zh-b2cae9cd92ac-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:200:unit-201",
+      "entry_id": "zh-b56f36b529db-1",
+      "sense_id": "zh-b56f36b529db-1-s2",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:234:unit-235",
+      "entry_id": "zh-61f43315f98a-1",
+      "sense_id": "zh-61f43315f98a-1-s2",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:287:unit-288",
+      "entry_id": "zh-7e92752bff47-1",
+      "sense_id": "zh-7e92752bff47-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:342:unit-344",
+      "entry_id": "zh-39eae64cfc41-1",
+      "sense_id": "zh-39eae64cfc41-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:354:unit-355",
+      "entry_id": "zh-expression-jie-wei-xiongdi",
+      "sense_id": "zh-expression-jie-wei-xiongdi-s1",
+      "canonical_start": 0,
+      "canonical_end": 4
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:384:unit-385",
+      "entry_id": "zh-fd5db2cf36a9-1",
+      "sense_id": "zh-fd5db2cf36a9-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:499:unit-500",
+      "entry_id": "zh-7b51d6bb4d8f-1",
+      "sense_id": "zh-7b51d6bb4d8f-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:515:unit-516",
+      "entry_id": "zh-03ecfee0d013-1",
+      "sense_id": "zh-03ecfee0d013-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:537:unit-538",
+      "entry_id": "zh-4af4ba121b86-1",
+      "sense_id": "zh-4af4ba121b86-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:635:unit-636",
+      "entry_id": "zh-c6d764df544b-1",
+      "sense_id": "zh-c6d764df544b-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:645:unit-646",
+      "entry_id": "zh-e35eaa506840-1",
+      "sense_id": "zh-e35eaa506840-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:774:unit-775",
+      "entry_id": "zh-b56f36b529db-1",
+      "sense_id": "zh-b56f36b529db-1-s2",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:792:unit-793",
+      "entry_id": "zh-49371986e1e2-1",
+      "sense_id": "zh-49371986e1e2-1-s2",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:856:unit-857",
+      "entry_id": "zh-c6d764df544b-1",
+      "sense_id": "zh-c6d764df544b-1-s2",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:863:unit-864",
+      "entry_id": "zh-92efa6f0357b-1",
+      "sense_id": "zh-92efa6f0357b-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:873:unit-874",
+      "entry_id": "zh-fd5db2cf36a9-1",
+      "sense_id": "zh-fd5db2cf36a9-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:934:unit-935",
+      "entry_id": "zh-5d0ae622f61f-1",
+      "sense_id": "zh-5d0ae622f61f-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:987:unit-988",
+      "entry_id": "zh-expression-ting-wan",
+      "sense_id": "zh-expression-ting-wan-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:998:unit-999",
+      "entry_id": "zh-d0facad829d4-1",
+      "sense_id": "zh-d0facad829d4-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:1023:unit-1024",
+      "entry_id": "zh-expression-ya-zou",
+      "sense_id": "zh-expression-ya-zou-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:1034:unit-1035",
+      "entry_id": "zh-905819e2e3a0-1",
+      "sense_id": "zh-905819e2e3a0-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:1057:unit-1058",
+      "entry_id": "zh-expression-chong-shangqu",
+      "sense_id": "zh-expression-chong-shangqu-s1",
+      "canonical_start": 0,
+      "canonical_end": 3
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:1064:unit-1065",
+      "entry_id": "zh-d0facad829d4-1",
+      "sense_id": "zh-d0facad829d4-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:1124:unit-1125",
+      "entry_id": "zh-bbcd809f30d3-1",
+      "sense_id": "zh-bbcd809f30d3-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:1138:unit-1139",
+      "entry_id": "zh-b2cae9cd92ac-1",
+      "sense_id": "zh-b2cae9cd92ac-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1:unit-2",
+      "entry_id": "zh-7100b1773b3f-1",
+      "sense_id": "zh-7100b1773b3f-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:16:unit-17",
+      "entry_id": "zh-586af0c5092c-1",
+      "sense_id": "zh-586af0c5092c-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:83:unit-84",
+      "entry_id": "zh-expression-shou-xianzhi",
+      "sense_id": "zh-expression-shou-xianzhi-s1",
+      "canonical_start": 0,
+      "canonical_end": 4
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:160:unit-161",
+      "entry_id": "zh-expression-juan-zou",
+      "sense_id": "zh-expression-juan-zou-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:163:unit-164",
+      "entry_id": "zh-expression-guanghe",
+      "sense_id": "zh-expression-guanghe-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:194:unit-195",
+      "entry_id": "zh-expression-xia-zhao",
+      "sense_id": "zh-expression-xia-zhao-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:254:unit-255",
+      "entry_id": "zh-4062f4c3ce2a-1",
+      "sense_id": "zh-4062f4c3ce2a-1-s1",
+      "canonical_start": 1,
+      "canonical_end": 3
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:468:unit-469",
+      "entry_id": "zh-expression-yue-hao",
+      "sense_id": "zh-expression-yue-hao-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:489:unit-490",
+      "entry_id": "zh-bbcd809f30d3-1",
+      "sense_id": "zh-bbcd809f30d3-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:527:unit-528",
+      "entry_id": "zh-expression-guo-shang",
+      "sense_id": "zh-expression-guo-shang-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:596:unit-597",
+      "entry_id": "zh-b61f333b91b2-1",
+      "sense_id": "zh-b61f333b91b2-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:607:unit-608",
+      "entry_id": "zh-b1d59f7b9357-1",
+      "sense_id": "zh-b1d59f7b9357-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:695:unit-696",
+      "entry_id": "zh-expression-kan-qu",
+      "sense_id": "zh-expression-kan-qu-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:709:unit-710",
+      "entry_id": "zh-5f887419f463-1",
+      "sense_id": "zh-5f887419f463-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:742:unit-743",
+      "entry_id": "zh-32f02fd27c53-1",
+      "sense_id": "zh-32f02fd27c53-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:798:unit-799",
+      "entry_id": "zh-61f43315f98a-1",
+      "sense_id": "zh-61f43315f98a-1-s2",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:911:unit-912",
+      "entry_id": "zh-expression-gan-jin",
+      "sense_id": "zh-expression-gan-jin-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:934:unit-935",
+      "entry_id": "zh-bbcd809f30d3-1",
+      "sense_id": "zh-bbcd809f30d3-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:943:unit-944",
+      "entry_id": "zh-1e5e3499cac0-1",
+      "sense_id": "zh-1e5e3499cac0-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:970:unit-971",
+      "entry_id": "zh-1f2eb2608d23-1",
+      "sense_id": "zh-1f2eb2608d23-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1009:unit-1010",
+      "entry_id": "zh-39eae64cfc41-1",
+      "sense_id": "zh-39eae64cfc41-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1021:unit-1022",
+      "entry_id": "zh-expression-jie-wei-xiongdi",
+      "sense_id": "zh-expression-jie-wei-xiongdi-s1",
+      "canonical_start": 0,
+      "canonical_end": 4
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1037:unit-1038",
+      "entry_id": "zh-expression-bei-hao",
+      "sense_id": "zh-expression-bei-hao-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1093:unit-1094",
+      "entry_id": "zh-fd5db2cf36a9-1",
+      "sense_id": "zh-fd5db2cf36a9-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1259:unit-1260",
+      "entry_id": "zh-b56f36b529db-1",
+      "sense_id": "zh-b56f36b529db-1-s2",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1271:unit-1272",
+      "entry_id": "zh-expression-chu-zhen",
+      "sense_id": "zh-expression-chu-zhen-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1332:unit-1333",
+      "entry_id": "zh-expression-zhan-cheng",
+      "sense_id": "zh-expression-zhan-cheng-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1341:unit-1342",
+      "entry_id": "zh-03ecfee0d013-1",
+      "sense_id": "zh-03ecfee0d013-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1356:unit-1357",
+      "entry_id": "zh-bbcd809f30d3-1",
+      "sense_id": "zh-bbcd809f30d3-1-s1",
+      "canonical_start": 1,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1394:unit-1395",
+      "entry_id": "zh-expression-shou-bu-zhu",
+      "sense_id": "zh-expression-shou-bu-zhu-s1",
+      "canonical_start": 0,
+      "canonical_end": 3
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1434:unit-1435",
+      "entry_id": "zh-b56f36b529db-1",
+      "sense_id": "zh-b56f36b529db-1-s2",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1446:unit-1447",
+      "entry_id": "zh-72113362c682-1",
+      "sense_id": "zh-72113362c682-1-s1",
+      "canonical_start": 1,
+      "canonical_end": 3
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1609:unit-1610",
+      "entry_id": "zh-expression-ting-ming",
+      "sense_id": "zh-expression-ting-ming-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1649:unit-1650",
+      "entry_id": "zh-expression-yue-hao",
+      "sense_id": "zh-expression-yue-hao-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1704:unit-1705",
+      "entry_id": "zh-expression-gua-qi",
+      "sense_id": "zh-expression-gua-qi-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1714:unit-1715",
+      "entry_id": "zh-1fa8857b448c-1",
+      "sense_id": "zh-1fa8857b448c-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1722:unit-1723",
+      "entry_id": "zh-expression-gong-ru",
+      "sense_id": "zh-expression-gong-ru-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1762:unit-1763",
+      "entry_id": "zh-fd5db2cf36a9-1",
+      "sense_id": "zh-fd5db2cf36a9-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1791:unit-1792",
+      "entry_id": "zh-c6d764df544b-1",
+      "sense_id": "zh-c6d764df544b-1-s2",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1880:unit-1881",
+      "entry_id": "zh-expression-ding-xia",
+      "sense_id": "zh-expression-ding-xia-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1896:unit-1897",
+      "entry_id": "zh-expression-shoudao-chufa",
+      "sense_id": "zh-expression-shoudao-chufa-s1",
+      "canonical_start": 0,
+      "canonical_end": 4
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1934:unit-1935",
+      "entry_id": "zh-614b43059f31-1",
+      "sense_id": "zh-614b43059f31-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1943:unit-1944",
+      "entry_id": "zh-fd5db2cf36a9-1",
+      "sense_id": "zh-fd5db2cf36a9-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1968:unit-1969",
+      "entry_id": "zh-expression-gan-qu",
+      "sense_id": "zh-expression-gan-qu-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:2096:unit-2097",
+      "entry_id": "zh-1f2eb2608d23-1",
+      "sense_id": "zh-1f2eb2608d23-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:2136:unit-2137",
+      "entry_id": "zh-9411e29e6d44-1",
+      "sense_id": "zh-9411e29e6d44-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:2146:unit-2147",
+      "entry_id": "zh-905819e2e3a0-1",
+      "sense_id": "zh-905819e2e3a0-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:2156:unit-2157",
+      "entry_id": "zh-d86bd23098d1-1",
+      "sense_id": "zh-d86bd23098d1-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:2180:unit-2181",
+      "entry_id": "zh-eecaf7bb139f-1",
+      "sense_id": "zh-eecaf7bb139f-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:2197:unit-2198",
+      "entry_id": "zh-38ebeb4bd2ff-1",
+      "sense_id": "zh-38ebeb4bd2ff-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:2220:unit-2221",
+      "entry_id": "zh-abc3da5e6b37-1",
+      "sense_id": "zh-abc3da5e6b37-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:2226:unit-2227",
+      "entry_id": "zh-d0facad829d4-1",
+      "sense_id": "zh-d0facad829d4-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:2273:unit-2274",
+      "entry_id": "zh-5d4e2a33b1d8-1",
+      "sense_id": "zh-5d4e2a33b1d8-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:2303:unit-2304",
+      "entry_id": "zh-expression-huo-xialai",
+      "sense_id": "zh-expression-huo-xialai-s1",
+      "canonical_start": 0,
+      "canonical_end": 3
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:2307:unit-2308",
+      "entry_id": "zh-b2cae9cd92ac-1",
+      "sense_id": "zh-b2cae9cd92ac-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:45:unit-46",
+      "entry_id": "zh-expression-guan-qi-lai",
+      "sense_id": "zh-expression-guan-qi-lai-s1",
+      "canonical_start": 0,
+      "canonical_end": 3
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:51:unit-52",
+      "entry_id": "zh-expression-ji-wei",
+      "sense_id": "zh-expression-ji-wei-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:144:unit-145",
+      "entry_id": "zh-f7778934807d-1",
+      "sense_id": "zh-f7778934807d-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:213:unit-216",
+      "entry_id": "zh-90ce0f66f094-1",
+      "sense_id": "zh-90ce0f66f094-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:221:unit-222",
+      "entry_id": "zh-expression-xia-zhao",
+      "sense_id": "zh-expression-xia-zhao-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:236:unit-237",
+      "entry_id": "zh-4ec4dd6468b6-1",
+      "sense_id": "zh-4ec4dd6468b6-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:249:unit-250",
+      "entry_id": "zh-60be66d61586-1",
+      "sense_id": "zh-60be66d61586-1-s1",
+      "canonical_start": 1,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:256:unit-257",
+      "entry_id": "zh-61f43315f98a-1",
+      "sense_id": "zh-61f43315f98a-1-s2",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:286:unit-287",
+      "entry_id": "zh-expression-jie-zai-yiqi",
+      "sense_id": "zh-expression-jie-zai-yiqi-s1",
+      "canonical_start": 0,
+      "canonical_end": 4
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:290:unit-291",
+      "entry_id": "zh-4062f4c3ce2a-1",
+      "sense_id": "zh-4062f4c3ce2a-1-s1",
+      "canonical_start": 1,
+      "canonical_end": 3
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:334:unit-335",
+      "entry_id": "zh-b458b896cfcd-1",
+      "sense_id": "zh-b458b896cfcd-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:413:unit-414",
+      "entry_id": "zh-3ec82ab67c8d-1",
+      "sense_id": "zh-3ec82ab67c8d-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:495:unit-496",
+      "entry_id": "zh-55466f4976ec-1",
+      "sense_id": "zh-55466f4976ec-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:523:unit-524",
+      "entry_id": "zh-d4007e1a3819-1",
+      "sense_id": "zh-d4007e1a3819-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:550:unit-551",
+      "entry_id": "zh-bbcd809f30d3-1",
+      "sense_id": "zh-bbcd809f30d3-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:559:unit-560",
+      "entry_id": "zh-b4e1e3745724-1",
+      "sense_id": "zh-b4e1e3745724-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:591:unit-592",
+      "entry_id": "zh-72a4807c7807-1",
+      "sense_id": "zh-72a4807c7807-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:682:unit-683",
+      "entry_id": "zh-b1d59f7b9357-1",
+      "sense_id": "zh-b1d59f7b9357-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:705:unit-706",
+      "entry_id": "zh-94f5404441e8-1",
+      "sense_id": "zh-94f5404441e8-1-s2",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:836:unit-837",
+      "entry_id": "zh-60be66d61586-1",
+      "sense_id": "zh-60be66d61586-1-s1",
+      "canonical_start": 1,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:859:unit-860",
+      "entry_id": "zh-61f43315f98a-1",
+      "sense_id": "zh-61f43315f98a-1-s2",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:868:unit-869",
+      "entry_id": "zh-e2cf0f3646cc-1",
+      "sense_id": "zh-e2cf0f3646cc-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:890:unit-891",
+      "entry_id": "zh-d38a2a54cf74-1",
+      "sense_id": "zh-d38a2a54cf74-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:902:unit-903",
+      "entry_id": "zh-61f43315f98a-1",
+      "sense_id": "zh-61f43315f98a-1-s2",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:927:unit-929",
+      "entry_id": "zh-cf8cedd58b7a-1",
+      "sense_id": "zh-cf8cedd58b7a-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1032:unit-1033",
+      "entry_id": "zh-7e92752bff47-1",
+      "sense_id": "zh-7e92752bff47-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1091:unit-1092",
+      "entry_id": "zh-bbcd809f30d3-1",
+      "sense_id": "zh-bbcd809f30d3-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1165:unit-1166",
+      "entry_id": "zh-expression-jie-wei-xiongdi",
+      "sense_id": "zh-expression-jie-wei-xiongdi-s1",
+      "canonical_start": 0,
+      "canonical_end": 4
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1205:unit-1206",
+      "entry_id": "zh-expression-jie-wei-xiongdi",
+      "sense_id": "zh-expression-jie-wei-xiongdi-s1",
+      "canonical_start": 0,
+      "canonical_end": 4
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1209:unit-1210",
+      "entry_id": "zh-33c83afac517-1",
+      "sense_id": "zh-33c83afac517-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1259:unit-1260",
+      "entry_id": "zh-expression-ji-ba",
+      "sense_id": "zh-expression-ji-ba-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1302:unit-1303",
+      "entry_id": "zh-fd5db2cf36a9-1",
+      "sense_id": "zh-fd5db2cf36a9-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1306:unit-1307",
+      "entry_id": "zh-94beea58b8a8-1",
+      "sense_id": "zh-94beea58b8a8-1-s2",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1352:unit-1353",
+      "entry_id": "zh-1f2eb2608d23-1",
+      "sense_id": "zh-1f2eb2608d23-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1418:unit-1421",
+      "entry_id": "zh-c84960e8b922-1",
+      "sense_id": "zh-c84960e8b922-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1425:unit-1427",
+      "entry_id": "zh-131edfdaf6a2-1",
+      "sense_id": "zh-131edfdaf6a2-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1433:unit-1434",
+      "entry_id": "zh-007b9d6b92cf-1",
+      "sense_id": "zh-007b9d6b92cf-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1441:unit-1442",
+      "entry_id": "zh-b5fde862b143-1",
+      "sense_id": "zh-b5fde862b143-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1485:unit-1486",
+      "entry_id": "zh-72eaab5334dc-1",
+      "sense_id": "zh-72eaab5334dc-1-s2",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1532:unit-1533",
+      "entry_id": "zh-a7caf88fcaa9-1",
+      "sense_id": "zh-a7caf88fcaa9-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1544:unit-1545",
+      "entry_id": "zh-f857ab1f0999-1",
+      "sense_id": "zh-f857ab1f0999-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1546:unit-1547",
+      "entry_id": "zh-b455c4897597-1",
+      "sense_id": "zh-b455c4897597-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1562:unit-1565",
+      "entry_id": "zh-7b51d6bb4d8f-1",
+      "sense_id": "zh-7b51d6bb4d8f-1-s2",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1577:unit-1578",
+      "entry_id": "zh-c15616fa4d7b-1",
+      "sense_id": "zh-c15616fa4d7b-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1629:unit-1630",
+      "entry_id": "zh-expression-shou-bu-zhu",
+      "sense_id": "zh-expression-shou-bu-zhu-s1",
+      "canonical_start": 0,
+      "canonical_end": 3
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1678:unit-1679",
+      "entry_id": "zh-60219b55fe11-1",
+      "sense_id": "zh-60219b55fe11-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1686:unit-1687",
+      "entry_id": "zh-expression-tui-hou",
+      "sense_id": "zh-expression-tui-hou-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1690:unit-1691",
+      "entry_id": "zh-45ae7794e4cc-1",
+      "sense_id": "zh-45ae7794e4cc-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1747:unit-1748",
+      "entry_id": "zh-expression-chu-bing",
+      "sense_id": "zh-expression-chu-bing-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1808:unit-1809",
+      "entry_id": "zh-5a9685e37bea-1",
+      "sense_id": "zh-5a9685e37bea-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1834:unit-1835",
+      "entry_id": "zh-6e6bc0e3272e-1",
+      "sense_id": "zh-6e6bc0e3272e-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1944:unit-1945",
+      "entry_id": "zh-expression-gan-lu",
+      "sense_id": "zh-expression-gan-lu-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1954:unit-1955",
+      "entry_id": "zh-6e6bc0e3272e-1",
+      "sense_id": "zh-6e6bc0e3272e-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1994:unit-1995",
+      "entry_id": "zh-fd5db2cf36a9-1",
+      "sense_id": "zh-fd5db2cf36a9-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:2068:unit-2069",
+      "entry_id": "zh-75ae6c2965d3-1",
+      "sense_id": "zh-75ae6c2965d3-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:2077:unit-2078",
+      "entry_id": "zh-34241e377625-1",
+      "sense_id": "zh-34241e377625-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:2099:unit-2100",
+      "entry_id": "zh-d5c9f695ffe4-1",
+      "sense_id": "zh-d5c9f695ffe4-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:2103:unit-2104",
+      "entry_id": "zh-94f5404441e8-1",
+      "sense_id": "zh-94f5404441e8-1-s2",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:2190:unit-2191",
+      "entry_id": "zh-fd5db2cf36a9-1",
+      "sense_id": "zh-fd5db2cf36a9-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:2227:unit-2229",
+      "entry_id": "zh-d32b5e26a7e6-1",
+      "sense_id": "zh-d32b5e26a7e6-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:2248:unit-2249",
+      "entry_id": "zh-fd5db2cf36a9-1",
+      "sense_id": "zh-fd5db2cf36a9-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:2316:unit-2317",
+      "entry_id": "zh-fd5db2cf36a9-1",
+      "sense_id": "zh-fd5db2cf36a9-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:2425:unit-2426",
+      "entry_id": "zh-d9c6496432c6-1",
+      "sense_id": "zh-d9c6496432c6-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:2433:unit-2434",
+      "entry_id": "zh-expression-ting-wan",
+      "sense_id": "zh-expression-ting-wan-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:2465:unit-2466",
+      "entry_id": "zh-expression-ya-zou",
+      "sense_id": "zh-expression-ya-zou-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:2521:unit-2522",
+      "entry_id": "zh-expression-chong-qu",
+      "sense_id": "zh-expression-chong-qu-s1",
+      "canonical_start": 2,
+      "canonical_end": 4
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:2545:unit-2546",
+      "entry_id": "zh-d0facad829d4-1",
+      "sense_id": "zh-d0facad829d4-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:2586:unit-2588",
+      "entry_id": "zh-d7df520b88dc-1",
+      "sense_id": "zh-d7df520b88dc-1-s1",
+      "canonical_start": 2,
+      "canonical_end": 5
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:66:unit-67",
+      "entry_id": "zh-expression-ji-wei",
+      "sense_id": "zh-expression-ji-wei-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:97:unit-98",
+      "entry_id": "zh-98d1d34060c7-1",
+      "sense_id": "zh-98d1d34060c7-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:141:unit-142",
+      "entry_id": "zh-expression-jing-dao",
+      "sense_id": "zh-expression-jing-dao-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:157:unit-158",
+      "entry_id": "zh-a3fdf059d4ff-1",
+      "sense_id": "zh-a3fdf059d4ff-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:162:unit-163",
+      "entry_id": "zh-b6356f8699cd-1",
+      "sense_id": "zh-b6356f8699cd-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:193:unit-194",
+      "entry_id": "zh-expression-juan-zou",
+      "sense_id": "zh-expression-juan-zou-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:543:unit-544",
+      "entry_id": "zh-fd5db2cf36a9-1",
+      "sense_id": "zh-fd5db2cf36a9-1-s2",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:557:unit-558",
+      "entry_id": "zh-expression-zuo-neiying-zuo",
+      "sense_id": "zh-expression-zuo-neiying-zuo-s1",
+      "canonical_start": 0,
+      "canonical_end": 3
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:633:unit-635",
+      "entry_id": "zh-b4e1e3745724-1",
+      "sense_id": "zh-b4e1e3745724-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:644:unit-645",
+      "entry_id": "zh-796b8679e482-1",
+      "sense_id": "zh-796b8679e482-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:669:unit-670",
+      "entry_id": "zh-72a4807c7807-1",
+      "sense_id": "zh-72a4807c7807-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:784:unit-785",
+      "entry_id": "zh-b1d59f7b9357-1",
+      "sense_id": "zh-b1d59f7b9357-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:805:unit-806",
+      "entry_id": "zh-59820da96dd1-1",
+      "sense_id": "zh-59820da96dd1-1-s1",
+      "canonical_start": 1,
+      "canonical_end": 3
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:825:unit-826",
+      "entry_id": "zh-a1ee0a79ecf3-1",
+      "sense_id": "zh-a1ee0a79ecf3-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:841:unit-842",
+      "entry_id": "zh-94f5404441e8-1",
+      "sense_id": "zh-94f5404441e8-1-s4",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:930:unit-931",
+      "entry_id": "zh-expression-ting-hou",
+      "sense_id": "zh-expression-ting-hou-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:959:unit-961",
+      "entry_id": "zh-expression-you-xue",
+      "sense_id": "zh-expression-you-xue-s1",
+      "canonical_start": 2,
+      "canonical_end": 4
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1104:unit-1105",
+      "entry_id": "zh-expression-xiang-wen",
+      "sense_id": "zh-expression-xiang-wen-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1121:unit-1122",
+      "entry_id": "zh-e2cf0f3646cc-1",
+      "sense_id": "zh-e2cf0f3646cc-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1169:unit-1170",
+      "entry_id": "zh-d9202ad30169-1",
+      "sense_id": "zh-d9202ad30169-1-s1",
+      "canonical_start": 1,
+      "canonical_end": 3
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1233:unit-1234",
+      "entry_id": "zh-bbcd809f30d3-1",
+      "sense_id": "zh-bbcd809f30d3-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1303:unit-1304",
+      "entry_id": "zh-expression-jie-wei-xiongdi",
+      "sense_id": "zh-expression-jie-wei-xiongdi-s1",
+      "canonical_start": 0,
+      "canonical_end": 4
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1323:unit-1324",
+      "entry_id": "zh-expression-bei-hao",
+      "sense_id": "zh-expression-bei-hao-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1410:unit-1411",
+      "entry_id": "zh-94beea58b8a8-1",
+      "sense_id": "zh-94beea58b8a8-1-s2",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1415:unit-1416",
+      "entry_id": "zh-b56f36b529db-1",
+      "sense_id": "zh-b56f36b529db-1-s2",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1580:unit-1581",
+      "entry_id": "zh-1a355b4e87a0-1",
+      "sense_id": "zh-1a355b4e87a0-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1592:unit-1593",
+      "entry_id": "zh-b56f36b529db-1",
+      "sense_id": "zh-b56f36b529db-1-s2",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1603:unit-1604",
+      "entry_id": "zh-d6122c052801-1",
+      "sense_id": "zh-d6122c052801-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1608:unit-1609",
+      "entry_id": "zh-500324a96020-1",
+      "sense_id": "zh-500324a96020-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1655:unit-1656",
+      "entry_id": "zh-a7caf88fcaa9-1",
+      "sense_id": "zh-a7caf88fcaa9-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1670:unit-1671",
+      "entry_id": "zh-f857ab1f0999-1",
+      "sense_id": "zh-f857ab1f0999-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1672:unit-1673",
+      "entry_id": "zh-b455c4897597-1",
+      "sense_id": "zh-b455c4897597-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1681:unit-1682",
+      "entry_id": "zh-a781b76ad955-1",
+      "sense_id": "zh-a781b76ad955-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1694:unit-1695",
+      "entry_id": "zh-60219b55fe11-1",
+      "sense_id": "zh-60219b55fe11-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1701:unit-1702",
+      "entry_id": "zh-expression-zhan-cheng",
+      "sense_id": "zh-expression-zhan-cheng-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1711:unit-1713",
+      "entry_id": "zh-9f3c49eb8b23-1",
+      "sense_id": "zh-9f3c49eb8b23-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 3
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1719:unit-1720",
+      "entry_id": "zh-7b51d6bb4d8f-1",
+      "sense_id": "zh-7b51d6bb4d8f-1-s2",
+      "canonical_start": 1,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1732:unit-1733",
+      "entry_id": "zh-5618dc090303-1",
+      "sense_id": "zh-5618dc090303-1-s1",
+      "canonical_start": 2,
+      "canonical_end": 3
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1734:unit-1736",
+      "entry_id": "zh-expression-bu-ji-qi-shu",
+      "sense_id": "zh-expression-bu-ji-qi-shu-s1",
+      "canonical_start": 0,
+      "canonical_end": 4
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1811:unit-1812",
+      "entry_id": "zh-expression-hun-zhan",
+      "sense_id": "zh-expression-hun-zhan-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1819:unit-1820",
+      "entry_id": "zh-expression-tui-hou",
+      "sense_id": "zh-expression-tui-hou-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1861:unit-1864",
+      "entry_id": "zh-0d1785e1f368-2",
+      "sense_id": "zh-0d1785e1f368-2-s2",
+      "canonical_start": 3,
+      "canonical_end": 4
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1918:unit-1919",
+      "entry_id": "zh-5a9685e37bea-1",
+      "sense_id": "zh-5a9685e37bea-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1980:unit-1981",
+      "entry_id": "zh-b56f36b529db-1",
+      "sense_id": "zh-b56f36b529db-1-s2",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2014:unit-2015",
+      "entry_id": "zh-expression-xiang-ju",
+      "sense_id": "zh-expression-xiang-ju-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2018:unit-2019",
+      "entry_id": "zh-983adcd380bb-1",
+      "sense_id": "zh-983adcd380bb-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2131:unit-2132",
+      "entry_id": "zh-45b5b99d4b48-1",
+      "sense_id": "zh-45b5b99d4b48-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2137:unit-2138",
+      "entry_id": "zh-fd5db2cf36a9-1",
+      "sense_id": "zh-fd5db2cf36a9-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2210:unit-2211",
+      "entry_id": "zh-4912f2c09e63-1",
+      "sense_id": "zh-4912f2c09e63-1-s1",
+      "canonical_start": 2,
+      "canonical_end": 4
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2226:unit-2227",
+      "entry_id": "zh-75ae6c2965d3-1",
+      "sense_id": "zh-75ae6c2965d3-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2305:unit-2306",
+      "entry_id": "zh-expression-ting-hou",
+      "sense_id": "zh-expression-ting-hou-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2317:unit-2318",
+      "entry_id": "zh-94f5404441e8-1",
+      "sense_id": "zh-94f5404441e8-1-s4",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2426:unit-2427",
+      "entry_id": "zh-4507f5dd9ebd-1",
+      "sense_id": "zh-4507f5dd9ebd-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2439:unit-2440",
+      "entry_id": "zh-fd5db2cf36a9-1",
+      "sense_id": "zh-fd5db2cf36a9-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2456:unit-2457",
+      "entry_id": "zh-f0c1a1343270-1",
+      "sense_id": "zh-f0c1a1343270-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2507:unit-2508",
+      "entry_id": "zh-33a0514d2306-1",
+      "sense_id": "zh-33a0514d2306-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2520:unit-2521",
+      "entry_id": "zh-15b5dfa710a2-1",
+      "sense_id": "zh-15b5dfa710a2-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2562:unit-2563",
+      "entry_id": "zh-33a0514d2306-1",
+      "sense_id": "zh-33a0514d2306-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2570:unit-2571",
+      "entry_id": "zh-940deed3c102-1",
+      "sense_id": "zh-940deed3c102-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2623:unit-2624",
+      "entry_id": "zh-3b637c63dece-1",
+      "sense_id": "zh-3b637c63dece-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2697:unit-2698",
+      "entry_id": "zh-eecaf7bb139f-1",
+      "sense_id": "zh-eecaf7bb139f-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2735:unit-2736",
+      "entry_id": "zh-d0facad829d4-1",
+      "sense_id": "zh-d0facad829d4-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 2
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2771:unit-2772",
+      "entry_id": "zh-9eac93b2a1ca-1",
+      "sense_id": "zh-9eac93b2a1ca-1-s1",
+      "canonical_start": 0,
+      "canonical_end": 1
+    },
+    {
+      "candidate_id": "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:446:unit-447",
+      "entry_id": "zh-expression-zuo-neiying",
+      "sense_id": "zh-expression-zuo-neiying-s1",
+      "canonical_start": 0,
+      "canonical_end": 3
+    }
+  ],
+  "input_fingerprint": "81fa4b04046983f25cb3694c2c5997cdec5e90433a1a9b02f4f043369588760a",
+  "reviewed": true,
+  "candidate_fingerprints": {
+    "assets/annotations/chinese_sanguoyanyi_hsk1_001.json#cd13eaecc0d9:1:unit-3": "9ea1e3832d673707dc2fa948c1048ce7a044f55c14acfb0dc5e3cf659b0d7dfb",
+    "assets/annotations/chinese_sanguoyanyi_hsk1_001.json#cd13eaecc0d9:25:unit-26": "fd02a9e1ba7e0f08b7d92acdbb3a46229ebd3a304bf4005d1e600d06e2d1b1ed",
+    "assets/annotations/chinese_sanguoyanyi_hsk1_001.json#cd13eaecc0d9:49:unit-50": "31aacb9aca5c6cc61fa14b23f998976180952ab669e8024d763b9b1dd11d1d41",
+    "assets/annotations/chinese_sanguoyanyi_hsk1_001.json#cd13eaecc0d9:80:unit-81": "f8e6087d245c5b7436cdbd2d61c29ab4626513d1f77b46e187ec08eb541183fd",
+    "assets/annotations/chinese_sanguoyanyi_hsk1_001.json#cd13eaecc0d9:95:unit-96": "80f49c1c4f865197c89883f13334051b795728c5deba334749eefc042d1b4201",
+    "assets/annotations/chinese_sanguoyanyi_hsk1_001.json#cd13eaecc0d9:98:unit-99": "ac9f728006261d3f5d3c2c1b60da137ff8bf8d6cece58b475b3a0dd12ef261fb",
+    "assets/annotations/chinese_sanguoyanyi_hsk1_001.json#cd13eaecc0d9:127:unit-128": "f6da330afb45e6f0ed26cf698d1aeae6532b64d9eca74480a7a68026ee005682",
+    "assets/annotations/chinese_sanguoyanyi_hsk1_001.json#cd13eaecc0d9:153:unit-156": "a4a8aff50d54c3fd5d44bf137a3cbc71e72c78a44d561ef49213e1807825cb81",
+    "assets/annotations/chinese_sanguoyanyi_hsk1_001.json#cd13eaecc0d9:170:unit-171": "1a97719d4c0260879838dc78347beae7dc0d5d999430f29f2fc609b4fef9f174",
+    "assets/annotations/chinese_sanguoyanyi_hsk1_001.json#cd13eaecc0d9:184:unit-185": "e201b05513cdd191552748feb3360396734f38d3d79b312fd3c0083559a6098e",
+    "assets/annotations/chinese_sanguoyanyi_hsk1_001.json#cd13eaecc0d9:257:unit-258": "1e3542386ceb606dd19f8068bae71d061c11fa1673147853070396a19b683896",
+    "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:5:unit-6": "441dc54e1a6c3097c119b24a69c5e15c77876e8e6bea3b39d820f96483bdc6b9",
+    "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:210:unit-213": "d6347cb80bfa2a6e63770edb4c6ff6f85a73bf890ddee96897abf52b523d8569",
+    "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:225:unit-226": "81b9bdd112ab5f98eb20a1d721e4468df216be3a856d122a2424be699610b47c",
+    "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:344:unit-345": "820d6bd67e8fff6c9464981147d3501730d8355a711658a99ec10a034760430a",
+    "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:409:unit-410": "5689aee85a3df891db85a05b146703dd10f4476a70636938af1c9c8bf8fbdb61",
+    "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:499:unit-500": "26e1df457dacd979e43a7ea0b91a9b0d703164314063f593bf12e45cbbed26ce",
+    "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:515:unit-518": "f73e035dbb32790478ef88ceb35accc3a803fea2a28b4fb32f71ecab39630a51",
+    "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:530:unit-531": "9d42281af1e01af6c272487dae5d0fbff269a67b239e5f000d9cf7f55084d4ba",
+    "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:534:unit-535": "b2e7c4b80433d3cf65bcb50885738ec421cc55a81aea6454d7c674dccd209c1b",
+    "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:200:unit-201": "798cb8caf5537b0aceba0e43be79564f3c7200b71321fdd8a8d024e8cef9e15e",
+    "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:234:unit-235": "8d2d92ff3aaa07ae82783b667e95cd174b7840b8dcc18fb550eec1cb947e35ed",
+    "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:287:unit-288": "36175daf0ed4e3363e826c5472c7c49806f5f1c9c06b2ba95b5d3ad4fb9ea2af",
+    "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:342:unit-344": "69fe758bcbcf3017936adf3a86572d27cf04cb73dd0195df14784d8eaf341bc7",
+    "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:354:unit-355": "20f2109eb26d93843579e2f6355de1dfdb767657ec9289d1128b15b1e7e9a5b8",
+    "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:384:unit-385": "a6740407651e2891f060d199a0cc69f477706a806ffbe05211ea083dcf9e3b1b",
+    "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:499:unit-500": "6dc5c49c666cda4ae7751826a7edff5edabe90a7e69211578c83eb83f5937623",
+    "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:515:unit-516": "fea2f32bd6176d741ee76f1d1b16dc4937d67f56f6310a30480edec0b0a0f27e",
+    "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:537:unit-538": "cfa5c414c1fbb4e45c7ed74486574e357d07f6aef862ac8ba98c7c9704ff4c04",
+    "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:635:unit-636": "4cbd62e31c9e0153a399915d6640658d10522666b0b154449670de45d0d4d00b",
+    "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:645:unit-646": "def7ef7f3bd6233bc0473e02c8a8bcfd9215ba0c012b4ba26a9ac4487c889cee",
+    "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:774:unit-775": "9c50b977795b840a8393726abd08b8fb30f18f74fa7b06989637b96604337cde",
+    "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:792:unit-793": "45e3ef4bcc99a3e9e5629b080a9bc04f58a831ec3123c0aea3158d09e249bfa9",
+    "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:856:unit-857": "580aa4fe10e0a8d5f73567ed2c4c3807d61aca03df182d950e3deacea8fcd9ad",
+    "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:863:unit-864": "27a9a72fb3444b8ce4b2f034b962e2c51aa64af6ca78aa4b30fefcf5f4ae3823",
+    "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:873:unit-874": "5c49fe43d6efa2a5f07fdb01467f4b9702f1c24bb257b435c9cccaf600ad9eac",
+    "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:934:unit-935": "3518466ae8890ed12989b406084e27ff0ffb231ebbb330d234d88c39ee22d5b8",
+    "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:987:unit-988": "0143e21a81050b2c3b7cedf9f2d9a8825c73a4da6309218039b8fe84aace1f6a",
+    "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:998:unit-999": "c25b18320dcb8ad254b06bd8ec2044cc9cd7761feb2cea80f34c8447c42d82a9",
+    "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:1023:unit-1024": "98db10de90ea8a0ae429135e49f0ece4b6d140fc8dd3baa667fd7c4f694f51e1",
+    "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:1034:unit-1035": "89482c61fef115b17522644ef7621c26dc910546a9ff8350e0b3da3cc07d4ade",
+    "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:1057:unit-1058": "e00f3a553483968a378c4c1bbb763ce4a34c7ed2f82f5bb276861e78d303477a",
+    "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:1064:unit-1065": "012d54d0aecd7d330b1ecce2c976fc85395949f857954f0f04aa01f9bf8d4e37",
+    "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:1124:unit-1125": "d96f0bbf939622227871d5dba8855a51a65451e9a37378b749332ac766c1aad5",
+    "assets/annotations/chinese_sanguoyanyi_hsk3_001.json#dc1f8b409e80:1138:unit-1139": "1f8492d7d9620912cd6fab15ceb9fb469c1c72e1a5947156b094fdb9117570a3",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1:unit-2": "4224449bcf3fd3bf5eb6adc67fefd044a9f7a85f1c000b98042759af1307ff43",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:16:unit-17": "7f2a3c9b1239dcba881a0434cfabceadc9dde452802b1160438a7f36b18b7ca3",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:83:unit-84": "8f416975be5db31a2e0857041552c6e4fe75ae37a79451f084721051c0d192e2",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:160:unit-161": "ff5a80db61fa8ef61e2806a8e8e2b7c6d0873776f008b8830b679b56d2038d2f",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:163:unit-164": "ef411fb7dbc9f3a531149307a33f929d66ce5d90a4219dfc1c6b3e7886b1cb2e",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:194:unit-195": "3690cc3edba49ae0cd90ac9c9dedd4c98cd97010498cac25cc948388a59f8df5",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:254:unit-255": "3d84545f23377c58cd416a8e0191b5142028ecb95d12674df6522be9e5e13f20",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:446:unit-447": "7358ad60cdfb522618656bb611adb5b9c49f3c59bd6496ab6ebe3c57a74ea670",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:468:unit-469": "f8ae125d2b752fbeefa202647e3f7513b78f7f6a75c813aa2b63c6bddade4048",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:489:unit-490": "736b9d03ea31b4d841ba9d13f8e8fe10d46a2cb84abec6e7201fcb39c3921c1a",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:527:unit-528": "02ff81bf567e1983e234818e1f77188993531822c7dff350c2acedb6b14b56e0",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:596:unit-597": "023882991ca43b1cb5db456a68d9001229fe305fbfe2ac32ee17c12b5094493b",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:607:unit-608": "10c46b1bddd9f22876f9105a076b326bb01bf8627e813d88f9199a487e97cfcf",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:695:unit-696": "05973a301cb61097d7b6e5769b3ba4a912af6a7a8edecc80b88a8c3b3e0ff4ee",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:709:unit-710": "42ee060db7ea3586f136f8d2e5ec8d73bb32633251edfbed4a087a1290138fbc",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:742:unit-743": "630228f93d4286231dcf296cf14249e39bd1a86e7d69d94f9fdb6aeaa56c3f47",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:798:unit-799": "67c031ebf0e86fd9551acb1e2392bb83f327ba7be036e71bc41483d4e1b64a07",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:911:unit-912": "ba14b1411c4232f85bcd8cb3892e1e8e99228dec473760eab8f805a5297c5f88",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:934:unit-935": "38cdde3c91e74869d6f4ef39bea060da1406074e2fce4e31dcd4bf1e89741bca",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:943:unit-944": "4a0594016476cb756f5aaba95c1de424dd2aae8d4bc59d2a0258d62b8094374c",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:970:unit-971": "24efc2b07f52c770966d148d011fb82887043be4c4f9c2cc857ce66b7fa1acf5",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1009:unit-1010": "8a97377c984743cb5d881df9eaf17419900567668f37ffd9e4a1a07699c6a1c3",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1021:unit-1022": "2ebe9ed6a6eb339b5ab5601c31ac24eb836ba696c88135f4027643bcd9f98557",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1037:unit-1038": "7159d6bd5356eadfd8f168bddeefe9cb6ddb180df1abc7d0e66e3041e2b6aed6",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1093:unit-1094": "bef1d427b419284ef3a4bad14e63d43910938788c70bb2f14cb546e2339afa6e",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1259:unit-1260": "696c0915f047d96985aa72543bbaf91e62699f686a209ab9a74d71294a1c7820",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1271:unit-1272": "da9cb87b64e73141575c41c11acbc54a2988e1979920797b12dbf4e760c570de",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1332:unit-1333": "1187b8f81fafec8cdf2e5cc81a295f6ebebb66f668a40d3c704fb6ed4646797d",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1341:unit-1342": "09b207d5b7bf5bca3e6457a9d9ac0d897ba3536ac8336ac15bb193233d4706ff",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1356:unit-1357": "e901606cabefbc9aa3eb86c3f18709d0d30c63a2dcae763a801e4b9c5155a586",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1394:unit-1395": "a7c170805f4ad2365cd69e7fea84aff3143671ac95543fbd30c1b60af9db75b6",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1434:unit-1435": "e9d0d27bb58fd3da4f78eb9ddde3c782fb33663c45a8592b56eb5ae6aeead53b",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1446:unit-1447": "41e576a4f038856a607e669b18b86420d9511c67a010dcd7b73b3611cf18548d",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1609:unit-1610": "9a35297a1db1c0c4f206ad1406b0581d3f90914ac89448e93a4bef1e2cbce795",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1649:unit-1650": "48fa8c24dca1764d65d9de7e8323090afb5f1ae7a35853a50ceeb1b0c1d6baba",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1704:unit-1705": "c84b8bc0163cec2c13b61111e7139eaf512dc896d53c90d24046c3818e4b9fc9",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1714:unit-1715": "756fb248bb0416e66ed6c06d391b718c8646e029ae762f51f2aaceaf29c4eb2b",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1722:unit-1723": "e6a508055688efdd90111aad76f0dac3b797cab7feccefe0b77757982f7fd241",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1762:unit-1763": "53e58f982d9e9068bdbed99230c45379cd97f7c229423e476ca1c88ec1907807",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1791:unit-1792": "0342fb7cff1d53135447b08f97b266e5074ebdc8ac35ff122c70cd11351c7bfa",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1880:unit-1881": "af1bc51f8a1718166652908eeb940fbdb762f7c0c511f1f703a5d946115b1998",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1896:unit-1897": "e9c08924f44507952c69e0294bed177ada11c1132032931526cf24cab121ac42",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1934:unit-1935": "32fa7d4eeec93f9c867c3f89de31d5c22935ba5356629cdf943cb9f527d78ca5",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1943:unit-1944": "aa5ddf6e75962786381c2095d2998437edf82c51e1348d69146af196295d02b6",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:1968:unit-1969": "46696d089974918d9932d623a5104a2f02884d154352c35e2a51b0cadffeab0e",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:2096:unit-2097": "1e4524be45320e21f6bca1493b3d0af5d063c75f5fd67928a1df40fcb8cac58b",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:2136:unit-2137": "6a14875a02cfee28660c7ca4b4a42e1bd0389223338e05b24999641cd36ba3e7",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:2146:unit-2147": "7a36979fe082b311fc975279855877e284c8931ac02de7b744db1a9aa86ec31c",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:2156:unit-2157": "9c5e9b280f8430ad79468beaa7105b1f15a8df70e7195f29e5acd05943296e79",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:2180:unit-2181": "b61ef8c1104412a4662916280fc2984f29df5bdbf888d17bbc41fde30adb13f9",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:2197:unit-2198": "e17cdb3af4fdc198ec7eee9e228afefbe247d8e8167283840d1c90fef4240d00",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:2220:unit-2221": "99114dd0d8c5cc550ffff6317d989e4aced1bd2b8625d088c3a24ca574d2efa0",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:2226:unit-2227": "84e0a4ba26b80b49247ec66440ddd8abdfedb20c9ebfc1b8066be692b205d1aa",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:2273:unit-2274": "bd3cd96cd77a687e0bfd70f99b8cd593a0e495b6130b093a2e8b65e36575f1d6",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:2303:unit-2304": "7ddaf62b5c44e747418536dcbca56b923d7973bfa2fba3d9891d54de42e3e0c5",
+    "assets/annotations/chinese_sanguoyanyi_hsk4_001.json#d4b57c7d5bcd:2307:unit-2308": "a4346c3d6285ef3042d084571373987e71555e993a8f48da850d457800cf4138",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:45:unit-46": "212111a0ffecbf1612cdd2fa28e038facb41a20a2ea5aa8d0614bb1affc35683",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:51:unit-52": "81ecd89ea0974be53aac04e6b91ce61c2fc798930b7bffb306002e7550bc5e90",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:144:unit-145": "ccec1fb8c4c625f280110ed471991f6bb63f8ea055850c532bf70aaad0e216b6",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:213:unit-216": "44a528de1aebf54d9fd04020be70e1ffd59e17997e7b441ba613e01b5f2d664d",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:221:unit-222": "ffa014adeafc704814719d9885680d9a728e6d82b9d74e9c757d6e21487b63c7",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:236:unit-237": "031b34155edbcad7856997d7b371b9b64b908c2cf55e3f5c95c19c37a8de8921",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:249:unit-250": "29c5b61232c3f5ea4868dc2b639ebb315dd676c46150340733224c2fb810b9ed",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:256:unit-257": "34f4b9fec635e73b6105bc7fe68ab5e412443ce6197d5bc6459f25241924d980",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:286:unit-287": "c0114388f0f49f33f3a585bcf49f7ae84047bf8ab77f8142124c0dc04a3af8dd",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:290:unit-291": "2765eb18157bb11fd9f94d96ddbbee1c26564b91cbc3068e639adbc11bf031bb",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:334:unit-335": "e78538a3b1accae214df0c80a625d373c79839d9a37f6c3645efa87f575a7c44",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:413:unit-414": "354f5b0073eb8bfdd22485834e0db80fa93c62a0a0b887a25573af52117655bd",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:495:unit-496": "03f36e53231d78a20ebfd0fd1d2fc7cd9d869f9e406107d773972a4a3811235d",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:523:unit-524": "08371a99ccc71d066c20b4c6590b599f4500be5ed1bda813e409bccfc09a2c8a",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:550:unit-551": "8743832f15f60bd9a333eed686e37a0f68cc95c1fd3765946015194b09fcbc8e",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:559:unit-560": "3b9ffa6005b4f4b6bfd7a7700a8ef9456fd278fffc02496c82ed4bd617a5a075",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:591:unit-592": "765bdd656758d4bce7a709585404dac902ae6aedf1e0190211a6f8c9ac447da8",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:682:unit-683": "7b96bbca84eaf99a4dabc2b9f7d441a4960c5abafa2b78793f29df5c29d61255",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:705:unit-706": "bc89315f8fe3f96df3f0f9292e70f97ed81a5de201b21b0a2c812e36ecf05ff4",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:836:unit-837": "81b3c363597cbf6ac8a0013dd33867a3c2a8f4d79d88a7442cd2a66035c97f7a",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:859:unit-860": "cadf3947a05145630e4d4bdc141ac377f6564d5dea364bb6185b17f8292b16a0",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:868:unit-869": "9bfe93acd1dbd491d800366cf99b54d644d45f254804100af5451aa8d0c5e5d9",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:890:unit-891": "55a4b3fbb11d1f073d4b42c63e6e8dde67b6420d40b7d40d91a441e52901443a",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:902:unit-903": "37c5d9b432637822a24a63bb62cce8469af88133ef4244e5af00f31f9378406d",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:927:unit-929": "c291daa685621e2619b658b654b8fe7b66e46621793cf051693456d328aec480",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1032:unit-1033": "afa2a7cba4ff458df1bae5eb36c361dd4ee0b81b0cb695885c852d04321a65de",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1091:unit-1092": "c4e87c72b15700457316c955619ab354ed81aab51bc9865c6354bf10605a1c5f",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1165:unit-1166": "0dac44953d0c16fcf09bf392f6cc35b91df89ad999f6482ae281b951fe4e0fab",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1205:unit-1206": "8c3d6a5c1d21c39612ad092daec38082407964e2d3f9b37977f3e95e34e57afc",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1209:unit-1210": "37376c2cdc48ad28351de56245ca8c4414324d73d246a17e272239f3f477e23f",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1259:unit-1260": "c7c6fd83dacff340356d2e5728220f53713b7b4c96b2e40683b0c5927ce9e596",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1302:unit-1303": "16f59100245e323b8b301a10686ce2d75f9ea6ee460e47d9e7f31a9d6ec83d0c",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1306:unit-1307": "7a03f5b339e411b0f800f9f1edaa21d1c71bbe073322c7954338406eb3ab004e",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1352:unit-1353": "0adcb7a50eb14ed51c66caaa8dda0d612b4a6a6738f03c52ad4b86e257b2fa8e",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1418:unit-1421": "ae55e6efecc079b2084fa2fd1e7bc484b001b9041b0aecf4e7485901de961984",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1425:unit-1427": "4f4ff90acee489132d627453a7e5326cd5e4c20b8880264abe81d860eb298a71",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1433:unit-1434": "4f64ad00d1260fe078e98a79c587f7accedb594f4193bb2cccd92aeecc9a51a3",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1441:unit-1442": "60494922aca8a550c193828bcc1be19dc67b0d0893001babccfd7c9df332451f",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1485:unit-1486": "b7ce435cf9bcf276f23bcd23e2cd6ca392413ea5a2b3a2b78c1f604818aa94ae",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1532:unit-1533": "c63aec268677194f5af0edcfdf5ae70bd7c2039df16c204bf83832964c048389",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1544:unit-1545": "6cf43203f068d84223e9d0739289e1b2740beafda9b3ce4c6b0433873fc85eaa",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1546:unit-1547": "239c49e33023c5bdde6bde55f1873c62513bf892c183347a9998897fdbb9cd33",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1562:unit-1565": "d7dc2f97587825d29864e0842088de6c634f6d10affdbdf65d32c115a191f130",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1577:unit-1578": "20ffbbf58f8065f909950c169952f228c60c47c3f09f90ccb32cadc393937bc5",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1629:unit-1630": "ac16782b041286e78ab9b0f3db908a56ab3f91abdb6ec81cdacfa548ffa8a3c3",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1678:unit-1679": "fb108583afdbd1a6e6147eb9883c81e50a5a6365a7be9e0c134ed8a2f1bf96a5",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1686:unit-1687": "2c5284f81087736b989a32ecf1f707006be0a5d6e9f187426958ffd1b0a8be2d",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1690:unit-1691": "a3f924107eec115c90ba852008a0acf4f1c47f4c5e25cd831ea331a174bf65c0",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1747:unit-1748": "805310559394a368f4bf1f62e1bb774707331ccb189862035017cc446503be52",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1808:unit-1809": "393469c9a3ea7f3ae27c4f9d223baa81e0e471f99c0f312a51b3a26dc0da9cdc",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1834:unit-1835": "d68161df12ee747513bdf8602b97e30d6da8c84d1d732032850e60204ffe0a70",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1944:unit-1945": "8e994b176cdeca1f60ca219a05ffcf810dc925f001aa35ed178ee9e670e41c26",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1954:unit-1955": "8d4ecc1c2e7a99131cf6102f138151502e890d7f29f443af9c112d9940423193",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:1994:unit-1995": "e981f1aec2255b7cc23cf4e0c2e1024e77bac0b5183a7181c865fea888c6aaa9",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:2068:unit-2069": "f713555ec7558c97bfeaf77458bbb1a614349de8bcb6c70b937b6ea26631fabf",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:2077:unit-2078": "5572c591b0aa7a0c427d60fb64b5583b0ac9667c04f33b8b55fa5b8c9673a9ab",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:2099:unit-2100": "4d90880d09e82e9a1e3d7d9bd4ea139513a78d16a7fcfe71e9d62bd027707aa5",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:2103:unit-2104": "28b51e0c8dba917b6e0f8212fd78f28cccd36e4ec8a19a193524c589b94c5f83",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:2190:unit-2191": "7f21e92a86bfecd28d394b4271d242846753a1c1682b18313a1faff88387daf9",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:2227:unit-2229": "7d4aec3a0064aeea95452dd1acb8fd0505551accf8927fea971ece7c65b4b25e",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:2248:unit-2249": "a14cacc18e23ba51ec3046516cb6e4ef7feaa8b62fb6f6c7f5b9fc312888f70d",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:2316:unit-2317": "3f14ca676086c25c846616deab38f030b87eb52b2d036d97c9fd04a4510670db",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:2425:unit-2426": "47dd88b574b1d4f1d26739fd6552ff505a6681985196ebf18a4c13470e41425b",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:2433:unit-2434": "4457df7eedcad6a7b5172d27d6e777b043d1160f9dd37c7375a4c5ce166fb6f5",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:2465:unit-2466": "162f20bb3e309592748a249fb288ea188f1ef7ab5c9316ed45892d0724bb2a73",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:2521:unit-2522": "3a9901d06906732c150947ab5274462081d35609502e52218c6953d504738e76",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:2545:unit-2546": "e6940aa014ed9f5ed9f07c0d44a05a0aa65dd22df3319ae2b46f42da6e382c17",
+    "assets/annotations/chinese_sanguoyanyi_hsk5_001.json#0dd630aab24d:2586:unit-2588": "47223815167a45fdc8f36081b91833676e65d3489ba536fc6e5bc48ec6249bf9",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:66:unit-67": "4c8947216c73adc7894b11ac0bee6b86a6cdc4fa99025420e7eed8d0c7e7ee26",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:97:unit-98": "a5b522c18eb11bf0953f02d453261efe41b7cbe85ee396e27fb311e5ed51ab1e",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:141:unit-142": "aa188a7deba3baa918178769fdf076467c994723487d61e7beb3c4e7780b01d5",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:157:unit-158": "3a154e2b3f7b00c96f42e0458458520457ab92b88bad680ec7d2ab28e1a384bc",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:162:unit-163": "307328d5d91cfa19b4bc43fad2f58bca7efa5549e55bc5faaf249c65c7172bf9",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:193:unit-194": "121863426e4fea91db69bfd0fb27519d88ff5fcaf6898930cf2da91c01ae91f7",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:543:unit-544": "d32fb2cb0d2905b8c46cb9cb8ff4a5c9b5c226a8e5a4f8e51d546ff5b68e35ba",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:557:unit-558": "cb6ad5c3c55266f2a5853aeeda5735233af20348b4e096bf7c83b8cfc9bd6021",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:633:unit-635": "eb0744fdde3045e41f3b809321c6633c3c010e945ccd61e9199bc5b9adb2f090",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:644:unit-645": "2f71cf866c0e41b431e6f4b0e3209d315d1b598ff83d12a9336a73b5813516e9",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:669:unit-670": "3f2b96f3a3771a6b0be63425add1a8fb02fecde7e20b956cde6c3dea7fc9ccb6",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:784:unit-785": "3fd76acdd341b225654c9309fc92c22b457de036b3c45437fabd29b038154a28",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:805:unit-806": "dcd9b8a61524bcbf669e83207377bc78e141dff62adc1f23fe795a27a144036c",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:825:unit-826": "41d574b5222bf40619e0a4c39f70dfcf24a474b394ed5b6bb4b696c3ad55f321",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:841:unit-842": "8274097eee9a6d41566c69e61b0b5398b8df1041c032bdfb64a7f0c2672725fe",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:930:unit-931": "90ad724b767456dfda7d44723446454b421fac5036f87fe3e3d4597014738b02",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:959:unit-961": "a0cc79d1d44d3931fb6459313ac7da39dc35b0904d3236def152c29247bbe018",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1104:unit-1105": "d573a6aac821926b0e001ce0398db3e1317d69d8c134b086adbaba3caa3210cf",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1121:unit-1122": "e959ae263f818b622b6cd6d27734b83a94c00d68331cad531bb6752046fba05d",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1169:unit-1170": "9d590c1af0225474ba14ba6b411320b668fa61e0168638e0e9ed99146e011bfa",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1233:unit-1234": "a00c4b61d7b9aa947def8094aff84f16281ac80da82d9fc93d30521f1ddbdd5e",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1303:unit-1304": "fd2c61f41ceefad1500af53c8d3a26e73643c7e96db66221e1ca25efa340b719",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1323:unit-1324": "198cab1e5f111837dcfb3e0badf5fc7a4ee83716bcc87c9c7ac50564f5515fcb",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1410:unit-1411": "39ab00ce3468f37b3135d577b58c726d8cd823053af5dc86ecc6c15c6f0d1d4e",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1415:unit-1416": "c9f7365e130984ab5db76d0bc2efe4467d2a8958d076af08254e93285b9e846b",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1580:unit-1581": "67e0cbf1c5d9f80d5f4fc080b79c36c2f6684ea096cb0446f42ee586b7e8305a",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1592:unit-1593": "10d6717372e8bf9e9e70092706dfce58e3aa1cfd89605d45e302bf5111bf3600",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1603:unit-1604": "e7716b0a1850533e7cad21b8a51653c8c30adef2da468687a11ace7f11523ce9",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1608:unit-1609": "5966e1e81be03b5afa7831c1380ea0f580cb8ae0637a9df39f814370b0dda43d",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1655:unit-1656": "25ccada72594dd0a0380c2d6efd5ce940f545d58af13ad6cd48c857053139faf",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1670:unit-1671": "90f31c89d2ea8af8b3e0e69ccb0de9594b0bddba9b994dbd3c5fc6ef6d255b0b",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1672:unit-1673": "2174d01d164839eb6d7a3b455e3dc294734737816ca431918272a9cdc79184f8",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1681:unit-1682": "1552cc730eaeb51180dc69bb2a30b04adbd91dc5c2d98bd764c20ae8e89b4b7c",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1694:unit-1695": "cf15f207a051fce015caca466ad6899d4c80fd662c518912bb3ea43daa18fa32",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1701:unit-1702": "4bd7956c9470ea772d774343b262efe3b991bff45db007d6776b82d3f0329d4f",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1711:unit-1713": "25637d555d3ad20dd96cd8e478ceead0d9fc5d101d8a31de22b751da16f58e2b",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1719:unit-1720": "dd7a2d4cd725205d4c1829f9316e773d8f2bb17a21299f36e9f446347a2deb96",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1732:unit-1733": "4e04933f0acaaf0956f37bcacba9c21ece4be7211d952a0f280b74207f54a62e",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1734:unit-1736": "0efdbeb93fa3e7768d8ab11873c7ad16bcf492ef85f527ae9c88cf45d7a3b8bd",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1811:unit-1812": "f3c1b247775db58fbf7d8cd773b74e09d524283c817a29423278013dce2cf222",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1819:unit-1820": "803aa86d416b41fcb61f1665e90bea22ef6b9db9c56b7466c00e36b3ccb50698",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1861:unit-1864": "ac386cb3fd76abd0d8b5adccd97225632a84789a898e049f66eef536ff9dd790",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1918:unit-1919": "639bc7766960b559fc70415a8dcbe66a6c6d3b4f198b4cc126fe0e96d8365fa1",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:1980:unit-1981": "6726f79329f48bb928219fe8f969bc55cb9d9507dd7aebce407d4cc6566495c3",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2014:unit-2015": "848587efcba716ceaff5ab566fe85f1649fb2efa21a5c5f6aa1ba95429469832",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2018:unit-2019": "7721ee5b2bbb5c05408625b1a9e004edb511c6777b4655cdc6fb511fa04ab4f9",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2131:unit-2132": "3d37df2b65d9e2fa569eb865008ac3c0a4595345685767238a7cb802f98c7cd9",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2137:unit-2138": "0215e7f6fa27dc04f1cbff711211715c6cd6f395bb9458ae0b10620495d682b6",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2210:unit-2211": "31817a661d1434edb4ed9f7b306d4b03787c8bd92f70d92e9a67672eadb5d767",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2226:unit-2227": "37d9aa60f5b57142935374bf1b9615071dcd03e9f797a1f844dd4614eae44877",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2305:unit-2306": "f8db5052692eb0431a02ca2693cbd469803ea3d2b42d1a5114ec620385e8d0a8",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2317:unit-2318": "c8cedb1832da6ab369229602f5f930e46db7c0a984a8a460eeec8879457fe826",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2426:unit-2427": "4392d86194ddaeeb61e2bb38bbc593f6d8a6e68b4ef763818110fb91f9e37901",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2439:unit-2440": "9fb4ac53689d2f8f74a83f0c7923fb3c775a264157e2d76fa00e79fff88438af",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2456:unit-2457": "f57349dfed1c1da3ecd0aba2295d0026cd4a1ea65b5c6990ce70bbc6dea0702d",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2507:unit-2508": "b01c9c41d2cd331561c5e8989a0eea9488e8c6b3276f1ee046a8c9eec7491729",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2520:unit-2521": "dfa1501f8427e855bdf3cba751cfb567b4f8d7da81bb037be619acde1c605d18",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2562:unit-2563": "b561263d1aa0a8d66b90d4ec8871e386d4fdad3af8a6e5ab00f0c3c0efad83de",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2570:unit-2571": "153c8241bda27044fda054cf35f26daa915a6335a6b432c320d2b7238bed58df",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2623:unit-2624": "3bbac74370b9113649e7e24b0e74a56f17f1f9deff184bca7e29a5f37f2c7298",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2697:unit-2698": "4912d2ecaf8aae5712563d46710ce186be8baadd54ffd609d17be5ca56a39ec3",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2735:unit-2736": "3d0982cefe8c579a22e711e9c1caa59ebd83824fd1165f44ae8c893cf17dcd1b",
+    "assets/annotations/chinese_sanguoyanyi_hsk6_001.json#54753c68d1e4:2771:unit-2772": "98e469a0ded914c22593dbccf01cf919fc731c956818367901c8c289072e90f6"
+  },
+  "review_digest": "1882c9fd13fffbb94e2f08b859870546cc6cdca1ac48d55f691e8bfa43b6f934",
+  "model": "gpt-6-luna",
+  "proposal_effort": "low",
+  "review_effort": "high"
+}

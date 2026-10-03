@@ -1,0 +1,31 @@
+{
+  "id": "zh-c85e73a392ba-1-d18cd156225216e0",
+  "entry_id": "zh-c85e73a392ba-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c85e73a392ba-1",
+      "headword": "城门",
+      "kind": "word",
+      "reading": "chéngmén",
+      "senses": [
+        {
+          "id": "zh-c85e73a392ba-1-s1",
+          "definition": "city gate"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他在县城四座城门放下十多根五颜六色的木棒，并定下严格的禁令。",
+        "gloss": "city gate",
+        "sense_id": "zh-c85e73a392ba-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5df4c4df84edf92e82638cefc20cd2419783d49ccd7ab1308e82ce3dee92e575"
+}

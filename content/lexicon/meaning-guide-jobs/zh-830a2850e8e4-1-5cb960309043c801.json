@@ -1,0 +1,31 @@
+{
+  "id": "zh-830a2850e8e4-1-5cb960309043c801",
+  "entry_id": "zh-830a2850e8e4-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-830a2850e8e4-1",
+      "headword": "拒",
+      "kind": "word",
+      "reading": "jù",
+      "senses": [
+        {
+          "id": "zh-830a2850e8e4-1-s1",
+          "definition": "to resist or oppose"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "当时张角有十五万黄巾军，卢植有五万兵，双方在广宗相拒，尚未分出胜负。",
+        "gloss": "to resist; oppose",
+        "sense_id": "zh-830a2850e8e4-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "402262248f9d01526a51a4c960da8f66172c32cddfe83e1ff13e9bbeb5fd779c"
+}

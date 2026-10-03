@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-guan-qi-lai-2ad52e9b3ad0008b",
+  "entry_id": "zh-expression-guan-qi-lai",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-guan-qi-lai",
+      "headword": "关起来",
+      "reading": "guān qǐlai",
+      "kind": "expression",
+      "base_entry_id": "zh-5d0ae622f61f-1",
+      "components": [
+        {
+          "entry_id": "zh-5d0ae622f61f-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-b8a694b2df6d-1",
+          "role": "result complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-guan-qi-lai-s1",
+          "definition": "confine; shut someone in"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "桓帝还把一些正直的人关起来。",
+        "gloss": "confine; shut someone in",
+        "sense_id": "zh-expression-guan-qi-lai-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "关",
+        "role": "verb"
+      },
+      {
+        "headword": "起来",
+        "role": "result complement"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "101627899bd9fb35ea457b0b715af1f340b3fbdf083a798fb8fae99c269906a9"
+}

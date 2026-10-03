@@ -1,0 +1,31 @@
+{
+  "id": "zh-61afa28ac66f-1-6e670d8456820dbc",
+  "entry_id": "zh-61afa28ac66f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-61afa28ac66f-1",
+      "headword": "能臣",
+      "kind": "word",
+      "reading": "néngchén",
+      "senses": [
+        {
+          "id": "zh-61afa28ac66f-1-s1",
+          "definition": "a capable and effective minister or official"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "许劭起初不肯回答，后来才说，他是太平时的能臣，乱世中的奸雄。",
+        "gloss": "capable minister",
+        "sense_id": "zh-61afa28ac66f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8a93f4b537e5a049a116f9a2062023d89c843d09cf064007a9419adc6395c247"
+}

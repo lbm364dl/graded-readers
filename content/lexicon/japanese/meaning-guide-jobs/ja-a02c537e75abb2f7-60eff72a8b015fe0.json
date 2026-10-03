@@ -1,0 +1,155 @@
+{
+  "id": "ja-a02c537e75abb2f7-60eff72a8b015fe0",
+  "entry_id": "ja-a02c537e75abb2f7",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-a02c537e75abb2f7",
+      "headword": "で",
+      "reading": "で",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-a02c537e75abb2f7-1",
+          "definition": "Marks the place where an action or event occurs."
+        },
+        {
+          "id": "ja-a02c537e75abb2f7-2",
+          "definition": "Marks the means or cause by which an event occurs."
+        },
+        {
+          "id": "ja-a02c537e75abb2f7-3",
+          "definition": "Marks the time or occasion at which an action occurs."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "どこで生まれたか分かりません。",
+        "gloss": "in; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "暗い所でニャーニャー泣いていました。",
+        "gloss": "in; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "男の人の手の上で、吾輩の目が回りました。",
+        "gloss": "at; on",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "どこで生まれたか分からない。",
+        "gloss": "in; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "暗くてぬれている所で、ニャーニャー鳴いていたことだけは覚えている。",
+        "gloss": "in; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "この書生の手の上で、吾輩はしばらく気持ちよく座っていた。",
+        "gloss": "at; on",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "とても明るい所で、痛いので出てみると、吾輩はわらの上から笹原へ捨てられていた。",
+        "gloss": "in; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "西の垣のそばへ行くと、大きな黒い猫が枯菊の上で寝ていた。",
+        "gloss": "at; on",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "風で葉が二枚落ちると、黒は丸い目を開いた。",
+        "gloss": "due to; by",
+        "sense_id": "ja-a02c537e75abb2f7-2"
+      },
+      {
+        "sentence": "吾輩はどこで生まれたのか、まったく分からない。",
+        "gloss": "at; in",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "ただ、薄暗くてじめじめした場所で、ニャーニャー泣いていたことだけは覚えている。",
+        "gloss": "in; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "後で聞いた話では、その人間は書生といい、人間の中でも特に悪い者だったらしい。",
+        "gloss": "in; by; with",
+        "sense_id": "ja-a02c537e75abb2f7-3"
+      },
+      {
+        "sentence": "掌の上で少し落ち着き、書生の顔を見たことが、人間というものの見始めだったのだろう。",
+        "gloss": "in; on",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "この書生の手の上で休んでいると、急に速く動き始めた。",
+        "gloss": "on; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "吾輩はこの家で、主人以外のものには不人望だった。",
+        "gloss": "in; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "仕方なく主人のそばで暮らし、朝は膝、昼は背中に乗った。",
+        "gloss": "at; in",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "夜は五つと三つの子供の寝床へもぐり込み、二人の間で一緒に寝る。",
+        "gloss": "in; at",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "先日などは、物差しで尻をひどくたたかれた。",
+        "gloss": "with; by means of",
+        "sense_id": "ja-a02c537e75abb2f7-2"
+      },
+      {
+        "sentence": "次の日、主人は縁側で昼寝する吾輩を写生し始めた。",
+        "gloss": "at; in",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "ある小春の穏やかな日、昼寝のあとでそこへ行くと、杉垣のそばで大きな黒猫が気持ちよさそうに寝ていた。",
+        "gloss": "at; in",
+        "sense_id": "ja-a02c537e75abb2f7-1"
+      },
+      {
+        "sentence": "黒の主人はそのお金で一円五十銭ほど得たのに、黒にはろくな食べ物を与えなかったという。",
+        "gloss": "with; using",
+        "sense_id": "ja-a02c537e75abb2f7-2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-a02c537e75abb2f7",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "grammatical",
+    "explanation_en": "The particle で marks the place where an action or event happens. It can also mark the means used or the cause that brings an event about; the phrase before で supplies that place, means, or cause.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "4fb11efb20772f8b55c030006525a617267efcd5688fe1234004ce5d3623090c",
+    "revision": 2,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b490697b960c2a3cb2978fa7cafc32340738c8d1b3d9c6f21a25ec3ffaf48cd9"
+}

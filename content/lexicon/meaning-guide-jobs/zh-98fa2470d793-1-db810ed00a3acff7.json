@@ -1,0 +1,31 @@
+{
+  "id": "zh-98fa2470d793-1-db810ed00a3acff7",
+  "entry_id": "zh-98fa2470d793-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-98fa2470d793-1",
+      "headword": "难得到",
+      "kind": "construction",
+      "reading": "nándédào",
+      "senses": [
+        {
+          "id": "zh-98fa2470d793-1-s1",
+          "definition": "to be difficult to obtain or attain"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他对两个弟弟说，最难得到的就是民心，如今民心已经归顺，若不趁势夺取天下，实在可惜。",
+        "gloss": "be difficult to obtain",
+        "sense_id": "zh-98fa2470d793-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0d1aa365de4dbd79e6d38aaf1eca709b9ce7de9b58b123abbb43eea2987c3be7"
+}

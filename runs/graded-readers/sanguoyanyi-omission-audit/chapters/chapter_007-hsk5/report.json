@@ -1,0 +1,99 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_007-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 1081,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将董卓军明确说成“冒充”的士兵，原文只写他们自称是董卓部将，未明确其真假或幕后主使。",
+      "classification": "material",
+      "reason": "“冒充”明确断言了原文未确认的身份事实，改变了相关士兵身份的叙述。",
+      "required_fix": "改为“路旁忽然出现一队自称董卓军的士兵”，不要断言其为冒充者。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将董卓军明确说成“冒充”的士兵，原文只写他们自称是董卓部将，未明确其真假或幕后主使。",
+      "classification": "material",
+      "reason": "“冒充”明确断言了原文未确认的身份事实，改变了相关士兵身份的叙述。",
+      "required_fix": "改为“路旁忽然出现一队自称董卓军的士兵”，不要断言其为冒充者。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 927,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [
+          "将公孙瓒的部队称为“白马军”并说有“五千多匹白马”；原文只说五千余匹马中大半为白马，并称公孙瓒为“白马将军”。"
+        ],
+        "distortions": [
+          "“五千多匹白马”把原文“大半皆是白马”夸大为全部是白马，也将“白马将军”的称号误改成了部队名称。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 961,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 8.5,
+        "readability": 8.5,
+        "material_omissions": [
+          "删去了韩馥送粮及其对袁绍的依赖背景，削弱了袁绍夺取冀州的动机铺垫。",
+          "删去了公孙瓒因不信任赵云而将其安排在后军，以及赵云对公孙瓒失望的评价，弱化了赵云与公孙瓒关系和赵云暂留公孙瓒麾下的动机。",
+          "删去了孙静劝阻出兵及孙策主动请求随行，损失了孙坚出兵时的重要家族劝告和孙策同行的动机。"
+        ],
+        "unsupported_additions": [
+          "将原文中刘表提出的停战条件表述为“双方停战”，暗示和谈已经成立；原文中蒯良随即阻止桓楷离城，和谈结果尚未确定。"
+        ],
+        "distortions": [
+          "“刘表……只得退守襄阳”改变了原文情节：原文是蔡瑁战败逃入襄阳，随后孙坚围攻襄阳，并非刘表退守襄阳。",
+          "“刘表答应以孙坚棺木换回黄祖，双方停战”把尚未落实的交换与停战条件说成已经达成的结果。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 1081,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

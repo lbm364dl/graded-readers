@@ -1,0 +1,41 @@
+{
+  "id": "zh-a089e21d544b-1-7d13772b8c190266",
+  "entry_id": "zh-a089e21d544b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a089e21d544b-1",
+      "headword": "不停",
+      "kind": "word",
+      "reading": "bùtíng",
+      "senses": [
+        {
+          "id": "zh-a089e21d544b-1-s1",
+          "definition": "to continue without stopping; continually"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "汉朝末年，朝政混乱，灾害和不祥之事不停发生。",
+        "gloss": "unceasing",
+        "sense_id": "zh-a089e21d544b-1-s1"
+      },
+      {
+        "sentence": "朝政日益败坏，盗贼不停出现。",
+        "gloss": "continually",
+        "sense_id": "zh-a089e21d544b-1-s1"
+      },
+      {
+        "sentence": "信徒不停增多，张角也从中聚集了许多百姓。",
+        "gloss": "continually",
+        "sense_id": "zh-a089e21d544b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5fd0458e929d0fb94d6fcf771c0fc51ce70dfe7a03301a3763aa76f61de6bf5a"
+}

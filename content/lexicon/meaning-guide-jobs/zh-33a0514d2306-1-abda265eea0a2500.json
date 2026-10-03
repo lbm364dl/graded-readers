@@ -1,0 +1,41 @@
+{
+  "id": "zh-33a0514d2306-1-abda265eea0a2500",
+  "entry_id": "zh-33a0514d2306-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-33a0514d2306-1",
+      "headword": "奉命",
+      "kind": "word",
+      "reading": "fèngmìng",
+      "senses": [
+        {
+          "id": "zh-33a0514d2306-1-s1",
+          "definition": "to act under orders"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备奉命率领军队返回，半路看见军马护送一辆囚车，车中正是卢植。",
+        "gloss": "under orders",
+        "sense_id": "zh-33a0514d2306-1-s1"
+      },
+      {
+        "sentence": "刘备奉命带兵返回，途中遇到一队汉军，正押送一辆囚车。",
+        "gloss": "to act under orders",
+        "sense_id": "zh-33a0514d2306-1-s1"
+      },
+      {
+        "sentence": "宦官左丰奉命查看军情，企图向卢植索要行贿的钱。",
+        "gloss": "to act under orders",
+        "sense_id": "zh-33a0514d2306-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d242c0efe726c8008230364619ded1daeb997a9cf146ce4b997565b77f6711f0"
+}

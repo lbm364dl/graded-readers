@@ -1,0 +1,32 @@
+{
+  "id": "ja-c66145e3e658bb1e-cfc466865499f123",
+  "entry_id": "ja-c66145e3e658bb1e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-c66145e3e658bb1e",
+      "headword": "低くする",
+      "reading": "ひくくする",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-c66145e3e658bb1e-1",
+          "definition": "to make something low; lower something"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は足を前へ伸ばし、首を低くして、大きな欠伸をした。",
+        "gloss": "lowering it; making it low",
+        "sense_id": "ja-c66145e3e658bb1e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6f317137aa2b9d4bff42a0ff677b772f46cb9af8768dc66f7b5db5ba40516eff"
+}

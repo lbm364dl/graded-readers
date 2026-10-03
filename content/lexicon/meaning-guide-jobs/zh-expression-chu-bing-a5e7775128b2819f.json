@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-chu-bing-a5e7775128b2819f",
+  "entry_id": "zh-expression-chu-bing",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-chu-bing",
+      "headword": "出兵",
+      "reading": "chūbīng",
+      "kind": "expression",
+      "base_entry_id": "zh-4d5f7e15c8a5-1",
+      "components": [
+        {
+          "entry_id": "zh-4d5f7e15c8a5-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-5b43c02074fc-1",
+          "role": "troops"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-chu-bing-s1",
+          "definition": "send out or deploy troops"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”关羽带一千人埋伏在山左，张飞带一千人埋伏在山右，等信号一起出兵。",
+        "gloss": "send out or deploy troops",
+        "sense_id": "zh-expression-chu-bing-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "出",
+        "role": "verb"
+      },
+      {
+        "headword": "兵",
+        "role": "troops"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7b51980ab897a706a30a7c40ab3a1ce6ab2f334a4395e18aa0219e1cbe130351"
+}

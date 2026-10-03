@@ -1,0 +1,31 @@
+{
+  "id": "zh-4062f4c3ce2a-1-3153b7b6acddfbe3",
+  "entry_id": "zh-4062f4c3ce2a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4062f4c3ce2a-1",
+      "headword": "称为",
+      "kind": "construction",
+      "reading": "chēngwéi",
+      "senses": [
+        {
+          "id": "zh-4062f4c3ce2a-1-s1",
+          "definition": "to call or designate as"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "后来，张让等十人结党作恶，被称为十常侍。",
+        "gloss": "to be called",
+        "sense_id": "zh-4062f4c3ce2a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4bd3508dd743696d853081c5ac2343b7468c61a626f2d10843eba33c7a1956c5"
+}

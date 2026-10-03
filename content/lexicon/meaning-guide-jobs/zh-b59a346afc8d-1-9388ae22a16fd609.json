@@ -1,0 +1,31 @@
+{
+  "id": "zh-b59a346afc8d-1-9388ae22a16fd609",
+  "entry_id": "zh-b59a346afc8d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b59a346afc8d-1",
+      "headword": "家家",
+      "kind": "word",
+      "reading": "jiājiā",
+      "senses": [
+        {
+          "id": "zh-b59a346afc8d-1-s1",
+          "definition": "every household"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "八州百姓家家侍奉他。",
+        "gloss": "every household",
+        "sense_id": "zh-b59a346afc8d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7e8816906ab1dd6e863619d72c1f7a0e224c7f5ded2379d3c47d16c265897045"
+}

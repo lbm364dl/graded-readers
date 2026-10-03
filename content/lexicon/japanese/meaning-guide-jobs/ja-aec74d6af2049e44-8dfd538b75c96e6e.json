@@ -1,0 +1,32 @@
+{
+  "id": "ja-aec74d6af2049e44-8dfd538b75c96e6e",
+  "entry_id": "ja-aec74d6af2049e44",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-aec74d6af2049e44",
+      "headword": "磨く",
+      "reading": "みがく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-aec74d6af2049e44-1",
+          "definition": "to polish; to sharpen"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "この間も、畳で爪を磨いただけなのに、奥さんがたいへん怒り、それから座敷へ入れなくなった。",
+        "gloss": "polished; sharpened",
+        "sense_id": "ja-aec74d6af2049e44-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4ebdd980b3d49b4c06306a1b21e1f38479c3e134cdf01b179a175d4c37fe382a"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-a02cbd2e268c-1-ac8187b9f74a98c1",
+  "entry_id": "zh-a02cbd2e268c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a02cbd2e268c-1",
+      "headword": "公孙瓒",
+      "kind": "name",
+      "reading": "Gōngsūn Zàn",
+      "senses": [
+        {
+          "id": "zh-a02cbd2e268c-1-s1",
+          "definition": "Gongsun Zan, a person’s name"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "十五岁时，母亲让他外出游学，他曾师从郑玄、卢植，也与公孙瓒等人为友。",
+        "gloss": "Gongsun Zan",
+        "sense_id": "zh-a02cbd2e268c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b64970de835d1b5d2e84eceda3224ae7553cf6ff155bf2046cf2dd544baa34b1"
+}

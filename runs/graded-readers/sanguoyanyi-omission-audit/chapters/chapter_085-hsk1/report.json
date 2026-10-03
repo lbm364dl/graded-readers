@@ -1,0 +1,83 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_085-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 155,
+  "required_range": [
+    98,
+    182
+  ],
+  "material_findings": [
+    {
+      "omission_note": "朱桓击败曹仁的关键战况",
+      "classification": "material",
+      "reason": "This omits the decisive battle in which Zhu Huan defeats Cao Ren, changing a major military outcome in the Wu–Wei conflict.",
+      "required_fix": "Add that Zhu Huan ambushed and routed Cao Ren after killing Chang Diao, forcing Cao Ren to retreat."
+    },
+    {
+      "omission_note": "刘备驾崩及刘禅正式即位、改元等细节",
+      "classification": "material",
+      "reason": "This omits Liu Bei’s death and Liu Chan’s formal succession and change of era name, which are essential events establishing the chronology and political transition before the five-route invasion.",
+      "required_fix": "Add Liu Bei’s death, Liu Chan’s formal enthronement, the 建興 era name, and the related succession details."
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "朱桓击败曹仁的关键战况",
+      "classification": "material",
+      "reason": "This omits the decisive battle in which Zhu Huan defeats Cao Ren, changing a major military outcome in the Wu–Wei conflict.",
+      "required_fix": "Add that Zhu Huan ambushed and routed Cao Ren after killing Chang Diao, forcing Cao Ren to retreat."
+    },
+    {
+      "omission_note": "刘备驾崩及刘禅正式即位、改元等细节",
+      "classification": "material",
+      "reason": "This omits Liu Bei’s death and Liu Chan’s formal succession and change of era name, which are essential events establishing the chronology and political transition before the five-route invasion.",
+      "required_fix": "Add Liu Bei’s death, Liu Chan’s formal enthronement, the 建興 era name, and the related succession details."
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 154,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 8.5,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "“黄权降魏受封” implies Huang Quan accepted the appointment, whereas the original says he firmly declined it."
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 155,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

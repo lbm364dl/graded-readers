@@ -1,0 +1,31 @@
+{
+  "id": "zh-d322125dd44e-1-4e4f8039c6d13a3b",
+  "entry_id": "zh-d322125dd44e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d322125dd44e-1",
+      "headword": "背叛",
+      "kind": "word",
+      "reading": "bèipàn",
+      "senses": [
+        {
+          "id": "zh-d322125dd44e-1-s1",
+          "definition": "to betray; to be disloyal to a person, group, or cause"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他大声骂敌人背叛汉朝，叫他们早些投降。",
+        "gloss": "to betray",
+        "sense_id": "zh-d322125dd44e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cb26a288a661f61c1fd54c340d5a86a02e69da0e929a35ebfa43ee0f9e71da02"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-73cd1b8de22a-1-ee2898b119a9d19a",
+  "entry_id": "zh-73cd1b8de22a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-73cd1b8de22a-1",
+      "headword": "渐渐",
+      "kind": "word",
+      "reading": "jiànjiàn",
+      "senses": [
+        {
+          "id": "zh-73cd1b8de22a-1-s1",
+          "definition": "gradually"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角日夜研习，渐渐学会呼风唤雨，自称太平道人。",
+        "gloss": "gradually",
+        "sense_id": "zh-73cd1b8de22a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0035c013d75adb8a7a3c83420725cf67161446fc8de3b069c9c08bf415271d5c"
+}

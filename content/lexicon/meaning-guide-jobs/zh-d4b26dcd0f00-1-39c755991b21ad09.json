@@ -1,0 +1,31 @@
+{
+  "id": "zh-d4b26dcd0f00-1-39c755991b21ad09",
+  "entry_id": "zh-d4b26dcd0f00-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d4b26dcd0f00-1",
+      "headword": "原来",
+      "kind": "word",
+      "reading": "yuánlái",
+      "senses": [
+        {
+          "id": "zh-d4b26dcd0f00-1-s1",
+          "definition": "it turns out; used to introduce information newly realized or revealed"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "原来是中山大商张世平、苏双，他们每年往北贩马，最近因盗贼出现而返回。",
+        "gloss": "it turned out",
+        "sense_id": "zh-d4b26dcd0f00-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7a44888506ca8cd6b1a55f8b53f92ec04f6f83e0bd7f819fab0e38adf7b63511"
+}

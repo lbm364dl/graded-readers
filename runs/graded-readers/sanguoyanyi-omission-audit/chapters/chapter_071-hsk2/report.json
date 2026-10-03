@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_071-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 238,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "“粮草军器尽失”略有夸张，原文只说曹操弃北山粮草、蜀军夺得部分军器，并非全部粮草军器尽失。",
+      "classification": "material",
+      "reason": "“尽失”把原文曹操弃置北山粮草、蜀军取得数量众多军器的结果扩大为全部粮草军器丧失，改变了损失范围。",
+      "required_fix": "改为“曹操弃了北山粮草，蜀军夺得大量军器”或明确仅失去北山粮草及部分军器。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "“粮草军器尽失”略有夸张，原文只说曹操弃北山粮草、蜀军夺得部分军器，并非全部粮草军器尽失。",
+      "classification": "material",
+      "reason": "“尽失”把原文曹操弃置北山粮草、蜀军取得数量众多军器的结果扩大为全部粮草军器丧失，改变了损失范围。",
+      "required_fix": "改为“曹操弃了北山粮草，蜀军夺得大量军器”或明确仅失去北山粮草及部分军器。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 238,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

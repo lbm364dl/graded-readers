@@ -1,0 +1,32 @@
+{
+  "id": "ja-16e981b7e3b012ab-591a87ff624279c8",
+  "entry_id": "ja-16e981b7e3b012ab",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-16e981b7e3b012ab",
+      "headword": "毛",
+      "reading": "け",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-16e981b7e3b012ab-1",
+          "definition": "hair; fur"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "手の上に乗せられ、顔を見ると、毛のない顔は薬缶のようで、顔の真ん中の出た所の穴から時々煙を吹いた。",
+        "gloss": "hair; fur",
+        "sense_id": "ja-16e981b7e3b012ab-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bf510253eb2e435750e5293a65faee2e30d0b8a1ae8c0e22a16e3c6a04399df6"
+}

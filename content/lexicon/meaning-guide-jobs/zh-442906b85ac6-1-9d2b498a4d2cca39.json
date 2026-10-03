@@ -1,0 +1,31 @@
+{
+  "id": "zh-442906b85ac6-1-9d2b498a4d2cca39",
+  "entry_id": "zh-442906b85ac6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-442906b85ac6-1",
+      "headword": "灾害",
+      "kind": "word",
+      "reading": "zāihài",
+      "senses": [
+        {
+          "id": "zh-442906b85ac6-1-s1",
+          "definition": "disaster"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "汉朝末年，朝廷很乱，灾害和不祥的事不断发生。",
+        "gloss": "disasters",
+        "sense_id": "zh-442906b85ac6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6101f18b37cb0374a08dc51adcf3b7cfd84f152ade222bc96403c733e4964200"
+}

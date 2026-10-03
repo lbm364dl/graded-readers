@@ -1,0 +1,66 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_105-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 466,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "omission_note": "魏延与杨仪反复互奏及董允奉命安抚魏延的细节",
+      "classification": "material",
+      "reason": "董允奉命安抚魏延是原文中的具体应对事件，且反复互奏强化了双方冲突与朝廷处置过程；仅概括为各自上表不足以完整保留这一情节链。",
+      "required_fix": "补入魏延、杨仪反复互奏，以及后主命董允持节前往安抚魏延的情节。"
+    },
+    {
+      "omission_note": "曹睿土木工程中的多次劝谏",
+      "classification": "material",
+      "reason": "多次劝谏展现群臣对曹睿劳民伤财政策的反对，并包含董寻被废、张茂被杀等重要处置，关系到曹睿的暴虐统治与人物刻画。",
+      "required_fix": "补入董寻、张茂、杨阜等人针对土木工程的劝谏及曹睿相应的压制处置。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "魏延与杨仪反复互奏及董允奉命安抚魏延的细节",
+      "classification": "material",
+      "reason": "董允奉命安抚魏延是原文中的具体应对事件，且反复互奏强化了双方冲突与朝廷处置过程；仅概括为各自上表不足以完整保留这一情节链。",
+      "required_fix": "补入魏延、杨仪反复互奏，以及后主命董允持节前往安抚魏延的情节。"
+    },
+    {
+      "omission_note": "曹睿土木工程中的多次劝谏",
+      "classification": "material",
+      "reason": "多次劝谏展现群臣对曹睿劳民伤财政策的反对，并包含董寻被废、张茂被杀等重要处置，关系到曹睿的暴虐统治与人物刻画。",
+      "required_fix": "补入董寻、张茂、杨阜等人针对土木工程的劝谏及曹睿相应的压制处置。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 466,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

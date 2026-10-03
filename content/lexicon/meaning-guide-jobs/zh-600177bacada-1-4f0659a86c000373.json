@@ -1,0 +1,31 @@
+{
+  "id": "zh-600177bacada-1-4f0659a86c000373",
+  "entry_id": "zh-600177bacada-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-600177bacada-1",
+      "headword": "回营",
+      "kind": "construction",
+      "reading": "huíyíng",
+      "senses": [
+        {
+          "id": "zh-600177bacada-1-s1",
+          "definition": "return to camp"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人救下董卓回营。",
+        "gloss": "return to camp",
+        "sense_id": "zh-600177bacada-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0da8673ea04df295f71cc40baa3e9de557d14eff1f5790701a02dbed7db022f5"
+}

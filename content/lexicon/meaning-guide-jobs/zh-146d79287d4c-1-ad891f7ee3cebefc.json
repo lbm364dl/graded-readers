@@ -1,0 +1,31 @@
+{
+  "id": "zh-146d79287d4c-1-ad891f7ee3cebefc",
+  "entry_id": "zh-146d79287d4c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-146d79287d4c-1",
+      "headword": "白马",
+      "kind": "word",
+      "reading": "báimǎ",
+      "senses": [
+        {
+          "id": "zh-146d79287d4c-1-s1",
+          "definition": "white horse"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "第二天，三人备好乌牛、白马等祭礼，焚香再拜，发誓虽是异姓，也要报效国家、安定百姓。",
+        "gloss": "white horses",
+        "sense_id": "zh-146d79287d4c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9a61bc2976f001d8b24c8a3b3d608c9e9ba9d268f6dcf96eb5d0daa064c83bb7"
+}

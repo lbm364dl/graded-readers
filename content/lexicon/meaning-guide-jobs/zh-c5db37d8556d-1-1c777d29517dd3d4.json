@@ -1,0 +1,31 @@
+{
+  "id": "zh-c5db37d8556d-1-1c777d29517dd3d4",
+  "entry_id": "zh-c5db37d8556d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c5db37d8556d-1",
+      "headword": "不一会儿",
+      "kind": "expression",
+      "reading": "bù yíhuìr",
+      "senses": [
+        {
+          "id": "zh-c5db37d8556d-1-s1",
+          "definition": "before long; after a short time"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "不一会儿，一个大汉推车来到店里。",
+        "gloss": "before long",
+        "sense_id": "zh-c5db37d8556d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "374508d6f129c44aff1309cb222f312ec468c8949b30770e8a9778cd4a47e78d"
+}

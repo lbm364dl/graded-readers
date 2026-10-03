@@ -1,0 +1,32 @@
+{
+  "id": "ja-011ca65462ff52a4-02a55ce24b821ea8",
+  "entry_id": "ja-011ca65462ff52a4",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-011ca65462ff52a4",
+      "headword": "足",
+      "reading": "あし",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-011ca65462ff52a4-1",
+          "definition": "leg; foot"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は足を前へ伸ばし、首を低くして、大きな欠伸をした。",
+        "gloss": "leg",
+        "sense_id": "ja-011ca65462ff52a4-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1bcc9dca66ab033cc45651ff33946b4cef1dfd592720e90f5dbbc1107acc9f12"
+}

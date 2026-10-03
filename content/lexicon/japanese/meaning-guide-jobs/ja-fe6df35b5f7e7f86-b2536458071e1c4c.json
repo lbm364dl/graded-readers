@@ -1,0 +1,32 @@
+{
+  "id": "ja-fe6df35b5f7e7f86-b2536458071e1c4c",
+  "entry_id": "ja-fe6df35b5f7e7f86",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-fe6df35b5f7e7f86",
+      "headword": "どちら",
+      "reading": "どちら",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-fe6df35b5f7e7f86-1",
+          "definition": "which of two; which one"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が「車屋と教師では、どちらが偉いか」と尋ねると、黒は「車屋の方が強いに決まっている。",
+        "gloss": "which one",
+        "sense_id": "ja-fe6df35b5f7e7f86-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ab3e04a81fd6dbe6d7039400b46aafd5ec3458a6b9a9bb0716607b5bf5dc7056"
+}

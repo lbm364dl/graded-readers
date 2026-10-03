@@ -1,0 +1,32 @@
+{
+  "id": "ja-f9cddb528aac547b-48cb570f021c8f97",
+  "entry_id": "ja-f9cddb528aac547b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-f9cddb528aac547b",
+      "headword": "有名",
+      "reading": "ゆうめい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-f9cddb528aac547b-1",
+          "definition": "famous; well-known"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "黒は近所で有名な乱暴な猫だった。",
+        "gloss": "famous; well-known",
+        "sense_id": "ja-f9cddb528aac547b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f66d2c622e671930ececb4ed434d465d0b6163f048ad15f0290ab958038e7476"
+}

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff4f9-93fa-76d3-bba2-53195c9b0712"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"text\":\"孙夫人要带七岁的阿斗回东吴。周善拿来一封假信，说她的妈妈病得很重，想马上见女儿。孙夫人很着急，没有先告诉孔明，就带着阿斗上船。赵云听到消息，马上沿江追去。他跳上吴国的船，对孙夫人说：“你可以回去，但阿斗要留下。”孙夫人不答应，还叫人来抢孩子。赵云一手抱住阿斗，一手拿剑，谁也不能靠近。船顺着江水向前走，赵云也没有放手。正在这时，张飞带船赶来，挡住了吴国的船，还杀了周善。孙夫人气得要跳江。张飞和赵云不想逼死她，只带走阿斗，让她回东吴。孔明很快来接他们。玄德听说阿斗平安回来，心里十分高兴。\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":41103,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":700,"reasoning_output_tokens":469}}

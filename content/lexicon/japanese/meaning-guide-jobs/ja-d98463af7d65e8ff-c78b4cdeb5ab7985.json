@@ -1,0 +1,32 @@
+{
+  "id": "ja-d98463af7d65e8ff-c78b4cdeb5ab7985",
+  "entry_id": "ja-d98463af7d65e8ff",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d98463af7d65e8ff",
+      "headword": "話し方",
+      "reading": "はなしかた",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d98463af7d65e8ff-1",
+          "definition": "way or manner of speaking"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "話し方は乱暴だったが、吾輩は黒と知己になった。",
+        "gloss": "way of speaking",
+        "sense_id": "ja-d98463af7d65e8ff-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "04c047b81379db0e1add3b0de5e0cd597ac005764401e095a2678c4e936155bc"
+}

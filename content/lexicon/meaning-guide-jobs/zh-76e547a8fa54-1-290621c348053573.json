@@ -1,0 +1,31 @@
+{
+  "id": "zh-76e547a8fa54-1-290621c348053573",
+  "entry_id": "zh-76e547a8fa54-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-76e547a8fa54-1",
+      "headword": "共",
+      "kind": "word",
+      "reading": "gòng",
+      "senses": [
+        {
+          "id": "zh-76e547a8fa54-1-s1",
+          "definition": "together; jointly"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "桓帝死后，窦武和陈蕃共辅佐新皇帝。",
+        "gloss": "together",
+        "sense_id": "zh-76e547a8fa54-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b40ad38f8e3950045fa25c6c3d5957b3118353a31347586f719d45258569ab3f"
+}

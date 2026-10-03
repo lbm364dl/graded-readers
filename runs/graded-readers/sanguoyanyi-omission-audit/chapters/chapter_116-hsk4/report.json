@@ -1,0 +1,80 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_116-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 779,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了姜维与杨欣交战时战马失足、姜维跌落并险些被杀的细节。",
+      "classification": "material",
+      "reason": "这是战斗中的关键危险事件，体现姜维一度濒临被杀，虽不改变最终结果，却超出单纯氛围或装饰性细节。",
+      "required_fix": "补写姜维战马失足跌落、杨欣回马欲杀，以及姜维跃起反击的过程。"
+    },
+    {
+      "omission_note": "省略了邓艾各路军队的具体兵力，以及姜维在突围后据险坚守、等待援军的过程。",
+      "classification": "material",
+      "reason": "兵力部署影响战局理解，而姜维据险坚守、等待援军解释了后续撤军与接应，属于重要行动和连贯情节。",
+      "required_fix": "补充各路魏军兵力，并交代姜维突围后据险下寨、等待援军的过程。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将师婆的预言直接称为“谎称”，带有原文未明说的主观判断。",
+      "classification": "material",
+      "reason": "原文只写师婆宣称魏国疆土将归蜀，并未说明她明知虚假或故意欺骗；“谎称”新增了人物动机与事实判断。",
+      "required_fix": "改为“黄皓请师婆作神谕，师婆称数年之后魏国疆土将归蜀”，不要添加其明知虚假或故意欺骗的判断。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了姜维与杨欣交战时战马失足、姜维跌落并险些被杀的细节。",
+      "classification": "material",
+      "reason": "这是战斗中的关键危险事件，体现姜维一度濒临被杀，虽不改变最终结果，却超出单纯氛围或装饰性细节。",
+      "required_fix": "补写姜维战马失足跌落、杨欣回马欲杀，以及姜维跃起反击的过程。"
+    },
+    {
+      "omission_note": "省略了邓艾各路军队的具体兵力，以及姜维在突围后据险坚守、等待援军的过程。",
+      "classification": "material",
+      "reason": "兵力部署影响战局理解，而姜维据险坚守、等待援军解释了后续撤军与接应，属于重要行动和连贯情节。",
+      "required_fix": "补充各路魏军兵力，并交代姜维突围后据险下寨、等待援军的过程。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将师婆的预言直接称为“谎称”，带有原文未明说的主观判断。",
+      "classification": "material",
+      "reason": "原文只写师婆宣称魏国疆土将归蜀，并未说明她明知虚假或故意欺骗；“谎称”新增了人物动机与事实判断。",
+      "required_fix": "改为“黄皓请师婆作神谕，师婆称数年之后魏国疆土将归蜀”，不要添加其明知虚假或故意欺骗的判断。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 779,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

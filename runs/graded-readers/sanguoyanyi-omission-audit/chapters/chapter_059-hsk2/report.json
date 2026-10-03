@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_059-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 320,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了马超在渭桥被围、坐骑被射倒，最终由庞德和马岱救出的具体危局。",
+      "classification": "material",
+      "reason": "这是马超险些被擒并成功脱险的关键战况，直接影响事件结果和后续逃亡。",
+      "required_fix": "补充马超在渭桥被围、坐骑被射倒，及庞德、马岱及时救出的情节。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了马超在渭桥被围、坐骑被射倒，最终由庞德和马岱救出的具体危局。",
+      "classification": "material",
+      "reason": "这是马超险些被擒并成功脱险的关键战况，直接影响事件结果和后续逃亡。",
+      "required_fix": "补充马超在渭桥被围、坐骑被射倒，及庞德、马岱及时救出的情节。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 320,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

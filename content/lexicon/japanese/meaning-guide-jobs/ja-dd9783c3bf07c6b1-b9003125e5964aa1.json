@@ -1,0 +1,32 @@
+{
+  "id": "ja-dd9783c3bf07c6b1-b9003125e5964aa1",
+  "entry_id": "ja-dd9783c3bf07c6b1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-dd9783c3bf07c6b1",
+      "headword": "ぷうぷう",
+      "reading": "ぷうぷう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-dd9783c3bf07c6b1-1",
+          "definition": "with a soft whistling or puffing sound"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "顔の真ん中から何かがひどく突き出ていて、その穴の中から時々ぷうぷうと煙を吹いた。",
+        "gloss": "with a soft whistling or puffing sound",
+        "sense_id": "ja-dd9783c3bf07c6b1-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1a5679c87b97fb425d510ce14c6327547e24de9110362448d8272c07087745f4"
+}

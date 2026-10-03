@@ -1,0 +1,31 @@
+{
+  "id": "zh-d60e3f2cef08-1-4ae5338b5afcfcff",
+  "entry_id": "zh-d60e3f2cef08-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d60e3f2cef08-1",
+      "headword": "照天",
+      "kind": "construction",
+      "reading": "zhàotiān",
+      "senses": [
+        {
+          "id": "zh-d60e3f2cef08-1-s1",
+          "definition": "to shine or cast light over the sky"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备带着关羽、张飞赶到颍川时，只听见喊杀声，又看见火光照天。",
+        "gloss": "illuminate the sky",
+        "sense_id": "zh-d60e3f2cef08-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9fd645c93b11422659a0fa3bfb87099eb4a3200cde5727e1ef960567803725b3"
+}

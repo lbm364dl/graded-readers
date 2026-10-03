@@ -1,0 +1,32 @@
+{
+  "id": "ja-7bd12e7e7624cf20-06e39770c05228aa",
+  "entry_id": "ja-7bd12e7e7624cf20",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-7bd12e7e7624cf20",
+      "headword": "妙",
+      "reading": "みょう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-7bd12e7e7624cf20-1",
+          "definition": "strange, unusual, or peculiar"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は動かずにいたが、絵は妙な色で、目もなく、目の見えない猫なのか、寝ている猫なのか分からない。",
+        "gloss": "strange; unusual",
+        "sense_id": "ja-7bd12e7e7624cf20-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "37decf44f8f54706497cdf62172be72ecc8127ab90c6fdcc4c324824b67533e9"
+}

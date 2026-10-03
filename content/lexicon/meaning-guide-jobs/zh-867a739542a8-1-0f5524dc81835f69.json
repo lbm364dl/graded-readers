@@ -1,0 +1,31 @@
+{
+  "id": "zh-867a739542a8-1-0f5524dc81835f69",
+  "entry_id": "zh-867a739542a8-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-867a739542a8-1",
+      "headword": "拿",
+      "kind": "word",
+      "reading": "ná",
+      "senses": [
+        {
+          "id": "zh-867a739542a8-1-s1",
+          "definition": "to take or hold (something)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞又气又不满，拿刀要杀董卓。",
+        "gloss": "take; hold",
+        "sense_id": "zh-867a739542a8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e343f94afae2b62a3dcad5f5b80997ea0f67008d9fe91ecc39f67d761b72f121"
+}

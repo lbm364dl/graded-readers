@@ -1,0 +1,31 @@
+{
+  "id": "zh-b7dbe4556e12-1-a427f05fede5bb3a",
+  "entry_id": "zh-b7dbe4556e12-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b7dbe4556e12-1",
+      "headword": "报到",
+      "kind": "word",
+      "reading": "bàodào",
+      "senses": [
+        {
+          "id": "zh-b7dbe4556e12-1-s1",
+          "definition": "to report in at a designated place or to a person"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人谢过商人，打造兵器，配上铠甲，又聚集五百多名乡勇，前去报到。",
+        "gloss": "report for duty",
+        "sense_id": "zh-b7dbe4556e12-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2dcceeaa46773af0c4219f46cbc376e3ac8d8acdbca6ffcae18f90e601fe2817"
+}

@@ -1,0 +1,62 @@
+{
+  "id": "zh-a4a6cbbffeb8-1-7cd531ef1ef3c0d8",
+  "entry_id": "zh-a4a6cbbffeb8-1",
+  "reason": "requested",
+  "item": {
+    "entry": {
+      "id": "zh-a4a6cbbffeb8-1",
+      "headword": "与众不同",
+      "kind": "expression",
+      "reading": "yǔzhòng-bùtóng",
+      "senses": [
+        {
+          "id": "zh-a4a6cbbffeb8-1-s1",
+          "definition": "be different from others; be distinctive"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "叔父觉得这孩子与众不同，常常帮助他。",
+        "gloss": "to stand out from the crowd",
+        "sense_id": "zh-a4a6cbbffeb8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-a4a6cbbffeb8-1",
+    "claim_ids": [],
+    "structure": "grammatical",
+    "explanation_en": "与众不同 describes someone or something as different from other people or things: 与众 sets others as the comparison group, and 不同 means “not the same.”",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "与众",
+        "contribution_en": "with others as the comparison group",
+        "claim_ids": []
+      },
+      {
+        "text": "不同",
+        "contribution_en": "not the same; different",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "d93caf5159e027f9ad178aa49e83a421b4ccd1177fa33adc6d9b2bd5ffcf8596",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [
+    {
+      "entry_id": "zh-a4a6cbbffeb8-1",
+      "reason": "Focused decomposition correction after independent audit: 与众 is a preposition+noun phrase here, not a reusable lexical unit. Split it into its characters while retaining 不同 as a word. Use structured parts 与|众|不同, with precise contributions. Preserve the whole-word meaning and all senses. Do not invent standalone dictionary words from convenient halves of an expression. Do not introduce historical claims or rewrite unrelated explanations.",
+      "id": "edit-b0761967918572cb"
+    }
+  ],
+  "status": "reviewed",
+  "result_digest": "e912f5f4b98ef7428f69040e9c16cf3f22a21b61c02d5d99a6e8390361e05cb0"
+}

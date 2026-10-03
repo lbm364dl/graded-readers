@@ -1,0 +1,31 @@
+{
+  "id": "zh-b3d10853b7c1-1-08e7b7459cb846c6",
+  "entry_id": "zh-b3d10853b7c1-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b3d10853b7c1-1",
+      "headword": "可能",
+      "kind": "word",
+      "reading": "kěnéng",
+      "senses": [
+        {
+          "id": "zh-b3d10853b7c1-1-s1",
+          "definition": "possibly; maybe"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇甫嵩判断张梁、张宝很可能回广宗找张角，便让刘备回去帮助卢植。",
+        "gloss": "likely",
+        "sense_id": "zh-b3d10853b7c1-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7179860c531991ac0157530f03d58b3fde15d0545a88ed100fb4d6bfc6299151"
+}

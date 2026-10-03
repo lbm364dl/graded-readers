@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-jie-wei-xiongdi-4a04529c0e341932",
+  "entry_id": "zh-expression-jie-wei-xiongdi",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-jie-wei-xiongdi",
+      "headword": "结为兄弟",
+      "reading": "jiéwéi xiōngdì",
+      "base_entry_id": "zh-fe68dc39caa3-1",
+      "components": [
+        {
+          "entry_id": "zh-fe68dc39caa3-1",
+          "role": "verb construction"
+        },
+        {
+          "entry_id": "zh-f6c71210522b-1",
+          "role": "resulting relationship"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-jie-wei-xiongdi-s1",
+          "definition": "become brothers; form a brotherhood"
+        }
+      ],
+      "kind": "construction"
+    },
+    "examples": [
+      {
+        "sentence": "三人结为兄弟。",
+        "gloss": "become brothers; form a brotherhood",
+        "sense_id": "zh-expression-jie-wei-xiongdi-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "结为",
+        "role": "verb construction"
+      },
+      {
+        "headword": "兄弟",
+        "role": "resulting relationship"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c1928ba7ef3ea0466e5e116946344c0197ac3c88c368436539c869eb239e3b98"
+}

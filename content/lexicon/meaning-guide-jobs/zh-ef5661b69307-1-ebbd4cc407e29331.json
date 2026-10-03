@@ -1,0 +1,31 @@
+{
+  "id": "zh-ef5661b69307-1-ebbd4cc407e29331",
+  "entry_id": "zh-ef5661b69307-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ef5661b69307-1",
+      "headword": "墙",
+      "kind": "word",
+      "reading": "qiáng",
+      "senses": [
+        {
+          "id": "zh-ef5661b69307-1-s1",
+          "definition": "wall"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "左丰因此怀恨在心，回奏朝廷，诬陷卢植只修高墙、不肯作战。",
+        "gloss": "wall",
+        "sense_id": "zh-ef5661b69307-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "81fdf0e5c0b4f8df839ab9a92529a3052562555968e3a0b3b7b5759da2fc9cf1"
+}

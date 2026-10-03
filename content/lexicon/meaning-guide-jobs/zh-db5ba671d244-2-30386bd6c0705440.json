@@ -1,0 +1,31 @@
+{
+  "id": "zh-db5ba671d244-2-30386bd6c0705440",
+  "entry_id": "zh-db5ba671d244-2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-db5ba671d244-2",
+      "headword": "上",
+      "kind": "word",
+      "reading": "shàng",
+      "senses": [
+        {
+          "id": "zh-db5ba671d244-2-s1",
+          "definition": "to submit or present (a report, memorial, or similar document to a superior)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "议郎蔡邕上疏直言，说雌鸡变雄等灾异，是妇寺干政造成的。",
+        "gloss": "submit; present",
+        "sense_id": "zh-db5ba671d244-2-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "552d390ef05e05c579c30c56611ddf379f0536680f2f15ad97b41d11a3a36862"
+}

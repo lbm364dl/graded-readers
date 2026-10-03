@@ -1,0 +1,93 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_074-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1305,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了关羽与关平关于是否亲自迎战庞德的劝说，以及关羽称赞庞德刀法精熟等细节。",
+      "classification": "material",
+      "reason": "这些对话表现关羽坚持亲战的动机、关平的谨慎以及关羽对庞德实力的判断，涉及重要人物刻画和战斗动因。",
+      "required_fix": "补回关平劝阻关羽亲战、关羽坚持复仇并称赞庞德刀法精熟的内容。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了关羽与关平关于是否亲自迎战庞德的劝说，以及关羽称赞庞德刀法精熟等细节。",
+      "classification": "material",
+      "reason": "这些对话表现关羽坚持亲战的动机、关平的谨慎以及关羽对庞德实力的判断，涉及重要人物刻画和战斗动因。",
+      "required_fix": "补回关平劝阻关羽亲战、关羽坚持复仇并称赞庞德刀法精熟的内容。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9.2,
+    "naturalness": 9.1,
+    "readability": 9.4,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1391,
+      "review": {
+        "source_fidelity": 7,
+        "naturalness": 8,
+        "readability": 8,
+        "material_omissions": [
+          "删去了庞德认为儿子庞会有异相、长大后将替父报仇的预言，削弱了人物刻画及后续伏笔连贯性。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "关平劝阻关羽亲战、关羽称赞庞德刀法精熟并坚持复仇的对话虽已补入，但被放在关羽中箭之后；原文这些内容发生在第二次交战之前，造成战斗动机和时间顺序失真。",
+          "“救出樊城”将原文“解樊城之围”的含义说成救出城池，语义不准确。"
+        ],
+        "language_problems": [
+          "“连日大雨将至”表达不自然且时态不当；原文是秋雨连绵、已经持续。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 1323,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [
+          "“各侍其主”用词不当，应改为“各事其主”或“各为其主”。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 1305,
+      "review": {
+        "source_fidelity": 9.2,
+        "naturalness": 9.1,
+        "readability": 9.4,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

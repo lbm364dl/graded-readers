@@ -1,0 +1,32 @@
+{
+  "id": "ja-5101ef62ab8e39d5-9f6a153a33895c8e",
+  "entry_id": "ja-5101ef62ab8e39d5",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5101ef62ab8e39d5",
+      "headword": "男の人",
+      "reading": "おとこのひと",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-5101ef62ab8e39d5-1",
+          "definition": "Man; adult male person."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "男の人の手の上で、吾輩の目が回りました。",
+        "gloss": "man",
+        "sense_id": "ja-5101ef62ab8e39d5-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ef1becb54acf24e8f25c7d5e69e4901e134d7d56b9d1b8dbb64948b903eb354c"
+}

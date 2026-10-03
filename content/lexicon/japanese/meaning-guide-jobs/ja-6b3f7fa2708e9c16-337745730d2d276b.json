@@ -1,0 +1,32 @@
+{
+  "id": "ja-6b3f7fa2708e9c16-337745730d2d276b",
+  "entry_id": "ja-6b3f7fa2708e9c16",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-6b3f7fa2708e9c16",
+      "headword": "臭い",
+      "reading": "におい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-6b3f7fa2708e9c16-1",
+          "definition": "A smell or odor."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "しかし最後に強い臭いを出され、それ以来、鼬を見るだけで胸が悪くなるという。",
+        "gloss": "odor; smell",
+        "sense_id": "ja-6b3f7fa2708e9c16-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "05da9d58d0c983a315895f57cdcaedd3187e570857243d7f42847cb42434dcd5"
+}

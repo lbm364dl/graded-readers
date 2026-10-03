@@ -1,0 +1,32 @@
+{
+  "id": "ja-535592046813e08d-0f2b259da17000cf",
+  "entry_id": "ja-535592046813e08d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-535592046813e08d",
+      "headword": "動かす",
+      "reading": "うごかす",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-535592046813e08d-1",
+          "definition": "to move something; to cause something to change position"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人は書斎から出て来て、吾輩の後ろで熱心に筆を動かしていた。",
+        "gloss": "was moving",
+        "sense_id": "ja-535592046813e08d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2830ff81b036153f1ac8fb99f02a64914411f9d4cadf0a84d9b3f15bd415dfb6"
+}

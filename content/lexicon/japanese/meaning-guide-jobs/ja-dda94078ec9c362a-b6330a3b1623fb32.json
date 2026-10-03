@@ -1,0 +1,32 @@
+{
+  "id": "ja-dda94078ec9c362a-b6330a3b1623fb32",
+  "entry_id": "ja-dda94078ec9c362a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-dda94078ec9c362a",
+      "headword": "違う",
+      "reading": "ちがう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-dda94078ec9c362a-1",
+          "definition": "to differ; to be unlike"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そこは前までと違ってひどく明るかった。",
+        "gloss": "being different; unlike",
+        "sense_id": "ja-dda94078ec9c362a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3846766a5c7218a69b40cb1cb28f2fc82273b3af68f984cc049562343ad53cf3"
+}

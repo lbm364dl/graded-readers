@@ -1,0 +1,70 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_106-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1262,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“整顿军民后班师”中的“整顿军民”不是原文明确事件。",
+      "classification": "material",
+      "reason": "“整顿军民”增加了原文没有的具体行动，改变了魏军善后情节的事实内容。",
+      "required_fix": "删除“整顿军民”，改为“出榜安民后班师”或仅表述为“安民后班师”。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "司马懿放开城外樵牧通道的目的主要是诱使公孙渊自行出逃，改写为“让城中军民自行消耗粮食”不够准确，甚至可能造成相反的因果理解。",
+      "classification": "material",
+      "reason": "改写改变了司马懿放开通道的主要战略目的，造成了重要的因果关系偏差。",
+      "required_fix": "应明确表述为：司马懿放开樵牧通道，主要是给公孙渊留下逃亡机会，诱使其自行出城逃走；粮食消耗只是相关情势。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“整顿军民后班师”中的“整顿军民”不是原文明确事件。",
+      "classification": "material",
+      "reason": "“整顿军民”增加了原文没有的具体行动，改变了魏军善后情节的事实内容。",
+      "required_fix": "删除“整顿军民”，改为“出榜安民后班师”或仅表述为“安民后班师”。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "司马懿放开城外樵牧通道的目的主要是诱使公孙渊自行出逃，改写为“让城中军民自行消耗粮食”不够准确，甚至可能造成相反的因果理解。",
+      "classification": "material",
+      "reason": "改写改变了司马懿放开通道的主要战略目的，造成了重要的因果关系偏差。",
+      "required_fix": "应明确表述为：司马懿放开樵牧通道，主要是给公孙渊留下逃亡机会，诱使其自行出城逃走；粮食消耗只是相关情势。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1262,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

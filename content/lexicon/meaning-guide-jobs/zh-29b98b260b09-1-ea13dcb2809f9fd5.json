@@ -1,0 +1,31 @@
+{
+  "id": "zh-29b98b260b09-1-ea13dcb2809f9fd5",
+  "entry_id": "zh-29b98b260b09-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-29b98b260b09-1",
+      "headword": "骑",
+      "kind": "word",
+      "reading": "qí",
+      "senses": [
+        {
+          "id": "zh-29b98b260b09-1-s1",
+          "definition": "to ride (an animal or vehicle)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备骑马出阵，关羽在左，张飞在右。",
+        "gloss": "to ride",
+        "sense_id": "zh-29b98b260b09-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bcbce50af9e69d67b41895b67248f62987690dbeade3761f27f517ab5ded0c7a"
+}

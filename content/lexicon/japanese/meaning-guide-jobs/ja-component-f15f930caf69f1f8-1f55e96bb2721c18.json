@@ -1,0 +1,26 @@
+{
+  "id": "ja-component-f15f930caf69f1f8-1f55e96bb2721c18",
+  "entry_id": "ja-component-f15f930caf69f1f8",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-component-f15f930caf69f1f8",
+      "headword": "押す",
+      "reading": "おす",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-component-f15f930caf69f1f8-1",
+          "definition": "To push or press something."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0aba2a1d510711fc234bd4bd867d2242724ca4690db7c926351df0aac4888d7f"
+}

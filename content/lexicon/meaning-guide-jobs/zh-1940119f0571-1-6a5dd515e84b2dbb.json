@@ -1,0 +1,85 @@
+{
+  "id": "zh-1940119f0571-1-6a5dd515e84b2dbb",
+  "entry_id": "zh-1940119f0571-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-1940119f0571-1",
+      "headword": "多",
+      "kind": "word",
+      "reading": "duō",
+      "senses": [
+        {
+          "id": "zh-1940119f0571-1-s1",
+          "definition": "more than; over (a number)"
+        },
+        {
+          "id": "zh-1940119f0571-1-s2",
+          "definition": "many; much; a lot"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他们有了五百多人。",
+        "gloss": "more than",
+        "sense_id": "zh-1940119f0571-1-s1"
+      },
+      {
+        "sentence": "又聚集三百多个乡勇。",
+        "gloss": "more than",
+        "sense_id": "zh-1940119f0571-1-s1"
+      },
+      {
+        "sentence": "后来，他们聚集五百多个乡勇。",
+        "gloss": "more than",
+        "sense_id": "zh-1940119f0571-1-s1"
+      },
+      {
+        "sentence": "他们迫害敢说真话的官员，朝廷的坏事越来越多。",
+        "gloss": "many",
+        "sense_id": "zh-1940119f0571-1-s2"
+      },
+      {
+        "sentence": "三人谢过商人，打造兵器，配上铠甲，又聚集五百多名乡勇，前去报到。",
+        "gloss": "more than",
+        "sense_id": "zh-1940119f0571-1-s1"
+      },
+      {
+        "sentence": "刘备不太专心读书，性情宽和，话不多，喜怒很少露在脸上。",
+        "gloss": "many",
+        "sense_id": "zh-1940119f0571-1-s2"
+      },
+      {
+        "sentence": "刘备对关羽、张飞说：“敌人多，我们人少，必须用特别的办法才能取胜。",
+        "gloss": "many",
+        "sense_id": "zh-1940119f0571-1-s2"
+      },
+      {
+        "sentence": "这一战中，曹操杀死一万多人，夺得旗子、战鼓和许多马匹。",
+        "gloss": "more than; approximately",
+        "sense_id": "zh-1940119f0571-1-s1"
+      },
+      {
+        "sentence": "他在县城四座城门放下十多根五颜六色的木棒，并定下严格的禁令。",
+        "gloss": "more than",
+        "sense_id": "zh-1940119f0571-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-1940119f0571-1",
+    "structure": "single_component",
+    "explanation_en": "After a number, 多 indicates that the amount exceeds that number. With a count, it means “more than” the stated amount.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "cb209fbbd9d46104303ce1cec7869f2c23ad0f0af72a5cb64f4bae70dd9c3dd8",
+    "revision": 1,
+    "editorial_policy": 2,
+    "evidence_status": "legacy_unresearched"
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f0472a462c4b8009d68d3c64342a49f6da77f646d47ee508d0dd43133b328be9"
+}

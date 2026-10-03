@@ -1,0 +1,31 @@
+{
+  "id": "zh-7dcf4e07e2f2-1-cb84b9b364451e93",
+  "entry_id": "zh-7dcf4e07e2f2-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7dcf4e07e2f2-1",
+      "headword": "中山",
+      "kind": "name",
+      "reading": "Zhōngshān",
+      "senses": [
+        {
+          "id": "zh-7dcf4e07e2f2-1-s1",
+          "definition": "Zhongshan, a place name"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "原来是中山大商张世平、苏双，他们每年往北贩马，最近因盗贼出现而返回。",
+        "gloss": "Zhongshan",
+        "sense_id": "zh-7dcf4e07e2f2-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "59639a2d70a9acb8b94d12980402b548b50c2a8f26871a1c0162e000d8ad791c"
+}

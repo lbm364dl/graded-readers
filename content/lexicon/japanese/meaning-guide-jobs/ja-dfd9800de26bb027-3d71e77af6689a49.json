@@ -1,0 +1,32 @@
+{
+  "id": "ja-dfd9800de26bb027-3d71e77af6689a49",
+  "entry_id": "ja-dfd9800de26bb027",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-dfd9800de26bb027",
+      "headword": "怒る",
+      "reading": "おこる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-dfd9800de26bb027-1",
+          "definition": "To become angry; to be angry."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "黒は「人間は、格好のよい泥棒だ」と怒った。",
+        "gloss": "became angry; was angry",
+        "sense_id": "ja-dfd9800de26bb027-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ba47cf3c47a311e62f24325a57be01097c42339741d2d4e45d0b5a5c8a8a4b12"
+}

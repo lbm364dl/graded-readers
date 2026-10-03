@@ -1,0 +1,31 @@
+{
+  "id": "zh-3030235d7d10-1-a62809802d0cb0f7",
+  "entry_id": "zh-3030235d7d10-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-3030235d7d10-1",
+      "headword": "幽",
+      "kind": "name",
+      "reading": "Yōu",
+      "senses": [
+        {
+          "id": "zh-3030235d7d10-1-s1",
+          "definition": "You, an abbreviated name for Youzhou"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "青、幽、徐、冀等八州百姓，家家信奉大贤良师张角。",
+        "gloss": "You Province",
+        "sense_id": "zh-3030235d7d10-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "62e733f0448c05a4f0ace902e28e828901745019022c47647012dd59195c1075"
+}

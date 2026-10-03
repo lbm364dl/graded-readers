@@ -1,0 +1,31 @@
+{
+  "id": "zh-ac6399c1fcf9-1-4956a448ded9598b",
+  "entry_id": "zh-ac6399c1fcf9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ac6399c1fcf9-1",
+      "headword": "恰好",
+      "kind": "word",
+      "reading": "qiàhǎo",
+      "senses": [
+        {
+          "id": "zh-ac6399c1fcf9-1-s1",
+          "definition": "by chance; just at that time"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "恰好张梁、张宝已经败退，曹操截住他们，斩首万余级，夺得许多旗帜、金鼓和马匹。",
+        "gloss": "just so happens",
+        "sense_id": "zh-ac6399c1fcf9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ed96d4237275fe1a86b1edbbee920632bbb48361c5a2ccc98f1b44a5eac9a284"
+}

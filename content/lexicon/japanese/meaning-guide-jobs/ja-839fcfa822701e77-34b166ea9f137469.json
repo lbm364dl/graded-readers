@@ -1,0 +1,32 @@
+{
+  "id": "ja-839fcfa822701e77-34b166ea9f137469",
+  "entry_id": "ja-839fcfa822701e77",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-839fcfa822701e77",
+      "headword": "小便",
+      "reading": "しょうべん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-839fcfa822701e77-1",
+          "definition": "urine; urination"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ところが小便がしたくなり、もう待てなかった。",
+        "gloss": "urination; need to urinate",
+        "sense_id": "ja-839fcfa822701e77-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f4c325238af7c159b7186f4f06bd3c382add91c1351b45763e876a1ed2a9e357"
+}

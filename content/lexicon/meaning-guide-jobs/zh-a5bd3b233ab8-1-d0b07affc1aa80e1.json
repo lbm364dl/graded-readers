@@ -1,0 +1,36 @@
+{
+  "id": "zh-a5bd3b233ab8-1-d0b07affc1aa80e1",
+  "entry_id": "zh-a5bd3b233ab8-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a5bd3b233ab8-1",
+      "headword": "上前",
+      "kind": "word",
+      "reading": "shàngqián",
+      "senses": [
+        {
+          "id": "zh-a5bd3b233ab8-1-s1",
+          "definition": "to go forward; advance toward the front"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "程远志很生气，派邓茂上前。",
+        "gloss": "advance",
+        "sense_id": "zh-a5bd3b233ab8-1-s1"
+      },
+      {
+        "sentence": "第二天，刘备带人上前，打了一会儿便假装退走。",
+        "gloss": "advance",
+        "sense_id": "zh-a5bd3b233ab8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4a9f2b9dddeb24fd375fc5855e18a0a0950fe878a09dac6850946843f874cf71"
+}

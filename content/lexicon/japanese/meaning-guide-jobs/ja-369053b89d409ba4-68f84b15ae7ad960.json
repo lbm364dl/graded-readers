@@ -1,0 +1,32 @@
+{
+  "id": "ja-369053b89d409ba4-68f84b15ae7ad960",
+  "entry_id": "ja-369053b89d409ba4",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-369053b89d409ba4",
+      "headword": "おかげで",
+      "reading": "おかげで",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-369053b89d409ba4-1",
+          "definition": "thanks to; owing to; because of"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "車屋の主人は黒のおかげで一円五十銭ほど儲けているのに、ろくな食べ物もくれない。",
+        "gloss": "thanks to; owing to",
+        "sense_id": "ja-369053b89d409ba4-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "69d29b7e9c87f49f9396fdbd23e7b9c6e559e9617963c46bd5bcca386a8fdba7"
+}

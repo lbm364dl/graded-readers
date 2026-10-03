@@ -1,0 +1,46 @@
+{
+  "id": "zh-85efad6569e5-1-b3913cab2cb84b54",
+  "entry_id": "zh-85efad6569e5-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-85efad6569e5-1",
+      "headword": "贫",
+      "kind": "word",
+      "reading": "pín",
+      "senses": [
+        {
+          "id": "zh-85efad6569e5-1-s1",
+          "definition": "poor; lacking wealth"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他仔细看了榜文，想到自己家贫而有志，却无力报国，不免长叹。",
+        "gloss": "poor",
+        "sense_id": "zh-85efad6569e5-1-s1"
+      },
+      {
+        "sentence": "刘备幼年丧父，侍母至孝，家贫，靠卖草鞋、织席生活。",
+        "gloss": "poor",
+        "sense_id": "zh-85efad6569e5-1-s1"
+      },
+      {
+        "sentence": "叔父刘元起听后很惊讶，认为他非同常人，因他家贫，常常资助他。",
+        "gloss": "poor",
+        "sense_id": "zh-85efad6569e5-1-s1"
+      },
+      {
+        "sentence": "看见招军榜后，他想到自己家贫，没有力量为国家出力，不禁长叹。",
+        "gloss": "poor",
+        "sense_id": "zh-85efad6569e5-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "64e2f0e070af5134d35d15106415967968b798751c1dd94fb5c8ad482077b9d4"
+}

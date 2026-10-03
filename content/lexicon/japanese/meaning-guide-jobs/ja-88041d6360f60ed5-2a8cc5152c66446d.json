@@ -1,0 +1,32 @@
+{
+  "id": "ja-88041d6360f60ed5-2a8cc5152c66446d",
+  "entry_id": "ja-88041d6360f60ed5",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-88041d6360f60ed5",
+      "headword": "受ける",
+      "reading": "うける",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-88041d6360f60ed5-1",
+          "definition": "to receive; to be exposed to"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "太陽の光を受けた毛は、黒い中から火が出るように光っていた。",
+        "gloss": "received; exposed to",
+        "sense_id": "ja-88041d6360f60ed5-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "31113aa64b9f25f074c27efbc7ebe71d818494147bce859b470b1c4d065321c1"
+}

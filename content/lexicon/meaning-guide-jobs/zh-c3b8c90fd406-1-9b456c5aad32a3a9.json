@@ -1,0 +1,31 @@
+{
+  "id": "zh-c3b8c90fd406-1-9b456c5aad32a3a9",
+  "entry_id": "zh-c3b8c90fd406-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c3b8c90fd406-1",
+      "headword": "北贩马",
+      "kind": "construction",
+      "reading": "běi fàn mǎ",
+      "senses": [
+        {
+          "id": "zh-c3b8c90fd406-1-s1",
+          "definition": "go north to trade horses"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张世平和苏双是中山大商，每年往北贩马，近来因盗贼出现而回。",
+        "gloss": "go north to trade horses",
+        "sense_id": "zh-c3b8c90fd406-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3efdd11857b8264bde4515e1d9c9824b362be713c158909ff339afed9112328c"
+}

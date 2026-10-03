@@ -1,0 +1,36 @@
+{
+  "id": "zh-6091d8c50b65-1-d500e8aeadf9a542",
+  "entry_id": "zh-6091d8c50b65-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6091d8c50b65-1",
+      "headword": "常人",
+      "kind": "word",
+      "reading": "chángrén",
+      "senses": [
+        {
+          "id": "zh-6091d8c50b65-1-s1",
+          "definition": "ordinary people"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他身材高大，耳朵很长，双手也比常人长。",
+        "gloss": "ordinary people",
+        "sense_id": "zh-6091d8c50b65-1-s1"
+      },
+      {
+        "sentence": "叔父刘元起听后很惊讶，认为他非同常人，因他家贫，常常资助他。",
+        "gloss": "ordinary person",
+        "sense_id": "zh-6091d8c50b65-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b003cba6a55ec19de590a46994b065248092a08c866b6743a0b076328e325233"
+}

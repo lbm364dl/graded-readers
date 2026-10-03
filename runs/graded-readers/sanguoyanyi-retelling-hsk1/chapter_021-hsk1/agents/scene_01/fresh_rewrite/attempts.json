@@ -1,0 +1,31 @@
+[
+  {
+    "attempt": 1,
+    "started_at": "2026-08-12T08:52:28.497108+00:00",
+    "ended_at": "2026-08-12T08:52:37.117715+00:00",
+    "return_code": 1,
+    "throttled": true,
+    "events": "events.attempt-01.jsonl",
+    "stderr": "stderr.attempt-01.log",
+    "retry_delay_seconds": 2.0
+  },
+  {
+    "attempt": 2,
+    "started_at": "2026-08-12T08:52:39.120752+00:00",
+    "ended_at": "2026-08-12T08:52:45.101262+00:00",
+    "return_code": 1,
+    "throttled": true,
+    "events": "events.attempt-02.jsonl",
+    "stderr": "stderr.attempt-02.log",
+    "retry_delay_seconds": 4.0
+  },
+  {
+    "attempt": 3,
+    "started_at": "2026-08-12T08:52:49.105754+00:00",
+    "ended_at": "2026-08-12T08:54:48.948946+00:00",
+    "return_code": 0,
+    "throttled": false,
+    "events": "events.attempt-03.jsonl",
+    "stderr": "stderr.attempt-03.log"
+  }
+]

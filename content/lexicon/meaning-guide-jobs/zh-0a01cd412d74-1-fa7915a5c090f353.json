@@ -1,0 +1,31 @@
+{
+  "id": "zh-0a01cd412d74-1-fa7915a5c090f353",
+  "entry_id": "zh-0a01cd412d74-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-0a01cd412d74-1",
+      "headword": "上奏",
+      "kind": "word",
+      "reading": "shàngzòu",
+      "senses": [
+        {
+          "id": "zh-0a01cd412d74-1-s1",
+          "definition": "to submit a report or memorial to the court"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "何进上奏，朝廷命各地招兵抵抗黄巾军，又派卢植、皇甫嵩、朱俊各率精兵，分三路讨伐。",
+        "gloss": "submit a memorial",
+        "sense_id": "zh-0a01cd412d74-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fc87cab08d7f033c079edac7ce1dbd462c0fbd3745fa1a89833973c94e5c74a6"
+}

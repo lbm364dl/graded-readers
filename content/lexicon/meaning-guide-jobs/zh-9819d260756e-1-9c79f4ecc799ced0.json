@@ -1,0 +1,181 @@
+{
+  "id": "zh-9819d260756e-1-9c79f4ecc799ced0",
+  "entry_id": "zh-9819d260756e-1",
+  "reason": "requested",
+  "item": {
+    "entry": {
+      "id": "zh-9819d260756e-1",
+      "headword": "当时",
+      "kind": "word",
+      "reading": "dāngshí",
+      "senses": [
+        {
+          "id": "zh-9819d260756e-1-s1",
+          "definition": "at that time; then"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "当时疫病流行，很多人相信张角。",
+        "gloss": "at that time",
+        "sense_id": "zh-9819d260756e-1-s1"
+      },
+      {
+        "sentence": "他当时因无力报国，只能长声叹气。",
+        "gloss": "at that time",
+        "sense_id": "zh-9819d260756e-1-s1"
+      },
+      {
+        "sentence": "当时张角有十五万黄巾军，卢植有五万兵马，双方在广宗相持，尚未分出胜负。",
+        "gloss": "at that time",
+        "sense_id": "zh-9819d260756e-1-s1"
+      },
+      {
+        "sentence": "当时张角有十五万黄巾军，卢植有五万兵，双方在广宗相拒，尚未分出胜负。",
+        "gloss": "at that time",
+        "sense_id": "zh-9819d260756e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-9819d260756e-1",
+    "claim_ids": [
+      "c1",
+      "c2"
+    ],
+    "structure": "compositional",
+    "explanation_en": "当时 refers to a contextually identified time: “at that time” or “then.” 当 contributes the sense of being at or during a time, and 时 names the time; together they point to the time in question.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "当",
+        "contribution_en": "Contributes the sense of being at or during a time.",
+        "claim_ids": [
+          "c2"
+        ]
+      },
+      {
+        "text": "时",
+        "contribution_en": "Names the time being referred to.",
+        "claim_ids": [
+          "c2"
+        ]
+      }
+    ],
+    "research": {
+      "entry_id": "zh-9819d260756e-1",
+      "status": "partial",
+      "sources": [
+        {
+          "id": "s1",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=44314&la=0&powerMode=0",
+          "title": "教育部《重編國語辭典修訂本》：當時",
+          "accessed_at": "2026-09-26",
+          "summary_en": "The dictionary defines dāngshí as ‘formerly; at that time’ and illustrates it with a quotation from the Xunzi. It also lists ‘immediately; at once’ under the same pronunciation."
+        },
+        {
+          "id": "s2",
+          "url": "https://www.chinesewords.org/dict/112285-19.html",
+          "title": "漢語網：當時詞語解釋／當時是什麽意思",
+          "accessed_at": "2026-09-26",
+          "summary_en": "This dictionary describes dāngshí as the time previously mentioned or referred to, and as the time when a past event occurred. It assigns ‘at that moment; immediately’ to dàngshí and lists additional historical uses, including ‘people of the time,’ ‘the reigning emperor,’ ‘in one’s prime,’ and ‘timely.’ Its pronunciation assignment for ‘immediately’ differs from the MOE dictionary."
+        },
+        {
+          "id": "s3",
+          "url": "https://pdf.hanspub.org/ml2024125_112913155.pdf",
+          "title": "“当”的演变过程",
+          "accessed_at": "2026-09-26",
+          "summary_en": "The article discusses 当 before temporal expressions in examples such as 当今 and 当是时, analyzing it there as ‘at/during’ and as a preposition developed from a verb use. It does not establish that the modern word 当时 derives from that construction."
+        }
+      ],
+      "claims": [
+        {
+          "id": "c1",
+          "text_en": "For the supplied sense, 当时 refers to a contextually identified time, commonly rendered ‘at that time’ or ‘then.’ The example uses it for the period when the epidemic was widespread. The dictionaries support this broad temporal reading; ‘then’ is a contextual paraphrase rather than evidence for a separate component meaning.",
+          "source_ids": [
+            "s1",
+            "s2"
+          ]
+        },
+        {
+          "id": "c2",
+          "text_en": "时 supplies the time reference in the compound. The role of 当 in the modern word is less certain: the temporal use of 当 before a time expression is attested in constructions such as 当是时, but that parallel does not demonstrate the historical formation or precise contribution of 当时 as a lexical item.",
+          "source_ids": [
+            "s3"
+          ]
+        },
+        {
+          "id": "c3",
+          "text_en": "The dictionaries also record an ‘immediately; at once’ use, but disagree about its pronunciation: the MOE dictionary places it under dāngshí, while 漢語網 assigns it to dàngshí. 漢語網 additionally lists historical uses such as ‘people of the time,’ ‘the reigning emperor,’ ‘in one’s prime,’ and ‘timely’; these are distinct from the supplied ordinary temporal sense.",
+          "source_ids": [
+            "s1",
+            "s2"
+          ]
+        }
+      ],
+      "searches": [
+        {
+          "query": "当时 教育部 重編國語辭典 當時 词典",
+          "opened_urls": [
+            "https://dict.revised.moe.edu.tw/dictView.jsp?ID=44314&la=0&powerMode=0"
+          ]
+        },
+        {
+          "query": "当时 词源 当是时 汉语 词典 释义",
+          "opened_urls": [
+            "https://www.chinesewords.org/dict/112285-19.html",
+            "https://pdf.hanspub.org/ml2024125_112913155.pdf"
+          ]
+        },
+        {
+          "query": "“当”的演变过程 当是时 论文",
+          "opened_urls": [
+            "https://www.hanspub.org/journal/PaperInformation?paperID=86583"
+          ]
+        },
+        {
+          "query": "(direct open)",
+          "opened_urls": [
+            "https://dict.revised.moe.edu.tw/dictView.jsp?ID=44314&la=0&powerMode=0",
+            "https://www.chinesewords.org/dict/112285-19.html",
+            "https://pdf.hanspub.org/ml2024125_112913155.pdf",
+            "https://www.hanspub.org/journal/PaperInformation?paperID=86583"
+          ]
+        },
+        {
+          "query": "“当时” 词汇化 历史 演变 词源 汉语",
+          "opened_urls": []
+        },
+        {
+          "query": "\"当时\" \"当是时\" 演变 词",
+          "opened_urls": []
+        },
+        {
+          "query": "当时 古汉语 词义 词源 词典",
+          "opened_urls": []
+        }
+      ],
+      "gaps": [
+        "The opened sources do not establish a diachronic derivation of the modern lexical item 当时, or prove that its 当 came specifically from the temporal preposition discussed in 当是时. That construction is an attested parallel, not proof of the compound’s history."
+      ]
+    },
+    "input_fingerprint": "2eb96fa0d754984f1be5fe9bd67f4b0c21de74c3ac9e3cf200401360d25f7037",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "partial",
+    "editorial_route": "cached_research",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [
+    {
+      "entry_id": "zh-9819d260756e-1",
+      "id": "hsk2-reader-dangshi-concrete",
+      "reason": "Explain 当 in 当时 more concretely and intuitively than 'contextually identified time'. Explain the at/during contribution and how the whole points to the time being discussed. Preserve supported limits; no new historical account, unrelated senses or source-story narration. Use existing approved evidence where helpful."
+    }
+  ],
+  "status": "failed",
+  "error": "agent failed: zh-9819d260756e-1-9c79f4ecc799ced0/adaptive-propose (exit 1)"
+}

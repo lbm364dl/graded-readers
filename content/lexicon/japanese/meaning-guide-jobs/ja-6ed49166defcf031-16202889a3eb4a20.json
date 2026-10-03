@@ -1,0 +1,32 @@
+{
+  "id": "ja-6ed49166defcf031-16202889a3eb4a20",
+  "entry_id": "ja-6ed49166defcf031",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-6ed49166defcf031",
+      "headword": "知る",
+      "reading": "しる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-6ed49166defcf031-1",
+          "definition": "to know; to become aware of; to learn or find out"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "後で、それがたばこだと知った。",
+        "gloss": "learned; found out",
+        "sense_id": "ja-6ed49166defcf031-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b6b45377504a91db6833aaf9ec67f6630e69086488631c1b335181e2e6f7cba8"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-f7778934807d-2-7c762d0bae17b3b3",
+  "entry_id": "zh-f7778934807d-2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f7778934807d-2",
+      "headword": "过",
+      "kind": "particle",
+      "reading": "guò",
+      "senses": [
+        {
+          "id": "zh-f7778934807d-2-s1",
+          "definition": "experiential aspect particle indicating that an action or state has occurred at least once"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "祖父刘雄，父亲刘弘；刘弘曾举孝廉，也做过官，后来早亡。",
+        "gloss": "experiential aspect marker",
+        "sense_id": "zh-f7778934807d-2-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "582cc2af7b6e2dea106b851afb61eb517b14fb7d41f30489b8cf88888b04435a"
+}

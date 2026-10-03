@@ -1,0 +1,32 @@
+{
+  "id": "ja-214b2a50ed57ac39-80d87a86c4ab5e31",
+  "entry_id": "ja-214b2a50ed57ac39",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-214b2a50ed57ac39",
+      "headword": "優れる",
+      "reading": "すぐれる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-214b2a50ed57ac39-1",
+          "definition": "to excel; to be superior"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人は、特に人より優れた力があるわけではないのに、何にでも手を出したがる男だ。",
+        "gloss": "superior; surpassing",
+        "sense_id": "ja-214b2a50ed57ac39-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e12aba1f4cc492e2146013594d6fc28cacdde015a1ba7c82a5a69645ca31fe0f"
+}

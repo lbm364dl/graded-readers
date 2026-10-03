@@ -1,0 +1,31 @@
+{
+  "id": "zh-419c745398df-1-e287e4f13cbffdfa",
+  "entry_id": "zh-419c745398df-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-419c745398df-1",
+      "headword": "朝",
+      "kind": "word",
+      "reading": "cháo",
+      "senses": [
+        {
+          "id": "zh-419c745398df-1-s1",
+          "definition": "court; imperial government"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角暗中送金钱，联系朝中的封谞，准备做内应。",
+        "gloss": "court; imperial government",
+        "sense_id": "zh-419c745398df-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2005a3ed9d996cd3a1d60b7faab8eb142b608d64c91052815478187f89ca9f68"
+}

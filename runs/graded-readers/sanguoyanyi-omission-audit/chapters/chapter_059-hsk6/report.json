@@ -1,0 +1,100 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_059-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1287,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了张鲁五斗米道的组织、祈祷、义舍及其在汉中盘踞三十年的背景。",
+      "classification": "material",
+      "reason": "这不是单纯的背景删节，而是张鲁统治方式、宗教组织和汉中势力基础的重要刻画，对理解其身份与后续行动有帮助。",
+      "required_fix": "补入张鲁五斗米道的组织体系、祈祷仪式、义舍制度及其在汉中盘踞三十年的背景。"
+    },
+    {
+      "omission_note": "略去了渭桥突围时于禁误射李堪、马超随后击退于禁等细节。",
+      "classification": "material",
+      "reason": "这包含明确的战斗事件、人物死亡和战局推进；删去后会损失渭桥突围过程中的关键因果与行动结果。",
+      "required_fix": "补入于禁从马超背后射击、误中李堪致死，以及马超回身追杀并迫使于禁退走的情节。"
+    },
+    {
+      "omission_note": "略去韦康被荐为凉州刺史、屯守冀城等后续部署。",
+      "classification": "material",
+      "reason": "这是曹操撤军后针对马超的具体防务部署，并引入韦康这一后续重要人物与据点；删去会削弱后续章节的承接和因果。",
+      "required_fix": "补入杨阜荐韦康为凉州刺史、与夏侯渊同领兵屯守冀城以防马超的部署。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了张鲁五斗米道的组织、祈祷、义舍及其在汉中盘踞三十年的背景。",
+      "classification": "material",
+      "reason": "这不是单纯的背景删节，而是张鲁统治方式、宗教组织和汉中势力基础的重要刻画，对理解其身份与后续行动有帮助。",
+      "required_fix": "补入张鲁五斗米道的组织体系、祈祷仪式、义舍制度及其在汉中盘踞三十年的背景。"
+    },
+    {
+      "omission_note": "略去了渭桥突围时于禁误射李堪、马超随后击退于禁等细节。",
+      "classification": "material",
+      "reason": "这包含明确的战斗事件、人物死亡和战局推进；删去后会损失渭桥突围过程中的关键因果与行动结果。",
+      "required_fix": "补入于禁从马超背后射击、误中李堪致死，以及马超回身追杀并迫使于禁退走的情节。"
+    },
+    {
+      "omission_note": "略去韦康被荐为凉州刺史、屯守冀城等后续部署。",
+      "classification": "material",
+      "reason": "这是曹操撤军后针对马超的具体防务部署，并引入韦康这一后续重要人物与据点；删去会削弱后续章节的承接和因果。",
+      "required_fix": "补入杨阜荐韦康为凉州刺史、与夏侯渊同领兵屯守冀城以防马超的部署。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 8.8,
+    "naturalness": 8.8,
+    "readability": 9.0,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1274,
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 8,
+        "readability": 8,
+        "material_omissions": [],
+        "unsupported_additions": [
+          "将曹操对马超的感叹说成“故意”叹道，原文未明确这是诱使夏侯渊出兵的计策。"
+        ],
+        "distortions": [
+          "将曹操许诺给杨秋的西凉太守职位概括成“封爵”，改变了原文的任命性质。"
+        ],
+        "language_problems": [
+          "“使马超骄敌”搭配不自然，应改为“使马超骄傲轻敌”或“使马超轻敌”。",
+          "“曹操只带许褚单骑出营”指代和修饰关系含混，容易误解为曹操独自出营。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 1287,
+      "review": {
+        "source_fidelity": 8.8,
+        "naturalness": 8.8,
+        "readability": 9.0,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

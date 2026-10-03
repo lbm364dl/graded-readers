@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff2ef-7303-7bb1-b894-ac781b3a9459"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.93,\"naturalness\":0.92,\"readability\":0.94,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"将孙坚宣誓前的处境写成“没有办法，只好”，略微强化了被迫感。\",\"“袁绍听后很生气，孙坚也带人走了”调换了原文中孙坚先离营、袁绍随后发怒的先后顺序。\"],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":36943,"cached_input_tokens":8960,"cache_write_input_tokens":0,"output_tokens":567,"reasoning_output_tokens":438}}

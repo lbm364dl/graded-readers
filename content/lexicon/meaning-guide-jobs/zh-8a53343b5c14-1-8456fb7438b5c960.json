@@ -1,0 +1,31 @@
+{
+  "id": "zh-8a53343b5c14-1-8456fb7438b5c960",
+  "entry_id": "zh-8a53343b5c14-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8a53343b5c14-1",
+      "headword": "死伤",
+      "kind": "word",
+      "reading": "sǐshāng",
+      "senses": [
+        {
+          "id": "zh-8a53343b5c14-1-s1",
+          "definition": "dead and wounded people; casualties"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "龚景率民兵出城助战，黄巾军死伤惨重，最终解开了青州之围。",
+        "gloss": "casualties",
+        "sense_id": "zh-8a53343b5c14-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "90ff7d660cd2f8b6e5d21dddf0f3d4e80586b89f2e76526cd3f30d91d663fd0f"
+}

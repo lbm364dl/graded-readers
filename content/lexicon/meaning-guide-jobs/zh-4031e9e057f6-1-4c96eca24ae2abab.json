@@ -1,0 +1,31 @@
+{
+  "id": "zh-4031e9e057f6-1-4c96eca24ae2abab",
+  "entry_id": "zh-4031e9e057f6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4031e9e057f6-1",
+      "headword": "轻举妄动",
+      "kind": "expression",
+      "reading": "qīngjǔwàngdòng",
+      "senses": [
+        {
+          "id": "zh-4031e9e057f6-1-s1",
+          "definition": "to act rashly"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备连忙阻止，说此事自有公论，不能轻举妄动。",
+        "gloss": "act rashly",
+        "sense_id": "zh-4031e9e057f6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a0118aca695cddd8901999c25c8f2a81d3e53475247b84d4edd57b814d2b1d1b"
+}

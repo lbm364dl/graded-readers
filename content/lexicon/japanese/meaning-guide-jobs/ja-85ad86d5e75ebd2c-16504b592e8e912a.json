@@ -1,0 +1,32 @@
+{
+  "id": "ja-85ad86d5e75ebd2c-16504b592e8e912a",
+  "entry_id": "ja-85ad86d5e75ebd2c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-85ad86d5e75ebd2c",
+      "headword": "心地よい",
+      "reading": "ここちよい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-85ad86d5e75ebd2c-1",
+          "definition": "pleasant; comfortable"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "しかし一番心地よいのは、夜になると家の小供の寝床にもぐり込み、一緒に眠ることである。",
+        "gloss": "pleasant; comfortable",
+        "sense_id": "ja-85ad86d5e75ebd2c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4b7f5059b8cada28f359e36481da97bd7d09923765fde6f87bfe190e36033f79"
+}

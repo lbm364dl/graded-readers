@@ -1,0 +1,31 @@
+{
+  "id": "zh-1d4128983281-1-6b6b91dba6662d58",
+  "entry_id": "zh-1d4128983281-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1d4128983281-1",
+      "headword": "每人",
+      "kind": "word",
+      "reading": "měirén",
+      "senses": [
+        {
+          "id": "zh-1d4128983281-1-s1",
+          "definition": "each person; per person"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "二人商量后，命士兵每人束一把草，又暗中埋下伏兵。",
+        "gloss": "each person",
+        "sense_id": "zh-1d4128983281-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "922197a1dc6e8f7243c2aee7c6857121f2e22f64e516602095b026081e26979d"
+}

@@ -1,0 +1,58 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_053-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 159,
+  "required_range": [
+    98,
+    182
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "“火攻刺杀计”略不准确，原文是以火为号制造混乱并伺机刺杀张辽，并非直接火攻。",
+      "classification": "material",
+      "reason": "“火攻”将原文以火为号、制造混乱后刺杀张辽的计策表述成直接火攻，改变了行动方式和因果机制。",
+      "required_fix": "将“火攻刺杀计”改为“以火为号制造混乱并伺机刺杀张辽的计策”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "“火攻刺杀计”略不准确，原文是以火为号制造混乱并伺机刺杀张辽，并非直接火攻。",
+      "classification": "material",
+      "reason": "“火攻”将原文以火为号、制造混乱后刺杀张辽的计策表述成直接火攻，改变了行动方式和因果机制。",
+      "required_fix": "将“火攻刺杀计”改为“以火为号制造混乱并伺机刺杀张辽的计策”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": []
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 159,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "passed": true
+    }
+  ]
+}

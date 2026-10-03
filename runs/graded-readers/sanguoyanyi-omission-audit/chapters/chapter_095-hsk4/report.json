@@ -1,0 +1,73 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_095-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 656,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "“魏延救出马谡”不够准确，原文是司马懿放马谡逃走，魏延随后拦截并击退追赶马谡的张郃，并非主动救出马谡。",
+      "classification": "material",
+      "reason": "将马谡逃脱及魏延拦截张郃的过程改写为魏延主动救出马谡，改变了行动者和事件因果。",
+      "required_fix": "改为司马懿放马谡逃走，魏延随后拦截并击退追赶马谡的张郃。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "“魏延救出马谡”不够准确，原文是司马懿放马谡逃走，魏延随后拦截并击退追赶马谡的张郃，并非主动救出马谡。",
+      "classification": "material",
+      "reason": "将马谡逃脱及魏延拦截张郃的过程改写为魏延主动救出马谡，改变了行动者和事件因果。",
+      "required_fix": "改为司马懿放马谡逃走，魏延随后拦截并击退追赶马谡的张郃。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 628,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [
+          "高翔与魏延遭魏军伏击后，王平及时杀入救出二人；修订稿未交代他们如何脱险并继续撤往列柳城。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 656,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

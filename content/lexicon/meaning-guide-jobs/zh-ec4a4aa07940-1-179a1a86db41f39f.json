@@ -1,0 +1,31 @@
+{
+  "id": "zh-ec4a4aa07940-1-179a1a86db41f39f",
+  "entry_id": "zh-ec4a4aa07940-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ec4a4aa07940-1",
+      "headword": "缘故",
+      "kind": "word",
+      "reading": "yuángù",
+      "senses": [
+        {
+          "id": "zh-ec4a4aa07940-1-s1",
+          "definition": "reason; cause"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "灵帝下诏，询问灾异的缘故。",
+        "gloss": "reason",
+        "sense_id": "zh-ec4a4aa07940-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b177b13b7ed89777bc486adddbfc7efd57acc8c2e168437b6b1cfc06010f621b"
+}

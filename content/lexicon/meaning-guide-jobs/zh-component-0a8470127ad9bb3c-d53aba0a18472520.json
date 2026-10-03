@@ -1,0 +1,26 @@
+{
+  "id": "zh-component-0a8470127ad9bb3c-d53aba0a18472520",
+  "entry_id": "zh-component-0a8470127ad9bb3c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-component-0a8470127ad9bb3c",
+      "headword": "公论",
+      "reading": "gōnglùn",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-0a8470127ad9bb3c-s1",
+          "definition": "A fair judgment or assessment formed by public opinion."
+        }
+      ]
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "470f288b24243fc692c0932e89d5f11b8a233f83a33ec99b1b360b806ccb3ad2"
+}

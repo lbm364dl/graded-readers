@@ -1,0 +1,32 @@
+{
+  "id": "ja-47add51b97b48d58-06ee00fdd695693e",
+  "entry_id": "ja-47add51b97b48d58",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-47add51b97b48d58",
+      "headword": "部屋",
+      "reading": "へや",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-47add51b97b48d58-1",
+          "definition": "a room"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "すると胃の弱い主人が必ず目を覚まし、隣の部屋から飛び出して来る。",
+        "gloss": "room",
+        "sense_id": "ja-47add51b97b48d58-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "36a4cfd6362e764f864e36228f759e0460fc91b42e1cf30d0b7b76730182b0fb"
+}

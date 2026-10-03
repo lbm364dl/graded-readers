@@ -1,0 +1,68 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_073-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 859,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了孙权派使者向曹操提出具体协同方案，以及曹操随后派满宠协助曹仁、檄令东吴接应的细节。",
+      "classification": "material",
+      "reason": "这些内容具体说明了曹仁出兵和东吴协同的因果链及行动安排，省略后削弱后续樊城战事和潜在荆州袭击的动机与 chronology。",
+      "required_fix": "补充孙权使者向曹操提出让曹仁先攻荆州、东吴水路接应的方案，以及曹操派满宠协助曹仁并檄令东吴接应。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“魏延又射伤曹操”将原文“射了一箭”明确化为射伤，原文未说明是否命中或造成伤害。",
+      "classification": "material",
+      "reason": "“射伤”新增了原文未支持的命中及受伤事实，改变了事件信息。",
+      "required_fix": "将“魏延又射伤曹操”改为“魏延又射了一箭”，不说明是否命中或造成伤害。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了孙权派使者向曹操提出具体协同方案，以及曹操随后派满宠协助曹仁、檄令东吴接应的细节。",
+      "classification": "material",
+      "reason": "这些内容具体说明了曹仁出兵和东吴协同的因果链及行动安排，省略后削弱后续樊城战事和潜在荆州袭击的动机与 chronology。",
+      "required_fix": "补充孙权使者向曹操提出让曹仁先攻荆州、东吴水路接应的方案，以及曹操派满宠协助曹仁并檄令东吴接应。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“魏延又射伤曹操”将原文“射了一箭”明确化为射伤，原文未说明是否命中或造成伤害。",
+      "classification": "material",
+      "reason": "“射伤”新增了原文未支持的命中及受伤事实，改变了事件信息。",
+      "required_fix": "将“魏延又射伤曹操”改为“魏延又射了一箭”，不说明是否命中或造成伤害。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 859,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-5d6c8ebff27e4964-d752cb420aa5eeaf",
+  "entry_id": "ja-5d6c8ebff27e4964",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5d6c8ebff27e4964",
+      "headword": "後架先生",
+      "reading": "こうかせんせい",
+      "kind": "name",
+      "senses": [
+        {
+          "id": "ja-5d6c8ebff27e4964-1",
+          "definition": "A nickname for someone who sings in the toilet."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "便所で謡を歌うので、近所の人から「後架先生」と呼ばれても、気にせず同じ歌を繰り返していた。",
+        "gloss": "Mr. Toilet; a nickname for the toilet singer",
+        "sense_id": "ja-5d6c8ebff27e4964-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "757244db472e47183e1ffe0219a447b02a74d2f76a90c7aa55b42e0864db79a2"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-3f4a46033a176e21-9210bf8115279969",
+  "entry_id": "ja-3f4a46033a176e21",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-3f4a46033a176e21",
+      "headword": "さっぱりする",
+      "reading": "さっぱりする",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-3f4a46033a176e21-1",
+          "definition": "to be or become neat and clean"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "広くはないが、さっぱりしていて日当たりもよい。",
+        "gloss": "is neat and clean, and",
+        "sense_id": "ja-3f4a46033a176e21-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0f1e4245ecd923da5a777dce7fae263380c7febd202ac1efa1efbdd618930333"
+}

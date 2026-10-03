@@ -1,0 +1,150 @@
+{
+  "id": "zh-6e55fb9d8a3d-1-0209c78dc7bcb52b",
+  "entry_id": "zh-6e55fb9d8a3d-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-6e55fb9d8a3d-1",
+      "headword": "给",
+      "kind": "word",
+      "reading": "gěi",
+      "senses": [
+        {
+          "id": "zh-6e55fb9d8a3d-1-s1",
+          "definition": "for; to, indicating a recipient or beneficiary"
+        },
+        {
+          "id": "zh-6e55fb9d8a3d-1-s2",
+          "definition": "to; for, indicating that an action is directed toward or done for someone or something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角给百姓治病，聚集了很多人。",
+        "gloss": "for",
+        "sense_id": "zh-6e55fb9d8a3d-1-s1"
+      },
+      {
+        "sentence": "张角给人治病，借此聚集百姓。",
+        "gloss": "for",
+        "sense_id": "zh-6e55fb9d8a3d-1-s1"
+      },
+      {
+        "sentence": "火光照亮天空，黄巾军来不及披上铠甲，也来不及给马装好马鞍，只好四处逃跑。",
+        "gloss": "for",
+        "sense_id": "zh-6e55fb9d8a3d-1-s2"
+      },
+      {
+        "sentence": "中平元年，疫病流行，他用符水给百姓治病，自称大贤良师。",
+        "gloss": "for; to",
+        "sense_id": "zh-6e55fb9d8a3d-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-6e55fb9d8a3d-1",
+    "claim_ids": [
+      "c1"
+    ],
+    "structure": "grammatical",
+    "explanation_en": "给 marks the person an action is done to or for, presenting them as its recipient or beneficiary. In 给人治病, 治病 is the action and 给人 identifies the people served by it; the marker does not say whether the action succeeds.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "给",
+        "contribution_en": "Introduces the person who receives or benefits from an action.",
+        "claim_ids": [
+          "c1"
+        ]
+      }
+    ],
+    "research": {
+      "entry_id": "zh-6e55fb9d8a3d-1",
+      "status": "partial",
+      "sources": [
+        {
+          "id": "s1",
+          "url": "https://journal.kci.go.kr/ksclc/archive/articlePdf?artiId=ART001273111",
+          "title": "汉韩授予动词语法化的比较",
+          "accessed_at": "2026-09-26",
+          "summary_en": "This specialist study classifies one prepositional use of 给 as introducing a beneficiary or affected party. It illustrates the service-target use with examples such as 给姨太太捶腿 and 给黛玉盖好被窝. It proposes that this use developed from the giving verb when the thing given was understood as the giver’s action. The article also reports differing accounts of the giving verb’s origin and dating."
+        }
+      ],
+      "claims": [
+        {
+          "id": "c1",
+          "text_en": "In the supplied sentence, 给 introduces 百姓 as the human target of 张角’s 治病 action: roughly, he treated people for the common people / provided treatment to them. The construction presents them as people served by the action; it does not establish that treatment succeeded or specify Zhang Jue’s motive. The study’s comparable service-target examples support this reading. It also treats transfer recipients as broadly within the beneficiary category, so recipient and beneficiary interpretations can overlap.",
+          "source_ids": [
+            "s1"
+          ]
+        },
+        {
+          "id": "c2",
+          "text_en": "The study proposes a development from the giving verb: when the thing construed as given is the giver’s action rather than a concrete object, 给 can be reanalyzed as introducing the person served by that action, with a function comparable to 为 or 替. This is the article’s proposed grammaticalization path; the account does not show that a literal transfer meaning remains in every modern use.",
+          "source_ids": [
+            "s1"
+          ]
+        },
+        {
+          "id": "c3",
+          "text_en": "This target use is distinct from 给 as a transfer verb and from 给 introducing an affected object or an agent in passive constructions. The article classifies these as different uses, so the recipient/beneficiary reading in the supplied example should not be replaced by the more familiar concrete-transfer meaning.",
+          "source_ids": [
+            "s1"
+          ]
+        }
+      ],
+      "searches": [
+        {
+          "query": "现代汉语 给 受益标记 语法化 给予义",
+          "opened_urls": [
+            "https://journal.kci.go.kr/ksclc/archive/articlePdf?artiId=ART001273111"
+          ]
+        },
+        {
+          "query": "给 介词 受益者 语法 给病人治病",
+          "opened_urls": [
+            "https://jurnal.uns.ac.id/sinolingua/article/download/83569/47026"
+          ]
+        },
+        {
+          "query": "近代汉语 给 语法化演变 致使义 方向义",
+          "opened_urls": [
+            "https://ccj.pku.edu.cn/article/info?id=331309301"
+          ]
+        },
+        {
+          "query": "site:dict.revised.moe.edu.tw 給 介詞 受益对象; 汉典 给 介词 为 替 受益对象 给病人治病; \"给百姓治病\" 张角 给 受益 介词",
+          "opened_urls": []
+        },
+        {
+          "query": "现代汉语词典 给 介词 引进动作的受益者; 给 介词 引出动作受益者 词典 为 替 现代汉语八百词",
+          "opened_urls": []
+        },
+        {
+          "query": "(direct open)",
+          "opened_urls": [
+            "https://journal.kci.go.kr/ksclc/archive/articlePdf?artiId=ART001273111",
+            "https://jurnal.uns.ac.id/sinolingua/article/download/83569/47026",
+            "https://ccj.pku.edu.cn/article/info?id=331309301",
+            "https://kobe-cufs.repo.nii.ac.jp/record/2287/files/2016_K56_li_01.pdf"
+          ]
+        }
+      ],
+      "gaps": [
+        "The study proposes a giving-to-beneficiary grammaticalization path, but it does not conclusively establish the specific historical chain for the modern beneficiary/service-target use. Its discussion reports differing views on the giving verb’s origin and dating; older giving-related attestations alone do not prove the derivation of this use. The Indonesia-comparison PDF timed out on direct access and is not used to support claims."
+      ]
+    },
+    "input_fingerprint": "868024bb26514fdc110c013fd97266e3ccfa15bdeacb4a089e0bd74355af4000",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "partial",
+    "editorial_route": "cached_research",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9c95825700c2fa4f008afea43022dfe2543b8a0a20db345192ec49adba3a3f62"
+}

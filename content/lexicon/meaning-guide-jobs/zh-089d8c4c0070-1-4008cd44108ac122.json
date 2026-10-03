@@ -1,0 +1,31 @@
+{
+  "id": "zh-089d8c4c0070-1-4008cd44108ac122",
+  "entry_id": "zh-089d8c4c0070-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-089d8c4c0070-1",
+      "headword": "百",
+      "kind": "word",
+      "reading": "bǎi",
+      "senses": [
+        {
+          "id": "zh-089d8c4c0070-1-s1",
+          "definition": "hundred"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他和关羽、张飞带五百人赶往广宗。",
+        "gloss": "hundred",
+        "sense_id": "zh-089d8c4c0070-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "406311f051f302d877ae9b53fe1486eab9f1a48985eecd967888a10b4f712c83"
+}

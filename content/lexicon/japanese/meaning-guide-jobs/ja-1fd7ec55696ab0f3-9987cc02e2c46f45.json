@@ -1,0 +1,32 @@
+{
+  "id": "ja-1fd7ec55696ab0f3-9987cc02e2c46f45",
+  "entry_id": "ja-1fd7ec55696ab0f3",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-1fd7ec55696ab0f3",
+      "headword": "いつか",
+      "reading": "いつか",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-1fd7ec55696ab0f3-1",
+          "definition": "someday; at some point"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は気を長くして、いつか猫の時節が来るのを待つことにする。",
+        "gloss": "someday; at some point",
+        "sense_id": "ja-1fd7ec55696ab0f3-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "af54c942f4e20bea56f1f33a4742d589deac2eb8de12f8545cd179e506fc17f8"
+}

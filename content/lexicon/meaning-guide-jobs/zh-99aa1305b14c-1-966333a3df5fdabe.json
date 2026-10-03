@@ -1,0 +1,36 @@
+{
+  "id": "zh-99aa1305b14c-1-966333a3df5fdabe",
+  "entry_id": "zh-99aa1305b14c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-99aa1305b14c-1",
+      "headword": "此事",
+      "kind": "word",
+      "reading": "cǐshì",
+      "senses": [
+        {
+          "id": "zh-99aa1305b14c-1-s1",
+          "definition": "this matter"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "不料唐州直接到朝廷告发此事。",
+        "gloss": "this matter",
+        "sense_id": "zh-99aa1305b14c-1-s1"
+      },
+      {
+        "sentence": "刘备连忙阻止，说此事自有公论，不能轻举妄动。",
+        "gloss": "this matter",
+        "sense_id": "zh-99aa1305b14c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d49fa75d7d75cbaa86feb2069684073e0ed4ee82ba1ea5afd98d6c70cbf65203"
+}

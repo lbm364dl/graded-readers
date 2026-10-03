@@ -1,0 +1,32 @@
+{
+  "id": "ja-346483531d0e4930-898727ee2c95b5dd",
+  "entry_id": "ja-346483531d0e4930",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-346483531d0e4930",
+      "headword": "住家",
+      "reading": "すみか",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-346483531d0e4930-1",
+          "definition": "a dwelling; a place where one lives"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "おさんは不満そうだったが、吾輩はこの家を自分の住家と決めた。",
+        "gloss": "dwelling; adopted home",
+        "sense_id": "ja-346483531d0e4930-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b42f839ceddaf6fbabb6d692b5b4f3aa1cefdf89987348c0d1fd8294d6ce2092"
+}

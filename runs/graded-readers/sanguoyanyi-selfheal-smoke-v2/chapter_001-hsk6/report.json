@@ -1,0 +1,20 @@
+{
+  "status": "blocked",
+  "scenes": 4,
+  "chapter_cjk": 1326,
+  "scene_verdicts": {
+    "scene_01": "pass",
+    "scene_02": "revise",
+    "scene_03": "pass",
+    "scene_04": "pass"
+  },
+  "scene_attempts": {
+    "scene_01": 1,
+    "scene_02": 5,
+    "scene_03": 1,
+    "scene_04": 3
+  },
+  "unresolved_scenes": [
+    "scene_02"
+  ]
+}

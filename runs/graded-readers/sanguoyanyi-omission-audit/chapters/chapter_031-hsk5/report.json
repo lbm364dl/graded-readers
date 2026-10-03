@@ -1,0 +1,111 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_031-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 890,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略仓亭十面埋伏中各路伏兵的具体出击顺序及多次截杀细节。",
+      "classification": "material",
+      "reason": "这些细节具体呈现了十面埋伏的推进顺序和袁军溃败过程，属于战事 chronology 与战果形成的重要内容，并非单纯重复。",
+      "required_fix": "补充各路伏兵依次出击及多次截杀的关键过程。"
+    },
+    {
+      "omission_note": "省略刘备突围后曹操停止追击、刘备军仅余不到千人的具体情状。",
+      "classification": "material",
+      "reason": "曹操停止追击解释了刘备得以脱身，军队仅余不到千人则体现败局的严重程度，影响事件结果和后续处境。",
+      "required_fix": "补充曹操收军不追，以及刘备败军不足千人的情状。"
+    },
+    {
+      "omission_note": "省略孙干游说刘表和蔡瑁进谗的部分论据。",
+      "classification": "material",
+      "reason": "这些论据交代孙干为何主张投奔刘表、刘表为何接纳刘备，以及蔡瑁为何反对，涉及人物动机和接纳刘备这一转折的因果。",
+      "required_fix": "补充孙干关于刘备经历、忠心及刘表同宗身份的游说论据，并补充蔡瑁建议杀孙干献曹操的具体理由。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "蔡瑁并非劝刘表向曹操投降，而是建议杀孙干献给曹操以示效忠；此处表述不够准确。",
+      "classification": "material",
+      "reason": "将蔡瑁建议杀孙干献给曹操改成劝刘表投降，改变了人物的具体行动和情节含义。",
+      "required_fix": "改为：蔡瑁建议杀孙干，将其首级献给曹操以示效忠。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略仓亭十面埋伏中各路伏兵的具体出击顺序及多次截杀细节。",
+      "classification": "material",
+      "reason": "这些细节具体呈现了十面埋伏的推进顺序和袁军溃败过程，属于战事 chronology 与战果形成的重要内容，并非单纯重复。",
+      "required_fix": "补充各路伏兵依次出击及多次截杀的关键过程。"
+    },
+    {
+      "omission_note": "省略刘备突围后曹操停止追击、刘备军仅余不到千人的具体情状。",
+      "classification": "material",
+      "reason": "曹操停止追击解释了刘备得以脱身，军队仅余不到千人则体现败局的严重程度，影响事件结果和后续处境。",
+      "required_fix": "补充曹操收军不追，以及刘备败军不足千人的情状。"
+    },
+    {
+      "omission_note": "省略孙干游说刘表和蔡瑁进谗的部分论据。",
+      "classification": "material",
+      "reason": "这些论据交代孙干为何主张投奔刘表、刘表为何接纳刘备，以及蔡瑁为何反对，涉及人物动机和接纳刘备这一转折的因果。",
+      "required_fix": "补充孙干关于刘备经历、忠心及刘表同宗身份的游说论据，并补充蔡瑁建议杀孙干献曹操的具体理由。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "蔡瑁并非劝刘表向曹操投降，而是建议杀孙干献给曹操以示效忠；此处表述不够准确。",
+      "classification": "material",
+      "reason": "将蔡瑁建议杀孙干献给曹操改成劝刘表投降，改变了人物的具体行动和情节含义。",
+      "required_fix": "改为：蔡瑁建议杀孙干，将其首级献给曹操以示效忠。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 938,
+      "review": {
+        "source_fidelity": 8.2,
+        "naturalness": 8.7,
+        "readability": 8.8,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "原文只写高览翻身落马，未明确写死；改为“刺死高览”增加并确定了原文未明示的死亡结果。"
+        ],
+        "language_problems": [
+          "人名“孙干”应为“孙乾”，与原文人物姓名不一致。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 890,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

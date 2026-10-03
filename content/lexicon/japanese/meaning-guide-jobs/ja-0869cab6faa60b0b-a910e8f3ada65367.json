@@ -1,0 +1,32 @@
+{
+  "id": "ja-0869cab6faa60b0b-a910e8f3ada65367",
+  "entry_id": "ja-0869cab6faa60b0b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-0869cab6faa60b0b",
+      "headword": "側",
+      "reading": "そば",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-0869cab6faa60b0b-1",
+          "definition": "the side or vicinity of something; nearby"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "西の垣のそばへ行くと、大きな黒い猫が枯菊の上で寝ていた。",
+        "gloss": "beside; near",
+        "sense_id": "ja-0869cab6faa60b0b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "14c60929114981583e4bff629e5badb01d557037f6cdb0804a4122d60e25fc51"
+}

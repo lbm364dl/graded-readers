@@ -1,0 +1,32 @@
+{
+  "id": "ja-e32ed7a5c820d293-fc4155f0be7a466b",
+  "entry_id": "ja-e32ed7a5c820d293",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e32ed7a5c820d293",
+      "headword": "家族",
+      "reading": "かぞく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e32ed7a5c820d293-1",
+          "definition": "family"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そして、「猫族が親子の愛を守り、美しい家族の生活をするには、人間と戦い、彼らを滅ぼさなければならない」と言った。",
+        "gloss": "family",
+        "sense_id": "ja-e32ed7a5c820d293-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "26c6fdc95347d05164d9a49c23ae09ac8c7940f3ad1a4b509f5868bed509eb6c"
+}

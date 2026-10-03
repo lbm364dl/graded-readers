@@ -1,0 +1,32 @@
+{
+  "id": "ja-5183904d67c29942-e0890502a4c10e94",
+  "entry_id": "ja-5183904d67c29942",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5183904d67c29942",
+      "headword": "自然",
+      "reading": "しぜん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-5183904d67c29942-1",
+          "definition": "nature; the natural world"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人が「自分で筆を持つと、絵は実に難しい」と言うと、友人は、室内の想像だけでは絵はかけない、自然そのものを見て写生すべきだと教えた。",
+        "gloss": "nature",
+        "sense_id": "ja-5183904d67c29942-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d4cfb95093dbf82432a5323fc51159aa70bff7d2d3b0766da1d4468a4d3814c8"
+}

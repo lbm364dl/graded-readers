@@ -1,0 +1,31 @@
+{
+  "id": "zh-1730be3a3b4c-1-404e4d69e1d9df2f",
+  "entry_id": "zh-1730be3a3b4c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1730be3a3b4c-1",
+      "headword": "城内",
+      "kind": "word",
+      "reading": "chéngnèi",
+      "senses": [
+        {
+          "id": "zh-1730be3a3b4c-1-s1",
+          "definition": "inside the city"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "于是，城内城外的人都不敢犯法，曹操也获得了很大的威名。",
+        "gloss": "inside the city",
+        "sense_id": "zh-1730be3a3b4c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7dc9127a1d167510e547cae3f7dbea475372d71da1a8b15c704d2b7cddc4f638"
+}

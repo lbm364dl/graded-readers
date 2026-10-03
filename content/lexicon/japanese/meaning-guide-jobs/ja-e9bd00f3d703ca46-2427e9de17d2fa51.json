@@ -1,0 +1,32 @@
+{
+  "id": "ja-e9bd00f3d703ca46-2427e9de17d2fa51",
+  "entry_id": "ja-e9bd00f3d703ca46",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e9bd00f3d703ca46",
+      "headword": "運が悪い",
+      "reading": "うんがわるい",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-e9bd00f3d703ca46-1",
+          "definition": "to be unlucky; to have bad luck"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "だが、運悪く一人が目を覚ますと大変だ。",
+        "gloss": "unfortunately; unluckily",
+        "sense_id": "ja-e9bd00f3d703ca46-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2d4885d227ddf67242be706f2d6e60feb368184699486a0914d8ea4351009ca0"
+}

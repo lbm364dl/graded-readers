@@ -1,0 +1,31 @@
+{
+  "id": "zh-1f863793c6f0-1-e92eac7a72174cb6",
+  "entry_id": "zh-1f863793c6f0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1f863793c6f0-1",
+      "headword": "但",
+      "kind": "word",
+      "reading": "dàn",
+      "senses": [
+        {
+          "id": "zh-1f863793c6f0-1-s1",
+          "definition": "but; yet"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备家贫，平时靠卖鞋、织席生活，但心里有大志。",
+        "gloss": "but",
+        "sense_id": "zh-1f863793c6f0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4dcb9bb150ef3d514d6c389bce632eed759640c62779b714c979cc9d44046697"
+}

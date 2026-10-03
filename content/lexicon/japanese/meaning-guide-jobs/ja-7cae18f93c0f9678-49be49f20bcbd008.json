@@ -1,0 +1,32 @@
+{
+  "id": "ja-7cae18f93c0f9678-49be49f20bcbd008",
+  "entry_id": "ja-7cae18f93c0f9678",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-7cae18f93c0f9678",
+      "headword": "同居する",
+      "reading": "どうきょする",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-7cae18f93c0f9678-1",
+          "definition": "to live together; reside with someone"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は人間と同居し、彼等を長く見ているうちに、彼等は我儘なものだと考えるようになった。",
+        "gloss": "live together with",
+        "sense_id": "ja-7cae18f93c0f9678-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3063b552e97c8e92b1058f2b7ca8be654f647e9bd954a4b4b0601ae768063f7d"
+}

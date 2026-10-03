@@ -1,0 +1,32 @@
+{
+  "id": "ja-9cdcfd4b4be5a2a1-640d04ad36815c58",
+  "entry_id": "ja-9cdcfd4b4be5a2a1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9cdcfd4b4be5a2a1",
+      "headword": "便所",
+      "reading": "べんじょ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-9cdcfd4b4be5a2a1-1",
+          "definition": "toilet; lavatory"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "便所で謡を歌うので、近所の人から「後架先生」と呼ばれても、気にせず同じ歌を繰り返していた。",
+        "gloss": "toilet",
+        "sense_id": "ja-9cdcfd4b4be5a2a1-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a59d5b102cce9b0cedc910f5193bec348abe7de7a52e093dc1c57802f73455e7"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "zh-expression-ting-hou-2b1cbdf051071aca",
+  "entry_id": "zh-expression-ting-hou",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-ting-hou",
+      "headword": "听后",
+      "reading": "tīnghòu",
+      "kind": "expression",
+      "base_entry_id": "zh-1f2eb2608d23-1",
+      "components": [
+        {
+          "entry_id": "zh-1f2eb2608d23-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-60be66d61586-1",
+          "role": "temporal complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-ting-hou-s1",
+          "definition": "after hearing or listening"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "叔父刘元起听后很惊讶，认为他非同常人，因他家贫，常常资助他。",
+        "gloss": "after hearing or listening",
+        "sense_id": "zh-expression-ting-hou-s1"
+      },
+      {
+        "sentence": "曹操听后大喜。",
+        "gloss": "after hearing or listening",
+        "sense_id": "zh-expression-ting-hou-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "听",
+        "role": "verb"
+      },
+      {
+        "headword": "后",
+        "role": "temporal complement"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ff1d9243ac820b05f7502e94b59f83657ac350dd1d948cb6451a3fbab8cc8cd7"
+}

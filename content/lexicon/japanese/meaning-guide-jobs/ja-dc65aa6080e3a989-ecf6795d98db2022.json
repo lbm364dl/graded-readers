@@ -1,0 +1,32 @@
+{
+  "id": "ja-dc65aa6080e3a989-ecf6795d98db2022",
+  "entry_id": "ja-dc65aa6080e3a989",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-dc65aa6080e3a989",
+      "headword": "どうせ",
+      "reading": "どうせ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-dc65aa6080e3a989-1",
+          "definition": "anyway; in any case"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "「どうせそんなことだろう。",
+        "gloss": "anyway; in any case",
+        "sense_id": "ja-dc65aa6080e3a989-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5b8ab4df8d797b14c158b2ee2dbe4ddfda4a39153dfd443bf0664b924bf21385"
+}

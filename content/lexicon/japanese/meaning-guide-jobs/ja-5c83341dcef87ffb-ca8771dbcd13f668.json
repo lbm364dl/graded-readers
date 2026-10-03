@@ -1,0 +1,37 @@
+{
+  "id": "ja-5c83341dcef87ffb-ca8771dbcd13f668",
+  "entry_id": "ja-5c83341dcef87ffb",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5c83341dcef87ffb",
+      "headword": "翌日",
+      "reading": "よくじつ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-5c83341dcef87ffb-1",
+          "definition": "the day after a particular day; the next day"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "翌日から主人は、しばらく毎日、書斎で昼寝もせず絵ばかりかいた。",
+        "gloss": "the next day",
+        "sense_id": "ja-5c83341dcef87ffb-1"
+      },
+      {
+        "sentence": "主人は大いに感心し、翌日から写生を始めた。",
+        "gloss": "the next day",
+        "sense_id": "ja-5c83341dcef87ffb-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e39eb8ae94085ebc093dfe7850bb0ae55cda5a7dc920402e59ee7a4c7736acba"
+}

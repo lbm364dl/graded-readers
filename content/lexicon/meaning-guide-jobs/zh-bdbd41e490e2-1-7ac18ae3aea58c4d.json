@@ -1,0 +1,31 @@
+{
+  "id": "zh-bdbd41e490e2-1-7ac18ae3aea58c4d",
+  "entry_id": "zh-bdbd41e490e2-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-bdbd41e490e2-1",
+      "headword": "地",
+      "kind": "particle",
+      "reading": "de",
+      "senses": [
+        {
+          "id": "zh-bdbd41e490e2-1-s1",
+          "definition": "marks an adverbial phrase modifying a verb"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他因为没有办法为国出力，长长地叹气。",
+        "gloss": "adverbial marker",
+        "sense_id": "zh-bdbd41e490e2-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "004e3d6d0f23bf585be5f377c7f477e0594d9e539eb15bef31ae31681d6a0e60"
+}

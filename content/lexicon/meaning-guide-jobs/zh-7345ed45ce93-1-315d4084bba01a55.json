@@ -1,0 +1,31 @@
+{
+  "id": "zh-7345ed45ce93-1-315d4084bba01a55",
+  "entry_id": "zh-7345ed45ce93-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7345ed45ce93-1",
+      "headword": "离开",
+      "kind": "word",
+      "reading": "líkāi",
+      "senses": [
+        {
+          "id": "zh-7345ed45ce93-1-s1",
+          "definition": "to leave or depart from a place or person"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人只好离开。",
+        "gloss": "leave",
+        "sense_id": "zh-7345ed45ce93-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "52e91c2a6c81d69192e05601e0ad4c56c3668f34163ff0272f5c24d374923c78"
+}

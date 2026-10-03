@@ -1,0 +1,31 @@
+{
+  "id": "zh-4bc81e480383-1-efa82de0ca27c06b",
+  "entry_id": "zh-4bc81e480383-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4bc81e480383-1",
+      "headword": "各",
+      "kind": "word",
+      "reading": "gè",
+      "senses": [
+        {
+          "id": "zh-4bc81e480383-1-s1",
+          "definition": "each; every one separately"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "关羽和张飞各带一部分人，藏在山的两边。",
+        "gloss": "each",
+        "sense_id": "zh-4bc81e480383-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c4bb4f1b57fae54bcd045d04d1f17e6ff3453fc1a09977919c55835d0cc00e7c"
+}

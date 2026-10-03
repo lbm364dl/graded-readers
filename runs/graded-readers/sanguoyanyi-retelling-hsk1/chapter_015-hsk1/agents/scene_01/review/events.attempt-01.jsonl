@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff316-c506-7622-bcf5-42dc97201940"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.83,\"naturalness\":0.96,\"readability\":0.97,\"omissions\":[],\"unsupported_additions\":[\"“魏军又累又饿”中的“饿”不是原文信息。\"],\"distortions\":[\"改写称黄忠接着带兵拿下定军山，但原文是刘封、孟达已经夺取定军山；黄忠只是乘势进攻，未亲自夺下。\"],\"language_problems\":[],\"verdict\":\"revise\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":37184,"cached_input_tokens":8960,"cache_write_input_tokens":0,"output_tokens":498,"reasoning_output_tokens":373}}

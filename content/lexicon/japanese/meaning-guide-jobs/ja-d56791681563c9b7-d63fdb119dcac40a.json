@@ -1,0 +1,37 @@
+{
+  "id": "ja-d56791681563c9b7-d63fdb119dcac40a",
+  "entry_id": "ja-d56791681563c9b7",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d56791681563c9b7",
+      "headword": "おめえ",
+      "reading": "おめえ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d56791681563c9b7-1",
+          "definition": "A rough, colloquial second-person pronoun: you."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "おめえの主人を見ろ、骨と皮ばかりだぜ」\n",
+        "gloss": "you (rough, colloquial)",
+        "sense_id": "ja-d56791681563c9b7-1"
+      },
+      {
+        "sentence": "「おめえ、鼠を何匹とったことがある」\n",
+        "gloss": "you",
+        "sense_id": "ja-d56791681563c9b7-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8d7ef9593a8ea4618792f9fc2aa852bb58c77696c54baf1e2894f8fb08ff704c"
+}

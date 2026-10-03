@@ -1,0 +1,31 @@
+{
+  "id": "zh-aa95ee26f998-1-d6c01fbdc67e68df",
+  "entry_id": "zh-aa95ee26f998-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-aa95ee26f998-1",
+      "headword": "挺矛直",
+      "kind": "construction",
+      "reading": "tǐngmáo zhíchōng",
+      "senses": [
+        {
+          "id": "zh-aa95ee26f998-1-s1",
+          "definition": "upstream boundary error: 挺矛直 combines the verb 挺 with the spear object 矛 and the adverb 直; the predicate is 挺 and the adverbial is 直冲, not a lexical unit with a meaning of its own."
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞挺矛直冲，一矛刺中邓茂心窝，邓茂翻身落马。",
+        "gloss": "to thrust his spear and charge straight ahead",
+        "sense_id": "zh-aa95ee26f998-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cea9b34e2283e06c8f7112c0db7f6abd593b8ec24d47def11755ab60dc6d900c"
+}

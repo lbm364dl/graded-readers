@@ -1,0 +1,72 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_048-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 169,
+  "required_range": [
+    98,
+    182
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了周瑜派韩当、周泰迎战并下令鸣金收兵的过程。",
+      "classification": "material",
+      "reason": "这部分交代了迎战的发动、文聘败退后周瑜因担心深入重地而收兵的动机与战斗收束，涉及事件因果、战术结果和时间顺序。",
+      "required_fix": "补充周瑜派韩当、周泰各率哨船迎战，以及文聘败退后周瑜下令鸣金，二人收兵回船。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了周瑜派韩当、周泰迎战并下令鸣金收兵的过程。",
+      "classification": "material",
+      "reason": "这部分交代了迎战的发动、文聘败退后周瑜因担心深入重地而收兵的动机与战斗收束，涉及事件因果、战术结果和时间顺序。",
+      "required_fix": "补充周瑜派韩当、周泰各率哨船迎战，以及文聘败退后周瑜下令鸣金，二人收兵回船。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 163,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 7,
+        "readability": 8,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [
+          "“八十三万军中他怕败受难求脱身”语序生硬且指代不清，建议改为“面对八十三万大军，徐庶怕兵败受难，求计脱身”。",
+          "“分被二人杀死”表达不自然，建议改为“分别被二人杀死”。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 169,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

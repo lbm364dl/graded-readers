@@ -1,0 +1,96 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_077-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 675,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "“老僧普静求解”略显简化，原文是关公主动向普静求法、请其指点迷途。",
+      "classification": "material",
+      "reason": "表述将求解的行动者误指为普静，造成关键人物动作和意义的歧义。",
+      "required_fix": "改为“关公英魂来到玉泉山，向老僧普静求解”，并明确是关公主动请普静指点迷途。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "“老僧普静求解”略显简化，原文是关公主动向普静求法、请其指点迷途。",
+      "classification": "material",
+      "reason": "表述将求解的行动者误指为普静，造成关键人物动作和意义的歧义。",
+      "required_fix": "改为“关公英魂来到玉泉山，向老僧普静求解”，并明确是关公主动请普静指点迷途。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 587,
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 8,
+        "readability": 8,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "“王甫见首级坠城而死”表述有歧义，容易理解为首级坠城；原文是王甫见到首级后坠城而死。"
+        ],
+        "language_problems": [
+          "“王甫见首级坠城而死”缺少停顿，建议改为“王甫见到首级，大叫一声，坠城而死”。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 592,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 8.5,
+        "readability": 9,
+        "material_omissions": [
+          "遗漏东吴向关公求婚、关公拒绝，以及孔明因此判断荆州危险并建议替换关公的情节，削弱了后续荆州危机的动机与因果。"
+        ],
+        "unsupported_additions": [
+          "将刘备和孔明都写成以捷报自慰；原文只明确说刘备因此放心。"
+        ],
+        "distortions": [
+          "把孔明一并写成相信关公守城无忧，改变了原文中孔明此前已察觉荆州危险的谨慎态度。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 675,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

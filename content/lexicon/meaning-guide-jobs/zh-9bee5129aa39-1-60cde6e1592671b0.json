@@ -1,0 +1,31 @@
+{
+  "id": "zh-9bee5129aa39-1-60cde6e1592671b0",
+  "entry_id": "zh-9bee5129aa39-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9bee5129aa39-1",
+      "headword": "救助",
+      "kind": "word",
+      "reading": "jiùzhù",
+      "senses": [
+        {
+          "id": "zh-9bee5129aa39-1-s1",
+          "definition": "help; aid; rescue"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "老人把三卷天书交给他，要他替上天教化百姓、救助世人；若心生别念，便会受罚。",
+        "gloss": "help; rescue",
+        "sense_id": "zh-9bee5129aa39-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1e9292d6bb8e9d72cb676208361d10142b5081dd292d5821600bddcaa88e3393"
+}

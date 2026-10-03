@@ -1,0 +1,31 @@
+{
+  "id": "zh-698d7788a049-1-601fb8be47b8b335",
+  "entry_id": "zh-698d7788a049-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-698d7788a049-1",
+      "headword": "大雨",
+      "kind": "word",
+      "reading": "dàyǔ",
+      "senses": [
+        {
+          "id": "zh-698d7788a049-1-s1",
+          "definition": "heavy rain"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "接着，大雷、大雨和冰雹一起落下，直到半夜才停止，许多房屋被毁。",
+        "gloss": "heavy rain",
+        "sense_id": "zh-698d7788a049-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5a3ed8ca490d2d9f9151affb7295973677168de20f41d28813a5ebdf73a78138"
+}

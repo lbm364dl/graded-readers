@@ -1,0 +1,36 @@
+{
+  "id": "zh-e2e0c454e5d5-1-549a8ede7f25fbe9",
+  "entry_id": "zh-e2e0c454e5d5-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e2e0c454e5d5-1",
+      "headword": "左",
+      "kind": "word",
+      "reading": "zuǒ",
+      "senses": [
+        {
+          "id": "zh-e2e0c454e5d5-1-s1",
+          "definition": "the left side or position"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备骑马出阵，关羽在左，张飞在右。",
+        "gloss": "left",
+        "sense_id": "zh-e2e0c454e5d5-1-s1"
+      },
+      {
+        "sentence": "”他让关羽带一千人埋伏在山左，张飞带一千人埋伏在山右，听到信号就出来帮助。",
+        "gloss": "left",
+        "sense_id": "zh-e2e0c454e5d5-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9af2221b40e2e3df6195b8a282de299590f5f52e4370d9b2eb6decd32dc1187c"
+}

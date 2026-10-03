@@ -1,0 +1,31 @@
+{
+  "id": "zh-b34b711a111d-1-23c9fbac7910835c",
+  "entry_id": "zh-b34b711a111d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b34b711a111d-1",
+      "headword": "防备",
+      "kind": "word",
+      "reading": "fángbèi",
+      "senses": [
+        {
+          "id": "zh-b34b711a111d-1-s1",
+          "definition": "to guard against; to be prepared for"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "程远志来不及防备，被关羽斩成两段。",
+        "gloss": "guard against",
+        "sense_id": "zh-b34b711a111d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9f2075e3aca3ecffd74af0b3880fbc2fe33f40645ea4457b860fefc36fe78bf0"
+}

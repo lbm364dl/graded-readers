@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff4eb-b6b9-7252-9a02-6d3491e4e840"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.97,\"naturalness\":0.96,\"readability\":0.97,\"omissions\":[],\"unsupported_additions\":[\"“半天没有说话”是原文未明确写出的细节。\"],\"distortions\":[],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":34989,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":467,"reasoning_output_tokens":390}}

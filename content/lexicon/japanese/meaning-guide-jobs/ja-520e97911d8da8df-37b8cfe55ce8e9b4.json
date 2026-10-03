@@ -1,0 +1,37 @@
+{
+  "id": "ja-520e97911d8da8df-37b8cfe55ce8e9b4",
+  "entry_id": "ja-520e97911d8da8df",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-520e97911d8da8df",
+      "headword": "出来る",
+      "reading": "できる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-520e97911d8da8df-1",
+          "definition": "to be able to do; to be possible"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "こんなに寝ていても仕事が続くなら、猫にだって出来ないことはない、と。",
+        "gloss": "cannot do; be unable to do",
+        "sense_id": "ja-520e97911d8da8df-1"
+      },
+      {
+        "sentence": "家の子供が騒いで昼寝ができない時や、退屈で気分が悪い時、吾輩はここへ来て休むことにしている。",
+        "gloss": "cannot take a nap",
+        "sense_id": "ja-520e97911d8da8df-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "84cf516d35b1a61cbbea7f71dfb0b97512b8d632ab326ff742e1daf017fe7b93"
+}

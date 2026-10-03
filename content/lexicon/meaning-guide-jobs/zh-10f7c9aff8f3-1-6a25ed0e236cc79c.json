@@ -1,0 +1,31 @@
+{
+  "id": "zh-10f7c9aff8f3-1-6a25ed0e236cc79c",
+  "entry_id": "zh-10f7c9aff8f3-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-10f7c9aff8f3-1",
+      "headword": "涿鹿",
+      "kind": "name",
+      "reading": "Zhuōlù",
+      "senses": [
+        {
+          "id": "zh-10f7c9aff8f3-1-s1",
+          "definition": "Zhuolu"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘胜的儿子刘贞曾被封为涿鹿亭侯，后来因未按规定缴纳酬金而失侯，这一支便留在涿县。",
+        "gloss": "Zhuolu",
+        "sense_id": "zh-10f7c9aff8f3-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2a430ca76b644799d96d01b1c44703f84b578de0f6223da78d5424e87dde712f"
+}

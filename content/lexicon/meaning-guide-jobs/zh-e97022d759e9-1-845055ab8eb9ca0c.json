@@ -1,0 +1,31 @@
+{
+  "id": "zh-e97022d759e9-1-845055ab8eb9ca0c",
+  "entry_id": "zh-e97022d759e9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e97022d759e9-1",
+      "headword": "家里",
+      "kind": "word",
+      "reading": "jiālǐ",
+      "senses": [
+        {
+          "id": "zh-e97022d759e9-1-s1",
+          "definition": "one's home or household"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备家里很穷，从小就有大志。",
+        "gloss": "household",
+        "sense_id": "zh-e97022d759e9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0264491b3e26e22c536df4e57118b44d15a81bb5b5569c6382a233b12ecbf771"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-3d7114281f5b-2-432fc68d82fb6f6b",
+  "entry_id": "zh-3d7114281f5b-2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-3d7114281f5b-2",
+      "headword": "和",
+      "kind": "name",
+      "reading": "hé",
+      "senses": [
+        {
+          "id": "zh-3d7114281f5b-2-s1",
+          "definition": "part of the era name Guanghe (光和)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "光和元年，母鸡变成公鸡；六月初一，黑气飞入宫中。",
+        "gloss": "and",
+        "sense_id": "zh-3d7114281f5b-2-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6c220d41d0b45ca9f655068732e2781b6a890f60d6149a4b65b04b1f5911f026"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-eea50f4175bf-1-536996b809a99f29",
+  "entry_id": "zh-eea50f4175bf-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-eea50f4175bf-1",
+      "headword": "按",
+      "kind": "word",
+      "reading": "àn",
+      "senses": [
+        {
+          "id": "zh-eea50f4175bf-1-s1",
+          "definition": "according to; in accordance with"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "一次，有人夜里带刀走路，曹操把他抓住，按禁令用木棒责罚。",
+        "gloss": "according to",
+        "sense_id": "zh-eea50f4175bf-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3cffe3fae364873866dee85cf506f8bfc9c81c8f63c4bf514f91287d1d5611c3"
+}

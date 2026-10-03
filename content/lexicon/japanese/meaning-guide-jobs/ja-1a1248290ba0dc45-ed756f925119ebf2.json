@@ -1,0 +1,32 @@
+{
+  "id": "ja-1a1248290ba0dc45-ed756f925119ebf2",
+  "entry_id": "ja-1a1248290ba0dc45",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-1a1248290ba0dc45",
+      "headword": "食物",
+      "reading": "しょくもつ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-1a1248290ba0dc45-1",
+          "definition": "food; edible matter"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "食物のある場所を探そうと決心し、池を左に見ながら、そろりそろりと這って行き始めた。",
+        "gloss": "food",
+        "sense_id": "ja-1a1248290ba0dc45-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1fc58e78e899875141b0da91da6dba8e90513954483b5dcd0281802e95e75591"
+}

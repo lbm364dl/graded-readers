@@ -1,0 +1,42 @@
+{
+  "status": "complete",
+  "scenes": 7,
+  "japanese_chars": 2164,
+  "chapter_cjk": 2164,
+  "scene_verdicts": {
+    "scene_01": "pass",
+    "scene_02": "pass",
+    "scene_03": "pass",
+    "scene_04": "pass",
+    "scene_05": "pass",
+    "scene_06": "pass",
+    "scene_07": "pass"
+  },
+  "chapter_review": {
+    "source_fidelity": 8.5,
+    "naturalness": 9,
+    "readability": 9,
+    "omissions": [
+      "主人の鰹節への無愛想な応答が明示的に圧縮されている。"
+    ],
+    "unsupported_additions": [
+      "『台所の大甕』とする具体化は、原文の『勝手』より限定的。"
+    ],
+    "distortions": [
+      "女性批判の古書を実際に読み上げるのは主人であり、迷亭らではない。"
+    ],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "chapter_review_verdict": "pass",
+  "scene_attempts": {
+    "scene_01": 1,
+    "scene_02": 2,
+    "scene_03": 1,
+    "scene_04": 2,
+    "scene_05": 2,
+    "scene_06": 4,
+    "scene_07": 3
+  },
+  "unresolved_scenes": []
+}

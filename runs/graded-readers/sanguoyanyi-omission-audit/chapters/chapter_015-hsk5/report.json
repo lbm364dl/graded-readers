@@ -1,0 +1,91 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_015-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 1061,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了刘备兵败广陵的具体经过，以及吕布与刘备暂时和好后的细节。",
+      "classification": "material",
+      "reason": "接受场景只概括为刘备败走，省略了袁术劫寨导致刘备折损大半兵力这一关键原因，也压缩了吕布归还家眷等影响人物关系的细节。",
+      "required_fix": "补充袁术在广陵劫寨、刘备大败的经过，以及吕布归还家眷并与刘备暂时和好的关键细节。"
+    },
+    {
+      "omission_note": "省略了袁术准备攻打刘备的具体人员和计策背景。",
+      "classification": "material",
+      "reason": "结尾的集结将领、伐刘备的复仇动机及“使备即日就擒”的具体计策构成下一阶段冲突的直接铺垫；仅说袁术决定攻打刘备，削弱了后续情节的因果和衔接。",
+      "required_fix": "补充袁术召集主要将领、因索璧不成而决定先攻刘备，以及杨大将提出擒刘备计策的背景。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了刘备兵败广陵的具体经过，以及吕布与刘备暂时和好后的细节。",
+      "classification": "material",
+      "reason": "接受场景只概括为刘备败走，省略了袁术劫寨导致刘备折损大半兵力这一关键原因，也压缩了吕布归还家眷等影响人物关系的细节。",
+      "required_fix": "补充袁术在广陵劫寨、刘备大败的经过，以及吕布归还家眷并与刘备暂时和好的关键细节。"
+    },
+    {
+      "omission_note": "省略了袁术准备攻打刘备的具体人员和计策背景。",
+      "classification": "material",
+      "reason": "结尾的集结将领、伐刘备的复仇动机及“使备即日就擒”的具体计策构成下一阶段冲突的直接铺垫；仅说袁术决定攻打刘备，削弱了后续情节的因果和衔接。",
+      "required_fix": "补充袁术召集主要将领、因索璧不成而决定先攻刘备，以及杨大将提出擒刘备计策的背景。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 8.5,
+    "naturalness": 8.5,
+    "readability": 9.0,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 956,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 8.5,
+        "readability": 9,
+        "material_omissions": [
+          "孙策借兵时以救吴璟为名，并说明刘繇逼迫、母亲家小在曲阿将受害；修复稿只保留“图谋江东”，削弱了借兵的直接动机与因果背景。",
+          "孙策安排孙权与周泰留守宣城的情节被省略，使后文孙权在宣城遇袭的时间线和周泰同行来由不完整。"
+        ],
+        "unsupported_additions": [
+          "称董袭斩下严白虎首级，原文只说董袭携首级来献，未明确说明由他斩杀。",
+          "“为后来的局势埋下伏笔”属于原文没有的叙述性评价。"
+        ],
+        "distortions": [
+          "将袁术说成唆使高顺、纪灵共同夹攻刘备；原文是袁术约吕布夹攻，吕布派高顺出兵，纪灵主要负责相关交涉。",
+          "称太史慈“独自出战”，原文明确有一名小将随他同行。",
+          "称袁术已经决定先伐刘备；原文结尾仍是杨大将提出计策，尚未写明袁术接受。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 1061,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 8.5,
+        "readability": 9.0,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

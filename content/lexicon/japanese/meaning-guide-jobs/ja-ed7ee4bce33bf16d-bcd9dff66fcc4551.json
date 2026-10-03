@@ -1,0 +1,32 @@
+{
+  "id": "ja-ed7ee4bce33bf16d-bcd9dff66fcc4551",
+  "entry_id": "ja-ed7ee4bce33bf16d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ed7ee4bce33bf16d",
+      "headword": "胸",
+      "reading": "むね",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-ed7ee4bce33bf16d-1",
+          "definition": "chest; upper front part of the body"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "目が回り、胸が悪くなったと思ったとき、どさりと音がして、目から火が出た。",
+        "gloss": "chest; stomach",
+        "sense_id": "ja-ed7ee4bce33bf16d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5ba1c2eee8ee9c04a4ca3e99e3a006ed8f1cfa72cf9ab1dda516303ed1148580"
+}

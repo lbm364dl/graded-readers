@@ -1,0 +1,32 @@
+{
+  "id": "ja-197cb2697a9755e2-9e7a8d64468f7652",
+  "entry_id": "ja-197cb2697a9755e2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-197cb2697a9755e2",
+      "headword": "餓死する",
+      "reading": "がしする",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-197cb2697a9755e2-1",
+          "definition": "to die of starvation"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "この穴がなければ、吾輩は道ばたで餓死していたかもしれない。",
+        "gloss": "had died of starvation",
+        "sense_id": "ja-197cb2697a9755e2-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d07ed680a662c51efb59a98248aaf549bea5c984d255655868323e9dddcbe8fa"
+}

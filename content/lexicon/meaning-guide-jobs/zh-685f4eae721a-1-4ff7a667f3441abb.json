@@ -1,0 +1,31 @@
+{
+  "id": "zh-685f4eae721a-1-4ff7a667f3441abb",
+  "entry_id": "zh-685f4eae721a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-685f4eae721a-1",
+      "headword": "悬念",
+      "kind": "word",
+      "reading": "xuánniàn",
+      "senses": [
+        {
+          "id": "zh-685f4eae721a-1-s1",
+          "definition": "suspense; uncertainty about what will happen"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "董卓能不能活下来，故事留下了悬念。",
+        "gloss": "suspense",
+        "sense_id": "zh-685f4eae721a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6f420496ab558311642750560266b16b823f43aafca715a9687b5490498d3af1"
+}

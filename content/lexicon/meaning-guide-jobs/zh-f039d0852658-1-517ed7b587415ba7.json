@@ -1,0 +1,36 @@
+{
+  "id": "zh-f039d0852658-1-517ed7b587415ba7",
+  "entry_id": "zh-f039d0852658-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f039d0852658-1",
+      "headword": "帐",
+      "kind": "word",
+      "reading": "zhàng",
+      "senses": [
+        {
+          "id": "zh-f039d0852658-1-s1",
+          "definition": "tent"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "卢植很高兴，让他留在帐前听候调遣。",
+        "gloss": "tent",
+        "sense_id": "zh-f039d0852658-1-s1"
+      },
+      {
+        "sentence": "刘备离开后，张飞气得不得了，提刀要闯进帐中杀董卓。",
+        "gloss": "tent",
+        "sense_id": "zh-f039d0852658-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bec76479eef19118734603ce12c23fba41b447f3a38850b4e4411ba84b5471b6"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-073982f0dddddb4d-82b0c673de078b1a",
+  "entry_id": "ja-073982f0dddddb4d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-073982f0dddddb4d",
+      "headword": "運",
+      "reading": "うん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-073982f0dddddb4d-1",
+          "definition": "luck; fortune; fate"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "これはだめだと思い、目を閉じて運に任せた。",
+        "gloss": "luck; fate",
+        "sense_id": "ja-073982f0dddddb4d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3dbaa9b3d6cb4304dec6321cc49d2de253670c6a37200fb6753683e3a31a6d59"
+}

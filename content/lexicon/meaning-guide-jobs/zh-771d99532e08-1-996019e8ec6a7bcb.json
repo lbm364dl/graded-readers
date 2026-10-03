@@ -1,0 +1,31 @@
+{
+  "id": "zh-771d99532e08-1-996019e8ec6a7bcb",
+  "entry_id": "zh-771d99532e08-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-771d99532e08-1",
+      "headword": "散施",
+      "kind": "word",
+      "reading": "sànshī",
+      "senses": [
+        {
+          "id": "zh-771d99532e08-1-s1",
+          "definition": "distribute or give out"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角散施符水，为百姓治病，自称大贤良师。",
+        "gloss": "distribute",
+        "sense_id": "zh-771d99532e08-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a5d375cebc3787620e5dea49de1e427e020212dbd49ded732563e1d84d698584"
+}

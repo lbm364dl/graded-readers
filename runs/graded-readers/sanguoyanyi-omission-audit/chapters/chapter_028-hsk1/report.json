@@ -1,0 +1,73 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_028-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 173,
+  "required_range": [
+    98,
+    182
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略袁绍派陈震出使孙策的具体行动。",
+      "classification": "material",
+      "reason": "这不是单纯细节，而是原场景中袁绍落实联孙策战略的具体事件，开启后续江东线索；接受场景只保留意图，未保留执行行动。",
+      "required_fix": "补充袁绍修书并派陈震为使，前往联络孙策。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略袁绍派陈震出使孙策的具体行动。",
+      "classification": "material",
+      "reason": "这不是单纯细节，而是原场景中袁绍落实联孙策战略的具体事件，开启后续江东线索；接受场景只保留意图，未保留执行行动。",
+      "required_fix": "补充袁绍修书并派陈震为使，前往联络孙策。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 166,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 8.5,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "“孙干、简雍助玄德借出使荆州脱身”将孙乾与简雍并列为协助玄德脱身者；原文中主要是简雍陪同并另有脱身之计，孙乾负责传报关公。"
+        ],
+        "language_problems": [
+          "人名“孙乾”误写为“孙干”。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 173,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

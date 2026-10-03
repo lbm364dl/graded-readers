@@ -1,0 +1,42 @@
+{
+  "id": "ja-7e85ce9d7d558a9a-6841bd73504d0b78",
+  "entry_id": "ja-7e85ce9d7d558a9a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-7e85ce9d7d558a9a",
+      "headword": "できる",
+      "reading": "できる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-7e85ce9d7d558a9a-1",
+          "definition": "to be able to do something; to be possible"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "こんなに寝ていて仕事が務まるなら、猫にできないはずもない。",
+        "gloss": "cannot do; be unable to",
+        "sense_id": "ja-7e85ce9d7d558a9a-1"
+      },
+      {
+        "sentence": "できれば動かずにいてやりたかった。",
+        "gloss": "if possible",
+        "sense_id": "ja-7e85ce9d7d558a9a-1"
+      },
+      {
+        "sentence": "小供が騒いで昼寝のできない時や、退屈で気分がすぐれない時、吾輩はここへ来て、静かに心を休めるのが習慣だった。",
+        "gloss": "cannot be done; unable to",
+        "sense_id": "ja-7e85ce9d7d558a9a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "92d0109dbbfbd5f5c8d0aca063445ea7f8dd4f959e8ec686d275b68ade07d794"
+}

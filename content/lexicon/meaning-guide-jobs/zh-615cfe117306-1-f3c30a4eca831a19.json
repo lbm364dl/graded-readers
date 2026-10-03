@@ -1,0 +1,31 @@
+{
+  "id": "zh-615cfe117306-1-f3c30a4eca831a19",
+  "entry_id": "zh-615cfe117306-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-615cfe117306-1",
+      "headword": "结",
+      "kind": "word",
+      "reading": "jié",
+      "senses": [
+        {
+          "id": "zh-615cfe117306-1-s1",
+          "definition": "to form or establish a relationship"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "马元义暗中带金帛，和宦官封谞结交，准备作为内应。",
+        "gloss": "to form",
+        "sense_id": "zh-615cfe117306-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "62e5d623836ee7876e8d1c704d818ff3e51aeeb5fbe84b1955a6362f3e9c03eb"
+}

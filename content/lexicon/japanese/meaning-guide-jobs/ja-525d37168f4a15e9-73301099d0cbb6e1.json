@@ -1,0 +1,32 @@
+{
+  "id": "ja-525d37168f4a15e9-73301099d0cbb6e1",
+  "entry_id": "ja-525d37168f4a15e9",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-525d37168f4a15e9",
+      "headword": "丸で",
+      "reading": "まるで",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-525d37168f4a15e9-1",
+          "definition": "just like; as if"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "まず、毛でおおわれているはずの顔が、つるつるしていて、まるで薬缶のようだった。",
+        "gloss": "just like; as if",
+        "sense_id": "ja-525d37168f4a15e9-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f3ecaff02605025b06cf568f8b404ae79d24dad140d3af42f53bef2788bf4850"
+}

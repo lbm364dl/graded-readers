@@ -1,0 +1,982 @@
+{
+  "schema_version": 1,
+  "reviewed": true,
+  "entries": [
+    {
+      "id": "zh-component-00f0dc19cafa1161",
+      "headword": "十余",
+      "reading": "shí yú",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-00f0dc19cafa1161-s1",
+          "definition": "more than ten; over ten"
+        }
+      ]
+    },
+    {
+      "id": "zh-component-05fa9e756d6a3a57",
+      "headword": "八十",
+      "reading": "bā shí",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-05fa9e756d6a3a57-s1",
+          "definition": "eighty (80)"
+        }
+      ]
+    },
+    {
+      "id": "zh-component-08212d46fc32935a",
+      "headword": "公孙",
+      "reading": "gōngsūn",
+      "kind": "name",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-08212d46fc32935a-s1",
+          "definition": "A Chinese compound surname."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-0a8470127ad9bb3c",
+      "headword": "公论",
+      "reading": "gōnglùn",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-0a8470127ad9bb3c-s1",
+          "definition": "A fair judgment or assessment formed by public opinion."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-0e3a11a0809faf1c",
+      "headword": "协力",
+      "reading": "xiélì",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-0e3a11a0809faf1c-s1",
+          "definition": "to join forces and work together"
+        }
+      ]
+    },
+    {
+      "id": "zh-component-1151aa50ada20b6d",
+      "headword": "楼桑",
+      "reading": "lóusāng",
+      "kind": "name",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-1151aa50ada20b6d-s1",
+          "definition": "A place name associated with the historical figure Liu Bei."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-1551de8c28f4db1a",
+      "headword": "世平",
+      "reading": "shì píng",
+      "kind": "name",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-1551de8c28f4db1a-s1",
+          "definition": "A Chinese personal name."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-18709c92df09c9dc",
+      "headword": "至孝",
+      "reading": "zhìxiào",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-18709c92df09c9dc-s1",
+          "definition": "Extremely filial; showing profound devotion and respect toward one’s parents."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-18afedef9a2060ea",
+      "headword": "欺人",
+      "reading": "qī rén",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-18afedef9a2060ea-s1",
+          "definition": "to bully or mistreat others"
+        }
+      ]
+    },
+    {
+      "id": "zh-component-18fb168b465d5031",
+      "headword": "上来",
+      "reading": "shànglái",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-18fb168b465d5031-s1",
+          "definition": "To come or move upward toward the speaker or another reference point."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-1e24bafaa42bbe81",
+      "headword": "呼风",
+      "reading": "hū fēng",
+      "kind": "expression",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-1e24bafaa42bbe81-s1",
+          "definition": "to summon the wind"
+        }
+      ]
+    },
+    {
+      "id": "zh-component-1f96c7342d7ea7cd",
+      "headword": "沿海",
+      "reading": "yánhǎi",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-1f96c7342d7ea7cd-s1",
+          "definition": "Along or near a sea coast; coastal."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-205bf83cb6bd63d7",
+      "headword": "皇甫",
+      "reading": "huángfǔ",
+      "kind": "name",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-205bf83cb6bd63d7-s1",
+          "definition": "A Chinese compound surname."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-28b2da0a54dcc116",
+      "headword": "谯郡",
+      "reading": "Qiáojùn",
+      "kind": "name",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-28b2da0a54dcc116-s1",
+          "definition": "A historical Chinese commandery named Qiao."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-2d91109d8cc528c4",
+      "headword": "居民",
+      "reading": "jūmín",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-2d91109d8cc528c4-s1",
+          "definition": "people who live in a particular place; residents"
+        }
+      ]
+    },
+    {
+      "id": "zh-component-33a035a941255486",
+      "headword": "蛇矛",
+      "reading": "shémáo",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-33a035a941255486-s1",
+          "definition": "A spear with a snake-shaped blade."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-382dc8b12e8ba7ea",
+      "headword": "妄动",
+      "reading": "wàngdòng",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-382dc8b12e8ba7ea-s1",
+          "definition": "to act rashly, without sufficient thought or caution"
+        }
+      ]
+    },
+    {
+      "id": "zh-component-38fd663af282bd9c",
+      "headword": "起事",
+      "reading": "qǐshì",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-38fd663af282bd9c-s1",
+          "definition": "to rise in revolt; to launch an uprising"
+        }
+      ]
+    },
+    {
+      "id": "zh-component-39bdb59fc21792ef",
+      "headword": "化成",
+      "reading": "huàchéng",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-39bdb59fc21792ef-s1",
+          "definition": "to transform into; to become"
+        }
+      ]
+    },
+    {
+      "id": "zh-component-3ea69e34f969b731",
+      "headword": "六色",
+      "reading": "liù sè",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-3ea69e34f969b731-s1",
+          "definition": "six colors"
+        }
+      ]
+    },
+    {
+      "id": "zh-component-4031a5fa13eae5ec",
+      "headword": "仗势",
+      "reading": "zhàng shì",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-4031a5fa13eae5ec-s1",
+          "definition": "To rely on one’s power or influence."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-47931c2b419b8094",
+      "headword": "四五",
+      "reading": "sì wǔ",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-47931c2b419b8094-s1",
+          "definition": "approximately four or five"
+        }
+      ]
+    },
+    {
+      "id": "zh-component-5135272235edf895",
+      "headword": "大兴",
+      "reading": "Dàxīng",
+      "kind": "name",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-5135272235edf895-s1",
+          "definition": "Daxing, a proper geographical name used for a mountain."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-5eaef77ec2da1121",
+      "headword": "黄巾",
+      "reading": "huángjīn",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-5eaef77ec2da1121-s1",
+          "definition": "The yellow head coverings that identified followers of the late Han rebel movement known as the Yellow Turbans."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-5ef05c5d86f5cc74",
+      "headword": "皇天",
+      "reading": "huángtiān",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-5ef05c5d86f5cc74-s1",
+          "definition": "Heaven, regarded as a supreme and venerable power."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-602ce3fccfafc46f",
+      "headword": "冷艳",
+      "reading": "lěngyàn",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-602ce3fccfafc46f-s1",
+          "definition": "Cool, aloof, and strikingly beautiful; often describing a restrained, elegant appearance."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-632a146701ca16ef",
+      "headword": "浩大",
+      "reading": "hàodà",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-632a146701ca16ef-s1",
+          "definition": "great and extensive in scale or extent"
+        }
+      ]
+    },
+    {
+      "id": "zh-component-63369a6d550813fe",
+      "headword": "五六",
+      "reading": "wǔ liù",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-63369a6d550813fe-s1",
+          "definition": "about five or six; an approximate number in that range"
+        }
+      ]
+    },
+    {
+      "id": "zh-component-635676f7621b0f80",
+      "headword": "一会",
+      "reading": "yíhuì",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-635676f7621b0f80-s1",
+          "definition": "A short while; a brief period of time."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-64c62eb410060fb2",
+      "headword": "招军",
+      "reading": "zhāo jūn",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-64c62eb410060fb2-s1",
+          "definition": "to recruit soldiers; recruit troops"
+        }
+      ]
+    },
+    {
+      "id": "zh-component-694955c5691b36b9",
+      "headword": "后土",
+      "reading": "hòutǔ",
+      "kind": "name",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-694955c5691b36b9-s1",
+          "definition": "A deity personifying the Earth."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-6ce9460f65c9403c",
+      "headword": "沛国",
+      "reading": "pèi guó",
+      "kind": "name",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-6ce9460f65c9403c-s1",
+          "definition": "A historical Chinese state or administrative region called Pei."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-6f29f582afd482b4",
+      "headword": "丈八",
+      "reading": "zhàng bā",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-6f29f582afd482b4-s1",
+          "definition": "A traditional length expression meaning one 丈 and eight 尺."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-71dc539b3f414cde",
+      "headword": "常侍",
+      "reading": "chángshì",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-71dc539b3f414cde-s1",
+          "definition": "A court-attendant official serving the ruler."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-73cdfd36b24d52cc",
+      "headword": "初一",
+      "reading": "chūyī",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-73cdfd36b24d52cc-s1",
+          "definition": "The first day of a lunar month."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-7b70bf47bc9b5827",
+      "headword": "三十六",
+      "reading": "sān shí liù",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-7b70bf47bc9b5827-s1",
+          "definition": "the number thirty-six"
+        }
+      ]
+    },
+    {
+      "id": "zh-component-7de46306b2b370ec",
+      "headword": "自有",
+      "reading": "zìyǒu",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-7de46306b2b370ec-s1",
+          "definition": "to naturally or inevitably have; to exist or be present as a matter of course"
+        }
+      ]
+    },
+    {
+      "id": "zh-component-7ed2758565f9da21",
+      "headword": "唤雨",
+      "reading": "huànyǔ",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-7ed2758565f9da21-s1",
+          "definition": "to summon or call forth rain"
+        }
+      ]
+    },
+    {
+      "id": "zh-component-82baf83537b427bd",
+      "headword": "忘恩",
+      "reading": "wàng'ēn",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-82baf83537b427bd-s1",
+          "definition": "to forget the kindness or favors one has received"
+        }
+      ]
+    },
+    {
+      "id": "zh-component-85474dea4dd443e6",
+      "headword": "十多",
+      "reading": "shí duō",
+      "kind": "construction",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-85474dea4dd443e6-s1",
+          "definition": "More than ten; used in a quantity expression."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-85dafcdda7df1d75",
+      "headword": "良匠",
+      "reading": "liángjiàng",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-85dafcdda7df1d75-s1",
+          "definition": "skilled artisan; master craftsperson"
+        }
+      ]
+    },
+    {
+      "id": "zh-component-8f1500033e3845ad",
+      "headword": "望风",
+      "reading": "wàng fēng",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-8f1500033e3845ad-s1",
+          "definition": "An indication or report that an opposing force or danger is approaching."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-9a305e0c4876debd",
+      "headword": "告密",
+      "reading": "gàomì",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-9a305e0c4876debd-s1",
+          "definition": "To inform on someone by revealing their secret or confidential information."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-a0ed441cee38d855",
+      "headword": "声势",
+      "reading": "shēngshì",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-a0ed441cee38d855-s1",
+          "definition": "The force, momentum, or imposing presence of a person, group, or event."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-a4781825266e4e05",
+      "headword": "部分",
+      "reading": "bùfen",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-a4781825266e4e05-s1",
+          "definition": "A part or portion of a larger whole."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-a492ce676222a385",
+      "headword": "不及",
+      "reading": "bù jí",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-a492ce676222a385-s1",
+          "definition": "to be too late to reach or do something; to not have time for it"
+        }
+      ]
+    },
+    {
+      "id": "zh-component-a5140ced1007d25e",
+      "headword": "丈夫",
+      "reading": "zhàngfu",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-a5140ced1007d25e-s1",
+          "definition": "A man; an adult male person."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-a531d844637d6bb8",
+      "headword": "时候",
+      "reading": "shíhou",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-a531d844637d6bb8-s1",
+          "definition": "time; period"
+        }
+      ]
+    },
+    {
+      "id": "zh-component-a91773bc7e4a9b89",
+      "headword": "势穷",
+      "reading": "shì qióng",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-a91773bc7e4a9b89-s1",
+          "definition": "To have reached the limit of one’s circumstances or momentum."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-acfc85e2a25422b8",
+      "headword": "远志",
+      "reading": "yuǎnzhì",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-acfc85e2a25422b8-s1",
+          "definition": "A far-reaching aspiration or ambition."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-ad2f3c4019734d9e",
+      "headword": "什么",
+      "reading": "shénme",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-ad2f3c4019734d9e-s1",
+          "definition": "what; an interrogative pronoun asking about the identity or nature of something"
+        }
+      ]
+    },
+    {
+      "id": "zh-component-adfab3ba53089936",
+      "headword": "元起",
+      "reading": "Yuánqǐ",
+      "kind": "name",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-adfab3ba53089936-s1",
+          "definition": "A Chinese personal name."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-b37d0ca6a1907eba",
+      "headword": "得到",
+      "reading": "dédào",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-b37d0ca6a1907eba-s1",
+          "definition": "to obtain; to get"
+        }
+      ]
+    },
+    {
+      "id": "zh-component-b3fa709d80169dab",
+      "headword": "力乏",
+      "reading": "lì fá",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-b3fa709d80169dab-s1",
+          "definition": "To have little strength; to be physically exhausted."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-b61fe2bc61ee64f1",
+      "headword": "清风",
+      "reading": "qīngfēng",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-b61fe2bc61ee64f1-s1",
+          "definition": "A fresh, clear breeze."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-c0a15fe5498654db",
+      "headword": "不同",
+      "reading": "bù tóng",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-c0a15fe5498654db-s1",
+          "definition": "different; not the same"
+        }
+      ]
+    },
+    {
+      "id": "zh-component-c418c0a1d8f7b8ae",
+      "headword": "家门",
+      "reading": "jiāmén",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-c418c0a1d8f7b8ae-s1",
+          "definition": "The entrance or gate of a home."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-c5327c457ce9876c",
+      "headword": "六七",
+      "reading": "liùqī",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-c5327c457ce9876c-s1",
+          "definition": "Approximately six or seven; used to give an imprecise count."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-c5748ebd17c672ea",
+      "headword": "三十",
+      "reading": "sān shí",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-c5748ebd17c672ea-s1",
+          "definition": "The number thirty."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-ce37d7c117bc2e4a",
+      "headword": "十万",
+      "reading": "shí wàn",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-ce37d7c117bc2e4a-s1",
+          "definition": "one hundred thousand"
+        }
+      ]
+    },
+    {
+      "id": "zh-component-ce5759831f9bba95",
+      "headword": "飞马",
+      "reading": "fēimǎ",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-ce5759831f9bba95-s1",
+          "definition": "To gallop or ride swiftly on horseback."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-cead232eba111862",
+      "headword": "画符",
+      "reading": "huà fú",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-cead232eba111862-s1",
+          "definition": "to draw or write a talisman"
+        }
+      ]
+    },
+    {
+      "id": "zh-component-cf31d9845e2aae9f",
+      "headword": "顿丘",
+      "reading": "Dùnqiū",
+      "kind": "name",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-cf31d9845e2aae9f-s1",
+          "definition": "A Chinese place name."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-cf46c16c67103af4",
+      "headword": "背义",
+      "reading": "bèi yì",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-cf46c16c67103af4-s1",
+          "definition": "To betray righteousness or act against what is right."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-cfd1d0d37cc64ed6",
+      "headword": "主意",
+      "reading": "zhǔyi",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-cfd1d0d37cc64ed6-s1",
+          "definition": "An idea or plan."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-d1f436c322fc72a8",
+      "headword": "轻举",
+      "reading": "qīngjǔ",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-d1f436c322fc72a8-s1",
+          "definition": "to take action lightly, without due consideration"
+        }
+      ]
+    },
+    {
+      "id": "zh-component-d5f99c1e3d7d348b",
+      "headword": "朋友",
+      "reading": "péngyou",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-d5f99c1e3d7d348b-s1",
+          "definition": "A person with whom one has a friendly relationship; a friend."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-d9fd048e58aa7364",
+      "headword": "门口",
+      "reading": "ménkǒu",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-d9fd048e58aa7364-s1",
+          "definition": "A doorway or entrance."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-df736a5ecc9d815b",
+      "headword": "与众",
+      "reading": "yǔ zhòng",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-df736a5ecc9d815b-s1",
+          "definition": "in comparison with other people; among the crowd"
+        }
+      ]
+    },
+    {
+      "id": "zh-component-df76b5ba92c362af",
+      "headword": "偃月刀",
+      "reading": "yǎnyuèdāo",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-df76b5ba92c362af-s1",
+          "definition": "A weapon with a crescent-shaped blade."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-e8ddcebd4532a5fa",
+      "headword": "二十",
+      "reading": "èrshí",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-e8ddcebd4532a5fa-s1",
+          "definition": "the number twenty"
+        }
+      ]
+    },
+    {
+      "id": "zh-component-ef3b69aa7fa131b4",
+      "headword": "五颜",
+      "reading": "wǔyán",
+      "kind": "construction",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-ef3b69aa7fa131b4-s1",
+          "definition": "Five colors, referring to varied colors in the paired expression 五颜六色."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-f26575915bcb05ed",
+      "headword": "迎面",
+      "reading": "yíngmiàn",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-f26575915bcb05ed-s1",
+          "definition": "From directly in front; toward someone or something head-on."
+        }
+      ]
+    },
+    {
+      "id": "zh-component-f6a54536c2d01546",
+      "headword": "六月",
+      "reading": "liù yuè",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-f6a54536c2d01546-s1",
+          "definition": "the sixth month of the year; June"
+        }
+      ]
+    },
+    {
+      "id": "zh-component-f73862138cacf29a",
+      "headword": "温德",
+      "reading": "Wēndé",
+      "kind": "name",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-f73862138cacf29a-s1",
+          "definition": "Wende, a proper name used as the designation of a hall."
+        }
+      ]
+    }
+  ],
+  "review_digest": "0cec47105dea0b245c60a82db723aff6cacd83f15faa4b899bd078c27c681509"
+}

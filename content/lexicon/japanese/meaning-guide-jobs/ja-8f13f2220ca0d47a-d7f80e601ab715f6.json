@@ -1,0 +1,32 @@
+{
+  "id": "ja-8f13f2220ca0d47a-d7f80e601ab715f6",
+  "entry_id": "ja-8f13f2220ca0d47a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-8f13f2220ca0d47a",
+      "headword": "へっつい",
+      "reading": "へっつい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-8f13f2220ca0d47a-1",
+          "definition": "cooking stove; hearth"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "自分の気分しだいで、吾輩を逆さにしたり、頭に袋をかぶせたり、外へ投げ出したり、へっついの中へ押し込んだりする。",
+        "gloss": "cooking stove; hearth",
+        "sense_id": "ja-8f13f2220ca0d47a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "22464d9997682441a9f706280e8e733642f32dd8244aa2c2c8226667fc560866"
+}

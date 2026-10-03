@@ -1,0 +1,9 @@
+{
+  "status": "failed",
+  "mode": "constrained-delta",
+  "chunks": 3,
+  "model_calls": 22,
+  "exact_input_preservation": true,
+  "exact_reconstruction": false,
+  "chapter_sha256": "210e7e1f69579d65b1888c3161e24e0b292f8aae20456349654d3d88d8837fb7"
+}

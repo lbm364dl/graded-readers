@@ -1,0 +1,31 @@
+{
+  "id": "zh-429f41177d7a-1-6fd57e4199bec122",
+  "entry_id": "zh-429f41177d7a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-429f41177d7a-1",
+      "headword": "不料",
+      "kind": "word",
+      "reading": "bùliào",
+      "senses": [
+        {
+          "id": "zh-429f41177d7a-1-s1",
+          "definition": "unexpectedly; contrary to expectation"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "不料唐州直接到朝廷告发此事。",
+        "gloss": "unexpectedly",
+        "sense_id": "zh-429f41177d7a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4e710d70356a434d5d346b092ac92f9cd008996001c0825140277b5e7b624319"
+}

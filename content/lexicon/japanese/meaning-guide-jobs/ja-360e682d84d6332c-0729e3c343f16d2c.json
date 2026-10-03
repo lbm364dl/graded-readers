@@ -1,0 +1,32 @@
+{
+  "id": "ja-360e682d84d6332c-0729e3c343f16d2c",
+  "entry_id": "ja-360e682d84d6332c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-360e682d84d6332c",
+      "headword": "一人",
+      "reading": "ひとり",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-360e682d84d6332c-1",
+          "definition": "one person"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "だが一人が目を覚ますと、「猫が来た」と泣き出し、主人が飛び出してくる。",
+        "gloss": "one person",
+        "sense_id": "ja-360e682d84d6332c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "621a2d8c05f003601772e22fe5acedbe32286d5978e938304f00d86026931a4a"
+}

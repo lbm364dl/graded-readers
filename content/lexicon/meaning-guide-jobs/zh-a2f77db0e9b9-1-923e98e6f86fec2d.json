@@ -1,0 +1,90 @@
+{
+  "id": "zh-a2f77db0e9b9-1-923e98e6f86fec2d",
+  "entry_id": "zh-a2f77db0e9b9-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-a2f77db0e9b9-1",
+      "headword": "向",
+      "kind": "word",
+      "reading": "xiàng",
+      "senses": [
+        {
+          "id": "zh-a2f77db0e9b9-1-s2",
+          "definition": "from; as the recipient or target of an action"
+        },
+        {
+          "id": "zh-a2f77db0e9b9-1-s1",
+          "definition": "toward; in the direction of"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "卢植说：“朝廷派来的人向我要钱，我没有同意。",
+        "gloss": "to",
+        "sense_id": "zh-a2f77db0e9b9-1-s2"
+      },
+      {
+        "sentence": "左丰来查看军情，向我索要贿赂。",
+        "gloss": "toward; to",
+        "sense_id": "zh-a2f77db0e9b9-1-s2"
+      },
+      {
+        "sentence": "曹操的叔父曾因他游荡无度，向曹嵩告状。",
+        "gloss": "to; toward",
+        "sense_id": "zh-a2f77db0e9b9-1-s2"
+      },
+      {
+        "sentence": "朝廷派宦官左丰来查问军情，并向卢植索贿。",
+        "gloss": "toward",
+        "sense_id": "zh-a2f77db0e9b9-1-s2"
+      },
+      {
+        "sentence": "刘备同意，带他们向北走。",
+        "gloss": "toward",
+        "sense_id": "zh-a2f77db0e9b9-1-s1"
+      },
+      {
+        "sentence": "”董卓因此轻视他们，也不向他们行礼。",
+        "gloss": "toward",
+        "sense_id": "zh-a2f77db0e9b9-1-s2"
+      },
+      {
+        "sentence": "张角让手下向百姓传话，说旧的天下已经衰弱，新的天下将要出现，还叫人用白土在家门上写下“甲子”二字。",
+        "gloss": "toward",
+        "sense_id": "zh-a2f77db0e9b9-1-s1"
+      },
+      {
+        "sentence": "宦官左丰奉命查看军情，企图向卢植索要行贿的钱。",
+        "gloss": "toward; to",
+        "sense_id": "zh-a2f77db0e9b9-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-a2f77db0e9b9-1",
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "向 introduces the person or target an action is directed toward; with verbs like asking or requesting, that person is the source, so 向 can mean “from.”",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "向",
+        "contribution_en": "introduces the person or target an action is directed toward",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "b74d0f2943753097d34b172e2dd4e7daf36d069058cb7bcad3c2d94ccbcee185",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e13ed1ec96d40f1ca260c19f4c98638e7ff222c09441faa42fd64a00737d3d6b"
+}

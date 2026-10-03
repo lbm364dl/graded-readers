@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_107-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1341,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "略去司马懿军队进城、曹爽军印交出后军队四散等部分细节。",
+      "classification": "material",
+      "reason": "军印交出后军队四散是曹爽失去军事控制、彻底陷入孤立并被迫接受处置的重要后果；司马懿请驾入洛阳也构成关键的行动推进，不能仅视为装饰性细节。",
+      "required_fix": "补回司马懿请魏主拔营入洛阳，以及曹爽交出印绶后军队因无将印而四散、曹爽仅余数骑官僚等情节。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "略去司马懿军队进城、曹爽军印交出后军队四散等部分细节。",
+      "classification": "material",
+      "reason": "军印交出后军队四散是曹爽失去军事控制、彻底陷入孤立并被迫接受处置的重要后果；司马懿请驾入洛阳也构成关键的行动推进，不能仅视为装饰性细节。",
+      "required_fix": "补回司马懿请魏主拔营入洛阳，以及曹爽交出印绶后军队因无将印而四散、曹爽仅余数骑官僚等情节。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1341,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

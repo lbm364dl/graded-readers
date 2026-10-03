@@ -1,0 +1,32 @@
+{
+  "id": "ja-1acb11708b57ef89-a3470552d160961b",
+  "entry_id": "ja-1acb11708b57ef89",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-1acb11708b57ef89",
+      "headword": "ついに",
+      "reading": "ついに",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-1acb11708b57ef89-1",
+          "definition": "finally; at last"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ついに家の主人が出て来て、吾輩を見た。",
+        "gloss": "finally",
+        "sense_id": "ja-1acb11708b57ef89-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9f6baaab150605d643223b1eabf7cfdbac6c60329213fe9e0f37d0320b3550c8"
+}

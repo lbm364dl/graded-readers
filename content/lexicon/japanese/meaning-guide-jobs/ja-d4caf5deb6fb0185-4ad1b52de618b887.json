@@ -1,0 +1,32 @@
+{
+  "id": "ja-d4caf5deb6fb0185-4ad1b52de618b887",
+  "entry_id": "ja-d4caf5deb6fb0185",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d4caf5deb6fb0185",
+      "headword": "天秤棒",
+      "reading": "てんびんぼう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d4caf5deb6fb0185-1",
+          "definition": "a pole carried across the shoulders to carry loads"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "元気も体格も失った黒は、最後に「いたちと魚屋の天秤棒には、もうこりごりだ」と言った。",
+        "gloss": "carrying pole",
+        "sense_id": "ja-d4caf5deb6fb0185-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2b4b4cb6d6d38f0709eadd00ce9dc1eba9b3a5a30c057f029fd9542496aa6782"
+}

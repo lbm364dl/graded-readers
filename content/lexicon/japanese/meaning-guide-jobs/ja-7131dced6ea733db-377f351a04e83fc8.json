@@ -1,0 +1,32 @@
+{
+  "id": "ja-7131dced6ea733db-377f351a04e83fc8",
+  "entry_id": "ja-7131dced6ea733db",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-7131dced6ea733db",
+      "headword": "まだ",
+      "reading": "まだ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-7131dced6ea733db-1",
+          "definition": "Still; yet, up to the present or expected point."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "名前はまだありません。",
+        "gloss": "still; yet",
+        "sense_id": "ja-7131dced6ea733db-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5761f75fdd0109ee75c5bd70b38abaa69b7932ff68ed525c4bc64d5f951a85cf"
+}

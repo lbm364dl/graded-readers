@@ -1,0 +1,31 @@
+{
+  "id": "zh-f179bcbd3f43-1-10dad02449fbc1c3",
+  "entry_id": "zh-f179bcbd3f43-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f179bcbd3f43-1",
+      "headword": "配上",
+      "kind": "construction",
+      "reading": "pèishàng",
+      "senses": [
+        {
+          "id": "zh-f179bcbd3f43-1-s1",
+          "definition": "to equip or provide with something as an addition"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人谢过商人，打造兵器，配上铠甲，又聚集五百多名乡勇，前去报到。",
+        "gloss": "equip with",
+        "sense_id": "zh-f179bcbd3f43-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8fef6dac21761635966f489517d745e632fd0754723e29081ecff7a16f28f65c"
+}

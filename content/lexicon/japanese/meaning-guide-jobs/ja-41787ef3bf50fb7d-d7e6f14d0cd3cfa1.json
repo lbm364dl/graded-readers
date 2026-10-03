@@ -1,0 +1,67 @@
+{
+  "id": "ja-41787ef3bf50fb7d-d7e6f14d0cd3cfa1",
+  "entry_id": "ja-41787ef3bf50fb7d",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-41787ef3bf50fb7d",
+      "headword": "熱心",
+      "reading": "ねっしん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-41787ef3bf50fb7d-1",
+          "definition": "earnestness; enthusiasm or zeal"
+        },
+        {
+          "id": "ja-41787ef3bf50fb7d-2",
+          "definition": "earnest; enthusiastic and devoted"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "しかし主人の熱心さには感心した。",
+        "gloss": "earnestness; enthusiasm",
+        "sense_id": "ja-41787ef3bf50fb7d-1"
+      },
+      {
+        "sentence": "主人は書斎から出て来て、吾輩の後ろで熱心に筆を動かしていた。",
+        "gloss": "diligently; earnestly",
+        "sense_id": "ja-41787ef3bf50fb7d-2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-41787ef3bf50fb7d",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "compositional",
+    "explanation_en": "熱心 describes earnest enthusiasm or zeal: an intensely engaged state of mind or feeling. It is commonly used as a な-adjective, as in 熱心な or 熱心に.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "熱",
+        "contribution_en": "Fervor or intensity of feeling.",
+        "claim_ids": []
+      },
+      {
+        "text": "心",
+        "contribution_en": "The mind or feeling that is fervent and engaged.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "21b30df849e69917f648fb38c678cf8d09ff3a64a0d41ab87aeb1610656448d4",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4adbcfa257b1d484c6bf0e88456f670b1dae8c9ec11785be19ec28623612d2aa"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "zh-a567bdaa1136-1-bd8727cb199056fe",
+  "entry_id": "zh-a567bdaa1136-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a567bdaa1136-1",
+      "headword": "中",
+      "kind": "word",
+      "reading": "zhōng",
+      "senses": [
+        {
+          "id": "zh-a567bdaa1136-1-s1",
+          "definition": "inside; within"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "祭礼结束后，他们聚集乡勇，在桃园中喝酒。",
+        "gloss": "inside",
+        "sense_id": "zh-a567bdaa1136-1-s1"
+      },
+      {
+        "sentence": "这个结果导致宦官从此更加专横，做事也更不受限制，朝廷中的正直之士更加危险。",
+        "gloss": "in",
+        "sense_id": "zh-a567bdaa1136-1-s1"
+      },
+      {
+        "sentence": "祭礼后，他们杀牛摆酒，聚集三百多名乡勇，在桃园中痛快喝酒。",
+        "gloss": "in; within",
+        "sense_id": "zh-a567bdaa1136-1-s1"
+      },
+      {
+        "sentence": "二更后，伏兵一齐放火，两人各带军队攻入营中。",
+        "gloss": "inside",
+        "sense_id": "zh-a567bdaa1136-1-s1"
+      },
+      {
+        "sentence": "这一战中，曹操杀死一万多人，夺得旗子、战鼓和许多马匹。",
+        "gloss": "within; in",
+        "sense_id": "zh-a567bdaa1136-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1bb539c31482aca41815ff1ce84d2b217d5046d762b5615bc946fbb67b528ca5"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-1bc635a2dd9fdb89-6dfc1730f62c0b96",
+  "entry_id": "ja-1bc635a2dd9fdb89",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-1bc635a2dd9fdb89",
+      "headword": "勉強家",
+      "reading": "べんきょうか",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-1bc635a2dd9fdb89-1",
+          "definition": "a studious person"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "家のものは勉強家だと思っているが、実際はそうでもない。",
+        "gloss": "studious person; hard-working student",
+        "sense_id": "ja-1bc635a2dd9fdb89-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "11b8b235549fd91ffcfceb655e54da22057b1db42820305b0106f70ea7d5bde8"
+}

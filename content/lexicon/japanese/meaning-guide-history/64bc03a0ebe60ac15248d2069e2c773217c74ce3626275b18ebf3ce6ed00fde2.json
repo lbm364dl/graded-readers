@@ -1,0 +1,43 @@
+{
+  "schema_version": 2,
+  "policy_version": 5,
+  "reviewed": true,
+  "model": "gpt-6-luna",
+  "proposal_effort": "low",
+  "review_effort": "high",
+  "guides": [
+    {
+      "entry_id": "ja-component-4a376919546c4b91",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "こと is a broad noun for a thing or matter, often abstract. After a verb or clause, it makes that action, event, or situation into a noun phrase, treating its content as a matter or fact; for example, 食べること means “eating” as an activity.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "a5894c9449482ebcd7f54877c35a93df915677cc3e941f5be3ef0e838b68ba2e",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-ad2e314ef6a2146f",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "する is a basic verb for carrying out an action or bringing about a result, roughly “do” or “make.” Its specific sense depends on the activity or result supplied by context; many action nouns also combine with する to form verbs meaning to perform that activity.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "4bcd294dd202fac10bbd478121d45215d704b57d7640ad28dee7d6860acbdca7",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    }
+  ],
+  "review_digest": "178f650f333314ceec0c031614203cbaf435334b36262f728faaeb6d357d4ed2"
+}

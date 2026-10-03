@@ -1,0 +1,32 @@
+{
+  "id": "ja-18e99cce8bd4eb89-d02d2ed1f79bb66f",
+  "entry_id": "ja-18e99cce8bd4eb89",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-18e99cce8bd4eb89",
+      "headword": "黄色い",
+      "reading": "きいろい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-18e99cce8bd4eb89-1",
+          "definition": "yellow in color"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人は胃が弱く、顔の色も黄色く、元気がないように見える。",
+        "gloss": "yellow; yellowish",
+        "sense_id": "ja-18e99cce8bd4eb89-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d9fcdbc55e348d25be3471280e0ff5c742ecf5d083acac859654fe16fa858346"
+}

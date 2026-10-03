@@ -1,0 +1,32 @@
+{
+  "id": "ja-026c886ff67e52e5-4330e61078952795",
+  "entry_id": "ja-026c886ff67e52e5",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-026c886ff67e52e5",
+      "headword": "坪",
+      "reading": "つぼ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-026c886ff67e52e5-1",
+          "definition": "tsubo, a unit of area of about 3.3 square meters"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩の家の裏には、十坪ほどの茶園がある。",
+        "gloss": "tsubo, a measure of area",
+        "sense_id": "ja-026c886ff67e52e5-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "90c86b16fe4a93dfcdd27d0d0aa7aaeba1514e71087f95a5239e57a49fccf5be"
+}

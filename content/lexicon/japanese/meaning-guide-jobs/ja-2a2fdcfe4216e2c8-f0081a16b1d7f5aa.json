@@ -1,0 +1,32 @@
+{
+  "id": "ja-2a2fdcfe4216e2c8-f0081a16b1d7f5aa",
+  "entry_id": "ja-2a2fdcfe4216e2c8",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-2a2fdcfe4216e2c8",
+      "headword": "のだ",
+      "reading": "のだから",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-2a2fdcfe4216e2c8-1",
+          "definition": "an explanatory pattern that presents or clarifies the circumstances behind a statement"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "寝ているところをかいたのだから仕方がないとしても、目らしい所さえないので、目を閉じた猫なのか、目の見えない猫なのか、はっきり分からない。",
+        "gloss": "since; because",
+        "sense_id": "ja-2a2fdcfe4216e2c8-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4e87f5e3ffb155eb1c5eb235da56efc1285f6d9c350c72c3b5408571f05e730f"
+}

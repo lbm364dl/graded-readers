@@ -1,0 +1,36 @@
+{
+  "id": "zh-f2854627cacf-1-9cbd45a185b73c16",
+  "entry_id": "zh-f2854627cacf-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f2854627cacf-1",
+      "headword": "押",
+      "kind": "word",
+      "reading": "yā",
+      "senses": [
+        {
+          "id": "zh-f2854627cacf-1-s1",
+          "definition": "to escort or take someone under guard"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "卢植被押走后，关羽建议先回涿郡，刘备同意了。",
+        "gloss": "escort",
+        "sense_id": "zh-f2854627cacf-1-s1"
+      },
+      {
+        "sentence": "朝廷于是派董卓代替我，并押我回京问罪。",
+        "gloss": "escort under guard",
+        "sense_id": "zh-f2854627cacf-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c9ee89a2cbf65a416f0a3d87360fa6535c2ecad1d911000e49e3597de6d6b339"
+}

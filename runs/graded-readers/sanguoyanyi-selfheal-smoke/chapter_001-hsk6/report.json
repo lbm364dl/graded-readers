@@ -1,0 +1,20 @@
+{
+  "status": "complete",
+  "scenes": 5,
+  "chapter_cjk": 1336,
+  "scene_verdicts": {
+    "scene_01": "pass",
+    "scene_02": "pass",
+    "scene_03": "pass",
+    "scene_04": "pass",
+    "scene_05": "pass"
+  },
+  "scene_attempts": {
+    "scene_01": 1,
+    "scene_02": 2,
+    "scene_03": 1,
+    "scene_04": 2,
+    "scene_05": 1
+  },
+  "unresolved_scenes": []
+}

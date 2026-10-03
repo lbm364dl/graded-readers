@@ -1,0 +1,32 @@
+{
+  "id": "ja-90a9895707acdbf1-a05931faaed4797e",
+  "entry_id": "ja-90a9895707acdbf1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-90a9895707acdbf1",
+      "headword": "すぐ",
+      "reading": "すぐ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-90a9895707acdbf1-1",
+          "definition": "quickly; readily; without delay"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "人間は自分の力を信じすぎて、すぐ増長する。",
+        "gloss": "quickly; readily",
+        "sense_id": "ja-90a9895707acdbf1-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9615c7ab04ff467f688dc40f46e83d6419871a4b5184819c8453c07ec0293dc0"
+}

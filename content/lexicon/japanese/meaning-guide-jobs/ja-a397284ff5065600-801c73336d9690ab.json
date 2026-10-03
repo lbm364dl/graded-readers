@@ -1,0 +1,32 @@
+{
+  "id": "ja-a397284ff5065600-801c73336d9690ab",
+  "entry_id": "ja-a397284ff5065600",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a397284ff5065600",
+      "headword": "話す",
+      "reading": "はなす",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-a397284ff5065600-1",
+          "definition": "to speak; to talk; to tell"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "わがままな主人の失敗を一つ話そう。",
+        "gloss": "let me tell",
+        "sense_id": "ja-a397284ff5065600-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8a374eec3cbfd5ebe196790fa03df6e6e01f4aead8528e746a3f59318e9cb29e"
+}

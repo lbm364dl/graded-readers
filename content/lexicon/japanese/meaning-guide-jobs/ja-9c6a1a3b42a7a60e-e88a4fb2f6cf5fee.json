@@ -1,0 +1,32 @@
+{
+  "id": "ja-9c6a1a3b42a7a60e-e88a4fb2f6cf5fee",
+  "entry_id": "ja-9c6a1a3b42a7a60e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9c6a1a3b42a7a60e",
+      "headword": "男",
+      "reading": "おとこ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-9c6a1a3b42a7a60e-1",
+          "definition": "man; male person"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人は、特に人より優れた力があるわけではないのに、何にでも手を出したがる男だ。",
+        "gloss": "man",
+        "sense_id": "ja-9c6a1a3b42a7a60e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f50cd7140150534e39a7bd897cc92afa3172a8b6e122c92ee96a947247eb16ed"
+}

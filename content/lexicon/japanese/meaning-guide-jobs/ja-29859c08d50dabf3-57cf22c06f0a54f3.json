@@ -1,0 +1,32 @@
+{
+  "id": "ja-29859c08d50dabf3-57cf22c06f0a54f3",
+  "entry_id": "ja-29859c08d50dabf3",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-29859c08d50dabf3",
+      "headword": "室内",
+      "reading": "しつない",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-29859c08d50dabf3-1",
+          "definition": "inside a room; indoors"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人が「自分で筆を持つと、絵は実に難しい」と言うと、友人は、室内の想像だけでは絵はかけない、自然そのものを見て写生すべきだと教えた。",
+        "gloss": "indoors; inside the room",
+        "sense_id": "ja-29859c08d50dabf3-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5a98785f564de7838a464dc55a9c89ad1a138a2f2ca38ae98e28217a518d52b5"
+}

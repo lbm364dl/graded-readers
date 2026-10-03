@@ -1,0 +1,32 @@
+{
+  "id": "ja-a119d0cfe6868e8b-98f66bfe7153ad12",
+  "entry_id": "ja-a119d0cfe6868e8b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a119d0cfe6868e8b",
+      "headword": "三ページ",
+      "reading": "さんページ",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-a119d0cfe6868e8b-1",
+          "definition": "three pages"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "しかし二、三ページ読むと眠くなり、本の上によだれをたらす。",
+        "gloss": "three pages",
+        "sense_id": "ja-a119d0cfe6868e8b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fa3004d4cb87ee38fd8f646883c42e392da286a7f8574c8c2920443287b7d7e8"
+}

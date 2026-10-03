@@ -1,0 +1,31 @@
+{
+  "id": "zh-12f46a49c48b-1-d4b35a1c746647ca",
+  "entry_id": "zh-12f46a49c48b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-12f46a49c48b-1",
+      "headword": "盘",
+      "kind": "word",
+      "reading": "pán",
+      "senses": [
+        {
+          "id": "zh-12f46a49c48b-1-s1",
+          "definition": "to coil or curl around something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "殿角忽起狂风，一条大青蛇从梁上飞下，盘在椅上。",
+        "gloss": "to coil",
+        "sense_id": "zh-12f46a49c48b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "70f0c605af5c0fb5b79dab169fab28f5f9c62683898348d93be830757eefea00"
+}

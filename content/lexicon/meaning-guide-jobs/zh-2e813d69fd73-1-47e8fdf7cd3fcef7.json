@@ -1,0 +1,36 @@
+{
+  "id": "zh-2e813d69fd73-1-47e8fdf7cd3fcef7",
+  "entry_id": "zh-2e813d69fd73-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2e813d69fd73-1",
+      "headword": "营",
+      "kind": "word",
+      "reading": "yíng",
+      "senses": [
+        {
+          "id": "zh-2e813d69fd73-1-s1",
+          "definition": "a military camp"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军战事不利，退入长社，用草扎营。",
+        "gloss": "camp",
+        "sense_id": "zh-2e813d69fd73-1-s1"
+      },
+      {
+        "sentence": "二更后，伏兵一齐放火，两人各带军队攻入营中。",
+        "gloss": "camp",
+        "sense_id": "zh-2e813d69fd73-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6d7eff73a99e9d47a287d6153d8c9abdc43d13503dde1c9fc6f315ee27be9e81"
+}

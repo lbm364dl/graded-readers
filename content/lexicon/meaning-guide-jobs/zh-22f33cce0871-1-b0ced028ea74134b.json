@@ -1,0 +1,31 @@
+{
+  "id": "zh-22f33cce0871-1-b0ced028ea74134b",
+  "entry_id": "zh-22f33cce0871-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-22f33cce0871-1",
+      "headword": "犒军",
+      "kind": "construction",
+      "reading": "kào jūn",
+      "senses": [
+        {
+          "id": "zh-22f33cce0871-1-s1",
+          "definition": "to reward or entertain troops"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "龚景犒军后，邹靖准备回去。",
+        "gloss": "reward the troops",
+        "sense_id": "zh-22f33cce0871-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "83e4501d1005fc0a629fb2c992323529887d7c29c7367e4a76a0df537cf8d5c1"
+}

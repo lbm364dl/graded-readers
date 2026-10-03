@@ -1,0 +1,31 @@
+{
+  "id": "zh-5d0a718c619d-1-4e5d8efdf9ae478a",
+  "entry_id": "zh-5d0a718c619d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5d0a718c619d-1",
+      "headword": "要术",
+      "kind": "word",
+      "reading": "yàoshù",
+      "senses": [
+        {
+          "id": "zh-5d0a718c619d-1-s1",
+          "definition": "an important or essential method"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "老人把天书三卷交给他，名为太平要术，并警告他不可生异心。",
+        "gloss": "essential method",
+        "sense_id": "zh-5d0a718c619d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b9ee1012d61b693cfb97eda9052504afdbf25bc9660e92b340c84f099f9f7163"
+}

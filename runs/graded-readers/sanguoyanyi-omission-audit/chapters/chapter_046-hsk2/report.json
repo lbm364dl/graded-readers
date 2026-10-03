@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_046-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 274,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“火攻的关键部署完成”表述过度：原文仅写阚泽答应献诈降书，后续送信及具体实施尚未完成。",
+      "classification": "material",
+      "reason": "将阚泽答应代送诈降书误述为火攻关键部署已经完成，改变了原文所处的事件状态。",
+      "required_fix": "改为“阚泽答应代送诈降书”，不要表述为火攻部署已经完成。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“火攻的关键部署完成”表述过度：原文仅写阚泽答应献诈降书，后续送信及具体实施尚未完成。",
+      "classification": "material",
+      "reason": "将阚泽答应代送诈降书误述为火攻关键部署已经完成，改变了原文所处的事件状态。",
+      "required_fix": "改为“阚泽答应代送诈降书”，不要表述为火攻部署已经完成。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 274,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

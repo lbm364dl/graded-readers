@@ -1,0 +1,41 @@
+{
+  "id": "zh-3ec82ab67c8d-1-1d7a2fb0b24dc776",
+  "entry_id": "zh-3ec82ab67c8d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-3ec82ab67c8d-1",
+      "headword": "聚集",
+      "kind": "word",
+      "reading": "jùjí",
+      "senses": [
+        {
+          "id": "zh-3ec82ab67c8d-1-s1",
+          "definition": "to gather or assemble people or things"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角给百姓治病，聚集了很多人。",
+        "gloss": "gather",
+        "sense_id": "zh-3ec82ab67c8d-1-s1"
+      },
+      {
+        "sentence": "又聚集三百多个乡勇。",
+        "gloss": "gather",
+        "sense_id": "zh-3ec82ab67c8d-1-s1"
+      },
+      {
+        "sentence": "后来，他们聚集五百多个乡勇。",
+        "gloss": "gather",
+        "sense_id": "zh-3ec82ab67c8d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fc1d5dcf95f54c471e3b9e55c39f2513579e0595cd2afe03238676ef6d96a091"
+}

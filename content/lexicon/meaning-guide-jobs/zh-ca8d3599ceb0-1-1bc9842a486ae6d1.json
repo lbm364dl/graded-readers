@@ -1,0 +1,31 @@
+{
+  "id": "zh-ca8d3599ceb0-1-1bc9842a486ae6d1",
+  "entry_id": "zh-ca8d3599ceb0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ca8d3599ceb0-1",
+      "headword": "郎官",
+      "kind": "word",
+      "reading": "lángguān",
+      "senses": [
+        {
+          "id": "zh-ca8d3599ceb0-1-s1",
+          "definition": "a palace official"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹操二十岁时举孝廉，做了郎官，后来任洛阳北都尉。",
+        "gloss": "郎官; palace official",
+        "sense_id": "zh-ca8d3599ceb0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "09ab4d2f369ec7308db1ff5493c2d1038bf6fd68bc785d9282fc59dad2403318"
+}

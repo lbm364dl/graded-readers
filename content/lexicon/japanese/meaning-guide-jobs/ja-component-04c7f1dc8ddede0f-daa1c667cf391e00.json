@@ -1,0 +1,26 @@
+{
+  "id": "ja-component-04c7f1dc8ddede0f-daa1c667cf391e00",
+  "entry_id": "ja-component-04c7f1dc8ddede0f",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-component-04c7f1dc8ddede0f",
+      "headword": "三毛",
+      "reading": "みけ",
+      "kind": "name",
+      "senses": [
+        {
+          "id": "ja-component-04c7f1dc8ddede0f-1",
+          "definition": "Mike, a cat's name."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "57a101368439870bd50e25d186b952b972440f9f54fd03817598d51aff9dc77c"
+}

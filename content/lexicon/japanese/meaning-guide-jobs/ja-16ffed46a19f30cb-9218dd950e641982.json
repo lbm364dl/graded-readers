@@ -1,0 +1,32 @@
+{
+  "id": "ja-16ffed46a19f30cb-9218dd950e641982",
+  "entry_id": "ja-16ffed46a19f30cb",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-16ffed46a19f30cb",
+      "headword": "まさに",
+      "reading": "まさに",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-16ffed46a19f30cb-1",
+          "definition": "precisely; exactly"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が初めて人間というものを見たのは、まさにそこにいた時である。",
+        "gloss": "precisely; exactly",
+        "sense_id": "ja-16ffed46a19f30cb-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ae926750f180d620f237cf3f0fd0d46bf59157a59d895874c2e5c0322bb5134e"
+}

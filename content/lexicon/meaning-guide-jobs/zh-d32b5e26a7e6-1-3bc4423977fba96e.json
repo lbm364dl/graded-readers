@@ -1,0 +1,36 @@
+{
+  "id": "zh-d32b5e26a7e6-1-3bc4423977fba96e",
+  "entry_id": "zh-d32b5e26a7e6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d32b5e26a7e6-1",
+      "headword": "逃",
+      "kind": "word",
+      "reading": "táo",
+      "senses": [
+        {
+          "id": "zh-d32b5e26a7e6-1-s1",
+          "definition": "to escape or flee"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张梁、张宝死战，才逃了出去。",
+        "gloss": "escape",
+        "sense_id": "zh-d32b5e26a7e6-1-s1"
+      },
+      {
+        "sentence": "杀到天明，张梁、张宝带着残军夺路而逃。",
+        "gloss": "to flee",
+        "sense_id": "zh-d32b5e26a7e6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f954f9cedad1667048e0aebd9894ae8ec26114d1e37d76c37dc8bba2d39f96fe"
+}

@@ -1,0 +1,5 @@
+{"type":"thread.started","thread_id":"019ff526-4542-75d1-a6fa-3664a543037f"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"text\":\"I’m revising the scene to keep the selected plot while correcting the medical description and simplifying the flagged wording.\"}"}}
+{"type":"error","message":"Selected model is at capacity. Please try a different model."}
+{"type":"turn.failed","error":{"message":"Selected model is at capacity. Please try a different model."}}

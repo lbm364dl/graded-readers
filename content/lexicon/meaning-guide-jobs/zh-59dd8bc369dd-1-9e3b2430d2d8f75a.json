@@ -1,0 +1,31 @@
+{
+  "id": "zh-59dd8bc369dd-1-9e3b2430d2d8f75a",
+  "entry_id": "zh-59dd8bc369dd-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-59dd8bc369dd-1",
+      "headword": "斟",
+      "kind": "word",
+      "reading": "zhēn",
+      "senses": [
+        {
+          "id": "zh-59dd8bc369dd-1-s1",
+          "definition": "pour a drink into a vessel"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "正饮酒时，一个大汉推着一辆车来到店门前休息，进门便叫酒保斟酒，说要赶进城投军。",
+        "gloss": "to pour",
+        "sense_id": "zh-59dd8bc369dd-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f6af4ccb3c85ace2b9ff8fafd3704b4f88f0a78d2f66fd9e6fb70c305cc75a5b"
+}

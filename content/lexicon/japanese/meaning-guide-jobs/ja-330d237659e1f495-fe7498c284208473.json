@@ -1,0 +1,66 @@
+{
+  "id": "ja-330d237659e1f495-fe7498c284208473",
+  "entry_id": "ja-330d237659e1f495",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-330d237659e1f495",
+      "headword": "書く",
+      "reading": "かく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-330d237659e1f495-1",
+          "definition": "to write"
+        },
+        {
+          "id": "ja-330d237659e1f495-2",
+          "definition": "to draw or paint"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "俳句を作って雑誌へ送り、新しい詩を書き、間違いの多い英文を書いた。",
+        "gloss": "writing",
+        "sense_id": "ja-330d237659e1f495-1"
+      },
+      {
+        "sentence": "俳句を作って雑誌へ送り、新しい詩を書き、間違いの多い英文を書いた。",
+        "gloss": "wrote",
+        "sense_id": "ja-330d237659e1f495-1"
+      },
+      {
+        "sentence": "俳句を作って雑誌へ投稿し、新体詩を書き、間違いの多い英文を作り、弓に熱中し、謡を習い、時にはヴァイオリンまで鳴らした。",
+        "gloss": "writing",
+        "sense_id": "ja-330d237659e1f495-1"
+      },
+      {
+        "sentence": "主人が「人の絵を見ると簡単そうなのに、自分で筆を持つと実に難しい」と言うと、友人は、最初から上手にはかけない、室内の想像だけでは絵にならない、と説明した。",
+        "gloss": "cannot draw or paint skillfully",
+        "sense_id": "ja-330d237659e1f495-2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-330d237659e1f495",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "書く means to write words or text, by hand or with a device. The thing written can be the object, as in writing a poem, letter, or sentence.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "a8d682c14b24d066d7ba782dd4365034304c48d281f0b80249f89e746396f60f",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7de28d60f170facfab235a0bb2478db1aedacada322e870c52a1e010ee3d2c08"
+}

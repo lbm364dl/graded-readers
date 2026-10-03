@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_058-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 907,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "称庞德在西门放火，原文只写城门内起火，并未明确说明放火者。",
+      "classification": "material",
+      "reason": "将城门内起火这一未明确行为归因于庞德，增加了原文没有的具体行动者信息。",
+      "required_fix": "改为“第五天，城门内起火，龐德趁机斩杀钟进、斩关断锁，放马超韩遂军入城”，不要明确说庞德放火。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "称庞德在西门放火，原文只写城门内起火，并未明确说明放火者。",
+      "classification": "material",
+      "reason": "将城门内起火这一未明确行为归因于庞德，增加了原文没有的具体行动者信息。",
+      "required_fix": "改为“第五天，城门内起火，龐德趁机斩杀钟进、斩关断锁，放马超韩遂军入城”，不要明确说庞德放火。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 907,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

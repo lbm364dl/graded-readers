@@ -1,0 +1,32 @@
+{
+  "id": "ja-9022b0a8ded3117f-b0afdad13013f345",
+  "entry_id": "ja-9022b0a8ded3117f",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9022b0a8ded3117f",
+      "headword": "枯れ木",
+      "reading": "かれき",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-9022b0a8ded3117f-1",
+          "definition": "dead tree; withered tree"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そして、絵をかくなら自然そのものを写すべきだ、空には星、地には露、池には金魚、枯れ木には鳥がいる、自然全体が大きな絵なのだ、と語った。",
+        "gloss": "dead tree",
+        "sense_id": "ja-9022b0a8ded3117f-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f44d3eb2622015c314e9031f3f68a5c320d2f3984e9cd05c660970208039be98"
+}

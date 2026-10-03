@@ -1,0 +1,12 @@
+{
+  "type": "object", "additionalProperties": false, "required": ["units"],
+  "properties": {"units": {"type": "array", "items": {
+    "type": "object", "additionalProperties": false,
+    "required": ["first_segment", "last_segment", "text", "pinyin", "meaning_en", "explanation_en"],
+    "properties": {
+      "first_segment": {"type": "integer"}, "last_segment": {"type": "integer"},
+      "text": {"type": "string"}, "pinyin": {"type": "string"},
+      "meaning_en": {"type": "string"}, "explanation_en": {"type": "string"}
+    }
+  }}}
+}

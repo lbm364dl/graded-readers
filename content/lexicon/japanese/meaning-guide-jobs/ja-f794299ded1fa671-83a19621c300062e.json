@@ -1,0 +1,32 @@
+{
+  "id": "ja-f794299ded1fa671-83a19621c300062e",
+  "entry_id": "ja-f794299ded1fa671",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-f794299ded1fa671",
+      "headword": "気持ちが落ち着く",
+      "reading": "きもちがおちつく",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-f794299ded1fa671-1",
+          "definition": "for one's feelings to settle; to become calm"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "後で、おさんのさんまを盗んでその仕返しをしてやると、ようやく気持ちが落ち着いた。",
+        "gloss": "one's feelings settle; one becomes calm",
+        "sense_id": "ja-f794299ded1fa671-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "160eaf04a3c2fc7d38be5d32b4ef2455cc40ddf4a0e37adf5b3ab5ec0ef979de"
+}

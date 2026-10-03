@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_061-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1141,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "略去曹操退兵时命朱光镇守皖城，以及孙权与张昭讨论利用曹军北撤图取荆州的具体过程。",
+      "classification": "material",
+      "reason": "省略了朱光镇守皖城这一具体后续安排，也弱化了孙权谋取荆州及张昭提出阻断刘备归路之计的战略动机和讨论过程。",
+      "required_fix": "补充曹操命朱光镇守皖城，并说明孙权曾考虑趁曹军北撤进取荆州，张昭劝止直接出兵后提出阻断刘备返回荆州的计策。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "略去曹操退兵时命朱光镇守皖城，以及孙权与张昭讨论利用曹军北撤图取荆州的具体过程。",
+      "classification": "material",
+      "reason": "省略了朱光镇守皖城这一具体后续安排，也弱化了孙权谋取荆州及张昭提出阻断刘备归路之计的战略动机和讨论过程。",
+      "required_fix": "补充曹操命朱光镇守皖城，并说明孙权曾考虑趁曹军北撤进取荆州，张昭劝止直接出兵后提出阻断刘备返回荆州的计策。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1141,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

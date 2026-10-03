@@ -1,0 +1,36 @@
+{
+  "id": "zh-8bd2ce70f64f-1-2717924c6e17026f",
+  "entry_id": "zh-8bd2ce70f64f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8bd2ce70f64f-1",
+      "headword": "信",
+      "kind": "word",
+      "reading": "xìn",
+      "senses": [
+        {
+          "id": "zh-8bd2ce70f64f-1-s1",
+          "definition": "letter"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角又让弟子唐州送信，唐州却到朝廷告发。",
+        "gloss": "letter",
+        "sense_id": "zh-8bd2ce70f64f-1-s1"
+      },
+      {
+        "sentence": "他们又派弟子唐州送信给封谞。",
+        "gloss": "letter",
+        "sense_id": "zh-8bd2ce70f64f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "585c4d4eda13c54a9b1bdb9b03f85fd7f85b777bf477dcf5d1d018776e2d36bf"
+}

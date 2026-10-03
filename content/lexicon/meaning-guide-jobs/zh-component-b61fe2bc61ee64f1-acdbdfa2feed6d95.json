@@ -1,0 +1,26 @@
+{
+  "id": "zh-component-b61fe2bc61ee64f1-acdbdfa2feed6d95",
+  "entry_id": "zh-component-b61fe2bc61ee64f1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-component-b61fe2bc61ee64f1",
+      "headword": "清风",
+      "reading": "qīngfēng",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-b61fe2bc61ee64f1-s1",
+          "definition": "A fresh, clear breeze."
+        }
+      ]
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4c5380aa00ab2c5a0672a2072bff48b58acc094651a0ded8add530a2108defb0"
+}

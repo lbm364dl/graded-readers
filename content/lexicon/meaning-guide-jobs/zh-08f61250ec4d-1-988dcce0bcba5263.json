@@ -1,0 +1,46 @@
+{
+  "id": "zh-08f61250ec4d-1-988dcce0bcba5263",
+  "entry_id": "zh-08f61250ec4d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-08f61250ec4d-1",
+      "headword": "投降",
+      "kind": "word",
+      "reading": "tóuxiáng",
+      "senses": [
+        {
+          "id": "zh-08f61250ec4d-1-s1",
+          "definition": "to surrender; give oneself up"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "两队人在山下相遇，刘备叫黄巾军投降。",
+        "gloss": "surrender",
+        "sense_id": "zh-08f61250ec4d-1-s1"
+      },
+      {
+        "sentence": "黄巾军马上逃走，很多人放下武器投降。",
+        "gloss": "surrender",
+        "sense_id": "zh-08f61250ec4d-1-s1"
+      },
+      {
+        "sentence": "他大声骂敌人背叛汉朝，叫他们早些投降。",
+        "gloss": "to surrender",
+        "sense_id": "zh-08f61250ec4d-1-s1"
+      },
+      {
+        "sentence": "程远志被杀后，黄巾军纷纷逃走，刘备带兵追赶，许多人投降。",
+        "gloss": "to surrender",
+        "sense_id": "zh-08f61250ec4d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "dfaff5ab51ed3826fbc16b6b383c99bba3fc445a6ae26ed06b0842ec0d9ec8cf"
+}

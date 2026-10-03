@@ -1,0 +1,31 @@
+{
+  "id": "zh-4e7573d7ff7d-1-5226636f13227636",
+  "entry_id": "zh-4e7573d7ff7d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4e7573d7ff7d-1",
+      "headword": "犯",
+      "kind": "word",
+      "reading": "fàn",
+      "senses": [
+        {
+          "id": "zh-4e7573d7ff7d-1-s1",
+          "definition": "to attack or invade"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "没过几天，有人报告：黄巾军将领程远志率领五万兵马来犯涿郡。",
+        "gloss": "attack",
+        "sense_id": "zh-4e7573d7ff7d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2e040c499e0c6a7a9bfebd8d3d6dcdcb73eee6bc569b3865bbe7ee7c1739738f"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-81b323ae92ceb95c-6bae1f1e56cc1dde",
+  "entry_id": "ja-81b323ae92ceb95c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-81b323ae92ceb95c",
+      "headword": "低い",
+      "reading": "ひくい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-81b323ae92ceb95c-1",
+          "definition": "low; at a small height or level"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は仕方なく両足を前へ伸ばし、首を低く出して、大きな欠伸をした。",
+        "gloss": "low; lowering",
+        "sense_id": "ja-81b323ae92ceb95c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c861abe1fc591418a2791b7b6fa63ee11be9abb14ba1134907e8654696fba26e"
+}

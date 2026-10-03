@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_078-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 767,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略曹丕即位后有人主动请往劝说曹彰、原文留下悬念的结尾。",
+      "classification": "material",
+      "reason": "这是本章结尾的实际事件和悬念，交代了曹彰到来后即将发生的应对，并为后续兄弟冲突及劝说情节提供衔接信息。",
+      "required_fix": "补入有人主动请往劝说曹彰的情节，并保留原文未揭示其身份的悬念结尾。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略曹丕即位后有人主动请往劝说曹彰、原文留下悬念的结尾。",
+      "classification": "material",
+      "reason": "这是本章结尾的实际事件和悬念，交代了曹彰到来后即将发生的应对，并为后续兄弟冲突及劝说情节提供衔接信息。",
+      "required_fix": "补入有人主动请往劝说曹彰的情节，并保留原文未揭示其身份的悬念结尾。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 767,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "scene": {
+    "id": "scene_01",
+    "title": "西城空城計",
+    "source_start_quote": "孔明乃披鶴氅，戴綸巾，引二小童攜琴一張，於城上敵樓前，憑欄而坐，焚香操琴。",
+    "required_events": [
+      "街亭失守後，孔明退守西城，身邊只剩少量兵力和文官，司馬懿率大軍逼近。",
+      "孔明判斷無力正面迎戰，命令藏起旌旗、打開四門，讓士兵扮成百姓洒掃街道，自己登城撫琴。",
+      "司馬懿遠望城中異常安靜，認為一向謹慎的孔明必設伏兵，因而不敢進城，反令魏軍退去。",
+      "魏軍離開後，孔明帶軍撤往漢中；他的冒險計策因此保全了蜀軍。"
+    ],
+    "target_chars": 300,
+    "source_start": 0,
+    "source_end": 27533
+  },
+  "text": "曹丕病得很重，叫曹真、陈群、司马懿到身边，也叫曹叡来。曹丕看着儿子说：“我病重，今后不能再陪你了。你还小，今后要靠他们。你们要同心，帮他做好大事。”三人都说：“我们会尽力。”曹丕又说：“许昌的城门忽然倒了，这不是好事。”曹休也来到身边，曹丕对他们说：“你们都是国中重要的人，要一起帮叡。”说完，曹丕病死，年四十。曹真、陈群、司马懿扶曹叡做了魏国皇帝。曹丕号文帝，甄氏号文昭后。曹叡又叫司马懿去雍、凉，管那里的军马。消息到了成都，孔明说：“曹叡年少，我不在意；但司马懿很有才，日后蜀国会有大患。”马谡说：“可去魏国各处说司马懿要反，曹叡就会杀他。”孔明说：“好，就这样做。”",
+  "review": {
+    "source_fidelity": 0.96,
+    "naturalness": 0.9,
+    "readability": 0.93,
+    "omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [
+      "“曹丕号文帝”略显不自然，宜改为“曹丕谥号文帝”或“追谥曹丕为文帝”。"
+    ],
+    "verdict": "pass"
+  },
+  "attempts": [
+    {
+      "stage": "adapt",
+      "text": "街亭失守后，孔明退到西城。身边只有很少的士兵和几个文官，司马懿却带着大军来了。孔明知道，自己不能和魏军打。他想了一个很险的办法：把城里的旗子都收起来，打开四个城门，让士兵穿上百姓的衣服，在街上慢慢扫地。自己坐在城楼上，身边只有两个小孩，一个拿剑，一个拿扇。孔明不说话，只低头弹琴。魏军到了城外，看见城里没有人跑，也没有人守门，心里很怕。司马懿想：孔明平时做事很小心，今天却把城门全打开，一定有很多士兵藏在里面。他不敢进城，马上叫大军退走。魏军走远后，孔明才放下琴，带着士兵向汉中走去。大家这才知道，这个办法虽然很险，却救了蜀军。",
+      "review": {
+        "source_fidelity": 0.98,
+        "naturalness": 0.97,
+        "readability": 0.98,
+        "omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [
+          "mechanical readability gate: 31.17% above-level, maximum 20%; replace where natural: 亭低全兵办却只向城士失头姓孔守定己带弹心怕才扫把收救敢旗法然琴自藏虽街让退险"
+        ],
+        "verdict": "revise",
+        "harness_decision": "rejected_by_mechanical_readability_gate"
+      }
+    },
+    {
+      "stage": "repair_01",
+      "text": "要地被人占去后，丞相到西城。身边不过二千五百人和几个文官，司马懿领人马来到城外。丞相知人少，不宜出战，就叫门上撤下旗号，四门大开，又令二十人装成百姓，在路旁慢慢打扫。丞相穿白衣，坐在楼上奏乐；身边两个小孩，一人拿剑，一人拿扇。魏国人马来到门前，见门开着，路上有人走动，没人相迎，都不明白。司马懿知丞相平日做事谨慎，今日这样做，必有人在，就叫大军回走。魏国人马走远后，丞相领人往汉中去。大家明白，丞相用空城和乐声，吓得来人回身，人马安然回汉中。",
+      "review": {
+        "source_fidelity": 0.94,
+        "naturalness": 0.93,
+        "readability": 0.94,
+        "omissions": [],
+        "unsupported_additions": [
+          "将麈尾改写为扇子。"
+        ],
+        "distortions": [],
+        "language_problems": [
+          "mechanical length gate: 191 CJK, required 210-390"
+        ],
+        "verdict": "revise",
+        "harness_decision": "rejected_by_mechanical_length_gate"
+      }
+    },
+    {
+      "stage": "repair_02",
+      "text": "街亭失守后，丞相退到西城。城中只有二千五百名士兵和几名文官，司马懿又带大军逼近。丞相知道兵少，不能出城交战，便藏起旗号，打开四座城门，命每门留下二十名士兵，换上百姓衣服，低头打扫街道，不许乱动。丞相披着白色外衣，戴着头巾，带两个小童坐在城楼前：一人捧剑，一人手执麈尾。他焚香弹琴，神色安静。魏军到城下，见城门全开，城中无人迎战，急忙报告司马懿。司马懿想，丞相一向谨慎，今日却如此安静，城中一定有伏兵，于是下令全军退走。魏军走远后，丞相拍手大笑，众官才知道这是空城之计。丞相随即带军和百姓离开西城，向汉中退去。",
+      "review": {
+        "source_fidelity": 0.97,
+        "naturalness": 0.98,
+        "readability": 0.98,
+        "omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [
+          "mechanical readability gate: 42.99% above-level, maximum 20%; replace where natural: 之乱于交亭令伏众低便全兵千即却又只向命城士失头如姓守安定尾带座弹急慎战戴才执扫报披拍换捧旗无此每焚琴留神离空童色藏街计谨"
+        ],
+        "verdict": "revise",
+        "harness_decision": "rejected_by_mechanical_readability_gate"
+      }
+    },
+    {
+      "stage": "fresh_rewrite",
+      "text": "曹丕病得很重，叫曹真、陈群、司马懿到身边，也叫曹叡来。曹丕看着儿子说：“我病重，今后不能再陪你了。你还小，今后要靠他们。你们要同心，帮他做好大事。”三人都说：“我们会尽力。”曹丕又说：“许昌的城门忽然倒了，这不是好事。”曹休也来到身边，曹丕对他们说：“你们都是国中重要的人，要一起帮叡。”说完，曹丕病死，年四十。曹真、陈群、司马懿扶曹叡做了魏国皇帝。曹丕号文帝，甄氏号文昭后。曹叡又叫司马懿去雍、凉，管那里的军马。消息到了成都，孔明说：“曹叡年少，我不在意；但司马懿很有才，日后蜀国会有大患。”马谡说：“可去魏国各处说司马懿要反，曹叡就会杀他。”孔明说：“好，就这样做。”",
+      "review": {
+        "source_fidelity": 0.96,
+        "naturalness": 0.9,
+        "readability": 0.93,
+        "omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [
+          "“曹丕号文帝”略显不自然，宜改为“曹丕谥号文帝”或“追谥曹丕为文帝”。"
+        ],
+        "verdict": "pass"
+      }
+    }
+  ],
+  "resolved": true
+}

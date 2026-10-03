@@ -1,0 +1,71 @@
+{
+  "id": "ja-69bca44c707cdf61-d352be1cf03e8efa",
+  "entry_id": "ja-69bca44c707cdf61",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-69bca44c707cdf61",
+      "headword": "物",
+      "reading": "もの",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-69bca44c707cdf61-1",
+          "definition": "a person or thing; people associated with a household"
+        },
+        {
+          "id": "ja-69bca44c707cdf61-2",
+          "definition": "a thing; an entity or matter"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "家のものは勉強家だと思っているが、実際はそうでもない。",
+        "gloss": "people; members of the household",
+        "sense_id": "ja-69bca44c707cdf61-1"
+      },
+      {
+        "sentence": "吾輩はこの家で、主人以外のものには不人望だった。",
+        "gloss": "people; things",
+        "sense_id": "ja-69bca44c707cdf61-1"
+      },
+      {
+        "sentence": "その時に「妙なものだ」と思った気持ちは、今でも残っている。",
+        "gloss": "thing",
+        "sense_id": "ja-69bca44c707cdf61-2"
+      },
+      {
+        "sentence": "特に、時々吾輩と同じ布団で寝る子供は、ひどいものである。",
+        "gloss": "thing; matter",
+        "sense_id": "ja-69bca44c707cdf61-2"
+      },
+      {
+        "sentence": "　吾輩が尊敬している、筋向の白君は、会うたびに「人間ほど愛情のないものはない」と言う。",
+        "gloss": "thing; entity",
+        "sense_id": "ja-69bca44c707cdf61-2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-69bca44c707cdf61",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "もの broadly refers to a thing or entity; when it refers to people, it means a person or people. With 家の, it can mean the people who belong to or are associated with that household.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "e09e177977278bf6f62b7542a496a3d9646502c45303ddc151f5d309c0699d77",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "031775c813ff02c09513bc7c786619a6ba79583d40bc2e198a3e7a00200891d7"
+}

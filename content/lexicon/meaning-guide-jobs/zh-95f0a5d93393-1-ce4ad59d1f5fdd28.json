@@ -1,0 +1,36 @@
+{
+  "id": "zh-95f0a5d93393-1-ce4ad59d1f5fdd28",
+  "entry_id": "zh-95f0a5d93393-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-95f0a5d93393-1",
+      "headword": "桓帝",
+      "kind": "name",
+      "reading": "Huán Dì",
+      "senses": [
+        {
+          "id": "zh-95f0a5d93393-1-s1",
+          "definition": "Emperor Huan"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "桓帝在位时，压制正直贤能的人，却特别信任宦官。",
+        "gloss": "Emperor Huan",
+        "sense_id": "zh-95f0a5d93393-1-s1"
+      },
+      {
+        "sentence": "桓帝死后，窦武和陈蕃共辅佐新皇帝。",
+        "gloss": "Emperor Huan",
+        "sense_id": "zh-95f0a5d93393-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "75fac37f1af5408db607d563f1150b2c684f67044a3e728cdb828c36d79b76ba"
+}

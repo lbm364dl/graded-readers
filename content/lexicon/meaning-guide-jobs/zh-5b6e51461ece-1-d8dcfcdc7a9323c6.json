@@ -1,0 +1,31 @@
+{
+  "id": "zh-5b6e51461ece-1-d8dcfcdc7a9323c6",
+  "entry_id": "zh-5b6e51461ece-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5b6e51461ece-1",
+      "headword": "实鉴",
+      "kind": "word",
+      "reading": "shíjiàn",
+      "senses": [
+        {
+          "id": "zh-5b6e51461ece-1-s1",
+          "definition": "to truly witness; to bear witness to"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇天后土，实鉴此心；背义忘恩，天人共戮。",
+        "gloss": "truly bear witness to",
+        "sense_id": "zh-5b6e51461ece-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "49eff9b739e92905b05792e8cbf3dacf188ad7d7db28e6c0897a304a61b20ea6"
+}

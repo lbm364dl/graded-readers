@@ -1,0 +1,32 @@
+{
+  "id": "ja-d685619020915d30-77360bec80811247",
+  "entry_id": "ja-d685619020915d30",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d685619020915d30",
+      "headword": "動かずにいる",
+      "reading": "うごかずにいる",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-d685619020915d30-1",
+          "definition": "to remain still; to stay without moving"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は動かずにいたが、絵は妙な色で、目もなく、目の見えない猫なのか、寝ている猫なのか分からない。",
+        "gloss": "remained without moving",
+        "sense_id": "ja-d685619020915d30-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3a5157bf31b1e933fc34c913a285f1b0f4f94a02a56594587b64a428c574008d"
+}

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff3f2-8207-7e03-bd39-2a87169dc7ff"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.94,\"naturalness\":0.94,\"readability\":0.91,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"将孙权接受蜀国报丧并派使者致祭，误写成孙权派人报丧。\"],\"language_problems\":[\"篇幅明显超过750字目标的130%上限，压缩程度不足。\"],\"verdict\":\"revise\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":29190,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":624,"reasoning_output_tokens":516}}

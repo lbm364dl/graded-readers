@@ -1,0 +1,100 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_039-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 735,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了程普赶来争功、甘宁背射黄祖等细节。",
+      "classification": "material",
+      "reason": "省略了程普出现及甘宁担心被争功而背射黄祖的动机，削弱了黄祖被杀的具体因果和甘宁的重要 characterization。",
+      "required_fix": "补充程普赶来争功，以及甘宁因担心争功而背射黄祖并斩首献给孙权的情节。"
+    },
+    {
+      "omission_note": "省略了博望坡具体伏兵任务及关羽放过前军、专烧粮草的部署。",
+      "classification": "material",
+      "reason": "这些部署构成火攻成功的关键战术因果，说明关羽为何放过前军并专门焚烧粮草；省略后战斗机制不完整。",
+      "required_fix": "补充关羽、张飞、关平和刘封等部的具体伏兵与引火任务，尤其说明关羽放过前军、攻击后方粮草的部署。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将刘琦的继母明确称为“蔡氏”，原文仅称“继母”。",
+      "classification": "material",
+      "reason": "原文未提供“蔡氏”这一身份信息，属于真实的无依据人物名称添加。",
+      "required_fix": "将“继母蔡氏”改为“继母”，不要明确指称为蔡氏。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了程普赶来争功、甘宁背射黄祖等细节。",
+      "classification": "material",
+      "reason": "省略了程普出现及甘宁担心被争功而背射黄祖的动机，削弱了黄祖被杀的具体因果和甘宁的重要 characterization。",
+      "required_fix": "补充程普赶来争功，以及甘宁因担心争功而背射黄祖并斩首献给孙权的情节。"
+    },
+    {
+      "omission_note": "省略了博望坡具体伏兵任务及关羽放过前军、专烧粮草的部署。",
+      "classification": "material",
+      "reason": "这些部署构成火攻成功的关键战术因果，说明关羽为何放过前军并专门焚烧粮草；省略后战斗机制不完整。",
+      "required_fix": "补充关羽、张飞、关平和刘封等部的具体伏兵与引火任务，尤其说明关羽放过前军、攻击后方粮草的部署。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将刘琦的继母明确称为“蔡氏”，原文仅称“继母”。",
+      "classification": "material",
+      "reason": "原文未提供“蔡氏”这一身份信息，属于真实的无依据人物名称添加。",
+      "required_fix": "将“继母蔡氏”改为“继母”，不要明确指称为蔡氏。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 778,
+      "review": {
+        "source_fidelity": 7.8,
+        "naturalness": 7.9,
+        "readability": 8.6,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "“荀彧、徐庶警告刘备已有诸葛亮辅佐”将被警告者误写成刘备，原文是他们向曹操等人说明刘备有诸葛亮辅佐、不可轻敌。",
+          "原文百姓称颂的是刘备礼贤用人的功劳，修复文改成直接称颂孔明，略微改变了人物关系与功劳归属。"
+        ],
+        "language_problems": [
+          "“荀彧、徐庶警告刘备已有诸葛亮辅佐，不可轻敌”语法和语境均不自然，容易误解为二人向刘备发出警告。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 735,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

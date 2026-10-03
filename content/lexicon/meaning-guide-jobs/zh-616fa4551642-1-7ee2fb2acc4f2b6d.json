@@ -1,0 +1,31 @@
+{
+  "id": "zh-616fa4551642-1-7ee2fb2acc4f2b6d",
+  "entry_id": "zh-616fa4551642-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-616fa4551642-1",
+      "headword": "权力",
+      "kind": "word",
+      "reading": "quánlì",
+      "senses": [
+        {
+          "id": "zh-616fa4551642-1-s1",
+          "definition": "power; authority to control or direct"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "宦官曹节等人掌握权力，常常干涉朝廷的事。",
+        "gloss": "power",
+        "sense_id": "zh-616fa4551642-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f716d0751c8473dc9ee28494aa143b05ebb01830617607f44d40b024e52d5bbe"
+}

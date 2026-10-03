@@ -1,0 +1,31 @@
+{
+  "id": "zh-5ca4682d5d1f-1-6bc1f1fafcbf22fe",
+  "entry_id": "zh-5ca4682d5d1f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5ca4682d5d1f-1",
+      "headword": "金钱",
+      "kind": "word",
+      "reading": "jīnqián",
+      "senses": [
+        {
+          "id": "zh-5ca4682d5d1f-1-s1",
+          "definition": "money"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角暗中送金钱，联系朝中的封谞，准备做内应。",
+        "gloss": "money",
+        "sense_id": "zh-5ca4682d5d1f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "12e70035ab9724d92c5c42ff8f1c0820b3ef3d65a74231edbbad56ac8bb7a0e2"
+}

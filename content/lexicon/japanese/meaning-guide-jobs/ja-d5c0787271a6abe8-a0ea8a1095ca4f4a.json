@@ -1,0 +1,32 @@
+{
+  "id": "ja-d5c0787271a6abe8-a0ea8a1095ca4f4a",
+  "entry_id": "ja-d5c0787271a6abe8",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d5c0787271a6abe8",
+      "headword": "輝く",
+      "reading": "かがやく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d5c0787271a6abe8-1",
+          "definition": "to shine; to sparkle"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "太陽の光が黒い毛を照らし、毛の間から火が出るように輝いている。",
+        "gloss": "is shining brilliantly",
+        "sense_id": "ja-d5c0787271a6abe8-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f92400db90b2053ed9eb581e7b7abe4337ea9db337e523d1723b5429779d2d33"
+}

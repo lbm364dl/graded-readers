@@ -1,0 +1,31 @@
+{
+  "id": "zh-9031e8f92c0e-1-81f276e43003d689",
+  "entry_id": "zh-9031e8f92c0e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9031e8f92c0e-1",
+      "headword": "势穷力乏",
+      "kind": "expression",
+      "reading": "shì qióng lì fá",
+      "senses": [
+        {
+          "id": "zh-9031e8f92c0e-1-s1",
+          "definition": "to be exhausted and lacking strength"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇甫嵩说，张梁、张宝势穷力乏，必会逃往广宗依附张角。",
+        "gloss": "to be exhausted and lacking strength",
+        "sense_id": "zh-9031e8f92c0e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "692cc38328e013b7dafbf365fcb208a1e27ab6688846d11d28c776dd42714f8f"
+}

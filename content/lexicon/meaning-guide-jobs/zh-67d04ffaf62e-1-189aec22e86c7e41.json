@@ -1,0 +1,31 @@
+{
+  "id": "zh-67d04ffaf62e-1-189aec22e86c7e41",
+  "entry_id": "zh-67d04ffaf62e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-67d04ffaf62e-1",
+      "headword": "抓",
+      "kind": "word",
+      "reading": "zhuā",
+      "senses": [
+        {
+          "id": "zh-67d04ffaf62e-1-s1",
+          "definition": "to catch or arrest"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”军队带走卢植后，关羽说：“卢植已被抓，我们失去了依靠，只能回涿郡。",
+        "gloss": "arrest",
+        "sense_id": "zh-67d04ffaf62e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "70332736cd25a82358f1e547d77a4c237c42e7ee35922653258303c6a94dd49e"
+}

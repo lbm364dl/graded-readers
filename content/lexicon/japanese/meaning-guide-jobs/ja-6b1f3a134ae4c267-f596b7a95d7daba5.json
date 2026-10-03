@@ -1,0 +1,32 @@
+{
+  "id": "ja-6b1f3a134ae4c267-f596b7a95d7daba5",
+  "entry_id": "ja-6b1f3a134ae4c267",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-6b1f3a134ae4c267",
+      "headword": "三日目",
+      "reading": "みっかめ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-6b1f3a134ae4c267-1",
+          "definition": "the third day"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ところが、その家の書生が三日目に子猫を四匹とも裏の池へ持って行き、捨てて来たそうだ。",
+        "gloss": "the third day",
+        "sense_id": "ja-6b1f3a134ae4c267-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1125c378035e5d4d43084bec01e8d35f5b29159fc42152e85273b9e792a60429"
+}

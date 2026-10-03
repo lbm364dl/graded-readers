@@ -1,0 +1,31 @@
+{
+  "id": "zh-320388b4279e-1-d83610a99a6d7f0d",
+  "entry_id": "zh-320388b4279e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-320388b4279e-1",
+      "headword": "一条",
+      "kind": "word",
+      "reading": "yìtiáo",
+      "senses": [
+        {
+          "id": "zh-320388b4279e-1-s1",
+          "definition": "one; a single item counted with 条"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "殿角忽起狂风，一条大青蛇从梁上飞下，盘在椅上。",
+        "gloss": "one (classifier for long things)",
+        "sense_id": "zh-320388b4279e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a36100de3551c194e994fe1df3a5a29b2da261d1453ef4ae187329e54bc0a84b"
+}

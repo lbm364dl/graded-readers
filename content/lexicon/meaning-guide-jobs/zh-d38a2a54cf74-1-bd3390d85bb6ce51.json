@@ -1,0 +1,31 @@
+{
+  "id": "zh-d38a2a54cf74-1-bd3390d85bb6ce51",
+  "entry_id": "zh-d38a2a54cf74-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d38a2a54cf74-1",
+      "headword": "出力",
+      "kind": "word",
+      "reading": "chūlì",
+      "senses": [
+        {
+          "id": "zh-d38a2a54cf74-1-s1",
+          "definition": "exert or contribute effort"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他因为没有办法为国出力，长长地叹气。",
+        "gloss": "contribute effort",
+        "sense_id": "zh-d38a2a54cf74-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d561ad9aac12eefac743df1df2d91e5d2f8d7e90e0ed6d9023ed1495f410d195"
+}

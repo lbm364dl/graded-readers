@@ -1,0 +1,62 @@
+{
+  "id": "ja-82c7cadace8abc43-1f788f4f84f9e8af",
+  "entry_id": "ja-82c7cadace8abc43",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-82c7cadace8abc43",
+      "headword": "方",
+      "reading": "ほう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-82c7cadace8abc43-1",
+          "definition": "A way, option, or course of action."
+        },
+        {
+          "id": "ja-82c7cadace8abc43-2",
+          "definition": "A direction or side."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "鼠をとるより、寝ている方がよいと思った。",
+        "gloss": "way; option",
+        "sense_id": "ja-82c7cadace8abc43-1"
+      },
+      {
+        "sentence": "明るく暖かい方へ進むと、いつの間にか家の中にいた。",
+        "gloss": "direction; side",
+        "sense_id": "ja-82c7cadace8abc43-2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-82c7cadace8abc43",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "方 means a way, side, or option. With a verb, ～方がよい presents that action as the better choice.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "方",
+        "contribution_en": "The way, side, or option being considered.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "b79f4fa673528de82f880d475c9f7e8e9d2b4be2f41942766d9a789e765d9129",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "181d303e96feffa55bbb1a6d800294a0b658da79caa5ba0456072ab544af8dea"
+}

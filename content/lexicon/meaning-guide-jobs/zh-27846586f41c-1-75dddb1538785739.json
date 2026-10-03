@@ -1,0 +1,31 @@
+{
+  "id": "zh-27846586f41c-1-75dddb1538785739",
+  "entry_id": "zh-27846586f41c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-27846586f41c-1",
+      "headword": "从此",
+      "kind": "word",
+      "reading": "cóngcǐ",
+      "senses": [
+        {
+          "id": "zh-27846586f41c-1-s1",
+          "definition": "from then on; from that point forward"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "这个结果导致宦官从此更加专横，做事也更不受限制，朝廷中的正直之士更加危险。",
+        "gloss": "from then on",
+        "sense_id": "zh-27846586f41c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "194685803200d7f03325c2e60075e208bb36ea9fc155ea14a4a4f5ec25f6df6d"
+}

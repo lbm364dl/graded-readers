@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "policy_version": 3,
+  "source_fingerprint": "53614467e250bcc4377bafb9916271e6b5f93d61ec8dfbb6de388bae1593a3f8",
+  "reviewed": true,
+  "model": "gpt-6-luna",
+  "proposal_effort": "low",
+  "review_effort": "high",
+  "chapters": {
+    "1": [
+      {
+        "first_segment": 1,
+        "last_segment": 3,
+        "text": "看到了",
+        "pinyin": "kàndào le",
+        "meaning_en": "saw; noticed",
+        "explanation_en": "看 is the looking, 到 is a result complement showing that the looking reached perception, and 了 marks the event as completed."
+      },
+      {
+        "first_segment": 25,
+        "last_segment": 26,
+        "text": "看着",
+        "pinyin": "kànzhe",
+        "meaning_en": "looking at; keeping one’s eyes on",
+        "explanation_en": "着 marks 看 as sustained, accompanying action. The object 告示 follows separately."
+      },
+      {
+        "first_segment": 49,
+        "last_segment": 50,
+        "text": "有难",
+        "pinyin": "yǒu nàn",
+        "meaning_en": "be in trouble; face calamity",
+        "explanation_en": "有 is “have” and 难 is the noun nàn, “trouble; calamity,” so having trouble describes being in a crisis. This is not adjective 难 nán, “difficult.”"
+      },
+      {
+        "first_segment": 80,
+        "last_segment": 81,
+        "text": "听了",
+        "pinyin": "tīng le",
+        "meaning_en": "having heard",
+        "explanation_en": "听 names the hearing event, and 了 marks it as completed before 刘备’s reaction."
+      },
+      {
+        "first_segment": 95,
+        "last_segment": 96,
+        "text": "推着",
+        "pinyin": "tuīzhe",
+        "meaning_en": "pushing; as he pushes",
+        "explanation_en": "着 presents 推 as ongoing alongside 关羽’s arrival. The object 车 remains separate."
+      },
+      {
+        "first_segment": 98,
+        "last_segment": 99,
+        "text": "来了",
+        "pinyin": "lái le",
+        "meaning_en": "came; arrived",
+        "explanation_en": "来 gives motion toward the scene, and 了 marks the arrival as a new situation."
+      },
+      {
+        "first_segment": 127,
+        "last_segment": 128,
+        "text": "听了",
+        "pinyin": "tīng le",
+        "meaning_en": "having heard",
+        "explanation_en": "听 names the hearing event, and 了 marks it as completed before 关羽’s reaction."
+      },
+      {
+        "first_segment": 153,
+        "last_segment": 156,
+        "text": "开得很好看",
+        "pinyin": "kāi de hěn hǎokàn",
+        "meaning_en": "bloom very beautifully",
+        "explanation_en": "得 introduces a complement of degree or manner: 很好看 describes how the blossoms 开, “bloom.”"
+      },
+      {
+        "first_segment": 170,
+        "last_segment": 171,
+        "text": "做兄弟",
+        "pinyin": "zuò xiōngdì",
+        "meaning_en": "become brothers",
+        "explanation_en": "Here 做 means “become” or “take on the role of,” and 兄弟 names that relationship. Together they describe forming a brotherhood."
+      },
+      {
+        "first_segment": 184,
+        "last_segment": 185,
+        "text": "拜天地",
+        "pinyin": "bài tiāndì",
+        "meaning_en": "perform the rite before Heaven and Earth",
+        "explanation_en": "拜 means to bow in worship, and 天地 names Heaven and Earth as those honored in this traditional rite."
+      },
+      {
+        "first_segment": 257,
+        "last_segment": 258,
+        "text": "有了",
+        "pinyin": "yǒu le",
+        "meaning_en": "come to have; now have",
+        "explanation_en": "有 means “have,” while 了 marks the attainment of a new state of possession. The quantity that follows stays separate."
+      }
+    ]
+  },
+  "review_digest": "827ed077a553f38034b17b8a718cedebf7b1877274293a3247c4b8c408615681"
+}

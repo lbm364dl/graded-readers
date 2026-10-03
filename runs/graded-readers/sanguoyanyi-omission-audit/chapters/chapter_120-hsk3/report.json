@@ -1,0 +1,66 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_120-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 519,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了陆抗被孙皓罢免兵权及吴国长期残酷统治的具体过程。",
+      "classification": "material",
+      "reason": "这段内容交代了孙皓拒谏、失德暴政持续加剧，以及吴国由内部腐败和民怨走向可被攻取的关键因果，影响后续羊祜判断伐吴时机和晋军出兵的合理性。",
+      "required_fix": "补写陆抗因劝谏被罢免兵权，以及孙皓长期杀害忠臣、穷兵黩武、残酷统治并导致群臣民众恐惧怨恨的过程。"
+    },
+    {
+      "omission_note": "省略了羊祜首次请伐吴被拒、杜预奏表促成最终出兵的具体转折。",
+      "classification": "material",
+      "reason": "这构成晋廷从暂缓伐吴到最终决定出兵的关键转折，也说明杜预奏表如何改变司马炎的判断；省略后，最终大规模出兵的动机和时间线不完整。",
+      "required_fix": "补写羊祜首次请伐吴遭贾充等人反对而未成，以及王濬再请、王渾主张延期后，杜预奏表促使司马炎决定立即伐吴的过程。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了陆抗被孙皓罢免兵权及吴国长期残酷统治的具体过程。",
+      "classification": "material",
+      "reason": "这段内容交代了孙皓拒谏、失德暴政持续加剧，以及吴国由内部腐败和民怨走向可被攻取的关键因果，影响后续羊祜判断伐吴时机和晋军出兵的合理性。",
+      "required_fix": "补写陆抗因劝谏被罢免兵权，以及孙皓长期杀害忠臣、穷兵黩武、残酷统治并导致群臣民众恐惧怨恨的过程。"
+    },
+    {
+      "omission_note": "省略了羊祜首次请伐吴被拒、杜预奏表促成最终出兵的具体转折。",
+      "classification": "material",
+      "reason": "这构成晋廷从暂缓伐吴到最终决定出兵的关键转折，也说明杜预奏表如何改变司马炎的判断；省略后，最终大规模出兵的动机和时间线不完整。",
+      "required_fix": "补写羊祜首次请伐吴遭贾充等人反对而未成，以及王濬再请、王渾主张延期后，杜预奏表促使司马炎决定立即伐吴的过程。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9.5,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 519,
+      "review": {
+        "source_fidelity": 9.5,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

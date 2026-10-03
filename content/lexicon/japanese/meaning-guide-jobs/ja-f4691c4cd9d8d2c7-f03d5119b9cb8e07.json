@@ -1,0 +1,32 @@
+{
+  "id": "ja-f4691c4cd9d8d2c7-f03d5119b9cb8e07",
+  "entry_id": "ja-f4691c4cd9d8d2c7",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-f4691c4cd9d8d2c7",
+      "headword": "ぼら",
+      "reading": "ぼら",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-f4691c4cd9d8d2c7-1",
+          "definition": "mullet; a type of fish"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "我々猫の間では、目刺しの頭でも、ぼらのへそでも、最初に見つけた者が食べる権利を持つ。",
+        "gloss": "mullet fish",
+        "sense_id": "ja-f4691c4cd9d8d2c7-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1bbe9296c738e703d46438e38ea948dd31ddeb0955a7b70fef0e13616b0d6747"
+}

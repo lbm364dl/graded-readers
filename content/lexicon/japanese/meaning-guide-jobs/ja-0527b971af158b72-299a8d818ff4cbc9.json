@@ -1,0 +1,32 @@
+{
+  "id": "ja-0527b971af158b72-299a8d818ff4cbc9",
+  "entry_id": "ja-0527b971af158b72",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-0527b971af158b72",
+      "headword": "そのたびに",
+      "reading": "そのたびに",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-0527b971af158b72-1",
+          "definition": "each time; on each occasion"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "さらに黒は、鼠をとると、人間がそれを取り上げて交番へ持って行き、誰がとったか分からないので、そのたびに五銭をもらう、と言った。",
+        "gloss": "each time",
+        "sense_id": "ja-0527b971af158b72-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f9b75a2708938869d1a00a53d62a3e840cabe10e2cf6f2c9dedf2413b1832c48"
+}

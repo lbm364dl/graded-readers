@@ -1,0 +1,31 @@
+{
+  "id": "zh-1da9ff57e1f0-1-46eec7dfd787bdaa",
+  "entry_id": "zh-1da9ff57e1f0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1da9ff57e1f0-1",
+      "headword": "此人",
+      "kind": "word",
+      "reading": "cǐ rén",
+      "senses": [
+        {
+          "id": "zh-1da9ff57e1f0-1-s1",
+          "definition": "this person"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "何颙也说，汉室将亡，安定天下的必是此人。",
+        "gloss": "this person",
+        "sense_id": "zh-1da9ff57e1f0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fa920eeddc8932f1c21e5cfe0c7a8ee3cca396a755f12bde859faf8cdbc823a9"
+}

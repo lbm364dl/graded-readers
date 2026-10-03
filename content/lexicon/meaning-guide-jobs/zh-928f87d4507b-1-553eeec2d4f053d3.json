@@ -1,0 +1,31 @@
+{
+  "id": "zh-928f87d4507b-1-553eeec2d4f053d3",
+  "entry_id": "zh-928f87d4507b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-928f87d4507b-1",
+      "headword": "命令",
+      "kind": "word",
+      "reading": "mìnglìng",
+      "senses": [
+        {
+          "id": "zh-928f87d4507b-1-s1",
+          "definition": "an order or command"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备接受命令，连夜赶路。",
+        "gloss": "order",
+        "sense_id": "zh-928f87d4507b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b1e7f1a9b2430106fd273c8353963ef9d26453ce4187d5f417c470206bfd5911"
+}

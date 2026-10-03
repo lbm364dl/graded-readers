@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_046-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1180,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "结尾“火攻和诈降的计划便接续完成”略显超出原文，原文只写闞泽答应代写诈降书，尚未呈现计划完成。",
+      "classification": "material",
+      "reason": "改写把尚未完成的计划表述为已经完成，改变了原文结尾的事件状态和结果。",
+      "required_fix": "改为“阚泽欣然答应代写诈降书”，不要表述为火攻和诈降计划已经完成。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "结尾“火攻和诈降的计划便接续完成”略显超出原文，原文只写闞泽答应代写诈降书，尚未呈现计划完成。",
+      "classification": "material",
+      "reason": "改写把尚未完成的计划表述为已经完成，改变了原文结尾的事件状态和结果。",
+      "required_fix": "改为“阚泽欣然答应代写诈降书”，不要表述为火攻和诈降计划已经完成。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1180,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-74b1b63f6839d676-f6130d7e91504e9f",
+  "entry_id": "ja-74b1b63f6839d676",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-74b1b63f6839d676",
+      "headword": "幼稚園",
+      "reading": "ようちえん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-74b1b63f6839d676-1",
+          "definition": "kindergarten; preschool"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "小供は幼稚園へ通い、帰ると歌を歌い、時々吾輩の尻尾を持ち上げる。",
+        "gloss": "kindergarten",
+        "sense_id": "ja-74b1b63f6839d676-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3118e242ecdc71dd89a6f674e84d49ad29067a4c06a1aad57c38b6f11bb2344a"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-5424503857b2-1-53ae5e9fe9a85517",
+  "entry_id": "zh-5424503857b2-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5424503857b2-1",
+      "headword": "下寨",
+      "kind": "word",
+      "reading": "xiàzhài",
+      "senses": [
+        {
+          "id": "zh-5424503857b2-1-s1",
+          "definition": "to set up camp"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备兵少，只得退后三十里下寨。",
+        "gloss": "to set up camp",
+        "sense_id": "zh-5424503857b2-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e749f96a2abe8a8198cdc4170e53539fee3de21be50a3e850a314932973c3f65"
+}

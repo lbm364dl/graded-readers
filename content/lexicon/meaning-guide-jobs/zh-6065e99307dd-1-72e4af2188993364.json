@@ -1,0 +1,31 @@
+{
+  "id": "zh-6065e99307dd-1-72e4af2188993364",
+  "entry_id": "zh-6065e99307dd-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6065e99307dd-1",
+      "headword": "前来",
+      "kind": "word",
+      "reading": "qiánlái",
+      "senses": [
+        {
+          "id": "zh-6065e99307dd-1-s1",
+          "definition": "come to a place where someone is or is expected"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他要进城投军，前来报名。",
+        "gloss": "come forward",
+        "sense_id": "zh-6065e99307dd-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1b9d412188384d04ab0d869c80f7446c931922399702ea2a7c596ad2325f9f74"
+}

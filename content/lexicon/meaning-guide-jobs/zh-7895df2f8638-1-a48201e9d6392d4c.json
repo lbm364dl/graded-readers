@@ -1,0 +1,31 @@
+{
+  "id": "zh-7895df2f8638-1-a48201e9d6392d4c",
+  "entry_id": "zh-7895df2f8638-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7895df2f8638-1",
+      "headword": "店里",
+      "kind": "word",
+      "reading": "diànlǐ",
+      "senses": [
+        {
+          "id": "zh-7895df2f8638-1-s1",
+          "definition": "inside a shop"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "不一会儿，一个大汉推车来到店里。",
+        "gloss": "shop",
+        "sense_id": "zh-7895df2f8638-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "93eced2651f431bf486014bf84ebba735bdeeb9c965b0b26ededc908eefefcb9"
+}

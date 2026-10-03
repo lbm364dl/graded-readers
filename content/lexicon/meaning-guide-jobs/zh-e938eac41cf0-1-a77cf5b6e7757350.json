@@ -1,0 +1,31 @@
+{
+  "id": "zh-e938eac41cf0-1-a77cf5b6e7757350",
+  "entry_id": "zh-e938eac41cf0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e938eac41cf0-1",
+      "headword": "心生",
+      "kind": "construction",
+      "reading": "xīnshēng",
+      "senses": [
+        {
+          "id": "zh-e938eac41cf0-1-s1",
+          "definition": "for a thought, feeling, or intention to arise in the mind"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "老人把三卷天书交给他，要他替上天教化百姓、救助世人；若心生别念，便会受罚。",
+        "gloss": "arise in the mind",
+        "sense_id": "zh-e938eac41cf0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2b047cbc920eaa2e9e1df1102ceea376cd2eabb18b259b0815e262777ea71ec0"
+}

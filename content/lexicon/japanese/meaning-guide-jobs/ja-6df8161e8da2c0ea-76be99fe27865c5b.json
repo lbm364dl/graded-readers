@@ -1,0 +1,32 @@
+{
+  "id": "ja-6df8161e8da2c0ea-76be99fe27865c5b",
+  "entry_id": "ja-6df8161e8da2c0ea",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-6df8161e8da2c0ea",
+      "headword": "食う",
+      "reading": "くう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-6df8161e8da2c0ea-1",
+          "definition": "to eat"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "書生は時々、猫を捕まえて煮て食うという。",
+        "gloss": "eat",
+        "sense_id": "ja-6df8161e8da2c0ea-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2b6484264f4264c25036e83f0d5a4681a48c6b8cc7980db78a80d5f04fba8014"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-e15dbf558144e758-1b4e5e58028a01f7",
+  "entry_id": "ja-e15dbf558144e758",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e15dbf558144e758",
+      "headword": "割り込む",
+      "reading": "わりこむ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e15dbf558144e758-1",
+          "definition": "to push or squeeze one's way into a space or group"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は二人の間に自分の入る場所を見つけ、どうにか割り込む。",
+        "gloss": "squeeze in; wedge oneself in",
+        "sense_id": "ja-e15dbf558144e758-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ace9532e7185d223838eff034347b15be65c24103938ca181b0440cc5797107c"
+}

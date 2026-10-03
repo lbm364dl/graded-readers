@@ -1,0 +1,31 @@
+{
+  "id": "zh-b5b90e1d1c44-1-7aa019dc1b9fce48",
+  "entry_id": "zh-b5b90e1d1c44-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b5b90e1d1c44-1",
+      "headword": "退入",
+      "kind": "construction",
+      "reading": "tuìrù",
+      "senses": [
+        {
+          "id": "zh-b5b90e1d1c44-1-s1",
+          "definition": "to retreat into a place"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军战事不利，退入长社，用草扎营。",
+        "gloss": "retreat into",
+        "sense_id": "zh-b5b90e1d1c44-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "884db09fec69097aeb32bd96d4f662bf2267d31e0102b5084533c35fdee85941"
+}

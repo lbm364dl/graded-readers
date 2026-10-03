@@ -1,0 +1,31 @@
+{
+  "id": "zh-794a49d55773-1-11bae484b786961a",
+  "entry_id": "zh-794a49d55773-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-794a49d55773-1",
+      "headword": "例外",
+      "kind": "word",
+      "reading": "lìwài",
+      "senses": [
+        {
+          "id": "zh-794a49d55773-1-s1",
+          "definition": "be an exception; be exempt from a rule"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "违反禁令的人，不管有没有权势，都要受罚，谁也不能例外。",
+        "gloss": "be an exception",
+        "sense_id": "zh-794a49d55773-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "22f517e9c6bde96f5f932dd7186bfe856a17572c5de7bb81a84b7139a1d733de"
+}

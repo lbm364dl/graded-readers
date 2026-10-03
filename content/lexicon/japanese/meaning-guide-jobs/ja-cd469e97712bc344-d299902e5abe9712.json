@@ -1,0 +1,37 @@
+{
+  "id": "ja-cd469e97712bc344-d299902e5abe9712",
+  "entry_id": "ja-cd469e97712bc344",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-cd469e97712bc344",
+      "headword": "気分",
+      "reading": "きぶん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-cd469e97712bc344-1",
+          "definition": "a feeling or physical condition"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "すると、速く動き出し、目が変になって気分も悪くなった。",
+        "gloss": "feeling; mood",
+        "sense_id": "ja-cd469e97712bc344-1"
+      },
+      {
+        "sentence": "子供が騒ぐ時や、つまらなくて気分が悪い時、吾輩はここへ来て休む。",
+        "gloss": "feeling; physical condition",
+        "sense_id": "ja-cd469e97712bc344-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7c1028a51b7126bb74e143025c968d7e6f2047a8224f813beb4f6eaa14556f2c"
+}

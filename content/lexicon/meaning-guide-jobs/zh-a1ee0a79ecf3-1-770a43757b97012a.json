@@ -1,0 +1,36 @@
+{
+  "id": "zh-a1ee0a79ecf3-1-770a43757b97012a",
+  "entry_id": "zh-a1ee0a79ecf3-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a1ee0a79ecf3-1",
+      "headword": "留",
+      "kind": "word",
+      "reading": "liú",
+      "senses": [
+        {
+          "id": "zh-a1ee0a79ecf3-1-s1",
+          "definition": "to stay; to remain in a place"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "卢植很高兴，让他留在帐前听候调遣。",
+        "gloss": "to stay",
+        "sense_id": "zh-a1ee0a79ecf3-1-s1"
+      },
+      {
+        "sentence": "刘胜的儿子刘贞曾被封为涿鹿亭侯，后来因未按规定缴纳酬金而失侯，这一支便留在涿县。",
+        "gloss": "to remain",
+        "sense_id": "zh-a1ee0a79ecf3-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "361119f5821811577fa8282173391fe82b426172cc1b98d06ceffb6de4206f32"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-0edfcca75076-1-09f4eff9165102d2",
+  "entry_id": "zh-0edfcca75076-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-0edfcca75076-1",
+      "headword": "并赏",
+      "kind": "construction",
+      "reading": "bìngshǎng",
+      "senses": [
+        {
+          "id": "zh-0edfcca75076-1-s1",
+          "definition": "to additionally reward"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘焉亲自迎接，并赏劳将士。",
+        "gloss": "and reward",
+        "sense_id": "zh-0edfcca75076-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d18152ec6a6032b4d94e783cee27a382bc39b7e5462388e828b0ca770ec6408e"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-9c04b94a212cabbc-38f6775e083b18fb",
+  "entry_id": "ja-9c04b94a212cabbc",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9c04b94a212cabbc",
+      "headword": "ことである",
+      "reading": "ことである",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-9c04b94a212cabbc-1",
+          "definition": "Formal construction presenting an action or state as the matter in question; to be that..., to consist in..."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "しかし一番心地よいのは、夜になると家の小供の寝床にもぐり込み、一緒に眠ることである。",
+        "gloss": "is the matter of; consists in",
+        "sense_id": "ja-9c04b94a212cabbc-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ca1770be01304aefc56478d823ed5f076bed459073f3f40236ad6def59195dd6"
+}

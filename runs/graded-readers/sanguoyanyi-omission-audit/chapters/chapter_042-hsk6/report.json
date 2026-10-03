@@ -1,0 +1,66 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_042-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1577,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略曹操追兵在汉津被关羽截住后，因担心刘备已夺江陵而连夜转赴江陵的动机。",
+      "classification": "material",
+      "reason": "删去了曹操转赴江陵的明确动机，削弱了关羽截击后曹操行动的因果关系。",
+      "required_fix": "补充曹操担心刘备先夺江陵，因此不敢追击并连夜率军赶往江陵。"
+    },
+    {
+      "omission_note": "省略曹操与孙权会猎分荆州、结盟的具体诱降意图，以及鲁肃关于荆州战略价值的完整分析。",
+      "classification": "material",
+      "reason": "删去了曹操以分割荆州、永久结盟诱降孙权的核心外交意图；该动机影响后续孙刘联合的战略背景。",
+      "required_fix": "补充曹操邀孙权会猎江夏、共擒刘备、分荆州并结盟的计划，以及鲁肃关于荆州险固富庶、可作为帝王之资的分析。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略曹操追兵在汉津被关羽截住后，因担心刘备已夺江陵而连夜转赴江陵的动机。",
+      "classification": "material",
+      "reason": "删去了曹操转赴江陵的明确动机，削弱了关羽截击后曹操行动的因果关系。",
+      "required_fix": "补充曹操担心刘备先夺江陵，因此不敢追击并连夜率军赶往江陵。"
+    },
+    {
+      "omission_note": "省略曹操与孙权会猎分荆州、结盟的具体诱降意图，以及鲁肃关于荆州战略价值的完整分析。",
+      "classification": "material",
+      "reason": "删去了曹操以分割荆州、永久结盟诱降孙权的核心外交意图；该动机影响后续孙刘联合的战略背景。",
+      "required_fix": "补充曹操邀孙权会猎江夏、共擒刘备、分荆州并结盟的计划，以及鲁肃关于荆州险固富庶、可作为帝王之资的分析。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 8.7,
+    "naturalness": 9.0,
+    "readability": 9.0,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1577,
+      "review": {
+        "source_fidelity": 8.7,
+        "naturalness": 9.0,
+        "readability": 9.0,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

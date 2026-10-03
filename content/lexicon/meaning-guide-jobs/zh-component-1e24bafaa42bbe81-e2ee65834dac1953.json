@@ -1,0 +1,26 @@
+{
+  "id": "zh-component-1e24bafaa42bbe81-e2ee65834dac1953",
+  "entry_id": "zh-component-1e24bafaa42bbe81",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-component-1e24bafaa42bbe81",
+      "headword": "呼风",
+      "reading": "hū fēng",
+      "kind": "expression",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-1e24bafaa42bbe81-s1",
+          "definition": "to summon the wind"
+        }
+      ]
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8adff4309ac406b4eb1051b7bae2ea71bb874fe7ff39804e4c99fd364e966075"
+}

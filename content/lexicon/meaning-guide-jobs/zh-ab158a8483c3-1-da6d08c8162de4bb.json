@@ -1,0 +1,31 @@
+{
+  "id": "zh-ab158a8483c3-1-da6d08c8162de4bb",
+  "entry_id": "zh-ab158a8483c3-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ab158a8483c3-1",
+      "headword": "比",
+      "kind": "word",
+      "reading": "bǐ",
+      "senses": [
+        {
+          "id": "zh-ab158a8483c3-1-s1",
+          "definition": "than; compared with"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他身材高大，耳朵很长，双手也比常人长。",
+        "gloss": "than; compared with",
+        "sense_id": "zh-ab158a8483c3-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d903d98abedc1f437c116118ac579dcbe58ac8044c6544a7ba0652c2c3463340"
+}

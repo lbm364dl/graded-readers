@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["verdict", "cards", "notes"],
+  "properties": {
+    "verdict": {"type": "string", "enum": ["pass", "revised"]},
+    "cards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["target_id", "surface", "explanation_zh", "example_zh"],
+        "properties": {
+          "target_id": {"type": "string", "pattern": "^help_[0-9]{3}$"},
+          "surface": {"type": "string", "minLength": 1},
+          "explanation_zh": {"type": "string"},
+          "example_zh": {"type": "string"}
+        }
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1}
+    }
+  }
+}

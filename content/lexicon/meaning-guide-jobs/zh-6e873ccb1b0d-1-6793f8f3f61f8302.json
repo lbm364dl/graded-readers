@@ -1,0 +1,31 @@
+{
+  "id": "zh-6e873ccb1b0d-1-6793f8f3f61f8302",
+  "entry_id": "zh-6e873ccb1b0d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6e873ccb1b0d-1",
+      "headword": "应对",
+      "kind": "word",
+      "reading": "yìngduì",
+      "senses": [
+        {
+          "id": "zh-6e873ccb1b0d-1-s1",
+          "definition": "to respond to or deal with a situation or opponent"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他对关羽、张飞说，敌众我寡，必须用伏兵应对。",
+        "gloss": "to deal with; respond to",
+        "sense_id": "zh-6e873ccb1b0d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b6d7d336ca467e4058e466062687f1fef9b66a8d4a6b4f4ade2088c2407b4a89"
+}

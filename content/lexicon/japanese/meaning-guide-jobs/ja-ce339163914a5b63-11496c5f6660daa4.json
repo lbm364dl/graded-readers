@@ -1,0 +1,32 @@
+{
+  "id": "ja-ce339163914a5b63-11496c5f6660daa4",
+  "entry_id": "ja-ce339163914a5b63",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ce339163914a5b63",
+      "headword": "真ん丸い",
+      "reading": "まんまるい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-ce339163914a5b63-1",
+          "definition": "perfectly round"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が夢中で見つめていると、黒は突然、真ん丸い目を開いた。",
+        "gloss": "perfectly round",
+        "sense_id": "ja-ce339163914a5b63-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "dee6c344234da42e0bd62a3eadb2e4f369a01598ca9be1b9288a562d1e985dd7"
+}

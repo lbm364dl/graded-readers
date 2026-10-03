@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_036-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1172,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "删去了徐庶与刘表、司马徽相识及由司马徽指引投奔刘备的过程，削弱了人物来历的完整性。",
+      "classification": "material",
+      "reason": "这段内容交代徐庶为何离开刘表、如何受司马徽指引投奔刘备，并为后文提及水镜先生及刘备得到徐庶辅佐提供背景，涉及人物动机与来历。",
+      "required_fix": "补充徐庶见刘表、连夜投奔司马徽，并由司马徽指引其投奔刘备的过程。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "删去了徐庶与刘表、司马徽相识及由司马徽指引投奔刘备的过程，削弱了人物来历的完整性。",
+      "classification": "material",
+      "reason": "这段内容交代徐庶为何离开刘表、如何受司马徽指引投奔刘备，并为后文提及水镜先生及刘备得到徐庶辅佐提供背景，涉及人物动机与来历。",
+      "required_fix": "补充徐庶见刘表、连夜投奔司马徽，并由司马徽指引其投奔刘备的过程。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1172,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

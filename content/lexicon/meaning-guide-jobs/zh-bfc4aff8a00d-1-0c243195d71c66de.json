@@ -1,0 +1,36 @@
+{
+  "id": "zh-bfc4aff8a00d-1-0c243195d71c66de",
+  "entry_id": "zh-bfc4aff8a00d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-bfc4aff8a00d-1",
+      "headword": "提",
+      "kind": "word",
+      "reading": "tí",
+      "senses": [
+        {
+          "id": "zh-bfc4aff8a00d-1-s1",
+          "definition": "to hold or carry in the hand"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "一名宦官的叔父夜间提刀行走，也被曹操抓住，用五色棒责打。",
+        "gloss": "to carry",
+        "sense_id": "zh-bfc4aff8a00d-1-s1"
+      },
+      {
+        "sentence": "蹇硕的叔父夜里提刀出行，也被曹操抓住处罚。",
+        "gloss": "to carry or hold up",
+        "sense_id": "zh-bfc4aff8a00d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1427df735635c9373d84db90bee86a00081864c8d33ba3aee75681d56cc41c04"
+}

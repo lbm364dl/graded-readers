@@ -1,0 +1,31 @@
+{
+  "id": "zh-dcc689426667-1-fe89232e7a502ec3",
+  "entry_id": "zh-dcc689426667-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-dcc689426667-1",
+      "headword": "火焰",
+      "kind": "word",
+      "reading": "huǒyàn",
+      "senses": [
+        {
+          "id": "zh-dcc689426667-1-s1",
+          "definition": "flame"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "二人各引兵攻打营寨，火焰冲天，黄巾军惊慌逃散，来不及上马，也来不及披甲。",
+        "gloss": "flames",
+        "sense_id": "zh-dcc689426667-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f1435cacf61b2fae850c84e6c3264d27526652345b4f3ac350f9e80a6ebbf09c"
+}

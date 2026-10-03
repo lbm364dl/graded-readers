@@ -1,0 +1,32 @@
+{
+  "id": "ja-0a7eec6995a9ff6f-1f83c4a177ec0b99",
+  "entry_id": "ja-0a7eec6995a9ff6f",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-0a7eec6995a9ff6f",
+      "headword": "研ぐ",
+      "reading": "とぐ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-0a7eec6995a9ff6f-1",
+          "definition": "to sharpen or file"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "畳で爪を研いだ時など、細君はひどく怒り、その後は座敷へ入りにくくなった。",
+        "gloss": "sharpened; filed",
+        "sense_id": "ja-0a7eec6995a9ff6f-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "35fe851a0aec41b62679f72a442c0ebc8e76ff5b4eecb637da3aef5f9a1dbcc2"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-3ffcaa67f4e8-1-108b96f08dc35097",
+  "entry_id": "zh-3ffcaa67f4e8-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-3ffcaa67f4e8-1",
+      "headword": "城内外",
+      "kind": "word",
+      "reading": "chéng nèiwài",
+      "senses": [
+        {
+          "id": "zh-3ffcaa67f4e8-1-s1",
+          "definition": "inside and outside the city"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他不避有权势的人，城内外的人从此都不敢再犯禁令，曹操的威名传开。",
+        "gloss": "inside and outside the city",
+        "sense_id": "zh-3ffcaa67f4e8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "480ef24cf59ab899a04a33f6fb826860af9527a04ec334d353f18a52a3515915"
+}

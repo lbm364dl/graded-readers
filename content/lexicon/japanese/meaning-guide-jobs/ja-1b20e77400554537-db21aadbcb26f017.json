@@ -1,0 +1,32 @@
+{
+  "id": "ja-1b20e77400554537-db21aadbcb26f017",
+  "entry_id": "ja-1b20e77400554537",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-1b20e77400554537",
+      "headword": "とも",
+      "reading": "とも",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-1b20e77400554537-1",
+          "definition": "particle marking all members of a group as included"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ところが、その家の書生が三日目に子猫を四匹とも裏の池へ持って行き、捨てて来たそうだ。",
+        "gloss": "all; every one",
+        "sense_id": "ja-1b20e77400554537-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "09dc9f05efe033803f2e7d7278fe3023211c5dc29c4fec75eb31fec4a2a03cd2"
+}

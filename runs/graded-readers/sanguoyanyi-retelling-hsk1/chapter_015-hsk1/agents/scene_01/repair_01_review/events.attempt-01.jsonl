@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff317-b0fb-7ac0-9320-78fad8b6466f"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.96,\"naturalness\":0.94,\"readability\":0.95,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[],\"language_problems\":[\"“魏国的人”略显生硬，改为“魏军”更自然。\"],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":37222,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":395,"reasoning_output_tokens":316}}

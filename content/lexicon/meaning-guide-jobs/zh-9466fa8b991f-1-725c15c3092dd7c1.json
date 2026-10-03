@@ -1,0 +1,36 @@
+{
+  "id": "zh-9466fa8b991f-1-725c15c3092dd7c1",
+  "entry_id": "zh-9466fa8b991f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9466fa8b991f-1",
+      "headword": "地震",
+      "kind": "word",
+      "reading": "dìzhèn",
+      "senses": [
+        {
+          "id": "zh-9466fa8b991f-1-s1",
+          "definition": "earthquake"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "大风、雷雨、冰雹毁坏房屋，地震和海水泛上来，百姓生活很难。",
+        "gloss": "earthquakes",
+        "sense_id": "zh-9466fa8b991f-1-s1"
+      },
+      {
+        "sentence": "建宁四年二月，洛阳地震，海水泛滥，沿海居民被大浪卷走。",
+        "gloss": "earthquake",
+        "sense_id": "zh-9466fa8b991f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "11a2da9c1611f0ff38ace1ec8c958f2016ceb56e61b8c218667a4c1bbe5cf14e"
+}

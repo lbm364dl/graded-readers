@@ -1,0 +1,32 @@
+{
+  "id": "ja-ca4d0b64a2cf83ef-02670fb5775c7e45",
+  "entry_id": "ja-ca4d0b64a2cf83ef",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ca4d0b64a2cf83ef",
+      "headword": "五十銭",
+      "reading": "ごじっせん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-ca4d0b64a2cf83ef-1",
+          "definition": "fifty sen, a former Japanese monetary unit"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "黒の主人はそのお金で一円五十銭ほど得たのに、黒にはろくな食べ物を与えなかったという。",
+        "gloss": "fifty sen",
+        "sense_id": "ja-ca4d0b64a2cf83ef-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7673771a8354d21ff4911c8141385c5ba342fb4766dd8ccdf1e2a63d0ec8bcda"
+}

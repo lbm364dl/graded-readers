@@ -1,0 +1,31 @@
+{
+  "id": "zh-6622b9a265c9-1-1bb50540a811b0c7",
+  "entry_id": "zh-6622b9a265c9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6622b9a265c9-1",
+      "headword": "大志",
+      "kind": "word",
+      "reading": "dàzhì",
+      "senses": [
+        {
+          "id": "zh-6622b9a265c9-1-s1",
+          "definition": "great ambition"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备家里很穷，从小就有大志。",
+        "gloss": "great ambition",
+        "sense_id": "zh-6622b9a265c9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "83b3d0067fb881052f31bb89ef51d9694604b26a1050d61b5058c8aaa96c7db7"
+}

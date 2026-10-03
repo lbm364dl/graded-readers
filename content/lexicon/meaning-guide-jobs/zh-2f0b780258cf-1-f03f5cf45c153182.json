@@ -1,0 +1,31 @@
+{
+  "id": "zh-2f0b780258cf-1-f03f5cf45c153182",
+  "entry_id": "zh-2f0b780258cf-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2f0b780258cf-1",
+      "headword": "张世平",
+      "kind": "name",
+      "reading": "Zhāng Shìpíng",
+      "senses": [
+        {
+          "id": "zh-2f0b780258cf-1-s1",
+          "definition": "Zhang Shiping"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "原来是中山大商张世平、苏双，他们每年往北贩马，最近因盗贼出现而返回。",
+        "gloss": "Zhang Shiping",
+        "sense_id": "zh-2f0b780258cf-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4769c959395c347a83fc3dc1ec1d222ae175de1d6816dd7bae6b76eaa0551283"
+}

@@ -1,0 +1,4147 @@
+{
+  "schema_version": 1,
+  "source_fingerprint": "b478d3f223d56dd7ab842ea7c7f78b8aeb33bef6db1a2a6b48c4501fd7ce43b2",
+  "reviewed": true,
+  "model": "gpt-6-luna",
+  "entries": [
+    {
+      "id": "zh-85a55ed48d6f-1",
+      "headword": "三人",
+      "reading": "sānrén",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-85a55ed48d6f-1-s1",
+          "definition": "three people; the three men",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:203",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:218",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:224",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:263",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:351",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:370",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:485",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:492",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:512"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-3a116815bc9d-1",
+      "headword": "个",
+      "reading": "gè",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-3a116815bc9d-1-s1",
+          "definition": "general classifier for people or things",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:244",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:293"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-e6a5e7b74720-1",
+      "headword": "三百",
+      "reading": "sānbǎi",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-e6a5e7b74720-1-s1",
+          "definition": "three hundred",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:242"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-220ac6c5a360-1",
+      "headword": "一起",
+      "reading": "yìqǐ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-220ac6c5a360-1-s1",
+          "definition": "together; with one another",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:16",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:147",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:297",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:430"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-e1dbc1c99fb4-1",
+      "headword": "一个",
+      "reading": "yí ge",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-e1dbc1c99fb4-1-s1",
+          "definition": "one; a single",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:160"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-45569fc06340-1",
+      "headword": "一会儿",
+      "reading": "yíhuìr",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-45569fc06340-1-s1",
+          "definition": "a short while",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:411"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-5a2650501f0e-1",
+      "headword": "一直",
+      "reading": "yìzhí",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-5a2650501f0e-1-s1",
+          "definition": "continuously; all the while",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:125"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-7a84d120e36d-1",
+      "headword": "一部分",
+      "reading": "yí bùfen",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-7a84d120e36d-1-s1",
+          "definition": "a portion; part of a whole",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:391"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-28372e431e1e-1",
+      "headword": "三路",
+      "reading": "sānlù",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-28372e431e1e-1-s1",
+          "definition": "three routes or forces acting in separate directions",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:433"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-b02dfe2160c6-1",
+      "headword": "不",
+      "reading": "bù",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-b02dfe2160c6-1-s1",
+          "definition": "not; no",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:528"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-c5db37d8556d-1",
+      "headword": "不一会儿",
+      "reading": "bù yíhuìr",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "zh-c5db37d8556d-1-s1",
+          "definition": "before long; after a short time",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:158"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-73e75f11978e-1",
+      "headword": "不久",
+      "reading": "bùjiǔ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-73e75f11978e-1-s1",
+          "definition": "soon; after a short time",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:357"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-39d663792376-1",
+      "headword": "不够",
+      "reading": "búgòu",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-39d663792376-1-s1",
+          "definition": "not enough; insufficient",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:53"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-be3cb45f89bb-1",
+      "headword": "不满",
+      "reading": "bùmǎn",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-be3cb45f89bb-1-s1",
+          "definition": "dissatisfied; discontented",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:518"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-6c4757411935-1",
+      "headword": "不能",
+      "reading": "bùnéng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-6c4757411935-1-s1",
+          "definition": "cannot; be unable to",
+          "occurrences": []
+        },
+        {
+          "id": "zh-6c4757411935-1-s2",
+          "definition": "must not; should not",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:481"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-eab040a4964a-1",
+      "headword": "两个",
+      "reading": "liǎng ge",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-eab040a4964a-1-s1",
+          "definition": "two; a pair of",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:250"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-a6f8cdff6b32-1",
+      "headword": "两边",
+      "reading": "liǎngbiān",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-a6f8cdff6b32-1-s1",
+          "definition": "both sides; the two sides",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:398",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:427"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-0d1785e1f368-1",
+      "headword": "为",
+      "reading": "wèi",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-0d1785e1f368-1-s1",
+          "definition": "for; on behalf of",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:112"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-0d1785e1f368-2",
+      "headword": "为",
+      "reading": "wéi",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-0d1785e1f368-2-s1",
+          "definition": "serve as; take as",
+          "occurrences": []
+        },
+        {
+          "id": "zh-0d1785e1f368-2-s2",
+          "definition": "designate as a sign or signal",
+          "occurrences": []
+        }
+      ]
+    },
+    {
+      "id": "zh-1b919bb47883-1",
+      "headword": "为什么",
+      "reading": "wèishénme",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-1b919bb47883-1-s1",
+          "definition": "why; for what reason",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:131"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-dd30687a4300-1",
+      "headword": "下来",
+      "reading": "xiàlai",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "zh-dd30687a4300-1-s1",
+          "definition": "to continue or persist into a resulting state",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:531"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-4d66edb39272-1",
+      "headword": "乡勇",
+      "reading": "xiāngyǒng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-4d66edb39272-1-s1",
+          "definition": "local militia; village fighters",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:143",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:245",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:294"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-10518f8f0abf-1",
+      "headword": "他们",
+      "reading": "tāmen",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-10518f8f0abf-1-s1",
+          "definition": "they; them",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:34",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:235",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:255",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:289"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-b3d215f03a88-1",
+      "headword": "举",
+      "reading": "jǔ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-b3d215f03a88-1-s1",
+          "definition": "raise; lift up",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:325"
+          ]
+        },
+        {
+          "id": "zh-b3d215f03a88-1-s2",
+          "definition": "recommend someone for office or recognition",
+          "occurrences": []
+        }
+      ]
+    },
+    {
+      "id": "zh-3373916ede8f-1",
+      "headword": "乱",
+      "reading": "luàn",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-3373916ede8f-1-s1",
+          "definition": "disordered; chaotic",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:39"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-b2dd27e84f07-1",
+      "headword": "了",
+      "reading": "le",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "zh-b2dd27e84f07-1-s1",
+          "definition": "marks an action as completed or viewed as a whole",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:6",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:345",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:410",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:535"
+          ]
+        },
+        {
+          "id": "zh-b2dd27e84f07-1-s2",
+          "definition": "marks a resulting, changed, or newly attained state",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:442"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-a04846d365f8-1",
+      "headword": "五百",
+      "reading": "wǔbǎi",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-a04846d365f8-1-s1",
+          "definition": "five hundred",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:291"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-50f5d65d5729-1",
+      "headword": "人",
+      "reading": "rén",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-50f5d65d5729-1-s1",
+          "definition": "person; people",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:8",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:27",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:66",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:98",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:265",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:271",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:277",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:283",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:306",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:372",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:392",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:405",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:429",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:458",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:473"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-8b7b91e0001c-1",
+      "headword": "他",
+      "reading": "tā",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-8b7b91e0001c-1-s1",
+          "definition": "he; him",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:11",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:81",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:92",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:108",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:130",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:166",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:178",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:182",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:330",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:413",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:478"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-a0c7716669b5-1",
+      "headword": "你",
+      "reading": "nǐ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-a0c7716669b5-1-s1",
+          "definition": "you",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:146"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-94f5404441e8-1",
+      "headword": "做",
+      "reading": "zuò",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-94f5404441e8-1-s1",
+          "definition": "do; carry out",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:148",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:298",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:483"
+          ]
+        },
+        {
+          "id": "zh-94f5404441e8-1-s2",
+          "definition": "become; take on a status or relationship",
+          "occurrences": []
+        },
+        {
+          "id": "zh-94f5404441e8-1-s3",
+          "definition": "make; produce",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:272",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:278",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:284"
+          ]
+        },
+        {
+          "id": "zh-94f5404441e8-1-s4",
+          "definition": "serve as; hold a position or role",
+          "occurrences": []
+        }
+      ]
+    },
+    {
+      "id": "zh-f15b3b1db8f4-1",
+      "headword": "交朋友",
+      "reading": "jiāo péngyou",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "zh-f15b3b1db8f4-1-s1",
+          "definition": "make friends; befriend",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:99"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-b704af2f27a3-1",
+      "headword": "京城",
+      "reading": "jīngchéng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-b704af2f27a3-1-s1",
+          "definition": "capital city",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:462"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-2719a8ea304b-1",
+      "headword": "从",
+      "reading": "cóng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-2719a8ea304b-1-s1",
+          "definition": "from",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:331"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-963aa1e26917-1",
+      "headword": "从小",
+      "reading": "cóngxiǎo",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-963aa1e26917-1-s1",
+          "definition": "from childhood; since childhood",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:76"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-e6ad7a1dbc1e-1",
+      "headword": "以后",
+      "reading": "yǐhòu",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-e6ad7a1dbc1e-1-s1",
+          "definition": "afterward; from then on",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:445"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-0f80c1e77b64-1",
+      "headword": "伏兵",
+      "reading": "fúbīng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-0f80c1e77b64-1-s1",
+          "definition": "concealed troops waiting to attack",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:382"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-cbba0a98abd1-1",
+      "headword": "住",
+      "reading": "zhù",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-cbba0a98abd1-1-s1",
+          "definition": "live; reside",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:82"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-f9ef695d7706-1",
+      "headword": "信号",
+      "reading": "xìnhào",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-f9ef695d7706-1-s1",
+          "definition": "signal",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:425"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-aad0261be1e4-1",
+      "headword": "假装",
+      "reading": "jiǎzhuāng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-aad0261be1e4-1-s1",
+          "definition": "pretend; feign",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:414"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-658605835bfc-1",
+      "headword": "也",
+      "reading": "yě",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-658605835bfc-1-s1",
+          "definition": "also; too",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:93",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:199",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:440"
+          ]
+        },
+        {
+          "id": "zh-658605835bfc-1-s2",
+          "definition": "even",
+          "occurrences": []
+        }
+      ]
+    },
+    {
+      "id": "zh-f6c71210522b-1",
+      "headword": "兄弟",
+      "reading": "xiōngdì",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-f6c71210522b-1-s1",
+          "definition": "brothers; sworn brothers in this context",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:226"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-4b97cac39000-1",
+      "headword": "关羽",
+      "reading": "Guān Yǔ",
+      "kind": "name",
+      "senses": [
+        {
+          "id": "zh-4b97cac39000-1-s1",
+          "definition": "Guan Yu, a person’s name",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:190",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:198",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:275",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:313",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:341",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:386"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-b972b33e0f9b-1",
+      "headword": "兵器",
+      "reading": "bīngqì",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-b972b33e0f9b-1-s1",
+          "definition": "weapon",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:267"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-5b43c02074fc-1",
+      "headword": "兵",
+      "reading": "bīng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-5b43c02074fc-1-s1",
+          "definition": "soldiers; troops",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:52"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-f4aafaba3be7-1",
+      "headword": "决定",
+      "reading": "juédìng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-f4aafaba3be7-1-s1",
+          "definition": "decide; make a decision",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:365"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-ddcf6e77b0ee-1",
+      "headword": "准备",
+      "reading": "zhǔnbèi",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-ddcf6e77b0ee-1-s1",
+          "definition": "prepare; get ready",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:296"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-f7bff9ed8550-1",
+      "headword": "刀",
+      "reading": "dāo",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-f7bff9ed8550-1-s1",
+          "definition": "knife; blade",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:279",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:343",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:521"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-daf7b56cd3ae-1",
+      "headword": "刘备",
+      "reading": "Liú Bèi",
+      "kind": "name",
+      "senses": [
+        {
+          "id": "zh-daf7b56cd3ae-1-s1",
+          "definition": "Liu Bei, a historical figure",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:71",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:102",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:121",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:152",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:176",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:192",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:269",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:311",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:364",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:380",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:403",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:423",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:447",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:475",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:498",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:503"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-391aa9b897c3-1",
+      "headword": "剑",
+      "reading": "jiàn",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-391aa9b897c3-1-s1",
+          "definition": "sword",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:273"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-d38a2a54cf74-1",
+      "headword": "出力",
+      "reading": "chūlì",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-d38a2a54cf74-1-s1",
+          "definition": "exert or contribute effort",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:114"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-a7caf88fcaa9-1",
+      "headword": "出战",
+      "reading": "chūzhàn",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-a7caf88fcaa9-1-s1",
+          "definition": "go out to fight; enter battle",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:322"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-8491cffebe61-1",
+      "headword": "出来",
+      "reading": "chūlai",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "zh-8491cffebe61-1-s1",
+          "definition": "come or go out from an enclosed or concealed place",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:431"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-b4e154d2325c-1",
+      "headword": "出钱",
+      "reading": "chūqián",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-b4e154d2325c-1-s1",
+          "definition": "provide or contribute money",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:141"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-52a7c142ec1a-1",
+      "headword": "刘焉",
+      "reading": "Liú Yān",
+      "kind": "name",
+      "senses": [
+        {
+          "id": "zh-52a7c142ec1a-1-s1",
+          "definition": "Liu Yan, a person’s name",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:55",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:61"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-465be82399fe-1",
+      "headword": "到处",
+      "reading": "dàochù",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-465be82399fe-1-s1",
+          "definition": "everywhere; in all places",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:67"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-8f6fd4c5f7a7-1",
+      "headword": "刺中",
+      "reading": "cìzhòng",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "zh-8f6fd4c5f7a7-1-s1",
+          "definition": "stab or thrust and hit the target",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:327"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-d19839645875-1",
+      "headword": "劝",
+      "reading": "quàn",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-d19839645875-1-s1",
+          "definition": "persuade or urge someone to do or not do something",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:477"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-d2a92f0c9c91-1",
+      "headword": "办法",
+      "reading": "bànfǎ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-d2a92f0c9c91-1-s1",
+          "definition": "a way or method of doing something; a means or solution",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:111",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:384"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-d998fc91a172-1",
+      "headword": "卖",
+      "reading": "mài",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-d998fc91a172-1-s1",
+          "definition": "sell; offer goods in exchange for money",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:87"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-d0858c18b5d6-1",
+      "headword": "卢植",
+      "reading": "Lú Zhí",
+      "kind": "name",
+      "senses": [
+        {
+          "id": "zh-d0858c18b5d6-1-s1",
+          "definition": "Lu Zhi, a person’s name",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:450",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:452",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:471"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-e71ce5deab51-1",
+      "headword": "又",
+      "reading": "yòu",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-e71ce5deab51-1-s1",
+          "definition": "again; also",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:240",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:336"
+          ]
+        },
+        {
+          "id": "zh-e71ce5deab51-1-s2",
+          "definition": "used before two coordinated adjectives to mean that both qualities apply",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:515",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:517"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-a9ac5160cd20-1",
+      "headword": "发誓",
+      "reading": "fāshì",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-a9ac5160cd20-1-s1",
+          "definition": "swear; make a solemn promise",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:229"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-33c83afac517-1",
+      "headword": "同心",
+      "reading": "tóngxīn",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-33c83afac517-1-s1",
+          "definition": "of one mind; united in purpose",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:230"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-0271678492b8-1",
+      "headword": "发出",
+      "reading": "fāchū",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-0271678492b8-1-s1",
+          "definition": "send out; give or emit a signal, sound, or other thing",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:424"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-bd45721714ec-1",
+      "headword": "发动",
+      "reading": "fādòng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-bd45721714ec-1-s1",
+          "definition": "launch or set in motion an organized action or undertaking",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:18"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-b61f333b91b2-1",
+      "headword": "发布",
+      "reading": "fābù",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-b61f333b91b2-1-s1",
+          "definition": "announce or issue publicly",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:62"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-10493d06b90f-1",
+      "headword": "发现",
+      "reading": "fāxiàn",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-10493d06b90f-1-s1",
+          "definition": "discover; find out or become aware of",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:376"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-03ecfee0d013-1",
+      "headword": "取得",
+      "reading": "qǔdé",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-03ecfee0d013-1-s1",
+          "definition": "obtain or achieve",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:352"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-7675cc0d27a7-1",
+      "headword": "叹气",
+      "reading": "tànqì",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-7675cc0d27a7-1-s1",
+          "definition": "sigh",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:118",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:126"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-5ff5a4de18dc-1",
+      "headword": "后来",
+      "reading": "hòulái",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-5ff5a4de18dc-1-s1",
+          "definition": "later; afterward",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:10",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:287"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-23e89ba0a143-1",
+      "headword": "变得",
+      "reading": "biànde",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "zh-23e89ba0a143-1-s1",
+          "definition": "become a particular state or quality",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:37"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-3ba01824392f-1",
+      "headword": "只好",
+      "reading": "zhǐhǎo",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-3ba01824392f-1-s1",
+          "definition": "have no choice but to; be forced to",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:486"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-b71852847d38-1",
+      "headword": "叫",
+      "reading": "jiào",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-b71852847d38-1-s1",
+          "definition": "tell or ask someone to do something",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:65"
+          ]
+        },
+        {
+          "id": "zh-b71852847d38-1-s2",
+          "definition": "be called; have a particular name",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:189"
+          ]
+        },
+        {
+          "id": "zh-b71852847d38-1-s3",
+          "definition": "call out; speak loudly to attract attention",
+          "occurrences": []
+        }
+      ]
+    },
+    {
+      "id": "zh-4bc81e480383-1",
+      "headword": "各",
+      "reading": "gè",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-4bc81e480383-1-s1",
+          "definition": "each; every one separately",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:389"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-fe5591bd9cc1-1",
+      "headword": "各地",
+      "reading": "gèdì",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-fe5591bd9cc1-1-s1",
+          "definition": "each place; places throughout an area",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:44"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-63a004af12bf-1",
+      "headword": "同样",
+      "reading": "tóngyàng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-63a004af12bf-1-s1",
+          "definition": "same; alike",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:206"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-2d1d8c1e3895-1",
+      "headword": "后退",
+      "reading": "hòutuì",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-2d1d8c1e3895-1-s1",
+          "definition": "move backward; retreat",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:415"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-c0fe0d7bbc37-1",
+      "headword": "向前",
+      "reading": "xiàngqián",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-c0fe0d7bbc37-1-s1",
+          "definition": "forward; toward the front",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:406"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-26933ec20bb5-1",
+      "headword": "听了",
+      "reading": "tīngle",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "zh-26933ec20bb5-1-s1",
+          "definition": "after hearing or listening",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:153"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-99ae21ea6c39-1",
+      "headword": "去",
+      "reading": "qù",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-99ae21ea6c39-1-s1",
+          "definition": "go; go to do something",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:316",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:366",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:448"
+          ]
+        },
+        {
+          "id": "zh-99ae21ea6c39-1-s2",
+          "definition": "away; marks direction away from a reference point after a verb",
+          "occurrences": []
+        }
+      ]
+    },
+    {
+      "id": "zh-144027b96a6d-1",
+      "headword": "喝酒",
+      "reading": "hējiǔ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-144027b96a6d-1-s1",
+          "definition": "drink alcohol",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:238"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-12404a0b6381-1",
+      "headword": "在",
+      "reading": "zài",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-12404a0b6381-1-s1",
+          "definition": "at; in (introduces the place where an action happens)",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:83",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:103",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:219",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:236",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:395"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-1940119f0571-1",
+      "headword": "多",
+      "reading": "duō",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-1940119f0571-1-s1",
+          "definition": "more than; over (a number)",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:243",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:292"
+          ]
+        },
+        {
+          "id": "zh-1940119f0571-1-s2",
+          "definition": "many; much; a lot",
+          "occurrences": []
+        }
+      ]
+    },
+    {
+      "id": "zh-5e431916de87-1",
+      "headword": "天地",
+      "reading": "tiāndì",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-5e431916de87-1-s1",
+          "definition": "heaven and earth, invoked in a traditional oath or wedding rite",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:222"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-a040d7a9ac47-1",
+      "headword": "园中",
+      "reading": "yuánzhōng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-a040d7a9ac47-1-s1",
+          "definition": "inside the garden",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:237"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-3d7114281f5b-1",
+      "headword": "和",
+      "reading": "hé",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-3d7114281f5b-1-s1",
+          "definition": "and; linking coordinated nouns",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:12",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:89",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:260",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:387"
+          ]
+        },
+        {
+          "id": "zh-3d7114281f5b-1-s2",
+          "definition": "with; together with",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:95",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:145"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-3d7114281f5b-2",
+      "headword": "和",
+      "reading": "hé",
+      "kind": "name",
+      "senses": [
+        {
+          "id": "zh-3d7114281f5b-2-s1",
+          "definition": "part of the era name Guanghe (光和)",
+          "occurrences": []
+        }
+      ]
+    },
+    {
+      "id": "zh-38ea6826c9be-1",
+      "headword": "听从",
+      "reading": "tīngcóng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-38ea6826c9be-1-s1",
+          "definition": "follow or heed (advice, instructions, or a person)",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:56"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-42abb81858b5-1",
+      "headword": "命",
+      "reading": "mìng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-42abb81858b5-1-s1",
+          "definition": "order or command someone to do something",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:43"
+          ]
+        },
+        {
+          "id": "zh-42abb81858b5-1-s2",
+          "definition": "an order or command; instructions one is to follow",
+          "occurrences": []
+        }
+      ]
+    },
+    {
+      "id": "zh-3f1784ce8b75-1",
+      "headword": "商人",
+      "reading": "shāngrén",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-3f1784ce8b75-1-s1",
+          "definition": "merchant; person engaged in trade",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:251"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-795cfc96d4b5-1",
+      "headword": "因为",
+      "reading": "yīnwèi",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-795cfc96d4b5-1-s1",
+          "definition": "because; for the reason that",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:109",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:453"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-a07bd3196be5-1",
+      "headword": "因此",
+      "reading": "yīncǐ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-a07bd3196be5-1-s1",
+          "definition": "therefore; as a result",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:510"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-4af4ba121b86-1",
+      "headword": "围住",
+      "reading": "wéizhù",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "zh-4af4ba121b86-1-s1",
+          "definition": "surround and keep enclosed",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:362"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-d1566afa505a-1",
+      "headword": "国",
+      "reading": "guó",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-d1566afa505a-1-s1",
+          "definition": "country; state",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:113"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-bdbd41e490e2-1",
+      "headword": "地",
+      "reading": "de",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "zh-bdbd41e490e2-1-s1",
+          "definition": "marks an adverbial phrase modifying a verb",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:117"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-30d4711445a2-1",
+      "headword": "坐下",
+      "reading": "zuòxia",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "zh-30d4711445a2-1-s1",
+          "definition": "sit down",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:179"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-0c45484446da-1",
+      "headword": "大事",
+      "reading": "dàshì",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-0c45484446da-1-s1",
+          "definition": "important undertaking",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:149",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:299"
+          ]
+        },
+        {
+          "id": "zh-0c45484446da-1-s2",
+          "definition": "important matter",
+          "occurrences": []
+        }
+      ]
+    },
+    {
+      "id": "zh-6622b9a265c9-1",
+      "headword": "大志",
+      "reading": "dàzhì",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-6622b9a265c9-1-s1",
+          "definition": "great ambition",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:79"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-7babc2df7e89-1",
+      "headword": "大汉",
+      "reading": "dàhàn",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-7babc2df7e89-1-s1",
+          "definition": "a large, powerful man",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:161"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-a7e0612637b1-1",
+      "headword": "大败",
+      "reading": "dàbài",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-a7e0612637b1-1-s1",
+          "definition": "suffer a crushing defeat; be badly defeated",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:437"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-b3e7e6ec3920-1",
+      "headword": "天下",
+      "reading": "tiānxià",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-b3e7e6ec3920-1-s1",
+          "definition": "the world or realm under heaven",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:36"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-a4a5625c7207-1",
+      "headword": "夹攻",
+      "reading": "jiāgōng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-a4a5625c7207-1-s1",
+          "definition": "to attack from several directions at once",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:434"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-50b5b1d2abef-1",
+      "headword": "姓名",
+      "reading": "xìngmíng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-50b5b1d2abef-1-s1",
+          "definition": "a person's full name",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:184"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-afb63a620bdc-1",
+      "headword": "安全",
+      "reading": "ānquán",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-afb63a620bdc-1-s1",
+          "definition": "safe; free from danger or harm",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:441"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-b2a6df7241d4-1",
+      "headword": "官职",
+      "reading": "guānzhí",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-b2a6df7241d4-1-s1",
+          "definition": "an official position or rank",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:501",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:507"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-e97022d759e9-1",
+      "headword": "家里",
+      "reading": "jiālǐ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-e97022d759e9-1-s1",
+          "definition": "one's home or household",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:72"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-2f9d9872e5f9-1",
+      "headword": "就",
+      "reading": "jiù",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "zh-2f9d9872e5f9-1-s1",
+          "definition": "then; already, indicating that something happens or is true from an early or specified time",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:77"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-4862540a2997-1",
+      "headword": "山",
+      "reading": "shān",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-4862540a2997-1-s1",
+          "definition": "a mountain",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:396"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-efdcf8e1544c-1",
+      "headword": "山中",
+      "reading": "shānzhōng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-efdcf8e1544c-1-s1",
+          "definition": "in the mountains; among mountains",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:421"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-fd5db2cf36a9-1",
+      "headword": "带",
+      "reading": "dài",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-fd5db2cf36a9-1-s1",
+          "definition": "to take or bring someone or something along",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:305",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:312",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:371",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:390",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:404"
+          ]
+        },
+        {
+          "id": "zh-fd5db2cf36a9-1-s2",
+          "definition": "to carry or have something with one",
+          "occurrences": []
+        }
+      ]
+    },
+    {
+      "id": "zh-384d1330c027-1",
+      "headword": "平时",
+      "reading": "píngshí",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-384d1330c027-1-s1",
+          "definition": "usually; in ordinary or non-special circumstances",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:86"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-2b0f94e70422-1",
+      "headword": "幽州",
+      "reading": "Yōuzhōu",
+      "kind": "name",
+      "senses": [
+        {
+          "id": "zh-2b0f94e70422-1-s1",
+          "definition": "Youzhou, a historical region in northern China",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:50"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-ab40da59a12d-1",
+      "headword": "庄上",
+      "reading": "zhuāngshàng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-ab40da59a12d-1-s1",
+          "definition": "at or on the estate or manor",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:253"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-7895df2f8638-1",
+      "headword": "店里",
+      "reading": "diànlǐ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-7895df2f8638-1-s1",
+          "definition": "inside a shop",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:164"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-abee4974732a-1",
+      "headword": "建议",
+      "reading": "jiànyì",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-abee4974732a-1-s1",
+          "definition": "a suggestion or piece of advice",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:59"
+          ]
+        },
+        {
+          "id": "zh-abee4974732a-1-s2",
+          "definition": "to suggest or recommend a course of action",
+          "occurrences": []
+        }
+      ]
+    },
+    {
+      "id": "zh-6e067999e240-1",
+      "headword": "开心",
+      "reading": "kāixīn",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-6e067999e240-1-s1",
+          "definition": "happy; pleased",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:155"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-35ca90d06463-1",
+      "headword": "张宝",
+      "reading": "Zhāng Bǎo",
+      "kind": "name",
+      "senses": [
+        {
+          "id": "zh-35ca90d06463-1-s1",
+          "definition": "Zhang Bao",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:13"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-e4039426f9f0-1",
+      "headword": "张梁",
+      "reading": "Zhāng Liáng",
+      "kind": "name",
+      "senses": [
+        {
+          "id": "zh-e4039426f9f0-1-s1",
+          "definition": "Zhang Liang",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:15"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-5508fa98c2d6-1",
+      "headword": "张角",
+      "reading": "Zhāng Jiǎo",
+      "kind": "name",
+      "senses": [
+        {
+          "id": "zh-5508fa98c2d6-1-s1",
+          "definition": "Zhang Jiao",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:0",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:29"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-5508fa98c2d6-2",
+      "headword": "张角",
+      "reading": "Zhāng Jiǎo",
+      "kind": "name",
+      "senses": [
+        {
+          "id": "zh-5508fa98c2d6-2-s1",
+          "definition": "Zhang Jiao",
+          "occurrences": []
+        }
+      ]
+    },
+    {
+      "id": "zh-95264f699dc4-1",
+      "headword": "张飞",
+      "reading": "Zhāng Fēi",
+      "kind": "name",
+      "senses": [
+        {
+          "id": "zh-95264f699dc4-1-s1",
+          "definition": "Zhang Fei, a character in Romance of the Three Kingdoms",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:128",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:133",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:281",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:315",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:324",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:339",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:388",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:464",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:514"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-9819d260756e-1",
+      "headword": "当时",
+      "reading": "dāngshí",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-9819d260756e-1-s1",
+          "definition": "at that time; then",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:22"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-b70bb4acc048-1",
+      "headword": "我",
+      "reading": "wǒ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-b70bb4acc048-1-s1",
+          "definition": "I; me",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:137",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:170"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-1aa654f506a9-1",
+      "headword": "很多",
+      "reading": "hěnduō",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-1aa654f506a9-1-s1",
+          "definition": "many; a large number of",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:7",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:26",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:378"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-685f4eae721a-1",
+      "headword": "悬念",
+      "reading": "xuánniàn",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-685f4eae721a-1-s1",
+          "definition": "suspense; uncertainty about what will happen",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:536"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-be0f15bc418f-1",
+      "headword": "想出",
+      "reading": "xiǎngchū",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "zh-be0f15bc418f-1-s1",
+          "definition": "to think of or devise (an idea, plan, or solution)",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:381"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-0e65f5e407c4-1",
+      "headword": "想法",
+      "reading": "xiǎngfǎ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-0e65f5e407c4-1-s1",
+          "definition": "idea; thought",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:196",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:208"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-1618951dd40f-1",
+      "headword": "愿意",
+      "reading": "yuànyì",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-1618951dd40f-1-s1",
+          "definition": "to be willing; be willing to",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:94",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:140"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-8450ce505b71-1",
+      "headword": "打造",
+      "reading": "dǎzào",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-8450ce505b71-1-s1",
+          "definition": "to make by shaping or working a material; forge",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:266"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-c277be8a4b92-1",
+      "headword": "找",
+      "reading": "zhǎo",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-c277be8a4b92-1-s1",
+          "definition": "to look for; seek",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:449"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-42aa17c43ce9-1",
+      "headword": "投军",
+      "reading": "tóujūn",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-42aa17c43ce9-1-s1",
+          "definition": "to join the army",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:173"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-936589dfa23c-1",
+      "headword": "护送",
+      "reading": "hùsòng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-936589dfa23c-1-s1",
+          "definition": "to escort; accompany and protect on a journey",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:470"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-6616b39525e0-1",
+      "headword": "报名",
+      "reading": "bàomíng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-6616b39525e0-1-s1",
+          "definition": "to register; sign up",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:68"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-0d40173188b3-1",
+      "headword": "抵抗",
+      "reading": "dǐkàng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-0d40173188b3-1-s1",
+          "definition": "to resist; oppose",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:47"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-4b5dd661e44a-1",
+      "headword": "招兵",
+      "reading": "zhāobīng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-4b5dd661e44a-1-s1",
+          "definition": "recruit soldiers",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:45"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-d9c6496432c6-1",
+      "headword": "押回",
+      "reading": "yāhuí",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "zh-d9c6496432c6-1-s1",
+          "definition": "to take or escort someone back",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:461"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-136de7a8c46f-1",
+      "headword": "拒绝",
+      "reading": "jùjué",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-136de7a8c46f-1-s1",
+          "definition": "to refuse; reject",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:454"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-d8f029bf6d54-1",
+      "headword": "招军榜",
+      "reading": "zhāojūnbǎng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-d8f029bf6d54-1-s1",
+          "definition": "military recruitment notice or proclamation",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:63",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:106",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:123"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-42b313974929-1",
+      "headword": "招募",
+      "reading": "zhāomù",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-42b313974929-1-s1",
+          "definition": "to recruit; enlist people",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:142"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-867a739542a8-1",
+      "headword": "拿",
+      "reading": "ná",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-867a739542a8-1-s1",
+          "definition": "to take or hold (something)",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:520"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-f2b91797ea3a-1",
+      "headword": "很",
+      "reading": "hěn",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-f2b91797ea3a-1-s1",
+          "definition": "very; quite (intensifier before an adjective)",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:38",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:73",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:154",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:200",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:465"
+          ]
+        },
+        {
+          "id": "zh-f2b91797ea3a-1-s2",
+          "definition": "very; greatly (intensifier before a verb)",
+          "occurrences": []
+        }
+      ]
+    },
+    {
+      "id": "zh-c6d764df544b-1",
+      "headword": "打",
+      "reading": "dǎ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-c6d764df544b-1-s1",
+          "definition": "to fight or attack",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:338",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:407",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:409"
+          ]
+        },
+        {
+          "id": "zh-c6d764df544b-1-s2",
+          "definition": "to carry or hold (a flag).",
+          "occurrences": []
+        }
+      ]
+    },
+    {
+      "id": "zh-8a8796bbdf69-1",
+      "headword": "桃园",
+      "reading": "táoyuán",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-8a8796bbdf69-1-s1",
+          "definition": "peach garden; peach orchard",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:220"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-58ed4c69fbbb-1",
+      "headword": "接着",
+      "reading": "jiēzhe",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-58ed4c69fbbb-1-s1",
+          "definition": "then; next, after that",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:233"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-4987c0fc4aca-1",
+      "headword": "救民",
+      "reading": "jiùmín",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "zh-4987c0fc4aca-1-s1",
+          "definition": "save the people",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:231"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-6d8229118caa-1",
+      "headword": "来",
+      "reading": "lái",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-6d8229118caa-1-s1",
+          "definition": "come; move toward the speaker or a reference point",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:307",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:337"
+          ]
+        },
+        {
+          "id": "zh-6d8229118caa-1-s2",
+          "definition": "be the one to do something; take a turn doing it",
+          "occurrences": []
+        }
+      ]
+    },
+    {
+      "id": "zh-7e14752b870f-1",
+      "headword": "挥",
+      "reading": "huī",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-7e14752b870f-1-s1",
+          "definition": "swing; wield",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:342"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-502f274e05e5-1",
+      "headword": "掉下",
+      "reading": "diàoxià",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "zh-502f274e05e5-1-s1",
+          "definition": "fall down from a higher place or position",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:333"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-e75cc447a7d5-1",
+      "headword": "推车",
+      "reading": "tuīchē",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "zh-e75cc447a7d5-1-s1",
+          "definition": "push a cart",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:162"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-108be1223bd8-1",
+      "headword": "攻",
+      "reading": "gōng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-108be1223bd8-1-s1",
+          "definition": "attack",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:308"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-4c2c5762d328-1",
+      "headword": "故事",
+      "reading": "gùshì",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-4c2c5762d328-1-s1",
+          "definition": "story; account",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:533"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-40a2cbbccefb-1",
+      "headword": "敌人",
+      "reading": "dírén",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-40a2cbbccefb-1-s1",
+          "definition": "enemy",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:377"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-50c2f95d83ce-1",
+      "headword": "救",
+      "reading": "jiù",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-50c2f95d83ce-1-s1",
+          "definition": "save; rescue",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:367"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-d0facad829d4-1",
+      "headword": "救下",
+      "reading": "jiùxià",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "zh-d0facad829d4-1-s1",
+          "definition": "successfully rescue; save",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:493"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-e2cf0f3646cc-1",
+      "headword": "有志",
+      "reading": "yǒuzhì",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-e2cf0f3646cc-1-s1",
+          "definition": "ambitious; having aspirations",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:96"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-cd1deec9e498-1",
+      "headword": "有钱",
+      "reading": "yǒuqián",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-cd1deec9e498-1-s1",
+          "definition": "have money",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:138"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-898ac192cae4-1",
+      "headword": "朝廷",
+      "reading": "cháotíng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-898ac192cae4-1-s1",
+          "definition": "imperial court; central government",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:42"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-bbcd809f30d3-1",
+      "headword": "杀",
+      "reading": "shā",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-bbcd809f30d3-1-s1",
+          "definition": "kill",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:344",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:469",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:523"
+          ]
+        },
+        {
+          "id": "zh-bbcd809f30d3-1-s2",
+          "definition": "fighting or killing",
+          "occurrences": []
+        }
+      ]
+    },
+    {
+      "id": "zh-898ac192cae4-2",
+      "headword": "朝廷",
+      "reading": "cháotíng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-898ac192cae4-2-s1",
+          "definition": "imperial court; central government",
+          "occurrences": []
+        }
+      ]
+    },
+    {
+      "id": "zh-cd1deec9e498-2",
+      "headword": "有钱",
+      "reading": "yǒuqián",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-cd1deec9e498-2-s1",
+          "definition": "have money; be wealthy",
+          "occurrences": []
+        }
+      ]
+    },
+    {
+      "id": "zh-c1d8e67ad198-1",
+      "headword": "来到",
+      "reading": "láidào",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-c1d8e67ad198-1-s1",
+          "definition": "arrive at; come to a place or person",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:163",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:252"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-9eac93b2a1ca-1",
+      "headword": "气",
+      "reading": "qì",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-9eac93b2a1ca-1-s1",
+          "definition": "be angry; feel anger",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:516"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-f127804b9227-1",
+      "headword": "没有",
+      "reading": "méiyǒu",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-f127804b9227-1-s1",
+          "definition": "not have; there is not",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:110",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:500",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:506"
+          ]
+        },
+        {
+          "id": "zh-f127804b9227-1-s2",
+          "definition": "not; fail to / did not",
+          "occurrences": []
+        }
+      ]
+    },
+    {
+      "id": "zh-90ce0f66f094-1",
+      "headword": "有",
+      "reading": "yǒu",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-90ce0f66f094-1-s1",
+          "definition": "have; possess",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:78",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:205",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:499"
+          ]
+        },
+        {
+          "id": "zh-90ce0f66f094-1-s2",
+          "definition": "there be; exist in a place or situation",
+          "occurrences": []
+        },
+        {
+          "id": "zh-90ce0f66f094-1-s3",
+          "definition": "come to have; have (a resulting number or group)",
+          "occurrences": []
+        },
+        {
+          "id": "zh-90ce0f66f094-1-s4",
+          "definition": "have aspirations; harbor an ambition",
+          "occurrences": []
+        }
+      ]
+    },
+    {
+      "id": "zh-87fa7df4253a-1",
+      "headword": "祭告",
+      "reading": "jìgào",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-87fa7df4253a-1-s1",
+          "definition": "to make an offering and announce something in a ritual",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:221"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-8af2350cfd65-1",
+      "headword": "的",
+      "reading": "de",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "zh-8af2350cfd65-1-s1",
+          "definition": "links a modifier to the word it describes",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:51",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:58",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:97",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:183",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:195",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:207",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:303",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:383",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:397",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:428",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:472"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-72464e2d283f-1",
+      "headword": "治病",
+      "reading": "zhìbìng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-72464e2d283f-1-s1",
+          "definition": "to treat an illness or disease",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-84cbd30181dc-1",
+      "headword": "活",
+      "reading": "huó",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-84cbd30181dc-1-s1",
+          "definition": "to live or remain alive",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:530"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-1a7b61344813-1",
+      "headword": "派",
+      "reading": "pài",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-1a7b61344813-1-s1",
+          "definition": "to send or assign someone to do something",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:320"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-2f4106afcd28-1",
+      "headword": "流行",
+      "reading": "liúxíng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-2f4106afcd28-1-s1",
+          "definition": "to be widespread or prevalent",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:24"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-72091c435da9-1",
+      "headword": "涿县",
+      "reading": "Zhuōxiàn",
+      "kind": "name",
+      "senses": [
+        {
+          "id": "zh-72091c435da9-1-s1",
+          "definition": "Zhuo County",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:84",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:104"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-5a0715b5fc00-1",
+      "headword": "涿郡",
+      "reading": "Zhuō Jùn",
+      "kind": "name",
+      "senses": [
+        {
+          "id": "zh-5a0715b5fc00-1-s1",
+          "definition": "Zhuo Commandery",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:309"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-1080332a28b0-1",
+      "headword": "生气",
+      "reading": "shēngqì",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-1080332a28b0-1-s1",
+          "definition": "to be angry",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:466"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-b2cae9cd92ac-1",
+      "headword": "留下",
+      "reading": "liúxià",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-b2cae9cd92ac-1-s1",
+          "definition": "to leave something behind or cause it to remain",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:534"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-085e0c511d12-1",
+      "headword": "疫病",
+      "reading": "yìbìng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-085e0c511d12-1-s1",
+          "definition": "epidemic disease",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:23"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-92ef8336ae0b-1",
+      "headword": "百姓",
+      "reading": "bǎixìng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-92ef8336ae0b-1-s1",
+          "definition": "ordinary people",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:2",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:32"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-34241e377625-1",
+      "headword": "相信",
+      "reading": "xiāngxìn",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-34241e377625-1-s1",
+          "definition": "to believe or trust someone or something",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:28"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-ab3ba0dbaddb-1",
+      "headword": "看不起",
+      "reading": "kànbuqǐ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-ab3ba0dbaddb-1-s1",
+          "definition": "to look down on someone or regard them as inferior",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:511"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-f3148c533874-1",
+      "headword": "矛",
+      "reading": "máo",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-f3148c533874-1-s1",
+          "definition": "spear",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:285",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:326"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-7345ed45ce93-1",
+      "headword": "离开",
+      "reading": "líkāi",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-7345ed45ce93-1-s1",
+          "definition": "to leave or depart from a place or person",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:487"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-f01ce7291473-1",
+      "headword": "程远志",
+      "reading": "Chéng Yuǎnzhì",
+      "kind": "name",
+      "senses": [
+        {
+          "id": "zh-f01ce7291473-1-s1",
+          "definition": "Cheng Yuanzhi",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:304",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:319",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:335",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:346"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-79245da187a5-1",
+      "headword": "穷",
+      "reading": "qióng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-79245da187a5-1-s1",
+          "definition": "poor; having little money or few resources",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:74"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-9f3c49eb8b23-1",
+      "headword": "第一次",
+      "reading": "dì-yī cì",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-9f3c49eb8b23-1-s1",
+          "definition": "the first time or first occurrence",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:353"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-cc1c03a24842-1",
+      "headword": "看着",
+      "reading": "kànzhe",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "zh-cc1c03a24842-1-s1",
+          "definition": "to look at or watch something",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:122"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-5de6194e186a-1",
+      "headword": "第二天",
+      "reading": "dì èr tiān",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-5de6194e186a-1-s1",
+          "definition": "the following day",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:216",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:401"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-fe68dc39caa3-1",
+      "headword": "结为",
+      "reading": "jiéwéi",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "zh-fe68dc39caa3-1-s1",
+          "definition": "to become or form a particular relationship or status",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:225"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-3ec82ab67c8d-1",
+      "headword": "聚集",
+      "reading": "jùjí",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-3ec82ab67c8d-1-s1",
+          "definition": "to gather or assemble people or things",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:5",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:241",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:290"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-ccca74461399-1",
+      "headword": "说",
+      "reading": "shuō",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-ccca74461399-1-s1",
+          "definition": "to say; to speak",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:134",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:167",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:187",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:211",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:480",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:504"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-88d5840fab77-1",
+      "headword": "请",
+      "reading": "qǐng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-88d5840fab77-1-s1",
+          "definition": "to invite someone to do something; to ask someone to do something",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:177",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:264",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:270",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:276",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:282"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-943874ecb6bd-1",
+      "headword": "胜利",
+      "reading": "shènglì",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-943874ecb6bd-1-s1",
+          "definition": "victory",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:354"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-413c06bcef7c-1",
+      "headword": "能",
+      "reading": "néng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-413c06bcef7c-1-s1",
+          "definition": "can; be able to",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:527",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:529"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-fb43354d2aae-1",
+      "headword": "自己",
+      "reading": "zìjǐ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-fb43354d2aae-1-s1",
+          "definition": "oneself; one's own",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:188",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:194",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:505"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-5e121b04ad37-1",
+      "headword": "草席",
+      "reading": "cǎoxí",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-5e121b04ad37-1-s1",
+          "definition": "a mat made of grass or similar plant material",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:90"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-96633bbf689f-1",
+      "headword": "董卓",
+      "reading": "Dǒng Zhuó",
+      "kind": "name",
+      "senses": [
+        {
+          "id": "zh-96633bbf689f-1-s1",
+          "definition": "Dong Zhuo, a person named in the passage",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:494",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:496",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:509",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:524",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:526"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-55889e734c2e-1",
+      "headword": "藏",
+      "reading": "cáng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-55889e734c2e-1-s1",
+          "definition": "to put or keep something out of sight",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:394"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-c2902702ee25-1",
+      "headword": "行贿",
+      "reading": "xínghuì",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-c2902702ee25-1-s1",
+          "definition": "to offer a bribe",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:455"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-47cc8021ca22-1",
+      "headword": "被",
+      "reading": "bèi",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "zh-47cc8021ca22-1-s1",
+          "definition": "marks a passive construction, indicating that the subject undergoes an action",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:360",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:457"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-04ee32c08190-1",
+      "headword": "见到",
+      "reading": "jiàndào",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "zh-04ee32c08190-1-s1",
+          "definition": "to see or encounter",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:105"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-1df1ae654a19-1",
+      "headword": "许多",
+      "reading": "xǔduō",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-1df1ae654a19-1-s1",
+          "definition": "many; a large number of",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:31"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-568f4bcad9f2-1",
+      "headword": "诬陷",
+      "reading": "wūxiàn",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-568f4bcad9f2-1-s1",
+          "definition": "to falsely accuse or frame someone",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:459"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-503214a62831-1",
+      "headword": "说出",
+      "reading": "shuōchū",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "zh-503214a62831-1-s1",
+          "definition": "to say or express something, bringing it out in words",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:193"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-b67968e2aa79-1",
+      "headword": "赶到",
+      "reading": "gǎndào",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "zh-b67968e2aa79-1-s1",
+          "definition": "to hurry or arrive at a place",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:373"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-6e55fb9d8a3d-1",
+      "headword": "给",
+      "reading": "gěi",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-6e55fb9d8a3d-1-s1",
+          "definition": "for; to, indicating a recipient or beneficiary",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:1"
+          ]
+        },
+        {
+          "id": "zh-6e55fb9d8a3d-1-s2",
+          "definition": "to; for, indicating that an action is directed toward or done for someone or something",
+          "occurrences": []
+        },
+        {
+          "id": "zh-6e55fb9d8a3d-1-s3",
+          "definition": "to give or provide something to someone",
+          "occurrences": []
+        }
+      ]
+    },
+    {
+      "id": "zh-975f35218ed8-1",
+      "headword": "要",
+      "reading": "yào",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-975f35218ed8-1-s1",
+          "definition": "to want or intend to do something",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:171",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:468",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:522"
+          ]
+        },
+        {
+          "id": "zh-975f35218ed8-1-s2",
+          "definition": "will or be going to; indicates an intended or expected future action",
+          "occurrences": []
+        },
+        {
+          "id": "zh-975f35218ed8-1-s3",
+          "definition": "must; indicates that something is required or inevitable",
+          "occurrences": []
+        },
+        {
+          "id": "zh-975f35218ed8-1-s4",
+          "definition": "to ask for or demand something",
+          "occurrences": []
+        }
+      ]
+    },
+    {
+      "id": "zh-f77d7d6fdcad-1",
+      "headword": "越",
+      "reading": "yuè",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "zh-f77d7d6fdcad-1-s1",
+          "definition": "used in a paired pattern to indicate that as one thing increases or continues, another changes correspondingly; the more ..., the more ...",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:210",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:212"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-e3178a5ba109-1",
+      "headword": "这时",
+      "reading": "zhèshí",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-e3178a5ba109-1-s1",
+          "definition": "at this time; then",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:248"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-29a7956f3cda-1",
+      "headword": "送来",
+      "reading": "sònglai",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "zh-29a7956f3cda-1-s1",
+          "definition": "to bring or send something to the place toward which the action is directed",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:256"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-7eabb36ba1ab-1",
+      "headword": "都",
+      "reading": "dōu",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-7eabb36ba1ab-1-s1",
+          "definition": "all; each of the people or things mentioned",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:204"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-8f615d2ef879-1",
+      "headword": "铁",
+      "reading": "tiě",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-8f615d2ef879-1-s1",
+          "definition": "iron",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:261"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-ada3aa39cd5e-1",
+      "headword": "路上",
+      "reading": "lùshàng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-ada3aa39cd5e-1-s1",
+          "definition": "on the way; along a route",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:490"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-7624d1699c0d-1",
+      "headword": "迎敌",
+      "reading": "yíngdí",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-7624d1699c0d-1-s1",
+          "definition": "to meet or confront an enemy",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:317"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-b7fc681861fb-1",
+      "headword": "这样",
+      "reading": "zhèyàng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-b7fc681861fb-1-s1",
+          "definition": "in this way; like this",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:482"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-f88182fcd575-1",
+      "headword": "进入",
+      "reading": "jìnrù",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-f88182fcd575-1-s1",
+          "definition": "to enter; go into a place or area",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:420"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-a2994428b101-1",
+      "headword": "进城",
+      "reading": "jìnchéng",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "zh-a2994428b101-1-s1",
+          "definition": "to go into a city",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:172"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-8e1c524298c8-1",
+      "headword": "连忙",
+      "reading": "liánmáng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-8e1c524298c8-1-s1",
+          "definition": "quickly; without delay, in response to something",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:476"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-1f4afe5755dc-1",
+      "headword": "追来",
+      "reading": "zhuīlai",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "zh-1f4afe5755dc-1-s1",
+          "definition": "to chase and come toward the speaker or a reference point",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:418"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-413f6920022c-1",
+      "headword": "逃走",
+      "reading": "táozǒu",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "zh-413f6920022c-1-s1",
+          "definition": "to flee by going away from a place",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:349"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-f33c0ba981ce-1",
+      "headword": "邓茂",
+      "reading": "Dèng Mào",
+      "kind": "name",
+      "senses": [
+        {
+          "id": "zh-f33c0ba981ce-1-s1",
+          "definition": "a personal name",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:321",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:328"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-50ec281e376c-1",
+      "headword": "那人",
+      "reading": "nàrén",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-50ec281e376c-1-s1",
+          "definition": "that person",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:186"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-ebdef08347f3-1",
+      "headword": "那里",
+      "reading": "nàlǐ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-ebdef08347f3-1-s1",
+          "definition": "there; that place",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:368"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-3869deb566dd-1",
+      "headword": "邹靖",
+      "reading": "Zōu Jìng",
+      "kind": "name",
+      "senses": [
+        {
+          "id": "zh-3869deb566dd-1-s1",
+          "definition": "a personal name",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:57"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-fb86231b69e3-1",
+      "headword": "金银",
+      "reading": "jīnyín",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-fb86231b69e3-1-s1",
+          "definition": "gold and silver",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:259"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-2708f8990be0-1",
+      "headword": "跟着",
+      "reading": "gēnzhe",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-2708f8990be0-1-s1",
+          "definition": "to follow someone or something",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:33"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-1bc709b8bf6c-1",
+      "headword": "还",
+      "reading": "hái",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-1bc709b8bf6c-1-s1",
+          "definition": "also; in addition",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:228"
+          ]
+        },
+        {
+          "id": "zh-1bc709b8bf6c-1-s2",
+          "definition": "still; yet, continuing up to the present or a stated point",
+          "occurrences": []
+        }
+      ]
+    },
+    {
+      "id": "zh-4628c0e06f4b-1",
+      "headword": "问",
+      "reading": "wèn",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-4628c0e06f4b-1-s1",
+          "definition": "to ask a question",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:129",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:181",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:497"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-eb76776da96a-1",
+      "headword": "长长",
+      "reading": "chángcháng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-eb76776da96a-1-s1",
+          "definition": "long; in a drawn-out way",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:116"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-5fcaf1452472-1",
+      "headword": "高兴",
+      "reading": "gāoxìng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-5fcaf1452472-1-s1",
+          "definition": "happy; pleased",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:201",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:213"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-f7f61df3241a-1",
+      "headword": "黄巾军",
+      "reading": "Huángjīnjūn",
+      "kind": "name",
+      "senses": [
+        {
+          "id": "zh-f7f61df3241a-1-s1",
+          "definition": "the Yellow Turban army",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:48",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:302",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:348",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:361",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:417",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:436"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-0e16543ac983-1",
+      "headword": "青州",
+      "reading": "Qīngzhōu",
+      "kind": "name",
+      "senses": [
+        {
+          "id": "zh-0e16543ac983-1-s1",
+          "definition": "Qingzhou",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:359",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:374",
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:439"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-bf55fac9c5cf-1",
+      "headword": "鞋",
+      "reading": "xié",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-bf55fac9c5cf-1-s1",
+          "definition": "shoe; footwear",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:88"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-39185c90ef7a-1",
+      "headword": "马匹",
+      "reading": "mǎpǐ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-39185c90ef7a-1-s1",
+          "definition": "horses",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:257"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-3354e03154fe-1",
+      "headword": "黄巾起事",
+      "reading": "Huángjīn qǐshì",
+      "kind": "name",
+      "senses": [
+        {
+          "id": "zh-3354e03154fe-1-s1",
+          "definition": "the Yellow Turban uprising",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:19"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zh-cc86c595a88a-1",
+      "headword": "马上",
+      "reading": "mǎshàng",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "zh-cc86c595a88a-1-s1",
+          "definition": "on horseback",
+          "occurrences": [
+            "assets/annotations/chinese_sanguoyanyi_hsk2_001.json#5abb3384e648:332"
+          ]
+        },
+        {
+          "id": "zh-cc86c595a88a-1-s2",
+          "definition": "immediately; at once",
+          "occurrences": []
+        }
+      ]
+    }
+  ],
+  "review_model": "gpt-6-luna",
+  "review_effort": "low",
+  "adjudication_effort": "medium",
+  "reviews": [
+    {
+      "approved": true,
+      "issues": []
+    },
+    {
+      "approved": true,
+      "issues": []
+    },
+    {
+      "approved": true,
+      "issues": []
+    },
+    {
+      "approved": true,
+      "issues": []
+    },
+    {
+      "approved": true,
+      "issues": []
+    },
+    {
+      "approved": true,
+      "issues": []
+    },
+    {
+      "approved": true,
+      "issues": []
+    },
+    {
+      "approved": true,
+      "issues": []
+    },
+    {
+      "approved": true,
+      "issues": []
+    },
+    {
+      "approved": true,
+      "issues": []
+    },
+    {
+      "approved": true,
+      "issues": []
+    },
+    {
+      "approved": true,
+      "issues": []
+    }
+  ],
+  "reviewed_word_fingerprints": {
+    "跟着": "a91f841cb1b5d8a711c5beb118da6a28826e790dce212480f9cec2b28eef2102",
+    "他们": "358873f09764164dd180c56e8d0a543c6421150ef82ae1f9ccecc442b7759ea7",
+    "找": "acf51cfb647c926338647aed712dc972320e25e1c5197e75b4c5ffd42ce01549",
+    "说出": "d82938f1d26a3c6bf4ac8c94dd71236dfddf0732788b22e175db17fabfd33c5d",
+    "带": "e76aa6a3189a8b190c0047ea6ce64f4fbb6ecb2be0b28137451d8f458b6a77d0",
+    "许多": "8bd30f59cc78b7bb80a3254ef4012b208e728adf79eef521b5c1b00dbdf932c0",
+    "不久": "9c9823b0a78f169565090b94f356f4302f583adade4583f25c2aab3bc4234baf",
+    "平时": "edb3062d02316bd5bfa3f386e80a3edf8611c7f4ed8d7a55754497426833d9ed",
+    "想法": "9b617b6bdf67c7347d0abb4d6e4ddc8175f8a1495670aad9de062382942491ff",
+    "都": "b0604794a0d88c8a0b89e70dc296c3844f668b790f7b0c43745f8296cc254925",
+    "坐下": "e21805c297610ab0e7753dc8582baf6c691abb2ba734ee4d4d3837edfba25930",
+    "那人": "6b9ef7a97772d09f3f7130c36f4ebbc239d0b7beba5b542a8f52e01676789ee0",
+    "离开": "274404533389b97476e6413ee71dcb801102555dccd7713bd73497a5e667ec67",
+    "铁": "f872fd6f2d25bccf2c1e1c132e6654e13f10a02baa2cd3120666fa5d911bc13c",
+    "投军": "c1f6223d1d12b299fc18e6fe1ad09921585e815065406c9164dec4a467e271b3",
+    "有钱": "837bf4d376bea85e39dc79e534987538decaa2cca815888f6837005d555856b6",
+    "家里": "460aaa8b59507f196d150b0eeaa1ff10858240ed5800f81720775c2495b9431e",
+    "到处": "04bebe192124bdb1523d6056e894ba8a3f3a4f8795b3a38c3db074f3d665701c",
+    "打造": "ea3889def91687ece4480bb83bd552c6b58ac45596a302747bb38884e76afd48",
+    "兄弟": "4c0a2cf5128272d5df4d6150df0fc281b89e19a98c240423e8638779feb3ca95",
+    "山中": "606c4ba7df8599a34c14e6bee814291dcd6802d0529b776700d8714b7202a2aa",
+    "办法": "0993912fecfaeed23fedfae4e03439301319a2f628a4af138e42ecae694c6f5b",
+    "涿郡": "aeafeb6b59313a6cad432791c7cffc0f2d79f1713afd72119050bc605e1db3ba",
+    "看着": "7dcda0c25dd200094ce9be9d2ae98d071650dbc0a8700cb90142e5f032d7f100",
+    "涿县": "96b1175d642d20ce90fbfd53388c59e852495db187228d04bafc593c60d7850e",
+    "百姓": "df334248915d711bb34cdea100588922943f9e20a8c250705fe8807ee222f597",
+    "掉下": "11d490f5c3f8f57d28492277c6d3dec17462720d75a4edd9185138cc586e9f13",
+    "流行": "b36a9174b98ef71bbe0927d37299af0532a4aa402aeed13aea513f30fc049d4e",
+    "黄巾起事": "204f4dfec3d93b3e304acea42fc1035d4a70d896c2f5ec1f2b5ba9600e36eeb7",
+    "在": "55355dfd1a48fcfb9b54c27b96cb7a98b472115940b5ea431780532d32f00e0a",
+    "后来": "9faa049abdf8f04f725b3e09ca32bea347debf91865aba271bd74a40e59af746",
+    "商人": "c109f8ce800fe73acbe4f11750fce7c7a5225fc8390d0cd75009dfb56f62a7d9",
+    "三路": "f5d97e588de7a34376b40b07eadc5986cfd79bc8e8f3910fdfb322c7b6754c5c",
+    "兵": "bea185ff8dd2695e082530d9049a06931cee3c69c918873e188bbf217fe9597c",
+    "派": "6f24283b5317001d46f89fd7c05b6fafd3b8931c27e374b6370aa1afdf8b9799",
+    "住": "5a3fdcd93260ec12f187c36d991fe0833add298bb8465e0e8c9983f5364d44a5",
+    "为什么": "2c5ad66fd55292871dff9ad356c7736abe8caf1ed7412de4b8d73174b58fe050",
+    "姓名": "37e9460ecc347ed40bd3038400ef64cc18891f0727761618ee130e78ae612b49",
+    "黄巾军": "ee6db97bf40a7e35cea6d416e1bddcbe6ac5ad2d79ad098767fafa7433dea4a2",
+    "有": "9a625b80e3e1ee2d5cd620f7cd1fcde8f9d5e88fcd9886a938c9d680b76132aa",
+    "不一会儿": "568b76c53c114ab239c33ef27358280f157f03d505321e232a48f58bba9dcf99",
+    "了": "931914dea4bb1f1cab93c522a1d6629f7fb3bbe6e495d04d7786569aa694e35a",
+    "张飞": "93fe44d446090d5a8a617613063f6fadb8de06b74244835164b0587e70fe28a9",
+    "做": "ba3de08763a258e38fd1ab8049be95a3a8cff4cb55624562a8d0562f96f4ec2c",
+    "发现": "856339a5b25d3af27ca2ea4f2e35a88728348e672a149be02b3b681e4f132c77",
+    "叹气": "600d942cb59489bad3cb5e93a15c9a5a3cfe49dde6c1c884e979481f282dc583",
+    "很多": "8181c9ecde902747adff9965efad43a6bf26231495982dccd1d7a1f4ef101cf8",
+    "给": "6dd84d57be8d41261a650a488116061746a989a17fcf3c7015668dba789aedbb",
+    "张角": "ee64ac6c7de9535262ce7e077653cf369a948f94f62c18ceeabdb17d82fba069",
+    "关羽": "ccbffefd7407432766f9c283ca537e8683cf5ed3ad6606e8ea184f6540864d7e",
+    "挥": "ea9a41312453596be21b36e4d1ca74bdb78136c64ce0c3374dfebda8a7ad39d8",
+    "各": "ca2386a67ee4083ba2d48ff11a91a68ad75a0f0864d6bd2e8000527ef708a148",
+    "出战": "a79a246f7169b2fc6bf5696c6a3311fb78cfe77320ba8cebaddeac7e62a3e150",
+    "不": "3548df5b6649ba237bbb39b6d44046ee343406eb349086f7f40a62b56e0f957b",
+    "以后": "00cfcc9be6c532e96ee47b81a685594f43b80c5a1e42acc6eb21401eef3ff929",
+    "拿": "19227c52ff16acf1dc89356a8ff7bf20e6b7d3bd156f8e8a62b996fe22805b96",
+    "来": "96fadb8f896d7f9b51a8a24c6e710744ed0c27d4894953793d815e913314470d",
+    "推车": "eb8308d500312a995f529748811ea82897053d689b7c9e8444e9d91323404008",
+    "听从": "49f0ce8784d657114499fd9650e52570cefaa70ba43efe26bd5a244c5d7b80c4",
+    "金银": "faf7ee1f927937e1cf123cd275e45d41b5f831b71834afd8bc7b4401e0d42431",
+    "安全": "a6f7791b223599a07240f77feec450494fc4da58137a52451db5163ec5e5ae94",
+    "刺中": "aaefd09a87551ef9339ef5b1eeba6ab7632e5c8bb73ae5a18d2ee9cec1b49642",
+    "行贿": "28e3ce9f8083f731980a8637f6abe07c8a2edf2d1ddb550bddd1fe053eb451db",
+    "夹攻": "442a6447d09e484c62249268e73dc42a4262748acf0dedd2be54cf2125cd69c9",
+    "杀": "01e7479f1fe1d79f9acea415e17d9d277b430d78fc0c15b09ccc83d3a65e026f",
+    "同心": "12f481dfcb872333c41e0c623edc1857e2e083ba06cdcfe141e7c330c0030578",
+    "发动": "a13a3c3783a257cdaadc84c3d9f18157de99eb90fdea60249958db8453b9a8d6",
+    "变得": "51cd7fd26ca4890c02e1eedd86fc9605e8d10ca8a4f479ca6e726b2716114848",
+    "刘备": "3106dfd3afb5b7e9df920dc66691ac02becc922261dc2dc738b9b25a9dda98f8",
+    "相信": "f095697912936e281a4814d0d50efbaff9adecc74205fcf406ac532b385c8cb1",
+    "长长": "b72ded308bb2e229b482f1db3c6982e288bcef1cbff53427ee788b66034b343e",
+    "去": "4e2ae5ebf9ba0d6fcc94e2915d4245b179258f69169d8539882578b7364a4c79",
+    "很": "9a616a67c27ecefe1efdc1d0763c9757e6bc64b92a59a33c28a8906f75018426",
+    "张宝": "6383a36eb848456b5e2bf6c8088ce1dc5fb2a5b9fcf666eb05f15db32d16079e",
+    "打": "76389df9ab86fd952c395aebe5e5123b544f55d03cf0e3fad0318e69cf9f5c9e",
+    "想出": "af139407572d816068eab2d97bbd747f89e15c4f0ec52cde58b27d6e1a352cfe",
+    "大败": "3501512ca15a7cef5cd23482fda8d20964973efb8a1755524022f91359669ed9",
+    "草席": "9c609a6d281c173d7b8b284856604daa15597f4c24134000638fa5a8ea4e944c",
+    "越": "1c41ea2916ec7335816e4283bfc27237a2051e24b147df68b95ff039892b9ec9",
+    "青州": "baf2c74217885645daeab3de8aec17b1fded448def4c5501979a086b8c789e5f",
+    "和": "4a82ef1300e0106adfbdab84e737b7995d9c4a7538925c14e0718bcc6810335d",
+    "邹靖": "2e971260db9076ea540da4c20f66071b83887714dda27a2412d8f456aa1df6c3",
+    "能": "cc8ae1e65d1c07f390869706a3d8ee135363a8101dc7fb95eeb864311894242f",
+    "国": "1fe1031bceeffb247cb77f23ceaede46f609869749ba7dbda030d989bd244670",
+    "桃园": "d37ca7a47a6bc89c3dc4adbbe43352315b5eec34e0ef4046d389fc56dbcf60e3",
+    "官职": "46cf2613c9dcffa028e75d0cda07ba970c62e7ad2eb7da916437c284b3f8d7d3",
+    "报名": "196ad8f679d0c45625d75bbd7f9ace042f0f17790b66ee0c1d934fff434488c7",
+    "后退": "ad7dcade9b3c1d2172b3f384ce337999e25414c464a81dd3484a3c204ddbdbec",
+    "朝廷": "d42dc83d807164e87926f959d449b2654efda2edc11d7e5d6cb70d7c422cb8d7",
+    "赶到": "7ee5a7c34e21063e82a64f73a389f60a2ab1d68d15285465d919addd1ab5aac0",
+    "没有": "69ab49bdcf98f3c7c0f6e2f23dc1dc6b421a524b4e9cee504c379da79839b7a2",
+    "这时": "f63f3efeb1d1cf5c944aaf90dd68bab3523d34f4b9bbe0638c5347df65d7f1fe",
+    "诬陷": "a6f6ea3e8d1b8243f498a2057388bdf21c7190edcda117d6f7bb6ce6d83e41db",
+    "追来": "13a9359b63e0958fb2e15fe14f4d46cc60ae4b04ae70e12035b102ae369e150c",
+    "两个": "22ecd4ff15775890e2ca0983fa6f111fca3783af6692a2d29c9e90d12fa56235",
+    "留下": "1476b4afb89b63d8e198b7d53590fa674e5a2b770bf380c819b8d3bbd23ca5b7",
+    "天下": "1e3c40f25730f4ae4c32ae1be57ac338bf3d3c5b99bbf7a0344d42c9bf1c8c1d",
+    "程远志": "665bf5155720de67d88d7eee6317a1dcef1d5f8aaf43edb91d08ff7c0c980901",
+    "押回": "909d7ad1d04529c70d87dd82d9293d817c1f410a98b95d45c0485ad52cbe816c",
+    "结为": "b7c728252db8e0413f2f9ff13142d74f4d3785ca16b03458aa1dd314abdeccd4",
+    "庄上": "82ffa4ad728e24f96d000f00182283eff781d3a04df0cdca0a45b33c9552725c",
+    "准备": "4d582d37ea5f6f1ff10e0fc5376f7d2651b16219c02f60879c8e6aa48a03ef9c",
+    "出力": "6906e2b5ff9da9bb5858c6abf66ba5f5f4c0cfbb18aee3a0debac0e5f9e214f9",
+    "说": "c804dccd1a9aa7e2c726a935a21747d4273db5dc5e55ece9377fc77328d6facb",
+    "第二天": "1227e323352f05bef131cd1f9a5c17ada9f27493e87a1ed9f59a3d610aef1a90",
+    "要": "7e73309603fbabc556a0d21ac9f75f1d577d8d4a55fafed11b4adca295cc75cc",
+    "店里": "5c13f079bb62561bcc50561ea52786b7fb49f98f61ddb939b32918471ef7e8f2",
+    "发出": "48823a2386f45040e1548040cc3304bff2f03ded52a5b1b12fe01a75607f41cb",
+    "三人": "5b997e4c2c3d7770826e07513cfcaed496028ab6e2b910b2b43089b8291d5e70",
+    "我": "4c85714fa72640ddbe67596e8675faa83ec6ac06f94fa31c507f61e7ca78ad66",
+    "高兴": "8f554fa3a86794c55d30161f33c20223c72874b873931e9f5061914ce7857472",
+    "下来": "12ca8f2c23f1199289148fa04da7f462b7d68a194f7dbbd8ccba76b1465327c3",
+    "愿意": "6e95e7f28e2bf15025f299ba66791a8b7dd66e032adc505792b2b50eaa3b8bda",
+    "故事": "926f5729221eaa02eabb2c651154c3b47a3100db28f2d7ac856197a0de131787",
+    "就": "f451f9edecdcf703591f407e9c4093fcc84c2e132ab5478bcaac7c247b00771e",
+    "从小": "a4373198ca6cbf8583d6c01228cdbc341ad71f14b6b15085c2770d24ca0af220",
+    "招兵": "02a4e419e12241579ddd399c8ad51864aaf8e811be26346f282e861f3c5d3af1",
+    "来到": "2c6e503a295c006269ccf6e75ee27b33ccb82fe99178f47e3b44763ebfb78eb2",
+    "卖": "babe0831a9cd50e638eed77d58f8028f9eda2a255be743c3535389a1d9c3cacd",
+    "进入": "7354a36f832d12f3c28ef2abd02709ad9c9060670f1bc64c9247d6a630f428ad",
+    "逃走": "57dca1e8af53e9d5b14eda6c0d7d30ff8f16a5f65255f3816d5dbf80717f025a",
+    "信号": "eb6fedd4fa672b8063f54c4b81b20660564d3fa6caaf745995657ec3f875a529",
+    "活": "3aef73a244bf567197efa2f99b7e662e8f12bbe25cefc251e96ad300be830bb4",
+    "救": "71022ccff211b7d05d7d1f7ace41798656177fae17e950d12f91eb75db238dd7",
+    "还": "93796884bf43f2a17892ba7fe93e0b003b86ea870b24d70815d8808faffba85e",
+    "山": "ff3c643ffdd6ee6e842e1f5a578e64f9b12331cfc4af0b7f176c61bdaa98b9f8",
+    "抵抗": "8ecaafe29a981dffa1d37ada1b90dc7122c987a131f992ada4478928940cd069",
+    "也": "357302528b4cb6e5e8b879eeb7287cfe3080e405b218761b3496d0531b43e7f3",
+    "发布": "d7c3014aff30453baa3004bbc235430f08037f2a320bcb8094ad4038bc42a306",
+    "乡勇": "e8000614e4fc81a24ef3cdc686dab3397123608268ac70f86ec52a35975b240d",
+    "只好": "bf41c863cd8f36cda24f5a566cefe36f7e53b6b23a54d7e43d742fdba92b6b9f",
+    "刘焉": "efd614d60cddc1f32979fa612e5a149cd65178139e60a3e49a0ba6a93643747c",
+    "藏": "24fa09e49974b94ca522f4f244e25e365df6bae7f47ec11da4d85ef0a431b60a",
+    "从": "0d970189b8407cf22146ab44d184bcbba7dc1ab84f1cdca430af5239dbdc600a",
+    "马匹": "8887aec48777b03c5b5a91272622d4dcd106f723f5dfff10715b0c989542ae74",
+    "迎敌": "a368afce6a8300bb0bc0c8322729d201679dad462571b209006f4d237f91d3d8",
+    "园中": "eb53b38404e889654da4df4f262c747e4ed9826177633fef7ad590948f3d47d3",
+    "大事": "36b33484fc1f01bec414fd87e397cbd7d218dab85f1a59d694300de20ffe1a6e",
+    "出钱": "ad524d0ab0b338575034bea71d689b321d656db5695d148d94ef0ff3b1118a7d",
+    "一个": "546e0aaac00cc346bce8c3facef9ea9b8c0c8215ff3e551ce08c5d98c417c443",
+    "攻": "aa0103b2f8d249a79bbf669003e2f3de03b8c32a55d4731e99e3a2b3267a4beb",
+    "发誓": "b6a4ba41ec249073f7771fa28f7fd523aaef84d593fe4e7340b4c39311e7121f",
+    "五百": "42e71921a064795d7679cf3d6369895d25c954645ebf5c2d5d182bfcffa9acbe",
+    "假装": "843e9177aec3c88bbfa71cf8ef8fdb8bf477345b040faf2b4fbc69560bbdcccb",
+    "剑": "d0b4fc17d4700bb68c1c15dd15480b74541ad7981fda2a6ae9901c590ef0b508",
+    "劝": "50e55783b48bfb55f3fdad714d4bad277de85e2eeba86b42da9b98ca8d9a553b",
+    "围住": "0ebc6cff6ed1de52f165f8a16d12214f177b9e5647c0e5c3c83bdbb46a5ba7cf",
+    "幽州": "42cc16be87e02e4ec7da4da8eaa588621af1103b189ae2b49da1a5c3275c3b7d",
+    "救民": "5133cc9b0661d076df21159aa1345f81c1f3a94b45edcbe81a61e749f8f81e02",
+    "看不起": "4fbe84f18bac527b96e3e7151814956515adbebded195b95b5807bbcf43b5fe0",
+    "疫病": "54842f690f32ea24efcbd11f4669400f28e22c563ca8765ab55e8cb3f5845c58",
+    "矛": "b01954af29bf84e975fbf8f64d8b9739bb6d6bd75b2053e0274c4ba27b3b6db1",
+    "自己": "a3012f175f1007ba2a2d93f90fb6f430e86ba4b0d698e98612153649e274a0af",
+    "你": "8e9111f23e81a8478037b9a0e64cb89aa214b34ebbaa21d2646bdd6f550165cf",
+    "见到": "172a04528752a6ba01ca4ed7768950e853653e216afdbc47095f15ac7273864b",
+    "连忙": "265d6aedfd56d0f9e8b2cd1ad72ae9bfca8cb211aa6f26945b95c39a286ec90a",
+    "被": "23f8b44eaaa58f1b0c1bad13d6fd751434695986a95446be8173573545153010",
+    "进城": "07f82f41782f1f7b6ca990cf015abb1b91912a5e47aeaf08575e387c5edb9e2b",
+    "救下": "7458903a6237eac2998f9e736c620a3836db06bcbac53c32ac3e322e4f196d73",
+    "多": "428b48f1794900a300d4c129837167d96fd72c452e3e43634ed6d2b73e45f9f5",
+    "张梁": "0bbea83b139eea9341b6bbaef3d11485b2bf62b9ab65e1e03cc86c54118d6fc2",
+    "胜利": "719ee97186e8215ea64922cd706d8cf1a538024755114a9a148688b12cfad30e",
+    "气": "0029c9dafee3afed807d01aad362668dcd3866eeeb91dc86dc80142407909043",
+    "不能": "f2af01b37d491c4abbace609307e0b20b919270d236fd79ac77d2cc6868bb041",
+    "大志": "ca14880469155dad3e3e0d9dfd4d6614b5151021048b90509751dd4cce84eb48",
+    "拒绝": "a1c7b42440649f25cd284e8b69cfd34a8446aef737a6c17cb35bd2da5dc04904",
+    "的": "712f26d18701a5065a6b3b88e1864edfab6d12c5eb8469d4811327ab8fb75fd8",
+    "路上": "c533a10b24d932b2dfb115d4bdcd3d99698305e2af9bbf8f56e253569331647d",
+    "两边": "722f36eeec4ed6be7919e7c0ee1e935c85f71e2e2c4488ad6fe5b52e8b0cc655",
+    "有志": "6a049a0b43b124e5e507ee8096976a61b14ade0defefe2e79ed53c4540fd091c",
+    "祭告": "33832b56275e47413de1ed657d933192cf9e15509128852714ffbcbbbc79cfe9",
+    "董卓": "ad6ab9767d598f73b7d471ce695383b4f4d0afe67381b9a4d9b772021976f6e9",
+    "同样": "c94babd2b79bffcd44609d48192293375dc866b1ab4f4b30744ba629bbd6f83b",
+    "聚集": "bb295983186314c8c370c9c914dcad762eeebde4b5b52fff4b07314d5bc1d8a7",
+    "交朋友": "d3e1016919fba562f8962e1147b77177d03cf2006ab164ac0fdac2195af63251",
+    "为": "d855c5dd41119ca757b877dcd210ccbef88d9e0ee6ed5f3ec2a0fea01b60d3ff",
+    "一会儿": "6471d31f29cdef27606970ba8b1f11f3cec09e96bd75a87a672d3c39b48e0657",
+    "一起": "b701009a543d2c2ac75f6284af5aed4863b3c38ed9fc4e2eee2b3aae16198221",
+    "治病": "e9105d8cd410f60331951e1852098ef0caa2e800973d7a09b26a5b06b31d51aa",
+    "那里": "6b8f83ce73c0110d662554a99c864c49ce06b16babcfff52062acf4a2a9dd429",
+    "又": "73fc1bd91f8eded34d9182cd396e92dc57fcdd860b07c3f930f1149ac017baaa",
+    "问": "fdb907bf961551e273c1109db8b7b232c425c6a9d9fa9435e2d79b2b1bf5b138",
+    "第一次": "434967e062fcb57c51992dbeeb5773d36596d95b84ec6db859c8d4b922a62916",
+    "因为": "3f2cf80649b62086bc7d0b7b59810e79a8b9910a7493a5136fb1ab7c021ce6f3",
+    "向前": "4b502216cdb4d15e936c5d8d183ef9cbd8ec25086739e70c747d7facbf5c74a8",
+    "大汉": "c768e876b125ec430e5f9f70a2a85f84bfb30ed6c52c38be0bf2e18343019790",
+    "送来": "1afd115e07785e5cf123073a814211ae1c558ce4c58092fd01690ebedb8a829e",
+    "一直": "aac27dc2560e2fc963aead7822216aaef11426dc1ebc39c9a5c8e0d66230d68b",
+    "他": "3da83731d4f85a241ea5dce80d7211fa8bc786cd73b2a4e4ead82b9f858cc3e7",
+    "邓茂": "4b1bde3ee7eae88da5790cb8d9101402f157516b6021657b3264e0e326aced84",
+    "这样": "e6e61bed76fd03b3da18a729cf121aeb0d463f3f90ad08325159463bfe8f4d8b",
+    "叫": "384419cc1e7f663c47d3a497a14c54cd36accbffea1e6f6edffb0adfe14c67bc",
+    "不满": "93ca9d38e8177150ed8e7a7f11c797ef0c9f31d8c3003c2675fc1d0c010215f0",
+    "取得": "57191f420dd39f833ef228b1269df5b2bbc1f00a923f482d08275ca2d06ce1e2",
+    "敌人": "5c88e0d452e690843f29d40ac49793b6fb3c4ce19154fae993b96bf56bf08f51",
+    "命": "5c8b6662994bafa4652eabcca85ba973d02dee3e3b7aa404b6d80bea6c0e7bd1",
+    "悬念": "b43c0e9df9739dddf1989dec086e275e829c5db07d6db8238889723ca7ad9fe1",
+    "当时": "589a042831138bddcfe6dadc6faaafc6595536ab255dabe9db8551632c53efc9",
+    "穷": "b92b9efa1248f820e3f0d58a3bea727e7a12b427f301f65dba2e12532c558903",
+    "伏兵": "56ae4115accaa356fef2089339455012c8214a27b78faa1fdb0d98557b5f9770",
+    "招募": "212dda55444c92df6393221ac366f9903cd12dcb8c74719c6c0a5144708f76d9",
+    "京城": "c703f343685d1e62e49b7f796fa935532e879a6a549df305eded3573597d9605",
+    "护送": "42628df611c3b3f53c27060a2bf6eb17b90231c4136c6f5aa10d73cf77eedb94",
+    "开心": "29fba63ded5bb5dcc95f90e99eeb44d367db6545ca0f1d2ec218e7d803af0bad",
+    "各地": "2685c4b8269632138122b1e03efe66f16ac092f68b9b973e39d51a3fadd3b9db",
+    "天地": "c025e9cfb9ee05e61e3eeace20f532e4d31c745785f84cd5881b1a7328a9d1f7",
+    "不够": "e6cfaadf8b5c51cbec94acaa6e6649e98d51c824dd97ae623c51b81837c745dc",
+    "生气": "84668e56a0bedd13db4d78ebde699952cd57213d575ef853744bc12db57c27f9",
+    "接着": "5a88bd581e887d4001e89fe01c69a0130a62b1ae4b9315bec757f6183b31ce00",
+    "地": "7cbbe11b9169131ccf4f71da7c98a84376b5a70149318806c3c74e10de71bc64",
+    "乱": "6fbbb80ec345d0a9e529a8bca73bada82090bc7007153e2c9a56bb48b708c748",
+    "人": "1f494ba71f1ae4e0cff992abbbec8a21d04cceb1790d7f35f19f583e39326dbd",
+    "刀": "6ae94080f5fffd8484df09859629f04956c6ae6f8a1486b9c36f2d4d7986090a",
+    "出来": "44b0b14652c860071e65de44c97ecc4319d7992d00afcda82c5f4761ef5673b5",
+    "听了": "acee977fb37a33792f2d0898aa6821aa53da2d2c439d47ddd4712510443d1ea5",
+    "招军榜": "aa03ada394e7fb182433e14e3cbf072edaf30e3b50f9ea7b7e01e0457123ba37",
+    "决定": "d536a3d3b7b8cc42584d0793fd147279f1c9606e2a01e0755002095b68af3f11",
+    "卢植": "83dbd7bbce4f8108c7da22c149058da03d55eecfd7079c43a7fee0500f7d96df",
+    "因此": "c733bafc21a0856df60612a0aadd61f115415f2351f7a0618f5a56d264d2c408",
+    "请": "fdfb0ffe78fb0b51737996c77e92e9212fa84d288173e7a9747871b3b5641cc6",
+    "建议": "5bc7474774b0ae1e4ff2b41af109dd281042ac5169ef71353707ee816c07f5ef",
+    "鞋": "d8489293ea0e75f6e5006c786dfbcbcb37d962c652ebd9af7387168f263a101a",
+    "马上": "7cd0b32ab4e7ef91c53ad612a6490a959a35c102d34bca715acb27023761c79c",
+    "三百": "1965bd77ac37093487e52a8249368170919782ec9dfa6f7770475c51d7d25041",
+    "兵器": "dadd2e9d978dac3420f5df93f452a0cbb013c754f0abc5cb7ed5fcf9fc4ed726",
+    "个": "6e209d0eeeefa5a656dc515e49f3723970d2ff35e84035f342e0bec761401076",
+    "喝酒": "ce9ec87cec1b1e2089221202a483cc90b847f4f042fa6df173c7685186081567",
+    "一部分": "552c9360044ea6256fc1e824de33b5c0583249c511d3af1535b882b7f59d0b17",
+    "举": "73a0b3b9ece137c6ea24838f703e5f22378f7d388b1e2cf2a21f0b8f75597cca"
+  },
+  "review_digest": "c816414478a0a90243d8878ed54f7e50ef73c3c7a179fbe2090511933070a224"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-720dfc5802bd-1-3baa403b77f2478f",
+  "entry_id": "zh-720dfc5802bd-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-720dfc5802bd-1",
+      "headword": "这边",
+      "kind": "word",
+      "reading": "zhèbiān",
+      "senses": [
+        {
+          "id": "zh-720dfc5802bd-1-s1",
+          "definition": "this side; the people on this side"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "可是黄巾军数量很多，刘备这边的人很少，只好退到山下。",
+        "gloss": "on this side",
+        "sense_id": "zh-720dfc5802bd-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8d1c89811d363b0c97f02041030493e792c674c7b6cd246e19e03aea34c03086"
+}

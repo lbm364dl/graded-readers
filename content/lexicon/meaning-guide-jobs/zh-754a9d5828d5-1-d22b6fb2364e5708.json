@@ -1,0 +1,46 @@
+{
+  "id": "zh-754a9d5828d5-1-d22b6fb2364e5708",
+  "entry_id": "zh-754a9d5828d5-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-754a9d5828d5-1",
+      "headword": "四",
+      "kind": "word",
+      "reading": "sì",
+      "senses": [
+        {
+          "id": "zh-754a9d5828d5-1-s1",
+          "definition": "four"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "建宁二年四月十五日，皇帝在宫中坐下。",
+        "gloss": "four",
+        "sense_id": "zh-754a9d5828d5-1-s1"
+      },
+      {
+        "sentence": "建宁四年二月，洛阳地震，海水泛滥，沿海居民被大浪卷走。",
+        "gloss": "four",
+        "sense_id": "zh-754a9d5828d5-1-s1"
+      },
+      {
+        "sentence": "黄巾军惊慌，马来不及装鞍，人来不及穿甲，四散逃跑。",
+        "gloss": "four",
+        "sense_id": "zh-754a9d5828d5-1-s1"
+      },
+      {
+        "sentence": "他在县城四座城门放下十多根五颜六色的木棒，并定下严格的禁令。",
+        "gloss": "four",
+        "sense_id": "zh-754a9d5828d5-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2b534b1030fde46f9727edac1a1ff8d014d5b3413807389eb93b0e63e4fbe75e"
+}

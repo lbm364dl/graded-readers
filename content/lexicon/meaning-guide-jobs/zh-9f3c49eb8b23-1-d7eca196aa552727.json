@@ -1,0 +1,31 @@
+{
+  "id": "zh-9f3c49eb8b23-1-d7eca196aa552727",
+  "entry_id": "zh-9f3c49eb8b23-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9f3c49eb8b23-1",
+      "headword": "第一次",
+      "kind": "word",
+      "reading": "dì-yī cì",
+      "senses": [
+        {
+          "id": "zh-9f3c49eb8b23-1-s1",
+          "definition": "the first time or first occurrence"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军逃走，三人取得第一次胜利。",
+        "gloss": "first",
+        "sense_id": "zh-9f3c49eb8b23-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4555de7f2cb27a13c86c476f9ec6185a949284322fd9d204d8bd85ffb544cad6"
+}

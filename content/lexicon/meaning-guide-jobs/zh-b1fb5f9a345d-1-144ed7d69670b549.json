@@ -1,0 +1,36 @@
+{
+  "id": "zh-b1fb5f9a345d-1-144ed7d69670b549",
+  "entry_id": "zh-b1fb5f9a345d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b1fb5f9a345d-1",
+      "headword": "人心",
+      "kind": "word",
+      "reading": "rénxīn",
+      "senses": [
+        {
+          "id": "zh-b1fb5f9a345d-1-s1",
+          "definition": "public feeling or state of mind"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "天下人心不安。",
+        "gloss": "people’s hearts",
+        "sense_id": "zh-b1fb5f9a345d-1-s1"
+      },
+      {
+        "sentence": "皇帝信任张让，叫他“阿父”，朝政逐渐败坏，天下人心想要作乱，盗贼纷纷起来。",
+        "gloss": "popular sentiment",
+        "sense_id": "zh-b1fb5f9a345d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7bc7d22cf757f44dd41bb854fad11013c17b6e776657a0f3606f664ab4495738"
+}

@@ -1,0 +1,41 @@
+{
+  "status": "complete",
+  "scenes": 6,
+  "japanese_chars": 2163,
+  "chapter_cjk": 2163,
+  "scene_verdicts": {
+    "scene_01": "pass",
+    "scene_02": "pass",
+    "scene_03": "pass",
+    "scene_04": "pass",
+    "scene_05": "pass",
+    "scene_06": "pass"
+  },
+  "chapter_review": {
+    "source_fidelity": 8.8,
+    "naturalness": 8.4,
+    "readability": 8.5,
+    "omissions": [
+      "Some minor supporting details are compressed, including specific circumstances around 三毛子’s illness, the doctor’s behavior, and the full sequence of the household’s mourning dialogue."
+    ],
+    "unsupported_additions": [],
+    "distortions": [
+      "The phrase describing the餅 as becoming unable to come out of the mouth is slightly imprecise compared with the original’s emphasis on the teeth and jaw becoming stuck.",
+      "The scene-05 transition briefly compresses the chronology of the visits to 三毛子 and the later arrival of 迷亭, though the required events remain in recognizable order."
+    ],
+    "language_problems": [
+      "A few compressed phrases are slightly awkward, such as 「主人・寒月と会った」 and 「口から抜けなくなる」."
+    ],
+    "verdict": "pass"
+  },
+  "chapter_review_verdict": "pass",
+  "scene_attempts": {
+    "scene_01": 1,
+    "scene_02": 2,
+    "scene_03": 2,
+    "scene_04": 2,
+    "scene_05": 2,
+    "scene_06": 2
+  },
+  "unresolved_scenes": []
+}

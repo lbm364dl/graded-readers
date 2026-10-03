@@ -1,0 +1,31 @@
+{
+  "id": "zh-d7ec94cf2061-1-be8aef447b16d220",
+  "entry_id": "zh-d7ec94cf2061-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d7ec94cf2061-1",
+      "headword": "保卫",
+      "kind": "word",
+      "reading": "bǎowèi",
+      "senses": [
+        {
+          "id": "zh-d7ec94cf2061-1-s1",
+          "definition": "defend; protect"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "幽州兵少，刘焉听从邹靖的建议，马上发布招军榜，招募人员保卫地方。",
+        "gloss": "defend",
+        "sense_id": "zh-d7ec94cf2061-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1ca57d6b7f36912b587d1a5a9945abedc23e38ae2943d5b343db460435dfce41"
+}

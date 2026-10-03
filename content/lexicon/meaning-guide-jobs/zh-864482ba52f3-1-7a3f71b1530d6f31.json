@@ -1,0 +1,31 @@
+{
+  "id": "zh-864482ba52f3-1-7a3f71b1530d6f31",
+  "entry_id": "zh-864482ba52f3-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-864482ba52f3-1",
+      "headword": "军器",
+      "kind": "word",
+      "reading": "jūnqì",
+      "senses": [
+        {
+          "id": "zh-864482ba52f3-1-s1",
+          "definition": "weapons and equipment used by an army"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "来日收拾军器时，他们却没有马匹可乘。",
+        "gloss": "weapons and military equipment",
+        "sense_id": "zh-864482ba52f3-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4745bcd818b21a37bec1ee456570e7bbeac92b0d1cd74f8cdf401bd002624a70"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-0a60064667a5-1-1ed2a6e16b3bfcd4",
+  "entry_id": "zh-0a60064667a5-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-0a60064667a5-1",
+      "headword": "种种",
+      "kind": "word",
+      "reading": "zhǒngzhǒng",
+      "senses": [
+        {
+          "id": "zh-0a60064667a5-1-s1",
+          "definition": "all kinds of; various"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "种种不祥接连发生。",
+        "gloss": "all kinds of",
+        "sense_id": "zh-0a60064667a5-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "74f0a61b66f39b1a1d3322b917fafad172133735364cc93125cf38e306e82c87"
+}

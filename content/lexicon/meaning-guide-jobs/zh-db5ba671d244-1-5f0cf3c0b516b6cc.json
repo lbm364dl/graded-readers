@@ -1,0 +1,31 @@
+{
+  "id": "zh-db5ba671d244-1-5f0cf3c0b516b6cc",
+  "entry_id": "zh-db5ba671d244-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-db5ba671d244-1",
+      "headword": "上",
+      "kind": "particle",
+      "reading": "shàng",
+      "senses": [
+        {
+          "id": "zh-db5ba671d244-1-s1",
+          "definition": "onto; indicates movement or attachment to a surface"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "百姓纷纷裹上黄巾，跟随黄巾军的人有四五十万。",
+        "gloss": "onto, indicating attachment",
+        "sense_id": "zh-db5ba671d244-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2de31b4b3cf180058cc46b9b0ae4714ba3df3f99c9e81772800716ed9a5395d3"
+}

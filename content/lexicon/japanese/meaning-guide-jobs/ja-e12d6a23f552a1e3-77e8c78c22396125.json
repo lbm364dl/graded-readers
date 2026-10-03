@@ -1,0 +1,32 @@
+{
+  "id": "ja-e12d6a23f552a1e3-77e8c78c22396125",
+  "entry_id": "ja-e12d6a23f552a1e3",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e12d6a23f552a1e3",
+      "headword": "捕まえる",
+      "reading": "つかまえる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e12d6a23f552a1e3-1",
+          "definition": "to catch; seize"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "後で聞くとその人間は書生で、猫をつかまえて煮て食べることもあるそうだ。",
+        "gloss": "catching",
+        "sense_id": "ja-e12d6a23f552a1e3-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a1945115483bb83239e6b07e6eaa1a63437afd565c1358dc4e71ae49e81bb3fe"
+}

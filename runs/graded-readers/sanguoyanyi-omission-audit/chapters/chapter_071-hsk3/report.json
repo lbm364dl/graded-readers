@@ -1,0 +1,97 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_071-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 462,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了曹操抵达南郑后对张郃败战的宽解、刘晔劝阻夏侯渊以及曹操手书告诫等情节。",
+      "classification": "material",
+      "reason": "这些情节解释了夏侯渊为何出战，并体现刘晔、曹操和夏侯渊的判断与性格，省略后削弱了后续战斗的动机和因果。",
+      "required_fix": "补入曹操宽解张郃、刘晔劝阻以及曹操手书告诫夏侯渊出战的情节。"
+    },
+    {
+      "omission_note": "省略了黄忠射杀夏侯尚、夏侯渊鸣金收兵等换俘过程细节。",
+      "classification": "material",
+      "reason": "原文中黄忠射中但未射杀夏侯尚，夏侯渊因此暴怒并与黄忠交战，随后因发现疑似伏兵而鸣金收兵；这些是换俘后战斗推进的重要因果细节。",
+      "required_fix": "补入黄忠射中夏侯尚（并非射杀）、夏侯渊暴怒交战及因疑有伏兵而鸣金收兵的情节。"
+    },
+    {
+      "omission_note": "省略了赵云拒绝关闭营门并以少量兵力设伏的具体谋略细节。",
+      "classification": "material",
+      "reason": "赵云开门偃旗、少量设伏并诱使曹军误判，是汉水之战击溃魏军的关键策略和直接原因。",
+      "required_fix": "补入赵云拒绝关闭营门、偃旗息鼓并在壕中设置弓弩伏兵诱敌的谋略。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了曹操抵达南郑后对张郃败战的宽解、刘晔劝阻夏侯渊以及曹操手书告诫等情节。",
+      "classification": "material",
+      "reason": "这些情节解释了夏侯渊为何出战，并体现刘晔、曹操和夏侯渊的判断与性格，省略后削弱了后续战斗的动机和因果。",
+      "required_fix": "补入曹操宽解张郃、刘晔劝阻以及曹操手书告诫夏侯渊出战的情节。"
+    },
+    {
+      "omission_note": "省略了黄忠射杀夏侯尚、夏侯渊鸣金收兵等换俘过程细节。",
+      "classification": "material",
+      "reason": "原文中黄忠射中但未射杀夏侯尚，夏侯渊因此暴怒并与黄忠交战，随后因发现疑似伏兵而鸣金收兵；这些是换俘后战斗推进的重要因果细节。",
+      "required_fix": "补入黄忠射中夏侯尚（并非射杀）、夏侯渊暴怒交战及因疑有伏兵而鸣金收兵的情节。"
+    },
+    {
+      "omission_note": "省略了赵云拒绝关闭营门并以少量兵力设伏的具体谋略细节。",
+      "classification": "material",
+      "reason": "赵云开门偃旗、少量设伏并诱使曹军误判，是汉水之战击溃魏军的关键策略和直接原因。",
+      "required_fix": "补入赵云拒绝关闭营门、偃旗息鼓并在壕中设置弓弩伏兵诱敌的谋略。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 529,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 8.5,
+        "readability": 9.0,
+        "material_omissions": [],
+        "unsupported_additions": [
+          "“少量弓弩手”中的“少量”原文未说明。"
+        ],
+        "distortions": [],
+        "language_problems": [
+          "“宽解张郃败战”搭配不自然，宜改为“宽慰张郃，称胜负乃兵家常事”。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 462,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

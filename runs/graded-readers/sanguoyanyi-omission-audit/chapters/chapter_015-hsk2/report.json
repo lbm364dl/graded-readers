@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_015-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 287,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了孙策攻取秣陵、击败刘繇及后续多场战事的部分过程。",
+      "classification": "material",
+      "reason": "攻取秣陵并击败刘繇是孙策控制江东、转入后续平定战事的重要事件和过渡，接受场景仅概括了曲阿失守与刘繇败退，未完整保留这一关键结果。",
+      "required_fix": "补充孙策攻取秣陵、击败刘繇并迫使其退走，以及相关战事的简要结果。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了孙策攻取秣陵、击败刘繇及后续多场战事的部分过程。",
+      "classification": "material",
+      "reason": "攻取秣陵并击败刘繇是孙策控制江东、转入后续平定战事的重要事件和过渡，接受场景仅概括了曲阿失守与刘繇败退，未完整保留这一关键结果。",
+      "required_fix": "补充孙策攻取秣陵、击败刘繇并迫使其退走，以及相关战事的简要结果。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 287,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

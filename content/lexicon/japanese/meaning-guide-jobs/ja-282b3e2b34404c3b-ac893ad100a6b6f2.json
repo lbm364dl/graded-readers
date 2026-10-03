@@ -1,0 +1,32 @@
+{
+  "id": "ja-282b3e2b34404c3b-ac893ad100a6b6f2",
+  "entry_id": "ja-282b3e2b34404c3b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-282b3e2b34404c3b",
+      "headword": "薬",
+      "reading": "くすり",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-282b3e2b34404c3b-1",
+          "definition": "medicine; a medicinal drug"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "飯を食べた後で薬を飲み、書物を開く。",
+        "gloss": "medicine",
+        "sense_id": "ja-282b3e2b34404c3b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "08f0e256f883aab59c65282e82c7748f3f16070815ed60290daa46764b308f4a"
+}

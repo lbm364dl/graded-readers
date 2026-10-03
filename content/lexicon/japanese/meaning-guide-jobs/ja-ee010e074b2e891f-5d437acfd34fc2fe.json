@@ -1,0 +1,32 @@
+{
+  "id": "ja-ee010e074b2e891f-5d437acfd34fc2fe",
+  "entry_id": "ja-ee010e074b2e891f",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ee010e074b2e891f",
+      "headword": "垣",
+      "reading": "かき",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-ee010e074b2e891f-1",
+          "definition": "a fence or hedge"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "西の垣のそばへ行くと、大きな黒い猫が枯菊の上で寝ていた。",
+        "gloss": "fence",
+        "sense_id": "ja-ee010e074b2e891f-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fe951300fe857eb55b2d19ebec52c6cbaedacaa7583c11b077a90ffaecabfb4d"
+}

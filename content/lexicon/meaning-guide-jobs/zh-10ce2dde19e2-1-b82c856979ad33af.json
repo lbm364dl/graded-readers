@@ -1,0 +1,31 @@
+{
+  "id": "zh-10ce2dde19e2-1-b82c856979ad33af",
+  "entry_id": "zh-10ce2dde19e2-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-10ce2dde19e2-1",
+      "headword": "被告密",
+      "kind": "construction",
+      "reading": "bèi gàomì",
+      "senses": [
+        {
+          "id": "zh-10ce2dde19e2-1-s1",
+          "definition": "to have one's secret plan exposed by someone who informs on it"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角一面私造黄旗，约好起事日期，一面派弟子送信，却被告密。",
+        "gloss": "to be betrayed by an informer",
+        "sense_id": "zh-10ce2dde19e2-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4b04aa47132dd187375eb79dbda59d0f334b007caa05f09cb931ab3387e4c411"
+}

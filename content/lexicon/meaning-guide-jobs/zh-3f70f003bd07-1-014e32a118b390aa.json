@@ -1,0 +1,31 @@
+{
+  "id": "zh-3f70f003bd07-1-014e32a118b390aa",
+  "entry_id": "zh-3f70f003bd07-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-3f70f003bd07-1",
+      "headword": "外出",
+      "kind": "word",
+      "reading": "wàichū",
+      "senses": [
+        {
+          "id": "zh-3f70f003bd07-1-s1",
+          "definition": "to go out; leave one’s usual place"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他十五岁时曾外出学习，也交了几个好友。",
+        "gloss": "to go out",
+        "sense_id": "zh-3f70f003bd07-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a010e036886d72f7654a9f032b6436e5fc47bd20bd62f37673db96d1c055564a"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-67b16f6ef6b0d813-bc7ae1f2a3cb6cff",
+  "entry_id": "ja-67b16f6ef6b0d813",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-67b16f6ef6b0d813",
+      "headword": "きりがない",
+      "reading": "きりがない",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-67b16f6ef6b0d813-1",
+          "definition": "to have no end; to be endless"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "しかし欲を言えばきりがない。",
+        "gloss": "endless; there is no end",
+        "sense_id": "ja-67b16f6ef6b0d813-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bda349c5618c31c1b3b8baf2c8d2078b34247f341c43e72e084101c9c7b7407a"
+}

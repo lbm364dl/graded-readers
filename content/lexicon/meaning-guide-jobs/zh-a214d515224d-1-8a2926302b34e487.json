@@ -1,0 +1,31 @@
+{
+  "id": "zh-a214d515224d-1-8a2926302b34e487",
+  "entry_id": "zh-a214d515224d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a214d515224d-1",
+      "headword": "云游四方",
+      "kind": "construction",
+      "reading": "yúnyóu sìfāng",
+      "senses": [
+        {
+          "id": "zh-a214d515224d-1-s1",
+          "definition": "travel from place to place"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他的徒弟有五百多人，云游四方，都会画符念咒。",
+        "gloss": "travel throughout the land",
+        "sense_id": "zh-a214d515224d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "390865ab20abecfc5341f5e9729c99538355ea709491c137837ecb4b41aa9e73"
+}

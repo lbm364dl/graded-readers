@@ -1,0 +1,32 @@
+{
+  "id": "ja-08096d965ff0a518-a501455eedf439c3",
+  "entry_id": "ja-08096d965ff0a518",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-08096d965ff0a518",
+      "headword": "最後っ屁",
+      "reading": "さいごっぺ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-08096d965ff0a518-1",
+          "definition": "a last-resort release of foul-smelling fluid by an animal; figuratively, a last-ditch act of resistance"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "最後に茶園で会った時、吾輩が「どうした」と聞くと、黒は「鼬の最後っ屁と、肴屋の天秤棒には、もうこりごりだ」と答えた。",
+        "gloss": "last-resort stink bomb",
+        "sense_id": "ja-08096d965ff0a518-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4c80f8b61748dcb15ef89096a7dc39510b5868a209103cff6de0d9ef50d58aeb"
+}

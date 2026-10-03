@@ -1,0 +1,37 @@
+{
+  "id": "ja-f18b4894a1368c5d-1e0147fe21438541",
+  "entry_id": "ja-f18b4894a1368c5d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-f18b4894a1368c5d",
+      "headword": "おさん",
+      "reading": "おさん",
+      "kind": "name",
+      "senses": [
+        {
+          "id": "ja-f18b4894a1368c5d-1",
+          "definition": "Osan (a personal name)"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "最初に会ったおさんは乱暴で、吾輩の頸筋をつかみ、台所から何度も外へ投げ出した。",
+        "gloss": "Osan",
+        "sense_id": "ja-f18b4894a1368c5d-1"
+      },
+      {
+        "sentence": "おさんは不満そうだったが、吾輩はこの家を自分の住家と決めた。",
+        "gloss": "Osan",
+        "sense_id": "ja-f18b4894a1368c5d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3cd5f6e8acdba27cafae4d70623c5de277a4e0c90da8f37c24d6eb5f2a4586fc"
+}

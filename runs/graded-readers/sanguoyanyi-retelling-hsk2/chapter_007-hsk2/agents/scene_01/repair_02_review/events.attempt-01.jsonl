@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff319-476f-7131-988a-d3bb237c2052"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.94,\"naturalness\":0.97,\"readability\":0.98,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"“为了报答曹操”略微改变了关羽斩颜良、文丑的动机；原文主要表现为关羽建功后才离开曹操，并非明确为了报答。\"],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":33490,"cached_input_tokens":8960,"cache_write_input_tokens":0,"output_tokens":623,"reasoning_output_tokens":516}}

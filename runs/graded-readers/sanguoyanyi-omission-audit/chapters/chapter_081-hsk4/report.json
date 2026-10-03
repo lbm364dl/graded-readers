@@ -1,0 +1,85 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_081-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 728,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了先主观星、李意预言等重要伏笔和出征暂缓情节。",
+      "classification": "material",
+      "reason": "这些内容构成重要伏笔，并解释了先主为何暂缓出征，省略会削弱后续情节的因果与时间线。",
+      "required_fix": "补回先主观星、星坠预示张飞遇害、李意的预言及先主因此暂缓进军的情节。"
+    },
+    {
+      "omission_note": "省略了张苞、关兴比箭及比武的具体过程。",
+      "classification": "material",
+      "reason": "比箭和比武具体展现两人的武艺、性格和竞争关系，是他们后来结盟的重要铺垫。",
+      "required_fix": "补回张苞射中靶心、关兴射落飞雁，以及二人因此交锋、被先主制止的过程。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了先主观星、李意预言等重要伏笔和出征暂缓情节。",
+      "classification": "material",
+      "reason": "这些内容构成重要伏笔，并解释了先主为何暂缓出征，省略会削弱后续情节的因果与时间线。",
+      "required_fix": "补回先主观星、星坠预示张飞遇害、李意的预言及先主因此暂缓进军的情节。"
+    },
+    {
+      "omission_note": "省略了张苞、关兴比箭及比武的具体过程。",
+      "classification": "material",
+      "reason": "比箭和比武具体展现两人的武艺、性格和竞争关系，是他们后来结盟的重要铺垫。",
+      "required_fix": "补回张苞射中靶心、关兴射落飞雁，以及二人因此交锋、被先主制止的过程。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 791,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 8.5,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [
+          "“孙权……惊惧不已”是原文未明确描写的孙权情绪，原文只写群臣失色、面面相觑。"
+        ],
+        "distortions": [
+          "先主在原文中是在尚未知晓张飞遇害前观星，星坠后才因孔明预言暂缓进军，随后收到吴班使者送来的凶信。修复稿却先写“先主得知三弟遇害”，又写当夜观星，之后才说吴班来报凶信，造成时间顺序倒置和情节自相矛盾。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 728,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

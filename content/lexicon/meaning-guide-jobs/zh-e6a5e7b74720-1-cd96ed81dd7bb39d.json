@@ -1,0 +1,31 @@
+{
+  "id": "zh-e6a5e7b74720-1-cd96ed81dd7bb39d",
+  "entry_id": "zh-e6a5e7b74720-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e6a5e7b74720-1",
+      "headword": "三百",
+      "kind": "word",
+      "reading": "sānbǎi",
+      "senses": [
+        {
+          "id": "zh-e6a5e7b74720-1-s1",
+          "definition": "three hundred"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "又聚集三百多个乡勇。",
+        "gloss": "three hundred",
+        "sense_id": "zh-e6a5e7b74720-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f6e8bc024f6ac5266c9ba891593d985db62645a5954cbba2e9cefb077b048406"
+}

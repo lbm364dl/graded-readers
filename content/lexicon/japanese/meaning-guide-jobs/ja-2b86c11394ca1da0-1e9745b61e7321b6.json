@@ -1,0 +1,32 @@
+{
+  "id": "ja-2b86c11394ca1da0-1e9745b61e7321b6",
+  "entry_id": "ja-2b86c11394ca1da0",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-2b86c11394ca1da0",
+      "headword": "根",
+      "reading": "ね",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-2b86c11394ca1da0-1",
+          "definition": "root"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "茶の木の根を一つ一つ嗅ぎながら西側の杉の垣根へ行くと、枯れた菊を押し倒し、その上で大きな猫が眠っていた。",
+        "gloss": "root",
+        "sense_id": "ja-2b86c11394ca1da0-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b049f208d1f0443a87c85f026421dd1d10c1d7bb0a6ba1d9e9114a2fca7d3f68"
+}

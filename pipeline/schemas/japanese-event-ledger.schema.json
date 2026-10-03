@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["scenes"],
+  "properties": {
+    "scenes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "required_events"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^scene_[0-9]{2}$"},
+          "required_events": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    }
+  }
+}

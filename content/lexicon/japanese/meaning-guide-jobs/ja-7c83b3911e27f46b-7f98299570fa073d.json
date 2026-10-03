@@ -1,0 +1,32 @@
+{
+  "id": "ja-7c83b3911e27f46b-7f98299570fa073d",
+  "entry_id": "ja-7c83b3911e27f46b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-7c83b3911e27f46b",
+      "headword": "不平",
+      "reading": "ふへい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-7c83b3911e27f46b-1",
+          "definition": "a complaint; dissatisfaction"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "友達が来るたびに、主人は仕事の不平をいろいろ言っている。",
+        "gloss": "complaints; dissatisfaction",
+        "sense_id": "ja-7c83b3911e27f46b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "429b9b48ea0bc8dd3be937c651313b495d769656cb9df329d867eefe9d092588"
+}

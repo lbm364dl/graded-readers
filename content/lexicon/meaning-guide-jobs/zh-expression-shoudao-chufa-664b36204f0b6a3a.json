@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-shoudao-chufa-664b36204f0b6a3a",
+  "entry_id": "zh-expression-shoudao-chufa",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-shoudao-chufa",
+      "headword": "受到处罚",
+      "reading": "shòudào chǔfá",
+      "base_entry_id": "zh-48d3e75b9ee5-1",
+      "components": [
+        {
+          "entry_id": "zh-48d3e75b9ee5-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-48c488d2292f-1",
+          "role": "treatment received"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-shoudao-chufa-s1",
+          "definition": "undergo punishment"
+        }
+      ],
+      "kind": "construction"
+    },
+    "examples": [
+      {
+        "sentence": "有人违反禁令，不管地位高低，都要受到处罚。",
+        "gloss": "undergo punishment",
+        "sense_id": "zh-expression-shoudao-chufa-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "受到",
+        "role": "verb"
+      },
+      {
+        "headword": "处罚",
+        "role": "treatment received"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "84062345e079fb7b6c3246ef9d060d54bb711e8838cd0353571520306df54885"
+}

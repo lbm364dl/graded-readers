@@ -1,0 +1,56 @@
+{
+  "id": "ja-d89923df7df1d8e9-f6904878e7205a0f",
+  "entry_id": "ja-d89923df7df1d8e9",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-d89923df7df1d8e9",
+      "headword": "回る",
+      "reading": "まわる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d89923df7df1d8e9-1",
+          "definition": "To turn or spin around; to go around."
+        },
+        {
+          "id": "ja-d89923df7df1d8e9-2",
+          "definition": "To feel dizzy."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "男の人の手の上で、吾輩の目が回りました。",
+        "gloss": "went dizzy; spun",
+        "sense_id": "ja-d89923df7df1d8e9-2"
+      },
+      {
+        "sentence": "目が回り、胸が悪くなったと思ったとき、どさりと音がして、目から火が出た。",
+        "gloss": "spin; feel dizzy",
+        "sense_id": "ja-d89923df7df1d8e9-2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-d89923df7df1d8e9",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "回る（まわる）means to turn or spin, or to travel around a route. In 目が回る, the sense of spinning extends to feeling dizzy, as if the surroundings were moving around you.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "e15c99e571e73265cf9e958895f1f260d9edbbc27e0428cc55f4366314b3af39",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9a275b4b4531d5ec440c7b51d8e64fd948538765999d4cf817de24841f7443eb"
+}

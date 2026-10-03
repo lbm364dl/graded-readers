@@ -1,0 +1,40 @@
+{
+  "id": "zh-49da61ceeea2-1-d0212bd865a5f737",
+  "entry_id": "zh-49da61ceeea2-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-49da61ceeea2-1",
+      "headword": "天",
+      "kind": "word",
+      "reading": "tiān",
+      "senses": [
+        {
+          "id": "zh-49da61ceeea2-1-s1",
+          "definition": "day; days"
+        },
+        {
+          "id": "zh-49da61ceeea2-1-s2",
+          "definition": "sky; heaven"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "没过几天，有人报告：黄巾军将领程远志率领五万兵马来犯涿郡。",
+        "gloss": "days",
+        "sense_id": "zh-49da61ceeea2-1-s1"
+      },
+      {
+        "sentence": "刘备带着关羽、张飞赶到颍川时，听见喊杀声，又看见仿佛冲天的火光。",
+        "gloss": "sky",
+        "sense_id": "zh-49da61ceeea2-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "649f26ff936e3e8fa701f2fdb9f4e1874ddeea81546b39fecb0522a6e12d1272"
+}

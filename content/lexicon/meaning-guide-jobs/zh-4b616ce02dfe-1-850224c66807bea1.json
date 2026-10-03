@@ -1,0 +1,31 @@
+{
+  "id": "zh-4b616ce02dfe-1-850224c66807bea1",
+  "entry_id": "zh-4b616ce02dfe-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4b616ce02dfe-1",
+      "headword": "营中",
+      "kind": "construction",
+      "reading": "yíng zhōng",
+      "senses": [
+        {
+          "id": "zh-4b616ce02dfe-1-s1",
+          "definition": "inside or into a military camp"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人救下董卓，把他带回营中。",
+        "gloss": "into the camp",
+        "sense_id": "zh-4b616ce02dfe-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "30164fffb240b9b0a2dd3a0a25e20ddf0bbfb4eb915163c4bb3f7d73fc913c1a"
+}

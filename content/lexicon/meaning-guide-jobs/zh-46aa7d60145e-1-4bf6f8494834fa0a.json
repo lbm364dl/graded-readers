@@ -1,0 +1,31 @@
+{
+  "id": "zh-46aa7d60145e-1-4bf6f8494834fa0a",
+  "entry_id": "zh-46aa7d60145e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-46aa7d60145e-1",
+      "headword": "竟然",
+      "kind": "word",
+      "reading": "jìngrán",
+      "senses": [
+        {
+          "id": "zh-46aa7d60145e-1-s1",
+          "definition": "unexpectedly; contrary to what was expected"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备离开后，张飞非常生气：“我们冒着危险救他，他竟然这样无礼！",
+        "gloss": "unexpectedly",
+        "sense_id": "zh-46aa7d60145e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d1d32fc6dedd24af0ef8b73b17fd38f8f026a02c2f68f5be023a54b6f1b70986"
+}

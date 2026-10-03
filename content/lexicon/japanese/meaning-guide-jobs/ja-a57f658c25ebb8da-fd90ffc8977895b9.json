@@ -1,0 +1,32 @@
+{
+  "id": "ja-a57f658c25ebb8da-fd90ffc8977895b9",
+  "entry_id": "ja-a57f658c25ebb8da",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a57f658c25ebb8da",
+      "headword": "こう",
+      "reading": "こう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-a57f658c25ebb8da-1",
+          "definition": "in this way; like this"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は猫ながら、時々こう考える。",
+        "gloss": "in this way; like this",
+        "sense_id": "ja-a57f658c25ebb8da-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c602f7257582002a81c5af8fa08fa6b010bc49b3b1447b84347aa279bd534877"
+}

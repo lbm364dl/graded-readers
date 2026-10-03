@@ -1,0 +1,31 @@
+{
+  "id": "zh-2afea0a3e1e1-1-155c11a15ed4a58b",
+  "entry_id": "zh-2afea0a3e1e1-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2afea0a3e1e1-1",
+      "headword": "丈",
+      "kind": "word",
+      "reading": "zhàng",
+      "senses": [
+        {
+          "id": "zh-2afea0a3e1e1-1-s1",
+          "definition": "a traditional Chinese unit of length, approximately 3⅓ metres (10 Chinese feet)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "于是，刘备请工匠打造双股剑，关羽打造青龙偃月刀，重八十二斤，张飞打造丈八点钢矛，并各自准备全身铠甲。",
+        "gloss": "ten Chinese feet",
+        "sense_id": "zh-2afea0a3e1e1-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2a296825245ea6904cb0baac1a543ee3b30b5efecd2a902dd0a3dbf5feae0ad8"
+}

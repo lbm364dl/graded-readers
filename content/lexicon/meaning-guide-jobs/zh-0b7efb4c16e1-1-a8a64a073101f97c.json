@@ -1,0 +1,31 @@
+{
+  "id": "zh-0b7efb4c16e1-1-a8a64a073101f97c",
+  "entry_id": "zh-0b7efb4c16e1-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-0b7efb4c16e1-1",
+      "headword": "化成清风",
+      "kind": "construction",
+      "reading": "huà chéng qīngfēng",
+      "senses": [
+        {
+          "id": "zh-0b7efb4c16e1-1-s1",
+          "definition": "turn into a clear breeze"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "说完，老人仿佛化成清风，转眼不见。",
+        "gloss": "transform into a gentle breeze",
+        "sense_id": "zh-0b7efb4c16e1-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "81d110c7c172cc921c6ac7d0fa2ae4b6870489244a419cceb0b865f877abdfd4"
+}

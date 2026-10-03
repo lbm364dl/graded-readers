@@ -1,0 +1,31 @@
+{
+  "id": "zh-e162a6a0aaa7-1-ff9ecd49dbbf27e6",
+  "entry_id": "zh-e162a6a0aaa7-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e162a6a0aaa7-1",
+      "headword": "夺路",
+      "kind": "construction",
+      "reading": "duólù",
+      "senses": [
+        {
+          "id": "zh-e162a6a0aaa7-1-s1",
+          "definition": "to force a way through; to make one's way through a route"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "杀到天明，张梁、张宝带着残军夺路而逃。",
+        "gloss": "to force a way through",
+        "sense_id": "zh-e162a6a0aaa7-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "95c5a47aeff5b4767f623ddefc1ff6517f30a686c03500b526b84d3552393bc7"
+}

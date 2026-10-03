@@ -1,0 +1,32 @@
+{
+  "id": "ja-ab058a1888a0406a-e45509e1af03afc2",
+  "entry_id": "ja-ab058a1888a0406a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ab058a1888a0406a",
+      "headword": "開ける",
+      "reading": "あける",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-ab058a1888a0406a-1",
+          "definition": "to open something"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が近づくと、彼は丸い目を開け、「お前は何だ」と言った。",
+        "gloss": "open; opened",
+        "sense_id": "ja-ab058a1888a0406a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "16a206ee1d4b554ee649bd0dbbf0469e7969d0338267b5d6d3c20a8645dba177"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-e6379501f18e2d9b-df7b06a13666e40c",
+  "entry_id": "ja-e6379501f18e2d9b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e6379501f18e2d9b",
+      "headword": "こうして",
+      "reading": "こうして",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e6379501f18e2d9b-1",
+          "definition": "in this way; thus"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "しかし、こうして吾輩は、ついにこの家を自分の住家と決めたのである。",
+        "gloss": "in this way; thus",
+        "sense_id": "ja-e6379501f18e2d9b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c7564fdb99b1fa0a0e401eef6838f66fbe7d47fa7acc8caaff4d459d9e1a0c8e"
+}

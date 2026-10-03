@@ -1,0 +1,130 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_024-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 331,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了马腾问题及曹操、程昱对其的谋划。",
+      "classification": "material",
+      "reason": "原文明确讨论如何安抚、诱入并图谋马腾；省略后删去了曹操的战略目标及相关谋划。",
+      "required_fix": "补写曹操提出马腾威胁，以及程昱建议以书安抚、诱入许都后再图之的谋划。"
+    },
+    {
+      "omission_note": "省略了曹操以虚营诱敌、八面设伏以及张飞、刘备分别突围的具体过程。",
+      "classification": "material",
+      "reason": "这些内容交代了曹操设伏取胜的具体原因和张飞、刘备败逃的关键过程，不只是战斗装饰。",
+      "required_fix": "补写曹操设空营并八面埋伏，以及张飞、刘备分别中伏、突围和败退的关键过程。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了马腾问题及曹操、程昱对其的谋划。",
+      "classification": "material",
+      "reason": "原文明确讨论如何安抚、诱入并图谋马腾；省略后删去了曹操的战略目标及相关谋划。",
+      "required_fix": "补写曹操提出马腾威胁，以及程昱建议以书安抚、诱入许都后再图之的谋划。"
+    },
+    {
+      "omission_note": "省略了曹操以虚营诱敌、八面设伏以及张飞、刘备分别突围的具体过程。",
+      "classification": "material",
+      "reason": "这些内容交代了曹操设伏取胜的具体原因和张飞、刘备败逃的关键过程，不只是战斗装饰。",
+      "required_fix": "补写曹操设空营并八面埋伏，以及张飞、刘备分别中伏、突围和败退的关键过程。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 8.5,
+    "naturalness": 8.5,
+    "readability": 8.5,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 331,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 8.0,
+        "readability": 8.2,
+        "material_omissions": [
+          "结尾省略了郭嘉、张辽、程昱围绕劝降关羽的完整谋划，缺少后续行动和结尾悬念的直接铺垫。",
+          "省略了曹操对袁绍可能趁许都空虚来袭、刘备可能向袁绍求援的具体战略顾虑，削弱了相关谋划的因果。",
+          "省略了曹军旧部投降以及李典截击并掳走刘备从骑的关键败退细节，削弱了两人只剩少量骑兵及刘备匹马投青州的因果。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "原文由荀彧、毛玠判断刘备将劫寨，修复稿将其概括为曹操直接看见旗折便知晓，略有归因失真。",
+          "原文中陈登献城、守军弃城，修复稿概括为“攻下徐州”，改变了取城方式。"
+        ],
+        "language_problems": [
+          "“曹操作罢”表达生硬，宜改为“曹操只好作罢”或“曹操于是放弃此事”。",
+          "“投奔青州袁谭”搭配不自然，宜改为“投奔青州刺史袁谭”或“前往青州投奔袁谭”。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 346,
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [
+          "省略张辽与关羽曾有一面之交，弱化张辽主动劝降的关系依据。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "“曹操再攻下邳”将原文中曹操召集谋士商议攻取下邳，提前说成已经再次进攻下邳。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 333,
+      "review": {
+        "source_fidelity": 8.1,
+        "naturalness": 7.9,
+        "readability": 8.2,
+        "material_omissions": [
+          "省略袁绍此前答应刘备“倘有不如意，可来相投”，以及刘备据此决定投奔袁绍的动机和因果。",
+          "省略关羽保护刘备妻小、死守下邳的情节，弱化关羽与刘备家眷的关系及曹操图取下邳、劝降关羽的背景。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [
+          "“刘备若求袁绍，许都空虚”因缺少曹操东征、袁绍趁虚来袭等主语和因果，表达不够自然清楚。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 4,
+      "candidate_cjk": 331,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 8.5,
+        "readability": 8.5,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff533-4cf1-71d1-b8bf-db3954f48a4c"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.94,\"naturalness\":0.82,\"readability\":0.85,\"omissions\":[],\"unsupported_additions\":[\"“姜维看出不对”暗示他在见郤正前已察觉召回另有原因，原文并未明确说明。\"],\"distortions\":[],\"language_problems\":[\"“分开人手看住汉中的路”表达生硬且含义不够明确，可改为“分兵把守汉中的各处关隘”。\",\"“准备吃的”较口语化，可改为“积存粮食”。\"],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":34226,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":665,"reasoning_output_tokens":516}}

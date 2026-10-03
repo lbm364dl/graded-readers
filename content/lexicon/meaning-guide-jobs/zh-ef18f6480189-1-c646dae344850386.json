@@ -1,0 +1,31 @@
+{
+  "id": "zh-ef18f6480189-1-c646dae344850386",
+  "entry_id": "zh-ef18f6480189-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ef18f6480189-1",
+      "headword": "尽力",
+      "kind": "word",
+      "reading": "jìnlì",
+      "senses": [
+        {
+          "id": "zh-ef18f6480189-1-s1",
+          "definition": "to do all one can; to make one's utmost effort"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "随后有人大声说：“大丈夫不为国家尽力，为什么长叹？",
+        "gloss": "do one's utmost",
+        "sense_id": "zh-ef18f6480189-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "88d6e3010842bbd73823f53346a8bb5ba18958ab16e6ca59af63a35eadfe96d0"
+}

@@ -1,0 +1,133 @@
+{
+  "id": "zh-component-5eaef77ec2da1121-1a62b05208539378",
+  "entry_id": "zh-component-5eaef77ec2da1121",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-component-5eaef77ec2da1121",
+      "headword": "黄巾",
+      "kind": "word",
+      "reading": "huángjīn",
+      "senses": [
+        {
+          "id": "zh-component-5eaef77ec2da1121-s2",
+          "definition": "the Yellow Turban movement or its followers"
+        },
+        {
+          "id": "zh-component-5eaef77ec2da1121-s1",
+          "definition": "The yellow head coverings that identified followers of the late Han rebel movement known as the Yellow Turbans."
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”三人于是发动黄巾起事，百姓纷纷跟随，黄巾军很快壮大。",
+        "gloss": "Yellow Turban",
+        "sense_id": "zh-component-5eaef77ec2da1121-s2"
+      },
+      {
+        "sentence": "百姓纷纷裹上黄巾，跟随黄巾军的人有四五十万。",
+        "gloss": "Yellow Turbans",
+        "sense_id": "zh-component-5eaef77ec2da1121-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-component-5eaef77ec2da1121",
+    "claim_ids": [
+      "c1",
+      "c2"
+    ],
+    "structure": "compositional",
+    "explanation_en": "黄巾 names the yellow cloth worn wrapped around the head: 黄 gives its color, and 巾 is the head cloth. Because followers of Zhang Jue’s late Han movement wore it as an identifying marker, the name also refers to the followers and their movement.",
+    "caveat_en": "When it names the group, 黄巾 refers to it through its identifying head covering; it does not describe the movement’s aims.",
+    "parts": [
+      {
+        "text": "黄",
+        "contribution_en": "Specifies the yellow color of the cloth.",
+        "claim_ids": [
+          "c1"
+        ]
+      },
+      {
+        "text": "巾",
+        "contribution_en": "Refers to the cloth worn wrapped around the head.",
+        "claim_ids": [
+          "c1"
+        ]
+      }
+    ],
+    "input_fingerprint": "a35210798a1a70c708b4fd9cf59a15afa9a29637657459c0cba2e08aa3a142ee",
+    "research": {
+      "entry_id": "zh-component-5eaef77ec2da1121",
+      "status": "supported",
+      "sources": [
+        {
+          "id": "s1",
+          "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=21008&la=0&powerMode=0",
+          "title": "〈黃巾〉，教育部《國語辭典簡編本》",
+          "accessed_at": "2026-09-26",
+          "summary_en": "The dictionary defines 黃巾 as the organization led by Zhang Jue during Emperor Ling’s Eastern Han reign. It says the followers wrapped yellow cloth around their heads as an identifying mark during the uprising, hence the name."
+        },
+        {
+          "id": "s2",
+          "url": "https://zh.wikisource.org/zh-hant/後漢書/卷71",
+          "title": "《後漢書》卷七十一：皇甫嵩朱儁列傳",
+          "accessed_at": "2026-09-26",
+          "summary_en": "The biography states that Zhang Jue’s followers wore 黃巾 as a marker and that people at the time called them 黃巾. This passage directly attests to the association between the head coverings and the group label."
+        }
+      ],
+      "claims": [
+        {
+          "id": "c1",
+          "text_en": "黃 contributes “yellow” and 巾 refers here to the cloth worn wrapped around the head. The dictionary explicitly describes the followers wrapping yellow cloth around their heads as an identifying mark, supporting this word-level composition.",
+          "source_ids": [
+            "s1",
+            "s2"
+          ]
+        },
+        {
+          "id": "c2",
+          "text_en": "The Hou Hanshu passage says the followers wore 黃巾 as a marker and that contemporaries called them 黃巾. This supports the supplied sense in which the name for the head coverings also identifies the followers or movement.",
+          "source_ids": [
+            "s2"
+          ]
+        }
+      ],
+      "searches": [
+        {
+          "query": "site:dict.concised.moe.edu.tw/dictView.jsp 黃巾 教育部 國語辭典簡編本",
+          "opened_urls": [
+            "https://dict.concised.moe.edu.tw/dictView.jsp?ID=21008&la=0&powerMode=0"
+          ]
+        },
+        {
+          "query": "後漢書 卷七十一 皇甫嵩 黃巾 標幟 張角",
+          "opened_urls": [
+            "https://zh.wikisource.org/zh-hant/後漢書/卷71"
+          ]
+        },
+        {
+          "query": "《後漢書》 黃巾 「皆著黃巾為摽幟」 黃巾 得名",
+          "opened_urls": []
+        },
+        {
+          "query": "(direct open)",
+          "opened_urls": [
+            "https://dict.concised.moe.edu.tw/dictView.jsp?ID=21008&la=0&powerMode=0",
+            "https://zh.wikisource.org/zh-hant/後漢書/卷71"
+          ]
+        }
+      ],
+      "gaps": []
+    },
+    "revision": 1,
+    "editorial_policy": 3,
+    "evidence_status": "supported",
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3ac0d6b4649b2b3fc3c5e895a6da28bcaf319036a4433466b0d28af128102dea"
+}

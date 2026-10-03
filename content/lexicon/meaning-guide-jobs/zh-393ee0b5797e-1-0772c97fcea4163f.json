@@ -1,0 +1,36 @@
+{
+  "id": "zh-393ee0b5797e-1-0772c97fcea4163f",
+  "entry_id": "zh-393ee0b5797e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-393ee0b5797e-1",
+      "headword": "眼",
+      "kind": "word",
+      "reading": "yǎn",
+      "senses": [
+        {
+          "id": "zh-393ee0b5797e-1-s1",
+          "definition": "eyes"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他身材高大，头大眼圆，胡子很长，声音像雷一样响，气势惊人。",
+        "gloss": "eyes",
+        "sense_id": "zh-393ee0b5797e-1-s1"
+      },
+      {
+        "sentence": "刘备回头看那人，只见他身长八尺，豹头环眼，燕颔虎须，声音如巨雷，气势如奔马。",
+        "gloss": "eye",
+        "sense_id": "zh-393ee0b5797e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6c06199d52ac67ccccdae284b74b74fc8648beae20c1263612552d939b75a14b"
+}

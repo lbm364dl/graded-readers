@@ -1,0 +1,31 @@
+{
+  "id": "zh-b4e1e3745724-1-8a41477f6b3352d6",
+  "entry_id": "zh-b4e1e3745724-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b4e1e3745724-1",
+      "headword": "关进",
+      "kind": "construction",
+      "reading": "guānjìn",
+      "senses": [
+        {
+          "id": "zh-b4e1e3745724-1-s1",
+          "definition": "to put or confine someone in an enclosed place"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "朝廷立即派兵抓住马元义并杀了他，又把封谞等人关进监狱。",
+        "gloss": "to lock up",
+        "sense_id": "zh-b4e1e3745724-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8b97d3d7a2854859371de0d94c2e6ec224f252854c977a09be95519e8095f4c6"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-4b6ec31da9a44e23-f7c962dbf964a759",
+  "entry_id": "ja-4b6ec31da9a44e23",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-4b6ec31da9a44e23",
+      "headword": "鼻",
+      "reading": "はな",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-4b6ec31da9a44e23-1",
+          "definition": "nose"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人は鼻の下の黒い毛をひねりながら、吾輩の顔をしばらく見ていた。",
+        "gloss": "nose",
+        "sense_id": "ja-4b6ec31da9a44e23-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "65af1d2d479ea6712fd461fd5639dfd1945273ab67a6a27ce6ef021986b2a12e"
+}

@@ -1,0 +1,41 @@
+{
+  "id": "zh-4a5ee8bba019-1-b832254e655635dc",
+  "entry_id": "zh-4a5ee8bba019-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4a5ee8bba019-1",
+      "headword": "退到",
+      "kind": "construction",
+      "reading": "tuìdào",
+      "senses": [
+        {
+          "id": "zh-4a5ee8bba019-1-s1",
+          "definition": "to retreat to a place"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "可是黄巾军数量很多，刘备这边的人很少，只好退到山下。",
+        "gloss": "retreat to",
+        "sense_id": "zh-4a5ee8bba019-1-s1"
+      },
+      {
+        "sentence": "黄巾军退到长社，靠着草地扎营。",
+        "gloss": "retreat to",
+        "sense_id": "zh-4a5ee8bba019-1-s1"
+      },
+      {
+        "sentence": "刘备兵少，打不过，只好退到三十里外安营。",
+        "gloss": "retreat to",
+        "sense_id": "zh-4a5ee8bba019-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2ca5667de1af3a135cc81c76abe3ef3a017149573950fabddb506d45b1eb2790"
+}

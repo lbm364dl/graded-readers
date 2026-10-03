@@ -1,0 +1,32 @@
+{
+  "id": "ja-5fcf21d47f7b46ec-76944b8895310e10",
+  "entry_id": "ja-5fcf21d47f7b46ec",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5fcf21d47f7b46ec",
+      "headword": "そば",
+      "reading": "そば",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-5fcf21d47f7b46ec-1",
+          "definition": "the area beside or near something; vicinity"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "腹が減り、寒くなったので、食べ物を求めて池のそばを歩いた。",
+        "gloss": "nearby; vicinity",
+        "sense_id": "ja-5fcf21d47f7b46ec-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "61e9908d2ce67a1e69278387d8d9594809407e7e63b908ba4025f737b4ba2961"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-f49a1b51c6e0-1-af9bda33a6ec7f4a",
+  "entry_id": "zh-f49a1b51c6e0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f49a1b51c6e0-1",
+      "headword": "山岸",
+      "kind": "word",
+      "reading": "shān àn",
+      "senses": [
+        {
+          "id": "zh-f49a1b51c6e0-1-s1",
+          "definition": "the side or edge of a mountain"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "秋七月又见彩虹，山岸裂开。",
+        "gloss": "mountain bank",
+        "sense_id": "zh-f49a1b51c6e0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "665f04077ae2d3b7b3c00397665b4187d0a9a4ba51858da9ac193bb382f0f723"
+}

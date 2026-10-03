@@ -1,0 +1,31 @@
+{
+  "id": "zh-d9c6496432c6-1-80faaaae63b9b166",
+  "entry_id": "zh-d9c6496432c6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d9c6496432c6-1",
+      "headword": "押回",
+      "kind": "construction",
+      "reading": "yāhuí",
+      "senses": [
+        {
+          "id": "zh-d9c6496432c6-1-s1",
+          "definition": "to take or escort someone back"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "卢植因为拒绝行贿，被人诬陷，押回京城。",
+        "gloss": "escort back",
+        "sense_id": "zh-d9c6496432c6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a9765a67021c190ee4ad09ffa5842e4c02d617d4096bb4c4cd5772af83766afb"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-320a6dd958c2-1-b08d8b25248cd28b",
+  "entry_id": "zh-320a6dd958c2-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-320a6dd958c2-1",
+      "headword": "相识",
+      "kind": "word",
+      "reading": "xiāngshí",
+      "senses": [
+        {
+          "id": "zh-320a6dd958c2-1-s1",
+          "definition": "to become acquainted with one another"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "之后，刘备、关羽、张飞一起到张飞庄上商议大事，三人也因共同志向相识。",
+        "gloss": "to get acquainted",
+        "sense_id": "zh-320a6dd958c2-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1ceb0a0650c24c3450534953e20a7a26842b41090e30e743aa64757e44a2c8ec"
+}

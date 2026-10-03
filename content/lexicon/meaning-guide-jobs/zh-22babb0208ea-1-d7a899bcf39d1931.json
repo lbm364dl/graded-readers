@@ -1,0 +1,46 @@
+{
+  "id": "zh-22babb0208ea-1-d7a899bcf39d1931",
+  "entry_id": "zh-22babb0208ea-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-22babb0208ea-1",
+      "headword": "榜",
+      "kind": "word",
+      "reading": "bǎng",
+      "senses": [
+        {
+          "id": "zh-22babb0208ea-1-s1",
+          "definition": "a posted public notice or proclamation"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "邹靖建议马上发布招军榜，招募乡勇。",
+        "gloss": "proclamation",
+        "sense_id": "zh-22babb0208ea-1-s1"
+      },
+      {
+        "sentence": "刘焉听从建议，于是发布了招军榜。",
+        "gloss": "proclamation",
+        "sense_id": "zh-22babb0208ea-1-s1"
+      },
+      {
+        "sentence": "招军榜发布时，刘备已经二十八岁。",
+        "gloss": "公告; public notice",
+        "sense_id": "zh-22babb0208ea-1-s1"
+      },
+      {
+        "sentence": "刘备看着招军榜叹气，一个大汉走来问他。",
+        "gloss": "announcement",
+        "sense_id": "zh-22babb0208ea-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a4f659dd7b502d6992173fd2774b683cc29b8c492a2fa612160e7addc6fde737"
+}

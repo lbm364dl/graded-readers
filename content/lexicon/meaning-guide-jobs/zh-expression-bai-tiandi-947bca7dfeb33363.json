@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-bai-tiandi-947bca7dfeb33363",
+  "entry_id": "zh-expression-bai-tiandi",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-bai-tiandi",
+      "headword": "拜天地",
+      "reading": "bài tiāndì",
+      "base_entry_id": "zh-428cf29b5093-1",
+      "components": [
+        {
+          "entry_id": "zh-428cf29b5093-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-5e431916de87-1",
+          "role": "object of the rite"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-bai-tiandi-s1",
+          "definition": "perform a rite before Heaven and Earth"
+        }
+      ],
+      "kind": "construction"
+    },
+    "examples": [
+      {
+        "sentence": "第二天，三人在桃园拜天地。",
+        "gloss": "perform a rite before Heaven and Earth",
+        "sense_id": "zh-expression-bai-tiandi-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "拜",
+        "role": "verb"
+      },
+      {
+        "headword": "天地",
+        "role": "object of the rite"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1c47cbfe3e84ca9198b6d9c95dbdddae792908286ce1e49e9b65fd3a94f20a6f"
+}

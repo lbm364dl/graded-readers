@@ -1,0 +1,63 @@
+{
+  "id": "ja-436cec520d4ebc91-09d26c2efc5f99cf",
+  "entry_id": "ja-436cec520d4ebc91",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-436cec520d4ebc91",
+      "headword": "そのもの",
+      "reading": "そのもの",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-436cec520d4ebc91-1",
+          "definition": "itself; the thing in question, emphasized as being exactly that"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人が「自分で筆を持つと、絵は実に難しい」と言うと、友人は、室内の想像だけでは絵はかけない、自然そのものを見て写生すべきだと教えた。",
+        "gloss": "itself",
+        "sense_id": "ja-436cec520d4ebc91-1"
+      },
+      {
+        "sentence": "そして、絵をかくなら自然そのものを写すべきだ、空には星、地には露、池には金魚、枯れ木には鳥がいる、自然全体が大きな絵なのだ、と語った。",
+        "gloss": "the thing itself",
+        "sense_id": "ja-436cec520d4ebc91-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-436cec520d4ebc91",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "compositional",
+    "explanation_en": "そのもの means “that very thing” or “the thing itself.” After a noun, Nそのもの emphasizes that it is N itself, as in 自然そのもの (“nature itself”).",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "その",
+        "contribution_en": "Points to “that” referent.",
+        "claim_ids": []
+      },
+      {
+        "text": "もの",
+        "contribution_en": "Means “thing,” making the phrase refer to the thing itself.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "9cd9a182cf3556263ddb93852106d4fc6e118b543fd011557e03fcfd5d7c6824",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f2576a901894240fb3089acd5f4ea38dff8e0c7397db832556fc568b17d7aa11"
+}

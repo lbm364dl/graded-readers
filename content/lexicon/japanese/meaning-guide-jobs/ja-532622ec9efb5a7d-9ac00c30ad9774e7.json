@@ -1,0 +1,32 @@
+{
+  "id": "ja-532622ec9efb5a7d-9ac00c30ad9774e7",
+  "entry_id": "ja-532622ec9efb5a7d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-532622ec9efb5a7d",
+      "headword": "不安になる",
+      "reading": "ふあんになる",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-532622ec9efb5a7d-1",
+          "definition": "A change-of-state pattern formed with a na-adjective and になる, meaning to become or come to be in the state described by the adjective."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩はその名を聞くと少し不安になったが、同時に、どれほど無学なのか試してみたくなった。",
+        "gloss": "became anxious",
+        "sense_id": "ja-532622ec9efb5a7d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0eaac1e608f34636ad78a22bbb15de232fb2f02a26fe8795bd3d233ef1f27632"
+}

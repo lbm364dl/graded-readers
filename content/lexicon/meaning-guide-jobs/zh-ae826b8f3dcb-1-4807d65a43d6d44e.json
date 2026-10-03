@@ -1,0 +1,31 @@
+{
+  "id": "zh-ae826b8f3dcb-1-4807d65a43d6d44e",
+  "entry_id": "zh-ae826b8f3dcb-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ae826b8f3dcb-1",
+      "headword": "苦难",
+      "kind": "word",
+      "reading": "kǔnàn",
+      "senses": [
+        {
+          "id": "zh-ae826b8f3dcb-1-s1",
+          "definition": "suffering or hardship"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备说自己姓刘，名备，是汉室宗亲，想打败黄巾军，救民于苦难，只是力量不足。",
+        "gloss": "suffering; hardship",
+        "sense_id": "zh-ae826b8f3dcb-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f2bc3396a0a3f339cacb7344443a2c78f0c37d50c5b1ededa0d46e038f4192ff"
+}

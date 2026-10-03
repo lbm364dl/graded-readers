@@ -1,0 +1,31 @@
+{
+  "id": "zh-2a44562ee391-1-f5bdd33b623de958",
+  "entry_id": "zh-2a44562ee391-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2a44562ee391-1",
+      "headword": "燕颔虎须",
+      "kind": "expression",
+      "reading": "yànhànhǔxū",
+      "senses": [
+        {
+          "id": "zh-2a44562ee391-1-s1",
+          "definition": "describing a chin like a swallow’s and whiskers like a tiger’s"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备回头看那人，只见他身长八尺，豹头环眼，燕颔虎须，声音如巨雷，气势如奔马。",
+        "gloss": "swallow-like chin and tiger-like whiskers",
+        "sense_id": "zh-2a44562ee391-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "94f73b84bb6c4b6f19a1fd3863e552d4127159529291544f3618875c7c335ac4"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-87cd43bce881-1-30fdedd47526abbb",
+  "entry_id": "zh-87cd43bce881-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-87cd43bce881-1",
+      "headword": "不太",
+      "kind": "word",
+      "reading": "bú tài",
+      "senses": [
+        {
+          "id": "zh-87cd43bce881-1-s1",
+          "definition": "not very; somewhat less than the stated degree"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备不太专心读书，性情宽和，话不多，喜怒很少露在脸上。",
+        "gloss": "not very",
+        "sense_id": "zh-87cd43bce881-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "07585952c38478fbfb2d417ee5a4dc6dbddf39470294a2ba8192d72ced2e5434"
+}

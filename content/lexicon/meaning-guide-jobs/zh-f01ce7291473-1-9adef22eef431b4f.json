@@ -1,0 +1,46 @@
+{
+  "id": "zh-f01ce7291473-1-9adef22eef431b4f",
+  "entry_id": "zh-f01ce7291473-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f01ce7291473-1",
+      "headword": "程远志",
+      "kind": "name",
+      "reading": "Chéng Yuǎnzhì",
+      "senses": [
+        {
+          "id": "zh-f01ce7291473-1-s1",
+          "definition": "Cheng Yuanzhi"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军的程远志带人来攻涿郡。",
+        "gloss": "Cheng Yuanzhi",
+        "sense_id": "zh-f01ce7291473-1-s1"
+      },
+      {
+        "sentence": "程远志派邓茂出战。",
+        "gloss": "Cheng Yuanzhi",
+        "sense_id": "zh-f01ce7291473-1-s1"
+      },
+      {
+        "sentence": "程远志又来打张飞。",
+        "gloss": "Cheng Yuanzhi",
+        "sense_id": "zh-f01ce7291473-1-s1"
+      },
+      {
+        "sentence": "关羽挥刀杀了程远志。",
+        "gloss": "Cheng Yuanzhi",
+        "sense_id": "zh-f01ce7291473-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "54c4bb9508de6944612a0dce0c0bc917e0de6e53671796b3fd77d9b6f6455f37"
+}
