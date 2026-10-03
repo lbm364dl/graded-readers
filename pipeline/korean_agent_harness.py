@@ -394,6 +394,7 @@ class KoreanHarness:
         self.run_dir, self.number, self.existing = run_dir, number, existing
         if workers < 1:
             raise ValueError('Korean pipeline workers must be positive')
+        self.workers = workers
         self.runner = runner or CodexRunner(run_dir, model, asyncio.Semaphore(workers), timeout=600)
         self.policy = POLICY.read_text(encoding="utf-8")
         self.review_policy = REVIEW_POLICY.replace('for its requested TOPIK learner level', f'for a TOPIK {level} learner')
@@ -465,6 +466,11 @@ class KoreanHarness:
                 if reviewed_usages:
                     evidence['reviewed_lexical_usage_evidence'] = reviewed_usages
             if name == 'annotation':
+                assembly_path = self.run_dir / 'agents' / job / 'meta.json'
+                if assembly_path.exists():
+                    assembly = read(assembly_path)
+                    if assembly.get('chunk_reviews_version') == 1:
+                        evidence['local_annotation_reviews'] = assembly['chunk_reviews']
                 from pipeline.korean_lexical_research import usage_evidence
                 usages = {}
                 for segment in value['segments']:
@@ -474,11 +480,11 @@ class KoreanHarness:
                 ids = {s['lexical_id'] for s in value['segments'] if s['lexical_kind'] == 'vocabulary'}
                 attested = {s[key] for s in value['segments'] if s['lexical_kind'] == 'vocabulary'
                             for key in ('lemma', 'text')}
-                evidence = {'vocabulary_evidence': {'source_sha256': VOCAB_SHA256,
+                evidence.update({'vocabulary_evidence': {'source_sha256': VOCAB_SHA256,
                     'entries': sorted([entry for candidates in self.catalog.values() for entry in candidates
                                       if entry['id'] in ids or entry['headword'] in attested], key=lambda entry: entry['id']),
                     'max_non_beginner_ratio': MAX_NON_BEGINNER_RATIO,
-                    'policy': 'The older A/B/C grades are compatibility identity metadata, not target curriculum levels. Do not reject an identity merely because it is absent from A. The separate independently reviewed six-level curriculum stage establishes actual vocabulary and grammar levels. Check occurrence meaning and form analysis here; names and essential story exemptions stay separate from ordinary extra vocabulary.'}}
+                    'policy': 'The older A/B/C grades are compatibility identity metadata, not target curriculum levels. Do not reject an identity merely because it is absent from A. The separate independently reviewed six-level curriculum stage establishes actual vocabulary and grammar levels. Check occurrence meaning and form analysis here; names and essential story exemptions stay separate from ordinary extra vocabulary.'}})
                 reviewed_usages = usage_evidence(usages, related_forms=True)
                 if reviewed_usages:
                     evidence['reviewed_lexical_usage_evidence'] = reviewed_usages
@@ -508,6 +514,11 @@ class KoreanHarness:
                     'Consider reviewed_source_context when resolving identity and discourse. Missing development needs connected narration, '
                     'not an automatic shorter chapter or a length quota.')
             transmitted_output = contracts.annotation_view(value) if name == 'annotation' else value
+            if evidence.get('local_annotation_reviews'):
+                instructions += (' Each chunk has already passed an independent linguistic review bound to its exact annotation and chapter context. '
+                    'Review the assembled chapter for cross-chunk consistency, contextual contradictions, coverage and the semantics of coordinated grammar identities. '
+                    'Do not repeat standalone local checks merely to restate approvals, but report any concrete missed defect you find. '
+                    'Local approval never overrides a real chapter-level problem. Overall curriculum suitability is reviewed in the subsequent curriculum stage.')
             if transmitted_output is not value:
                 instructions += ' The output is lossless_annotation_rows: use its explicit column lists to read each row. Every source segment retains its original index; nested form_steps use form_step_columns and grammar_links use grammar_link_columns. All meanings, readings, roles and occurrence positions are preserved. Review the complete annotation, not a sample.'
             return payload(stage=name, task=instructions, task_inputs=task_inputs, context=transmitted_context, output=transmitted_output, **evidence)
@@ -547,6 +558,9 @@ class KoreanHarness:
             value = read(proposal_path)
             try:
                 proposal_meta = read(proposal_path.with_name('meta.json')) if proposal_path.with_name('meta.json').exists() else {}
+                if name == 'annotation' and 'chunk_reviews_version' in proposal_meta:
+                    from pipeline.korean_chunk_reviews import verify_assembly_reviews
+                    verify_assembly_reviews(self.run_dir, proposal_meta)
                 if proposal_meta.get('kind') == 'prose_patch_assembly':
                     from pipeline.korean_prose_patches import replay
                     if name != 'prose' or replay(self.run_dir, proposal_meta) != value:
@@ -576,6 +590,9 @@ class KoreanHarness:
             self.stages[name] = {"proposal_job": job, "review_job": review_job,
                 "output_digest": digest(value), "review_digest": digest(review),
                 "context_digest": digest(review_context), "approved": True, **adjudication}
+            if name == 'annotation':
+                from pipeline.korean_chunk_reviews import stage_evidence
+                self.stages[name].update(stage_evidence(self.run_dir, job))
             print(f"{name}: reused approved output", flush=True)
             return value
         start, problems, previous = resume or (0, repair_issues or [], repair_base)
@@ -622,6 +639,9 @@ class KoreanHarness:
                 self.stages[name] = {"proposal_job": proposal_job, "review_job": review_job,
                     "output_digest": digest(value), "review_digest": digest(review),
                     "context_digest": digest(review_context), "approved": True, **adjudication}
+                if name == 'annotation':
+                    from pipeline.korean_chunk_reviews import stage_evidence
+                    self.stages[name].update(stage_evidence(self.run_dir, proposal_job))
                 print(f"{name}: approved", flush=True)
                 return value
             problems, previous = review["issues"], value
@@ -933,28 +953,35 @@ class KoreanHarness:
                         focus=focus, title=prose['title'], number=self.number, plan=bound_plan,
                         level=self.level, run_dir=self.run_dir, source_id=source_id)
 
-                async def chunk(number, text):
-                    if number in reused:
+                async def chunk(number, text, local_issues=None, local_previous=None):
+                    if local_issues is None and number in reused:
                         record = old_lineage[reused[number] - 1]
                         value = read_annotation_chunk(self.run_dir / 'agents' / record['job'] / 'result.json', record)
                         if digest(value) != record['digest']:
                             raise ValueError('Korean reusable annotation occurrence changed')
                         return value, record
-                    if selected is not None and number not in selected:
+                    if local_issues is None and selected is not None and number not in selected:
                         record = old_lineage[number - 1]
                         value = read_annotation_chunk(self.run_dir / 'agents' / record['job'] / 'result.json', record)
                         if digest(value) != record['digest']:
                             raise ValueError('Korean retained annotation chunk changed')
                         return value, record
-                    errors = selected[number] if selected is not None else issues
+                    errors = selected.get(number, []) if selected is not None else issues
                     previous_chunk = previous_chunks[number - 1] if previous_chunks is not None else None
+                    if local_issues is not None:
+                        errors, previous_chunk = local_issues, local_previous
                     repair_start = 0
+                    if local_issues is not None:
+                        attempts = [int(p.parent.name.rsplit('-', 1)[-1])
+                            for p in (self.run_dir / 'agents').glob(f'{job}-chunk-{number:03d}-*/result.json')
+                            if p.parent.name.rsplit('-', 1)[-1].isdigit()]
+                        repair_start = max(attempts, default=-1) + 1
                     # A process may stop before writing the parent assembly. Its
                     # completed workers are proposals, not approved annotations.
                     # Recover only locally valid outputs when there are no known
                     # reviewer objections; the whole chapter still gets reviewed.
                     rejected_digest = digest(previous_chunk) if errors and previous_chunk is not None else None
-                    if not errors or selected is not None:
+                    if local_issues is None and (not errors or selected is not None):
                         cached = []
                         for path in (self.run_dir / 'agents').glob(f'{job}-chunk-{number:03d}-*/result.json'):
                             suffix = path.parent.name.rsplit('-', 1)[-1]
@@ -1070,13 +1097,38 @@ class KoreanHarness:
                                 else:
                                     return value, annotation_chunk_record(chunk_job, text, value, raw_value)
                     raise ValueError(f"Korean annotation chunk {number} failed reconstruction: {errors}")
-                results = await asyncio.gather(*(chunk(i + 1, text) for i, text in enumerate(texts)), return_exceptions=True)
-                for result in results:
-                    if isinstance(result, BaseException):
-                        raise result
-                values, lineage = zip(*results)
+                async def reviewed_chunk(index, text):
+                    from pipeline.korean_chunk_reviews import review_chunk
+                    local_issues, local_previous = None, None
+                    for review_attempt in range(4):
+                        value, record = await chunk(index + 1, text, local_issues, local_previous)
+                        word_ids = {s['lexical_id'] for s in value['segments']}
+                        grammar_ids = {link['entry_id'] for link in value['grammar_links']}
+                        context = {'chapter_text': prose['text'], 'source_start': sum(map(len, texts[:index])),
+                            'target_level': self.level, 'source_plan': bound_plan, 'lexical_plan': focus,
+                            'reviewed_source_context': reviewed_source_context,
+                            'approved_words': [v for k, v in self.words.items() if k in word_ids],
+                            'approved_grammar': [v for k, v in self.grammar.items() if k in grammar_ids],
+                            'lexical_candidates': [entry for entries in self.catalog.values()
+                                for entry in entries if entry['id'] in word_ids],
+                            'linguistic_reference': read(LINGUISTIC_REFERENCE),
+                            'lexical_reference': read(LEXICAL_REFERENCE)}
+                        review, evidence = await review_chunk(self.runner, self.run_dir,
+                            annotation=value, text=text, context=context,
+                            policy=self.policy + '\n' + self.review_policy)
+                        if review['prose_revision_reason_en']:
+                            raise UnannotatableProseError(review['prose_revision_reason_en'])
+                        if approved(review):
+                            print(f'annotation chunk {index + 1}: independent review passed', flush=True)
+                            return value, record, evidence
+                        local_issues, local_previous = review['issues'], value
+                    raise ValueError(f'Korean annotation chunk {index + 1} failed independent review: {local_issues}')
+                from pipeline.chunk_scheduler import map_chunks
+                results = await map_chunks(texts, reviewed_chunk, self.workers)
+                values, lineage, chunk_reviews = zip(*results)
                 combined = contracts.combine_annotations(list(values), texts)
-                assembly = {'return_code': 0, 'kind': 'annotation_assembly', 'chunks': list(lineage), **repair_evidence}
+                assembly = {'return_code': 0, 'kind': 'annotation_assembly', 'chunks': list(lineage),
+                    'chunk_reviews_version': 1, 'chunk_reviews': list(chunk_reviews), **repair_evidence}
                 if self.annotation_batch_characters:
                     assembly['batch_characters'] = self.annotation_batch_characters
                 new_ids = sorted({link['entry_id'] for link in combined['grammar_links']} - self.grammar.keys())

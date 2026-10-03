@@ -1100,6 +1100,38 @@ async def test_annotation_only_preserves_exact_text_and_provenance(tmp_path):
 
 
 @pytest.mark.asyncio
+async def test_annotation_only_uses_bounded_shared_chunk_scheduler(tmp_path):
+    from pipeline.agent_harness import AnnotationOnlyHarness
+
+    chapter = tmp_path / "approved.txt"
+    source = tmp_path / "source.txt"
+    text = "刘备来了。\n"
+    chapter.write_text(text, encoding="utf-8")
+    source.write_text("玄德见榜。", encoding="utf-8")
+    args = parser().parse_args([
+        "annotate", "--chapter", str(chapter), "--source", str(source),
+        "--run-dir", str(tmp_path / "generative"), "--level", "hsk4",
+        "--annotation-mode", "generative", "--concurrency", "2",
+    ])
+    harness = AnnotationOnlyHarness(args)
+    harness.chinese_annotation_chunks = lambda _chapter: ["刘备来了。", "\n"]
+    visited = []
+
+    async def fake_annotation(index, chunk):
+        visited.append(index)
+        return {
+            "segments": [{"text": chunk, "type": "punctuation"}],
+            "grammar_overlays": [], "resolved": True, "reviewed": True,
+            "attempts": [{"review": {"verdict": "pass"}}],
+        }
+
+    harness.annotate_chunk = fake_annotation
+    report = await harness.run_annotation_only()
+    assert sorted(visited) == [0, 1]
+    assert report["exact_reconstruction"] is True
+
+
+@pytest.mark.asyncio
 async def test_constrained_delta_uses_one_chapter_seed_then_chunk_reviews():
     from pipeline.delta_boundary_annotation import (
         contextual_delta_batches, contextual_delta_targets, deterministic_baseline,

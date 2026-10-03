@@ -130,7 +130,7 @@ def test_publication_rejects_overlapping_or_skipped_chapter_scopes(tmp_path, mon
 
 
 @pytest.mark.parametrize('prose_revision,worker_failure,recover_partial', [(False, False, False), (False, True, False), (True, False, False), ('technical_failure', False, False), (False, 'attached', False), (False, False, True), (False, False, 'rejected_worker'), (False, False, 'invalid_attached')])
-def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_path, prose_revision, worker_failure, recover_partial):
+def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_path, prose_revision, worker_failure, recover_partial, local_review_repair=False):
     from pipeline.korean_agent_harness import normalize_existing, save, UnannotatableProseError
     chapter = manual_chapter()
     raw = normalize_existing(chapter, dictionary._registry(dictionary.WORDS))
@@ -146,7 +146,9 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
     revised_text = ''.join(s['text'] for s in revised['segments'])
     revised_chunks = contracts.slice_annotations(revised, contracts.annotation_chunks(revised_text))
     class Runner:
-        def __init__(self): self.jobs = []
+        def __init__(self):
+            self.jobs = []
+            self.local_rejected = False
         async def call(self, job, *args, **kwargs):
             self.jobs.append(job)
             if '-chunk-' in job:
@@ -167,6 +169,12 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
                 assert 'segment_columns' in args[0]
                 assert 'grammar_link_columns' in args[0]
             value = await self.respond(job)
+            if job.startswith('annotation-local-review-') and local_review_repair:
+                inputs = kwargs['workspace_context']['chunk_review_input']
+                if inputs['context']['source_start'] == 0 and not self.local_rejected:
+                    self.local_rejected = True
+                    value = {'approved': False, 'issues': ['Clarify the contextual meaning in the first chunk.'],
+                             'prose_revision_reason_en': ''}
             if job.endswith('-patch'):
                 from difflib import SequenceMatcher
                 inputs = json.loads(args[0].rsplit('\nINPUT:\n', 1)[1])
@@ -185,6 +193,8 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
             save(tmp_path / 'agents' / job / 'meta.json', {'return_code': 0})
             return value
         async def respond(self, job):
+            if job.startswith('annotation-local-review-'):
+                return {'approved': True, 'issues': [], 'prose_revision_reason_en': ''}
             if prose_revision and job == 'annotation-review-0':
                 return {'approved': False, 'issues': ['First sentence needs deliberate prose review.']}
             if prose_revision and job == 'annotation-1-repair-plan':
@@ -213,6 +223,8 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
                 if worker_failure is True and number == 1 and attempt == 0:
                     raise ValueError('Worker used tools outside its offline role')
                 value = copy.deepcopy((revised_chunks if 'revision1' in job else chunks)[number - 1])
+                if local_review_repair and number == 1 and attempt >= 2:
+                    value['segments'][0]['meaning_en'] += ' (clarified)'
                 if not prose_revision and number == 1 and attempt == 0:
                     next(s for s in value['segments'] if s['lexical_kind'] == 'vocabulary')['lexical_id'] = 'invented'
                 if worker_failure == 'attached':
@@ -254,13 +266,33 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
     assert jobs.count('annotation-0-chunk-001-0') == (0 if recover_partial else 1)
     assert jobs.count('annotation-0-chunk-001-1') == (0 if prose_revision else 1)
     assert all(jobs.count(f'annotation-0-chunk-{i:03d}-0') == (0 if recover_partial and i == 2 else 1) for i in range(2, len(chunks) + 1))
-    assert len(jobs) == len(chunks) + (-1 if recover_partial else 1) + (1 if recover_partial == 'rejected_worker' else 0)
+    assert len(jobs) == len(chunks) + (-1 if recover_partial else 1) + (1 if recover_partial == 'rejected_worker' else 0) + int(local_review_repair)
     if recover_partial:
         assert 'annotation-review-0' in runner.jobs  # Recovery is never approval.
         if recover_partial == 'rejected_worker':
             assert 'annotation-0-chunk-002-1' in runner.jobs
     if prose_revision:
         assert [job for job in jobs if 'revision1' in job] == ['annotation-revision1-0-chunk-001-0']
+    from pipeline.korean_chunk_reviews import verify_review
+    from pipeline.korean_agent_harness import read, read_annotation_chunk
+    report = read(tmp_path / 'report.json')
+    meta = read(tmp_path / 'agents' / report['stages']['annotation']['proposal_job'] / 'meta.json')
+    assert len(meta['chunk_reviews']) == len(meta['chunks'])
+    full_text = ''.join(record['text'] for record in meta['chunks'])
+    offset = 0
+    for record, proof in zip(meta['chunks'], meta['chunk_reviews']):
+        value = read_annotation_chunk(tmp_path / 'agents' / record['job'] / 'result.json', record)
+        verify_review(tmp_path, proof, annotation=value, text=record['text'],
+                      chapter_text=full_text, source_start=offset)
+        offset += len(record['text'])
+    if local_review_repair:
+        assert runner.local_rejected
+        assert jobs.count('annotation-0-chunk-001-2') == 1
+
+
+def test_local_review_repairs_only_rejected_chunk_before_chapter_review(tmp_path):
+    test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(
+        tmp_path, False, False, False, local_review_repair=True)
 
 
 def test_form_reading_can_show_pronunciation_but_form_must_match_tap(tmp_path):
@@ -547,15 +579,19 @@ def test_independent_review_rejection_repairs_and_only_approval_completes(tmp_pa
                 return {'approved': True, 'issues': []}
             if job == 'prose-0':
                 assert 'Repair the supplied previous draft only' not in prompt
-            if job == 'prose-1':
-                assert 'Preserve unaffected source events, identities, aliases' in prompt
-                assert 'Return the complete repaired output' in prompt
-            return {'title': '제목', 'text': 'bad' if job.endswith('0') else 'fixed', 'length_reason_en': 'Test editorial decision'}
+            if job == 'prose-1-patch':
+                assert 'Return targeted prose edits' in prompt
+                assert 'Unsupported people group' in prompt
+                return {'title': '제목', 'length_reason_en': 'Test editorial decision',
+                    'edits': [{'source_start': 0, 'source_end': 3,
+                        'original_text': 'bad', 'replacement_text': 'fixed',
+                        'reason_en': 'Replace the unsupported wording.'}]}
+            return {'title': '제목', 'text': 'bad', 'length_reason_en': 'Test editorial decision'}
     runner = Runner()
     harness = KoreanHarness(tmp_path, 1, runner=runner)
     result = asyncio.run(harness.stage('prose', 'task', 'prose', lambda _: None, {}))
     assert result['text'] == 'fixed'
-    assert runner.jobs == ['prose-0', 'prose-review-0', 'prose-review-0-adjudication', 'prose-1', 'prose-review-1']
+    assert runner.jobs == ['prose-0', 'prose-review-0', 'prose-review-0-adjudication', 'prose-1-patch', 'prose-review-1']
     assert harness.stages['prose']['review_job'] == 'prose-review-1'
 
 
@@ -975,15 +1011,20 @@ def test_partial_stage_reuses_actual_cached_review_only_for_matching_context(tmp
         if not kwargs.get('cache_only'):
             if not approved_review and job == 'prose-review-4-adjudication':
                 return {'approved': False, 'issues': ['Concrete wording correction']}
-            if not approved_review and job == 'prose-5':
+            if not approved_review and job == 'prose-5-patch':
                 assert 'Concrete wording correction' in args[0]
-                return value
+                return {'title': value['title'], 'length_reason_en': value['length_reason_en'],
+                    'edits': [{'source_start': 9, 'source_end': 15,
+                        'original_text': 'output', 'replacement_text': 'repaired output',
+                        'reason_en': 'Apply the reviewed wording correction.'}]}
             if not approved_review and job == 'prose-review-5':
                 return {'approved': True, 'issues': []}
             raise AssertionError('new model work required')
         return await original(job, *args, **kwargs)
     harness.runner.call = cache_only
-    assert asyncio.run(harness.stage('prose', 'task', 'prose', lambda _: None, context)) == value
+    stage_result = asyncio.run(harness.stage('prose', 'task', 'prose', lambda _: None, context))
+    assert stage_result == (value if approved_review else {
+        **value, 'text': 'reviewed repaired output'})
     assert harness.stages['prose']['proposal_job'] == ('prose-4' if approved_review else 'prose-5')
     with pytest.raises(AssertionError, match='new model work required'):
         asyncio.run(harness.stage('prose', 'task', 'prose', lambda _: None, {'source': 'changed source'}))
@@ -1091,16 +1132,21 @@ def test_changed_policy_repairs_latest_cached_draft_after_old_attempt_budget(tmp
             self.jobs.append(job)
             if job in ('prose-review-8', 'prose-review-8-adjudication'):
                 return {'approved': False, 'issues': ['A concrete wording repair.']}
-            if job == 'prose-9':
+            if job == 'prose-9-patch':
                 assert 'A concrete wording repair.' in prompt
-                return draft
+                start = draft['text'].index('왔습니다.')
+                return {'title': draft['title'], 'length_reason_en': draft['length_reason_en'],
+                    'edits': [{'source_start': start, 'source_end': start + len('왔습니다.'),
+                        'original_text': '왔습니다.', 'replacement_text': '왔어요.',
+                        'reason_en': 'Apply the reviewed wording repair.'}]}
             if job == 'prose-review-9':
                 return {'approved': True, 'issues': []}
             raise AssertionError(job)
     runner = Runner()
     harness = KoreanHarness(tmp_path, 1, runner=runner)
-    assert asyncio.run(harness.stage('prose', 'Current policy', 'prose', check_prose, {})) == draft
-    assert runner.jobs == ['prose-review-8', 'prose-review-8-adjudication', 'prose-9', 'prose-review-9']
+    repaired = asyncio.run(harness.stage('prose', 'Current policy', 'prose', check_prose, {}))
+    assert repaired == {**draft, 'text': '아이가 왔어요.'}
+    assert runner.jobs == ['prose-review-8', 'prose-review-8-adjudication', 'prose-9-patch', 'prose-review-9']
 
 
 def test_optional_grammar_still_requires_independent_whole_chapter_review(tmp_path):
@@ -1607,6 +1653,8 @@ def test_partial_review_repair_recovers_new_proposals_not_rejected_data(tmp_path
             self.jobs.append(job)
             if job == 'annotation-review-0':
                 value = {'approved': False, 'issues': ['Clarify the first sentence contextual meaning.']}
+            elif job.startswith('annotation-local-review-'):
+                value = {'approved': True, 'issues': [], 'prose_revision_reason_en': ''}
             elif '-review-' in job:
                 value = {'approved': True, 'issues': []}
             elif job.endswith('-repair-plan'):
@@ -1655,7 +1703,9 @@ def test_annotation_refreshes_stale_catalog_without_accepting_unreviewed_ids(tmp
         def __init__(self): self.jobs = []
         async def call(self, job, prompt, *args, **kwargs):
             self.jobs.append(job)
-            if '-review-' in job:
+            if job.startswith('annotation-local-review-'):
+                value = {'approved': True, 'issues': [], 'prose_revision_reason_en': ''}
+            elif '-review-' in job:
                 value = {'approved': True, 'issues': []}
             elif '-chunk-' in job:
                 number = int(job.split('-chunk-')[1].split('-')[0])

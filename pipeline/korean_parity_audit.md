@@ -828,3 +828,36 @@ contract errors identify the overlay surface, and reconstruction errors include
 the mismatch offset. Neither uses the Korean v4 attached-link representation.
 Current workers continue running; local validator subprocesses load this improved
 diagnostic without discarding completed proposals or restarting the runs.
+
+### 2026-10-03: shared progressive chunk reviews
+
+The audit found that Chinese and Japanese already had per-chunk linguistic
+reviews; Korean had only structural chunk checks followed by whole-chapter
+review. Japanese alone bounded complete chunk lifecycles to avoid queuing all
+initial generations ahead of reviews. All three normal annotation paths now use
+`pipeline/chunk_scheduler.py`: bounded generation, validation, independent review
+and repair lifecycles, ordered assembly, preserved independent work on failure,
+and cancellation that awaits remaining tasks. Chinese's separate constrained-delta
+editorial mode retains its existing specialized review flow; this change does not
+claim that every language's linguistic contracts or experimental modes are identical.
+
+Korean chunk reviewers see exact annotation, distinct source position, full prose
+context, source and lexical plans, relevant approved entries and linguistic
+references. Rejections repair only that chunk; explicit prose objections route to
+the existing targeted prose-patch workflow. Content-addressed review jobs bind the
+inputs and policy. New publication evidence verifies every chunk review, its
+manifest-protected inputs, planning context, and the final chapter review's recorded
+chunk-review evidence. The final annotation reviewer focuses on assembly,
+cross-chunk consistency and coordinated grammar identities; the separate curriculum
+review still evaluates whole-chapter suitability. Historical published approvals
+remain valid under their original full-chapter review protocol. A changed full
+prose context invalidates local review caches even if a chunk's text is unchanged;
+structurally valid annotations can still be reused without regeneration.
+
+Tests cover scheduler concurrency/order, review progress before the generation
+queue drains, ordinary failure isolation, cancellation, language integration,
+local rejection with sibling preservation, duplicate source positions, stale
+context/annotations, rejected or missing publication proofs, and removal of new
+review evidence after approval. Production model remains GPT-6 Luna low. The
+rollout uses six worker slots per remaining Korean level (18 total); generation,
+review and repairs share those slots rather than multiplying concurrency per stage.

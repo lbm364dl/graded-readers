@@ -148,6 +148,17 @@ def verify_run(run_dir: Path) -> tuple[dict, dict, dict, dict]:
             if Path(proposal_job).name != proposal_job or proposal_job == job:
                 raise ValueError("invalid Korean proposal job")
             proposal_meta = read(run_dir / "agents" / proposal_job / "meta.json")
+            if 'chunk_reviews_digest' in evidence:
+                if (proposal_meta.get('chunk_reviews_version') != 1
+                        or digest(proposal_meta.get('chunk_reviews', [])) != evidence['chunk_reviews_digest']):
+                    raise ValueError('Korean chunk review evidence changed after chapter approval')
+            if stage == 'annotation' and meta.get('workspace_digest'):
+                workspace = run_dir / 'agents' / job / 'workspace'
+                local_reviews = [read(workspace / row['path']) for row in read(workspace / 'INDEX.json')
+                                 if row['field'] == 'local_annotation_reviews']
+                if local_reviews and (proposal_meta.get('chunk_reviews_version') != 1
+                        or local_reviews != [proposal_meta.get('chunk_reviews')]):
+                    raise ValueError('Korean chunk reviews differ from independent chapter review inputs')
             if proposal_meta.get("return_code") != 0:
                 raise ValueError("Korean proposal process did not complete")
             CodexRunner._check_tool_profile(run_dir / "agents" / proposal_job, "offline", proposal_meta)
@@ -214,6 +225,12 @@ def verify_run(run_dir: Path) -> tuple[dict, dict, dict, dict]:
                     values.append(chunk_value)
                     texts.append(chunk["text"])
                 replayed = contracts.combine_annotations(values, texts)
+                if 'chunk_reviews_version' in proposal_meta:
+                    from pipeline.korean_chunk_reviews import verify_assembly_reviews
+                    verify_assembly_reviews(run_dir, proposal_meta, expected_context={
+                        'target_level': report.get('target_level', 1),
+                        'source_plan': read(run_dir / 'source-plan.json'),
+                        'lexical_plan': read(run_dir / 'lexical-plan.json')})
                 if 'grammar_binding_job' in proposal_meta:
                     binding_job = proposal_meta['grammar_binding_job']
                     if Path(binding_job).name != binding_job:

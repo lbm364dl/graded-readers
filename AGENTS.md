@@ -90,3 +90,12 @@ validated artifact instead of making a worker reproduce it in its final message.
 Keep independent review and publication checks. Apply improvements to shared
 worker infrastructure and inspect Chinese, Japanese and Korean equivalents.
 Optimize for reliable completed work, not minimum prompt tokens in isolation.
+
+Chinese, Japanese and Korean annotation pipelines must share the bounded chunk
+lifecycle scheduler in `pipeline/chunk_scheduler.py`. Each generation, local
+validation, independent review and targeted repair lifecycle should progress
+without waiting for every other chunk to be generated. Keep language-specific
+linguistic contracts and final chapter/publication checks. When changing a shared
+workflow, inspect all three callers and test their integration; do not assume a
+feature exists in another language. Cached approvals must bind exact output and
+relevant context, including distinct source positions.

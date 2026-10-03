@@ -17,6 +17,8 @@ def obj(properties: dict, required: list[str] | None = None) -> dict:
 STRING = {"type": "string"}
 STRINGS = {"type": "array", "items": STRING}
 REVIEW = obj({"approved": {"type": "boolean"}, "issues": STRINGS})
+CHUNK_REVIEW = obj({"approved": {"type": "boolean"}, "issues": STRINGS,
+                    "prose_revision_reason_en": STRING})
 STEP = obj({"form": STRING, "reading": STRING, "label": STRING,
             "meaning_en": STRING, "grammar_entry_ids": {"type": "array", "minItems": 1, "maxItems": 1, "items": {"type": "string", "minLength": 1}}})
 LINK = obj({"segment_index": {"type": "integer"}, "entry_id": STRING,
@@ -84,7 +86,7 @@ def schema_path(name: str) -> Path:
 
 def write_schemas() -> None:
     from pipeline.korean_annotation_chunks import SCHEMA as CHUNK_ANNOTATION, LEGACY_SCHEMA, SPAN_SCHEMA, SPAN_LINK_SCHEMA
-    for name, schema in {"review": REVIEW, "plan": PLAN, "prose": PROSE,
+    for name, schema in {"review": REVIEW, "chunk-review": CHUNK_REVIEW, "plan": PLAN, "prose": PROSE,
                          "annotation": ANNOTATION, "chunk-annotation": LEGACY_SCHEMA,
                          "chunk-annotation-v2": CHUNK_ANNOTATION, "chunk-annotation-v3": SPAN_SCHEMA, "chunk-annotation-v4": SPAN_LINK_SCHEMA, "lexical-plan": FOCUS, "dictionary": DICTIONARY,
                          'grammar-bindings': GRAMMAR_BINDINGS,

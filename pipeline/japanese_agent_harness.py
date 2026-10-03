@@ -20,6 +20,7 @@ from pipeline.agent_harness import (
     digest, gather_all_or_raise, length_violations, run_status_for_verdicts,
     status, utc_now,
 )
+from pipeline.chunk_scheduler import map_chunks
 from pipeline.japanese_readability import (
     GRAMMAR_BASELINE_LEMMAS,
     MAX_ABOVE_LEVEL_RATIO,
@@ -7017,51 +7018,15 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
         """
         if not chunks:
             return []
-        results: list[dict[str, Any] | Exception | None] = [None] * len(chunks)
-        queue: asyncio.Queue[tuple[int, str]] = asyncio.Queue()
-        for item in enumerate(chunks):
-            queue.put_nowait(item)
-
-        async def worker() -> None:
-            while True:
-                try:
-                    index, chunk = queue.get_nowait()
-                except asyncio.QueueEmpty:
-                    return
-                try:
-                    results[index] = await self.annotate_chunk(index, chunk)
-                except asyncio.CancelledError:
-                    raise
-                except Exception as exc:
-                    # One exhausted sentence must not retire a worker and
-                    # starve every later sentence. Record the failure, keep
-                    # draining the queue, then fail the chapter with exact
-                    # indices after all independent work has been preserved.
-                    results[index] = exc
-
-        worker_count = min(
-            len(chunks), max(1, int(getattr(self.args, "concurrency", 1)))
-        )
-        await gather_all_or_raise(*(worker() for _ in range(worker_count)))
-        if any(item is None for item in results):
-            raise RuntimeError("Japanese annotation worker left a chunk unresolved")
-        failures = [
-            (index, item)
-            for index, item in enumerate(results)
-            if isinstance(item, Exception)
-        ]
-        if failures:
-            detail = "; ".join(
-                f"chunk {index}: {error}" for index, error in failures
-            )
-            raise RuntimeError(
+        return await map_chunks(
+            chunks,
+            self.annotate_chunk,
+            getattr(self.args, "concurrency", 1),
+            error_label=(
                 "Japanese annotation chunks failed after the complete queue "
-                f"was drained: {detail}"
-            )
-        return [
-            item for item in results
-            if isinstance(item, dict)
-        ]
+                "was drained"
+            ),
+        )
 
     async def build_reader(
         self, outline: dict[str, Any], chapter: str,

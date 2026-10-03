@@ -18,6 +18,8 @@ import signal
 import sys
 from typing import Any
 
+from pipeline.chunk_scheduler import map_chunks
+
 from jsonschema import Draft202012Validator
 from opencc import OpenCC
 from pipeline.chinese_translation_policy import CHINESE_TRANSLATION_POLICY
@@ -3157,8 +3159,9 @@ GRAMMAR OVERLAYS (existing exact offset objects):
                 if getattr(self.args, "annotation_mode", "generative") == "constrained-delta":
                     annotated = await self.annotate_chapter_constrained_delta(chapter, chunks)
                 else:
-                    annotated = await gather_all_or_raise(
-                        *(self.annotate_chunk(index, chunk) for index, chunk in enumerate(chunks))
+                    annotated = await map_chunks(
+                        chunks, self.annotate_chunk,
+                        getattr(self.args, "concurrency", 1),
                     )
                 segments = [segment for item in annotated for segment in item["segments"]]
                 if "".join(segment["text"] for segment in segments) != chapter:
@@ -3859,10 +3862,10 @@ class AnnotationOnlyHarness(ChapterHarness):
                     self.chapter, chunks
                 )
             else:
-                annotated = await gather_all_or_raise(*(
-                    self.annotate_chunk(index, chunk)
-                    for index, chunk in enumerate(chunks)
-                ))
+                annotated = await map_chunks(
+                    chunks, self.annotate_chunk,
+                    getattr(self.args, "concurrency", 1),
+                )
             segments = [segment for item in annotated for segment in item["segments"]]
             reconstruction = "".join(segment["text"] for segment in segments)
             if reconstruction != self.chapter:
