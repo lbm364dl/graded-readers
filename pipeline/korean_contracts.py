@@ -157,8 +157,16 @@ def check_reconstruction(segments: list[dict], text: str) -> None:
     if reconstructed != text:
         offset = next((i for i, (expected, actual) in enumerate(zip(text, reconstructed))
                        if expected != actual), min(len(text), len(reconstructed)))
+        detail = ''
+        if text.startswith(reconstructed):
+            detail = (f"The output ends early: append the exact remaining source text "
+                      f"{text[len(reconstructed):]!r} as appropriate source segments. ")
+        elif reconstructed.startswith(text):
+            detail = (f"The output contains extra trailing text "
+                      f"{reconstructed[len(text):]!r}; remove it. ")
         raise ValueError(f"Korean annotation reconstruction differs at Unicode offset {offset}: "
                          f"expected {text[offset:offset + 30]!r}, got {reconstructed[offset:offset + 30]!r}. "
+                         + detail +
                          "Preserve spaces and newlines in punctuation segments; do not rewrite prose.")
 
 

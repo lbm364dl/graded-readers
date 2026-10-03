@@ -879,6 +879,21 @@ def test_reconstruction_error_identifies_missing_whitespace_without_changing_tex
     contracts.check_reconstruction([segments[0], {'text': '\n'}, segments[1]], '한 문장.\n다음 문장.')
 
 
+def test_reconstruction_reports_exact_missing_tail_and_distinguishes_extra_tail():
+    segments = [{'text': '꿈을 꾸었다'}]
+    with pytest.raises(ValueError, match='output ends early') as error:
+        contracts.check_reconstruction(segments, '꿈을 꾸었다. \n')
+    assert repr('. \n') in str(error.value)
+    assert segments == [{'text': '꿈을 꾸었다'}]
+    with pytest.raises(ValueError, match='extra trailing text') as error:
+        contracts.check_reconstruction([{'text': '꿈을 꾸었다. extra'}], '꿈을 꾸었다.')
+    assert 'ends early' not in str(error.value)
+    with pytest.raises(ValueError) as error:
+        contracts.check_reconstruction([{'text': '다른 꿈.'}], '꿈을 꾸었다.')
+    assert 'ends early' not in str(error.value)
+    contracts.check_reconstruction([{'text': '꿈을 꾸었다'}, {'text': '. \n'}], '꿈을 꾸었다. \n')
+
+
 def test_dictionary_rejects_same_length_unattested_surface(tmp_path):
     chapter = manual_chapter()
     chapter['segments'][0]['text'] = '다른말'
