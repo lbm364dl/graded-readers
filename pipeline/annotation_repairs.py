@@ -30,6 +30,8 @@ from pipeline.annotation_edits import (
 
 REPAIR_EXPLANATION_GUIDANCE = """Apply the same complete-form and meaning-scope criteria to your planned corrections and written patch as to independent review. Inspect comparable occurrences of each reported defect throughout this candidate and include all actually affected semantic targets in that issue's plan; leave correct contrasting occurrences unchanged. A finding is evidence to investigate, not permission to replace a defensible meaning with a stylistic preference. Use the supplied lessons, predicate frame and source timeline to support each correction.
 
+For a finding about a form step or a multi-tap construction, inspect the related meaning fields together: the segment's occurrence `meaning_en`, each relevant complete `form_steps[*].meaning_en`, adjacent lexical/auxiliary taps in the exact construction span, and the linked grammar occurrence's meaning/context. Decide the scope of each field separately from its schema and supplied evidence. If a supported construction-level meaning was copied into more than one component field, include every field that actually needs correction in the same issue plan, even when the reviewer quoted only one of them. Do not assume the fields should contain identical English, or that every component must receive a different gloss; retain valid contextual translations and form-stage meanings when the evidence supports them. Do not invent a component meaning just to make the fields look different.
+
 When an issue includes host-verified `path_history`, inspect the earlier finding dispositions, reasons, and exact values for those overlapping fields. A `bound: true` row is tied to its declared affected path; an unbound legacy row is context only, not a binding on that field. Do not restore a value previously rejected or corrected on the same field merely to satisfy a later wording preference or a broader construction gloss. Preserve the distinction between a component form and any overlapping complete construction. If the supplied evidence now supports a legitimate rollback, explicitly identify the earlier finding and explain what new evidence changes that conclusion in the plan reason; this is an evidence requirement, not a ban on returning to an earlier value.
 
 Learner-facing explanations must positively explain the actual form or grammatical contribution. Do not copy reviewer objections, editorial uncertainty, or defensive denials into occurrence notes or meanings. A useful grammatical contrast is allowed when it explains the form itself; rebutting one reviewer's classification is not a learner explanation. Keep a complete form's meaning separate from its form label and passage-specific grammatical role. Do not import a larger construction's meaning into one component stage, concatenate component glosses, or invent contributions to satisfy a review."""
@@ -203,6 +205,35 @@ def _schemas(run_dir: Path) -> tuple[Path, Path]:
     return plan_path, patch_path
 
 
+def _validate_repair_context(language: str, representation: str,
+                             context: dict[str, Any] | None) -> None:
+    """Fail before model work if a language's full local gate cannot run."""
+    korean_representation = representation in {"korean-flat", "korean-v4"}
+    if not korean_representation and language != "ko":
+        return
+    if language != "ko" or not korean_representation:
+        raise ValueError("Korean repair language and representation must match")
+    value = context.get("candidate_gate") if isinstance(context, dict) else None
+    required = ("focus", "title", "number", "plan", "level", "source_id")
+    if not isinstance(value, dict):
+        raise ValueError("Korean semantic repair requires candidate_gate before planning")
+    missing = [key for key in required if key not in value]
+    if missing:
+        raise ValueError("Korean candidate_gate is missing required fields: " + ", ".join(missing))
+    if not isinstance(value["focus"], dict):
+        raise ValueError("Korean candidate_gate.focus must be an object")
+    if not isinstance(value["title"], str) or not value["title"].strip():
+        raise ValueError("Korean candidate_gate.title must be nonempty text")
+    if type(value["number"]) is not int or value["number"] < 1:
+        raise ValueError("Korean candidate_gate.number must be a positive integer")
+    if not isinstance(value["plan"], dict):
+        raise ValueError("Korean candidate_gate.plan must be an object")
+    if type(value["level"]) is not int or value["level"] not in range(1, 7):
+        raise ValueError("Korean candidate_gate.level must be an integer from 1 to 6")
+    if not isinstance(value["source_id"], str) or not value["source_id"].strip():
+        raise ValueError("Korean candidate_gate.source_id must be nonempty text")
+
+
 def _validate_plan(plan: Any, issue_count: int, candidate: Any = None,
                    representation: str | None = None) -> None:
     validate(plan, PLAN_SCHEMA)
@@ -270,6 +301,7 @@ async def repair_annotation(
     """
     if not isinstance(candidate, dict) or not isinstance(issues, list) or not issues:
         raise ValueError("semantic annotation repair needs a candidate and nonempty review issues")
+    _validate_repair_context(language, representation, context)
     run_dir = Path(harness.run_dir)
     plan_schema_path, patch_schema_path = _schemas(run_dir)
     plan_job, patch_job, assembly_job = f"{job}_plan", f"{job}_patch", f"{job}_assembly"

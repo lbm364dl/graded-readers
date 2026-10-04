@@ -127,3 +127,30 @@ finding; unsupported objections need concrete cited evidence, genuine defects
 remain repairable, and uncertainty must not become approval. Never override source,
 schema or other deterministic checks. Keep adjudication evidence replayable through
 cache reuse and publication, and use the same GPT-6 Luna low policy as other workers.
+
+Before resuming production after a convergence or adjudication change, run an
+isolated small-chunk smoke that completes the whole path: a targeted semantic
+repair, a fresh independent review of the derived candidate, effective
+acceptance, and cache replay of the accepted result. Verify the same evidence
+through publication checks. An adjudicator-only success or passing unit tests
+does not establish that the full repair-and-acceptance lifecycle works.
+
+When a worker verdict changes during host validation, inspect the raw result and
+the host's binding checks before attributing the outcome to linguistic uncertainty
+or model quality. Supporting source spans are not automatically additional defect
+targets. Validate a smoke's required request payload and immutable gate context
+before launching paid workers; driver setup errors are not pipeline-quality evidence.
+
+Unresolved linguistic evidence should enter the shared bounded research and
+independent-review path before stopping a chunk. Keep the candidate and raw review
+unchanged during research. A lesson independently approved for the current run is
+distinct from an unreviewed proposal and from promotion into the published registry;
+retain and replay its exact research/review provenance. Do not repurpose an existing
+component or construction identity merely to make the evidence fit.
+Use the same complete-form and meaning-scope criteria in research, research
+review, annotation review, repair and adjudication. A missing dictionary headword
+for an exact inflected substring does not by itself prove that its analysis is
+unsupported; investigate applicable formation rules and attested usage. If a
+researcher identifies a needed authoritative page, request and capture it rather
+than treating an uncaptured web observation as evidence or stopping without the
+available investigation.

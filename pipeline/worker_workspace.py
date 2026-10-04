@@ -170,7 +170,7 @@ def build(path, prompt, schema, *, context=None, submission_repair=None):
     put_json('INDEX.json', inventory)
     put_json('schema.json', schema)
     put_json('receipt.schema.json', RECEIPT_SCHEMA)
-    put_json('validation-context.json', [{k: v[k] for k in ('chunk_text', 'language', 'surfaces', 'annotation', 'annotation_validation', 'annotation_patch_validation', 'annotation_plan_validation', 'annotation_adjudication_validation') if k in v} for v in contexts if isinstance(v, dict)])
+    put_json('validation-context.json', [{k: v[k] for k in ('chunk_text', 'language', 'surfaces', 'annotation', 'annotation_validation', 'annotation_patch_validation', 'annotation_plan_validation', 'annotation_adjudication_validation', 'annotation_research_validation') if k in v} for v in contexts if isinstance(v, dict)])
     command = 'cd ' + shlex.quote(str(ROOT)) + ' && ' + shlex.quote(str(ROOT / '.venv/bin/python')) + ' -m pipeline.worker_workspace validate --workspace ' + shlex.quote(str(path.resolve())) + ' --candidate ' + shlex.quote(str(path.resolve() / 'candidate.json'))
     put('README.txt', 'Read TASK.txt and INDEX.json. Repository root: ' + str(ROOT) + '. Repository paths in the task are relative to that root; input/reference paths in INDEX.json are relative to this workspace. Inspect relevant data and full reference entries as needed. Use your tools freely to investigate and verify. Save candidate.json and check it with:\n' + command + '\nThe local check is feedback, not independent publication approval. Submit only {"candidate_path":"candidate.json"}; do not reproduce the file contents.\n')
     _remove_obsolete_managed_inputs(path, previous_manifest, files)
@@ -208,6 +208,14 @@ def check(path, candidate):
                 raise ValueError('Adjudication validation input is missing from INDEX.json')
             from pipeline.annotation_adjudication import validate_adjudication_output
             validate_adjudication_output(value, input_values[input_field])
+            continue
+        research_context = context.get('annotation_research_validation')
+        if research_context is not None:
+            input_field = research_context.get('input_field')
+            if not isinstance(input_field, str) or input_field not in input_values:
+                raise ValueError('Annotation research validation input is missing from INDEX.json')
+            from pipeline.annotation_research import validate_research_submission
+            validate_research_submission(value, input_values[input_field])
             continue
         plan_context = context.get('annotation_plan_validation')
         if plan_context is not None:
@@ -376,7 +384,9 @@ def submit(path, receipt):
                            for context in validation_contexts)
     adjudication_validation = any(context.get('annotation_adjudication_validation') is not None
                                   for context in validation_contexts)
-    if plan_validation is not None or patch_validation or adjudication_validation:
+    research_validation = any(context.get('annotation_research_validation') is not None
+                              for context in validation_contexts)
+    if plan_validation is not None or patch_validation or adjudication_validation or research_validation:
         try:
             check(path, candidate)
         except (ValidationError, ValueError, KeyError, TypeError, IndexError) as error:
@@ -386,12 +396,16 @@ def submit(path, receipt):
                         if isinstance(error, AnnotationEditError) else
                         'annotation_adjudication_rejection'
                         if adjudication_validation else
+                        'annotation_research_rejection'
+                        if research_validation else
                         'derived_annotation_rejection')
             raise CandidateSubmissionError(
                 f'Submitted annotation plan failed issue coverage validation: {error}'
                 if plan_validation is not None else
                 f'Submitted annotation adjudication failed evidence validation: {error}'
                 if adjudication_validation else
+                f'Submitted targeted annotation research failed citation validation: {error}'
+                if research_validation else
                 f'Submitted annotation patch failed derived-candidate validation: {error}',
                 artifact_path=artifact_path, artifact_bytes=candidate_bytes,
                 category=category) from error

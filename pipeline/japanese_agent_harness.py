@@ -117,7 +117,8 @@ def verify_japanese_chunk_review(item: dict[str, Any], source_text: str,
             return True
         except (OSError, ValueError, KeyError, TypeError):
             return False
-    if len(adjudicated) != 1 or item.get("effective_review", {}).get("kind") != "adjudicated":
+    if (len(adjudicated) != 1 or not attempts or adjudicated[0] is not attempts[-1]
+            or item.get("effective_review", {}).get("kind") != "adjudicated"):
         return False
     row = adjudicated[0]
     replay, evidence = row.get("adjudication_replay"), row.get("adjudication")
@@ -5729,70 +5730,8 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                                if isinstance(row, dict)
                                and row.get("effective_review", {}).get("kind") == "adjudicated"]
                 if claims_adjudicated:
-                    if len(adjudicated) != 1:
-                        current_contract_passes = False
-                    from pipeline.annotation_adjudication import (
-                        digest as evidence_digest, verify_adjudication_evidence,
-                    )
-                    valid_adjudication = False
-                    for row in adjudicated:
-                        replay = row.get("adjudication_replay")
-                        evidence = row.get("adjudication")
-                        if not isinstance(replay, dict) or not isinstance(evidence, dict):
-                            continue
-                        try:
-                            current_grammar_knowledge = japanese_semantic_repair_grammar_knowledge()
-                            current_context = {"chunk_text": chunk,
-                                "grammar_knowledge": current_grammar_knowledge,
-                                "story_plan": getattr(self, "story_vocabulary_plan", {"terms": []})}
-                            current_references = {
-                                "approved-grammar": {"kind": "approved_lesson",
-                                    "content": current_grammar_knowledge.get("approved_entries", [])},
-                                "review-policy": {"kind": "explicit_review_policy",
-                                    "content": {"form_stage_guidance": FORM_STAGE_EVIDENCE_GUIDANCE,
-                                        "review_policy": "",
-                                        "dictionary_policy": JAPANESE_ANNOTATION_CHUNK_POLICY}}}
-                            if (replay.get("context") != current_context
-                                    or replay.get("known_reference_input") != current_references):
-                                raise ValueError("Current Japanese lesson or policy context changed")
-                            verified = verify_adjudication_evidence(
-                                Path(run_dir), evidence, language="ja",
-                                representation="japanese-annotation", candidate=row["annotation"],
-                                current_review=row["review"],
-                                prior_history=replay["prior_history"],
-                                context=replay["context"],
-                                known_reference_input=replay["known_reference_input"],
-                                deterministic_gate_evidence=replay["deterministic_gate_evidence"],
-                                normal_review_receipt=replay["normal_review_receipt"],
-                                source_text=chunk)
-                            if digest({"segments": row["annotation"]["segments"],
-                                       "grammar_overlays": row["annotation"]["grammar_overlays"]}) != digest({
-                                           "segments": cached["segments"],
-                                           "grammar_overlays": cached["grammar_overlays"]}):
-                                raise ValueError("Cached accepted candidate differs from adjudicated candidate")
-                            for child in replay["normal_review_receipt"].get("components", []):
-                                job = child.get("job", "")
-                                if (not job or Path(job).is_absolute()
-                                        or any(part in {"", ".", ".."} for part in Path(job).parts)):
-                                    raise ValueError("Unsafe normal-review child receipt")
-                                job_dir = Path(run_dir) / "agents" / job
-                                meta = json.loads((job_dir / "meta.json").read_text(encoding="utf-8"))
-                                from pipeline.agent_harness import CodexRunner
-                                raw_child = verify_child_job_receipt(run_dir, child)
-                                if (meta.get("return_code") != 0
-                                        or meta.get("fingerprint") != child.get("input_digest")
-                                        or evidence_digest(raw_child) != child.get("result_digest")):
-                                    raise ValueError("Normal-review child receipt changed")
-                                CodexRunner._check_tool_profile(job_dir,
-                                    meta.get("tool_profile", "offline"), meta)
-                            valid_adjudication = (verified.get("status") == "cleared"
-                                                  and verified.get("approved") is True
-                                                  and row.get("effective_review", {}).get("kind") == "adjudicated")
-                        except (OSError, ValueError, KeyError, TypeError):
-                            valid_adjudication = False
-                        if valid_adjudication:
-                            break
-                    if not valid_adjudication:
+                    if (len(adjudicated) != 1
+                            or not verify_japanese_chunk_review(cached, chunk, Path(run_dir))):
                         current_contract_passes = False
                 elif not verify_japanese_chunk_review(cached, chunk, Path(run_dir)):
                     current_contract_passes = False

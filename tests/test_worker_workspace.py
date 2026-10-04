@@ -55,6 +55,112 @@ def test_workspace_submission_runs_annotation_adjudication_local_gate(tmp_path):
     assert 'exactly once' in str(rejected.value)
 
 
+def _annotation_research_context():
+    from pipeline.annotation_research import _worker_context
+    request = {
+        'issue_ids': ['finding-1'],
+        'known_reference_input': {
+            'grammar:uncertain-ending': {
+                'kind': 'approved_lesson',
+                'content': {'explanation_en': 'A tentative question or doubt.'},
+            },
+        },
+    }
+    return _worker_context('research', request)
+
+
+def _annotation_research_candidate(reference_id):
+    return {'findings': [{
+        'issue_id': 'finding-1', 'status': 'supported',
+        'fact': 'The approved lesson supports this contribution.',
+        'citations': [{'reference_id': reference_id, 'path': '/explanation_en'}],
+        'gap': '',
+    }]}
+
+
+def test_workspace_research_gate_rejects_bare_reference_id_with_exact_allowed_ids(tmp_path):
+    import json
+    from pipeline.annotation_research import RESEARCH_SCHEMA
+    from pipeline.worker_workspace import CandidateSubmissionError, submit
+
+    workspace = tmp_path / 'research-workspace'
+    context = _annotation_research_context()
+    build(workspace, 'Research the supplied uncertain finding.', RESEARCH_SCHEMA, context=context)
+    invalid = _annotation_research_candidate('uncertain-ending')
+    (workspace / 'candidate.json').write_text(json.dumps(invalid), encoding='utf-8')
+    with pytest.raises(CandidateSubmissionError) as rejected:
+        submit(workspace, {'candidate_path': 'candidate.json'})
+    assert rejected.value.category == 'annotation_research_rejection'
+    assert "Unknown or non-authoritative citation reference ID 'uncertain-ending'" in str(rejected.value)
+    assert "valid reference IDs: ['grammar:uncertain-ending']" in str(rejected.value)
+
+
+def test_workspace_research_gate_accepts_valid_prefixed_citation(tmp_path):
+    import json
+    from pipeline.annotation_research import RESEARCH_SCHEMA
+    from pipeline.worker_workspace import submit
+
+    workspace = tmp_path / 'research-workspace'
+    context = _annotation_research_context()
+    message, _ = build(workspace, 'Research the supplied uncertain finding.', RESEARCH_SCHEMA, context=context)
+    validation_context = json.loads((workspace / 'validation-context.json').read_text())
+    assert validation_context[0]['annotation_research_validation'] == {
+        'input_field': 'annotation_uncertainty_research'}
+    valid = _annotation_research_candidate('grammar:uncertain-ending')
+    (workspace / 'candidate.json').write_text(json.dumps(valid), encoding='utf-8')
+    assert submit(workspace, {'candidate_path': 'candidate.json'})[0] == valid
+
+
+def test_workspace_research_gate_rejects_metadata_only_citation(tmp_path):
+    import json
+    from pipeline.annotation_research import RESEARCH_SCHEMA
+    from pipeline.worker_workspace import CandidateSubmissionError, submit
+
+    workspace = tmp_path / 'research-workspace'
+    context = _annotation_research_context()
+    context['annotation_uncertainty_research']['known_reference_input'][
+        'grammar:uncertain-ending']['content']['title'] = 'A title'
+    build(workspace, 'Research the supplied uncertain finding.', RESEARCH_SCHEMA, context=context)
+    invalid = _annotation_research_candidate('grammar:uncertain-ending')
+    invalid['findings'][0]['citations'][0]['path'] = '/title'
+    (workspace / 'candidate.json').write_text(json.dumps(invalid), encoding='utf-8')
+    with pytest.raises(CandidateSubmissionError, match='metadata') as rejected:
+        submit(workspace, {'candidate_path': 'candidate.json'})
+    assert rejected.value.category == 'annotation_research_rejection'
+
+
+@pytest.mark.asyncio
+async def test_codex_runner_uses_one_bounded_correction_for_bad_research_citation(tmp_path, monkeypatch):
+    import asyncio
+    from pipeline.agent_harness import CodexRunner
+    from pipeline.annotation_research import RESEARCH_SCHEMA
+    from pipeline.worker_workspace import CandidateSubmissionError
+
+    invalid = _annotation_research_candidate('uncertain-ending')
+    corrected = _annotation_research_candidate('grammar:uncertain-ending')
+    launches = _fake_workspace_codex(monkeypatch, [invalid, corrected])
+    schema = tmp_path / 'research-schema.json'
+    schema.write_text(json.dumps(RESEARCH_SCHEMA), encoding='utf-8')
+    runner = CodexRunner(tmp_path, 'gpt-6-luna', asyncio.Semaphore(1))
+    context = _annotation_research_context()
+
+    assert await runner.call('annotation-research',
+        'Research the supplied uncertain finding.', schema, 'low',
+        tool_profile='workspace', workspace_context=context) == corrected
+    assert len(launches) == 2
+    retry_workspace = launches[1]['workspace']
+    rejection = json.loads((retry_workspace / 'submission-rejection.json').read_text())
+    assert rejection['category'] == 'annotation_research_rejection'
+    assert "valid reference IDs: ['grammar:uncertain-ending']" in rejection['diagnostic']
+    assert json.loads((retry_workspace / 'rejected-candidate-attempt-01.json').read_text()) == invalid
+
+
+def test_review_role_does_not_get_researcher_submission_gate():
+    from pipeline.annotation_research import _worker_context
+    context = _worker_context('review', {'issue_ids': ['finding-1']})
+    assert 'annotation_research_validation' not in context
+
+
 def test_workspace_deduplicates_identical_input_blocks_but_keeps_distinct_blocks(tmp_path):
     repeated = {'issues': ['first', 'second'], 'candidate': {'segments': []}}
     different = {'issues': ['first', 'changed'], 'candidate': {'segments': []}}

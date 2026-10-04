@@ -123,10 +123,108 @@ def verify_review(run_dir, evidence, *, annotation, text, chapter_text, source_s
     return review
 
 
+def verify_chunk_review(run_dir, proof, *, annotation, text, chapter_text, source_start,
+                        expected_context=None, allow_stale_form_guidance=False,
+                        expected_reference_sources=None, allow_adjudicated=True):
+    """Verify one chunk review against its actual parent text and source offset.
+
+    This is the same proof verifier used by chapter assembly, exposed for
+    narrowly scoped chunks whose full parent context is available separately.
+    A successful partial-chunk check is not a chapter-assembly approval.
+    """
+    from pipeline.korean_agent_harness import read
+    if not isinstance(proof, dict):
+        raise ValueError('Korean chunk review proof is malformed')
+    kind = proof.get('kind')
+    if kind not in (None, 'ordinary', 'adjudicated'):
+        raise ValueError('Unknown Korean chunk review proof kind')
+    if not allow_adjudicated or kind != 'adjudicated':
+        # Preserve the assembly verifier's legacy wrapper behavior for either
+        # ordinary or adjudicated proof envelopes when adjudication replay is
+        # not enabled (notably v1 assemblies).
+        review_proof = proof.get('normal_review', proof)
+        review = verify_review(run_dir, review_proof, annotation=annotation,
+            text=text, chapter_text=chapter_text, source_start=source_start,
+            expected_context=expected_context,
+            allow_stale_form_guidance=allow_stale_form_guidance)
+        return {'scope': 'chunk', 'kind': 'ordinary', 'review': review}
+
+    from pipeline.annotation_adjudication import verify_adjudication_evidence
+    replay = proof.get('replay_inputs')
+    if not isinstance(replay, dict):
+        raise ValueError('Korean adjudication proof is missing replay inputs')
+    raw_review = verify_review(run_dir, proof['normal_review'], annotation=annotation,
+        text=text, chapter_text=chapter_text, source_start=source_start,
+        expected_context=expected_context,
+        allow_stale_form_guidance=allow_stale_form_guidance,
+        require_approved=False)
+    if raw_review != replay.get('current_review'):
+        raise ValueError('Korean rejected review differs from adjudication input')
+    normal_inputs = read(run_dir / 'agents' / proof['normal_review']['job'] /
+                         'review-input.json')
+    adjudication_context = replay.get('context', {})
+    if adjudication_context.get('chunk_review_context') != normal_inputs.get('context'):
+        raise ValueError('Korean adjudication context differs from the normal review context')
+    review_context = normal_inputs.get('context', {})
+    expected_references = {}
+    for row in review_context.get('approved_words', []):
+        expected_references[f"word:{row['id']}"] = {'kind': 'approved_lesson', 'content': row}
+    for row in review_context.get('approved_grammar', []):
+        expected_references[f"grammar:{row['id']}"] = {'kind': 'approved_lesson', 'content': row}
+    for key in ('linguistic_reference', 'lexical_reference'):
+        expected_references[key.replace('_', '-')] = {
+            'kind': 'primary_source', 'content': review_context[key]}
+    # Only source records present in the authenticated normal-review input may
+    # support adjudication; an adjudication payload cannot smuggle a URL.
+    official_sources = review_context.get('official_primary_sources', [])
+    if not isinstance(official_sources, list):
+        raise ValueError('Korean original review has malformed primary-source inputs')
+    for row in official_sources:
+        if not isinstance(row, dict) or not isinstance(row.get('reference_id'), str) or not row['reference_id']:
+            raise ValueError('Korean original review has an unbound primary-source input')
+        identity = row['reference_id']
+        if identity in expected_references:
+            raise ValueError(f'Korean original review repeats a primary-source identity: {identity}')
+        expected_references[identity] = {'kind': 'primary_source', 'content': row}
+    official_source_ids = {row['reference_id'] for row in official_sources}
+    expected_references['review-policy'] = {
+        'kind': 'explicit_review_policy',
+        'content': adjudication_context.get('review_policy')}
+    if replay.get('known_reference_input') != expected_references:
+        raise ValueError('Korean adjudication references differ from the reviewed inputs')
+    if expected_reference_sources is not None:
+        for identity, reference in expected_references.items():
+            content = reference['content']
+            if identity.startswith('word:'):
+                current = expected_reference_sources.get('approved_words', {}).get(identity[5:])
+            elif identity.startswith('grammar:'):
+                current = expected_reference_sources.get('approved_grammar', {}).get(identity[8:])
+            elif identity == 'linguistic-reference':
+                current = expected_reference_sources.get('linguistic_reference')
+            elif identity == 'lexical-reference':
+                current = expected_reference_sources.get('lexical_reference')
+            elif identity in official_source_ids:
+                current = content
+            else:
+                current = expected_reference_sources.get(identity)
+            if current != content:
+                raise ValueError(f'Korean adjudication reference changed: {identity}')
+    verified = verify_adjudication_evidence(run_dir, proof['adjudication'],
+        language='ko', representation='korean-flat', candidate=annotation,
+        current_review=raw_review, prior_history=replay['prior_history'],
+        context=replay['context'], known_reference_input=replay['known_reference_input'],
+        deterministic_gate_evidence=replay['deterministic_gate_evidence'],
+        normal_review_receipt=replay['normal_review_receipt'], source_text=text)
+    if verified.get('status') != 'cleared' or verified.get('approved') is not True:
+        raise ValueError('Korean adjudication did not independently clear this chunk')
+    return {'scope': 'chunk', 'kind': 'adjudicated', 'review': raw_review,
+            'adjudication': verified}
+
+
 def verify_assembly_reviews(run_dir, meta, *, expected_context=None,
                             allow_stale_form_guidance=False,
                             expected_reference_sources=None):
-    from pipeline.korean_agent_harness import read_annotation_chunk
+    from pipeline.korean_agent_harness import read, read_annotation_chunk
     records = meta['chunks']
     version = meta.get('chunk_reviews_version')
     if version not in (1, 2) or len(meta.get('chunk_reviews', [])) != len(records):
@@ -137,68 +235,11 @@ def verify_assembly_reviews(run_dir, meta, *, expected_context=None,
         if Path(record['job']).name != record['job']:
             raise ValueError('Invalid Korean chunk proposal job')
         value = read_annotation_chunk(run_dir / 'agents' / record['job'] / 'result.json', record)
-        if version == 1 or proof.get('kind') != 'adjudicated':
-            if version == 2 and proof.get('kind') not in (None, 'ordinary'):
-                raise ValueError('Unknown Korean chunk review proof kind')
-            verify_review(run_dir, proof.get('normal_review', proof), annotation=value,
-                text=record['text'], chapter_text=chapter_text, source_start=start,
-                expected_context=expected_context,
-                allow_stale_form_guidance=allow_stale_form_guidance)
-        else:
-            from pipeline.annotation_adjudication import verify_adjudication_evidence
-            replay = proof.get('replay_inputs')
-            if not isinstance(replay, dict):
-                raise ValueError('Korean adjudication proof is missing replay inputs')
-            raw_review = verify_review(run_dir, proof['normal_review'], annotation=value,
-                text=record['text'], chapter_text=chapter_text, source_start=start,
-                expected_context=expected_context,
-                allow_stale_form_guidance=allow_stale_form_guidance,
-                require_approved=False)
-            if raw_review != replay.get('current_review'):
-                raise ValueError('Korean rejected review differs from adjudication input')
-            normal_inputs = read(run_dir / 'agents' / proof['normal_review']['job'] /
-                                 'review-input.json')
-            adjudication_context = replay.get('context', {})
-            if adjudication_context.get('chunk_review_context') != normal_inputs.get('context'):
-                raise ValueError('Korean adjudication context differs from the normal review context')
-            review_context = normal_inputs.get('context', {})
-            expected_references = {}
-            for row in review_context.get('approved_words', []):
-                expected_references[f"word:{row['id']}"] = {'kind': 'approved_lesson', 'content': row}
-            for row in review_context.get('approved_grammar', []):
-                expected_references[f"grammar:{row['id']}"] = {'kind': 'approved_lesson', 'content': row}
-            for key in ('linguistic_reference', 'lexical_reference'):
-                expected_references[key.replace('_', '-')] = {
-                    'kind': 'primary_source', 'content': review_context[key]}
-            expected_references['review-policy'] = {
-                'kind': 'explicit_review_policy',
-                'content': adjudication_context.get('review_policy')}
-            if replay.get('known_reference_input') != expected_references:
-                raise ValueError('Korean adjudication references differ from the reviewed inputs')
-            if expected_reference_sources is not None:
-                for identity, reference in expected_references.items():
-                    kind, content = reference['kind'], reference['content']
-                    if identity.startswith('word:'):
-                        current = expected_reference_sources.get('approved_words', {}).get(identity[5:])
-                    elif identity.startswith('grammar:'):
-                        current = expected_reference_sources.get('approved_grammar', {}).get(identity[8:])
-                    elif identity == 'linguistic-reference':
-                        current = expected_reference_sources.get('linguistic_reference')
-                    elif identity == 'lexical-reference':
-                        current = expected_reference_sources.get('lexical_reference')
-                    else:
-                        current = expected_reference_sources.get(identity)
-                    if current != content:
-                        raise ValueError(f'Korean adjudication reference changed: {identity}')
-            verified = verify_adjudication_evidence(run_dir, proof['adjudication'],
-                language='ko', representation='korean-flat', candidate=value,
-                current_review=raw_review, prior_history=replay['prior_history'],
-                context=replay['context'], known_reference_input=replay['known_reference_input'],
-                deterministic_gate_evidence=replay['deterministic_gate_evidence'],
-                normal_review_receipt=replay['normal_review_receipt'],
-                source_text=record['text'])
-            if verified.get('status') != 'cleared' or verified.get('approved') is not True:
-                raise ValueError('Korean adjudication did not independently clear this chunk')
+        verify_chunk_review(run_dir, proof, annotation=value, text=record['text'],
+            chapter_text=chapter_text, source_start=start, expected_context=expected_context,
+            allow_stale_form_guidance=allow_stale_form_guidance,
+            expected_reference_sources=expected_reference_sources,
+            allow_adjudicated=(version == 2))
         start += len(record['text'])
 
 

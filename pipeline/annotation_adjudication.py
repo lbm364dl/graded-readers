@@ -79,6 +79,24 @@ For each classification, use candidate-relative JSON Pointers such as /segments/
 
 Use evidence_refs only for supplied reference IDs and paths. Approved lesson, primary source, and explicit review-policy documents may establish linguistic facts. Source context/clause documents may establish what the passage says, but alone cannot establish that a disputed analysis is linguistically valid. If the evidence is incomplete, conflicting, or the target cannot be anchored, choose uncertain. Actionable means a concrete mismatch exists; give a narrow repair diagnosis. Report new defects separately. Preserve any prose revision request: do not clear a review that asks for prose revision. Do not override a deterministic contract or validation failure. Stylistic alternatives alone are not defects. Return only the requested JSON."""
 
+# Adjudication must use the same semantic criteria as the critic and repairer;
+# merely supplying a large policy document as reference data is insufficient.
+from pipeline.annotation_review_guidance import FORM_STAGE_EVIDENCE_GUIDANCE
+
+INSTRUCTIONS += '\n\n' + FORM_STAGE_EVIDENCE_GUIDANCE + """
+
+Before classifying a meaning finding actionable, compare the candidate's exact
+English with the linked lesson's explanation, including any supported glosses.
+Identify the actual words or semantic contribution that contradict that lesson.
+A diagnosis that merely asks for the contribution already expressed is not a
+repair diagnosis. If the reference supports that contribution and the objection
+only prefers another English phrasing, classify unsupported with that reference.
+Do not confuse a dependent intended-action gloss with an assertion that an
+intention was completed, or an embedded speculative question with an assertion
+that its event will happen. Conversely, preserve defects whose exact wording
+adds an unsupported action, modality, tense, or construction-level contribution.
+"""
+
 
 class AdjudicationError(ValueError):
     """The adjudication output cannot be safely bound to its evidence."""
@@ -156,6 +174,19 @@ def _explicit_anchors(issue: Any) -> list[tuple[str, int]]:
                       (r'\bform[- _]steps?\s+(?:index\s*)?(\d+(?:\s*(?:,|and|&)\s*\d+)*)', 'form_steps'))
     for pattern, collection in multi_patterns:
         for match in re.finditer(pattern, text, re.I):
+            # A ranged overlay cited to explain a local defect is context, not
+            # another defective tap. Keep structured target indices above and
+            # ordinary multi-target findings authoritative. In particular,
+            # "At segment 4 ... overlay spanning segments 2–4" targets 4.
+            prefix = text[max(0, match.start() - 160):match.start()]
+            following = text[match.end():]
+            if (collection == 'segments'
+                    and re.match(r'\s*[-–—]\s*\d+', following)
+                    and re.search(
+                        r'\b(?:overlay|construction|span)\b[^.;\n]{0,140}'
+                        r'\b(?:on|spanning|spans|covers?|across|over|from)\s*$',
+                        prefix, re.I)):
+                continue
             found.extend((collection, int(number)) for number in re.findall(r'\d+', match.group(1)))
     return list(dict.fromkeys(found))
 
@@ -305,6 +336,7 @@ def _substantive_evidence(value: Any) -> bool:
                        'id', 'entry_id', 'name', 'title', 'type', 'kind', 'url',
                        'source_url', 'sha256', 'digest', 'path', 'author', 'reviewed',
                        'review_digest', 'metadata',
+                       'issue_ids', 'source_refs', '_annotation_research_fact',
                    })
     return False
 
@@ -318,7 +350,8 @@ def _substantive_reference(
         final_key = pointer.rsplit('/', 1)[-1].replace('~1', '/').replace('~0', '~').casefold()
         if final_key in {'id', 'entry_id', 'name', 'title', 'type', 'kind', 'url',
                          'source_url', 'sha256', 'digest', 'path', 'author',
-                         'reviewed', 'review_digest', 'metadata'}:
+                         'reviewed', 'review_digest', 'metadata', 'issue_ids',
+                         'source_refs', '_annotation_research_fact'}:
             return _approved_lexical_category_match(
                 row, reference_content=reference_content, candidate=candidate,
                 candidate_paths=candidate_paths or [], representation=representation)
@@ -419,8 +452,12 @@ def _validate_output(output: dict, inputs: dict) -> dict:
             identity, path = ref['reference_id'], ref['path']
             if identity not in refs:
                 raise AdjudicationError(f'Unknown evidence reference ID: {identity}')
+            content = refs[identity]['content']
+            if (isinstance(content, dict) and content.get('_annotation_research_fact') is True
+                    and row['issue_id'] not in content.get('issue_ids', [])):
+                raise AdjudicationError('Reviewed research was cited outside its verified issue scope')
             try:
-                evidence_value = resolve_pointer(refs[identity]['content'], path)
+                evidence_value = resolve_pointer(content, path)
             except (LedgerProtocolError, TypeError) as exc:
                 raise AdjudicationError(f'Unresolvable reference path {identity}:{path}: {exc}') from exc
             refs_resolved.append({'reference_id': identity, 'reference_kind': refs[identity]['kind'],
@@ -692,7 +729,15 @@ def _prior_path_history(prior_history: Any, current_candidate: Any,
     return history
 
 
-async def adjudicate_annotation_review(runner: Any, run_dir: Path, *, language: str,
+def _worker_prompt(inputs: dict) -> str:
+    context = inputs.get('context')
+    policy = context.get('annotation_reviewed_reference_policy') if isinstance(context, dict) else None
+    if policy is not None and policy != REVIEWED_REFERENCE_POLICY:
+        raise AdjudicationError('Reviewed-reference approval policy is not host-authenticated')
+    return (INSTRUCTIONS + ('\n\n' + policy if policy else '') + '\nThe full candidate, review, history, and organized references are in the immutable annotation_adjudication input. Return the required JSON object.\n')
+
+
+async def _adjudicate_once(runner: Any, run_dir: Path, *, language: str,
         representation: str, candidate: Any, current_review: dict, prior_history: Any,
         context: Any, known_reference_input: dict, deterministic_gate_evidence: dict,
         normal_review_receipt: dict, source_text: str | None = None) -> dict:
@@ -723,7 +768,7 @@ async def adjudicate_annotation_review(runner: Any, run_dir: Path, *, language: 
     _write_json(agent_dir / 'adjudication-input.json', inputs)
     schema_path = run_dir / 'annotation-adjudication.schema.json'
     _write_json(schema_path, OUTPUT_SCHEMA)
-    prompt = (INSTRUCTIONS + '\nThe full candidate, review, history, and organized references are in the immutable annotation_adjudication input. Return the required JSON object.\n')
+    prompt = _worker_prompt(inputs)
     output = await runner.call(job, prompt, schema_path, 'low', tool_profile='research',
         workspace_context={'annotation_adjudication': inputs,
                            'annotation_adjudication_validation': {'input_field': 'annotation_adjudication'}})
@@ -744,7 +789,7 @@ async def adjudicate_annotation_review(runner: Any, run_dir: Path, *, language: 
     return verified
 
 
-def verify_adjudication_evidence(run_dir: Path, evidence: dict, *, language: str,
+def _verify_adjudication_once(run_dir: Path, evidence: dict, *, language: str,
         representation: str, candidate: Any, current_review: dict, prior_history: Any,
         context: Any, known_reference_input: dict, deterministic_gate_evidence: dict,
         normal_review_receipt: dict, source_text: str | None = None) -> dict:
@@ -800,6 +845,91 @@ def verify_adjudication_evidence(run_dir: Path, evidence: dict, *, language: str
     expected['verified_result_digest'] = digest(replayed)
     if stored != expected or evidence != expected:
         raise AdjudicationError('Saved adjudication evidence does not replay exactly')
+    return expected
+
+
+REVIEWED_REFERENCE_POLICY = """The coordinator has authenticated the added approved_lesson references against their researcher and independent reviewer artifacts. These lessons are approved evidence for the stated run and issue scope, even when an internal legacy lesson ID contains DRAFT. This is distinct from an unreviewed draft proposal and from publication into a dictionary registry. Judge the lesson's actual linguistic explanation and its applicability to the current field; do not discard it because its legacy ID has not been promoted. The researcher's or reviewer's approval verdict alone is not linguistic evidence: cite substantive lesson content, preserve its issue scope, and retain genuine uncertainty when the content does not support the analysis."""
+
+
+def _research_inputs(original: dict, evidence: dict, references: dict,
+                     *, policy_version: int = 1) -> dict:
+    """Add only independently verified knowledge; preserve the review/candidate."""
+    if not references or set(references) & set(original['known_reference_input']):
+        raise AdjudicationError('Reviewed research references must be new and nonempty')
+    context = original['context']
+    if not isinstance(context, dict):
+        context = {'original_context': context}
+    context = {**context, 'annotation_reference_research_digest': digest(evidence)}
+    if policy_version == 2:
+        context['annotation_reviewed_reference_policy'] = REVIEWED_REFERENCE_POLICY
+    elif policy_version != 1:
+        raise AdjudicationError('Unknown reviewed-reference policy version')
+    return {**original,
+            'known_reference_input': {**original['known_reference_input'], **references},
+            'context': context}
+
+
+def _research_receipt(result: dict, initial: dict, research: dict,
+                      *, version: int = 1) -> dict:
+    chain = {'initial_adjudication': initial, 'reference_research': research}
+    return {**result, **chain, 'reference_research_version': version,
+            'reference_research_chain_digest': digest({'result': result, **chain})}
+
+
+async def adjudicate_annotation_review(runner: Any, run_dir: Path, **inputs) -> dict:
+    """Adjudicate, then research an unresolved analysis once before retrying.
+
+    All languages use this same bounded path. Research never changes a candidate
+    or an ordinary review and must pass its own independent evidence review.
+    """
+    inputs.setdefault('source_text', None)
+    initial = await _adjudicate_once(runner, run_dir, **inputs)
+    if initial['status'] != 'uncertain':
+        return initial
+    from pipeline.annotation_research import research_uncertain_review
+    research = await research_uncertain_review(runner, run_dir,
+        initial_adjudication=initial, **inputs)
+    if not research['references']:
+        result = initial
+    else:
+        enriched = _research_inputs(inputs, research['evidence'], research['references'],
+                                    policy_version=2)
+        result = await _adjudicate_once(runner, run_dir, **enriched)
+    wrapped = _research_receipt(result, initial, research['evidence'], version=2)
+    _write_json(Path(run_dir) / 'agents' / result['job'] /
+                'reference-research-adjudication.json', wrapped)
+    return wrapped
+
+
+def verify_adjudication_evidence(run_dir: Path, evidence: dict, **inputs) -> dict:
+    """Replay ordinary or research-enriched evidence, without any model calls."""
+    inputs.setdefault('source_text', None)
+    markers = {'reference_research_version', 'initial_adjudication',
+               'reference_research', 'reference_research_chain_digest'}
+    present = markers & evidence.keys()
+    if not present:
+        return _verify_adjudication_once(run_dir, evidence, **inputs)
+    if present != markers or evidence['reference_research_version'] not in (1, 2):
+        raise AdjudicationError('Incomplete or unknown research-adjudication receipt')
+    initial = _verify_adjudication_once(run_dir, evidence['initial_adjudication'], **inputs)
+    if initial['status'] != 'uncertain':
+        raise AdjudicationError('Reference research requires an unresolved initial adjudication')
+    from pipeline.annotation_research import verify_research_evidence
+    research = verify_research_evidence(run_dir, evidence['reference_research'],
+        initial_adjudication=initial, **inputs)
+    result_evidence = {key: value for key, value in evidence.items() if key not in markers}
+    if not research['references']:
+        if result_evidence != initial:
+            raise AdjudicationError('Unresolved research cannot change the initial adjudication')
+        result = initial
+    else:
+        enriched = _research_inputs(inputs, research['evidence'], research['references'],
+                                    policy_version=evidence['reference_research_version'])
+        result = _verify_adjudication_once(run_dir, result_evidence, **enriched)
+    expected = _research_receipt(result, initial, research['evidence'],
+                                 version=evidence['reference_research_version'])
+    if evidence != expected:
+        raise AdjudicationError('Research-adjudication chain does not replay exactly')
     return expected
 
 

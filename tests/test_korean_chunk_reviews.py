@@ -183,6 +183,39 @@ def test_rejected_local_review_cannot_approve_publication(tmp_path):
         verify(tmp_path, args, evidence)
 
 
+def test_single_chunk_review_verification_binds_real_parent_and_never_claims_chapter_approval(tmp_path):
+    from pipeline.korean_chunk_reviews import verify_chunk_review
+
+    annotation = {'segments': [{'text': '사람', 'type': 'word', 'meaning_en': 'person',
+        'lemma': '사람', 'lexical_kind': 'vocabulary', 'lexical_id': '사람/명',
+        'story_importance_en': '', 'form_steps': []}],
+        'grammar_links': [], 'inflected_segment_indices': []}
+    text = '사람'
+    prefix, suffix = '앞 문장. ', ' 뒤 문장.'
+    parent = prefix + text + suffix
+    context = {'chapter_text': parent, 'source_start': len(prefix)}
+    runner = Runner(tmp_path)
+    review, proof = asyncio.run(review_chunk(runner, tmp_path, annotation=annotation,
+        text=text, context=context, policy='Review this chunk.'))
+    assert review['approved']
+
+    verified = verify_chunk_review(tmp_path, proof, annotation=annotation, text=text,
+        chapter_text=parent, source_start=len(prefix))
+    assert verified['scope'] == 'chunk'
+    assert verified['kind'] == 'ordinary'
+    assert 'chapter_approved' not in verified
+    wrapped = {'kind': 'ordinary', 'normal_review': proof}
+    assert verify_chunk_review(tmp_path, wrapped, annotation=annotation, text=text,
+        chapter_text=parent, source_start=len(prefix))['review']['approved']
+
+    with pytest.raises(ValueError, match='stale, rejected or mismatched'):
+        verify_chunk_review(tmp_path, proof, annotation=annotation, text=text,
+            chapter_text=parent, source_start=len(prefix) + 1)
+    with pytest.raises(ValueError, match='stale, rejected or mismatched'):
+        verify_chunk_review(tmp_path, proof, annotation=annotation, text=text,
+            chapter_text=parent + ' changed', source_start=len(prefix))
+
+
 def test_prose_repair_requires_explicit_rejection(tmp_path):
     runner = Runner(tmp_path, {'approved': True, 'issues': [],
                                'prose_revision_reason_en': 'Change the actual wording.'})
@@ -202,6 +235,109 @@ def test_rewriting_sidecar_and_digest_cannot_change_reviewed_workspace_inputs(tm
     forged = {**evidence, 'input_digest': digest(inputs)}
     with pytest.raises(ValueError, match='differ from the worker evidence'):
         verify(tmp_path, altered, forged)
+
+
+def test_korean_adjudication_replay_only_accepts_primary_sources_from_original_review_context(tmp_path, monkeypatch):
+    import pipeline.annotation_adjudication as adjudication
+    from pipeline.korean_agent_harness import annotation_chunk_record
+    from pipeline.korean_chunk_reviews import verify_assembly_reviews, verify_chunk_review
+
+    annotation = {'segments': [{'text': '갈지도', 'type': 'word',
+        'meaning_en': 'whether', 'lemma': '가다', 'lexical_kind': 'vocabulary',
+        'lexical_id': '가다/동', 'story_importance_en': '', 'form_steps': []}],
+        'grammar_links': [], 'inflected_segment_indices': []}
+    text = '갈지도'
+    source = {'reference_id': 'nikl-grammar-86133', 'title': '-을지',
+              'url': 'https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=86133',
+              'excerpt_en': 'A connective ending for a vague doubt about an assumption.'}
+    context = {'chapter_text': text, 'source_start': 0, 'approved_words': [],
+        'approved_grammar': [], 'linguistic_reference': {'entries': []},
+        'lexical_reference': {'entries': []}, 'official_primary_sources': [source]}
+    policy = 'Review this Korean occurrence.'
+    rejected_runner = Runner(tmp_path, {'approved': False,
+        'issues': ['The component gloss needs review.'], 'prose_revision_reason_en': ''})
+    review, evidence = asyncio.run(review_chunk(rejected_runner, tmp_path,
+        annotation=annotation, text=text, context=context, policy=policy))
+    record = annotation_chunk_record('proposal-0', text, annotation)
+    save(tmp_path / 'agents/proposal-0/result.json', annotation)
+    save(tmp_path / 'agents/proposal-0/meta.json', {'return_code': 0})
+    expected_refs = {
+        'linguistic-reference': {'kind': 'primary_source', 'content': context['linguistic_reference']},
+        'lexical-reference': {'kind': 'primary_source', 'content': context['lexical_reference']},
+        'review-policy': {'kind': 'explicit_review_policy', 'content': policy},
+        'nikl-grammar-86133': {'kind': 'primary_source', 'content': source},
+    }
+    replay = {'current_review': review, 'prior_history': [],
+        'context': {'chunk_review_context': context, 'review_policy': policy},
+        'known_reference_input': expected_refs,
+        'deterministic_gate_evidence': {'passed': True, 'issues': [],
+            'candidate_digest': digest(annotation), 'source_text_digest': digest(text)},
+        'normal_review_receipt': {'kind': 'composite', 'review_digest': digest(review),
+                                  'components': evidence}}
+    proof = {'kind': 'adjudicated', 'normal_review': evidence,
+             'adjudication': {'job': 'adjudication-proof'}, 'replay_inputs': replay}
+    meta = {'chunk_reviews_version': 2, 'chunks': [record], 'chunk_reviews': [proof]}
+
+    def verify_replay(*args, **kwargs):
+        assert kwargs['known_reference_input'] == expected_refs
+        return {'status': 'cleared', 'approved': True}
+    monkeypatch.setattr(adjudication, 'verify_adjudication_evidence', verify_replay)
+    verify_assembly_reviews(tmp_path, meta, expected_reference_sources={
+        'approved_words': {}, 'approved_grammar': {},
+        'linguistic_reference': context['linguistic_reference'],
+        'lexical_reference': context['lexical_reference'],
+        'review-policy': policy})
+
+    # The extracted single-chunk API supports an actual parent chapter and
+    # nonzero offset while retaining the exact same adjudicated proof checks.
+    parent_prefix, parent_suffix = 'Earlier context. ', ' Later context.'
+    parent = parent_prefix + text + parent_suffix
+    parent_context = {**context, 'chapter_text': parent, 'source_start': len(parent_prefix)}
+    parent_review, parent_evidence = asyncio.run(review_chunk(rejected_runner, tmp_path,
+        annotation=annotation, text=text, context=parent_context, policy=policy))
+    parent_replay = {
+        'current_review': parent_review,
+        'prior_history': [],
+        'context': {'chunk_review_context': parent_context, 'review_policy': policy},
+        'known_reference_input': expected_refs,
+        'deterministic_gate_evidence': {'passed': True, 'issues': [],
+            'candidate_digest': digest(annotation), 'source_text_digest': digest(text)},
+        'normal_review_receipt': {'kind': 'composite', 'review_digest': digest(parent_review),
+                                  'components': parent_evidence},
+    }
+    parent_proof = {'kind': 'adjudicated', 'normal_review': parent_evidence,
+        'adjudication': {'job': 'adjudication-proof'}, 'replay_inputs': parent_replay}
+    verified_chunk = verify_chunk_review(tmp_path, parent_proof,
+        annotation=annotation, text=text, chapter_text=parent,
+        source_start=len(parent_prefix))
+    assert verified_chunk['scope'] == 'chunk'
+    assert verified_chunk['kind'] == 'adjudicated'
+    assert verified_chunk['adjudication']['approved'] is True
+    assert 'chapter_approved' not in verified_chunk
+    with pytest.raises(ValueError, match='stale, rejected or mismatched'):
+        verify_chunk_review(tmp_path, parent_proof, annotation=annotation,
+            text=text, chapter_text=parent, source_start=len(parent_prefix) + 1)
+    with pytest.raises(ValueError, match='stale, rejected or mismatched'):
+        verify_chunk_review(tmp_path, parent_proof, annotation=annotation,
+            text=text, chapter_text=parent + ' changed', source_start=len(parent_prefix))
+    tampered_chunk = copy.deepcopy(parent_proof)
+    tampered_chunk['replay_inputs']['known_reference_input']['unreviewed'] = {
+        'kind': 'primary_source',
+        'content': {'reference_id': 'unreviewed', 'excerpt_en': 'claim'}}
+    with pytest.raises(ValueError, match='references differ from the reviewed inputs'):
+        verify_chunk_review(tmp_path, tampered_chunk, annotation=annotation,
+            text=text, chapter_text=parent, source_start=len(parent_prefix))
+
+    # Omitting a pinned source or smuggling an unreviewed one both fail.
+    tampered = copy.deepcopy(meta)
+    tampered['chunk_reviews'][0]['replay_inputs']['known_reference_input'].pop('nikl-grammar-86133')
+    with pytest.raises(ValueError, match='references differ from the reviewed inputs'):
+        verify_assembly_reviews(tmp_path, tampered)
+    tampered = copy.deepcopy(meta)
+    tampered['chunk_reviews'][0]['replay_inputs']['known_reference_input']['unreviewed'] = {
+        'kind': 'primary_source', 'content': {'reference_id': 'unreviewed', 'excerpt_en': 'claim'}}
+    with pytest.raises(ValueError, match='references differ from the reviewed inputs'):
+        verify_assembly_reviews(tmp_path, tampered)
 
 
 def test_publication_requires_every_chunk_review_and_replays_rejections(tmp_path):

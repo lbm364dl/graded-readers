@@ -43,6 +43,34 @@ approve new dictionary lessons or change prose, tap boundaries or source text.
 Reference coverage remains explicit: Chinese provisional grammar keys are not
 approved lessons. When a disputed linguistic fact has no supplied approved or
 primary reference, adjudication must remain uncertain rather than invent proof.
+An uncertain result now enters the same bounded evidence-research path for all
+three languages: a targeted tools-enabled researcher can use supplied references
+or request up to three direct primary-source pages on an already supplied
+primary-source origin. The host captures readable pages with their exact bytes,
+URLs and digests; one continuation can research those captured sources. An
+independent reviewer then checks reusable, issue-scoped facts against the evidence.
+The candidate and rejected review stay unchanged.
+The coordinator can register an already researched, independently approved
+lesson for the exact occurrence and findings. The shared path checks that
+explicit cache receipt before launching research, authenticates both original
+worker artifacts, and supplies the lesson to a fresh adjudication. It does not
+scan worker directories or infer approval from a draft dictionary ID.
+An explicitly registered source descriptor also allows a later matching finding
+to rebuild its scoped cache automatically. Different source slices, taps or
+offsets fall through to normal research. The source must retain its original
+structured writer and reviewer workspace records; older dictionary batches are
+not imported by guessing their approval from job names. Lesson content stays
+separate from provenance, and a host-verified lesson's legacy draft ID does not
+cancel its scoped review approval or promote it into the published registry.
+Only independently verified facts enter one further adjudication. Research does
+not promote dictionary entries or change annotations; unresolved research still
+blocks acceptance. Cache and publication replay verify both adjudications and
+the research/review chain, including captured bytes, source values and the exact
+finding scope, without model or network calls. Verified research is reused before
+another lookup. Unsupported media and insufficient evidence remain explicit gaps.
+Historical version-1 research receipts are preserved but cannot be reinterpreted
+as version-2 evidence; the affected pilot smoke receipts were unresolved and
+contributed no approved facts.
 
 Generative Chinese and Japanese chunk reviews retain versioned source-bound
 receipts for publication and reuse. Legacy outputs without receipt metadata keep

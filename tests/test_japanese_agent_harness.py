@@ -28,8 +28,9 @@ from pipeline.japanese_agent_harness import (
     overlay_crosses_clause_boundary, parser,
     overlong_japanese_sentences, resolve_source_boundary,
     split_japanese_annotation_chunks, strip_duplicate_source_header,
-    strip_inline_japanese_readings,
+    strip_inline_japanese_readings, verify_japanese_chunk_review,
 )
+from pipeline.annotation_review_guidance import FORM_STAGE_EVIDENCE_GUIDANCE
 from pipeline.japanese_readability import (
     level_diagnostics, matched_level, preflight_level_diagnostics,
 )
@@ -189,6 +190,122 @@ async def test_japanese_applied_semantic_review_clear_is_saved_as_distinct_adjud
     stored = json.loads((tmp_path / "accepted-annotations" / "chunk_0000.json").read_text())
     replay = stored["attempts"][-1]["adjudication_replay"]
     assert replay["prior_history"] == stored["attempts"][:-1]
+
+
+def _adjudicated_japanese_cache_fixture(tmp_path, monkeypatch):
+    from pipeline.annotation_adjudication import digest as evidence_digest
+    from pipeline.annotation_publication import bind_review_job
+    from pipeline.agent_harness import CodexRunner
+    from pipeline import annotation_adjudication
+
+    source = "猫"
+    candidate = {"segments": [{"surface": source}], "grammar_overlays": []}
+    review = {"verdict": "revise", "issues": [{"problem": "meaning"}]}
+    story_plan = {"terms": []}
+    (tmp_path / "story-vocabulary-plan.json").write_text(json.dumps(story_plan))
+    components = []
+    for suffix in ("review", "boundary_review"):
+        job = f"annotations/chunk_0000/adjudicated_final_01_{suffix}"
+        job_dir = tmp_path / "agents" / job
+        job_dir.mkdir(parents=True, exist_ok=True)
+        raw_review = {"verdict": "revise", "issues": [{"problem": suffix}]}
+        (job_dir / "meta.json").write_text(json.dumps({
+            "fingerprint": f"input-{suffix}", "return_code": 0,
+            "model": "gpt-6-luna", "effort": "low", "tool_profile": "offline"}))
+        (job_dir / "result.json").write_text(json.dumps(raw_review))
+        child = bind_review_job(tmp_path, job, candidate=candidate, source_text=source)
+        child.update(candidate_digest=evidence_digest(candidate),
+                     source_digest=evidence_digest(source))
+        components.append(child)
+
+    grammar = japanese_semantic_repair_grammar_knowledge()
+    context = {"chunk_text": source, "grammar_knowledge": grammar,
+               "story_plan": story_plan}
+    references = {
+        "approved-grammar": {"kind": "approved_lesson",
+                             "content": grammar.get("approved_entries", [])},
+        "review-policy": {"kind": "explicit_review_policy",
+            "content": {"form_stage_guidance": FORM_STAGE_EVIDENCE_GUIDANCE,
+                "review_policy": "", "dictionary_policy": JAPANESE_ANNOTATION_CHUNK_POLICY}},
+    }
+    receipt = {"kind": "composite", "review_digest": evidence_digest(review),
+               "components": components}
+    gate = {"passed": True, "issues": [],
+            "candidate_digest": evidence_digest(candidate),
+            "source_text_digest": evidence_digest(source)}
+    replay = {"prior_history": [], "context": context,
+              "known_reference_input": references,
+              "deterministic_gate_evidence": gate,
+              "normal_review_receipt": receipt}
+    row = {"stage": "adjudicated_final_01", "annotation": candidate,
+           "review": review, "adjudication": {"status": "cleared", "approved": True},
+           "effective_review": {"kind": "adjudicated"},
+           "adjudication_replay": replay}
+    item = {"segments": candidate["segments"], "grammar_overlays": [],
+            "attempts": [row], "resolved": True,
+            "effective_review": {"kind": "adjudicated"}}
+    monkeypatch.setattr(CodexRunner, "_check_tool_profile", staticmethod(lambda *_args: None))
+    monkeypatch.setattr(annotation_adjudication, "verify_adjudication_evidence",
+        lambda *_args, **_kwargs: {"status": "cleared", "approved": True})
+    return source, item
+
+
+def test_japanese_adjudicated_replay_rejects_tampered_history(tmp_path, monkeypatch):
+    source, item = _adjudicated_japanese_cache_fixture(tmp_path, monkeypatch)
+    assert verify_japanese_chunk_review(item, source, tmp_path) is True
+    tampered = copy.deepcopy(item)
+    tampered["attempts"][-1]["adjudication_replay"]["prior_history"] = [{"fake": True}]
+    assert verify_japanese_chunk_review(tampered, source, tmp_path) is False
+
+
+def test_japanese_adjudication_must_be_the_final_attempt(tmp_path, monkeypatch):
+    source, item = _adjudicated_japanese_cache_fixture(tmp_path, monkeypatch)
+    item["attempts"].append({"stage": "later", "review": {"verdict": "pass"}})
+    assert verify_japanese_chunk_review(item, source, tmp_path) is False
+
+
+@pytest.mark.asyncio
+async def test_japanese_adjudicated_cache_path_uses_shared_lineage_verifier(tmp_path, monkeypatch):
+    source, item = _adjudicated_japanese_cache_fixture(tmp_path, monkeypatch)
+
+    class CacheHarness(JapaneseChapterHarness):
+        @property
+        def annotation_chunk_cache_tag(self):
+            return "fixture-policy"
+        def refresh_annotation_chunk(self, _index):
+            return False
+        def reuse_unselected_annotation_cache(self, _index):
+            return False
+        def annotation_reconstructs(self, _chunk, _candidate):
+            return True
+        def annotation_contract_issues(self, _chunk, _candidate):
+            return []
+        async def annotation_candidate(self, *_args, **_kwargs):
+            raise AssertionError("invalid adjudication cache must miss")
+
+    monkeypatch.setattr("pipeline.japanese_agent_harness.clear_unavailable_dictionary_links",
+                        lambda value: value)
+    monkeypatch.setattr("pipeline.japanese_agent_harness.normalize_redundant_japanese_form_steps",
+                        lambda value: value)
+    harness = object.__new__(CacheHarness)
+    harness.args = SimpleNamespace(refresh=False, annotation_chunk_indices=None)
+    harness.run_dir = tmp_path
+    harness.story_vocabulary_plan = {"terms": []}
+    cache_key = digest(json.dumps({"policy": "fixture-policy", "chunk": source,
+                                  "story_plan": {"terms": []}},
+                                 ensure_ascii=False, sort_keys=True))
+    accepted = tmp_path / "accepted-annotations"
+    accepted.mkdir()
+    path = accepted / "chunk_0000.json"
+    path.write_text(json.dumps({**item, "cache_key": cache_key}))
+    reused = await harness.annotate_chunk(0, source)
+    assert reused["effective_review"]["kind"] == "adjudicated"
+
+    changed = copy.deepcopy(item)
+    changed["attempts"][-1]["adjudication_replay"]["prior_history"] = [{"fake": True}]
+    path.write_text(json.dumps({**changed, "cache_key": cache_key}))
+    with pytest.raises(AssertionError, match="invalid adjudication cache must miss"):
+        await harness.annotate_chunk(0, source)
 
 
 def test_beginner_orthography_modernizes_lexical_nai_but_advanced_can_preserve_it():
