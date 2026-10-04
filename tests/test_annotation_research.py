@@ -230,7 +230,7 @@ def test_v2_research_receipt_replays_with_historical_prompts_after_v3_default(
         assert "research_policy_version" not in result["evidence"]["inputs"]
         assert "candidate is intentionally immutable" not in research._review_prompt(
             result["evidence"]["inputs"])
-    assert research.RESEARCH_POLICY_VERSION == original_current == 4
+    assert research.RESEARCH_POLICY_VERSION == original_current == 5
     assert research.verify_research_evidence(tmp_path, result["evidence"], **request) == result
 
 
@@ -417,7 +417,7 @@ def test_primary_page_capture_continuation_review_and_offline_replay(tmp_path, m
     assert len(runner.calls) == 3
     assert len(fetches) == 1
     evidence = result["evidence"]
-    assert evidence["version"] == 4
+    assert evidence["version"] == 5
     assert evidence["continuation_job"]
     assert evidence["captured_references"][0]["content"]["captured_text"].find("Form A") >= 0
     assert "ignore" not in evidence["captured_references"][0]["content"]["captured_text"]

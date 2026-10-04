@@ -133,11 +133,32 @@ def test_relevant_direct_primary_page_can_be_requested_only_for_unresolved_targe
         research._validate_research_output(output, inputs['issue_ids'], inputs['known_reference_input'])
 
 
-@pytest.mark.parametrize('version', [2, 3])
+@pytest.mark.parametrize('version', [2, 3, 4])
 def test_historical_policy_inputs_and_worker_packets_are_unchanged(version):
     inputs = research._build_inputs(**request_inputs(), policy_version=version)
-    assert 'uncertainty_tasks' not in inputs
+    assert ('uncertainty_tasks' in inputs) == (version == 4)
     context = research._worker_context('review', inputs)
-    assert set(context) == {'annotation_uncertainty_research', 'annotation_uncertainty_research_role'}
-    assert research.SCOPED_RESEARCH_GUIDANCE not in research._research_prompt(inputs)
-    assert research.SCOPED_RESEARCH_GUIDANCE not in research._review_prompt(inputs)
+    expected = {'annotation_uncertainty_research', 'annotation_uncertainty_research_role'}
+    if version == 4:
+        expected.add('annotation_uncertainty_tasks')
+    assert set(context) == expected
+    assert research.PRIMARY_DISCOVERY_GUIDANCE not in research._research_prompt(inputs)
+    assert research.PRIMARY_DISCOVERY_GUIDANCE not in research._review_prompt(inputs)
+
+
+@pytest.mark.parametrize('language,has_origin,expected_adapters', [
+    ('ko', True, 1), ('ko', False, 0), ('ja', True, 0), ('zh', True, 0)])
+def test_discovery_guide_is_shared_but_adapters_bind_language_and_supplied_origin(
+        language, has_origin, expected_adapters):
+    request = request_inputs()
+    request['language'] = language
+    if not has_origin:
+        request['known_reference_input'].pop('lexical-reference')
+    inputs = research._build_inputs(**request)
+    for role in ['research', 'review']:
+        context = research._worker_context(role, inputs)
+        tools = context['annotation_primary_discovery_tools']
+        assert len(tools['adapters']) == expected_adapters
+        assert context['annotation_uncertainty_research'] == inputs
+    for prompt in [research._research_prompt(inputs), research._review_prompt(inputs)]:
+        assert research.PRIMARY_DISCOVERY_GUIDANCE in prompt

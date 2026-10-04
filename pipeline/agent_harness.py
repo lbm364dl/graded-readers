@@ -3,6 +3,8 @@
 
 from __future__ import annotations
 
+from pipeline.annotation_adjudication_budget import AdjudicationBudget
+
 import argparse
 import asyncio
 import copy
@@ -2725,7 +2727,7 @@ GRAMMAR OVERLAYS (existing exact offset objects):
             chunk, await self.annotation_candidate(index, chunk)
         )
         attempts: list[dict[str, Any]] = []
-        adjudication_used = False
+        adjudication_budget = AdjudicationBudget()
         for attempt in range(self.args.max_annotation_repairs + 1):
             if self.annotation_reconstructs(chunk, result):
                 review = await self.review_annotation(
@@ -2757,7 +2759,7 @@ GRAMMAR OVERLAYS (existing exact offset objects):
             repair_findings = review
             adjudication_context_extra = {}
             previous = attempts[-1] if attempts else {}
-            if (not adjudication_used and attempt > 0
+            if (adjudication_budget.can_claim(result) and attempt > 0
                     and previous.get("semantic_repair", {}).get("status") == "applied"
                     and self.annotation_reconstructs(chunk, result)
                     and not self.annotation_contract_issues(chunk, result)
@@ -2810,7 +2812,8 @@ GRAMMAR OVERLAYS (existing exact offset objects):
                 adjudication_context = {"chunk_text": chunk,
                     "grammar_knowledge": chinese_semantic_repair_grammar_knowledge(result)}
                 adjudication_history = copy.deepcopy(attempts)
-                adjudication_used = True
+                if not adjudication_budget.claim(result):
+                    raise RuntimeError("Adjudication candidate budget changed before invocation")
                 adjudication = await adjudicate_annotation_review(
                     self.runner, run_dir, language="zh", representation="chinese-annotation",
                     candidate=result, current_review=review, prior_history=adjudication_history,

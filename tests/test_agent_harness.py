@@ -1,3 +1,4 @@
+import copy
 import json
 import asyncio
 from argparse import Namespace
@@ -91,17 +92,21 @@ async def test_chinese_semantic_repair_caller_passes_provisional_grammar_referen
     assert captured["grammar_knowledge"]["candidate_keys_in_base"] == []
 
 
+@pytest.mark.parametrize("route_mode", ['clear', 'derived', 'unchanged', 'exhausted'])
 @pytest.mark.asyncio
-async def test_chinese_adjudication_clears_only_after_replayed_applied_semantic_repair(tmp_path, monkeypatch):
+async def test_chinese_adjudication_clears_only_after_replayed_applied_semantic_repair(tmp_path, monkeypatch, route_mode):
     from pipeline import annotation_repairs, annotation_adjudication
 
     candidate = {"segments": [{"text": "猫", "type": "word", "pinyin": "māo",
                                "meaning_en": "cat"}], "grammar_overlays": []}
     issue = {"problem": "meaning", "segment_index": 0, "explanation": "Check this gloss."}
 
+    repaired_candidates = {}
+    route_candidates = []
+
     class Harness(ChapterHarness):
         async def annotation_candidate(self, index, chunk, **kwargs):
-            return candidate
+            return copy.deepcopy(next(reversed(repaired_candidates.values()))) if repaired_candidates else copy.deepcopy(candidate)
 
         async def review_annotation(self, index, chunk, annotation, stage):
             from pipeline.annotation_publication import bind_review_job
@@ -131,16 +136,26 @@ async def test_chinese_adjudication_clears_only_after_replayed_applied_semantic_
         root.mkdir(parents=True, exist_ok=True)
         (root / "meta.json").write_text(json.dumps({"kind": "annotation_patch_assembly",
             "status": "applied", "return_code": 0}))
-        return {"status": "applied", "candidate": base,
+        derived = copy.deepcopy(base)
+        if route_mode != "unchanged":
+            derived["segments"][0]["meaning_en"] += " (repair)"
+        repaired_candidates[job] = derived
+        return {"status": "applied", "candidate": derived,
                 "evidence": {"assembly_job": job}}
 
     def fake_replay(run_dir, job, *, validate_candidate):
-        validate_candidate(candidate)
-        return {"status": "applied", "candidate": candidate}
+        derived = repaired_candidates[job]
+        validate_candidate(derived)
+        return {"status": "applied", "candidate": derived}
 
     async def fake_adjudicate(*args, **kwargs):
         assert kwargs["current_review"]["issues"] == [issue]
         assert kwargs["deterministic_gate_evidence"]["passed"] is True
+        route_candidates.append(copy.deepcopy(kwargs["candidate"]))
+        if route_mode in ("unchanged", "exhausted") or (route_mode in ("derived", "tail") and len(route_candidates) == 1):
+            return {"status": "actionable", "approved": False,
+                    "repair_diagnoses": [{"issue_id": "genuine", "diagnosis": "Correct the gloss.",
+                        "paths": ["/segments/0/meaning_en"]}]}
         return {"status": "cleared", "approved": True, "job": "fixture-adjudication"}
 
     def fake_verify(run_dir, evidence, **kwargs):
@@ -165,8 +180,8 @@ async def test_chinese_adjudication_clears_only_after_replayed_applied_semantic_
     monkeypatch.setattr(annotation_adjudication, "adjudicate_annotation_review", fake_adjudicate)
     monkeypatch.setattr(annotation_adjudication, "verify_adjudication_evidence", fake_verify)
     harness = object.__new__(Harness)
-    harness.args = Namespace(max_annotation_repairs=1, refresh=False,
-        annotation_repair_effort="low", annotation_effort="low", annotation_review_effort="low",
+    harness.args = Namespace(max_annotation_repairs=(1 if route_mode in ("clear", "tail") else 5), refresh=False,
+        annotation_repair_effort="low", annotation_final_effort="low", annotation_effort="low", annotation_review_effort="low",
         annotation_chunk=350, annotation_chunk_maximum=400)
     harness.run_dir = tmp_path
     harness.runner = object()
@@ -175,7 +190,18 @@ async def test_chinese_adjudication_clears_only_after_replayed_applied_semantic_
     (tmp_path / "focus-vocabulary-plan.json").write_text(json.dumps({
         "names": [], "story_terms": []}))
     monkeypatch.setattr(CodexRunner, "_check_tool_profile", staticmethod(lambda *_args: None))
+    if route_mode in ("unchanged", "exhausted"):
+        with pytest.raises(ValueError):
+            await harness.annotate_chunk(0, "猫")
+        assert len(route_candidates) == (1 if route_mode == "unchanged" else 3)
+        assert len({json.dumps(row, sort_keys=True) for row in route_candidates}) == len(route_candidates)
+        return
     result = await harness.annotate_chunk(0, "猫")
+    assert len(route_candidates) == (1 if route_mode == "clear" else 2)
+    if route_mode != "clear":
+        assert route_candidates[0] != route_candidates[1]
+        assert result["attempts"][-1]["review"]["verdict"] == "revise"
+        assert any(row.get("adjudication", {}).get("status") == "actionable" for row in result["attempts"])
     assert result["effective_review"]["kind"] == "adjudicated"
     assert result["attempts"][-1]["review"] == {
         "verdict": "revise", "issues": [issue],

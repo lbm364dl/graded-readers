@@ -148,8 +148,21 @@ def test_publication_rejects_overlapping_or_skipped_chapter_scopes(tmp_path, mon
 
 
 @pytest.mark.parametrize('prose_revision,worker_failure,recover_partial', [(False, False, False), (False, True, False), (False, 'submission_rejected', False), (True, False, False), ('technical_failure', False, False), (False, 'attached', False), (False, False, True), (False, False, 'rejected_worker'), (False, False, 'invalid_attached')])
-def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_path, prose_revision, worker_failure, recover_partial, local_review_repair=False, draft_lesson=False, incomplete_cached_repair=False, complete_cached_repair=False):
+def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_path, prose_revision, worker_failure, recover_partial, local_review_repair=False, draft_lesson=False, incomplete_cached_repair=False, complete_cached_repair=False, adjudication_mode=None, monkeypatch=None):
     from pipeline.korean_agent_harness import normalize_existing, save, UnannotatableProseError
+    route_candidates = []
+    if adjudication_mode:
+        from pipeline import annotation_adjudication
+        async def adjudicate(*args, **kwargs):
+            route_candidates.append(copy.deepcopy(kwargs['candidate']))
+            if len(route_candidates) == 1:
+                return {'status': 'actionable', 'approved': False, 'repair_diagnoses': [
+                    {'issue_id': 'genuine', 'diagnosis': 'Correct the occurrence gloss.',
+                     'paths': ['/segments/0/meaning_en']}]}
+            return {'status': 'cleared', 'approved': True}
+        monkeypatch.setattr(annotation_adjudication, 'adjudicate_annotation_review', adjudicate)
+        monkeypatch.setattr(annotation_adjudication, 'verify_adjudication_evidence',
+            lambda directory, evidence, **kwargs: evidence)
     chapter = manual_chapter()
     if draft_lesson:
         # Synthetic identity exercises the stage protocol, not a new linguistic
@@ -205,6 +218,8 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
                         'base_candidate', context['candidate'])
                     used_ids = {link['entry_id'] for link in base_candidate['grammar_links']}
                     known_ids = {entry['id'] for entry in knowledge['approved_entries']}
+                    assert {entry['id'] for entry in context['approved_grammar']} == known_ids
+                    assert 'possessive-ui' in known_ids
                     assert knowledge['catalog_status'] == 'reviewed'
                     assert known_ids > used_ids
                     assert 'DRAFT' in knowledge['identity_policy']
@@ -227,6 +242,13 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
                     value = {'base_digest': candidate_digest(base), 'edits': edits}
             else:
                 value = await self.respond(job)
+            if job.startswith('annotation-local-review-'):
+                context = kwargs['workspace_context']['chunk_review_input']['context']
+                approved_ids = {row['id'] for row in context['approved_grammar']}
+                assert approved_ids == set(dictionary._registry(dictionary.GRAMMAR))
+                used_ids = {link['entry_id'] for link in kwargs['workspace_context']['chunk_review_input']['annotation']['grammar_links']}
+                assert approved_ids - used_ids  # Unlinked approved prerequisite lessons remain available.
+                assert 'possessive-ui' in approved_ids
             if job.startswith('annotation-local-review-') and draft_lesson:
                 context = kwargs['workspace_context']['chunk_review_input']['context']
                 if context['source_start'] == 0:
@@ -246,6 +268,13 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
                         'explanation': 'Clarify the contextual meaning in the first chunk.',
                         'candidate_paths': ['/segments/0/meaning_en'], 'supporting_paths': []}],
                              'prose_revision_reason_en': ''}
+            if job.startswith('annotation-local-review-') and adjudication_mode:
+                inputs = kwargs['workspace_context']['chunk_review_input']
+                if inputs['context']['source_start'] == 0:
+                    value = {'approved': False, 'issues': [{
+                        'explanation': 'Check the freshly derived occurrence gloss.',
+                        'candidate_paths': ['/segments/0/meaning_en'], 'supporting_paths': []}],
+                        'prose_revision_reason_en': ''}
             if job.startswith('annotation-local-review-') and (incomplete_cached_repair or complete_cached_repair):
                 inputs = kwargs['workspace_context']['chunk_review_input']
                 if inputs['context']['source_start'] == 0:
@@ -418,6 +447,18 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
         assert checkpoint['complete'] is False
         return
     assert asyncio.run(KoreanHarness(tmp_path, 1, runner=runner).run())['status'] == 'complete'
+    if adjudication_mode:
+        assert len(route_candidates) == 2
+        assert route_candidates[0] != route_candidates[1]
+        from pipeline.korean_chunk_reviews import verify_assembly_reviews
+        report = json.loads((tmp_path / 'report.json').read_text())
+        meta = json.loads((tmp_path / 'agents' / report['stages']['annotation']['proposal_job'] / 'meta.json').read_text())
+        assert meta['chunk_reviews'][0]['kind'] == 'adjudicated'
+        assert meta['chunk_reviews'][0]['normal_review']['issue_targets_version'] == 1
+        verify_assembly_reviews(tmp_path, meta)
+        semantic_jobs = [job for job in runner.jobs if '-chunk-' in job and job.endswith(('_plan', '_patch'))]
+        assert len(semantic_jobs) == 4
+        return
     jobs = [job for job in runner.jobs if '-chunk-' in job and not job.endswith(('_plan', '_patch'))]
     if incomplete_cached_repair or complete_cached_repair:
         assert runner.reviewed_cached_repair
@@ -2470,3 +2511,9 @@ def test_korean_rejected_review_receipt_can_be_verified_without_becoming_approva
     with pytest.raises(ValueError, match='stale, rejected or mismatched'):
         verify_review(tmp_path, evidence, annotation=annotation, text='가',
             chapter_text='가', source_start=0)
+
+
+def test_korean_actionable_adjudication_repairs_then_clears_new_candidate(tmp_path, monkeypatch):
+    test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(
+        tmp_path, False, False, False, local_review_repair=True,
+        adjudication_mode='derived', monkeypatch=monkeypatch)

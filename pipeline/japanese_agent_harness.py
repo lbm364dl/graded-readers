@@ -3,6 +3,8 @@
 
 from __future__ import annotations
 
+from pipeline.annotation_adjudication_budget import AdjudicationBudget
+
 import argparse
 import asyncio
 import copy
@@ -5785,7 +5787,7 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
             chunk, await self.annotation_candidate(index, chunk)
         )
         attempts: list[dict[str, Any]] = []
-        adjudication_used = False
+        adjudication_budget = AdjudicationBudget()
 
         async def review(stage: str) -> dict[str, Any]:
             contract = self.annotation_contract_issues(chunk, result)
@@ -5896,7 +5898,7 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
             adjudication_context = None
             previous = attempts[-1] if attempts else {}
             prior_semantic = previous.get("semantic_repair", {})
-            if (not adjudication_used and prior_semantic.get("status") == "applied"
+            if (adjudication_budget.can_claim(result) and prior_semantic.get("status") == "applied"
                     and self.annotation_surfaces_reconstruct(chunk, result)
                     and not self.annotation_contract_issues(chunk, result)
                     and (Path(self.run_dir) / "agents" /
@@ -5943,7 +5945,8 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                                  source_digest=evidence_digest(chunk))
                 if len(receipt["components"]) != 2:
                     raise ValueError("Japanese adjudication requires both independent review receipts")
-                adjudication_used = True
+                if not adjudication_budget.claim(result):
+                    raise RuntimeError("Adjudication candidate budget changed before invocation")
                 adjudication = await adjudicate_annotation_review(
                     self.runner, Path(self.run_dir), language="ja",
                     representation="japanese-annotation", candidate=result,
@@ -6049,7 +6052,8 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
             proof = ordinary_receipt(stage, findings, result)
             if proof is not None:
                 attempt_record["normal_review_receipt"] = proof
-            if (not adjudication_used and getattr(self, "run_dir", None)
+            if (findings["verdict"] == "revise"
+                    and adjudication_budget.can_claim(result) and getattr(self, "run_dir", None)
                     and repair_evidence.get("status") == "applied"
                     and self.annotation_surfaces_reconstruct(chunk, result)
                     and not self.annotation_contract_issues(chunk, result)
@@ -6097,7 +6101,8 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                 if len(receipt["components"]) != 2:
                     raise ValueError("Japanese adjudication requires both independent review receipts")
                 history = copy.deepcopy(attempts)
-                adjudication_used = True
+                if not adjudication_budget.claim(result):
+                    raise RuntimeError("Adjudication candidate budget changed before invocation")
                 adjudication = await adjudicate_annotation_review(
                     self.runner, Path(self.run_dir), language="ja",
                     representation="japanese-annotation", candidate=result,

@@ -94,6 +94,20 @@ only unresolved tasks, their exact candidate fields and initial evidence gaps.
 Other findings remain context. Eligible primary-source origins are explicit,
 so a missing lexical fact can lead to a captured dictionary page. Policies 2
 and 3 keep their historical packets and prompts.
+Policy 5 supplies applicable official lookup tools separately from research
+tasks. The Korean Basic Dictionary adapter discovers direct record URLs from
+exact result headings, preserving homonyms and excluding sidebar/example
+mentions. These are unapproved leads: workers still request bounded host capture
+and independently review the captured evidence. Empty results do not prove a
+word is absent. Policies 2–4 retain their exact packets and prompts.
+Fresh Korean repair and chunk-review inputs include the complete already
+approved grammar registry so an omitted link cannot hide a prerequisite lesson.
+Japanese already provides its full reviewed registry; Chinese provisional keys
+do not become approved lessons. Historical subset contexts retain exact replay.
+All three callers use `annotation_adjudication_budget.py`: at most three distinct
+candidate digests per chunk lifecycle, including Japanese tail repairs. A changed
+candidate can receive adjudication after a fresh rejected review; an unchanged
+candidate cannot repeat it. Ordinary passing reviews need no adjudication.
 Maintenance records authenticated raw-to-host adjudication downgrades separately
 from linguistic uncertainty. These observations retain both artifacts and policy
 digests and remain investigations until their cause and repair are verified.

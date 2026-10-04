@@ -181,3 +181,12 @@ and evidence gap. Other findings remain context, not substitute research tasks.
 Research review must check that every proposed fact and citation addresses its
 assigned unresolved finding; an accurate fact about another construction does
 not resolve that finding. Preserve historical research packets and receipts.
+Give repair and review workers access to already approved formation lessons,
+including prerequisites not linked by the candidate. A candidate's links are
+not the boundary of available knowledge. Keep provisional identities distinct
+from approved lessons and retain exact historical review contexts on replay.
+
+Use the shared adjudication budget for up to three distinct immutable candidates
+per chunk lifecycle. A genuine repair may permit review of the derived candidate;
+an unchanged candidate must not repeat adjudication. Share the budget across all
+stages of the chunk, and adjudicate only rejected independent reviews.

@@ -125,11 +125,26 @@ captured-source continuation, issue no further requests and retain any gap.
 """
 RESEARCH_POLICY_V4 = RESEARCH_POLICY_V3 + "\n\n" + SCOPED_RESEARCH_GUIDANCE
 REVIEW_POLICY_V4 = REVIEW_POLICY_V3 + "\n\n" + SCOPED_RESEARCH_GUIDANCE
-RESEARCH_POLICY_VERSION = 4
-SUPPORTED_RESEARCH_POLICY_VERSIONS = {2, 3, 4}
+PRIMARY_DISCOVERY_GUIDANCE = """
+The organized annotation_primary_discovery_tools input lists available
+language-specific official lookup adapters. Use an applicable adapter when web
+search cannot establish a direct record URL; retain its exact request and result
+in workspace scratch files. Use the supplied exact lemma or cited headword,
+never infer one by stripping a suffix. Discovery returns record leads, not
+linguistic evidence or approval. On the initial research pass, request relevant
+same-origin direct records in source_requests for host capture. Cite supplied
+authoritative references or host-captured content, never discovery leads. Zero matches or a
+retrieval failure do not establish lexical nonexistence. Preserve homonyms and
+verify exact headword, POS, sense and complete-form contribution independently.
+The bounded captured-source continuation cannot start another capture cycle.
+"""
+RESEARCH_POLICY_V5 = RESEARCH_POLICY_V4 + "\n\n" + PRIMARY_DISCOVERY_GUIDANCE
+REVIEW_POLICY_V5 = REVIEW_POLICY_V4 + "\n\n" + PRIMARY_DISCOVERY_GUIDANCE
+RESEARCH_POLICY_VERSION = 5
+SUPPORTED_RESEARCH_POLICY_VERSIONS = {2, 3, 4, 5}
 
 SUBMISSION_VALIDATION_VERSION = 2
-RESEARCH_EVIDENCE_VERSION = 4
+RESEARCH_EVIDENCE_VERSION = 5
 # Official dictionary pages include large inline scripts; keep the transfer
 # bounded while allowing the observed 2.55 MB KRDict entry page.
 MAX_CAPTURE_BYTES = 4_000_000
@@ -234,6 +249,18 @@ def _check_runner_policy(runner: Any) -> None:
 
 def _worker_context(kind: str, inputs: dict) -> dict:
     context = {}
+    if _policy_version(inputs) >= 5:
+        adapters = []
+        if (inputs["language"] == "ko"
+                and ("https", "krdict.korean.go.kr", 443) in
+                    _primary_origins(inputs["known_reference_input"])):
+            adapters.append({"adapter": "korean-basic-dictionary", "adapter_version": 1,
+                "origin": "https://krdict.korean.go.kr", "working_directory": "repository_root",
+                "argv": [".venv/bin/python", "-m", "pipeline.korean_primary_discovery",
+                         "--headword", "<exact_dictionary_headword>"],
+                "output_scope": "Exact first-page result headings; direct record leads only, not approval.",
+                "next_step": "Request relevant returned primary_url values for bounded host capture."})
+        context["annotation_primary_discovery_tools"] = {"version": 1, "adapters": adapters}
     if _policy_version(inputs) >= 4:
         context["annotation_uncertainty_tasks"] = inputs["uncertainty_tasks"]
     context.update({
@@ -740,6 +767,8 @@ def _policies(version: int) -> tuple[str, str]:
         return RESEARCH_POLICY_V3, REVIEW_POLICY_V3
     if version == 4:
         return RESEARCH_POLICY_V4, REVIEW_POLICY_V4
+    if version == 5:
+        return RESEARCH_POLICY_V5, REVIEW_POLICY_V5
     raise AnnotationResearchError("Unsupported research policy version")
 
 

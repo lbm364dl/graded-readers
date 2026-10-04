@@ -116,8 +116,9 @@ async def test_japanese_semantic_repair_caller_passes_alternate_reviewed_entry(t
                for entry in knowledge["approved_entries"])
 
 
+@pytest.mark.parametrize("route_mode", ['clear', 'derived', 'unchanged', 'exhausted', 'tail', 'tail_pass'])
 @pytest.mark.asyncio
-async def test_japanese_applied_semantic_review_clear_is_saved_as_distinct_adjudication(tmp_path, monkeypatch):
+async def test_japanese_applied_semantic_review_clear_is_saved_as_distinct_adjudication(tmp_path, monkeypatch, route_mode):
     from pipeline import annotation_repairs, annotation_adjudication
 
     candidate = {"segments": [{"surface": "猫", "type": "word", "lemma": "猫",
@@ -129,9 +130,12 @@ async def test_japanese_applied_semantic_review_clear_is_saved_as_distinct_adjud
     issue = {"segment_text": "猫", "problem": "meaning",
              "explanation": "Check the contextual gloss.", "suggested_fix": "Review it."}
 
+    repaired_candidates = {}
+    route_candidates = []
+
     class Harness(JapaneseChapterHarness):
         async def annotation_candidate(self, index, chunk, **kwargs):
-            return candidate
+            return copy.deepcopy(next(reversed(repaired_candidates.values()))) if repaired_candidates else copy.deepcopy(candidate)
 
         async def review_annotation(self, index, chunk, annotation, stage):
             receipts = getattr(self, "_annotation_review_receipts", None)
@@ -141,6 +145,8 @@ async def test_japanese_applied_semantic_review_clear_is_saved_as_distinct_adjud
                 {"job": "fixture/general", "input_digest": "input-1", "result_digest": "result-1"},
                 {"job": "fixture/boundary", "input_digest": "input-2", "result_digest": "result-2"},
             ]
+            if route_mode == "tail_pass" and stage == "fresh_repair_01":
+                return {"verdict": "pass", "issues": []}
             return {"verdict": "revise", "issues": [issue]}
 
         def annotation_surfaces_reconstruct(self, chunk, annotation):
@@ -160,16 +166,26 @@ async def test_japanese_applied_semantic_review_clear_is_saved_as_distinct_adjud
         root.mkdir(parents=True, exist_ok=True)
         (root / "meta.json").write_text(json.dumps({"kind": "annotation_patch_assembly",
             "status": "applied", "return_code": 0}))
-        return {"status": "applied", "candidate": base,
+        derived = copy.deepcopy(base)
+        if route_mode != "unchanged":
+            derived["segments"][0]["meaning_en"] += " (repair)"
+        repaired_candidates[job] = derived
+        return {"status": "applied", "candidate": derived,
                 "evidence": {"assembly_job": job}}
 
     def fake_replay(run_dir, job, *, validate_candidate):
-        validate_candidate(candidate)
-        return {"status": "applied", "candidate": candidate}
+        derived = repaired_candidates[job]
+        validate_candidate(derived)
+        return {"status": "applied", "candidate": derived}
 
     async def fake_adjudicate(*args, **kwargs):
         assert kwargs["current_review"]["issues"] == [issue]
         assert len(kwargs["normal_review_receipt"]["components"]) == 2
+        route_candidates.append(copy.deepcopy(kwargs["candidate"]))
+        if route_mode in ("unchanged", "exhausted") or (route_mode in ("derived", "tail", "tail_pass") and len(route_candidates) == 1):
+            return {"status": "actionable", "approved": False,
+                    "repair_diagnoses": [{"issue_id": "genuine", "diagnosis": "Correct the gloss.",
+                        "paths": ["/segments/0/meaning_en"]}]}
         return {"status": "cleared", "approved": True, "job": "fixture-adjudication"}
 
     monkeypatch.setattr(annotation_repairs, "repair_annotation", fake_repair)
@@ -177,14 +193,38 @@ async def test_japanese_applied_semantic_review_clear_is_saved_as_distinct_adjud
     monkeypatch.setattr(annotation_adjudication, "adjudicate_annotation_review", fake_adjudicate)
     harness = object.__new__(Harness)
     harness.args = Namespace(level="n5", annotation_chunk=None, annotation_chunk_maximum=None,
-        max_annotation_repairs=1, max_annotation_fresh_repairs=0,
+        max_annotation_repairs=(1 if route_mode in ("clear", "tail", "tail_pass") else 5), max_annotation_fresh_repairs=(1 if route_mode in ("tail", "tail_pass") else 0),
         max_annotation_adjudications=0, annotation_repair_effort="low",
         annotation_final_effort="low", annotation_review_effort="low",
         refresh=False, annotation_chunk_indices=None, no_grammar_overlays=False)
     harness.run_dir = tmp_path
     harness.runner = object()
     harness.story_vocabulary_plan = {"terms": []}
+    if route_mode in ("unchanged", "exhausted"):
+        with pytest.raises(ValueError):
+            await harness.annotate_chunk(0, "猫")
+        assert len(route_candidates) == (1 if route_mode == "unchanged" else 3)
+        assert len({json.dumps(row, sort_keys=True) for row in route_candidates}) == len(route_candidates)
+        return
     result = await harness.annotate_chunk(0, "猫")
+    if route_mode == "tail_pass":
+        assert len(route_candidates) == 1  # The earlier actionable route consumed a slot.
+        assert result["resolved"] is True
+        final = result["attempts"][-1]
+        assert final["stage"] == "fresh_repair_01"
+        assert final["review"] == {"verdict": "pass", "issues": []}
+        assert final["annotation"] != route_candidates[0]
+        assert final["semantic_repair"]["status"] == "applied"
+        assert "adjudication" not in final
+        assert any(row.get("adjudication", {}).get("status") == "actionable" for row in result["attempts"])
+        stored = json.loads((tmp_path / "accepted-annotations" / "chunk_0000.json").read_text())
+        assert stored["attempts"][-1]["review"]["verdict"] == "pass"
+        return
+    assert len(route_candidates) == (1 if route_mode == "clear" else 2)
+    if route_mode != "clear":
+        assert route_candidates[0] != route_candidates[1]
+        assert result["attempts"][-1]["review"]["verdict"] == "revise"
+        assert any(row.get("adjudication", {}).get("status") == "actionable" for row in result["attempts"])
     assert result["effective_review"]["kind"] == "adjudicated"
     assert result["attempts"][-1]["review"]["verdict"] == "revise"
     stored = json.loads((tmp_path / "accepted-annotations" / "chunk_0000.json").read_text())

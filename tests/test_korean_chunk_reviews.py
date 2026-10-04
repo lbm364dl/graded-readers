@@ -440,3 +440,34 @@ def test_publication_requires_every_chunk_review_and_replays_rejections(tmp_path
          {'approved': False, 'issues': [issue('Wrong sense', '/segments/0/meaning_en')], 'prose_revision_reason_en': ''})
     with pytest.raises(ValueError, match='stale, rejected or mismatched'):
         publication.verify_run(tmp_path)
+
+
+def test_expanded_approved_grammar_inventory_preserves_subset_review_receipt(tmp_path):
+    from pipeline.korean_chunk_reviews import verify_chunk_review
+    used = {'id': 'used', 'explanation_en': 'A previously approved lesson.'}
+    prerequisite = {'id': 'possessive-ui', 'explanation_en': 'Connects a possessor to its noun.'}
+    registry = {row['id']: row for row in (used, prerequisite)}
+    annotation = {'segments': [{'text': '아이', 'lexical_id': 'draft-function'}],
+                  'grammar_links': [{'entry_id': 'draft-function'}]}
+    context = {'chapter_text': '아이', 'source_start': 0, 'target_level': 'l1',
+               'approved_grammar': [used], 'draft_grammar_ids': ['draft-function']}
+    runner = Runner(tmp_path)
+    args, _, evidence = run_review(tmp_path, runner, annotation=annotation, text='아이', context=context)
+    input_path = tmp_path / 'agents' / evidence['job'] / 'review-input.json'
+    original_bytes = input_path.read_bytes()
+    proof = {'kind': 'ordinary', **evidence}
+    replay = verify_chunk_review(tmp_path, proof, annotation=annotation, text='아이',
+        chapter_text='아이', source_start=0, expected_context={'target_level': 'l1'},
+        expected_reference_sources={'approved_grammar': registry})
+    assert replay['review']['approved']
+    assert input_path.read_bytes() == original_bytes
+    assert len(runner.calls) == 1
+    assert json.loads(original_bytes)['context']['approved_grammar'] == [used]
+
+    expanded = {**context, 'approved_grammar': list(registry.values())}
+    _, _, fresh = run_review(tmp_path, runner, annotation=annotation, text='아이', context=expanded)
+    fresh_inputs = json.loads((tmp_path / 'agents' / fresh['job'] / 'review-input.json').read_text())
+    assert fresh['job'] != evidence['job']
+    assert fresh_inputs['context']['draft_grammar_ids'] == ['draft-function']
+    assert {entry['id'] for entry in fresh_inputs['context']['approved_grammar']} == {'used', 'possessive-ui'}
+    assert input_path.read_bytes() == original_bytes

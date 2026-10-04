@@ -1,6 +1,8 @@
 """Resumable source-grounded Korean TOPIK 1–6 generation and reviews."""
 from __future__ import annotations
 
+from pipeline.annotation_adjudication_budget import AdjudicationBudget
+
 import argparse
 import asyncio
 import copy as copy_module
@@ -1284,7 +1286,7 @@ class KoreanHarness:
                                         'level': self.level, 'source_id': source_id},
                                     'reviewed_source_context': reviewed_source_context,
                                     'approved_words': [v for k, v in self.words.items() if k in word_ids],
-                                    'approved_grammar': [v for k, v in self.grammar.items() if k in grammar_ids],
+                                    'approved_grammar': list(self.grammar.values()),
                                     'grammar_knowledge': korean_semantic_repair_grammar_knowledge(
                                         self.grammar, grammar_ids),
                                     'lexical_candidates': [entry for entries in self.catalog.values()
@@ -1364,7 +1366,7 @@ class KoreanHarness:
                 async def reviewed_chunk(index, text):
                     from pipeline.korean_chunk_reviews import review_chunk
                     local_issues, local_previous = None, None
-                    adjudication_used = False
+                    adjudication_budget = AdjudicationBudget()
                     local_adjudication_context = None
                     # A historically APPLIED semantic assembly can still have
                     # left one or more original findings untouched. Inspect it
@@ -1403,7 +1405,7 @@ class KoreanHarness:
                             'target_level': self.level, 'source_plan': bound_plan, 'lexical_plan': focus,
                             'reviewed_source_context': reviewed_source_context,
                             'approved_words': [v for k, v in self.words.items() if k in word_ids],
-                            'approved_grammar': [v for k, v in self.grammar.items() if k in grammar_ids],
+                            'approved_grammar': list(self.grammar.values()),
                             'draft_grammar_ids': sorted(grammar_ids - self.grammar.keys()),
                             'lexical_candidates': [entry for entries in self.catalog.values()
                                 for entry in entries if entry['id'] in word_ids],
@@ -1419,7 +1421,7 @@ class KoreanHarness:
                             return value, record, {'kind': 'ordinary', **evidence}
                         proposal_meta_path = self.run_dir / 'agents' / record['job'] / 'meta.json'
                         proposal_meta = read(proposal_meta_path) if proposal_meta_path.exists() else {}
-                        if (not adjudication_used
+                        if (adjudication_budget.can_claim(value)
                                 and proposal_meta.get('kind') == 'annotation_patch_assembly'
                                 and proposal_meta.get('status') == 'applied'
                                 and not any(issue.get('problem') == 'contract'
@@ -1468,7 +1470,8 @@ class KoreanHarness:
                                 'deterministic_gate_evidence': gate,
                                 'normal_review_receipt': receipt,
                             }
-                            adjudication_used = True
+                            if not adjudication_budget.claim(value):
+                                raise RuntimeError("Adjudication candidate budget changed before invocation")
                             adjudication = await adjudicate_annotation_review(
                                 self.runner, self.run_dir, language='ko',
                                 representation='korean-flat', candidate=value,
