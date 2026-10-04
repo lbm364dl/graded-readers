@@ -617,7 +617,7 @@ class KoreanHarness:
                 assembly_path = self.run_dir / 'agents' / job / 'meta.json'
                 if assembly_path.exists():
                     assembly = read(assembly_path)
-                    if assembly.get('chunk_reviews_version') == 1:
+                    if assembly.get('chunk_reviews_version') in (1, 2):
                         evidence['local_annotation_reviews'] = assembly['chunk_reviews']
                 from pipeline.korean_lexical_research import usage_evidence
                 usages = {}
@@ -708,7 +708,13 @@ class KoreanHarness:
                 proposal_meta = read(proposal_path.with_name('meta.json')) if proposal_path.with_name('meta.json').exists() else {}
                 if name == 'annotation' and 'chunk_reviews_version' in proposal_meta:
                     from pipeline.korean_chunk_reviews import verify_assembly_reviews
-                    verify_assembly_reviews(self.run_dir, proposal_meta)
+                    verify_assembly_reviews(self.run_dir, proposal_meta,
+                        expected_reference_sources={
+                            'approved_words': dictionaries._registry(dictionaries.WORDS),
+                            'approved_grammar': dictionaries._registry(dictionaries.GRAMMAR),
+                            'linguistic_reference': read(LINGUISTIC_REFERENCE),
+                            'lexical_reference': read(LEXICAL_REFERENCE),
+                            'review-policy': self.policy + '\n' + self.review_policy})
                 if proposal_meta.get('kind') == 'prose_patch_assembly':
                     from pipeline.korean_prose_patches import replay
                     if name != 'prose' or replay(self.run_dir, proposal_meta) != value:
@@ -1031,11 +1037,17 @@ class KoreanHarness:
                             if path.exists() and digest(read_annotation_chunk(path, record)) == record['digest']:
                                 reusable.add(i)
                         local_reviews_verified = old_review.get('approved') is True
-                        if old_meta.get('chunk_reviews_version') == 1:
+                        if old_meta.get('chunk_reviews_version') in (1, 2):
                             try:
                                 from pipeline.korean_chunk_reviews import verify_assembly_reviews
                                 verify_assembly_reviews(self.run_dir, old_meta,
-                                    allow_stale_form_guidance=True)
+                                    allow_stale_form_guidance=True,
+                                    expected_reference_sources={
+                                        'approved_words': dictionaries._registry(dictionaries.WORDS),
+                                        'approved_grammar': dictionaries._registry(dictionaries.GRAMMAR),
+                                        'linguistic_reference': read(LINGUISTIC_REFERENCE),
+                                        'lexical_reference': read(LEXICAL_REFERENCE),
+                                        'review-policy': self.policy + '\n' + self.review_policy})
                             except (OSError, ValueError, KeyError, IndexError, TypeError, ValidationError):
                                 local_reviews_verified = False
                     unchanged_reviewed_source = (
@@ -1137,7 +1149,8 @@ class KoreanHarness:
                         focus=focus, title=prose['title'], number=self.number, plan=bound_plan,
                         level=self.level, run_dir=self.run_dir, source_id=source_id)
 
-                async def chunk(number, text, local_issues=None, local_previous=None):
+                async def chunk(number, text, local_issues=None, local_previous=None,
+                                local_adjudication_context=None):
                     if local_issues is None and number in reused:
                         record = old_lineage[reused[number] - 1]
                         value = read_annotation_chunk(self.run_dir / 'agents' / record['job'] / 'result.json', record)
@@ -1278,7 +1291,8 @@ class KoreanHarness:
                                         for entry in entries if entry['id'] in word_ids],
                                     'reviewed_lexical_usage_evidence': reviewed_usages,
                                     'linguistic_reference': read(LINGUISTIC_REFERENCE),
-                                    'lexical_reference': read(LEXICAL_REFERENCE)},
+                                    'lexical_reference': read(LEXICAL_REFERENCE),
+                                    **(local_adjudication_context or {})},
                                 validate_candidate=lambda rebuilt: validate_chunk(rebuilt, text))
                             if repaired['status'] == 'applied':
                                 value = repaired['candidate']
@@ -1350,6 +1364,8 @@ class KoreanHarness:
                 async def reviewed_chunk(index, text):
                     from pipeline.korean_chunk_reviews import review_chunk
                     local_issues, local_previous = None, None
+                    adjudication_used = False
+                    local_adjudication_context = None
                     # A historically APPLIED semantic assembly can still have
                     # left one or more original findings untouched. Inspect it
                     # before consulting a cached independent approval. Recover
@@ -1379,7 +1395,8 @@ class KoreanHarness:
                         })
                     for review_attempt in range(4):
                         if review_attempt:
-                            value, record = await chunk(index + 1, text, local_issues, local_previous)
+                            value, record = await chunk(index + 1, text, local_issues,
+                                local_previous, local_adjudication_context)
                         word_ids = {s['lexical_id'] for s in value['segments']}
                         grammar_ids = {link['entry_id'] for link in value['grammar_links']}
                         context = {'chapter_text': prose['text'], 'source_start': sum(map(len, texts[:index])),
@@ -1399,7 +1416,83 @@ class KoreanHarness:
                             raise UnannotatableProseError(review['prose_revision_reason_en'])
                         if approved(review):
                             print(f'annotation chunk {index + 1}: independent review passed', flush=True)
-                            return value, record, evidence
+                            return value, record, {'kind': 'ordinary', **evidence}
+                        proposal_meta_path = self.run_dir / 'agents' / record['job'] / 'meta.json'
+                        proposal_meta = read(proposal_meta_path) if proposal_meta_path.exists() else {}
+                        if (not adjudication_used
+                                and proposal_meta.get('kind') == 'annotation_patch_assembly'
+                                and proposal_meta.get('status') == 'applied'
+                                and not any(issue.get('problem') == 'contract'
+                                    for issue in review.get('issues', []) if isinstance(issue, dict))):
+                            from pipeline.annotation_adjudication import (
+                                adjudicate_annotation_review, digest as evidence_digest,
+                            )
+                            references = {}
+                            for row in context['approved_words']:
+                                references[f"word:{row['id']}"] = {
+                                    'kind': 'approved_lesson', 'content': row}
+                            for row in context['approved_grammar']:
+                                references[f"grammar:{row['id']}"] = {
+                                    'kind': 'approved_lesson', 'content': row}
+                            references['linguistic-reference'] = {
+                                'kind': 'primary_source', 'content': context['linguistic_reference']}
+                            references['lexical-reference'] = {
+                                'kind': 'primary_source', 'content': context['lexical_reference']}
+                            references['review-policy'] = {
+                                'kind': 'explicit_review_policy',
+                                'content': self.policy + '\n' + self.review_policy}
+                            gate = {'passed': True, 'issues': [],
+                                    'candidate_digest': evidence_digest(value),
+                                    'source_text_digest': evidence_digest(text)}
+                            receipt = {'kind': 'composite',
+                                'review_digest': evidence_digest(review),
+                                'components': evidence}
+                            prior_history = []
+                            if isinstance(proposal_meta.get('base'), dict):
+                                prior_history.append({
+                                    'stage': 'semantic_repair',
+                                    'annotation': proposal_meta['base'],
+                                    'review': {'issues': proposal_meta.get('issues', [])},
+                                    'semantic_repair': {'job': record['job'],
+                                        'status': proposal_meta.get('status'),
+                                        'assembly_meta_digest': evidence_digest(proposal_meta)}})
+                            if local_issues:
+                                prior_history.append({'stage': 'repair_followup',
+                                    'annotation': local_previous, 'review': {'issues': local_issues}})
+                            replay_inputs = {
+                                'current_review': review,
+                                'prior_history': prior_history,
+                                'context': {'chunk_review_context': context,
+                                    'review_policy': self.policy + '\n' + self.review_policy},
+                                'known_reference_input': references,
+                                'deterministic_gate_evidence': gate,
+                                'normal_review_receipt': receipt,
+                            }
+                            adjudication_used = True
+                            adjudication = await adjudicate_annotation_review(
+                                self.runner, self.run_dir, language='ko',
+                                representation='korean-flat', candidate=value,
+                                current_review=review,
+                                prior_history=replay_inputs['prior_history'],
+                                context=replay_inputs['context'],
+                                known_reference_input=references,
+                                deterministic_gate_evidence=gate,
+                                normal_review_receipt=receipt, source_text=text)
+                            if adjudication['status'] == 'cleared':
+                                return value, record, {
+                                    'kind': 'adjudicated', 'normal_review': evidence,
+                                    'adjudication': adjudication,
+                                    'replay_inputs': replay_inputs}
+                            if adjudication['status'] == 'actionable':
+                                local_issues = adjudication.get('repair_diagnoses', [])
+                                local_previous = value
+                                local_adjudication_context = {
+                                    'prior_review_adjudication': adjudication,
+                                    'prior_review_history': replay_inputs['prior_history']}
+                                continue
+                            raise ValueError(
+                                f"Korean annotation adjudication did not clear chunk {index + 1}: "
+                                f"{adjudication['status']}")
                         local_issues, local_previous = review['issues'], value
                     raise ValueError(f'Korean annotation chunk {index + 1} failed independent review: {local_issues}')
                 from pipeline.chunk_scheduler import map_chunks
@@ -1412,7 +1505,9 @@ class KoreanHarness:
                 values, lineage, chunk_reviews = zip(*results)
                 combined = contracts.combine_annotations(list(values), texts)
                 assembly = {'return_code': 0, 'kind': 'annotation_assembly', 'chunks': list(lineage),
-                    'chunk_reviews_version': 1, 'chunk_reviews': list(chunk_reviews), **repair_evidence}
+                    'chunk_reviews_version': 2 if any(
+                        proof.get('kind') == 'adjudicated' for proof in chunk_reviews) else 1,
+                    'chunk_reviews': list(chunk_reviews), **repair_evidence}
                 if self.annotation_batch_characters:
                     assembly['batch_characters'] = self.annotation_batch_characters
                 new_ids = sorted({link['entry_id'] for link in combined['grammar_links']} - self.grammar.keys())

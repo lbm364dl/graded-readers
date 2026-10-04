@@ -115,6 +115,82 @@ async def test_japanese_semantic_repair_caller_passes_alternate_reviewed_entry(t
                for entry in knowledge["approved_entries"])
 
 
+@pytest.mark.asyncio
+async def test_japanese_applied_semantic_review_clear_is_saved_as_distinct_adjudication(tmp_path, monkeypatch):
+    from pipeline import annotation_repairs, annotation_adjudication
+
+    candidate = {"segments": [{"surface": "猫", "type": "word", "lemma": "猫",
+        "surface_kana": "ねこ", "lemma_kana": "ねこ", "part_of_speech": "noun",
+        "conjugation_form": "non-inflecting", "meaning_en": "cat",
+        "grammar_candidate_key": "", "dictionary_key": "",
+        "dictionary_definition_en": "", "form_steps": [], "story_role": "none",
+        "story_importance_en": ""}], "grammar_overlays": []}
+    issue = {"segment_text": "猫", "problem": "meaning",
+             "explanation": "Check the contextual gloss.", "suggested_fix": "Review it."}
+
+    class Harness(JapaneseChapterHarness):
+        async def annotation_candidate(self, index, chunk, **kwargs):
+            return candidate
+
+        async def review_annotation(self, index, chunk, annotation, stage):
+            receipts = getattr(self, "_annotation_review_receipts", None)
+            if receipts is None:
+                receipts = self._annotation_review_receipts = {}
+            receipts[(index, stage)] = [
+                {"job": "fixture/general", "input_digest": "input-1", "result_digest": "result-1"},
+                {"job": "fixture/boundary", "input_digest": "input-2", "result_digest": "result-2"},
+            ]
+            return {"verdict": "revise", "issues": [issue]}
+
+        def annotation_surfaces_reconstruct(self, chunk, annotation):
+            return True
+
+        def annotation_reconstructs(self, chunk, annotation):
+            return True
+
+        def annotation_contract_issues(self, chunk, annotation):
+            return []
+
+        def prepare_planned_annotation(self, chunk, annotation):
+            return annotation
+
+    async def fake_repair(harness, job, base, issues, **kwargs):
+        root = tmp_path / "agents" / job
+        root.mkdir(parents=True, exist_ok=True)
+        (root / "meta.json").write_text(json.dumps({"kind": "annotation_patch_assembly",
+            "status": "applied", "return_code": 0}))
+        return {"status": "applied", "candidate": base,
+                "evidence": {"assembly_job": job}}
+
+    def fake_replay(run_dir, job, *, validate_candidate):
+        validate_candidate(candidate)
+        return {"status": "applied", "candidate": candidate}
+
+    async def fake_adjudicate(*args, **kwargs):
+        assert kwargs["current_review"]["issues"] == [issue]
+        assert len(kwargs["normal_review_receipt"]["components"]) == 2
+        return {"status": "cleared", "approved": True, "job": "fixture-adjudication"}
+
+    monkeypatch.setattr(annotation_repairs, "repair_annotation", fake_repair)
+    monkeypatch.setattr(annotation_repairs, "replay_annotation_repair", fake_replay)
+    monkeypatch.setattr(annotation_adjudication, "adjudicate_annotation_review", fake_adjudicate)
+    harness = object.__new__(Harness)
+    harness.args = Namespace(level="n5", annotation_chunk=None, annotation_chunk_maximum=None,
+        max_annotation_repairs=1, max_annotation_fresh_repairs=0,
+        max_annotation_adjudications=0, annotation_repair_effort="low",
+        annotation_final_effort="low", annotation_review_effort="low",
+        refresh=False, annotation_chunk_indices=None, no_grammar_overlays=False)
+    harness.run_dir = tmp_path
+    harness.runner = object()
+    harness.story_vocabulary_plan = {"terms": []}
+    result = await harness.annotate_chunk(0, "猫")
+    assert result["effective_review"]["kind"] == "adjudicated"
+    assert result["attempts"][-1]["review"]["verdict"] == "revise"
+    stored = json.loads((tmp_path / "accepted-annotations" / "chunk_0000.json").read_text())
+    replay = stored["attempts"][-1]["adjudication_replay"]
+    assert replay["prior_history"] == stored["attempts"][:-1]
+
+
 def test_beginner_orthography_modernizes_lexical_nai_but_advanced_can_preserve_it():
     assert "lexical 無い" in jlpt_orthography_guidance("n4")
     assert "Write" in jlpt_orthography_guidance("n4")

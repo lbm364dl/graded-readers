@@ -1,0 +1,419 @@
+{
+  "format": "evidence-adjudication-smoke-benchmark-v1",
+  "recorded_at_utc": "2026-10-04T11:52:43.042404+00:00",
+  "purpose": "Bounded smoke of evidence-bound annotation-review adjudication only; not chapter review, acceptance, approval, or publication.",
+  "execution": {
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "tool_profile": "workspace",
+    "tools_enabled": true,
+    "max_concurrency": 3,
+    "worker_count": 4,
+    "normal_rejected_review_preserved": true,
+    "exact_input_replay_verified": true,
+    "no_raw_source_text_or_worker_diagnosis_in_this_record": true
+  },
+  "case_count": 4,
+  "outcome_counts": {
+    "actionable": 1,
+    "cleared": 2,
+    "uncertain": 1
+  },
+  "cases": [
+    {
+      "case_id": "ko_embedded_doubt_review_conflict",
+      "fixture_class": "real_same_candidate_review_disagreement",
+      "review_receipt_scope": "saved prior same-candidate reviewer disagreement",
+      "candidate_sha256": "3c66449437a7edf671c57c75d1fe861e68be3b64276fbebd998503f43e495a44",
+      "review_sha256": "2bc7753e60029bcd221e535376f3a0538c9e800038965d7f1c3adb381193ca6a",
+      "context_sha256": "509119ac6f5fb3701d8f256847069954f2e6e7c3080625ee54eb95b9e8c2694e",
+      "history_sha256": "6334c81065e64186d0bf2b7b51d6d0b108858612a85a190fd4d2781c9c4a0690",
+      "references_sha256": "80b66d8872230bf88de768363d2ac1781ee590b5e695aa950eb2f3aac43bb656",
+      "gate_sha256": "504523d644993ced4a96010411987dff6ff58abdacc1e14dba7e1d5d4533f365",
+      "normal_review_receipt_sha256": "7aeb33051eabb956477effd401cc9a945ca477dad753f2d1547b01b9612cb7b2",
+      "adjudication_input_sha256": "7e5e94e0a54f311e7be92108dba0cd68f5f3f64852990083a30ce61ddb9a2d9a",
+      "gate": {
+        "passed": true,
+        "issue_count": 0,
+        "validator": "pipeline.korean_agent_harness.validate_annotation_chunk",
+        "candidate_sha256": "3c66449437a7edf671c57c75d1fe861e68be3b64276fbebd998503f43e495a44",
+        "source_text_sha256": "17febd0629092e26dedb467da8c002131fb2dd6a73cb25252b64ebb366d81f44"
+      },
+      "worker": {
+        "model": "gpt-6-luna",
+        "effort": "low",
+        "tool_profile": "workspace",
+        "return_code": 0,
+        "started_at": "2026-10-04T11:47:37.593049+00:00",
+        "ended_at": "2026-10-04T11:48:46.339440+00:00",
+        "elapsed_seconds": 68.746
+      },
+      "result": {
+        "status": "cleared",
+        "review_adjudication_approved": true,
+        "classified_issue_count": 1,
+        "unsupported_count": 1,
+        "actionable_count": 0,
+        "uncertain_count": 0,
+        "new_issue_count": 0,
+        "exact_receipt_replayed": true,
+        "verified_receipt_digest": "928593e43527ae4061bf6e07fa6f3c49cf53103b4c4bd12d79764ade5273e2a1",
+        "verified_result_sha256": "9649cbc6e0aac3dda9efb0d32baf3b8a3893149b66f665cc633d696a6716b504"
+      },
+      "artifact_paths": {
+        "adjudication_input": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/adjudication-runs/agents/annotation-adjudication-7e5e94e0a54f311e7be92108dba0cd68f5f3f64852990083a30ce61ddb9a2d9a/adjudication-input.json",
+        "result": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/adjudication-runs/agents/annotation-adjudication-7e5e94e0a54f311e7be92108dba0cd68f5f3f64852990083a30ce61ddb9a2d9a/result.json",
+        "verified_result": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/adjudication-runs/agents/annotation-adjudication-7e5e94e0a54f311e7be92108dba0cd68f5f3f64852990083a30ce61ddb9a2d9a/verified-adjudication.json",
+        "meta": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/adjudication-runs/agents/annotation-adjudication-7e5e94e0a54f311e7be92108dba0cd68f5f3f64852990083a30ce61ddb9a2d9a/meta.json"
+      },
+      "fixture_artifacts": [
+        {
+          "path": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/cases/ko_embedded_doubt_review_conflict/candidate.json",
+          "sha256": "3e45769508606c6dc5b9a27906fefa42afcb5e58cc91a6f8654d66da29a71041"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/cases/ko_embedded_doubt_review_conflict/context.json",
+          "sha256": "fff186b853cf85330c9e5164e0860561d5d15ebcfabc8f360e4a983c7f6d4955"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/cases/ko_embedded_doubt_review_conflict/history.json",
+          "sha256": "ba310346e7cc87d75b9396d678f3e41f1d378a6aad3c9fae934bf9a51852d6f1"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/cases/ko_embedded_doubt_review_conflict/references.json",
+          "sha256": "d5349ee230684cd9a22f64bd2bd8c5b1fba96c627bd09a8ccc36fab07ef5bf9a"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/cases/ko_embedded_doubt_review_conflict/provenance.json",
+          "sha256": "a536387a7e265dbd5262b040702d0e3fd8e0961ecd7426d239f6a6bd6503c6ea"
+        }
+      ],
+      "source_provenance": [
+        {
+          "path": "runs/maintenance/20261003/smokes/convergence-history-repair-pair-20261004/low/independent-medium/agents/annotation-local-review-6e414c483c03ffc1e242d6122c7bf83d4672bb459d5f7fb969f79307e27b4412/review-input.json",
+          "sha256": "7be98d47fee6ee950f5adf6469d7a65c270750d235e826c0411276df20ce555a"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/convergence-history-repair-pair-20261004/low/independent-medium/agents/annotation-local-review-6e414c483c03ffc1e242d6122c7bf83d4672bb459d5f7fb969f79307e27b4412/result.json",
+          "sha256": "9d1270cd3466011d0d8976c8a9913963810e4db5fe91fb352ca8ff3a4fea04d6"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/convergence-history-repair-pair-20261004/medium/independent-medium/agents/annotation-local-review-6e414c483c03ffc1e242d6122c7bf83d4672bb459d5f7fb969f79307e27b4412/result.json",
+          "sha256": "a815efa7dba901f903dc805f01c297d6bcd846db596825214abe1450de0ab905"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/convergence-history-repair-pair-20261004/low/agents/targeted-history_plan/result.json",
+          "sha256": "fdc7a9f45a16a1fa1bcc74382eaf0e6e35dce65da798ae0c5a477868c26ab2b7"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/convergence-history-repair-pair-20261004/medium/agents/targeted-history_plan/result.json",
+          "sha256": "1a87d110bfc9f76369ba083d8f987e0183232b1a44070eed0f32ad47b76062f6"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/convergence-history-repair-pair-20261004/low/agents/targeted-history_patch/result.json",
+          "sha256": "b5838a863baec459389d85159ceadd1c419cbec152590021fe9b045c7b42b18c"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/convergence-history-repair-pair-20261004/medium/agents/targeted-history_patch/result.json",
+          "sha256": "b5838a863baec459389d85159ceadd1c419cbec152590021fe9b045c7b42b18c"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/convergence-actual-medium-reconcile-20261004/summary.json",
+          "sha256": "d35ab916bf86bb7d35117d9fcde163e6798ac432aa7ca747168c79820065abe2"
+        },
+        {
+          "path": "pipeline/annotation_review_guidance.py",
+          "sha256": "d8df055f318dac1aab374b89f801e28fd8419017c33dd03e020cb5ed9ee8fc85"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "edfe8c626d556967002c0158d926cc170fd3aa60e3969b7a49f3642dc045c62a"
+        }
+      ]
+    },
+    {
+      "case_id": "ko_prefinal_past_stage_actionable",
+      "fixture_class": "real_concrete_form_completeness_finding",
+      "review_receipt_scope": "saved Korean finding represented in fixture composite",
+      "candidate_sha256": "efa2c9abb30dd229e59e36bdf6a593aedfbf1a48561d0b8d6eddc5638d2852c6",
+      "review_sha256": "69f722b17bafd9605eff9a5343ac2d260f1871e49e4f8acb97bb2568d9db0fc5",
+      "context_sha256": "fb8eba146777ca0295c6e43ab0aa3df0fb86e96bbbabaaf7a7d0e491349c8790",
+      "history_sha256": "d795dea16a218cfdd5dca0817cb8376e760d635e61281a4550421f669105fdfa",
+      "references_sha256": "a96a06fea557bfb7bc0c381fcd211f3e515ff76d6bade3c9224bd79360971ffa",
+      "gate_sha256": "7dc0206756d9e82cfd6dcd922dc024e4e6a493f9e607cc3d8ac21a3d0771635c",
+      "normal_review_receipt_sha256": "1e11b2573868db7cb06dfbd3f70ec19418c97618160405efd1518a6c6e31a230",
+      "adjudication_input_sha256": "acff9db2401962d58375e719205ca941caac0671578d6bab57b0a907f278fbb8",
+      "gate": {
+        "passed": true,
+        "issue_count": 0,
+        "validator": "pipeline.korean_agent_harness.validate_annotation_chunk",
+        "candidate_sha256": "efa2c9abb30dd229e59e36bdf6a593aedfbf1a48561d0b8d6eddc5638d2852c6",
+        "source_text_sha256": "17febd0629092e26dedb467da8c002131fb2dd6a73cb25252b64ebb366d81f44"
+      },
+      "worker": {
+        "model": "gpt-6-luna",
+        "effort": "low",
+        "tool_profile": "workspace",
+        "return_code": 0,
+        "started_at": "2026-10-04T11:47:37.640934+00:00",
+        "ended_at": "2026-10-04T11:48:28.773411+00:00",
+        "elapsed_seconds": 51.132
+      },
+      "result": {
+        "status": "actionable",
+        "review_adjudication_approved": false,
+        "classified_issue_count": 1,
+        "unsupported_count": 0,
+        "actionable_count": 1,
+        "uncertain_count": 0,
+        "new_issue_count": 0,
+        "exact_receipt_replayed": true,
+        "verified_receipt_digest": "65131e011f1b8258799b171116e8fb8c1253c9588671e72718025fa1a2c57fc6",
+        "verified_result_sha256": "3bb56912b048aee3f9e77a380ba904d52b44c371faa82ae43f3617d4ef2284d6"
+      },
+      "artifact_paths": {
+        "adjudication_input": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/adjudication-runs/agents/annotation-adjudication-acff9db2401962d58375e719205ca941caac0671578d6bab57b0a907f278fbb8/adjudication-input.json",
+        "result": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/adjudication-runs/agents/annotation-adjudication-acff9db2401962d58375e719205ca941caac0671578d6bab57b0a907f278fbb8/result.json",
+        "verified_result": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/adjudication-runs/agents/annotation-adjudication-acff9db2401962d58375e719205ca941caac0671578d6bab57b0a907f278fbb8/verified-adjudication.json",
+        "meta": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/adjudication-runs/agents/annotation-adjudication-acff9db2401962d58375e719205ca941caac0671578d6bab57b0a907f278fbb8/meta.json"
+      },
+      "fixture_artifacts": [
+        {
+          "path": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/cases/ko_prefinal_past_stage_actionable/candidate.json",
+          "sha256": "85ab9d05f30b671e70af9f2de6e5a28ca277c003e372c8a717664228f25fbfad"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/cases/ko_prefinal_past_stage_actionable/context.json",
+          "sha256": "9652f9109000115e0f5a7c1d73fb011c141994b3eac09d29a4751a98d5469aa9"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/cases/ko_prefinal_past_stage_actionable/history.json",
+          "sha256": "e4353808e0ecc67b50277f1051e89db9b8728dae4b9540ea04af13a1a27845b9"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/cases/ko_prefinal_past_stage_actionable/references.json",
+          "sha256": "11f93a7d0e4ea877cf30006e8125b95eecba5893399d96186f509ddf51d5a6b9"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/cases/ko_prefinal_past_stage_actionable/provenance.json",
+          "sha256": "f7a24e7eeffdbe5057cee048a2d272b894c2f7e361597be1bc8fb4c6de62a3c6"
+        }
+      ],
+      "source_provenance": [
+        {
+          "path": "runs/maintenance/20261003/smokes/convergence-20261004/cases.json",
+          "sha256": "bcd70a05f1d700bd0dcb4e2255c73f96993e8d88e8d22ebb5db448f3db0348ce"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/convergence-effort-20261004/summary.json",
+          "sha256": "dbdca2934f3e0f2b747d97d596e0599d7f8a73a205253e1f2614947b77ed916b"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/convergence-repair-proof-v2-20261004/agents/proof-scoped-0_patch/result.json",
+          "sha256": "eb40a2c5bf3df4ac6b4b64b6e0bca356fdd4305c6f26c6e0fee585471febf392"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/convergence-repair-proof-v2-20261004/agents/proof-scoped-0_assembly/result.json",
+          "sha256": "3784c6d65ca64f1e77e0acf017517c7a3b87d7538da77036f7dd3e063ab7fc8e"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/convergence-repair-proof-v2-20261004/agents/annotation-local-review-a8feb9060b932229b72aa19504100854851c3da06bd168b58a51835e57623560/result.json",
+          "sha256": "7fe0f8240e1ab8f9159dd618710066fb5b3554132bdc98384c75c54c96a743ae"
+        },
+        {
+          "path": "pipeline/annotation_review_guidance.py",
+          "sha256": "d8df055f318dac1aab374b89f801e28fd8419017c33dd03e020cb5ed9ee8fc85"
+        },
+        {
+          "path": "content/lexicon/korean/l1.grammar.json",
+          "sha256": "5f06aa1240090b01f4615c48ac7197d5d6f96f770cb5695d27d21eeee1d0e748"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "edfe8c626d556967002c0158d926cc170fd3aa60e3969b7a49f3642dc045c62a"
+        }
+      ]
+    },
+    {
+      "case_id": "ja_synthetic_annotation_control",
+      "fixture_class": "synthetic review on existing published annotation; not a real review reproducer",
+      "review_receipt_scope": "synthetic fixture review; not an actual independent review",
+      "candidate_sha256": "c6d41d12398cda3115d4197eb5e680dc6fdf8bdf2ee12e021236ba8b52d9363f",
+      "review_sha256": "ac5db46cd88c0a990e2c712f5e7a9580be11ea1e94ca80c69d8bf87aadd461cc",
+      "context_sha256": "00f3afd9e0ac09ce1da4273a295c8386fcfbe27c519a9d52bc0441c55a05c87f",
+      "history_sha256": "42e7e582c2f2b59c3b7f68ea2b85ec373bf9489612c565d531ac3dc73f6c04c2",
+      "references_sha256": "8c19c8196241641fa718562386d7b444a58d9db672c9884ab152313fe3d19735",
+      "gate_sha256": "dd846e1f78fe766ff94cd84da42353ae1f53b94d82a61bca4af2930e5a0af2a1",
+      "normal_review_receipt_sha256": "64234d7daf3c04e8e4bf7109c1279ad06018cfff0ebe09fd9cbbae9087adeb95",
+      "adjudication_input_sha256": "4dda8bf9735fbdab011a584d24dfd75cda183244e210c1575b5257eecadb0957",
+      "gate": {
+        "passed": true,
+        "issue_count": 0,
+        "validator": "pipeline.japanese_agent_harness.JapaneseChapterHarness.annotation_contract_issues",
+        "candidate_sha256": "c6d41d12398cda3115d4197eb5e680dc6fdf8bdf2ee12e021236ba8b52d9363f",
+        "source_text_sha256": "d91ea605ecdd743881715ec4725059233676084745eac09cdcd62ffb207bb5a2"
+      },
+      "worker": {
+        "model": "gpt-6-luna",
+        "effort": "low",
+        "tool_profile": "workspace",
+        "return_code": 0,
+        "started_at": "2026-10-04T11:47:37.679476+00:00",
+        "ended_at": "2026-10-04T11:48:30.747424+00:00",
+        "elapsed_seconds": 53.068
+      },
+      "result": {
+        "status": "cleared",
+        "review_adjudication_approved": true,
+        "classified_issue_count": 1,
+        "unsupported_count": 1,
+        "actionable_count": 0,
+        "uncertain_count": 0,
+        "new_issue_count": 0,
+        "exact_receipt_replayed": true,
+        "verified_receipt_digest": "8ca50c259da229c9174b4a031e62c46e7b29d3823ec2249e543197324a6c14a1",
+        "verified_result_sha256": "f3698a99290a336e324e6398f695376ee61c66a6bb49b6652327a861ce1536a3"
+      },
+      "artifact_paths": {
+        "adjudication_input": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/adjudication-runs/agents/annotation-adjudication-4dda8bf9735fbdab011a584d24dfd75cda183244e210c1575b5257eecadb0957/adjudication-input.json",
+        "result": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/adjudication-runs/agents/annotation-adjudication-4dda8bf9735fbdab011a584d24dfd75cda183244e210c1575b5257eecadb0957/result.json",
+        "verified_result": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/adjudication-runs/agents/annotation-adjudication-4dda8bf9735fbdab011a584d24dfd75cda183244e210c1575b5257eecadb0957/verified-adjudication.json",
+        "meta": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/adjudication-runs/agents/annotation-adjudication-4dda8bf9735fbdab011a584d24dfd75cda183244e210c1575b5257eecadb0957/meta.json"
+      },
+      "fixture_artifacts": [
+        {
+          "path": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/cases/ja_synthetic_annotation_control/candidate.json",
+          "sha256": "0abfa8f8fe0dd2c459a126d42bd57dcd63473f9bb417fd7e2facf04d355dd557"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/cases/ja_synthetic_annotation_control/review.json",
+          "sha256": "062e90c85a78cdbe65240f64e694462666b0e8c6b365f1ec1d3b745a89fb620d"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/cases/ja_synthetic_annotation_control/context.json",
+          "sha256": "a0e823bc987c7d3c9bfeae54d6bc0b06927f1ffed14229b8ba65f127d6162a25"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/cases/ja_synthetic_annotation_control/history.json",
+          "sha256": "21a902a773765fe67858b6bea19d4c3fea631c8138a7aec4036dcb54a484bbdf"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/cases/ja_synthetic_annotation_control/references.json",
+          "sha256": "ba020dceb55c438f3cc979eb2a5aa673799b8a04b274d629baf33bb35f47582e"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/cases/ja_synthetic_annotation_control/provenance.json",
+          "sha256": "8ad71840574d027efb57c73cd208f74a9e10c248aa993655af20655e9592f838"
+        }
+      ],
+      "source_provenance": [
+        {
+          "path": "content/japanese/wagahai/n4.annotations.json",
+          "sha256": "f363cb72cabe7b6c95ec0d26c438293879ea45366104dbcf4fa8ded962316c1c"
+        },
+        {
+          "path": "content/lexicon/japanese/n5.grammar.json",
+          "sha256": "1e3d81834f1c3f05f5decabfd3ab7a508639ad3ef110537ea4b773af490c8c3b"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "edfe8c626d556967002c0158d926cc170fd3aa60e3969b7a49f3642dc045c62a"
+        }
+      ]
+    },
+    {
+      "case_id": "zh_synthetic_annotation_control",
+      "fixture_class": "synthetic review on existing published annotation; not a real review reproducer",
+      "review_receipt_scope": "synthetic fixture review; not an actual independent review",
+      "candidate_sha256": "f519e49cf3d96da6568b44b10079a0a6f40e08ec97187dee72bc4724098341b5",
+      "review_sha256": "0af9fcdd105cd91f9cfa1ffc8f19639bfef4219b0502e9e85eb443321619d6b4",
+      "context_sha256": "5e9069b74289d07a397956d8d515384c6459e3aab7bc70f1acc7afdf1066a5db",
+      "history_sha256": "42e7e582c2f2b59c3b7f68ea2b85ec373bf9489612c565d531ac3dc73f6c04c2",
+      "references_sha256": "e7578cdb93dabccc3363086fdf6bdee723816008f5c4fe103e9b0dce557bdfe3",
+      "gate_sha256": "11b90d2bf4a25fb1a5938a7e3c51a3f3f5f6b86a0601f45146c2cee0fb6ab6ac",
+      "normal_review_receipt_sha256": "7c8452ec9d2da7a49d1af8fb6df57075446fc8ee40f4df20a462af9fd278b4e3",
+      "adjudication_input_sha256": "2279a261610fb0b173d20c6e181f3cbefd6debecc432fa15bb0bea9dd6004314",
+      "gate": {
+        "passed": true,
+        "issue_count": 0,
+        "validator": "pipeline.agent_harness.ChapterHarness.annotation_contract_issues",
+        "candidate_sha256": "f519e49cf3d96da6568b44b10079a0a6f40e08ec97187dee72bc4724098341b5",
+        "source_text_sha256": "515682a40246d75e1c72b2cd3268c799fb7c9eecc63a6d7e7a3c843c471df354"
+      },
+      "worker": {
+        "model": "gpt-6-luna",
+        "effort": "low",
+        "tool_profile": "workspace",
+        "return_code": 0,
+        "started_at": "2026-10-04T11:47:37.705848+00:00",
+        "ended_at": "2026-10-04T11:49:15.815555+00:00",
+        "elapsed_seconds": 98.11
+      },
+      "result": {
+        "status": "uncertain",
+        "review_adjudication_approved": false,
+        "classified_issue_count": 1,
+        "unsupported_count": 0,
+        "actionable_count": 0,
+        "uncertain_count": 1,
+        "new_issue_count": 0,
+        "exact_receipt_replayed": true,
+        "verified_receipt_digest": "e83a3f22aa828600f375ba613696b67c8834dddf23cfca8d24f8b23112cef6ad",
+        "verified_result_sha256": "de8fdf9f09f5dea1e5294c5c33fe72ec3eb331433ae86881f825660d4cebd71f"
+      },
+      "artifact_paths": {
+        "adjudication_input": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/adjudication-runs/agents/annotation-adjudication-2279a261610fb0b173d20c6e181f3cbefd6debecc432fa15bb0bea9dd6004314/adjudication-input.json",
+        "result": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/adjudication-runs/agents/annotation-adjudication-2279a261610fb0b173d20c6e181f3cbefd6debecc432fa15bb0bea9dd6004314/result.json",
+        "verified_result": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/adjudication-runs/agents/annotation-adjudication-2279a261610fb0b173d20c6e181f3cbefd6debecc432fa15bb0bea9dd6004314/verified-adjudication.json",
+        "meta": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/adjudication-runs/agents/annotation-adjudication-2279a261610fb0b173d20c6e181f3cbefd6debecc432fa15bb0bea9dd6004314/meta.json"
+      },
+      "fixture_artifacts": [
+        {
+          "path": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/cases/zh_synthetic_annotation_control/candidate.json",
+          "sha256": "5538eab99cf15a0ae5f81e24c5692c97b4c0569fdfcf1eb366349a5da14992e0"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/cases/zh_synthetic_annotation_control/review.json",
+          "sha256": "d6bf514ebc9099ac8b4a7972cef55ff484a2c7b4c6e3ce2debe407ccfd06b564"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/cases/zh_synthetic_annotation_control/context.json",
+          "sha256": "034ffc811c68038026ffed8662a5e5c5e1695adcf0955b6c9a68922e72108385"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/cases/zh_synthetic_annotation_control/history.json",
+          "sha256": "21a902a773765fe67858b6bea19d4c3fea631c8138a7aec4036dcb54a484bbdf"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/cases/zh_synthetic_annotation_control/references.json",
+          "sha256": "e4dd59c22433fb99a4e7459681e57d1da945e7b04b285175024fec6f2dedcd81"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/cases/zh_synthetic_annotation_control/provenance.json",
+          "sha256": "51c21bb0776e9b829770f95004e003906971caa6110ef3c478fa8f8ad5be3a34"
+        }
+      ],
+      "source_provenance": [
+        {
+          "path": "content/chinese/sanguoyanyi/hsk3.annotations.json",
+          "sha256": "60458326b33106190129eb5e9e0d3fa1aa50e8b98e08beed6b7453954e90b8b8"
+        },
+        {
+          "path": "content/lexicon/hsk3.senses.json",
+          "sha256": "776561f58646471a7c8d6cdefe8943cbd1e965932e670ce3483fa5d645e919b8"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "edfe8c626d556967002c0158d926cc170fd3aa60e3969b7a49f3642dc045c62a"
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Two Korean cases use saved real-review evidence; the Japanese and Chinese cases use explicitly synthetic review objections against contract-valid annotation excerpts.",
+    "A cleared adjudication is limited to the linked annotation review; it does not establish chapter approval or publication readiness.",
+    "The Chinese synthetic case remains uncertain; no reviewer finding is waived.",
+    "The benchmark captures this four-case smoke only and makes no general accuracy or convergence claim.",
+    "TOPIK chapters 3, 4 and 6 remain paused; no production chapter or publication status changes are recorded here."
+  ]
+}

@@ -31,6 +31,10 @@ from pipeline.japanese_agent_harness import (
     japanese_overlay_policy_issue,
     japanese_required_overlay_issues,
     japanese_segment_issue,
+    verify_japanese_chunk_review,
+)
+from pipeline.annotation_publication import (
+    AnnotationPublicationError, verify_chunk_attempt_receipts,
 )
 from pipeline.japanese_dictionary_links import dictionary_link_issue
 from pipeline.japanese_readability import level_diagnostics
@@ -487,6 +491,28 @@ def _audit_chapter(
         annotation_audit = reader.get("annotation_audit")
         if not isinstance(annotation_audit, dict) or annotation_audit.get("all_reviewed") is not True:
             raise PublicationError(f"annotations were not all reviewed: {reader_path}")
+        receipt_version = report.get("chunk_review_receipts_version")
+        if (receipt_version not in (None, 1)
+                or (receipt_version == 1
+                    and annotation_audit.get("chunk_review_receipts_version") != 1)):
+            raise PublicationError(f"chapter report/reader review receipt version mismatch: {run_dir}")
+        try:
+            if (report.get("reader_sha256") and
+                    report.get("reader_sha256") != _sha256(reader_path)):
+                raise AnnotationPublicationError("chapter report does not bind current reader")
+            chunk_items = verify_chunk_attempt_receipts(
+                run_dir, reader, text, surface_key="surface")
+            if chunk_items is not None:
+                receipts = annotation_audit.get("chunk_review_receipts", [])
+                if not all(
+                    verify_japanese_chunk_review(
+                        item, text[receipt["source_start"]:receipt["source_end"]], run_dir)
+                    for item, receipt in zip(chunk_items, receipts)
+                ):
+                    raise AnnotationPublicationError("chunk review or adjudication did not replay")
+        except (AnnotationPublicationError, OSError, ValueError, TypeError, KeyError) as exc:
+            raise PublicationError(
+                f"annotation chunk review evidence failed: {reader_path}: {exc}") from exc
         title = str(reader.get("title", title)).strip() or title
     elif require_annotations:
         raise PublicationError(f"reviewed annotations missing: {reader_path}")

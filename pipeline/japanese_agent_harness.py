@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import asyncio
 import copy
+import hashlib
 from difflib import SequenceMatcher
 import json
 import math
@@ -19,6 +20,11 @@ from pipeline.agent_harness import (
     discard_incorrect_length_findings,
     digest, gather_all_or_raise, length_violations, run_status_for_verdicts,
     status, utc_now,
+)
+from pipeline.annotation_publication import (
+    bind_review_job, normal_review_receipt, persist_chunk_attempts,
+    verify_child_job_receipt, verify_chunk_attempt_receipts,
+    verify_normal_review_receipt,
 )
 from pipeline.chunk_scheduler import map_chunks
 from pipeline.annotation_review_guidance import FORM_STAGE_EVIDENCE_GUIDANCE
@@ -65,6 +71,126 @@ def japanese_semantic_repair_grammar_knowledge(registry: dict[str, Any] | None =
             "present it as approved. Do not infer function from kana shape alone."
         ),
     }
+
+
+def verify_japanese_chunk_review(item: dict[str, Any], source_text: str,
+                                 run_dir: Path) -> bool:
+    """Replay the effective final review, including any independent adjudication."""
+    if item.get("resolved") is not True or not isinstance(item.get("attempts"), list):
+        return False
+    attempts = item["attempts"]
+    adjudicated = [row for row in attempts if isinstance(row, dict)
+                   and row.get("effective_review", {}).get("kind") == "adjudicated"]
+    if not adjudicated:
+        if not attempts or not isinstance(attempts[-1], dict):
+            return False
+        row = attempts[-1]
+        candidate = {"segments": row.get("annotation", {}).get("segments"),
+                     "grammar_overlays": row.get("annotation", {}).get("grammar_overlays")}
+        accepted = {"segments": item.get("segments"),
+                    "grammar_overlays": item.get("grammar_overlays")}
+        if (row.get("review", {}).get("verdict") != "pass"
+                or candidate != accepted or not isinstance(source_text, str)
+                or "".join(str(segment.get("surface", ""))
+                           for segment in candidate.get("segments", [])
+                           if isinstance(segment, dict)) != source_text):
+            return False
+        try:
+            raw_reviews = verify_normal_review_receipt(
+                run_dir, row.get("normal_review_receipt"),
+                review=row["review"], candidate=candidate,
+                source_text=source_text, expected_children=2)
+            normalized = [apply_reader_useful_annotation_review_policy(raw, candidate)
+                          for raw in raw_reviews]
+            combined: list[dict[str, Any]] = []
+            seen: set[str] = set()
+            for child_review in normalized:
+                for issue in child_review.get("issues", []):
+                    key = json.dumps(issue, ensure_ascii=False, sort_keys=True)
+                    if key not in seen:
+                        seen.add(key)
+                        combined.append(issue)
+            replayed = {"verdict": "revise" if combined else "pass",
+                        "issues": combined}
+            if replayed != row.get("review"):
+                return False
+            return True
+        except (OSError, ValueError, KeyError, TypeError):
+            return False
+    if len(adjudicated) != 1 or item.get("effective_review", {}).get("kind") != "adjudicated":
+        return False
+    row = adjudicated[0]
+    replay, evidence = row.get("adjudication_replay"), row.get("adjudication")
+    candidate, review = row.get("annotation"), row.get("review")
+    if (not isinstance(replay, dict) or not isinstance(evidence, dict)
+            or not isinstance(candidate, dict) or not isinstance(review, dict)
+            or review.get("verdict") != "revise"):
+        return False
+    try:
+        if replay.get("prior_history") != attempts[:-1]:
+            return False
+        from pipeline.annotation_adjudication import digest as evidence_digest
+        from pipeline.annotation_adjudication import verify_adjudication_evidence
+        story_path = Path(run_dir) / "story-vocabulary-plan.json"
+        story_plan = json.loads(story_path.read_text(encoding="utf-8"))
+        grammar = japanese_semantic_repair_grammar_knowledge()
+        expected_context = {"chunk_text": source_text,
+                            "grammar_knowledge": grammar,
+                            "story_plan": story_plan}
+        policy_reference = {
+            "approved-grammar": {"kind": "approved_lesson",
+                "content": grammar.get("approved_entries", [])},
+            "review-policy": {"kind": "explicit_review_policy",
+                "content": {"form_stage_guidance": FORM_STAGE_EVIDENCE_GUIDANCE,
+                    "review_policy": review.get("review_policy", ""),
+                    "dictionary_policy": JAPANESE_ANNOTATION_CHUNK_POLICY}},
+        }
+        candidate_value = {"segments": item.get("segments"),
+                           "grammar_overlays": item.get("grammar_overlays")}
+        row_value = {"segments": candidate.get("segments"),
+                     "grammar_overlays": candidate.get("grammar_overlays")}
+        if (candidate_value != row_value or replay.get("context") != expected_context
+                or replay.get("known_reference_input") != policy_reference):
+            return False
+        gate = {"passed": True, "issues": [],
+                "candidate_digest": evidence_digest(row_value),
+                "source_text_digest": evidence_digest(source_text)}
+        if replay.get("deterministic_gate_evidence") != gate:
+            return False
+        verified = verify_adjudication_evidence(
+            Path(run_dir), evidence, language="ja", representation="japanese-annotation",
+            candidate=row_value, current_review=review,
+            prior_history=replay["prior_history"], context=replay["context"],
+            known_reference_input=replay["known_reference_input"],
+            deterministic_gate_evidence=replay["deterministic_gate_evidence"],
+            normal_review_receipt=replay["normal_review_receipt"], source_text=source_text)
+        if verified.get("status") != "cleared" or verified.get("approved") is not True:
+            return False
+        receipt = replay["normal_review_receipt"]
+        components = receipt.get("components", []) if isinstance(receipt, dict) else []
+        if len(components) != 2:
+            return False
+        for child in components:
+            job = child.get("job", "")
+            if (not isinstance(job, str) or not job or Path(job).is_absolute()
+                    or any(part in {"", ".", ".."} for part in Path(job).parts)):
+                return False
+            job_dir = Path(run_dir) / "agents" / job
+            meta = json.loads((job_dir / "meta.json").read_text(encoding="utf-8"))
+            raw = verify_child_job_receipt(run_dir, child)
+            if (meta.get("return_code") != 0
+                    or meta.get("model") != "gpt-6-luna"
+                    or meta.get("effort") != "low"
+                    or meta.get("fingerprint") != child.get("input_digest")
+                                or meta.get("model") != "gpt-6-luna"
+                                or meta.get("effort") != "low"
+                                or evidence_digest(raw) != child.get("result_digest")):
+                return False
+            from pipeline.agent_harness import CodexRunner
+            CodexRunner._check_tool_profile(job_dir, meta.get("tool_profile", "offline"), meta)
+        return True
+    except (OSError, ValueError, KeyError, TypeError):
+        return False
 
 
 JLPT_LEVELS = ["n5", "n4", "n3", "n2", "n1"]
@@ -5281,6 +5407,25 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                 refresh=self.refresh_annotation_chunk(index),
             ),
         )
+        review_receipts = []
+        run_dir = getattr(self, "run_dir", None)
+        if run_dir is not None:
+            for suffix, value in (("review", general_review),
+                                  ("boundary_review", boundary_review)):
+                job = f"annotations/chunk_{index:04d}/{stage}_{suffix}"
+                try:
+                    component = bind_review_job(
+                        Path(run_dir), job,
+                        candidate={"segments": annotation.get("segments"),
+                                   "grammar_overlays": annotation.get("grammar_overlays")},
+                        source_text=chunk)
+                except (OSError, ValueError, KeyError, TypeError):
+                    continue
+                review_receipts.append(component)
+        receipts = getattr(self, "_annotation_review_receipts", None)
+        if receipts is None:
+            receipts = self._annotation_review_receipts = {}
+        receipts[(index, stage)] = review_receipts
         reviewed = [
             apply_reader_useful_annotation_review_policy(
                 general_review, annotation
@@ -5578,6 +5723,85 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                 cached.get("cache_key") == cache_key
                 or self.reuse_unselected_annotation_cache(index)
             ):
+                claims_adjudicated = (isinstance(cached.get("effective_review"), dict)
+                    and cached["effective_review"].get("kind") == "adjudicated")
+                adjudicated = [row for row in cached.get("attempts", [])
+                               if isinstance(row, dict)
+                               and row.get("effective_review", {}).get("kind") == "adjudicated"]
+                if claims_adjudicated:
+                    if len(adjudicated) != 1:
+                        current_contract_passes = False
+                    from pipeline.annotation_adjudication import (
+                        digest as evidence_digest, verify_adjudication_evidence,
+                    )
+                    valid_adjudication = False
+                    for row in adjudicated:
+                        replay = row.get("adjudication_replay")
+                        evidence = row.get("adjudication")
+                        if not isinstance(replay, dict) or not isinstance(evidence, dict):
+                            continue
+                        try:
+                            current_grammar_knowledge = japanese_semantic_repair_grammar_knowledge()
+                            current_context = {"chunk_text": chunk,
+                                "grammar_knowledge": current_grammar_knowledge,
+                                "story_plan": getattr(self, "story_vocabulary_plan", {"terms": []})}
+                            current_references = {
+                                "approved-grammar": {"kind": "approved_lesson",
+                                    "content": current_grammar_knowledge.get("approved_entries", [])},
+                                "review-policy": {"kind": "explicit_review_policy",
+                                    "content": {"form_stage_guidance": FORM_STAGE_EVIDENCE_GUIDANCE,
+                                        "review_policy": "",
+                                        "dictionary_policy": JAPANESE_ANNOTATION_CHUNK_POLICY}}}
+                            if (replay.get("context") != current_context
+                                    or replay.get("known_reference_input") != current_references):
+                                raise ValueError("Current Japanese lesson or policy context changed")
+                            verified = verify_adjudication_evidence(
+                                Path(run_dir), evidence, language="ja",
+                                representation="japanese-annotation", candidate=row["annotation"],
+                                current_review=row["review"],
+                                prior_history=replay["prior_history"],
+                                context=replay["context"],
+                                known_reference_input=replay["known_reference_input"],
+                                deterministic_gate_evidence=replay["deterministic_gate_evidence"],
+                                normal_review_receipt=replay["normal_review_receipt"],
+                                source_text=chunk)
+                            if digest({"segments": row["annotation"]["segments"],
+                                       "grammar_overlays": row["annotation"]["grammar_overlays"]}) != digest({
+                                           "segments": cached["segments"],
+                                           "grammar_overlays": cached["grammar_overlays"]}):
+                                raise ValueError("Cached accepted candidate differs from adjudicated candidate")
+                            for child in replay["normal_review_receipt"].get("components", []):
+                                job = child.get("job", "")
+                                if (not job or Path(job).is_absolute()
+                                        or any(part in {"", ".", ".."} for part in Path(job).parts)):
+                                    raise ValueError("Unsafe normal-review child receipt")
+                                job_dir = Path(run_dir) / "agents" / job
+                                meta = json.loads((job_dir / "meta.json").read_text(encoding="utf-8"))
+                                from pipeline.agent_harness import CodexRunner
+                                raw_child = verify_child_job_receipt(run_dir, child)
+                                if (meta.get("return_code") != 0
+                                        or meta.get("fingerprint") != child.get("input_digest")
+                                        or evidence_digest(raw_child) != child.get("result_digest")):
+                                    raise ValueError("Normal-review child receipt changed")
+                                CodexRunner._check_tool_profile(job_dir,
+                                    meta.get("tool_profile", "offline"), meta)
+                            valid_adjudication = (verified.get("status") == "cleared"
+                                                  and verified.get("approved") is True
+                                                  and row.get("effective_review", {}).get("kind") == "adjudicated")
+                        except (OSError, ValueError, KeyError, TypeError):
+                            valid_adjudication = False
+                        if valid_adjudication:
+                            break
+                    if not valid_adjudication:
+                        current_contract_passes = False
+                elif not verify_japanese_chunk_review(cached, chunk, Path(run_dir)):
+                    current_contract_passes = False
+                if not current_contract_passes:
+                    cached = None
+            if cached is not None and current_contract_passes and (
+                cached.get("cache_key") == cache_key
+                or self.reuse_unselected_annotation_cache(index)
+            ):
                 cached["cache_key"] = cache_key
                 accepted_path.write_text(
                     json.dumps(cached, ensure_ascii=False, indent=2) + "\n",
@@ -5595,6 +5819,10 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                 "attempts": attempts,
                 "resolved": True,
             }
+            for attempt in reversed(attempts):
+                if attempt.get("effective_review"):
+                    value["effective_review"] = attempt["effective_review"]
+                    break
             if accepted_path is not None:
                 accepted_path.parent.mkdir(parents=True, exist_ok=True)
                 accepted_path.write_text(
@@ -5607,6 +5835,7 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
             chunk, await self.annotation_candidate(index, chunk)
         )
         attempts: list[dict[str, Any]] = []
+        adjudication_used = False
 
         async def review(stage: str) -> dict[str, Any]:
             contract = self.annotation_contract_issues(chunk, result)
@@ -5631,8 +5860,22 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                     issues.append(normalized)
             return {"verdict": "revise" if issues else "pass", "issues": issues}
 
+        def ordinary_receipt(stage: str, current_review: dict[str, Any],
+                             candidate: dict[str, Any]) -> dict[str, Any] | None:
+            run_dir_value = getattr(self, "run_dir", None)
+            if run_dir_value is None:
+                return None
+            jobs = [f"annotations/chunk_{index:04d}/{stage}_review",
+                    f"annotations/chunk_{index:04d}/{stage}_boundary_review"]
+            try:
+                return normal_review_receipt(
+                    Path(run_dir_value), jobs, current_review, candidate, chunk)
+            except (OSError, ValueError, KeyError, TypeError):
+                return None
+
         async def semantic_or_boundary_repair(
             base: dict[str, Any], findings: dict[str, Any], stage: str,
+            adjudication_context: dict[str, Any] | None = None,
         ) -> tuple[dict[str, Any], dict[str, Any]]:
             if not getattr(self, "run_dir", None) or not findings.get("issues"):
                 regenerated = self.prepare_planned_annotation(
@@ -5665,7 +5908,8 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                 representation="japanese-annotation",
                 language="ja",
                 context={"chunk_text": chunk,
-                         "grammar_knowledge": japanese_semantic_repair_grammar_knowledge()},
+                         "grammar_knowledge": japanese_semantic_repair_grammar_knowledge(),
+                         **(adjudication_context or {})},
                 validate_candidate=validate_semantic_candidate,
                 refresh=self.refresh_annotation_chunk(index),
             )
@@ -5692,12 +5936,98 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
             stage = "initial" if attempt == 0 else f"repair_{attempt:02d}"
             findings = await review(stage)
             attempt_record = {"stage": stage, "annotation": result, "review": findings}
+            proof = ordinary_receipt(stage, findings, result)
+            if proof is not None:
+                attempt_record["normal_review_receipt"] = proof
             if findings["verdict"] == "pass":
                 attempts.append(attempt_record)
                 return accept(result, attempts)
+            repair_findings = findings
+            adjudication_context = None
+            previous = attempts[-1] if attempts else {}
+            prior_semantic = previous.get("semantic_repair", {})
+            if (not adjudication_used and prior_semantic.get("status") == "applied"
+                    and self.annotation_surfaces_reconstruct(chunk, result)
+                    and not self.annotation_contract_issues(chunk, result)
+                    and (Path(self.run_dir) / "agents" /
+                         str(prior_semantic.get("assembly_job", "")) / "meta.json").is_file()
+                    and not any(issue.get("problem") == "contract"
+                                for issue in findings.get("issues", []) if isinstance(issue, dict))):
+                from pipeline.annotation_adjudication import (
+                    adjudicate_annotation_review, digest as evidence_digest,
+                )
+                from pipeline.annotation_repairs import replay_annotation_repair
+                from jsonschema import Draft202012Validator
+                schema = json.loads((SCHEMAS / "japanese-annotation.schema.json").read_text())
+
+                def validate_replayed(candidate: dict[str, Any]) -> None:
+                    errors = list(Draft202012Validator(schema).iter_errors(candidate))
+                    if errors:
+                        raise ValueError(errors[0].message)
+                    if not self.annotation_surfaces_reconstruct(chunk, candidate):
+                        raise ValueError("source reconstruction changed")
+                    contract = self.annotation_contract_issues(chunk, candidate)
+                    if contract:
+                        raise ValueError(str(contract))
+
+                replayed = replay_annotation_repair(Path(self.run_dir),
+                    prior_semantic["assembly_job"], validate_candidate=validate_replayed)
+                if replayed.get("status") != "applied" or replayed.get("candidate") != result:
+                    raise ValueError("Japanese applied semantic-repair evidence does not match reviewed candidate")
+                grammar_knowledge = japanese_semantic_repair_grammar_knowledge()
+                references = {"approved-grammar": {
+                    "kind": "approved_lesson",
+                    "content": grammar_knowledge.get("approved_entries", [])}}
+                references["review-policy"] = {"kind": "explicit_review_policy",
+                    "content": {"form_stage_guidance": FORM_STAGE_EVIDENCE_GUIDANCE,
+                                "review_policy": findings.get("review_policy", ""),
+                                "dictionary_policy": JAPANESE_ANNOTATION_CHUNK_POLICY}}
+                gate = {"passed": True, "issues": [],
+                        "candidate_digest": evidence_digest(result),
+                        "source_text_digest": evidence_digest(chunk)}
+                receipt = {"kind": "composite", "review_digest": evidence_digest(findings),
+                           "components": getattr(self, "_annotation_review_receipts", {}).get(
+                               (index, stage), [])}
+                for child in receipt["components"]:
+                    child.update(candidate_digest=evidence_digest(result),
+                                 source_digest=evidence_digest(chunk))
+                if len(receipt["components"]) != 2:
+                    raise ValueError("Japanese adjudication requires both independent review receipts")
+                adjudication_used = True
+                adjudication = await adjudicate_annotation_review(
+                    self.runner, Path(self.run_dir), language="ja",
+                    representation="japanese-annotation", candidate=result,
+                    current_review=findings, prior_history=attempts,
+                    context={"chunk_text": chunk, "grammar_knowledge": grammar_knowledge,
+                             "story_plan": getattr(self, "story_vocabulary_plan", {"terms": []})},
+                    known_reference_input=references,
+                    deterministic_gate_evidence=gate, normal_review_receipt=receipt,
+                    source_text=chunk)
+                attempt_record["adjudication"] = adjudication
+                if adjudication["status"] == "cleared":
+                    attempt_record["effective_review"] = {"kind": "adjudicated",
+                                                          "evidence": adjudication}
+                    attempt_record["adjudication_replay"] = {
+                    "prior_history": copy.deepcopy(attempts),
+                        "context": {"chunk_text": chunk, "grammar_knowledge": grammar_knowledge,
+                                    "story_plan": getattr(self, "story_vocabulary_plan", {"terms": []})},
+                        "known_reference_input": references,
+                        "deterministic_gate_evidence": gate,
+                        "normal_review_receipt": receipt}
+                    attempts.append(attempt_record)
+                    return accept(result, attempts)
+                if adjudication["status"] == "actionable":
+                    repair_findings = {"verdict": "revise",
+                        "issues": adjudication.get("repair_diagnoses", [])}
+                    adjudication_context = {"prior_review_adjudication": adjudication,
+                                            "prior_review_history": attempts}
+                else:
+                    raise ValueError(f"Japanese annotation adjudication did not clear chunk {index}: "
+                                     f"{adjudication['status']}")
             if attempt < self.args.max_annotation_repairs:
                 result, evidence = await semantic_or_boundary_repair(
-                    result, findings, f"repair_{attempt + 1:02d}",
+                    result, repair_findings, f"repair_{attempt + 1:02d}",
+                    adjudication_context,
                 )
                 attempt_record["semantic_repair"] = evidence
             attempts.append(attempt_record)
@@ -5732,16 +6062,19 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
         else:
             result = fresh_candidate
             findings = await review("fresh")
-            attempts.append({
-                "stage": "fresh", "annotation": result, "review": findings,
-            })
+            fresh_record = {"stage": "fresh", "annotation": result, "review": findings}
+            proof = ordinary_receipt("fresh", findings, result)
+            if proof is not None:
+                fresh_record["normal_review_receipt"] = proof
+            attempts.append(fresh_record)
         if findings["verdict"] == "pass":
             return accept(result, attempts)
 
+        tail_adjudication_context = None
         for tail in range(1, self.args.max_annotation_fresh_repairs + 1):
             stage = f"fresh_repair_{tail:02d}"
             candidate, repair_evidence = await semantic_or_boundary_repair(
-                result, findings, stage,
+                result, findings, stage, tail_adjudication_context,
             )
             if (
                 self.annotation_surfaces_reconstruct(chunk, result)
@@ -5761,8 +6094,88 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                 continue
             result = candidate
             findings = await review(stage)
-            attempts.append({"stage": stage, "annotation": result, "review": findings,
-                             "semantic_repair": repair_evidence})
+            attempt_record = {"stage": stage, "annotation": result, "review": findings,
+                              "semantic_repair": repair_evidence}
+            proof = ordinary_receipt(stage, findings, result)
+            if proof is not None:
+                attempt_record["normal_review_receipt"] = proof
+            if (not adjudication_used and getattr(self, "run_dir", None)
+                    and repair_evidence.get("status") == "applied"
+                    and self.annotation_surfaces_reconstruct(chunk, result)
+                    and not self.annotation_contract_issues(chunk, result)
+                    and not any(issue.get("problem") == "contract"
+                                for issue in findings.get("issues", []) if isinstance(issue, dict))):
+                from pipeline.annotation_adjudication import (
+                    adjudicate_annotation_review, digest as evidence_digest,
+                )
+                from pipeline.annotation_repairs import replay_annotation_repair
+                from jsonschema import Draft202012Validator
+                schema = json.loads((SCHEMAS / "japanese-annotation.schema.json").read_text())
+
+                def validate_tail_replay(value: dict[str, Any]) -> None:
+                    errors = list(Draft202012Validator(schema).iter_errors(value))
+                    if errors or not self.annotation_surfaces_reconstruct(chunk, value):
+                        raise ValueError("Japanese repaired candidate failed deterministic replay gate")
+                    contract = self.annotation_contract_issues(chunk, value)
+                    if contract:
+                        raise ValueError(str(contract))
+
+                repair_job = repair_evidence.get("assembly_job")
+                replayed = replay_annotation_repair(Path(self.run_dir), repair_job,
+                    validate_candidate=validate_tail_replay)
+                if replayed.get("status") != "applied" or replayed.get("candidate") != result:
+                    raise ValueError("Japanese fresh-repair evidence does not match reviewed candidate")
+                grammar_knowledge = japanese_semantic_repair_grammar_knowledge()
+                context = {"chunk_text": chunk, "grammar_knowledge": grammar_knowledge,
+                           "story_plan": getattr(self, "story_vocabulary_plan", {"terms": []})}
+                references = {
+                    "approved-grammar": {"kind": "approved_lesson",
+                        "content": grammar_knowledge.get("approved_entries", [])},
+                    "review-policy": {"kind": "explicit_review_policy",
+                        "content": {"form_stage_guidance": FORM_STAGE_EVIDENCE_GUIDANCE,
+                            "review_policy": "",
+                            "dictionary_policy": JAPANESE_ANNOTATION_CHUNK_POLICY}}}
+                gate = {"passed": True, "issues": [],
+                        "candidate_digest": evidence_digest(result),
+                        "source_text_digest": evidence_digest(chunk)}
+                receipt = {"kind": "composite", "review_digest": evidence_digest(findings),
+                    "components": getattr(self, "_annotation_review_receipts", {}).get(
+                        (index, stage), [])}
+                for child in receipt["components"]:
+                    child.update(candidate_digest=evidence_digest(result),
+                                 source_digest=evidence_digest(chunk))
+                if len(receipt["components"]) != 2:
+                    raise ValueError("Japanese adjudication requires both independent review receipts")
+                history = copy.deepcopy(attempts)
+                adjudication_used = True
+                adjudication = await adjudicate_annotation_review(
+                    self.runner, Path(self.run_dir), language="ja",
+                    representation="japanese-annotation", candidate=result,
+                    current_review=findings, prior_history=history, context=context,
+                    known_reference_input=references,
+                    deterministic_gate_evidence=gate, normal_review_receipt=receipt,
+                    source_text=chunk)
+                attempt_record["adjudication"] = adjudication
+                if adjudication["status"] == "cleared":
+                    attempt_record["effective_review"] = {"kind": "adjudicated",
+                                                          "evidence": adjudication}
+                    attempt_record["adjudication_replay"] = {
+                        "prior_history": history, "context": context,
+                        "known_reference_input": references,
+                        "deterministic_gate_evidence": gate,
+                        "normal_review_receipt": receipt}
+                    attempts.append(attempt_record)
+                    return accept(result, attempts)
+                if adjudication["status"] == "actionable":
+                    findings = {"verdict": "revise",
+                        "issues": adjudication.get("repair_diagnoses", [])}
+                    tail_adjudication_context = {
+                        "prior_review_adjudication": adjudication,
+                        "prior_review_history": history}
+                else:
+                    raise ValueError(f"Japanese annotation adjudication did not clear chunk {index}: "
+                                     f"{adjudication['status']}")
+            attempts.append(attempt_record)
             if findings["verdict"] == "pass":
                 return accept(result, attempts)
         # A tiny bounded adjudication set is intentionally separate from the
@@ -5774,8 +6187,12 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                 result, findings, stage,
             )
             findings = await review(stage)
-            attempts.append({"stage": stage, "annotation": result, "review": findings,
-                             "semantic_repair": repair_evidence})
+            final_record = {"stage": stage, "annotation": result, "review": findings,
+                            "semantic_repair": repair_evidence}
+            proof = ordinary_receipt(stage, findings, result)
+            if proof is not None:
+                final_record["normal_review_receipt"] = proof
+            attempts.append(final_record)
             if findings["verdict"] == "pass":
                 return accept(result, attempts)
         raise ValueError(
@@ -7139,6 +7556,8 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                     "end": overlay["end"] + offset,
                 })
             offset += len(chunk)
+        chunk_review_receipts = persist_chunk_attempts(
+            self.run_dir, chunks, annotated, surface_key="surface")
         vocabulary_diagnostics = level_diagnostics(
             segments, self.args.level, grammar_overlays,
         )
@@ -7153,8 +7572,11 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
             "segments": segments, "grammar_overlays": grammar_overlays,
             "annotation_audit": {
                 "chunks": len(annotated),
+                "chunk_review_receipts_version": 1,
+                "chunk_review_receipts": chunk_review_receipts,
                 "attempts_per_chunk": [len(item["attempts"]) for item in annotated],
-                "all_reviewed": all(item["resolved"] for item in annotated),
+                "all_reviewed": all(verify_japanese_chunk_review(
+                    item, chunk, self.run_dir) for item, chunk in zip(annotated, chunks)),
             },
             "story_vocabulary_audit": {
                 "agent_curated": True,
@@ -7273,6 +7695,13 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                 },
                 "unresolved_scenes": [],
             })
+            reader_path = self.run_dir / "reader.json"
+            if reader_path.is_file():
+                report["reader_sha256"] = hashlib.sha256(reader_path.read_bytes()).hexdigest()
+                saved_reader = json.loads(reader_path.read_text(encoding="utf-8"))
+                if saved_reader.get("annotation_audit", {}).get(
+                        "chunk_review_receipts_version") == 1:
+                    report["chunk_review_receipts_version"] = 1
             report_path.write_text(
                 json.dumps(report, ensure_ascii=False, indent=2) + "\n"
             )
@@ -7659,6 +8088,13 @@ PRIOR REVIEW FINDINGS:
                 "scene_attempts": {x["scene"]["id"]: len(x["attempts"]) for x in results},
                 "unresolved_scenes": [key for key, value in verdicts.items() if value != "pass"],
             }
+            reader_path = self.run_dir / "reader.json"
+            if reader_path.is_file():
+                report["reader_sha256"] = hashlib.sha256(reader_path.read_bytes()).hexdigest()
+                saved_reader = json.loads(reader_path.read_text(encoding="utf-8"))
+                if saved_reader.get("annotation_audit", {}).get(
+                        "chunk_review_receipts_version") == 1:
+                    report["chunk_review_receipts_version"] = 1
             (self.run_dir / "report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
             self.write_manifest(final_status)
             return report
@@ -7702,6 +8138,30 @@ class JapaneseBookHarness(BookHarness):
             return None
         if not self.args.skip_annotations and not reader_path.is_file():
             return None
+        if not self.args.skip_annotations and reader_path.is_file():
+            try:
+                reader = json.loads(reader_path.read_text(encoding="utf-8"))
+                audit = reader.get("annotation_audit", {})
+                if (report.get("chunk_review_receipts_version") not in (None, 1)
+                        or (report.get("chunk_review_receipts_version") == 1
+                            and audit.get("chunk_review_receipts_version") != 1)):
+                    return None
+                source_text = chapter_path.read_text(encoding="utf-8")
+                if reader.get("text") != source_text:
+                    return None
+                recorded_reader_hash = report.get("reader_sha256")
+                if (recorded_reader_hash and recorded_reader_hash
+                        != hashlib.sha256(reader_path.read_bytes()).hexdigest()):
+                    return None
+                items = verify_chunk_attempt_receipts(
+                    run_dir, reader, source_text, surface_key="surface")
+                if items is not None and not all(verify_japanese_chunk_review(
+                        item, source_text[receipt["source_start"]:receipt["source_end"]],
+                        run_dir) for item, receipt in zip(items,
+                            audit.get("chunk_review_receipts", []))):
+                    return None
+            except (OSError, ValueError, TypeError, KeyError):
+                return None
         count = japanese_char_count(chapter_path.read_text(encoding="utf-8"))
         if report.get("japanese_chars") != count or report.get("chapter_cjk") != count:
             return None

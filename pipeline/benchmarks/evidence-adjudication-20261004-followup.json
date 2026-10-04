@@ -1,0 +1,171 @@
+{
+  "format": "evidence-adjudication-smoke-followup-v1",
+  "recorded_at_utc": "2026-10-04T12:07:46.234560+00:00",
+  "purpose": "Separate follow-up run using the new adjudication instruction module; bounded annotation-review smoke only, not chapter acceptance or publication.",
+  "prior_benchmark": {
+    "path": "pipeline/benchmarks/evidence-adjudication-20261004.json",
+    "sha256": "dc15d1bf960ea4ffd866082f07cdab1025edeefa3e1976db77b0ddd652cf3518",
+    "preserved": true
+  },
+  "execution": {
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "tool_profile": "workspace",
+    "tools_enabled": true,
+    "max_concurrency": 3,
+    "worker_count": 4,
+    "all_return_codes_zero": true,
+    "exact_receipt_replay_verified": true,
+    "no_raw_source_or_worker_diagnosis_in_record": true
+  },
+  "case_count": 4,
+  "outcome_counts": {
+    "cleared": 3,
+    "actionable": 1
+  },
+  "cases": [
+    {
+      "case_id": "ko_embedded_doubt_review_conflict",
+      "fixture_class": "real_same_candidate_review_disagreement",
+      "status": "cleared",
+      "adjudication_approved": true,
+      "model": "gpt-6-luna",
+      "effort": "low",
+      "tool_profile": "workspace",
+      "return_code": 0,
+      "elapsed_seconds": 66.278,
+      "job": "annotation-adjudication-4b12f540c278ed168c79318d9573de3500dd04c10f43d91558489620c1a4ef38",
+      "candidate_sha256": "3c66449437a7edf671c57c75d1fe861e68be3b64276fbebd998503f43e495a44",
+      "review_sha256": "2bc7753e60029bcd221e535376f3a0538c9e800038965d7f1c3adb381193ca6a",
+      "input_sha256": "4b12f540c278ed168c79318d9573de3500dd04c10f43d91558489620c1a4ef38",
+      "normal_review_receipt_sha256": "7aeb33051eabb956477effd401cc9a945ca477dad753f2d1547b01b9612cb7b2",
+      "verified_result_sha256": "ca611c13ed3069f852f18948ebffbe79cab1b86065a2c0370b2dcbd5fbc5345e",
+      "replay_verified": true,
+      "artifacts": {
+        "meta": {
+          "path": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/adjudication-runs/agents/annotation-adjudication-4b12f540c278ed168c79318d9573de3500dd04c10f43d91558489620c1a4ef38/meta.json",
+          "sha256": "28753631cdeb3107c03682eab013d7f74ac1c43e9d0604656076b61aba11d8a3"
+        },
+        "input": {
+          "path": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/adjudication-runs/agents/annotation-adjudication-4b12f540c278ed168c79318d9573de3500dd04c10f43d91558489620c1a4ef38/adjudication-input.json",
+          "sha256": "aa39fc73b7410c19d7251c8b628834ad0e1f90cf70571167557df17942d6311e"
+        },
+        "verified_result": {
+          "path": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/adjudication-runs/agents/annotation-adjudication-4b12f540c278ed168c79318d9573de3500dd04c10f43d91558489620c1a4ef38/verified-adjudication.json",
+          "sha256": "47522dd76d0fcbee71d9a16ee771578eb9d0322e81afdaabb44e8f2f6d86a00e"
+        }
+      }
+    },
+    {
+      "case_id": "ko_prefinal_past_stage_actionable",
+      "fixture_class": "real_concrete_form_completeness_finding",
+      "status": "actionable",
+      "adjudication_approved": false,
+      "model": "gpt-6-luna",
+      "effort": "low",
+      "tool_profile": "workspace",
+      "return_code": 0,
+      "elapsed_seconds": 49.579,
+      "job": "annotation-adjudication-b1a6221044265aa1b12357457dc62a849036bdb25dcbb662594311eadd73e273",
+      "candidate_sha256": "efa2c9abb30dd229e59e36bdf6a593aedfbf1a48561d0b8d6eddc5638d2852c6",
+      "review_sha256": "69f722b17bafd9605eff9a5343ac2d260f1871e49e4f8acb97bb2568d9db0fc5",
+      "input_sha256": "b1a6221044265aa1b12357457dc62a849036bdb25dcbb662594311eadd73e273",
+      "normal_review_receipt_sha256": "1e11b2573868db7cb06dfbd3f70ec19418c97618160405efd1518a6c6e31a230",
+      "verified_result_sha256": "c1c8abb8bc14c72d230aa7d8b68039f8769235c78dfd87479302ee283e61b2f1",
+      "replay_verified": true,
+      "artifacts": {
+        "meta": {
+          "path": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/adjudication-runs/agents/annotation-adjudication-b1a6221044265aa1b12357457dc62a849036bdb25dcbb662594311eadd73e273/meta.json",
+          "sha256": "0b791acb4c9870bffc55caba80c17ede688a392d52a1d6f173fe76ade45426fe"
+        },
+        "input": {
+          "path": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/adjudication-runs/agents/annotation-adjudication-b1a6221044265aa1b12357457dc62a849036bdb25dcbb662594311eadd73e273/adjudication-input.json",
+          "sha256": "cd88e7e3ecfc4078fba2663ddf3ad19203ddd976bd561d4def0a73cab17fe802"
+        },
+        "verified_result": {
+          "path": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/adjudication-runs/agents/annotation-adjudication-b1a6221044265aa1b12357457dc62a849036bdb25dcbb662594311eadd73e273/verified-adjudication.json",
+          "sha256": "ede9c6a62feaddc543cead01bfa8df07c9be6fc60c7fdf50d70ca5da36317079"
+        }
+      }
+    },
+    {
+      "case_id": "ja_synthetic_annotation_control",
+      "fixture_class": "synthetic_objection_on_contract_valid_existing_annotation",
+      "status": "cleared",
+      "adjudication_approved": true,
+      "model": "gpt-6-luna",
+      "effort": "low",
+      "tool_profile": "workspace",
+      "return_code": 0,
+      "elapsed_seconds": 41.121,
+      "job": "annotation-adjudication-2592bc55fe1febce82148d11042f3840dd7637e930b716ce61707beebf5a81e6",
+      "candidate_sha256": "c6d41d12398cda3115d4197eb5e680dc6fdf8bdf2ee12e021236ba8b52d9363f",
+      "review_sha256": "ac5db46cd88c0a990e2c712f5e7a9580be11ea1e94ca80c69d8bf87aadd461cc",
+      "input_sha256": "2592bc55fe1febce82148d11042f3840dd7637e930b716ce61707beebf5a81e6",
+      "normal_review_receipt_sha256": "64234d7daf3c04e8e4bf7109c1279ad06018cfff0ebe09fd9cbbae9087adeb95",
+      "verified_result_sha256": "b5d6ee0174e3591d24269dd8ab3ca9c46908347f9bc1a29b943838f3694ddaa8",
+      "replay_verified": true,
+      "artifacts": {
+        "meta": {
+          "path": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/adjudication-runs/agents/annotation-adjudication-2592bc55fe1febce82148d11042f3840dd7637e930b716ce61707beebf5a81e6/meta.json",
+          "sha256": "b2e30e1b5ab3f8e08f9660e235c5b6f0efffa50f427f141d115a974d260c2dcd"
+        },
+        "input": {
+          "path": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/adjudication-runs/agents/annotation-adjudication-2592bc55fe1febce82148d11042f3840dd7637e930b716ce61707beebf5a81e6/adjudication-input.json",
+          "sha256": "6c18be8f6f888f54d232eb0f91772786c600cc81e79be8a6c0c7ada39fe25630"
+        },
+        "verified_result": {
+          "path": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/adjudication-runs/agents/annotation-adjudication-2592bc55fe1febce82148d11042f3840dd7637e930b716ce61707beebf5a81e6/verified-adjudication.json",
+          "sha256": "3455db5be748f89e3e54535b1d7c5a2584d6ff81c0935de3a45d5a1fe223bbc1"
+        }
+      }
+    },
+    {
+      "case_id": "zh_synthetic_annotation_control",
+      "fixture_class": "synthetic_objection_on_contract_valid_existing_annotation",
+      "status": "cleared",
+      "adjudication_approved": true,
+      "model": "gpt-6-luna",
+      "effort": "low",
+      "tool_profile": "workspace",
+      "return_code": 0,
+      "elapsed_seconds": 95.689,
+      "job": "annotation-adjudication-6116e9a0ff313518339cae4750edd37a9cb0fc431d69f077fe8ff1c3c69f3aa3",
+      "candidate_sha256": "f519e49cf3d96da6568b44b10079a0a6f40e08ec97187dee72bc4724098341b5",
+      "review_sha256": "0af9fcdd105cd91f9cfa1ffc8f19639bfef4219b0502e9e85eb443321619d6b4",
+      "input_sha256": "6116e9a0ff313518339cae4750edd37a9cb0fc431d69f077fe8ff1c3c69f3aa3",
+      "normal_review_receipt_sha256": "7c8452ec9d2da7a49d1af8fb6df57075446fc8ee40f4df20a462af9fd278b4e3",
+      "verified_result_sha256": "237fdea940d1b40c4cd1e2992d5b5841a5d9991dc7ef8a0baee1d4f0e06e576e",
+      "replay_verified": true,
+      "artifacts": {
+        "meta": {
+          "path": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/adjudication-runs/agents/annotation-adjudication-6116e9a0ff313518339cae4750edd37a9cb0fc431d69f077fe8ff1c3c69f3aa3/meta.json",
+          "sha256": "fa9149a97ae5520b82625118a9aab96e1e7a2c60afdc7dd7804d3fca0b9fc4bd"
+        },
+        "input": {
+          "path": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/adjudication-runs/agents/annotation-adjudication-6116e9a0ff313518339cae4750edd37a9cb0fc431d69f077fe8ff1c3c69f3aa3/adjudication-input.json",
+          "sha256": "e2a98b42231989ad1ef1538c73408c4fa1238d4c6ce74aa91c4b20c0a249018c"
+        },
+        "verified_result": {
+          "path": "runs/maintenance/20261003/smokes/evidence-adjudication-cases-20261004/adjudication-runs/agents/annotation-adjudication-6116e9a0ff313518339cae4750edd37a9cb0fc431d69f077fe8ff1c3c69f3aa3/verified-adjudication.json",
+          "sha256": "2faae74fc0d3402325e5903a2ddcd67633b06acd5892d10e0bda6da2a20f95b7"
+        }
+      }
+    }
+  ],
+  "comparison": {
+    "initial_zh_status": "uncertain",
+    "followup_zh_status": "cleared",
+    "initial_benchmark_unchanged": true,
+    "interpretation": "The follow-up Chinese synthetic control cleared under the new instruction module. This does not invalidate or overwrite the earlier uncertain adjudication; it is a separate smoke outcome."
+  },
+  "limits": [
+    "The Korean cases use saved real-review evidence; Japanese and Chinese cases use explicitly synthetic objections on existing contract-valid annotation excerpts.",
+    "A cleared adjudication is scoped to its linked annotation review and is not chapter approval or publication readiness.",
+    "The Korean pre-final-form case remained actionable; it was not waived.",
+    "This four-case smoke is not a general accuracy, convergence, or production-outcome claim.",
+    "TOPIK chapters 3, 4 and 6 remain paused; no production chapter or publication status changed.",
+    "Repository test totals were still pending at the time this follow-up record was prepared.",
+    "Ordinary Chinese/Japanese publication-receipt proof strengthening is being checked separately; no publication proof is claimed by these smoke results."
+  ]
+}

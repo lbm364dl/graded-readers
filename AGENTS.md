@@ -117,3 +117,13 @@ Diagnosis is a proposal. An issue is resolved only after a reproducer, contrasti
 regression, independent review and affected-output verification support that claim.
 Do not restart live chapters just to collect evidence or promote a proposal.
 Keep dashboard counts explicit about attempts, drafts, reviews and publication.
+
+When repeated linguistic reviews contradict an earlier supported correction,
+investigate the exact finding before editing again. Use the shared bounded
+independent adjudication route with the immutable candidate, source position,
+review and repair history, and relevant linguistic references. A previous approval
+or a majority of reviewers is not linguistic evidence. Preserve every current
+finding; unsupported objections need concrete cited evidence, genuine defects
+remain repairable, and uncertainty must not become approval. Never override source,
+schema or other deterministic checks. Keep adjudication evidence replayable through
+cache reuse and publication, and use the same GPT-6 Luna low policy as other workers.

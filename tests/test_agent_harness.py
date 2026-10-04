@@ -92,6 +92,145 @@ async def test_chinese_semantic_repair_caller_passes_provisional_grammar_referen
 
 
 @pytest.mark.asyncio
+async def test_chinese_adjudication_clears_only_after_replayed_applied_semantic_repair(tmp_path, monkeypatch):
+    from pipeline import annotation_repairs, annotation_adjudication
+
+    candidate = {"segments": [{"text": "猫", "type": "word", "pinyin": "māo",
+                               "meaning_en": "cat"}], "grammar_overlays": []}
+    issue = {"problem": "meaning", "segment_index": 0, "explanation": "Check this gloss."}
+
+    class Harness(ChapterHarness):
+        async def annotation_candidate(self, index, chunk, **kwargs):
+            return candidate
+
+        async def review_annotation(self, index, chunk, annotation, stage):
+            from pipeline.annotation_publication import bind_review_job
+            job = f"annotations/chunk_{index:04d}/{stage}_review"
+            root = tmp_path / "agents" / job
+            root.mkdir(parents=True, exist_ok=True)
+            raw_review = {"verdict": "revise", "issues": [issue]}
+            (root / "meta.json").write_text(json.dumps({
+                "fingerprint": "review-input", "return_code": 0,
+                "model": "gpt-6-luna", "effort": "low", "tool_profile": "research"}))
+            (root / "result.json").write_text(json.dumps(raw_review))
+            bind_review_job(tmp_path, job, candidate=annotation, source_text=chunk)
+            return {**raw_review, "offset_audit": {
+                "valid": 0, "legacy_missing": 1, "invalid": 0}}
+
+        def annotation_reconstructs(self, chunk, annotation):
+            return True
+
+        def annotation_contract_issues(self, chunk, annotation):
+            return []
+
+        def prepare_annotation_candidate(self, chunk, annotation):
+            return annotation
+
+    async def fake_repair(harness, job, base, issues, **kwargs):
+        root = tmp_path / "agents" / job
+        root.mkdir(parents=True, exist_ok=True)
+        (root / "meta.json").write_text(json.dumps({"kind": "annotation_patch_assembly",
+            "status": "applied", "return_code": 0}))
+        return {"status": "applied", "candidate": base,
+                "evidence": {"assembly_job": job}}
+
+    def fake_replay(run_dir, job, *, validate_candidate):
+        validate_candidate(candidate)
+        return {"status": "applied", "candidate": candidate}
+
+    async def fake_adjudicate(*args, **kwargs):
+        assert kwargs["current_review"]["issues"] == [issue]
+        assert kwargs["deterministic_gate_evidence"]["passed"] is True
+        return {"status": "cleared", "approved": True, "job": "fixture-adjudication"}
+
+    def fake_verify(run_dir, evidence, **kwargs):
+        verified = {**evidence, "status": "cleared", "approved": True,
+            "effective_review_kind": "adjudicated",
+            "candidate_digest": annotation_adjudication.digest(kwargs["candidate"]),
+            "model": "gpt-6-luna", "effort": "low", "tool_profile": "research",
+            "worker_tool_profile": "workspace", "verified_result_digest": "f" * 64,
+            "normal_review_receipt": kwargs["normal_review_receipt"],
+            "review_digest": annotation_adjudication.digest(kwargs["current_review"])}
+        for key in ("history_digest", "context_digest", "references_digest",
+                    "gate_digest", "input_digest", "instructions_digest",
+                    "normal_review_receipt_digest"):
+            verified[key] = "a" * 64
+        verified["preserved_rejected_review_digest"] = verified["review_digest"]
+        verified["normal_review_receipt_digest"] = annotation_adjudication.digest(
+            kwargs["normal_review_receipt"])
+        return verified
+
+    monkeypatch.setattr(annotation_repairs, "repair_annotation", fake_repair)
+    monkeypatch.setattr(annotation_repairs, "replay_annotation_repair", fake_replay)
+    monkeypatch.setattr(annotation_adjudication, "adjudicate_annotation_review", fake_adjudicate)
+    monkeypatch.setattr(annotation_adjudication, "verify_adjudication_evidence", fake_verify)
+    harness = object.__new__(Harness)
+    harness.args = Namespace(max_annotation_repairs=1, refresh=False,
+        annotation_repair_effort="low", annotation_effort="low", annotation_review_effort="low",
+        annotation_chunk=350, annotation_chunk_maximum=400)
+    harness.run_dir = tmp_path
+    harness.runner = object()
+    (tmp_path / "manifest.json").write_text(json.dumps({
+        "annotation_chunk_target": 350, "annotation_chunk_maximum": 400}))
+    (tmp_path / "focus-vocabulary-plan.json").write_text(json.dumps({
+        "names": [], "story_terms": []}))
+    monkeypatch.setattr(CodexRunner, "_check_tool_profile", staticmethod(lambda *_args: None))
+    result = await harness.annotate_chunk(0, "猫")
+    assert result["effective_review"]["kind"] == "adjudicated"
+    assert result["attempts"][-1]["review"] == {
+        "verdict": "revise", "issues": [issue],
+        "offset_audit": {"valid": 0, "legacy_missing": 1, "invalid": 0},
+    }
+    assert result["attempts"][-1]["effective_review"]["evidence"]["approved"] is True
+    assert result["acceptance_state"] == "reviewed_and_adjudicated"
+    from pipeline.agent_harness import annotation_review_is_complete
+    assert result["attempts"][-1]["adjudication_replay"]["source_text"] == "猫"
+    assert annotation_review_is_complete(result, tmp_path) is True
+    review_job = result["attempts"][-1]["adjudication_replay"][
+        "normal_review_receipt"]["components"][0]["job"]
+    review_result = tmp_path / "agents" / review_job / "result.json"
+    original_review = review_result.read_bytes()
+    review_result.write_text(json.dumps({"verdict": "pass", "issues": []}))
+    assert annotation_review_is_complete(result, tmp_path) is False
+    review_result.write_bytes(original_review)
+    focus_path = tmp_path / "focus-vocabulary-plan.json"
+    focus_path.write_text(json.dumps({"names": [], "story_terms": [
+        {"surface": "虎", "meaning_en": "tiger"}]}))
+    assert annotation_review_is_complete(result, tmp_path) is False
+
+
+def test_chinese_all_reviewed_rejects_forged_adjudication_metadata():
+    from pipeline.agent_harness import annotation_review_is_complete
+
+    candidate = {"segments": [{"text": "猫"}], "grammar_overlays": []}
+    unverified = {**candidate, "resolved": True, "reviewed": True,
+        "acceptance_state": "reviewed_and_adjudicated",
+        "attempts": [{"review": {"verdict": "revise"}}],
+        "effective_review": {"kind": "adjudicated", "evidence": {
+            "status": "cleared", "approved": True,
+            "candidate_digest": "0" * 64, "model": "gpt-6-luna", "effort": "low",
+            "tool_profile": "research", "worker_tool_profile": "workspace",
+            "verified_result_digest": "f" * 64}},
+    }
+    assert annotation_review_is_complete(unverified) is False
+    from pipeline.annotation_adjudication import digest as evidence_digest
+    proof = unverified["effective_review"]["evidence"]
+    proof.update({key: "a" * 64 for key in (
+        "history_digest", "context_digest", "references_digest",
+        "gate_digest", "input_digest", "instructions_digest",
+        "normal_review_receipt_digest", "verified_result_digest")})
+    proof["effective_review_kind"] = "adjudicated"
+    proof["review_digest"] = evidence_digest(unverified["attempts"][-1]["review"])
+    proof["preserved_rejected_review_digest"] = proof["review_digest"]
+    proof["candidate_digest"] = evidence_digest(candidate)
+    proof["normal_review_receipt"] = {"kind": "composite"}
+    proof["normal_review_receipt_digest"] = evidence_digest(proof["normal_review_receipt"])
+    assert annotation_review_is_complete(unverified, Path.cwd()) is False
+    unverified["acceptance_state"] = "reviewed_and_remediated"
+    assert annotation_review_is_complete(unverified) is False
+
+
+@pytest.mark.asyncio
 async def test_gather_all_or_raise_drains_siblings_before_failure():
     events = []
 
@@ -814,7 +953,11 @@ async def test_annotation_review_prompt_is_compact_for_large_chunk():
     )
     prompt = runner.calls[0][3]
     legacy_pretty = json.dumps(annotation, ensure_ascii=False, indent=2)
-    assert len(prompt) < len(legacy_pretty) * 0.65
+    # The shared complete-form guidance is deliberately fixed overhead. Test
+    # that the large annotation payload remains compact independently of it.
+    from pipeline.annotation_review_guidance import FORM_STAGE_EVIDENCE_GUIDANCE
+    payload_prompt = prompt.replace(FORM_STAGE_EVIDENCE_GUIDANCE, "", 1)
+    assert len(payload_prompt) < len(legacy_pretty) * 0.65
     assert prompt.count("人") >= len(segments)  # full TEXT is still present
     assert "COLUMNS=[CHAR_START,CHAR_END,TEXT,TYPE,PINYIN,MEANING_EN]" in prompt
     assert "Do not use tools" in prompt
@@ -1983,12 +2126,28 @@ async def _run_mocked_annotated_chapter(tmp_path, final_review, mode="constraine
             {"text": "了", "type": "particle", "pinyin": "le", "meaning_en": "completed-action marker"},
             {"text": "。\n", "type": "punctuation", "pinyin": "", "meaning_en": ""},
         ]
-        return {
+        review = {**final_review,
+                  "offset_audit": {"valid": 0, "legacy_missing": 0, "invalid": 0}}
+        annotation = {
             "segments": segments, "grammar_overlays": [], "resolved": True,
             "attempts": [{"stage": "initial", "annotation": {
                 "segments": segments, "grammar_overlays": [],
-            }, "review": final_review}],
+            }, "review": review}],
         }
+        if mode != "constrained-delta":
+            from pipeline.annotation_publication import normal_review_receipt
+            job = "annotations/chunk_0000/initial_review"
+            job_dir = run_dir / "agents" / job
+            job_dir.mkdir(parents=True, exist_ok=True)
+            (job_dir / "meta.json").write_text(json.dumps({
+                "fingerprint": "mock-input", "return_code": 0, "model": "gpt-6-luna",
+                "effort": "low", "tool_profile": "offline"}))
+            (job_dir / "result.json").write_text(json.dumps(final_review))
+            from pipeline.annotation_publication import bind_review_job
+            bind_review_job(run_dir, job, candidate=annotation, source_text=chunk)
+            annotation["attempts"][0]["normal_review_receipt"] = normal_review_receipt(
+                run_dir, [job], review, annotation, chunk)
+        return annotation
 
     harness.outline = fake_outline
     async def fake_focus_vocabulary(_outline):
@@ -1999,7 +2158,12 @@ async def _run_mocked_annotated_chapter(tmp_path, final_review, mode="constraine
     harness.annotate_chunk = fake_annotation
     async def fake_delta(chapter, chunks):
         assert chapter == "刘备来了。\n" and chunks == [chapter]
-        return [await fake_annotation(0, chapter)]
+        item = await fake_annotation(0, chapter)
+        item.pop("normal_review_receipt", None)
+        item["mode"] = "constrained-delta"
+        item["acceptance_state"] = "reviewed_pass"
+        item["reviewed"] = True
+        return [item]
     harness.annotate_chapter_constrained_delta = fake_delta
     await harness.run()
     (run_dir / "outline.json").write_text(json.dumps({

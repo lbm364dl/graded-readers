@@ -2434,3 +2434,35 @@ def test_publication_replays_targeted_prose_patches(tmp_path, tamper):
     if tamper:
         with pytest.raises(ValueError):
             publication.verify_run(tmp_path)
+
+
+def test_korean_rejected_review_receipt_can_be_verified_without_becoming_approval(tmp_path):
+    from pipeline.korean_agent_harness import digest, save
+    from pipeline.korean_chunk_reviews import review_chunk, verify_review
+
+    annotation = {'segments': [{'text': '가', 'lexical_id': 'fixture/ga',
+        'lexical_kind': 'vocabulary', 'lemma': '가다', 'meaning_en': 'go'}],
+        'grammar_links': [], 'expression_links': []}
+
+    class Runner:
+        async def call(self, job, prompt, schema, effort, **kwargs):
+            from pipeline.worker_workspace import build
+            root = tmp_path / 'agents' / job
+            _, workspace_digest = build(root / 'workspace', prompt,
+                json.loads(schema.read_text()), context=kwargs['workspace_context'])
+            result = {'approved': False, 'issues': ['Meaning is too broad.'],
+                      'prose_revision_reason_en': ''}
+            save(root / 'result.json', result)
+            save(root / 'meta.json', {'return_code': 0, 'tool_profile': 'workspace',
+                                      'workspace_digest': workspace_digest})
+            return result
+
+    context = {'chapter_text': '가', 'source_start': 0}
+    review, evidence = asyncio.run(review_chunk(Runner(), tmp_path,
+        annotation=annotation, text='가', context=context, policy='review policy'))
+    assert review['approved'] is False
+    assert verify_review(tmp_path, evidence, annotation=annotation, text='가',
+        chapter_text='가', source_start=0, require_approved=False) == review
+    with pytest.raises(ValueError, match='stale, rejected or mismatched'):
+        verify_review(tmp_path, evidence, annotation=annotation, text='가',
+            chapter_text='가', source_start=0)

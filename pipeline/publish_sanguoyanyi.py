@@ -20,6 +20,10 @@ import unicodedata
 from typing import Any
 
 from pipeline.agent_harness import ChapterHarness
+from pipeline.agent_harness import annotation_review_is_complete
+from pipeline.annotation_publication import (
+    AnnotationPublicationError, verify_chunk_attempt_receipts,
+)
 from pipeline.epub3 import build_epub3
 from pipeline.extract_epub_chapters import ExtractionError, verify_manifest as verify_source_manifest
 
@@ -218,6 +222,15 @@ def _audit_chapter(
         annotation_audit = reader.get("annotation_audit")
         if not isinstance(annotation_audit, dict) or annotation_audit.get("all_reviewed") is not True:
             raise PublicationError(f"annotations were not all reviewed: {reader_path}")
+        try:
+            chunk_items = verify_chunk_attempt_receipts(
+                run_dir, reader, text, surface_key="text")
+            if chunk_items is not None:
+                if not all(annotation_review_is_complete(item, run_dir) for item in chunk_items):
+                    raise AnnotationPublicationError(
+                        "accepted chunk review or adjudication did not replay")
+        except (AnnotationPublicationError, OSError, ValueError, TypeError) as exc:
+            raise PublicationError(f"annotation chunk review evidence failed: {reader_path}: {exc}") from exc
         acceptance_state = annotation_audit.get("acceptance_state", "reviewed_pass")
         if acceptance_state == "reviewed_and_remediated":
             if (annotation_audit.get("final_review_verdict") != "revise"
@@ -260,6 +273,11 @@ def _audit_chapter(
         annotation_report = _load_json(annotation_report_path)
         if annotation_report.get("status") != "complete":
             raise PublicationError(f"annotation report is not complete: {run_dir}")
+        report_receipt_version = annotation_report.get("chunk_review_receipts_version")
+        if (report_receipt_version not in (None, 1)
+                or (report_receipt_version == 1
+                    and annotation_audit.get("chunk_review_receipts_version") != 1)):
+            raise PublicationError(f"annotation report/reader review receipt version mismatch: {run_dir}")
         if annotation_report.get("chapter_sha256") != _sha256(chapter_path):
             raise PublicationError(f"annotation report is stale for chapter: {run_dir}")
         if annotation_report.get("reader_sha256") != _sha256(reader_path):

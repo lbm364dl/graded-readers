@@ -26,6 +26,31 @@ patches cannot trigger a whole-candidate rewrite. A needed tap-boundary change
 is reported explicitly to the existing boundary-capable producer. Chinese's
 existing fixed-boundary correction path remains in place.
 
+After a semantic repair, a further linguistic rejection can enter the shared
+bounded independent adjudication route. It reviews the exact rejected candidate,
+every current finding, earlier reviews and repairs, and relevant linguistic
+references. It uses GPT-6 Luna low with tools, not votes or an earlier approval
+as proof. The source and structural checks remain authoritative.
+
+An unsupported finding needs concrete reference evidence. Actionable findings
+retain exact fields and go to scoped repair; uncertain findings stop acceptance
+without triggering a whole-candidate rewrite. A cleared decision is an independent
+linguistic review with its own receipt, alongside the original rejected review.
+Replay checks bind the candidate, source context, references and review history.
+Chapter-wide reviews and publication checks remain required. This route does not
+approve new dictionary lessons or change prose, tap boundaries or source text.
+
+Reference coverage remains explicit: Chinese provisional grammar keys are not
+approved lessons. When a disputed linguistic fact has no supplied approved or
+primary reference, adjudication must remain uncertain rather than invent proof.
+
+Generative Chinese and Japanese chunk reviews retain versioned source-bound
+receipts for publication and reuse. Legacy outputs without receipt metadata keep
+their existing validation path. Chinese constrained-delta uses its existing
+chapter-wide review and remediation protocol; a chapter review must never be
+relabeled as independent approval of each chunk. The new chunk adjudication route
+does not change that separate chapter protocol.
+
 Korean batch failures retain independently reviewed successful chunks in an
 incomplete checkpoint. When multiple chunks require prose changes, all explicit
 prose findings go to the targeted prose editor together; unrelated annotation
@@ -299,7 +324,7 @@ entries/senses, runs an independent critic and bounded repair loop, and publishe
 `app/assets/usage_dictionary.json` only after all checks pass. Requires Python 3.11+
 and the same authenticated Codex CLI as the annotation pipeline. Proposal,
 review and repair calls use `gpt-6-luna` at `low`, with up to four concurrent calls.
-A Luna `medium` adjudicator filters failed reviews before repairs, so low-effort
+A Luna `low` adjudicator filters failed reviews before repairs, so low-effort
 critics do not force speculative distinctions or oscillate on acceptable variants.
 This is an explicit post-annotation step. The original HSK1 registries remain
 reproducible and separate from the incremental HSK2 trial described below.
@@ -658,8 +683,8 @@ python3 -m pipeline.agent_harness status \
 The default stages are:
 
 1. Read the complete original chapter and produce exact source scene boundaries.
-2. Adapt scenes independently with Luna xhigh and bounded concurrency.
-3. Review every adaptation against its verbatim source scene with Luna medium.
+2. Adapt scenes independently with GPT-6 Luna low and bounded concurrency.
+3. Review every adaptation against its verbatim source scene with GPT-6 Luna low.
 4. Repair scenes that fail source review and independently review each repair.
    Repeat with configurable attempts; if scoped repair still fails, perform a
    fresh low-effort rewrite from the original with a new cache key and audit it again.

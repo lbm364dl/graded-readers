@@ -29,6 +29,32 @@ def test_workspace_rejects_lossy_reference_rows(tmp_path):
         build(tmp_path, prompt, {})
 
 
+def test_workspace_submission_runs_annotation_adjudication_local_gate(tmp_path):
+    from pipeline.annotation_adjudication import _build_inputs, digest
+    from pipeline.worker_workspace import submit, CandidateSubmissionError
+
+    candidate = {'segments': [{'text': '走る', 'meaning_en': 'run'}]}
+    review = {'verdict': 'revise', 'issues': ['Segment 0 occurrence meaning_en is wrong: "run".']}
+    receipt = {'job': 'review', 'review_digest': digest(review), 'input_digest': 'input'}
+    inputs = _build_inputs(language='ja', representation='japanese-annotation', candidate=candidate,
+        current_review=review, prior_history=[], context={},
+        known_reference_input={'lesson': {'kind': 'approved_lesson', 'content': {'meaning': 'run'}}},
+        deterministic_gate_evidence={'passed': True, 'issues': [], 'candidate_digest': digest(candidate)},
+        normal_review_receipt=receipt, source_text=None)
+    context = {'annotation_adjudication': inputs,
+               'annotation_adjudication_validation': {'input_field': 'annotation_adjudication'}}
+    _, signature = build(tmp_path, 'Adjudicate.\nINPUT:\n' + json.dumps(context),
+                         {'type': 'object'}, context=context)
+    validation_context = json.loads((tmp_path / 'validation-context.json').read_text())
+    assert validation_context[0]['annotation_adjudication_validation']['input_field'] == 'annotation_adjudication'
+    (tmp_path / 'candidate.json').write_text(json.dumps({
+        'classifications': [], 'new_issues': [], 'prose_revision_reason': ''}), encoding='utf-8')
+    with pytest.raises(CandidateSubmissionError) as rejected:
+        submit(tmp_path, {'candidate_path': 'candidate.json'})
+    assert rejected.value.category == 'annotation_adjudication_rejection'
+    assert 'exactly once' in str(rejected.value)
+
+
 def test_workspace_deduplicates_identical_input_blocks_but_keeps_distinct_blocks(tmp_path):
     repeated = {'issues': ['first', 'second'], 'candidate': {'segments': []}}
     different = {'issues': ['first', 'changed'], 'candidate': {'segments': []}}

@@ -93,6 +93,8 @@ async def test_annotation_only_uses_constrained_delta_chapter_policy_and_audits_
             {"stage": "chapter_delta_initial", "review": {"verdict": "revise"}},
             {"stage": "chapter_delta_correction", "review": {"verdict": "pass"}},
         ]
+        item.update(mode="constrained-delta", acceptance_state="reviewed_pass",
+                    reviewed=True)
         return [item]
 
     monkeypatch.setattr(harness, "annotate_chunk", must_not_use_chunk_generator)
@@ -103,7 +105,11 @@ async def test_annotation_only_uses_constrained_delta_chapter_policy_and_audits_
     assert report["status"] == "complete"
     assert report["metadata_model_calls"] == 2
     assert report["semantic_review_calls"] == 2
-    assert audit == {
+    assert "chunk_review_receipts_version" not in report
+    assert "chunk_review_receipts_version" not in audit
+    comparable_audit = {key: value for key, value in audit.items()
+                        if key not in {"chunk_review_receipts_version", "chunk_review_receipts"}}
+    assert comparable_audit == {
         "mode": "constrained-delta", "review_policy": "chapter",
         "policy_version": CHINESE_ANNOTATION_POLICY_VERSION,
         "focus_vocabulary_sha256": harness.focus_vocabulary_sha256,

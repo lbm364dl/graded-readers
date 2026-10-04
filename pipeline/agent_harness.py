@@ -19,6 +19,11 @@ from typing import Any
 
 from pipeline.chunk_scheduler import map_chunks
 from pipeline.annotation_review_guidance import FORM_STAGE_EVIDENCE_GUIDANCE
+from pipeline.annotation_publication import (
+    bind_review_job, child_job_receipt, normal_review_receipt,
+    persist_chunk_attempts, verify_normal_review_receipt,
+    verify_child_job_receipt,
+)
 
 from jsonschema import Draft202012Validator
 from opencc import OpenCC
@@ -361,6 +366,182 @@ def digest(*values: str) -> str:
         h.update(value.encode("utf-8"))
         h.update(b"\0")
     return h.hexdigest()
+
+
+def is_verified_adjudicated_annotation(item: dict[str, Any], run_dir: Path | None = None) -> bool:
+    """Replay the saved adjudication against its exact candidate and inputs."""
+    effective = item.get("effective_review")
+    proof = effective.get("evidence") if isinstance(effective, dict) else None
+    attempts = item.get("attempts", [])
+    attempt = attempts[-1] if attempts and isinstance(attempts[-1], dict) else None
+    replay = attempt.get("adjudication_replay") if isinstance(attempt, dict) else None
+    review = attempt.get("review") if isinstance(attempt, dict) else None
+    if (not isinstance(proof, dict) or effective.get("kind") != "adjudicated"
+            or not isinstance(replay, dict) or not isinstance(review, dict)
+            or review.get("verdict") != "revise" or run_dir is None):
+        return False
+    try:
+        from pipeline.annotation_adjudication import (
+            digest as evidence_digest, verify_adjudication_evidence,
+        )
+        candidate = {"segments": item.get("segments"),
+                     "grammar_overlays": item.get("grammar_overlays")}
+        verified = verify_adjudication_evidence(
+            Path(run_dir), proof, language="zh", representation="chinese-annotation",
+            candidate=candidate, current_review=review,
+            prior_history=replay["prior_history"], context=replay["context"],
+            known_reference_input=replay["known_reference_input"],
+            deterministic_gate_evidence=replay["deterministic_gate_evidence"],
+            normal_review_receipt=replay["normal_review_receipt"],
+            source_text=replay["source_text"])
+        if (verified != proof or verified.get("status") != "cleared"
+                or verified.get("approved") is not True):
+            return False
+        source_text = replay["source_text"]
+        if (replay.get("context") != {
+                "chunk_text": source_text,
+                "grammar_knowledge": chinese_semantic_repair_grammar_knowledge(candidate)}
+                or not isinstance(source_text, str)
+                or "".join(str(row.get("text", "")) for row in candidate["segments"]
+                           if isinstance(row, dict)) != source_text
+                or not ChapterHarness.annotation_reconstructs(source_text, candidate)
+                or ChapterHarness.annotation_contract_issues(source_text, candidate)):
+            return False
+        manifest = json.loads((Path(run_dir) / "manifest.json").read_text(encoding="utf-8"))
+        focus = json.loads((Path(run_dir) / "focus-vocabulary-plan.json").read_text(encoding="utf-8"))
+        target, maximum = manifest.get("annotation_chunk_target"), manifest.get("annotation_chunk_maximum")
+        if not isinstance(target, int) or not isinstance(maximum, int):
+            return False
+        semantic_guidance = json.dumps({
+            "names": [{"surface": str(row["surface"])} for row in focus.get("names", [])],
+            "story_terms": [{"surface": str(row["surface"]),
+                             "meaning_en": str(row.get("meaning_en", ""))}
+                            for row in focus.get("story_terms", [])],
+        }, ensure_ascii=False, separators=(",", ":"))
+        expected_references = {"review-policy": {"kind": "explicit_review_policy",
+            "content": {
+                "review_prompt": (f"CHINESE_ANNOTATION_CHUNK_POLICY={CHINESE_ANNOTATION_CHUNK_POLICY};"
+                                  f"target={target};maximum={maximum}"),
+                "semantic_guidance": semantic_guidance,
+                "translation_policy": CHINESE_TRANSLATION_POLICY,
+                "pinyin_policy": CHINESE_PINYIN_POLICY,
+            }}}
+        if replay.get("known_reference_input") != expected_references:
+            return False
+        expected_gate = {"passed": True, "issues": [],
+                         "candidate_digest": evidence_digest(candidate),
+                         "source_text_digest": evidence_digest(source_text)}
+        if replay.get("deterministic_gate_evidence") != expected_gate:
+            return False
+        if replay.get("prior_history") != attempts[:-1]:
+            return False
+        receipt = replay.get("normal_review_receipt")
+        components = receipt.get("components", []) if isinstance(receipt, dict) else []
+        if len(components) != 1:
+            return False
+        component = components[0]
+        job = component.get("job", "")
+        if (not isinstance(job, str) or not job or Path(job).is_absolute()
+                or any(part in {"", ".", ".."} for part in Path(job).parts)):
+            return False
+        if (component.get("candidate_digest") != evidence_digest(candidate)
+                or component.get("source_digest") != evidence_digest(source_text)):
+            return False
+        job_dir = Path(run_dir) / "agents" / job
+        if job_dir.is_symlink() or not job_dir.resolve(strict=True).is_relative_to(
+                (Path(run_dir) / "agents").resolve(strict=True)):
+            return False
+        meta = json.loads((job_dir / "meta.json").read_text(encoding="utf-8"))
+        raw_review = verify_child_job_receipt(run_dir, component)
+        if (meta.get("return_code") != 0 or meta.get("model") != "gpt-6-luna"
+                or meta.get("effort") != "low"
+                or meta.get("fingerprint") != component.get("input_digest")
+                or evidence_digest(raw_review) != component.get("result_digest")):
+            return False
+        saved_review = dict(review)
+        offset_audit = saved_review.pop("offset_audit", None)
+        if saved_review != raw_review:
+            return False
+        valid = legacy = invalid = 0
+        for issue in raw_review.get("issues", []):
+            if not isinstance(issue, dict):
+                invalid += 1
+            elif "start" not in issue and "end" not in issue:
+                legacy += 1
+            elif (isinstance(issue.get("start"), int) and isinstance(issue.get("end"), int)
+                  and 0 <= issue["start"] < issue["end"] <= len(source_text)
+                  and issue.get("segment_text") == source_text[issue["start"]:issue["end"]]):
+                valid += 1
+            else:
+                invalid += 1
+        if offset_audit != {"valid": valid, "legacy_missing": legacy, "invalid": invalid}:
+            return False
+        CodexRunner._check_tool_profile(job_dir, meta.get("tool_profile", "offline"), meta)
+        return True
+    except (OSError, ValueError, KeyError, TypeError):
+        return False
+
+
+def is_verified_ordinary_chinese_review(item: dict[str, Any], run_dir: Path) -> bool:
+    """Require the saved ordinary review child behind a Chinese pass."""
+    attempts = item.get("attempts", [])
+    if not attempts or not isinstance(attempts[-1], dict):
+        return False
+    attempt = attempts[-1]
+    review, candidate = attempt.get("review"), attempt.get("annotation")
+    if (not isinstance(review, dict) or review.get("verdict") != "pass"
+            or not isinstance(candidate, dict)):
+        return False
+    source_text = "".join(str(row.get("text", "")) for row in candidate.get("segments", [])
+                          if isinstance(row, dict))
+    if (candidate.get("segments") != item.get("segments")
+            or candidate.get("grammar_overlays") != item.get("grammar_overlays")
+            or not ChapterHarness.annotation_reconstructs(source_text, candidate)
+            or ChapterHarness.annotation_contract_issues(source_text, candidate)):
+        return False
+    try:
+        results = verify_normal_review_receipt(
+            run_dir, attempt.get("normal_review_receipt"), review=review,
+            candidate=candidate, source_text=source_text, expected_children=1)
+        raw = results[0]
+        normalized = dict(review)
+        offset = normalized.pop("offset_audit", None)
+        if normalized != raw:
+            return False
+        valid = legacy = invalid = 0
+        for issue in raw.get("issues", []):
+            if not isinstance(issue, dict):
+                invalid += 1
+            elif "start" not in issue and "end" not in issue:
+                legacy += 1
+            elif (isinstance(issue.get("start"), int) and not isinstance(issue.get("start"), bool)
+                  and isinstance(issue.get("end"), int) and not isinstance(issue.get("end"), bool)
+                  and 0 <= issue["start"] < issue["end"] <= len(source_text)
+                  and issue.get("segment_text") == source_text[issue["start"]:issue["end"]]):
+                valid += 1
+            else:
+                invalid += 1
+        return offset == {"valid": valid, "legacy_missing": legacy, "invalid": invalid}
+    except (OSError, ValueError, KeyError, TypeError):
+        return False
+
+
+def annotation_review_is_complete(item: dict[str, Any], run_dir: Path | None = None) -> bool:
+    attempts = item.get("attempts", [])
+    last_review = attempts[-1].get("review") if attempts and isinstance(attempts[-1], dict) else None
+    last_review_passed = (isinstance(last_review, dict) and last_review.get("verdict") == "pass"
+                          and run_dir is not None
+                          and is_verified_ordinary_chinese_review(item, run_dir))
+    chapter_scoped_delta = (
+        item.get("mode") == "constrained-delta"
+        and item.get("acceptance_state") in {"reviewed_pass", "reviewed_and_remediated"}
+    )
+    return bool(item.get("resolved") and item.get("reviewed", True) is True and (
+        last_review_passed
+        or chapter_scoped_delta
+        or (item.get("acceptance_state") == "reviewed_and_adjudicated"
+            and is_verified_adjudicated_annotation(item, run_dir))
+    ))
 
 
 def cjk_count(text: str) -> int:
@@ -2389,6 +2570,20 @@ GRAMMAR OVERLAYS (existing exact offset objects):
         review["offset_audit"] = {
             "valid": valid, "legacy_missing": legacy, "invalid": invalid,
         }
+        run_dir = getattr(self, "run_dir", None)
+        if run_dir is not None:
+            job = f"annotations/chunk_{index:04d}/{stage}_review"
+            try:
+                candidate = {"segments": annotation.get("segments"),
+                             "grammar_overlays": annotation.get("grammar_overlays")}
+                component = bind_review_job(
+                    Path(run_dir), job, candidate=candidate, source_text=chunk)
+            except (OSError, ValueError, KeyError, TypeError):
+                component = None
+            receipts = getattr(self, "_annotation_review_receipts", None)
+            if receipts is None:
+                receipts = self._annotation_review_receipts = {}
+            receipts[(index, stage)] = [component] if component else []
         return review
 
     @staticmethod
@@ -2519,6 +2714,7 @@ GRAMMAR OVERLAYS (existing exact offset objects):
             chunk, await self.annotation_candidate(index, chunk)
         )
         attempts: list[dict[str, Any]] = []
+        adjudication_used = False
         for attempt in range(self.args.max_annotation_repairs + 1):
             if self.annotation_reconstructs(chunk, result):
                 review = await self.review_annotation(
@@ -2533,13 +2729,126 @@ GRAMMAR OVERLAYS (existing exact offset objects):
                 "stage": "initial" if attempt == 0 else f"repair_{attempt:02d}",
                 "annotation": result, "review": review,
             }
+            if getattr(self, "run_dir", None):
+                try:
+                    attempt_record["normal_review_receipt"] = normal_review_receipt(
+                        Path(self.run_dir),
+                        [f"annotations/chunk_{index:04d}/{attempt_record['stage']}_review"],
+                        review, result, chunk)
+                except (OSError, ValueError, KeyError, TypeError):
+                    pass
             if review["verdict"] == "pass":
                 attempts.append(attempt_record)
                 return {"segments": result["segments"],
                         "grammar_overlays": result["grammar_overlays"],
                         "attempts": attempts, "resolved": True}
+            effective_review = None
+            repair_findings = review
+            adjudication_context_extra = {}
+            previous = attempts[-1] if attempts else {}
+            if (not adjudication_used and attempt > 0
+                    and previous.get("semantic_repair", {}).get("status") == "applied"
+                    and self.annotation_reconstructs(chunk, result)
+                    and not self.annotation_contract_issues(chunk, result)
+                    and getattr(self, "run_dir", None)
+                    and (Path(self.run_dir) / "agents" /
+                         str(previous.get("semantic_repair", {}).get("assembly_job", "")) /
+                         "meta.json").is_file()):
+                from pipeline.annotation_adjudication import (
+                    adjudicate_annotation_review, digest as evidence_digest,
+                )
+                from pipeline.annotation_repairs import replay_annotation_repair
+                repair_job = previous["semantic_repair"]["assembly_job"]
+                schema = json.loads((SCHEMAS / "annotation.schema.json").read_text())
+
+                def validate_replayed(candidate: dict[str, Any]) -> None:
+                    errors = list(Draft202012Validator(schema).iter_errors(candidate))
+                    if errors:
+                        raise ValueError(errors[0].message)
+                    contract = self.annotation_contract_issues(chunk, candidate)
+                    if contract:
+                        raise ValueError(str(contract))
+
+                replayed = replay_annotation_repair(Path(self.run_dir), repair_job,
+                    validate_candidate=validate_replayed)
+                if replayed.get("status") != "applied" or replayed.get("candidate") != result:
+                    raise ValueError("Chinese applied semantic-repair evidence does not match reviewed candidate")
+                run_dir = Path(self.run_dir)
+                review_job = f"annotations/chunk_{index:04d}/{attempt_record['stage']}_review"
+                review_meta_path = run_dir / "agents" / review_job / "meta.json"
+                review_meta = json.loads(review_meta_path.read_text(encoding="utf-8"))
+                normalized_review_digest = evidence_digest(review)
+                raw_review = json.loads((review_meta_path.parent / "result.json").read_text(encoding="utf-8"))
+                receipt = {"kind": "composite", "review_digest": normalized_review_digest,
+                           "candidate_digest": evidence_digest(result),
+                           "source_digest": evidence_digest(chunk),
+                           "components": [child_job_receipt(run_dir, review_job)]}
+                receipt["components"][0].update(
+                    candidate_digest=evidence_digest(result),
+                    source_digest=evidence_digest(chunk))
+                policy_reference = {
+                    "review-policy": {"kind": "explicit_review_policy",
+                        "content": {"review_prompt": self.annotation_chunk_cache_tag,
+                            "semantic_guidance": self.focus_vocabulary_semantic_guidance,
+                            "translation_policy": CHINESE_TRANSLATION_POLICY,
+                            "pinyin_policy": CHINESE_PINYIN_POLICY}}
+                }
+                gate = {"passed": True, "issues": [],
+                        "candidate_digest": evidence_digest(result),
+                        "source_text_digest": evidence_digest(chunk)}
+                adjudication_context = {"chunk_text": chunk,
+                    "grammar_knowledge": chinese_semantic_repair_grammar_knowledge(result)}
+                adjudication_history = copy.deepcopy(attempts)
+                adjudication_used = True
+                adjudication = await adjudicate_annotation_review(
+                    self.runner, run_dir, language="zh", representation="chinese-annotation",
+                    candidate=result, current_review=review, prior_history=adjudication_history,
+                    context=adjudication_context,
+                    known_reference_input=policy_reference,
+                    deterministic_gate_evidence=gate, normal_review_receipt=receipt,
+                    source_text=chunk)
+                if adjudication.get("status") == "cleared":
+                    from pipeline.annotation_adjudication import verify_adjudication_evidence
+                    adjudication = verify_adjudication_evidence(
+                        run_dir, adjudication, language="zh",
+                        representation="chinese-annotation", candidate=result,
+                        current_review=review, prior_history=adjudication_history,
+                        context=adjudication_context,
+                        known_reference_input=policy_reference,
+                        deterministic_gate_evidence=gate,
+                        normal_review_receipt=receipt, source_text=chunk)
+                attempt_record["adjudication"] = adjudication
+                if adjudication["status"] == "cleared":
+                    attempt_record["adjudication_replay"] = {
+                        "prior_history": adjudication_history,
+                        "context": adjudication_context,
+                        "known_reference_input": policy_reference,
+                        "deterministic_gate_evidence": gate,
+                        "normal_review_receipt": receipt,
+                        "source_text": chunk,
+                    }
+                    attempt_record["effective_review"] = {"kind": "adjudicated",
+                                                           "evidence": adjudication}
+                    attempts.append(attempt_record)
+                    return {"segments": result["segments"],
+                            "grammar_overlays": result["grammar_overlays"],
+                            "attempts": attempts, "resolved": True,
+                            "reviewed": True,
+                            "acceptance_state": "reviewed_and_adjudicated",
+                            "effective_review": {"kind": "adjudicated",
+                                                 "evidence": adjudication}}
+                if adjudication["status"] == "actionable":
+                    repair_findings = {"verdict": "revise",
+                        "issues": adjudication.get("repair_diagnoses", [])}
+                    adjudication_context_extra = {"prior_review_adjudication": adjudication,
+                                                  "prior_review_history": attempts}
+                else:
+                    raise ValueError(
+                        f"Chinese annotation adjudication did not clear chunk {index}: "
+                        f"{adjudication['status']}"
+                    )
             if attempt < self.args.max_annotation_repairs:
-                if not getattr(self, "run_dir", None) or not review.get("issues"):
+                if not getattr(self, "run_dir", None) or not repair_findings.get("issues"):
                     semantic = None
                 else:
                     from pipeline.annotation_repairs import repair_annotation
@@ -2558,11 +2867,12 @@ GRAMMAR OVERLAYS (existing exact offset objects):
                         self,
                         f"annotations/chunk_{index:04d}/semantic_repair_{attempt + 1:02d}",
                         result,
-                        review["issues"],
+                        repair_findings["issues"],
                         representation="chinese-annotation",
                         language="zh",
                         context={"chunk_text": chunk,
-                                 "grammar_knowledge": chinese_semantic_repair_grammar_knowledge(result)},
+                                 "grammar_knowledge": chinese_semantic_repair_grammar_knowledge(result),
+                                 **adjudication_context_extra},
                         validate_candidate=validate_semantic_candidate,
                         refresh=self.args.refresh,
                     )
@@ -2579,14 +2889,14 @@ GRAMMAR OVERLAYS (existing exact offset objects):
                     result = self.prepare_annotation_candidate(
                         chunk, await self.annotation_candidate(
                             index, chunk, stage=f"repair_{attempt + 1:02d}", prior=result,
-                            findings=review, effort=self.args.annotation_repair_effort,
+                            findings=repair_findings, effort=self.args.annotation_repair_effort,
                         )
                     )
                 elif semantic is None:
                     result = self.prepare_annotation_candidate(
                         chunk, await self.annotation_candidate(
                             index, chunk, stage=f"repair_{attempt + 1:02d}", prior=result,
-                            findings=review, effort=self.args.annotation_repair_effort,
+                            findings=repair_findings, effort=self.args.annotation_repair_effort,
                         )
                     )
                 else:
@@ -2608,7 +2918,16 @@ GRAMMAR OVERLAYS (existing exact offset objects):
         else:
             review = {"verdict": "revise",
                       "issues": self.annotation_contract_issues(chunk, result)}
-        attempts.append({"stage": "fresh", "annotation": result, "review": review})
+        fresh_record = {"stage": "fresh", "annotation": result, "review": review}
+        if getattr(self, "run_dir", None):
+            try:
+                fresh_record["normal_review_receipt"] = normal_review_receipt(
+                    Path(self.run_dir),
+                    [f"annotations/chunk_{index:04d}/fresh_review"],
+                    review, result, chunk)
+            except (OSError, ValueError, KeyError, TypeError):
+                pass
+        attempts.append(fresh_record)
         if review["verdict"] != "pass":
             raise ValueError(
                 f"annotation quality gate failed for chunk {index} after "
@@ -3017,7 +3336,16 @@ GRAMMAR OVERLAYS (existing exact offset objects):
         for attempt in range(self.args.max_annotation_repairs + 1):
             stage = "initial" if attempt == 0 else f"correction_{attempt:02d}"
             review = await self.review_annotation(index, chunk, result, stage)
-            attempts.append({"stage": stage, "annotation": result, "review": review})
+            record = {"stage": stage, "annotation": result, "review": review}
+            if getattr(self, "run_dir", None):
+                try:
+                    record["normal_review_receipt"] = normal_review_receipt(
+                        Path(self.run_dir),
+                        [f"annotations/chunk_{index:04d}/{stage}_review"],
+                        review, result, chunk)
+                except (OSError, ValueError, KeyError, TypeError):
+                    pass
+            attempts.append(record)
             if review["verdict"] == "pass":
                 return {
                     "segments": result["segments"],
@@ -3037,7 +3365,16 @@ GRAMMAR OVERLAYS (existing exact offset objects):
             index, chunk, stage="fresh", effort=self.args.annotation_final_effort
         )
         review = await self.review_annotation(index, chunk, result, "fresh")
-        attempts.append({"stage": "fresh", "annotation": result, "review": review})
+        record = {"stage": "fresh", "annotation": result, "review": review}
+        if getattr(self, "run_dir", None):
+            try:
+                record["normal_review_receipt"] = normal_review_receipt(
+                    Path(self.run_dir),
+                    [f"annotations/chunk_{index:04d}/fresh_review"],
+                    review, result, chunk)
+            except (OSError, ValueError, KeyError, TypeError):
+                pass
+        attempts.append(record)
         if review["verdict"] != "pass":
             raise ValueError(
                 f"constrained annotation quality gate failed for chunk {index} "
@@ -3099,7 +3436,16 @@ GRAMMAR OVERLAYS (existing exact offset objects):
         for attempt in range(self.args.max_annotation_repairs + 1):
             stage = "delta_initial" if attempt == 0 else f"delta_correction_{attempt:02d}"
             review = await self.review_annotation(index, chunk, result, stage)
-            attempts.append({"stage": stage, "annotation": result, "review": review})
+            record = {"stage": stage, "annotation": result, "review": review}
+            if getattr(self, "run_dir", None):
+                try:
+                    record["normal_review_receipt"] = normal_review_receipt(
+                        Path(self.run_dir),
+                        [f"annotations/chunk_{index:04d}/{stage}_review"],
+                        review, result, chunk)
+                except (OSError, ValueError, KeyError, TypeError):
+                    pass
+            attempts.append(record)
             if review["verdict"] == "pass":
                 return {"segments": result["segments"],
                         "grammar_overlays": result["grammar_overlays"],
@@ -3123,13 +3469,22 @@ GRAMMAR OVERLAYS (existing exact offset objects):
             index, chunk, result, "delta_final",
             effort=self.args.annotation_final_effort,
         )
-        attempts.append({
+        record = {
             "stage": "delta_final_correction",
             "annotation": result,
             "review": review,
             "correction_effort": self.args.annotation_final_effort,
             "review_effort": self.args.annotation_final_effort,
-        })
+        }
+        if getattr(self, "run_dir", None):
+            try:
+                record["normal_review_receipt"] = normal_review_receipt(
+                    Path(self.run_dir),
+                    [f"annotations/chunk_{index:04d}/delta_final_review"],
+                    review, result, chunk)
+            except (OSError, ValueError, KeyError, TypeError):
+                pass
+        attempts.append(record)
         if review["verdict"] == "pass":
             return {
                 "segments": result["segments"],
@@ -3466,6 +3821,11 @@ GRAMMAR OVERLAYS (existing exact offset objects):
                             "end": overlay["end"] + offset,
                         })
                     offset += len(chunk)
+                chunk_review_receipts = persist_chunk_attempts(
+                    self.run_dir, chunks, annotated, surface_key="text")
+                per_chunk_review_proof = not (
+                    getattr(self.args, "annotation_mode", "generative") == "constrained-delta"
+                    and getattr(self.args, "annotation_review_policy", "chapter") == "chapter")
                 reader = {
                     "title": outline["chapter_title"], "level": self.args.level.upper(),
                     "text": chapter, "segments": segments,
@@ -3474,13 +3834,12 @@ GRAMMAR OVERLAYS (existing exact offset objects):
                         "mode": getattr(self.args, "annotation_mode", "generative"),
                         "policy_version": CHINESE_ANNOTATION_POLICY_VERSION,
                         "chunks": len(annotated),
+                        **({"chunk_review_receipts_version": 1,
+                            "chunk_review_receipts": chunk_review_receipts}
+                           if per_chunk_review_proof else {}),
                         "attempts_per_chunk": [len(item["attempts"]) for item in annotated],
-                        "all_reviewed": all(
-                            item["resolved"] and item.get("reviewed", True) is True
-                            and (item["attempts"][-1].get("review", {}).get("verdict") == "pass"
-                                 or item.get("acceptance_state") == "reviewed_and_remediated")
-                            for item in annotated
-                        ),
+                        "all_reviewed": all(annotation_review_is_complete(item, self.run_dir)
+                                             for item in annotated),
                         **({"metadata_model_calls": getattr(
                             self, "annotation_metadata_model_calls", 1
                         )}
@@ -4186,15 +4545,18 @@ class AnnotationOnlyHarness(ChapterHarness):
                 } for overlay in item["grammar_overlays"])
                 offset += len(chunk)
             attempts = [len(item["attempts"]) for item in annotated]
-            all_reviewed = all(
-                item["resolved"] and item.get("reviewed", True) is True
-                and (item["attempts"][-1].get("review", {}).get("verdict") == "pass"
-                     or item.get("acceptance_state") == "reviewed_and_remediated")
-                for item in annotated
-            )
+            chunk_review_receipts = persist_chunk_attempts(
+                self.run_dir, chunks, annotated, surface_key="text")
+            all_reviewed = all(annotation_review_is_complete(item, self.run_dir) for item in annotated)
+            per_chunk_review_proof = not (
+                self.args.annotation_mode == "constrained-delta"
+                and getattr(self.args, "annotation_review_policy", "chapter") == "chapter")
             audit = {
                 "mode": self.args.annotation_mode,
                 "chunks": len(annotated),
+                **({"chunk_review_receipts_version": 1,
+                    "chunk_review_receipts": chunk_review_receipts}
+                   if per_chunk_review_proof else {}),
                 "attempts_per_chunk": attempts,
                 "all_reviewed": all_reviewed,
                 **({"metadata_model_calls": getattr(
@@ -4267,6 +4629,8 @@ class AnnotationOnlyHarness(ChapterHarness):
             (self.run_dir / "chapter.txt").write_text(self.chapter, encoding="utf-8")
             report = {
                 "status": "complete" if all_reviewed else "blocked",
+                **({"chunk_review_receipts_version": 1}
+                   if per_chunk_review_proof else {}),
                 "mode": self.args.annotation_mode,
                 "chunks": len(chunks),
                 "attempts_per_chunk": attempts,

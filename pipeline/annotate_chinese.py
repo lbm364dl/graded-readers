@@ -15,9 +15,14 @@ from typing import Any
 
 from pipeline.agent_harness import (
     CHINESE_ANNOTATION_POLICY_VERSION, ChapterHarness, CodexRunner,
+    annotation_review_is_complete,
+    persist_chunk_attempts,
     DEFAULT_CHINESE_ANNOTATION_CHUNK_MAXIMUM as DEFAULT_ANNOTATION_CHUNK_MAXIMUM,
     DEFAULT_CHINESE_ANNOTATION_CHUNK_TARGET as DEFAULT_ANNOTATION_CHUNK_TARGET,
     split_chinese_annotation_chunks,
+)
+from pipeline.annotation_publication import (
+    AnnotationPublicationError, verify_chunk_attempt_receipts,
 )
 
 
@@ -77,6 +82,7 @@ def reusable_reader(
     expected_mode: str | None = None, expected_review_policy: str | None = None,
     expected_policy_version: str | None = None,
     expected_focus_vocabulary_sha256: str | None = None,
+    run_dir: Path | None = None,
 ) -> dict[str, Any] | None:
     """Return a reader only when every deterministic reuse gate passes."""
     if not path.is_file():
@@ -97,6 +103,16 @@ def reusable_reader(
         return None
     if not isinstance(audit, dict) or audit.get("all_reviewed") is not True:
         return None
+    if run_dir is not None:
+        try:
+            attempts = verify_chunk_attempt_receipts(
+                run_dir, reader, chapter, surface_key="text")
+            if attempts is not None and not all(
+                annotation_review_is_complete(item, run_dir) for item in attempts
+            ):
+                return None
+        except (AnnotationPublicationError, OSError, ValueError, TypeError):
+            return None
     if expected_mode is not None and audit.get("mode") != expected_mode:
         return None
     if (expected_review_policy is not None
@@ -172,7 +188,23 @@ class ChineseAnnotationHarness(ChapterHarness):
                     self.focus_vocabulary_sha256
                     if self.args.annotation_mode == "constrained-delta" else None
                 ),
+                run_dir=self.run_dir,
             )
+            if reusable is not None and annotation_report_path.is_file():
+                try:
+                    prior_report = load_object(annotation_report_path)
+                    if (prior_report.get("reader_sha256")
+                            and prior_report["reader_sha256"] != sha256_bytes(prior_reader_path.read_bytes())):
+                        reusable = None
+                    if (prior_report.get("chunk_review_receipts_version") is not None
+                            and prior_report.get("chunk_review_receipts_version") != 1):
+                        reusable = None
+                    if (prior_report.get("chunk_review_receipts_version") == 1
+                            and reusable.get("annotation_audit", {}).get(
+                                "chunk_review_receipts_version") != 1):
+                        reusable = None
+                except (OSError, ValueError, TypeError):
+                    reusable = None
             if (reusable is not None
                 and self.args.annotation_mode == "constrained-delta" and (
                 reusable.get("annotation_audit", {}).get("mode")
@@ -190,6 +222,9 @@ class ChineseAnnotationHarness(ChapterHarness):
                     "reader_replaced": False,
                     "chunks": reusable["annotation_audit"].get("chunks"),
                     "attempts": 0, "completed_at": utc_now(),
+                    **({"chunk_review_receipts_version": 1}
+                       if reusable.get("annotation_audit", {}).get(
+                           "chunk_review_receipts_version") == 1 else {}),
                 }
                 atomic_json(annotation_report_path, report)
                 return {"run_dir": str(self.run_dir), **report}
@@ -221,6 +256,11 @@ class ChineseAnnotationHarness(ChapterHarness):
             # Guard against continuity repair or any other concurrent editor.
             if chapter_path.read_bytes() != original_bytes:
                 raise RuntimeError("chapter.txt changed during annotation; refusing stale reader")
+            chunk_review_receipts = persist_chunk_attempts(
+                self.run_dir, chunks, annotated, surface_key="text")
+            per_chunk_review_proof = not (
+                self.args.annotation_mode == "constrained-delta"
+                and self.args.annotation_review_policy == "chapter")
             reader = {
                 "title": str(outline.get("chapter_title", self.run_dir.name)),
                 "level": expected_level,
@@ -233,11 +273,12 @@ class ChineseAnnotationHarness(ChapterHarness):
                     "focus_vocabulary_sha256": self.focus_vocabulary_sha256,
                     "chapter_sha256": chapter_hash,
                     "chunks": len(annotated),
+                    **({"chunk_review_receipts_version": 1,
+                        "chunk_review_receipts": chunk_review_receipts}
+                       if per_chunk_review_proof else {}),
                     "attempts_per_chunk": [len(item["attempts"]) for item in annotated],
                     "all_reviewed": all(
-                        item["resolved"] and item.get("reviewed", True) is True
-                        and (item["attempts"][-1].get("review", {}).get("verdict") == "pass"
-                             or item.get("acceptance_state") == "reviewed_and_remediated")
+                        annotation_review_is_complete(item, self.run_dir)
                         for item in annotated
                     ),
                     **({
@@ -294,6 +335,8 @@ class ChineseAnnotationHarness(ChapterHarness):
                 raise RuntimeError("chapter.txt changed while publishing reader")
             report = {
                 "status": "complete", "reused": False,
+                **({"chunk_review_receipts_version": 1}
+                   if per_chunk_review_proof else {}),
                 "chapter_sha256": chapter_hash,
                 "reader_sha256_before": prior_reader_hash,
                 "reader_sha256": sha256_bytes(prior_reader_path.read_bytes()),
