@@ -521,5 +521,94 @@
         "sha256": "3274930ff93b80c7b9bd57d8d0e7695ebf8d34271682f39fb3588607182fb5c4"
       }
     ]
+  },
+  "reviewed_primary_source_smoke_20261005": {
+    "status": "bounded_final_review_rejected",
+    "accepted": false,
+    "production_equivalence": false,
+    "targeted_repairs_completed": 3,
+    "final_reviewer_objection": "Topic link attachment; exact recorded full range contradicts the shortened surface asserted by reviewer. Original rejection remains unchanged.",
+    "additional_shared_gap": "Approved run research was not carried into derived production reviews across language callers. Fix and new whole-path smoke required.",
+    "production_restarted": false,
+    "artifacts": [
+      {
+        "path": "runs/maintenance/20261003/smokes/reviewed-primary-source-acceptance-20261005/third-derived-run-output/outcome.json",
+        "sha256": "6daabab6e533ebd733b19c0f64f02dbc4c19c9c3136bdcefe8bb2576799bef1d"
+      },
+      {
+        "path": "runs/maintenance/20261003/smokes/reviewed-primary-source-acceptance-20261005/third-derived-run-output/bounded-final-replay.json",
+        "sha256": "220e374c00f102dd8fb4765d456ed67d92d8be497aafac422f6185e1df9d8f4d"
+      },
+      {
+        "path": "runs/maintenance/20261003/checks/source-smoke-topic-range-finding-20261005.json",
+        "sha256": "ef8ba0faf70faab2d7f70161b17344e8a9645fd6399910144ed2e9db53e9864b"
+      }
+    ]
+  },
+  "pending_worker_correction_recovery_20261005": {
+    "status": "independently_audited_cache_recovery",
+    "commit": "de223c23",
+    "model_calls": 0,
+    "recovered_original_jobs": 6,
+    "adjudication_cleared": 1,
+    "adjudication_uncertain": 1,
+    "validated_plans_or_patches": 4,
+    "chunk_acceptance_claim": false,
+    "tests": 86,
+    "first_failure_evidence_preserved": true,
+    "artifacts": [
+      {
+        "path": "runs/maintenance/20261003/checks/topik4-six-pending-corrections-recovered-20261005.json",
+        "sha256": "09063b433934ebc346f4a809649b7954e77fa90bdb6cf7a55c13ebda6583aa67"
+      }
+    ]
+  },
+  "authenticated_run_research_actual_caller_smoke_20261005": {
+    "status": "isolated_whole_path_passed",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "source_characters": 210,
+    "source_start": 2231,
+    "parent_characters": 6754,
+    "exact_production_chunk_and_review_callbacks": true,
+    "changed_paths": [
+      "/segments/68/form_steps/0/meaning_en"
+    ],
+    "targeted_repairs": 1,
+    "fresh_independent_review": "ordinary_approved_without_issues",
+    "effective_acceptance": true,
+    "publication_chunk_verifier": true,
+    "offline_repair_and_publication_replay_after_physical_database_cleanup": true,
+    "removed_finished_state_directories": 5,
+    "elapsed_seconds": 403.6132981899973,
+    "chapter_published": false,
+    "production_restarted": false,
+    "mixed_finding_evidence": "68 actionable via authenticated carried primary research; 35/97 unsupported using approved formation/construction lessons. Raw and host classifications agree.",
+    "tests_reported_separately": {
+      "shared_focused_latest": 203,
+      "root_korean_scheduler": 164,
+      "host_chinese_japanese_publication_broad": 519,
+      "independent_chinese_japanese_carry_publication": 500,
+      "independent_latest_korean_helper_focus": 82
+    },
+    "overlap_note": "Suite totals overlap; do not sum. Smoke acceptance is not chapter publication.",
+    "artifacts": [
+      {
+        "path": "runs/maintenance/20261003/smokes/authenticated-carry-caller-acceptance-20261005/run-output/preflight.json",
+        "sha256": "f320f4b4edd11b5b9b21b16d5014cd051b833b30c82efee96b5503a93a1433ad"
+      },
+      {
+        "path": "runs/maintenance/20261003/smokes/authenticated-carry-caller-acceptance-20261005/run-output/captured-production-preflight.json",
+        "sha256": "055b2fbdd3d3fd671d476848fc93b61eac414b6cdf62c3e63e5e978d1356baeb"
+      },
+      {
+        "path": "runs/maintenance/20261003/smokes/authenticated-carry-caller-acceptance-20261005/run-output/captured-production-repair-preflight.json",
+        "sha256": "249f1bca132c6d1fe073c5ecc19453d21825c1ccef2a89564a190a3b198a984f"
+      },
+      {
+        "path": "runs/maintenance/20261003/smokes/authenticated-carry-caller-acceptance-20261005/run-output/accepted-result.json",
+        "sha256": "d1d51645ed10611c14e2bf770e3a661cb11a59765c2c7f3ab612b6718b4639d2"
+      }
+    ]
   }
 }

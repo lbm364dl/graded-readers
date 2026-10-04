@@ -200,3 +200,32 @@ Worker runtime databases are disposable scratch, not review evidence. Seed only
 the database schema and required migration/backfill markers, never coordinator
 conversation history. Bound seed size and clean private databases only after
 worker exit and log retention. Verify accepted receipts after physical cleanup.
+
+Expose authenticated primary records for exact candidate-linked lexical
+identities to repair, review and uncertainty research. Reuse retained source
+text and editorial provenance rather than rediscovering a record in a different
+dictionary. A reviewed lexical record is evidence, not approval of an occurrence
+gloss or a published dictionary lesson. Preserve historical receipt contexts and
+omit empty source additions so unaffected cached reviews remain reusable.
+
+Preserve independently reviewed research facts through subsequent targeted
+repairs, fresh reviews and adjudication. Authenticate their original research,
+citations and critic receipts, and bind reuse to the exact source position and
+compatible target identity and exact target source interval. Recompute that
+interval from the current tap geometry: an unchanged segment row or index can
+refer to a different repeated occurrence after earlier taps are merged.
+A changed semantic value does not erase applicable
+research, but an unrelated occurrence cannot inherit it merely because its text
+matches. Research evidence never approves the derived candidate. Verify this
+propagation through the actual language callers and publication replay before
+treating a smoke with manually enriched context as production-equivalent.
+At assembly and publication, compare carried source positions with the actual
+chapter, chunk index and offset. Replaying a receipt against its own saved
+position cannot prove that it belongs to the current occurrence; test an
+identical-text receipt transplanted to another position as a negative case.
+
+When reviewing a ranged grammar link, inspect its entire recorded source form
+and the representation's attachment rules. A published first-range index is not
+necessarily the tap bearing the grammatical ending. Do not shorten a recorded
+phrase in a finding and then reject its valid range. Out-of-range attachments,
+nonreconstructing surfaces and incorrect grammatical analyses remain defects.

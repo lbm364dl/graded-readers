@@ -948,6 +948,24 @@ def _worker_prompt(inputs: dict) -> str:
     return (_versioned_instructions(inputs.get('host_binding_policy_version', 1)) + ('\n\n' + policy if policy else '') + '\nThe full candidate, review, history, and organized references are in the immutable annotation_adjudication input. Return the required JSON object.\n')
 
 
+def _validate_carried_context(run_dir, context, candidate, source_text,
+                              language, representation, current_review, references):
+    from pipeline.annotation_reference_carry import CARRY_FIELD, bind_carried_research, ResearchCarryError
+    packet = context.get(CARRY_FIELD) if isinstance(context, dict) else None
+    if packet is None and isinstance(context, dict) and isinstance(context.get('chunk_review_context'), dict):
+        packet = context['chunk_review_context'].get(CARRY_FIELD)
+    if packet is None:
+        return  # Historical requests retain their exact original input contract.
+    try:
+        bound = bind_carried_research(run_dir, packet, candidate=candidate, source_text=source_text,
+            language=language, representation=representation, context=context, current_review=current_review)
+    except ResearchCarryError as exc:
+        raise AdjudicationError('Carried research context does not authenticate') from exc
+    actual = {key: value for key, value in references.items() if key.startswith('carried-research-')}
+    if actual != bound['references']:
+        raise AdjudicationError('Carried research references differ from exact authenticated current targets')
+
+
 async def _adjudicate_once(runner: Any, run_dir: Path, *, language: str,
         representation: str, candidate: Any, current_review: dict, prior_history: Any,
         context: Any, known_reference_input: dict, deterministic_gate_evidence: dict,
@@ -958,6 +976,8 @@ async def _adjudicate_once(runner: Any, run_dir: Path, *, language: str,
         raise AdjudicationError('Adjudication requires shared gpt-6-luna low policy')
     if isinstance(runner, CodexRunner) and runner.legacy_tool_restrictions:
         raise AdjudicationError('Adjudication requires the organized tools-enabled workspace profile')
+    _validate_carried_context(run_dir, context, candidate, source_text, language,
+        representation, current_review, known_reference_input)
     inputs = _build_inputs(language=language, representation=representation, candidate=candidate,
         current_review=current_review, prior_history=prior_history, context=context,
         known_reference_input=known_reference_input,
@@ -1006,6 +1026,8 @@ def _verify_adjudication_once(run_dir: Path, evidence: dict, *, language: str,
         context: Any, known_reference_input: dict, deterministic_gate_evidence: dict,
         normal_review_receipt: dict, source_text: str | None = None) -> dict:
     """Replay a saved receipt; no model call is made and inputs must match exactly."""
+    _validate_carried_context(run_dir, context, candidate, source_text, language,
+        representation, current_review, known_reference_input)
     inputs = _build_inputs(language=language, representation=representation, candidate=candidate,
         current_review=current_review, prior_history=prior_history, context=context,
         known_reference_input=known_reference_input,

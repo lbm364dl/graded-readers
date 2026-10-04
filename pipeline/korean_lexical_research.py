@@ -256,6 +256,61 @@ def candidates(path=REGISTRY):
         for e in identities.values()]
 
 
+
+def candidate_lexical_identities(candidate):
+    """Exact explicit lexical identities, including linked lexical expressions.
+
+    Korean-flat stages currently carry grammar IDs only. If an explicit lexical
+    identity is supplied on a displayed stage, include it without guessing from
+    its spelling. Never treat a grammar-entry ID as a lexical identity.
+    """
+    identities = set()
+    for segment in candidate.get('segments', []):
+        if segment.get('lexical_id'):
+            identities.add(segment['lexical_id'])
+        for stage in segment.get('form_steps', []):
+            if stage.get('lexical_id'):
+                identities.add(stage['lexical_id'])
+    identities.update(row['entry_id'] for row in candidate.get('expression_links', [])
+                      if row.get('entry_id'))
+    return identities
+
+
+def reviewed_primary_sources(identities, path=REGISTRY):
+    """Expose exact reviewed lexical records, not approval of occurrence glosses.
+
+    Reuse the validated registry's captured text; spelling alone never selects
+    a homonym. Full proposal/review/evidence digests retain editorial provenance.
+    Missing primary text remains missing rather than becoming a URL-only source.
+    """
+    import copy
+    candidates(path)  # Authenticate every retained editorial/source digest.
+    if not path.exists():
+        return []
+    wanted = set(identities)
+    selected = {}
+    for review in json.loads(path.read_text())['reviews']:
+        for entry in review['proposal']['entries']:
+            if entry['id'] not in wanted:
+                continue
+            records = [record for batch in review.get('primary_evidence', [])
+                       for record in batch.get('records', [])
+                       if record.get('primary_url') == entry['primary_url']
+                       and isinstance(record.get('text'), str) and record['text'].strip()]
+            if not records:
+                continue
+            selected[entry['id']] = {
+                'reference_id': f"reviewed-lexical-primary:{entry['id']}",
+                'lexical_id': entry['id'], 'headword': entry['headword'],
+                'pos': entry['pos'], 'primary_url': entry['primary_url'],
+                'primary_records': copy.deepcopy(records),
+                'reviewed_lexical_entry': copy.deepcopy(entry),
+                'provenance': {key: review[key] for key in
+                    ('proposal_digest', 'review_digest', 'primary_evidence_digest')},
+                'scope': 'Exact independently reviewed lexical identity and retained primary record. This is source evidence, not approval of the current occurrence meaning or promotion into a published word lesson.'}
+    return [selected[key] for key in sorted(selected)]
+
+
 def usage_evidence(occurrences, path=REGISTRY, *, related_forms=False):
     """Reuse reviewed usage investigations without treating them as new lemmas."""
     candidates(path)  # Validate the review, source and scope digests first.

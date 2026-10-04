@@ -4,6 +4,10 @@
 from __future__ import annotations
 
 from pipeline.annotation_adjudication_budget import AdjudicationBudget
+from pipeline.annotation_reference_carry_callers import (
+    bind_lifecycle_carry, register_chunk_positions, remember_lifecycle_carry,
+    validate_carry_context,
+)
 
 import argparse
 import asyncio
@@ -27,6 +31,8 @@ from pipeline.annotation_publication import (
     bind_review_job, normal_review_receipt, persist_chunk_attempts,
     verify_child_job_receipt, verify_chunk_attempt_receipts,
     verify_normal_review_receipt,
+    verify_review_carried_research,
+    verify_item_research_positions,
 )
 from pipeline.chunk_scheduler import map_chunks
 from pipeline.annotation_review_guidance import FORM_STAGE_EVIDENCE_GUIDANCE
@@ -141,6 +147,13 @@ def verify_japanese_chunk_review(item: dict[str, Any], source_text: str,
         expected_context = {"chunk_text": source_text,
                             "grammar_knowledge": grammar,
                             "story_plan": story_plan}
+        from pipeline.annotation_reference_carry import CARRY_FIELD
+        for key in ('annotation_source_position', CARRY_FIELD):
+            if key in replay['context']:
+                expected_context[key] = replay['context'][key]
+        carried = validate_carry_context(run_dir, expected_context, candidate=candidate,
+            source_text=source_text, language='ja', representation='japanese-annotation',
+            current_review=review)
         policy_reference = {
             "approved-grammar": {"kind": "approved_lesson",
                 "content": grammar.get("approved_entries", [])},
@@ -149,6 +162,7 @@ def verify_japanese_chunk_review(item: dict[str, Any], source_text: str,
                     "review_policy": review.get("review_policy", ""),
                     "dictionary_policy": JAPANESE_ANNOTATION_CHUNK_POLICY}},
         }
+        policy_reference.update(carried['references'])
         candidate_value = {"segments": item.get("segments"),
                            "grammar_overlays": item.get("grammar_overlays")}
         row_value = {"segments": candidate.get("segments"),
@@ -182,6 +196,7 @@ def verify_japanese_chunk_review(item: dict[str, Any], source_text: str,
             job_dir = Path(run_dir) / "agents" / job
             meta = json.loads((job_dir / "meta.json").read_text(encoding="utf-8"))
             raw = verify_child_job_receipt(run_dir, child)
+            verify_review_carried_research(run_dir, child, candidate=candidate, source_text=source_text)
             if (meta.get("return_code") != 0
                     or meta.get("model") != "gpt-6-luna"
                     or meta.get("effort") != "low"
@@ -5401,6 +5416,13 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
         target_context = {"annotation_issue_targets_validation": {
             "candidate": annotation, "source_text": chunk,
             "representation": "japanese-annotation", "require_typed": True}}
+        carried_context, _ = bind_lifecycle_carry(self, index, chunk, annotation,
+            language='ja', representation='japanese-annotation')
+        if carried_context:
+            from pipeline.annotation_reference_carry import CARRIED_RESEARCH_GUIDANCE
+            prompt += '\n\n' + CARRIED_RESEARCH_GUIDANCE
+            boundary_prompt += '\n\n' + CARRIED_RESEARCH_GUIDANCE
+            target_context.update(carried_context)
         general_review, boundary_review = await asyncio.gather(
             self.runner.call(
                 f"annotations/chunk_{index:04d}/{stage}_review", prompt,
@@ -5748,6 +5770,12 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                         current_contract_passes = False
                 elif not verify_japanese_chunk_review(cached, chunk, Path(run_dir)):
                     current_contract_passes = False
+                if current_contract_passes:
+                    try:
+                        verify_item_research_positions(run_dir, cached,
+                            getattr(self, '_annotation_source_positions', {}).get(index))
+                    except (OSError, ValueError, KeyError, TypeError):
+                        current_contract_passes = False
                 if not current_contract_passes:
                     cached = None
             if cached is not None and current_contract_passes and (
@@ -5852,6 +5880,11 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                 if contract:
                     raise ValueError(f"Japanese annotation patch failed local checks: {contract}")
 
+            repair_context, _ = bind_lifecycle_carry(self, index, chunk, base,
+                language='ja', representation='japanese-annotation',
+                context={"chunk_text": chunk,
+                    "grammar_knowledge": japanese_semantic_repair_grammar_knowledge(),
+                    **(adjudication_context or {})})
             semantic = await repair_annotation(
                 self,
                 f"annotations/chunk_{index:04d}/{stage}_semantic",
@@ -5859,9 +5892,7 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                 findings.get("issues", []),
                 representation="japanese-annotation",
                 language="ja",
-                context={"chunk_text": chunk,
-                         "grammar_knowledge": japanese_semantic_repair_grammar_knowledge(),
-                         **(adjudication_context or {})},
+                context=repair_context,
                 validate_candidate=validate_semantic_candidate,
                 refresh=self.refresh_annotation_chunk(index),
             )
@@ -5945,25 +5976,32 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                                  source_digest=evidence_digest(chunk))
                 if len(receipt["components"]) != 2:
                     raise ValueError("Japanese adjudication requires both independent review receipts")
+                fresh_context, carried_references = bind_lifecycle_carry(self, index, chunk, result,
+                    language='ja', representation='japanese-annotation',
+                    context={"chunk_text": chunk, "grammar_knowledge": grammar_knowledge,
+                        "story_plan": getattr(self, "story_vocabulary_plan", {"terms": []})},
+                    current_review=findings, include_position=True)
+                references.update(carried_references)
                 if not adjudication_budget.claim(result):
                     raise RuntimeError("Adjudication candidate budget changed before invocation")
                 adjudication = await adjudicate_annotation_review(
                     self.runner, Path(self.run_dir), language="ja",
                     representation="japanese-annotation", candidate=result,
                     current_review=findings, prior_history=attempts,
-                    context={"chunk_text": chunk, "grammar_knowledge": grammar_knowledge,
-                             "story_plan": getattr(self, "story_vocabulary_plan", {"terms": []})},
+                    context=fresh_context,
                     known_reference_input=references,
                     deterministic_gate_evidence=gate, normal_review_receipt=receipt,
                     source_text=chunk)
+                remember_lifecycle_carry(self, index, adjudication, candidate=result,
+                    source_text=chunk, language='ja', representation='japanese-annotation',
+                    context=fresh_context)
                 attempt_record["adjudication"] = adjudication
                 if adjudication["status"] == "cleared":
                     attempt_record["effective_review"] = {"kind": "adjudicated",
                                                           "evidence": adjudication}
                     attempt_record["adjudication_replay"] = {
                     "prior_history": copy.deepcopy(attempts),
-                        "context": {"chunk_text": chunk, "grammar_knowledge": grammar_knowledge,
-                                    "story_plan": getattr(self, "story_vocabulary_plan", {"terms": []})},
+                        "context": fresh_context,
                         "known_reference_input": references,
                         "deterministic_gate_evidence": gate,
                         "normal_review_receipt": receipt}
@@ -6101,6 +6139,10 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                 if len(receipt["components"]) != 2:
                     raise ValueError("Japanese adjudication requires both independent review receipts")
                 history = copy.deepcopy(attempts)
+                context, carried_references = bind_lifecycle_carry(self, index, chunk, result,
+                    language='ja', representation='japanese-annotation', context=context,
+                    current_review=findings, include_position=True)
+                references.update(carried_references)
                 if not adjudication_budget.claim(result):
                     raise RuntimeError("Adjudication candidate budget changed before invocation")
                 adjudication = await adjudicate_annotation_review(
@@ -6110,6 +6152,9 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                     known_reference_input=references,
                     deterministic_gate_evidence=gate, normal_review_receipt=receipt,
                     source_text=chunk)
+                remember_lifecycle_carry(self, index, adjudication, candidate=result,
+                    source_text=chunk, language='ja', representation='japanese-annotation',
+                    context=context)
                 attempt_record["adjudication"] = adjudication
                 if adjudication["status"] == "cleared":
                     attempt_record["effective_review"] = {"kind": "adjudicated",
@@ -7473,6 +7518,7 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
         """
         if not chunks:
             return []
+        register_chunk_positions(self, chunks)
         return await map_chunks(
             chunks,
             self.annotate_chunk,
@@ -7493,6 +7539,7 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
             self.annotation_chunk_target,
             self.annotation_chunk_maximum,
         )
+        register_chunk_positions(self, chunks, parent_text=chapter)
         annotated = await self.annotate_chunks_progressively(chunks)
         segments = [segment for item in annotated for segment in item["segments"]]
         if "".join(segment["surface"] for segment in segments) != chapter:

@@ -303,6 +303,13 @@ async def repair_annotation(
         raise ValueError("semantic annotation repair needs a candidate and nonempty review issues")
     _validate_repair_context(language, representation, context)
     run_dir = Path(harness.run_dir)
+    if isinstance(context, dict) and context.get('reviewed_annotation_research') is not None:
+        from pipeline.annotation_reference_carry import bind_carried_research, CARRIED_RESEARCH_GUIDANCE
+        if not isinstance(context.get('chunk_text'), str):
+            raise ValueError('Carried research repair requires the exact chunk_text')
+        bind_carried_research(run_dir, context['reviewed_annotation_research'], candidate=candidate,
+            source_text=context['chunk_text'], language=language, representation=representation, context=context)
+        context = {**context, 'carried_research_guidance': CARRIED_RESEARCH_GUIDANCE}
     plan_schema_path, patch_schema_path = _schemas(run_dir)
     plan_job, patch_job, assembly_job = f"{job}_plan", f"{job}_patch", f"{job}_assembly"
     shared_context = {**(context or {}), "language": language,
@@ -642,6 +649,17 @@ def replay_annotation_repair(
         child_meta, value = _read_json(directory / "meta.json"), _read_json(directory / "result.json")
         if child_meta.get("return_code") != 0 or digest(value) != expected_digest:
             raise ValueError(f"annotation repair child evidence changed: {job}")
+        index_path = directory / 'workspace' / 'INDEX.json'
+        if index_path.exists():
+            rows = _read_json(index_path)
+            if any(row.get('field') == 'reviewed_annotation_research' for row in rows):
+                from pipeline.agent_harness import CodexRunner
+                from pipeline.annotation_reference_carry import bind_carried_research
+                CodexRunner._check_tool_profile(directory, 'offline', child_meta)
+                context = {row['field']: _read_json(directory / 'workspace' / row['path']) for row in rows}
+                bind_carried_research(run_dir, context['reviewed_annotation_research'], candidate=base,
+                    source_text=context['chunk_text'], language=context['language'],
+                    representation=context['representation'], context=context)
         return value
 
     replan = meta.get("replan")

@@ -167,7 +167,59 @@ def verify_normal_review_receipt(run_dir: Path, receipt: Any, *, review: Any,
            for component in components):
         raise AnnotationPublicationError("ordinary review children are bound to different inputs")
     results = [verify_child_job_receipt(run_dir, child) for child in components]
+    for child in components:
+        verify_review_carried_research(run_dir, child, candidate=candidate, source_text=source_text)
     return results
+
+
+def verify_review_carried_research(run_dir, child, *, candidate, source_text):
+    """Replay only the additive carry field in the authenticated worker inputs."""
+    from pipeline.annotation_reference_carry import CARRY_FIELD
+    from pipeline.annotation_reference_carry_callers import validate_carry_context
+    root = Path(run_dir) / 'agents' / child['job'] / 'workspace'
+    index = root / 'INDEX.json'
+    if not index.exists():
+        return  # Historical nonworkspace receipts have no carry contract.
+    rows = json.loads(index.read_text(encoding='utf-8'))
+    fields = {}
+    for row in rows:
+        if row['field'] in (CARRY_FIELD, 'annotation_source_position',
+                             'annotation_issue_targets_validation'):
+            value = json.loads((root / row['path']).read_text(encoding='utf-8'))
+            if row['field'] in fields and fields[row['field']] != value:
+                raise AnnotationPublicationError('Carried review inputs disagree')
+            fields[row['field']] = value
+    if CARRY_FIELD not in fields:
+        return
+    target = fields.get('annotation_issue_targets_validation', {})
+    representation = target.get('representation')
+    language = {'chinese-annotation': 'zh', 'japanese-annotation': 'ja'}.get(representation)
+    if language is None or target.get('candidate') != candidate or target.get('source_text') != source_text:
+        raise AnnotationPublicationError('Carried review evidence is not bound to the current inputs')
+    validate_carry_context(run_dir, fields, candidate=candidate, source_text=source_text,
+        language=language, representation=representation)
+
+
+def verify_item_research_positions(run_dir, item, expected_position):
+    """Bind new research-bearing evidence to its actual assembled occurrence."""
+    for attempt in item.get('attempts', []):
+        context = attempt.get('adjudication_replay', {}).get('context', {})
+        if ('annotation_source_position' in context
+                and context['annotation_source_position'] != expected_position):
+            raise AnnotationPublicationError('Adjudication research source position differs from assembled occurrence')
+        receipt = attempt.get('normal_review_receipt', {})
+        for child in receipt.get('components', []):
+            # Authenticate/contain the path before inspecting organized inputs.
+            child_job_receipt(run_dir, child['job'])
+            workspace = Path(run_dir) / 'agents' / child['job'] / 'workspace'
+            index = workspace / 'INDEX.json'
+            if not index.exists():
+                continue
+            for row in json.loads(index.read_text(encoding='utf-8')):
+                if row['field'] == 'annotation_source_position':
+                    position = json.loads((workspace / row['path']).read_text(encoding='utf-8'))
+                    if position != expected_position:
+                        raise AnnotationPublicationError('Review research source position differs from assembled occurrence')
 
 
 class AnnotationPublicationError(ValueError):
@@ -305,6 +357,9 @@ def verify_chunk_attempt_receipts(run_dir: Path, reader: dict[str, Any],
         kind = item.get("effective_review", {}).get("kind") if isinstance(item.get("effective_review"), dict) else "ordinary"
         if receipt.get("review_kind") != kind:
             raise AnnotationPublicationError("chunk review kind differs from its receipt")
+        verify_item_research_positions(run_dir, item, {
+            'chunk_index': index, 'source_text_digest': digest(source_chunk),
+            'parent_text_digest': digest(source_text), 'source_start': start})
         result.append(item)
         expected_start = end
     if expected_start != len(source_text):

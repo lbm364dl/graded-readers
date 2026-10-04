@@ -112,6 +112,33 @@ Fresh Korean repair and chunk-review inputs include the complete already
 approved grammar registry so an omitted link cannot hide a prerequisite lesson.
 Japanese already provides its full reviewed registry; Chinese provisional keys
 do not become approved lessons. Historical subset contexts retain exact replay.
+Fresh Korean repair and review inputs also carry retained primary records for
+exact candidate-linked supplemental lexical identities, including lexical form
+stages. The lexical registry's proposal, independent review and source digests
+are verified before reuse. Adjudication and uncertainty research receive these
+same records; a standard-dictionary identity does not require rediscovery in the
+Korean Basic Dictionary. These records are source evidence, not occurrence or
+word-lesson approval. Empty additions are omitted and historical receipts keep
+their original contexts. Chinese and Japanese have no equivalent supplemental
+lexical registry to promote through this path.
+
+Reviewed run research is separate from dictionary publication. The shared
+`annotation_reference_carry.py` authenticates the retained researcher, source
+capture, critic and adjudication chain before exposing facts to a derived
+candidate. Carry packets bind the language, representation, parent text, source
+position and compatible tap/identity geometry. Semantic repairs can retain
+applicable facts; boundary or identity changes require evidence to be established
+again. New review and repair inputs include the authenticated packet, and
+publication replays that exact packet rather than accepting the earlier research
+verdict as candidate approval.
+
+The descriptor-only `annotation-research/run-carry-sources.json` index supports
+resume at the same source position. Its entries name immutable evidence; they
+do not store approval shortcuts or publish lessons. Concurrent updates are
+serialized, and loading reauthenticates the named receipts. Historical contexts
+without the carry marker keep their original replay contract. Full-path smoke
+acceptance remains necessary before resuming production after a carry change.
+
 All three callers use `annotation_adjudication_budget.py`: at most three distinct
 candidate digests per chunk lifecycle, including Japanese tail repairs. A changed
 candidate can receive adjudication after a fresh rejected review; an unchanged

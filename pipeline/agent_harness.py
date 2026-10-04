@@ -4,6 +4,10 @@
 from __future__ import annotations
 
 from pipeline.annotation_adjudication_budget import AdjudicationBudget
+from pipeline.annotation_reference_carry_callers import (
+    bind_lifecycle_carry, register_chunk_positions, remember_lifecycle_carry,
+    validate_carry_context,
+)
 
 import argparse
 import asyncio
@@ -26,6 +30,7 @@ from pipeline.annotation_publication import (
     bind_review_job, child_job_receipt, normal_review_receipt,
     persist_chunk_attempts, verify_normal_review_receipt,
     verify_child_job_receipt,
+    verify_review_carried_research,
 )
 
 from jsonschema import Draft202012Validator
@@ -401,9 +406,16 @@ def is_verified_adjudicated_annotation(item: dict[str, Any], run_dir: Path | Non
                 or verified.get("approved") is not True):
             return False
         source_text = replay["source_text"]
-        if (replay.get("context") != {
-                "chunk_text": source_text,
-                "grammar_knowledge": chinese_semantic_repair_grammar_knowledge(candidate)}
+        expected_context = {"chunk_text": source_text,
+            "grammar_knowledge": chinese_semantic_repair_grammar_knowledge(candidate)}
+        from pipeline.annotation_reference_carry import CARRY_FIELD
+        for key in ('annotation_source_position', CARRY_FIELD):
+            if key in replay['context']:
+                expected_context[key] = replay['context'][key]
+        carried = validate_carry_context(run_dir, expected_context, candidate=candidate,
+            source_text=source_text, language='zh', representation='chinese-annotation',
+            current_review=review)
+        if (replay.get("context") != expected_context
                 or not isinstance(source_text, str)
                 or "".join(str(row.get("text", "")) for row in candidate["segments"]
                            if isinstance(row, dict)) != source_text
@@ -429,6 +441,7 @@ def is_verified_adjudicated_annotation(item: dict[str, Any], run_dir: Path | Non
                 "translation_policy": CHINESE_TRANSLATION_POLICY,
                 "pinyin_policy": CHINESE_PINYIN_POLICY,
             }}}
+        expected_references.update(carried['references'])
         if replay.get("known_reference_input") != expected_references:
             return False
         expected_gate = {"passed": True, "issues": [],
@@ -456,6 +469,7 @@ def is_verified_adjudicated_annotation(item: dict[str, Any], run_dir: Path | Non
             return False
         meta = json.loads((job_dir / "meta.json").read_text(encoding="utf-8"))
         raw_review = verify_child_job_receipt(run_dir, component)
+        verify_review_carried_research(run_dir, component, candidate=candidate, source_text=source_text)
         if (meta.get("return_code") != 0 or meta.get("model") != "gpt-6-luna"
                 or meta.get("effort") != "low"
                 or meta.get("fingerprint") != component.get("input_digest")
@@ -2620,13 +2634,19 @@ COLUMNS=[CHAR_START,CHAR_END,TEXT,TYPE,PINYIN,MEANING_EN]
 
 GRAMMAR OVERLAYS (existing exact offset objects):
 {compact(annotation.get("grammar_overlays", []))}"""
+        carried_context, _ = bind_lifecycle_carry(self, index, chunk, annotation,
+            language='zh', representation='chinese-annotation')
+        if carried_context:
+            from pipeline.annotation_reference_carry import CARRIED_RESEARCH_GUIDANCE
+            prompt += '\n\n' + CARRIED_RESEARCH_GUIDANCE
         review = await self.runner.call(
             f"annotations/chunk_{index:04d}/{stage}_review", prompt,
             SCHEMAS / "annotation-review-targets.schema.json",
             effort or self.args.annotation_review_effort, refresh=self.args.refresh,
             workspace_context={"annotation_issue_targets_validation": {
                 "candidate": annotation, "source_text": chunk,
-                "representation": "chinese-annotation", "require_typed": True}},
+                "representation": "chinese-annotation", "require_typed": True},
+                **carried_context},
         )
         validate_issue_targets(review, annotation, source_text=chunk,
                                representation="chinese-annotation", require_typed=True)
@@ -2881,6 +2901,10 @@ GRAMMAR OVERLAYS (existing exact offset objects):
                         "source_text_digest": evidence_digest(chunk)}
                 adjudication_context = {"chunk_text": chunk,
                     "grammar_knowledge": chinese_semantic_repair_grammar_knowledge(result)}
+                adjudication_context, carried_references = bind_lifecycle_carry(
+                    self, index, chunk, result, language='zh', representation='chinese-annotation',
+                    context=adjudication_context, current_review=review, include_position=True)
+                policy_reference.update(carried_references)
                 adjudication_history = copy.deepcopy(attempts)
                 if not adjudication_budget.claim(result):
                     raise RuntimeError("Adjudication candidate budget changed before invocation")
@@ -2891,6 +2915,9 @@ GRAMMAR OVERLAYS (existing exact offset objects):
                     known_reference_input=policy_reference,
                     deterministic_gate_evidence=gate, normal_review_receipt=receipt,
                     source_text=chunk)
+                remember_lifecycle_carry(self, index, adjudication, candidate=result,
+                    source_text=chunk, language='zh', representation='chinese-annotation',
+                    context=adjudication_context)
                 if adjudication.get("status") == "cleared":
                     from pipeline.annotation_adjudication import verify_adjudication_evidence
                     adjudication = verify_adjudication_evidence(
@@ -2947,6 +2974,11 @@ GRAMMAR OVERLAYS (existing exact offset objects):
                         if contract:
                             raise ValueError(f"Chinese annotation patch failed local checks: {contract}")
 
+                    repair_context, _ = bind_lifecycle_carry(self, index, chunk, result,
+                        language='zh', representation='chinese-annotation',
+                        context={"chunk_text": chunk,
+                            "grammar_knowledge": chinese_semantic_repair_grammar_knowledge(result),
+                            **adjudication_context_extra})
                     semantic = await repair_annotation(
                         self,
                         f"annotations/chunk_{index:04d}/semantic_repair_{attempt + 1:02d}",
@@ -2954,9 +2986,7 @@ GRAMMAR OVERLAYS (existing exact offset objects):
                         repair_findings["issues"],
                         representation="chinese-annotation",
                         language="zh",
-                        context={"chunk_text": chunk,
-                                 "grammar_knowledge": chinese_semantic_repair_grammar_knowledge(result),
-                                 **adjudication_context_extra},
+                        context=repair_context,
                         validate_candidate=validate_semantic_candidate,
                         refresh=self.args.refresh,
                     )
@@ -3886,6 +3916,7 @@ GRAMMAR OVERLAYS (existing exact offset objects):
             publish_chapter_candidate(self.run_dir, chapter, final_status)
             if final_status == "complete" and not self.args.skip_annotations:
                 chunks = self.chinese_annotation_chunks(chapter)
+                register_chunk_positions(self, chunks, parent_text=chapter)
                 if getattr(self.args, "annotation_mode", "generative") == "constrained-delta":
                     annotated = await self.annotate_chapter_constrained_delta(chapter, chunks)
                 else:
@@ -4607,6 +4638,7 @@ class AnnotationOnlyHarness(ChapterHarness):
         self.write_annotation_manifest("running")
         try:
             chunks = self.chinese_annotation_chunks(self.chapter)
+            register_chunk_positions(self, chunks, parent_text=self.chapter)
             if self.args.annotation_mode == "constrained-delta":
                 annotated = await self.annotate_chapter_constrained_delta(
                     self.chapter, chunks

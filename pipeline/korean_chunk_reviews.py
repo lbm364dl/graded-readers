@@ -67,8 +67,8 @@ def _form_guidance_digest():
     return digest(FORM_STAGE_EVIDENCE_GUIDANCE)
 
 
-async def review_chunk(runner, run_dir, *, annotation, text, context, policy):
-    from pipeline.korean_agent_harness import digest, payload, save
+def review_request(annotation, text, context, policy):
+    from pipeline.korean_agent_harness import digest
     inputs = {'annotation': annotation, 'text': text, 'context': context,
               'issue_targets_version': 1}
     instructions = INSTRUCTIONS + '\n' + ISSUE_TARGET_GUIDANCE + '''
@@ -78,7 +78,20 @@ text field; this records the source defect and does not authorize an annotation
 patch to rewrite source text. Do not invent an annotation meaning defect to
 make a prose finding fit the schema.
 '''
+    if context.get('reviewed_annotation_research'):
+        from pipeline.annotation_reference_carry import CARRIED_RESEARCH_GUIDANCE
+        instructions += '\n' + CARRIED_RESEARCH_GUIDANCE
     identity = digest({'inputs': inputs, 'instructions': policy + instructions})
+    return inputs, instructions, identity
+
+
+async def review_chunk(runner, run_dir, *, annotation, text, context, policy):
+    from pipeline.korean_agent_harness import digest, payload, save
+    inputs, instructions, identity = review_request(annotation, text, context, policy)
+    if context.get('reviewed_annotation_research'):
+        from pipeline.annotation_reference_carry import bind_carried_research
+        bind_carried_research(run_dir, context['reviewed_annotation_research'], candidate=annotation,
+            source_text=text, language='ko', representation='korean-flat', context=context)
     job = f'annotation-local-review-{identity}'
     review = await runner.call(job, policy + '\n' + instructions + payload(**inputs),
         contracts.schema_path('chunk-review-targeted'), 'low', tool_profile='offline',
@@ -108,6 +121,10 @@ def verify_review(run_dir, evidence, *, annotation, text, chapter_text, source_s
     root = run_dir / 'agents' / job
     inputs, review, meta = (read(root / name) for name in
                             ('review-input.json', 'result.json', 'meta.json'))
+    if inputs.get('context', {}).get('reviewed_annotation_research'):
+        from pipeline.annotation_reference_carry import bind_carried_research
+        bind_carried_research(run_dir, inputs['context']['reviewed_annotation_research'], candidate=annotation,
+            source_text=text, language='ko', representation='korean-flat', context=inputs['context'])
     version = evidence.get('issue_targets_version')
     if version not in (None, 1) or inputs.get('issue_targets_version') != version:
         raise ValueError('Korean chunk issue target version changed')
@@ -208,6 +225,11 @@ def verify_chunk_review(run_dir, proof, *, annotation, text, chapter_text, sourc
             raise ValueError(f'Korean original review repeats a primary-source identity: {identity}')
         expected_references[identity] = {'kind': 'primary_source', 'content': row}
     official_source_ids = {row['reference_id'] for row in official_sources}
+    if review_context.get('reviewed_annotation_research'):
+        from pipeline.annotation_reference_carry import bind_carried_research
+        expected_references.update(bind_carried_research(run_dir, review_context['reviewed_annotation_research'],
+            candidate=annotation, source_text=text, language='ko', representation='korean-flat',
+            context=review_context, current_review=raw_review)['references'])
     expected_references['review-policy'] = {
         'kind': 'explicit_review_policy',
         'content': adjudication_context.get('review_policy')}
@@ -224,7 +246,7 @@ def verify_chunk_review(run_dir, proof, *, annotation, text, chapter_text, sourc
                 current = expected_reference_sources.get('linguistic_reference')
             elif identity == 'lexical-reference':
                 current = expected_reference_sources.get('lexical_reference')
-            elif identity in official_source_ids:
+            elif identity in official_source_ids or identity.startswith('carried-research-'):
                 current = content
             else:
                 current = expected_reference_sources.get(identity)

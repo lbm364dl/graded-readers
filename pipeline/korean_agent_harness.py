@@ -171,8 +171,9 @@ def annotation_reuse_candidate(run_dir: Path, *, text: str | None = None):
         except (OSError, ValueError, KeyError, ValidationError):
             continue
     # An incomplete checkpoint is never an annotation assembly. It is eligible
-    # only as a source of independently reviewed exact occurrences for a new
-    # reuse plan; each occurrence is reviewed again in the new context.
+    # only as a source of independently reviewed exact occurrences. Unchanged
+    # occurrences can retain their proof after current-context verification;
+    # changed source or review context requires a new independent review.
     for path in (run_dir / 'agents').glob('annotation-partial-checkpoint-*/meta.json'):
         try:
             meta = read(path)
@@ -208,12 +209,13 @@ def annotation_reuse_candidate(run_dir: Path, *, text: str | None = None):
                     annotation = read_annotation_chunk(chunk_path, record)
                     if digest(annotation) != record.get('digest'):
                         continue
-                    from pipeline.korean_chunk_reviews import verify_review
-                    verify_review(run_dir, proof, annotation=annotation, text=chunk_text,
+                    from pipeline.korean_chunk_reviews import verify_chunk_review
+                    verify_chunk_review(run_dir, proof, annotation=annotation, text=chunk_text,
                         chapter_text=old_text, source_start=sum(map(len, old_texts[:index])),
                         allow_stale_form_guidance=True)
                     validate(annotation, contracts.ANNOTATION)
-                    review_inputs = read(run_dir / 'agents' / proof['job'] / 'review-input.json')
+                    normal_proof = proof.get('normal_review', proof)
+                    review_inputs = read(run_dir / 'agents' / normal_proof['job'] / 'review-input.json')
                     valid.append({'source_chunk_index': index, 'record': record,
                                   'review': proof, 'review_context': review_inputs['context'],
                                   'annotation': annotation})
@@ -231,6 +233,43 @@ def annotation_reuse_candidate(run_dir: Path, *, text: str | None = None):
         except (OSError, ValueError, KeyError, TypeError, ValidationError):
             continue
     return max(candidates, key=lambda item: item[0])[1] if candidates else None
+
+
+def reusable_checkpoint_approval(run_dir, row, *, annotation, text, context, policy):
+    """Replay an unchanged occurrence; extra primary evidence cannot rewrite its proof."""
+    from pipeline.korean_chunk_reviews import review_request, verify_chunk_review
+    old = row['review_context']
+    proof = row['review']
+    normal = proof.get('normal_review', proof)
+    _, _, identity = review_request(annotation, text, old, policy)
+    if normal['job'] != f'annotation-local-review-{identity}':
+        raise ValueError('Korean checkpoint review policy changed')
+    for key in set(old) | set(context):
+        if key == 'official_primary_sources':
+            current = {item['reference_id']: item for item in context.get(key, [])}
+            if any(current.get(item['reference_id']) != item for item in old.get(key, [])):
+                raise ValueError('Korean checkpoint primary evidence changed')
+        elif key in ('approved_words', 'approved_grammar'):
+            before = {item['id']: item for item in old.get(key, [])}
+            after = {item['id']: item for item in context.get(key, [])}
+            # Preserve every previously reviewed reference; an expanded
+            # inventory does not change an unchanged occurrence's evidence.
+            if any(after.get(identity) != item for identity, item in before.items()):
+                raise ValueError(f'Korean checkpoint reviewed reference changed: {key}')
+            from pipeline.korean_lexical_research import candidate_lexical_identities
+            used = (candidate_lexical_identities(annotation)
+                    if key == 'approved_words' else
+                    {link.get('entry_id') for link in annotation.get('grammar_links', [])}
+                    | {identity for s in annotation['segments']
+                       for step in s.get('form_steps', [])
+                       for identity in step.get('grammar_entry_ids', [])})
+            if any(identity in after and identity not in before for identity in used):
+                raise ValueError(f'Korean checkpoint used reference added: {key}')
+        elif old.get(key) != context.get(key):
+            raise ValueError(f'Korean checkpoint review context changed: {key}')
+    verify_chunk_review(run_dir, proof, annotation=annotation, text=text,
+        chapter_text=context['chapter_text'], source_start=context['source_start'])
+    return proof
 
 
 def save_partial_annotation_checkpoint(run_dir: Path, *, source_job: str,
@@ -1013,10 +1052,13 @@ class KoreanHarness:
                 candidate_policy='Search candidates are not approved senses or grades. Select the identity and POS matching the actual occurrence; retain distinct homonyms and do not invent an ID.')
             async def produce_annotation(job, issues):
                 texts = contracts.annotation_chunks(prose["text"], batch_characters=self.annotation_batch_characters)
+                exact_reuse_candidate = annotation_reuse_candidate(self.run_dir, text=prose['text'])
+                current_reuse_candidate = exact_reuse_candidate or reuse_candidate
                 selected, previous_chunks, old_lineage, repair_evidence = None, None, None, {}
                 reused = {}
-                if not issues and reuse_candidate is not None:
-                    old_job, old_prose, old_review = reuse_candidate
+                checkpoint_approvals = {}
+                if not issues and current_reuse_candidate is not None:
+                    old_job, old_prose, old_review = current_reuse_candidate
                     old_meta = read(self.run_dir / 'agents' / old_job / 'meta.json')
                     partial = bool(old_review.get('partial_checkpoint'))
                     local_reviews_verified = False
@@ -1052,6 +1094,11 @@ class KoreanHarness:
                                         'review-policy': self.policy + '\n' + self.review_policy})
                             except (OSError, ValueError, KeyError, IndexError, TypeError, ValidationError):
                                 local_reviews_verified = False
+                    if (partial and old_prose.get('text') == prose.get('text')
+                            and old_meta.get('chunk_texts') == texts):
+                        reused = {row['source_chunk_index'] + 1: i + 1
+                                  for i, row in enumerate(rows)}
+                        checkpoint_approvals = {row['source_chunk_index']: row for row in rows}
                     unchanged_reviewed_source = (
                         old_prose.get('text') == prose.get('text')
                         and old_texts == texts
@@ -1066,7 +1113,7 @@ class KoreanHarness:
                             reuse_strategy='same_text_same_chunking_fresh_local_review',
                             reuse_candidate_digest=digest(old_value if not partial else old_values))
                         print(f'annotation reuse: retaining {len(reused)} unchanged source chunks for fresh review', flush=True)
-                    else:
+                    elif not checkpoint_approvals:
                         candidates = [{'old_chunk_index': i + 1, 'old_source_chunk_index': source_positions[i] + 1,
                                        'new_chunk_index': j + 1, 'text': text,
                                        'annotation': contracts.annotation_view(old_values[i], max_characters=0)}
@@ -1277,6 +1324,8 @@ class KoreanHarness:
                             from pipeline.annotation_repairs import repair_annotation
                             word_ids = {s['lexical_id'] for s in semantic_base['segments']}
                             grammar_ids = {link['entry_id'] for link in semantic_base['grammar_links']}
+                            from pipeline.korean_lexical_research import reviewed_primary_sources, candidate_lexical_identities
+                            selected_primary_sources = reviewed_primary_sources(candidate_lexical_identities(semantic_base))
                             repaired = await repair_annotation(self, chunk_job, semantic_base, errors,
                                 representation='korean-flat', language='ko',
                                 context={'chunk_text': text, 'chapter_text': prose['text'],
@@ -1292,6 +1341,7 @@ class KoreanHarness:
                                     'lexical_candidates': [entry for entries in self.catalog.values()
                                         for entry in entries if entry['id'] in word_ids],
                                     'reviewed_lexical_usage_evidence': reviewed_usages,
+                                    **({'official_primary_sources': selected_primary_sources} if selected_primary_sources else {}),
                                     'linguistic_reference': read(LINGUISTIC_REFERENCE),
                                     'lexical_reference': read(LEXICAL_REFERENCE),
                                     **(local_adjudication_context or {})},
@@ -1368,6 +1418,7 @@ class KoreanHarness:
                     local_issues, local_previous = None, None
                     adjudication_budget = AdjudicationBudget()
                     local_adjudication_context = None
+                    research_carry = None
                     # A historically APPLIED semantic assembly can still have
                     # left one or more original findings untouched. Inspect it
                     # before consulting a cached independent approval. Recover
@@ -1411,6 +1462,30 @@ class KoreanHarness:
                                 for entry in entries if entry['id'] in word_ids],
                             'linguistic_reference': read(LINGUISTIC_REFERENCE),
                             'lexical_reference': read(LEXICAL_REFERENCE)}
+                        from pipeline.korean_lexical_research import reviewed_primary_sources, candidate_lexical_identities
+                        selected_primary_sources = reviewed_primary_sources(candidate_lexical_identities(value))
+                        if selected_primary_sources:
+                            context['official_primary_sources'] = selected_primary_sources
+                        if research_carry is None:
+                            from pipeline.annotation_reference_carry import load_carried_research
+                            research_carry = load_carried_research(self.run_dir, candidate=value, source_text=text,
+                                language='ko', representation='korean-flat', context=context)
+                        if research_carry:
+                            from pipeline.annotation_reference_carry import bind_carried_research, CARRY_FIELD
+                            carried = bind_carried_research(self.run_dir, research_carry, candidate=value,
+                                source_text=text, language='ko', representation='korean-flat', context=context)
+                            if carried['packet']:
+                                context[CARRY_FIELD] = carried['packet']
+                        if review_attempt == 0 and index in checkpoint_approvals:
+                            try:
+                                proof = reusable_checkpoint_approval(self.run_dir,
+                                    checkpoint_approvals[index], annotation=value, text=text,
+                                    context=context, policy=self.policy + '\n' + self.review_policy)
+                            except (OSError, ValueError, KeyError, TypeError, ValidationError):
+                                pass
+                            else:
+                                print(f'annotation chunk {index + 1}: reused verified independent approval', flush=True)
+                                return value, record, proof
                         review, evidence = await review_chunk(self.runner, self.run_dir,
                             annotation=value, text=text, context=context,
                             policy=self.policy + '\n' + self.review_policy)
@@ -1440,6 +1515,14 @@ class KoreanHarness:
                                 'kind': 'primary_source', 'content': context['linguistic_reference']}
                             references['lexical-reference'] = {
                                 'kind': 'primary_source', 'content': context['lexical_reference']}
+                            for primary in context.get('official_primary_sources', []):
+                                references[primary['reference_id']] = {
+                                    'kind': 'primary_source', 'content': primary}
+                            if context.get('reviewed_annotation_research'):
+                                from pipeline.annotation_reference_carry import bind_carried_research
+                                references.update(bind_carried_research(self.run_dir, context['reviewed_annotation_research'],
+                                    candidate=value, source_text=text, language='ko', representation='korean-flat',
+                                    context=context, current_review=review)['references'])
                             references['review-policy'] = {
                                 'kind': 'explicit_review_policy',
                                 'content': self.policy + '\n' + self.review_policy}
@@ -1492,6 +1575,15 @@ class KoreanHarness:
                                 local_adjudication_context = {
                                     'prior_review_adjudication': adjudication,
                                     'prior_review_history': replay_inputs['prior_history']}
+                                from pipeline.annotation_reference_carry import carry_from_adjudication, bind_carried_research, CARRY_FIELD
+                                research_carry = carry_from_adjudication(self.run_dir, adjudication, research_carry)
+                                carried = bind_carried_research(self.run_dir, research_carry, candidate=value,
+                                    source_text=text, language='ko', representation='korean-flat', context=context)
+                                if carried['packet']:
+                                    local_adjudication_context[CARRY_FIELD] = carried['packet']
+                                    from pipeline.annotation_reference_carry import register_carried_research
+                                    register_carried_research(self.run_dir, research_carry, candidate=value, source_text=text,
+                                        language='ko', representation='korean-flat', context=context)
                                 continue
                             raise ValueError(
                                 f"Korean annotation adjudication did not clear chunk {index + 1}: "

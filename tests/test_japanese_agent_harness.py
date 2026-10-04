@@ -341,6 +341,22 @@ async def test_japanese_adjudicated_cache_path_uses_shared_lineage_verifier(tmp_
     reused = await harness.annotate_chunk(0, source)
     assert reused["effective_review"]["kind"] == "adjudicated"
 
+    from pipeline.annotation_reference_carry_callers import register_chunk_positions
+    register_chunk_positions(harness, [source], parent_text=source)
+    positioned = copy.deepcopy(item)
+    positioned['attempts'][-1]['adjudication_replay']['context']['annotation_source_position'] = (
+        harness._annotation_source_positions[0])
+    path.write_text(json.dumps({**positioned, 'cache_key': cache_key}))
+    assert (await harness.annotate_chunk(0, source))['resolved'] is True
+    # Same chunk and index, changed parent: miss before publication rather
+    # than returning a self-consistent proof for the old occurrence.
+    register_chunk_positions(harness, [source, '。'], parent_text=source + '。')
+    with pytest.raises(AssertionError, match='invalid adjudication cache must miss'):
+        await harness.annotate_chunk(0, source)
+    # Historical absent-position contracts retain their prior cache behavior.
+    path.write_text(json.dumps({**item, 'cache_key': cache_key}))
+    assert (await harness.annotate_chunk(0, source))['resolved'] is True
+
     changed = copy.deepcopy(item)
     changed["attempts"][-1]["adjudication_replay"]["prior_history"] = [{"fake": True}]
     path.write_text(json.dumps({**changed, "cache_key": cache_key}))

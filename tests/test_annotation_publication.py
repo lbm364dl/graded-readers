@@ -116,3 +116,44 @@ def test_normal_review_receipt_binds_actual_child_to_exact_inputs(tmp_path, chan
     with pytest.raises(AnnotationPublicationError):
         verify_normal_review_receipt(tmp_path, receipt, review=review, candidate=candidate,
                                      source_text=source, expected_children=expected_children)
+
+@pytest.mark.parametrize('surface_key', ['text', 'surface'])
+@pytest.mark.parametrize('carrier', ['ordinary', 'adjudicated'])
+def test_new_research_positions_reject_identical_repeated_chunk_transplant(tmp_path, surface_key, carrier):
+    from pipeline.worker_workspace import build
+    from pipeline.annotation_publication import digest
+    reader, items = reviewed_reader(tmp_path, surface_key)
+    items[1] = copy.deepcopy(items[0])
+    reader['segments'] = copy.deepcopy(items[0]['segments']) * 2
+    for index, item in enumerate(items):
+        position = {'chunk_index': index, 'source_text_digest': digest('猫。'),
+                    'parent_text_digest': digest('猫。猫。'), 'source_start': index * 2}
+        if carrier == 'adjudicated':
+            item['attempts'][0]['adjudication_replay'] = {
+                'context': {'annotation_source_position': position}}
+        else:
+            job = f'annotations/chunk_{index:04d}/review'
+            directory = tmp_path / 'agents' / job
+            directory.mkdir(parents=True)
+            _, workspace_digest = build(directory / 'workspace', 'Review.', {},
+                context={'annotation_source_position': position})
+            result = {'verdict': 'pass', 'issues': []}
+            (directory / 'result.json').write_text(json.dumps(result))
+            (directory / 'meta.json').write_text(json.dumps({'return_code': 0,
+                'fingerprint': f'input-{index}', 'model': 'gpt-6-luna', 'effort': 'low',
+                'tool_profile': 'workspace', 'workspace_digest': workspace_digest}))
+            candidate = {'segments': item['segments'], 'grammar_overlays': item['grammar_overlays']}
+            bind_review_job(tmp_path, job, candidate=candidate, source_text='猫。')
+            item['attempts'][0]['normal_review_receipt'] = normal_review_receipt(
+                tmp_path, [job], result, candidate, '猫。')
+    def persist():
+        reader['annotation_audit']['chunk_review_receipts'] = persist_chunk_attempts(
+            tmp_path, ['猫。', '猫。'], items, surface_key=surface_key)
+    persist()
+    assert verify_chunk_attempt_receipts(tmp_path, reader, '猫。猫。', surface_key=surface_key) == items
+    # Even re-stamping the transplanted item cannot rebind its original review
+    # to a distinct occurrence in the authoritative assembled parent.
+    items[1] = copy.deepcopy(items[0])
+    persist()
+    with pytest.raises(AnnotationPublicationError, match='assembled occurrence'):
+        verify_chunk_attempt_receipts(tmp_path, reader, '猫。猫。', surface_key=surface_key)

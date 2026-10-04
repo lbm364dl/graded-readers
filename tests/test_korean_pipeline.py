@@ -148,7 +148,7 @@ def test_publication_rejects_overlapping_or_skipped_chapter_scopes(tmp_path, mon
 
 
 @pytest.mark.parametrize('prose_revision,worker_failure,recover_partial', [(False, False, False), (False, True, False), (False, 'submission_rejected', False), (True, False, False), ('technical_failure', False, False), (False, 'attached', False), (False, False, True), (False, False, 'rejected_worker'), (False, False, 'invalid_attached')])
-def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_path, prose_revision, worker_failure, recover_partial, local_review_repair=False, draft_lesson=False, incomplete_cached_repair=False, complete_cached_repair=False, adjudication_mode=None, monkeypatch=None):
+def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_path, prose_revision, worker_failure, recover_partial, local_review_repair=False, draft_lesson=False, incomplete_cached_repair=False, complete_cached_repair=False, adjudication_mode=None, monkeypatch=None, checkpoint_adjudicated=False):
     from pipeline.korean_agent_harness import normalize_existing, save, UnannotatableProseError
     route_candidates = []
     if adjudication_mode:
@@ -445,6 +445,54 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
         assert checkpoint['source_job'] == 'annotation-0'
         assert checkpoint['chunk_source_positions'] == list(range(1, len(chunks)))
         assert checkpoint['complete'] is False
+        if checkpoint_adjudicated:
+            import pipeline.annotation_adjudication as adjudication
+            for position, proof in enumerate(checkpoint['chunk_reviews']):
+                normal_dir = tmp_path / 'agents' / proof['job']
+                inputs = json.loads((normal_dir / 'review-input.json').read_text())
+                rejected = {'approved': False, 'issues': [{
+                    'explanation': 'Investigate this exact occurrence.',
+                    'candidate_paths': ['/segments/0/text'], 'supporting_paths': []}],
+                    'prose_revision_reason_en': ''}
+                save(normal_dir / 'result.json', rejected)
+                normal = {**proof, 'review_digest': digest(rejected)}
+                context = inputs['context']
+                references = {}
+                for field, prefix in [('approved_words', 'word'), ('approved_grammar', 'grammar')]:
+                    for row in context[field]:
+                        references[f"{prefix}:{row['id']}"] = {'kind': 'approved_lesson', 'content': row}
+                for field in ['linguistic_reference', 'lexical_reference']:
+                    references[field.replace('_', '-')] = {'kind': 'primary_source', 'content': context[field]}
+                for row in context.get('official_primary_sources', []):
+                    references[row['reference_id']] = {'kind': 'primary_source', 'content': row}
+                policy = KoreanHarness(tmp_path, 1, runner=runner).policy + '\n' + KoreanHarness(tmp_path, 1, runner=runner).review_policy
+                references['review-policy'] = {'kind': 'explicit_review_policy', 'content': policy}
+                checkpoint['chunk_reviews'][position] = {'kind': 'adjudicated',
+                    'normal_review': normal, 'adjudication': {'status': 'cleared', 'approved': True},
+                    'replay_inputs': {'current_review': rejected, 'prior_history': [],
+                        'context': {'chunk_review_context': context, 'review_policy': policy},
+                        'known_reference_input': references, 'deterministic_gate_evidence': {},
+                        'normal_review_receipt': {}}}
+            save(checkpoints[0], checkpoint)
+            monkeypatch.setattr(adjudication, 'verify_adjudication_evidence',
+                lambda _run, evidence, **kwargs: evidence)
+        completed_review_jobs = [job for job in runner.jobs if job.startswith('annotation-local-review-')]
+        # An older approved assembly of different prose must not outrank the
+        # exact partial checkpoint when choosing a resume source.
+        historical = copy.deepcopy(raw)
+        historical['segments'][0]['text'] = 'X'
+        historical_text = ''.join(row['text'] for row in historical['segments'])
+        save(tmp_path / 'agents/annotation-revision9-0/result.json', historical)
+        save(tmp_path / 'agents/annotation-revision9-0/meta.json', {
+            'return_code': 0, 'kind': 'annotation_assembly',
+            'chunks': [{'text': historical_text, 'job': 'historical-other-prose'}]})
+        save(tmp_path / 'agents/annotation-revision9-review-0/result.json', {'approved': True, 'issues': []})
+        worker_failure = False
+        runner.jobs.clear()
+        assert asyncio.run(KoreanHarness(tmp_path, 1, runner=runner).run())['status'] == 'complete'
+        assert not any(job.endswith('-reuse-plan') for job in runner.jobs)
+        assert not set(completed_review_jobs) & set(runner.jobs)
+        assert len([job for job in runner.jobs if job.startswith('annotation-local-review-')]) == 1
         return
     assert asyncio.run(KoreanHarness(tmp_path, 1, runner=runner).run())['status'] == 'complete'
     if adjudication_mode:
@@ -2517,3 +2565,9 @@ def test_korean_actionable_adjudication_repairs_then_clears_new_candidate(tmp_pa
     test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(
         tmp_path, False, False, False, local_review_repair=True,
         adjudication_mode='derived', monkeypatch=monkeypatch)
+
+
+def test_partial_checkpoint_resume_preserves_adjudicated_siblings_without_worker_calls(tmp_path, monkeypatch):
+    test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(
+        tmp_path, False, 'submission_rejected', False,
+        monkeypatch=monkeypatch, checkpoint_adjudicated=True)

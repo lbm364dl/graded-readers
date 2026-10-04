@@ -471,3 +471,125 @@ def test_expanded_approved_grammar_inventory_preserves_subset_review_receipt(tmp
     assert fresh_inputs['context']['draft_grammar_ids'] == ['draft-function']
     assert {entry['id'] for entry in fresh_inputs['context']['approved_grammar']} == {'used', 'possessive-ui'}
     assert input_path.read_bytes() == original_bytes
+
+@pytest.mark.parametrize('adjudicated', [False, True])
+def test_checkpoint_approval_replay_preserves_original_context_with_additive_sources(tmp_path, monkeypatch, adjudicated):
+    from pipeline.korean_agent_harness import reusable_checkpoint_approval
+    import pipeline.annotation_adjudication as host
+    annotation = {'segments': [{'text': '아이', 'meaning_en': 'child'}], 'grammar_links': []}
+    context = {'chapter_text': '아이 아이', 'source_start': 3,
+        'approved_words': [], 'approved_grammar': [],
+        'linguistic_reference': {}, 'lexical_reference': {},
+        'official_primary_sources': [{'reference_id': 'original-primary', 'record': 30494}]}
+    policy = 'Review honestly.'
+    verdict = {'approved': not adjudicated, 'issues': [] if not adjudicated else
+        [issue('Check this meaning.', '/segments/0/meaning_en')], 'prose_revision_reason_en': ''}
+    runner = Runner(tmp_path, verdict)
+    _, normal = asyncio.run(review_chunk(runner, tmp_path, annotation=annotation,
+        text='아이', context=context, policy=policy))
+    proof = {'kind': 'ordinary', **normal}
+    if adjudicated:
+        references = {key.replace('_', '-'): {'kind': 'primary_source', 'content': context[key]}
+                      for key in ('linguistic_reference', 'lexical_reference')}
+        references['review-policy'] = {'kind': 'explicit_review_policy', 'content': policy}
+        references['original-primary'] = {'kind': 'primary_source',
+            'content': context['official_primary_sources'][0]}
+        proof = {'kind': 'adjudicated', 'normal_review': normal,
+            'adjudication': {'job': 'exact-proof'}, 'replay_inputs': {
+                'current_review': verdict, 'prior_history': [],
+                'context': {'chunk_review_context': context, 'review_policy': policy},
+                'known_reference_input': references, 'deterministic_gate_evidence': {},
+                'normal_review_receipt': {}}}
+        def replay(_run, evidence, **kwargs):
+            assert evidence == {'job': 'exact-proof'}
+            assert kwargs['candidate'] == annotation
+            assert kwargs['context']['chunk_review_context'] == context
+            return {'status': 'cleared', 'approved': True}
+        monkeypatch.setattr(host, 'verify_adjudication_evidence', replay)
+    row = {'review_context': context, 'review': proof}
+    current = {**context, 'official_primary_sources': context['official_primary_sources'] +
+        [{'reference_id': 'verified-extra', 'record': 50000}]}
+    assert reusable_checkpoint_approval(tmp_path, row, annotation=annotation,
+        text='아이', context=current, policy=policy) == proof
+    assert runner.calls == [normal['job']]
+    for changed in ({**current, 'source_start': 0}, {**current, 'chapter_text': '아이아이'},
+                    {**current, 'lexical_reference': {'changed': True}}):
+        with pytest.raises(ValueError, match='context changed'):
+            reusable_checkpoint_approval(tmp_path, row, annotation=annotation,
+                text='아이', context=changed, policy=policy)
+    with pytest.raises(ValueError, match='policy changed'):
+        reusable_checkpoint_approval(tmp_path, row, annotation=annotation,
+            text='아이', context=current, policy=policy + ' New rule.')
+    altered = copy.deepcopy(annotation)
+    altered['segments'][0]['meaning_en'] = 'adult'
+    with pytest.raises(ValueError, match='policy changed'):
+        reusable_checkpoint_approval(tmp_path, row, annotation=altered,
+            text='아이', context=current, policy=policy)
+    # Previously supplied evidence cannot be replaced by additive context.
+    with pytest.raises(ValueError, match='primary evidence changed'):
+        reusable_checkpoint_approval(tmp_path,
+            row, annotation=annotation,
+            text='아이', context={**context, 'official_primary_sources': []}, policy=policy)
+
+@pytest.mark.parametrize('owner', ['segment', 'stage', 'expression'])
+def test_checkpoint_new_used_word_reference_requires_fresh_review(tmp_path, owner):
+    from pipeline.korean_agent_harness import reusable_checkpoint_approval
+    annotation = {'segments': [{'text': '아이', 'meaning_en': 'child', 'form_steps': []}],
+                  'grammar_links': [], 'expression_links': []}
+    if owner == 'segment':
+        annotation['segments'][0]['lexical_id'] = 'used'
+    elif owner == 'stage':
+        annotation['segments'][0]['form_steps'] = [{'form': '아이', 'lexical_id': 'used'}]
+    else:
+        annotation['expression_links'] = [{'entry_id': 'used'}]
+    context = {'chapter_text': '아이', 'source_start': 0, 'approved_words': []}
+    _, proof = asyncio.run(review_chunk(Runner(tmp_path), tmp_path, annotation=annotation,
+        text='아이', context=context, policy='Review honestly.'))
+    row = {'review_context': context, 'review': proof}
+    assert reusable_checkpoint_approval(tmp_path, row, annotation=annotation, text='아이',
+        context={**context, 'approved_words': [{'id': 'unused'}]}, policy='Review honestly.') == proof
+    with pytest.raises(ValueError, match='used reference added'):
+        reusable_checkpoint_approval(tmp_path, row, annotation=annotation, text='아이',
+            context={**context, 'approved_words': [{'id': 'used'}]}, policy='Review honestly.')
+    if owner == 'stage':
+        stale = {key: value for key, value in proof.items() if key != 'form_review_guidance_digest'}
+        with pytest.raises(ValueError, match='predates'):
+            reusable_checkpoint_approval(tmp_path, {**row, 'review': stale},
+                annotation=annotation, text='아이', context=context, policy='Review honestly.')
+
+
+def test_carry_checkpoint_reuses_authenticated_packet_without_new_review(tmp_path, monkeypatch):
+    from pipeline import annotation_reference_carry as carry
+    from pipeline.annotation_adjudication import normalize_review
+    from pipeline.korean_agent_harness import reusable_checkpoint_approval
+    annotation = {'segments': [{'text': '아이', 'meaning_en': 'child'}], 'grammar_links': []}
+    context = {'chapter_text': '아이 아이', 'source_start': 3,
+        'approved_words': [], 'approved_grammar': [], 'linguistic_reference': {}, 'lexical_reference': {}}
+    original_issue = {'approved': False, 'issues': [issue('A lexical claim.', '/segments/0/meaning_en')],
+        'prose_revision_reason_en': ''}
+    identity = normalize_review('ko', original_issue)['issues'][0]['issue_id']
+    original = {'language': 'ko', 'representation': 'korean-flat', 'candidate': annotation,
+        'source_text': '아이', 'context': context, 'current_review': original_issue}
+    research = {'references': {'fact': {'kind': 'approved_lesson', 'content': {
+        '_annotation_research_fact': True, 'issue_ids': [identity], 'fact': 'Child is the lexical meaning.'}}}}
+    monkeypatch.setattr(carry, '_authenticate', lambda descriptor: (original, research))
+    envelope = {'version': 1, 'sources': [{'run_relpath': 'runs/exact',
+        'adjudication_job': 'annotation-adjudication-exact', 'receipt_digest': 'a'*64}]}
+    carry.register_carried_research(tmp_path, envelope, candidate=annotation, source_text='아이',
+        language='ko', representation='korean-flat', context=context)
+    loaded = carry.load_carried_research(tmp_path, candidate=annotation, source_text='아이',
+        language='ko', representation='korean-flat', context=context)
+    packet = carry.bind_carried_research(tmp_path, loaded, candidate=annotation, source_text='아이',
+        language='ko', representation='korean-flat', context=context)['packet']
+    fresh_context = {**context, carry.CARRY_FIELD: packet}
+    runner = Runner(tmp_path, {'approved': True, 'issues': [], 'prose_revision_reason_en': ''})
+    _, normal = asyncio.run(review_chunk(runner, tmp_path, annotation=annotation,
+        text='아이', context=fresh_context, policy='Review honestly.'))
+    proof = {'kind': 'ordinary', **normal};row = {'review_context': fresh_context, 'review': proof}
+    assert reusable_checkpoint_approval(tmp_path, row, annotation=annotation, text='아이',
+        context=fresh_context, policy='Review honestly.') == proof
+    assert runner.calls == [normal['job']]
+    forged = copy.deepcopy(fresh_context);forged[carry.CARRY_FIELD]['facts'][0]['reference']['content']['fact'] = 'forged'
+    with pytest.raises(ValueError):
+        reusable_checkpoint_approval(tmp_path, row, annotation=annotation, text='아이',
+            context=forged, policy='Review honestly.')
