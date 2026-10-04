@@ -140,7 +140,10 @@ def test_prior_complete_form_guidance_is_compatible_but_other_or_changed_proofs_
          'meaning_en': 'went', 'grammar_entry_ids': ['past-ass-eoss']}]}]}
     context = {'chapter_text': '갔다', 'source_start': 0}
     args, _, evidence = run_review(tmp_path, annotation=annotation, text='갔다', context=context)
-    assert len(FORM_STAGE_COMPATIBLE_REVIEW_DIGESTS) == 1
+    assert FORM_STAGE_COMPATIBLE_REVIEW_DIGESTS == {
+        "4f0ac6c6d35d8f450482f608436a9fa57cab7822c0ebf96758f56fe5f9e96a3d",
+        "2da6beaba39d3641ea15f889ed3c139a78ad6cae37a041d523b956a3aebfbf43",
+    }
     prior_complete_digest = next(iter(FORM_STAGE_COMPATIBLE_REVIEW_DIGESTS))
 
     # The accepted prior digest had the same complete-form/stem rule. All exact

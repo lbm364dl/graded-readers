@@ -32,3 +32,12 @@ def test_chinese_and_japanese_review_callers_include_the_shared_guidance():
     for relative in ("pipeline/agent_harness.py", "pipeline/japanese_agent_harness.py"):
         source = (root / relative).read_text(encoding="utf-8")
         assert "{FORM_STAGE_EVIDENCE_GUIDANCE}" in source
+
+
+def test_modifier_gloss_variants_need_concrete_extraneous_meaning_before_rejection():
+    assert "who knows”" in FORM_STAGE_COMPLETENESS_GUIDANCE
+    assert "having moved” can describe a completed modifier" in FORM_STAGE_COMPLETENESS_GUIDANCE
+    assert "identify the actual extra words or semantic contribution" in FORM_STAGE_COMPLETENESS_GUIDANCE
+    assert "a relative pronoun alone does not import" in FORM_STAGE_COMPLETENESS_GUIDANCE
+    assert "after moving to the capital” imports" in FORM_STAGE_COMPLETENESS_GUIDANCE
+    assert "do not require identical wording across these fields" in FORM_STAGE_COMPLETENESS_GUIDANCE

@@ -8,6 +8,8 @@ FORM_STAGE_COMPLETENESS_GUIDANCE = """Check that every displayed intermediate st
 
 Judge the scope of each meaning field. A complete predicate stage may use a complete valency-frame gloss such as “regards [X] as [Y]”; do not require the whole sentence's subject, object, and complement to be repeated in every stage meaning. Keep a modifier's own prospective or attributive contribution distinct from the meaning of a larger construction formed with its dependent noun and predicate; do not assign the whole construction's modality to the modifier alone. When passive, result-state, completion, or English past-versus-past-perfect readings are at issue, cite the linked lesson and source timeline that make the submitted meaning incompatible. Do not reject a defensible translation merely because another natural English rendering is also possible. Contrast: “be raised” can describe a passive citation form while “raised” describes a completed modifier; a bare prefinal stem still remains incomplete even when its English gloss looks plausible. Do not turn these checks into mandatory contextual paraphrases or optional-stage requirements."""
 
+FORM_STAGE_COMPLETENESS_GUIDANCE += "\n\n" + "An English relative or participial gloss such as “who knows”, “that knew”, or “having moved” can express a complete modifier's meaning. Its English syntax need not duplicate the source language's grammatical category. Do not call such a gloss a standalone proposition merely because another relative-clause paraphrase is possible. Before claiming that a meaning imports an external subject, object, dependent noun, or predicate, identify the actual extra words or semantic contribution in the submitted meaning; a relative pronoun alone does not import the following head noun or a preceding object. Contrast: “having moved” can describe a completed modifier; “after moving to the capital” imports the following temporal construction or separately annotated destination when those contributions are outside the displayed form. A form-level gloss and a contextual occurrence gloss may differ in tense when the form and source timeline support that distinction; do not require identical wording across these fields."
+
 FORM_STAGE_EVIDENCE_GUIDANCE += "\n\n" + FORM_STAGE_COMPLETENESS_GUIDANCE
 
 # This exact earlier digest already included the complete-stage / prefinal-stem
@@ -16,4 +18,6 @@ FORM_STAGE_EVIDENCE_GUIDANCE += "\n\n" + FORM_STAGE_COMPLETENESS_GUIDANCE
 # for that clarification; pre-completeness guidance remains stale.
 FORM_STAGE_COMPATIBLE_REVIEW_DIGESTS = frozenset({
     '4f0ac6c6d35d8f450482f608436a9fa57cab7822c0ebf96758f56fe5f9e96a3d',
+    # Same complete-form and scope rules before the English-gloss clarification.
+    '2da6beaba39d3641ea15f889ed3c139a78ad6cae37a041d523b956a3aebfbf43',
 })
