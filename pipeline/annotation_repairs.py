@@ -14,6 +14,7 @@ from pathlib import Path
 from typing import Any, Callable
 
 from jsonschema import ValidationError, validate
+from pipeline.annotation_review_guidance import FORM_STAGE_EVIDENCE_GUIDANCE
 
 from pipeline.annotation_edits import (
     AnnotationEditError,
@@ -26,6 +27,10 @@ from pipeline.annotation_edits import (
     validate_issue_target_coverage,
 )
 
+
+REPAIR_EXPLANATION_GUIDANCE = """Apply the same complete-form and meaning-scope criteria to your planned corrections and written patch as to independent review. Inspect comparable occurrences of each reported defect throughout this candidate and include all actually affected semantic targets in that issue's plan; leave correct contrasting occurrences unchanged. A finding is evidence to investigate, not permission to replace a defensible meaning with a stylistic preference. Use the supplied lessons, predicate frame and source timeline to support each correction.
+
+Learner-facing explanations must positively explain the actual form or grammatical contribution. Do not copy reviewer objections, editorial uncertainty, or defensive denials into occurrence notes or meanings. A useful grammatical contrast is allowed when it explains the form itself; rebutting one reviewer's classification is not a learner explanation. Keep a complete form's meaning separate from its form label and passage-specific grammatical role. Do not import a larger construction's meaning into one component stage, concatenate component glosses, or invent contributions to satisfy a review."""
 
 _TARGET = {
     "type": "object", "additionalProperties": False,
@@ -278,6 +283,10 @@ async def repair_annotation(
                         "target_contract_version": 1}}
     plan_prompt = f"""Return JSON matching the supplied repair-plan schema. Build a narrow diagnosis plan for every supplied independent review issue. `issue_index` must cover each input issue exactly once, in order. For each issue, give a concrete reason and exact JSON-pointer target(s) using only supported operations. The plan is diagnosis, never approval. Prefer a semantic field or explicit semantic-list row operation over changing a complete annotation.
 
+{REPAIR_EXPLANATION_GUIDANCE}
+
+{FORM_STAGE_EVIDENCE_GUIDANCE}
+
 {DEPENDENCY_CLOSURE_GUIDANCE}
 
 {REPRESENTATION_STRUCTURE_GUIDANCE}
@@ -332,6 +341,10 @@ INPUT:
 {SOURCE_TAP_PROJECTION_GUIDANCE}
 
 {ENDING_TAP_CONSTRUCTION_GUIDANCE}
+
+{REPAIR_EXPLANATION_GUIDANCE}
+
+{FORM_STAGE_EVIDENCE_GUIDANCE}
 
 INPUT:
 {json.dumps(patch_context, ensure_ascii=False, indent=2)}"""
@@ -410,6 +423,10 @@ Use only compatible operations: scalar fields use `set_field`, arrays use `repla
 
 Cover exactly {len(replan_issues)} issue indices in order: {list(range(len(replan_issues)))}. If the gate failure cannot be addressed with semantic fields while preserving exact source/tap surfaces and ranges, mark the relevant finding boundary_change_needed and explain why. Do not retry on timeouts, malformed/schema-invalid patches, or source/tap violations; this path is available only for the recorded derived-candidate rejection.
 
+{REPAIR_EXPLANATION_GUIDANCE}
+
+{FORM_STAGE_EVIDENCE_GUIDANCE}
+
 INPUT:
 {json.dumps(replan_plan_context, ensure_ascii=False, indent=2)}"""
         try:
@@ -468,6 +485,10 @@ INPUT:
 {SOURCE_TAP_PROJECTION_GUIDANCE}
 
 {ENDING_TAP_CONSTRUCTION_GUIDANCE}
+
+{REPAIR_EXPLANATION_GUIDANCE}
+
+{FORM_STAGE_EVIDENCE_GUIDANCE}
 
 INPUT:
 {json.dumps(replan_patch_context, ensure_ascii=False, indent=2)}"""

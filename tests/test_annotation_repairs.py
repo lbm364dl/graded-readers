@@ -149,6 +149,10 @@ async def test_shared_repair_prompt_routes_ending_tap_construction_without_gramm
     assert "noun/name + predication and lexical-verb + auxiliary" in prompt
     assert "preserve every tap and the direct ending lesson" in prompt
     assert "do not add a copula-ID exception" in prompt
+    for call in runner.calls:
+        assert "valency-frame gloss" in call[1]
+        assert "leave correct contrasting occurrences unchanged" in call[1]
+        assert "Do not copy reviewer objections" in call[1]
 
     # The same general instructions reach Japanese and both Korean representations;
     # the structure descriptor remains representation-specific rather than importing
@@ -179,6 +183,10 @@ async def test_shared_repair_prompt_routes_ending_tap_construction_without_gramm
         assert "do not use the ending's grammar identity as the lexical root" in scoped_runner.calls[0][1]
         assert "sole support for a direct grammar link" in scoped_runner.calls[0][1]
         assert "Include that affected occurrence row in the SAME issue's plan" in scoped_runner.calls[0][1]
+        for call in scoped_runner.calls:
+            assert "valency-frame gloss" in call[1]
+            assert "leave correct contrasting occurrences unchanged" in call[1]
+            assert "Do not copy reviewer objections" in call[1]
 
 
 @pytest.mark.asyncio
@@ -877,6 +885,9 @@ async def test_one_derived_gate_replan_uses_original_base_and_replays_lineage(tm
     assert result["candidate"]["segments"][0]["meaning_en"] == "corrected"
     assert candidate["segments"][0]["meaning_en"] == "she"
     assert len(runner.calls) == 4
+    for call in runner.calls:
+        assert "Apply the same complete-form and meaning-scope criteria" in call[1]
+        assert "valency-frame" in call[1]
     for plan_call in (runner.calls[0], runner.calls[2]):
         assert "Inspect the supplied grammar knowledge and identity policy" in plan_call[1]
         assert "reuse an exact approved entry when it fits" in plan_call[1]
