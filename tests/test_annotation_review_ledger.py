@@ -23,7 +23,8 @@ def snapshots():
 
 def finding(original=None, finding_id='f1', text='The displayed stage is incomplete.'):
     original = original or snapshots()[0]
-    return {'finding_id': finding_id, 'text': text, 'original_candidate': original}
+    return {'finding_id': finding_id, 'text': text, 'original_candidate': original,
+            'affected_paths': ['/segments/0/form_steps/0/meaning_en']}
 
 
 def path(pointer):
@@ -78,10 +79,60 @@ def test_unsupported_is_distinct_from_resolved_and_requires_evidence():
     assert result['approved'] is False
     assert result['ledger_clear'] is True
     assert result['findings'][0]['observed_change'] is False
+    assert result['findings'][0]['bound'] is True
     output['findings'][0]['evidence'] = ''
     with pytest.raises(ValidationError):
         verify_ledger_output(output, current_candidate=current,
             historical_findings=[finding(original)])
+
+
+def test_bound_finding_cannot_resolve_from_an_irrelevant_changed_field():
+    original, current = snapshots()
+    original['contextual_meaning'] = 'I do not know'
+    current['contextual_meaning'] = 'I may know'
+    old = finding(original)
+    output = ledger(current, original=original)
+    output['findings'][0]['original_paths'].append('/contextual_meaning')
+    output['findings'][0]['current_paths'].append('/contextual_meaning')
+    with pytest.raises(LedgerProtocolError, match='without a relevant changed field'):
+        verify_ledger_output(output, current_candidate=current,
+            historical_findings=[old])
+
+
+def test_bound_finding_rejects_observations_from_the_wrong_semantic_layer():
+    original, current = snapshots()
+    original['contextual_meaning'] = 'I do not know'
+    current['contextual_meaning'] = 'I may know'
+    old = finding(original, text='The form-step meaning is wrong.')
+    output = ledger(current, original=original)
+    output['findings'][0]['original_paths'] = ['/contextual_meaning']
+    output['findings'][0]['current_paths'] = ['/contextual_meaning']
+    with pytest.raises(LedgerProtocolError, match='omit affected paths'):
+        verify_ledger_output(output, current_candidate=current,
+            historical_findings=[old])
+
+
+def test_unbound_legacy_finding_is_reported_and_cannot_clear_ledger():
+    original, current = snapshots()
+    current['segments'][0]['form_steps'][0]['meaning_en'] = 'was born fully'
+    old = {'finding_id': 'f1', 'text': 'Legacy finding without field scope.',
+           'original_candidate': original}
+    output = ledger(current, original=original, ledger_clear=False)
+    result = verify_ledger_output(output, current_candidate=current,
+        historical_findings=[old])
+    assert result['ledger_clear'] is False
+    assert result['unbound_finding_ids'] == ['f1']
+    assert result['findings'][0]['bound'] is False
+
+
+def test_make_input_preserves_and_validates_affected_paths():
+    original, current = snapshots()
+    old = finding(original)
+    prepared = _make_input(current, [old], {}, None, None, 'review policy', 'low')
+    assert prepared['historical_findings'][0]['affected_paths'] == old['affected_paths']
+    old['affected_paths'] = ['/segments/9']
+    with pytest.raises(LedgerProtocolError, match='does not exist|out of range'):
+        _make_input(current, [old], {}, None, None, 'review policy', 'low')
 
 
 def test_unresolved_finding_has_actionable_current_diagnosis_and_stays_unapproved():

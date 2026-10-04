@@ -87,6 +87,11 @@ value, so return paths only and do not retype values. Each historical finding's
 original context is stored by its `original_context_digest`; do not prefix field
 pointers with the context-map key either. Before marking a finding
 unresolved, verify that the current value actually exhibits the alleged defect.
+When a finding supplies `affected_paths`, include every one of those candidate
+paths in both `original_paths` and `current_paths`. Those paths bind the finding
+to the exact annotation fields under review; changes elsewhere cannot resolve it.
+Findings without supplied affected paths are unbound legacy triage only and can
+never make the ledger clear.
 An alternate suggested gloss alone is not a defect: compare a form's own meaning
 with its supplied lesson and role, allow contextual tense where the form permits
 it, and do not reject a defensible complete-form variant without a concrete mismatch.
@@ -174,6 +179,7 @@ def verify_ledger_output(output: dict, *, current_candidate: Any,
         raise LedgerProtocolError('Ledger must cover every historical finding ID exactly once')
 
     verified_findings = []
+    unbound_finding_ids = []
     for finding_id, old in expected.items():
         row = actual[finding_id]
         original = _resolve_paths(row['original_paths'], old['original_candidate'], 'original')
@@ -181,7 +187,24 @@ def verify_ledger_output(output: dict, *, current_candidate: Any,
         common = original.keys() & current.keys()
         if not common:
             raise LedgerProtocolError(f'Finding {finding_id} observations need a shared field path')
-        changed = any(original[path] != current[path] for path in common)
+        affected_paths = old.get('affected_paths') or []
+        if not isinstance(affected_paths, list) or any(
+                not isinstance(path, str) or not path.startswith('/') for path in affected_paths):
+            raise LedgerProtocolError(f'Finding {finding_id} affected_paths must be candidate-relative JSON Pointers')
+        if len(set(affected_paths)) != len(affected_paths):
+            raise LedgerProtocolError(f'Finding {finding_id} affected_paths must be unique')
+        missing_original = set(affected_paths) - original.keys()
+        missing_current = set(affected_paths) - current.keys()
+        if missing_original or missing_current:
+            raise LedgerProtocolError(
+                f'Finding {finding_id} observations omit affected paths: '
+                f'original={sorted(missing_original)}, current={sorted(missing_current)}')
+        if affected_paths:
+            relevant_paths = set(affected_paths)
+        else:
+            relevant_paths = common
+            unbound_finding_ids.append(finding_id)
+        changed = any(original[path] != current[path] for path in relevant_paths)
         if row['disposition'] == 'resolved' and not changed:
             raise LedgerProtocolError(f'Finding {finding_id} cannot be resolved without a relevant changed field')
         verified_findings.append({**row,
@@ -189,6 +212,8 @@ def verify_ledger_output(output: dict, *, current_candidate: Any,
                                       for path, value in original.items()],
             'current_observations': [{'path': path, 'observed_value': value}
                                      for path, value in current.items()],
+            'affected_paths': affected_paths,
+            'bound': bool(affected_paths),
             'original_candidate_digest': canonical_digest(old['original_candidate']),
             'observed_change': changed})
 
@@ -236,7 +261,8 @@ def verify_ledger_output(output: dict, *, current_candidate: Any,
                      if prose_before is not None or prose_after is not None else False)
     has_prose_request = bool(output['prose_revision_reason_en'].strip())
     ledger_clear = (all(row['disposition'] != 'unresolved' for row in verified_findings)
-                    and not verified_new and not has_prose_request and not prose_changed)
+                    and not unbound_finding_ids and not verified_new
+                    and not has_prose_request and not prose_changed)
     if output['ledger_clear'] is not ledger_clear:
         raise LedgerProtocolError('Reviewer ledger_clear claim contradicts the verified finding ledger')
     return {
@@ -244,6 +270,7 @@ def verify_ledger_output(output: dict, *, current_candidate: Any,
         'ledger_clear': ledger_clear,
         'requires_independent_review': True,
         'findings': verified_findings,
+        'unbound_finding_ids': unbound_finding_ids,
         'new_issues': verified_new,
         'repair_diagnoses': diagnoses,
         'prose_revision_reason_en': output['prose_revision_reason_en'],
@@ -271,9 +298,18 @@ def _make_input(current_candidate: Any, historical_findings: list[dict], context
         original_context = finding.get('original_context', {})
         context_digest = canonical_digest(original_context)
         historical_contexts.setdefault(context_digest, original_context)
+        affected_paths = finding.get('affected_paths', [])
+        if not isinstance(affected_paths, list) or any(
+                not isinstance(path, str) or not path.startswith('/') for path in affected_paths):
+            raise ValueError('affected_paths must be a list of candidate-relative JSON Pointers')
+        if len(set(affected_paths)) != len(affected_paths):
+            raise ValueError('affected_paths must be unique')
+        for path in affected_paths:
+            resolve_pointer(candidate, path)
         rows.append({'finding_id': finding['finding_id'], 'text': finding['text'],
                      'original_candidate_digest': candidate_digest,
-                     'original_context_digest': context_digest})
+                     'original_context_digest': context_digest,
+                     'affected_paths': list(affected_paths)})
     if len({row['finding_id'] for row in rows}) != len(rows):
         raise ValueError('Historical finding IDs must be unique')
     return {
