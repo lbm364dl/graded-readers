@@ -264,3 +264,31 @@ def test_effort_and_instruction_digest_separate_cached_job_identities(tmp_path):
     assert observed[0][1] == 'low' and observed[1][1] == 'medium'
     assert observed[0][0] != observed[1][0]
     assert all('language policy evidence' in row[2] for row in observed)
+
+
+@pytest.mark.asyncio
+async def test_real_runner_cannot_silently_label_forced_low_as_medium(tmp_path):
+    import asyncio
+    from pipeline.agent_harness import CodexRunner
+    original, current = snapshots()
+    runner = CodexRunner(tmp_path, 'gpt-6-luna', asyncio.Semaphore(1))
+    with pytest.raises(ValueError, match='differs from enforced runner effort'):
+        await review_finding_ledger(runner, tmp_path, current_candidate=current,
+            historical_findings=[finding(original)], effort='medium')
+    assert not list(tmp_path.glob('agents/*'))
+
+
+@pytest.mark.asyncio
+async def test_cli_selects_explicit_benchmark_override_for_medium(monkeypatch, tmp_path):
+    from argparse import Namespace
+    from pipeline import annotation_review_ledger as module
+    path = tmp_path / 'input.json'
+    path.write_text(json.dumps({'current_candidate': {}, 'historical_findings': []}))
+    async def capture(runner, run_dir, **kwargs):
+        assert runner.model == 'gpt-6-luna'
+        assert runner.benchmark_effort == kwargs['effort'] == 'medium'
+        return {'approved': False}
+    monkeypatch.setattr(module, 'review_finding_ledger', capture)
+    result = await module._cli(Namespace(input=path, run_dir=tmp_path,
+        timeout=600, effort='medium'))
+    assert result == {'approved': False}

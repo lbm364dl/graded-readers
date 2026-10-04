@@ -381,6 +381,8 @@ async def review_finding_ledger(runner: Any, run_dir: Path, *, current_candidate
     run_dir.mkdir(parents=True, exist_ok=True)
     if effort not in {'low', 'medium'}:
         raise ValueError('Finding-ledger effort must be low or medium')
+    if isinstance(runner, CodexRunner) and (runner.benchmark_effort or 'low') != effort:
+        raise ValueError('Requested ledger effort differs from enforced runner effort; set benchmark_effort explicitly for a medium smoke')
     if review_instructions is None:
         review_instructions = (context or {}).get('review_instructions', '')
     if not isinstance(review_instructions, str):
@@ -416,7 +418,8 @@ def _write_json(path: Path, value: Any) -> None:
 
 async def _cli(args) -> dict:
     input_value = json.loads(args.input.read_text(encoding='utf-8'))
-    runner = CodexRunner(args.run_dir, 'gpt-6-luna', asyncio.Semaphore(1), timeout=args.timeout)
+    runner = CodexRunner(args.run_dir, 'gpt-6-luna', asyncio.Semaphore(1),
+        timeout=args.timeout, benchmark_effort=args.effort)
     return await review_finding_ledger(runner, args.run_dir,
         current_candidate=input_value['current_candidate'],
         historical_findings=input_value['historical_findings'],
