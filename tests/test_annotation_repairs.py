@@ -1094,3 +1094,35 @@ async def test_applied_replan_profile_replays_real_workspace_lineage(tmp_path, m
     artifact.write_text(json.dumps({"base_digest": "f" * 64, "edits": []}), encoding="utf-8")
     with pytest.raises(ValueError, match="Final rejected annotation patch artifact changed"):
         CodexRunner._check_tool_profile(assembly_dir, None, meta)
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize("representation,language", [
+    ("chinese-annotation", "zh"), ("japanese-annotation", "ja"),
+    ("korean-flat", "ko"), ("korean-v4", "ko"),
+])
+async def test_structured_findings_keep_exact_observations_in_plan_and_patch(
+        tmp_path, representation, language):
+    candidates = {
+        "chinese-annotation": _candidate(),
+        "japanese-annotation": {"segments": [{"surface": "彼", "meaning_en": "he", "form_steps": []}], "grammar_overlays": []},
+        "korean-flat": {"segments": [{"text": "그", "meaning_en": "he", "form_steps": []}], "grammar_links": [], "inflected_segment_indices": [], "expression_links": []},
+        "korean-v4": {"format": "source-span-links-annotation-v4", "segments": [{"source_start": 0, "source_end": 1, "meaning_en": "he", "form_steps": [], "grammar_links": [], "expression_links": []}]},
+    }
+    candidate = candidates[representation]
+    observed = candidate["segments"][0]["meaning_en"]
+    issues = [{"finding_ids": ["old-0"], "new_issue_ids": [],
+        "diagnosis": "Correct the meaning at the observed field.",
+        "observations": [{"path": "/segments/0/meaning_en", "observed_value": observed}]}]
+    plan = _plan([_target("set_field", "/segments/0/meaning_en")])
+    patch = {"base_digest": candidate_digest(candidate), "edits": [
+        {"op": "set_field", "path": "/segments/0/meaning_en", "value": "her"}]}
+    runner = PlannedRunner(tmp_path, plan, patch)
+    result = await repair_annotation(Harness(tmp_path, runner), "structured",
+        candidate, issues, representation=representation, language=language,
+        validate_candidate=lambda value: None)
+    assert result["status"] == "applied"
+    for call in runner.calls:
+        assert call[4]["workspace_context"]["issues"] == issues
+        assert call[4]["workspace_context"]["issues"][0]["observations"][0] == {
+            "path": "/segments/0/meaning_en", "observed_value": observed}

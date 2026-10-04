@@ -371,7 +371,12 @@ async def review_finding_ledger(runner: Any, run_dir: Path, *, current_candidate
                                historical_findings: list[dict], context: dict | None = None,
                                prose_before: Any = None, prose_after: Any = None,
                                effort: str = 'low', review_instructions: str | None = None) -> dict:
-    """Run ledger reconciliation with shared tools-enabled Luna at low or medium effort."""
+    """Run reconciliation with shared tools-enabled Luna at low or medium effort.
+
+    Pass complete verified ``repair_diagnoses`` groups to ``repair_annotation``.
+    Their host-resolved observations preserve the affected field identities;
+    extracting only each diagnosis string loses the evidence needed for planning.
+    """
     run_dir = Path(run_dir)
     run_dir.mkdir(parents=True, exist_ok=True)
     if effort not in {'low', 'medium'}:
