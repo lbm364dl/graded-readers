@@ -190,3 +190,13 @@ Use the shared adjudication budget for up to three distinct immutable candidates
 per chunk lifecycle. A genuine repair may permit review of the derived candidate;
 an unchanged candidate must not repeat adjudication. Share the budget across all
 stages of the chunk, and adjudicate only rejected independent reviews.
+
+Mixed findings need a cited disposition for every targeted field. Derive repair
+authority only from actionable fields; retain supported and uncertain findings.
+Research review evaluates the cited claim, not whether every original target is
+defective. Preserve historical evidence policies and exact receipt replay.
+
+Worker runtime databases are disposable scratch, not review evidence. Seed only
+the database schema and required migration/backfill markers, never coordinator
+conversation history. Bound seed size and clean private databases only after
+worker exit and log retention. Verify accepted receipts after physical cleanup.

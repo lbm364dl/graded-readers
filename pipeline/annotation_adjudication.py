@@ -84,6 +84,16 @@ def _output_schema(policy_version: int) -> dict:
     item = schema['properties']['new_issues']['items']
     item['required'].append('supporting_paths')
     item['properties'].update(ISSUE_TARGET_SCHEMA_FIELDS)
+    if policy_version >= 6:
+        row = schema['properties']['classifications']['items']
+        row['required'].append('target_dispositions')
+        target = copy.deepcopy(row['properties'])
+        target.pop('issue_id')
+        target.pop('candidate_paths')
+        target['path'] = {'type': 'string', 'minLength': 1}
+        row['properties']['target_dispositions'] = {'type': 'array', 'minItems': 1, 'items': {
+            'type': 'object', 'additionalProperties': False, 'properties': target,
+            'required': list(target)}}
     return schema
 
 
@@ -91,7 +101,10 @@ def _versioned_instructions(policy_version: int) -> str:
     if policy_version < 5:
         return INSTRUCTIONS
     from pipeline.annotation_issue_targets import ISSUE_TARGET_GUIDANCE
-    return INSTRUCTIONS + '\n\nFor typed current issues, candidate_paths is the complete defect target set. Match it exactly; supporting_paths and other prose mentions are context only and do not add targets. This explicit protocol takes precedence over legacy prose-index binding guidance above. For every new_issues row, supply supporting_paths explicitly. New findings follow this field-target protocol: ' + ISSUE_TARGET_GUIDANCE
+    instructions = INSTRUCTIONS + '\n\nFor typed current issues, candidate_paths is the complete defect target set. Match it exactly; supporting_paths and other prose mentions are context only and do not add targets. This explicit protocol takes precedence over legacy prose-index binding guidance above. For every new_issues row, supply supporting_paths explicitly. New findings follow this field-target protocol: ' + ISSUE_TARGET_GUIDANCE
+    if policy_version >= 6:
+        instructions += '\n\nFor every original issue, target_dispositions must classify each candidate_paths field exactly once. Keep the full issue target set even when only one field is defective. Give each target its own disposition, exact binding, citations, reason, and narrow diagnosis. A supported neighboring field is unsupported, not permission to rewrite it. An uncertain target stays uncertain. The host aggregates uncertain before actionable before unsupported and routes only actionable targets to repair; never fold supported or unresolved targets into the repair scope. Issue-level fields summarize these target findings; their citations cannot substitute for per-target evidence.'
+    return instructions
 
 
 INSTRUCTIONS = """Independently adjudicate the current rejected annotation review. This is a linguistic evidence review, not a vote among prior reviewers. Review every current issue exactly once. Classify it unsupported only when a supplied authoritative linguistic reference demonstrates that the current candidate field is acceptable; prior reviews, approvals, and the candidate's own explanation are never linguistic evidence. A draft lesson proposal is not an approved lesson. A source passage can ground application but is not by itself proof that a disputed linguistic analysis is valid. For an annotation category field only, an approved lexical lesson's own lexical-kind value may support the same candidate category when its headword and reading exactly match the targeted segment. Generic reference-wrapper kinds, titles, and other metadata are never linguistic evidence.
@@ -467,8 +480,60 @@ def _approved_lexical_category_match(
     return True
 
 
+def _bound_disposition(row: dict, issue: Any, inputs: dict, observations: list[dict]) -> str:
+    current = inputs['candidate']
+    policy_version = inputs.get('host_binding_policy_version', 1)
+    canonical = None
+    canonical_invalid = False
+    if policy_version >= 4:
+        try:
+            canonical = issue_target_paths(issue, current, source_text=inputs.get('source_text'),
+                                           representation=inputs['representation'])
+        except IssueTargetError:
+            canonical_invalid = True
+    if canonical is not None or canonical_invalid:
+        disposition = (row['disposition'] if not canonical_invalid
+            and row['target_binding'] == 'exact'
+            and set(canonical) == {obs['path'] for obs in observations} else 'uncertain')
+    else:
+        anchors = _explicit_anchors(issue, policy_version=policy_version, candidate=current)
+        link_anchors, link_ambiguous = (_span_link_anchors(issue, current)
+            if policy_version >= 2 else ([], False))
+        if link_anchors:
+            anchors = link_anchors
+        source_anchors, source_ambiguous = _source_span_anchors(
+            issue, current, inputs.get('source_text'), inputs['representation'])
+        if source_anchors and not source_ambiguous:
+            surface_anchors, surface_ambiguous = [], False
+        else:
+            surface_anchors, surface_ambiguous = _surface_anchors(issue, current)
+        if link_anchors:
+            source_anchors, surface_anchors = [], []
+            source_ambiguous = surface_ambiguous = False
+        anchors = list(dict.fromkeys(anchors + source_anchors + surface_anchors))
+        anchors_observed = all(any(_path_is_anchor(obs['path'], [anchor])
+                                   for obs in observations) for anchor in anchors)
+        explicitly_bound = bool(anchors)
+        if row['target_binding'] != 'exact' or not observations or surface_ambiguous or source_ambiguous or link_ambiguous:
+            disposition = 'uncertain'
+        elif ((anchors and not anchors_observed)
+              or (anchors and not all(_path_is_anchor(obs['path'], anchors) for obs in observations))
+              or (_explicit_paths(issue) and set(_explicit_paths(issue)) !=
+                  {obs['path'] for obs in observations})
+              or (not _explicit_paths(issue) and not all(
+                  (bool(link_anchors) or _path_matches_issue_scope(obs['path'], issue,
+                      policy_version=policy_version)) for obs in observations))
+              or (not explicitly_bound and not _explicit_paths(issue))):
+            disposition = 'uncertain'
+        else:
+            disposition = row['disposition']
+    return disposition
+
+
 def _validate_output(output: dict, inputs: dict) -> dict:
     validate(output, _output_schema(inputs.get('host_binding_policy_version', 1)))
+    if inputs.get('host_binding_policy_version', 1) >= 6:
+        return _validate_output_targets(output, inputs)
     normalized = inputs['normalized_review']
     current = inputs['candidate']
     expected_rows = normalized['issues']
@@ -493,51 +558,7 @@ def _validate_output(output: dict, inputs: dict) -> dict:
             except (LedgerProtocolError, TypeError) as exc:
                 raise AdjudicationError(f'Unresolvable candidate path {path!r}: {exc}') from exc
             observations.append({'path': path, 'value': value, 'value_digest': digest(value)})
-        policy_version = inputs.get('host_binding_policy_version', 1)
-        canonical = None
-        canonical_invalid = False
-        if policy_version >= 4:
-            try:
-                canonical = issue_target_paths(issue, current, source_text=inputs.get('source_text'),
-                                               representation=inputs['representation'])
-            except IssueTargetError:
-                canonical_invalid = True
-        if canonical is not None or canonical_invalid:
-            disposition = (row['disposition'] if not canonical_invalid
-                and row['target_binding'] == 'exact'
-                and set(canonical) == {obs['path'] for obs in observations} else 'uncertain')
-        else:
-            anchors = _explicit_anchors(issue, policy_version=policy_version, candidate=current)
-            link_anchors, link_ambiguous = (_span_link_anchors(issue, current)
-                if policy_version >= 2 else ([], False))
-            if link_anchors:
-                anchors = link_anchors
-            source_anchors, source_ambiguous = _source_span_anchors(
-                issue, current, inputs.get('source_text'), inputs['representation'])
-            if source_anchors and not source_ambiguous:
-                surface_anchors, surface_ambiguous = [], False
-            else:
-                surface_anchors, surface_ambiguous = _surface_anchors(issue, current)
-            if link_anchors:
-                source_anchors, surface_anchors = [], []
-                source_ambiguous = surface_ambiguous = False
-            anchors = list(dict.fromkeys(anchors + source_anchors + surface_anchors))
-            anchors_observed = all(any(_path_is_anchor(obs['path'], [anchor])
-                                       for obs in observations) for anchor in anchors)
-            explicitly_bound = bool(anchors)
-            if row['target_binding'] != 'exact' or not observations or surface_ambiguous or source_ambiguous or link_ambiguous:
-                disposition = 'uncertain'
-            elif ((anchors and not anchors_observed)
-                  or (anchors and not all(_path_is_anchor(obs['path'], anchors) for obs in observations))
-                  or (_explicit_paths(issue) and set(_explicit_paths(issue)) !=
-                      {obs['path'] for obs in observations})
-                  or (not _explicit_paths(issue) and not all(
-                      (bool(link_anchors) or _path_matches_issue_scope(obs['path'], issue,
-                          policy_version=policy_version)) for obs in observations))
-                  or (not explicitly_bound and not _explicit_paths(issue))):
-                disposition = 'uncertain'
-            else:
-                disposition = row['disposition']
+        disposition = _bound_disposition(row, issue, inputs, observations)
         refs_resolved = []
         for ref in row['evidence_refs']:
             identity, path = ref['reference_id'], ref['path']
@@ -666,6 +687,89 @@ def _validate_output(output: dict, inputs: dict) -> dict:
     }
 
 
+def _validate_output_targets(output: dict, inputs: dict) -> dict:
+    """Validate every target, retaining issue identity and narrow repair authority."""
+    legacy_inputs = {**inputs, 'host_binding_policy_version': 5}
+    summary = copy.deepcopy(output)
+    for row in summary['classifications']:
+        row.pop('target_dispositions')
+        row['disposition'] = 'uncertain'
+    # Preserve every legacy gate, explicit target/source check and new-issue check.
+    result = _validate_output(summary, legacy_inputs)
+    issues = {row['issue_id']: row['issue'] for row in inputs['normalized_review']['issues']}
+    refs = _reference_index(inputs['known_reference_input'])
+    diagnoses = []
+    for raw, verified in zip(output['classifications'], result['classifications']):
+        paths = raw['candidate_paths']
+        target_paths = [row['path'] for row in raw['target_dispositions']]
+        if (len(paths) != len(set(paths)) or len(target_paths) != len(set(target_paths))
+                or set(target_paths) != set(paths)):
+            raise AdjudicationError('Every issue target must be classified exactly once')
+        issue = issues[raw['issue_id']]
+        bound = _bound_disposition({**raw, 'disposition': 'actionable'}, issue, inputs,
+                                   verified['candidate_observations']) == 'actionable'
+        targets = []
+        for row in raw['target_dispositions']:
+            if not row['reason'].strip():
+                raise AdjudicationError('Every target requires its own evidence-based reason')
+            observation = next(obs for obs in verified['candidate_observations'] if obs['path'] == row['path'])
+            resolved = []
+            for ref in row['evidence_refs']:
+                identity, pointer = ref['reference_id'], ref['path']
+                if identity not in refs:
+                    raise AdjudicationError(f'Unknown target evidence reference ID: {identity}')
+                content = refs[identity]['content']
+                if (isinstance(content, dict) and content.get('_annotation_research_fact') is True
+                        and raw['issue_id'] not in content.get('issue_ids', [])):
+                    raise AdjudicationError('Reviewed research was cited outside its verified target issue scope')
+                try:
+                    value = resolve_pointer(content, pointer)
+                except (LedgerProtocolError, TypeError) as exc:
+                    raise AdjudicationError(f'Unresolvable target reference {identity}:{pointer}') from exc
+                resolved.append({'reference_id': identity, 'reference_kind': refs[identity]['kind'],
+                                 'path': pointer, 'value': value, 'value_digest': digest(value)})
+            disposition = row['disposition'] if bound and row['target_binding'] == 'exact' else 'uncertain'
+            if disposition == 'unsupported' and _issue_contract(issue):
+                raise AdjudicationError('Deterministic contract findings cannot be overridden')
+            if disposition in {'actionable', 'unsupported'}:
+                if not any(ref['reference_kind'] in LINGUISTIC_REFERENCE_KINDS
+                           and _substantive_reference(ref, reference_content=refs[ref['reference_id']]['content'],
+                               candidate=inputs['candidate'], candidate_paths=[row['path']],
+                               representation=inputs['representation']) for ref in resolved):
+                    disposition = 'uncertain'
+            if disposition == 'actionable' and not row['diagnosis'].strip():
+                raise AdjudicationError('Actionable targets require a concrete narrow diagnosis')
+            targets.append({**row, 'disposition': disposition,
+                            'candidate_observations': [observation], 'resolved_evidence_refs': resolved})
+        aggregate = ('uncertain' if any(row['disposition'] == 'uncertain' for row in targets)
+                     else 'actionable' if any(row['disposition'] == 'actionable' for row in targets)
+                     else 'unsupported')
+        verified['disposition'] = aggregate
+        verified['target_dispositions'] = targets
+        actionable = [row for row in targets if row['disposition'] == 'actionable']
+        if actionable:
+            action_paths = [row['path'] for row in actionable]
+            observations = [row['candidate_observations'][0] for row in actionable]
+            evidence = list({digest(ref): ref for row in actionable for ref in row['resolved_evidence_refs']}.values())
+            diagnoses.append({'issue_id': raw['issue_id'],
+                'diagnosis': '\n'.join(f"{row['path']}: {row['diagnosis']}" for row in actionable),
+                'paths': action_paths, 'observations': observations,
+                'resolved_evidence_refs': evidence,
+                'target_dispositions': actionable,
+                'path_history': _prior_path_history(inputs['prior_history'], inputs['candidate'], action_paths,
+                                                   inputs['source_text'], inputs['representation'])})
+    # New defects retain their independently validated exact field scope.
+    diagnoses.extend(result['repair_diagnoses'])
+    result['repair_diagnoses'] = diagnoses
+    if result['status'] not in {'blocked_by_gate', 'blocked_by_prose_request'}:
+        result['status'] = ('uncertain' if any(row['disposition'] == 'uncertain' for row in result['classifications'])
+                            else 'actionable' if result['new_issues'] or any(row['disposition'] == 'actionable' for row in result['classifications'])
+                            else 'cleared')
+        result['approved'] = result['status'] == 'cleared'
+        result['effective_review_kind'] = 'adjudicated' if result['approved'] else None
+    return result
+
+
 def validate_adjudication_output(output: dict, inputs: dict) -> dict:
     """Pure, deterministic worker-workspace validation hook."""
     return _validate_output(output, inputs)
@@ -705,7 +809,7 @@ def _build_inputs(*, language: str, representation: str, candidate: Any,
         'instructions_digest': digest(_versioned_instructions(host_binding_policy_version)), 'effort': 'low',
         'model': 'gpt-6-luna', 'tool_profile': 'research',
     }
-    if host_binding_policy_version in {2, 3, 4, 5}:
+    if host_binding_policy_version in {2, 3, 4, 5, 6}:
         input_value['host_binding_policy_version'] = host_binding_policy_version
     elif host_binding_policy_version != 1:
         raise AdjudicationError('Unknown host binding policy version')
@@ -858,7 +962,8 @@ async def _adjudicate_once(runner: Any, run_dir: Path, *, language: str,
         current_review=current_review, prior_history=prior_history, context=context,
         known_reference_input=known_reference_input,
         deterministic_gate_evidence=deterministic_gate_evidence,
-        normal_review_receipt=normal_review_receipt, source_text=source_text)
+        normal_review_receipt=normal_review_receipt, source_text=source_text,
+        host_binding_policy_version=6)
     run_dir = Path(run_dir)
     run_dir.mkdir(parents=True, exist_ok=True)
     preflight = _preflight_status(inputs)
@@ -909,7 +1014,7 @@ def _verify_adjudication_once(run_dir: Path, evidence: dict, *, language: str,
         host_binding_policy_version=1)
     run_dir = Path(run_dir).resolve(strict=True)
     job = evidence.get('job') if isinstance(evidence, dict) else None
-    for version in (2, 3, 4, 5):
+    for version in (2, 3, 4, 5, 6):
         if isinstance(job, str) and job == f"annotation-adjudication-{inputs['input_digest']}":
             break
         inputs = _build_inputs(language=language, representation=representation, candidate=candidate,

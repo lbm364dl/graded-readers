@@ -88,12 +88,12 @@ def test_install_and_seed_use_private_verified_copy_for_nested_job(tmp_path):
     assert target.stat().st_mode & 0o777 == 0o600
     assert not any(entry.name.startswith(cache.SEED_TEMP_PREFIX)
                    for entry in (runtime / "state").iterdir())
-    assert _read_count(target) == 33
+    assert _read_count(target) is None
 
     with sqlite3.connect(target) as db:
-        db.execute("UPDATE threads SET test_only_count=0 WHERE id=1")
+        db.execute("INSERT INTO threads(id, test_only_count) VALUES(1, 0)")
     snapshot = cache_root / installed["snapshot_relative_path"]
-    assert _read_count(snapshot) == 33
+    assert _read_count(snapshot) is None
     assert _read_count(source_db) == 33
 
 
@@ -352,3 +352,51 @@ def test_kill_after_atomic_publication_leaves_valid_single_link_state(tmp_path, 
                                        cache_root=cache_root)
     assert retried["reason"] == "existing-state-preserved"
     assert target.is_file() and target.stat().st_nlink == 1
+
+
+def test_legacy_history_snapshot_projects_only_schema_and_completion_sentinels(tmp_path):
+    root = tmp_path / 'repo'
+    root.mkdir()
+    installed, source = _install(root)
+    legacy = dict(installed)
+    # Exercise the old cache content shape directly: valid schema plus history.
+    legacy.update(snapshot_sha256=cache._sha256(source), snapshot_bytes=source.stat().st_size,
+                  snapshot_metadata=cache._db_metadata(source))
+    target = tmp_path / 'tiny.sqlite'
+    with target.open('wb') as handle:
+        cache._copy_verified_snapshot(source, target, handle, legacy)
+    metadata = cache._db_metadata(target)
+    assert metadata['thread_count'] == 0
+    assert metadata['migration_count'] == 58
+    assert metadata['backfill_status'] == 'complete'
+    assert metadata['schema_fingerprint'] == legacy['snapshot_metadata']['schema_fingerprint']
+    assert _read_count(source) == 33
+    assert _read_count(target) is None
+
+
+def test_large_history_never_expands_installed_schema_seed(tmp_path):
+    root = tmp_path / 'repo'
+    root.mkdir()
+    _job, source = _completed_guarded_job(root)
+    with sqlite3.connect(source) as db:
+        db.execute('CREATE TABLE historical_text(payload TEXT)')
+        db.execute('INSERT INTO historical_text VALUES (?)', ('sensitive history ' * 300000,))
+    result = cache.install_cache(root, source, codex_version=CLI_VERSION)
+    snapshot = root / cache.CACHE_RELATIVE / result['snapshot_relative_path']
+    assert snapshot.stat().st_size < 100_000
+    assert source.stat().st_size > 4_000_000
+    with sqlite3.connect(snapshot) as db:
+        assert db.execute('SELECT COUNT(*) FROM historical_text').fetchone()[0] == 0
+        assert db.execute('SELECT COUNT(*) FROM threads').fetchone()[0] == 0
+
+
+def test_schema_projection_has_a_shared_size_bound(tmp_path, monkeypatch):
+    root = tmp_path/'repo'
+    root.mkdir()
+    _job, source = _completed_guarded_job(root)
+    before = cache._sha256(source)
+    monkeypatch.setattr(cache, 'MAX_SEED_BYTES', 1024)
+    with pytest.raises(cache.StateCacheError, match='bounded seed size'):
+        cache.install_cache(root, source, codex_version=CLI_VERSION)
+    assert cache._sha256(source) == before
+    assert not (root/cache.CACHE_RELATIVE/cache.ACTIVE_MANIFEST).exists()

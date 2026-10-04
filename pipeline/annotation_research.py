@@ -140,11 +140,32 @@ The bounded captured-source continuation cannot start another capture cycle.
 """
 RESEARCH_POLICY_V5 = RESEARCH_POLICY_V4 + "\n\n" + PRIMARY_DISCOVERY_GUIDANCE
 REVIEW_POLICY_V5 = REVIEW_POLICY_V4 + "\n\n" + PRIMARY_DISCOVERY_GUIDANCE
-RESEARCH_POLICY_VERSION = 5
-SUPPORTED_RESEARCH_POLICY_VERSIONS = {2, 3, 4, 5}
+SCOPED_FACT_REVIEW_GUIDANCE = """
+For this research stage, supported describes the concise cited fact itself,
+not acceptance of the candidate or the truth of every original defect claim.
+A relevant fact may establish a defect at one assigned target and explain why
+other assigned targets are acceptable. Do not require every original target to
+be defective, and do not reject the fact because it contradicts part of the
+original review. Evaluate each research claim against its citations and exact
+field scope. A useful fact may establish only part of the issue, provided it
+states its evidence limits and does not claim to settle an unestablished
+contribution. This clarification supersedes earlier wording requiring an
+unresolved row merely because a separate contribution remains unestablished.
+Still reject unrelated facts, unsupported contributions, irrelevant citations,
+and claims of resolution beyond what the sources establish. If no useful fact
+for the assigned issue is supported, return unresolved with the concrete gap.
+Research approval approves only the scoped evidence: it neither clears any
+current finding nor authorizes a repair. The separate enriched adjudication
+must preserve and evaluate every original target, including acceptable and
+unresolved targets; any remaining uncertainty must remain unresolved.
+"""
+RESEARCH_POLICY_V6 = RESEARCH_POLICY_V5 + "\n\n" + SCOPED_FACT_REVIEW_GUIDANCE
+REVIEW_POLICY_V6 = REVIEW_POLICY_V5 + "\n\n" + SCOPED_FACT_REVIEW_GUIDANCE
+RESEARCH_POLICY_VERSION = 6
+SUPPORTED_RESEARCH_POLICY_VERSIONS = {2, 3, 4, 5, 6}
 
 SUBMISSION_VALIDATION_VERSION = 2
-RESEARCH_EVIDENCE_VERSION = 5
+RESEARCH_EVIDENCE_VERSION = 6
 # Official dictionary pages include large inline scripts; keep the transfer
 # bounded while allowing the observed 2.55 MB KRDict entry page.
 MAX_CAPTURE_BYTES = 4_000_000
@@ -769,6 +790,8 @@ def _policies(version: int) -> tuple[str, str]:
         return RESEARCH_POLICY_V4, REVIEW_POLICY_V4
     if version == 5:
         return RESEARCH_POLICY_V5, REVIEW_POLICY_V5
+    if version == 6:
+        return RESEARCH_POLICY_V6, REVIEW_POLICY_V6
     raise AnnotationResearchError("Unsupported research policy version")
 
 

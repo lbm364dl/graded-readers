@@ -139,13 +139,44 @@ def _read_json_regular(path: Path) -> dict[str, Any]:
     return value
 
 
+SEED_CONTENT_POLICY = "schema-and-backfill-v1"
+MAX_SEED_BYTES = 8 * 1024 * 1024
+
+
+def _minimal_snapshot(source: Path, destination: Path) -> None:
+    """Recreate schema and migration/backfill sentinels without historical rows."""
+    original = sqlite3.connect(source.as_uri() + "?mode=ro", uri=True, timeout=10)
+    output = sqlite3.connect(destination)
+    try:
+        original.execute("PRAGMA query_only=ON")
+        objects = original.execute("SELECT type, name, sql FROM sqlite_master "
+            "WHERE name NOT LIKE 'sqlite_%' AND sql IS NOT NULL "
+            "ORDER BY CASE type WHEN 'table' THEN 0 WHEN 'index' THEN 1 WHEN 'view' THEN 2 ELSE 3 END, name").fetchall()
+        for kind, name, sql in objects:
+            output.execute(sql)
+        for table in ("_sqlx_migrations", "backfill_state"):
+            rows = original.execute(f'SELECT * FROM "{table}"').fetchall()
+            if rows:
+                slots = ','.join('?' for _ in rows[0])
+                output.executemany(f'INSERT INTO "{table}" VALUES ({slots})', rows)
+        output.execute(f"PRAGMA user_version={original.execute('PRAGMA user_version').fetchone()[0]}")
+        output.commit()
+        if _schema_fingerprint(output) != _schema_fingerprint(original):
+            raise StateCacheError("Minimal state schema differs from its verified source")
+    finally:
+        original.close()
+        output.close()
+    if destination.stat().st_size > MAX_SEED_BYTES:
+        raise StateCacheError("Minimal state schema exceeds the bounded seed size")
+
+
 def install_cache(repository: str | os.PathLike[str], source_db: str | os.PathLike[str],
                   *, codex_version: str,
                   cache_root: str | os.PathLike[str] | None = None) -> dict[str, Any]:
     """Install a verified backup from a completed, guarded worker database.
 
-    The source is opened read-only. A SQLite online backup creates an immutable
-    coordinator-owned template; worker runs later copy it into private state.
+    The source is opened read-only. Schema projection creates an immutable
+    coordinator-owned schema template without historical rows; workers receive private seeds.
     """
     repo = checked_directory(Path(repository).absolute())
     version = _safe_version(codex_version)
@@ -184,14 +215,7 @@ def install_cache(repository: str | os.PathLike[str], source_db: str | os.PathLi
     temp_dir = Path(tempfile.mkdtemp(prefix=".install-", dir=schema_root))
     try:
         temp_db = temp_dir / STATE_FILENAME
-        destination = sqlite3.connect(temp_db)
-        input_db = sqlite3.connect(source.as_uri() + "?mode=ro", uri=True, timeout=10)
-        try:
-            input_db.execute("PRAGMA query_only=ON")
-            input_db.backup(destination)
-        finally:
-            input_db.close()
-            destination.close()
+        _minimal_snapshot(source, temp_db)
         os.chmod(temp_db, 0o600)
         snapshot_metadata = _db_metadata(temp_db)
         _check_db_metadata(snapshot_metadata)
@@ -212,6 +236,7 @@ def install_cache(repository: str | os.PathLike[str], source_db: str | os.PathLi
                 raise StateCacheError("Existing cache snapshot failed its digest check")
         manifest = {
             "format_version": FORMAT_VERSION,
+            "seed_content_policy": SEED_CONTENT_POLICY,
             "codex_version": codex_version,
             "schema_key": schema_key,
             "snapshot_relative_path": final_db.relative_to(cache_root).as_posix(),
@@ -354,23 +379,26 @@ def _remove_interrupted_temps(state: Path, target: Path) -> None:
 
 def _copy_verified_snapshot(snapshot: Path, temp: Path, output_handle,
                             manifest: dict[str, Any]) -> None:
-    digest = hashlib.sha256()
-    with snapshot.open("rb") as input_handle, output_handle:
-        for block in iter(lambda: input_handle.read(1024 * 1024), b""):
-            output_handle.write(block)
-            digest.update(block)
-        output_handle.flush()
-        os.fsync(output_handle.fileno())
-    if digest.hexdigest() != manifest.get("snapshot_sha256"):
-        raise StateCacheError("Private worker copy digest differs from verified snapshot")
-    if temp.stat().st_size != manifest.get("snapshot_bytes"):
-        raise StateCacheError("Private worker copy size differs from verified snapshot")
+    # Existing immutable caches may contain hundreds of MB of historical
+    # threads. Verify their source bytes, then project a tiny private schema;
+    # never byte-copy that history merely to discard it afterwards.
+    output_handle.close()
+    if _sha256(snapshot) != manifest.get("snapshot_sha256"):
+        raise StateCacheError("Seed source digest differs from verified snapshot")
+    if snapshot.stat().st_size != manifest.get("snapshot_bytes"):
+        raise StateCacheError("Seed source size differs from verified snapshot")
+    _minimal_snapshot(snapshot, temp)
+    if _sha256(snapshot) != manifest.get("snapshot_sha256"):
+        raise StateCacheError("Seed source changed while projecting its schema")
+    os.chmod(temp, 0o600)
     actual = _db_metadata(temp, quick_check=False)
     _check_db_metadata(actual, require_quick_check=False)
     for key in ("schema_fingerprint", "migration_count", "migration_success_count",
-                "migration_max_version", "backfill_status", "thread_count"):
+                "migration_max_version", "backfill_status"):
         if actual.get(key) != manifest.get("snapshot_metadata", {}).get(key):
-            raise StateCacheError("Private worker copy metadata differs from its manifest")
+            raise StateCacheError("Private worker schema differs from its manifest")
+    if actual["thread_count"] != 0:
+        raise StateCacheError("Private worker seed contains historical threads")
     # SQLite may create temporary WAL/shared-memory sidecars even for a
     # read-only metadata check. The seed itself is a complete checkpoint, so
     # close over those temp-named files before moving the database into place.
@@ -469,7 +497,9 @@ def seed_runtime_state(repository: str | os.PathLike[str], runtime_root: str | o
         receipt.update({"status": "seeded", "reason": None,
                         "schema_key": manifest["schema_key"],
                         "snapshot_sha256": manifest["snapshot_sha256"],
-                        "copy_bytes": target.stat().st_size})
+                        "copy_bytes": target.stat().st_size,
+                        "seed_content_policy": SEED_CONTENT_POLICY,
+                        "seed_sha256": _sha256(target)})
     except (OSError, sqlite3.Error, StateCacheError, ValueError, KeyError, TypeError):
         # Incomplete bytes live only under a managed temp name. The final DB
         # appears only after verification and atomic no-clobber publication.

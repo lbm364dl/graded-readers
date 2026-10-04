@@ -65,6 +65,14 @@ continuation is prohibited from requesting another capture cycle. Research revie
 checks the fact and cited evidence independently of candidate acceptance. A fact
 that proves the unchanged candidate has a defect can be approved and routed to
 repair; that approval does not clear the annotation.
+Research policy 6 also allows a cited fact to support a defect at one assigned
+target while supporting the acceptability of other targets, or to establish a
+useful contribution without settling a separate unknown contribution. The critic
+evaluates the fact's stated scope rather than requiring every original objection
+to be correct. Unsupported claims and irrelevant citations remain rejectable;
+research approval never clears current findings or authorizes edits. Separate
+adjudication preserves all targets and any remaining uncertainty. Research policies
+2–5 retain their exact prompts, inputs and receipt replay.
 The coordinator can register an already researched, independently approved
 lesson for the exact occurrence and findings. The shared path checks that
 explicit cache receipt before launching research, authenticates both original

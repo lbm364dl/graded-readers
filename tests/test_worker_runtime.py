@@ -182,3 +182,44 @@ async def test_stale_receipt_alias_is_unlinked_without_removing_target(tmp_path,
     runner = CodexRunner(tmp_path/'runs', 'gpt-6-luna', asyncio.Semaphore(1))
     assert await runner.call('job', 'draft', schema, 'low') == {}
     assert source.read_text() == '{"protected":true}'
+
+
+def test_completed_runtime_sqlite_cleanup_preserves_replay_artifacts_and_live_state(tmp_path):
+    from pipeline.worker_runtime import cleanup_runtime_state
+    runtime = tmp_path / 'agents/job/runtime'
+    state = runtime / 'state'
+    state.mkdir(parents=True)
+    names = ['state_5.sqlite', 'state_5.sqlite-wal', 'state_5.sqlite-shm', 'logs_2.sqlite', '.state_5.sqlite.seed-dead123']
+    for name in names:
+        (state / name).write_bytes(b'private scratch')
+    retained = [runtime/'receipt.json', runtime/'state-cache-setup.json', runtime/'events.jsonl',
+                runtime/'stderr.log', state/'unrelated.json']
+    for path in retained:
+        path.write_bytes(b'exact retained evidence')
+    assert cleanup_runtime_state(runtime, process_finished=False)['status'] == 'skipped'
+    assert all((state/name).exists() for name in names)
+    result = cleanup_runtime_state(runtime, process_finished=True)
+    assert result['status'] == 'cleaned'
+    assert sorted(result['removed_files']) == sorted(names)
+    assert result['removed_bytes'] == len(names) * len(b'private scratch')
+    assert not any((state/name).exists() for name in names)
+    assert all(path.read_bytes() == b'exact retained evidence' for path in retained)
+
+
+@pytest.mark.parametrize('alias', ['symlink', 'hardlink'])
+def test_runtime_cleanup_refuses_aliased_sqlite_and_does_not_delete_outside_state(tmp_path, alias):
+    from pipeline.worker_runtime import cleanup_runtime_state
+    runtime = tmp_path / 'runtime'
+    state = runtime/'state'
+    state.mkdir(parents=True)
+    outside = tmp_path/'external.sqlite'
+    outside.write_bytes(b'protected')
+    target = state/'state_5.sqlite'
+    if alias == 'symlink':
+        target.symlink_to(outside)
+    else:
+        os.link(outside, target)
+    result = cleanup_runtime_state(runtime, process_finished=True)
+    assert result['status'] == 'skipped'
+    assert outside.read_bytes() == b'protected'
+    assert target.exists()

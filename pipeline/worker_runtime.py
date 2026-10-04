@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 from pathlib import Path
 import shutil
 import sys
@@ -78,6 +79,35 @@ def retain_logs(runtime: Path, events: Path, stderr: Path) -> None:
                 checked_regular_file(target.absolute())
             with target.open('ab') as handle:
                 handle.write(source.read_bytes())
+
+
+def cleanup_runtime_state(runtime: Path, *, process_finished: bool) -> dict:
+    """Drop private SQLite scratch only after child exit and retained logs.
+
+    State databases are CLI scratch, not worker artifacts or replay evidence.
+    Receipts, retained events, stderr, workspace submissions and setup provenance
+    remain intact. A live or unconfirmed worker is never cleaned.
+    """
+    result = {"version": 1, "status": "skipped", "reason": "worker-not-finished",
+              "removed_files": [], "removed_bytes": 0}
+    if not process_finished:
+        return result
+    try:
+        runtime = checked_directory(runtime.absolute())
+        if runtime.name != 'runtime':
+            raise ValueError('Not a worker runtime root')
+        state = checked_directory(runtime / 'state')
+        paths = [checked_regular_file(path) for path in state.iterdir()
+                 if re.fullmatch(r'(?:(?:state|logs)_\d+\.sqlite(?:-wal|-shm)?|\.state_5\.sqlite\.seed-[A-Za-z0-9_-]+)', path.name)]
+        sizes = [(path, path.stat().st_size) for path in paths]
+        for path, size in sizes:
+            path.unlink()
+            result['removed_files'].append(path.name)
+            result['removed_bytes'] += size
+        result.update(status='cleaned', reason=None)
+    except (OSError, ValueError):
+        result['reason'] = 'runtime-state-unavailable-or-unsafe'
+    return result
 
 
 def preserve_prior_source_mutation(job_dir: Path, repository: Path) -> None:

@@ -1166,8 +1166,9 @@ class CodexRunner:
                                 proc.stdin.close()
                                 await asyncio.wait_for(proc.wait(), self.timeout)
                                 if tool_profile == 'workspace':
-                                    from pipeline.worker_runtime import retain_logs
+                                    from pipeline.worker_runtime import retain_logs, cleanup_runtime_state
                                     retain_logs(runtime, events_path, stderr_path)
+                                    cleanup_runtime_state(runtime, process_finished=proc.returncode is not None)
                             except TimeoutError:
                                 try:
                                     os.killpg(proc.pid, signal.SIGKILL)
@@ -1175,8 +1176,9 @@ class CodexRunner:
                                     pass
                                 await proc.wait()
                                 if tool_profile == 'workspace':
-                                    from pipeline.worker_runtime import retain_logs
+                                    from pipeline.worker_runtime import retain_logs, cleanup_runtime_state
                                     retain_logs(runtime, events_path, stderr_path)
+                                    cleanup_runtime_state(runtime, process_finished=proc.returncode is not None)
                                 attempt = {
                                     "attempt": attempt_number,
                                     "started_at": attempt_started,

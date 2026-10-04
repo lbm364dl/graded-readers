@@ -481,5 +481,45 @@
         "sha256": "6eb88886c6206f824ba52a850555b4573d94d3f738cce92d4b01faa08e6d9683"
       }
     }
+  },
+  "per_target_policy6_and_disk_cleanup": {
+    "status": "isolated_whole_path_passed",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "changed_paths": [
+      "/segments/57/meaning_en"
+    ],
+    "supported_targets_unchanged": true,
+    "source_and_taps_unchanged": true,
+    "fresh_independent_review": "approved_without_issues",
+    "publication_chunk_verifier": true,
+    "offline_repair_and_publication_replay_after_physical_database_cleanup": true,
+    "elapsed_derived_lifecycle_seconds": 140.11929375599902,
+    "chapter_published": false,
+    "tests": {
+      "broad_semantic": 871,
+      "new_regressions": 24,
+      "runtime_and_replay": 240,
+      "overlap_note": "Suites reported separately, not summed."
+    },
+    "disk": {
+      "old_seed_bytes_approx": 749000000,
+      "new_seed_bytes": 245760,
+      "free_space_gib_approx": 680
+    },
+    "artifacts": [
+      {
+        "path": "runs/maintenance/20261003/smokes/mixed-target-acceptance-20261004/disputed-research-output/independent-adjudication.json",
+        "sha256": "eef66cb0981ac6ecfcdf0efa492bda21152c2765da166117e60a5e528afe9c52"
+      },
+      {
+        "path": "runs/maintenance/20261003/smokes/mixed-target-acceptance-20261004/derived-run-output/accepted-result.json",
+        "sha256": "336343ee77fee2d0c207a3b541ad5194eeec21bf82e9cb596c2028e9422d2496"
+      },
+      {
+        "path": "runs/maintenance/20261003/smokes/mixed-target-acceptance-20261004/derived-run-output/physical-state-removal-replay.json",
+        "sha256": "3274930ff93b80c7b9bd57d8d0e7695ebf8d34271682f39fb3588607182fb5c4"
+      }
+    ]
   }
 }
