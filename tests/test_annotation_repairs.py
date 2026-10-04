@@ -1113,7 +1113,12 @@ async def test_structured_findings_keep_exact_observations_in_plan_and_patch(
     observed = candidate["segments"][0]["meaning_en"]
     issues = [{"finding_ids": ["old-0"], "new_issue_ids": [],
         "diagnosis": "Correct the meaning at the observed field.",
-        "observations": [{"path": "/segments/0/meaning_en", "observed_value": observed}]}]
+        "observations": [{"path": "/segments/0/meaning_en", "observed_value": observed}],
+        "path_history": [{"finding_id": "earlier-0", "disposition": "resolved",
+            "reason": "The old value imported the complete construction meaning.",
+            "evidence": "The full-span overlay carries that meaning.",
+            "path_values": [{"path": "/segments/0/meaning_en",
+                "original_value": "may happen", "current_value": observed}]}]}]
     plan = _plan([_target("set_field", "/segments/0/meaning_en")])
     patch = {"base_digest": candidate_digest(candidate), "edits": [
         {"op": "set_field", "path": "/segments/0/meaning_en", "value": "her"}]}
@@ -1126,3 +1131,6 @@ async def test_structured_findings_keep_exact_observations_in_plan_and_patch(
         assert call[4]["workspace_context"]["issues"] == issues
         assert call[4]["workspace_context"]["issues"][0]["observations"][0] == {
             "path": "/segments/0/meaning_en", "observed_value": observed}
+        assert call[4]["workspace_context"]["issues"][0]["path_history"] == issues[0]["path_history"]
+        assert "When an issue includes host-verified `path_history`" in call[1]
+        assert "this is an evidence requirement, not a ban" in call[1]

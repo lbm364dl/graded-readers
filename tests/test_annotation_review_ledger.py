@@ -162,6 +162,82 @@ def test_comparable_unresolved_findings_can_share_one_current_repair_diagnosis()
     assert verified['repair_diagnoses'][0]['finding_ids'] == ['f1', 'f2']
 
 
+def test_repair_diagnosis_includes_only_overlapping_host_verified_path_history():
+    original = {'segments': [
+        {'meaning_en': 'earlier component gloss'},
+        {'meaning_en': 'unrelated gloss'},
+    ]}
+    current = {'segments': [
+        {'meaning_en': 'current component gloss'},
+        {'meaning_en': 'revised unrelated gloss'},
+    ]}
+    histories = [
+        {'finding_id': 'same-field', 'text': 'The component gloss overstates the form.',
+         'original_candidate': original,
+         'affected_paths': ['/segments/0/meaning_en']},
+        {'finding_id': 'unrelated', 'text': 'A separate lexical issue.',
+         'original_candidate': original,
+         'affected_paths': ['/segments/1/meaning_en']},
+        {'finding_id': 'overlapping-parent', 'text': 'The segment meaning was reviewed.',
+         'original_candidate': original,
+         'affected_paths': ['/segments/0']},
+    ]
+    output = {
+        'ledger_clear': False,
+        'findings': [
+            {'finding_id': 'same-field', 'disposition': 'unresolved',
+             'original_paths': ['/segments/0/meaning_en', '/segments/0'],
+             'current_paths': ['/segments/0/meaning_en', '/segments/0'],
+             'reason': 'The current component meaning still overstates its scope.',
+             'evidence': 'The reviewed full construction supplies that additional meaning.'},
+            {'finding_id': 'unrelated', 'disposition': 'resolved',
+             'original_paths': ['/segments/1/meaning_en'],
+             'current_paths': ['/segments/1/meaning_en'],
+             'reason': 'The separate lexical gloss was corrected.',
+             'evidence': 'The current field now matches the supplied entry.'},
+            {'finding_id': 'overlapping-parent', 'disposition': 'unsupported',
+             'original_paths': ['/segments/0'], 'current_paths': ['/segments/0'],
+             'reason': 'The parent-row concern was mistaken.',
+             'evidence': 'The affected value is a valid complete occurrence gloss.'},
+        ],
+        'new_issues': [],
+        'repair_diagnoses': [{
+            'finding_ids': ['same-field'], 'new_issue_ids': [],
+            'diagnosis': 'Keep the component gloss distinct from the full construction.',
+            'paths': ['/segments/0/meaning_en'],
+        }],
+        'prose_revision_reason_en': '',
+    }
+
+    verified = verify_ledger_output(output, current_candidate=current,
+        historical_findings=histories)
+    diagnosis = verified['repair_diagnoses'][0]
+    assert [row['finding_id'] for row in diagnosis['path_history']] == [
+        'same-field', 'overlapping-parent']
+    same, parent = diagnosis['path_history']
+    assert same['disposition'] == 'unresolved'
+    assert same['reason'] == output['findings'][0]['reason']
+    assert same['path_values'] == [{
+        'path': '/segments/0/meaning_en',
+        'original_value': 'earlier component gloss',
+        'current_value': 'current component gloss',
+    }]
+    assert parent['disposition'] == 'unsupported'
+    assert parent['path_values'][0]['path'] == '/segments/0'
+    assert 'unrelated' not in [row['finding_id'] for row in diagnosis['path_history']]
+
+
+def test_bound_unresolved_finding_cannot_be_grouped_under_an_unrelated_repair_path():
+    original, current = snapshots()
+    current['unrelated_field'] = 'unchanged'
+    output = ledger(current, disposition='unresolved', original=original)
+    output['repair_diagnoses'][0]['paths'] = ['/unrelated_field']
+
+    with pytest.raises(LedgerProtocolError, match='no affected path overlapping'):
+        verify_ledger_output(output, current_candidate=current,
+            historical_findings=[finding(original)])
+
+
 @pytest.mark.parametrize('damage', ['omission', 'duplicate', 'wrong_id'])
 def test_historical_finding_ids_must_be_reconciled_exactly(damage):
     original, current = snapshots()
@@ -211,6 +287,11 @@ def test_new_finding_requires_evidence_and_repair_diagnosis():
         historical_findings=[finding(original)])
     assert verified['approved'] is False
     assert verified['ledger_clear'] is False
+    output['repair_diagnoses'][0]['paths'] = ['/segments/0/form_steps/0/form']
+    with pytest.raises(LedgerProtocolError, match='no observed path overlapping'):
+        verify_ledger_output(output, current_candidate=current,
+            historical_findings=[finding(original)])
+    output['repair_diagnoses'][0]['paths'] = [path('/segments/0/form_steps/0/label')]
     output['repair_diagnoses'][0]['new_issue_ids'] = []
     with pytest.raises(LedgerProtocolError, match='Repair diagnosis'):
         verify_ledger_output(output, current_candidate=current,

@@ -164,6 +164,12 @@ def _resolve_paths(paths: list[str], candidate: Any, label: str) -> dict[str, An
     return checked
 
 
+def _pointers_overlap(left: str, right: str) -> bool:
+    """Return true when either candidate-relative JSON Pointer contains the other."""
+    return (left == right or left.startswith(right + '/')
+            or right.startswith(left + '/'))
+
+
 def verify_ledger_output(output: dict, *, current_candidate: Any,
                          historical_findings: list[dict], context: dict | None = None,
                          prose_before: Any = None, prose_after: Any = None,
@@ -235,6 +241,8 @@ def verify_ledger_output(output: dict, *, current_candidate: Any,
     diagnosed_new: list[str] = []
     diagnoses = []
     old_text = {row['finding_id']: row['text'] for row in historical_findings}
+    verified_by_id = {row['finding_id']: row for row in verified_findings}
+    new_by_id = {row['issue_id']: row for row in verified_new}
     for group in output['repair_diagnoses']:
         finding_ids = group['finding_ids']
         issue_ids = group['new_issue_ids']
@@ -247,10 +255,56 @@ def verify_ledger_output(output: dict, *, current_candidate: Any,
         if finding_ids and group['diagnosis'].strip() in {old_text[identity].strip() for identity in finding_ids}:
             raise LedgerProtocolError('Repair diagnosis must describe the current defect, not copy historical wording')
         current = _resolve_paths(group['paths'], current_candidate, 'repair diagnosis')
+        diagnosis_paths = list(group['paths'])
+        for finding_id in finding_ids:
+            prior = verified_by_id[finding_id]
+            if (prior['bound'] and not any(
+                    _pointers_overlap(affected_path, diagnosis_path)
+                    for affected_path in prior['affected_paths']
+                    for diagnosis_path in diagnosis_paths)):
+                raise LedgerProtocolError(
+                    f'Bound finding {finding_id} has no affected path overlapping its repair diagnosis paths')
+        for issue_id in issue_ids:
+            issue_paths = [row['path'] for row in new_by_id[issue_id]['observations']]
+            if not any(_pointers_overlap(issue_path, diagnosis_path)
+                       for issue_path in issue_paths for diagnosis_path in diagnosis_paths):
+                raise LedgerProtocolError(
+                    f'New issue {issue_id} has no observed path overlapping its repair diagnosis paths')
+        path_history = []
+        for prior in verified_findings:
+            original_values = {row['path']: row['observed_value']
+                               for row in prior['original_observations']}
+            current_values = {row['path']: row['observed_value']
+                              for row in prior['current_observations']}
+            # A bound finding's declared affected paths are its authoritative
+            # scope. Extra paths a reviewer returned only establish that those
+            # values existed; they must not widen the repair history binding.
+            observed_paths = sorted(prior['affected_paths'] or
+                                    (set(original_values) | set(current_values)))
+            overlapping = [path for path in observed_paths
+                           if any(_pointers_overlap(path, diagnosis_path)
+                                  for diagnosis_path in diagnosis_paths)]
+            if not overlapping:
+                continue
+            path_history.append({
+                'finding_id': prior['finding_id'],
+                'disposition': prior['disposition'],
+                'bound': prior['bound'],
+                'reason': prior['reason'],
+                'evidence': prior['evidence'],
+                'path_values': [
+                    {'path': path,
+                     **({'original_value': original_values[path]}
+                        if path in original_values else {}),
+                     **({'current_value': current_values[path]}
+                        if path in current_values else {})}
+                    for path in overlapping],
+            })
         diagnosed_findings.extend(finding_ids)
         diagnosed_new.extend(issue_ids)
         diagnoses.append({**group, 'observations': [
-            {'path': path, 'observed_value': value} for path, value in current.items()]})
+            {'path': path, 'observed_value': value} for path, value in current.items()],
+            'path_history': path_history})
     if (set(diagnosed_findings) != unresolved_ids
             or len(diagnosed_findings) != len(unresolved_ids)
             or set(diagnosed_new) != new_issue_ids
