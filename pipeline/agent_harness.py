@@ -989,7 +989,7 @@ class CodexRunner:
         result_path.write_text(json.dumps(value, ensure_ascii=False) + '\n', encoding='utf-8')
         recovery = {'status': 'repaired', 'job': repair_job,
                     'initial_rejection': record,
-                    'accepted_artifact': str(source.relative_to(self.run_dir)),
+                    'accepted_artifact': str(source.relative_to(self.run_dir.resolve())),
                     'accepted_artifact_sha256': hashlib.sha256(accepted_bytes).hexdigest()}
         (original_dir / 'submission-recovery.json').write_text(
             json.dumps(recovery, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')

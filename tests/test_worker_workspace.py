@@ -608,15 +608,19 @@ async def test_correct_annotation_plan_passes_without_correction(tmp_path, monke
 
 
 @pytest.mark.asyncio
-async def test_codex_runner_repairs_one_schema_rejected_candidate_and_caches_final_artifact(tmp_path, monkeypatch):
+@pytest.mark.parametrize('relative_run_dir', [False, True])
+async def test_codex_runner_repairs_one_schema_rejected_candidate_and_caches_final_artifact(tmp_path, monkeypatch, relative_run_dir):
     import asyncio
+    from pathlib import Path
     from pipeline.agent_harness import CodexRunner
 
     invalid, corrected = _word_candidate(complete=False), _word_candidate(complete=True)
     launches = _fake_workspace_codex(monkeypatch, [invalid, corrected])
     schema = tmp_path / 'schema.json'
     schema.write_text(json.dumps(_word_schema()), encoding='utf-8')
-    runner = CodexRunner(tmp_path, 'gpt-6-luna', asyncio.Semaphore(1))
+    monkeypatch.chdir(tmp_path.parent)
+    run_dir = Path(tmp_path.name) if relative_run_dir else tmp_path
+    runner = CodexRunner(run_dir, 'gpt-6-luna', asyncio.Semaphore(1))
 
     assert await runner.call('candidate', 'Annotate the source.', schema, 'low') == corrected
     assert len(launches) == 2
@@ -634,6 +638,9 @@ async def test_codex_runner_repairs_one_schema_rejected_candidate_and_caches_fin
     meta = json.loads((job / 'meta.json').read_text())
     assert meta['return_code'] == 0 and meta['recovered_after_submission_rejection'] is True
     assert meta['submission_repair']['status'] == 'repaired'
+    accepted_artifact = meta['submission_repair']['accepted_artifact']
+    assert not Path(accepted_artifact).is_absolute()
+    assert (tmp_path / accepted_artifact).read_bytes() == (job / 'workspace/candidate.json').read_bytes()
     assert json.loads((job / 'result.json').read_text()) == corrected
     # The original fingerprint now replays the final exact artifact without another launch.
     assert await runner.call('candidate', 'Annotate the source.', schema, 'low') == corrected
