@@ -7,6 +7,7 @@ from jsonschema import ValidationError
 
 from pipeline.annotation_review_ledger import (
     LedgerProtocolError,
+    _make_input,
     prepare_saved_smoke_case,
     review_finding_ledger,
     verify_ledger_output,
@@ -25,18 +26,16 @@ def finding(original=None, finding_id='f1', text='The displayed stage is incompl
     return {'finding_id': finding_id, 'text': text, 'original_candidate': original}
 
 
-def observation(path, value):
-    return {'path': path, 'observed_value': value}
+def path(pointer):
+    return pointer
 
 
 def ledger(current, *, disposition='resolved', original=None, changed=True,
            ledger_clear=None, new_issues=None, repair_diagnoses=None, prose=''):
     original = original or snapshots()[0]
-    original_value = original['segments'][0]['form_steps'][0]['meaning_en']
-    current_value = current['segments'][0]['form_steps'][0]['meaning_en']
     findings = [{'finding_id': 'f1', 'disposition': disposition,
-        'original_observations': [observation('/segments/0/form_steps/0/meaning_en', original_value)],
-        'current_observations': [observation('/segments/0/form_steps/0/meaning_en', current_value)],
+        'original_paths': [path('/segments/0/form_steps/0/meaning_en')],
+        'current_paths': [path('/segments/0/form_steps/0/meaning_en')],
         'reason': 'The complete form meaning was corrected.' if disposition == 'resolved'
                   else 'The review conclusion is recorded.',
         'evidence': 'The exact form chain and supplied lesson support this conclusion.'}]
@@ -46,7 +45,7 @@ def ledger(current, *, disposition='resolved', original=None, changed=True,
         if disposition == 'unresolved':
             repair_diagnoses = [{'finding_ids': ['f1'], 'new_issue_ids': [],
                 'diagnosis': 'The stage still gives the incomplete form as its meaning.',
-                'observations': [observation('/segments/0/form_steps/0/meaning_en', current_value)]}]
+                'paths': [path('/segments/0/form_steps/0/meaning_en')]}]
     if ledger_clear is None:
         ledger_clear = disposition != 'unresolved' and not new_issues and not prose
     return {'ledger_clear': ledger_clear, 'findings': findings, 'new_issues': new_issues,
@@ -137,11 +136,11 @@ def test_candidate_observations_are_bound_to_immutable_snapshots(damage):
     current['segments'][0]['form_steps'][0]['meaning_en'] = 'was born fully'
     output = ledger(current)
     if damage == 'wrong_value':
-        output['findings'][0]['current_observations'][0]['observed_value'] = 'a guessed value'
+        output['findings'][0]['current_paths'][0] = '/historical_candidates_by_digest/fake/segments/0'
     elif damage == 'missing_pointer':
-        output['findings'][0]['current_observations'][0]['path'] = '/segments/8'
+        output['findings'][0]['current_paths'][0] = '/segments/8'
     else:
-        output['findings'][0]['current_observations'][0]['path'] = '/segments/0/~2bad'
+        output['findings'][0]['current_paths'][0] = '/segments/0/~2bad'
     with pytest.raises(LedgerProtocolError):
         verify_ledger_output(output, current_candidate=current,
             historical_findings=[finding(original)])
@@ -151,12 +150,12 @@ def test_new_finding_requires_evidence_and_repair_diagnosis():
     original, current = snapshots()
     current['segments'][0]['form_steps'][0]['meaning_en'] = 'was born fully'
     issue = {'issue_id': 'new-1', 'issue': 'The form label is inconsistent.',
-        'observations': [observation('/segments/0/form_steps/0/label', 'past')],
+        'paths': [path('/segments/0/form_steps/0/label')],
         'reason': 'The label does not fit the observed form.', 'evidence': 'The supplied chain.'}
     output = ledger(current, new_issues=[issue], ledger_clear=False,
         repair_diagnoses=[{'finding_ids': [], 'new_issue_ids': ['new-1'],
             'diagnosis': 'The current form label conflicts with the reviewed step.',
-            'observations': [observation('/segments/0/form_steps/0/label', 'past')]}])
+            'paths': [path('/segments/0/form_steps/0/label')]}])
     verified = verify_ledger_output(output, current_candidate=current,
         historical_findings=[finding(original)])
     assert verified['approved'] is False
@@ -227,7 +226,24 @@ def test_saved_smoke_adapter_preserves_each_finding_candidate_and_current_artifa
     assert prepared['current_candidate'] == revised
     assert prepared['prose_before'] == prepared['prose_after'] == 'unchanged prose'
     assert 'learner difficulty' in prepared['review_instructions']
-    assert prepared['historical_findings'][0]['original_context'] == {'language': 'ko'}
+    context_digest = prepared['historical_findings'][0]['original_context_digest']
+    assert prepared['historical_contexts_by_digest'][context_digest] == {'language': 'ko'}
+
+
+def test_historical_contexts_are_deduplicated_by_digest_without_losing_per_finding_binding():
+    original, current = snapshots()
+    shared = {'source_plan': [{'event': 'same source context'}]}
+    other = {'source_plan': [{'event': 'different source context'}]}
+    rows = [finding(original, 'f1'), finding(original, 'f2'), finding(original, 'f3')]
+    rows[0]['original_context'] = shared
+    rows[1]['original_context'] = copy.deepcopy(shared)
+    rows[2]['original_context'] = other
+    prepared = _make_input(current, rows, {}, None, None, 'review policy', 'low')
+    assert len(prepared['historical_contexts_by_digest']) == 2
+    context_map = prepared['historical_contexts_by_digest']
+    assert context_map[prepared['historical_findings'][0]['original_context_digest']] == shared
+    assert prepared['historical_findings'][0]['original_context_digest'] == prepared['historical_findings'][1]['original_context_digest']
+    assert prepared['historical_findings'][2]['original_context_digest'] != prepared['historical_findings'][0]['original_context_digest']
 
 
 def test_effort_and_instruction_digest_separate_cached_job_identities(tmp_path):

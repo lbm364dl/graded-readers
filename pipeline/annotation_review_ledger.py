@@ -23,12 +23,9 @@ def canonical_digest(value: Any) -> str:
     return hashlib.sha256(raw).hexdigest()
 
 
-def _observation_schema() -> dict:
-    return {
-        'type': 'object', 'additionalProperties': False,
-        'required': ['path', 'observed_value'],
-        'properties': {'path': {'type': 'string'}, 'observed_value': {}},
-    }
+def _pointer_list_schema() -> dict:
+    return {'type': 'array', 'minItems': 1, 'uniqueItems': True,
+            'items': {'type': 'string', 'minLength': 1}}
 
 
 LEDGER_SCHEMA = {
@@ -40,40 +37,38 @@ LEDGER_SCHEMA = {
         'ledger_clear': {'type': 'boolean'},
         'findings': {'type': 'array', 'items': {
             'type': 'object', 'additionalProperties': False,
-            'required': ['finding_id', 'disposition', 'original_observations',
-                         'current_observations', 'reason', 'evidence'],
+            'required': ['finding_id', 'disposition', 'original_paths',
+                         'current_paths', 'reason', 'evidence'],
             'properties': {
                 'finding_id': {'type': 'string', 'minLength': 1},
                 'disposition': {'enum': ['resolved', 'unresolved', 'unsupported']},
-                'original_observations': {'type': 'array', 'minItems': 1,
-                                          'items': _observation_schema()},
-                'current_observations': {'type': 'array', 'minItems': 1,
-                                         'items': _observation_schema()},
+                'original_paths': _pointer_list_schema(),
+                'current_paths': _pointer_list_schema(),
                 'reason': {'type': 'string', 'minLength': 1},
                 'evidence': {'type': 'string', 'minLength': 1},
             },
         }},
         'new_issues': {'type': 'array', 'items': {
             'type': 'object', 'additionalProperties': False,
-            'required': ['issue_id', 'issue', 'observations', 'reason', 'evidence'],
+            'required': ['issue_id', 'issue', 'paths', 'reason', 'evidence'],
             'properties': {
                 'issue_id': {'type': 'string', 'minLength': 1},
                 'issue': {'type': 'string', 'minLength': 1},
-                'observations': {'type': 'array', 'minItems': 1, 'items': _observation_schema()},
+                'paths': _pointer_list_schema(),
                 'reason': {'type': 'string', 'minLength': 1},
                 'evidence': {'type': 'string', 'minLength': 1},
             },
         }},
         'repair_diagnoses': {'type': 'array', 'items': {
             'type': 'object', 'additionalProperties': False,
-            'required': ['finding_ids', 'new_issue_ids', 'diagnosis', 'observations'],
+            'required': ['finding_ids', 'new_issue_ids', 'diagnosis', 'paths'],
             'properties': {
                 'finding_ids': {'type': 'array', 'uniqueItems': True,
                                 'items': {'type': 'string', 'minLength': 1}},
                 'new_issue_ids': {'type': 'array', 'uniqueItems': True,
                                   'items': {'type': 'string', 'minLength': 1}},
                 'diagnosis': {'type': 'string', 'minLength': 1},
-                'observations': {'type': 'array', 'minItems': 1, 'items': _observation_schema()},
+                'paths': _pointer_list_schema(),
             },
         }},
         'prose_revision_reason_en': {'type': 'string'},
@@ -84,8 +79,18 @@ LEDGER_SCHEMA = {
 INSTRUCTIONS = """Independently review the current annotation candidate and reconcile every historical finding.
 For each supplied finding_id return exactly one disposition: resolved, unresolved,
 or unsupported. Do not omit a finding because another review omitted it. Use exact
-JSON Pointer paths into the supplied original and current candidate snapshots and
-quote the exact observed values. A resolved finding must describe a relevant field
+JSON Pointer paths into the supplied original and current candidate snapshots.
+Pointers are relative to the candidate object itself and begin at paths such as
+`/segments/0/...` or `/grammar_links/0/...`; never prefix a path with the input
+wrapper key or candidate digest. The host resolves each path and records the exact
+value, so return paths only and do not retype values. Each historical finding's
+original context is stored by its `original_context_digest`; do not prefix field
+pointers with the context-map key either. Before marking a finding
+unresolved, verify that the current value actually exhibits the alleged defect.
+An alternate suggested gloss alone is not a defect: compare a form's own meaning
+with its supplied lesson and role, allow contextual tense where the form permits
+it, and do not reject a defensible complete-form variant without a concrete mismatch.
+A resolved finding must describe a relevant field
 change and why that change resolves the reported defect. An unchanged field cannot
 be called resolved. Unsupported is distinct: use it only when evidence shows the
 historical objection itself was mistaken, and explain that evidence. If uncertain,
@@ -143,16 +148,14 @@ def resolve_pointer(document: Any, pointer: str) -> Any:
     return value
 
 
-def _validate_observations(rows: list[dict], candidate: Any, label: str) -> dict[str, Any]:
+def _resolve_paths(paths: list[str], candidate: Any, label: str) -> dict[str, Any]:
     checked = {}
-    for row in rows:
-        path = row['path']
+    for path in paths:
         if path in checked:
-            raise LedgerProtocolError(f'Duplicate {label} observation path: {path}')
-        actual = resolve_pointer(candidate, path)
-        if actual != row['observed_value']:
-            raise LedgerProtocolError(f'{label} observation does not match candidate at {path}')
-        checked[path] = actual
+            raise LedgerProtocolError(f'Duplicate {label} pointer: {path}')
+        if not path.startswith('/'):
+            raise LedgerProtocolError(f'{label} pointers must be candidate-relative JSON Pointers')
+        checked[path] = resolve_pointer(candidate, path)
     return checked
 
 
@@ -173,18 +176,21 @@ def verify_ledger_output(output: dict, *, current_candidate: Any,
     verified_findings = []
     for finding_id, old in expected.items():
         row = actual[finding_id]
-        original = _validate_observations(row['original_observations'],
-                                          old['original_candidate'], 'original')
-        current = _validate_observations(row['current_observations'],
-                                         current_candidate, 'current')
+        original = _resolve_paths(row['original_paths'], old['original_candidate'], 'original')
+        current = _resolve_paths(row['current_paths'], current_candidate, 'current')
         common = original.keys() & current.keys()
         if not common:
             raise LedgerProtocolError(f'Finding {finding_id} observations need a shared field path')
         changed = any(original[path] != current[path] for path in common)
         if row['disposition'] == 'resolved' and not changed:
             raise LedgerProtocolError(f'Finding {finding_id} cannot be resolved without a relevant changed field')
-        verified_findings.append({**row, 'original_candidate_digest': canonical_digest(old['original_candidate']),
-                                  'observed_change': changed})
+        verified_findings.append({**row,
+            'original_observations': [{'path': path, 'observed_value': value}
+                                      for path, value in original.items()],
+            'current_observations': [{'path': path, 'observed_value': value}
+                                     for path, value in current.items()],
+            'original_candidate_digest': canonical_digest(old['original_candidate']),
+            'observed_change': changed})
 
     verified_new = []
     new_issue_ids = set()
@@ -192,10 +198,11 @@ def verify_ledger_output(output: dict, *, current_candidate: Any,
         if row['issue_id'] in new_issue_ids:
             raise LedgerProtocolError('New issue IDs must be unique')
         new_issue_ids.add(row['issue_id'])
-        current = _validate_observations(row['observations'], current_candidate, 'new issue')
+        current = _resolve_paths(row['paths'], current_candidate, 'new issue')
         if not current:
             raise LedgerProtocolError('New issue must identify an exact current candidate field')
-        verified_new.append(row)
+        verified_new.append({**row, 'observations': [
+            {'path': path, 'observed_value': value} for path, value in current.items()]})
 
     unresolved_ids = {row['finding_id'] for row in verified_findings
                       if row['disposition'] == 'unresolved'}
@@ -214,10 +221,11 @@ def verify_ledger_output(output: dict, *, current_candidate: Any,
             raise LedgerProtocolError('Repair diagnosis references an unknown new issue')
         if finding_ids and group['diagnosis'].strip() in {old_text[identity].strip() for identity in finding_ids}:
             raise LedgerProtocolError('Repair diagnosis must describe the current defect, not copy historical wording')
-        _validate_observations(group['observations'], current_candidate, 'repair diagnosis')
+        current = _resolve_paths(group['paths'], current_candidate, 'repair diagnosis')
         diagnosed_findings.extend(finding_ids)
         diagnosed_new.extend(issue_ids)
-        diagnoses.append(group)
+        diagnoses.append({**group, 'observations': [
+            {'path': path, 'observed_value': value} for path, value in current.items()]})
     if (set(diagnosed_findings) != unresolved_ids
             or len(diagnosed_findings) != len(unresolved_ids)
             or set(diagnosed_new) != new_issue_ids
@@ -251,6 +259,7 @@ def _make_input(current_candidate: Any, historical_findings: list[dict], context
                 prose_before: Any, prose_after: Any, review_instructions: str,
                 effort: str) -> dict:
     candidates: dict[str, Any] = {}
+    historical_contexts: dict[str, Any] = {}
     rows = []
     for finding in historical_findings:
         required = {'finding_id', 'text', 'original_candidate'}
@@ -259,15 +268,19 @@ def _make_input(current_candidate: Any, historical_findings: list[dict], context
         candidate = finding['original_candidate']
         candidate_digest = canonical_digest(candidate)
         candidates.setdefault(candidate_digest, candidate)
+        original_context = finding.get('original_context', {})
+        context_digest = canonical_digest(original_context)
+        historical_contexts.setdefault(context_digest, original_context)
         rows.append({'finding_id': finding['finding_id'], 'text': finding['text'],
                      'original_candidate_digest': candidate_digest,
-                     'original_context': finding.get('original_context', {})})
+                     'original_context_digest': context_digest})
     if len({row['finding_id'] for row in rows}) != len(rows):
         raise ValueError('Historical finding IDs must be unique')
     return {
         'current_candidate_digest': canonical_digest(current_candidate),
         'current_candidate': current_candidate,
         'historical_candidates_by_digest': candidates,
+        'historical_contexts_by_digest': historical_contexts,
         'historical_findings': rows,
         'context': context or {},
         'prose_before': prose_before,
@@ -340,7 +353,6 @@ def prepare_saved_smoke_case(cases_path: Path, summary_path: Path, case_name: st
         'for its requested TOPIK learner level', f'for a TOPIK {level} learner')
     review_instructions = policy + '\n' + review_policy + '\n' + KOREAN_REVIEW_INSTRUCTIONS
     current_context = dict(latest_input.get('context', {}))
-    current_context['review_instructions'] = review_instructions
     value = _make_input(current_candidate, findings, current_context,
                         initial_input.get('text'), latest_input.get('text'),
                         review_instructions, 'low')
@@ -368,7 +380,9 @@ async def review_finding_ledger(runner: Any, run_dir: Path, *, current_candidate
         review_instructions = (context or {}).get('review_instructions', '')
     if not isinstance(review_instructions, str):
         raise ValueError('Review instructions must be a string')
-    inputs = _make_input(current_candidate, historical_findings, context,
+    context_payload = dict(context or {})
+    context_payload.pop('review_instructions', None)
+    inputs = _make_input(current_candidate, historical_findings, context_payload,
                          prose_before, prose_after, review_instructions, effort)
     job = f"annotation-finding-ledger-{canonical_digest(inputs)}"
     agent_dir = run_dir / 'agents' / job
@@ -380,7 +394,7 @@ async def review_finding_ledger(runner: Any, run_dir: Path, *, current_candidate
     output = await runner.call(job, prompt, schema_path, effort, tool_profile='research',
         workspace_context={'annotation_finding_ledger': inputs})
     verified = verify_ledger_output(output, current_candidate=current_candidate,
-        historical_findings=historical_findings, context=context,
+        historical_findings=historical_findings, context=context_payload,
         prose_before=prose_before, prose_after=prose_after, effort=effort,
         instructions_digest=inputs['instructions_digest'])
     _write_json(agent_dir / 'result.json', output)
