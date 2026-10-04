@@ -53,7 +53,77 @@ def _registry(path: Path) -> dict[str, dict]:
             latest_revisions[identity] = entry
     if any(by_id.get(identity) != entry for identity, entry in latest_revisions.items()):
         raise ValueError('Korean revised definition differs from independent review')
+    if path.resolve() == GRAMMAR.resolve() or 'grammar_revision_reviews' in data:
+        _verify_grammar_revision_history(data, by_id)
     return by_id
+
+
+def _verify_grammar_revision_history(data: dict, by_id: dict[str, dict]) -> None:
+    """Accept predecessor grammar entries only through complete reviewed coverage."""
+    from pipeline.korean_agent_harness import digest
+    latest: dict[str, dict] = {}
+    for record in data.get('grammar_revision_reviews', []):
+        if record.get('entry_kind') != 'grammar':
+            raise ValueError('Korean grammar revision has the wrong entry kind')
+        proposal, review = record.get('proposal'), record.get('review')
+        coverage = record.get('coverage')
+        context = {'entry_kind': 'grammar', 'before_entries': record.get('before_entries'),
+                   'coverage': coverage}
+        if (not isinstance(proposal, dict) or not isinstance(review, dict)
+                or record.get('proposal_digest') != digest(proposal)
+                or record.get('review_digest') != digest(review)
+                or review != {'approved': True, 'issues': []}
+                or record.get('context_digest') != digest(context)):
+            raise ValueError('Korean grammar revision lacks matching independent review')
+        before_rows, after_rows = record.get('before_entries'), proposal.get('entries')
+        if not isinstance(before_rows, list) or not isinstance(after_rows, list):
+            raise ValueError('Korean grammar revision has malformed entry history')
+        before = {entry['id']: entry for entry in before_rows}
+        after = {entry['id']: entry for entry in after_rows}
+        if not before or len(before) != len(before_rows) or len(after) != len(after_rows) or before.keys() != after.keys():
+            raise ValueError('Korean grammar revision changes identity coverage')
+        from pipeline.korean_dictionary_revision import check_revision
+        try:
+            check_revision(proposal, before, 'grammar')
+        except (KeyError, TypeError, ValueError) as error:
+            raise ValueError('Korean grammar revision proposal is invalid') from error
+        for identity, entry in after.items():
+            if entry.get('id') != identity or entry.get('pattern') != before[identity].get('pattern'):
+                raise ValueError('Korean grammar revision changes an identity or pattern')
+            if identity in latest and latest[identity] != before[identity]:
+                raise ValueError('Korean grammar revision history is discontinuous')
+            latest[identity] = entry
+        if not isinstance(coverage, dict) or coverage.get('entry_kind') != 'grammar':
+            raise ValueError('Korean grammar revision lacks occurrence coverage')
+        covered_files = coverage.get('files')
+        published_files = coverage.get('published_files')
+        chapter_digests = coverage.get('chapter_digests')
+        if (not isinstance(covered_files, dict) or not isinstance(published_files, list)
+                or not isinstance(chapter_digests, list)
+                or len(set(published_files)) != len(published_files)
+                or not set(published_files).issubset(covered_files)
+                or {row.get('file') for row in chapter_digests if isinstance(row, dict)}
+                   != set(published_files)
+                or any(not isinstance(covered_files.get(name), str)
+                       or len(covered_files[name]) != 64 for name in published_files)):
+            raise ValueError('Korean grammar revision lacks complete published occurrence provenance')
+        seen_chapters = set()
+        for chapter_row in chapter_digests:
+            if (not isinstance(chapter_row, dict) or chapter_row.get('file') not in published_files
+                    or type(chapter_row.get('chapter')) is not int
+                    or not isinstance(chapter_row.get('digest'), str)
+                    or len(chapter_row['digest']) != 64):
+                raise ValueError('Korean grammar revision has malformed chapter coverage')
+            key = (chapter_row['file'], chapter_row['chapter'])
+            if key in seen_chapters:
+                raise ValueError('Korean grammar revision has duplicate chapter coverage')
+            seen_chapters.add(key)
+        occurrence_rows = coverage.get('occurrences')
+        if not isinstance(occurrence_rows, list) or any(
+                row.get('entry_id') not in before for row in occurrence_rows):
+            raise ValueError('Korean grammar revision coverage has an invalid occurrence')
+    if any(by_id.get(identity) != entry for identity, entry in latest.items()):
+        raise ValueError('Korean revised grammar differs from independent review')
 
 
 @lru_cache(maxsize=32)

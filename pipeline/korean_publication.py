@@ -40,6 +40,11 @@ def relevant_entries(chapter: dict, words: dict, grammar: dict) -> dict:
     word_ids = {s["lexical"]["id"] for s in chapter["segments"]
                 if s["type"] == "word" and s["lexical"]["kind"] != "grammar"}
     grammar_ids = {link["entry_id"] for link in chapter["grammar_links"]}
+    grammar_ids.update(s['lexical']['id'] for s in chapter['segments']
+                       if s['type'] == 'word' and s['lexical']['kind'] == 'grammar')
+    grammar_ids.update(identity for segment in chapter['segments']
+                       for step in segment.get('form_steps', [])
+                       for identity in step['grammar_entry_ids'])
     return {"words": [words[key] for key in sorted(word_ids)],
             "grammar": [grammar[key] for key in sorted(grammar_ids)]}
 
@@ -64,20 +69,60 @@ def reviewed_word_versions(words: dict):
         yield version.copy()
 
 
+def reviewed_grammar_versions(grammar: dict, chapter: dict):
+    """Replay predecessors only when this exact source chapter was reviewed."""
+    current = dictionary._registry(dictionary.GRAMMAR)
+    history = read(dictionary.GRAMMAR).get('grammar_revision_reviews', [])
+    version = dict(grammar)
+    grammar_ids = {link['entry_id'] for link in chapter.get('grammar_links', [])}
+    grammar_ids.update(segment['lexical']['id'] for segment in chapter.get('segments', [])
+                       if segment.get('type') == 'word'
+                       and segment.get('lexical', {}).get('kind') == 'grammar')
+    grammar_ids.update(identity for segment in chapter.get('segments', [])
+                       for step in segment.get('form_steps', [])
+                       for identity in step.get('grammar_entry_ids', []))
+    chapter_digest = digest(chapter)
+    eligible = True
+    yield version.copy()
+    for record in reversed(history):
+        before = {entry['id']: entry for entry in record['before_entries']}
+        changed_used = grammar_ids.intersection(before)
+        covered = any(row.get('digest') == chapter_digest
+                      for row in record['coverage'].get('chapter_digests', []))
+        if changed_used and not covered:
+            eligible = False
+        for after in record['proposal']['entries']:
+            identity = after['id']
+            if identity not in version:
+                continue
+            if grammar[identity] != current[identity]:
+                raise ValueError('Korean publication changed a reviewed grammar revision')
+            if version[identity] != after:
+                raise ValueError('Korean grammar revision replay is discontinuous')
+            version[identity] = before[identity]
+        if eligible:
+            yield version.copy()
+
+
 def dictionary_digest_matches(chapter: dict, expected: str, words: dict, grammar: dict) -> bool:
     if expected == digest(relevant_entries(chapter, words, grammar)):
         return True
-    return any(expected == digest(relevant_entries(chapter, prior, grammar))
-               for prior in reviewed_word_versions(words))
+    word_versions = list(reviewed_word_versions(words))
+    grammar_versions = list(reviewed_grammar_versions(grammar, chapter))
+    return any(expected == digest(relevant_entries(chapter, prior_words, prior_grammar))
+               for prior_words in word_versions for prior_grammar in grammar_versions)
 
 
-def merge_dictionary_delta(words: dict, grammar: dict, delta: dict) -> None:
+def merge_dictionary_delta(words: dict, grammar: dict, delta: dict, chapter: dict | None = None) -> None:
     for kind, registry in (('words', words), ('grammar', grammar)):
         for entry in delta[kind]:
             if entry['id'] in registry and registry[entry['id']] != entry:
                 if kind == 'words' and any(prior.get(entry['id']) == entry
                         for prior in reviewed_word_versions(words)):
                     continue  # Keep the reviewed successor; never restore the old definition.
+                if kind == 'grammar' and chapter is not None and any(prior.get(entry['id']) == entry
+                        for prior in reviewed_grammar_versions(grammar, chapter)):
+                    continue  # Keep the reviewed successor; never restore the old lesson.
                 raise ValueError('Korean run overwrites an approved dictionary entry')
             registry[entry['id']] = entry
 
@@ -397,8 +442,8 @@ def publish(run_root: Path, *, promote: bool = True) -> dict:
             raise ValueError('Korean chapter source scopes overlap or skip narrative')
         next_start = unit['end'] + 2
     words, grammar = dictionary._registry(dictionary.WORDS), dictionary._registry(dictionary.GRAMMAR)
-    for _, delta, _, _ in accepted:
-        merge_dictionary_delta(words, grammar, delta)
+    for chapter, delta, _, _ in accepted:
+        merge_dictionary_delta(words, grammar, delta, chapter)
     breakdowns = [b for _, _, help_data, _ in accepted for b in help_data["breakdowns"]]
     evidence = []
     for chapter, _, help_data, proof in accepted:
