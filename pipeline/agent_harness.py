@@ -927,6 +927,17 @@ class CodexRunner:
         """Run one worker, with one bounded correction for rejected submissions."""
         from pipeline.worker_workspace import CandidateSubmissionError
 
+        if not refresh:
+            pending = self._pending_submission_rejection(job, prompt, schema, effort,
+                tool_profile=tool_profile, workspace_context=workspace_context)
+            if pending is not None:
+                try:
+                    return await self._correct_rejected_submission(job, prompt, schema, effort,
+                        pending, refresh=False, tool_profile=tool_profile, cache_only=True,
+                        workspace_context=workspace_context)
+                except CachedCallUnavailable:
+                    if cache_only:
+                        raise
         try:
             return await self._call_once(job, prompt, schema, effort, refresh=refresh,
                 tool_profile=tool_profile, cache_only=cache_only,
@@ -939,6 +950,57 @@ class CodexRunner:
                 raise
             initial_rejection = rejected
 
+        return await self._correct_rejected_submission(job, prompt, schema, effort,
+            initial_rejection, refresh=refresh, tool_profile=tool_profile,
+            cache_only=cache_only, workspace_context=workspace_context)
+
+    def _pending_submission_rejection(self, job, prompt, schema, effort, *,
+                                      tool_profile, workspace_context):
+        """Recognize only a failed submission bound to this exact request."""
+        from pipeline.worker_workspace import CandidateSubmissionError, VERSION
+        from pipeline.worker_runtime import safe_job_directory
+        root = safe_job_directory(self.run_dir, job)
+        try:
+            meta = json.loads((root / 'meta.json').read_text())
+            if (meta.get('return_code') != 1 or meta.get('tool_profile') != 'workspace'
+                    or not meta.get('submission_error') or meta.get('submission_repair')):
+                return None
+            effective_effort = self.benchmark_effort or 'low'
+            profile = tool_profile if self.legacy_tool_restrictions else 'workspace'
+            if profile != 'workspace':
+                return None
+            fingerprint = digest(prompt, schema.read_text(), self.model, effective_effort)
+            fingerprint = digest(fingerprint, profile, 'tool-profile-v1')
+            fingerprint = digest(fingerprint, VERSION)
+            if workspace_context is not None:
+                fingerprint = digest(fingerprint, json.dumps(workspace_context, sort_keys=True))
+            if meta.get('fingerprint') != fingerprint:
+                return None
+            for name in ('submission-rejection.json', 'rejected-candidate-attempt-01.json', 'candidate.json'):
+                path = root / 'workspace' / name
+                if path.is_symlink() or (path.exists() and path.stat().st_nlink != 1):
+                    return None
+            self._check_tool_profile(root, 'workspace', meta)
+            record = json.loads((root / 'workspace/submission-rejection.json').read_text())
+            if record.get('diagnostic') != meta['submission_error']:
+                return None
+            artifact = None
+            if record.get('artifact_sha256') is not None:
+                artifact = (root / 'workspace/rejected-candidate-attempt-01.json').read_bytes()
+                if hashlib.sha256(artifact).hexdigest() != record['artifact_sha256']:
+                    return None
+            rejected = CandidateSubmissionError(record['diagnostic'],
+                artifact_path=record['artifact_path'], artifact_bytes=artifact,
+                category=record['category'])
+            if rejected.record() != record:
+                return None
+            return rejected
+        except (OSError, ValueError, KeyError, TypeError):
+            return None
+
+    async def _correct_rejected_submission(self, job, prompt, schema, effort,
+            initial_rejection, *, refresh, tool_profile, cache_only, workspace_context):
+        from pipeline.worker_workspace import CandidateSubmissionError
         record = initial_rejection.record()
         rejected_bytes = initial_rejection.artifact_bytes
         original_dir = self.run_dir / 'agents' / job
@@ -974,6 +1036,12 @@ class CodexRunner:
                 category='bounded_repair_rejected') from repair_rejected
 
         repair_dir = self.run_dir / 'agents' / repair_job
+        first_failure = original_dir / 'submission-first-failure.json'
+        if first_failure.is_symlink() or (first_failure.exists()
+                and (not first_failure.is_file() or first_failure.stat().st_nlink != 1)):
+            raise ValueError('Unsafe submission first-failure evidence path')
+        if not first_failure.exists():
+            first_failure.write_bytes((original_dir / 'meta.json').read_bytes())
         repair_workspace = repair_dir / 'workspace'
         repair_meta = json.loads((repair_dir / 'meta.json').read_text(encoding='utf-8'))
         source = (repair_workspace / repair_meta['artifact_path']).resolve()

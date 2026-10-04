@@ -780,3 +780,53 @@ def test_korean_local_check_uses_full_identity_and_dictionary_gate(tmp_path):
     # can request research/plan repair; it does not claim stage approval.
     from pipeline.worker_workspace import submit
     assert submit(tmp_path, {'candidate_path':'candidate.json'})[0] == value
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize('changed', [None, 'prompt', 'schema', 'source', 'scope', 'rejection', 'child_artifact'])
+async def test_pending_exact_submission_correction_recovers_without_worker_launch(tmp_path, monkeypatch, changed):
+    import asyncio
+    from pathlib import Path
+    from pipeline.agent_harness import CodexRunner, CachedCallUnavailable
+    invalid, corrected = _word_candidate(complete=False), _word_candidate(complete=True)
+    launches = _fake_workspace_codex(monkeypatch, [invalid, corrected])
+    schema = tmp_path / 'schema.json'
+    schema.write_text(json.dumps(_word_schema()), encoding='utf-8')
+    context = {'source_text': 'immutable source', 'repair_scope': ['/segments/0/meaning_en']}
+    runner = CodexRunner(tmp_path, 'gpt-6-luna', asyncio.Semaphore(1))
+    relative_to = Path.relative_to
+    def interrupted_path(self, *args, **kwargs):
+        if (self.name == 'candidate.json' and 'submission-repair-' in str(self)
+                and args and args[0] == tmp_path.resolve()):
+            raise ValueError('Historical promotion interruption')
+        return relative_to(self, *args, **kwargs)
+    monkeypatch.setattr(Path, 'relative_to', interrupted_path)
+    with pytest.raises(ValueError, match='promotion interruption'):
+        await runner.call('candidate', 'Annotate.', schema, 'low', workspace_context=context)
+    monkeypatch.setattr(Path, 'relative_to', relative_to)
+    assert len(launches) == 2
+    job = tmp_path / 'agents/candidate'
+    before = (job / 'meta.json').read_bytes()
+    assert json.loads(before)['return_code'] == 1
+    prompt = 'Annotate.'
+    if changed == 'prompt': prompt += ' Changed.'
+    if changed == 'schema': schema.write_text(json.dumps({**_word_schema(), 'title': 'Changed schema'}))
+    if changed == 'source': context = {**context, 'source_text': 'changed source'}
+    if changed == 'scope': context = {**context, 'repair_scope': ['/segments/1/meaning_en']}
+    if changed == 'rejection':
+        (job / 'workspace/submission-rejection.json').write_text('{}')
+    if changed == 'child_artifact':
+        (launches[1]['workspace'] / 'candidate.json').write_text('{}')
+    if changed is not None:
+        with pytest.raises(CachedCallUnavailable):
+            await runner.call('candidate', prompt, schema, 'low', cache_only=True, workspace_context=context)
+        assert (job / 'meta.json').read_bytes() == before
+    else:
+        assert await runner.call('candidate', prompt, schema, 'low', cache_only=True,
+                                 workspace_context=context) == corrected
+        meta = json.loads((job / 'meta.json').read_text())
+        assert meta['return_code'] == 0
+        assert (job / 'submission-first-failure.json').read_bytes() == before
+        assert meta['submission_repair']['status'] == 'repaired'
+        assert await runner.call('candidate', prompt, schema, 'low', cache_only=True,
+                                 workspace_context=context) == corrected
+    assert len(launches) == 2
