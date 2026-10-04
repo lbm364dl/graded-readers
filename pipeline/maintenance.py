@@ -177,6 +177,63 @@ def _file_incident(job: str, artifact: Path, category: str, message: str,
     }
 
 
+
+def _adjudication_downgrades(job_dir: Path, run_dir: Path,
+                             skipped: list[dict[str, str]]) -> list[dict[str, Any]]:
+    """Inventory host changes only after exact persisted receipt replay.
+
+    A downgrade can be correct enforcement. This is investigation evidence,
+    never a conclusion that validation or the worker is defective.
+    """
+    if not job_dir.name.startswith("annotation-adjudication-"):
+        return []
+    paths = {name: job_dir / name for name in (
+        "result.json", "verified-adjudication.json", "adjudication-input.json", "meta.json")}
+    artifacts = {}
+    for name, path in paths.items():
+        if not _safe_path(path, run_dir, skipped) or not path.is_file():
+            return []
+        value, error = _read_json(path)
+        if error or not isinstance(value, dict):
+            skipped.append({"path": str(path), "reason": error or "adjudication artifact is not an object"})
+            return []
+        artifacts[name] = value
+    inputs = artifacts["adjudication-input.json"]
+    raw = artifacts["result.json"]
+    verified = artifacts["verified-adjudication.json"]
+    try:
+        from pipeline.annotation_adjudication import _verify_adjudication_once, digest
+        kwargs = {key: inputs[key] for key in (
+            "language", "representation", "candidate", "current_review", "prior_history",
+            "context", "known_reference_input", "deterministic_gate_evidence",
+            "normal_review_receipt", "source_text")}
+        replayed = _verify_adjudication_once(run_dir, verified, **kwargs)
+    except Exception as exc:
+        # Corrupt, partial, stale and unsafe receipts do not establish a host decision.
+        skipped.append({"path": str(paths["verified-adjudication.json"]),
+                        "reason": f"adjudication receipt replay refused: {type(exc).__name__}: {exc}"})
+        return []
+    raw_rows = {row["issue_id"]: row for row in raw.get("classifications", [])}
+    incidents = []
+    for row in replayed.get("classifications", []):
+        original = raw_rows.get(row["issue_id"], {})
+        if original.get("disposition") not in {"actionable", "unsupported"} or row["disposition"] != "uncertain":
+            continue
+        incident = _file_incident(job_dir.name, paths["verified-adjudication.json"],
+            "adjudication_host_downgrade", "Host downgraded a worker classification to uncertain; cause unrecorded.",
+            resolved=False, event="exact adjudication receipt replay")
+        incident.update({"issue_id": row["issue_id"],
+            "raw_disposition": original["disposition"], "effective_disposition": row["disposition"],
+            "cause": "unrecorded", "root_cause_status": "unproven",
+            "host_binding_policy_version": inputs.get("host_binding_policy_version", 1),
+            "instructions_digest": inputs.get("instructions_digest"),
+            "candidate_digest": inputs["candidate_digest"], "input_digest": inputs["input_digest"],
+            "bound_artifacts": {name: {"path": str(paths[name]), "digest": digest(artifacts[name])}
+                                for name in ("result.json", "verified-adjudication.json", "adjudication-input.json")}})
+        incidents.append(incident)
+    return incidents
+
+
 def _scan_job(job_dir: Path, run_dir: Path, skipped: list[dict[str, str]]) -> list[dict[str, Any]]:
     meta_path = job_dir / "meta.json"
     if not _safe_path(meta_path, run_dir, skipped):
@@ -345,6 +402,7 @@ def _scan_job(job_dir: Path, run_dir: Path, skipped: list[dict[str, str]]) -> li
             incidents.append(_file_incident(review_job, review_path, "review_rejection", message,
                 resolved=later_pass, event="review result"))
 
+    incidents.extend(_adjudication_downgrades(job_dir, run_dir, skipped))
     return incidents
 
 

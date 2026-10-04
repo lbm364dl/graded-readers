@@ -930,11 +930,13 @@ async def test_annotation_review_defers_exactness_and_offsets_to_deterministic_c
     assert "COLUMNS=[CHAR_START,CHAR_END,TEXT,TYPE,PINYIN,MEANING_EN]" in prompt
     assert '[0,3,"走进了","word","zǒu jìn le","walked in"]' in prompt
     assert '"start": 0' not in prompt  # overlays are compact JSON, not pretty JSON
-    assert "Do not use tools, a shell, Python, search, or external sources" in prompt
-    assert "\nANNOTATION:\n" not in prompt
+    assert "Use tools when useful" in prompt
+    assert "Do not use tools, a shell" not in prompt
+    assert "\nANNOTATION:\n" in prompt
     review = await annotation_harness(
         FakeAnnotationRunner([], [{"verdict": "revise", "issues": [{
-            "start": 1, "end": 2, "segment_text": "进", "problem": "meaning",
+            "start": 0, "end": 3, "segment_text": "走进了", "problem": "meaning",
+            "candidate_paths": ["/segments/0/meaning_en"], "supporting_paths": [],
             "explanation": "context", "suggested_fix": "enter",
         }]}])
     ).review_annotation(0, "走进了", annotation, "offsets")
@@ -956,11 +958,12 @@ async def test_annotation_review_prompt_is_compact_for_large_chunk():
     # The shared complete-form guidance is deliberately fixed overhead. Test
     # that the large annotation payload remains compact independently of it.
     from pipeline.annotation_review_guidance import FORM_STAGE_EVIDENCE_GUIDANCE
-    payload_prompt = prompt.replace(FORM_STAGE_EVIDENCE_GUIDANCE, "", 1)
-    assert len(payload_prompt) < len(legacy_pretty) * 0.65
+    payload = prompt.split("\nANNOTATION:\n", 1)[1].split("\n", 1)[0]
+    assert json.loads(payload) == annotation
+    assert len(payload) < len(legacy_pretty) * 0.75
     assert prompt.count("人") >= len(segments)  # full TEXT is still present
     assert "COLUMNS=[CHAR_START,CHAR_END,TEXT,TYPE,PINYIN,MEANING_EN]" in prompt
-    assert "Do not use tools" in prompt
+    assert "Use tools when useful" in prompt
 
 
 def test_annotation_contract_rejects_clause_sized_word_and_bad_grammar_span():
@@ -1085,7 +1088,8 @@ async def test_constrained_annotation_reviews_and_self_heals_with_lossless_patch
         "meaning_en": "when an action happens",
     }]}
     revise = {"verdict": "revise", "issues": [{
-        "segment_text": "两 / 人", "problem": "under_grouped",
+        "start": 0, "end": 2, "segment_text": "两人", "problem": "under_grouped",
+        "candidate_paths": ["/segments/0/text", "/segments/1/text"], "supporting_paths": [],
         "explanation": "两人 is one learner-facing unit here.",
         "suggested_fix": "Merge 两 and 人; also merge 喝酒.",
     }]}
@@ -1115,7 +1119,8 @@ async def test_constrained_annotation_fails_closed_when_fresh_review_still_revis
         "meaning_en": "Liu Bei",
     }], "grammar_overlays": []}
     revise = {"verdict": "revise", "issues": [{
-        "segment_text": "刘备", "problem": "meaning",
+        "start": 0, "end": 2, "segment_text": "刘备", "problem": "meaning",
+        "candidate_paths": ["/segments/0/meaning_en"], "supporting_paths": [],
         "explanation": "Needs contextual identification.",
         "suggested_fix": "Identify the character concisely.",
     }]}
@@ -1162,7 +1167,8 @@ async def test_constrained_correction_salvages_lossless_sibling_patches():
     harness.args = Namespace(annotation_repair_effort="medium", refresh=False)
     corrected = await harness.constrained_annotation_correction(
         0, "刘备来", annotation, {"verdict": "revise", "issues": [{
-            "segment_text": "刘备", "problem": "meaning",
+            "start": 0, "end": 2, "segment_text": "刘备", "problem": "meaning",
+        "candidate_paths": ["/segments/0/meaning_en"], "supporting_paths": [],
             "explanation": "Needs a concise identity.",
             "suggested_fix": "Identify Liu Bei.",
         }]}, 1
@@ -1420,7 +1426,7 @@ async def test_constrained_delta_uses_one_chapter_seed_then_chunk_reviews():
                 return {"overrides": [row for row in overrides
                                       if row["index"] in allowed],
                         "grammar_overlays": []}
-            if schema.name == "annotation-review.schema.json":
+            if schema.name == "annotation-review-targets.schema.json":
                 return {"verdict": "pass", "issues": []}
             raise AssertionError(schema.name)
 
@@ -1430,7 +1436,7 @@ async def test_constrained_delta_uses_one_chapter_seed_then_chunk_reviews():
     )
 
     assert len([call for call in runner.calls if call[1] == "delta-annotation.schema.json"]) == 2
-    assert len([call for call in runner.calls if call[1] == "annotation-review.schema.json"]) == 2
+    assert len([call for call in runner.calls if call[1] == "annotation-review-targets.schema.json"]) == 2
     assert "IMMUTABLE INDEXED BASELINE" not in runner.calls[0][3]
     assert all(item["resolved"] and item["reviewed"] for item in results)
     assert "".join(segment["text"] for item in results for segment in item["segments"]) == chapter
@@ -1557,7 +1563,7 @@ async def test_chapter_review_policy_uses_one_comprehensive_review_when_seed_pas
             self.calls.append((job, schema.name, effort))
             if schema.name == "delta-annotation.schema.json":
                 return {"overrides": overrides, "grammar_overlays": []}
-            if schema.name == "annotation-review.schema.json":
+            if schema.name == "annotation-review-targets.schema.json":
                 return {"verdict": "pass", "issues": []}
             raise AssertionError(schema.name)
 
@@ -1586,9 +1592,10 @@ async def test_chapter_review_policy_has_one_scoped_correction_and_final_review(
         "meaning_en": "contextual meaning",
     } for index in sorted(required)]
     revise = {"verdict": "revise", "issues": [{
-        "start": 0, "end": 1, "segment_text": "东", "problem": "meaning",
-        "explanation": "Here it means eastward.",
-        "suggested_fix": "Use eastward.",
+        "start": 0, "end": 2, "segment_text": "东来", "problem": "over_grouped",
+        "candidate_paths": ["/segments/0/text"], "supporting_paths": [],
+        "explanation": "The direction and main verb need separate taps.",
+        "suggested_fix": "Split 东 + 来 and gloss 东 as eastward.",
     }]}
     correction = {"patches": [{
         "start_index": 0, "end_index": 1, "segments": [{
@@ -1608,7 +1615,7 @@ async def test_chapter_review_policy_has_one_scoped_correction_and_final_review(
                 return {"overrides": overrides, "grammar_overlays": []}
             if schema.name == "fixed-annotation-correction.schema.json":
                 return correction
-            if schema.name == "annotation-review.schema.json":
+            if schema.name == "annotation-review-targets.schema.json":
                 return next(self.reviews)
             raise AssertionError(schema.name)
 
@@ -1636,6 +1643,7 @@ async def test_chapter_review_policy_fails_closed_after_final_revise():
     required = contextual_delta_targets(baseline, unknown)
     revise = {"verdict": "revise", "issues": [{
         "start": 0, "end": 1, "segment_text": "东", "problem": "meaning",
+        "candidate_paths": ["/segments/0/meaning_en"], "supporting_paths": [],
         "explanation": "Wrong context.", "suggested_fix": "Correct it.",
     }]}
 
@@ -1668,6 +1676,7 @@ async def test_issue_scoped_correction_discards_collateral_patch():
     ], "grammar_overlays": []}
     review = {"verdict": "revise", "issues": [{
         "start": 0, "end": 1, "segment_text": "东", "problem": "meaning",
+        "candidate_paths": ["/segments/0/meaning_en"], "supporting_paths": [],
         "explanation": "Wrong sense.", "suggested_fix": "east",
     }]}
 
@@ -1927,6 +1936,7 @@ async def test_issue_scoped_correction_discards_reviewer_explicit_no_op():
     ], "grammar_overlays": []}
     review = {"verdict": "revise", "issues": [{
         "start": 0, "end": 2, "segment_text": "刘备", "problem": "meaning",
+        "candidate_paths": ["/segments/0/meaning_en"], "supporting_paths": [],
         "explanation": "The current annotation itself is fine.",
         "suggested_fix": "No change needed.",
     }]}
@@ -1954,15 +1964,17 @@ async def test_final_revise_is_exactly_remediated_with_truthful_state():
     ], "grammar_overlays": []}
     initial = {"verdict": "revise", "issues": [{
         "start": 0, "end": 1, "segment_text": "东", "problem": "meaning",
+        "candidate_paths": ["/segments/0/meaning_en"], "supporting_paths": [],
     }]}
     final = {"verdict": "revise", "issues": [{
         "start": 1, "end": 2, "segment_text": "来", "problem": "meaning",
+        "candidate_paths": ["/segments/1/meaning_en"], "supporting_paths": [],
     }]}
 
     class Runner:
         def __init__(self): self.reviews = iter([initial, final])
         async def call(self, job, prompt, schema, effort, **kwargs):
-            if schema.name == "annotation-review.schema.json":
+            if schema.name == "annotation-review-targets.schema.json":
                 return next(self.reviews)
             if "remediation" in job:
                 return {"patches": [{"start_index": 1, "end_index": 2, "segments": [{
@@ -2000,7 +2012,8 @@ async def test_constrained_delta_final_xhigh_self_heal_passes_after_medium_budge
         }],
     }], "grammar_overlays": []}
     revise = {"verdict": "revise", "issues": [{
-        "segment_text": "刘备", "problem": "meaning",
+        "start": 0, "end": 2, "segment_text": "刘备", "problem": "meaning",
+        "candidate_paths": ["/segments/0/meaning_en"], "supporting_paths": [],
         "explanation": "The gloss remains unclear.",
         "suggested_fix": "Identify him concisely.",
     }]}
@@ -2024,7 +2037,7 @@ async def test_constrained_delta_final_xhigh_self_heal_passes_after_medium_budge
         if call[1] == "fixed-annotation-correction.schema.json"
     ]
     review_calls = [
-        call for call in runner.calls if call[1] == "annotation-review.schema.json"
+        call for call in runner.calls if call[1] == "annotation-review-targets.schema.json"
     ]
     assert [call[2] for call in correction_calls] == ["medium", "xhigh"]
     assert [call[2] for call in review_calls] == ["medium", "medium", "xhigh"]
@@ -2040,7 +2053,8 @@ async def test_constrained_delta_final_xhigh_review_still_fails_closed():
     }], "grammar_overlays": []}
     final_patch = {"patches": [], "grammar_overlays": []}
     revise = {"verdict": "revise", "issues": [{
-        "segment_text": "刘备", "problem": "meaning",
+        "start": 0, "end": 2, "segment_text": "刘备", "problem": "meaning",
+        "candidate_paths": ["/segments/0/meaning_en"], "supporting_paths": [],
         "explanation": "Still materially misleading.",
         "suggested_fix": "Correct the gloss.",
     }]}
@@ -2055,7 +2069,7 @@ async def test_constrained_delta_final_xhigh_review_still_fails_closed():
         if call[1] == "fixed-annotation-correction.schema.json"
     ]
     review_calls = [
-        call for call in runner.calls if call[1] == "annotation-review.schema.json"
+        call for call in runner.calls if call[1] == "annotation-review-targets.schema.json"
     ]
     assert len(correction_calls) == 1
     assert correction_calls[0][2] == "xhigh"
@@ -2073,6 +2087,7 @@ async def test_constrained_delta_review_catches_unchanged_bad_known_metadata():
     }], "grammar_overlays": []}
     revise = {"verdict": "revise", "issues": [{
         "start": 0, "end": 1, "segment_text": "东", "problem": "meaning",
+        "candidate_paths": ["/segments/0/meaning_en"], "supporting_paths": [],
         "explanation": "Here it means eastward, not a surname.",
         "suggested_fix": "Use eastward.",
     }]}

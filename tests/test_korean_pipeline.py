@@ -242,7 +242,9 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
                     # source position during scoped repair scheduling.
                     save(tmp_path / 'agents/annotation-0-chunk-001-9/result.json', {})
                     save(tmp_path / 'agents/annotation-0-chunk-001-9/meta.json', {'return_code': 1})
-                    value = {'approved': False, 'issues': ['Clarify the contextual meaning in the first chunk.'],
+                    value = {'approved': False, 'issues': [{
+                        'explanation': 'Clarify the contextual meaning in the first chunk.',
+                        'candidate_paths': ['/segments/0/meaning_en'], 'supporting_paths': []}],
                              'prose_revision_reason_en': ''}
             if job.startswith('annotation-local-review-') and (incomplete_cached_repair or complete_cached_repair):
                 inputs = kwargs['workspace_context']['chunk_review_input']
@@ -2450,7 +2452,9 @@ def test_korean_rejected_review_receipt_can_be_verified_without_becoming_approva
             root = tmp_path / 'agents' / job
             _, workspace_digest = build(root / 'workspace', prompt,
                 json.loads(schema.read_text()), context=kwargs['workspace_context'])
-            result = {'approved': False, 'issues': ['Meaning is too broad.'],
+            result = {'approved': False, 'issues': [{
+                'explanation': 'Meaning is too broad.',
+                'candidate_paths': ['/segments/0/meaning_en'], 'supporting_paths': []}],
                       'prose_revision_reason_en': ''}
             save(root / 'result.json', result)
             save(root / 'meta.json', {'return_code': 0, 'tool_profile': 'workspace',

@@ -37,6 +37,16 @@ retain exact fields and go to scoped repair; uncertain findings stop acceptance
 without triggering a whole-candidate rewrite. A cleared decision is an independent
 linguistic review with its own receipt, alongside the original rejected review.
 Replay checks bind the candidate, source context, references and review history.
+New Chinese, Japanese and Korean chunk reviewers identify exact defective fields
+in `candidate_paths`, with separate `supporting_paths` for contextual references.
+The shared workspace submission gate checks those pointers before review handoff.
+New adjudications bind that structured target set rather than treating every
+number or quoted form in an explanation as an additional defect. Historical
+review schemas and binding policies remain replayable. Target paths locate
+findings; structural/source gates still govern what a repair may change.
+Binding policy 5 applies the same scalar-field and evidence-scope checks to
+defects first discovered by the adjudicator and gives typed targets explicit
+precedence over legacy prose-index guidance. Policies 1–4 retain exact replay.
 Chapter-wide reviews and publication checks remain required. This route does not
 approve new dictionary lessons or change prose, tap boundaries or source text.
 
@@ -50,6 +60,11 @@ primary-source origin. The host captures readable pages with their exact bytes,
 URLs and digests; one continuation can research those captured sources. An
 independent reviewer then checks reusable, issue-scoped facts against the evidence.
 The candidate and rejected review stay unchanged.
+The initial research pass may request direct pages; only the captured-source
+continuation is prohibited from requesting another capture cycle. Research review
+checks the fact and cited evidence independently of candidate acceptance. A fact
+that proves the unchanged candidate has a defect can be approved and routed to
+repair; that approval does not clear the annotation.
 The coordinator can register an already researched, independently approved
 lesson for the exact occurrence and findings. The shared path checks that
 explicit cache receipt before launching research, authenticates both original
@@ -71,6 +86,17 @@ another lookup. Unsupported media and insufficient evidence remain explicit gaps
 Historical version-1 research receipts are preserved but cannot be reinterpreted
 as version-2 evidence; the affected pilot smoke receipts were unresolved and
 contributed no approved facts.
+Research policy version 3 separates initial page requests from the bounded
+continuation and reviews factual evidence independently of candidate acceptance;
+version-2 research receipts retain their original policy and exact replay.
+Policy 4 gives research and its independent reviewer a separate packet containing
+only unresolved tasks, their exact candidate fields and initial evidence gaps.
+Other findings remain context. Eligible primary-source origins are explicit,
+so a missing lexical fact can lead to a captured dictionary page. Policies 2
+and 3 keep their historical packets and prompts.
+Maintenance records authenticated raw-to-host adjudication downgrades separately
+from linguistic uncertainty. These observations retain both artifacts and policy
+digests and remain investigations until their cause and repair are verified.
 
 Generative Chinese and Japanese chunk reviews retain versioned source-bound
 receipts for publication and reuse. Legacy outputs without receipt metadata keep

@@ -9,6 +9,11 @@ from pipeline.korean_chunk_reviews import review_chunk, verify_review
 from pipeline.worker_workspace import build
 
 
+def issue(explanation, path='/segments/0/text', supporting_paths=None):
+    return {'explanation': explanation, 'candidate_paths': [path],
+            'supporting_paths': supporting_paths or []}
+
+
 class Runner:
     def __init__(self, root, review=None):
         self.root = root
@@ -58,6 +63,58 @@ def test_review_binds_exact_occurrence_context_and_preserves_duplicate_positions
         altered = {**args, **changes}
         with pytest.raises(ValueError, match='stale, rejected or mismatched'):
             verify(tmp_path, altered, evidence)
+
+
+def test_typed_review_pinpoints_repeated_occurrence_and_keeps_support_as_context(tmp_path):
+    annotation = {'segments': [{'text': '아이', 'meaning_en': 'child'},
+                               {'text': '아이', 'meaning_en': 'adult'}]}
+    finding = issue('Only the second occurrence has the wrong meaning.',
+                    '/segments/1/meaning_en', ['/segments/0/meaning_en'])
+    runner = Runner(tmp_path, {'approved': False, 'issues': [finding],
+                               'prose_revision_reason_en': ''})
+    args, review, evidence = run_review(tmp_path, runner, annotation=annotation,
+        text='아이아이', context={'chapter_text': '아이아이', 'source_start': 0})
+    assert evidence['issue_targets_version'] == 1
+    assert verify_review(tmp_path, evidence, annotation=annotation, text=args['text'],
+        chapter_text=args['text'], source_start=0, require_approved=False) == review
+    assert review['issues'][0]['candidate_paths'] == ['/segments/1/meaning_en']
+    from pipeline.annotation_issue_targets import ISSUE_TARGET_GUIDANCE
+    assert ISSUE_TARGET_GUIDANCE in runner.prompts[0]
+    inputs = json.loads((tmp_path / 'agents' / evidence['job'] / 'review-input.json').read_text())
+    assert inputs['issue_targets_version'] == 1
+    with pytest.raises(ValueError, match='target version changed'):
+        verify_review(tmp_path, {k: v for k, v in evidence.items() if k != 'issue_targets_version'},
+            annotation=annotation, text=args['text'], chapter_text=args['text'],
+            source_start=0, require_approved=False)
+
+
+@pytest.mark.parametrize('target,supporting', [
+    ('/segments/1/meaning_en', []), ('/segments/0', []),
+    ('/segments/0/meaning_en', ['/segments/0/meaning_en']),
+    ('/segments/0/form_steps', []),
+])
+def test_new_review_rejects_invalid_or_overlapping_paths_before_receipt(tmp_path, target, supporting):
+    annotation = {'segments': [{'text': '아이', 'meaning_en': 'child', 'form_steps': []}]}
+    runner = Runner(tmp_path, {'approved': False, 'issues': [issue('Wrong meaning.', target, supporting)],
+                              'prose_revision_reason_en': ''})
+    with pytest.raises(ValueError):
+        run_review(tmp_path, runner, annotation=annotation)
+    assert not list((tmp_path / 'agents').glob('*/review-input.json'))
+
+
+def test_legacy_string_review_receipt_still_replays_without_new_marker(tmp_path):
+    from pipeline import korean_contracts as contracts
+    inputs = {'annotation': {'segments': [{'text': '아이'}]}, 'text': '아이',
+              'context': {'chapter_text': '아이 아이', 'source_start': 0}}
+    runner = Runner(tmp_path, {'approved': False, 'issues': ['Wrong sense at segment 0'],
+                              'prose_revision_reason_en': ''})
+    job = 'annotation-local-review-legacy'
+    review = asyncio.run(runner.call(job, 'Historical review.', contracts.schema_path('chunk-review'),
+        'low', workspace_context={'chunk_review_input': inputs}))
+    save(tmp_path / 'agents' / job / 'review-input.json', inputs)
+    evidence = {'job': job, 'input_digest': digest(inputs), 'review_digest': digest(review)}
+    assert verify_review(tmp_path, evidence, annotation=inputs['annotation'], text='아이',
+        chapter_text='아이 아이', source_start=0, require_approved=False) == review
 
 
 def test_korean_review_prompt_compares_complete_copula_then_past_stages(tmp_path):
@@ -164,7 +221,7 @@ def test_prior_complete_form_guidance_is_compatible_but_other_or_changed_proofs_
         with pytest.raises(StaleFormReviewGuidanceError):
             verify(tmp_path, args, stale)
 
-    rejected_runner = Runner(tmp_path, {'approved': False, 'issues': ['Incomplete form stage'],
+    rejected_runner = Runner(tmp_path, {'approved': False, 'issues': [issue('Incomplete form stage', '/segments/0/form_steps/0/form')],
                                         'prose_revision_reason_en': ''})
     _, _, rejected_evidence = run_review(tmp_path, rejected_runner, annotation=annotation,
         text='갔다', context=context)
@@ -175,7 +232,7 @@ def test_prior_complete_form_guidance_is_compatible_but_other_or_changed_proofs_
 
 
 def test_rejected_local_review_cannot_approve_publication(tmp_path):
-    runner = Runner(tmp_path, {'approved': False, 'issues': ['Wrong tense at segment 0'],
+    runner = Runner(tmp_path, {'approved': False, 'issues': [issue('Wrong tense at segment 0')],
                                'prose_revision_reason_en': ''})
     args, review, evidence = run_review(tmp_path, runner)
     assert not review['approved']
@@ -221,7 +278,7 @@ def test_prose_repair_requires_explicit_rejection(tmp_path):
                                'prose_revision_reason_en': 'Change the actual wording.'})
     with pytest.raises(ValueError, match='explicit rejected review'):
         run_review(tmp_path, runner)
-    runner.review.update(approved=False, issues=['Actual prose contradicts context.'])
+    runner.review.update(approved=False, issues=[issue('Actual prose contradicts context.')])
     _, review, _ = run_review(tmp_path, runner)
     assert review['prose_revision_reason_en']
 
@@ -231,6 +288,7 @@ def test_rewriting_sidecar_and_digest_cannot_change_reviewed_workspace_inputs(tm
     altered = copy.deepcopy(args)
     altered['annotation']['segments'][0]['meaning'] = 'unreviewed'
     inputs = {k: altered[k] for k in ('annotation', 'text', 'context')}
+    inputs['issue_targets_version'] = 1
     save(tmp_path / 'agents' / evidence['job'] / 'review-input.json', inputs)
     forged = {**evidence, 'input_digest': digest(inputs)}
     with pytest.raises(ValueError, match='differ from the worker evidence'):
@@ -255,7 +313,7 @@ def test_korean_adjudication_replay_only_accepts_primary_sources_from_original_r
         'lexical_reference': {'entries': []}, 'official_primary_sources': [source]}
     policy = 'Review this Korean occurrence.'
     rejected_runner = Runner(tmp_path, {'approved': False,
-        'issues': ['The component gloss needs review.'], 'prose_revision_reason_en': ''})
+        'issues': [issue('The component gloss needs review.', '/segments/0/meaning_en')], 'prose_revision_reason_en': ''})
     review, evidence = asyncio.run(review_chunk(rejected_runner, tmp_path,
         annotation=annotation, text=text, context=context, policy=policy))
     record = annotation_chunk_record('proposal-0', text, annotation)
@@ -379,6 +437,6 @@ def test_publication_requires_every_chunk_review_and_replays_rejections(tmp_path
         publication.verify_run(tmp_path)
     save(path, meta)
     save(tmp_path / 'agents' / proofs[0]['job'] / 'result.json',
-         {'approved': False, 'issues': ['Wrong sense'], 'prose_revision_reason_en': ''})
+         {'approved': False, 'issues': [issue('Wrong sense', '/segments/0/meaning_en')], 'prose_revision_reason_en': ''})
     with pytest.raises(ValueError, match='stale, rejected or mismatched'):
         publication.verify_run(tmp_path)

@@ -28,6 +28,7 @@ from pipeline.annotation_publication import (
 )
 from pipeline.chunk_scheduler import map_chunks
 from pipeline.annotation_review_guidance import FORM_STAGE_EVIDENCE_GUIDANCE
+from pipeline.annotation_issue_targets import ISSUE_TARGET_GUIDANCE, validate_issue_targets
 from pipeline.japanese_readability import (
     GRAMMAR_BASELINE_LEMMAS,
     MAX_ABOVE_LEVEL_RATIO,
@@ -5393,21 +5394,31 @@ Report every learner-harming boundary or metadata error and pass only if all
 segments are useful and correct.
 
 TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, indent=2)}"""
+        prompt += "\n\n" + ISSUE_TARGET_GUIDANCE
+        boundary_prompt += "\n\n" + ISSUE_TARGET_GUIDANCE
+        target_context = {"annotation_issue_targets_validation": {
+            "candidate": annotation, "source_text": chunk,
+            "representation": "japanese-annotation", "require_typed": True}}
         general_review, boundary_review = await asyncio.gather(
             self.runner.call(
                 f"annotations/chunk_{index:04d}/{stage}_review", prompt,
-                SCHEMAS / "japanese-annotation-review.schema.json",
+                SCHEMAS / "japanese-annotation-review-targets.schema.json",
                 self.args.annotation_review_effort,
                 refresh=self.refresh_annotation_chunk(index),
+                workspace_context=target_context,
             ),
             self.runner.call(
                 f"annotations/chunk_{index:04d}/{stage}_boundary_review",
                 boundary_prompt,
-                SCHEMAS / "japanese-annotation-review.schema.json",
+                SCHEMAS / "japanese-annotation-review-targets.schema.json",
                 self.args.annotation_review_effort,
                 refresh=self.refresh_annotation_chunk(index),
+                workspace_context=target_context,
             ),
         )
+        for raw_review in (general_review, boundary_review):
+            validate_issue_targets(raw_review, annotation, source_text=chunk,
+                                   representation="japanese-annotation", require_typed=True)
         review_receipts = []
         run_dir = getattr(self, "run_dir", None)
         if run_dir is not None:

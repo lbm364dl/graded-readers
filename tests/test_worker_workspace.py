@@ -55,6 +55,45 @@ def test_workspace_submission_runs_annotation_adjudication_local_gate(tmp_path):
     assert 'exactly once' in str(rejected.value)
 
 
+@pytest.mark.parametrize('issue', [
+    'Segment 0 is wrong.',
+    {'explanation': 'Wrong gloss.', 'candidate_paths': ['/segments/9/meaning_en'],
+     'supporting_paths': []},
+    {'explanation': 'Wrong gloss.', 'candidate_paths': ['/segments/0/meaning_en'],
+     'supporting_paths': ['/segments/0/meaning_en']},
+])
+def test_workspace_review_target_gate_rejects_unbound_or_overlapping_fields(tmp_path, issue):
+    from pipeline.worker_workspace import submit, CandidateSubmissionError
+    context = {'annotation_issue_targets_validation': {
+        'candidate': {'segments': [{'text': '走る', 'meaning_en': 'run'}]},
+        'source_text': '走る', 'representation': 'japanese-annotation',
+        'require_typed': True}}
+    build(tmp_path, 'Review exact fields.', {'type': 'object'}, context=context)
+    (tmp_path / 'candidate.json').write_text(json.dumps(
+        {'verdict': 'revise', 'issues': [issue]}), encoding='utf-8')
+    with pytest.raises(CandidateSubmissionError) as rejected:
+        submit(tmp_path, {'candidate_path': 'candidate.json'})
+    assert rejected.value.category == 'annotation_issue_targets_rejection'
+    assert 'target validation' in str(rejected.value)
+
+
+def test_workspace_review_target_gate_keeps_supporting_fields_separate(tmp_path):
+    from pipeline.worker_workspace import submit
+    candidate = {'segments': [{'text': 'a', 'meaning_en': 'wrong'},
+                              {'text': 'b', 'meaning_en': 'support'}]}
+    context = {'annotation_issue_targets_validation': {
+        'candidate': candidate, 'source_text': 'ab',
+        'representation': 'korean-flat', 'require_typed': True}}
+    build(tmp_path, 'Review exact fields.', {'type': 'object'}, context=context)
+    review = {'approved': False, 'issues': [{
+        'explanation': 'Segment 0 borrows the contribution from segment 1.',
+        'candidate_paths': ['/segments/0/meaning_en'],
+        'supporting_paths': ['/segments/1/meaning_en']}]}
+    (tmp_path / 'candidate.json').write_text(json.dumps(review), encoding='utf-8')
+    submitted, _ = submit(tmp_path, {'candidate_path': 'candidate.json'})
+    assert submitted == review
+
+
 def _annotation_research_context():
     from pipeline.annotation_research import _worker_context
     request = {

@@ -689,3 +689,220 @@ def test_replay_rejects_changed_candidate_review_history_and_symlink(tmp_path):
                 candidate={'changed': True}, current_review=review, prior_history=[{'review': 'older'}],
                 context={'level': 1}, known_reference_input=refs,
                 deterministic_gate_evidence=gate, normal_review_receipt=receipt, source_text='走る')
+
+@pytest.mark.parametrize('language,representation', [
+    ('zh', 'chinese-annotation'), ('ja', 'japanese-annotation'), ('ko', 'korean-flat')])
+@pytest.mark.parametrize('issue', [
+    'Segment 4 has an incorrect form-step meaning. The grammar link at segment 4 correctly gives the complete meaning.',
+    'Segment 4 has an incorrect form-step meaning. The causative span at segments 2–4 already gives the complete meaning.',
+])
+def test_versioned_stage_target_preserves_supporting_link_context(language, representation, issue):
+    candidate = {'segments': [{'text': str(i), 'form_steps': [{'meaning_en': 'local'}]}
+                              for i in range(5)]}
+    review = {'verdict': 'revise', 'issues': [issue]}
+    kwargs = dict(language=language, representation=representation, candidate=candidate,
+        current_review=review, prior_history=[], context={},
+        known_reference_input={'lesson': {'kind': 'approved_lesson', 'content': {'meaning': 'local'}}},
+        deterministic_gate_evidence={'passed': True, 'issues': [], 'candidate_digest': digest(candidate)},
+        normal_review_receipt={'review_digest': digest(review)}, source_text=None)
+    current = _build_inputs(**kwargs)
+    legacy = _build_inputs(**kwargs, host_binding_policy_version=1)
+    result = output_for(current, disposition='actionable', path='/segments/4/form_steps/0/meaning_en',
+                        ref_id='lesson', ref_path='/meaning')
+    assert _validate_output(result, current)['status'] == 'actionable'
+    assert _validate_output(result, legacy)['status'] == 'uncertain'
+    assert current['input_digest'] != legacy['input_digest']
+    assert 'host_binding_policy_version' not in legacy
+    result['classifications'][0]['candidate_paths'] = ['/segments/2/form_steps/0/meaning_en']
+    assert _validate_output(result, current)['status'] == 'uncertain'
+
+@pytest.mark.parametrize('duplicate,wrong_surface', [(False, False), (True, False), (False, True)])
+def test_criticized_span_binds_only_unique_exact_link(duplicate, wrong_surface):
+    link = {'segment_index': 0, 'display_end_segment_index': 1,
+            'display_form': 'ab' if not wrong_surface else 'other', 'context_en': 'reported clause'}
+    candidate = {'segments': [{'text': 'a'}, {'text': 'b'}],
+                 'grammar_links': [link, dict(link)] if duplicate else [link]}
+    review = {'verdict': 'revise', 'issues': [
+        'Segment 1, “b,” has a component gloss. The span 0–1 reports “ab”. '
+        'The span-level meaning attributes a predicate to the marker. Revise the span explanation.']}
+    inputs = _build_inputs(language='ko', representation='korean-flat', candidate=candidate,
+        current_review=review, prior_history=[], context={},
+        known_reference_input={'lesson': {'kind': 'approved_lesson', 'content': {'meaning': 'reported clause'}}},
+        deterministic_gate_evidence={'passed': True, 'issues': [], 'candidate_digest': digest(candidate)},
+        normal_review_receipt={'review_digest': digest(review)}, source_text=None)
+    result = output_for(inputs, path='/grammar_links/0/context_en', ref_id='lesson', ref_path='/meaning')
+    assert _validate_output(result, inputs)['status'] == ('uncertain' if duplicate or wrong_surface else 'cleared')
+
+@pytest.mark.parametrize('issue', [
+    'Segment 1 component gloss is wrong AND span 0–1 reports “ab”. The span-level meaning is wrong.',
+    {'segment_indices': [1], 'explanation': 'The span 0–1 reports “ab”. Revise the span explanation.'},
+])
+def test_span_scope_never_discards_separate_component_target(issue):
+    candidate = {'segments': [{'text': 'a'}, {'text': 'b'}], 'grammar_links': [
+        {'segment_index': 0, 'display_end_segment_index': 1, 'display_form': 'ab', 'context_en': 'clause'}]}
+    review = {'verdict': 'revise', 'issues': [issue]}
+    inputs = _build_inputs(language='ko', representation='korean-flat', candidate=candidate,
+        current_review=review, prior_history=[], context={},
+        known_reference_input={'lesson': {'kind': 'approved_lesson', 'content': {'meaning': 'clause'}}},
+        deterministic_gate_evidence={'passed': True, 'issues': [], 'candidate_digest': digest(candidate)},
+        normal_review_receipt={'review_digest': digest(review)}, source_text=None)
+    assert _validate_output(output_for(inputs, path='/grammar_links/0/context_en',
+        ref_id='lesson', ref_path='/meaning'), inputs)['status'] == 'uncertain'
+
+
+def test_grammar_link_defect_is_not_licensed_as_segment_target():
+    candidate, review, refs, gate, receipt, _ = fixture()
+    review = {'verdict': 'revise', 'issues': ['Segment 0 grammar link has wrong meaning.']}
+    inputs = _build_inputs(language='ja', representation='japanese-annotation', candidate=candidate,
+        current_review=review, prior_history=[], context={}, known_reference_input=refs,
+        deterministic_gate_evidence=gate, normal_review_receipt={'review_digest': digest(review)}, source_text=None)
+    assert _validate_output(output_for(inputs), inputs)['status'] == 'uncertain'
+
+@pytest.mark.parametrize('language,representation', [
+    ('zh', 'chinese-annotation'), ('ja', 'japanese-annotation'), ('ko', 'korean-flat')])
+@pytest.mark.parametrize('source,suffix,expected', [
+    ('continue', '.', 'actionable'),
+    ('unattested', '.', 'uncertain'),
+    ('continue', ' which is also incorrect.', 'uncertain'),
+])
+def test_imported_meaning_source_parenthesis_requires_exact_identity(
+        language, representation, source, suffix, expected):
+    candidate = {'segments': [
+        {'text': 'until', 'form_steps': [{'meaning_en': 'continued until'}]},
+        {'text': 'continued', 'lemma': 'continue', 'form_steps': [{'meaning_en': 'continued'}]}]}
+    issue = ('Segment 0 has an incorrect form-step meaning that imports continuation '
+             f'from {source} (segment 1){suffix} Give this form its own contribution.')
+    review = {'verdict': 'revise', 'issues': [issue]}
+    kwargs = dict(language=language, representation=representation, candidate=candidate,
+        current_review=review, prior_history=[], context={},
+        known_reference_input={'lesson': {'kind': 'approved_lesson', 'content': {'meaning': 'until'}}},
+        deterministic_gate_evidence={'passed': True, 'issues': [], 'candidate_digest': digest(candidate)},
+        normal_review_receipt={'review_digest': digest(review)}, source_text=None)
+    inputs = _build_inputs(**kwargs)
+    result = output_for(inputs, disposition='actionable', path='/segments/0/form_steps/0/meaning_en',
+                        ref_id='lesson', ref_path='/meaning')
+    assert _validate_output(result, inputs)['status'] == expected
+    old = _build_inputs(**kwargs, host_binding_policy_version=2)
+    assert _validate_output(result, old)['status'] == 'uncertain'
+    assert old['input_digest'] != inputs['input_digest']
+    review['issues'] = [{'segment_indices': [0, 1], 'explanation': issue}]
+    kwargs['normal_review_receipt'] = {'review_digest': digest(review)}
+    multiple = _build_inputs(**kwargs)
+    result = output_for(multiple, disposition='actionable',
+        path='/segments/0/form_steps/0/meaning_en', ref_id='lesson', ref_path='/meaning')
+    assert _validate_output(result, multiple)['status'] == 'uncertain'
+
+@pytest.mark.parametrize('language,representation', [
+    ('zh', 'chinese-annotation'), ('ja', 'japanese-annotation'), ('ko', 'korean-flat')])
+def test_canonical_defects_do_not_include_prose_or_supporting_targets(language, representation):
+    candidate = {'segments': [{'text': 'a', 'form_steps': [{'meaning_en': 'whole'}]}, {'text': 'a', 'meaning_en': 'context'}],
+                 'grammar_links': [{'context_en': 'supported whole construction'}]}
+    issue = {'explanation': 'Segment 0 stage meaning imports segment 1 “a”; grammar link 0 supports the reading.',
+             'candidate_paths': ['/segments/0/form_steps/0/meaning_en'],
+             'supporting_paths': ['/segments/1/meaning_en', '/grammar_links/0/context_en']}
+    review = {'verdict': 'revise', 'issues': [issue]}
+    kwargs = dict(language=language, representation=representation, candidate=candidate,
+        current_review=review, prior_history=[], context={},
+        known_reference_input={'lesson': {'kind': 'approved_lesson', 'content': {'meaning': 'local'}}},
+        deterministic_gate_evidence={'passed': True, 'issues': [], 'candidate_digest': digest(candidate)},
+        normal_review_receipt={'review_digest': digest(review)}, source_text=None)
+    inputs = _build_inputs(**kwargs)
+    result = output_for(inputs, disposition='actionable', path=issue['candidate_paths'][0], ref_id='lesson', ref_path='/meaning')
+    assert _validate_output(result, inputs)['status'] == 'actionable'
+    result['classifications'][0]['candidate_paths'] += issue['supporting_paths']
+    assert _validate_output(result, inputs)['status'] == 'uncertain'
+    result['classifications'][0]['candidate_paths'] = issue['candidate_paths']
+    assert _validate_output(result, _build_inputs(**kwargs, host_binding_policy_version=3))['status'] == 'uncertain'
+
+
+def test_shared_canonical_target_validation_rejects_missing_invalid_and_context_overlap():
+    from pipeline.annotation_issue_targets import IssueTargetError, validate_issue_targets
+    candidate = {'segments': [{'text': 'a', 'meaning_en': 'a'}]}
+    validate_issue_targets({'issues': ['historical review']}, candidate)
+    with pytest.raises(IssueTargetError):
+        validate_issue_targets({'issues': ['historical review']}, candidate, require_typed=True)
+    for target, supporting in [('/', []), ('/segments', []), ('/segments/0', []),
+                               ('/segments/0/form_steps', []), ('/segments/9/meaning_en', []),
+                               ('/segments/0/meaning_en', ['/segments/0/meaning_en'])]:
+        with pytest.raises(IssueTargetError):
+            validate_issue_targets({'issues': [{'candidate_paths': [target], 'supporting_paths': supporting}]}, candidate)
+    validate_issue_targets({'issues': [{'candidate_paths': ['/segments/0/meaning_en'], 'supporting_paths': []}]}, candidate, require_typed=True)
+
+
+def test_canonical_chinese_source_positions_remain_deterministic():
+    from pipeline.annotation_issue_targets import IssueTargetError, validate_issue_targets
+    candidate = {'segments': [{'text': 'a', 'meaning_en': 'a'}, {'text': 'b', 'meaning_en': 'b'}],
+                 'grammar_overlays': [{'start': 0, 'end': 2, 'text': 'ab', 'meaning_en': 'whole'}]}
+    issue = {'start': 0, 'end': 2, 'segment_text': 'ab', 'problem': 'grammar',
+             'candidate_paths': ['/grammar_overlays/0/meaning_en'], 'supporting_paths': ['/segments/1/meaning_en']}
+    validate_issue_targets({'issues': [issue]}, candidate, source_text='ab', representation='chinese-annotation')
+    for changes in [{'start': 1}, {'candidate_paths': ['/segments/1/meaning_en']}, {'segment_text': 'wrong'}]:
+        with pytest.raises(IssueTargetError):
+            validate_issue_targets({'issues': [{**issue, **changes}]}, candidate, source_text='ab', representation='chinese-annotation')
+
+@pytest.mark.parametrize('paths,expected', [
+    (['/segments/0/meaning_en', '/segments/1/meaning_en'], 'actionable'),
+    (['/segments/0/meaning_en'], 'uncertain'),
+])
+def test_canonical_multi_defects_must_all_be_observed(paths, expected):
+    candidate = {'segments': [{'text': 'a', 'meaning_en': 'a'}, {'text': 'b', 'meaning_en': 'b'}]}
+    issue = {'candidate_paths': ['/segments/0/meaning_en', '/segments/1/meaning_en'],
+             'supporting_paths': [], 'explanation': 'Both occurrence meanings are wrong.'}
+    review = {'verdict': 'revise', 'issues': [issue]}
+    inputs = _build_inputs(language='ko', representation='korean-flat', candidate=candidate,
+        current_review=review, prior_history=[], context={},
+        known_reference_input={'lesson': {'kind': 'approved_lesson', 'content': {'meaning': 'local'}}},
+        deterministic_gate_evidence={'passed': True, 'issues': [], 'candidate_digest': digest(candidate)},
+        normal_review_receipt={'review_digest': digest(review)}, source_text=None)
+    result = output_for(inputs, disposition='actionable', ref_id='lesson', ref_path='/meaning')
+    result['classifications'][0]['candidate_paths'] = paths
+    assert _validate_output(result, inputs)['status'] == expected
+
+
+@pytest.mark.parametrize('change', [{'start': 1}, {'supporting_paths': ['/segments/99/meaning_en']}])
+def test_host_canonical_targets_cannot_override_invalid_boundary_or_supporting_pointer(change):
+    candidate = {'segments': [{'text': 'a', 'meaning_en': 'a'}]}
+    issue = {'candidate_paths': ['/segments/0/meaning_en'], 'supporting_paths': [],
+             'start': 0, 'end': 1, 'segment_text': 'a', 'problem': 'meaning', **change}
+    review = {'verdict': 'revise', 'issues': [issue]}
+    inputs = _build_inputs(language='zh', representation='chinese-annotation', candidate=candidate,
+        current_review=review, prior_history=[], context={},
+        known_reference_input={'lesson': {'kind': 'approved_lesson', 'content': {'meaning': 'local'}}},
+        deterministic_gate_evidence={'passed': True, 'issues': [], 'candidate_digest': digest(candidate), 'source_text_digest': digest('a')},
+        normal_review_receipt={'review_digest': digest(review)}, source_text='a')
+    assert _validate_output(output_for(inputs, disposition='actionable', ref_id='lesson', ref_path='/meaning'), inputs)['status'] == 'uncertain'
+
+@pytest.mark.parametrize('problem', ['grammar', 'under_grouped'])
+def test_typed_missing_overlay_and_regrouping_use_existing_source_diagnostics(problem):
+    from pipeline.annotation_issue_targets import IssueTargetError, validate_issue_targets
+    candidate = {'segments': [{'text': char, 'meaning_en': char} for char in '押走两人']}
+    issue = {'start': 0, 'end': 2, 'segment_text': '押走', 'problem': problem,
+             'candidate_paths': ['/segments/0/text', '/segments/1/text'], 'supporting_paths': []}
+    validate_issue_targets({'issues': [issue]}, candidate, source_text='押走两人', representation='chinese-annotation', require_typed=True)
+    for changes in [{'candidate_paths': ['/segments/2/text', '/segments/3/text']},
+                    {'candidate_paths': ['/segments/0/text']}, {'segment_text': '两人'}]:
+        with pytest.raises(IssueTargetError):
+            validate_issue_targets({'issues': [{**issue, **changes}]}, candidate, source_text='押走两人', representation='chinese-annotation')
+
+
+def test_typed_boundary_subrange_is_diagnostic_and_never_retargets_unrelated_owner():
+    from pipeline.annotation_issue_targets import IssueTargetError, validate_issue_targets
+    candidate = {'segments': [{'text': '东来'}, {'text': '了'}]}
+    issue = {'start': 0, 'end': 1, 'segment_text': '东', 'problem': 'over_grouped',
+             'candidate_paths': ['/segments/0/text'], 'supporting_paths': []}
+    validate_issue_targets({'issues': [issue]}, candidate, source_text='东来了', representation='chinese-annotation')
+    with pytest.raises(IssueTargetError):
+        validate_issue_targets({'issues': [{**issue, 'candidate_paths': ['/segments/1/text']}]}, candidate, source_text='东来了', representation='chinese-annotation')
+
+
+def test_typed_japanese_surface_identity_preserves_repeated_positions():
+    from pipeline.annotation_issue_targets import IssueTargetError, validate_issue_targets
+    candidate = {'segments': [{'surface': '家', 'meaning_en': 'house'}, {'surface': '山', 'meaning_en': 'mountain'}, {'surface': '家', 'meaning_en': 'home'}]}
+    issue = {'segment_text': '家', 'problem': 'meaning',
+             'candidate_paths': ['/segments/2/meaning_en'], 'supporting_paths': ['/segments/0/meaning_en']}
+    validate_issue_targets({'issues': [issue]}, candidate, representation='japanese-annotation', require_typed=True)
+    with pytest.raises(IssueTargetError):
+        validate_issue_targets({'issues': [{**issue, 'candidate_paths': ['/segments/1/meaning_en']}]}, candidate, representation='japanese-annotation')
+    boundary = {'segment_text': '家山', 'problem': 'under_grouped',
+                'candidate_paths': ['/segments/0/surface', '/segments/1/surface'], 'supporting_paths': []}
+    validate_issue_targets({'issues': [boundary]}, candidate, representation='japanese-annotation')

@@ -7,6 +7,7 @@ import re
 from pathlib import Path
 
 from pipeline.korean_readability import ROOT, VOCAB_SOURCE
+from pipeline.annotation_issue_targets import ISSUE_TARGET_SCHEMA_FIELDS
 
 
 def obj(properties: dict, required: list[str] | None = None) -> dict:
@@ -19,6 +20,13 @@ STRINGS = {"type": "array", "items": STRING}
 REVIEW = obj({"approved": {"type": "boolean"}, "issues": STRINGS})
 CHUNK_REVIEW = obj({"approved": {"type": "boolean"}, "issues": STRINGS,
                     "prose_revision_reason_en": STRING})
+# Historical string reviews remain immutable; fresh occurrence reviews bind
+# every finding to explicit candidate-relative fields.
+CHUNK_REVIEW_TARGETED = obj({"approved": {"type": "boolean"},
+    "issues": {"type": "array", "items": obj({
+        "explanation": {"type": "string", "minLength": 1},
+        **ISSUE_TARGET_SCHEMA_FIELDS})},
+    "prose_revision_reason_en": STRING})
 STEP = obj({"form": STRING, "reading": STRING, "label": STRING,
             "meaning_en": STRING, "grammar_entry_ids": {"type": "array", "minItems": 1, "maxItems": 1, "items": {"type": "string", "minLength": 1}}})
 LINK = obj({"segment_index": {"type": "integer"}, "entry_id": STRING,
@@ -86,7 +94,8 @@ def schema_path(name: str) -> Path:
 
 def write_schemas() -> None:
     from pipeline.korean_annotation_chunks import SCHEMA as CHUNK_ANNOTATION, LEGACY_SCHEMA, SPAN_SCHEMA, SPAN_LINK_SCHEMA
-    for name, schema in {"review": REVIEW, "chunk-review": CHUNK_REVIEW, "plan": PLAN, "prose": PROSE,
+    for name, schema in {"review": REVIEW, "chunk-review": CHUNK_REVIEW,
+                         "chunk-review-targeted": CHUNK_REVIEW_TARGETED, "plan": PLAN, "prose": PROSE,
                          "annotation": ANNOTATION, "chunk-annotation": LEGACY_SCHEMA,
                          "chunk-annotation-v2": CHUNK_ANNOTATION, "chunk-annotation-v3": SPAN_SCHEMA, "chunk-annotation-v4": SPAN_LINK_SCHEMA, "lexical-plan": FOCUS, "dictionary": DICTIONARY,
                          'grammar-bindings': GRAMMAR_BINDINGS,

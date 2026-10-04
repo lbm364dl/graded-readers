@@ -9,6 +9,7 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+import copy
 from pathlib import Path
 from typing import Any
 
@@ -16,6 +17,7 @@ from jsonschema import validate
 
 from pipeline.agent_harness import CodexRunner
 from pipeline.annotation_review_ledger import resolve_pointer, LedgerProtocolError
+from pipeline.annotation_issue_targets import IssueTargetError, issue_target_paths
 
 
 def digest(value: Any) -> str:
@@ -72,6 +74,25 @@ OUTPUT_SCHEMA = {
         'prose_revision_reason': {'type': 'string'},
     },
 }
+
+
+def _output_schema(policy_version: int) -> dict:
+    if policy_version < 5:
+        return OUTPUT_SCHEMA
+    from pipeline.annotation_issue_targets import ISSUE_TARGET_SCHEMA_FIELDS
+    schema = copy.deepcopy(OUTPUT_SCHEMA)
+    item = schema['properties']['new_issues']['items']
+    item['required'].append('supporting_paths')
+    item['properties'].update(ISSUE_TARGET_SCHEMA_FIELDS)
+    return schema
+
+
+def _versioned_instructions(policy_version: int) -> str:
+    if policy_version < 5:
+        return INSTRUCTIONS
+    from pipeline.annotation_issue_targets import ISSUE_TARGET_GUIDANCE
+    return INSTRUCTIONS + '\n\nFor typed current issues, candidate_paths is the complete defect target set. Match it exactly; supporting_paths and other prose mentions are context only and do not add targets. This explicit protocol takes precedence over legacy prose-index binding guidance above. For every new_issues row, supply supporting_paths explicitly. New findings follow this field-target protocol: ' + ISSUE_TARGET_GUIDANCE
+
 
 INSTRUCTIONS = """Independently adjudicate the current rejected annotation review. This is a linguistic evidence review, not a vote among prior reviewers. Review every current issue exactly once. Classify it unsupported only when a supplied authoritative linguistic reference demonstrates that the current candidate field is acceptable; prior reviews, approvals, and the candidate's own explanation are never linguistic evidence. A draft lesson proposal is not an approved lesson. A source passage can ground application but is not by itself proof that a disputed linguistic analysis is valid. For an annotation category field only, an approved lexical lesson's own lexical-kind value may support the same candidate category when its headword and reading exactly match the targeted segment. Generic reference-wrapper kinds, titles, and other metadata are never linguistic evidence.
 
@@ -146,7 +167,7 @@ def _reference_index(reference_input: Any) -> dict[str, dict]:
     return rows
 
 
-def _explicit_anchors(issue: Any) -> list[tuple[str, int]]:
+def _explicit_anchors(issue: Any, *, policy_version: int = 1, candidate: Any = None) -> list[tuple[str, int]]:
     """Recognize every explicit numeric segment/link reference in reviewer text."""
     found: list[tuple[str, int]] = []
     if isinstance(issue, dict):
@@ -183,10 +204,25 @@ def _explicit_anchors(issue: Any) -> list[tuple[str, int]]:
             if (collection == 'segments'
                     and re.match(r'\s*[-–—]\s*\d+', following)
                     and re.search(
-                        r'\b(?:overlay|construction|span)\b[^.;\n]{0,140}'
-                        r'\b(?:on|spanning|spans|covers?|across|over|from)\s*$',
+                        r'\b(?:overlay|construction|span)\b[^.;\n]{0,140}' +
+                        (r'\b(?:on|spanning|spans|covers?|across|over|from|at)\s*$'
+                         if policy_version >= 2 else
+                         r'\b(?:on|spanning|spans|covers?|across|over|from)\s*$'),
                         prefix, re.I)):
                 continue
+            if policy_version >= 3 and collection == 'segments':
+                context = re.search(r'\bimports?\b[^.;\n]{0,200}\bfrom\s+([^\s()]+)\s*\($', prefix, re.I)
+                suffix = re.match(r'\s*\)([^.;\n]*)', following)
+                numbers = re.findall(r'\d+', match.group(1))
+                segments = candidate.get('segments', []) if isinstance(candidate, dict) else []
+                if context and suffix and len(numbers) == 1 and not re.search(
+                        r'\b(?:wrong|incorrect|defect|revise|misstates|inconsistent)\b', suffix.group(1), re.I):
+                    index = int(numbers[0])
+                    segment = segments[index] if index < len(segments) else None
+                    identities = ({segment.get(key) for key in ('text', 'surface', 'lemma')
+                                   if isinstance(segment.get(key), str)} if isinstance(segment, dict) else set())
+                    if context.group(1) in identities:
+                        continue
             found.extend((collection, int(number)) for number in re.findall(r'\d+', match.group(1)))
     return list(dict.fromkeys(found))
 
@@ -226,7 +262,7 @@ def _path_is_anchor(path: str, anchors: list[tuple[str, int]]) -> bool:
     return stage_match
 
 
-def _path_matches_issue_scope(path: str, issue: Any) -> bool:
+def _path_matches_issue_scope(path: str, issue: Any, *, policy_version: int = 1) -> bool:
     text = json.dumps(issue, ensure_ascii=False) if not isinstance(issue, str) else issue
     lower = text.casefold()
     path_lower = path.casefold()
@@ -246,7 +282,12 @@ def _path_matches_issue_scope(path: str, issue: Any) -> bool:
             token in path_lower for token in ('/meaning', '/gloss', '/translation')):
         return False
     if ('grammar link' in lower or 'grammar_links' in lower):
-        anchors = _explicit_anchors(issue)
+        anchors = _explicit_anchors(issue, policy_version=policy_version)
+        if policy_version >= 2 and '/segments/' in path_lower and any(
+                kind == 'segments' for kind, _ in anchors) and not any(
+                kind == 'grammar_links' for kind, _ in anchors) and re.search(
+                r'grammar link[^.;]{0,100}\bcorrectly\b', lower):
+            return True
         allows_multiple_targets = (any(kind == 'segments' for kind, _ in anchors)
                                    and any(kind in {'grammar_links', 'grammar_overlays'}
                                            for kind, _ in anchors))
@@ -254,6 +295,34 @@ def _path_matches_issue_scope(path: str, issue: Any) -> bool:
             if not (allows_multiple_targets and '/segments/' in path_lower):
                 return False
     return True
+
+
+def _span_link_anchors(issue: Any, candidate: Any) -> tuple[list[tuple[str, int]], bool]:
+    """Resolve a criticized span only by exact endpoints and quoted full surface."""
+    text = json.dumps(issue, ensure_ascii=False) if not isinstance(issue, str) else issue
+    # Supporting ranges ('causative span at segments ...') are not targets.
+    if not re.search(r'span[- ](?:level )?(?:meaning|explanation)|revise the span', text, re.I):
+        return [], False
+    ranges = re.findall(r'\bspan\s+(\d+)\s*[-–—]\s*(\d+)', text, re.I)
+    if len(set(ranges)) != 1:
+        return [], bool(ranges)
+    # A span-only diagnosis may cite a neutral component introduction. Never
+    # replace explicit structured targets or a separately criticized component.
+    if isinstance(issue, dict) and (_explicit_paths(issue) or any(
+            key in issue for key in ('segment_index', 'segment_indices', 'link_index',
+                                     'link_indices', 'stage_index', 'stage_indices'))):
+        return [], True
+    intro = re.split(r'\bspan\s+\d+\s*[-–—]', text, maxsplit=1, flags=re.I)[0]
+    if re.search(r'\b(?:wrong|incorrect|incorrectly|defect|misstates|revise|inconsistent)\b', intro, re.I):
+        return [], True
+    start, end = map(int, ranges[0])
+    surfaces = set(re.findall(r'[“"「『]([^”"」』]{1,200})[”"」』]', text))
+    links = candidate.get('grammar_links', []) if isinstance(candidate, dict) else []
+    matches = [index for index, row in enumerate(links) if isinstance(row, dict)
+               and row.get('segment_index') == start
+               and row.get('display_end_segment_index') == end
+               and row.get('display_form') in surfaces]
+    return ([('grammar_links', matches[0])] if len(matches) == 1 else [], len(matches) != 1)
 
 
 def _surface_anchors(issue: Any, candidate: Any) -> tuple[list[tuple[str, int]], bool]:
@@ -399,7 +468,7 @@ def _approved_lexical_category_match(
 
 
 def _validate_output(output: dict, inputs: dict) -> dict:
-    validate(output, OUTPUT_SCHEMA)
+    validate(output, _output_schema(inputs.get('host_binding_policy_version', 1)))
     normalized = inputs['normalized_review']
     current = inputs['candidate']
     expected_rows = normalized['issues']
@@ -424,29 +493,51 @@ def _validate_output(output: dict, inputs: dict) -> dict:
             except (LedgerProtocolError, TypeError) as exc:
                 raise AdjudicationError(f'Unresolvable candidate path {path!r}: {exc}') from exc
             observations.append({'path': path, 'value': value, 'value_digest': digest(value)})
-        anchors = _explicit_anchors(issue)
-        source_anchors, source_ambiguous = _source_span_anchors(
-            issue, current, inputs.get('source_text'), inputs['representation'])
-        if source_anchors and not source_ambiguous:
-            surface_anchors, surface_ambiguous = [], False
+        policy_version = inputs.get('host_binding_policy_version', 1)
+        canonical = None
+        canonical_invalid = False
+        if policy_version >= 4:
+            try:
+                canonical = issue_target_paths(issue, current, source_text=inputs.get('source_text'),
+                                               representation=inputs['representation'])
+            except IssueTargetError:
+                canonical_invalid = True
+        if canonical is not None or canonical_invalid:
+            disposition = (row['disposition'] if not canonical_invalid
+                and row['target_binding'] == 'exact'
+                and set(canonical) == {obs['path'] for obs in observations} else 'uncertain')
         else:
-            surface_anchors, surface_ambiguous = _surface_anchors(issue, current)
-        anchors = list(dict.fromkeys(anchors + source_anchors + surface_anchors))
-        anchors_observed = all(any(_path_is_anchor(obs['path'], [anchor])
-                                   for obs in observations) for anchor in anchors)
-        explicitly_bound = bool(anchors)
-        if row['target_binding'] != 'exact' or not observations or surface_ambiguous or source_ambiguous:
-            disposition = 'uncertain'
-        elif ((anchors and not anchors_observed)
-              or (anchors and not all(_path_is_anchor(obs['path'], anchors) for obs in observations))
-              or (_explicit_paths(issue) and set(_explicit_paths(issue)) !=
-                  {obs['path'] for obs in observations})
-              or (not _explicit_paths(issue) and not all(
-                  _path_matches_issue_scope(obs['path'], issue) for obs in observations))
-              or (not explicitly_bound and not _explicit_paths(issue))):
-            disposition = 'uncertain'
-        else:
-            disposition = row['disposition']
+            anchors = _explicit_anchors(issue, policy_version=policy_version, candidate=current)
+            link_anchors, link_ambiguous = (_span_link_anchors(issue, current)
+                if policy_version >= 2 else ([], False))
+            if link_anchors:
+                anchors = link_anchors
+            source_anchors, source_ambiguous = _source_span_anchors(
+                issue, current, inputs.get('source_text'), inputs['representation'])
+            if source_anchors and not source_ambiguous:
+                surface_anchors, surface_ambiguous = [], False
+            else:
+                surface_anchors, surface_ambiguous = _surface_anchors(issue, current)
+            if link_anchors:
+                source_anchors, surface_anchors = [], []
+                source_ambiguous = surface_ambiguous = False
+            anchors = list(dict.fromkeys(anchors + source_anchors + surface_anchors))
+            anchors_observed = all(any(_path_is_anchor(obs['path'], [anchor])
+                                       for obs in observations) for anchor in anchors)
+            explicitly_bound = bool(anchors)
+            if row['target_binding'] != 'exact' or not observations or surface_ambiguous or source_ambiguous or link_ambiguous:
+                disposition = 'uncertain'
+            elif ((anchors and not anchors_observed)
+                  or (anchors and not all(_path_is_anchor(obs['path'], anchors) for obs in observations))
+                  or (_explicit_paths(issue) and set(_explicit_paths(issue)) !=
+                      {obs['path'] for obs in observations})
+                  or (not _explicit_paths(issue) and not all(
+                      (bool(link_anchors) or _path_matches_issue_scope(obs['path'], issue,
+                          policy_version=policy_version)) for obs in observations))
+                  or (not explicitly_bound and not _explicit_paths(issue))):
+                disposition = 'uncertain'
+            else:
+                disposition = row['disposition']
         refs_resolved = []
         for ref in row['evidence_refs']:
             identity, path = ref['reference_id'], ref['path']
@@ -484,6 +575,12 @@ def _validate_output(output: dict, inputs: dict) -> dict:
     new_issues = []
     seen_new_ids = set()
     for row in output['new_issues']:
+        if inputs.get('host_binding_policy_version', 1) >= 5:
+            try:
+                issue_target_paths(row, current, source_text=inputs.get('source_text'),
+                                   representation=inputs['representation'])
+            except IssueTargetError as exc:
+                raise AdjudicationError(f'Invalid new-issue diagnostic targets: {exc}') from exc
         if row['issue_id'] in expected_ids or row['issue_id'] in seen_new_ids:
             raise AdjudicationError('New issue IDs must be unique and distinct from current finding IDs')
         seen_new_ids.add(row['issue_id'])
@@ -502,7 +599,12 @@ def _validate_output(output: dict, inputs: dict) -> dict:
         for ref in row['evidence_refs']:
             if ref['reference_id'] not in refs:
                 raise AdjudicationError(f'Unknown evidence reference ID: {ref["reference_id"]}')
-            value = resolve_pointer(refs[ref['reference_id']]['content'], ref['path'])
+            content = refs[ref['reference_id']]['content']
+            if (inputs.get('host_binding_policy_version', 1) >= 5
+                    and isinstance(content, dict) and content.get('_annotation_research_fact') is True
+                    and row['issue_id'] not in content.get('issue_ids', [])):
+                raise AdjudicationError('Reviewed research was cited outside its verified new-issue scope')
+            value = resolve_pointer(content, ref['path'])
             resolved_refs.append({'reference_id': ref['reference_id'],
                                   'reference_kind': refs[ref['reference_id']]['kind'],
                                   'path': ref['path'], 'value': value,
@@ -572,7 +674,8 @@ def validate_adjudication_output(output: dict, inputs: dict) -> dict:
 def _build_inputs(*, language: str, representation: str, candidate: Any,
                   current_review: dict, prior_history: Any, context: Any,
                   known_reference_input: dict, deterministic_gate_evidence: dict,
-                  normal_review_receipt: dict, source_text: str | None) -> dict:
+                  normal_review_receipt: dict, source_text: str | None,
+                  host_binding_policy_version: int = 5) -> dict:
     normalized = normalize_review(language, current_review)
     if representation not in {'chinese-fixed', 'chinese-annotation', 'japanese-annotation',
                               'korean-flat', 'korean-v4'}:
@@ -599,9 +702,13 @@ def _build_inputs(*, language: str, representation: str, candidate: Any,
         'references_digest': digest(known_reference_input),
         'gate_digest': digest(deterministic_gate_evidence),
         'normal_review_receipt_digest': digest(normal_review_receipt),
-        'instructions_digest': digest(INSTRUCTIONS), 'effort': 'low',
+        'instructions_digest': digest(_versioned_instructions(host_binding_policy_version)), 'effort': 'low',
         'model': 'gpt-6-luna', 'tool_profile': 'research',
     }
+    if host_binding_policy_version in {2, 3, 4, 5}:
+        input_value['host_binding_policy_version'] = host_binding_policy_version
+    elif host_binding_policy_version != 1:
+        raise AdjudicationError('Unknown host binding policy version')
     input_value['input_digest'] = digest(input_value)
     return input_value
 
@@ -734,7 +841,7 @@ def _worker_prompt(inputs: dict) -> str:
     policy = context.get('annotation_reviewed_reference_policy') if isinstance(context, dict) else None
     if policy is not None and policy != REVIEWED_REFERENCE_POLICY:
         raise AdjudicationError('Reviewed-reference approval policy is not host-authenticated')
-    return (INSTRUCTIONS + ('\n\n' + policy if policy else '') + '\nThe full candidate, review, history, and organized references are in the immutable annotation_adjudication input. Return the required JSON object.\n')
+    return (_versioned_instructions(inputs.get('host_binding_policy_version', 1)) + ('\n\n' + policy if policy else '') + '\nThe full candidate, review, history, and organized references are in the immutable annotation_adjudication input. Return the required JSON object.\n')
 
 
 async def _adjudicate_once(runner: Any, run_dir: Path, *, language: str,
@@ -767,7 +874,7 @@ async def _adjudicate_once(runner: Any, run_dir: Path, *, language: str,
     agent_dir.mkdir(parents=True, exist_ok=True)
     _write_json(agent_dir / 'adjudication-input.json', inputs)
     schema_path = run_dir / 'annotation-adjudication.schema.json'
-    _write_json(schema_path, OUTPUT_SCHEMA)
+    _write_json(schema_path, _output_schema(inputs.get('host_binding_policy_version', 1)))
     prompt = _worker_prompt(inputs)
     output = await runner.call(job, prompt, schema_path, 'low', tool_profile='research',
         workspace_context={'annotation_adjudication': inputs,
@@ -798,9 +905,18 @@ def _verify_adjudication_once(run_dir: Path, evidence: dict, *, language: str,
         current_review=current_review, prior_history=prior_history, context=context,
         known_reference_input=known_reference_input,
         deterministic_gate_evidence=deterministic_gate_evidence,
-        normal_review_receipt=normal_review_receipt, source_text=source_text)
+        normal_review_receipt=normal_review_receipt, source_text=source_text,
+        host_binding_policy_version=1)
     run_dir = Path(run_dir).resolve(strict=True)
     job = evidence.get('job') if isinstance(evidence, dict) else None
+    for version in (2, 3, 4, 5):
+        if isinstance(job, str) and job == f"annotation-adjudication-{inputs['input_digest']}":
+            break
+        inputs = _build_inputs(language=language, representation=representation, candidate=candidate,
+            current_review=current_review, prior_history=prior_history, context=context,
+            known_reference_input=known_reference_input, deterministic_gate_evidence=deterministic_gate_evidence,
+            normal_review_receipt=normal_review_receipt, source_text=source_text,
+            host_binding_policy_version=version)
     if not isinstance(job, str) or Path(job).name != job or job != f"annotation-adjudication-{inputs['input_digest']}":
         raise AdjudicationError('Adjudication job identity does not match exact inputs')
     agents_dir = run_dir / 'agents'

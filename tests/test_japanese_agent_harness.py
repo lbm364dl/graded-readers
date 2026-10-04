@@ -2603,6 +2603,7 @@ async def test_annotation_review_allows_lexicalized_parts_inside_idiom_overlay()
             return {
                 "verdict": "revise",
                 "issues": [{
+                    "candidate_paths": ["/grammar_overlays/0/surface"], "supporting_paths": [],
                     "segment_text": "目が回って",
                     "problem": "over_grouped",
                     "explanation": "The overlay includes the argument 目が.",
@@ -2715,6 +2716,7 @@ async def test_annotation_review_preserves_required_contextual_overlay():
             return {
                 "verdict": "revise",
                 "issues": [{
+                    "candidate_paths": ["/grammar_overlays/0/explanation_en"], "supporting_paths": [],
                     "segment_text": "じっとしていた",
                     "problem": "grammar",
                     "explanation": (
@@ -2752,6 +2754,7 @@ async def test_annotation_review_keeps_content_lemma_for_whole_te_kuru_form():
             return {
                 "verdict": "revise",
                 "issues": [{
+                    "candidate_paths": ["/segments/0/lemma"], "supporting_paths": [],
                     "segment_text": "飛び出してくる",
                     "problem": "lemma",
                     "explanation": (
@@ -2791,6 +2794,7 @@ async def test_annotation_review_does_not_require_duplicate_overlay_for_whole_wo
             return {
                 "verdict": "revise",
                 "issues": [{
+                    "candidate_paths": ["/segments/0/conjugation_form"], "supporting_paths": [],
                     "segment_text": "いない",
                     "problem": "grammar",
                     "explanation": (
@@ -2822,7 +2826,8 @@ async def test_annotation_review_does_not_require_duplicate_overlay_for_whole_wo
 @pytest.mark.asyncio
 async def test_annotation_review_keeps_incorrect_whole_word_grammar_blocking():
     issue = {
-        "segment_text": "見られた", "problem": "grammar",
+        "candidate_paths": ["/segments/0/conjugation_form"], "supporting_paths": [],
+                    "segment_text": "見られた", "problem": "grammar",
         "explanation": "The form is incorrectly described as causative, not passive.",
         "suggested_fix": "Correct the form explanation to passive past.",
     }
@@ -2835,7 +2840,8 @@ async def test_annotation_review_keeps_incorrect_whole_word_grammar_blocking():
     harness.args = Namespace(annotation_review_effort="low", refresh=False)
     harness.runner = ReviewRunner()
     annotation = {
-        "segments": [{"surface": "見られた", "type": "word"}],
+        "segments": [{"surface": "見られた", "type": "word",
+                      "conjugation_form": "causative"}],
         "grammar_overlays": [],
     }
     assert await harness.review_annotation(
@@ -2850,6 +2856,7 @@ async def test_annotation_review_keeps_copula_with_predicative_na_adjective():
             return {
                 "verdict": "revise",
                 "issues": [{
+                    "candidate_paths": ["/segments/0/surface"], "supporting_paths": [],
                     "segment_text": "不人望だった", "problem": "over_grouped",
                     "explanation": (
                         "The na-adjective and past copula are separate learner "
@@ -2881,6 +2888,7 @@ async def test_annotation_review_keeps_whole_teiru_form_with_lexical_root():
             return {
                 "verdict": "revise",
                 "issues": [{
+                    "candidate_paths": ["/segments/0/lemma"], "supporting_paths": [],
                     "segment_text": "残っている", "problem": "lemma",
                     "explanation": (
                         "The surface contains the て-form plus the auxiliary いる, "
@@ -2912,6 +2920,7 @@ async def test_annotation_review_does_not_require_names_in_story_term_plan():
             return {
                 "verdict": "revise",
                 "issues": [{
+                    "candidate_paths": ["/segments/0/story_role"], "supporting_paths": [],
                     "segment_text": "黒", "problem": "story_role",
                     "explanation": (
                         "This name is absent from the reviewed story-vocabulary "

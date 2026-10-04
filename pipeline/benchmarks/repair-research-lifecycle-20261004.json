@@ -353,5 +353,56 @@
       "interpretation": "V5 retained its uncertain top-level finding. V6 cleared the same accepted chunk candidate at chunk scope, reusing the reviewed V5 v1 lesson/cache and making one low-effort adjudication call. A later offline source-descriptor replay validated the original registered source lesson and the same cached calls without new jobs, metadata changes, or external attempts. Chunk proof explicitly does not grant chapter assembly or publication approval."
     },
     "interpretation": "V5 retained its uncertain top-level finding. V6 cleared the same accepted chunk candidate at chunk scope, reusing the reviewed V5 v1 lesson/cache and making one low-effort adjudication call. V6 chunk proof explicitly does not grant chapter assembly or publication approval."
+  },
+  "typed_target_investigation": {
+    "status": "in_progress_not_accepted",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "chapter_published": false,
+    "production_status": "TOPIK 3, 4 and 6 held; cached reviewed work preserved",
+    "source_characters": 220,
+    "parent_characters": 6754,
+    "source_start": 649,
+    "targeted_repair": "applied and replayed; two complete-form meaning fields changed; source/tap ranges preserved",
+    "fresh_typed_review_issues": 3,
+    "independent_adjudication": "two unsupported with cited lessons; one uncertain lexical finding",
+    "research_observation": "A fact about other findings was marked supported and independently approved, but did not resolve the lexical gap. Effective adjudication remained uncertain.",
+    "candidate_digest": "76dd54bccec38c2c35a13c4e7b071b6446825d614281deca836b4ba75ff45ecf",
+    "tests": {
+      "affected_passed": 919,
+      "duration_seconds": 121.93,
+      "overlap_note": "Latest frozen suite; overlaps prior snapshots and must not be summed."
+    },
+    "artifacts": [
+      {
+        "path": "runs/maintenance/20261003/smokes/typed-review-acceptance-20261004/run-output/typed-review-0.json",
+        "sha256": "64a587f535a58bf47ba46a0ebb803c0f24f50879e10b8618b6036227ccb2cb93"
+      },
+      {
+        "path": "runs/maintenance/20261003/smokes/typed-review-acceptance-20261004/run-output/typed-adjudication-0.json",
+        "sha256": "7b9df33d2a9edd159888f6744058be3be3ff6e86410f5fe2cdb0cb876c0cd7f8"
+      }
+    ],
+    "interpretation": "Structured targets preserve evidence-supported classifications. Focused research stops irrelevant fact substitution but has not completed the lexical lookup and acceptance lifecycle. Production remains held pending a whole-path smoke and affected-output verification.",
+    "research_policy": 4,
+    "host_binding_policy": 5,
+    "focused_research_smoke": {
+      "status": "uncertain_not_accepted",
+      "source_characters": 220,
+      "source_start": 649,
+      "same_candidate": true,
+      "finding_scope": "Research correctly stayed on the one unresolved noun; no unrelated supported fact was submitted.",
+      "remaining_gap": "Worker could not locate a verified direct primary dictionary entry URL. No candidate or publication approval.",
+      "artifacts": [
+        {
+          "path": "runs/maintenance/20261003/smokes/focused-research-acceptance-20261004/run-output/typed-review-0.json",
+          "sha256": "64a587f535a58bf47ba46a0ebb803c0f24f50879e10b8618b6036227ccb2cb93"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/focused-research-acceptance-20261004/run-output/typed-adjudication-0.json",
+          "sha256": "bf1ef91fa07077b1cf045e38d4c6a47a5f6066224dfda73fedeb2c9d4bd36b6d"
+        }
+      ]
+    }
   }
 }

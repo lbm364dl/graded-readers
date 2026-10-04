@@ -6,6 +6,11 @@ from pathlib import Path
 import pytest
 
 import pipeline.annotation_research as research
+
+# Use the same exact issue identity as the shared normalizer in fresh packets.
+FINDING_A = "issue-000-" + research._digest({
+    "segment_index": 0, "candidate_path": "/segments/0/meaning_en",
+    "problem": "meaning", "explanation": "The gloss may omit a contribution."})[:12]
 from pipeline.worker_workspace import build
 
 
@@ -37,7 +42,7 @@ class FakeRunner:
     def __init__(self, run_dir, research_output=None, review_output=None):
         self.run_dir = run_dir
         self.research_output = research_output or {
-            "findings": [{"issue_id": "finding-a", "status": "supported",
+            "findings": [{"issue_id": FINDING_A, "status": "supported",
                           "fact": "The linked lesson describes the disputed contribution.",
                           "citations": [{"reference_id": "lesson-a", "path": "/meaning"}],
                           "gap": ""}],
@@ -63,16 +68,16 @@ class CaptureRunner(FakeRunner):
         self.calls.append((job, effort, tool_profile))
         context = workspace_context["annotation_uncertainty_research"]
         if job.startswith("annotation-uncertainty-research-"):
-            value = {"findings": [{"issue_id": "finding-a", "status": "unresolved",
+            value = {"findings": [{"issue_id": FINDING_A, "status": "unresolved",
                 "fact": "", "citations": [], "gap": "The supplied references lack the rule."}],
                 "source_requests": [{"url": self.source_url,
-                    "issue_ids": ["finding-a"], "reason": "Read the cited official entry."}]}
+                    "issue_ids": [FINDING_A], "reason": "Read the cited official entry."}]}
         elif job.startswith("annotation-uncertainty-continuation-"):
             refs = context["known_reference_input"]
             captured = [key for key, row in refs.items() if key.startswith("captured-primary-")]
             assert len(captured) == 1
             self.captured_refs = captured
-            value = {"findings": [{"issue_id": "finding-a", "status": "supported",
+            value = {"findings": [{"issue_id": FINDING_A, "status": "supported",
                 "fact": "The official entry explicitly distinguishes the form.",
                 "citations": [{"reference_id": captured[0], "path": "/captured_text"}], "gap": ""}]}
         else:
@@ -93,7 +98,9 @@ def _request_inputs():
             "source_text_digest": research._digest(source_text)}
     initial = {"status": "uncertain", "approved": False,
                "prose_requests": [], "prose_revision_reason": "",
-               "classifications": [{"issue_id": "finding-a", "disposition": "uncertain"}]}
+               "classifications": [{"issue_id": FINDING_A, "disposition": "uncertain",
+                   "candidate_paths": ["/segments/0/meaning_en"],
+                   "reason": "The gloss contribution needs authoritative evidence."}]}
     return {
         "language": "ko", "representation": "korean-v4", "candidate": candidate,
         "current_review": review, "prior_history": [], "context": {"source_id": "s1"},
@@ -118,7 +125,7 @@ def test_research_and_review_add_only_cited_scoped_facts_and_replay(tmp_path, mo
     assert len(runner.calls) == 2
     reference_id, reference = next(iter(result["references"].items()))
     assert reference["kind"] == "approved_lesson"
-    assert reference["issue_ids"] == ["finding-a"]
+    assert reference["issue_ids"] == [FINDING_A]
     assert reference["content"]["_annotation_research_fact"] is True
     assert reference["content"]["citations"][0]["value"] == "means X"
     assert "lesson-a" not in result["references"]
@@ -128,22 +135,40 @@ def test_research_and_review_add_only_cited_scoped_facts_and_replay(tmp_path, mo
     assert replayed["references"][reference_id] == reference
 
 
+def test_research_fact_can_explain_an_unrepaired_candidate_defect(tmp_path, monkeypatch):
+    _allow_initial_replay(monkeypatch)
+    request = _request_inputs()
+    original_candidate = json.loads(json.dumps(request["candidate"]))
+    runner = FakeRunner(tmp_path, research_output={
+        "findings": [{"issue_id": FINDING_A, "status": "supported",
+            "fact": "The cited rule requires a boundary meaning; the candidate currently assigns continuation to this form.",
+            "citations": [{"reference_id": "lesson-a", "path": "/meaning"}], "gap": ""}],
+    }, review_output={"approved": True, "issues": []})
+    result = asyncio.run(research.research_uncertain_review(runner, tmp_path, **request))
+
+    assert result["status"] == "approved"
+    assert request["candidate"] == original_candidate
+    assert result["evidence"]["inputs"]["candidate"] == original_candidate
+    assert "candidate is intentionally immutable" in research._review_prompt(
+        result["evidence"]["inputs"])
+
+
 def test_unknown_citation_never_becomes_a_reference_even_if_reviewer_approves(tmp_path, monkeypatch):
     _allow_initial_replay(monkeypatch)
     request = _request_inputs()
     invalid = {
-        "findings": [{"issue_id": "finding-a", "status": "supported",
+        "findings": [{"issue_id": FINDING_A, "status": "supported",
                       "fact": "An unsupported assertion.",
                       "citations": [{"reference_id": "invented", "path": "/meaning"}],
                       "gap": ""}],
     }
     facts, gaps, error = research._resolve_research_output(
-        invalid, ["finding-a"],
+        invalid, [FINDING_A],
         {"lesson-a": {"kind": "approved_lesson", "content": {"meaning": "means X"}}})
     assert facts == [] and gaps
     assert "valid reference IDs: ['lesson-a']" in error
     runner = FakeRunner(tmp_path, research_output={
-        "findings": [{"issue_id": "finding-a", "status": "unresolved", "fact": "",
+        "findings": [{"issue_id": FINDING_A, "status": "unresolved", "fact": "",
                       "citations": [], "gap": "No supplied reference supports this point."}],
     })
     result = asyncio.run(research.research_uncertain_review(runner, tmp_path, **request))
@@ -157,21 +182,22 @@ def test_metadata_only_citation_cannot_support_a_fact():
     request = _request_inputs()
     request["known_reference_input"]["lesson-a"]["content"]["title"] = "A lesson title"
     invalid = {
-        "findings": [{"issue_id": "finding-a", "status": "supported",
+        "findings": [{"issue_id": FINDING_A, "status": "supported",
                       "fact": "A title does not support a linguistic fact.",
                       "citations": [{"reference_id": "lesson-a", "path": "/title"}],
                       "gap": ""}],
     }
     facts, gaps, error = research._resolve_research_output(
-        invalid, ["finding-a"], request["known_reference_input"])
+        invalid, [FINDING_A], request["known_reference_input"])
     assert facts == [] and gaps
     assert "metadata" in error
 
 
 def test_researcher_and_critic_share_form_scope_and_source_request_rules():
     request = _request_inputs()
-    research_prompt = research._research_prompt(request)
-    review_prompt = research._review_prompt(request)
+    inputs = research._build_inputs(**request)
+    research_prompt = research._research_prompt(inputs)
+    review_prompt = research._review_prompt(inputs)
     assert research.FORM_STAGE_EVIDENCE_GUIDANCE in research_prompt
     assert research.FORM_STAGE_EVIDENCE_GUIDANCE in review_prompt
     assert "Do not demand a separate dictionary entry for every exact inflected substring" in research_prompt
@@ -180,6 +206,32 @@ def test_researcher_and_critic_share_form_scope_and_source_request_rules():
     assert "request that exact direct page" in research_prompt
     assert "Flag an avoidable omitted request" in review_prompt
     assert "do not require a supported fact when evidence remains insufficient" in review_prompt
+    assert "candidate is intentionally immutable" in research_prompt.lower()
+    assert "do not reject that fact merely because the submitted candidate still contains" in review_prompt.lower()
+    assert "request that exact page in source_requests" in research_prompt
+    continuation = {**inputs, "source_capture": {"references": [{"reference_id": "captured-primary-a"}]}}
+    continuation_prompt = research._research_prompt(continuation)
+    assert "single bounded continuation" in continuation_prompt
+    assert "do not issue additional source requests" in continuation_prompt
+    assert "request that exact page in source_requests" not in continuation_prompt
+
+
+def test_v2_research_receipt_replays_with_historical_prompts_after_v3_default(
+        tmp_path, monkeypatch):
+    _allow_initial_replay(monkeypatch)
+    request = _request_inputs()
+    original_current = research.RESEARCH_POLICY_VERSION
+    with monkeypatch.context() as legacy:
+        legacy.setattr(research, "RESEARCH_POLICY_VERSION", 2)
+        legacy.setattr(research, "RESEARCH_EVIDENCE_VERSION", 2)
+        runner = FakeRunner(tmp_path)
+        result = asyncio.run(research.research_uncertain_review(runner, tmp_path, **request))
+        assert result["evidence"]["version"] == 2
+        assert "research_policy_version" not in result["evidence"]["inputs"]
+        assert "candidate is intentionally immutable" not in research._review_prompt(
+            result["evidence"]["inputs"])
+    assert research.RESEARCH_POLICY_VERSION == original_current == 4
+    assert research.verify_research_evidence(tmp_path, result["evidence"], **request) == result
 
 
 def test_reviewer_rejection_preserves_research_but_adds_no_references(tmp_path, monkeypatch):
@@ -264,32 +316,32 @@ def _dictionary_pair(tmp_path, *, reviewer_output=None, reviewer_context=None, w
 def test_imported_lesson_requires_exact_writer_output_and_independent_clean_review(tmp_path):
     writer, reviewer, context = _dictionary_pair(tmp_path)
     receipt = research.import_reviewed_lesson(tmp_path, writer, reviewer,
-        lesson_id="DRAFT-grammar-x", expected_context=context, issue_ids=["finding-a"])
+        lesson_id="DRAFT-grammar-x", expected_context=context, issue_ids=[FINDING_A])
     assert receipt["references"]
     assert receipt["evidence"]["version"] == 2
     reference = next(iter(receipt["references"].values()))
-    assert reference["issue_ids"] == ["finding-a"]
+    assert reference["issue_ids"] == [FINDING_A]
     assert reference["content"]["id"] == "DRAFT-grammar-x"
     assert reference["content"]["explanation_en"] == "A reviewed lesson."
     assert reference["content"]["_annotation_research_fact"] is True
-    assert reference["content"]["issue_ids"] == ["finding-a"]
+    assert reference["content"]["issue_ids"] == [FINDING_A]
     assert "lesson" not in reference["content"]
     assert "source_context" not in reference["content"]
     assert research.verify_imported_reviewed_lesson(tmp_path, receipt["evidence"],
         lesson_id="DRAFT-grammar-x", expected_context=context,
-        issue_ids=["finding-a"]) == receipt
+        issue_ids=[FINDING_A]) == receipt
 
 
 def test_version1_imported_lesson_replays_without_rewriting_old_layout(tmp_path):
     writer, reviewer, context = _dictionary_pair(tmp_path)
     old = research.import_reviewed_lesson(tmp_path, writer, reviewer,
-        lesson_id="DRAFT-grammar-x", expected_context=context, issue_ids=["finding-a"],
+        lesson_id="DRAFT-grammar-x", expected_context=context, issue_ids=[FINDING_A],
         _receipt_version=1)
     old_path = (tmp_path / "annotation-research" / "imports" /
                 f"{old['evidence']['evidence_digest']}.json")
     before = old_path.read_bytes()
     replayed = research.verify_imported_reviewed_lesson(tmp_path, old["evidence"],
-        lesson_id="DRAFT-grammar-x", expected_context=context, issue_ids=["finding-a"])
+        lesson_id="DRAFT-grammar-x", expected_context=context, issue_ids=[FINDING_A])
     assert replayed == old
     assert old_path.read_bytes() == before
     content = next(iter(replayed["references"].values()))["content"]
@@ -301,14 +353,14 @@ def test_imported_lesson_rejects_changed_context_reviewer_input_and_unapproved_r
     writer, reviewer, context = _dictionary_pair(tmp_path, reviewer_context={"chapter": {"id": "other"}})
     with pytest.raises(research.AnnotationResearchError, match="source context"):
         research.import_reviewed_lesson(tmp_path, writer, reviewer,
-            lesson_id="DRAFT-grammar-x", expected_context=context, issue_ids=["finding-a"])
+            lesson_id="DRAFT-grammar-x", expected_context=context, issue_ids=[FINDING_A])
 
     tmp_path2 = tmp_path / "second"
     writer, reviewer, context = _dictionary_pair(tmp_path2,
         reviewer_output={"approved": False, "issues": ["Not supported."]})
     with pytest.raises(research.AnnotationResearchError, match="clean independent approval"):
         research.import_reviewed_lesson(tmp_path2, writer, reviewer,
-            lesson_id="DRAFT-grammar-x", expected_context=context, issue_ids=["finding-a"])
+            lesson_id="DRAFT-grammar-x", expected_context=context, issue_ids=[FINDING_A])
 
 
 def test_imported_lesson_rejects_reviewer_output_not_equal_to_writer_result(tmp_path):
@@ -319,20 +371,20 @@ def test_imported_lesson_rejects_reviewer_output_not_equal_to_writer_result(tmp_
     (review_ws / output_row["path"]).write_text(json.dumps({"grammar": [], "words": []}))
     with pytest.raises(research.AnnotationResearchError, match="manifest/profile"):
         research.import_reviewed_lesson(tmp_path, writer, reviewer,
-            lesson_id="DRAFT-grammar-x", expected_context=context, issue_ids=["finding-a"])
+            lesson_id="DRAFT-grammar-x", expected_context=context, issue_ids=[FINDING_A])
 
 
 def test_imported_lesson_replay_rejects_changed_reviewer_metadata(tmp_path):
     writer, reviewer, context = _dictionary_pair(tmp_path)
     receipt = research.import_reviewed_lesson(tmp_path, writer, reviewer,
-        lesson_id="DRAFT-grammar-x", expected_context=context, issue_ids=["finding-a"])
+        lesson_id="DRAFT-grammar-x", expected_context=context, issue_ids=[FINDING_A])
     meta_path = tmp_path / "agents" / reviewer / "meta.json"
     meta = json.loads(meta_path.read_text())
     meta["model"] = "gpt-6-astra"
     meta_path.write_text(json.dumps(meta))
     with pytest.raises(research.AnnotationResearchError, match="low-Luna workspace"):
         research.verify_imported_reviewed_lesson(tmp_path, receipt["evidence"],
-            lesson_id="DRAFT-grammar-x", expected_context=context, issue_ids=["finding-a"])
+            lesson_id="DRAFT-grammar-x", expected_context=context, issue_ids=[FINDING_A])
 
 
 def _capturable_request():
@@ -365,7 +417,7 @@ def test_primary_page_capture_continuation_review_and_offline_replay(tmp_path, m
     assert len(runner.calls) == 3
     assert len(fetches) == 1
     evidence = result["evidence"]
-    assert evidence["version"] == 2
+    assert evidence["version"] == 4
     assert evidence["continuation_job"]
     assert evidence["captured_references"][0]["content"]["captured_text"].find("Form A") >= 0
     assert "ignore" not in evidence["captured_references"][0]["content"]["captured_text"]
@@ -418,9 +470,13 @@ def _register_reviewed_cache(tmp_path, monkeypatch, language="ko", *, extra_issu
     request = _reviewed_cache_request(language)
     if extra_issue:
         request["candidate"]["segments"][0]["meaning_es"] = "otro significado"
+        extra = {"candidate_paths": ["/segments/0/meaning_es"],
+                 "supporting_paths": [], "explanation": "Investigate the other language gloss."}
+        request["current_review"]["issues"].append(extra)
+        request["normal_review_receipt"]["review_digest"] = research._digest(request["current_review"])
         request["initial_adjudication"]["classifications"].append({
-            "issue_id": "finding-b", "disposition": "uncertain",
-            "candidate_paths": ["/segments/0/meaning_es"]})
+            "issue_id": "issue-001-" + research._digest(extra)[:12], "disposition": "uncertain",
+            "candidate_paths": ["/segments/0/meaning_es"], "reason": "Other gloss needs evidence."})
         request["deterministic_gate_evidence"]["candidate_digest"] = research._digest(request["candidate"])
     source = tmp_path / "source-run"
     destination = tmp_path / "destination-run"
@@ -442,7 +498,7 @@ def test_reviewed_lesson_cache_is_exact_scoped_and_replays_before_research(
     assert registered["status"] == "reviewed_lesson_reused"
     assert registered["evidence"]["candidate_approved"] is False
     reference_id, reference = next(iter(registered["references"].items()))
-    assert reference["issue_ids"] == ["finding-a"]
+    assert reference["issue_ids"] == [FINDING_A]
     assert reference["content"]["id"] == "DRAFT-grammar-x"
 
     replay = research.verify_research_evidence(destination, registered["evidence"], **request)
@@ -539,8 +595,8 @@ def test_reviewed_lesson_reference_is_scoped_only_to_its_target_issue(tmp_path, 
     _request, _source, _destination, _writer, _reviewer, registered = _register_reviewed_cache(
         tmp_path, monkeypatch, extra_issue=True)
     reference = next(iter(registered["references"].values()))
-    assert reference["issue_ids"] == ["finding-a"]
-    assert "finding-b" not in reference["content"]["issue_ids"]
+    assert reference["issue_ids"] == [FINDING_A]
+    assert _request["initial_adjudication"]["classifications"][1]["issue_id"] not in reference["content"]["issue_ids"]
 
 
 def _register_reviewed_source(tmp_path, monkeypatch, language="ko"):
@@ -568,7 +624,7 @@ def test_registered_lesson_source_automatically_builds_scoped_cache_without_paid
     result = asyncio.run(research.research_uncertain_review(runner, destination, **request))
     assert result["status"] == "reviewed_lesson_reused"
     assert not runner.calls
-    assert next(iter(result["references"].values()))["issue_ids"] == ["finding-a"]
+    assert next(iter(result["references"].values()))["issue_ids"] == [FINDING_A]
     replay = research.verify_research_evidence(destination, result["evidence"], **request)
     assert replay == result
     again = asyncio.run(research.research_uncertain_review(runner, destination, **request))
@@ -637,26 +693,26 @@ def test_primary_capture_rejects_unapproved_origin_and_search_pages(tmp_path, mo
     request = _capturable_request()
     fetches = []
     monkeypatch.setattr(research, "_fetch_primary_page", lambda *args: fetches.append(args))
-    unresolved = [{"issue_id": "finding-a"}]
+    unresolved = [{"issue_id": FINDING_A}]
     with pytest.raises(research.AnnotationResearchError, match="direct page"):
         research._validated_source_requests(
             {"source_requests": [{"url": "https://other.example/page",
-                "issue_ids": ["finding-a"], "reason": "not supplied"}]},
-            ["finding-a"], request["known_reference_input"], unresolved)
+                "issue_ids": [FINDING_A], "reason": "not supplied"}]},
+            [FINDING_A], request["known_reference_input"], unresolved)
     assert fetches == []
 
     accepted = research._validated_source_requests(
         {"source_requests": [{"url": "https://dictionary.example/eng/dicSearch/SearchView?ParaWordNo=86133",
-            "issue_ids": ["finding-a"], "reason": "specific entry"}]},
-        ["finding-a"], request["known_reference_input"], unresolved)
+            "issue_ids": [FINDING_A], "reason": "specific entry"}]},
+        [FINDING_A], request["known_reference_input"], unresolved)
     assert len(accepted) == 1
 
     with pytest.raises(research.AnnotationResearchError, match="direct page"):
         research._validated_source_requests(
             {"source_requests": [{"url": "https://dictionary.example/search?word=x",
-                "issue_ids": ["finding-a"], "reason": "search"}]},
-            ["finding-a"], request["known_reference_input"],
-            [{"issue_id": "finding-a"}])
+                "issue_ids": [FINDING_A], "reason": "search"}]},
+            [FINDING_A], request["known_reference_input"],
+            [{"issue_id": FINDING_A}])
 
 
 def test_pdf_capture_fails_closed_and_is_replayable_as_a_gap(tmp_path, monkeypatch):

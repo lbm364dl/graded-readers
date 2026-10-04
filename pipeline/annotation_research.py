@@ -25,6 +25,7 @@ from pipeline.annotation_adjudication import (
     AdjudicationError,
     LINGUISTIC_REFERENCE_KINDS,
     _substantive_reference,
+    normalize_review,
     digest as adjudication_digest,
     verify_adjudication_evidence,
 )
@@ -83,8 +84,52 @@ REVIEW_POLICY += "\n\n" + FORM_STAGE_EVIDENCE_GUIDANCE + """
 
 Review component and dependent-form facts in the larger form chain; do not demand a separate dictionary entry for every exact inflected substring, and do not treat a dependent contribution as a standalone assertion. Keep component and construction-span meanings separate, and do not infer an idiom's combined meaning from its components alone. Check whether the researcher requested a direct primary-source page when its own analysis says such evidence is needed and a plausible page on a supplied primary_source origin was available. Flag an avoidable omitted request instead of approving a gap that can be investigated. A capture failure or the absence of a relevant page is a valid unresolved limitation; do not require a supported fact when evidence remains insufficient."""
 
+# These are the exact v2 policies used by existing job fingerprints. Keep them
+# immutable so persisted evidence can still be replayed after the v3 correction.
+RESEARCH_POLICY_V2 = RESEARCH_POLICY
+REVIEW_POLICY_V2 = REVIEW_POLICY
+RESEARCH_POLICY_V3 = RESEARCH_POLICY_V2 + """
+
+Research the reusable linguistic fact needed to evaluate the reported defect;
+do not repair or rewrite the candidate. The candidate is intentionally immutable
+context during this stage and is expected to retain its current
+field values. A supported fact may identify why a current field is wrong."""
+REVIEW_POLICY_V3 = REVIEW_POLICY_V2 + """
+
+Review the research artifact's evidence claim, not whether the candidate has
+already been repaired. The candidate is intentionally immutable throughout this
+stage. A supported fact may correctly identify why its current field is wrong;
+do not reject that fact merely because the submitted candidate still contains
+the defect. The separate adjudication and repair stages decide how to apply
+sound evidence. Still reject unsupported facts, irrelevant citations, or claims
+that do not address the exact issue."""
+SCOPED_RESEARCH_GUIDANCE = """
+The annotation_uncertainty_tasks packet is the authoritative task list for this
+stage. For each issue_id, evaluate only its exact current_review_issue,
+candidate_paths, candidate_observations and initial_uncertainty_reason. The
+remaining review issues and prior history are context only: do not answer one
+of them under an uncertain issue's ID. A supported fact must supply evidence
+that bears on the precise unresolved point. A generally correct statement about
+another construction is not support for this issue. If the relevant lexical or
+grammatical contribution remains unestablished, return unresolved with an empty
+fact and citations; do not combine unrelated supported facts with an admission
+that the required evidence is absent. The reviewer must reject such a mismatch,
+even when the unrelated claim and its citations are accurate.
+The supplied_primary_origins list describes eligible capture origins, not facts
+or candidate approval. Tools remain available to find a relevant direct primary
+page on those origins. On the initial pass, request that exact page for the
+unresolved issue; another headword's supplied page establishes an available
+origin but does not itself establish the target headword's meaning. Do not invent
+an entry number or cite a web observation as captured evidence. On the single
+captured-source continuation, issue no further requests and retain any gap.
+"""
+RESEARCH_POLICY_V4 = RESEARCH_POLICY_V3 + "\n\n" + SCOPED_RESEARCH_GUIDANCE
+REVIEW_POLICY_V4 = REVIEW_POLICY_V3 + "\n\n" + SCOPED_RESEARCH_GUIDANCE
+RESEARCH_POLICY_VERSION = 4
+SUPPORTED_RESEARCH_POLICY_VERSIONS = {2, 3, 4}
+
 SUBMISSION_VALIDATION_VERSION = 2
-RESEARCH_EVIDENCE_VERSION = 2
+RESEARCH_EVIDENCE_VERSION = 4
 # Official dictionary pages include large inline scripts; keep the transfer
 # bounded while allowing the observed 2.55 MB KRDict entry page.
 MAX_CAPTURE_BYTES = 4_000_000
@@ -188,10 +233,13 @@ def _check_runner_policy(runner: Any) -> None:
 
 
 def _worker_context(kind: str, inputs: dict) -> dict:
-    context = {
+    context = {}
+    if _policy_version(inputs) >= 4:
+        context["annotation_uncertainty_tasks"] = inputs["uncertainty_tasks"]
+    context.update({
         "annotation_uncertainty_research": inputs,
         "annotation_uncertainty_research_role": kind,
-    }
+    })
     if kind == "research":
         context["annotation_research_validation"] = {
             "input_field": "annotation_uncertainty_research",
@@ -596,11 +644,16 @@ def _build_inputs(*, language: str, representation: str, candidate: Any,
                   current_review: dict, prior_history: Any, context: Any,
                   source_text: str | None, deterministic_gate_evidence: dict,
                   initial_adjudication: dict, known_reference_input: dict,
-                  normal_review_receipt: dict) -> dict:
+                  normal_review_receipt: dict,
+                  policy_version: int | None = None) -> dict:
     if language not in {"zh", "ja", "ko"}:
         raise AnnotationResearchError("Unsupported annotation language")
     if not isinstance(known_reference_input, dict):
         raise AnnotationResearchError("Known references must be a mapping")
+    if policy_version is None:
+        policy_version = RESEARCH_POLICY_VERSION
+    if policy_version not in SUPPORTED_RESEARCH_POLICY_VERSIONS:
+        raise AnnotationResearchError("Unsupported research policy version")
     issue_ids = _initial_uncertain_ids(initial_adjudication)
     gate = deterministic_gate_evidence
     if (not isinstance(gate, dict) or gate.get("passed") is not True or gate.get("issues")
@@ -616,7 +669,7 @@ def _build_inputs(*, language: str, representation: str, candidate: Any,
         refs[identity] = {"kind": row["kind"], "content": row["content"]}
     # Do not let a task manufacture a source by declaring its kind. These rows
     # are coordinator-supplied inputs and must be bound by the initial receipt.
-    return {
+    result = {
         "version": 1, "language": language, "representation": representation,
         "submission_validation_version": SUBMISSION_VALIDATION_VERSION,
         "candidate": candidate, "candidate_digest": _digest(candidate),
@@ -631,19 +684,93 @@ def _build_inputs(*, language: str, representation: str, candidate: Any,
         "normal_review_receipt": normal_review_receipt,
         "normal_review_receipt_digest": _digest(normal_review_receipt),
         "known_reference_input": refs, "known_reference_digest": _digest(refs),
-        "issue_ids": issue_ids, "research_policy_digest": _digest(RESEARCH_POLICY),
-        "review_policy_digest": _digest(REVIEW_POLICY),
+        "issue_ids": issue_ids, "research_policy_digest": _digest(_policies(policy_version)[0]),
+        "review_policy_digest": _digest(_policies(policy_version)[1]),
     }
+    if policy_version != 2:
+        result["research_policy_version"] = policy_version
+    if policy_version >= 4:
+        result["uncertainty_tasks"] = _uncertainty_tasks(result)
+    return result
+
+
+def _uncertainty_tasks(inputs: dict) -> dict:
+    from pipeline.annotation_review_ledger import resolve_pointer
+    from pipeline.annotation_issue_targets import issue_target_paths
+    normalized = normalize_review(inputs["language"], inputs["current_review"])
+    current = {row["issue_id"]: row["issue"] for row in normalized["issues"]}
+    initial = {row["issue_id"]: row for row in inputs["initial_adjudication"]["classifications"]}
+    tasks = []
+    for identity in inputs["issue_ids"]:
+        if identity not in current or identity not in initial:
+            raise AnnotationResearchError("Uncertain issue is not bound to the current review")
+        classification = initial[identity]
+        issue = current[identity]
+        canonical_paths = issue_target_paths(issue, inputs["candidate"],
+            source_text=inputs["source_text"], representation=inputs["representation"])
+        paths = (canonical_paths if canonical_paths is not None
+                 else classification.get("candidate_paths", []))
+        observations = [{"path": path, "value": resolve_pointer(inputs["candidate"], path)}
+                        for path in paths]
+        supporting = issue.get("supporting_paths", []) if isinstance(issue, dict) else []
+        record_paths = sorted({"/" + "/".join(path.split("/")[1:3]) for path in paths})
+        tasks.append({"issue_id": identity, "current_review_issue": issue,
+            "candidate_paths": paths, "candidate_observations": observations,
+            "initial_classification_candidate_paths": classification.get("candidate_paths", []),
+            "target_records": [{"path": path, "value": resolve_pointer(inputs["candidate"], path)}
+                               for path in record_paths],
+            "supporting_observations": [{"path": path,
+                "value": resolve_pointer(inputs["candidate"], path)} for path in supporting],
+            "initial_uncertainty_reason": classification.get("reason", ""),
+            "initial_diagnosis": classification.get("diagnosis", "")})
+    origins = [f"{scheme}://{host}" for scheme, host, port in
+               sorted(_primary_origins(inputs["known_reference_input"]))]
+    return {"version": 1, "tasks": tasks, "supplied_primary_origins": origins,
+            "source_text": inputs["source_text"],
+            "candidate_digest": inputs["candidate_digest"],
+            "current_review_digest": inputs["review_digest"],
+            "initial_adjudication_digest": inputs["initial_adjudication_digest"],
+            "other_review_issues_are_context_only": True}
+
+
+def _policies(version: int) -> tuple[str, str]:
+    if version == 2:
+        return RESEARCH_POLICY_V2, REVIEW_POLICY_V2
+    if version == 3:
+        return RESEARCH_POLICY_V3, REVIEW_POLICY_V3
+    if version == 4:
+        return RESEARCH_POLICY_V4, REVIEW_POLICY_V4
+    raise AnnotationResearchError("Unsupported research policy version")
+
+
+def _policy_version(inputs: dict) -> int:
+    # v2 inputs predate this field; its absence is part of their saved digest.
+    version = inputs.get("research_policy_version", 2)
+    if version not in SUPPORTED_RESEARCH_POLICY_VERSIONS:
+        raise AnnotationResearchError("Unsupported research policy version")
+    return version
 
 
 def _research_prompt(inputs: dict) -> str:
-    return (RESEARCH_POLICY + "\n\nThe exact request and supplied references are in the organized annotation_uncertainty_research input. "
-            "Use only the unresolved finding IDs and reference IDs already supplied. If captured primary-source pages are present, cite their captured_text values by exact pointer. "
-            "Do not issue further source requests during a continuation. Return the research schema.\n")
+    version = _policy_version(inputs)
+    policy, _ = _policies(version)
+    tail = ("The exact request and supplied references are in the organized annotation_uncertainty_research input. "
+            "Use only the unresolved finding IDs and reference IDs already supplied. If captured primary-source pages are present, cite their captured_text values by exact pointer. ")
+    if version == 2:
+        tail += "Do not issue further source requests during a continuation. Return the research schema.\n"
+    elif inputs.get("source_capture"):
+        tail += ("This is the single bounded continuation after a captured-page request. Cite relevant captured_text values by exact pointer. "
+                 "No further source capture is available, so do not issue additional source requests; state any remaining gap. Return the research schema.\n")
+    else:
+        tail += ("This is the initial research pass. If an unresolved finding could be answered by a direct page on an already supplied primary-source origin, "
+                 "request that exact page in source_requests with the finding ID and reason so it can be captured. Do not stop at a gap when that bounded request is available. "
+                 "Return the research schema.\n")
+    return policy + "\n\n" + tail
 
 
 def _review_prompt(inputs: dict) -> str:
-    return (REVIEW_POLICY + "\n\nThe exact research artifact, citations resolved by the host, supplied references, and original issue context are in the organized annotation_uncertainty_research input. "
+    _, policy = _policies(_policy_version(inputs))
+    return (policy + "\n\nThe exact research artifact, citations resolved by the host, supplied references, and original issue context are in the organized annotation_uncertainty_research input. "
             "Judge the artifact as submitted; do not rewrite it. Return the generic usage-dictionary-review schema.\n")
 
 
@@ -1033,13 +1160,16 @@ def _verify_reviewed_lesson_cache(run_dir: Path, evidence: dict, *, language: st
             or evidence.get("version") != REVIEWED_LESSON_CACHE_VERSION
             or evidence.get("kind") != "reviewed_lesson_cache"):
         raise AnnotationResearchError("Unsupported reviewed-lesson cache receipt")
+    stored_inputs = evidence.get("inputs") if isinstance(evidence, dict) else None
+    policy_version = (stored_inputs.get("research_policy_version", 2)
+                      if isinstance(stored_inputs, dict) else 2)
     inputs = _build_inputs(language=language, representation=representation,
         candidate=candidate, current_review=current_review, prior_history=prior_history,
         context=context, source_text=source_text,
         deterministic_gate_evidence=deterministic_gate_evidence,
         initial_adjudication=initial_adjudication,
         known_reference_input=known_reference_input,
-        normal_review_receipt=normal_review_receipt)
+        normal_review_receipt=normal_review_receipt, policy_version=policy_version)
     scope_digest = _digest(inputs)
     if evidence.get("scope_digest") != scope_digest or evidence.get("inputs") != inputs:
         raise AnnotationResearchError("Reviewed-lesson cache scope changed")
@@ -1300,15 +1430,17 @@ def verify_research_evidence(run_dir: Path, evidence: dict, *, language: str,
             initial_adjudication=initial_adjudication,
             known_reference_input=known_reference_input,
             normal_review_receipt=normal_review_receipt)
-    if not isinstance(evidence, dict) or evidence.get("version") != RESEARCH_EVIDENCE_VERSION:
+    if (not isinstance(evidence, dict)
+            or evidence.get("version") not in SUPPORTED_RESEARCH_POLICY_VERSIONS):
         raise AnnotationResearchError("Unsupported or missing research evidence version")
+    policy_version = evidence["version"]
     inputs = _build_inputs(language=language, representation=representation,
         candidate=candidate, current_review=current_review, prior_history=prior_history,
         context=context, source_text=source_text,
         deterministic_gate_evidence=deterministic_gate_evidence,
         initial_adjudication=initial_adjudication,
         known_reference_input=known_reference_input,
-        normal_review_receipt=normal_review_receipt)
+        normal_review_receipt=normal_review_receipt, policy_version=policy_version)
     run_dir = Path(run_dir).resolve(strict=True)
     try:
         verify_adjudication_evidence(run_dir, initial_adjudication,
@@ -1325,7 +1457,7 @@ def verify_research_evidence(run_dir: Path, evidence: dict, *, language: str,
     if stored_inputs != inputs or evidence.get("request_digest") != request_digest:
         raise AnnotationResearchError("Research request inputs changed")
     if not inputs["known_reference_input"]:
-        expected = {"version": RESEARCH_EVIDENCE_VERSION, "status": "unresolved", "approved": False,
+        expected = {"version": policy_version, "status": "unresolved", "approved": False,
                     "preflight_reason": "no supplied authoritative references",
                     "request_digest": request_digest, "input_digest": request_digest,
                     "inputs": inputs, "references": {}, "references_digest": _digest({})}
@@ -1431,7 +1563,7 @@ def verify_research_evidence(run_dir: Path, evidence: dict, *, language: str,
     status = "approved" if references else "unresolved"
     final_meta = continuation_meta or research_meta
     expected = {
-        "version": RESEARCH_EVIDENCE_VERSION, "status": status, "approved": approved,
+        "version": policy_version, "status": status, "approved": approved,
         "request_digest": request_digest, "input_digest": request_digest,
         "inputs": inputs, "initial_adjudication_digest": inputs["initial_adjudication_digest"],
         "research_job": research_job, "research_fingerprint": research_meta["fingerprint"],

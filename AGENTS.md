@@ -154,3 +154,30 @@ unsupported; investigate applicable formation rules and attested usage. If a
 researcher identifies a needed authoritative page, request and capture it rather
 than treating an uncaptured web observation as evidence or stopping without the
 available investigation.
+
+Research review evaluates the research claims and their citations, not whether
+the immutable annotation has already been repaired. A supported fact that
+establishes a defect is useful repair evidence; it is not a candidate approval.
+Keep source-request instructions specific to the current stage: the initial
+research pass may request direct primary pages, while the bounded captured-source
+continuation may not open another capture cycle. When changing host target
+binding or evidence policies, preserve exact replay of historical receipts and
+use an explicit new policy version for new decisions.
+
+New annotation reviews must identify defective candidate fields with structured
+`candidate_paths` and list contextual fields separately in `supporting_paths`.
+Validate these pointers against the exact immutable annotation before accepting
+the review. Mentions of other segments, forms or spans in prose are not additional
+defect targets. Preserve every explicitly targeted defect and exact source
+position, including repeated text. A diagnostic target does not authorize changing
+source text, tap boundaries or an entire annotation. Historical untyped reviews
+retain their original replay contracts.
+Record raw-to-host adjudication downgrades in maintenance with both authenticated
+artifacts. A downgrade is evidence to investigate, not proof of a validator bug
+or a model failure; a successful exit does not resolve it.
+
+Present each unresolved research task with its exact finding, candidate fields
+and evidence gap. Other findings remain context, not substitute research tasks.
+Research review must check that every proposed fact and citation addresses its
+assigned unresolved finding; an accurate fact about another construction does
+not resolve that finding. Preserve historical research packets and receipts.

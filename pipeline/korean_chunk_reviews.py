@@ -4,6 +4,7 @@ from pathlib import Path
 from jsonschema import validate
 
 from pipeline import korean_contracts as contracts
+from pipeline.annotation_issue_targets import ISSUE_TARGET_GUIDANCE, validate_issue_targets
 from pipeline.annotation_review_guidance import (
     FORM_STAGE_COMPATIBLE_REVIEW_DIGESTS,
     FORM_STAGE_EVIDENCE_GUIDANCE,
@@ -68,18 +69,32 @@ def _form_guidance_digest():
 
 async def review_chunk(runner, run_dir, *, annotation, text, context, policy):
     from pipeline.korean_agent_harness import digest, payload, save
-    inputs = {'annotation': annotation, 'text': text, 'context': context}
-    identity = digest({'inputs': inputs, 'instructions': policy + INSTRUCTIONS})
+    inputs = {'annotation': annotation, 'text': text, 'context': context,
+              'issue_targets_version': 1}
+    instructions = INSTRUCTIONS + '\n' + ISSUE_TARGET_GUIDANCE + '''
+Each issue also requires explanation, describing why its candidate_paths are
+defective. For an actual prose revision, point to the existing affected segment
+text field; this records the source defect and does not authorize an annotation
+patch to rewrite source text. Do not invent an annotation meaning defect to
+make a prose finding fit the schema.
+'''
+    identity = digest({'inputs': inputs, 'instructions': policy + instructions})
     job = f'annotation-local-review-{identity}'
-    review = await runner.call(job, policy + '\n' + INSTRUCTIONS + payload(**inputs),
-        contracts.schema_path('chunk-review'), 'low', tool_profile='offline',
-        workspace_context={'chunk_review_input': inputs})
-    validate(review, contracts.CHUNK_REVIEW)
+    review = await runner.call(job, policy + '\n' + instructions + payload(**inputs),
+        contracts.schema_path('chunk-review-targeted'), 'low', tool_profile='offline',
+        workspace_context={'chunk_review_input': inputs,
+            'annotation_issue_targets_validation': {'candidate': annotation,
+                'source_text': text, 'representation': 'korean-flat',
+                'require_typed': True}})
+    validate(review, contracts.CHUNK_REVIEW_TARGETED)
+    validate_issue_targets(review, annotation, source_text=text,
+                           representation='korean-flat', require_typed=True)
     if review['prose_revision_reason_en'] and (review['approved'] or not review['issues']):
         raise ValueError('Korean chunk prose revision must be an explicit rejected review')
     save(run_dir / 'agents' / job / 'review-input.json', inputs)
     return review, {'job': job, 'input_digest': digest(inputs), 'review_digest': digest(review),
-                    'form_review_guidance_digest': _form_guidance_digest()}
+                    'form_review_guidance_digest': _form_guidance_digest(),
+                    'issue_targets_version': 1}
 
 
 def verify_review(run_dir, evidence, *, annotation, text, chapter_text, source_start,
@@ -93,7 +108,13 @@ def verify_review(run_dir, evidence, *, annotation, text, chapter_text, source_s
     root = run_dir / 'agents' / job
     inputs, review, meta = (read(root / name) for name in
                             ('review-input.json', 'result.json', 'meta.json'))
-    validate(review, contracts.CHUNK_REVIEW)
+    version = evidence.get('issue_targets_version')
+    if version not in (None, 1) or inputs.get('issue_targets_version') != version:
+        raise ValueError('Korean chunk issue target version changed')
+    validate(review, contracts.CHUNK_REVIEW if version is None else contracts.CHUNK_REVIEW_TARGETED)
+    if version == 1:
+        validate_issue_targets(review, annotation, source_text=text,
+                               representation='korean-flat', require_typed=True)
     if ((require_approved and not approved(review))
             or (not require_approved and approved(review))
             or review['prose_revision_reason_en']

@@ -1,0 +1,84 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "verdict",
+    "issues"
+  ],
+  "properties": {
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "pass",
+        "revise"
+      ]
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "start",
+          "end",
+          "segment_text",
+          "problem",
+          "explanation",
+          "suggested_fix",
+          "candidate_paths",
+          "supporting_paths"
+        ],
+        "properties": {
+          "start": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Exact zero-based Python character start in TEXT."
+          },
+          "end": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Exact exclusive Python character end in TEXT; TEXT[start:end] must equal segment_text."
+          },
+          "segment_text": {
+            "type": "string"
+          },
+          "problem": {
+            "type": "string",
+            "enum": [
+              "reconstruction",
+              "over_grouped",
+              "under_grouped",
+              "wrong_type",
+              "pinyin",
+              "meaning",
+              "grammar"
+            ]
+          },
+          "explanation": {
+            "type": "string"
+          },
+          "suggested_fix": {
+            "type": "string"
+          },
+          "candidate_paths": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^/"
+            },
+            "uniqueItems": true,
+            "minItems": 1
+          },
+          "supporting_paths": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^/"
+            },
+            "uniqueItems": true
+          }
+        }
+      }
+    }
+  }
+}

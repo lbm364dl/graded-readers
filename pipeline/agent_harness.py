@@ -19,6 +19,7 @@ from typing import Any
 
 from pipeline.chunk_scheduler import map_chunks
 from pipeline.annotation_review_guidance import FORM_STAGE_EVIDENCE_GUIDANCE
+from pipeline.annotation_issue_targets import ISSUE_TARGET_GUIDANCE, validate_issue_targets
 from pipeline.annotation_publication import (
     bind_review_job, child_job_receipt, normal_review_receipt,
     persist_chunk_attempts, verify_normal_review_receipt,
@@ -2528,8 +2529,13 @@ For every issue, start/end are REQUIRED zero-based Python character offsets into
 the exact TEXT, end exclusive. Copy segment_text exactly from TEXT[start:end].
 Identify the specific occurrence: repeated surface text must use the offsets of
 the occurrence that is actually wrong. Self-check TEXT[start:end] == segment_text.
-Do not use tools, a shell, Python, search, or external sources. Copy issue offsets
-directly from the supplied segment/overlay rows and verify them against TEXT.
+Use tools when useful. Copy issue offsets directly from the supplied
+segment/overlay rows and verify them against TEXT.
+
+{ISSUE_TARGET_GUIDANCE}
+The exact candidate JSON is supplied below so every target has an explicit pointer.
+ANNOTATION:
+{compact(annotation)}
 
 {FORM_STAGE_EVIDENCE_GUIDANCE}
 
@@ -2544,9 +2550,14 @@ GRAMMAR OVERLAYS (existing exact offset objects):
 {compact(annotation.get("grammar_overlays", []))}"""
         review = await self.runner.call(
             f"annotations/chunk_{index:04d}/{stage}_review", prompt,
-            SCHEMAS / "annotation-review.schema.json",
+            SCHEMAS / "annotation-review-targets.schema.json",
             effort or self.args.annotation_review_effort, refresh=self.args.refresh,
+            workspace_context={"annotation_issue_targets_validation": {
+                "candidate": annotation, "source_text": chunk,
+                "representation": "chinese-annotation", "require_typed": True}},
         )
+        validate_issue_targets(review, annotation, source_text=chunk,
+                               representation="chinese-annotation", require_typed=True)
         # Retain invalid/legacy findings as audit evidence, but mutation code
         # independently validates offsets and will not grant them scope.
         review = copy.deepcopy(review)
