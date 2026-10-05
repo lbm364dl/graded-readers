@@ -30,9 +30,11 @@ def test_retained_complete_stage_identity_and_direct_link_changes_preserve_geome
     assert value['grammar_links'][0]['context_en']==chapter()['grammar_links'][0]['context_en']
 
 
-def test_displayed_same_retained_stage_identity_is_rejected_by_actual_gate(tmp_path):
+def test_displayed_same_retained_stage_identity_validates_complete_source(tmp_path):
     value=chapter();value['grammar_links'][0].update(display_form='가며',display_meaning_en='fixture whole',display_end_segment_index=0)
-    with pytest.raises(ValueError,match='unexpected Korean construction stage'):gate(value,tmp_path)
+    gate(value,tmp_path)
+    value['grammar_links'][0]['display_form']='clipped'
+    with pytest.raises(ValueError,match='invalid Korean construction stage'):gate(value,tmp_path)
 
 
 def test_actual_removed_stage_can_have_supported_complete_occurrence_shape(tmp_path):
@@ -80,8 +82,8 @@ async def test_new_guidance_reaches_actual_shared_plan_and_patch_only(tmp_path,l
     assert result['status']=='applied'
     for _,prompt,_,effort,options in runner.calls:
         assert effort=='low' and repairs.RETAINED_STAGE_LINK_GUIDANCE in prompt
-        assert options['workspace_context']['repair_explanation_guidance_version']==3
-        assert options['workspace_context']['repair_dependency_guidance_version']==2
+        assert options['workspace_context']['repair_explanation_guidance_version']==4
+        assert options['workspace_context']['repair_dependency_guidance_version']==3
     assert 'Related issues may share the same necessary scalar/list identity target' in repairs.RETAINED_STAGE_LINK_GUIDANCE
     assert 'actual step removal or occurrence-shape change' in repairs.DEPENDENCY_CLOSURE_GUIDANCE
 

@@ -230,7 +230,7 @@ def build_assets(chapter: dict, output_dir: Path, *, source_id: str = SOURCE,
                      for grammar_id in step["grammar_entry_ids"]}
         display_keys = {"display_form", "display_meaning_en", "display_end_segment_index"}
         display = {}
-        if entry_id not in stage_ids and (segments[index].get("form_steps") or display_keys & link.keys()):
+        if display_keys & link.keys() or (entry_id not in stage_ids and segments[index].get("form_steps")):
             if not display_keys <= link.keys():
                 covering = []
                 for other in links:
@@ -251,8 +251,6 @@ def build_assets(chapter: dict, output_dir: Path, *, source_id: str = SOURCE,
                     or link["display_form"] != source_text[start:positions[last][1]]):
                 raise ValueError(f"invalid Korean construction stage: {link}")
             display = {key: link[key] for key in display_keys}
-        elif display_keys & link.keys():
-            raise ValueError(f"unexpected Korean construction stage: {link}")
         sentence, sentence_start = _sentence(source_text, start)
         grading = {}
         if 'curriculum' in chapter:
