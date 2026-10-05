@@ -36,7 +36,7 @@ from pipeline.annotation_publication import (
     verify_review_carried_research,
     verify_item_research_positions,
 )
-from pipeline.chunk_scheduler import map_chunks
+from pipeline.chunk_scheduler import map_chunks, ChunkAdmissionIncomplete, bounded_chunk_jobs, persist_admission_outcomes
 from pipeline.annotation_review_guidance import (FORM_STAGE_EVIDENCE_GUIDANCE_V2 as FORM_STAGE_EVIDENCE_GUIDANCE, form_stage_guidance)
 from pipeline.annotation_issue_targets import ISSUE_TARGET_GUIDANCE, validate_issue_targets
 from pipeline.japanese_readability import (
@@ -5425,6 +5425,9 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
             "representation": "japanese-annotation", "require_typed": True}}
         carried_context, _ = bind_lifecycle_carry(self, index, chunk, annotation,
             language='ja', representation='japanese-annotation')
+        from pipeline.chunk_scheduler import investigation_hold
+        hold=investigation_hold(self,index,chunk,carried_context)
+        if hold is not None:carried_context['annotation_investigation_hold']=hold
         carried_context, _ = bind_lifecycle_run_lessons(self, index, chunk, annotation,
             language='ja', representation='japanese-annotation', context=carried_context)
         if 'reviewed_run_lessons' in carried_context:
@@ -5733,7 +5736,7 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
         review["verdict"] = "revise" if retained else "pass"
         return review
 
-    async def annotate_chunk(self, index: int, chunk: str) -> dict[str, Any]:
+    async def annotate_chunk(self, index: int, chunk: str, *, retained_only=False) -> dict[str, Any]:
         """Generate, independently restart, then repair the fresh result.
 
         Japanese morphology can leave a clean independent restart with a few
@@ -5741,6 +5744,9 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
         review is wasteful, while returning it would violate the fail-closed
         contract. Give only the fresh candidate a short, bounded repair tail.
         """
+        from pipeline.chunk_scheduler import investigation_hold, ChunkDeferred
+        hold=investigation_hold(self,index,chunk)
+        if retained_only and hold is not None:raise ChunkDeferred(hold['reason'])
         cache_key = digest(json.dumps({
             "policy": self.annotation_chunk_cache_tag,
             "chunk": chunk,
@@ -5752,7 +5758,8 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
             if run_dir is not None else None
         )
         if (
-            accepted_path is not None
+            hold is None
+            and accepted_path is not None
             and accepted_path.is_file()
             and not self.refresh_annotation_chunk(index)
         ):
@@ -5836,6 +5843,10 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                     encoding="utf-8",
                 )
                 return cached
+
+        if retained_only:
+            from pipeline.chunk_scheduler import ChunkDeferred
+            raise ChunkDeferred('Japanese unselected accepted cache is absent or stale')
 
         def accept(
             candidate: dict[str, Any], attempts: list[dict[str, Any]],
@@ -7609,15 +7620,19 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
         if not chunks:
             return []
         register_chunk_positions(self, chunks)
-        return await map_chunks(
-            chunks,
-            self.annotate_chunk,
-            getattr(self.args, "concurrency", 1),
-            error_label=(
-                "Japanese annotation chunks failed after the complete queue "
-                "was drained"
-            ),
-        )
+        from pipeline.chunk_scheduler import admission_indices
+        with bounded_chunk_jobs(self):
+            return await map_chunks(
+                chunks,
+                self.annotate_chunk,
+                getattr(self.args, "concurrency", 1),
+                active_indices=admission_indices(self,len(chunks),items=chunks),
+                retained_worker=lambda index,text:self.annotate_chunk(index,text,retained_only=True),
+                error_label=(
+                    "Japanese annotation chunks failed after the complete queue "
+                    "was drained"
+                ),
+            )
 
     async def build_reader(
         self, outline: dict[str, Any], chapter: str,
@@ -7799,6 +7814,10 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
             )
             self.write_manifest("complete")
             return report
+        except ChunkAdmissionIncomplete as error:
+            persist_admission_outcomes(self,error)
+            self.write_manifest('incomplete')
+            raise
         except BaseException:
             self.write_manifest("failed")
             raise
@@ -8092,6 +8111,10 @@ PRIOR REVIEW FINDINGS:
                 backup.write_text(raw_chapter, encoding="utf-8")
             chapter_path.write_text(revised_chapter, encoding="utf-8")
             return await self.resume_annotations()
+        except ChunkAdmissionIncomplete as error:
+            persist_admission_outcomes(self,error)
+            self.write_manifest('incomplete')
+            raise
         except BaseException:
             self.write_manifest("failed")
             raise
@@ -8190,6 +8213,10 @@ PRIOR REVIEW FINDINGS:
             (self.run_dir / "report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
             self.write_manifest(final_status)
             return report
+        except ChunkAdmissionIncomplete as error:
+            persist_admission_outcomes(self,error)
+            self.write_manifest('incomplete')
+            raise
         except BaseException:
             self.write_manifest("failed")
             raise
@@ -8328,6 +8355,9 @@ def parser() -> argparse.ArgumentParser:
     sub = p.add_subparsers(dest="command", required=True)
     for command in ("run", "book"):
         item = sub.add_parser(command)
+        item.add_argument('--annotation-admission-job-limit',type=int,default=6)
+        item.add_argument('--annotation-holds',type=Path)
+        item.add_argument('--annotation-active-chunk-index',dest='annotation_active_indices',type=int,action='append',help='One-based admitted annotation lifecycle chunks')
         item.add_argument("--source", action="append" if command == "book" else "store", required=command == "run")
         if command == "run":
             item.add_argument("--level", choices=JLPT_LEVELS, default="n3")

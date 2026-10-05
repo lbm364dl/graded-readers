@@ -24,7 +24,7 @@ import signal
 import sys
 from typing import Any
 
-from pipeline.chunk_scheduler import map_chunks
+from pipeline.chunk_scheduler import map_chunks, admission_indices, ChunkAdmissionIncomplete, bounded_chunk_jobs, persist_admission_outcomes
 from pipeline.annotation_review_guidance import FORM_STAGE_EVIDENCE_GUIDANCE_V2 as FORM_STAGE_EVIDENCE_GUIDANCE
 from pipeline.annotation_issue_targets import ISSUE_TARGET_GUIDANCE, validate_issue_targets
 from pipeline.annotation_publication import (
@@ -2644,6 +2644,9 @@ GRAMMAR OVERLAYS (existing exact offset objects):
 {compact(annotation.get("grammar_overlays", []))}"""
         carried_context, _ = bind_lifecycle_carry(self, index, chunk, annotation,
             language='zh', representation='chinese-annotation')
+        from pipeline.chunk_scheduler import investigation_hold
+        hold=investigation_hold(self,index,chunk,carried_context)
+        if hold is not None:carried_context['annotation_investigation_hold']=hold
         carried_context, _ = bind_lifecycle_run_lessons(self, index, chunk, annotation,
             language='zh', representation='chinese-annotation', context=carried_context)
         if 'reviewed_run_lessons' in carried_context:
@@ -3954,13 +3957,17 @@ GRAMMAR OVERLAYS (existing exact offset objects):
             if final_status == "complete" and not self.args.skip_annotations:
                 chunks = self.chinese_annotation_chunks(chapter)
                 register_chunk_positions(self, chunks, parent_text=chapter)
+                if getattr(self.args,'annotation_active_indices',None) is not None and getattr(self.args,'annotation_mode','generative')=='constrained-delta':
+                    raise ValueError('Bounded annotation admission requires per-chunk lifecycle mode')
                 if getattr(self.args, "annotation_mode", "generative") == "constrained-delta":
                     annotated = await self.annotate_chapter_constrained_delta(chapter, chunks)
                 else:
-                    annotated = await map_chunks(
-                        chunks, self.annotate_chunk,
-                        getattr(self.args, "concurrency", 1),
-                    )
+                    with bounded_chunk_jobs(self):
+                        annotated = await map_chunks(
+                            chunks, self.annotate_chunk,
+                            getattr(self.args, "concurrency", 1),
+                            active_indices=admission_indices(self,len(chunks),items=chunks),
+                        )
                 segments = [segment for item in annotated for segment in item["segments"]]
                 if "".join(segment["text"] for segment in segments) != chapter:
                     raise ValueError("assembled annotations do not reconstruct chapter")
@@ -4074,6 +4081,10 @@ GRAMMAR OVERLAYS (existing exact offset objects):
             )
             self.write_manifest(final_status)
             return report
+        except ChunkAdmissionIncomplete as error:
+            persist_admission_outcomes(self,error)
+            self.write_manifest('incomplete')
+            raise
         except BaseException:
             self.write_manifest("failed")
             raise
@@ -4676,15 +4687,19 @@ class AnnotationOnlyHarness(ChapterHarness):
         try:
             chunks = self.chinese_annotation_chunks(self.chapter)
             register_chunk_positions(self, chunks, parent_text=self.chapter)
+            if getattr(self.args,'annotation_active_indices',None) is not None and self.args.annotation_mode=='constrained-delta':
+                raise ValueError('Bounded annotation admission requires per-chunk lifecycle mode')
             if self.args.annotation_mode == "constrained-delta":
                 annotated = await self.annotate_chapter_constrained_delta(
                     self.chapter, chunks
                 )
             else:
-                annotated = await map_chunks(
-                    chunks, self.annotate_chunk,
-                    getattr(self.args, "concurrency", 1),
-                )
+                with bounded_chunk_jobs(self):
+                    annotated = await map_chunks(
+                        chunks, self.annotate_chunk,
+                        getattr(self.args, "concurrency", 1),
+                        active_indices=admission_indices(self,len(chunks),items=chunks),
+                    )
             segments = [segment for item in annotated for segment in item["segments"]]
             reconstruction = "".join(segment["text"] for segment in segments)
             if reconstruction != self.chapter:
@@ -4804,6 +4819,10 @@ class AnnotationOnlyHarness(ChapterHarness):
             )
             self.write_annotation_manifest(report["status"])
             return report
+        except ChunkAdmissionIncomplete as error:
+            persist_admission_outcomes(self,error)
+            self.write_annotation_manifest('incomplete')
+            raise
         except BaseException:
             model_calls = sum(
                 1 for meta_path in (self.run_dir / "agents").glob("**/meta.json")
@@ -5038,6 +5057,10 @@ def parser() -> argparse.ArgumentParser:
     annotate.add_argument("--refresh", action="store_true")
     annotate.add_argument("--resume", action="store_true",
                           help="explicitly allow reuse of a nonempty output directory")
+    for admission_parser in (run, annotate):
+        admission_parser.add_argument('--annotation-admission-job-limit',type=int,default=6)
+        admission_parser.add_argument('--annotation-holds',type=Path)
+        admission_parser.add_argument('--annotation-active-chunk-index',dest='annotation_active_indices',type=int,action='append')
     promote = sub.add_parser(
         "promote",
         help="independently re-review and promote a selected one-scene candidate",

@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from pipeline.annotation_adjudication_budget import AdjudicationBudget
+from pipeline.chunk_scheduler import ChunkAdmissionIncomplete
 
 import argparse
 import asyncio
@@ -490,11 +491,13 @@ def cached_unplanned_names(run_dir: Path, text: str, focus: dict, *, batch_chara
             meta = read(path.with_name('meta.json'))
             if meta.get('return_code') != 0:
                 continue
-            CodexRunner._check_tool_profile(path.parent, 'offline', meta)
             value = read(path)
             CACHED_ANNOTATION_VALIDATOR.validate(value)
             if ''.join(s['text'] for s in value['segments']) not in chunks:
                 continue
+            if not any(segment['lexical_kind']=='proper_name' and segment['lemma'] not in aliases for segment in value['segments']):
+                continue
+            CodexRunner._check_tool_profile(path.parent, 'offline', meta)
             for segment in value['segments']:
                 if segment['lexical_kind'] == 'proper_name' and segment['lemma'] not in aliases:
                     occurrence = {'text': segment['text'], 'meaning_en': segment['meaning_en']}
@@ -612,7 +615,7 @@ def validate_annotation_chunk(value, text, *, words, catalog, focus, title,
 
 
 class KoreanHarness:
-    def __init__(self, run_dir: Path, number: int, runner=None, existing: Path | None = None, model: str = "gpt-6-luna", workers: int = 4, level: int = 1, stop_after: str | None = None, annotation_batch_characters: int = 0):
+    def __init__(self, run_dir: Path, number: int, runner=None, existing: Path | None = None, model: str = "gpt-6-luna", workers: int = 4, level: int = 1, stop_after: str | None = None, annotation_batch_characters: int = 0, annotation_active_indices=None, annotation_holds=None, annotation_admission_job_limit=6):
         curriculum.entries("grammar", level)
         if stop_after not in (None, 'prose', 'curriculum'):
             raise ValueError('Korean preparation checkpoint must be prose or curriculum')
@@ -621,6 +624,9 @@ class KoreanHarness:
         if type(annotation_batch_characters) is not int or annotation_batch_characters < 0:
             raise ValueError('Korean annotation batch budget must be nonnegative')
         self.annotation_batch_characters = annotation_batch_characters
+        self.annotation_active_indices = annotation_active_indices
+        self.annotation_holds = annotation_holds
+        self.annotation_admission_job_limit = annotation_admission_job_limit
         self.run_dir, self.number, self.existing = run_dir, number, existing
         if workers < 1:
             raise ValueError('Korean pipeline workers must be positive')
@@ -890,6 +896,11 @@ class KoreanHarness:
         for attempt in range(2):
             try:
                 return await self._run()
+            except ChunkAdmissionIncomplete as error:
+                return {'status':'incomplete','number':self.number,'stages':self.stages,
+                        'deferred_chunks':[row.index+1 for row in error.deferred_chunks],
+                        'attempted_failures':[{'index':row.index+1,'error_type':type(row.error).__name__,'diagnostic':str(row.error)} for row in error.attempted_failures],
+                        'published':False}
             except MissingPlannedNameError:
                 if attempt:
                     raise
@@ -1042,16 +1053,41 @@ class KoreanHarness:
             candidate_entries = []
             lexical_research_unresolved = []
             proposed_headwords = set()
-            if self.level > 1:
-                proposed = await self.runner.call(f'annotation-lexical-candidates-revision{prose_attempt}',
+            discovery_scope = None
+            discovery_suffix = ''
+            discovery_source = prose['text']
+            discovery_call = self.runner.call
+            if self.annotation_active_indices is not None:
+                from pipeline.annotation_reference_carry_callers import register_chunk_positions
+                from pipeline.chunk_scheduler import admission_indices, bounded_chunk_jobs
+                discovery_chunks = contracts.annotation_chunks(prose['text'], batch_characters=self.annotation_batch_characters)
+                register_chunk_positions(self, discovery_chunks, parent_text=prose['text'])
+                selected = admission_indices(self, len(discovery_chunks), items=discovery_chunks)
+                discovery_scope = {'policy_version': 1, 'parent_text_digest': sha(prose['text'].encode()),
+                    'active_chunks': sorted(i+1 for i in selected),
+                    'source_positions': self._annotation_source_positions,
+                    'selected_occurrences': [{'chunk_index': i+1, 'text': discovery_chunks[i],
+                        'source_position': self._annotation_source_positions[i]} for i in sorted(selected)]}
+                discovery_suffix = '-admission-' + digest(discovery_scope)[:20]
+                discovery_source = ''.join(discovery_chunks[i] for i in sorted(selected))
+                async def discovery_call(*args, **kwargs):
+                    with bounded_chunk_jobs(self, phase='discovery', job_limit=2):
+                        return await self.runner.call(*args, **kwargs)
+            discovery_guidance = ('\nOnly propose or audit headwords occurring in selected_occurrences. '
+                'The full prose and lexical plan are immutable context for exact identities and planned-name exclusions; '
+                'unselected passages must not create new search requests. These remain unverified search requests. '
+                ) if discovery_scope is not None else ''
+            discovery_fields = {'annotation_admission_discovery': discovery_scope} if discovery_scope is not None else {}
+            if self.level > 1 and (discovery_scope is None or discovery_scope['active_chunks']):
+                proposed = await discovery_call(f'annotation-lexical-candidates-revision{prose_attempt}{discovery_suffix}',
                     self.policy + '\nPropose dictionary headwords occurring in this exact prose so the next annotator can retrieve existing lexical identities. '
                     'Return headwords only: no IDs, definitions, levels or claims of approval. Include dictionary forms of inflected verbs and adjectives, nouns, adverbs and other lexical words. '
                     'Prefer attested whole-word headwords. For transparent noun compounds lacking a standalone headword, also request the independent component headwords needed for learner-sized taps; do not treat source spacing as proof of a single dictionary lemma. Do not split idioms or names or guess contributions from syllables. '
                     'These are search requests, not authoritative linguistic analysis. Exclude planned names and their title/surname parts, standalone grammatical particles, and conjugated or productive expression forms whose lexical bases can be retrieved instead. Do not rewrite prose or invent words. '
-                    + payload(prose=prose, lexical_plan=focus), contracts.schema_path('lexical-candidates'), 'low', tool_profile='offline')
+                    + discovery_guidance + payload(prose=prose, lexical_plan=focus, **discovery_fields), contracts.schema_path('lexical-candidates'), 'low', tool_profile='offline')
                 validate(proposed, contracts.LEXICAL_CANDIDATES)
-                proposed = await self.runner.call(
-                    f'annotation-lexical-candidates-triage-revision{prose_attempt}',
+                proposed = await discovery_call(
+                    f'annotation-lexical-candidates-triage-revision{prose_attempt}{discovery_suffix}',
                     self.policy + '\nIndependently audit these unverified dictionary search requests against the exact modern Korean prose. '
                     'Return only dictionary-form lexical headwords needed for annotation. Correct inflected verbs and adjectives to their lexical bases; '
                     'replace productive phrases and grammatical expression frames with their independently meaningful lexical bases. '
@@ -1059,16 +1095,25 @@ class KoreanHarness:
                     'Do not turn an inflected adjective into an unrelated noun homonym. Keep potentially attested whole compounds when appropriate; '
                     'do not split idioms or guess component meanings. These remain search requests, not verified identities, senses or grades. '
                     'Do not rewrite prose or invent dictionary entries. Return headwords only, with no definitions or approval claims. '
-                    + payload(prose=prose, lexical_plan=focus, unverified_requests=proposed),
+                    + discovery_guidance + payload(prose=prose, lexical_plan=focus, unverified_requests=proposed, **discovery_fields),
                     contracts.schema_path('lexical-candidates'), 'low', tool_profile='offline')
                 validate(proposed, contracts.LEXICAL_CANDIDATES)
                 proposed_headwords = set(proposed['headwords'])
                 excluded = {entry['headword'] for entry in focus['entries']}
                 excluded.update(alias for entry in focus['entries'] for alias in entry['aliases'])
                 missing = proposed_headwords - self.catalog.keys() - excluded
+                if missing and discovery_scope is not None:
+                    from pipeline.chunk_scheduler import ChunkAdmissionIncomplete, ChunkFailure, ChunkDeferred
+                    save(self.run_dir/'annotation-admission'/f'discovery-required{discovery_suffix}.json',
+                        {'scope': discovery_scope, 'headword_requests': proposed,
+                         'missing_headwords': sorted(missing), 'approved': False,
+                         'reason': 'Selected discovery needs separately bounded primary lexical research'})
+                    raise ChunkAdmissionIncomplete('Selected discovery requires primary research',
+                        [ChunkFailure(i, ChunkDeferred('Primary lexical references missing: '+', '.join(sorted(missing))))
+                         for i in sorted(selected)], [])
                 if missing:
                     from pipeline.korean_lexical_research import research
-                    researched = await research(missing, self.run_dir, runner=self.runner, source_context=prose['text'])
+                    researched = await research(missing, self.run_dir, runner=self.runner, source_context=discovery_source)
                     lexical_research_unresolved = researched.get('unresolved', [])
                     self.catalog = contracts.lexical_catalog()
                 candidate_entries = lexical_candidates(proposed['headwords'], self.catalog)
@@ -1098,6 +1143,9 @@ class KoreanHarness:
                 candidate_policy='Search candidates are not approved senses or grades. Select the identity and POS matching the actual occurrence; retain distinct homonyms and do not invent an ID.')
             async def produce_annotation(job, issues):
                 texts = contracts.annotation_chunks(prose["text"], batch_characters=self.annotation_batch_characters)
+                from pipeline.annotation_reference_carry_callers import register_chunk_positions
+                if self.annotation_active_indices is not None or self.annotation_holds is not None:
+                    register_chunk_positions(self,texts,parent_text=prose['text'])
                 exact_reuse_candidate = annotation_reuse_candidate(self.run_dir, text=prose['text'])
                 current_reuse_candidate = exact_reuse_candidate or reuse_candidate
                 selected, previous_chunks, old_lineage, repair_evidence = None, None, None, {}
@@ -1476,7 +1524,13 @@ class KoreanHarness:
                                 else:
                                     return value, annotation_chunk_record(chunk_job, text, value, raw_value)
                     raise ValueError(f"Korean annotation chunk {number} failed reconstruction: {errors}")
-                async def reviewed_chunk(index, text):
+                async def reviewed_chunk(index, text, *, retained_only=False):
+                    from pipeline.chunk_scheduler import ChunkDeferred, investigation_hold
+                    hold=investigation_hold(self,index,text)
+                    if retained_only and hold is not None:
+                        raise ChunkDeferred(hold['reason'])
+                    if retained_only and index not in checkpoint_approvals:
+                        raise ChunkDeferred('No authenticated checkpoint approval for unselected chunk')
                     from pipeline.korean_chunk_reviews import review_chunk
                     local_issues, local_previous = None, None
                     adjudication_budget = AdjudicationBudget()
@@ -1500,6 +1554,8 @@ class KoreanHarness:
                             raise ValueError('Korean cached semantic repair coverage could not be verified')
                         if coverage_attempt == 3:
                             raise ValueError('Korean semantic repair remained incomplete after bounded recovery')
+                        if retained_only:
+                            raise ChunkDeferred('Unselected checkpoint has unresolved repair coverage')
                         local_previous = incomplete['candidate']
                         local_issues = [row['issue'] for row in incomplete['unresolved_issues']]
                         local_issues.append({
@@ -1528,6 +1584,7 @@ class KoreanHarness:
                             'lexical_candidates': lexical_review_knowledge['lexical_candidates'],
                             'linguistic_reference': read(LINGUISTIC_REFERENCE),
                             'lexical_reference': read(LEXICAL_REFERENCE)}
+                        if hold is not None:context['annotation_investigation_hold']=hold
                         from pipeline.korean_lexical_research import reviewed_primary_sources, candidate_lexical_identities
                         selected_primary_sources = reviewed_primary_sources(candidate_lexical_identities(value))
                         if selected_primary_sources:
@@ -1561,6 +1618,8 @@ class KoreanHarness:
                             else:
                                 print(f'annotation chunk {index + 1}: reused verified independent approval', flush=True)
                                 return value, record, proof
+                        if retained_only:
+                            raise ChunkDeferred('Unselected checkpoint is not eligible under current context')
                         from pipeline.annotation_run_knowledge_selection import select_and_normalize_run_knowledge
                         selected=await select_and_normalize_run_knowledge(self,index,value,text,language='ko',representation='korean-flat',context=context,base_record=record)
                         value,record=selected['candidate'],selected['record']
@@ -1692,9 +1751,12 @@ class KoreanHarness:
                                 f"{adjudication['status']}")
                         local_issues, local_previous = review['issues'], value
                     raise ValueError(f'Korean annotation chunk {index + 1} failed independent review: {local_issues}')
-                from pipeline.chunk_scheduler import map_chunks
+                from pipeline.chunk_scheduler import map_chunks, admission_indices, bounded_chunk_jobs
                 try:
-                    results = await map_chunks(texts, reviewed_chunk, self.workers)
+                    with bounded_chunk_jobs(self):
+                        results = await map_chunks(texts, reviewed_chunk, self.workers,
+                            active_indices=admission_indices(self,len(texts),items=texts),
+                            retained_worker=lambda index,text: reviewed_chunk(index,text,retained_only=True))
                 except Exception as error:
                     save_partial_annotation_checkpoint(self.run_dir, source_job=job,
                         chapter_text=prose['text'], chunk_texts=texts, error=error)
@@ -1889,8 +1951,11 @@ def main() -> None:
     parser.add_argument('--annotation-batch-characters', type=int, default=0, help='Group complete sentences into model jobs; zero preserves one-sentence jobs. Does not limit chapter length.')
     parser.add_argument("--model", default="gpt-6-luna")
     parser.add_argument('--workers', type=int, default=4, help='Concurrent annotation model jobs (default: 4)')
+    parser.add_argument('--annotation-active-chunk-index',dest='annotation_active_indices',type=int,action='append',help='Admit only these one-based annotation lifecycle positions; unselected missing/stale proofs remain deferred')
+    parser.add_argument('--annotation-holds',type=Path,help='Exact source/evidence-bound investigation hold JSON; never changes historical proofs')
+    parser.add_argument('--annotation-admission-job-limit',type=int,default=6)
     args = parser.parse_args()
-    report = asyncio.run(KoreanHarness(args.run_dir, args.chapter, existing=args.existing, model=args.model, workers=args.workers, level=args.level, stop_after=args.stop_after, annotation_batch_characters=args.annotation_batch_characters).run())
+    report = asyncio.run(KoreanHarness(args.run_dir, args.chapter, existing=args.existing, model=args.model, workers=args.workers, level=args.level, stop_after=args.stop_after, annotation_batch_characters=args.annotation_batch_characters,annotation_active_indices=args.annotation_active_indices,annotation_holds=args.annotation_holds,annotation_admission_job_limit=args.annotation_admission_job_limit).run())
     print(json.dumps({"status": report["status"], "chapter": report["number"], "stages": list(report["stages"])}))
 
 

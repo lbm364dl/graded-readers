@@ -1673,8 +1673,23 @@ def test_partial_annotation_checkpoint_reuses_only_verified_successful_positions
         save(tmp_path / 'agents' / chunk_job / 'meta.json',
              {'return_code': 0, 'tool_profile': 'offline'})
         context = {'chapter_text': text, 'source_start': index}
-        _, proof = asyncio.run(review_chunk(Runner(), tmp_path, annotation=annotation,
-            text='가', context=context, policy='Reviewed fixture.'))
+        if index == 2:
+            # Build genuine historical inputs and workspace, not a damaged v2 receipt.
+            from pipeline.korean_chunk_reviews import review_request
+            from pipeline.korean_agent_harness import digest, payload
+            inputs, instructions, identity = review_request(
+                annotation, '가', context, 'Reviewed fixture.', guidance_version=1)
+            review_job = f'annotation-local-review-{identity}'
+            review = asyncio.run(Runner().call(review_job,
+                'Reviewed fixture.\n' + instructions + payload(**inputs),
+                contracts.schema_path('chunk-review-targeted'), 'low',
+                workspace_context={'chunk_review_input': inputs}))
+            save(tmp_path / 'agents' / review_job / 'review-input.json', inputs)
+            proof = {'job': review_job, 'input_digest': digest(inputs),
+                     'review_digest': digest(review), 'issue_targets_version': 1}
+        else:
+            _, proof = asyncio.run(review_chunk(Runner(), tmp_path, annotation=annotation,
+                text='가', context=context, policy='Reviewed fixture.'))
         successes.append(ChunkSuccess(index, (annotation, record, proof)))
     error = UnannotatableProseError('prose must be revised') if prose_failure else ValueError('annotation failed')
     error.chunk_batch_successes = tuple(successes)
@@ -1700,10 +1715,17 @@ def test_partial_annotation_checkpoint_reuses_only_verified_successful_positions
     # repeated source position remains independently reusable. A stale form
     # guidance proof is different: preserve the candidate for a new review.
     checkpoint = tmp_path / 'agents' / job / 'meta.json'
-    meta['chunk_reviews'][1].pop('form_review_guidance_digest')
+    assert 'form_review_guidance_digest' not in meta['chunk_reviews'][1]
     save(checkpoint, meta)
     candidate = annotation_reuse_candidate(tmp_path, text=text)
     assert [row['source_chunk_index'] for row in candidate[2]['chunks']] == [2, 3]
+    # Missing mandatory v2 evidence is corruption, not historical guidance.
+    current_proof = copy.deepcopy(meta['chunk_reviews'][2])
+    meta['chunk_reviews'][2].pop('form_review_guidance_digest')
+    save(checkpoint, meta)
+    candidate = annotation_reuse_candidate(tmp_path, text=text)
+    assert [row['source_chunk_index'] for row in candidate[2]['chunks']] == [2]
+    meta['chunk_reviews'][2] = current_proof
     # Other tampering remains a hard rejection, even when stale guidance can be
     # ignored for candidate reseeding.
     meta['chunk_reviews'][1]['review_digest'] = '0' * 64
