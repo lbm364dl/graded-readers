@@ -56,7 +56,7 @@ async def test_exact_writer_critic_artifacts_and_historical_replay(packet,tmp_pa
    _write_job(tmp_path,job,prompt,Path(schema).read_text(),kw['workspace_context'],value)
    return value
  kwargs={} if enabled else {'editorial_criteria':None}
- _,ev=await r.revise(packet,tmp_path,runner=Runner(),**kwargs)
+ _,ev=await r.revise(packet,tmp_path,runner=Runner(),objection_accountability=None,**kwargs)
  assert r.replay(tmp_path,ev)['reviewed']
  if enabled:
   bad=copy.deepcopy(ev);bad['dictionary_editorial_criteria']['version']=2;bad['digest']=h.digest({k:v for k,v in bad.items() if k!='digest'})
@@ -83,7 +83,7 @@ async def test_portable_prior_receipt_lineage_bound_and_not_lost(packet,tmp_path
   async def call(self,job,prompt,schema,effort,**kw):
    value=({'approved':False,'issues':['Setup scope defect']} if job=='revision-review-0' else {'approved':True,'issues':[]}) if job.startswith('revision-review') else output
    _write_job(run,job,prompt,Path(schema).read_text(),kw['workspace_context'],value);return value
- await r.revise(packet,run,runner=Runner(),editorial_criteria=None)
+ await r.revise(packet,run,runner=Runner(),objection_accountability=None,editorial_criteria=None)
  descriptor={'run_relpath':str(run.relative_to(h.ROOT)),'evidence_sha256':h._sha(run/'research-bound-revision-evidence.json')}
  prior=r.authenticated_prior_reviews(descriptor,packet)
  assert [row['review']['approved'] for row in prior['reviews']]==[False,True]
@@ -110,6 +110,6 @@ async def test_rejected_prior_attempt_reaches_next_writer_and_fresh_critic(packe
    seen.append(job)
    value={'approved':False,'issues':['Setup scope defect']} if job=='revision-review-0' else ({'approved':True,'issues':[]} if job.startswith('revision-review') else output)
    _write_job(tmp_path,job,prompt,Path(schema).read_text(),kw['workspace_context'],value);return value
- _,evidence=await r.revise(packet,tmp_path,runner=Runner())
+ _,evidence=await r.revise(packet,tmp_path,runner=Runner(),objection_accountability=None)
  assert seen==['revision-0','revision-review-0','revision-1','revision-review-1']
  assert r.replay(tmp_path,evidence)['reviewed']

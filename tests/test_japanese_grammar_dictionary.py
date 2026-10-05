@@ -1,3 +1,4 @@
+# Legacy untyped worker fixtures; current authenticated default has separate callback regressions.
 import asyncio
 from copy import deepcopy
 
@@ -165,9 +166,9 @@ def test_offline_review_and_unchanged_reuse(tmp_path, monkeypatch):
     monkeypatch.setattr(grammar, 'REGISTRY', tmp_path / 'registry.json')
     monkeypatch.setattr(grammar, 'OUTPUT', tmp_path / 'published.json')
     monkeypatch.setattr(grammar, 'REQUESTS', tmp_path / 'requests.json')
-    result = asyncio.run(grammar.update(run_dir=tmp_path / 'run'))
+    result = asyncio.run(grammar.update(run_dir=tmp_path / 'run', objection_accountability=None))
     assert calls == ['low', 'high']
-    assert asyncio.run(grammar.update(run_dir=tmp_path / 'run')) == result
+    assert asyncio.run(grammar.update(run_dir=tmp_path / 'run', objection_accountability=None)) == result
     assert calls == ['low', 'high']
     registry = words.read(grammar.REGISTRY)
     registry['data']['entries'][0]['summary_en'] = 'Unreviewed mutation'
@@ -195,12 +196,12 @@ def test_scoped_grammar_edits_preserve_unrequested_lessons(tmp_path, monkeypatch
         assert grammar.ENTRY_FOCUS_POLICY in prompt
         return dict(entries=[dict(data['entries'][0], explanation_en='Clearer')], assignments=[])
     monkeypatch.setattr(CodexRunner, 'call', call)
-    asyncio.run(grammar.update())
+    asyncio.run(grammar.update(objection_accountability=None))
     assert calls == ['low', 'high']
     after = words.read(grammar.REGISTRY)
     assert after['data']['entries'][1] == untouched
     assert after['data']['entries'][0]['explanation_en'] == 'Clearer'
-    asyncio.run(grammar.update())
+    asyncio.run(grammar.update(objection_accountability=None))
     assert calls == ['low', 'high']
 
 
@@ -221,9 +222,9 @@ def test_new_grammar_occurrence_reuses_existing_assignments_and_lessons(tmp_path
         delta['entries'] = []  # Existing prose is reused locally, not reprinted.
         return delta
     monkeypatch.setattr(CodexRunner, 'call', call)
-    before = asyncio.run(grammar.update())
+    before = asyncio.run(grammar.update(objection_accountability=None))
     rows.append(dict(rows[0], id=rows[0]['id'] + '-new'))
-    after = asyncio.run(grammar.update())
+    after = asyncio.run(grammar.update(objection_accountability=None))
     assert calls == ['low', 'high', 'low', 'high']
     assert after['entries'] == before['entries']
     assert len(after['occurrences']) == len(before['occurrences']) + 1

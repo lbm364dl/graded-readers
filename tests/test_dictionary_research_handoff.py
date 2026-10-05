@@ -77,7 +77,7 @@ async def test_existing_bounded_editorial_route_exact_artifact_and_replay(packet
    submit(lane/'workspace',{'candidate_path':'candidate.json'})
    return value
  original=editorial.dictionary.GRAMMAR.read_bytes()
- result,evidence=await r.revise(packet,tmp_path,runner=Runner())
+ result,evidence=await r.revise(packet,tmp_path,runner=Runner(),objection_accountability=None)
  assert result['status']=='reviewed' and r.replay(tmp_path,evidence)=={'reviewed':True,'promoted':False,'annotation_approval':False}
  assert editorial.dictionary.GRAMMAR.read_bytes()==original
  assert len(evidence['contracts'])==2

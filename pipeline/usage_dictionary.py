@@ -318,6 +318,8 @@ def source_data(path=SOURCE):
 
 
 def build(decisions, source=SOURCE, *, require_review=True):
+    if require_review and decisions.get('dictionary_accountability_records'):
+        _validate_accountability_records(decisions['dictionary_accountability_records'], decisions)
     sources, groups, occurrences, fingerprint = source_data(source)
     if decisions.get("source_fingerprint") != fingerprint:
         raise ValueError("Stale sense decisions: source annotations changed")
@@ -450,7 +452,103 @@ async def propose(output, run_dir, model, *, update=False, source=SOURCE, editor
     atomic_json(output, candidate)
 
 
-async def review(output, run_dir, model, *, source=SOURCE, rounds=3, frozen_entries=(), headwords=None, notes='', batch_size=20, editorial_criteria="current"):
+
+
+def _validate_accountability_records(records, current):
+    from pipeline import dictionary_objection_accountability as accountability
+    current_entries = {e['id']: e for e in current['entries']}
+    current_assignments = {a['candidate_id']: a for a in current.get('assignments', [])}
+    owned_entries, owned_assignments = set(), set()
+    for record in records:
+        accountability.validate_caller_evidence(record['contract'],
+            expected_proposal=record['proposal'], expected_review=record['review'])
+        if record['review']['approved'] is not True:
+            raise ValueError('Unresolved accountability record cannot approve a dictionary')
+        original_entries = {e['id']: e for e in record['proposal']['entries']}
+        original_assignments = {a['candidate_id']: a for a in record['proposal'].get('assignments', [])}
+        for identity in record['active_entry_ids']:
+            if identity in owned_entries or identity not in original_entries or current_entries.get(identity) != original_entries[identity]:
+                raise ValueError('Dictionary accountability entry ownership changed')
+            owned_entries.add(identity)
+        for identity in record.get('active_candidate_ids', []):
+            if identity in owned_assignments or identity not in original_assignments or current_assignments.get(identity) != original_assignments[identity]:
+                raise ValueError('Dictionary accountability assignment ownership changed')
+            owned_assignments.add(identity)
+
+
+def _merge_accountability_record(records, contract, proposal, verdict):
+    from copy import deepcopy
+    new_ids = {e['id'] for e in proposal['entries']}
+    new_candidates = {a['candidate_id'] for a in proposal.get('assignments', [])}
+    result = deepcopy(records)
+    for row in result:
+        row['active_entry_ids'] = [i for i in row['active_entry_ids'] if i not in new_ids]
+        row['active_candidate_ids'] = [i for i in row.get('active_candidate_ids', []) if i not in new_candidates]
+    result = [r for r in result if r['active_entry_ids'] or r.get('active_candidate_ids')]
+    result.append({'contract': contract, 'proposal': deepcopy(proposal), 'review': deepcopy(verdict),
+        'active_entry_ids': sorted(new_ids), 'active_candidate_ids': sorted(new_candidates)})
+    return result
+
+def _accountability_scope(proposal, language):
+    """Exact prose leaves from each language's actual entry schema."""
+    paths, identities = [], {}
+    for i, entry in enumerate(proposal['entries']):
+        owner = f'/entries/{i}'
+        if language == 'zh':
+            for j, sense in enumerate(entry['senses']):
+                path = f'{owner}/senses/{j}/definition'
+                paths.append(path)
+                identities[path] = [owner + '/id', f'{owner}/senses/{j}/id']
+        else:
+            local = [owner + '/summary_en', owner + '/explanation_en']
+            local += [f'{owner}/formation/{j}/explanation_en' for j in range(len(entry['formation']))]
+            local += [f'{owner}/notes_en/{j}' for j in range(len(entry['notes_en']))]
+            for path in local:
+                paths.append(path)
+                identities[path] = [owner + '/id']
+    return paths, identities
+
+
+async def _accountability_critic(runner, run_dir, job, prompt, proposal,
+                                source_contracts, marker, language, writer=None):
+    from pipeline import dictionary_objection_accountability as accountability
+    from pipeline import annotation_research
+    from pipeline.annotation_adjudication import digest as evidence_digest
+    accountability.validate_marker(marker)
+    if writer is not None:
+        actual_writer = accountability.resolve_verified_worker_contract(writer) if writer.get('provider') == accountability.WORKER_PROVIDER else writer
+        if actual_writer['result'] != proposal or actual_writer['job'] == job:
+            raise ValueError('Current correction producer does not bind exact independent review artifact')
+        annotation_research._verify_job(Path(run_dir), job=actual_writer['job'], expected_prompt=actual_writer['prompt'],
+            schema_text=actual_writer['schema_text'], workspace_context=actual_writer['workspace_context'], expected_result=proposal)
+        if writer.get('provider') != accountability.WORKER_PROVIDER:
+            writer = accountability.persist_verified_worker_contract(Path(run_dir), actual_writer)
+    semantic_paths, identity_paths = _accountability_scope(proposal, language)
+    packet = accountability.prepare_packet(source_contracts=source_contracts,
+        proposal=proposal, semantic_paths=semantic_paths, identity_paths=identity_paths,
+        reference_descriptors=[{'provider': 'shared-dictionary-editorial-criteria', 'version': 1}])
+    workspace = {'dictionary_objection_source_contract_version': 3, 'dictionary_objection_review': packet,
+        'dictionary_objection_accountability_validation': {'input_field': 'dictionary_objection_review'}}
+    if writer is not None:
+        workspace['dictionary_complete_correction_producer'] = {'contract_digest': evidence_digest(writer)}
+    request = prompt + '\n' + accountability.GUIDANCE + '\nINPUT:\n' + json.dumps(workspace, ensure_ascii=False, sort_keys=True)
+    schema = annotation_research._schema_path(Path(run_dir), 'dictionary-accountability-' + decision_digest([job, packet]),
+        accountability.review_schema(packet['rows']))
+    value = await runner.call(job, request, schema, 'low', tool_profile='workspace', workspace_context=workspace)
+    accountability.validate_submission(value, packet)
+    meta, raw = annotation_research._verify_job(Path(run_dir), job=job,
+        expected_prompt=request, schema_text=schema.read_text(), workspace_context=workspace,
+        expected_result=value)
+    origin = {'run_relpath': str(Path(run_dir).resolve().relative_to(ROOT)),
+        'job': job, 'review': raw, 'proposal': proposal,
+        'result_digest': evidence_digest(raw)}
+    contract = {'source': origin, 'writer': writer,
+        'critic': accountability.persist_verified_worker_contract(Path(run_dir),
+            {'job': job, 'prompt': request, 'schema_text': schema.read_text(),
+             'workspace_context': workspace, 'result': raw})}
+    return value, contract
+
+async def review(output, run_dir, model, *, source=SOURCE, rounds=3, frozen_entries=(), headwords=None, notes='', batch_size=20, editorial_criteria="current", objection_accountability="current", accountability_sources=()):
     """Independent critic and bounded repair; publish only a clean reviewed version."""
     from pipeline.agent_harness import CodexRunner, CHINESE_PINYIN_POLICY
     from pipeline.annotate_chinese import atomic_json
@@ -458,20 +556,28 @@ async def review(output, run_dir, model, *, source=SOURCE, rounds=3, frozen_entr
     if type(batch_size) is not int or not 1 <= batch_size <= 20:
         raise ValueError('Review batch_size must be an integer from 1 to 20')
 
+    if objection_accountability == 'current':
+        from pipeline import dictionary_objection_accountability as accountability
+        objection_accountability = accountability.marker()
     decisions = json.loads(output.read_text())
     build(decisions, source, require_review=False)
     _, groups, _, _ = source_data(source)
     from pipeline.dictionary_editorial_criteria import append
     policy=append(POLICY,editorial_criteria)
+    if objection_accountability is not None:
+        from pipeline import dictionary_objection_accountability as accountability
+        accountability.validate_marker(objection_accountability)
+        policy += "\n" + accountability.GUIDANCE
     runner = CodexRunner(run_dir, model, asyncio.Semaphore(4), 300)
     all_words = {e['headword'] for e in decisions['entries']}
     words = sorted(all_words if headwords is None else set(headwords))
     if not set(words) <= all_words:
         raise ValueError('Unknown review headword')
-    if not notes and decisions.get('review_digest') == decision_digest(decisions['entries']):
+    if not notes and not (objection_accountability is not None and accountability_sources) and decisions.get('review_digest') == decision_digest(decisions['entries']):
         words = [word for word in words if decisions.get('reviewed_word_fingerprints', {}).get(word) !=
                  decision_digest([e for e in decisions['entries'] if e['headword'] == word])]
 
+    completed_contracts = {}
     async def batch(number, headwords):
         entries = deepcopy([e for e in decisions["entries"] if e["headword"] in headwords])
         uses = {word: groups.get(word, []) for word in headwords}
@@ -487,7 +593,8 @@ async def review(output, run_dir, model, *, source=SOURCE, rounds=3, frozen_entr
                      'need not mention each context-specific construction. If an occurrence truly '
                      'does not fit, propose a NEW sense, not a rewrite of an approved sense. '
                      'Do not attribute neighboring words or grammar to the headword.\n')
-        checkpoint_key = decision_digest(['targeted-high-v1', base, entries])
+        checkpoint_key = decision_digest(['targeted-high-v1', base, entries]
+            if objection_accountability is None else ['objection-accountability-v2', base, entries, objection_accountability, accountability_sources])
         checkpoint = Path(run_dir) / 'reviewed-batches' / f'{checkpoint_key}.json'
         if checkpoint.exists():
             cached = json.loads(checkpoint.read_text())
@@ -495,6 +602,10 @@ async def review(output, run_dir, model, *, source=SOURCE, rounds=3, frozen_entr
                     and not shared_metadata_errors(frozen, cached['entries'])):
                 check_identity(entries, cached['entries'])
                 check_batch_links(list(uses.items()), cached['entries'])
+                if objection_accountability is not None:
+                    accountability.validate_caller_evidence(cached['accountability_contract'],
+                        expected_proposal={'entries': cached['entries']}, expected_review=cached['verdict'])
+                    completed_contracts[number] = cached['accountability_contract']
                 return cached['entries'], cached['verdict']
         # Successful content-addressed reviews remain valid after adding guidance
         # for a failed batch; do not re-review unrelated approved batches.
@@ -507,6 +618,20 @@ async def review(output, run_dir, model, *, source=SOURCE, rounds=3, frozen_entr
                 any(unicodedata.combining(d) for d in unicodedata.normalize('NFD', c))]}
             for e in entries], ensure_ascii=False)
         prior_reviews=[]
+        source_contracts=deepcopy(list(accountability_sources))
+        last_producer = None
+        async def produce(job, request, effort):
+            nonlocal last_producer
+            if objection_accountability is None:
+                return await runner.call(job, request, SCHEMA, effort, tool_profile='offline')
+            from pipeline.annotation_research import _verify_job
+            context = {'dictionary_complete_correction': {'language': 'zh', 'job': job}}
+            request += '\nINPUT:\n' + json.dumps(context, sort_keys=True)
+            value = await runner.call(job, request, SCHEMA, 'low', tool_profile='workspace', workspace_context=context)
+            _verify_job(Path(run_dir), job=job, expected_prompt=request, schema_text=SCHEMA.read_text(),
+                workspace_context=context, expected_result=value)
+            last_producer = accountability.persist_verified_worker_contract(Path(run_dir), dict(job=job,prompt=request,schema_text=SCHEMA.read_text(),workspace_context=context,result=value))
+            return value
         for attempt in range(rounds):
             prompt = base + "\nIndependently review the proposed registry below. Do not approve substantive errors. "
             prompt += "Check sense distinctions, definitions against context, readings, classification and all use links. "
@@ -520,7 +645,13 @@ async def review(output, run_dir, model, *, source=SOURCE, rounds=3, frozen_entr
             if editorial_criteria is not None:
                 prompt+='\nPRIOR INDEPENDENT REVIEW HISTORY (not current findings):\n'+json.dumps(prior_reviews,ensure_ascii=False)
             effort = 'high' if notes or attempt >= 2 or attempt + 1 == rounds else 'low'
-            verdict = await runner.call(f"review-{number:02}-{attempt}", prompt, REVIEW_SCHEMA, effort, tool_profile='offline')
+            if objection_accountability is None:
+                verdict = await runner.call(f"review-{number:02}-{attempt}", prompt, REVIEW_SCHEMA, effort, tool_profile='offline')
+            else:
+                verdict, contract = await _accountability_critic(runner, run_dir,
+                    f"review-{number:02}-{attempt}", prompt, {'entries': deepcopy(entries)},
+                    source_contracts, objection_accountability, 'zh', writer=last_producer)
+                source_contracts.append(contract)
             prior_reviews.append({'job':f'review-{number:02}-{attempt}','review':deepcopy(verdict),'entries':deepcopy(entries)})
             if not verdict["approved"] or verdict["issues"]:
                 # A low-effort critic can invent distinctions or oscillate on
@@ -535,20 +666,34 @@ async def review(output, run_dir, model, *, source=SOURCE, rounds=3, frozen_entr
                 adjudication += "approved=false with only upheld issues and precise corrections."
                 adjudication += (' Never include a rejected objection or an acceptable item in issues, '
                                  'even to explain why it was rejected. Each issue must request a real correction.')
-                verdict = await runner.call(f"adjudicate-{number:02}-{attempt}", adjudication, REVIEW_SCHEMA,
-                                            'high' if effort == 'high' else 'medium', tool_profile='offline')
+                if objection_accountability is None:
+                    verdict = await runner.call(f"adjudicate-{number:02}-{attempt}", adjudication, REVIEW_SCHEMA,
+                                                'high' if effort == 'high' else 'medium', tool_profile='offline')
+                else:
+                    verdict, contract = await _accountability_critic(runner, run_dir,
+                        f"adjudicate-{number:02}-{attempt}", adjudication, {'entries': deepcopy(entries)},
+                        source_contracts, objection_accountability, 'zh', writer=last_producer)
+                    source_contracts.append(contract)
             frozen_errors = shared_metadata_errors(frozen, entries)
             if frozen_errors:
                 verdict = dict(approved=False, issues=verdict['issues'] + frozen_errors)
             if verdict["approved"] is True and not verdict["issues"]:
-                atomic_json(checkpoint, dict(reviewed=True, entries=entries, verdict=verdict,
-                                            review_digest=decision_digest(entries)))
+                checkpoint_value = dict(reviewed=True, entries=entries, verdict=verdict,
+                                            review_digest=decision_digest(entries))
+                if objection_accountability is not None:
+                    checkpoint_value['accountability_contract'] = source_contracts[-1]
+                    completed_contracts[number] = source_contracts[-1]
+                atomic_json(checkpoint, checkpoint_value)
                 return entries, verdict
             if attempt + 1 == rounds:
                 raise ValueError(f"Review failed for batch {number}: {verdict['issues']}")
             affected = repair_headwords(entries, verdict['issues'])
             repair_entries = [e for e in entries if e['headword'] in affected]
             repair_uses = {word: rows for word, rows in uses.items() if word in affected}
+            untouched = deepcopy([e for e in entries if e['headword'] not in affected])
+            if objection_accountability is not None:
+                repair_entries = deepcopy(entries)
+                repair_uses = uses
             repair_base = base
             if affected != {e['headword'] for e in entries}:
                 repair_base = f'{policy}\n{CHINESE_PINYIN_POLICY}\n{LINKING_GUIDANCE}'
@@ -561,26 +706,38 @@ async def review(output, run_dir, model, *, source=SOURCE, rounds=3, frozen_entr
             repair = repair_base + "\nRepair these review findings while retaining existing IDs:\n"
             repair += 'Return the COMPLETE registry for this batch, including every unchanged entry and sense. '
             repair += 'Do not return only the corrected entries.\n'
+            if objection_accountability is not None:
+                repair += "\nPRIOR OBJECTION ROSTER (not new findings):\n" + json.dumps(accountability.roster([c['source'] for c in source_contracts]), ensure_ascii=False)
             repair += json.dumps(verdict["issues"], ensure_ascii=False) + "\nREGISTRY:\n"
             repair += json.dumps(repair_entries, ensure_ascii=False)
-            fixed = await runner.call(f"repair-{number:02}-{attempt}", repair, SCHEMA,
-                                      'high' if notes or attempt else 'low', tool_profile='offline')
-            restore_unambiguous_ids(repair_entries, fixed['entries'])
-            restore_unambiguous_occurrence_refs(list(repair_uses.items()), fixed['entries'])
+            fixed = await produce(f"repair-{number:02}-{attempt}", repair, 'high' if notes or attempt else 'low')
+            if objection_accountability is None:
+                if objection_accountability is None:
+                    restore_unambiguous_ids(repair_entries, fixed['entries'])
+                    restore_unambiguous_occurrence_refs(list(repair_uses.items()), fixed['entries'])
             try:
                 check_identity(repair_entries, fixed['entries'])
                 check_batch_links(list(repair_uses.items()), fixed['entries'])
             except ValueError as error:
-                fixed = await runner.call(f'repair-identity-{number:02}-{attempt}', repair +
+                fixed = await produce(f'repair-identity-{number:02}-{attempt}', repair +
                     '\nThe repair was rejected: ' + str(error) +
                     '. Copy every original entry and sense ID EXACTLY, including suffixes. '
                     'Return every entry. Invalid repair:\n' + json.dumps(fixed, ensure_ascii=False),
-                    SCHEMA, 'high', tool_profile='offline')
-                restore_unambiguous_ids(repair_entries, fixed['entries'])
-                restore_unambiguous_occurrence_refs(list(repair_uses.items()), fixed['entries'])
+                    'high')
+                if objection_accountability is None:
+                    restore_unambiguous_ids(repair_entries, fixed['entries'])
+                    restore_unambiguous_occurrence_refs(list(repair_uses.items()), fixed['entries'])
                 check_identity(repair_entries, fixed['entries'])
                 check_batch_links(list(repair_uses.items()), fixed['entries'])
-            entries = [e for e in entries if e['headword'] not in affected] + fixed['entries']
+            if objection_accountability is None:
+                entries = [e for e in entries if e['headword'] not in affected] + fixed['entries']
+            else:
+                if [e['id'] for e in fixed['entries']] != [e['id'] for e in entries]:
+                    raise ValueError('Explicit correction requires original batch order and exact IDs')
+                fixed_by_id = {e['id']: e for e in fixed['entries']}
+                if any(fixed_by_id.get(e['id']) != e for e in untouched):
+                    raise ValueError('Explicit correction changed an unaffected sibling entry')
+                entries = fixed['entries']
             check_batch_links(list(uses.items()), entries)
 
     from pipeline.agent_harness import gather_all_or_raise
@@ -625,6 +782,13 @@ async def review(output, run_dir, model, *, source=SOURCE, rounds=3, frozen_entr
         e for e in candidate['entries'] if e['headword'] == word]) for word in all_words)
     check_identity(decisions["entries"], candidate["entries"])
     candidate["review_digest"] = decision_digest(candidate["entries"])
+    if objection_accountability is not None and completed_contracts:
+        records = candidate.get('dictionary_accountability_records', [])
+        for number in sorted(completed):
+            entries, verdict = completed[number]
+            records = _merge_accountability_record(records, completed_contracts[number], {'entries': entries}, verdict)
+        candidate['dictionary_accountability_records'] = records
+        _validate_accountability_records(records, candidate)
     build(candidate, source, require_review=candidate['reviewed'])
     atomic_json(output, candidate)
     if failure is not None:

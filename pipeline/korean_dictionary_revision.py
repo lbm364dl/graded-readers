@@ -177,7 +177,10 @@ def _verify_coverage_fresh(snapshot: dict) -> None:
 
 async def revise(ids: list[str], run_dir: Path,
                  draft: Path | list[Path] | tuple[Path, ...] | None, *,
-                 promote: bool = True, runner=None, entry_kind: str = 'word') -> dict:
+                 promote: bool = True, runner=None, entry_kind: str = 'word', objection_accountability=None) -> dict:
+    if objection_accountability is not None:
+        from pipeline.dictionary_objection_accountability import validate_marker
+        validate_marker(objection_accountability)
     if not ids or len(set(ids)) != len(ids):
         raise ValueError('Select unique dictionary IDs for editorial review')
     if entry_kind not in {'word', 'grammar'}:
@@ -235,7 +238,11 @@ async def revise(ids: list[str], run_dir: Path,
         review = await runner.call(f'revision-review-{attempt}',
             review_prompt + review_instruction + payload(**context, proposal=value),
             contracts.schema_path('review'), 'low', tool_profile=review_profile)
-        validate(review, contracts.REVIEW)
+        if objection_accountability is None:
+            validate(review, contracts.REVIEW)
+        else:
+            from pipeline.dictionary_objection_accountability import validate_submission
+            validate_submission(review, runner.accountability_packet)
         if approved(review):
             break
         previous, issues = value, review['issues']
@@ -247,6 +254,8 @@ async def revise(ids: list[str], run_dir: Path,
     record = {'entry_kind': entry_kind, 'before_entries': list(before.values()), 'proposal': value,
               'proposal_digest': digest(value), 'review': review, 'review_digest': digest(review),
               'context_digest': digest(context), 'coverage': context['coverage']}
+    if objection_accountability is not None:
+        record['dictionary_objection_accountability']=objection_accountability
     save(run_dir / 'accepted-revision.json', record)
     if promote:
         if registry_path.read_bytes() != original:

@@ -170,7 +170,7 @@ def build(path, prompt, schema, *, context=None, submission_repair=None):
     put_json('INDEX.json', inventory)
     put_json('schema.json', schema)
     put_json('receipt.schema.json', RECEIPT_SCHEMA)
-    put_json('validation-context.json', [{k: v[k] for k in ('chunk_text', 'language', 'surfaces', 'annotation', 'annotation_validation', 'annotation_patch_validation', 'annotation_plan_validation', 'annotation_adjudication_validation', 'annotation_research_validation', 'annotation_research_claim_revision_validation', 'dictionary_research_revision_validation', 'annotation_issue_targets_validation', 'annotation_run_lesson_validation', 'annotation_run_knowledge_selection_validation') if k in v} for v in contexts if isinstance(v, dict)])
+    put_json('validation-context.json', [{k: v[k] for k in ('chunk_text', 'language', 'surfaces', 'annotation', 'annotation_validation', 'annotation_patch_validation', 'annotation_plan_validation', 'annotation_adjudication_validation', 'annotation_research_validation', 'annotation_research_claim_revision_validation', 'dictionary_research_revision_validation', 'dictionary_objection_accountability_validation', 'annotation_issue_targets_validation', 'annotation_run_lesson_validation', 'annotation_run_knowledge_selection_validation') if k in v} for v in contexts if isinstance(v, dict)])
     command = 'cd ' + shlex.quote(str(ROOT)) + ' && ' + shlex.quote(str(ROOT / '.venv/bin/python')) + ' -m pipeline.worker_workspace validate --workspace ' + shlex.quote(str(path.resolve())) + ' --candidate ' + shlex.quote(str(path.resolve() / 'candidate.json'))
     put('README.txt', 'Read TASK.txt and INDEX.json. Repository root: ' + str(ROOT) + '. Repository paths in the task are relative to that root; input/reference paths in INDEX.json are relative to this workspace. Inspect relevant data and full reference entries as needed. Use your tools freely to investigate and verify. Save candidate.json and check it with:\n' + command + '\nThe local check is feedback, not independent publication approval. Submit only {"candidate_path":"candidate.json"}; do not reproduce the file contents.\n')
     _remove_obsolete_managed_inputs(path, previous_manifest, files)
@@ -228,6 +228,14 @@ def check(path, candidate):
                 raise ValueError('Adjudication validation input is missing from INDEX.json')
             from pipeline.annotation_adjudication import validate_adjudication_output
             validate_adjudication_output(value, input_values[input_field])
+            continue
+        objection_context=context.get('dictionary_objection_accountability_validation')
+        if objection_context is not None:
+            if not isinstance(objection_context,dict) or set(objection_context)!={'input_field'}:raise ValueError('Invalid dictionary objection gate')
+            field=objection_context['input_field']
+            if field!='dictionary_objection_review' or field not in input_values:raise ValueError('Dictionary objection input missing')
+            from pipeline.dictionary_objection_accountability import validate_submission
+            validate_submission(value,input_values[field])
             continue
         dictionary_context=context.get('dictionary_research_revision_validation')
         if dictionary_context is not None:

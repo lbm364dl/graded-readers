@@ -1,3 +1,4 @@
+# Legacy untyped worker fixtures; current authenticated default has separate callback regressions.
 import asyncio
 import copy
 import json
@@ -149,7 +150,7 @@ def test_review_repairs_only_affected_word_and_preserves_other_links(corpus, tmp
         return {'approved': True, 'issues': []}
 
     monkeypatch.setattr('pipeline.agent_harness.CodexRunner.call', call)
-    asyncio.run(ud.review(path, tmp_path, 'gpt-6-luna', source=source))
+    asyncio.run(ud.review(path, tmp_path, 'gpt-6-luna', source=source, objection_accountability=None))
     result = json.loads(path.read_text())
     assert next(e for e in result['entries'] if e['headword'] == '来') == unaffected
     assert next(e for e in result['entries'] if e['headword'] == '去') == repaired
@@ -362,7 +363,7 @@ def test_review_repair_then_independent_approval(corpus, tmp_path, monkeypatch):
             return {"entries": decisions["entries"]}
         return {"approved": True, "issues": []}
     monkeypatch.setattr("pipeline.agent_harness.CodexRunner.call", call)
-    asyncio.run(ud.review(path, tmp_path, "gpt-6-luna", source=source))
+    asyncio.run(ud.review(path, tmp_path, "gpt-6-luna", source=source, objection_accountability=None))
     assert jobs == ["review-00-0", "adjudicate-00-0", "repair-00-0", "review-00-1"]
     ud.build(json.loads(path.read_text()), source)
 
@@ -386,7 +387,7 @@ def test_review_reuses_frozen_identity_absent_from_local_registry(corpus, tmp_pa
 
     monkeypatch.setattr('pipeline.agent_harness.CodexRunner.call', call)
     asyncio.run(ud.review(path, tmp_path, 'gpt-6-luna', source=source,
-                          frozen_entries=[canonical]))
+                          frozen_entries=[canonical], objection_accountability=None))
     saved = json.loads(path.read_text())
     assert {entry['id'] for entry in saved['entries']} == {local['id'], canonical['id']}
     published = ud.build(saved, source)
@@ -420,7 +421,7 @@ def test_small_review_batches_cover_every_headword(corpus, tmp_path, monkeypatch
 
     monkeypatch.setattr('pipeline.agent_harness.CodexRunner.call', call)
     asyncio.run(ud.review(path, tmp_path, 'gpt-6-luna', source=source,
-                          batch_size=2))
+                          batch_size=2, objection_accountability=None))
     assert sorted(jobs) == ['review-00-0', 'review-01-0', 'review-02-0']
     saved = json.loads(path.read_text())
     assert set(saved['reviewed_word_fingerprints']) == {
@@ -438,7 +439,7 @@ def test_failed_review_does_not_overwrite_decisions(corpus, tmp_path, monkeypatc
         return {"approved": False, "issues": ["Wrong sense"]}
     monkeypatch.setattr("pipeline.agent_harness.CodexRunner.call", call)
     with pytest.raises(ValueError, match="Review failed"):
-        asyncio.run(ud.review(path, tmp_path, "gpt-6-luna", source=source, rounds=1))
+        asyncio.run(ud.review(path, tmp_path, "gpt-6-luna", source=source, rounds=1, objection_accountability=None))
     assert path.read_text() == original
 
 
@@ -461,7 +462,7 @@ def test_failed_sibling_preserves_only_successful_reviews(corpus, tmp_path, monk
 
     monkeypatch.setattr('pipeline.agent_harness.CodexRunner.call', call)
     with pytest.raises(ValueError, match='Review failed'):
-        asyncio.run(ud.review(path, tmp_path, 'gpt-6-luna', source=source, rounds=1))
+        asyncio.run(ud.review(path, tmp_path, 'gpt-6-luna', source=source, rounds=1, objection_accountability=None))
     saved = json.loads(path.read_text())
     assert saved['reviewed'] is False
     assert set(saved['reviewed_word_fingerprints']) == {e['headword'] for e in retired}
@@ -484,7 +485,7 @@ def test_adjudicator_rejects_spurious_objection_without_repair(corpus, tmp_path,
             return {"approved": False, "issues": ["Acceptable variant should be different"]}
         return {"approved": True, "issues": []}
     monkeypatch.setattr("pipeline.agent_harness.CodexRunner.call", call)
-    asyncio.run(ud.review(path, tmp_path, "gpt-6-luna", source=source))
+    asyncio.run(ud.review(path, tmp_path, "gpt-6-luna", source=source, objection_accountability=None))
     assert jobs == ["review-00-0", "adjudicate-00-0"]
     assert json.loads(path.read_text())["entries"] == decisions["entries"]
 

@@ -5,6 +5,7 @@ import fcntl
 import json
 import re
 from collections import Counter
+from pathlib import Path
 from jsonschema import ValidationError
 
 from pipeline import japanese_usage_dictionary as words
@@ -397,6 +398,8 @@ def build():
     sources, rows = candidates()
     registry = words.read(REGISTRY)
     data = registry['data']
+    if registry.get('dictionary_accountability_records'):
+        _validate_accountability_records(registry['dictionary_accountability_records'], data)
     if registry.get('source_fingerprint') != decision_digest(rows):
         raise ValueError('Japanese grammar links need updating')
     if not registry.get('reviewed') or registry.get('review_digest') != decision_digest(data):
@@ -455,7 +458,7 @@ def build():
                 occurrences=occurrences, word_routes=routes)
 
 
-async def edit_occurrence_notes(registry, rows, requests, run_dir, workers):
+async def edit_occurrence_notes(registry, rows, requests, run_dir, workers, objection_accountability=None, accountability_sources=()):
     """Scoped reviewed context/form-meaning edits, without changing any links."""
     from pipeline.agent_harness import CodexRunner
     targets = {r['candidate_id'] for r in requests}
@@ -477,11 +480,27 @@ async def edit_occurrence_notes(registry, rows, requests, run_dir, workers):
             assignments=[assignments[r['id']] for r in selected_rows]), ensure_ascii=False))
     runner = CodexRunner(run_dir or ROOT / 'runs/japanese-grammar-n5',
                          'gpt-6-luna', asyncio.Semaphore(workers), 600)
+    if objection_accountability is not None:
+        prompt = prompt.replace('Use no tools. ', '')
+    last_producer = None
+    async def produce(job, request, effort):
+        nonlocal last_producer
+        if objection_accountability is None:
+            return await runner.call(job, request, SCHEMA, effort, tool_profile='offline')
+        from pipeline.annotation_research import _verify_job
+        context = {'dictionary_complete_correction': {'language': 'ja', 'job': job}}
+        request += '\nINPUT:\n' + json.dumps(context, sort_keys=True)
+        value = await runner.call(job, request, SCHEMA, 'low', tool_profile='workspace', workspace_context=context)
+        _verify_job(Path(run_dir or ROOT / 'runs/japanese-grammar-n5'), job=job, expected_prompt=request,
+            schema_text=SCHEMA.read_text(), workspace_context=context, expected_result=value)
+        from pipeline import dictionary_objection_accountability as accountability
+        last_producer = accountability.persist_verified_worker_contract(Path(run_dir or ROOT / 'runs/japanese-grammar-n5'), dict(job=job,prompt=request,schema_text=SCHEMA.read_text(),workspace_context=context,result=value))
+        return value
     job = 'edit-occurrences-' + decision_digest(requests)[:16]
-    proposed = await runner.call(job + '/propose', prompt, SCHEMA, 'low', tool_profile='offline')
-    reviewed = await runner.call(job + '/review', prompt +
+    proposed = await produce(job + '/propose', prompt, 'low')
+    reviewed = await produce(job + '/review', prompt +
         '\nIndependently verify all requested corrections, meanings and unchanged links.\n' +
-        json.dumps(proposed, ensure_ascii=False), SCHEMA, 'high', tool_profile='offline')
+        json.dumps(proposed, ensure_ascii=False), 'high')
     if reviewed['entries']:
         raise ValueError('Occurrence edits cannot replace grammar entries')
     replacements = {a['candidate_id']: a for a in reviewed['assignments']}
@@ -492,25 +511,163 @@ async def edit_occurrence_notes(registry, rows, requests, run_dir, workers):
             raise ValueError('Occurrence prose edits cannot change grammar links')
         replacements[key] = dict(assignments[key], **replacement)
     validate(dict(entries=registry['data']['entries'], assignments=list(replacements.values())), selected_rows)
+    if objection_accountability is not None:
+        if reviewed != dict(entries=[], assignments=list(replacements.values())):
+            raise ValueError('Explicit occurrence review requires complete assignment fields in producer artifact')
+        verdict, contract = await _accountability_critic(runner, run_dir or ROOT / 'runs/japanese-grammar-n5',
+            job + '/accountability-review', prompt + '\nIndependently review the actual correction artifact.',
+            reviewed, list(accountability_sources), objection_accountability, 'ja', writer=last_producer)
+        if not verdict['approved']:
+            raise ValueError('Japanese occurrence accountability rejected: ' + str(verdict['issues']))
     registry['data']['assignments'] = [replacements.get(a['candidate_id'], a)
                                      for a in registry['data']['assignments']]
     validate(registry['data'], rows)
+    if objection_accountability is not None:
+        registry['dictionary_accountability_records'] = _merge_accountability_record(
+            registry.get('dictionary_accountability_records', []), contract, reviewed, verdict)
+        _validate_accountability_records(registry['dictionary_accountability_records'], registry['data'])
     registry['review_digest'] = decision_digest(registry['data'])
     registry['applied_requests'] = registry.get('applied_requests', []) + [r['id'] for r in requests]
 
 
-async def update(workers=4, run_dir=None, editorial_criteria="current"):
+
+
+def _validate_accountability_records(records, current):
+    from pipeline import dictionary_objection_accountability as accountability
+    current_entries = {e['id']: e for e in current['entries']}
+    current_assignments = {a['candidate_id']: a for a in current.get('assignments', [])}
+    owned_entries, owned_assignments = set(), set()
+    for record in records:
+        accountability.validate_caller_evidence(record['contract'],
+            expected_proposal=record['proposal'], expected_review=record['review'])
+        if record['review']['approved'] is not True:
+            raise ValueError('Unresolved accountability record cannot approve a dictionary')
+        original_entries = {e['id']: e for e in record['proposal']['entries']}
+        original_assignments = {a['candidate_id']: a for a in record['proposal'].get('assignments', [])}
+        for identity in record['active_entry_ids']:
+            if identity in owned_entries or identity not in original_entries or current_entries.get(identity) != original_entries[identity]:
+                raise ValueError('Dictionary accountability entry ownership changed')
+            owned_entries.add(identity)
+        for identity in record.get('active_candidate_ids', []):
+            if identity in owned_assignments or identity not in original_assignments or current_assignments.get(identity) != original_assignments[identity]:
+                raise ValueError('Dictionary accountability assignment ownership changed')
+            owned_assignments.add(identity)
+
+
+def _merge_accountability_record(records, contract, proposal, verdict):
+    from copy import deepcopy
+    new_ids = {e['id'] for e in proposal['entries']}
+    new_candidates = {a['candidate_id'] for a in proposal.get('assignments', [])}
+    result = deepcopy(records)
+    for row in result:
+        row['active_entry_ids'] = [i for i in row['active_entry_ids'] if i not in new_ids]
+        row['active_candidate_ids'] = [i for i in row.get('active_candidate_ids', []) if i not in new_candidates]
+    result = [r for r in result if r['active_entry_ids'] or r.get('active_candidate_ids')]
+    result.append({'contract': contract, 'proposal': deepcopy(proposal), 'review': deepcopy(verdict),
+        'active_entry_ids': sorted(new_ids), 'active_candidate_ids': sorted(new_candidates)})
+    return result
+
+def _accountability_scope(proposal, language):
+    """Exact prose leaves from each language's actual entry schema."""
+    paths, identities = [], {}
+    for i, entry in enumerate(proposal['entries']):
+        owner = f'/entries/{i}'
+        if language == 'zh':
+            for j, sense in enumerate(entry['senses']):
+                path = f'{owner}/senses/{j}/definition'
+                paths.append(path)
+                identities[path] = [owner + '/id', f'{owner}/senses/{j}/id']
+        else:
+            local = [owner + '/summary_en', owner + '/explanation_en']
+            local += [f'{owner}/formation/{j}/explanation_en' for j in range(len(entry['formation']))]
+            local += [f'{owner}/notes_en/{j}' for j in range(len(entry['notes_en']))]
+            for path in local:
+                paths.append(path)
+                identities[path] = [owner + '/id']
+    if language == 'ja':
+        for i, assignment in enumerate(proposal.get('assignments', [])):
+            owner = f'/assignments/{i}'
+            identity = [owner + '/candidate_id'] + [f'{owner}/entry_ids/{j}' for j in range(len(assignment['entry_ids']))]
+            for field in ('context_en', 'display_meaning_en', 'display_base_meaning_en'):
+                if field in assignment:
+                    path = owner + '/' + field
+                    paths.append(path); identities[path] = identity
+    return paths, identities
+
+
+async def _accountability_critic(runner, run_dir, job, prompt, proposal,
+                                source_contracts, marker, language, writer=None):
+    from pipeline import dictionary_objection_accountability as accountability
+    from pipeline import annotation_research
+    from pipeline.annotation_adjudication import digest as evidence_digest
+    accountability.validate_marker(marker)
+    if writer is not None:
+        actual_writer = accountability.resolve_verified_worker_contract(writer) if writer.get('provider') == accountability.WORKER_PROVIDER else writer
+        if actual_writer['result'] != proposal or actual_writer['job'] == job:
+            raise ValueError('Current correction producer does not bind exact independent review artifact')
+        annotation_research._verify_job(Path(run_dir), job=actual_writer['job'], expected_prompt=actual_writer['prompt'],
+            schema_text=actual_writer['schema_text'], workspace_context=actual_writer['workspace_context'], expected_result=proposal)
+        if writer.get('provider') != accountability.WORKER_PROVIDER:
+            writer = accountability.persist_verified_worker_contract(Path(run_dir), actual_writer)
+    semantic_paths, identity_paths = _accountability_scope(proposal, language)
+    packet = accountability.prepare_packet(source_contracts=source_contracts,
+        proposal=proposal, semantic_paths=semantic_paths, identity_paths=identity_paths,
+        reference_descriptors=[{'provider': 'shared-dictionary-editorial-criteria', 'version': 1}])
+    workspace = {'dictionary_objection_source_contract_version': 3, 'dictionary_objection_review': packet,
+        'dictionary_objection_accountability_validation': {'input_field': 'dictionary_objection_review'}}
+    if writer is not None:
+        workspace['dictionary_complete_correction_producer'] = {'contract_digest': evidence_digest(writer)}
+    request = prompt + '\n' + accountability.GUIDANCE + '\nINPUT:\n' + json.dumps(workspace, ensure_ascii=False, sort_keys=True)
+    schema = annotation_research._schema_path(Path(run_dir), 'dictionary-accountability-' + decision_digest([job, packet]),
+        accountability.review_schema(packet['rows']))
+    value = await runner.call(job, request, schema, 'low', tool_profile='workspace', workspace_context=workspace)
+    accountability.validate_submission(value, packet)
+    meta, raw = annotation_research._verify_job(Path(run_dir), job=job,
+        expected_prompt=request, schema_text=schema.read_text(), workspace_context=workspace,
+        expected_result=value)
+    origin = {'run_relpath': str(Path(run_dir).resolve().relative_to(ROOT)),
+        'job': job, 'review': raw, 'proposal': proposal,
+        'result_digest': evidence_digest(raw)}
+    contract = {'source': origin, 'writer': writer,
+        'critic': accountability.persist_verified_worker_contract(Path(run_dir),
+            {'job': job, 'prompt': request, 'schema_text': schema.read_text(),
+             'workspace_context': workspace, 'result': raw})}
+    return value, contract
+
+async def update(workers=4, run_dir=None, editorial_criteria="current", objection_accountability="current", accountability_sources=()):
     REGISTRY.parent.mkdir(parents=True, exist_ok=True)
     with (REGISTRY.parent / 'grammar.lock').open('a') as lock:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-        return await _update(workers=workers, run_dir=run_dir,editorial_criteria=editorial_criteria)
+        return await _update(workers=workers, run_dir=run_dir,editorial_criteria=editorial_criteria,objection_accountability=objection_accountability,accountability_sources=accountability_sources)
 
 
-async def _update(workers=4, run_dir=None, editorial_criteria="current"):
+async def _update(workers=4, run_dir=None, editorial_criteria="current", objection_accountability=None, accountability_sources=()):
+    if objection_accountability == 'current':
+        from pipeline import dictionary_objection_accountability as accountability
+        objection_accountability = accountability.marker()
     from pipeline.dictionary_editorial_criteria import append
     from pipeline.agent_harness import CodexRunner
+    if objection_accountability is not None:
+        from pipeline import dictionary_objection_accountability as accountability
+        accountability.validate_marker(objection_accountability)
     _, rows = candidates()
     registry = words.read(REGISTRY, {})
+    last_producer = None
+    async def produce(runner, job, prompt, schema, effort, **options):
+        nonlocal last_producer
+        if objection_accountability is None:
+            return await runner.call(job, prompt, schema, effort, **options)
+        from pipeline.annotation_research import _verify_job
+        context = {'dictionary_complete_correction': {'language': 'ja', 'job': job}}
+        request = prompt + '\nINPUT:\n' + json.dumps(context, sort_keys=True)
+        value = await runner.call(job, request, schema, 'low', tool_profile='workspace', workspace_context=context)
+        schema_text = Path(schema).read_text()
+        _verify_job(Path(run_dir or ROOT / 'runs/japanese-grammar-n5'), job=job,
+            expected_prompt=request, schema_text=schema_text, workspace_context=context, expected_result=value)
+        from pipeline import dictionary_objection_accountability as accountability
+        last_producer = accountability.persist_verified_worker_contract(Path(run_dir or ROOT / 'runs/japanese-grammar-n5'), {'job': job, 'prompt': request, 'schema_text': schema_text,
+                        'workspace_context': context, 'result': value})
+        return value
     fingerprint = decision_digest(rows)
     requests = words.read(REQUESTS, [])
     pending = [r for r in requests if r['id'] not in registry.get('applied_requests', [])]
@@ -541,25 +698,68 @@ async def _update(workers=4, run_dir=None, editorial_criteria="current"):
                     related_entry_catalog=[{k:e[k] for k in ('id', 'title', 'summary_en')}
                                            for e in entries]), ensure_ascii=False))
             prompt=append(prompt,editorial_criteria)
+            if objection_accountability is not None:
+                prompt = prompt.replace("Use no tools. ", "")
             job = 'edit-' + decision_digest(entry_pending)[:16]
-            proposed = await runner.call(job + '/propose', prompt, SCHEMA, 'low', tool_profile='offline')
-            reviewed = await runner.call(job + '/review', prompt + '\nIndependently check and correct the '
-                'revision.\n' + json.dumps(proposed, ensure_ascii=False), SCHEMA, 'high', tool_profile='offline')
+            proposed = await produce(runner, job + '/propose', prompt, SCHEMA, 'low', tool_profile=('workspace' if objection_accountability is not None else 'offline'))
+            reviewed = await produce(runner, job + '/review', prompt + '\nIndependently check and correct the '
+                'revision.\n' + json.dumps(proposed, ensure_ascii=False), SCHEMA, ('low' if objection_accountability is not None else 'high'), tool_profile=('workspace' if objection_accountability is not None else 'offline'))
             import jsonschema
             jsonschema.validate(reviewed, words.read(SCHEMA))
             if reviewed['assignments']:
                 raise ValueError('Entry edits cannot change occurrence assignments')
+            if objection_accountability is not None:
+                verdict, contract = await _accountability_critic(runner,
+                    run_dir or ROOT / 'runs/japanese-grammar-n5', job + '/accountability-review',
+                    prompt + '\nIndependently review the actual complete correction artifact; do not edit it.',
+                    reviewed, list(accountability_sources), objection_accountability, 'ja', writer=last_producer)
+                if not verdict['approved']:
+                    raise ValueError('Japanese grammar editorial accountability rejected: ' + str(verdict['issues']))
             replacements = {e['id']: e for e in reviewed['entries']}
             if replacements.keys() != targets:
                 raise ValueError('Grammar edit changed unrequested identities')
             registry['data']['entries'] = [replacements.get(e['id'], e) for e in entries]
+            if objection_accountability is not None:
+                registry['dictionary_accountability_records'] = _merge_accountability_record(
+                    registry.get('dictionary_accountability_records', []), contract, reviewed, verdict)
+                _validate_accountability_records(registry['dictionary_accountability_records'], registry['data'])
             validate(registry['data'], rows, [e for e in entries if e['id'] not in targets])
             registry['review_digest'] = decision_digest(registry['data'])
             registry['applied_requests'] = registry.get('applied_requests', []) + [r['id'] for r in entry_pending]
             atomic_json(REGISTRY, registry)
         if occurrence_pending:
-            await edit_occurrence_notes(registry, rows, occurrence_pending, run_dir, workers)
+            await edit_occurrence_notes(registry, rows, occurrence_pending, run_dir, workers, objection_accountability, accountability_sources)
             atomic_json(REGISTRY, registry)
+        if objection_accountability is not None and accountability_sources and not pending:
+            consumed = False
+            for record in registry.get('dictionary_accountability_records', []):
+                if record['proposal'] != registry['data']:
+                    continue
+                from pipeline import dictionary_objection_accountability as accountability
+                critic = record['contract']['critic']
+                if critic.get('provider') == accountability.WORKER_PROVIDER:
+                    critic = accountability.resolve_verified_worker_contract(critic)
+                packet = critic['workspace_context']['dictionary_objection_review']
+                if all(source in packet['source_contracts'] for source in accountability_sources):
+                    from pipeline import dictionary_objection_accountability as accountability
+                    accountability.validate_caller_evidence(record['contract'],
+                        expected_proposal=registry['data'], expected_review=record['review'])
+                    consumed = True
+                    break
+            if not consumed:
+                runner = CodexRunner(run_dir or ROOT / 'runs/japanese-grammar-n5',
+                    'gpt-6-luna', asyncio.Semaphore(workers), 600)
+                job = 'retained-accountability-' + decision_digest([registry['data'], accountability_sources])[:16]
+                verdict, contract = await _accountability_critic(runner,
+                    run_dir or ROOT / 'runs/japanese-grammar-n5', job,
+                    'Independently account for the exact retained objections against this unchanged reviewed registry. Do not edit it.',
+                    registry['data'], list(accountability_sources), objection_accountability, 'ja')
+                if not verdict['approved']:
+                    raise ValueError('Retained Japanese grammar accountability rejected: ' + str(verdict['issues']))
+                registry['dictionary_accountability_records'] = _merge_accountability_record(
+                    registry.get('dictionary_accountability_records', []), contract, registry['data'], verdict)
+                _validate_accountability_records(registry['dictionary_accountability_records'], registry['data'])
+                atomic_json(REGISTRY, registry)
         result = build()
         atomic_json(OUTPUT, result)
         return result
@@ -586,35 +786,56 @@ async def _update(workers=4, run_dir=None, editorial_criteria="current"):
         catalog = [{k: e[k] for k in ('id', 'title', 'reading', 'kind', 'summary_en')}
                    for e in previous]
         compact_rows, aliases = routing_payload(batch)
+        if objection_accountability is not None:
+            catalog = list(previous)
+            compact_rows = [model_candidate(row, include_display=True) for row in batch]
+            aliases = {row['id']: row['id'] for row in batch}
         restored = {short: canonical for canonical, short in aliases.items()}
         prompt = POLICY + json.dumps(dict(existing_entries=catalog,
             candidates=compact_rows), ensure_ascii=False)
         prompt=append(prompt,editorial_criteria)
+        if objection_accountability is not None:
+            prompt = prompt.replace("Use no tools. ", "")
+            prompt += '\nFor this explicit review contract return complete canonical-ID entries and assignments. Include all existing entries verbatim; no locally restored prose or ID aliases. Preserve approved prose exactly.\n'
         batch_key = decision_digest([batch, catalog])[:16]
-        proposed = await runner.call('grammar-' + batch_key + '/propose', prompt,
-                                     SCHEMA, 'low', tool_profile='offline')
-        reviewed = routing_ids(await runner.call('grammar-' + batch_key + '/review',
+        proposed = await produce(runner, 'grammar-' + batch_key + '/propose', prompt,
+                                     SCHEMA, 'low', tool_profile=('workspace' if objection_accountability is not None else 'offline'))
+        reviewed = routing_ids(await produce(runner, 'grammar-' + batch_key + '/review',
             prompt + '\nIndependently review every context, function, formation rule and assignment; '
             'correct mistakes and omissions. Return complete data.\n' + json.dumps(proposed, ensure_ascii=False),
-            SCHEMA, 'high', tool_profile='offline'), restored)
+            SCHEMA, ('low' if objection_accountability is not None else 'high'), tool_profile=('workspace' if objection_accountability is not None else 'offline')), restored)
         for attempt in range(3):
             try:
-                reviewed = complete_entries(reviewed, previous)
+                complete = complete_entries(reviewed, previous)
+                if objection_accountability is not None and complete != reviewed:
+                    raise ValueError('Explicit accountability requires complete existing entries verbatim and canonical assignment IDs')
+                reviewed = complete
                 validate(reviewed, batch, previous, require_form_meanings=True)
                 break
             except (ValueError, ValidationError) as error:
                 if attempt == 2:
                     raise
-                reviewed = routing_ids(await runner.call('grammar-' + batch_key + f'/repair-{attempt + 1}',
+                reviewed = routing_ids(await produce(runner, 'grammar-' + batch_key + f'/repair-{attempt + 1}',
                     prompt + '\nCorrect the following deterministic validation error, preserving '
                     'reviewed content otherwise. Return only genuinely new entries and the complete '
                     'assignments; existing catalog entries are preserved locally. Return ALL new '
                     'definitions needed by those assignments, not only definitions changed in this '
                     'repair. Your output replaces the entire previous attempt.\n' +
-                    routing_error(error, aliases) + '\n' + json.dumps(routing_ids(repair_payload(reviewed, previous), aliases), ensure_ascii=False),
-                    SCHEMA, 'high', tool_profile='offline'), restored)
+                    routing_error(error, aliases) + '\n' + json.dumps(reviewed if objection_accountability is not None else routing_ids(repair_payload(reviewed, previous), aliases), ensure_ascii=False),
+                    SCHEMA, ('low' if objection_accountability is not None else 'high'), tool_profile=('workspace' if objection_accountability is not None else 'offline')), restored)
+        if objection_accountability is not None:
+            verdict, contract = await _accountability_critic(runner,
+                run_dir or ROOT / 'runs/japanese-grammar-n5', 'grammar-' + batch_key + '/accountability-review',
+                prompt + '\nIndependently review the actual complete correction artifact and assignments; do not edit it.',
+                reviewed, list(accountability_sources), objection_accountability, 'ja', writer=last_producer)
+            if not verdict['approved']:
+                raise ValueError('Japanese grammar accountability rejected: ' + str(verdict['issues']))
         completed.extend(reviewed['assignments'])
         checkpoint = dict(entries=reviewed['entries'], assignments=list(completed))
+        if objection_accountability is not None:
+            registry['dictionary_accountability_records'] = _merge_accountability_record(
+                registry.get('dictionary_accountability_records', []), contract, reviewed, verdict)
+            _validate_accountability_records(registry['dictionary_accountability_records'], checkpoint)
         done_ids = {a['candidate_id'] for a in completed}
         registry = dict(registry, reviewed=True, source_fingerprint=None,
             data=checkpoint, review_digest=decision_digest(checkpoint),
@@ -624,12 +845,12 @@ async def _update(workers=4, run_dir=None, editorial_criteria="current"):
         print(f'Grammar: reviewed {reviewed_count}/{len(changed)} changed candidates', flush=True)
     reviewed = dict(entries=registry.get('data', {}).get('entries', previous), assignments=completed)
     validate(reviewed, rows, previous)
-    atomic_json(REGISTRY, dict(reviewed=True, source_fingerprint=fingerprint,
+    atomic_json(REGISTRY, dict((registry if objection_accountability is not None else {}), reviewed=True, source_fingerprint=fingerprint,
         review_digest=decision_digest(reviewed), data=reviewed,
         candidate_fingerprints={r['id']: candidate_fingerprint(r) for r in rows},
         applied_requests=registry.get('applied_requests', [])))
     if pending:
-        return await _update(workers=workers, run_dir=run_dir,editorial_criteria=editorial_criteria)
+        return await _update(workers=workers, run_dir=run_dir,editorial_criteria=editorial_criteria,objection_accountability=objection_accountability,accountability_sources=accountability_sources)
     result = build()
     atomic_json(OUTPUT, result)
     return result
