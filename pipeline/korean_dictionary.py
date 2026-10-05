@@ -69,10 +69,17 @@ def _verify_grammar_revision_history(data: dict, by_id: dict[str, dict]) -> None
         coverage = record.get('coverage')
         context = {'entry_kind': 'grammar', 'before_entries': record.get('before_entries'),
                    'coverage': coverage}
+        promotion = record.get('authenticated_dictionary_promotion')
+        if 'dictionary_objection_accountability' in record and promotion is None:
+            raise ValueError('Accountability history requires authenticated promotion')
+        if promotion is not None:
+            from pipeline.dictionary_reviewed_promotion import verify_history
+            verify_history(record, promotion)
         if (not isinstance(proposal, dict) or not isinstance(review, dict)
                 or record.get('proposal_digest') != digest(proposal)
                 or record.get('review_digest') != digest(review)
-                or review != {'approved': True, 'issues': []}
+                or (promotion is None and review != {'approved': True, 'issues': []})
+                or (promotion is not None and (review.get('approved') is not True or review.get('issues') != []))
                 or record.get('context_digest') != digest(context)):
             raise ValueError('Korean grammar revision lacks matching independent review')
         before_rows, after_rows = record.get('before_entries'), proposal.get('entries')

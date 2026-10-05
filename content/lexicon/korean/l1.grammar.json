@@ -41,7 +41,7 @@
       "id": "quotation-rago",
       "title_en": "Quoted name or words",
       "pattern": "(이)라고",
-      "explanation_en": "Marks the name or words used with a verb such as ‘call’ or ‘say’."
+      "explanation_en": "This particle marks preceding words as quoted, as they were said. After a vowel-final form, use 라고; after a consonant-final noun, use 이라고. The shortened forms 라 and 이라 have the same quotation function: 라 follows a vowel-final form, and 이라 follows a consonant-final noun. In a name or label use, the quoted words supply the name or description."
     },
     {
       "id": "past-ass-eoss",
@@ -1002,6 +1002,738 @@
       "title_en": "Warning about a continuing situation",
       "pattern": "-다가는",
       "explanation_en": "Attach -다가는 to an action verb stem to warn that continuing or repeating the action could lead to an undesirable consequence. The following clause states the feared result, often as a possibility. The construction can also refer to a situation continuing as it is. It presents a conditional warning without asserting that the harmful outcome has occurred."
+    }
+  ],
+  "grammar_revision_reviews": [
+    {
+      "entry_kind": "grammar",
+      "before_entries": [
+        {
+          "id": "quotation-rago",
+          "title_en": "Quoted name or words",
+          "pattern": "(이)라고",
+          "explanation_en": "Marks the name or words used with a verb such as ‘call’ or ‘say’."
+        }
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "quotation-rago",
+            "title_en": "Quoted name or words",
+            "pattern": "(이)라고",
+            "explanation_en": "This particle marks preceding words as quoted, as they were said. After a vowel-final form, use 라고; after a consonant-final noun, use 이라고. The shortened forms 라 and 이라 have the same quotation function: 라 follows a vowel-final form, and 이라 follows a consonant-final noun. In a name or label use, the quoted words supply the name or description."
+          }
+        ],
+        "references": [
+          {
+            "entry_id": "quotation-rago",
+            "url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=70074&nation=eng",
+            "paraphrase_en": "The National Institute of Korean Language dictionary defines 라고 as a particle indicating that preceding words are quoted as said, gives 라 as its short form, and specifies use after a vowel-final form."
+          },
+          {
+            "entry_id": "quotation-rago",
+            "url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=70077&nation=eng",
+            "paraphrase_en": "The dictionary describes 라 as a quotation particle used after a form without a final consonant and identifies 라고 as its original form."
+          },
+          {
+            "entry_id": "quotation-rago",
+            "url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=70076&nation=eng",
+            "paraphrase_en": "The dictionary describes 이라 as a particle for quoting preceding words, specifies attachment after consonant-final nouns, and identifies 이라고 as its original form."
+          }
+        ]
+      },
+      "proposal_digest": "e73f951966bc87e9a0b228e5d90d326178ef0383b3a22b21b5c3ee632cbfb343",
+      "review": {
+        "approved": true,
+        "issues": [],
+        "prior_issue_assessments": [
+          {
+            "issue_id": "prior-issue-c81e4c4a17870417dd8d399c",
+            "disposition": "resolved_change",
+            "proposal_paths": [
+              "/entries/0/explanation_en"
+            ],
+            "proposal_spans": [
+              {
+                "path": "/entries/0/explanation_en",
+                "start": 0,
+                "end": 65,
+                "quote": "This particle marks preceding words as quoted, as they were said."
+              }
+            ],
+            "changed_fields": [
+              {
+                "path": "/entries/0/explanation_en",
+                "old_value_digest": "fd535caba84253f37f74c70897591023b303866b61d7abd826e766ed08823c16",
+                "current_value_digest": "b740a5d084ba8e1fc1418430755c37c743bf46a6368246f88e93b5e130c74fd9"
+              }
+            ],
+            "rationale": "The current explanation replaces the specifically objected-to material with this focused wording. It gives the reusable quotation function and full/short form conditions without the criticized reporting-pattern account or predicate inventory."
+          },
+          {
+            "issue_id": "prior-issue-952621a2080d6f8302af5e40",
+            "disposition": "resolved_change",
+            "proposal_paths": [
+              "/entries/0/explanation_en"
+            ],
+            "proposal_spans": [
+              {
+                "path": "/entries/0/explanation_en",
+                "start": 139,
+                "end": 270,
+                "quote": "The shortened forms 라 and 이라 have the same quotation function: 라 follows a vowel-final form, and 이라 follows a consonant-final noun."
+              }
+            ],
+            "changed_fields": [
+              {
+                "path": "/entries/0/explanation_en",
+                "old_value_digest": "d6dc089186eeef702037eb9c5f60b1644ecc6dd57eec5d9cc7659bd3eb590b0e",
+                "current_value_digest": "b740a5d084ba8e1fc1418430755c37c743bf46a6368246f88e93b5e130c74fd9"
+              }
+            ],
+            "rationale": "The current explanation replaces the specifically objected-to material with this focused wording. It gives the reusable quotation function and full/short form conditions without the criticized reporting-pattern account or predicate inventory."
+          },
+          {
+            "issue_id": "prior-issue-0b82baaa29e2ed086c3f12b8",
+            "disposition": "resolved_change",
+            "proposal_paths": [
+              "/entries/0/explanation_en"
+            ],
+            "proposal_spans": [
+              {
+                "path": "/entries/0/explanation_en",
+                "start": 0,
+                "end": 138,
+                "quote": "This particle marks preceding words as quoted, as they were said. After a vowel-final form, use 라고; after a consonant-final noun, use 이라고."
+              }
+            ],
+            "changed_fields": [
+              {
+                "path": "/entries/0/explanation_en",
+                "old_value_digest": "fca81ee43d505516e640c00ca0357d9cf7473b5e9c367c448e4472714e760b23",
+                "current_value_digest": "b740a5d084ba8e1fc1418430755c37c743bf46a6368246f88e93b5e130c74fd9"
+              }
+            ],
+            "rationale": "The current explanation replaces the specifically objected-to material with this focused wording. It gives the reusable quotation function and full/short form conditions without the criticized reporting-pattern account or predicate inventory."
+          }
+        ]
+      },
+      "review_digest": "f1393a9729d723cfe42aadde3b66728bc4642377f9c19946c0a482eb6738f82d",
+      "context_digest": "8e434210573e446c2a3e89ede39a3a8562e8d15ef7f668106052cc2029d88752",
+      "coverage": {
+        "entry_kind": "grammar",
+        "files": {
+          "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json": "c83f4d167f5724a8ba5ce163e2339609f417db5632cb3bf1ca0a96193b66926c",
+          "/home/catalin/graded-readers/content/korean/honggildong/l2.annotations.json": "c242968fe992ff8aa9c3d3d6c1ca3374c3adfd49030e9e4419fecb0bd2e2b5f4",
+          "/home/catalin/graded-readers/content/korean/honggildong/l5.annotations.json": "71db47b2d4863e894993115cb25a19e945d020e4ffb58a729603f2646fd9a005"
+        },
+        "published_files": [
+          "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+          "/home/catalin/graded-readers/content/korean/honggildong/l2.annotations.json",
+          "/home/catalin/graded-readers/content/korean/honggildong/l5.annotations.json"
+        ],
+        "draft_files": [],
+        "occurrences": [
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_tap",
+            "segment_index": 300,
+            "entry_id": "quotation-rago",
+            "surface": "라고",
+            "sentence": "하지만 아버지를 ‘아버지’라고 부를 수 없었습니다.",
+            "sentence_start": 709,
+            "start": 723,
+            "end": 725
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 300,
+            "end_segment_index": 300,
+            "entry_id": "quotation-rago",
+            "surface": "라고",
+            "display_meaning_en": "",
+            "context_en": "라고 marks ‘아버지’ as the exact title Gildong was not permitted to use when addressing his father.",
+            "anchor_surface": "라고",
+            "sentence": "하지만 아버지를 ‘아버지’라고 부를 수 없었습니다.",
+            "sentence_start": 709,
+            "start": 723,
+            "end": 725,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_tap",
+            "segment_index": 314,
+            "entry_id": "quotation-rago",
+            "surface": "이라고",
+            "sentence": "형도 ‘형’이라고 부를 수 없었습니다.",
+            "sentence_start": 738,
+            "start": 744,
+            "end": 747
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 314,
+            "end_segment_index": 314,
+            "entry_id": "quotation-rago",
+            "surface": "이라고",
+            "display_meaning_en": "",
+            "context_en": "이라고 marks the quoted title 형 as what Gildong could not call his older brother.",
+            "anchor_surface": "이라고",
+            "sentence": "형도 ‘형’이라고 부를 수 없었습니다.",
+            "sentence_start": 738,
+            "start": 744,
+            "end": 747,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_tap",
+            "segment_index": 330,
+            "entry_id": "quotation-rago",
+            "surface": "라고",
+            "sentence": "길동이 아버지를 ‘아버지’라고 불렀습니다.",
+            "sentence_start": 760,
+            "start": 774,
+            "end": 776
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 330,
+            "end_segment_index": 330,
+            "entry_id": "quotation-rago",
+            "surface": "라고",
+            "display_meaning_en": "",
+            "context_en": "라고 marks ‘아버지’ as the title Gildong used to address his father. The preceding word ends in a vowel, so the form is 라고.",
+            "anchor_surface": "라고",
+            "sentence": "길동이 아버지를 ‘아버지’라고 불렀습니다.",
+            "sentence_start": 760,
+            "start": 774,
+            "end": 776,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_tap",
+            "segment_index": 366,
+            "entry_id": "quotation-rago",
+            "surface": "라고",
+            "sentence": "하지만 아직 아버지를 ‘아버지’라고 부를 수 없었습니다.",
+            "sentence_start": 832,
+            "start": 849,
+            "end": 851
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 366,
+            "end_segment_index": 366,
+            "entry_id": "quotation-rago",
+            "surface": "라고",
+            "display_meaning_en": "",
+            "context_en": "라고 marks ‘아버지’ as the title Gildong could not use when addressing his father.",
+            "anchor_surface": "라고",
+            "sentence": "하지만 아직 아버지를 ‘아버지’라고 부를 수 없었습니다.",
+            "sentence_start": 832,
+            "start": 849,
+            "end": 851,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_tap",
+            "segment_index": 380,
+            "entry_id": "quotation-rago",
+            "surface": "이라고",
+            "sentence": "형도 ‘형’이라고 부를 수 없었습니다.",
+            "sentence_start": 864,
+            "start": 870,
+            "end": 873
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 380,
+            "end_segment_index": 380,
+            "entry_id": "quotation-rago",
+            "surface": "이라고",
+            "display_meaning_en": "",
+            "context_en": "이라고 marks ‘형’ as the quoted title Gildong could not use when addressing his older brother.",
+            "anchor_surface": "이라고",
+            "sentence": "형도 ‘형’이라고 부를 수 없었습니다.",
+            "sentence_start": 864,
+            "start": 870,
+            "end": 873,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_tap",
+            "segment_index": 507,
+            "entry_id": "quotation-rago",
+            "surface": "라고",
+            "sentence": "그런데 나는 왜 아버지를 ‘아버지’라고 부를 수 없습니까?",
+            "sentence_start": 1105,
+            "start": 1124,
+            "end": 1126
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 507,
+            "end_segment_index": 507,
+            "entry_id": "quotation-rago",
+            "surface": "라고",
+            "display_meaning_en": "",
+            "context_en": "라고 marks ‘아버지’ as the exact title used with 부르다: to call someone ‘Father’.",
+            "anchor_surface": "라고",
+            "sentence": "그런데 나는 왜 아버지를 ‘아버지’라고 부를 수 없습니까?",
+            "sentence_start": 1105,
+            "start": 1124,
+            "end": 1126,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_tap",
+            "segment_index": 522,
+            "entry_id": "quotation-rago",
+            "surface": "이라고",
+            "sentence": "왜 형을 ‘형’이라고 부를 수 없습니까?",
+            "sentence_start": 1138,
+            "start": 1146,
+            "end": 1149
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 522,
+            "end_segment_index": 522,
+            "entry_id": "quotation-rago",
+            "surface": "이라고",
+            "display_meaning_en": "",
+            "context_en": "이라고 marks ‘형’ as the exact family title Gildong is forbidden to use when addressing his older brother.",
+            "anchor_surface": "이라고",
+            "sentence": "왜 형을 ‘형’이라고 부를 수 없습니까?",
+            "sentence_start": 1138,
+            "start": 1146,
+            "end": 1149,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_tap",
+            "segment_index": 677,
+            "entry_id": "quotation-rago",
+            "surface": "라고",
+            "sentence": "그런데 저는 아버지를 ‘아버지’라고 부를 수 없습니다.",
+            "sentence_start": 1453,
+            "start": 1470,
+            "end": 1472
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 677,
+            "end_segment_index": 677,
+            "entry_id": "quotation-rago",
+            "surface": "라고",
+            "display_meaning_en": "",
+            "context_en": "라고 marks the preceding quoted 아버지 as the title used in calling someone, rather than identifying another person.",
+            "anchor_surface": "라고",
+            "sentence": "그런데 저는 아버지를 ‘아버지’라고 부를 수 없습니다.",
+            "sentence_start": 1453,
+            "start": 1470,
+            "end": 1472,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_tap",
+            "segment_index": 691,
+            "entry_id": "quotation-rago",
+            "surface": "이라고",
+            "sentence": "형도 ‘형’이라고 부를 수 없습니다.”",
+            "sentence_start": 1484,
+            "start": 1490,
+            "end": 1493
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 691,
+            "end_segment_index": 691,
+            "entry_id": "quotation-rago",
+            "surface": "이라고",
+            "display_meaning_en": "",
+            "context_en": "이라고 marks ‘형’ as the title he is unable to use when addressing his older brother.",
+            "anchor_surface": "이라고",
+            "sentence": "형도 ‘형’이라고 부를 수 없습니다.”",
+            "sentence_start": 1484,
+            "start": 1490,
+            "end": 1493,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l2.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_tap",
+            "segment_index": 314,
+            "entry_id": "quotation-rago",
+            "surface": "라고",
+            "sentence": "자기 아버지를 ‘아버지’라고 부를 수 없었다.",
+            "sentence_start": 635,
+            "start": 648,
+            "end": 650
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l2.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 314,
+            "end_segment_index": 314,
+            "entry_id": "quotation-rago",
+            "surface": "라고",
+            "display_meaning_en": "",
+            "context_en": "라고 marks ‘아버지’ as the title he could not use when addressing his father.",
+            "anchor_surface": "라고",
+            "sentence": "자기 아버지를 ‘아버지’라고 부를 수 없었다.",
+            "sentence_start": 635,
+            "start": 648,
+            "end": 650,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l2.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_tap",
+            "segment_index": 332,
+            "entry_id": "quotation-rago",
+            "surface": "이라고",
+            "sentence": "인형도 자기 형이었지만 ‘형’이라고 부를 수 없었다.",
+            "sentence_start": 661,
+            "start": 677,
+            "end": 680
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l2.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 332,
+            "end_segment_index": 332,
+            "entry_id": "quotation-rago",
+            "surface": "이라고",
+            "display_meaning_en": "",
+            "context_en": "이라고 marks the quoted family title 형 as the name Gildong could not use when addressing Inhyeong.",
+            "anchor_surface": "이라고",
+            "sentence": "인형도 자기 형이었지만 ‘형’이라고 부를 수 없었다.",
+            "sentence_start": 661,
+            "start": 677,
+            "end": 680,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l2.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 531,
+            "end_segment_index": 531,
+            "entry_id": "quotation-rago",
+            "surface": "형이라고",
+            "display_meaning_en": "",
+            "context_en": "이라고 marks the coordinated titles 아버지와 형 as the words Gildong cannot use to address his relatives.",
+            "anchor_surface": "형이라고",
+            "sentence": "아버지도 있고 형도 있는데 아버지와 형이라고 부르지 못한다.",
+            "sentence_start": 1052,
+            "start": 1072,
+            "end": 1076,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l2.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_tap",
+            "segment_index": 710,
+            "entry_id": "quotation-rago",
+            "surface": "라고",
+            "sentence": "하지만 아버지를 ‘아버지’라고 부르지 못합니다.",
+            "sentence_start": 1414,
+            "start": 1428,
+            "end": 1430
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l2.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 710,
+            "end_segment_index": 710,
+            "entry_id": "quotation-rago",
+            "surface": "라고",
+            "display_meaning_en": "",
+            "context_en": "라고 marks ‘아버지’ as the exact title Gildong cannot use when addressing his father.",
+            "anchor_surface": "라고",
+            "sentence": "하지만 아버지를 ‘아버지’라고 부르지 못합니다.",
+            "sentence_start": 1414,
+            "start": 1428,
+            "end": 1430,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l2.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_tap",
+            "segment_index": 724,
+            "entry_id": "quotation-rago",
+            "surface": "이라고",
+            "sentence": "제 형도 ‘형’이라고 부르지 못합니다.",
+            "sentence_start": 1441,
+            "start": 1449,
+            "end": 1452
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l2.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 724,
+            "end_segment_index": 724,
+            "entry_id": "quotation-rago",
+            "surface": "이라고",
+            "display_meaning_en": "",
+            "context_en": "이라고 marks the quoted title ‘형’ as what he cannot call his older brother.",
+            "anchor_surface": "이라고",
+            "sentence": "제 형도 ‘형’이라고 부르지 못합니다.",
+            "sentence_start": 1441,
+            "start": 1449,
+            "end": 1452,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l5.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_tap",
+            "segment_index": 479,
+            "entry_id": "quotation-rago",
+            "surface": "라",
+            "sentence": "어머니가 신분이 낮은 집안 일꾼이었다는 이유로, 길동은 아버지를 ‘아버지’라 부르거나 형 인형을 ‘형’이라 부를 때마다 꾸지람을 들었다.",
+            "sentence_start": 973,
+            "start": 1014,
+            "end": 1015
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l5.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 479,
+            "end_segment_index": 479,
+            "entry_id": "quotation-rago",
+            "surface": "라",
+            "display_meaning_en": "",
+            "context_en": "Shortened 라 marks 아버지 as the quoted form of address.",
+            "anchor_surface": "라",
+            "sentence": "어머니가 신분이 낮은 집안 일꾼이었다는 이유로, 길동은 아버지를 ‘아버지’라 부르거나 형 인형을 ‘형’이라 부를 때마다 꾸지람을 들었다.",
+            "sentence_start": 973,
+            "start": 1014,
+            "end": 1015,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l5.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_tap",
+            "segment_index": 490,
+            "entry_id": "quotation-rago",
+            "surface": "이라",
+            "sentence": "어머니가 신분이 낮은 집안 일꾼이었다는 이유로, 길동은 아버지를 ‘아버지’라 부르거나 형 인형을 ‘형’이라 부를 때마다 꾸지람을 들었다.",
+            "sentence_start": 973,
+            "start": 1030,
+            "end": 1032
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l5.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 490,
+            "end_segment_index": 490,
+            "entry_id": "quotation-rago",
+            "surface": "이라",
+            "display_meaning_en": "",
+            "context_en": "Shortened 이라 follows the consonant-ending quoted address 형.",
+            "anchor_surface": "이라",
+            "sentence": "어머니가 신분이 낮은 집안 일꾼이었다는 이유로, 길동은 아버지를 ‘아버지’라 부르거나 형 인형을 ‘형’이라 부를 때마다 꾸지람을 들었다.",
+            "sentence_start": 973,
+            "start": 1030,
+            "end": 1032,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l5.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 648,
+            "end_segment_index": 648,
+            "entry_id": "quotation-rago",
+            "surface": "아버지라",
+            "display_meaning_en": "",
+            "context_en": "라 abbreviates 라고 and specifies the title “Father.”",
+            "anchor_surface": "아버지라",
+            "sentence": "그런데 나는 아버지와 형이 있는데도 아버지를 아버지라, 형을 형이라 부르지 못하는구나.",
+            "sentence_start": 1315,
+            "start": 1340,
+            "end": 1344,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l5.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 653,
+            "end_segment_index": 653,
+            "entry_id": "quotation-rago",
+            "surface": "형이라",
+            "display_meaning_en": "",
+            "context_en": "이라 abbreviates 이라고 and specifies the title “Brother.”",
+            "anchor_surface": "형이라",
+            "sentence": "그런데 나는 아버지와 형이 있는데도 아버지를 아버지라, 형을 형이라 부르지 못하는구나.",
+            "sentence_start": 1315,
+            "start": 1349,
+            "end": 1352,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l5.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "form_step",
+            "segment_index": 776,
+            "form_step_index": 0,
+            "entry_id": "quotation-rago",
+            "segment_surface": "사람이라",
+            "surface": "사람이라",
+            "label": "Shortened nominal quotation marker",
+            "reading": "사람이라",
+            "meaning_en": "a human being, as a quoted description",
+            "lexical_id": "사람/명",
+            "sentence": "저는 그런 귀한 대접을 받지 못하니, 어찌 저를 사람이라 할 수 있겠습니까?”",
+            "sentence_start": 1563,
+            "start": 1590,
+            "end": 1594,
+            "sibling_grammar_links": [
+              {
+                "segment_index": 776,
+                "entry_id": "quotation-rago",
+                "context_en": "사람이라 is a shortened 사람이라고, marking the category used to describe him."
+              }
+            ]
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l5.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 776,
+            "end_segment_index": 776,
+            "entry_id": "quotation-rago",
+            "surface": "사람이라",
+            "display_meaning_en": "",
+            "context_en": "사람이라 is a shortened 사람이라고, marking the category used to describe him.",
+            "anchor_surface": "사람이라",
+            "sentence": "저는 그런 귀한 대접을 받지 못하니, 어찌 저를 사람이라 할 수 있겠습니까?”",
+            "sentence_start": 1563,
+            "start": 1590,
+            "end": 1594,
+            "form_steps": [
+              {
+                "form": "사람이라",
+                "reading": "사람이라",
+                "label": "Shortened nominal quotation marker",
+                "meaning_en": "a human being, as a quoted description",
+                "grammar_entry_ids": [
+                  "quotation-rago"
+                ]
+              }
+            ]
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l5.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 852,
+            "end_segment_index": 852,
+            "entry_id": "quotation-rago",
+            "surface": "아버지라",
+            "display_meaning_en": "",
+            "context_en": "라 is the shortened quotation marker 라고, identifying the address ‘Father’.",
+            "anchor_surface": "아버지라",
+            "sentence": "제 아버지를 아버지라 부르지 못하고, 제 형을 형이라 부르지 못합니다.",
+            "sentence_start": 1746,
+            "start": 1753,
+            "end": 1757,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l5.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 863,
+            "end_segment_index": 863,
+            "entry_id": "quotation-rago",
+            "surface": "형이라",
+            "display_meaning_en": "",
+            "context_en": "이라 shortens 이라고 and quotes the familial address ‘Older Brother’.",
+            "anchor_surface": "형이라",
+            "sentence": "제 아버지를 아버지라 부르지 못하고, 제 형을 형이라 부르지 못합니다.",
+            "sentence_start": 1746,
+            "start": 1772,
+            "end": 1775,
+            "form_steps": []
+          }
+        ],
+        "chapter_digests": [
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "digest": "569f6fbd034f2fde2f9a78bf56ee95e447d4030b18e0d3a32fd9a7fbf6ce745b"
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l2.annotations.json",
+            "chapter": 1,
+            "digest": "d6f7e535aeff425d9ca267a0e311deaf24fdeb4050a6c3a2a77f3a24f294e5de"
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l5.annotations.json",
+            "chapter": 1,
+            "digest": "dd43664016a622a99a4388237379c060e69ddcf25908919e840e8d3e475e3b3e"
+          }
+        ]
+      },
+      "dictionary_objection_accountability": {
+        "version": 2,
+        "policy_digest": "43ed1eff82d7a6dfea7fc4a632b18ac93becb541afd09787cf765ec03267c063"
+      },
+      "authenticated_dictionary_promotion": {
+        "version": 3,
+        "receipt_relpath": "runs/maintenance/20261003/smokes/dictionary-objection-accountability-acceptance-20261005/run-output/dictionary-promotion-2205b9b130e2fbaaa43ae0096c3e0a2129ba01e909dc8b824f86ea4c1179e926.json",
+        "receipt_sha256": "c1dc2ee002d9ef6a8417a0e6749ea7dbfb846a0ef45fb6e0a8d52f3291ef430a"
+      }
     }
   ]
 }
