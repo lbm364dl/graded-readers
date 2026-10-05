@@ -84,7 +84,9 @@ def retain_logs(runtime: Path, events: Path, stderr: Path) -> None:
 def cleanup_runtime_state(runtime: Path, *, process_finished: bool) -> dict:
     """Drop private SQLite scratch only after child exit and retained logs.
 
-    State databases are CLI scratch, not worker artifacts or replay evidence.
+    All SQLite databases beneath the confined runtime/state directory are CLI
+    scratch, including new CLI stores such as memories, goals and queue.
+    They are not worker artifacts or replay evidence.
     Receipts, retained events, stderr, workspace submissions and setup provenance
     remain intact. A live or unconfirmed worker is never cleaned.
     """
@@ -98,7 +100,7 @@ def cleanup_runtime_state(runtime: Path, *, process_finished: bool) -> dict:
             raise ValueError('Not a worker runtime root')
         state = checked_directory(runtime / 'state')
         paths = [checked_regular_file(path) for path in state.iterdir()
-                 if re.fullmatch(r'(?:(?:state|logs)_\d+\.sqlite(?:-wal|-shm)?|\.state_5\.sqlite\.seed-[A-Za-z0-9_-]+)', path.name)]
+                 if re.fullmatch(r'(?:[^/]+\.sqlite(?:-(?:wal|shm|journal))?|\.state_5\.sqlite\.seed-[A-Za-z0-9_-]+)', path.name)]
         sizes = [(path, path.stat().st_size) for path in paths]
         for path, size in sizes:
             path.unlink()

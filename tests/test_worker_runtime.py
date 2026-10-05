@@ -223,3 +223,30 @@ def test_runtime_cleanup_refuses_aliased_sqlite_and_does_not_delete_outside_stat
     assert result['status'] == 'skipped'
     assert outside.read_bytes() == b'protected'
     assert target.exists()
+
+
+@pytest.mark.parametrize('name', ['memories_1.sqlite','goals_1.sqlite','queue_1.sqlite','future_store.sqlite','queue_1.sqlite-wal','queue_1.sqlite-shm','queue_1.sqlite-journal'])
+def test_new_private_sqlite_stores_are_disposable_only_after_exit(tmp_path,name):
+    from pipeline.worker_runtime import cleanup_runtime_state
+    runtime=tmp_path/'agents/job/runtime';state=runtime/'state';state.mkdir(parents=True)
+    scratch=state/name;scratch.write_bytes(b'private worker scratch')
+    outside=runtime/name;outside.write_bytes(b'exact evidence outside state')
+    result=cleanup_runtime_state(runtime,process_finished=False)
+    assert result['status']=='skipped' and scratch.exists()
+    result=cleanup_runtime_state(runtime,process_finished=True)
+    assert result['status']=='cleaned' and result['removed_files']==[name]
+    assert not scratch.exists() and outside.read_bytes()==b'exact evidence outside state'
+
+
+@pytest.mark.parametrize('alias',['symlink','hardlink'])
+def test_new_store_alias_aborts_entire_cleanup_before_any_removal(tmp_path,alias):
+    from pipeline.worker_runtime import cleanup_runtime_state
+    runtime=tmp_path/'runtime';state=runtime/'state';state.mkdir(parents=True)
+    ordinary=state/'queue_1.sqlite';ordinary.write_bytes(b'scratch')
+    external=tmp_path/'evidence.sqlite';external.write_bytes(b'protected evidence')
+    target=state/'memories_1.sqlite'
+    if alias=='symlink':target.symlink_to(external)
+    else:os.link(external,target)
+    result=cleanup_runtime_state(runtime,process_finished=True)
+    assert result['status']=='skipped' and ordinary.exists() and target.exists()
+    assert external.read_bytes()==b'protected evidence'
