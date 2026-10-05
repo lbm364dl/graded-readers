@@ -34,12 +34,23 @@ class Runner:
         return copy.deepcopy(self.review)
 
 
-def run_review(tmp_path, runner=None, **changes):
+def run_review(tmp_path, runner=None, legacy_guidance=False, **changes):
     args = {'annotation': {'segments': [{'text': '아이'}]}, 'text': '아이',
             'context': {'chapter_text': '아이 아이', 'source_start': 0}, 'policy': 'Review honestly.'}
     args.update(changes)
     runner = runner or Runner(tmp_path)
-    review, evidence = asyncio.run(review_chunk(runner, tmp_path, **args))
+    if legacy_guidance:
+        from pipeline.korean_chunk_reviews import review_request
+        from pipeline.korean_agent_harness import payload
+        from pipeline import korean_contracts as contracts
+        from pipeline.annotation_review_guidance import FORM_STAGE_EVIDENCE_GUIDANCE
+        inputs, instructions, identity = review_request(args['annotation'], args['text'], args['context'], args['policy'])
+        job = 'annotation-local-review-' + identity
+        review = asyncio.run(runner.call(job,args['policy']+'\n'+instructions+payload(**inputs), contracts.schema_path('chunk-review-targeted'),'low',tool_profile='offline',workspace_context={'chunk_review_input':inputs}))
+        save(tmp_path/'agents'/job/'review-input.json',inputs)
+        evidence={'job':job,'input_digest':digest(inputs),'review_digest':digest(review),'form_review_guidance_digest':digest(FORM_STAGE_EVIDENCE_GUIDANCE),'issue_targets_version':1}
+    else:
+        review, evidence = asyncio.run(review_chunk(runner, tmp_path, **args))
     return args, review, evidence
 
 
@@ -171,7 +182,7 @@ def test_form_chain_review_proof_tracks_current_completeness_guidance_and_can_on
         {'form': '갔다', 'reading': '가-+-았-+-다', 'label': 'past',
          'meaning_en': 'went', 'grammar_entry_ids': ['past-ass-eoss']}]}]}
     context = {'chapter_text': '갔다', 'source_start': 0}
-    args, _, evidence = run_review(tmp_path, annotation=annotation, text='갔다', context=context)
+    args, _, evidence = run_review(tmp_path, legacy_guidance=True, annotation=annotation, text='갔다', context=context)
     assert evidence['form_review_guidance_digest']
     assert verify(tmp_path, args, evidence)['approved']
 
@@ -196,7 +207,7 @@ def test_prior_complete_form_guidance_is_compatible_but_other_or_changed_proofs_
         {'form': '갔다', 'reading': '가-+-았-+-다', 'label': 'past',
          'meaning_en': 'went', 'grammar_entry_ids': ['past-ass-eoss']}]}]}
     context = {'chapter_text': '갔다', 'source_start': 0}
-    args, _, evidence = run_review(tmp_path, annotation=annotation, text='갔다', context=context)
+    args, _, evidence = run_review(tmp_path, legacy_guidance=True, annotation=annotation, text='갔다', context=context)
     assert FORM_STAGE_COMPATIBLE_REVIEW_DIGESTS == {
         "4f0ac6c6d35d8f450482f608436a9fa57cab7822c0ebf96758f56fe5f9e96a3d",
         "2da6beaba39d3641ea15f889ed3c139a78ad6cae37a041d523b956a3aebfbf43",
@@ -223,7 +234,7 @@ def test_prior_complete_form_guidance_is_compatible_but_other_or_changed_proofs_
 
     rejected_runner = Runner(tmp_path, {'approved': False, 'issues': [issue('Incomplete form stage', '/segments/0/form_steps/0/form')],
                                         'prose_revision_reason_en': ''})
-    _, _, rejected_evidence = run_review(tmp_path, rejected_runner, annotation=annotation,
+    _, _, rejected_evidence = run_review(tmp_path, rejected_runner, legacy_guidance=True, annotation=annotation,
         text='갔다', context=context)
     rejected_compatible = {**rejected_evidence,
                            'form_review_guidance_digest': prior_complete_digest}
@@ -563,7 +574,7 @@ def test_checkpoint_new_used_word_reference_requires_fresh_review(tmp_path, owne
             context={**context, reference_field: [{'id': 'used'}]}, policy='Review honestly.')
     if owner == 'stage':
         stale = {key: value for key, value in proof.items() if key != 'form_review_guidance_digest'}
-        with pytest.raises(ValueError, match='predates'):
+        with pytest.raises(ValueError, match='guidance digest'):
             reusable_checkpoint_approval(tmp_path, {**row, 'review': stale},
                 annotation=annotation, text='아이', context=context, policy='Review honestly.')
 

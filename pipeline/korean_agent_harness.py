@@ -267,7 +267,7 @@ def reusable_checkpoint_approval(run_dir, row, *, annotation, text, context, pol
     normal = proof.get('normal_review', proof)
     from pipeline.annotation_reference_carry import CARRY_FIELD
     from pipeline.annotation_reference_carry_callers import current_carry_eligibility
-    _, _, identity = review_request(annotation, text, old, policy)
+    _, _, identity = review_request(annotation, text, old, policy, guidance_version=normal.get("complete_stage_instruction_policy_version", 1))
     if normal['job'] != f'annotation-local-review-{identity}':
         raise ValueError('Korean checkpoint review policy changed')
     for key in set(old) | set(context):
@@ -1077,6 +1077,8 @@ class KoreanHarness:
             annotation_prompt += "or a supplied independently reviewed krdict-/stdict- candidate ID where the teaching catalogs lack that lexeme. Copy candidate IDs verbatim; do not strip homonym numbers, add an unsupported number, or manufacture an unsuffixed identity. "
             annotation_prompt += "approved IDs for existing names/grammar; shortened names keep the approved full-name identity and headword. Do not duplicate an entry for a shortened name. Use stable English IDs for genuinely new grammar functions. "
             annotation_prompt += "Every inflected word needs ordered complete-form transformation steps rooted in an attested lexical word or name, never a grammar identity. Productive adjective-plus-하다 constructions keep their lexical adjective base and link the transformation separately. The dictionary-form base is supplied by lemma and its own UI row: DO NOT repeat it in form_steps. Each step uses the schema field grammar_entry_ids: an array containing EXACTLY ONE grammar ID, with a matching grammar_links record on the same segment. There is no singular grammar_entry_id field. "
+            from pipeline.annotation_review_guidance import ENDING_REPLACEMENT_GUIDANCE
+            annotation_prompt += ENDING_REPLACEMENT_GUIDANCE + ' '
             annotation_prompt += "Each stage must have a distinct COMPLETE form. Grammar roles that add no new form belong in grammar_links with complete-phrase display fields, not repeated stages. Do not invent a bare-stem intermediate merely to make forms differ. "
             annotation_prompt += "Attested fixed expressions need explicit lexical destinations and their complete idiomatic meanings. Use the supplied primary lexical references to identify canonical dictionary headwords and restricted senses; an expression frame is not automatically a new lemma. Do not invent grammar entries for lexical expressions or claim unsupported component meanings. "
             annotation_prompt += "For a multiword lexical expression, preserve its component tap boundaries and supply expression_links with the exact source form, complete meaning, contextual role and the attested word entry_id of a lexical component within the span. This is a lexical destination, never a grammar_links record or an invented standalone expression lemma. Use separately verified component senses; uncertainty belongs in editorial research, not learner-facing notes. "

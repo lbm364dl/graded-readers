@@ -7,7 +7,7 @@ from pipeline import korean_contracts as contracts
 from pipeline.annotation_issue_targets import ISSUE_TARGET_GUIDANCE, validate_issue_targets
 from pipeline.annotation_review_guidance import (
     FORM_STAGE_COMPATIBLE_REVIEW_DIGESTS,
-    FORM_STAGE_EVIDENCE_GUIDANCE,
+    FORM_STAGE_EVIDENCE_GUIDANCE, form_stage_guidance,
 )
 
 INSTRUCTIONS = FORM_STAGE_EVIDENCE_GUIDANCE + '\n' + '''Review only the supplied Korean annotation chunk independently.
@@ -62,12 +62,13 @@ def _has_form_steps(annotation):
                for segment in annotation.get('segments', []))
 
 
-def _form_guidance_digest():
+def _form_guidance_digest(version=1):
     from pipeline.korean_agent_harness import digest
-    return digest(FORM_STAGE_EVIDENCE_GUIDANCE)
+    return digest(form_stage_guidance(version))
 
 
-def review_request(annotation, text, context, policy):
+def review_request(annotation, text, context, policy, *, guidance_version=1):
+    selected_guidance = form_stage_guidance(guidance_version)
     from pipeline.korean_agent_harness import digest
     if any(isinstance(row, dict) and any(key in row for key in ('reviewed_run_grammar', 'reviewed_run_lessons'))
            for row in (context, context.get('chunk_review_context'))):
@@ -75,7 +76,9 @@ def review_request(annotation, text, context, policy):
         validate_run_lesson_context_fields(context)
     inputs = {'annotation': annotation, 'text': text, 'context': context,
               'issue_targets_version': 1}
-    instructions = INSTRUCTIONS + '\n' + ISSUE_TARGET_GUIDANCE + '''
+    if guidance_version == 2:
+        inputs['complete_stage_instruction_policy_version'] = 2
+    instructions = INSTRUCTIONS.replace(FORM_STAGE_EVIDENCE_GUIDANCE, selected_guidance, 1) + '\n' + ISSUE_TARGET_GUIDANCE + '''
 Each issue also requires explanation, describing why its candidate_paths are
 defective. For an actual prose revision, point to the existing affected segment
 text field; this records the source defect and does not authorize an annotation
@@ -103,7 +106,7 @@ async def review_chunk(runner, run_dir, *, annotation, text, context, policy):
         'candidate': annotation, 'source_text': text, 'language': 'ko', 'representation': 'korean-flat',
         'envelope': bound_run_lessons['packet'], 'lessons': bound_run_lessons['lessons'], 'context': context}}
         if context.get('reviewed_run_lessons') else {})
-    inputs, instructions, identity = review_request(annotation, text, context, policy)
+    inputs, instructions, identity = review_request(annotation, text, context, policy, guidance_version=2)
     if context.get('reviewed_annotation_research'):
         from pipeline.annotation_reference_carry import bind_carried_research
         bind_carried_research(run_dir, context['reviewed_annotation_research'], candidate=annotation,
@@ -122,7 +125,8 @@ async def review_chunk(runner, run_dir, *, annotation, text, context, policy):
         raise ValueError('Korean chunk prose revision must be an explicit rejected review')
     save(run_dir / 'agents' / job / 'review-input.json', inputs)
     return review, {'job': job, 'input_digest': digest(inputs), 'review_digest': digest(review),
-                    'form_review_guidance_digest': _form_guidance_digest(),
+                    'form_review_guidance_digest': _form_guidance_digest(2),
+                    'complete_stage_instruction_policy_version': 2,
                     'issue_targets_version': 1}
 
 
@@ -150,6 +154,15 @@ def verify_review(run_dir, evidence, *, annotation, text, chapter_text, source_s
         from pipeline.annotation_run_lessons import validate_run_lessons
         validate_run_lessons(run_dir, inputs['context']['reviewed_run_lessons'], candidate=annotation,
             source_text=text, language='ko', representation='korean-flat', context=inputs['context'])
+    guidance_version = inputs.get('complete_stage_instruction_policy_version', 1)
+    form_stage_guidance(guidance_version)
+    if (evidence.get('complete_stage_instruction_policy_version', 1) != guidance_version
+            or ('complete_stage_instruction_policy_version' in evidence and type(evidence['complete_stage_instruction_policy_version']) is not int)):
+        raise ValueError('Korean instruction version inputs differ from the worker evidence')
+    if guidance_version == 2 and evidence.get('form_review_guidance_digest') != _form_guidance_digest(2):
+        raise ValueError('Korean version2 complete-stage guidance digest changed')
+    if guidance_version == 1 and evidence.get('form_review_guidance_digest') == _form_guidance_digest(2):
+        raise ValueError('Korean legacy review cannot claim version2 guidance')
     version = evidence.get('issue_targets_version')
     if version not in (None, 1) or inputs.get('issue_targets_version') != version:
         raise ValueError('Korean chunk issue target version changed')
@@ -170,7 +183,7 @@ def verify_review(run_dir, evidence, *, annotation, text, chapter_text, source_s
     if any(inputs['context'].get(k) != v for k, v in (expected_context or {}).items()):
         raise ValueError('Korean chunk review planning context changed')
     accepted_form_guidance_digests = (FORM_STAGE_COMPATIBLE_REVIEW_DIGESTS |
-                                       {_form_guidance_digest()})
+                                       {_form_guidance_digest(), _form_guidance_digest(2)})
     if (_has_form_steps(annotation)
             and evidence.get('form_review_guidance_digest') not in accepted_form_guidance_digests
             and not allow_stale_form_guidance):

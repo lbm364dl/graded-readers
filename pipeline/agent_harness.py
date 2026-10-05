@@ -25,7 +25,7 @@ import sys
 from typing import Any
 
 from pipeline.chunk_scheduler import map_chunks
-from pipeline.annotation_review_guidance import FORM_STAGE_EVIDENCE_GUIDANCE
+from pipeline.annotation_review_guidance import FORM_STAGE_EVIDENCE_GUIDANCE_V2 as FORM_STAGE_EVIDENCE_GUIDANCE
 from pipeline.annotation_issue_targets import ISSUE_TARGET_GUIDANCE, validate_issue_targets
 from pipeline.annotation_publication import (
     bind_review_job, child_job_receipt, normal_review_receipt,

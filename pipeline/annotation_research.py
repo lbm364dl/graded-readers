@@ -161,11 +161,11 @@ unresolved targets; any remaining uncertainty must remain unresolved.
 """
 RESEARCH_POLICY_V6 = RESEARCH_POLICY_V5 + "\n\n" + SCOPED_FACT_REVIEW_GUIDANCE
 REVIEW_POLICY_V6 = REVIEW_POLICY_V5 + "\n\n" + SCOPED_FACT_REVIEW_GUIDANCE
-RESEARCH_POLICY_VERSION = 7
-SUPPORTED_RESEARCH_POLICY_VERSIONS = {2, 3, 4, 5, 6, 7}
+RESEARCH_POLICY_VERSION = 8
+SUPPORTED_RESEARCH_POLICY_VERSIONS = {2, 3, 4, 5, 6, 7, 8}
 
 SUBMISSION_VALIDATION_VERSION = 2
-RESEARCH_EVIDENCE_VERSION = 7
+RESEARCH_EVIDENCE_VERSION = 8
 # Official dictionary pages include large inline scripts; keep the transfer
 # bounded while allowing the observed 2.55 MB KRDict entry page.
 MAX_CAPTURE_BYTES = 4_000_000
@@ -712,7 +712,7 @@ def _build_inputs(*, language: str, representation: str, candidate: Any,
         raise AnnotationResearchError("Known references must be a mapping")
     if policy_version is None:
         policy_version = RESEARCH_POLICY_VERSION
-    if policy_version not in SUPPORTED_RESEARCH_POLICY_VERSIONS:
+    if (policy_version == 8 and type(policy_version) is not int) or policy_version not in SUPPORTED_RESEARCH_POLICY_VERSIONS:
         raise AnnotationResearchError("Unsupported research policy version")
     issue_ids = _initial_uncertain_ids(initial_adjudication)
     gate = deterministic_gate_evidence
@@ -825,6 +825,12 @@ def _policies(version: int) -> tuple[str, str]:
         return RESEARCH_POLICY_V5, REVIEW_POLICY_V5
     if version == 6:
         return RESEARCH_POLICY_V6, REVIEW_POLICY_V6
+    if version == 8:
+        if type(version) is not int:
+            raise AnnotationResearchError('Unsupported research policy version')
+        from pipeline.annotation_review_guidance import ENDING_REPLACEMENT_GUIDANCE
+        research, review = _policies(7)
+        return research + '\n\n' + ENDING_REPLACEMENT_GUIDANCE, review + '\n\n' + ENDING_REPLACEMENT_GUIDANCE
     if version == 7:
         return RESEARCH_POLICY_V6 + "\nAuthenticated transported standalone lessons are supplied theory, never borrowed occurrence approval. Inspect their exact pattern, formation and function before requesting duplicate research; only genuinely missing claims need investigation.", REVIEW_POLICY_V6 + "\nAuthenticate citations to supplied standalone theory and assess current scoped claims independently; a prior lesson approval does not approve this occurrence."
     raise AnnotationResearchError("Unsupported research policy version")

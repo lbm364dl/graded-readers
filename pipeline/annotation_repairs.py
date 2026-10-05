@@ -14,7 +14,7 @@ from pathlib import Path
 from typing import Any, Callable
 
 from jsonschema import ValidationError, validate
-from pipeline.annotation_review_guidance import FORM_STAGE_EVIDENCE_GUIDANCE
+from pipeline.annotation_review_guidance import FORM_STAGE_EVIDENCE_GUIDANCE_V2 as FORM_STAGE_EVIDENCE_GUIDANCE
 
 from pipeline.annotation_edits import (
     AnnotationEditError,
@@ -305,6 +305,7 @@ def _targets(plan: dict[str, Any]) -> list[dict[str, str]]:
 
 def _save_assembly(run_dir: Path, assembly_job: str, meta: dict[str, Any], result: Any) -> None:
     meta["repair_request_policy_version"] = 3
+    meta["complete_stage_instruction_policy_version"] = 2
     meta["plan_target_contract_version"] = 2
     meta.setdefault("target_contract_version", 1)
     directory = _safe_job_path(run_dir, assembly_job)
@@ -365,7 +366,7 @@ async def repair_annotation(
     dependency_constraints = repair_dependency_constraints(candidate, representation)
     plan_job, patch_job, assembly_job = f"{job}_plan", f"{job}_patch", f"{job}_assembly"
     shared_context = {**(context or {}), "repair_explanation_guidance_version": REPAIR_EXPLANATION_GUIDANCE_VERSION,
-                      "repair_dependency_guidance_version": REPAIR_DEPENDENCY_GUIDANCE_VERSION, "language": language,
+                      "repair_dependency_guidance_version": REPAIR_DEPENDENCY_GUIDANCE_VERSION, "complete_stage_instruction_policy_version": 2, "language": language,
                       "representation": representation, "candidate": candidate,
                       "repair_dependency_constraints": dependency_constraints,
                       "issues": issues,
@@ -703,6 +704,8 @@ def replay_annotation_repair(
     request_version = meta.get("repair_request_policy_version")
     if request_version not in (None, 3) or isinstance(request_version, bool):
         raise ValueError("Unknown repair request policy version")
+    if 'complete_stage_instruction_policy_version' in meta and (type(meta.get('complete_stage_instruction_policy_version')) is not int or meta['complete_stage_instruction_policy_version'] != 2):
+        raise ValueError('Repair complete-stage instruction version changed')
     plan_version = meta.get("plan_target_contract_version", 1)
     if plan_version not in (1, 2) or isinstance(plan_version, bool) or (request_version == 3 and plan_version != 2):
         raise ValueError("Unknown repair plan target contract version")

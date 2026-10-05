@@ -25,3 +25,14 @@ FORM_STAGE_COMPATIBLE_REVIEW_DIGESTS = frozenset({
     # Same complete-form and scope rules before the English-gloss clarification.
     '2da6beaba39d3641ea15f889ed3c139a78ad6cae37a041d523b956a3aebfbf43',
 })
+
+
+# Preserve version1 byte-for-byte for historical prompt reconstruction.
+COMPLETE_STAGE_INSTRUCTION_POLICY_VERSION = 2
+ENDING_REPLACEMENT_GUIDANCE = """COMPLETE_STAGE_INSTRUCTION_POLICY=2. Displayed form steps are complete learner-facing forms, not a literal-substring list or an algorithm that concatenates an ending to every preceding displayed string. A supported later inflection can replace an earlier citation or clause ending to reach the next complete form. Check the actual linguistic operation, retained lexical and tense meaning, and exact final surface; the representation contract alone does not prove that a transition is linguistically valid. Do not replace a supported complete intermediate with a prefinal stem merely to make it a prefix of the next surface. Conversely, a different ending is not permission to accept unsupported morphology, a wrong tense or identity, or a final form that does not match the source. This clarification applies only where an ordered form chain is supplied; Chinese segment/overlay representations do not acquire a form-step requirement. Retain every current finding and route uncertain formation evidence for independent research rather than overriding a review."""
+FORM_STAGE_EVIDENCE_GUIDANCE_V2 = FORM_STAGE_EVIDENCE_GUIDANCE + '\n\n' + ENDING_REPLACEMENT_GUIDANCE
+
+def form_stage_guidance(version=1):
+    if type(version) is not int or version not in (1, 2):
+        raise ValueError('Unknown complete-stage instruction policy version')
+    return FORM_STAGE_EVIDENCE_GUIDANCE if version == 1 else FORM_STAGE_EVIDENCE_GUIDANCE_V2

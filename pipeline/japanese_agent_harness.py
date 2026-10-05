@@ -37,7 +37,7 @@ from pipeline.annotation_publication import (
     verify_item_research_positions,
 )
 from pipeline.chunk_scheduler import map_chunks
-from pipeline.annotation_review_guidance import FORM_STAGE_EVIDENCE_GUIDANCE
+from pipeline.annotation_review_guidance import (FORM_STAGE_EVIDENCE_GUIDANCE_V2 as FORM_STAGE_EVIDENCE_GUIDANCE, form_stage_guidance)
 from pipeline.annotation_issue_targets import ISSUE_TARGET_GUIDANCE, validate_issue_targets
 from pipeline.japanese_readability import (
     GRAMMAR_BASELINE_LEMMAS,
@@ -149,6 +149,10 @@ def verify_japanese_chunk_review(item: dict[str, Any], source_text: str,
         expected_context = {"chunk_text": source_text,
                             "grammar_knowledge": grammar,
                             "story_plan": story_plan}
+        stage_version = replay['context'].get('complete_stage_instruction_policy_version', 1)
+        selected_stage_guidance = form_stage_guidance(stage_version)
+        if 'complete_stage_instruction_policy_version' in replay['context']:
+            expected_context['complete_stage_instruction_policy_version'] = stage_version
         from pipeline.annotation_reference_carry import CARRY_FIELD
         for key in ('annotation_source_position', CARRY_FIELD):
             if key in replay['context']:
@@ -160,7 +164,7 @@ def verify_japanese_chunk_review(item: dict[str, Any], source_text: str,
             "approved-grammar": {"kind": "approved_lesson",
                 "content": grammar.get("approved_entries", [])},
             "review-policy": {"kind": "explicit_review_policy",
-                "content": {"form_stage_guidance": FORM_STAGE_EVIDENCE_GUIDANCE,
+                "content": {"form_stage_guidance": selected_stage_guidance,
                     "review_policy": review.get("review_policy", ""),
                     "dictionary_policy": JAPANESE_ANNOTATION_CHUNK_POLICY}},
         }
@@ -4795,6 +4799,7 @@ with reading すく. The available 空く entry is read あく, so it is NOT a v
 target for お腹がすいて. Keep lemma すく and leave that link empty; do not alter
 the linguistic lemma or reading to manufacture a link.
 
+COMPLETE_STAGE_INSTRUCTION_POLICY=2. A supported later inflection may replace an earlier complete citation or clause ending; displayed steps are not literal substrings or concatenated suffixes. Do not substitute prefinal stems merely to match the next surface prefix.
 FORM DERIVATION: every segment has `form_steps`. Use [] for a genuinely
 non-inflecting word or functional segment. For every inflected word, give an
 ordered learner-facing chain after the dictionary form and end with the exact
@@ -6023,7 +6028,7 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                 fresh_context, carried_references = bind_lifecycle_carry(self, index, chunk, result,
                     language='ja', representation='japanese-annotation',
                     context={"chunk_text": chunk, "grammar_knowledge": grammar_knowledge,
-                        "story_plan": getattr(self, "story_vocabulary_plan", {"terms": []})},
+                        "complete_stage_instruction_policy_version": 2, "story_plan": getattr(self, "story_vocabulary_plan", {"terms": []})},
                     current_review=findings, include_position=True)
                 fresh_context, lesson_references = bind_lifecycle_run_lessons(
                     self, index, chunk, result, language='ja', representation='japanese-annotation',
@@ -6181,7 +6186,7 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                 repair_job = repair_evidence.get("assembly_job")
                 grammar_knowledge = japanese_semantic_repair_grammar_knowledge()
                 context = {"chunk_text": chunk, "grammar_knowledge": grammar_knowledge,
-                           "story_plan": getattr(self, "story_vocabulary_plan", {"terms": []})}
+                           "complete_stage_instruction_policy_version": 2, "story_plan": getattr(self, "story_vocabulary_plan", {"terms": []})}
                 references = {
                     "approved-grammar": {"kind": "approved_lesson",
                         "content": grammar_knowledge.get("approved_entries", [])},

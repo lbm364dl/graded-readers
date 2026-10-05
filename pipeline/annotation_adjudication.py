@@ -104,6 +104,9 @@ def _versioned_instructions(policy_version: int) -> str:
     instructions = INSTRUCTIONS + '\n\nFor typed current issues, candidate_paths is the complete defect target set. Match it exactly; supporting_paths and other prose mentions are context only and do not add targets. This explicit protocol takes precedence over legacy prose-index binding guidance above. For every new_issues row, supply supporting_paths explicitly. New findings follow this field-target protocol: ' + ISSUE_TARGET_GUIDANCE
     if policy_version >= 6:
         instructions += '\n\nFor every original issue, target_dispositions must classify each candidate_paths field exactly once. Keep the full issue target set even when only one field is defective. Give each target its own disposition, exact binding, citations, reason, and narrow diagnosis. A supported neighboring field is unsupported, not permission to rewrite it. An uncertain target stays uncertain. The host aggregates uncertain before actionable before unsupported and routes only actionable targets to repair; never fold supported or unresolved targets into the repair scope. Issue-level fields summarize these target findings; their citations cannot substitute for per-target evidence.'
+    if policy_version >= 7:
+        from pipeline.annotation_review_guidance import ENDING_REPLACEMENT_GUIDANCE
+        instructions += '\n\n' + ENDING_REPLACEMENT_GUIDANCE
     return instructions
 
 
@@ -787,6 +790,8 @@ def _build_inputs(*, language: str, representation: str, candidate: Any,
                   known_reference_input: dict, deterministic_gate_evidence: dict,
                   normal_review_receipt: dict, source_text: str | None,
                   host_binding_policy_version: int = 5) -> dict:
+    if host_binding_policy_version == 7 and type(host_binding_policy_version) is not int:
+        raise AdjudicationError('Unknown host binding policy version')
     normalized = normalize_review(language, current_review)
     if representation not in {'chinese-fixed', 'chinese-annotation', 'japanese-annotation',
                               'korean-flat', 'korean-v4'}:
@@ -816,7 +821,7 @@ def _build_inputs(*, language: str, representation: str, candidate: Any,
         'instructions_digest': digest(_versioned_instructions(host_binding_policy_version)), 'effort': 'low',
         'model': 'gpt-6-luna', 'tool_profile': 'research',
     }
-    if host_binding_policy_version in {2, 3, 4, 5, 6}:
+    if host_binding_policy_version in {2, 3, 4, 5, 6, 7}:
         input_value['host_binding_policy_version'] = host_binding_policy_version
     elif host_binding_policy_version != 1:
         raise AdjudicationError('Unknown host binding policy version')
@@ -1017,7 +1022,7 @@ async def _adjudicate_once(runner: Any, run_dir: Path, *, language: str,
         known_reference_input=known_reference_input,
         deterministic_gate_evidence=deterministic_gate_evidence,
         normal_review_receipt=normal_review_receipt, source_text=source_text,
-        host_binding_policy_version=6)
+        host_binding_policy_version=7)
     run_dir = Path(run_dir)
     run_dir.mkdir(parents=True, exist_ok=True)
     preflight = _preflight_status(inputs)
@@ -1134,7 +1139,7 @@ def _verify_adjudication_once(run_dir: Path, evidence: dict, *, language: str,
     historical_instruction_replay = False
     run_dir = Path(run_dir).resolve(strict=True)
     job = evidence.get('job') if isinstance(evidence, dict) else None
-    for version in (2, 3, 4, 5, 6):
+    for version in (2, 3, 4, 5, 6, 7):
         if isinstance(job, str) and job == f"annotation-adjudication-{inputs['input_digest']}":
             break
         inputs = _build_inputs(language=language, representation=representation, candidate=candidate,
@@ -1309,11 +1314,13 @@ async def followup_uncertain_annotation_review(runner: Any, run_dir: Path,
     """One explicitly authorized second research cycle; no initial re-adjudication."""
     inputs.setdefault('source_text', None)
     base = _followup_base(run_dir, terminal_evidence, inputs)
-    from pipeline.annotation_research import research_uncertain_review
+    from pipeline.annotation_research import research_uncertain_review, RESEARCH_POLICY_VERSION
+    if type(RESEARCH_POLICY_VERSION) is not int or RESEARCH_POLICY_VERSION not in (7, 8):
+        raise AdjudicationError('Followup requires supported research policy7 or8 before submission')
     research = await research_uncertain_review(runner, run_dir,
         initial_adjudication=terminal_evidence, **inputs)
-    if research['evidence'].get('version') != 7:
-        raise AdjudicationError('Followup requires research policy7')
+    if type(research['evidence'].get('version')) is not int or research['evidence']['version'] not in (7, 8):
+        raise AdjudicationError('Followup requires research policy7 or8')
     if research['references']:
         enriched = _research_inputs(base, research['evidence'], research['references'], policy_version=2)
         result = await _adjudicate_once(runner, run_dir, **enriched)
@@ -1333,8 +1340,8 @@ def _verify_followup_research_receipt(run_dir: Path, evidence: dict, inputs: dic
     from pipeline.annotation_research import verify_research_evidence
     research = verify_research_evidence(run_dir, evidence['reference_research'],
         initial_adjudication=terminal, **inputs)
-    if research['evidence'].get('version') != 7:
-        raise AdjudicationError('Followup requires research policy7')
+    if type(research['evidence'].get('version')) is not int or research['evidence']['version'] not in (7, 8):
+        raise AdjudicationError('Followup requires research policy7 or8')
     markers = {'reference_research_version','initial_adjudication',
                'reference_research','reference_research_chain_digest'}
     result_evidence = {k:v for k,v in evidence.items() if k not in markers}
