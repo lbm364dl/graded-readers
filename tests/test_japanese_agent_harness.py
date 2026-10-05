@@ -165,7 +165,7 @@ async def test_japanese_applied_semantic_review_clear_is_saved_as_distinct_adjud
         root = tmp_path / "agents" / job
         root.mkdir(parents=True, exist_ok=True)
         (root / "meta.json").write_text(json.dumps({"kind": "annotation_patch_assembly",
-            "status": "applied", "return_code": 0}))
+            "status": "applied", "representation": "japanese-annotation", "return_code": 0}))
         derived = copy.deepcopy(base)
         if route_mode != "unchanged":
             derived["segments"][0]["meaning_en"] += " (repair)"
@@ -190,6 +190,8 @@ async def test_japanese_applied_semantic_review_clear_is_saved_as_distinct_adjud
 
     monkeypatch.setattr(annotation_repairs, "repair_annotation", fake_repair)
     monkeypatch.setattr(annotation_repairs, "replay_annotation_repair", fake_replay)
+    from pipeline import annotation_semantic_derivation
+    monkeypatch.setattr(annotation_semantic_derivation, "replay_annotation_repair", fake_replay)
     monkeypatch.setattr(annotation_adjudication, "adjudicate_annotation_review", fake_adjudicate)
     harness = object.__new__(Harness)
     harness.args = Namespace(level="n5", annotation_chunk=None, annotation_chunk_maximum=None,

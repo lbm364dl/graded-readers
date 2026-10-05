@@ -2877,7 +2877,6 @@ GRAMMAR OVERLAYS (existing exact offset objects):
                 from pipeline.annotation_adjudication import (
                     adjudicate_annotation_review, digest as evidence_digest,
                 )
-                from pipeline.annotation_repairs import replay_annotation_repair
                 repair_job = previous["semantic_repair"]["assembly_job"]
                 schema = json.loads((SCHEMAS / "annotation.schema.json").read_text())
 
@@ -2889,10 +2888,6 @@ GRAMMAR OVERLAYS (existing exact offset objects):
                     if contract:
                         raise ValueError(str(contract))
 
-                replayed = replay_annotation_repair(Path(self.run_dir), repair_job,
-                    validate_candidate=validate_replayed)
-                if replayed.get("status") != "applied" or replayed.get("candidate") != result:
-                    raise ValueError("Chinese applied semantic-repair evidence does not match reviewed candidate")
                 run_dir = Path(self.run_dir)
                 review_job = f"annotations/chunk_{index:04d}/{attempt_record['stage']}_review"
                 review_meta_path = run_dir / "agents" / review_job / "meta.json"
@@ -2926,6 +2921,18 @@ GRAMMAR OVERLAYS (existing exact offset objects):
                     context=adjudication_context, current_review=review)
                 policy_reference.update(lesson_references)
                 policy_reference.update(carried_references)
+                from pipeline.annotation_semantic_derivation import verified_semantic_derivation
+                derivation = verified_semantic_derivation(Path(self.run_dir),
+                    candidate=result, source_text=chunk, language="zh",
+                    representation="chinese-annotation", validate_candidate=validate_replayed,
+                    semantic_job=repair_job,
+                    normalization=getattr(self, "_annotation_run_normalizations", {}).get(index),
+                    context=adjudication_context)
+                if derivation is None:
+                    raise ValueError("Chinese candidate lacks authenticated semantic-repair derivation")
+                replayed = derivation["replayed"]
+                if derivation["context_evidence"] is not None:
+                    adjudication_context["verified_semantic_derivation"] = derivation["context_evidence"]
                 adjudication_history = copy.deepcopy(attempts)
                 if not adjudication_budget.claim(result):
                     raise RuntimeError("Adjudication candidate budget changed before invocation")

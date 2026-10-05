@@ -1577,9 +1577,13 @@ class KoreanHarness:
                             return value, record, {'kind': 'ordinary', **evidence}
                         proposal_meta_path = self.run_dir / 'agents' / record['job'] / 'meta.json'
                         proposal_meta = read(proposal_meta_path) if proposal_meta_path.exists() else {}
+                        from pipeline.annotation_semantic_derivation import verified_semantic_derivation
+                        semantic_derivation = verified_semantic_derivation(self.run_dir,
+                            candidate=value, source_text=text, language='ko', representation='korean-flat',
+                            validate_candidate=lambda candidate: validate_chunk(candidate, text),
+                            record=record, context=context)
                         if (adjudication_budget.can_claim(value)
-                                and proposal_meta.get('kind') == 'annotation_patch_assembly'
-                                and proposal_meta.get('status') == 'applied'
+                                and semantic_derivation is not None
                                 and not any(issue.get('problem') == 'contract'
                                     for issue in review.get('issues', []) if isinstance(issue, dict))):
                             from pipeline.annotation_adjudication import (
@@ -1619,14 +1623,15 @@ class KoreanHarness:
                                 'review_digest': evidence_digest(review),
                                 'components': evidence}
                             prior_history = []
-                            if isinstance(proposal_meta.get('base'), dict):
+                            semantic_meta = semantic_derivation['semantic_meta']
+                            if isinstance(semantic_meta.get('base'), dict):
                                 prior_history.append({
                                     'stage': 'semantic_repair',
-                                    'annotation': proposal_meta['base'],
-                                    'review': {'issues': proposal_meta.get('issues', [])},
-                                    'semantic_repair': {'job': record['job'],
-                                        'status': proposal_meta.get('status'),
-                                        'assembly_meta_digest': evidence_digest(proposal_meta)}})
+                                    'annotation': semantic_meta['base'],
+                                    'review': {'issues': semantic_meta.get('issues', [])},
+                                    'semantic_repair': {'job': semantic_derivation['semantic_job'],
+                                        'status': semantic_meta.get('status'),
+                                        'assembly_meta_digest': evidence_digest(semantic_meta)}})
                             if local_issues:
                                 prior_history.append({'stage': 'repair_followup',
                                     'annotation': local_previous, 'review': {'issues': local_issues}})
@@ -1639,6 +1644,8 @@ class KoreanHarness:
                                 'deterministic_gate_evidence': gate,
                                 'normal_review_receipt': receipt,
                             }
+                            if semantic_derivation['context_evidence'] is not None:
+                                replay_inputs['context']['verified_semantic_derivation'] = semantic_derivation['context_evidence']
                             if not adjudication_budget.claim(value):
                                 raise RuntimeError("Adjudication candidate budget changed before invocation")
                             adjudication = await adjudicate_annotation_review(

@@ -5988,7 +5988,6 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                 from pipeline.annotation_adjudication import (
                     adjudicate_annotation_review, digest as evidence_digest,
                 )
-                from pipeline.annotation_repairs import replay_annotation_repair
                 from jsonschema import Draft202012Validator
                 schema = json.loads((SCHEMAS / "japanese-annotation.schema.json").read_text())
 
@@ -6002,10 +6001,6 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                     if contract:
                         raise ValueError(str(contract))
 
-                replayed = replay_annotation_repair(Path(self.run_dir),
-                    prior_semantic["assembly_job"], validate_candidate=validate_replayed)
-                if replayed.get("status") != "applied" or replayed.get("candidate") != result:
-                    raise ValueError("Japanese applied semantic-repair evidence does not match reviewed candidate")
                 grammar_knowledge = japanese_semantic_repair_grammar_knowledge()
                 references = {"approved-grammar": {
                     "kind": "approved_lesson",
@@ -6033,6 +6028,18 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                 fresh_context, lesson_references = bind_lifecycle_run_lessons(
                     self, index, chunk, result, language='ja', representation='japanese-annotation',
                     context=fresh_context, current_review=findings)
+                from pipeline.annotation_semantic_derivation import verified_semantic_derivation
+                derivation = verified_semantic_derivation(Path(self.run_dir),
+                    candidate=result, source_text=chunk, language="ja",
+                    representation="japanese-annotation", validate_candidate=validate_replayed,
+                    semantic_job=prior_semantic["assembly_job"],
+                    normalization=getattr(self, "_annotation_run_normalizations", {}).get(index),
+                    context=fresh_context)
+                if derivation is None:
+                    raise ValueError("Japanese candidate lacks authenticated semantic-repair derivation")
+                replayed = derivation["replayed"]
+                if derivation["context_evidence"] is not None:
+                    fresh_context["verified_semantic_derivation"] = derivation["context_evidence"]
                 references.update(lesson_references)
                 references.update(carried_references)
                 if not adjudication_budget.claim(result):
@@ -6153,7 +6160,6 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                 from pipeline.annotation_adjudication import (
                     adjudicate_annotation_review, digest as evidence_digest,
                 )
-                from pipeline.annotation_repairs import replay_annotation_repair
                 from jsonschema import Draft202012Validator
                 schema = json.loads((SCHEMAS / "japanese-annotation.schema.json").read_text())
 
@@ -6166,10 +6172,6 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                         raise ValueError(str(contract))
 
                 repair_job = repair_evidence.get("assembly_job")
-                replayed = replay_annotation_repair(Path(self.run_dir), repair_job,
-                    validate_candidate=validate_tail_replay)
-                if replayed.get("status") != "applied" or replayed.get("candidate") != result:
-                    raise ValueError("Japanese fresh-repair evidence does not match reviewed candidate")
                 grammar_knowledge = japanese_semantic_repair_grammar_knowledge()
                 context = {"chunk_text": chunk, "grammar_knowledge": grammar_knowledge,
                            "story_plan": getattr(self, "story_vocabulary_plan", {"terms": []})}
@@ -6198,6 +6200,18 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                 context, lesson_references = bind_lifecycle_run_lessons(
                     self, index, chunk, result, language='ja', representation='japanese-annotation',
                     context=context, current_review=findings)
+                from pipeline.annotation_semantic_derivation import verified_semantic_derivation
+                derivation = verified_semantic_derivation(Path(self.run_dir),
+                    candidate=result, source_text=chunk, language="ja",
+                    representation="japanese-annotation", validate_candidate=validate_tail_replay,
+                    semantic_job=repair_job,
+                    normalization=getattr(self, "_annotation_run_normalizations", {}).get(index),
+                    context=context)
+                if derivation is None:
+                    raise ValueError("Japanese tail candidate lacks authenticated semantic-repair derivation")
+                replayed = derivation["replayed"]
+                if derivation["context_evidence"] is not None:
+                    context["verified_semantic_derivation"] = derivation["context_evidence"]
                 references.update(lesson_references)
                 references.update(carried_references)
                 if not adjudication_budget.claim(result):

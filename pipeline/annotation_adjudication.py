@@ -1003,6 +1003,9 @@ async def _adjudicate_once(runner: Any, run_dir: Path, *, language: str,
         raise AdjudicationError('Adjudication requires shared gpt-6-luna low policy')
     if isinstance(runner, CodexRunner) and runner.legacy_tool_restrictions:
         raise AdjudicationError('Adjudication requires the organized tools-enabled workspace profile')
+    from pipeline.annotation_semantic_derivation import verify_semantic_derivation_context
+    verify_semantic_derivation_context(run_dir, context, candidate=candidate, source_text=source_text,
+        language=language, representation=representation)
     _validate_carried_context(run_dir, context, candidate, source_text, language,
         representation, current_review, known_reference_input)
     _validate_run_lesson_context(run_dir, context, candidate, source_text, language,
@@ -1112,6 +1115,9 @@ def _verify_adjudication_once(run_dir: Path, evidence: dict, *, language: str,
         context: Any, known_reference_input: dict, deterministic_gate_evidence: dict,
         normal_review_receipt: dict, source_text: str | None = None) -> dict:
     """Replay a saved receipt; no model call is made and inputs must match exactly."""
+    from pipeline.annotation_semantic_derivation import verify_semantic_derivation_context
+    verify_semantic_derivation_context(run_dir, context, candidate=candidate, source_text=source_text,
+        language=language, representation=representation)
     _validate_carried_context(run_dir, context, candidate, source_text, language,
         representation, current_review, known_reference_input)
     _validate_run_lesson_context(run_dir, context, candidate, source_text, language,

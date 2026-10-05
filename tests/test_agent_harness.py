@@ -135,7 +135,7 @@ async def test_chinese_adjudication_clears_only_after_replayed_applied_semantic_
         root = tmp_path / "agents" / job
         root.mkdir(parents=True, exist_ok=True)
         (root / "meta.json").write_text(json.dumps({"kind": "annotation_patch_assembly",
-            "status": "applied", "return_code": 0}))
+            "status": "applied", "representation": "chinese-annotation", "return_code": 0}))
         derived = copy.deepcopy(base)
         if route_mode != "unchanged":
             derived["segments"][0]["meaning_en"] += " (repair)"
@@ -177,6 +177,8 @@ async def test_chinese_adjudication_clears_only_after_replayed_applied_semantic_
 
     monkeypatch.setattr(annotation_repairs, "repair_annotation", fake_repair)
     monkeypatch.setattr(annotation_repairs, "replay_annotation_repair", fake_replay)
+    from pipeline import annotation_semantic_derivation
+    monkeypatch.setattr(annotation_semantic_derivation, "replay_annotation_repair", fake_replay)
     monkeypatch.setattr(annotation_adjudication, "adjudicate_annotation_review", fake_adjudicate)
     monkeypatch.setattr(annotation_adjudication, "verify_adjudication_evidence", fake_verify)
     harness = object.__new__(Harness)
