@@ -170,7 +170,7 @@ def build(path, prompt, schema, *, context=None, submission_repair=None):
     put_json('INDEX.json', inventory)
     put_json('schema.json', schema)
     put_json('receipt.schema.json', RECEIPT_SCHEMA)
-    put_json('validation-context.json', [{k: v[k] for k in ('chunk_text', 'language', 'surfaces', 'annotation', 'annotation_validation', 'annotation_patch_validation', 'annotation_plan_validation', 'annotation_adjudication_validation', 'annotation_research_validation', 'annotation_issue_targets_validation', 'annotation_run_lesson_validation', 'annotation_run_knowledge_selection_validation') if k in v} for v in contexts if isinstance(v, dict)])
+    put_json('validation-context.json', [{k: v[k] for k in ('chunk_text', 'language', 'surfaces', 'annotation', 'annotation_validation', 'annotation_patch_validation', 'annotation_plan_validation', 'annotation_adjudication_validation', 'annotation_research_validation', 'annotation_research_claim_revision_validation', 'annotation_issue_targets_validation', 'annotation_run_lesson_validation', 'annotation_run_knowledge_selection_validation') if k in v} for v in contexts if isinstance(v, dict)])
     command = 'cd ' + shlex.quote(str(ROOT)) + ' && ' + shlex.quote(str(ROOT / '.venv/bin/python')) + ' -m pipeline.worker_workspace validate --workspace ' + shlex.quote(str(path.resolve())) + ' --candidate ' + shlex.quote(str(path.resolve() / 'candidate.json'))
     put('README.txt', 'Read TASK.txt and INDEX.json. Repository root: ' + str(ROOT) + '. Repository paths in the task are relative to that root; input/reference paths in INDEX.json are relative to this workspace. Inspect relevant data and full reference entries as needed. Use your tools freely to investigate and verify. Save candidate.json and check it with:\n' + command + '\nThe local check is feedback, not independent publication approval. Submit only {"candidate_path":"candidate.json"}; do not reproduce the file contents.\n')
     _remove_obsolete_managed_inputs(path, previous_manifest, files)
@@ -228,6 +228,13 @@ def check(path, candidate):
                 raise ValueError('Adjudication validation input is missing from INDEX.json')
             from pipeline.annotation_adjudication import validate_adjudication_output
             validate_adjudication_output(value, input_values[input_field])
+            continue
+        claim_context = context.get('annotation_research_claim_revision_validation')
+        if claim_context is not None:
+            field=claim_context['input_field']
+            if field not in input_values:raise ValueError('Research claim revision input missing')
+            from pipeline.annotation_research_claim_revision import validate_claim_revision
+            validate_claim_revision(value,input_values[field],request_digest=claim_context['request_digest'],stage=claim_context['stage'])
             continue
         research_context = context.get('annotation_research_validation')
         if research_context is not None:
@@ -426,6 +433,7 @@ def submit(path, receipt):
                            for context in validation_contexts)
     adjudication_validation = any(context.get('annotation_adjudication_validation') is not None
                                   for context in validation_contexts)
+    claim_revision_validation = any(context.get('annotation_research_claim_revision_validation') is not None for context in validation_contexts)
     research_validation = any(context.get('annotation_research_validation') is not None
                               for context in validation_contexts)
     review_targets_validation = any(context.get('annotation_issue_targets_validation') is not None
@@ -433,7 +441,7 @@ def submit(path, receipt):
     run_lesson_validation = any(context.get('annotation_run_lesson_validation') is not None
                                 for context in validation_contexts)
     selection_validation=any(context.get('annotation_run_knowledge_selection_validation') is not None for context in validation_contexts)
-    if plan_validation is not None or patch_validation or adjudication_validation or research_validation or review_targets_validation or run_lesson_validation or selection_validation:
+    if plan_validation is not None or patch_validation or adjudication_validation or research_validation or claim_revision_validation or review_targets_validation or run_lesson_validation or selection_validation:
         try:
             check(path, candidate)
         except (ValidationError, ValueError, KeyError, TypeError, IndexError) as error:
