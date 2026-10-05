@@ -5423,9 +5423,9 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
         carried_context, _ = bind_lifecycle_run_lessons(self, index, chunk, annotation,
             language='ja', representation='japanese-annotation', context=carried_context)
         if 'reviewed_run_lessons' in carried_context:
-            from pipeline.annotation_run_lessons import RUN_LESSON_GUIDANCE
-            prompt += '\n\n' + RUN_LESSON_GUIDANCE
-            boundary_prompt += '\n\n' + RUN_LESSON_GUIDANCE
+            from pipeline.annotation_run_lessons import run_lesson_guidance
+            prompt += '\n\n' + run_lesson_guidance(carried_context['reviewed_run_lessons'])
+            boundary_prompt += '\n\n' + run_lesson_guidance(carried_context['reviewed_run_lessons'])
         if 'reviewed_annotation_research' in carried_context:
             from pipeline.annotation_reference_carry import CARRIED_RESEARCH_GUIDANCE
             prompt += '\n\n' + CARRIED_RESEARCH_GUIDANCE

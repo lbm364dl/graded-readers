@@ -104,17 +104,21 @@ def validate_run_lessons(run_dir,envelope,*,candidate,source_text,language,repre
  validate_run_lesson_context_fields(context)
  if envelope is None:return {'packet':{},'references':{},'lessons':[]}
  try:
-  if (not isinstance(envelope,dict) or set(envelope)!={'version','language','representation','position','lessons'} or type(envelope['version']) is not int or envelope['version']!=1 or envelope['language']!=language or envelope['representation']!=representation or not isinstance(envelope['lessons'],list) or not 1<=len(envelope['lessons'])<=3):raise RunLessonError('Unsupported run lesson envelope or language')
+  if (not isinstance(envelope,dict) or set(envelope)!={'version','language','representation','position','lessons'} or type(envelope['version']) is not int or envelope['version'] not in (1,2) or envelope['language']!=language or envelope['representation']!=representation or not isinstance(envelope['lessons'],list) or not 1<=len(envelope['lessons'])<=3):raise RunLessonError('Unsupported run lesson envelope or language')
   position=_position(context,source_text)
   if position is None or envelope['position']!=position:raise RunLessonError('Run lesson source position changed')
   references={};lessons=[];seen=set()
   for row in envelope['lessons']:
-   if not isinstance(row,dict) or set(row)!={'source_run_relpath','import_receipt','expected_context'}:raise RunLessonError('Malformed run lesson descriptor')
+   if not isinstance(row,dict) or set(row) not in ({'source_run_relpath','import_receipt','expected_context'}, {'source_run_relpath','import_receipt','expected_context','application'}) or ('application' in row and envelope['version']!=2):raise RunLessonError('Malformed run lesson descriptor')
    expected,proof=_authenticate(row,run_dir)
    if expected['language']!=language:raise RunLessonError('Run lesson source language differs')
-   base,target=_source_scope(expected);path=target['target_path']
-   if target['source_text']!=source_text or expected['chapter']['text'][target['source_start']:target['source_start']+len(source_text)]!=source_text:raise RunLessonError('Run lesson original source differs')
-   expected_position=_position({'chapter_text':expected['chapter']['text'],'source_start':target['source_start']},source_text)
+   if 'application' in row:
+    base,target=_application_scope(row['application'],source_text,language,representation)
+   else:
+    base,target=_source_scope(expected)
+   path=target['target_path']
+   if 'application' not in row and (target['source_text']!=source_text or expected['chapter']['text'][target['source_start']:target['source_start']+len(source_text)]!=source_text):raise RunLessonError('Run lesson original source differs')
+   expected_position=(_position({'chapter_text':expected['chapter']['text'],'source_start':target['source_start']},source_text) if 'application' not in row else position)
    if any(position.get(key)!=value for key,value in expected_position.items()):raise RunLessonError('Run lesson original parent or offset differs')
    if _surfaces(base)!=_surfaces(candidate) or ''.join(_surfaces(candidate))!=source_text:raise RunLessonError('Run lesson source/tap geometry changed')
    old_id=resolve_pointer(base,path);new_id=resolve_pointer(candidate,path);lesson_id=row['import_receipt']['lesson_id']
@@ -190,3 +194,109 @@ def enrich_run_lesson_context(run_dir,*,candidate,source_text,language,represent
  bound=resolve_run_lesson_context(run_dir,candidate=candidate,source_text=source_text,language=language,representation=representation,context=context,current_review=current_review)
  if not bound['packet']:return context,{}
  return {**context,RUN_LESSON_FIELD:bound['packet'],'reviewed_run_grammar':bound['lessons']},bound['references']
+
+
+RUN_KNOWLEDGE_GUIDANCE='These independently reviewed standalone run lessons retain their original writer/critic source provenance. Their explicit current application scope is a proposed use at this source position, not a prior occurrence approval or published registry entry. Independently assess the lesson pattern, formation and function against this complete form, current targets and every finding. Reusing dictionary knowledge does not rebind original occurrence facts. Preserve uncertainty, source and tap geometry.'
+
+def run_lesson_guidance(envelope):
+ return RUN_KNOWLEDGE_GUIDANCE if isinstance(envelope,dict) and envelope.get('version')==2 else RUN_LESSON_GUIDANCE
+
+def _application_scope(application,source_text,language,representation):
+ if not isinstance(application,dict) or set(application)!={'candidate','source_text','target_path'} or application['source_text']!=source_text:raise RunLessonError('Malformed or stale current lesson application')
+ base=application['candidate'];path=application['target_path']
+ if ''.join(_surfaces(base))!=source_text:raise RunLessonError('Application source/tap geometry differs')
+ if language=='ko' and representation=='korean-flat':
+  if not re.fullmatch(r'/segments/\d+/form_steps/\d+/grammar_entry_ids/\d+',path):raise RunLessonError('Application requires exact Korean stage identity')
+  _masked_owner(base,path)
+  index=int(path.split('/')[2]);target={'target_path':path,'segment_index':index,'surface':_surfaces(base)[index],'source_text':source_text}
+ elif (language,representation) in (('zh','chinese-annotation'),('zh','chinese-fixed'),('ja','japanese-annotation')):
+  if not re.fullmatch(r'/grammar_overlays/\d+/grammar_candidate_key',path):raise RunLessonError('Application requires exact C/J overlay identity')
+  index=int(path.split('/')[2]);overlay=base['grammar_overlays'][index];start=overlay['start'];end=overlay['end'];surface=overlay.get('surface',overlay.get('text'))
+  if type(start) is not int or type(end) is not int or not 0<=start<end<=len(source_text) or source_text[start:end]!=surface:raise RunLessonError('Application overlay source interval differs')
+  target={'target_path':path,'overlay_index':index,'start':start,'end':end,'surface':surface,'source_text':source_text}
+ else:raise RunLessonError('Unsupported current lesson application representation')
+ if not isinstance(resolve_pointer(base,path),str) or not resolve_pointer(base,path):raise RunLessonError('Application identity must be explicit')
+ return base,target
+
+def make_reusable_run_lesson_envelope(run_dir,*,source_descriptor,candidate,source_text,target_path,language,representation,context):
+ """Explicit coordinator selection; no source scan or inferred applicability."""
+ row=deepcopy(source_descriptor)
+ if not isinstance(row,dict) or set(row)!={'source_run_relpath','import_receipt','expected_context'}:raise RunLessonError('Reusable knowledge requires unchanged original descriptor')
+ expected,_proof=_authenticate(row,run_dir)
+ if expected['language']!=language:raise RunLessonError('Reusable lesson language differs')
+ application={'candidate':deepcopy(candidate),'source_text':source_text,'target_path':target_path}
+ _application_scope(application,source_text,language,representation)
+ position=_position(context,source_text)
+ if position is None or set(position)!={'chunk_index','source_start','source_text_digest','parent_text_digest'}:raise RunLessonError('Reusable lesson requires complete current source position')
+ row['application']=application
+ envelope={'version':2,'language':language,'representation':representation,'position':position,'lessons':[row]}
+ validate_run_lessons(run_dir,envelope,candidate=candidate,source_text=source_text,language=language,representation=representation,context=context)
+ return envelope
+
+
+def _application_index_path(run_dir,language,representation,context,source_text,create=False):
+ from pipeline.worker_paths import checked_directory
+ root=checked_directory(Path(run_dir).absolute(),create=create)
+ position=_position(context,source_text)
+ if position is None:raise RunLessonError('Application index requires complete source position')
+ directory=root/'annotation-run-applications'
+ if create:checked_directory(directory,create=True)
+ key=digest({'language':language,'representation':representation,'position':position})
+ return directory/(key+'.json')
+
+def load_run_lesson_applications(run_dir,*,candidate,source_text,language,representation,context):
+ import json
+ from pipeline.worker_paths import checked_regular_file
+ if not (Path(run_dir).absolute()/'annotation-run-applications').exists():return None
+ path=_application_index_path(run_dir,language,representation,context,source_text)
+ if not path.exists():return None
+ document=json.loads(checked_regular_file(path).read_text())
+ if set(document)!={'version','packet','digest'} or document['version']!=1 or document['digest']!=digest(document['packet']):raise RunLessonError('Run application index changed')
+ return validate_run_lessons(run_dir,document['packet'],candidate=candidate,source_text=source_text,language=language,representation=representation,context=context)['packet']
+
+def register_run_lesson_application(run_dir,envelope,*,candidate,source_text,language,representation,context):
+ """Persist explicit authenticated selection, never infer a linguistic match.
+ Immutable worker inputs retain selected envelopes; publication does not consult
+ this mutable index. Different source positions have independent locked files.
+ """
+ import os,stat,fcntl,json
+ from pipeline.worker_paths import atomic_write_managed
+ if not isinstance(envelope,dict) or envelope.get('version')!=2:raise RunLessonError('Application registration requires v2 envelope')
+ bound=validate_run_lessons(run_dir,envelope,candidate=candidate,source_text=source_text,language=language,representation=representation,context=context)
+ path=_application_index_path(run_dir,language,representation,context,source_text,create=True)
+ fd=os.open(str(path.with_suffix('.lock')),os.O_CREAT|os.O_RDWR|os.O_NOFOLLOW,0o600)
+ try:
+  info=os.fstat(fd)
+  if not stat.S_ISREG(info.st_mode) or info.st_nlink!=1:raise RunLessonError('Application lock must be single-link regular file')
+  fcntl.flock(fd,fcntl.LOCK_EX)
+  previous=load_run_lesson_applications(run_dir,candidate=candidate,source_text=source_text,language=language,representation=representation,context=context)
+  packet=deepcopy(bound['packet'])
+  if previous:
+   from pipeline.annotation_run_lesson_callers import _source_key
+   keys={_source_key(row) for row in packet['lessons']}
+   packet['lessons'] += [row for row in previous['lessons'] if _source_key(row) not in keys]
+   validate_run_lessons(run_dir,packet,candidate=candidate,source_text=source_text,language=language,representation=representation,context=context)
+  document={'version':1,'packet':packet,'digest':digest(packet)}
+  atomic_write_managed(path.parent,path.name,(json.dumps(document,ensure_ascii=False,indent=2)+'\n').encode())
+  return packet
+ finally:os.close(fd)
+
+
+def authenticated_run_lesson_catalog(run_dir,source_descriptors,*,language):
+ """Explicit reusable dictionary selection input, without occurrence applicability.
+ A coordinator may expose this catalog to a selector; selected uses still require
+ make/register application plus fresh annotation review. Not registry promotion.
+ """
+ if language not in ('ko','zh','ja') or not isinstance(source_descriptors,list) or not 1<=len(source_descriptors)<=3:raise RunLessonError('Invalid standalone run catalog')
+ rows=[];lessons=[];seen={}
+ from pipeline.annotation_run_lesson_callers import _source_key
+ for row in source_descriptors:
+  if not isinstance(row,dict) or set(row)!={'source_run_relpath','import_receipt','expected_context'}:raise RunLessonError('Catalog requires original authenticated dictionary descriptors')
+  expected,proof=_authenticate(row,run_dir)
+  if expected['language']!=language:raise RunLessonError('Catalog source language differs')
+  ref=next(iter(proof['references'].values()));lesson={key:deepcopy(value) for key,value in ref['content'].items() if key not in ('_annotation_research_fact','issue_ids')};identity=lesson['id'];key=_source_key(row)
+  if identity in seen:
+   if seen[identity]!=key:raise RunLessonError('Catalog has conflicting independent source pairs for same identity')
+   continue
+  seen[identity]=key;rows.append(deepcopy(row));lessons.append(lesson)
+ return {'version':1,'language':language,'sources':rows,'lessons':lessons}

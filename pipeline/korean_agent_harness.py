@@ -1677,7 +1677,7 @@ class KoreanHarness:
                 if self.annotation_batch_characters:
                     assembly['batch_characters'] = self.annotation_batch_characters
                 from pipeline.annotation_dictionary_handoff import collect_korean_handoff, replay_handoff, GUIDANCE
-                handoff = collect_korean_handoff(self.run_dir, values, texts, prose['text'], self.grammar)
+                handoff = collect_korean_handoff(self.run_dir, values, texts, prose['text'], self.grammar, chunk_proofs=chunk_reviews)
                 reviewed_run_grammar = replay_handoff(self.run_dir, handoff, language='ko',
                     chapter_text=prose['text'], required_ids={link['entry_id'] for link in combined['grammar_links']}, published=self.grammar)
                 if handoff:

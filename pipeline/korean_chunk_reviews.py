@@ -86,8 +86,8 @@ make a prose finding fit the schema.
         from pipeline.annotation_reference_carry import CARRIED_RESEARCH_GUIDANCE
         instructions += '\n' + CARRIED_RESEARCH_GUIDANCE
     if context.get('reviewed_run_lessons'):
-        from pipeline.annotation_run_lessons import RUN_LESSON_GUIDANCE
-        instructions += '\n\n' + RUN_LESSON_GUIDANCE
+        from pipeline.annotation_run_lessons import run_lesson_guidance
+        instructions += '\n\n' + run_lesson_guidance(context['reviewed_run_lessons'])
     identity = digest({'inputs': inputs, 'instructions': policy + instructions})
     return inputs, instructions, identity
 

@@ -30,7 +30,7 @@ def _source_key(row):
     receipt = {key: value for key, value in row['import_receipt'].items()
                if key not in {'issue_ids', 'references', 'reference_digest', 'evidence_digest'}}
     return digest({'source_run_relpath': row['source_run_relpath'],
-                   'expected_context': row['expected_context'], 'receipt': receipt})
+                   'expected_context': row['expected_context'], 'receipt': receipt, **({'application':row['application']} if 'application' in row else {})})
 
 
 def _envelope(context):
@@ -63,6 +63,9 @@ def _current_packets(run_dir, *, candidate, source_text, language, representatio
     registered = load_run_lessons(run_dir, context=clean, **kwargs)
     if registered is not None:
         packets.append(validate_run_lessons(run_dir, registered, context=clean, **kwargs)['packet'])
+    from pipeline.annotation_run_lessons import load_run_lesson_applications
+    application=load_run_lesson_applications(run_dir,context=clean,**kwargs)
+    if application is not None:packets.append(application)
     return packets, clean, kwargs
 
 
@@ -78,7 +81,7 @@ def resolve_run_lesson_context(run_dir, *, candidate, source_text, language,
         if 'reviewed_run_grammar' in context or 'reviewed_run_grammar' in context.get('chunk_review_context', {}):
             raise RunLessonError('Run grammar content requires its authenticated lesson envelope')
         return {'packet': {}, 'references': {}, 'lessons': []}
-    combined = deepcopy(packets[0]);combined['lessons'] = []
+    combined = deepcopy(packets[0]);combined['version']=max(packet['version'] for packet in packets);combined['lessons'] = []
     seen = set()
     for packet in packets:
         for row in packet['lessons']:

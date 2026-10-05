@@ -15,17 +15,22 @@ class DictionaryHandoffError(ValueError): pass
 
 def replay_handoff(run_dir, handoff, *, language, chapter_text, required_ids, published):
     if handoff is None: return []
-    if (not isinstance(handoff, dict) or set(handoff) != {'version','language','chapter_digest','sources','digest'}
-        or type(handoff['version']) is not int or handoff['version'] != 1
+    if (not isinstance(handoff, dict) or set(handoff) != ({'version','language','chapter_digest','sources','digest','applications'} if handoff.get('version')==2 else {'version','language','chapter_digest','sources','digest'})
+        or type(handoff['version']) is not int or handoff['version'] not in (1,2)
         or handoff['language'] != language or handoff['chapter_digest'] != digest(chapter_text)
         or handoff['digest'] != digest({k:v for k,v in handoff.items() if k != 'digest'})
         or not isinstance(handoff['sources'],list) or not 1 <= len(handoff['sources']) <= 3):
         raise DictionaryHandoffError('Reviewed dictionary handoff scope or digest changed')
+    if handoff['version']==2:
+        _validate_applications(run_dir,handoff['applications'],language,chapter_text)
+        application_sources={_origin_key(row) for packet in handoff['applications'] for row in packet['lessons']}
+        if any(_origin_key(row) not in application_sources for row in handoff['sources']):
+            raise DictionaryHandoffError('Reusable dictionary source lacks authenticated current application')
     result=[];seen=set()
     for row in handoff['sources']:
         try: expected, proof = _authenticate(row, Path(run_dir))
         except ValueError as error: raise DictionaryHandoffError('Imported dictionary source does not authenticate') from error
-        if expected.get('language') != language or expected.get('chapter',{}).get('text') != chapter_text:
+        if expected.get('language') != language or (handoff['version']==1 and expected.get('chapter',{}).get('text') != chapter_text):
             raise DictionaryHandoffError('Imported dictionary source belongs to another chapter or language')
         lesson=next(iter(proof['references'].values()))['content']
         entry={k:deepcopy(v) for k,v in lesson.items() if k not in {'_annotation_research_fact','issue_ids'}}
@@ -38,6 +43,8 @@ def replay_handoff(run_dir, handoff, *, language, chapter_text, required_ids, pu
 
 def make_handoff(run_dir, packets, *, language, chapter_text, required_ids, published):
     rows=[];seen=set()
+    applications=[deepcopy(packet) for packet in packets if packet.get('version')==2]
+    if applications:_validate_applications(run_dir,applications,language,chapter_text)
     for packet in packets:
         for row in packet.get('lessons',[]):
             identity=row['import_receipt']['lesson_id']
@@ -50,17 +57,19 @@ def make_handoff(run_dir, packets, *, language, chapter_text, required_ids, publ
                     raise DictionaryHandoffError('Reviewed run lesson conflicts with published entry; explicit registry revision required')
                 continue
             # Exactly the same receipt may be supplied by multiple authenticated inputs.
-            key=digest(row)
-            if key not in seen: rows.append(deepcopy(row));seen.add(key)
+            origin={key:deepcopy(value) for key,value in row.items() if key!='application'}
+            key=_origin_key(origin) if applications else digest(origin)
+            if key not in seen: rows.append(origin);seen.add(key)
     if not rows:return None
-    body={'version':1,'language':language,'chapter_digest':digest(chapter_text),'sources':rows}
+    body={'version':2 if applications else 1,'language':language,'chapter_digest':digest(chapter_text),'sources':rows}
+    if applications:body['applications']=applications
     handoff={**body,'digest':digest(body)}
     replay_handoff(run_dir,handoff,language=language,chapter_text=chapter_text,
                    required_ids=required_ids,published=published)
     return handoff
 
 
-def collect_korean_handoff(run_dir, chunks, texts, chapter_text, published):
+def collect_korean_handoff(run_dir, chunks, texts, chapter_text, published, *, chunk_proofs=None):
     """Select authenticated current run sources at exact assembled chunk positions."""
     from pipeline.annotation_run_lesson_callers import resolve_run_lesson_context
     if len(chunks) != len(texts) or ''.join(texts) != chapter_text:
@@ -69,8 +78,9 @@ def collect_korean_handoff(run_dir, chunks, texts, chapter_text, published):
     for index,(candidate,text) in enumerate(zip(chunks,texts)):
         position={'chunk_index':index,'source_text_digest':digest(text),
                   'parent_text_digest':digest(chapter_text),'source_start':offset}
+        explicit=_verified_application_packet(run_dir,chunk_proofs[index],candidate,text,chapter_text,offset) if chunk_proofs else None
         bound=resolve_run_lesson_context(run_dir,candidate=candidate,source_text=text,language='ko',
-            representation='korean-flat',context={'annotation_source_position':position})
+            representation='korean-flat',context={'annotation_source_position':position},envelope=explicit)
         if bound['packet']:packets.append(bound['packet'])
         offset+=len(text)
     required={row['entry_id'] for chunk in chunks for row in chunk['grammar_links']}
@@ -119,7 +129,7 @@ def handoff_after_annotation_stage(run_dir, evidence, annotation, *, chapter_tex
         if meta.get(FIELD) is not None:raise DictionaryHandoffError('Dictionary handoff lacks source chunk lineage')
         return None
     from pipeline.annotation_research import _reviewed_lesson_source_manifest_path
-    if meta.get(FIELD) is None and not _reviewed_lesson_source_manifest_path(Path(run_dir),create=False).exists():
+    if meta.get(FIELD) is None and not _reviewed_lesson_source_manifest_path(Path(run_dir),create=False).exists() and not any(_proof_has_application(run_dir,proof) for proof in meta.get('chunk_reviews',[])):
         return None
     if meta.get('return_code') != 0 or read(directory/'result.json') != annotation:
         raise DictionaryHandoffError('Accepted annotation assembly changed')
@@ -160,8 +170,43 @@ def handoff_after_annotation_stage(run_dir, evidence, annotation, *, chapter_tex
             if target['source_start']==offset and target['source_text']==text:
                 explicit.append(row)
         old_packet={'version':1,'language':'ko','representation':'korean-flat','position':position,'lessons':explicit} if explicit else None
+        current_packet=_verified_application_packet(run_dir,meta['chunk_reviews'][index],candidate,text,chapter_text,offset) if meta.get('chunk_reviews') else None
+        if current_packet and current_packet.get('version')==2:old_packet=current_packet
         bound=resolve_run_lesson_context(run_dir,candidate=candidate,source_text=text,language='ko',representation='korean-flat',
             context={'annotation_source_position':position},envelope=old_packet)
         if bound['packet']:packets.append(bound['packet'])
         offset+=len(text)
     return make_handoff(run_dir,packets,language='ko',chapter_text=chapter_text,required_ids=required,published=published)
+
+
+def _origin_key(row):
+    from pipeline.annotation_run_lesson_callers import _source_key
+    return _source_key({key:value for key,value in row.items() if key!='application'})
+
+def _validate_applications(run_dir,packets,language,chapter_text):
+    from pipeline.annotation_run_lessons import validate_run_lessons
+    if not isinstance(packets,list) or not packets:raise DictionaryHandoffError('Missing reusable lesson application')
+    for packet in packets:
+        if not isinstance(packet,dict) or packet.get('version')!=2:raise DictionaryHandoffError('Invalid reusable lesson application version')
+        position=packet.get('position',{});offset=position.get('source_start')
+        if type(offset) is not int or position.get('parent_text_digest')!=digest(chapter_text):raise DictionaryHandoffError('Reusable application parent changed')
+        for row in packet.get('lessons',[]):
+            application=row.get('application')
+            if application is None:raise DictionaryHandoffError('Dictionary v2 application must be explicit')
+            source=application['source_text']
+            if chapter_text[offset:offset+len(source)]!=source:raise DictionaryHandoffError('Reusable application source position changed')
+            validate_run_lessons(run_dir,packet,candidate=application['candidate'],source_text=source,language=language,representation=packet['representation'],context={'annotation_source_position':position,'chapter_text':chapter_text,'source_start':offset})
+
+def _proof_has_application(run_dir,proof):
+    from pipeline.korean_agent_harness import read
+    normal=proof.get('normal_review',proof);job=normal.get('job')
+    if not isinstance(job,str) or Path(job).name!=job:raise DictionaryHandoffError('Invalid application review job')
+    packet=read(Path(run_dir)/'agents'/job/'review-input.json').get('context',{}).get('reviewed_run_lessons')
+    return isinstance(packet,dict) and packet.get('version')==2
+
+def _verified_application_packet(run_dir,proof,candidate,text,parent,offset):
+    from pipeline.korean_chunk_reviews import verify_chunk_review
+    from pipeline.korean_agent_harness import read
+    verify_chunk_review(Path(run_dir),proof,annotation=candidate,text=text,chapter_text=parent,source_start=offset,allow_adjudicated=True)
+    normal=proof.get('normal_review',proof)
+    return read(Path(run_dir)/'agents'/normal['job']/'review-input.json').get('context',{}).get('reviewed_run_lessons')

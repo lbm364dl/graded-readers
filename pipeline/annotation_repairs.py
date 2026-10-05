@@ -353,10 +353,10 @@ async def repair_annotation(
             source_text=context['chunk_text'], language=language, representation=representation, context=context)
         context = {**context, 'carried_research_guidance': CARRIED_RESEARCH_GUIDANCE}
     if isinstance(context, dict) and context.get('reviewed_run_lessons'):
-        from pipeline.annotation_run_lessons import validate_run_lessons, RUN_LESSON_GUIDANCE
+        from pipeline.annotation_run_lessons import validate_run_lessons, run_lesson_guidance
         bound_run_lessons = validate_run_lessons(run_dir, context['reviewed_run_lessons'], candidate=candidate,
             source_text=context.get('chunk_text'), language=language, representation=representation, context=context)
-        context = {**context, 'reviewed_run_grammar': bound_run_lessons['lessons'], 'reviewed_run_lesson_guidance': RUN_LESSON_GUIDANCE,
+        context = {**context, 'reviewed_run_grammar': bound_run_lessons['lessons'], 'reviewed_run_lesson_guidance': run_lesson_guidance(context['reviewed_run_lessons']),
             'annotation_run_lesson_validation': {'run_dir': str(run_dir.resolve()), 'candidate': candidate,
                 'source_text': context.get('chunk_text'), 'language': language, 'representation': representation,
                 'envelope': bound_run_lessons['packet'], 'lessons': bound_run_lessons['lessons'], 'context': context}}
