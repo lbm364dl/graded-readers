@@ -65,6 +65,9 @@ class ResearchBoundRunner:
   self.contracts.append({**contract,'meta_digest':digest(meta),'result_digest':digest(raw),'result':raw})
   return value
 
+from pipeline.receipt_replay_session import invocation
+
+@invocation
 def validate_submission(output,context):
  if 'dictionary_editorial_criteria' in context:
   from pipeline.dictionary_editorial_criteria import validate
@@ -99,6 +102,7 @@ async def revise(packet,run_dir,*,runner,draft=None,editorial_criteria="current"
  editorial.save(Path(run_dir)/'research-bound-revision-evidence.json',evidence)
  return result,evidence
 
+@invocation
 def replay(run_dir,evidence):
  if evidence.get('version')!=1 or evidence.get('purpose')!='reviewed_dictionary_revision_not_promotion' or evidence['digest']!=digest({k:v for k,v in evidence.items() if k!='digest'}):raise ValueError('Dictionary revision evidence changed')
  verify_handoff(evidence['handoff'],historical=True)

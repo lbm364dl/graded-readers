@@ -47,6 +47,9 @@ def source_descriptor():
  path=SOURCE/'run-output/evidence.json'
  return {'provider':'published-dictionary-claim-revision-v2','evidence_relpath':str(path.relative_to(ROOT)),'evidence_sha256':_sha(path),'driver_sha256':SOURCE_DRIVER_SHA}
 
+from pipeline.receipt_replay_session import memoized_provenance
+
+@memoized_provenance
 def _verify_source(descriptor,*,historical_packet=None):
  if descriptor.get('provider')!='published-dictionary-claim-revision-v2' or descriptor.get('driver_sha256')!=SOURCE_DRIVER_SHA:raise ValueError('Unknown research source protocol')
  path=ROOT/descriptor['evidence_relpath']
