@@ -83,7 +83,7 @@ async def test_new_guidance_reaches_actual_shared_plan_and_patch_only(tmp_path,l
     for _,prompt,_,effort,options in runner.calls:
         assert effort=='low' and repairs.RETAINED_STAGE_LINK_GUIDANCE in prompt
         assert options['workspace_context']['repair_explanation_guidance_version']==4
-        assert options['workspace_context']['repair_dependency_guidance_version']==3
+        assert options['workspace_context']['repair_dependency_guidance_version']==4
     assert 'Related issues may share the same necessary scalar/list identity target' in repairs.RETAINED_STAGE_LINK_GUIDANCE
     assert 'actual step removal or occurrence-shape change' in repairs.DEPENDENCY_CLOSURE_GUIDANCE
 

@@ -1,8 +1,10 @@
 """Structural support dependencies; these never assert a linguistic defect."""
 
 
-def repair_dependency_constraints(candidate, representation):
-    packet = {'version': 1, 'representation': representation, 'dependencies': []}
+def repair_dependency_constraints(candidate, representation, *, version=2):
+    if type(version) is not int or version not in (1, 2):
+        raise ValueError('Unknown repair dependency packet version')
+    packet = {'version': version, 'representation': representation, 'dependencies': []}
     # Chinese has no form-stage grammar identity and Japanese form stages do
     # not carry grammar IDs. Their overlays have independent construction IDs;
     # no Korean stage/link equality is inferred for those actual schemas.
@@ -28,6 +30,47 @@ def repair_dependency_constraints(candidate, representation):
             identity = identities[0]
             direct = []
             complete = []
+            alternatives = []
+            if version == 2:
+                for other_path, other_anchor, other in links:
+                    if other_anchor != owner:
+                        continue
+                    meaning = other.get('display_meaning_en')
+                    if not isinstance(meaning, str) or not meaning.strip():
+                        continue
+                    if representation == 'korean-flat':
+                        last = other.get('display_end_segment_index')
+                        if type(last) is not int or not owner <= last < len(segments):
+                            continue
+                        form = ''.join(row['text'] for row in segments[owner:last + 1])
+                        if other.get('display_form') != form:
+                            continue
+                        source_range = [sum(len(row['text']) for row in segments[:owner]), sum(len(row['text']) for row in segments[:last + 1])]
+                    else:
+                        start, end = other.get('source_start'), other.get('source_end')
+                        if type(start) is not int or type(end) is not int or not 0 <= start < end:
+                            continue
+                        if not start <= segment['source_start'] < segment['source_end'] <= end:
+                            continue
+                        # V4 intentionally has no copied source text. Expose its
+                        # exact recorded tap-aligned range, never invent a form.
+                        cursor = 0
+                        coherent = True
+                        starts, ends = set(), set()
+                        for source_row in segments:
+                            left,right = source_row.get('source_start'),source_row.get('source_end')
+                            if type(left) is not int or type(right) is not int or left != cursor or right <= left:
+                                coherent = False; break
+                            starts.add(left);ends.add(right);cursor=right
+                        if not coherent or start not in starts or end not in ends or end > cursor:
+                            continue
+                        form = None
+                        source_range = [start,end]
+                    if not isinstance(other.get('entry_id'), str) or not other['entry_id']:
+                        continue
+                    alternatives.append({'path':other_path, 'identity_path':other_path+'/entry_id',
+                        'entry_id':other['entry_id'], 'source_range':source_range, 'source_form':form,
+                        'display_meaning_en':meaning})
             for link_path, anchor, link in links:
                 if link.get('entry_id') != identity:
                     continue
@@ -47,7 +90,7 @@ def repair_dependency_constraints(candidate, representation):
                 elif is_complete:
                     complete.append(link_path)
             if direct:
-                packet['dependencies'].append({
+                dependency = {
                     'identity_path': f'/segments/{owner}/form_steps/{index}/grammar_entry_ids',
                     'owner_segment_index': owner, 'owner_surface': segment.get('text'),
                     'owner_source_range': [segment.get('source_start'), segment.get('source_end')]
@@ -57,7 +100,10 @@ def repair_dependency_constraints(candidate, representation):
                     'retained_stage_identity_paths': [f'/segments/{owner}/form_steps/{other}/grammar_entry_ids'
                         for other, row in enumerate(steps) if other != index
                         and identity in row.get('grammar_entry_ids', [])],
-                    'complete_occurrence_paths': complete})
+                    'complete_occurrence_paths': complete}
+                if version == 2:
+                    dependency['same_anchor_complete_occurrences'] = alternatives
+                packet['dependencies'].append(dependency)
     return packet
 
 
@@ -80,7 +126,8 @@ def _covers_link(target, path):
 
 
 def validate_plan_dependencies(plan, candidate, representation, constraints=None):
-    expected = repair_dependency_constraints(candidate, representation)
+    version = constraints.get('version') if isinstance(constraints, dict) else 2
+    expected = repair_dependency_constraints(candidate, representation, version=version)
     if constraints is not None and constraints != expected:
         raise ValueError('Repair dependency constraints differ from immutable candidate geometry')
     all_targets = [target for row in plan['issues'] for target in row['targets']]

@@ -42,4 +42,4 @@ def test_legacy_and_current_representation_contracts_are_distinct():
   assert r._construction_occurrence_contract(rep,occurrence_policy_version=1)==r._construction_occurrence_contract(rep,occurrence_policy_version=2)
   assert r._representation_structure_contract(rep) is None
  assert r.REPAIR_EXPLANATION_GUIDANCE_VERSION==4
- assert r.REPAIR_DEPENDENCY_GUIDANCE_VERSION==3
+ assert r.REPAIR_DEPENDENCY_GUIDANCE_VERSION==4
