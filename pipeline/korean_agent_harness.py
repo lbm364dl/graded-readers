@@ -1376,6 +1376,10 @@ class KoreanHarness:
                             from pipeline.annotation_repairs import repair_annotation
                             word_ids = {s['lexical_id'] for s in semantic_base['segments']}
                             grammar_ids = {link['entry_id'] for link in semantic_base['grammar_links']}
+                            from pipeline.annotation_lexical_references import lexical_review_references
+                            lexical_review_knowledge = lexical_review_references(used_ids=word_ids,
+                                headwords={s['lemma'] for s in semantic_base['segments'] if s['lexical_kind'] == 'vocabulary'},
+                                approved=self.words, catalog=self.catalog)
                             from pipeline.korean_lexical_research import reviewed_primary_sources, candidate_lexical_identities
                             selected_primary_sources = reviewed_primary_sources(candidate_lexical_identities(semantic_base))
                             from pipeline.annotation_run_lessons import enrich_run_lesson_context
@@ -1388,12 +1392,11 @@ class KoreanHarness:
                                         'number': self.number, 'plan': bound_plan,
                                         'level': self.level, 'source_id': source_id},
                                     'reviewed_source_context': reviewed_source_context,
-                                    'approved_words': [v for k, v in self.words.items() if k in word_ids],
+                                    'approved_words': lexical_review_knowledge['approved_words'],
                                     'approved_grammar': list(self.grammar.values()),
                                     'grammar_knowledge': korean_semantic_repair_grammar_knowledge(
                                         self.grammar, grammar_ids),
-                                    'lexical_candidates': [entry for entries in self.catalog.values()
-                                        for entry in entries if entry['id'] in word_ids],
+                                    'lexical_candidates': lexical_review_knowledge['lexical_candidates'],
                                     'reviewed_lexical_usage_evidence': reviewed_usages,
                                     **({'official_primary_sources': selected_primary_sources} if selected_primary_sources else {}),
                                     'linguistic_reference': read(LINGUISTIC_REFERENCE),
@@ -1506,14 +1509,17 @@ class KoreanHarness:
                                 local_previous, local_adjudication_context)
                         word_ids = {s['lexical_id'] for s in value['segments']}
                         grammar_ids = {link['entry_id'] for link in value['grammar_links']}
+                        from pipeline.annotation_lexical_references import lexical_review_references
+                        lexical_review_knowledge = lexical_review_references(used_ids=word_ids,
+                            headwords={s['lemma'] for s in value['segments'] if s['lexical_kind'] == 'vocabulary'},
+                            approved=self.words, catalog=self.catalog)
                         context = {'chapter_text': prose['text'], 'source_start': sum(map(len, texts[:index])),
                             'target_level': self.level, 'source_plan': bound_plan, 'lexical_plan': focus,
                             'reviewed_source_context': reviewed_source_context,
-                            'approved_words': [v for k, v in self.words.items() if k in word_ids],
+                            'approved_words': lexical_review_knowledge['approved_words'],
                             'approved_grammar': list(self.grammar.values()),
                             'draft_grammar_ids': sorted(grammar_ids - self.grammar.keys()),
-                            'lexical_candidates': [entry for entries in self.catalog.values()
-                                for entry in entries if entry['id'] in word_ids],
+                            'lexical_candidates': lexical_review_knowledge['lexical_candidates'],
                             'linguistic_reference': read(LINGUISTIC_REFERENCE),
                             'lexical_reference': read(LEXICAL_REFERENCE)}
                         from pipeline.korean_lexical_research import reviewed_primary_sources, candidate_lexical_identities
