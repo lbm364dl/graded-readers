@@ -262,6 +262,10 @@ def bounded_chunk_jobs(harness, *, phase="annotation", job_limit=None):
             with lock.open('a+') as handle:
                 fcntl.flock(handle,fcntl.LOCK_EX)
                 ledger=json.loads(checked_regular_file(path).read_text()) if path.exists() else {'version':2,'scope':scope,'contract':contract,'limit':limit,'requests':[]}
+                if ledger.get('protocol_recovery') is not None:
+                    from pipeline.annotation_admission_recovery import verify_protocol_recovery
+                    first_new={'job':request['job'],'prompt':request['prompt'],'schema':json.loads(request['schema']),'workspace_context':request['workspace_context']} if len(ledger['requests'])==1 else None
+                    verify_protocol_recovery(harness.run_dir,path.name,protocol_request=first_new)
                 # JSON stringifies integer map keys; compare canonical encoded scope.
                 if type(ledger.get('version')) is not int or ledger['version']!=2 or ledger.get('contract')!=contract or encode(ledger['scope'])!=encode(scope) or ledger['limit']!=limit:raise ValueError('Admission budget context changed')
                 key=digest(request)

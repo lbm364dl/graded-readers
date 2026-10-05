@@ -203,7 +203,7 @@ def check(path, candidate):
     for context in validation_contexts:
         reconciliation = context.get('lexical_request_reconciliation_validation')
         if reconciliation is not None:
-            from pipeline.lexical_request_reconciliation import authenticate_packet_origin, authenticate_archived_sources, check_result, check_review, authenticate_repair_base, apply_reconciliation_repair
+            from pipeline.lexical_request_reconciliation import authenticate_packet_origin, authenticate_archived_sources, check_result, check_review, authenticate_repair_base, apply_reconciliation_repair, repair_base_contract, digest as reconciliation_digest
             immutable = reconciliation['inputs']
             if any(input_values.get(key) != item for key, item in immutable.items()):
                 raise ValueError('Reconciliation immutable worker inputs changed')
@@ -214,6 +214,7 @@ def check(path, candidate):
             elif reconciliation['mode'] == 'repair':
                 prior = authenticate_repair_base(Path(reconciliation['origin_run_dir']), immutable)
                 expected_task = {'reconciliation_repair_base': prior['result'], 'reconciliation_repair_review': prior['review'], 'reconciliation_repair_targets': sorted({issue['request_index'] for issue in prior['review']['issues']})}
+                if repair_base_contract(immutable):expected_task['reconciliation_repair_expected_base_digest']=reconciliation_digest(prior['result'])
                 if any(input_values.get(key) != item for key, item in expected_task.items()):
                     raise ValueError('Reconciliation repair task inputs changed')
                 apply_reconciliation_repair(value, immutable, prior['result'], prior['review'])

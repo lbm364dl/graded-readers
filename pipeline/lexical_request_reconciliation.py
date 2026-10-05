@@ -68,6 +68,7 @@ def reviewed_primary_references(candidate,catalog,registry):
 
 
 def check_inputs(inputs):
+ if 'reconciliation_patch_base_policy_version' in inputs:repair_base_contract(inputs)
  if type(inputs.get('policy_version')) is not int or inputs['policy_version']!=VERSION:raise ValueError('Unsupported reconciliation input policy')
  if 'language' in inputs and (inputs['language'],inputs['representation']) not in {('ko','korean-flat'),('zh','chinese-annotation'),('ja','japanese-annotation')}:raise ValueError('Unsupported language/representation pair')
  source=inputs['source_text'];parent=inputs['parent_text'];pos=inputs['source_position']
@@ -351,6 +352,12 @@ def load_registered_reconciliation(origin_run_dir,descriptor,*,requests,source_t
 REPAIR_FIELDS=('disposition','catalog_id','headword','reading','kind','reason','citations')
 REPAIR_PATCH_SCHEMA={'type':'object','required':['policy_version','base_digest','edits'],'additionalProperties':False,'properties':{'policy_version':{'const':2},'base_digest':{'type':'string','pattern':'^[a-f0-9]{64}$'},'edits':{'type':'array','minItems':1,'items':{'type':'object','required':['request_index','fields'],'additionalProperties':False,'properties':{'request_index':{'type':'integer','minimum':0},'fields':{'type':'object','minProperties':1,'additionalProperties':False,'properties':{key:({'type':'array','items':{'type':'string'}} if key=='citations' else {'type':'string'}) for key in REPAIR_FIELDS}}}}}}}
 
+def repair_base_contract(inputs):
+ if 'reconciliation_patch_base_policy_version' not in inputs:return False
+ marker=inputs['reconciliation_patch_base_policy_version']
+ if type(marker) is not int or marker!=1:raise ValueError('Unknown reconciliation patch base policy')
+ return True
+
 def _repair_task_inputs(inputs):
  from pipeline.agent_harness import ROOT
  from pipeline.worker_paths import checked_directory,checked_regular_file
@@ -364,17 +371,23 @@ def _repair_task_inputs(inputs):
   value=json.loads(checked_regular_file(lane/'agents'/job/'result.json').read_text())
   if digest(value)!=descriptor[digest_key]:raise ValueError('Repair task source changed')
   values.append(value)
- return {'reconciliation_repair_base':values[0],'reconciliation_repair_review':values[1],'reconciliation_repair_targets':sorted({issue['request_index'] for issue in values[1]['issues']})}
+ task={'reconciliation_repair_base':values[0],'reconciliation_repair_review':values[1],'reconciliation_repair_targets':sorted({issue['request_index'] for issue in values[1]['issues']})}
+ if repair_base_contract(inputs):task['reconciliation_repair_expected_base_digest']=digest(values[0])
+ return task
 
 def reconciliation_request(inputs,stage,*,origin_run_dir,result=None):
  """Canonical fresh request builder shared by producers and receipt replay."""
  if stage not in ('resolver','review','repair'):raise ValueError('Unknown reconciliation worker stage')
+ repair_base_contract(inputs)
  if stage=='repair' and inputs.get('reconciliation_instruction_policy_version')!=2:raise ValueError('Repair requires explicit instruction policy2')
  payload=inputs if result is None else {**inputs,'reconciliation_result':result}
  if stage=='repair':payload={**inputs,**_repair_task_inputs(inputs)}
  schema=REPAIR_PATCH_SCHEMA if stage=='repair' else RESULT_SCHEMA if stage=='resolver' else REVIEW_SCHEMA
+ if stage=='repair' and repair_base_contract(inputs):
+  schema=copy.deepcopy(schema);schema['properties']['base_digest']={'const':payload['reconciliation_repair_expected_base_digest'],'description':'Digest of the entire immutable original reconciliation RESULT, not its inputs_digest.'}
  guidance=_worker_guidance(inputs,'review' if stage=='review' else 'resolver')
  if stage=='repair':guidance+='\nRead the organized reconciliation_repair_base, reconciliation_repair_review and reconciliation_repair_targets fields before editing. Submit only the exact base-digest scoped patch. Change lookup fields only for independently rejected request indices. Preserve all other decisions and all source intervals. Unresolved context is not additional repair authority. Do not regenerate the full reconciliation result.'
+ if stage=='repair' and repair_base_contract(inputs):guidance+='\nCopy reconciliation_repair_expected_base_digest exactly into patch.base_digest. It hashes the entire original result object. The base result inputs_digest identifies its input packet and is NOT the patch base digest. Do not substitute the current input digest or a digest of one decision.'
  validation={'mode':stage,'inputs':inputs,'origin_run_dir':str(origin_run_dir)}
  if result is not None:validation['result']=result
  return {'job':'lexical-request-'+stage+'-'+digest(payload),'prompt':guidance+'\nINPUT:\n'+json.dumps(payload,ensure_ascii=False),'schema':schema,'workspace_context':{**payload,'lexical_request_reconciliation_validation':validation}}
@@ -396,7 +409,8 @@ def authenticate_repair_base(origin_run_dir,inputs):
  if type(old_version) is not int or old_version not in (1,2):raise ValueError('Unknown prior instruction policy')
  if type(inputs.get('reconciliation_instruction_policy_version')) is not int or inputs['reconciliation_instruction_policy_version']!=2:raise ValueError('Repair requires explicit instruction policy2')
  old_common={key:value for key,value in old.items() if key!='reconciliation_instruction_policy_version'}
- current_common={key:value for key,value in inputs.items() if key not in ('reconciliation_instruction_policy_version','reconciliation_repair')}
+ repair_base_contract(inputs)
+ current_common={key:value for key,value in inputs.items() if key not in ('reconciliation_instruction_policy_version','reconciliation_repair','reconciliation_patch_base_policy_version')}
  if current_common!=old_common:raise ValueError('Repair source or current contract changed')
  bound=verify_reconciliation_jobs(lane,old,origin_run_dir=origin_run_dir,resolver_job=descriptor['resolver_job'],review_job=descriptor['review_job'])
  if digest(bound['result'])!=descriptor['result_digest'] or digest(bound['review'])!=descriptor['review_digest']:raise ValueError('Repair prior verdict changed')
@@ -404,6 +418,7 @@ def authenticate_repair_base(origin_run_dir,inputs):
  return bound
 
 def apply_reconciliation_repair(patch,inputs,base,review):
+ repair_base_contract(inputs)
  if type(inputs.get('reconciliation_instruction_policy_version')) is not int or inputs['reconciliation_instruction_policy_version']!=2:raise ValueError('Repair requires explicit instruction policy2')
  validate(patch,REPAIR_PATCH_SCHEMA)
  if type(patch['policy_version']) is not int or patch['policy_version']!=2:raise ValueError('Repair patch policy must be integer2')
@@ -436,7 +451,7 @@ def verify_reconciliation_repair_jobs(worker_run_dir,inputs,*,origin_run_dir,rep
  check_review(review,result,inputs)
  return {'result':result,'review':review,'patch':patch,'prior_result':prior['result'],'prior_review':prior['review'],'annotation_approved':False,'registry_promoted':False}
 
-def make_reconciliation_repair_inputs(worker_run_dir,*,origin_run_dir,resolver_job,review_job):
+def make_reconciliation_repair_inputs(worker_run_dir,*,origin_run_dir,resolver_job,review_job,patch_base_policy_version=None):
  from pathlib import Path
  from pipeline.agent_harness import ROOT
  from pipeline.worker_paths import checked_directory,checked_regular_file
@@ -446,4 +461,8 @@ def make_reconciliation_repair_inputs(worker_run_dir,*,origin_run_dir,resolver_j
  if bound['review']['approved'] or not bound['review']['issues']:raise ValueError('Repair lacks independently rejected authority')
  try:relative=lane.relative_to(Path(ROOT))
  except ValueError as error:raise ValueError('Repair source outside repository run evidence') from error
- return {**old,'reconciliation_instruction_policy_version':2,'reconciliation_repair':{'worker_run_relpath':str(relative),'inputs_sha256':hashlib.sha256(raw).hexdigest(),'resolver_job':resolver_job,'review_job':review_job,'result_digest':digest(bound['result']),'review_digest':digest(bound['review'])}}
+ result={**old,'reconciliation_instruction_policy_version':2,'reconciliation_repair':{'worker_run_relpath':str(relative),'inputs_sha256':hashlib.sha256(raw).hexdigest(),'resolver_job':resolver_job,'review_job':review_job,'result_digest':digest(bound['result']),'review_digest':digest(bound['review'])}}
+
+ if patch_base_policy_version is not None:
+  result['reconciliation_patch_base_policy_version']=patch_base_policy_version;repair_base_contract(result)
+ return result
