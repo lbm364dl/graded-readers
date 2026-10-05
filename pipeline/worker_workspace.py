@@ -170,7 +170,7 @@ def build(path, prompt, schema, *, context=None, submission_repair=None):
     put_json('INDEX.json', inventory)
     put_json('schema.json', schema)
     put_json('receipt.schema.json', RECEIPT_SCHEMA)
-    put_json('validation-context.json', [{k: v[k] for k in ('chunk_text', 'language', 'surfaces', 'annotation', 'annotation_validation', 'annotation_patch_validation', 'annotation_plan_validation', 'annotation_adjudication_validation', 'annotation_research_validation', 'annotation_research_claim_revision_validation', 'dictionary_research_revision_validation', 'dictionary_objection_accountability_validation', 'annotation_issue_targets_validation', 'annotation_run_lesson_validation', 'annotation_run_knowledge_selection_validation') if k in v} for v in contexts if isinstance(v, dict)])
+    put_json('validation-context.json', [{k: v[k] for k in ('chunk_text', 'language', 'surfaces', 'annotation', 'annotation_validation', 'annotation_patch_validation', 'annotation_plan_validation', 'annotation_adjudication_validation', 'annotation_research_validation', 'annotation_research_claim_revision_validation', 'lexical_request_reconciliation_validation', 'dictionary_research_revision_validation', 'dictionary_objection_accountability_validation', 'annotation_issue_targets_validation', 'annotation_run_lesson_validation', 'annotation_run_knowledge_selection_validation') if k in v} for v in contexts if isinstance(v, dict)])
     command = 'cd ' + shlex.quote(str(ROOT)) + ' && ' + shlex.quote(str(ROOT / '.venv/bin/python')) + ' -m pipeline.worker_workspace validate --workspace ' + shlex.quote(str(path.resolve())) + ' --candidate ' + shlex.quote(str(path.resolve() / 'candidate.json'))
     put('README.txt', 'Read TASK.txt and INDEX.json. Repository root: ' + str(ROOT) + '. Repository paths in the task are relative to that root; input/reference paths in INDEX.json are relative to this workspace. Inspect relevant data and full reference entries as needed. Use your tools freely to investigate and verify. Save candidate.json and check it with:\n' + command + '\nThe local check is feedback, not independent publication approval. Submit only {"candidate_path":"candidate.json"}; do not reproduce the file contents.\n')
     _remove_obsolete_managed_inputs(path, previous_manifest, files)
@@ -201,6 +201,22 @@ def check(path, candidate):
         for row in json.loads(index_path.read_text(encoding='utf-8')):
             input_values[row['field']] = json.loads((path / row['path']).read_text(encoding='utf-8'))
     for context in validation_contexts:
+        reconciliation = context.get('lexical_request_reconciliation_validation')
+        if reconciliation is not None:
+            from pipeline.lexical_request_reconciliation import authenticate_packet_origin, authenticate_archived_sources, check_result, check_review
+            immutable = reconciliation['inputs']
+            if any(input_values.get(key) != item for key, item in immutable.items()):
+                raise ValueError('Reconciliation immutable worker inputs changed')
+            authenticate_packet_origin(Path(reconciliation['origin_run_dir']), immutable)
+            authenticate_archived_sources(immutable)
+            if reconciliation['mode'] == 'resolver':
+                check_result(value, immutable)
+            elif reconciliation['mode'] == 'review':
+                if input_values.get('reconciliation_result') != reconciliation['result']:
+                    raise ValueError('Reconciliation result input changed')
+                check_review(value, reconciliation['result'], immutable)
+            else:
+                raise ValueError('Unknown reconciliation stage')
         lesson_context = context.get('annotation_run_lesson_validation')
         if lesson_context is not None:
             from pipeline.annotation_run_lessons import validate_run_lessons, RunLessonError
@@ -457,7 +473,8 @@ def submit(path, receipt):
     run_lesson_validation = any(context.get('annotation_run_lesson_validation') is not None
                                 for context in validation_contexts)
     selection_validation=any(context.get('annotation_run_knowledge_selection_validation') is not None for context in validation_contexts)
-    if dictionary_revision_validation or plan_validation is not None or patch_validation or adjudication_validation or research_validation or claim_revision_validation or review_targets_validation or run_lesson_validation or selection_validation:
+    reconciliation_validation=any(context.get('lexical_request_reconciliation_validation') is not None for context in validation_contexts)
+    if reconciliation_validation or dictionary_revision_validation or plan_validation is not None or patch_validation or adjudication_validation or research_validation or claim_revision_validation or review_targets_validation or run_lesson_validation or selection_validation:
         try:
             check(path, candidate)
         except (ValidationError, ValueError, KeyError, TypeError, IndexError) as error:
@@ -466,7 +483,7 @@ def submit(path, receipt):
             if run_lesson_validation:
                 from pipeline.annotation_run_lessons import RunLessonError
                 lesson_error = isinstance(error, RunLessonError)
-            category = ('dictionary_research_revision_rejection' if dictionary_revision_validation else
+            category = ('lexical_request_reconciliation_rejection' if reconciliation_validation else 'dictionary_research_revision_rejection' if dictionary_revision_validation else
                         'annotation_run_knowledge_selection_rejection' if selection_validation else
                         'plan_contract_rejection' if plan_validation is not None else
                         'annotation_patch_contract_rejection'

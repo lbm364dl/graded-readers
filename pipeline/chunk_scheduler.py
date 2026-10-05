@@ -228,7 +228,7 @@ def bounded_chunk_jobs(harness, *, phase="annotation", job_limit=None):
     if active is None:
         yield
         return
-    if phase not in ('annotation','discovery'):raise ValueError('Unknown admitted job phase')
+    if phase not in ('annotation','discovery','reconciliation'):raise ValueError('Unknown admitted job phase')
     limit=job_limit if job_limit is not None else getattr(harness,'annotation_admission_job_limit',None)
     if limit is None:limit=getattr(getattr(harness,'args',None),'annotation_admission_job_limit',6)
     if type(limit) is not int or limit<1:raise ValueError('Annotation admission job limit must be positive')

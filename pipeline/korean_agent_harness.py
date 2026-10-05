@@ -1099,6 +1099,24 @@ class KoreanHarness:
                     contracts.schema_path('lexical-candidates'), 'low', tool_profile='offline')
                 validate(proposed, contracts.LEXICAL_CANDIDATES)
                 proposed_headwords = set(proposed['headwords'])
+                reconciliation = getattr(self, 'annotation_lexical_reconciliation', None)
+                if reconciliation is not None:
+                    from pipeline.lexical_request_reconciliation import load_registered_reconciliation
+                    if discovery_scope is None or len(discovery_scope['selected_occurrences']) != 1:
+                        raise ValueError('Policy1 lexical reconciliation requires one exact selected occurrence')
+                    occurrence = discovery_scope['selected_occurrences'][0]
+                    catalog_rows = [{'id': entry['id'], 'headword': entry['headword'],
+                        'reading': '', 'kind': 'word', 'content': entry}
+                        for rows in self.catalog.values() for entry in rows]
+                    lookup = load_registered_reconciliation(self.run_dir, reconciliation,
+                        requests=proposed['headwords'], source_text=occurrence['text'],
+                        source_position=occurrence['source_position'], current_catalog=catalog_rows)
+                    if lookup['unresolved'] or lookup['research_requests']:
+                        from pipeline.chunk_scheduler import ChunkAdmissionIncomplete, ChunkFailure, ChunkDeferred
+                        raise ChunkAdmissionIncomplete('Reviewed lexical reconciliation remains unresolved',
+                            [ChunkFailure(i, ChunkDeferred('Reviewed lookup evidence requires further investigation'))
+                             for i in sorted(selected)], [])
+                    proposed_headwords = set(lookup['lookup_headwords'])
                 excluded = {entry['headword'] for entry in focus['entries']}
                 excluded.update(alias for entry in focus['entries'] for alias in entry['aliases'])
                 missing = proposed_headwords - self.catalog.keys() - excluded
