@@ -68,20 +68,39 @@ def _sources(carry):
 def carry_from_adjudication(run_dir, evidence, existing=None):
     """Return source descriptors; bind/replay them before exposing any fact."""
     sources = copy.deepcopy(_sources(existing))
-    if isinstance(evidence, dict) and evidence.get('reference_research', {}).get('approved') is True:
+    if isinstance(evidence, dict) and evidence.get('reference_research_version') == 3 and type(evidence['reference_research_version']) is not int:
+        raise ResearchCarryError('Recursive receipt version must be an integer')
+    recursive = isinstance(evidence, dict) and evidence.get('reference_research_version') == 3
+    nodes = _recursive_research_nodes(evidence) if recursive else []
+    if isinstance(evidence, dict) and (evidence.get('reference_research', {}).get('approved') is True or any(node.get('approved') is True and node.get('references') for node in nodes)):
         root = Path(run_dir).resolve(strict=True)
         if not root.is_relative_to(ROOT):
             raise ResearchCarryError('Research carry source escaped repository')
         descriptor = {'run_relpath': str(root.relative_to(ROOT)),
                       'adjudication_job': evidence.get('job'), 'receipt_digest': _digest(evidence)}
+        if recursive:
+            descriptor['receipt_version'] = 3
         if descriptor not in sources:
             sources.append(descriptor)
     result = {'version': CARRY_VERSION, 'sources': sources}
     _sources(result)
     return result
 
+def _recursive_research_nodes(evidence):
+    if not isinstance(evidence, dict) or type(evidence.get('reference_research_version')) is not int or evidence.get('reference_research_version') != 3:
+        raise ResearchCarryError('Recursive carry requires receipt version3')
+    prior = evidence.get('initial_adjudication')
+    if not isinstance(prior, dict) or type(prior.get('reference_research_version')) is not int or prior.get('reference_research_version') != 2:
+        raise ResearchCarryError('Recursive carry exceeds the two-cycle bound')
+    nodes = [prior.get('reference_research'), evidence.get('reference_research')]
+    if any(not isinstance(node, dict) for node in nodes):
+        raise ResearchCarryError('Recursive carry lacks research nodes')
+    return nodes
+
 def _authenticate_impl(descriptor):
-    if not isinstance(descriptor, dict) or set(descriptor) != {'run_relpath', 'adjudication_job', 'receipt_digest'}:
+    required = {'run_relpath', 'adjudication_job', 'receipt_digest'}
+    recursive = isinstance(descriptor, dict) and type(descriptor.get('receipt_version')) is int and descriptor.get('receipt_version') == 3
+    if not isinstance(descriptor, dict) or set(descriptor) != (required | {'receipt_version'} if recursive else required):
         raise ResearchCarryError('Malformed research carry source descriptor')
     relative = Path(descriptor['run_relpath'])
     job = descriptor['adjudication_job']
@@ -90,13 +109,18 @@ def _authenticate_impl(descriptor):
     root = (ROOT / relative).resolve(strict=True)
     if not root.is_relative_to(ROOT):
         raise ResearchCarryError('Research carry source escaped repository')
-    path = root/'agents'/job/'reference-research-adjudication.json'
+    filename = 'followup-reference-research-adjudication.json' if recursive else 'reference-research-adjudication.json'
+    path = root/'agents'/job/filename
     if path.is_symlink():
         raise ResearchCarryError('Research carry receipt cannot be a symlink')
     evidence = _read(path)
     if _digest(evidence) != descriptor['receipt_digest'] or evidence.get('job') != job:
         raise ResearchCarryError('Research carry receipt changed')
-    original = evidence.get('initial_adjudication')
+    if recursive:
+        _recursive_research_nodes(evidence)
+        original = evidence['initial_adjudication'].get('initial_adjudication')
+    else:
+        original = evidence.get('initial_adjudication')
     if not isinstance(original, dict):
         raise ResearchCarryError('Research carry lacks original immutable adjudication')
     original_job = original.get('job')
@@ -113,6 +137,19 @@ def _authenticate_impl(descriptor):
     from pipeline.annotation_adjudication import verify_adjudication_evidence
     verified = verify_adjudication_evidence(root, evidence, **kwargs)
     research = verified['reference_research']
+    if recursive:
+        nodes = _recursive_research_nodes(verified)
+        merged = {}
+        for node in nodes:
+            if node.get('approved') is not True:
+                continue
+            for identity, reference in node.get('references', {}).items():
+                if identity in merged and merged[identity] != reference:
+                    raise ResearchCarryError('Recursive research reference collision')
+                merged[identity] = copy.deepcopy(reference)
+        research = {'approved': bool(merged), 'references': merged,
+                    'inputs': nodes[-1].get('inputs', {}),
+                    'authenticated_node_digests': [_digest(node) for node in nodes]}
     if research.get('approved') is not True or not research.get('references'):
         raise ResearchCarryError('Research carry source lacks independently approved facts')
     return inputs, research
@@ -203,6 +240,14 @@ def bind_carried_research(run_dir, carry, *, candidate, source_text, language,
                 issue = issues.get(issue_id)
                 canonical = issue_target_paths(issue, original['candidate'], source_text=source_text, representation=representation) if issue is not None else None
                 paths.update(canonical if canonical is not None else classifications.get(issue_id, {}).get('candidate_paths', []))
+            if descriptor.get('receipt_version') == 3 and '_annotation_run_lesson_scope' in content:
+                from pipeline.annotation_run_lessons import reference_policy_marker
+                scoped = content['_annotation_run_lesson_scope']
+                marker = reference_policy_marker()
+                if scoped.get('version') != marker['version'] or scoped.get('policy_digest') != marker['policy_digest']:
+                    raise ResearchCarryError('Recursive carry theory scope policy changed')
+                owned = {path for issue_id in content.get('issue_ids', reference.get('issue_ids', [])) for path in scoped.get('issue_paths', {}).get(issue_id, [])}
+                paths &= owned
             paths = sorted(paths)
             if not paths:
                 continue
@@ -221,6 +266,8 @@ def bind_carried_research(run_dir, carry, *, candidate, source_text, language,
             new_content.update(_annotation_research_fact=True, issue_ids=applicable,
                                carried_research_version=CARRY_VERSION,
                                carried_source=descriptor, carried_candidate_paths=paths)
+            if descriptor.get('receipt_version') == 3 and '_annotation_run_lesson_scope' in new_content:
+                new_content['_annotation_run_lesson_scope']['issue_paths'] = {issue_id: paths for issue_id in applicable}
             references[new_id] = {'kind': 'approved_lesson', 'content': new_content, 'issue_ids': applicable}
     packet = {'version': CARRY_VERSION, 'sources': sources, 'facts': facts,
               'scope': 'Authenticated run research for exact compatible source positions and targets. Facts are linguistic evidence, never candidate approval or published registry promotion.'} if facts else {}

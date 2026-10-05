@@ -1257,8 +1257,12 @@ def verify_adjudication_evidence(run_dir: Path, evidence: dict, **inputs) -> dic
     present = markers & evidence.keys()
     if not present:
         return _verify_adjudication_once(run_dir, evidence, **inputs)
-    if present != markers or evidence['reference_research_version'] not in (1, 2):
+    if present != markers or evidence['reference_research_version'] not in (1, 2, 3):
         raise AdjudicationError('Incomplete or unknown research-adjudication receipt')
+    if evidence['reference_research_version'] == 3:
+        if type(evidence['reference_research_version']) is not int:
+            raise AdjudicationError('Followup receipt version must be an integer')
+        return _verify_followup_research_receipt(run_dir, evidence, inputs)
     initial = _verify_adjudication_once(run_dir, evidence['initial_adjudication'], **inputs)
     if initial['status'] != 'uncertain':
         raise AdjudicationError('Reference research requires an unresolved initial adjudication')
@@ -1286,3 +1290,62 @@ def _write_json(path: Path, value: Any) -> None:
     temporary = path.with_suffix(path.suffix + '.tmp')
     temporary.write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     temporary.replace(path)
+
+
+# Explicit one-followup receipt policy. It does not claim a candidate-budget slot.
+def _followup_base(run_dir: Path, terminal: dict, inputs: dict) -> dict:
+    if type(terminal.get('reference_research_version')) is not int or terminal.get('reference_research_version') != 2:
+        raise AdjudicationError('Followup requires exactly one prior version2 research cycle')
+    verified = verify_adjudication_evidence(run_dir, terminal, **inputs)
+    if verified['status'] != 'uncertain':
+        raise AdjudicationError('Followup requires a genuinely uncertain terminal verdict')
+    previous = terminal['reference_research']
+    if previous['references']:
+        return _research_inputs(inputs, previous, previous['references'], policy_version=2)
+    return inputs
+
+async def followup_uncertain_annotation_review(runner: Any, run_dir: Path,
+        *, terminal_evidence: dict, **inputs) -> dict:
+    """One explicitly authorized second research cycle; no initial re-adjudication."""
+    inputs.setdefault('source_text', None)
+    base = _followup_base(run_dir, terminal_evidence, inputs)
+    from pipeline.annotation_research import research_uncertain_review
+    research = await research_uncertain_review(runner, run_dir,
+        initial_adjudication=terminal_evidence, **inputs)
+    if research['evidence'].get('version') != 7:
+        raise AdjudicationError('Followup requires research policy7')
+    if research['references']:
+        enriched = _research_inputs(base, research['evidence'], research['references'], policy_version=2)
+        result = await _adjudicate_once(runner, run_dir, **enriched)
+    else:
+        # Keep the prior terminal's raw adjudication result; never wrap its old
+        # chain markers twice or substitute the original initial verdict.
+        markers = {'reference_research_version','initial_adjudication',
+                   'reference_research','reference_research_chain_digest'}
+        result = {k:v for k,v in terminal_evidence.items() if k not in markers}
+    wrapped = _research_receipt(result, terminal_evidence, research['evidence'], version=3)
+    _write_json(Path(run_dir)/'agents'/result['job']/'followup-reference-research-adjudication.json', wrapped)
+    return wrapped
+
+def _verify_followup_research_receipt(run_dir: Path, evidence: dict, inputs: dict) -> dict:
+    terminal = evidence['initial_adjudication']
+    base = _followup_base(run_dir, terminal, inputs)
+    from pipeline.annotation_research import verify_research_evidence
+    research = verify_research_evidence(run_dir, evidence['reference_research'],
+        initial_adjudication=terminal, **inputs)
+    if research['evidence'].get('version') != 7:
+        raise AdjudicationError('Followup requires research policy7')
+    markers = {'reference_research_version','initial_adjudication',
+               'reference_research','reference_research_chain_digest'}
+    result_evidence = {k:v for k,v in evidence.items() if k not in markers}
+    if research['references']:
+        enriched = _research_inputs(base, research['evidence'], research['references'], policy_version=2)
+        result = _verify_adjudication_once(run_dir, result_evidence, **enriched)
+    else:
+        result = {k:v for k,v in terminal.items() if k not in markers}
+        if result_evidence != result:
+            raise AdjudicationError('Unresolved followup cannot change the terminal verdict')
+    expected = _research_receipt(result, terminal, research['evidence'], version=3)
+    if evidence != expected:
+        raise AdjudicationError('Followup research chain does not replay exactly')
+    return expected
