@@ -359,7 +359,7 @@ def build(decisions, source=SOURCE, *, require_review=True):
                 entries=entries, occurrences=occurrences)
 
 
-async def propose(output, run_dir, model, *, update=False, source=SOURCE):
+async def propose(output, run_dir, model, *, update=False, source=SOURCE, editorial_criteria="current"):
     from pipeline.agent_harness import CodexRunner, CHINESE_PINYIN_POLICY
     from pipeline.annotate_chinese import atomic_json
 
@@ -370,6 +370,8 @@ async def propose(output, run_dir, model, *, update=False, source=SOURCE):
     if update and previous.get("source_fingerprint") == fingerprint:
         build(previous, source, require_review=False)
         return
+    from pipeline.dictionary_editorial_criteria import append
+    policy=append(POLICY,editorial_criteria)
     runner = CodexRunner(run_dir, model, asyncio.Semaphore(4), 300)
     items = [(word, groups.get(word, [])) for word in sorted(
         set(groups) | {e["headword"] for e in previous["entries"]})]
@@ -379,7 +381,7 @@ async def propose(output, run_dir, model, *, update=False, source=SOURCE):
             {"id": o["id"], "reading": o["reading"], "gloss": o["gloss"],
              "sentence": o["sentence"]} for o in uses]} for word, uses in rows]
         existing = [e for e in previous["entries"] if e["headword"] in dict(rows)]
-        prompt = f"{POLICY}\n{CHINESE_PINYIN_POLICY}\nEXISTING REGISTRY:\n" + json.dumps(existing, ensure_ascii=False)
+        prompt = f"{policy}\n{CHINESE_PINYIN_POLICY}\nEXISTING REGISTRY:\n" + json.dumps(existing, ensure_ascii=False)
         prompt += "\nCURRENT USES:\n" + json.dumps(compact, ensure_ascii=False)
         prompt += '\n' + LINKING_GUIDANCE
         result = await runner.call(f"batch-{number:02}", prompt,
@@ -402,7 +404,7 @@ async def propose(output, run_dir, model, *, update=False, source=SOURCE):
                 repair_base = prompt
                 if affected != {word for word, _ in rows}:
                     repair_compact = [item for item in compact if item['headword'] in affected]
-                    repair_base = (f'{POLICY}\n{CHINESE_PINYIN_POLICY}\nEXISTING REGISTRY:\n' +
+                    repair_base = (f'{policy}\n{CHINESE_PINYIN_POLICY}\nEXISTING REGISTRY:\n' +
                                    json.dumps(repair_existing, ensure_ascii=False) +
                                    '\nCURRENT USES:\n' + json.dumps(repair_compact, ensure_ascii=False) +
                                    '\n' + LINKING_GUIDANCE)
@@ -448,7 +450,7 @@ async def propose(output, run_dir, model, *, update=False, source=SOURCE):
     atomic_json(output, candidate)
 
 
-async def review(output, run_dir, model, *, source=SOURCE, rounds=3, frozen_entries=(), headwords=None, notes='', batch_size=20):
+async def review(output, run_dir, model, *, source=SOURCE, rounds=3, frozen_entries=(), headwords=None, notes='', batch_size=20, editorial_criteria="current"):
     """Independent critic and bounded repair; publish only a clean reviewed version."""
     from pipeline.agent_harness import CodexRunner, CHINESE_PINYIN_POLICY
     from pipeline.annotate_chinese import atomic_json
@@ -459,6 +461,8 @@ async def review(output, run_dir, model, *, source=SOURCE, rounds=3, frozen_entr
     decisions = json.loads(output.read_text())
     build(decisions, source, require_review=False)
     _, groups, _, _ = source_data(source)
+    from pipeline.dictionary_editorial_criteria import append
+    policy=append(POLICY,editorial_criteria)
     runner = CodexRunner(run_dir, model, asyncio.Semaphore(4), 300)
     all_words = {e['headword'] for e in decisions['entries']}
     words = sorted(all_words if headwords is None else set(headwords))
@@ -471,7 +475,7 @@ async def review(output, run_dir, model, *, source=SOURCE, rounds=3, frozen_entr
     async def batch(number, headwords):
         entries = deepcopy([e for e in decisions["entries"] if e["headword"] in headwords])
         uses = {word: groups.get(word, []) for word in headwords}
-        base = f"{POLICY}\n{CHINESE_PINYIN_POLICY}\nCURRENT USES:\n{json.dumps(uses, ensure_ascii=False)}"
+        base = f"{policy}\n{CHINESE_PINYIN_POLICY}\nCURRENT USES:\n{json.dumps(uses, ensure_ascii=False)}"
         if notes:
             base += '\nTARGETED EDITORIAL REVIEW:\n' + notes
         frozen = [e for e in frozen_entries if e['headword'] in headwords]
@@ -502,6 +506,7 @@ async def review(output, run_dir, model, *, source=SOURCE, rounds=3, frozen_entr
                 for c in e['reading'] if unicodedata.combining(c) or
                 any(unicodedata.combining(d) for d in unicodedata.normalize('NFD', c))]}
             for e in entries], ensure_ascii=False)
+        prior_reviews=[]
         for attempt in range(rounds):
             prompt = base + "\nIndependently review the proposed registry below. Do not approve substantive errors. "
             prompt += "Check sense distinctions, definitions against context, readings, classification and all use links. "
@@ -512,8 +517,11 @@ async def review(output, run_dir, model, *, source=SOURCE, rounds=3, frozen_entr
             prompt += "do not demand finer splits merely because a different analysis is possible. "
             prompt += "Ignore harmless stylistic preferences. approved must be true exactly when issues is empty.\nREGISTRY:\n"
             prompt += json.dumps(entries, ensure_ascii=False)
+            if editorial_criteria is not None:
+                prompt+='\nPRIOR INDEPENDENT REVIEW HISTORY (not current findings):\n'+json.dumps(prior_reviews,ensure_ascii=False)
             effort = 'high' if notes or attempt >= 2 or attempt + 1 == rounds else 'low'
             verdict = await runner.call(f"review-{number:02}-{attempt}", prompt, REVIEW_SCHEMA, effort, tool_profile='offline')
+            prior_reviews.append({'job':f'review-{number:02}-{attempt}','review':deepcopy(verdict),'entries':deepcopy(entries)})
             if not verdict["approved"] or verdict["issues"]:
                 # A low-effort critic can invent distinctions or oscillate on
                 # acceptable variants. Adjudicate its objections before edits.
@@ -543,7 +551,7 @@ async def review(output, run_dir, model, *, source=SOURCE, rounds=3, frozen_entr
             repair_uses = {word: rows for word, rows in uses.items() if word in affected}
             repair_base = base
             if affected != {e['headword'] for e in entries}:
-                repair_base = f'{POLICY}\n{CHINESE_PINYIN_POLICY}\n{LINKING_GUIDANCE}'
+                repair_base = f'{policy}\n{CHINESE_PINYIN_POLICY}\n{LINKING_GUIDANCE}'
                 repair_base += '\nCURRENT USES:\n' + json.dumps(repair_uses, ensure_ascii=False)
                 repair_base += '\nAPPROVED SHARED IDENTITIES (immutable):\n' + json.dumps(
                     [{k: e[k] for k in ('id', 'headword', 'reading', 'kind', 'senses')}

@@ -499,14 +499,15 @@ async def edit_occurrence_notes(registry, rows, requests, run_dir, workers):
     registry['applied_requests'] = registry.get('applied_requests', []) + [r['id'] for r in requests]
 
 
-async def update(workers=4, run_dir=None):
+async def update(workers=4, run_dir=None, editorial_criteria="current"):
     REGISTRY.parent.mkdir(parents=True, exist_ok=True)
     with (REGISTRY.parent / 'grammar.lock').open('a') as lock:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-        return await _update(workers=workers, run_dir=run_dir)
+        return await _update(workers=workers, run_dir=run_dir,editorial_criteria=editorial_criteria)
 
 
-async def _update(workers=4, run_dir=None):
+async def _update(workers=4, run_dir=None, editorial_criteria="current"):
+    from pipeline.dictionary_editorial_criteria import append
     from pipeline.agent_harness import CodexRunner
     _, rows = candidates()
     registry = words.read(REGISTRY, {})
@@ -539,6 +540,7 @@ async def _update(workers=4, run_dir=None):
                 json.dumps(dict(entries=selected, requests=entry_pending,
                     related_entry_catalog=[{k:e[k] for k in ('id', 'title', 'summary_en')}
                                            for e in entries]), ensure_ascii=False))
+            prompt=append(prompt,editorial_criteria)
             job = 'edit-' + decision_digest(entry_pending)[:16]
             proposed = await runner.call(job + '/propose', prompt, SCHEMA, 'low', tool_profile='offline')
             reviewed = await runner.call(job + '/review', prompt + '\nIndependently check and correct the '
@@ -587,6 +589,7 @@ async def _update(workers=4, run_dir=None):
         restored = {short: canonical for canonical, short in aliases.items()}
         prompt = POLICY + json.dumps(dict(existing_entries=catalog,
             candidates=compact_rows), ensure_ascii=False)
+        prompt=append(prompt,editorial_criteria)
         batch_key = decision_digest([batch, catalog])[:16]
         proposed = await runner.call('grammar-' + batch_key + '/propose', prompt,
                                      SCHEMA, 'low', tool_profile='offline')
@@ -626,7 +629,7 @@ async def _update(workers=4, run_dir=None):
         candidate_fingerprints={r['id']: candidate_fingerprint(r) for r in rows},
         applied_requests=registry.get('applied_requests', [])))
     if pending:
-        return await _update(workers=workers, run_dir=run_dir)
+        return await _update(workers=workers, run_dir=run_dir,editorial_criteria=editorial_criteria)
     result = build()
     atomic_json(OUTPUT, result)
     return result
