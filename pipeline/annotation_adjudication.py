@@ -1061,6 +1061,52 @@ async def _adjudicate_once(runner: Any, run_dir: Path, *, language: str,
     return verified
 
 
+# Historical verification only: do not use this variant for new decisions.
+LEGACY_BASE_INSTRUCTION_DIGEST = '9a2ea48ae8594e0955fb07c4c45360f4495c2d99d7a4c47152fbaedd0fa99bf1'
+
+def _legacy_instruction_replay_inputs(run_dir, job, version_one_inputs):
+    if not isinstance(job, str) or Path(job).name != job:
+        return None
+    agents = Path(run_dir) / 'agents'
+    lane = agents / job
+    target = lane / 'adjudication-input.json'
+    if (agents.is_symlink() or lane.is_symlink() or target.is_symlink()
+            or not target.is_file() or not lane.resolve().is_relative_to(agents.resolve())):
+        return None
+    saved = json.loads(target.read_text(encoding='utf-8'))
+    if ('host_binding_policy_version' in saved
+            or saved.get('instructions_digest') != LEGACY_BASE_INSTRUCTION_DIGEST):
+        return None
+    historical = {key: value for key, value in version_one_inputs.items() if key != 'input_digest'}
+    historical['instructions_digest'] = LEGACY_BASE_INSTRUCTION_DIGEST
+    historical['input_digest'] = digest(historical)
+    if saved != historical or job != f"annotation-adjudication-{historical['input_digest']}":
+        return None
+    return historical
+
+
+def _verify_legacy_instruction_worker(run_dir, job, inputs, output):
+    # Authenticate exact old prompt/schema/context, rather than accepting an
+    # instruction digest alone. Modern requests never call this branch.
+    base = INSTRUCTIONS.split('\n\n' + FORM_STAGE_EVIDENCE_GUIDANCE)[0]
+    if digest(base) != LEGACY_BASE_INSTRUCTION_DIGEST:
+        raise AdjudicationError('Historical adjudication instruction snapshot changed')
+    modern = _worker_prompt(inputs)
+    prefix = _versioned_instructions(1)
+    if not modern.startswith(prefix):
+        raise AdjudicationError('Historical adjudication prompt could not be reconstructed')
+    prompt = base + modern[len(prefix):]
+    schema_text = json.dumps(_output_schema(1), ensure_ascii=False, indent=2) + '\n'
+    context = {'annotation_adjudication': inputs,
+               'annotation_adjudication_validation': {'input_field': 'annotation_adjudication'}}
+    from pipeline.annotation_research import _verify_job, AnnotationResearchError
+    try:
+        _verify_job(run_dir, job=job, expected_prompt=prompt,
+            schema_text=schema_text, workspace_context=context, expected_result=output)
+    except AnnotationResearchError as exc:
+        raise AdjudicationError('Historical adjudication worker request failed exact replay') from exc
+
+
 def _verify_adjudication_once(run_dir: Path, evidence: dict, *, language: str,
         representation: str, candidate: Any, current_review: dict, prior_history: Any,
         context: Any, known_reference_input: dict, deterministic_gate_evidence: dict,
@@ -1076,6 +1122,8 @@ def _verify_adjudication_once(run_dir: Path, evidence: dict, *, language: str,
         deterministic_gate_evidence=deterministic_gate_evidence,
         normal_review_receipt=normal_review_receipt, source_text=source_text,
         host_binding_policy_version=1)
+    version_one_inputs = inputs
+    historical_instruction_replay = False
     run_dir = Path(run_dir).resolve(strict=True)
     job = evidence.get('job') if isinstance(evidence, dict) else None
     for version in (2, 3, 4, 5, 6):
@@ -1086,6 +1134,11 @@ def _verify_adjudication_once(run_dir: Path, evidence: dict, *, language: str,
             known_reference_input=known_reference_input, deterministic_gate_evidence=deterministic_gate_evidence,
             normal_review_receipt=normal_review_receipt, source_text=source_text,
             host_binding_policy_version=version)
+    if isinstance(job, str) and job != f"annotation-adjudication-{inputs['input_digest']}":
+        historical = _legacy_instruction_replay_inputs(run_dir, job, version_one_inputs)
+        if historical is not None:
+            inputs = historical
+            historical_instruction_replay = True
     if not isinstance(job, str) or Path(job).name != job or job != f"annotation-adjudication-{inputs['input_digest']}":
         raise AdjudicationError('Adjudication job identity does not match exact inputs')
     agents_dir = run_dir / 'agents'
@@ -1122,6 +1175,8 @@ def _verify_adjudication_once(run_dir: Path, evidence: dict, *, language: str,
             or meta.get('tool_profile') != worker_profile):
         raise AdjudicationError('Adjudication worker receipt violates model/effort/tool policy')
     CodexRunner._check_tool_profile(job_dir, worker_profile, meta)
+    if historical_instruction_replay:
+        _verify_legacy_instruction_worker(run_dir, job, inputs, output)
     replayed = _validate_output(output, inputs)
     expected = {**replayed, 'job': job, 'effort': 'low', 'model': 'gpt-6-luna',
                 'tool_profile': 'research', 'worker_tool_profile': worker_profile,
