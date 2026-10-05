@@ -593,3 +593,24 @@ def test_carry_checkpoint_reuses_authenticated_packet_without_new_review(tmp_pat
     with pytest.raises(ValueError):
         reusable_checkpoint_approval(tmp_path, row, annotation=annotation, text='아이',
             context=forged, policy='Review honestly.')
+
+
+def test_complete_assembly_checks_each_exact_chunk_current_research(tmp_path, monkeypatch):
+    import pipeline.korean_agent_harness as harness
+    import pipeline.annotation_reference_carry_callers as callers
+    annotation = {'segments': [{'text': '아이', 'meaning_en': 'child'}], 'grammar_links': []}
+    monkeypatch.setattr(harness, 'read', lambda path: {'context': {'chapter_text': '아이아이'}})
+    monkeypatch.setattr(harness, 'read_annotation_chunk', lambda *args: annotation)
+    seen = []
+    def eligible(run, **kwargs):
+        seen.append(kwargs)
+        return kwargs['context']['source_start'] == 0
+    monkeypatch.setattr(callers, 'current_carry_eligibility', eligible)
+    meta = {'chunks': [{'job': 'a', 'text': '아이'}, {'job': 'b', 'text': '아이'}],
+        'chunk_reviews': [{'job': 'normal-a'}, {'normal_review': {'job': 'normal-b'},
+                           'adjudication': {'job': 'terminal-b'}}]}
+    assert not harness.current_assembly_carry_eligibility(tmp_path, meta)
+    assert [row['context']['source_start'] for row in seen] == [0, 2]
+    assert seen[1]['terminal_evidence'] == {'job': 'terminal-b'}
+    monkeypatch.setattr(callers, 'current_carry_eligibility', lambda *args, **kwargs: True)
+    assert harness.current_assembly_carry_eligibility(tmp_path, meta)

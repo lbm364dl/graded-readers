@@ -129,3 +129,79 @@ async def test_both_language_review_producers_receive_same_authenticated_fact_pa
         assert CARRIED_RESEARCH_GUIDANCE in prompt
         assert len(context[CARRY_FIELD]['facts']) == 1
         assert context['annotation_source_position']['parent_text_digest'] == target._annotation_source_positions[0]['parent_text_digest']
+
+
+def test_current_research_cache_eligibility_accounts_for_consumed_terminal_facts(monkeypatch, tmp_path):
+    import pipeline.annotation_reference_carry_callers as callers
+    fact = {'source': {'receipt_digest': 'a' * 64}, 'original_reference_id': 'original',
+            'candidate_paths': ['/segments/0/meaning_en'], 'reference': {
+        'kind': 'approved_lesson', 'content': {'fact': 'Exact supported claim', 'issue_ids': ['old']}}}
+    packet = {'facts': [fact]}
+    current = {'packet': packet}
+    monkeypatch.setattr(callers, 'load_carried_research', lambda *a, **k: current['packet'])
+    monkeypatch.setattr(callers, 'bind_carried_research', lambda run, carry, **k: {'packet': carry})
+    monkeypatch.setattr(callers, 'carry_from_adjudication', lambda run, evidence, existing: evidence['consumed'])
+    kwargs = dict(candidate={}, source_text='猫', language='ja', representation='japanese-annotation', context={}, old_context={})
+    assert not callers.current_carry_eligibility(tmp_path, **kwargs)
+    assert callers.current_carry_eligibility(tmp_path, **{**kwargs, 'old_context': {CARRY_FIELD: packet}})
+    terminal = {'consumed': copy.deepcopy(packet)}
+    terminal['consumed']['facts'][0]['reference']['content']['issue_ids'] = ['new']
+    assert callers.current_carry_eligibility(tmp_path, **kwargs, terminal_evidence=terminal)
+    current['packet'] = {'facts': [fact, {**fact, 'reference': {'content': {'fact': 'Additional foreign fact'}}}]}
+    assert not callers.current_carry_eligibility(tmp_path, **kwargs, terminal_evidence=terminal)
+    same_claim_foreign_receipt = copy.deepcopy(fact)
+    same_claim_foreign_receipt['source']['receipt_digest'] = 'b' * 64
+    current['packet'] = {'facts': [same_claim_foreign_receipt]}
+    assert not callers.current_carry_eligibility(tmp_path, **kwargs, terminal_evidence=terminal)
+    current['packet'] = {}
+    assert callers.current_carry_eligibility(tmp_path, **kwargs)
+    current['packet'] = None
+    assert callers.current_carry_eligibility(tmp_path, **kwargs)
+
+
+def test_current_research_guard_authenticates_saved_and_terminal_packets(carried, monkeypatch):
+    import pipeline.annotation_reference_carry_callers as callers
+    harness, candidate, _, language, representation = carried
+    context, _ = bind_lifecycle_carry(harness, 0, '猫', candidate, language=language, representation=representation)
+    kwargs = dict(candidate=candidate, source_text='猫', language=language,
+                  representation=representation, context=context, old_context=context)
+    assert callers.current_carry_eligibility(harness.run_dir, **kwargs)
+    forged = copy.deepcopy(context)
+    forged[CARRY_FIELD]['facts'][0]['reference']['content']['fact'] = 'Forged'
+    with pytest.raises(ResearchCarryError):
+        callers.current_carry_eligibility(harness.run_dir, **{**kwargs, 'old_context': forged})
+    with pytest.raises(ResearchCarryError):
+        callers.current_carry_eligibility(harness.run_dir, **{**kwargs, 'context': forged})
+    def corrupt(*args):
+        raise ResearchCarryError('Terminal research authentication failed')
+    monkeypatch.setattr(callers, 'carry_from_adjudication', corrupt)
+    with pytest.raises(ResearchCarryError, match='Terminal research'):
+        callers.current_carry_eligibility(harness.run_dir, **kwargs, terminal_evidence={})
+
+
+def test_explicit_current_packet_without_manifest_requires_consumed_evidence(monkeypatch, tmp_path):
+    import pipeline.annotation_reference_carry_callers as callers
+    packet = {'facts': [{'source': {'receipt_digest': 'a'*64}, 'original_reference_id': 'fact',
+        'candidate_paths': ['/segments/0/meaning_en'], 'reference': {'content': {'fact': 'Claim'}}}]}
+    monkeypatch.setattr(callers, 'load_carried_research', lambda *a, **k: None)
+    monkeypatch.setattr(callers, 'bind_carried_research', lambda run, carry, **k: {'packet': carry})
+    monkeypatch.setattr(callers, 'carry_from_adjudication', lambda *a: packet)
+    kwargs = dict(candidate={}, source_text='猫', language='ja', representation='japanese-annotation',
+        context={CARRY_FIELD: packet}, old_context={})
+    assert not callers.current_carry_eligibility(tmp_path, **kwargs)
+    assert callers.current_carry_eligibility(tmp_path, **kwargs, terminal_evidence={})
+
+
+def test_explicit_and_manifest_packets_both_require_exact_consumed_sources(monkeypatch, tmp_path):
+    import pipeline.annotation_reference_carry_callers as callers
+    def packet(receipt):
+        return {'facts': [{'source': {'receipt_digest': receipt*64}, 'original_reference_id': 'fact',
+            'candidate_paths': ['/segments/0/meaning_en'], 'reference': {'content': {'fact': 'Same claim'}}}]}
+    first, second = packet('a'), packet('b')
+    monkeypatch.setattr(callers, 'load_carried_research', lambda *a, **k: second)
+    monkeypatch.setattr(callers, 'bind_carried_research', lambda run, carry, **k: {'packet': carry})
+    kwargs = dict(candidate={}, source_text='猫', language='ja', representation='japanese-annotation',
+        context={CARRY_FIELD: first}, old_context={CARRY_FIELD: first})
+    assert not callers.current_carry_eligibility(tmp_path, **kwargs)
+    monkeypatch.setattr(callers, 'carry_from_adjudication', lambda *a: {'facts': first['facts']+second['facts']})
+    assert callers.current_carry_eligibility(tmp_path, **kwargs, terminal_evidence={})

@@ -235,16 +235,38 @@ def annotation_reuse_candidate(run_dir: Path, *, text: str | None = None):
     return max(candidates, key=lambda item: item[0])[1] if candidates else None
 
 
+def current_assembly_carry_eligibility(run_dir, meta):
+    from pipeline.annotation_reference_carry_callers import current_carry_eligibility
+    parent = ''.join(row['text'] for row in meta['chunks'])
+    start = 0
+    for record, proof in zip(meta['chunks'], meta['chunk_reviews']):
+        normal = proof.get('normal_review', proof)
+        old = read(run_dir / 'agents' / normal['job'] / 'review-input.json')['context']
+        annotation = read_annotation_chunk(
+            run_dir / 'agents' / record['job'] / 'result.json', record)
+        if not current_carry_eligibility(run_dir, candidate=annotation,
+                source_text=record['text'], language='ko', representation='korean-flat',
+                context={**old, 'chapter_text': parent, 'source_start': start}, old_context=old,
+                terminal_evidence=proof.get('adjudication')):
+            return False
+        start += len(record['text'])
+    return True
+
+
 def reusable_checkpoint_approval(run_dir, row, *, annotation, text, context, policy):
     """Replay an unchanged occurrence; extra primary evidence cannot rewrite its proof."""
     from pipeline.korean_chunk_reviews import review_request, verify_chunk_review
     old = row['review_context']
     proof = row['review']
     normal = proof.get('normal_review', proof)
+    from pipeline.annotation_reference_carry import CARRY_FIELD
+    from pipeline.annotation_reference_carry_callers import current_carry_eligibility
     _, _, identity = review_request(annotation, text, old, policy)
     if normal['job'] != f'annotation-local-review-{identity}':
         raise ValueError('Korean checkpoint review policy changed')
     for key in set(old) | set(context):
+        if key == CARRY_FIELD:
+            continue  # Eligibility above authenticates the immutable old packet.
         if key == 'official_primary_sources':
             current = {item['reference_id']: item for item in context.get(key, [])}
             if any(current.get(item['reference_id']) != item for item in old.get(key, [])):
@@ -269,6 +291,10 @@ def reusable_checkpoint_approval(run_dir, row, *, annotation, text, context, pol
             raise ValueError(f'Korean checkpoint review context changed: {key}')
     verify_chunk_review(run_dir, proof, annotation=annotation, text=text,
         chapter_text=context['chapter_text'], source_start=context['source_start'])
+    if not current_carry_eligibility(run_dir, candidate=annotation, source_text=text,
+            language='ko', representation='korean-flat', context=context, old_context=old,
+            terminal_evidence=proof.get('adjudication')):
+        raise ValueError('Korean checkpoint has newly applicable reviewed research')
     return proof
 
 
@@ -756,6 +782,8 @@ class KoreanHarness:
                             'linguistic_reference': read(LINGUISTIC_REFERENCE),
                             'lexical_reference': read(LEXICAL_REFERENCE),
                             'review-policy': self.policy + '\n' + self.review_policy})
+                    if not current_assembly_carry_eligibility(self.run_dir, proposal_meta):
+                        raise ValueError('Cached Korean assembly predates applicable reviewed research')
                 if proposal_meta.get('kind') == 'prose_patch_assembly':
                     from pipeline.korean_prose_patches import replay
                     if name != 'prose' or replay(self.run_dir, proposal_meta) != value:
@@ -1094,6 +1122,16 @@ class KoreanHarness:
                                         'review-policy': self.policy + '\n' + self.review_policy})
                             except (OSError, ValueError, KeyError, IndexError, TypeError, ValidationError):
                                 local_reviews_verified = False
+                            else:
+                                local_reviews_verified = True
+                                rows = []
+                                for i, (record, proof) in enumerate(zip(old_lineage, old_meta['chunk_reviews'])):
+                                    normal = proof.get('normal_review', proof)
+                                    saved = read(self.run_dir / 'agents' / normal['job'] / 'review-input.json')
+                                    rows.append({'source_chunk_index': i, 'record': record,
+                                        'review': proof, 'review_context': saved['context'],
+                                        'annotation': read_annotation_chunk(
+                                            self.run_dir / 'agents' / record['job'] / 'result.json', record)})
                     if (partial and old_prose.get('text') == prose.get('text')
                             and old_meta.get('chunk_texts') == texts):
                         reused = {row['source_chunk_index'] + 1: i + 1
@@ -1109,6 +1147,8 @@ class KoreanHarness:
                         # did not change. reviewed_chunk below still obtains a new
                         # local review under current instructions before assembly.
                         reused = {index + 1: index + 1 for index in range(len(texts))}
+                        if not partial and old_meta.get('chunk_reviews_version') in (1, 2):
+                            checkpoint_approvals = {row['source_chunk_index']: row for row in rows}
                         repair_evidence.update(reuse_source_job=old_job,
                             reuse_strategy='same_text_same_chunking_fresh_local_review',
                             reuse_candidate_digest=digest(old_value if not partial else old_values))

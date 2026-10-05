@@ -148,7 +148,7 @@ def test_publication_rejects_overlapping_or_skipped_chapter_scopes(tmp_path, mon
 
 
 @pytest.mark.parametrize('prose_revision,worker_failure,recover_partial', [(False, False, False), (False, True, False), (False, 'submission_rejected', False), (True, False, False), ('technical_failure', False, False), (False, 'attached', False), (False, False, True), (False, False, 'rejected_worker'), (False, False, 'invalid_attached')])
-def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_path, prose_revision, worker_failure, recover_partial, local_review_repair=False, draft_lesson=False, incomplete_cached_repair=False, complete_cached_repair=False, adjudication_mode=None, monkeypatch=None, checkpoint_adjudicated=False):
+def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_path, prose_revision, worker_failure, recover_partial, local_review_repair=False, draft_lesson=False, incomplete_cached_repair=False, complete_cached_repair=False, adjudication_mode=None, monkeypatch=None, checkpoint_adjudicated=False, complete_checkpoint=False):
     from pipeline.korean_agent_harness import normalize_existing, save, UnannotatableProseError
     route_candidates = []
     if adjudication_mode:
@@ -495,6 +495,30 @@ def test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(tmp_pat
         assert len([job for job in runner.jobs if job.startswith('annotation-local-review-')]) == 1
         return
     assert asyncio.run(KoreanHarness(tmp_path, 1, runner=runner).run())['status'] == 'complete'
+    if complete_checkpoint:
+        from pipeline.korean_agent_harness import read
+        report = read(tmp_path / 'report.json')
+        stage = report['stages']['annotation']
+        original_meta = read(tmp_path / 'agents' / stage['proposal_job'] / 'meta.json')
+        original_proofs = copy.deepcopy(original_meta['chunk_reviews'])
+        if complete_checkpoint == 'invalid':
+            original_meta['chunk_reviews'][0]['review_digest'] = '0' * 64
+            save(tmp_path / 'agents' / stage['proposal_job'] / 'meta.json', original_meta)
+        save(tmp_path / 'agents' / stage['review_job'] / 'result.json',
+             {'approved': False, 'issues': ['Chapter needs final review.']})
+        monkeypatch.setattr('pipeline.korean_agent_harness.current_assembly_carry_eligibility',
+                            lambda *args: False)
+        runner.jobs.clear()
+        assert asyncio.run(KoreanHarness(tmp_path, 1, runner=runner).run())['status'] == 'complete'
+        if complete_checkpoint == 'invalid':
+            assert any(job.startswith('annotation-local-review-') for job in runner.jobs)
+            return
+        assert not any(job.startswith('annotation-local-review-') for job in runner.jobs)
+        assert not any('-chunk-' in job for job in runner.jobs)
+        current_report = read(tmp_path / 'report.json')
+        current_meta = read(tmp_path / 'agents' / current_report['stages']['annotation']['proposal_job'] / 'meta.json')
+        assert current_meta['chunk_reviews'] == original_proofs
+        return
     if adjudication_mode:
         assert len(route_candidates) == 2
         assert route_candidates[0] != route_candidates[1]
@@ -2571,3 +2595,9 @@ def test_partial_checkpoint_resume_preserves_adjudicated_siblings_without_worker
     test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(
         tmp_path, False, 'submission_rejected', False,
         monkeypatch=monkeypatch, checkpoint_adjudicated=True)
+
+
+@pytest.mark.parametrize('complete_checkpoint', [True, 'invalid'])
+def test_complete_assembly_resume_preserves_local_approvals_after_chapter_rejection(tmp_path, monkeypatch, complete_checkpoint):
+    test_annotation_repairs_only_failed_chunk_and_reuses_other_sentences(
+        tmp_path, False, False, False, monkeypatch=monkeypatch, complete_checkpoint=complete_checkpoint)

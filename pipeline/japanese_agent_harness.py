@@ -5774,6 +5774,32 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                     try:
                         verify_item_research_positions(run_dir, cached,
                             getattr(self, '_annotation_source_positions', {}).get(index))
+                        from pipeline.annotation_reference_carry_callers import current_carry_eligibility
+                        from pipeline.annotation_reference_carry import CARRY_FIELD
+                        position = getattr(self, '_annotation_source_positions', {}).get(index)
+                        context = {'annotation_source_position': position} if position else {}
+                        last = cached['attempts'][-1]
+                        if last.get('effective_review', {}).get('kind') == 'adjudicated':
+                            old_context = last['adjudication_replay']['context']
+                            if not current_carry_eligibility(run_dir, candidate={
+                                    'segments': cached['segments'], 'grammar_overlays': cached['grammar_overlays']},
+                                    source_text=chunk, language='ja', representation='japanese-annotation',
+                                    context=context, old_context=old_context,
+                                    terminal_evidence=last.get('adjudication')):
+                                current_contract_passes = False
+                        else:
+                            for child in last.get('normal_review_receipt', {}).get('components', []):
+                                old_context = {}
+                                workspace = Path(run_dir) / 'agents' / child['job'] / 'workspace'
+                                if (workspace / 'INDEX.json').exists():
+                                    for row in json.loads((workspace / 'INDEX.json').read_text()):
+                                        if row['field'] in (CARRY_FIELD, 'annotation_source_position'):
+                                            old_context[row['field']] = json.loads((workspace / row['path']).read_text())
+                                if not current_carry_eligibility(run_dir, candidate={
+                                        'segments': cached['segments'], 'grammar_overlays': cached['grammar_overlays']},
+                                        source_text=chunk, language='ja', representation='japanese-annotation',
+                                        context=context, old_context=old_context):
+                                    current_contract_passes = False
                     except (OSError, ValueError, KeyError, TypeError):
                         current_contract_passes = False
                 if not current_contract_passes:

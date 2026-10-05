@@ -348,6 +348,19 @@ async def test_japanese_adjudicated_cache_path_uses_shared_lineage_verifier(tmp_
         harness._annotation_source_positions[0])
     path.write_text(json.dumps({**positioned, 'cache_key': cache_key}))
     assert (await harness.annotate_chunk(0, source))['resolved'] is True
+    # A newly applicable run fact invalidates cache eligibility even though
+    # the immutable old adjudication still replays successfully.
+    import pipeline.annotation_reference_carry_callers as carry_callers
+    actual_guard = carry_callers.current_carry_eligibility
+    seen = []
+    def newly_applicable(*args, **kwargs):
+        seen.append(kwargs)
+        return False
+    monkeypatch.setattr(carry_callers, 'current_carry_eligibility', newly_applicable)
+    with pytest.raises(AssertionError, match='invalid adjudication cache must miss'):
+        await harness.annotate_chunk(0, source)
+    assert seen[-1]['terminal_evidence'] == positioned['attempts'][-1]['adjudication']
+    monkeypatch.setattr(carry_callers, 'current_carry_eligibility', actual_guard)
     # Same chunk and index, changed parent: miss before publication rather
     # than returning a self-consistent proof for the old occurrence.
     register_chunk_positions(harness, [source, '。'], parent_text=source + '。')

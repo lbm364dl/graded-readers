@@ -88,3 +88,49 @@ def remember_lifecycle_carry(harness, index, evidence, *, candidate, source_text
         context=context)
     if registered is not None:
         carries[index] = registered
+
+
+def current_carry_eligibility(run_dir, *, candidate, source_text, language,
+                              representation, context, old_context, terminal_evidence=None):
+    """Cache eligibility only; never rewrite an immutable historical proof."""
+    explicit = {}
+    if CARRY_FIELD in context:
+        explicit = bind_carried_research(run_dir, context[CARRY_FIELD], candidate=candidate,
+            source_text=source_text, language=language, representation=representation,
+            context=context)['packet']
+    old_packet = old_context.get(CARRY_FIELD)
+    if old_packet is not None:
+        bind_carried_research(run_dir, old_packet, candidate=candidate,
+            source_text=source_text, language=language, representation=representation,
+            context=old_context)
+    current = load_carried_research(run_dir, candidate=candidate,
+        source_text=source_text, language=language, representation=representation,
+        context=context)
+    registered = (bind_carried_research(run_dir, current, candidate=candidate,
+        source_text=source_text, language=language, representation=representation,
+        context=context)['packet'] if current is not None else {})
+    if not explicit and not registered:
+        return True
+    consumed = old_packet or {}
+    if terminal_evidence is not None:
+        # Callers replay the full terminal proof first; retained sources are
+        # authenticated again against this exact candidate and source position.
+        descriptor = carry_from_adjudication(run_dir, terminal_evidence, old_packet)
+        consumed = bind_carried_research(run_dir, descriptor, candidate=candidate,
+            source_text=source_text, language=language, representation=representation,
+            context=context)['packet']
+    from pipeline.annotation_adjudication import digest
+    import copy
+    def facts(packet):
+        result = set()
+        for fact in packet.get('facts', []):
+            reference = copy.deepcopy(fact['reference'])
+            reference.pop('issue_ids', None)
+            if isinstance(reference.get('content'), dict):
+                reference['content'].pop('issue_ids', None)
+            result.add(digest({'source': fact['source'],
+                               'original_reference_id': fact['original_reference_id'],
+                               'candidate_paths': sorted(fact['candidate_paths']),
+                               'reference': reference}))
+        return result
+    return (facts(explicit) | facts(registered)) <= facts(consumed)
