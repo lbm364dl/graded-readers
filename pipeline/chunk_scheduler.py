@@ -266,6 +266,10 @@ def bounded_chunk_jobs(harness, *, phase="annotation", job_limit=None):
                     from pipeline.annotation_admission_recovery import verify_protocol_recovery
                     first_new={'job':request['job'],'prompt':request['prompt'],'schema':json.loads(request['schema']),'workspace_context':request['workspace_context']} if len(ledger['requests'])==1 else None
                     verify_protocol_recovery(harness.run_dir,path.name,protocol_request=first_new)
+                if ledger.get('semantic_round') is not None:
+                    from pipeline.annotation_semantic_round import verify_semantic_round
+                    first_semantic={'job':request['job'],'prompt':request['prompt'],'schema':json.loads(request['schema']),'workspace_context':request['workspace_context']} if len(ledger['requests'])==3 else None
+                    verify_semantic_round(harness.run_dir,path.name,next_request=first_semantic)
                 # JSON stringifies integer map keys; compare canonical encoded scope.
                 if type(ledger.get('version')) is not int or ledger['version']!=2 or ledger.get('contract')!=contract or encode(ledger['scope'])!=encode(scope) or ledger['limit']!=limit:raise ValueError('Admission budget context changed')
                 key=digest(request)

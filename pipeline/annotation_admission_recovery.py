@@ -84,7 +84,11 @@ def _verify_request(request):
  if validation['mode']!='repair' or reconciliation_request(validation['inputs'],'repair',origin_run_dir=validation['origin_run_dir'])!=request:raise ValueError('Protocol request is not canonical reconstruction')
 
 def verify_protocol_recovery(run_dir, ledger_name, *, protocol_request=None):
- directory=checked_directory(Path(run_dir).absolute()/'annotation-admission');ledger=json.loads(checked_regular_file(directory/ledger_name).read_text());receipt=ledger.get('protocol_recovery')
+ directory=checked_directory(Path(run_dir).absolute()/'annotation-admission');ledger=json.loads(checked_regular_file(directory/ledger_name).read_text())
+ if ledger.get('semantic_round') is not None:
+  from pipeline.annotation_semantic_round import verified_semantic_prior
+  ledger=verified_semantic_prior(run_dir,ledger_name,ledger)
+ receipt=ledger.get('protocol_recovery')
  if not isinstance(receipt,dict) or type(receipt.get('version')) is not int or receipt['version']!=1:raise ValueError('Invalid protocol recovery receipt')
  snapshot=receipt.get('prior_snapshot','')
  if Path(snapshot).name!=snapshot:raise ValueError('Unsafe recovery snapshot')

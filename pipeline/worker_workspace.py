@@ -213,8 +213,14 @@ def check(path, candidate):
                 check_result(value, immutable)
             elif reconciliation['mode'] == 'repair':
                 prior = authenticate_repair_base(Path(reconciliation['origin_run_dir']), immutable)
-                expected_task = {'reconciliation_repair_base': prior['result'], 'reconciliation_repair_review': prior['review'], 'reconciliation_repair_targets': sorted({issue['request_index'] for issue in prior['review']['issues']})}
-                if repair_base_contract(immutable):expected_task['reconciliation_repair_expected_base_digest']=reconciliation_digest(prior['result'])
+                from pipeline.lexical_reconciliation_round import round_marker
+                if round_marker(immutable):
+                    from pipeline.lexical_request_reconciliation import _repair_task_inputs
+                    expected_task = _repair_task_inputs(immutable)
+                else:
+                    # Keep historical receipt2 task payloads byte/semantically exact.
+                    expected_task = {'reconciliation_repair_base': prior['result'], 'reconciliation_repair_review': prior['review'], 'reconciliation_repair_targets': sorted({issue['request_index'] for issue in prior['review']['issues']})}
+                    if repair_base_contract(immutable):expected_task['reconciliation_repair_expected_base_digest']=reconciliation_digest(prior['result'])
                 if any(input_values.get(key) != item for key, item in expected_task.items()):
                     raise ValueError('Reconciliation repair task inputs changed')
                 apply_reconciliation_repair(value, immutable, prior['result'], prior['review'])

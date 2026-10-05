@@ -68,6 +68,8 @@ def reviewed_primary_references(candidate,catalog,registry):
 
 
 def check_inputs(inputs):
+ from pipeline.lexical_reconciliation_round import round_marker
+ round_marker(inputs)
  if 'reconciliation_patch_base_policy_version' in inputs:repair_base_contract(inputs)
  if type(inputs.get('policy_version')) is not int or inputs['policy_version']!=VERSION:raise ValueError('Unsupported reconciliation input policy')
  if 'language' in inputs and (inputs['language'],inputs['representation']) not in {('ko','korean-flat'),('zh','chinese-annotation'),('ja','japanese-annotation')}:raise ValueError('Unsupported language/representation pair')
@@ -336,7 +338,9 @@ def load_registered_reconciliation(origin_run_dir,descriptor,*,requests,source_t
  inputs=json.loads(input_bytes);evidence=json.loads(evidence_bytes)
  if requests!=inputs['requests'] or evidence['inputs_digest']!=digest(inputs):raise ValueError('Current request inventory changed')
  if 'reconciliation_receipt_version' in evidence:
-  if type(evidence['reconciliation_receipt_version']) is not int or evidence['reconciliation_receipt_version']!=2:raise ValueError('Unknown reconciliation receipt version')
+  if type(evidence['reconciliation_receipt_version']) is not int or evidence['reconciliation_receipt_version'] not in (2,3):raise ValueError('Unknown reconciliation receipt version')
+  from pipeline.lexical_reconciliation_round import round_marker
+  if round_marker(inputs)!=(evidence['reconciliation_receipt_version']==3):raise ValueError('Receipt/derived round marker changed')
   if source_text!=inputs['source_text'] or source_position!=inputs['source_position']:raise ValueError('Current source changed')
   ids=[record['id'] for record in current_catalog]
   if len(ids)!=len(set(ids)):raise ValueError('Equivocal current catalog identity')
@@ -359,6 +363,8 @@ def repair_base_contract(inputs):
  return True
 
 def _repair_task_inputs(inputs):
+ from pipeline.lexical_reconciliation_round import round_marker,parent_task
+ if round_marker(inputs):return parent_task(inputs)
  from pipeline.agent_harness import ROOT
  from pipeline.worker_paths import checked_directory,checked_regular_file
  from pathlib import Path
@@ -393,6 +399,8 @@ def reconciliation_request(inputs,stage,*,origin_run_dir,result=None):
  return {'job':'lexical-request-'+stage+'-'+digest(payload),'prompt':guidance+'\nINPUT:\n'+json.dumps(payload,ensure_ascii=False),'schema':schema,'workspace_context':{**payload,'lexical_request_reconciliation_validation':validation}}
 
 def authenticate_repair_base(origin_run_dir,inputs):
+ from pipeline.lexical_reconciliation_round import round_marker,authenticate_parent
+ if round_marker(inputs):return authenticate_parent(origin_run_dir,inputs)
  """Prior rejected receipts, never a caller-supplied approval or changed source."""
  from pipeline.agent_harness import ROOT
  from pipeline.worker_paths import checked_directory,checked_regular_file
