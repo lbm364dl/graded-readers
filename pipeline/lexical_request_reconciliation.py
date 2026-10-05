@@ -11,6 +11,14 @@ from jsonschema import validate
 VERSION=1
 GUIDANCE='''Reconcile every original unverified search request against the exact selected source. Full parent text is context; other positions must not enlarge the search scope. Provide exact Unicode source intervals and copied source text, never a suffix-derived host alias. Candidate lexical bindings are explicitly unapproved prior grounding, not proof. Preserve homonyms, readings and kinds. Reuse an exact supplied catalog identity only when the cited independently approved/authoritative records establish its lexical base for this source form. All supplied approved formation lessons are available, including prerequisites not linked by the candidate. Candidate links do not delimit available knowledge; choose applicable lessons through exact formation and cited evidence, never treat availability as applicability or occurrence approval. Existing reviewed unresolved investigations remain unresolved in their original scope. A missing headword for an inflected substring does not prove unsupported analysis. Needs_research and unresolved are valid outcomes; do not invent a new identity or gloss. Only supplied authenticated reference IDs may support a reusable decision; uncaptured web observations cannot. All decisions concern lookup requests, not candidate correctness or registry publication.'''
 REVIEW_GUIDANCE='''Independently review each reconciliation claim, exact selected occurrence, identity/reading/kind and cited records. Do not review whether the immutable annotation is already repaired or approved. Approving honest needs_research/unresolved records does not approve an annotation. Reject unsupported base mappings, foreign source scope, false catalog conflicts, and omitted requests. Inspect applicable approved formation prerequisites even when the candidate omitted their links; verify every claim against its own exact selected occurrence and cited source. Preserve the original unverified requests and prior unresolved findings.'''
+EVIDENCE_SCOPE_GUIDANCE='Assess each current request against every applicable supplied authoritative catalog record and retained primary record before choosing its disposition. A historical unresolved investigation describes its original request, source and retrieval gap; preserve that immutable result, but do not use it as a blanket veto on a newly supplied catalog identity or attested formation. Distinguish an unsuccessful exact-inflected-substring search from authoritative evidence for its dictionary-form base. Explicitly address applicable curriculum guide examples and approved formation prerequisites when they attest that base relation. Reuse the exact attested headword, reading and kind only when the current selected occurrence and cited evidence support it. Matching spelling or an old candidate link alone cannot choose a different homonym, reading or functional kind. If current evidence does not establish the base relation, retain needs_research or unresolved and describe the precise remaining gap. Availability is not occurrence approval; do not infer an arbitrary deinflection or invent an identity. The independent critic checks this evidence comparison, not whether the historical investigation already proposed an entry.'
+
+def _worker_guidance(inputs,stage):
+ version=inputs.get("reconciliation_instruction_policy_version",1)
+ if type(version) is not int or version not in (1,2):raise ValueError("Unknown lexical evidence scope instruction policy")
+ base=GUIDANCE if stage=="resolver" else REVIEW_GUIDANCE
+ return base if version==1 else base+"\n\n"+EVIDENCE_SCOPE_GUIDANCE
+
 def digest(value):return hashlib.sha256(json.dumps(value,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()).hexdigest()
 def obj(properties):return {'type':'object','additionalProperties':False,'properties':properties,'required':list(properties)}
 TEXT={'type':'string'};NONEMPTY={'type':'string','minLength':1}
@@ -218,12 +226,14 @@ def verify_reconciliation_jobs(worker_run_dir,inputs,*,origin_run_dir,resolver_j
  from pipeline.annotation_research import _verify_job
  authenticate_packet_origin(origin_run_dir,inputs);authenticate_archived_sources(inputs)
  resolver_context={**inputs,'lexical_request_reconciliation_validation':{'mode':'resolver','inputs':inputs,'origin_run_dir':str(Path(origin_run_dir))}}
- resolver_prompt=GUIDANCE+'\nINPUT:\n'+json.dumps(inputs,ensure_ascii=False)
+ resolver_request=reconciliation_request(inputs,'resolver',origin_run_dir=origin_run_dir)
+ resolver_prompt=resolver_request['prompt']
  _,result=_verify_job(Path(worker_run_dir),job=resolver_job,expected_prompt=resolver_prompt,schema_text=json.dumps(RESULT_SCHEMA),workspace_context=resolver_context)
  check_result(result,inputs)
  review_payload={**inputs,'reconciliation_result':result}
  review_context={**review_payload,'lexical_request_reconciliation_validation':{'mode':'review','inputs':inputs,'result':result,'origin_run_dir':str(Path(origin_run_dir))}}
- review_prompt=REVIEW_GUIDANCE+'\nINPUT:\n'+json.dumps(review_payload,ensure_ascii=False)
+ review_request=reconciliation_request(inputs,'review',origin_run_dir=origin_run_dir,result=result)
+ review_prompt=review_request['prompt']
  _,review=_verify_job(Path(worker_run_dir),job=review_job,expected_prompt=review_prompt,schema_text=json.dumps(REVIEW_SCHEMA),workspace_context=review_context)
  check_review(review,result,inputs)
  return {'result':result,'review':review,'annotation_approved':False,'registry_promoted':False}
@@ -324,6 +334,116 @@ def load_registered_reconciliation(origin_run_dir,descriptor,*,requests,source_t
  if hashlib.sha256(input_bytes).hexdigest()!=descriptor['inputs_sha256'] or hashlib.sha256(evidence_bytes).hexdigest()!=descriptor['evidence_sha256']:raise ValueError('Registered reconciliation evidence changed')
  inputs=json.loads(input_bytes);evidence=json.loads(evidence_bytes)
  if requests!=inputs['requests'] or evidence['inputs_digest']!=digest(inputs):raise ValueError('Current request inventory changed')
- bound=verify_reconciliation_jobs(lane,inputs,origin_run_dir=origin_run_dir,resolver_job=evidence['resolver_job'],review_job=evidence['review_job'])
+ if 'reconciliation_receipt_version' in evidence:
+  if type(evidence['reconciliation_receipt_version']) is not int or evidence['reconciliation_receipt_version']!=2:raise ValueError('Unknown reconciliation receipt version')
+  if source_text!=inputs['source_text'] or source_position!=inputs['source_position']:raise ValueError('Current source changed')
+  ids=[record['id'] for record in current_catalog]
+  if len(ids)!=len(set(ids)):raise ValueError('Equivocal current catalog identity')
+  current={record['id']:record for record in current_catalog};saved={record['id']:record for record in inputs['catalog']}
+  for decision in evidence['result']['decisions']:
+   if decision['disposition']=='existing_catalog_base' and current.get(decision['catalog_id'])!=saved.get(decision['catalog_id']):raise ValueError('Current catalog identity changed')
+  bound=verify_reconciliation_repair_jobs(lane,inputs,origin_run_dir=origin_run_dir,repair_job=evidence['repair_job'],review_job=evidence['review_job'])
+ else:
+  bound=verify_reconciliation_jobs(lane,inputs,origin_run_dir=origin_run_dir,resolver_job=evidence['resolver_job'],review_job=evidence['review_job'])
  if evidence['result']!=bound['result'] or evidence['review']!=bound['review']:raise ValueError('Registered reconciliation verdict changed')
  return _consume_bound_lookup(bound['result'],bound['review'],inputs,source_text=source_text,source_position=source_position,current_catalog=current_catalog)
+
+REPAIR_FIELDS=('disposition','catalog_id','headword','reading','kind','reason','citations')
+REPAIR_PATCH_SCHEMA={'type':'object','required':['policy_version','base_digest','edits'],'additionalProperties':False,'properties':{'policy_version':{'const':2},'base_digest':{'type':'string','pattern':'^[a-f0-9]{64}$'},'edits':{'type':'array','minItems':1,'items':{'type':'object','required':['request_index','fields'],'additionalProperties':False,'properties':{'request_index':{'type':'integer','minimum':0},'fields':{'type':'object','minProperties':1,'additionalProperties':False,'properties':{key:({'type':'array','items':{'type':'string'}} if key=='citations' else {'type':'string'}) for key in REPAIR_FIELDS}}}}}}}
+
+def _repair_task_inputs(inputs):
+ from pipeline.agent_harness import ROOT
+ from pipeline.worker_paths import checked_directory,checked_regular_file
+ from pathlib import Path
+ descriptor=inputs['reconciliation_repair'];relative=Path(descriptor['worker_run_relpath'])
+ if relative.is_absolute() or '..' in relative.parts:raise ValueError('Foreign repair worker lane')
+ lane=checked_directory(Path(ROOT)/relative);values=[]
+ for key,digest_key in [('resolver_job','result_digest'),('review_job','review_digest')]:
+  job=descriptor[key]
+  if Path(job).name!=job:raise ValueError('Unsafe prior reconciliation job')
+  value=json.loads(checked_regular_file(lane/'agents'/job/'result.json').read_text())
+  if digest(value)!=descriptor[digest_key]:raise ValueError('Repair task source changed')
+  values.append(value)
+ return {'reconciliation_repair_base':values[0],'reconciliation_repair_review':values[1],'reconciliation_repair_targets':sorted({issue['request_index'] for issue in values[1]['issues']})}
+
+def reconciliation_request(inputs,stage,*,origin_run_dir,result=None):
+ """Canonical fresh request builder shared by producers and receipt replay."""
+ if stage not in ('resolver','review','repair'):raise ValueError('Unknown reconciliation worker stage')
+ if stage=='repair' and inputs.get('reconciliation_instruction_policy_version')!=2:raise ValueError('Repair requires explicit instruction policy2')
+ payload=inputs if result is None else {**inputs,'reconciliation_result':result}
+ if stage=='repair':payload={**inputs,**_repair_task_inputs(inputs)}
+ schema=REPAIR_PATCH_SCHEMA if stage=='repair' else RESULT_SCHEMA if stage=='resolver' else REVIEW_SCHEMA
+ guidance=_worker_guidance(inputs,'review' if stage=='review' else 'resolver')
+ if stage=='repair':guidance+='\nRead the organized reconciliation_repair_base, reconciliation_repair_review and reconciliation_repair_targets fields before editing. Submit only the exact base-digest scoped patch. Change lookup fields only for independently rejected request indices. Preserve all other decisions and all source intervals. Unresolved context is not additional repair authority. Do not regenerate the full reconciliation result.'
+ validation={'mode':stage,'inputs':inputs,'origin_run_dir':str(origin_run_dir)}
+ if result is not None:validation['result']=result
+ return {'job':'lexical-request-'+stage+'-'+digest(payload),'prompt':guidance+'\nINPUT:\n'+json.dumps(payload,ensure_ascii=False),'schema':schema,'workspace_context':{**payload,'lexical_request_reconciliation_validation':validation}}
+
+def authenticate_repair_base(origin_run_dir,inputs):
+ """Prior rejected receipts, never a caller-supplied approval or changed source."""
+ from pipeline.agent_harness import ROOT
+ from pipeline.worker_paths import checked_directory,checked_regular_file
+ from pathlib import Path
+ descriptor=inputs.get('reconciliation_repair')
+ expected={'worker_run_relpath','inputs_sha256','resolver_job','review_job','result_digest','review_digest'}
+ if not isinstance(descriptor,dict) or set(descriptor)!=expected:raise ValueError('Invalid reconciliation repair provenance')
+ relative=Path(descriptor['worker_run_relpath'])
+ if relative.is_absolute() or '..' in relative.parts:raise ValueError('Foreign repair worker lane')
+ lane=checked_directory(Path(ROOT)/relative);raw=checked_regular_file(lane/'immutable-inputs.json').read_bytes()
+ if hashlib.sha256(raw).hexdigest()!=descriptor['inputs_sha256']:raise ValueError('Repair original inputs changed')
+ old=json.loads(raw)
+ old_version=old.get('reconciliation_instruction_policy_version',1)
+ if type(old_version) is not int or old_version not in (1,2):raise ValueError('Unknown prior instruction policy')
+ if type(inputs.get('reconciliation_instruction_policy_version')) is not int or inputs['reconciliation_instruction_policy_version']!=2:raise ValueError('Repair requires explicit instruction policy2')
+ old_common={key:value for key,value in old.items() if key!='reconciliation_instruction_policy_version'}
+ current_common={key:value for key,value in inputs.items() if key not in ('reconciliation_instruction_policy_version','reconciliation_repair')}
+ if current_common!=old_common:raise ValueError('Repair source or current contract changed')
+ bound=verify_reconciliation_jobs(lane,old,origin_run_dir=origin_run_dir,resolver_job=descriptor['resolver_job'],review_job=descriptor['review_job'])
+ if digest(bound['result'])!=descriptor['result_digest'] or digest(bound['review'])!=descriptor['review_digest']:raise ValueError('Repair prior verdict changed')
+ if bound['review']['approved'] or not bound['review']['issues']:raise ValueError('Repair lacks independently rejected authority')
+ return bound
+
+def apply_reconciliation_repair(patch,inputs,base,review):
+ if type(inputs.get('reconciliation_instruction_policy_version')) is not int or inputs['reconciliation_instruction_policy_version']!=2:raise ValueError('Repair requires explicit instruction policy2')
+ validate(patch,REPAIR_PATCH_SCHEMA)
+ if type(patch['policy_version']) is not int or patch['policy_version']!=2:raise ValueError('Repair patch policy must be integer2')
+ validate(review,REVIEW_SCHEMA)
+ if review['inputs_digest']!=base['inputs_digest'] or review['result_digest']!=digest(base):raise ValueError('Repair diagnosis changed base')
+ if patch['base_digest']!=digest(base):raise ValueError('Repair base digest changed')
+ authorized={issue['request_index'] for issue in review['issues']}
+ if review['approved'] or not authorized:raise ValueError('Repair lacks independent defect authority')
+ indices=[row['request_index'] for row in patch['edits']]
+ if len(indices)!=len(set(indices)) or set(indices)!=authorized:raise ValueError('Repair must cover exact independently rejected requests')
+ derived=copy.deepcopy(base);derived['inputs_digest']=digest(inputs)
+ for edit in patch['edits']:
+  row=derived['decisions'][edit['request_index']]
+  if all(row.get(key)==value for key,value in edit['fields'].items()):raise ValueError('Reconciliation repair is unchanged')
+  row.update(edit['fields'])
+ check_result(derived,inputs)
+ return derived
+
+def verify_reconciliation_repair_jobs(worker_run_dir,inputs,*,origin_run_dir,repair_job,review_job):
+ from pipeline.annotation_research import _verify_job
+ from pathlib import Path
+ prior=authenticate_repair_base(origin_run_dir,inputs)
+ request=reconciliation_request(inputs,'repair',origin_run_dir=origin_run_dir)
+ if repair_job!=request['job']:raise ValueError('Foreign repair request job')
+ _,patch=_verify_job(Path(worker_run_dir),job=repair_job,expected_prompt=request['prompt'],schema_text=json.dumps(request['schema']),workspace_context=request['workspace_context'])
+ result=apply_reconciliation_repair(patch,inputs,prior['result'],prior['review'])
+ request=reconciliation_request(inputs,'review',origin_run_dir=origin_run_dir,result=result)
+ if review_job!=request['job']:raise ValueError('Foreign repaired review job')
+ _,review=_verify_job(Path(worker_run_dir),job=review_job,expected_prompt=request['prompt'],schema_text=json.dumps(request['schema']),workspace_context=request['workspace_context'])
+ check_review(review,result,inputs)
+ return {'result':result,'review':review,'patch':patch,'prior_result':prior['result'],'prior_review':prior['review'],'annotation_approved':False,'registry_promoted':False}
+
+def make_reconciliation_repair_inputs(worker_run_dir,*,origin_run_dir,resolver_job,review_job):
+ from pathlib import Path
+ from pipeline.agent_harness import ROOT
+ from pipeline.worker_paths import checked_directory,checked_regular_file
+ lane=checked_directory(Path(worker_run_dir).absolute());raw=checked_regular_file(lane/'immutable-inputs.json').read_bytes();old=json.loads(raw)
+ bound=verify_reconciliation_jobs(lane,old,origin_run_dir=origin_run_dir,resolver_job=resolver_job,review_job=review_job)
+ authenticate_archived_sources(old,require_current=True)
+ if bound['review']['approved'] or not bound['review']['issues']:raise ValueError('Repair lacks independently rejected authority')
+ try:relative=lane.relative_to(Path(ROOT))
+ except ValueError as error:raise ValueError('Repair source outside repository run evidence') from error
+ return {**old,'reconciliation_instruction_policy_version':2,'reconciliation_repair':{'worker_run_relpath':str(relative),'inputs_sha256':hashlib.sha256(raw).hexdigest(),'resolver_job':resolver_job,'review_job':review_job,'result_digest':digest(bound['result']),'review_digest':digest(bound['review'])}}
