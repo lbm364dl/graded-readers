@@ -911,6 +911,25 @@ def _validate_reviewed_context_scope(expected_context: Any, inputs: dict) -> str
         value = resolve_pointer(inputs["candidate"], target_path)
     except (LedgerProtocolError, TypeError, KeyError) as exc:
         raise AnnotationResearchError("Reviewed lesson target path no longer resolves in the candidate") from exc
+    if expected_context.get('reviewed_run_lesson_scope_version') == 2:
+        from pipeline.annotation_run_lessons import _source_scope, _masked_overlay, _surfaces
+        from pipeline.annotation_reference_carry import _position
+        base, _ = _source_scope(expected_context)
+        context = inputs['context']
+        nested = context.get('chunk_review_context', context)
+        try:
+            position = _position(nested, inputs['source_text'])
+        except ValueError as exc:
+            raise AnnotationResearchError('Reviewed overlay lesson source position is invalid') from exc
+        if (position is None or position['source_start'] != target['source_start']
+                or position['parent_text_digest'] != _digest(expected_context['chapter']['text'])
+                or target['source_text'] != inputs['source_text']
+                or _surfaces(base) != _surfaces(inputs['candidate'])
+                or _masked_overlay(base, target_path) != _masked_overlay(inputs['candidate'], target_path)):
+            raise AnnotationResearchError('Reviewed overlay lesson differs from current source geometry')
+        if not value:
+            raise AnnotationResearchError('Reviewed lesson target field is empty')
+        return target_path
     path_match = re.match(r"/segments/(\d+)(?:/|$)", target_path)
     segment_index = int(path_match.group(1)) if path_match else target.get("segment_index")
     surface = target.get("surface")
@@ -971,6 +990,13 @@ def _validate_reviewed_context_scope(expected_context: Any, inputs: dict) -> str
 def _validate_registered_lesson_context(expected_context: Any) -> None:
     if not isinstance(expected_context, dict):
         raise AnnotationResearchError("Reviewed lesson requires structured source context")
+    if expected_context.get('reviewed_run_lesson_scope_version') == 2:
+        from pipeline.annotation_run_lessons import _source_scope, RunLessonError
+        try:
+            _source_scope(expected_context)
+        except (RunLessonError, KeyError, IndexError, TypeError) as exc:
+            raise AnnotationResearchError('Reviewed overlay lesson source scope is invalid') from exc
+        return
     target = expected_context.get("target_occurrence")
     chapter = expected_context.get("chapter")
     if not isinstance(target, dict) or not isinstance(chapter, dict):

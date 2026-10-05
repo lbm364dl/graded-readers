@@ -69,6 +69,10 @@ def _form_guidance_digest():
 
 def review_request(annotation, text, context, policy):
     from pipeline.korean_agent_harness import digest
+    if any(isinstance(row, dict) and any(key in row for key in ('reviewed_run_grammar', 'reviewed_run_lessons'))
+           for row in (context, context.get('chunk_review_context'))):
+        from pipeline.annotation_run_lessons import validate_run_lesson_context_fields
+        validate_run_lesson_context_fields(context)
     inputs = {'annotation': annotation, 'text': text, 'context': context,
               'issue_targets_version': 1}
     instructions = INSTRUCTIONS + '\n' + ISSUE_TARGET_GUIDANCE + '''
@@ -81,12 +85,24 @@ make a prose finding fit the schema.
     if context.get('reviewed_annotation_research'):
         from pipeline.annotation_reference_carry import CARRIED_RESEARCH_GUIDANCE
         instructions += '\n' + CARRIED_RESEARCH_GUIDANCE
+    if context.get('reviewed_run_lessons'):
+        from pipeline.annotation_run_lessons import RUN_LESSON_GUIDANCE
+        instructions += '\n\n' + RUN_LESSON_GUIDANCE
     identity = digest({'inputs': inputs, 'instructions': policy + instructions})
     return inputs, instructions, identity
 
 
 async def review_chunk(runner, run_dir, *, annotation, text, context, policy):
     from pipeline.korean_agent_harness import digest, payload, save
+    if context.get('reviewed_run_lessons'):
+        from pipeline.annotation_run_lessons import validate_run_lessons
+        bound_run_lessons = validate_run_lessons(run_dir, context['reviewed_run_lessons'], candidate=annotation, source_text=text,
+            language='ko', representation='korean-flat', context=context)
+        context = {**context, 'reviewed_run_grammar': bound_run_lessons['lessons']}
+    run_lesson_gate = ({'annotation_run_lesson_validation': {'run_dir': str(Path(run_dir).resolve()),
+        'candidate': annotation, 'source_text': text, 'language': 'ko', 'representation': 'korean-flat',
+        'envelope': bound_run_lessons['packet'], 'lessons': bound_run_lessons['lessons'], 'context': context}}
+        if context.get('reviewed_run_lessons') else {})
     inputs, instructions, identity = review_request(annotation, text, context, policy)
     if context.get('reviewed_annotation_research'):
         from pipeline.annotation_reference_carry import bind_carried_research
@@ -95,7 +111,7 @@ async def review_chunk(runner, run_dir, *, annotation, text, context, policy):
     job = f'annotation-local-review-{identity}'
     review = await runner.call(job, policy + '\n' + instructions + payload(**inputs),
         contracts.schema_path('chunk-review-targeted'), 'low', tool_profile='offline',
-        workspace_context={'chunk_review_input': inputs,
+        workspace_context={**run_lesson_gate, 'chunk_review_input': inputs,
             'annotation_issue_targets_validation': {'candidate': annotation,
                 'source_text': text, 'representation': 'korean-flat',
                 'require_typed': True}})
@@ -124,6 +140,15 @@ def verify_review(run_dir, evidence, *, annotation, text, chapter_text, source_s
     if inputs.get('context', {}).get('reviewed_annotation_research'):
         from pipeline.annotation_reference_carry import bind_carried_research
         bind_carried_research(run_dir, inputs['context']['reviewed_annotation_research'], candidate=annotation,
+            source_text=text, language='ko', representation='korean-flat', context=inputs['context'])
+    saved_context = inputs.get('context', {})
+    if any(isinstance(row, dict) and any(key in row for key in ('reviewed_run_grammar', 'reviewed_run_lessons'))
+           for row in (saved_context, saved_context.get('chunk_review_context'))):
+        from pipeline.annotation_run_lessons import validate_run_lesson_context_fields
+        validate_run_lesson_context_fields(saved_context)
+    if inputs.get('context', {}).get('reviewed_run_lessons'):
+        from pipeline.annotation_run_lessons import validate_run_lessons
+        validate_run_lessons(run_dir, inputs['context']['reviewed_run_lessons'], candidate=annotation,
             source_text=text, language='ko', representation='korean-flat', context=inputs['context'])
     version = evidence.get('issue_targets_version')
     if version not in (None, 1) or inputs.get('issue_targets_version') != version:
@@ -230,6 +255,14 @@ def verify_chunk_review(run_dir, proof, *, annotation, text, chapter_text, sourc
         expected_references.update(bind_carried_research(run_dir, review_context['reviewed_annotation_research'],
             candidate=annotation, source_text=text, language='ko', representation='korean-flat',
             context=review_context, current_review=raw_review)['references'])
+    run_lesson_source_ids = set()
+    if review_context.get('reviewed_run_lessons'):
+        from pipeline.annotation_run_lessons import validate_run_lessons
+        run_lesson_refs = validate_run_lessons(run_dir, review_context['reviewed_run_lessons'], candidate=annotation,
+            source_text=text, language='ko', representation='korean-flat', context=review_context,
+            current_review=raw_review)['references']
+        run_lesson_source_ids = set(run_lesson_refs)
+        expected_references.update(run_lesson_refs)
     expected_references['review-policy'] = {
         'kind': 'explicit_review_policy',
         'content': adjudication_context.get('review_policy')}
@@ -246,7 +279,7 @@ def verify_chunk_review(run_dir, proof, *, annotation, text, chapter_text, sourc
                 current = expected_reference_sources.get('linguistic_reference')
             elif identity == 'lexical-reference':
                 current = expected_reference_sources.get('lexical_reference')
-            elif identity in official_source_ids or identity.startswith('carried-research-'):
+            elif identity in official_source_ids or identity in run_lesson_source_ids or identity.startswith('carried-research-'):
                 current = content
             else:
                 current = expected_reference_sources.get(identity)

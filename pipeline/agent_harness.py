@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 from pipeline.annotation_adjudication_budget import AdjudicationBudget
+from pipeline.annotation_run_lesson_callers import bind_lifecycle_run_lessons
 from pipeline.annotation_reference_carry_callers import (
     bind_lifecycle_carry, register_chunk_positions, remember_lifecycle_carry,
     validate_carry_context,
@@ -2636,7 +2637,12 @@ GRAMMAR OVERLAYS (existing exact offset objects):
 {compact(annotation.get("grammar_overlays", []))}"""
         carried_context, _ = bind_lifecycle_carry(self, index, chunk, annotation,
             language='zh', representation='chinese-annotation')
-        if carried_context:
+        carried_context, _ = bind_lifecycle_run_lessons(self, index, chunk, annotation,
+            language='zh', representation='chinese-annotation', context=carried_context)
+        if 'reviewed_run_lessons' in carried_context:
+            from pipeline.annotation_run_lessons import RUN_LESSON_GUIDANCE
+            prompt += '\n\n' + RUN_LESSON_GUIDANCE
+        if 'reviewed_annotation_research' in carried_context:
             from pipeline.annotation_reference_carry import CARRIED_RESEARCH_GUIDANCE
             prompt += '\n\n' + CARRIED_RESEARCH_GUIDANCE
         review = await self.runner.call(
@@ -2904,6 +2910,10 @@ GRAMMAR OVERLAYS (existing exact offset objects):
                 adjudication_context, carried_references = bind_lifecycle_carry(
                     self, index, chunk, result, language='zh', representation='chinese-annotation',
                     context=adjudication_context, current_review=review, include_position=True)
+                adjudication_context, lesson_references = bind_lifecycle_run_lessons(
+                    self, index, chunk, result, language='zh', representation='chinese-annotation',
+                    context=adjudication_context, current_review=review)
+                policy_reference.update(lesson_references)
                 policy_reference.update(carried_references)
                 adjudication_history = copy.deepcopy(attempts)
                 if not adjudication_budget.claim(result):
@@ -2979,6 +2989,8 @@ GRAMMAR OVERLAYS (existing exact offset objects):
                         context={"chunk_text": chunk,
                             "grammar_knowledge": chinese_semantic_repair_grammar_knowledge(result),
                             **adjudication_context_extra})
+                    repair_context, _ = bind_lifecycle_run_lessons(self, index, chunk, result,
+                        language='zh', representation='chinese-annotation', context=repair_context)
                     semantic = await repair_annotation(
                         self,
                         f"annotations/chunk_{index:04d}/semantic_repair_{attempt + 1:02d}",

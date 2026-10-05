@@ -175,6 +175,7 @@ def verify_normal_review_receipt(run_dir: Path, receipt: Any, *, review: Any,
 def verify_review_carried_research(run_dir, child, *, candidate, source_text):
     """Replay only the additive carry field in the authenticated worker inputs."""
     from pipeline.annotation_reference_carry import CARRY_FIELD
+    from pipeline.annotation_run_lessons import RUN_LESSON_FIELD, validate_run_lessons
     from pipeline.annotation_reference_carry_callers import validate_carry_context
     root = Path(run_dir) / 'agents' / child['job'] / 'workspace'
     index = root / 'INDEX.json'
@@ -183,21 +184,29 @@ def verify_review_carried_research(run_dir, child, *, candidate, source_text):
     rows = json.loads(index.read_text(encoding='utf-8'))
     fields = {}
     for row in rows:
-        if row['field'] in (CARRY_FIELD, 'annotation_source_position',
+        if row['field'] in (CARRY_FIELD, RUN_LESSON_FIELD, 'reviewed_run_grammar', 'annotation_source_position',
                              'annotation_issue_targets_validation'):
             value = json.loads((root / row['path']).read_text(encoding='utf-8'))
             if row['field'] in fields and fields[row['field']] != value:
                 raise AnnotationPublicationError('Carried review inputs disagree')
             fields[row['field']] = value
-    if CARRY_FIELD not in fields:
+    if 'reviewed_run_grammar' in fields and RUN_LESSON_FIELD not in fields:
+        raise AnnotationPublicationError('Run grammar content lacks its authenticated envelope')
+    if CARRY_FIELD not in fields and RUN_LESSON_FIELD not in fields:
         return
     target = fields.get('annotation_issue_targets_validation', {})
     representation = target.get('representation')
     language = {'chinese-annotation': 'zh', 'japanese-annotation': 'ja'}.get(representation)
     if language is None or target.get('candidate') != candidate or target.get('source_text') != source_text:
         raise AnnotationPublicationError('Carried review evidence is not bound to the current inputs')
-    validate_carry_context(run_dir, fields, candidate=candidate, source_text=source_text,
-        language=language, representation=representation)
+    if CARRY_FIELD in fields:
+        validate_carry_context(run_dir, fields, candidate=candidate, source_text=source_text,
+            language=language, representation=representation)
+    if RUN_LESSON_FIELD in fields:
+        bound_lessons = validate_run_lessons(run_dir, fields[RUN_LESSON_FIELD], candidate=candidate,
+            source_text=source_text, language=language, representation=representation, context=fields)
+        if fields.get('reviewed_run_grammar') != bound_lessons['lessons']:
+            raise AnnotationPublicationError('Run grammar content differs from authenticated proof')
 
 
 def verify_item_research_positions(run_dir, item, expected_position):

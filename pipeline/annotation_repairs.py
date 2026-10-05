@@ -36,7 +36,6 @@ When an issue includes host-verified `path_history`, inspect the earlier finding
 
 Learner-facing explanations must positively explain the actual form or grammatical contribution. Do not copy reviewer objections, editorial uncertainty, or defensive denials into occurrence notes or meanings. A useful grammatical contrast is allowed when it explains the form itself; rebutting one reviewer's classification is not a learner explanation. Keep a complete form's meaning separate from its form label and passage-specific grammatical role. Do not import a larger construction's meaning into one component stage, concatenate component glosses, or invent contributions to satisfy a review."""
 
-
 REPAIR_EXPLANATION_GUIDANCE_VERSION = 2
 SCHEMATIC_SOURCE_MEANING_GUIDANCE = """A dictionary construction explanation may use variables such as a person saying something while performing an action. These describe the construction, not additional events or words asserted by each occurrence. Ground the meaning of each field in its exact complete source form and represented scope. Do not paste schematic participants, actions, or placeholders into an occurrence or form-stage meaning. A connective or participial reporting rendering can already express the relevant relation to the following clause; a neighboring proposition-only stage may still omit that contribution. Judge those fields separately. Expand an issue's targets only after showing which contribution is actually missing from each additional field, with source or lesson evidence. Name a concrete simultaneous action only when the source attests it and it belongs to the field's represented span; do not import the following clause's action into a smaller tap. Preserve a correct contrasting meaning even when its wording differs from the revised stage. This guidance does not approve a candidate or prescribe an English phrase."""
 REPAIR_EXPLANATION_GUIDANCE += '\n\n' + SCHEMATIC_SOURCE_MEANING_GUIDANCE
@@ -315,6 +314,14 @@ async def repair_annotation(
         bind_carried_research(run_dir, context['reviewed_annotation_research'], candidate=candidate,
             source_text=context['chunk_text'], language=language, representation=representation, context=context)
         context = {**context, 'carried_research_guidance': CARRIED_RESEARCH_GUIDANCE}
+    if isinstance(context, dict) and context.get('reviewed_run_lessons'):
+        from pipeline.annotation_run_lessons import validate_run_lessons, RUN_LESSON_GUIDANCE
+        bound_run_lessons = validate_run_lessons(run_dir, context['reviewed_run_lessons'], candidate=candidate,
+            source_text=context.get('chunk_text'), language=language, representation=representation, context=context)
+        context = {**context, 'reviewed_run_grammar': bound_run_lessons['lessons'], 'reviewed_run_lesson_guidance': RUN_LESSON_GUIDANCE,
+            'annotation_run_lesson_validation': {'run_dir': str(run_dir.resolve()), 'candidate': candidate,
+                'source_text': context.get('chunk_text'), 'language': language, 'representation': representation,
+                'envelope': bound_run_lessons['packet'], 'lessons': bound_run_lessons['lessons'], 'context': context}}
     plan_schema_path, patch_schema_path = _schemas(run_dir)
     plan_job, patch_job, assembly_job = f"{job}_plan", f"{job}_patch", f"{job}_assembly"
     shared_context = {**(context or {}), "repair_explanation_guidance_version": REPAIR_EXPLANATION_GUIDANCE_VERSION, "language": language,
@@ -665,6 +672,14 @@ def replay_annotation_repair(
                 bind_carried_research(run_dir, context['reviewed_annotation_research'], candidate=base,
                     source_text=context['chunk_text'], language=context['language'],
                     representation=context['representation'], context=context)
+        if index_path.exists() and any(row.get('field') == 'reviewed_run_lessons' for row in rows):
+            from pipeline.agent_harness import CodexRunner
+            from pipeline.annotation_run_lessons import validate_run_lessons
+            CodexRunner._check_tool_profile(directory, 'offline', child_meta)
+            context = {row['field']: _read_json(directory / 'workspace' / row['path']) for row in rows}
+            validate_run_lessons(run_dir, context['reviewed_run_lessons'], candidate=base,
+                source_text=context['chunk_text'], language=context['language'],
+                representation=context['representation'], context=context)
         return value
 
     replan = meta.get("replan")

@@ -418,7 +418,7 @@ def _substantive_evidence(value: Any) -> bool:
                        'id', 'entry_id', 'name', 'title', 'type', 'kind', 'url',
                        'source_url', 'sha256', 'digest', 'path', 'author', 'reviewed',
                        'review_digest', 'metadata',
-                       'issue_ids', 'source_refs', '_annotation_research_fact',
+                       'issue_ids', 'source_refs', '_annotation_research_fact', '_annotation_run_lesson_scope',
                    })
     return False
 
@@ -433,7 +433,7 @@ def _substantive_reference(
         if final_key in {'id', 'entry_id', 'name', 'title', 'type', 'kind', 'url',
                          'source_url', 'sha256', 'digest', 'path', 'author',
                          'reviewed', 'review_digest', 'metadata', 'issue_ids',
-                         'source_refs', '_annotation_research_fact'}:
+                         'source_refs', '_annotation_research_fact', '_annotation_run_lesson_scope'}:
             return _approved_lexical_category_match(
                 row, reference_content=reference_content, candidate=candidate,
                 candidate_paths=candidate_paths or [], representation=representation)
@@ -722,6 +722,11 @@ def _validate_output_targets(output: dict, inputs: dict) -> dict:
                 if (isinstance(content, dict) and content.get('_annotation_research_fact') is True
                         and raw['issue_id'] not in content.get('issue_ids', [])):
                     raise AdjudicationError('Reviewed research was cited outside its verified target issue scope')
+                if isinstance(content,dict) and '_annotation_run_lesson_scope' in content:
+                    scope=content['_annotation_run_lesson_scope']
+                    if (not isinstance(scope,dict) or scope.get('version')!=1
+                            or row['path'] not in scope.get('issue_paths',{}).get(raw['issue_id'],[])):
+                        raise AdjudicationError('Run lesson cited outside its exact verified target path scope')
                 try:
                     value = resolve_pointer(content, pointer)
                 except (LedgerProtocolError, TypeError) as exc:
@@ -966,6 +971,28 @@ def _validate_carried_context(run_dir, context, candidate, source_text,
         raise AdjudicationError('Carried research references differ from exact authenticated current targets')
 
 
+def _validate_run_lesson_context(run_dir,context,candidate,source_text,language,representation,current_review,references):
+    if not isinstance(context,dict):return
+    if any(isinstance(row, dict) and any(key in row for key in ('reviewed_run_grammar', 'reviewed_run_lessons'))
+           for row in (context, context.get('chunk_review_context'))):
+        from pipeline.annotation_run_lessons import validate_run_lesson_context_fields
+        validate_run_lesson_context_fields(context)
+    packet=context.get('reviewed_run_lessons')
+    if packet is None and isinstance(context.get('chunk_review_context'),dict):
+        packet=context['chunk_review_context'].get('reviewed_run_lessons')
+    if packet is None:return
+    from pipeline.annotation_run_lessons import validate_run_lessons
+    bound=validate_run_lessons(run_dir,packet,candidate=candidate,source_text=source_text,
+        language=language,representation=representation,context=context,current_review=current_review)
+    substantive_context = context.get('chunk_review_context', context)
+    if substantive_context.get('reviewed_run_grammar') != bound['lessons']:
+        raise AdjudicationError('Run lesson substantive entries differ from authenticated provenance')
+    source_ids={row['import_receipt']['reference_id'] for row in packet['lessons']}
+    actual={key:value for key,value in references.items() if key in source_ids}
+    if actual!=bound['references']:raise AdjudicationError('Run lesson references differ from authenticated targets')
+    return bound
+
+
 async def _adjudicate_once(runner: Any, run_dir: Path, *, language: str,
         representation: str, candidate: Any, current_review: dict, prior_history: Any,
         context: Any, known_reference_input: dict, deterministic_gate_evidence: dict,
@@ -977,6 +1004,8 @@ async def _adjudicate_once(runner: Any, run_dir: Path, *, language: str,
     if isinstance(runner, CodexRunner) and runner.legacy_tool_restrictions:
         raise AdjudicationError('Adjudication requires the organized tools-enabled workspace profile')
     _validate_carried_context(run_dir, context, candidate, source_text, language,
+        representation, current_review, known_reference_input)
+    _validate_run_lesson_context(run_dir, context, candidate, source_text, language,
         representation, current_review, known_reference_input)
     inputs = _build_inputs(language=language, representation=representation, candidate=candidate,
         current_review=current_review, prior_history=prior_history, context=context,
@@ -1001,8 +1030,19 @@ async def _adjudicate_once(runner: Any, run_dir: Path, *, language: str,
     schema_path = run_dir / 'annotation-adjudication.schema.json'
     _write_json(schema_path, _output_schema(inputs.get('host_binding_policy_version', 1)))
     prompt = _worker_prompt(inputs)
+    run_lesson_workspace = {}
+    lesson_context = context.get('chunk_review_context', context) if isinstance(context, dict) else {}
+    if lesson_context.get('reviewed_run_lessons'):
+        from pipeline.annotation_run_lessons import validate_run_lessons
+        lesson_bound = validate_run_lessons(run_dir, lesson_context['reviewed_run_lessons'],
+            candidate=candidate, source_text=source_text, language=language,
+            representation=representation, context=context, current_review=current_review)
+        run_lesson_workspace = {'annotation_run_lesson_validation': {
+            'run_dir': str(run_dir.resolve()), 'candidate': candidate, 'source_text': source_text,
+            'language': language, 'representation': representation,
+            'envelope': lesson_bound['packet'], 'lessons': lesson_bound['lessons'], 'context': context}}
     output = await runner.call(job, prompt, schema_path, 'low', tool_profile='research',
-        workspace_context={'annotation_adjudication': inputs,
+        workspace_context={**run_lesson_workspace, 'annotation_adjudication': inputs,
                            'annotation_adjudication_validation': {'input_field': 'annotation_adjudication'}})
     verified = _validate_output(output, inputs)
     meta = json.loads((agent_dir / 'meta.json').read_text(encoding='utf-8'))
@@ -1027,6 +1067,8 @@ def _verify_adjudication_once(run_dir: Path, evidence: dict, *, language: str,
         normal_review_receipt: dict, source_text: str | None = None) -> dict:
     """Replay a saved receipt; no model call is made and inputs must match exactly."""
     _validate_carried_context(run_dir, context, candidate, source_text, language,
+        representation, current_review, known_reference_input)
+    _validate_run_lesson_context(run_dir, context, candidate, source_text, language,
         representation, current_review, known_reference_input)
     inputs = _build_inputs(language=language, representation=representation, candidate=candidate,
         current_review=current_review, prior_history=prior_history, context=context,

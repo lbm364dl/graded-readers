@@ -4,6 +4,8 @@
 from __future__ import annotations
 
 from pipeline.annotation_adjudication_budget import AdjudicationBudget
+from pipeline.annotation_run_lesson_callers import (
+    bind_lifecycle_run_lessons, current_run_lesson_eligibility)
 from pipeline.annotation_reference_carry_callers import (
     bind_lifecycle_carry, register_chunk_positions, remember_lifecycle_carry,
     validate_carry_context,
@@ -5418,11 +5420,18 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
             "representation": "japanese-annotation", "require_typed": True}}
         carried_context, _ = bind_lifecycle_carry(self, index, chunk, annotation,
             language='ja', representation='japanese-annotation')
-        if carried_context:
+        carried_context, _ = bind_lifecycle_run_lessons(self, index, chunk, annotation,
+            language='ja', representation='japanese-annotation', context=carried_context)
+        if 'reviewed_run_lessons' in carried_context:
+            from pipeline.annotation_run_lessons import RUN_LESSON_GUIDANCE
+            prompt += '\n\n' + RUN_LESSON_GUIDANCE
+            boundary_prompt += '\n\n' + RUN_LESSON_GUIDANCE
+        if 'reviewed_annotation_research' in carried_context:
             from pipeline.annotation_reference_carry import CARRIED_RESEARCH_GUIDANCE
             prompt += '\n\n' + CARRIED_RESEARCH_GUIDANCE
             boundary_prompt += '\n\n' + CARRIED_RESEARCH_GUIDANCE
             target_context.update(carried_context)
+        target_context.update(carried_context)
         general_review, boundary_review = await asyncio.gather(
             self.runner.call(
                 f"annotations/chunk_{index:04d}/{stage}_review", prompt,
@@ -5781,6 +5790,10 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                         last = cached['attempts'][-1]
                         if last.get('effective_review', {}).get('kind') == 'adjudicated':
                             old_context = last['adjudication_replay']['context']
+                            if not current_run_lesson_eligibility(self, index, chunk, {
+                                    'segments': cached['segments'], 'grammar_overlays': cached['grammar_overlays']},
+                                    language='ja', representation='japanese-annotation', old_context=old_context):
+                                current_contract_passes = False
                             if not current_carry_eligibility(run_dir, candidate={
                                     'segments': cached['segments'], 'grammar_overlays': cached['grammar_overlays']},
                                     source_text=chunk, language='ja', representation='japanese-annotation',
@@ -5793,8 +5806,12 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                                 workspace = Path(run_dir) / 'agents' / child['job'] / 'workspace'
                                 if (workspace / 'INDEX.json').exists():
                                     for row in json.loads((workspace / 'INDEX.json').read_text()):
-                                        if row['field'] in (CARRY_FIELD, 'annotation_source_position'):
+                                        if row['field'] in (CARRY_FIELD, 'reviewed_run_lessons', 'annotation_source_position'):
                                             old_context[row['field']] = json.loads((workspace / row['path']).read_text())
+                                if not current_run_lesson_eligibility(self, index, chunk, {
+                                        'segments': cached['segments'], 'grammar_overlays': cached['grammar_overlays']},
+                                        language='ja', representation='japanese-annotation', old_context=old_context):
+                                    current_contract_passes = False
                                 if not current_carry_eligibility(run_dir, candidate={
                                         'segments': cached['segments'], 'grammar_overlays': cached['grammar_overlays']},
                                         source_text=chunk, language='ja', representation='japanese-annotation',
@@ -5911,6 +5928,8 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                 context={"chunk_text": chunk,
                     "grammar_knowledge": japanese_semantic_repair_grammar_knowledge(),
                     **(adjudication_context or {})})
+            repair_context, _ = bind_lifecycle_run_lessons(self, index, chunk, base,
+                language='ja', representation='japanese-annotation', context=repair_context)
             semantic = await repair_annotation(
                 self,
                 f"annotations/chunk_{index:04d}/{stage}_semantic",
@@ -6007,6 +6026,10 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                     context={"chunk_text": chunk, "grammar_knowledge": grammar_knowledge,
                         "story_plan": getattr(self, "story_vocabulary_plan", {"terms": []})},
                     current_review=findings, include_position=True)
+                fresh_context, lesson_references = bind_lifecycle_run_lessons(
+                    self, index, chunk, result, language='ja', representation='japanese-annotation',
+                    context=fresh_context, current_review=findings)
+                references.update(lesson_references)
                 references.update(carried_references)
                 if not adjudication_budget.claim(result):
                     raise RuntimeError("Adjudication candidate budget changed before invocation")
@@ -6168,6 +6191,10 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                 context, carried_references = bind_lifecycle_carry(self, index, chunk, result,
                     language='ja', representation='japanese-annotation', context=context,
                     current_review=findings, include_position=True)
+                context, lesson_references = bind_lifecycle_run_lessons(
+                    self, index, chunk, result, language='ja', representation='japanese-annotation',
+                    context=context, current_review=findings)
+                references.update(lesson_references)
                 references.update(carried_references)
                 if not adjudication_budget.claim(result):
                     raise RuntimeError("Adjudication candidate budget changed before invocation")

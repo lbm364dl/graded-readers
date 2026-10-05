@@ -249,6 +249,12 @@ def current_assembly_carry_eligibility(run_dir, meta):
                 context={**old, 'chapter_text': parent, 'source_start': start}, old_context=old,
                 terminal_evidence=proof.get('adjudication')):
             return False
+        from pipeline.annotation_run_lesson_callers import current_run_lesson_context_eligibility
+        if not current_run_lesson_context_eligibility(run_dir, candidate=annotation,
+                source_text=record['text'], language='ko', representation='korean-flat',
+                context={'chapter_text': parent, 'source_start': start}, old_context=old,
+                terminal_context=proof.get('replay_inputs', {}).get('context')):
+            return False
         start += len(record['text'])
     return True
 
@@ -265,8 +271,8 @@ def reusable_checkpoint_approval(run_dir, row, *, annotation, text, context, pol
     if normal['job'] != f'annotation-local-review-{identity}':
         raise ValueError('Korean checkpoint review policy changed')
     for key in set(old) | set(context):
-        if key == CARRY_FIELD:
-            continue  # Eligibility above authenticates the immutable old packet.
+        if key in (CARRY_FIELD, 'reviewed_run_lessons', 'reviewed_run_grammar'):
+            continue  # The independent eligibility gates below authenticate additive knowledge.
         if key == 'official_primary_sources':
             current = {item['reference_id']: item for item in context.get(key, [])}
             if any(current.get(item['reference_id']) != item for item in old.get(key, [])):
@@ -295,6 +301,11 @@ def reusable_checkpoint_approval(run_dir, row, *, annotation, text, context, pol
             language='ko', representation='korean-flat', context=context, old_context=old,
             terminal_evidence=proof.get('adjudication')):
         raise ValueError('Korean checkpoint has newly applicable reviewed research')
+    from pipeline.annotation_run_lesson_callers import current_run_lesson_context_eligibility
+    if not current_run_lesson_context_eligibility(run_dir, candidate=annotation, source_text=text,
+            language='ko', representation='korean-flat', context=context, old_context=old,
+            terminal_context=proof.get('replay_inputs', {}).get('context')):
+        raise ValueError('Korean checkpoint has newly applicable independently reviewed run lesson')
     return proof
 
 
@@ -1366,9 +1377,11 @@ class KoreanHarness:
                             grammar_ids = {link['entry_id'] for link in semantic_base['grammar_links']}
                             from pipeline.korean_lexical_research import reviewed_primary_sources, candidate_lexical_identities
                             selected_primary_sources = reviewed_primary_sources(candidate_lexical_identities(semantic_base))
+                            from pipeline.annotation_run_lessons import enrich_run_lesson_context
                             repaired = await repair_annotation(self, chunk_job, semantic_base, errors,
                                 representation='korean-flat', language='ko',
-                                context={'chunk_text': text, 'chapter_text': prose['text'],
+                                context=enrich_run_lesson_context(self.run_dir, candidate=semantic_base, source_text=text,
+                                    language='ko', representation='korean-flat', context={'chunk_text': text, 'chapter_text': prose['text'],
                                     'source_start': sum(map(len, texts[:number - 1])),
                                     'candidate_gate': {'focus': focus, 'title': prose['title'],
                                         'number': self.number, 'plan': bound_plan,
@@ -1384,7 +1397,7 @@ class KoreanHarness:
                                     **({'official_primary_sources': selected_primary_sources} if selected_primary_sources else {}),
                                     'linguistic_reference': read(LINGUISTIC_REFERENCE),
                                     'lexical_reference': read(LEXICAL_REFERENCE),
-                                    **(local_adjudication_context or {})},
+                                    **(local_adjudication_context or {})})[0],
                                 validate_candidate=lambda rebuilt: validate_chunk(rebuilt, text))
                             if repaired['status'] == 'applied':
                                 value = repaired['candidate']
@@ -1516,6 +1529,9 @@ class KoreanHarness:
                                 source_text=text, language='ko', representation='korean-flat', context=context)
                             if carried['packet']:
                                 context[CARRY_FIELD] = carried['packet']
+                        from pipeline.annotation_run_lessons import enrich_run_lesson_context
+                        context, _ = enrich_run_lesson_context(self.run_dir, candidate=value, source_text=text,
+                            language='ko', representation='korean-flat', context=context)
                         if review_attempt == 0 and index in checkpoint_approvals:
                             try:
                                 proof = reusable_checkpoint_approval(self.run_dir,
@@ -1561,6 +1577,11 @@ class KoreanHarness:
                             if context.get('reviewed_annotation_research'):
                                 from pipeline.annotation_reference_carry import bind_carried_research
                                 references.update(bind_carried_research(self.run_dir, context['reviewed_annotation_research'],
+                                    candidate=value, source_text=text, language='ko', representation='korean-flat',
+                                    context=context, current_review=review)['references'])
+                            if context.get('reviewed_run_lessons'):
+                                from pipeline.annotation_run_lessons import validate_run_lessons
+                                references.update(validate_run_lessons(self.run_dir, context['reviewed_run_lessons'],
                                     candidate=value, source_text=text, language='ko', representation='korean-flat',
                                     context=context, current_review=review)['references'])
                             references['review-policy'] = {
@@ -1624,6 +1645,9 @@ class KoreanHarness:
                                     from pipeline.annotation_reference_carry import register_carried_research
                                     register_carried_research(self.run_dir, research_carry, candidate=value, source_text=text,
                                         language='ko', representation='korean-flat', context=context)
+                                if context.get('reviewed_run_lessons'):
+                                    local_adjudication_context['reviewed_run_lessons'] = context['reviewed_run_lessons']
+                                    local_adjudication_context['reviewed_run_grammar'] = context['reviewed_run_grammar']
                                 continue
                             raise ValueError(
                                 f"Korean annotation adjudication did not clear chunk {index + 1}: "

@@ -170,7 +170,7 @@ def build(path, prompt, schema, *, context=None, submission_repair=None):
     put_json('INDEX.json', inventory)
     put_json('schema.json', schema)
     put_json('receipt.schema.json', RECEIPT_SCHEMA)
-    put_json('validation-context.json', [{k: v[k] for k in ('chunk_text', 'language', 'surfaces', 'annotation', 'annotation_validation', 'annotation_patch_validation', 'annotation_plan_validation', 'annotation_adjudication_validation', 'annotation_research_validation', 'annotation_issue_targets_validation') if k in v} for v in contexts if isinstance(v, dict)])
+    put_json('validation-context.json', [{k: v[k] for k in ('chunk_text', 'language', 'surfaces', 'annotation', 'annotation_validation', 'annotation_patch_validation', 'annotation_plan_validation', 'annotation_adjudication_validation', 'annotation_research_validation', 'annotation_issue_targets_validation', 'annotation_run_lesson_validation') if k in v} for v in contexts if isinstance(v, dict)])
     command = 'cd ' + shlex.quote(str(ROOT)) + ' && ' + shlex.quote(str(ROOT / '.venv/bin/python')) + ' -m pipeline.worker_workspace validate --workspace ' + shlex.quote(str(path.resolve())) + ' --candidate ' + shlex.quote(str(path.resolve() / 'candidate.json'))
     put('README.txt', 'Read TASK.txt and INDEX.json. Repository root: ' + str(ROOT) + '. Repository paths in the task are relative to that root; input/reference paths in INDEX.json are relative to this workspace. Inspect relevant data and full reference entries as needed. Use your tools freely to investigate and verify. Save candidate.json and check it with:\n' + command + '\nThe local check is feedback, not independent publication approval. Submit only {"candidate_path":"candidate.json"}; do not reproduce the file contents.\n')
     _remove_obsolete_managed_inputs(path, previous_manifest, files)
@@ -201,6 +201,18 @@ def check(path, candidate):
         for row in json.loads(index_path.read_text(encoding='utf-8')):
             input_values[row['field']] = json.loads((path / row['path']).read_text(encoding='utf-8'))
     for context in validation_contexts:
+        lesson_context = context.get('annotation_run_lesson_validation')
+        if lesson_context is not None:
+            from pipeline.annotation_run_lessons import validate_run_lessons, RunLessonError
+            bound_lessons = validate_run_lessons(Path(lesson_context['run_dir']), lesson_context['envelope'],
+                candidate=lesson_context['candidate'], source_text=lesson_context['source_text'],
+                language=lesson_context['language'], representation=lesson_context['representation'],
+                context=lesson_context['context'])
+            if bound_lessons['lessons'] != lesson_context['lessons']:
+                raise RunLessonError('Run lesson content differs from authenticated writer/critic proof')
+            if ('reviewed_run_grammar' in input_values
+                    and input_values['reviewed_run_grammar'] != bound_lessons['lessons']):
+                raise RunLessonError('Explicit run grammar differs from authenticated lesson content')
         review_targets_context = context.get('annotation_issue_targets_validation')
         if review_targets_context is not None:
             from pipeline.annotation_issue_targets import validate_issue_targets
@@ -396,16 +408,24 @@ def submit(path, receipt):
                               for context in validation_contexts)
     review_targets_validation = any(context.get('annotation_issue_targets_validation') is not None
                                     for context in validation_contexts)
-    if plan_validation is not None or patch_validation or adjudication_validation or research_validation or review_targets_validation:
+    run_lesson_validation = any(context.get('annotation_run_lesson_validation') is not None
+                                for context in validation_contexts)
+    if plan_validation is not None or patch_validation or adjudication_validation or research_validation or review_targets_validation or run_lesson_validation:
         try:
             check(path, candidate)
         except (ValidationError, ValueError, KeyError, TypeError, IndexError) as error:
             from pipeline.annotation_edits import AnnotationEditError
+            lesson_error = False
+            if run_lesson_validation:
+                from pipeline.annotation_run_lessons import RunLessonError
+                lesson_error = isinstance(error, RunLessonError)
             category = ('plan_contract_rejection' if plan_validation is not None else
                         'annotation_patch_contract_rejection'
                         if isinstance(error, AnnotationEditError) else
                         'annotation_adjudication_rejection'
                         if adjudication_validation else
+                        'annotation_run_lesson_rejection'
+                        if lesson_error else
                         'annotation_research_rejection'
                         if research_validation else
                         'annotation_issue_targets_rejection'
@@ -418,6 +438,8 @@ def submit(path, receipt):
                 if adjudication_validation else
                 f'Submitted targeted annotation research failed citation validation: {error}'
                 if research_validation else
+                f'Submitted run lesson inputs failed authenticated evidence validation: {error}'
+                if lesson_error else
                 f'Submitted annotation review failed target validation: {error}'
                 if review_targets_validation else
                 f'Submitted annotation patch failed derived-candidate validation: {error}',
