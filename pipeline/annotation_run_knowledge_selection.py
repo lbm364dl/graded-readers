@@ -203,3 +203,53 @@ def _eligible_targets(inputs):
   bound={row.get('application',{}).get('target_path',row['expected_context']['target_occurrence']['target_path']) for row in packet['lessons']}
   paths=[path for path in paths if path not in bound]
  return paths
+
+
+def restore_current_normalization_context(run_dir, *, candidate, source_text, language,
+                                          representation, context, index,
+                                          record=None, old_context=None, position=None):
+ """Recover independently authenticated selected knowledge before cache eligibility.
+
+ Current position comes from coordinator geometry, never the retained proof.
+ Historical contexts without applicable applications/provenance stay identical.
+ """
+ from pipeline.annotation_run_lessons import (load_run_lesson_applications,
+  enrich_run_lesson_context,validate_run_lessons,RUN_LESSON_FIELD)
+ from pipeline.annotation_repairs import _safe_job_path
+ original=deepcopy(context);current=deepcopy(context)
+ if position is None:
+  parent=current.get('chapter_text');offset=current.get('source_start')
+  if not isinstance(parent,str) or type(offset) is not int or offset<0 or parent[offset:offset+len(source_text)]!=source_text or type(index) is not int or index<0:raise RunLessonError('Normalization resume requires exact current coordinator position')
+  position={'chunk_index':index,'source_start':offset,'source_text_digest':digest(source_text),'parent_text_digest':digest(parent)}
+ current['annotation_source_position']=deepcopy(position)
+ if _position(current,source_text)!=position or position.get('chunk_index')!=index:raise RunLessonError('Normalization resume coordinator position changed')
+ proofs=[]
+ for container in (context,old_context or {}):
+  if container.get(FIELD) is not None:proofs.append(container[FIELD])
+ if record:
+  meta_path=_safe_job_path(Path(run_dir).absolute(),record['job'])/'meta.json'
+  if meta_path.exists():
+   from pipeline.worker_paths import checked_regular_file
+   meta=json.loads(checked_regular_file(meta_path).read_text())
+   if meta.get('kind')=='annotation_run_knowledge_normalization':
+    result,_=replay_normalization(run_dir,record['job'])
+    if language=='ko':
+     from pipeline.korean_agent_harness import digest as worker_digest
+     if record.get('text')!=source_text or record.get('digest')!=worker_digest(result):raise RunLessonError('Retained normalized producer record changed')
+    proofs.append({'job':record['job'],'meta_digest':digest(meta),'result_digest':digest(result)})
+ if old_context and old_context.get(FIELD) is not None:
+  validate_run_lessons(run_dir,old_context.get(RUN_LESSON_FIELD),candidate=candidate,source_text=source_text,language=language,representation=representation,context=old_context)
+ if proofs and any(proof!=proofs[0] for proof in proofs):raise RunLessonError('Conflicting retained normalization provenance')
+ # Probe only the exact current-position application index; no global discovery.
+ packet=load_run_lesson_applications(run_dir,candidate=candidate,source_text=source_text,
+  language=language,representation=representation,context=current)
+ if not packet and not proofs:return original
+ if not packet:raise RunLessonError('Retained normalization requires authenticated current application')
+ current,_=enrich_run_lesson_context(run_dir,candidate=candidate,source_text=source_text,
+  language=language,representation=representation,context=current)
+ if proofs:
+  current[FIELD]=deepcopy(proofs[0])
+  validate_normalization_context(run_dir,current,candidate,source_text,language,representation)
+ validate_run_lessons(run_dir,current[RUN_LESSON_FIELD],candidate=candidate,source_text=source_text,
+  language=language,representation=representation,context=current)
+ return current

@@ -1530,6 +1530,12 @@ class KoreanHarness:
                         selected_primary_sources = reviewed_primary_sources(candidate_lexical_identities(value))
                         if selected_primary_sources:
                             context['official_primary_sources'] = selected_primary_sources
+                        from pipeline.annotation_run_knowledge_selection import restore_current_normalization_context
+                        context = restore_current_normalization_context(self.run_dir,
+                            candidate=value, source_text=text, language='ko', representation='korean-flat',
+                            context=context, index=index, record=record,
+                            old_context=checkpoint_approvals.get(index, {}).get('review_context'),
+                            position=getattr(self, '_annotation_source_positions', {}).get(index))
                         if research_carry is None:
                             from pipeline.annotation_reference_carry import load_carried_research
                             research_carry = load_carried_research(self.run_dir, candidate=value, source_text=text,
