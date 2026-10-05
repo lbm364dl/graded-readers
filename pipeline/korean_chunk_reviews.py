@@ -74,6 +74,8 @@ def review_request(annotation, text, context, policy, *, guidance_version=1):
            for row in (context, context.get('chunk_review_context'))):
         from pipeline.annotation_run_lessons import validate_run_lesson_context_fields
         validate_run_lesson_context_fields(context)
+    from pipeline.annotation_ranged_link_guidance import contextual_guidance
+    ranged_suffix = contextual_guidance(context, 'korean-flat')
     inputs = {'annotation': annotation, 'text': text, 'context': context,
               'issue_targets_version': 1}
     if guidance_version == 2:
@@ -85,6 +87,8 @@ text field; this records the source defect and does not authorize an annotation
 patch to rewrite source text. Do not invent an annotation meaning defect to
 make a prose finding fit the schema.
 '''
+    if ranged_suffix:
+        instructions += '\n\n' + ranged_suffix
     if context.get('reviewed_annotation_research'):
         from pipeline.annotation_reference_carry import CARRIED_RESEARCH_GUIDANCE
         instructions += '\n' + CARRIED_RESEARCH_GUIDANCE

@@ -858,12 +858,16 @@ def _research_prompt(inputs: dict) -> str:
         tail += ("This is the initial research pass. If an unresolved finding could be answered by a direct page on an already supplied primary-source origin, "
                  "request that exact page in source_requests with the finding ID and reason so it can be captured. Do not stop at a gap when that bounded request is available. "
                  "Return the research schema.\n")
-    return policy + "\n\n" + tail
+    from pipeline.annotation_ranged_link_guidance import contextual_guidance
+    suffix = contextual_guidance(inputs.get("context"), inputs.get("representation"))
+    return policy + ("\n\n" + suffix if suffix else "") + "\n\n" + tail
 
 
 def _review_prompt(inputs: dict) -> str:
     _, policy = _policies(_policy_version(inputs))
-    return (policy + "\n\nThe exact research artifact, citations resolved by the host, supplied references, and original issue context are in the organized annotation_uncertainty_research input. "
+    from pipeline.annotation_ranged_link_guidance import contextual_guidance
+    suffix = contextual_guidance(inputs.get("context"), inputs.get("representation"))
+    return (policy + ("\n\n" + suffix if suffix else "") + "\n\nThe exact research artifact, citations resolved by the host, supplied references, and original issue context are in the organized annotation_uncertainty_research input. "
             "Judge the artifact as submitted; do not rewrite it. Return the generic usage-dictionary-review schema.\n")
 
 

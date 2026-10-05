@@ -818,7 +818,7 @@ def _build_inputs(*, language: str, representation: str, candidate: Any,
         'references_digest': digest(known_reference_input),
         'gate_digest': digest(deterministic_gate_evidence),
         'normal_review_receipt_digest': digest(normal_review_receipt),
-        'instructions_digest': digest(_versioned_instructions(host_binding_policy_version)), 'effort': 'low',
+        'instructions_digest': digest(_contextual_instructions(host_binding_policy_version, context, representation)), 'effort': 'low',
         'model': 'gpt-6-luna', 'tool_profile': 'research',
     }
     if host_binding_policy_version in {2, 3, 4, 5, 6, 7}:
@@ -952,12 +952,18 @@ def _prior_path_history(prior_history: Any, current_candidate: Any,
     return history
 
 
+def _contextual_instructions(version, context, representation=None):
+    from pipeline.annotation_ranged_link_guidance import contextual_guidance
+    suffix = contextual_guidance(context, representation)
+    return _versioned_instructions(version) + ('\n\n' + suffix if suffix else '')
+
+
 def _worker_prompt(inputs: dict) -> str:
     context = inputs.get('context')
     policy = context.get('annotation_reviewed_reference_policy') if isinstance(context, dict) else None
     if policy is not None and policy != REVIEWED_REFERENCE_POLICY:
         raise AdjudicationError('Reviewed-reference approval policy is not host-authenticated')
-    return (_versioned_instructions(inputs.get('host_binding_policy_version', 1)) + ('\n\n' + policy if policy else '') + '\nThe full candidate, review, history, and organized references are in the immutable annotation_adjudication input. Return the required JSON object.\n')
+    return (_contextual_instructions(inputs.get('host_binding_policy_version', 1), context, inputs.get('representation')) + ('\n\n' + policy if policy else '') + '\nThe full candidate, review, history, and organized references are in the immutable annotation_adjudication input. Return the required JSON object.\n')
 
 
 def _validate_carried_context(run_dir, context, candidate, source_text,

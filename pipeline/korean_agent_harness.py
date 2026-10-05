@@ -1437,10 +1437,11 @@ class KoreanHarness:
                             from pipeline.korean_lexical_research import reviewed_primary_sources, candidate_lexical_identities
                             selected_primary_sources = reviewed_primary_sources(candidate_lexical_identities(semantic_base))
                             from pipeline.annotation_run_lessons import enrich_run_lesson_context
+                            from pipeline.annotation_ranged_link_guidance import FIELD, marker
                             repaired = await repair_annotation(self, chunk_job, semantic_base, errors,
                                 representation='korean-flat', language='ko',
                                 context=enrich_run_lesson_context(self.run_dir, candidate=semantic_base, source_text=text,
-                                    language='ko', representation='korean-flat', context={'chunk_text': text, 'chapter_text': prose['text'],
+                                    language='ko', representation='korean-flat', context={FIELD: marker('korean-flat'), 'chunk_text': text, 'chapter_text': prose['text'],
                                     'source_start': sum(map(len, texts[:number - 1])),
                                     'candidate_gate': {'focus': focus, 'title': prose['title'],
                                         'number': self.number, 'plan': bound_plan,
@@ -1589,6 +1590,8 @@ class KoreanHarness:
                         selected_primary_sources = reviewed_primary_sources(candidate_lexical_identities(value))
                         if selected_primary_sources:
                             context['official_primary_sources'] = selected_primary_sources
+                        from pipeline.annotation_ranged_link_guidance import with_policy
+                        context = with_policy(context, 'korean-flat')
                         from pipeline.annotation_run_knowledge_selection import restore_current_normalization_context
                         context = restore_current_normalization_context(self.run_dir,
                             candidate=value, source_text=text, language='ko', representation='korean-flat',

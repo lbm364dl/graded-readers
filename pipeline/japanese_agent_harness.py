@@ -37,6 +37,8 @@ from pipeline.annotation_publication import (
     verify_item_research_positions,
 )
 from pipeline.chunk_scheduler import map_chunks, ChunkAdmissionIncomplete, bounded_chunk_jobs, persist_admission_outcomes
+from pipeline.annotation_ranged_link_guidance import (FIELD as RANGED_POLICY_FIELD, marker as ranged_marker,
+    with_policy as with_ranged_policy, contextual_guidance as ranged_contextual_guidance)
 from pipeline.annotation_review_guidance import (FORM_STAGE_EVIDENCE_GUIDANCE_V2 as FORM_STAGE_EVIDENCE_GUIDANCE, form_stage_guidance)
 from pipeline.annotation_issue_targets import ISSUE_TARGET_GUIDANCE, validate_issue_targets
 from pipeline.japanese_readability import (
@@ -153,6 +155,10 @@ def verify_japanese_chunk_review(item: dict[str, Any], source_text: str,
         selected_stage_guidance = form_stage_guidance(stage_version)
         if 'complete_stage_instruction_policy_version' in replay['context']:
             expected_context['complete_stage_instruction_policy_version'] = stage_version
+        if RANGED_POLICY_FIELD in replay['context']:
+            if replay['context'][RANGED_POLICY_FIELD] != ranged_marker('japanese-annotation'):
+                return False
+            expected_context[RANGED_POLICY_FIELD] = replay['context'][RANGED_POLICY_FIELD]
         from pipeline.annotation_reference_carry import CARRY_FIELD
         for key in ('annotation_source_position', CARRY_FIELD):
             if key in replay['context']:
@@ -5430,6 +5436,9 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
         if hold is not None:carried_context['annotation_investigation_hold']=hold
         carried_context, _ = bind_lifecycle_run_lessons(self, index, chunk, annotation,
             language='ja', representation='japanese-annotation', context=carried_context)
+        carried_context = with_ranged_policy(carried_context, 'japanese-annotation')
+        prompt += '\n\n' + ranged_contextual_guidance(carried_context, representation='japanese-annotation')
+        boundary_prompt += '\n\n' + ranged_contextual_guidance(carried_context, representation='japanese-annotation') + '\nThis specialized pass still reviews only primary segments; the ranged policy does not add overlay review to its remit.'
         if 'reviewed_run_lessons' in carried_context:
             from pipeline.annotation_run_lessons import run_lesson_guidance
             prompt += '\n\n' + run_lesson_guidance(carried_context['reviewed_run_lessons'])
@@ -5944,6 +5953,7 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                 context={"chunk_text": chunk,
                     "grammar_knowledge": japanese_semantic_repair_grammar_knowledge(),
                     **(adjudication_context or {})})
+            repair_context = with_ranged_policy(repair_context, 'japanese-annotation')
             repair_context, _ = bind_lifecycle_run_lessons(self, index, chunk, base,
                 language='ja', representation='japanese-annotation', context=repair_context)
             semantic = await repair_annotation(
@@ -6041,6 +6051,7 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                     context={"chunk_text": chunk, "grammar_knowledge": grammar_knowledge,
                         "complete_stage_instruction_policy_version": 2, "story_plan": getattr(self, "story_vocabulary_plan", {"terms": []})},
                     current_review=findings, include_position=True)
+                fresh_context = with_ranged_policy(fresh_context, 'japanese-annotation')
                 fresh_context, lesson_references = bind_lifecycle_run_lessons(
                     self, index, chunk, result, language='ja', representation='japanese-annotation',
                     context=fresh_context, current_review=findings)
@@ -6198,6 +6209,7 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                 grammar_knowledge = japanese_semantic_repair_grammar_knowledge()
                 context = {"chunk_text": chunk, "grammar_knowledge": grammar_knowledge,
                            "complete_stage_instruction_policy_version": 2, "story_plan": getattr(self, "story_vocabulary_plan", {"terms": []})}
+                context = with_ranged_policy(context, 'japanese-annotation')
                 references = {
                     "approved-grammar": {"kind": "approved_lesson",
                         "content": grammar_knowledge.get("approved_entries", [])},

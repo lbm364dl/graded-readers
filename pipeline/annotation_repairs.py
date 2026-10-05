@@ -361,6 +361,8 @@ async def repair_annotation(
             'annotation_run_lesson_validation': {'run_dir': str(run_dir.resolve()), 'candidate': candidate,
                 'source_text': context.get('chunk_text'), 'language': language, 'representation': representation,
                 'envelope': bound_run_lessons['packet'], 'lessons': bound_run_lessons['lessons'], 'context': context}}
+    from pipeline.annotation_ranged_link_guidance import FIELD, with_policy, contextual_guidance
+    contextual_guidance(context or {}, representation)
     plan_schema_path, patch_schema_path = _schemas(run_dir, candidate=candidate, job=job)
     from pipeline.annotation_repair_dependencies import repair_dependency_constraints
     dependency_constraints = repair_dependency_constraints(candidate, representation)
@@ -382,6 +384,8 @@ async def repair_annotation(
 {REPAIR_EXPLANATION_GUIDANCE}
 
 {FORM_STAGE_EVIDENCE_GUIDANCE}
+
+{contextual_guidance(shared_context, representation)}
 
 {DEPENDENCY_CLOSURE_GUIDANCE}
 
@@ -423,6 +427,7 @@ INPUT:
             "boundary_issues": [row["issue_index"] for row in plan["issues"]
                                 if row["boundary_change_needed"]]}
         meta["result_digest"] = base_digest
+        if FIELD in shared_context:meta[FIELD] = shared_context[FIELD]
         _save_assembly(run_dir, assembly_job, meta, deepcopy(candidate))
         return {"status": "boundary_change_needed", "candidate": deepcopy(candidate),
                 "evidence": _evidence_result(run_dir, assembly_job, meta), "plan": plan}
@@ -444,6 +449,8 @@ INPUT:
 {REPAIR_EXPLANATION_GUIDANCE}
 
 {FORM_STAGE_EVIDENCE_GUIDANCE}
+
+{contextual_guidance(shared_context, representation)}
 
 INPUT:
 {json.dumps(patch_context, ensure_ascii=False, indent=2)}"""
@@ -528,6 +535,8 @@ Cover exactly {len(replan_issues)} issue indices in order: {list(range(len(repla
 
 {FORM_STAGE_EVIDENCE_GUIDANCE}
 
+{contextual_guidance(shared_context, representation)}
+
 INPUT:
 {json.dumps(replan_plan_context, ensure_ascii=False, indent=2)}"""
         try:
@@ -546,6 +555,7 @@ INPUT:
                     "replan_plan_job": None, "replan_plan_error": str(replan_error),
                     "replan_patch_job": None},
                 "patch_error": str(replan_error), "result_digest": base_digest}
+            if FIELD in shared_context:meta[FIELD] = shared_context[FIELD]
             _save_assembly(run_dir, assembly_job, meta, deepcopy(candidate))
             return {"status": "patch_rejected", "candidate": deepcopy(candidate),
                     "evidence": _evidence_result(run_dir, assembly_job, meta),
@@ -568,6 +578,7 @@ INPUT:
                 "boundary_issues": [row["issue_index"] for row in replan_plan["issues"]
                                     if row["boundary_change_needed"]],
                 "result_digest": base_digest}
+            if FIELD in shared_context:meta[FIELD] = shared_context[FIELD]
             _save_assembly(run_dir, assembly_job, meta, deepcopy(candidate))
             return {"status": "boundary_change_needed", "candidate": deepcopy(candidate),
                     "evidence": _evidence_result(run_dir, assembly_job, meta),
@@ -592,6 +603,8 @@ INPUT:
 
 {FORM_STAGE_EVIDENCE_GUIDANCE}
 
+{contextual_guidance(shared_context, representation)}
+
 INPUT:
 {json.dumps(replan_patch_context, ensure_ascii=False, indent=2)}"""
         try:
@@ -611,6 +624,7 @@ INPUT:
                     "replan_patch_attempt_job": replan_patch_job,
                     "replan_patch_job": None, "patch_error": str(replan_error)},
                 "patch_error": str(replan_error), "result_digest": base_digest}
+            if FIELD in shared_context:meta[FIELD] = shared_context[FIELD]
             _save_assembly(run_dir, assembly_job, meta, deepcopy(candidate))
             return {"status": "patch_rejected", "candidate": deepcopy(candidate),
                     "evidence": _evidence_result(run_dir, assembly_job, meta),
@@ -642,6 +656,7 @@ INPUT:
             "boundary_error": str(exc), "result_digest": base_digest}
         if replan_lineage is not None:
             meta["replan"] = replan_lineage
+        if FIELD in shared_context:meta[FIELD] = shared_context[FIELD]
         _save_assembly(run_dir, assembly_job, meta, deepcopy(candidate))
         return {"status": "boundary_change_needed", "candidate": deepcopy(candidate),
                 "evidence": _evidence_result(run_dir, assembly_job, meta), "plan": plan,
@@ -656,6 +671,7 @@ INPUT:
             "patch_error": str(exc), "result_digest": base_digest}
         if replan_lineage is not None:
             meta["replan"] = replan_lineage
+        if FIELD in shared_context:meta[FIELD] = shared_context[FIELD]
         _save_assembly(run_dir, assembly_job, meta, deepcopy(candidate))
         return {"status": "patch_rejected", "candidate": deepcopy(candidate),
                 "evidence": _evidence_result(run_dir, assembly_job, meta), "plan": plan,
@@ -672,6 +688,7 @@ INPUT:
             "validation_error": str(exc), "result_digest": base_digest}
         if replan_lineage is not None:
             meta["replan"] = replan_lineage
+        if FIELD in shared_context:meta[FIELD] = shared_context[FIELD]
         _save_assembly(run_dir, assembly_job, meta, deepcopy(candidate))
         return {"status": "patch_rejected", "candidate": deepcopy(candidate),
                 "evidence": _evidence_result(run_dir, assembly_job, meta), "plan": plan,
@@ -685,6 +702,7 @@ INPUT:
         "result_digest": candidate_digest(updated)}
     if replan_lineage is not None:
         meta["replan"] = replan_lineage
+    if FIELD in shared_context:meta[FIELD] = shared_context[FIELD]
     _save_assembly(run_dir, assembly_job, meta, updated)
     return {"status": "applied", "candidate": updated,
             "evidence": _evidence_result(run_dir, assembly_job, meta), "plan": plan}
@@ -701,6 +719,8 @@ def replay_annotation_repair(
     meta, stored = _read_json(assembly_dir / "meta.json"), _read_json(assembly_dir / "result.json")
     if meta.get("kind") != "annotation_patch_assembly" or meta.get("return_code") != 0:
         raise ValueError("invalid annotation semantic-patch assembly metadata")
+    from pipeline.annotation_ranged_link_guidance import FIELD, contextual_guidance
+    contextual_guidance(meta, meta.get("representation"))
     request_version = meta.get("repair_request_policy_version")
     if request_version not in (None, 3) or isinstance(request_version, bool):
         raise ValueError("Unknown repair request policy version")
@@ -721,6 +741,16 @@ def replay_annotation_repair(
         index_path = directory / 'workspace' / 'INDEX.json'
         if index_path.exists():
             rows = _read_json(index_path)
+            from pipeline.annotation_ranged_link_guidance import FIELD, contextual_guidance
+            marker_rows = [row for row in rows if row.get('field') == FIELD]
+            if FIELD in meta and len(marker_rows) != 1:raise ValueError('Missing authenticated ranged-link policy')
+            if marker_rows:
+                from pipeline.agent_harness import CodexRunner
+                CodexRunner._check_tool_profile(directory, 'offline', child_meta)
+                value_marker = _read_json(directory / 'workspace' / marker_rows[0]['path'])
+                if FIELD in meta and value_marker != meta[FIELD]:raise ValueError('Ranged-link policy differs from assembly')
+                if len(marker_rows) != 1:raise ValueError('Duplicate ranged-link policy')
+                contextual_guidance({FIELD: _read_json(directory / 'workspace' / marker_rows[0]['path'])}, meta['representation'])
             if any(row.get('field') == 'reviewed_annotation_research' for row in rows):
                 from pipeline.agent_harness import CodexRunner
                 from pipeline.annotation_reference_carry import bind_carried_research
@@ -729,6 +759,7 @@ def replay_annotation_repair(
                 bind_carried_research(run_dir, context['reviewed_annotation_research'], candidate=base,
                     source_text=context['chunk_text'], language=context['language'],
                     representation=context['representation'], context=context)
+        if FIELD in meta and not index_path.exists():raise ValueError('Missing authenticated ranged-link workspace')
         if index_path.exists() and any(row.get('field') == 'reviewed_run_lessons' for row in rows):
             from pipeline.agent_harness import CodexRunner
             from pipeline.annotation_run_lessons import validate_run_lessons

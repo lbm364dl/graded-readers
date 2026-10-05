@@ -25,6 +25,8 @@ import sys
 from typing import Any
 
 from pipeline.chunk_scheduler import map_chunks, admission_indices, ChunkAdmissionIncomplete, bounded_chunk_jobs, persist_admission_outcomes
+from pipeline.annotation_ranged_link_guidance import (FIELD as RANGED_POLICY_FIELD, marker as ranged_marker,
+    with_policy as with_ranged_policy, contextual_guidance as ranged_contextual_guidance)
 from pipeline.annotation_review_guidance import FORM_STAGE_EVIDENCE_GUIDANCE_V2 as FORM_STAGE_EVIDENCE_GUIDANCE
 from pipeline.annotation_issue_targets import ISSUE_TARGET_GUIDANCE, validate_issue_targets
 from pipeline.annotation_publication import (
@@ -409,6 +411,10 @@ def is_verified_adjudicated_annotation(item: dict[str, Any], run_dir: Path | Non
         source_text = replay["source_text"]
         expected_context = {"chunk_text": source_text,
             "grammar_knowledge": chinese_semantic_repair_grammar_knowledge(candidate)}
+        if RANGED_POLICY_FIELD in replay['context']:
+            if replay['context'][RANGED_POLICY_FIELD] != ranged_marker('chinese-annotation'):
+                return False
+            expected_context[RANGED_POLICY_FIELD] = replay['context'][RANGED_POLICY_FIELD]
         from pipeline.annotation_reference_carry import CARRY_FIELD
         for key in ('annotation_source_position', CARRY_FIELD):
             if key in replay['context']:
@@ -2649,6 +2655,8 @@ GRAMMAR OVERLAYS (existing exact offset objects):
         if hold is not None:carried_context['annotation_investigation_hold']=hold
         carried_context, _ = bind_lifecycle_run_lessons(self, index, chunk, annotation,
             language='zh', representation='chinese-annotation', context=carried_context)
+        carried_context = with_ranged_policy(carried_context, 'chinese-annotation')
+        prompt += '\n\n' + ranged_contextual_guidance(carried_context, representation='chinese-annotation')
         if 'reviewed_run_lessons' in carried_context:
             from pipeline.annotation_run_lessons import run_lesson_guidance
             prompt += '\n\n' + run_lesson_guidance(carried_context['reviewed_run_lessons'])
@@ -2916,6 +2924,7 @@ GRAMMAR OVERLAYS (existing exact offset objects):
                         "source_text_digest": evidence_digest(chunk)}
                 adjudication_context = {"chunk_text": chunk,
                     "grammar_knowledge": chinese_semantic_repair_grammar_knowledge(result)}
+                adjudication_context = with_ranged_policy(adjudication_context, 'chinese-annotation')
                 adjudication_context, carried_references = bind_lifecycle_carry(
                     self, index, chunk, result, language='zh', representation='chinese-annotation',
                     context=adjudication_context, current_review=review, include_position=True)
@@ -3017,6 +3026,7 @@ GRAMMAR OVERLAYS (existing exact offset objects):
                         context={"chunk_text": chunk,
                             "grammar_knowledge": chinese_semantic_repair_grammar_knowledge(result),
                             **adjudication_context_extra})
+                    repair_context = with_ranged_policy(repair_context, 'chinese-annotation')
                     repair_context, _ = bind_lifecycle_run_lessons(self, index, chunk, result,
                         language='zh', representation='chinese-annotation', context=repair_context)
                     semantic = await repair_annotation(
