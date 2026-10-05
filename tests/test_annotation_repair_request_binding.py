@@ -7,7 +7,7 @@ from pipeline import annotation_repairs as repairs
 from pipeline.annotation_repair_dependencies import repair_dependency_constraints
 from pipeline.annotation_edits import candidate_digest
 from pipeline.worker_workspace import build, check
-from tests.test_annotation_repairs import _plan, _target, _candidate, Harness, PlannedRunner
+from tests.test_annotation_repairs import _plan, _target, _candidate, Harness, PlannedRunner, WorkspacePlannedRunner
 
 
 def korean():
@@ -133,26 +133,48 @@ def test_canonical_workspace_patch_gate_checks_base_schema_and_plan(tmp_path):
     with pytest.raises(ValueError,match='canonical immutable'):check(workspace,artifact)
 
 @pytest.mark.asyncio
-@pytest.mark.parametrize('language,representation,surface',[('zh','chinese-annotation','说'),('ja','japanese-annotation','言う'),('ko','korean-flat','가며')])
+@pytest.mark.parametrize('language,representation,surface',[('zh','chinese-annotation','说'),('ja','japanese-annotation','猫'),('ko','korean-flat','사람')])
 async def test_shared_three_language_requests_bind_schema_and_new_plan_policy(tmp_path,language,representation,surface):
     from tests.test_annotation_repairs import _korean_candidate_gate
-    key='surface' if language=='ja' else 'text'
-    candidate={'segments':[{key:surface,'meaning_en':'fixture old','form_steps':[]}],
-               'grammar_overlays':[],'grammar_links':[],'expression_links':[],'inflected_segment_indices':[]}
+    # Each workspace validator receives its real language schema, never a union.
+    if language == 'zh':
+        candidate={'segments':[{'text':surface,'type':'word','pinyin':'shuō',
+                               'meaning_en':'say'}], 'grammar_overlays':[]}
+    elif language == 'ja':
+        candidate={'segments':[{'surface':surface,'type':'word','lemma':'猫',
+            'surface_kana':'ねこ','lemma_kana':'ねこ','part_of_speech':'noun',
+            'conjugation_form':'uninflected','meaning_en':'cat','grammar_candidate_key':'',
+            'dictionary_key':'猫','dictionary_definition_en':'cat','form_steps':[],
+            'story_role':'none','story_importance_en':''}], 'grammar_overlays':[]}
+    else:
+        candidate={'segments':[{'text':surface,'type':'word','lemma':'사람',
+            'lexical_kind':'vocabulary','lexical_id':'사람/명','meaning_en':'person',
+            'story_importance_en':'','form_steps':[]}], 'grammar_links':[],
+            'expression_links':[], 'inflected_segment_indices':[]}
     plan=_plan((_target('set_field','/segments/0/meaning_en'),))
     patch={'base_digest':candidate_digest(candidate),'edits':[{'op':'set_field','path':'/segments/0/meaning_en','value':'fixture corrected'}]}
-    runner=PlannedRunner(tmp_path,plan,patch)
+    runner=WorkspacePlannedRunner(tmp_path,plan,patch)
     context={'chunk_text':surface}
-    if language=='ko':context['candidate_gate']=_korean_candidate_gate()
-    result=await repairs.repair_annotation(Harness(tmp_path,runner),'fixture-repair',candidate,[{'problem':'Fixture meaning correction'}],representation=representation,language=language,context=context,validate_candidate=lambda _:None)
+    if language=='ko':
+        context['candidate_gate']=_korean_candidate_gate()
+        context['candidate_gate']['focus']={'entries':[]}
+        context['candidate_gate']['plan']['beats']=[]
+    result=await repairs.repair_annotation(Harness(tmp_path,runner),'fixture-repair',candidate,[{
+        'problem':'Fixture meaning correction','candidate_paths':['/segments/0/meaning_en'],
+        'supporting_paths':[]}],representation=representation,language=language,context=context,validate_candidate=lambda _:None)
     assert result['status']=='applied'
-    assert runner.calls[0][4]['workspace_context']['annotation_plan_validation']['target_contract_version']==2
+    assert runner.calls[0][4]['workspace_context']['annotation_plan_validation']['target_contract_version']==3
     assert runner.calls[0][4]['workspace_context']['repair_dependency_constraints']==repair_dependency_constraints(candidate,representation)
     patch_schema=json.loads(runner.calls[1][2].read_text())
     assert patch_schema['properties']['base_digest']['const']==candidate_digest(candidate)
     assert runner.calls[1][4]['workspace_context']['annotation_patch_validation']['request_binding_policy_version']==3
     meta=json.loads((tmp_path/'agents/fixture-repair_assembly/meta.json').read_text())
-    assert meta['repair_request_policy_version']==3 and meta['plan_target_contract_version']==2
+    assert meta['repair_request_policy_version']==3 and meta['plan_target_contract_version']==3
+    authority=runner.calls[0][4]['workspace_context']['repair_target_authority']
+    assert runner.calls[0][4]['workspace_context']['annotation_plan_validation']['target_contract_version']==3
+    assert authority['version']==3
+    assert authority['issues'][0]['paths']==['/segments/0/meaning_en']
+    assert authority['issues'][0]['allowed_targets']==[['set_field','/segments/0/meaning_en']]
     assert repairs.replay_annotation_repair(tmp_path,'fixture-repair_assembly',validate_candidate=lambda _:None)['candidate']==result['candidate']
 
 

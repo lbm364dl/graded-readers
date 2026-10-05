@@ -3,7 +3,13 @@ import copy
 import pytest
 from pipeline.annotation_repair_dependencies import repair_dependency_constraints,validate_plan_dependencies
 from pipeline import annotation_repairs as r
-from tests.test_annotation_repairs import PlannedRunner,Harness,_plan,_target,_korean_candidate_gate
+from tests.test_annotation_repairs import WorkspacePlannedRunner,Harness,_plan,_target
+
+def _korean_candidate_gate():
+ return {'focus':{'entries':[]},'title':'Fixture chapter','number':1,
+  'plan':{'title':'Fixture chapter','scope_reason_en':'A one sentence validation fixture.',
+   'last_source_paragraph_index':0,'beats':[{'source_paragraph_index':0,'event_en':'A fixture action.'}]},
+  'level':1,'source_id':'assets/annotations/korean_l1_001.json'}
 
 def flat():
  return {'inflected_segment_indices':[0], 'segments':[{'text':'가며','type':'word','meaning_en':'fixture','form_steps':[{'form':'가며','reading':'','label':'fixture','meaning_en':'fixture','grammar_entry_ids':['old']}]},{'text':' ','type':'punctuation'},{'text':'먹었다','type':'word','meaning_en':'fixture','form_steps':[]}], 'grammar_links':[{'segment_index':0,'entry_id':'old','context_en':'fixture','display_form':'','display_meaning_en':'','display_end_segment_index':-1},{'segment_index':0,'entry_id':'new','context_en':'fixture','display_form':'가며 먹었다','display_meaning_en':'fixture whole','display_end_segment_index':2}]}
@@ -39,11 +45,26 @@ def test_cj_actual_contracts_do_not_gain_korean_identity_dependencies(rep):
 @pytest.mark.parametrize('language,representation,surface',[('zh','chinese-annotation','说'),('ja','japanese-annotation','言う'),('ko','korean-flat','가며')])
 async def test_actual_shared_plan_patch_boundary_receives_consistent_versioned_packet(tmp_path,language,representation,surface):
  from pipeline.annotation_edits import candidate_digest
- key='surface' if language=='ja' else 'text';value={'segments':[{key:surface,'meaning_en':'fixture','form_steps':[]}],'grammar_links':[],'grammar_overlays':[],'expression_links':[],'inflected_segment_indices':[]}
- plan=_plan((_target('set_field','/segments/0/meaning_en'),));patch={'base_digest':candidate_digest(value),'edits':[{'op':'set_field','path':'/segments/0/meaning_en','value':'fixture changed'}]}
- runner=PlannedRunner(tmp_path,plan,patch);context={'chunk_text':surface}
- if language=='ko':context['candidate_gate']=_korean_candidate_gate()
- result=await r.repair_annotation(Harness(tmp_path,runner),'fixture',value,[{'problem':'fixture'}],representation=representation,language=language,context=context,validate_candidate=lambda _:None)
+ if language=='zh':
+  value={'segments':[{'text':surface,'type':'word','pinyin':'shuō','meaning_en':'fixture'}], 'grammar_overlays':[]}
+ elif language=='ja':
+  value={'segments':[{'surface':surface,'type':'word','lemma':surface,'surface_kana':'いう','lemma_kana':'いう',
+   'part_of_speech':'verb','conjugation_form':'dictionary form','meaning_en':'to say','grammar_candidate_key':'',
+   'dictionary_key':'言う','dictionary_definition_en':'to say','form_steps':[],'story_role':'none',
+   'story_importance_en':''}], 'grammar_overlays':[]}
+ else:
+  value={'segments':[{'text':'가며','type':'word','meaning_en':'go and','lemma':'가다',
+   'lexical_kind':'vocabulary','lexical_id':'가다01/동','story_importance_en':'',
+   'form_steps':[{'form':'가며','reading':'가며','label':'connective','meaning_en':'go and',
+       'grammar_entry_ids':['connective-myeo']}]}], 'grammar_links':[{'segment_index':0,
+      'entry_id':'connective-myeo','context_en':'fixture','display_form':'',
+      'display_meaning_en':'','display_end_segment_index':-1}],
+      'expression_links':[],'inflected_segment_indices':[0]}
+ target=_target('set_field','/segments/0/meaning_en')
+ plan=_plan((target,));patch={'base_digest':candidate_digest(value),'edits':[{'op':'set_field','path':'/segments/0/meaning_en','value':'fixture changed'}]}
+ runner=WorkspacePlannedRunner(tmp_path,plan,patch);context={'chunk_text':surface}
+ if language=='ko':context.update({'chunk_text':'가며','candidate_gate':_korean_candidate_gate()})
+ result=await r.repair_annotation(Harness(tmp_path,runner),'fixture',value,[{'problem':'fixture','candidate_paths':['/segments/0/meaning_en'],'supporting_paths':[]}],representation=representation,language=language,context=context,validate_candidate=lambda _:None)
  assert result['status']=='applied'
  for job,prompt,schema,effort,options in runner.calls:
   ctx=options['workspace_context'];assert ctx['repair_dependency_guidance_version']==4 and ctx['repair_dependency_constraints']['version']==2
@@ -54,12 +75,29 @@ async def test_actual_shared_plan_patch_boundary_receives_consistent_versioned_p
 @pytest.mark.asyncio
 async def test_real_shared_korean_packet_contains_other_identity_complete_source(tmp_path):
  from pipeline.annotation_edits import candidate_digest
- value=flat();target=_target('set_field','/segments/0/meaning_en');runner=PlannedRunner(tmp_path,_plan((target,)),{'base_digest':candidate_digest(value),'edits':[{**target,'value':'fixture changed'}]})
- result=await r.repair_annotation(Harness(tmp_path,runner),'fixture',value,[{'problem':'fixture'}],representation='korean-flat',language='ko',context={'chunk_text':'가며 먹었다','candidate_gate':_korean_candidate_gate()},validate_candidate=lambda _:None)
+ value={'segments':[{'text':'가며','type':'word','meaning_en':'go and','lemma':'가다',
+   'lexical_kind':'vocabulary','lexical_id':'가다01/동','story_importance_en':'',
+   'form_steps':[{'form':'가며','reading':'가며','label':'connective','meaning_en':'go and',
+       'grammar_entry_ids':['connective-myeo']}]},
+   {'text':' ','type':'punctuation','meaning_en':'','lemma':'','lexical_kind':'','lexical_id':'',
+    'story_importance_en':'','form_steps':[]},
+   {'text':'먹었다','type':'word','meaning_en':'ate','lemma':'먹다','lexical_kind':'vocabulary',
+    'lexical_id':'먹다02/동','story_importance_en':'','form_steps':[{'form':'먹었다',
+     'reading':'먹었+다','label':'past','meaning_en':'ate','grammar_entry_ids':['past-ass-eoss']}]}],
+   'grammar_links':[{'segment_index':0,'entry_id':'connective-myeo','context_en':'fixture direct',
+      'display_form':'','display_meaning_en':'','display_end_segment_index':-1},
+     {'segment_index':0,'entry_id':'connective-go','context_en':'fixture complete occurrence',
+      'display_form':'가며 먹었다','display_meaning_en':'go and ate','display_end_segment_index':2},
+     {'segment_index':2,'entry_id':'past-ass-eoss','context_en':'fixture past form',
+      'display_form':'','display_meaning_en':'','display_end_segment_index':-1}],
+   'inflected_segment_indices':[0,2],'expression_links':[]}
+ target=_target('set_field','/segments/0/meaning_en')
+ runner=WorkspacePlannedRunner(tmp_path,_plan((target,)),{'base_digest':candidate_digest(value),'edits':[{**target,'value':'fixture changed'}]})
+ result=await r.repair_annotation(Harness(tmp_path,runner),'fixture',value,[{'problem':'fixture','candidate_paths':['/segments/0/meaning_en'],'supporting_paths':[]}],representation='korean-flat',language='ko',context={'chunk_text':'가며 먹었다','candidate_gate':_korean_candidate_gate()},validate_candidate=lambda _:None)
  assert result['status']=='applied'
  for job,prompt,schema,effort,options in runner.calls:
   row=options['workspace_context']['repair_dependency_constraints']['dependencies'][0]
-  assert row['same_anchor_complete_occurrences'][0]['entry_id']=='new' and row['complete_occurrence_paths']==[]
+  assert row['same_anchor_complete_occurrences'][0]['entry_id']=='connective-go' and row['complete_occurrence_paths']==[]
   assert 'same_anchor_complete_occurrences' in prompt
 
 def test_nonduplicate_retained_direct_update_full_publication_gate(tmp_path):

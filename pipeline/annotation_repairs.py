@@ -294,7 +294,7 @@ def _validate_repair_context(language: str, representation: str,
 
 def _validate_plan(plan: Any, issue_count: int, candidate: Any = None,
                    representation: str | None = None, *, target_contract_version: int = 1,
-                   dependency_constraints=None) -> None:
+                   dependency_constraints=None, target_authority=None) -> None:
     validate(plan, PLAN_SCHEMA)
     rows = plan["issues"]
     indexes = [row["issue_index"] for row in rows]
@@ -308,11 +308,23 @@ def _validate_plan(plan: Any, issue_count: int, candidate: Any = None,
             raise ValueError("semantic plan rows need targets and an empty boundary reason")
     if candidate is not None and representation is not None:
         validate_target_contract(candidate, _targets(plan), representation=representation)
-        if target_contract_version == 2:
+        if target_contract_version in (2, 3):
             from pipeline.annotation_repair_dependencies import validate_plan_dependencies
             validate_plan_dependencies(plan, candidate, representation, dependency_constraints)
-        elif target_contract_version != 1:
+        if target_contract_version == 3:
+            if not isinstance(target_authority, dict):
+                raise ValueError('v3 annotation plan requires immutable target authority')
+            from pipeline.annotation_repair_authority import validate_plan_authority
+            validate_plan_authority(plan, target_authority)
+        elif target_contract_version not in (1, 2):
             raise ValueError('Unsupported annotation plan target contract version')
+
+
+def _validate_v3_effects(before, after, plan, authority, target_contract_version, edits):
+    if target_contract_version == 3:
+        from pipeline.annotation_repair_authority import validate_derived_effects
+        validate_derived_effects(before, after, plan, authority, edits)
+    return after
 
 
 def _targets(plan: dict[str, Any]) -> list[dict[str, str]]:
@@ -330,7 +342,7 @@ def _targets(plan: dict[str, Any]) -> list[dict[str, str]]:
 def _save_assembly(run_dir: Path, assembly_job: str, meta: dict[str, Any], result: Any) -> None:
     meta["repair_request_policy_version"] = 3
     meta["complete_stage_instruction_policy_version"] = 2
-    meta["plan_target_contract_version"] = 2
+    meta.setdefault("plan_target_contract_version", 2)
     meta.setdefault("target_contract_version", 1)
     directory = _safe_job_path(run_dir, assembly_job)
     _write_json(directory / "result.json", result)
@@ -391,6 +403,28 @@ async def repair_annotation(
     from pipeline.annotation_repair_dependencies import repair_dependency_constraints
     dependency_constraints = repair_dependency_constraints(candidate, representation)
     plan_job, patch_job, assembly_job = f"{job}_plan", f"{job}_patch", f"{job}_assembly"
+    from pipeline.annotation_repair_authority import build_authority_packet
+    adjudication_bound = (context or {}).get("prior_review_adjudication") is not None
+    if adjudication_bound and any(not isinstance(issue, dict) or "paths" not in issue
+                                  or "target_dispositions" not in issue for issue in issues):
+        raise ValueError("adjudication repairs require host-verified actionable path dispositions")
+    typed_flags = [isinstance(issue, dict) and
+        ("paths" in issue or "candidate_paths" in issue or "target_dispositions" in issue)
+        for issue in issues]
+    if any(typed_flags) and not all(typed_flags):
+        raise ValueError("repair issue set mixes typed defect findings with untyped diagnostics")
+    if all(typed_flags):
+        # Typed requests fail closed: invalid pointers/dispositions never downgrade to v2.
+        target_authority = build_authority_packet(issues, candidate, representation, candidate_digest(candidate))
+        plan_target_contract_version = 3
+    else:
+        # Only the existing Korean deterministic-gate route is allowed to retain
+        # untyped diagnostics; new review/adjudication requests fail closed.
+        if ((context or {}).get("repair_issue_origin") != "deterministic_gate"
+                or (context or {}).get("prior_review_adjudication") is not None):
+            raise ValueError("untyped repair findings require an explicit deterministic_gate origin; adjudication must remain typed")
+        target_authority = None
+        plan_target_contract_version = 2
     shared_context = {**(context or {}), "repair_explanation_guidance_version": REPAIR_EXPLANATION_GUIDANCE_VERSION,
                       "repair_dependency_guidance_version": REPAIR_DEPENDENCY_GUIDANCE_VERSION, "stage_occurrence_policy_version": 2, "complete_stage_instruction_policy_version": 2, "language": language,
                       "representation": representation, "candidate": candidate,
@@ -400,9 +434,16 @@ async def repair_annotation(
                           _representation_structure_contract(representation),
                       "construction_occurrence_contract":
                           _construction_occurrence_contract(representation)}
+    if target_authority is not None:
+        shared_context["repair_target_authority"] = target_authority
+    else:
+        shared_context["repair_scope_policy"] = "legacy-korean-deterministic-gate-v2"
     plan_context = {**shared_context,
                     "annotation_plan_validation": {"issue_count": len(issues),
-                        "target_contract_version": 2}}
+                        "target_contract_version": plan_target_contract_version}}
+    projected_row_guidance = ""
+    if (target_authority or {}).get("projected_row_authority_policy_version", 1) >= 2:
+        projected_row_guidance = """For a `row_replacement_authorities` entry, its listed `target_paths` are all explicit defects on the same derived row. Resolve those fields together with exactly the listed `remove_row` + `append_row` pair for that row. Do not add overlapping `set_field` targets. Preserve every unlisted row field, all sibling rows and their order, primary taps, and nested source components. A supporting path is not a repair target."""
     plan_prompt = f"""Return JSON matching the supplied repair-plan schema. Build a narrow diagnosis plan for every supplied independent review issue. `issue_index` must cover each input issue exactly once, in order. For each issue, give a concrete reason and exact JSON-pointer target(s) using only supported operations. The plan is diagnosis, never approval. Prefer a semantic field or explicit semantic-list row operation over changing a complete annotation.
 
 {REPAIR_EXPLANATION_GUIDANCE}
@@ -421,6 +462,8 @@ async def repair_annotation(
 
 {SOURCE_TAP_PROJECTION_GUIDANCE}
 
+{projected_row_guidance}
+
 Use the operation/path contract exactly: `set_field` is only for an existing JSON scalar; use `replace_list` for an existing semantic array (including Korean form-step `grammar_entry_ids`), and `replace_row` for an existing object row. `append_row` targets the list path itself (for example `/grammar_links` or `/segments/4/form_steps`); the patch must use that exact path and an object value. `remove_row` targets one existing numeric row path. Never add a guessed numeric suffix to `append_row`.
 
 The issues array contains exactly {len(issues)} findings. Use exactly the indices {list(range(len(issues)))} in that order, one row per array item. An item can describe several defects: put all its necessary targets in that same row. Do not split subpoints into additional issue indices or count repeated references as new findings. Run the supplied local validation command; it checks this mapping as well as the JSON schema.
@@ -436,8 +479,9 @@ INPUT:
     plan = await harness.runner.call(plan_job, plan_prompt, plan_schema_path, selected_effort,
         refresh=selected_refresh, workspace_context=plan_context)
     validate(plan, PLAN_SCHEMA)
-    _validate_plan(plan, len(issues), candidate, representation, target_contract_version=2,
-        dependency_constraints=dependency_constraints)
+    _validate_plan(plan, len(issues), candidate, representation,
+        target_contract_version=plan_target_contract_version,
+        dependency_constraints=dependency_constraints, target_authority=target_authority)
     base_digest = candidate_digest(candidate)
     issue_digest = digest(issues)
     plan_digest = digest(plan)
@@ -452,6 +496,8 @@ INPUT:
                                 if row["boundary_change_needed"]]}
         meta["result_digest"] = base_digest
         if FIELD in shared_context:meta[FIELD] = shared_context[FIELD]
+        meta["plan_target_contract_version"] = plan_target_contract_version
+        if target_authority is not None: meta["repair_target_authority"] = target_authority
         _save_assembly(run_dir, assembly_job, meta, deepcopy(candidate))
         return {"status": "boundary_change_needed", "candidate": deepcopy(candidate),
                 "evidence": _evidence_result(run_dir, assembly_job, meta), "plan": plan}
@@ -460,11 +506,15 @@ INPUT:
     patch_validation = {**(context or {}), "base_candidate": candidate,
         "representation": representation, "allowed_targets": allowed,
         "language": language, "issues": issues, "repair_plan": plan,
-        "target_contract_version": 1, "request_binding_policy_version": 3}
+        "target_contract_version": plan_target_contract_version,
+        "repair_target_authority": target_authority,
+        "request_binding_policy_version": 3}
     patch_context = {**shared_context, "repair_plan": plan,
                      "allowed_targets": allowed, "base_digest": base_digest,
                      "annotation_patch_validation": patch_validation}
     patch_prompt = f"""Return JSON matching the supplied semantic-patch schema. Repair only the supplied prior candidate. Return exactly `base_digest` and `edits`; never return a replacement candidate. Use only the exact op/path pairs in ALLOWED_TARGETS, and make each edit resolve its mapped review issue. Apply every planned target with an effective value/list change; an enclosing `replace_row` or `replace_list` counts only when the exact planned descendant value changes. One append edit cannot satisfy two issue rows that each plan an append. Do not submit an empty or partial patch. Preserve all unedited data and all primary source/tap surfaces, boundaries, and source ranges. The only permitted change to a derived grammar-occurrence span is the planned remove+append replacement of its row with a complete span grounded in unchanged source; never mutate projected span fields in place. `append_row` uses the exact list path named by the plan, without a row-index suffix; `remove_row` uses one existing numeric row path. Use an explicit append/remove operation only when the repair plan names that exact list operation. The local caller applies the patch and runs the full deterministic language gate; independent review still follows.
+
+{projected_row_guidance}
 
 {SOURCE_TAP_PROJECTION_GUIDANCE}
 
@@ -494,6 +544,8 @@ INPUT:
         try:
             failed_candidate = apply_edits(candidate, failed_patch, allowed_targets=allowed,
                                            representation=representation)
+            _validate_v3_effects(candidate, failed_candidate, plan, target_authority,
+                                 plan_target_contract_version, failed_patch["edits"])
         except AnnotationEditError:
             # A recorded gate rejection that cannot be reproduced as an
             # in-scope patch is not eligible for a semantic replan.
@@ -526,20 +578,27 @@ INPUT:
             "reproduced_gate_diagnostic": reproduced_gate_diagnostic,
             "failed_artifact_sha256": exhausted["artifact_sha256"],
         }
-        replan_issues = [*deepcopy(issues), {
-            "problem": "derived_annotation_rejection",
-            "explanation": exhausted["runner_diagnostic"],
-            "failed_patch": failed_patch,
-            "failed_patch_digest": failed_patch_digest,
-            "action": "Revise the repair diagnosis/targets so the resulting full candidate passes the same deterministic annotation gate.",
-        }]
+        if plan_target_contract_version == 3:
+            # A gate rejection is context for the same authenticated findings,
+            # never a new source of semantic target authority.
+            replan_issues = deepcopy(issues)
+        else:
+            replan_issues = [*deepcopy(issues), {
+                "problem": "derived_annotation_rejection",
+                "explanation": exhausted["runner_diagnostic"],
+                "failed_patch": failed_patch,
+                "failed_patch_digest": failed_patch_digest,
+                "action": "Revise the repair diagnosis/targets so the resulting full candidate passes the same deterministic annotation gate.",
+            }]
         replan_job = f"{job}_replan"
         replan_plan_job, replan_patch_job = f"{replan_job}_plan", f"{replan_job}_patch"
         replan_plan_context = {**shared_context, "issues": replan_issues,
             "repair_history": first_attempt,
             "annotation_plan_validation": {"issue_count": len(replan_issues),
-                "target_contract_version": 2}}
+                "target_contract_version": plan_target_contract_version}}
         replan_plan_prompt = f"""Return JSON matching the supplied repair-plan schema. This is the single bounded replan after the first semantic patch and the shared runner's bounded submission correction both failed the deterministic derived-candidate gate. Re-diagnose the supplied original review findings together with the exact gate diagnostic. You may change the diagnosis/targets, but do not change the immutable base candidate. The replan is not approval; the caller will run the same full deterministic gate and independent review.
+
+{projected_row_guidance}
 
 {DEPENDENCY_CLOSURE_GUIDANCE}
 
@@ -580,13 +639,16 @@ INPUT:
                     "replan_patch_job": None},
                 "patch_error": str(replan_error), "result_digest": base_digest}
             if FIELD in shared_context:meta[FIELD] = shared_context[FIELD]
+            meta["plan_target_contract_version"] = plan_target_contract_version
+            if target_authority is not None: meta["repair_target_authority"] = target_authority
             _save_assembly(run_dir, assembly_job, meta, deepcopy(candidate))
             return {"status": "patch_rejected", "candidate": deepcopy(candidate),
                     "evidence": _evidence_result(run_dir, assembly_job, meta),
                     "plan": plan, "patch_error": str(replan_error)}
         validate(replan_plan, PLAN_SCHEMA)
-        _validate_plan(replan_plan, len(replan_issues), candidate, representation, target_contract_version=2,
-            dependency_constraints=dependency_constraints)
+        _validate_plan(replan_plan, len(replan_issues), candidate, representation,
+            target_contract_version=plan_target_contract_version,
+            dependency_constraints=dependency_constraints, target_authority=target_authority)
         replan_plan_digest = digest(replan_plan)
         if any(row["boundary_change_needed"] for row in replan_plan["issues"]):
             meta = {"return_code": 0, "kind": "annotation_patch_assembly",
@@ -603,6 +665,8 @@ INPUT:
                                     if row["boundary_change_needed"]],
                 "result_digest": base_digest}
             if FIELD in shared_context:meta[FIELD] = shared_context[FIELD]
+            meta["plan_target_contract_version"] = plan_target_contract_version
+            if target_authority is not None: meta["repair_target_authority"] = target_authority
             _save_assembly(run_dir, assembly_job, meta, deepcopy(candidate))
             return {"status": "boundary_change_needed", "candidate": deepcopy(candidate),
                     "evidence": _evidence_result(run_dir, assembly_job, meta),
@@ -612,12 +676,16 @@ INPUT:
         replan_patch_validation = {**(context or {}), "base_candidate": candidate,
             "representation": representation, "allowed_targets": replan_allowed,
             "language": language, "issues": replan_issues, "repair_plan": replan_plan,
-            "target_contract_version": 1, "request_binding_policy_version": 3}
+            "target_contract_version": plan_target_contract_version,
+        "repair_target_authority": target_authority,
+        "request_binding_policy_version": 3}
         replan_patch_context = {**shared_context, "issues": replan_issues,
             "repair_plan": replan_plan, "allowed_targets": replan_allowed,
             "base_digest": base_digest, "repair_history": first_attempt,
             "annotation_patch_validation": replan_patch_validation}
         replan_patch_prompt = f"""Return JSON matching the supplied semantic-patch schema. This is the one and only replan after a reproduced derived-candidate gate rejection. Apply edits to the exact ORIGINAL base candidate (base digest below), not to the rejected patch. The rejected patch and diagnostic are included as evidence. Use only the exact op/path pairs in ALLOWED_TARGETS. Effectively apply every planned target; an enclosing row/list replacement only covers a target when its exact descendant value changes, and repeated append targets need repeated append edits. Do not submit an empty or partial patch. Preserve all primary source/tap surfaces, boundaries, source ranges, and every unedited field. The only permitted change to a derived grammar-occurrence span is the planned remove+append replacement of its row with a complete span grounded in unchanged source; never mutate projected span fields in place. `append_row` uses the exact list path named by the plan, without a row-index suffix; `remove_row` uses one existing numeric row path. The caller applies this patch to the original base, runs the same complete deterministic candidate gate, and then obtains independent review; a successful gate is not approval.
+
+{projected_row_guidance}
 
 {SOURCE_TAP_PROJECTION_GUIDANCE}
 
@@ -649,6 +717,8 @@ INPUT:
                     "replan_patch_job": None, "patch_error": str(replan_error)},
                 "patch_error": str(replan_error), "result_digest": base_digest}
             if FIELD in shared_context:meta[FIELD] = shared_context[FIELD]
+            meta["plan_target_contract_version"] = plan_target_contract_version
+            if target_authority is not None: meta["repair_target_authority"] = target_authority
             _save_assembly(run_dir, assembly_job, meta, deepcopy(candidate))
             return {"status": "patch_rejected", "candidate": deepcopy(candidate),
                     "evidence": _evidence_result(run_dir, assembly_job, meta),
@@ -666,6 +736,7 @@ INPUT:
     try:
         updated = apply_edits(candidate, patch, allowed_targets=allowed,
                               representation=representation)
+        _validate_v3_effects(candidate, updated, plan, target_authority, plan_target_contract_version, patch["edits"])
         validate_issue_target_coverage(candidate, updated, patch["edits"], plan,
                                        representation=representation)
     except (BoundaryChangeNotSupported, ImmutableFieldError) as exc:
@@ -681,6 +752,8 @@ INPUT:
         if replan_lineage is not None:
             meta["replan"] = replan_lineage
         if FIELD in shared_context:meta[FIELD] = shared_context[FIELD]
+        meta["plan_target_contract_version"] = plan_target_contract_version
+        if target_authority is not None: meta["repair_target_authority"] = target_authority
         _save_assembly(run_dir, assembly_job, meta, deepcopy(candidate))
         return {"status": "boundary_change_needed", "candidate": deepcopy(candidate),
                 "evidence": _evidence_result(run_dir, assembly_job, meta), "plan": plan,
@@ -696,6 +769,8 @@ INPUT:
         if replan_lineage is not None:
             meta["replan"] = replan_lineage
         if FIELD in shared_context:meta[FIELD] = shared_context[FIELD]
+        meta["plan_target_contract_version"] = plan_target_contract_version
+        if target_authority is not None: meta["repair_target_authority"] = target_authority
         _save_assembly(run_dir, assembly_job, meta, deepcopy(candidate))
         return {"status": "patch_rejected", "candidate": deepcopy(candidate),
                 "evidence": _evidence_result(run_dir, assembly_job, meta), "plan": plan,
@@ -713,6 +788,8 @@ INPUT:
         if replan_lineage is not None:
             meta["replan"] = replan_lineage
         if FIELD in shared_context:meta[FIELD] = shared_context[FIELD]
+        meta["plan_target_contract_version"] = plan_target_contract_version
+        if target_authority is not None: meta["repair_target_authority"] = target_authority
         _save_assembly(run_dir, assembly_job, meta, deepcopy(candidate))
         return {"status": "patch_rejected", "candidate": deepcopy(candidate),
                 "evidence": _evidence_result(run_dir, assembly_job, meta), "plan": plan,
@@ -727,6 +804,8 @@ INPUT:
     if replan_lineage is not None:
         meta["replan"] = replan_lineage
     if FIELD in shared_context:meta[FIELD] = shared_context[FIELD]
+    meta["plan_target_contract_version"] = plan_target_contract_version
+    if target_authority is not None: meta["repair_target_authority"] = target_authority
     _save_assembly(run_dir, assembly_job, meta, updated)
     return {"status": "applied", "candidate": updated,
             "evidence": _evidence_result(run_dir, assembly_job, meta), "plan": plan}
@@ -745,17 +824,21 @@ def replay_annotation_repair(
         raise ValueError("invalid annotation semantic-patch assembly metadata")
     from pipeline.annotation_ranged_link_guidance import FIELD, contextual_guidance
     contextual_guidance(meta, meta.get("representation"))
+    from pipeline.annotation_repair_authority import validate_replay_contract
+    validate_replay_contract(meta)
     request_version = meta.get("repair_request_policy_version")
-    if request_version not in (None, 3) or isinstance(request_version, bool):
-        raise ValueError("Unknown repair request policy version")
     if 'complete_stage_instruction_policy_version' in meta and (type(meta.get('complete_stage_instruction_policy_version')) is not int or meta['complete_stage_instruction_policy_version'] != 2):
         raise ValueError('Repair complete-stage instruction version changed')
     plan_version = meta.get("plan_target_contract_version", 1)
-    if plan_version not in (1, 2) or isinstance(plan_version, bool) or (request_version == 3 and plan_version != 2):
+    if plan_version not in (1, 2, 3) or isinstance(plan_version, bool):
         raise ValueError("Unknown repair plan target contract version")
     base = meta.get("base")
     if candidate_digest(base) != meta.get("base_digest") or digest(meta.get("issues")) != meta.get("issue_digest"):
         raise ValueError("annotation repair base or review issues changed")
+    if plan_version == 3:
+        from pipeline.annotation_repair_authority import validate_authority_packet
+        validate_authority_packet(meta.get("repair_target_authority"), meta["issues"], base,
+            meta["representation"], meta["base_digest"])
 
     def child(job: str, expected_digest: str) -> Any:
         directory = _safe_job_path(run_dir, job)
@@ -763,6 +846,31 @@ def replay_annotation_repair(
         if child_meta.get("return_code") != 0 or digest(value) != expected_digest:
             raise ValueError(f"annotation repair child evidence changed: {job}")
         index_path = directory / 'workspace' / 'INDEX.json'
+        replan_meta = meta.get("replan") or {}
+        plan_jobs = {meta.get("plan_job"), replan_meta.get("first_plan_job"), replan_meta.get("replan_plan_job")}
+        is_plan_child = job in plan_jobs
+        # Request policy 3 predates exact target authority. Historical v1/v2
+        # records without child workspaces retain their original replay contract.
+        # New v3 plans require a workspace; retained workspace version evidence
+        # still authenticates older pairs and rejects metadata-only downgrades.
+        if is_plan_child and (plan_version == 3 or child_meta.get("workspace_digest") is not None or index_path.exists() or (directory / "workspace" / "validation-context.json").exists()):
+            context_path = directory / 'workspace' / 'validation-context.json'
+            if not index_path.is_file() or not context_path.is_file():
+                raise ValueError("versioned plan child is missing authenticated workspace request")
+            rows = _read_json(index_path)
+            indexed = {row.get("field"): _read_json(directory / "workspace" / row["path"]) for row in rows}
+            contexts = _read_json(context_path)
+            pctx = next((c.get("annotation_plan_validation") for c in contexts
+                         if isinstance(c, dict) and c.get("annotation_plan_validation")), None)
+            expected_issues = (replan_meta.get("issues") if job == replan_meta.get("replan_plan_job")
+                               else meta.get("issues"))
+            if (pctx is None or pctx.get("target_contract_version") != plan_version
+                    or indexed.get("candidate") != base
+                    or indexed.get("issues") != expected_issues
+                    or indexed.get("representation") != meta.get("representation")):
+                raise ValueError("child plan request differs from authenticated assembly request")
+            if plan_version == 3 and indexed.get("repair_target_authority") != meta.get("repair_target_authority"):
+                raise ValueError("v3 child plan authority differs from authenticated assembly request")
         if index_path.exists():
             rows = _read_json(index_path)
             marker_rows = [row for row in rows if row.get('field') == FIELD]
@@ -840,11 +948,14 @@ def replay_annotation_repair(
         # Historical accepted plans predate target feasibility validation.
         # Replay the exact actual patch below; an unused stale allowlist item
         # must not invalidate an already accepted assembly.
-        _validate_plan(first_plan, len(meta["issues"]), base if plan_version == 2 else None,
-            meta["representation"] if plan_version == 2 else None, target_contract_version=plan_version)
+        _validate_plan(first_plan, len(meta["issues"]), base if plan_version >= 2 else None,
+            meta["representation"] if plan_version >= 2 else None, target_contract_version=plan_version,
+            target_authority=meta.get("repair_target_authority"))
         try:
             failed_candidate = apply_edits(base, replan["failed_patch"],
                 allowed_targets=_targets(first_plan), representation=meta["representation"])
+            _validate_v3_effects(base, failed_candidate, first_plan,
+                meta.get("repair_target_authority"), plan_version, replan["failed_patch"]["edits"])
             if meta.get("target_contract_version", 0) >= 1:
                 validate_issue_target_coverage(base, failed_candidate,
                     replan["failed_patch"]["edits"], first_plan,
@@ -867,8 +978,9 @@ def replay_annotation_repair(
                     "evidence": _evidence_result(run_dir, assembly_job, meta), "plan": first_plan,
                     "patch_error": replan.get("replan_plan_error")}
         replanned = child(replan["replan_plan_job"], replan["replan_plan_digest"])
-        _validate_plan(replanned, len(replan["issues"]), base if plan_version == 2 else None,
-            meta["representation"] if plan_version == 2 else None, target_contract_version=plan_version)
+        _validate_plan(replanned, len(replan["issues"]), base if plan_version >= 2 else None,
+            meta["representation"] if plan_version >= 2 else None, target_contract_version=plan_version,
+            target_authority=meta.get("repair_target_authority"))
         if meta.get("status") == "boundary_change_needed" and not replan.get("replan_patch_job"):
             if candidate_digest(stored) != meta.get("base_digest"):
                 raise ValueError("boundary replan modified the immutable base")
@@ -884,6 +996,8 @@ def replay_annotation_repair(
         try:
             updated = apply_edits(base, final_patch, allowed_targets=_targets(replanned),
                                   representation=meta["representation"])
+            _validate_v3_effects(base, updated, replanned,
+                meta.get("repair_target_authority"), plan_version, final_patch["edits"])
             if meta.get("target_contract_version", 0) >= 1:
                 validate_issue_target_coverage(base, updated, final_patch["edits"], replanned,
                                                representation=meta["representation"])
@@ -924,8 +1038,9 @@ def replay_annotation_repair(
                 "evidence": _evidence_result(run_dir, assembly_job, meta), "plan": replanned}
 
     plan = child(meta["plan_job"], meta["plan_digest"])
-    _validate_plan(plan, len(meta["issues"]), base if plan_version == 2 else None,
-            meta["representation"] if plan_version == 2 else None, target_contract_version=plan_version)
+    _validate_plan(plan, len(meta["issues"]), base if plan_version >= 2 else None,
+            meta["representation"] if plan_version >= 2 else None, target_contract_version=plan_version,
+            target_authority=meta.get("repair_target_authority"))
     if meta.get("status") in {"boundary_change_needed", "patch_rejected"}:
         if candidate_digest(stored) != meta.get("base_digest"):
             raise ValueError("rejected annotation repair modified the base candidate")
@@ -934,6 +1049,8 @@ def replay_annotation_repair(
             try:
                 updated = apply_edits(base, patch, allowed_targets=_targets(plan),
                                       representation=meta["representation"])
+                _validate_v3_effects(base, updated, plan,
+                    meta.get("repair_target_authority"), plan_version, patch["edits"])
                 if meta.get("target_contract_version", 0) >= 1:
                     validate_issue_target_coverage(base, updated, patch["edits"], plan,
                                                    representation=meta["representation"])
@@ -964,6 +1081,7 @@ def replay_annotation_repair(
     allowed = _targets(plan)
     updated = apply_edits(base, patch, allowed_targets=allowed,
                           representation=meta["representation"])
+    _validate_v3_effects(base, updated, plan, meta.get("repair_target_authority"), plan_version, patch["edits"])
     if meta.get("target_contract_version", 0) >= 1:
         validate_issue_target_coverage(base, updated, patch["edits"], plan,
                                        representation=meta["representation"])

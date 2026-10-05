@@ -1,5 +1,6 @@
 import json
 import hashlib
+import shutil
 
 import pytest
 
@@ -26,6 +27,12 @@ def _candidate():
     }
 
 
+def _review_issue(problem, *candidate_paths, supporting_paths=(), **fields):
+    """Build an explicit new review finding; targets are defect fields only."""
+    return {"problem": problem, **fields, "candidate_paths": list(candidate_paths),
+            "supporting_paths": list(supporting_paths)}
+
+
 def _korean_candidate_gate():
     return {"focus": {"story_terms": []}, "title": "Test chapter", "number": 1,
             "plan": {"title": "Test chapter", "scope": {"start": 0, "end": 1}},
@@ -44,6 +51,8 @@ class PlannedRunner:
         result = self.plan if job.endswith("_plan") else self.patch
         directory = self.run_dir / "agents" / job
         directory.mkdir(parents=True, exist_ok=True)
+        build(directory / "workspace", prompt, json.loads(schema.read_text()),
+              context=kwargs.get("workspace_context"))
         (directory / "result.json").write_text(json.dumps(result, ensure_ascii=False), encoding="utf-8")
         (directory / "meta.json").write_text(json.dumps({"return_code": 0}), encoding="utf-8")
         return result
@@ -94,7 +103,7 @@ async def test_korean_repair_context_fails_before_runner_or_artifacts(tmp_path, 
         {"base_digest": candidate_digest(candidate), "edits": []})
     with pytest.raises(ValueError, match="Korean .*candidate_gate|Korean repair"):
         await repair_annotation(Harness(tmp_path, runner), "missing-gate", candidate,
-            [{"problem": "Correct the gloss."}], representation="korean-flat", language="ko",
+            [_review_issue("Correct the gloss.", "/segments/0/meaning_en")], representation="korean-flat", language="ko",
             context=context, validate_candidate=lambda _: None)
     assert runner.calls == []
     assert not (tmp_path / "agents").exists()
@@ -117,7 +126,7 @@ async def test_korean_repair_context_valid_contrast_and_other_languages_unaffect
             {"op": "set_field", "path": "/segments/0/meaning_en", "value": "updated"}]}
         runner = PlannedRunner(tmp_path, plan, patch)
         result = await repair_annotation(Harness(tmp_path, runner), name, current,
-            [{"problem": "Correct the gloss."}], representation=representation,
+            [_review_issue("Correct the gloss.", "/segments/0/meaning_en")], representation=representation,
             language=language, context=context, validate_candidate=lambda _: None)
         assert result["status"] == "applied"
         assert len(runner.calls) == 2
@@ -188,7 +197,7 @@ async def test_shared_repair_prompt_routes_ending_tap_construction_without_gramm
             "pattern": "verb + auxiliary", "meaning_en": "she walks along"}}]}
     runner = PlannedRunner(tmp_path, plan, patch)
     result = await repair_annotation(Harness(tmp_path, runner), "construction-contract", candidate,
-        [{"problem": "A supported complete construction spans the lexical tap and ending."}],
+        [_review_issue("A supported complete construction spans the lexical tap and ending.", "/grammar_overlays")],
         representation="chinese-annotation", language="zh", validate_candidate=lambda _: None)
     assert result["status"] == "applied"
     context = runner.calls[0][4]["workspace_context"]
@@ -226,7 +235,7 @@ async def test_shared_repair_prompt_routes_ending_tap_construction_without_gramm
                 {"op": "set_field", "path": meaning_target["path"], "value": "updated meaning"}]})
         scoped_result = await repair_annotation(
             Harness(tmp_path / str(index), scoped_runner), f"scope-{index}", scoped_candidate,
-            [{"problem": "Correct the occurrence gloss."}], representation=representation,
+            [_review_issue("Correct the occurrence gloss.", "/segments/0/meaning_en")], representation=representation,
             language={"japanese-annotation": "ja", "korean-flat": "ko", "korean-v4": "ko"}[representation],
             context={"candidate_gate": _korean_candidate_gate()} if representation.startswith("korean-") else None,
             validate_candidate=lambda _: None)
@@ -335,8 +344,12 @@ async def test_removing_sole_form_step_plans_its_direct_link_dependency(tmp_path
         if value["grammar_links"] != expected:
             raise ValueError("the full overlay dependency was lost or duplicated")
 
+    issue_paths = ["/segments/3/form_steps/0"]
+    if not has_complete_overlay:
+        issue_paths.append("/grammar_links")
     result = await repair_annotation(Harness(tmp_path, runner), "close-form-link-dependency",
-        candidate, [{"problem": "The prefinal form step must be omitted; retain the supported honorific analysis."}],
+        candidate, [_review_issue("The prefinal form step must be omitted; retain the supported honorific analysis.",
+            *issue_paths)],
         representation="korean-flat", language="ko",
         context={"candidate_gate": _korean_candidate_gate()}, validate_candidate=lambda value: (
             check_dependency(value), real_gate(value)))
@@ -405,7 +418,7 @@ async def test_korean_repair_plan_receives_exact_per_step_identity_cardinality(t
         {"op": "replace_list", "path": path, "value": ["polite-yo"]}]}
     runner = PlannedRunner(tmp_path, plan, patch)
     result = await repair_annotation(Harness(tmp_path, runner), "korean-step-contract", candidate,
-        [{"problem": "Use one lesson identity for this form stage."}],
+        [_review_issue("Use one lesson identity for this form stage.", path)],
         representation="korean-flat", language="ko",
         context={"candidate_gate": _korean_candidate_gate()}, validate_candidate=lambda _value: None)
     assert result["status"] == "applied"
@@ -440,44 +453,61 @@ async def test_source_grounded_grammar_overlay_can_be_replaced_without_changing_
         "inflected_segment_indices": [], "expression_links": [],
     }
     original_segments = json.loads(json.dumps(candidate["segments"], ensure_ascii=False))
+    targeted_fields = ("segment_index", "context_en", "display_form",
+                       "display_meaning_en", "display_end_segment_index")
     old_target = _target("remove_row", "/grammar_links/0")
     new_target = _target("append_row", "/grammar_links")
+    targets = (old_target, new_target)
     full_span = {"segment_index": 0, "entry_id": "prohibition", "context_en": "negative request",
         "display_form": "걱정하지 마시고", "display_meaning_en": "please do not worry",
         "display_end_segment_index": 2}
-    runner = PlannedRunner(tmp_path, _plan((old_target, new_target)), {
-        "base_digest": candidate_digest(candidate),
-        "edits": [{"op": "remove_row", "path": old_target["path"]},
-                  {"op": "append_row", "path": new_target["path"], "value": full_span}],
+    patch_edits = [{"op": "remove_row", "path": old_target["path"]},
+                   {"op": "append_row", "path": new_target["path"], "value": full_span}]
+    runner = PlannedRunner(tmp_path, _plan(targets), {
+        "base_digest": candidate_digest(candidate), "edits": patch_edits,
     })
 
+    gate_calls = []
     def validate_overlay(value):
+        gate_calls.append(value)
         if (value["segments"] != original_segments or value["grammar_links"] != [full_span]
                 or "".join(row["text"] for row in value["segments"]) != "걱정하지 마시고"):
             raise ValueError("the expected full-span construction overlay was not preserved")
 
     result = await repair_annotation(Harness(tmp_path, runner), "korean-overlay-span", candidate,
-        [{"problem": "Replace the direct lesson link with the supported full construction occurrence."}],
+        [_review_issue("Replace the direct lesson link with the supported full construction occurrence.",
+            "/grammar_links/0/segment_index", "/grammar_links/0/context_en",
+            "/grammar_links/0/display_form", "/grammar_links/0/display_meaning_en",
+            "/grammar_links/0/display_end_segment_index",
+            supporting_paths=("/grammar_links/0/entry_id",))],
         representation="korean-flat", language="ko",
         context={"candidate_gate": _korean_candidate_gate()}, validate_candidate=validate_overlay)
-    assert result["status"] == "applied"
+    assert result["status"] == "applied", result
+    assert len(gate_calls) == 1 and gate_calls[0] == result["candidate"]
     assert "semantic overlay replacement, not source resegmentation" in runner.calls[0][1]
     assert "primary source range/index" in runner.calls[0][1]
     assert "grammar-overlay start/end and text/surface/component spans" in runner.calls[0][1]
     # This fixture verifies shared edit/replay plumbing only; it does not approve
     # the illustrative English wording. Real language validation remains caller-owned.
 
-    wrong_span = {**full_span, "segment_index": 2, "display_form": "마시고"}
-    wrong_runner = PlannedRunner(tmp_path / "wrong-span", _plan((old_target, new_target)), {
+    wrong_span = {**full_span, "segment_index": 0, "display_form": "걱정하지",
+                  "display_end_segment_index": 0}
+    wrong_edits = [{"op": "remove_row", "path": old_target["path"]},
+                   {"op": "append_row", "path": new_target["path"], "value": wrong_span}]
+    wrong_runner = PlannedRunner(tmp_path / "wrong-span", _plan(targets), {
         "base_digest": candidate_digest(candidate),
-        "edits": [{"op": "remove_row", "path": old_target["path"]},
-                  {"op": "append_row", "path": new_target["path"], "value": wrong_span}],
+        "edits": wrong_edits,
     })
     rejected = await repair_annotation(Harness(tmp_path / "wrong-span", wrong_runner), "korean-overlay-span",
-        candidate, [{"problem": "The construction must cover the complete supported source span."}],
+        candidate, [_review_issue("The construction must cover the complete supported source span.",
+            "/grammar_links/0/segment_index", "/grammar_links/0/context_en",
+            "/grammar_links/0/display_form", "/grammar_links/0/display_meaning_en",
+            "/grammar_links/0/display_end_segment_index",
+            supporting_paths=("/grammar_links/0/entry_id",))],
         representation="korean-flat", language="ko",
         context={"candidate_gate": _korean_candidate_gate()}, validate_candidate=validate_overlay)
     assert rejected["status"] == "patch_rejected"
+    assert gate_calls[-1]["grammar_links"] == [wrong_span]
     assert rejected["candidate"] == candidate
 
     with pytest.raises(ImmutableFieldError):
@@ -490,8 +520,8 @@ async def test_source_grounded_grammar_overlay_can_be_replaced_without_changing_
 @pytest.mark.asyncio
 async def test_issue_planned_patch_is_validated_persisted_and_replayed(tmp_path):
     candidate = _candidate()
-    issues = [{"segment_text": "走", "problem": "meaning", "explanation": "Use go."},
-              {"segment_text": "她", "problem": "meaning", "explanation": "Use she."}]
+    issues = [_review_issue("meaning", "/segments/1/meaning_en", segment_text="走", explanation="Use go."),
+              _review_issue("meaning", "/segments/0/meaning_en", segment_text="她", explanation="Use she.")]
     plan = _plan((_target("set_field", "/segments/1/meaning_en"),),
                  (_target("set_field", "/segments/0/meaning_en"),))
     patch = {"base_digest": __import__("pipeline.annotation_edits", fromlist=["candidate_digest"]).candidate_digest(candidate),
@@ -518,7 +548,7 @@ async def test_issue_planned_patch_is_validated_persisted_and_replayed(tmp_path)
     assert result["evidence"]["patch_digest"]
     assert runner.calls[1][4]["workspace_context"]["annotation_patch_validation"]["representation"] == "chinese-annotation"
     assert runner.calls[0][4]['workspace_context']['annotation_plan_validation'] == {
-        'issue_count': 2, 'target_contract_version': 2}
+        'issue_count': 2, 'target_contract_version': 3}
     assert 'annotation_plan_validation' not in runner.calls[1][4]['workspace_context']
     assert "a wrong occurrence gloss on an already-valid chain should target only that meaning field" in runner.calls[0][1]
     assert "a changed lemma/identity for an inflected surface may also require corrected ordered stages" in runner.calls[0][1]
@@ -538,7 +568,8 @@ async def test_boundary_plan_is_explicit_and_does_not_run_or_apply_patch(tmp_pat
     runner = PlannedRunner(tmp_path, _plan((), boundary=True,
         boundary_reason="The learner unit must be split into two source taps."), {})
     result = await repair_annotation(
-        Harness(tmp_path, runner), "repair", candidate, [{"problem": "under_grouped"}],
+        Harness(tmp_path, runner), "repair", candidate,
+        [_review_issue("under_grouped", "/segments/0/text")],
         representation="chinese-annotation", language="zh", validate_candidate=lambda _: None,
     )
     assert result["status"] == "boundary_change_needed"
@@ -557,7 +588,8 @@ async def test_missing_issue_coverage_is_rejected_before_patch_call(tmp_path):
     with pytest.raises(ValueError, match="cover supplied issue indices"):
         await repair_annotation(
             Harness(tmp_path, runner), "repair", candidate,
-            [{"problem": "meaning"}, {"problem": "wrong_type"}],
+            [_review_issue("meaning", "/segments/0/meaning_en"),
+             _review_issue("wrong_type", "/segments/1/meaning_en")],
             representation="chinese-annotation", language="zh", validate_candidate=lambda _: None,
         )
     assert len(runner.calls) == 1
@@ -566,7 +598,7 @@ async def test_missing_issue_coverage_is_rejected_before_patch_call(tmp_path):
 @pytest.mark.asyncio
 async def test_patch_digest_and_plan_scope_are_enforced(tmp_path):
     candidate = _candidate()
-    issue = [{"problem": "meaning"}]
+    issue = [_review_issue("meaning", "/segments/0/meaning_en")]
     target = _target("set_field", "/segments/0/meaning_en")
     plan = _plan((target,))
     stale_runner = PlannedRunner(tmp_path / "stale", plan, {
@@ -600,7 +632,8 @@ async def test_attempted_source_surface_edit_returns_boundary_outcome_and_replay
     })
     with pytest.raises(ImmutableFieldError, match="protected source/tap data"):
         await repair_annotation(
-            Harness(tmp_path, runner), "repair", candidate, [{"problem": "meaning"}],
+            Harness(tmp_path, runner), "repair", candidate,
+            [_review_issue("meaning", "/segments/0/meaning_en")],
             representation="chinese-annotation", language="zh", validate_candidate=lambda _: None,
         )
     assert [call[0] for call in runner.calls] == ["repair_plan"]
@@ -609,8 +642,8 @@ async def test_attempted_source_surface_edit_returns_boundary_outcome_and_replay
 @pytest.mark.asyncio
 async def test_chinese_chunk_uses_semantic_patch_then_independently_reviews_it(tmp_path):
     initial = _candidate()
-    issue = {"segment_text": "走", "problem": "meaning", "explanation": "Use go.",
-             "suggested_fix": "Set its contextual meaning to go."}
+    issue = _review_issue("meaning", "/segments/1/meaning_en", segment_text="走",
+             explanation="Use go.", suggested_fix="Set its contextual meaning to go.")
     plan = _plan((_target("set_field", "/segments/1/meaning_en"),))
     patch = {"base_digest": candidate_digest(initial),
              "edits": [{"op": "set_field", "path": "/segments/1/meaning_en", "value": "go"}]}
@@ -651,8 +684,8 @@ async def test_japanese_chunk_uses_semantic_patch_then_independently_reviews_it(
         "dictionary_definition_en": "", "form_steps": [], "story_role": "none",
         "story_importance_en": "",
     }], "grammar_overlays": []}
-    issue = {"segment_text": "猫", "problem": "meaning", "explanation": "Use cat.",
-             "suggested_fix": "Change the segment meaning to cat."}
+    issue = _review_issue("meaning", "/segments/0/meaning_en", segment_text="猫",
+             explanation="Use cat.", suggested_fix="Change the segment meaning to cat.")
     plan = _plan((_target("set_field", "/segments/0/meaning_en"),))
     preparer = object.__new__(JapaneseChapterHarness)
     preparer.args = Namespace(no_grammar_overlays=False)
@@ -693,7 +726,7 @@ async def test_japanese_chunk_uses_semantic_patch_then_independently_reviews_it(
 @pytest.mark.asyncio
 async def test_profile_check_replays_only_applied_assembly_with_completed_child_evidence(tmp_path):
     candidate = _candidate()
-    issue = [{"problem": "meaning", "segment_text": "走", "explanation": "Use go."}]
+    issue = [_review_issue("meaning", "/segments/1/meaning_en", segment_text="走", explanation="Use go.")]
     plan = _plan((_target("set_field", "/segments/1/meaning_en"),))
     patch = {"base_digest": candidate_digest(candidate),
              "edits": [{"op": "set_field", "path": "/segments/1/meaning_en", "value": "go"}]}
@@ -717,17 +750,17 @@ async def test_profile_check_replays_only_applied_assembly_with_completed_child_
 
 
 @pytest.mark.asyncio
-async def test_legacy_applied_plan_with_unused_invalid_target_still_replays_actual_patch(tmp_path):
+async def test_v3_authority_cannot_be_reclassified_as_legacy_plan(tmp_path):
     candidate = _candidate()
     plan = _plan((_target("set_field", "/segments/1/meaning_en"),))
     patch = {"base_digest": candidate_digest(candidate), "edits": [
         {"op": "set_field", "path": "/segments/1/meaning_en", "value": "go"}]}
     runner = PlannedRunner(tmp_path, plan, patch)
     result = await repair_annotation(Harness(tmp_path, runner), "legacy", candidate,
-        [{"problem": "meaning"}], representation="chinese-annotation", language="zh",
+        [_review_issue("meaning", "/segments/1/meaning_en")], representation="chinese-annotation", language="zh",
         validate_candidate=lambda _value: None)
-    # Simulate a previously accepted plan from before target feasibility
-    # checks. The extra stale array target is unused by the stored patch.
+    # This starts as a v3 typed request. Mutating its version markers cannot
+    # turn it into a historical receipt with the older replay contract.
     plan_path = tmp_path / "agents" / "legacy_plan" / "result.json"
     historical_plan = json.loads(plan_path.read_text(encoding="utf-8"))
     historical_plan["issues"][0]["targets"].append(
@@ -736,21 +769,10 @@ async def test_legacy_applied_plan_with_unused_invalid_target_still_replays_actu
     assembly_path = tmp_path / "agents" / "legacy_assembly" / "meta.json"
     meta = json.loads(assembly_path.read_text(encoding="utf-8"))
     meta["plan_digest"] = digest(historical_plan)
-    meta["target_contract_version"] = 0
-    meta.pop("repair_request_policy_version", None)
-    meta.pop("plan_target_contract_version", None)
+    meta["plan_target_contract_version"] = 2
     assembly_path.write_text(json.dumps(meta), encoding="utf-8")
-
-    replayed = replay_annotation_repair(tmp_path, "legacy_assembly", validate_candidate=lambda _: None)
-    assert replayed["candidate"] == result["candidate"]
-    assert replayed["candidate"]["segments"][1]["meaning_en"] == "go"
-    coverage = inspect_applied_repair_coverage(tmp_path, "legacy_assembly")
-    assert coverage is not None
-    assert coverage["candidate"] == result["candidate"]
-    assert coverage["unresolved_issues"][0]["issue"] == {"problem": "meaning"}
-    assert coverage["unresolved_issues"][0]["uncovered_targets"] == [{
-        "op": "set_field", "path": "/segments/0/form_steps",
-        "diagnostic": "planned target had no effective patch change for issue 0: set_field /segments/0/form_steps"}]
+    with pytest.raises(ValueError, match="authority cannot downgrade"):
+        replay_annotation_repair(tmp_path, "legacy_assembly", validate_candidate=lambda _: None)
 
 
 @pytest.mark.asyncio
@@ -759,7 +781,8 @@ async def test_historical_assembly_inspection_routes_omitted_valid_removal_and_i
         "grammar_links": [{"segment_index": 0, "display_end_segment_index": 0,
             "display_form": "가", "entry_id": "wrong", "context_en": "stale"}],
         "expression_links": [], "inflected_segment_indices": []}
-    issue = {"problem": "Replace the inappropriate grammar occurrence."}
+    issue = _review_issue("Remove the inappropriate grammar occurrence and correct the gloss.",
+        "/segments/0/meaning_en", "/grammar_links/0")
     plan = _plan((_target("set_field", "/segments/0/meaning_en"),
                   _target("remove_row", "/grammar_links/0")))
     targets = [*plan["issues"][0]["targets"]]
@@ -786,7 +809,12 @@ async def test_historical_assembly_inspection_routes_omitted_valid_removal_and_i
             meta["result_digest"] = candidate_digest(applied)
             meta.pop("patch_error", None)
             result_path.write_text(json.dumps(applied, ensure_ascii=False), encoding="utf-8")
-        meta.pop("target_contract_version", None)
+        meta["target_contract_version"] = 0
+        meta.pop("plan_target_contract_version", None)
+        meta.pop("repair_request_policy_version", None)
+        meta.pop("repair_target_authority", None)
+        for child in (meta.get("plan_job"), meta.get("patch_job")):
+            shutil.rmtree(tmp_path / "agents" / child / "workspace", ignore_errors=True)
         meta_path.write_text(json.dumps(meta, ensure_ascii=False), encoding="utf-8")
         return result
 
@@ -819,7 +847,8 @@ async def test_profile_check_rejects_nonapplied_assemblies_and_unsafe_child_refe
     plan = _plan((), boundary=True, boundary_reason="A source tap must be split.")
     runner = WorkspacePlannedRunner(tmp_path, plan, {})
     result = await repair_annotation(
-        Harness(tmp_path, runner), "repairs/chunk_1/change", candidate, [{"problem": "under_grouped"}],
+        Harness(tmp_path, runner), "repairs/chunk_1/change", candidate,
+        [_review_issue("under_grouped", "/segments/0/text")],
         representation="chinese-annotation", language="zh", context={"chunk_text": "她走"},
         validate_candidate=lambda value: None,
     )
@@ -835,7 +864,8 @@ async def test_profile_check_rejects_nonapplied_assemblies_and_unsafe_child_refe
                      "edits": [{"op": "set_field", "path": "/segments/1/meaning_en", "value": "go"}]}
     runner = WorkspacePlannedRunner(tmp_path, applied_plan, applied_patch)
     result = await repair_annotation(
-        Harness(tmp_path, runner), "repairs/chunk_2/change", candidate, [{"problem": "meaning"}],
+        Harness(tmp_path, runner), "repairs/chunk_2/change", candidate,
+        [_review_issue("meaning", "/segments/1/meaning_en")],
         representation="chinese-annotation", language="zh", context={"chunk_text": "她走"},
         validate_candidate=lambda value: None,
     )
@@ -856,7 +886,8 @@ async def test_profile_check_rejects_symlinked_patch_child(tmp_path):
              "edits": [{"op": "set_field", "path": "/segments/1/meaning_en", "value": "go"}]}
     runner = WorkspacePlannedRunner(tmp_path, plan, patch)
     result = await repair_annotation(
-        Harness(tmp_path, runner), "repairs/symlink", candidate, [{"problem": "meaning"}],
+        Harness(tmp_path, runner), "repairs/symlink", candidate,
+        [_review_issue("meaning", "/segments/1/meaning_en")],
         representation="chinese-annotation", language="zh", context={"chunk_text": "她走"},
         validate_candidate=lambda value: None,
     )
@@ -926,11 +957,21 @@ class ReplanningRunner:
             value = {"base_digest": candidate_digest(self.candidate),
                 "edits": [{"op": "set_field", "path": "/segments/0/meaning_en",
                            "value": "bad-second-patch" if self.terminal else "corrected"}]}
-        # Minimal child artifact evidence for deterministic assembly replay.
+        # Versioned child evidence must be a real authenticated workspace
+        # packet; this fixture only stubs worker output, not host validation.
         directory = self.run_dir / "agents" / job
         directory.mkdir(parents=True, exist_ok=True)
-        (directory / "result.json").write_text(json.dumps(value), encoding="utf-8")
-        (directory / "meta.json").write_text(json.dumps({"return_code": 0}), encoding="utf-8")
+        workspace = directory / "workspace"
+        _, workspace_digest = build(workspace, prompt,
+            json.loads(schema.read_text(encoding="utf-8")), context=kwargs.get("workspace_context"))
+        candidate_path = workspace / "candidate.json"
+        candidate_path.write_text(json.dumps(value, ensure_ascii=False) + "\n", encoding="utf-8")
+        check(workspace, candidate_path)
+        submitted, artifact = submit(workspace, {"candidate_path": "candidate.json"})
+        (directory / "result.json").write_text(json.dumps(submitted), encoding="utf-8")
+        (directory / "meta.json").write_text(json.dumps({"return_code": 0,
+            "tool_profile": "workspace", "workspace_digest": workspace_digest,
+            **artifact}), encoding="utf-8")
         return value
 
 
@@ -943,8 +984,9 @@ async def test_one_derived_gate_replan_uses_original_base_and_replays_lineage(tm
             raise ValueError("complete candidate gate: required dependent form analysis missing")
 
     result = await repair_annotation(Harness(tmp_path, runner), "repair", candidate,
-        [{"problem": "meaning", "explanation": "Correct the meaning."}],
-        representation="chinese-annotation", language="zh", validate_candidate=gate)
+        [_review_issue("meaning", "/segments/0/meaning_en", explanation="Correct the meaning.")],
+        representation="chinese-annotation", language="zh", context={"chunk_text": "她走"},
+        validate_candidate=gate)
     assert result["status"] == "applied"
     assert result["candidate"]["segments"][0]["meaning_en"] == "corrected"
     assert candidate["segments"][0]["meaning_en"] == "she"
@@ -976,7 +1018,7 @@ async def test_replan_exhaustion_is_terminal_and_never_starts_a_third_attempt(tm
             raise ValueError("dependent semantic row still invalid")
 
     result = await repair_annotation(Harness(tmp_path, runner), "repair", candidate,
-        [{"problem": "meaning"}], representation="chinese-annotation", language="zh",
+        [_review_issue("meaning", "/segments/0/meaning_en")], representation="chinese-annotation", language="zh",
         validate_candidate=gate)
     assert result["status"] == "patch_rejected"
     assert result["candidate"] == candidate
@@ -993,7 +1035,7 @@ async def test_non_derived_submission_failure_does_not_replan(tmp_path, failure_
     runner = ReplanningRunner(tmp_path, candidate, failure_category=failure_category)
     with pytest.raises(CandidateSubmissionError, match="bounded correction rejected"):
         await repair_annotation(Harness(tmp_path, runner), "repair", candidate,
-            [{"problem": "meaning"}], representation="chinese-annotation", language="zh",
+            [_review_issue("meaning", "/segments/0/meaning_en")], representation="chinese-annotation", language="zh",
             validate_candidate=lambda _: None)
     assert len(runner.calls) == 2
 
@@ -1005,7 +1047,7 @@ async def test_source_and_target_contract_failure_does_not_replan(tmp_path):
         failure_category="annotation_patch_contract_rejection")
     with pytest.raises(CandidateSubmissionError, match="bounded correction rejected"):
         await repair_annotation(Harness(tmp_path, runner), "repair", candidate,
-            [{"problem": "meaning"}], representation="chinese-annotation", language="zh",
+            [_review_issue("meaning", "/segments/0/meaning_en")], representation="chinese-annotation", language="zh",
             validate_candidate=lambda _: None)
     assert len(runner.calls) == 2
 
@@ -1136,7 +1178,7 @@ async def test_applied_replan_profile_replays_real_workspace_lineage(tmp_path, m
         if value["segments"][0]["meaning_en"] == "bad-first-patch":
             raise ValueError(json.dumps([gate_message], ensure_ascii=False))
     result = await repair_annotation(Harness(tmp_path, runner), "repair", candidate,
-        [{"problem": "meaning"}], representation="chinese-annotation", language="zh",
+        [_review_issue("meaning", "/segments/0/meaning_en")], representation="chinese-annotation", language="zh",
         context={"chunk_text": "她走"}, validate_candidate=gate)
     assert result["status"] == "applied"
     assembly_dir = tmp_path / "agents" / "repair_assembly"
@@ -1175,7 +1217,9 @@ async def test_structured_findings_keep_exact_observations_in_plan_and_patch(
     }
     candidate = candidates[representation]
     observed = candidate["segments"][0]["meaning_en"]
-    issues = [{"finding_ids": ["old-0"], "new_issue_ids": [],
+    issues = [{"candidate_paths": ["/segments/0/meaning_en"],
+        "supporting_paths": [f"/segments/0/{'surface' if language == 'ja' else 'text'}"],
+        "finding_ids": ["old-0"], "new_issue_ids": [],
         "diagnosis": "Correct the meaning at the observed field.",
         "observations": [{"path": "/segments/0/meaning_en", "observed_value": observed}],
         "path_history": [{"finding_id": "earlier-0", "disposition": "resolved",

@@ -16,11 +16,14 @@ async def test_shared_plan_patch_scope_guidance_and_correct_contrast(tmp_path,la
     runner=PlannedRunner(tmp_path,plan,patch)
     context={'source_evidence':{'construction':'reporting with a simultaneous matrix action','exact_source_action':'she left' if concrete_action else None,'action_scope':'following clause, outside the reporting tap'}}
     if language=='ko':context['candidate_gate']=_korean_candidate_gate()
-    result=await module.repair_annotation(Harness(tmp_path,runner),'scope',candidate,[{'problem':'The proposition-only field omits a reporting connective contribution.'}],representation=representation,language=language,context=context,validate_candidate=lambda value:None)
+    result=await module.repair_annotation(Harness(tmp_path,runner),'scope',candidate,[{
+        'problem':'The proposition-only field omits a reporting connective contribution.',
+        'candidate_paths':['/segments/0/meaning_en'],'supporting_paths':['/segments/1/meaning_en']}],
+        representation=representation,language=language,context=context,validate_candidate=lambda value:None)
     assert result['status']=='applied'
     assert result['candidate']['segments'][1]==candidate['segments'][1]
     for _,prompt,_,effort,options in runner.calls:
         assert module.SCHEMATIC_SOURCE_MEANING_GUIDANCE in prompt
-        assert options['workspace_context']['repair_explanation_guidance_version']==3
+        assert options['workspace_context']['repair_explanation_guidance_version']==4
         assert options['workspace_context']['source_evidence']==context['source_evidence']
         assert effort=='low'

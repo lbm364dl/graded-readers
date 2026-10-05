@@ -297,18 +297,27 @@ def check(path, candidate):
         plan_context = context.get('annotation_plan_validation')
         if plan_context is not None:
             from pipeline.annotation_repairs import _validate_plan
-            if plan_context.get('target_contract_version') == 2 and 'repair_dependency_constraints' not in input_values:
+            version = plan_context.get('target_contract_version', 1)
+            if version in (2, 3) and 'repair_dependency_constraints' not in input_values:
                 raise ValueError('New repair plan contract requires typed immutable dependency constraints')
-            if plan_context.get('target_contract_version') in (1, 2):
-                _validate_plan(value, plan_context['issue_count'],
-                               context.get('candidate', input_values.get('candidate')),
-                               context.get('representation', input_values.get('representation')),
-                               target_contract_version=plan_context['target_contract_version'],
+            authority = input_values.get('repair_target_authority')
+            if version == 3 and not isinstance(authority, dict):
+                raise ValueError('v3 repair target authority differs from immutable workspace input')
+            if version in (1, 2, 3):
+                plan_candidate = context.get('candidate', input_values.get('candidate'))
+                plan_representation = context.get('representation', input_values.get('representation'))
+                if version == 3:
+                    from pipeline.annotation_edits import candidate_digest
+                    from pipeline.annotation_repair_authority import validate_authority_packet
+                    validate_authority_packet(authority, input_values.get('issues'), plan_candidate,
+                        plan_representation, candidate_digest(plan_candidate))
+                _validate_plan(value, plan_context['issue_count'], plan_candidate,
+                               plan_representation,
+                               target_contract_version=version,
                                dependency_constraints=input_values.get('repair_dependency_constraints')
-                               if plan_context['target_contract_version'] == 2 else None)
+                               if version in (2, 3) else None,
+                               target_authority=authority)
             else:
-                # Preserve replayability for workspace plans created before
-                # operation/path feasibility was checked at submission time.
                 _validate_plan(value, plan_context['issue_count'])
             continue
         patch_context = context.get('annotation_patch_validation')
@@ -317,6 +326,14 @@ def check(path, candidate):
                 from pipeline.annotation_edits import candidate_digest
                 base = patch_context['base_candidate']
                 expected = candidate_digest(base)
+                if patch_context.get('target_contract_version') == 3:
+                    from pipeline.annotation_repair_authority import validate_authority_packet, validate_plan_authority
+                    packet = input_values.get('repair_target_authority')
+                    if packet != patch_context.get('repair_target_authority'):
+                        raise ValueError('v3 patch authority differs from immutable workspace input')
+                    validate_authority_packet(packet, patch_context['issues'], base,
+                        patch_context['representation'], expected)
+                    validate_plan_authority(patch_context['repair_plan'], packet)
                 schema = json.loads((path / 'schema.json').read_text())
                 if (input_values.get('candidate') != base
                         or input_values.get('base_digest') != expected
@@ -373,6 +390,10 @@ def _check_annotation_patch(workspace, patch, context):
 
     derived = apply_edits(context['base_candidate'], patch,
         allowed_targets=context['allowed_targets'], representation=context['representation'])
+    if context.get('target_contract_version') == 3:
+        from pipeline.annotation_repair_authority import validate_derived_effects
+        validate_derived_effects(context['base_candidate'], derived, context['repair_plan'],
+            context['repair_target_authority'], patch['edits'])
     if context.get('target_contract_version') == 1:
         validate_issue_target_coverage(context['base_candidate'], derived, patch['edits'],
             context['repair_plan'], representation=context['representation'])

@@ -1459,7 +1459,7 @@ class KoreanHarness:
                             repaired = await repair_annotation(self, chunk_job, semantic_base, errors,
                                 representation='korean-flat', language='ko',
                                 context=enrich_run_lesson_context(self.run_dir, candidate=semantic_base, source_text=text,
-                                    language='ko', representation='korean-flat', context={FIELD: marker('korean-flat'), 'chunk_text': text, 'chapter_text': prose['text'],
+                                    language='ko', representation='korean-flat', context={FIELD: marker('korean-flat'), 'repair_issue_origin': 'deterministic_gate', 'chunk_text': text, 'chapter_text': prose['text'],
                                     'source_start': sum(map(len, texts[:number - 1])),
                                     'candidate_gate': {'focus': focus, 'title': prose['title'],
                                         'number': self.number, 'plan': bound_plan,

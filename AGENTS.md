@@ -78,6 +78,14 @@ pipeline planning and review, never as a manual expansion of one sample.
 
 Preserve unrelated worktree changes. Reuse reviewed data and cached agent work;
 send agents only new or changed material, with review proportional to the risk.
+
+During a live receipt replay, keep its canonical code and data dependency inventory
+unchanged, including newly added files. Develop concurrent fixes in an isolated
+copy using an explicit absolute root for every write; verify the resolved target
+is inside that copy before editing. A proposal is not authorization to install
+it into the live pipeline. Check the canonical diff before and after isolated
+work, and retain evidence of any accidental mutation and its restoration without
+assuming it caused a replay failure.
 Changing UI wording is not a reason to rerun unrelated dictionary research.
 Verify both pipeline data and app behavior when a change crosses that boundary.
 If updating the preview, rebuild it and verify the actual user-facing window;
@@ -106,6 +114,11 @@ linguistic contracts and final chapter/publication checks. When changing a share
 workflow, inspect all three callers and test their integration; do not assume a
 feature exists in another language. Cached approvals must bind exact output and
 relevant context, including distinct source positions.
+
+Use each language's actual representation in integration fixtures. A field ignored
+by that representation's schema or source-projection check cannot establish a
+passing language contract. Label primitive tests and stubbed validators explicitly;
+distinguish them from actual caller, receipt replay and publication coverage.
 
 Keep recurring pipeline problems in the shared maintenance lane. Count distinct
 jobs and retain exact evidence; a successful process exit or an approval with
