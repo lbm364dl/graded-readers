@@ -161,11 +161,11 @@ unresolved targets; any remaining uncertainty must remain unresolved.
 """
 RESEARCH_POLICY_V6 = RESEARCH_POLICY_V5 + "\n\n" + SCOPED_FACT_REVIEW_GUIDANCE
 REVIEW_POLICY_V6 = REVIEW_POLICY_V5 + "\n\n" + SCOPED_FACT_REVIEW_GUIDANCE
-RESEARCH_POLICY_VERSION = 6
-SUPPORTED_RESEARCH_POLICY_VERSIONS = {2, 3, 4, 5, 6}
+RESEARCH_POLICY_VERSION = 7
+SUPPORTED_RESEARCH_POLICY_VERSIONS = {2, 3, 4, 5, 6, 7}
 
 SUBMISSION_VALIDATION_VERSION = 2
-RESEARCH_EVIDENCE_VERSION = 6
+RESEARCH_EVIDENCE_VERSION = 7
 # Official dictionary pages include large inline scripts; keep the transfer
 # bounded while allowing the observed 2.55 MB KRDict entry page.
 MAX_CAPTURE_BYTES = 4_000_000
@@ -366,7 +366,7 @@ def _initial_uncertain_ids(initial: dict) -> list[str]:
     return ids
 
 
-def _validate_research_output(output: Any, issue_ids: list[str], known_references: dict) -> tuple[list[dict], list[dict]]:
+def _validate_research_output(output: Any, issue_ids: list[str], known_references: dict, *, policy_version: int = 2) -> tuple[list[dict], list[dict]]:
     validate(output, RESEARCH_SCHEMA)
     rows = output["findings"]
     seen = set()
@@ -393,6 +393,17 @@ def _validate_research_output(output: Any, issue_ids: list[str], known_reference
                     raise AnnotationResearchError(
                         f"Unknown or non-authoritative citation reference ID {reference_id!r}; "
                         f"valid reference IDs: {valid_reference_ids!r}")
+                content = reference['content']
+                scope = content.get('_annotation_run_lesson_scope') if isinstance(content,dict) else None
+                scoped_paths = None
+                if policy_version >= 7 and scope is not None:
+                    from pipeline.annotation_run_lessons import REFERENCE_POLICY_TEXT
+                    if (not isinstance(scope,dict) or scope.get('version') not in (1,2)
+                            or issue_id not in content.get('issue_ids',[])
+                            or not scope.get('issue_paths',{}).get(issue_id)
+                            or (scope.get('version')==2 and scope.get('policy_digest')!=_digest(REFERENCE_POLICY_TEXT))):
+                        raise AnnotationResearchError('Theory citation is outside its authenticated issue scope')
+                    scoped_paths = scope['issue_paths'][issue_id]
                 try:
                     value = resolve_pointer(reference["content"], citation["path"])
                 except (LedgerProtocolError, TypeError, KeyError) as exc:
@@ -406,7 +417,8 @@ def _validate_research_output(output: Any, issue_ids: list[str], known_reference
                 resolved.append({"reference_id": reference_id, "path": citation["path"],
                                  "kind": reference["kind"], "value": value,
                                  "value_digest": _digest(value),
-                                 "reference_content_digest": _digest(reference["content"])})
+                                 "reference_content_digest": _digest(reference["content"]),
+                                 **({"run_lesson_target_paths":scoped_paths} if scoped_paths is not None else {})})
             fact_rows.append({**row, "resolved_citations": resolved})
         elif row["status"] == "unresolved":
             if row["fact"].strip() or row["citations"] or not row["gap"].strip():
@@ -664,7 +676,7 @@ def validate_research_submission(output: Any, request: Any) -> None:
             or not isinstance(request.get("known_reference_input"), dict)):
         raise AnnotationResearchError("Research validation context lacks issue/reference inputs")
     try:
-        _validate_research_output(output, request["issue_ids"], request["known_reference_input"])
+        _validate_research_output(output, request["issue_ids"], request["known_reference_input"],policy_version=_policy_version(request))
     except Exception as exc:
         if isinstance(exc, AnnotationResearchError):
             raise
@@ -672,9 +684,9 @@ def validate_research_submission(output: Any, request: Any) -> None:
 
 
 def _resolve_research_output(output: Any, issue_ids: list[str],
-                             known_references: dict) -> tuple[list[dict], list[dict], str | None]:
+                             known_references: dict, *, policy_version: int = 2) -> tuple[list[dict], list[dict], str | None]:
     try:
-        facts, unresolved = _validate_research_output(output, issue_ids, known_references)
+        facts, unresolved = _validate_research_output(output, issue_ids, known_references,policy_version=policy_version)
         return facts, unresolved, None
     except Exception as exc:
         # Invalid or uncited worker claims are not evidence. Preserve the
@@ -693,7 +705,7 @@ def _build_inputs(*, language: str, representation: str, candidate: Any,
                   source_text: str | None, deterministic_gate_evidence: dict,
                   initial_adjudication: dict, known_reference_input: dict,
                   normal_review_receipt: dict,
-                  policy_version: int | None = None) -> dict:
+                  policy_version: int | None = None, run_dir: Path | None = None) -> dict:
     if language not in {"zh", "ja", "ko"}:
         raise AnnotationResearchError("Unsupported annotation language")
     if not isinstance(known_reference_input, dict):
@@ -715,6 +727,25 @@ def _build_inputs(*, language: str, representation: str, candidate: Any,
                 or row.get("kind") not in LINGUISTIC_REFERENCE_KINDS or "content" not in row):
             continue
         refs[identity] = {"kind": row["kind"], "content": row["content"]}
+    transported = {}
+    if policy_version >= 7 and isinstance(context, dict):
+        from pipeline.annotation_run_lessons import (validate_run_lessons,
+            theory_reference_context, REFERENCE_POLICY_FIELD, reference_policy_marker, validate_run_lesson_context_fields)
+        validate_run_lesson_context_fields(context)
+        nested = context.get('chunk_review_context', context)
+        packet = context.get('reviewed_run_lessons', nested.get('reviewed_run_lessons'))
+        if packet is not None:
+            if run_dir is None:
+                raise AnnotationResearchError('Theory transport requires authenticated run root')
+            bound = validate_run_lessons(run_dir, packet, candidate=candidate,
+                source_text=source_text, language=language, representation=representation,
+                context=theory_reference_context(context), current_review=current_review)
+            transported = {identity + ':theory-scope-v2': row for identity, row in bound['references'].items()
+                           if set(row['issue_ids']) & set(issue_ids)}
+            for identity, row in transported.items():
+                if identity in refs and refs[identity] != {'kind':row['kind'],'content':row['content']}:
+                    raise AnnotationResearchError('Transported theory conflicts with original reference')
+                refs[identity] = {'kind':row['kind'],'content':row['content']}
     # Do not let a task manufacture a source by declaring its kind. These rows
     # are coordinator-supplied inputs and must be bound by the initial receipt.
     result = {
@@ -735,6 +766,8 @@ def _build_inputs(*, language: str, representation: str, candidate: Any,
         "issue_ids": issue_ids, "research_policy_digest": _digest(_policies(policy_version)[0]),
         "review_policy_digest": _digest(_policies(policy_version)[1]),
     }
+    if policy_version >= 7:
+        result['run_lesson_theory_transport'] = {'version':1,'reference_policy':reference_policy_marker() if transported else None,'original_known_reference_digest':_digest(known_reference_input),'transported_references':transported,'transported_references_digest':_digest(transported)}
     if policy_version != 2:
         result["research_policy_version"] = policy_version
     if policy_version >= 4:
@@ -792,6 +825,8 @@ def _policies(version: int) -> tuple[str, str]:
         return RESEARCH_POLICY_V5, REVIEW_POLICY_V5
     if version == 6:
         return RESEARCH_POLICY_V6, REVIEW_POLICY_V6
+    if version == 7:
+        return RESEARCH_POLICY_V6 + "\nAuthenticated transported standalone lessons are supplied theory, never borrowed occurrence approval. Inspect their exact pattern, formation and function before requesting duplicate research; only genuinely missing claims need investigation.", REVIEW_POLICY_V6 + "\nAuthenticate citations to supplied standalone theory and assess current scoped claims independently; a prior lesson approval does not approve this occurrence."
     raise AnnotationResearchError("Unsupported research policy version")
 
 
@@ -840,6 +875,11 @@ def _reference_rows(inputs: dict, facts: list[dict]) -> dict:
             "context_digest": inputs["context_digest"],
             "source_text_digest": inputs["source_text_digest"],
         }
+        if _policy_version(inputs)>=7:
+            scoped_paths=sorted({path for citation in row['resolved_citations'] for path in citation.get('run_lesson_target_paths',[])})
+            if scoped_paths:
+                from pipeline.annotation_run_lessons import REFERENCE_POLICY_TEXT
+                content['_annotation_run_lesson_scope']={'version':2,'policy_digest':_digest(REFERENCE_POLICY_TEXT),'issue_paths':{row['issue_id']:scoped_paths}}
         output[identity] = {"kind": "approved_lesson", "content": content,
                             "issue_ids": [row["issue_id"]]}
     return output
@@ -1188,7 +1228,7 @@ def register_reviewed_lesson_cache(run_dir: Path, *, source_run_dir: Path,
         initial_adjudication=initial_adjudication,
         known_reference_input=known_reference_input,
         normal_review_receipt=normal_review_receipt)
-    inputs = _build_inputs(**args)
+    inputs = _build_inputs(**args, run_dir=run_dir)
     target_path = _validate_reviewed_context_scope(expected_context, inputs)
     destination = Path(run_dir).resolve(strict=True)
     source_rel = _repo_relative_run_dir(source_run_dir)
@@ -1241,7 +1281,7 @@ def _verify_reviewed_lesson_cache(run_dir: Path, evidence: dict, *, language: st
     stored_inputs = evidence.get("inputs") if isinstance(evidence, dict) else None
     policy_version = (stored_inputs.get("research_policy_version", 2)
                       if isinstance(stored_inputs, dict) else 2)
-    inputs = _build_inputs(language=language, representation=representation,
+    inputs = _build_inputs(run_dir=run_dir, language=language, representation=representation,
         candidate=candidate, current_review=current_review, prior_history=prior_history,
         context=context, source_text=source_text,
         deterministic_gate_evidence=deterministic_gate_evidence,
@@ -1303,7 +1343,7 @@ async def research_uncertain_review(runner: Any, run_dir: Path, *, language: str
     into candidate edits or new external-source evidence.
     """
     _check_runner_policy(runner)
-    inputs = _build_inputs(language=language, representation=representation,
+    inputs = _build_inputs(run_dir=run_dir, language=language, representation=representation,
         candidate=candidate, current_review=current_review, prior_history=prior_history,
         context=context, source_text=source_text,
         deterministic_gate_evidence=deterministic_gate_evidence,
@@ -1374,7 +1414,7 @@ async def research_uncertain_review(runner: Any, run_dir: Path, *, language: str
         research_schema_path, "low", tool_profile="workspace",
         workspace_context=research_context)
     first_facts, first_unresolved, first_error = _resolve_research_output(
-        first_research_output, inputs["issue_ids"], inputs["known_reference_input"])
+        first_research_output, inputs["issue_ids"], inputs["known_reference_input"],policy_version=_policy_version(inputs))
     source_requests = []
     if first_error is None:
         source_requests = _validated_source_requests(first_research_output, inputs["issue_ids"],
@@ -1416,7 +1456,7 @@ async def research_uncertain_review(runner: Any, run_dir: Path, *, language: str
                 for issue in inputs["issue_ids"]], "Continuation requested an additional source capture"
         else:
             final_facts, final_unresolved, final_error = _resolve_research_output(
-                final_research_output, inputs["issue_ids"], final_references)
+                final_research_output, inputs["issue_ids"], final_references,policy_version=_policy_version(inputs))
         continuation_meta, _ = _verify_job(run_dir, job=continuation_job,
             expected_prompt=continuation_prompt, schema_text=research_schema_path.read_text(encoding="utf-8"),
             workspace_context=continuation_context, expected_result=final_research_output)
@@ -1512,7 +1552,7 @@ def verify_research_evidence(run_dir: Path, evidence: dict, *, language: str,
             or evidence.get("version") not in SUPPORTED_RESEARCH_POLICY_VERSIONS):
         raise AnnotationResearchError("Unsupported or missing research evidence version")
     policy_version = evidence["version"]
-    inputs = _build_inputs(language=language, representation=representation,
+    inputs = _build_inputs(run_dir=run_dir, language=language, representation=representation,
         candidate=candidate, current_review=current_review, prior_history=prior_history,
         context=context, source_text=source_text,
         deterministic_gate_evidence=deterministic_gate_evidence,
@@ -1554,7 +1594,7 @@ def verify_research_evidence(run_dir: Path, evidence: dict, *, language: str,
     if _read_json(evidence_dir / "research-result.json") != research_output:
         raise AnnotationResearchError("Persisted initial researcher result differs from the worker result")
     first_facts, first_unresolved, first_error = _resolve_research_output(
-        research_output, inputs["issue_ids"], inputs["known_reference_input"])
+        research_output, inputs["issue_ids"], inputs["known_reference_input"],policy_version=_policy_version(inputs))
     source_requests = []
     if first_error is None:
         source_requests = _validated_source_requests(research_output, inputs["issue_ids"],
@@ -1600,7 +1640,7 @@ def verify_research_evidence(run_dir: Path, evidence: dict, *, language: str,
                 for issue in inputs["issue_ids"]], "Continuation requested an additional source capture"
         else:
             final_facts, final_unresolved, final_error = _resolve_research_output(
-                final_research_output, inputs["issue_ids"], final_references)
+                final_research_output, inputs["issue_ids"], final_references,policy_version=_policy_version(inputs))
     else:
         final_research_output = research_output
         final_facts, final_unresolved, final_error = first_facts, first_unresolved, first_error

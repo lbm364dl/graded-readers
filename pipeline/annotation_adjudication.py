@@ -724,7 +724,9 @@ def _validate_output_targets(output: dict, inputs: dict) -> dict:
                     raise AdjudicationError('Reviewed research was cited outside its verified target issue scope')
                 if isinstance(content,dict) and '_annotation_run_lesson_scope' in content:
                     scope=content['_annotation_run_lesson_scope']
-                    if (not isinstance(scope,dict) or scope.get('version')!=1
+                    from pipeline.annotation_run_lessons import REFERENCE_POLICY_TEXT
+                    if (not isinstance(scope,dict) or scope.get('version') not in (1,2)
+                            or (scope.get('version')==2 and scope.get('policy_digest')!=digest(REFERENCE_POLICY_TEXT))
                             or row['path'] not in scope.get('issue_paths',{}).get(raw['issue_id'],[])):
                         raise AdjudicationError('Run lesson cited outside its exact verified target path scope')
                 try:

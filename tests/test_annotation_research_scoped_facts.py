@@ -64,7 +64,7 @@ def test_useful_cited_mixed_or_partial_fact_preserves_candidate_and_every_curren
     assert reference['issue_ids'] == [tasks[0]['issue_id']]
     assert reference['content']['candidate_digest'] == research._digest(original['candidate'])
     assert reference['content']['review_digest'] == research._digest(original['current_review'])
-    assert result['evidence']['version'] == result['evidence']['inputs']['research_policy_version'] == 6
+    assert result['evidence']['version'] == result['evidence']['inputs']['research_policy_version'] == 7
     assert research.verify_research_evidence(tmp_path, result['evidence'], **request) == result
     assert 'effective_review_kind' not in result
 

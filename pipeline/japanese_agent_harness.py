@@ -6028,6 +6028,13 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                 fresh_context, lesson_references = bind_lifecycle_run_lessons(
                     self, index, chunk, result, language='ja', representation='japanese-annotation',
                     context=fresh_context, current_review=findings)
+                if fresh_context.get('reviewed_run_lessons'):
+                    from pipeline.annotation_run_lessons import theory_reference_context, validate_run_lessons
+                    fresh_context = theory_reference_context(fresh_context)
+                    lesson_references = validate_run_lessons(Path(self.run_dir),
+                        fresh_context['reviewed_run_lessons'], candidate=result,
+                        source_text=chunk, language='ja', representation='japanese-annotation',
+                        context=fresh_context, current_review=findings)['references']
                 from pipeline.annotation_semantic_derivation import verified_semantic_derivation
                 derivation = verified_semantic_derivation(Path(self.run_dir),
                     candidate=result, source_text=chunk, language="ja",
@@ -6200,6 +6207,13 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                 context, lesson_references = bind_lifecycle_run_lessons(
                     self, index, chunk, result, language='ja', representation='japanese-annotation',
                     context=context, current_review=findings)
+                if context.get('reviewed_run_lessons'):
+                    from pipeline.annotation_run_lessons import theory_reference_context, validate_run_lessons
+                    context = theory_reference_context(context)
+                    lesson_references = validate_run_lessons(Path(self.run_dir),
+                        context['reviewed_run_lessons'], candidate=result,
+                        source_text=chunk, language='ja', representation='japanese-annotation',
+                        context=context, current_review=findings)['references']
                 from pipeline.annotation_semantic_derivation import verified_semantic_derivation
                 derivation = verified_semantic_derivation(Path(self.run_dir),
                     candidate=result, source_text=chunk, language="ja",

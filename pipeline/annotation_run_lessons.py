@@ -90,6 +90,32 @@ def _owned_identity_paths(candidate,target,old_id,lesson_id,language):
    if direct or complete:paths.add('/grammar_links/'+str(index)+'/entry_id')
  return paths
 
+REFERENCE_POLICY_FIELD='reviewed_run_lesson_reference_policy'
+REFERENCE_POLICY_TEXT='Authenticated standalone theory may inform only the exact selected stage or overlay formation and complete-form meaning, plus independently owned identity links. It never supplies occurrence approval, unrelated lexical evidence, other stages, or source/geometry edits.'
+def reference_policy_marker():return {'version':2,'policy_digest':digest(REFERENCE_POLICY_TEXT)}
+def reference_policy_version(context):
+ if not isinstance(context,dict):return 1
+ markers=[row[REFERENCE_POLICY_FIELD] for row in (context,context.get('chunk_review_context',{})) if isinstance(row,dict) and REFERENCE_POLICY_FIELD in row]
+ if not markers:return 1
+ if any(value!=reference_policy_marker() for value in markers):raise RunLessonError('Unknown or conflicting run lesson reference policy')
+ return 2
+
+def theory_reference_context(context):
+ result=deepcopy(context);result[REFERENCE_POLICY_FIELD]=reference_policy_marker();return result
+
+def _owned_theory_paths(candidate,target,old_id,lesson_id,language):
+ paths=_owned_identity_paths(candidate,target,old_id,lesson_id,language)
+ pointer=target['target_path'];parts=pointer.strip('/').split('/')
+ if pointer.startswith('/grammar_overlays/'):
+  owner='/grammar_overlays/'+parts[1]
+  for field in ('pattern','explanation_en','meaning_en'):
+   try:resolve_pointer(candidate,owner+'/'+field);paths.add(owner+'/'+field)
+   except (KeyError,IndexError,TypeError,ValueError):pass
+ elif len(parts)>=5 and parts[0]=='segments' and parts[2]=='form_steps' and parts[4] in ('grammar_entry_ids','grammar_ids','grammar_entry_id','grammar_id'):
+  owner='/'+ '/'.join(parts[:4])
+  for field in ('form','meaning_en'):paths.add(owner+'/'+field)
+ return paths
+
 def validate_run_lesson_context_fields(context):
  """Substantive lesson snapshots require provenance in their own container."""
  if not isinstance(context,dict):return
@@ -97,6 +123,9 @@ def validate_run_lesson_context_fields(context):
  if isinstance(nested_normalization,dict) and context.get('annotation_run_knowledge_normalization') is not None and nested_normalization.get('annotation_run_knowledge_normalization') is not None and context['annotation_run_knowledge_normalization']!=nested_normalization['annotation_run_knowledge_normalization']:raise RunLessonError('Root and nested identity normalization proofs disagree')
  for container in (context,nested_normalization):
   if isinstance(container,dict) and container.get('annotation_run_knowledge_normalization') is not None and container.get(RUN_LESSON_FIELD) is None:raise RunLessonError('Identity normalization requires its own authenticated run knowledge envelope')
+ if any(REFERENCE_POLICY_FIELD in row for row in (context,nested_normalization) if isinstance(row,dict)):
+  reference_policy_version(context)
+  if not any(row.get(RUN_LESSON_FIELD) is not None for row in (context,nested_normalization) if isinstance(row,dict)):raise RunLessonError('Theory reference policy requires authenticated envelope')
  nested=context.get('chunk_review_context')
  if isinstance(nested,dict) and context.get(RUN_LESSON_FIELD) is not None and nested.get(RUN_LESSON_FIELD) is not None and context[RUN_LESSON_FIELD]!=nested[RUN_LESSON_FIELD]:
   raise RunLessonError('Root and nested run lesson envelopes disagree')
@@ -106,6 +135,8 @@ def validate_run_lesson_context_fields(context):
 
 def validate_run_lessons(run_dir,envelope,*,candidate,source_text,language,representation,context,current_review=None):
  validate_run_lesson_context_fields(context)
+ scope_version=reference_policy_version(context)
+ if envelope is None and isinstance(context,dict) and any(REFERENCE_POLICY_FIELD in row for row in (context,context.get('chunk_review_context',{})) if isinstance(row,dict)):raise RunLessonError('Theory reference policy requires authenticated envelope')
  if envelope is None:return {'packet':{},'references':{},'lessons':[]}
  try:
   if (not isinstance(envelope,dict) or set(envelope)!={'version','language','representation','position','lessons'} or type(envelope['version']) is not int or envelope['version'] not in (1,2) or envelope['language']!=language or envelope['representation']!=representation or not isinstance(envelope['lessons'],list) or not 1<=len(envelope['lessons'])<=3):raise RunLessonError('Unsupported run lesson envelope or language')
@@ -142,14 +173,14 @@ def validate_run_lessons(run_dir,envelope,*,candidate,source_text,language,repre
      from pipeline.annotation_adjudication import normalize_review
      from pipeline.annotation_issue_targets import issue_target_paths
      issue_paths={}
-     owned_paths=_owned_identity_paths(candidate,target,old_id,lesson_id,language)
+     owned_paths=(_owned_theory_paths(candidate,target,old_id,lesson_id,language) if scope_version==2 else _owned_identity_paths(candidate,target,old_id,lesson_id,language))
      for issue in normalize_review(language,current_review)['issues']:
       paths=issue_target_paths(issue['issue'],candidate,source_text=source_text,representation=representation)
       applicable=sorted(set(paths or []) & owned_paths)
       if applicable:issue_paths[issue['issue_id']]=applicable
      if issue_paths:
       issue_ids=list(issue_paths)
-      references[identity]={'kind':'approved_lesson','content':{**lesson,'_annotation_research_fact':True,'issue_ids':issue_ids,'_annotation_run_lesson_scope':{'version':1,'issue_paths':issue_paths}},'issue_ids':issue_ids}
+      references[identity]={'kind':'approved_lesson','content':{**lesson,'_annotation_research_fact':True,'issue_ids':issue_ids,'_annotation_run_lesson_scope':{'version':scope_version,'issue_paths':issue_paths,**({'policy_digest':digest(REFERENCE_POLICY_TEXT)} if scope_version==2 else {})}},'issue_ids':issue_ids}
 
   for substantive in (context,context.get('chunk_review_context')):
    if isinstance(substantive,dict) and 'reviewed_run_grammar' in substantive and substantive['reviewed_run_grammar'] != lessons:raise RunLessonError('Run lesson substantive snapshot changed')

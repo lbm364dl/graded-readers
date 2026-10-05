@@ -2919,6 +2919,13 @@ GRAMMAR OVERLAYS (existing exact offset objects):
                 adjudication_context, lesson_references = bind_lifecycle_run_lessons(
                     self, index, chunk, result, language='zh', representation='chinese-annotation',
                     context=adjudication_context, current_review=review)
+                if adjudication_context.get('reviewed_run_lessons'):
+                    from pipeline.annotation_run_lessons import theory_reference_context, validate_run_lessons
+                    adjudication_context = theory_reference_context(adjudication_context)
+                    lesson_references = validate_run_lessons(Path(self.run_dir),
+                        adjudication_context['reviewed_run_lessons'], candidate=result,
+                        source_text=chunk, language='zh', representation='chinese-annotation',
+                        context=adjudication_context, current_review=review)['references']
                 policy_reference.update(lesson_references)
                 policy_reference.update(carried_references)
                 from pipeline.annotation_semantic_derivation import verified_semantic_derivation

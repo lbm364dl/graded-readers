@@ -1609,10 +1609,11 @@ class KoreanHarness:
                                     candidate=value, source_text=text, language='ko', representation='korean-flat',
                                     context=context, current_review=review)['references'])
                             if context.get('reviewed_run_lessons'):
-                                from pipeline.annotation_run_lessons import validate_run_lessons
+                                from pipeline.annotation_run_lessons import validate_run_lessons, theory_reference_context
+                                reference_context = theory_reference_context(context)
                                 references.update(validate_run_lessons(self.run_dir, context['reviewed_run_lessons'],
                                     candidate=value, source_text=text, language='ko', representation='korean-flat',
-                                    context=context, current_review=review)['references'])
+                                    context=reference_context, current_review=review)['references'])
                             references['review-policy'] = {
                                 'kind': 'explicit_review_policy',
                                 'content': self.policy + '\n' + self.review_policy}
@@ -1644,6 +1645,9 @@ class KoreanHarness:
                                 'deterministic_gate_evidence': gate,
                                 'normal_review_receipt': receipt,
                             }
+                            if context.get('reviewed_run_lessons'):
+                                from pipeline.annotation_run_lessons import REFERENCE_POLICY_FIELD, reference_policy_marker
+                                replay_inputs['context'][REFERENCE_POLICY_FIELD] = reference_policy_marker()
                             if semantic_derivation['context_evidence'] is not None:
                                 replay_inputs['context']['verified_semantic_derivation'] = semantic_derivation['context_evidence']
                             if not adjudication_budget.claim(value):

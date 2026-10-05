@@ -216,8 +216,8 @@ def test_researcher_and_critic_share_form_scope_and_source_request_rules():
     assert "request that exact page in source_requests" not in continuation_prompt
 
 
-@pytest.mark.parametrize('version', [2, 3, 4, 5])
-def test_historical_research_receipt_replays_with_exact_policy_after_v6_default(
+@pytest.mark.parametrize('version', [2, 3, 4, 5, 6])
+def test_historical_research_receipt_replays_with_exact_policy_after_v7_default(
         tmp_path, monkeypatch, version):
     _allow_initial_replay(monkeypatch)
     request = _request_inputs()
@@ -229,9 +229,9 @@ def test_historical_research_receipt_replays_with_exact_policy_after_v6_default(
         result = asyncio.run(research.research_uncertain_review(runner, tmp_path, **request))
         assert result["evidence"]["version"] == version
         assert ("research_policy_version" not in result["evidence"]["inputs"]) == (version == 2)
-        assert research.SCOPED_FACT_REVIEW_GUIDANCE not in research._review_prompt(
-            result["evidence"]["inputs"])
-    assert research.RESEARCH_POLICY_VERSION == original_current == 6
+        assert (research.SCOPED_FACT_REVIEW_GUIDANCE in research._review_prompt(
+            result["evidence"]["inputs"])) == (version >= 6)
+    assert research.RESEARCH_POLICY_VERSION == original_current == 7
     assert research.verify_research_evidence(tmp_path, result["evidence"], **request) == result
 
 
@@ -418,7 +418,7 @@ def test_primary_page_capture_continuation_review_and_offline_replay(tmp_path, m
     assert len(runner.calls) == 3
     assert len(fetches) == 1
     evidence = result["evidence"]
-    assert evidence["version"] == 6
+    assert evidence["version"] == 7
     assert evidence["continuation_job"]
     assert evidence["captured_references"][0]["content"]["captured_text"].find("Form A") >= 0
     assert "ignore" not in evidence["captured_references"][0]["content"]["captured_text"]
