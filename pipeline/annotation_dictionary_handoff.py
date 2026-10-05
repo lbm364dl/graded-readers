@@ -43,7 +43,7 @@ def replay_handoff(run_dir, handoff, *, language, chapter_text, required_ids, pu
 
 def make_handoff(run_dir, packets, *, language, chapter_text, required_ids, published):
     rows=[];seen=set()
-    applications=[deepcopy(packet) for packet in packets if packet.get('version')==2]
+    applications=[deepcopy(packet) for packet in packets] if any(packet.get('version')==2 for packet in packets) else []
     if applications:_validate_applications(run_dir,applications,language,chapter_text)
     for packet in packets:
         for row in packet.get('lessons',[]):
@@ -187,15 +187,19 @@ def _validate_applications(run_dir,packets,language,chapter_text):
     from pipeline.annotation_run_lessons import validate_run_lessons
     if not isinstance(packets,list) or not packets:raise DictionaryHandoffError('Missing reusable lesson application')
     for packet in packets:
-        if not isinstance(packet,dict) or packet.get('version')!=2:raise DictionaryHandoffError('Invalid reusable lesson application version')
+        if not isinstance(packet,dict) or packet.get('version') not in (1,2):raise DictionaryHandoffError('Invalid reusable lesson application version')
         position=packet.get('position',{});offset=position.get('source_start')
         if type(offset) is not int or position.get('parent_text_digest')!=digest(chapter_text):raise DictionaryHandoffError('Reusable application parent changed')
         for row in packet.get('lessons',[]):
             application=row.get('application')
-            if application is None:raise DictionaryHandoffError('Dictionary v2 application must be explicit')
+            if application is None:
+                from pipeline.annotation_run_lessons import _source_scope
+                base,target=_source_scope(row['expected_context'])
+                application={'candidate':base,'source_text':target['source_text']}
+                if row['expected_context']['chapter']['text']!=chapter_text:raise DictionaryHandoffError('Native dictionary source belongs to another chapter')
             source=application['source_text']
             if chapter_text[offset:offset+len(source)]!=source:raise DictionaryHandoffError('Reusable application source position changed')
-            validate_run_lessons(run_dir,packet,candidate=application['candidate'],source_text=source,language=language,representation=packet['representation'],context={'annotation_source_position':position,'chapter_text':chapter_text,'source_start':offset})
+            validate_run_lessons(run_dir,packet,candidate=application['candidate'],source_text=source,language=language,representation=packet['representation'],context=({'annotation_source_position':position,'chapter_text':chapter_text,'source_start':offset} if 'chunk_index' in position else {'chapter_text':chapter_text,'source_start':offset}))
 
 def _proof_has_application(run_dir,proof):
     from pipeline.korean_agent_harness import read

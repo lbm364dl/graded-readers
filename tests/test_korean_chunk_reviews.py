@@ -476,9 +476,10 @@ def test_expanded_approved_grammar_inventory_preserves_subset_review_receipt(tmp
 def test_checkpoint_approval_replay_preserves_original_context_with_additive_sources(tmp_path, monkeypatch, adjudicated):
     from pipeline.korean_agent_harness import reusable_checkpoint_approval
     import pipeline.annotation_adjudication as host
-    annotation = {'segments': [{'text': '아이', 'meaning_en': 'child'}], 'grammar_links': []}
+    annotation = {'segments': [{'text': '아이', 'meaning_en': 'child', 'lexical_id': 'used-missing'}], 'grammar_links': []}
     context = {'chapter_text': '아이 아이', 'source_start': 3,
         'approved_words': [], 'approved_grammar': [],
+        'lexical_candidates': [{'id': 'prior-unused', 'headword': '아이', 'pos': 'noun', 'meaning': 'child'}],
         'linguistic_reference': {}, 'lexical_reference': {},
         'official_primary_sources': [{'reference_id': 'original-primary', 'record': 30494}]}
     policy = 'Review honestly.'
@@ -512,6 +513,14 @@ def test_checkpoint_approval_replay_preserves_original_context_with_additive_sou
     assert reusable_checkpoint_approval(tmp_path, row, annotation=annotation,
         text='아이', context=current, policy=policy) == proof
     assert runner.calls == [normal['job']]
+    expanded = {**current, 'lexical_candidates': context['lexical_candidates'] +
+        [{'id': 'new-unused', 'headword': '아이', 'pos': 'noun', 'meaning': 'alternative child'}]}
+    assert reusable_checkpoint_approval(tmp_path, row, annotation=annotation, text='아이', context=expanded, policy=policy) == proof
+    assert runner.calls == [normal['job']]
+    for candidates in ([], [{'id': 'prior-unused', 'headword': '아이', 'pos': 'noun', 'meaning': 'changed'}],
+                       context['lexical_candidates'] + [{'id': 'prior-unused', 'meaning': 'conflict'}]):
+        with pytest.raises(ValueError):
+            reusable_checkpoint_approval(tmp_path, row, annotation=annotation, text='아이', context={**current, 'lexical_candidates': candidates}, policy=policy)
     for changed in ({**current, 'source_start': 0}, {**current, 'chapter_text': '아이아이'},
                     {**current, 'lexical_reference': {'changed': True}}):
         with pytest.raises(ValueError, match='context changed'):
@@ -532,7 +541,8 @@ def test_checkpoint_approval_replay_preserves_original_context_with_additive_sou
             text='아이', context={**context, 'official_primary_sources': []}, policy=policy)
 
 @pytest.mark.parametrize('owner', ['segment', 'stage', 'expression'])
-def test_checkpoint_new_used_word_reference_requires_fresh_review(tmp_path, owner):
+@pytest.mark.parametrize('reference_field', ['approved_words', 'lexical_candidates'])
+def test_checkpoint_new_used_word_reference_requires_fresh_review(tmp_path, owner, reference_field):
     from pipeline.korean_agent_harness import reusable_checkpoint_approval
     annotation = {'segments': [{'text': '아이', 'meaning_en': 'child', 'form_steps': []}],
                   'grammar_links': [], 'expression_links': []}
@@ -542,15 +552,15 @@ def test_checkpoint_new_used_word_reference_requires_fresh_review(tmp_path, owne
         annotation['segments'][0]['form_steps'] = [{'form': '아이', 'lexical_id': 'used'}]
     else:
         annotation['expression_links'] = [{'entry_id': 'used'}]
-    context = {'chapter_text': '아이', 'source_start': 0, 'approved_words': []}
+    context = {'chapter_text': '아이', 'source_start': 0, reference_field: []}
     _, proof = asyncio.run(review_chunk(Runner(tmp_path), tmp_path, annotation=annotation,
         text='아이', context=context, policy='Review honestly.'))
     row = {'review_context': context, 'review': proof}
     assert reusable_checkpoint_approval(tmp_path, row, annotation=annotation, text='아이',
-        context={**context, 'approved_words': [{'id': 'unused'}]}, policy='Review honestly.') == proof
+        context={**context, reference_field: [{'id': 'unused'}]}, policy='Review honestly.') == proof
     with pytest.raises(ValueError, match='used reference added'):
         reusable_checkpoint_approval(tmp_path, row, annotation=annotation, text='아이',
-            context={**context, 'approved_words': [{'id': 'used'}]}, policy='Review honestly.')
+            context={**context, reference_field: [{'id': 'used'}]}, policy='Review honestly.')
     if owner == 'stage':
         stale = {key: value for key, value in proof.items() if key != 'form_review_guidance_digest'}
         with pytest.raises(ValueError, match='predates'):

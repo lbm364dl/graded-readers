@@ -277,16 +277,20 @@ def reusable_checkpoint_approval(run_dir, row, *, annotation, text, context, pol
             current = {item['reference_id']: item for item in context.get(key, [])}
             if any(current.get(item['reference_id']) != item for item in old.get(key, [])):
                 raise ValueError('Korean checkpoint primary evidence changed')
-        elif key in ('approved_words', 'approved_grammar'):
+        elif key in ('approved_words', 'approved_grammar', 'lexical_candidates'):
             before = {item['id']: item for item in old.get(key, [])}
+            if any(before[item['id']] != item for item in old.get(key, [])):
+                raise ValueError(f'Korean checkpoint conflicting reference identity: {key}')
             after = {item['id']: item for item in context.get(key, [])}
+            if any(after[item['id']] != item for item in context.get(key, [])):
+                raise ValueError(f'Korean checkpoint conflicting reference identity: {key}')
             # Preserve every previously reviewed reference; an expanded
             # inventory does not change an unchanged occurrence's evidence.
             if any(after.get(identity) != item for identity, item in before.items()):
                 raise ValueError(f'Korean checkpoint reviewed reference changed: {key}')
             from pipeline.korean_lexical_research import candidate_lexical_identities
             used = (candidate_lexical_identities(annotation)
-                    if key == 'approved_words' else
+                    if key in ('approved_words', 'lexical_candidates') else
                     {link.get('entry_id') for link in annotation.get('grammar_links', [])}
                     | {identity for s in annotation['segments']
                        for step in s.get('form_steps', [])
@@ -1549,6 +1553,14 @@ class KoreanHarness:
                             else:
                                 print(f'annotation chunk {index + 1}: reused verified independent approval', flush=True)
                                 return value, record, proof
+                        from pipeline.annotation_run_knowledge_selection import select_and_normalize_run_knowledge
+                        selected=await select_and_normalize_run_knowledge(self,index,value,text,language='ko',representation='korean-flat',context=context,base_record=record)
+                        value,record=selected['candidate'],selected['record']
+                        context=selected['context']
+                        # Resolve registered applications in the actual callback before review.
+                        pending=context.pop('annotation_run_knowledge_normalization',None)
+                        context,_=enrich_run_lesson_context(self.run_dir,candidate=value,source_text=text,language='ko',representation='korean-flat',context=context)
+                        if pending:context['annotation_run_knowledge_normalization']=pending
                         review, evidence = await review_chunk(self.runner, self.run_dir,
                             annotation=value, text=text, context=context,
                             policy=self.policy + '\n' + self.review_policy)

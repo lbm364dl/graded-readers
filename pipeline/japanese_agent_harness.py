@@ -5962,6 +5962,10 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
 
         for attempt in range(self.args.max_annotation_repairs + 1):
             stage = "initial" if attempt == 0 else f"repair_{attempt:02d}"
+            if getattr(self,'run_dir',None) and self.annotation_reconstructs(chunk,result):
+                from pipeline.annotation_run_knowledge_selection import select_and_normalize_run_knowledge
+                selected=await select_and_normalize_run_knowledge(self,index,result,chunk,language='ja',representation='japanese-annotation',context={})
+                result=selected['candidate']
             findings = await review(stage)
             attempt_record = {"stage": stage, "annotation": result, "review": findings}
             proof = ordinary_receipt(stage, findings, result)

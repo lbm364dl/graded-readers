@@ -93,6 +93,10 @@ def _owned_identity_paths(candidate,target,old_id,lesson_id,language):
 def validate_run_lesson_context_fields(context):
  """Substantive lesson snapshots require provenance in their own container."""
  if not isinstance(context,dict):return
+ nested_normalization=context.get('chunk_review_context',{})
+ if isinstance(nested_normalization,dict) and context.get('annotation_run_knowledge_normalization') is not None and nested_normalization.get('annotation_run_knowledge_normalization') is not None and context['annotation_run_knowledge_normalization']!=nested_normalization['annotation_run_knowledge_normalization']:raise RunLessonError('Root and nested identity normalization proofs disagree')
+ for container in (context,nested_normalization):
+  if isinstance(container,dict) and container.get('annotation_run_knowledge_normalization') is not None and container.get(RUN_LESSON_FIELD) is None:raise RunLessonError('Identity normalization requires its own authenticated run knowledge envelope')
  nested=context.get('chunk_review_context')
  if isinstance(nested,dict) and context.get(RUN_LESSON_FIELD) is not None and nested.get(RUN_LESSON_FIELD) is not None and context[RUN_LESSON_FIELD]!=nested[RUN_LESSON_FIELD]:
   raise RunLessonError('Root and nested run lesson envelopes disagree')
@@ -149,6 +153,10 @@ def validate_run_lessons(run_dir,envelope,*,candidate,source_text,language,repre
 
   for substantive in (context,context.get('chunk_review_context')):
    if isinstance(substantive,dict) and 'reviewed_run_grammar' in substantive and substantive['reviewed_run_grammar'] != lessons:raise RunLessonError('Run lesson substantive snapshot changed')
+  for normalization_context in (context,context.get('chunk_review_context')):
+   if isinstance(normalization_context,dict) and normalization_context.get('annotation_run_knowledge_normalization') is not None:
+    from pipeline.annotation_run_knowledge_selection import validate_normalization_context
+    validate_normalization_context(run_dir,normalization_context,candidate,source_text,language,representation)
   return {'packet':deepcopy(envelope),'references':references,'lessons':lessons}
  except (OSError,KeyError,TypeError,IndexError,ValueError) as exc:
   if isinstance(exc,RunLessonError):raise

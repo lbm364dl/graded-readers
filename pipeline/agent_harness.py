@@ -771,6 +771,13 @@ class CodexRunner:
     def _check_tool_profile(job_dir: Path, profile: str | None, meta: dict) -> None:
         from pipeline.worker_runtime import reject_repository_mutations
         reject_repository_mutations(job_dir, ROOT)
+        if meta.get('kind') == 'annotation_run_knowledge_normalization':
+            from pipeline.annotation_run_knowledge_selection import replay_normalization
+            agent_root=next((parent for parent in Path(job_dir).absolute().parents if parent.name=='agents'),None)
+            if agent_root is None:raise ValueError('Normalization assembly outside run agents')
+            _,verified=replay_normalization(agent_root.parent,str(Path(job_dir).absolute().relative_to(agent_root)))
+            if verified!=meta:raise ValueError('Normalization assembly metadata changed')
+            return
         if meta.get('kind') == 'annotation_patch_assembly':
             if meta.get('return_code') != 0 or meta.get('status') != 'applied':
                 raise ValueError('Only an applied annotation patch assembly can be reused')
@@ -2826,6 +2833,10 @@ GRAMMAR OVERLAYS (existing exact offset objects):
         adjudication_budget = AdjudicationBudget()
         for attempt in range(self.args.max_annotation_repairs + 1):
             if self.annotation_reconstructs(chunk, result):
+                if getattr(self,'run_dir',None):
+                    from pipeline.annotation_run_knowledge_selection import select_and_normalize_run_knowledge
+                    selected=await select_and_normalize_run_knowledge(self,index,result,chunk,language='zh',representation='chinese-annotation',context={})
+                    result=selected['candidate']
                 review = await self.review_annotation(
                     index, chunk, result, "initial" if attempt == 0 else f"repair_{attempt:02d}"
                 )

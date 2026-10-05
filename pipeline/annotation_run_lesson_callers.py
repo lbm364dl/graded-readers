@@ -30,7 +30,7 @@ def _source_key(row):
     receipt = {key: value for key, value in row['import_receipt'].items()
                if key not in {'issue_ids', 'references', 'reference_digest', 'evidence_digest'}}
     return digest({'source_run_relpath': row['source_run_relpath'],
-                   'expected_context': row['expected_context'], 'receipt': receipt, **({'application':row['application']} if 'application' in row else {})})
+                   'expected_context': row['expected_context'], 'receipt': receipt, **({'application':_application_key(row['application'])} if 'application' in row else {})})
 
 
 def _envelope(context):
@@ -97,6 +97,8 @@ def bind_lifecycle_run_lessons(harness, index, source_text, candidate, *,
                                current_review=None):
     from pipeline.annotation_run_lessons import RUN_LESSON_FIELD
     context = dict(context or {})
+    normalization=getattr(harness,'_annotation_run_normalizations',{}).get(index)
+    if normalization:context['annotation_run_knowledge_normalization']=normalization
     _assert_snapshot_envelope(context)
     position = getattr(harness, '_annotation_source_positions', {}).get(index)
     binding_context = dict(context)
@@ -108,6 +110,8 @@ def bind_lifecycle_run_lessons(harness, index, source_text, candidate, *,
             from pipeline.annotation_run_lessons import RunLessonError
             raise RunLessonError('Run lesson binding requires coordinator run directory')
         return context, {}
+    pending_normalization=context.pop('annotation_run_knowledge_normalization',None)
+    binding_context.pop('annotation_run_knowledge_normalization',None)
     bound = resolve_run_lesson_context(harness.run_dir, candidate=candidate,
         source_text=source_text, language=language, representation=representation,
         context=binding_context, envelope=envelope, current_review=current_review)
@@ -116,11 +120,15 @@ def bind_lifecycle_run_lessons(harness, index, source_text, candidate, *,
     context = binding_context
     context[RUN_LESSON_FIELD] = bound['packet']
     context['reviewed_run_grammar'] = bound['lessons']
+    if pending_normalization:
+        context['annotation_run_knowledge_normalization']=pending_normalization
+        from pipeline.annotation_run_knowledge_selection import validate_normalization_context
+        validate_normalization_context(harness.run_dir,context,candidate,source_text,language,representation)
     context['annotation_run_lesson_validation'] = {
         'run_dir': str(Path(harness.run_dir).resolve()),
         'candidate': candidate, 'source_text': source_text, 'language': language,
         'representation': representation, 'envelope': bound['packet'], 'lessons': bound['lessons'],
-        'context': dict(binding_context)}
+        'context': dict(context) if pending_normalization else dict(binding_context)}
     return context, bound['references']
 
 
@@ -157,3 +165,13 @@ def current_run_lesson_eligibility(harness, index, source_text, candidate, *,
         source_text=source_text, language=language, representation=representation,
         context=context, old_context=old_context,
         envelope=getattr(harness, '_annotation_run_lessons', {}).get(index))
+
+
+def _application_key(application):
+    # Unrelated independently reviewed semantic corrections do not create a new
+    # standalone source pair or target application. Authentication still checks
+    # the exact original descriptors and current selected-owner compatibility.
+    from pipeline.annotation_run_lessons import _masked_owner,_masked_overlay,_surfaces
+    path=application['target_path'];candidate=application['candidate']
+    owner=(_masked_overlay(candidate,path) if path.startswith('/grammar_overlays/') else _masked_owner(candidate,path))
+    return {'target_path':path,'source_text':application['source_text'],'tap_surfaces':_surfaces(candidate),'target_owner':owner}
