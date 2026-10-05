@@ -36,6 +36,11 @@ When an issue includes host-verified `path_history`, inspect the earlier finding
 
 Learner-facing explanations must positively explain the actual form or grammatical contribution. Do not copy reviewer objections, editorial uncertainty, or defensive denials into occurrence notes or meanings. A useful grammatical contrast is allowed when it explains the form itself; rebutting one reviewer's classification is not a learner explanation. Keep a complete form's meaning separate from its form label and passage-specific grammatical role. Do not import a larger construction's meaning into one component stage, concatenate component glosses, or invent contributions to satisfy a review."""
 
+
+REPAIR_EXPLANATION_GUIDANCE_VERSION = 2
+SCHEMATIC_SOURCE_MEANING_GUIDANCE = """A dictionary construction explanation may use variables such as a person saying something while performing an action. These describe the construction, not additional events or words asserted by each occurrence. Ground the meaning of each field in its exact complete source form and represented scope. Do not paste schematic participants, actions, or placeholders into an occurrence or form-stage meaning. A connective or participial reporting rendering can already express the relevant relation to the following clause; a neighboring proposition-only stage may still omit that contribution. Judge those fields separately. Expand an issue's targets only after showing which contribution is actually missing from each additional field, with source or lesson evidence. Name a concrete simultaneous action only when the source attests it and it belongs to the field's represented span; do not import the following clause's action into a smaller tap. Preserve a correct contrasting meaning even when its wording differs from the revised stage. This guidance does not approve a candidate or prescribe an English phrase."""
+REPAIR_EXPLANATION_GUIDANCE += '\n\n' + SCHEMATIC_SOURCE_MEANING_GUIDANCE
+
 _TARGET = {
     "type": "object", "additionalProperties": False,
     "required": ["op", "path"],
@@ -312,7 +317,7 @@ async def repair_annotation(
         context = {**context, 'carried_research_guidance': CARRIED_RESEARCH_GUIDANCE}
     plan_schema_path, patch_schema_path = _schemas(run_dir)
     plan_job, patch_job, assembly_job = f"{job}_plan", f"{job}_patch", f"{job}_assembly"
-    shared_context = {**(context or {}), "language": language,
+    shared_context = {**(context or {}), "repair_explanation_guidance_version": REPAIR_EXPLANATION_GUIDANCE_VERSION, "language": language,
                       "representation": representation, "candidate": candidate,
                       "issues": issues,
                       "representation_structure_contract":
