@@ -36,9 +36,12 @@ When an issue includes host-verified `path_history`, inspect the earlier finding
 
 Learner-facing explanations must positively explain the actual form or grammatical contribution. Do not copy reviewer objections, editorial uncertainty, or defensive denials into occurrence notes or meanings. A useful grammatical contrast is allowed when it explains the form itself; rebutting one reviewer's classification is not a learner explanation. Keep a complete form's meaning separate from its form label and passage-specific grammatical role. Do not import a larger construction's meaning into one component stage, concatenate component glosses, or invent contributions to satisfy a review."""
 
-REPAIR_EXPLANATION_GUIDANCE_VERSION = 2
+REPAIR_EXPLANATION_GUIDANCE_VERSION = 3
 SCHEMATIC_SOURCE_MEANING_GUIDANCE = """A dictionary construction explanation may use variables such as a person saying something while performing an action. These describe the construction, not additional events or words asserted by each occurrence. Ground the meaning of each field in its exact complete source form and represented scope. Do not paste schematic participants, actions, or placeholders into an occurrence or form-stage meaning. A connective or participial reporting rendering can already express the relevant relation to the following clause; a neighboring proposition-only stage may still omit that contribution. Judge those fields separately. Expand an issue's targets only after showing which contribution is actually missing from each additional field, with source or lesson evidence. Name a concrete simultaneous action only when the source attests it and it belongs to the field's represented span; do not import the following clause's action into a smaller tap. Preserve a correct contrasting meaning even when its wording differs from the revised stage. This guidance does not approve a candidate or prescribe an English phrase."""
 REPAIR_EXPLANATION_GUIDANCE += '\n\n' + SCHEMATIC_SOURCE_MEANING_GUIDANCE
+RETAINED_STAGE_LINK_GUIDANCE = """Distinguish changing an identity on a retained, complete form stage from removing that stage or changing the supported occurrence shape. When the complete form and direct occurrence geometry are retained and the grammar identity is wrong, plan the exact identity-array change together with the matching direct link's entry_id field. A simultaneous, separately supported correction to its complete-form meaning does not itself require changing the occurrence shape. Preserve its source span and context unless a separate supported finding identifies a defect there. Do not remove and recreate that direct row as a displayed wider construction merely to change its lesson identity. In Korean, a link whose entry_id is already a retained stage identity on its owner must use the direct-link fields; a displayed construction row for that same staged identity is invalid. If the stage actually must be removed or the supported occurrence shape must change, use the planned remove and source-grounded append operations, or remove a redundant direct row when another complete occurrence supplies the needed coverage. A different unsupported full-span pattern is not automatically an identity-only repair. Related issues may share the same necessary scalar/list identity target; one effective change can satisfy those shared targets. Do not plan duplicate appended occurrences for the same correction: append targets across issue rows require distinct effective additions. These are structural distinctions, not linguistic approval or permission to change an unrelated tap."""
+REPAIR_EXPLANATION_GUIDANCE += '\n\n' + RETAINED_STAGE_LINK_GUIDANCE
+
 
 _TARGET = {
     "type": "object", "additionalProperties": False,
@@ -84,7 +87,10 @@ PATCH_SCHEMA: dict[str, Any] = {
     },
 }
 
-DEPENDENCY_CLOSURE_GUIDANCE = """For each issue, inspect semantic dependencies through the exact observed tap surface before choosing targets. If changing a lemma, lexical identity, or form analysis for an inflected/derived surface, include only the dependent semantic field/list operations needed to keep its complete chain valid through that exact surface, with matching grammar links/overlays and the representation's form-audit membership when those fields exist. Before removing or replacing a form step, compare its grammar identity with occurrence links on that tap. If that step is the sole support for a direct grammar link (a link with empty display fields and the representation's direct-link range sentinel), removing it can make the remaining link invalid. Include that affected occurrence row in the SAME issue's plan: remove the unsupported direct row and append a corrected source-exact complete overlay using the representation-specific construction contract, or remove it only when another retained complete occurrence already explains that same lesson/construction. Do not mutate its protected source-projected range or display fields in place; do not leave an unsupported direct link behind or assume the patch may edit outside the declared plan. Removing an incorrect step or link is not sufficient when the remaining chain then fails to explain the observed surface; add or replace the supported semantic rows needed for the corrected analysis. Do not alter primary source/tap text, boundaries, or ranges. Contrast: a wrong occurrence gloss on an already-valid chain should target only that meaning field; removing the sole step that supports a direct lesson may also require a planned overlay-row conversion, while a separate unchanged step or existing complete overlay can continue to support its link; a changed lemma/identity for an inflected surface may also require corrected ordered stages and their linked lessons. Inspect the supplied grammar knowledge and identity policy: reuse an exact approved entry when it fits; use a provisional/draft identity only when the language policy explicitly permits it, and leave it subject to the normal independent review. Never present a draft as approved, and never invent a lexical ID or lesson to complete the chain."""
+DEPENDENCY_CLOSURE_GUIDANCE = """For each issue, inspect semantic dependencies through the exact observed tap surface before choosing targets. If changing a lemma, lexical identity, or form analysis for an inflected/derived surface, include only the dependent semantic field/list operations needed to keep its complete chain valid through that exact surface, with matching grammar links/overlays and the representation's form-audit membership when those fields exist. First distinguish an identity-only correction on a retained complete form step from an actual step removal or occurrence-shape change. An identity-only correction should update the exact stage identity and matching direct link identity while preserving valid geometry and context. Before actually removing a form step, compare its grammar identity with occurrence links on that tap. If that step is the sole support for a direct grammar link (a link with empty display fields and the representation's direct-link range sentinel), removing it can make the remaining link invalid. Include that affected occurrence row in the SAME issue's plan. If the stage is retained and only its identity changes, target the direct entry_id field together with that identity. When the step actually must be removed or the occurrence shape changes, remove the unsupported direct row and append a corrected source-exact complete overlay using the representation-specific construction contract, or remove it only when another retained complete occurrence already explains that same lesson/construction. Do not mutate its protected source-projected range or display fields in place; do not leave an unsupported direct link behind or assume the patch may edit outside the declared plan. Removing an incorrect step or link is not sufficient when the remaining chain then fails to explain the observed surface; add or replace the supported semantic rows needed for the corrected analysis. Do not alter primary source/tap text, boundaries, or ranges. Contrast: a wrong occurrence gloss on an already-valid chain should target only that meaning field; removing the sole step that supports a direct lesson may also require a planned overlay-row conversion, while a separate unchanged same-identity step can continue to support a direct link; an existing complete occurrence may justify removing a redundant unsupported direct row, but does not make that empty direct row valid; a changed lemma/identity for an inflected surface may also require corrected ordered stages and their linked lessons. Inspect the supplied grammar knowledge and identity policy: reuse an exact approved entry when it fits; use a provisional/draft identity only when the language policy explicitly permits it, and leave it subject to the normal independent review. Never present a draft as approved, and never invent a lexical ID or lesson to complete the chain."""
+REPAIR_DEPENDENCY_GUIDANCE_VERSION = 2
+REPAIR_DEPENDENCY_GUIDANCE = """Inspect repair_dependency_constraints before submitting the plan. They record structural relationships in the immutable candidate, not additional linguistic findings or permission to change unrelated fields. If an explicit stage identity change or removal takes away the sole retained stage support for an empty direct grammar link, include that exact dependent link in the SAME issue's targets. A retained same-identity stage can continue supporting that row; a separate complete occurrence may justify removing a redundant direct row, but cannot make an unsupported empty direct row valid. Prefer exact meaning leaves for meaning-only changes rather than ambiguous identity-bearing ancestor replacements. For a retained complete stage identity-only correction, pair its identity target with the existing matching direct entry_id field, preserving valid geometry and context; do not convert that row into a displayed wider occurrence. Actual removal or occurrence-shape change is a different case. The plan does not prescribe a replacement identity. Establish it from reviewed evidence, and ensure the derived result has the matching occurrence linkage required by its actual representation and full gate. These constraints do not import Korean relationships into Chinese or Japanese schemas."""
+
 REPRESENTATION_STRUCTURE_GUIDANCE = """Use `representation_structure_contract` from INPUT when it is present, together with the candidate gate and supplied language schema. Respect every declared item cardinality exactly. If a grammar-identity array is constrained to one identity per form step, never put several identities on one step: represent separate ordered transformations as separate complete-form steps only when the exact surface, references, and candidate gate support those stages. A step's meaning describes its complete form; keep politeness/form information separate, and never create a bare-stem stage just to satisfy cardinality. If an existing step and a linked lesson describe different transformations, do not replace that step's identity alone; plan the supported dependent stage and matching link edits required by the gate. If the contract is absent, follow the current language's schema and policy without importing another language's cardinality. Do not invent stages or meanings to satisfy a guessed rule."""
 SOURCE_TAP_PROJECTION_GUIDANCE = """Keep primary source/tap fields unchanged: segment text/surface, source offsets, and all primary tap boundaries. Do not mutate source-projected fields of a grammar occurrence row in place (for example grammar-link segment/range indices and display_form, or grammar-overlay start/end and text/surface/component spans). An empty Korean grammar-link display_form with display_end_segment_index -1 is a direct lesson link; do not turn it into a displayed source span in place. A grounded correction may instead remove an incorrect grammar occurrence row and append a corrected row at the same semantic-list path, with its complete span and any component spans exactly supported by unchanged source segments and the representation contract. This is a semantic overlay replacement, not source resegmentation; retain all unaffected rows and rerun the complete candidate gate. Do not invent a construction or its meaning. Use boundary_change_needed only when primary source text, tap surface/boundaries, or source segmentation itself must change, or when the required overlay cannot be expressed safely by allowed semantic row operations."""
 ENDING_TAP_CONSTRUCTION_GUIDANCE = """When a grammatical ending is tapped separately from an adjacent lexical word or name, do not use the ending's grammar identity as the lexical root of a word-form chain. Keep the direct ending lesson linked to its ending tap. If the reviewed analysis requires a complete construction spanning the lexical/name tap and ending, represent that construction as a source-exact grammar occurrence anchored at the first included lexical/name tap, using the representation-specific `construction_occurrence_contract` in INPUT; preserve every tap and the direct ending lesson. This applies to supported noun/name + predication and lexical-verb + auxiliary constructions across distinct lesson identities. Use only the supplied attested lexical identity and independently supported grammar identities; do not add a copula-ID exception or invent a word/lesson. Contrast: a valid full-span occurrence may include the ending tap while the direct ending lesson remains on that ending; using a grammar-kind tap as a lexical form-chain root is invalid. The complete displayed form must exactly match the included source span and its complete meaning must be supported by the source and lessons."""
@@ -106,6 +112,13 @@ def _representation_structure_contract(representation: str) -> dict[str, Any] | 
         "min_items": minimum,
         "max_items": maximum,
         "meaning": "The constraint applies within each form step, not across the ordered form-step chain.",
+        "stage_link_identity_rule": {
+            "source": "pipeline.korean_dictionary.build_assets",
+            "relation": "link.entry_id is in its owner's retained form_steps[*].grammar_entry_ids",
+            "when_staged": "Use direct occurrence fields and the representation-specific sentinel; displayed construction fields are forbidden.",
+            "when_not_staged": "On a form-analyzed owner, a different construction identity needs a source-exact complete occurrence; supplied display fields must satisfy that occurrence contract. An independent direct ending/lesson tap without a form chain remains direct under the candidate gate. Remove only genuinely unsupported or redundant rows.",
+            "identity_only_repair": "Retain the complete stage and valid direct geometry; change the stage identity and matching link entry_id together.",
+        },
     }
 
 
@@ -143,7 +156,16 @@ def _construction_occurrence_contract(representation: str) -> dict[str, Any] | N
             "ending_link": "retain the direct ending lesson on its own tap with source offsets (-1, -1)",
         },
     }
-    return contracts.get(representation)
+    contract = contracts.get(representation)
+    if representation in {"korean-flat", "korean-v4"}:
+        contract = {**contract, "staged_identity_occurrence": {
+            "rule": "A link whose entry_id is a retained stage identity on its owner must be direct, never displayed.",
+            "direct_fields": ({"display_form": "", "display_meaning_en": "", "display_end_segment_index": -1}
+                if representation == "korean-flat" else
+                {"source_start": -1, "source_end": -1, "display_meaning_en": ""}),
+            "identity_field": "entry_id",
+        }}
+    return contract
 
 
 def digest(value: Any) -> str:
@@ -201,11 +223,19 @@ def _safe_job_path(run_dir: Path, job: str) -> Path:
     return result
 
 
-def _schemas(run_dir: Path) -> tuple[Path, Path]:
-    plan_path = run_dir / "annotation-repair-plan.schema.json"
-    patch_path = run_dir / "annotation-semantic-patch.schema.json"
+def _schemas(run_dir: Path, *, candidate=None, job=None) -> tuple[Path, Path]:
+    if candidate is None:
+        plan_path = run_dir / "annotation-repair-plan.schema.json"
+        patch_path = run_dir / "annotation-semantic-patch.schema.json"
+        patch_schema = PATCH_SCHEMA
+    else:
+        directory = _safe_job_path(run_dir, job)
+        plan_path = directory / "request-plan-v2.schema.json"
+        patch_path = directory / "request-patch-v3.schema.json"
+        patch_schema = deepcopy(PATCH_SCHEMA)
+        patch_schema['properties']['base_digest'] = {'type': 'string', 'const': candidate_digest(candidate)}
     _write_json(plan_path, PLAN_SCHEMA)
-    _write_json(patch_path, PATCH_SCHEMA)
+    _write_json(patch_path, patch_schema)
     return plan_path, patch_path
 
 
@@ -239,7 +269,8 @@ def _validate_repair_context(language: str, representation: str,
 
 
 def _validate_plan(plan: Any, issue_count: int, candidate: Any = None,
-                   representation: str | None = None) -> None:
+                   representation: str | None = None, *, target_contract_version: int = 1,
+                   dependency_constraints=None) -> None:
     validate(plan, PLAN_SCHEMA)
     rows = plan["issues"]
     indexes = [row["issue_index"] for row in rows]
@@ -253,6 +284,11 @@ def _validate_plan(plan: Any, issue_count: int, candidate: Any = None,
             raise ValueError("semantic plan rows need targets and an empty boundary reason")
     if candidate is not None and representation is not None:
         validate_target_contract(candidate, _targets(plan), representation=representation)
+        if target_contract_version == 2:
+            from pipeline.annotation_repair_dependencies import validate_plan_dependencies
+            validate_plan_dependencies(plan, candidate, representation, dependency_constraints)
+        elif target_contract_version != 1:
+            raise ValueError('Unsupported annotation plan target contract version')
 
 
 def _targets(plan: dict[str, Any]) -> list[dict[str, str]]:
@@ -268,6 +304,8 @@ def _targets(plan: dict[str, Any]) -> list[dict[str, str]]:
 
 
 def _save_assembly(run_dir: Path, assembly_job: str, meta: dict[str, Any], result: Any) -> None:
+    meta["repair_request_policy_version"] = 3
+    meta["plan_target_contract_version"] = 2
     meta.setdefault("target_contract_version", 1)
     directory = _safe_job_path(run_dir, assembly_job)
     _write_json(directory / "result.json", result)
@@ -322,10 +360,14 @@ async def repair_annotation(
             'annotation_run_lesson_validation': {'run_dir': str(run_dir.resolve()), 'candidate': candidate,
                 'source_text': context.get('chunk_text'), 'language': language, 'representation': representation,
                 'envelope': bound_run_lessons['packet'], 'lessons': bound_run_lessons['lessons'], 'context': context}}
-    plan_schema_path, patch_schema_path = _schemas(run_dir)
+    plan_schema_path, patch_schema_path = _schemas(run_dir, candidate=candidate, job=job)
+    from pipeline.annotation_repair_dependencies import repair_dependency_constraints
+    dependency_constraints = repair_dependency_constraints(candidate, representation)
     plan_job, patch_job, assembly_job = f"{job}_plan", f"{job}_patch", f"{job}_assembly"
-    shared_context = {**(context or {}), "repair_explanation_guidance_version": REPAIR_EXPLANATION_GUIDANCE_VERSION, "language": language,
+    shared_context = {**(context or {}), "repair_explanation_guidance_version": REPAIR_EXPLANATION_GUIDANCE_VERSION,
+                      "repair_dependency_guidance_version": REPAIR_DEPENDENCY_GUIDANCE_VERSION, "language": language,
                       "representation": representation, "candidate": candidate,
+                      "repair_dependency_constraints": dependency_constraints,
                       "issues": issues,
                       "representation_structure_contract":
                           _representation_structure_contract(representation),
@@ -333,7 +375,7 @@ async def repair_annotation(
                           _construction_occurrence_contract(representation)}
     plan_context = {**shared_context,
                     "annotation_plan_validation": {"issue_count": len(issues),
-                        "target_contract_version": 1}}
+                        "target_contract_version": 2}}
     plan_prompt = f"""Return JSON matching the supplied repair-plan schema. Build a narrow diagnosis plan for every supplied independent review issue. `issue_index` must cover each input issue exactly once, in order. For each issue, give a concrete reason and exact JSON-pointer target(s) using only supported operations. The plan is diagnosis, never approval. Prefer a semantic field or explicit semantic-list row operation over changing a complete annotation.
 
 {REPAIR_EXPLANATION_GUIDANCE}
@@ -341,6 +383,8 @@ async def repair_annotation(
 {FORM_STAGE_EVIDENCE_GUIDANCE}
 
 {DEPENDENCY_CLOSURE_GUIDANCE}
+
+{REPAIR_DEPENDENCY_GUIDANCE}
 
 {REPRESENTATION_STRUCTURE_GUIDANCE}
 
@@ -363,7 +407,8 @@ INPUT:
     plan = await harness.runner.call(plan_job, plan_prompt, plan_schema_path, selected_effort,
         refresh=selected_refresh, workspace_context=plan_context)
     validate(plan, PLAN_SCHEMA)
-    _validate_plan(plan, len(issues), candidate, representation)
+    _validate_plan(plan, len(issues), candidate, representation, target_contract_version=2,
+        dependency_constraints=dependency_constraints)
     base_digest = candidate_digest(candidate)
     issue_digest = digest(issues)
     plan_digest = digest(plan)
@@ -385,7 +430,7 @@ INPUT:
     patch_validation = {**(context or {}), "base_candidate": candidate,
         "representation": representation, "allowed_targets": allowed,
         "language": language, "issues": issues, "repair_plan": plan,
-        "target_contract_version": 1}
+        "target_contract_version": 1, "request_binding_policy_version": 3}
     patch_context = {**shared_context, "repair_plan": plan,
                      "allowed_targets": allowed, "base_digest": base_digest,
                      "annotation_patch_validation": patch_validation}
@@ -461,10 +506,12 @@ INPUT:
         replan_plan_context = {**shared_context, "issues": replan_issues,
             "repair_history": first_attempt,
             "annotation_plan_validation": {"issue_count": len(replan_issues),
-                "target_contract_version": 1}}
+                "target_contract_version": 2}}
         replan_plan_prompt = f"""Return JSON matching the supplied repair-plan schema. This is the single bounded replan after the first semantic patch and the shared runner's bounded submission correction both failed the deterministic derived-candidate gate. Re-diagnose the supplied original review findings together with the exact gate diagnostic. You may change the diagnosis/targets, but do not change the immutable base candidate. The replan is not approval; the caller will run the same full deterministic gate and independent review.
 
 {DEPENDENCY_CLOSURE_GUIDANCE}
+
+{REPAIR_DEPENDENCY_GUIDANCE}
 
 {REPRESENTATION_STRUCTURE_GUIDANCE}
 
@@ -503,7 +550,8 @@ INPUT:
                     "evidence": _evidence_result(run_dir, assembly_job, meta),
                     "plan": plan, "patch_error": str(replan_error)}
         validate(replan_plan, PLAN_SCHEMA)
-        _validate_plan(replan_plan, len(replan_issues), candidate, representation)
+        _validate_plan(replan_plan, len(replan_issues), candidate, representation, target_contract_version=2,
+            dependency_constraints=dependency_constraints)
         replan_plan_digest = digest(replan_plan)
         if any(row["boundary_change_needed"] for row in replan_plan["issues"]):
             meta = {"return_code": 0, "kind": "annotation_patch_assembly",
@@ -528,7 +576,7 @@ INPUT:
         replan_patch_validation = {**(context or {}), "base_candidate": candidate,
             "representation": representation, "allowed_targets": replan_allowed,
             "language": language, "issues": replan_issues, "repair_plan": replan_plan,
-            "target_contract_version": 1}
+            "target_contract_version": 1, "request_binding_policy_version": 3}
         replan_patch_context = {**shared_context, "issues": replan_issues,
             "repair_plan": replan_plan, "allowed_targets": replan_allowed,
             "base_digest": base_digest, "repair_history": first_attempt,
@@ -652,6 +700,12 @@ def replay_annotation_repair(
     meta, stored = _read_json(assembly_dir / "meta.json"), _read_json(assembly_dir / "result.json")
     if meta.get("kind") != "annotation_patch_assembly" or meta.get("return_code") != 0:
         raise ValueError("invalid annotation semantic-patch assembly metadata")
+    request_version = meta.get("repair_request_policy_version")
+    if request_version not in (None, 3) or isinstance(request_version, bool):
+        raise ValueError("Unknown repair request policy version")
+    plan_version = meta.get("plan_target_contract_version", 1)
+    if plan_version not in (1, 2) or isinstance(plan_version, bool) or (request_version == 3 and plan_version != 2):
+        raise ValueError("Unknown repair plan target contract version")
     base = meta.get("base")
     if candidate_digest(base) != meta.get("base_digest") or digest(meta.get("issues")) != meta.get("issue_digest"):
         raise ValueError("annotation repair base or review issues changed")
@@ -729,7 +783,8 @@ def replay_annotation_repair(
         # Historical accepted plans predate target feasibility validation.
         # Replay the exact actual patch below; an unused stale allowlist item
         # must not invalidate an already accepted assembly.
-        _validate_plan(first_plan, len(meta["issues"]))
+        _validate_plan(first_plan, len(meta["issues"]), base if plan_version == 2 else None,
+            meta["representation"] if plan_version == 2 else None, target_contract_version=plan_version)
         try:
             failed_candidate = apply_edits(base, replan["failed_patch"],
                 allowed_targets=_targets(first_plan), representation=meta["representation"])
@@ -755,7 +810,8 @@ def replay_annotation_repair(
                     "evidence": _evidence_result(run_dir, assembly_job, meta), "plan": first_plan,
                     "patch_error": replan.get("replan_plan_error")}
         replanned = child(replan["replan_plan_job"], replan["replan_plan_digest"])
-        _validate_plan(replanned, len(replan["issues"]))
+        _validate_plan(replanned, len(replan["issues"]), base if plan_version == 2 else None,
+            meta["representation"] if plan_version == 2 else None, target_contract_version=plan_version)
         if meta.get("status") == "boundary_change_needed" and not replan.get("replan_patch_job"):
             if candidate_digest(stored) != meta.get("base_digest"):
                 raise ValueError("boundary replan modified the immutable base")
@@ -811,7 +867,8 @@ def replay_annotation_repair(
                 "evidence": _evidence_result(run_dir, assembly_job, meta), "plan": replanned}
 
     plan = child(meta["plan_job"], meta["plan_digest"])
-    _validate_plan(plan, len(meta["issues"]))
+    _validate_plan(plan, len(meta["issues"]), base if plan_version == 2 else None,
+            meta["representation"] if plan_version == 2 else None, target_contract_version=plan_version)
     if meta.get("status") in {"boundary_change_needed", "patch_rejected"}:
         if candidate_digest(stored) != meta.get("base_digest"):
             raise ValueError("rejected annotation repair modified the base candidate")

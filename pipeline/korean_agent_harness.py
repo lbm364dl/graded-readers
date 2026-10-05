@@ -671,7 +671,8 @@ class KoreanHarness:
                 'lexical_reference': read(LEXICAL_REFERENCE),
                 'form_reading_policy': 'A reading may be empty or equal the written form, meaning no separate pronunciation note. The app displays only readings differing from the written form. Do not require optional pronunciation notes on every occurrence. Any differing pronunciation supplied must be accurate; written morphology and pronunciation remain distinct.'}
         if (name == 'dictionary' and producer is None
-                and len(review_context['word_requests']) + len(review_context['grammar_requests']) > 32):
+                and (len(review_context['word_requests']) + len(review_context['grammar_requests']) > 32
+                     or review_context.get('reviewed_dictionary_handoff'))):
             from pipeline.korean_dictionary_jobs import producer as dictionary_producer
             producer = dictionary_producer(self, prompt, review_context)
         def review_payload(value):
@@ -1669,6 +1670,12 @@ class KoreanHarness:
                     'chunk_reviews': list(chunk_reviews), **repair_evidence}
                 if self.annotation_batch_characters:
                     assembly['batch_characters'] = self.annotation_batch_characters
+                from pipeline.annotation_dictionary_handoff import collect_korean_handoff, replay_handoff, GUIDANCE
+                handoff = collect_korean_handoff(self.run_dir, values, texts, prose['text'], self.grammar)
+                reviewed_run_grammar = replay_handoff(self.run_dir, handoff, language='ko',
+                    chapter_text=prose['text'], required_ids={link['entry_id'] for link in combined['grammar_links']}, published=self.grammar)
+                if handoff:
+                    assembly['reviewed_dictionary_handoff'] = handoff
                 new_ids = sorted({link['entry_id'] for link in combined['grammar_links']} - self.grammar.keys())
                 if new_ids:
                     errors, previous_bindings = [], None
@@ -1682,10 +1689,14 @@ class KoreanHarness:
                             'Do not edit source text, meanings, boundaries or definitions. The complete mapped annotation will receive independent review. '
                             'Large annotations may use lossless_annotation_rows with explicit segment, form-step and grammar-link column lists. Preserve all original indices and distinguish each contextual function. '
                             + payload(annotation=contracts.annotation_view(combined), new_ids=new_ids, approved_grammar=list(self.grammar.values()),
-                                      previous_bindings=previous_bindings, issues=errors, independent_review_issues=issues),
+                                      previous_bindings=previous_bindings, issues=errors, independent_review_issues=issues,
+                                      **({'reviewed_run_grammar': reviewed_run_grammar, 'reviewed_dictionary_handoff': handoff,
+                                          'reviewed_run_dictionary_guidance': GUIDANCE} if handoff else {})),
                             contracts.schema_path('grammar-bindings'), 'low', tool_profile='offline')
                         try:
                             validate(bindings, contracts.GRAMMAR_BINDINGS)
+                            from pipeline.annotation_dictionary_handoff import validate_retained_bindings
+                            validate_retained_bindings(bindings, reviewed_run_grammar)
                             mapped = contracts.bind_grammar_identities(combined, bindings, set(self.grammar))
                             check_annotation(mapped)
                             combined = mapped
@@ -1709,6 +1720,12 @@ class KoreanHarness:
                     initial=normalize_existing(existing, self.words) if existing else None,
                     cache_prefix=f"-revision{prose_attempt}" if prose_attempt else "", producer=produce_annotation)
                 chapter = contracts.canonical_annotation(annotation, prose, self.number, EDITION, bound_plan, focus, level=self.level)
+                from pipeline.annotation_dictionary_handoff import replay_handoff, handoff_after_annotation_stage, GUIDANCE
+                dictionary_handoff = handoff_after_annotation_stage(self.run_dir, self.stages['annotation'], annotation,
+                    chapter_text=chapter['text'], published=self.grammar)
+                reviewed_run_grammar = replay_handoff(self.run_dir, dictionary_handoff, language='ko',
+                    chapter_text=chapter['text'], required_ids=required_grammar, published=self.grammar)
+
                 def check_curriculum(value):
                     if value.get('prose_revision_reason_en', '').strip():
                         raise UnannotatableProseError(value['prose_revision_reason_en'])
@@ -1726,6 +1743,9 @@ class KoreanHarness:
                     'vocabulary_candidates': [entry for entry in curriculum.prompt_entries('vocabulary')
                         if entry['id'] in candidate_ids or (self.level == 1 and entry['level'] == 1)],
                     'grammar_catalog': curriculum.prompt_entries('grammar')}
+                if dictionary_handoff:
+                    curriculum_review.update(reviewed_dictionary_handoff=dictionary_handoff,
+                        reviewed_run_grammar=reviewed_run_grammar, reviewed_run_dictionary_guidance=GUIDANCE)
                 ordinary_ids = {s['lexical']['id'] for s in chapter['segments']
                     if s.get('lexical', {}).get('kind') == 'vocabulary'}
                 curriculum_review['word_requests'] = {identity: {
@@ -1767,6 +1787,9 @@ class KoreanHarness:
                 "lexical_reference": read(LEXICAL_REFERENCE),
                 "approved_words": [self.words[key] for key in sorted(required_words.keys() & self.words.keys())],
                 "approved_grammar": [self.grammar[key] for key in sorted(required_grammar & self.grammar.keys())]}
+            if dictionary_handoff:
+                dictionary_context.update(reviewed_dictionary_handoff=dictionary_handoff,
+                    reviewed_run_grammar=reviewed_run_grammar, reviewed_run_dictionary_guidance=GUIDANCE)
             delta = await self.stage("dictionary", "Write only the requested NEW reusable entries. "
                 "Keep vocabulary definitions independent of this passage. Grammar titles are plain English; "
                 "lessons cover their own pattern and formation, with no catalogs of other transformations. "

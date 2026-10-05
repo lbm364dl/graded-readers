@@ -410,7 +410,7 @@ async def test_korean_repair_plan_receives_exact_per_step_identity_cardinality(t
         context={"candidate_gate": _korean_candidate_gate()}, validate_candidate=lambda _value: None)
     assert result["status"] == "applied"
     workspace_context = runner.calls[0][4]["workspace_context"]
-    assert workspace_context["representation_structure_contract"] == {
+    assert {key: value for key, value in workspace_context["representation_structure_contract"].items() if key != "stage_link_identity_rule"} == {
         "source": "pipeline.korean_contracts.STEP",
         "path": "/segments/*/form_steps/*/grammar_entry_ids",
         "min_items": 1, "max_items": 1,
@@ -518,7 +518,7 @@ async def test_issue_planned_patch_is_validated_persisted_and_replayed(tmp_path)
     assert result["evidence"]["patch_digest"]
     assert runner.calls[1][4]["workspace_context"]["annotation_patch_validation"]["representation"] == "chinese-annotation"
     assert runner.calls[0][4]['workspace_context']['annotation_plan_validation'] == {
-        'issue_count': 2, 'target_contract_version': 1}
+        'issue_count': 2, 'target_contract_version': 2}
     assert 'annotation_plan_validation' not in runner.calls[1][4]['workspace_context']
     assert "a wrong occurrence gloss on an already-valid chain should target only that meaning field" in runner.calls[0][1]
     assert "a changed lemma/identity for an inflected surface may also require corrected ordered stages" in runner.calls[0][1]
@@ -737,6 +737,8 @@ async def test_legacy_applied_plan_with_unused_invalid_target_still_replays_actu
     meta = json.loads(assembly_path.read_text(encoding="utf-8"))
     meta["plan_digest"] = digest(historical_plan)
     meta["target_contract_version"] = 0
+    meta.pop("repair_request_policy_version", None)
+    meta.pop("plan_target_contract_version", None)
     assembly_path.write_text(json.dumps(meta), encoding="utf-8")
 
     replayed = replay_annotation_repair(tmp_path, "legacy_assembly", validate_candidate=lambda _: None)

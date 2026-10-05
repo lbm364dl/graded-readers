@@ -240,10 +240,15 @@ def check(path, candidate):
         plan_context = context.get('annotation_plan_validation')
         if plan_context is not None:
             from pipeline.annotation_repairs import _validate_plan
-            if plan_context.get('target_contract_version') == 1:
+            if plan_context.get('target_contract_version') == 2 and 'repair_dependency_constraints' not in input_values:
+                raise ValueError('New repair plan contract requires typed immutable dependency constraints')
+            if plan_context.get('target_contract_version') in (1, 2):
                 _validate_plan(value, plan_context['issue_count'],
                                context.get('candidate', input_values.get('candidate')),
-                               context.get('representation', input_values.get('representation')))
+                               context.get('representation', input_values.get('representation')),
+                               target_contract_version=plan_context['target_contract_version'],
+                               dependency_constraints=input_values.get('repair_dependency_constraints')
+                               if plan_context['target_contract_version'] == 2 else None)
             else:
                 # Preserve replayability for workspace plans created before
                 # operation/path feasibility was checked at submission time.
@@ -251,6 +256,17 @@ def check(path, candidate):
             continue
         patch_context = context.get('annotation_patch_validation')
         if patch_context is not None:
+            if patch_context.get('request_binding_policy_version') == 3:
+                from pipeline.annotation_edits import candidate_digest
+                base = patch_context['base_candidate']
+                expected = candidate_digest(base)
+                schema = json.loads((path / 'schema.json').read_text())
+                if (input_values.get('candidate') != base
+                        or input_values.get('base_digest') != expected
+                        or schema.get('properties', {}).get('base_digest', {}).get('const') != expected
+                        or input_values.get('repair_plan') != patch_context['repair_plan']
+                        or input_values.get('allowed_targets') != patch_context['allowed_targets']):
+                    raise ValueError('Annotation patch request differs from canonical immutable workspace inputs')
             _check_annotation_patch(path, value, patch_context)
             continue
         if context.get('annotation_validation', {}).get('language') == 'ko':

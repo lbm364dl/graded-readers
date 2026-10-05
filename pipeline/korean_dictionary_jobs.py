@@ -27,7 +27,18 @@ def producer(harness, prompt, context, *, batch_size=24):
         raise ValueError('Dictionary batch size must be positive')
     required = sorted([('word', identity) for identity in context['word_requests']]
                       + [('grammar', identity) for identity in context['grammar_requests']])
-    groups = [required[i:i + batch_size] for i in range(0, len(required), batch_size)]
+    from pipeline.annotation_dictionary_handoff import replay_handoff, DictionaryHandoffError
+    handoff = context.get('reviewed_dictionary_handoff')
+    def imported_entries():
+        if handoff is None: return []
+        retained = replay_handoff(harness.run_dir, handoff, language='ko',
+            chapter_text=context['chapter']['text'], required_ids=set(context['grammar_requests']), published=harness.grammar)
+        for entry in retained: validate(entry, contracts.DICTIONARY['properties']['grammar']['items'])
+        return retained
+    imported = imported_entries()
+    retained_ids = {('grammar', entry['id']) for entry in imported}
+    drafted = [row for row in required if row not in retained_ids]
+    groups = [drafted[i:i + batch_size] for i in range(0, len(drafted), batch_size)]
     repair_schema = harness.run_dir / 'dictionary-repairs.schema.json'
     save(repair_schema, REPAIRS)
     instructions = prompt.split('\nINPUT:\n', 1)[0]
@@ -56,6 +67,8 @@ def producer(harness, prompt, context, *, batch_size=24):
                 selected = {(entry['kind'], entry['entry_id']) for entry in selection['entries']}
                 if not selected or not selected <= set(required):
                     raise ValueError('Invalid dictionary repair selection')
+                if selected & retained_ids:
+                    raise DictionaryHandoffError('Imported entry needs explicit independently reviewed source revision before another dictionary attempt')
                 evidence = {'repair_plan_job': selection_job, 'repair_plan_digest': digest(selection)}
 
         async def batch(number, identities):
@@ -96,12 +109,17 @@ def producer(harness, prompt, context, *, batch_size=24):
         for result in results:
             if isinstance(result, BaseException):
                 raise result
-        values, rows = zip(*results)
-        result = combine(values)
+        values, rows = zip(*results) if results else ((), ())
+        retained = imported_entries()
+        result = combine([*values, {'words': [], 'grammar': retained}])
         validate_delta(result, context['word_requests'], set(context['grammar_requests']), {}, {})
         save(harness.run_dir / 'agents' / job / 'result.json', result)
         save(harness.run_dir / 'agents' / job / 'meta.json', {
-            'return_code': 0, 'kind': 'dictionary_assembly', 'batches': list(rows), **evidence})
+            'return_code': 0, 'kind': 'dictionary_assembly', 'batches': list(rows),
+            **({'dictionary_imports_version': 1, 'reviewed_dictionary_handoff': handoff,
+                'dictionary_import_scope': {'language': 'ko', 'chapter_text': context['chapter']['text'],
+                    'required_ids': sorted(context['grammar_requests']), 'published': harness.grammar}}
+                if handoff else {}), **evidence})
         return result
     return produce
 
@@ -122,4 +140,11 @@ def replay(run_dir: Path, meta):
     values = [verified(row['job'], row['digest'], contracts.DICTIONARY) for row in meta['batches']]
     if 'repair_plan_job' in meta:
         verified(meta['repair_plan_job'], meta['repair_plan_digest'], REPAIRS)
+    if meta.get('dictionary_imports_version') is not None:
+        if type(meta['dictionary_imports_version']) is not int or meta['dictionary_imports_version'] != 1: raise ValueError('Unsupported dictionary imports version')
+        from pipeline.annotation_dictionary_handoff import replay_handoff
+        scope = meta['dictionary_import_scope']
+        retained = replay_handoff(run_dir, meta['reviewed_dictionary_handoff'], **scope)
+        for entry in retained: validate(entry, contracts.DICTIONARY['properties']['grammar']['items'])
+        values.append({'words': [], 'grammar': retained})
     return combine(values)

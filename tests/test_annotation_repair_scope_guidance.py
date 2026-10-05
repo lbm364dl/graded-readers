@@ -21,6 +21,6 @@ async def test_shared_plan_patch_scope_guidance_and_correct_contrast(tmp_path,la
     assert result['candidate']['segments'][1]==candidate['segments'][1]
     for _,prompt,_,effort,options in runner.calls:
         assert module.SCHEMATIC_SOURCE_MEANING_GUIDANCE in prompt
-        assert options['workspace_context']['repair_explanation_guidance_version']==2
+        assert options['workspace_context']['repair_explanation_guidance_version']==3
         assert options['workspace_context']['source_evidence']==context['source_evidence']
         assert effort=='low'

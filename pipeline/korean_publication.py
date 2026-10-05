@@ -218,6 +218,11 @@ def verify_run(run_dir: Path) -> tuple[dict, dict, dict, dict]:
                 if stage != 'dictionary':
                     raise ValueError('Dictionary assembly used for another stage')
                 from pipeline.korean_dictionary_jobs import replay
+                if proposal_meta.get('dictionary_imports_version') is not None:
+                    from pipeline.annotation_dictionary_handoff import verify_review_handoff
+                    from pipeline.annotation_research import _job_context_inputs
+                    review_inputs = _job_context_inputs(run_dir, job)[2]
+                    verify_review_handoff(proposal_meta, review_inputs.get('context', {}))
                 if replay(run_dir, proposal_meta) != proposal:
                     raise ValueError('Assembled dictionary differs from reviewed workers')
             if proposal_meta.get('kind') == 'curriculum_assembly':
@@ -286,6 +291,13 @@ def verify_run(run_dir: Path) -> tuple[dict, dict, dict, dict]:
                         raise ValueError('Korean grammar bindings changed after annotation review')
                     CodexRunner._check_tool_profile(run_dir / 'agents' / binding_job, 'offline', binding_meta)
                     validate(bindings, contracts.GRAMMAR_BINDINGS)
+                    if proposal_meta.get('reviewed_dictionary_handoff') is not None:
+                        from pipeline.annotation_dictionary_handoff import replay_handoff, validate_retained_bindings
+                        retained = replay_handoff(run_dir, proposal_meta['reviewed_dictionary_handoff'], language='ko',
+                            chapter_text=''.join(row['text'] for row in proposal_meta['chunks']),
+                            required_ids={row['entry_id'] for row in replayed['grammar_links']},
+                            published=set(proposal_meta['approved_grammar_ids']))
+                        validate_retained_bindings(bindings, retained)
                     replayed = contracts.bind_grammar_identities(replayed, bindings, set(proposal_meta['approved_grammar_ids']))
                 if replayed != proposal:
                     raise ValueError("Korean assembled annotation differs from source chunks")
