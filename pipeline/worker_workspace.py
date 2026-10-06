@@ -172,7 +172,7 @@ def build(path, prompt, schema, *, context=None, submission_repair=None):
     put_json('INDEX.json', inventory)
     put_json('schema.json', schema)
     put_json('receipt.schema.json', RECEIPT_SCHEMA)
-    put_json('validation-context.json', [{k: v[k] for k in ('chunk_text', 'language', 'surfaces', 'annotation', 'annotation_validation', 'annotation_patch_validation', 'annotation_plan_validation', 'annotation_adjudication_validation', 'annotation_research_validation', 'annotation_research_claim_revision_validation', 'lexical_request_reconciliation_validation', 'dictionary_research_revision_validation', 'dictionary_objection_accountability_validation', 'annotation_issue_targets_validation', 'annotation_run_lesson_validation', 'annotation_run_knowledge_selection_validation') if k in v} for v in contexts if isinstance(v, dict)])
+    put_json('validation-context.json', [{k: v[k] for k in ('chunk_text', 'language', 'surfaces', 'annotation', 'annotation_validation', 'annotation_patch_validation', 'annotation_plan_validation', 'annotation_adjudication_validation', 'annotation_research_validation', 'annotation_diagnostic_critic_validation', 'annotation_research_claim_revision_validation', 'lexical_request_reconciliation_validation', 'dictionary_research_revision_validation', 'dictionary_objection_accountability_validation', 'annotation_issue_targets_validation', 'annotation_run_lesson_validation', 'annotation_run_knowledge_selection_validation') if k in v} for v in contexts if isinstance(v, dict)])
     command = 'cd ' + shlex.quote(str(ROOT)) + ' && ' + shlex.quote(str(ROOT / '.venv/bin/python')) + ' -m pipeline.worker_workspace validate --workspace ' + shlex.quote(str(path.resolve())) + ' --candidate ' + shlex.quote(str(path.resolve() / 'candidate.json'))
     python3 = shutil.which('python3')
     host_python_command = shlex.quote(sys.executable)
@@ -302,6 +302,14 @@ def check(path, candidate):
             if field not in input_values:raise ValueError('Research claim revision input missing')
             from pipeline.annotation_research_claim_revision import validate_claim_revision
             validate_claim_revision(value,input_values[field],request_digest=claim_context['request_digest'],stage=claim_context['stage'])
+            continue
+        diagnostic_context = context.get('annotation_diagnostic_critic_validation')
+        if diagnostic_context is not None:
+            field = diagnostic_context.get('input_field')
+            if not isinstance(field, str) or field not in input_values:
+                raise ValueError('Diagnostic critic validation input is missing from INDEX.json')
+            from pipeline.annotation_diagnostic_critic import validate_submission
+            validate_submission(value, input_values[field])
             continue
         research_context = context.get('annotation_research_validation')
         if research_context is not None:
@@ -529,6 +537,7 @@ def submit(path, receipt):
                                   for context in validation_contexts)
     dictionary_revision_validation=any(context.get('dictionary_research_revision_validation') is not None for context in validation_contexts)
     claim_revision_validation = any(context.get('annotation_research_claim_revision_validation') is not None for context in validation_contexts)
+    diagnostic_critic_validation = any(context.get('annotation_diagnostic_critic_validation') is not None for context in validation_contexts)
     research_validation = any(context.get('annotation_research_validation') is not None
                               for context in validation_contexts)
     review_targets_validation = any(context.get('annotation_issue_targets_validation') is not None
@@ -537,7 +546,7 @@ def submit(path, receipt):
                                 for context in validation_contexts)
     selection_validation=any(context.get('annotation_run_knowledge_selection_validation') is not None for context in validation_contexts)
     reconciliation_validation=any(context.get('lexical_request_reconciliation_validation') is not None for context in validation_contexts)
-    if reconciliation_validation or dictionary_revision_validation or plan_validation is not None or patch_validation or adjudication_validation or research_validation or claim_revision_validation or review_targets_validation or run_lesson_validation or selection_validation:
+    if diagnostic_critic_validation or reconciliation_validation or dictionary_revision_validation or plan_validation is not None or patch_validation or adjudication_validation or research_validation or claim_revision_validation or review_targets_validation or run_lesson_validation or selection_validation:
         try:
             check(path, candidate)
         except (ValidationError, ValueError, KeyError, TypeError, IndexError) as error:
@@ -546,7 +555,7 @@ def submit(path, receipt):
             if run_lesson_validation:
                 from pipeline.annotation_run_lessons import RunLessonError
                 lesson_error = isinstance(error, RunLessonError)
-            category = ('lexical_request_reconciliation_rejection' if reconciliation_validation else 'dictionary_research_revision_rejection' if dictionary_revision_validation else
+            category = ('annotation_diagnostic_critic_rejection' if diagnostic_critic_validation else 'lexical_request_reconciliation_rejection' if reconciliation_validation else 'dictionary_research_revision_rejection' if dictionary_revision_validation else
                         'annotation_run_knowledge_selection_rejection' if selection_validation else
                         'plan_contract_rejection' if plan_validation is not None else
                         'annotation_patch_contract_rejection'
@@ -561,6 +570,8 @@ def submit(path, receipt):
                         if review_targets_validation else
                         'derived_annotation_rejection')
             raise CandidateSubmissionError(
+                f'Submitted diagnostic critic failed exact evidence validation: {error}'
+                if diagnostic_critic_validation else
                 f'Submitted dictionary revision failed authenticated scope validation: {error}'
                 if dictionary_revision_validation else
                 f'Submitted annotation plan failed issue coverage validation: {error}'
