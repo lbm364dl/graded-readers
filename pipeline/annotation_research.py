@@ -7,6 +7,7 @@ bounded host captures from an origin already supplied as a primary source.
 from __future__ import annotations
 
 import hashlib
+import copy
 from html.parser import HTMLParser
 import ipaddress
 import json
@@ -161,11 +162,23 @@ unresolved targets; any remaining uncertainty must remain unresolved.
 """
 RESEARCH_POLICY_V6 = RESEARCH_POLICY_V5 + "\n\n" + SCOPED_FACT_REVIEW_GUIDANCE
 REVIEW_POLICY_V6 = REVIEW_POLICY_V5 + "\n\n" + SCOPED_FACT_REVIEW_GUIDANCE
-RESEARCH_POLICY_VERSION = 8
-SUPPORTED_RESEARCH_POLICY_VERSIONS = {2, 3, 4, 5, 6, 7, 8}
+FIELD_SCOPED_TARGET_GUIDANCE = """
+POLICY 9 FIELD SCOPE. In annotation_uncertainty_tasks version 2, each finding
+row names exactly one candidate_path from the task's host-uncertain paths.
+Context paths, the full review issue, other classifications, and prior history
+are not research targets. Return exactly one row for every issue_id and
+candidate_path pair. A supported fact and each citation must address that exact
+path; an unresolved row preserves its exact path and concrete gap. The
+independent critic must compare each fact and citation with that row's exact
+candidate_path and observation; reject an accurate fact about a context path as
+irrelevant. Facts and cached references bind only to that path. Historical task
+packets and evidence retain their original policy and replay contracts.
+"""
+RESEARCH_POLICY_VERSION = 9
+SUPPORTED_RESEARCH_POLICY_VERSIONS = {2, 3, 4, 5, 6, 7, 8, 9}
 
 SUBMISSION_VALIDATION_VERSION = 2
-RESEARCH_EVIDENCE_VERSION = 8
+RESEARCH_EVIDENCE_VERSION = 9
 # Official dictionary pages include large inline scripts; keep the transfer
 # bounded while allowing the observed 2.55 MB KRDict entry page.
 MAX_CAPTURE_BYTES = 4_000_000
@@ -174,6 +187,11 @@ MAX_SOURCE_REQUESTS = 3
 REVIEWED_LESSON_CACHE_VERSION = 1
 REVIEWED_LESSON_SOURCE_MANIFEST_VERSION = 1
 MAX_REVIEWED_LESSON_SOURCES = 32
+
+RESEARCH_SCHEMA_V9 = copy.deepcopy(RESEARCH_SCHEMA)
+_research_item_v9 = RESEARCH_SCHEMA_V9["properties"]["findings"]["items"]
+_research_item_v9["required"].append("candidate_path")
+_research_item_v9["properties"]["candidate_path"] = {"type": "string", "minLength": 1}
 
 
 class AnnotationResearchError(ValueError):
@@ -366,7 +384,7 @@ def _initial_uncertain_ids(initial: dict) -> list[str]:
     return ids
 
 
-def _validate_research_output(output: Any, issue_ids: list[str], known_references: dict, *, policy_version: int = 2) -> tuple[list[dict], list[dict]]:
+def _validate_research_output_issue_level(output: Any, issue_ids: list[str], known_references: dict, *, policy_version: int = 2, target_paths_by_issue: dict | None = None) -> tuple[list[dict], list[dict]]:
     validate(output, RESEARCH_SCHEMA)
     rows = output["findings"]
     seen = set()
@@ -419,15 +437,74 @@ def _validate_research_output(output: Any, issue_ids: list[str], known_reference
                                  "value_digest": _digest(value),
                                  "reference_content_digest": _digest(reference["content"]),
                                  **({"run_lesson_target_paths":scoped_paths} if scoped_paths is not None else {})})
-            fact_rows.append({**row, "resolved_citations": resolved})
+            fact = {**row, "resolved_citations": resolved}
+            if policy_version >= 9:
+                scoped_paths = (target_paths_by_issue or {}).get(issue_id)
+                if not isinstance(scoped_paths, list) or not scoped_paths:
+                    raise AnnotationResearchError("Field-scoped research lacks exact uncertain target paths")
+                fact["target_paths"] = list(scoped_paths)
+            fact_rows.append(fact)
         elif row["status"] == "unresolved":
             if row["fact"].strip() or row["citations"] or not row["gap"].strip():
                 raise AnnotationResearchError("Unresolved research rows must preserve a specific gap")
-            unresolved_rows.append(row)
+            unresolved = dict(row)
+            if policy_version >= 9:
+                scoped_paths = (target_paths_by_issue or {}).get(issue_id)
+                if not isinstance(scoped_paths, list) or not scoped_paths:
+                    raise AnnotationResearchError("Field-scoped research lacks exact uncertain target paths")
+                unresolved["target_paths"] = list(scoped_paths)
+            unresolved_rows.append(unresolved)
     if seen != set(issue_ids):
         raise AnnotationResearchError("Research did not account for every uncertain finding")
     _validated_source_requests(output, issue_ids, known_references, unresolved_rows)
     return fact_rows, unresolved_rows
+
+
+def _validate_research_output(output: Any, issue_ids: list[str], known_references: dict, *, policy_version: int = 2, target_paths_by_issue: dict | None = None) -> tuple[list[dict], list[dict]]:
+    if policy_version < 9:
+        return _validate_research_output_issue_level(output, issue_ids, known_references,
+            policy_version=policy_version, target_paths_by_issue=target_paths_by_issue)
+    if not isinstance(output, dict) or not isinstance(output.get("findings"), list):
+        raise AnnotationResearchError("Field-scoped research findings must be an array")
+    validate(output, RESEARCH_SCHEMA_V9)
+    paths_by_issue = target_paths_by_issue or {}
+    expected = {(identity, path) for identity in issue_ids
+                for path in paths_by_issue.get(identity, [])}
+    if not expected:
+        raise AnnotationResearchError("Field-scoped research lacks exact uncertain target paths")
+    seen: set[tuple[str, str]] = set()
+    facts: list[dict] = []
+    unresolved: list[dict] = []
+    for row in output["findings"]:
+        if not isinstance(row, dict) or not isinstance(row.get("candidate_path"), str):
+            raise AnnotationResearchError("Each field-scoped finding must name one candidate_path")
+        key = (row.get("issue_id"), row["candidate_path"])
+        if key not in expected:
+            raise AnnotationResearchError("Research row names a path outside the host-uncertain target set")
+        if key in seen:
+            raise AnnotationResearchError("Duplicate research issue/path finding")
+        seen.add(key)
+        scoped = dict(row)
+        del scoped["candidate_path"]
+        one = {"findings": [scoped]}
+        try:
+            f, u = _validate_research_output_issue_level(one, [key[0]], known_references,
+                policy_version=8, target_paths_by_issue=None)
+        except (KeyError, TypeError) as exc:
+            raise AnnotationResearchError("Malformed field-scoped research finding") from exc
+        target = [key[1]]
+        for fact in f:
+            fact["candidate_path"] = key[1]
+            fact["target_paths"] = target
+            facts.append(fact)
+        for gap in u:
+            gap["candidate_path"] = key[1]
+            gap["target_paths"] = target
+            unresolved.append(gap)
+    if seen != expected:
+        raise AnnotationResearchError("Research did not account for every uncertain issue/path pair")
+    _validated_source_requests(output, issue_ids, known_references, unresolved)
+    return facts, unresolved
 
 
 def _origin(url: str) -> tuple[str, str, int]:
@@ -670,13 +747,22 @@ def _load_captures(run_dir: Path, request_digest: str, requests: list[dict],
     return captured, failures
 
 
+def _target_paths_by_issue(inputs: dict) -> dict[str, list[str]]:
+    packet = inputs.get("uncertainty_tasks")
+    if not isinstance(packet, dict) or packet.get("version") != 2:
+        raise AnnotationResearchError("Field-scoped research task packet is missing")
+    return {row["issue_id"]: list(row["candidate_paths"]) for row in packet.get("tasks", [])}
+
+
 def validate_research_submission(output: Any, request: Any) -> None:
     """Local worker-workspace gate; exact citation errors can get one correction."""
     if (not isinstance(request, dict) or not isinstance(request.get("issue_ids"), list)
             or not isinstance(request.get("known_reference_input"), dict)):
         raise AnnotationResearchError("Research validation context lacks issue/reference inputs")
     try:
-        _validate_research_output(output, request["issue_ids"], request["known_reference_input"],policy_version=_policy_version(request))
+        _validate_research_output(output, request["issue_ids"], request["known_reference_input"],
+            policy_version=_policy_version(request), target_paths_by_issue=(
+                _target_paths_by_issue(request) if _policy_version(request) >= 9 else None))
     except Exception as exc:
         if isinstance(exc, AnnotationResearchError):
             raise
@@ -684,19 +770,29 @@ def validate_research_submission(output: Any, request: Any) -> None:
 
 
 def _resolve_research_output(output: Any, issue_ids: list[str],
-                             known_references: dict, *, policy_version: int = 2) -> tuple[list[dict], list[dict], str | None]:
+                             known_references: dict, *, policy_version: int = 2,
+                             target_paths_by_issue: dict | None = None) -> tuple[list[dict], list[dict], str | None]:
     try:
-        facts, unresolved = _validate_research_output(output, issue_ids, known_references,policy_version=policy_version)
+        facts, unresolved = _validate_research_output(output, issue_ids, known_references,
+            policy_version=policy_version, target_paths_by_issue=target_paths_by_issue)
         return facts, unresolved, None
     except Exception as exc:
         # Invalid or uncited worker claims are not evidence. Preserve the
         # worker artifact for the independent critic, but expose only gaps to
         # the adjudication wrapper.
         reason = str(exc) or type(exc).__name__
-        gaps = [{"issue_id": issue_id, "status": "unresolved", "fact": "",
-                 "citations": [],
-                 "gap": "Research output could not be bound to supplied authoritative references."}
-                for issue_id in issue_ids]
+        if policy_version >= 9:
+            gaps = [{"issue_id": issue_id, "candidate_path": path,
+                     "target_paths": [path], "status": "unresolved", "fact": "",
+                     "citations": [],
+                     "gap": "Research output could not be bound to supplied authoritative references."}
+                    for issue_id in issue_ids
+                    for path in (target_paths_by_issue or {}).get(issue_id, [])]
+        else:
+            gaps = [{"issue_id": issue_id, "status": "unresolved", "fact": "",
+                     "citations": [],
+                     "gap": "Research output could not be bound to supplied authoritative references."}
+                    for issue_id in issue_ids]
         return [], gaps, reason
 
 
@@ -711,8 +807,27 @@ def _build_inputs(*, language: str, representation: str, candidate: Any,
     if not isinstance(known_reference_input, dict):
         raise AnnotationResearchError("Known references must be a mapping")
     if policy_version is None:
-        policy_version = RESEARCH_POLICY_VERSION
-    if (policy_version == 8 and type(policy_version) is not int) or policy_version not in SUPPORTED_RESEARCH_POLICY_VERSIONS:
+        # Old callers and saved test fixtures may lack typed host dispositions.
+        # Keep their original issue-level output contract; policy 9 is opt-in
+        # for new decisions with exact target dispositions.
+        rows = initial_adjudication.get("classifications", []) if isinstance(initial_adjudication, dict) else []
+        typed_dispositions = bool(rows) and all(
+            isinstance(row, dict) and isinstance(row.get("target_dispositions"), list)
+            for row in rows if row.get("disposition") == "uncertain")
+        try:
+            from pipeline.annotation_issue_targets import issue_target_paths
+            normalized = normalize_review(language, current_review)
+            issues = {row["issue_id"]: row["issue"] for row in normalized["issues"]}
+            typed_reviews = all(issue_target_paths(issues[identity], candidate,
+                source_text=source_text, representation=representation) is not None
+                for identity in _initial_uncertain_ids(initial_adjudication))
+        except (KeyError, AnnotationResearchError, ValueError):
+            typed_reviews = False
+        if RESEARCH_POLICY_VERSION != 9:
+            policy_version = RESEARCH_POLICY_VERSION
+        else:
+            policy_version = RESEARCH_POLICY_VERSION if typed_dispositions and typed_reviews else 8
+    if (policy_version in {8, 9} and type(policy_version) is not int) or policy_version not in SUPPORTED_RESEARCH_POLICY_VERSIONS:
         raise AnnotationResearchError("Unsupported research policy version")
     issue_ids = _initial_uncertain_ids(initial_adjudication)
     gate = deterministic_gate_evidence
@@ -789,13 +904,30 @@ def _uncertainty_tasks(inputs: dict) -> dict:
         issue = current[identity]
         canonical_paths = issue_target_paths(issue, inputs["candidate"],
             source_text=inputs["source_text"], representation=inputs["representation"])
-        paths = (canonical_paths if canonical_paths is not None
-                 else classification.get("candidate_paths", []))
+        if _policy_version(inputs) >= 9:
+            if canonical_paths is None:
+                raise AnnotationResearchError("Field-scoped research requires typed review targets")
+            dispositions = classification.get("target_dispositions")
+            if not isinstance(dispositions, list):
+                raise AnnotationResearchError("Field-scoped research requires host target dispositions")
+            by_path = {row.get("path"): row for row in dispositions if isinstance(row, dict)}
+            if (len(by_path) != len(dispositions) or set(by_path) != set(canonical_paths)):
+                raise AnnotationResearchError("Host dispositions do not exactly cover current issue targets")
+            paths = [path for path in canonical_paths if by_path[path].get("disposition") == "uncertain"]
+            if not paths:
+                raise AnnotationResearchError("Uncertain issue has no uncertain target fields")
+            context_paths = [path for path in canonical_paths if path not in paths]
+            target_dispositions = [by_path[path] for path in paths]
+        else:
+            paths = (canonical_paths if canonical_paths is not None
+                     else classification.get("candidate_paths", []))
+            context_paths = []
+            target_dispositions = []
         observations = [{"path": path, "value": resolve_pointer(inputs["candidate"], path)}
                         for path in paths]
         supporting = issue.get("supporting_paths", []) if isinstance(issue, dict) else []
         record_paths = sorted({"/" + "/".join(path.split("/")[1:3]) for path in paths})
-        tasks.append({"issue_id": identity, "current_review_issue": issue,
+        task = {"issue_id": identity, "current_review_issue": issue,
             "candidate_paths": paths, "candidate_observations": observations,
             "initial_classification_candidate_paths": classification.get("candidate_paths", []),
             "target_records": [{"path": path, "value": resolve_pointer(inputs["candidate"], path)}
@@ -803,10 +935,21 @@ def _uncertainty_tasks(inputs: dict) -> dict:
             "supporting_observations": [{"path": path,
                 "value": resolve_pointer(inputs["candidate"], path)} for path in supporting],
             "initial_uncertainty_reason": classification.get("reason", ""),
-            "initial_diagnosis": classification.get("diagnosis", "")})
+            "initial_diagnosis": classification.get("diagnosis", "")}
+        if _policy_version(inputs) >= 9:
+            task["target_dispositions"] = target_dispositions
+            task["context_paths"] = context_paths
+            task["context_observations"] = [{"path": path, "value": resolve_pointer(inputs["candidate"], path)}
+                                             for path in context_paths + supporting]
+            task["initial_uncertainty_reason"] = "\n".join(
+                row.get("reason", "") for row in target_dispositions if row.get("reason"))
+            task["initial_diagnosis"] = "\n".join(
+                row.get("diagnosis", "") for row in target_dispositions if row.get("diagnosis"))
+        tasks.append(task)
     origins = [f"{scheme}://{host}" for scheme, host, port in
                sorted(_primary_origins(inputs["known_reference_input"]))]
-    return {"version": 1, "tasks": tasks, "supplied_primary_origins": origins,
+    packet_version = 2 if _policy_version(inputs) >= 9 else 1
+    return {"version": packet_version, "tasks": tasks, "supplied_primary_origins": origins,
             "source_text": inputs["source_text"],
             "candidate_digest": inputs["candidate_digest"],
             "current_review_digest": inputs["review_digest"],
@@ -825,6 +968,9 @@ def _policies(version: int) -> tuple[str, str]:
         return RESEARCH_POLICY_V5, REVIEW_POLICY_V5
     if version == 6:
         return RESEARCH_POLICY_V6, REVIEW_POLICY_V6
+    if version == 9:
+        research, review = _policies(8)
+        return research + "\n\n" + FIELD_SCOPED_TARGET_GUIDANCE, review + "\n\n" + FIELD_SCOPED_TARGET_GUIDANCE
     if version == 8:
         if type(version) is not int:
             raise AnnotationResearchError('Unsupported research policy version')
@@ -860,6 +1006,9 @@ def _research_prompt(inputs: dict) -> str:
                  "Return the research schema.\n")
     from pipeline.annotation_ranged_link_guidance import contextual_guidance
     suffix = contextual_guidance(inputs.get("context"), inputs.get("representation"))
+    if _policy_version(inputs) >= 9:
+        tail += (" Return one finding row for every exact issue_id and candidate_path pair. Each row must include its candidate_path; cover every candidate_path exactly once. "
+                 "A source_requests row retains the established issue_id list format, but its reason must name the exact unresolved candidate_path it could address; the request alone supports no fact.")
     return policy + ("\n\n" + suffix if suffix else "") + "\n\n" + tail
 
 
@@ -867,17 +1016,27 @@ def _review_prompt(inputs: dict) -> str:
     _, policy = _policies(_policy_version(inputs))
     from pipeline.annotation_ranged_link_guidance import contextual_guidance
     suffix = contextual_guidance(inputs.get("context"), inputs.get("representation"))
+    scoped = ("For policy 9, evaluate each row and each citation against only its exact candidate_path and observation; every expected issue/path pair must be covered once (the exact candidate_paths are distinct rows). Check that each source-request reason names the exact unresolved candidate_path it could address; a request alone supports no fact."
+              if _policy_version(inputs) >= 9 else "")
     return (policy + ("\n\n" + suffix if suffix else "") + "\n\nThe exact research artifact, citations resolved by the host, supplied references, and original issue context are in the organized annotation_uncertainty_research input. "
+            + (scoped + " " if scoped else "")
+            +
             "Judge the artifact as submitted; do not rewrite it. Return the generic usage-dictionary-review schema.\n")
 
 
 def _reference_rows(inputs: dict, facts: list[dict]) -> dict:
     output = {}
     for row in facts:
-        identity = "annotation-research-" + _digest([inputs["initial_adjudication_digest"], row["issue_id"]])[:24]
+        if _policy_version(inputs) >= 9:
+            identity_seed = [inputs["initial_adjudication_digest"], row["issue_id"], row["target_paths"]]
+        else:
+            identity_seed = [inputs["initial_adjudication_digest"], row["issue_id"]]
+        identity = "annotation-research-" + _digest(identity_seed)[:24]
         content = {
             "_annotation_research_fact": True,
             "issue_ids": [row["issue_id"]],
+            **({"research_policy_version": 9, "target_paths": row["target_paths"]}
+               if _policy_version(inputs) >= 9 else {}),
             "fact": row["fact"],
             "citations": row["resolved_citations"],
             "candidate_digest": inputs["candidate_digest"],
@@ -1409,7 +1568,7 @@ async def research_uncertain_review(runner: Any, run_dir: Path, *, language: str
             normal_review_receipt=normal_review_receipt)
     _write_json(evidence_dir / "research-input.json", inputs)
     if not inputs["known_reference_input"]:
-        evidence = {"version": RESEARCH_EVIDENCE_VERSION, "status": "unresolved", "approved": False,
+        evidence = {"version": _policy_version(inputs), "status": "unresolved", "approved": False,
                     "preflight_reason": "no supplied authoritative references",
                     "request_digest": request_digest, "input_digest": request_digest,
                     "inputs": inputs, "references": {}, "references_digest": _digest({})}
@@ -1418,13 +1577,17 @@ async def research_uncertain_review(runner: Any, run_dir: Path, *, language: str
         return _result_shape(evidence)
     research_context = _worker_context("research", inputs)
     research_prompt = _research_prompt(inputs)
-    research_schema_path = _schema_path(run_dir, "research", RESEARCH_SCHEMA)
+    policy_schema = RESEARCH_SCHEMA_V9 if _policy_version(inputs) >= 9 else RESEARCH_SCHEMA
+    research_schema_path = _schema_path(run_dir,
+        "research-v9" if _policy_version(inputs) >= 9 else "research", policy_schema)
     research_job = f"annotation-uncertainty-research-{request_digest}"
     first_research_output = await runner.call(research_job, research_prompt,
         research_schema_path, "low", tool_profile="workspace",
         workspace_context=research_context)
     first_facts, first_unresolved, first_error = _resolve_research_output(
-        first_research_output, inputs["issue_ids"], inputs["known_reference_input"],policy_version=_policy_version(inputs))
+        first_research_output, inputs["issue_ids"], inputs["known_reference_input"],
+        policy_version=_policy_version(inputs), target_paths_by_issue=(
+            _target_paths_by_issue(inputs) if _policy_version(inputs) >= 9 else None))
     source_requests = []
     if first_error is None:
         source_requests = _validated_source_requests(first_research_output, inputs["issue_ids"],
@@ -1466,7 +1629,9 @@ async def research_uncertain_review(runner: Any, run_dir: Path, *, language: str
                 for issue in inputs["issue_ids"]], "Continuation requested an additional source capture"
         else:
             final_facts, final_unresolved, final_error = _resolve_research_output(
-                final_research_output, inputs["issue_ids"], final_references,policy_version=_policy_version(inputs))
+                final_research_output, inputs["issue_ids"], final_references,
+                policy_version=_policy_version(inputs), target_paths_by_issue=(
+                    _target_paths_by_issue(inputs) if _policy_version(inputs) >= 9 else None))
         continuation_meta, _ = _verify_job(run_dir, job=continuation_job,
             expected_prompt=continuation_prompt, schema_text=research_schema_path.read_text(encoding="utf-8"),
             workspace_context=continuation_context, expected_result=final_research_output)
@@ -1513,7 +1678,7 @@ async def research_uncertain_review(runner: Any, run_dir: Path, *, language: str
     final_meta = continuation_meta or research_meta
     checked_final = final_research_output
     evidence = {
-        "version": RESEARCH_EVIDENCE_VERSION, "status": status, "approved": approved,
+        "version": _policy_version(inputs), "status": status, "approved": approved,
         "request_digest": request_digest, "input_digest": request_digest,
         "inputs": inputs, "initial_adjudication_digest": inputs["initial_adjudication_digest"],
         "research_job": research_job, "research_fingerprint": research_meta["fingerprint"],
@@ -1599,12 +1764,15 @@ def verify_research_evidence(run_dir: Path, evidence: dict, *, language: str,
     research_job = f"annotation-uncertainty-research-{request_digest}"
     research_meta, research_output = _verify_job(run_dir, job=research_job,
         expected_prompt=research_prompt,
-        schema_text=_schema_path(run_dir, "research", RESEARCH_SCHEMA).read_text(encoding="utf-8"),
+        schema_text=_schema_path(run_dir, "research-v9" if _policy_version(inputs) >= 9 else "research",
+            RESEARCH_SCHEMA_V9 if _policy_version(inputs) >= 9 else RESEARCH_SCHEMA).read_text(encoding="utf-8"),
         workspace_context=research_context, expected_result=None)
     if _read_json(evidence_dir / "research-result.json") != research_output:
         raise AnnotationResearchError("Persisted initial researcher result differs from the worker result")
     first_facts, first_unresolved, first_error = _resolve_research_output(
-        research_output, inputs["issue_ids"], inputs["known_reference_input"],policy_version=_policy_version(inputs))
+        research_output, inputs["issue_ids"], inputs["known_reference_input"],
+        policy_version=_policy_version(inputs), target_paths_by_issue=(
+            _target_paths_by_issue(inputs) if _policy_version(inputs) >= 9 else None))
     source_requests = []
     if first_error is None:
         source_requests = _validated_source_requests(research_output, inputs["issue_ids"],
@@ -1639,7 +1807,8 @@ def verify_research_evidence(run_dir: Path, evidence: dict, *, language: str,
             raise AnnotationResearchError("Continuation job identity changed")
         continuation_meta, final_research_output = _verify_job(run_dir, job=continuation_job,
             expected_prompt=continuation_prompt,
-            schema_text=_schema_path(run_dir, "research", RESEARCH_SCHEMA).read_text(encoding="utf-8"),
+            schema_text=_schema_path(run_dir, "research-v9" if _policy_version(inputs) >= 9 else "research",
+                RESEARCH_SCHEMA_V9 if _policy_version(inputs) >= 9 else RESEARCH_SCHEMA).read_text(encoding="utf-8"),
             workspace_context=continuation_context, expected_result=None)
         if _read_json(evidence_dir / "continuation-result.json") != final_research_output:
             raise AnnotationResearchError("Continuation researcher result changed")
@@ -1650,7 +1819,9 @@ def verify_research_evidence(run_dir: Path, evidence: dict, *, language: str,
                 for issue in inputs["issue_ids"]], "Continuation requested an additional source capture"
         else:
             final_facts, final_unresolved, final_error = _resolve_research_output(
-                final_research_output, inputs["issue_ids"], final_references,policy_version=_policy_version(inputs))
+                final_research_output, inputs["issue_ids"], final_references,
+                policy_version=_policy_version(inputs), target_paths_by_issue=(
+                    _target_paths_by_issue(inputs) if _policy_version(inputs) >= 9 else None))
     else:
         final_research_output = research_output
         final_facts, final_unresolved, final_error = first_facts, first_unresolved, first_error

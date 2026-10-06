@@ -690,6 +690,21 @@ def _validate_output(output: dict, inputs: dict) -> dict:
     }
 
 
+def _research_fact_applies_to_target(content: Any, issue_id: str, candidate_path: str) -> bool:
+    if not isinstance(content, dict) or content.get("_annotation_research_fact") is not True:
+        return True
+    if issue_id not in content.get("issue_ids", []):
+        return False
+    version = content.get("research_policy_version", 2)
+    if type(version) is not int or version < 2:
+        return False
+    if version >= 9:
+        paths = content.get("target_paths")
+        return (isinstance(paths, list) and len(paths) == len(set(paths))
+                and candidate_path in paths)
+    return True
+
+
 def _validate_output_targets(output: dict, inputs: dict) -> dict:
     """Validate every target, retaining issue identity and narrow repair authority."""
     legacy_inputs = {**inputs, 'host_binding_policy_version': 5}
@@ -722,9 +737,8 @@ def _validate_output_targets(output: dict, inputs: dict) -> dict:
                 if identity not in refs:
                     raise AdjudicationError(f'Unknown target evidence reference ID: {identity}')
                 content = refs[identity]['content']
-                if (isinstance(content, dict) and content.get('_annotation_research_fact') is True
-                        and raw['issue_id'] not in content.get('issue_ids', [])):
-                    raise AdjudicationError('Reviewed research was cited outside its verified target issue scope')
+                if not _research_fact_applies_to_target(content, raw['issue_id'], row['path']):
+                    raise AdjudicationError('Reviewed research was cited outside its verified target field scope')
                 if isinstance(content,dict) and '_annotation_run_lesson_scope' in content:
                     scope=content['_annotation_run_lesson_scope']
                     from pipeline.annotation_run_lessons import REFERENCE_POLICY_TEXT
@@ -1321,12 +1335,12 @@ async def followup_uncertain_annotation_review(runner: Any, run_dir: Path,
     inputs.setdefault('source_text', None)
     base = _followup_base(run_dir, terminal_evidence, inputs)
     from pipeline.annotation_research import research_uncertain_review, RESEARCH_POLICY_VERSION
-    if type(RESEARCH_POLICY_VERSION) is not int or RESEARCH_POLICY_VERSION not in (7, 8):
-        raise AdjudicationError('Followup requires supported research policy7 or8 before submission')
+    if type(RESEARCH_POLICY_VERSION) is not int or RESEARCH_POLICY_VERSION not in (7, 8, 9):
+        raise AdjudicationError('Followup requires supported research policy7, 8 or 9 before submission')
     research = await research_uncertain_review(runner, run_dir,
         initial_adjudication=terminal_evidence, **inputs)
-    if type(research['evidence'].get('version')) is not int or research['evidence']['version'] not in (7, 8):
-        raise AdjudicationError('Followup requires research policy7 or8')
+    if type(research['evidence'].get('version')) is not int or research['evidence']['version'] not in (7, 8, 9):
+        raise AdjudicationError('Followup requires research policy7, 8 or 9')
     if research['references']:
         enriched = _research_inputs(base, research['evidence'], research['references'], policy_version=2)
         result = await _adjudicate_once(runner, run_dir, **enriched)
@@ -1346,8 +1360,8 @@ def _verify_followup_research_receipt(run_dir: Path, evidence: dict, inputs: dic
     from pipeline.annotation_research import verify_research_evidence
     research = verify_research_evidence(run_dir, evidence['reference_research'],
         initial_adjudication=terminal, **inputs)
-    if type(research['evidence'].get('version')) is not int or research['evidence']['version'] not in (7, 8):
-        raise AdjudicationError('Followup requires research policy7 or8')
+    if type(research['evidence'].get('version')) is not int or research['evidence']['version'] not in (7, 8, 9):
+        raise AdjudicationError('Followup requires research policy7, 8 or 9')
     markers = {'reference_research_version','initial_adjudication',
                'reference_research','reference_research_chain_digest'}
     result_evidence = {k:v for k,v in evidence.items() if k not in markers}
