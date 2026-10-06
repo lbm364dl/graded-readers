@@ -243,7 +243,7 @@ def test_historical_absent_review_workspace_has_no_new_gate_or_knowledge(fixture
  with pytest.raises(CapturedBoundary):
   asyncio.run(review_chunk(runner,fixture[1],annotation=fixture[2],text='아이',context=fixture[3],policy='Review'))
  workspace=runner.calls[0][1]['workspace_context']
- expected_input=review_request(fixture[2],'아이',fixture[3],'Review')[0]
+ expected_input=review_request(fixture[2],'아이',fixture[3],'Review',guidance_version=2)[0]
  assert workspace=={'chunk_review_input':expected_input,'annotation_issue_targets_validation':{
   'candidate':fixture[2],'source_text':'아이','representation':'korean-flat','require_typed':True}}
  assert 'reviewed_run_grammar' not in expected_input['context']

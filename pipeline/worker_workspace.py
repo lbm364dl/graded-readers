@@ -265,7 +265,11 @@ def check(path, candidate):
             validate_issue_targets(value, review_targets_context['candidate'],
                 source_text=review_targets_context.get('source_text'),
                 representation=review_targets_context.get('representation'),
-                require_typed=review_targets_context.get('require_typed', True))
+                require_typed=review_targets_context.get('require_typed', True),
+                missing_layer_policy_version=review_targets_context.get('missing_layer_policy_version'),
+                grammar_knowledge=review_targets_context.get('grammar_knowledge'),
+                run_dir=review_targets_context.get('run_dir'),
+                language=review_targets_context.get('language'))
             continue
         adjudication_context = context.get('annotation_adjudication_validation')
         if adjudication_context is not None:
@@ -327,7 +331,10 @@ def check(path, candidate):
                     from pipeline.annotation_edits import candidate_digest
                     from pipeline.annotation_repair_authority import validate_authority_packet
                     validate_authority_packet(authority, input_values.get('issues'), plan_candidate,
-                        plan_representation, candidate_digest(plan_candidate))
+                        plan_representation, candidate_digest(plan_candidate),
+                        source_text=context.get('chunk_text', input_values.get('chunk_text')),
+                        grammar_knowledge=context.get('grammar_knowledge', input_values.get('grammar_knowledge')),
+                        run_dir=context.get('missing_layer_run_dir'))
                 _validate_plan(value, plan_context['issue_count'], plan_candidate,
                                plan_representation,
                                target_contract_version=version,
@@ -349,7 +356,10 @@ def check(path, candidate):
                     if packet != patch_context.get('repair_target_authority'):
                         raise ValueError('v3 patch authority differs from immutable workspace input')
                     validate_authority_packet(packet, patch_context['issues'], base,
-                        patch_context['representation'], expected)
+                        patch_context['representation'], expected,
+                        source_text=context.get('chunk_text', input_values.get('chunk_text')),
+                        grammar_knowledge=context.get('grammar_knowledge', input_values.get('grammar_knowledge')),
+                        run_dir=context.get('missing_layer_run_dir'))
                     validate_plan_authority(patch_context['repair_plan'], packet)
                 schema = json.loads((path / 'schema.json').read_text())
                 if (input_values.get('candidate') != base

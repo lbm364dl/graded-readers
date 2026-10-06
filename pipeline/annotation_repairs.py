@@ -413,9 +413,24 @@ async def repair_annotation(
         for issue in issues]
     if any(typed_flags) and not all(typed_flags):
         raise ValueError("repair issue set mixes typed defect findings with untyped diagnostics")
+    missing_layer_issues = [issue for issue in issues if isinstance(issue, dict) and 'missing_layer' in issue]
+    if missing_layer_issues and (context or {}).get('missing_layer_authority_policy_version') != 1:
+        raise ValueError('missing-layer repair requires explicit request policy version 1')
+    if missing_layer_issues:
+        from pipeline.annotation_issue_targets import issue_target_paths
+        for issue in missing_layer_issues:
+            issue_target_paths(issue, candidate,
+                source_text=(context or {}).get('chunk_text'), representation=representation,
+                missing_layer_policy_version=1,
+                grammar_knowledge=(context or {}).get('grammar_knowledge'),
+                run_dir=run_dir, language=language)
     if all(typed_flags):
         # Typed requests fail closed: invalid pointers/dispositions never downgrade to v2.
-        target_authority = build_authority_packet(issues, candidate, representation, candidate_digest(candidate))
+        target_authority = build_authority_packet(issues, candidate, representation, candidate_digest(candidate),
+            missing_layer_policy_version=1 if missing_layer_issues else None,
+            source_text=(context or {}).get('chunk_text'),
+            grammar_knowledge=(context or {}).get('grammar_knowledge'),
+            run_dir=run_dir)
         plan_target_contract_version = 3
     else:
         # Only the existing Korean deterministic-gate route is allowed to retain
@@ -434,6 +449,8 @@ async def repair_annotation(
                           _representation_structure_contract(representation),
                       "construction_occurrence_contract":
                           _construction_occurrence_contract(representation)}
+    if missing_layer_issues:
+        shared_context['missing_layer_run_dir'] = str(Path(run_dir).resolve())
     if target_authority is not None:
         shared_context["repair_target_authority"] = target_authority
     else:
@@ -444,6 +461,9 @@ async def repair_annotation(
     projected_row_guidance = ""
     if (target_authority or {}).get("projected_row_authority_policy_version", 1) >= 2:
         projected_row_guidance = """For a `row_replacement_authorities` entry, its listed `target_paths` are all explicit defects on the same derived row. Resolve those fields together with exactly the listed `remove_row` + `append_row` pair for that row. Do not add overlapping `set_field` targets. Preserve every unlisted row field, all sibling rows and their order, primary taps, and nested source components. A supporting path is not a repair target."""
+    missing_layer_guidance = ""
+    if missing_layer_issues:
+        missing_layer_guidance = """For an issue with a host-validated `missing_layer` declaration, use exactly one `append_row` to its declared `collection_path`. Build one schema-valid grammar occurrence with the exact declared identity and source interval. Do not edit its scalar diagnostic anchors, remove or reorder any existing row, duplicate an existing identity at that position, or change source/tap geometry. The declaration and supplied grammar knowledge are the authority; prose is not."""
     plan_prompt = f"""Return JSON matching the supplied repair-plan schema. Build a narrow diagnosis plan for every supplied independent review issue. `issue_index` must cover each input issue exactly once, in order. For each issue, give a concrete reason and exact JSON-pointer target(s) using only supported operations. The plan is diagnosis, never approval. Prefer a semantic field or explicit semantic-list row operation over changing a complete annotation.
 
 {REPAIR_EXPLANATION_GUIDANCE}
@@ -463,6 +483,8 @@ async def repair_annotation(
 {SOURCE_TAP_PROJECTION_GUIDANCE}
 
 {projected_row_guidance}
+
+{missing_layer_guidance}
 
 Use the operation/path contract exactly: `set_field` is only for an existing JSON scalar; use `replace_list` for an existing semantic array (including Korean form-step `grammar_entry_ids`), and `replace_row` for an existing object row. `append_row` targets the list path itself (for example `/grammar_links` or `/segments/4/form_steps`); the patch must use that exact path and an object value. `remove_row` targets one existing numeric row path. Never add a guessed numeric suffix to `append_row`.
 
@@ -806,6 +828,10 @@ INPUT:
     if FIELD in shared_context:meta[FIELD] = shared_context[FIELD]
     meta["plan_target_contract_version"] = plan_target_contract_version
     if target_authority is not None: meta["repair_target_authority"] = target_authority
+    if missing_layer_issues:
+        meta['missing_layer_authority_policy_version'] = 1
+        meta['missing_layer_source_text'] = (context or {}).get('chunk_text')
+        meta['missing_layer_grammar_knowledge'] = (context or {}).get('grammar_knowledge')
     _save_assembly(run_dir, assembly_job, meta, updated)
     return {"status": "applied", "candidate": updated,
             "evidence": _evidence_result(run_dir, assembly_job, meta), "plan": plan}
@@ -838,7 +864,10 @@ def replay_annotation_repair(
     if plan_version == 3:
         from pipeline.annotation_repair_authority import validate_authority_packet
         validate_authority_packet(meta.get("repair_target_authority"), meta["issues"], base,
-            meta["representation"], meta["base_digest"])
+            meta["representation"], meta["base_digest"],
+            source_text=meta.get('missing_layer_source_text'),
+            grammar_knowledge=meta.get('missing_layer_grammar_knowledge'),
+            run_dir=run_dir)
 
     def child(job: str, expected_digest: str) -> Any:
         directory = _safe_job_path(run_dir, job)

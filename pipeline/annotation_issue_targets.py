@@ -1,6 +1,7 @@
 """Exact defect targets and separate supporting context for annotation reviews."""
 from __future__ import annotations
 
+from copy import deepcopy
 import re
 from typing import Any
 
@@ -12,6 +13,37 @@ ISSUE_TARGET_SCHEMA_FIELDS = {
     'candidate_paths': {**_PATHS_SCHEMA, 'minItems': 1},
     'supporting_paths': dict(_PATHS_SCHEMA),
 }
+MISSING_LAYER_SCHEMA_FIELDS = {
+    'missing_layer': {'type': 'object', 'additionalProperties': False,
+        'required': ['version', 'anchor_paths', 'collection_path', 'identity',
+                     'identity_status', 'identity_digest', 'source_interval'],
+        'properties': {
+            'version': {'const': 1},
+            'anchor_paths': {'type': 'array', 'items': {'type': 'string'}, 'minItems': 1, 'uniqueItems': True},
+            'collection_path': {'type': 'string', 'pattern': '^/'},
+            'identity': {'type': 'string', 'minLength': 1},
+            'identity_status': {'enum': ['approved', 'provisional', 'reviewed_for_run']},
+            'identity_digest': {'type': 'string', 'pattern': '^[0-9a-f]{64}$'},
+            'source_interval': {'type': 'object', 'additionalProperties': False,
+                'required': ['start', 'end', 'surface'], 'properties': {
+                    'start': {'type': 'integer', 'minimum': 0},
+                    'end': {'type': 'integer', 'minimum': 1},
+                    'surface': {'type': 'string', 'minLength': 1}}},
+        }}
+}
+
+
+def missing_layer_review_schema(schema: dict, *, policy_version: int) -> dict:
+    """Return an opt-in typed review schema; historical schema bytes stay fixed."""
+    if type(policy_version) is not int or policy_version != 1:
+        raise ValueError('unknown missing-layer review schema version')
+    result = deepcopy(schema)
+    try:
+        issue_schema = result['properties']['issues']['items']
+        issue_schema['properties'].update(MISSING_LAYER_SCHEMA_FIELDS)
+    except (KeyError, TypeError) as exc:
+        raise ValueError('review schema does not expose an issue-item object') from exc
+    return result
 
 
 class IssueTargetError(ValueError):
@@ -23,7 +55,10 @@ def _overlap(left: str, right: str) -> bool:
 
 
 def issue_target_paths(issue: Any, candidate: Any, *, source_text: str | None = None,
-                       representation: str | None = None) -> list[str] | None:
+                       representation: str | None = None,
+                       missing_layer_policy_version: int | None = None,
+                       grammar_knowledge: dict | None = None,
+                       run_dir=None, language: str | None = None) -> list[str] | None:
     """Return validated canonical targets, or None for a historical untyped issue."""
     if not isinstance(issue, dict) or 'candidate_paths' not in issue:
         if isinstance(issue, dict) and 'supporting_paths' in issue:
@@ -48,7 +83,17 @@ def issue_target_paths(issue: Any, candidate: Any, *, source_text: str | None = 
                 raise IssueTargetError(f'Issue path must resolve a specific field value: {path!r}')
     if any(_overlap(left, right) for left in targets for right in supporting):
         raise IssueTargetError('Defect and supporting paths must be disjoint')
-    _validate_source_identity(issue, targets, candidate, source_text, representation)
+    if 'missing_layer' in issue:
+        if missing_layer_policy_version != 1:
+            raise IssueTargetError('Missing-layer declarations require explicit policy version 1')
+        try:
+            from pipeline.annotation_missing_layer import validate_declaration
+            validate_declaration(issue, candidate, representation, source_text, grammar_knowledge,
+                                 run_dir=run_dir, language=language)
+        except (ValueError, TypeError, KeyError, IndexError) as exc:
+            raise IssueTargetError(str(exc)) from exc
+    else:
+        _validate_source_identity(issue, targets, candidate, source_text, representation)
     return list(targets)
 
 
@@ -126,7 +171,10 @@ def _validate_source_identity(issue: dict, paths: list[str], candidate: Any,
 
 
 def validate_issue_targets(review: Any, candidate: Any, *, source_text: str | None = None,
-                           representation: str | None = None, require_typed: bool = False) -> None:
+                           representation: str | None = None, require_typed: bool = False,
+                           missing_layer_policy_version: int | None = None,
+                           grammar_knowledge: dict | None = None, run_dir=None,
+                           language: str | None = None) -> None:
     """Validate new typed issues before repair; preserve legacy issue formats."""
     if not isinstance(review, dict) or not isinstance(review.get('issues', []), list):
         raise IssueTargetError('Annotation review issues must be a list')
@@ -134,4 +182,6 @@ def validate_issue_targets(review: Any, candidate: Any, *, source_text: str | No
         if require_typed and (not isinstance(issue, dict) or 'candidate_paths' not in issue
                               or 'supporting_paths' not in issue):
             raise IssueTargetError('New annotation issues require candidate_paths and supporting_paths')
-        issue_target_paths(issue, candidate, source_text=source_text, representation=representation)
+        issue_target_paths(issue, candidate, source_text=source_text, representation=representation,
+            missing_layer_policy_version=missing_layer_policy_version,
+            grammar_knowledge=grammar_knowledge, run_dir=run_dir, language=language)

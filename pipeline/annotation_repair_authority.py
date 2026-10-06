@@ -126,13 +126,19 @@ def _dependency_targets(issues, candidate, representation, *, policy_version=1):
 
 
 def build_authority_packet(issues, candidate, representation, candidate_digest, *, dependency_authority_policy_version=2,
-                           projected_row_authority_policy_version=2):
+                           projected_row_authority_policy_version=2, missing_layer_policy_version=None,
+                           source_text=None, grammar_knowledge=None, run_dir=None):
     if type(dependency_authority_policy_version) is not int or dependency_authority_policy_version not in (1, 2):
         raise ValueError("unknown dependency authority policy version")
     if type(projected_row_authority_policy_version) is not int or projected_row_authority_policy_version not in (1, 2):
         raise ValueError("unknown projected row authority policy version")
     if not isinstance(issues, list) or not issues: raise ValueError("v3 repair requires typed issues")
     rows = []
+    has_missing_layer = any(isinstance(issue, dict) and 'missing_layer' in issue for issue in issues)
+    if has_missing_layer and missing_layer_policy_version != 1:
+        raise ValueError('missing-layer declaration requires explicit authority policy version 1')
+    if not has_missing_layer and missing_layer_policy_version is not None:
+        raise ValueError('missing-layer authority version cannot be set without a declaration')
     for index, issue in enumerate(issues):
         if not isinstance(issue, dict): raise ValueError("v3 repair issue must be an object")
         paths = _paths(issue); authorized = set(); observations=[]
@@ -142,6 +148,16 @@ def build_authority_packet(issues, candidate, representation, candidate_digest, 
             authorized |= _node_targets(candidate, pointer,
                                          policy_version=dependency_authority_policy_version)
             authorized |= _projected_pair(pointer,policy_version=projected_row_authority_policy_version)
+        missing_authority = None
+        if 'missing_layer' in issue:
+            from pipeline.annotation_missing_layer import validate_declaration
+            declaration = validate_declaration(issue, candidate, representation, source_text,
+                                                grammar_knowledge, run_dir=run_dir)
+            authorized.add(('append_row', declaration['collection_path']))
+            missing_authority = {"declaration": {key: declaration[key] for key in (
+                'version', 'anchor_paths', 'collection_path', 'identity', 'identity_status',
+                'identity_digest', 'source_interval')},
+                "identity_field": declaration['identity_field'], "representation": representation}
         # Add only candidate-derived dependency closure, tied to an authorized identity edit.
         for edge in _dependency_targets(issues, candidate, representation,
                                         policy_version=dependency_authority_policy_version):
@@ -168,6 +184,8 @@ def build_authority_packet(issues, candidate, representation, candidate_digest, 
              "allowed_targets": sorted([list(t) for t in authorized])}
         if projected_row_authority_policy_version >= 2:
             row["row_replacement_authorities"]=row_authorities
+        if missing_authority is not None:
+            row['missing_layer_authority'] = missing_authority
         rows.append(row)
     packet = {"version": 3, "candidate_digest": candidate_digest,
         "representation": representation, "issues_digest": _digest(issues), "issues": rows,
@@ -177,15 +195,22 @@ def build_authority_packet(issues, candidate, representation, candidate_digest, 
         packet["dependency_authority_policy_version"] = dependency_authority_policy_version
     if projected_row_authority_policy_version >= 2:
         packet["projected_row_authority_policy_version"] = projected_row_authority_policy_version
+    if has_missing_layer:
+        packet['missing_layer_authority_policy_version'] = missing_layer_policy_version
     return packet
 
 
-def validate_authority_packet(packet, issues, candidate, representation, candidate_digest):
+def validate_authority_packet(packet, issues, candidate, representation, candidate_digest, *,
+                              source_text=None, grammar_knowledge=None, run_dir=None):
     policy = packet.get("dependency_authority_policy_version", 1) if isinstance(packet, dict) else 1
     projection_policy = packet.get("projected_row_authority_policy_version", 1) if isinstance(packet, dict) else 1
+    missing_policy = packet.get('missing_layer_authority_policy_version') if isinstance(packet, dict) else None
     expected = build_authority_packet(issues, candidate, representation, candidate_digest,
                                      dependency_authority_policy_version=policy,
-                                     projected_row_authority_policy_version=projection_policy)
+                                     projected_row_authority_policy_version=projection_policy,
+                                     missing_layer_policy_version=missing_policy,
+                                     source_text=source_text, grammar_knowledge=grammar_knowledge,
+                                     run_dir=run_dir)
     if packet != expected: raise ValueError("v3 target authority differs from immutable issues/candidate")
 
 
@@ -204,6 +229,11 @@ def validate_plan_authority(plan, packet):
         proposed = {(t["op"], t["path"]) for t in row.get("targets", [])}
         if not proposed or not proposed.issubset(permitted):
             raise ValueError(f"repair plan issue {index} exceeds authenticated target authority")
+        missing = auth.get('missing_layer_authority')
+        if missing is not None:
+            if proposed != {('append_row', missing['declaration']['collection_path'])}:
+                raise ValueError('missing-layer plan must contain only its exact append_row operation')
+            continue
         for pointer in auth["paths"]:
             pair=_row_pair_for_issue(pointer,auth["paths"],projection_policy)
             if pair and pair.issubset(proposed):
@@ -448,6 +478,19 @@ def validate_derived_effects(before, after, plan, packet, edits=None):
             raise ValueError("historical target authority cannot add a direct collection append")
         if edit["path"] == "/segments":
             raise ValueError("primary segment collection append cannot be authorized as a semantic edit")
+
+    missing_authorities = [(row.get('missing_layer_authority'), index)
+                           for index, row in enumerate(packet.get('issues', []))
+                           if row.get('missing_layer_authority') is not None]
+    if missing_authorities:
+        from pipeline.annotation_missing_layer import validate_append
+        authorities = [authority for authority, _ in missing_authorities]
+        for authority, issue_index in missing_authorities:
+            issue_plan = plan.get('issues', [])[issue_index]
+            if {(t.get('op'), t.get('path')) for t in issue_plan.get('targets', [])} != {
+                    ('append_row', authority['declaration']['collection_path'])}:
+                raise ValueError('missing-layer append is detached from its exact issue plan')
+            validate_append(before, after, edits, authority, authorities)
 
     # A projected row can also carry its exact dependency identity change when the
     # same issue repairs the identity list. No other field gains permission.
